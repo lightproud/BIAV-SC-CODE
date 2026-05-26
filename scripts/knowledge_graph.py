@@ -228,47 +228,48 @@ def extract_file_nodes() -> tuple[list[dict], list[dict]]:
     return nodes, edges
 
 
-def extract_concepts_from_text() -> tuple[list[dict], list[dict]]:
-    """Extract concept nodes and mention edges from memory files."""
-    # Known concept dictionary for entity recognition
-    concept_dict = {
-        "联动": "concept:联动",
-        "沙耶之歌": "concept:沙耶之歌",
-        "Steam": "concept:Steam",
-        "Bilibili": "concept:Bilibili",
-        "GitHub": "concept:GitHub",
-        "SVN": "concept:SVN",
-        "Qoder": "concept:Qoder",
-        "VitePress": "concept:VitePress",
-        "Phase 0": "concept:Phase0",
-        "Phase 1": "concept:Phase1",
-        "Phase 2": "concept:Phase2",
-        "Phase 3": "concept:Phase3",
-        "Phase 4": "concept:Phase4",
-        "Stage 1": "concept:Stage1",
-        "THPDom": "concept:THPDom",
-        "方法论": "concept:方法论",
-        "止血": "concept:止血",
-        "记忆宫殿": "concept:记忆宫殿",
-        "技术债": "concept:技术债",
-    }
+# Canonical entity dictionaries — single source for graph building and text
+# scanning. Both extract_concepts_from_text() and _build_entity_dict() use these.
+CONCEPT_DICT = {
+    "联动": "concept:联动",
+    "沙耶之歌": "concept:沙耶之歌",
+    "Steam": "concept:Steam",
+    "Bilibili": "concept:Bilibili",
+    "GitHub": "concept:GitHub",
+    "SVN": "concept:SVN",
+    "Qoder": "concept:Qoder",
+    "VitePress": "concept:VitePress",
+    "Phase 0": "concept:Phase0",
+    "Phase 1": "concept:Phase1",
+    "Phase 2": "concept:Phase2",
+    "Phase 3": "concept:Phase3",
+    "Phase 4": "concept:Phase4",
+    "Stage 1": "concept:Stage1",
+    "THPDom": "concept:THPDom",
+    "方法论": "concept:方法论",
+    "止血": "concept:止血",
+    "记忆宫殿": "concept:记忆宫殿",
+    "技术债": "concept:技术债",
+    "BPT": "concept:BPT",
+    "MCP": "concept:MCP",
+    "Electron": "concept:Electron",
+    "TF-IDF": "concept:TF-IDF",
+}
 
-    # Also pull system aliases for matching
-    system_aliases = {}
-    for s_id, aliases in [
-        ("system:银芯", ["银芯", "BIAV-SC", "Silver Core"]),
-        ("system:黑池", ["黑池", "BIAV-BP", "Black Pool"]),
-        ("system:Wiki", ["Wiki", "wiki"]),
-        ("system:日报", ["日报", "聚合器"]),
-        ("system:做梦Agent", ["做梦", "AutoDream"]),
-        ("system:Discord归档", ["Discord归档", "discord-archive"]),
-        ("system:事实圣经", ["事实圣经"]),
-    ]:
-        for alias in aliases:
-            system_aliases[alias] = s_id
+SYSTEM_ALIASES = {
+    "银芯": "system:银芯", "BIAV-SC": "system:银芯", "Silver Core": "system:银芯",
+    "黑池": "system:黑池", "BIAV-BP": "system:黑池", "Black Pool": "system:黑池",
+    "Wiki": "system:Wiki", "wiki": "system:Wiki",
+    "日报": "system:日报", "聚合器": "system:日报",
+    "做梦": "system:做梦Agent", "AutoDream": "system:做梦Agent",
+    "Discord归档": "system:Discord归档", "discord-archive": "system:Discord归档",
+    "事实圣经": "system:事实圣经",
+}
 
-    # Character names for matching
-    char_names = {}
+
+def _load_char_names() -> dict:
+    """Map character names (zh + en) to character node ids from characters.json."""
+    names = {}
     chars_fp = REPO / "projects" / "wiki" / "data" / "db" / "characters.json"
     if chars_fp.exists():
         try:
@@ -276,23 +277,23 @@ def extract_concepts_from_text() -> tuple[list[dict], list[dict]]:
             for c in (chars_data.get("characters", []) if isinstance(chars_data, dict) else chars_data):
                 name = c.get("name", "")
                 if name and len(name) >= 2:
-                    char_names[name] = make_node_id("character", name)
+                    names[name] = make_node_id("character", name)
                 name_en = c.get("name_en", "")
                 if name_en and len(name_en) >= 3:
-                    char_names[name_en] = make_node_id("character", c.get("name", name_en))
+                    names[name_en] = make_node_id("character", c.get("name", name_en))
         except (json.JSONDecodeError, OSError):
             pass
+    return names
 
-    # Merge all entity dictionaries
-    all_entities = {}
-    all_entities.update(concept_dict)
-    all_entities.update(system_aliases)
-    all_entities.update(char_names)
+
+def extract_concepts_from_text() -> tuple[list[dict], list[dict]]:
+    """Extract concept nodes and mention edges from memory files."""
+    all_entities = _build_entity_dict()
 
     # Create concept nodes
     nodes = []
     seen_ids = set()
-    for name, eid in concept_dict.items():
+    for name, eid in CONCEPT_DICT.items():
         if eid not in seen_ids:
             nodes.append({
                 "id": eid,
@@ -306,7 +307,7 @@ def extract_concepts_from_text() -> tuple[list[dict], list[dict]]:
     edges = []
     mention_count = defaultdict(lambda: defaultdict(int))
 
-    scan_patterns = ["memory/*.md", "BIAV-SC.md", "projects/*/CONTEXT.md"]
+    scan_patterns = ["memory/*.md", "projects/*/CONTEXT.md"]
     for pattern in scan_patterns:
         for fp in sorted(REPO.glob(pattern)):
             if not fp.is_file():
@@ -609,41 +610,11 @@ def incremental_update(hours_back: int = 24) -> dict:
 
 
 def _build_entity_dict() -> dict:
-    """Build merged entity dictionary for scanning."""
-    concept_dict = {
-        "联动": "concept:联动", "沙耶之歌": "concept:沙耶之歌",
-        "Steam": "concept:Steam", "Bilibili": "concept:Bilibili",
-        "GitHub": "concept:GitHub", "VitePress": "concept:VitePress",
-        "Phase 0": "concept:Phase0", "Phase 1": "concept:Phase1",
-        "Phase 2": "concept:Phase2", "Phase 3": "concept:Phase3",
-        "Phase 4": "concept:Phase4", "方法论": "concept:方法论",
-        "记忆宫殿": "concept:记忆宫殿", "技术债": "concept:技术债",
-        "BPT": "concept:BPT", "MCP": "concept:MCP",
-        "Electron": "concept:Electron", "TF-IDF": "concept:TF-IDF",
-    }
-    system_aliases = {
-        "银芯": "system:银芯", "BIAV-SC": "system:银芯",
-        "黑池": "system:黑池", "BIAV-BP": "system:黑池",
-        "Wiki": "system:Wiki", "日报": "system:日报",
-        "做梦": "system:做梦Agent", "AutoDream": "system:做梦Agent",
-        "Discord归档": "system:Discord归档",
-    }
+    """Build the canonical entity dictionary for text scanning."""
     all_entities = {}
-    all_entities.update(concept_dict)
-    all_entities.update(system_aliases)
-
-    # Character names
-    chars_fp = REPO / "projects" / "wiki" / "data" / "db" / "characters.json"
-    if chars_fp.exists():
-        try:
-            chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
-            for c in (chars_data.get("characters", []) if isinstance(chars_data, dict) else chars_data):
-                name = c.get("name", "")
-                if name and len(name) >= 2:
-                    all_entities[name] = make_node_id("character", name)
-        except (json.JSONDecodeError, OSError):
-            pass
-
+    all_entities.update(CONCEPT_DICT)
+    all_entities.update(SYSTEM_ALIASES)
+    all_entities.update(_load_char_names())
     return all_entities
 
 

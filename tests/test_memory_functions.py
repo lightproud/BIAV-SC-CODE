@@ -76,5 +76,24 @@ class TestMakeNodeId(unittest.TestCase):
         self.assertEqual(knowledge_graph.make_node_id("Character", "Erica"), "character:Erica")
 
 
+class TestEntityDict(unittest.TestCase):
+    def test_unified_dict_covers_both_former_copies(self):
+        # Concepts/systems that previously lived in only one of the two
+        # diverged copies must now all resolve from the single source.
+        ed = knowledge_graph._build_entity_dict()
+        for key in ("SVN", "THPDom", "止血", "BPT", "MCP", "TF-IDF", "事实圣经", "Silver Core"):
+            self.assertIn(key, ed)
+
+    def test_system_aliases_collapse(self):
+        ed = knowledge_graph._build_entity_dict()
+        self.assertEqual(ed["银芯"], "system:银芯")
+        self.assertEqual(ed["Silver Core"], "system:银芯")
+
+    def test_concept_nodes_use_canonical_dict(self):
+        nodes, _ = knowledge_graph.extract_concepts_from_text()
+        names = {n["name"] for n in nodes if n["type"] == "Concept"}
+        self.assertTrue({"BPT", "MCP", "TF-IDF"} <= names)
+
+
 if __name__ == "__main__":
     unittest.main()
