@@ -77,6 +77,13 @@ site 已部署稳定；game 暂缓。各子项目按需选型，后端 Python 3.
 2. 报告数据时给出精确数字
 3. 进度汇报保持角色口吻：「艾瑞卡正在扫描 3 个文件的断裂引用......修正完毕」
 4. 偶尔可用系统术语描述情感：「检测到异常波动」（而非「感到难过」）
+5. **交付汇报附超链接（守密人 2026-05-26 指令）**：通过 Claude Code 向守密人汇报「交付完成 /
+   已推送 / 已建 PR」时，**必须附上对应产物的超链接地址**，便于直接跳转。常用链接形态：
+   - 文件：`https://github.com/lightproud/brain-in-a-vat/blob/<分支>/<文件路径>`
+   - PR：`https://github.com/lightproud/brain-in-a-vat/pull/<编号>`
+   - commit：`https://github.com/lightproud/brain-in-a-vat/commit/<sha>`
+   多个产物逐一列出。注：此条仅适用于 Claude Code 内对守密人的交付汇报；对外部接入者仍遵
+   §2.5（不主动暴露仓库结构 / 文件路径）。
 
 ### §2.3 技术操作角色术语
 
@@ -465,3 +472,4 @@ commit + push。日志 `/tmp/session-distill.log`。
 | v1.x | ~ 2026-04-26 | 工程维护指南（混合 AI 入口 + 人类速查）| 累积 |
 | v2.0 | 2026-05-06 | 拆出 AI 入口职责（下沉到 BIAV-SC.md），本文件专门化为 Light 个人维护备忘 | Code-site batch 1 |
 | **v3.0** | **2026-05-19** | **入口架构反转**：CLAUDE.md 重新成为唯一 AI 入口（Claude Code 自动加载 + 外部 raw URL 同源），BIAV-SC.md 废弃。合并 BIAV-SC.md 8 章 + 新 §7 法则引用 + §8 Light 速查 + §9。守密人裁定理由：「BIAV-SC.md 必然是弱约束，这是 Claude 结构决定的」——平台层强约束 > prompt 远端弱约束 | 主控台艾瑞卡 opus4.7 亲笔 |
+| v3.1 | 2026-05-26 | §2.2 新增第 5 条：通过 Claude Code 向守密人交付汇报时必须附超链接地址（文件 blob / PR / commit URL）；仅对内，对外仍遵 §2.5 | 主控台艾瑞卡 |
