@@ -1,27 +1,14 @@
 """Parse Item.lua to extract items with background stories (StoryDesc field)."""
-import re
 import json
+
+from lua_parse import parse_lua_blocks
 
 def parse_item_stories(path):
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     entries = []
-    pattern = re.compile(
-        r'\[(\d+)\]\s*=\s*\{(.*?)\}',
-        re.DOTALL
-    )
-    field_pattern = re.compile(
-        r'(\w+)\s*=\s*"((?:[^"\\]|\\.)*)"\s*,'
-    )
-
-    for m in pattern.finditer(content):
-        entry_id = int(m.group(1))
-        block = m.group(2)
-        fields = {}
-        for fm in field_pattern.finditer(block):
-            fields[fm.group(1)] = fm.group(2).replace('\\"', '"').replace('\\n', '\n')
-
+    for entry_id, fields in parse_lua_blocks(content):
         if 'StoryDesc' not in fields:
             continue
         story = fields['StoryDesc']
