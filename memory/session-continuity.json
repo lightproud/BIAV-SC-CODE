@@ -1,10 +1,12 @@
 {
   "last_session": {
-    "id": "2859e2b7",
-    "timestamp": "2026-05-26T16:50:03.381000+00:00",
-    "duration_minutes": 105.1,
+    "id": "70c0404d",
+    "timestamp": "2026-05-26T17:08:55.540000+00:00",
+    "duration_minutes": 124.0,
     "branch": "claude/yincin-code-review-tgusd",
-    "topics": [],
+    "topics": [
+      "Wiki"
+    ],
     "decisions": [
       "深读哪些档案"
     ],
@@ -21,20 +23,55 @@
       "/home/user/brain-in-a-vat/scripts/lua_parse.py",
       "/home/user/brain-in-a-vat/scripts/memory_search.py",
       "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+      "/home/user/brain-in-a-vat/scripts/memrl.py",
       "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
       "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
       "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
       "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
       "/home/user/brain-in-a-vat/scripts/text_utils.py",
-      "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
-      "/home/user/brain-in-a-vat/tests/test_memory_functions.py",
-      "/home/user/brain-in-a-vat/tests/test_text_utils.py"
+      "/home/user/brain-in-a-vat/tests/test_collect_global.py",
+      "/home/user/brain-in-a-vat/tests/test_lua_parse.py"
     ],
     "open_items": [
       "files in parallel"
     ]
   },
   "recent_sessions": [
+    {
+      "id": "2859e2b7",
+      "timestamp": "2026-05-26T16:50:03.381000+00:00",
+      "duration_minutes": 105.1,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [],
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
+        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
+        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
+        "/home/user/brain-in-a-vat/scripts/text_utils.py",
+        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
+        "/home/user/brain-in-a-vat/tests/test_memory_functions.py",
+        "/home/user/brain-in-a-vat/tests/test_text_utils.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
+    },
     {
       "id": "49d4c8ee",
       "timestamp": "2026-05-26T15:51:57.856000+00:00",
@@ -281,25 +318,14 @@
         "/home/user/brain-in-a-vat/projects/site/public/index.html"
       ],
       "open_items": []
-    },
-    {
-      "id": "fail-sim",
-      "timestamp": null,
-      "duration_minutes": null,
-      "branch": "",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.48,
-      "黑池": 1.57,
-      "Bilibili": 0.38,
-      "GitHub": 0.1,
-      "Phase1": 0.1
+      "银芯": 1.98,
+      "黑池": 1.26,
+      "Wiki": 1.0,
+      "Bilibili": 0.3
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.gitignore",
@@ -313,7 +339,7 @@
       "/home/user/brain-in-a-vat/scripts/lua_parse.py",
       "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
     ],
-    "total_sessions": 110
+    "total_sessions": 111
   },
-  "updated_at": "2026-05-26T16:55:19.303846+00:00"
+  "updated_at": "2026-05-26T17:13:58.295623+00:00"
 }
