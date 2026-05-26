@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-26T21:30:29.398875+00:00",
+  "collected_at": "2026-05-26T23:04:14.862340+00:00",
   "source": "steam",
   "item_count": 14,
   "items": [
@@ -31,7 +31,22 @@
       "voted_up": true,
       "review": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
       "timestamp_created": 1779762267,
-      "playtime_forever": 2156
+      "playtime_forever": 2194
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T21:42:25+00:00",
+      "lang": "english",
+      "title": "[正面] I'm John Lovecraft, and this is my favourite game...",
+      "summary": "I'm John Lovecraft, and this is my favourite game on steam.",
+      "url": "https://steamcommunity.com/profiles/76561198851880831/recommended/3052450",
+      "author": "76561198851880831",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I'm John Lovecraft, and this is my favourite game on steam.",
+      "timestamp_created": 1779831745,
+      "playtime_forever": 505
     },
     {
       "source": "steam",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "I picked up the game just a week ago and honestly it's been such an engrossing series, the story telling is out of this world and the worldbuilding tugs you in. The game represents the message it wants to tell: to not forget memories and this game will be a game I don't think I can ever forget.",
       "timestamp_created": 1779820801,
-      "playtime_forever": 3817
+      "playtime_forever": 3865
     },
     {
       "source": "steam",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "A very good game.",
       "timestamp_created": 1779814478,
-      "playtime_forever": 1445
+      "playtime_forever": 1476
     },
     {
       "source": "steam",
@@ -197,21 +212,6 @@
       "review": "Thais.",
       "timestamp_created": 1779753600,
       "playtime_forever": 14435
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-25T22:04:14+00:00",
-      "lang": "brazilian",
-      "title": "[正面] é um jogo muito bom, fiquei viciada e olha que ode...",
-      "summary": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
-      "url": "https://steamcommunity.com/profiles/76561199542514598/recommended/3052450",
-      "author": "76561199542514598",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
-      "timestamp_created": 1779746654,
-      "playtime_forever": 631
     }
   ]
 }
