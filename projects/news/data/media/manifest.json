@@ -6957,6 +6957,27 @@
       "title": "瀕死のリリー",
       "time": "2026-05-27T00:04:32+09:00",
       "downloaded_at": "2026-05-26T17:22:44.697635+00:00"
+    },
+    "https://i.ytimg.com/vi/lgACFNTziOc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXf4hgsRO8pzZyorhsf6zxbK6ZxA": {
+      "filename": "youtube_0d26cbaf65e063f7.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Endgame Team Comp Overview : Part 4 (Castor Stall, no Pollux) and why Pollux is garbage",
+      "time": "2026-05-26T18:54:24.109874+00:00",
+      "downloaded_at": "2026-05-26T19:57:15.366972+00:00"
+    },
+    "https://i.ytimg.com/vi/1VD0DuEBIIo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6dMYWbWEztrD7G7KdDa1vaJh3Aw": {
+      "filename": "youtube_238a216524d0072c.jpg",
+      "source": "youtube",
+      "title": "You NEED Thais in Morimens (trust me on this)",
+      "time": "2026-05-26T18:54:24.109792+00:00",
+      "downloaded_at": "2026-05-26T19:57:15.823003+00:00"
+    },
+    "https://i.ytimg.com/vi/CMak3hikWZ8/hq720.jpg?v=6a15f209&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkrFBnEN6U5o5L_wJVJFGql5Mcrg": {
+      "filename": "youtube_8204292471227433.jpg",
+      "source": "youtube",
+      "title": "Can we STILL beat Morimens as F2P with ONLY characters from Kaleido Recollections",
+      "time": "2026-05-26T19:54:24.109805+00:00",
+      "downloaded_at": "2026-05-26T19:57:17.546652+00:00"
     }
   },
   "failed": {
@@ -10784,6 +10805,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-26T17:22:43.617607+00:00"
+    },
+    "https://external-preview.redd.it/Z3FvbmR6M3UzajNoMTnwIkyV4Pe_o6N8rp5oRRHlDzzgUgedPIedp5yeJun6.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e0b06cdc544e932dcb7aa19ebed6be4a52abf2dd": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T19:57:16.181355+00:00"
+    },
+    "https://preview.redd.it/t11l7plmni3h1.png?width=140&amp;height=76&amp;auto=webp&amp;s=97161bdedefc7842c41adf8a7b9c50b55e2e530f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T19:57:16.545977+00:00"
+    },
+    "https://preview.redd.it/1qnj9uaxoi3h1.jpeg?width=70&amp;height=70&amp;crop=1:1,smart&amp;auto=webp&amp;s=744f47fad97e194f5303153adeae62fc54b6c2e5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T19:57:16.876100+00:00"
+    },
+    "https://preview.redd.it/zbma7ftrdj3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5077ba725d560e15a4b158124a89b9d3760a03c7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T19:57:17.205186+00:00"
     }
   },
   "archived": []

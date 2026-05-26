@@ -1,8 +1,8 @@
 {
   "date": "2026-05-27",
-  "archived_at": "2026-05-26T17:22:44.771953+00:00",
+  "archived_at": "2026-05-26T19:57:17.620990+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,66 @@
       "review": "Been a long time since I felt excited playing a gacha game. the Artstyle, story, and music compliments each other so well and really sells the bleakness and preseverance of the world.\r\nalso if you join now you get like 200 pulls for free.",
       "timestamp_created": 1779735007,
       "playtime_forever": 774
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T18:40:01+00:00",
+      "lang": "english",
+      "title": "[正面] I picked up the game just a week ago and honestly...",
+      "summary": "I picked up the game just a week ago and honestly it's been such an engrossing series, the story telling is out of this world and the worldbuilding tugs you in. The game represents the message it wants to tell: to not forget memories and this game will be a game I don't think I can ever forget.",
+      "url": "https://steamcommunity.com/profiles/76561198152172591/recommended/3052450",
+      "author": "76561198152172591",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I picked up the game just a week ago and honestly it's been such an engrossing series, the story telling is out of this world and the worldbuilding tugs you in. The game represents the message it wants to tell: to not forget memories and this game will be a game I don't think I can ever forget.",
+      "timestamp_created": 1779820801,
+      "playtime_forever": 3817
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T18:37:16+00:00",
+      "lang": "schinese",
+      "title": "[正面] 我觉得不错，没必要因为是个手游形式的就给差评吧？",
+      "summary": "我觉得不错，没必要因为是个手游形式的就给差评吧？",
+      "url": "https://steamcommunity.com/profiles/76561199179093720/recommended/3052450",
+      "author": "76561199179093720",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "我觉得不错，没必要因为是个手游形式的就给差评吧？",
+      "timestamp_created": 1779820636,
+      "playtime_forever": 75
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T17:09:46+00:00",
+      "lang": "german",
+      "title": "[负面] knappe zwei stunden mit klicken verbracht weil ich...",
+      "summary": "knappe zwei stunden mit klicken verbracht weil ich das tutorial sehr ansprechend fand. danach eingesehen, dass man schnell eine paywall trifft und das spiel auf deutsch oder englisch nicht zu verstehen ist wegen der extrem schlechten übersetzung. ich sollte einfach kein \"pay to play\" (kostenloses) spiel mehr installieren :)",
+      "url": "https://steamcommunity.com/profiles/76561198101523596/recommended/3052450",
+      "author": "76561198101523596",
+      "engagement": 0,
+      "language": "german",
+      "voted_up": false,
+      "review": "knappe zwei stunden mit klicken verbracht weil ich das tutorial sehr ansprechend fand. danach eingesehen, dass man schnell eine paywall trifft und das spiel auf deutsch oder englisch nicht zu verstehen ist wegen der extrem schlechten übersetzung. ich sollte einfach kein \"pay to play\" (kostenloses) spiel mehr installieren :)",
+      "timestamp_created": 1779815386,
+      "playtime_forever": 135
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T16:54:38+00:00",
+      "lang": "brazilian",
+      "title": "[正面] A very good game.",
+      "summary": "A very good game.",
+      "url": "https://steamcommunity.com/profiles/76561198276194901/recommended/3052450",
+      "author": "76561198276194901",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "A very good game.",
+      "timestamp_created": 1779814478,
+      "playtime_forever": 1445
     }
   ]
 }
