@@ -24,6 +24,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from wiki_sources import FANDOM_ALT, FANDOM_BASE, PAGE_MAP, RATE_LIMIT
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -38,74 +39,8 @@ UA = (
     "+https://github.com/lightproud/brain-in-a-vat)"
 )
 
-FANDOM_BASE = "https://forget-last-night-morimens.fandom.com"
-FANDOM_ALT = "https://morimens.fandom.com"
-
 # Character ID -> Fandom page title.
 # Mirrors the mapping in fetch_portraits.py; extend as needed.
-PAGE_MAP = {
-    "alva": "Alva",
-    "doll": "Doll",
-    "ramona-timeworn": "Ramona:_Timeworn",
-    "ogier": "Ogier",
-    "lotan": "Lotan",
-    "ramona": "Ramona",
-    "pandya": "Pandya",
-    "nodera": "Nodera",
-    "galen": "Galen",
-    "nymphia": "Nymphia",
-    "lily": "Lily",
-    "danmo": "Danmo",
-    "miryam": "Miryam",
-    "tulu": "Tulu",
-    "divine-king-tulu": "Divine_King_Tulu",
-    "celeste": "Celeste",
-    "goliath": "Goliath",
-    "shan": "Shan",
-    "aurita": "Aurita",
-    "caecus": "Caecus",
-    "faros": "Faros",
-    "uvhash": "Uvhash",
-    "rhea": "Rhea",
-    "sorel": "Sorel",
-    "thais": "Thais",
-    "alice": "Alice",
-    "faint": "Faint",
-    "agrippa": "Agrippa",
-    "shilo": "Shilo",
-    "erica": "Erica",
-    "liz": "Liz",
-    "daffodil": "Daffodil",
-    "winkle": "Winkle",
-    "casiah": "Casiah",
-    "jenkins": "Jenkins",
-    "tincture": "Tincture",
-    "horla": "Horla",
-    "karen": "Karen",
-    "hameln": "Hameln",
-    "murphy": "Murphy",
-    "salvador": "Salvador",
-    "tawil": "Tawil",
-    "wanda": "Wanda",
-    "aigis": "Aigis",
-    "doll-inferno": "Doll:_Inferno",
-    "24": "24_(character)",
-    "clementine": "Clementine",
-    "corposant": "Corposant",
-    "kathigu-ra": "Kathigu-Ra",
-    "murphy-fauxborn": "Murphy:_Fauxborn",
-    "mouchette": "Mouchette",
-    "xu": "Xu",
-    "castor": "Castor",
-    "pollux": "Pollux",
-    "helot": "Helot",
-    "leigh": "Leigh",
-    "doresain": "Doresain",
-    "pickman": "Pickman",
-    "arachne": "Arachne",
-}
-
-RATE_LIMIT = 0.5  # seconds between requests
 
 # ---------------------------------------------------------------------------
 # HTTP helpers
@@ -116,7 +51,6 @@ def api_get(url: str) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=20) as resp:
         return json.loads(resp.read().decode())
-
 
 def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     """Fetch raw wikitext for a page via action=parse."""
@@ -133,7 +67,6 @@ def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     except Exception as e:
         print(f"  [WARN] Failed to fetch wikitext from {wiki_base}: {e}")
         return None
-
 
 # ---------------------------------------------------------------------------
 # Wikitext parsing
@@ -153,7 +86,6 @@ def strip_wikimarkup(text: str) -> str:
     text = re.sub(r"<[^>]+>", "", text)
     return text.strip()
 
-
 def parse_infobox_field(wikitext: str, field_name: str) -> str | None:
     """Extract a value from a mediawiki infobox |field = value pattern."""
     end_marker = r"\}\}"
@@ -162,7 +94,6 @@ def parse_infobox_field(wikitext: str, field_name: str) -> str | None:
     if m:
         return strip_wikimarkup(m.group(1).strip())
     return None
-
 
 def parse_cards_from_wikitext(wikitext: str) -> dict:
     """
@@ -309,7 +240,6 @@ def parse_cards_from_wikitext(wikitext: str) -> dict:
 
     return result
 
-
 def _parse_skill_section(body: str) -> dict | None:
     """Parse a skill name + effect from a section body."""
     lines = [l.strip() for l in body.strip().splitlines() if l.strip()]
@@ -352,7 +282,6 @@ def _parse_skill_section(body: str) -> dict | None:
         return result
     return None
 
-
 def _parse_enlighten_section(body: str) -> list:
     """Parse enlighten levels from a section body."""
     entries = []
@@ -375,7 +304,6 @@ def _parse_enlighten_section(body: str) -> list:
         entries.append(entry)
     return entries
 
-
 # ---------------------------------------------------------------------------
 # Card database building
 # ---------------------------------------------------------------------------
@@ -390,7 +318,6 @@ def load_existing_cards() -> dict:
         "description_en": "Morimens character card database. Each Awakener has 4 Command Cards + 1 Rouse Card, plus Exalt and Enlighten skills.",
         "cards": [],
     }
-
 
 def extract_cards_from_characters() -> dict[str, dict]:
     """
@@ -426,7 +353,6 @@ def extract_cards_from_characters() -> dict[str, dict]:
 
     return extracted
 
-
 def build_card_entry(char: dict, skills_data: dict) -> dict:
     """Build a card database entry for one character."""
     entry = {
@@ -452,7 +378,6 @@ def build_card_entry(char: dict, skills_data: dict) -> dict:
 
     return entry
 
-
 def is_incomplete(skills_data: dict) -> bool:
     """Check if card data is incomplete (missing key fields)."""
     if not skills_data:
@@ -470,7 +395,6 @@ def is_incomplete(skills_data: dict) -> bool:
     if "rouse" not in skills_data:
         return True
     return False
-
 
 def merge_skills(existing: dict, fetched: dict) -> dict:
     """
@@ -511,7 +435,6 @@ def merge_skills(existing: dict, fetched: dict) -> dict:
                 merged["command_cards"].append(fc)
 
     return merged
-
 
 # ---------------------------------------------------------------------------
 # Main workflow
@@ -631,7 +554,6 @@ def main():
         f.write("\n")
 
     print(f"Wrote {CARDS_JSON}")
-
 
 if __name__ == "__main__":
     main()

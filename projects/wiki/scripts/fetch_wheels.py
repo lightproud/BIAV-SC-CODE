@@ -23,29 +23,21 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from wiki_sources import FANDOM_WIKIS, RATE_LIMIT
 
 SCRIPT_DIR = Path(__file__).parent
 EQUIPMENT_JSON = SCRIPT_DIR.parent / "data" / "db" / "equipment.json"
 
 UA = "Mozilla/5.0 (compatible; MorimensWikiBot/1.0; +https://github.com/lightproud/brain-in-a-vat)"
 
-FANDOM_WIKIS = [
-    "https://forget-last-night-morimens.fandom.com",
-    "https://morimens.fandom.com",
-]
-
-RATE_LIMIT = 0.5  # seconds between requests
-
 # Minimum effect length to consider "complete" -- shorter ones get re-fetched
 MIN_EFFECT_LENGTH = 30
-
 
 def api_get(url: str) -> dict:
     """Make a GET request and return JSON."""
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode())
-
 
 def search_wiki(wiki_base: str, query: str) -> str | None:
     """Search Fandom wiki for a page matching the query. Returns page title or None."""
@@ -73,7 +65,6 @@ def search_wiki(wiki_base: str, query: str) -> str | None:
         print(f"  [WARN] Search failed on {wiki_base}: {e}")
         return None
 
-
 def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     """Fetch raw wikitext for a page via action=parse."""
     params = urllib.parse.urlencode({
@@ -89,7 +80,6 @@ def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     except Exception as e:
         print(f"  [WARN] Parse failed for '{page_title}' on {wiki_base}: {e}")
         return None
-
 
 def clean_wikitext(text: str) -> str:
     """Strip wiki markup to plain text."""
@@ -109,7 +99,6 @@ def clean_wikitext(text: str) -> str:
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
-
 def extract_section(wikitext: str, heading_patterns: list[str]) -> str | None:
     """Extract text under a section heading matching any of the patterns."""
     for pattern in heading_patterns:
@@ -122,7 +111,6 @@ def extract_section(wikitext: str, heading_patterns: list[str]) -> str | None:
         if match:
             return clean_wikitext(match.group(1)).strip()
     return None
-
 
 def parse_wheel_data(wikitext: str) -> dict:
     """Parse wikitext for wheel-related data fields."""
@@ -218,7 +206,6 @@ def parse_wheel_data(wikitext: str) -> dict:
 
     return result
 
-
 def needs_update(wheel: dict) -> bool:
     """Check if a wheel entry needs its effect data fetched."""
     effect = wheel.get("effect", "")
@@ -227,7 +214,6 @@ def needs_update(wheel: dict) -> bool:
     if len(effect) < MIN_EFFECT_LENGTH:
         return True
     return False
-
 
 def collect_wheels(data: dict) -> list[tuple[str, int, dict]]:
     """Collect all wheel entries that need updating.
@@ -248,7 +234,6 @@ def collect_wheels(data: dict) -> list[tuple[str, int, dict]]:
             if needs_update(wheel):
                 to_update.append((cat, i, wheel))
     return to_update
-
 
 def fetch_wheel_info(wheel: dict) -> dict:
     """Try to fetch wheel data from Fandom wikis."""
@@ -281,7 +266,6 @@ def fetch_wheel_info(wheel: dict) -> dict:
 
     return {}
 
-
 def apply_update(wheel: dict, info: dict) -> bool:
     """Apply fetched info to a wheel dict. Returns True if anything changed."""
     changed = False
@@ -312,7 +296,6 @@ def apply_update(wheel: dict, info: dict) -> bool:
         wheel["_wiki_page"] = info.get("_wiki_page", "")
 
     return changed
-
 
 def main():
     dry_run = "--dry-run" in sys.argv
@@ -388,7 +371,6 @@ def main():
         print(f"\nSaved to {EQUIPMENT_JSON}")
     elif dry_run:
         print("\nDry run complete. No files modified.")
-
 
 if __name__ == "__main__":
     main()

@@ -24,6 +24,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from wiki_sources import BILIGAME_BASE, BILI_PAGE_MAP, FANDOM_WIKIS, PAGE_MAP
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent.parent  # brain-in-a-vat/
@@ -33,108 +34,17 @@ PORTRAITS_DIR = PROJECT_ROOT / "assets" / "images" / "portraits"
 UA = "Mozilla/5.0 (compatible; MorimensWikiBot/1.0; +https://github.com/lightproud/brain-in-a-vat)"
 
 # Fandom wikis to try
-FANDOM_WIKIS = [
-    "https://forget-last-night-morimens.fandom.com",
-    "https://morimens.fandom.com",
-]
 
 # Character ID -> Fandom page title mapping
 # Uses current English slug IDs from characters.json
-PAGE_MAP = {
-    "alva": "Alva",
-    "doll": "Doll",
-    "ramona-timeworn": "Ramona:_Timeworn",
-    "ogier": "Ogier",
-    "lotan": "Lotan",
-    "ramona": "Ramona",
-    "pandya": "Pandya",
-    "nodera": "Nodera",
-    "galen": "Galen",
-    "nymphia": "Nymphia",
-    "lily": "Lily",
-    "danmo": "Danmo",
-    "miryam": "Miryam",
-    "tulu": "Tulu",
-    "divine-king-tulu": "Divine_King_Tulu",
-    "celeste": "Celeste",
-    "goliath": "Goliath",
-    "shan": "Shan",
-    "aurita": "Aurita",
-    "caecus": "Caecus",
-    "faros": "Faros",
-    "uvhash": "Uvhash",
-    "rhea": "Rhea",
-    "sorel": "Sorel",
-    "thais": "Thais",
-    "alice": "Alice",
-    "faint": "Faint",
-    "agrippa": "Agrippa",
-    "shilo": "Shilo",
-    "erica": "Erica",
-    "liz": "Liz",
-    "daffodil": "Daffodil",
-    "winkle": "Winkle",
-    "casiah": "Casiah",
-    "jenkins": "Jenkins",
-    "tincture": "Tincture",
-    "horla": "Horla",
-    "karen": "Karen",
-    "hameln": "Hameln",
-    "murphy": "Murphy",
-    "salvador": "Salvador",
-    "tawil": "Tawil",
-    "wanda": "Wanda",
-    "aigis": "Aigis",
-    "doll-inferno": "Doll:_Inferno",
-    "24": "24_(character)",
-    "clementine": "Clementine",
-    "corposant": "Corposant",
-    "kathigu-ra": "Kathigu-Ra",
-    "murphy-fauxborn": "Murphy:_Fauxborn",
-    "mouchette": "Mouchette",
-    "xu": "Xu",
-    "castor": "Castor",
-    "pollux": "Pollux",
-    "helot": "Helot",
-    "leigh": "Leigh",
-    "doresain": "Doresain",
-    "pickman": "Pickman",
-    "arachne": "Arachne",
-}
 
 # Bilibili Wiki (Chinese) page title mapping for fallback
-BILI_PAGE_MAP = {
-    "alva": "阿尔瓦", "doll": "玩偶", "ramona-timeworn": "拉蒙娜·经年",
-    "ogier": "奥吉尔", "lotan": "洛坦", "ramona": "拉蒙娜",
-    "pandya": "潘迪亚", "nodera": "诺德拉", "galen": "加仑",
-    "nymphia": "宁芙", "lily": "莉莉", "danmo": "丹莫",
-    "miryam": "弥利亚姆", "tulu": "图鲁", "divine-king-tulu": "图鲁·神王",
-    "celeste": "希莱斯特", "goliath": "戈利亚", "shan": "杉",
-    "aurita": "奥瑞塔", "caecus": "凯刻斯", "faros": "法罗斯",
-    "uvhash": "尤乌哈希", "rhea": "蕾亚", "sorel": "索蕾尔",
-    "thais": "塔薇", "alice": "爱丽丝", "faint": "费恩特",
-    "agrippa": "阿格里帕", "shilo": "希洛", "erica": "艾瑞卡",
-    "liz": "莉兹", "daffodil": "水仙", "winkle": "环娜",
-    "casiah": "迦叶", "jenkins": "詹金斯", "tincture": "酊剂",
-    "horla": "奥尔拉", "karen": "珈伦", "hameln": "哈姆林",
-    "murphy": "墨菲", "salvador": "萨尔瓦多", "tawil": "塔薇儿",
-    "wanda": "旺达", "aigis": "艾癸斯", "doll-inferno": "玩偶·炼狱",
-    "24": "24", "clementine": "克莱门汀", "corposant": "圣艾尔摩之火",
-    "kathigu-ra": "卡蒂古拉", "murphy-fauxborn": "墨菲·诞妄",
-    "mouchette": "穆雪特", "xu": "勖", "castor": "卡斯托尔",
-    "pollux": "波吕克斯", "helot": "希洛特", "leigh": "莱克",
-    "doresain": "多瑞塞", "pickman": "皮克曼", "arachne": "阿拉克涅",
-}
-
-BILIGAME_BASE = "https://wiki.biligame.com/morimens"
-
 
 def api_get(url: str) -> dict:
     """Make a GET request and return JSON."""
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode())
-
 
 def fetch_page_images(wiki_base: str, page_title: str) -> list[str]:
     """Get all image URLs from a Fandom wiki page via MediaWiki API."""
@@ -158,7 +68,6 @@ def fetch_page_images(wiki_base: str, page_title: str) -> list[str]:
         print(f"  [WARN] Failed to query {wiki_base}: {e}")
         return []
 
-
 def get_image_url(wiki_base: str, file_title: str) -> str | None:
     """Get the direct URL for a File: page."""
     params = urllib.parse.urlencode({
@@ -180,7 +89,6 @@ def get_image_url(wiki_base: str, file_title: str) -> str | None:
         pass
     return None
 
-
 def find_portrait_image(images: list[str], char_name: str) -> str | None:
     """Find the most likely portrait image from a list of File: titles."""
     name_lower = char_name.lower().replace("_", " ").replace(":", "")
@@ -197,7 +105,6 @@ def find_portrait_image(images: list[str], char_name: str) -> str | None:
             candidates.append(img)
     return candidates[0] if candidates else (images[0] if images else None)
 
-
 def download_image(url: str, dest: Path) -> bool:
     """Download an image file to the destination path."""
     try:
@@ -211,13 +118,11 @@ def download_image(url: str, dest: Path) -> bool:
         print(f"  [WARN] Download failed: {e}")
         return False
 
-
 def get_extension(url: str) -> str:
     """Extract file extension from URL."""
     path = urllib.parse.urlparse(url).path
     ext = os.path.splitext(path)[1].lower()
     return ext if ext in (".png", ".jpg", ".jpeg", ".webp") else ".png"
-
 
 def fetch_all_portraits(dry_run: bool = False) -> dict[str, dict]:
     """Fetch portrait URLs and download images for all characters."""
@@ -292,7 +197,6 @@ def fetch_all_portraits(dry_run: bool = False) -> dict[str, dict]:
 
     return results
 
-
 def main():
     dry_run = "--dry-run" in sys.argv
 
@@ -323,7 +227,6 @@ def main():
         f.write("\n")
 
     print(f"Updated {updated} portrait paths in characters.json")
-
 
 if __name__ == "__main__":
     main()
