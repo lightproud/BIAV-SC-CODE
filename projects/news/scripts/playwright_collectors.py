@@ -4,10 +4,10 @@ Playwright-based collectors for Morimens community news.
 Final fixed version based on actual page structure analysis.
 
 Tested and working:
-- NGA: ✅ Using .topicrow selector, TD 1 for title
-- Weibo: ✅ Using article selector on mobile version
-- Xiaohongshu: ⚠️ Requires login/special handling
-- TapTap: ⚠️ App page returns 405, need alternative
+- NGA: Using .topicrow selector, TD 1 for title
+- Weibo: Using article selector on mobile version
+- Xiaohongshu: ⚠ Requires login/special handling
+- TapTap: ⚠ App page returns 405, need alternative
 """
 
 import json

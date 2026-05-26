@@ -168,11 +168,11 @@ def print_report(report: dict) -> None:
                   f'last={last:10s}  {silent_str}')
         print()
 
-    print_section('✅ 活跃（近 7 天内有产出）', by_level['active'])
-    print_section('⚠️  降级（7-30 天沉默）', by_level['degraded'])
-    print_section('🔇 休眠（>30 天沉默）', by_level['dormant'])
+    print_section('活跃（近 7 天内有产出）', by_level['active'])
+    print_section('⚠  降级（7-30 天沉默）', by_level['degraded'])
+    print_section('休眠（>30 天沉默）', by_level['dormant'])
     print_section(
-        f'❌ 从未产出（审计窗口 {report["window_days"]}d 内 0 条）',
+        f'从未产出（审计窗口 {report["window_days"]}d 内 0 条）',
         by_level['never'],
     )
 
@@ -185,7 +185,7 @@ def print_report(report: dict) -> None:
     )
     print(summary)
     if report['window_days'] < DORMANT_THRESHOLD:
-        print(f'⚠️  归档窗口仅 {report["window_days"]}d < {DORMANT_THRESHOLD}d，'
+        print(f'⚠  归档窗口仅 {report["window_days"]}d < {DORMANT_THRESHOLD}d，'
               f'"从未产出"仅代表窗口内沉默，不等于真正 30 天 dormant。')
     print()
 
@@ -228,7 +228,7 @@ def write_health(report: dict) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding='utf-8',
     )
-    print(f'✓ 写入 {HEALTH_PATH.relative_to(_REPO_ROOT)}')
+    print(f'写入 {HEALTH_PATH.relative_to(_REPO_ROOT)}')
 
 
 def suggest_prune(report: dict) -> None:
@@ -243,18 +243,18 @@ def suggest_prune(report: dict) -> None:
         return
 
     if never:
-        print(f'🗑️  候选摘除（窗口 {report["window_days"]}d 内从未产出，共 {len(never)}）:')
+        print(f' 候选摘除（窗口 {report["window_days"]}d 内从未产出，共 {len(never)}）:')
         for e in sorted(never, key=lambda x: x['source']):
             print(f'  - {e["source"]}')
         print()
     if dormant:
-        print(f'⚠️  强制调查（>30d 沉默，共 {len(dormant)}）:')
+        print(f'⚠  强制调查（>30d 沉默，共 {len(dormant)}）:')
         for e in dormant:
             print(f'  - {e["source"]}  last={e["last_archive_date"]}  '
                   f'silent={e["silent_days"]}d')
         print()
     if degraded:
-        print(f'🔍 轻度观察（7-30d 沉默，共 {len(degraded)}）:')
+        print(f'轻度观察（7-30d 沉默，共 {len(degraded)}）:')
         for e in degraded:
             print(f'  - {e["source"]}  last={e["last_archive_date"]}  '
                   f'silent={e["silent_days"]}d')

@@ -308,7 +308,7 @@ def log_search_failure(query: str, tokens: list[str]):
 
 def scan_all() -> dict:
     """Scan all failure sources, analyze patterns, extract lessons."""
-    print(f"🔍 Reflexion 扫描 — {TODAY}\n")
+    print(f"Reflexion 扫描 — {TODAY}\n")
 
     # Collect
     dream_fails = collect_dream_failures()
@@ -362,7 +362,7 @@ def main():
     if report_mode:
         print(f"\n::reflexion::{json.dumps(report)}")
 
-    print(f"\n  ✅ Reflexion 扫描完成")
+    print(f"\n  Reflexion 扫描完成")
 
 
 if __name__ == "__main__":

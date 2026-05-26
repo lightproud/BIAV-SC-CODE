@@ -95,7 +95,7 @@ def get_session_changes() -> dict:
     # Files from today's commits
     try:
         result = subprocess.run(
-            ["git", "diff", "--name-only", "--since=midnight", "HEAD~10", "HEAD"],
+            ["git", "log", "--since=midnight", "--name-only", "--pretty=format:", "HEAD"],
             capture_output=True, text=True, cwd=str(REPO), timeout=10,
         )
         for filepath in result.stdout.strip().splitlines():
@@ -342,7 +342,7 @@ def write_session_digest(changes: dict, facts: list[dict], graph_updates: int):
 
     if not DRY_RUN:
         digest_file.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
-        log(f"  📝 Digest written: {digest_file.name}")
+        log(f"  Digest written: {digest_file.name}")
 
         # Cleanup: keep last 50 digests
         digests = sorted(DIGESTS_DIR.glob("*.json"), reverse=True)
@@ -371,7 +371,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
         log("  No knowledge files changed, skipping reindex")
         return
 
-    log(f"  📊 {len(knowledge_files)} knowledge file(s) changed, triggering reindex...")
+    log(f"  {len(knowledge_files)} knowledge file(s) changed, triggering reindex...")
 
     if DRY_RUN:
         log(f"  [DRY RUN] Would reindex: {knowledge_files[:5]}")
@@ -382,7 +382,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
         sys.path.insert(0, str(REPO / "scripts"))
         from memory_search import build_index
         build_index()
-        log("  ✅ Vector index rebuilt")
+        log("  Vector index rebuilt")
     except Exception as e:
         log(f"  ⚠ Vector reindex failed: {e}")
 
@@ -390,7 +390,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
     try:
         from knowledge_graph import build_graph
         build_graph()
-        log("  ✅ Knowledge graph rebuilt")
+        log("  Knowledge graph rebuilt")
     except Exception as e:
         log(f"  ⚠ Graph rebuild failed: {e}")
 
@@ -402,7 +402,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
 
 def run_writeback() -> dict:
     """Run the full write-back loop."""
-    log(f"🔄 Memory Write-back — {TODAY}\n")
+    log(f"Memory Write-back — {TODAY}\n")
 
     # 1. Detect changes
     changes = get_session_changes()
@@ -411,7 +411,7 @@ def run_writeback() -> dict:
     log(f"  Today's commits: {len(changes['commits'])}")
 
     if not all_changed and not changes["commits"]:
-        log("  ✅ No changes detected, nothing to write back")
+        log("  No changes detected, nothing to write back")
         return {"status": "no_changes"}
 
     # 2. Extract facts
@@ -444,7 +444,7 @@ def run_writeback() -> dict:
         "digest_written": True,
     }
 
-    log(f"\n  ✅ Write-back complete: {len(all_facts)} facts, {graph_updates} graph updates")
+    log(f"\n  Write-back complete: {len(all_facts)} facts, {graph_updates} graph updates")
     return summary
 
 
@@ -457,7 +457,7 @@ def main():
 
     except Exception as e:
         if VERBOSE:
-            print(f"  ❌ Write-back error: {e}")
+            print(f"  Write-back error: {e}")
             import traceback
             traceback.print_exc()
 
