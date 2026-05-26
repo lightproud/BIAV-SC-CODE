@@ -86,7 +86,7 @@ def convert_item(item: dict) -> dict:
 
 def dedup_key(item: dict) -> str:
     """Generate dedup key for an item. URL-first, title fallback — aligned with aggregator."""
-    url = (item.get('url', '') or '').replace('http://', 'https://').rstrip('/').strip()
+    url = (item.get('url', '') or '').replace('http://', 'https://').strip().rstrip('/')
     if url:
         return url
     return f"{item.get('title', '')[:60]}|{item.get('source', '')}|{item.get('author', '')}"
