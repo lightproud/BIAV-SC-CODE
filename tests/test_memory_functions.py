@@ -1,7 +1,7 @@
 import sys
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import dream
 import fact_store
 import knowledge_graph
+import memrl
 
 
 class TestComputeDeviation(unittest.TestCase):
@@ -93,6 +94,27 @@ class TestEntityDict(unittest.TestCase):
         nodes, _ = knowledge_graph.extract_concepts_from_text()
         names = {n["name"] for n in nodes if n["type"] == "Concept"}
         self.assertTrue({"BPT", "MCP", "TF-IDF"} <= names)
+
+
+class TestSuggestArchival(unittest.TestCase):
+    def _entry(self, utility, trend, days_old):
+        return {
+            "utility": utility,
+            "trend": trend,
+            "first_seen": (memrl.TODAY - timedelta(days=days_old)).isoformat(),
+        }
+
+    def test_only_old_low_nonrising_suggested(self):
+        # Regression: archival relies on first_seen, not the always-today
+        # "computed" field, so a long-tracked low-utility file is now flagged.
+        utility = {
+            "old_low.md": self._entry(0.1, "declining", 40),
+            "new_low.md": self._entry(0.1, "declining", 0),
+            "old_high.md": self._entry(0.5, "stable", 40),
+            "old_rising.md": self._entry(0.1, "rising", 40),
+        }
+        suggested = {s["file"] for s in memrl.suggest_archival(utility)}
+        self.assertEqual(suggested, {"old_low.md"})
 
 
 if __name__ == "__main__":

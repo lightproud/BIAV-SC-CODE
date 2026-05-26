@@ -320,6 +320,7 @@ def compute_utility() -> dict:
             "insight_citations": insights.get(fp, {}).get("cited_count", 0),
             "last_cited": insights.get(fp, {}).get("last_cited"),
             "trend": trend,
+            "first_seen": existing.get(fp, {}).get("first_seen", TODAY.isoformat()),
             "computed": TODAY.isoformat(),
         }
 
@@ -339,7 +340,7 @@ def suggest_archival(utility: dict) -> list[dict]:
     for fp, data in utility.items():
         if data["utility"] < ARCHIVAL_THRESHOLD and data["trend"] != "rising":
             # Check if file has been tracked long enough
-            first_seen = data.get("computed", TODAY.isoformat())
+            first_seen = data.get("first_seen", data.get("computed", TODAY.isoformat()))
             try:
                 first_date = date.fromisoformat(first_seen)
                 days_tracked = (TODAY - first_date).days
