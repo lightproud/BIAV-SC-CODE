@@ -1,22 +1,82 @@
 {
-  "collected_at": "2026-05-27T09:02:19.406081+00:00",
+  "collected_at": "2026-05-27T12:22:57.571672+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
-      "time": "2026-05-26T09:19:30+00:00",
+      "time": "2026-05-27T11:41:35+00:00",
+      "lang": "spanish",
+      "title": "[正面] Uno de los mejores gachas que jugue, y el único qu...",
+      "summary": "Uno de los mejores gachas que jugue, y el único que me gustó al 100%, lo recomiendo totalmente.",
+      "url": "https://steamcommunity.com/profiles/76561199195390309/recommended/3052450",
+      "author": "76561199195390309",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Uno de los mejores gachas que jugue, y el único que me gustó al 100%, lo recomiendo totalmente.",
+      "timestamp_created": 1779882095,
+      "playtime_forever": 268
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T11:39:04+00:00",
       "lang": "english",
-      "title": "[正面] A very tactical gacha deck-building roguelike game...",
-      "summary": "A very tactical gacha deck-building roguelike game with a diverse play style.",
-      "url": "https://steamcommunity.com/profiles/76561199179890200/recommended/3052450",
-      "author": "76561199179890200",
-      "engagement": 1,
+      "title": "[正面] very gudt. very hardt. must use brain power. morim...",
+      "summary": "very gudt. very hardt. must use brain power. morimens cute.",
+      "url": "https://steamcommunity.com/profiles/76561198254002161/recommended/3052450",
+      "author": "76561198254002161",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "A very tactical gacha deck-building roguelike game with a diverse play style.",
-      "timestamp_created": 1779787170,
-      "playtime_forever": 394
+      "review": "very gudt. very hardt. must use brain power. morimens cute.",
+      "timestamp_created": 1779881944,
+      "playtime_forever": 3008
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T11:31:36+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩喵",
+      "summary": "好玩喵",
+      "url": "https://steamcommunity.com/profiles/76561198782171980/recommended/3052450",
+      "author": "76561198782171980",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩喵",
+      "timestamp_created": 1779881496,
+      "playtime_forever": 573
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T08:20:22+00:00",
+      "lang": "schinese",
+      "title": "[正面] It runs perfectly on all my mobile devices.",
+      "summary": "It runs perfectly on all my mobile devices.",
+      "url": "https://steamcommunity.com/profiles/76561199790976368/recommended/3052450",
+      "author": "76561199790976368",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "It runs perfectly on all my mobile devices.",
+      "timestamp_created": 1779870022,
+      "playtime_forever": 5
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T08:13:39+00:00",
+      "lang": "schinese",
+      "title": "[正面] The difficulty is just right for everyone.",
+      "summary": "The difficulty is just right for everyone.",
+      "url": "https://steamcommunity.com/profiles/76561199790349977/recommended/3052450",
+      "author": "76561199790349977",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "The difficulty is just right for everyone.",
+      "timestamp_created": 1779869619,
+      "playtime_forever": 13
     },
     {
       "source": "steam",
@@ -241,22 +301,7 @@
       "voted_up": true,
       "review": "1",
       "timestamp_created": 1779801900,
-      "playtime_forever": 937
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-26T10:23:55+00:00",
-      "lang": "spanish",
-      "title": "[负面] VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SA...",
-      "summary": "VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SAYA PERO NO TANTO MADRE DE DIOS",
-      "url": "https://steamcommunity.com/profiles/76561199167434992/recommended/3052450",
-      "author": "76561199167434992",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": false,
-      "review": "VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SAYA PERO NO TANTO MADRE DE DIOS",
-      "timestamp_created": 1779791035,
-      "playtime_forever": 34
+      "playtime_forever": 1140
     }
   ]
 }
