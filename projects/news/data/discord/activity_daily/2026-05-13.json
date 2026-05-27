@@ -1,10 +1,11 @@
 {
   "date": "2026-05-13",
-  "messages": 9068,
+  "messages": 11349,
   "unique_authors": 353,
-  "reactions_total": 771,
-  "attachments": 513,
+  "reactions_total": 1039,
+  "attachments": 608,
   "channel_activity": {
+    "🔸morimens-game-chat": 2281,
     "🔸綜合討論": 1372,
     "🔸한국어-채팅방": 20,
     "🔸русский-канал": 300,
@@ -55,15 +56,15 @@
     "Hello hello hi, is this team good?": 5
   },
   "hourly_activity": {
+    "0": 588,
+    "1": 1312,
+    "2": 1473,
+    "3": 455,
     "19": 403,
     "23": 175,
     "20": 240,
     "21": 82,
     "22": 161,
-    "0": 176,
-    "1": 623,
-    "2": 431,
-    "3": 317,
     "4": 372,
     "5": 238,
     "6": 223,
@@ -81,8 +82,8 @@
     "18": 1237
   },
   "message_types": {
-    "0": 510,
-    "19": 184
+    "0": 1375,
+    "19": 906
   },
   "top_reacted_messages": [
     {
@@ -132,6 +133,14 @@
       "author": "bartmann_3212",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1503954342615711964",
+      "channel_id": "1170692781216378960",
+      "content": "hey gorgeous whats your QQ",
+      "author": "princess.goth",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1504049869160185856",
@@ -222,28 +231,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1504264942616973394",
-      "channel_id": "1131839817982947429",
-      "content": "<:pray:1356053116260454534>",
-      "author": "0.0._.0_0.",
+      "id": "1503940505451368469",
+      "channel_id": "1170692781216378960",
+      "content": "chapter 7 is simultaneously a masterpiece and kind of a disaster because the lea",
+      "author": "reya.li",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1504252433583570944",
-      "channel_id": "1300659662311526512",
-      "content": "codigo nuevo?",
-      "author": "jhonny365",
-      "reactions": 4,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1504239656089161900",
-      "channel_id": "1503356878804226169",
-      "content": "Likely a variety of reasons, Saya no Uta was one of the first Lovecraftian horro",
-      "author": "rileybou",
-      "reactions": 4,
-      "channel": "Saya collab and future plan"
+      "id": "1503955531881119837",
+      "channel_id": "1170692781216378960",
+      "content": "Airport departure announcement",
+      "author": "vinsette",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
