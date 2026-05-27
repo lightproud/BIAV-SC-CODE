@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-27T19:16:49.169741+00:00",
+  "collected_at": "2026-05-27T21:48:20.366407+00:00",
   "source": "steam",
   "item_count": 19,
   "items": [
@@ -17,6 +17,21 @@
       "review": "very gudt. very hardt. must use brain power. morimens cute.",
       "timestamp_created": 1779881944,
       "playtime_forever": 3158
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T19:59:12+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199586729989/recommended/3052450",
+      "author": "76561199586729989",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1779911952,
+      "playtime_forever": 1750
     },
     {
       "source": "steam",
@@ -256,7 +271,7 @@
       "voted_up": true,
       "review": "Divertido, banda sonora hermosa, vale la pena jugarlo",
       "timestamp_created": 1779847392,
-      "playtime_forever": 450
+      "playtime_forever": 452
     },
     {
       "source": "steam",
@@ -272,21 +287,6 @@
       "review": "Um jogo lindo, fantástico e viciante, tem para mobile.\r\nÉ um jogo lindo, ótima história com personagens cativantes para todos os gostos.\r\nSó precisam de pequenos ajustes nas traduções, mas no geral, o jogo está impecável.\r\n\r\n9/10",
       "timestamp_created": 1779845509,
       "playtime_forever": 12120
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-26T21:42:25+00:00",
-      "lang": "english",
-      "title": "[正面] I'm John Lovecraft, and this is my favourite game...",
-      "summary": "I'm John Lovecraft, and this is my favourite game on steam.",
-      "url": "https://steamcommunity.com/profiles/76561198851880831/recommended/3052450",
-      "author": "76561198851880831",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I'm John Lovecraft, and this is my favourite game on steam.",
-      "timestamp_created": 1779831745,
-      "playtime_forever": 516
     }
   ]
 }

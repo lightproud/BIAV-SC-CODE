@@ -1,8 +1,8 @@
 {
   "date": "2026-05-28",
-  "archived_at": "2026-05-27T19:16:50.030369+00:00",
+  "archived_at": "2026-05-27T21:48:23.800893+00:00",
   "source": "steam",
-  "item_count": 23,
+  "item_count": 24,
   "items": [
     {
       "source": "steam",
@@ -348,6 +348,21 @@
       "review": "Crazy good artstyle with insanely generous amount of pulls, constantly gotta build a strategy as it's a card-builder and the lore is very fun to follow, even though it can get confusing at start of chapters, it unravels quite nice and leaves a good impact. Gameplay never got boring so far, especially since it's a roguelite and it also includes luck while playing for relics and cards + orions.",
       "timestamp_created": 1779899226,
       "playtime_forever": 1931
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T19:59:12+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199586729989/recommended/3052450",
+      "author": "76561199586729989",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1779911952,
+      "playtime_forever": 1750
     }
   ]
 }
