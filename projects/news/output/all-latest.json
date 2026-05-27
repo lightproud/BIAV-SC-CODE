@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-05-27T12:22:57.571672+00:00",
+  "collected_at": "2026-05-27T16:35:32.561528+00:00",
   "source": "all",
-  "item_count": 159,
+  "item_count": 164,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-27T11:39:04+00:00",
+      "lang": "english",
+      "title": "[正面] very gudt. very hardt. must use brain power. morim...",
+      "summary": "very gudt. very hardt. must use brain power. morimens cute.",
+      "url": "https://steamcommunity.com/profiles/76561198254002161/recommended/3052450",
+      "author": "76561198254002161",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "very gudt. very hardt. must use brain power. morimens cute.",
+      "timestamp_created": 1779881944,
+      "playtime_forever": 3158
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T12:35:54+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好游戏，简直要痛哭流滴！这家整的",
+      "summary": "好游戏，简直要痛哭流滴！这家整的",
+      "url": "https://steamcommunity.com/profiles/76561199763098925/recommended/3052450",
+      "author": "76561199763098925",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好游戏，简直要痛哭流滴！这家整的",
+      "timestamp_created": 1779885354,
+      "playtime_forever": 1198
+    },
     {
       "source": "steam",
       "time": "2026-05-27T11:41:35+00:00",
@@ -16,22 +46,7 @@
       "voted_up": true,
       "review": "Uno de los mejores gachas que jugue, y el único que me gustó al 100%, lo recomiendo totalmente.",
       "timestamp_created": 1779882095,
-      "playtime_forever": 268
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-27T11:39:04+00:00",
-      "lang": "english",
-      "title": "[正面] very gudt. very hardt. must use brain power. morim...",
-      "summary": "very gudt. very hardt. must use brain power. morimens cute.",
-      "url": "https://steamcommunity.com/profiles/76561198254002161/recommended/3052450",
-      "author": "76561198254002161",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "very gudt. very hardt. must use brain power. morimens cute.",
-      "timestamp_created": 1779881944,
-      "playtime_forever": 3008
+      "playtime_forever": 408
     },
     {
       "source": "steam",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "好玩喵",
       "timestamp_created": 1779881496,
-      "playtime_forever": 573
+      "playtime_forever": 782
     },
     {
       "source": "steam",
@@ -272,36 +287,6 @@
       "review": "A very good game.",
       "timestamp_created": 1779814478,
       "playtime_forever": 1625
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-26T15:55:50+00:00",
-      "lang": "schinese",
-      "title": "[正面] 二游暗黑地牢，上手很快，美术很不错，看到沙耶之歌联动来的，结果新手也玩不上沙耶除非爆氪，没想到意外地...",
-      "summary": "二游暗黑地牢，上手很快，美术很不错，看到沙耶之歌联动来的，结果新手也玩不上沙耶除非爆氪，没想到意外地还算好玩，玩了两天感觉缺点就是服务器太烂，经常登录的时候要尝试两三次，游戏中的延迟几百到一千偶尔会卡一下，不会真给我干外服去了吧，我连CS新加坡服务器延迟四五百，连澳洲延迟才一千多。看评论好像后面卡数值卡的很厉害，到时候就直接删号跑路，希望跑路前给主线打完多玩上几个角色",
-      "url": "https://steamcommunity.com/profiles/76561198352950567/recommended/3052450",
-      "author": "76561198352950567",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "二游暗黑地牢，上手很快，美术很不错，看到沙耶之歌联动来的，结果新手也玩不上沙耶除非爆氪，没想到意外地还算好玩，玩了两天感觉缺点就是服务器太烂，经常登录的时候要尝试两三次，游戏中的延迟几百到一千偶尔会卡一下，不会真给我干外服去了吧，我连CS新加坡服务器延迟四五百，连澳洲延迟才一千多。看评论好像后面卡数值卡的很厉害，到时候就直接删号跑路，希望跑路前给主线打完多玩上几个角色",
-      "timestamp_created": 1779810950,
-      "playtime_forever": 321
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-26T13:25:00+00:00",
-      "lang": "schinese",
-      "title": "[正面] 1",
-      "summary": "1",
-      "url": "https://steamcommunity.com/profiles/76561199888666114/recommended/3052450",
-      "author": "76561199888666114",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "1",
-      "timestamp_created": 1779801900,
-      "playtime_forever": 1140
     },
     {
       "source": "discord",
@@ -616,27 +601,55 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-26T18:20:04.912881+00:00",
+      "time": "2026-05-26T18:32:36.319203+00:00",
       "lang": "",
-      "title": "You NEED Thais in Morimens (trust me on this)",
-      "summary": "[18 hours ago] Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais I'm locked in her ...",
+      "title": "You NEED Thais in Morimens (trust me)",
+      "summary": "[22 hours ago] Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais I'm locked in her ...",
       "url": "https://www.youtube.com/watch?v=1VD0DuEBIIo",
       "author": "Rose Guardian Reya",
-      "engagement": 1435,
+      "engagement": 1675,
       "media_url": "https://i.ytimg.com/vi/1VD0DuEBIIo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6dMYWbWEztrD7G7KdDa1vaJh3Aw",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-27T01:20:04.913182+00:00",
+      "time": "2026-05-27T01:32:36.319728+00:00",
       "lang": "",
       "title": "Can we STILL beat Morimens as F2P with ONLY characters from Kaleido Recollections",
-      "summary": "[Streamed 11 hours ago] A Morimens Challenge Run series with a fresh account (Part 3: Starting from Chapter 6!) CURRENT RULESET: - A new account ...",
+      "summary": "[Streamed 15 hours ago] A Morimens Challenge Run series with a fresh account (Part 3: Starting from Chapter 6!) CURRENT RULESET: - A new account ...",
       "url": "https://www.youtube.com/watch?v=CMak3hikWZ8",
       "author": "Rose Guardian Reya",
-      "engagement": 665,
+      "engagement": 755,
       "media_url": "https://i.ytimg.com/vi/CMak3hikWZ8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkrFBnEN6U5o5L_wJVJFGql5Mcrg",
       "content_type": "image"
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T13:59:09+00:00",
+      "lang": "en",
+      "title": "Thais fanart",
+      "summary": "Guys I was devastated to notice that Thais, my beloved, had almost NO fanart. I had to change that so please enjoy! &lt;3  &#32; submitted by &#32;  /u/Ganyu_mybeloved   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp6evu/thais_fanart/",
+      "author": "/u/Ganyu_mybeloved",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/ffwfvhwtro3h1.jpg?width=140&amp;height=77&amp;auto=webp&amp;s=daf34eab72b8ac5259592d7002af47bccee31332",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T12:25:05+00:00",
+      "lang": "en",
+      "title": "Saya Collab's Free Avatar Descriptions & Lore context explained (read at your own risk; Saya game spoilers)",
+      "summary": "These are the 5 avatars you can claim for free in mail today. I like these descriptions. They&#39;re creepy with a dark humor if you&#39;ve played the original game. So here&#39;s some Saya game lore for you guys if you&#39;re interested. This post is Spoiler marked. Don&#39;t read if you don&#39;t want Saya no Uta spoilers. Don&#39;t read if you might be triggered by dark content like cannibalism and rape. Avatar 1. Living Legend Ryoko Tanbo. She&#39;s a physician, and in one of the endings she successfully killed Saya, the eldrich monster, with liquid nitrogen, preventing her from destroying the entire world. She&#39;s dubbed a legendary CoC investigator by the fans, because it&#39;s no easy feat to actually kill the monster in a CoC session. Avatar 2. The Moon is Beautiful Koji Toh. He&#39;s Fuminori (the protagonist, who fell in love with Saya)&#39;s friend. He was pushed into a well by Fuminori and nearly died there, hence the &quot;he never missed the moonlight from the bottom of the well&quot; lol. Avatar 3. Wish Fulfilled Yoh Tsukuba. She had a crush on Fuminori, but Fuminori hated her because his perception was warped and he could only see her as a disgusting monster. Saya tortured her and transformed her into a monster, so she could seem desirable to Fuminori again, and she became their sex slave. The avatar is called &quot;Wish Fulfilled&quot; because i guess Saya did &quot;fulfill&quot; her wish. This might be the most disturbing one here Avatar 4. Unknown Sender Omi Tanahata. She is Koji&#39;s girlfriend. I believe Fuminori used Koji&#39;s phone to send her a message, and lured her to their house, where she was then killed and dismembered by Saya. Saya stored her remains in the fridge and later consumed her body with Fuminori. &quot;Unknown Sender.&quot; Avatar 5. Pure White World Fuminori Sakisaka. The protagonist who fell in love with Saya. This one seems to be from the ending where Saya returned his perception back to normal, humanity wasn&#39;t dest",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp40pu/saya_collabs_free_avatar_descriptions_lore/",
+      "author": "/u/Salt-Departure-6353",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
     },
     {
       "source": "reddit",
@@ -648,51 +661,6 @@
       "author": "/u/DrExluxk",
       "engagement": 0,
       "media_url": "https://preview.redd.it/qt8p6sncqm3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=bd84716c79b983de93090403f2820a4ed3019469",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T03:28:58+00:00",
-      "lang": "en",
-      "title": "Today I’ve pulled every character to E3, and OE’ed 43 of them.",
-      "summary": "Today I finally got Miryam to E3. Which means all of my characters are at least E3 now. I thought it’s worth commemorating with a post. And you can see, I’m still waiting for that Dore rotating rerun to finally AA him. UGH… I’m a dolphin who has been playing since late 2024. I dropped the game after Arc 1 Finale thinking the game was dying, then came back in Arc 2… Over the past 2 years I’ve spent like 50% of what I had spent on Genshin (I know). I still haven’t reached the end of the top up milestone thing.  I have unlocked all the Enlighten dupes/constellation effects of every character, and I have OE’ed about 80% of them (unlocked the Ult special effect). Theoretically I have whaled my account to have everything I need for D-Tide highest difficulty.  However, IRONICALLY, I can’t clear the highest difficulty endgame by whaling alone. The game has an actually challenging gameplay that requires your brains. Not just dupes.  And there are plenty people out there who are FTP and they can clear the endgame much better than I do, reaching 400 or above, because they put in the time to think about strategies, to learn from tutorials.  Meanwhile, I’m just a lazy casual player who don’t mind spending, and I’m here mainly for the art and lore, so I still haven’t reached 400 in my D-Tides lol. Previously when I was busy with work I had completely stopped doing D-Tides for a while. And It didn’t actually bother me that much. Because in this game you don’t rely on the D-Tide/“Abyss” to get pull currencies. They give out a lot of pulls constantly. So not doing D-Tide only meant that I was missing out on the pyramids that let me upgrade characters further after lv 60.   &#32; submitted by &#32;  /u/RiAsterism   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1totk2l/today_ive_pulled_every_character_to_e3_and_oeed/",
-      "author": "/u/RiAsterism",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/xmi7f32enl3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e3448e4075c79f7fc1ba8b93805efe5e18b1b534",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T09:47:16+00:00",
-      "lang": "en",
-      "title": "Hameln made out of clay (OC)",
-      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tp0ria/hameln_made_out_of_clay_oc/",
-      "author": "/u/Samoglow",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/7l3fr5xvin3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eaa6ad6980028d99418ca98b7b0810cb604fb5fb",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T04:57:33+00:00",
-      "lang": "en",
-      "title": "What the...",
-      "summary": "&#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tovf2s/what_the/",
-      "author": "/u/anandosss",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ogyrwtx63m3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=55cc7f43a841ec5bd5e16a0decf5a7d4412d1de4",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -715,6 +683,81 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T14:18:51+00:00",
+      "lang": "en",
+      "title": "If you're a Morimens enjoyer, let me know in the comments what draws you to it. Personally, I need more Lovecraftian games like this! Also, lowkey an alternate universe of me?",
+      "summary": "&#32; submitted by &#32;  /u/AlbatrossOpen5843   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp6z03/if_youre_a_morimens_enjoyer_let_me_know_in_the/",
+      "author": "/u/AlbatrossOpen5843",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/100ycrv3vo3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=37b59ba278e7c5c79a19f9c95058757f062eb4e1",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T09:47:16+00:00",
+      "lang": "en",
+      "title": "Hameln made out of clay (OC)",
+      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp0ria/hameln_made_out_of_clay_oc/",
+      "author": "/u/Samoglow",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/7l3fr5xvin3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eaa6ad6980028d99418ca98b7b0810cb604fb5fb",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T03:28:58+00:00",
+      "lang": "en",
+      "title": "Today I’ve pulled every character to E3, and OE’ed 43 of them.",
+      "summary": "Today I finally got Miryam to E3. Which means all of my characters are at least E3 now. I thought it’s worth commemorating with a post. And you can see, I’m still waiting for that Dore rotating rerun to finally AA him. UGH… I’m a dolphin who has been playing since late 2024. I dropped the game after Arc 1 Finale thinking the game was dying, then came back in Arc 2… Over the past 2 years I’ve spent like 50% of what I had spent on Genshin (I know). I still haven’t reached the end of the top up milestone thing.  I have unlocked all the Enlighten dupes/constellation effects of every character, and I have OE’ed about 80% of them (unlocked the Ult special effect). Theoretically I have whaled my account to have everything I need for D-Tide highest difficulty.  However, IRONICALLY, I can’t clear the highest difficulty endgame by whaling alone. The game has an actually challenging gameplay that requires your brains. Not just dupes.  And there are plenty people out there who are FTP and they can clear the endgame much better than I do, reaching 400 or above, because they put in the time to think about strategies, to learn from tutorials.  Meanwhile, I’m just a lazy casual player who don’t mind spending, and I’m here mainly for the art and lore, so I still haven’t reached 400 in my D-Tides lol. Previously when I was busy with work I had completely stopped doing D-Tides for a while. And It didn’t actually bother me that much. Because in this game you don’t rely on the D-Tide/“Abyss” to get pull currencies. They give out a lot of pulls constantly. So not doing D-Tide only meant that I was missing out on the pyramids that let me upgrade characters further after lv 60.   &#32; submitted by &#32;  /u/RiAsterism   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1totk2l/today_ive_pulled_every_character_to_e3_and_oeed/",
+      "author": "/u/RiAsterism",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/xmi7f32enl3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e3448e4075c79f7fc1ba8b93805efe5e18b1b534",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T04:57:33+00:00",
+      "lang": "en",
+      "title": "What the...",
+      "summary": "&#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tovf2s/what_the/",
+      "author": "/u/anandosss",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/ogyrwtx63m3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=55cc7f43a841ec5bd5e16a0decf5a7d4412d1de4",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T16:23:44+00:00",
+      "lang": "en",
+      "title": "sakura reveries",
+      "summary": "I LOVE YOU RAMONA quick 1 hour background photobashing test this was super fun,,,  &#32; submitted by &#32;  /u/mimilkyu   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tpak6l/sakura_reveries/",
+      "author": "/u/mimilkyu",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/n4t012pkhp3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fcb4158b4bd4721fa25b86559a27707371d212e6",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T05:37:24+00:00",
       "lang": "en",
       "title": "PSA about Communication Device",
@@ -722,21 +765,6 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1tow7yi/psa_about_communication_device/",
       "author": "/u/ivan_kri",
       "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T18:56:44+00:00",
-      "lang": "en",
-      "title": "Full Counterrrr ~1M Boss HP",
-      "summary": "This team has been carrying me with D-Tide perfect clears recently. The entire HP bar gone due to counter is really satisfying.  &#32; submitted by &#32;  /u/blake8129   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1togiwr/full_counterrrr_1m_boss_hp/",
-      "author": "/u/blake8129",
-      "engagement": 0,
-      "media_url": "https://external-preview.redd.it/Z3FvbmR6M3UzajNoMTnwIkyV4Pe_o6N8rp5oRRHlDzzgUgedPIedp5yeJun6.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e0b06cdc544e932dcb7aa19ebed6be4a52abf2dd",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -758,6 +786,21 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-26T18:56:44+00:00",
+      "lang": "en",
+      "title": "Full Counterrrr ~1M Boss HP",
+      "summary": "This team has been carrying me with D-Tide perfect clears recently. The entire HP bar gone due to counter is really satisfying.  &#32; submitted by &#32;  /u/blake8129   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1togiwr/full_counterrrr_1m_boss_hp/",
+      "author": "/u/blake8129",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/Z3FvbmR6M3UzajNoMTnwIkyV4Pe_o6N8rp5oRRHlDzzgUgedPIedp5yeJun6.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e0b06cdc544e932dcb7aa19ebed6be4a52abf2dd",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T09:30:33+00:00",
       "lang": "en",
       "title": "OE GDoll vs OE GMurphy priority",
@@ -765,6 +808,21 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1tp0ghb/oe_gdoll_vs_oe_gmurphy_priority/",
       "author": "/u/tenxsmtch",
       "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T13:23:29+00:00",
+      "lang": "en",
+      "title": "alternative team help",
+      "summary": "Hello there! I&#39;ve been using poison team as my main so far (Gdoll, Nymph, Xu, Lily). Its great, made it to Arc 2, Chapter 5. But wanna try other characters/teams. Planning to replay previous arc/chapters on hard mode to earn some XP. Also I saw D-Zone requires 5 teams? Anyway, I wanna try new archetypes (playstyles? such as aequor/counter/other dot/generic hypercarry and so on) and need some advice on team building. It would be best if characters stayed within their own teams and not be repeated across other teams. I dont mind pulling character that i am missing if its best in slot  &#32; submitted by &#32;  /u/Fluffy_Horse   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp5h53/alternative_team_help/",
+      "author": "/u/Fluffy_Horse",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/t1akc82xgo3h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=96a4f52786076a3b82dcfeeadcb8d03a005c77e2",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -786,6 +844,21 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T13:21:18+00:00",
+      "lang": "en",
+      "title": "I would need someone to help me with team building and rolling 😭",
+      "summary": "I run a Ghelot team that cannot sustain well in boss fights, any recommends on who to pull and who to build? I also want to roll for Saya so im saving up for her  &#32; submitted by &#32;  /u/Waste-Tomatillo-3113   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tp5eyo/i_would_need_someone_to_help_me_with_team/",
+      "author": "/u/Waste-Tomatillo-3113",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/6v3kgri2lo3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f31b2e232feaacf9a36cf58d43a14dd52ede8e3e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T06:50:17+00:00",
       "lang": "en",
       "title": "😭",
@@ -794,6 +867,36 @@
       "author": "/u/jadhanshsnajsakak",
       "engagement": 0,
       "media_url": "https://preview.redd.it/lvrnh0abnm3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a7b9b05e9640473eb480e488c9d72229976d910e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T06:23:25+00:00",
+      "lang": "en",
+      "title": "Why is he stronger than some dissolution canonfodder?",
+      "summary": "John wrench jackson gets repeatedly beaten up by awakeners  &#32; submitted by &#32;  /u/pitchblack_lol   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tox42q/why_is_he_stronger_than_some_dissolution/",
+      "author": "/u/pitchblack_lol",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/xr95x0kiim3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84907e03197159042f2bcd6f8331525c24f05b01",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T16:25:08+00:00",
+      "lang": "en",
+      "title": "Ryker Axiom?",
+      "summary": "Anyone know what the relic part of his AA does? His rouse already lets you select/upgrade a relic  &#32; submitted by &#32;  /u/StillwaitingforGeno   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tpallu/ryker_axiom/",
+      "author": "/u/StillwaitingforGeno",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/397qmfhvhp3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5bc8ee605cbbe699d50908f319968adca12450cc",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -842,74 +945,23 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T21:23:55+00:00",
+      "time": "2026-05-27T13:59:09+00:00",
       "lang": "en",
-      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
-      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
-      "author": "/u/FableAccel",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/0yu6lgydsj3h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=12f994088aea36ee1ea07558fb1551767d3897ab",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
+      "title": "Thais fanart",
+      "summary": "Guys I was devastated to notice that Thais, my beloved, had almost NO fanart. I had to change that so please enjoy! &lt;3  &#32; submitted by &#32;  /u/Ganyu_mybeloved   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp6evu/thais_fanart/",
+      "author": "u//u/Ganyu_mybeloved",
+      "engagement": 0
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T06:23:25+00:00",
+      "time": "2026-05-27T12:25:05+00:00",
       "lang": "en",
-      "title": "Why is he stronger than some dissolution canonfodder?",
-      "summary": "John wrench jackson gets repeatedly beaten up by awakeners  &#32; submitted by &#32;  /u/pitchblack_lol   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tox42q/why_is_he_stronger_than_some_dissolution/",
-      "author": "/u/pitchblack_lol",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/xr95x0kiim3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84907e03197159042f2bcd6f8331525c24f05b01",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T04:32:46+00:00",
-      "lang": "en",
-      "title": "This is my main lineup at the moment. Do I continue pulling on standard caro in hopes of getting dupe Thais? Or should I start using my standard banner currency for wheels?",
-      "summary": "&#x200B;  &#32; submitted by &#32;  /u/Fine_Ingenuity8007   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1toux87/this_is_my_main_lineup_at_the_moment_do_i/",
-      "author": "/u/Fine_Ingenuity8007",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ei0denwryl3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=177bd45e1ab15e7e3a13827e44f0028bd7ce13d9",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T13:18:22+00:00",
-      "lang": "en",
-      "title": "Are there any actual information or tier list channels/web pages for this game?",
-      "summary": "I am a newbie. Whenever I search for something, the entire search is just a content farm channel named &quot;flares&quot; who just screams about how much he hates every character. I tried watching/reading some of his stuff but he straight up goes &quot;this unit sucks, don&#39;t pull because I hate it&quot; with no info as to why. I am not gonna argue about what content people like, to each to their own but isn&#39;t there at least a page like prydwen or a channel like IWinToLose for this game with actual info?  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1to6pcj/are_there_any_actual_information_or_tier_list/",
-      "author": "/u/Embarrassed-Sign3106",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T15:22:13+00:00",
-      "lang": "en",
-      "title": "Do we know anything about Faint?",
-      "summary": "I was browsing posses and then was like &quot;Wait, where is Faint&#39;s posse?&quot;, and that lead me to realize that I do not remember seeing her for the entire Arc 1, and while I did not finish Arc 2 yet, I am pretty certain that she is not in it, and she has no side story, hence, no posse, I know that Tinct is her sister, but how do I even know that? I&#39;ve heard it somewhere, but never seen it in game, so it might not even be true, and I think aside from communication device and reproductive fenzy, we don&#39;t even talk to her, and the only other thing we have is character description.. Am I tripping or did BIAV just forget about her?   &#32; submitted by &#32;  /u/ivan_kri   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1toa6a1/do_we_know_anything_about_faint/",
-      "author": "/u/ivan_kri",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
+      "title": "Saya Collab's Free Avatar Descriptions & Lore context explained (read at your own risk; Saya game spoilers)",
+      "summary": "These are the 5 avatars you can claim for free in mail today. I like these descriptions. They&#39;re creepy with a dark humor if you&#39;ve played the original game. So here&#39;s some Saya game lore for you guys if you&#39;re interested. This post is Spoiler marked. Don&#39;t read if you don&#39;t want Saya no Uta spoilers. Don&#39;t read if you might be triggered by dark content like cannibalism and rape. Avatar 1. Living Legend Ryoko Tanbo. She&#39;s a physician, and in one of the endings she successfully killed Saya, the eldrich monster, with liquid nitrogen, preventing her from destroying the entire world. She&#39;s dubbed a legendary CoC investigator by the fans, because it&#39;s no easy feat to actually kill the monster in a CoC session. Avatar 2. The Moon is Beautiful Koji Toh. He&#39;s Fuminori (the protagonist, who fell in love with Saya)&#39;s friend. He was pushed into a well by Fuminori and nearly died there, hence the &quot;he never missed the moonlight from the bottom of the well&quot; lol. Avatar 3. Wish Fulfilled Yoh Tsukuba. She had a crush on Fuminori, but Fuminori hated her because his perception was warped and he could only see her as a disgusting monster. Saya tortured her and transformed her into a monster, so she could seem desirable to Fuminori again, and she became their sex slave. The avatar is called &quot;Wish Fulfilled&quot; because i guess Saya did &quot;fulfill&quot; her wish. This might be the most disturbing one here Avatar 4. Unknown Sender Omi Tanahata. She is Koji&#39;s girlfriend. I believe Fuminori used Koji&#39;s phone to send her a message, and lured her to their house, where she was then killed and dismembered by Saya. Saya stored her remains in the fridge and later consumed her body with Fuminori. &quot;Unknown Sender.&quot; Avatar 5. Pure White World Fuminori Sakisaka. The protagonist who fell in love with Saya. This one seems to be from the ending where Saya returned his perception back to normal, humanity wasn&#39;t destroyed, and Fuminori spent the rest of his life in a psyche ward.  &#32; submitted by &#32;  /u/Salt-Departure-6353   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp40pu/saya_collabs_free_avatar_descriptions_lore/",
+      "author": "u//u/Salt-Departure-6353",
+      "engagement": 0
     },
     {
       "source": "reddit",
@@ -919,36 +971,6 @@
       "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1toxxco/new_code_fhfwwvqqsvsg/",
       "author": "u//u/DrExluxk",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T03:28:58+00:00",
-      "lang": "en",
-      "title": "Today I’ve pulled every character to E3, and OE’ed 43 of them.",
-      "summary": "Today I finally got Miryam to E3. Which means all of my characters are at least E3 now. I thought it’s worth commemorating with a post. And you can see, I’m still waiting for that Dore rotating rerun to finally AA him. UGH… I’m a dolphin who has been playing since late 2024. I dropped the game after Arc 1 Finale thinking the game was dying, then came back in Arc 2… Over the past 2 years I’ve spent like 50% of what I had spent on Genshin (I know). I still haven’t reached the end of the top up milestone thing.  I have unlocked all the Enlighten dupes/constellation effects of every character, and I have OE’ed about 80% of them (unlocked the Ult special effect). Theoretically I have whaled my account to have everything I need for D-Tide highest difficulty.  However, IRONICALLY, I can’t clear the highest difficulty endgame by whaling alone. The game has an actually challenging gameplay that requires your brains. Not just dupes.  And there are plenty people out there who are FTP and they can clear the endgame much better than I do, reaching 400 or above, because they put in the time to think about strategies, to learn from tutorials.  Meanwhile, I’m just a lazy casual player who don’t mind spending, and I’m here mainly for the art and lore, so I still haven’t reached 400 in my D-Tides lol. Previously when I was busy with work I had completely stopped doing D-Tides for a while. And It didn’t actually bother me that much. Because in this game you don’t rely on the D-Tide/“Abyss” to get pull currencies. They give out a lot of pulls constantly. So not doing D-Tide only meant that I was missing out on the pyramids that let me upgrade characters further after lv 60.   &#32; submitted by &#32;  /u/RiAsterism   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1totk2l/today_ive_pulled_every_character_to_e3_and_oeed/",
-      "author": "u//u/RiAsterism",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T09:47:16+00:00",
-      "lang": "en",
-      "title": "Hameln made out of clay (OC)",
-      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tp0ria/hameln_made_out_of_clay_oc/",
-      "author": "u//u/Samoglow",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T04:57:33+00:00",
-      "lang": "en",
-      "title": "What the...",
-      "summary": "&#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tovf2s/what_the/",
-      "author": "u//u/anandosss",
       "engagement": 0
     },
     {
@@ -963,22 +985,62 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T14:18:51+00:00",
+      "lang": "en",
+      "title": "If you're a Morimens enjoyer, let me know in the comments what draws you to it. Personally, I need more Lovecraftian games like this! Also, lowkey an alternate universe of me?",
+      "summary": "&#32; submitted by &#32;  /u/AlbatrossOpen5843   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp6z03/if_youre_a_morimens_enjoyer_let_me_know_in_the/",
+      "author": "u//u/AlbatrossOpen5843",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T09:47:16+00:00",
+      "lang": "en",
+      "title": "Hameln made out of clay (OC)",
+      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp0ria/hameln_made_out_of_clay_oc/",
+      "author": "u//u/Samoglow",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T03:28:58+00:00",
+      "lang": "en",
+      "title": "Today I’ve pulled every character to E3, and OE’ed 43 of them.",
+      "summary": "Today I finally got Miryam to E3. Which means all of my characters are at least E3 now. I thought it’s worth commemorating with a post. And you can see, I’m still waiting for that Dore rotating rerun to finally AA him. UGH… I’m a dolphin who has been playing since late 2024. I dropped the game after Arc 1 Finale thinking the game was dying, then came back in Arc 2… Over the past 2 years I’ve spent like 50% of what I had spent on Genshin (I know). I still haven’t reached the end of the top up milestone thing.  I have unlocked all the Enlighten dupes/constellation effects of every character, and I have OE’ed about 80% of them (unlocked the Ult special effect). Theoretically I have whaled my account to have everything I need for D-Tide highest difficulty.  However, IRONICALLY, I can’t clear the highest difficulty endgame by whaling alone. The game has an actually challenging gameplay that requires your brains. Not just dupes.  And there are plenty people out there who are FTP and they can clear the endgame much better than I do, reaching 400 or above, because they put in the time to think about strategies, to learn from tutorials.  Meanwhile, I’m just a lazy casual player who don’t mind spending, and I’m here mainly for the art and lore, so I still haven’t reached 400 in my D-Tides lol. Previously when I was busy with work I had completely stopped doing D-Tides for a while. And It didn’t actually bother me that much. Because in this game you don’t rely on the D-Tide/“Abyss” to get pull currencies. They give out a lot of pulls constantly. So not doing D-Tide only meant that I was missing out on the pyramids that let me upgrade characters further after lv 60.   &#32; submitted by &#32;  /u/RiAsterism   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1totk2l/today_ive_pulled_every_character_to_e3_and_oeed/",
+      "author": "u//u/RiAsterism",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T04:57:33+00:00",
+      "lang": "en",
+      "title": "What the...",
+      "summary": "&#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tovf2s/what_the/",
+      "author": "u//u/anandosss",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T16:23:44+00:00",
+      "lang": "en",
+      "title": "sakura reveries",
+      "summary": "I LOVE YOU RAMONA quick 1 hour background photobashing test this was super fun,,,  &#32; submitted by &#32;  /u/mimilkyu   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tpak6l/sakura_reveries/",
+      "author": "u//u/mimilkyu",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T05:37:24+00:00",
       "lang": "en",
       "title": "PSA about Communication Device",
       "summary": "I know some players might not check their communication device, but when you get a unit +12, they send you a message, where you get a full pyramid, so you might get a few from Lotan, Ogier, or Doll, or whoever else you have at +12  &#32; submitted by &#32;  /u/ivan_kri   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tow7yi/psa_about_communication_device/",
       "author": "u//u/ivan_kri",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T18:56:44+00:00",
-      "lang": "en",
-      "title": "Full Counterrrr ~1M Boss HP",
-      "summary": "This team has been carrying me with D-Tide perfect clears recently. The entire HP bar gone due to counter is really satisfying.  &#32; submitted by &#32;  /u/blake8129   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1togiwr/full_counterrrr_1m_boss_hp/",
-      "author": "u//u/blake8129",
       "engagement": 0
     },
     {
@@ -993,12 +1055,32 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-26T18:56:44+00:00",
+      "lang": "en",
+      "title": "Full Counterrrr ~1M Boss HP",
+      "summary": "This team has been carrying me with D-Tide perfect clears recently. The entire HP bar gone due to counter is really satisfying.  &#32; submitted by &#32;  /u/blake8129   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1togiwr/full_counterrrr_1m_boss_hp/",
+      "author": "u//u/blake8129",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T09:30:33+00:00",
       "lang": "en",
       "title": "OE GDoll vs OE GMurphy priority",
       "summary": "Which is better to prioritize OE GDoll or OE GMurphy? I have the majority of other characters, so what is the overall consensus?  &#32; submitted by &#32;  /u/tenxsmtch   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tp0ghb/oe_gdoll_vs_oe_gmurphy_priority/",
       "author": "u//u/tenxsmtch",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T13:23:29+00:00",
+      "lang": "en",
+      "title": "alternative team help",
+      "summary": "Hello there! I&#39;ve been using poison team as my main so far (Gdoll, Nymph, Xu, Lily). Its great, made it to Arc 2, Chapter 5. But wanna try other characters/teams. Planning to replay previous arc/chapters on hard mode to earn some XP. Also I saw D-Zone requires 5 teams? Anyway, I wanna try new archetypes (playstyles? such as aequor/counter/other dot/generic hypercarry and so on) and need some advice on team building. It would be best if characters stayed within their own teams and not be repeated across other teams. I dont mind pulling character that i am missing if its best in slot  &#32; submitted by &#32;  /u/Fluffy_Horse   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp5h53/alternative_team_help/",
+      "author": "u//u/Fluffy_Horse",
       "engagement": 0
     },
     {
@@ -1013,12 +1095,42 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T13:21:18+00:00",
+      "lang": "en",
+      "title": "I would need someone to help me with team building and rolling 😭",
+      "summary": "I run a Ghelot team that cannot sustain well in boss fights, any recommends on who to pull and who to build? I also want to roll for Saya so im saving up for her  &#32; submitted by &#32;  /u/Waste-Tomatillo-3113   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp5eyo/i_would_need_someone_to_help_me_with_team/",
+      "author": "u//u/Waste-Tomatillo-3113",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T06:50:17+00:00",
       "lang": "en",
       "title": "😭",
       "summary": "If they want to give me so many of these at least give me my first gdoll 😭😭  &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1toxm4u/_/",
       "author": "u//u/jadhanshsnajsakak",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T06:23:25+00:00",
+      "lang": "en",
+      "title": "Why is he stronger than some dissolution canonfodder?",
+      "summary": "John wrench jackson gets repeatedly beaten up by awakeners  &#32; submitted by &#32;  /u/pitchblack_lol   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tox42q/why_is_he_stronger_than_some_dissolution/",
+      "author": "u//u/pitchblack_lol",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T16:25:08+00:00",
+      "lang": "en",
+      "title": "Ryker Axiom?",
+      "summary": "Anyone know what the relic part of his AA does? His rouse already lets you select/upgrade a relic  &#32; submitted by &#32;  /u/StillwaitingforGeno   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tpallu/ryker_axiom/",
+      "author": "u//u/StillwaitingforGeno",
       "engagement": 0
     },
     {
@@ -1049,56 +1161,6 @@
       "summary": "im a new player, and im aware that thais is a great support but for a sorel comp do i absolutely need her? or can i sub her out for someone like pickman? im currently using sorel / faint / leigh / pickman for context   &#32; submitted by &#32;  /u/chiikawaluv   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1toraok/is_thais_a_must_pull/",
       "author": "u//u/chiikawaluv",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T21:23:55+00:00",
-      "lang": "en",
-      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
-      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
-      "author": "u//u/FableAccel",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T06:23:25+00:00",
-      "lang": "en",
-      "title": "Why is he stronger than some dissolution canonfodder?",
-      "summary": "John wrench jackson gets repeatedly beaten up by awakeners  &#32; submitted by &#32;  /u/pitchblack_lol   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tox42q/why_is_he_stronger_than_some_dissolution/",
-      "author": "u//u/pitchblack_lol",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T04:32:46+00:00",
-      "lang": "en",
-      "title": "This is my main lineup at the moment. Do I continue pulling on standard caro in hopes of getting dupe Thais? Or should I start using my standard banner currency for wheels?",
-      "summary": "&#x200B;  &#32; submitted by &#32;  /u/Fine_Ingenuity8007   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1toux87/this_is_my_main_lineup_at_the_moment_do_i/",
-      "author": "u//u/Fine_Ingenuity8007",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T13:18:22+00:00",
-      "lang": "en",
-      "title": "Are there any actual information or tier list channels/web pages for this game?",
-      "summary": "I am a newbie. Whenever I search for something, the entire search is just a content farm channel named &quot;flares&quot; who just screams about how much he hates every character. I tried watching/reading some of his stuff but he straight up goes &quot;this unit sucks, don&#39;t pull because I hate it&quot; with no info as to why. I am not gonna argue about what content people like, to each to their own but isn&#39;t there at least a page like prydwen or a channel like IWinToLose for this game with actual info?  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1to6pcj/are_there_any_actual_information_or_tier_list/",
-      "author": "u//u/Embarrassed-Sign3106",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T15:22:13+00:00",
-      "lang": "en",
-      "title": "Do we know anything about Faint?",
-      "summary": "I was browsing posses and then was like &quot;Wait, where is Faint&#39;s posse?&quot;, and that lead me to realize that I do not remember seeing her for the entire Arc 1, and while I did not finish Arc 2 yet, I am pretty certain that she is not in it, and she has no side story, hence, no posse, I know that Tinct is her sister, but how do I even know that? I&#39;ve heard it somewhere, but never seen it in game, so it might not even be true, and I think aside from communication device and reproductive fenzy, we don&#39;t even talk to her, and the only other thing we have is character description.. Am I tripping or did BIAV just forget about her?   &#32; submitted by &#32;  /u/ivan_kri   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1toa6a1/do_we_know_anything_about_faint/",
-      "author": "u//u/ivan_kri",
       "engagement": 0
     },
     {
@@ -1183,7 +1245,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.692957+00:00",
+      "time": "2026-05-27T16:32:49.899480+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1193,7 +1255,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.704830+00:00",
+      "time": "2026-05-27T16:32:49.911200+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
@@ -1203,7 +1265,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.720913+00:00",
+      "time": "2026-05-27T16:32:49.926985+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1213,7 +1275,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.732672+00:00",
+      "time": "2026-05-27T16:32:49.938445+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1223,7 +1285,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.744835+00:00",
+      "time": "2026-05-27T16:32:49.949831+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1233,7 +1295,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.756340+00:00",
+      "time": "2026-05-27T16:32:49.960727+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1243,7 +1305,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.767230+00:00",
+      "time": "2026-05-27T16:32:49.971161+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1253,17 +1315,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.777897+00:00",
-      "lang": "zh",
-      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T12:20:18.789342+00:00",
+      "time": "2026-05-27T16:32:49.981868+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时",
       "summary": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时间：5月18日 09:00 - 6月15日 09:00\n○ 头像：\n「典藏邮票：沙耶」\n「弥萨格幕间剧：熔毁·朵尔」\n「永不褪色的昨天：凯刻斯」\n「诺缔拉·寻找零件」\n「戈 ...全文",
@@ -1273,7 +1325,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.803897+00:00",
+      "time": "2026-05-27T16:32:49.997812+00:00",
+      "lang": "zh",
+      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-27T16:32:50.008434+00:00",
       "lang": "zh",
       "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
       "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
@@ -1283,17 +1345,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.814403+00:00",
-      "lang": "zh",
-      "title": "忘却前夜\n【0520戈利亚生贺17h】\n宣一下\n⚠️存在戈利亚x凯刻斯cp向内容⚠️\n双人图会标预警，烦请有雷自避非常感谢\n\n宣图画师：吾今",
-      "summary": "忘却前夜\n【0520戈利亚生贺17h】\n宣一下\n⚠️存在戈利亚x凯刻斯cp向内容⚠️\n双人图会标预警，烦请有雷自避非常感谢\n\n宣图画师：吾今",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T12:20:18.825419+00:00",
+      "time": "2026-05-27T16:32:50.019323+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
       "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
@@ -1303,7 +1355,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.836300+00:00",
+      "time": "2026-05-27T16:32:50.030278+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
       "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
@@ -1313,7 +1365,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.850686+00:00",
+      "time": "2026-05-27T16:32:50.044925+00:00",
       "lang": "zh",
       "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
@@ -1323,7 +1375,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:20:18.861294+00:00",
+      "time": "2026-05-27T16:32:50.055507+00:00",
       "lang": "zh",
       "title": "忘却前夜 想知道现在pc端内存大概要多少啊之前因为电脑内存原因一直玩的移动端，最近把电脑清出来一些内存了不知道够不够，看steam游戏主页写的是要14个G想知道",
       "summary": "忘却前夜 想知道现在pc端内存大概要多少啊之前因为电脑内存原因一直玩的移动端，最近把电脑清出来一些内存了不知道够不够，看steam游戏主页写的是要14个G想知道进去了之后还要再下载多少",
@@ -1333,17 +1385,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T09:09:00+00:00",
+      "time": "2026-05-27T16:32:50.066229+00:00",
       "lang": "zh",
-      "title": "忘却前夜，蜡像馆这个剧情挺有意思的，录屏留念 薄荷菋櫻桃的微博视频",
-      "summary": "忘却前夜，蜡像馆这个剧情挺有意思的，录屏留念 薄荷菋櫻桃的微博视频",
+      "title": "忘却前夜\n【戈利亚生贺17h/15:00】The Hour of Sleep\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nThe hour of",
+      "summary": "忘却前夜\n【戈利亚生贺17h/15:00】The Hour of Sleep\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nThe hour of sleep\n绵长的睡意\nIs upon us now\n它正向我们袭来\nCome rest your eyes\n只管闭上双眼\nMy darling one\n我亲爱的\n——Daniel Martin Moore《The Hour of Sleep》\n\n约稿展示 ...全文",
+      "url": "https://m.weibo.cn/status/5300664880333679",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-27T16:32:50.080664+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 （；´д｀）ゞ",
+      "summary": "忘却前夜 （；´д｀）ゞ",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:21:11.584235+00:00",
+      "time": "2026-05-27T16:33:44.141407+00:00",
       "lang": "",
       "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
       "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
@@ -1353,7 +1415,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:21:11.595298+00:00",
+      "time": "2026-05-27T16:33:44.151925+00:00",
       "lang": "",
       "title": "忘却前夜 |ω•`)",
       "summary": "忘却前夜 |ω•`)",
@@ -1363,7 +1425,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T12:21:11.606125+00:00",
+      "time": "2026-05-27T16:33:44.162348+00:00",
       "lang": "",
       "title": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소",
       "summary": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소리까지\n彼此的眼神和细微的呼吸声\n내비친 Love\n所折射出的爱\n구름처럼\n像温柔的风\n부는 바람에 그대로 전해질 거야\n总会原封不动的传达\n——P1Harmony《More T ...全文",
@@ -1781,7 +1843,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-27T12:21:39.985906+00:00",
+      "time": "2026-05-27T16:34:14.477971+00:00",
       "lang": "ko",
       "title": "망각전야)이벤스 어제인줄알고 엄청기다렸는데",
       "summary": "공지 다시보니 토요일이었던거임아니 이벤트를 저번주에 열어놓고 2주일을 기다리게 만드는 게임사가 어딨냐고 ㅋㅋㅋㅋ",
@@ -1961,7 +2023,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-27T12:21:42.737595+00:00",
+      "time": "2026-05-27T16:34:17.018457+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
