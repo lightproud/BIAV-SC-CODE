@@ -7055,6 +7055,13 @@
       "title": "[DC] sweet_25367@🔸綜合討論: 打完啦    ~~萝坦命轮不知道塞什么结果还是带了人偶~~",
       "time": "2026-05-26T16:46:19.786000+00:00",
       "downloaded_at": "2026-05-26T21:30:34.673836+00:00"
+    },
+    "https://i.ytimg.com/vi/CMak3hikWZ8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkrFBnEN6U5o5L_wJVJFGql5Mcrg": {
+      "filename": "youtube_84510aab70c9d1c2.jpg",
+      "source": "youtube",
+      "title": "Can we STILL beat Morimens as F2P with ONLY characters from Kaleido Recollections",
+      "time": "2026-05-27T00:59:27.751390+00:00",
+      "downloaded_at": "2026-05-27T09:02:20.070584+00:00"
     }
   },
   "failed": {
@@ -10947,6 +10954,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-27T05:12:01.168147+00:00"
+    },
+    "https://preview.redd.it/qt8p6sncqm3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=bd84716c79b983de93090403f2820a4ed3019469": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-27T09:02:20.573843+00:00"
+    },
+    "https://preview.redd.it/lvrnh0abnm3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a7b9b05e9640473eb480e488c9d72229976d910e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-27T09:02:20.929166+00:00"
+    },
+    "https://preview.redd.it/xr95x0kiim3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84907e03197159042f2bcd6f8331525c24f05b01": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-27T09:02:21.284516+00:00"
     }
   },
   "archived": []
