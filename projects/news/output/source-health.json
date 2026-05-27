@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-26T23:04:16.032541+00:00",
+  "updated_at": "2026-05-27T00:09:46.688623+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -67,7 +67,7 @@
       "level": "active",
       "last_success_date": "2026-05-27",
       "consecutive_silent_days": 0,
-      "total_items": 5257,
+      "total_items": 5271,
       "errors": []
     },
     "zhihu": {
