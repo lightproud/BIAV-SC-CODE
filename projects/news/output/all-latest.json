@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-27T21:48:20.366407+00:00",
+  "collected_at": "2026-05-27T23:11:38.542516+00:00",
   "source": "all",
-  "item_count": 180,
+  "item_count": 158,
   "items": [
     {
       "source": "steam",
@@ -271,7 +271,7 @@
       "voted_up": true,
       "review": "Divertido, banda sonora hermosa, vale la pena jugarlo",
       "timestamp_created": 1779847392,
-      "playtime_forever": 452
+      "playtime_forever": 487
     },
     {
       "source": "steam",
@@ -580,220 +580,19 @@
       }
     },
     {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194775+00:00",
-      "lang": "",
-      "title": "🎬 Morimens × Saya no Uta┊V2.5.1 PV - Song of Perennial Wandering  (VA: Midori Kawamura)",
-      "summary": "[5d ago] \"When love takes on flesh, birthing a world that's ours..\" \"...so beautiful, and yet so cruel.\" ✦ Saya VA: Midori Kawamura ✦ Title: ...",
-      "url": "https://www.youtube.com/watch?v=Z7AWj87O6Fc",
-      "author": "Morimens",
-      "engagement": 1562477,
-      "media_url": "https://i.ytimg.com/vi/Z7AWj87O6Fc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAafQS7XcAXpDUNXx70y9BHoN-Ujg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194391+00:00",
-      "lang": "",
-      "title": "Morimens | The Greatest Gacha Game You've Never Played (Long Review)",
-      "summary": "[10mo ago] My newest fascination for the last month has got to be one of the most unique gacha games I've seen. Morimens is what I'd ...",
-      "url": "https://www.youtube.com/watch?v=DTCfk_ztxeI",
-      "author": "Pseychie",
-      "engagement": 307068,
-      "media_url": "https://i.ytimg.com/vi/DTCfk_ztxeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtSFm4kyI_gCqen2KjH6necJ54UA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194701+00:00",
-      "lang": "",
-      "title": "How a Dying Game achieved Immortality",
-      "summary": "[12d ago] The insane story of how Morimens went from death's door to a masterpiece that shattered my heart. Play Morimens because I love ...",
-      "url": "https://www.youtube.com/watch?v=vcESw24eqVQ",
-      "author": "Gray Raven Radio and Linasera",
-      "engagement": 81611,
-      "media_url": "https://i.ytimg.com/vi/vcESw24eqVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF3AZFSL_4m_Bqtc7llcEi7Ug8gg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194762+00:00",
-      "lang": "",
-      "title": "《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」",
-      "summary": "[1y ago] 呼喚我的名字，在被忘卻的黎明之前。 Can you call my name, before the daybreak we're forgotten. Chn Lyrics ：霁月@B.I.A.V. ...",
-      "url": "https://www.youtube.com/watch?v=BkG3QQoqKhQ",
-      "author": "Morimens",
-      "engagement": 46338,
-      "media_url": "https://i.ytimg.com/vi/BkG3QQoqKhQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALYof-HWuORc9b1v7KrpbTjH3E5g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194725+00:00",
-      "lang": "",
-      "title": "Morimens Beginner Progression Guide (2026 Edition)",
-      "summary": "[5mo ago] Starting Morimens in 2026 and not sure where to begin? This complete beginner progression guide walks you step by step from ...",
-      "url": "https://www.youtube.com/watch?v=NpwMWAy6OLQ",
-      "author": "Mythag Files",
-      "engagement": 29739,
-      "media_url": "https://i.ytimg.com/vi/NpwMWAy6OLQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpDXpEGmN_V9XRebsTCxTkx7Lhdw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194744+00:00",
-      "lang": "",
-      "title": "The Most FUN Gacha Game You Need To Try | Morimens",
-      "summary": "[9mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
-      "url": "https://www.youtube.com/watch?v=5PDpbrvt43E",
-      "author": "Polarisu",
-      "engagement": 20827,
-      "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194672+00:00",
-      "lang": "",
-      "title": "10 Things beginners NEED to do in Morimens",
-      "summary": "[12d ago] These ten tips will help you get started in Morimens with a lot less confusion. ♢ TWITTER: https://twitter.com/GrayRavenRadio ...",
-      "url": "https://www.youtube.com/watch?v=gMNxwddLt-s",
-      "author": "Linasera",
-      "engagement": 17428,
-      "media_url": "https://i.ytimg.com/vi/gMNxwddLt-s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZQ2TADkMKT1WXRFYflKhDcVZ5lg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194692+00:00",
-      "lang": "",
-      "title": "How to get Saya for FREE in Morimens",
-      "summary": "[6d ago] Saya no Uta is coming to Morimens. This is everything you need to know about this brand new collab. ♢ TWITTER: ...",
-      "url": "https://www.youtube.com/watch?v=qySOc15QQ5E",
-      "author": "Linasera",
-      "engagement": 14642,
-      "media_url": "https://i.ytimg.com/vi/qySOc15QQ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4gMrzNTAN98a-S9jxJ5xoYY3nAw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194787+00:00",
-      "lang": "",
-      "title": "How to build teams in Morimens!",
-      "summary": "[3mo ago] Since everyone keeps asking me how i'm so good at the game... and how i'm always so smart and cool.... i decided to make this ...",
-      "url": "https://www.youtube.com/watch?v=Oof6sGexHFQ",
-      "author": "Trash Keeper",
-      "engagement": 6393,
-      "media_url": "https://i.ytimg.com/vi/Oof6sGexHFQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAqOUl3XFdHUYmVRJTFFATYQ-k8Q",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194768+00:00",
-      "lang": "",
-      "title": "[Morimens] Flares' Awakener Review : Mouchette : Chaos DR DPS - C Tier General Use, A Tier Whale.",
-      "summary": "[4mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
-      "url": "https://www.youtube.com/watch?v=e1J3nIclZdQ",
-      "author": "Flares117",
-      "engagement": 5382,
-      "media_url": "https://i.ytimg.com/vi/e1J3nIclZdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBL5pclDRTqjcebGERKYpLNBPDviA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194810+00:00",
-      "lang": "",
-      "title": "[Morimens] 2026 Half Anni Overview : The most predatory and greedy anniversary event yet?!",
-      "summary": "[11d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=QsDhTomGGbI",
-      "author": "Flares117",
-      "engagement": 4092,
-      "media_url": "https://i.ytimg.com/vi/QsDhTomGGbI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPKcjuh73NG4SsTpyShSlBa3B1Qg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194715+00:00",
-      "lang": "",
-      "title": "[Morimens] The worst player in Morimens? What not to do, basic teambuilding and mechanic guide.",
-      "summary": "[3d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=kI3cNXKrKOo",
-      "author": "Flares117",
-      "engagement": 3693,
-      "media_url": "https://i.ytimg.com/vi/kI3cNXKrKOo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwn0jQ3xFbhQ4T5MDj2WIKILcHUA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194708+00:00",
-      "lang": "",
-      "title": "Morimens chap 8 be like",
-      "summary": "[7mo ago] A fan try to join the Fan Art contest but can't draw and have skill issue. UID: 101198315 #MorimensFanArt.",
-      "url": "https://www.youtube.com/watch?v=oCqyBYOE_cw",
-      "author": "Wednesday playlist",
-      "engagement": 2744,
-      "media_url": "https://i.ytimg.com/vi/oCqyBYOE_cw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7Oil9H-1QjARmTbZ5Fz8bKolKKg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194733+00:00",
-      "lang": "",
-      "title": "[Morimens] Rage Rerun Overview/Guide - WATCH THE OLDER VIDEOS - Kath/Salv/Wanda. Livestream",
-      "summary": "[2mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=i7ZEXOpz9DU",
-      "author": "Flares117",
-      "engagement": 1911,
-      "media_url": "https://i.ytimg.com/vi/i7ZEXOpz9DU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbnMHuqF8nzcTEjke5GcSB_Hjd5g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194684+00:00",
-      "lang": "",
-      "title": "You NEED Thais in Morimens (trust me on this)",
-      "summary": "[1d ago] Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais I'm locked in her ...",
-      "url": "https://www.youtube.com/watch?v=1VD0DuEBIIo",
-      "author": "Rose Guardian Reya",
-      "engagement": 1892,
-      "media_url": "https://i.ytimg.com/vi/1VD0DuEBIIo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6dMYWbWEztrD7G7KdDa1vaJh3Aw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194754+00:00",
-      "lang": "",
-      "title": "『 Morimens / First time trying it out! 』 how many men mori",
-      "summary": "[Streamed 1mo ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
-      "url": "https://www.youtube.com/watch?v=Zvs5WtSL0Po",
-      "author": "Yuuna Nini",
-      "engagement": 1109,
-      "media_url": "https://i.ytimg.com/vi/Zvs5WtSL0Po/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1_q83bpuVycA67DNUlgRTQ710Yg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194781+00:00",
-      "lang": "",
-      "title": "[Morimens] Short (Relatively) - Stream, answer questions. Then switch to a sponsored game",
-      "summary": "[Streamed 7d ago] Long Boring Spreadsheet stream. And making next video.",
-      "url": "https://www.youtube.com/watch?v=GEqfViafm-A",
-      "author": "Flares117",
-      "engagement": 462,
-      "media_url": "https://i.ytimg.com/vi/GEqfViafm-A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBW_GAPdHUoVsMjTkgzLAznTyBitw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-27T21:45:18.194817+00:00",
-      "lang": "",
-      "title": "Trying out Morimens on a Whim bc I'm bored of my 8 Gachas",
-      "summary": "[Streamed 1mo ago] Chat I might be burnt out. I regularly play 8 gachas, but I'm just not excited for any of them right now. Well I'm tired af after work, ...",
-      "url": "https://www.youtube.com/watch?v=qRDOm5M1yFk",
-      "author": "JinJinx and Tuner",
-      "engagement": 383,
-      "media_url": "https://i.ytimg.com/vi/qRDOm5M1yFk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDe2zS3r05pCf705xXMd7-5iFZbNQ",
-      "content_type": "image"
+      "source": "reddit",
+      "time": "2026-05-27T19:01:21+00:00",
+      "lang": "en",
+      "title": "It was a standart pull!",
+      "summary": "Never ever have I imagined, that this is real! https://preview.redd.it/i5dh2nyn9q3h1.jpg?width=1280&amp;format=pjpg&amp;auto=webp&amp;s=f24c5f3fde7504434080f406a4ca41a4e5983ba4  &#32; submitted by &#32;  /u/Bubbly_Story9341   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tpf5u5/it_was_a_standart_pull/",
+      "author": "/u/Bubbly_Story9341",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/i5dh2nyn9q3h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=445e27bc1e8a7fd7f412caf53180292341d04bf3",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     },
     {
       "source": "reddit",
@@ -812,14 +611,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T19:01:21+00:00",
+      "time": "2026-05-27T16:23:44+00:00",
       "lang": "en",
-      "title": "It was a standart pull!",
-      "summary": "Never ever have I imagined, that this is real! https://preview.redd.it/i5dh2nyn9q3h1.jpg?width=1280&amp;format=pjpg&amp;auto=webp&amp;s=f24c5f3fde7504434080f406a4ca41a4e5983ba4  &#32; submitted by &#32;  /u/Bubbly_Story9341   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tpf5u5/it_was_a_standart_pull/",
-      "author": "/u/Bubbly_Story9341",
+      "title": "sakura reveries",
+      "summary": "I LOVE YOU RAMONA quick 1 hour background photobashing test this was super fun,,,  &#32; submitted by &#32;  /u/mimilkyu   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tpak6l/sakura_reveries/",
+      "author": "/u/mimilkyu",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/i5dh2nyn9q3h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=445e27bc1e8a7fd7f412caf53180292341d04bf3",
+      "media_url": "https://preview.redd.it/n4t012pkhp3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fcb4158b4bd4721fa25b86559a27707371d212e6",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -834,21 +633,6 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1tp40pu/saya_collabs_free_avatar_descriptions_lore/",
       "author": "/u/Salt-Departure-6353",
       "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T16:23:44+00:00",
-      "lang": "en",
-      "title": "sakura reveries",
-      "summary": "I LOVE YOU RAMONA quick 1 hour background photobashing test this was super fun,,,  &#32; submitted by &#32;  /u/mimilkyu   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tpak6l/sakura_reveries/",
-      "author": "/u/mimilkyu",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/n4t012pkhp3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fcb4158b4bd4721fa25b86559a27707371d212e6",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -923,6 +707,21 @@
       "author": "/u/RiAsterism",
       "engagement": 0,
       "media_url": "https://preview.redd.it/xmi7f32enl3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e3448e4075c79f7fc1ba8b93805efe5e18b1b534",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T22:39:57+00:00",
+      "lang": "en",
+      "title": "Which unit is better for the team, the 24 or the Aurita? I just got the Aurita as a gift.",
+      "summary": "I have that question, thanks in advance.  &#32; submitted by &#32;  /u/Complete-Review111   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tpl48r/which_unit_is_better_for_the_team_the_24_or_the/",
+      "author": "/u/Complete-Review111",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/2mxf16nlcr3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=a4548d4779927f8722a4901db2e35fde046362ca",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -1085,31 +884,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T13:21:18+00:00",
-      "lang": "en",
-      "title": "I would need someone to help me with team building and rolling 😭",
-      "summary": "I run a Ghelot team that cannot sustain well in boss fights, any recommends on who to pull and who to build? I also want to roll for Saya so im saving up for her  &#32; submitted by &#32;  /u/Waste-Tomatillo-3113   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tp5eyo/i_would_need_someone_to_help_me_with_team/",
-      "author": "/u/Waste-Tomatillo-3113",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/6v3kgri2lo3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f31b2e232feaacf9a36cf58d43a14dd52ede8e3e",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T13:59:09+00:00",
-      "lang": "en",
-      "title": "Thais fanart",
-      "summary": "Guys I was devastated to notice that Thais, my beloved, had almost NO fanart. I had to change that so please enjoy! &lt;3  &#32; submitted by &#32;  /u/Ganyu_mybeloved   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tp6evu/thais_fanart/",
-      "author": "u//u/Ganyu_mybeloved",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-27T19:01:21+00:00",
       "lang": "en",
       "title": "It was a standart pull!",
@@ -1120,12 +894,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T12:25:05+00:00",
+      "time": "2026-05-27T13:59:09+00:00",
       "lang": "en",
-      "title": "Saya Collab's Free Avatar Descriptions & Lore context explained (read at your own risk; Saya game spoilers)",
-      "summary": "These are the 5 avatars you can claim for free in mail today. I like these descriptions. They&#39;re creepy with a dark humor if you&#39;ve played the original game. So here&#39;s some Saya game lore for you guys if you&#39;re interested. This post is Spoiler marked. Don&#39;t read if you don&#39;t want Saya no Uta spoilers. Don&#39;t read if you might be triggered by dark content like cannibalism and rape. Avatar 1. Living Legend Ryoko Tanbo. She&#39;s a physician, and in one of the endings she successfully killed Saya, the eldrich monster, with liquid nitrogen, preventing her from destroying the entire world. She&#39;s dubbed a legendary CoC investigator by the fans, because it&#39;s no easy feat to actually kill the monster in a CoC session. Avatar 2. The Moon is Beautiful Koji Toh. He&#39;s Fuminori (the protagonist, who fell in love with Saya)&#39;s friend. He was pushed into a well by Fuminori and nearly died there, hence the &quot;he never missed the moonlight from the bottom of the well&quot; lol. Avatar 3. Wish Fulfilled Yoh Tsukuba. She had a crush on Fuminori, but Fuminori hated her because his perception was warped and he could only see her as a disgusting monster. Saya tortured her and transformed her into a monster, so she could seem desirable to Fuminori again, and she became their sex slave. The avatar is called &quot;Wish Fulfilled&quot; because i guess Saya did &quot;fulfill&quot; her wish. This might be the most disturbing one here Avatar 4. Unknown Sender Omi Tanahata. She is Koji&#39;s girlfriend. I believe Fuminori used Koji&#39;s phone to send her a message, and lured her to their house, where she was then killed and dismembered by Saya. Saya stored her remains in the fridge and later consumed her body with Fuminori. &quot;Unknown Sender.&quot; Avatar 5. Pure White World Fuminori Sakisaka. The protagonist who fell in love with Saya. This one seems to be from the ending where Saya returned his perception back to normal, humanity wasn&#39;t destroyed, and Fuminori spent the rest of his life in a psyche ward.  &#32; submitted by &#32;  /u/Salt-Departure-6353   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tp40pu/saya_collabs_free_avatar_descriptions_lore/",
-      "author": "u//u/Salt-Departure-6353",
+      "title": "Thais fanart",
+      "summary": "Guys I was devastated to notice that Thais, my beloved, had almost NO fanart. I had to change that so please enjoy! &lt;3  &#32; submitted by &#32;  /u/Ganyu_mybeloved   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp6evu/thais_fanart/",
+      "author": "u//u/Ganyu_mybeloved",
       "engagement": 0
     },
     {
@@ -1140,6 +914,16 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T12:25:05+00:00",
+      "lang": "en",
+      "title": "Saya Collab's Free Avatar Descriptions & Lore context explained (read at your own risk; Saya game spoilers)",
+      "summary": "These are the 5 avatars you can claim for free in mail today. I like these descriptions. They&#39;re creepy with a dark humor if you&#39;ve played the original game. So here&#39;s some Saya game lore for you guys if you&#39;re interested. This post is Spoiler marked. Don&#39;t read if you don&#39;t want Saya no Uta spoilers. Don&#39;t read if you might be triggered by dark content like cannibalism and rape. Avatar 1. Living Legend Ryoko Tanbo. She&#39;s a physician, and in one of the endings she successfully killed Saya, the eldrich monster, with liquid nitrogen, preventing her from destroying the entire world. She&#39;s dubbed a legendary CoC investigator by the fans, because it&#39;s no easy feat to actually kill the monster in a CoC session. Avatar 2. The Moon is Beautiful Koji Toh. He&#39;s Fuminori (the protagonist, who fell in love with Saya)&#39;s friend. He was pushed into a well by Fuminori and nearly died there, hence the &quot;he never missed the moonlight from the bottom of the well&quot; lol. Avatar 3. Wish Fulfilled Yoh Tsukuba. She had a crush on Fuminori, but Fuminori hated her because his perception was warped and he could only see her as a disgusting monster. Saya tortured her and transformed her into a monster, so she could seem desirable to Fuminori again, and she became their sex slave. The avatar is called &quot;Wish Fulfilled&quot; because i guess Saya did &quot;fulfill&quot; her wish. This might be the most disturbing one here Avatar 4. Unknown Sender Omi Tanahata. She is Koji&#39;s girlfriend. I believe Fuminori used Koji&#39;s phone to send her a message, and lured her to their house, where she was then killed and dismembered by Saya. Saya stored her remains in the fridge and later consumed her body with Fuminori. &quot;Unknown Sender.&quot; Avatar 5. Pure White World Fuminori Sakisaka. The protagonist who fell in love with Saya. This one seems to be from the ending where Saya returned his perception back to normal, humanity wasn&#39;t destroyed, and Fuminori spent the rest of his life in a psyche ward.  &#32; submitted by &#32;  /u/Salt-Departure-6353   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp40pu/saya_collabs_free_avatar_descriptions_lore/",
+      "author": "u//u/Salt-Departure-6353",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T07:07:18+00:00",
       "lang": "en",
       "title": "New code: FHFW-WVQQ-SVSG",
@@ -1150,22 +934,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T11:57:09+00:00",
-      "lang": "en",
-      "title": "Thats realy cool ngl",
-      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tp3cj4/thats_realy_cool_ngl/",
-      "author": "u//u/new_acc256",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-27T14:18:51+00:00",
       "lang": "en",
       "title": "If you're a Morimens enjoyer, let me know in the comments what draws you to it. Personally, I need more Lovecraftian games like this! Also, lowkey an alternate universe of me?",
       "summary": "&#32; submitted by &#32;  /u/AlbatrossOpen5843   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tp6z03/if_youre_a_morimens_enjoyer_let_me_know_in_the/",
       "author": "u//u/AlbatrossOpen5843",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T11:57:09+00:00",
+      "lang": "en",
+      "title": "Thats realy cool ngl",
+      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tp3cj4/thats_realy_cool_ngl/",
+      "author": "u//u/new_acc256",
       "engagement": 0
     },
     {
@@ -1186,6 +970,16 @@
       "summary": "Today I finally got Miryam to E3. Which means all of my characters are at least E3 now. I thought it’s worth commemorating with a post. And you can see, I’m still waiting for that Dore rotating rerun to finally AA him. UGH… I’m a dolphin who has been playing since late 2024. I dropped the game after Arc 1 Finale thinking the game was dying, then came back in Arc 2… Over the past 2 years I’ve spent like 50% of what I had spent on Genshin (I know). I still haven’t reached the end of the top up milestone thing.  I have unlocked all the Enlighten dupes/constellation effects of every character, and I have OE’ed about 80% of them (unlocked the Ult special effect). Theoretically I have whaled my account to have everything I need for D-Tide highest difficulty.  However, IRONICALLY, I can’t clear the highest difficulty endgame by whaling alone. The game has an actually challenging gameplay that requires your brains. Not just dupes.  And there are plenty people out there who are FTP and they can clear the endgame much better than I do, reaching 400 or above, because they put in the time to think about strategies, to learn from tutorials.  Meanwhile, I’m just a lazy casual player who don’t mind spending, and I’m here mainly for the art and lore, so I still haven’t reached 400 in my D-Tides lol. Previously when I was busy with work I had completely stopped doing D-Tides for a while. And It didn’t actually bother me that much. Because in this game you don’t rely on the D-Tide/“Abyss” to get pull currencies. They give out a lot of pulls constantly. So not doing D-Tide only meant that I was missing out on the pyramids that let me upgrade characters further after lv 60.   &#32; submitted by &#32;  /u/RiAsterism   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1totk2l/today_ive_pulled_every_character_to_e3_and_oeed/",
       "author": "u//u/RiAsterism",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-27T22:39:57+00:00",
+      "lang": "en",
+      "title": "Which unit is better for the team, the 24 or the Aurita? I just got the Aurita as a gift.",
+      "summary": "I have that question, thanks in advance.  &#32; submitted by &#32;  /u/Complete-Review111   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tpl48r/which_unit_is_better_for_the_team_the_24_or_the/",
+      "author": "u//u/Complete-Review111",
       "engagement": 0
     },
     {
@@ -1230,6 +1024,16 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-27T16:25:08+00:00",
+      "lang": "en",
+      "title": "Ryker Axiom?",
+      "summary": "Anyone know what the relic part of his AA does? His rouse already lets you select/upgrade a relic  &#32; submitted by &#32;  /u/StillwaitingforGeno   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tpallu/ryker_axiom/",
+      "author": "u//u/StillwaitingforGeno",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-27T10:50:42+00:00",
       "lang": "en",
       "title": "A huge fan of Hameln but couldn't get him no matter what. But today i'm prepared. Other than Bluewill, what team can i play him in?",
@@ -1260,16 +1064,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-27T16:25:08+00:00",
-      "lang": "en",
-      "title": "Ryker Axiom?",
-      "summary": "Anyone know what the relic part of his AA does? His rouse already lets you select/upgrade a relic  &#32; submitted by &#32;  /u/StillwaitingforGeno   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tpallu/ryker_axiom/",
-      "author": "u//u/StillwaitingforGeno",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-27T02:33:22+00:00",
       "lang": "en",
       "title": "Helot Arachne is so much fun!",
@@ -1296,16 +1090,6 @@
       "summary": "If they want to give me so many of these at least give me my first gdoll 😭😭  &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1toxm4u/_/",
       "author": "u//u/jadhanshsnajsakak",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-27T13:21:18+00:00",
-      "lang": "en",
-      "title": "I would need someone to help me with team building and rolling 😭",
-      "summary": "I run a Ghelot team that cannot sustain well in boss fights, any recommends on who to pull and who to build? I also want to roll for Saya so im saving up for her  &#32; submitted by &#32;  /u/Waste-Tomatillo-3113   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tp5eyo/i_would_need_someone_to_help_me_with_team/",
-      "author": "u//u/Waste-Tomatillo-3113",
       "engagement": 0
     },
     {
@@ -1390,7 +1174,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.524764+00:00",
+      "time": "2026-05-27T23:09:07.359847+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1400,7 +1184,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.536577+00:00",
+      "time": "2026-05-27T23:09:07.373179+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
@@ -1410,7 +1194,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.552975+00:00",
+      "time": "2026-05-27T23:09:07.390369+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1420,7 +1204,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.564197+00:00",
+      "time": "2026-05-27T23:09:07.401812+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1430,7 +1214,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.575523+00:00",
+      "time": "2026-05-27T23:09:07.413521+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1440,7 +1224,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.586541+00:00",
+      "time": "2026-05-27T23:09:07.424719+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1450,7 +1234,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.597399+00:00",
+      "time": "2026-05-27T23:09:07.435957+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1460,37 +1244,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.608621+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
-      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
-      "url": "https://m.weibo.cn/status/5300037031563389",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:45:32.623713+00:00",
-      "lang": "zh",
-      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:45:32.634663+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
-      "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:45:32.645780+00:00",
+      "time": "2026-05-27T23:09:07.447178+00:00",
       "lang": "zh",
       "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
       "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
@@ -1500,17 +1254,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.656852+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
-      "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:45:32.668022+00:00",
+      "time": "2026-05-27T23:09:07.458584+00:00",
       "lang": "zh",
       "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
@@ -1520,17 +1264,47 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.678815+00:00",
+      "time": "2026-05-27T23:09:07.470219+00:00",
       "lang": "zh",
-      "title": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵",
-      "summary": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵感来了高速滑铲中——\n【521/鲨粉】Fishtail",
+      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
+      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
+      "url": "https://m.weibo.cn/status/5300037031563389",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-27T23:09:07.485690+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
+      "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.692152+00:00",
+      "time": "2026-05-27T23:09:07.496604+00:00",
+      "lang": "zh",
+      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-27T23:09:07.508777+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
+      "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-27T23:09:07.519909+00:00",
       "lang": "zh",
       "title": "忘却前夜 |ω•`)",
       "summary": "忘却前夜 |ω•`)",
@@ -1540,50 +1314,20 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:45:32.702782+00:00",
+      "time": "2026-05-27T23:09:07.531036+00:00",
       "lang": "zh",
-      "title": "忘却前夜 发一下比较满意的几张摸鱼",
-      "summary": "忘却前夜 发一下比较满意的几张摸鱼",
-      "url": "",
+      "title": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소",
+      "summary": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소리까지\n彼此的眼神和细微的呼吸声\n내비친 Love\n所折射出的爱\n구름처럼\n像温柔的风\n부는 바람에 그대로 전해질 거야\n总会原封不动的传达\n——P1Harmony《More T ...全文",
+      "url": "https://m.weibo.cn/status/5300469509652702",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-27T21:46:32.797757+00:00",
-      "lang": "",
-      "title": "忘却前夜#忘却前夜#\n日服动态：",
-      "summary": "忘却前夜#忘却前夜#\n日服动态：",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:46:32.883664+00:00",
-      "lang": "",
-      "title": "忘却前夜#忘却前夜#\n时间表吧",
-      "summary": "忘却前夜#忘却前夜#\n时间表吧",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:46:32.919270+00:00",
-      "lang": "",
-      "title": "忘却前夜 想知道现在pc端内存大概要多少啊之前因为电脑内存原因一直玩的移动端，最近把电脑清出来一些内存了不知道够不够，看steam游戏主页写的是要14个G想知道",
-      "summary": "忘却前夜 想知道现在pc端内存大概要多少啊之前因为电脑内存原因一直玩的移动端，最近把电脑清出来一些内存了不知道够不够，看steam游戏主页写的是要14个G想知道进去了之后还要再下载多少",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-27T21:46:32.929400+00:00",
-      "lang": "",
-      "title": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
-      "summary": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
+      "time": "2026-05-27T23:09:07.546108+00:00",
+      "lang": "zh",
+      "title": "发点解禁图图\n这边好像一直忘记发…\n补上补上，美美混更之\n#忘却前夜##qq人#",
+      "summary": "发点解禁图图\n这边好像一直忘记发…\n补上补上，美美混更之\n#忘却前夜##qq人#",
       "url": "",
       "author": "",
       "engagement": 0
@@ -2008,7 +1752,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-27T21:47:02.583716+00:00",
+      "time": "2026-05-25T15:00:00+00:00",
       "lang": "ko",
       "title": "망각전야)이벤스 어제인줄알고 엄청기다렸는데",
       "summary": "공지 다시보니 토요일이었던거임아니 이벤트를 저번주에 열어놓고 2주일을 기다리게 만드는 게임사가 어딨냐고 ㅋㅋㅋㅋ",
@@ -2188,7 +1932,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-27T21:47:05.320368+00:00",
+      "time": "2026-05-27T23:10:24.082486+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
