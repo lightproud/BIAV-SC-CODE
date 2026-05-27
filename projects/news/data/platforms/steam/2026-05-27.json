@@ -1,8 +1,8 @@
 {
   "date": "2026-05-27",
-  "archived_at": "2026-05-27T00:09:46.374318+00:00",
+  "archived_at": "2026-05-27T05:12:01.243624+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,36 @@
       "review": "I'm John Lovecraft, and this is my favourite game on steam.",
       "timestamp_created": 1779831745,
       "playtime_forever": 505
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T02:03:12+00:00",
+      "lang": "spanish",
+      "title": "[正面] Divertido, banda sonora hermosa, vale la pena juga...",
+      "summary": "Divertido, banda sonora hermosa, vale la pena jugarlo",
+      "url": "https://steamcommunity.com/profiles/76561198114453892/recommended/3052450",
+      "author": "76561198114453892",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Divertido, banda sonora hermosa, vale la pena jugarlo",
+      "timestamp_created": 1779847392,
+      "playtime_forever": 224
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T01:31:49+00:00",
+      "lang": "brazilian",
+      "title": "[正面] Um jogo lindo, fantástico e viciante, tem para mob...",
+      "summary": "Um jogo lindo, fantástico e viciante, tem para mobile.\r\nÉ um jogo lindo, ótima história com personagens cativantes para todos os gostos.\r\nSó precisam de pequenos ajustes nas traduções, mas no geral, o jogo está impecável.\r\n\r\n9/10",
+      "url": "https://steamcommunity.com/profiles/76561199482817886/recommended/3052450",
+      "author": "76561199482817886",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "Um jogo lindo, fantástico e viciante, tem para mobile.\r\nÉ um jogo lindo, ótima história com personagens cativantes para todos os gostos.\r\nSó precisam de pequenos ajustes nas traduções, mas no geral, o jogo está impecável.\r\n\r\n9/10",
+      "timestamp_created": 1779845509,
+      "playtime_forever": 12120
     }
   ]
 }
