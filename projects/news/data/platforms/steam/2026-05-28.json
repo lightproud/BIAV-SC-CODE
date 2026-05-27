@@ -1,8 +1,8 @@
 {
   "date": "2026-05-28",
-  "archived_at": "2026-05-27T16:35:35.021473+00:00",
+  "archived_at": "2026-05-27T19:16:50.030369+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 23,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,66 @@
       "review": "A very good game.",
       "timestamp_created": 1779814478,
       "playtime_forever": 1625
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T17:29:07+00:00",
+      "lang": "english",
+      "title": "[正面] Great game, Cool art style and great ending to a s...",
+      "summary": "Great game, Cool art style and great ending to a story",
+      "url": "https://steamcommunity.com/profiles/76561198290674275/recommended/3052450",
+      "author": "76561198290674275",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great game, Cool art style and great ending to a story",
+      "timestamp_created": 1779902947,
+      "playtime_forever": 5367
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T17:22:45+00:00",
+      "lang": "english",
+      "title": "[正面] Tbh I started the game without much expectations b...",
+      "summary": "Tbh I started the game without much expectations but honestly, I was surprised.\nThe gacha is quite generous, though it also depends on how you manage your character/cards during the gameplay to actually win.\n\nSpend 5 hours on day 1 of playing and completed the first chapter so the game obviously fun enough to make me play that much on the first day.\n\nThough ngl, I wasn't expecting that ending for the first chapter, kinda felt sad to see the choice Aigis made in the end.\n\nBut dang maybe you guys should make more marketing about this game, I never heard or know about this game, I only learned about it after watching a video from this YouTuber called \"Pseychie\".",
+      "url": "https://steamcommunity.com/profiles/76561199215754333/recommended/3052450",
+      "author": "76561199215754333",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Tbh I started the game without much expectations but honestly, I was surprised.\nThe gacha is quite generous, though it also depends on how you manage your character/cards during the gameplay to actually win.\n\nSpend 5 hours on day 1 of playing and completed the first chapter so the game obviously fun enough to make me play that much on the first day.\n\nThough ngl, I wasn't expecting that ending for the first chapter, kinda felt sad to see the choice Aigis made in the end.\n\nBut dang maybe you guys should make more marketing about this game, I never heard or know about this game, I only learned about it after watching a video from this YouTuber called \"Pseychie\".",
+      "timestamp_created": 1779902565,
+      "playtime_forever": 307
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T17:05:48+00:00",
+      "lang": "english",
+      "title": "[正面] guay",
+      "summary": "guay",
+      "url": "https://steamcommunity.com/profiles/76561199371715009/recommended/3052450",
+      "author": "76561199371715009",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "guay",
+      "timestamp_created": 1779901548,
+      "playtime_forever": 112
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-27T16:27:06+00:00",
+      "lang": "english",
+      "title": "[正面] Crazy good artstyle with insanely generous amount...",
+      "summary": "Crazy good artstyle with insanely generous amount of pulls, constantly gotta build a strategy as it's a card-builder and the lore is very fun to follow, even though it can get confusing at start of chapters, it unravels quite nice and leaves a good impact. Gameplay never got boring so far, especially since it's a roguelite and it also includes luck while playing for relics and cards + orions.",
+      "url": "https://steamcommunity.com/profiles/76561198398005645/recommended/3052450",
+      "author": "76561198398005645",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Crazy good artstyle with insanely generous amount of pulls, constantly gotta build a strategy as it's a card-builder and the lore is very fun to follow, even though it can get confusing at start of chapters, it unravels quite nice and leaves a good impact. Gameplay never got boring so far, especially since it's a roguelite and it also includes luck while playing for relics and cards + orions.",
+      "timestamp_created": 1779899226,
+      "playtime_forever": 1931
     }
   ]
 }
