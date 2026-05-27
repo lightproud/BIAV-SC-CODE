@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "87df4b4a",
-    "timestamp": "2026-05-26T17:50:10.564000+00:00",
-    "duration_minutes": 165.2,
+    "id": "f1c1c283",
+    "timestamp": "2026-05-27T00:53:48.887000+00:00",
+    "duration_minutes": 588.9,
     "branch": "claude/yincin-code-review-tgusd",
     "topics": [
       "Wiki"
@@ -37,6 +37,43 @@
     ]
   },
   "recent_sessions": [
+    {
+      "id": "87df4b4a",
+      "timestamp": "2026-05-26T17:50:10.564000+00:00",
+      "duration_minutes": 165.2,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/dream_archive.py",
+        "/home/user/brain-in-a-vat/scripts/dream_config.py",
+        "/home/user/brain-in-a-vat/scripts/dream_health.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
+    },
     {
       "id": "70c0404d",
       "timestamp": "2026-05-26T17:08:55.540000+00:00",
@@ -297,57 +334,28 @@
         "/home/user/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "a8d8bb1f",
-      "timestamp": "2026-05-06T16:33:18.871000+00:00",
-      "duration_minutes": 14470.7,
-      "branch": "claude/fix-site-compliance-oM2P1",
-      "topics": [
-        "Bilibili"
-      ],
-      "decisions": [
-        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-        "/home/user/brain-in-a-vat/projects/site/public/404.html",
-        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-        "/home/user/brain-in-a-vat/projects/site/public/index.html"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 1.8,
-      "银芯": 1.58,
-      "黑池": 1.01,
-      "Bilibili": 0.24
+      "Wiki": 2.44,
+      "银芯": 1.26,
+      "黑池": 0.81,
+      "Bilibili": 0.19
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
       "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/fact_store.py",
       "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
       "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+      "/home/user/brain-in-a-vat/scripts/lua_parse.py",
       "/home/user/brain-in-a-vat/scripts/memory_search.py",
       "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-      "/home/user/brain-in-a-vat/scripts/fact_store.py",
-      "/home/user/brain-in-a-vat/scripts/lua_parse.py",
       "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
     ],
-    "total_sessions": 112
+    "total_sessions": 113
   },
-  "updated_at": "2026-05-26T17:55:01.693619+00:00"
+  "updated_at": "2026-05-27T00:56:58.838316+00:00"
 }
