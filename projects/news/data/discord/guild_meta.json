@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-27T20:33:36.055718+00:00",
+  "updated_at": "2026-05-27T22:57:15.065194+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1337,6 +1337,22 @@
       "parent_id": "1440851754311749733",
       "position": 147,
       "topic": "ModMail Channel 108562798283366400 1508749271120216154 (Please do not change this)"
+    },
+    {
+      "id": "1509301713629351968",
+      "name": "caelumace",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 148,
+      "topic": "ModMail Channel 551466602240147477 1365530651964473384 (Please do not change this)"
+    },
+    {
+      "id": "1509306871503126618",
+      "name": "hakuwu",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 149,
+      "topic": "ModMail Channel 186285679209218052 884868755421798401 (Please do not change this)"
     }
   ]
 }
