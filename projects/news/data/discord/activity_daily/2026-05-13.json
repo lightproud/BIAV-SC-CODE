@@ -1,11 +1,11 @@
 {
   "date": "2026-05-13",
-  "messages": 11349,
+  "messages": 16349,
   "unique_authors": 353,
-  "reactions_total": 1039,
-  "attachments": 608,
+  "reactions_total": 1351,
+  "attachments": 767,
   "channel_activity": {
-    "🔸morimens-game-chat": 2281,
+    "🔸morimens-game-chat": 7281,
     "🔸綜合討論": 1372,
     "🔸한국어-채팅방": 20,
     "🔸русский-канал": 300,
@@ -56,23 +56,23 @@
     "Hello hello hi, is this team good?": 5
   },
   "hourly_activity": {
+    "3": 861,
+    "4": 1178,
+    "5": 808,
+    "6": 633,
+    "7": 866,
+    "8": 879,
+    "9": 1080,
+    "10": 1396,
+    "11": 389,
     "0": 588,
     "1": 1312,
     "2": 1473,
-    "3": 455,
     "19": 403,
     "23": 175,
     "20": 240,
     "21": 82,
     "22": 161,
-    "4": 372,
-    "5": 238,
-    "6": 223,
-    "7": 195,
-    "8": 396,
-    "9": 419,
-    "10": 526,
-    "11": 266,
     "12": 459,
     "13": 600,
     "14": 597,
@@ -82,8 +82,9 @@
     "18": 1237
   },
   "message_types": {
-    "0": 1375,
-    "19": 906
+    "0": 3094,
+    "19": 1905,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -167,6 +168,22 @@
       "channel": "V2.5.1 花田碎梦┊Dream Fragments in Dandelion Field"
     },
     {
+      "id": "1504059986995839026",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dyslexicpandora",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1504071593029013574",
+      "channel_id": "1170692781216378960",
+      "content": "i should always buy this when i can right?",
+      "author": "poggest_of_them_all",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1504093549640286278",
       "channel_id": "1131839817982947429",
       "content": "||到底誰會抽珊||",
@@ -189,6 +206,14 @@
       "author": ".kleinod.",
       "reactions": 7,
       "channel": "🔸traphase"
+    },
+    {
+      "id": "1504037174042034237",
+      "channel_id": "1170692781216378960",
+      "content": "Insane that someone just decided to come in with such intense hated for Winkle o",
+      "author": "sparkling_moose_59074",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1503931598884704428",
@@ -221,30 +246,6 @@
       "author": "bartmann_3212",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504102608036696225",
-      "channel_id": "1131839817982947429",
-      "content": "特训奖励25/25",
-      "author": "ponponnyaru",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503940505451368469",
-      "channel_id": "1170692781216378960",
-      "content": "chapter 7 is simultaneously a masterpiece and kind of a disaster because the lea",
-      "author": "reya.li",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1503955531881119837",
-      "channel_id": "1170692781216378960",
-      "content": "Airport departure announcement",
-      "author": "vinsette",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
