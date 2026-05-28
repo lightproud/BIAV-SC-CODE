@@ -7104,6 +7104,13 @@
       "title": "[DC] the_lucky_12@🔸game-question: OMG WHAT THE FUCK",
       "time": "2026-05-27T06:06:01.409000+00:00",
       "downloaded_at": "2026-05-27T21:48:23.725681+00:00"
+    },
+    "https://i.ytimg.com/vi/yMI2SruzL6k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCEGMQrZ4YQUoi3frQfPTb1irMEXQ": {
+      "filename": "youtube_3b01df56c08f8995.jpg",
+      "source": "youtube",
+      "title": "Morimens. Flares' Awakener Review : Pollux. Ultra DPS - Universal C tier. Usable in one team.",
+      "time": "2026-05-28T10:44:01.015790+00:00",
+      "downloaded_at": "2026-05-28T10:46:57.337815+00:00"
     }
   },
   "failed": {
@@ -11066,6 +11073,51 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-27T23:11:39.284113+00:00"
+    },
+    "https://preview.redd.it/eroj7qbshu3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1202e6833eeaa9f41dc7b3e48e156f392fce06ab": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:57.716299+00:00"
+    },
+    "https://preview.redd.it/999kkoz9bu3h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=db5d59973f587a74d6c6faaaa178bccf510911b0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:58.060930+00:00"
+    },
+    "https://preview.redd.it/e9mzpnfheu3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e9552de234139ebee601508c06f287129685ccec": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:58.400408+00:00"
+    },
+    "https://preview.redd.it/y74xyxlmeu3h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=6355da8566f2e675b1bcf4b69a480926d0cad8d9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:58.740988+00:00"
+    },
+    "https://preview.redd.it/1edafjtvgs3h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=f04eda6ef64227c12f51918d4fedc4c4ede783da": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:59.080539+00:00"
+    },
+    "https://external-preview.redd.it/tqd7ggaMfeWY3uIB9__BsgSHv7PWFHJi70EkbFdUVV0.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=d31432ae936dc4e33985e63b599274cd7e8aedf5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:59.539118+00:00"
+    },
+    "https://preview.redd.it/q4tvb5tnjr3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=364bc9cf58951365710a0c8719de14546a219b86": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:46:59.878174+00:00"
+    },
+    "https://preview.redd.it/gvho4asqnr3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3cf8e9aa2fbddba74292f4ea303645d34b8a7108": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:47:00.216999+00:00"
+    },
+    "https://preview.redd.it/q01mh7qzbu3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=e5f6098b825393afbe082ee41d6a1433846a0599": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-28T10:47:00.555264+00:00"
     }
   },
   "archived": []
