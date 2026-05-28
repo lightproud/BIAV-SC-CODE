@@ -1,8 +1,8 @@
 {
   "date": "2026-05-28",
-  "archived_at": "2026-05-27T23:11:39.352450+00:00",
+  "archived_at": "2026-05-28T01:58:23.984377+00:00",
   "source": "steam",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "source": "steam",
@@ -363,6 +363,21 @@
       "review": "好玩",
       "timestamp_created": 1779911952,
       "playtime_forever": 1750
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-28T00:29:24+00:00",
+      "lang": "english",
+      "title": "[正面] Great story and visuals and Card battler aspect is...",
+      "summary": "Great story and visuals and Card battler aspect is second to none imo. Also one of the most fair gacha systems to ever exist by far.",
+      "url": "https://steamcommunity.com/profiles/76561199019389943/recommended/3052450",
+      "author": "76561199019389943",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great story and visuals and Card battler aspect is second to none imo. Also one of the most fair gacha systems to ever exist by far.",
+      "timestamp_created": 1779928164,
+      "playtime_forever": 3543
     }
   ]
 }
