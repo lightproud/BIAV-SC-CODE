@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "9ed1143b",
-    "timestamp": "2026-05-27T02:06:28.017000+00:00",
-    "duration_minutes": 554.5,
+    "id": "39e8ad3e",
+    "timestamp": "2026-05-27T02:40:53.070000+00:00",
+    "duration_minutes": 588.9,
     "branch": "claude/community-archive-analysis-qaysJ",
     "topics": [
       "联动",
@@ -11,6 +11,7 @@
     "decisions": [],
     "files_changed": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/deliverables/2026-05/bug-fault-report-2026-05-18_26.md",
       "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
       "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
       "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
@@ -19,6 +20,7 @@
       "/tmp/analyze3.py",
       "/tmp/analyze4.py",
       "/tmp/analyze5.py",
+      "/tmp/ext_bugs.py",
       "/tmp/ext_discord.py",
       "/tmp/ext_misc.py",
       "/tmp/ext_platforms.py",
@@ -29,6 +31,35 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "9ed1143b",
+      "timestamp": "2026-05-27T02:06:28.017000+00:00",
+      "duration_minutes": 554.5,
+      "branch": "claude/community-archive-analysis-qaysJ",
+      "topics": [
+        "联动",
+        "沙耶之歌"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
+        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
+        "/tmp/analyze.py",
+        "/tmp/analyze2.py",
+        "/tmp/analyze3.py",
+        "/tmp/analyze4.py",
+        "/tmp/analyze5.py",
+        "/tmp/ext_discord.py",
+        "/tmp/ext_misc.py",
+        "/tmp/ext_platforms.py",
+        "/tmp/ext_quotes.py",
+        "/tmp/gen2.py",
+        "/tmp/generate_deliverable.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "6a4b25aa",
       "timestamp": "2026-05-27T01:53:30.160000+00:00",
@@ -272,44 +303,15 @@
         "/home/user/brain-in-a-vat/projects/site/public/index.html"
       ],
       "open_items": []
-    },
-    {
-      "id": "c5961df4",
-      "timestamp": "2026-05-06T16:19:30.396000+00:00",
-      "duration_minutes": 14456.9,
-      "branch": "claude/fix-site-compliance-oM2P1",
-      "topics": [
-        "Bilibili"
-      ],
-      "decisions": [
-        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-        "/home/user/brain-in-a-vat/projects/site/public/404.html",
-        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-        "/home/user/brain-in-a-vat/projects/site/public/index.html"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "联动": 2.95,
-      "沙耶之歌": 2.95,
-      "银芯": 1.47,
-      "黑池": 1.26,
-      "Bilibili": 0.3
+      "联动": 3.36,
+      "沙耶之歌": 3.36,
+      "银芯": 1.18,
+      "黑池": 1.01,
+      "Bilibili": 0.24
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
@@ -323,7 +325,7 @@
       "/tmp/ext_discord.py",
       "/tmp/ext_misc.py"
     ],
-    "total_sessions": 111
+    "total_sessions": 112
   },
-  "updated_at": "2026-05-27T02:11:21.187583+00:00"
+  "updated_at": "2026-05-27T02:44:43.858498+00:00"
 }
