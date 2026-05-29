@@ -289,6 +289,8 @@ session-digest（SessionEnd hook 自动产出 `memory/session-digests/`）/ disp
 完整规范见 `memory/style-guide.md`。高频引用：
 背景 `#0a0b10` / 主金 `#c5a356` / 亮金 `#e2c97e` / 字体 Noto Serif SC + Noto Sans SC / 装饰符号 `◇ ◇ ◇`。
 
+**社区情报报告生产线**：完整 SOP 见命令 `/biav-report`（`.claude/commands/biav-report.md`，守密人要出报告/分析/建议书/缺陷单时触发），渲染引擎 `scripts/report_render.py`（markdown → 银芯视觉 PDF+HTML），方法论见 `memory/methodology.md`「银芯报告生产流程」节。
+
 ### §6.13 黑池接口（仅当你来自黑池 BIAV-BP 时阅读）
 
 判断方式：你的上下文中是否存在 `BIAV-BP.md` 或黑池相关指令。如果不是，请忽略本节。
