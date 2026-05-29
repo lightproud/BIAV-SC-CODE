@@ -1891,7 +1891,6 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
     # Use LLM for better summary
-    import subprocess as _sp
 
     titles_text = '\n'.join(f"- [{n['source']}] {n['title']}" for n in news_items[:20])
     prompt = f"""以下是忘却前夜(Morimens)游戏社区24小时内的热点话题列表，请用中文生成一段简洁的今日总结(100-150字)，
@@ -2091,7 +2090,10 @@ def run():
             OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
             with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
-        return
+        # Signal failure so CI surfaces the empty run (lesson #2). Existing data
+        # is preserved above; the non-zero exit lets the workflow alert instead
+        # of silently passing on a total collection failure.
+        raise SystemExit(1)
 
     # Generate summary
     summary = generate_summary(unique_news)
