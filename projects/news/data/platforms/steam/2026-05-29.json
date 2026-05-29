@@ -1,8 +1,8 @@
 {
   "date": "2026-05-29",
-  "archived_at": "2026-05-29T09:36:13.707073+00:00",
+  "archived_at": "2026-05-29T12:43:33.200289+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 22,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,51 @@
       "review": "Games pretty good, I actaully loved the story and characters designs! The Devs should get GOTY for ts, like deadahh. My favorite chartafter is caecus, casue he is very cool and his story is very compellign",
       "timestamp_created": 1780028054,
       "playtime_forever": 208
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-29T09:58:01+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美工真叼真漂亮啊。配音也非常好听，艺术品。",
+      "summary": "美工真叼真漂亮啊。配音也非常好听，艺术品。",
+      "url": "https://steamcommunity.com/profiles/76561199221324658/recommended/3052450",
+      "author": "76561199221324658",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美工真叼真漂亮啊。配音也非常好听，艺术品。",
+      "timestamp_created": 1780048681,
+      "playtime_forever": 417
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-29T09:18:49+00:00",
+      "lang": "english",
+      "title": "[正面] Art style is so pretty and the game play is fairly...",
+      "summary": "Art style is so pretty and the game play is fairly intuitive, with some fun features for the fights\nIf you like Gatcha games and deck builders, you'll like this game\nScrolling through the dialogue and character info is rough. each scroll of my mouse wheel feels like it barely moves the text and i'm stuck scrolling for a billion years.",
+      "url": "https://steamcommunity.com/profiles/76561198281445214/recommended/3052450",
+      "author": "76561198281445214",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Art style is so pretty and the game play is fairly intuitive, with some fun features for the fights\nIf you like Gatcha games and deck builders, you'll like this game\nScrolling through the dialogue and character info is rough. each scroll of my mouse wheel feels like it barely moves the text and i'm stuck scrolling for a billion years.",
+      "timestamp_created": 1780046329,
+      "playtime_forever": 294
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-29T08:35:20+00:00",
+      "lang": "english",
+      "title": "[正面] i love the artwork but i hope there moves more lik...",
+      "summary": "i love the artwork but i hope there moves more like the characters always don't move",
+      "url": "https://steamcommunity.com/profiles/76561199625002216/recommended/3052450",
+      "author": "76561199625002216",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i love the artwork but i hope there moves more like the characters always don't move",
+      "timestamp_created": 1780043720,
+      "playtime_forever": 705
     }
   ]
 }
