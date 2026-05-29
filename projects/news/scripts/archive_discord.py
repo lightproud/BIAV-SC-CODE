@@ -18,7 +18,6 @@ import logging
 import os
 import subprocess
 import tarfile
-import time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path

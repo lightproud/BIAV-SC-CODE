@@ -40,7 +40,6 @@ Discord 不在此处理（已有 discord_archiver.py 独立归档）。
 
 import argparse
 import json
-import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 

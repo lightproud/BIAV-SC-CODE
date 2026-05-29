@@ -25,7 +25,6 @@ import sys
 import time
 from collections import Counter, defaultdict
 from datetime import date, datetime
-from hashlib import md5
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
