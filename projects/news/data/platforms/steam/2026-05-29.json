@@ -1,8 +1,8 @@
 {
   "date": "2026-05-29",
-  "archived_at": "2026-05-28T22:28:57.960939+00:00",
+  "archived_at": "2026-05-29T00:04:59.459099+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,36 @@
       "review": "傻逼游戏总是闪退 挂了加速器有时候也到500延迟 几乎没有新手教程 由于傻逼策划把攻略大佬气走目前只会玩一个配队好无助 但是潘狄娅好美 我是不会放弃在狗屎服务器和策划里悄悄爱我女的",
       "timestamp_created": 1779999402,
       "playtime_forever": 1722
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-28T23:29:24+00:00",
+      "lang": "english",
+      "title": "[正面] nice combo of slay the spire, lovecraft inspired l...",
+      "summary": "nice combo of slay the spire, lovecraft inspired lore and \"forgiving\" gacha mechanics. Will def play more",
+      "url": "https://steamcommunity.com/profiles/76561198120489651/recommended/3052450",
+      "author": "76561198120489651",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "nice combo of slay the spire, lovecraft inspired lore and \"forgiving\" gacha mechanics. Will def play more",
+      "timestamp_created": 1780010964,
+      "playtime_forever": 2258
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-28T22:40:40+00:00",
+      "lang": "english",
+      "title": "[正面] I NEED SAYAAAAAA",
+      "summary": "I NEED SAYAAAAAA",
+      "url": "https://steamcommunity.com/profiles/76561198242533104/recommended/3052450",
+      "author": "76561198242533104",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I NEED SAYAAAAAA",
+      "timestamp_created": 1780008040,
+      "playtime_forever": 443
     }
   ]
 }
