@@ -1,8 +1,8 @@
 {
   "date": "2026-05-30",
-  "archived_at": "2026-05-29T16:38:27.277195+00:00",
+  "archived_at": "2026-05-29T19:29:27.157566+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,21 @@
       "review": "傻逼游戏总是闪退 挂了加速器有时候也到500延迟 几乎没有新手教程 由于傻逼策划把攻略大佬气走目前只会玩一个配队好无助 但是潘狄娅好美 我是不会放弃在狗屎服务器和策划里悄悄爱我女的",
       "timestamp_created": 1779999402,
       "playtime_forever": 1722
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-29T17:10:09+00:00",
+      "lang": "english",
+      "title": "[正面] Game slaps, art, soundtrack, lovecraftian theme, g...",
+      "summary": "Game slaps, art, soundtrack, lovecraftian theme, good stuff.",
+      "url": "https://steamcommunity.com/profiles/76561198005769426/recommended/3052450",
+      "author": "76561198005769426",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Game slaps, art, soundtrack, lovecraftian theme, good stuff.",
+      "timestamp_created": 1780074609,
+      "playtime_forever": 523
     }
   ]
 }

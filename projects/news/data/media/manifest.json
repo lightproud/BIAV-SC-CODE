@@ -7335,6 +7335,27 @@
       "title": "沙耶が………来る！！",
       "time": "2026-05-30T00:16:52+09:00",
       "downloaded_at": "2026-05-29T16:38:27.202922+00:00"
+    },
+    "https://i.ytimg.com/vi/q8UrT3uFsrg/hq720_custom_2.jpg?sqp=CIzQ59AG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsykx9EOrlZRCMSie0AqgwdOo3Pg": {
+      "filename": "youtube_fb5e6ee68c06088a.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」（CV：川村みどり）",
+      "time": "2026-05-29T19:26:34.379050+00:00",
+      "downloaded_at": "2026-05-29T19:29:24.460706+00:00"
+    },
+    "https://i.ytimg.com/vi/qVeTOyn0_oM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDkrKs9EbvNi2zuUL63zPwcaq9iBg": {
+      "filename": "youtube_7bb67dcb1f3bf0ab.jpg",
+      "source": "youtube",
+      "title": "【#忘却前夜  】面白過ぎるゲーム見つけた！！！好みが似てる子この指とまれ！【#推し活】",
+      "time": "2026-05-29T19:26:34.379108+00:00",
+      "downloaded_at": "2026-05-29T19:29:24.949596+00:00"
+    },
+    "https://i.ytimg.com/vi/BCbFwOvSJ2Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVlqqtUoVVWq1AalO-Y05Tmt3tmg": {
+      "filename": "youtube_4bb2d6cef15bcf5a.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】Steam版リリース！クトゥルフ神話ミリしらの限界VTuberが発狂しながら完全初見プレイ【虎皮ひつじ】",
+      "time": "2026-05-29T19:26:34.379096+00:00",
+      "downloaded_at": "2026-05-29T19:29:25.462101+00:00"
     }
   },
   "failed": {
@@ -11482,6 +11503,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-29T16:38:26.410917+00:00"
+    },
+    "https://preview.redd.it/8ko69oui044h1.png?width=140&amp;height=88&amp;auto=webp&amp;s=40789d4bcc1464da9ebc206402972da2cfcbb7f7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T19:29:25.961093+00:00"
+    },
+    "https://preview.redd.it/52dblpob344h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=68d053c858e7cbb9190439b8a645b85761110ad5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T19:29:26.282910+00:00"
+    },
+    "https://external-preview.redd.it/bGVma2thN3hkNDRoMcP1WPWq4z2WPNnK2ig8VO_B4T5lB8IF48ap0zFPorKT.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=58b2ffcf5c182748c0a2465a5a4a0c8cb50faa4b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T19:29:26.775613+00:00"
+    },
+    "https://external-preview.redd.it/eDB4bDJhdDFnNDRoMZLSRd_ra-fmCeUcfm_tzcDwOgWx3ekBZ11QaGvM8Ga1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9d43ba12fcef510cbe00fca7d39ecb38f66da5c6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T19:29:27.097850+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-29T16:38:22.221370+00:00",
+  "collected_at": "2026-05-29T19:29:23.793293+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-29T17:10:09+00:00",
+      "lang": "english",
+      "title": "[正面] Game slaps, art, soundtrack, lovecraftian theme, g...",
+      "summary": "Game slaps, art, soundtrack, lovecraftian theme, good stuff.",
+      "url": "https://steamcommunity.com/profiles/76561198005769426/recommended/3052450",
+      "author": "76561198005769426",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Game slaps, art, soundtrack, lovecraftian theme, good stuff.",
+      "timestamp_created": 1780074609,
+      "playtime_forever": 523
+    },
     {
       "source": "steam",
       "time": "2026-05-29T13:37:04+00:00",
@@ -106,7 +121,7 @@
       "voted_up": true,
       "review": "还可以",
       "timestamp_created": 1780033403,
-      "playtime_forever": 946
+      "playtime_forever": 972
     },
     {
       "source": "steam",
@@ -181,7 +196,7 @@
       "voted_up": true,
       "review": "10/10",
       "timestamp_created": 1780014957,
-      "playtime_forever": 1704
+      "playtime_forever": 1824
     },
     {
       "source": "steam",
@@ -211,7 +226,7 @@
       "voted_up": true,
       "review": "I NEED SAYAAAAAA",
       "timestamp_created": 1780008040,
-      "playtime_forever": 472
+      "playtime_forever": 550
     },
     {
       "source": "steam",
