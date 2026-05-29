@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-28T22:28:58.282066+00:00",
+  "updated_at": "2026-05-29T00:04:59.773198+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -39,7 +39,7 @@
       "level": "active",
       "last_success_date": "2026-05-29",
       "consecutive_silent_days": 0,
-      "total_items": 777,
+      "total_items": 779,
       "errors": []
     },
     "official": {
@@ -53,7 +53,7 @@
       "level": "active",
       "last_success_date": "2026-05-29",
       "consecutive_silent_days": 0,
-      "total_items": 1384,
+      "total_items": 1399,
       "errors": []
     },
     "discord": {
@@ -67,7 +67,7 @@
       "level": "active",
       "last_success_date": "2026-05-29",
       "consecutive_silent_days": 0,
-      "total_items": 5475,
+      "total_items": 5485,
       "errors": []
     },
     "zhihu": {
