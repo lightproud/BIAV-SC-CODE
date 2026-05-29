@@ -7419,6 +7419,27 @@
       "title": "Morimens D Tide Alert IV vs Remant Omen",
       "time": "2026-05-29T20:55:49.810768+00:00",
       "downloaded_at": "2026-05-29T21:46:54.825906+00:00"
+    },
+    "https://i.ytimg.com/vi/q8UrT3uFsrg/hq720_custom_2.jpg?sqp=CPC06NAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB2eVOlAPP0roahflyrz4OvU3zxwg": {
+      "filename": "youtube_4c1cfff74a1c9943.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」（CV：川村みどり）",
+      "time": "2026-05-29T23:03:26.807145+00:00",
+      "downloaded_at": "2026-05-29T23:06:22.139174+00:00"
+    },
+    "https://i.ytimg.com/vi/IAD6C7V5Q2Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOlJYu2FFx99OfBLo_cEtz5gv8aQ": {
+      "filename": "youtube_cf585ef1aaa5c28a.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】リセマラすべき？おすすめのキャラと編成の基礎についてなどを解説します【クゥトゥルフ神話系RPG】",
+      "time": "2026-05-29T23:03:26.807218+00:00",
+      "downloaded_at": "2026-05-29T23:06:22.762261+00:00"
+    },
+    "https://i.ytimg.com/vi/11-tH8lLu-0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBIsy9gySX8lLxOPtDo5NfjpgxBg": {
+      "filename": "youtube_e977985a4c7e8eba.jpg",
+      "source": "youtube",
+      "title": "[Eve of Oblivion] A high-quality but highly educational game... My thoughts on the new SLES-style...",
+      "time": "2026-05-29T23:03:26.807224+00:00",
+      "downloaded_at": "2026-05-29T23:06:23.355402+00:00"
     }
   },
   "failed": {
@@ -11586,6 +11607,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-29T19:29:27.097850+00:00"
+    },
+    "https://preview.redd.it/ghpohl79554h1.png?width=140&amp;height=115&amp;auto=webp&amp;s=4c82de2f8976aec5638c20f7bfcb62b5b1a99de5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T23:06:23.738963+00:00"
+    },
+    "https://preview.redd.it/pexm2qgqf54h1.gif?width=640&amp;crop=smart&amp;s=ee78f8eae829427ac357b3008da10e34f6e6ea5c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T23:06:24.068696+00:00"
+    },
+    "https://preview.redd.it/2m6p29jv054h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c2e3b8a59a14a05c1b8650878e59192d151f0eb5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T23:06:24.397298+00:00"
+    },
+    "https://external-preview.redd.it/amJ3MzU2ZGI0NTRoMZwn0CoNw66cpE0x0wojLVVFPVZMUiuXqnxvw0_rD-l7.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9aedb825fa0b551c9ff848189697a21a2abdbc60": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-29T23:06:24.734193+00:00"
     }
   },
   "archived": []
