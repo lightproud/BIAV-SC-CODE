@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-30T22:49:00.819063+00:00",
+  "archived_at": "2026-05-30T23:54:54.490175+00:00",
   "source": "steam",
-  "item_count": 27,
+  "item_count": 28,
   "items": [
     {
       "source": "steam",
@@ -408,6 +408,21 @@
       "review": "Another great looking game, nice mechanics and amazing characters ... destroyed by gacha ♥♥♥♥.",
       "timestamp_created": 1780160871,
       "playtime_forever": 38
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T21:55:54+00:00",
+      "lang": "french",
+      "title": "[负面] Voyez mon temps de jeu ? 3min de gameplay, le rest...",
+      "summary": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
+      "url": "https://steamcommunity.com/profiles/76561198039333250/recommended/3052450",
+      "author": "76561198039333250",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": false,
+      "review": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
+      "timestamp_created": 1780178154,
+      "playtime_forever": 13
     }
   ]
 }

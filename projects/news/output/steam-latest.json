@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-30T22:48:59.917037+00:00",
+  "collected_at": "2026-05-30T23:54:54.163780+00:00",
   "source": "steam",
-  "item_count": 25,
+  "item_count": 26,
   "items": [
     {
       "source": "steam",
@@ -110,6 +110,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-30T21:55:54+00:00",
+      "lang": "french",
+      "title": "[负面] Voyez mon temps de jeu ? 3min de gameplay, le rest...",
+      "summary": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
+      "url": "https://steamcommunity.com/profiles/76561198039333250/recommended/3052450",
+      "author": "76561198039333250",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": false,
+      "review": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
+      "timestamp_created": 1780178154,
+      "playtime_forever": 13
+    },
+    {
+      "source": "steam",
       "time": "2026-05-30T17:24:49+00:00",
       "lang": "english",
       "title": "[正面] very fun game. generous. finally a gacha with good...",
@@ -151,7 +166,7 @@
       "voted_up": true,
       "review": "i think im addicted.\r\nmy only regret is not know how peak this game before (years ago out of my radar because AI translation, but now the translation done by humans and its already so good).\r\none of the best gacha game out there (storyline/lore, depth gameplay mechanic, and gacha generously).",
       "timestamp_created": 1780159676,
-      "playtime_forever": 2834
+      "playtime_forever": 2922
     },
     {
       "source": "steam",
