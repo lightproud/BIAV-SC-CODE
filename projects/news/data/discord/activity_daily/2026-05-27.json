@@ -1,11 +1,11 @@
 {
   "date": "2026-05-27",
-  "messages": 21015,
+  "messages": 22154,
   "unique_authors": 787,
-  "reactions_total": 1907,
-  "attachments": 1248,
+  "reactions_total": 2006,
+  "attachments": 1293,
   "channel_activity": {
-    "🔸general-chat": 4650,
+    "🔸general-chat": 5789,
     "🔸綜合討論": 2632,
     "🔸한국어-채팅방": 940,
     "🔸deutscher-chatraum": 267,
@@ -77,6 +77,12 @@
     "What should I spend my rolls on?": 4
   },
   "hourly_activity": {
+    "18": 853,
+    "19": 753,
+    "20": 940,
+    "21": 1087,
+    "22": 681,
+    "23": 590,
     "0": 1181,
     "1": 1370,
     "2": 882,
@@ -94,18 +100,11 @@
     "14": 1204,
     "15": 1149,
     "16": 702,
-    "17": 622,
-    "18": 768,
-    "20": 609,
-    "21": 818,
-    "22": 458,
-    "23": 507,
-    "19": 605
+    "17": 622
   },
   "message_types": {
-    "0": 2834,
-    "19": 1815,
-    "20": 1
+    "0": 796,
+    "19": 343
   },
   "top_reacted_messages": [
     {
@@ -261,10 +260,10 @@
       "channel": "🔸lore-chat"
     },
     {
-      "id": "1509225233104634096",
+      "id": "1509282820869193880",
       "channel_id": "1400750050208125010",
-      "content": "",
-      "author": "jmjmjm6667",
+      "content": "Not gonna lie, I only joined this server because the game is insanely niche, oth",
+      "author": "xiii_c",
       "reactions": 4,
       "channel": "🔸general-chat"
     }

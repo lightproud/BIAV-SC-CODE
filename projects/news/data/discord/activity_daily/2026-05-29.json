@@ -1,35 +1,43 @@
 {
   "date": "2026-05-29",
-  "messages": 14864,
+  "messages": 15857,
   "unique_authors": 636,
-  "reactions_total": 1792,
-  "attachments": 764,
+  "reactions_total": 1883,
+  "attachments": 820,
   "channel_activity": {
-    "🔸綜合討論": 4599,
+    "🔸綜合討論": 4618,
+    "🔸晒卡分享": 69,
+    "🔸日本語チャンネル": 8,
+    "🔸русский-канал": 1235,
+    "🔸phòng-chat-tiếng-việt": 1153,
+    "🔸canal-español": 256,
+    "🔸canal-português": 545,
+    "🔸ruang-obrolan-indonesia": 577,
+    "🔸ห้องสนทนาภาษาไทย": 1480,
+    "🔸traphase": 206,
+    "🔸lore-chat": 659,
+    "🔸team-building": 946,
+    "🔸邀请码互助┊swap-invitation-codes": 43,
+    "🔸game-question": 3072,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 143,
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 86,
+    "Set more support awakeners?": 3,
+    "✅「已回答」「未解决」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 1,
+    "【English Translation】Opinions Collection": 4,
+    "忘却前夜×沙耶之歌 主题曲「忘却之歌」┊Morimens × Saya no Uta Theme Song - Song of Memento": 19,
+    "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering": 44,
+    "V2.5.0 命运剧院┊Theater of Fate": 19,
+    "1510060690294046901": 1,
     "🔸阵容构建": 67,
     "🔸剧情交流": 7,
-    "🔸晒卡分享": 65,
     "🔸相位对弈": 51,
     "🔸课间休息闲聊": 5,
-    "🔸日本語チャンネル": 6,
     "🔸한국어-채팅방": 271,
     "🔸deutscher-chatraum": 21,
     "🔸chaîne-française": 25,
-    "🔸русский-канал": 947,
-    "🔸phòng-chat-tiếng-việt": 1151,
-    "🔸canal-español": 232,
-    "🔸canal-português": 460,
-    "🔸ruang-obrolan-indonesia": 565,
-    "🔸ห้องสนทนาภาษาไทย": 1477,
-    "🔸traphase": 194,
-    "🔸lore-chat": 649,
     "🔸lets-count": 14,
     "🔸频道建议┊server-suggestions": 2,
-    "🔸team-building": 534,
-    "🔸邀请码互助┊swap-invitation-codes": 40,
-    "🔸game-question": 2990,
-    "🔸机器人命令┊bot-commands": 131,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 81,
     "喵？->「你找我嗎？」| |员威廉": 1,
     "畫不到一半聽到遊戲快倒了的我：": 1,
     "喵喵，喵？||「像我這樣的貓，也能成為守護者嗎？」": 1,
@@ -41,7 +49,6 @@
     "Salvador's liberation damage bug?": 3,
     "會考慮重製劇情或者其他形式的重製劇情嗎？": 4,
     "5月30日的特殊唤醒可以在官方储值中心储值吗？": 1,
-    "Set more support awakeners?": 1,
     "✅「已回答」友誼賽系統壞掉了": 2,
     "✅「Resolved」Salvador's liberation shows incorrect damage ammount": 3,
     "✅「Resolved」Undefined translation": 1,
@@ -70,11 +77,7 @@
     "Aigis my bb": 2,
     "Meow Meow, Meow? || \"Can a cat like me, be a keeper as well?\"": 2,
     "한국어 번역 피드백 컬렉션": 1,
-    "【English Translation】Opinions Collection": 3,
-    "忘却前夜×沙耶之歌 主题曲「忘却之歌」┊Morimens × Saya no Uta Theme Song - Song of Memento": 18,
     "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 10,
-    "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering": 34,
-    "V2.5.0 命运剧院┊Theater of Fate": 18,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
     "新人組隊請益": 26,
@@ -83,6 +86,10 @@
     "Help figuring out strats": 3
   },
   "hourly_activity": {
+    "20": 336,
+    "21": 195,
+    "22": 255,
+    "23": 373,
     "0": 257,
     "1": 447,
     "2": 1090,
@@ -102,14 +109,12 @@
     "16": 841,
     "17": 688,
     "18": 705,
-    "19": 360,
-    "20": 166
+    "19": 360
   },
   "message_types": {
-    "0": 11523,
-    "19": 3323,
-    "20": 4,
-    "4": 14
+    "0": 761,
+    "19": 231,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -119,22 +124,6 @@
       "author": "morimensstaff02",
       "reactions": 53,
       "channel": "忘却前夜×沙耶之歌 主题曲「忘却之歌」┊Morimens × Saya no Uta Theme Song - Song of Memento"
-    },
-    {
-      "id": "1509916555075649657",
-      "channel_id": "1509916555075649657",
-      "content": "「能听见我的声音吗？即使身影消融在风中。」\n「我能呼唤你的名字吗？即使世界消逝。」\n\n**Emi Evans Ver.**\n✦ 演唱：Emi Evans\n✦ 作",
-      "author": "morimensstaff02",
-      "reactions": 53,
-      "channel": "忘却前夜×沙耶之歌 主题曲「忘却之歌」┊Morimens × Saya no Uta Theme Song - Song of Memento"
-    },
-    {
-      "id": "1509865665157398648",
-      "channel_id": "1509865665157398648",
-      "content": "<:Murphy_satisfy:1468258389850193960> <:Murphy_satisfy:1468258389850193960> <:Mu",
-      "author": "paperglass_3",
-      "reactions": 18,
-      "channel": "Daughter"
     },
     {
       "id": "1509865665157398648",
@@ -225,14 +214,6 @@
       "channel": "Characters with 200 or more base aliemus"
     },
     {
-      "id": "1509845597866168442",
-      "channel_id": "1509845597866168442",
-      "content": "Hi, I’d like to talk about something I find very worrying at least for me as it ",
-      "author": "nanami_carocontrolmeta",
-      "reactions": 8,
-      "channel": "Characters with 200 or more base aliemus"
-    },
-    {
       "id": "1509815173463150633",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -271,6 +252,30 @@
       "author": "ice3564",
       "reactions": 7,
       "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1510028826195918940",
+      "channel_id": "1300659580446969918",
+      "content": "пяточки саи",
+      "author": "chiedgaf",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1510036774779621517",
+      "channel_id": "1326453763355185215",
+      "content": "i have in the past, but i did not write the sorel fanfic of which i was thinking",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1510030475106848830",
+      "channel_id": "1300659662311526512",
+      "content": "finally",
+      "author": "drakependragon",
+      "reactions": 3,
+      "channel": "🔸canal-español"
     }
   ]
 }
