@@ -1,8 +1,8 @@
 {
   "date": "2026-05-30",
-  "archived_at": "2026-05-30T10:47:03.132672+00:00",
+  "archived_at": "2026-05-30T12:04:28.877773+00:00",
   "source": "steam",
-  "item_count": 28,
+  "item_count": 31,
   "items": [
     {
       "source": "steam",
@@ -423,6 +423,51 @@
       "review": "好玩但是好穷的游戏",
       "timestamp_created": 1780124384,
       "playtime_forever": 775
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T11:37:10+00:00",
+      "lang": "english",
+      "title": "[正面] cool game",
+      "summary": "cool game",
+      "url": "https://steamcommunity.com/profiles/76561199594258457/recommended/3052450",
+      "author": "76561199594258457",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "cool game",
+      "timestamp_created": 1780141030,
+      "playtime_forever": 186
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T11:20:09+00:00",
+      "lang": "schinese",
+      "title": "[正面] 还行啊，剧情至少不犯困",
+      "summary": "还行啊，剧情至少不犯困",
+      "url": "https://steamcommunity.com/profiles/76561198800673067/recommended/3052450",
+      "author": "76561198800673067",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "还行啊，剧情至少不犯困",
+      "timestamp_created": 1780140009,
+      "playtime_forever": 548
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T10:18:14+00:00",
+      "lang": "koreana",
+      "title": "[正面] 갓겜",
+      "summary": "갓겜",
+      "url": "https://steamcommunity.com/profiles/76561199112162095/recommended/3052450",
+      "author": "76561199112162095",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "갓겜",
+      "timestamp_created": 1780136294,
+      "playtime_forever": 1639
     }
   ]
 }
