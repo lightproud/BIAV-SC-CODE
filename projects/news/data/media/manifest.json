@@ -7510,6 +7510,27 @@
       "title": "忘却前夜　『沙耶の唄』コラボ当日　沙耶0凸、3凸、イベント札あり、なしで試す（7凸は後日）",
       "time": "2026-05-30T10:43:50.236343+00:00",
       "downloaded_at": "2026-05-30T10:47:03.065806+00:00"
+    },
+    "https://i.ytimg.com/vi/-V5hQRFggzY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAnK9x02nOTix_Yi3WjMepAeGBT2w": {
+      "filename": "youtube_1c00dd51c5a6bc27.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens 來抽個沙耶吧! Let’s pull for Saya!",
+      "time": "2026-05-30T11:01:21.742660+00:00",
+      "downloaded_at": "2026-05-30T12:04:27.352432+00:00"
+    },
+    "https://i.ytimg.com/vi/EKUkZtbNyXs/hq720.jpg?v=4b&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVZK0CovYrJYhF45b98CUGUhzoNw": {
+      "filename": "youtube_bb5b13f099163ae9.jpg",
+      "source": "youtube",
+      "title": "忘却前夜　『沙耶の唄』コラボ当日　沙耶0凸、3凸、イベント札あり、なしで試す（7凸は後日）",
+      "time": "2026-05-30T12:01:21.742623+00:00",
+      "downloaded_at": "2026-05-30T12:04:27.911399+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/30/20/21/49/145396476_p0_square1200.jpg": {
+      "filename": "pixiv_2c2a1b197fbb5105.jpg",
+      "source": "pixiv",
+      "title": "砂漠に舞い降りた種子。",
+      "time": "2026-05-30T20:21:49+09:00",
+      "downloaded_at": "2026-05-30T12:04:28.807130+00:00"
     }
   },
   "failed": {
@@ -11757,6 +11778,106 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-30T05:48:06.899136+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/1b72e640be30c9d8f2b764ee3723ca4dd15a2aee.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:21.039576+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/feaf6eedd2d8315097ef58a06219533d0c1daeaf.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:21.340441+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/8e5c42afc6614703f0301edbb46e90f55a8e2014.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:21.641318+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/da1e7c63fdf3eaab9757f0eac21d83bf41487985.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:21.942269+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/8f5a6d3bf4b55d01b794d05e88cea1820edfa7f7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:22.243006+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/fc3f8fdb6ffb6a0d56b7eda53faa54f243961f1f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:22.543846+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/d1f256f382962c6ba9d31f4adc956746f0986407.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:22.844685+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/6c60ee15f81bace6b7a5edf2991557c7e712b64a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:23.145485+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/6cd8005a2c8aa648314db12125fba1e8732c13f4.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:23.446254+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/45736d9c332676d0a6717c313ed8c68c10aab525.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:23.747045+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/591e13fad77c17db3fbfbbb0daaf2dcd83e7f0fe.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:24.047792+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c351566e0bf9227f3fcd067941cc92a6f26978a6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:24.348580+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/bd41e15fc44867d850991923ee959687ff5ce9c4.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:24.649295+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/7c17d5ca06d97373c0544fa4ea4653cd16a60e38.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:24.950043+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/ac9e287dc654ae330a2604b34ea8b382833836ae.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:25.250731+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/a84e7b078cf4f49debaac892bf1ea8b71cb46b94.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:25.551438+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/bc9f4a808dfdb5e3504e93ba6dd4625025a9f9d6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:25.852222+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/7c9e25fd8c7a4ced486a2b0e12aa3b970616bea2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:26.152938+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/8d6754cdda14f7a9505fe9f3c23bcf1392043b6b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:26.453687+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/4a0824e73e50ed01a7a850a23abe2e39e6b1b8d8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T12:04:26.754409+00:00"
     }
   },
   "archived": []
