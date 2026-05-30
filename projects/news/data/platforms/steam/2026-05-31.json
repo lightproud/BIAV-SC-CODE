@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-30T18:05:42.341248+00:00",
+  "archived_at": "2026-05-30T20:05:27.049475+00:00",
   "source": "steam",
-  "item_count": 25,
+  "item_count": 27,
   "items": [
     {
       "source": "steam",
@@ -378,6 +378,36 @@
       "review": "sucha \"nerdy\" game, reminds me of reverse1999 but this game i like more",
       "timestamp_created": 1780157737,
       "playtime_forever": 12275
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T17:24:49+00:00",
+      "lang": "english",
+      "title": "[正面] very fun game. generous. finally a gacha with good...",
+      "summary": "very fun game. generous. finally a gacha with good gameplay",
+      "url": "https://steamcommunity.com/profiles/76561198058245095/recommended/3052450",
+      "author": "76561198058245095",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "very fun game. generous. finally a gacha with good gameplay",
+      "timestamp_created": 1780161889,
+      "playtime_forever": 1433
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T17:07:51+00:00",
+      "lang": "english",
+      "title": "[负面] Another great looking game, nice mechanics and ama...",
+      "summary": "Another great looking game, nice mechanics and amazing characters ... destroyed by gacha ♥♥♥♥.",
+      "url": "https://steamcommunity.com/profiles/76561198048856642/recommended/3052450",
+      "author": "76561198048856642",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Another great looking game, nice mechanics and amazing characters ... destroyed by gacha ♥♥♥♥.",
+      "timestamp_created": 1780160871,
+      "playtime_forever": 38
     }
   ]
 }
