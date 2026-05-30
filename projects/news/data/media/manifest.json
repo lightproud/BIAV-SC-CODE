@@ -7440,6 +7440,13 @@
       "title": "[Eve of Oblivion] A high-quality but highly educational game... My thoughts on the new SLES-style...",
       "time": "2026-05-29T23:03:26.807224+00:00",
       "downloaded_at": "2026-05-29T23:06:23.355402+00:00"
+    },
+    "https://i.ytimg.com/vi/MznKredH9vM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCr4SxUCifzFKOMaTU-cQQjLv8wMA": {
+      "filename": "youtube_5e1201537c3429bd.jpg",
+      "source": "youtube",
+      "title": "Lightning Damage???? Veteran's Corposant Guide | Morimens",
+      "time": "2026-05-29T23:58:18.880969+00:00",
+      "downloaded_at": "2026-05-30T02:01:19.895573+00:00"
     }
   },
   "failed": {
@@ -11627,6 +11634,31 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-29T23:06:24.734193+00:00"
+    },
+    "https://external-preview.redd.it/ZG82d3h4M29jNjRoMSg_k44BA5lDPGwBIdMJf4Tm_xAuNJD6nJWOjIpEFH8L.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2e5dce0c8ad7fb79cc1b0f18d7f6821bd34123ae": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T02:01:20.365086+00:00"
+    },
+    "https://preview.redd.it/vvsvqc5kd64h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=a3c54caeb6fc3336090eb225486c6964254ad58b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T02:01:20.873465+00:00"
+    },
+    "https://preview.redd.it/610zuht5v54h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=308ae6ac26a97b09971fab61138b2b36bae3acf9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T02:01:21.201759+00:00"
+    },
+    "https://preview.redd.it/o1mij6ghg64h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=ce472595fe957922e4025a3789d75692f00cb69b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T02:01:21.586330+00:00"
+    },
+    "https://preview.redd.it/s5h8hprmj64h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=f5980e7fa2d145ebdf4e3b9383e4667bbf5c5679": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-30T02:01:21.919597+00:00"
     }
   },
   "archived": []
