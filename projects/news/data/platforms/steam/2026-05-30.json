@@ -1,8 +1,8 @@
 {
   "date": "2026-05-30",
-  "archived_at": "2026-05-30T05:48:06.972494+00:00",
+  "archived_at": "2026-05-30T08:18:07.031651+00:00",
   "source": "steam",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "source": "steam",
@@ -333,6 +333,21 @@
       "review": "b（￣▽￣）d",
       "timestamp_created": 1780115128,
       "playtime_forever": 628
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T06:14:55+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好评给沙耶，美术，还有剧情。",
+      "summary": "好评给沙耶，美术，还有剧情。",
+      "url": "https://steamcommunity.com/profiles/76561199705996474/recommended/3052450",
+      "author": "76561199705996474",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好评给沙耶，美术，还有剧情。",
+      "timestamp_created": 1780121695,
+      "playtime_forever": 1489
     }
   ]
 }
