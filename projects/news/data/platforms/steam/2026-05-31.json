@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-30T17:02:57.098185+00:00",
+  "archived_at": "2026-05-30T18:05:42.341248+00:00",
   "source": "steam",
-  "item_count": 22,
+  "item_count": 25,
   "items": [
     {
       "source": "steam",
@@ -333,6 +333,51 @@
       "review": "получил много огромной огромной силы",
       "timestamp_created": 1780082221,
       "playtime_forever": 2491
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T16:47:56+00:00",
+      "lang": "english",
+      "title": "[正面] i think im addicted.\r\nmy only regret is not know h...",
+      "summary": "i think im addicted.\r\nmy only regret is not know how peak this game before (years ago out of my radar because AI translation, but now the translation done by humans and its already so good).\r\none of the best gacha game out there (storyline/lore, depth gameplay mechanic, and gacha generously).",
+      "url": "https://steamcommunity.com/profiles/76561198960328697/recommended/3052450",
+      "author": "76561198960328697",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i think im addicted.\r\nmy only regret is not know how peak this game before (years ago out of my radar because AI translation, but now the translation done by humans and its already so good).\r\none of the best gacha game out there (storyline/lore, depth gameplay mechanic, and gacha generously).",
+      "timestamp_created": 1780159676,
+      "playtime_forever": 2564
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T16:38:07+00:00",
+      "lang": "schinese",
+      "title": "[正面] 为了沙耶入坑的，沙耶抽满了，所以特此留下好评。",
+      "summary": "为了沙耶入坑的，沙耶抽满了，所以特此留下好评。",
+      "url": "https://steamcommunity.com/profiles/76561198780428913/recommended/3052450",
+      "author": "76561198780428913",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "为了沙耶入坑的，沙耶抽满了，所以特此留下好评。",
+      "timestamp_created": 1780159087,
+      "playtime_forever": 1693
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T16:15:37+00:00",
+      "lang": "english",
+      "title": "[正面] sucha \"nerdy\" game, reminds me of reverse1999 but...",
+      "summary": "sucha \"nerdy\" game, reminds me of reverse1999 but this game i like more",
+      "url": "https://steamcommunity.com/profiles/76561199865458164/recommended/3052450",
+      "author": "76561199865458164",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "sucha \"nerdy\" game, reminds me of reverse1999 but this game i like more",
+      "timestamp_created": 1780157737,
+      "playtime_forever": 12275
     }
   ]
 }

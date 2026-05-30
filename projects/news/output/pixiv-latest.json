@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-30T17:02:55.777295+00:00",
+  "collected_at": "2026-05-30T18:05:37.314732+00:00",
   "source": "pixiv",
-  "item_count": 24,
+  "item_count": 23,
   "items": [
     {
       "source": "pixiv",
@@ -233,15 +233,13 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-05-03T23:34:41+09:00",
+      "time": "2026-05-30T18:04:09.128460+00:00",
       "lang": "",
-      "title": "スケスケゴールデン大学",
+      "title": "",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/144323523",
-      "author": "ばってらくろぁあ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/03/23/34/41/144323523_p0_square1200.jpg",
-      "content_type": "image"
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
     },
     {
       "source": "pixiv",
@@ -277,18 +275,6 @@
       "author": "솜랑랑",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/16/22/58/20/144855523_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-05-01T02:35:18+09:00",
-      "lang": "",
-      "title": "Kathigu-ra from Morimens",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/144198281",
-      "author": "Kairo0",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/01/02/35/18/144198281_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
