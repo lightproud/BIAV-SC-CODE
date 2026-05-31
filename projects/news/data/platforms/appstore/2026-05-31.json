@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-30T23:54:54.495273+00:00",
+  "archived_at": "2026-05-31T02:16:40.327252+00:00",
   "source": "appstore",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "appstore",
@@ -62,6 +62,16 @@
       "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
       "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
       "author": "Chros T",
+      "engagement": 3
+    },
+    {
+      "source": "appstore",
+      "time": "2026-05-29T01:35:11-07:00",
+      "lang": "id",
+      "title": "Keeps on crashing",
+      "summary": "The game keeps on crashing during battle",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews",
+      "author": "Cecuyyy",
       "engagement": 3
     }
   ]

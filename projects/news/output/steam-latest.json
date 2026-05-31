@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-30T23:54:54.163780+00:00",
+  "collected_at": "2026-05-31T02:16:37.642253+00:00",
   "source": "steam",
-  "item_count": 26,
+  "item_count": 28,
   "items": [
     {
       "source": "steam",
@@ -107,6 +107,51 @@
       "review": "跑，赶紧跑。水温越来越高，机制越来越离谱。",
       "timestamp_created": 1780114013,
       "playtime_forever": 21775
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T23:50:41+00:00",
+      "lang": "english",
+      "title": "[正面] Spent about an hour and some money trying to pull...",
+      "summary": "Spent about an hour and some money trying to pull Saya from this gacha game. Did not have any success. Would not have given it a chance in the first place if it weren't for Saya.\n\nHoping to get Saya once the story is available on June 6th (I think that's when it is available). Will probably never play again once I get Saya.",
+      "url": "https://steamcommunity.com/profiles/76561199108693684/recommended/3052450",
+      "author": "76561199108693684",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Spent about an hour and some money trying to pull Saya from this gacha game. Did not have any success. Would not have given it a chance in the first place if it weren't for Saya.\n\nHoping to get Saya once the story is available on June 6th (I think that's when it is available). Will probably never play again once I get Saya.",
+      "timestamp_created": 1780185041,
+      "playtime_forever": 70
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T23:43:55+00:00",
+      "lang": "schinese",
+      "title": "[正面] 二游版杀戮尖塔的感觉，虽然描述很多、机制很多但可以无脑碾压\r\n可以跨平台账号绑定，直接给到夯！抽卡福...",
+      "summary": "二游版杀戮尖塔的感觉，虽然描述很多、机制很多但可以无脑碾压\r\n可以跨平台账号绑定，直接给到夯！抽卡福利非常多，抽起来很爽，克系萝莉真的是对上哥们的xp了！！！！",
+      "url": "https://steamcommunity.com/profiles/76561198356180738/recommended/3052450",
+      "author": "76561198356180738",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "二游版杀戮尖塔的感觉，虽然描述很多、机制很多但可以无脑碾压\r\n可以跨平台账号绑定，直接给到夯！抽卡福利非常多，抽起来很爽，克系萝莉真的是对上哥们的xp了！！！！",
+      "timestamp_created": 1780184635,
+      "playtime_forever": 548
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-30T23:41:05+00:00",
+      "lang": "russian",
+      "title": "[正面] то что надо)",
+      "summary": "то что надо)",
+      "url": "https://steamcommunity.com/profiles/76561198830662659/recommended/3052450",
+      "author": "76561198830662659",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "то что надо)",
+      "timestamp_created": 1780184465,
+      "playtime_forever": 211
     },
     {
       "source": "steam",
@@ -377,21 +422,6 @@
       "review": "b（￣▽￣）d",
       "timestamp_created": 1780115128,
       "playtime_forever": 704
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-30T00:19:36+00:00",
-      "lang": "spanish",
-      "title": "[正面] Un juego con un hermoso diseño y historia, su modo...",
-      "summary": "Un juego con un hermoso diseño y historia, su modo de combate me parece dentro de todo bueno y tierno, lo recomiendo muchisisisismo",
-      "url": "https://steamcommunity.com/profiles/76561199878145762/recommended/3052450",
-      "author": "76561199878145762",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "Un juego con un hermoso diseño y historia, su modo de combate me parece dentro de todo bueno y tierno, lo recomiendo muchisisisismo",
-      "timestamp_created": 1780100376,
-      "playtime_forever": 505
     }
   ]
 }
