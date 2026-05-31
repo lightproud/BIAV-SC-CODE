@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T11:29:31.613915+00:00",
+  "archived_at": "2026-05-31T13:13:59.402628+00:00",
   "source": "steam",
-  "item_count": 33,
+  "item_count": 35,
   "items": [
     {
       "source": "steam",
@@ -498,6 +498,36 @@
       "review": "Карточная гача. Сначала было весело и интересно, даже несмотря на кривой русский язык. В итоге я перешёл на английский, потому что на нём стало понятнее, чем на родном. Это уже тревожный звоночек.\n\nСюжет наскучил через три арки, а персонаж в баннере просто сломал баланс в игре — без него играть было интереснее, чем с ним. \n\nДо лейта я не дошёл, хотя в гачах обычно суть именно в эндгейме. Сам я уже прошаренный игрок в гачи: HSR, ZZZ, Genshin, Honkai Impact 3rd — всё это реализовано лучше. Может, я просто прото-фанат MiHoYo? Не знаю, но факт остаётся фактом.\n\nЛор у некоторых персонажей интересный, но не настолько, чтобы остаться в игре. Для новичков, как я понимаю, сейчас ничего не делается, и вся политика игры — удерживать старых пользователей.\n\nСлабая гача с кривым переводом, сломанным балансом и быстрым выгоранием. \n\n3/10",
       "timestamp_created": 1780218696,
       "playtime_forever": 3420
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T12:09:09+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风很漂亮",
+      "summary": "画风很漂亮",
+      "url": "https://steamcommunity.com/profiles/76561199821420097/recommended/3052450",
+      "author": "76561199821420097",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风很漂亮",
+      "timestamp_created": 1780229349,
+      "playtime_forever": 736
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T11:20:23+00:00",
+      "lang": "english",
+      "title": "[正面] Uhhhh games good i kinda got ♥♥♥♥♥♥ in the ass at...",
+      "summary": "Uhhhh games good i kinda got ♥♥♥♥♥♥ in the ass at chap 3 end boss but regardless tis a good game yooo",
+      "url": "https://steamcommunity.com/profiles/76561199664232050/recommended/3052450",
+      "author": "76561199664232050",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Uhhhh games good i kinda got ♥♥♥♥♥♥ in the ass at chap 3 end boss but regardless tis a good game yooo",
+      "timestamp_created": 1780226423,
+      "playtime_forever": 384
     }
   ]
 }
