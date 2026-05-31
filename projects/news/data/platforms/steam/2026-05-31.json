@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T13:13:59.402628+00:00",
+  "archived_at": "2026-05-31T15:13:56.473536+00:00",
   "source": "steam",
-  "item_count": 35,
+  "item_count": 38,
   "items": [
     {
       "source": "steam",
@@ -528,6 +528,51 @@
       "review": "Uhhhh games good i kinda got ♥♥♥♥♥♥ in the ass at chap 3 end boss but regardless tis a good game yooo",
       "timestamp_created": 1780226423,
       "playtime_forever": 384
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T14:29:00+00:00",
+      "lang": "schinese",
+      "title": "[正面] 校猫死全家",
+      "summary": "校猫死全家",
+      "url": "https://steamcommunity.com/profiles/76561199208198425/recommended/3052450",
+      "author": "76561199208198425",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "校猫死全家",
+      "timestamp_created": 1780237740,
+      "playtime_forever": 1349
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T13:33:58+00:00",
+      "lang": "schinese",
+      "title": "[正面] 沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "summary": "沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "url": "https://steamcommunity.com/profiles/76561198064979568/recommended/3052450",
+      "author": "76561198064979568",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "timestamp_created": 1780234438,
+      "playtime_forever": 10072
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T12:54:30+00:00",
+      "lang": "english",
+      "title": "[正面] amazing art and animation, interesting and well wr...",
+      "summary": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
+      "url": "https://steamcommunity.com/profiles/76561199324314614/recommended/3052450",
+      "author": "76561199324314614",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
+      "timestamp_created": 1780232070,
+      "playtime_forever": 1934
     }
   ]
 }
