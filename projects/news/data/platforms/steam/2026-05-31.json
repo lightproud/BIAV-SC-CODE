@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T06:50:43.142838+00:00",
+  "archived_at": "2026-05-31T09:45:27.724279+00:00",
   "source": "steam",
-  "item_count": 31,
+  "item_count": 32,
   "items": [
     {
       "source": "steam",
@@ -468,6 +468,21 @@
       "review": "то что надо)",
       "timestamp_created": 1780184465,
       "playtime_forever": 211
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T08:59:20+00:00",
+      "lang": "schinese",
+      "title": "[负面] 克苏鲁要素纯套皮，冲着克系来的可以走了",
+      "summary": "克苏鲁要素纯套皮，冲着克系来的可以走了",
+      "url": "https://steamcommunity.com/profiles/76561199569653432/recommended/3052450",
+      "author": "76561199569653432",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "克苏鲁要素纯套皮，冲着克系来的可以走了",
+      "timestamp_created": 1780217960,
+      "playtime_forever": 198
     }
   ]
 }
