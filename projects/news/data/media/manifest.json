@@ -7853,6 +7853,13 @@
       "title": "[DC] yuanyuan3447@🔸phòng-chat-tiếng-việt: 🐧vờn nãy h cũng sắp đc nghỉ ngơi ời",
       "time": "2026-05-31T12:55:17.547000+00:00",
       "downloaded_at": "2026-05-31T20:50:03.986139+00:00"
+    },
+    "https://i.ytimg.com/vi/BTR9ES_xtcQ/hq720_custom_1.jpg?sqp=CNzX8tAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBQxOC1WEDQVLcdbCGrTxc0rf5yXQ": {
+      "filename": "youtube_48c94c770618e538.jpg",
+      "source": "youtube",
+      "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
+      "time": "2026-05-31T10:47:48.178802+00:00",
+      "downloaded_at": "2026-05-31T21:51:16.156920+00:00"
     }
   },
   "failed": {
@@ -12370,6 +12377,61 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-31T11:29:29.523447+00:00"
+    },
+    "https://preview.redd.it/vnqbzmpyei4h1.jpg?width=140&amp;height=123&amp;auto=webp&amp;s=b540223dc5c47a7f0b6cceaf07fd2ee9ad8a4dea": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:16.736546+00:00"
+    },
+    "https://preview.redd.it/t7bpl7fo6h4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=dfc343e0428028cd968d489e464f67ef1f5e58e0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:17.118506+00:00"
+    },
+    "https://preview.redd.it/1vux9i9i0h4h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=c8ead191ebd7f616a6de962d941ab39523e9a61c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:17.495264+00:00"
+    },
+    "https://preview.redd.it/nvhyqfez7i4h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=ec74fed3581e6cb92d2f20305ddbfe9a541ee694": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:17.878636+00:00"
+    },
+    "https://preview.redd.it/26pz7v3egi4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c3d57f9501937fb270b75d0c6f0e7fb4b21735ce": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:18.254726+00:00"
+    },
+    "https://preview.redd.it/pn5abrlykh4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d557c8f6c10c3491a078ccf8a3a088d632902dcb": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:18.632165+00:00"
+    },
+    "https://preview.redd.it/4cutavv20i4h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=1b5e5423f1522810c9e947448caa5274673a4325": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:19.007923+00:00"
+    },
+    "https://preview.redd.it/uahc4jdd7h4h1.jpg?width=140&amp;height=135&amp;auto=webp&amp;s=ed9565d1785c68ccef794ef0108b7334e0b97db6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:19.386126+00:00"
+    },
+    "https://preview.redd.it/6p2ry6lamh4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6fc1f336b71fbbadc53aff12853dc6dafecb884b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:19.764310+00:00"
+    },
+    "https://preview.redd.it/fpd8tmnptg4h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=d921ec5804cc51e6fbcd4d351299566a5c857bcc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:20.142485+00:00"
+    },
+    "https://preview.redd.it/habg8q97mj4h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=4573c3c2e312eae3848450f60bf1e9f441f4bf0e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T21:51:20.526291+00:00"
     }
   },
   "archived": []

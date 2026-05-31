@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-31T20:50:00.019743+00:00",
+  "collected_at": "2026-05-31T21:51:15.374536+00:00",
   "source": "google_play",
   "item_count": 14,
   "items": [
@@ -52,6 +52,16 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
       "author": "Gustavo Ribeiro",
       "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-05-29T20:00:01",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 game peak vcl",
+      "summary": "game peak vcl",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi",
+      "author": "Bảo",
+      "engagement": 1
     },
     {
       "source": "google_play",
@@ -111,16 +121,6 @@
       "summary": "สนุกมากคับพัฒนาต่อไปนะคับ",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
       "author": "วิรภัทร อรวิระกุล",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-29T20:00:01",
-      "lang": "vi",
-      "title": "[Google Play 好评] ★5 game peak vcl",
-      "summary": "game peak vcl",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi",
-      "author": "Bảo",
       "engagement": 0
     },
     {
