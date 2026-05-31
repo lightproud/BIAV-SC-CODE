@@ -1,22 +1,37 @@
 {
-  "collected_at": "2026-05-31T16:58:12.180463+00:00",
+  "collected_at": "2026-05-31T17:57:08.192908+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
-      "time": "2026-05-30T17:07:51+00:00",
+      "time": "2026-05-31T13:33:58+00:00",
+      "lang": "schinese",
+      "title": "[正面] 沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "summary": "沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "url": "https://steamcommunity.com/profiles/76561198064979568/recommended/3052450",
+      "author": "76561198064979568",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "沙耶之歌什么时候没有版权，我就什么时候退坑",
+      "timestamp_created": 1780234438,
+      "playtime_forever": 10112
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T12:54:30+00:00",
       "lang": "english",
-      "title": "[负面] Another great looking game, nice mechanics and ama...",
-      "summary": "Another great looking game, nice mechanics and amazing characters ... destroyed by gacha ♥♥♥♥.",
-      "url": "https://steamcommunity.com/profiles/76561198048856642/recommended/3052450",
-      "author": "76561198048856642",
-      "engagement": 3,
+      "title": "[正面] amazing art and animation, interesting and well wr...",
+      "summary": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
+      "url": "https://steamcommunity.com/profiles/76561199324314614/recommended/3052450",
+      "author": "76561199324314614",
+      "engagement": 1,
       "language": "english",
-      "voted_up": false,
-      "review": "Another great looking game, nice mechanics and amazing characters ... destroyed by gacha ♥♥♥♥.",
-      "timestamp_created": 1780160871,
-      "playtime_forever": 38
+      "voted_up": true,
+      "review": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
+      "timestamp_created": 1780232070,
+      "playtime_forever": 1934
     },
     {
       "source": "steam",
@@ -92,36 +107,6 @@
       "review": "校猫死全家",
       "timestamp_created": 1780237740,
       "playtime_forever": 1349
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-31T13:33:58+00:00",
-      "lang": "schinese",
-      "title": "[正面] 沙耶之歌什么时候没有版权，我就什么时候退坑",
-      "summary": "沙耶之歌什么时候没有版权，我就什么时候退坑",
-      "url": "https://steamcommunity.com/profiles/76561198064979568/recommended/3052450",
-      "author": "76561198064979568",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "沙耶之歌什么时候没有版权，我就什么时候退坑",
-      "timestamp_created": 1780234438,
-      "playtime_forever": 10112
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-31T12:54:30+00:00",
-      "lang": "english",
-      "title": "[正面] amazing art and animation, interesting and well wr...",
-      "summary": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
-      "url": "https://steamcommunity.com/profiles/76561199324314614/recommended/3052450",
-      "author": "76561199324314614",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
-      "timestamp_created": 1780232070,
-      "playtime_forever": 1934
     },
     {
       "source": "steam",
@@ -212,21 +197,6 @@
       "review": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
       "timestamp_created": 1780178154,
       "playtime_forever": 13
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-30T17:24:49+00:00",
-      "lang": "english",
-      "title": "[正面] very fun game. generous. finally a gacha with good...",
-      "summary": "very fun game. generous. finally a gacha with good gameplay",
-      "url": "https://steamcommunity.com/profiles/76561198058245095/recommended/3052450",
-      "author": "76561198058245095",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "very fun game. generous. finally a gacha with good gameplay",
-      "timestamp_created": 1780161889,
-      "playtime_forever": 1523
     }
   ]
 }
