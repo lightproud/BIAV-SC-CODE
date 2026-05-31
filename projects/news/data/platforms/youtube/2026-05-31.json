@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T02:16:40.324436+00:00",
+  "archived_at": "2026-05-31T06:50:43.146100+00:00",
   "source": "youtube",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "source": "youtube",
@@ -290,6 +290,18 @@
       "author": "Trash Keeper",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/r20dnqzjXy8/hq720.jpg?v=6a1b1747&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCb7NaS6isAWCzuASG_8adFVv1VA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-31T06:46:20.706587+00:00",
+      "lang": "",
+      "title": "[Morimens] Quiet Saya Vs Castor Video - No voice, cause oversea relatives are sleeping",
+      "summary": "1 minute ago",
+      "url": "https://www.youtube.com/watch?v=NIEC76Wm0DI",
+      "author": "Flares117",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/NIEC76Wm0DI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8IK3zDuaflbx_qz56OB_8XU4uOw",
       "content_type": "image"
     }
   ]

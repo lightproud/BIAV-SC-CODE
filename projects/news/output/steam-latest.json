@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-31T02:16:37.642253+00:00",
+  "collected_at": "2026-05-31T06:50:40.228137+00:00",
   "source": "steam",
-  "item_count": 28,
+  "item_count": 25,
   "items": [
     {
       "source": "steam",
@@ -80,36 +80,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-30T06:14:55+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好评给沙耶，美术，还有剧情。",
-      "summary": "好评给沙耶，美术，还有剧情。",
-      "url": "https://steamcommunity.com/profiles/76561199705996474/recommended/3052450",
-      "author": "76561199705996474",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好评给沙耶，美术，还有剧情。",
-      "timestamp_created": 1780121695,
-      "playtime_forever": 1549
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-30T04:06:53+00:00",
-      "lang": "schinese",
-      "title": "[负面] 跑，赶紧跑。水温越来越高，机制越来越离谱。",
-      "summary": "跑，赶紧跑。水温越来越高，机制越来越离谱。",
-      "url": "https://steamcommunity.com/profiles/76561199563248716/recommended/3052450",
-      "author": "76561199563248716",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "跑，赶紧跑。水温越来越高，机制越来越离谱。",
-      "timestamp_created": 1780114013,
-      "playtime_forever": 21775
-    },
-    {
-      "source": "steam",
       "time": "2026-05-30T23:50:41+00:00",
       "lang": "english",
       "title": "[正面] Spent about an hour and some money trying to pull...",
@@ -136,7 +106,7 @@
       "voted_up": true,
       "review": "二游版杀戮尖塔的感觉，虽然描述很多、机制很多但可以无脑碾压\r\n可以跨平台账号绑定，直接给到夯！抽卡福利非常多，抽起来很爽，克系萝莉真的是对上哥们的xp了！！！！",
       "timestamp_created": 1780184635,
-      "playtime_forever": 548
+      "playtime_forever": 805
     },
     {
       "source": "steam",
@@ -151,7 +121,7 @@
       "voted_up": true,
       "review": "то что надо)",
       "timestamp_created": 1780184465,
-      "playtime_forever": 211
+      "playtime_forever": 391
     },
     {
       "source": "steam",
@@ -211,7 +181,7 @@
       "voted_up": true,
       "review": "i think im addicted.\r\nmy only regret is not know how peak this game before (years ago out of my radar because AI translation, but now the translation done by humans and its already so good).\r\none of the best gacha game out there (storyline/lore, depth gameplay mechanic, and gacha generously).",
       "timestamp_created": 1780159676,
-      "playtime_forever": 2922
+      "playtime_forever": 3075
     },
     {
       "source": "steam",
@@ -226,7 +196,7 @@
       "voted_up": true,
       "review": "为了沙耶入坑的，沙耶抽满了，所以特此留下好评。",
       "timestamp_created": 1780159087,
-      "playtime_forever": 1767
+      "playtime_forever": 1781
     },
     {
       "source": "steam",
@@ -271,7 +241,7 @@
       "voted_up": true,
       "review": "peak",
       "timestamp_created": 1780152105,
-      "playtime_forever": 1502
+      "playtime_forever": 1594
     },
     {
       "source": "steam",
@@ -301,7 +271,7 @@
       "voted_up": true,
       "review": "福利很好，美术风格是少见的克系厚涂画风",
       "timestamp_created": 1780148801,
-      "playtime_forever": 470
+      "playtime_forever": 548
     },
     {
       "source": "steam",
@@ -361,7 +331,7 @@
       "voted_up": true,
       "review": "还行啊，剧情至少不犯困",
       "timestamp_created": 1780140009,
-      "playtime_forever": 548
+      "playtime_forever": 561
     },
     {
       "source": "steam",
@@ -407,21 +377,6 @@
       "review": "好玩但是好穷的游戏",
       "timestamp_created": 1780124384,
       "playtime_forever": 778
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-30T04:25:28+00:00",
-      "lang": "schinese",
-      "title": "[正面] b（￣▽￣）d",
-      "summary": "b（￣▽￣）d",
-      "url": "https://steamcommunity.com/profiles/76561198767657983/recommended/3052450",
-      "author": "76561198767657983",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "b（￣▽￣）d",
-      "timestamp_created": 1780115128,
-      "playtime_forever": 704
     }
   ]
 }
