@@ -7860,6 +7860,13 @@
       "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
       "time": "2026-05-31T10:47:48.178802+00:00",
       "downloaded_at": "2026-05-31T21:51:16.156920+00:00"
+    },
+    "https://i.ytimg.com/vi/BTR9ES_xtcQ/hq720_custom_2.jpg?sqp=COzz8tAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClnohaW56lD3l01RBzubITC7mlug": {
+      "filename": "youtube_09e95880a80b2db1.jpg",
+      "source": "youtube",
+      "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
+      "time": "2026-05-31T10:47:38.378914+00:00",
+      "downloaded_at": "2026-05-31T22:50:35.974426+00:00"
     }
   },
   "failed": {
@@ -12432,6 +12439,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-31T21:51:20.526291+00:00"
+    },
+    "https://preview.redd.it/qirbc4ckxj4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8f80ce09b58ca81b6a6eaf3c42bc80f1cf056774": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T22:50:36.385217+00:00"
     }
   },
   "archived": []

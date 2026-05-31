@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-31T21:51:15.374536+00:00",
+  "collected_at": "2026-05-31T22:50:35.178066+00:00",
   "source": "all",
-  "item_count": 188,
+  "item_count": 174,
   "items": [
     {
       "source": "steam",
@@ -62,6 +62,21 @@
       "review": "Spent about an hour and some money trying to pull Saya from this gacha game. Did not have any success. Would not have given it a chance in the first place if it weren't for Saya.\n\nHoping to get Saya once the story is available on June 6th (I think that's when it is available). Will probably never play again once I get Saya.",
       "timestamp_created": 1780185041,
       "playtime_forever": 70
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-31T21:41:20+00:00",
+      "lang": "english",
+      "title": "[正面] Went in for the Saya no Uta collab event, but what...",
+      "summary": "Went in for the Saya no Uta collab event, but what I found was a hidden gem in the gacha space with great roguelike deck building gameplay and lovecraftian horror aesthetics! Also despite being a gacha, the devs are so generous giving almost 350+ free pulls just for this anniversary event alone. Give it a try!",
+      "url": "https://steamcommunity.com/profiles/76561198032000902/recommended/3052450",
+      "author": "76561198032000902",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Went in for the Saya no Uta collab event, but what I found was a hidden gem in the gacha space with great roguelike deck building gameplay and lovecraftian horror aesthetics! Also despite being a gacha, the devs are so generous giving almost 350+ free pulls just for this anniversary event alone. Give it a try!",
+      "timestamp_created": 1780263680,
+      "playtime_forever": 2043
     },
     {
       "source": "steam",
@@ -182,21 +197,6 @@
       "review": "то что надо)",
       "timestamp_created": 1780184465,
       "playtime_forever": 391
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-30T21:55:54+00:00",
-      "lang": "french",
-      "title": "[负面] Voyez mon temps de jeu ? 3min de gameplay, le rest...",
-      "summary": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
-      "url": "https://steamcommunity.com/profiles/76561198039333250/recommended/3052450",
-      "author": "76561198039333250",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": false,
-      "review": "Voyez mon temps de jeu ? 3min de gameplay, le reste j'ai passé mon temps à cliquer pour skip dialog. Et j'avais activé l'option qui skip auto l'histoire. Full naration, zero gameplay :)",
-      "timestamp_created": 1780178154,
-      "playtime_forever": 13
     },
     {
       "source": "discord",
@@ -498,229 +498,37 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-31T21:47:47.580416+00:00",
-      "lang": "",
-      "title": "Morimens | The Greatest Gacha Game You've Never Played (Long Review)",
-      "summary": "[11mo ago] My newest fascination for the last month has got to be one of the most unique gacha games I've seen. Morimens is what I'd ...",
-      "url": "https://www.youtube.com/watch?v=DTCfk_ztxeI",
-      "author": "Pseychie",
-      "engagement": 309758,
-      "media_url": "https://i.ytimg.com/vi/DTCfk_ztxeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtSFm4kyI_gCqen2KjH6necJ54UA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580781+00:00",
-      "lang": "",
-      "title": "How a Dying Game achieved Immortality",
-      "summary": "[2w ago] The insane story of how Morimens went from death's door to a masterpiece that shattered my heart. Play Morimens because I love ...",
-      "url": "https://www.youtube.com/watch?v=vcESw24eqVQ",
-      "author": "Gray Raven Radio and Linasera",
-      "engagement": 90504,
-      "media_url": "https://i.ytimg.com/vi/vcESw24eqVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF3AZFSL_4m_Bqtc7llcEi7Ug8gg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580804+00:00",
-      "lang": "",
-      "title": "The Most FUN Gacha Game You Need To Try | Morimens",
-      "summary": "[10mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
-      "url": "https://www.youtube.com/watch?v=5PDpbrvt43E",
-      "author": "Polarisu",
-      "engagement": 21047,
-      "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580686+00:00",
-      "lang": "",
-      "title": "10 Things beginners NEED to do in Morimens",
-      "summary": "[2w ago] These ten tips will help you get started in Morimens with a lot less confusion. ♢ TWITTER: https://twitter.com/GrayRavenRadio ...",
-      "url": "https://www.youtube.com/watch?v=gMNxwddLt-s",
-      "author": "Linasera",
-      "engagement": 19913,
-      "media_url": "https://i.ytimg.com/vi/gMNxwddLt-s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZQ2TADkMKT1WXRFYflKhDcVZ5lg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580729+00:00",
-      "lang": "",
-      "title": "How to get Saya for FREE in Morimens",
-      "summary": "[10d ago] Saya no Uta is coming to Morimens. This is everything you need to know about this brand new collab. ♢ TWITTER: ...",
-      "url": "https://www.youtube.com/watch?v=qySOc15QQ5E",
-      "author": "Linasera",
-      "engagement": 18087,
-      "media_url": "https://i.ytimg.com/vi/qySOc15QQ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4gMrzNTAN98a-S9jxJ5xoYY3nAw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T10:47:48.178802+00:00",
+      "time": "2026-05-31T10:47:38.378914+00:00",
       "lang": "",
       "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
-      "summary": "[11 hours ago] *This video contains spoilers.\n\nProvided by: The Night Before Oblivion\n\n▼Download here!\n\niOS/Android:\nhttps://boykyakuzenya ...",
+      "summary": "[12 hours ago] *This video contains spoilers.\n\nProvided by: The Night Before Oblivion\n\n▼Download here!\n\niOS/Android:\nhttps://boykyakuzenya ...",
       "url": "https://www.youtube.com/watch?v=BTR9ES_xtcQ",
       "author": "良作鬱ゲーサークル【ゆっくり解説】",
-      "engagement": 8619,
-      "media_url": "https://i.ytimg.com/vi/BTR9ES_xtcQ/hq720_custom_1.jpg?sqp=CNzX8tAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBQxOC1WEDQVLcdbCGrTxc0rf5yXQ",
+      "engagement": 8854,
+      "media_url": "https://i.ytimg.com/vi/BTR9ES_xtcQ/hq720_custom_2.jpg?sqp=COzz8tAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClnohaW56lD3l01RBzubITC7mlug",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-31T21:47:47.580762+00:00",
-      "lang": "",
-      "title": "How to build teams in Morimens!",
-      "summary": "[3mo ago] Since everyone keeps asking me how i'm so good at the game... and how i'm always so smart and cool.... i decided to make this ...",
-      "url": "https://www.youtube.com/watch?v=Oof6sGexHFQ",
-      "author": "Trash Keeper",
-      "engagement": 7197,
-      "media_url": "https://i.ytimg.com/vi/Oof6sGexHFQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAqOUl3XFdHUYmVRJTFFATYQ-k8Q",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580737+00:00",
-      "lang": "",
-      "title": "Banner guide i guess...",
-      "summary": "[10d ago] I can't believe i'm actually making a real guide... it's like i'm an actual content creator... what have i become. Order of awakeners ...",
-      "url": "https://www.youtube.com/watch?v=en49pf6-BJw",
-      "author": "Trash Keeper",
-      "engagement": 6986,
-      "media_url": "https://i.ytimg.com/vi/en49pf6-BJw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIg2hUwpMWFKsQSub0G-gTdta0rQ",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580745+00:00",
-      "lang": "",
-      "title": "🎵 Morimens × Saya no Uta┊Theme Song - Song of Memento - いとうかなこ Ver.",
-      "summary": "[2d ago] \"May you hear me call, even as my shadow fades into thin air.\" \"May I call your name, though the world all fades.\" ✦ Vocals: ...",
-      "url": "https://www.youtube.com/watch?v=0Z8bWepktz8",
-      "author": "Morimens",
-      "engagement": 5995,
-      "media_url": "https://i.ytimg.com/vi/0Z8bWepktz8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNW8wZbABCYCqMsCgJLV4ucs3dHg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580673+00:00",
+      "time": "2026-05-31T00:47:37.817549+00:00",
       "lang": "",
       "title": "Saya Showcase | Teams you can play her in Morimens",
-      "summary": "[21h ago] The best teams for Saya in Morimens within the first day of release. 00:00 Intro 00:07 Corrosion 01:20 Initial Thoughts 01:51 ...",
+      "summary": "[22 hours ago] The best teams for Saya in Morimens within the first day of release. 00:00 Intro 00:07 Corrosion 01:20 Initial Thoughts 01:51 ...",
       "url": "https://www.youtube.com/watch?v=74kwJnNMXOk",
       "author": "ClimbKaly",
-      "engagement": 5002,
+      "engagement": 5107,
       "media_url": "https://i.ytimg.com/vi/74kwJnNMXOk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCq0U6IGQtZKZePErYeAAkbscj7xQ",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-31T21:47:47.580705+00:00",
-      "lang": "",
-      "title": "[Morimens] Flares' Awakener Review : Saya - Caro Support Unit : \"Fake\" A/S Tier unit, true B/C tier",
-      "summary": "[1d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=pfbCe0QsI2A",
-      "author": "Flares117",
-      "engagement": 4805,
-      "media_url": "https://i.ytimg.com/vi/pfbCe0QsI2A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJYM8iqJ3SUBtKzsV14YymfccYIA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580797+00:00",
-      "lang": "",
-      "title": "[Morimens] The worst player in Morimens? What not to do, basic teambuilding and mechanic guide.",
-      "summary": "[7d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=kI3cNXKrKOo",
-      "author": "Flares117",
-      "engagement": 4700,
-      "media_url": "https://i.ytimg.com/vi/kI3cNXKrKOo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwn0jQ3xFbhQ4T5MDj2WIKILcHUA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580754+00:00",
-      "lang": "",
-      "title": "[Morimens] 2026 Half Anni Overview : The most predatory and greedy anniversary event yet?!",
-      "summary": "[2w ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=QsDhTomGGbI",
-      "author": "Flares117",
-      "engagement": 4335,
-      "media_url": "https://i.ytimg.com/vi/QsDhTomGGbI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPKcjuh73NG4SsTpyShSlBa3B1Qg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580720+00:00",
-      "lang": "",
-      "title": "Morimens chap 8 be like",
-      "summary": "[7mo ago] A fan try to join the Fan Art contest but can't draw and have skill issue. UID: 101198315 #MorimensFanArt.",
-      "url": "https://www.youtube.com/watch?v=oCqyBYOE_cw",
-      "author": "Wednesday playlist",
-      "engagement": 2923,
-      "media_url": "https://i.ytimg.com/vi/oCqyBYOE_cw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7Oil9H-1QjARmTbZ5Fz8bKolKKg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580788+00:00",
-      "lang": "",
-      "title": "[Morimens] Rage Rerun Overview/Guide - WATCH THE OLDER VIDEOS - Kath/Salv/Wanda. Livestream",
-      "summary": "[2mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=i7ZEXOpz9DU",
-      "author": "Flares117",
-      "engagement": 1927,
-      "media_url": "https://i.ytimg.com/vi/i7ZEXOpz9DU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbnMHuqF8nzcTEjke5GcSB_Hjd5g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580713+00:00",
-      "lang": "",
-      "title": "『 Morimens / First time trying it out! 』 how many men mori",
-      "summary": "[Streamed 1mo ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
-      "url": "https://www.youtube.com/watch?v=Zvs5WtSL0Po",
-      "author": "Yuuna Nini",
-      "engagement": 1221,
-      "media_url": "https://i.ytimg.com/vi/Zvs5WtSL0Po/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1_q83bpuVycA67DNUlgRTQ710Yg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580812+00:00",
-      "lang": "",
-      "title": "[Morimens] Alva + Saya W4A5",
-      "summary": "1d ago",
-      "url": "https://www.youtube.com/watch?v=-2aR0NQnqNQ",
-      "author": "Zyocuh",
-      "engagement": 1074,
-      "media_url": "https://i.ytimg.com/vi/-2aR0NQnqNQ/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIDkoNzAP&rs=AOn4CLBeXWyQmcC--sja2_n0xqBy_bCT0w",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580772+00:00",
-      "lang": "",
-      "title": "[Morimens] Short Castor with Saya Wheel Corrosion. Using Supports with No wheels or Covenants.",
-      "summary": "14h ago",
-      "url": "https://www.youtube.com/watch?v=acV6Jgt3k0k",
-      "author": "Flares117",
-      "engagement": 400,
-      "media_url": "https://i.ytimg.com/vi/acV6Jgt3k0k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCDIt5KHidzc-7EoUx6INpQH7Xrew",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-31T21:47:47.580696+00:00",
+      "time": "2026-05-31T17:47:37.817574+00:00",
       "lang": "",
       "title": "[Morimens] Endgame Team Comps (Part 8) Preset Discard Team - Aurita Aurita",
-      "summary": "[4h ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[5 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=HeD6X1tYrKo",
       "author": "Flares117",
-      "engagement": 351,
+      "engagement": 405,
       "media_url": "https://i.ytimg.com/vi/HeD6X1tYrKo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCR2XoOMJ5KD-E3CIZ5ecLJusWvWQ",
       "content_type": "image"
     },
@@ -735,6 +543,19 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/vnqbzmpyei4h1.jpg?width=140&amp;height=123&amp;auto=webp&amp;s=b540223dc5c47a7f0b6cceaf07fd2ee9ad8a4dea",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T19:30:55+00:00",
+      "lang": "en",
+      "title": "Morality of the characters",
+      "summary": "About to get the game. You can probably guess I&#39;m a Saya no Uta fan. But when I heard she&#39;s going to be in a gacha game my first thought was &quot;how to you put that in a gacha about collecting waifus?&quot;. I learned that the game is more about Eldritch horror than other gacha games so I got curious. Now I&#39;m curious about the morality of the characters, mostly because I&#39;m wondering if Saya would be out of place in the game or not  &#32; submitted by &#32;  /u/TorukNeedsPianoWaifu   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt4ykj/morality_of_the_characters/",
+      "author": "/u/TorukNeedsPianoWaifu",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -771,12 +592,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T19:30:55+00:00",
+      "time": "2026-05-31T21:31:14+00:00",
       "lang": "en",
-      "title": "Morality of the characters",
-      "summary": "About to get the game. You can probably guess I&#39;m a Saya no Uta fan. But when I heard she&#39;s going to be in a gacha game my first thought was &quot;how to you put that in a gacha about collecting waifus?&quot;. I learned that the game is more about Eldritch horror than other gacha games so I got curious. Now I&#39;m curious about the morality of the characters, mostly because I&#39;m wondering if Saya would be out of place in the game or not  &#32; submitted by &#32;  /u/TorukNeedsPianoWaifu   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt4ykj/morality_of_the_characters/",
-      "author": "/u/TorukNeedsPianoWaifu",
+      "title": "I am planning to play the game but there are thing I need to know before.",
+      "summary": "1- is the game PTW/Gacha heavy? 2- is the story good? 3- is the game fun? i like deck builders but i dont want to grind a game i dont have fun playing (i like grinding limbus company create daily) so generally is the game fun and let me have creative team building? edit: 4- is the micro-transaction worth it / outrageous?   &#32; submitted by &#32;  /u/-Re-i   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt84c4/i_am_planning_to_play_the_game_but_there_are/",
+      "author": "/u/-Re-i",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -814,13 +635,56 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T21:31:14+00:00",
+      "time": "2026-05-31T19:35:58+00:00",
       "lang": "en",
-      "title": "I am planning to play the game but there are thing I need to know before.",
-      "summary": "1- is the game PTW/Gacha heavy? 2- is the story good? 3- is the game fun? i like deck builders but i dont want to grind a game i dont have fun playing (i like grinding limbus company create daily) so generally is the game fun and let me have creative team building?  &#32; submitted by &#32;  /u/-Re-i   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt84c4/i_am_planning_to_play_the_game_but_there_are/",
-      "author": "/u/-Re-i",
+      "title": "New player",
+      "summary": "Started this game today and I&#39;m doing backflips, since I&#39;m a low level someone said that I don&#39;t really need to worry about teams since anyone can clear the story for now but I lowkey want to know who to focus on... but I don&#39;t understand a thing 🥰  &#32; submitted by &#32;  /u/Terrible_Property283   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt53cj/new_player/",
+      "author": "/u/Terrible_Property283",
       "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T21:45:44+00:00",
+      "lang": "en",
+      "title": "Fav character and team!",
+      "summary": "I am happily enjoying morimens and especially Vortice and Tulu. So I&#39;m a bit curious. What&#39;s everyone&#39;s fav character (s) and preferes teams for them. I like Tulu mostly because he is a sleepy lil guy and vortice is because she is an adorable goofball that oneshots some of the bosses I get stuck on.   &#32; submitted by &#32;  /u/SensitiveInside5507   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt8hai/fav_character_and_team/",
+      "author": "/u/SensitiveInside5507",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T21:44:46+00:00",
+      "lang": "en",
+      "title": "first chapter team?",
+      "summary": "ive been slacking on the story, and i dont follow the meta just the cute girls, what team can i use to clear the story easily? and on a side note, best helot catena team? shes so cute ive been maining her but idk whats optimal  &#32; submitted by &#32;  /u/Opposite_Monitor_206   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt8gfg/first_chapter_team/",
+      "author": "/u/Opposite_Monitor_206",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/habg8q97mj4h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=4573c3c2e312eae3848450f60bf1e9f441f4bf0e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T17:25:30+00:00",
+      "lang": "en",
+      "title": "Pull plan suggestions for Anniversary Rotating Banner?",
+      "summary": "So, once we have all the rewards, I have plans on getting one of the characters in the rotating banner. Only the blue ones are the one who could I pull for in that moment (because still pulling in Kalleido Recolections of Arc 2). My main teams are something like...  Mouchette, Aigis, Helot, Faint. Caecus, Nautila, Sanga, Ramona. Vortice, Ryker, Miryam, Celeste. Arachne, Horla, Winkle, Doll.  The main one I use for Story is the first, except is actually Ramona replacing Faint. So, what character (between Doresain, kath, Pickman, pollux, GMurphy, Mouchette, Xu, Vortice and Arachne) do I have to pull with the remaining 150 pulls I&#39;ll get? PD: I also got Corposant, lmao.  &#32; submitted by &#32;  /u/Familiar_Second_950   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt1in3/pull_plan_suggestions_for_anniversary_rotating/",
+      "author": "/u/Familiar_Second_950",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/nvhyqfez7i4h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=ec74fed3581e6cb92d2f20305ddbfe9a541ee694",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -857,21 +721,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T17:25:30+00:00",
-      "lang": "en",
-      "title": "Pull plan suggestions for Anniversary Rotating Banner?",
-      "summary": "So, once we have all the rewards, I have plans on getting one of the characters in the rotating banner. Only the blue ones are the one who could I pull for in that moment (because still pulling in Kalleido Recolections of Arc 2). My main teams are something like...  Mouchette, Aigis, Helot, Faint. Caecus, Nautila, Sanga, Ramona. Vortice, Ryker, Miryam, Celeste. Arachne, Horla, Winkle, Doll.  The main one I use for Story is the first, except is actually Ramona replacing Faint. So, what character (between Doresain, kath, Pickman, pollux, GMurphy, Mouchette, Xu, Vortice and Arachne) do I have to pull with the remaining 150 pulls I&#39;ll get? PD: I also got Corposant, lmao.  &#32; submitted by &#32;  /u/Familiar_Second_950   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt1in3/pull_plan_suggestions_for_anniversary_rotating/",
-      "author": "/u/Familiar_Second_950",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/nvhyqfez7i4h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=ec74fed3581e6cb92d2f20305ddbfe9a541ee694",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-31T11:01:56+00:00",
       "lang": "en",
       "title": "team feedback",
@@ -881,32 +730,6 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/a4js80brfg4h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=4ff59d099001c50d6e26c0a748a93cefd14b02c3",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T19:35:58+00:00",
-      "lang": "en",
-      "title": "New player",
-      "summary": "Started this game today and I&#39;m doing backflips, since I&#39;m a low level someone said that I don&#39;t really need to worry about teams since anyone can clear the story for now but I lowkey want to know who to focus on... but I don&#39;t understand a thing 🥰  &#32; submitted by &#32;  /u/Terrible_Property283   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt53cj/new_player/",
-      "author": "/u/Terrible_Property283",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T21:45:44+00:00",
-      "lang": "en",
-      "title": "Fav character and team!",
-      "summary": "I am happily enjoying morimens and especially Vortice and Tulu. So I&#39;m a bit curious. What&#39;s everyone&#39;s fav character (s) and preferes teams for them. I like Tulu mostly because he is a sleepy lil guy and vortice is because she is an adorable goofball that oneshots some of the bosses I get stuck on.   &#32; submitted by &#32;  /u/SensitiveInside5507   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt8hai/fav_character_and_team/",
-      "author": "/u/SensitiveInside5507",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -956,6 +779,21 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-31T13:36:42+00:00",
+      "lang": "en",
+      "title": "what is the best team with these characters? bonus points if saya is included",
+      "summary": "&#32; submitted by &#32;  /u/Realistic_Summer_845   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tsvlaa/what_is_the_best_team_with_these_characters_bonus/",
+      "author": "/u/Realistic_Summer_845",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/uahc4jdd7h4h1.jpg?width=140&amp;height=135&amp;auto=webp&amp;s=ed9565d1785c68ccef794ef0108b7334e0b97db6",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-31T16:32:53+00:00",
       "lang": "en",
       "title": "Team advice",
@@ -986,36 +824,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T13:36:42+00:00",
-      "lang": "en",
-      "title": "what is the best team with these characters? bonus points if saya is included",
-      "summary": "&#32; submitted by &#32;  /u/Realistic_Summer_845   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tsvlaa/what_is_the_best_team_with_these_characters_bonus/",
-      "author": "/u/Realistic_Summer_845",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/uahc4jdd7h4h1.jpg?width=140&amp;height=135&amp;auto=webp&amp;s=ed9565d1785c68ccef794ef0108b7334e0b97db6",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T14:59:47+00:00",
-      "lang": "en",
-      "title": "When to gnostic advance?",
-      "summary": "So I’ve been playing for almost a year now and this is the only character improvement I haven’t touched at all because the resource needed is so limited. So to more experienced players: When and how far is it worth it to gnostic advance? One awakener to max for main story team or everyone equally up a level for d-zone? Which awakeners need it most? Only dps like Kath or are universal supports like Thais better choice?  I only have 19 primers so I wouldn’t want to waste them by misunderstanding how this works.   &#32; submitted by &#32;  /u/sojaed   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tsxnbj/when_to_gnostic_advance/",
-      "author": "/u/sojaed",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/6p2ry6lamh4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6fc1f336b71fbbadc53aff12853dc6dafecb884b",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-31T12:19:37+00:00",
       "lang": "en",
       "title": "Feedback team",
@@ -1031,14 +839,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T21:44:46+00:00",
+      "time": "2026-05-31T22:46:34+00:00",
       "lang": "en",
-      "title": "first chapter team?",
-      "summary": "ive been slacking on the story, and i dont follow the meta just the cute girls, what team can i use to clear the story easily? and on a side note, best helot catena team? shes so cute ive been maining her but idk whats optimal  &#32; submitted by &#32;  /u/Opposite_Monitor_206   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tt8gfg/first_chapter_team/",
-      "author": "/u/Opposite_Monitor_206",
+      "title": "Ghetto Question",
+      "summary": "I already got GHelot pretty quickly, but I’m wondering how important her copies or WoD is while her daily banner is still up?  &#32; submitted by &#32;  /u/Resting_In_Pieces   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tt9y5x/ghetto_question/",
+      "author": "/u/Resting_In_Pieces",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/habg8q97mj4h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=4573c3c2e312eae3848450f60bf1e9f441f4bf0e",
+      "media_url": "https://preview.redd.it/qirbc4ckxj4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8f80ce09b58ca81b6a6eaf3c42bc80f1cf056774",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -1056,16 +864,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T03:50:13+00:00",
-      "lang": "en",
-      "title": "Baby Meat!",
-      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tskdg9/baby_meat/",
-      "author": "u//u/DrExluxk",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-31T19:30:55+00:00",
       "lang": "en",
       "title": "Morality of the characters",
@@ -1076,12 +874,32 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-31T03:50:13+00:00",
+      "lang": "en",
+      "title": "Baby Meat!",
+      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tskdg9/baby_meat/",
+      "author": "u//u/DrExluxk",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-31T07:31:11+00:00",
       "lang": "en",
       "title": "New Saya CG from Morimens JP Youtube Short",
       "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tsoj09/new_saya_cg_from_morimens_jp_youtube_short/",
       "author": "u//u/DrExluxk",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T21:31:14+00:00",
+      "lang": "en",
+      "title": "I am planning to play the game but there are thing I need to know before.",
+      "summary": "1- is the game PTW/Gacha heavy? 2- is the story good? 3- is the game fun? i like deck builders but i dont want to grind a game i dont have fun playing (i like grinding limbus company create daily) so generally is the game fun and let me have creative team building? edit: 4- is the micro-transaction worth it / outrageous?   &#32; submitted by &#32;  /u/-Re-i   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt84c4/i_am_planning_to_play_the_game_but_there_are/",
+      "author": "u//u/-Re-i",
       "engagement": 0
     },
     {
@@ -1106,12 +924,42 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T21:31:14+00:00",
+      "time": "2026-05-31T19:35:58+00:00",
       "lang": "en",
-      "title": "I am planning to play the game but there are thing I need to know before.",
-      "summary": "1- is the game PTW/Gacha heavy? 2- is the story good? 3- is the game fun? i like deck builders but i dont want to grind a game i dont have fun playing (i like grinding limbus company create daily) so generally is the game fun and let me have creative team building?  &#32; submitted by &#32;  /u/-Re-i   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tt84c4/i_am_planning_to_play_the_game_but_there_are/",
-      "author": "u//u/-Re-i",
+      "title": "New player",
+      "summary": "Started this game today and I&#39;m doing backflips, since I&#39;m a low level someone said that I don&#39;t really need to worry about teams since anyone can clear the story for now but I lowkey want to know who to focus on... but I don&#39;t understand a thing 🥰  &#32; submitted by &#32;  /u/Terrible_Property283   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt53cj/new_player/",
+      "author": "u//u/Terrible_Property283",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T21:45:44+00:00",
+      "lang": "en",
+      "title": "Fav character and team!",
+      "summary": "I am happily enjoying morimens and especially Vortice and Tulu. So I&#39;m a bit curious. What&#39;s everyone&#39;s fav character (s) and preferes teams for them. I like Tulu mostly because he is a sleepy lil guy and vortice is because she is an adorable goofball that oneshots some of the bosses I get stuck on.   &#32; submitted by &#32;  /u/SensitiveInside5507   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt8hai/fav_character_and_team/",
+      "author": "u//u/SensitiveInside5507",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T21:44:46+00:00",
+      "lang": "en",
+      "title": "first chapter team?",
+      "summary": "ive been slacking on the story, and i dont follow the meta just the cute girls, what team can i use to clear the story easily? and on a side note, best helot catena team? shes so cute ive been maining her but idk whats optimal  &#32; submitted by &#32;  /u/Opposite_Monitor_206   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt8gfg/first_chapter_team/",
+      "author": "u//u/Opposite_Monitor_206",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-31T17:25:30+00:00",
+      "lang": "en",
+      "title": "Pull plan suggestions for Anniversary Rotating Banner?",
+      "summary": "So, once we have all the rewards, I have plans on getting one of the characters in the rotating banner. Only the blue ones are the one who could I pull for in that moment (because still pulling in Kalleido Recolections of Arc 2). My main teams are something like...  Mouchette, Aigis, Helot, Faint. Caecus, Nautila, Sanga, Ramona. Vortice, Ryker, Miryam, Celeste. Arachne, Horla, Winkle, Doll.  The main one I use for Story is the first, except is actually Ramona replacing Faint. So, what character (between Doresain, kath, Pickman, pollux, GMurphy, Mouchette, Xu, Vortice and Arachne) do I have to pull with the remaining 150 pulls I&#39;ll get? PD: I also got Corposant, lmao.  &#32; submitted by &#32;  /u/Familiar_Second_950   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt1in3/pull_plan_suggestions_for_anniversary_rotating/",
+      "author": "u//u/Familiar_Second_950",
       "engagement": 0
     },
     {
@@ -1136,42 +984,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T17:25:30+00:00",
-      "lang": "en",
-      "title": "Pull plan suggestions for Anniversary Rotating Banner?",
-      "summary": "So, once we have all the rewards, I have plans on getting one of the characters in the rotating banner. Only the blue ones are the one who could I pull for in that moment (because still pulling in Kalleido Recolections of Arc 2). My main teams are something like...  Mouchette, Aigis, Helot, Faint. Caecus, Nautila, Sanga, Ramona. Vortice, Ryker, Miryam, Celeste. Arachne, Horla, Winkle, Doll.  The main one I use for Story is the first, except is actually Ramona replacing Faint. So, what character (between Doresain, kath, Pickman, pollux, GMurphy, Mouchette, Xu, Vortice and Arachne) do I have to pull with the remaining 150 pulls I&#39;ll get? PD: I also got Corposant, lmao.  &#32; submitted by &#32;  /u/Familiar_Second_950   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tt1in3/pull_plan_suggestions_for_anniversary_rotating/",
-      "author": "u//u/Familiar_Second_950",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-31T11:01:56+00:00",
       "lang": "en",
       "title": "team feedback",
       "summary": "does this team work well? I dont know anything about meta or whatever it is  &#32; submitted by &#32;  /u/Lanky_Ad_8174   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tss8p7/team_feedback/",
       "author": "u//u/Lanky_Ad_8174",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T19:35:58+00:00",
-      "lang": "en",
-      "title": "New player",
-      "summary": "Started this game today and I&#39;m doing backflips, since I&#39;m a low level someone said that I don&#39;t really need to worry about teams since anyone can clear the story for now but I lowkey want to know who to focus on... but I don&#39;t understand a thing 🥰  &#32; submitted by &#32;  /u/Terrible_Property283   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tt53cj/new_player/",
-      "author": "u//u/Terrible_Property283",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T21:45:44+00:00",
-      "lang": "en",
-      "title": "Fav character and team!",
-      "summary": "I am happily enjoying morimens and especially Vortice and Tulu. So I&#39;m a bit curious. What&#39;s everyone&#39;s fav character (s) and preferes teams for them. I like Tulu mostly because he is a sleepy lil guy and vortice is because she is an adorable goofball that oneshots some of the bosses I get stuck on.   &#32; submitted by &#32;  /u/SensitiveInside5507   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tt8hai/fav_character_and_team/",
-      "author": "u//u/SensitiveInside5507",
       "engagement": 0
     },
     {
@@ -1206,6 +1024,16 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-31T13:36:42+00:00",
+      "lang": "en",
+      "title": "what is the best team with these characters? bonus points if saya is included",
+      "summary": "&#32; submitted by &#32;  /u/Realistic_Summer_845   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tsvlaa/what_is_the_best_team_with_these_characters_bonus/",
+      "author": "u//u/Realistic_Summer_845",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-31T16:32:53+00:00",
       "lang": "en",
       "title": "Team advice",
@@ -1226,26 +1054,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T13:36:42+00:00",
-      "lang": "en",
-      "title": "what is the best team with these characters? bonus points if saya is included",
-      "summary": "&#32; submitted by &#32;  /u/Realistic_Summer_845   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tsvlaa/what_is_the_best_team_with_these_characters_bonus/",
-      "author": "u//u/Realistic_Summer_845",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-31T14:59:47+00:00",
-      "lang": "en",
-      "title": "When to gnostic advance?",
-      "summary": "So I’ve been playing for almost a year now and this is the only character improvement I haven’t touched at all because the resource needed is so limited. So to more experienced players: When and how far is it worth it to gnostic advance? One awakener to max for main story team or everyone equally up a level for d-zone? Which awakeners need it most? Only dps like Kath or are universal supports like Thais better choice?  I only have 19 primers so I wouldn’t want to waste them by misunderstanding how this works.   &#32; submitted by &#32;  /u/sojaed   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tsxnbj/when_to_gnostic_advance/",
-      "author": "u//u/sojaed",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-31T12:19:37+00:00",
       "lang": "en",
       "title": "Feedback team",
@@ -1256,12 +1064,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-31T21:44:46+00:00",
+      "time": "2026-05-31T22:46:34+00:00",
       "lang": "en",
-      "title": "first chapter team?",
-      "summary": "ive been slacking on the story, and i dont follow the meta just the cute girls, what team can i use to clear the story easily? and on a side note, best helot catena team? shes so cute ive been maining her but idk whats optimal  &#32; submitted by &#32;  /u/Opposite_Monitor_206   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tt8gfg/first_chapter_team/",
-      "author": "u//u/Opposite_Monitor_206",
+      "title": "Ghetto Question",
+      "summary": "I already got GHelot pretty quickly, but I’m wondering how important her copies or WoD is while her daily banner is still up?  &#32; submitted by &#32;  /u/Resting_In_Pieces   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tt9y5x/ghetto_question/",
+      "author": "u//u/Resting_In_Pieces",
       "engagement": 0
     },
     {
@@ -1346,7 +1154,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.404677+00:00",
+      "time": "2026-05-31T22:47:52.861369+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1356,7 +1164,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.417861+00:00",
+      "time": "2026-05-31T22:47:52.870298+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
@@ -1366,17 +1174,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.433564+00:00",
-      "lang": "zh",
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-31T21:48:04.444626+00:00",
+      "time": "2026-05-31T22:47:52.882309+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1386,7 +1184,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.458529+00:00",
+      "time": "2026-05-31T22:47:52.890427+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1396,7 +1194,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.471225+00:00",
+      "time": "2026-05-31T22:47:52.898926+00:00",
+      "lang": "zh",
+      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
+      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-31T22:47:52.907050+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1406,17 +1214,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.482916+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
-      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
-      "url": "https://m.weibo.cn/status/5300037031563389",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-31T21:48:04.497830+00:00",
+      "time": "2026-05-31T22:47:52.915187+00:00",
       "lang": "zh",
       "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
@@ -1426,17 +1224,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.508667+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n🎁 DC 45000守密人达成礼 / DC 45000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，",
-      "summary": "忘却前夜#忘却前夜#\n🎁 DC 45000守密人达成礼 / DC 45000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【设置】→【账户】→【兑换码】处领取~\n\n🔹 兑换码：CCNP-AHXY-YMHF\n🔹 礼包内容：银芯×500、无垢之芯×5\n🔹 有效期至2026年6月8日 23:59\n...全文",
-      "url": "https://m.weibo.cn/status/5302504871953590",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-31T21:48:04.524138+00:00",
+      "time": "2026-05-31T22:47:52.923306+00:00",
       "lang": "zh",
       "title": "忘却前夜 有没有佬指导一下配队以及后面的池子抽些啥补队啊才玩几天战斗方面都看不太懂，还不如开自动打的。。。",
       "summary": "忘却前夜 有没有佬指导一下配队以及后面的池子抽些啥补队啊才玩几天战斗方面都看不太懂，还不如开自动打的。。。",
@@ -1446,17 +1234,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.535534+00:00",
+      "time": "2026-05-31T22:47:52.931489+00:00",
       "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【余兴节目】\n又是无聊的一天。\n我试过了很多法子——非利士传统的宴会，和伦蒂尼恩那些帮派玩一些小孩子把戏，没有一个能配得上作为巨人之王诞临",
-      "summary": "忘却前夜#忘却前夜#\n【余兴节目】\n又是无聊的一天。\n我试过了很多法子——非利士传统的宴会，和伦蒂尼恩那些帮派玩一些小孩子把戏，没有一个能配得上作为巨人之王诞临之日的礼物。\n非利士人以战斗与杀戮为乐，曾经的这个日子，我与最强大的战士们在营地中欢聚、战斗，用力量与鲜血纪念这伟大 ...全文",
-      "url": "https://m.weibo.cn/status/5300641288949350",
+      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
+      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
+      "url": "https://m.weibo.cn/status/5300037031563389",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.549446+00:00",
+      "time": "2026-05-31T22:47:52.942692+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n🎁 DC 45000守密人达成礼 / DC 45000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，",
+      "summary": "忘却前夜#忘却前夜#\n🎁 DC 45000守密人达成礼 / DC 45000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【设置】→【账户】→【兑换码】处领取~\n\n🔹 兑换码：CCNP-AHXY-YMHF\n🔹 礼包内容：银芯×500、无垢之芯×5\n🔹 有效期至2026年6月8日 23:59\n...全文",
+      "url": "https://m.weibo.cn/status/5302504871953590",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-31T22:47:52.953552+00:00",
       "lang": "zh",
       "title": "忘却前夜\n新人入坑，想问问现在这个box应该怎么组队（优先拉哪只）以及池子应该抽哪几个比较划算呀",
       "summary": "忘却前夜\n新人入坑，想问问现在这个box应该怎么组队（优先拉哪只）以及池子应该抽哪几个比较划算呀",
@@ -1466,17 +1264,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.559671+00:00",
-      "lang": "zh",
-      "title": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵",
-      "summary": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵感来了高速滑铲中——\n【521/鲨粉】Fishtail",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-31T21:48:04.571834+00:00",
+      "time": "2026-05-31T22:47:52.961447+00:00",
       "lang": "zh",
       "title": "忘却前夜 自火中重生\n神父生日快乐\n（发错分区了重新发一下）",
       "summary": "忘却前夜 自火中重生\n神父生日快乐\n（发错分区了重新发一下）",
@@ -1486,7 +1274,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.582669+00:00",
+      "time": "2026-05-31T22:47:52.969768+00:00",
       "lang": "zh",
       "title": "第一时\n“如果你瞄准月亮，\n即使迷失，\n也是落在星辰之间。”\n来自旅鸽老师。\n#忘却前夜##忘却前夜萨尔瓦多#忘却前夜",
       "summary": "第一时\n“如果你瞄准月亮，\n即使迷失，\n也是落在星辰之间。”\n来自旅鸽老师。\n#忘却前夜##忘却前夜萨尔瓦多#忘却前夜",
@@ -1496,20 +1284,50 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:04.593582+00:00",
+      "time": "2026-05-31T22:47:52.978063+00:00",
       "lang": "zh",
-      "title": "唉刷到忘却前夜和沙耶之歌的联动不禁感慨这游戏要不是策划太神和国服没过审本来也可以是称霸一方的二游的……他家美术真没什么代餐吧",
-      "summary": "唉刷到忘却前夜和沙耶之歌的联动不禁感慨这游戏要不是策划太神和国服没过审本来也可以是称霸一方的二游的……他家美术真没什么代餐吧",
+      "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
+      "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-31T21:48:52.790908+00:00",
+      "time": "2026-05-31T22:47:52.986248+00:00",
+      "lang": "zh",
+      "title": "忘却前夜\n【戈利亚生贺17h/15:00】The Hour of Sleep\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nThe hour of",
+      "summary": "忘却前夜\n【戈利亚生贺17h/15:00】The Hour of Sleep\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nThe hour of sleep\n绵长的睡意\nIs upon us now\n它正向我们袭来\nCome rest your eyes\n只管闭上双眼\nMy darling one\n我亲爱的\n——Daniel Martin Moore《The Hour of Sleep》\n\n约稿展示 ...全文",
+      "url": "https://m.weibo.cn/status/5300664880333679",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-31T22:47:52.997400+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 想问问，这种彩色字体的个签算不算bug，因为有好多好友的个签里面都能带有我的游戏ID，给我吓了一雷霆，所以是每个账号上面看的都是那个号的ID吗？好奇怪",
+      "summary": "忘却前夜 想问问，这种彩色字体的个签算不算bug，因为有好多好友的个签里面都能带有我的游戏ID，给我吓了一雷霆，所以是每个账号上面看的都是那个号的ID吗？好奇怪哦",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-31T22:48:40.924853+00:00",
       "lang": "",
-      "title": "虽然官方是亖人但是不得不说这首是真的夯，好像给所有人的耳机里面都循环播放这首，沙耶味太浓了，难以想象这首其实是忘却前夜主题曲的变调，音乐组是真的神了，变调都能这",
-      "summary": "虽然官方是亖人但是不得不说这首是真的夯，好像给所有人的耳机里面都循环播放这首，沙耶味太浓了，难以想象这首其实是忘却前夜主题曲的变调，音乐组是真的神了，变调都能这么神，我已经住在这个视频里面出不去了，什么时候才能上传音乐软件啊急急急急",
+      "title": "忘却前夜#忘却前夜#\n【余兴节目】\n又是无聊的一天。\n我试过了很多法子——非利士传统的宴会，和伦蒂尼恩那些帮派玩一些小孩子把戏，没有一个能配得上作为巨人之王诞临",
+      "summary": "忘却前夜#忘却前夜#\n【余兴节目】\n又是无聊的一天。\n我试过了很多法子——非利士传统的宴会，和伦蒂尼恩那些帮派玩一些小孩子把戏，没有一个能配得上作为巨人之王诞临之日的礼物。\n非利士人以战斗与杀戮为乐，曾经的这个日子，我与最强大的战士们在营地中欢聚、战斗，用力量与鲜血纪念这伟大 ...全文",
+      "url": "https://m.weibo.cn/status/5300641288949350",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-31T22:48:40.935917+00:00",
+      "lang": "",
+      "title": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵",
+      "summary": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵感来了高速滑铲中——\n【521/鲨粉】Fishtail",
       "url": "",
       "author": "",
       "engagement": 0
@@ -2014,6 +1832,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-05-31T22:49:06.861941+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-05-05T10:19:53+09:00",
       "lang": "",
       "title": "Untitled",
@@ -2026,7 +1854,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-31T21:49:54.137397+00:00",
+      "time": "2026-05-31T22:49:15.680668+00:00",
       "lang": "ko",
       "title": "망각전야) 어른 되고 돈 버니까 진짜 좋음",
       "summary": "일단 지르고 볼 수가 있다고 아 ㅋㅋㅋ20년전에 발매된 최애 미연시 콜라보? 못 참짘ㅋㅋㅋ",
@@ -2036,7 +1864,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-31T21:49:54.137537+00:00",
+      "time": "2026-05-31T22:49:15.680780+00:00",
       "lang": "ko",
       "title": "망각전야) 사야의 노래 때문에 시작함",
       "summary": "이제 게임 하는 방법을 알아내야함",
@@ -2046,7 +1874,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-31T21:49:54.137562+00:00",
+      "time": "2026-05-31T22:49:15.680803+00:00",
       "lang": "ko",
       "title": "망각전야) 사야의 노래 콜라보 오늘부터구나",
       "summary": "사야를 콜라보 뽑기로 뽑을수 있구나뭐야 살려줘요",
@@ -2056,7 +1884,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-05-31T21:49:54.137585+00:00",
+      "time": "2026-05-31T22:49:15.680824+00:00",
       "lang": "ko",
       "title": "망각전야)그녀가 오고 말았어요",
       "summary": "성우는 그렇다쳐도 가수까지 데려온건 진짜 광기같다 ㅋㅋㅋㅋㅋㅋㅋ",
@@ -2266,7 +2094,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-31T21:49:58.499058+00:00",
+      "time": "2026-05-31T22:49:18.347685+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
