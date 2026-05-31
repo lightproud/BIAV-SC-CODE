@@ -12444,6 +12444,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-31T22:50:36.385217+00:00"
+    },
+    "https://preview.redd.it/8pb3x70huj4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9bf9135a45bf6272a16fb974ac4820d03539324e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-31T23:59:21.206787+00:00"
     }
   },
   "archived": []

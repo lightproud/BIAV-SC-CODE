@@ -1,9 +1,24 @@
 {
   "date": "2026-06-01",
-  "archived_at": "2026-05-31T22:50:36.447204+00:00",
+  "archived_at": "2026-05-31T23:59:21.280346+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-31T23:01:37+00:00",
+      "lang": "english",
+      "title": "[正面] Good mechanics, good art, good story, and F2P frie...",
+      "summary": "Good mechanics, good art, good story, and F2P friendly.",
+      "url": "https://steamcommunity.com/profiles/76561198284550391/recommended/3052450",
+      "author": "76561198284550391",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good mechanics, good art, good story, and F2P friendly.",
+      "timestamp_created": 1780268497,
+      "playtime_forever": 1783
+    },
     {
       "source": "steam",
       "time": "2026-05-31T16:06:03+00:00",
