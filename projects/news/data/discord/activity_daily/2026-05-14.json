@@ -1,11 +1,11 @@
 {
   "date": "2026-05-14",
-  "messages": 17264,
+  "messages": 22264,
   "unique_authors": 422,
-  "reactions_total": 1927,
-  "attachments": 566,
+  "reactions_total": 2593,
+  "attachments": 684,
   "channel_activity": {
-    "🔸morimens-game-chat": 3371,
+    "🔸morimens-game-chat": 8371,
     "🔸綜合討論": 5401,
     "🔸한국어-채팅방": 20,
     "🔸deutscher-chatraum": 12,
@@ -58,6 +58,13 @@
     "1504436073944711189": 1
   },
   "hourly_activity": {
+    "8": 1114,
+    "9": 1437,
+    "10": 1934,
+    "11": 2439,
+    "12": 2205,
+    "13": 2774,
+    "14": 877,
     "0": 659,
     "1": 653,
     "2": 376,
@@ -66,26 +73,19 @@
     "5": 994,
     "6": 929,
     "7": 596,
-    "8": 1041,
     "18": 349,
     "19": 328,
     "20": 167,
     "21": 279,
     "22": 309,
     "23": 399,
-    "9": 678,
-    "10": 1076,
-    "11": 1196,
-    "12": 1159,
-    "13": 2120,
-    "14": 510,
     "15": 766,
     "16": 626,
     "17": 767
   },
   "message_types": {
-    "0": 2186,
-    "19": 1185
+    "0": 2687,
+    "19": 2313
   },
   "top_reacted_messages": [
     {
@@ -161,6 +161,30 @@
       "channel": "Preview: V2.5.1 Embryo Fusion Changes"
     },
     {
+      "id": "1504443304467759236",
+      "channel_id": "1170692781216378960",
+      "content": "aaaaaaahhhhhh",
+      "author": "chinkeeyong",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1504443279989538836",
+      "channel_id": "1170692781216378960",
+      "content": "VICTORY<a:Nanahirahype:1389719365175214142>",
+      "author": "shio2311",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1504456624688074823",
+      "channel_id": "1170692781216378960",
+      "content": "Saya if you somehow make 24 clear A5, I'm calling you S tier",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1504421477938761820",
       "channel_id": "1131839817982947429",
       "content": "超一下就爆6480源液出來",
@@ -175,6 +199,22 @@
       "author": "cameliia._.",
       "reactions": 11,
       "channel": "Preview: V2.5.1 Embryo Fusion Changes"
+    },
+    {
+      "id": "1504450664888143892",
+      "channel_id": "1170692781216378960",
+      "content": "Can we not witch hunt people for something as dumb as a questionable media colla",
+      "author": "sisuluasex",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1504456473445400656",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1504420204690673695",
@@ -207,46 +247,6 @@
       "author": "morimensstaff03",
       "reactions": 10,
       "channel": "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！"
-    },
-    {
-      "id": "1504317222485627021",
-      "channel_id": "1131839817982947429",
-      "content": "原來這裡預設都是同性戀嗎<:Helot_slack_off:1459092159465521184>",
-      "author": "a4485",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504426278722338967",
-      "channel_id": "1131839817982947429",
-      "content": "消失了",
-      "author": "bartmann_3212",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504521747792400385",
-      "channel_id": "1131839817982947429",
-      "content": "神混沌：50強效，銀鑰單次上限+500，狂氣上限+50，鑰令雙發。進場給20層混沌點，每點終傷+2%。每回合每次使用鑰令終傷+20%。<:Caecus_alon",
-      "author": "wodebaobaoxiaodangaovi",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504419779392569417",
-      "channel_id": "1131839817982947429",
-      "content": "應該是要出假屌啊",
-      "author": "yusi4172",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504420208847093760",
-      "channel_id": "1131839817982947429",
-      "content": "可以挖洞嗎",
-      "author": "shostakovich524",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
     }
   ]
 }

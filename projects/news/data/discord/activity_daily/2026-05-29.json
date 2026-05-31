@@ -1,10 +1,11 @@
 {
   "date": "2026-05-29",
-  "messages": 15857,
+  "messages": 20642,
   "unique_authors": 636,
-  "reactions_total": 1883,
-  "attachments": 820,
+  "reactions_total": 2166,
+  "attachments": 987,
   "channel_activity": {
+    "🔸general-chat": 4785,
     "🔸綜合討論": 4618,
     "🔸晒卡分享": 69,
     "🔸日本語チャンネル": 8,
@@ -86,35 +87,36 @@
     "Help figuring out strats": 3
   },
   "hourly_activity": {
+    "0": 450,
+    "1": 820,
+    "2": 1604,
+    "3": 980,
+    "4": 612,
+    "5": 984,
+    "6": 1001,
+    "7": 438,
+    "8": 883,
+    "9": 593,
+    "10": 805,
+    "11": 546,
+    "12": 891,
+    "13": 1592,
+    "14": 1755,
+    "15": 2525,
+    "16": 1251,
     "20": 336,
     "21": 195,
     "22": 255,
     "23": 373,
-    "0": 257,
-    "1": 447,
-    "2": 1090,
-    "3": 923,
-    "4": 337,
-    "5": 700,
-    "6": 815,
-    "7": 365,
-    "8": 806,
-    "9": 481,
-    "10": 710,
-    "11": 440,
-    "12": 857,
-    "13": 1255,
-    "14": 1037,
-    "15": 1584,
-    "16": 841,
     "17": 688,
     "18": 705,
     "19": 360
   },
   "message_types": {
-    "0": 761,
-    "19": 231,
-    "21": 1
+    "0": 2815,
+    "19": 1968,
+    "23": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -134,12 +136,28 @@
       "channel": "Daughter"
     },
     {
+      "id": "1509781987307687997",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 16,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1509754328926126300",
       "channel_id": "1131839817982947429",
       "content": "别让我抓到你们这群家伙明天氪198",
       "author": "lurenjiao",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1509783221099823104",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "cerixxix",
+      "reactions": 9,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1509903700142063787",
@@ -214,6 +232,14 @@
       "channel": "Characters with 200 or more base aliemus"
     },
     {
+      "id": "1509946782707089618",
+      "channel_id": "1400750050208125010",
+      "content": "True",
+      "author": "601671_",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1509815173463150633",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -252,30 +278,6 @@
       "author": "ice3564",
       "reactions": 7,
       "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1510028826195918940",
-      "channel_id": "1300659580446969918",
-      "content": "пяточки саи",
-      "author": "chiedgaf",
-      "reactions": 4,
-      "channel": "🔸русский-канал"
-    },
-    {
-      "id": "1510036774779621517",
-      "channel_id": "1326453763355185215",
-      "content": "i have in the past, but i did not write the sorel fanfic of which i was thinking",
-      "author": "reya.li",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1510030475106848830",
-      "channel_id": "1300659662311526512",
-      "content": "finally",
-      "author": "drakependragon",
-      "reactions": 3,
-      "channel": "🔸canal-español"
     }
   ]
 }
