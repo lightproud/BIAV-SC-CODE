@@ -1,7 +1,6 @@
 """Parse Voice.lua into structured JSON for wiki voice lines page."""
 import re
 import json
-import sys
 
 def parse_voice_lua(path):
     with open(path, 'r', encoding='utf-8') as f:
