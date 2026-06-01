@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-01T15:26:41.610749+00:00",
+  "archived_at": "2026-06-01T19:55:04.971149+00:00",
   "source": "pixiv",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "沙耶",
@@ -145,6 +145,24 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/20/50/41/145485550_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "Pollux",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-02T00:00:15+09:00",
+      "url": "https://www.pixiv.net/artworks/145495325",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "るなしば",
+      "tags": [
+        "Morimens",
+        "Pollux"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg",
       "content_type": "image"
     }
   ]

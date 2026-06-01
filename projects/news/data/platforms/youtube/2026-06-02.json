@@ -1,0 +1,44 @@
+{
+  "date": "2026-06-02",
+  "archived_at": "2026-06-01T19:55:04.958888+00:00",
+  "source": "youtube",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[Morimens] Impromptu Spreadsheet/Minor Coaching Stream while I take a break from funeral prepping.",
+      "summary": "[Streamed 1 hour ago] Don't know how long.",
+      "source": "youtube",
+      "time": "2026-06-01T18:51:58.884957+00:00",
+      "url": "https://www.youtube.com/watch?v=0OJ9dBJKLMA",
+      "engagement": 447,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/0OJ9dBJKLMA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBuobHNhWBXU0fax531wKfEvoInA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【Morimens】忘却前夜",
+      "summary": "[2 hours ago] reverse1999 #リバース1999 #리버스1999 #重返未来1999 #重返未來1999 #重返未來#limbuscompany #pathtonowhere #無期 ...",
+      "source": "youtube",
+      "time": "2026-06-01T17:51:59.455886+00:00",
+      "url": "https://www.youtube.com/watch?v=-RqHGPWOjhw",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "ぽんぽん",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/-RqHGPWOjhw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD4LeLY-Zfqv2WXfjsYo2glbaKZeA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}

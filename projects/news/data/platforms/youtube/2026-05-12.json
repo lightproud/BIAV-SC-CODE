@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T13:55:14.448485+00:00",
+  "archived_at": "2026-06-01T19:55:04.959207+00:00",
   "source": "youtube",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "source": "youtube",
@@ -183,6 +183,24 @@
       "engagement": 188,
       "media_url": "https://i.ytimg.com/vi/ArGNulXbHuo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGTvyJvVNGRgdY0e6b2EHHrvlkQA",
       "content_type": "image"
+    },
+    {
+      "title": "【#忘却前夜  】面白過ぎるゲーム見つけた！！！好みが似てる子この指とまれ！【#推し活】",
+      "summary": "[Streamed 3 weeks ago] 忘却前夜やっていきます！ スマホでもSteamでもできるからやってみてね！ 始めるよって子はよかったら使ってね！ ↓招待 ...",
+      "source": "youtube",
+      "time": "2026-05-11T19:51:59.456166+00:00",
+      "url": "https://www.youtube.com/watch?v=qVeTOyn0_oM",
+      "engagement": 153,
+      "is_hot": false,
+      "author": "卯咲乃ぬい",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/qVeTOyn0_oM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDkrKs9EbvNi2zuUL63zPwcaq9iBg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "source": "youtube",
