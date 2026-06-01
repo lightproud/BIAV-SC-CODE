@@ -2,7 +2,10 @@
 Hook luaL_loadbufferx in xlua.dll — V2: wait-for-process mode.
 Polls for Morimens.exe, attaches ASAP, captures both bytecode AND plaintext Lua source.
 """
-import frida, sys, os, time, hashlib
+import frida
+import os
+import time
+import hashlib
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(BASE_DIR, "extracted_lua", "hook_capture")

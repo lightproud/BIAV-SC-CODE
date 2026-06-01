@@ -20,7 +20,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 SCRIPT_DIR = Path(__file__).parent
 CHARACTERS_JSON = SCRIPT_DIR.parent / "data" / "db" / "characters.json"
