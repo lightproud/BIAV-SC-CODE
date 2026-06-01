@@ -1,8 +1,8 @@
 {
   "date": "2026-05-21",
-  "archived_at": "2026-05-21T13:57:13.993752+00:00",
+  "archived_at": "2026-06-01T15:26:41.601412+00:00",
   "source": "google_play",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "google_play",
@@ -73,6 +73,19 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru",
       "author": "ХУГГИ ВУГГИ",
       "engagement": 1
+    },
+    {
+      "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
+      "summary": "Honnêtement un très bon jeu L'histoire est prenante et les designs parlent pour eux même. Probablement à jouer en anglais pour en profiter au maximum.",
+      "source": "google_play",
+      "time": "2026-05-21T02:28:35",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Ilo '",
+      "tags": [],
+      "lang": "fr",
+      "platform_region": "fr"
     },
     {
       "source": "google_play",

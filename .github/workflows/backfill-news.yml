@@ -25,13 +25,14 @@ jobs:
     if: github.ref == 'refs/heads/main'
     strategy:
       fail-fast: false
+      # 必须与 scripts/sources.py BACKFILL_PLATFORMS（= backfill_platforms.py
+      # PLATFORM_BACKFILLERS）保持一致。dcinside 无对应回填器，已移除以免空转。
       matrix:
         platform:
           - bilibili
           - appstore
           - steam_review
           - arca_live
-          - dcinside
           - naver_cafe
           - pixiv
           - ruliweb

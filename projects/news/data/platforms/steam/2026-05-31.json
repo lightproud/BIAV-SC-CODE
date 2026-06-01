@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T15:13:56.473536+00:00",
+  "archived_at": "2026-06-01T15:26:41.604876+00:00",
   "source": "steam",
-  "item_count": 38,
+  "item_count": 39,
   "items": [
     {
       "source": "steam",
@@ -573,6 +573,28 @@
       "review": "amazing art and animation, interesting and well written story, unique character designs, VERY generous gacha, overall a really good game if u like turn based rpg games.\r\n\r\nthe current saya no uta collab event is really peak i love u morimens <3",
       "timestamp_created": 1780232070,
       "playtime_forever": 1934
+    },
+    {
+      "title": "[正面] обычная карточная игра, с красивым стилем, необычн...",
+      "summary": "обычная карточная игра, с красивым стилем, необычными персонажами",
+      "source": "steam_review",
+      "time": "2026-05-31T15:40:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199176822277/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199176822277",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 881,
+        "votes_up": 0,
+        "timestamp_created": 1780242054
+      },
+      "lang": "",
+      "platform_region": "global"
     }
   ]
 }
