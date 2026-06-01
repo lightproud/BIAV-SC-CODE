@@ -12,9 +12,14 @@ on:
       - 'projects/wiki/data/**'
   workflow_dispatch:
 
+concurrency:
+  group: validate-data-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v5

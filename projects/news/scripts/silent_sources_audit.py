@@ -26,26 +26,20 @@ silent_sources_audit.py — 沉默源审计（基于归档历史）
 
 import argparse
 import json
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES
+
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 
-# 已注册采集源（全部直连，无 RSSHub 依赖），与 collect_global.py 保持同步
-ALL_REGISTERED_SOURCES = [
-    # 生产主管线（aggregator.py）
-    'reddit', 'bilibili', 'nga', 'taptap',
-    'steam', 'official', 'youtube', 'discord',
-    # 直连采集（collect_global.py）
-    'weibo', 'zhihu', 'naver_cafe', 'bahamut',
-    'arca_live', 'fivech',
-    'appstore', 'google_play',
-    'pixiv', 'telegram',
-    'note_com', 'ruliweb', 'stopgame', 'weixin',
-]
+# 已注册采集源 —— 来自 sources.py 单一真相源（含 discord）
+ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES)
 
 # 与 data_quality.SilentPlatformTracker 保持一致
 DEGRADED_THRESHOLD = 7
@@ -265,21 +259,68 @@ def suggest_prune(report: dict) -> None:
               f'当前阶段可先通过 --write 将它们标记为 degraded，由 tracker 降频采集。')
 
 
+def scan_unregistered_dirs() -> list[str]:
+    """列出 data/platforms/ 下存在、但不在已注册源清单中的目录。
+
+    捕获采集逻辑已移除却仍留有历史归档的遗留源（dcinside / gamerch / ...），
+    否则它们对沉默源审计完全不可见。
+    """
+    if not ARCHIVE_DIR.exists():
+        return []
+    registered = set(ALL_REGISTERED_SOURCES)
+    found = []
+    for d in sorted(ARCHIVE_DIR.iterdir()):
+        if d.is_dir() and d.name not in registered:
+            found.append(d.name)
+    return found
+
+
+def print_legacy_section(unregistered: list[str]) -> None:
+    if not unregistered:
+        return
+    print('【遗留源（有归档但未注册采集）】')
+    for name in unregistered:
+        stat = audit_source(name)
+        tag = '已知遗留' if name in LEGACY_SOURCES else '未登记'
+        last = stat['last_archive_date'] or '从未'
+        print(f'  {name:18s}  {stat["days_archived"]:4d}d  {stat["total_items"]:6d} 条  '
+              f'last={last:10s}  [{tag}]')
+    print()
+
+
+def core_source_alarms(report: dict) -> list[str]:
+    """返回处于 never/dormant 的核心源名（健康门控用）。"""
+    alarmed = []
+    for e in report['entries']:
+        if e['source'] in CORE_SOURCES and e['level'] in ('never', 'dormant'):
+            alarmed.append(e['source'])
+    return alarmed
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description='沉默源审计（基于归档历史）')
     parser.add_argument('--write', action='store_true',
                         help='写入 output/source-health.json，供 SilentPlatformTracker 种子')
     parser.add_argument('--suggest-prune', action='store_true',
                         help='输出建议清理列表')
+    parser.add_argument('--strict', action='store_true',
+                        help='核心源处于 never/dormant 时以非零退出（健康门控）')
     args = parser.parse_args()
 
     report = build_report()
     print_report(report)
+    print_legacy_section(scan_unregistered_dirs())
 
     if args.suggest_prune:
         suggest_prune(report)
     if args.write:
         write_health(report)
+
+    alarmed = core_source_alarms(report)
+    if alarmed:
+        print(f'[健康门控] 核心源零产出 / 长期沉默: {", ".join(alarmed)}')
+        if args.strict:
+            sys.exit(1)
 
 
 if __name__ == '__main__':

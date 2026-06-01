@@ -4,6 +4,6 @@ echo Killing old python processes...
 taskkill /f /im python.exe 2>nul
 timeout /t 2 /nobreak >nul
 echo Starting hook V2 (will wait for game)...
-cd /d C:\Users\light\brain-in-a-vat
+cd /d "%~dp0"
 python _frida_hook_v2.py
 pause
