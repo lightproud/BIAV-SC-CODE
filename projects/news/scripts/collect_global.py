@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
+RAW_OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news-raw.json'
 
 # Ensure sibling scripts dir is importable (works both as script and module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -277,15 +278,17 @@ def _is_recent(time_str: str, source: str = '') -> bool:
         return False
 
 
-def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
+def merge_and_dedup(existing: list[dict], new_items: list[dict],
+                    apply_recency_filter: bool = True) -> list[dict]:
     """Merge and deduplicate items, keeping higher-engagement version.
     Filters out items older than per-source max_age (sparse sources use 30d,
-    others 24h)."""
+    others 24h). Pass apply_recency_filter=False to keep the full unfiltered
+    set (用于 news-raw.json 全量归档源)。"""
     seen: dict[str, dict] = {}
 
     # Existing items first (they're already validated)
     for item in existing:
-        if not _is_recent(item.get('time', ''), item.get('source', '')):
+        if apply_recency_filter and not _is_recent(item.get('time', ''), item.get('source', '')):
             continue
         key = dedup_key(item)
         if key not in seen or item.get('engagement', 0) > seen[key].get('engagement', 0):
@@ -294,7 +297,7 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
     # New items (from global collectors)
     for item in new_items:
         converted = convert_item(item)
-        if not _is_recent(converted.get('time', ''), converted.get('source', '')):
+        if apply_recency_filter and not _is_recent(converted.get('time', ''), converted.get('source', '')):
             continue
         key = dedup_key(converted)
         if key not in seen or converted.get('engagement', 0) > seen[key].get('engagement', 0):
@@ -338,6 +341,17 @@ def main():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+
+    # 全量归档源：未经时窗过滤的合并集，供 archive_platforms 落档（真·全量层）。
+    # news.json 仍是滚动窗口快照（保持有界），raw 只多保留被时窗砍掉的新鲜条目。
+    raw_merged = merge_and_dedup(existing, global_items, apply_recency_filter=False)
+    with open(RAW_OUTPUT_PATH, 'w', encoding='utf-8') as f:
+        json.dump({
+            'updated_at': output['updated_at'],
+            'source': 'news-raw',
+            'news': raw_merged,
+        }, f, ensure_ascii=False, indent=2)
+    logger.info(f'全量层写入: {len(raw_merged)} items → {RAW_OUTPUT_PATH.name}')
 
     # Stats
     sources = {}
