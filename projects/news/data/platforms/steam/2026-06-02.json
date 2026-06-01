@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-01T19:55:04.968001+00:00",
+  "archived_at": "2026-06-01T22:33:26.040436+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
@@ -66,6 +66,72 @@
         "playtime_forever": 1384,
         "votes_up": 0,
         "timestamp_created": 1780330189
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Generous is the least I can say about this game, t...",
+      "summary": "Generous is the least I can say about this game, the gameplay is interesting and challenging, and the story is intriguing especially if you're into cosmic and slowburn horror.",
+      "source": "steam_review",
+      "time": "2026-06-01T19:50:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199516100960/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199516100960",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 381,
+        "votes_up": 0,
+        "timestamp_created": 1780343437
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Game is great lots and lots of content and its ver...",
+      "summary": "Game is great lots and lots of content and its very chilled.",
+      "source": "steam_review",
+      "time": "2026-06-01T18:56:22+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198097612048/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198097612048",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 891,
+        "votes_up": 0,
+        "timestamp_created": 1780340182
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 게임의 전략적 깊이가 상당하고, 스토리 구성도 좋으며, 무엇보다 제작진의 태도가 너무 좋습...",
+      "summary": "게임의 전략적 깊이가 상당하고, 스토리 구성도 좋으며, 무엇보다 제작진의 태도가 너무 좋습니다. 그것이 게임 운영에도 고스란히 반영되어 유저들에게 깊은 신뢰를 줍니다. 카드게임 장르를 좋아한다면 한번쯤 맛볼만한 게임인 것 같습니다",
+      "source": "steam_review",
+      "time": "2026-06-01T18:56:14+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198815311449/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198815311449",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6365,
+        "votes_up": 0,
+        "timestamp_created": 1780340174
       },
       "lang": "",
       "platform_region": "global"

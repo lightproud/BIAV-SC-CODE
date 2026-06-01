@@ -1,8 +1,8 @@
 {
   "date": "2025-06-02",
-  "archived_at": "2026-06-01T19:55:04.956627+00:00",
+  "archived_at": "2026-06-01T22:33:26.030617+00:00",
   "source": "youtube",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "【忘卻前夜】半週年入坑指南 組隊的基本概念",
@@ -54,6 +54,24 @@
         "scrape"
       ],
       "media_url": "https://i.ytimg.com/vi/oniJh_VgXwk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBRlb4BAMRbDqRvQ34F740GOnDbFQ",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜Morimen】繁衍狂熱劇情｜希萊斯特",
+      "summary": "[1 year ago] 忘卻前夜Morimens 繁衍狂熱✦ 劇情｜希萊斯特     ✦忘卻前夜Morimens ✦劇情開啟需求： 1.普通主線劇情(調查行動)開到7-3 ...",
+      "source": "youtube",
+      "time": "2025-06-01T22:30:04.710383+00:00",
+      "url": "https://www.youtube.com/watch?v=tQ_evS2BZow",
+      "engagement": 57,
+      "is_hot": false,
+      "author": "小十了了",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/tQ_evS2BZow/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFX2HuClSwCFaHlTnBxqw45_bOqA",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
