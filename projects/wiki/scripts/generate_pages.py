@@ -18,6 +18,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
@@ -114,21 +116,17 @@ def generate_character_page(char: dict, lang: str) -> str:
     title_name = name_en if lang == "en" else name
     title_val = f"{title_name} | {L['title_suffix']}"
 
-    # Quote YAML values containing colons (lessons-learned #6)
-    if ':' in title_val:
-        title_val = f'"{title_val}"'
-    if ':' in desc_text:
-        desc_text = f'"{desc_text}"'
+    frontmatter = {
+        "title": title_val,
+        "description": desc_text,
+        "portrait": f"/portraits/{slug}.png",
+        "pageClass": "character-page",
+    }
+    fm_block = yaml.safe_dump(
+        frontmatter, allow_unicode=True, default_flow_style=False, sort_keys=False
+    )
 
-    return f"""---
-title: {title_val}
-description: {desc_text}
-portrait: /portraits/{slug}.png
-pageClass: character-page
----
-
-<CharacterSheet characterId="{cid}" />
-"""
+    return f"---\n{fm_block}---\n\n<CharacterSheet characterId=\"{cid}\" />\n"
 
 
 # ---------------------------------------------------------------------------
