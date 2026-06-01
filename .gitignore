@@ -16,6 +16,7 @@ htmlcov/
 .claude/*
 !.claude/commands/
 !.claude/hooks/
+!.claude/skills/
 !.claude/settings.json
 
 # global_collectors runtime output (if run standalone)

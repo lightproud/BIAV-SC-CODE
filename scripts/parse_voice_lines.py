@@ -1,6 +1,5 @@
 """Parse Voice.lua into structured JSON for wiki voice lines page."""
 import json
-import sys
 
 from lua_parse import parse_lua_blocks
 

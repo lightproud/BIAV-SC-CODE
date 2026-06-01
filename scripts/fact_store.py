@@ -18,7 +18,7 @@ import json
 import math
 import sys
 from collections import Counter
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 from text_utils import tokenize as tokenize_text

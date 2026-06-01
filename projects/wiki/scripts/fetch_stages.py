@@ -18,7 +18,6 @@ Requires: Python 3.8+ (stdlib only)
 """
 
 import json
-import os
 import re
 import sys
 import time
