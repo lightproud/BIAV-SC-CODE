@@ -7951,6 +7951,27 @@
       "title": "沙耶",
       "time": "2026-06-01T20:50:41+09:00",
       "downloaded_at": "2026-06-01T14:52:24.346100+00:00"
+    },
+    "https://i.ytimg.com/vi/0OJ9dBJKLMA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBuobHNhWBXU0fax531wKfEvoInA": {
+      "filename": "youtube_56a3fb41f9c44503.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Impromptu Spreadsheet/Minor Coaching Stream while I take a break from funeral prepping.",
+      "time": "2026-06-01T18:51:58.884957+00:00",
+      "downloaded_at": "2026-06-01T19:55:02.880942+00:00"
+    },
+    "https://i.ytimg.com/vi/-RqHGPWOjhw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD4LeLY-Zfqv2WXfjsYo2glbaKZeA": {
+      "filename": "youtube_fc79ec216307bccd.jpg",
+      "source": "youtube",
+      "title": "【Morimens】忘却前夜",
+      "time": "2026-06-01T17:51:59.455886+00:00",
+      "downloaded_at": "2026-06-01T19:55:03.795613+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg": {
+      "filename": "pixiv_e1e93529eac6d35d.jpg",
+      "source": "pixiv",
+      "title": "Pollux",
+      "time": "2026-06-02T00:00:15+09:00",
+      "downloaded_at": "2026-06-01T19:55:04.865707+00:00"
     }
   },
   "failed": {
@@ -12628,6 +12649,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-01T14:52:18.100440+00:00"
+    },
+    "https://preview.redd.it/l4lq8us6so4h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=3b3888eb2fe5f72e1d7510e8d8fd53e726949ba5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T19:55:03.291817+00:00"
     }
   },
   "archived": []

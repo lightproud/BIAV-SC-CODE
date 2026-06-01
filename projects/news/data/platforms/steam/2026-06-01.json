@@ -1,8 +1,8 @@
 {
   "date": "2026-06-01",
-  "archived_at": "2026-06-01T15:26:41.600084+00:00",
+  "archived_at": "2026-06-01T19:55:04.965097+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,50 @@
       "review": "I didn't even know this game existed... and then they added Saya and well uh yeah now I know it exists.\nThe art style is amazing, the characters so creative.\nPlays like slay the spire (I never played it), a card game with blocks and attacks and all that stuff.",
       "timestamp_created": 1780306980,
       "playtime_forever": 198
+    },
+    {
+      "title": "[正面] 目前感觉卡牌构筑很牛逼，鬼知道制作组爬了多少遍塔，如果没有数值膨胀可以爆杀99%卡牌二游了，此处特指...",
+      "summary": "目前感觉卡牌构筑很牛逼，鬼知道制作组爬了多少遍塔，如果没有数值膨胀可以爆杀99%卡牌二游了，此处特指1999. 除此之外，美术牛逼，剧情走向暂时看不出来，剧情文案拉的一坨大的，写得不知所云就算了，某些地方还一股ai生成的味道",
+      "source": "steam_review",
+      "time": "2026-06-01T15:19:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198856683734/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198856683734",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 210,
+        "votes_up": 0,
+        "timestamp_created": 1780327147
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 57715771我们喜欢你",
+      "summary": "57715771我们喜欢你",
+      "source": "steam_review",
+      "time": "2026-06-01T14:00:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199638306747/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199638306747",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2013,
+        "votes_up": 0,
+        "timestamp_created": 1780322401
+      },
+      "lang": "",
+      "platform_region": "global"
     }
   ]
 }
