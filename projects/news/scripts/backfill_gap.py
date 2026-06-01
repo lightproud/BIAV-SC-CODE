@@ -17,7 +17,7 @@ import sys
 import os
 import logging
 import time
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
