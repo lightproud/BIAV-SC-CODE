@@ -1,8 +1,8 @@
 {
   "date": "2026-06-01",
-  "archived_at": "2026-06-01T02:44:18.320054+00:00",
+  "archived_at": "2026-06-01T08:26:42.803611+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -63,6 +63,36 @@
       "review": "福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
       "timestamp_created": 1780274990,
       "playtime_forever": 3296
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T02:49:02+00:00",
+      "lang": "english",
+      "title": "[正面] This game is amazing, go play it now !",
+      "summary": "This game is amazing, go play it now !",
+      "url": "https://steamcommunity.com/profiles/76561199087724962/recommended/3052450",
+      "author": "76561199087724962",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "This game is amazing, go play it now !",
+      "timestamp_created": 1780282142,
+      "playtime_forever": 1365
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T02:38:12+00:00",
+      "lang": "english",
+      "title": "[正面] good roguelike game. good combos, good compos, goo...",
+      "summary": "good roguelike game. good combos, good compos, good design. i like the fact its also a gatcha.\n\ni dont care about the story tho, id like to completely skip it. and the translation is a bit bad.",
+      "url": "https://steamcommunity.com/profiles/76561199002390357/recommended/3052450",
+      "author": "76561199002390357",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good roguelike game. good combos, good compos, good design. i like the fact its also a gatcha.\n\ni dont care about the story tho, id like to completely skip it. and the translation is a bit bad.",
+      "timestamp_created": 1780281492,
+      "playtime_forever": 46
     }
   ]
 }
