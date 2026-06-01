@@ -723,7 +723,7 @@ def show_status(state: dict):
     print('=== 历史回溯进度 ===\n')
     for name, fn in BACKFILL_REGISTRY.items():
         ps = state.get(name, {"page": 1, "done": False, "total": 0})
-        status = '✅ 完成' if ps.get('done') else f'📄 第 {ps.get("page", 1)} 页'
+        status = '完成' if ps.get('done') else f'第 {ps.get("page", 1)} 页'
         total = ps.get('total', 0)
         print(f'  {name:15s}  {status:12s}  共 {total:5d} 条')
     print()

@@ -23,80 +23,15 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from wiki_sources import FANDOM_WIKIS, PAGE_MAP
 
 SCRIPT_DIR = Path(__file__).parent
 CHARACTERS_JSON = SCRIPT_DIR.parent / "data" / "db" / "characters.json"
 
 UA = "Mozilla/5.0 (compatible; MorimensWikiBot/1.0; +https://github.com/lightproud/brain-in-a-vat)"
 
-FANDOM_WIKIS = [
-    "https://forget-last-night-morimens.fandom.com",
-    "https://morimens.fandom.com",
-]
-
 # Character ID -> Fandom page title mapping
 # Copied from fetch_portraits.py
-PAGE_MAP = {
-    "alva": "Alva",
-    "doll": "Doll",
-    "ramona-timeworn": "Ramona:_Timeworn",
-    "ogier": "Ogier",
-    "lotan": "Lotan",
-    "ramona": "Ramona",
-    "pandya": "Pandya",
-    "nodera": "Nodera",
-    "galen": "Galen",
-    "nymphia": "Nymphia",
-    "lily": "Lily",
-    "danmo": "Danmo",
-    "miryam": "Miryam",
-    "tulu": "Tulu",
-    "divine-king-tulu": "Divine_King_Tulu",
-    "celeste": "Celeste",
-    "goliath": "Goliath",
-    "shan": "Shan",
-    "aurita": "Aurita",
-    "caecus": "Caecus",
-    "faros": "Faros",
-    "uvhash": "Uvhash",
-    "rhea": "Rhea",
-    "sorel": "Sorel",
-    "thais": "Thais",
-    "alice": "Alice",
-    "faint": "Faint",
-    "agrippa": "Agrippa",
-    "shilo": "Shilo",
-    "erica": "Erica",
-    "liz": "Liz",
-    "daffodil": "Daffodil",
-    "winkle": "Winkle",
-    "casiah": "Casiah",
-    "jenkins": "Jenkins",
-    "tincture": "Tincture",
-    "horla": "Horla",
-    "karen": "Karen",
-    "hameln": "Hameln",
-    "murphy": "Murphy",
-    "salvador": "Salvador",
-    "tawil": "Tawil",
-    "wanda": "Wanda",
-    "aigis": "Aigis",
-    "doll-inferno": "Doll:_Inferno",
-    "24": "24_(character)",
-    "clementine": "Clementine",
-    "corposant": "Corposant",
-    "kathigu-ra": "Kathigu-Ra",
-    "murphy-fauxborn": "Murphy:_Fauxborn",
-    "mouchette": "Mouchette",
-    "xu": "Xu",
-    "castor": "Castor",
-    "pollux": "Pollux",
-    "helot": "Helot",
-    "leigh": "Leigh",
-    "doresain": "Doresain",
-    "pickman": "Pickman",
-    "arachne": "Arachne",
-}
 
 # Stat field patterns to look for in wikitext infoboxes.
 # Maps normalized stat key -> list of possible wikitext field names (case-insensitive).
@@ -109,13 +44,11 @@ STAT_ALIASES = {
             "耐力", "endurance"],
 }
 
-
 def api_get(url: str) -> dict:
     """Make a GET request and return JSON."""
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode())
-
 
 def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     """Fetch raw wikitext for a page via MediaWiki API."""
@@ -133,13 +66,11 @@ def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
         print(f"  [WARN] Failed to fetch wikitext from {wiki_base}: {e}")
         return None
 
-
 def parse_number(s: str) -> int | None:
     """Extract the first integer from a string, stripping commas and whitespace."""
     s = s.replace(",", "").replace(" ", "").strip()
     m = re.search(r"(\d+)", s)
     return int(m.group(1)) if m else None
-
 
 def extract_stats_from_wikitext(wikitext: str) -> dict | None:
     """
@@ -246,7 +177,6 @@ def extract_stats_from_wikitext(wikitext: str) -> dict | None:
 
     return stats
 
-
 def fetch_character_stats(char_id: str, page_title: str) -> dict | None:
     """Fetch and parse stats for a single character from Fandom wikis."""
     for wiki_base in FANDOM_WIKIS:
@@ -259,7 +189,6 @@ def fetch_character_stats(char_id: str, page_title: str) -> dict | None:
             return stats
 
     return None
-
 
 def main():
     dry_run = "--dry-run" in sys.argv
@@ -324,7 +253,6 @@ def main():
         print(f"\nDry run complete, no files modified.")
     else:
         print(f"\nNo new stats to write.")
-
 
 if __name__ == "__main__":
     main()

@@ -87,7 +87,7 @@ def convert_item(item: dict) -> dict:
 
 def dedup_key(item: dict) -> str:
     """Generate dedup key for an item. URL-first, title fallback — aligned with aggregator."""
-    url = (item.get('url', '') or '').replace('http://', 'https://').rstrip('/').strip()
+    url = (item.get('url', '') or '').replace('http://', 'https://').strip().rstrip('/')
     if url:
         return url
     return f"{item.get('title', '')[:60]}|{item.get('source', '')}|{item.get('author', '')}"
@@ -183,7 +183,7 @@ def run_zero_cost_collectors() -> list[dict]:
 
         # dormant 源直接跳过，节约 CI 时间
         if tracker and tracker.should_skip_platform(source_id):
-            logger.info(f"  ⏭  {name}: dormant, skipping")
+            logger.info(f"   {name}: dormant, skipping")
             continue
 
         try:
@@ -198,7 +198,7 @@ def run_zero_cost_collectors() -> list[dict]:
             if result:
                 items.extend(result)
                 succeeded.append((name, len(result)))
-                logger.info(f"  ✓ {name}: +{len(result)} items")
+                logger.info(f"  {name}: +{len(result)} items")
             else:
                 empty.append(name)
                 logger.info(f"  · {name}: 0 items")
@@ -216,14 +216,14 @@ def run_zero_cost_collectors() -> list[dict]:
                         if result:
                             items.extend(result)
                             succeeded.append((name, len(result)))
-                            logger.info(f"  ✓ {name} (PW): +{len(result)} items")
+                            logger.info(f"  {name} (PW): +{len(result)} items")
                             if tracker:
                                 tracker.update_platform_status(source_id, len(result))
                             continue
                     except Exception as pw_e:
-                        logger.warning(f"  ✗ {name} Playwright also failed: {pw_e}")
+                        logger.warning(f"  {name} Playwright also failed: {pw_e}")
             failed.append((name, str(e)[:120]))
-            logger.warning(f"  ✗ {name} FAILED: {e}")
+            logger.warning(f"  {name} FAILED: {e}")
             if tracker:
                 tracker.update_platform_status(source_id, 0, error=str(e))
 
@@ -321,6 +321,12 @@ def main():
     # Step 1: Run global collectors
     global_items = run_zero_cost_collectors()
     logger.info(f'全球采集完成: {len(global_items)} items')
+
+    # Empty-data protection (lesson #2): all collectors empty means a failed run.
+    # Never rewrite news.json on a blank run; exit non-zero so the workflow signals failure.
+    if not global_items:
+        logger.error('全部采集器返回空，疑似全线失败；保留 news.json 原样，非零退出。')
+        sys.exit(1)
 
     # Step 2: Load existing aggregator output
     existing = load_existing_news()
