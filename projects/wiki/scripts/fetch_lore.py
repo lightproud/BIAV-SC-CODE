@@ -21,7 +21,6 @@ Requires: Python 3.8+ (stdlib only)
 """
 
 import json
-import re
 import sys
 import time
 import urllib.parse

@@ -25,7 +25,6 @@ backfill_platforms.py — 多平台历史数据回溯采集
 
 import json
 import sys
-import os
 import time
 import logging
 import argparse

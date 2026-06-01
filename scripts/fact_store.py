@@ -19,7 +19,7 @@ import math
 import re
 import sys
 from collections import Counter
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent

@@ -5,9 +5,7 @@ Reads AB files from input directory, decrypts with UnityCN key,
 and exports Texture2D/Sprite as PNG.
 """
 
-import os
 import sys
-import traceback
 from pathlib import Path
 
 import UnityPy
