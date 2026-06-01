@@ -1,240 +1,54 @@
 {
   "last_session": {
-    "id": "dc0240ec",
-    "timestamp": "2026-05-29T01:31:59.398000+00:00",
-    "duration_minutes": 3400.1,
-    "branch": "claude/community-archive-analysis-qaysJ",
-    "topics": [
-      "联动",
-      "沙耶之歌"
-    ],
+    "id": "ab6fcb2c",
+    "timestamp": "2026-06-01T15:56:24.072000+00:00",
+    "duration_minutes": 48.3,
+    "branch": "claude/workflows-archival-logic-Akf97",
+    "topics": [],
     "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
-      "/home/user/brain-in-a-vat/.claude/skills/biav-report/SKILL.md",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-05/bug-fault-report-2026-05-18_26.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-      "/home/user/brain-in-a-vat/memory/methodology.md",
-      "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-      "/home/user/brain-in-a-vat/scripts/report_render.py",
-      "/tmp/analyze.py",
-      "/tmp/analyze2.py",
-      "/tmp/analyze3.py",
-      "/tmp/analyze4.py",
-      "/tmp/analyze5.py",
-      "/tmp/ext_bugs.py",
-      "/tmp/ext_discord.py",
-      "/tmp/ext_misc.py",
-      "/tmp/ext_platforms.py",
-      "/tmp/ext_quotes.py",
-      "/tmp/gen2.py"
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
     {
-      "id": "c4202448",
-      "timestamp": "2026-05-29T00:34:12.302000+00:00",
-      "duration_minutes": 3342.3,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
+      "id": "9868f4cc",
+      "timestamp": "2026-06-01T15:37:09.614000+00:00",
+      "duration_minutes": 29.0,
+      "branch": "claude/workflows-archival-logic-Akf97",
+      "topics": [],
       "decisions": [],
       "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/bug-fault-report-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_bugs.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/gen2.py",
-        "/tmp/generate_deliverable.py"
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+        "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
       ],
       "open_items": []
     },
     {
-      "id": "e9aa0042",
-      "timestamp": "2026-05-29T00:17:53.307000+00:00",
-      "duration_minutes": 3325.9,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
+      "id": "cd1a3977",
+      "timestamp": "2026-06-01T15:11:50.531000+00:00",
+      "duration_minutes": 3.7,
+      "branch": "claude/workflows-archival-logic-Akf97",
+      "topics": [],
       "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/bug-fault-report-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_bugs.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/gen2.py",
-        "/tmp/generate_deliverable.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "39e8ad3e",
-      "timestamp": "2026-05-27T02:40:53.070000+00:00",
-      "duration_minutes": 588.9,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/bug-fault-report-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_bugs.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/gen2.py",
-        "/tmp/generate_deliverable.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "9ed1143b",
-      "timestamp": "2026-05-27T02:06:28.017000+00:00",
-      "duration_minutes": 554.5,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/gen2.py",
-        "/tmp/generate_deliverable.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "6a4b25aa",
-      "timestamp": "2026-05-27T01:53:30.160000+00:00",
-      "duration_minutes": 541.6,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/generate_deliverable.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "05cf129e",
-      "timestamp": "2026-05-27T00:17:08.007000+00:00",
-      "duration_minutes": 445.2,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/generate_deliverable.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "2a3b4c5e",
-      "timestamp": "2026-05-26T17:52:33.620000+00:00",
-      "duration_minutes": 60.6,
-      "branch": "claude/community-archive-analysis-qaysJ",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-        "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-        "/tmp/analyze.py",
-        "/tmp/analyze2.py",
-        "/tmp/analyze3.py",
-        "/tmp/analyze4.py",
-        "/tmp/analyze5.py",
-        "/tmp/ext_discord.py",
-        "/tmp/ext_misc.py",
-        "/tmp/ext_platforms.py",
-        "/tmp/ext_quotes.py",
-        "/tmp/generate_deliverable.py"
-      ],
+      "files_changed": [],
       "open_items": []
     },
     {
@@ -304,29 +118,163 @@
         "/home/user/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
+    },
+    {
+      "id": "eea69c5e",
+      "timestamp": "2026-05-20T00:09:24.980000+00:00",
+      "duration_minutes": 34078.7,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/README.md",
+        "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "a094c664",
+      "timestamp": "2026-05-19T23:58:15.600000+00:00",
+      "duration_minutes": 34067.5,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/README.md",
+        "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "a8d8bb1f",
+      "timestamp": "2026-05-06T16:33:18.871000+00:00",
+      "duration_minutes": 14470.7,
+      "branch": "claude/fix-site-compliance-oM2P1",
+      "topics": [
+        "Bilibili"
+      ],
+      "decisions": [
+        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
+        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
+        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
+        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
+        "/home/user/brain-in-a-vat/projects/site/public/404.html",
+        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
+        "/home/user/brain-in-a-vat/projects/site/public/index.html"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "c5961df4",
+      "timestamp": "2026-05-06T16:19:30.396000+00:00",
+      "duration_minutes": 14456.9,
+      "branch": "claude/fix-site-compliance-oM2P1",
+      "topics": [
+        "Bilibili"
+      ],
+      "decisions": [
+        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
+        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
+        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
+        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
+        "/home/user/brain-in-a-vat/projects/site/public/404.html",
+        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
+        "/home/user/brain-in-a-vat/projects/site/public/index.html"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "fail-sim",
+      "timestamp": null,
+      "duration_minutes": null,
+      "branch": "",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "联动": 4.16,
-      "沙耶之歌": 4.16,
-      "银芯": 0.6,
-      "黑池": 0.52,
-      "Bilibili": 0.12
+      "银芯": 1.84,
+      "黑池": 1.57,
+      "Bilibili": 0.38,
+      "GitHub": 0.1,
+      "Phase1": 0.1
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-05/community-deep-analysis-2026-05-18_26.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-05/role-action-recommendations-2026-05.md",
-      "/home/user/brain-in-a-vat/memory/research/community-analysis-2026-05-18_26.md",
-      "/tmp/analyze.py",
-      "/tmp/analyze2.py",
-      "/tmp/analyze3.py",
-      "/tmp/analyze4.py",
-      "/tmp/analyze5.py",
-      "/tmp/ext_discord.py"
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py",
+      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml"
     ],
-    "total_sessions": 115
+    "total_sessions": 110
   },
-  "updated_at": "2026-05-29T01:35:24.463180+00:00"
+  "updated_at": "2026-06-01T16:01:07.724639+00:00"
 }

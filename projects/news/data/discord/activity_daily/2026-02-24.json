@@ -1,10 +1,11 @@
 {
   "date": "2026-02-24",
-  "messages": 13333,
+  "messages": 13353,
   "unique_authors": 164,
-  "reactions_total": 1688,
+  "reactions_total": 1697,
   "attachments": 567,
   "channel_activity": {
+    "🔸lets-count": 20,
     "🔸русский-канал": 18,
     "🔸phòng-chat-tiếng-việt": 502,
     "🔸canal-español": 130,
@@ -73,36 +74,33 @@
     "🔸阵容构建": 31
   },
   "hourly_activity": {
+    "4": 408,
+    "5": 673,
+    "6": 719,
+    "7": 449,
+    "9": 227,
+    "10": 179,
+    "11": 561,
+    "12": 342,
+    "15": 1061,
+    "17": 655,
+    "18": 556,
+    "22": 228,
+    "23": 473,
     "2": 517,
     "3": 823,
-    "4": 407,
-    "5": 671,
-    "23": 472,
     "0": 630,
     "1": 384,
-    "6": 718,
-    "7": 448,
-    "9": 225,
-    "10": 178,
-    "11": 560,
-    "12": 341,
     "13": 531,
     "14": 636,
-    "15": 1059,
     "16": 845,
-    "17": 652,
-    "18": 555,
     "20": 629,
     "19": 675,
     "21": 630,
-    "22": 225,
     "8": 522
   },
   "message_types": {
-    "0": 2661,
-    "19": 730,
-    "20": 5,
-    "21": 1
+    "0": 20
   },
   "top_reacted_messages": [
     {
@@ -132,6 +130,14 @@
       "author": "fishhazardthewizard",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1475873300105138309",
+      "channel_id": "1355630588094320661",
+      "content": "3560 <:thinking1:1356068128936820929>",
+      "author": "sunstopshining",
+      "reactions": 6,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1475885825404309554",
@@ -235,13 +241,6 @@
       "id": "1475864839883853955",
       "content": "six seven brought me back to life",
       "author": "bagels5899",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1475872307175227422",
-      "content": "Residents of this discord have a weird habit of assuming that everyone is female",
-      "author": "sirtealot",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-08",
-  "archived_at": "2026-05-08T14:34:29.381570+00:00",
+  "archived_at": "2026-06-01T15:26:41.619700+00:00",
   "source": "ruliweb",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "source": "ruliweb",
@@ -43,6 +43,19 @@
       "url": "https://bbs.ruliweb.com/etcs/board/300148/read/38560116",
       "author": "",
       "engagement": 0
+    },
+    {
+      "title": "[디아블로2] (임시 번역)레더 14 시즌 5월 23일 시작+3.2 패치 노트",
+      "summary": "레더 14시즌은 한국 시간 기준 5월 23일 (토) 오전 9시에 시작됩니다. ...",
+      "source": "ruliweb",
+      "time": "2026-05-08T15:00:00+00:00",
+      "url": "https://bbs.ruliweb.com/etcs/board/300007/read/2346867",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "ko",
+      "platform_region": "kr"
     }
   ]
 }

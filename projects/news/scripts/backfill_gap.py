@@ -29,8 +29,23 @@ PLATFORMS_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-GAP_START = datetime(2026, 4, 13, tzinfo=timezone.utc)
-GAP_END = datetime(2026, 4, 25, 23, 59, 59, tzinfo=timezone.utc)
+
+def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
+    """Parse a YYYY-MM-DD gap bound from env, falling back to default."""
+    raw = os.environ.get(env_name, '').strip()
+    if not raw:
+        return default
+    try:
+        d = datetime.strptime(raw, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        return d.replace(hour=23, minute=59, second=59) if end_of_day else d
+    except ValueError:
+        logger.warning(f'{env_name}={raw!r} 非法（需 YYYY-MM-DD），改用默认 {default.date()}')
+        return default
+
+
+# 缺口范围可由 workflow 经 GAP_START_DATE / GAP_END_DATE 覆盖；默认沿用历史 Apr 13-25。
+GAP_START = _gap_bound('GAP_START_DATE', datetime(2026, 4, 13, tzinfo=timezone.utc), False)
+GAP_END = _gap_bound('GAP_END_DATE', datetime(2026, 4, 25, 23, 59, 59, tzinfo=timezone.utc), True)
 
 
 def _archive_items(source: str, items: list[dict]):
@@ -452,7 +467,7 @@ def cleanup_empty_placeholders():
 
 
 def main():
-    logger.info('=== Gap Backfill: 2026-04-13 ~ 2026-04-25 ===')
+    logger.info(f'=== Gap Backfill: {GAP_START.date()} ~ {GAP_END.date()} ===')
 
     cleanup_empty_placeholders()
 

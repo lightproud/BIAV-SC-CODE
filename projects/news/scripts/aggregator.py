@@ -23,6 +23,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 import logging
 import requests
@@ -687,7 +688,19 @@ def _fetch_bilibili_space():
                 logger.debug(f'Bilibili space {creator_name}({mid}) page {page} failed: {e}')
                 break
 
-            vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
+            payload = resp.json()
+            # B 站把风控从 412 升级为「200 + code:-352」，旧代码只读 vlist 会把
+            # 风控拦截静默当成「无视频」→ 归零不可见。显式判 code 并触发 fallback。
+            api_code = payload.get('code', 0)
+            if api_code != 0:
+                logger.warning(
+                    f'Bilibili space {creator_name}({mid}): API code={api_code} '
+                    f'({payload.get("message", "")}), likely risk-control, falling back to search'
+                )
+                fatal_error = f'space-code-{api_code}'
+                break
+
+            vlist = payload.get('data', {}).get('list', {}).get('vlist', []) or []
             if not vlist:
                 break
 
@@ -757,7 +770,17 @@ def _fetch_bilibili_search():
                 logger.warning(f'Bilibili search "{keyword}" page {page} failed: {e}')
                 break
 
-            results = resp.json().get('data', {}).get('result', []) or []
+            try:
+                payload = resp.json()
+            except ValueError:
+                # 反爬挑战页返回 HTML 而非 JSON——显式告警，避免静默归零
+                logger.warning(f'Bilibili search "{keyword}" page {page}: non-JSON body (anti-crawl), skipping')
+                break
+            api_code = payload.get('code', 0)
+            if api_code != 0:
+                logger.warning(f'Bilibili search "{keyword}" page {page}: API code={api_code} ({payload.get("message", "")})')
+                break
+            results = payload.get('data', {}).get('result', []) or []
             if not results:
                 break
             pages_fetched += 1
@@ -2091,7 +2114,7 @@ def run():
             OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
             with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
-        return
+        return False
 
     # Generate summary
     summary = generate_summary(unique_news)
@@ -2116,6 +2139,9 @@ def run():
     except ImportError:
         pass
 
+    return True
+
 
 if __name__ == '__main__':
-    run()
+    empty_run = run() is False
+    sys.exit(1 if empty_run else 0)

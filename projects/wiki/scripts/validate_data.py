@@ -84,7 +84,12 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
     errors = []
 
     if not HAS_JSONSCHEMA:
-        print("  SKIP  Schema validation (jsonschema not installed)")
+        print("  ERROR jsonschema not installed — schema validation cannot run.")
+        print("        Install with: pip install jsonschema")
+        errors.append(
+            "  FAIL  Schema validation: jsonschema library missing"
+            " (pip install jsonschema)"
+        )
         return errors
 
     for data_file, schema_file in SCHEMA_MAP.items():
