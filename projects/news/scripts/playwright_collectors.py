@@ -10,11 +10,10 @@ Tested and working:
 - TapTap: ⚠ App page returns 405, need alternative
 """
 
-import json
 import logging
 import re
 from datetime import datetime, timezone, timedelta
-from typing import Optional, List, Dict
+from typing import List, Dict
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -318,7 +317,7 @@ def fetch_weibo_playwright() -> List[Dict]:
                     if time_approx:
                         item['time_is_approximate'] = True
                     items.append(item)
-                except:
+                except Exception:
                     continue
             
             browser.close()
@@ -378,7 +377,7 @@ def fetch_taptap_playwright() -> List[Dict]:
                             'author': '',
                             'tags': ['taptap'],
                         })
-                except:
+                except Exception:
                     continue
             
             browser.close()

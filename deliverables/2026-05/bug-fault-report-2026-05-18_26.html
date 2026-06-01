@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><style>
+@page { size:150mm 210mm; margin:12mm 11mm 12mm 11mm; background:#0a0b10;
+  @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040;} }
+@page :first{ @bottom-center{content:none;} }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans CJK SC',sans-serif;font-size:15pt;line-height:1.95;color:#cdc2a1;background:#0a0b10;}
+.cover{page-break-after:always;padding-top:34mm;text-align:center;}
+.cover-rule{border:none;border-top:2px solid #c5a356;width:64%;margin:0 auto 11mm;}
+.cover-rule-b{border:none;border-top:1px solid #3a3520;width:82%;margin:11mm auto 6mm;}
+.cover h1{font-family:'Noto Serif CJK SC',serif;font-size:29pt;font-weight:700;color:#e2c97e;line-height:1.5;margin-bottom:7mm;letter-spacing:1pt;}
+.cover .sub{font-size:16pt;color:#b09a5e;margin-bottom:10mm;line-height:1.7;}
+.cover .meta{font-size:13.5pt;color:#7a7050;line-height:2;margin-top:8mm;}
+.cover .erica{font-family:'Noto Serif CJK SC',serif;font-size:14pt;color:#8a8068;margin-top:13mm;letter-spacing:3pt;}
+.toc{page-break-after:always;padding-top:14mm;}
+.toc h2{font-family:'Noto Serif CJK SC',serif;font-size:23pt;color:#e2c97e;text-align:center;margin-bottom:4mm;letter-spacing:4pt;}
+.toc-rule{border:none;border-top:2px solid #c5a356;width:40%;margin:0 auto 7mm;}
+.toc-item{font-size:14.5pt;line-height:2.15;color:#c5a356;text-align:center;}
+h2.section-title{font-family:'Noto Serif CJK SC',serif;font-size:22pt;font-weight:700;color:#e2c97e;margin-top:1mm;margin-bottom:2mm;letter-spacing:1pt;page-break-before:always;page-break-after:avoid;}
+hr.section-rule{border:none;border-top:2px solid #c5a356;margin-bottom:5mm;page-break-after:avoid;}
+h3{font-family:'Noto Serif CJK SC',serif;page-break-after:avoid;font-size:18pt;font-weight:700;color:#c5a356;margin-top:6mm;margin-bottom:3mm;}
+p{margin-bottom:3.4mm;text-align:justify;orphans:3;widows:3;}
+strong{color:#e2c97e;font-weight:700;}
+em{color:#a99a6a;font-style:normal;}
+ul,ol{margin:2mm 0 3.5mm 7mm;}
+li{margin-bottom:2.6mm;line-height:1.9;}
+blockquote{border-left:3px solid #c5a356;background:#13141c;padding:3mm 5mm;margin:3.5mm 0;color:#b3a67e;font-size:14pt;}
+blockquote p{margin-bottom:1.8mm;}
+code{font-family:'Noto Sans Mono CJK SC','DejaVu Sans Mono',monospace;font-size:12.5pt;color:#c5a356;background:#15161e;padding:0 2px;word-break:break-all;}
+hr.ornament{border:none;text-align:center;margin:5mm 0;}
+hr.ornament::after{content:"\25C7  \25C7  \25C7";color:#6b6040;font-size:14pt;letter-spacing:4pt;}
+table{width:100%;border-collapse:collapse;margin:3.5mm 0 4mm;font-size:13pt;page-break-inside:avoid;}
+th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:2.2mm 2.6mm;text-align:left;border:0.5px solid #3a3520;}
+td{padding:2mm 2.6mm;border:0.5px solid #26220f;vertical-align:top;line-height:1.65;color:#c0b488;}
+</style></head>
+<body><div class="cover"><hr class="cover-rule"><h1>故障与缺陷清单</h1>
+<div class="sub">V2.5.1「沙耶之歌」联动窗口社区报告（2026-05-18 → 05-26）</div><div class="meta">BIAV-SC 银芯情报层 · 7 模块 约 40 条缺陷<br>来源：官方答疑追踪 + V2.5.1.1 补丁公告 + 多平台玩家报告<br>产出：主控台艾瑞卡 / Code-news · 2026-05-27</div>
+<hr class="cover-rule-b"><div class="erica">弥萨格大学数据库终端 · 艾瑞卡</div></div>
+<div class="toc"><h2>目 录</h2><hr class="toc-rule"><div class="toc-item">V2.5.1「沙耶之歌」联动窗口（2026-05-18 → 05-26）</div>
+<div class="toc-item">A 模块 · 客户端稳定性与性能</div>
+<div class="toc-item">B 模块 · 登录 · 账号 · 区服可达性</div>
+<div class="toc-item">C 模块 · 战斗与玩法机制</div>
+<div class="toc-item">D 模块 · 灵工坊 · 命轮 · 抽卡记录</div>
+<div class="toc-item">E 模块 · UI · 显示 · 交互</div>
+<div class="toc-item">F 模块 · 本地化 · 文本</div>
+<div class="toc-item">G 模块 · 美术 · 资源</div>
+<div class="toc-item">H 汇总与处置建议</div></div><div class="content"><h2 class="section-title" id="sec0">V2.5.1「沙耶之歌」联动窗口（2026-05-18 → 05-26）</h2><hr class="section-rule">
+<blockquote>
+<p>本清单从全量档案层提取本窗口社区报告的技术故障与缺陷，按模块整理为标准缺陷单
+（模块概述 / 重现步骤 / 实际结果 / 预期结果）。每条标注<strong>来源</strong>与<strong>状态</strong>。</p>
+<p><strong>状态口径</strong>（遵 §6.11 R3 区分「官方确认」与「玩家报告」）：
+- <code>官方已修复</code> — V2.5.1.1 补丁公告或 official-q-a 标「已解决/Resolved」
+- <code>官方处理中</code> — official-q-a 标「处理中/Processing」
+- <code>官方已回应</code> — official-q-a 标「已回答/Answered」，多为非代码问题或给出规避方案
+- <code>玩家报告</code> — 仅见玩家反馈，窗口内未见官方确认（信度 C，需研发侧复核）</p>
+<p>纯数值 / 付费 / 设计争议（如卡池合并、无垢升级不计抽数、累计百万目标）不属故障范畴，
+已剔除，另见社区分析报告。</p>
+</blockquote>
+<hr class="ornament">
+<h2 class="section-title" id="sec1">A 模块 · 客户端稳定性与性能</h2><hr class="section-rule">
+<p>本窗口最高频的技术故障类别。崩溃 / 卡死 / 黑屏 / 加载失败集中在移动端，多条已随
+V2.5.1.1 维护修复，部分加载与发热问题仍有零星反馈。</p>
+<h3>A-1 关卡内卡死 + 疯狂闪退 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：iPhone 13 / iOS 26.4.2，进入关卡战斗，连续作战一段时间后触发。</li>
+<li><strong>实际结果</strong>：画面卡死——可点退出、点物品、点角色，但角色无法在格子间移动；点「修复」按钮无效，需强退重进。</li>
+<li><strong>预期结果</strong>：关卡战斗全程可正常操作格子移动，不发生卡死。</li>
+<li><strong>来源 / 状态</strong>：official-q-a 玩家报告（含设备信息）→ 标「已解决」（05-19）。</li>
+</ul>
+<h3>A-2 高画质高帧率发热闪退 <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：iOS 设备开启高画质 + 高帧率，进入超维(Ultra Realm)、Boss 本，或释放高特效大招（如环行拉蒙娜、克莱门汀），或通关后观看剧情。</li>
+<li><strong>实际结果</strong>：设备过热并闪退。</li>
+<li><strong>预期结果</strong>：长时间高负载场景不因发热崩溃。</li>
+<li><strong>来源 / 状态</strong>：official-q-a → 官方回应「设备过热所致，建议在设置中调低画质/帧率改善」（05-19，硬件层规避，非代码修复）。</li>
+</ul>
+<h3>A-3 启动后 Logo 消失即黑屏 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：更新游戏后（多为长期未登录的回流玩家），iPhone 打开 App，开发商 Logo 显示后停在黑屏。</li>
+<li><strong>实际结果</strong>：长期停在黑屏，重启 App、清除缓存均无效；玩家因怕丢号不敢卸载重装。</li>
+<li><strong>预期结果</strong>：Logo 后正常进入登录/加载流程。</li>
+<li><strong>来源 / 状态</strong>：Reddit（05-26）+ official-q-a（05-20）多源 → 关联 official-q-a「Stuck on Loading Screen」标「Resolved」（05-25）。</li>
+</ul>
+<h3>A-4 开头加载卡「网络繁忙」 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：Google Play 下载安装后首次进入，登录 Google 账号开始下载资料，挂后台再回来。</li>
+<li><strong>实际结果</strong>：一直卡在 54%，提示「网络繁忙」；关闭重开网络、改连 WiFi、清缓存、清数据、重启手机（ROG 7 Ultimate）均无效。</li>
+<li><strong>预期结果</strong>：资料下载正常完成进入游戏。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-25）→ 标「已解决」；另有玩家自发规避「开全局代理」可解（Google Play ★5）。</li>
+</ul>
+<h3>A-5 登录进入后崩溃 / 新玩家持续崩溃 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：登录后进入游戏主界面阶段（新玩家高发）。</li>
+<li><strong>实际结果</strong>：进入时崩溃 / 反复崩溃。</li>
+<li><strong>预期结果</strong>：登录后稳定进入。</li>
+<li><strong>来源 / 状态</strong>：official-q-a「post-login crash on entering」「Constant Crashes (New Player)」→ 标「Resolved」（更新后修复）。</li>
+</ul>
+<h3>A-6 Faded Legacy 第8章与终章 Watchpoint 事件触发卡死 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：进入 Faded Legacy 第8章或终章，触发 Watchpoint 事件。</li>
+<li><strong>实际结果</strong>：游戏卡死。</li>
+<li><strong>预期结果</strong>：Watchpoint 事件正常结算。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [Combat]→Stage，明示「Fixed」。</li>
+</ul>
+<h3>A-7 觉醒连点导致卡死 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：战斗中对角色觉醒（如莱克）连续快速点击。</li>
+<li><strong>实际结果</strong>：直接卡死，只能重开。</li>
+<li><strong>预期结果</strong>：连点不应导致客户端卡死。</li>
+<li><strong>来源 / 状态</strong>：中文综合频道玩家提及（05-23）→ 未见官方单独确认，建议研发复核连点防抖。</li>
+</ul>
+<h3>A-8 阿拉克涅超维在手机端持续卡顿 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：手机端进入阿拉克涅(Arachne) Ultra Realm。</li>
+<li><strong>实际结果</strong>：持续卡死/卡顿；同账号在 iPad 上不卡。</li>
+<li><strong>预期结果</strong>：移动端各机型表现一致，不卡顿。</li>
+<li><strong>来源 / 状态</strong>：泰语频道（05-23）→ 玩家报告，疑机型/性能相关。</li>
+</ul>
+<h3>A-9 加载失败 / 完全无法进入（多端） <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：Steam PC 端 / 移动端启动游戏。</li>
+<li><strong>实际结果</strong>：Steam「游戏根本加载不出来」；俄语区「画面很美但完全无法运行，根本进不去，怎么都没用」；App Store「总是中途无响应」。</li>
+<li><strong>预期结果</strong>：正常加载进入。</li>
+<li><strong>来源 / 状态</strong>：Steam(en/05-21)、Steam(ru/05-23)、App Store(en/05-18)→ 玩家报告，部分与 A 模块其他项重叠。</li>
+</ul>
+<h3>A-10 界面操作卡顿明显 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：常规浏览游戏界面、执行操作。</li>
+<li><strong>实际结果</strong>：界面复杂、操作繁琐、卡顿明显。</li>
+<li><strong>预期结果</strong>：界面操作流畅。</li>
+<li><strong>来源 / 状态</strong>：Steam 负评(schinese/05-21)→ 玩家报告，性能/交互体验类。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec2">B 模块 · 登录 · 账号 · 区服可达性</h2><hr class="section-rule">
+<p>涉及账号安全与区服可达性，潜在影响面大，部分（账号丢失）属高危需优先核查。</p>
+<h3>B-1 俄区必须开 VPN 才能登录 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：俄罗斯地区直接启动游戏（不开 VPN）。</li>
+<li><strong>实际结果</strong>：无法连接/进不去；需开 VPN 加载完成后再关掉才能玩。玩家明确「以前不开 VPN 也能用」。</li>
+<li><strong>预期结果</strong>：俄区可达性与此前一致，无需依赖 VPN。</li>
+<li><strong>来源 / 状态</strong>：Google Play(ru/★5/05-18)+ 俄语频道多条（05-19/05-22）→ 玩家报告，疑近期区服/合规(RKN)变化，建议核查。</li>
+</ul>
+<h3>B-2 港区 Google 账号无法登录 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：港区设备，可正常打开 Google Play 更新，但进入游戏登录 Google 账号。</li>
+<li><strong>实际结果</strong>：一直「无法登录谷歌账号」。</li>
+<li><strong>预期结果</strong>：港区 Google 账号正常登录。</li>
+<li><strong>来源 / 状态</strong>：Google Play(zh/★4/05-24)→ 玩家报告。</li>
+</ul>
+<h3>B-3 多个账号绑定邮箱后数据丢失 <code>玩家报告</code> ⚠高危</h3>
+<ul>
+<li><strong>重现步骤</strong>：账号绑定邮箱（疑「Google 商店手游绑定邮箱后再填 Google 邮箱」流程）。</li>
+<li><strong>实际结果</strong>：多个账号绑了邮箱后「直接没了」。</li>
+<li><strong>预期结果</strong>：绑定邮箱不应导致账号数据丢失。</li>
+<li><strong>来源 / 状态</strong>：Google Play(zh/★1/05-18)+ 游戏问题频道相关疑虑（05-18）→ 玩家报告，单条但属数据安全高危，建议优先复现绑定链路。</li>
+</ul>
+<h3>B-4 Steam 端登录卡在登录画面 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：Steam 下载后尝试登录。</li>
+<li><strong>实际结果</strong>：一直卡在登录画面，长时间不跳转（附截图）。</li>
+<li><strong>预期结果</strong>：正常完成登录。</li>
+<li><strong>来源 / 状态</strong>：Reddit(en/05-24，含截图)→ 玩家报告。</li>
+</ul>
+<h3>B-5 账号找回（已自助解决，记录在案） <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：玩家无法登录原账号，提供付费记录请求找回。</li>
+<li><strong>实际结果</strong>：最终玩家逐一登录其它游戏账号后自行找回，非系统故障。</li>
+<li><strong>预期结果</strong>：—（误报）。</li>
+<li><strong>来源 / 状态</strong>：official-q-a → 标「Resolved」。官方口径：账号/付费问题应登录任一账号后联系客服。<strong>记录用途</strong>：佐证账号找回流程对玩家不够清晰。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec3">C 模块 · 战斗与玩法机制</h2><hr class="section-rule">
+<p>关卡、Traphase、超维(Astral Reign)、列车模式等玩法逻辑缺陷。多条随 V2.5.1.1 修复，
+少数机制异常仍在处理。</p>
+<h3>C-1 灰烬遗迹「感应」后刷新黑印消耗异常 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：超维「灰烬遗迹」中，未携带「致群星」命轮时使用「感应」，再刷新商店；随后第二次使用「感应」。</li>
+<li><strong>实际结果</strong>：首次后刷新价格错误归零（不消耗黑印）；第二次「感应」后刷新反而增加黑印。</li>
+<li><strong>预期结果</strong>：刷新按规则正常消耗黑印。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18）+ V2.5.1.1 补丁公告明示「Fixed」→ 标「已解决」（05-19）。</li>
+</ul>
+<h3>C-2 Astral Reign 5-15 非首领战不支持自动战斗 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：进入 Astral Reign 5-15 的非 Boss 战斗。</li>
+<li><strong>实际结果</strong>：不支持自动战斗。</li>
+<li><strong>预期结果</strong>：仅 Boss 战不支持自动战斗，其余支持（修复后行为）。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [Combat]→Stage，「Fixed」。</li>
+</ul>
+<h3>C-3 Traphase 开局缺失起手选牌阶段 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：进入 Traphase 对局，特定情形下对局开始。</li>
+<li><strong>实际结果</strong>：起手选牌阶段缺失，玩家开局无手牌；另「显示/隐藏牌」按钮在起手阶段错误显示紫色块。</li>
+<li><strong>预期结果</strong>：开局正常进入起手选牌，按钮显示正常。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [Combat]→Traphase，「Fixed」。</li>
+</ul>
+<h3>C-4 Traphase「感知扭曲」状态缺持续时间说明 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看 Traphase「Perception Warp / 感知扭曲」状态描述。</li>
+<li><strong>实际结果</strong>：描述缺失持续时间。</li>
+<li><strong>预期结果</strong>：明确标注「持续至本回合结束」（修复后）。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告，「Fixed」。</li>
+</ul>
+<h3>C-5 命轮通行证任务无法通过 Traphase 季节任务完成 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：在 Traphase 的 All Pick / Draft Pick 模式完成季节任务，以推进命轮通行证任务「在禁忌探求完成任意季节任务」。</li>
+<li><strong>实际结果</strong>：任务无法被判定完成。</li>
+<li><strong>预期结果</strong>：完成后正常计入（修复后历史完成者自动补完编年任务）。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [Event]，「Fixed」。</li>
+</ul>
+<h3>C-6 列车模式忘却篇第6章共鸣卡使用次数异常 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：列车模式忘却篇第6章，进入第三阶段任意关卡使用共鸣卡。</li>
+<li><strong>实际结果</strong>：共鸣卡变成在第三阶段任何关卡都可用3次，不再限定首领战。</li>
+<li><strong>预期结果</strong>：共鸣卡按设计限定（首领战）使用。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-22/05-25）→ 标「处理中」。</li>
+</ul>
+<h3>C-7 触发死亡抵抗后狂气面板临时力量显示错误 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：战斗中触发「死亡抵抗」。</li>
+<li><strong>实际结果</strong>：狂气面板显示获取的临时力量数值不正确（实际力量不受影响）；释放狂气爆发后面板才变正确。</li>
+<li><strong>预期结果</strong>：面板实时显示正确临时力量。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18）→ 玩家报告，纯显示层。</li>
+</ul>
+<h3>C-8 喵奇受恩(meowch Obliged)活动无法添加助战 <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：在喵奇受恩活动中尝试添加助战觉醒体。</li>
+<li><strong>实际结果</strong>：助战列表不显示任何内容；重启设备、用「修复」功能均无效。</li>
+<li><strong>预期结果</strong>：正常显示并可添加助战。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-19）→ 标「已回答」（05-21）；另有「活动助战不刷新」标「已回答」（05-25）。</li>
+</ul>
+<h3>C-9 环拉/混沌24 银钥倍率多出两发（疑增益异常） <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：使用环行拉蒙娜 / 混沌24（沿用本期增强）。</li>
+<li><strong>实际结果</strong>：银钥倍率平白多出两发，「应该是 bug」。</li>
+<li><strong>预期结果</strong>：倍率按设计数值结算。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-21）→ 玩家报告，疑增益数值异常。</li>
+</ul>
+<h3>C-10 Traphase — Caecus 受恩(Exalt)治疗异常 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：Traphase 中触发 Caecus 的 Exalt 治疗。</li>
+<li><strong>实际结果</strong>：治疗表现异常（具体偏差待研发核）。</li>
+<li><strong>预期结果</strong>：按技能描述结算治疗。</li>
+<li><strong>来源 / 状态</strong>：official-q-a → 标「Processing」。</li>
+</ul>
+<h3>C-11 茉夏超限「下一张风暴为0费」与其它0费效果相互覆盖 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：茉夏超限后获得「下一张风暴牌0费」，同时存在其它使牌变0费的效果。</li>
+<li><strong>实际结果</strong>：两种0费效果相互覆盖。</li>
+<li><strong>预期结果</strong>：多个0费来源按规则叠加/共存，不互相覆盖。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-25）→ 标「处理中」。</li>
+</ul>
+<h3>C-12 对话结束奖励出现错误 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：完成某对话后结算奖励。</li>
+<li><strong>实际结果</strong>：奖励出现错误。</li>
+<li><strong>预期结果</strong>：按配置正确发放。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-25）→ 标「处理中」。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec4">D 模块 · 灵工坊 · 命轮 · 抽卡记录</h2><hr class="section-rule">
+<p>养成与抽卡系统的描述/规则显示缺陷。Soulforge 串描述为本窗口最受关注的具名 bug。</p>
+<h3>D-1 灵工坊天赋描述错串成其他觉醒体 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：英文客户端查看被近期加强角色的灵工坊(Soulforge)天赋资质描述，切换不同 Soulforge 等级。</li>
+<li><strong>实际结果</strong>：描述显示成其他觉醒体的天赋——且随等级变化（如 Ogier：1/10 正确，2/10 错显 Lotan，3/10 错显 Ghelot；Aurita 显示 Faint 的、Faint 显示 Agrippa 的、Agrippa 显示 DHelot 的）。</li>
+<li><strong>预期结果</strong>：各等级显示该觉醒体自身天赋描述。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18，多人复现/含截图）+ Reddit「Soulforge bug」（05-18）→ 标「Resolved」（05-21）；另「Daffodil's SoulforgeAptitude bug」同期「Resolved」。</li>
+</ul>
+<h3>D-2 抽卡记录未显示完整6个月 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看抽卡历史记录。</li>
+<li><strong>实际结果</strong>：未按规则显示过去6个月记录（应覆盖账号全生命周期的部分被截断）。</li>
+<li><strong>预期结果</strong>：显示规则规定的完整历史区间。</li>
+<li><strong>来源 / 状态</strong>：official-q-a「Echoing wishes incorrect rules display」→ 标「Processing」。</li>
+</ul>
+<h3>D-3「诞生仪式」词缀在技能页无描述 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看该角色「Birth Ritual / 诞生仪式」词缀的技能(Skills)页。</li>
+<li><strong>实际结果</strong>：技能页不显示该词缀描述，玩家无法得知效果（而该词缀是其核心机制）。</li>
+<li><strong>预期结果</strong>：技能页完整显示词缀描述。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-22）→ 玩家报告。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec5">E 模块 · UI · 显示 · 交互</h2><hr class="section-rule">
+<p>红点、动画、占位文本、文本溢出/重叠、统计空白等界面层缺陷。多为视觉/交互瑕疵，
+个别（邀请码卡死）影响可操作性已修复。</p>
+<h3>E-1 邀请码界面连点导致菜单死锁 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：在邀请好友活动/邀请码界面快速反复开关点击。</li>
+<li><strong>实际结果</strong>：菜单硬卡死，所有按钮失效（可稳定复现）；中文侧记为「邀请活动卡死」。</li>
+<li><strong>预期结果</strong>：界面快速操作不导致死锁。</li>
+<li><strong>来源 / 状态</strong>：official-q-a 中英双语多报（05-18，含 UID）→「Invite interface bug」「[Reproducable] Menu hard lock hung」标「Resolved」（05-19/05-21）。</li>
+</ul>
+<h3>E-2 幽灵红点无法消除 <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：UI 更新后日常登录。</li>
+<li><strong>实际结果</strong>：极大概率出现一个消不掉的红点提示，已领取所有可领奖励仍存在；偶发不出现，重登无稳定规律。</li>
+<li><strong>预期结果</strong>：无可领取项时不显示红点。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18）→ 已提交建单，标「已回答」。（注：补丁公告另修复了「战斗教学活动入口缺红点」与之相反的红点缺失问题。）</li>
+</ul>
+<h3>E-3 夏日二星幻衣形态切换动画在局外丢失 <code>玩家报告</code>（疑更新回归）</h3>
+<ul>
+<li><strong>重现步骤</strong>：装备夏日二星幻衣皮肤后，在战斗外触发形态切换。</li>
+<li><strong>实际结果</strong>：原有十几秒的炫酷形态切换动画消失，局外不再播放动画，仅局内战斗小人形象改变。玩家「记得以前会动」，疑某次更新弄丢动态效果。</li>
+<li><strong>预期结果</strong>：局外形态切换仍播放完整动画。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18，多人附和）→ 已提交建单。</li>
+</ul>
+<h3>E-4 占位文本「Posse」未替换为正式文本 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：英文客户端进入相关章节（第8章）剧情选项 / P-Dive 事件 / Uvhash 相关文本。</li>
+<li><strong>实际结果</strong>：选项/文本显示原始占位符「Posse」而非正式文案。</li>
+<li><strong>预期结果</strong>：显示正式翻译文本。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-18 多人确认 → 05-20/05-21「Uvhash posse text still not change」）→ 标「Processing」（修复后仍未更新）。</li>
+</ul>
+<h3>E-5 评论文本重叠 / Kath 通讯器排版溢出 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看评论区 / Kath Communicator 界面。</li>
+<li><strong>实际结果</strong>：文本重叠（Comment Text Overlap）；Kath 通讯器存在 padding 排版问题。</li>
+<li><strong>预期结果</strong>：文本排版正常不重叠。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-20/05-21）→ 标「Processing」。</li>
+</ul>
+<h3>E-6 战斗统计页面空白 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：打开战斗统计界面。</li>
+<li><strong>实际结果</strong>：统计「没有任何东西」。</li>
+<li><strong>预期结果</strong>：正常展示战斗统计数据。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-25）→ 标「处理中」。</li>
+</ul>
+<h3>E-7 升级版985池类型标签标注错误 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看升级版985卡池的类型标签。</li>
+<li><strong>实际结果</strong>：类型标签标注错误。</li>
+<li><strong>预期结果</strong>：标签与实际池子类型一致。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-22/05-25）→ 标「处理中」。</li>
+</ul>
+<h3>E-8 锻造-材料合成界面消失 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：进入锻造(Foundry)的材料合成界面。</li>
+<li><strong>实际结果</strong>：界面消失。</li>
+<li><strong>预期结果</strong>：正常显示合成界面。</li>
+<li><strong>来源 / 状态</strong>：official-q-a「Foundry—Material Synthesis screen disappears」→ 标「Resolved」（05-21）。</li>
+</ul>
+<h3>E-9 繁花庭院任务列表下滑回弹至顶部 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：在「繁花庭院(Blossom Court)」向下滑动任务列表。</li>
+<li><strong>实际结果</strong>：错误地滚回列表顶部。</li>
+<li><strong>预期结果</strong>：正常停留在下滑位置。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [General]→Event，「Fixed」。</li>
+</ul>
+<h3>E-10 战斗教学活动入口缺红点提示 <code>官方已修复</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：「战斗教学」有可领取奖励时查看活动入口。</li>
+<li><strong>实际结果</strong>：活动入口缺失红点提示。</li>
+<li><strong>预期结果</strong>：有可领奖励时显示红点。</li>
+<li><strong>来源 / 状态</strong>：V2.5.1.1 补丁公告 [General]→Event，「Fixed」。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec6">F 模块 · 本地化 · 文本</h2><hr class="section-rule">
+<p>跨语区文本质量问题。机翻回退、繁中性别代词、占位符、文本溢出，是海外口碑长期短板。</p>
+<h3>F-1 韩语翻译回退到旧版本 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：韩语客户端浏览文本（联动公告之外的常规文本）。</li>
+<li><strong>实际结果</strong>：翻译「回到了过去」——本已改善的部分退回旧/机翻版本（与联动公告的高质量人工翻译形成反差）。</li>
+<li><strong>预期结果</strong>：维持已改善的人工翻译质量。</li>
+<li><strong>来源 / 状态</strong>：official-q-a「The Korean translation has gone back to the past」→ 标「Processing」。</li>
+</ul>
+<h3>F-2 阿拉克涅生日邮件机翻（代码故障所致） <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：领取阿拉克涅生日邮件。</li>
+<li><strong>实际结果</strong>：因代码故障，邮件比平常延迟发出，且由 Live Ops 手动补发，导致内容为机翻。</li>
+<li><strong>预期结果</strong>：生日邮件按时发出且为人工翻译。</li>
+<li><strong>来源 / 状态</strong>：lore-chat 官方说明（05-25，❤18）→ 官方透明致歉并补发人工翻译版本。<strong>记录为正面处置范例</strong>。</li>
+</ul>
+<h3>F-3 阿拉克涅剧情繁中「你/妳不分」 <code>官方已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：繁体中文客户端阅读阿拉克涅相关剧情。</li>
+<li><strong>实际结果</strong>：第二人称代词「你/妳」未按性别区分。</li>
+<li><strong>预期结果</strong>：繁中按规范区分「你/妳」。</li>
+<li><strong>来源 / 状态</strong>：official-q-a → 标「已回答」（05-25）。</li>
+</ul>
+<h3>F-4 事件选项与主线文本错误 <code>官方处理中/已回应</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：阅读特定事件选项 / 主线文本 / 徐(Xu)相关文案 / 两张「通晓万物之理」描述。</li>
+<li><strong>实际结果</strong>：存在翻译/文本错误；两张同名命轮描述有差异；徐存在文案 bug；考据玩家亦反映 lore 存在「两种互相冲突的译文」。</li>
+<li><strong>预期结果</strong>：文本统一、准确、无冲突。</li>
+<li><strong>来源 / 状态</strong>：official-q-a 多条（「主線文本bug」处理中、「文字錯誤/文本的bug」已回答）+ lore-chat 玩家反映 → 部分处理中、部分已回应「争取尽快修复」。</li>
+</ul>
+<h3>F-5 俄语文本生硬且溢出 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：俄语客户端浏览界面文本。</li>
+<li><strong>实际结果</strong>：俄语「有点生硬」，文本溢出框体(текст выглядывает)。</li>
+<li><strong>预期结果</strong>：文本通顺且不溢出排版。</li>
+<li><strong>来源 / 状态</strong>：Google Play(ru/★5/05-18)→ 玩家报告。</li>
+</ul>
+<h3>F-6 西语端进入后报错无法操作 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：西语玩家启动游戏。</li>
+<li><strong>实际结果</strong>：打开第一页后提示「error」，之后什么都做不了。</li>
+<li><strong>预期结果</strong>：正常进入可操作。</li>
+<li><strong>来源 / 状态</strong>：西语频道（05-18）→ 玩家报告，疑与 A/B 模块登录/加载相关。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec7">G 模块 · 美术 · 资源</h2><hr class="section-rule">
+<p>立绘/皮肤贴图与官方图的资源缺陷。多为视觉瑕疵，零星但影响观感。</p>
+<h3>G-1 皮肤肩部贴图未上色 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看某皮肤（肩部区域）。</li>
+<li><strong>实际结果</strong>：肩部贴图未上色（uncolored），疑似资源缺陷。</li>
+<li><strong>预期结果</strong>：贴图完整上色。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-23，❤4）→ 玩家报告，官方跟进中。</li>
+</ul>
+<h3>G-2 莫丝(Vortice)官方图疑似错误 <code>官方处理中</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：查看 Vortice 官方美术图。</li>
+<li><strong>实际结果</strong>：疑似存在错误（official art error）。</li>
+<li><strong>预期结果</strong>：官方图无误。</li>
+<li><strong>来源 / 状态</strong>：official-q-a「Vortice official art error (?)」→ 标「Processing」（05-25）。</li>
+</ul>
+<h3>G-3 「24」皮肤(裙子)缺陷长期未修 <code>玩家报告</code></h3>
+<ul>
+<li><strong>重现步骤</strong>：使用「24」相关皮肤（裙子部分）。</li>
+<li><strong>实际结果</strong>：已购买很久仍存在未修复缺陷，玩家多次催修。</li>
+<li><strong>预期结果</strong>：修复皮肤缺陷。</li>
+<li><strong>来源 / 状态</strong>：official-q-a（05-24，多条催促）→ 玩家报告，反映个别历史缺陷修复滞后。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec8">H 汇总与处置建议</h2><hr class="section-rule">
+<h3>H.1 状态分布</h3>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>条目（编号）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官方已修复</td>
+<td>A-1, A-3, A-4, A-5, A-6, C-1, C-2, C-3, C-4, C-5, D-1, E-1, E-8, E-9, E-10</td>
+</tr>
+<tr>
+<td>官方处理中</td>
+<td>C-6, C-10, C-11, C-12, D-2, E-4, E-5, E-6, E-7, F-1, G-2</td>
+</tr>
+<tr>
+<td>官方已回应</td>
+<td>A-2, B-5, C-8, E-2, E-3, F-2, F-3, F-4(部分)</td>
+</tr>
+<tr>
+<td>玩家报告(待研发复核)</td>
+<td>A-7, A-8, A-9, A-10, B-1, B-2, B-3, B-4, C-7, C-9, D-3, F-5, F-6, G-1, G-3</td>
+</tr>
+</tbody>
+</table>
+<h3>H.2 优先级建议</h3>
+<ol>
+<li><strong>最高优先（数据安全/区服可达）</strong>：B-3 账号绑邮箱丢失（高危需复现）、B-1 俄区 VPN 登录回归、B-2 港区登录失败——直接劝退整片区服。</li>
+<li><strong>高优先（稳定性长尾）</strong>：A-7 觉醒连点卡死、A-8 超维机型卡顿、A-9/A-10 加载与卡顿——已修复主体外仍有零星崩溃/卡顿反馈，建议补机型矩阵回归。</li>
+<li><strong>中优先（机制/显示处理中）</strong>：C-6/C-10/C-11 战斗机制异常、E-4 占位符「Posse」（修复后仍未更新，建议确认发布流程）、F-1 韩语回退。</li>
+<li><strong>常态跟进</strong>：UI 显示瑕疵(E 模块)、本地化(F 模块)、美术资源(G 模块)。</li>
+</ol>
+<h3>H.3 方法学备注</h3>
+<ul>
+<li>official-q-a 频道是官方带状态标签的结构化缺陷追踪源，建议作为后续 bug 监测的主锚点。</li>
+<li>「玩家报告」类信度为 C，重现步骤多由单条反馈重建，需研发侧复现确认后方可定级。</li>
+<li>本窗口大量稳定性缺陷已随 V2.5.1.1（05-20 维护）集中修复，体现官方响应速度；但加载/发热/区服可达性问题具长尾特征，需跨窗口持续监测。</li>
+</ul>
+<hr class="ornament">
+<blockquote>
+<p>本清单由 BIAV-SC 银芯情报层基于全量档案层产出于 2026-05-27，配套社区深度分析报告与
+11 职能行动建议书同目录。一切依据均来自公开可查阅的社区归档。</p>
+<p>艾瑞卡，待命。</p>
+</blockquote></div></body></html>

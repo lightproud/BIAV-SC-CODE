@@ -18,13 +18,10 @@ from __future__ import annotations
 import argparse
 import gc
 import json
-import os
-import re
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from multiprocessing import cpu_count
 from pathlib import Path
-from typing import Any
 
 # Raise Windows file handle limit (default 512 is too low for large games)
 if sys.platform == "win32":

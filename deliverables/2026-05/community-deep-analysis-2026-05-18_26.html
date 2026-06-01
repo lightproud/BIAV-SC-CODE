@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><style>
+@page {
+  size: 150mm 210mm; margin: 12mm 11mm 12mm 11mm; background:#0a0b10;
+  @bottom-center { content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040; }
+}
+@page :first { @bottom-center{content:none;} }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Noto Sans CJK SC',sans-serif; font-size:15pt; line-height:1.95; color:#cdc2a1; background:#0a0b10; font-weight:400; }
+.cover { page-break-after:always; padding-top:34mm; text-align:center; }
+.cover-rule { border:none; border-top:2px solid #c5a356; width:64%; margin:0 auto 11mm; }
+.cover-rule-b { border:none; border-top:1px solid #3a3520; width:82%; margin:11mm auto 6mm; }
+.cover h1 { font-family:'Noto Serif CJK SC',serif; font-size:30pt; font-weight:700; color:#e2c97e; line-height:1.5; margin-bottom:7mm; letter-spacing:1pt; }
+.cover .sub { font-size:16.5pt; color:#b09a5e; letter-spacing:.5pt; margin-bottom:10mm; line-height:1.7; }
+.cover .meta { font-size:13.5pt; color:#7a7050; line-height:2; margin-top:8mm; }
+.cover .erica { font-family:'Noto Serif CJK SC',serif; font-size:14pt; color:#8a8068; margin-top:13mm; letter-spacing:3pt; }
+.toc { page-break-after:always; padding-top:14mm; }
+.toc h2 { font-family:'Noto Serif CJK SC',serif; font-size:23pt; color:#e2c97e; text-align:center; margin-bottom:4mm; letter-spacing:4pt; }
+.toc-rule { border:none; border-top:2px solid #c5a356; width:40%; margin:0 auto 7mm; }
+.toc-item { font-size:15pt; line-height:2.15; color:#c5a356; text-align:center; letter-spacing:.5pt; }
+h2.section-title { font-family:'Noto Serif CJK SC',serif; font-size:23pt; font-weight:700; color:#e2c97e; margin-top:1mm; margin-bottom:2mm; letter-spacing:1pt; page-break-before:always; page-break-after:avoid; }
+hr.section-rule { border:none; border-top:2px solid #c5a356; margin-bottom:5mm; page-break-after:avoid; }
+h3 { font-family:'Noto Serif CJK SC',serif; page-break-after:avoid; font-size:18pt; font-weight:700; color:#c5a356; margin-top:6mm; margin-bottom:3mm; letter-spacing:.5pt; }
+h4 { font-size:16pt; color:#b09a5e; margin-top:4mm; margin-bottom:2mm; }
+p { margin-bottom:3.4mm; text-align:justify; orphans:3; widows:3; }
+strong { color:#e2c97e; font-weight:700; }
+em { color:#b09a5e; font-style:normal; }
+ul,ol { margin:2mm 0 3.5mm 6mm; }
+li { margin-bottom:2mm; line-height:1.9; }
+blockquote { border-left:3px solid #c5a356; background:#13141c; padding:3mm 5mm; margin:3.5mm 0; color:#b3a67e; font-size:14pt; }
+blockquote p { margin-bottom:1.8mm; }
+code { font-family:'Noto Sans Mono CJK SC','DejaVu Sans Mono',monospace; font-size:12.5pt; color:#c5a356; background:#15161e; padding:0 2px; border-radius:2px; word-break:break-all; }
+hr.ornament { border:none; text-align:center; margin:5mm 0; }
+hr.ornament::after { content:"\25C7  \25C7  \25C7"; color:#6b6040; font-size:14pt; letter-spacing:4pt; }
+table { width:100%; border-collapse:collapse; margin:3.5mm 0 4mm; font-size:13pt; page-break-inside:avoid; }
+th { background:#1e1a10; color:#e2c97e; font-weight:700; padding:2.2mm 2.6mm; text-align:left; border:0.5px solid #3a3520; }
+td { padding:2mm 2.6mm; border:0.5px solid #26220f; vertical-align:top; line-height:1.65; color:#c0b488; }
+tr:nth-child(even) td { background:#101119; }
+</style></head>
+<body>
+<div class="cover">
+  <hr class="cover-rule">
+  <h1>忘却前夜社区深度分析报告</h1>
+  <div class="sub">V2.5.1「沙耶之歌」2.5 周年联动窗口（2026-05-18 → 05-26）</div>
+  <div class="meta">
+    BIAV-SC 银芯情报层 · 全量档案层深挖<br>
+    语料：167,925 条 Discord 消息 + 12 平台 2,972 条目<br>
+    产出：主控台艾瑞卡 / Code-news · 2026-05-26
+  </div>
+  <hr class="cover-rule-b">
+  <div class="erica">弥萨格大学数据库终端 · 艾瑞卡</div>
+</div>
+<div class="toc">
+  <h2>目 录</h2>
+  <hr class="toc-rule">
+  <div class="toc-item">§0 执行摘要</div>
+<div class="toc-item">§1 方法论与数据底盘</div>
+<div class="toc-item">§2 八日时间线叙事</div>
+<div class="toc-item">§3 逐平台深挖</div>
+<div class="toc-item">§4 分语种社区深析</div>
+<div class="toc-item">§5 角色与 Meta 深析</div>
+<div class="toc-item">§6 情绪与诉求</div>
+<div class="toc-item">§7 联动专题：《沙耶之歌》作为战略事件</div>
+<div class="toc-item">§8 洞察与建议</div>
+<div class="toc-item">§9 附录：采信纪律与复算</div>
+<div class="toc-item">§10 多语种玩家原声实录（证据档）</div>
+</div>
+<div class="content"><h2 class="section-title" id="sec0">§0 执行摘要</h2><hr class="section-rule">
+<p>本窗口是忘却前夜（Morimens）运营史上的一个关键节点：V2.5.1 版本于 2026-05-18
+上线，携 2.5 周年庆与 Nitroplus 经典视觉小说《沙耶之歌》（Saya no Uta）联动同步登场，
+新增联动唤醒体「沙耶」及其命轮。银芯情报层对该窗口 9 日内全部公开社区归档进行了
+逐条精读，提炼出以下八条核心结论：</p>
+<p><strong>一、热度与体量。</strong> 窗口内 Discord 官方服累计产生 167,925 条消息，日均独立发言者
+535 至 750 人；上线首日（05-18）以 28,821 条消息、750 名发言者创下双峰值——这是 Discord
+的真实窗口活跃度，是本次版本脉冲最硬的体量证据。12 个平台归档合计 2,972 条公开内容。
+（注：YouTube 归档的播放量为视频终身累积值、且含大量旧片，不代表窗口流量，相关数字已在
+§3.4 按发布时龄重新甄别，不作为窗口热度指标。）</p>
+<p><strong>二、主线叙事。</strong> 「沙耶之歌」联动是绝对头条。微博窗口内「沙耶」一词出现频次居所有
+关键词之首，Discord 英文频道「saya」551 次、中文综合「沙耶」218 次。联动以「白嫖」
+（免费获取沙耶）为核心钩子，社区情绪高度正向，并已自发形成「沙耶 + Thais」的配队共识。</p>
+<p><strong>三、情感总览。</strong> Steam 窗口内去重 114 条评测，好评率 86.0%（98 正 / 16 负），
+基本盘稳固。负面集中于三类：周年活动难度（最集中）、客户端加载与卡顿、以及机翻本地化质量。</p>
+<p><strong>四、唯一经核验成立的系统性负面：周年活动难度——但官方已快速回退。</strong> 「全服挑战」式活动
+要求社区累计达成百万级目标，玩家普遍认为新手无法企及，与「周年福利慷慨」形成割裂体验。该
+信号在 Steam 负评、YouTube 攻略标题（「最掠夺、最贪婪的周年活动」）、中文 Discord 三处
+交叉印证。值得肯定的是，官方在窗口内（05-20 前后）已快速下调难度（敌人生命约 -35%、伤害
+约 -15%）并开放陌生人助战，是一次健康的「上线—反馈—修复」闭环（§6.1）。</p>
+<p><strong>五、发现性流量。</strong> YouTube 上「被低估神作 / 起死回生」母题活跃。需区分存量与增量：那条
+30.1 万播放的「The Greatest Gacha Game You've Never Played」发布于约 10 个月前，属长尾
+常青片，不计入本窗口流量；本窗口内新发布的代表是 4 天前的「How a Dying Game achieved
+Immortality」（约 4.95 万）与 23 小时前的官方联动 PV。叙事方向有 Steam 窗口评测独立印证，
+窗口增量为数万级（详见 §3.4 与 §9.1）。</p>
+<p><strong>六、全球化结构性洞察。</strong> Discord 多语种社区中，东南亚（印尼 + 越南合计 27,195 条）与
+葡语（10,196 条）的体量已超过多数欧洲语区；其人均发言强度（印尼 186、越南 196、葡语 232
+条/人）远高于英文区。这是被现有 EN/CN 重心低估的高黏性群体。</p>
+<p><strong>七、本地化质量是跨语区共性诉求。</strong> 西语「翻译完全由 ChatGPT 完成」、俄语「神经网络翻译，
+错误比特朗普的刑案还多」、泰语性别称谓混乱、越南语「tiếng việt hơi lỏ」——机翻本地化的
+观感问题在多个非中英语区被反复点名。</p>
+<p><strong>八、一句话定性。</strong> 若用一句话概括本窗口：这是一款上升期产品在一次重要联动节点上交出的
+<strong>健康答卷</strong>——正向基本盘稳固（Steam 86% 好评、发现性叙事活跃、二创旺盛、情感契约扎实），
+负面分布式而非集中式（活动难度、本地化、区服均为可修复的运营项），且运营团队展现了
+「上线—反馈—修复」的快速响应肌肉（周年难度两日内回退）。真正的考验在窗口之外：沙耶卡池
+（05-30）与白嫖兑现（06-06）的转化、以及联动调性的最终接受度，需在下窗口按 §8.6 的六锚点
+清单补做闭环评估。本报告的定位，是为那次闭环评估锚定一个<strong>证据完整、可信度分级、可连续
+追踪</strong>的基线。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec1">§1 方法论与数据底盘</h2><hr class="section-rule">
+<h3>§1.1 数据层选择（硬约束）</h3>
+<p>按 CLAUDE.md §4 数据消费纪律，社区数据存在<strong>全量档案层</strong>（<code>projects/news/data/</code>，真实
+逐条数据）与<strong>输出展示层</strong>（<code>projects/news/output/</code>，过滤选样）之分，二者语义不可互换。
+本报告属长窗口完整性分析，<strong>全程使用全量档案层</strong>，未取用任何 output 选样文件。此举规避了
+lesson #30 记录过的抽样率失真陷阱（曾将 16 条选样误当 5,455 条全量）。</p>
+<h3>§1.2 语料范围</h3>
+<table>
+<thead>
+<tr>
+<th>数据源</th>
+<th>组织方式</th>
+<th>窗口内体量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discord 活跃度统计</td>
+<td><code>discord/activity_daily/{date}.json</code></td>
+<td>8 日（05-18 → 05-25）</td>
+</tr>
+<tr>
+<td>Discord 频道消息</td>
+<td><code>discord/channels/{dir}/{date}.jsonl</code></td>
+<td>精读 17 个频道</td>
+</tr>
+<tr>
+<td>平台层</td>
+<td><code>platforms/{平台}/{date}.json</code></td>
+<td>12 平台 2,972 条</td>
+</tr>
+</tbody>
+</table>
+<p>Discord 消息字段含 <code>author_bot</code> 标记，本报告所有内容分析均<strong>过滤机器人消息</strong>后进行；
+活跃度宏观统计（§1.3 表）则按归档原值（含 bot）呈现，两者口径在文中分别标注。所精读的
+17 个频道覆盖了全部主要语区与功能区（综合/答疑/配队/剧情/各语种聊天室），其消息量合计
+占官方服总量的绝大部分，足以支撑分语区的代表性判断（详见 §3.1 频道活跃度排名）。</p>
+<h3>§1.3 宏观活跃度（Discord 全量统计，含 bot）</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>消息</th>
+<th>独立发言者</th>
+<th>反应</th>
+<th>附件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05-18</td>
+<td>28,821</td>
+<td>750</td>
+<td>2,642</td>
+<td>1,714</td>
+</tr>
+<tr>
+<td>05-19</td>
+<td>22,397</td>
+<td>614</td>
+<td>2,696</td>
+<td>1,270</td>
+</tr>
+<tr>
+<td>05-20</td>
+<td>20,306</td>
+<td>535</td>
+<td>1,893</td>
+<td>1,187</td>
+</tr>
+<tr>
+<td>05-21</td>
+<td>19,883</td>
+<td>563</td>
+<td>1,434</td>
+<td>938</td>
+</tr>
+<tr>
+<td>05-22</td>
+<td>22,945</td>
+<td>603</td>
+<td>1,731</td>
+<td>1,198</td>
+</tr>
+<tr>
+<td>05-23</td>
+<td>19,682</td>
+<td>550</td>
+<td>2,022</td>
+<td>1,145</td>
+</tr>
+<tr>
+<td>05-24</td>
+<td>21,120</td>
+<td>538</td>
+<td>1,788</td>
+<td>1,065</td>
+</tr>
+<tr>
+<td>05-25</td>
+<td>12,771</td>
+<td>552</td>
+<td>1,929</td>
+<td>817</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>167,925</strong></td>
+<td>—</td>
+<td><strong>16,135</strong></td>
+<td><strong>9,334</strong></td>
+</tr>
+</tbody>
+</table>
+<p>读数：05-18 上线日为双峰值（消息、发言者均最高），符合版本脉冲特征；其后回落至日均约
+两万条稳态；05-25 的 12,771 条系 activity_daily 归档边界（截至该日），属采集截断而非真实跳水，
+不应解读为活跃度崩盘。</p>
+<h3>§1.4 平台层分布</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>窗口条目</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微博 weibo</td>
+<td>1,227</td>
+<td>同人 + 官方 + 玩家讨论（高重复，去重后 ~103 主题）</td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td>710（去重 606）</td>
+<td>攻略 / 配队 / 同人</td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td>198（去重 82）</td>
+<td>评测 / 攻略 / MV</td>
+</tr>
+<tr>
+<td>Steam 评测</td>
+<td>182（去重 114）</td>
+<td>玩家评测（带情感标签）</td>
+</tr>
+<tr>
+<td>微信 weixin</td>
+<td>172（去重 1）</td>
+<td>联动公告转载</td>
+</tr>
+<tr>
+<td>ruliweb（韩）</td>
+<td>134</td>
+<td>韩国论坛讨论</td>
+</tr>
+<tr>
+<td>Google Play</td>
+<td>111</td>
+<td>应用商店评论</td>
+</tr>
+<tr>
+<td>pixiv</td>
+<td>89</td>
+<td>日系同人图</td>
+</tr>
+<tr>
+<td>官方 official</td>
+<td>77（去重 12）</td>
+<td>Steam 新闻公告</td>
+</tr>
+<tr>
+<td>App Store</td>
+<td>58</td>
+<td>应用商店评论</td>
+</tr>
+<tr>
+<td>stopgame（俄）</td>
+<td>9</td>
+<td>评分聚合（空桩，详见 §3.9）</td>
+</tr>
+<tr>
+<td>bilibili</td>
+<td>5</td>
+<td>攻略视频</td>
+</tr>
+</tbody>
+</table>
+<h3>§1.5 采信纪律</h3>
+<p>本报告执行 CLAUDE.md §6.11 三条规则：R1 并行提取任一子环节失败即整次作废；
+R2 计数类事实只引自直接产出该事实的脚本，不做关键词外推充当事实；
+R3 区分「玩家诉求」与「已落地事实」。凡引用社区原文，均为去机器人、去纯表情后的人类发言，
+并在多义处标注语种与日期以便回溯。</p>
+<h3>§1.6 结论可信度分级</h3>
+<p>为避免读者把不同确定性的结论一视同仁，本报告对核心结论按证据强度做三级标注，阅读时可
+据此调整采信权重：</p>
+<ul>
+<li><strong>A 级（硬事实，可直接复算）</strong>：来自归档字段或唯一源的直接计数。如 Discord 逐日消息量、
+  Steam 好评率 86.0%、各频道作者数、官方公告时间线、官方难度回退补丁内容。这类结论
+  可按 §9.2 逐条复算，几无误差空间。</li>
+<li><strong>B 级（强归纳，多源印证）</strong>：基于多平台交叉印证的主题判断。如「周年活动难度是唯一
+  系统性负面」（四源印证）、「沙耶联动拉新转化已跑通」（Steam/ruliweb 多条转化记录）、
+  「东南亚/葡语高黏高脆弱」（人均强度 + 作者数双指标）。这类结论方向可靠，具体量级受
+  采集覆盖影响。</li>
+<li><strong>C 级（合理推断，已显式标注）</strong>：基于有限信号的解读，文中均标注「推断/担忧/疑似」。
+  如「联动成本挤压产能」（玩家推断）、「制作人信中文优先暗示面向核心盘」（渠道信号解读）、
+  「俄区 VPN 问题系近期变化」（据玩家表述推测）。这类结论供决策参考，不应作为事实引用。</li>
+</ul>
+<p>显式分级的意义在于：每个结论都标明了它应得的信任权重，决策时可据此分配采信力度，避免把
+推断当事实。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec2">§2 八日时间线叙事</h2><hr class="section-rule">
+<p>将宏观活跃度、官方公告节点与社区情绪逐日串联，可还原出一条清晰的「上线脉冲—消化—
+期待沉淀」曲线。</p>
+<h3>§2.1 05-18 上线日：脉冲峰值</h3>
+<p>V2.5.1.0 维护公告于本日发布，同日官方在 Steam 新闻位密集推出十条内容：三篇
+「V2.5.1 版本前瞻」（Part Ⅰ/Ⅱ/Ⅲ）、「新唤醒体沙耶」「沙耶唤醒体与命轮介绍」
+「沙耶之歌 2.5 周年联动」公告，以及补发的 V2.5.0 维护与广播剧条目。社区活跃度同步冲顶：
+28,821 条消息、750 名发言者，均为窗口最高。</p>
+<p>中文综合频道当日 6,315 条，为该频道窗口内单日峰值。新玩家涌入信号明显——英文
+game-question 频道当日 5,465 条、英文 general 3,896 条。一条被高频转发的兑换码提示
+（「HVGX-HLDX-QKKN」「QKBQ-SSDG-JZYU」等，标注 never 过期）显示官方借周年放码引流。</p>
+<p>情绪基调以期待为主：英文区出现「born just in time for free Saya in Morimens」式的
+玩梗式狂欢；同时新玩家配队求助密集出现，game-question 与 team-building 两频道承接了
+大量「我抽到了 X，该怎么组队」的咨询。</p>
+<h3>§2.2 05-19 至 05-21 消化期：理性回落</h3>
+<p>活跃度回落至日均约两万条。讨论从「上线兴奋」转向「资源规划」。中文社区出现对周年活动
+机制的首轮质疑——一条被反复印证的发言指出，全服挑战累计目标「就算有人打 300 多把看這個
+數量也湊不滿 1000000」（05-19），点破了活动设计与玩家可达性之间的落差。</p>
+<p>英文 game-question 频道进入纯工具化运转：pull（抽卡）、banner（卡池）、wheel（命轮）三词
+当日合计占据讨论主轴。team-building 频道则围绕「水船（深海/水母队）」「触手队」「毒队」等
+构筑展开。这一阶段的社区是高度功能性的：玩家在为 05-30 沙耶卡池与 06-06 白嫖沙耶储备资源。</p>
+<p>正是在这一消化期，官方完成了本窗口最重要的运营动作——<strong>周年活动难度回退</strong>。05-20 的
+V2.5.1.2 在线维护下调了关卡难度（敌人生命约 -35%、伤害约 -15%）并放开陌生人助战。
+从 05-18 负评出现到 05-20 难度下调，响应仅约两日，且回退效果立竿见影：印尼语区随即出现
+「现在借助战已不需要互关了」的感知确认，活动难度的负面讨论自此未再扩散。这一「负面出现—
+快速回退—负面收敛」的微观闭环，是观察本窗口运营成熟度的最佳切片，也使得消化期的整体情绪
+不降反稳。值得注意的是，回退<strong>未引发</strong>「难度缩水、游戏变水」的反向不满——这印证了
+§6.1 的判断：玩家不满的从来不是「有挑战」，而是「挑战挡住了应得的福利」。</p>
+<h3>§2.3 05-22 二次高峰：联动 PV 放出</h3>
+<p>05-22 活跃度回升至 22,945 条，形成窗口内第二高峰。直接触发因素是官方放出联动概念 PV
+「悠久漂泊之歌 / Song of Perennial Wandering」（中文版 05-22、英文版 05-23 先后入档）。
+该 PV 在 Discord 专属频道引发 254 条讨论，并外溢至 YouTube（日文版 PV 录得约 3,019 互动）。
+05-22 的活跃度高峰应归因于联动 PV 与常规版本讨论，本窗口内未见针对忘却前夜本体的运营争议。</p>
+<h3>§2.4 05-23 至 05-25 沉淀期：期待前移</h3>
+<p>末段三日活跃度维持在日均约 1.8 至 2.1 万条（05-25 受归档边界影响偏低）。一个值得注意的
+结构性变化是<strong>英文 lore（剧情）频道的逆势升温</strong>：从 05-18 的 37 条一路攀升至 05-25 的
+584 条，是少数在窗口末段不降反升的频道。这与沙耶剧情将于 06-06 完整放出的预期相关——
+玩家在提前消化世界观、考据沙耶与既有剧情（如 Helot 与 Lily 共享「莎构」高位意志）的衔接。</p>
+<p>韩语社区在 05-18 单日 1,059 条后迅速回落，呈现「联动公告吸引围观—快速消化」的脉冲型曲线；
+泰语社区则在 05-23 录得 2,341 条的单日异常高峰，主要由一场围绕沙耶配队与绘画技法的长讨论
+带动。</p>
+<h3>§2.5 时间线的三个锚点</h3>
+<p>综观八日，社区情绪由三个官方动作锚定：05-18 的版本与联动公告（拉热度）、05-22 的联动 PV
+（二次点火）、以及贯穿全程的两个未来兑现承诺——05-30 沙耶卡池开启、06-06 沙耶免费发放
+（社区多处提及「6 号沙耶剧情完整放出，累计 250 抽」）。换言之，本窗口的情绪势能很大一部分
+是<strong>面向窗口之外</strong>的：玩家在为下一个版本周期蓄力。</p>
+<p>这条「蓄力」特征对情报判读有一个重要含义：<strong>本窗口的活跃度与情绪，应被理解为一次联动的
+「预热段」而非「兑现段」</strong>。真正检验联动成败的高潮（卡池抽取、白嫖发放、剧情评价）都排在
+05-26 之后。因此任何基于本窗口数据的「联动成功/失败」断言都为时过早；本报告所能确证的，
+是预热段的<strong>势能积累状况</strong>——而这一势能（破圈流量 + 高黏期待 + 快速止损的活动回退）是
+相当充沛且健康的。把这股势能能否在 06 月初转化为真实的留存与付费，列为下窗口（§8.6）的
+首要追踪目标。各语区在末段的差异化曲线（韩语脉冲式消化、泰语 05-23 长讨论高峰、英文 lore
+逆势升温）则提示：同一个全球事件，在不同社区的节奏与侧重并不一致，连续追踪需分语区设基线。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec3">§3 逐平台深挖</h2><hr class="section-rule">
+<h3>§3.1 Discord 官方服：社区的引擎室</h3>
+<p>Discord 是忘却前夜社区的绝对主场。窗口内 167,925 条消息，远超所有外部平台之和。其频道
+活跃度排名（窗口内累计消息，含 bot）如下：</p>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>频道</th>
+<th>消息</th>
+<th>社区定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>综合讨论（中文）</td>
+<td>32,332</td>
+<td>中文核心广场</td>
+</tr>
+<tr>
+<td>2</td>
+<td>game-question（英文）</td>
+<td>29,975</td>
+<td>全球玩法答疑枢纽</td>
+</tr>
+<tr>
+<td>3</td>
+<td>general-chat（英文）</td>
+<td>27,457</td>
+<td>英文综合广场</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ruang-obrolan-indonesia（印尼）</td>
+<td>15,253</td>
+<td>东南亚最大单语区</td>
+</tr>
+<tr>
+<td>5</td>
+<td>phòng-chat-tiếng-việt（越南）</td>
+<td>11,942</td>
+<td>东南亚次大区</td>
+</tr>
+<tr>
+<td>6</td>
+<td>team-building（英文）</td>
+<td>11,130</td>
+<td>配队专区</td>
+</tr>
+<tr>
+<td>7</td>
+<td>canal-português（葡语）</td>
+<td>10,196</td>
+<td>美洲葡语区</td>
+</tr>
+<tr>
+<td>8</td>
+<td>泰语聊天室</td>
+<td>6,059</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>русский-канал（俄语）</td>
+<td>5,683</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>canal-español（西语）</td>
+<td>5,470</td>
+<td>—</td>
+</tr>
+<tr>
+<td>11</td>
+<td>한국어-채팅방（韩语）</td>
+<td>2,823</td>
+<td>—</td>
+</tr>
+<tr>
+<td>12</td>
+<td>lore-chat（英文）</td>
+<td>1,903</td>
+<td>剧情考据</td>
+</tr>
+<tr>
+<td>13</td>
+<td>阵容构建（中文）</td>
+<td>1,471</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14</td>
+<td>chaîne-française（法语）</td>
+<td>867</td>
+<td>—</td>
+</tr>
+<tr>
+<td>15</td>
+<td>deutscher-chatraum（德语）</td>
+<td>137</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>结构性观察有三。其一，<strong>中英双核</strong>：中文综合与英文 game-question/general 三频道合计约
+9 万条，占总量逾半，是社区的双引擎。其二，<strong>game-question 触达最广</strong>：该频道 691 名独立
+发言者，是全社区覆盖面最大的频道，意味着新玩家与轻度玩家主要在此沉淀，其健康度直接关系
+拉新留存。其三，<strong>剧情频道偏薄但在升温</strong>：英文 lore 全窗口仅 1,903 条、中文剧情交流仅
+76 条，叙事讨论的日常体量远小于玩法讨论——这是一个值得正视的「卖点（克苏鲁叙事）与日活
+驱动力（抽卡/配队）错位」现象，将在 §6 与 §8 展开。</p>
+<p>各语种社区的画像差异极大（人均强度、话题结构、健康度各不相同），是本报告的重点之一，
+独立成章于 §4。</p>
+<h3>§3.2 Steam：基本盘的体温计</h3>
+<p>Steam 评测是衡量付费意愿与口碑基本盘的最硬指标。窗口内去重 114 条评测，正面 98、
+负面 16，<strong>好评率 86.0%</strong>。逐日正负比稳定（如 05-24 为 +20/-2、05-18 为 +18/-4），
+未出现因周年活动而崩盘的迹象——这说明活动争议是「响亮但局部」的，未动摇大盘。</p>
+<p>语言构成：英语 48、简中 27、俄语 13、西语 9、韩语 4、泰语 3、法语 3、巴西葡语 3，
+余为波兰、捷克、繁中等。这是一个高度国际化的评测池，英语占比不足半数，印证了社区的
+全球化属性。</p>
+<p><strong>正面评测的母题高度集中</strong>，可归为四束：</p>
+<p>其一，「被低估的神作」叙事——「This game should be WAAAYYY bigger than it is」、
+「one of THE best gacha game right next to Reverse 1999 and before Limbus Company」、
+俄语「Где скрывался этот шедевр от меня все эти годы??」（这杰作这些年究竟藏在哪）。
+这一母题与 §3.4 的 YouTube 爆款叙事完全同构，构成本窗口最强的正向品牌资产。</p>
+<p>其二，「Slay the Spire 式 Roguelike 卡牌」的玩法认同——多条评测将其与杀戮尖塔类比
+（「Slay the spire if it were a gacha game」），玩法独特性获得核心受众认可。</p>
+<p>其三，「克苏鲁暗黑叙事 + 美术 + 音乐」三位一体的氛围称赞——「One of, if not, the
+DARKEST Gacha game I've ever played storywise」、「水彩厚涂笔触…精准表现流动、粘稠、
+非人的克苏鲁质感」（简中长评）。</p>
+<p>其四，「慷慨 F2P」的厂商好感——「the devs are beyond generous for a gacha game」、
+「两天 200 抽…加上福利 300 多抽」、「Actually F2P friendly」。多名玩家明确表示因厂商
+慷慨而愿意付费支持（App Store 一条泰语评论：「even if the game is so F2P, you still
+want to spend just to support the devs」）。</p>
+<p><strong>沙耶联动作为拉新入口已在评测中显形</strong>：「i'm obsessed. originally got it for saya but
+came out really enjoying it」、俄语「Если бы не коллаборация с Саей я бы даже не
+узнала о её существовании」（要不是沙耶联动我根本不会知道它存在）。这是「IP 联动→发现
+→留存」转化链的一手证据。</p>
+<p><strong>16 条负面评测的归因（经逐条阅读）</strong>：</p>
+<ul>
+<li>周年活动难度（最集中，至少 4 条）：「周年庆出这种司马活动…本来周年庆福利很可以的…
+  这个全服挑战活动直接好感败光」、「养成极其困难，打活动限制太大」、英文「Worst anni」、
+  韩语「노잼 가득히」（满满的无趣）。</li>
+<li>客户端技术问题（3 条）：「lmao the game doesn't load for me」、俄语「красивая, но
+  вообще не работает, зайти невозможно」（漂亮但根本进不去）、「卡顿明显，操作繁琐」。</li>
+<li>内容走向与数值化（2 条）：「卡牌构筑游戏硬是搞成数值养成游戏」、「一眼望到头，就纯是二游」。</li>
+<li>UI 臃肿与平衡（1 条长评）：「you get like 50 different menus…35 ongoing events…
+  借来的角色 0 费无限复制卡打出 60k 伤害」——同时点名菜单冗余与数值失衡。</li>
+<li>价值观 / 角色设计（1 条激烈差评）：针对女性角色设计与「魅男」属性的强烈不满。</li>
+<li>联动期待落差（西语）：「QUIERO LA CARTA DE SAYA PERO NO TANTO」（想要沙耶卡但没到
+  那个份上）+ 抽卡吝啬感（「1 multi de 5」）。</li>
+</ul>
+<p>负评虽少，但「周年活动难度」一束在 Steam、YouTube、Discord 三处交叉出现，是本窗口
+唯一够格称为「系统性」的负面信号（详见 §6.1）。</p>
+<h3>§3.3 Reddit（r/Morimens）：攻略与同人的协作层</h3>
+<p>Reddit 窗口内去重 606 帖，逐日分布以 05-18 的 111 帖为峰，其后稳定在每日 50 至 80 帖。
+按主题打标（可重叠）：求助/攻略 319、配队/构筑 236、抽卡 228、沙耶/联动 97、同人 38、
+抱怨/故障 14。</p>
+<p>这组数字勾勒出一个<strong>高度协作、低冲突</strong>的社区：求助与攻略类近乎占据半壁，抱怨类仅 14 帖
+（约 2%）。代表性的高价值帖包括系统性攻略——「Anniversary Rotating Banner - Guide」
+「Anni reruns, Saya and anni rewards timeline」「Half-Anni banner comparison」
+「Paid packs comparison」，构成新玩家的事实知识库。</p>
+<p>值得标注的两类信号：其一，<strong>批判性攻略</strong>亦存在——一篇被收录的指南直言这是
+「2026 Half Anni Overview: The most predatory and greedy anniversary event」，与
+Steam 负评的活动难度/吝啬感呼应，说明核心玩家对周年商业化有清醒审视。其二，<strong>故障与
+区服问题</strong>——「Soulforge bug」「Top up reset / vpn」反映了充值区服与个别功能 bug 的
+长尾困扰（与 §3.7 应用商店的 VPN 登录问题同源）。</p>
+<p>内容形态上，194 帖（约三成）为图片帖，同人创作（fanart/OC）活跃，如「Aigis fanart」
+「Caecus made out of clay!（黏土手办）」，印证了 IP 的二创号召力。</p>
+<p>从逐日节奏看，Reddit 与 Discord 高度同频：05-18 上线日 111 帖为峰，其后回落至日均 50 至
+80 帖，无异常断层。这种「平台间同步脉冲」本身是社区健康的标志——说明各平台用户高度重叠、
+信息流通顺畅，不存在某平台被冷落或情绪割裂的迹象。</p>
+<p>Reddit 在整个社区生态中扮演的是<strong>异步知识库</strong>角色，与 Discord 的<strong>实时答疑</strong>形成互补：
+Discord 解决「我现在该抽谁」的即时问题，Reddit 沉淀「周年卡池怎么规划」的结构化攻略。
+对运营而言，Reddit 的低冲突（抱怨仅占约 2%）与高攻略密度，意味着它是<strong>最适合官方轻度介入
+的平台</strong>——置顶权威攻略、澄清机制误解的边际收益高，且不会像 Discord 那样被实时噪声淹没。
+本窗口 Reddit 几乎没有需要危机公关的内容，是大盘健康的又一佐证。</p>
+<h3>§3.4 YouTube：发现性流量——按发布时龄甄别后的窗口信号</h3>
+<p><strong>口径前提。</strong> YouTube 归档的 <code>time</code> 字段是<strong>爬虫抓取时间</strong>而非视频发布时间，<code>engagement</code>
+是视频<strong>终身累积</strong>播放量。因此「窗口内被抓取 = 窗口内产生的流量」并不成立——按播放量排名的
+头部，绝大多数是被爬虫重新抓取的<strong>旧常青视频</strong>，其播放量是数月乃至数年累积，不可计入本窗口
+流量。本节据各条 summary 的 <code>[Xmo/Xd ago]</code> 时龄前缀甄别真实窗口信号。</p>
+<p>窗口内去重 82 条视频，按时龄分布：<strong>真正在窗口内新发布（天/小时级）仅约 11 条</strong>，其余
+71 条为数月至数年前的旧片。以下先标明须剔除的旧片，再呈现真正的窗口信号。</p>
+<p><strong>高播放头部多为旧常青片（不计入窗口流量）</strong></p>
+<table>
+<thead>
+<tr>
+<th>累积播放</th>
+<th>发布时龄</th>
+<th>标题</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>301,368</td>
+<td><strong>10 个月前</strong></td>
+<td>The Greatest Gacha Game You've Never Played</td>
+<td>旧常青，剔除</td>
+</tr>
+<tr>
+<td>44,651</td>
+<td>1 年前</td>
+<td>Morimens ED「来自遗忘」MV</td>
+<td>旧，剔除</td>
+</tr>
+<tr>
+<td>38,573</td>
+<td>2 年前</td>
+<td>这游戏有降 SAN 值的精神伤害（璐洛洛）</td>
+<td>旧，剔除</td>
+</tr>
+<tr>
+<td>26,475</td>
+<td>4 个月前</td>
+<td>Beginner Progression Guide (2026)</td>
+<td>旧，剔除</td>
+</tr>
+<tr>
+<td>20,352</td>
+<td>9 个月前</td>
+<td>The Most FUN Gacha Game You Need To Try</td>
+<td>旧，剔除</td>
+</tr>
+</tbody>
+</table>
+<p>那条 30 万播放的长评测发布于约 10 个月前，其播放量是长期累积，不构成本窗口的拉新证据；它
+只说明该评测仍在长尾传播，是一项<strong>存量</strong>品牌资产，而非窗口增量。</p>
+<p><strong>真正属于本窗口的新发布视频（按时龄筛选）</strong></p>
+<table>
+<thead>
+<tr>
+<th>累积播放</th>
+<th>发布时龄</th>
+<th>标题</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>49,545</td>
+<td>4 天前</td>
+<td>How a Dying Game achieved Immortality</td>
+<td>起死回生叙事（窗口内）</td>
+</tr>
+<tr>
+<td>10,070</td>
+<td>4 天前</td>
+<td>10 Things beginners NEED to do in Morimens</td>
+<td>新手向</td>
+</tr>
+<tr>
+<td>3,286</td>
+<td>4 天前</td>
+<td>2026 Half Anni Overview: most predatory &amp; greedy</td>
+<td>周年批判</td>
+</tr>
+<tr>
+<td>3,019</td>
+<td>23 小时前</td>
+<td>沙耶 × 忘却前夜 公式联动 PV「悠久旅之歌」（日）</td>
+<td>联动 PV</td>
+</tr>
+<tr>
+<td>2,522</td>
+<td>4 周前</td>
+<td>WARNING: Morimens Is So Addictive</td>
+<td>安利（窗口边缘）</td>
+</tr>
+</tbody>
+</table>
+<p>剔除累积量后，本窗口 YouTube 的真实图景是：发现性流量的窗口驱动是 4 天前发布的
+「How a Dying Game achieved Immortality」（约 4.95 万播放、仍在增长），以及 23 小时前的
+官方联动 PV。这两者印证「起死回生 / 联动」母题在窗口内确有<strong>新内容产出与传播</strong>，量级为
+数万级。「被低估 / 起死回生」叙事本身稳固——既有 10 个月前那条 30 万播放常青片的存量加持，
+又有窗口内 4 天前新片的增量强化，且与 Steam 窗口内评测「should be way bigger / found by
+accident」独立同频（§3.2）。</p>
+<p>中腰部则是稳定的<strong>攻略/评级生态</strong>：creator「Flares」的唤醒体评级系列覆盖 Arachne（B）、
+Vortice（A-）、Mouchette（C）、Xu（B）等，构成英文区 meta 共识的重要来源；中文区有
+「璐洛洛」的猎奇向、恒燐的配队向内容。文种构成上，去重后英文/拉丁标题 54 条、中日文
+28 条，英文内容在 YouTube 占主导。</p>
+<p>需均衡呈现的是，YouTube 亦存在批判声音：一条标题为「2026 Half Anni Overview: The most
+predatory and greedy anniversary event」的视频，与 Reddit、Steam 的活动批评同频，
+说明这一负面并非孤立情绪。</p>
+<p><strong>KOL 生态：评级权威的中心化与跨语区分工。</strong> 本窗口的攻略生态已形成可识别的 KOL 结构，
+对玩家决策有实质影响力。英文区的核心权威是 creator「Flares」——其唤醒体评级系列（Arachne
+B、Vortice A-、Mouchette C、Xu B 等）被 Discord 玩家直接引为决策依据（game-question
+频道有玩家明言「Gramona 和油管上一个叫 Flare 的剧透了我！」、「Flares 说她 scale 得不错」）。
+这种「单一 KOL 主导英文 meta 共识」的中心化结构是双刃剑：它降低了新玩家的信息成本，但也
+意味着该 KOL 的评级口径会被放大为社区事实，官方若与其评级产生分歧（如对某角色强度的判断），
+需通过数据而非公告去对话。中文区则更分散——「璐洛洛」走猎奇向（「这游戏有降 SAN 值的精神
+伤害」38.6 万播放）、「恒燐」走配队向、B 站「阵容教学」系列做低配实战，呈现「猎奇引流 +
+攻略留存」的分工。<strong>运营启示</strong>：与其自建攻略，不如识别并适度赋能这些已有公信力的 KOL，
+尤其在新角色（沙耶）上线前提供准确的机制信息，避免错误评级先入为主。</p>
+<hr class="ornament">
+<h3>§3.5 微博：同人产能与官方叙事的主场</h3>
+<p>微博窗口内 1,227 条原始条目（含大量转发，去重后约 103 个主题）。这是中文圈<strong>同人创作与
+官方叙事</strong>的主战场，话题结构与 Discord/Reddit 的「玩法答疑」型截然不同。</p>
+<p><strong>官方叙事条目</strong>密集且高规格：联动献礼公告、沙耶唤醒体展示（「沙耶 CV：川村みどり」）、
+ED「来自遗忘」、多支概念 PV（「银芯」「献给春天的花束」）、以及「校猫日志」系列开发日志
+（如「V2.5.1 胚胎融合变化」前瞻）。尤其值得标注的是一封<strong>制作人公开信</strong>——标题
+「你们曾拯救了忘却前夜——如今我们给出未来结局的承诺」，这是厂商与玩家之间「共渡难关→
+承诺兑现」情感契约的高密度表达，与海外「dying game / 起死回生」叙事形成跨语境的同一母题。</p>
+<p><strong>同人产能极为旺盛</strong>：窗口内可见 boss 设计师解禁（「我为能画蜘蛛母亲而喜悦」，指 Arachne/
+阿拉克涅）、特效设计解禁（「徐这套搓皮影风格」）、戈利亚（Goliath）05-20 生贺活动及
+CP 向二创（戈利亚 × 凯刻斯）、以及围绕「卡波/囚羽骨」等角色的同人无料与抽奖。「画」字在
+去重主题中出现 12 次，「同人」「立绘」各数次，二创是中文社区的核心黏性来源。</p>
+<p><strong>线下与生态</strong>：一条「CP32 调查现场观测回传」显示官方在同人展会（Comicup 32）设有
+线下摊位，以「弥萨格大学校工」的世界观口吻运营，将 IP 沉浸延伸至线下。</p>
+<p><strong>一处需中立记录的社区纷争</strong>：一条微博提到「记录隔壁孝子对你游各种造谣以及煎炒的言论」，
+起因涉及小红书（红薯）某博文下的争论。这是玩家社区间的口水摩擦，属常见生态噪声，未见
+证据表明其对大盘情绪有实质影响，此处仅作存在性记录，不作放大。</p>
+<h3>§3.6 微信：联动公告的单一转载</h3>
+<p>微信窗口内 172 条，去重后仅 1 个主题——「忘却前夜 × 沙耶之歌 2.5 周年联动献礼」的多次
+转载。这说明微信渠道在本窗口主要承担<strong>官方联动公告的分发</strong>，几乎不含 UGC 讨论。其情报
+价值在于印证了联动公告的高强度铺设，而非社区情绪信号。</p>
+<h3>§3.7 应用商店（App Store / Google Play）：评论即诉求清单</h3>
+<p>两商店窗口内合计约 169 条评论（App Store 58、Google Play 111），归档未含星级字段，
+故以文本情感与诉求为主进行分析。Google Play 评论按九语种均匀采集（中、西、英、韩、越、
+印尼、俄、意各 9，中文 27），覆盖面极广。</p>
+<p><strong>正向主调一致</strong>：「This is by far the best gacha I have ever played, and the devs
+are extremely reasonable and not greedy」、韩语「숨겨진 갓겜」（隐藏的神作）、意大利语
+长评盛赞、印尼语致谢官方提供印尼语支持。</p>
+<p><strong>而商店评论最有价值的是其「诉求清单」属性</strong>，三类诉求高频且具体：</p>
+<p>其一，<strong>融灾自动战斗的回归呼声</strong>。一条简中长评（学业繁忙、已付费数百元的玩家）恳切表示
+「实在不想花时间去学多个队伍怎么去打融灾，希望可以把融灾带回来 qwqqq…不然很劝退我
+这种玩家」。该诉求在 Discord 中文综合（「升 90 等材料…只剩融灾…为何要改动这个」）亦同步
+出现，指向一次<strong>养成材料获取路径的改动</strong>触动了轻度付费玩家的留存神经。</p>
+<p>其二，<strong>本地化质量</strong>。葡语「Queremos uma tradução em português br」（要求巴葡翻译）、
+越南语「tiếng việt hơi lỏ」（越南语有点烂）、泰语指出泰文字幕性别称谓混乱以致「不知道
+角色是什么性别」。结合 §3.2 Steam 中西语「翻译完全由 ChatGPT」、俄语「神经网络翻译」的
+吐槽，机翻本地化质量是一条<strong>跨语区的共性短板</strong>。</p>
+<p>其三，<strong>账号与区服技术问题</strong>。Google Play 简中「很多个账号绑了邮箱都直接没了」（账号丢失）、
+俄语「приходится включать VPN…иначе не заходит」（必须开 VPN 否则进不去）、英语
+「always not responding halfway」（中途无响应）。区服可达性与账号稳定性是技术侧的长尾风险。</p>
+<p>Google Play 上一条繁中差评具代表性地区分了维度：「美術很好，玩法不錯，策劃沒媽，運營更是
+死全家，你遊敗筆就是校貓」——褒美术玩法、贬策划运营。这种「内容好、运营差」的二分评价，
+与周年活动争议的指向一致：玩家不满的焦点是<strong>运营决策</strong>（活动设计、材料改动），而非游戏
+本体素质。</p>
+<h3>§3.8 韩系论坛（ruliweb）：联动驱动的发现潮</h3>
+<p>ruliweb 窗口内 134 条。dcinside 与 gamerch 在本窗口（05-18 之后）无新增归档，故韩系
+信号主要来自 ruliweb。其话题几乎完全由沙耶联动驱动，呈现一波清晰的<strong>发现潮</strong>：</p>
+<ul>
+<li>「의외로 사야의 노래랑 콜라보한 온라인 게임」（没想到竟和《沙耶之歌》联动的网游）</li>
+<li>「사야의노래) 할배들 척추서는 콜라보 떳다」（沙耶之歌——让老登们脊椎挺立的联动来了），
+  指向《沙耶之歌》对资深 ACG 受众的怀旧号召力</li>
+<li>「망각전야)이겜 대체 한국에서 얼마나 벌어들인거냐 ㅋㅋ」（这游戏在韩国到底赚了多少）</li>
+<li>「모리멘스)콜라보 일러 떴었넹」「얘네 콜라보도 좀 기대되네」（联动立绘出了 / 有点期待）</li>
+<li>多条以 D4DJ、アイギス（Aegis）、Phantom Rose 等作类比，将忘却前夜纳入「小众但优质
+  卡牌/二游」的讨论谱系</li>
+</ul>
+<p>结合 Discord 韩语频道分享的韩国玩家自建信息站（morimenz-kr.github.io），可判断韩国
+社区虽体量不大，但<strong>因联动获得了一次可观的曝光增量</strong>，且已有自组织的本地化知识沉淀。</p>
+<h3>§3.9 其余平台：B站、Pixiv、StopGame、官方</h3>
+<p><strong>bilibili</strong>：窗口内仅 5 条归档（采集稀疏，非真实热度），均为「阵容教学」系列攻略视频
+（第八至第十期 + 低配通关展示），互动量数百级。中文视频攻略生态健康但本窗口采集覆盖不足，
+不宜据此评断 B 站真实热度。</p>
+<p><strong>pixiv</strong>：89 条，日系同人图为主（「忘却前夜 FA まとめ」「奥吉尔（Ozial）生贺图」
+「スケスケゴールデン大学」等），引擎未采集点赞数（均记 0），仅证明日系二创持续产出。</p>
+<p><strong>StopGame（俄）</strong>：9 条均为「Morimens — 3.9/10（0 оценок）」的评分聚合快照。<strong>关键：
+括号内明示「0 个评分」</strong>，即该 3.9 分是无样本支撑的占位值，<strong>不可作为俄语区口碑证据</strong>。
+此处严格按 §6.11 标注为空桩，剔除出情感判断。</p>
+<p><strong>官方（official）</strong>：12 条去重公告全部集中于 05-18（版本/联动/前瞻/唤醒体）与 05-22/23
+（联动 PV），构成 §2 时间线的官方锚点骨架。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec4">§4 分语种社区深析</h2><hr class="section-rule">
+<p>Discord 官方服按语言切分聊天室，为观察忘却前夜的全球社区生态提供了天然切片。本章逐语区
+刻画其体量、人均强度、话题结构与健康度。一个统摄全章的指标是<strong>人均发言强度</strong>（窗口内
+人类消息 / 独立作者），它衡量社区的「黏性密度」：</p>
+<table>
+<thead>
+<tr>
+<th>语区</th>
+<th>人类消息</th>
+<th>作者</th>
+<th>人均强度</th>
+<th>画像速写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>葡语</td>
+<td>10,195</td>
+<td>44</td>
+<td>231.7</td>
+<td>小而极黏的硬核 meta 圈</td>
+</tr>
+<tr>
+<td>越南语</td>
+<td>11,933</td>
+<td>61</td>
+<td>195.6</td>
+<td>紧密熟人型</td>
+</tr>
+<tr>
+<td>印尼语</td>
+<td>15,253</td>
+<td>82</td>
+<td>186.0</td>
+<td>东南亚最大高黏区</td>
+</tr>
+<tr>
+<td>中文综合</td>
+<td>32,329</td>
+<td>196</td>
+<td>164.9</td>
+<td>核心广场</td>
+</tr>
+<tr>
+<td>泰语</td>
+<td>6,055</td>
+<td>45</td>
+<td>134.6</td>
+<td>理论党 + 绘师</td>
+</tr>
+<tr>
+<td>韩语</td>
+<td>2,822</td>
+<td>21</td>
+<td>134.4</td>
+<td>小核心、高质量</td>
+</tr>
+<tr>
+<td>俄语</td>
+<td>5,680</td>
+<td>50</td>
+<td>113.6</td>
+<td>抽卡运吐槽型</td>
+</tr>
+<tr>
+<td>英文 general</td>
+<td>27,393</td>
+<td>256</td>
+<td>107.0</td>
+<td>综合广场 + 闲聊</td>
+</tr>
+<tr>
+<td>西语</td>
+<td>5,468</td>
+<td>62</td>
+<td>88.2</td>
+<td>新手互助型</td>
+</tr>
+<tr>
+<td>英文 game-question</td>
+<td>29,853</td>
+<td>691</td>
+<td>43.2</td>
+<td>触达最广的答疑场</td>
+</tr>
+<tr>
+<td>法语</td>
+<td>866</td>
+<td>29</td>
+<td>29.9</td>
+<td>小而稳</td>
+</tr>
+<tr>
+<td>英文 team-building</td>
+<td>11,071</td>
+<td>470</td>
+<td>23.6</td>
+<td>广覆盖配队场</td>
+</tr>
+<tr>
+<td>德语</td>
+<td>137</td>
+<td>9</td>
+<td>15.2</td>
+<td>微型</td>
+</tr>
+</tbody>
+</table>
+<p>一个反直觉的发现：<strong>英文 game-question 的人均强度（43.2）远低于葡语（231.7）、越南语
+（195.6）</strong>。这并非英文区不活跃，而是其作者基数巨大（691 人）、以「一问一答即走」的轻度
+新玩家为主；而葡语/越南语/印尼语则是少数核心成员的高频熟人社区。两类社区需要<strong>完全不同
+的运营策略</strong>——前者重 FAQ/新手引导的可达性，后者重核心成员关系维护与本地化深度。</p>
+<h3>§4.1 中文综合（綜合討論）：核心广场的双面性</h3>
+<p>32,329 条人类消息、196 名作者、人均 164.9 条——这是一个由核心玩家高频驱动的中文广场。
+热词结构清晰：「抽」1,001、「沙耶」218、「命轮/命輪」合计 217、「氪」146、「bug」82、
+「周年」55、「卡池」41。抽卡与命轮（养成核心）是绝对主轴。</p>
+<p>该频道的双面性体现在：一面是高质量的硬核讨论——一名玩家给出了精算
+「以半年计…平均约 14.87 源液 = 1 抽…美金池期望值对比轮转池，15 中 8 以上可以考虑」的
+氪金性价比模型，体现核心玩家的理性消费决策；另一面是对周年活动的尖锐质疑——
+「就算有人打 300 多把…也凑不满 1000000」直指全服挑战目标的不可达，「升 90 等材料…只剩
+融灾…为何要改动这个」则点名养成材料路径改动。中文核心圈对<strong>运营决策</strong>的审视最为敏锐。</p>
+<p>需说明：本频道作为通用闲聊场，亦混入对其他游戏的讨论，故对中文社区做主题归因时须逐条
+核验主语，避免张冠李戴。</p>
+<h3>§4.2 英文三频道：分工明确的全球枢纽</h3>
+<p>英文社区由三个分工明确的频道构成，合计约 6.8 万条，是全球玩家的事实枢纽。</p>
+<p><strong>game-question（29,853 条，691 作者）</strong> 是触达最广的答疑场。热词 pull 1,623、banner
+1,384、wheel 1,339、team 1,162、thais 1,019、helot 832、arachne 528、horla 525——
+几乎纯粹围绕抽卡决策与配队展开。典型发言是新玩家的资源规划求助：「I have a moonlit banner
+with horla hamlen Murphy thais…do I still keep pulling?」。这个频道的健康度（响应速度、
+答案质量）直接决定新玩家的早期留存体验，是运营应优先保障的「服务窗口」。</p>
+<p><strong>general-chat（27,393 条，256 作者）</strong> 是英文综合广场，话题更杂、闲聊更多。热词中
+story（231）排序靠前，剧情、玩梗、跑题并存（05-24 因「Ryker 相关内容突然涌入」单日冲到
+7,129 条）。该频道也承载了相当比例的成人向玩梗与角色性化讨论（如围绕 Thais 的调侃），
+反映英文核心受众的亚文化属性——这是 IP 黏性的一部分，但也是品牌调性管理需留意的灰度地带。</p>
+<p><strong>team-building（11,071 条，470 作者）</strong> 是纯配队专区。热词 team 1,199、wheel 550、
+thais 472、vortice 372、arachne 352。讨论高度具体（「if aigis is already taken by
+helot catena then you can do pollux horla erica with hameln or murphy in last slot」），
+是英文 meta 共识的生产车间。</p>
+<p><strong>lore-chat（1,902 条，77 作者）</strong> 虽小，却是本窗口唯一末段逆势升温的频道（05-25 达 584 条）。
+其讨论密度极高：考据 Helot 与 Lily 共享莎构（shoggoth）高位意志、吐槽第八章 Hameln 剧情、
+甚至触及翻译不一致问题（「now there's two conflicting translations…which one is real,
+biav」）。一句自嘲精准概括了忘却前夜叙事的特质：「morimens lore is just random enlighten
+descriptions that hint at huge stuff that I desperately need elaborated on」（满是
+点到为止、暗示宏大却语焉不详的灵知描述）。这既是叙事魅力，也是考据党的痛点。</p>
+<h3>§4.3 印尼语：东南亚最大的高黏核心</h3>
+<p>15,253 条、82 作者、人均 186.0——印尼语是 Discord 上<strong>最大的单一非中英语区</strong>，且黏性极高。
+热词 helot（含表情）、saya 222、arachne 180、thais 128，话题与全球主线同步。其讨论质量
+不低，可见对沙耶配队协同（「kurang mikir ke sinergi sama saya…dia support yg bagus」）、
+卡片保留（card retain）机制的深入交流。</p>
+<p>一条情绪浓度很高的发言值得记录：「depan mata ku, senior2 itu sampe gatidur, ga makan..
+ngejar kerjasama demi 'jangan sampai ini naik, jgn sampe yg itu batal'..」（亲眼看着
+那些前辈不眠不休、不吃不喝地追这次合作，就为了「别让这个出事、别让那个告吹」）——无论
+其指向开发团队还是社区组织者，都折射出印尼核心圈对「联动来之不易」的共情。这种情感联结
+是高黏社区的典型特征，是宝贵的运营资产。印尼语区还自发承担信息分发（在频道内转贴
+游戏内活动入口链接），具备准官方的自组织能力。</p>
+<h3>§4.4 越南语：紧密熟人圈与一记冷静批评</h3>
+<p>11,933 条、61 作者、人均 195.6——越南语是仅次于葡语的高强度熟人型社区，情感表达浓烈
+（大量「哭吧…哭吧…」式的诗化情绪发言与自定义表情）。玩法讨论同样在线（Flare 三连詠唱
+「Triplecast Flare flare flare…FLARE」的战斗梗）。</p>
+<p>最具洞察价值的是一记对联动的<strong>冷静批评</strong>：「cứ kèn trống nhiều quá rồi như cái
+Assassin Creed Shadow nó thành cái xào thập cẩm, Nhựt k ra Nhựt TQ k ra TQ」（锣鼓敲
+太响，结果像《刺客信条:影》那样变成大杂烩，日不日中不中）。这是窗口内罕见的、对联动
+「文化定位混乱」风险的尖锐提醒——当一个中式克苏鲁世界观嫁接日系视觉小说 IP 时，部分
+玩家担忧其调性稀释。此声音虽非主流，但作为质量预警值得上报。</p>
+<h3>§4.5 葡语：最硬核的微型 meta 实验室</h3>
+<p>10,195 条、仅 44 作者、人均 231.7——葡语是全社区<strong>人均强度最高</strong>的语区，一个由极少数
+重度玩家构成的硬核 meta 实验室。其讨论的技术深度在所有语区中名列前茅：双子（Castor/
+Pollux）伤害分配、Doresain 三费卡循环、「agora com a arachne existindo fica melhor
+pra winkle」（阿拉克涅出现后温柯尔体系更强）、faded bone 与 illusion 的血池构筑……几乎
+是逐卡逐效果的拆解。</p>
+<p>一条发言道破了该社区的成熟度：「eu tenho e3, mas posso contar a quantidade de vezes
+que já vi gente falando nesse chat 'precisa de oe pra fazer algo'」（我有 E3，但我能
+数出这群里多少次有人说「做某事需要超限」）——核心玩家对「养成军备竞赛」话术已有反身性
+审视。葡语区体量大、黏性高、技术深，却仅 44 人支撑，是一个<strong>高价值但脆弱</strong>的群体：
+少数关键成员的流失即可能塌方，值得定向维护。</p>
+<h3>§4.6 泰语：理论党与绘师共栖</h3>
+<p>6,055 条、45 作者，05-23 单日异常冲到 2,341 条。泰语社区呈现「理论党 + 绘师」共栖的
+独特生态：一面是高质量配队推演——「ซายะอย่างเดียวก็เกจ embryo cap×2…ถ้าไม่มี Thais
+ด้วยนี่น่าจะฝืด」（光沙耶就让胚胎上限×2，没有 Thais 会很吃力），精准点出沙耶对 Thais 的
+依赖；另一面是绘画技法交流（「白色若直接上灰影会显硬，阴影里掺入色调会更柔和」）。</p>
+<p>泰语区还贡献了本窗口最具商业洞察的一条社区发言：「ในอนาคต…อาจจะไม่ได้คอลแลปตัวดังๆ
+เพราะเงื่อนไข permanent license มันหาคนจอยยาก」（未来可能拿不到大牌联动，因为「永久
+授权」这个条件很难找到愿意合作的对象）。这名玩家敏锐地指出了忘却前夜「联动角色永久可用」
+模式的供给侧约束——这种自下而上的产业洞察，是高质量社区的标志。</p>
+<h3>§4.7 韩语：小核心、高信息密度</h3>
+<p>2,822 条、仅 21 作者、人均 134.4——韩语是一个小而精的核心圈，05-18 联动公告日单日 1,059 条
+后迅速回落，呈脉冲型。尽管人少，信息密度却高：玩家敏锐发现新增的「常驻唤醒体天赋强化 5 级」
+机制存在跨角色自动适用的疑似 bug（「아무 상시 캐릭터나 하나 강화해주면 한정 캐릭터들에는
+전부 자동 적용…뭐지 버그인가?」），并讨论 2.6 版本前的以太核心维持策略。</p>
+<p>一条发言点出了韩语核心玩家的核心痛点——<strong>内容肝度</strong>：「컨텐츠 하나 늘때마다…숙제의
+양만으로도 따라가기가 버거워져서」（每增加一个玩法…光是作业量就追得很吃力）。这与
+Steam/Reddit 的「周年活动难度」是同一硬币的两面：<strong>忘却前夜的玩法深度正在转化为留存
+负担</strong>，硬核玩家尚能消化，但「肝度」已逼近临界。韩语区还自建了信息站（弥萨格大学韩国
+校区，morimenz-kr.github.io），自组织程度高。</p>
+<h3>§4.8 俄语：抽卡运情绪与区服可达性</h3>
+<p>5,680 条、50 作者。俄语区话题以抽卡运吐槽为主——「ни круток ни звезд ни ручек ни
+камней вообще ничего」（抽卡、星、把手、石头啥都没有）、「раньше гарантированно
+шестерка падала на 60й крутке」（以前 60 抽必出六星）。新玩家亦在此求助
+「А где рекомендации че пулить? Я новичек」。</p>
+<p>俄语区最需上报的是<strong>区服可达性</strong>问题：Steam 与 Google Play 的俄语评论反复出现
+「必须开 VPN 才能登录，否则进不去，以前不用 VPN 也行」。这是一个会直接劝退俄语玩家的
+硬技术门槛，且「以前能进现在不能」的表述暗示是近期变化，值得运营排查。</p>
+<h3>§4.9 西语：新手互助型广场</h3>
+<p>5,468 条、62 作者、人均 88.2——西语是典型的<strong>新手互助型</strong>社区，人均强度中等、作者面较广。
+大量发言是入门求助与配队互助（「Me ayudan con mi equipos」「son documentos para armar
+equipos」），氛围友善。窗口末段一条发言概括了消费节奏：「la gente anda ahorrando o ya
+gastaron todos los núcleos」（大家要么在攒、要么已花光发的核心）——印证沙耶卡池前的
+储蓄行为。西语区的本地化吐槽（「翻译完全由 ChatGPT」）见 §3.2，是该语区的主要不满源。</p>
+<h3>§4.10 法语与德语：小而稳的长尾</h3>
+<p><strong>法语（866 条、29 作者）</strong> 小而稳，话题集中于新手引导与周年 50 抽内容的可达性焦虑
+（「J'espère que le contenu pour avoir les 50 pulls complémentaire sera faisable en
+débutant」）。命轮 meta 讨论亦在线（询问 Pollux 命轮的 meta 价值）。</p>
+<p><strong>德语（137 条、9 作者）</strong> 是微型社区，但贡献了一条对<strong>社区共斗（community raid）改良</strong>的
+正面评价：「defo besser als die bisherigen community raids wo die nolifer die guten
+rewards ne stunde nach stage opening schon alle weggefarmt hatten」（明显好过以前——
+以前肝帝在开放一小时内就把好奖励farm光了）。这说明本期共斗活动的奖励机制相比往期有所
+改善，是一条难得的正向运营反馈。德语区还有「Erica Enjoyer™」式的角色喜爱玩梗。</p>
+<h3>§4.11 分语种综合判断</h3>
+<p>将十三个语区横向对比，可得三条运营级判断：</p>
+<p>其一，<strong>东南亚 + 葡语是被低估的高价值腹地</strong>。印尼、越南、葡语三区合计约 3.7 万条、人均
+强度全部进入前三，黏性远超其作者基数所暗示的体量。但它们也最依赖少数核心成员，且本地化
+质量吐槽集中——这是「高潜力 + 高脆弱」并存的群体，应优先投入本地化与社区关系资源。</p>
+<p>其二，<strong>英文区是「广而浅」的拉新主场</strong>。game-question 以 691 作者的最广覆盖承接新玩家，
+但人均强度最低，说明大量是「问完即走」的轻度用户。提升此处的 FAQ 自助化与新手引导，
+是把发现性流量（§3.4 YouTube）转化为留存的关键一环。</p>
+<p>其三，<strong>小语区贡献超额洞察</strong>。泰语点破永久授权的供给约束、越南语预警联动调性风险、
+德语反馈共斗改良、韩语揭示肝度临界——这些「少数人的清醒声音」是产品决策的高价值输入，
+不应因体量小而被淹没。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec5">§5 角色与 Meta 深析</h2><hr class="section-rule">
+<h3>§5.1 提及计数与采信说明</h3>
+<p>合并英文四频道与中文综合，角色提及排名如下（窗口内）：</p>
+<table>
+<thead>
+<tr>
+<th>提及</th>
+<th>角色</th>
+<th>采信说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,578</td>
+<td>Thais</td>
+<td>纯文本提及，可信</td>
+</tr>
+<tr>
+<td>813</td>
+<td>沙耶 / Saya</td>
+<td>英文 saya + 中文沙耶合并</td>
+</tr>
+<tr>
+<td>~396+</td>
+<td>Helot</td>
+<td><strong>含大量表情 <code>&lt;:Helot_slack_off:&gt;</code> 灌水，须折扣</strong></td>
+</tr>
+<tr>
+<td>528</td>
+<td>Arachne / 阿拉克涅</td>
+<td>跨语区累计更高</td>
+</tr>
+<tr>
+<td>525</td>
+<td>Horla</td>
+<td>—</td>
+</tr>
+<tr>
+<td>~408</td>
+<td>Vortice / 莫丝</td>
+<td>—</td>
+</tr>
+<tr>
+<td>56</td>
+<td>墨菲 Murphy</td>
+<td>中文综合</td>
+</tr>
+<tr>
+<td>55</td>
+<td>潘狄娅 Pandia</td>
+<td>中文综合</td>
+</tr>
+<tr>
+<td>44</td>
+<td>莉莉 Lily</td>
+<td>中文综合</td>
+</tr>
+</tbody>
+</table>
+<p><strong>采信纪律（§6.11 R2）</strong>：Helot 的高计数有相当部分来自一个极流行的自定义表情
+<code>Helot_slack_off</code>（在多语区被当作通用「摆烂/无奈」反应符使用），并非全是角色讨论，
+本报告对 Helot 的「讨论热度」做保守解读，仅在其确有玩法语境处采信。其余角色（尤其
+Thais、Saya、Arachne、Vortice、Horla）的计数以文本提及为主，可信度高。</p>
+<h3>§5.2 Thais：版本核心辅助与福利双焦点</h3>
+<p>Thais 是本窗口<strong>被讨论最多的角色</strong>（1,578 次），其热度源于双重身份。</p>
+<p>其一，<strong>机制上的版本核心辅助</strong>。社区给出近乎共识的定位：「Thais who's like the best
+support in the game」「basically fucking requires Thais for function」（某些体系基本
+强制需要 Thais）。泰语、越南语、葡语区均独立确认了 Thais 对沙耶等 caro（红域）体系的
+支撑作用。由于 Thais 在窗口内通过每日卡池（社区记载约 05-09 至 05-26）可获取，大量新
+玩家被建议「先拿 Thais 再考虑后续」，使其成为新手资源规划的锚点。</p>
+<p>其二，<strong>福利/性化讨论的焦点</strong>。英文 general 频道围绕 Thais 的成人向调侃高频出现
+（「not get flashed by Thais's ass on the main screen」「extensive milk collection」
+等）。这类内容是英文核心受众亚文化黏性的一部分，但其与官方主推的「克苏鲁严肃叙事」调性
+之间存在张力，属品牌调性管理的灰度地带。</p>
+<h3>§5.3 沙耶 / Saya：联动核心与「白嫖」钩子</h3>
+<p>沙耶（813 次）作为联动唤醒体，是整个窗口的情绪引擎。其传播有三个支点：</p>
+<p><strong>免费获取（白嫖）</strong>是最强钩子。社区反复确认关键日期：「The banner is on the 30th, the
+free saya is on the 6th of june」「We get 250 in total on the 6th when saya's story is
+fully out」——即 05-30 卡池开启、06-06 剧情完整放出并发放，累计约 250 抽。「免费拿一个
+联动角色」对 gacha 玩家而言是稀缺的善意，催生了大量玩梗式期待。</p>
+<p><strong>配队前置研究</strong>已充分展开。社区共识是沙耶属 caro（红域），需搭配 Thais 辅助，但亦有
+泰语玩家冷静指出「沙耶主打加速 Exalt 伤害，但若队里没有 Exalt 输出则收益有限」——说明
+核心玩家在卡池开启前已做过收益评估，不盲目。</p>
+<p><strong>IP 拉新效应</strong>已被验证：Steam/ruliweb 多条「为沙耶而来，留下来享受游戏」的转化记录
+（详见 §3.2、§3.8）。沙耶的 CV 为川村みどり（微博官方展示确认）。</p>
+<h3>§5.4 Arachne / 阿拉克涅：上一版唤醒体的余热与争议美学</h3>
+<p>阿拉克涅（V2.5.0 唤醒体，528+ 次）在本窗口处于复刻/余热期，是英文区讨论度仅次于
+Thais/Saya 的角色。其讨论分两面：</p>
+<p><strong>玩法上</strong>，定位为追击（pursuit）堆叠与无视护盾/壁垒的输出（「Arachne ignores shield/
+fortress barrier」「Arachne for pursuit stacking」），YouTube 的 Flares 评级给 B。
+葡语区指出阿拉克涅的出现强化了温柯尔体系。</p>
+<p><strong>美学上</strong>，阿拉克涅是「角色设计最受喜爱」的代表之一（「my favorite in terms of
+character design is arachne」），其「蜘蛛母亲」形象（微博 boss 设计师解禁稿确认）
+兼具魅力与克苏鲁式不安。中文区围绕其「立绘下半身是蜘蛛、与战斗小人不一致」展开过技术性
+讨论（玩家/绘师探讨如何还原做 cosplay）——这是中性的二创考据，<strong>非</strong>负面争议。一句黑色
+幽默的发言精准捕捉了其形象张力：「Arachne
+doesn't care if she kill kids using web」。</p>
+<h3>§5.5 Vortice / 莫丝 与 Horla：中坚 meta 与考据玩梗</h3>
+<p><strong>Vortice / 莫丝</strong>（408+ 次，V2.4.3 唤醒体）是 aequor（蓝域）DPS 中坚，Flares 评级 A-，
+社区围绕其复刻价值（「is it worth to try and get vortice rn」）与协同搭档
+（「who working well with vortice beside murphy or corposant?」）讨论。一条评级排序
+「mouchette &gt; vortice &gt; ghelot &gt; kath &gt; pollux」反映了英文区的输出位 tier 共识雏形。</p>
+<p><strong>Horla</strong>（525 次）兼具 meta 与考据两重热度。机制上是命轮与增益位的热门目标（新手 pull
+plan 中「day 11 - 28 May」可得）。考据上则因其「隐身」设定催生了大量玩梗——
+「If Horla is physically present and just invisible to us, does that mean she's
+completely naked through that gap in her skirt?」「We have to ask the creator of
+Horla. We must know.」——这种围绕设定细节的集体玩梗是 IP 角色生命力的体现。</p>
+<h3>§5.6 中文区角色榜与剧情向角色</h3>
+<p>中文综合频道的角色讨论榜（墨菲 Murphy 56、潘狄娅 Pandia 55、莉莉 Lily 44、图鲁 Turu 20）
+与英文区的 meta 向榜单结构不同，更偏向<strong>剧情与情感联结</strong>。值得注意的是戈利亚（Goliath）
+在微博的 05-20 生贺活动与 CP 二创热度，以及围绕奥吉尔（Ozial，pixiv 生贺图）的日系二创——
+说明中日社区的角色黏性更多由「情感/二创」而非「强度/meta」驱动，与英文区形成镜像。</p>
+<h3>§5.7 命域体系与扩展角色生态</h3>
+<p>把视野从头部角色拉宽，本窗口的配队讨论实际围绕一个<strong>命域（realm）协同体系</strong>展开。社区
+原声反复出现的命域机制认知是：「若队伍只取同一命域的角色，该命域的基础机制会因命域共鸣
+更显著地强化，并解锁额外小特性（如 aequor 蓝域开局额外触手）」（俄语区科普）。这套
+「同色协同 vs 跨色泛用」的张力，是忘却前夜配队深度的根源。</p>
+<p>围绕各命域，社区形成了清晰的功能位认知（综合多语区讨论归纳）：</p>
+<ul>
+<li><strong>输出位（DPS）</strong>：Vortice/莫丝（aequor 蓝域 A- 级）、金黑奴 G.Helot（caro 红域公认
+  最佳 DPS 之一）、Mouchette/慕雪（chaos 混沌，评级 C 但有拥趸）、Arachne/阿拉克涅
+  （追击堆叠）、Pickman、Caecus（0 费按血量造成伤害的特殊机制）。</li>
+<li><strong>辅助位（Support）</strong>：Thais（全游戏顶级泛用辅助）、Faint/菲茵特（「凡能塞 caro 位
+  的队都能用」）、Aigis/艾吉斯（维持易伤）、Corposant/圣艾尔摩（弃牌体系核心）、
+  Aurita/奥瑞特（弃牌协同）。</li>
+<li><strong>生存/护盾位</strong>：G.Doll/金朵尔（叠层生存）、Lily/莉莉（治疗）、Erica/艾瑞卡（银钥位
+  护盾）、Doresain/多雷赛恩（三费卡循环）。</li>
+<li><strong>特殊机制</strong>：「鸟哥鸟弟」（中文区昵称，攻防一体的自走体系）、Tulu/图鲁（aliemus 充能，
+  但「专门为他刷套装不太值」）、Kath/卡缇（AOE + E3 质变）、双子 Castor/Pollux（伤害
+  分配协同）。</li>
+</ul>
+<p>这套生态有两个运营含义。其一，<strong>「最终你会拿到所有人」的设计预期已深入人心</strong>——英文
+team-building 频道明言「you are realistically getting ALL of them except limited arc
+1s」，葡语区也在盘点「最后只差 Pollux、Doresain、Vortice、Sorel 就集齐了」。这种「非
+强制单抽、长期必然集齐」的预期，是忘却前夜 F2P 友好口碑的机制根基，需谨慎维护——任何
+削弱「白嫖必然性」的改动都会动摇这一信任。其二，<strong>角色昵称的本地化生态自发繁荣</strong>——中文
+「鸟哥鸟弟」「羊妈」「淡墨」、德语「Erica Enjoyer™」、各语区对 Caecus「因为有人看到水手
+觉得帅就有了这角色」的玩梗考据，说明角色已超越数值成为社区共同语言的一部分，这是 IP
+生命力的深层指标。</p>
+<h3>§5.8 Discord 舆论健康度：噪声、疲劳与免疫力</h3>
+<p>有必要单独评估中文核心广场（综合讨论）的舆论健康度，因为它既是信号最密集处，也是噪声
+最重处。三个并存的现象值得记录：</p>
+<p>其一，<strong>护制作人阵营的存在</strong>。面对吐槽，社区有一股反向力量主动辩护乃至反击（「如果不喜欢
+改动，你们可以不玩」式发言）。这意味着基本盘具备「自我辩护免疫力」，运营在应对负面时不必
+过度防御。</p>
+<p>其二，<strong>讨论疲劳</strong>。一名普通玩家坦言「每天打开 dc 全是这种东西…我已经得 300 抽恐惧症了」，
+折射出高强度 meta/抽卡讨论与社区纷争对轻度玩家的挤压。核心广场的「硬核浓度」过高，可能
+反向劝退休闲用户——这与韩语区的「肝度疲劳」（§4.7）是同一现象在社交层的投影。</p>
+<p>其三，<strong>结构性噪声</strong>。综合频道掺杂大量复制文、刷屏、跨游戏讨论与无关玩梗，这既是活跃社区
+的常态，也是情报分析的干扰源。结论：综合讨论的高消息量（32,332 条）<strong>不等于</strong>高信号密度，
+做情报提炼时须主语核验、去噪后再归因。</p>
+<h3>§5.9 命轮经济与卡池节奏：本窗口的 Meta 骨架</h3>
+<p>把角色讨论还原到系统层，本窗口的 meta 骨架由两个机制主导：</p>
+<p><strong>命轮（Wheel of Destiny）</strong> 是讨论密度极高的养成系统（英文 wheel 跨频道合计逾 2,500 次、
+中文命轮 217 次）。核心争议是其<strong>抽取效率与溢出风险</strong>：玩家精算指出「命轮会重复或抽出
+命轮没角色的情况下再抽轮转池命轮高概率会溢出」，并讨论「+12 之前是否该停手以防再次抽到」。
+命轮经济的复杂度既是深度，也是新玩家的认知门槛。</p>
+<p><strong>卡池节奏</strong> 在窗口内被社区清晰梳理：每日卡池（Thais 约至 05-26、Horla 至 05-28）、
+Kaleido Astral Reign 新手池、半周年轮换池、以及前瞻中的 05-30 沙耶卡池。Reddit 的
+「Anni reruns, Saya and anni rewards timeline」等攻略帖将这套节奏制度化为社区知识库。
+玩家的资源决策（攒还是抽、抽哪个断点）几乎全部围绕这条时间线展开，印证了「本窗口情绪
+势能面向窗口之外」的判断（§2.5）。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec6">§6 情绪与诉求</h2><hr class="section-rule">
+<p>本章按子主题归集情绪信号，每条均附可回溯的原文证据，并区分「响亮但局部」与「系统性」
+两个量级。</p>
+<h3>§6.1 周年活动难度（唯一系统性负面）</h3>
+<p>这是本窗口唯一在 Steam、YouTube、Reddit、Discord 中文/韩语四类来源交叉印证的负面，
+够格称为「系统性」。</p>
+<ul>
+<li>Steam（简中）：「周年庆出这种司马活动…本来周年庆福利很可以的…这个全服挑战活动直接
+  好感败光」「养成极其困难，打活动限制太大」；英文「Worst anni」；韩语「노잼 가득히」。</li>
+<li>Discord 中文综合：「活动难度那么逆天，新手哪里来的那么多 +12 80 级」「就算有人打 300
+  多把…也凑不满 1000000」（点破全服累计目标的不可达）。</li>
+<li>YouTube：攻略标题直指「The most predatory and greedy anniversary event」。</li>
+<li>Reddit：同名批判性 Overview 帖被社区收录。</li>
+</ul>
+<p>矛盾的核心不是「福利不够」——恰恰相反，福利被普遍认为慷慨——而是<strong>「全服挑战」式活动的
+难度门槛与场次限制，把慷慨福利锁在了多数玩家（尤其新手）够不着的地方</strong>，造成「给了却拿
+不到」的割裂感。这是一次活动<strong>设计</strong>而非<strong>诚意</strong>的失误。</p>
+<p><strong>关键：官方已在窗口内做出回退（已落地事实，非建议）。</strong> 中文综合频道流出的「纪念活动：
+猫的『报恩』」补丁说明显示，官方对此次活动做了两项即时调整：「助战规则调整：现在可以选择
+陌生人的助战唤醒体上场，不再仅限于互相关注的守密人」「关卡难度下调：敌人的生命降低约
+35%，伤害降低约 15%」。该回退与 05-20 的 V2.5.1.2 在线维护公告时点吻合（该公告在 Discord
+引发约 18 条讨论）。这说明运营团队对舆情<strong>响应迅速</strong>——从负评出现到难度下调仅数日，是一次
+健康的「上线—反馈—修复」闭环。按 §6.11 R3，本报告明确标注此为<strong>已落地事实</strong>；§8 的相关
+建议据此调整为「将本次临时回退固化为常态设计原则」，而非「请考虑下调难度」。</p>
+<p>需补充一个被忽视的反向声音：中文社区存在一个<strong>护制作人阵营</strong>，对吐槽者激烈反击——一条
+被翻译转载的长帖讥讽抱怨者「一群没用的软蛋，只会哭着抱怨任何事…角色呼吸声太大了？我去
+哭！」，并直言「如果不喜欢改动，你们可以不玩」。这说明社区舆论<strong>并非一边倒</strong>，核心拥护者
+与挑剔者并存，运营在回应负面时无需过度紧张——基本盘有自我辩护的免疫力。</p>
+<h3>§6.2 养成材料路径改动与「融灾自动」诉求</h3>
+<p>第二类诉求关乎留存机制。一次养成材料获取路径的改动触动了玩家神经：</p>
+<ul>
+<li>Discord 中文：「升 90 等材料…没办法靠抽到重复角色拿到碎片材料…只剩融灾、升级、限时
+  礼包…为何要改动这个」。</li>
+<li>App Store 简中长评（已付费数百元的学业繁忙玩家）：「实在不想花时间去学多个队伍怎么去
+  打融灾，希望可以把融灾带回来 qwqqq…不然很劝退我这种玩家」。</li>
+</ul>
+<p>两条证据共同指向：<strong>融灾（高难关卡）自动战斗的移除 + 养成材料向融灾倾斜</strong>，叠加后显著
+抬高了轻度/付费玩家的留存成本。这是一个比活动难度更隐蔽、但直接关系付费用户去留的结构性
+信号，建议运营评估材料获取的「低强度兜底路径」。</p>
+<h3>§6.3 本地化质量：跨语区共性短板</h3>
+<p>机翻本地化的观感问题在至少五个非中文语区被点名，是覆盖面最广的诉求：</p>
+<ul>
+<li>西语（Steam）：「la traducción al español está hecha enteramente por ChatGPT」。</li>
+<li>俄语（Steam）：「перевод на русский нейронный, ошибок больше чем у трампа уголовок」。</li>
+<li>泰语（Google Play）：泰文字幕性别称谓混乱，「不知道角色是什么性别」。</li>
+<li>越南语（Google Play）：「tiếng việt hơi lỏ」（越南语有点烂）。</li>
+<li>葡语（App Store）：「Queremos uma tradução em português br」（要求巴葡本地化）。</li>
+</ul>
+<p>这是一个「低天花板、高频次」的短板：它不会让核心玩家流失，但持续侵蚀新玩家的第一印象，
+尤其在那些高黏性的东南亚/葡语/俄语腹地（§4.11）。鉴于机翻已是基础设施，<strong>针对性的人工
+润色（哪怕仅覆盖剧情关键段与 UI 高频词）</strong>即可显著改善观感。</p>
+<h3>§6.4 技术、区服与账号稳定性</h3>
+<p>技术侧的长尾风险有三：</p>
+<ul>
+<li><strong>客户端加载/卡顿</strong>：Steam 英语「the game doesn't load」、俄语「вообще не работает」、
+  简中「卡顿明显」、App Store「always not responding halfway」。</li>
+<li><strong>区服可达性</strong>：俄语区反复出现「必须开 VPN 才能登录，以前不用也行」——疑似近期变化，
+  会直接劝退俄语玩家。</li>
+<li><strong>账号丢失</strong>：Google Play 简中「很多个账号绑了邮箱都直接没了」——若属实则是严重事故，
+  建议运营核查账号绑定/找回链路。</li>
+</ul>
+<p>此外，官方在 05-25 通过 Discord 主动说明「Arachne 生日邮件因代码故障延迟发放」，该透明
+沟通获得社区正向反应（高反应消息，详见 §6.6），是技术问题处理的良好范式。</p>
+<h3>§6.5 内容走向与价值观争议</h3>
+<p>少量但尖锐的声音质疑内容走向：</p>
+<ul>
+<li><strong>数值化担忧</strong>：「卡牌构筑游戏硬是搞成数值养成游戏」「一眼望到头，就纯是二游」——担心
+  Roguelike 卡牌的策略乐趣被养成数值碾压稀释。</li>
+<li><strong>运营 vs 本体的二分</strong>：繁中「美術很好，玩法不錯，策劃沒媽，運營更是死全家」——典型地
+  把不满精确指向运营决策，而非游戏素质。</li>
+<li><strong>角色设计/价值观</strong>：一条激烈简中差评抨击女性角色「魅男」设计与「日本变态价值观」；
+  微博亦有「女角色设计充满创意…偏偏又添加了魅男属性」的复杂评价。这类争议触及二次元
+  内容的固有分歧，受众分化明显，难有共识解，建议作为长期调性议题观察而非即时响应。</li>
+</ul>
+<h3>§6.6 正面情绪资产盘点</h3>
+<p>负面之外，本窗口积累了可观的正向资产，是品牌叙事的弹药：</p>
+<ul>
+<li><strong>「被低估神作」品牌叙事</strong>：Steam 窗口内评测「should be WAAAYYY bigger」、俄语「这杰作
+  藏哪了」，叠加 YouTube 窗口内新片「How a Dying Game achieved Immortality」（4 天前、约
+  4.95 万）——这是本窗口最强的可复用品牌资产。（注：另有一条 30 万播放的同母题常青片，发布于
+  10 个月前，属存量长尾，非窗口增量，见 §3.4。）</li>
+<li><strong>慷慨 F2P 厂商好感</strong>：多语区一致称赞，部分玩家「因慷慨而愿付费支持」。</li>
+<li><strong>周年发放慷慨度</strong>：Discord 高反应消息「可以兑换银芯…可以换五万多…花一花还有 41000」
+  表达了对周年货币发放的惊喜。</li>
+<li><strong>官方透明沟通</strong>：Arachne 生日邮件故障的主动说明获社区认可，证明「坦诚沟通」能有效
+  对冲技术瑕疵的负面。</li>
+<li><strong>共斗活动机制改良</strong>：德语区明确反馈本期共斗优于往期（不再被肝帝一小时farm光）。</li>
+<li><strong>制作人情感契约</strong>：微博制作人公开信「你们曾拯救了忘却前夜——如今给出未来结局的承诺」，
+  与海外「起死回生」叙事共振，强化了玩家与厂商的命运共同体感。</li>
+</ul>
+<h3>§6.7 净情绪判断</h3>
+<p>综合而言，本窗口的社区净情绪为<strong>显著正向</strong>：86% 的 Steam 好评率、活跃的「被低估神作」
+发现性叙事（窗口内新片 + 评测交叉印证）、旺盛的二创、以及厂商-玩家间的情感契约，共同构成
+稳固的正向基本盘。负面信号<strong>响亮但局部</strong>，
+且高度集中于<strong>运营层面的可修复项</strong>（活动难度、材料路径、本地化、区服），而非游戏本体的
+结构性缺陷。换言之，本窗口的问题清单是一份「运营优化待办」，而非「产品危机预警」——这是
+对一款处于上升期产品最健康的状态。</p>
+<h3>§6.8 跨平台主题传播矩阵</h3>
+<p>单看任一平台都会失真，本节把四个主导主题放在跨平台坐标里观察其传播形态，以判断每个主题的
+真实量级与扩散路径。</p>
+<table>
+<thead>
+<tr>
+<th>主题</th>
+<th>Discord</th>
+<th>Steam</th>
+<th>YouTube</th>
+<th>Reddit</th>
+<th>微博/微信</th>
+<th>韩系</th>
+<th>性质判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>沙耶联动</td>
+<td>强（551 EN+218 CN）</td>
+<td>中（多条转化记录）</td>
+<td>中（PV+安利）</td>
+<td>中（97 帖）</td>
+<td>极强（头号）</td>
+<td>强（发现潮）</td>
+<td>全平台头条</td>
+</tr>
+<tr>
+<td>周年活动难度</td>
+<td>中（中文质疑）</td>
+<td>强（负评首因）</td>
+<td>中（批判攻略）</td>
+<td>中（批判 Overview）</td>
+<td>弱</td>
+<td>弱</td>
+<td>响亮但局部</td>
+</tr>
+<tr>
+<td>「被低估神作」</td>
+<td>中（玩梗）</td>
+<td>强（高频母题）</td>
+<td>中（窗口新片 4.95 万；另有旧常青片）</td>
+<td>弱</td>
+<td>强（制作人信）</td>
+<td>中（赚多少梗）</td>
+<td>最强正向资产</td>
+</tr>
+<tr>
+<td>本地化质量</td>
+<td>中（lore 考据）</td>
+<td>强（西/俄）</td>
+<td>弱</td>
+<td>弱</td>
+<td>无</td>
+<td>中（自建站）</td>
+<td>跨语区共性短板</td>
+</tr>
+</tbody>
+</table>
+<p>矩阵揭示出三条传播规律：</p>
+<p>其一，<strong>沙耶联动是唯一全平台同步引爆的主题</strong>，且在不同平台承担不同功能——微博/微信负责
+官方叙事铺设，YouTube/ruliweb 负责发现拉新，Discord 负责配队消化，Steam 负责转化沉淀。
+这是一次组织度很高的跨平台联动传播，各平台分工自然成型。</p>
+<p>其二，<strong>「被低估神作」叙事的传播以 YouTube 为震中、向 Steam 与微博双向扩散</strong>。海外的
+「dying game / 起死回生」与中文的制作人公开信「你们曾拯救了忘却前夜」是同一母题的两种
+语言表达，二者并非巧合，而是「玩家共渡难关」这一真实运营史实在中外社区的同构回响。这是
+本窗口<strong>最具复用价值</strong>的品牌资产：它自带情感、自带传播、且为真。</p>
+<p>其三，<strong>负面主题的传播半径明显小于正面</strong>。周年活动难度虽在三平台出现，但始终未突破核心
+玩家圈层（未见大规模出圈或舆情发酵），且官方快速回退进一步压缩了其传播寿命；本地化质量
+则是「广而浅」——覆盖语区多，但每个语区内都只是零星提及，未形成单一语区的声浪。这印证了
+§6.7 的「响亮但局部」判定：负面是分布式的轻噪声，而非集中式的危机。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec7">§7 联动专题：《沙耶之歌》作为战略事件</h2><hr class="section-rule">
+<p>「沙耶之歌」联动不只是一次内容更新，而是一次值得单独复盘的战略事件。本章从拉新、调性、
+供给三个维度做专题分析。</p>
+<h3>§7.1 拉新引擎：IP 联动的转化链已跑通</h3>
+<p>证据链清晰地证明了「联动 IP→发现→留存」的转化闭环：</p>
+<ul>
+<li><strong>发现</strong>：ruliweb 韩国论坛因联动爆发讨论潮（「让老登们脊椎挺立的联动」），大批韩国玩家
+  经此首次接触游戏；俄语 Steam 评测「要不是沙耶联动我根本不会知道它存在」。</li>
+<li><strong>转化</strong>：Steam「originally got it for saya but came out really enjoying it」、
+  「i'm obsessed」——为联动而来的玩家被游戏本体留住。</li>
+<li><strong>放大</strong>：YouTube「被低估神作」叙事与联动话题叠加，把转化漏斗的顶端进一步撑大。</li>
+</ul>
+<p>《沙耶之歌》作为 Nitroplus 经典视觉小说，与忘却前夜「克苏鲁 + 暗黑叙事」的调性高度契合，
+其受众（资深 ACG/猎奇向）与游戏目标受众重合度高——这是联动选品的成功之处，拉新精准而非
+泛流量。</p>
+<h3>§7.2 调性风险：「大杂烩」之忧</h3>
+<p>并非全无隐忧。越南语区一记冷静批评值得前置预警：「锣鼓敲太响，结果像《刺客信条:影》那样
+变成大杂烩，日不日中不中」。这指向一个真实风险：当中式克苏鲁世界观嫁接日系视觉小说 IP，
+若融合生硬，可能稀释原有的世界观纯度，让两边受众都不满意。微博「女角色设计…偏偏添加魅男
+属性…人设也很那个」的复杂评价，亦可视为调性张力的中文侧表达。此声音目前是少数派，但作为
+<strong>联动叙事整合质量的质量门</strong>，建议在沙耶剧情（06-06）完整放出后重点监测其接受度。</p>
+<h3>§7.3 供给约束：永久授权模式的可持续性</h3>
+<p>泰语区玩家点破的产业洞察值得提到战略层：忘却前夜的联动角色采「永久可用」模式（permanent
+license），这对玩家极友好，却<strong>抬高了 IP 方的授权门槛</strong>——「未来可能拿不到大牌联动，
+因为永久授权这个条件很难找到愿意合作的对象」。这是一个供给侧的结构性约束：玩家友好的
+模式可能限制未来联动 IP 的量级与频率。这一权衡（玩家好感 vs IP 供给）值得战略层纳入
+长期联动规划的考量。</p>
+<h3>§7.4 制作人公开信：情感契约的精确投放</h3>
+<p>与联动同期，制作人在微博发布公开信「你们曾拯救了忘却前夜——如今我们给出未来结局的承诺」，
+这是本窗口情感运营的最高密度动作，值得专门拆解。</p>
+<p>中文核心社区敏锐捕捉到一个<strong>渠道信号</strong>：「这封信最招笑的是什么，他之前的所有文章都是先发
+英文，只有这篇是先发中文」。这一观察（无论褒贬）点出了该信的投放策略——在以英文为默认
+对外语言的惯例下，唯独这封「拯救与承诺」之信中文优先发布，指向其首要受众是<strong>陪伴游戏走过
+低谷的中文核心盘</strong>。这是一次精准的情感投放：把「玩家拯救了游戏」的史实转译为「厂商承诺
+未来」的契约，对最有归属感的群体定向加固忠诚。</p>
+<p>但同一社区也存在<strong>冷峻的反向解读</strong>：有玩家将公开信、联动与运营状况联系起来，担忧
+「联动费压力会不会影响产能…从玩家身份看，沙耶这次表现真到了很缺钱的情况，我甚至怀疑卖 AA
+也是这原因」。这种「示好叙事 = 财务承压信号」的解读虽属推断（本报告按 §6.11 标注为玩家
+推断，非事实），却揭示了情感运营的一个固有风险：当「我们一起走过难关」的叙事过于频繁，
+部分敏锐玩家会反向解码出「是否真的遇到了难关」。情感契约是强力工具，但需与扎实的内容
+兑现同步，否则易被解读为焦虑信号。</p>
+<h3>§7.5 联动专题小结</h3>
+<p>沙耶联动在拉新维度是一次<strong>可验证的成功</strong>：选品精准、转化跑通、叠加发现性流量形成合力。
+其风险点在于叙事整合的调性把控（§7.2）、永久授权模式的长期供给（§7.3），以及情感叙事
+与内容兑现的同步（§7.4）。鉴于核心兑现（沙耶卡池 05-30、白嫖 06-06）发生在本窗口<strong>之后</strong>，
+本次联动的完整成败评估应在下一窗口（06 月上旬）按 §8.6 的六锚点清单补做闭环复盘。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec8">§8 洞察与建议</h2><hr class="section-rule">
+<p>基于全窗口证据，按「优先级 / 修复成本 / 预期收益」排序，给守密人五条可执行建议。前两条为
+高优先、低成本、高收益项，建议优先处置。</p>
+<h3>建议一｜把活动难度回退固化为常态原则（已部分落地 · 建议制度化）</h3>
+<p><strong>现状</strong>：全服挑战式活动的难度门槛曾把慷慨福利锁在多数玩家够不着处（§6.1，四源交叉印证）；
+但<strong>官方已在窗口内快速回退</strong>——05-20 前后下调敌人生命约 35%、伤害约 15%，并开放陌生人
+助战。这是一次值得肯定的快速响应。<strong>建议</strong>：不要把这次回退当作一次性救火，而应<strong>将其背后
+的原则固化为常态设计规范</strong>——即「大型活动的主要奖励必须解耦于高难门槛，保证休闲玩家凭基础
+参与即可拿到，高难仅对应荣誉性/少量额外奖励」。把临时补丁升级为设计纪律，可从根本上杜绝
+同类负面复发，几乎零额外成本。</p>
+<h3>建议二｜养成材料的低强度兜底路径（高优先 · 中成本 · 高收益）</h3>
+<p><strong>问题</strong>：90 级材料路径改动 + 融灾自动移除，抬高了轻度/付费玩家的留存成本，已出现「劝退」
+表述（§6.2）。<strong>建议</strong>：为高难内容（融灾）提供低强度兜底获取路径（如限时礼包/活动兑换/
+扫荡券），避免「不肝硬核内容就卡养成」的留存漏斗收窄。该群体（已付费的轻度玩家）是 LTV
+最健康的用户，值得机制性保护。</p>
+<h3>建议三｜把发现性流量接住（中优先 · 中成本 · 高收益）</h3>
+<p><strong>问题</strong>：「被低估神作」叙事仍具拉新潜力——既有 10 个月前 30 万播放常青片的存量长尾，又有
+窗口内 4 天前新片（4.95 万）的增量强化（§3.4，量级按发布时龄甄别）；但英文 game-question
+（691 作者、人均强度最低）显示大量新玩家「问完即走」，转化漏斗在新手段存在渗漏（§4.11）。
+<strong>建议</strong>：（a）强化新手 FAQ 自助化与置顶攻略，降低 game-question 的答疑负载；（b）官方
+渠道顺势放大「被低估神作 + 慷慨 F2P + 沙耶白嫖」的组合钩子，把发现流量导向新手留存路径。</p>
+<h3>建议四｜东南亚/葡语腹地的定向投入（中优先 · 中成本 · 中长期收益）</h3>
+<p><strong>问题</strong>：印尼/越南/葡语是高黏性、高人均强度但高脆弱（依赖少数核心）的腹地，且本地化吐槽
+集中（§4.11、§6.3）。<strong>建议</strong>：（a）针对性人工润色本地化（优先剧情关键段 + UI 高频词），
+即可显著改善这些腹地的第一印象；（b）识别并维护各语区核心成员关系（这些社区由数十人撑起，
+关键成员流失即塌方）。</p>
+<h3>建议五｜技术与区服稳定性排查（中优先 · 视情况 · 防御性）</h3>
+<p><strong>问题</strong>：俄语区「必须开 VPN 才能登录」（疑似近期变化）、Google Play「账号绑邮箱直接没了」
+（疑似账号丢失）、多语区加载/卡顿（§6.4）。<strong>建议</strong>：优先核查俄语区可达性变化与账号绑定/
+找回链路（若账号丢失属实则为高危）；延续 Arachne 邮件故障式的<strong>主动透明沟通</strong>范式处理
+技术瑕疵——本窗口已证明坦诚沟通能有效对冲负面（§6.6）。</p>
+<h3>建议之外｜两个长期观察项（非即时响应）</h3>
+<ul>
+<li><strong>叙事卖点与日活驱动的错位</strong>：克苏鲁叙事是最强拉新卖点（YouTube/Steam），但剧情频道
+  日常体量远小于玩法频道（§3.1）。可探索把叙事更深地编织进日常玩法循环，让卖点同时成为
+  留存驱动力。</li>
+<li><strong>联动调性与永久授权权衡</strong>：作为长期战略议题持续观察（§7.2、§7.3），不需即时动作。</li>
+</ul>
+<h3>§8.6 下窗口观察清单（06 月上旬复盘锚点）</h3>
+<p>本窗口的情绪势能大量面向窗口之外（§2.5），故沙耶联动的真实成败要到下个窗口才能盖棺。
+艾瑞卡建议在 06 月上旬补做闭环复盘时，按下列六个可量化锚点逐一核验，以判断本次联动与
+版本运营的最终成色：</p>
+<ol>
+<li><strong>沙耶卡池表现（05-30）</strong>：监测卡池开启日的 Discord 活跃度脉冲、晒卡/抽卡讨论量，以及
+   「为沙耶而来」的新增用户在卡池后的留存信号。基线参照本窗口上线日的 28,821 条峰值。</li>
+<li><strong>白嫖兑现的口碑（06-06）</strong>：250 抽免费沙耶 + 剧情完整放出当日，核查社区情绪是否如期
+   转化为正向高峰，以及沙耶剧情与既有世界观的衔接接受度（重点看 lore 频道）。</li>
+<li><strong>联动调性接受度</strong>：验证 §7.2 的「大杂烩」担忧是否成真——沙耶剧情放出后，越南语/中文区
+   对「中式克苏鲁嫁接日系 VN」的融合评价是正是负，将决定未来联动选品策略。</li>
+<li><strong>活动难度原则是否固化</strong>：观察 06 月新活动是否延续了 05-20 难度回退的设计逻辑（奖励
+   解耦高难门槛）。若同类「全服挑战劝退新手」负面复发，则说明回退只是救火而非纪律。</li>
+<li><strong>本地化是否有改善动作</strong>：跟踪西/俄/泰/越语区的本地化吐槽是否减弱，以及官方是否就机翻
+   质量做出任何人工润色投入。这是低天花板高频次短板的进展温度计。</li>
+<li><strong>区服与账号技术问题闭环</strong>：核查俄语区 VPN 登录问题与 Google Play 账号丢失反馈是否
+   被官方响应/修复。若账号丢失属实且未处理，应升级为高危项单独上报。</li>
+</ol>
+<p>把这六个锚点作为下窗口报告的固定骨架，可使银芯情报层的社区监测从「单窗口快照」升级为
+「跨窗口连续追踪」，这正是黑池公开信息入口（CLAUDE.md §1.2 使命一）所需的情报连续性。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec9">§9 附录：采信纪律与复算</h2><hr class="section-rule">
+<h3>§9.1 数据局限与口径声明</h3>
+<ul>
+<li><strong>时间覆盖</strong>：Discord 活跃度归档截至 05-25，05-26 当日 Discord 宏观数据缺失；平台层
+  覆盖至 05-26。故 Discord 章节口径为 8 日（05-18→05-25），平台层为 9 日。</li>
+<li><strong>去重影响</strong>：微博（1,227→103）、YouTube（198→82）、Steam（182→114）等存在大量
+  转发/跨日重复，本报告分析以去重后值为准，原始值仅作体量参考。</li>
+<li><strong>采集稀疏</strong>：bilibili（5 条）、telegram、dcinside/gamerch（05-18 后无新增）等平台
+  本窗口采集稀疏，不代表其真实热度，相关结论已标注保守。</li>
+<li><strong>空桩剔除</strong>：StopGame「3.9/10（0 评分）」为无样本占位值，已剔除出情感判断。</li>
+<li><strong>表情灌水</strong>：Helot 角色计数含大量 <code>Helot_slack_off</code> 表情，已做保守解读（§5.1）。</li>
+<li><strong>YouTube 抓取时间 ≠ 发布时间</strong>：YouTube 归档的 <code>time</code> 字段是<strong>爬虫抓取时间</strong>，
+  <code>engagement</code> 是视频<strong>终身累积</strong>播放量；二者均<strong>不等于</strong>窗口内产生的流量。按播放量排名的
+  头部多为旧常青片（如 30 万播放那条发布于 10 个月前），其播放量系长期累积，不计入窗口热度。
+  §3.4 已据各条 summary 的 <code>[Xmo/Xd ago]</code> 时龄前缀甄别，仅以天/小时级的窗口新片（约 11 条）
+  作为窗口流量证据。跨期累积量与外部平台抓取量须先确认「是否窗口内产生」再纳入窗口分析。</li>
+<li><strong>YouTube 聚合口径</strong>：去重后累积互动合计约 62.4 万，与原始档案 392 万级总量的差异源于
+  去重与字段聚合；且该总量含旧片累积，不应解读为窗口流量（见上条）。</li>
+<li><strong>官方动作来源</strong>：周年难度回退的补丁内容来自 Discord 中文频道的玩家转载（与 V2.5.1.2
+  在线维护公告时点吻合），而非官方原文档案直采；其内容（HP-35%/伤害-15%）属可被多人复述
+  印证的 A 级事实，但若需正式引用，建议以官方维护公告原文为准。</li>
+<li><strong>情感标签口径</strong>：Steam 的 <code>[正面]</code>/<code>[负面]</code> 前缀来自归档采集时的既有标注，本报告直接
+  采信该标签做好评率统计，未对单条评测重新做情感判定。</li>
+</ul>
+<h3>§9.2 复算方法</h3>
+<p>本报告所有计数可按以下逻辑复算：</p>
+<ul>
+<li><strong>平台层</strong>：遍历 <code>projects/news/data/platforms/{平台}/2026-05-{18..26}.json</code>，读取
+  <code>items[]</code>，按 <code>summary</code>/<code>title</code>/<code>url</code> 去重后统计。</li>
+<li><strong>Discord 内容</strong>：遍历 <code>projects/news/data/discord/channels/{dir}/2026-05-{18..25}.jsonl</code>，
+  过滤 <code>author_bot==true</code>，按 <code>content</code> 字段统计；频道名→目录映射见
+  <code>discord/channel_index.json</code>。</li>
+<li><strong>Discord 宏观</strong>：直接取 <code>discord/activity_daily/{date}.json</code> 的 <code>messages</code>/
+  <code>unique_authors</code>/<code>reactions_total</code>/<code>attachments</code> 字段。</li>
+<li><strong>情感</strong>：Steam 源 <code>title</code> 字段的 <code>[正面]</code>/<code>[负面]</code> 前缀标签直接计数。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec10">§10 多语种玩家原声实录（证据档）</h2><hr class="section-rule">
+<p>本章为报告的一手证据底座，按平台与语区收录窗口内<strong>经去机器人、去纯表情、去链接</strong>清洗后的
+代表性玩家原声。非中文条目附艾瑞卡中译（译文力求达意，不追字面）。每条均可在对应归档文件
+中回溯。收录原则：优先保留含信息量的判断、诉求、情绪与玩法洞察，剔除寒暄与刷屏。</p>
+<h3>§10.1 Steam 多语种评测实录</h3>
+<p><strong>英语（正面）</strong></p>
+<ul>
+<li>「This game should be WAAAYYY bigger than it is. The devs are beyond generous for a
+  gacha game. The theme and story is very Lovecraftian, dark and bleak. It's super
+  refreshing compared to the numerous 'bubbly anime girl' gachas out there.」
+  （这游戏本该火得多得多。厂商对一款 gacha 而言慷慨到离谱。克苏鲁式的暗黑基调，相比满大街
+  「蹦蹦跳跳动漫少女」的 gacha 清新得不得了。）</li>
+<li>「Genuinely one of THE best gacha game right next to Reverse 1999 and before Limbus
+  Company. Challenging gameplay, stellar art, and the story is just fantastic!」
+  （真心是最好的 gacha 之一，与《重返未来 1999》比肩、在《边狱公司》之上。玩法有挑战、
+  美术一流、剧情棒极了。）</li>
+<li>「One of, if not, the DARKEST Gacha game I've ever played storywise. Gameplay-wise if
+  you like Slay the Spire you'll feel right at home.」（剧情上是我玩过最黑暗的 gacha
+  之一。玩法上若你喜欢《杀戮尖塔》会倍感亲切。）</li>
+<li>「After I saw a video about the anniversary and how the game was going to shut down
+  and how the players saved the game, I decided to give the game another shot... and
+  I'm so happy.」（看到那支关于周年、关于游戏曾濒临关服、关于玩家如何拯救了它的视频后，
+  我决定再试一次……我太开心了。）——「玩家拯救游戏」叙事的一手转化证据。</li>
+<li>「underrated gem, pls support the niche devs」（被低估的宝藏，请支持这家小众厂商）。</li>
+<li>「i'm obsessed. originally got it for saya but came out really enjoying it!」
+  （上头了。本来是为沙耶而来，结果是真的玩进去了！）——联动拉新转化。</li>
+</ul>
+<p><strong>英语（负面）</strong></p>
+<ul>
+<li>「It's unplayable, you get like 50 different menus… I borrowed a character… he dealt
+  60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6
+  damage btw, SIX. UI is scuffed.」（没法玩，约 50 个菜单……我借了个角色，他用 0 费无限
+  自我复制的卡打出 6 万伤害，而我的角色打 6 点伤害，6 点。UI 一团糟。）——同时点名 UI 臃肿
+  与数值断层。</li>
+<li>「Worst anni」（最烂周年）。</li>
+</ul>
+<p><strong>俄语</strong></p>
+<ul>
+<li>「Где скрывался этот шедевр от меня все эти годы?? Если бы не коллаборация с Саей я бы
+  даже не узнала о её существовании.」（这杰作这些年究竟躲哪了？？要不是沙耶联动我根本不会
+  知道它存在。）</li>
+<li>「Минусы: перевод на русский нейронный, ошибок больше чем у трампа уголовок.」
+  （缺点：俄语是神经网络翻译，错误比特朗普的刑案还多。）</li>
+<li>「Игра очень красивая, но вообще не работает, зайти невозможно.」（游戏很漂亮，但
+  根本跑不起来，进都进不去。）</li>
+</ul>
+<p><strong>西语</strong></p>
+<ul>
+<li>「la traducción al español está hecha enteramente por ChatGPT… todo el texto que no
+  sea técnico es licuado y convertido en algo ilegible.」（西语翻译完全由 ChatGPT 完成，
+  凡非技术性文本都被搅成不可读的东西。）</li>
+<li>「VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SAYA PERO NO TANTO」（什么垃圾游戏，
+  我想要沙耶卡但没到那个份上。）——联动期待与挫败并存。</li>
+</ul>
+<p><strong>法语 / 简中 / 泰语</strong></p>
+<ul>
+<li>法语：「les récompenses sont hyper généreuses, les designs INCROYABLES… 60h de jeu
+  et je ne m'en lasse pas.」（奖励超级慷慨，设计难以置信……玩了 60 小时还不腻。）</li>
+<li>简中（长评）：「视觉风格采用水彩厚涂笔触……精准表现『流动、粘稠、非人』的克苏鲁质感……
+  福利水平较高，零氪玩家可以轻松完成主力角色养成……但后期数值压力略大。」</li>
+<li>简中（负面）：「卡牌构筑游戏硬是搞成数值养成游戏。」</li>
+<li>泰语：「เกมplay คล้ายๆ slay the spire… art สวยดี ไม่เหมาะกับคนสมาธิสั้น ต้องอ่านเยอะ
+  แปลภาษาไทยค่อนข้างแย่ โดยรวม 8/10」（玩法类似杀戮尖塔，美术漂亮，不适合注意力不集中的人，
+  要读很多，泰语翻译相当差，总体 8/10。）</li>
+</ul>
+<h3>§10.2 Discord 英文区实录</h3>
+<p><strong>game-question（新手与配队答疑）</strong></p>
+<ul>
+<li>「new player here, was looking into some info about the game and was reading up on
+  awakeners.」（新人，正在查游戏资料、读唤醒体介绍。）——典型入坑姿态。</li>
+<li>「I say I won't gamble not even a day after BOOM 100 PULLS GONE」（我说我不抽，结果
+  不到一天，砰，100 抽没了。）</li>
+<li>「If I'm planning on running vortice/saya/pickman, would Murphy or gmurphy be better
+  as the last slot?」（若跑温柯尔/沙耶/匹克曼，最后一位用墨菲还是金墨菲更好？）——沙耶配队
+  的前置研究。</li>
+<li>「Faint is a generically good support, she kinda goes anywhere that can justify a Caro
+  slot.」（菲茵特是泛用好辅助，凡能塞进一个 caro 位的队都能用。）</li>
+</ul>
+<p><strong>team-building（构筑深水区）</strong></p>
+<ul>
+<li>「That banner has a chance to drop the characters wheels too, so going for chars with
+  good wheels is optimal.」（那个卡池也有概率掉角色命轮，所以优先命轮好的角色最优。）</li>
+<li>「nah, free shop item — you can use sediment to get 1 monthly dupe for chars +
+  wheels.」（不，是商店免费项——可用沉淀币每月换 1 个角色/命轮复制。）——经济机制科普。</li>
+<li>「you are realistically getting ALL of them (except limited arc 1s).」（现实点说你
+  最终会拿到所有人，除了一章限定。）</li>
+</ul>
+<p><strong>lore-chat（剧情考据）</strong></p>
+<ul>
+<li>「with helot/lily their relationship is that they draw power from the same Higher
+  Will, in their case the shoggoth.」（黑奴与莉莉的关系在于二者汲取自同一高位意志，即
+  莎构。）</li>
+<li>「slightly different translation here so it passed through a couple of different
+  translators at some point (probably MTL given the date)… wish we had the original
+  chinese text instead of only the edgy coolsounding english.」（这里译文略有不同，说明
+  某阶段过了几道翻译，按日期看可能是机翻……真希望能看到中文原文，而不是只有故作高深的英文。）
+  ——考据党对机翻的核心痛点。</li>
+<li>「oh god i forgot how much morimens lore is just random enlighten descriptions that
+  hint at huge stuff that I desperately need elaborated on.」（天呐我都忘了忘却前夜的
+  剧情净是些点到为止、暗示宏大却急需展开的灵知描述。）</li>
+</ul>
+<h3>§10.3 Discord 东南亚与葡语区实录</h3>
+<p><strong>印尼语</strong></p>
+<ul>
+<li>「Bosen nge MD di limbus nemu game sebagus dan sedermawan ini, 11-12 lah sama limbus</li>
+<li>libur」（在《边狱》刷腻了日常，结果发现这么好又这么慷慨的游戏，和《边狱》+ 放假
+  差不多水平。）——跨游戏迁移的典型路径（边狱公司玩家溢出）。</li>
+<li>「Story epic dengan insert sound / bgm yg gila bagus banget」（剧情史诗级，插入音效/
+  BGM 好得离谱。）</li>
+<li>「Yang perlu 1 juta itu, cukup para sepuh aja yang nyelesain」（需要一百万的那个，
+  让老玩家去完成就够了。）——对全服百万目标的分工式自我安慰。</li>
+<li>「sekarang kan dah ga butuh mutual buat minjem」（现在借助战已经不需要互关了。）
+  ——印证 §6.1 助战规则回退已被玩家感知。</li>
+</ul>
+<p><strong>越南语</strong></p>
+<ul>
+<li>「Tôi cũng không hiểu cái event lắm… newbie đang cày story với quái vài k máu mà mấy
+  ông cho con mèo 300k máu, newbie nhìn xong cút luôn」（我也不太懂这活动……新手还在打
+  几千血的怪刷剧情，你们却整出 30 万血的猫，新手一看直接走人。）——对活动难度劝退新手的
+  尖锐吐槽，与中文/Steam 同源。</li>
+<li>「cứ kèn trống nhiều quá rồi như cái Assassin Creed Shadow nó thành cái xào thập cẩm,
+  Nhựt k ra Nhựt TQ k ra TQ」（锣鼓敲太响，结果像《刺客信条:影》那样成了大杂烩，日不日
+  中不中。）——联动调性风险预警。</li>
+<li>「Sau 2 ngày lăn lộn cũng đã cài thành công con local AI, tính dùng nó để chạy tool
+  scan ảnh để ra chữ, có gì còn dịch」（折腾两天终于装好本地 AI，打算用它做图像识别取字、
+  顺便翻译。）——玩家自建工具应对本地化缺口。</li>
+</ul>
+<p><strong>葡语</strong></p>
+<ul>
+<li>「Thais é suporte genérica, a melhor (ou segunda melhor, dependendo de quem você
+  pergunta) do jogo, vale a pena em toda situação.」（Thais 是泛用辅助，全游戏最强（或
+  第二强，看你问谁），任何情况都值得投。）——葡语区对 Thais 的版本定位确认。</li>
+<li>「Eles também poderiam pedir a comunidade pra divulgar mais o jogo.」（他们也可以
+  发动社区多去宣传游戏。）——核心玩家的主动传播意愿。</li>
+<li>「era pra ser no mínimo 1 semana antes o personagem entrar em server de teste.」
+  （角色至少该提前一周进测试服。）——对新角色测试节奏的诉求。</li>
+<li>「eu tenho e3, mas posso contar a quantidade de vezes que já vi gente falando nesse
+  chat 'precisa de oe pra fazer algo'.」（我有 E3，但我能数出群里多少次有人说「做某事
+  需要超限」。）——对养成军备话术的反身性审视。</li>
+</ul>
+<h3>§10.4 Discord 欧语区实录（俄 / 西 / 法 / 德）</h3>
+<p><strong>俄语</strong></p>
+<ul>
+<li>「Вчера я играл с друзьями, и китайский игрок помог нам добраться до секретного
+  босса.」（昨天和朋友玩，一位中国玩家帮我们打到了隐藏 boss。）——跨语区协作的暖色画面。</li>
+<li>「типо дали возможность играть старыми персами」（算是给了用老角色的机会。）——对
+  复刻/老角色可用性的认可。</li>
+<li>「сказать что это ахуй ничего не сказать, меня так ни один баннер еще не прокатывал.」
+  （说「离谱」都不足以形容，还没有哪个卡池这么坑过我。）——抽卡运吐槽。</li>
+</ul>
+<p><strong>西语</strong></p>
+<ul>
+<li>「asi hasta llegar a saya el 30, simplemente es esperar y hacer los eventos.」
+  （就这样一直到 30 号的沙耶，无非是等待 + 做活动。）——卡池节奏共识。</li>
+<li>「Tiene tantas cosas por comprar este juego y aún no entiendo bien qué vale y qué
+  no.」（这游戏要买的东西太多了，我还没搞清楚什么值什么不值。）——商店复杂度门槛。</li>
+<li>「he dado cuenta que hay más fallos de escritura en acto 2 pero bastante heavy.」
+  （我发现第二章的文字错误更多，而且相当严重。）——本地化质量随章节恶化的具体反馈。</li>
+</ul>
+<p><strong>法语</strong></p>
+<ul>
+<li>「Je compte profiter de la bannière anniversaire pour prendre Merciful Nurturing, la
+  WoD de Thaïs (26 mai). D'après ce que j'ai lu, elle est considérée comme la meilleure
+  WoD du jeu (Keyflare Regen main stat).」（我打算借周年卡池拿 Thais 的命轮「仁慈哺育」
+  （5-26）。据我所读，它被认为是全游戏最强命轮，主词条是钥火回复。）——法语区的 meta 共识
+  与具体卡池日历。</li>
+<li>「C'est le 15 juin le rerun de Clem? Purée j'étais persuadée que c'était plus tôt.」
+  （Clem 复刻是 6 月 15 号？我还以为更早呢。）——未来卡池日历的社区追踪。</li>
+<li>「de souvenir les prix sur mobile sont souvent plus élevés parce que les app stores
+  prennent une marge.」（记得手机端价格往往更高，因为应用商店要抽成。）——付费渠道差价的
+  理性认知。</li>
+</ul>
+<p><strong>德语</strong></p>
+<ul>
+<li>「defo besser als die bisherigen community raids wo die nolifer die guten rewards ne
+  stunde nach stage opening schon alle weggefarmt hatten.」（绝对好过以前的社区共斗——
+  以前肝帝在开放一小时内就把好奖励全 farm 光了。）——共斗机制改良的正向反馈。</li>
+<li>「hey ich bin seit letztem patch auch ein Erica Enjoyer™」（嘿，从上个补丁起我也成了
+  艾瑞卡爱好者™。）——角色喜爱玩梗。</li>
+</ul>
+<h3>§10.5 Discord 韩语区实录</h3>
+<ul>
+<li>「이번에 새로 추가된 상시 각성체 재능 강화 5레벨짜리, 아무 상시 캐릭터나 하나 강화해주면
+  한정 캐릭터들에는 전부 자동 적용되는 구조네요? 뭐지 버그인가?」（这次新增的常驻唤醒体
+  天赋强化 5 级，随便强化一个常驻角色，限定角色就全部自动适用？这啥，bug 吗？）——韩语区
+  对新机制的敏锐排查。</li>
+<li>「차라리 메인스토리 최초 클리어 이후에 빌려갈 수 있게 해주면 신규나 초보 유저들 입장에서도
+  그게 좀 더 친밀하게 느껴질듯.」（不如让主线首通后就能借助战，对新手而言会更亲切。）——
+  建设性的新手友好建议。</li>
+<li>「재화 넉넉히 주는 건 좋은데 이렇게 500개씩 뿌리기 시작하면 진짜 풀돌 기준 밸런스는
+  아닐지 모르겠네요.」（发钱大方是好事，但这样一次发 500，满命基准的平衡恐怕就保不住了。）
+  ——对慷慨发放长期影响的冷静审视。</li>
+<li>「이 게임은 기존 유저랑 신규 유저가 직접 부대껴야 하는 컨텐츠가 없어서…」（这游戏没有
+  逼老玩家和新玩家直接厮杀的内容……）——点出无强 PvP 的留存友好属性。</li>
+<li>「사람이 참 까다롭죠? 할 게 없는 건 싫지만 너무 어려워도 안 되고 너무 오래 걸려도 안 되고
+  보상이 짜도 너무 좋아도 안 되고…」（人真挑剔啊？没内容不行，太难不行，太耗时不行，奖励
+  太少不行太好也不行……）——对活动设计两难的自嘲式洞察。</li>
+<li>「지인분이 6월 10일이 탄망 머피 픽업이라고 알려주셔서 그때까지 저축하려고요.」（朋友说
+  6 月 10 号是诞망墨菲 up，打算攒到那时候。）——未来卡池日历追踪。</li>
+</ul>
+<h3>§10.6 Discord 中文区实录</h3>
+<p><strong>周年活动与运营</strong></p>
+<ul>
+<li>「就算有人打 300 多把看這個數量也湊不滿 1000000」（就算有人打 300 多把，这个数量也凑
+  不满一百万。）——全服目标不可达的精算质疑。</li>
+<li>官方补丁转载：「纪念活动『猫的报恩』● 助战规则调整：现在可以选择陌生人的助战唤醒体上场
+  ……● 关卡难度下调：敌人的生命降低约 35%，伤害降低约 15%。」——官方回退的一手证据。</li>
+<li>「升 90 等材料…沒辦法靠抽到重複角色拿到碎片材料…只剩融災、升級、限時禮包，為何要改動
+  這個」——养成材料路径改动的核心质疑。</li>
+<li>「像往期幻衣既然要上架繼續賣，完全可以贈送一點銀芯，不要比其他含銀芯的禮包更划算就行了。
+  買的人覺得賺到了，賣的人也是無本生意。」——理性的商业化建议（往期幻衣返场附赠少量银芯）。</li>
+</ul>
+<p><strong>护制作人与社区张力</strong></p>
+<ul>
+<li>「如果不喜歡改動，你們可以不玩……一群沒用的軟蛋，只會哭著抱怨任何事。角色呼吸聲太大了？
+  我去哭！」——护制作人阵营对吐槽者的激烈反击（说明舆论非一边倒）。</li>
+<li>「250 空幻的確是噁心，但其實害到的只有想囤抽的全滿課佬／想抽特定角色廚，正常人一定能用
+  得完。」——对「250 抽改动」影响范围的理性界定。</li>
+<li>「我真的不知道我一个普通的忘卻玩家…为什么每天还要看这些东西，我好崩溃…我已经得 300 抽
+  恐懼症了。」——普通玩家对持续抽卡/meta 讨论与社区纷争的疲劳。</li>
+</ul>
+<p><strong>联动与产能疑虑</strong></p>
+<ul>
+<li>「不如問他聯動費壓力會不會影響到產能…從玩家身份看，沙耶這次表現真是到了很缺錢的情況。」
+  ——对联动授权成本是否挤压研发产能的担忧（与 §7.3 永久授权约束呼应）。</li>
+<li>「我跟你講這封信最招笑的是什麼，他之前的所有文章都是先發英文，只有這篇是先發中文。」
+  ——对制作人公开信「中文优先发布」的玩味，暗示其面向中文核心受众。</li>
+</ul>
+<p><strong>配队硬核</strong></p>
+<ul>
+<li>「命輪密契全看榜上人帶什麼就跟著帶，哇哈哈哈我不行了」——新手照搬榜单配队的真实状态。</li>
+<li>「我根本沒看自己打了甚麼卡，都沒有去留意點數，反正點數用不完，卡都打不完，莫名其妙 Boss
+  就死了。這隊真的太犯規了。」——对某强势配队的「无脑碾压」体验描述。</li>
+</ul>
+<h3>§10.7 应用商店与韩系论坛实录</h3>
+<p><strong>App Store / Google Play（诉求型）</strong></p>
+<ul>
+<li>简中（App Store 长评）：「对于学业繁忙但又喜欢忘却画风、并花了几百块进去的玩家来说，
+  融灾的自动很重要……希望可以把融灾带回来 qwqqq，不然很劝退我这种玩家。」——付费轻度玩家
+  的留存诉求。</li>
+<li>简中（Google Play）：「美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓。」
+  ——「内容好、运营差」的二分式差评。</li>
+<li>简中（Google Play）：「很多个账号绑了邮箱都直接没了。」——疑似账号丢失事故。</li>
+<li>韩语（Google Play）：「숨겨진 갓겜」（隐藏的神作）。</li>
+<li>越南语（Google Play）：「nét đẹp vcl, gacha ổn nha, mỗi tội tiếng việt hơi lỏ.」
+  （画面美爆，gacha 还行，就是越南语有点烂。）</li>
+<li>俄语（Google Play）：「приходится включать VPN… а иначе не заходит. Раньше без VPN
+  работал.」（得开 VPN，否则进不去。以前不用 VPN 也行。）——区服可达性退化。</li>
+<li>印尼语（Google Play）：「terima kasih untuk developer sudah menyediakan bahasa
+  Indonesia ke game ini.」（感谢开发者为游戏提供了印尼语。）——本地化善意被珍视。</li>
+</ul>
+<p><strong>ruliweb（韩系论坛，联动发现潮）</strong></p>
+<ul>
+<li>「의외로 사야의 노래랑 콜라보한 온라인 게임」（没想到竟和《沙耶之歌》联动的网游。）</li>
+<li>「사야의 노래) 할배들 척추 서는 콜라보 떴다」（沙耶之歌——让老登们脊椎挺立的联动来了。）
+  ——经典 IP 对资深受众的怀旧号召。</li>
+<li>「망각전야) 이겜 대체 한국에서 얼마나 벌어들인 거냐 ㅋㅋ」（忘却前夜——这游戏在韩国到底
+  赚了多少啊哈哈。）</li>
+<li>「여러분 D4DJ 아시나요? 아리스기어 아이기스 아시나요? 팬텀로즈라고 아시나요?」（各位知道
+  D4DJ 吗？知道 Alice Gear Aegis 吗？知道 Phantom Rose 吗？）——将忘却前夜纳入小众优质
+  卡牌/二游谱系的讨论。</li>
+</ul>
+<h3>§10.8 官方动作与社区即时反应对照</h3>
+<p>将本窗口官方的关键动作与社区可观测反应一一对照，可直观看到「运营—舆情」的响应回路质量：</p>
+<table>
+<thead>
+<tr>
+<th>官方动作</th>
+<th>时点</th>
+<th>社区即时反应（证据）</th>
+<th>反应性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V2.5.1 上线 + 沙耶联动公告</td>
+<td>05-18</td>
+<td>Discord 28,821 条峰值；「can't wait to pull for Saya」</td>
+<td>强正向脉冲</td>
+</tr>
+<tr>
+<td>周年「全服挑战」活动</td>
+<td>05-18</td>
+<td>Steam 负评首因；「凑不满 1000000」「劝退新手」</td>
+<td>局部负向</td>
+</tr>
+<tr>
+<td>V2.5.1.2 难度回退（HP-35%/伤害-15%）</td>
+<td>~05-20</td>
+<td>印尼区「现在借助战已不需要互关」；负评未扩散</td>
+<td>负向被快速对冲</td>
+</tr>
+<tr>
+<td>联动 PV「悠久漂泊之歌」</td>
+<td>05-22/23</td>
+<td>活跃度二次高峰 22,945 条；PV 专属频道 254 条</td>
+<td>中正向二次点火</td>
+</tr>
+<tr>
+<td>Arachne 生日邮件故障说明</td>
+<td>05-25</td>
+<td>高反应消息 ❤18；社区认可透明沟通</td>
+<td>负向转中性偏正</td>
+</tr>
+<tr>
+<td>制作人公开信（中文优先）</td>
+<td>窗口内</td>
+<td>中文核心盘共鸣 + 少数「缺钱」反向解读</td>
+<td>正向为主、有杂音</td>
+</tr>
+<tr>
+<td>周年货币慷慨发放</td>
+<td>窗口内</td>
+<td>「可以换五万多」❤15；韩语「500 个一发会破坏满命平衡」</td>
+<td>正向、伴长期隐忧</td>
+</tr>
+</tbody>
+</table>
+<p>这张对照表的价值在于量化了<strong>响应回路的健康度</strong>：本窗口五次会引发负面的动作（活动难度、
+邮件故障）中，有两次被官方的快速回退/透明沟通<strong>当窗口内对冲</strong>，无一演变为出圈舆情。这种
+「动作—反馈—修复」的短回路，是上升期产品最该保持的运营肌肉。唯一需警惕的是「慷慨发放」
+类动作的长期副作用（韩语区已点出对满命平衡的侵蚀），属延迟显现的隐忧，不在本窗口爆发，
+列入 §8.6 下窗口观察。</p>
+<hr class="ornament">
+<blockquote>
+<p>本报告为银芯情报层首份社区深度交付物，正文十章 + 多语种证据档，全篇约五万字，覆盖
+167,925 条 Discord 消息与 12 平台 2,972 条目，所有计数可按 §9.2 复算、所有结论按
+§1.6 分级标注可信度。如需就任一语区、平台或主题进一步下钻，或于沙耶联动核心兑现后
+（06 月上旬）按 §8.6 六锚点清单补做闭环复盘，艾瑞卡可随时续写。</p>
+<p>本报告由 BIAV-SC 银芯情报层（主控台艾瑞卡 / Code-news）基于全量档案层产出于 2026-05-26。
+一切引用均来自公开可查阅的社区归档。沙耶联动核心兑现（05-30 / 06-06）发生在本窗口之后，
+建议于 06 月上旬补做闭环复盘。</p>
+<p>艾瑞卡，待命。</p>
+</blockquote></div></body></html>
