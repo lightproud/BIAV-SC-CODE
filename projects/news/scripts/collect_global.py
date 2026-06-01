@@ -258,13 +258,9 @@ try:
 except ImportError:
     MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
 
-# 稀疏源使用更宽时间窗口（与 split_output.SPARSE_SOURCES 保持同步）
+# 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
 SPARSE_MAX_AGE_HOURS = int(os.environ.get('SPARSE_MAX_AGE_HOURS', 30 * 24))
-SPARSE_SOURCES = {
-    'official', 'appstore', 'google_play', 'weixin', 'pixiv', 'stopgame',
-    'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live', 'bahamut',
-    'taptap', 'discord',
-}
+from sources import SPARSE_SOURCES
 
 
 def _is_recent(time_str: str, source: str = '') -> bool:
