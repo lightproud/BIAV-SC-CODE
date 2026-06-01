@@ -23,6 +23,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 import logging
 import requests
@@ -2091,7 +2092,7 @@ def run():
             OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
             with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
-        return
+        return False
 
     # Generate summary
     summary = generate_summary(unique_news)
@@ -2116,6 +2117,9 @@ def run():
     except ImportError:
         pass
 
+    return True
+
 
 if __name__ == '__main__':
-    run()
+    empty_run = run() is False
+    sys.exit(1 if empty_run else 0)
