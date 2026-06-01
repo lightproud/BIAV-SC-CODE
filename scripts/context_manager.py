@@ -138,9 +138,10 @@ def recommend_context(
 
     recommended = []
     for fp, data in sorted_candidates:
+        score = min(1.0, max(0.0, data["score"]))
         recommended.append({
             "file": fp,
-            "score": round(data["score"], 3),
+            "score": round(score, 3),
             "reason": "+".join(data["reasons"]),
         })
 

@@ -7,10 +7,11 @@ import os
 import time
 import hashlib
 
-OUT_DIR = r"C:\Users\light\brain-in-a-vat\extracted_lua\hook_capture"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUT_DIR = os.path.join(BASE_DIR, "extracted_lua", "hook_capture")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-LOG = open(r"C:\Users\light\brain-in-a-vat\_frida_hook_v2.log", "w", encoding="utf-8")
+LOG = open(os.path.join(BASE_DIR, "_frida_hook_v2.log"), "w", encoding="utf-8")
 
 def log(*a):
     msg = time.strftime("[%H:%M:%S] ") + " ".join(str(x) for x in a)
@@ -115,7 +116,7 @@ if (xluaL_loadbuffer) {
 
 # Preload existing hashes for dedup
 seen_hashes = set()
-for d in [OUT_DIR, r"C:\Users\light\brain-in-a-vat\extracted_lua\plaintext_from_memory"]:
+for d in [OUT_DIR, os.path.join(BASE_DIR, "extracted_lua", "plaintext_from_memory")]:
     if not os.path.isdir(d):
         continue
     for f in os.listdir(d):

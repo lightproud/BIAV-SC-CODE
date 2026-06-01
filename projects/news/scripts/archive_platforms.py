@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-多平台按日归档脚本 — 将 *-latest.json 快照按日期存入 data/platforms/
+多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/
 
 存储结构:
   projects/news/data/platforms/
@@ -40,22 +40,26 @@ Discord 不在此处理（已有 discord_archiver.py 独立归档）。
 
 import argparse
 import json
+import sys
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sources import ARCHIVE_PLATFORMS, normalize_source
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
-# Discord has its own archiver — skip it here
-PLATFORMS = [
-    'steam', 'steam_review', 'steam_discussion', 'bilibili', 'official', 'reddit', 'youtube', 'nga', 'taptap',
-    'weibo', 'zhihu', 'bahamut',
-    'naver_cafe', 'arca_live', 'fivech',
-    'appstore', 'google_play',
-    'pixiv', 'telegram',
-    'note_com', 'ruliweb', 'stopgame', 'weixin',
-]
+# 全量层数据源：优先读 news-raw.json（collect_global 写的未过滤合并集），
+# 回退 news.json。两者都绕开 split 的展示层时窗过滤；raw 进一步绕开 collect_global
+# 的滚动窗口过滤，让被时窗砍掉的新鲜条目也能落档（真·全量层）。
+RAW_NEWS = OUTPUT_DIR / 'news-raw.json'
+INPUT_NEWS = OUTPUT_DIR / 'news.json'
+
+# Discord 有独立归档器（discord_archiver.py），此处跳过
+PLATFORMS = ARCHIVE_PLATFORMS
 
 
 def item_key(item: dict) -> str:
@@ -66,13 +70,27 @@ def item_key(item: dict) -> str:
     return f"{item.get('title', '')}|{item.get('time', '')}|{item.get('author', '')}"
 
 
-def load_latest(platform: str) -> dict:
-    """Load the *-latest.json for a platform."""
-    path = OUTPUT_DIR / f'{platform}-latest.json'
+def load_news() -> list[dict]:
+    """Load the full-layer archive source: news-raw.json if present, else news.json."""
+    path = RAW_NEWS if RAW_NEWS.exists() else INPUT_NEWS
     if not path.exists():
-        return {}
+        return []
     with open(path, encoding='utf-8') as f:
-        return json.load(f)
+        return json.load(f).get('news', [])
+
+
+def item_date_utc8(item: dict, fallback: str) -> str:
+    """Return the item's own date (UTC+8). Falls back when timestamp absent."""
+    t = item.get('time', '')
+    if not t:
+        return fallback
+    try:
+        dt = datetime.fromisoformat(t)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return (dt + timedelta(hours=8)).strftime('%Y-%m-%d')
+    except (ValueError, TypeError):
+        return fallback
 
 
 def load_existing_archive(platform: str, date_str: str) -> dict:
@@ -106,44 +124,13 @@ def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]
     return merged
 
 
-def archive_platform(platform: str, date_str: str) -> int:
-    """Archive a single platform's data for a given date. Returns item count."""
-    latest = load_latest(platform)
-    items = latest.get('items', [])
-
-    if not items:
-        return 0
-
-    # Filter items matching the target date (by their time field)
-    date_items = []
-    for item in items:
-        t = item.get('time', '')
-        if not t:
-            continue
-        try:
-            dt = datetime.fromisoformat(t)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            item_date = (dt + timedelta(hours=8)).strftime('%Y-%m-%d')  # UTC+8
-            if item_date == date_str:
-                date_items.append(item)
-        except (ValueError, TypeError):
-            continue
-
-    # If no date-specific items, archive all items under today
-    # (some platforms like official don't have precise timestamps)
-    if not date_items:
-        date_items = items
-
-    # Merge with existing archive
+def write_archive(platform: str, date_str: str, new_items: list[dict]) -> int:
+    """Merge new_items into the (platform, date) archive file. Returns final count."""
     existing = load_existing_archive(platform, date_str)
-    existing_items = existing.get('items', [])
-    merged = merge_items(existing_items, date_items)
-
+    merged = merge_items(existing.get('items', []), new_items)
     if not merged:
         return 0
 
-    # Write archive file
     platform_dir = ARCHIVE_DIR / platform
     platform_dir.mkdir(parents=True, exist_ok=True)
 
@@ -154,12 +141,35 @@ def archive_platform(platform: str, date_str: str) -> int:
         'item_count': len(merged),
         'items': merged,
     }
-
-    path = platform_dir / f'{date_str}.json'
-    with open(path, 'w', encoding='utf-8') as f:
+    with open(platform_dir / f'{date_str}.json', 'w', encoding='utf-8') as f:
         json.dump(archive_data, f, ensure_ascii=False, indent=2)
-
     return len(merged)
+
+
+def archive_all(target_date: str | None, fallback_date: str) -> dict[str, int]:
+    """Archive every item in news.json under (normalized source, its own UTC+8 date).
+
+    Reading the merged news.json (not the time-window-filtered *-latest.json) keeps
+    the archive a true full layer, and per-item date bucketing removes the midnight
+    boundary loss + mislabeled-date fallback of the old single-date logic.
+
+    target_date 非空时只归档该日；为空时归档 news.json 内出现的全部日期。
+    """
+    groups: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for raw in load_news():
+        src = normalize_source(raw.get('source', 'unknown'))
+        if src == 'discord':  # 独立归档器处理
+            continue
+        d = item_date_utc8(raw, fallback_date)
+        if target_date and d != target_date:
+            continue
+        groups[(src, d)].append(raw)
+
+    totals: dict[str, int] = defaultdict(int)
+    for (src, d), items in groups.items():
+        write_archive(src, d, items)
+        totals[src] += len(items)
+    return totals
 
 
 def show_stats():
@@ -218,25 +228,21 @@ def main():
         show_stats()
         return
 
-    if args.date:
-        date_str = args.date
-    else:
-        now_utc8 = datetime.now(timezone.utc) + timedelta(hours=8)
-        date_str = now_utc8.strftime('%Y-%m-%d')
+    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
 
-    print(f'归档日期：{date_str}')
+    if args.date:
+        print(f'归档日期（限定）：{args.date}')
+    else:
+        print('归档日期：news.json 内全部日期（全量分桶）')
     print(f'归档目录：{ARCHIVE_DIR}/\n')
 
-    total = 0
-    for platform in PLATFORMS:
-        count = archive_platform(platform, date_str)
-        if count > 0:
-            print(f'  {platform:12s}  {count} 条')
-            total += count
-        else:
-            print(f'  {platform:12s}  (无数据)')
+    totals = archive_all(target_date=args.date, fallback_date=today)
+    if not totals:
+        print('  (news.json 无可归档数据)')
+    for platform in sorted(totals):
+        print(f'  {platform:12s}  {totals[platform]} 条')
 
-    print(f'\n完成，共归档 {total} 条。')
+    print(f'\n完成，共归档 {sum(totals.values())} 条，覆盖 {len(totals)} 个源。')
 
 
 if __name__ == '__main__':
