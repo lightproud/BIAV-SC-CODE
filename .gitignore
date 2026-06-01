@@ -55,3 +55,7 @@ memory/session-digests/*.json
 # 但不入 git，避免反复 commit 噪音。
 memory/session-digests/*.jsonl
 memory/session-digests/*.progress.jsonl
+
+# frida hook 逆向工具临时产出（extracted_lua/ 下已入库的文件不受影响）
+extracted_lua/hook_capture/
+extracted_lua/plaintext_from_memory/

@@ -117,10 +117,7 @@ def update_semantic_index(keyword_index: dict, ai_insights: dict = None):
     if ai_insights:
         index_data["ai_insights"] = ai_insights
 
-    SEMANTIC_INDEX.write_text(
-        json.dumps(index_data, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(SEMANTIC_INDEX, json.dumps(index_data, ensure_ascii=False, indent=2))
     return str(SEMANTIC_INDEX.relative_to(REPO))
 
 
@@ -166,7 +163,7 @@ def run_phase1() -> dict:
     try:
         from boot_snapshot import generate_snapshot
         snapshot_path = REPO / "memory" / "boot-snapshot.md"
-        snapshot_path.write_text(generate_snapshot() + "\n", encoding="utf-8")
+        write_text_atomic(snapshot_path, generate_snapshot() + "\n")
         print("  Boot snapshot updated")
     except Exception as e:
         print(f"  Boot snapshot failed: {e}")

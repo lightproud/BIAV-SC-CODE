@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-26T08:49:43.752741+00:00",
+  "updated_at": "2026-06-01T13:16:46.603939+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1329,6 +1329,14 @@
       "parent_id": null,
       "position": 1,
       "topic": "**WARNING, DON'T POST IMAGES IN THIS CHANNEL OR YOU WILL BE AUTOMATICALLY BANNED.\nTHIS IS AN ANTI-SPAM CHANNEL**"
+    },
+    {
+      "id": "1509389887080632330",
+      "name": "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives",
+      "type": 0,
+      "parent_id": "1131791637933199471",
+      "position": 150,
+      "topic": null
     }
   ]
 }

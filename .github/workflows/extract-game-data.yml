@@ -17,6 +17,10 @@ on:
         default: 'true'
         type: boolean
 
+concurrency:
+  group: extract-game-data-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
