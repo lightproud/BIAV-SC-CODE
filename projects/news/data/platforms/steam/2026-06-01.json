@@ -1,8 +1,8 @@
 {
   "date": "2026-06-01",
-  "archived_at": "2026-06-01T08:26:42.803611+00:00",
+  "archived_at": "2026-06-01T14:52:24.418737+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,66 @@
       "review": "good roguelike game. good combos, good compos, good design. i like the fact its also a gatcha.\n\ni dont care about the story tho, id like to completely skip it. and the translation is a bit bad.",
       "timestamp_created": 1780281492,
       "playtime_forever": 46
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T13:34:36+00:00",
+      "lang": "italian",
+      "title": "[正面] Probabilmente il miglior gatcha che ho provato neg...",
+      "summary": "Probabilmente il miglior gatcha che ho provato negli ultimi anni. La componente PTW è pressoché assente e si può progredire nel gioco senza alcun problema. La storia predne molti influssi da Lovecraft e autori simili, è intrigante ed è accompagnata da un gameplay deckbuilder semplice, intuitivo e sopratutto appagante. Le visual art dei personaggi, sfondi etc sono incredibili, esattamente come è incredibile la musica e le colonne sonore.",
+      "url": "https://steamcommunity.com/profiles/76561198844669999/recommended/3052450",
+      "author": "76561198844669999",
+      "engagement": 0,
+      "language": "italian",
+      "voted_up": true,
+      "review": "Probabilmente il miglior gatcha che ho provato negli ultimi anni. La componente PTW è pressoché assente e si può progredire nel gioco senza alcun problema. La storia predne molti influssi da Lovecraft e autori simili, è intrigante ed è accompagnata da un gameplay deckbuilder semplice, intuitivo e sopratutto appagante. Le visual art dei personaggi, sfondi etc sono incredibili, esattamente come è incredibile la musica e le colonne sonore.",
+      "timestamp_created": 1780320876,
+      "playtime_forever": 2078
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T12:21:49+00:00",
+      "lang": "english",
+      "title": "[正面] I was always very fascinated with gacha games. I m...",
+      "summary": "I was always very fascinated with gacha games. I mean How can such a huge genre not have a single good game? It truly fascinated me, so I kept searching. And then I found Morimens through some random youtube documentary.\n\nThe gameplay actually feels good and satisfying (unlike other gachas which have a very cheap feel, especially those 3d open world games). It is very reminiscent of Slay the Spire, so if you like that I can not encourage you enough to try this game.\n\nThe story is compelling and interesting with the MC actually being a character instead of a self insert like in other gachas. This makes it so he/she actually has a personality. I absolutely enjoyed reading through these visual novels! I am only 4 chapters in and I can't wait to see what awaits me in the future.\n\nAlso the gacha side seems very generous with it rewarding large amounts of Silver (pull currency). You also get HUGE amounts of standard pulls, like hundreds within a week or two of playing (especially if you enter the promo codes you can find online or in their discord)",
+      "url": "https://steamcommunity.com/profiles/76561199048714939/recommended/3052450",
+      "author": "76561199048714939",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I was always very fascinated with gacha games. I mean How can such a huge genre not have a single good game? It truly fascinated me, so I kept searching. And then I found Morimens through some random youtube documentary.\n\nThe gameplay actually feels good and satisfying (unlike other gachas which have a very cheap feel, especially those 3d open world games). It is very reminiscent of Slay the Spire, so if you like that I can not encourage you enough to try this game.\n\nThe story is compelling and interesting with the MC actually being a character instead of a self insert like in other gachas. This makes it so he/she actually has a personality. I absolutely enjoyed reading through these visual novels! I am only 4 chapters in and I can't wait to see what awaits me in the future.\n\nAlso the gacha side seems very generous with it rewarding large amounts of Silver (pull currency). You also get HUGE amounts of standard pulls, like hundreds within a week or two of playing (especially if you enter the promo codes you can find online or in their discord)",
+      "timestamp_created": 1780316509,
+      "playtime_forever": 3312
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T12:17:45+00:00",
+      "lang": "english",
+      "title": "[正面] really good",
+      "summary": "really good",
+      "url": "https://steamcommunity.com/profiles/76561198041758338/recommended/3052450",
+      "author": "76561198041758338",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "really good",
+      "timestamp_created": 1780316265,
+      "playtime_forever": 97
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T09:43:00+00:00",
+      "lang": "english",
+      "title": "[正面] I didn't even know this game existed... and then t...",
+      "summary": "I didn't even know this game existed... and then they added Saya and well uh yeah now I know it exists.\nThe art style is amazing, the characters so creative.\nPlays like slay the spire (I never played it), a card game with blocks and attacks and all that stuff.",
+      "url": "https://steamcommunity.com/profiles/76561198219982712/recommended/3052450",
+      "author": "76561198219982712",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I didn't even know this game existed... and then they added Saya and well uh yeah now I know it exists.\nThe art style is amazing, the characters so creative.\nPlays like slay the spire (I never played it), a card game with blocks and attacks and all that stuff.",
+      "timestamp_created": 1780306980,
+      "playtime_forever": 198
     }
   ]
 }

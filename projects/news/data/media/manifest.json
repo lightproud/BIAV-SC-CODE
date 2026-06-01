@@ -7881,6 +7881,76 @@
       "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
       "time": "2026-05-31T10:23:50.464398+00:00",
       "downloaded_at": "2026-06-01T08:26:42.733702+00:00"
+    },
+    "https://i.ytimg.com/vi/UWJSpnonNCI/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhMIFQoZTAP&rs=AOn4CLD2xCp7AEubD9U4sxlVbm0YfjaYtw": {
+      "filename": "youtube_023d46607e5b5191.jpg",
+      "source": "youtube",
+      "title": "忘却前夜　沙耶3凸でいろいろ試す。イベント札も完凸したからやっと餅と一緒に試せるな！",
+      "time": "2026-05-31T18:49:19.613553+00:00",
+      "downloaded_at": "2026-06-01T14:52:11.698250+00:00"
+    },
+    "https://i.ytimg.com/vi/0OJ9dBJKLMA/hq720.jpg?v=6a1d99e9&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBuobHNhWBXU0fax531wKfEvoInA": {
+      "filename": "youtube_688eb544839fc94d.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Impromptu Spreadsheet/Minor Coaching Stream while I take a break from funeral prepping.",
+      "time": "2026-06-01T14:49:18.892960+00:00",
+      "downloaded_at": "2026-06-01T14:52:18.470993+00:00"
+    },
+    "https://i.ytimg.com/vi/iPSUXUaDDfg/hq720.jpg?v=6a1d8fb8&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVu5XnipzVm3eKMrBzb8inzgJrDg": {
+      "filename": "youtube_bb828757caa90269.jpg",
+      "source": "youtube",
+      "title": "【Morimens】忘却前夜",
+      "time": "2026-06-01T14:49:19.613510+00:00",
+      "downloaded_at": "2026-06-01T14:52:18.899939+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/42/24/145488306_p0_square1200.jpg": {
+      "filename": "pixiv_98f4f6094047ad3f.jpg",
+      "source": "pixiv",
+      "title": "沙耶",
+      "time": "2026-06-01T21:42:24+09:00",
+      "downloaded_at": "2026-06-01T14:52:19.666776+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/36/44/145488029_p0_square1200.jpg": {
+      "filename": "pixiv_9a78c2da673d3072.jpg",
+      "source": "pixiv",
+      "title": "月下",
+      "time": "2026-06-01T21:36:44+09:00",
+      "downloaded_at": "2026-06-01T14:52:20.438229+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/18/01/145487097_p0_square1200.jpg": {
+      "filename": "pixiv_3154d86602319856.jpg",
+      "source": "pixiv",
+      "title": "降り立つ",
+      "time": "2026-06-01T21:18:01+09:00",
+      "downloaded_at": "2026-06-01T14:52:21.223511+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/01/36/145486249_p0_square1200.jpg": {
+      "filename": "pixiv_577a7b968116e439.jpg",
+      "source": "pixiv",
+      "title": "風に乗る",
+      "time": "2026-06-01T21:01:36+09:00",
+      "downloaded_at": "2026-06-01T14:52:21.992863+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/00/09/145486043_p0_square1200.jpg": {
+      "filename": "pixiv_62bc3e3ffc82ca2b.jpg",
+      "source": "pixiv",
+      "title": "旅立ち",
+      "time": "2026-06-01T21:00:09+09:00",
+      "downloaded_at": "2026-06-01T14:52:22.767119+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/20/58/49/145485946_p0_square1200.jpg": {
+      "filename": "pixiv_35897ff1635c380a.jpg",
+      "source": "pixiv",
+      "title": "沙耶",
+      "time": "2026-06-01T20:58:49+09:00",
+      "downloaded_at": "2026-06-01T14:52:23.574931+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/20/50/41/145485550_p0_square1200.jpg": {
+      "filename": "pixiv_9d8049317d0ba807.jpg",
+      "source": "pixiv",
+      "title": "沙耶",
+      "time": "2026-06-01T20:50:41+09:00",
+      "downloaded_at": "2026-06-01T14:52:24.346100+00:00"
     }
   },
   "failed": {
@@ -12463,6 +12533,101 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-31T23:59:21.206787+00:00"
+    },
+    "https://preview.redd.it/19cbouyi0o4h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=0d094cf485bf8a8b2ce796752ee33a1919ae1187": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:12.185194+00:00"
+    },
+    "https://preview.redd.it/tecaqxbusn4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6c95eead8dec4dd79b51cb36f755649c46ef4db8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:12.512099+00:00"
+    },
+    "https://preview.redd.it/h9hqbjfpuk4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6f07484d4c5f41562b7a16c156e4c2b587b456ac": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:12.843145+00:00"
+    },
+    "https://preview.redd.it/y4iu7avden4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=895fe907b6cb2ababa56460e7f6f80ff41689ecf": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:13.172254+00:00"
+    },
+    "https://preview.redd.it/tu8vn2j53l4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f77a3c5c7eaa105137f41deca26fc055c236dcf0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:13.504550+00:00"
+    },
+    "https://preview.redd.it/oesytfospl4h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=ab466133e10c856069f7e4f3f31311cc55e4300b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:13.831094+00:00"
+    },
+    "https://preview.redd.it/8f2j1d8x8o4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7556badf2c2a87a9beab07530dcf3483b645a2b1": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:14.158712+00:00"
+    },
+    "https://preview.redd.it/c0ecwpt9oo4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=cc2d4ef390d4cde3bcc0f9e5cc034d73c1c8cf26": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:14.487543+00:00"
+    },
+    "https://preview.redd.it/v0buktdicl4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3bfef7a176199bee612861c38d1bd6bd5d2aa211": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:14.813796+00:00"
+    },
+    "https://preview.redd.it/sfzf66ydym4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6c83f75686fc6b0f0a9693701b92f7ee875dd2bc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:15.146296+00:00"
+    },
+    "https://external-preview.redd.it/Y3dlM3RldDQ5bTRoMRAthQcZ6XHNVw8I2DU5ut1BafZMEJJw-kMVtQoSfDPV.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=39b1f6e80138286c6d9b5e15b7da09af914c2248": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:15.485651+00:00"
+    },
+    "https://preview.redd.it/84so3tafao4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=85948f677fa4fbdb8b41d64afd1c946b422a985a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:15.810767+00:00"
+    },
+    "https://preview.redd.it/mlwv2ghqpl4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7512dac2c81fd41da236fcf683a3520e0fece18d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:16.137362+00:00"
+    },
+    "https://preview.redd.it/f0dztrrwfo4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a6fea1e91a864ec1ed795730117fccfe49d8abd8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:16.462804+00:00"
+    },
+    "https://preview.redd.it/391eqxtedl4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ad5464024ae89acdf7590326a5485995fa75a142": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:16.789443+00:00"
+    },
+    "https://preview.redd.it/8bu76nrdhm4h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=afe6138561eca91f17f557a0edcad99f00089a11": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:17.116098+00:00"
+    },
+    "https://preview.redd.it/4hez3mlugo4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6d677f7651593ca80096e729ef7eb11f7a261e60": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:17.445519+00:00"
+    },
+    "https://preview.redd.it/999gh7azvm4h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=34e25ebbb8865a230d4e5227ab826e4367fbf2f0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:17.774438+00:00"
+    },
+    "https://preview.redd.it/fes0coefwm4h1.jpg?width=140&amp;height=126&amp;auto=webp&amp;s=6aaeca23ea0d3b4f82acffe4a5907e51370810fe": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-01T14:52:18.100440+00:00"
     }
   },
   "archived": []
