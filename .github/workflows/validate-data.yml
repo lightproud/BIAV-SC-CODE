@@ -16,6 +16,9 @@ concurrency:
   group: validate-data-${{ github.ref }}
   cancel-in-progress: false
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
