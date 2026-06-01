@@ -24,6 +24,8 @@ from pathlib import Path
 from text_utils import tokenize as tokenize_text
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+from io_utils import write_text_atomic
 FACTS_FILE = REPO / "memory" / "facts.json"
 TODAY = date.today()
 
@@ -93,11 +95,7 @@ def load_facts() -> list[dict]:
 
 def save_facts(facts: list[dict]):
     """Save facts to disk."""
-    FACTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    FACTS_FILE.write_text(
-        json.dumps(facts, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(FACTS_FILE, json.dumps(facts, ensure_ascii=False, indent=2))
 
 
 def find_duplicate(new_fact: str, existing_facts: list[dict]) -> tuple[int, float]:

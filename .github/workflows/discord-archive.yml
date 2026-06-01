@@ -17,6 +17,10 @@ on:
         required: false
         default: ''
 
+concurrency:
+  group: discord-archive-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -24,6 +28,7 @@ jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
 

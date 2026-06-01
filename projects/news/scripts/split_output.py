@@ -50,42 +50,7 @@ OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────
 # bilibili_articles / bilibili_dynamic 都归入 bilibili
-SOURCE_ALIASES: dict[str, str] = {
-    'bilibili_articles': 'bilibili',
-    'bilibili_dynamic': 'bilibili',
-    'steam_review': 'steam',
-}
-
-KNOWN_SOURCES = [
-    'bilibili',
-    'steam',
-    'taptap',
-    'discord',
-    'youtube',
-    'reddit',
-    'nga',
-    'official',
-    'steam_discussion',
-    # 全球扩展平台
-    'weibo',
-    'zhihu',
-    'bahamut',
-    'naver_cafe',
-    'arca_live',
-    'fivech',
-    'appstore',
-    'google_play',
-    'pixiv',
-    'telegram',
-    # 日语扩展
-    'note_com',
-    # 韩语扩展
-    'ruliweb',
-    # 俄语平台
-    'stopgame',
-    # 中文补充
-    'weixin',
-]
+from sources import KNOWN_SOURCES, SOURCE_ALIASES, SPARSE_SOURCES, normalize_source
 
 
 # Adaptive: match the lookback window used by collectors
@@ -96,26 +61,8 @@ except ImportError:
     _default_hours = 24
 MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
 
-# 稀疏源使用更宽时间窗口（评论流 / 官方公告 / 同人作品天然不会每日产出）
+# 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
 OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
-SPARSE_SOURCES = {
-    # 官方公告（每周到每月一次）
-    'official',
-    # 应用商店评论（24h 内通常 0 条新评论）
-    'appstore', 'google_play',
-    # 微信公众号文章（搜狗索引延迟 + 公众号每周更新）
-    'weixin',
-    # Pixiv 同人作品（日产出 0-3 条）
-    'pixiv',
-    # 长评测站（评测每月级别）
-    'stopgame',
-    # 公开版块的低频讨论平台（评论/帖子稀疏）
-    'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live',
-    'bahamut', 'taptap',
-    # Discord —— fetch_discord_local 总是读 yesterday's JSONL（today 还没归档），
-    # daily summary 时间戳是 yesterday 00:00；24h 时窗会砍光全部
-    'discord',
-}
 # 旧名保留向后兼容
 OFFICIAL_SOURCES = SPARSE_SOURCES
 
@@ -131,10 +78,6 @@ def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
         return (datetime.now(timezone.utc) - dt) < timedelta(hours=max_hours)
     except (ValueError, TypeError):
         return False
-
-
-def normalize_source(raw: str) -> str:
-    return SOURCE_ALIASES.get(raw, raw)
 
 
 def extract_item(raw: dict) -> dict:
