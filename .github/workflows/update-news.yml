@@ -6,6 +6,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+concurrency:
+  group: update-news-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -13,6 +17,7 @@ jobs:
   update:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
 
@@ -73,6 +78,12 @@ jobs:
 
       - name: Refresh silent-source health report
         run: python projects/news/scripts/silent_sources_audit.py --write
+
+      - name: Core-source health gate (non-blocking alarm)
+        # 核心源（nga/taptap/bilibili 等）零产出 / 长期沉默时此步标红，
+        # 但 continue-on-error 不阻断归档提交，仅作可见告警（采集故障可见化）。
+        continue-on-error: true
+        run: python projects/news/scripts/silent_sources_audit.py --strict
 
       - name: Commit and push if changed
         run: |
