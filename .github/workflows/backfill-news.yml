@@ -16,6 +16,10 @@ on:
         default: '5'
         type: string
 
+concurrency:
+  group: backfill-news-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
