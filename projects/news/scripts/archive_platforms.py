@@ -52,9 +52,10 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
-# 全量层数据源：读未经 split 时窗过滤的 news.json（merged 层），而非 *-latest.json。
-# split_output 的时间窗只服务于「展示层」，把它当归档源会让被砍条目永不落档（lesson:
-# 全量层名不副实）。改读 news.json 后，归档按每条目真实日期分桶，天然全量。
+# 全量层数据源：优先读 news-raw.json（collect_global 写的未过滤合并集），
+# 回退 news.json。两者都绕开 split 的展示层时窗过滤；raw 进一步绕开 collect_global
+# 的滚动窗口过滤，让被时窗砍掉的新鲜条目也能落档（真·全量层）。
+RAW_NEWS = OUTPUT_DIR / 'news-raw.json'
 INPUT_NEWS = OUTPUT_DIR / 'news.json'
 
 # Discord 有独立归档器（discord_archiver.py），此处跳过
@@ -70,10 +71,11 @@ def item_key(item: dict) -> str:
 
 
 def load_news() -> list[dict]:
-    """Load the merged, pre-split news.json items (全量层数据源)。"""
-    if not INPUT_NEWS.exists():
+    """Load the full-layer archive source: news-raw.json if present, else news.json."""
+    path = RAW_NEWS if RAW_NEWS.exists() else INPUT_NEWS
+    if not path.exists():
         return []
-    with open(INPUT_NEWS, encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         return json.load(f).get('news', [])
 
 
