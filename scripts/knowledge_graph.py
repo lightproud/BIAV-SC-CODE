@@ -633,17 +633,58 @@ def load_graph() -> dict | None:
         return None
 
 
+def _build_name_index(graph: dict) -> None:
+    """Build an inverted name index on graph in-place (not persisted to disk).
+
+    graph["_name_index"]: {lowercased_name_or_alias -> [node_id, ...]}
+
+    Called lazily by find_node() on first access.  The index is stored as a
+    plain dict on the in-memory graph object; json.dumps/load round-trips
+    intentionally exclude it (no schema pollution, no stale-index risk after
+    incremental_update adds nodes).
+    """
+    index: dict[str, list[str]] = defaultdict(list)
+    for nid, node in graph["nodes"].items():
+        name_lower = node.get("name", "").lower()
+        if name_lower:
+            index[name_lower].append(nid)
+        for alias in node.get("properties", {}).get("aliases", []):
+            alias_lower = alias.lower()
+            if alias_lower:
+                index[alias_lower].append(nid)
+    graph["_name_index"] = dict(index)
+
+
 def find_node(graph: dict, query: str) -> list[dict]:
-    """Find nodes matching a query string."""
+    """Find nodes matching a query string.
+
+    Exact name/alias hits are resolved via an inverted index (O(1) per lookup).
+    Substring and node-ID matches fall back to linear scan, preserving the
+    original result set and sort order (exact > partial > id).
+    """
+    # Lazily build the name index on first call for this graph object.
+    if "_name_index" not in graph:
+        _build_name_index(graph)
+
     query_lower = query.lower()
     matches = []
+    exact_ids: set[str] = set()
+
+    # --- Fast path: exact name / alias match via index ---
+    for nid in graph["_name_index"].get(query_lower, []):
+        node = graph["nodes"].get(nid)
+        if node is not None:
+            matches.append({"node": node, "match": "exact"})
+            exact_ids.add(nid)
+
+    # --- Slow path: substring / id scan (skip already-exact nodes) ---
     for nid, node in graph["nodes"].items():
+        if nid in exact_ids:
+            continue
         name = node.get("name", "").lower()
         aliases = [a.lower() for a in node.get("properties", {}).get("aliases", [])]
 
-        if query_lower == name or query_lower in aliases:
-            matches.append({"node": node, "match": "exact"})
-        elif query_lower in name or any(query_lower in a for a in aliases):
+        if query_lower in name or any(query_lower in a for a in aliases):
             matches.append({"node": node, "match": "partial"})
         elif query_lower in nid.lower():
             matches.append({"node": node, "match": "id"})
