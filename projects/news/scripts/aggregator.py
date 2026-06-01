@@ -2113,14 +2113,10 @@ def run():
             OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
             with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
-<<<<<<< HEAD
         # Signal failure so CI surfaces the empty run (lesson #2). Existing data
         # is preserved above; the non-zero exit lets the workflow alert instead
         # of silently passing on a total collection failure.
         raise SystemExit(1)
-=======
-        return False
->>>>>>> origin/main
 
     # Generate summary
     summary = generate_summary(unique_news)
