@@ -1,7 +1,16 @@
-name: Backfill Apr 13-25 Data Gap
+name: Backfill Data Gap
 
 on:
   workflow_dispatch:
+    inputs:
+      start_date:
+        description: '缺口起始日 YYYY-MM-DD（留空 = 默认 2026-04-13）'
+        required: false
+        default: ''
+      end_date:
+        description: '缺口结束日 YYYY-MM-DD（留空 = 默认 2026-04-25）'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -23,6 +32,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           WEIBO_COOKIE: ${{ secrets.WEIBO_COOKIE }}
+          GAP_START_DATE: ${{ github.event.inputs.start_date }}
+          GAP_END_DATE: ${{ github.event.inputs.end_date }}
         run: python projects/news/scripts/backfill_gap.py
 
       - name: Commit and push if changed
@@ -33,7 +44,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(news): backfill Apr 13-25 data gap [skip ci]"
+            git commit -m "chore(news): backfill data gap [skip ci]"
             for i in 1 2 3 4; do
               git pull --rebase origin main && git push origin main && exit 0
               echo "Push attempt $i failed, retrying in ${i}s..."

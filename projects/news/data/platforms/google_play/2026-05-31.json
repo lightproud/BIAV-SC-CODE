@@ -1,8 +1,8 @@
 {
   "date": "2026-05-31",
-  "archived_at": "2026-05-31T15:13:56.484981+00:00",
+  "archived_at": "2026-06-01T15:26:41.620981+00:00",
   "source": "google_play",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "google_play",
@@ -133,6 +133,19 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it",
       "author": "Aleksandr",
       "engagement": 0
+    },
+    {
+      "title": "[Google Play 好评] ★5 สนุกมากคับพัฒนาต่อไปนะคับ",
+      "summary": "สนุกมากคับพัฒนาต่อไปนะคับ",
+      "source": "google_play",
+      "time": "2026-05-30T19:07:03",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "วิรภัทร อรวิระกุล",
+      "tags": [],
+      "lang": "th",
+      "platform_region": "th"
     }
   ]
 }

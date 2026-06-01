@@ -1,8 +1,8 @@
 {
   "date": "2026-05-13",
-  "archived_at": "2026-05-13T14:07:53.898696+00:00",
+  "archived_at": "2026-06-01T15:26:41.619449+00:00",
   "source": "ruliweb",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "source": "ruliweb",
@@ -43,6 +43,19 @@
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75143970",
       "author": "",
       "engagement": 0
+    },
+    {
+      "title": "마비m)ai)딴 겜 커뮤에서 주운 프롬프트들을 써보았다",
+      "summary": "Use the attached character only as an identity reference. DO NOT copy...",
+      "source": "ruliweb",
+      "time": "2026-05-13T15:00:00+00:00",
+      "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75183110",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "ko",
+      "platform_region": "kr"
     }
   ]
 }
