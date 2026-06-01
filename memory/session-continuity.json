@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "9868f4cc",
-    "timestamp": "2026-06-01T15:37:09.614000+00:00",
-    "duration_minutes": 29.0,
+    "id": "ab6fcb2c",
+    "timestamp": "2026-06-01T15:56:24.072000+00:00",
+    "duration_minutes": 48.3,
     "branch": "claude/workflows-archival-logic-Akf97",
     "topics": [],
     "decisions": [],
@@ -10,6 +10,7 @@
       "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
       "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
       "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
       "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
       "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
       "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
@@ -20,6 +21,26 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "9868f4cc",
+      "timestamp": "2026-06-01T15:37:09.614000+00:00",
+      "duration_minutes": 29.0,
+      "branch": "claude/workflows-archival-logic-Akf97",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+        "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "cd1a3977",
       "timestamp": "2026-06-01T15:11:50.531000+00:00",
@@ -231,39 +252,29 @@
       "decisions": [],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "sim-2",
-      "timestamp": null,
-      "duration_minutes": null,
-      "branch": "",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.3,
-      "黑池": 1.96,
-      "Bilibili": 0.47,
-      "GitHub": 0.12,
-      "Phase1": 0.12
+      "银芯": 1.84,
+      "黑池": 1.57,
+      "Bilibili": 0.38,
+      "GitHub": 0.1,
+      "Phase1": 0.1
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/README.md",
-      "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md"
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py",
+      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml"
     ],
-    "total_sessions": 109
+    "total_sessions": 110
   },
-  "updated_at": "2026-06-01T15:41:40.624378+00:00"
+  "updated_at": "2026-06-01T16:01:07.724639+00:00"
 }
