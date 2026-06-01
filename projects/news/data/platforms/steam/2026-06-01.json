@@ -1,8 +1,8 @@
 {
   "date": "2026-06-01",
-  "archived_at": "2026-05-31T23:59:21.280346+00:00",
+  "archived_at": "2026-06-01T02:44:18.320054+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -48,6 +48,21 @@
       "review": "Went in for the Saya no Uta collab event, but what I found was a hidden gem in the gacha space with great roguelike deck building gameplay and lovecraftian horror aesthetics! Also despite being a gacha, the devs are so generous giving almost 350+ free pulls just for this anniversary event alone. Give it a try!",
       "timestamp_created": 1780263680,
       "playtime_forever": 2043
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T00:49:50+00:00",
+      "lang": "schinese",
+      "title": "[正面] 福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
+      "summary": "福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
+      "url": "https://steamcommunity.com/profiles/76561199785624002/recommended/3052450",
+      "author": "76561199785624002",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
+      "timestamp_created": 1780274990,
+      "playtime_forever": 3296
     }
   ]
 }
