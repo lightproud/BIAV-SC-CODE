@@ -1,17 +1,56 @@
 {
   "last_session": {
-    "id": "7d1ca68d",
-    "timestamp": "2026-05-26T17:29:41.688000+00:00",
-    "duration_minutes": 11.0,
-    "branch": "claude/search-utility-assessment-AHsIT",
-    "topics": [
-      "GitHub"
-    ],
+    "id": "ab6fcb2c",
+    "timestamp": "2026-06-01T15:56:24.072000+00:00",
+    "duration_minutes": 48.3,
+    "branch": "claude/workflows-archival-logic-Akf97",
+    "topics": [],
     "decisions": [],
-    "files_changed": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
+    ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "9868f4cc",
+      "timestamp": "2026-06-01T15:37:09.614000+00:00",
+      "duration_minutes": 29.0,
+      "branch": "claude/workflows-archival-logic-Akf97",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+        "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "cd1a3977",
+      "timestamp": "2026-06-01T15:11:50.531000+00:00",
+      "duration_minutes": 3.7,
+      "branch": "claude/workflows-archival-logic-Akf97",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "d2b57840",
       "timestamp": "2026-05-20T00:45:54.259000+00:00",
@@ -213,61 +252,29 @@
       "decisions": [],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "sim-2",
-      "timestamp": null,
-      "duration_minutes": null,
-      "branch": "",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
-    },
-    {
-      "id": "f57e7e06",
-      "timestamp": "2026-05-06T00:01:33.852000+00:00",
-      "duration_minutes": 13368.1,
-      "branch": "claude/code-strategy-bootstrap-XTmMR",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [
-        "当下最痛点：记忆系统结构化升级）。立即进入第 1 阶段「业界对标矩阵」，先完成必读材料数据扫描，并加载外网调研工具"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/research/ai-memory-restructure-2026-04.md",
-        "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
-        "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
-        "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md",
-        "/home/user/brain-in-a-vat/memory/strategy/handoff-to-mainconsole-memory-restructure.md",
-        "/home/user/brain-in-a-vat/memory/strategy/memory-restructure-options.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.88,
-      "黑池": 2.45,
-      "GitHub": 1.15,
-      "Bilibili": 0.59,
-      "Phase1": 0.15,
-      "BPT": 0.1
+      "银芯": 1.84,
+      "黑池": 1.57,
+      "Bilibili": 0.38,
+      "GitHub": 0.1,
+      "Phase1": 0.1
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/README.md",
-      "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md"
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py",
+      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml"
     ],
-    "total_sessions": 108
+    "total_sessions": 110
   },
-  "updated_at": "2026-05-26T17:33:46.990697+00:00"
+  "updated_at": "2026-06-01T16:01:07.724639+00:00"
 }

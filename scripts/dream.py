@@ -26,6 +26,8 @@ from hashlib import md5
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+from io_utils import write_text_atomic
 TODAY = date.today()
 DREAMS_DIR = REPO / "memory" / "dreams"
 INSIGHTS_FILE = DREAMS_DIR / "insights.json"
@@ -139,10 +141,7 @@ def load_sentinel_baseline() -> dict:
 
 def save_sentinel_baseline(data: dict):
     """Save sentinel baseline to disk."""
-    SENTINEL_BASELINE.parent.mkdir(parents=True, exist_ok=True)
-    SENTINEL_BASELINE.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    write_text_atomic(SENTINEL_BASELINE, json.dumps(data, ensure_ascii=False, indent=2))
 
 
 def extract_source_metrics(source: str, items: list) -> dict:
@@ -379,10 +378,7 @@ def archive_integrity_scan() -> list[dict]:
         },
     }
     try:
-        ARCHIVE_INTEGRITY_FILE.parent.mkdir(parents=True, exist_ok=True)
-        ARCHIVE_INTEGRITY_FILE.write_text(
-            json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
+        write_text_atomic(ARCHIVE_INTEGRITY_FILE, json.dumps(report, ensure_ascii=False, indent=2))
     except OSError:
         pass
 
@@ -556,9 +552,7 @@ def sentinel_scan() -> list[dict]:
                 pass
         existing_alerts.append(alert_record)
         existing_alerts = existing_alerts[-30:]
-        ALERTS_FILE.write_text(
-            json.dumps(existing_alerts, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
+        write_text_atomic(ALERTS_FILE, json.dumps(existing_alerts, ensure_ascii=False, indent=2))
 
     return alerts
 
@@ -1024,10 +1018,7 @@ def update_precomputed_cache(entries: list[dict]):
         "entries": entries,
     }
 
-    CACHE_FILE.write_text(
-        json.dumps(cache, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(CACHE_FILE, json.dumps(cache, ensure_ascii=False, indent=2))
     return len(entries)
 
 
@@ -1087,10 +1078,7 @@ def update_semantic_index(keyword_index: dict, ai_insights: dict = None):
     if ai_insights:
         index_data["ai_insights"] = ai_insights
 
-    SEMANTIC_INDEX.write_text(
-        json.dumps(index_data, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(SEMANTIC_INDEX, json.dumps(index_data, ensure_ascii=False, indent=2))
     return str(SEMANTIC_INDEX.relative_to(REPO))
 
 
@@ -1108,10 +1096,7 @@ def save_dream_journal(phase1_results: dict, phase2_results: dict = None):
         journal["phase2"] = phase2_results
 
     journal_file = DREAMS_DIR / f"{TODAY.isoformat()}.json"
-    journal_file.write_text(
-        json.dumps(journal, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(journal_file, json.dumps(journal, ensure_ascii=False, indent=2))
 
     # Also save/update insights.json
     if phase2_results and "insights" in phase2_results:
@@ -1139,10 +1124,7 @@ def save_insights(new_insights: list):
     # Keep last 100 insights
     existing = existing[-100:]
 
-    INSIGHTS_FILE.write_text(
-        json.dumps(existing, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(INSIGHTS_FILE, json.dumps(existing, ensure_ascii=False, indent=2))
 
 
 def load_access_log(last_n: int = 30) -> list[dict]:
@@ -1184,10 +1166,7 @@ def log_access(files_accessed: list[str]):
     }
 
     entry_file = ACCESS_LOG_DIR / f"{TODAY.isoformat()}.json"
-    entry_file.write_text(
-        json.dumps(entry, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(entry_file, json.dumps(entry, ensure_ascii=False, indent=2))
 
     # Cleanup: keep last 30 days of files
     all_files = sorted(ACCESS_LOG_DIR.glob("*.json"))
@@ -1237,7 +1216,7 @@ def run_phase1() -> dict:
     try:
         from boot_snapshot import generate_snapshot
         snapshot_path = REPO / "memory" / "boot-snapshot.md"
-        snapshot_path.write_text(generate_snapshot() + "\n", encoding="utf-8")
+        write_text_atomic(snapshot_path, generate_snapshot() + "\n")
         print("  Boot snapshot updated")
     except Exception as e:
         print(f"  Boot snapshot failed: {e}")
@@ -1637,7 +1616,7 @@ def run_rem(client=None) -> dict:
     }
 
     report_file = REPO / "memory" / "dreams" / f"{TODAY.isocalendar()[0]}-W{TODAY.isocalendar()[1]:02d}-weekly.json"
-    report_file.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_text_atomic(report_file, json.dumps(report, ensure_ascii=False, indent=2))
     print(f"  - Weekly report saved: {report_file.relative_to(REPO)}")
 
     return report
@@ -1832,10 +1811,7 @@ def _save_insights(new_insights: list[dict]):
 
     existing.extend(new_insights)
 
-    insights_file.write_text(
-        json.dumps(existing, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    write_text_atomic(insights_file, json.dumps(existing, ensure_ascii=False, indent=2))
 
 
 def _append_lessons(new_lessons: list[dict]):
@@ -1870,7 +1846,7 @@ def _append_lessons(new_lessons: list[dict]):
             text, count=1,
         )
         text += "\n" + "\n".join(additions) + "\n"
-        ll_file.write_text(text, encoding="utf-8")
+        write_text_atomic(ll_file, text)
 
 
 def main():

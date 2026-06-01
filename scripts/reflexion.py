@@ -19,6 +19,8 @@ from datetime import date, datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+from io_utils import write_text_atomic
 DREAMS_DIR = REPO / "memory" / "dreams"
 SEARCH_FAILURES_FILE = DREAMS_DIR / "search-failures.json"
 LESSONS_FILE = REPO / "memory" / "lessons-learned.md"
@@ -232,7 +234,7 @@ def write_lesson_to_file(lesson: dict, number: int) -> bool:
 
     text += entry
 
-    LESSONS_FILE.write_text(text, encoding="utf-8")
+    write_text_atomic(LESSONS_FILE, text)
     return True
 
 

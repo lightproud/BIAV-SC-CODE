@@ -15,6 +15,10 @@ on:
         required: false
         default: 'all'
 
+concurrency:
+  group: fetch-wiki-data-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

@@ -20,6 +20,10 @@ on:
         default: '30'
         type: string
 
+concurrency:
+  group: cleanup-stale-branches-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -27,6 +31,7 @@ jobs:
   cleanup:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
       STALE_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.stale_days || '30' }}
