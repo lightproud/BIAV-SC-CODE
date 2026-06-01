@@ -16,11 +16,12 @@ Usage:
 
 import json
 import math
-import re
 import sys
 from collections import Counter
 from datetime import date
 from pathlib import Path
+
+from text_utils import tokenize as tokenize_text
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -55,16 +56,8 @@ STOP_WORDS = {"the", "and", "for", "that", "this", "with", "from", "are", "was",
 
 
 def tokenize(text: str) -> list[str]:
-    """Tokenize text into Chinese bigrams + English words."""
-    words = []
-    for m in re.finditer(r"[a-zA-Z]{3,}", text.lower()):
-        words.append(m.group())
-    chinese_runs = re.findall(r"[\u4e00-\u9fff]+", text)
-    for run in chinese_runs:
-        if len(run) >= 2:
-            for i in range(len(run) - 1):
-                words.append(run[i:i + 2])
-    return [w for w in words if w not in STOP_WORDS and len(w) > 1]
+    """Tokenize text into Chinese bigrams + English words (fact-store stop words)."""
+    return tokenize_text(text, STOP_WORDS)
 
 
 def cosine_similarity(tokens_a: list[str], tokens_b: list[str]) -> float:

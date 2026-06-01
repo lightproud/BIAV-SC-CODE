@@ -69,12 +69,12 @@ def log_session():
         json.dumps(sessions, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    log(f"  📝 Session logged ({len(sessions)} total)")
+    log(f"  Session logged ({len(sessions)} total)")
 
 
 def run_reflexion():
     """Run lightweight reflexion scan and write new lessons if found."""
-    log(f"🔍 Session-end Reflexion — {TODAY}")
+    log(f"Session-end Reflexion — {TODAY}")
 
     # Collect failures
     dream_fails = collect_dream_failures()
@@ -85,7 +85,7 @@ def run_reflexion():
     log(f"  Failures: dream={len(dream_fails)} search={len(search_fails)} workflow={len(workflow_fails)}")
 
     if not all_failures:
-        log("  ✅ No failures detected, skipping pattern analysis")
+        log("  No failures detected, skipping pattern analysis")
         return 0
 
     # Analyze patterns
@@ -93,7 +93,7 @@ def run_reflexion():
     log(f"  Patterns found: {len(patterns)}")
 
     if not patterns:
-        log("  ✅ No recurring patterns")
+        log("  No recurring patterns")
         return 0
 
     # Extract lessons
@@ -112,23 +112,23 @@ def run_reflexion():
     for lesson in lessons:
         # Skip if the pattern is already recorded
         if lesson["pattern"] in existing_text:
-            log(f"  ⏭ Skipping duplicate: {lesson['pattern']}")
+            log(f"  Skipping duplicate: {lesson['pattern']}")
             continue
 
         if write_lesson_to_file(lesson, next_num):
-            log(f"  📝 New lesson #{next_num}: {lesson['summary']}")
+            log(f"  New lesson #{next_num}: {lesson['summary']}")
             next_num += 1
             new_lessons += 1
 
     # Save insights
     if patterns:
         save_failure_insights(patterns)
-        log(f"  💾 Insights saved")
+        log(f"  Insights saved")
 
     if new_lessons > 0:
-        log(f"\n  ✅ {new_lessons} new lesson(s) written to lessons-learned.md")
+        log(f"\n  {new_lessons} new lesson(s) written to lessons-learned.md")
     else:
-        log(f"\n  ✅ No new lessons (all patterns already recorded)")
+        log(f"\n  No new lessons (all patterns already recorded)")
 
     return new_lessons
 
@@ -145,7 +145,7 @@ def main():
     except Exception as e:
         # Never fail the hook — just log silently
         if VERBOSE:
-            print(f"  ❌ Reflexion error: {e}")
+            print(f"  Reflexion error: {e}")
 
 
 if __name__ == "__main__":

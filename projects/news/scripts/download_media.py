@@ -93,10 +93,10 @@ def download_file(url: str, dest: Path) -> bool:
                     dest.unlink(missing_ok=True)
                     return False
 
-        logger.info(f'  ✓ {dest.name} ({total / 1024:.0f} KB)')
+        logger.info(f'  {dest.name} ({total / 1024:.0f} KB)')
         return True
     except requests.RequestException as e:
-        logger.warning(f'  ✗ 下载失败: {e}')
+        logger.warning(f'  下载失败: {e}')
         dest.unlink(missing_ok=True)
         return False
 

@@ -320,6 +320,7 @@ def compute_utility() -> dict:
             "insight_citations": insights.get(fp, {}).get("cited_count", 0),
             "last_cited": insights.get(fp, {}).get("last_cited"),
             "trend": trend,
+            "first_seen": existing.get(fp, {}).get("first_seen", TODAY.isoformat()),
             "computed": TODAY.isoformat(),
         }
 
@@ -339,7 +340,7 @@ def suggest_archival(utility: dict) -> list[dict]:
     for fp, data in utility.items():
         if data["utility"] < ARCHIVAL_THRESHOLD and data["trend"] != "rising":
             # Check if file has been tracked long enough
-            first_seen = data.get("computed", TODAY.isoformat())
+            first_seen = data.get("first_seen", data.get("computed", TODAY.isoformat()))
             try:
                 first_date = date.fromisoformat(first_seen)
                 days_tracked = (TODAY - first_date).days
@@ -422,13 +423,13 @@ def calibrate_reranker_weights(utility: dict) -> dict:
 
 def print_stats(utility: dict):
     """Print utility rankings."""
-    print(f"\n  📊 Memory 效用排名 — {TODAY}")
+    print(f"\n  Memory 效用排名 — {TODAY}")
     print(f"  追踪文件数：{len(utility)}\n")
 
     items = sorted(utility.items(), key=lambda x: x[1]["utility"], reverse=True)
 
     # Top files
-    print("  🔝 高效用文件：")
+    print("  高效用文件：")
     for fp, data in items[:8]:
         trend_icon = {"rising": "↑", "declining": "↓", "stable": "→"}.get(data["trend"], "?")
         print(f"    {data['utility']:.3f} {trend_icon} {fp}")
@@ -437,7 +438,7 @@ def print_stats(utility: dict):
 
     # Bottom files
     if len(items) > 8:
-        print(f"\n  ⬇️ 低效用文件：")
+        print(f"\n  低效用文件：")
         for fp, data in items[-5:]:
             trend_icon = {"rising": "↑", "declining": "↓", "stable": "→"}.get(data["trend"], "?")
             print(f"    {data['utility']:.3f} {trend_icon} {fp}")
@@ -461,9 +462,9 @@ def main():
     do_calibrate = "--calibrate" in args
 
     if do_compute or not any([do_stats, do_archival, do_calibrate]):
-        print(f"🧠 MemRL-lite 效用计算 — {TODAY}")
+        print(f"MemRL-lite 效用计算 — {TODAY}")
         utility = compute_utility()
-        print(f"  ✅ 计算完成，{len(utility)} 个文件")
+        print(f"  计算完成，{len(utility)} 个文件")
         print(f"  保存到：{UTILITY_FILE.relative_to(REPO)}")
 
         if not any([do_stats, do_archival, do_calibrate]):
@@ -481,15 +482,15 @@ def main():
     if do_archival:
         suggestions = suggest_archival(utility)
         if suggestions:
-            print(f"\n  📦 建议归档的文件（utility < {ARCHIVAL_THRESHOLD}）：")
+            print(f"\n  建议归档的文件（utility < {ARCHIVAL_THRESHOLD}）：")
             for s in suggestions:
                 print(f"    - {s['file']}: {s['reason']}")
         else:
-            print(f"\n  ✅ 没有需要归档的文件（全部 utility ≥ {ARCHIVAL_THRESHOLD} 或追踪不足 {MIN_DAYS_FOR_ARCHIVAL} 天）")
+            print(f"\n  没有需要归档的文件（全部 utility ≥ {ARCHIVAL_THRESHOLD} 或追踪不足 {MIN_DAYS_FOR_ARCHIVAL} 天）")
 
     if do_calibrate:
         cal = calibrate_reranker_weights(utility)
-        print(f"\n  🎛 Reranker 权重校准")
+        print(f"\n  Reranker 权重校准")
         print(f"  状态：{cal['status']}")
         if cal.get("suggested_weights"):
             print(f"  数据点：{cal['data_points']}")

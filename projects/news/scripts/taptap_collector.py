@@ -691,7 +691,7 @@ if __name__ == "__main__":
         output_path.write_text(
             json.dumps(all_items, ensure_ascii=False, indent=2), encoding="utf-8"
         )
-        print(f"\n✓ {len(topics)} posts + {len(reviews)} reviews → {output_path}")
+        print(f"\n{len(topics)} posts + {len(reviews)} reviews → {output_path}")
         if all_items:
             print("\n--- 示例（前3条）---")
             for item in all_items[:3]:

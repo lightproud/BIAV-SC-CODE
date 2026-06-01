@@ -25,22 +25,6 @@ def read_file(path: str, fallback: str = "") -> str:
     return fallback
 
 
-def extract_json_summary(path: str, max_items: int = 5) -> str:
-    """Extract summary from a JSON data file."""
-    p = ROOT / path
-    if not p.exists():
-        return "(file not found)"
-    try:
-        data = json.loads(p.read_text(encoding="utf-8"))
-        if isinstance(data, list):
-            return f"{len(data)} items"
-        elif isinstance(data, dict):
-            return f"{len(data)} keys"
-        return str(type(data).__name__)
-    except Exception:
-        return "(parse error)"
-
-
 def get_latest_dream() -> str:
     """Get the most recent dream journal entry."""
     dreams_dir = ROOT / "memory" / "dreams"
@@ -117,11 +101,11 @@ def generate_snapshot() -> str:
 
 ## 当前阶段
 
-**Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）进行中**
+**Phase 1（记忆宫殿）已验证 → Phase 2（内容权威）进行中**
 
 三条主线：
-1. 事实圣经 — 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策 ✅
-2. 自动情报循环 — 日报 3 源 + 哨兵 + 做梦三层 ✅
+1. 事实圣经 — 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策 
+2. 自动情报循环 — 日报 3 源 + 哨兵 + 做梦三层 
 3. 权威知识站点 — Phase 2 W1 自举完成 24 角色（含完整技能/命轮），剩余 48 角色待批量自举
 
 阻塞项：YouTube/Twitter/NGA/TapTap API 未配（不阻塞核心）

@@ -24,6 +24,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from wiki_sources import FANDOM_WIKIS, RATE_LIMIT
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -39,18 +40,10 @@ UA = (
     "+https://github.com/lightproud/brain-in-a-vat)"
 )
 
-FANDOM_WIKIS = [
-    "https://forget-last-night-morimens.fandom.com",
-    "https://morimens.fandom.com",
-]
-
-RATE_LIMIT = 0.5  # seconds between API requests
-
 # ---------------------------------------------------------------------------
 # Known item names (loaded from items.json at startup for cross-referencing)
 # ---------------------------------------------------------------------------
 KNOWN_ITEMS: set[str] = set()
-
 
 def load_known_items() -> None:
     """Populate KNOWN_ITEMS from items.json for drop validation."""
@@ -73,7 +66,6 @@ def load_known_items() -> None:
 
     _collect(data)
 
-
 # ---------------------------------------------------------------------------
 # Fandom API helpers
 # ---------------------------------------------------------------------------
@@ -83,7 +75,6 @@ def api_get(url: str) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode())
-
 
 def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     """Fetch raw wikitext for a page via the MediaWiki parse API."""
@@ -100,7 +91,6 @@ def fetch_wikitext(wiki_base: str, page_title: str) -> str | None:
     except Exception as e:
         print(f"  [WARN] Failed to fetch wikitext from {wiki_base}: {e}")
         return None
-
 
 def search_page(wiki_base: str, query: str) -> str | None:
     """Search for a page title on the wiki. Returns the best match or None."""
@@ -121,7 +111,6 @@ def search_page(wiki_base: str, query: str) -> str | None:
         print(f"  [WARN] Search failed on {wiki_base}: {e}")
     return None
 
-
 # ---------------------------------------------------------------------------
 # Wikitext parsers
 # ---------------------------------------------------------------------------
@@ -141,7 +130,6 @@ def parse_enemy_level(text: str) -> str | None:
             return m.group(1).strip()
     return None
 
-
 def parse_recommended_power(text: str) -> str | None:
     """Extract recommended power / training value from wikitext."""
     patterns = [
@@ -156,7 +144,6 @@ def parse_recommended_power(text: str) -> str | None:
         if m:
             return m.group(1).strip().replace(",", "")
     return None
-
 
 def parse_drop_table(text: str) -> list[dict]:
     """
@@ -236,7 +223,6 @@ def parse_drop_table(text: str) -> list[dict]:
 
     return drops
 
-
 def parse_stamina_cost(text: str) -> int | None:
     """Extract stamina (墨诺芬 / Menophine) cost from wikitext."""
     patterns = [
@@ -248,7 +234,6 @@ def parse_stamina_cost(text: str) -> int | None:
         if m:
             return int(m.group(1))
     return None
-
 
 # ---------------------------------------------------------------------------
 # Stage data bootstrap from maps.json
@@ -319,7 +304,6 @@ def build_stages_from_maps(maps_data: dict) -> list[dict]:
 
     return stages
 
-
 def _slugify(name: str) -> str:
     """Convert a name to a lowercase slug ID."""
     s = name.lower().strip()
@@ -327,7 +311,6 @@ def _slugify(name: str) -> str:
     s = re.sub(r"[^a-z0-9\-]", "-", s)
     s = re.sub(r"-+", "-", s).strip("-")
     return s or "unknown"
-
 
 # ---------------------------------------------------------------------------
 # Page title guessing for Fandom lookup
@@ -352,7 +335,6 @@ FANDOM_PAGE_OVERRIDES: dict[str, str] = {
     "curriculum": "Curriculum",
 }
 
-
 def guess_page_title(stage: dict) -> str:
     """Guess the Fandom page title for a stage entry."""
     sid = stage["id"]
@@ -365,7 +347,6 @@ def guess_page_title(stage: dict) -> str:
         name_en = name_en.split("/")[0].strip()
         return name_en.replace(" ", "_")
     return stage["name"]
-
 
 # ---------------------------------------------------------------------------
 # Main enrichment logic
@@ -414,7 +395,6 @@ def enrich_stage(stage: dict, dry_run: bool = False) -> bool:
             break
 
     return found
-
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
@@ -483,7 +463,6 @@ def main() -> None:
         f.write("\n")
 
     print(f"Wrote {STAGES_JSON}")
-
 
 if __name__ == "__main__":
     main()

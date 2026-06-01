@@ -27,6 +27,8 @@ from collections import Counter, defaultdict
 from datetime import date, datetime
 from pathlib import Path
 
+from text_utils import tokenize as tokenize_text
+
 REPO = Path(__file__).resolve().parent.parent
 VECTORS_FILE = REPO / "assets" / "data" / "vectors.json.gz"
 ACCESS_LOG_DIR = REPO / "memory" / "dreams" / "access-log"
@@ -433,27 +435,8 @@ STOP_WORDS = {
 
 
 def tokenize(text: str) -> list[str]:
-    """Tokenize text into Chinese bigrams + English words.
-
-    Chinese: sliding window bigrams (2-char pairs) to handle unsegmented text.
-    English: whole words of 3+ chars.
-    """
-    words = []
-
-    # English words
-    for m in re.finditer(r"[a-zA-Z]{3,}", text.lower()):
-        words.append(m.group())
-
-    # Chinese: extract bigrams (2-char sliding window)
-    # This handles both pre-segmented and continuous Chinese text
-    chinese_runs = re.findall(r"[\u4e00-\u9fff]+", text)
-    for run in chinese_runs:
-        if len(run) >= 2:
-            for i in range(len(run) - 1):
-                bigram = run[i : i + 2]
-                words.append(bigram)
-
-    return [w for w in words if w not in STOP_WORDS and len(w) > 1]
+    """Tokenize text into Chinese bigrams + English words (memory stop words)."""
+    return tokenize_text(text, STOP_WORDS)
 
 
 def build_tfidf_index(chunks: list[dict]) -> dict:
@@ -822,30 +805,11 @@ def load_index() -> dict | None:
         return None
 
 
-def check_precomputed_cache(query: str) -> dict | None:
-    """Check Sleep-Time Compute cache for a precomputed answer.
-
-    Returns {answer, sources, confidence} or None.
-    """
-    try:
-        sys.path.insert(0, str(Path(__file__).parent))
-        from dream import check_cache
-        return check_cache(query)
-    except (ImportError, Exception):
-        return None
-
-
 def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
     """Semantic search: query → top-K relevant knowledge chunks.
 
-    Also checks precomputed cache first for instant answers.
     Returns [{chunk_id, file, preview, score, final_score, scores}]
     """
-    # Check cache first
-    cached = check_precomputed_cache(query)
-    if cached:
-        print(f"  💤 Sleep-Time cache hit: {cached.get('id', '?')}")
-
     index = load_index()
     if not index:
         print("  ⚠ 索引不存在，请先运行: python scripts/memory_search.py --build")

@@ -335,7 +335,7 @@ def print_health_report():
     report = generate_health_report()
 
     print("\n" + "=" * 60)
-    print("📊 数据源健康报告")
+    print("数据源健康报告")
     print("=" * 60)
 
     summary = report.get('summary', {})
@@ -352,7 +352,7 @@ def print_health_report():
             print(f"  - {platform}: {count}")
 
     if report.get('recommendations'):
-        print("\n🔧 建议:")
+        print("\n建议:")
         for rec in report['recommendations']:
             print(f"  - [{rec['platform']}] {rec['action']}: {rec['reason']}")
 

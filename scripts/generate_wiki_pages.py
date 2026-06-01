@@ -393,7 +393,7 @@ def generate_cg_gallery():
         if has_img:
             lines.append('<div class="cg-grid" @click="openCg">')
             for img in has_img:
-                lines.append(f'<img src="/{img["path"]}" alt="{img["name"]}" loading="lazy" />')
+                lines.append(f'<img :src="\'/{img["path"]}\'" alt="{img["name"]}" loading="lazy" />')
                 displayed += 1
             lines.append('</div>')
             lines.append('')
@@ -430,7 +430,7 @@ def generate_cg_gallery():
         lines.append('<div class="cg-grid" @click="openCg">')
         for f in scenebg_files:
             name = os.path.splitext(os.path.basename(f))[0]
-            lines.append(f'<img src="/{f}" alt="{name}" loading="lazy" />')
+            lines.append(f'<img :src="\'/{f}\'" alt="{name}" loading="lazy" />')
             displayed += 1
         lines.append('</div>')
         lines.append('')
@@ -676,7 +676,7 @@ def generate_ui_gallery():
             for img in images:
                 name = os.path.splitext(img)[0]
                 lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
-                lines.append(f'<img src="/portrait-card/card/{img}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<img :src="\'/portrait-card/card/{img}\'" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
                 lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px;">{name}</div>')
                 lines.append(f'</div>')
                 total += 1
@@ -704,7 +704,7 @@ def generate_ui_gallery():
             lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
             for rel, name in imgs:
                 lines.append(f'<div style="flex: 0 1 280px; text-align: center;">')
-                lines.append(f'<img src="/{rel}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<img :src="\'/{rel}\'" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
                 lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">{name}</div>')
                 lines.append(f'</div>')
                 total += 1

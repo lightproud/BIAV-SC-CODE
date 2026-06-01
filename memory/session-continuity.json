@@ -1,54 +1,204 @@
 {
   "last_session": {
-    "id": "ab6fcb2c",
-    "timestamp": "2026-06-01T15:56:24.072000+00:00",
-    "duration_minutes": 48.3,
-    "branch": "claude/workflows-archival-logic-Akf97",
-    "topics": [],
-    "decisions": [],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
-      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
+    "id": "f1c1c283",
+    "timestamp": "2026-05-27T00:53:48.887000+00:00",
+    "duration_minutes": 588.9,
+    "branch": "claude/yincin-code-review-tgusd",
+    "topics": [
+      "Wiki"
     ],
-    "open_items": []
+    "decisions": [
+      "深读哪些档案"
+    ],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
+      "/home/user/brain-in-a-vat/.gitignore",
+      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+      "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+      "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/dream_archive.py",
+      "/home/user/brain-in-a-vat/scripts/dream_config.py",
+      "/home/user/brain-in-a-vat/scripts/dream_health.py",
+      "/home/user/brain-in-a-vat/scripts/fact_store.py",
+      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+      "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+      "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+      "/home/user/brain-in-a-vat/scripts/memory_search.py",
+      "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+      "/home/user/brain-in-a-vat/scripts/memrl.py",
+      "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+      "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
+    ],
+    "open_items": [
+      "files in parallel"
+    ]
   },
   "recent_sessions": [
     {
-      "id": "9868f4cc",
-      "timestamp": "2026-06-01T15:37:09.614000+00:00",
-      "duration_minutes": 29.0,
-      "branch": "claude/workflows-archival-logic-Akf97",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
-        "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py"
+      "id": "87df4b4a",
+      "timestamp": "2026-05-26T17:50:10.564000+00:00",
+      "duration_minutes": 165.2,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [
+        "Wiki"
       ],
-      "open_items": []
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/dream_archive.py",
+        "/home/user/brain-in-a-vat/scripts/dream_config.py",
+        "/home/user/brain-in-a-vat/scripts/dream_health.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
     },
     {
-      "id": "cd1a3977",
-      "timestamp": "2026-06-01T15:11:50.531000+00:00",
-      "duration_minutes": 3.7,
-      "branch": "claude/workflows-archival-logic-Akf97",
+      "id": "70c0404d",
+      "timestamp": "2026-05-26T17:08:55.540000+00:00",
+      "duration_minutes": 124.0,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
+        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
+        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
+        "/home/user/brain-in-a-vat/scripts/text_utils.py",
+        "/home/user/brain-in-a-vat/tests/test_collect_global.py",
+        "/home/user/brain-in-a-vat/tests/test_lua_parse.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
+    },
+    {
+      "id": "2859e2b7",
+      "timestamp": "2026-05-26T16:50:03.381000+00:00",
+      "duration_minutes": 105.1,
+      "branch": "claude/yincin-code-review-tgusd",
       "topics": [],
-      "decisions": [],
-      "files_changed": [],
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
+        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
+        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
+        "/home/user/brain-in-a-vat/scripts/text_utils.py",
+        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
+        "/home/user/brain-in-a-vat/tests/test_memory_functions.py",
+        "/home/user/brain-in-a-vat/tests/test_text_utils.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
+    },
+    {
+      "id": "49d4c8ee",
+      "timestamp": "2026-05-26T15:51:57.856000+00:00",
+      "duration_minutes": 47.0,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [],
+      "decisions": [
+        "深读哪些档案"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/fact_store.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
+        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
+        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
+        "/home/user/brain-in-a-vat/scripts/text_utils.py",
+        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
+        "/home/user/brain-in-a-vat/tests/test_text_utils.py",
+        "/tmp/strip_emoji.py"
+      ],
+      "open_items": [
+        "files in parallel"
+      ]
+    },
+    {
+      "id": "ba93ad00",
+      "timestamp": "2026-05-26T15:26:58.943000+00:00",
+      "duration_minutes": 22.1,
+      "branch": "claude/yincin-code-review-tgusd",
+      "topics": [
+        "银芯"
+      ],
+      "decisions": [
+        "深读哪些档案",
+        "正确的 `:src=\"'/...'\"` 绑定**——说明同一生成器内 icons/battle-units 分支写法正确，只有 cg-gallery（396/433）与 card/ui（679/707"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/tmp/strip_emoji.py"
+      ],
       "open_items": []
     },
     {
@@ -184,97 +334,28 @@
         "/home/user/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "a8d8bb1f",
-      "timestamp": "2026-05-06T16:33:18.871000+00:00",
-      "duration_minutes": 14470.7,
-      "branch": "claude/fix-site-compliance-oM2P1",
-      "topics": [
-        "Bilibili"
-      ],
-      "decisions": [
-        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-        "/home/user/brain-in-a-vat/projects/site/public/404.html",
-        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-        "/home/user/brain-in-a-vat/projects/site/public/index.html"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "c5961df4",
-      "timestamp": "2026-05-06T16:19:30.396000+00:00",
-      "duration_minutes": 14456.9,
-      "branch": "claude/fix-site-compliance-oM2P1",
-      "topics": [
-        "Bilibili"
-      ],
-      "decisions": [
-        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-        "/home/user/brain-in-a-vat/projects/site/public/404.html",
-        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-        "/home/user/brain-in-a-vat/projects/site/public/index.html"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "fail-sim",
-      "timestamp": null,
-      "duration_minutes": null,
-      "branch": "",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 1.84,
-      "黑池": 1.57,
-      "Bilibili": 0.38,
-      "GitHub": 0.1,
-      "Phase1": 0.1
+      "Wiki": 2.44,
+      "银芯": 1.26,
+      "黑池": 0.81,
+      "Bilibili": 0.19
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
-      "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+      "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/sources.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py",
-      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml"
+      "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/fact_store.py",
+      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+      "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+      "/home/user/brain-in-a-vat/scripts/lua_parse.py",
+      "/home/user/brain-in-a-vat/scripts/memory_search.py",
+      "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+      "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
     ],
-    "total_sessions": 110
+    "total_sessions": 113
   },
-  "updated_at": "2026-06-01T16:01:07.724639+00:00"
+  "updated_at": "2026-05-27T00:56:58.838316+00:00"
 }

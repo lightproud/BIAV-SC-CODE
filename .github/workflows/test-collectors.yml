@@ -48,9 +48,9 @@ jobs:
           import sys, json, traceback, time
           sys.path.insert(0, 'projects/news/scripts')
           from aggregator import (
-              fetch_reddit, fetch_bilibili, fetch_twitter, fetch_nga,
+              fetch_reddit, fetch_bilibili, fetch_nga,
               fetch_taptap, fetch_steam_reviews, fetch_steam_news,
-              fetch_steam_discussions, fetch_youtube, fetch_fandom_wiki,
+              fetch_steam_discussions, fetch_youtube,
               fetch_discord_local,
           )
           # Playwright collectors (fallback for API-limited platforms)
@@ -71,14 +71,12 @@ jobs:
           fetchers = [
               ('Reddit', fetch_reddit),
               ('Bilibili', fetch_bilibili),
-              ('Twitter', fetch_twitter),
               ('NGA', fetch_nga),
               ('TapTap', fetch_taptap),
               ('SteamReviews', fetch_steam_reviews),
               ('SteamNews', fetch_steam_news),
               ('SteamDiscussions', fetch_steam_discussions),
               ('YouTube', fetch_youtube),
-              ('FandomWiki', fetch_fandom_wiki),
               ('DiscordLocal', fetch_discord_local),
           ] + pw_fetchers
 
