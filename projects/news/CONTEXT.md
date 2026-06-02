@@ -38,11 +38,7 @@
 - [ ] 验收：news 自动化连续 30 天稳定运行 + 黑池有可消费的公开信息流（守密人确认）
 
 ### 注意事项
-- update-news.yml 已从每小时降到每日 2 次（06:00/16:00 UTC）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）
-
-### 注意事项
-- update-news.yml 已从每小时降到每日 2 次（06:00/16:00 UTC）
+- update-news.yml 每小时运行一次（cron: '0 * * * *'）
 - discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）
 
 ## 已完成

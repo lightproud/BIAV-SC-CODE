@@ -96,7 +96,7 @@ jobs:
           script: |
             const monitored = [
               'update-news.yml', 'discord-archive.yml', 'deploy-site.yml',
-              'generate-report.yml', 'validate-data.yml',
+              'validate-data.yml',
             ];
             const failures = [];
             const now = new Date();
@@ -200,16 +200,22 @@ jobs:
           steps.path-check.outputs.has_broken == 'true' ||
           steps.memory-check.outputs.has_stale == 'true'
         uses: actions/github-script@v9
+        env:
+          P1_ISSUES: ${{ steps.dream-phase1.outputs.phase1_issues }}
+          DATA_ISSUES: ${{ steps.data-check.outputs.issues }}
+          WF_FAILURES: ${{ steps.workflow-check.outputs.failures }}
+          BROKEN: ${{ steps.path-check.outputs.broken }}
+          STALE: ${{ steps.memory-check.outputs.stale }}
         with:
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             let body = '## 🌙 Shallow Sleep Report\n\n';
-            const p1Issues = '${{ steps.dream-phase1.outputs.phase1_issues }}';
-            const dataIssues = `${{ steps.data-check.outputs.issues }}`;
-            const wfFailures = `${{ steps.workflow-check.outputs.failures }}`;
-            const broken = `${{ steps.path-check.outputs.broken }}`;
-            const stale = `${{ steps.memory-check.outputs.stale }}`;
+            const p1Issues = process.env.P1_ISSUES || '';
+            const dataIssues = process.env.DATA_ISSUES || '';
+            const wfFailures = process.env.WF_FAILURES || '';
+            const broken = process.env.BROKEN || '';
+            const stale = process.env.STALE || '';
             if (p1Issues && p1Issues !== '0') body += `### dream.py Phase 1\n- ${p1Issues} structural issues detected (see dream journal)\n\n`;
             if (dataIssues) body += '### Data Collection\n' + dataIssues + '\n';
             if (wfFailures) body += '### Workflow Health\n' + wfFailures + '\n';
