@@ -66,6 +66,10 @@ hr.ornament::after{content:"\25C7  \25C7  \25C7";color:#6b6040;font-size:14pt;le
 table{width:100%;border-collapse:collapse;margin:3.5mm 0 4mm;font-size:13pt;page-break-inside:avoid;}
 th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:2.2mm 2.6mm;text-align:left;border:0.5px solid #3a3520;}
 td{padding:2mm 2.6mm;border:0.5px solid #26220f;vertical-align:top;line-height:1.65;color:#c0b488;}
+img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px solid #3a3520;}
+.gallery-cap{font-size:11.5pt;color:#7a7050;text-align:center;margin-bottom:4mm;}
+.quote-orig{color:#b3a67e;font-size:13pt;}
+.quote-zh{color:#9a8d5e;font-size:12.5pt;}
 '''
 
 
@@ -109,7 +113,8 @@ def render(src, title, subtitle, meta, cover_note='弥萨格大学数据库终�
            f'<style>{CSS}</style></head><body>{cover}'
            f'<div class="content">{body_html}</div></body></html>')
     open(out_html, 'w', encoding='utf-8').write(doc)
-    HTML(string=doc).write_pdf(out_pdf)
+    # base_url=cwd 让正文 markdown 的相对图片路径（相对仓库根）可被解析嵌入
+    HTML(string=doc, base_url=os.getcwd()).write_pdf(out_pdf)
     return out_html, out_pdf, len(toc), os.path.getsize(out_pdf)
 
 

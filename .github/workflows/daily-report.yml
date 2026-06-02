@@ -73,11 +73,18 @@ jobs:
             echo "REPORT_MD=deliverables/$MONTH/morimens_daily_$STAMP.md"
             echo "REPORT_PDF=deliverables/$MONTH/morimens_daily_$STAMP.pdf"
             echo "DISP_DATE=$DISP"
+            echo "FANART_DIR=projects/news/data/fanart/$TARGET"
           } >> "$GITHUB_ENV"
           mkdir -p "deliverables/$MONTH"
 
+      # 确定性步骤：当日跑时 Discord CDN 链接新鲜，可全量留存同人图（历史日多已过期）
+      - name: Collect fan art
+        continue-on-error: true
+        run: |
+          python projects/news/scripts/collect_fanart.py --date "$TARGET_DATE" --out "$FANART_DIR"
+
       # ----------------------------------------------------------------
-      # AI 步骤：只做判断 —— 读全量档案、甄别归纳、写结构化 markdown
+      # AI 步骤：只做判断 —— 逐源深读全量档案、甄别归纳、写结构化 markdown
       # ----------------------------------------------------------------
       - uses: anthropics/claude-code-action@v1
         with:
@@ -115,10 +122,19 @@ jobs:
                  须按真实发布日分桶、标注时效，不得把历史评价当当日产出。
                - Discord/reddit 带可靠时间戳，为当日一手。
                §3 表格须含"原始/去重""真实发布时效"两列，并写明数据更正说明。
-            3. **原声优先、深挖提炼**：每个结论尽量锚定玩家原话直引（保留原文，非中英文必附译）；
-               重点频道（official-q-a / game-question / team-building / mistranslation / lore-chat /
-               同人创作 / 各语言频道）每个抽取多条实质消息（含中低反应的长贴，非只取高赞），
+            3. **逐源深读、非快速抽读（守密人硬要求）**：把**每个 Discord 频道都当作独立信息源**
+               逐一通读当日全部实质长文（建议先用单脚本按频道导出 len>=45、去重、去纯表情的长消息
+               全集到 /tmp，再逐频道阅读提炼），不得只取 top-N 高赞。每个语言频道（越/泰/德/俄/西/
+               葡/印尼/韩/法…）各产出至少一条当日核心信号。
+            4. **原声优先**：每个结论尽量锚定玩家原话直引（保留原文，非中英文必附中译）；
                多语言关键词扫描覆盖中/英/韩/俄/日/越/泰/西/葡/印尼等，命中后读原文剔噪声。
+
+            ## 同人图（守密人硬要求：要看到当期玩家创作的图）
+            读 `${{ env.FANART_DIR }}/gallery_manifest.json`（Collect fan art 步已产出）：
+            - status=="ok" 的条目是已存活下载的真图，在 §同人创作巡礼章用 markdown
+              `![说明](${{ env.FANART_DIR }}/<file>)` 嵌入 3-6 张（排除明显是游戏截图者），
+              每图配 `<div class="gallery-cap">来源频道 · 描述 · 原话</div>`。
+            - 统计候选/成功/过期数并说明（Discord CDN 约 24h 过期，历史日多失效）。
 
             ## 输出格式
             写 YAML frontmatter（渲染器自动拼封面），title/subtitle 模仿样本：
@@ -131,20 +147,19 @@ jobs:
             generated: ${{ env.TARGET_DATE }}
             ---
             ```
-            正文 `# H1` 后接以下 11 个 `## 章节`（成目录项），章节间用独占一行 `◇ ◇ ◇` 分隔：
+            正文 `# H1` 后接以下 `## 章节`（成目录项）+ 末尾附录，章节间用独占一行 `◇ ◇ ◇` 分隔：
             1. 今日速览（积极信号 / 风险信号 / 明日关注，每条锚定平台+原文直引）
-            2. 核心洞察（3-5 条跨源归纳，标信度 A/B/C，引玩家原话佐证）
+            2. 核心洞察（4-6 条跨源归纳，标信度 A/B/C，引玩家原话佐证）
             3. 各平台数据总览（表格须含"原始/去重""真实发布时效"两列 + 数据更正说明）
             4. 官方运营动态（锚定 official + game-announcement，带状态标签）
             5. 故障与 Bug 反馈（§6.11 三类：官方确认 bug / 官方判定为预期行为 / 玩家报告待核实；
                锚定 official-q-a、game-announcement、商店差评、各语言频道；列原话 + 影响排序；
                另设"翻译/文本类（官方已承接）"小节）
-            6. 中文社区（bilibili/weibo/weixin/taptap/小红书/NGA，多引原声）
-            7. 英文社区（reddit/Discord 英文/Steam 英文/X）
-            8. 日文社区（日服/Pixiv/X 日文）
-            9. 韩文社区（dcinside/ruliweb/naver/Arca/Steam 韩文，原文+译）
-            10. 社区同人创作巡礼（fanart/fanfic，带来源链接，留意 NSFW 版规张力）
-            11. 八角色行动建议（基于当日情报给运营 / 文案 / 美术等的可执行建议）
+            6. 中文社区 / 7. 英文社区 / 8. 日文社区 / 9. 韩文社区（各多引原声）
+            10. 多语种社区逐源速览（越/泰/德/俄/西/葡/印尼等每个频道一条核心信号）
+            11. 社区同人创作巡礼（**按上节嵌入存活真图** + fanfic，留意 NSFW 版规张力）
+            12. 八角色行动建议（给运营 / 文案 / 美术 / 本地化 / QA 等的可执行建议）
+            末尾 **附录 A 原声集**：按主题归类，每条"原文 + 中译"，供守密人回溯归纳来源。
             报告数据给精确去重数字；每条结论锚定可查证据并尽量直引原话；
             区分官方确认 vs 玩家报告、建议 vs 已落盘。
 
