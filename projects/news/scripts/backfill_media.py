@@ -20,7 +20,7 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   python projects/news/scripts/backfill_media.py --no-discord                 # 只补持久平台源
   python projects/news/scripts/backfill_media.py --upload                     # 打包传 Releases
 """
-import os, json, re, glob, time, argparse, subprocess, hashlib
+import os, json, re, glob, time, argparse, subprocess, hashlib, html
 import urllib.request, urllib.error
 from datetime import datetime
 
@@ -53,6 +53,7 @@ def fname(url, source):
 
 
 def fetch(url, dest, source):
+    url = html.unescape(url)  # 归档 URL 常含 &amp; 等实体，破坏签名导致 403
     headers = {"User-Agent": UA}
     if source in REFERER:
         headers["Referer"] = REFERER[source]
