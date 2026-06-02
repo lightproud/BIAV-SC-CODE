@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-02T10:04:30.365685+00:00",
+  "archived_at": "2026-06-02T14:44:12.310560+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
@@ -286,6 +286,50 @@
         "playtime_forever": 240,
         "votes_up": 0,
         "timestamp_created": 1780384005
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Saya",
+      "summary": "Saya",
+      "source": "steam_review",
+      "time": "2026-06-02T12:17:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198828573884/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198828573884",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 446,
+        "votes_up": 0,
+        "timestamp_created": 1780402676
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] fun combat",
+      "summary": "fun combat",
+      "source": "steam_review",
+      "time": "2026-06-02T12:16:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199104168458/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199104168458",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 188,
+        "votes_up": 0,
+        "timestamp_created": 1780402578
       },
       "lang": "",
       "platform_region": "global"

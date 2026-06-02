@@ -1,8 +1,8 @@
 {
   "date": "2026-06-03",
-  "archived_at": "2026-06-02T10:04:30.369505+00:00",
+  "archived_at": "2026-06-02T14:44:12.314347+00:00",
   "source": "pixiv",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "夜風に舞う",
@@ -23,6 +23,48 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/18/31/17/145518913_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "広がる",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-02T19:09:19+09:00",
+      "url": "https://www.pixiv.net/artworks/145520323",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "ソラミミ",
+      "tags": [
+        "沙耶の唄",
+        "忘却前夜",
+        "コラボレーション",
+        "沙耶",
+        "たんぽぽ"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/09/19/145520323_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "佇む",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-02T19:03:48+09:00",
+      "url": "https://www.pixiv.net/artworks/145520152",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "ソラミミ",
+      "tags": [
+        "沙耶の唄",
+        "忘却前夜",
+        "コラボレーション",
+        "沙耶",
+        "たんぽぽ"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/03/48/145520152_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
