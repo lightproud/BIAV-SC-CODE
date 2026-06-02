@@ -1,9 +1,31 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-02T14:44:12.310560+00:00",
+  "archived_at": "2026-06-02T18:33:58.676859+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
+    {
+      "title": "[正面] 虽然被很多次烂活恶心过，但这真的是一款很好的游戏。",
+      "summary": "虽然被很多次烂活恶心过，但这真的是一款很好的游戏。",
+      "source": "steam_review",
+      "time": "2026-06-02T14:59:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199372497070/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199372497070",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 9483,
+        "votes_up": 1,
+        "timestamp_created": 1780412373
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
       "summary": "It's very good. If you want CZN but more Victorian era, you got this.",

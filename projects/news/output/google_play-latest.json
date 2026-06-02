@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-02T14:44:08.130508+00:00",
+  "collected_at": "2026-06-02T18:33:57.385961+00:00",
   "source": "google_play",
-  "item_count": 14,
+  "item_count": 12,
   "items": [
     {
       "source": "google_play",
@@ -45,6 +45,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-05-21T02:28:35",
+      "lang": "fr",
+      "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
+      "summary": "Honnêtement un très bon jeu L'histoire est prenante et les designs parlent pour eux même. Probablement à jouer en anglais pour en profiter au maximum.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr",
+      "author": "Ilo '",
+      "engagement": 2
+    },
+    {
+      "source": "google_play",
       "time": "2026-05-25T03:18:20",
       "lang": "es",
       "title": "[Google Play 好评] ★5 Un juego que en mi opinión es excelente,",
@@ -75,42 +85,12 @@
     },
     {
       "source": "google_play",
-      "time": "2026-05-21T02:28:35",
-      "lang": "fr",
-      "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
-      "summary": "Honnêtement un très bon jeu L'histoire est prenante et les designs parlent pour eux même. Probablement à jouer en anglais pour en profiter au maximum.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr",
-      "author": "Ilo '",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-05-30T15:00:09",
       "lang": "zh",
       "title": "[Google Play 差评] ★1 网络繁忙进不去",
       "summary": "网络繁忙进不去",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN",
       "author": "涂山星仄",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-03T16:02:48",
-      "lang": "zh",
-      "title": "[Google Play 差评] ★1 只建议白嫖玩这游戏哦，plz be a f2p player",
-      "summary": "只建议白嫖玩这游戏哦，plz be a f2p player",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
-      "author": "timo timothy",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-03T16:02:48",
-      "lang": "zh",
-      "title": "[Google Play 差评] ★1 只建议白嫖玩这游戏哦，plz be a f2p player",
-      "summary": "只建议白嫖玩这游戏哦，plz be a f2p player",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
-      "author": "timo timothy",
       "engagement": 0
     },
     {
