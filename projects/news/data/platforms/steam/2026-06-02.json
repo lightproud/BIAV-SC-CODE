@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-01T22:33:26.040436+00:00",
+  "archived_at": "2026-06-02T00:08:57.640165+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
@@ -132,6 +132,72 @@
         "playtime_forever": 6365,
         "votes_up": 0,
         "timestamp_created": 1780340174
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] incredibly fun team building that feels expressive...",
+      "summary": "incredibly fun team building that feels expressive with older characters still having viability",
+      "source": "steam_review",
+      "time": "2026-06-01T22:58:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199805756174/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199805756174",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2057,
+        "votes_up": 0,
+        "timestamp_created": 1780354715
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Jogo muito fodas galera, recomento jogar 👍\r\nikvufh...",
+      "summary": "Jogo muito fodas galera, recomento jogar 👍\r\nikvufhu4egydcrtfuhtlgriudhutkw",
+      "source": "steam_review",
+      "time": "2026-06-01T22:35:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199592491914/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199592491914",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 320,
+        "votes_up": 0,
+        "timestamp_created": 1780353326
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] The story alone is worth playing for. Very dark, l...",
+      "summary": "The story alone is worth playing for. Very dark, lovecraftian horror vibes.\nIt's a gacha game but I haven't felt like I needed to spend money to progress and experience the game.\n\nIt feels more like a horror game than a gacha game.\n\nit's free, would recommend if you like grimdark existential dread themes and don't mind reading a bunch.",
+      "source": "steam_review",
+      "time": "2026-06-01T22:19:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198046817068/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198046817068",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 512,
+        "votes_up": 0,
+        "timestamp_created": 1780352369
       },
       "lang": "",
       "platform_region": "global"
