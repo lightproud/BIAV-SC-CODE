@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-01T22:33:18.906558+00:00",
+  "collected_at": "2026-06-02T00:08:55.994111+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -35,18 +35,48 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-31T23:01:37+00:00",
+      "time": "2026-06-01T22:58:35+00:00",
       "lang": "english",
-      "title": "[正面] Good mechanics, good art, good story, and F2P frie...",
-      "summary": "Good mechanics, good art, good story, and F2P friendly.",
-      "url": "https://steamcommunity.com/profiles/76561198284550391/recommended/3052450",
-      "author": "76561198284550391",
-      "engagement": 1,
+      "title": "[正面] incredibly fun team building that feels expressive...",
+      "summary": "incredibly fun team building that feels expressive with older characters still having viability",
+      "url": "https://steamcommunity.com/profiles/76561199805756174/recommended/3052450",
+      "author": "76561199805756174",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Good mechanics, good art, good story, and F2P friendly.",
-      "timestamp_created": 1780268497,
-      "playtime_forever": 2226
+      "review": "incredibly fun team building that feels expressive with older characters still having viability",
+      "timestamp_created": 1780354715,
+      "playtime_forever": 2057
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T22:35:26+00:00",
+      "lang": "brazilian",
+      "title": "[正面] Jogo muito fodas galera, recomento jogar 👍\r\nikvufh...",
+      "summary": "Jogo muito fodas galera, recomento jogar 👍\r\nikvufhu4egydcrtfuhtlgriudhutkw",
+      "url": "https://steamcommunity.com/profiles/76561199592491914/recommended/3052450",
+      "author": "76561199592491914",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "Jogo muito fodas galera, recomento jogar 👍\r\nikvufhu4egydcrtfuhtlgriudhutkw",
+      "timestamp_created": 1780353326,
+      "playtime_forever": 320
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-01T22:19:29+00:00",
+      "lang": "english",
+      "title": "[正面] The story alone is worth playing for. Very dark, l...",
+      "summary": "The story alone is worth playing for. Very dark, lovecraftian horror vibes.\nIt's a gacha game but I haven't felt like I needed to spend money to progress and experience the game.\n\nIt feels more like a horror game than a gacha game.\n\nit's free, would recommend if you like grimdark existential dread themes and don't mind reading a bunch.",
+      "url": "https://steamcommunity.com/profiles/76561198046817068/recommended/3052450",
+      "author": "76561198046817068",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The story alone is worth playing for. Very dark, lovecraftian horror vibes.\nIt's a gacha game but I haven't felt like I needed to spend money to progress and experience the game.\n\nIt feels more like a horror game than a gacha game.\n\nit's free, would recommend if you like grimdark existential dread themes and don't mind reading a bunch.",
+      "timestamp_created": 1780352369,
+      "playtime_forever": 512
     },
     {
       "source": "steam",
@@ -61,7 +91,7 @@
       "voted_up": true,
       "review": "Generous is the least I can say about this game, the gameplay is interesting and challenging, and the story is intriguing especially if you're into cosmic and slowburn horror.",
       "timestamp_created": 1780343437,
-      "playtime_forever": 381
+      "playtime_forever": 527
     },
     {
       "source": "steam",
@@ -226,7 +256,7 @@
       "voted_up": true,
       "review": "This game is amazing, go play it now !",
       "timestamp_created": 1780282142,
-      "playtime_forever": 1845
+      "playtime_forever": 1995
     },
     {
       "source": "steam",
