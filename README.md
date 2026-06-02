@@ -72,7 +72,7 @@ pip install -r projects/news/requirements.txt
 python projects/news/scripts/aggregator.py
 
 # 本地预览 Wiki
-cd projects/wiki && npm install && npm run docs:dev
+cd projects/wiki && npm install && npm run dev
 
 # 银芯记忆系统查询
 python scripts/memory_search.py "查询内容"
@@ -96,7 +96,7 @@ python scripts/session_briefing.py
 - **Code-* 子项目会话**：site / news / wiki / memory / strategy 按子项目分工
 - **共享外脑**：本仓库连接所有会话，通过 `memory/decisions.md` + dispatch brief 协调
 
-详见 [`memory/methodology.md`](memory/methodology.md) 与 30 条踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)。
+详见 [`memory/methodology.md`](memory/methodology.md) 与 32 条踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)。
 
 ## 参与贡献
 
