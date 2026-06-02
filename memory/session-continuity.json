@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "1681ed98",
-    "timestamp": "2026-06-02T03:08:35.829000+00:00",
-    "duration_minutes": 9.1,
+    "id": "fa441dee",
+    "timestamp": "2026-06-02T05:36:58.698000+00:00",
+    "duration_minutes": 157.5,
     "branch": "claude/inspiring-babbage-we5V8",
     "topics": [
       "做梦Agent"
@@ -10,11 +10,147 @@
     "decisions": [],
     "files_changed": [
       "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-      "/home/user/brain-in-a-vat/scripts/send_report_email.py"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+      "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+      "/tmp/extract_0601.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "e73df420",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "e73f3da6",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "83ac1e3b",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "dd763d51",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "21e2e785",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "94c0df3a",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "0b32b273",
+      "timestamp": "2026-06-02T05:36:58.698000+00:00",
+      "duration_minutes": 157.5,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "1681ed98",
+      "timestamp": "2026-06-02T03:08:35.829000+00:00",
+      "duration_minutes": 9.1,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "22fd3ea7",
       "timestamp": "2026-06-02T02:11:07.778000+00:00",
@@ -31,276 +167,21 @@
         "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "b4b39f20",
-      "timestamp": "2026-06-01T20:10:04.367000+00:00",
-      "duration_minutes": 7.8,
-      "branch": "claude/repo-health-assessment-1vmlD",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
-    },
-    {
-      "id": "f1c1c283",
-      "timestamp": "2026-05-27T00:53:48.887000+00:00",
-      "duration_minutes": 588.9,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/dream_archive.py",
-        "/home/user/brain-in-a-vat/scripts/dream_config.py",
-        "/home/user/brain-in-a-vat/scripts/dream_health.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "87df4b4a",
-      "timestamp": "2026-05-26T17:50:10.564000+00:00",
-      "duration_minutes": 165.2,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/dream_archive.py",
-        "/home/user/brain-in-a-vat/scripts/dream_config.py",
-        "/home/user/brain-in-a-vat/scripts/dream_health.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "70c0404d",
-      "timestamp": "2026-05-26T17:08:55.540000+00:00",
-      "duration_minutes": 124.0,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_collect_global.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "2859e2b7",
-      "timestamp": "2026-05-26T16:50:03.381000+00:00",
-      "duration_minutes": 105.1,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
-        "/home/user/brain-in-a-vat/tests/test_memory_functions.py",
-        "/home/user/brain-in-a-vat/tests/test_text_utils.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "49d4c8ee",
-      "timestamp": "2026-05-26T15:51:57.856000+00:00",
-      "duration_minutes": 47.0,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
-        "/home/user/brain-in-a-vat/tests/test_text_utils.py",
-        "/tmp/strip_emoji.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "ba93ad00",
-      "timestamp": "2026-05-26T15:26:58.943000+00:00",
-      "duration_minutes": 22.1,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [
-        "深读哪些档案",
-        "正确的 `:src=\"'/...'\"` 绑定**——说明同一生成器内 icons/battle-units 分支写法正确，只有 cg-gallery（396/433）与 card/ui（679/707"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/tmp/strip_emoji.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "d2b57840",
-      "timestamp": "2026-05-20T00:45:54.259000+00:00",
-      "duration_minutes": 34115.2,
-      "branch": "claude/opus-handoff-strategy-bCiyY",
-      "topics": [
-        "银芯",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/README.md",
-        "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-claude-md-unify.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
-        "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 2.69,
-      "做梦Agent": 1.8,
-      "银芯": 0.65,
-      "黑池": 0.42,
-      "Bilibili": 0.1
+      "做梦Agent": 4.46,
+      "Wiki": 0.45,
+      "银芯": 0.11
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
-      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-      "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-      "/home/user/brain-in-a-vat/scripts/character_persona.py",
-      "/home/user/brain-in-a-vat/scripts/dream.py",
-      "/home/user/brain-in-a-vat/scripts/dream_archive.py",
-      "/home/user/brain-in-a-vat/scripts/dream_config.py"
+      "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+      "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+      "/tmp/extract_0601.py"
     ],
-    "total_sessions": 116
+    "total_sessions": 124
   },
-  "updated_at": "2026-06-02T03:13:04.016670+00:00"
+  "updated_at": "2026-06-02T18:40:03.166247+00:00"
 }
