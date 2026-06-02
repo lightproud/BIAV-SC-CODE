@@ -49,7 +49,7 @@ AI 会话（C1）按既定政策直推 main，不走此模板。
 ## 验证清单
 
 - [ ] 本地跑通对应校验脚本（如 `python projects/wiki/scripts/validate_data.py` / `python assets/data/validate.py`）
-- [ ] 若涉及 site / wiki / news 视觉，已在本地预览（`npm run docs:dev` 或浏览器打开 HTML）
+- [ ] 若涉及 site / wiki / news 视觉，已在本地预览（`npm run dev` 或浏览器打开 HTML）
 - [ ] 不引入 emoji（按 `CLAUDE.md` 硬约束）
 - [ ] 不动 `memory/decisions.md` / `memory/lessons-learned.md` 等档案（这些归主控台）
 
