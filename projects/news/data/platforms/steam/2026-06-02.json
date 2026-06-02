@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-02T05:25:02.144750+00:00",
+  "archived_at": "2026-06-02T10:04:30.365685+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 13,
   "items": [
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
@@ -220,6 +220,72 @@
         "playtime_forever": 130,
         "votes_up": 0,
         "timestamp_created": 1780359305
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 재밌어요",
+      "summary": "재밌어요",
+      "source": "steam_review",
+      "time": "2026-06-02T08:57:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199262485343/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199262485343",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 8953,
+        "votes_up": 0,
+        "timestamp_created": 1780390638
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 嘿嘿嘿嘿嘿嘿",
+      "summary": "嘿嘿嘿嘿嘿嘿",
+      "source": "steam_review",
+      "time": "2026-06-02T08:45:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198931396806/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198931396806",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 224,
+        "votes_up": 0,
+        "timestamp_created": 1780389904
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I think the proper expectations make a game more f...",
+      "summary": "I think the proper expectations make a game more fun and enjoyable. Because of that, I will try to explain what you will find.\n\nIf you enjoy the Victorian-age setting. The dresses, the scenery, the dignified gloominess, you will find quite a bit to enjoy. The story is also very victorian.\n-\nThe gameplay is turn-based strategy, where you draw cards to attack and whatnot. There is some difficulty, enough to feel some weight in your decisions. But mostly, it is to help feel immersed in things.\n\nIt is a good game if you are tired from other things, and cannot decide between a video game and a television show.\n\n--\n\nWell, I do have two complaints, but these are very specific ones. If this is your first \"gacha\" game, or do not play games often, please ignore this.\n\nIf you have played other gacha games before, this game is basically that. I do not think gacha games are all that bad. There is a lot of creativity and uniqueness in them. But the UI interface!!!! The UI interface is really an Achilles heel for gacha games, in my opinion.\nLooking at the Home Screen in this game, is like looking at every other gacha game. And that's very unfortunate, because even though the story and gameplay are unique, seeing such a familiar menu, and home screen layout really does make it hard to feel like you are playing something different.\n\nOne more complaint, is the \"dungeon\" exploration. This is even more minor, but it must be kept in mind.\n\nI wouldn't call it \"exploring dungeons,\" or whatnot. It's clicking on branching paths mostly. Which is fine. The problem is that it feels too impersonal. Your character is an icon hovering over the tile you are on. Why not, instead, just have your character walk around when you move? A small animation of you or your party walking????\n\nIt sounds like a small complaint, and it is, but it is little touches like that, which add or remove from immersion. And I think every small bit counts. This game is designed to be immersive, after all!!!",
+      "source": "steam_review",
+      "time": "2026-06-02T07:06:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199800792820/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199800792820",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 240,
+        "votes_up": 0,
+        "timestamp_created": 1780384005
       },
       "lang": "",
       "platform_region": "global"
