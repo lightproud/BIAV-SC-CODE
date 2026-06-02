@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-02T00:08:55.994111+00:00",
+  "collected_at": "2026-06-02T05:25:01.799412+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-01T00:49:50+00:00",
-      "lang": "schinese",
-      "title": "[正面] 福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
-      "summary": "福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
-      "url": "https://steamcommunity.com/profiles/76561199785624002/recommended/3052450",
-      "author": "76561199785624002",
-      "engagement": 1,
-      "language": "schinese",
+      "time": "2026-06-02T00:15:05+00:00",
+      "lang": "russian",
+      "title": "[正面] ну ниче так,мне понравилось",
+      "summary": "ну ниче так,мне понравилось",
+      "url": "https://steamcommunity.com/profiles/76561198754183052/recommended/3052450",
+      "author": "76561198754183052",
+      "engagement": 0,
+      "language": "russian",
       "voted_up": true,
-      "review": "福利和画风都是很nice的，可惜有次回游后发现添加了违禁词，少了那种疯狂",
-      "timestamp_created": 1780274990,
-      "playtime_forever": 3413
+      "review": "ну ниче так,мне понравилось",
+      "timestamp_created": 1780359305,
+      "playtime_forever": 130
     },
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "incredibly fun team building that feels expressive with older characters still having viability",
       "timestamp_created": 1780354715,
-      "playtime_forever": 2057
+      "playtime_forever": 2357
     },
     {
       "source": "steam",
@@ -61,7 +61,7 @@
       "voted_up": true,
       "review": "Jogo muito fodas galera, recomento jogar 👍\r\nikvufhu4egydcrtfuhtlgriudhutkw",
       "timestamp_created": 1780353326,
-      "playtime_forever": 320
+      "playtime_forever": 473
     },
     {
       "source": "steam",
@@ -76,7 +76,7 @@
       "voted_up": true,
       "review": "The story alone is worth playing for. Very dark, lovecraftian horror vibes.\nIt's a gacha game but I haven't felt like I needed to spend money to progress and experience the game.\n\nIt feels more like a horror game than a gacha game.\n\nit's free, would recommend if you like grimdark existential dread themes and don't mind reading a bunch.",
       "timestamp_created": 1780352369,
-      "playtime_forever": 512
+      "playtime_forever": 749
     },
     {
       "source": "steam",
@@ -91,7 +91,7 @@
       "voted_up": true,
       "review": "Generous is the least I can say about this game, the gameplay is interesting and challenging, and the story is intriguing especially if you're into cosmic and slowburn horror.",
       "timestamp_created": 1780343437,
-      "playtime_forever": 527
+      "playtime_forever": 539
     },
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "It's very good. If you want CZN but more Victorian era, you got this.",
       "timestamp_created": 1780336689,
-      "playtime_forever": 460
+      "playtime_forever": 711
     },
     {
       "source": "steam",
@@ -242,36 +242,6 @@
       "review": "I didn't even know this game existed... and then they added Saya and well uh yeah now I know it exists.\nThe art style is amazing, the characters so creative.\nPlays like slay the spire (I never played it), a card game with blocks and attacks and all that stuff.",
       "timestamp_created": 1780306980,
       "playtime_forever": 198
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-01T02:49:02+00:00",
-      "lang": "english",
-      "title": "[正面] This game is amazing, go play it now !",
-      "summary": "This game is amazing, go play it now !",
-      "url": "https://steamcommunity.com/profiles/76561199087724962/recommended/3052450",
-      "author": "76561199087724962",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "This game is amazing, go play it now !",
-      "timestamp_created": 1780282142,
-      "playtime_forever": 1995
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-01T02:38:12+00:00",
-      "lang": "english",
-      "title": "[正面] good roguelike game. good combos, good compos, goo...",
-      "summary": "good roguelike game. good combos, good compos, good design. i like the fact its also a gatcha.\n\ni dont care about the story tho, id like to completely skip it. and the translation is a bit bad.",
-      "url": "https://steamcommunity.com/profiles/76561199002390357/recommended/3052450",
-      "author": "76561199002390357",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "good roguelike game. good combos, good compos, good design. i like the fact its also a gatcha.\n\ni dont care about the story tho, id like to completely skip it. and the translation is a bit bad.",
-      "timestamp_created": 1780281492,
-      "playtime_forever": 46
     }
   ]
 }
