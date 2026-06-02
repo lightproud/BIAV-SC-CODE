@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T10:58:25.456714+00:00",
+  "archived_at": "2026-06-02T21:44:13.448141+00:00",
   "source": "youtube",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "source": "youtube",
@@ -219,6 +219,24 @@
       "engagement": 871,
       "media_url": "https://i.ytimg.com/vi/Zvs5WtSL0Po/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1_q83bpuVycA67DNUlgRTQ710Yg",
       "content_type": "image"
+    },
+    {
+      "title": "『 Morimens 』 we're br*tish",
+      "summary": "[Streamed 1 month ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
+      "source": "youtube",
+      "time": "2026-05-03T21:41:07.161926+00:00",
+      "url": "https://www.youtube.com/watch?v=iyiUaeezTgE",
+      "engagement": 834,
+      "is_hot": false,
+      "author": "Yuuna Nini",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/iyiUaeezTgE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWJztCxZb3EorR1tiLAIhsHu9W3w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "source": "youtube",
