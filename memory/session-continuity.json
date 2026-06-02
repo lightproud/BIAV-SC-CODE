@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "969a8d6f",
-    "timestamp": "2026-06-02T19:56:06.428000+00:00",
-    "duration_minutes": 1016.6,
+    "id": "0d95317a",
+    "timestamp": "2026-06-02T20:09:31.061000+00:00",
+    "duration_minutes": 1030.0,
     "branch": "claude/inspiring-babbage-we5V8",
     "topics": [
       "做梦Agent"
@@ -19,6 +19,25 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "969a8d6f",
+      "timestamp": "2026-06-02T19:56:06.428000+00:00",
+      "duration_minutes": 1016.6,
+      "branch": "claude/inspiring-babbage-we5V8",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
+        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
+        "/tmp/extract2.py",
+        "/tmp/extract_0601.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "256d7106",
       "timestamp": "2026-06-02T18:58:05.605000+00:00",
@@ -156,38 +175,22 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "94c0df3a",
-      "timestamp": "2026-06-02T05:36:58.698000+00:00",
-      "duration_minutes": 157.5,
-      "branch": "claude/inspiring-babbage-we5V8",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 4.73,
-      "Wiki": 0.23
+      "做梦Agent": 4.78,
+      "Wiki": 0.18
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
       "/home/user/brain-in-a-vat/scripts/send_report_email.py",
       "/tmp/extract_0601.py",
-      "/home/user/brain-in-a-vat/CLAUDE.md"
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/tmp/extract2.py"
     ],
-    "total_sessions": 127
+    "total_sessions": 128
   },
-  "updated_at": "2026-06-02T19:59:51.984067+00:00"
+  "updated_at": "2026-06-02T20:13:01.094207+00:00"
 }
