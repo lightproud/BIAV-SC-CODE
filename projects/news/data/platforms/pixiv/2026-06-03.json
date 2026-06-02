@@ -1,8 +1,8 @@
 {
   "date": "2026-06-03",
-  "archived_at": "2026-06-02T14:44:12.314347+00:00",
+  "archived_at": "2026-06-02T18:33:58.682216+00:00",
   "source": "pixiv",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "夜風に舞う",
@@ -65,6 +65,27 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/03/48/145520152_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "変わり果てる世界の中で",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-02T23:59:34+09:00",
+      "url": "https://www.pixiv.net/artworks/145533598",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "ソラミミ",
+      "tags": [
+        "沙耶の唄",
+        "忘却前夜",
+        "コラボ",
+        "コラボレーション",
+        "沙耶"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/23/59/34/145533598_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
