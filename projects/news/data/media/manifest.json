@@ -8063,6 +8063,27 @@
       "title": "夜風に舞う",
       "time": "2026-06-02T18:31:17+09:00",
       "downloaded_at": "2026-06-02T10:04:30.270323+00:00"
+    },
+    "https://i.ytimg.com/vi/Gy2UF0LUdC0/hq720.jpg?v=17&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyx4NXPCP680pS0M51pA5G87-Huw": {
+      "filename": "youtube_8c2f4ab53fd55a37.jpg",
+      "source": "youtube",
+      "title": "忘却前夜　限定キャラ1体までの縛りで編成作る配信したら誰かの参考になりますか？",
+      "time": "2026-06-02T14:41:09.322751+00:00",
+      "downloaded_at": "2026-06-02T14:44:10.496375+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/09/19/145520323_p0_square1200.jpg": {
+      "filename": "pixiv_14f9fe7e9281f967.jpg",
+      "source": "pixiv",
+      "title": "広がる",
+      "time": "2026-06-02T19:09:19+09:00",
+      "downloaded_at": "2026-06-02T14:44:11.362180+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/03/48/145520152_p0_square1200.jpg": {
+      "filename": "pixiv_ca3986edf9e66b70.jpg",
+      "source": "pixiv",
+      "title": "佇む",
+      "time": "2026-06-02T19:03:48+09:00",
+      "downloaded_at": "2026-06-02T14:44:12.232485+00:00"
     }
   },
   "failed": {
@@ -12810,6 +12831,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-02T10:04:29.220956+00:00"
+    },
+    "https://preview.redd.it/wkqnqgkvhr4h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=8ed97ab435eec44f39867d99ef9f2b3a86917e2b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T14:44:08.774989+00:00"
+    },
+    "https://preview.redd.it/1ywmmj3ycv4h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=28eae5c225ba9b62ef7558d7ff0a9ad112e2206c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T14:44:09.146189+00:00"
+    },
+    "https://preview.redd.it/ygycors4gu4h1.jpg?width=140&amp;height=105&amp;auto=webp&amp;s=0bc0b0f1b06fc22f2ececb15d3d8ee36512a1c5d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T14:44:09.520680+00:00"
+    },
+    "https://preview.redd.it/3x4bfwispu4h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f6dbd3ffb58eb382aa11ba8b103b7f305e570d7b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T14:44:09.890960+00:00"
     }
   },
   "archived": []
