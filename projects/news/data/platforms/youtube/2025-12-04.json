@@ -1,8 +1,8 @@
 {
   "date": "2025-12-04",
-  "archived_at": "2026-06-01T22:33:26.031962+00:00",
+  "archived_at": "2026-06-02T05:25:02.139195+00:00",
   "source": "youtube",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "【忘卻前夜】神國打擊隊 Arc2.H3-10葬骸之主 三星 Lemuria Strike team #morimens",
@@ -36,6 +36,24 @@
         "scrape"
       ],
       "media_url": "https://i.ytimg.com/vi/73Rqnv8zpLs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3bDZe-YRxxphFFKDa-zFVliI-NQ",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】血海男團 第47期融災禁區 5-5 Caro-Aequor Boy Band #Morimens",
+      "summary": "[6 months ago] 戈利亞安息巨刃紅悸薩爾瓦多神言靈魂二律皮克曼極夜悖謬埋骨泰旖絲慈悲痛楚榨取#忘卻前夜#morimens.",
+      "source": "youtube",
+      "time": "2025-12-04T05:22:05.762907+00:00",
+      "url": "https://www.youtube.com/watch?v=3nALcvwdVz4",
+      "engagement": 349,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/3nALcvwdVz4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHONExDm6woduCtci-1gCXasDHxQ",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"

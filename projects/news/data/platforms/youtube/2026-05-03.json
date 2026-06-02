@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-06-01T22:33:26.031366+00:00",
+  "archived_at": "2026-06-02T05:25:02.137276+00:00",
   "source": "youtube",
-  "item_count": 39,
+  "item_count": 40,
   "items": [
     {
       "source": "youtube",
@@ -111,6 +111,24 @@
       "engagement": 7212,
       "media_url": "https://i.ytimg.com/vi/X0DxJ4UyCO8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfjdVcJHxBsmbVHcWGYYdbFRgOKA",
       "content_type": "image"
+    },
+    {
+      "title": "Forcing my friend to look at characters from my favorite gacha game.",
+      "summary": "[1 month ago] morimens Welcome to the second edition, of me torturing Dio with a quiz: Analyzing Character design and visuals from a gacha ...",
+      "source": "youtube",
+      "time": "2026-05-03T05:22:05.226247+00:00",
+      "url": "https://www.youtube.com/watch?v=2GGGIIpaxKk",
+      "engagement": 5325,
+      "is_hot": true,
+      "author": "THPDom",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/2GGGIIpaxKk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBjfco4s_g9PwDyqnU5CDBIuF79Q",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "source": "youtube",

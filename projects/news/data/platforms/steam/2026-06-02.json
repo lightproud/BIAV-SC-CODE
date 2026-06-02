@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-02T00:08:57.640165+00:00",
+  "archived_at": "2026-06-02T05:25:02.144750+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "title": "[正面] It's very good. If you want CZN but more Victorian...",
@@ -198,6 +198,28 @@
         "playtime_forever": 512,
         "votes_up": 0,
         "timestamp_created": 1780352369
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] ну ниче так,мне понравилось",
+      "summary": "ну ниче так,мне понравилось",
+      "source": "steam_review",
+      "time": "2026-06-02T00:15:05+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198754183052/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198754183052",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 130,
+        "votes_up": 0,
+        "timestamp_created": 1780359305
       },
       "lang": "",
       "platform_region": "global"
