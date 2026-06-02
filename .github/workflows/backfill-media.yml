@@ -8,7 +8,7 @@ name: "🖼️ Backfill & Archive Media"
 
 on:
   schedule:
-    - cron: '0 3 * * *'   # 每日 03:00 UTC
+    - cron: '0 * * * *'   # 每小时（清积压期；积压补齐后可调回每日）
   workflow_dispatch:
     inputs:
       no_discord:
@@ -17,7 +17,7 @@ on:
         default: false
       budget:
         description: '运行预算秒数'
-        default: '3000'
+        default: '2400'
 
 concurrency:
   group: backfill-media
