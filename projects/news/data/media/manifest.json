@@ -8140,6 +8140,13 @@
       "title": "[DC] glitzy_x@🔸art-and-memes: i haven't been drawing dore nearly enough and it made me sad. here he ",
       "time": "2026-06-02T14:00:37.860000+00:00",
       "downloaded_at": "2026-06-02T21:44:10.899870+00:00"
+    },
+    "https://i.ytimg.com/vi/BTR9ES_xtcQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCiePVKVkJJ9safa4eHa8yaCrZ9CQ": {
+      "filename": "youtube_2d326ec193a68595.jpg",
+      "source": "youtube",
+      "title": "[Cthulhu's Domination] I couldn't get enough of this story of having everything taken away from y...",
+      "time": "2026-06-02T23:26:56.053089+00:00",
+      "downloaded_at": "2026-06-02T23:30:13.798952+00:00"
     }
   },
   "failed": {
@@ -12942,6 +12949,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-02T21:44:13.363755+00:00"
+    },
+    "https://preview.redd.it/9shboapbyx4h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f29dbf436d95c387e9f482d5d0ff2bdc928a2271": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T23:30:14.333513+00:00"
+    },
+    "https://preview.redd.it/f24gewpa6y4h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=13e281050eca6474ef7e6403880424c6f0497bf7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T23:30:14.676757+00:00"
+    },
+    "https://preview.redd.it/a6eoyq9iay4h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8c0ca94a03f726c1155c8e9e63cf081007dda186": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-02T23:30:15.084654+00:00"
     }
   },
   "archived": []
