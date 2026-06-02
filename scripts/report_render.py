@@ -70,6 +70,17 @@ img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px soli
 .gallery-cap{font-size:11.5pt;color:#7a7050;text-align:center;margin-bottom:4mm;}
 .quote-orig{color:#b3a67e;font-size:13pt;}
 .quote-zh{color:#9a8d5e;font-size:12.5pt;}
+.lead{font-size:15.5pt;color:#d8cba0;border-left:3px solid #c5a356;background:#13141c;padding:4mm 6mm;margin:3mm 0 5mm;line-height:1.9;}
+.callout{border:1px solid #3a3520;background:#12130d;padding:3.5mm 5mm;margin:4mm 0;page-break-inside:avoid;}
+.callout-risk{border-left:3px solid #b5683e;}
+.callout-pos{border-left:3px solid #6f8f4a;}
+.dim{border-left:3px solid #c5a356;background:#13141c;padding:1mm 5mm;margin:5mm 0 2mm;}
+.dim h3{margin:2mm 0;color:#e2c97e;}
+.badge{font-size:10.5pt;color:#0a0b10;background:#c5a356;padding:0 4px;border-radius:2px;font-weight:700;}
+.badge-b{background:#a99a6a;}.badge-c{background:#7a7050;color:#13141c;}
+.qq{border-left:2px solid #6b6040;padding:1mm 0 1mm 5mm;margin:2.5mm 0;}
+.qq .o{color:#b3a67e;font-size:12.5pt;}
+.qq .z{color:#8f8358;font-size:12pt;display:block;margin-top:1mm;}
 '''
 
 
