@@ -1,0 +1,177 @@
+name: "📰 Daily Community Report"
+
+# 银芯社区情报日报动态编排
+# 每日从全量档案层（projects/news/data/）读取前一日社区归档，由 Claude 自主
+# 分析多平台多语言情报，产出结构化 markdown → 渲染暗金主题 PDF → 邮件投递。
+#
+# 设计与「做梦 Agent」（dream.yml）同构：所有配置留在 git 仓库内，不依赖外部
+# 调度平台。换任何 AI 工具都能复现完整编排。
+#
+# 职责切分（§6.2/§6.4）：
+#   - AI 步骤只做"判断"（甄别归纳社区情报，写 markdown）
+#   - 渲染 / 发信 / 归档为确定性 shell 步骤，不交给 AI，保证可复算可重试
+#
+# 所需 GitHub Secrets：
+#   ANTHROPIC_API_KEY  驱动报告分析的 Claude 凭据
+#   SMTP_HOST SMTP_PORT SMTP_USER SMTP_PASS [SMTP_FROM]  邮件投递凭据
+
+on:
+  schedule:
+    # 每日 01:30 UTC（北京时间 09:30），留足前一日采集与归档窗口
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '手动指定报告日期 YYYY-MM-DD（默认=北京时间昨日）'
+        required: false
+        default: ''
+
+concurrency:
+  group: daily-report
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  daily-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install render + email dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 \
+            libffi-dev fonts-noto-cjk fonts-noto-cjk-extra
+          pip install weasyprint markdown
+
+      - name: Compute target date
+        id: dates
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            TARGET="${{ github.event.inputs.date }}"
+          else
+            TARGET=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
+          fi
+          MONTH=$(date -d "$TARGET" +%Y-%m)
+          STAMP=$(date -d "$TARGET" +%Y%m%d)
+          DISP=$(date -d "$TARGET" +%Y.%m.%d)
+          {
+            echo "TARGET_DATE=$TARGET"
+            echo "REPORT_MD=deliverables/$MONTH/morimens_daily_$STAMP.md"
+            echo "REPORT_PDF=deliverables/$MONTH/morimens_daily_$STAMP.pdf"
+            echo "DISP_DATE=$DISP"
+          } >> "$GITHUB_ENV"
+          mkdir -p "deliverables/$MONTH"
+
+      # ----------------------------------------------------------------
+      # AI 步骤：只做判断 —— 读全量档案、甄别归纳、写结构化 markdown
+      # ----------------------------------------------------------------
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_push: "false"
+          prompt: |
+            你是银芯情报层日报编排 Agent，全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、
+            混合自称、功能性开头），事实采信遵 §6.11 / §4 数据纪律。
+
+            ## 目标
+            为日期 ${{ env.TARGET_DATE }}（覆盖该日 00:00~24:00 UTC+8）产出一份忘却前夜
+            全球社区情报日报的结构化 markdown，写入 `${{ env.REPORT_MD }}`（路径已建好父目录）。
+            禁止渲染 PDF、禁止发邮件、禁止 git 操作——这些由后续确定性步骤完成，你只写 markdown。
+
+            ## 数据层（§4 硬约束）
+            一律走全量档案层，禁用 output 选样层充全量（lesson #30）：
+            - 平台：`projects/news/data/platforms/{plat}/${{ env.TARGET_DATE }}.json`
+              （17 目录：steam steam_review appstore google_play reddit official dcinside
+              ruliweb gamerch telegram bilibili weibo weixin youtube pixiv stopgame miraheze_wiki）
+              字段 title/summary/lang/url/content_type/engagement。
+            - Discord：`discord/channel_index.json` 映射 {name→dir}；消息在
+              `discord/channels/{dir}/${{ env.TARGET_DATE }}.jsonl` 逐行 JSON，字段
+              content/author_id/author_bot(过滤 bot)/timestamp/reactions[].count；
+              每日纯统计在 `discord/activity_daily/${{ env.TARGET_DATE }}.json`。
+            用单脚本提取到 /tmp（不并行多脚本，R1）；限定窗口、去重、保留原文+平台+反应数。
+            多语言关键词扫描覆盖中/英/韩/俄/日等，命中后读原文剔噪声。
+            若某档案缺失，如实标注"该日无归档"，不得无源外推。
+
+            ## 输出格式
+            写 YAML frontmatter（渲染器自动拼封面），title/subtitle 模仿样本：
+            ```
+            ---
+            title: 忘却前夜 全球社区情报日报
+            subtitle: BIAV-SC 银芯情报层 / 全量档案层 · ${{ env.DISP_DATE }}
+            basis: 采集 ${{ env.TARGET_DATE }} 00:00 ~ 24:00 UTC+8
+            author: 主控台艾瑞卡 / Code-news
+            generated: ${{ env.TARGET_DATE }}
+            ---
+            ```
+            正文 `# H1` 后接以下 10 个 `## 章节`（成目录项），章节间用独占一行 `◇ ◇ ◇` 分隔：
+            1. 今日速览（积极信号 / 风险信号 / 明日关注，每条锚定平台+原文片段）
+            2. 核心洞察（3-5 条跨源归纳，标信度 A/B/C）
+            3. 各平台数据总览（表格：平台 / 条目数 / 要点）
+            4. 官方运营动态（锚定 official + game-announcement，带状态标签）
+            5. 中文社区（bilibili/weibo/weixin/taptap/小红书/NGA）
+            6. 英文社区（reddit/Discord 英文/Steam 英文/X）
+            7. 日文社区（日服/Pixiv/X 日文）
+            8. 韩文社区（dcinside/ruliweb/naver/Arca/Steam 韩文）
+            9. 社区同人创作巡礼（fanart/fanfic，带来源链接）
+            10. 八角色行动建议（基于当日情报给运营 / 文案 / 美术等的可执行建议）
+            报告数据给精确数字；每条结论锚定可查证据；区分官方确认 vs 玩家报告。
+
+      # ----------------------------------------------------------------
+      # 确定性步骤：渲染 PDF
+      # ----------------------------------------------------------------
+      - name: Render report to PDF
+        run: |
+          if [ ! -s "$REPORT_MD" ]; then
+            echo "::error::报告 markdown 未生成或为空：$REPORT_MD"
+            exit 1
+          fi
+          python scripts/report_render.py "$REPORT_MD"
+          if [ ! -s "$REPORT_PDF" ]; then
+            echo "::error::PDF 渲染失败：$REPORT_PDF"
+            exit 1
+          fi
+
+      - name: Send report by email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+        run: |
+          python scripts/send_report_email.py \
+            --pdf "$REPORT_PDF" \
+            --to tanglong.tang@alibaba-inc.com \
+            --subject "忘却前夜 全球社区情报日报 $DISP_DATE"
+
+      - name: Commit deliverable
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deliverables/
+          if git diff --staged --quiet; then
+            echo "No deliverable changes to commit"
+          else
+            git commit -m "chore: daily community report $TARGET_DATE [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi
