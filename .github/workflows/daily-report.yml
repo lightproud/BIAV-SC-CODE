@@ -77,9 +77,11 @@ jobs:
           } >> "$GITHUB_ENV"
           mkdir -p "deliverables/$MONTH"
 
-      # 确定性步骤：当日跑时 Discord CDN 链接新鲜，可全量留存同人图（历史日多已过期）
+      # 确定性步骤：带 token 经 refresh-urls 全量留存当日同人图（附件本体在 Discord，链接可刷新）
       - name: Collect fan art
         continue-on-error: true
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
           python projects/news/scripts/collect_fanart.py --date "$TARGET_DATE" --out "$FANART_DIR"
 

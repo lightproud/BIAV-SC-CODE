@@ -1,0 +1,55 @@
+name: "🎨 Recover Fan Art"
+
+# 某日同人图全量补录：附件本体仍在 Discord，过期的只是签名链接。
+# 带 DISCORD_BOT_TOKEN 经 refresh-urls 刷新后全量下载二创图，提交入库供日报嵌图。
+# 历史日亦可补回（不受 24h CDN 过期限制）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '补录日期 YYYY-MM-DD'
+        required: true
+
+concurrency:
+  group: recover-fanart
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Recover fan art (refresh Discord URLs)
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: |
+          python projects/news/scripts/collect_fanart.py \
+            --date "${{ github.event.inputs.date }}" \
+            --out "projects/news/data/fanart/${{ github.event.inputs.date }}"
+
+      - name: Commit recovered images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "projects/news/data/fanart/${{ github.event.inputs.date }}"
+          if git diff --staged --quiet; then
+            echo "No new fan art to commit"
+          else
+            git commit -m "chore: recover fan art ${{ github.event.inputs.date }} [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              sleep $i
+            done
+            exit 1
+          fi
