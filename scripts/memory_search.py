@@ -666,7 +666,6 @@ def graph_proximity_score(file_path: str, query: str) -> float:
         query_terms = [query]
 
         # Split into sub-terms for Chinese/English
-        import re
         # Chinese: extract bigrams for graph matching
         for run in re.findall(r"[\u4e00-\u9fff]+", query):
             for i in range(len(run) - 1):
@@ -862,7 +861,7 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
         try:
             from reflexion import log_search_failure
             log_search_failure(query, tokenize(query))
-        except (ImportError, Exception):
+        except Exception:
             pass
 
     return final
@@ -904,7 +903,7 @@ def synthesize(query: str, results: list[dict]) -> str | None:
     try:
         import anthropic
         client = anthropic.Anthropic()
-    except (ImportError, Exception):
+    except Exception:
         return None
 
     # Build context from result previews
