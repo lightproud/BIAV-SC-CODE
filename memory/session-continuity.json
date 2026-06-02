@@ -1,9 +1,9 @@
 {
   "last_session": {
-    "id": "d00e8a01",
-    "timestamp": "2026-06-02T02:56:17.436000+00:00",
-    "duration_minutes": 414.0,
-    "branch": "claude/repo-health-assessment-1vmlD",
+    "id": "137afd89",
+    "timestamp": "2026-06-02T19:08:46.427000+00:00",
+    "duration_minutes": 1386.5,
+    "branch": "claude/news-source-cleanup",
     "topics": [
       "Wiki",
       "做梦Agent"
@@ -17,6 +17,23 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "d00e8a01",
+      "timestamp": "2026-06-02T02:56:17.436000+00:00",
+      "duration_minutes": 414.0,
+      "branch": "claude/repo-health-assessment-1vmlD",
+      "topics": [
+        "Wiki",
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "22fd3ea7",
       "timestamp": "2026-06-02T02:11:07.778000+00:00",
@@ -246,63 +263,21 @@
         "/tmp/strip_emoji.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "d2b57840",
-      "timestamp": "2026-05-20T00:45:54.259000+00:00",
-      "duration_minutes": 34115.2,
-      "branch": "claude/opus-handoff-strategy-bCiyY",
-      "topics": [
-        "银芯",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/README.md",
-        "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-claude-md-unify.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
-        "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 3.69,
-      "做梦Agent": 1.8,
-      "银芯": 0.65,
-      "黑池": 0.42,
-      "Bilibili": 0.1
+      "Wiki": 3.95,
+      "做梦Agent": 2.44,
+      "银芯": 0.52,
+      "黑池": 0.34
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
-      "/home/user/brain-in-a-vat/.github/workflows/test-collectors.yml",
-      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-      "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-      "/home/user/brain-in-a-vat/scripts/character_persona.py",
-      "/home/user/brain-in-a-vat/scripts/dream.py"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
     ],
-    "total_sessions": 116
+    "total_sessions": 117
   },
-  "updated_at": "2026-06-02T03:02:00.288904+00:00"
+  "updated_at": "2026-06-02T19:08:46.508367+00:00"
 }
