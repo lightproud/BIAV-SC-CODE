@@ -18,6 +18,8 @@ ROOT = "projects/news/data"
 FANART_CH = ["同人创作", "art-and-memes", "官方素材", "official-materials",
              "fanart", "创作", "二创", "绘"]
 HEADERS = {"User-Agent": "Mozilla/5.0 (silver-core fanart collector)"}
+# Discord API 要求合规 Bot User-Agent（DiscordBot (url, version)），否则可能被拒
+DISCORD_UA = "DiscordBot (https://github.com/lightproud/brain-in-a-vat, 1.0)"
 REFRESH_API = "https://discord.com/api/v10/attachments/refresh-urls"
 
 
@@ -27,11 +29,19 @@ def refresh_discord(urls, token):
     for i in range(0, len(urls), 50):
         body = json.dumps({"attachment_urls": urls[i:i + 50]}).encode()
         req = urllib.request.Request(REFRESH_API, data=body, method="POST", headers={
-            "Authorization": f"Bot {token}", "Content-Type": "application/json", **HEADERS})
+            "Authorization": f"Bot {token}", "Content-Type": "application/json",
+            "User-Agent": DISCORD_UA})
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 for item in json.load(r).get("refreshed_urls", []):
                     out[item["original"]] = item["refreshed"]
+        except urllib.error.HTTPError as e:
+            detail = ""
+            try:
+                detail = e.read().decode()[:300]
+            except Exception:
+                pass
+            print(f"  refresh 批 {i // 50} 失败: HTTP {e.code} {detail}")
         except Exception as e:
             print(f"  refresh 批 {i // 50} 失败: {type(e).__name__}")
         time.sleep(0.3)
