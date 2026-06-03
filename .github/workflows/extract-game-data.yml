@@ -35,11 +35,13 @@ jobs:
       - name: Download game data from Release
         env:
           GH_TOKEN: ${{ github.token }}
+          INPUT_RELEASE_TAG: ${{ github.event.inputs.release_tag }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
-          TAG="${{ github.event.inputs.release_tag }}"
+          TAG="$INPUT_RELEASE_TAG"
 
           if [ "${{ github.event_name }}" = "release" ]; then
-            TAG="${{ github.event.release.tag_name }}"
+            TAG="$RELEASE_TAG"
           fi
 
           if [ -z "$TAG" ]; then
@@ -124,9 +126,11 @@ jobs:
         run: pip install UnityPy Pillow
 
       - name: Extract game data with UnityPy
+        env:
+          INPUT_EXTRACT_TEXTURES: ${{ github.event.inputs.extract_textures }}
         run: |
           EXTRA_ARGS=""
-          if [ "${{ github.event.inputs.extract_textures }}" = "false" ]; then
+          if [ "$INPUT_EXTRACT_TEXTURES" = "false" ]; then
             EXTRA_ARGS="--no-textures"
           fi
 

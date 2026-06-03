@@ -8,7 +8,7 @@ name: "🖼️ Backfill & Archive Media"
 
 on:
   schedule:
-    - cron: '0 * * * *'   # 每小时（清积压期；积压补齐后可调回每日）
+    - cron: '40 * * * *'   # 每小时（清积压期；积压补齐后可调回每日）
   workflow_dispatch:
     inputs:
       no_discord:
@@ -41,9 +41,11 @@ jobs:
       - name: Backfill still-alive media (refresh Discord URLs)
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          INPUT_BUDGET: ${{ github.event.inputs.budget || '3000' }}
+          INPUT_NO_DISCORD: ${{ github.event.inputs.no_discord }}
         run: |
-          FLAGS="--budget ${{ github.event.inputs.budget || '3000' }}"
-          if [ "${{ github.event.inputs.no_discord }}" = "true" ]; then FLAGS="$FLAGS --no-discord"; fi
+          FLAGS="--budget $INPUT_BUDGET"
+          if [ "$INPUT_NO_DISCORD" = "true" ]; then FLAGS="$FLAGS --no-discord"; fi
           python projects/news/scripts/backfill_media.py $FLAGS
 
       - name: Package binaries to GitHub Releases

@@ -346,14 +346,8 @@ def memory_writeback(dry_run: bool = False) -> str:
     Args:
         dry_run: 仅预览，不实际写入。默认 False
     """
-    if dry_run:
-        sys.argv.append("--dry-run")
-
     from memory_writeback import run_writeback
-    result = run_writeback()
-
-    if dry_run and "--dry-run" in sys.argv:
-        sys.argv.remove("--dry-run")
+    result = run_writeback(dry_run=dry_run)
 
     return json.dumps(result, ensure_ascii=False, indent=2)
 

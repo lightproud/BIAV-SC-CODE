@@ -63,20 +63,19 @@ def _load_access_log() -> list[dict]:
 def get_access_signals() -> dict[str, dict]:
     """Extract access frequency signals from access log.
 
-    Returns {file_path: {count, last_accessed, sessions}}
+    Returns {file_path: {count, last_accessed}}
     """
     logs = _load_access_log()
     if not logs:
         return {}
 
-    signals = defaultdict(lambda: {"count": 0, "last_accessed": None, "sessions": 0})
+    signals = defaultdict(lambda: {"count": 0, "last_accessed": None})
     total_sessions = len(logs)
 
     for entry in logs:
         entry_date = entry.get("date", "")
         for fp in entry.get("files_scanned", []):
             signals[fp]["count"] += 1
-            signals[fp]["sessions"] += 1
             if not signals[fp]["last_accessed"] or entry_date > signals[fp]["last_accessed"]:
                 signals[fp]["last_accessed"] = entry_date
 
@@ -392,7 +391,8 @@ def calibrate_reranker_weights(utility: dict) -> dict:
     suggested = {
         "semantic": 0.40,  # Keep semantic constant
         "recency": round(0.60 * variances.get("recency", 0.1) / total_var, 2),
-        "engagement": round(0.60 * variances.get("engagement", 0.1) / total_var, 2),
+        # Emit "access" to match the reranker's DEFAULT_WEIGHTS key (memory_search.py)
+        "access": round(0.60 * variances.get("engagement", 0.1) / total_var, 2),
         "graph": 0.15,  # Keep graph constant
     }
 

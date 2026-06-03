@@ -1,0 +1,16 @@
+# 银芯 wiki 脚本层第三方依赖收口（projects/wiki/scripts/）
+# 标准库（urllib、json、argparse 等）不在此列。
+# 本地模块（wiki_sources 等）为仓库内文件，非依赖。
+# 此前 CI 以内联 pip install 掩盖这些依赖（fetch-wiki-data.yml / extract-game-data.yml），
+# 此文件将其收口，消解 ARCH-09 依赖卫生隐患。
+
+# --- VitePress 页面生成（generate_pages.py 读写 YAML frontmatter）---
+PyYAML>=6.0
+
+# --- 客户端资源解包（extract_client_data.py / decrypt_and_extract.py）---
+# extract-game-data.yml 内联 `pip install UnityPy Pillow`
+UnityPy>=1.10.0
+Pillow>=10.0.0
+
+# --- 数据校验（validate_data.py，JSON Schema 校验）---
+jsonschema>=4.0.0

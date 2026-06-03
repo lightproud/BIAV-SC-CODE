@@ -518,11 +518,23 @@ def build_tfidf_index(chunks: list[dict]) -> dict:
             "offset": chunk["offset"],
         }
 
+    # Inverted index: token -> [chunk_ids] that have a non-zero weight for it.
+    # At query time we only score chunks sharing >=1 query token, which is
+    # an exact-equivalent shortcut for cosine over sparse vectors (a chunk
+    # with no shared token has dot-product 0 and is dropped by the >0.01
+    # threshold anyway). Older index files without this key fall back to a
+    # full scan in search().
+    inverted = defaultdict(list)
+    for cid, vec in vectors.items():
+        for token in vec:
+            inverted[token].append(cid)
+
     return {
         "vocabulary": vocabulary,
         "idf": idf,
         "vectors": vectors,
         "chunks": chunk_meta,
+        "inverted": dict(inverted),
     }
 
 
@@ -598,9 +610,14 @@ def _load_access_log() -> list[dict]:
     return entries
 
 
-def access_frequency_score(file_path: str) -> float:
-    """Score based on how often a file appears in access logs."""
-    logs = _load_access_log()
+def access_frequency_score(file_path: str, logs: list[dict] = None) -> float:
+    """Score based on how often a file appears in access logs.
+
+    Pass a pre-loaded ``logs`` list to avoid re-reading the access log per
+    candidate (rerank hoists the load out of its loop).
+    """
+    if logs is None:
+        logs = _load_access_log()
     if not logs:
         return 0.5  # neutral default
 
@@ -611,16 +628,23 @@ def access_frequency_score(file_path: str) -> float:
     return 0.5 + 0.5 * (access_count / len(logs))
 
 
-def utility_score(file_path: str) -> float:
-    """Get MemRL utility score if available."""
+def _load_utility_data() -> dict:
+    """Load the MemRL utility map once (empty dict if absent/unreadable)."""
     if not UTILITY_FILE.exists():
-        return 0.5
-
+        return {}
     try:
-        data = json.loads(UTILITY_FILE.read_text(encoding="utf-8"))
+        return json.loads(UTILITY_FILE.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
-        return 0.5
+        return {}
 
+
+def utility_score(file_path: str, data: dict = None) -> float:
+    """Get MemRL utility score if available.
+
+    Pass pre-loaded ``data`` to avoid re-reading the utility file per call.
+    """
+    if data is None:
+        data = _load_utility_data()
     entry = data.get(file_path, {})
     return entry.get("utility", 0.5)
 
@@ -641,6 +665,67 @@ def _load_graph_cached():
 
 
 _graph_query_cache = {}
+_graph_adj_cache = {}
+
+
+def _graph_adjacency(graph: dict) -> dict:
+    """Build (once per graph object) the node_id → [(other_id, ...)] adjacency
+    table and cache it keyed by id(graph). find_related_files rebuilds this on
+    every call (via get_neighbors), so for multi-bigram Chinese queries the same
+    table was rebuilt many times per query — cache it so it's built once.
+    """
+    key = id(graph)
+    adj = _graph_adj_cache.get(key)
+    if adj is None:
+        from collections import defaultdict
+        adj = defaultdict(list)
+        for edge in graph["edges"]:
+            adj[edge["source"]].append((edge["target"], "outgoing", edge["type"]))
+            adj[edge["target"]].append((edge["source"], "incoming", edge["type"]))
+        _graph_adj_cache[key] = adj
+    return adj
+
+
+def _related_files_cached(graph: dict, query: str, max_depth: int = 2) -> list[dict]:
+    """Behavioral equivalent of knowledge_graph.find_related_files, but BFS-traverses
+    a cached adjacency table (see _graph_adjacency) instead of rebuilding it per call.
+    Returns [{"file", "distance"}] sorted by distance.
+    """
+    from knowledge_graph import find_node
+
+    matches = find_node(graph, query)
+    if not matches:
+        return []
+
+    adj = _graph_adjacency(graph)
+    results = {}  # file_path → distance
+
+    for match in matches[:3]:  # Top 3 matching entities (mirrors find_related_files)
+        node_id = match["node"]["id"]
+        if node_id not in graph["nodes"]:
+            continue
+
+        visited = {node_id}
+        frontier = [node_id]
+        for d in range(1, max_depth + 1):
+            next_frontier = []
+            for current_id in frontier:
+                for other_id, _direction, _edge_type in adj[current_id]:
+                    if not other_id or other_id in visited:
+                        continue
+                    visited.add(other_id)
+                    next_frontier.append(other_id)
+                    node = graph["nodes"].get(other_id)
+                    if node and node.get("type") == "File":
+                        file_path = node.get("name", other_id.replace("file:", ""))
+                        if file_path not in results or results[file_path] > d:
+                            results[file_path] = d
+            frontier = next_frontier
+
+    return sorted(
+        ({"file": fp, "distance": dist} for fp, dist in results.items()),
+        key=lambda x: x["distance"],
+    )
 
 
 def graph_proximity_score(file_path: str, query: str) -> float:
@@ -657,7 +742,7 @@ def graph_proximity_score(file_path: str, query: str) -> float:
     # Cache related files per query to avoid repeated graph traversals
     if query not in _graph_query_cache:
         try:
-            from knowledge_graph import find_related_files, find_node
+            from knowledge_graph import find_node
         except ImportError:
             return 0.5
 
@@ -676,7 +761,7 @@ def graph_proximity_score(file_path: str, query: str) -> float:
         for term in query_terms:
             if not find_node(graph, term):
                 continue
-            for r in find_related_files(graph, term, max_depth=2):
+            for r in _related_files_cached(graph, term, max_depth=2):
                 fp = r["file"]
                 if fp not in all_related or all_related[fp] > r["distance"]:
                     all_related[fp] = r["distance"]
@@ -720,11 +805,14 @@ def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dic
     """
     w = weights or DEFAULT_WEIGHTS
 
+    # Hoist per-candidate file reads out of the loop (was N+1).
+    access_logs = _load_access_log()
+
     for c in candidates:
         file_path = c["file"]
         sem = c.get("score", 0.0)
         rec = recency_score(file_path)
-        acc = access_frequency_score(file_path)
+        acc = access_frequency_score(file_path, access_logs)
         gph = graph_proximity_score(file_path, query)
         cls = doc_class_weight(file_path)
 
@@ -762,12 +850,16 @@ _index_cache = None
 _index_cache_mtime = 0
 
 
-def load_index() -> dict | None:
+def load_index(allow_rebuild: bool = False) -> dict | None:
     """Load the vector index with in-process caching.
 
     First call: decompress from disk (~1-2s).
     Subsequent calls in same process: instant from memory.
-    Auto-rebuilds if file is missing or older than 24h.
+
+    allow_rebuild=False (default, query/read path): serve the on-disk index
+    even if stale; never trigger an inline build_index (~51s). Rebuilds are
+    left to the CI cron entrypoint. allow_rebuild=True (CI/build path) keeps
+    the auto-rebuild on missing/stale index.
     """
     global _index_cache, _index_cache_mtime
 
@@ -782,11 +874,15 @@ def load_index() -> dict | None:
         if age_hours > INDEX_MAX_AGE_HOURS:
             needs_build = True
 
-        # Return cached if file hasn't changed
-        if _index_cache is not None and file_mtime == _index_cache_mtime:
+        # Serve cached when the file is unchanged, unless a rebuild is both
+        # needed and permitted (then fall through to rebuild). On the read
+        # path (allow_rebuild=False) a stale-but-cached index is fine.
+        cache_fresh = _index_cache is not None and file_mtime == _index_cache_mtime
+        if cache_fresh and not (needs_build and allow_rebuild):
             return _index_cache
 
-    if needs_build:
+    # Query/read path: never inline-rebuild — serve the (possibly stale) file.
+    if needs_build and allow_rebuild:
         print(f"  索引{'不存在' if not VECTORS_FILE.exists() else '已过期'}，自动重建...")
         try:
             build_index()
@@ -824,10 +920,24 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
     if not q_vec:
         return []
 
-    # Score all chunks
+    # Score chunks. For sparse TF-IDF, use the inverted index to score only
+    # candidates sharing >=1 query token — exact-equivalent to the full scan
+    # (chunks with no shared token have cosine 0, below the 0.01 threshold).
+    # Dense vectors share no tokens, so they always full-scan.
     sim_fn = cosine_similarity_dense if is_dense else cosine_similarity
+    vectors = index["vectors"]
+    inverted = index.get("inverted") if not is_dense else None
+
+    if inverted is not None:
+        candidate_ids = set()
+        for token in q_vec:
+            candidate_ids.update(inverted.get(token, ()))
+        candidate_items = ((cid, vectors[cid]) for cid in candidate_ids if cid in vectors)
+    else:
+        candidate_items = vectors.items()
+
     results = []
-    for chunk_id, vec in index["vectors"].items():
+    for chunk_id, vec in candidate_items:
         sim = sim_fn(q_vec, vec)
         if sim > 0.01:  # threshold
             meta = index["chunks"].get(chunk_id, {})
