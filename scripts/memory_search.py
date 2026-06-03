@@ -665,6 +665,67 @@ def _load_graph_cached():
 
 
 _graph_query_cache = {}
+_graph_adj_cache = {}
+
+
+def _graph_adjacency(graph: dict) -> dict:
+    """Build (once per graph object) the node_id → [(other_id, ...)] adjacency
+    table and cache it keyed by id(graph). find_related_files rebuilds this on
+    every call (via get_neighbors), so for multi-bigram Chinese queries the same
+    table was rebuilt many times per query — cache it so it's built once.
+    """
+    key = id(graph)
+    adj = _graph_adj_cache.get(key)
+    if adj is None:
+        from collections import defaultdict
+        adj = defaultdict(list)
+        for edge in graph["edges"]:
+            adj[edge["source"]].append((edge["target"], "outgoing", edge["type"]))
+            adj[edge["target"]].append((edge["source"], "incoming", edge["type"]))
+        _graph_adj_cache[key] = adj
+    return adj
+
+
+def _related_files_cached(graph: dict, query: str, max_depth: int = 2) -> list[dict]:
+    """Behavioral equivalent of knowledge_graph.find_related_files, but BFS-traverses
+    a cached adjacency table (see _graph_adjacency) instead of rebuilding it per call.
+    Returns [{"file", "distance"}] sorted by distance.
+    """
+    from knowledge_graph import find_node
+
+    matches = find_node(graph, query)
+    if not matches:
+        return []
+
+    adj = _graph_adjacency(graph)
+    results = {}  # file_path → distance
+
+    for match in matches[:3]:  # Top 3 matching entities (mirrors find_related_files)
+        node_id = match["node"]["id"]
+        if node_id not in graph["nodes"]:
+            continue
+
+        visited = {node_id}
+        frontier = [node_id]
+        for d in range(1, max_depth + 1):
+            next_frontier = []
+            for current_id in frontier:
+                for other_id, _direction, _edge_type in adj[current_id]:
+                    if not other_id or other_id in visited:
+                        continue
+                    visited.add(other_id)
+                    next_frontier.append(other_id)
+                    node = graph["nodes"].get(other_id)
+                    if node and node.get("type") == "File":
+                        file_path = node.get("name", other_id.replace("file:", ""))
+                        if file_path not in results or results[file_path] > d:
+                            results[file_path] = d
+            frontier = next_frontier
+
+    return sorted(
+        ({"file": fp, "distance": dist} for fp, dist in results.items()),
+        key=lambda x: x["distance"],
+    )
 
 
 def graph_proximity_score(file_path: str, query: str) -> float:
@@ -681,7 +742,7 @@ def graph_proximity_score(file_path: str, query: str) -> float:
     # Cache related files per query to avoid repeated graph traversals
     if query not in _graph_query_cache:
         try:
-            from knowledge_graph import find_related_files, find_node
+            from knowledge_graph import find_node
         except ImportError:
             return 0.5
 
@@ -700,7 +761,7 @@ def graph_proximity_score(file_path: str, query: str) -> float:
         for term in query_terms:
             if not find_node(graph, term):
                 continue
-            for r in find_related_files(graph, term, max_depth=2):
+            for r in _related_files_cached(graph, term, max_depth=2):
                 fp = r["file"]
                 if fp not in all_related or all_related[fp] > r["distance"]:
                     all_related[fp] = r["distance"]

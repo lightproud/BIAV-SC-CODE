@@ -348,6 +348,8 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
             )
             if result.returncode != 0:
                 break
+            if not result.stdout.strip():
+                break
             data = json.loads(result.stdout)
 
             reviews = data.get('reviews', [])

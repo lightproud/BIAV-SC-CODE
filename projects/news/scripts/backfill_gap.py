@@ -386,6 +386,9 @@ def backfill_steam_reviews():
             if result.returncode != 0:
                 logger.warning(f'Steam p{page}: curl failed')
                 break
+            if not result.stdout.strip():
+                logger.warning(f'Steam p{page}: curl empty body')
+                break
             data = json.loads(result.stdout)
             reviews = data.get('reviews', []) or []
             if not reviews:
