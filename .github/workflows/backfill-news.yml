@@ -3,7 +3,7 @@ name: Backfill Historical News
 on:
   schedule:
     # Run every hour
-    - cron: '0 * * * *'
+    - cron: '20 * * * *'
   workflow_dispatch:
     inputs:
       platform:
@@ -46,8 +46,10 @@ jobs:
     steps:
       - name: Check if this platform should run
         id: check
+        env:
+          INPUT_PLATFORM: ${{ github.event.inputs.platform }}
         run: |
-          REQUESTED="${{ github.event.inputs.platform }}"
+          REQUESTED="$INPUT_PLATFORM"
           CURRENT="${{ matrix.platform }}"
           if [ -n "$REQUESTED" ] && [ "$REQUESTED" != "$CURRENT" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -76,8 +78,10 @@ jobs:
 
       - name: "Run backfill: ${{ matrix.platform }}"
         if: steps.check.outputs.skip != 'true'
+        env:
+          INPUT_PAGES: ${{ github.event.inputs.pages || '5' }}
         run: |
-          PAGES="${{ github.event.inputs.pages || '5' }}"
+          PAGES="$INPUT_PAGES"
           python projects/news/scripts/backfill_platforms.py --platform ${{ matrix.platform }} --pages $PAGES
 
       - name: Commit and push if changed

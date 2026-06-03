@@ -232,9 +232,9 @@ def _extract_from_script(filepath: str, content: str) -> list[dict]:
 # ============================================================
 
 
-def update_knowledge_graph(facts: list[dict]) -> int:
+def update_knowledge_graph(facts: list[dict], dry_run: bool = False) -> int:
     """Add new facts as nodes/edges to the knowledge graph."""
-    if DRY_RUN:
+    if dry_run:
         log(f"  [DRY RUN] Would add {len(facts)} facts to graph")
         return len(facts)
 
@@ -315,7 +315,7 @@ def update_knowledge_graph(facts: list[dict]) -> int:
 # ============================================================
 
 
-def write_session_digest(changes: dict, facts: list[dict], graph_updates: int):
+def write_session_digest(changes: dict, facts: list[dict], graph_updates: int, dry_run: bool = False):
     """Write a compact session digest for future reference."""
     DIGESTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -340,7 +340,7 @@ def write_session_digest(changes: dict, facts: list[dict], graph_updates: int):
         "commit_messages": changes["commits"][:5],
     }
 
-    if not DRY_RUN:
+    if not dry_run:
         digest_file.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"  Digest written: {digest_file.name}")
 
@@ -359,7 +359,7 @@ def write_session_digest(changes: dict, facts: list[dict], graph_updates: int):
 # ============================================================
 
 
-def trigger_incremental_reindex(changed_files: list[str]):
+def trigger_incremental_reindex(changed_files: list[str], dry_run: bool = False):
     """Trigger incremental reindex for changed knowledge files."""
     knowledge_files = [
         f for f in changed_files
@@ -373,7 +373,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
 
     log(f"  {len(knowledge_files)} knowledge file(s) changed, triggering reindex...")
 
-    if DRY_RUN:
+    if dry_run:
         log(f"  [DRY RUN] Would reindex: {knowledge_files[:5]}")
         return
 
@@ -400,7 +400,7 @@ def trigger_incremental_reindex(changed_files: list[str]):
 # ============================================================
 
 
-def run_writeback() -> dict:
+def run_writeback(dry_run: bool = False) -> dict:
     """Run the full write-back loop."""
     log(f"Memory Write-back — {TODAY}\n")
 
@@ -426,15 +426,15 @@ def run_writeback() -> dict:
     # 3. Update knowledge graph
     graph_updates = 0
     if all_facts:
-        graph_updates = update_knowledge_graph(all_facts)
+        graph_updates = update_knowledge_graph(all_facts, dry_run=dry_run)
         log(f"\n  Graph updates: {graph_updates} new node(s)")
 
     # 4. Write session digest
-    digest = write_session_digest(changes, all_facts, graph_updates)
+    digest = write_session_digest(changes, all_facts, graph_updates, dry_run=dry_run)
 
     # 5. Incremental reindex (only if substantial changes)
     if len(all_changed) >= 3 or graph_updates > 0:
-        trigger_incremental_reindex(all_changed)
+        trigger_incremental_reindex(all_changed, dry_run=dry_run)
 
     summary = {
         "status": "ok",
@@ -450,7 +450,7 @@ def run_writeback() -> dict:
 
 def main():
     try:
-        result = run_writeback()
+        result = run_writeback(dry_run=DRY_RUN)
 
         if not VERBOSE and result.get("facts_extracted", 0) > 0:
             print(f"[WriteBack] {result['facts_extracted']} facts → {result['graph_nodes_added']} graph updates")

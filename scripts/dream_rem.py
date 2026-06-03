@@ -7,6 +7,7 @@ dream.main when --rem is passed); the AI client is supplied by the caller.
 
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -97,7 +98,7 @@ def run_rem(client=None) -> dict:
             sys.path.insert(0, str(Path(__file__).parent))
             from knowledge_graph import _build_entity_dict
             all_entities = _build_entity_dict()
-        except (ImportError, Exception):
+        except (ImportError,):
             pass
         for digest in weekly_digests:
             text = digest["text"]
@@ -417,7 +418,15 @@ def _save_insights(new_insights: list[dict]):
         except (json.JSONDecodeError, OSError):
             pass
 
-    existing.extend(new_insights)
+    # Dedupe by id: same-day reruns regenerate the same rem-{date}-NNN ids,
+    # and _save_insights is append-only, so guard against duplicates here.
+    seen = {ins["id"] for ins in existing if "id" in ins}
+    for ins in new_insights:
+        if ins.get("id") in seen:
+            continue
+        existing.append(ins)
+        if "id" in ins:
+            seen.add(ins["id"])
 
     insights_file.write_text(
         json.dumps(existing, ensure_ascii=False, indent=2),
@@ -433,8 +442,8 @@ def _append_lessons(new_lessons: list[dict]):
 
     text = ll_file.read_text(encoding="utf-8")
 
-    # Find the highest lesson number
-    existing_nums = re.findall(r"^(\d+)\.", text, re.MULTILINE)
+    # Find the highest lesson number (headings are "## N. ..." format)
+    existing_nums = re.findall(r"^##\s+(\d+)\.", text, re.MULTILINE)
     next_num = max((int(n) for n in existing_nums), default=0) + 1
 
     # Append new lessons
@@ -443,7 +452,7 @@ def _append_lessons(new_lessons: list[dict]):
         content = lesson.get("lesson", "")
         evidence = lesson.get("evidence", "")
         if content:
-            entry = f"\n{next_num}. **[REM {TODAY}]** {content}"
+            entry = f"\n## {next_num}. **[REM {TODAY}]** {content}"
             if evidence:
                 entry += f"\n   - Evidence: {evidence}"
             additions.append(entry)

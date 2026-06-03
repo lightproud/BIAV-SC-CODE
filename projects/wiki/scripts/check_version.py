@@ -119,7 +119,12 @@ def detect_version_from_news(steam_result: dict) -> str | None:
     import re
 
     news_items = steam_result.get("recent_news", [])
-    version_pattern = re.compile(r"v?(\d+\.\d+(?:\.\d+)?)", re.IGNORECASE)
+    # Require an explicit version marker (literal "v"/"version"/"ver"/"版本")
+    # so bare decimals in titles ("5.5 星", "2.0 万", dates) don't get
+    # persisted as junk stub versions (SCR-07).
+    version_pattern = re.compile(
+        r"(?:v|ver|version|版本)\s*\.?\s*(\d+\.\d+(?:\.\d+)?)", re.IGNORECASE
+    )
 
     for item in news_items:
         title = item.get("title", "")

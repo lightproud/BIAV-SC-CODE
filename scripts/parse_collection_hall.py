@@ -26,12 +26,9 @@ def parse_collection_hall(path):
 
     # Categorize by content type
     categories = {
-        'characters': [],      # Character-related lore
         'locations': [],       # Places, organizations
         'creatures': [],       # Monsters, entities
         'concepts': [],        # World concepts, dimensions
-        'items': [],           # Objects, artifacts
-        'events': [],          # Story events, chapters
         'uncategorized': [],   # Everything else
     }
 
@@ -39,7 +36,6 @@ def parse_collection_hall(path):
     location_keywords = ['大学', '城', '协会', '教会', '学院', '区', '馆', '港', '镇', '岛', '河', '山', '谷', '街']
     creature_keywords = ['狼', '兔', '蛛', '虫', '鸟', '兽', '怪', '附肢', '触手', '蠕', '蜘蛛']
     concept_keywords = ['维度', '融蚀', '界域', '质体', '银芯', '黑印', '狂气', '深渊', '混沌', '超维']
-    event_keywords = ['章', '解锁', '通关', '调查行动', '意识潜游']
 
     with_desc = 0
     with_lock = 0

@@ -119,6 +119,23 @@ def find_duplicate(new_fact: str, existing_facts: list[dict]) -> tuple[int, floa
     return best_idx, best_sim
 
 
+def _next_fact_id(facts: list[dict]) -> str:
+    """Monotonic fact ID: max existing numeric id + 1.
+
+    Survives the 500-cap trim because surviving facts keep their ids,
+    so len(facts) can no longer drive collisions.
+    """
+    max_num = 0
+    for f in facts:
+        fid = f.get("id", "")
+        if fid.startswith("f-"):
+            try:
+                max_num = max(max_num, int(fid[2:]))
+            except ValueError:
+                continue
+    return f"f-{max_num + 1:04d}"
+
+
 def store_fact(content: str, category: str = "discovery",
                source: str = "", confidence: float = 0.9) -> dict:
     """Store a new fact with deduplication.
@@ -161,7 +178,7 @@ def store_fact(content: str, category: str = "discovery",
 
     # New fact
     new_fact = {
-        "id": f"f-{len(facts)+1:04d}",
+        "id": _next_fact_id(facts),
         "content": content,
         "category": category,
         "confidence": confidence,
