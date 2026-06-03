@@ -51,16 +51,6 @@ generated: 2026-06-03
 <div class="stat"><span class="n">+6000</span><span class="l">DC 成员(43k→49k)</span></div>
 </div>
 
-**DC 守密人里程碑（达成礼日期，约 1.5 天涨千人）**
-
-<div class="bar"><span class="lab">43000 (05-16)</span><span class="track"><span class="fill" style="width:88%"></span></span><span class="val">♥562</span></div>
-<div class="bar"><span class="lab">44000 (05-19)</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="val">♥484</span></div>
-<div class="bar"><span class="lab">45000 (05-25)</span><span class="track"><span class="fill" style="width:92%"></span></span><span class="val">♥577</span></div>
-<div class="bar"><span class="lab">46000 (05-27)</span><span class="track"><span class="fill" style="width:94%"></span></span><span class="val">♥461</span></div>
-<div class="bar"><span class="lab">47000 (05-28)</span><span class="track"><span class="fill" style="width:96%"></span></span><span class="val">♥684</span></div>
-<div class="bar"><span class="lab">48000 (05-30)</span><span class="track"><span class="fill" style="width:98%"></span></span><span class="val">♥542</span></div>
-<div class="bar"><span class="lab">49000 (06-01)</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">♥696</span></div>
-
 **单日消息量趋势（全 23 天完整追踪，原始计）**
 
 <div class="bar"><span class="lab">05-12</span><span class="track"><span class="fill" style="width:58%"></span></span><span class="val">20458</span></div>
