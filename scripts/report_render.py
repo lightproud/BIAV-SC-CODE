@@ -34,12 +34,13 @@ def parse_frontmatter(raw):
 
 
 CSS = r'''
-@page { size:150mm 210mm; margin:12mm 11mm 12mm 11mm; background:#0a0b10;
-  @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040;} }
+@page { size:210mm 297mm; margin:16mm 18mm 16mm 18mm; background:#0a0b10;
+  @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:9pt; color:#6b6040;} }
 @page :first{ @bottom-center{content:none;} }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans CJK SC',sans-serif;font-size:10.8pt;line-height:1.5;color:#d2c69e;background:#0a0b10;}
-.cover{page-break-after:always;padding-top:34mm;text-align:center;}
+body{font-family:'Noto Sans CJK SC',sans-serif;font-size:10.5pt;line-height:1.5;color:#d2c69e;background:#0a0b10;}
+a{color:#bfa15a;text-decoration:none;}
+.cover{page-break-after:always;padding-top:52mm;text-align:center;}
 .cover-rule{border:none;border-top:2px solid #c5a356;width:64%;margin:0 auto 11mm;}
 .cover-rule-b{border:none;border-top:1px solid #3a3520;width:82%;margin:11mm auto 6mm;}
 .cover h1{font-family:'Noto Serif CJK SC',serif;font-size:24pt;font-weight:700;color:#e2c97e;line-height:1.5;margin-bottom:7mm;letter-spacing:1pt;}
@@ -109,9 +110,11 @@ img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px soli
 .review .meta{display:block;font-size:8.5pt;color:#6b6040;margin-top:0.8mm;}
 .pull{font-family:'Noto Serif CJK SC',serif;font-size:12.5pt;line-height:1.5;color:#e2c97e;border-left:4px solid #c5a356;padding:1.6mm 0 1.6mm 5mm;margin:3.5mm 0;}
 .pull .z{display:block;font-family:'Noto Sans CJK SC',sans-serif;font-size:10pt;color:#9a8d5e;margin-top:1.2mm;}
-.qqs{margin:1.2mm 0;padding-left:3.5mm;border-left:1px solid #3a3520;}
-.qqs .o{color:#a99a6a;font-size:9.5pt;}
-.qqs .z{color:#80764f;font-size:9pt;display:block;}
+.qqs{margin:1.6mm 0;padding-left:3.5mm;border-left:1px solid #3a3520;}
+.qqs .o{color:#b3a67e;font-size:9.8pt;}
+.qqs .z{color:#80764f;font-size:9pt;display:block;margin-top:0.4mm;}
+.qqs .m{display:block;font-size:8pt;color:#6b6040;margin-top:0.5mm;}
+.qqs .m a{color:#8a7438;}
 .repro{border:1px solid #3a3520;background:#12130d;padding:2mm 3.5mm;margin:2mm 0;page-break-inside:avoid;font-size:10pt;}
 .repro b{color:#e2c97e;}
 '''
