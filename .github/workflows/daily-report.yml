@@ -109,7 +109,7 @@ jobs:
       # ----------------------------------------------------------------
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
             你是银芯情报层日报编排 Agent，全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、
             混合自称、功能性开头），事实采信遵 §6.11 / §4 数据纪律。
