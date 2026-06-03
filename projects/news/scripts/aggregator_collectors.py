@@ -853,6 +853,9 @@ def fetch_steam_reviews():
             if result.returncode != 0:
                 logger.warning(f'Steam curl failed on page {page}: {result.stderr[:200]}')
                 break
+            if not result.stdout.strip():
+                logger.warning(f'Steam curl empty body on page {page}')
+                break
             data = json.loads(result.stdout)
             reviews = data.get('reviews', []) or []
             if not reviews:

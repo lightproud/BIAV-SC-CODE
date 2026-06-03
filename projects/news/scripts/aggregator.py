@@ -125,7 +125,9 @@ def run():
                             pw_items = pw_fetcher()
                             all_news.extend(pw_items)
                             logger.info(f'{name} Playwright fallback (after crash): {len(pw_items)} items')
-                            recovered = True
+                            # §4.2 R1: 仅当回退实际拿到条目才算救回；返回 0 条不掩盖核心源失败
+                            if pw_items:
+                                recovered = True
                         except Exception as pw_e:
                             logger.warning(f'{name} Playwright fallback failed: {pw_e}')
             # §4.2 R1: 核心源崩溃且未被 fallback 救回 → 记为整次失败

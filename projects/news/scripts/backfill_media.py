@@ -20,9 +20,14 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   python projects/news/scripts/backfill_media.py --no-discord                 # 只补持久平台源
   python projects/news/scripts/backfill_media.py --upload                     # 打包传 Releases
 """
-import os, json, re, glob, time, argparse, subprocess, hashlib, html
-import urllib.request, urllib.error
+import os, sys, json, re, glob, time, argparse, subprocess, hashlib, html
+import urllib.request
 from datetime import datetime
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # SSRF 守卫 + safe_get 单一真源（R2-H1：补齐姊妹下载路径）
+import requests
 
 ROOT = "projects/news/data"
 FILES = f"{ROOT}/media/files"
@@ -57,17 +62,22 @@ def fetch(url, dest, source):
     headers = {"User-Agent": UA}
     if source in REFERER:
         headers["Referer"] = REFERER[source]
+    # 经 news_common.safe_get：SSRF 守卫 + 逐跳重校验 + IP pin，禁用自动重定向（R2-H1）。
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=20) as r:
-            data = r.read()
-        if len(data) < 200:
-            return "empty"
-        open(dest, "wb").write(data)
-        return "ok"
-    except urllib.error.HTTPError as e:
-        return f"http_{e.code}"
-    except Exception as e:
+        resp = news_common.safe_get(url, headers=headers, timeout=20)
+    except ValueError:
+        return "err_unsafe_url"  # 不安全 URL / 坏重定向，拒绝
+    try:
+        resp.raise_for_status()
+        data = resp.content
+    except requests.HTTPError:
+        return f"http_{resp.status_code}"
+    except requests.RequestException as e:
         return f"err_{type(e).__name__}"
+    if len(data) < 200:
+        return "empty"
+    open(dest, "wb").write(data)
+    return "ok"
 
 
 def refresh_discord(urls, token):

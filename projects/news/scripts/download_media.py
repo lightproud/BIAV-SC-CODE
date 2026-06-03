@@ -12,18 +12,20 @@ download_media.py — 全平台媒体资源下载器
 
 import argparse
 import hashlib
-import ipaddress
 import json
 import logging
 import re
-import socket
 import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # SSRF 守卫 + safe_get 单一真源（SEC-02 / R2-H2 / R2-M1）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -69,29 +71,15 @@ def save_manifest(manifest: dict):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
-def is_safe_url(url: str) -> bool:
-    """SSRF guard: only http/https to public IPs (reject private/loopback/link-local)."""
-    parsed = urlparse(url)
-    if parsed.scheme not in ('http', 'https'):
-        return False
-    host = parsed.hostname
-    if not host:
-        return False
-    try:
-        ip = ipaddress.ip_address(socket.gethostbyname(host))
-    except (socket.gaierror, ValueError):
-        return False
-    return not (ip.is_private or ip.is_loopback or ip.is_link_local
-                or ip.is_reserved or ip.is_multicast or ip.is_unspecified)
-
-
 def download_file(url: str, dest: Path) -> bool:
-    """Download a file to dest. Returns True on success."""
-    if not is_safe_url(url):
-        logger.warning(f'  拒绝不安全 URL: {url[:80]}')
-        return False
+    """Download a file to dest. Returns True on success.
+
+    经 news_common.safe_get：禁用自动重定向、手动逐跳重校验 SSRF 守卫并 pin IP
+    （R2-M1），同时正确跟随 30x（B站/YouTube/Pixiv 等 CDN 普遍以 30x 下发资源，
+    R2-H2 回归修复）。3xx 缺/坏 Location 或不安全跳 → 抛 ValueError，不落盘垃圾。
+    """
     try:
-        resp = requests.get(url, timeout=REQUEST_TIMEOUT, stream=True, allow_redirects=False, headers={
+        resp = news_common.safe_get(url, timeout=REQUEST_TIMEOUT, stream=True, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
             'Referer': urlparse(url).scheme + '://' + urlparse(url).netloc + '/',
         })
@@ -116,6 +104,11 @@ def download_file(url: str, dest: Path) -> bool:
 
         logger.info(f'  {dest.name} ({total / 1024:.0f} KB)')
         return True
+    except ValueError as e:
+        # safe_get 拒绝（不安全 URL / 坏重定向）——不落盘垃圾文件
+        logger.warning(f'  拒绝不安全 URL: {e}')
+        dest.unlink(missing_ok=True)
+        return False
     except requests.RequestException as e:
         logger.warning(f'  下载失败: {e}')
         dest.unlink(missing_ok=True)

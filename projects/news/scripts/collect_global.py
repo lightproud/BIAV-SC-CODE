@@ -107,7 +107,7 @@ def run_zero_cost_collectors() -> list[dict]:
         c._refresh_cutoff()
     except ImportError as e:
         logger.error(f"Cannot import global_collectors module: {e}")
-        return items
+        return items, []
 
     # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
     tracker = None
