@@ -28,7 +28,7 @@ generated: 2026-06-03
 |---|------|--------|------|
 | 1 | 联动口碑与拉新（广义·主导） | Steam 86% 好评、PV 17:1 正面、在线历史新高、全语区「为沙耶来为剧情留」 | A |
 | 2 | 沙耶设计争议 | P.Caro/0 费弃牌「是块砖」、对新手是负担、与旧角反联动（核心层 8+ 源） | A |
-| 3 | 货币化不满（核心层·vocal 少数） | 50/50 捆绑池 + 300 普抽加三围 + 空幻时效 + 课题缩水；「取消300抽」由约 6-10 人刷屏 | A |
+| 3 | 货币化：争议与慷慨并存 | 加压侧（50/50 捆绑、300 普抽加三围、空幻时效）引核心层约 6-10 人刷屏；同更新追溯返还付费银芯（Silver Prime）+ 周年 250 免费抽，付费玩家惊喜 | A |
 | 4 | 官方沟通双刃 | 校貓失联 → Light 下场（财务透明「生存线」+「不完全沉默」），赢回部分尊重；但「道歉-不改」消耗 | A |
 | 5 | 叙事口碑双高 | 第 9 章「broke me」、拉莫纳封神；但融蚀彩墨改名毁旧剧情、文案「AI 味」 | B |
 | 6 | 难度膨胀 2.4.0 | 怪血/伤 3-5 倍、乘区改动、描述不严谨，跨俄/韩/英印证 | B |
@@ -103,7 +103,9 @@ generated: 2026-06-03
 <b>→ 收口尝试</b>：Light 亲自下场（财务透明 +「不完全沉默」）赢回部分尊重，但「不调整」立场 +「道歉-不改」循环，使情绪沉淀为「清醒而疲惫的低信任」
 </div>
 
-<b>洞察</b>：在这一小撮核心玩家眼中，货币化争议的本质不是「贪」，而是<b>「生存焦虑下的加压」撞上「被反复消耗的信任」</b>。解法不在单个 SKU 的让步，而在重建「加压有度 + 兑现承诺」的信任契约。<b>但需牢记权重</b>：这是核心层的局部摩擦，广义新玩家几乎不受其影响（仍在大量正向涌入）——既不能忽视（基本盘），也不能当成全社区危机来过度反应。
+<b>另一面（抗议叙事略去的）</b>：同一次 V2.5.1 更新也有明显慷慨——把付费礼包的赠送银芯改为 Silver Prime 并**追溯返还**老付费玩家，周年另送 250 免费抽 + 多轮里程碑礼。不少付费玩家因此惊喜（越南区原话：「只是 bait 新人，老玩家反而拿到 prime 返还，够白嫖这期活动礼包不用再氪」）。所以付费群体本身就分化：一部分盯着加压抗议，另一部分对返还满意。
+
+<b>洞察</b>：在抗议的核心玩家眼中，货币化的痛点是<b>「生存焦虑下的加压」撞上「被反复消耗的信任」</b>；但这是核心层一小撮人的视角，既非全社区、也非全部付费玩家。真实的货币化是**加压与慷慨并存**——值得做的是给加压侧（300 普抽/捆绑池）一点诚意让步，把慷慨侧（返还/免费抽）讲清楚，而非把它当成全社区危机来过度反应。
 
 ### 3.2 情绪轨迹：两类人群、两条曲线
 
@@ -193,6 +195,8 @@ generated: 2026-06-03
 <div class="qqs"><span class="o">it's 2.5 years since I first started the game... this is hands down the BEST gachapon game ive ever played. I just kept taking breaks cause it gets really downer.</span><span class="z">入坑 2.5 年了，才到第 7 章——但这绝对是我玩过最好的 gacha，只是内容太压抑要时不时休息。（正面长留存）</span><span class="m">— @jinjurikijack · <a href="https://discord.com/channels/1131791637933199470/1326453763355185215/1506200986744524901">来源</a></span></div>
 <div class="qqs"><span class="o">Downloaded the game earlier today from steam... but then the game kept crashing. I tried for a few hours before giving up and deleted my steam linked account and uninstalled.</span><span class="z">今天 Steam 下载、登录后不断崩溃，挣扎几小时后放弃，删账号卸载了。（Steam 新人崩溃 bug）</span><span class="m">— @mraeci · <a href="https://discord.com/channels/1131791637933199470/1505214538012823593/1505214538012823593">来源</a></span></div>
 <div class="qqs"><span class="o">我覺得這次是最嚴重的一次了……不同社區的玩家分化産生內鬥，是一次更糟糕的演變。願銀鑰指引前路……嗎？可那所指的方向，只見到了晦暗無明的死路。</span><span class="z">这次最严重——社区分化内斗才是更糟的演变；「愿银钥指引前路」可那方向只见死路。</span><span class="m">— @yang015148 · <a href="https://discord.com/channels/1131791637933199470/1505167541818101862/1505403053509967962">来源</a></span></div>
+<div class="qqs"><span class="o">k đúng thời điểm nữa nha. Chỉ có bait đc newbie thôi chứ oldbie còn đc hoàn prime :))) có khi đủ để clear các pack event đợt này mà k cần nạp</span><span class="z">（付费返还正面）这次只是 bait 新人，老玩家反而拿到 Silver Prime 追溯返还 :)))，可能够白嫖这期活动礼包、不用再氪。</span><span class="m">— @nightmar3fuel · <a href="https://discord.com/channels/1131791637933199470/1300659603993923644/1505442947045265530">来源</a></span></div>
+<div class="qqs"><span class="o">It's a retroactive refund, since they've changed bonus silver from paid packs to silver prime.</span><span class="z">这是一次追溯退款——他们把付费礼包的赠送银芯改成了 Silver Prime（老付费玩家据此获返还）。</span><span class="m">— @sirtealot · <a href="https://discord.com/channels/1131791637933199470/1433513650299076780/1505889286401163395">来源</a></span></div>
 
 <b>该段故障</b>：灵识熔炉天赋全角色错位（热修承诺）、打本卡死(iOS，已解决)、韩语 Arc1 第5章起回退旧机翻、Aurita 倍率说明 1% vs 2% 不符、Steam 礼包仅美元无韩元、萨尔瓦多伤害显示偏高、繁中性别代词混用。
 
