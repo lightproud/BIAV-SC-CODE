@@ -1,10 +1,11 @@
 {
   "date": "2026-05-15",
-  "messages": 17197,
+  "messages": 20516,
   "unique_authors": 459,
-  "reactions_total": 2240,
-  "attachments": 922,
+  "reactions_total": 2782,
+  "attachments": 1021,
   "channel_activity": {
+    "🔸morimens-game-chat": 3319,
     "🔸綜合討論": 3650,
     "🔸deutscher-chatraum": 21,
     "🔸русский-канал": 1036,
@@ -76,16 +77,16 @@
     "【Newcomer Help】Forum Introduction": 4
   },
   "hourly_activity": {
+    "0": 1115,
+    "1": 822,
+    "2": 940,
+    "3": 1499,
+    "4": 471,
     "19": 534,
     "20": 356,
     "21": 584,
     "22": 314,
     "23": 325,
-    "0": 255,
-    "1": 243,
-    "2": 233,
-    "3": 530,
-    "4": 267,
     "5": 250,
     "6": 219,
     "7": 318,
@@ -102,10 +103,8 @@
     "18": 1201
   },
   "message_types": {
-    "0": 1386,
-    "19": 394,
-    "20": 2,
-    "23": 1
+    "0": 1913,
+    "19": 1406
   },
   "top_reacted_messages": [
     {
@@ -221,6 +220,22 @@
       "channel": "📜 V2.5.1 版本前瞻·下┊Version Outlook - Part Ⅲ┊버전 미리보기 · 하"
     },
     {
+      "id": "1504670386044796938",
+      "channel_id": "1170692781216378960",
+      "content": "<@158672544335921152> oh wow i can't lie we might all have been powercrept in ou",
+      "author": "reya.li",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1504671798468546622",
+      "channel_id": "1170692781216378960",
+      "content": "I want GDoll to poison me so bad I start hallucinating and I want her to stoop o",
+      "author": "cerixxix",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1504809744882335817",
       "channel_id": "1131839817982947429",
       "content": "血肉太強 鳥兄弟垃圾 打不了難1",
@@ -245,28 +260,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1504939860966772828",
-      "channel_id": "1131839817982947429",
+      "id": "1504650256628060170",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "carme.0588",
+      "author": "cqteiie",
       "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504948338636886127",
-      "channel_id": "1504798210210791515",
-      "content": "as a new player, who has a lot of Awakeners I want to pull, many of whom don't n",
-      "author": "mirrorsara",
-      "reactions": 7,
-      "channel": "📜 V2.5.1 版本前瞻·中┊Version Outlook - Part Ⅱ┊버전 미리보기 · 중"
-    },
-    {
-      "id": "1504982501708533801",
-      "channel_id": "1504798210210791515",
-      "content": "這個混池真的超小丑🤡",
-      "author": "yi000607",
-      "reactions": 7,
-      "channel": "📜 V2.5.1 版本前瞻·中┊Version Outlook - Part Ⅱ┊버전 미리보기 · 중"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

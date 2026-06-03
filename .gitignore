@@ -59,3 +59,7 @@ memory/session-digests/*.progress.jsonl
 # frida hook 逆向工具临时产出（extracted_lua/ 下已入库的文件不受影响）
 extracted_lua/hook_capture/
 extracted_lua/plaintext_from_memory/
+
+# 补录媒体二进制走 Releases（决策038），git 只留 manifest
+projects/news/data/media/files/
+projects/news/data/media/*.tar

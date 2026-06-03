@@ -1,8 +1,8 @@
 {
   "date": "2026-05-29",
-  "archived_at": "2026-05-29T12:43:33.203910+00:00",
+  "archived_at": "2026-06-02T14:44:12.298836+00:00",
   "source": "youtube",
-  "item_count": 34,
+  "item_count": 35,
   "items": [
     {
       "source": "youtube",
@@ -27,6 +27,24 @@
       "engagement": 38708,
       "media_url": "https://i.ytimg.com/vi/BomtFzUb12M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA__vo9XU1i-8SMkKg9IqqRgPAvLQ",
       "content_type": "image"
+    },
+    {
+      "title": "【忘却前夜 × 沙耶の唄】コラボ主題歌「忘却の彼方」",
+      "summary": "[4 days ago] 『忘却前夜』×『沙耶の唄』コラボ主題歌「忘却の彼方」 主題歌：「忘却の彼方」 歌唱：いとうかなこ 作詞：小岩井ことり ...",
+      "source": "youtube",
+      "time": "2026-05-29T14:41:09.322653+00:00",
+      "url": "https://www.youtube.com/watch?v=G0z6zMAEaqw",
+      "engagement": 18263,
+      "is_hot": true,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/G0z6zMAEaqw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEEP97hWLOculoVUYru2zmM4_Cbw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "source": "youtube",

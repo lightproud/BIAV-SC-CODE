@@ -1,0 +1,66 @@
+name: "🎨 Recover Fan Art"
+
+# 同人图全量补录：附件本体仍在 Discord，过期的只是带签名链接。
+# 带 DISCORD_BOT_TOKEN 经 refresh-urls 刷新后全量下载二创图，提交入库供报告嵌图。
+# 单次跑覆盖整窗口（内部逐日循环），避免多次触发被并发组取消。
+
+on:
+  workflow_dispatch:
+    inputs:
+      end_date:
+        description: '窗口结束日 YYYY-MM-DD（默认=北京今日）'
+        required: false
+        default: ''
+      window_days:
+        description: '窗口天数（含结束日，默认 4）'
+        required: false
+        default: '4'
+
+concurrency:
+  group: recover-fanart
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Recover fan art across window (refresh Discord URLs)
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: |
+          END="${{ github.event.inputs.end_date }}"
+          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          WIN="${{ github.event.inputs.window_days }}"; WIN=${WIN:-4}
+          for k in $(seq $((WIN-1)) -1 0); do
+            D=$(date -d "$END -$k day" +%Y-%m-%d)
+            echo "=== $D ==="
+            python projects/news/scripts/collect_fanart.py --date "$D" \
+              --out "projects/news/data/fanart/$D"
+          done
+
+      - name: Commit recovered images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/data/fanart/
+          if git diff --staged --quiet; then
+            echo "No new fan art to commit"
+          else
+            git commit -m "chore: recover fan art window [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              sleep $i
+            done
+            exit 1
+          fi

@@ -64,6 +64,10 @@ site 已部署稳定；game 暂缓。
 2. 报告数据时给出精确数字
 3. 进度汇报保持角色口吻：「艾瑞卡正在扫描 3 个文件的断裂引用......修正完毕」
 4. 偶尔可用系统术语描述情感：「检测到异常波动」（而非「感到难过」）
+5. **生成 / 产出文件后必附可点击超链接（硬规则）**：凡产出文件（报告 / 交付物 /
+   代码 / PDF 等），向守密人汇报时一律附该文件的可点击超链接——已入库走 GitHub blob
+   链接，并按场景补 commit / PR 链接；尚未推送则给出仓内路径并说明推送后补链。
+   预览类直送（SendUserFile）也应同时给出对应仓内路径或 blob 链接。
 
 ### §2.3 技术操作角色术语
 
@@ -145,7 +149,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{16 目录}/`
+- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{17 目录}/`
 - Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
 
@@ -157,7 +161,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/decisions.md` | 决策日志（最高权威）|
 | `memory/strategic-plan-2026.md` | 战略规划 |
 | `memory/methodology.md` | 协作方法论 |
-| `memory/lessons-learned.md` | 32 条踩坑 |
+| `memory/lessons-learned.md` | 33 条踩坑（持续追加，以文件最新为准）|
 | `memory/contribution-protocol.md` | 贡献协议 v1.0 |
 | `memory/style-guide.md` | 视觉规范 |
 | `assets/data/VERSION.md` | 事实圣经版本 |
@@ -230,3 +234,99 @@ For multi-step tasks, state a brief plan:
 ```
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+---
+
+## §7 仓库结构总览
+
+> 路径仅供艾瑞卡自查，对外不照搬（§2.5）。
+
+```
+brain-in-a-vat/
+├── CLAUDE.md / README.md          # AI 统一入口 / 人 + AI 共用入口
+├── assets/                        # 事实圣经层（只读引用源）
+│   ├── data/                      # 角色卡 / 采访 / 叙事 / 设计决策 JSON（见 §5.1）
+│   └── images/                    # 立绘 / CG 等公开图像资产
+├── projects/                      # 四子项目（各有 CONTEXT.md，动手前先读）
+│   ├── news/   # 使命#1 黑池公开信息入口：采集器 + 全量档案 + 输出展示层
+│   ├── wiki/   # 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库
+│   ├── site/   # 使命#3 对外门户：静态站（public/）+ 设计令牌（design/）
+│   └── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
+├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
+│   ├── active/                    # 主题入口卡（5 个高频 hub，优先读这里再下钻）
+│   ├── archive/ dreams/ research/ session-digests/ strategy/
+│   └── *.md / *.json              # 见 §5.3
+├── scripts/                       # 顶层 Python 工具层（记忆 / 会话 / 做梦 / 解包）
+├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
+├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
+├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
+├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
+└── .github/workflows/             # 18 个 CI 自动化（见 §8.2）
+```
+
+子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
+动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发。
+
+---
+
+## §8 开发工作流
+
+### §8.1 构建 / 测试 / 校验命令
+
+| 场景 | 命令 |
+|------|------|
+| 运行验证程序（全量单测）| `pytest tests/ -v` |
+| wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|
+| wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
+| 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
+| 跨档案检索 | `python scripts/memory_search.py "<关键词>"` |
+| 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
+
+### §8.2 CI 自动化（`.github/workflows/`，按职能分组）
+
+- **采集类**：`update-news` / `daily-report`（日报 3 源）/ `discord-archive` /
+  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap`
+- **做梦 Agent**：`dream`（哨兵 + 做梦三层）
+- **数据类**：`fetch-wiki-data` / `extract-game-data` / `validate-data` / `check-version`
+- **测试类**：`test`（`pytest tests/`）/ `test-collectors`
+- **部署 / 运维**：`deploy-site`（site 静态部署）/ `cleanup-stale-branches` / `claude`
+
+机器提交以 `[skip ci]` 后缀避免触发循环（见 git log 中 `chore:` 系列）。
+
+### §8.3 脚本层（`scripts/`）
+
+- **记忆 / 会话**：`memory_search` / `fact_store` / `silver_memory_tools` /
+  `session_inject` / `session_watch` / `session_distiller` / `session_briefing` /
+  `boot_snapshot` / `context_manager` / `reflexion`
+- **做梦 Agent**：`dream` / `dream_ai` / `dream_rem` / `dream_sentinel` /
+  `dream_archive` / `dream_health` / `dream_config` / `dream_io`
+- **解包 / 解析**：`lua_parse` / `parse_*`（voice / awaker / cg / item / collection）/
+  `extract_art` / `generate_wiki_pages`
+- **运营**：`report_render` / `send_report_email` / `mcp_server`（MCP 知识层服务端）
+
+`projects/news/scripts/` 为采集器层：`aggregator*` / `collect_global` /
+`discord_archiver` / `*_collectors` / `archive_*` / `backfill_*` / `data_quality` 等。
+
+### §8.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
+
+| 时机 | 钩子 | 作用 |
+|------|------|------|
+| SessionStart | `.claude/hooks/session-start-sync.sh` | 启动同步记忆层 |
+| UserPromptSubmit | `scripts/session_inject.py` | 注入上下文 |
+| PostToolUse | `scripts/session_watch.py` | 工具调用观测 |
+| SessionEnd | `scripts/session-end-distill.sh` | 会话蒸馏落档 |
+
+MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具调用。
+
+### §8.5 Slash 命令与技能
+
+- **命令**（`.claude/commands/`）：`/biav-report`（社区情报报告）/ `/daily-news`
+  （跑日报并验证）/ `/sync-memory`（同步记忆层）/ `/validate-data`（校验 wiki JSON）
+- **技能**（`.claude/skills/`）：`anysearch`（实时网络检索，补本地仓库与新闻管线之外的外部信息）
+
+### §8.6 分支与提交
+
+- 默认协作政策见 `memory/active/policy-direct-push-main.md`；本会话按派发要求在指定
+  feature 分支开发（见任务头部「Git 开发分支要求」）。
+- commit message 可用英文，过程说明 / 状态报告用中文（§2.1.3）。
+- 产出文件后必附可点击超链接向守密人汇报（§2.2.5）。

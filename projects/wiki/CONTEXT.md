@@ -90,9 +90,9 @@ Code-wiki
 # Wiki 站点
 cd projects/wiki
 npm install
-npm run docs:dev    # 本地开发
+npm run dev         # 本地开发
 npm run docs:build  # 构建
-npm run docs:preview # 预览构建结果
+npm run preview     # 预览构建结果
 
 # 数据查询
 python scripts/content_db.py

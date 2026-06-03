@@ -1,8 +1,8 @@
 {
   "date": "2025-08-06",
-  "archived_at": "2026-06-01T19:55:04.951961+00:00",
+  "archived_at": "2026-06-02T14:44:12.301194+00:00",
   "source": "youtube",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "The Most FUN Gacha Game You Need To Try | Morimens",
@@ -18,6 +18,24 @@
         "scrape"
       ],
       "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "忘却前夜",
+      "summary": "[10 months ago] 忘却前夜の事前登録が正式スタート！ ──・・──・・──・・──・・──・ 世界は静かに確実に終焉へと向かっている この ...",
+      "source": "youtube",
+      "time": "2025-08-05T22:30:04.710331+00:00",
+      "url": "https://www.youtube.com/watch?v=TYFswcPYapE",
+      "engagement": 5380,
+      "is_hot": true,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/TYFswcPYapE/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLAxfDSfoPSih1ASthkIkcKhaJW07w",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"

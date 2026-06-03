@@ -38,34 +38,52 @@ CSS = r'''
   @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040;} }
 @page :first{ @bottom-center{content:none;} }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans CJK SC',sans-serif;font-size:15pt;line-height:1.95;color:#cdc2a1;background:#0a0b10;}
+body{font-family:'Noto Sans CJK SC',sans-serif;font-size:12.5pt;line-height:1.68;color:#cdc2a1;background:#0a0b10;}
 .cover{page-break-after:always;padding-top:34mm;text-align:center;}
 .cover-rule{border:none;border-top:2px solid #c5a356;width:64%;margin:0 auto 11mm;}
 .cover-rule-b{border:none;border-top:1px solid #3a3520;width:82%;margin:11mm auto 6mm;}
-.cover h1{font-family:'Noto Serif CJK SC',serif;font-size:29pt;font-weight:700;color:#e2c97e;line-height:1.5;margin-bottom:7mm;letter-spacing:1pt;}
-.cover .sub{font-size:16pt;color:#b09a5e;margin-bottom:10mm;line-height:1.7;}
-.cover .meta{font-size:13.5pt;color:#7a7050;line-height:2;margin-top:8mm;}
+.cover h1{font-family:'Noto Serif CJK SC',serif;font-size:24pt;font-weight:700;color:#e2c97e;line-height:1.5;margin-bottom:7mm;letter-spacing:1pt;}
+.cover .sub{font-size:14pt;color:#b09a5e;margin-bottom:10mm;line-height:1.7;}
+.cover .meta{font-size:12pt;color:#7a7050;line-height:2;margin-top:8mm;}
 .cover .erica{font-family:'Noto Serif CJK SC',serif;font-size:14pt;color:#8a8068;margin-top:13mm;letter-spacing:3pt;}
 .toc{page-break-after:always;padding-top:14mm;}
-.toc h2{font-family:'Noto Serif CJK SC',serif;font-size:23pt;color:#e2c97e;text-align:center;margin-bottom:4mm;letter-spacing:4pt;}
+.toc h2{font-family:'Noto Serif CJK SC',serif;font-size:19pt;color:#e2c97e;text-align:center;margin-bottom:4mm;letter-spacing:4pt;}
 .toc-rule{border:none;border-top:2px solid #c5a356;width:40%;margin:0 auto 7mm;}
-.toc-item{font-size:14.5pt;line-height:2.15;color:#c5a356;text-align:center;}
-h2.section-title{font-family:'Noto Serif CJK SC',serif;font-size:22pt;font-weight:700;color:#e2c97e;margin-top:1mm;margin-bottom:2mm;letter-spacing:1pt;page-break-before:always;page-break-after:avoid;}
+.toc-item{font-size:12.5pt;line-height:1.95;color:#c5a356;text-align:center;}
+h2.section-title{font-family:'Noto Serif CJK SC',serif;font-size:18pt;font-weight:700;color:#e2c97e;margin-top:1mm;margin-bottom:2mm;letter-spacing:1pt;page-break-before:always;page-break-after:avoid;}
 hr.section-rule{border:none;border-top:2px solid #c5a356;margin-bottom:5mm;page-break-after:avoid;}
-h3{font-family:'Noto Serif CJK SC',serif;page-break-after:avoid;font-size:18pt;font-weight:700;color:#c5a356;margin-top:6mm;margin-bottom:3mm;}
-p{margin-bottom:3.4mm;text-align:justify;orphans:3;widows:3;}
+h3{font-family:'Noto Serif CJK SC',serif;page-break-after:avoid;font-size:14pt;font-weight:700;color:#c5a356;margin-top:6mm;margin-bottom:3mm;}
+p{margin-bottom:2.6mm;text-align:justify;orphans:3;widows:3;}
 strong{color:#e2c97e;font-weight:700;}
 em{color:#a99a6a;font-style:normal;}
 ul,ol{margin:2mm 0 3.5mm 7mm;}
-li{margin-bottom:2.6mm;line-height:1.9;}
-blockquote{border-left:3px solid #c5a356;background:#13141c;padding:3mm 5mm;margin:3.5mm 0;color:#b3a67e;font-size:14pt;}
+li{margin-bottom:1.8mm;line-height:1.6;}
+blockquote{border-left:3px solid #c5a356;background:#13141c;padding:2.5mm 4mm;margin:3mm 0;color:#b3a67e;font-size:11.5pt;}
 blockquote p{margin-bottom:1.8mm;}
 code{font-family:'Noto Sans Mono CJK SC','DejaVu Sans Mono',monospace;font-size:12.5pt;color:#c5a356;background:#15161e;padding:0 2px;word-break:break-all;}
 hr.ornament{border:none;text-align:center;margin:5mm 0;}
 hr.ornament::after{content:"\25C7  \25C7  \25C7";color:#6b6040;font-size:14pt;letter-spacing:4pt;}
-table{width:100%;border-collapse:collapse;margin:3.5mm 0 4mm;font-size:13pt;page-break-inside:avoid;}
+table{width:100%;border-collapse:collapse;margin:3mm 0 3.5mm;font-size:11pt;page-break-inside:avoid;}
 th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:2.2mm 2.6mm;text-align:left;border:0.5px solid #3a3520;}
 td{padding:2mm 2.6mm;border:0.5px solid #26220f;vertical-align:top;line-height:1.65;color:#c0b488;}
+img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px solid #3a3520;}
+.gallery-cap{font-size:10.5pt;color:#7a7050;text-align:center;margin-bottom:4mm;}
+.quote-orig{color:#b3a67e;font-size:13pt;}
+.quote-zh{color:#9a8d5e;font-size:12.5pt;}
+.lead{font-size:13pt;color:#d8cba0;border-left:3px solid #c5a356;background:#13141c;padding:4mm 6mm;margin:3mm 0 5mm;line-height:1.9;}
+.callout{border:1px solid #3a3520;background:#12130d;padding:3.5mm 5mm;margin:4mm 0;page-break-inside:avoid;}
+.callout-risk{border-left:3px solid #b5683e;}
+.callout-pos{border-left:3px solid #6f8f4a;}
+.dim{border-left:3px solid #c5a356;background:#13141c;padding:1mm 5mm;margin:5mm 0 2mm;}
+.dim h3{margin:2mm 0;color:#e2c97e;}
+.badge{font-size:10.5pt;color:#0a0b10;background:#c5a356;padding:0 4px;border-radius:2px;font-weight:700;}
+.badge-b{background:#a99a6a;}.badge-c{background:#7a7050;color:#13141c;}
+.qq{border-left:2px solid #6b6040;padding:1mm 0 1mm 5mm;margin:2.5mm 0;}
+.qq .o{color:#b3a67e;font-size:11.5pt;}
+.qq .z{color:#8f8358;font-size:11pt;display:block;margin-top:1mm;}
+.grid{margin:2mm 0 4mm;font-size:0;}
+.grid img{width:31.5%;display:inline-block;vertical-align:top;margin:0.7%;border:1px solid #3a3520;}
+.grid-day{font-size:12pt;color:#e2c97e;font-weight:700;margin:4mm 0 1mm;}
 '''
 
 
@@ -109,7 +127,8 @@ def render(src, title, subtitle, meta, cover_note='弥萨格大学数据库终�
            f'<style>{CSS}</style></head><body>{cover}'
            f'<div class="content">{body_html}</div></body></html>')
     open(out_html, 'w', encoding='utf-8').write(doc)
-    HTML(string=doc).write_pdf(out_pdf)
+    # base_url=cwd 让正文 markdown 的相对图片路径（相对仓库根）可被解析嵌入
+    HTML(string=doc, base_url=os.getcwd()).write_pdf(out_pdf)
     return out_html, out_pdf, len(toc), os.path.getsize(out_pdf)
 
 

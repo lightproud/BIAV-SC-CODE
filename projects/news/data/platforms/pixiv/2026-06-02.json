@@ -1,8 +1,8 @@
 {
   "date": "2026-06-02",
-  "archived_at": "2026-06-01T19:55:04.971149+00:00",
+  "archived_at": "2026-06-03T02:43:55.873004+00:00",
   "source": "pixiv",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "沙耶",
@@ -164,6 +164,19 @@
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg",
       "content_type": "image"
+    },
+    {
+      "title": "",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-02T00:07:29.184346+00:00",
+      "url": "https://www.pixiv.net/artworks/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global"
     }
   ]
 }
