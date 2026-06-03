@@ -1,8 +1,12 @@
 # 全球 Morimens 信息采集规定（GLOBAL_COLLECTION_SPEC）
 
-> 版本：v1.0 ｜ 制定：2026-06-03 ｜ 适用：news 子项目（使命#1 黑池公开信息入口）
+> 版本：v1.1 ｜ 制定：2026-06-03 ｜ 适用：news 子项目（使命#1 黑池公开信息入口）
 > 性质：采集覆盖范围与接入纪律的**权威规定**。新增/调整数据源前必读，与 `sources.py`
 > （单一真相源）配套执行。本规定只引用公开可查阅信息（CLAUDE.md §0）。
+>
+> **v1.1 守密人裁定（2026-06-03）**：WIKI 类结构化站（Kaiden.gg / 灰机wiki / 日系攻略
+> wiki / Namu / Fandom 等）**完成度不一且会带来数据混淆，不入库**，降为「观察动态层」
+> （见 §2.4，仅追踪不进采集管线）。其余非 wiki 源全部深入推进，接入规格见 §6。
 >
 > 文档分工：
 > - 本文 = **覆盖范围 + 接入协议 + 优先级**（规定层，回答「采什么、按什么纪律采」）
@@ -21,8 +25,9 @@ news 是黑池的「眼睛和耳朵」，目标是把**全世界**公开的 Mori
 1. **覆盖跟着玩家走，不跟着官方运营走。** 官方无本地化、但有自发社区的语区（如韩区
    Arca.live、泰区 FB 群）同样是高价值目标；客户端支持但无独立社区的语区（拉美葡西、
    欧洲法德意）不单独投入采集。
-2. **结构化源优先于论坛文本。** 已结构化的第三方数据库（Kaiden.gg / 灰机wiki / 日系
-   攻略 wiki）信息密度远高于散落讨论，应作为解析首选。
+2. **WIKI 类不入库，只观察动态。** 第三方结构化数据库 / 攻略 wiki（Kaiden.gg / 灰机wiki /
+   日系攻略 wiki 等）完成度不一、且会与社区 UGC 数据混淆，按守密人裁定不进采集管线，
+   仅作动态观察（§2.4）。采集入库目标聚焦社区 UGC / 官方渠道 / 商店评价。
 3. **诚实边界，不臆造覆盖。** 经检索明确未发现 Morimens 存在的语区/平台（见 §2.3）
    不列为采集目标，不投入工时，不在报告中虚构其覆盖（CLAUDE.md §4.2 R1）。
 
@@ -32,39 +37,60 @@ news 是黑池的「眼睛和耳朵」，目标是把**全世界**公开的 Mori
 
 价值分级：**P0** 高价值且当前易漏 ｜ **P1** 高价值已部分覆盖 ｜ **P2** 长尾/低成本补位 ｜ **—** 明确不投入。
 
-### §2.1 已确认存在的语区与主阵地
+### §2.1 已确认存在的语区与主阵地（采集目标，UGC/社区/商店）
 
-| 语区 | 官方本地化 | 玩家主阵地（采集目标）| `sources.py` 现状 | 价值 |
-|------|-----------|---------------------|------------------|------|
-| 简中（中国大陆）| 是 | TapTap 官方论坛 / B站官方号 + 攻略组 / 微博「忘却前夜记录局」/ **灰机wiki** / GameKee | taptap·bilibili·weibo 已采；**灰机wiki 未采** | P1 |
-| 繁中（港澳台新马）| 是（独立官网）| **巴哈姆特哈啦板**（bsn=78829，台服主聚集地）/ QooApp | bahamut 已列 | P1 |
-| 英语（全球版）| 是 | 官方 Discord(主~48.9k/全球~36k) / 官方 X @MorimensOfcl / 官方 FB / **Kaiden.gg** / Fandom·Miraheze | discord 已采；**Kaiden.gg 未采** | P0 |
-| 日本 | 是（日服 2025-08 上线）| 官方日服 X / **Gamerch·WikiWiki·GameWith 三件套** / Note 攻略 / 4Gamer | note_com 已列；**日系 wiki 未采**（gamerch 在 LEGACY）| P0 |
-| 韩国 | 半官方（韩文+民间翻译）| **Arca.live「망각전야 채널」**（最活跃主阵地）/ Namu wiki / Naver Cafe | arca_live·naver_cafe 已列，**频道精度待核实** | P0 |
-| 东南亚（泰）| 全球版覆盖 | FB 群「Morimens Thailand [TH]」 | 未采 | P2 |
-| 俄语 | 客户端 AI 翻译，无独立运营 | StopGame / DTF / 4PDA / Steam 俄语区 | stopgame 已列 | P2 |
+「接入现状」据 2026-06-03 `global_collectors.py` 实现盘点；不含 wiki 类（wiki 见 §2.4 观察层）。
 
-### §2.2 第三方结构化数据库（跨语区高价值，单独立项）
+| 语区 | 官方本地化 | 玩家主阵地（采集目标）| 接入现状 | 价值 |
+|------|-----------|---------------------|---------|------|
+| 简中（中国大陆）| 是 | TapTap 官方论坛 / B站官方号 + 攻略组 / 微博「忘却前夜记录局」/ 小红书 / 知乎 | taptap·bilibili·weibo·zhihu **已实装真采** | P1 |
+| 繁中（港澳台新马）| 是（独立官网）| **巴哈姆特哈啦板**（bsn=78829，台服主聚集地）/ QooApp | bahamut **已实装**（搜索模式；BSN 模式待配置，见 §6 P1-1）| P0 |
+| 英语（全球版）| 是 | 官方 Discord(主~48.9k/全球~36k，据外部检索) / 官方 X @MorimensOfcl / 官方 FB | discord 已采；X/FB **占位未实装**（需 token，见 §6）| P0 |
+| 日本 | 是（日服 2025-08 上线）| 日服官方 X @bokyakuzenya / Note 攻略 / 5ch / 4Gamer | note_com·fivech **已实装真采** | P1 |
+| 韩国 | 半官方（韩文+民间翻译）| **Arca.live「망각전야 채널」**（forgettingeve，最活跃主阵地）/ Naver Cafe | arca_live·naver_cafe **已实装真采**（待核实产出，见 §6 P0-1）| P0 |
+| 东南亚（泰）| 全球版覆盖 | （原 FB 群目标已放弃，见 §2.3）→ 转官方 Discord 泰语内容 / 官方 FB 主页 | 经 Discord 间接覆盖 | P2 |
+| 俄语 | 客户端 AI 翻译，无独立运营 | **DTF**（dtf.ru，有公开 API）/ StopGame / Steam 俄语区 | stopgame 已实装；**DTF 未采**（真缺口，见 §6 P1-2）| P2 |
 
-| 站点 | 语言 | 内容 | 价值 | 备注 |
-|------|------|------|------|------|
-| **Kaiden.gg** | 英 | 角色库 + 命轮(Wheels) + tier list + 指南，活跃更新 | **P0** | 含 Erica 等角色页，可直接结构化解析 |
-| **灰机wiki** morimens.huijiwiki.com | 简中 | 结构化角色/剧情维基 | P1 | 中文结构化盲区 |
-| 日系 wiki（Gamerch / WikiWiki / GameWith）| 日 | 日服三大攻略 wiki，UGC 密度全球最高 | P0 | gamerch 现为 LEGACY，需重新评估激活 |
-| Namu wiki | 韩 | 结构化词条 | P1 | — |
-| Fandom / Miraheze | 英 | Awakers 四域(Caro/Chaos/Ultra/Aqueor)分类 | P2 | 质量中等 |
+### §2.2 占位未实装（需 token / 政策受限）
+
+| 源 | 语区 | 现状 | 接入条件 |
+|----|------|------|---------|
+| twitter/X | 全球 | 占位无 fetch 函数 | 需 `TWITTER_BEARER_TOKEN`（付费），目标 handle @MorimensOfcl / @bokyakuzenya |
+| facebook | 全球 | 占位无 fetch 函数 | 仅官方 **Page**（MorimensOfficial）可走 Graph API，需 App Review；**FB 群已无 API**（§2.3）|
+| tiktok / instagram / twitch | 全球 | 占位无 fetch 函数 | 各需 OAuth/token，优先级低 |
 
 ### §2.3 明确未发现 / 不投入（诚实边界）
 
 下列为 2026-06-03 检索**明确未命中**或**确认无效**，不列为采集目标，禁止虚构覆盖：
 
+- **泰国 FB 群「Morimens Thailand [TH]」**：Meta 已于 2024-04 彻底废弃 Facebook Groups
+  API，无合规程序化读群帖通道，无可靠替代。**放弃**该群本体，泰语信号改由官方 Discord
+  泰语内容 / 官方 FB 主页（Page 路径）间接覆盖。
 - **Reddit 专属 subreddit**：未发现活跃专版（CONTEXT.md M2「确认 r/Morimens」结论 = 待
   再核实，当前不应假定存在繁荣专版）。
 - **VK / 韩国 Inven / 韩国 DCInside**：均未发现 Morimens 专属板。
 - **中东阿语区**：无本地化、无社区，确认无源。
 - **拉美葡西 / 欧洲法德意**：客户端语言支持，但无独立社区，不单独投入。
 - **Prydwen.gg**：核实为他游（Chaos Zero Nightmare），**不是** Morimens 源，剔除。
-- **MementoMori / Game8 相关 tier 表**：他游同名干扰，剔除（CLAUDE.md §4.2 R1 纠偏）。
+- **MementoMori / Monochrome Mobius / Game8 相关 tier 表**：他游同名/近名干扰，剔除
+  （CLAUDE.md §4.2 R1 纠偏）。
+
+### §2.4 WIKI 观察动态层（守密人裁定：不入库）
+
+WIKI 类结构化站**完成度不一、且会与社区 UGC 数据混淆**，守密人 2026-06-03 裁定**不进采集
+管线、不进 `sources.py` 产线清单、不进全量档案层**。仅作「观察动态」用途：人工/做梦
+Agent 按需追踪线索，不自动入库，不计入覆盖率统计。
+
+| 站点 | 语言 | 内容 | 观察用途 |
+|------|------|------|---------|
+| Kaiden.gg | 英 | 角色 + 命轮 + tier，活跃更新 | 角色/数值动态线索（检索曾命中 Erica 页）|
+| 灰机wiki morimens.huijiwiki.com | 简中 | 结构化角色/剧情 | 中文结构化参照 |
+| 日系 wiki（Gamerch / WikiWiki / GameWith）| 日 | 日服攻略 | 日服攻略动态 |
+| Namu wiki | 韩 | 结构化词条 | 韩区词条动态 |
+| Fandom / Miraheze | 英 | Awakers 四域分类 | 英文设定参照 |
+
+> 注：`sources.py:LEGACY_SOURCES` 中的 `gamerch` / `miraheze_wiki` 维持遗留状态（仅历史
+> 归档可见），**不重新激活入库**，与本裁定一致。
 
 ---
 
@@ -98,11 +124,15 @@ news 是黑池的「眼睛和耳朵」，目标是把**全世界**公开的 Mori
 
 1. **中/日/韩**：保留本地化全称 + 罗马音/英文混写变体（现状达标）：
    - zh：忘却前夜、忘卻前夜 ｜ ja：忘却前夜、モリメンス ｜ ko：망각전야、모리멘스、Morimens
-2. **拉丁字母语区**：除 "Morimens" 外补大小写/词形变体（morimens / MORIMENS），并按平台
-   附加平台内常用 tag（如官方 X handle @MorimensOfcl、日服 handle）作为检索锚点。
+   - ru：补 `Морименс`（俄文译名，现状仅拉丁 Morimens）
+2. **拉丁字母语区**：除 "Morimens" 外补大小写/词形变体（morimens / MORIMENS），并附平台内
+   检索锚点（已确认）：
+   - 官方 handle：全球 X **@MorimensOfcl**；日服 X **@bokyakuzenya**；官方 FB 主页 **MorimensOfficial**；Steam AppID **3052450**
+   - 通用 hashtag：**#Morimens**
 3. **关键词只增不默删**：删除任何关键词需在 commit message 说明依据，避免静默缩小召回。
-4. **干扰词排除**：MementoMori、Chaos Zero Nightmare 等同名/近名他游须在解析层排除
-   （CLAUDE.md §4.2 R1）。
+4. **干扰词排除（已确认须排除）**：`MementoMori`、`Monochrome Mobius` / `Mobius`、
+   `Chaos Zero Nightmare`（Prydwen 误收）等同名/近名他游；handle 须按精确拼写过滤，
+   排除 `@Morimenss`（双 s）、`@morimen`（日文「森」个人号）（CLAUDE.md §4.2 R1）。
 
 > 说明：本规定属规定层，KEYWORDS 的实际代码修改由 Code-news 按 §3 协议执行
 > （CONTEXT.md 派发纪律：主控台不亲自动 news 业务代码）。
@@ -124,16 +154,18 @@ news 是黑池的「眼睛和耳朵」，目标是把**全世界**公开的 Mori
 
 ## §6 落地路线图（对接 CONTEXT.md M2 信息齐备）
 
-按 §2 价值分级排期，P0 优先：
+按 §2 价值分级排期，P0 优先。**全部为非 wiki 源**（wiki 已按裁定移出，§2.4）。
+接入规格据 2026-06-03 实测（HTTP 200 / 选择器 / 端点均为实证，未确认项已标注）。
 
-| 优先级 | 任务 | 验证标准 |
-|--------|------|---------|
-| P0-1 | 核实并固定韩区 Arca.live「망각전야 채널」频道，确认 `arca_live` 实际产出 | data/platforms/arca_live/ 有连续日产出 |
-| P0-2 | 新增 Kaiden.gg 结构化抓取（角色/命轮/tier）| 登记 sources.py + 双路径，首次产出非空 |
-| P0-3 | 重评日系 wiki 三件套（Gamerch/WikiWiki/GameWith），将 gamerch 从 LEGACY 激活或确认废弃 | 决议落 sources.py，附依据 |
-| P1-1 | 新增灰机wiki（简中结构化）+ 接通巴哈姆特哈啦板产出核实 | 双路径登记，产出非空 |
-| P1-2 | 按 §4 补齐拉丁语区关键词变体 | KEYWORDS 更新 + 召回回归测试 |
-| P2-1 | 低成本补位：泰国 FB 群 / 俄语 StopGame·DTF（FB Graph / 论坛 RSS）| 纳入 SPARSE_SOURCES，宽时间窗 |
-| — | 阿语区 / Reddit 专版 / VK / Inven / DCInside：不投入，除非出现新证据 | 不立项 |
+| 优先级 | 任务 | 接入规格（实证）| 验证标准 |
+|--------|------|----------------|---------|
+| **P0-1** | 核实韩区 `arca_live`（已实装）实际产出，修正抽样失真 | requests + 浏览器 UA（非默认 UA，否则 403）抓 `arca.live/b/forgettingeve?p=N`，解析 `a.vrow.column`；**剔除** `notice-*`/`filtered` 置顶行；时间用 `.col-time` 内 `<time datetime>` ISO8601；间隔 ≥2s，cloudscraper 兜底 challenge。**无需 Playwright/登录** | data/platforms/arca_live/ 有连续日产出且不含置顶噪声 |
+| **P1-1** | 巴哈姆特（已实装搜索模式）升级为板内直采 | 配 `BAHAMUT_BSN=78829`；requests + 浏览器 UA 抓 `B.php?bsn=78829&page=N`，解析 `.b-list__row`；**剔除** `.b-list__row--sticky`；时间 `.b-list__time__edittime` 为繁中文本需自写解析器。**无需 Playwright/登录** | bahamut 产出来自 78829 板、含 GP/回复数、置顶已剔 |
+| **P1-2** | 新增 `dtf`（俄语真缺口）| DTF 官方 API `https://api.dtf.ru/v1.6`：`GET /layout/hashtag/morimens` 探测，无果退站内搜索；**必带** 规范 `User-Agent`，限速 **≤3 req/s**；字段映射 Entry/Comment 模型。按 §3 登记 sources.py + 双路径 | dtf 首次产出非空（或确认 DTF 无 Morimens 内容后移入 §2.3）|
+| **P1-3** | StopGame（已实装 HTML）补 RSS 提升稳定性 | 补 `rss.stopgame.ru/rss_news.xml`·`rss_review.xml`·`rss_preview.xml` + 关键词 `Morimens`/`Морименс` 过滤；评分/评测仍爬词条页 | RSS 路径产出非空 |
+| **P2-1** | 按 §4 补齐 ru 关键词 `Морименс` + 拉丁锚点/干扰词排除 | KEYWORDS 增 `Морименс`，解析层加干扰词黑名单 | 召回回归 + 干扰词不入库 |
+| **P2-2** | twitter/X、facebook Page：占位转实装（如守密人批 token）| 见 §2.2 接入条件 | token 就位后实装 |
+| — | 泰 FB 群 / 阿语区 / Reddit 专版 / VK / Inven / DCInside / 全部 wiki 入库：不投入 | — | 不立项 |
 
 文档维护：每次按 §3 接入新源，同步更新本规定 §2 与 §6；覆盖矩阵的实证基线每季度复勘一次。
+未确认项（Arca board 列表 JSON 端点、两站速率阈值、巴哈留言 Ajax 端点、DTF Morimens tag 是否存在）由 Code-news 开发时抓包核实，不外推。
