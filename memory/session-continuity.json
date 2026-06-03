@@ -1,6 +1,6 @@
 {
   "last_session": {
-    "id": "fe536099",
+    "id": "f7082bc8",
     "timestamp": "2026-06-03T15:06:51.210000+00:00",
     "duration_minutes": 8.3,
     "branch": "claude/nifty-cori-Cbfbp",
@@ -17,6 +17,23 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "fe536099",
+      "timestamp": "2026-06-03T15:06:51.210000+00:00",
+      "duration_minutes": 8.3,
+      "branch": "claude/nifty-cori-Cbfbp",
+      "topics": [
+        "联动",
+        "沙耶之歌"
+      ],
+      "decisions": [
+        "取材策略——交付物不需逐条引用 3873 行（违反 §6.2），而要趋势量化 + 各情感维度代表性引文做三语处理"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "3da71185",
       "timestamp": "2026-06-03T15:06:51.210000+00:00",
@@ -189,46 +206,28 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "256d7106",
-      "timestamp": "2026-06-02T18:58:05.605000+00:00",
-      "duration_minutes": 958.6,
-      "branch": "claude/inspiring-babbage-we5V8",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 2.83,
-      "联动": 1.8,
-      "沙耶之歌": 1.8,
-      "Wiki": 0.37
+      "联动": 2.44,
+      "沙耶之歌": 2.44,
+      "做梦Agent": 2.26,
+      "Wiki": 0.3
     },
     "hot_files": [
+      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
       "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
       "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
       "/home/user/brain-in-a-vat/.github/workflows/recover-fanart.yml",
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_window_20260602.md",
       "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-      "/home/user/brain-in-a-vat/scripts/report_render.py",
-      "/home/user/brain-in-a-vat/scripts/send_report_email.py"
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py"
     ],
-    "total_sessions": 135
+    "total_sessions": 136
   },
-  "updated_at": "2026-06-03T15:24:05.636767+00:00"
+  "updated_at": "2026-06-03T15:31:00.952496+00:00"
 }
