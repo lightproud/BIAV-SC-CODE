@@ -1,8 +1,8 @@
 {
   "date": "2026-06-03",
-  "archived_at": "2026-06-03T02:43:55.864839+00:00",
+  "archived_at": "2026-06-03T07:34:19.459416+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Okay, it's a gacha game, but you know what... it's...",
@@ -66,6 +66,72 @@
         "playtime_forever": 1852,
         "votes_up": 0,
         "timestamp_created": 1780446485
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Came for Saya, stayed for everything else because...",
+      "summary": "Came for Saya, stayed for everything else because wow....who knew a card game about being an investigator in a Lovecraftian world could be so enthralling? Plus, it's really fun to build a team once you've got the mechanics down!\n\nAnyways live laugh love my goat Caecus I love that guppy",
+      "source": "steam_review",
+      "time": "2026-06-03T06:43:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198884036944/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198884036944",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 795,
+        "votes_up": 0,
+        "timestamp_created": 1780468991
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 장점 게임 배경 그림체랑 게임 사운드 성우분 굿 캐릭터 성격 입체적\r\n단점 겜 이해하는데...",
+      "summary": "장점 게임 배경 그림체랑 게임 사운드 성우분 굿 캐릭터 성격 입체적\r\n단점 겜 이해하는데 오래걸림 신작이다보니 겜 정보량도 부족하고 스토리 호불호 가릴수 있는데 난 나쁘지 않았음  \r\n번역 좀 구림",
+      "source": "steam_review",
+      "time": "2026-06-03T06:40:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199564290633/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199564290633",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 469,
+        "votes_up": 0,
+        "timestamp_created": 1780468800
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] i dont know what's happening and what im doin, but...",
+      "summary": "i dont know what's happening and what im doin, but i like it 10/10 game",
+      "source": "steam_review",
+      "time": "2026-06-03T05:12:30+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199073485664/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199073485664",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1198,
+        "votes_up": 0,
+        "timestamp_created": 1780463550
       },
       "lang": "",
       "platform_region": "global"
