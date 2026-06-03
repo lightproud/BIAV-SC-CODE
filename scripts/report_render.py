@@ -38,7 +38,7 @@ CSS = r'''
   @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040;} }
 @page :first{ @bottom-center{content:none;} }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans CJK SC',sans-serif;font-size:12.5pt;line-height:1.68;color:#cdc2a1;background:#0a0b10;}
+body{font-family:'Noto Sans CJK SC',sans-serif;font-size:12.5pt;line-height:1.72;color:#d8ccaa;background:#0a0b10;}
 .cover{page-break-after:always;padding-top:34mm;text-align:center;}
 .cover-rule{border:none;border-top:2px solid #c5a356;width:64%;margin:0 auto 11mm;}
 .cover-rule-b{border:none;border-top:1px solid #3a3520;width:82%;margin:11mm auto 6mm;}
@@ -84,6 +84,43 @@ img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px soli
 .grid{margin:2mm 0 4mm;font-size:0;}
 .grid img{width:31.5%;display:inline-block;vertical-align:top;margin:0.7%;border:1px solid #3a3520;}
 .grid-day{font-size:12pt;color:#e2c97e;font-weight:700;margin:4mm 0 1mm;}
+/* —— 段类型差异化组件（解决 累/千篇一律/结构不明）—— */
+/* 结构路标：每段标题下一行「本段：…」 */
+.swhat{font-family:'Noto Serif CJK SC',serif;font-size:10.5pt;color:#8a8068;margin:-2mm 0 5mm;letter-spacing:0.5pt;}
+.swhat::before{content:"\25B8  ";color:#c5a356;}
+/* 数据盘：数字卡片 + 迷你条 */
+.statgrid{font-size:0;margin:2mm 0 4mm;}
+.stat{display:inline-block;width:23%;margin:0.9%;vertical-align:top;background:#13141c;border:1px solid #3a3520;border-top:2px solid #c5a356;padding:2.5mm 2mm;text-align:center;}
+.stat .n{display:block;font-family:'Noto Serif CJK SC',serif;font-size:18pt;font-weight:700;color:#e2c97e;line-height:1.1;}
+.stat .l{display:block;font-size:9pt;color:#8a8068;margin-top:1mm;}
+.bar{font-size:0;margin:1.6mm 0;page-break-inside:avoid;}
+.bar .lab{display:inline-block;width:26%;font-size:10pt;color:#c0b488;vertical-align:middle;}
+.bar .track{display:inline-block;width:56%;height:3.2mm;background:#15161e;vertical-align:middle;border:0.5px solid #26220f;}
+.bar .fill{display:block;height:100%;background:#c5a356;}
+.bar .fill.neg{background:#b5683e;}.bar .fill.pos{background:#6f8f4a;}
+.bar .val{display:inline-block;width:16%;font-size:9.5pt;color:#a99a6a;text-align:right;vertical-align:middle;padding-left:1.5mm;}
+/* 各信源主要内容：信源卡 */
+.srccard{border:1px solid #3a3520;background:#101119;padding:2.5mm 4mm 1.5mm;margin:3mm 0;page-break-inside:avoid;}
+.srchead{font-size:0;margin-bottom:1.5mm;}
+.srchead .src{display:inline-block;font-size:10.5pt;font-weight:700;color:#0a0b10;background:#c5a356;padding:0.3mm 2.4mm;border-radius:2px;letter-spacing:0.5pt;}
+.srchead .cnt{display:inline-block;font-size:9.5pt;color:#7a7050;margin-left:2.5mm;vertical-align:middle;}
+.srccard .sum{font-size:11pt;color:#c0b488;margin:1mm 0 1.5mm;line-height:1.6;}
+/* 商店/视频新评：情感色评论卡 */
+.review{border-left:3px solid #6b6040;background:#13141c;padding:2mm 4mm;margin:2.2mm 0;page-break-inside:avoid;}
+.review.pos{border-left-color:#6f8f4a;}.review.neg{border-left-color:#b5683e;}
+.review .o{color:#b3a67e;font-size:11pt;}
+.review .z{display:block;color:#8f8358;font-size:10.5pt;margin-top:0.8mm;}
+.review .meta{display:block;font-size:9pt;color:#6b6040;margin-top:1mm;}
+/* 视觉钉：每段至多 1 条大引用 */
+.pull{font-family:'Noto Serif CJK SC',serif;font-size:14pt;line-height:1.55;color:#e2c97e;border-left:4px solid #c5a356;padding:2mm 0 2mm 6mm;margin:4mm 0;}
+.pull .z{display:block;font-family:'Noto Sans CJK SC',sans-serif;font-size:11pt;color:#9a8d5e;margin-top:1.5mm;}
+/* 长引用紧凑变体（不喧宾夺主） */
+.qqs{margin:1.5mm 0;padding-left:4mm;border-left:1px solid #3a3520;}
+.qqs .o{color:#a99a6a;font-size:10.5pt;}
+.qqs .z{color:#80764f;font-size:10pt;display:block;}
+/* Bug 详情结构块 */
+.repro{border:1px solid #3a3520;background:#12130d;padding:2.5mm 4mm;margin:2.5mm 0;page-break-inside:avoid;}
+.repro b{color:#e2c97e;}
 '''
 
 
