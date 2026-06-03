@@ -85,6 +85,11 @@ img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px soli
 .grid{margin:2mm 0 4mm;font-size:0;}
 .grid img{width:31.5%;display:inline-block;vertical-align:top;margin:0.7%;border:1px solid #3a3520;}
 .grid-day{font-size:11pt;color:#e2c97e;font-weight:700;margin:4mm 0 1mm;}
+.gwrap{font-size:0;margin:1mm 0 3mm;}
+.gcard{display:inline-block;width:23.4%;margin:0.8%;vertical-align:top;}
+.gcard img{width:100%;height:auto;display:block;margin:0;border:1px solid #3a3520;}
+.gcap{display:block;font-size:7.6pt;color:#7a7050;margin-top:0.6mm;line-height:1.3;}
+.gcap a{color:#8a7438;}
 .swhat{font-family:'Noto Serif CJK SC',serif;font-size:9.5pt;color:#8a8068;margin:-1.5mm 0 4mm;letter-spacing:0.5pt;}
 .swhat::before{content:"\25B8  ";color:#c5a356;}
 .statgrid{font-size:0;margin:2mm 0 3.5mm;}
