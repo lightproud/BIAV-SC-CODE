@@ -314,15 +314,20 @@ PV 500 万、Steam 在线历史新高、「为沙耶来为剧情留」是难得�
 
 ◇ ◇ ◇
 
-## §7 同人图册（周年艺术高峰段）
+## §7 同人图册（整窗甄别 33 张）
 
-<div class="swhat">本段：周期内二创高峰（05-30~06-02）甄别后手绘精选（服务社区）</div>
+<div class="swhat">本段：整窗 23 天二创补录 453 张，逐张目检甄别后手绘精选（服务社区）</div>
 
-> 周期早段（05-12~05-29）二创未补录缩略图，故图册取沙耶上线后的二创高峰段；逐张目检剔除游戏截图 / 网图 / AMV 帧 / 疑似 AI 量产，保留手绘。
+> 整窗（05-12~06-03）经 Discord refresh-urls + Pixiv 补录共 <b>453 张</b>候选，逐张目检剔除游戏截图 / 网图 meme / AMV 帧 / 作画过程照 / 疑似 AI 量产，按三幕精选 33 张手绘。原图归档于 `data/fanart/{date}/`。
 
-<div class="grid"><img src="projects/news/data/fanart/2026-05-30/thumbs/discord_1510073191345819789.jpg"><img src="projects/news/data/fanart/2026-05-31/thumbs/pixiv_913446887a.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510945785817071656.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510995584046202982.jpg"><img src="projects/news/data/fanart/2026-06-02/thumbs/discord_1511336150823075910.jpg"><img src="projects/news/data/fanart/2026-06-02/thumbs/pixiv_cc39e4436f.jpg"></div>
+<div class="grid-day">第一幕 · 预热与信任危机（05-12~05-19，10 张）</div>
+<div class="grid"><img src="projects/news/data/fanart/2026-05-12/thumbs/discord_1503681951226269847.jpg"><img src="projects/news/data/fanart/2026-05-12/thumbs/pixiv_47561666e5.jpg"><img src="projects/news/data/fanart/2026-05-14/thumbs/pixiv_47561666e5.jpg"><img src="projects/news/data/fanart/2026-05-15/thumbs/discord_1504758932009386114.jpg"><img src="projects/news/data/fanart/2026-05-16/thumbs/discord_1505133162127425596.jpg"><img src="projects/news/data/fanart/2026-05-16/thumbs/pixiv_773e7327b8.jpg"><img src="projects/news/data/fanart/2026-05-17/thumbs/discord_1505547021304467476.jpg"><img src="projects/news/data/fanart/2026-05-18/thumbs/discord_1505784716211523705.jpg"><img src="projects/news/data/fanart/2026-05-19/thumbs/discord_1506207005860433981.jpg"><img src="projects/news/data/fanart/2026-05-19/thumbs/discord_1506341783636807860.jpg"></div>
+<div class="grid-day">第二幕 · 校貓失联与增长加速（05-20~05-27，15 张）</div>
+<div class="grid"><img src="projects/news/data/fanart/2026-05-20/thumbs/discord_1506476579969302559.jpg"><img src="projects/news/data/fanart/2026-05-20/thumbs/discord_1506584515144056912.jpg"><img src="projects/news/data/fanart/2026-05-20/thumbs/discord_1506628341841662086.jpg"><img src="projects/news/data/fanart/2026-05-20/thumbs/discord_1506730641151099010.jpg"><img src="projects/news/data/fanart/2026-05-20/thumbs/pixiv_c008fa7ab5.jpg"><img src="projects/news/data/fanart/2026-05-21/thumbs/pixiv_9069705f54.jpg"><img src="projects/news/data/fanart/2026-05-23/thumbs/discord_1507815443975508078.jpg"><img src="projects/news/data/fanart/2026-05-23/thumbs/discord_1507819164663025664.jpg"><img src="projects/news/data/fanart/2026-05-24/thumbs/discord_1507902045846241481.jpg"><img src="projects/news/data/fanart/2026-05-24/thumbs/discord_1508151204767600660.jpg"><img src="projects/news/data/fanart/2026-05-24/thumbs/discord_1508248194486632508.jpg"><img src="projects/news/data/fanart/2026-05-24/thumbs/pixiv_773e7327b8.jpg"><img src="projects/news/data/fanart/2026-05-24/thumbs/pixiv_c008fa7ab5.jpg"><img src="projects/news/data/fanart/2026-05-25/thumbs/discord_1508459438078689431.jpg"><img src="projects/news/data/fanart/2026-05-25/thumbs/pixiv_a9091aef34.jpg"></div>
+<div class="grid-day">第三幕 · 联动高潮与余波（05-28~06-03，8 张）</div>
+<div class="grid"><img src="projects/news/data/fanart/2026-05-28/thumbs/discord_1509389320593735690.jpg"><img src="projects/news/data/fanart/2026-05-28/thumbs/discord_1509552771337027644.jpg"><img src="projects/news/data/fanart/2026-05-28/thumbs/pixiv_f11c7e791d.jpg"><img src="projects/news/data/fanart/2026-05-29/thumbs/pixiv_3fd316c207.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510822705987850331.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510945847410688111.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510995584046202982.jpg"><img src="projects/news/data/fanart/2026-06-02/thumbs/pixiv_71d9a237c5.jpg"></div>
 
-<div class="gallery-cap">2026-05-30~06-02 社区手绘同人精选 6 张（沙耶联动高峰段）· 来源 Discord 二创频道 + Pixiv</div>
+<div class="gallery-cap">2026-05-12~06-03 社区手绘同人精选 33 张（整窗补录 453 张甄别）· 来源 Discord 二创频道 + Pixiv</div>
 
 ◇ ◇ ◇
 
