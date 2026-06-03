@@ -1,32 +1,17 @@
 {
   "last_session": {
-<<<<<<< Updated upstream
-    "id": "4b21de40",
-    "timestamp": "2026-06-02T21:34:28.471000+00:00",
-    "duration_minutes": 5.5,
-    "branch": "claude/todo-implementation-VrygM",
-=======
     "id": "b183df5f",
     "timestamp": "2026-06-02T21:31:00.689000+00:00",
     "duration_minutes": 5.2,
     "branch": "claude/claude-md-docs-QHD4B",
->>>>>>> Stashed changes
     "topics": [
       "Wiki"
     ],
     "decisions": [],
     "files_changed": [
-<<<<<<< Updated upstream
-      "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-      "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-      "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
-=======
       "/home/user/brain-in-a-vat/CLAUDE.md"
->>>>>>> Stashed changes
     ],
-    "open_items": [
-      "` / `# TODO` 注释**——grep 全仓（排除 `.git` 与历史会话摘要）零命中。多数审计点名项（`memory_search.py` 重复 import / 吞错 idiom、`dr"
-    ]
+    "open_items": []
   },
   "recent_sessions": [
     {
@@ -210,9 +195,5 @@
     ],
     "total_sessions": 130
   },
-<<<<<<< Updated upstream
-  "updated_at": "2026-06-02T21:38:15.427861+00:00"
-=======
   "updated_at": "2026-06-02T21:34:54.741082+00:00"
->>>>>>> Stashed changes
 }
