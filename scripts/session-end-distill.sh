@@ -83,14 +83,17 @@ CLAUDE_DISTILL_MODE=1 python3 "$DISTILLER" \
     --cwd "$REPO_ROOT" \
     || echo "  distiller exited non-zero: $?"
 
-# Soft-fail auto-commit untracked session-digests after distiller completes.
+# Soft-fail auto-commit session memory after distiller completes.
 # Pairs with .claude/hooks/session-start-sync.sh (push ↔ pull self-healing).
-# Path-restricted to memory/session-digests/ to avoid touching in-flight files.
+# Covers untracked session-digests AND the tracked continuity file the
+# distiller rewrites each run — without this, continuity's modification
+# lingers in the working tree and the per-turn Stop hook nags every turn.
 DIGEST_DIR_REL="memory/session-digests"
-if [[ -n "$(cd "$REPO_ROOT" && git ls-files --others --exclude-standard -- "$DIGEST_DIR_REL" 2>/dev/null)" ]]; then
-    cd "$REPO_ROOT"
-    git add -- "$DIGEST_DIR_REL" 2>>"$LOG_FILE" || echo "  add failed (non-fatal)" >>"$LOG_FILE"
-    git commit -m "chore(memory): session digest auto-commit (SessionEnd hook)" \
+CONTINUITY_REL="memory/session-continuity.json"
+cd "$REPO_ROOT"
+git add -- "$DIGEST_DIR_REL" "$CONTINUITY_REL" 2>>"$LOG_FILE" || echo "  add failed (non-fatal)" >>"$LOG_FILE"
+if ! git diff --cached --quiet -- "$DIGEST_DIR_REL" "$CONTINUITY_REL" 2>/dev/null; then
+    git commit -m "chore(memory): session digest + continuity auto-commit (SessionEnd hook)" \
         2>>"$LOG_FILE" || echo "  commit failed (non-fatal)" >>"$LOG_FILE"
     git push origin main 2>>"$LOG_FILE" \
         || echo "  push failed (non-fatal, will retry next session)" >>"$LOG_FILE"
