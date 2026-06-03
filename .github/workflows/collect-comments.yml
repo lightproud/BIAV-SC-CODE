@@ -1,0 +1,58 @@
+name: "💬 Collect Video Comments"
+
+# 独立采集忘却前夜相关 YouTube 视频（含官方 PV）的热门评论，归档到
+# projects/news/data/platforms/youtube_comments/{date}.json，供会话内报告引用。
+# 只用 YOUTUBE_API_KEY（Google，免费配额），不碰 Anthropic API、不花钱。
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '归档日期标签 YYYY-MM-DD（默认=北京昨日）'
+        required: false
+        default: ''
+  schedule:
+    - cron: '0 2 * * *'   # 每日 02:00 UTC 自动采（与新闻管线同属免费数据层）
+
+concurrency:
+  group: collect-comments
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect video comments
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          D="${{ github.event.inputs.date }}"
+          [ -n "$D" ] || D=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
+          python projects/news/scripts/collect_video_comments.py --date "$D" --top-videos 15 --per-video 25
+
+      - name: Commit comments archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/data/platforms/youtube_comments/
+          if git diff --staged --quiet; then
+            echo "No new comments to commit"
+          else
+            git commit -m "chore: archive youtube video comments [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              sleep $i
+            done
+            exit 1
+          fi
