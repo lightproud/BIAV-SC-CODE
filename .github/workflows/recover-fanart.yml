@@ -1,15 +1,20 @@
 name: "🎨 Recover Fan Art"
 
-# 某日同人图全量补录：附件本体仍在 Discord，过期的只是签名链接。
-# 带 DISCORD_BOT_TOKEN 经 refresh-urls 刷新后全量下载二创图，提交入库供日报嵌图。
-# 历史日亦可补回（不受 24h CDN 过期限制）。
+# 同人图全量补录：附件本体仍在 Discord，过期的只是带签名链接。
+# 带 DISCORD_BOT_TOKEN 经 refresh-urls 刷新后全量下载二创图，提交入库供报告嵌图。
+# 单次跑覆盖整窗口（内部逐日循环），避免多次触发被并发组取消。
 
 on:
   workflow_dispatch:
     inputs:
-      date:
-        description: '补录日期 YYYY-MM-DD'
-        required: true
+      end_date:
+        description: '窗口结束日 YYYY-MM-DD（默认=北京今日）'
+        required: false
+        default: ''
+      window_days:
+        description: '窗口天数（含结束日，默认 4）'
+        required: false
+        default: '4'
 
 concurrency:
   group: recover-fanart
@@ -30,23 +35,29 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Recover fan art (refresh Discord URLs)
+      - name: Recover fan art across window (refresh Discord URLs)
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
-          python projects/news/scripts/collect_fanart.py \
-            --date "${{ github.event.inputs.date }}" \
-            --out "projects/news/data/fanart/${{ github.event.inputs.date }}"
+          END="${{ github.event.inputs.end_date }}"
+          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          WIN="${{ github.event.inputs.window_days }}"; WIN=${WIN:-4}
+          for k in $(seq $((WIN-1)) -1 0); do
+            D=$(date -d "$END -$k day" +%Y-%m-%d)
+            echo "=== $D ==="
+            python projects/news/scripts/collect_fanart.py --date "$D" \
+              --out "projects/news/data/fanart/$D"
+          done
 
       - name: Commit recovered images
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "projects/news/data/fanart/${{ github.event.inputs.date }}"
+          git add projects/news/data/fanart/
           if git diff --staged --quiet; then
             echo "No new fan art to commit"
           else
-            git commit -m "chore: recover fan art ${{ github.event.inputs.date }} [skip ci]"
+            git commit -m "chore: recover fan art window [skip ci]"
             for i in 1 2 3 4; do
               git pull --rebase origin main && git push origin main && exit 0
               sleep $i
