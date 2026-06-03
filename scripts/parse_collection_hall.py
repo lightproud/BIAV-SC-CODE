@@ -26,12 +26,9 @@ def parse_collection_hall(path):
 
     # Categorize by content type
     categories = {
-        'characters': [],      # Character-related lore
         'locations': [],       # Places, organizations
         'creatures': [],       # Monsters, entities
         'concepts': [],        # World concepts, dimensions
-        'items': [],           # Objects, artifacts
-        'events': [],          # Story events, chapters
         'uncategorized': [],   # Everything else
     }
 

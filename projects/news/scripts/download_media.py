@@ -12,9 +12,11 @@ download_media.py — 全平台媒体资源下载器
 
 import argparse
 import hashlib
+import ipaddress
 import json
 import logging
 import re
+import socket
 import subprocess
 import time
 from datetime import datetime, timezone
@@ -67,10 +69,29 @@ def save_manifest(manifest: dict):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
+def is_safe_url(url: str) -> bool:
+    """SSRF guard: only http/https to public IPs (reject private/loopback/link-local)."""
+    parsed = urlparse(url)
+    if parsed.scheme not in ('http', 'https'):
+        return False
+    host = parsed.hostname
+    if not host:
+        return False
+    try:
+        ip = ipaddress.ip_address(socket.gethostbyname(host))
+    except (socket.gaierror, ValueError):
+        return False
+    return not (ip.is_private or ip.is_loopback or ip.is_link_local
+                or ip.is_reserved or ip.is_multicast or ip.is_unspecified)
+
+
 def download_file(url: str, dest: Path) -> bool:
     """Download a file to dest. Returns True on success."""
+    if not is_safe_url(url):
+        logger.warning(f'  拒绝不安全 URL: {url[:80]}')
+        return False
     try:
-        resp = requests.get(url, timeout=REQUEST_TIMEOUT, stream=True, headers={
+        resp = requests.get(url, timeout=REQUEST_TIMEOUT, stream=True, allow_redirects=False, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
             'Referer': urlparse(url).scheme + '://' + urlparse(url).netloc + '/',
         })
@@ -115,7 +136,7 @@ def collect_media_urls() -> list[dict]:
 
     items = []
     for item in data.get('news', []):
-        media_url = item.get('media_url', '').strip()
+        media_url = (item.get('media_url') or '').strip()
         if not media_url:
             continue
         items.append({

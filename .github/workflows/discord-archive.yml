@@ -41,10 +41,13 @@ jobs:
 
       - name: Determine run mode
         id: mode
+        env:
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
-          if [ "${{ github.event.inputs.mode }}" = "force-month" ]; then
+          if [ "$INPUT_MODE" = "force-month" ]; then
             echo "mode=force" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-cleanup" ]; then
+          elif [ "$EVENT_SCHEDULE" = "0 6 1 * *" ] || [ "$INPUT_MODE" = "monthly-cleanup" ]; then
             echo "mode=monthly" >> $GITHUB_OUTPUT
           else
             echo "mode=incremental" >> $GITHUB_OUTPUT
