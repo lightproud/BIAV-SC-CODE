@@ -1,23 +1,37 @@
 {
   "last_session": {
-    "id": "071cd684",
-    "timestamp": "2026-06-02T21:29:46.673000+00:00",
-    "duration_minutes": 1527.5,
-    "branch": "claude/news-source-cleanup",
+    "id": "3127a0a5",
+    "timestamp": "2026-06-03T01:22:37.010000+00:00",
+    "duration_minutes": 236.9,
+    "branch": "claude/repo-health-assessment-1vmlD",
     "topics": [
-      "Wiki",
-      "做梦Agent"
+      "Wiki"
     ],
     "decisions": [],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
-      "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
-    ],
-    "open_items": []
+    "files_changed": [],
+    "open_items": [
+      "的工作区改动 `memory/session-continuity.json`（自动会话追踪元数据）已归档提交（`43b486e1`）并同步至远端分支"
+    ]
   },
   "recent_sessions": [
+    {
+      "id": "071cd684",
+      "timestamp": "2026-06-02T21:29:46.673000+00:00",
+      "duration_minutes": 1527.5,
+      "branch": "claude/news-source-cleanup",
+      "topics": [
+        "Wiki",
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "935e82f7",
       "timestamp": "2026-06-02T21:04:12.631000+00:00",
@@ -190,51 +204,14 @@
       "open_items": [
         "files in parallel"
       ]
-    },
-    {
-      "id": "70c0404d",
-      "timestamp": "2026-05-26T17:08:55.540000+00:00",
-      "duration_minutes": 124.0,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_collect_global.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 4.46,
-      "做梦Agent": 3.69,
-      "银芯": 0.27,
-      "黑池": 0.18
+      "Wiki": 4.57,
+      "做梦Agent": 2.95,
+      "银芯": 0.22,
+      "黑池": 0.14
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
@@ -242,7 +219,7 @@
       "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
     ],
-    "total_sessions": 120
+    "total_sessions": 121
   },
-  "updated_at": "2026-06-02T21:34:02.997710+00:00"
+  "updated_at": "2026-06-03T01:26:22.911349+00:00"
 }
