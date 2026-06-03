@@ -81,6 +81,9 @@ img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px soli
 .qq{border-left:2px solid #6b6040;padding:1mm 0 1mm 5mm;margin:2.5mm 0;}
 .qq .o{color:#b3a67e;font-size:11.5pt;}
 .qq .z{color:#8f8358;font-size:11pt;display:block;margin-top:1mm;}
+.grid{margin:2mm 0 4mm;font-size:0;}
+.grid img{width:31.5%;display:inline-block;vertical-align:top;margin:0.7%;border:1px solid #3a3520;}
+.grid-day{font-size:12pt;color:#e2c97e;font-weight:700;margin:4mm 0 1mm;}
 '''
 
 
