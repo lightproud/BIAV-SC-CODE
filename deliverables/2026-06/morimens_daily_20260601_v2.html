@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><style>
+@page { size:150mm 210mm; margin:12mm 11mm 12mm 11mm; background:#0a0b10;
+  @bottom-center{content:"— " counter(page) " —"; font-family:'Noto Sans CJK SC',sans-serif; font-size:11pt; color:#6b6040;} }
+@page :first{ @bottom-center{content:none;} }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans CJK SC',sans-serif;font-size:12.5pt;line-height:1.68;color:#cdc2a1;background:#0a0b10;}
+.cover{page-break-after:always;padding-top:34mm;text-align:center;}
+.cover-rule{border:none;border-top:2px solid #c5a356;width:64%;margin:0 auto 11mm;}
+.cover-rule-b{border:none;border-top:1px solid #3a3520;width:82%;margin:11mm auto 6mm;}
+.cover h1{font-family:'Noto Serif CJK SC',serif;font-size:24pt;font-weight:700;color:#e2c97e;line-height:1.5;margin-bottom:7mm;letter-spacing:1pt;}
+.cover .sub{font-size:14pt;color:#b09a5e;margin-bottom:10mm;line-height:1.7;}
+.cover .meta{font-size:12pt;color:#7a7050;line-height:2;margin-top:8mm;}
+.cover .erica{font-family:'Noto Serif CJK SC',serif;font-size:14pt;color:#8a8068;margin-top:13mm;letter-spacing:3pt;}
+.toc{page-break-after:always;padding-top:14mm;}
+.toc h2{font-family:'Noto Serif CJK SC',serif;font-size:19pt;color:#e2c97e;text-align:center;margin-bottom:4mm;letter-spacing:4pt;}
+.toc-rule{border:none;border-top:2px solid #c5a356;width:40%;margin:0 auto 7mm;}
+.toc-item{font-size:12.5pt;line-height:1.95;color:#c5a356;text-align:center;}
+h2.section-title{font-family:'Noto Serif CJK SC',serif;font-size:18pt;font-weight:700;color:#e2c97e;margin-top:1mm;margin-bottom:2mm;letter-spacing:1pt;page-break-before:always;page-break-after:avoid;}
+hr.section-rule{border:none;border-top:2px solid #c5a356;margin-bottom:5mm;page-break-after:avoid;}
+h3{font-family:'Noto Serif CJK SC',serif;page-break-after:avoid;font-size:14pt;font-weight:700;color:#c5a356;margin-top:6mm;margin-bottom:3mm;}
+p{margin-bottom:2.6mm;text-align:justify;orphans:3;widows:3;}
+strong{color:#e2c97e;font-weight:700;}
+em{color:#a99a6a;font-style:normal;}
+ul,ol{margin:2mm 0 3.5mm 7mm;}
+li{margin-bottom:1.8mm;line-height:1.6;}
+blockquote{border-left:3px solid #c5a356;background:#13141c;padding:2.5mm 4mm;margin:3mm 0;color:#b3a67e;font-size:11.5pt;}
+blockquote p{margin-bottom:1.8mm;}
+code{font-family:'Noto Sans Mono CJK SC','DejaVu Sans Mono',monospace;font-size:12.5pt;color:#c5a356;background:#15161e;padding:0 2px;word-break:break-all;}
+hr.ornament{border:none;text-align:center;margin:5mm 0;}
+hr.ornament::after{content:"\25C7  \25C7  \25C7";color:#6b6040;font-size:14pt;letter-spacing:4pt;}
+table{width:100%;border-collapse:collapse;margin:3mm 0 3.5mm;font-size:11pt;page-break-inside:avoid;}
+th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:2.2mm 2.6mm;text-align:left;border:0.5px solid #3a3520;}
+td{padding:2mm 2.6mm;border:0.5px solid #26220f;vertical-align:top;line-height:1.65;color:#c0b488;}
+img{max-width:100%;height:auto;display:block;margin:3mm auto 1mm;border:1px solid #3a3520;}
+.gallery-cap{font-size:10.5pt;color:#7a7050;text-align:center;margin-bottom:4mm;}
+.quote-orig{color:#b3a67e;font-size:13pt;}
+.quote-zh{color:#9a8d5e;font-size:12.5pt;}
+.lead{font-size:13pt;color:#d8cba0;border-left:3px solid #c5a356;background:#13141c;padding:4mm 6mm;margin:3mm 0 5mm;line-height:1.9;}
+.callout{border:1px solid #3a3520;background:#12130d;padding:3.5mm 5mm;margin:4mm 0;page-break-inside:avoid;}
+.callout-risk{border-left:3px solid #b5683e;}
+.callout-pos{border-left:3px solid #6f8f4a;}
+.dim{border-left:3px solid #c5a356;background:#13141c;padding:1mm 5mm;margin:5mm 0 2mm;}
+.dim h3{margin:2mm 0;color:#e2c97e;}
+.badge{font-size:10.5pt;color:#0a0b10;background:#c5a356;padding:0 4px;border-radius:2px;font-weight:700;}
+.badge-b{background:#a99a6a;}.badge-c{background:#7a7050;color:#13141c;}
+.qq{border-left:2px solid #6b6040;padding:1mm 0 1mm 5mm;margin:2.5mm 0;}
+.qq .o{color:#b3a67e;font-size:11.5pt;}
+.qq .z{color:#8f8358;font-size:11pt;display:block;margin-top:1mm;}
+.grid{margin:2mm 0 4mm;font-size:0;}
+.grid img{width:31.5%;display:inline-block;vertical-align:top;margin:0.7%;border:1px solid #3a3520;}
+.grid-day{font-size:12pt;color:#e2c97e;font-weight:700;margin:4mm 0 1mm;}
+</style></head><body><div class="cover"><hr class="cover-rule"><h1>忘却前夜 社区情报日报</h1><div class="sub">BIAV-SC 银芯情报层 / 重点呈现版（六段结构）· 2026.06.01</div><div class="meta">2026-06-01 全量精读情报重组 · 40 频道 10 平台 · 官方 PV/主题曲 630 条 YouTube 评论 · 19 张甄别同人图<br>产出：主控台艾瑞卡 / Code-news · 2026-06-03</div><hr class="cover-rule-b"><div class="erica">弥萨格大学数据库终端 · 艾瑞卡</div></div><div class="toc"><h2>目 录</h2><hr class="toc-rule"><div class="toc-item">§1 社区整体洞察</div>
+<div class="toc-item">§2 重点内容呈现与翻译</div>
+<div class="toc-item">§3 对各开发者职能的建议</div>
+<div class="toc-item">§4 Bug 概述</div>
+<div class="toc-item">§5 Bug 详情（重现步骤 / 预期结果 / 实际结果）</div>
+<div class="toc-item">§6 同人图册</div></div><div class="content"><h2 class="section-title" id="sec0">§1 社区整体洞察</h2><hr class="section-rule">
+<div class="lead">
+2026-06-01 是 V2.5.1 × 沙耶之歌 2.5 周年联动首日。把当日跨十一语区的全部信号压成一句话：
+<b>忘却前夜最投入的玩家，正用最尖锐的批评表达最深的在乎。</b>而这一天又叠加了一条独特的外部增量——
+官方联动 PV 在 YouTube 冲到约 190 万播放，把大批<b>克苏鲁 / 沙耶之歌老粉与路人，第一次转化成忘却前夜玩家</b>。
+喜悦（「我们一起把它救活了」）与挑剔（叙事赶工、货币化、审核、本地化）在同一天同等高密度并存。
+</div>
+
+<p><strong>当日信号速览</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>维度</th>
+<th>一句话洞察</th>
+<th>信度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>运营事件</td>
+<td>联动开启 + 两次维护 + 49,000 礼包 + P-Caro 平衡争议</td>
+<td>A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>拉新转化</td>
+<td>PV 190 万播放，沙耶/克苏鲁老粉成规模入坑（评论区即时转化）</td>
+<td>A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>存亡叙事</td>
+<td>跨语区「濒临关服→一起救活→现在更健康」集体记忆，既骄傲又焦虑</td>
+<td>B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>货币化</td>
+<td>付费意愿与「绝望求钱」犬儒并存，俄/葡/越负面更集中</td>
+<td>B</td>
+</tr>
+<tr>
+<td>5</td>
+<td>内容叙事</td>
+<td>核心玩家批评赶工/节奏，批评恰源于极深的叙事投入</td>
+<td>B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>平衡玩法</td>
+<td>P-Caro、traphase 的 Helot meta、数值膨胀隐忧</td>
+<td>B</td>
+</tr>
+<tr>
+<td>7</td>
+<td>本地化</td>
+<td>语种质量落差大，玩家用 AI 跨区自助翻译绕过官方</td>
+<td>B</td>
+</tr>
+<tr>
+<td>8</td>
+<td>社区治理</td>
+<td>NSFW 版规触发跨频道寒蝉，已现心理健康警讯</td>
+<td>B</td>
+</tr>
+<tr>
+<td>9</td>
+<td>故障 Bug</td>
+<td>官方在查「繁殖/RM 遗物不生效」簇 + 多条客户端崩溃/支付故障</td>
+<td>A/B</td>
+</tr>
+<tr>
+<td>10</td>
+<td>同人生态</td>
+<td>沙耶/Aurita 二创高产，Aurita 粉丝半组织化动员</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一条贯穿暗线</strong>：这群人知道游戏差点死过、知道制作人 Light 押上了职业生涯，于是周年的每一种情绪——
+骄傲、焦虑、挑剔、护犊——都比普通手游社区更浓。当日最高价值的资产不是数值，而是这份「在乎」。</p>
+<hr class="ornament">
+<h2 class="section-title" id="sec1">§2 重点内容呈现与翻译</h2><hr class="section-rule">
+<h3>官方动作</h3>
+<ul>
+<li><strong>V2.5.1 × 沙耶之歌 2.5 周年联动</strong>正式开启：新 SSR 唤醒体沙耶（CV 河村绵）+ 命轮，领域机制 P-Caro（Caro 繁殖）。</li>
+<li><strong>联动 PV「Song of Perennial Wandering / 流转之歌」</strong>：YouTube 官方频道当日冲约 190 万播放。</li>
+<li><strong>主题曲「Song of Memento」</strong>双版本：Emi Evans 演唱版 + いとうかなこ（伊藤香奈子）版，译词/编曲 F.R.K.@B.I.A.V. Studio。</li>
+<li>两次维护（08:00–12:00 全量 + 16:55 在线修「相位对弈」赛季结算邮件漏发），补偿银芯 ×200+×50；
+  周年福利蔷薇金券 ×5,000,000、根源沉淀 ×500、DC 49,000 礼包码。</li>
+</ul>
+<h3>官方 PV / 主题曲视频评论（原文 + 中译）</h3>
+<blockquote>
+<p>取自官方频道 PV 与两版主题曲下 630 条评论的高赞样本，按主题归类。主导情绪：<strong>意外之喜 + 老粉回归 + 音乐入魂 + 大规模新玩家转化</strong>。</p>
+</blockquote>
+<p><strong>A. 老 IP 回归的震动</strong></p>
+<div class="qq"><span class="o">EN ♥337：seeing new saya content in 2026 is unexpected and very much welcome.</span><span class="z">2026 年还能见到新的沙耶内容，太意外、太欢迎了。</span></div>
+<div class="qq"><span class="o">EN ♥202：People who know about Song of Saya are having a PTSD moment.</span><span class="z">知道《沙耶之歌》的人此刻正集体 PTSD 发作。</span></div>
+<div class="qq"><span class="o">JP ♥5：ふとした瞬間に踏み出した足から何もかもが無為に消えて行くような世界なのに、誰もが必死に自我と他者を守り尊ぶために抗い続けてる世界。大好きです。今回まさかの沙耶の唄とのコラボでトラウマが再発した。</span><span class="z">这是一个一旦迈步、脚下一切都会归于虚无的世界，可每个人仍拼命为守护自我与他者而抗争。我爱极了。这次居然和《沙耶之歌》联动，旧伤又复发了。</span></div>
+
+<p><strong>B. 音乐与主题旋律（最高赞集中地）</strong></p>
+<div class="qq"><span class="o">EN ♥203：Saya and Emi Evans!? Morimens you spoil us so 😭</span><span class="z">沙耶还配 Emi Evans？忘却你也太宠我们了。</span></div>
+<div class="qq"><span class="o">EN ♥179：I got chills when I noticed Saya's leitmotif by the end.</span><span class="z">当我在结尾听出沙耶的主题旋律时，起了一身鸡皮疙瘩。</span></div>
+<div class="qq"><span class="o">EN ♥62：that section near the end was like a hopeful version of "Sin" from Saya no Uta. Why are my eyes leaking.</span><span class="z">结尾那段像是《沙耶之歌》里〈Sin〉的「充满希望」版本……我的眼睛怎么在漏水。</span></div>
+<div class="qq"><span class="o">JP ♥19：日本版と英語版、両方来た！！ありがとう、運営。</span><span class="z">日文版和英文版都出了！谢谢官方。</span></div>
+
+<p><strong>C. 即时新玩家转化（拉新硬证据）</strong></p>
+<div class="qq"><span class="o">EN ♥86：FINE I'LL PLAY MORIMENS.</span><span class="z">行行行，我玩还不行吗。</span></div>
+<div class="qq"><span class="o">EN ♥66：It's so wild to see Saya no Uta in 2026. Just joined Morimens but a long-time fan of Lovecraft, and so far the game is amazing with great atmosphere.</span><span class="z">2026 年还能看到沙耶之歌太疯狂了。刚入坑忘却，但我是克苏鲁老粉，目前为止这游戏氛围绝佳。</span></div>
+<div class="qq"><span class="o">EN ♥42：Never heard of Morimens but I just got this as an ad and audibly exclaimed "Is that fucking Saya?!" ...Very beautiful art and singing.</span><span class="z">从没听过忘却，刷到这条广告我当场喊出来「那是沙耶？！」……美术和演唱都美极了。</span></div>
+<div class="qq"><span class="o">JP ♥5：沙耶目当てで昨日始めた。</span><span class="z">冲着沙耶昨天刚开坑。</span></div>
+
+<p><strong>D. 冷门佳作的不甘与自豪</strong></p>
+<div class="qq"><span class="o">EN ♥85：Bro feels great seeing Morimens getting the attention.</span><span class="z">看到忘却终于被看见，真的爽。</span></div>
+<div class="qq"><span class="o">繁中 ♥11：這麼好的東西怎麼播放這麼冷啊:( 果然還是好喜歡忘卻的美術。</span><span class="z">这么好的东西播放量怎么这么冷清，唉，果然还是好喜欢忘却的美术。</span></div>
+<div class="qq"><span class="o">JP ♥7：遂にPVがきちゃ！！！ほんで曲Emi Evansの気合の入り様！！彼女をこのように美しく見えている事は幸いだ。</span><span class="z">PV 终于来了！而且 Emi Evans 这首曲子也太用心了！能把她画得这么美，真是幸事。</span></div>
+
+<blockquote>
+<p><strong>解读</strong>：PV 评论区与游戏内社区是两套人群——评论区几乎全是正向惊喜与转化，痛点（货币化/叙事）集中在 Discord 老玩家侧。
+官方应分清：<strong>对 PV 新客</strong>强化「氛围 + 音乐 + 沙耶 IP」的第一印象承接；<strong>对核心老玩家</strong>回应下文各职能痛点。</p>
+</blockquote>
+<h3>其他重点原声（游戏内社区，原文 + 中译）</h3>
+<div class="qq"><span class="o">ES（存亡叙事）：Morimens estuvo a punto de cerrar en su primer año… ahora está más sano que nunca.</span><span class="z">忘却第一年差点关服……现在比以往任何时候都健康。</span></div>
+<div class="qq"><span class="o">KR（货币化焦虑）：If users do not spend money, this game will once again face the crisis of service termination.</span><span class="z">如果玩家不花钱，这游戏会再一次面临关服危机。</span></div>
+<div class="qq"><span class="o">PT（叙事赶工）：A dissolução tá afetando o time que escreve a história.</span><span class="z">「溶解」都侵蚀到写剧情的团队了。（讽联动剧情赶工脱离正史）</span></div>
+<div class="qq"><span class="o">CN（社区健康）：每天打開 dc 全都是這種內容，我真的好想哭，我已經得了憂鬱症了。</span><span class="z">（NSFW 刷屏致一名玩家自述抑郁。）</span></div>
+
+<hr class="ornament">
+<h2 class="section-title" id="sec2">§3 对各开发者职能的建议</h2><hr class="section-rule">
+<blockquote>
+<p>每条对应上文证据，「建议」均属银芯输出层判断，非官方决策。按职能分诊，便于派发。</p>
+</blockquote>
+<div class="dim"><h3>制作人 / 运营总控（Producer）</h3></div>
+
+<p>正面接住「存亡叙事」是当日性价比最高的情绪动作。建议在周年节点发一句真诚致谢——
+点名一周年支持与 Light 的投入，把「我们一起救活了它」从玩家自述升格为官方共识。证据：跨西/中/越/韩语区
+反复出现「濒临关服→一起救活」记忆，且常被用来互相敦促氪金（KR「不花钱会再次面临关服」），
+情绪是双刃，需官方正向收口。<span class="badge badge-b">B</span></p>
+<div class="dim"><h3>数值 / 平衡策划（Balance）</h3></div>
+
+<p>两个当日最高赞痛点需优先回应：<strong>P-Caro</strong>（活动频道高赞「Pcaro matters! Fix Pcaro please!」，
+玩家感到「是为用沙耶不得不付的代价」）与 <strong>traphase PvP 的 Helot 压制 meta</strong>（充斥「Fuck this rng gamemode」
+「Keep queuing into counters」，点名「Helot dev 在推 2TK 压制流」）。建议：P-Caro 给出增益说明或微调；
+traphase 引入 ban/备牌机制。另需警惕「数值膨胀逼抽」观感（CN「不就變每隻新卡都得抽了」）。<span class="badge badge-b">B</span></p>
+<div class="dim"><h3>主文案 / 叙事（Narrative）</h3></div>
+
+<p>核心玩家在尖锐批评联动剧情赶工、脱离正史（葡语区数小时 lore 论战，自嘲「溶解侵蚀写作组」），
+但同一批人仍认「morimens 是 gacha 里最好的剧情之一」。建议：以 <strong>tentative roadmap（强调弹性、非硬承诺）
++ 联动剧情后续补完说明</strong>回应，比沉默更稳口碑。内容节奏焦虑（更新 4→6 周、沙耶池长达 3 个月）需同步沟通。<span class="badge badge-b">B</span></p>
+<div class="dim"><h3>本地化（Localization）</h3></div>
+
+<p>语种质量落差显著（英文区系统性批评 vs 韩区好评翻译顺畅），且玩家正<strong>用 AI 跨区自助翻译绕过官方</strong>
+（俄区「用便宜的 Opus + 大上下文喂翻译 bot」、印尼区讨论注入机翻、英文区有人主动请缨当志愿翻译）。
+建议：把 mistranslation 频道的逐条修订沉淀为<strong>公开 changelog</strong>；正面接住「玩家用 AI 自助」暴露的信任缺口与志愿翻译意愿。<span class="badge badge-b">B</span></p>
+<div class="dim"><h3>美术 / 音频（Art &amp; Audio）</h3></div>
+
+<p>当日<strong>口碑最稳的护城河</strong>。PV 评论区美术与音乐近乎零差评，最高赞集中在「主题旋律融合」「Emi Evans/いとうかなこ
+双版本」「美术美到落泪」。建议：把音乐资产价值最大化——评论区多人求「上 Spotify」（EN ♥「NOW I NEED THIS
+SONG ON SPOTIFY」），官方应尽快上架流媒体，延长 PV 长尾拉新。<span class="badge">A</span></p>
+<div class="dim"><h3>QA / 测试（Quality Assurance）</h3></div>
+
+<p>当日存在一个<strong>多人确认、影响联动核心体验</strong>的 bug 簇：繁殖/领域精通（RM）遗物不生效。建议优先复现（详见 §5）。
+叠加多条客户端启动崩溃、区域支付不可用、内购报错，直接影响拉新转化与营收，应在联动高流量期优先排障。<span class="badge">A</span><span class="badge badge-b">B</span></p>
+<div class="dim"><h3>社区运营（Community）</h3></div>
+
+<p>当日强化的 NSFW 版规（server-announcement 535 赞）产生<strong>跨频道寒蝉效应</strong>，连 lore 玩梗也受波及，
+且已现心理健康警讯（一玩家自述抑郁）、doom-post 致成员流失。建议：把 NSFW 从一刀切改为<strong>分级标注区</strong>，
+既保护二创热情又守住公开社区底线；关注心理健康外溢。另：<strong>Aurita 粉丝半组织化动员</strong>（越南语「友情教」玩梗、
+集体呼吁给 Aurita 写剧情/补 fanart）是现成的角色运营信号，可承接。<span class="badge badge-b">B</span></p>
+<div class="dim"><h3>市场 / 发行（Market &amp; Publishing）</h3></div>
+
+<p>拉新已成（PV 190 万播放 + 评论区即时转化 + 葡语「一周多上千新人」、泰语「DC 几天涨 4000」），
+但留存承接几乎全靠社区自建（Cheri 攻略、SkeyDB Builder）。建议低成本补强三处缺口：<strong>三货币系统说明、
+前期配队引导、敏感剧情预警</strong>。外部风险：Google 收紧 Android 侧载威胁 QooApp 等 gacha 分发（信度 C，持续跟踪）。<span class="badge badge-b">B</span></p>
+<hr class="ornament">
+<h2 class="section-title" id="sec3">§4 Bug 概述</h2><hr class="section-rule">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>故障</th>
+<th>状态</th>
+<th>平台 / 语区</th>
+<th>信度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>繁殖/领域精通（RM）遗物不生效（Propagation Fiesta 层数不涨、Vortice RM buff 不生效）</td>
+<td>官方 Processing</td>
+<td>official-q-a 多人确认</td>
+<td>A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aurita 被动取整疑似错误</td>
+<td>官方 Processing</td>
+<td>official-q-a</td>
+<td>B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>沙耶无法被选为支援</td>
+<td>官方 Processing</td>
+<td>official-q-a</td>
+<td>B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>客户端启动/战斗崩溃（点 enter Mythag 即 crash / stuck halfway）</td>
+<td>待核实</td>
+<td>Steam · App Store</td>
+<td>B</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Google 账号登录后冻结崩溃</td>
+<td>待核实</td>
+<td>official-q-a</td>
+<td>B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>购买后物品不入库（钱扣了背包没有）</td>
+<td>待核实</td>
+<td>俄语</td>
+<td>B</td>
+</tr>
+<tr>
+<td>7</td>
+<td>区域充值不可用（含菲律宾）</td>
+<td>官方确认</td>
+<td>official</td>
+<td>A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>iOS 内购失败（iPhone 17 Pro，Error 7004104）</td>
+<td>待核实</td>
+<td>official-q-a</td>
+<td>B</td>
+</tr>
+<tr>
+<td>9</td>
+<td>第 7 章多名唤醒体通讯立绘缺失</td>
+<td>待核实</td>
+<td>official-q-a</td>
+<td>B</td>
+</tr>
+<tr>
+<td>10</td>
+<td>预设配队启灵显示错误 / 卡描述显示高启灵效果（实际低启灵）</td>
+<td>待核实</td>
+<td>中文 · official-q-a</td>
+<td>B/C</td>
+</tr>
+</tbody>
+</table>
+<hr class="ornament">
+<h2 class="section-title" id="sec4">§5 Bug 详情（重现步骤 / 预期结果 / 实际结果）</h2><hr class="section-rule">
+<h3>Bug 1 — 繁殖/领域精通（RM）遗物不生效 <span class="badge">A</span></h3>
+<ul>
+<li><strong>来源</strong>：official-q-a 多人确认，官方标记 Processing。原话「拿了 2 个 +300 Realm Mastery 遗物，Propagation
+  Fiesta 层数没涨」「Vortice 的 RM buff 也不生效」。</li>
+<li><strong>重现步骤</strong>：① 进入联动活动「繁殖」相关玩法；② 装备 2 个 +300 Realm Mastery 遗物；③ 触发 Propagation Fiesta；
+  ④ 观察层数 / Vortice 的 RM 增益是否生效。</li>
+<li><strong>预期结果</strong>：Realm Mastery 遗物加成生效，Propagation Fiesta 层数随之提升，Vortice 获得对应 RM buff。</li>
+<li><strong>实际结果</strong>：层数不增长，Vortice RM buff 不生效，遗物加成像被忽略。</li>
+<li><strong>影响</strong>：直接削弱联动核心玩法体验，多人复现，建议最高优先级排查。</li>
+</ul>
+<h3>Bug 2 — Aurita 被动取整疑似错误 <span class="badge badge-b">B</span></h3>
+<ul>
+<li><strong>来源</strong>：official-q-a，官方标记 Processing。</li>
+<li><strong>重现步骤</strong>：① 上场 Aurita；② 触发其被动数值结算；③ 对照被动描述核算实际数值。</li>
+<li><strong>预期结果</strong>：被动数值按描述的取整规则结算。</li>
+<li><strong>实际结果</strong>：实际取整与描述不符，数值偏差。</li>
+<li><strong>影响</strong>：角色强度与描述不一致，影响信任与构筑决策。</li>
+</ul>
+<h3>Bug 3 — 客户端启动 / 战斗崩溃 <span class="badge badge-b">B</span></h3>
+<ul>
+<li><strong>来源</strong>：Steam 与 App Store 多条评论，原话「点 enter Mythag 即 crash」「stuck halfway」「crashing in battle」。</li>
+<li><strong>重现步骤</strong>：① 启动游戏进入 Mythag；② 或进入战斗；③ 观察是否闪退 / 卡死。</li>
+<li><strong>预期结果</strong>：正常进入主界面与战斗，全程稳定。</li>
+<li><strong>实际结果</strong>：部分设备启动即闪退、加载卡半截或战斗中崩溃。</li>
+<li><strong>影响</strong>：发生在 PV 拉新高流量期，直接折损新玩家首日转化。</li>
+</ul>
+<h3>Bug 4 — 区域充值不可用 <span class="badge">A</span></h3>
+<ul>
+<li><strong>来源</strong>：official 官方回复确认，「部分地区（含菲律宾）充值服务当前不可用」；叠加俄语「购买后物品不入库」、
+  iOS 内购报错 Error 7004104。</li>
+<li><strong>重现步骤</strong>：① 在受影响地区 / 设备发起充值或内购；② 完成支付流程。</li>
+<li><strong>预期结果</strong>：支付成功并到账，物品入库。</li>
+<li><strong>实际结果</strong>：充值不可用 / 支付报错 / 扣款后物品不入库。</li>
+<li><strong>影响</strong>：直接损失营收与口碑，周年高消费意愿期影响放大。</li>
+</ul>
+<hr class="ornament">
+<h2 class="section-title" id="sec5">§6 同人图册</h2><hr class="section-rule">
+<blockquote>
+<p>当日二创频道 + Pixiv 采集 25 张候选，逐张目检剔除 6 张（游戏卡牌/对话/战斗截图、猫咪网图 meme、AMV 视频二压帧），
+保留 19 张手绘同人。Discord 附件 24h 过期链接已经官方 refresh-urls 接口补录。题材以沙耶联动、Aurita 等角色为主。</p>
+</blockquote>
+<div class="grid"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510822705987850331.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510824359680278659.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510837434517291139.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510861595549503569.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510931069132738690.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510938449937436702.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510945785817071656.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510945847410688111.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970079263588482.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970079800725634.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970080358301817.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970080828067941.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970081507807342.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970082128302200.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510970083185397872.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1510995584046202982.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/discord_1511022294498148576.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/pixiv_177fbaae67.jpg"><img src="projects/news/data/fanart/2026-06-01/thumbs/pixiv_1d6fb7f38e.jpg"></div>
+
+<div class="gallery-cap">2026-06-01 社区手绘同人 19 张（沙耶联动 / Aurita / 多角色 sketch / chibi 表情集）· 来源 Discord 二创频道 + Pixiv</div>
+
+<hr class="ornament">
+<blockquote>
+<p>银芯情报层 · 弥萨格大学数据库终端 · 艾瑞卡。本期 PV 视频评论由独立免费采集管线供给，分析在会话内完成。</p>
+</blockquote></div></body></html>
