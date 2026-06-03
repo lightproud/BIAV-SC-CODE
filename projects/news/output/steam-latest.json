@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-03T07:34:11.174158+00:00",
+  "collected_at": "2026-06-03T12:32:45.336600+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "Okay, it's a gacha game, but you know what... it's actually pretty cute, despite that.\nThe story is really interesting, and the art style is gorgeous.\nThey give you SO MANY free pulls.\nI haven't spent any money, and I still have a great team of tentacled waifus. What more could I ask for?",
       "timestamp_created": 1780428592,
-      "playtime_forever": 312
+      "playtime_forever": 330
     },
     {
       "source": "steam",
@@ -31,22 +31,37 @@
       "voted_up": true,
       "review": "虽然被很多次烂活恶心过，但这真的是一款很好的游戏。",
       "timestamp_created": 1780412373,
-      "playtime_forever": 9483
+      "playtime_forever": 9509
     },
     {
       "source": "steam",
-      "time": "2026-06-02T12:17:56+00:00",
+      "time": "2026-06-03T10:20:40+00:00",
       "lang": "english",
-      "title": "[正面] Saya",
-      "summary": "Saya",
-      "url": "https://steamcommunity.com/profiles/76561198828573884/recommended/3052450",
-      "author": "76561198828573884",
-      "engagement": 1,
+      "title": "[正面] i love this game very recommended,story wise espec...",
+      "summary": "i love this game very recommended,story wise especially the art and aesthetic.",
+      "url": "https://steamcommunity.com/profiles/76561199850616431/recommended/3052450",
+      "author": "76561199850616431",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Saya",
-      "timestamp_created": 1780402676,
-      "playtime_forever": 509
+      "review": "i love this game very recommended,story wise especially the art and aesthetic.",
+      "timestamp_created": 1780482040,
+      "playtime_forever": 14314
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-03T07:28:58+00:00",
+      "lang": "english",
+      "title": "[正面] Pretty good",
+      "summary": "Pretty good",
+      "url": "https://steamcommunity.com/profiles/76561199000087859/recommended/3052450",
+      "author": "76561199000087859",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Pretty good",
+      "timestamp_created": 1780471738,
+      "playtime_forever": 1162
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "장점 게임 배경 그림체랑 게임 사운드 성우분 굿 캐릭터 성격 입체적\r\n단점 겜 이해하는데 오래걸림 신작이다보니 겜 정보량도 부족하고 스토리 호불호 가릴수 있는데 난 나쁘지 않았음  \r\n번역 좀 구림",
       "timestamp_created": 1780468800,
-      "playtime_forever": 469
+      "playtime_forever": 497
     },
     {
       "source": "steam",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "i dont know what's happening and what im doin, but i like it 10/10 game",
       "timestamp_created": 1780463550,
-      "playtime_forever": 1198
+      "playtime_forever": 1261
     },
     {
       "source": "steam",
@@ -122,51 +137,6 @@
       "review": "之前玩过两天，以为都要停服了。没想到这款游戏还活着呢。那就发个测评吧。\n如果不是剧情党，游戏还是可以的，玩法也不错，本人挺喜欢这种肉鸽类、卡牌类、养成系结合，类似杀戮尖塔。\n不过二游抛不开剧情。剧情云之又云，意义不明的配乐插入节奏，建议找个懂行的来写文案、安排配乐。\n但有一说一，美术真的顶，没话说，我特别喜欢美术风格。\n福利也很好，二游界的良心。",
       "timestamp_created": 1780446485,
       "playtime_forever": 1852
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-02T12:16:18+00:00",
-      "lang": "english",
-      "title": "[正面] fun combat",
-      "summary": "fun combat",
-      "url": "https://steamcommunity.com/profiles/76561199104168458/recommended/3052450",
-      "author": "76561199104168458",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "fun combat",
-      "timestamp_created": 1780402578,
-      "playtime_forever": 188
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-02T08:57:18+00:00",
-      "lang": "koreana",
-      "title": "[正面] 재밌어요",
-      "summary": "재밌어요",
-      "url": "https://steamcommunity.com/profiles/76561199262485343/recommended/3052450",
-      "author": "76561199262485343",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "재밌어요",
-      "timestamp_created": 1780390638,
-      "playtime_forever": 9279
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-02T08:45:04+00:00",
-      "lang": "schinese",
-      "title": "[正面] 嘿嘿嘿嘿嘿嘿",
-      "summary": "嘿嘿嘿嘿嘿嘿",
-      "url": "https://steamcommunity.com/profiles/76561198931396806/recommended/3052450",
-      "author": "76561198931396806",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "嘿嘿嘿嘿嘿嘿",
-      "timestamp_created": 1780389904,
-      "playtime_forever": 251
     }
   ]
 }
