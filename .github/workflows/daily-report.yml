@@ -16,19 +16,18 @@ name: "📰 Daily Community Report"
 #   SMTP_HOST SMTP_PORT SMTP_USER SMTP_PASS [SMTP_FROM]  邮件投递凭据
 
 on:
-  schedule:
-    # 每日 01:30 UTC（北京时间 09:30），留足前一日采集与归档窗口
-    - cron: '30 1 * * *'
+  # 定时自动跑已停用——报告改在 Claude Code 会话里用订阅生成（零 API 费）。
+  # 此工作流仅保留手动触发，作为「需要无人值守 + 愿意走 API 计费」时的备用。
   workflow_dispatch:
     inputs:
       end_date:
-        description: '窗口结束日 YYYY-MM-DD（默认=北京今日）'
+        description: '结束日 YYYY-MM-DD（默认=北京昨日；定时每日跑覆盖昨日单日）'
         required: false
         default: ''
       window_days:
-        description: '窗口天数（含结束日，默认 4，即覆盖近 4 天）'
+        description: '窗口天数（含结束日，默认 1=单日日报；手动可填 N 拉多日例外）'
         required: false
-        default: '4'
+        default: '1'
 
 concurrency:
   group: daily-report
@@ -41,7 +40,7 @@ permissions:
 jobs:
   daily-report:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v6
@@ -68,8 +67,9 @@ jobs:
           INPUT_WINDOW_DAYS: ${{ github.event.inputs.window_days }}
         run: |
           END="$INPUT_END_DATE"
-          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
-          WIN="$INPUT_WINDOW_DAYS"; WIN=${WIN:-4}
+          # 默认=北京昨日（定时每日跑覆盖昨日完整一天；当日数据尚未采全）
+          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
+          WIN="$INPUT_WINDOW_DAYS"; WIN=${WIN:-1}
           START=$(date -d "$END -$((WIN-1)) day" +%Y-%m-%d)
           # 窗口内所有日期（空格分隔），供逐日同人图采集与 prompt 读取
           DATES=""
@@ -78,13 +78,19 @@ jobs:
           done
           MONTH=$(date -d "$END" +%Y-%m)
           STAMP=$(date -d "$END" +%Y%m%d)
+          # 单日时只显一个日期，多日才显区间；文件名单日用 daily、多日用 window
+          if [ "$START" = "$END" ]; then
+            DISP="$(date -d "$END" +%Y.%m.%d)"; KIND="daily"
+          else
+            DISP="$(date -d "$START" +%Y.%m.%d) ~ $(date -d "$END" +%Y.%m.%d)"; KIND="window"
+          fi
           {
             echo "START_DATE=$START"
             echo "END_DATE=$END"
             echo "WINDOW_DATES=$DATES"
-            echo "DISP_WINDOW=$(date -d "$START" +%Y.%m.%d) ~ $(date -d "$END" +%Y.%m.%d)"
-            echo "REPORT_MD=deliverables/$MONTH/morimens_window_$STAMP.md"
-            echo "REPORT_PDF=deliverables/$MONTH/morimens_window_$STAMP.pdf"
+            echo "DISP_WINDOW=$DISP"
+            echo "REPORT_MD=deliverables/$MONTH/morimens_${KIND}_$STAMP.md"
+            echo "REPORT_PDF=deliverables/$MONTH/morimens_${KIND}_$STAMP.pdf"
             echo "FANART_ROOT=projects/news/data/fanart"
           } >> "$GITHUB_ENV"
           mkdir -p "deliverables/$MONTH"
@@ -113,6 +119,8 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Opus 4.8 + 1M 上下文（守密人定：分析质量优先；1M 窗口可一趟读完单日全量）
+          claude_args: "--model claude-opus-4-8[1m]"
           prompt: |
             你是银芯情报层日报编排 Agent，全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、
             混合自称、功能性开头），事实采信遵 §6.11 / §4 数据纪律。
