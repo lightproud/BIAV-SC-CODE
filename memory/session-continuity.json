@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "137afd89",
-    "timestamp": "2026-06-02T19:08:46.427000+00:00",
-    "duration_minutes": 1386.5,
+    "id": "071cd684",
+    "timestamp": "2026-06-02T21:29:46.673000+00:00",
+    "duration_minutes": 1527.5,
     "branch": "claude/news-source-cleanup",
     "topics": [
       "Wiki",
@@ -12,11 +12,65 @@
     "files_changed": [
       "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
       "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
+      "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "935e82f7",
+      "timestamp": "2026-06-02T21:04:12.631000+00:00",
+      "duration_minutes": 1501.9,
+      "branch": "claude/news-source-cleanup",
+      "topics": [
+        "Wiki",
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "bc3a9acf",
+      "timestamp": "2026-06-02T19:59:29.232000+00:00",
+      "duration_minutes": 1437.2,
+      "branch": "claude/news-source-cleanup",
+      "topics": [
+        "Wiki",
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "137afd89",
+      "timestamp": "2026-06-02T19:08:46.427000+00:00",
+      "duration_minutes": 1386.5,
+      "branch": "claude/news-source-cleanup",
+      "topics": [
+        "Wiki",
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "d00e8a01",
       "timestamp": "2026-06-02T02:56:17.436000+00:00",
@@ -173,111 +227,22 @@
       "open_items": [
         "files in parallel"
       ]
-    },
-    {
-      "id": "2859e2b7",
-      "timestamp": "2026-05-26T16:50:03.381000+00:00",
-      "duration_minutes": 105.1,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/wiki/scripts/wiki_sources.py",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
-        "/home/user/brain-in-a-vat/tests/test_memory_functions.py",
-        "/home/user/brain-in-a-vat/tests/test_text_utils.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "49d4c8ee",
-      "timestamp": "2026-05-26T15:51:57.856000+00:00",
-      "duration_minutes": 47.0,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [],
-      "decisions": [
-        "深读哪些档案"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/fact_store.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/lua_parse.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-        "/home/user/brain-in-a-vat/scripts/text_utils.py",
-        "/home/user/brain-in-a-vat/tests/test_lua_parse.py",
-        "/home/user/brain-in-a-vat/tests/test_text_utils.py",
-        "/tmp/strip_emoji.py"
-      ],
-      "open_items": [
-        "files in parallel"
-      ]
-    },
-    {
-      "id": "ba93ad00",
-      "timestamp": "2026-05-26T15:26:58.943000+00:00",
-      "duration_minutes": 22.1,
-      "branch": "claude/yincin-code-review-tgusd",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [
-        "深读哪些档案",
-        "正确的 `:src=\"'/...'\"` 绑定**——说明同一生成器内 icons/battle-units 分支写法正确，只有 cg-gallery（396/433）与 card/ui（679/707"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/tmp/strip_emoji.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 3.95,
-      "做梦Agent": 2.44,
-      "银芯": 0.52,
-      "黑池": 0.34
+      "Wiki": 4.46,
+      "做梦Agent": 3.69,
+      "银芯": 0.27,
+      "黑池": 0.18
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md"
+      "/home/user/brain-in-a-vat/.gitignore",
+      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-health-assessment-2026-06-02.md",
+      "/home/user/brain-in-a-vat/deliverables/2026-06/wiki-data-gap-registry.md"
     ],
-    "total_sessions": 117
+    "total_sessions": 120
   },
-  "updated_at": "2026-06-02T19:08:46.508367+00:00"
+  "updated_at": "2026-06-02T21:34:02.997710+00:00"
 }
