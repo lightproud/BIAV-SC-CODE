@@ -16,9 +16,8 @@ name: "📰 Daily Community Report"
 #   SMTP_HOST SMTP_PORT SMTP_USER SMTP_PASS [SMTP_FROM]  邮件投递凭据
 
 on:
-  schedule:
-    # 每日 01:30 UTC（北京时间 09:30），留足前一日采集与归档窗口
-    - cron: '30 1 * * *'
+  # 定时自动跑已停用——报告改在 Claude Code 会话里用订阅生成（零 API 费）。
+  # 此工作流仅保留手动触发，作为「需要无人值守 + 愿意走 API 计费」时的备用。
   workflow_dispatch:
     inputs:
       end_date:
