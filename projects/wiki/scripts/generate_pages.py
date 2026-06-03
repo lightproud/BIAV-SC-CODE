@@ -2,6 +2,15 @@
 """
 Auto-generate VitePress character detail pages from characters.json + equipment.json.
 
+Source of truth: projects/wiki/data/db/ (DATA_DIR below).
+Driven by: .github/workflows/fetch-wiki-data.yml (step "generate_pages",
+runs with working-directory projects/wiki, i.e. `python3 scripts/generate_pages.py`).
+
+Distinct from scripts/generate_wiki_pages.py (top-level), which generates the
+encyclopedia/voice/media pages from data/processed/ and is driven by
+deploy-site.yml. The two generators write different page sets from different
+sources; keep their source dirs (db/ here vs processed/ there) in sync (ARCH-05).
+
 Usage:
     python generate_pages.py                  # generate all langs
     python generate_pages.py --lang zh        # Chinese only

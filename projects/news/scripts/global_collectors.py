@@ -30,6 +30,9 @@ import xml.etree.ElementTree as ET
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 采集层共享工具（HTTP/HTML-strip/item 单一真源，ARCH-01/02）
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
@@ -77,18 +80,11 @@ DEFAULT_HEADERS = {"User-Agent": "MorimensReportBot/2.0"}
 # ─── 工具函数 ───────────────────────────────────────────────
 
 def _get(url, params=None, headers=None, timeout=15):
-    """带重试的 GET 请求 (间隔 1s/2s)。"""
-    h = {**DEFAULT_HEADERS, **(headers or {})}
-    for attempt in range(3):
-        try:
-            resp = requests.get(url, params=params, headers=h, timeout=timeout)
-            resp.raise_for_status()
-            return resp
-        except requests.RequestException as e:
-            if attempt == 2:
-                raise
-            logger.debug(f"Retry {attempt + 1} for {url}: {e}")
-            time.sleep(attempt + 1)
+    """带重试的 GET 请求 (间隔 1s/2s)。委托 news_common.get_with_retry（单一真源）。"""
+    return news_common.get_with_retry(
+        url, params=params, headers=headers, timeout=timeout,
+        default_headers=DEFAULT_HEADERS,
+    )
 
 
 def _get_cf(url, params=None, headers=None, timeout=15):
@@ -121,41 +117,19 @@ def _post(url, json_data=None, headers=None, timeout=30):
 
 
 def _strip_html(text):
-    """移除 HTML 标签。"""
-    return re.sub(r"<[^>]+>", "", text) if text else ""
+    """移除 HTML 标签。委托 news_common.strip_html（单一真源）。"""
+    return news_common.strip_html(text)
 
 
-def _make_item(
-    title, summary, source, platform_region, time_str, url,
-    engagement=0, is_hot=False, author="", tags=None, lang="",
-    content_type="text", media_url="", time_is_approximate=False,
-):
-    """创建标准化的信息条目。"""
-    item = {
-        "title": _strip_html(title or "").strip(),
-        "summary": _strip_html(summary or "").strip(),
-        "source": source,
-        "platform_region": platform_region,
-        "lang": lang,
-        "time": time_str,
-        "url": url or "",
-        "engagement": engagement,
-        "is_hot": is_hot,
-        "author": str(author or ""),
-        "tags": tags or [],
-        "content_type": content_type,
-        "media_url": media_url,
-    }
-    if time_is_approximate:
-        item["time_is_approximate"] = True
-    return item
+# 创建标准化信息条目：直接复用 news_common.make_item（单一真源，签名等价）。
+_make_item = news_common.make_item
 
 
 # ─── 数据源采集器 ──────────────────────────────────────────
 
 def _strip_html_tags(html: str) -> str:
-    """Remove HTML tags and return plain text."""
-    return re.sub(r"<[^>]+>", "", html).strip()
+    """Remove HTML tags and return plain text. 委托 news_common.strip_html。"""
+    return news_common.strip_html(html).strip()
 
 
 def _parse_reddit_rss(xml_text: str, sub: str) -> list:
@@ -212,6 +186,9 @@ def _parse_reddit_rss(xml_text: str, sub: str) -> list:
     return items
 
 
+# NOTE: divergent from aggregator_collectors.fetch_reddit — see audit ARCH-01.
+# 该栈是「广覆盖」实现（RSS 优先、无评论抓取）；aggregator 栈是「富数据」实现
+# （JSON 分页 + 评论 + 媒体 + search 回退，117 行 vs 54 行）。行为不同，不强行合并。
 def fetch_reddit(subreddits=None):
     """从 Reddit 获取热门帖子（公开 JSON API，无需认证；失败时回退到 RSS）。"""
     subreddits = subreddits or ["Morimens", "MorimensGame", "gachagaming"]
@@ -266,6 +243,7 @@ def fetch_reddit(subreddits=None):
     return items
 
 
+# NOTE: divergent from aggregator_collectors.fetch_bilibili — see audit ARCH-01 (behavior differs, not merged).
 def fetch_bilibili():
     """从 Bilibili 搜索忘却前夜相关视频。"""
     items = []
@@ -309,6 +287,7 @@ def fetch_bilibili():
             logger.warning(f'Bilibili "{keyword}" failed: {e}')
 
     return items
+# NOTE: divergent from aggregator_collectors.fetch_youtube — see audit ARCH-01 (behavior differs, not merged).
 def fetch_youtube():
     """从 YouTube Data API v3 搜索相关视频。"""
     api_key = os.environ.get("YOUTUBE_API_KEY")
@@ -379,6 +358,7 @@ def fetch_youtube():
     return items
 
 
+# NOTE: divergent from aggregator_collectors.fetch_nga — see audit ARCH-01 (behavior differs, not merged).
 def fetch_nga():
     """从 NGA 论坛获取忘却前夜版块帖子。支持 NGA_COOKIE 环境变量。"""
     # NGA forum ID for 忘却前夜 — can be overridden via env var
@@ -492,6 +472,7 @@ def fetch_nga():
     return items
 
 
+# NOTE: divergent from aggregator_collectors.fetch_taptap — see audit ARCH-01 (behavior differs, not merged).
 def fetch_taptap():
     """从 TapTap 获取忘却前夜社区帖子和评价（Playwright 无头浏览器方案）。
 
@@ -737,6 +718,8 @@ def fetch_arca_live():
     return items
 
 
+# NOTE: divergent from aggregator_collectors.fetch_discord_local — see audit ARCH-01:
+# this is a live-API fetch; the aggregator stack reads a local Discord archive instead. Not merged.
 def fetch_discord():
     """从 Discord Webhook / Bot 获取官方服务器讨论摘要。"""
     discord_token = os.environ.get("DISCORD_BOT_TOKEN", "")

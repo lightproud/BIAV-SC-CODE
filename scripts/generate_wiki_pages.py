@@ -1,4 +1,14 @@
-"""Generate VitePress Markdown pages from processed JSON data."""
+"""Generate VitePress Markdown pages from processed JSON data.
+
+Source of truth: projects/wiki/data/processed/ (PROCESSED_DIR below).
+Driven by: .github/workflows/deploy-site.yml (step "Regenerate wiki pages
+with media assets"). Builds encyclopedia + voice-line + media-asset pages.
+
+Distinct from projects/wiki/scripts/generate_pages.py, which generates the
+per-character detail pages from data/db/ and is driven by fetch-wiki-data.yml.
+The two generators write different page sets from different sources; keep their
+source dirs (processed/ here vs db/ there) in sync to avoid drift (ARCH-05).
+"""
 import json
 import os
 import glob

@@ -34,6 +34,11 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 # Token budget: 1 token ≈ 4 chars (conservative Chinese+English mix)
 MAX_CHARS = 2000 * 4  # ≈ 2000 tokens 粗略估算
+
+# Minimum prompt length to bother recalling. Trivial prompts ("ok", "继续",
+# "go") gain nothing from a session-digest recall but still pay the index
+# load cost (~4.8s), so skip them outright.
+MIN_RECALL_CHARS = 12
 HEADER = (
     "## 上下文：相关历史会话档案\n\n"
     "来源：`memory/session-digests/` —— 会话过程全文记录（AI 与守密人对话的逐字 Markdown 转录）。\n"
@@ -110,7 +115,7 @@ def main() -> int:
         return 0
 
     prompt = (payload.get("prompt") or "").strip()
-    if not prompt or len(prompt) < 4:
+    if not prompt or len(prompt) < MIN_RECALL_CHARS:
         _emit_empty()
         return 0
 

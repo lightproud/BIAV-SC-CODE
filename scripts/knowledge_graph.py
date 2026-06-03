@@ -713,25 +713,25 @@ def get_neighbors(graph: dict, node_id: str, depth: int = 1) -> dict:
     paths = []
     frontier = [node_id]
 
+    # Build adjacency index once: node_id → [(other_id, direction, edge_type)]
+    adj = defaultdict(list)
+    for edge in graph["edges"]:
+        adj[edge["source"]].append((edge["target"], "outgoing", edge["type"]))
+        adj[edge["target"]].append((edge["source"], "incoming", edge["type"]))
+
     for d in range(1, depth + 1):
         next_frontier = []
         for current_id in frontier:
-            for edge in graph["edges"]:
-                other_id = None
-                direction = None
-                if edge["source"] == current_id and edge["target"] not in visited:
-                    other_id = edge["target"]
-                    direction = "outgoing"
-                elif edge["target"] == current_id and edge["source"] not in visited:
-                    other_id = edge["source"]
-                    direction = "incoming"
+            for other_id, direction, edge_type in adj[current_id]:
+                if other_id in visited:
+                    continue
 
                 if other_id:
                     visited.add(other_id)
                     other_node = graph["nodes"].get(other_id, {"id": other_id, "type": "?", "name": other_id})
                     neighbors.append({
                         "node": other_node,
-                        "edge_type": edge["type"],
+                        "edge_type": edge_type,
                         "direction": direction,
                         "depth": d,
                         "via": current_id,
@@ -739,7 +739,7 @@ def get_neighbors(graph: dict, node_id: str, depth: int = 1) -> dict:
                     paths.append({
                         "from": current_id,
                         "to": other_id,
-                        "edge_type": edge["type"],
+                        "edge_type": edge_type,
                     })
                     next_frontier.append(other_id)
 
@@ -871,12 +871,17 @@ def main():
     do_build = "--build" in args
     do_stats = "--stats" in args
     depth = 1
+    depth_value_idx = -1
     if "--depth" in args:
         idx = args.index("--depth")
         if idx + 1 < len(args):
             depth = int(args[idx + 1])
+            depth_value_idx = idx + 1
 
-    query_args = [a for a in args if not a.startswith("--") and a not in [str(depth)]]
+    query_args = [
+        a for i, a in enumerate(args)
+        if not a.startswith("--") and i != depth_value_idx
+    ]
     query = " ".join(query_args) if query_args else None
 
     if do_build:

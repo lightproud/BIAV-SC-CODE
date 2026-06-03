@@ -256,6 +256,8 @@ def extract_structured_metadata(raw_metadata: dict) -> dict:
     user_texts = raw_metadata.get('user_prompts_sample', [])
     asst_texts = raw_metadata.get('assistant_texts_sample', [])
     for text in user_texts + asst_texts:
+        if len(decisions) >= 10:
+            break
         for pat in _DECISION_PATTERNS:
             for m in pat.finditer(text):
                 content = m.group(1).strip().rstrip('。.，,')
@@ -263,6 +265,8 @@ def extract_structured_metadata(raw_metadata: dict) -> dict:
                     decisions.append({'content': content[:120], 'source': 'conversation'})
                     if len(decisions) >= 10:
                         break
+            if len(decisions) >= 10:
+                break
 
     # --- Files engagement ladder ---
     files_data = raw_metadata.get('files', {})
@@ -296,6 +300,8 @@ def extract_structured_metadata(raw_metadata: dict) -> dict:
     # Check last few assistant texts for unfinished items
     last_texts = asst_texts[-5:] if len(asst_texts) > 5 else asst_texts
     for text in last_texts:
+        if len(open_items) >= 5:
+            break
         for pat in _OPEN_ITEM_PATTERNS:
             for m in pat.finditer(text):
                 item = m.group(1).strip().rstrip('。.，,')
@@ -303,6 +309,8 @@ def extract_structured_metadata(raw_metadata: dict) -> dict:
                     open_items.append(item[:150])
                     if len(open_items) >= 5:
                         break
+            if len(open_items) >= 5:
+                break
 
     # --- Build structured metadata ---
     duration_s = raw_metadata.get('duration_seconds')

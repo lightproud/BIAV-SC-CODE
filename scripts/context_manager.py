@@ -209,11 +209,16 @@ def session_context_plan(role: str) -> dict:
 def main():
     args = sys.argv[1:]
     role = ""
+    role_value_idx = -1
     if "--role" in args:
         idx = args.index("--role")
         if idx + 1 < len(args):
             role = args[idx + 1]
-        args = [a for a in args if a != "--role" and a != role]
+            role_value_idx = idx + 1
+    args = [
+        a for i, a in enumerate(args)
+        if a != "--role" and i != role_value_idx
+    ]
 
     query = " ".join(args) if args else None
 
