@@ -96,6 +96,14 @@ jobs:
             python projects/news/scripts/collect_fanart.py --date "$D" --out "$FANART_ROOT/$D"
           done
 
+      # 确定性步骤：采集忘却前夜相关 YouTube 视频（含官方 PV）的热门评论，供「重点内容呈现+翻译」章
+      - name: Collect video comments
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python projects/news/scripts/collect_video_comments.py --date "$END_DATE" --top-videos 12 --per-video 20
+
       # ----------------------------------------------------------------
       # AI 步骤：只做判断 —— 逐源深读全量档案、甄别归纳、写结构化 markdown
       # ----------------------------------------------------------------
@@ -148,34 +156,45 @@ jobs:
                依据的玩家原话——格式「来源频道/平台 · 发言人(author_id 或平台用户名) · 日期：原文
                （非中英文附中译）」。证据就地内嵌，不要把原声集中堆到末尾附录。
                多语言关键词扫描覆盖中/英/韩/俄/日/越/泰/西/葡/印尼等，命中后读原文剔噪声。
+            5. **严格时效（守密人整改：预热等旧内容时间段错误）**：只采信**真实发布时间在窗口内**
+               的内容。注意 youtube 的 `time` 是采集时间、`summary` 里的「[Nd ago]」才是真实年龄——
+               例如联动 PV 实际发布于预热期（约 7 天前），**不得**当作窗口当日新发。steam/appstore/
+               google_play 评价的 `time` 为真实发布日，须按发布日筛掉窗口外的；微博无真实发布时间，
+               标「采集快照」。凡跨窗内容如确要提及，须显式标注「预热期/历史，非窗口内新发」。
 
-            ## 同人图（守密人硬要求：要看到当期玩家创作的图，且全量补录）
-            Collect fan art 步已逐日产出 `${{ env.FANART_ROOT }}/{date}/gallery_manifest.json` + 图片。
-            汇总窗口内各日 status=="ok" 的真图，在「同人创作」章用 markdown
-            `![说明](${{ env.FANART_ROOT }}/{date}/<file>)` 嵌入尽可能多张（排除明显游戏截图），
-            每图配 `<div class="gallery-cap">日期 · 来源频道 · 描述 · 原话</div>`；统计候选/成功数。
+            ## 重点内容呈现 + 翻译（含 PV 视频评论，守密人新结构要求）
+            Collect video comments 步产出 `projects/news/data/platforms/youtube_comments/${{ env.END_DATE }}.json`
+            （每条含 video_title/video_url/author/text/likes）。挑官方 PV 等重点视频下的高赞评论，
+            **逐条原文 + 中译**呈现（用 .qq 双语块，附 video_title · 评论作者 · likes）。这是「官方动作
+            （如联动 PV）下大家的反应」的核心呈现，优先于泛泛的视频标题罗列。
 
-            ## 输出格式（守密人 2026-06-02 整改：去附录、字体已调小、按维度体系化）
-            写 YAML frontmatter（渲染器自动拼封面）：
-            ```
-            ---
-            title: 忘却前夜 社区情报窗口报告
-            subtitle: BIAV-SC 银芯情报层 / 全量精读 · ${{ env.DISP_WINDOW }}
-            basis: 采集 ${{ env.DISP_WINDOW }}（UTC+8）· Discord + 17 平台多源
-            author: 主控台艾瑞卡 / Code-news
-            generated: ${{ env.END_DATE }}
-            ---
-            ```
-            正文用 `## 章节`（成目录项），章节间用独占一行 `◇ ◇ ◇` 分隔。**不要末尾附录**——
-            原声就地内嵌（见铁律 4）。结构：开篇「一句话判断」+「窗口信号速览表」；随后按**固定维度**
-            系统盘点（运营事件 / 存亡叙事与情绪 / 拉新与承接 / 货币化 / 内容与叙事 / 平衡与玩法 /
-            本地化 / 社区健康与治理 / 多源平台要点[YouTube·Steam·Reddit·官方各成段] / 故障Bug /
-            同人创作[嵌图] / 高优先建议），每维统一「核心发现 + 信度徽章 / 证据（发言人+原文就地）/
-            启示」。善用版式组件：`<div class="lead">`、`<div class="callout callout-risk">`、信度
-            `<span class="badge">A</span>`/`badge-b`/`badge-c`、双语引用 `<div class="qq"><span
-            class="o">原文</span><span class="z">中译</span></div>`。
-            硬约束：精确去重数字 + 跨日趋势；每条结论就地附发言人+原文；区分官方确认 vs 玩家报告、
-            建议 vs 已落盘；缺数据如实标注不外推；空泛/通用结论一律删。
+            ## 同人图（要看到玩家二创，且按质量甄别——守密人要求过滤低质/疑似 AI）
+            Collect fan art 步已逐日产出 `${{ env.FANART_ROOT }}/{date}/` 图片 + gallery_manifest.json。
+            **逐图用 Read 工具肉眼查看**，**筛除**：游戏内截图、纯文字/表格图、明显疑似 AI 生成
+            （过度光滑/糊手指/水印感/与手绘画风明显割裂）、严重低清/重复。仅保留有辨识度的玩家手绘/
+            上色二创，平铺嵌入（`<div class="grid"><img src="...thumbs/<file>.jpg">…</div>`，缩略图在
+            thumbs/ 子目录）。注明「N 张候选，甄别后保留 M 张」。**说明：AI 判别为人工目检启发式、
+            非分类器，存在误差**。
+
+            ## 输出格式（守密人 2026-06-03 新结构）
+            写 YAML frontmatter（渲染器自动拼封面，title/subtitle/basis/author/generated）。正文用
+            `## 章节`（成目录项），章节间 `◇ ◇ ◇` 分隔，**不要末尾附录**（原声就地内嵌）。
+            **章节顺序固定如下**：
+            1. **社区整体洞察**：开篇 `<div class="lead">` 一句话判断 + 跨日趋势 + 信号速览表（按维度）。
+            2. **重点内容呈现与翻译**：官方动作（联动 PV/公告）+ 其下 PV 视频高赞评论逐条原文+中译；
+               其他重点社区内容（高热帖/争议）同样原文+中译呈现。
+            3. **对各游戏开发者职能的建议**：按职能分小节，每节 2-4 条可执行建议 + 对应证据信号——
+               覆盖【制作人/运营】【数值/战斗策划】【剧情/文案】【本地化】【美术】【客户端/QA】
+               【社区运营/审核】【市场】。每条建议标注对应信号来源。
+            4. **Bug 概述**：先一段总览 + 一张表（bug / 平台 / 信度 / 官方状态）。
+            5. **Bug 详情（每个 bug：重现步骤 / 预期结果 / 实际结果 / 来源原话）**：对可还原的 bug 用
+               加粗标签「**重现步骤**/**预期结果**/**实际结果**/**来源**」逐条写清（信息不足则标「待补」）。
+            6. **同人创作图册**：按上节甄别后的图，按日平铺网格嵌入。
+            版式组件：`<div class="lead">`、`<div class="callout callout-risk/-pos">`、信度
+            `<span class="badge">A</span>`/`badge-b`/`badge-c`、双语 `<div class="qq"><span class="o">
+            原文</span><span class="z">中译 — 来源·发言人·日期</span></div>`、图册 `<div class="grid">`。
+            硬约束：精确去重数字 + 跨日趋势 + 严格时效；每条结论就地附发言人+原文；区分官方确认 vs
+            玩家报告、建议 vs 已落盘；缺数据如实标注不外推；空泛/通用结论一律删。
 
       # ----------------------------------------------------------------
       # 确定性步骤：渲染 PDF
