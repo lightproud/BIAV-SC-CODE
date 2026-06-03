@@ -39,7 +39,7 @@ jobs:
         run: |
           D="${{ github.event.inputs.date }}"
           [ -n "$D" ] || D=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
-          python projects/news/scripts/collect_video_comments.py --date "$D" --top-videos 15 --per-video 25
+          python projects/news/scripts/collect_video_comments.py --date "$D"
 
       - name: Commit comments archive
         run: |
