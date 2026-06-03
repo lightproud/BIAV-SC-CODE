@@ -21,10 +21,14 @@ on:
     - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:
-      date:
-        description: '手动指定报告日期 YYYY-MM-DD（默认=北京时间昨日）'
+      end_date:
+        description: '窗口结束日 YYYY-MM-DD（默认=北京今日）'
         required: false
         default: ''
+      window_days:
+        description: '窗口天数（含结束日，默认 4，即覆盖近 4 天）'
+        required: false
+        default: '4'
 
 concurrency:
   group: daily-report
@@ -57,33 +61,40 @@ jobs:
             libffi-dev fonts-noto-cjk fonts-noto-cjk-extra
           pip install weasyprint markdown
 
-      - name: Compute target date
+      - name: Compute window
         id: dates
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            TARGET="${{ github.event.inputs.date }}"
-          else
-            TARGET=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
-          fi
-          MONTH=$(date -d "$TARGET" +%Y-%m)
-          STAMP=$(date -d "$TARGET" +%Y%m%d)
-          DISP=$(date -d "$TARGET" +%Y.%m.%d)
+          END="${{ github.event.inputs.end_date }}"
+          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          WIN="${{ github.event.inputs.window_days }}"; WIN=${WIN:-4}
+          START=$(date -d "$END -$((WIN-1)) day" +%Y-%m-%d)
+          # 窗口内所有日期（空格分隔），供逐日同人图采集与 prompt 读取
+          DATES=""
+          for k in $(seq $((WIN-1)) -1 0); do
+            DATES="$DATES $(date -d "$END -$k day" +%Y-%m-%d)"
+          done
+          MONTH=$(date -d "$END" +%Y-%m)
+          STAMP=$(date -d "$END" +%Y%m%d)
           {
-            echo "TARGET_DATE=$TARGET"
-            echo "REPORT_MD=deliverables/$MONTH/morimens_daily_$STAMP.md"
-            echo "REPORT_PDF=deliverables/$MONTH/morimens_daily_$STAMP.pdf"
-            echo "DISP_DATE=$DISP"
-            echo "FANART_DIR=projects/news/data/fanart/$TARGET"
+            echo "START_DATE=$START"
+            echo "END_DATE=$END"
+            echo "WINDOW_DATES=$DATES"
+            echo "DISP_WINDOW=$(date -d "$START" +%Y.%m.%d) ~ $(date -d "$END" +%Y.%m.%d)"
+            echo "REPORT_MD=deliverables/$MONTH/morimens_window_$STAMP.md"
+            echo "REPORT_PDF=deliverables/$MONTH/morimens_window_$STAMP.pdf"
+            echo "FANART_ROOT=projects/news/data/fanart"
           } >> "$GITHUB_ENV"
           mkdir -p "deliverables/$MONTH"
 
-      # 确定性步骤：带 token 经 refresh-urls 全量留存当日同人图（附件本体在 Discord，链接可刷新）
-      - name: Collect fan art
+      # 确定性步骤：逐日带 token 经 refresh-urls 全量留存窗口内同人图（附件本体在 Discord，链接可刷新）
+      - name: Collect fan art (window)
         continue-on-error: true
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
-          python projects/news/scripts/collect_fanart.py --date "$TARGET_DATE" --out "$FANART_DIR"
+          for D in $WINDOW_DATES; do
+            python projects/news/scripts/collect_fanart.py --date "$D" --out "$FANART_ROOT/$D"
+          done
 
       # ----------------------------------------------------------------
       # AI 步骤：只做判断 —— 逐源深读全量档案、甄别归纳、写结构化 markdown
@@ -97,22 +108,22 @@ jobs:
             混合自称、功能性开头），事实采信遵 §6.11 / §4 数据纪律。
 
             ## 目标
-            为日期 ${{ env.TARGET_DATE }}（覆盖该日 00:00~24:00 UTC+8）产出一份忘却前夜
-            全球社区情报日报的结构化 markdown，写入 `${{ env.REPORT_MD }}`（路径已建好父目录）。
+            为**时间窗口 ${{ env.DISP_WINDOW }}**（含 ${{ env.WINDOW_DATES }} 各日 00:00~24:00 UTC+8）
+            产出一份忘却前夜全球社区情报**窗口报告**的结构化 markdown，写入 `${{ env.REPORT_MD }}`。
             禁止渲染 PDF、禁止发邮件、禁止 git 操作——这些由后续确定性步骤完成，你只写 markdown。
 
-            ## 数据层（§4 硬约束）
-            一律走全量档案层，禁用 output 选样层充全量（lesson #30）：
-            - 平台：`projects/news/data/platforms/{plat}/${{ env.TARGET_DATE }}.json`
-              （17 目录：steam steam_review appstore google_play reddit official dcinside
-              ruliweb gamerch telegram bilibili weibo weixin youtube pixiv stopgame miraheze_wiki）
-              字段 title/summary/lang/url/content_type/engagement。
-            - Discord：`discord/channel_index.json` 映射 {name→dir}；消息在
-              `discord/channels/{dir}/${{ env.TARGET_DATE }}.jsonl` 逐行 JSON，字段
-              content/author_id/author_bot(过滤 bot)/timestamp/reactions[].count；
-              每日纯统计在 `discord/activity_daily/${{ env.TARGET_DATE }}.json`。
-            用单脚本提取到 /tmp（不并行多脚本，R1）；限定窗口、保留原文+平台+反应数。
-            若某档案缺失，如实标注"该日无归档"，不得无源外推。
+            ## 数据层与多源覆盖（§4 硬约束，守密人要求：不止 Discord）
+            一律走全量档案层，禁用 output 选样层充全量（lesson #30）。**窗口内每一天都要读**：
+            - **Discord**：`discord/channel_index.json` 映射 {name→dir}；每日消息在
+              `discord/channels/{dir}/{date}.jsonl`，字段 content/author_id/author_bot(过滤 bot)/
+              timestamp/reactions[].count；每日统计 `discord/activity_daily/{date}.json`。
+            - **平台（17 源，全部要看，不止 Steam/YouTube）**：`platforms/{plat}/{date}.json`
+              （steam steam_review appstore google_play reddit official dcinside ruliweb gamerch
+              telegram bilibili weibo weixin youtube pixiv stopgame miraheze_wiki），字段
+              title/summary/lang/url/content_type/engagement/author。**YouTube/Steam/Reddit/官方**等
+              平台源须各自单独成段呈现要点（视频热度、评测口碑、官方公告），不得只写 Discord。
+            用单脚本逐日提取到 /tmp（不并行多脚本，R1）；保留原文+来源+作者+日期+反应数。
+            跨日去重并标注趋势（哪天起量/降温）；若某日某源缺档，如实标"该日无归档"，不外推。
 
             ## 三条数据质量铁律（守密人 2026-06-02 复盘整改，违反即返工）
             1. **强制去重**：平台与 Discord 提取后按 (title,summary 前 60 字) 去重，报告中
@@ -133,40 +144,38 @@ jobs:
                密度低；真正的跨语区信号集中在小频道（official-q-a / mistranslation / lore-chat / 各语
                言闲聊 / 同人 / announcements）——**按信号密度而非消息量分配阅读与篇幅**。每个语言频道
                各产出至少一条当日核心信号。报告开头注明「读了多少 / 全量多少」。
-            4. **原声优先**：每个结论尽量锚定玩家原话直引（保留原文，非中英文必附中译）；
+            4. **每个观点就地附「发言人 + 原文」（守密人硬要求）**：每条结论/信号下方，紧跟其
+               依据的玩家原话——格式「来源频道/平台 · 发言人(author_id 或平台用户名) · 日期：原文
+               （非中英文附中译）」。证据就地内嵌，不要把原声集中堆到末尾附录。
                多语言关键词扫描覆盖中/英/韩/俄/日/越/泰/西/葡/印尼等，命中后读原文剔噪声。
 
-            ## 同人图（守密人硬要求：要看到当期玩家创作的图）
-            读 `${{ env.FANART_DIR }}/gallery_manifest.json`（Collect fan art 步已产出）：
-            - status=="ok" 的条目是已存活下载的真图，在 §同人创作巡礼章用 markdown
-              `![说明](${{ env.FANART_DIR }}/<file>)` 嵌入 3-6 张（排除明显是游戏截图者），
-              每图配 `<div class="gallery-cap">来源频道 · 描述 · 原话</div>`。
-            - 统计候选/成功/过期数并说明（Discord CDN 约 24h 过期，历史日多失效）。
+            ## 同人图（守密人硬要求：要看到当期玩家创作的图，且全量补录）
+            Collect fan art 步已逐日产出 `${{ env.FANART_ROOT }}/{date}/gallery_manifest.json` + 图片。
+            汇总窗口内各日 status=="ok" 的真图，在「同人创作」章用 markdown
+            `![说明](${{ env.FANART_ROOT }}/{date}/<file>)` 嵌入尽可能多张（排除明显游戏截图），
+            每图配 `<div class="gallery-cap">日期 · 来源频道 · 描述 · 原话</div>`；统计候选/成功数。
 
-            ## 输出格式
-            写 YAML frontmatter（渲染器自动拼封面），title/subtitle 模仿样本：
+            ## 输出格式（守密人 2026-06-02 整改：去附录、字体已调小、按维度体系化）
+            写 YAML frontmatter（渲染器自动拼封面）：
             ```
             ---
-            title: 忘却前夜 全球社区情报日报
-            subtitle: BIAV-SC 银芯情报层 / 全量档案层 · ${{ env.DISP_DATE }}
-            basis: 采集 ${{ env.TARGET_DATE }} 00:00 ~ 24:00 UTC+8
+            title: 忘却前夜 社区情报窗口报告
+            subtitle: BIAV-SC 银芯情报层 / 全量精读 · ${{ env.DISP_WINDOW }}
+            basis: 采集 ${{ env.DISP_WINDOW }}（UTC+8）· Discord + 17 平台多源
             author: 主控台艾瑞卡 / Code-news
-            generated: ${{ env.TARGET_DATE }}
+            generated: ${{ env.END_DATE }}
             ---
             ```
-            正文用 `## 章节`（成目录项）+ 末尾附录，章节间用独占一行 `◇ ◇ ◇` 分隔。
-            **输出「最有价值」的形态，按信号价值排序，不死守固定章节模板、不做平台流水账、不留空章**
-            （守密人 2026-06-02 授权编辑自由）。推荐骨架（可据当日信号增删）：
-            - **一句话判断**：当日最该让守密人知道的一条（bottom line up front）。
-            - **当日最该上报的 N 件事**：按价值排序，每条含「是什么 / 证据（原话直引）/ 信度 / so-what」；
-              优先跨语区共振的信号（同一主题在多个语区出现），而非单频道孤例。
-            - **故障与 Bug**：§6.11 三类（官方确认 / 官方判定预期 / 玩家报告待核实），列原话 + 影响排序。
-            - **官方动态 + 社区自组织**：官方运营动态，以及社区自建的承接（攻略 / 互助 / 治理自洁）。
-            - **同人创作（嵌入存活真图）** + fanfic，留意 NSFW 版规张力。
-            - **给守密人的高优先建议**：只给 3-5 条最该做的，每条对应上文信号，不堆通用清单。
-            - **附录 原声集**：按主题归类，每条「原文 + 中译」，供回溯归纳来源。
-            硬约束：精确去重数字；每条结论锚定可查证据并尽量直引原话；区分官方确认 vs 玩家报告、
-            建议 vs 已落盘；数据缺失如实标注不外推；空泛/通用结论一律删。
+            正文用 `## 章节`（成目录项），章节间用独占一行 `◇ ◇ ◇` 分隔。**不要末尾附录**——
+            原声就地内嵌（见铁律 4）。结构：开篇「一句话判断」+「窗口信号速览表」；随后按**固定维度**
+            系统盘点（运营事件 / 存亡叙事与情绪 / 拉新与承接 / 货币化 / 内容与叙事 / 平衡与玩法 /
+            本地化 / 社区健康与治理 / 多源平台要点[YouTube·Steam·Reddit·官方各成段] / 故障Bug /
+            同人创作[嵌图] / 高优先建议），每维统一「核心发现 + 信度徽章 / 证据（发言人+原文就地）/
+            启示」。善用版式组件：`<div class="lead">`、`<div class="callout callout-risk">`、信度
+            `<span class="badge">A</span>`/`badge-b`/`badge-c`、双语引用 `<div class="qq"><span
+            class="o">原文</span><span class="z">中译</span></div>`。
+            硬约束：精确去重数字 + 跨日趋势；每条结论就地附发言人+原文；区分官方确认 vs 玩家报告、
+            建议 vs 已落盘；缺数据如实标注不外推；空泛/通用结论一律删。
 
       # ----------------------------------------------------------------
       # 确定性步骤：渲染 PDF
@@ -184,6 +193,7 @@ jobs:
           fi
 
       - name: Send report by email
+        continue-on-error: true   # 缺 SMTP 凭据时不阻断后续归档提交
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -194,7 +204,7 @@ jobs:
           python scripts/send_report_email.py \
             --pdf "$REPORT_PDF" \
             --to tanglong.tang@alibaba-inc.com \
-            --subject "忘却前夜 全球社区情报日报 $DISP_DATE"
+            --subject "忘却前夜 社区情报窗口报告 $DISP_WINDOW"
 
       - name: Commit deliverable
         run: |
@@ -204,7 +214,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No deliverable changes to commit"
           else
-            git commit -m "chore: daily community report $TARGET_DATE [skip ci]"
+            git commit -m "chore: community window report $END_DATE [skip ci]"
             for i in 1 2 3 4; do
               git pull --rebase origin main && git push origin main && exit 0
               echo "Push attempt $i failed, retrying in ${i}s..."
