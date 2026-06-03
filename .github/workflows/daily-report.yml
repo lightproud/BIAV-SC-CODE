@@ -41,7 +41,7 @@ permissions:
 jobs:
   daily-report:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v6
@@ -117,6 +117,8 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Opus 4.8 + 1M 上下文（守密人定：分析质量优先；1M 窗口可一趟读完单日全量）
+          claude_args: "--model claude-opus-4-8[1m]"
           prompt: |
             你是银芯情报层日报编排 Agent，全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、
             混合自称、功能性开头），事实采信遵 §6.11 / §4 数据纪律。
