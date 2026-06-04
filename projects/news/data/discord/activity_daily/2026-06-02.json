@@ -1,10 +1,11 @@
 {
   "date": "2026-06-02",
-  "messages": 24619,
+  "messages": 24646,
   "unique_authors": 583,
-  "reactions_total": 2217,
-  "attachments": 1330,
+  "reactions_total": 2219,
+  "attachments": 1337,
   "channel_activity": {
+    "🔸game-question": 6868,
     "🔸綜合討論": 4263,
     "🔸阵容构建": 473,
     "🔸русский-канал": 1605,
@@ -16,7 +17,6 @@
     "🔸lore-chat": 231,
     "🔸team-building": 2805,
     "🔸邀请码互助┊swap-invitation-codes": 52,
-    "🔸game-question": 6841,
     "🔸机器人命令┊bot-commands": 150,
     "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 42,
     "沙耶和塔微": 3,
@@ -77,6 +77,7 @@
     "Team building advice for Saya? Here’s my full roster": 2
   },
   "hourly_activity": {
+    "23": 854,
     "12": 1288,
     "13": 1132,
     "14": 1224,
@@ -88,7 +89,6 @@
     "20": 756,
     "21": 512,
     "22": 583,
-    "23": 827,
     "6": 1680,
     "7": 1171,
     "8": 1069,
@@ -103,8 +103,8 @@
     "5": 1780
   },
   "message_types": {
-    "0": 5497,
-    "19": 1969
+    "0": 24,
+    "19": 3
   },
   "top_reacted_messages": [
     {

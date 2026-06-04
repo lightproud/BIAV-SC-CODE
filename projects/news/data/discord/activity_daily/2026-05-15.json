@@ -1,11 +1,11 @@
 {
   "date": "2026-05-15",
-  "messages": 25516,
+  "messages": 30516,
   "unique_authors": 459,
-  "reactions_total": 3375,
-  "attachments": 1195,
+  "reactions_total": 4098,
+  "attachments": 1385,
   "channel_activity": {
-    "🔸morimens-game-chat": 8319,
+    "🔸morimens-game-chat": 13319,
     "🔸綜合討論": 3650,
     "🔸deutscher-chatraum": 21,
     "🔸русский-канал": 1036,
@@ -77,6 +77,12 @@
     "【Newcomer Help】Forum Introduction": 4
   },
   "hourly_activity": {
+    "13": 1985,
+    "14": 1848,
+    "15": 1972,
+    "16": 1971,
+    "17": 1577,
+    "18": 1608,
     "4": 604,
     "5": 645,
     "6": 505,
@@ -86,7 +92,6 @@
     "10": 2528,
     "11": 3527,
     "12": 2899,
-    "13": 1304,
     "0": 1115,
     "1": 822,
     "2": 940,
@@ -95,16 +100,11 @@
     "20": 356,
     "21": 584,
     "22": 314,
-    "23": 325,
-    "14": 1114,
-    "15": 998,
-    "16": 585,
-    "17": 759,
-    "18": 1201
+    "23": 325
   },
   "message_types": {
-    "0": 2952,
-    "19": 2048
+    "0": 2429,
+    "19": 2571
   },
   "top_reacted_messages": [
     {
@@ -156,6 +156,14 @@
       "channel": "One Day Rerun Banners"
     },
     {
+      "id": "1504881664147324978",
+      "channel_id": "1170692781216378960",
+      "content": "HOW ABOUT WE ALL JUST GIVE CAECUS THE GENESIS FORM HE'S CONSTANTLY WHINING ABOUT",
+      "author": "literallykiyan",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1504804837798318193",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -186,6 +194,14 @@
       "author": "calikyo",
       "reactions": 12,
       "channel": "Ogier felt plushie"
+    },
+    {
+      "id": "1504844363333763233",
+      "channel_id": "1170692781216378960",
+      "content": "Dont shame me for supporting the game cowards",
+      "author": "noire_2",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1504800629795721216",
@@ -250,22 +266,6 @@
       "author": "cerixxix",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1504809744882335817",
-      "channel_id": "1131839817982947429",
-      "content": "血肉太強 鳥兄弟垃圾 打不了難1",
-      "author": "iulargerthan3",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504830238725636197",
-      "channel_id": "1131839817982947429",
-      "content": "真的沒有人覺得校貓很好嬤嗎，每天凌晨兩三點下班的社畜一定沒有多餘的力氣抗拒親親抱抱，也許會報復性熬夜，也許會碰到床就睡，但是哪種都好一定很好推倒……趁着他半夢半",
-      "author": "ka_0414",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
     }
   ]
 }
