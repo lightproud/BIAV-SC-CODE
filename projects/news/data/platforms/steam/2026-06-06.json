@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-06",
+  "archived_at": "2026-06-05T22:59:29.749773+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] Hidden gem",
+      "summary": "Hidden gem",
+      "source": "steam_review",
+      "time": "2026-06-05T21:16:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198053125664/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198053125664",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3264,
+        "votes_up": 0,
+        "timestamp_created": 1780694210
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] better story than slopverse, better music than slo...",
+      "summary": "better story than slopverse, better music than sloppering waves, better collabs than sloppai: slop rail, better lore and worldbuilding than reddit company, better localization than slopshin ♥♥♥♥♥♥♥♥, better UI than slopjong soul, i kneel",
+      "source": "steam_review",
+      "time": "2026-06-05T19:46:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198261500484/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198261500484",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 127,
+        "votes_up": 0,
+        "timestamp_created": 1780688792
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 앱스토어도 좀...",
+      "summary": "앱스토어도 좀...",
+      "source": "steam_review",
+      "time": "2026-06-05T16:15:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198324420198/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198324420198",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1562,
+        "votes_up": 0,
+        "timestamp_created": 1780676129
+      },
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}
