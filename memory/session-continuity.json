@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "d3f577c1",
-    "timestamp": "2026-06-04T23:57:53.284000+00:00",
-    "duration_minutes": 1979.3,
+    "id": "0c9a4b34",
+    "timestamp": "2026-06-05T00:30:38.515000+00:00",
+    "duration_minutes": 2012.1,
     "branch": "claude/nifty-cori-Cbfbp",
     "topics": [
       "GitHub",
@@ -15,11 +15,32 @@
     "files_changed": [
       "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v2-20260603.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md",
+      "/tmp/process_cluster.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "d3f577c1",
+      "timestamp": "2026-06-04T23:57:53.284000+00:00",
+      "duration_minutes": 1979.3,
+      "branch": "claude/nifty-cori-Cbfbp",
+      "topics": [
+        "GitHub",
+        "联动",
+        "沙耶之歌"
+      ],
+      "decisions": [
+        "取材策略——交付物不需逐条引用 3873 行（违反 §6.2），而要趋势量化 + 各情感维度代表性引文做三语处理"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v2-20260603.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "49b76321",
       "timestamp": "2026-06-03T17:06:47.367000+00:00",
@@ -184,44 +205,22 @@
         "/home/user/brain-in-a-vat/CLAUDE.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "a1ba5d67",
-      "timestamp": "2026-06-02T20:42:54.118000+00:00",
-      "duration_minutes": 1063.4,
-      "branch": "claude/inspiring-babbage-we5V8",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract2.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "联动": 3.36,
-      "沙耶之歌": 3.36,
-      "GitHub": 1.8,
-      "做梦Agent": 1.45,
-      "Wiki": 0.19
+      "联动": 3.69,
+      "沙耶之歌": 3.69,
+      "GitHub": 2.44,
+      "做梦Agent": 1.16,
+      "Wiki": 0.15
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v2-20260603.md"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v2-20260603.md",
+      "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md"
     ],
-    "total_sessions": 138
+    "total_sessions": 139
   },
-  "updated_at": "2026-06-05T00:03:24.761390+00:00"
+  "updated_at": "2026-06-05T00:34:45.863007+00:00"
 }
