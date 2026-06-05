@@ -1,8 +1,8 @@
 {
   "date": "2026-06-04",
-  "archived_at": "2026-06-05T15:50:37.769778+00:00",
+  "archived_at": "2026-06-05T22:59:29.743203+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Any Plans for a macOS Version?",
@@ -16,6 +16,19 @@
       "tags": [],
       "lang": "ko",
       "platform_region": "kr"
+    },
+    {
+      "title": "i love saya no uta",
+      "summary": "thanks you develop",
+      "source": "appstore",
+      "time": "2026-06-04T01:54:27-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "Nayor_",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }
