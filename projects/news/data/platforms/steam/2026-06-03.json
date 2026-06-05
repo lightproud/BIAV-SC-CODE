@@ -1,8 +1,8 @@
 {
   "date": "2026-06-03",
-  "archived_at": "2026-06-03T12:32:50.159571+00:00",
+  "archived_at": "2026-06-05T15:50:37.773833+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "title": "[正面] Okay, it's a gacha game, but you know what... it's...",
@@ -176,6 +176,50 @@
         "playtime_forever": 1162,
         "votes_up": 0,
         "timestamp_created": 1780471738
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Nice Art tho",
+      "summary": "Nice Art tho",
+      "source": "steam_review",
+      "time": "2026-06-03T15:04:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198191108955/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198191108955",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 59,
+        "votes_up": 0,
+        "timestamp_created": 1780499040
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 欸这游戏还真不赖……\r\n游戏性我做不出评价，因为我只会圣心批发加丝线交织追击追击追击最后裁断\r\n美术...",
+      "summary": "欸这游戏还真不赖……\r\n游戏性我做不出评价，因为我只会圣心批发加丝线交织追击追击追击最后裁断\r\n美术是神……鸟弟你怎么这么貌美……\r\n另外🐱最好多给我发点福利😋",
+      "source": "steam_review",
+      "time": "2026-06-03T12:38:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199866358026/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199866358026",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5437,
+        "votes_up": 0,
+        "timestamp_created": 1780490287
       },
       "lang": "",
       "platform_region": "global"
