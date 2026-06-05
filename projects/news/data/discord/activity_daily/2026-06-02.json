@@ -1,10 +1,11 @@
 {
   "date": "2026-06-02",
-  "messages": 24646,
+  "messages": 25722,
   "unique_authors": 583,
-  "reactions_total": 2219,
-  "attachments": 1337,
+  "reactions_total": 2257,
+  "attachments": 1362,
   "channel_activity": {
+    "🔸general-chat": 1076,
     "🔸game-question": 6868,
     "🔸綜合討論": 4263,
     "🔸阵容构建": 473,
@@ -77,6 +78,11 @@
     "Team building advice for Saya? Here’s my full roster": 2
   },
   "hourly_activity": {
+    "0": 1731,
+    "1": 1497,
+    "2": 1193,
+    "3": 1093,
+    "4": 947,
     "23": 854,
     "12": 1288,
     "13": 1132,
@@ -95,16 +101,11 @@
     "9": 1172,
     "10": 796,
     "11": 1058,
-    "0": 1116,
-    "1": 1184,
-    "2": 1174,
-    "3": 1045,
-    "4": 866,
     "5": 1780
   },
   "message_types": {
-    "0": 24,
-    "19": 3
+    "0": 868,
+    "19": 208
   },
   "top_reacted_messages": [
     {

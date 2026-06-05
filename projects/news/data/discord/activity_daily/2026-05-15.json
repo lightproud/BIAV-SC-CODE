@@ -1,11 +1,11 @@
 {
   "date": "2026-05-15",
-  "messages": 30516,
+  "messages": 33293,
   "unique_authors": 459,
-  "reactions_total": 4098,
-  "attachments": 1385,
+  "reactions_total": 4376,
+  "attachments": 1505,
   "channel_activity": {
-    "🔸morimens-game-chat": 13319,
+    "🔸morimens-game-chat": 16096,
     "🔸綜合討論": 3650,
     "🔸deutscher-chatraum": 21,
     "🔸русский-канал": 1036,
@@ -77,12 +77,17 @@
     "【Newcomer Help】Forum Introduction": 4
   },
   "hourly_activity": {
+    "18": 1936,
+    "19": 1049,
+    "20": 879,
+    "21": 982,
+    "22": 902,
+    "23": 750,
     "13": 1985,
     "14": 1848,
     "15": 1972,
     "16": 1971,
     "17": 1577,
-    "18": 1608,
     "4": 604,
     "5": 645,
     "6": 505,
@@ -95,16 +100,12 @@
     "0": 1115,
     "1": 822,
     "2": 940,
-    "3": 1499,
-    "19": 534,
-    "20": 356,
-    "21": 584,
-    "22": 314,
-    "23": 325
+    "3": 1499
   },
   "message_types": {
-    "0": 2429,
-    "19": 2571
+    "0": 1635,
+    "19": 1141,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -114,6 +115,14 @@
       "author": "morimensstaff06",
       "reactions": 27,
       "channel": "📜 V2.5.1 版本前瞻·上┊Version Outlook - Part Ⅰ┊버전 미리보기 · 상"
+    },
+    {
+      "id": "1504951711331123320",
+      "channel_id": "1170692781216378960",
+      "content": "banned for traphase player",
+      "author": "princess.goth",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1504798210210791515",
@@ -256,14 +265,6 @@
       "channel_id": "1170692781216378960",
       "content": "<@158672544335921152> oh wow i can't lie we might all have been powercrept in ou",
       "author": "reya.li",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1504671798468546622",
-      "channel_id": "1170692781216378960",
-      "content": "I want GDoll to poison me so bad I start hallucinating and I want her to stoop o",
-      "author": "cerixxix",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
     }

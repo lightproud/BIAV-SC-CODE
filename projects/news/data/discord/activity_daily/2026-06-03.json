@@ -1,10 +1,11 @@
 {
   "date": "2026-06-03",
-  "messages": 23914,
+  "messages": 24177,
   "unique_authors": 484,
-  "reactions_total": 2419,
-  "attachments": 1365,
+  "reactions_total": 2430,
+  "attachments": 1371,
   "channel_activity": {
+    "🔸game-question": 5236,
     "🔸綜合討論": 4653,
     "🔸阵容构建": 34,
     "🔸课间休息闲聊": 55,
@@ -20,7 +21,6 @@
     "🔸lets-count": 26,
     "🔸team-building": 2478,
     "🔸邀请码互助┊swap-invitation-codes": 48,
-    "🔸game-question": 4973,
     "🔸机器人命令┊bot-commands": 122,
     "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 15,
     "Slay the Spire Morimens Modding Log 殺戮尖塔模組": 4,
@@ -101,6 +101,8 @@
     "1511733337088196628": 6
   },
   "hourly_activity": {
+    "22": 569,
+    "23": 385,
     "13": 1470,
     "14": 1019,
     "15": 1724,
@@ -110,8 +112,6 @@
     "19": 919,
     "20": 872,
     "21": 644,
-    "22": 376,
-    "23": 315,
     "0": 431,
     "1": 761,
     "2": 1097,
@@ -127,8 +127,8 @@
     "12": 1305
   },
   "message_types": {
-    "0": 4755,
-    "19": 2012
+    "19": 107,
+    "0": 156
   },
   "top_reacted_messages": [
     {
