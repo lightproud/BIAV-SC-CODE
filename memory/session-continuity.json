@@ -1,6 +1,6 @@
 {
   "last_session": {
-    "id": "572e8d55",
+    "id": "1490f7f7",
     "timestamp": "2026-06-05T03:13:21.125000+00:00",
     "duration_minutes": 2174.8,
     "branch": "claude/nifty-cori-Cbfbp",
@@ -21,6 +21,27 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "572e8d55",
+      "timestamp": "2026-06-05T03:13:21.125000+00:00",
+      "duration_minutes": 2174.8,
+      "branch": "claude/nifty-cori-Cbfbp",
+      "topics": [
+        "GitHub",
+        "联动",
+        "沙耶之歌"
+      ],
+      "decisions": [
+        "取材策略——交付物不需逐条引用 3873 行（违反 §6.2），而要趋势量化 + 各情感维度代表性引文做三语处理"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v2-20260603.md",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md",
+        "/tmp/process_cluster.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "4b779c8e",
       "timestamp": "2026-06-05T03:13:21.125000+00:00",
@@ -177,31 +198,14 @@
         "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "3da71185",
-      "timestamp": "2026-06-03T15:06:51.210000+00:00",
-      "duration_minutes": 8.3,
-      "branch": "claude/nifty-cori-Cbfbp",
-      "topics": [
-        "联动",
-        "沙耶之歌"
-      ],
-      "decisions": [
-        "取材策略——交付物不需逐条引用 3873 行（违反 §6.2），而要趋势量化 + 各情感维度代表性引文做三语处理"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "联动": 4.46,
-      "沙耶之歌": 4.46,
-      "GitHub": 3.95,
-      "做梦Agent": 0.47
+      "联动": 4.57,
+      "沙耶之歌": 4.57,
+      "GitHub": 4.16,
+      "做梦Agent": 0.38
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-20260603.md",
@@ -209,7 +213,7 @@
       "/home/user/brain-in-a-vat/deliverables/2026-06/saya-collab-community-report-v3-20260603.md",
       "/tmp/process_cluster.py"
     ],
-    "total_sessions": 143
+    "total_sessions": 144
   },
-  "updated_at": "2026-06-05T11:36:00.945841+00:00"
+  "updated_at": "2026-06-05T16:03:01.952290+00:00"
 }
