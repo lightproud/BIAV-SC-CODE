@@ -1,16 +1,26 @@
 {
-  "collected_at": "2026-06-05T22:59:18.900360+00:00",
+  "collected_at": "2026-06-06T15:07:27.347480+00:00",
   "source": "appstore",
   "item_count": 9,
   "items": [
     {
       "source": "appstore",
-      "time": "2026-06-04T01:54:27-07:00",
+      "time": "2026-05-28T08:36:01-07:00",
       "lang": "en",
-      "title": "i love saya no uta",
-      "summary": "thanks you develop",
+      "title": "Super fun + unique concept",
+      "summary": "I originally downloaded it because I thought the concept of a cosmic horror themed gacha was interesting thinking I’d just uninstall if I got bored. The story is genuinely good AND the gameplay is super fun. There isn’t a stamina system for the main story so you can play all you want (ended up pulling an all nighter by accident.) The combat for non-chaos awakeners can be a little confusing at first but once you get the hang of it, it’s addicting. Right now I’m loving ultra realm awakeners. Wanda and Arachne are great for beating random mobs in 1 turn.",
       "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
-      "author": "Nayor_",
+      "author": "Nodin M",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-05T00:36:40-07:00",
+      "lang": "en",
+      "title": "What a pleasant surprise:)",
+      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
+      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews",
+      "author": "hsantos18",
       "engagement": 5
     },
     {
@@ -35,12 +45,12 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-04T02:36:30-07:00",
+      "time": "2026-06-01T07:21:38-07:00",
       "lang": "ko",
-      "title": "Any Plans for a macOS Version?",
-      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
+      "title": "한국의 서버를 관심가져주세요",
+      "summary": "훌륭한 게임 나는 편지의 번역을 원하다",
       "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews",
-      "author": "Nihil___",
+      "author": "앰쿠나마타타",
       "engagement": 5
     },
     {
@@ -81,16 +91,6 @@
       "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
       "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
       "author": "Chros T",
-      "engagement": 3
-    },
-    {
-      "source": "appstore",
-      "time": "2026-05-29T01:35:11-07:00",
-      "lang": "id",
-      "title": "Keeps on crashing",
-      "summary": "The game keeps on crashing during battle",
-      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews",
-      "author": "Cecuyyy",
       "engagement": 3
     }
   ]
