@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-05T22:59:18.900360+00:00",
+  "collected_at": "2026-06-06T15:07:27.347480+00:00",
   "source": "google_play",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "source": "google_play",
@@ -92,6 +92,26 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi",
       "author": "Bảo",
       "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-05T10:38:43",
+      "lang": "zh",
+      "title": "[Google Play 差评] ★1 自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色",
+      "summary": "自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色，ai像個智商三歲的幼兒，總是超維前放。 聖心黑羽循環不會就算了，神母放大前ai又不會調怒濤，本質垃圾",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
+      "author": "fung tsan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-05T10:38:43",
+      "lang": "zh",
+      "title": "[Google Play 差评] ★1 自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色",
+      "summary": "自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色，ai像個智商三歲的幼兒，總是超維前放。 聖心黑羽循環不會就算了，神母放大前ai又不會調怒濤，本質垃圾",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
+      "author": "fung tsan",
+      "engagement": 0
     },
     {
       "source": "google_play",
