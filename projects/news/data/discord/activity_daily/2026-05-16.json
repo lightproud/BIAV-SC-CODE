@@ -1,11 +1,11 @@
 {
   "date": "2026-05-16",
-  "messages": 16507,
+  "messages": 21507,
   "unique_authors": 502,
-  "reactions_total": 3533,
-  "attachments": 818,
+  "reactions_total": 4067,
+  "attachments": 1016,
   "channel_activity": {
-    "🔸morimens-game-chat": 2223,
+    "🔸morimens-game-chat": 7223,
     "🔸綜合討論": 4466,
     "🔸交友频道": 74,
     "🔸chaîne-française": 14,
@@ -94,24 +94,24 @@
     "1505015157821280380": 1
   },
   "hourly_activity": {
+    "3": 1647,
+    "4": 1170,
+    "5": 1315,
+    "6": 1140,
+    "7": 1451,
+    "8": 1781,
+    "9": 1285,
+    "10": 1120,
+    "11": 1181,
     "0": 553,
     "1": 549,
     "2": 761,
-    "3": 1479,
     "18": 381,
     "19": 511,
     "20": 572,
     "21": 179,
     "22": 324,
     "23": 552,
-    "4": 574,
-    "5": 835,
-    "6": 244,
-    "7": 658,
-    "8": 1246,
-    "9": 831,
-    "10": 520,
-    "11": 703,
     "12": 760,
     "13": 874,
     "14": 1028,
@@ -120,8 +120,8 @@
     "17": 985
   },
   "message_types": {
-    "0": 1193,
-    "19": 1030
+    "0": 2927,
+    "19": 2073
   },
   "top_reacted_messages": [
     {
@@ -245,6 +245,14 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1505158673490772028",
+      "channel_id": "1170692781216378960",
+      "content": "I like this character, so I'll pull as much as possible",
+      "author": "allyera.emano.hemafuri",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1505343457244483747",
       "channel_id": "1505167541818101862",
       "content": "I don’t really know if this is related to the topic, but it honestly feels like ",
@@ -275,14 +283,6 @@
       "author": "wushenglingluhaokeai",
       "reactions": 14,
       "channel": "📜 V2.5.1 版本前瞻·中┊Version Outlook - Part Ⅱ┊버전 미리보기 · 중"
-    },
-    {
-      "id": "1505335745890484406",
-      "channel_id": "1504887714749874326",
-      "content": "<@1487626955791663208> \nI know you are well aware of the community sentiment by ",
-      "author": "angbak",
-      "reactions": 13,
-      "channel": "One Day Rerun Banners"
     }
   ]
 }
