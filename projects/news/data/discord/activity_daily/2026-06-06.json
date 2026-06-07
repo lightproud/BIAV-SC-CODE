@@ -1,39 +1,49 @@
 {
   "date": "2026-06-06",
-  "messages": 14844,
+  "messages": 18434,
   "unique_authors": 603,
-  "reactions_total": 1544,
-  "attachments": 1245,
+  "reactions_total": 2194,
+  "attachments": 1493,
   "channel_activity": {
-    "🔸綜合討論": 3180,
+    "🔸綜合討論": 3696,
+    "🔸剧情交流": 323,
+    "🔸相位对弈": 71,
+    "🔸한국어-채팅방": 217,
+    "🔸deutscher-chatraum": 15,
+    "🔸chaîne-française": 288,
+    "🔸русский-канал": 1567,
+    "🔸canal-español": 414,
+    "🔸canal-português": 407,
+    "🔸ruang-obrolan-indonesia": 922,
+    "🔸ห้องสนทนาภาษาไทย": 2158,
+    "🔸traphase": 21,
+    "🔸lore-chat": 371,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 22,
+    "🔸team-building": 2355,
+    "🔸邀请码互助┊swap-invitation-codes": 32,
+    "🔸game-question": 2251,
+    "🔸机器人命令┊bot-commands": 178,
+    "🔸erica-playground": 1,
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 32,
+    "中奖概率倍儿高~": 8,
+    "新的一年，宝宝又长大一岁了🥺💕": 4,
+    "Speed up  rerun banners": 7,
+    "皮克曼靈感迸發，皮克曼靈感枯竭": 14,
+    "Visual Bug": 7,
+    "Spellbound doesnt work. Why is Lily poison worse than prebuff?": 14,
+    "A quick sketch of saya": 2,
+    "V2.5.0 命运剧院┊Theater of Fate": 2,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 7,
     "🔸阵容构建": 79,
-    "🔸剧情交流": 320,
     "🔸晒卡分享": 84,
-    "🔸相位对弈": 70,
     "🔸课间休息闲聊": 29,
     "🔸交友频道": 5,
     "🔸日本語チャンネル": 6,
-    "🔸한국어-채팅방": 213,
-    "🔸deutscher-chatraum": 14,
-    "🔸chaîne-française": 221,
-    "🔸русский-канал": 1342,
     "🔸phòng-chat-tiếng-việt": 2562,
-    "🔸canal-español": 326,
-    "🔸canal-português": 404,
-    "🔸ruang-obrolan-indonesia": 917,
-    "🔸ห้องสนทนาภาษาไทย": 2147,
-    "🔸traphase": 14,
-    "🔸lore-chat": 344,
-    "🔸lets-count": 19,
     "🌎┊select-language": 1,
-    "🔸team-building": 2045,
-    "🔸邀请码互助┊swap-invitation-codes": 30,
     "🔸游戏问题": 7,
-    "🔸机器人命令┊bot-commands": 138,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 31,
     "AA凱刻斯": 20,
-    "中奖概率倍儿高~": 7,
-    "新的一年，宝宝又长大一岁了🥺💕": 3,
     "遺忘探戈：開場 •上（皮杜向": 1,
     "建个随笔楼": 3,
     "Slay the Spire Morimens Modding Log 殺戮尖塔模組": 27,
@@ -45,11 +55,7 @@
     "bug 新版本出现无数次点击唤醒体这个图标游戏卡住 只能大退": 4,
     "Some assets are turning magenta": 4,
     "Horla wheel buffs corpo pilot shield but not str": 8,
-    "Speed up  rerun banners": 2,
-    "皮克曼靈感迸發，皮克曼靈感枯竭": 13,
-    "Visual Bug": 5,
     "AutoPlay Feature at x1 is twice as fast than in any other games, it's not usable by 95% of players": 4,
-    "Spellbound doesnt work. Why is Lily poison worse than prebuff?": 8,
     "24 need rework": 2,
     "維護公告中的訊息為啥是命定超維": 1,
     "Regarding Strength Buffs": 8,
@@ -68,7 +74,6 @@
     "Poison with friends ch9->Actual content edition": 1,
     "【English Translation】Opinions Collection": 2,
     "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 4,
-    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
     "求融災禁區配對(我真的不會配對😭😭": 3,
     "新人求各種幫忙": 11,
     "【新人帮助】论坛介绍": 1,
@@ -82,12 +87,17 @@
     "【Newcomer Help】Forum Introduction": 1
   },
   "hourly_activity": {
-    "0": 450,
-    "1": 867,
-    "2": 713,
-    "3": 857,
-    "4": 649,
-    "5": 767,
+    "19": 438,
+    "20": 598,
+    "21": 157,
+    "22": 123,
+    "23": 62,
+    "0": 520,
+    "1": 1105,
+    "2": 1160,
+    "3": 1256,
+    "4": 1458,
+    "5": 1055,
     "6": 671,
     "7": 937,
     "8": 666,
@@ -100,17 +110,30 @@
     "15": 1362,
     "16": 1576,
     "17": 561,
-    "18": 323,
-    "19": 39
+    "18": 323
   },
   "message_types": {
-    "0": 11434,
-    "19": 3406,
-    "18": 1,
-    "20": 1,
-    "4": 2
+    "0": 2659,
+    "19": 917,
+    "20": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1512930542532694237",
+      "channel_id": "1354754985119846581",
+      "content": "<@&1355606063348584610> \nHoy everyone! \nWe wanted to inform you that we integrat",
+      "author": "vxvendetta97",
+      "reactions": 251,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1512930556688597112",
+      "channel_id": "1354754985119846581",
+      "content": "Please be sure to check out our <#1304022827824844842>  section! Here are a few ",
+      "author": "Ærica",
+      "reactions": 158,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
     {
       "id": "1512724191659561032",
       "channel_id": "1300659802455674972",
@@ -118,6 +141,14 @@
       "author": "ice3564",
       "reactions": 14,
       "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1512617933535318147",
+      "channel_id": "1433513650299076780",
+      "content": "we love the birds",
+      "author": "._ingg",
+      "reactions": 9,
+      "channel": "🔸game-question"
     },
     {
       "id": "1512755636503580772",
@@ -184,6 +215,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1512617526629236938",
+      "channel_id": "1433513650299076780",
+      "content": "i love you pollux",
+      "author": "._ingg",
+      "reactions": 6,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1512682795531632690",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -205,6 +244,14 @@
       "content": "",
       "author": "huangyu0876",
       "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1512907500872007731",
+      "channel_id": "1131839817982947429",
+      "content": "他到底是不是m",
+      "author": "yusi4172",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
@@ -230,46 +277,6 @@
       "author": "foxcatfurry",
       "reactions": 5,
       "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1512741861926633483",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "hon_ey0",
-      "reactions": 5,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1512636761241555076",
-      "channel_id": "1300659802455674972",
-      "content": "",
-      "author": "satachan",
-      "reactions": 5,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1512723451201458216",
-      "channel_id": "1300659802455674972",
-      "content": "ไม่มีใครงงลงกลุ่มละนะ",
-      "author": "c4ria",
-      "reactions": 5,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1512707987922227211",
-      "channel_id": "1326453691527594035",
-      "content": "sorry what does mpreg here kean",
-      "author": "mudchips",
-      "reactions": 5,
-      "channel": "🔸traphase"
-    },
-    {
-      "id": "1512686318725894275",
-      "channel_id": "1326453763355185215",
-      "content": "(they probably forgot to implement that)",
-      "author": "_venush",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
     }
   ]
 }

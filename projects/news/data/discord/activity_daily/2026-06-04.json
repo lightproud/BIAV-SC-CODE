@@ -1,10 +1,11 @@
 {
   "date": "2026-06-04",
-  "messages": 21814,
+  "messages": 25798,
   "unique_authors": 537,
-  "reactions_total": 3221,
-  "attachments": 1349,
+  "reactions_total": 3309,
+  "attachments": 1447,
   "channel_activity": {
+    "🔸general-chat": 3984,
     "🔸綜合討論": 3901,
     "🔸日本語チャンネル": 21,
     "🔸한국어-채팅방": 809,
@@ -101,34 +102,34 @@
     "1512140556057317576": 1
   },
   "hourly_activity": {
+    "0": 437,
+    "1": 570,
+    "2": 724,
+    "3": 671,
+    "4": 1082,
+    "5": 998,
+    "6": 1249,
+    "7": 1478,
+    "8": 1439,
+    "9": 1508,
+    "10": 1201,
+    "11": 1557,
+    "12": 1677,
+    "13": 1051,
+    "14": 1479,
+    "15": 1249,
+    "16": 2122,
+    "17": 1825,
+    "18": 1130,
+    "19": 426,
     "20": 409,
     "22": 443,
     "23": 525,
-    "21": 548,
-    "19": 369,
-    "0": 435,
-    "1": 480,
-    "2": 703,
-    "3": 637,
-    "4": 1030,
-    "5": 961,
-    "6": 1240,
-    "7": 1380,
-    "8": 1391,
-    "9": 1173,
-    "10": 1147,
-    "11": 1421,
-    "12": 1639,
-    "13": 1025,
-    "14": 1252,
-    "15": 909,
-    "16": 1139,
-    "17": 1027,
-    "18": 531
+    "21": 548
   },
   "message_types": {
-    "0": 3518,
-    "19": 1425,
+    "19": 1593,
+    "0": 2390,
     "20": 1
   },
   "top_reacted_messages": [
@@ -269,28 +270,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1511998766486523935",
+      "channel_id": "1400750050208125010",
+      "content": "WHAT",
+      "author": "haetes.",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1512073629125574819",
+      "channel_id": "1400750050208125010",
+      "content": "Just Mouchette",
+      "author": "lowtownnivn",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1511989029867098153",
       "channel_id": "1433513650299076780",
       "content": "100 pull open in 2 day?",
       "author": "slymate_",
       "reactions": 5,
       "channel": "🔸game-question"
-    },
-    {
-      "id": "1511994190064648315",
-      "channel_id": "1433513650299076780",
-      "content": "is this a bug???????\nI only have ONE THAIS\nNOT EVEN BORROW ONE",
-      "author": "theviy",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1512234581045280869",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

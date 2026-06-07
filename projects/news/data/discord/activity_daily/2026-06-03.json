@@ -1,11 +1,11 @@
 {
   "date": "2026-06-03",
-  "messages": 26933,
+  "messages": 27949,
   "unique_authors": 484,
-  "reactions_total": 2494,
-  "attachments": 1509,
+  "reactions_total": 2538,
+  "attachments": 1552,
   "channel_activity": {
-    "🔸general-chat": 2756,
+    "🔸general-chat": 3772,
     "🔸game-question": 5236,
     "🔸綜合討論": 4653,
     "🔸阵容构建": 34,
@@ -102,6 +102,14 @@
     "1511733337088196628": 6
   },
   "hourly_activity": {
+    "16": 1596,
+    "17": 1020,
+    "18": 751,
+    "19": 967,
+    "20": 1103,
+    "21": 991,
+    "22": 707,
+    "23": 424,
     "0": 450,
     "1": 772,
     "2": 1160,
@@ -117,20 +125,11 @@
     "12": 1444,
     "13": 1498,
     "14": 1383,
-    "15": 1945,
-    "16": 1595,
-    "22": 569,
-    "23": 385,
-    "17": 942,
-    "18": 617,
-    "19": 919,
-    "20": 872,
-    "21": 644
+    "15": 1945
   },
   "message_types": {
-    "0": 2137,
-    "19": 617,
-    "20": 2
+    "0": 768,
+    "19": 248
   },
   "top_reacted_messages": [
     {
@@ -140,6 +139,14 @@
       "author": "tabbayun",
       "reactions": 19,
       "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1511794677395755070",
+      "channel_id": "1400750050208125010",
+      "content": "MY GRANDMA’S HEART SURGERY IS SUCCESSFUL",
+      "author": "hopping_bob",
+      "reactions": 18,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1511650163343622214",
@@ -282,14 +289,6 @@
       "channel_id": "1131839817982947429",
       "content": "不知道我改淫蕩小女孩會不會被消失🤔",
       "author": "yi000607",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1511662513622749346",
-      "channel_id": "1131839817982947429",
-      "content": "~~感觉玩5771肯定会某个地方不正经~~",
-      "author": "gensono0609",
       "reactions": 8,
       "channel": "🔸綜合討論"
     }
