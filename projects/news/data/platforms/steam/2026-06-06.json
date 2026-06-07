@@ -1,8 +1,8 @@
 {
   "date": "2026-06-06",
-  "archived_at": "2026-06-06T15:07:42.401174+00:00",
+  "archived_at": "2026-06-07T11:46:47.496283+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "title": "[正面] Hidden gem",
@@ -286,6 +286,28 @@
         "playtime_forever": 331,
         "votes_up": 0,
         "timestamp_created": 1780697852
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩儿",
+      "summary": "好玩儿",
+      "source": "steam_review",
+      "time": "2026-06-06T15:33:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198761184447/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198761184447",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 332,
+        "votes_up": 0,
+        "timestamp_created": 1780759991
       },
       "lang": "",
       "platform_region": "global"
