@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-06T15:07:27.347480+00:00",
+  "collected_at": "2026-06-07T11:46:34.703739+00:00",
   "source": "appstore",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "appstore",
@@ -45,12 +45,12 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-01T07:21:38-07:00",
+      "time": "2026-06-04T02:36:30-07:00",
       "lang": "ko",
-      "title": "한국의 서버를 관심가져주세요",
-      "summary": "훌륭한 게임 나는 편지의 번역을 원하다",
+      "title": "Any Plans for a macOS Version?",
+      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
       "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews",
-      "author": "앰쿠나마타타",
+      "author": "Nihil___",
       "engagement": 5
     },
     {
@@ -82,6 +82,16 @@
       "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
       "author": "viniciusbadtz",
       "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-05T03:05:58-07:00",
+      "lang": "id",
+      "title": "Nice character design!",
+      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews",
+      "author": "Milesiya",
+      "engagement": 4
     },
     {
       "source": "appstore",
