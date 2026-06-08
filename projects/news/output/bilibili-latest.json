@@ -1,24 +1,42 @@
 {
-  "collected_at": "2026-06-07T15:20:03.466867+00:00",
+  "collected_at": "2026-06-08T23:09:19.264899+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "bilibili",
-      "time": "2026-06-07T02:03:03+00:00",
+      "time": "2026-06-08T03:40:46+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】个人突破！首次超越60分钟",
-      "summary": "-\n  └ 路过的耄耋 (1赞): 我了恐怖金人\n  └ 苍穹余烬 (3赞): 老大帮我过癫狂列车[脱单doge]\n  └ 吃瓜丶小海 (0赞): 我了",
-      "url": "https://www.bilibili.com/video/BV1iREs67EHt",
+      "title": "【忘却前夜】6.8-6.23容灾全流程攻略",
+      "summary": "└ 抱着狗狗不敢说话 (4赞): 这个 怎么说呢 我。。的莫斯练度太低 确实玩不了，憋满了一个大过去 3w血顶天了。。。搞个毛\n  └ 都是玛玛的错QAQ (1赞): 蹲一个大佬\n  └ 青青子衿-隐 (3赞): 大佬们，收米人68级能玩莫丝吗（没有融朵[大哭]\n莫丝的队友是不是就是要多开大[给心心][给心心][给心心]",
+      "url": "https://www.bilibili.com/video/BV1fjEK6hEhp",
       "author": "金发女人丨型",
-      "engagement": 1862,
-      "media_url": "http://i1.hdslb.com/bfs/archive/eb58706702bae30993411897756348dc181ddc10.jpg",
+      "engagement": 4920,
+      "media_url": "http://i2.hdslb.com/bfs/archive/7c2731ad854c92f15d747fb8277e7a4b70779e27.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1844,
-        "comment_count": 18,
+        "play": 4855,
+        "comment_count": 65,
         "comments_fetched": 3,
-        "danmaku": 178
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-08T12:44:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】红的不只有牌，还有脸上的温度",
+      "summary": "└ 活过一乔 (24赞): 如果我打出牌，我就会死\n如果我不打牌，我就会死\n  └ 壳丢了的寄居蟹 (0赞): [doge]\n  └ I与YOU (1赞): 有些人还活着",
+      "url": "https://www.bilibili.com/video/BV1kYEu6jEyZ",
+      "author": "金发女人丨型",
+      "engagement": 1686,
+      "media_url": "http://i0.hdslb.com/bfs/archive/8056dae47ac1d462e7b1d80d1d6bb4ddbf0e643a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1673,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 5
       }
     }
   ]

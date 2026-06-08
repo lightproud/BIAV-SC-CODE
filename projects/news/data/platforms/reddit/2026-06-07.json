@@ -1,8 +1,8 @@
 {
   "date": "2026-06-07",
-  "archived_at": "2026-06-07T15:20:09.636407+00:00",
+  "archived_at": "2026-06-08T23:09:40.648071+00:00",
   "source": "reddit",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "title": "New Saya Emotes!",
@@ -287,6 +287,24 @@
       "is_hot": false,
       "author": "u//u/Ivancho3000",
       "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "New code : VCHB-LEGT-KUUY",
+      "summary": "500 Silver, 5 Pure Core  &#32; submitted by &#32;  /u/TaskiraDorten   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-07T15:28:21+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tzf5dy/new_code_vchblegtkuuy/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/TaskiraDorten",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/o2wsjisrpv5h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=193fdd70a6b5dd215b18a7158ca05e24f9e227d0",
+      "content_type": "image",
       "lang": "en",
       "platform_region": "global"
     }

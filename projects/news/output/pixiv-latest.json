@@ -1,8 +1,20 @@
 {
-  "collected_at": "2026-06-07T15:20:03.466867+00:00",
+  "collected_at": "2026-06-08T23:09:19.264899+00:00",
   "source": "pixiv",
-  "item_count": 30,
+  "item_count": 31,
   "items": [
+    {
+      "source": "pixiv",
+      "time": "2026-06-08T12:32:44+09:00",
+      "lang": "",
+      "title": "tulu",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145755560",
+      "author": "Shin",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/08/12/32/44/145755560_p0_square1200.jpg",
+      "content_type": "image"
+    },
     {
       "source": "pixiv",
       "time": "2026-06-07T23:20:14+09:00",
@@ -233,18 +245,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-05-31T19:41:43+09:00",
-      "lang": "",
-      "title": "Untitled",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145439663",
-      "author": "bla",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/31/19/41/43/145439663_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-02T00:00:15+09:00",
       "lang": "",
       "title": "Pollux",
@@ -253,6 +253,18 @@
       "author": "るなしば",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-05-31T19:41:43+09:00",
+      "lang": "",
+      "title": "Untitled",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145439663",
+      "author": "bla",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/31/19/41/43/145439663_p0_square1200.jpg",
       "content_type": "image"
     },
     {

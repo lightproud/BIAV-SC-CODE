@@ -1,8 +1,8 @@
 {
   "date": "2026-06-08",
-  "archived_at": "2026-06-07T15:20:09.636971+00:00",
+  "archived_at": "2026-06-08T23:09:40.653353+00:00",
   "source": "pixiv",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "忘却前夜×沙耶の唄コラボ！",
@@ -21,6 +21,26 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/06/07/23/20/14/145737590_p0_custom1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "tulu",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-08T12:32:44+09:00",
+      "url": "https://www.pixiv.net/artworks/145755560",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Shin",
+      "tags": [
+        "morimens",
+        "忘却前夜",
+        "忘卻前夜",
+        "トゥルー"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/08/12/32/44/145755560_p0_square1200.jpg",
       "content_type": "image"
     }
   ]

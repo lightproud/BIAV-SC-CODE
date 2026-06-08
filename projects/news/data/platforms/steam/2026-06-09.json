@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-09",
+  "archived_at": "2026-06-08T23:09:40.648671+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] Bom pra caralho",
+      "summary": "Bom pra caralho",
+      "source": "steam_review",
+      "time": "2026-06-08T20:49:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198369537408/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198369537408",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1576,
+        "votes_up": 0,
+        "timestamp_created": 1780951782
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] peak",
+      "summary": "peak",
+      "source": "steam_review",
+      "time": "2026-06-08T18:14:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199828189340/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199828189340",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2473,
+        "votes_up": 0,
+        "timestamp_created": 1780942441
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] As a big Slay The Spire fan, this immediately caug...",
+      "summary": "As a big Slay The Spire fan, this immediately caught my attention, but sadly I don't think I can bring myself to play more than the first tutorial dungeon.\n\nThe Pros:\n+ Artwork and overall aesthetic is stunning\n+ Beautiful animations in both cutscenes and gameplay\n+ Great music\n+ *Some* cool character designs\n+ Interesting premise\n+ The combat system itself is very enjoyable. If you like Slay The Spire, you'll feel right at home here.\n\nThe Cons:\n- This is a gacha game, and one that takes a lot of pages out of Genshin Impact's book in terms of character building, which, at least for me, is an immediate turn-off. I've spent too much time grinding materials to ever want to go through that again.\n- All text translations utilize generative AI. The English translation is the most complete out of our current options, but it still utilizes machine translation at its foundation. If this game ever reaches a point where the studio hires real translators to localize this work from the bottom up **without** AI, that would be incredible. As it stands now, I cannot support this game or recommend it to others as this is something I am morally against as a translator myself.\n- Noun-itis abound. Lots of made-up terms are thrown at you quite quickly and make things hard to follow or understand.\n- This could be due to AI translations, or because I only played the intro, but the dialogue felt quite bland and did not do much to make individual characters stand out.\n- Sexualized female characters. Depending on your preferences, this could be a bonus for you, and by many gacha game's standards the level on fanservice in the designs is relatively tame, but if you're like me and rather fatigued by character designs that prioritize \"profitability\" and sexiness over more interesting designs, you'll be a tad disappointed here.\n\nThere is a lot of potential here, and I wish I liked it more, but the unit building and usage of ChatGPT for translations make this a hard pass.",
+      "source": "steam_review",
+      "time": "2026-06-08T17:42:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198236972004/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198236972004",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 91,
+        "votes_up": 0,
+        "timestamp_created": 1780940578
+      },
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}

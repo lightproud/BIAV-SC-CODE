@@ -1,8 +1,8 @@
 {
   "date": "2026-06-07",
-  "archived_at": "2026-06-07T15:20:09.631491+00:00",
+  "archived_at": "2026-06-08T23:09:40.649568+00:00",
   "source": "steam",
-  "item_count": 28,
+  "item_count": 29,
   "items": [
     {
       "title": "[正面] This game is hidden gem to who interested in lovec...",
@@ -616,6 +616,28 @@
         "playtime_forever": 15940,
         "votes_up": 0,
         "timestamp_created": 1780826608
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Accidentally ate 5 babies because of a cursed reli...",
+      "summary": "Accidentally ate 5 babies because of a cursed relic. 10/10.",
+      "source": "steam_review",
+      "time": "2026-06-07T15:10:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199750286361/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199750286361",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6824,
+        "votes_up": 0,
+        "timestamp_created": 1780845012
       },
       "lang": "",
       "platform_region": "global"
