@@ -1,10 +1,11 @@
 {
   "date": "2026-06-05",
-  "messages": 27204,
+  "messages": 29149,
   "unique_authors": 559,
-  "reactions_total": 3146,
-  "attachments": 1453,
+  "reactions_total": 3207,
+  "attachments": 1573,
   "channel_activity": {
+    "🔸general-chat": 1945,
     "🔸game-question": 8923,
     "🔸綜合討論": 4355,
     "🔸交友频道": 6,
@@ -102,34 +103,34 @@
     "1512469873807065129": 2
   },
   "hourly_activity": {
-    "11": 1767,
-    "12": 1052,
-    "13": 1526,
-    "14": 1863,
-    "15": 858,
-    "16": 879,
+    "0": 871,
+    "1": 1169,
+    "2": 1491,
+    "3": 1368,
+    "4": 1704,
+    "5": 1421,
+    "6": 1249,
+    "7": 1783,
+    "8": 1585,
+    "9": 1774,
+    "10": 2033,
+    "11": 2036,
+    "12": 1107,
+    "13": 1590,
+    "14": 1988,
+    "15": 973,
+    "16": 908,
     "17": 760,
     "18": 848,
     "19": 700,
     "20": 440,
     "21": 280,
     "22": 545,
-    "23": 526,
-    "3": 1340,
-    "4": 1473,
-    "5": 1391,
-    "6": 1225,
-    "7": 1775,
-    "8": 1432,
-    "9": 1548,
-    "10": 2013,
-    "0": 541,
-    "1": 1091,
-    "2": 1331
+    "23": 526
   },
   "message_types": {
-    "0": 1697,
-    "19": 1052
+    "19": 415,
+    "0": 1530
   },
   "top_reacted_messages": [
     {
@@ -269,6 +270,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1512274174880514128",
+      "channel_id": "1400750050208125010",
+      "content": "first triple pull",
+      "author": "styrrrrrr",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1512412262235639818",
       "channel_id": "1433513650299076780",
       "content": "It becomes a problem only when that certain agenda is pushed onto beginners. Try",
@@ -281,14 +290,6 @@
       "channel_id": "1433513650299076780",
       "content": "This is the start of most battles stages",
       "author": "angbak",
-      "reactions": 6,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1512413011581734942",
-      "channel_id": "1433513650299076780",
-      "content": "On a scale of one to spaghetti, how bolognese is the first level of this deal?",
-      "author": "anivia_blackfrost",
       "reactions": 6,
       "channel": "🔸game-question"
     }
