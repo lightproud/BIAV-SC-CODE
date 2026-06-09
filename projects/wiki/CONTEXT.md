@@ -1,9 +1,15 @@
 # Wiki 子项目上下文
 
-> 最后更新：2026-04-26 by Code-wiki（Phase 1 垂直切片落盘，Pandia 完整页 + 列表筛选器可访问）
+> 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）
 
 ## 负责会话
 Code-wiki
+
+## 2026-06-09 状态核验（实测）
+
+- **`data/db/characters.json` 已自举 24/72**（23 partial + 1 fixture，批 1 完成）——本档案下文凡写「尚未建立」处均为 4-26 前的过期描述，已逐处订正
+- **批 2/3（剩余 48 角色）未开工**：M2 窗口（5-11 → 6-10）即将到期，M2 六项任务均未完成，需 Code-wiki 接管推进
+- Pandia 垂直切片（12 Vue 组件 + 详情页 + 列表筛选）已落盘可访问（4-26 验收记录见下文）
 
 ## Mooncell 对标 Phase 1 已完成（2026-04-26）
 
@@ -66,7 +72,7 @@ Code-wiki
 ## 项目包含两部分
 
 ### 1. 游戏数据集（原 database 子项目）
-- **数据文件**：`data/db/characters.json` 尚未建立，Phase 2 开工需先自举（参考 `assets/data/character_data.txt` 解析）。真实角色总数 72（含皮肤/联动/彩蛋）
+- **数据文件**：`data/db/characters.json` 已自举 24/72（批 1，2026-04-26），剩余 48 待批 2/3。真实角色总数 72（含皮肤/联动/彩蛋）
 - **查询模块**：`scripts/content_db.py`，Python 接口
 - **数据来源**：GameKee wiki、Fandom Sialia、Gamerch JP
 - **存储格式**：JSON
@@ -80,7 +86,7 @@ Code-wiki
 - `data/extracted/` — 客户端解包原始数据（Lua 表、角色字段、美术清单）
 - `data/processed/` — 加工过的 JSON 数据（CG 画廊 / 物品故事 / 语音台词 / 世界观）
 - `data/schemas/` — 数据 schema 定义（characters / meta / realms）
-- `data/db/` — ⚠ **尚未建立**，Phase 2 W1 待自举 `characters.json`
+- `data/db/` — 已建立：`characters.json`（24/72）+ trinkets / banners / stages / items 空 stub
 - `scripts/` — 数据抓取与处理脚本（Python）
 - `docs/` — VitePress 源文件（Markdown 页面，含 zh/en/ja 子目录）
 - `docs/.vitepress/` — VitePress 配置和主题
@@ -151,7 +157,7 @@ python scripts/content_db.py
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`
-- 数据文件最终归宿：`projects/wiki/data/db/`（⚠ 目前未建立）
+- 数据文件最终归宿：`projects/wiki/data/db/`（已建立，characters.json 24/72）
 - 原始数据源：`projects/wiki/data/extracted/categorized/character_data.txt`
 - 新数据文件添加后更新本文件和 `assets/index.md`
 - 角色/系统信息同步更新 `memory/morimens-context.md`
@@ -162,7 +168,7 @@ python scripts/content_db.py
 
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 wiki 子项目当前状态
-- [ ] `ls projects/wiki/data/db/` 校验 characters.json 是否已自举（缺失则回到 Phase 2 路线图）
+- [ ] `ls projects/wiki/data/db/` 校验 characters.json 自举进度（当前 24/72，批 2/3 见本期任务）
 - [ ] 读 `memory/wiki-phase-2-gap-inventory.md` 与 `memory/wiki-characters-schema-v1.md` 了解自举现状
 - [ ] 确认 GitHub Pages 部署状态（最新 Actions 是否成功）
 - [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识

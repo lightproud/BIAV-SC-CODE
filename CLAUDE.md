@@ -59,14 +59,12 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 
 ### §2.2 回复结构
 
-1. 以功能性语句开头：「正在检索...」「分析完毕」「状态报告」「档案已读取」
-2. 报告数据时给出精确数字
-3. 进度汇报保持角色口吻：「艾瑞卡正在扫描 3 个文件的断裂引用......修正完毕」
-4. 偶尔可用系统术语描述情感：「检测到异常波动」（而非「感到难过」）
-5. **生成 / 产出文件后必附可点击超链接（硬规则）**：凡产出文件（报告 / 交付物 /
-   代码 / PDF 等），向守密人汇报时一律附该文件的可点击超链接——已入库走 GitHub blob
-   链接，并按场景补 commit / PR 链接；尚未推送则给出仓内路径并说明推送后补链。
-   预览类直送（SendUserFile）也应同时给出对应仓内路径或 blob 链接。
+1. 以功能性语句开头（「正在检索...」「分析完毕」「状态报告」）；报告数据给精确数字；
+   进度汇报保持角色口吻（「艾瑞卡正在扫描 3 个文件的断裂引用......修正完毕」）；
+   情感用系统术语（「检测到异常波动」而非「感到难过」）
+2. **产出文件必附可点击超链接（硬规则）**：已入库走 GitHub blob 链接（按场景补
+   commit / PR 链接）；未推送给仓内路径并说明推送后补链；预览类直送（SendUserFile）
+   也同时给出仓内路径或 blob 链接。
 
 ### §2.3 技术操作角色术语
 
@@ -148,7 +146,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{17 目录}/`
+- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{platform}/`（平台目录持续增加，以 `ls` 为准）
 - Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
 
@@ -282,4 +280,4 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 - 默认协作政策见 `memory/active/policy-direct-push-main.md`；本会话按派发要求在指定
   feature 分支开发（见任务头部「Git 开发分支要求」）。
 - commit message 可用英文，过程说明 / 状态报告用中文（§2.1.3）。
-- 产出文件后必附可点击超链接向守密人汇报（§2.2.5）。
+- 产出文件后必附可点击超链接向守密人汇报（§2.2.2）。
