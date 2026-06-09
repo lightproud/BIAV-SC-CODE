@@ -1,8 +1,8 @@
 {
   "last_session": {
     "id": "b3870dea",
-    "timestamp": "2026-06-09T22:54:17.720000+00:00",
-    "duration_minutes": 4.2,
+    "timestamp": "2026-06-09T23:04:05.481000+00:00",
+    "duration_minutes": 14.0,
     "branch": "claude/claude-md-docs-ta7stm",
     "topics": [
       "Wiki"
@@ -14,6 +14,20 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "b3870dea",
+      "timestamp": "2026-06-09T22:54:17.720000+00:00",
+      "duration_minutes": 4.2,
+      "branch": "claude/claude-md-docs-ta7stm",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "b481aeb2",
       "timestamp": "2026-06-08T05:31:15.782000+00:00",
@@ -191,50 +205,27 @@
         "/home/user/brain-in-a-vat/CLAUDE.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "a1ba5d67",
-      "timestamp": "2026-06-02T20:42:54.118000+00:00",
-      "duration_minutes": 1063.4,
-      "branch": "claude/inspiring-babbage-we5V8",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract2.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 1.99,
-      "做梦Agent": 1.45,
-      "联动": 0.8
+      "Wiki": 2.59,
+      "做梦Agent": 1.16,
+      "联动": 0.64
     },
     "hot_files": [
+      "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
       "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
       "/home/user/brain-in-a-vat/.github/workflows/collect-fanart.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/test.yml",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601_v2.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_full.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_v2.md",
       "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_period_20260512_0603.md",
-      "/home/user/brain-in-a-vat/scripts/report_render.py",
-      "/root/.claude/plans/calm-dazzling-wirth.md",
-      "/tmp/css_sample.md"
+      "/home/user/brain-in-a-vat/scripts/report_render.py"
     ],
-    "total_sessions": 138
+    "total_sessions": 139
   },
-  "updated_at": "2026-06-09T22:59:24.788724+00:00"
+  "updated_at": "2026-06-09T23:07:30.765288+00:00"
 }
