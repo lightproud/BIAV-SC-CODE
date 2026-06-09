@@ -261,7 +261,7 @@ brain-in-a-vat/
 ├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
-└── .github/workflows/             # 18 个 CI 自动化（见 §8.2）
+└── .github/workflows/             # 19 个 CI 自动化（见 §8.2）
 ```
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
@@ -285,7 +285,8 @@ brain-in-a-vat/
 ### §8.2 CI 自动化（`.github/workflows/`，按职能分组）
 
 - **采集类**：`update-news` / `daily-report`（日报 3 源）/ `discord-archive` /
-  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap`
+  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap` /
+  `collect-comments`（视频评论每日归档）/ `recover-fanart`（刷新 Discord 过期 URL 恢复同人图）
 - **做梦 Agent**：`dream`（哨兵 + 做梦三层）
 - **数据类**：`fetch-wiki-data` / `extract-game-data` / `validate-data` / `check-version`
 - **测试类**：`test`（`pytest tests/`）/ `test-collectors`
@@ -297,7 +298,8 @@ brain-in-a-vat/
 
 - **记忆 / 会话**：`memory_search` / `fact_store` / `silver_memory_tools` /
   `session_inject` / `session_watch` / `session_distiller` / `session_briefing` /
-  `boot_snapshot` / `context_manager` / `reflexion`
+  `boot_snapshot` / `context_manager` / `reflexion` / `session_reflexion` /
+  `knowledge_graph` / `memory_writeback` / `memrl` / `character_persona`
 - **做梦 Agent**：`dream` / `dream_ai` / `dream_rem` / `dream_sentinel` /
   `dream_archive` / `dream_health` / `dream_config` / `dream_io`
 - **解包 / 解析**：`lua_parse` / `parse_*`（voice / awaker / cg / item / collection）/
