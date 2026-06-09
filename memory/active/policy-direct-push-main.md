@@ -1,15 +1,17 @@
 # 直推 main 政策（active hub）
 
+> 注：与 CLAUDE.md §8.6 现行口径存在冲突（本卡：直推 main；§8.6：本会话按派发要求在指定 feature 分支开发），待守密人裁定。
+>
 > 主题入口卡 / Code-memory batch 1 落档 2026-05-03
 > 决策版本号：v1.1（2026-06-03 补网页/远端环境等效执行条款）
 > 上游决策：`memory/decisions.md` 2026-03-29 + 2026-04-26 双条目
-> 工程规则：`CLAUDE.md` §1
+> 工程规则：`CLAUDE.md` §8.6 分支与提交（2026-06-09 修正：原引「§1」对应旧版结构，现行 §1 为项目本质）
 
 ---
 
 ## 一、引文 + 摘要
 
-> 「**所有会话直接推 main**，不用 feature 分支。冲突时 `git pull --rebase origin main` 重试。」（`CLAUDE.md` §1，2026-04-26 落地）
+> 「**所有会话直接推 main**，不用 feature 分支。冲突时 `git pull --rebase origin main` 重试。」（旧版 `CLAUDE.md` §1，2026-04-26 落地；现行 CLAUDE.md 已无此条文，政策源头见 `memory/decisions.md` 2026-03-29 + 2026-04-26 条目）
 
 **一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（主控台 / Code-site / Code-news / Code-wiki / Code-memory / Code-strategy / Code-BPT）的所有 commit 直接推送到 `origin/main`**，不创建 feature 分支、不走 PR / merge 流程，冲突时 `git pull --rebase` 后重推。
 
@@ -52,7 +54,7 @@
 ### 决策与规则源头
 
 - `memory/decisions.md` — 完整决策日志（2026-03-29 / 2026-04-26 直推 main 双条目）
-- `CLAUDE.md` §1 — Git 工作流权威条款（仅 Claude Code 自动加载）
+- `CLAUDE.md` §8.6 分支与提交 — 现行 Git 工作流条款（已无直推 main 条文，默认政策指回本卡；与本卡冲突待守密人裁定）
 - `BIAV-SC.md` §0 / §其他 — 任何 AI 接入银芯的入口
 
 ### 工程基础设施

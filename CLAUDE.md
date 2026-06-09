@@ -149,7 +149,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{17 目录}/`
+- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{18 目录}/`
 - Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
 
@@ -261,7 +261,7 @@ brain-in-a-vat/
 ├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
-└── .github/workflows/             # 18 个 CI 自动化（见 §8.2）
+└── .github/workflows/             # 19 个 CI 自动化（见 §8.2）
 ```
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
@@ -285,7 +285,8 @@ brain-in-a-vat/
 ### §8.2 CI 自动化（`.github/workflows/`，按职能分组）
 
 - **采集类**：`update-news` / `daily-report`（日报 3 源）/ `discord-archive` /
-  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap`
+  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap` /
+  `collect-comments` / `recover-fanart`
 - **做梦 Agent**：`dream`（哨兵 + 做梦三层）
 - **数据类**：`fetch-wiki-data` / `extract-game-data` / `validate-data` / `check-version`
 - **测试类**：`test`（`pytest tests/`）/ `test-collectors`

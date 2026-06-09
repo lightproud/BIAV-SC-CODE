@@ -3,7 +3,7 @@
 > 主题入口卡 / Code-memory batch 1 落档 2026-05-03
 > 决策版本号：v1.0（基于既有 `memory/contribution-protocol.md` 168 行）
 > 上游档案：`memory/contribution-protocol.md`（详细规则正文）
-> 工程规则：`CLAUDE.md` §3 Issue 处理流程
+> 工程规则：`memory/contribution-protocol.md` + `.github/workflows/claude.yml`（2026-06-09 修正：原引「CLAUDE.md §3 Issue 处理流程」对应旧版结构，现行 §3 为接入方能力盘点，Issue 流程条文已不在 CLAUDE.md）
 
 ---
 
@@ -21,7 +21,7 @@
 
 | 规则 | 说明 |
 |---|---|
-| **作者白名单** | **只响应 `author: lightproud` 的 Issue**（`CLAUDE.md` §3 / `claude.yml` workflow 校验）|
+| **作者白名单** | **只响应 `author: lightproud` 的 Issue**（`claude.yml` workflow 以 `github.repository_owner` 校验）|
 | **自动响应** | `claude.yml` 仅在守密人本人创建 Issue 时触发；其他人创建的 Issue **不会**触发任何 AI 自动行为 |
 | **数量上限** | 同一子项目最多 3 个 open Issue |
 | **创建前查重** | 重叠则追加 comment 而非新建 |
@@ -73,9 +73,9 @@
 
 ### 协议源头
 
-- `memory/contribution-protocol.md` — 完整正文 168 行（Issue 模板 / PR 流程 / 多语言贡献 / 数据贡献分类）
-- `CLAUDE.md` §3 — Issue 处理流程权威条款
-- `BIAV-SC.md` — Issue 规则部分（外部 AI 接入入口）
+- `memory/contribution-protocol.md` — 完整正文（Issue 模板 / PR 流程 / 多语言贡献 / 数据贡献分类；Issue 流程权威出处）
+- `.github/workflows/claude.yml` — Issue 自动响应与作者校验实现
+- `BIAV-SC.md` — Issue 规则部分（外部 AI 接入入口；2026-06-09 实测该文件已不在仓库，引用待守密人处置）
 
 ### 配套基础设施
 

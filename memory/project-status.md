@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
+> 最后更新：2026-06-09 by 艾瑞卡（文档同步专项：事实同步修正，依据仓库实测，不改既有结构）
 >
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
@@ -52,7 +52,7 @@
 
 ### 游戏数据集（原 database）
 - **当前状态**（2026-04-20 B3 调研修正）：
-  - **`projects/wiki/data/db/characters.json` 基线尚未建立**（git 历史中无此文件），Phase 2 首要任务是自举基线
+  - **`projects/wiki/data/db/characters.json` 基线已建立**（2026-04-26 Phase 2 W1 自举，当前含 24/72 角色记录；2026-06-09 实测确认存在）
   - 角色真实总数为 **72 角色**（含皮肤/联动/彩蛋），不是 63。来源：`projects/wiki/data/extracted/categorized/character_data.txt`（客户端逆向提取）
   - 数据覆盖度**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
   - 72/72 角色有元数据（EN/JA 描述、获取方式翻译完成），结构化卡牌/技能数据待 Phase 2 从 Fandom 抓取补充
@@ -76,9 +76,8 @@
   - `fetch_stages.py` — 关卡掉落抓取
   - `fetch_wheels.py` — 命轮效果抓取
   - `fetch_lore.py` — 剧情详情抓取
-  - `fetch_voice_lines.py` — 语音台词抓取
-  - `fetch_steam_assets.py` — Steam 公开资产下载
-  - `extract_game_data.py` — Unity 客户端数据解包工具
+  - `extract_client_data.py` — Unity 客户端数据解包工具（UnityPy，提取配置表 / 立绘）
+  - `decrypt_and_extract.py` — 加密 AssetBundle 解密 + 配置数据提取
   - `generate_pages.py` — 自动生成角色详情页（189 页）+ 命轮详情页（165 页）+ 命轮列表页
   - `generate_rss.py` — RSS/Atom 订阅源生成
   - `check_version.py` — 游戏版本更新检测
@@ -109,7 +108,7 @@
   - SEO 优化：Schema.org JSON-LD、OG 社交分享图、sitemap、robots.txt
   - RSS/Atom 订阅源
   - 贡献指南 contributing.md
-- **技术栈**：VitePress 1.6.4 + Vue 3.5.13
+- **技术栈**：VitePress 1.6.3 + Vue 3.5.35（与 `projects/wiki/package.json` 对齐）
 - **部署**：由 Code-site 统一管理（deploy-site.yml），wiki 位于 /wiki/ 子路径
 - **已修复问题**（2026-03-30）：
   - `cleanUrls: false` — GitHub Pages 不支持无扩展名 URL 重写
@@ -129,7 +128,7 @@
 
 - Phase 0（止血）：✅ 完成
 - Stage 1 验证（日报 14 天）：✅ 制作人确认通过
-- 事实圣经 v1.0：✅ 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策
+- 事实圣经 v0.9：72 角色口径（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策（2026-06-09 修正：`assets/data/VERSION.md` 自述当前版本为 v0.9，v1.0 标准未达成，原「v1.0 ✅」与之不符）
 - 记忆系统 9 模块：✅ 全部上线（3410 行新代码）
 - 做梦 Agent 三层：✅ 全部启动（浅睡6h + 深睡每日 + REM每周）
 
@@ -141,7 +140,7 @@
 
 | Workflow | 频率 | 状态 |
 |----------|------|------|
-| update-news.yml | 每日 2 次（06:00/16:00 UTC） | 运行中 |
+| update-news.yml | 每小时（cron `0 * * * *`） | 运行中 |
 | discord-archive.yml | 每日 1 次（18:00 UTC） | 运行中 |
 | deploy-site.yml | push 触发 | 运行中 |
 | fetch-wiki-data.yml | 每周一 | 运行中 |
@@ -151,7 +150,6 @@
 | dream.yml（深睡） | 每日 19:00 UTC | ✅ 运行中（2026-04-04 启用） |
 | dream.yml（REM） | 每周一 01:00 UTC | ✅ 运行中（2026-04-04 启用） |
 | claude.yml | Issue 触发 | ✅ 可用（API 已恢复） |
-| generate-report.yml | **已暂停** | secrets 未配 |
 | extract-game-data.yml | **已暂停** | Steam 认证未通 |
 
 ## 基础设施状态
