@@ -1,11 +1,11 @@
 {
   "date": "2026-06-05",
-  "messages": 29149,
+  "messages": 31426,
   "unique_authors": 559,
-  "reactions_total": 3207,
-  "attachments": 1573,
+  "reactions_total": 3302,
+  "attachments": 1647,
   "channel_activity": {
-    "🔸general-chat": 1945,
+    "🔸general-chat": 4222,
     "🔸game-question": 8923,
     "🔸綜合討論": 4355,
     "🔸交友频道": 6,
@@ -103,6 +103,14 @@
     "1512469873807065129": 2
   },
   "hourly_activity": {
+    "16": 1328,
+    "17": 938,
+    "18": 1357,
+    "19": 1017,
+    "20": 573,
+    "21": 577,
+    "22": 893,
+    "23": 601,
     "0": 871,
     "1": 1169,
     "2": 1491,
@@ -118,19 +126,11 @@
     "12": 1107,
     "13": 1590,
     "14": 1988,
-    "15": 973,
-    "16": 908,
-    "17": 760,
-    "18": 848,
-    "19": 700,
-    "20": 440,
-    "21": 280,
-    "22": 545,
-    "23": 526
+    "15": 973
   },
   "message_types": {
-    "19": 415,
-    "0": 1530
+    "19": 718,
+    "0": 1559
   },
   "top_reacted_messages": [
     {
@@ -270,28 +270,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1512495023663481013",
+      "channel_id": "1400750050208125010",
+      "content": "Cro don't listen to them I'm ur biggest crofan",
+      "author": "altair_kaslana",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1512533562941903049",
+      "channel_id": "1400750050208125010",
+      "content": "Kill all gachas",
+      "author": "altair_kaslana",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1512274174880514128",
       "channel_id": "1400750050208125010",
       "content": "first triple pull",
       "author": "styrrrrrr",
       "reactions": 7,
       "channel": "🔸general-chat"
-    },
-    {
-      "id": "1512412262235639818",
-      "channel_id": "1433513650299076780",
-      "content": "It becomes a problem only when that certain agenda is pushed onto beginners. Try",
-      "author": "eury_illia",
-      "reactions": 7,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1512319460323889173",
-      "channel_id": "1433513650299076780",
-      "content": "This is the start of most battles stages",
-      "author": "angbak",
-      "reactions": 6,
-      "channel": "🔸game-question"
     }
   ]
 }

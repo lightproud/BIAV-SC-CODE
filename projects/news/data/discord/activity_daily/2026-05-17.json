@@ -1,11 +1,11 @@
 {
   "date": "2026-05-17",
-  "messages": 20229,
+  "messages": 25229,
   "unique_authors": 504,
-  "reactions_total": 3331,
-  "attachments": 841,
+  "reactions_total": 3939,
+  "attachments": 1030,
   "channel_activity": {
-    "🔸morimens-game-chat": 2363,
+    "🔸morimens-game-chat": 7363,
     "🔸綜合討論": 5463,
     "🔸阵容构建": 91,
     "🔸晒卡分享": 9,
@@ -75,11 +75,20 @@
     "1505471002505646140": 1
   },
   "hourly_activity": {
+    "4": 1643,
+    "5": 1658,
+    "6": 1139,
+    "7": 1035,
+    "8": 1075,
+    "9": 1393,
+    "10": 1741,
+    "11": 1210,
+    "12": 1160,
+    "13": 1458,
     "0": 1246,
     "1": 879,
     "2": 844,
     "3": 1500,
-    "4": 972,
     "17": 1267,
     "18": 1050,
     "19": 933,
@@ -87,23 +96,13 @@
     "21": 235,
     "23": 322,
     "22": 368,
-    "5": 1121,
-    "6": 356,
-    "7": 493,
-    "8": 481,
-    "9": 937,
-    "10": 1154,
-    "11": 1025,
-    "12": 641,
-    "13": 1332,
     "14": 932,
     "15": 733,
     "16": 871
   },
   "message_types": {
-    "0": 1414,
-    "19": 947,
-    "20": 2
+    "0": 2691,
+    "19": 2309
   },
   "top_reacted_messages": [
     {
@@ -195,6 +194,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1505505453558464654",
+      "channel_id": "1170692781216378960",
+      "content": "Elite is losing his mind",
+      "author": "sirtealot",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1505673855862309055",
       "channel_id": "1505167541818101862",
       "content": "Everytimes i turn around, the copy pasta becomes longer and longer <:takenotes:1",
@@ -255,14 +262,6 @@
       "channel_id": "1505167541818101862",
       "content": "# 取消300抽加三圍\n# Cancel 300 normal pull for stats\n# 要求新系統提供更高的三圍 (67% up)\n# Demand ",
       "author": "puro9877",
-      "reactions": 12,
-      "channel": "V2.5.1.0 停服维护公告"
-    },
-    {
-      "id": "1505505766491164762",
-      "channel_id": "1505167541818101862",
-      "content": "？！67！？",
-      "author": "yang015148",
       "reactions": 12,
       "channel": "V2.5.1.0 停服维护公告"
     }
