@@ -161,7 +161,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/decisions.md` | 决策日志（最高权威）|
 | `memory/strategic-plan-2026.md` | 战略规划 |
 | `memory/methodology.md` | 协作方法论 |
-| `memory/lessons-learned.md` | 33 条踩坑（持续追加，以文件最新为准）|
+| `memory/lessons-learned.md` | 踩坑记录（持续追加编号，条数以文件最新为准）|
 | `memory/contribution-protocol.md` | 贡献协议 v1.0 |
 | `memory/style-guide.md` | 视觉规范 |
 | `assets/data/VERSION.md` | 事实圣经版本 |
@@ -261,7 +261,7 @@ brain-in-a-vat/
 ├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
-└── .github/workflows/             # 19 个 CI 自动化（见 §8.2）
+└── .github/workflows/             # CI 自动化（见 §8.2）
 ```
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
@@ -284,30 +284,30 @@ brain-in-a-vat/
 
 ### §8.2 CI 自动化（`.github/workflows/`，按职能分组）
 
-- **采集类**：`update-news` / `daily-report`（日报 3 源）/ `discord-archive` /
-  `discord-history-backfill` / `backfill-news` / `backfill-media` / `backfill-gap` /
-  `collect-comments`（视频评论每日归档）/ `recover-fanart`（刷新 Discord 过期 URL 恢复同人图）
+- **采集类**：新闻 / Discord / 视频评论 / 同人图的定时采集与回填（`update-news` /
+  `daily-report`（日报 3 源）/ `discord-*` / `backfill-*` / `collect-*` / `recover-*`）
 - **做梦 Agent**：`dream`（哨兵 + 做梦三层）
-- **数据类**：`fetch-wiki-data` / `extract-game-data` / `validate-data` / `check-version`
+- **数据类**：wiki 数据抓取 / 游戏解包 / 数据校验 / 版本检测（`fetch-*` / `extract-*` /
+  `validate-data` / `check-version`）
 - **测试类**：`test`（`pytest tests/`）/ `test-collectors`
 - **部署 / 运维**：`deploy-site`（site 静态部署）/ `cleanup-stale-branches` / `claude`
 
+工作流持续增减，精确清单以 `ls .github/workflows/` 为准，本档案不维护逐名枚举。
 机器提交以 `[skip ci]` 后缀避免触发循环（见 git log 中 `chore:` 系列）。
 
 ### §8.3 脚本层（`scripts/`）
 
-- **记忆 / 会话**：`memory_search` / `fact_store` / `silver_memory_tools` /
-  `session_inject` / `session_watch` / `session_distiller` / `session_briefing` /
-  `boot_snapshot` / `context_manager` / `reflexion` / `session_reflexion` /
-  `knowledge_graph` / `memory_writeback` / `memrl` / `character_persona`
-- **做梦 Agent**：`dream` / `dream_ai` / `dream_rem` / `dream_sentinel` /
-  `dream_archive` / `dream_health` / `dream_config` / `dream_io`
+按命名约定分四类，精确清单以 `ls scripts/` 为准：
+
+- **记忆 / 会话**：`memory_*` / `session_*` / `memrl` / `fact_store` / `knowledge_graph` /
+  `reflexion` / `boot_snapshot` / `context_manager` / `character_persona` 等
+- **做梦 Agent**：`dream_*`
 - **解包 / 解析**：`lua_parse` / `parse_*`（voice / awaker / cg / item / collection）/
   `extract_art` / `generate_wiki_pages`
 - **运营**：`report_render` / `send_report_email` / `mcp_server`（MCP 知识层服务端）
 
-`projects/news/scripts/` 为采集器层：`aggregator*` / `collect_global` /
-`discord_archiver` / `*_collectors` / `archive_*` / `backfill_*` / `data_quality` 等。
+`projects/news/scripts/` 为采集器层：`aggregator*` / `collect_*` / `archive_*` /
+`backfill_*` / `*_collectors` / `data_quality` 等。
 
 ### §8.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
 
