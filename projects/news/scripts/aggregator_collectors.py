@@ -19,6 +19,7 @@ from aggregator_base import (
     BILIBILI_MORIMENS_CREATORS, COLLAB_KEYWORDS, HOURS_LOOKBACK,
     MAX_ITEMS_PER_FETCHER, REPO_ROOT, logger, strip_html_tags,
 )
+import news_common  # 脱敏 + 时间归一单一真源（H3/H4；aggregator_base 已设 sys.path）
 
 
 def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10) -> list[dict]:
@@ -1057,46 +1058,11 @@ def fetch_steam_discussions():
 def _parse_yt_relative_time(text):
     """Parse YouTube relative time strings like '2 days ago' into ISO datetime.
 
-    Returns (iso_string, is_approximate) tuple. The time is approximate because
-    it's derived from relative text. Returns (now_iso, True) if parsing fails.
+    Returns (iso_string, is_approximate) tuple. 解析委托
+    news_common.parse_relative_time（H4 收敛）；YouTube 网页相对时间精度有限，
+    一律标记 is_approximate=True（保持原行为）。
     """
-    now = datetime.now(timezone.utc)
-    if not text:
-        return now.isoformat(), True
-    text_lower = text.lower().strip()
-    # Match patterns like "2 days ago", "1 hour ago", "3 weeks ago", etc.
-    m = re.match(r'(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
-    if m:
-        num = int(m.group(1))
-        unit = m.group(2)
-        delta_map = {
-            'second': timedelta(seconds=num),
-            'minute': timedelta(minutes=num),
-            'hour': timedelta(hours=num),
-            'day': timedelta(days=num),
-            'week': timedelta(weeks=num),
-            'month': timedelta(days=num * 30),
-            'year': timedelta(days=num * 365),
-        }
-        delta = delta_map.get(unit, timedelta())
-        return (now - delta).isoformat(), True
-    # "Streamed X ago" variant
-    m = re.match(r'streamed\s+(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
-    if m:
-        num = int(m.group(1))
-        unit = m.group(2)
-        delta_map = {
-            'second': timedelta(seconds=num),
-            'minute': timedelta(minutes=num),
-            'hour': timedelta(hours=num),
-            'day': timedelta(days=num),
-            'week': timedelta(weeks=num),
-            'month': timedelta(days=num * 30),
-            'year': timedelta(days=num * 365),
-        }
-        delta = delta_map.get(unit, timedelta())
-        return (now - delta).isoformat(), True
-    return now.isoformat(), True
+    return news_common.parse_relative_time(text)[0], True
 
 
 def _fetch_youtube_web_search():
@@ -1362,7 +1328,8 @@ def fetch_youtube():
                     items.append(yt_item)
                 logger.info(f'YouTube API "{keyword}": {len(items)} videos')
             except Exception as e:
-                logger.warning(f'YouTube API "{keyword}" failed: {e}')
+                # H3: 异常文本含完整请求 URL（key=<API key>），脱敏后再进公开日志
+                logger.warning(f'YouTube API "{keyword}" failed: {news_common.redact_secrets(e)}')
     else:
         logger.info('YouTube: no API key, trying RSS fallback for known channels')
 

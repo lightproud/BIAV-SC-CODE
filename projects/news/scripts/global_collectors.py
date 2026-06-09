@@ -353,7 +353,8 @@ def fetch_youtube():
 
             logger.info(f'YouTube "{keyword}": {len(items)} videos')
         except Exception as e:
-            logger.warning(f'YouTube "{keyword}" failed: {e}')
+            # H3: 异常文本含完整请求 URL（key=<API key>），脱敏后再进公开日志
+            logger.warning(f'YouTube "{keyword}" failed: {news_common.redact_secrets(e)}')
 
     return items
 
@@ -516,63 +517,27 @@ def _parse_weibo_time(created_str):
     - "yyyy-MM-DD" (standard date)
 
     Returns (iso_string, is_approximate) tuple.
+
+    微博特有格式（"昨天 HH:MM"、"Wed Jan 01 00:00:00 +0800 2025"）在此先行解析，
+    其余通用相对/绝对格式委托 news_common.parse_relative_time（H4 收敛）。
     """
-    now = datetime.now(timezone.utc)
-    if not created_str or not created_str.strip():
-        return now.isoformat(), True
+    s = (created_str or "").strip()
+    if s:
+        # "昨天 HH:MM" = yesterday HH:MM（精确到分钟，通用函数只到天级）
+        m = re.match(r"昨天\s*(\d{1,2}):(\d{2})", s)
+        if m:
+            yesterday = datetime.now(timezone.utc) - timedelta(days=1)
+            dt = yesterday.replace(hour=int(m.group(1)), minute=int(m.group(2)), second=0, microsecond=0)
+            return dt.isoformat(), False
 
-    s = created_str.strip()
-
-    # "刚刚" = just now
-    if s == "刚刚":
-        return now.isoformat(), False
-
-    # "x分钟前" = x minutes ago
-    m = re.match(r"(\d+)\s*分钟前", s)
-    if m:
-        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
-
-    # "x小时前" = x hours ago
-    m = re.match(r"(\d+)\s*小时前", s)
-    if m:
-        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
-
-    # "昨天 HH:MM" = yesterday HH:MM
-    m = re.match(r"昨天\s*(\d{1,2}):(\d{2})", s)
-    if m:
-        yesterday = now - timedelta(days=1)
-        dt = yesterday.replace(hour=int(m.group(1)), minute=int(m.group(2)), second=0, microsecond=0)
-        return dt.isoformat(), False
-
-    # "MM-DD" = month-day, assume current year
-    m = re.match(r"(\d{1,2})-(\d{1,2})$", s)
-    if m:
-        month, day = int(m.group(1)), int(m.group(2))
+        # Full date format: "Wed Jan 01 00:00:00 +0800 2025"
         try:
-            dt = now.replace(month=month, day=day, hour=0, minute=0, second=0, microsecond=0)
-            if dt > now:
-                dt = dt.replace(year=dt.year - 1)
+            dt = datetime.strptime(s, "%a %b %d %H:%M:%S %z %Y")
             return dt.isoformat(), False
         except ValueError:
             pass
 
-    # Full date format: "Wed Jan 01 00:00:00 +0800 2025"
-    try:
-        dt = datetime.strptime(s, "%a %b %d %H:%M:%S %z %Y")
-        return dt.isoformat(), False
-    except ValueError:
-        pass
-
-    # "yyyy-MM-DD" standard date
-    m = re.match(r"(\d{4})-(\d{1,2})-(\d{1,2})", s)
-    if m:
-        try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-
-    return now.isoformat(), True
+    return news_common.parse_relative_time(s)
 
 
 def fetch_weibo():
@@ -647,18 +612,21 @@ def fetch_naver_cafe():
             for article in article_list:
                 if not isinstance(article, dict):
                     continue
+                # H4: writeDateTimestamp 为 epoch 数字，归一为 ISO，否则被 _is_recent 静默丢弃
+                naver_time, naver_approx = news_common.parse_relative_time(
+                    article.get("writeDateTimestamp"))
                 items.append(_make_item(
                     title=article.get("subject", ""),
                     summary=article.get("summary", ""),
                     source="naver_cafe",
                     platform_region="kr",
-                    time_str=article.get("writeDateTimestamp") or datetime.now(timezone.utc).isoformat(),
+                    time_str=naver_time,
                     url=article.get("articleUrl", ""),
                     engagement=article.get("readCount", 0) + article.get("commentCount", 0),
                     is_hot=article.get("readCount", 0) > 500,
                     author=article.get("writerNickName", ""),
                     lang="ko",
-                    time_is_approximate=not article.get("writeDateTimestamp"),
+                    time_is_approximate=naver_approx,
                 ))
 
             logger.info(f'Naver Cafe "{keyword}": {len(items)} articles')
@@ -698,17 +666,20 @@ def fetch_arca_live():
                 title = title.strip()
                 if not title:
                     continue
+                # H4: col-time 为 "HH:MM"/"MM.DD"/"YYYY.MM.DD" 原文，归一为 ISO
+                arca_time, arca_approx = news_common.parse_relative_time(time_text)
                 items.append(_make_item(
                     title=title,
                     summary="",
                     source="arca_live",
                     platform_region="kr",
-                    time_str=time_text.strip(),
+                    time_str=arca_time,
                     url=f"https://arca.live{path}",
                     engagement=0,
                     is_hot=(mode == "best"),
                     author="",
                     lang="ko",
+                    time_is_approximate=arca_approx,
                 ))
 
             logger.info(f'Arca.live "{arca_channel}" mode={mode or "latest"}: {len(items)} items')
@@ -1039,19 +1010,21 @@ def fetch_zhihu():
                         else:
                             url = content_url
 
-                        zhihu_time = target.get("created_time") or target.get("updated_time")
+                        # H4: created_time/updated_time 为 epoch 秒，归一为 ISO
+                        zhihu_time, zhihu_approx = news_common.parse_relative_time(
+                            target.get("created_time") or target.get("updated_time"))
                         items.append(_make_item(
                             title=_strip_html(title),
                             summary=_strip_html(excerpt),
                             source="zhihu",
                             platform_region="cn",
-                            time_str=zhihu_time or datetime.now(timezone.utc).isoformat(),
+                            time_str=zhihu_time,
                             url=url,
                             engagement=voteup + comment,
                             is_hot=voteup > 100,
                             author=target.get("author", {}).get("name", ""),
                             lang="zh",
-                            time_is_approximate=not zhihu_time,
+                            time_is_approximate=zhihu_approx,
                         ))
                 except (ValueError, KeyError):
                     pass
@@ -1081,12 +1054,14 @@ def fetch_bahamut():
                     for thread in result.get("data", {}).get("list", []) or []:
                         gp = int(thread.get("gp", 0))
                         reply = int(thread.get("reply", 0))
+                        # H4: ctime 为站方原文（日期/相对时间），归一为 ISO
+                        baha_time, baha_approx = news_common.parse_relative_time(thread.get("ctime"))
                         items.append(_make_item(
                             title=thread.get("title", ""),
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
+                            time_str=baha_time,
                             url=f"https://forum.gamer.com.tw/C.php?bsn={baha_bsn}&snA={thread.get('snA', '')}",
                             engagement=gp + reply,
                             is_hot=gp > 50,
@@ -1120,18 +1095,20 @@ def fetch_bahamut():
                     for thread in result.get("data", {}).get("list", []) or []:
                         gp = int(thread.get("gp", 0))
                         reply = int(thread.get("reply", 0))
+                        # H4: ctime 为站方原文（日期/相对时间），归一为 ISO
+                        baha_time, baha_approx = news_common.parse_relative_time(thread.get("ctime"))
                         items.append(_make_item(
                             title=thread.get("title", ""),
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
+                            time_str=baha_time,
                             url=thread.get("url", ""),
                             engagement=gp + reply,
                             is_hot=gp > 50,
                             author=thread.get("nick", ""),
                             lang="zh",
-                            time_is_approximate=not thread.get("ctime"),
+                            time_is_approximate=baha_approx,
                         ))
                 except (ValueError, KeyError):
                     # HTML fallback: parse search result page

@@ -14,10 +14,14 @@ Usage:
 
 import json
 import logging
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 from collections import defaultdict
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 落盘脱敏单一真源（H3）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -214,7 +218,8 @@ class SilentPlatformTracker:
         if error:
             p['errors'].append({
                 'date': today,
-                'error': error[:200],  # 截断
+                # H3: source-health.json 会提交进 git，错误文本先脱敏再截断
+                'error': news_common.redact_secrets(error)[:200],
             })
             # 只保留最近 10 条错误
             p['errors'] = p['errors'][-10:]
