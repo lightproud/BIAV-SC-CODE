@@ -1,8 +1,8 @@
 {
   "last_session": {
     "id": "38a46420",
-    "timestamp": "2026-06-09T23:44:37.517000+00:00",
-    "duration_minutes": 32.9,
+    "timestamp": "2026-06-09T23:45:03.459000+00:00",
+    "duration_minutes": 33.3,
     "branch": "claude/dynamic-orchestration-review-u45up8",
     "topics": [
       "Wiki"
@@ -14,6 +14,20 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "38a46420",
+      "timestamp": "2026-06-09T23:44:37.517000+00:00",
+      "duration_minutes": 32.9,
+      "branch": "claude/dynamic-orchestration-review-u45up8",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/deliverables/2026-06/repo-wide-orchestrated-review-20260609.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "38a46420",
       "timestamp": "2026-06-09T23:24:12.063000+00:00",
@@ -191,41 +205,18 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "b183df5f",
-      "timestamp": "2026-06-02T21:31:00.689000+00:00",
-      "duration_minutes": 5.2,
-      "branch": "claude/claude-md-docs-QHD4B",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 2.59,
-      "做梦Agent": 1.16,
-      "联动": 0.64
+      "Wiki": 3.07,
+      "做梦Agent": 0.93,
+      "联动": 0.51
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-wide-orchestrated-review-20260609.md",
-      "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
-      "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/collect-fanart.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/test.yml",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601_v2.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_full.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_v2.md",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_period_20260512_0603.md",
-      "/home/user/brain-in-a-vat/scripts/report_render.py"
+      "/home/user/brain-in-a-vat/deliverables/2026-06/repo-wide-orchestrated-review-20260609.md"
     ],
-    "total_sessions": 139
+    "total_sessions": 140
   },
-  "updated_at": "2026-06-09T23:44:43.694977+00:00"
+  "updated_at": "2026-06-09T23:50:40.671020+00:00"
 }
