@@ -1,6 +1,6 @@
 ---
 title: 宁菲亚 | Morimens Wiki
-description: Full profile of 宁菲亚 (宁菲亚), a Chaos Attack in Morimens
+description: Full profile of 宁菲亚 in Morimens
 portrait: /portraits/nymphia.png
 pageClass: character-page
 ---

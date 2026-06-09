@@ -44,18 +44,9 @@ EQUIPMENT_JSON = DATA_DIR / "equipment.json"
 # i18n labels (only needed for SEO title/description)
 # ---------------------------------------------------------------------------
 LABELS: dict[str, dict[str, str]] = {
-    "zh": {
-        "title_suffix": "忘却前夜 Wiki",
-        "description_tpl": "{name}（{name_en}）{realm}属性{role}角色详细资料",
-    },
-    "en": {
-        "title_suffix": "Morimens Wiki",
-        "description_tpl": "Full profile of {name_en} ({name}), a {realm} {role} in Morimens",
-    },
-    "ja": {
-        "title_suffix": "忘却前夜 Wiki",
-        "description_tpl": "{name}（{name_en}）{realm}属性{role}キャラクター詳細",
-    },
+    "zh": {"title_suffix": "忘却前夜 Wiki"},
+    "en": {"title_suffix": "Morimens Wiki"},
+    "ja": {"title_suffix": "忘却前夜 Wiki"},
 }
 
 REALM_NAMES: dict[str, dict[str, str]] = {
@@ -111,18 +102,35 @@ def generate_character_page(char: dict, lang: str) -> str:
     slug = char.get("slug") or cid
     # Current data shape uses name_zh; legacy uses name. Support both.
     name = char.get("name_zh") or char.get("name") or slug
-    name_en = char.get("name_en") or name
-    realm_key = char.get("realm") or "chaos"
-    role_key = char.get("role") or "attack"
+    # Null fields are omitted from output rather than filled with defaults,
+    # so stub characters don't get fabricated realm/role/name_en text.
+    name_en = char.get("name_en")
+    realm_key = char.get("realm")
+    role_key = char.get("role")
 
-    realm_display = REALM_NAMES[lang].get(realm_key, realm_key)
-    role_display = ROLE_NAMES[lang].get(role_key, role_key)
+    realm_display = REALM_NAMES[lang].get(realm_key, realm_key) if realm_key else None
+    role_display = ROLE_NAMES[lang].get(role_key, role_key) if role_key else None
 
     # SEO metadata
-    desc_text = L["description_tpl"].format(
-        name=name, name_en=name_en, realm=realm_display, role=role_display
-    )
-    title_name = name_en if lang == "en" else name
+    if lang == "en":
+        subject = name_en or name
+        desc_text = f"Full profile of {subject}"
+        if name_en:
+            desc_text += f" ({name})"
+        attrs = " ".join(p for p in (realm_display, role_display) if p)
+        if attrs:
+            desc_text += f", a {attrs}"
+        desc_text += " in Morimens"
+    else:
+        desc_text = name
+        if name_en:
+            desc_text += f"（{name_en}）"
+        if realm_display:
+            desc_text += f"{realm_display}属性"
+        if role_display:
+            desc_text += role_display
+        desc_text += "角色详细资料" if lang == "zh" else "キャラクター詳細"
+    title_name = (name_en or name) if lang == "en" else name
     title_val = f"{title_name} | {L['title_suffix']}"
 
     frontmatter = {

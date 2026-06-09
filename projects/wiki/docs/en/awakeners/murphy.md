@@ -1,6 +1,6 @@
 ---
 title: 墨菲 | Morimens Wiki
-description: Full profile of 墨菲 (墨菲), a Chaos Attack in Morimens
+description: Full profile of 墨菲 in Morimens
 portrait: /portraits/murphy.png
 pageClass: character-page
 ---

@@ -1,6 +1,6 @@
 ---
 title: 戈利亚 | Morimens Wiki
-description: Full profile of 戈利亚 (戈利亚), a Chaos Attack in Morimens
+description: Full profile of 戈利亚 in Morimens
 portrait: /portraits/goliath.png
 pageClass: character-page
 ---

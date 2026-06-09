@@ -1,6 +1,6 @@
 ---
 title: 宁菲亚 | 忘却前夜 Wiki
-description: 宁菲亚（宁菲亚）混沌属性攻撃型キャラクター詳細
+description: 宁菲亚キャラクター詳細
 portrait: /portraits/nymphia.png
 pageClass: character-page
 ---

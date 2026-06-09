@@ -40,12 +40,12 @@ Code-wiki
   - `build_drop_index.py` → 写入 `data/processed/drops_by_item.json`（当前 0 stage 扫描，db/stages.json 待 Phase 3 填）
   - `build_banner_character_index.py` → 写入 `data/processed/banners_by_character.json`（已匹配 41/366 banner，6/24 角色）
 - **校验升级**：
-  - CI 校验（`scripts/validate_data.py`）：注册 4 份新 schema，缺失文件改 SKIP（修复历史 CI 红：meta.json/realms.json 从未存在）
+  - CI 校验（`scripts/validate_data.py`）：注册 4 份新 schema，缺失文件改 SKIP（修复当时 CI 红：彼时 meta.json/realms.json 缺失；2026-06-09 实测 `data/db/realms.json` 现已存在，meta.json 仍缺）
   - fact-bible 校验（`assets/data/validate.py`）：从 7 项扩至 13 项（schema 形态一致性 + 神器/卡池/掉落/skills 缺口基线）
 - **CI workflow**：`.github/workflows/validate-data.yml` 路径已覆盖 `projects/wiki/data/**`，无需改动
 
 **当前缺口基线**（fact-bible audit 报表）：
-- 角色总数 24/63（差 39）
+- 角色总数 24/72（差 48）
 - skills 非 pending 率 0/24
 - 神器 effect / 卡池数值化 / 关卡反向索引 三项均为「空 stub 待填」基线
 
@@ -66,8 +66,7 @@ Code-wiki
 ## 项目包含两部分
 
 ### 1. 游戏数据集（原 database 子项目）
-- **数据文件**：`data/db/characters.json` 尚未建立，Phase 2 开工需先自举（参考 `assets/data/character_data.txt` 解析）。真实角色总数 72（含皮肤/联动/彩蛋）
-- **查询模块**：`scripts/content_db.py`，Python 接口
+- **数据文件**：`data/db/characters.json` 已建立（2026-04-26 批 1 自举，当前 24/72 角色，自举数据源 `projects/wiki/data/extracted/categorized/character_data.txt`）。真实角色总数 72（含皮肤/联动/彩蛋）
 - **数据来源**：GameKee wiki、Fandom Sialia、Gamerch JP
 - **存储格式**：JSON
 
@@ -80,7 +79,7 @@ Code-wiki
 - `data/extracted/` — 客户端解包原始数据（Lua 表、角色字段、美术清单）
 - `data/processed/` — 加工过的 JSON 数据（CG 画廊 / 物品故事 / 语音台词 / 世界观）
 - `data/schemas/` — 数据 schema 定义（characters / meta / realms）
-- `data/db/` — ⚠ **尚未建立**，Phase 2 W1 待自举 `characters.json`
+- `data/db/` — 已建立（6 个 json：characters / trinkets / banners / stages / items / realms；characters.json 当前 24/72）
 - `scripts/` — 数据抓取与处理脚本（Python）
 - `docs/` — VitePress 源文件（Markdown 页面，含 zh/en/ja 子目录）
 - `docs/.vitepress/` — VitePress 配置和主题
@@ -94,8 +93,8 @@ npm run dev         # 本地开发
 npm run docs:build  # 构建
 npm run preview     # 预览构建结果
 
-# 数据查询
-python scripts/content_db.py
+# 数据校验
+python scripts/validate_data.py
 ```
 
 ## 本期任务（Phase 2 银芯三新使命建设期，2026-04-27 ~ 07-19，84 天）
@@ -151,7 +150,7 @@ python scripts/content_db.py
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`
-- 数据文件最终归宿：`projects/wiki/data/db/`（⚠ 目前未建立）
+- 数据文件最终归宿：`projects/wiki/data/db/`（已建立，characters.json 当前 24/72）
 - 原始数据源：`projects/wiki/data/extracted/categorized/character_data.txt`
 - 新数据文件添加后更新本文件和 `assets/index.md`
 - 角色/系统信息同步更新 `memory/morimens-context.md`

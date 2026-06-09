@@ -1,6 +1,6 @@
 ---
 title: 珈伦 | Morimens Wiki
-description: Full profile of 珈伦 (珈伦), a Chaos Attack in Morimens
+description: Full profile of 珈伦 in Morimens
 portrait: /portraits/garen.png
 pageClass: character-page
 ---

@@ -1,6 +1,6 @@
 ---
 title: 莉莉 | Morimens Wiki
-description: Full profile of 莉莉 (莉莉), a Chaos Attack in Morimens
+description: Full profile of 莉莉 in Morimens
 portrait: /portraits/lily.png
 pageClass: character-page
 ---

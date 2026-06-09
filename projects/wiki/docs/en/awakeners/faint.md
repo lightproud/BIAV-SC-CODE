@@ -1,6 +1,6 @@
 ---
 title: 菲茵特 | Morimens Wiki
-description: Full profile of 菲茵特 (菲茵特), a Chaos Attack in Morimens
+description: Full profile of 菲茵特 in Morimens
 portrait: /portraits/faint.png
 pageClass: character-page
 ---

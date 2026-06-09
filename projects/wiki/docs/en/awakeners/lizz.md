@@ -1,6 +1,6 @@
 ---
 title: 莉兹 | Morimens Wiki
-description: Full profile of 莉兹 (莉兹), a Chaos Attack in Morimens
+description: Full profile of 莉兹 in Morimens
 portrait: /portraits/lizz.png
 pageClass: character-page
 ---
