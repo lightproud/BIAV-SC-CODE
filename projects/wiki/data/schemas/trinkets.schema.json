@@ -50,6 +50,7 @@
         "id",
         "name",
         "rarity",
+        "effect",
         "obtain",
         "icon_url",
         "last_verified"
