@@ -1,19 +1,34 @@
 {
   "last_session": {
-    "id": "b3870dea",
-    "timestamp": "2026-06-09T23:12:09.856000+00:00",
-    "duration_minutes": 22.1,
-    "branch": "claude/claude-md-docs-ta7stm",
-    "topics": [
-      "Wiki"
+    "id": "d384f7cb",
+    "timestamp": "2026-06-10T00:40:35.707000+00:00",
+    "duration_minutes": 9247.9,
+    "branch": "claude/kind-meitner-xyX97",
+    "topics": [],
+    "decisions": [
+      "规定如何落盘。按守密人硬约束（§6.1 动手前先想），先报告排查结果"
     ],
-    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/CLAUDE.md"
+      "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/news/GLOBAL_COLLECTION_SPEC.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "b3870dea",
+      "timestamp": "2026-06-09T23:12:09.856000+00:00",
+      "duration_minutes": 22.1,
+      "branch": "claude/claude-md-docs-ta7stm",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "b3870dea",
       "timestamp": "2026-06-09T23:04:05.481000+00:00",
@@ -180,43 +195,18 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "f64330ef",
-      "timestamp": "2026-06-03T01:36:01.406000+00:00",
-      "duration_minutes": 1356.5,
-      "branch": "claude/fanart-window",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/recover-fanart.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_window_20260602.md",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract2.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 3.07,
-      "做梦Agent": 0.93,
-      "联动": 0.51
+      "Wiki": 2.46,
+      "做梦Agent": 0.74,
+      "联动": 0.41
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md"
     ],
-    "total_sessions": 140
+    "total_sessions": 141
   },
-  "updated_at": "2026-06-09T23:16:39.258944+00:00"
+  "updated_at": "2026-06-10T00:46:05.408382+00:00"
 }
