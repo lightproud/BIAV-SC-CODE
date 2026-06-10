@@ -1,11 +1,11 @@
 {
   "date": "2026-05-17",
-  "messages": 25229,
+  "messages": 30229,
   "unique_authors": 504,
-  "reactions_total": 3939,
-  "attachments": 1030,
+  "reactions_total": 4604,
+  "attachments": 1260,
   "channel_activity": {
-    "🔸morimens-game-chat": 7363,
+    "🔸morimens-game-chat": 12363,
     "🔸綜合討論": 5463,
     "🔸阵容构建": 91,
     "🔸晒卡分享": 9,
@@ -75,6 +75,14 @@
     "1505471002505646140": 1
   },
   "hourly_activity": {
+    "13": 2004,
+    "14": 1518,
+    "15": 1269,
+    "16": 1849,
+    "17": 2244,
+    "18": 1671,
+    "19": 1519,
+    "20": 707,
     "4": 1643,
     "5": 1658,
     "6": 1139,
@@ -84,25 +92,18 @@
     "10": 1741,
     "11": 1210,
     "12": 1160,
-    "13": 1458,
     "0": 1246,
     "1": 879,
     "2": 844,
     "3": 1500,
-    "17": 1267,
-    "18": 1050,
-    "19": 933,
-    "20": 537,
     "21": 235,
     "23": 322,
-    "22": 368,
-    "14": 932,
-    "15": 733,
-    "16": 871
+    "22": 368
   },
   "message_types": {
-    "0": 2691,
-    "19": 2309
+    "0": 2616,
+    "19": 2382,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -160,6 +161,14 @@
       "author": "rocketmacaron_",
       "reactions": 19,
       "channel": "Nefraea Posting (Weekly)"
+    },
+    {
+      "id": "1505656401060565084",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1505686711403806812",
@@ -256,14 +265,6 @@
       "author": "quackdayo",
       "reactions": 12,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1505505280983830528",
-      "channel_id": "1505167541818101862",
-      "content": "# 取消300抽加三圍\n# Cancel 300 normal pull for stats\n# 要求新系統提供更高的三圍 (67% up)\n# Demand ",
-      "author": "puro9877",
-      "reactions": 12,
-      "channel": "V2.5.1.0 停服维护公告"
     }
   ]
 }
