@@ -187,7 +187,9 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    langs = ["zh", "en", "ja"] if args.lang == "all" else [args.lang]
+    # Keeper ruling 2026-06-09: en/ja publication paused until localized
+    # names land in characters.json (23/24 name_en/name_ja are null).
+    langs = ["zh"] if args.lang == "all" else [args.lang]
 
     # Load data
     characters = load_characters()

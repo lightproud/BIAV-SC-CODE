@@ -6,8 +6,8 @@ TapTap 已废弃 webapiv2 全部端点（均返回404），页面使用 Nuxt 客
 本模块通过 headless Chromium 拦截网络响应或提取渲染后 DOM 来获取社区帖子和玩家评价。
 
 目标页面:
-  帖子: https://www.taptap.cn/app/233553/topic?type=official
-  评价: https://www.taptap.cn/app/233553/review?type=new
+  帖子: https://www.taptap.cn/app/364992/topic?type=official
+  评价: https://www.taptap.cn/app/364992/review?type=new
 """
 
 import asyncio
@@ -24,7 +24,9 @@ import news_common  # 时间归一单一真源（H4）
 
 logger = logging.getLogger("collector.taptap")
 
-APP_ID = "233553"
+# Morimens official page is taptap.cn/app/364992 (verified 2026-06-09;
+# the previous 233553 pointed at a different game)
+APP_ID = "364992"
 TOPIC_URL = f"https://www.taptap.cn/app/{APP_ID}/topic?type=official"
 REVIEW_URL = f"https://www.taptap.cn/app/{APP_ID}/review?type=new"
 
