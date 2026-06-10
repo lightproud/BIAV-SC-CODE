@@ -1,7 +1,7 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 news 新使命）
+> 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -14,16 +14,25 @@
 
 ## 当前状态：Phase 2 加固期（自动化跑稳 + 黑池接口稳定化）
 
+### 2026-06-09 状态核验（实测）
+- **采集自动化持续运行**：`update-news` 每小时；`output/*-latest.json` 当日仍在更新
+- **Discord → 聚合器桥接已落地**：aggregator 含 discord 通道，`output/discord-latest.json` 持续产出（M1 任务 1 完成）
+- **YouTube 已接通**：`output/youtube-latest.json` 持续更新，`data/platforms/youtube{,_comments}/` 在归档（M2 首项完成）
+- **新增 workflow（2026-06-05）**：`collect-comments`（每日 02:00 UTC 视频评论归档）/ `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
+- **daily-report 定时已停用**：报告改在 Claude Code 会话内订阅生成（零 API 费），workflow 仅留手动触发备用——M1 任务 3 的「日报 workflow 验证」语境已失效
+- `data/platforms/` 已扩至 18 个平台目录
+- M1 任务 2（月度清理触发）/ 任务 4（黑池接口 schema 评估）状态未在本次复核范围，待 Code-news 确认
+
 ## Phase 2 任务（M1-M4，2026-04-27 → 07-19）
 
 ### M1 基础设施加固（4-27 → 5-10，14 天）
-1. **桥接 Discord 归档数据到聚合器**（沿用旧任务）：让 `aggregator.py` 读取 `projects/news/data/discord/` 当日 JSONL，提取摘要进 `news.json`
-2. **Discord 月度清理首次触发**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装。当前实测归档 193 MB，待守密人 UI 触发 `force_month=2026-03`
-3. **验证日报质量**：Steam 数据标准化已修复，下次 workflow 后确认日报正确显示 3 源（Steam + Bilibili + Discord）
-4. **黑池接口稳定性评估**：作为黑池的"眼睛和耳朵"，输出格式需稳定。评估 `output/*-latest.json` 的 schema 一致性
+1. [x] **桥接 Discord 归档数据到聚合器**：已落地（见 6-9 核验）
+2. [ ] **Discord 月度清理首次触发**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装。当前实测归档 193 MB，待守密人 UI 触发 `force_month=2026-03`（状态待核）
+3. ~~验证日报质量~~：daily-report 定时已停用，报告改会话内生成，本项语境失效
+4. [ ] **黑池接口稳定性评估**：评估 `output/*-latest.json` 的 schema 一致性（状态待核）
 
 ### M2 信息齐备（5-11 → 6-10，31 天）
-- [ ] 接通 YouTube（代码已就绪，配置 API Key）
+- [x] 接通 YouTube（6-9 实测：latest + 平台归档双通道在产出）
 - [ ] Reddit 子版块名确认（r/Morimens 是否存在）
 - [ ] Twitter / NGA / TapTap 配置密钥（如 Phase 2 优先级允许）
 - [ ] 周报/月报机制（日报之上叠加趋势分析）
@@ -39,7 +48,9 @@
 
 ### 注意事项
 - update-news.yml 每小时运行一次（cron: '0 * * * *'）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）
+- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档
+- collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
+- daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
 
 ## 已完成
 - [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
