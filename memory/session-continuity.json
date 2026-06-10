@@ -1,22 +1,32 @@
 {
   "last_session": {
-    "id": "90b9df5e",
-    "timestamp": "2026-06-10T18:26:55.105000+00:00",
-    "duration_minutes": 102.3,
-    "branch": "claude/lucid-feynman-dhj63l",
-    "topics": [
-      "BPT",
-      "MCP",
-      "GitHub"
-    ],
-    "decisions": [
-      "了共享能省多少",
-      ",跟进程共不共享完全无关"
-    ],
+    "id": "068f871b",
+    "timestamp": "2026-06-10T20:25:41.838000+00:00",
+    "duration_minutes": 3.7,
+    "branch": "claude/dynamic-orchestration-archiver-tzxdai",
+    "topics": [],
+    "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "90b9df5e",
+      "timestamp": "2026-06-10T18:26:55.105000+00:00",
+      "duration_minutes": 102.3,
+      "branch": "claude/lucid-feynman-dhj63l",
+      "topics": [
+        "BPT",
+        "MCP",
+        "GitHub"
+      ],
+      "decisions": [
+        "了共享能省多少",
+        ",跟进程共不共享完全无关"
+      ],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "90b9df5e",
       "timestamp": "2026-06-10T18:26:55.105000+00:00",
@@ -146,41 +156,19 @@
         "/tmp/css_sample.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "5eca438b",
-      "timestamp": "2026-06-03T14:37:56.737000+00:00",
-      "duration_minutes": 554.4,
-      "branch": "claude/collect-comments-wf",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-fanart.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/test.yml",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_full.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_period_20260512_0603.md",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/root/.claude/plans/calm-dazzling-wirth.md",
-        "/tmp/css_sample.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.95,
-      "MCP": 2.44,
-      "GitHub": 1.8,
-      "Wiki": 1.26,
-      "做梦Agent": 0.38,
-      "联动": 0.21
+      "BPT": 2.36,
+      "MCP": 1.95,
+      "GitHub": 1.44,
+      "Wiki": 1.01,
+      "做梦Agent": 0.3,
+      "联动": 0.17
     },
     "hot_files": [],
-    "total_sessions": 144
+    "total_sessions": 145
   },
-  "updated_at": "2026-06-10T18:36:50.632721+00:00"
+  "updated_at": "2026-06-10T20:30:58.888818+00:00"
 }
