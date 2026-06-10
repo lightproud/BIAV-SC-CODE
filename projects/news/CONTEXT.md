@@ -32,6 +32,7 @@
 4. [ ] **黑池接口稳定性评估**：评估 `output/*-latest.json` 的 schema 一致性（状态待核）
 
 ### M2 信息齐备（5-11 → 6-10，31 天）
+> 全球采集覆盖范围与接入纪律见 `GLOBAL_COLLECTION_SPEC.md`（规定层，与 sources.py 配套）。
 - [x] 接通 YouTube（6-9 实测：latest + 平台归档双通道在产出）
 - [ ] Reddit 子版块名确认（r/Morimens 是否存在）
 - [ ] Twitter / NGA / TapTap 配置密钥（如 Phase 2 优先级允许）
