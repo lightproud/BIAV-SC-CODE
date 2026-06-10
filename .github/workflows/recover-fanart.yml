@@ -38,10 +38,12 @@ jobs:
       - name: Recover fan art across window (refresh Discord URLs)
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          INPUT_END_DATE: ${{ github.event.inputs.end_date }}
+          INPUT_WINDOW_DAYS: ${{ github.event.inputs.window_days }}
         run: |
-          END="${{ github.event.inputs.end_date }}"
+          END="$INPUT_END_DATE"
           [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
-          WIN="${{ github.event.inputs.window_days }}"; WIN=${WIN:-4}
+          WIN="$INPUT_WINDOW_DAYS"; WIN=${WIN:-4}
           for k in $(seq $((WIN-1)) -1 0); do
             D=$(date -d "$END -$k day" +%Y-%m-%d)
             echo "=== $D ==="

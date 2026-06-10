@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 import logging
 import requests
@@ -17,6 +18,9 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 from uuid import uuid4
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 采集层共享 HTML-strip 单一真源（ARCH-02）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -101,7 +105,12 @@ REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
 # ============================================================
 
 def _get_with_retry(url, retries=2, backoff=1.0, **kwargs):
-    """GET with simple retry on transient failures (5xx, timeout, connection error)."""
+    """GET with simple retry on transient failures (5xx, timeout, connection error).
+
+    # NOTE: divergent from global_collectors._get / news_common.get_with_retry — see
+    # audit ARCH-01: this returns the response on 4xx (caller inspects status_code),
+    # whereas global's _get raise_for_status() on any non-2xx. Semantics differ → not merged.
+    """
     kwargs.setdefault('timeout', 15)
     last_exc = None
     for attempt in range(retries + 1):
@@ -122,10 +131,8 @@ def _get_with_retry(url, retries=2, backoff=1.0, **kwargs):
 # ============================================================
 
 def strip_html_tags(text):
-    """Remove any HTML tags from text to prevent XSS."""
-    if not text:
-        return ''
-    return re.sub(r'<[^>]+>', '', text)
+    """Remove any HTML tags from text to prevent XSS. 委托 news_common.strip_html（单一真源）。"""
+    return news_common.strip_html(text)
 
 
 def sanitize_url(url):

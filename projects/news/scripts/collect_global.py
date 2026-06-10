@@ -19,6 +19,7 @@ import json
 import os
 import sys
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -31,6 +32,10 @@ RAW_OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news-raw.json'
 
 # Ensure sibling scripts dir is importable (works both as script and module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+
+# Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
+CORE_SOURCES = {'bilibili', 'reddit', 'nga', 'taptap'}
 
 
 # ── Source mapping: collector source names → aggregator source names ──
@@ -102,7 +107,7 @@ def run_zero_cost_collectors() -> list[dict]:
         c._refresh_cutoff()
     except ImportError as e:
         logger.error(f"Cannot import global_collectors module: {e}")
-        return items
+        return items, []
 
     # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
     tracker = None
@@ -174,58 +179,79 @@ def run_zero_cost_collectors() -> list[dict]:
         'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
 
-    succeeded = []
-    failed = []
-    empty = []
-
-    for name, fn in all_fetchers:
+    # 各采集器互相独立、采集前无共享状态 → 用线程并行（阻塞 requests 用线程即可）。
+    # 每个 worker 只返回自身结果，不触碰共享 items；合并在主线程按 all_fetchers 顺序进行，
+    # 保证去重/排序结果与串行一致（PERF-02）。
+    def _collect_one(name, fn):
+        """Run one collector (with Playwright fallback). Returns (name, source_id, result, error)."""
         source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
-
-        # dormant 源直接跳过，节约 CI 时间
-        if tracker and tracker.should_skip_platform(source_id):
-            logger.info(f"   {name}: dormant, skipping")
-            continue
-
         try:
             result = fn()
             # Playwright fallback: if HTTP returned 0/empty and we have a PW fallback
             if not result and name in PW_FALLBACK and PW_FALLBACK[name] and pw_mod:
-                pw_fn_name = PW_FALLBACK[name]
-                pw_fn = getattr(pw_mod, pw_fn_name, None)
+                pw_fn = getattr(pw_mod, PW_FALLBACK[name], None)
                 if pw_fn:
                     logger.info(f"  ↻ {name}: HTTP empty, trying Playwright fallback...")
                     result = pw_fn()
-            if result:
-                items.extend(result)
-                succeeded.append((name, len(result)))
-                logger.info(f"  {name}: +{len(result)} items")
-            else:
-                empty.append(name)
-                logger.info(f"  · {name}: 0 items")
-            if tracker:
-                tracker.update_platform_status(source_id, len(result) if result else 0)
+            return name, source_id, (result or []), None
         except Exception as e:
             # Playwright fallback on exception too
             if name in PW_FALLBACK and PW_FALLBACK[name] and pw_mod:
-                pw_fn_name = PW_FALLBACK[name]
-                pw_fn = getattr(pw_mod, pw_fn_name, None)
+                pw_fn = getattr(pw_mod, PW_FALLBACK[name], None)
                 if pw_fn:
                     logger.info(f"  ↻ {name}: HTTP crashed, trying Playwright fallback...")
                     try:
                         result = pw_fn()
                         if result:
-                            items.extend(result)
-                            succeeded.append((name, len(result)))
-                            logger.info(f"  {name} (PW): +{len(result)} items")
-                            if tracker:
-                                tracker.update_platform_status(source_id, len(result))
-                            continue
+                            logger.info(f"  {name} (PW): recovered via Playwright")
+                            return name, source_id, result, None
                     except Exception as pw_e:
                         logger.warning(f"  {name} Playwright also failed: {pw_e}")
-            failed.append((name, str(e)[:120]))
-            logger.warning(f"  {name} FAILED: {e}")
+            return name, source_id, [], str(e)
+
+    # 提交所有非 dormant 采集器到线程池
+    pending = []
+    for name, fn in all_fetchers:
+        source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
+        if tracker and tracker.should_skip_platform(source_id):
+            logger.info(f"   {name}: dormant, skipping")
+            continue
+        pending.append((name, fn))
+
+    results_by_name = {}
+    with ThreadPoolExecutor(max_workers=min(8, len(pending) or 1)) as ex:
+        future_to_name = {ex.submit(_collect_one, name, fn): name for name, fn in pending}
+        for fut in future_to_name:
+            name, source_id, result, error = fut.result()
+            results_by_name[name] = (source_id, result, error)
+
+    # 按 all_fetchers 稳定顺序合并，保持结果确定性
+    succeeded = []
+    failed = []
+    empty = []
+    core_failures = []
+    for name, _ in all_fetchers:
+        if name not in results_by_name:
+            continue
+        source_id, result, error = results_by_name[name]
+        if error is not None:
+            failed.append((name, error[:120]))
+            logger.warning(f"  {name} FAILED: {error}")
             if tracker:
-                tracker.update_platform_status(source_id, 0, error=str(e))
+                tracker.update_platform_status(source_id, 0, error=error)
+            # §4.2 R1: 核心源失败即整次失败
+            if source_id in CORE_SOURCES:
+                core_failures.append((source_id, error))
+            continue
+        if result:
+            items.extend(result)
+            succeeded.append((name, len(result)))
+            logger.info(f"  {name}: +{len(result)} items")
+        else:
+            empty.append(name)
+            logger.info(f"  · {name}: 0 items")
+        if tracker:
+            tracker.update_platform_status(source_id, len(result))
 
     # Diagnostic summary
     logger.info("=== 采集诊断 ===")
@@ -237,7 +263,7 @@ def run_zero_cost_collectors() -> list[dict]:
         for name, err in failed:
             logger.warning(f"  {name}: {err}")
 
-    return items
+    return items, core_failures
 
 
 def load_existing_news() -> list[dict]:
@@ -319,7 +345,7 @@ def main():
     logger.info('=== 全球社区采集开始 ===')
 
     # Step 1: Run global collectors
-    global_items = run_zero_cost_collectors()
+    global_items, core_failures = run_zero_cost_collectors()
     logger.info(f'全球采集完成: {len(global_items)} items')
 
     # Empty-data protection (lesson #2): all collectors empty means a failed run.
@@ -369,6 +395,12 @@ def main():
     for src, count in sorted(sources.items(), key=lambda x: -x[1]):
         logger.info(f'  {src}: {count}')
     logger.info(f'=== 全球采集完成: {len(merged)} items → {OUTPUT_PATH} ===')
+
+    # §4.2 R1: 输出已落盘保全数据，但任一核心源失败则以非零退出让 CI 暴露失败
+    if core_failures:
+        names = ', '.join(f'{s} ({err[:80]})' for s, err in core_failures)
+        logger.error(f'Core source(s) failed: {names}. Surfacing non-zero exit per §4.2 R1.')
+        sys.exit(1)
 
 
 if __name__ == '__main__':

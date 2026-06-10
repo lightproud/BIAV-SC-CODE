@@ -44,11 +44,16 @@ from aggregator_collectors import (
 )
 
 
+# Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
+CORE_SOURCES = {'reddit', 'bilibili', 'nga', 'taptap'}
+
+
 def run():
     """Main aggregation pipeline."""
     logger.info('Starting Morimens community news aggregation...')
 
     all_news = []
+    core_failures = []  # (source_id, error) for core sources that raised
 
     # Fetch from all sources
     fetchers = [
@@ -106,6 +111,7 @@ def run():
             # Track platform error
             if quality_tracker:
                 quality_tracker.update_platform_status(source_id, 0, error=str(e))
+            recovered = False
             # Try Playwright fallback for TapTap and NGA on crash
             if name in ('TapTap', 'NGA'):
                 pc = _get_playwright_collectors()
@@ -119,8 +125,14 @@ def run():
                             pw_items = pw_fetcher()
                             all_news.extend(pw_items)
                             logger.info(f'{name} Playwright fallback (after crash): {len(pw_items)} items')
+                            # §4.2 R1: 仅当回退实际拿到条目才算救回；返回 0 条不掩盖核心源失败
+                            if pw_items:
+                                recovered = True
                         except Exception as pw_e:
                             logger.warning(f'{name} Playwright fallback failed: {pw_e}')
+            # §4.2 R1: 核心源崩溃且未被 fallback 救回 → 记为整次失败
+            if source_id in CORE_SOURCES and not recovered:
+                core_failures.append((source_id, str(e)))
 
     # Additional Playwright-only sources (no API equivalent)
     pc = _get_playwright_collectors()
@@ -227,9 +239,15 @@ def run():
     except ImportError:
         pass
 
+    # §4.2 R1: 输出已落盘保全数据，但任一核心源失败则以非零退出让 CI 暴露失败
+    if core_failures:
+        names = ', '.join(f'{s} ({err})' for s, err in core_failures)
+        logger.error(f'Core source(s) failed: {names}. Surfacing non-zero exit per §4.2 R1.')
+        raise SystemExit(1)
+
     return True
 
 
 if __name__ == '__main__':
-    empty_run = run() is False
-    sys.exit(1 if empty_run else 0)
+    run()
+    sys.exit(0)
