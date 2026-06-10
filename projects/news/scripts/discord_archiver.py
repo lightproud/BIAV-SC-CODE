@@ -190,18 +190,23 @@ class DiscordArchiver:
             self._file_ids_cache[file_path] = ids
         return self._file_ids_cache[file_path]
 
-    def _write_msg(self, channel_id, date_str: str, slim: dict):
-        """Write a slim message to its daily JSONL, skipping duplicates."""
+    def _write_msg(self, channel_id, date_str: str, slim: dict) -> bool:
+        """Write a slim message to its daily JSONL, skipping duplicates.
+
+        Returns True only when the message was newly written (H5: callers must
+        gate _update_daily_stats on this to avoid double counting on re-fetch).
+        """
         ch_dir = self._ch_dir(channel_id)
         ch_dir.mkdir(parents=True, exist_ok=True)
         file_path = ch_dir / f'{date_str}.jsonl'
         ids = self._file_ids(file_path)
         msg_id = slim.get('id', '')
         if not msg_id or msg_id in ids:
-            return  # already stored — dedup guard
+            return False  # already stored — dedup guard
         with open(file_path, 'a', encoding='utf-8') as f:
             f.write(json.dumps(slim, ensure_ascii=False) + '\n')
         ids.add(msg_id)
+        return True
 
     # ── Guild metadata ───────────────────────────────────────────────────────
 
@@ -314,8 +319,9 @@ class DiscordArchiver:
             date_str = ts.strftime('%Y-%m-%d')
         except (ValueError, TypeError):
             date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-        self._write_msg(channel_id, date_str, slim)
-        self._update_daily_stats(slim, channel_name)
+        # H5: 仅在新写入时计入日统计，重复抓取不再膨胀 activity_daily 计数
+        if self._write_msg(channel_id, date_str, slim):
+            self._update_daily_stats(slim, channel_name)
         if slim['has_thread'] and slim['thread_id']:
             self._pending_threads.append(slim['thread_id'])
         return slim
@@ -606,8 +612,9 @@ class DiscordArchiver:
                         date_str = ts.strftime('%Y-%m-%d')
                     except (ValueError, TypeError):
                         date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-                    self._write_msg(forum_channel_id, date_str, slim)
-                    self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
+                    # H5: 仅在新写入时计入日统计
+                    if self._write_msg(forum_channel_id, date_str, slim):
+                        self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
                     total += 1
                     # Don't advance last_id past the starter — replies use the same
                     # snowflake range, and `after={thread_id}` would skip them.
@@ -638,8 +645,9 @@ class DiscordArchiver:
                 except (ValueError, TypeError):
                     date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
                 # Store under the forum channel directory, not the individual thread directory
-                self._write_msg(forum_channel_id, date_str, slim)
-                self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
+                # H5: 仅在新写入时计入日统计
+                if self._write_msg(forum_channel_id, date_str, slim):
+                    self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
                 total += 1
             last_id = messages[-1]['id']
             self._ch_state(ch_key)['last_message_id'] = last_id

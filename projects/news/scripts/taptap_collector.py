@@ -6,21 +6,27 @@ TapTap 已废弃 webapiv2 全部端点（均返回404），页面使用 Nuxt 客
 本模块通过 headless Chromium 拦截网络响应或提取渲染后 DOM 来获取社区帖子和玩家评价。
 
 目标页面:
-  帖子: https://www.taptap.cn/app/233553/topic?type=official
-  评价: https://www.taptap.cn/app/233553/review?type=new
+  帖子: https://www.taptap.cn/app/364992/topic?type=official
+  评价: https://www.taptap.cn/app/364992/review?type=new
 """
 
 import asyncio
 import json
 import logging
 import re
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 时间归一单一真源（H4）
+
 logger = logging.getLogger("collector.taptap")
 
-APP_ID = "233553"
+# Morimens official page is taptap.cn/app/364992 (verified 2026-06-09;
+# the previous 233553 pointed at a different game)
+APP_ID = "364992"
 TOPIC_URL = f"https://www.taptap.cn/app/{APP_ID}/topic?type=official"
 REVIEW_URL = f"https://www.taptap.cn/app/{APP_ID}/review?type=new"
 
@@ -67,92 +73,11 @@ def _parse_num(s: Any) -> int:
 def _parse_taptap_dom_time(time_str):
     """Parse TapTap DOM time strings into ISO datetime.
 
-    TapTap DOM time elements may contain:
-    - ISO datetime string (from datetime attribute)
-    - "x分钟前", "x小时前", "x天前" (relative Chinese)
-    - "刚刚" (just now)
-    - "昨天", "前天"
-    - "MM-DD" or "YYYY-MM-DD" date strings
-    - "x minutes ago", "x hours ago" (English)
-
-    Returns ISO datetime string. Falls back to now if unparseable.
+    解析委托 news_common.parse_relative_time（H4 收敛，覆盖 ISO/中英相对时间/
+    "刚刚"/"昨天"/"前天"/绝对日期）。Returns ISO datetime string.
+    Falls back to now if unparseable.
     """
-    now = datetime.now(timezone.utc)
-    if not time_str or not time_str.strip():
-        return now.isoformat()
-
-    s = time_str.strip()
-
-    # Try ISO format first (from datetime attribute)
-    try:
-        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
-        return dt.isoformat()
-    except (ValueError, TypeError):
-        pass
-
-    # "刚刚" = just now
-    if s == "刚刚":
-        return now.isoformat()
-
-    # "x分钟前"
-    m = re.match(r"(\d+)\s*分钟前", s)
-    if m:
-        return (now - timedelta(minutes=int(m.group(1)))).isoformat()
-
-    # "x小时前"
-    m = re.match(r"(\d+)\s*小时前", s)
-    if m:
-        return (now - timedelta(hours=int(m.group(1)))).isoformat()
-
-    # "x天前"
-    m = re.match(r"(\d+)\s*天前", s)
-    if m:
-        return (now - timedelta(days=int(m.group(1)))).isoformat()
-
-    # "昨天"
-    if "昨天" in s:
-        return (now - timedelta(days=1)).isoformat()
-
-    # "前天"
-    if "前天" in s:
-        return (now - timedelta(days=2)).isoformat()
-
-    # English relative: "x minutes/hours/days ago"
-    m = re.match(r"(\d+)\s+(minute|hour|day|week|month)s?\s+ago", s, re.IGNORECASE)
-    if m:
-        num = int(m.group(1))
-        unit = m.group(2).lower()
-        delta_map = {
-            "minute": timedelta(minutes=num),
-            "hour": timedelta(hours=num),
-            "day": timedelta(days=num),
-            "week": timedelta(weeks=num),
-            "month": timedelta(days=num * 30),
-        }
-        return (now - delta_map.get(unit, timedelta())).isoformat()
-
-    # "YYYY-MM-DD" or "YYYY/MM/DD"
-    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
-    if m:
-        try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
-            return dt.isoformat()
-        except ValueError:
-            pass
-
-    # "MM-DD" (current year)
-    m = re.match(r"(\d{1,2})[-/](\d{1,2})$", s)
-    if m:
-        try:
-            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
-                             hour=0, minute=0, second=0, microsecond=0)
-            if dt > now:
-                dt = dt.replace(year=dt.year - 1)
-            return dt.isoformat()
-        except ValueError:
-            pass
-
-    return now.isoformat()
+    return news_common.parse_relative_time(time_str)[0]
 
 
 # ─── 帖子页 ───────────────────────────────────────────────────

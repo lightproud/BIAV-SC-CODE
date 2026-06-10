@@ -96,7 +96,7 @@ jobs:
           script: |
             const monitored = [
               'update-news.yml', 'discord-archive.yml', 'deploy-site.yml',
-              'validate-data.yml',
+              'validate-data.yml', 'check-version.yml', 'fetch-wiki-data.yml',
             ];
             const failures = [];
             const now = new Date();
@@ -246,7 +246,10 @@ jobs:
     timeout-minutes: 30
     needs: shallow-sleep
     # 深睡：每天 19:00 UTC cron 或手动触发
+    # !cancelled() 让 workflow_dispatch layer=deep 时即使 shallow-sleep 被
+    # skip（needs 链）也能运行
     if: >-
+      !cancelled() &&
       github.ref == 'refs/heads/main' &&
       ((github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
@@ -353,7 +356,10 @@ jobs:
     timeout-minutes: 60
     needs: shallow-sleep
     # REM：每周一 01:00 UTC cron 或手动触发
+    # !cancelled() 让 workflow_dispatch layer=rem 时即使 shallow-sleep 被
+    # skip（needs 链）也能运行
     if: >-
+      !cancelled() &&
       github.ref == 'refs/heads/main' &&
       ((github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
       (github.event_name == 'workflow_dispatch' &&
