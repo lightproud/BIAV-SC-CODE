@@ -20,6 +20,7 @@ from aggregator_base import (
     MAX_ITEMS_PER_FETCHER, REPO_ROOT, logger, strip_html_tags,
 )
 import news_common  # 脱敏 + 时间归一单一真源（H3/H4；aggregator_base 已设 sys.path）
+from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
 
 
 def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10) -> list[dict]:
@@ -361,63 +362,33 @@ def _bilibili_item(v: dict, created: datetime, author: str, headers: dict, sourc
     return item
 
 
-# ── Bilibili wbi 签名 ──────────────────────────────────────────────────────────
-# B 站 space API 从 2023 年起要求 wbi 签名，否则返回 412。
-# 算法：从 /x/web-interface/nav 拿 img_key + sub_key → 按固定混淆表重排 → 取前 32 位
-# → 对排序后的 query string + mixin_key 做 MD5 → 得到 w_rid。
-_WBI_MIXIN_KEY_ENC_TAB = [
-    46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35,
-    27, 43, 5, 49, 33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13,
-    37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4,
-    22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52,
-]
-_wbi_cache: dict = {}  # {'mixin_key': str, 'ts': float}
+# ── Bilibili wbi 签名 + spi cookie ────────────────────────────────────────────
+# B 站 space / 搜索 API 要求 wbi 签名（否则 412），且 2026-06 起对伪造 buvid
+# 返回风控 HTML。签名与 spi cookie 实现收敛在 news_common（ARCH-02）。
 
 
-def _get_wbi_mixin_key(headers: dict) -> str | None:
-    """Fetch and cache the wbi mixin key (refreshed every 30 min)."""
-    now = time.time()
-    if _wbi_cache.get('mixin_key') and now - _wbi_cache.get('ts', 0) < 1800:
-        return _wbi_cache['mixin_key']
-    try:
-        resp = requests.get(
-            'https://api.bilibili.com/x/web-interface/nav',
-            headers=headers, timeout=10,
-        )
-        wbi = resp.json().get('data', {}).get('wbi_img', {})
-        img_key = wbi['img_url'].rsplit('/', 1)[1].split('.')[0]
-        sub_key = wbi['sub_url'].rsplit('/', 1)[1].split('.')[0]
-        raw = img_key + sub_key
-        mixin_key = ''.join(raw[i] for i in _WBI_MIXIN_KEY_ENC_TAB)[:32]
-        _wbi_cache['mixin_key'] = mixin_key
-        _wbi_cache['ts'] = now
-        return mixin_key
-    except Exception as e:
-        logger.warning(f'Bilibili wbi key fetch failed: {e}')
-        return _wbi_cache.get('mixin_key')  # use stale cache if available
-
-
-def _sign_wbi_params(params: dict, mixin_key: str) -> dict:
-    """Add wts + w_rid to params dict using wbi signing."""
-    import urllib.parse
-    params = dict(params)
-    params['wts'] = int(time.time())
-    query = urllib.parse.urlencode(sorted(params.items()))
-    params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
-    return params
+def _bilibili_headers() -> dict:
+    """构造带服务端签发 buvid 的请求头；spi 失败时回退伪造 buvid3（仅尽力而为）。"""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Referer': 'https://www.bilibili.com',
+    }
+    cookies = bilibili_spi_cookies(headers)
+    if cookies:
+        headers['Cookie'] = '; '.join(f'{k}={v}' for k, v in cookies.items())
+    else:
+        headers['Cookie'] = f'buvid3={uuid4()}infoc'
+    return headers
 
 
 def _fetch_bilibili_space():
     """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
-    buvid3 = f'{uuid4()}infoc'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'Referer': 'https://www.bilibili.com',
-        'Cookie': f'buvid3={buvid3}',
-    }
+    headers = _bilibili_headers()
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
-    mixin_key = _get_wbi_mixin_key(headers)
+    mixin_key = get_wbi_mixin_key(headers)
+    if not mixin_key:
+        logger.warning('Bilibili wbi key fetch failed (no cache)')
 
     for idx, (mid, creator_name) in enumerate(BILIBILI_MORIMENS_CREATORS.items()):
         if idx > 0:
@@ -438,7 +409,7 @@ def _fetch_bilibili_space():
                 'order': 'pubdate',
             }
             if mixin_key:
-                params = _sign_wbi_params(params, mixin_key)
+                params = sign_wbi_params(params, mixin_key)
             try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
                 if resp.status_code == 412:
@@ -451,7 +422,12 @@ def _fetch_bilibili_space():
                 logger.debug(f'Bilibili space {creator_name}({mid}) page {page} failed: {e}')
                 break
 
-            vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
+            try:
+                vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
+            except ValueError:
+                logger.warning(f'Bilibili space {creator_name}({mid}): non-JSON response (risk control?)')
+                fatal_error = 'non-json'
+                break
             if not vlist:
                 break
 
@@ -480,15 +456,15 @@ def _fetch_bilibili_space():
 
 
 def _fetch_bilibili_search():
-    """Fetch Bilibili search results for Morimens keywords (fallback path)."""
+    """Fetch Bilibili search results for Morimens keywords (fallback path).
+
+    搜索接口需 wbi 签名 + 服务端签发 buvid，否则返回风控 HTML（曾导致
+    `Expecting value` 崩溃并拖死整条管线）。非 JSON 响应按失败处理，不再抛出。
+    """
     items = []
-    buvid3 = f'{uuid4()}infoc'
-    headers = {
-        'User-Agent': 'Mozilla/5.0',
-        'Referer': 'https://www.bilibili.com',
-        'Cookie': f'buvid3={buvid3}',
-    }
+    headers = _bilibili_headers()
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    mixin_key = get_wbi_mixin_key(headers)
 
     search_keywords = ['忘却前夜', '忘卻前夜'] + [k for k in COLLAB_KEYWORDS if k.strip()]
     for idx, keyword in enumerate(search_keywords):
@@ -502,7 +478,7 @@ def _fetch_bilibili_search():
 
         while len(items) - kw_before_count < MAX_ITEMS_PER_FETCHER:
             page += 1
-            url = 'https://api.bilibili.com/x/web-interface/search/type'
+            url = 'https://api.bilibili.com/x/web-interface/wbi/search/type'
             params = {
                 'search_type': 'video',
                 'keyword': keyword,
@@ -510,6 +486,8 @@ def _fetch_bilibili_search():
                 'duration': 0,
                 'page': page,
             }
+            if mixin_key:
+                params = sign_wbi_params(params, mixin_key)
             try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
                 if resp.status_code == 412:
@@ -521,7 +499,14 @@ def _fetch_bilibili_search():
                 logger.warning(f'Bilibili search "{keyword}" page {page} failed: {e}')
                 break
 
-            results = resp.json().get('data', {}).get('result', []) or []
+            try:
+                results = resp.json().get('data', {}).get('result', []) or []
+            except ValueError:
+                logger.warning(
+                    f'Bilibili search "{keyword}" page {page}: non-JSON response '
+                    f'(risk control?), treating as empty'
+                )
+                break
             if not results:
                 break
             pages_fetched += 1
@@ -681,145 +666,74 @@ def fetch_nga():
     return items
 
 
+# 网页端同源 API 需携带 X-UA query 标识客户端；值取自 www.taptap.cn 网页端请求。
+_TAPTAP_XUA = ('V=1&PN=WebApp&LANG=zh_CN&VN_CODE=102&VN=0.1.0&LOC=CN'
+               '&PLT=PC&DS=Android&UID=x&OS=Windows&OSV=10&DT=PC')
+
+
 def fetch_taptap():
-    """
-    Fetch TapTap community posts for Morimens.
-    Tries CN API first, then global (taptap.io) as fallback.
+    """Fetch TapTap reviews for Morimens (app 364992 @ www.taptap.cn).
+
+    旧 api.taptap.cn / api.taptap.io 域名已下线（DNS 不再解析），改走网页端
+    同源接口 www.taptap.cn/webapiv2。注意 sort=new 排序非严格时间序（编辑过的
+    旧评价会插队），因此固定扫描数页后按 cutoff 过滤，而不是遇旧即停。
     """
     app_id = os.environ.get('TAPTAP_APP_ID') or '364992'
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
-
-    # Try multiple API endpoints (CN and global)
-    endpoints = [
-        f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list',
-        f'https://api.taptap.io/app/v2/app/{app_id}/topic/list',
-    ]
     headers = {
-        'User-Agent': 'TapTap/3.0.0 (Android 14)',
-        'X-UA': 'V=1&PN=TapTap&VN_CODE=300',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Referer': 'https://www.taptap.cn/',
     }
-    params = {'type': 'hot', 'limit': 20}
 
-    data_list = None
-    for url in endpoints:
+    offset = 0
+    for _ in range(3):  # 3 页 x 10 条，覆盖 24h 窗口绰绰有余
         try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
+            resp = requests.get(
+                'https://www.taptap.cn/webapiv2/review/v2/list-by-app',
+                params={'app_id': app_id, 'from': offset, 'limit': 10,
+                        'sort': 'new', 'X-UA': _TAPTAP_XUA},
+                headers=headers, timeout=15,
+            )
             resp.raise_for_status()
-            data_list = resp.json().get('data', {}).get('list', [])
-            if data_list:
-                break
-        except requests.exceptions.ProxyError as e:
-            # 沙箱/企业代理对 taptap 域常 403，属于环境问题非代码 bug
-            logger.debug(f'TapTap {url.split("/")[2]} proxy blocked: {e}')
+            entries = resp.json().get('data', {}).get('list', []) or []
         except Exception as e:
-            logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
+            logger.warning(f'TapTap webapiv2 failed: {e}')
+            break
+        if not entries:
+            break
 
-    if not data_list:
-        # Fallback 1: review API (CN + global)
-        for review_domain in ['api.taptap.cn', 'api.taptap.io']:
-            try:
-                review_url = f'https://{review_domain}/app/v2/app/{app_id}/review/list/recent'
-                resp = requests.get(review_url, params={'limit': 20}, headers=headers, timeout=15)
-                resp.raise_for_status()
-                reviews = resp.json().get('data', {}).get('list', [])
-                for review in reviews:
-                    ts = review.get('created_time', 0)
-                    if not ts:
-                        continue
-                    created = datetime.fromtimestamp(ts, tz=timezone.utc)
-                    if created < cutoff:
-                        continue
-                    score = review.get('score', 0)
-                    sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
-                    items.append({
-                        'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
-                        'summary': review.get('contents', {}).get('text', ''),
-                        'source': 'taptap',
-                        'time': created.isoformat(),
-                        'url': f'https://www.taptap.cn/app/{app_id}/review',
-                        'engagement': review.get('like_count', 0),
-                        'author': review.get('user', {}).get('name', ''),
-                        'tags': [sentiment],
-                    })
-                if items:
-                    logger.info(f'TapTap reviews fallback ({review_domain}): {len(items)} items')
-                    break
-            except requests.exceptions.ProxyError as e:
-                logger.debug(f'TapTap review fallback ({review_domain}) proxy blocked: {e}')
-            except Exception as e:
-                logger.warning(f'TapTap review fallback ({review_domain}) failed: {e}')
+        for entry in entries:
+            moment = entry.get('moment', {}) or {}
+            review = moment.get('review', {}) or {}
+            ts = moment.get('publish_time') or moment.get('created_time')
+            if not ts:
+                continue
+            created = datetime.fromtimestamp(ts, tz=timezone.utc)
+            if created < cutoff:
+                continue
+            text = strip_html_tags((review.get('contents', {}) or {}).get('text', '') or '')
+            if not text:
+                continue
+            score = review.get('score', 0) or 0
+            sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
+            moment_id = moment.get('id_str', '')
+            items.append({
+                'title': f'[TapTap {sentiment}] {text[:60]}',
+                'summary': text,
+                'source': 'taptap',
+                'time': created.isoformat(),
+                'url': (f'https://www.taptap.cn/moment/{moment_id}' if moment_id
+                        else f'https://www.taptap.cn/app/{app_id}/review'),
+                'engagement': (moment.get('stat') or {}).get('ups', 0) or 0,
+                'author': ((moment.get('author') or {}).get('user') or {}).get('name', ''),
+                'tags': [sentiment],
+            })
 
-        # Fallback 2: scrape TapTap global web page
-        if not items:
-            try:
-                web_url = f'https://www.taptap.io/app/{app_id}/review'
-                web_resp = requests.get(web_url, headers={
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                }, timeout=15)
-                if web_resp.ok:
-                    import re
-                    # TapTap.io embeds JSON data in script tags
-                    json_match = re.search(r'window\.__INITIAL_STATE__\s*=\s*({.+?})\s*;?\s*</script>', web_resp.text, re.DOTALL)
-                    if json_match:
-                        try:
-                            state = json.loads(json_match.group(1))
-                            reviews = state.get('review', {}).get('list', []) or []
-                            for review in reviews[:20]:
-                                text = review.get('contents', {}).get('text', '') if isinstance(review.get('contents'), dict) else ''
-                                score = review.get('score', 0)
-                                sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
-                                # Extract real timestamp from review
-                                review_ts = review.get('created_time', 0) or review.get('created_at', 0)
-                                if isinstance(review_ts, str) and review_ts.isdigit():
-                                    review_ts = int(review_ts)
-                                if isinstance(review_ts, (int, float)) and review_ts > 0:
-                                    if review_ts > 1e12:
-                                        review_ts = review_ts // 1000
-                                    review_time = datetime.fromtimestamp(review_ts, tz=timezone.utc).isoformat()
-                                    review_approx = False
-                                else:
-                                    review_time = datetime.now(timezone.utc).isoformat()
-                                    review_approx = True
-                                review_item = {
-                                    'title': f'[TapTap {sentiment}] {text[:60]}',
-                                    'summary': text,
-                                    'source': 'taptap',
-                                    'time': review_time,
-                                    'url': web_url,
-                                    'engagement': review.get('like_count', 0) or 0,
-                                    'author': review.get('user', {}).get('name', '') if isinstance(review.get('user'), dict) else '',
-                                    'tags': [sentiment],
-                                }
-                                if review_approx:
-                                    review_item['time_is_approximate'] = True
-                                items.append(review_item)
-                            logger.info(f'TapTap web scrape: {len(items)} reviews')
-                        except (json.JSONDecodeError, KeyError):
-                            pass
-            except Exception as e:
-                logger.warning(f'TapTap web scrape failed: {e}')
-        return items
+        offset += 10
+        time.sleep(0.5)
 
-    for topic in data_list:
-        created_ts = topic.get('created_time', 0)
-        if not created_ts:
-            continue
-        created = datetime.fromtimestamp(created_ts, tz=timezone.utc)
-        if created < cutoff:
-            continue
-        items.append({
-            'title': topic.get('title', ''),
-            'summary': (topic.get('summary', '') or topic.get('intro', '')),
-            'source': 'taptap',
-            'time': created.isoformat(),
-            'url': topic.get('share_url', ''),
-            'engagement': (topic.get('comment_count', 0) or 0) + (topic.get('like_count', 0) or 0),
-            'is_hot': (topic.get('like_count', 0) or 0) > 100,
-            'author': topic.get('user', {}).get('name', ''),
-            'tags': [],
-        })
-    logger.info(f'TapTap: fetched {len(items)} topics')
+    logger.info(f'TapTap: fetched {len(items)} reviews')
     return items
 
 
@@ -965,88 +879,93 @@ def fetch_steam_news():
     return items
 
 
-def fetch_steam_discussions():
+def fetch_steam_discussions(max_pages: int = 3):
     """Fetch recent Steam Community discussions for Morimens (App ID: 3052450).
 
-    Steam has no public API for discussions, so we scrape the HTML listing page.
+    Steam has no public API for discussions, so we scrape the HTML listing page
+    (默认按最后回复时间倒序，15 帖/页，?fp=N 翻页)。2026-06 实测 DOM：
+    每帖为 <div class="forum_topic ..."> 块，内含 forum_topic_overlay 链接、
+    forum_topic_name 标题、forum_topic_op 楼主、forum_topic_lastpost 的
+    data-timestamp 真实时间戳，以及 data-tooltip-forum 里的正文预览。
     """
-    import subprocess as _sp
+    import html as _html
     import re as _re
 
     app_id = 3052450
     base_url = f'https://steamcommunity.com/app/{app_id}/discussions/0/'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,ko;q=0.7,ja;q=0.6',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
+    stopped_by_cutoff = False
 
     try:
-        result = _sp.run(
-            ['curl', '-s', '-L',
-             '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-             '-H', 'Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,ko;q=0.7,ja;q=0.6',
-             base_url],
-            capture_output=True, text=True, timeout=30,
-        )
-        if result.returncode != 0:
-            logger.warning(f'Steam Discussions curl failed: {result.stderr[:200]}')
-            return items
+        for page in range(1, max_pages + 1):
+            url = base_url if page == 1 else f'{base_url}?fp={page}'
+            resp = requests.get(url, headers=headers, timeout=30)
+            resp.raise_for_status()
+            html = resp.text
 
-        html = result.stdout
-
-        # Parse discussion threads from HTML
-        # Each thread has a forum_topic_searchresult block with title link and reply count
-        for match in _re.finditer(
-            r'class="forum_topic_searchresult"[^>]*>.*?'
-            r'href="(https://steamcommunity\.com/app/\d+/discussions/\d+/[^"]+)"[^>]*>'
-            r'\s*([^<]+?)\s*</a>.*?'
-            r'class="forum_topic_reply_count"[^>]*>\s*(\d+)\s*',
-            html, _re.DOTALL
-        ):
-            url, title, reply_count = match.groups()
-            title = title.strip()
-            replies = int(reply_count)
-
-            if not title:
-                continue
-
-            items.append({
-                'title': f'[Steam论坛] {title}',
-                'summary': '',
-                'source': 'steam_discussion',
-                'time': datetime.now(timezone.utc).isoformat(),
-                'time_is_approximate': True,
-                'url': url,
-                'engagement': replies,
-                'is_hot': replies >= 10,
-                'author': '',
-                'tags': ['steam_forum'],
-            })
-
-        # Also try the alternate HTML structure: forum_topic with separate elements
-        if not items:
-            for match in _re.finditer(
-                r'<a[^>]*href="(https://steamcommunity\.com/app/\d+/discussions/\d+/\d+/?)"[^>]*class="[^"]*forum_topic_overlay[^"]*"[^>]*>\s*</a>.*?'
-                r'class="topictitle"[^>]*>([^<]+)</a>.*?'
-                r'(?:class="[^"]*replycount[^"]*"[^>]*>\s*(\d+))?',
-                html, _re.DOTALL
-            ):
-                url = match.group(1)
-                title = match.group(2).strip()
-                replies = int(match.group(3)) if match.group(3) else 0
-
+            # 按 forum_topic 块切分（每块以下一个块或容器结束为界）
+            blocks = _re.split(r'<div[^>]+class="forum_topic\s', html)[1:]
+            page_added = 0
+            for block in blocks:
+                m_url = _re.search(
+                    r'class="forum_topic_overlay"\s+href="(https://steamcommunity\.com/app/\d+/discussions/[^"]+)"',
+                    block)
+                m_title = _re.search(r'class="forum_topic_name\s*"[^>]*>\s*(.*?)\s*</div>', block, _re.DOTALL)
+                if not m_url or not m_title:
+                    continue
+                title = strip_html_tags(m_title.group(1)).strip()
                 if not title:
                     continue
 
-                items.append({
+                m_replies = _re.search(r'class="forum_topic_reply_count">.*?>\s*([\d,]+)\s*</div>', block, _re.DOTALL)
+                replies = int(m_replies.group(1).replace(',', '')) if m_replies else 0
+
+                m_ts = _re.search(r'class="forum_topic_lastpost"[^>]*data-timestamp="(\d+)"', block)
+                if m_ts:
+                    lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=timezone.utc)
+                    if lastpost < cutoff:
+                        stopped_by_cutoff = True
+                        break
+                    time_str, approx = lastpost.isoformat(), False
+                else:
+                    time_str, approx = datetime.now(timezone.utc).isoformat(), True
+
+                m_author = _re.search(r'class="forum_topic_op"[^>]*>\s*([^<]+?)\s*</div>', block)
+                author = m_author.group(1).strip() if m_author else ''
+
+                # 正文预览藏在 data-tooltip-forum 的转义 HTML 里
+                summary = ''
+                m_hover = _re.search(r'data-tooltip-forum="(.*?)">', block, _re.DOTALL)
+                if m_hover:
+                    hover = _html.unescape(m_hover.group(1))
+                    m_text = _re.search(r'class="topic_hover_text"\s*>\s*(.*?)\s*</div>', hover, _re.DOTALL)
+                    if m_text:
+                        summary = _html.unescape(strip_html_tags(m_text.group(1))).strip()[:500]
+
+                item = {
                     'title': f'[Steam论坛] {title}',
-                    'summary': '',
+                    'summary': summary,
                     'source': 'steam_discussion',
-                    'time': datetime.now(timezone.utc).isoformat(),
-                    'time_is_approximate': True,
-                    'url': url,
+                    'time': time_str,
+                    'url': m_url.group(1),
                     'engagement': replies,
                     'is_hot': replies >= 10,
-                    'author': '',
+                    'author': author,
                     'tags': ['steam_forum'],
-                })
+                }
+                if approx:
+                    item['time_is_approximate'] = True
+                items.append(item)
+                page_added += 1
+
+            if stopped_by_cutoff or page_added == 0:
+                break
+            time.sleep(0.5)
 
         logger.info(f'Steam Discussions: fetched {len(items)} threads')
     except Exception as e:

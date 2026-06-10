@@ -12,6 +12,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update:
@@ -31,16 +32,24 @@ jobs:
       - name: Install Playwright browsers
         run: playwright install chromium
 
+      # aggregator / collect_global 失败（核心源异常的非零退出）不再中断管线：
+      # 下游 split/archive/commit 始终执行，避免单源反爬把当小时全平台归档拖死。
+      # 失败语义由末尾 "Surface collector failures" 步骤兜底（§4.2 R1 可见性保留）。
       - name: Run aggregator
+        id: aggregator
+        continue-on-error: true
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          NGA_COOKIE: ${{ secrets.NGA_COOKIE }}
         run: python projects/news/scripts/aggregator.py
 
       - name: Run global collectors (29 platforms)
+        id: global_collectors
+        continue-on-error: true
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -82,6 +91,7 @@ jobs:
       - name: Core-source health gate (non-blocking alarm)
         # 核心源（nga/taptap/bilibili 等）零产出 / 长期沉默时此步标红，
         # 但 continue-on-error 不阻断归档提交，仅作可见告警（采集故障可见化）。
+        id: health_gate
         continue-on-error: true
         run: python projects/news/scripts/silent_sources_audit.py --strict
 
@@ -112,3 +122,25 @@ jobs:
             cat projects/news/aggregator-failure.flag
             exit 1
           fi
+      - name: Open health alert issue (deduplicated)
+        # 健康门控标红时开 issue 报警，已有打开的同名 issue 则不重复开。
+        # 解决「报警器只记本子不响铃」：沉默源不再静默。
+        if: steps.health_gate.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="[健康门控] 核心采集源零产出或长期沉默"
+          EXISTING=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq 'length')
+          if [ "$EXISTING" = "0" ]; then
+            gh issue create --title "$TITLE" \
+              --body "silent_sources_audit --strict 触发告警。运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}。详见 projects/news/output/source-health.json。"
+          else
+            echo "Alert issue already open, skipping"
+          fi
+
+      - name: Surface collector failures
+        # §4.2 R1：核心源失败仍以红色运行可见，但归档与提交已在上方完成。
+        if: steps.aggregator.outcome == 'failure' || steps.global_collectors.outcome == 'failure'
+        run: |
+          echo "aggregator=${{ steps.aggregator.outcome }} global=${{ steps.global_collectors.outcome }}"
+          exit 1

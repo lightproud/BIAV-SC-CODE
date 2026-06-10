@@ -232,8 +232,16 @@ class SilentPlatformTracker:
         return p.get('level', self.LEVEL_ACTIVE)
 
     def should_skip_platform(self, platform: str) -> bool:
-        """判断是否应该跳过该平台（休眠状态）。"""
-        return self.get_platform_level(platform) == self.LEVEL_DORMANT
+        """判断是否应该跳过该平台（休眠状态）。
+
+        休眠源每天保留一次探测机会（当日未检查过则放行），否则源一旦
+        dormant 就永远不再尝试，上游恢复也无法被发现（telegram 死锁教训）。
+        """
+        p = self.health_data['platforms'].get(platform, {})
+        if p.get('level', self.LEVEL_ACTIVE) != self.LEVEL_DORMANT:
+            return False
+        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        return p.get('last_check_date') == today
 
     def get_report(self) -> dict:
         """生成健康报告。"""
