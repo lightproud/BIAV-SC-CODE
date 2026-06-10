@@ -95,8 +95,29 @@ git add -- "$DIGEST_DIR_REL" "$CONTINUITY_REL" 2>>"$LOG_FILE" || echo "  add fai
 if ! git diff --cached --quiet -- "$DIGEST_DIR_REL" "$CONTINUITY_REL" 2>/dev/null; then
     git commit -m "chore(memory): session digest + continuity auto-commit (SessionEnd hook)" \
         2>>"$LOG_FILE" || echo "  commit failed (non-fatal)" >>"$LOG_FILE"
-    git push origin main 2>>"$LOG_FILE" \
-        || echo "  push failed (non-fatal, will retry next session)" >>"$LOG_FILE"
+    # Archives always route to main, never to per-session PRs (keeper
+    # decision 2026-06-10). Cloud sessions are dispatched on feature
+    # branches, where the old unconditional `push origin main` was a no-op:
+    # the commit landed on the feature branch, lingered unpushed, and the
+    # platform stop-hook + auto-PR flow spawned a zero-value archive PR
+    # every session.
+    branch=$(git branch --show-current)
+    if [[ "$branch" == "main" ]]; then
+        git push origin main 2>>"$LOG_FILE" \
+            || echo "  push failed (non-fatal, will retry next session)" >>"$LOG_FILE"
+    else
+        git fetch origin main --quiet 2>>"$LOG_FILE" || true
+        # Fast-forwarding the branch tip onto main is only safe when it
+        # carries nothing but archive commits; otherwise we'd smuggle
+        # unreviewed dev commits into main, so leave pushing to the session.
+        if git merge-base --is-ancestor origin/main HEAD 2>/dev/null && \
+           [[ -z "$(git rev-list origin/main..HEAD --invert-grep --grep='session digest' 2>/dev/null)" ]]; then
+            git push origin HEAD:main 2>>"$LOG_FILE" \
+                || echo "  push to main failed (non-fatal, will retry next session)" >>"$LOG_FILE"
+        else
+            echo "  branch '$branch' carries non-archive commits; leaving push to the session" >>"$LOG_FILE"
+        fi
+    fi
 fi
 
 echo "[$(date -u +%FT%TZ)] hook done"
