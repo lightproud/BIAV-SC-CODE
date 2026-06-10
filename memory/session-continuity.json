@@ -18,6 +18,22 @@
   "recent_sessions": [
     {
       "id": "24d49210",
+      "timestamp": "2026-06-10T02:51:35.196000+00:00",
+      "duration_minutes": 229.2,
+      "branch": "claude/test-coverage-analysis-na9ih8",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/test.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/deliverables/2026-06/test-coverage-analysis.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "24d49210",
       "timestamp": "2026-06-10T01:27:48.082000+00:00",
       "duration_minutes": 145.4,
       "branch": "claude/test-coverage-analysis-na9ih8",
@@ -180,44 +196,20 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "f64330ef",
-      "timestamp": "2026-06-03T01:36:01.406000+00:00",
-      "duration_minutes": 1356.5,
-      "branch": "claude/fanart-window",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/recover-fanart.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_window_20260602.md",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/tmp/extract2.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 2.43,
-      "做梦Agent": 0.93,
-      "联动": 0.51
+      "Wiki": 2.94,
+      "做梦Agent": 0.74,
+      "联动": 0.41
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/deliverables/2026-06/test-coverage-analysis.md",
-      "/home/user/brain-in-a-vat/.github/workflows/test.yml"
+      "/home/user/brain-in-a-vat/.github/workflows/test.yml",
+      "/home/user/brain-in-a-vat/.gitignore"
     ],
-    "total_sessions": 140
+    "total_sessions": 141
   },
-  "updated_at": "2026-06-10T02:56:36.137569+00:00"
+  "updated_at": "2026-06-10T03:23:26.407151+00:00"
 }
