@@ -401,7 +401,12 @@ def fetch_arca_live_playwright() -> List[Dict]:
 
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
+            # CF 挑战页广告/埋点流量不断，networkidle 永不静默 → goto 必超时。
+            # 改等 domcontentloaded，再显式等列表选择器出现（给 CF 放行留时间）。
+            page = browser.new_page(
+                user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+                locale='ko-KR',
+            )
             page.set_default_timeout(TIMEOUT_MS)
 
             for mode in ['', 'best']:
@@ -409,8 +414,9 @@ def fetch_arca_live_playwright() -> List[Dict]:
                     url = 'https://arca.live/b/forgettingeve'
                     if mode:
                         url += f'?mode={mode}'
-                    page.goto(url, wait_until='networkidle')
-                    page.wait_for_timeout(3000)
+                    page.goto(url, wait_until='domcontentloaded', timeout=45000)
+                    page.wait_for_selector('.vrow', timeout=20000)
+                    page.wait_for_timeout(1500)
 
                     rows = page.query_selector_all('.vrow:not(.notice)')
                     for row in rows[:30]:
