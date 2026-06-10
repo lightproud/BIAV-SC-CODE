@@ -19,6 +19,23 @@
   "recent_sessions": [
     {
       "id": "90b9df5e",
+      "timestamp": "2026-06-10T18:26:55.105000+00:00",
+      "duration_minutes": 102.3,
+      "branch": "claude/lucid-feynman-dhj63l",
+      "topics": [
+        "BPT",
+        "MCP",
+        "GitHub"
+      ],
+      "decisions": [
+        "了共享能省多少",
+        ",跟进程共不共享完全无关"
+      ],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "90b9df5e",
       "timestamp": "2026-06-10T17:41:11.807000+00:00",
       "duration_minutes": 56.6,
       "branch": "claude/lucid-feynman-dhj63l",
@@ -151,42 +168,19 @@
         "/tmp/css_sample.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "53b3866e",
-      "timestamp": "2026-06-03T13:39:40.249000+00:00",
-      "duration_minutes": 496.1,
-      "branch": "claude/collect-comments-wf",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-fanart.yml",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_full.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_period_20260512_0603.md",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/root/.claude/plans/calm-dazzling-wirth.md",
-        "/tmp/css_sample.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.44,
-      "MCP": 1.8,
-      "Wiki": 1.58,
-      "GitHub": 1.0,
-      "做梦Agent": 0.47,
-      "联动": 0.26
+      "BPT": 2.95,
+      "MCP": 2.44,
+      "GitHub": 1.8,
+      "Wiki": 1.26,
+      "做梦Agent": 0.38,
+      "联动": 0.21
     },
-    "hot_files": [
-      "/home/user/brain-in-a-vat/CLAUDE.md"
-    ],
-    "total_sessions": 143
+    "hot_files": [],
+    "total_sessions": 144
   },
-  "updated_at": "2026-06-10T18:31:14.060642+00:00"
+  "updated_at": "2026-06-10T18:36:50.632721+00:00"
 }
