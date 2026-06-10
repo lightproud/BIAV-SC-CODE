@@ -659,52 +659,77 @@ def fetch_naver_cafe():
 
 
 def fetch_arca_live():
-    """从 Arca.live 抓取韩国忘却前夜频道 (forgettingeve)。"""
+    """从 Arca.live 抓取韩国忘却前夜频道 (forgettingeve)。
+
+    Cloudflare 对裸 `Mozilla/5.0` UA 直接 403，须用完整浏览器头。
+    2026-06 实测 DOM：每帖为 `<a class="vrow column" href="/b/.../id?p=1">`，
+    含 <time datetime="ISO">、col-view 浏览数、col-rate 推荐数、comment-count。
+    （公告行 class 为 "vrow column notice ..."，精确匹配普通行即自动排除。）
+    """
     arca_channel = os.environ.get("ARCA_CHANNEL", "forgettingeve")
     items = []
+    seen_urls = set()
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+        "Referer": "https://arca.live/",
+    }
+    import re as _re
 
     for mode in ("best", ""):  # best=인기, ""=최신
         try:
             params = {"p": 1}
             if mode:
                 params["mode"] = mode
-            resp = _get_cf(
+            resp = _get(
                 f"https://arca.live/b/{arca_channel}",
                 params=params,
-                headers={"User-Agent": "Mozilla/5.0"},
+                headers=headers,
             )
             html = resp.text
 
-            # Parse article list from HTML using regex (avoids BeautifulSoup dependency)
-            import re as _re
-            # Match article rows: data-url="/b/forgettingeve/12345"
-            for match in _re.finditer(
-                r'data-url="(/b/[^"]+/(\d+))"[^>]*>.*?'
-                r'class="title"[^>]*>([^<]+)</a>.*?'
-                r'class="col-time"[^>]*>([^<]+)',
-                html, _re.DOTALL
-            ):
-                path, article_id, title, time_text = match.groups()
-                title = title.strip()
+            rows = _re.split(r'<a class="vrow column" href="', html)[1:]
+            mode_added = 0
+            for row in rows:
+                m_href = _re.match(r'(/b/[^"?]+)', row)
+                m_title = _re.search(r'<span class="title">(.*?)</span>\s*<span class="info">', row, _re.DOTALL)
+                if not m_href or not m_title:
+                    continue
+                title = news_common.strip_html(m_title.group(1)).strip()
                 if not title:
                     continue
-                # H4: col-time 为 "HH:MM"/"MM.DD"/"YYYY.MM.DD" 原文，归一为 ISO
-                arca_time, arca_approx = news_common.parse_relative_time(time_text)
+                url = f"https://arca.live{m_href.group(1)}"
+                if url in seen_urls:
+                    continue
+                seen_urls.add(url)
+
+                m_time = _re.search(r'<time datetime="([^"]+)"', row)
+                time_str = m_time.group(1) if m_time else datetime.now(timezone.utc).isoformat()
+                m_view = _re.search(r'class="vcol col-view">\s*([\d,]+)', row)
+                m_rate = _re.search(r'class="vcol col-rate">\s*(-?[\d,]+)', row)
+                m_cmt = _re.search(r'class="comment-count">\s*\[(\d+)\]', row)
+                views = int(m_view.group(1).replace(",", "")) if m_view else 0
+                rate = int(m_rate.group(1).replace(",", "")) if m_rate else 0
+                comments = int(m_cmt.group(1)) if m_cmt else 0
+                m_author = _re.search(r'data-filter="([^"]*)"', row)
+
                 items.append(_make_item(
                     title=title,
                     summary="",
                     source="arca_live",
                     platform_region="kr",
-                    time_str=arca_time,
-                    url=f"https://arca.live{path}",
-                    engagement=0,
-                    is_hot=(mode == "best"),
-                    author="",
+                    time_str=time_str,
+                    url=url,
+                    engagement=views + rate * 5 + comments * 2,
+                    is_hot=(mode == "best") or rate >= 10,
+                    author=m_author.group(1) if m_author else "",
                     lang="ko",
-                    time_is_approximate=arca_approx,
+                    time_is_approximate=not m_time,
                 ))
+                mode_added += 1
 
-            logger.info(f'Arca.live "{arca_channel}" mode={mode or "latest"}: {len(items)} items')
+            logger.info(f'Arca.live "{arca_channel}" mode={mode or "latest"}: +{mode_added} items')
         except Exception as e:
             logger.warning(f'Arca.live "{arca_channel}" mode={mode or "latest"} failed: {e}')
 
