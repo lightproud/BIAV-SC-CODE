@@ -1,11 +1,12 @@
 {
   "last_session": {
     "id": "90b9df5e",
-    "timestamp": "2026-06-10T17:21:09.479000+00:00",
-    "duration_minutes": 36.5,
+    "timestamp": "2026-06-10T17:41:11.807000+00:00",
+    "duration_minutes": 56.6,
     "branch": "claude/lucid-feynman-dhj63l",
     "topics": [
-      "BPT"
+      "BPT",
+      "MCP"
     ],
     "decisions": [
       "了共享能省多少",
@@ -15,6 +16,21 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "90b9df5e",
+      "timestamp": "2026-06-10T17:21:09.479000+00:00",
+      "duration_minutes": 36.5,
+      "branch": "claude/lucid-feynman-dhj63l",
+      "topics": [
+        "BPT"
+      ],
+      "decisions": [
+        "了共享能省多少",
+        ",跟进程共不共享完全无关"
+      ],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "b3870dea",
       "timestamp": "2026-06-09T23:12:09.856000+00:00",
@@ -167,47 +183,20 @@
         "/tmp/extract_0601.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "44c85833",
-      "timestamp": "2026-06-03T05:10:45.930000+00:00",
-      "duration_minutes": 1571.3,
-      "branch": "claude/back-to-apikey",
-      "topics": [
-        "做梦Agent"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-media.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/daily-report.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/recover-fanart.yml",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_window_20260602.md",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_media.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_fanart.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_video_comments.py",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/home/user/brain-in-a-vat/scripts/send_report_email.py",
-        "/root/.claude/plans/calm-dazzling-wirth.md",
-        "/tmp/extract2.py",
-        "/tmp/extract_0601.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 2.46,
-      "BPT": 1.0,
-      "做梦Agent": 0.74,
-      "联动": 0.41
+      "Wiki": 1.97,
+      "BPT": 1.8,
+      "MCP": 1.0,
+      "做梦Agent": 0.59,
+      "联动": 0.33
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md"
     ],
-    "total_sessions": 141
+    "total_sessions": 142
   },
-  "updated_at": "2026-06-10T17:25:22.061878+00:00"
+  "updated_at": "2026-06-10T17:46:38.652240+00:00"
 }
