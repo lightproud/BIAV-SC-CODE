@@ -163,15 +163,15 @@
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 4.66,
-      "做梦Agent": 0.12
+      "Wiki": 4.73,
+      "做梦Agent": 0.1
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.github/workflows/test.yml",
       "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/deliverables/2026-06/test-coverage-analysis.md"
     ],
-    "total_sessions": 149
+    "total_sessions": 150
   },
-  "updated_at": "2026-06-10T14:49:30.970326+00:00"
+  "updated_at": "2026-06-10T16:05:22.434433+00:00"
 }
