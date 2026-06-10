@@ -160,6 +160,71 @@ def get_with_retry(url, params=None, headers=None, timeout=15, retries=3,
     raise last_exc  # unreachable, satisfies type checker
 
 
+# ── Bilibili 风控配套（spi cookie + wbi 签名）────────────────────────────────
+# 2026-06 起 B 站搜索接口对伪造 buvid 返回风控 HTML（非 JSON），必须：
+# 1) 用 /x/frontend/finger/spi 取服务端签发的 buvid3/buvid4
+# 2) 走 /x/web-interface/wbi/search/type 并做 wbi 签名
+# 两套采集栈（aggregator / global）共用此实现（ARCH-02 收敛纪律）。
+
+_WBI_MIXIN_KEY_ENC_TAB = [
+    46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35,
+    27, 43, 5, 49, 33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13,
+    37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4,
+    22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52,
+]
+_wbi_cache = {}  # {'mixin_key': str, 'ts': float}
+
+
+def bilibili_spi_cookies(headers=None, timeout=10):
+    """从 /x/frontend/finger/spi 获取服务端签发的 buvid3/buvid4。失败返回 {}。"""
+    try:
+        resp = requests.get(
+            'https://api.bilibili.com/x/frontend/finger/spi',
+            headers=headers, timeout=timeout,
+        )
+        data = resp.json().get('data', {})
+        cookies = {}
+        if data.get('b_3'):
+            cookies['buvid3'] = data['b_3']
+        if data.get('b_4'):
+            cookies['buvid4'] = data['b_4']
+        return cookies
+    except Exception:
+        return {}
+
+
+def get_wbi_mixin_key(headers=None, timeout=10):
+    """获取并缓存 wbi mixin key（30 分钟刷新）。失败时回退用旧缓存或 None。"""
+    now = time.time()
+    if _wbi_cache.get('mixin_key') and now - _wbi_cache.get('ts', 0) < 1800:
+        return _wbi_cache['mixin_key']
+    try:
+        resp = requests.get(
+            'https://api.bilibili.com/x/web-interface/nav',
+            headers=headers, timeout=timeout,
+        )
+        wbi = resp.json().get('data', {}).get('wbi_img', {})
+        img_key = wbi['img_url'].rsplit('/', 1)[1].split('.')[0]
+        sub_key = wbi['sub_url'].rsplit('/', 1)[1].split('.')[0]
+        raw = img_key + sub_key
+        _wbi_cache['mixin_key'] = ''.join(raw[i] for i in _WBI_MIXIN_KEY_ENC_TAB)[:32]
+        _wbi_cache['ts'] = now
+        return _wbi_cache['mixin_key']
+    except Exception:
+        return _wbi_cache.get('mixin_key')
+
+
+def sign_wbi_params(params, mixin_key):
+    """为请求参数附加 wts + w_rid wbi 签名。"""
+    import hashlib
+    from urllib.parse import urlencode
+    params = dict(params)
+    params['wts'] = int(time.time())
+    query = urlencode(sorted(params.items()))
+    params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
+    return params
+
+
 def make_item(title, summary, source, platform_region, time_str, url,
               engagement=0, is_hot=False, author="", tags=None, lang="",
               content_type="text", media_url="", time_is_approximate=False):

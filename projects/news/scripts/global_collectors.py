@@ -245,15 +245,29 @@ def fetch_reddit(subreddits=None):
 
 # NOTE: divergent from aggregator_collectors.fetch_bilibili — see audit ARCH-01 (behavior differs, not merged).
 def fetch_bilibili():
-    """从 Bilibili 搜索忘却前夜相关视频。"""
+    """从 Bilibili 搜索忘却前夜相关视频。
+
+    搜索接口需 wbi 签名 + 服务端签发 buvid（spi），否则返回风控 HTML。
+    签名实现共享自 news_common（与 aggregator 栈同源）。
+    """
     items = []
-    headers = {"Referer": "https://www.bilibili.com"}
+    headers = {
+        "Referer": "https://www.bilibili.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    }
+    spi = news_common.bilibili_spi_cookies(headers)
+    if spi:
+        headers["Cookie"] = "; ".join(f"{k}={v}" for k, v in spi.items())
+    mixin_key = news_common.get_wbi_mixin_key(headers)
 
     for keyword in KEYWORDS["zh"]:
         try:
+            params = {"search_type": "video", "keyword": keyword, "order": "pubdate", "page": 1}
+            if mixin_key:
+                params = news_common.sign_wbi_params(params, mixin_key)
             data = _get(
-                "https://api.bilibili.com/x/web-interface/search/type",
-                params={"search_type": "video", "keyword": keyword, "order": "pubdate", "page": 1},
+                "https://api.bilibili.com/x/web-interface/wbi/search/type",
+                params=params,
                 headers=headers,
             ).json()
 
@@ -385,13 +399,21 @@ def fetch_nga():
                 try:
                     data = resp.json()
                 except ValueError:
-                    # NGA sometimes returns JSONP, try to extract JSON
+                    # NGA sometimes returns JSONP / JS object literal (单引号 key)
                     text = resp.text.strip()
                     json_match = _re.search(r'\{.*\}', text, _re.DOTALL)
-                    if json_match:
-                        data = json.loads(json_match.group())
-                    else:
+                    if not json_match:
                         continue
+                    raw = json_match.group()
+                    try:
+                        data = json.loads(raw)
+                    except ValueError:
+                        # JS 对象字面量：尝试单引号→双引号宽松解析，失败则跳过
+                        try:
+                            data = json.loads(raw.replace("\\'", "\x00").replace("'", '"').replace("\x00", "'"))
+                        except ValueError:
+                            logger.warning(f'NGA search "{keyword}": unparseable JS response, skipping')
+                            continue
 
                 threads = data.get("data", {}).get("__T", {})
                 if isinstance(threads, dict):
@@ -887,6 +909,7 @@ def fetch_fivech():
     import re as _re
 
     # Method 1: scan applism (手游板) subject.txt for matching threads
+    # 2026-06 起 5ch 服务器域名整体从 5ch.net 迁移至 5ch.io（旧域 404）
     boards = [
         ("pug", "applism"),     # アプリ/ソシャゲ
         ("krsw", "gamesm"),     # スマホゲーム
@@ -894,7 +917,7 @@ def fetch_fivech():
     for server, board in boards:
         try:
             resp = _get(
-                f"https://{server}.5ch.net/{board}/subject.txt",
+                f"https://{server}.5ch.io/{board}/subject.txt",
                 headers={"User-Agent": "Monazilla/1.00"},
             )
             text = resp.text
@@ -922,7 +945,7 @@ def fetch_fivech():
                         source="fivech",
                         platform_region="jp",
                         time_str=thread_time,
-                        url=f"https://{server}.5ch.net/test/read.cgi/{board}/{tid}/",
+                        url=f"https://{server}.5ch.io/test/read.cgi/{board}/{tid}/",
                         engagement=int(replies),
                         is_hot=int(replies) > 100,
                         author="",
@@ -931,6 +954,47 @@ def fetch_fivech():
                     ))
         except Exception as e:
             logger.warning(f"5ch {server}/{board} failed: {e}")
+
+    # Method 2: ff5ch.syoboi.jp 全板搜索兜底（板地址迁移 / subject.txt 失效时仍可发现线程）
+    # 结果行形如 <a class="thread" href="https://xxx.5ch.io/test/read.cgi/board/TID/">标题 </a><span>(回复数)</span>
+    if not items:
+        for keyword in KEYWORDS["ja"]:
+            try:
+                resp = _get(
+                    "https://ff5ch.syoboi.jp/",
+                    params={"q": keyword},
+                    headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
+                )
+                for m in _re.finditer(
+                    r'class="thread"\s+href="(https?://[^"]+/test/read\.cgi/[^/"]+/(\d+)/?)"[^>]*>([^<]+)</a>'
+                    r'\s*<span[^>]*>\s*\((\d+)\)',
+                    resp.text,
+                ):
+                    url, tid, title, replies = m.group(1), m.group(2), m.group(3).strip(), int(m.group(4))
+                    try:
+                        thread_time = datetime.fromtimestamp(int(tid), tz=timezone.utc)
+                        if thread_time < CUTOFF and replies < 100:
+                            # 旧线程且不活跃 → 跳过；活跃大线程保留（5ch 线程长期滚动）
+                            continue
+                        time_str, approx = thread_time.isoformat(), False
+                    except (ValueError, OSError):
+                        time_str, approx = datetime.now(timezone.utc).isoformat(), True
+                    items.append(_make_item(
+                        title=title,
+                        summary="",
+                        source="fivech",
+                        platform_region="jp",
+                        time_str=time_str,
+                        url=url,
+                        engagement=replies,
+                        is_hot=replies > 100,
+                        author="",
+                        lang="ja",
+                        time_is_approximate=approx,
+                    ))
+                logger.info(f'5ch ff5ch "{keyword}": {len(items)} threads')
+            except Exception as e:
+                logger.warning(f'5ch ff5ch "{keyword}" failed: {e}')
 
     logger.info(f"5ch: {len(items)} threads")
     return items
@@ -1356,10 +1420,16 @@ def fetch_note_com():
     items = []
     for keyword in KEYWORDS["ja"]:
         try:
-            resp = _get(
+            # note.com 对数据中心 IP 返回 403，cloudscraper（浏览器指纹）通过率更高；
+            # _get 对 4xx raise，故直接用 _get_cf 单路径。
+            resp = _get_cf(
                 "https://note.com/api/v3/searches",
                 params={"q": keyword, "size": 20, "sort": "new", "context": "note"},
-                headers={"User-Agent": "Mozilla/5.0"},
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+                    "Referer": "https://note.com/",
+                    "Accept": "application/json",
+                },
             )
             if resp.status_code == 200:
                 data = resp.json()

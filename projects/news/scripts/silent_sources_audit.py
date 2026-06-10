@@ -186,6 +186,14 @@ def print_report(report: dict) -> None:
 
 def write_health(report: dict) -> None:
     """Seed source-health.json 供 SilentPlatformTracker 使用。"""
+    # 保留 tracker 写入的 last_check_date：丢失它会让 dormant 源的
+    # 「每日一次探测」退化为每小时探测（每次 --write 重置检查记录）。
+    existing = {}
+    if HEALTH_PATH.exists():
+        try:
+            existing = json.loads(HEALTH_PATH.read_text(encoding='utf-8')).get('platforms', {})
+        except Exception:
+            existing = {}
     platforms = {}
     for e in report['entries']:
         # "never" 永远种子化为 active：archive 缺失常常是因为该源还没在产线跑过，
@@ -202,6 +210,7 @@ def write_health(report: dict) -> None:
         platforms[e['source']] = {
             'level': level,
             'last_success_date': e['last_archive_date'],
+            'last_check_date': existing.get(e['source'], {}).get('last_check_date'),
             'consecutive_silent_days': silent,
             'total_items': e['total_items'],
             'errors': [],
