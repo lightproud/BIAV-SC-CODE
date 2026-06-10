@@ -102,3 +102,13 @@ jobs:
             echo "All push attempts failed"
             exit 1
           fi
+
+      - name: Surface aggregator failure (sentinel check)
+        # H9: aggregator 失败时写哨兵并以 0 退出，保证后续采集/归档/提交照常执行；
+        # 数据已提交后在此检测哨兵，存在则标红整个 run（失败仍在 CI 可见）。
+        run: |
+          if [ -f projects/news/aggregator-failure.flag ]; then
+            echo "Aggregator reported failure:"
+            cat projects/news/aggregator-failure.flag
+            exit 1
+          fi

@@ -42,15 +42,30 @@ from aggregator_collectors import (
     fetch_steam_discussions, fetch_steam_news, fetch_steam_reviews,
     fetch_taptap, fetch_youtube,
 )
+import news_common  # 哨兵文件摘要脱敏（H3）
 
 
 # Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
 CORE_SOURCES = {'reddit', 'bilibili', 'nga', 'taptap'}
 
+# H9: 失败哨兵文件。aggregator 直接 SystemExit(1) 会让 update-news.yml 跳过后续
+# collect_global/split/archive/commit 步骤，成功源数据随 runner 销毁丢失。改为：
+# 失败时写哨兵 + 以 0 退出，workflow 末尾独立步骤检测哨兵再标红（失败仍在 CI 可见）。
+# 路径在 output/ 之外，避免被 `git add projects/news/output/` 提交进仓库。
+FAILURE_FLAG = OUTPUT_PATH.parent.parent / 'aggregator-failure.flag'
+
+
+def _flag_failure(summary: str):
+    """记录失败摘要到哨兵文件（脱敏后写入），由 CI 末尾步骤检测并标红。"""
+    redacted = news_common.redact_secrets(summary)
+    FAILURE_FLAG.write_text(redacted + '\n', encoding='utf-8')
+    logger.error(f'Failure recorded to {FAILURE_FLAG.name}: {redacted}')
+
 
 def run():
     """Main aggregation pipeline."""
     logger.info('Starting Morimens community news aggregation...')
+    FAILURE_FLAG.unlink(missing_ok=True)  # 清掉上次运行残留的哨兵
 
     all_news = []
     core_failures = []  # (source_id, error) for core sources that raised
@@ -212,9 +227,10 @@ def run():
             with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
         # Signal failure so CI surfaces the empty run (lesson #2). Existing data
-        # is preserved above; the non-zero exit lets the workflow alert instead
-        # of silently passing on a total collection failure.
-        raise SystemExit(1)
+        # is preserved above; the sentinel file lets the workflow alert at the
+        # end without skipping the remaining collection/archive steps (H9).
+        _flag_failure('All sources returned empty results (existing news.json preserved).')
+        return False
 
     # Generate summary
     summary = generate_summary(unique_news)
@@ -239,11 +255,12 @@ def run():
     except ImportError:
         pass
 
-    # §4.2 R1: 输出已落盘保全数据，但任一核心源失败则以非零退出让 CI 暴露失败
+    # §4.2 R1: 输出已落盘保全数据；任一核心源失败写哨兵，由 workflow 末尾标红（H9），
+    # 不再非零退出（那会跳过后续 collect_global/split/archive/commit，丢掉成功源数据）。
     if core_failures:
         names = ', '.join(f'{s} ({err})' for s, err in core_failures)
-        logger.error(f'Core source(s) failed: {names}. Surfacing non-zero exit per §4.2 R1.')
-        raise SystemExit(1)
+        _flag_failure(f'Core source(s) failed per §4.2 R1: {names}')
+        return False
 
     return True
 

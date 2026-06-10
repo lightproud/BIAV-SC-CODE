@@ -9,7 +9,7 @@
 > - **加工数据**：`projects/wiki/data/processed/*.json`（cg_gallery / item_stories / voice_lines / world_lore）
 > - **制作人第一手陈述**：`assets/data/interview-2026-04.json`
 > - **设计决策**：`assets/data/design-decisions.json`
-> - ⚠ `projects/wiki/data/db/` 基线尚未建立，Phase 2 W1 首要任务（详见 `memory/wiki-phase-2-gap-inventory.md`）
+> - `projects/wiki/data/db/` 基线已建立（characters.json 当前 24/72，Phase 2 补齐中，详见 `memory/wiki-phase-2-gap-inventory.md`）
 
 ## 基本信息
 
