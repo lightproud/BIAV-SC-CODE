@@ -316,14 +316,14 @@ async def _extract_topics_dom(page) -> list[dict]:
             );
 
             return {
-                title: titleEl ? titleEl.innerText.trim() : '',
+                title: titleEl ? ((titleEl.innerText || titleEl.textContent || '').trim()) : '',
                 time_str: timeEl
-                    ? (timeEl.getAttribute('datetime') || timeEl.innerText.trim())
+                    ? (timeEl.getAttribute('datetime') || ((timeEl.innerText || timeEl.textContent || '').trim()))
                     : '',
-                likes: likeEl ? likeEl.innerText.trim() : '0',
-                comments: commentEl ? commentEl.innerText.trim() : '0',
+                likes: likeEl ? ((likeEl.innerText || likeEl.textContent || '').trim()) : '0',
+                comments: commentEl ? ((commentEl.innerText || commentEl.textContent || '').trim()) : '0',
                 url: linkEl ? linkEl.href : '',
-                author: authorEl ? authorEl.innerText.trim() : '',
+                author: authorEl ? ((authorEl.innerText || authorEl.textContent || '').trim()) : '',
             };
         });
     }""")
@@ -510,13 +510,13 @@ async def _extract_reviews_dom(page) -> list[dict]:
             const linkEl = el.querySelector('a[href*="/review/"]') || el.querySelector('a[href]');
 
             return {
-                content: contentEl ? contentEl.innerText.trim() : '',
+                content: contentEl ? ((contentEl.innerText || contentEl.textContent || '').trim()) : '',
                 time_str: timeEl
-                    ? (timeEl.getAttribute('datetime') || timeEl.innerText.trim())
+                    ? (timeEl.getAttribute('datetime') || ((timeEl.innerText || timeEl.textContent || '').trim()))
                     : '',
-                likes: likeEl ? likeEl.innerText.trim() : '0',
-                author: authorEl ? authorEl.innerText.trim() : '',
-                score: starEl ? starEl.innerText.trim() : '',
+                likes: likeEl ? ((likeEl.innerText || likeEl.textContent || '').trim()) : '0',
+                author: authorEl ? ((authorEl.innerText || authorEl.textContent || '').trim()) : '',
+                score: starEl ? ((starEl.innerText || starEl.textContent || '').trim()) : '',
                 url: linkEl ? linkEl.href : '',
             };
         });
