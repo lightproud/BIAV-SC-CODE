@@ -1,10 +1,22 @@
 # 项目状态一览
 
-> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
+> 最后更新：2026-06-09 by 银芯记忆系统（艾瑞卡会话）
 >
+> **本档案是子项目状态与实时进度的唯一权威**（CLAUDE.md §1.3 裁定）：
+> 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
-## 2026-04-26 仓库整顿状态（重要）
+## 2026-06-09 状态核验（实测）
+
+- **Phase 2 进行中**（2026-04-27 → 07-19，84 天，已过 43 天）
+- **采集自动化持续运行**：git log 顶部为连续机器提交（Discord 回填 / 视频评论归档 / 社区新闻），无中断迹象
+- **工作流 19 个**：2026-06-05 新增 `collect-comments`（每日 02:00 UTC 视频评论归档）与 `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
+- **daily-report 定时已停用**：报告改在 Claude Code 会话内订阅生成（零 API 费），workflow 仅留手动触发备用
+- **wiki 基线**：`characters.json` 实测 24/72（23 partial + 1 fixture），W1 自举完成，W2 待批量补齐剩余 48
+- **CLAUDE.md 治理**：易腐清单去枚举化 + 战略状态指针化（本档案权威化）+ 路径引用 CI 对账（`tests/test_claude_md.py`）
+- 下方 4-26 快照中的待办事项（守密人本地删分支 / dependabot #136-140）未在本次复核范围，实际状态以 GitHub 为准
+
+## 2026-04-26 仓库整顿快照（历史，部分待办状态未复核）
 
 - ✅ **直推 main 政策正式落地**（PR #141 已合并）—— CLAUDE.md / claude.yml / BIAV-SC.md 全部对齐 `decisions.md` 2026-03-29 决策
 - ✅ **SessionStart 同步 hook 上线** — `.claude/hooks/session-start-sync.sh` 自动同步 local main 与 origin/main，根治 Cloudflare HTTP 413 推送堵塞（lesson #28）
@@ -17,9 +29,9 @@
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
-| news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 批量升级 5 个 dependabot 依赖（#136-140）、桥接 Discord → 聚合器、月度归档清理 |
-| wiki（数据集 + Wiki 站点） | **Phase 2 W1 自举完成 24 角色**，剩余 48 待批量自举 | Code-wiki | Phase 2 W2：批量补齐剩余 48 角色 characters.json 记录，再触发 fetch-wiki-data workflow |
-| game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
+| news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
+| wiki（数据集 + Wiki 站点） | **Phase 2 W1 自举完成 24/72**（6-9 实测） | Code-wiki | Phase 2 W2：批量补齐剩余 48 角色 characters.json 记录，再触发 fetch-wiki-data workflow |
+| game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
 
@@ -125,34 +137,29 @@
 
 ## 当前阶段
 
-**Phase 1：记忆宫殿** — ✅ 已验证通过（2026-04-04）
+**Phase 2 银芯三新使命建设期**（2026-04-27 → 07-19，4-19/4-20 压缩时间表）。
 
-- Phase 0（止血）：✅ 完成
-- Stage 1 验证（日报 14 天）：✅ 制作人确认通过
-- 事实圣经 v1.0：✅ 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策
-- 记忆系统 9 模块：✅ 全部上线（3410 行新代码）
-- 做梦 Agent 三层：✅ 全部启动（浅睡6h + 深睡每日 + REM每周）
+Phase 0/1 已验收归档（2026-04-04）：Phase 0 止血完成、Stage 1 日报 14 天验证
+通过、记忆系统 9 模块 + 做梦 Agent 三层上线。详见 `memory/strategic-plan-2026.md`。
 
-**下一阶段**：Phase 2（内容权威，6-8月）— Wiki 数据 100% + 联动实战
+## Workflow 触发方式（2026-06-09 按 yml 实测 cron 核验）
 
-详见 `memory/strategic-assessment.md`。
-
-## Workflow 运行频率（2026-04-01 调整）
-
-| Workflow | 频率 | 状态 |
+| Workflow | 触发 | 状态 |
 |----------|------|------|
-| update-news.yml | 每日 2 次（06:00/16:00 UTC） | 运行中 |
-| discord-archive.yml | 每日 1 次（18:00 UTC） | 运行中 |
+| update-news.yml | 每小时（`0 * * * *`） | 运行中 |
+| discord-archive.yml | 每日 18:00 UTC + 每月 1 日月度归档 | 运行中 |
+| collect-comments.yml | 每日 02:00 UTC | 运行中（2026-06-05 新增） |
+| recover-fanart.yml | 手动 dispatch | 可用（2026-06-05 新增） |
+| daily-report.yml | 手动 dispatch（定时已停用，报告改会话内订阅生成） | 备用 |
 | deploy-site.yml | push 触发 | 运行中 |
-| fetch-wiki-data.yml | 每周一 | 运行中 |
-| check-version.yml | 每周一 | 运行中 |
+| fetch-wiki-data.yml | 每周一 04:00 UTC | 运行中 |
+| check-version.yml | 每周一 06:00 UTC | 运行中 |
 | validate-data.yml | push 触发 | 运行中 |
-| dream.yml（浅睡） | 每 6 小时 | ✅ 运行中（含哨兵层） |
-| dream.yml（深睡） | 每日 19:00 UTC | ✅ 运行中（2026-04-04 启用） |
-| dream.yml（REM） | 每周一 01:00 UTC | ✅ 运行中（2026-04-04 启用） |
-| claude.yml | Issue 触发 | ✅ 可用（API 已恢复） |
-| generate-report.yml | **已暂停** | secrets 未配 |
-| extract-game-data.yml | **已暂停** | Steam 认证未通 |
+| dream.yml | 浅睡每 6h / 深睡每日 19:00 UTC / REM 每周一 01:00 UTC | 运行中 |
+| claude.yml | Issue 触发 | 可用 |
+| extract-game-data.yml | release / trigger 文件 / 手动 dispatch | 可用 |
+
+其余测试 / 回填类 workflow 以 `ls .github/workflows/` 为准。
 
 ## 基础设施状态
 
