@@ -1,6 +1,25 @@
 {
-  "collected_at": "2026-06-03T12:32:45.336600+00:00",
+  "collected_at": "2026-06-09T10:28:51.977416+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": []
+  "item_count": 1,
+  "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-06-08T12:44:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】红的不只有牌，还有脸上的温度",
+      "summary": "└ 活过一乔 (31赞): 如果我打出牌，我就会死\n如果我不打牌，我就会死\n  └ 壳丢了的寄居蟹 (3赞): [doge]\n  └ 汲取曼巴力量 (3赞): 娜娜字幕一个你在干杯蚌埠住了",
+      "url": "https://www.bilibili.com/video/BV1kYEu6jEyZ",
+      "author": "金发女人丨型",
+      "engagement": 2106,
+      "media_url": "http://i0.hdslb.com/bfs/archive/8056dae47ac1d462e7b1d80d1d6bb4ddbf0e643a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2093,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 5
+      }
+    }
+  ]
 }

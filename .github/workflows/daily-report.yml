@@ -62,11 +62,14 @@ jobs:
 
       - name: Compute window
         id: dates
+        env:
+          INPUT_END_DATE: ${{ github.event.inputs.end_date }}
+          INPUT_WINDOW_DAYS: ${{ github.event.inputs.window_days }}
         run: |
-          END="${{ github.event.inputs.end_date }}"
+          END="$INPUT_END_DATE"
           # 默认=北京昨日（定时每日跑覆盖昨日完整一天；当日数据尚未采全）
           [ -n "$END" ] || END=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
-          WIN="${{ github.event.inputs.window_days }}"; WIN=${WIN:-1}
+          WIN="$INPUT_WINDOW_DAYS"; WIN=${WIN:-1}
           START=$(date -d "$END -$((WIN-1)) day" +%Y-%m-%d)
           # 窗口内所有日期（空格分隔），供逐日同人图采集与 prompt 读取
           DATES=""

@@ -346,6 +346,10 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
                 ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0', url],
                 capture_output=True, text=True, timeout=30,
             )
+            if result.returncode != 0:
+                break
+            if not result.stdout.strip():
+                break
             data = json.loads(result.stdout)
 
             reviews = data.get('reviews', [])

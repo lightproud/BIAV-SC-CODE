@@ -1,3 +1,5 @@
+import gzip
+import json
 import sys
 import tempfile
 import unittest
@@ -9,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import dream
 import fact_store
 import knowledge_graph
+import memory_search
 import memrl
 
 
@@ -115,6 +118,71 @@ class TestSuggestArchival(unittest.TestCase):
         }
         suggested = {s["file"] for s in memrl.suggest_archival(utility)}
         self.assertEqual(suggested, {"old_low.md"})
+
+
+class TestInvertedIndexEquivalence(unittest.TestCase):
+    """PERF-03: the inverted-index search path must return the same top-k as a
+    full scan over all vectors. The inverted path only scores chunks sharing
+    >=1 query token, which is exact-equivalent because a chunk with no shared
+    token has cosine 0 (below the 0.01 threshold)."""
+
+    # A few short docs sharing/overlapping vocabulary so the vocab min_df>=2
+    # filter keeps real terms and queries hit multiple candidates.
+    DOCS = [
+        "alpha beta gamma delta alpha",
+        "beta gamma epsilon zeta beta",
+        "gamma delta epsilon theta",
+        "alpha epsilon iota kappa alpha",
+        "lambda mu nu beta gamma",
+        "alpha beta delta theta iota",
+    ]
+
+    def _chunks(self):
+        return [
+            {"chunk_id": f"c{i}", "text": t, "file": f"f{i}.md", "offset": 0}
+            for i, t in enumerate(self.DOCS)
+        ]
+
+    def _run_search_with_index(self, index, query, top_k):
+        """Drive the real search() against a tmp gzip index, isolating all
+        global state (VECTORS_FILE + in-process cache) so the real 39MB index
+        is never touched."""
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "vectors.json.gz"
+            with gzip.open(path, "wt", encoding="utf-8") as f:
+                json.dump(index, f, ensure_ascii=False)
+            orig_file = memory_search.VECTORS_FILE
+            orig_cache = memory_search._index_cache
+            orig_mtime = memory_search._index_cache_mtime
+            try:
+                memory_search.VECTORS_FILE = path
+                memory_search._index_cache = None
+                memory_search._index_cache_mtime = 0
+                return memory_search.search(query, top_k=top_k, use_reranker=False)
+            finally:
+                memory_search.VECTORS_FILE = orig_file
+                memory_search._index_cache = orig_cache
+                memory_search._index_cache_mtime = orig_mtime
+
+    def test_inverted_path_matches_full_scan(self):
+        index = memory_search.build_tfidf_index(self._chunks())
+        self.assertIn("inverted", index)
+
+        # Full-scan variant: same index minus the inverted key (older index
+        # files without it fall back to a full scan inside search()).
+        full_scan_index = {k: v for k, v in index.items() if k != "inverted"}
+
+        for query in ("alpha beta", "gamma delta", "epsilon theta iota", "alpha"):
+            inv = self._run_search_with_index(index, query, top_k=5)
+            full = self._run_search_with_index(full_scan_index, query, top_k=5)
+
+            self.assertEqual(
+                [r["chunk_id"] for r in inv],
+                [r["chunk_id"] for r in full],
+                msg=f"top-k order diverged for query {query!r}",
+            )
+            for a, b in zip(inv, full):
+                self.assertAlmostEqual(a["score"], b["score"], places=6)
 
 
 if __name__ == "__main__":

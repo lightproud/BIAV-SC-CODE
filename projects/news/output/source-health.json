@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-06-03T12:32:50.564827+00:00",
+  "updated_at": "2026-06-09T10:28:57.789877+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
-    "end": "2026-06-03",
-    "days": 3774
+    "end": "2026-06-09",
+    "days": 3780
   },
   "platforms": {
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-05-31",
-      "consecutive_silent_days": 3,
-      "total_items": 1929,
+      "last_success_date": "2026-06-08",
+      "consecutive_silent_days": 1,
+      "total_items": 1934,
       "errors": []
     },
     "steam": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 897,
+      "total_items": 995,
       "errors": []
     },
     "taptap": {
@@ -30,23 +30,23 @@
     },
     "discord": {
       "level": "active",
-      "last_success_date": "2026-06-02",
+      "last_success_date": "2026-06-08",
       "consecutive_silent_days": 1,
-      "total_items": 1850109,
+      "total_items": 2045690,
       "errors": []
     },
     "youtube": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 1721,
+      "total_items": 1845,
       "errors": []
     },
     "reddit": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 2417,
+      "total_items": 2584,
       "errors": []
     },
     "nga": {
@@ -58,9 +58,9 @@
     },
     "official": {
       "level": "active",
-      "last_success_date": "2026-06-01",
-      "consecutive_silent_days": 2,
-      "total_items": 330,
+      "last_success_date": "2026-06-04",
+      "consecutive_silent_days": 5,
+      "total_items": 331,
       "errors": []
     },
     "steam_discussion": {
@@ -72,9 +72,9 @@
     },
     "weibo": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 6145,
+      "total_items": 6260,
       "errors": []
     },
     "zhihu": {
@@ -114,29 +114,29 @@
     },
     "appstore": {
       "level": "active",
-      "last_success_date": "2026-06-01",
+      "last_success_date": "2026-06-07",
       "consecutive_silent_days": 2,
-      "total_items": 425,
+      "total_items": 433,
       "errors": []
     },
     "google_play": {
       "level": "active",
-      "last_success_date": "2026-06-01",
-      "consecutive_silent_days": 2,
-      "total_items": 490,
+      "last_success_date": "2026-06-06",
+      "consecutive_silent_days": 3,
+      "total_items": 491,
       "errors": []
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-06-03",
-      "consecutive_silent_days": 0,
-      "total_items": 482,
+      "last_success_date": "2026-06-08",
+      "consecutive_silent_days": 1,
+      "total_items": 491,
       "errors": []
     },
     "telegram": {
       "level": "dormant",
       "last_success_date": "2026-04-09",
-      "consecutive_silent_days": 55,
+      "consecutive_silent_days": 61,
       "total_items": 3,
       "errors": []
     },
@@ -149,23 +149,23 @@
     },
     "ruliweb": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 350,
+      "total_items": 362,
       "errors": []
     },
     "stopgame": {
       "level": "active",
-      "last_success_date": "2026-06-03",
+      "last_success_date": "2026-06-09",
       "consecutive_silent_days": 0,
-      "total_items": 47,
+      "total_items": 51,
       "errors": []
     },
     "weixin": {
-      "level": "degraded",
-      "last_success_date": "2026-05-25",
-      "consecutive_silent_days": 9,
-      "total_items": 2138,
+      "level": "active",
+      "last_success_date": "2026-06-06",
+      "consecutive_silent_days": 3,
+      "total_items": 2278,
       "errors": []
     }
   }

@@ -17,7 +17,7 @@ import sys
 import os
 import logging
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote
 
@@ -58,7 +58,10 @@ def _archive_items(source: str, items: list[dict]):
             continue
         try:
             dt = datetime.fromisoformat(t)
-            date_str = dt.strftime('%Y-%m-%d')
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            # 与 backfill_platforms / archive_platforms 统一用 UTC+8 分桶，避免跨归档器双桶
+            date_str = (dt + timedelta(hours=8)).strftime('%Y-%m-%d')
             by_date[date_str].append(item)
         except Exception:
             continue
@@ -318,7 +321,7 @@ def backfill_weibo():
                         continue
                     try:
                         from global_collectors import _parse_weibo_time
-                        time_str = _parse_weibo_time(created)
+                        time_str, _ = _parse_weibo_time(created)
                     except Exception:
                         time_str = created
 
@@ -382,6 +385,9 @@ def backfill_steam_reviews():
             )
             if result.returncode != 0:
                 logger.warning(f'Steam p{page}: curl failed')
+                break
+            if not result.stdout.strip():
+                logger.warning(f'Steam p{page}: curl empty body')
                 break
             data = json.loads(result.stdout)
             reviews = data.get('reviews', []) or []

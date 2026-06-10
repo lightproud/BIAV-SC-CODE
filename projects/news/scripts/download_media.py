@@ -16,12 +16,16 @@ import json
 import logging
 import re
 import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # SSRF 守卫 + safe_get 单一真源（SEC-02 / R2-H2 / R2-M1）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -68,9 +72,14 @@ def save_manifest(manifest: dict):
 
 
 def download_file(url: str, dest: Path) -> bool:
-    """Download a file to dest. Returns True on success."""
+    """Download a file to dest. Returns True on success.
+
+    经 news_common.safe_get：禁用自动重定向、手动逐跳重校验 SSRF 守卫并 pin IP
+    （R2-M1），同时正确跟随 30x（B站/YouTube/Pixiv 等 CDN 普遍以 30x 下发资源，
+    R2-H2 回归修复）。3xx 缺/坏 Location 或不安全跳 → 抛 ValueError，不落盘垃圾。
+    """
     try:
-        resp = requests.get(url, timeout=REQUEST_TIMEOUT, stream=True, headers={
+        resp = news_common.safe_get(url, timeout=REQUEST_TIMEOUT, stream=True, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
             'Referer': urlparse(url).scheme + '://' + urlparse(url).netloc + '/',
         })
@@ -95,6 +104,11 @@ def download_file(url: str, dest: Path) -> bool:
 
         logger.info(f'  {dest.name} ({total / 1024:.0f} KB)')
         return True
+    except ValueError as e:
+        # safe_get 拒绝（不安全 URL / 坏重定向）——不落盘垃圾文件
+        logger.warning(f'  拒绝不安全 URL: {e}')
+        dest.unlink(missing_ok=True)
+        return False
     except requests.RequestException as e:
         logger.warning(f'  下载失败: {e}')
         dest.unlink(missing_ok=True)
@@ -115,7 +129,7 @@ def collect_media_urls() -> list[dict]:
 
     items = []
     for item in data.get('news', []):
-        media_url = item.get('media_url', '').strip()
+        media_url = (item.get('media_url') or '').strip()
         if not media_url:
             continue
         items.append({
