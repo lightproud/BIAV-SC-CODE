@@ -1,8 +1,8 @@
 {
   "last_session": {
     "id": "068f871b",
-    "timestamp": "2026-06-10T21:40:59.065000+00:00",
-    "duration_minutes": 79.0,
+    "timestamp": "2026-06-11T00:55:30.047000+00:00",
+    "duration_minutes": 273.5,
     "branch": "claude/dynamic-orchestration-archiver-tzxdai",
     "topics": [
       "Bilibili"
@@ -20,6 +20,26 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "068f871b",
+      "timestamp": "2026-06-10T21:40:59.065000+00:00",
+      "duration_minutes": 79.0,
+      "branch": "claude/dynamic-orchestration-archiver-tzxdai",
+      "topics": [
+        "Bilibili"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/data_quality.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/news_common.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "068f871b",
       "timestamp": "2026-06-10T21:56:03.767000+00:00",
@@ -142,31 +162,16 @@
         "/home/user/brain-in-a-vat/CLAUDE.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "b3870dea",
-      "timestamp": "2026-06-09T22:54:17.720000+00:00",
-      "duration_minutes": 4.2,
-      "branch": "claude/claude-md-docs-ta7stm",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Bilibili": 1.8,
-      "BPT": 1.51,
-      "MCP": 1.25,
-      "GitHub": 0.92,
-      "Wiki": 0.65,
-      "做梦Agent": 0.19,
-      "联动": 0.11
+      "Bilibili": 2.44,
+      "BPT": 1.21,
+      "MCP": 1.0,
+      "GitHub": 0.74,
+      "Wiki": 0.52,
+      "做梦Agent": 0.15
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
@@ -177,7 +182,7 @@
       "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py",
       "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
     ],
-    "total_sessions": 147
+    "total_sessions": 148
   },
-  "updated_at": "2026-06-10T22:02:06.487161+00:00"
+  "updated_at": "2026-06-11T01:00:37.563652+00:00"
 }
