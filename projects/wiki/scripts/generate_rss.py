@@ -179,13 +179,10 @@ def generate_rss(items: list[dict], output_path: Path) -> None:
     indent(tree, space="  ")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "wb") as f:
-        f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-        tree.write(f, encoding="unicode" if sys.version_info >= (3, 8) else "utf-8",
-                   xml_declaration=False)
-    # Fix: write as bytes properly
-    content = output_path.read_text("utf-8")
-    output_path.write_text(content, encoding="utf-8")
+    # encoding="unicode" emits str, so the handle must be text-mode
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        tree.write(f, encoding="unicode", xml_declaration=False)
 
     print(f"RSS feed written to {output_path} ({len(items)} items)")
 
@@ -238,12 +235,10 @@ def generate_atom(items: list[dict], output_path: Path) -> None:
     indent(tree, space="  ")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "wb") as f:
-        f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-        tree.write(f, encoding="unicode" if sys.version_info >= (3, 8) else "utf-8",
-                   xml_declaration=False)
-    content_str = output_path.read_text("utf-8")
-    output_path.write_text(content_str, encoding="utf-8")
+    # encoding="unicode" emits str, so the handle must be text-mode
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        tree.write(f, encoding="unicode", xml_declaration=False)
 
     print(f"Atom feed written to {output_path} ({len(items)} items)")
 

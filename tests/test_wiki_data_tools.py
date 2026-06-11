@@ -240,5 +240,46 @@ class TestGenerateRssHelpers(unittest.TestCase):
         self.assertIn("erica", items[0]["description"])
 
 
+class TestGenerateFeedWriters(unittest.TestCase):
+    """Regression net for the py3.8+ feed-writer crash: binary handle plus
+    tree.write(encoding="unicode") raised TypeError, so RSS/Atom generation
+    was unusable at runtime."""
+
+    def _items(self):
+        return [{
+            "guid": "morimens-version-1.0",
+            "title": "[Game] v1.0 - First",
+            "link": "https://example.test/changelog",
+            "description": "<p>hello & <world></p>",
+            "category": "version",
+            "pub_date": "2026-05-01T12:00:00+00:00",
+        }]
+
+    def test_generate_rss_writes_parseable_xml(self):
+        from xml.etree.ElementTree import fromstring
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td) / "feed.xml"
+            generate_rss.generate_rss(self._items(), out)
+            text = out.read_text("utf-8")
+            self.assertTrue(text.startswith('<?xml version="1.0" encoding="UTF-8"?>'))
+            root = fromstring(text)
+            self.assertEqual(root.tag, "rss")
+            self.assertEqual(root.find("./channel/item/guid").text,
+                             "morimens-version-1.0")
+
+    def test_generate_atom_writes_parseable_xml(self):
+        from xml.etree.ElementTree import fromstring
+        ns = "{http://www.w3.org/2005/Atom}"
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td) / "atom.xml"
+            generate_rss.generate_atom(self._items(), out)
+            text = out.read_text("utf-8")
+            self.assertTrue(text.startswith('<?xml version="1.0" encoding="UTF-8"?>'))
+            root = fromstring(text)
+            self.assertEqual(root.tag, f"{ns}feed")
+            self.assertEqual(root.find(f"./{ns}entry/{ns}title").text,
+                             "[Game] v1.0 - First")
+
+
 if __name__ == "__main__":
     unittest.main()
