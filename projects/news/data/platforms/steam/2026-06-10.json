@@ -1,8 +1,8 @@
 {
   "date": "2026-06-10",
-  "archived_at": "2026-06-10T14:18:53.739533+00:00",
+  "archived_at": "2026-06-11T05:22:28.119707+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "title": "[正面] 美工和剧情太牛了",
@@ -286,6 +286,50 @@
         "playtime_forever": 2656,
         "votes_up": 0,
         "timestamp_created": 1781021067
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] so fun!!!!! ／(^ x ^)＼",
+      "summary": "so fun!!!!! ／(^ x ^)＼",
+      "source": "steam_review",
+      "time": "2026-06-10T15:35:48+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199446337775/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199446337775",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2112,
+        "votes_up": 0,
+        "timestamp_created": 1781105748
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 玩了那么多肉块游戏终于看见美少女了",
+      "summary": "玩了那么多肉块游戏终于看见美少女了",
+      "source": "steam_review",
+      "time": "2026-06-10T13:10:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198973370582/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198973370582",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4332,
+        "votes_up": 0,
+        "timestamp_created": 1781097004
       },
       "lang": "",
       "platform_region": "global"
