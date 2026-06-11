@@ -1,8 +1,68 @@
 {
-  "collected_at": "2026-06-11T05:22:16.379216+00:00",
+  "collected_at": "2026-06-11T10:05:16.297405+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-11T08:56:13+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风好，福利多",
+      "summary": "画风好，福利多",
+      "url": "https://steamcommunity.com/profiles/76561199240703399/recommended/3052450",
+      "author": "76561199240703399",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风好，福利多",
+      "timestamp_created": 1781168173,
+      "playtime_forever": 963
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T07:59:42+00:00",
+      "lang": "italian",
+      "title": "[正面] Zenith of the Medium",
+      "summary": "Zenith of the Medium",
+      "url": "https://steamcommunity.com/profiles/76561198377378046/recommended/3052450",
+      "author": "76561198377378046",
+      "engagement": 0,
+      "language": "italian",
+      "voted_up": true,
+      "review": "Zenith of the Medium",
+      "timestamp_created": 1781164782,
+      "playtime_forever": 2901
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T04:40:41+00:00",
+      "lang": "english",
+      "title": "[负面] 10 minutes of annoying inane banter and it crashes...",
+      "summary": "10 minutes of annoying inane banter and it crashes at the first battle despite fairly simplistic graphics. nope.",
+      "url": "https://steamcommunity.com/profiles/76561198361135361/recommended/3052450",
+      "author": "76561198361135361",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "10 minutes of annoying inane banter and it crashes at the first battle despite fairly simplistic graphics. nope.",
+      "timestamp_created": 1781152841,
+      "playtime_forever": 11
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T04:27:56+00:00",
+      "lang": "english",
+      "title": "[正面] Genuinely really well made game, story and premise...",
+      "summary": "Genuinely really well made game, story and premise is really nice as well as the additions from the cosmic horror/ lovecraftian horror aspect. Even though it's a gacha it doesn't really feel much like a gacha as they give you an absurd amount of pulls that not even the most generous popular gachas ever would. There are problems though primarily with the game having limited translations. English has a partial translation but a lot of other languages have GPT translations but it's still very much understandable and the English translation is quite good in my opinion and i've had no issues with it so far.\n\nI would genuinely recommend at least trying the game first before just writing it off.",
+      "url": "https://steamcommunity.com/profiles/76561198874774350/recommended/3052450",
+      "author": "76561198874774350",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Genuinely really well made game, story and premise is really nice as well as the additions from the cosmic horror/ lovecraftian horror aspect. Even though it's a gacha it doesn't really feel much like a gacha as they give you an absurd amount of pulls that not even the most generous popular gachas ever would. There are problems though primarily with the game having limited translations. English has a partial translation but a lot of other languages have GPT translations but it's still very much understandable and the English translation is quite good in my opinion and i've had no issues with it so far.\n\nI would genuinely recommend at least trying the game first before just writing it off.",
+      "timestamp_created": 1781152076,
+      "playtime_forever": 1025
+    },
     {
       "source": "steam",
       "time": "2026-06-11T03:43:23+00:00",
@@ -16,7 +76,7 @@
       "voted_up": true,
       "review": "Told myself I wouldn't play another gacha game, but the premise of Morimens was just to intriguing and now I'm hooked. I greatly enjoy the art style, the approach to darker themes, and the card combat mechanics. There's also lots of fun little tidbits to pick up on if you're familiar with the inspirations beyond a lot of the characters.\n\nThe translation has some awkwardness to it, but to give credit where credit is due I can absolutely understand everything and they probably are having to translate some pretty complicated words and phrases. I haven't seen anything be translated flat out incorrectly either; just one of those things where sometimes that's not the word a native speaker would choose. No big deal in my eyes, I actually think it's kind of fun.",
       "timestamp_created": 1781149403,
-      "playtime_forever": 593
+      "playtime_forever": 687
     },
     {
       "source": "steam",
@@ -76,7 +136,7 @@
       "voted_up": true,
       "review": "slay the spire if it had a story mode",
       "timestamp_created": 1781117548,
-      "playtime_forever": 6235
+      "playtime_forever": 6307
     },
     {
       "source": "steam",
@@ -106,7 +166,7 @@
       "voted_up": true,
       "review": "1",
       "timestamp_created": 1781115317,
-      "playtime_forever": 2506
+      "playtime_forever": 2548
     },
     {
       "source": "steam",
@@ -136,52 +196,7 @@
       "voted_up": true,
       "review": "玩了那么多肉块游戏终于看见美少女了",
       "timestamp_created": 1781097004,
-      "playtime_forever": 4332
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T09:27:50+00:00",
-      "lang": "schinese",
-      "title": "[正面] 一如既往的喜欢卡牌游戏，而且画风建模我也喜欢",
-      "summary": "一如既往的喜欢卡牌游戏，而且画风建模我也喜欢",
-      "url": "https://steamcommunity.com/profiles/76561199615341365/recommended/3052450",
-      "author": "76561199615341365",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "一如既往的喜欢卡牌游戏，而且画风建模我也喜欢",
-      "timestamp_created": 1781083670,
-      "playtime_forever": 28
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T08:25:05+00:00",
-      "lang": "schinese",
-      "title": "[负面] 1.我用忘却篇的角色打忘却主线，虽然经常失败，但是很快乐。\n2.我用星辰篇的角色打忘却主线，虽然一路...",
-      "summary": "1.我用忘却篇的角色打忘却主线，虽然经常失败，但是很快乐。\n2.我用星辰篇的角色打忘却主线，虽然一路秒怪，但是不快乐。\n3.希望官方能站在玩家的角度考虑考虑游戏的数值、机制、对策设计是否合理，是做一个好玩的游戏，还是做一个又不好玩，又不吸金的游戏。",
-      "url": "https://steamcommunity.com/profiles/76561199152996147/recommended/3052450",
-      "author": "76561199152996147",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "1.我用忘却篇的角色打忘却主线，虽然经常失败，但是很快乐。\n2.我用星辰篇的角色打忘却主线，虽然一路秒怪，但是不快乐。\n3.希望官方能站在玩家的角度考虑考虑游戏的数值、机制、对策设计是否合理，是做一个好玩的游戏，还是做一个又不好玩，又不吸金的游戏。",
-      "timestamp_created": 1781079905,
-      "playtime_forever": 5407
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T05:50:20+00:00",
-      "lang": "schinese",
-      "title": "[正面] 画风精美，图鉴党轻松全收集",
-      "summary": "画风精美，图鉴党轻松全收集",
-      "url": "https://steamcommunity.com/profiles/76561199852523124/recommended/3052450",
-      "author": "76561199852523124",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "画风精美，图鉴党轻松全收集",
-      "timestamp_created": 1781070620,
-      "playtime_forever": 3733
+      "playtime_forever": 4397
     }
   ]
 }

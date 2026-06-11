@@ -1,8 +1,8 @@
 {
   "date": "2026-06-11",
-  "archived_at": "2026-06-11T05:22:28.119257+00:00",
+  "archived_at": "2026-06-11T10:05:19.268443+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] Told myself I wouldn't play another gacha game, bu...",
@@ -154,6 +154,94 @@
         "playtime_forever": 2506,
         "votes_up": 0,
         "timestamp_created": 1781115317
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 画风好，福利多",
+      "summary": "画风好，福利多",
+      "source": "steam_review",
+      "time": "2026-06-11T08:56:13+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199240703399/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199240703399",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 963,
+        "votes_up": 0,
+        "timestamp_created": 1781168173
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Zenith of the Medium",
+      "summary": "Zenith of the Medium",
+      "source": "steam_review",
+      "time": "2026-06-11T07:59:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198377378046/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198377378046",
+      "tags": [
+        "italian"
+      ],
+      "language": "italian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2901,
+        "votes_up": 0,
+        "timestamp_created": 1781164782
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 10 minutes of annoying inane banter and it crashes...",
+      "summary": "10 minutes of annoying inane banter and it crashes at the first battle despite fairly simplistic graphics. nope.",
+      "source": "steam_review",
+      "time": "2026-06-11T04:40:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198361135361/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198361135361",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 11,
+        "votes_up": 0,
+        "timestamp_created": 1781152841
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Genuinely really well made game, story and premise...",
+      "summary": "Genuinely really well made game, story and premise is really nice as well as the additions from the cosmic horror/ lovecraftian horror aspect. Even though it's a gacha it doesn't really feel much like a gacha as they give you an absurd amount of pulls that not even the most generous popular gachas ever would. There are problems though primarily with the game having limited translations. English has a partial translation but a lot of other languages have GPT translations but it's still very much understandable and the English translation is quite good in my opinion and i've had no issues with it so far.\n\nI would genuinely recommend at least trying the game first before just writing it off.",
+      "source": "steam_review",
+      "time": "2026-06-11T04:27:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198874774350/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198874774350",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1025,
+        "votes_up": 0,
+        "timestamp_created": 1781152076
       },
       "lang": "",
       "platform_region": "global"
