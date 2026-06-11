@@ -1,36 +1,46 @@
 {
   "date": "2026-06-10",
-  "messages": 15789,
+  "messages": 16595,
   "unique_authors": 550,
-  "reactions_total": 2109,
-  "attachments": 966,
+  "reactions_total": 2183,
+  "attachments": 1022,
   "channel_activity": {
-    "🔸綜合討論": 3070,
+    "🔸綜合討論": 3072,
+    "🔸剧情交流": 124,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 10,
+    "🔸русский-канал": 1451,
+    "🔸phòng-chat-tiếng-việt": 2731,
+    "🔸canal-español": 274,
+    "🔸canal-português": 222,
+    "🔸ruang-obrolan-indonesia": 1187,
+    "🔸ห้องสนทนาภาษาไทย": 3734,
+    "🔸traphase": 113,
+    "🔸lore-chat": 430,
+    "🔸team-building": 1911,
+    "🔸邀请码互助┊swap-invitation-codes": 38,
+    "🔸机器人命令┊bot-commands": 106,
+    "PAID REWARDS NOT RECEIVED! Reality Verges from the Battlepass": 1,
+    "✅「Resolved」twitter giveaway": 2,
+    "rework Sabotage mechanic": 10,
+    "Horla wheel buffs corpo pilot shield but not str": 6,
+    "✅「已回答」「未解决」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 3,
+    "「官方素材」頻道使用說明": 1,
+    "Saya Wip": 1,
+    "Pickman (not)funny guide": 3,
+    "【English Translation】Opinions Collection": 13,
     "🔸阵容构建": 191,
-    "🔸剧情交流": 121,
     "🔸晒卡分享": 14,
     "🔸欢乐梗图": 25,
-    "🔸课间休息闲聊": 6,
     "🔸交友频道": 6,
-    "🔸日本語チャンネル": 9,
     "🔸한국어-채팅방": 416,
     "🔸deutscher-chatraum": 48,
     "🔸chaîne-française": 31,
-    "🔸русский-канал": 945,
-    "🔸phòng-chat-tiếng-việt": 2730,
-    "🔸canal-español": 252,
-    "🔸canal-português": 221,
-    "🔸ruang-obrolan-indonesia": 1179,
-    "🔸ห้องสนทนาภาษาไทย": 3688,
-    "🔸traphase": 70,
-    "🔸lore-chat": 414,
     "🔸服务器公告┊server-announcement": 1,
     "🔸lets-count": 17,
     "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 1788,
-    "🔸邀请码互助┊swap-invitation-codes": 37,
     "🔸游戏问题": 4,
-    "🔸机器人命令┊bot-commands": 95,
     "🔸erica-playground": 3,
     "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 5,
     "欢迎来到葬骸城💙": 1,
@@ -46,7 +56,6 @@
     "可否給各種技能、天賦、命輪及系統描述追加明確屬性標籤": 8,
     "關於同人活動的日期": 4,
     "Make exalt upgrades more obvious": 2,
-    "rework Sabotage mechanic": 4,
     "whell of destiny upward plan": 2,
     "关于主页": 6,
     "通讯器头像和名字问题": 7,
@@ -60,13 +69,11 @@
     "密契图鉴加上套装效果": 1,
     "關於日服沒有好友上限這事": 1,
     "Some assets are turning magenta": 2,
-    "Horla wheel buffs corpo pilot shield but not str": 5,
     "24 need rework": 4,
     "24 Nerf is out of line": 1,
     "常駐內在靈格要300無垢也太多了": 1,
     "✅「已解决」沙耶天賦效果描述與內容不符": 7,
     "Please rework how Propagation Caro works for the future units": 2,
-    "✅「已回答」「未解决」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 2,
     "希望能分辨牌堆中的同名卡是處于抽牌堆還是棄牌堆": 1,
     "【6/10】脚本/外挂账号的处理说明": 3,
     "V2.5.1.5 在线维护公告": 23,
@@ -85,14 +92,12 @@
     "HAPPY BIRTHDAY AURITA!!!!": 6,
     "My sketch Thais and Saya": 2,
     "doreposting / unserious doodles / doreyap": 3,
-    "Pickman (not)funny guide": 2,
     "Main DPS Arachne Guide, 2.5 UGC event submission (I hope I'm doing it right)": 2,
     "Clementine In-depth Guide and Build By Spooky | UID 101094561 [V2.5 UGC Contest]": 5,
     "Saya no Uta : Team Guide": 3,
     "Morimens New Player Handbook by Cheri [V2.5 UGC Contest]": 2,
     "Niko's Event Unlock Recommendations (Lore-focused)": 3,
     "한국어 번역 피드백 컬렉션": 3,
-    "【English Translation】Opinions Collection": 11,
     "🔥10000银芯奖励！V2.5 UGC创作征集开启！": 29,
     "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering": 14,
     "V2.5.0 命运剧院┊Theater of Fate": 3,
@@ -108,6 +113,10 @@
     "1514237449772204214": 3
   },
   "hourly_activity": {
+    "22": 112,
+    "20": 431,
+    "23": 204,
+    "21": 241,
     "0": 144,
     "1": 496,
     "2": 561,
@@ -127,16 +136,12 @@
     "16": 1237,
     "17": 624,
     "18": 355,
-    "19": 228,
-    "20": 182
+    "19": 228
   },
   "message_types": {
-    "19": 3554,
-    "0": 12194,
-    "20": 31,
-    "18": 1,
-    "6": 2,
-    "4": 7
+    "19": 162,
+    "0": 640,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -146,14 +151,6 @@
       "author": "ppk0722",
       "reactions": 25,
       "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1514141987689726103",
-      "channel_id": "1514141987689726103",
-      "content": "https://x.com/Rosu_14370/status/2064583181580546178?s=20",
-      "author": "asecana",
-      "reactions": 22,
-      "channel": "Main dish"
     },
     {
       "id": "1514141987689726103",
@@ -180,36 +177,12 @@
       "channel": "rework Sabotage mechanic"
     },
     {
-      "id": "1514217261358121011",
-      "channel_id": "1514217261358121011",
-      "content": "Im here to complain about the \"Sabotage\" mechanic from arc 2 chapter 5 but ESPEC",
-      "author": "princess.goth",
-      "reactions": 17,
-      "channel": "rework Sabotage mechanic"
-    },
-    {
       "id": "1514243819313434784",
       "channel_id": "1514243819313434784",
       "content": "標題只是為了讓我看起來像想提出什麼大議題\n但我其實只是想吐槽雷婭89級到90級沒有任何提升\n就是字面意思上的0提升\n他甚至連防禦力+1都不肯給\n升90很貴的好不",
       "author": "water_heart",
       "reactions": 15,
       "channel": "請讓資源投入具備實際意義"
-    },
-    {
-      "id": "1514243819313434784",
-      "channel_id": "1514243819313434784",
-      "content": "標題只是為了讓我看起來像想提出什麼大議題\n但我其實只是想吐槽雷婭89級到90級沒有任何提升\n就是字面意思上的0提升\n他甚至連防禦力+1都不肯給\n升90很貴的好不",
-      "author": "water_heart",
-      "reactions": 15,
-      "channel": "請讓資源投入具備實際意義"
-    },
-    {
-      "id": "1514198448688070696",
-      "channel_id": "1514198448688070696",
-      "content": "📅 可投稿时间：\n\n2026/6/10 00:00~2026/08/23 23:59 (UTC+8)\n\n稿件发布时间：\n\n2026/4/23 00:00~202",
-      "author": "morimensstaff03",
-      "reactions": 14,
-      "channel": "🔥10000银芯奖励！V2.5 UGC创作征集开启！"
     },
     {
       "id": "1514198448688070696",
@@ -228,22 +201,6 @@
       "channel": "Hello, I'm a Korean player who really enjoys playing Forgetting Eve."
     },
     {
-      "id": "1514102913319047168",
-      "channel_id": "1514102913319047168",
-      "content": "Hello,\n\nI am a Korean player who enjoys playing Forgetting Eve, and I have a gre",
-      "author": "molru3651",
-      "reactions": 11,
-      "channel": "Hello, I'm a Korean player who really enjoys playing Forgetting Eve."
-    },
-    {
-      "id": "1514181606028607559",
-      "channel_id": "1514181606028607559",
-      "content": "This will be a dark elf character whose organs were harvested for research by th",
-      "author": "mehatemealot",
-      "reactions": 11,
-      "channel": "OC Morimens"
-    },
-    {
       "id": "1514181606028607559",
       "channel_id": "1514181606028607559",
       "content": "This will be a dark elf character whose organs were harvested for research by th",
@@ -258,22 +215,6 @@
       "author": "sorhavn",
       "reactions": 11,
       "channel": "Faros"
-    },
-    {
-      "id": "1514180822692008038",
-      "channel_id": "1514180822692008038",
-      "content": "by <@674862763092213793>\n\nhttps://x.com/lavenderjun0/status/2064573850117943297",
-      "author": "sorhavn",
-      "reactions": 11,
-      "channel": "Faros"
-    },
-    {
-      "id": "1514085059739521184",
-      "channel_id": "1514085059739521184",
-      "content": "",
-      "author": "faye.ai",
-      "reactions": 11,
-      "channel": "Shopping with Thais"
     },
     {
       "id": "1514085059739521184",
@@ -292,12 +233,76 @@
       "channel": "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering"
     },
     {
+      "id": "1514386394062000178",
+      "channel_id": "1514386394062000178",
+      "content": "",
+      "author": "aspheim9948",
+      "reactions": 9,
+      "channel": "Saya Wip"
+    },
+    {
       "id": "1514218522622951454",
       "channel_id": "1514218442394435655",
       "content": "**[6/10]  Script/Hack Account Handling Instructions**\n\nKeeper,\nTo ensure the saf",
       "author": "morimensstaff02",
       "reactions": 9,
       "channel": "【6/10】脚本/外挂账号的处理说明"
+    },
+    {
+      "id": "1514398045746233466",
+      "channel_id": "1514398045746233466",
+      "content": "When purchasing the \"Extra Curriculum\" (Battlepass) late into the game version, ",
+      "author": "ivy.ivy",
+      "reactions": 8,
+      "channel": "PAID REWARDS NOT RECEIVED! Reality Verges from the Battlepass"
+    },
+    {
+      "id": "1514372392129007817",
+      "channel_id": "1180850818509971466",
+      "content": "到5k了很开心w\n231和2317要成为pvp大手子！",
+      "author": "scp23178528",
+      "reactions": 7,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1514366381242716261",
+      "channel_id": "1180850818509971466",
+      "content": "成功的從5410到3640了",
+      "author": "luna_.90",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1514364865026855058",
+      "channel_id": "1300659662311526512",
+      "content": "Debería seguir pasando los códigos a este canal o ya no?",
+      "author": "tetofan127",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1514366745383800973",
+      "channel_id": "1300659662311526512",
+      "content": "<a:PepePls4x:1497753733604442183>",
+      "author": "etzel0009",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1514368681570992282",
+      "channel_id": "1514368681570992282",
+      "content": "hello! i won the twitter giveaway and was told to dm the official twt account, b",
+      "author": "rabbitfail",
+      "reactions": 2,
+      "channel": "✅「Resolved」twitter giveaway"
+    },
+    {
+      "id": "1514370277293953204",
+      "channel_id": "1300659580446969918",
+      "content": "чертов))))",
+      "author": "adekwut_02447",
+      "reactions": 1,
+      "channel": "🔸русский-канал"
     }
   ]
 }
