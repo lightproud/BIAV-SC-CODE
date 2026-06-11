@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-11T18:03:44.233266+00:00",
+  "collected_at": "2026-06-11T21:13:17.121128+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -121,7 +121,7 @@
       "voted_up": true,
       "review": "画风好，福利多",
       "timestamp_created": 1781168173,
-      "playtime_forever": 1443
+      "playtime_forever": 1562
     },
     {
       "source": "steam",
@@ -211,7 +211,7 @@
       "voted_up": true,
       "review": "peak gacha",
       "timestamp_created": 1781132561,
-      "playtime_forever": 1703
+      "playtime_forever": 1733
     },
     {
       "source": "steam",
@@ -227,51 +227,6 @@
       "review": "Klimatyczna i w cudownej oprawie graficznej <33",
       "timestamp_created": 1781132413,
       "playtime_forever": 752
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T18:52:28+00:00",
-      "lang": "english",
-      "title": "[正面] slay the spire if it had a story mode",
-      "summary": "slay the spire if it had a story mode",
-      "url": "https://steamcommunity.com/profiles/76561198163430220/recommended/3052450",
-      "author": "76561198163430220",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "slay the spire if it had a story mode",
-      "timestamp_created": 1781117548,
-      "playtime_forever": 6307
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T18:23:31+00:00",
-      "lang": "english",
-      "title": "[正面] He cannot be Him, and He can never be him.\nYes......",
-      "summary": "He cannot be Him, and He can never be him.\nYes... Yes only my God is the true Him.",
-      "url": "https://steamcommunity.com/profiles/76561199100931391/recommended/3052450",
-      "author": "76561199100931391",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "He cannot be Him, and He can never be him.\nYes... Yes only my God is the true Him.",
-      "timestamp_created": 1781115811,
-      "playtime_forever": 11433
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T18:15:17+00:00",
-      "lang": "schinese",
-      "title": "[正面] 1",
-      "summary": "1",
-      "url": "https://steamcommunity.com/profiles/76561199875083098/recommended/3052450",
-      "author": "76561199875083098",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "1",
-      "timestamp_created": 1781115317,
-      "playtime_forever": 2690
     }
   ]
 }
