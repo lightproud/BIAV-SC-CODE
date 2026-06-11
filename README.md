@@ -43,12 +43,14 @@ brain-in-a-vat/
 │   └── research/            # 一次性调研产物
 ├── assets/                  # 共享资产（事实圣经、图片、模板）
 │   └── data/                # 事实圣经（领域知识结构化存储）+ 索引（vectors / graph）
-├── scripts/                 # 银芯记忆系统 9 模块（Code-memory 主战场）
+├── scripts/                 # 顶层 Python 工具层（记忆 / 会话 / 做梦 / 解包；Code-memory 主战场）
+├── tests/                   # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
 ├── projects/                # 子项目工作区
 │   ├── site/                # 主站导航页 + 设计系统
 │   ├── news/                # 社区新闻聚合 + 报告系统（含全量档案层 data/）
 │   ├── wiki/                # 游戏数据集 + 多语言 Wiki 站点
 │   └── game/                # 衍生游戏（v2.0 退主线，备扩展位）
+├── extracted_lua/           # 客户端解包 Lua 原文（wiki/角色数据源）
 └── deliverables/            # 已交付成品存档
 ```
 
@@ -96,7 +98,7 @@ python scripts/session_briefing.py
 - **Code-* 子项目会话**：site / news / wiki / memory / strategy 按子项目分工
 - **共享外脑**：本仓库连接所有会话，通过 `memory/decisions.md` + dispatch brief 协调
 
-详见 [`memory/methodology.md`](memory/methodology.md) 与 32 条踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)。
+详见 [`memory/methodology.md`](memory/methodology.md) 与 33 条踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)。
 
 ## 参与贡献
 

@@ -1,6 +1,6 @@
 ---
 title: 萝坦 | 忘却前夜 Wiki
-description: 萝坦（萝坦）混沌属性输出角色详细资料
+description: 萝坦角色详细资料
 portrait: /portraits/rotan.png
 pageClass: character-page
 ---

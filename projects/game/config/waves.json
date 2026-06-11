@@ -1,0 +1,19 @@
+{
+  "_meta": "生成导演（spawn director）。承接'只增强不削弱'——平衡靠敌人随时间成长，不削玩家。survive=胜利时长(秒)。",
+  "survive": 600,
+  "hpScalePerMin": 0.1,
+  "spawnIntervalBase": 1.2,
+  "spawnIntervalMin": 0.5,
+  "spawnIntervalDecayPerMin": 0.09,
+  "batchBase": 2,
+  "batchPerMin": 0.3,
+  "maxEnemies": 130,
+  "phases": [
+    { "from": 0,   "pool": ["husk"] },
+    { "from": 60,  "pool": ["husk", "wisp"] },
+    { "from": 180, "pool": ["husk", "wisp", "bloater"] },
+    { "from": 300, "pool": ["husk", "wisp", "bloater", "weaver"] },
+    { "from": 450, "pool": ["husk", "wisp", "bloater", "weaver"] }
+  ],
+  "boss": { "at": 600, "id": "erosion_lord" }
+}

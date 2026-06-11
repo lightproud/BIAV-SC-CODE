@@ -11,9 +11,13 @@ Tested and working:
 """
 
 import logging
-import re
-from datetime import datetime, timezone, timedelta
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
 from typing import List, Dict
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 时间归一单一真源（H4）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -27,141 +31,12 @@ TIMEOUT_MS = 30000
 
 
 def _parse_relative_time(text: str) -> tuple[str, bool]:
-    """Parse relative/absolute time strings from various platforms into ISO datetime.
+    """Parse relative/absolute time strings into ISO datetime.
 
-    Handles:
-    - Chinese: "x分钟前", "x小时前", "x天前", "刚刚", "昨天", "前天"
-    - Korean: "x분 전", "x시간 전", "x일 전"
-    - Japanese: "x分前", "x時間前", "x日前"
-    - English: "x minutes ago", "x hours ago", "x days ago"
-    - Absolute: "YYYY-MM-DD", "YYYY/MM/DD", "MM-DD", "MM/DD"
-    - Arca.live format: "HH:MM", "MM.DD", "YYYY.MM.DD"
-
-    Returns (iso_string, is_approximate). is_approximate=True only when
-    the text is empty or completely unparseable.
+    委托 news_common.parse_relative_time（H4 收敛后的单一真源）。
+    Returns (iso_string, is_approximate).
     """
-    now = datetime.now(timezone.utc)
-    if not text or not text.strip():
-        return now.isoformat(), True
-
-    s = text.strip()
-
-    # Try ISO format first
-    try:
-        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
-        return dt.isoformat(), False
-    except (ValueError, TypeError):
-        pass
-
-    # Chinese relative: "刚刚"
-    if s == "刚刚":
-        return now.isoformat(), False
-
-    # Chinese: "x分钟前", "x小时前", "x天前"
-    m = re.match(r"(\d+)\s*分钟前", s)
-    if m:
-        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*小时前", s)
-    if m:
-        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*天前", s)
-    if m:
-        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
-
-    # Korean: "x분 전", "x시간 전", "x일 전"
-    m = re.match(r"(\d+)\s*분\s*전", s)
-    if m:
-        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*시간\s*전", s)
-    if m:
-        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*일\s*전", s)
-    if m:
-        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
-
-    # Japanese: "x分前", "x時間前", "x日前"
-    m = re.match(r"(\d+)\s*分前", s)
-    if m:
-        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*時間前", s)
-    if m:
-        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
-    m = re.match(r"(\d+)\s*日前", s)
-    if m:
-        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
-
-    # English: "x minutes/hours/days/weeks ago", "Streamed x ago"
-    m = re.match(r"(?:streamed\s+)?(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", s, re.IGNORECASE)
-    if m:
-        num = int(m.group(1))
-        unit = m.group(2).lower()
-        delta_map = {
-            "second": timedelta(seconds=num), "minute": timedelta(minutes=num),
-            "hour": timedelta(hours=num), "day": timedelta(days=num),
-            "week": timedelta(weeks=num), "month": timedelta(days=num * 30),
-            "year": timedelta(days=num * 365),
-        }
-        return (now - delta_map.get(unit, timedelta())).isoformat(), False
-
-    # "昨天" / "前天"
-    if "昨天" in s:
-        return (now - timedelta(days=1)).isoformat(), False
-    if "前天" in s:
-        return (now - timedelta(days=2)).isoformat(), False
-
-    # Arca.live style: "YYYY.MM.DD" or "MM.DD"
-    m = re.match(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", s)
-    if m:
-        try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-    m = re.match(r"(\d{1,2})\.(\d{1,2})\s*$", s)
-    if m:
-        try:
-            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
-                             hour=0, minute=0, second=0, microsecond=0)
-            if dt > now:
-                dt = dt.replace(year=dt.year - 1)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-
-    # "YYYY-MM-DD" or "YYYY/MM/DD"
-    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
-    if m:
-        try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-
-    # "MM-DD" or "MM/DD" (current year)
-    m = re.match(r"(\d{1,2})[-/](\d{1,2})\s*$", s)
-    if m:
-        try:
-            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
-                             hour=0, minute=0, second=0, microsecond=0)
-            if dt > now:
-                dt = dt.replace(year=dt.year - 1)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-
-    # Arca.live time-only: "HH:MM" (today)
-    m = re.match(r"(\d{1,2}):(\d{2})\s*$", s)
-    if m:
-        try:
-            dt = now.replace(hour=int(m.group(1)), minute=int(m.group(2)),
-                             second=0, microsecond=0)
-            if dt > now:
-                dt -= timedelta(days=1)
-            return dt.isoformat(), False
-        except ValueError:
-            pass
-
-    return now.isoformat(), True
+    return news_common.parse_relative_time(text)
 
 
 def fetch_nga_playwright() -> List[Dict]:

@@ -31,6 +31,10 @@ FEED_DESCRIPTION = "Latest updates from the Morimens (忘却前夜) community wi
 
 
 def load_json(path: Path) -> dict:
+    """Load a JSON file; empty skeleton if not yet populated."""
+    if not path.exists():
+        print(f"[INFO] {path} not found; continuing with empty data")
+        return {}
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 

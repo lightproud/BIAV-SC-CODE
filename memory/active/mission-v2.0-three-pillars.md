@@ -73,7 +73,7 @@
 
 ### 角色体系（v2.0 后扩张）
 
-- `CLAUDE.md` §4 子项目维护职责表（含 7 角色完整列表）
+- `README.md`「子项目与会话角色」表（含 7 角色完整列表；2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律）
 - `BIAV-SC.md` 会话角色章节（外部 AI 接入入口）
 - `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
 - `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
