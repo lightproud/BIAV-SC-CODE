@@ -1,8 +1,8 @@
 {
   "date": "2026-06-11",
-  "archived_at": "2026-06-11T10:05:19.268443+00:00",
+  "archived_at": "2026-06-11T14:31:27.004181+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "title": "[正面] Told myself I wouldn't play another gacha game, bu...",
@@ -242,6 +242,72 @@
         "playtime_forever": 1025,
         "votes_up": 0,
         "timestamp_created": 1781152076
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 沙耶很可愛，所以給讚",
+      "summary": "沙耶很可愛，所以給讚",
+      "source": "steam_review",
+      "time": "2026-06-11T11:03:30+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199552154285/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199552154285",
+      "tags": [
+        "tchinese"
+      ],
+      "language": "tchinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 21,
+        "votes_up": 0,
+        "timestamp_created": 1781175810
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I LOVE THIS GAME!!!!",
+      "summary": "I LOVE THIS GAME!!!!",
+      "source": "steam_review",
+      "time": "2026-06-11T11:01:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198308665041/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198308665041",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2326,
+        "votes_up": 0,
+        "timestamp_created": 1781175660
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Game gives out so much free pulls i can role play...",
+      "summary": "Game gives out so much free pulls i can role play as a whale",
+      "source": "steam_review",
+      "time": "2026-06-11T09:32:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198798922128/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198798922128",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2285,
+        "votes_up": 0,
+        "timestamp_created": 1781170330
       },
       "lang": "",
       "platform_region": "global"
