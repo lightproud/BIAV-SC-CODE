@@ -90,9 +90,10 @@ environment 部署记录会阻止新 workflow 部署（详见 `memory/lessons-le
 
 ### 触发条件
 
-push to main 且路径匹配：`site/**`、`projects/site/**`、`projects/wiki/docs/**`、
-`projects/wiki/package.json`、`projects/news/index.html`、`.github/workflows/deploy-site.yml`。
-也支持 `workflow_dispatch` 手动触发。
+push to main 且路径匹配（2026-06-09 实测 `deploy-site.yml` paths）：`projects/site/**`、
+`projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/news/index.html`、
+`deliverables/**`、`.github/workflows/deploy-site.yml`。
+也支持 `workflow_dispatch` 手动触发。旧 `site/**` 路径已不在触发列表（与下文 2026-04-20 B1a 清理记述一致）。
 
 ## 文件位置说明
 

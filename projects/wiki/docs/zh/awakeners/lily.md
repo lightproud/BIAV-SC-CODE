@@ -1,6 +1,6 @@
 ---
 title: 莉莉 | 忘却前夜 Wiki
-description: 莉莉（莉莉）混沌属性输出角色详细资料
+description: 莉莉角色详细资料
 portrait: /portraits/lily.png
 pageClass: character-page
 ---

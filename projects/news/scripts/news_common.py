@@ -16,6 +16,7 @@ import ipaddress
 import re
 import socket
 import time
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 import requests
@@ -123,6 +124,169 @@ def safe_get(url, *, headers=None, timeout=30, stream=False,
             continue
         return resp
     raise ValueError(f"too many redirects (>{max_redirects}): {url[:80]}")
+
+
+_SENSITIVE_PARAM_RE = re.compile(
+    r"((?:api_?key|key|access_?token|token|cookie|auth|secret|password)=)[^&\s'\"]+",
+    re.IGNORECASE,
+)
+
+
+def redact_secrets(text) -> str:
+    """日志/落盘脱敏（H3）：掩码 URL 查询参数中的敏感值（key=/token=/cookie= 等）。
+
+    requests 异常文本含完整请求 URL（如 YouTube `key=<API key>`），采集器把异常
+    直接写日志（公开 Actions 日志）或 source-health.json（入库），此处统一掩码。
+    """
+    return _SENSITIVE_PARAM_RE.sub(r"\1***", str(text))
+
+
+def parse_relative_time(value):
+    """把各平台时间字段归一为 ISO 字符串（H4 单一真源）。返回 (iso_string, is_approximate)。
+
+    支持：
+    - epoch 秒/毫秒（int/float/纯数字字符串；>1e11 视为毫秒）
+    - ISO 字符串（含尾缀 Z）
+    - 中文相对："刚刚"、"x分钟前"、"x小时前"、"x天前"、"昨天"、"前天"
+    - 韩文相对："x분 전"、"x시간 전"、"x일 전"
+    - 日文相对："x分前"、"x時間前"、"x日前"
+    - 英文相对："x minutes/hours/days/... ago"、"Streamed x ago"
+    - 绝对日期："YYYY-MM-DD"/"YYYY/MM/DD"/"YYYY.MM.DD"、"MM-DD"/"MM/DD"/"MM.DD"、"HH:MM"
+
+    is_approximate=True 仅当输入为空或完全无法解析（回退为当前时间）。
+    """
+    now = datetime.now(timezone.utc)
+    if not value or not str(value).strip():
+        return now.isoformat(), True
+
+    # epoch 数字（naver writeDateTimestamp 为毫秒、zhihu created_time 为秒）
+    if isinstance(value, (int, float)) or str(value).strip().isdigit():
+        try:
+            ts = float(value)
+            if ts > 1e11:
+                ts /= 1000.0
+            return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat(), False
+        except (ValueError, OverflowError, OSError):
+            return now.isoformat(), True
+
+    s = str(value).strip()
+
+    # Try ISO format first
+    try:
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return dt.isoformat(), False
+    except (ValueError, TypeError):
+        pass
+
+    # Chinese relative: "刚刚"
+    if s == "刚刚":
+        return now.isoformat(), False
+
+    # Chinese: "x分钟前", "x小时前", "x天前"
+    m = re.match(r"(\d+)\s*分钟前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*小时前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*天前", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # Korean: "x분 전", "x시간 전", "x일 전"
+    m = re.match(r"(\d+)\s*분\s*전", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*시간\s*전", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*일\s*전", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # Japanese: "x分前", "x時間前", "x日前"
+    m = re.match(r"(\d+)\s*分前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*時間前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*日前", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # English: "x minutes/hours/days/weeks ago", "Streamed x ago"
+    m = re.match(r"(?:streamed\s+)?(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", s, re.IGNORECASE)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2).lower()
+        delta_map = {
+            "second": timedelta(seconds=num), "minute": timedelta(minutes=num),
+            "hour": timedelta(hours=num), "day": timedelta(days=num),
+            "week": timedelta(weeks=num), "month": timedelta(days=num * 30),
+            "year": timedelta(days=num * 365),
+        }
+        return (now - delta_map.get(unit, timedelta())).isoformat(), False
+
+    # "昨天" / "前天"
+    if "昨天" in s:
+        return (now - timedelta(days=1)).isoformat(), False
+    if "前天" in s:
+        return (now - timedelta(days=2)).isoformat(), False
+
+    # Arca.live style: "YYYY.MM.DD" or "MM.DD"
+    m = re.match(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+    m = re.match(r"(\d{1,2})\.(\d{1,2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
+                             hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # "YYYY-MM-DD" or "YYYY/MM/DD"
+    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # "MM-DD" or "MM/DD" (current year)
+    m = re.match(r"(\d{1,2})[-/](\d{1,2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
+                             hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # Time-only: "HH:MM" (today)
+    m = re.match(r"(\d{1,2}):(\d{2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(hour=int(m.group(1)), minute=int(m.group(2)),
+                             second=0, microsecond=0)
+            if dt > now:
+                dt -= timedelta(days=1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    return now.isoformat(), True
 
 
 def strip_html(text: str) -> str:
