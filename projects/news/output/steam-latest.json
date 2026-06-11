@@ -1,8 +1,68 @@
 {
-  "collected_at": "2026-06-11T14:31:23.274538+00:00",
+  "collected_at": "2026-06-11T18:03:44.233266+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 18,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-11T17:54:17+00:00",
+      "lang": "polish",
+      "title": "[正面] This game is just peak every character is really g...",
+      "summary": "This game is just peak every character is really good in different ways, every single one of them is really good drawn and pretty. Gameplay is repetitive but it make you wanna play more and more. Animations for characters atacks are good. also getting characters is way easier that genshin impack or other games. This game is just really good done and straight up peak",
+      "url": "https://steamcommunity.com/profiles/76561199849766113/recommended/3052450",
+      "author": "76561199849766113",
+      "engagement": 0,
+      "language": "polish",
+      "voted_up": true,
+      "review": "This game is just peak every character is really good in different ways, every single one of them is really good drawn and pretty. Gameplay is repetitive but it make you wanna play more and more. Animations for characters atacks are good. also getting characters is way easier that genshin impack or other games. This game is just really good done and straight up peak",
+      "timestamp_created": 1781200457,
+      "playtime_forever": 2039
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T15:14:54+00:00",
+      "lang": "tchinese",
+      "title": "[负面] iOS板跟steam板不互通，白癡ㄟ",
+      "summary": "iOS板跟steam板不互通，白癡ㄟ",
+      "url": "https://steamcommunity.com/profiles/76561198142201377/recommended/3052450",
+      "author": "76561198142201377",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": false,
+      "review": "iOS板跟steam板不互通，白癡ㄟ",
+      "timestamp_created": 1781190894,
+      "playtime_forever": 374
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T12:03:18+00:00",
+      "lang": "english",
+      "title": "[正面] Great story, music, game play. a must try for anyo...",
+      "summary": "Great story, music, game play. a must try for anyone",
+      "url": "https://steamcommunity.com/profiles/76561197963858674/recommended/3052450",
+      "author": "76561197963858674",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great story, music, game play. a must try for anyone",
+      "timestamp_created": 1781179398,
+      "playtime_forever": 6371
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T11:42:19+00:00",
+      "lang": "russian",
+      "title": "[正面] добавьте предметы за очкиииии",
+      "summary": "добавьте предметы за очкиииии",
+      "url": "https://steamcommunity.com/profiles/76561199510902405/recommended/3052450",
+      "author": "76561199510902405",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "добавьте предметы за очкиииии",
+      "timestamp_created": 1781178139,
+      "playtime_forever": 395
+    },
     {
       "source": "steam",
       "time": "2026-06-11T11:03:30+00:00",
@@ -46,7 +106,7 @@
       "voted_up": true,
       "review": "Game gives out so much free pulls i can role play as a whale",
       "timestamp_created": 1781170330,
-      "playtime_forever": 2285
+      "playtime_forever": 2291
     },
     {
       "source": "steam",
@@ -61,7 +121,7 @@
       "voted_up": true,
       "review": "画风好，福利多",
       "timestamp_created": 1781168173,
-      "playtime_forever": 1233
+      "playtime_forever": 1443
     },
     {
       "source": "steam",
@@ -151,7 +211,7 @@
       "voted_up": true,
       "review": "peak gacha",
       "timestamp_created": 1781132561,
-      "playtime_forever": 1647
+      "playtime_forever": 1703
     },
     {
       "source": "steam",
@@ -166,7 +226,7 @@
       "voted_up": true,
       "review": "Klimatyczna i w cudownej oprawie graficznej <33",
       "timestamp_created": 1781132413,
-      "playtime_forever": 740
+      "playtime_forever": 752
     },
     {
       "source": "steam",
@@ -211,22 +271,7 @@
       "voted_up": true,
       "review": "1",
       "timestamp_created": 1781115317,
-      "playtime_forever": 2578
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T15:35:48+00:00",
-      "lang": "english",
-      "title": "[正面] so fun!!!!! ／(^ x ^)＼",
-      "summary": "so fun!!!!! ／(^ x ^)＼",
-      "url": "https://steamcommunity.com/profiles/76561199446337775/recommended/3052450",
-      "author": "76561199446337775",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "so fun!!!!! ／(^ x ^)＼",
-      "timestamp_created": 1781105748,
-      "playtime_forever": 2127
+      "playtime_forever": 2690
     }
   ]
 }
