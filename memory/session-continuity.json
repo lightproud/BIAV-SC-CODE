@@ -1,15 +1,27 @@
 {
   "last_session": {
-    "id": "ffed32ad",
-    "timestamp": "2026-06-11T02:56:16.834000+00:00",
-    "duration_minutes": 1.3,
-    "branch": "claude/songwriter-naming-rights-f2co1s",
-    "topics": [],
+    "id": "0c9fbbf3",
+    "timestamp": "2026-06-11T21:20:29.038000+00:00",
+    "duration_minutes": 0.2,
+    "branch": "main",
+    "topics": [
+      "做梦Agent"
+    ],
     "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "ffed32ad",
+      "timestamp": "2026-06-11T02:56:16.834000+00:00",
+      "duration_minutes": 1.3,
+      "branch": "claude/songwriter-naming-rights-f2co1s",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "d384f7cb",
       "timestamp": "2026-06-10T21:35:48.017000+00:00",
@@ -136,33 +148,18 @@
         "/home/user/brain-in-a-vat/CLAUDE.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "b3870dea",
-      "timestamp": "2026-06-09T22:54:17.720000+00:00",
-      "duration_minutes": 4.2,
-      "branch": "claude/claude-md-docs-ta7stm",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.15,
-      "MCP": 1.89,
-      "GitHub": 1.56,
-      "Wiki": 0.65,
-      "做梦Agent": 0.19,
-      "联动": 0.11
+      "BPT": 1.72,
+      "MCP": 1.51,
+      "GitHub": 1.25,
+      "做梦Agent": 1.15,
+      "Wiki": 0.52
     },
     "hot_files": [],
-    "total_sessions": 147
+    "total_sessions": 148
   },
-  "updated_at": "2026-06-11T02:59:27.546349+00:00"
+  "updated_at": "2026-06-11T21:20:29.407051+00:00"
 }
