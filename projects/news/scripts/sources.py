@@ -46,6 +46,8 @@ KNOWN_SOURCES = [
     'stopgame',
     # 中文补充
     'weixin',
+    # 官方 X 账号时间线（syndication 接口，无 key；仅官方号，无关键词搜索）
+    'twitter',
 ]
 
 # 原始源名 → 规范源名
@@ -65,6 +67,7 @@ SPARSE_SOURCES = {
     'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live', 'bahamut',
     'taptap',
     'discord',
+    'twitter',  # 官方号公告，发布不频繁，用 30 天宽窗
 }
 
 # 主管线核心源（aggregator.py 直采）。长期 0 产出 = 采集故障，健康门控据此告警。
