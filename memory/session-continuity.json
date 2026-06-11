@@ -1,15 +1,35 @@
 {
   "last_session": {
     "id": "068f871b",
-    "timestamp": "2026-06-10T20:25:41.838000+00:00",
-    "duration_minutes": 3.7,
+    "timestamp": "2026-06-10T21:56:03.767000+00:00",
+    "duration_minutes": 94.1,
     "branch": "claude/dynamic-orchestration-archiver-tzxdai",
-    "topics": [],
+    "topics": [
+      "Bilibili"
+    ],
     "decisions": [],
-    "files_changed": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator_collectors.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/data_quality.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/news_common.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
+    ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "068f871b",
+      "timestamp": "2026-06-10T20:25:41.838000+00:00",
+      "duration_minutes": 3.7,
+      "branch": "claude/dynamic-orchestration-archiver-tzxdai",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "90b9df5e",
       "timestamp": "2026-06-10T18:26:55.105000+00:00",
@@ -134,41 +154,20 @@
         "/home/runner/work/brain-in-a-vat/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "dc44b531",
-      "timestamp": "2026-06-03T15:24:31.899000+00:00",
-      "duration_minutes": 601.0,
-      "branch": "claude/collect-comments-wf",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/biav-report.md",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-comments.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/collect-fanart.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/test.yml",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260601_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_full.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_daily_20260602_v2.md",
-        "/home/user/brain-in-a-vat/deliverables/2026-06/morimens_period_20260512_0603.md",
-        "/home/user/brain-in-a-vat/scripts/report_render.py",
-        "/root/.claude/plans/calm-dazzling-wirth.md",
-        "/tmp/css_sample.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.36,
-      "MCP": 1.95,
-      "GitHub": 1.44,
-      "Wiki": 1.01,
-      "做梦Agent": 0.3,
-      "联动": 0.17
+      "BPT": 1.89,
+      "MCP": 1.56,
+      "GitHub": 1.15,
+      "Bilibili": 1.0,
+      "Wiki": 0.81,
+      "做梦Agent": 0.24,
+      "联动": 0.14
     },
     "hot_files": [],
-    "total_sessions": 145
+    "total_sessions": 146
   },
-  "updated_at": "2026-06-10T20:30:58.888818+00:00"
+  "updated_at": "2026-06-10T21:56:05.346386+00:00"
 }
