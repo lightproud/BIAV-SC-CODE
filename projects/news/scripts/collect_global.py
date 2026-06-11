@@ -61,6 +61,7 @@ SOURCE_MAP = {
     'weixin': 'weixin',
     'discord': 'discord',
     'telegram': 'telegram',
+    'twitter': 'twitter',
 }
 
 
@@ -153,6 +154,7 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Ruliweb', c.fetch_ruliweb),
         ('StopGame', c.fetch_stopgame),
         ('搜狗微信', c.fetch_weixin),
+        ('Twitter', c.fetch_twitter),
     ]
 
     # Collectors that may use API keys when available, fall back to public endpoints otherwise
@@ -173,7 +175,7 @@ def run_zero_cost_collectors() -> list[dict]:
         'Weibo': 'weibo', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
         '5ch': 'fivech', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
-        'StopGame': 'stopgame', '搜狗微信': 'weixin',
+        'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
         'YouTube': 'youtube', 'Discord API': 'discord',
         'Telegram': 'telegram', 'Bahamut': 'bahamut',
         'Arca.live': 'arca_live', 'Google Play': 'google_play',

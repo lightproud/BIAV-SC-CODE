@@ -301,6 +301,121 @@ def fetch_bilibili():
             logger.warning(f'Bilibili "{keyword}" failed: {e}')
 
     return items
+
+
+# 官方 X 账号（英文 / 日文官方运营号）。可用 TWITTER_HANDLES 环境变量覆盖（逗号分隔）。
+TWITTER_OFFICIAL_HANDLES = ["MorimensOfcl", "bokyakuzenya"]
+
+
+def _parse_twitter_time(created_at):
+    """解析 X 的 created_at（'Fri May 22 10:29:33 +0000 2026'）为 ISO 串。"""
+    try:
+        return datetime.strptime(created_at, "%a %b %d %H:%M:%S %z %Y").isoformat()
+    except (ValueError, TypeError):
+        return None
+
+
+def _twitter_walk_tweets(obj, acc):
+    """递归收集 __NEXT_DATA__ 里所有含 full_text 的推文对象。"""
+    if isinstance(obj, dict):
+        if "full_text" in obj and "id_str" in obj:
+            acc.append(obj)
+        for v in obj.values():
+            _twitter_walk_tweets(v, acc)
+    elif isinstance(obj, list):
+        for v in obj:
+            _twitter_walk_tweets(v, acc)
+
+
+def fetch_twitter():
+    """从 X/Twitter 抓取官方账号时间线。
+
+    无需 API Key：走 X 自家的嵌入式时间线接口
+    syndication.twitter.com/srv/timeline-profile/screen-name/<handle>，
+    解析页面内嵌的 __NEXT_DATA__ JSON。仅覆盖**官方账号公告**这一面。
+
+    局限（务实标注）：该端点只回单账号时间线，**无法做关键词搜索**（玩家提及
+    需官方 API v2 recent search，付费档）；nitter 公开实例已基本全灭，无可靠
+    免费搜索替代。仅抓取公开可见推文，只读，不做任何用户面操作。
+
+    合规：自动化访问 X 端点受 X 服务条款约束（与数据公开/内部无关）。本采集器
+    仅用于第一方监测自家游戏官方号，限速、只读、不转售、不绕过登录墙。
+    """
+    handles = [h.strip() for h in os.environ.get(
+        "TWITTER_HANDLES", ",".join(TWITTER_OFFICIAL_HANDLES)
+    ).split(",") if h.strip()]
+
+    items = []
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+
+    for idx, handle in enumerate(handles):
+        if idx > 0:
+            time.sleep(1.0)  # 限速：账号间隔 1s
+        try:
+            resp = _get(
+                f"https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}",
+                headers=headers,
+            )
+            m = re.search(
+                r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>',
+                resp.text, re.DOTALL,
+            )
+            if not m:
+                logger.warning(f'Twitter @{handle}: no __NEXT_DATA__ payload')
+                continue
+
+            entries = (json.loads(m.group(1)).get("props", {})
+                       .get("pageProps", {}).get("timeline", {}).get("entries", []))
+            tweets = []
+            _twitter_walk_tweets(entries, tweets)
+
+            handle_added = 0
+            for tw in tweets:
+                iso = _parse_twitter_time(tw.get("created_at", ""))
+                if not iso:
+                    continue
+                created = datetime.fromisoformat(iso)
+                if created < CUTOFF:
+                    continue
+                text = tw.get("full_text", "") or ""
+                tid = tw.get("id_str", "")
+                likes = tw.get("favorite_count", 0) or 0
+                rts = tw.get("retweet_count", 0) or 0
+                replies = tw.get("reply_count", 0) or 0
+                user = tw.get("user", {}) or {}
+                screen = user.get("screen_name", handle)
+                # 媒体（首图）
+                media_url = ""
+                media = ((tw.get("entities", {}) or {}).get("media")
+                         or (tw.get("extended_entities", {}) or {}).get("media") or [])
+                if media:
+                    media_url = media[0].get("media_url_https", "") or ""
+
+                items.append(_make_item(
+                    title=text[:100],
+                    summary=text,
+                    source="twitter",
+                    platform_region="global",
+                    time_str=iso,
+                    url=f"https://x.com/{screen}/status/{tid}" if tid else f"https://x.com/{screen}",
+                    engagement=likes + rts * 3 + replies * 2,
+                    is_hot=(likes + rts) > 500,
+                    author=f"@{screen}",
+                    lang=user.get("lang", "") or "",
+                    content_type="image" if media_url else "text",
+                    media_url=media_url,
+                ))
+                handle_added += 1
+
+            logger.info(f'Twitter @{handle}: +{handle_added} tweets ({len(tweets)} in timeline)')
+        except Exception as e:
+            logger.warning(f'Twitter @{handle} failed: {e}')
+
+    logger.info(f'Twitter: {len(items)} tweets total')
+    return items
 # NOTE: divergent from aggregator_collectors.fetch_youtube — see audit ARCH-01 (behavior differs, not merged).
 def fetch_youtube():
     """从 YouTube Data API v3 搜索相关视频。"""
