@@ -1,0 +1,45 @@
+{
+  "_meta": "环行记可玩唤醒体。名录取自 projects/wiki/data/db/characters.json 真实角色；界域归属与天赋为本同人玩法设计（DESIGN §2.4），非游戏正典强度。",
+  "characters": [
+    {
+      "id": "ramona",
+      "name": "环行·拉蒙娜",
+      "realm": "chaos",
+      "title": "回响轮回",
+      "startWeapon": "echo_blade",
+      "passive": { "type": "scaling_damage", "value": 0.02, "interval": 30 },
+      "passiveDesc": "回响积累：全武器伤害每 30 秒自增 2%。",
+      "lore": "复制上回合最后打出的卡牌——从过去的经历中获得力量。"
+    },
+    {
+      "id": "thuru",
+      "name": "图鲁",
+      "realm": "aequor",
+      "title": "外域信使",
+      "startWeapon": "tentacle",
+      "passive": { "type": "extra_projectile", "value": 1 },
+      "passiveDesc": "深海眷顾：所有投射类武器投射物 +1。",
+      "lore": "侍奉着将在星芒篇收尾的外域存在。"
+    },
+    {
+      "id": "pandia",
+      "name": "潘狄娅",
+      "realm": "caro",
+      "title": "反击之鞭",
+      "startWeapon": "thorn_field",
+      "passive": { "type": "thorns", "value": 0.15 },
+      "passiveDesc": "甜蜜鞭笞：受击时反弹 15% 承受伤害给近敌。",
+      "lore": "热情的皮囊下，藏匿着恶鬼——造成伤害越高，反击越多。"
+    },
+    {
+      "id": "dores",
+      "name": "朵尔·熔毁",
+      "realm": "ultra",
+      "title": "维度熔毁",
+      "startWeapon": "hyper_nova",
+      "passive": { "type": "area_up", "value": 0.2 },
+      "passiveDesc": "维度扩张：所有范围类武器作用半径 +20%。",
+      "lore": "原第三部核心角色，独立个人故事已成初稿。"
+    }
+  ]
+}

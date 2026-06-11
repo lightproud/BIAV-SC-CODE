@@ -7,6 +7,57 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "ne
 
 import collect_global
 import global_collectors
+import news_common
+
+
+class TestParseRelativeTime(unittest.TestCase):
+    """H4 回归网：各平台时间字段必须归一为 ISO（否则被 _is_recent 静默丢弃）。"""
+
+    def _assert_iso(self, value):
+        from datetime import datetime
+        iso, approx = news_common.parse_relative_time(value)
+        datetime.fromisoformat(iso)  # raises if not ISO
+        return iso, approx
+
+    def test_epoch_seconds(self):
+        # zhihu created_time 为 epoch 秒
+        iso, approx = self._assert_iso(1714003200)
+        self.assertTrue(iso.startswith("2024-04-25"))
+        self.assertFalse(approx)
+
+    def test_epoch_milliseconds(self):
+        # naver writeDateTimestamp 为 epoch 毫秒
+        iso, approx = self._assert_iso(1714003200000)
+        self.assertTrue(iso.startswith("2024-04-25"))
+        self.assertFalse(approx)
+
+    def test_arca_formats(self):
+        # arca col-time: "HH:MM" / "MM.DD" 原文
+        for raw in ("12:34", "04.25", "2026.04.25"):
+            _, approx = self._assert_iso(raw)
+            self.assertFalse(approx, raw)
+
+    def test_relative_and_iso(self):
+        for raw in ("3小时前", "2 days ago", "2026-04-25T00:00:00+00:00"):
+            _, approx = self._assert_iso(raw)
+            self.assertFalse(approx, raw)
+
+    def test_empty_falls_back_approximate(self):
+        _, approx = self._assert_iso(None)
+        self.assertTrue(approx)
+
+
+class TestRedactSecrets(unittest.TestCase):
+    """H3 回归网：异常文本中 URL 查询参数里的密钥必须被掩码。"""
+
+    def test_key_token_cookie_masked(self):
+        raw = "403 for url: https://x/api?part=snippet&key=AIzaSECRET&token=tkSECRET&cookie=cSECRET&q=a"
+        out = news_common.redact_secrets(raw)
+        self.assertNotIn("AIzaSECRET", out)
+        self.assertNotIn("tkSECRET", out)
+        self.assertNotIn("cSECRET", out)
+        self.assertIn("key=***", out)
+        self.assertIn("part=snippet", out)  # 非敏感参数保留
 
 
 class TestDedupKey(unittest.TestCase):

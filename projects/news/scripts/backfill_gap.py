@@ -28,6 +28,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 PLATFORMS_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import news_common  # 日志脱敏单一真源（H3）
 
 
 def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
@@ -226,7 +227,8 @@ def backfill_youtube():
                 ))
             logger.info(f'YouTube "{keyword}": {len(data.get("items", []))} videos')
         except Exception as e:
-            logger.warning(f'YouTube "{keyword}" failed: {e}')
+            # H3: 异常文本含完整请求 URL（key=<API key>），脱敏后再进公开日志
+            logger.warning(f'YouTube "{keyword}" failed: {news_common.redact_secrets(e)}')
 
     if items:
         _archive_items('youtube', items)

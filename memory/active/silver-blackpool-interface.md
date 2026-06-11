@@ -84,7 +84,7 @@
 
 - `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
 - `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
-- `CLAUDE.md` §4 子项目维护职责表 — Code-BPT 行（不写代码到银芯仓库）
+- `README.md`「子项目与会话角色」表 — 角色职责现行出处（2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律；现行表中已无 Code-BPT 行）
 - `BIAV-SC.md` 会话角色章节
 
 ### 黑池如果是会话方读取本仓库

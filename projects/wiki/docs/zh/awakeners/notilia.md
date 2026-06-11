@@ -1,6 +1,6 @@
 ---
 title: 诺缔拉 | 忘却前夜 Wiki
-description: 诺缔拉（诺缔拉）混沌属性输出角色详细资料
+description: 诺缔拉角色详细资料
 portrait: /portraits/notilia.png
 pageClass: character-page
 ---
