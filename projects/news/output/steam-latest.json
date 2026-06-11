@@ -1,8 +1,53 @@
 {
-  "collected_at": "2026-06-11T10:05:16.297405+00:00",
+  "collected_at": "2026-06-11T14:31:23.274538+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-11T11:03:30+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 沙耶很可愛，所以給讚",
+      "summary": "沙耶很可愛，所以給讚",
+      "url": "https://steamcommunity.com/profiles/76561199552154285/recommended/3052450",
+      "author": "76561199552154285",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "沙耶很可愛，所以給讚",
+      "timestamp_created": 1781175810,
+      "playtime_forever": 21
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T11:01:00+00:00",
+      "lang": "english",
+      "title": "[正面] I LOVE THIS GAME!!!!",
+      "summary": "I LOVE THIS GAME!!!!",
+      "url": "https://steamcommunity.com/profiles/76561198308665041/recommended/3052450",
+      "author": "76561198308665041",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I LOVE THIS GAME!!!!",
+      "timestamp_created": 1781175660,
+      "playtime_forever": 2326
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-11T09:32:10+00:00",
+      "lang": "english",
+      "title": "[正面] Game gives out so much free pulls i can role play...",
+      "summary": "Game gives out so much free pulls i can role play as a whale",
+      "url": "https://steamcommunity.com/profiles/76561198798922128/recommended/3052450",
+      "author": "76561198798922128",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Game gives out so much free pulls i can role play as a whale",
+      "timestamp_created": 1781170330,
+      "playtime_forever": 2285
+    },
     {
       "source": "steam",
       "time": "2026-06-11T08:56:13+00:00",
@@ -16,7 +61,7 @@
       "voted_up": true,
       "review": "画风好，福利多",
       "timestamp_created": 1781168173,
-      "playtime_forever": 963
+      "playtime_forever": 1233
     },
     {
       "source": "steam",
@@ -61,7 +106,7 @@
       "voted_up": true,
       "review": "Genuinely really well made game, story and premise is really nice as well as the additions from the cosmic horror/ lovecraftian horror aspect. Even though it's a gacha it doesn't really feel much like a gacha as they give you an absurd amount of pulls that not even the most generous popular gachas ever would. There are problems though primarily with the game having limited translations. English has a partial translation but a lot of other languages have GPT translations but it's still very much understandable and the English translation is quite good in my opinion and i've had no issues with it so far.\n\nI would genuinely recommend at least trying the game first before just writing it off.",
       "timestamp_created": 1781152076,
-      "playtime_forever": 1025
+      "playtime_forever": 1063
     },
     {
       "source": "steam",
@@ -91,7 +136,7 @@
       "voted_up": true,
       "review": "씹덕 슬더스",
       "timestamp_created": 1781133779,
-      "playtime_forever": 8299
+      "playtime_forever": 8317
     },
     {
       "source": "steam",
@@ -121,7 +166,7 @@
       "voted_up": true,
       "review": "Klimatyczna i w cudownej oprawie graficznej <33",
       "timestamp_created": 1781132413,
-      "playtime_forever": 620
+      "playtime_forever": 740
     },
     {
       "source": "steam",
@@ -166,7 +211,7 @@
       "voted_up": true,
       "review": "1",
       "timestamp_created": 1781115317,
-      "playtime_forever": 2548
+      "playtime_forever": 2578
     },
     {
       "source": "steam",
@@ -181,22 +226,7 @@
       "voted_up": true,
       "review": "so fun!!!!! ／(^ x ^)＼",
       "timestamp_created": 1781105748,
-      "playtime_forever": 2112
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T13:10:04+00:00",
-      "lang": "schinese",
-      "title": "[正面] 玩了那么多肉块游戏终于看见美少女了",
-      "summary": "玩了那么多肉块游戏终于看见美少女了",
-      "url": "https://steamcommunity.com/profiles/76561198973370582/recommended/3052450",
-      "author": "76561198973370582",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "玩了那么多肉块游戏终于看见美少女了",
-      "timestamp_created": 1781097004,
-      "playtime_forever": 4397
+      "playtime_forever": 2127
     }
   ]
 }
