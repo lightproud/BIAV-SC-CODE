@@ -1,8 +1,8 @@
 {
   "date": "2026-06-11",
-  "archived_at": "2026-06-11T14:31:27.004181+00:00",
+  "archived_at": "2026-06-11T18:03:56.164140+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 17,
   "items": [
     {
       "title": "[正面] Told myself I wouldn't play another gacha game, bu...",
@@ -308,6 +308,72 @@
         "playtime_forever": 2285,
         "votes_up": 0,
         "timestamp_created": 1781170330
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] iOS板跟steam板不互通，白癡ㄟ",
+      "summary": "iOS板跟steam板不互通，白癡ㄟ",
+      "source": "steam_review",
+      "time": "2026-06-11T15:14:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198142201377/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198142201377",
+      "tags": [
+        "tchinese"
+      ],
+      "language": "tchinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 374,
+        "votes_up": 0,
+        "timestamp_created": 1781190894
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Great story, music, game play. a must try for anyo...",
+      "summary": "Great story, music, game play. a must try for anyone",
+      "source": "steam_review",
+      "time": "2026-06-11T12:03:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561197963858674/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561197963858674",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6371,
+        "votes_up": 0,
+        "timestamp_created": 1781179398
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] добавьте предметы за очкиииии",
+      "summary": "добавьте предметы за очкиииии",
+      "source": "steam_review",
+      "time": "2026-06-11T11:42:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199510902405/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199510902405",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 395,
+        "votes_up": 0,
+        "timestamp_created": 1781178139
       },
       "lang": "",
       "platform_region": "global"
