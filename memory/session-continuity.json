@@ -1,17 +1,16 @@
 {
   "last_session": {
-    "id": "24d49210",
-    "timestamp": "2026-06-10T21:32:40.446000+00:00",
-    "duration_minutes": 1350.3,
-    "branch": "claude/test-coverage-analysis-na9ih8",
-    "topics": [
-      "Wiki"
+    "id": "d384f7cb",
+    "timestamp": "2026-06-10T21:35:48.017000+00:00",
+    "duration_minutes": 10503.1,
+    "branch": "claude/kind-meitner-xyX97",
+    "topics": [],
+    "decisions": [
+      "规定如何落盘。按守密人硬约束（§6.1 动手前先想），先报告排查结果"
     ],
-    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.github/workflows/test.yml",
-      "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/deliverables/2026-06/test-coverage-analysis.md"
+      "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/news/GLOBAL_COLLECTION_SPEC.md"
     ],
     "open_items": []
   },
@@ -166,12 +165,12 @@
       "BPT": 2.69,
       "MCP": 2.36,
       "GitHub": 1.95,
-      "Wiki": 1.81,
+      "Wiki": 0.81,
       "做梦Agent": 0.24,
       "联动": 0.14
     },
     "hot_files": [],
     "total_sessions": 146
   },
-  "updated_at": "2026-06-10T21:38:32.889787+00:00"
+  "updated_at": "2026-06-10T21:39:06.559655+00:00"
 }

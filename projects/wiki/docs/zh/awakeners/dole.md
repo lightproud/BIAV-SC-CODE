@@ -1,6 +1,6 @@
 ---
 title: 朵尔 | 忘却前夜 Wiki
-description: 朵尔（朵尔）混沌属性输出角色详细资料
+description: 朵尔角色详细资料
 portrait: /portraits/dole.png
 pageClass: character-page
 ---

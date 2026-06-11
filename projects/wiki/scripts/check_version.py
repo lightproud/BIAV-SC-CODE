@@ -135,13 +135,19 @@ def detect_version_from_news(steam_result: dict) -> str | None:
 
 
 def load_versions() -> dict:
-    """Load the current versions.json."""
+    """Load the current versions.json; empty skeleton if not yet populated."""
+    if not VERSIONS_PATH.exists():
+        print(f"[INFO] {VERSIONS_PATH} not found; continuing with empty version list")
+        return {"versions": []}
     with open(VERSIONS_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def load_meta() -> dict:
-    """Load the current meta.json."""
+    """Load the current meta.json; empty skeleton if not yet populated."""
+    if not META_PATH.exists():
+        print(f"[INFO] {META_PATH} not found; continuing with empty meta")
+        return {}
     with open(META_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 

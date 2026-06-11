@@ -344,8 +344,13 @@ def write_session_digest(changes: dict, facts: list[dict], graph_updates: int, d
         digest_file.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"  Digest written: {digest_file.name}")
 
-        # Cleanup: keep last 50 digests
-        digests = sorted(DIGESTS_DIR.glob("*.json"), reverse=True)
+        # Cleanup: keep last 50 digests.
+        # Exclude *.meta.json: those are session_distiller outputs consumed by
+        # memrl/dream_rem, not writeback digests — deleting them is unrecoverable.
+        digests = sorted(
+            (p for p in DIGESTS_DIR.glob("*.json") if not p.name.endswith(".meta.json")),
+            reverse=True,
+        )
         for old in digests[50:]:
             old.unlink()
     else:

@@ -40,6 +40,7 @@ from dream_ai import (
     ai_consolidate, ai_trend_analysis, check_cache, generate_cache_entries,
     get_anthropic_client, identify_hot_topics, update_precomputed_cache,
 )
+from io_utils import write_text_atomic
 
 
 # ============================================================
