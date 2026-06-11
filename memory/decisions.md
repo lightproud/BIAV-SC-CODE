@@ -180,3 +180,5 @@
 | 2026-04-26 | 装 SessionStart 同步 hook（`.claude/hooks/session-start-sync.sh`） | 每次会话启动自动 fetch + 同步 local main 至 origin/main，根治 Cloudflare HTTP 413 推送堵塞（lesson #28）。.gitignore 白名单 `.claude/hooks/` 进版本管理 | 全局 / 基础设施 |
 | 2026-04-26 | 24 个未合并 claude/* 分支审计完成，全部决定删除 | A 组（8 BPT 废弃目录）+ B 组（3 BPT 文档，commit 历史保留）+ C 组（3 已被 main 覆盖）+ D 组（5 已通过别 PR 替代）+ E 组（5 小修复/早期文档）。守密人本地批量执行删除（艾瑞卡推送通道 403） | 全局 / 仓库整顿 |
 | 2026-04-26 | dependabot PR 处理策略：batch dependency update 直推 main | 不走 dependabot 默认 5 PR 流程，改用 2 个 commit 直推：第一个含 3 个安全升级（requests/google-play-scraper/vue），第二个含 2 个 breaking change（playwright/anthropic）需本地测后合 | news / wiki |
+| 2026-06-11 | 守密人声明：银芯定位由「公开层」调整为非公开 / 受限 | 守密人 2026-06-11 明示「银芯已经不是公开了」，取代 2026-04-01「银芯（公开层）」定位。**CLAUDE.md §0/§1/§4 仍写公开层，待守密人同步更新**；本行先记录定位变更事实。注意：定位变更不解除第三方平台 ToS 对采集行为的约束（见下条） | 全局 |
+| 2026-06-11 | 上线 X/Twitter 官方号采集器（fetch_twitter，无 key） | 走 X 自家 syndication 嵌入时间线接口抓官方号（@MorimensOfcl 英 / @bokyakuzenya 日），解析 __NEXT_DATA__；只读、限速、仅公开推文、不绕登录墙、不做用户面操作。**局限**：该接口只回单账号时间线，无法关键词搜索（玩家提及面仍需官方 API v2 付费档；nitter 公开实例已全灭）。**合规风险（如实记录）**：自动化访问 X 端点受 X ToS 约束，与数据公开/内部无关；本采集为第一方监测自家官方号，风险由守密人知情承担 | news |
