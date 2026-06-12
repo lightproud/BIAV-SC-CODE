@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-11T23:15:29.931231+00:00",
+  "collected_at": "2026-06-12T02:30:59.439206+00:00",
   "source": "pixiv",
-  "item_count": 31,
+  "item_count": 32,
   "items": [
     {
       "source": "pixiv",
@@ -161,16 +161,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-11T23:14:21.463821+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-01T21:42:24+09:00",
       "lang": "",
       "title": "沙耶",
@@ -219,6 +209,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-06-12T02:29:49.535323+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-06-01T21:00:09+09:00",
       "lang": "",
       "title": "旅立ち",
@@ -239,6 +239,18 @@
       "author": "ソラミミ",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/20/58/49/145485946_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-12T09:47:15+09:00",
+      "lang": "",
+      "title": "Jenkin",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145902739",
+      "author": "Yai",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/12/09/47/15/145902739_p0_square1200.jpg",
       "content_type": "image"
     },
     {

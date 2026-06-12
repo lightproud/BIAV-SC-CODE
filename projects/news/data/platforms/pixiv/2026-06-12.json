@@ -1,8 +1,8 @@
 {
   "date": "2026-06-12",
-  "archived_at": "2026-06-11T23:15:31.963134+00:00",
+  "archived_at": "2026-06-12T02:31:02.036528+00:00",
   "source": "pixiv",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "",
@@ -16,6 +16,24 @@
       "tags": [],
       "lang": "",
       "platform_region": "global"
+    },
+    {
+      "title": "Jenkin",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-12T09:47:15+09:00",
+      "url": "https://www.pixiv.net/artworks/145902739",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Yai",
+      "tags": [
+        "忘卻前夜",
+        "Morimens"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/12/09/47/15/145902739_p0_square1200.jpg",
+      "content_type": "image"
     }
   ]
 }
