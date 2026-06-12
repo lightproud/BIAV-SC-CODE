@@ -1,7 +1,7 @@
 {
   "last_session": {
-    "id": "0c9fbbf3",
-    "timestamp": "2026-06-11T21:20:29.038000+00:00",
+    "id": "59f9205f",
+    "timestamp": "2026-06-12T21:04:53.921000+00:00",
     "duration_minutes": 0.2,
     "branch": "main",
     "topics": [
@@ -12,6 +12,18 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "0c9fbbf3",
+      "timestamp": "2026-06-11T21:20:29.038000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "main",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "ffed32ad",
       "timestamp": "2026-06-11T02:56:16.834000+00:00",
@@ -134,32 +146,18 @@
         "/home/user/brain-in-a-vat/CLAUDE.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "b3870dea",
-      "timestamp": "2026-06-09T23:04:05.481000+00:00",
-      "duration_minutes": 14.0,
-      "branch": "claude/claude-md-docs-ta7stm",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 1.72,
-      "MCP": 1.51,
-      "GitHub": 1.25,
-      "做梦Agent": 1.15,
-      "Wiki": 0.52
+      "做梦Agent": 1.92,
+      "BPT": 1.38,
+      "MCP": 1.21,
+      "GitHub": 1.0,
+      "Wiki": 0.42
     },
     "hot_files": [],
-    "total_sessions": 148
+    "total_sessions": 149
   },
-  "updated_at": "2026-06-11T21:20:29.407051+00:00"
+  "updated_at": "2026-06-12T21:04:54.221789+00:00"
 }
