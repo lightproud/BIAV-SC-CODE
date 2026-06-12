@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-12T17:32:43.694512+00:00",
+  "collected_at": "2026-06-12T19:53:09.727556+00:00",
   "source": "steam",
   "item_count": 11,
   "items": [
@@ -35,6 +35,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-06-12T17:32:31+00:00",
+      "lang": "english",
+      "title": "[负面] So convuluted and you are expected to go through u...",
+      "summary": "So convuluted and you are expected to go through university level courses just to understand the game. When the beginner handbook is 130 pages long this stops being a game",
+      "url": "https://steamcommunity.com/profiles/76561199486921782/recommended/3052450",
+      "author": "76561199486921782",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "So convuluted and you are expected to go through university level courses just to understand the game. When the beginner handbook is 130 pages long this stops being a game",
+      "timestamp_created": 1781285551,
+      "playtime_forever": 197
+    },
+    {
+      "source": "steam",
       "time": "2026-06-12T15:38:39+00:00",
       "lang": "english",
       "title": "[负面] Why the hell is the story telling is a must?",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "재밋음.",
       "timestamp_created": 1781277615,
-      "playtime_forever": 5313
+      "playtime_forever": 5342
     },
     {
       "source": "steam",
@@ -152,21 +167,6 @@
       "review": "I like the story. Good game.",
       "timestamp_created": 1781232911,
       "playtime_forever": 303
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-11T17:54:17+00:00",
-      "lang": "polish",
-      "title": "[正面] This game is just peak every character is really g...",
-      "summary": "This game is just peak every character is really good in different ways, every single one of them is really good drawn and pretty. Gameplay is repetitive but it make you wanna play more and more. Animations for characters atacks are good. also getting characters is way easier that genshin impack or other games. This game is just really good done and straight up peak",
-      "url": "https://steamcommunity.com/profiles/76561199849766113/recommended/3052450",
-      "author": "76561199849766113",
-      "engagement": 0,
-      "language": "polish",
-      "voted_up": true,
-      "review": "This game is just peak every character is really good in different ways, every single one of them is really good drawn and pretty. Gameplay is repetitive but it make you wanna play more and more. Animations for characters atacks are good. also getting characters is way easier that genshin impack or other games. This game is just really good done and straight up peak",
-      "timestamp_created": 1781200457,
-      "playtime_forever": 2151
     }
   ]
 }
