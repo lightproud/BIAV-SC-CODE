@@ -32872,10 +32872,14 @@
     },
     "thread:1514674769931272222": {
       "last_message_id": "1514674785920225512"
+    },
+    "1515044968333574144": {
+      "last_historical_message_id": "1477455328051200000",
+      "last_historical_month": "2026-02"
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-06-12T17:24:06.127013+00:00",
+  "last_run": "2026-06-12T19:32:04.728043+00:00",
   "forum_starter_backfill": {
     "completed": [
       "thread:1171395702887305216",
