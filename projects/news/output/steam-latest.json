@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-12T11:36:04.480298+00:00",
+  "collected_at": "2026-06-12T14:33:49.097029+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
       "timestamp_created": 1781225238,
-      "playtime_forever": 15609
+      "playtime_forever": 15729
     },
     {
       "source": "steam",
@@ -107,36 +107,6 @@
       "review": "iOS板跟steam板不互通，白癡ㄟ",
       "timestamp_created": 1781190894,
       "playtime_forever": 374
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-11T12:03:18+00:00",
-      "lang": "english",
-      "title": "[正面] Great story, music, game play. a must try for anyo...",
-      "summary": "Great story, music, game play. a must try for anyone",
-      "url": "https://steamcommunity.com/profiles/76561197963858674/recommended/3052450",
-      "author": "76561197963858674",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Great story, music, game play. a must try for anyone",
-      "timestamp_created": 1781179398,
-      "playtime_forever": 6485
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-11T11:42:19+00:00",
-      "lang": "russian",
-      "title": "[正面] добавьте предметы за очкиииии",
-      "summary": "добавьте предметы за очкиииии",
-      "url": "https://steamcommunity.com/profiles/76561199510902405/recommended/3052450",
-      "author": "76561199510902405",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "добавьте предметы за очкиииии",
-      "timestamp_created": 1781178139,
-      "playtime_forever": 395
     }
   ]
 }
