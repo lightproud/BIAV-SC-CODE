@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T21:28:49.173601+00:00",
+  "updated_at": "2026-06-12T23:08:41.805065+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -46,7 +46,7 @@
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 2735,
+      "total_items": 2737,
       "errors": []
     },
     "nga": {
@@ -74,7 +74,7 @@
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 6440,
+      "total_items": 6449,
       "errors": []
     },
     "zhihu": {
@@ -128,9 +128,9 @@
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-06-12",
-      "consecutive_silent_days": 1,
-      "total_items": 495,
+      "last_success_date": "2026-06-13",
+      "consecutive_silent_days": 0,
+      "total_items": 496,
       "errors": []
     },
     "telegram": {
@@ -165,7 +165,7 @@
       "level": "active",
       "last_success_date": "2026-06-12",
       "consecutive_silent_days": 1,
-      "total_items": 2558,
+      "total_items": 2578,
       "errors": []
     }
   }
