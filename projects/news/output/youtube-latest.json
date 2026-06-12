@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-12T19:53:09.727556+00:00",
+  "collected_at": "2026-06-12T21:28:41.657255+00:00",
   "source": "youtube",
-  "item_count": 30,
+  "item_count": 28,
   "items": [
     {
       "source": "youtube",
@@ -11,7 +11,7 @@
       "summary": "Соцсети: Стримы на твич: https://twitch.tv/closetom Информация по стримам \\\\ Ирл контент \\\\ Общаемся по игре: ...",
       "url": "https://www.youtube.com/watch?v=FNmyJsO16S0",
       "author": "Closetom",
-      "engagement": 382,
+      "engagement": 389,
       "media_url": "https://i.ytimg.com/vi/FNmyJsO16S0/hqdefault.jpg",
       "content_type": "image"
     },
@@ -23,7 +23,7 @@
       "summary": "Don't know how long.",
       "url": "https://www.youtube.com/watch?v=A2BfRzu6G2Y",
       "author": "Flares117",
-      "engagement": 267,
+      "engagement": 340,
       "media_url": "https://i.ytimg.com/vi/A2BfRzu6G2Y/hqdefault_live.jpg",
       "content_type": "image"
     },
@@ -35,7 +35,7 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「忘却より」 最後の日々が迫る前、まだ忘却に沈まぬロンディニウム ...",
       "url": "https://www.youtube.com/watch?v=YwoqnvtUKgg",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 201,
+      "engagement": 210,
       "media_url": "https://i.ytimg.com/vi/YwoqnvtUKgg/hqdefault.jpg",
       "content_type": "image"
     },
@@ -47,7 +47,7 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「塵の旅路は続く」 先駆者はここに倒れ、調査員たちはなお旅を続ける。",
       "url": "https://www.youtube.com/watch?v=eA38E7j1GV8",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 143,
+      "engagement": 155,
       "media_url": "https://i.ytimg.com/vi/eA38E7j1GV8/hqdefault.jpg",
       "content_type": "image"
     },
@@ -59,9 +59,9 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「忘却前夜」 闇夜の足音は探索者の背後を追い続ける—— その影は、かすかな ...",
       "url": "https://www.youtube.com/watch?v=F_VWhBbhrjc",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 125,
+      "engagement": 135,
       "media_url": "https://i.ytimg.com/vi/F_VWhBbhrjc/hqdefault.jpg",
-      "content_type": "image"
+      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -71,20 +71,8 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「危機のソナタ」 異界からの侵略者が、逆三角の印を掲げ、覚醒した世界に死 ...",
       "url": "https://www.youtube.com/watch?v=Ew0ub1kA0O8",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 123,
+      "engagement": 134,
       "media_url": "https://i.ytimg.com/vi/Ew0ub1kA0O8/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:01Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨雨の鍵塚",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「雨の鍵塚」 ミサゴ大学の教師や学生の過去と未来は、この地に葬られている ...",
-      "url": "https://www.youtube.com/watch?v=tQzAANR1W_I",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 96,
-      "media_url": "https://i.ytimg.com/vi/tQzAANR1W_I/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -95,9 +83,21 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=ZIBmveiEeZI",
       "author": "박현(Muyeong)",
-      "engagement": 95,
+      "engagement": 112,
       "media_url": "https://i.ytimg.com/vi/ZIBmveiEeZI/hqdefault.jpg",
       "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-12T09:00:01Z",
+      "lang": "",
+      "title": "【忘却前夜】OST：門を開く銀の鍵丨雨の鍵塚",
+      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「雨の鍵塚」 ミサゴ大学の教師や学生の過去と未来は、この地に葬られている ...",
+      "url": "https://www.youtube.com/watch?v=tQzAANR1W_I",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 105,
+      "media_url": "https://i.ytimg.com/vi/tQzAANR1W_I/hqdefault.jpg",
+      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -107,7 +107,7 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「門を越えて来たる者」 銀色の六翼を持つ使者は存在の門を越え、昏き海に ...",
       "url": "https://www.youtube.com/watch?v=NjQB1pVtSNU",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 92,
+      "engagement": 103,
       "media_url": "https://i.ytimg.com/vi/NjQB1pVtSNU/hqdefault.jpg",
       "content_type": "image"
     },
@@ -119,19 +119,19 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「目覚めし霊」 シルバーコアに関する研究は、高位なる存在の霊を呼び覚ます ...",
       "url": "https://www.youtube.com/watch?v=PyN-c4fligY",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 89,
+      "engagement": 92,
       "media_url": "https://i.ytimg.com/vi/PyN-c4fligY/hqdefault.jpg",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-06-12T06:02:01Z",
+      "time": "2026-06-12T20:59:39Z",
       "lang": "",
       "title": "【#忘却前夜  】闇の境界を進めてトゥルーくんを強くしたい！！！【#推し活】",
       "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ふれんどよければなりましょー！ UID：200148472 まだの ...",
       "url": "https://www.youtube.com/watch?v=eQ_2_xrY0rg",
       "author": "卯咲乃ぬい",
-      "engagement": 84,
+      "engagement": 85,
       "media_url": "https://i.ytimg.com/vi/eQ_2_xrY0rg/hqdefault.jpg",
       "content_type": "image"
     },
@@ -143,7 +143,7 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「存続の望み」 存続の理、存続の望みが、シルバーキーの一閃に宿る。 継承者 ...",
       "url": "https://www.youtube.com/watch?v=1_WwkDjXIW4",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 65,
+      "engagement": 72,
       "media_url": "https://i.ytimg.com/vi/1_WwkDjXIW4/hqdefault.jpg",
       "content_type": "image"
     },
@@ -155,7 +155,7 @@
       "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「霊知の潮流」 霊知の潮流は太古の余波を運び、シルバーコアに宿る魂は高 ...",
       "url": "https://www.youtube.com/watch?v=hcH36pG0mJU",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 56,
+      "engagement": 59,
       "media_url": "https://i.ytimg.com/vi/hcH36pG0mJU/hqdefault.jpg",
       "content_type": "image"
     },
@@ -173,26 +173,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-12T16:32:34Z",
-      "lang": "",
-      "title": "忘却前夜　謎編成作ってきた！→「ブルーダフォダイル/リリーハイパーキャリー」",
-      "summary": "いろんな編成知りたい！ コケたらゴリアテ育てる。",
-      "url": "https://www.youtube.com/watch?v=K0w-3a_74To",
-      "author": "たこに名前を入力",
-      "engagement": 31,
-      "media_url": "https://i.ytimg.com/vi/K0w-3a_74To/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
       "time": "2026-06-12T15:53:43Z",
       "lang": "",
       "title": "morimens is peakful pain",
       "summary": "there is no time, only keeper sauces: \"touchin on the chile\" from puerto rican michael jackson harry du bois and vertin by bones n ...",
       "url": "https://www.youtube.com/watch?v=lhH68yui1II",
       "author": "El Conde Vateetee",
-      "engagement": 28,
+      "engagement": 32,
       "media_url": "https://i.ytimg.com/vi/lhH68yui1II/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-12T16:32:34Z",
+      "lang": "",
+      "title": "忘却前夜　謎編成作ってきた！→「ブルーダフォダイル/リリーハイパーキャリー」",
+      "summary": "いろんな編成知りたい！ コケたらゴリアテ育てる。",
+      "url": "https://www.youtube.com/watch?v=K0w-3a_74To",
+      "author": "たこに名前を入力",
+      "engagement": 32,
+      "media_url": "https://i.ytimg.com/vi/K0w-3a_74To/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -203,9 +203,21 @@
       "summary": "7ー3 →ナウティラ♡好き♡可愛い♡ナウティラ♡ナウティラ♡ナウティラ♡♡♡♡♡♡ Twitter(X)→https://x.com/to_m4fuyu.",
       "url": "https://www.youtube.com/watch?v=fTQ4TkTVmaQ",
       "author": "to真冬",
-      "engagement": 27,
+      "engagement": 28,
       "media_url": "https://i.ytimg.com/vi/fTQ4TkTVmaQ/hqdefault.jpg",
-      "content_type": "video"
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-12T15:50:05Z",
+      "lang": "",
+      "title": "【忘却前夜】パンディアを強く使おう！【NOT解説】",
+      "summary": "パンディアの強い使い方を考えてみました。 ぜひ試してみてね。",
+      "url": "https://www.youtube.com/watch?v=ItRHnaeJDAI",
+      "author": "カチコチ",
+      "engagement": 15,
+      "media_url": "https://i.ytimg.com/vi/ItRHnaeJDAI/hqdefault.jpg",
+      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -233,30 +245,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-12T15:50:05Z",
-      "lang": "",
-      "title": "【忘却前夜】パンディアを強く使おう！【NOT解説】",
-      "summary": "パンディアの強い使い方を考えてみました。 ぜひ試してみてね。",
-      "url": "https://www.youtube.com/watch?v=ItRHnaeJDAI",
-      "author": "カチコチ",
-      "engagement": 12,
-      "media_url": "https://i.ytimg.com/vi/ItRHnaeJDAI/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T10:00:07Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens 星辰篇H5-4",
-      "summary": "忘卻前夜#morimens.",
-      "url": "https://www.youtube.com/watch?v=O3YmCdcxYl4",
-      "author": "Noir",
-      "engagement": 8,
-      "media_url": "https://i.ytimg.com/vi/O3YmCdcxYl4/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
       "time": "2026-06-12T10:10:51Z",
       "lang": "",
       "title": "More Morimens",
@@ -266,42 +254,6 @@
       "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/vmRPS_rH3xI/hqdefault.jpg",
       "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T10:00:34Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens Regional D-Effect Zone 4-5 Boss Fight! 融災4-5 Boss戰的部分!",
-      "summary": "忘卻前夜 #morimens 6月8日到6月22日的融災更新 June 8 to June 22 Regional D-Effect Zone update. 4-5 會有換位置的功能牌,不過 ...",
-      "url": "https://www.youtube.com/watch?v=7vavnS5os0k",
-      "author": "Noir",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/7vavnS5os0k/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T08:36:42Z",
-      "lang": "",
-      "title": "Morimens D-Tide Wave 1 Alert IV",
-      "summary": "Investigation-D-Effect Zone: Wave 1: Alert IV Battle Replay Keeper: NaviKing（101148026） Tawil, Wheel Unseen, Impending ...",
-      "url": "https://www.youtube.com/watch?v=NIR5FlYyBpg",
-      "author": "NaviKing",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/NIR5FlYyBpg/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T06:38:04Z",
-      "lang": "",
-      "title": "My Favorite Quote in Morimens by Doll:Inferno",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=g792HiBblcw",
-      "author": "Ryouko Asagiri CH",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/g792HiBblcw/hqdefault.jpg",
-      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -323,8 +275,32 @@
       "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
       "url": "https://www.youtube.com/watch?v=QNX5hRBeFUQ",
       "author": "Andrew Giusty",
-      "engagement": 0,
+      "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/QNX5hRBeFUQ/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-12T21:13:57Z",
+      "lang": "",
+      "title": "Vortice pulls and then finishing D-Tide",
+      "summary": "I've done most of D-Tide offline, only missing a W5 clear... surely it won't kick my ass. I have no Vortice copies, aiming for E1 + ...",
+      "url": "https://www.youtube.com/watch?v=owN2lw2pBUs",
+      "author": "Trash Keeper",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/owN2lw2pBUs/hqdefault_live.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-12T21:00:16Z",
+      "lang": "",
+      "title": "Morimens - Capítulo 1 parte 14",
+      "summary": "Capítulo 1 - Enigma en el distrito este El Londinium Antiguo está envuelto en niebla, y la oscuridad acecha donde las tenue luces ...",
+      "url": "https://www.youtube.com/watch?v=_vaKAwQI6ug",
+      "author": "Pablo Carajo",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/_vaKAwQI6ug/hqdefault.jpg",
       "content_type": "image"
     },
     {

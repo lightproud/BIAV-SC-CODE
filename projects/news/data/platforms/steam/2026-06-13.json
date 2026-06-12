@@ -1,8 +1,8 @@
 {
   "date": "2026-06-13",
-  "archived_at": "2026-06-12T19:53:13.029199+00:00",
+  "archived_at": "2026-06-12T21:28:48.676413+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[负面] So convuluted and you are expected to go through u...",
@@ -22,6 +22,50 @@
         "playtime_forever": 197,
         "votes_up": 0,
         "timestamp_created": 1781285551
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] хочу саю очень хочу сильно",
+      "summary": "хочу саю очень хочу сильно",
+      "source": "steam_review",
+      "time": "2026-06-12T20:18:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199565430104/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199565430104",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 22,
+        "votes_up": 0,
+        "timestamp_created": 1781295488
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Spectacular. Morimens is a dream made true: a rogu...",
+      "summary": "Spectacular. Morimens is a dream made true: a roguelite deckbuilder with gorgeous art, eerie music, and a memorable story. It's everything I ever wanted - the characters look fantastic, the vibes are peak, and the translation of the main storyline has improved dramatically over the years.\r\n\r\nThe most generous gachapon game you'll play... and something you'll always remember if you see it through, whether you experienced it entirely for free or paid for extra characters.\r\n\r\nGive it a try!",
+      "source": "steam_review",
+      "time": "2026-06-12T19:34:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199549227244/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199549227244",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2538,
+        "votes_up": 0,
+        "timestamp_created": 1781292898
       },
       "lang": "",
       "platform_region": "global"

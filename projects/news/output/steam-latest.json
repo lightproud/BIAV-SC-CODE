@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-12T19:53:09.727556+00:00",
+  "collected_at": "2026-06-12T21:28:41.657255+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "funny game",
       "timestamp_created": 1781233121,
-      "playtime_forever": 10959
+      "playtime_forever": 10997
     },
     {
       "source": "steam",
@@ -32,6 +32,36 @@
       "review": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
       "timestamp_created": 1781225238,
       "playtime_forever": 15760
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-12T20:18:08+00:00",
+      "lang": "russian",
+      "title": "[正面] хочу саю очень хочу сильно",
+      "summary": "хочу саю очень хочу сильно",
+      "url": "https://steamcommunity.com/profiles/76561199565430104/recommended/3052450",
+      "author": "76561199565430104",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "хочу саю очень хочу сильно",
+      "timestamp_created": 1781295488,
+      "playtime_forever": 22
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-12T19:34:58+00:00",
+      "lang": "english",
+      "title": "[正面] Spectacular. Morimens is a dream made true: a rogu...",
+      "summary": "Spectacular. Morimens is a dream made true: a roguelite deckbuilder with gorgeous art, eerie music, and a memorable story. It's everything I ever wanted - the characters look fantastic, the vibes are peak, and the translation of the main storyline has improved dramatically over the years.\r\n\r\nThe most generous gachapon game you'll play... and something you'll always remember if you see it through, whether you experienced it entirely for free or paid for extra characters.\r\n\r\nGive it a try!",
+      "url": "https://steamcommunity.com/profiles/76561199549227244/recommended/3052450",
+      "author": "76561199549227244",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Spectacular. Morimens is a dream made true: a roguelite deckbuilder with gorgeous art, eerie music, and a memorable story. It's everything I ever wanted - the characters look fantastic, the vibes are peak, and the translation of the main storyline has improved dramatically over the years.\r\n\r\nThe most generous gachapon game you'll play... and something you'll always remember if you see it through, whether you experienced it entirely for free or paid for extra characters.\r\n\r\nGive it a try!",
+      "timestamp_created": 1781292898,
+      "playtime_forever": 2538
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "I like the story. Good game.",
       "timestamp_created": 1781232911,
-      "playtime_forever": 303
+      "playtime_forever": 436
     }
   ]
 }
