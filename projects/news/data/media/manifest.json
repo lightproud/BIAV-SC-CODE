@@ -10387,6 +10387,20 @@
       "title": "Happy Friday let&#39;s get random (Vert)",
       "time": "2026-06-12T14:44:38Z",
       "downloaded_at": "2026-06-12T17:32:49.052938+00:00"
+    },
+    "https://i.ytimg.com/vi/ZIBmveiEeZI/hqdefault.jpg": {
+      "filename": "youtube_602e36684c4d408f.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 가성비의 신 혈육의 신등장",
+      "time": "2026-06-12T19:33:46Z",
+      "downloaded_at": "2026-06-12T19:53:11.019089+00:00"
+    },
+    "https://i.ytimg.com/vi/dp9BvMIK_Ls/hqdefault.jpg": {
+      "filename": "youtube_4ac08d2214b4ceae.jpg",
+      "source": "youtube",
+      "title": "More Morimens",
+      "time": "2026-06-12T19:03:59Z",
+      "downloaded_at": "2026-06-12T19:53:11.439247+00:00"
     }
   },
   "failed": {
@@ -15614,6 +15628,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-12T17:32:47.894332+00:00"
+    },
+    "https://preview.redd.it/c9obwda43w6h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=14a38c3b5c54c982e5d284fdaaa82919c01fbe52": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-12T19:53:11.855767+00:00"
+    },
+    "https://preview.redd.it/f4nqwa2f5w6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d0733dd4ab12e15d067a04c2d8fa268d04a8b60f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-12T19:53:12.213244+00:00"
+    },
+    "https://preview.redd.it/ypnx1rtj5w6h1.jpg?width=140&amp;height=79&amp;auto=webp&amp;s=f36c8e8cfbd88e0f36dd18dd178f3004a737e1d8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-12T19:53:12.562038+00:00"
+    },
+    "https://preview.redd.it/ikmwak1nhw6h1.png?width=140&amp;height=129&amp;auto=webp&amp;s=95e5c1e6a4445ac1d98ab5b324a787628e14eed3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-12T19:53:12.927375+00:00"
     }
   },
   "archived": []
