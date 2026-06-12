@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-12T14:33:49.097029+00:00",
+  "collected_at": "2026-06-12T17:32:43.694512+00:00",
   "source": "google_play",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "google_play",
@@ -51,7 +51,7 @@
       "summary": "게임사가 굉장히 열정이 가득하고 한국어 번역도 굉장히 순조롭게 진행되고 있습니다. 현재 메인스 기준 1부 번역이 끝났고 2부도 곧 들어온다고 하네요. 스킬 번역도 다음 패치부터 전문 번역으로 들어올 예정이며 딥한 카드게임 좋아하면 해볼만 합니다. 무엇보다 세계관과 분위기, 색채, 스토리가 훌륭합니다.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko",
       "author": "은수완",
-      "engagement": 5
+      "engagement": 6
     },
     {
       "source": "google_play",
@@ -141,6 +141,16 @@
       "summary": "peak artstyle",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ms",
       "author": "Hajar Basri",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-11T14:41:09",
+      "lang": "it",
+      "title": "[Google Play 好评] ★5 Gioco molto bello, consigliato da un mio",
+      "summary": "Gioco molto bello, consigliato da un mio amico e devo dire che sembra molto interessante. Continuerò.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it",
+      "author": "Mariano De Gennaro",
       "engagement": 0
     }
   ]

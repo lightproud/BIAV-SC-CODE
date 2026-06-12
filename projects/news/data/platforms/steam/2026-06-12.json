@@ -1,8 +1,8 @@
 {
   "date": "2026-06-12",
-  "archived_at": "2026-06-12T14:33:54.239270+00:00",
+  "archived_at": "2026-06-12T17:32:49.143050+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] funny game",
@@ -132,6 +132,116 @@
         "playtime_forever": 773,
         "votes_up": 0,
         "timestamp_created": 1781250464
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Why the hell is the story telling is a must?",
+      "summary": "Why the hell is the story telling is a must?",
+      "source": "steam_review",
+      "time": "2026-06-12T15:38:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198129204625/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198129204625",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 5,
+        "votes_up": 0,
+        "timestamp_created": 1781278719
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 재밋음.",
+      "summary": "재밋음.",
+      "source": "steam_review",
+      "time": "2026-06-12T15:20:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198170361038/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198170361038",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5313,
+        "votes_up": 0,
+        "timestamp_created": 1781277615
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Sayaaaaaaaa",
+      "summary": "Sayaaaaaaaa",
+      "source": "steam_review",
+      "time": "2026-06-12T15:10:28+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199011155343/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199011155343",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 631,
+        "votes_up": 0,
+        "timestamp_created": 1781277028
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Este juego me produce tal desgaste mental que teng...",
+      "summary": "Este juego me produce tal desgaste mental que tengo que tomarme un descanso para jugar algo cozy para no caer en la locura, simplemente Disolución. 10/10",
+      "source": "steam_review",
+      "time": "2026-06-12T13:51:21+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198240931612/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198240931612",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5691,
+        "votes_up": 0,
+        "timestamp_created": 1781272281
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "source": "steam_review",
+      "time": "2026-06-12T12:36:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198778209785/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198778209785",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 368,
+        "votes_up": 0,
+        "timestamp_created": 1781267783
       },
       "lang": "",
       "platform_region": "global"
