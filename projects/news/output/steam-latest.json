@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-11T23:15:29.931231+00:00",
+  "collected_at": "2026-06-12T02:30:59.439206+00:00",
   "source": "steam",
   "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-12T00:47:18+00:00",
+      "lang": "english",
+      "title": "[正面] Well crafted and enjoyable character & deckbuildin...",
+      "summary": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
+      "url": "https://steamcommunity.com/profiles/76561198049605642/recommended/3052450",
+      "author": "76561198049605642",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
+      "timestamp_created": 1781225238,
+      "playtime_forever": 15609
+    },
     {
       "source": "steam",
       "time": "2026-06-11T17:54:17+00:00",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "I LOVE THIS GAME!!!!",
       "timestamp_created": 1781175660,
-      "playtime_forever": 2432
+      "playtime_forever": 2522
     },
     {
       "source": "steam",
@@ -181,22 +196,7 @@
       "voted_up": true,
       "review": "Told myself I wouldn't play another gacha game, but the premise of Morimens was just to intriguing and now I'm hooked. I greatly enjoy the art style, the approach to darker themes, and the card combat mechanics. There's also lots of fun little tidbits to pick up on if you're familiar with the inspirations beyond a lot of the characters.\n\nThe translation has some awkwardness to it, but to give credit where credit is due I can absolutely understand everything and they probably are having to translate some pretty complicated words and phrases. I haven't seen anything be translated flat out incorrectly either; just one of those things where sometimes that's not the word a native speaker would choose. No big deal in my eyes, I actually think it's kind of fun.",
       "timestamp_created": 1781149403,
-      "playtime_forever": 687
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-10T23:22:59+00:00",
-      "lang": "koreana",
-      "title": "[正面] 씹덕 슬더스",
-      "summary": "씹덕 슬더스",
-      "url": "https://steamcommunity.com/profiles/76561198129615521/recommended/3052450",
-      "author": "76561198129615521",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "씹덕 슬더스",
-      "timestamp_created": 1781133779,
-      "playtime_forever": 8317
+      "playtime_forever": 791
     }
   ]
 }

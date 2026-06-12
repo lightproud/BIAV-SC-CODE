@@ -1,8 +1,8 @@
 {
   "date": "2026-06-12",
-  "archived_at": "2026-06-11T23:15:31.950333+00:00",
+  "archived_at": "2026-06-12T02:31:02.029201+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] This game is just peak every character is really g...",
@@ -22,6 +22,28 @@
         "playtime_forever": 2039,
         "votes_up": 0,
         "timestamp_created": 1781200457
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Well crafted and enjoyable character & deckbuildin...",
+      "summary": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
+      "source": "steam_review",
+      "time": "2026-06-12T00:47:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198049605642/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198049605642",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 15609,
+        "votes_up": 0,
+        "timestamp_created": 1781225238
       },
       "lang": "",
       "platform_region": "global"
