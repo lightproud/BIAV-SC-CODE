@@ -1,10 +1,11 @@
 {
   "date": "2026-06-10",
-  "messages": 16595,
+  "messages": 19629,
   "unique_authors": 550,
-  "reactions_total": 2183,
-  "attachments": 1022,
+  "reactions_total": 2283,
+  "attachments": 1108,
   "channel_activity": {
+    "🔸general-chat": 3034,
     "🔸綜合討論": 3072,
     "🔸剧情交流": 124,
     "🔸相位对弈": 4,
@@ -113,35 +114,36 @@
     "1514237449772204214": 3
   },
   "hourly_activity": {
-    "22": 112,
-    "20": 431,
-    "23": 204,
-    "21": 241,
-    "0": 144,
-    "1": 496,
-    "2": 561,
-    "3": 656,
-    "4": 564,
-    "5": 669,
-    "6": 728,
-    "7": 721,
-    "8": 550,
-    "9": 1192,
-    "10": 934,
-    "11": 1020,
-    "12": 1461,
-    "13": 1396,
-    "14": 711,
-    "15": 1360,
-    "16": 1237,
-    "17": 624,
-    "18": 355,
-    "19": 228
+    "0": 285,
+    "1": 701,
+    "2": 661,
+    "3": 716,
+    "4": 691,
+    "5": 689,
+    "6": 781,
+    "7": 751,
+    "8": 584,
+    "9": 1229,
+    "10": 967,
+    "11": 1105,
+    "12": 1490,
+    "13": 1537,
+    "14": 754,
+    "15": 1830,
+    "16": 1841,
+    "17": 1077,
+    "18": 366,
+    "19": 452,
+    "20": 504,
+    "21": 256,
+    "22": 133,
+    "23": 229
   },
   "message_types": {
-    "19": 162,
-    "0": 640,
-    "20": 4
+    "0": 2274,
+    "19": 756,
+    "20": 3,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -273,36 +275,36 @@
       "channel": "🔸相位对弈"
     },
     {
-      "id": "1514364865026855058",
-      "channel_id": "1300659662311526512",
-      "content": "Debería seguir pasando los códigos a este canal o ya no?",
-      "author": "tetofan127",
-      "reactions": 2,
-      "channel": "🔸canal-español"
+      "id": "1514107700387254292",
+      "channel_id": "1400750050208125010",
+      "content": "i just finished 1-13",
+      "author": "moonandmymuse",
+      "reactions": 4,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1514366745383800973",
-      "channel_id": "1300659662311526512",
-      "content": "<a:PepePls4x:1497753733604442183>",
-      "author": "etzel0009",
-      "reactions": 2,
-      "channel": "🔸canal-español"
+      "id": "1514220436827934731",
+      "channel_id": "1400750050208125010",
+      "content": "Leigh is caro",
+      "author": "xiii_c",
+      "reactions": 4,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1514368681570992282",
-      "channel_id": "1514368681570992282",
-      "content": "hello! i won the twitter giveaway and was told to dm the official twt account, b",
-      "author": "rabbitfail",
-      "reactions": 2,
-      "channel": "✅「Resolved」twitter giveaway"
+      "id": "1514319309386547371",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 4,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1514370277293953204",
-      "channel_id": "1300659580446969918",
-      "content": "чертов))))",
-      "author": "adekwut_02447",
-      "reactions": 1,
-      "channel": "🔸русский-канал"
+      "id": "1514103306987896972",
+      "channel_id": "1400750050208125010",
+      "content": "Don't you talk like that about wife ever again.",
+      "author": "masiakasaurusofwar",
+      "reactions": 3,
+      "channel": "🔸general-chat"
     }
   ]
 }

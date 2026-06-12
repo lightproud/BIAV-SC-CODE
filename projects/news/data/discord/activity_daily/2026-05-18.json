@@ -1,11 +1,11 @@
 {
   "date": "2026-05-18",
-  "messages": 31677,
+  "messages": 36677,
   "unique_authors": 750,
-  "reactions_total": 2907,
-  "attachments": 1814,
+  "reactions_total": 3469,
+  "attachments": 2236,
   "channel_activity": {
-    "🔸morimens-game-chat": 2856,
+    "🔸morimens-game-chat": 7856,
     "🔸綜合討論": 6315,
     "🔸欢乐梗图": 3,
     "🔸课间休息闲聊": 13,
@@ -110,10 +110,16 @@
     "1505815024197828628": 3
   },
   "hourly_activity": {
+    "3": 2570,
+    "4": 2816,
+    "5": 2140,
+    "6": 1726,
+    "7": 1915,
+    "8": 1652,
+    "9": 1987,
     "0": 1758,
     "1": 1927,
     "2": 1849,
-    "3": 1687,
     "12": 1326,
     "13": 1553,
     "14": 1981,
@@ -126,18 +132,13 @@
     "21": 676,
     "22": 558,
     "23": 744,
-    "4": 1702,
-    "5": 1369,
-    "6": 1054,
-    "7": 1257,
-    "8": 1067,
-    "9": 1670,
     "10": 1502,
     "11": 1298
   },
   "message_types": {
-    "0": 1598,
-    "19": 1258
+    "0": 2835,
+    "19": 2164,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -197,6 +198,14 @@
       "channel": "📜 V2.5.1 版本前瞻·下┊Version Outlook - Part Ⅲ┊버전 미리보기 · 하"
     },
     {
+      "id": "1505808349604876329",
+      "channel_id": "1170692781216378960",
+      "content": "Finally done whaling out for the patch I think. Now to swap my Silver Prime.",
+      "author": "sophiechoice",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1505889124765405235",
       "channel_id": "1131839817982947429",
       "content": "發生什麼事為什麼可以兌換銀芯？ 可以換五萬多欸？..花一花還有41000🌚",
@@ -227,6 +236,14 @@
       "author": "yi000607",
       "reactions": 14,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1505787341057556621",
+      "channel_id": "1170692781216378960",
+      "content": "It is done, glory to Lemuria <:realm_aequor:1437283645051375777>",
+      "author": "vulcan1613",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1505899754436034723",
@@ -283,22 +300,6 @@
       "author": "wild_pansy",
       "reactions": 10,
       "channel": "能不能手動空幻轉無垢"
-    },
-    {
-      "id": "1505920120093147227",
-      "channel_id": "1505167541818101862",
-      "content": "草\n浪費我時間打那麼長串\n果然還是拉黑吧\n\n# 取消300抽加三圍\n# Cancel 300 normal pull for stats\n\n# 要求新系統提供更",
-      "author": "water_heart",
-      "reactions": 10,
-      "channel": "V2.5.1.0 停服维护公告"
-    },
-    {
-      "id": "1506017206637563955",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jjlin0103",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
     }
   ]
 }
