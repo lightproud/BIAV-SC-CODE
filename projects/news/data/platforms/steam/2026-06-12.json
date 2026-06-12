@@ -1,8 +1,8 @@
 {
   "date": "2026-06-12",
-  "archived_at": "2026-06-12T07:13:25.185401+00:00",
+  "archived_at": "2026-06-12T11:36:16.280252+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] funny game",
@@ -110,6 +110,28 @@
         "playtime_forever": 303,
         "votes_up": 0,
         "timestamp_created": 1781232911
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 菲茵特女鹅可爱捏",
+      "summary": "菲茵特女鹅可爱捏",
+      "source": "steam_review",
+      "time": "2026-06-12T07:47:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199782256631/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199782256631",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 773,
+        "votes_up": 0,
+        "timestamp_created": 1781250464
       },
       "lang": "",
       "platform_region": "global"
