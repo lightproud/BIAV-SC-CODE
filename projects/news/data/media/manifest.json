@@ -10709,6 +10709,69 @@
       "title": "Saturday gatcha and more",
       "time": "2026-06-13T12:17:06Z",
       "downloaded_at": "2026-06-13T13:25:04.848032+00:00"
+    },
+    "https://i.ytimg.com/vi/ca9gexLCep0/hqdefault.jpg": {
+      "filename": "youtube_1c1fd6c2adec312a.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more (Vert)",
+      "time": "2026-06-13T12:17:12Z",
+      "downloaded_at": "2026-06-13T15:27:30.600252+00:00"
+    },
+    "https://i.ytimg.com/vi/Jv320sFLIJ8/hqdefault.jpg": {
+      "filename": "youtube_e632727c7d0552d0.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Sorel Comp Commentary D-Tide 6-13-26 W2A5",
+      "time": "2026-06-13T13:39:47Z",
+      "downloaded_at": "2026-06-13T15:27:30.996775+00:00"
+    },
+    "https://i.ytimg.com/vi/_x3fTijxlUw/hqdefault.jpg": {
+      "filename": "youtube_e2849819a44df9b4.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more",
+      "time": "2026-06-13T12:17:06Z",
+      "downloaded_at": "2026-06-13T15:27:31.406288+00:00"
+    },
+    "https://i.ytimg.com/vi/z4GAmtwliu0/hqdefault_live.jpg": {
+      "filename": "youtube_8a058b5cbbefa8b9.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)융재 설명회 날마다 오는게 아님",
+      "time": "2026-06-13T15:25:59Z",
+      "downloaded_at": "2026-06-13T15:27:32.222544+00:00"
+    },
+    "https://i.ytimg.com/vi/b7Wb8VlOdPM/hqdefault_live.jpg": {
+      "filename": "youtube_3488c80b75aea7ce.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more p2 (Vert)",
+      "time": "2026-06-13T15:15:17Z",
+      "downloaded_at": "2026-06-13T15:27:32.901490+00:00"
+    },
+    "https://i.ytimg.com/vi/UkSRldVBiSo/hqdefault_live.jpg": {
+      "filename": "youtube_56bde179e877be56.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more p2",
+      "time": "2026-06-13T15:14:57Z",
+      "downloaded_at": "2026-06-13T15:27:33.536863+00:00"
+    },
+    "https://i.ytimg.com/vi/Hl62edL1DPA/hqdefault.jpg": {
+      "filename": "youtube_aedd0c6896aff479.jpg",
+      "source": "youtube",
+      "title": "Morimens: Astral Reign 3-3",
+      "time": "2026-06-13T14:15:39Z",
+      "downloaded_at": "2026-06-13T15:27:33.938431+00:00"
+    },
+    "https://i.ytimg.com/vi/vPWQIwhcrSs/hqdefault.jpg": {
+      "filename": "youtube_dbc3b58a1190ee27.jpg",
+      "source": "youtube",
+      "title": "Corpo Saya is my new favorite Morimens lineup",
+      "time": "2026-06-13T14:15:15Z",
+      "downloaded_at": "2026-06-13T15:27:34.335347+00:00"
+    },
+    "https://i.ytimg.com/vi/57PAGbSxJqM/hqdefault.jpg": {
+      "filename": "youtube_ac9fd550aca6a055.jpg",
+      "source": "youtube",
+      "title": "There&#39;s a mobs on the floor | Arc 2 Hard 1-10 Return to the big smoke | Morimens",
+      "time": "2026-06-13T14:11:17Z",
+      "downloaded_at": "2026-06-13T15:27:34.871259+00:00"
     }
   },
   "failed": {
@@ -16026,6 +16089,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-13T13:25:04.072570+00:00"
+    },
+    "https://external-preview.redd.it/T2dDmmfMGOH6JGWDs10ns2FcUIl87AP0C5ijMOohwhc.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=f0e1827b9a9601d93990cc62b69662fc89b507e9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T15:27:31.792831+00:00"
     }
   },
   "archived": []
