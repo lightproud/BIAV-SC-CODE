@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-06-13T09:52:14.646067+00:00",
+  "collected_at": "2026-06-13T11:48:20.714987+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-13T10:24:11+00:00",
+      "lang": "russian",
+      "title": "[正面] крутяк",
+      "summary": "крутяк",
+      "url": "https://steamcommunity.com/profiles/76561199148428240/recommended/3052450",
+      "author": "76561199148428240",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "крутяк",
+      "timestamp_created": 1781346251,
+      "playtime_forever": 680
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-13T09:46:47+00:00",
+      "lang": "schinese",
+      "title": "[负面] 肝度爆炸",
+      "summary": "肝度爆炸",
+      "url": "https://steamcommunity.com/profiles/76561198763301749/recommended/3052450",
+      "author": "76561198763301749",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "肝度爆炸",
+      "timestamp_created": 1781344007,
+      "playtime_forever": 3367
+    },
     {
       "source": "steam",
       "time": "2026-06-13T07:02:37+00:00",
@@ -16,7 +46,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1781334157,
-      "playtime_forever": 515
+      "playtime_forever": 595
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "재밋음.",
       "timestamp_created": 1781277615,
-      "playtime_forever": 5552
+      "playtime_forever": 5732
     },
     {
       "source": "steam",
@@ -211,7 +241,7 @@
       "voted_up": true,
       "review": "好玩",
       "timestamp_created": 1781267783,
-      "playtime_forever": 412
+      "playtime_forever": 419
     }
   ]
 }

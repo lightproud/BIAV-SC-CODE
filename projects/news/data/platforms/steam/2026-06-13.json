@@ -1,8 +1,8 @@
 {
   "date": "2026-06-13",
-  "archived_at": "2026-06-13T09:52:17.245582+00:00",
+  "archived_at": "2026-06-13T11:48:24.599600+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "[负面] So convuluted and you are expected to go through u...",
@@ -198,6 +198,50 @@
         "playtime_forever": 1946,
         "votes_up": 0,
         "timestamp_created": 1781331729
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] крутяк",
+      "summary": "крутяк",
+      "source": "steam_review",
+      "time": "2026-06-13T10:24:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199148428240/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199148428240",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 680,
+        "votes_up": 0,
+        "timestamp_created": 1781346251
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 肝度爆炸",
+      "summary": "肝度爆炸",
+      "source": "steam_review",
+      "time": "2026-06-13T09:46:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198763301749/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198763301749",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 3367,
+        "votes_up": 0,
+        "timestamp_created": 1781344007
       },
       "lang": "",
       "platform_region": "global"
