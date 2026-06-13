@@ -1,8 +1,8 @@
 {
   "date": "2026-06-13",
-  "archived_at": "2026-06-12T23:08:41.403068+00:00",
+  "archived_at": "2026-06-13T02:12:08.090333+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "title": "[负面] So convuluted and you are expected to go through u...",
@@ -66,6 +66,50 @@
         "playtime_forever": 2538,
         "votes_up": 0,
         "timestamp_created": 1781292898
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Finished the first chapter, love it so far.",
+      "summary": "Finished the first chapter, love it so far.",
+      "source": "steam_review",
+      "time": "2026-06-13T01:05:05+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199866562525/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199866562525",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 563,
+        "votes_up": 0,
+        "timestamp_created": 1781312705
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Are you convicted of VN larping and impulsive gamb...",
+      "summary": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
+      "source": "steam_review",
+      "time": "2026-06-13T00:08:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198873800932/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198873800932",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 416,
+        "votes_up": 0,
+        "timestamp_created": 1781309299
       },
       "lang": "",
       "platform_region": "global"
