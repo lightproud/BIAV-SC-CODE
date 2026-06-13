@@ -1,15 +1,27 @@
 {
   "last_session": {
-    "id": "d062dc8f",
-    "timestamp": "2026-06-13T12:13:36.642000+00:00",
-    "duration_minutes": 1.5,
-    "branch": "claude/pr-202-review-2m867w",
-    "topics": [],
+    "id": "6a24d1d3",
+    "timestamp": "2026-06-13T20:16:28.460000+00:00",
+    "duration_minutes": 0.2,
+    "branch": "main",
+    "topics": [
+      "做梦Agent"
+    ],
     "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "d062dc8f",
+      "timestamp": "2026-06-13T12:13:36.642000+00:00",
+      "duration_minutes": 1.5,
+      "branch": "claude/pr-202-review-2m867w",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "59f9205f",
       "timestamp": "2026-06-12T21:04:53.921000+00:00",
@@ -127,33 +139,18 @@
       ],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "90b9df5e",
-      "timestamp": "2026-06-10T17:21:09.479000+00:00",
-      "duration_minutes": 36.5,
-      "branch": "claude/lucid-feynman-dhj63l",
-      "topics": [
-        "BPT"
-      ],
-      "decisions": [
-        "了共享能省多少",
-        ",跟进程共不共享完全无关"
-      ],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 1.54,
-      "BPT": 1.1,
-      "MCP": 0.97,
-      "GitHub": 0.8,
-      "Wiki": 0.34
+      "做梦Agent": 2.23,
+      "BPT": 0.88,
+      "MCP": 0.78,
+      "GitHub": 0.64,
+      "Wiki": 0.27
     },
     "hot_files": [],
-    "total_sessions": 150
+    "total_sessions": 151
   },
-  "updated_at": "2026-06-13T12:16:38.933087+00:00"
+  "updated_at": "2026-06-13T20:16:28.667519+00:00"
 }
