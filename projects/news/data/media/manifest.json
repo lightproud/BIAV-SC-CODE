@@ -10954,6 +10954,41 @@
       "title": "엘바 스토리(번식광열)",
       "time": "2026-06-13T18:38:32Z",
       "downloaded_at": "2026-06-13T21:03:39.962472+00:00"
+    },
+    "https://i.ytimg.com/vi/J_1dysp5pjE/hqdefault.jpg": {
+      "filename": "youtube_0eec6e3f1218e62a.jpg",
+      "source": "youtube",
+      "title": "Saturday morning gatcha time (Vert)",
+      "time": "2026-06-13T22:45:33Z",
+      "downloaded_at": "2026-06-13T22:55:47.832297+00:00"
+    },
+    "https://i.ytimg.com/vi/eBw0ZlTXfZU/hqdefault.jpg": {
+      "filename": "youtube_7cadb0a7b2d97ae2.jpg",
+      "source": "youtube",
+      "title": "【세라핌🌸】미리암 개인 스토리 : 모독 더빙!♪🥰  모리멘스 : 망각전야 w.톱밥입니다🌸💕 2026.06.13 라이브 방송🌸",
+      "time": "2026-06-13T22:00:20Z",
+      "downloaded_at": "2026-06-13T22:55:48.223467+00:00"
+    },
+    "https://i.ytimg.com/vi/HtajRwx3kw4/hqdefault.jpg": {
+      "filename": "youtube_64092a9276f5e86c.jpg",
+      "source": "youtube",
+      "title": "Saturday morning gatcha time",
+      "time": "2026-06-13T22:30:41Z",
+      "downloaded_at": "2026-06-13T22:55:48.590666+00:00"
+    },
+    "https://i.ytimg.com/vi/85f1f2Ek71o/hqdefault_live.jpg": {
+      "filename": "youtube_b96b011759f296bd.jpg",
+      "source": "youtube",
+      "title": "The LAST DAY of Kaleido banner - No more pulls no more HOPE In Morimens Arc 2",
+      "time": "2026-06-13T22:03:30Z",
+      "downloaded_at": "2026-06-13T22:55:49.703226+00:00"
+    },
+    "https://i.ytimg.com/vi/3lGkNTK_TGA/hqdefault.jpg": {
+      "filename": "youtube_1b0fbf91bd6f175d.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-13T19:32:26Z",
+      "downloaded_at": "2026-06-13T22:55:50.076014+00:00"
     }
   },
   "failed": {
@@ -16276,6 +16311,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-13T15:27:31.792831+00:00"
+    },
+    "https://preview.redd.it/gbrevbpw647h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5964914b51e534cd0ff18e522840df8bc8b9a2d9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T22:55:48.973097+00:00"
+    },
+    "https://preview.redd.it/sa3az8ssl47h1.png?width=140&amp;height=63&amp;auto=webp&amp;s=4dea4f5e0c6842f4fcf668b2be0fa3fc2e3b1b22": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T22:55:49.315247+00:00"
     }
   },
   "archived": []
