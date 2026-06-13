@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-13T02:12:06.302153+00:00",
-  "summary": "Discord 社区日报 (2026-06-12)；[Morimens] Content Stream - Ju；[DC] lightproud@🐱light’s-nest:；Morimens \\\\ Поезд на рандомных；【忘却前夜】OST：門を開く銀の鍵丨忘却より。",
-  "sources_run": 1295,
+  "updated_at": "2026-06-13T06:48:40.201497+00:00",
+  "summary": "Discord 社区日报 (2026-06-12)；【忘却前夜】水母恐怖小连招；【忘却前夜】水母触发侵蚀的效率也太恐怖了；[Morimens] Content Stream - Ju；[DC] lightproud@🐱light’s-nest:。",
+  "sources_run": 1113,
   "news": [
     {
       "title": "Discord 社区日报 (2026-06-12)",
@@ -20,16 +20,62 @@
       "platform_region": "global"
     },
     {
+      "title": "【忘却前夜】水母恐怖小连招",
+      "summary": "└ 末空纪蓝 (4赞): 这么强&lt;(ºOº)&gt;\n  └ 卿风难见故人 (3赞): 我们沙耶还是太有操作了[笑哭]\n  └ 当椿奶发生 (1赞): 好有手法[星星眼]",
+      "source": "bilibili",
+      "time": "2026-06-12T06:51:08+00:00",
+      "url": "https://www.bilibili.com/video/BV1CiEC6GEKX",
+      "engagement": 2933,
+      "is_hot": true,
+      "author": "金发女人丨型",
+      "tags": [
+        "172"
+      ],
+      "metadata": {
+        "play": 2917,
+        "comment_count": 16,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "http://i1.hdslb.com/bfs/archive/864b7b283a341b6b9ee90e5a90a5bb0d24291190.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】水母触发侵蚀的效率也太恐怖了",
+      "summary": "└ CYANjane (3赞): 吓哭了，是认知错乱\n  └ 金发女人丨型 (4赞): 一阶段和二阶段的牌序都有问题，差了点伤害没打死。\n不过水母这个侵蚀触发效率还是非常恐怖的\n  └ 露露米米_official (1赞): 入坑半个月，基本上所有资源都拉这一队了，最初只是因为水母很可爱，现在发现玩起来也真的很爽[doge]",
+      "source": "bilibili",
+      "time": "2026-06-13T04:03:14+00:00",
+      "url": "https://www.bilibili.com/video/BV1JMJJ6MEPz",
+      "engagement": 1245,
+      "is_hot": true,
+      "author": "金发女人丨型",
+      "tags": [
+        "17"
+      ],
+      "metadata": {
+        "play": 1234,
+        "comment_count": 11,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "http://i1.hdslb.com/bfs/archive/8f3fcb8327bdf057bd5307a082f8737e8873b281.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "[Morimens] Content Stream - Just burned my uncle, now making videos Will do account reviews",
       "summary": "Don't know how long.",
       "source": "youtube",
-      "time": "2026-06-12T16:49:45Z",
+      "time": "2026-06-13T03:13:18Z",
       "url": "https://www.youtube.com/watch?v=A2BfRzu6G2Y",
-      "engagement": 618,
+      "engagement": 797,
       "is_hot": true,
       "author": "Flares117",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/A2BfRzu6G2Y/hqdefault_live.jpg",
+      "media_url": "https://i.ytimg.com/vi/A2BfRzu6G2Y/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -60,19 +106,19 @@
       "platform_region": "global"
     },
     {
-      "title": "Morimens \\\\ Поезд на рандомных Пробужденных",
-      "summary": "Соцсети: Стримы на твич: https://twitch.tv/closetom Информация по стримам \\\\ Ирл контент \\\\ Общаемся по игре: ...",
+      "title": "[Morimens] Spreadsheet Update Posse Tier List 2026 and what is meta/why. On stream review.",
+      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "source": "youtube",
-      "time": "2026-06-12T13:27:35Z",
-      "url": "https://www.youtube.com/watch?v=FNmyJsO16S0",
-      "engagement": 395,
-      "is_hot": true,
-      "author": "Closetom",
+      "time": "2026-06-13T02:58:50Z",
+      "url": "https://www.youtube.com/watch?v=ZOlqkyhV6cU",
+      "engagement": 374,
+      "is_hot": false,
+      "author": "Flares117",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/FNmyJsO16S0/hqdefault.jpg",
-      "content_type": "image",
       "lang": "",
-      "platform_region": "global"
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/ZOlqkyhV6cU/hqdefault.jpg",
+      "content_type": "video"
     },
     {
       "title": "【忘却前夜】OST：門を開く銀の鍵丨忘却より",
@@ -80,11 +126,26 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:23Z",
       "url": "https://www.youtube.com/watch?v=YwoqnvtUKgg",
-      "engagement": 218,
-      "is_hot": true,
+      "engagement": 240,
+      "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/YwoqnvtUKgg/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Alasan Aku Tertarik Degan Game Morimens",
+      "summary": "Review Game morimens menceritakan tentang dunia yang sekarat dan diselimuti bencana Dissolution (Pembubaran). Sebagai ...",
+      "source": "youtube",
+      "time": "2026-06-13T04:41:33Z",
+      "url": "https://www.youtube.com/watch?v=g6lXA2avDas",
+      "engagement": 193,
+      "is_hot": false,
+      "author": "Akari Akabar",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/g6lXA2avDas/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -95,7 +156,7 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:38Z",
       "url": "https://www.youtube.com/watch?v=eA38E7j1GV8",
-      "engagement": 164,
+      "engagement": 178,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
@@ -110,7 +171,7 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:34Z",
       "url": "https://www.youtube.com/watch?v=F_VWhBbhrjc",
-      "engagement": 143,
+      "engagement": 172,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
@@ -125,29 +186,14 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:14Z",
       "url": "https://www.youtube.com/watch?v=Ew0ub1kA0O8",
-      "engagement": 143,
+      "engagement": 158,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
+      "lang": "",
+      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Ew0ub1kA0O8/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "망각전야Morimens) (대리뽑,상담시청가능) 가성비의 신 혈육의 신등장",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "source": "youtube",
-      "time": "2026-06-12T19:33:46Z",
-      "url": "https://www.youtube.com/watch?v=ZIBmveiEeZI",
-      "engagement": 120,
-      "is_hot": false,
-      "author": "박현(Muyeong)",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/ZIBmveiEeZI/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
+      "content_type": "video"
     },
     {
       "title": "【忘却前夜】OST：門を開く銀の鍵丨門を越えて来たる者",
@@ -155,29 +201,14 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:06Z",
       "url": "https://www.youtube.com/watch?v=NjQB1pVtSNU",
-      "engagement": 111,
+      "engagement": 134,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
+      "lang": "",
+      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/NjQB1pVtSNU/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨雨の鍵塚",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「雨の鍵塚」 ミサゴ大学の教師や学生の過去と未来は、この地に葬られている ...",
-      "source": "youtube",
-      "time": "2026-06-12T09:00:01Z",
-      "url": "https://www.youtube.com/watch?v=tQzAANR1W_I",
-      "engagement": 107,
-      "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/tQzAANR1W_I/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
+      "content_type": "video"
     },
     {
       "title": "【忘却前夜】OST：門を開く銀の鍵丨目覚めし霊",
@@ -185,11 +216,26 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:08Z",
       "url": "https://www.youtube.com/watch?v=PyN-c4fligY",
-      "engagement": 107,
+      "engagement": 124,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
+      "lang": "",
+      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/PyN-c4fligY/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【忘却前夜】OST：門を開く銀の鍵丨雨の鍵塚",
+      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「雨の鍵塚」 ミサゴ大学の教師や学生の過去と未来は、この地に葬られている ...",
+      "source": "youtube",
+      "time": "2026-06-12T09:00:01Z",
+      "url": "https://www.youtube.com/watch?v=tQzAANR1W_I",
+      "engagement": 123,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/tQzAANR1W_I/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -200,7 +246,7 @@
       "source": "youtube",
       "time": "2026-06-12T20:59:39Z",
       "url": "https://www.youtube.com/watch?v=eQ_2_xrY0rg",
-      "engagement": 90,
+      "engagement": 92,
       "is_hot": false,
       "author": "卯咲乃ぬい",
       "tags": [],
@@ -215,26 +261,11 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:03Z",
       "url": "https://www.youtube.com/watch?v=1_WwkDjXIW4",
-      "engagement": 76,
+      "engagement": 86,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/1_WwkDjXIW4/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "Directo relax Morimens | Evento del Tren y Charlita",
-      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
-      "source": "youtube",
-      "time": "2026-06-13T00:09:05Z",
-      "url": "https://www.youtube.com/watch?v=hWYuenOG7Eo",
-      "engagement": 69,
-      "is_hot": false,
-      "author": "OcteKG",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/hWYuenOG7Eo/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -245,7 +276,7 @@
       "source": "youtube",
       "time": "2026-06-12T09:00:05Z",
       "url": "https://www.youtube.com/watch?v=hcH36pG0mJU",
-      "engagement": 68,
+      "engagement": 74,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
@@ -255,16 +286,31 @@
       "platform_region": "global"
     },
     {
-      "title": "morimens is peakful pain",
-      "summary": "there is no time, only keeper sauces: \"touchin on the chile\" from puerto rican michael jackson harry du bois and vertin by bones n ...",
+      "title": "【忘却前夜】パンディアを強く使おう！【NOT解説】",
+      "summary": "パンディアの強い使い方を考えてみました。 ぜひ試してみてね。",
       "source": "youtube",
-      "time": "2026-06-12T15:53:43Z",
-      "url": "https://www.youtube.com/watch?v=lhH68yui1II",
+      "time": "2026-06-12T15:50:05Z",
+      "url": "https://www.youtube.com/watch?v=ItRHnaeJDAI",
+      "engagement": 64,
+      "is_hot": false,
+      "author": "カチコチ",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/ItRHnaeJDAI/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "忘却前夜　謎編成作ってきた！→「ブルーダフォダイル/リリーハイパーキャリー」",
+      "summary": "いろんな編成知りたい！ コケたらゴリアテ育てる。",
+      "source": "youtube",
+      "time": "2026-06-12T16:32:34Z",
+      "url": "https://www.youtube.com/watch?v=K0w-3a_74To",
       "engagement": 46,
       "is_hot": false,
-      "author": "El Conde Vateetee",
+      "author": "たこに名前を入力",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/lhH68yui1II/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/K0w-3a_74To/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -289,21 +335,6 @@
         "attachment_urls": [],
         "channel": "🔸綜合討論"
       },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "忘却前夜　謎編成作ってきた！→「ブルーダフォダイル/リリーハイパーキャリー」",
-      "summary": "いろんな編成知りたい！ コケたらゴリアテ育てる。",
-      "source": "youtube",
-      "time": "2026-06-12T16:32:34Z",
-      "url": "https://www.youtube.com/watch?v=K0w-3a_74To",
-      "engagement": 42,
-      "is_hot": false,
-      "author": "たこに名前を入力",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/K0w-3a_74To/hqdefault.jpg",
-      "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
@@ -362,27 +393,12 @@
       "platform_region": "global"
     },
     {
-      "title": "【忘却前夜】パンディアを強く使おう！【NOT解説】",
-      "summary": "パンディアの強い使い方を考えてみました。 ぜひ試してみてね。",
-      "source": "youtube",
-      "time": "2026-06-12T15:50:05Z",
-      "url": "https://www.youtube.com/watch?v=ItRHnaeJDAI",
-      "engagement": 35,
-      "is_hot": false,
-      "author": "カチコチ",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/ItRHnaeJDAI/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "【忘却前夜】自分ナウティラ狂宴いいっすか......！",
       "summary": "7ー3 →ナウティラ♡好き♡可愛い♡ナウティラ♡ナウティラ♡ナウティラ♡♡♡♡♡♡ Twitter(X)→https://x.com/to_m4fuyu.",
       "source": "youtube",
       "time": "2026-06-12T15:04:35Z",
       "url": "https://www.youtube.com/watch?v=fTQ4TkTVmaQ",
-      "engagement": 35,
+      "engagement": 37,
       "is_hot": false,
       "author": "to真冬",
       "tags": [],
@@ -573,6 +589,21 @@
       "platform_region": "global"
     },
     {
+      "title": "Realm Study gacha (part 2 out of 3)",
+      "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
+      "source": "youtube",
+      "time": "2026-06-13T04:00:34Z",
+      "url": "https://www.youtube.com/watch?v=GLcPZjPMzWg",
+      "engagement": 27,
+      "is_hot": false,
+      "author": "Andrew Giusty",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/GLcPZjPMzWg/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
       "title": "[DC] kemomimi_@🔸綜合討論: (附件/嵌入)",
       "summary": "[附件: image.png]",
       "source": "discord",
@@ -678,31 +709,31 @@
       "platform_region": "global"
     },
     {
-      "title": "¿Por qué Saya no Uta era la colaboración PERFECTA para Morimens? 👁️",
-      "summary": "Muchos pensaron que la colaboración entre Morimens y Saya no Uta fue inesperada. Pero cuando analizas sus historias, ...",
+      "title": "忘卻前夜 Morimens Inverted Rebirth Collab Event - Dining Table Madness",
+      "summary": "This was the thing that was supposed to be uploaded last time but I put up the wrong one lol, still I hope you enjoy!",
       "source": "youtube",
-      "time": "2026-06-12T14:24:43Z",
-      "url": "https://www.youtube.com/watch?v=ekfI3KOZkCU",
-      "engagement": 21,
+      "time": "2026-06-13T00:16:50Z",
+      "url": "https://www.youtube.com/watch?v=FCfFTurYJnU",
+      "engagement": 19,
       "is_hot": false,
-      "author": "Ravendor Games",
+      "author": "Kiro Takahashi",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/ekfI3KOZkCU/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/FCfFTurYJnU/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "More Morimens",
-      "summary": "",
+      "title": "Move Over Thais-- It&#39;s Vortice Time! | Morimens",
+      "summary": "Morimens until I'm King of Games TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens.",
       "source": "youtube",
-      "time": "2026-06-12T19:03:59Z",
-      "url": "https://www.youtube.com/watch?v=dp9BvMIK_Ls",
-      "engagement": 17,
+      "time": "2026-06-13T05:08:10Z",
+      "url": "https://www.youtube.com/watch?v=OJXEuv4Qajg",
+      "engagement": 11,
       "is_hot": false,
-      "author": "Nazoric",
+      "author": "LowLivve",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/dp9BvMIK_Ls/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/OJXEuv4Qajg/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -732,6 +763,36 @@
       "tags": [],
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 Morimens ￼恐怖侵蝕人與無比堅硬的石之意志聯手暴打巨大肉塊Saya makes Sanga great again!",
+      "summary": "忘卻前夜 #morimens.",
+      "source": "youtube",
+      "time": "2026-06-13T05:07:01Z",
+      "url": "https://www.youtube.com/watch?v=FOpheM7ITos",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "瑪爾",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/FOpheM7ITos/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【MORIMENS】STARTING CHAPTER 5 | SHOULD WE BE WORRIED...?",
+      "summary": "Are we going to be okay... Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
+      "source": "youtube",
+      "time": "2026-06-13T00:40:08Z",
+      "url": "https://www.youtube.com/watch?v=5CoSZbHy-Gk",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "AdagioVT",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/5CoSZbHy-Gk/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "[Google Play 好评] ★5 sekali lagi terima kasih untuk developer",
@@ -773,71 +834,6 @@
       "platform_region": "kr"
     },
     {
-      "title": "Good game",
-      "summary": "In love with the gameplay, this game also has a very lovely artstyle and story. Can’t wait for full English translation!",
-      "source": "appstore",
-      "time": "2026-06-07T00:45:21-07:00",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "\\^3^/",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "us"
-    },
-    {
-      "title": "What a pleasant surprise:)",
-      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
-      "source": "appstore",
-      "time": "2026-06-05T00:36:40-07:00",
-      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "hsantos18",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "gb"
-    },
-    {
-      "title": "Criminally underrated",
-      "summary": "The art is some of the most beautiful pieces I have ever seen, and not even limiting that to games! I’ve only played for twenty-ish days and already have thirty of the characters (not including dupes) and it is so refreshing to be able to get characters without intense grinding. I absolutely fell in love with the art and character designs and recommend this to my friends sooo much!",
-      "source": "appstore",
-      "time": "2026-06-02T16:19:24-07:00",
-      "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "CybrrS1g1l1sm",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "ca"
-    },
-    {
-      "title": "Love this game",
-      "summary": "Can’t believe this slipped under my radar, a great game with an unexpected but loved collab.\n\nSpecifically about the that I like is the story, as its unique to me with interesting details largely unseen from other stories I’ve consumed; the art style really gets my attention as it’s got some really cool backgrounds during the story telling and gameplay, and…. Yeah that’s my main likes about this game, there are other cool things to see, but it’s best seen yourself.\n\nRandom, but the games so good it’s got me up at 12am 2 days before an exam… with near to no study 💔 hope the grind for the collab character actually pays off 🤞🥹 oh and my user is Sira",
-      "source": "appstore",
-      "time": "2026-06-01T08:43:46-07:00",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "Coruzeist",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "au"
-    },
-    {
-      "title": "Any Plans for a macOS Version?",
-      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
-      "source": "appstore",
-      "time": "2026-06-04T02:36:30-07:00",
-      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "Nihil___",
-      "tags": [],
-      "lang": "ko",
-      "platform_region": "kr"
-    },
-    {
       "title": "Hidden gem",
       "summary": "This game is so goated bro, alongside r1999 and arknights, Morimens deserve to be praised for their free to play friendliness and great lore and art. I hope this game continues to grow ❤️",
       "source": "appstore",
@@ -849,101 +845,6 @@
       "tags": [],
       "lang": "en",
       "platform_region": "ph"
-    },
-    {
-      "title": "Hidden Gem Game!!!?",
-      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
-      "source": "appstore",
-      "time": "2026-06-07T01:18:16-07:00",
-      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "BoBoss375",
-      "tags": [],
-      "lang": "th",
-      "platform_region": "th"
-    },
-    {
-      "title": "Incroyable 🥰",
-      "summary": "Jeu très intéressant avec une histoire prometteuse. Les personnages sont attachants et la D.A un peu horrifique rajoute une belle ambiance ! Le jeu est plutôt généreux et le gameplay très original (j’ai jamais joué à un jeu gacha comme celui-ci) Le seul petit bémol est la traduction un peu bancale, mais au moins il y en a une 😅 Bref, j’adore ce jeu et je compte y jouer pendant un long moment encore 💕",
-      "source": "appstore",
-      "time": "2026-06-06T02:29:15-07:00",
-      "url": "https://apps.apple.com/fr/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "cri❤️❤️❤️",
-      "tags": [],
-      "lang": "fr",
-      "platform_region": "fr"
-    },
-    {
-      "title": "Lingua italiana disponibile",
-      "summary": "Meraviglioso strategico e storia seria",
-      "source": "appstore",
-      "time": "2026-06-09T06:19:29-07:00",
-      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "elllmazzzri",
-      "tags": [],
-      "lang": "it",
-      "platform_region": "it"
-    },
-    {
-      "title": "tudo que CZN queria ser",
-      "summary": "devs generosos, collabs permanentes (SAYA por exemplo), recursos e personagens faceis de buildar e comunidade receptiva pra novos jogadores",
-      "source": "appstore",
-      "time": "2026-05-26T10:56:07-07:00",
-      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
-      "engagement": 5,
-      "is_hot": false,
-      "author": "viniciusbadtz",
-      "tags": [],
-      "lang": "pt",
-      "platform_region": "br"
-    },
-    {
-      "title": "【MORIMENS】STARTING CHAPTER 5 | SHOULD WE BE WORRIED...?",
-      "summary": "Are we going to be okay... Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
-      "source": "youtube",
-      "time": "2026-06-13T00:40:08Z",
-      "url": "https://www.youtube.com/watch?v=5CoSZbHy-Gk",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "AdagioVT",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/5CoSZbHy-Gk/hqdefault_live.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "忘卻前夜 Morimens Inverted Rebirth Collab Event - Dining Table Madness",
-      "summary": "This was the thing that was supposed to be uploaded last time but I put up the wrong one lol, still I hope you enjoy!",
-      "source": "youtube",
-      "time": "2026-06-13T00:16:50Z",
-      "url": "https://www.youtube.com/watch?v=FCfFTurYJnU",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "Kiro Takahashi",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/FCfFTurYJnU/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "Nice character design!",
-      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
-      "source": "appstore",
-      "time": "2026-06-05T03:05:58-07:00",
-      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "Milesiya",
-      "tags": [],
-      "lang": "id",
-      "platform_region": "id"
     },
     {
       "title": "[Google Play 差评] ★1 another disaster pull session why do we",
@@ -959,44 +860,16 @@
       "platform_region": "us"
     },
     {
-      "title": "Game always stuck halfway",
-      "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
-      "source": "appstore",
-      "time": "2026-05-14T20:26:42-07:00",
-      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
-      "engagement": 3,
-      "is_hot": false,
-      "author": "Chros T",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "sg"
-    },
-    {
       "title": "WAKE UP ITS KUSOGE TIME: Onechanbara Z2 - Morimens Later【Promisu EN】",
       "summary": "Broadcasted live on Twitch -- Watch live at https://www.twitch.tv/euryaledrift.",
       "source": "youtube",
       "time": "2026-06-13T00:12:45Z",
       "url": "https://www.youtube.com/watch?v=T5DeCzOmVug",
-      "engagement": 2,
+      "engagement": 3,
       "is_hot": false,
       "author": "Eury's Twitch VODs",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/T5DeCzOmVug/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "Vortice pulls and then finishing D-Tide",
-      "summary": "I've done most of D-Tide offline, only missing a W5 clear... surely it won't kick my ass. I have no Vortice copies, aiming for E1 + ...",
-      "source": "youtube",
-      "time": "2026-06-12T21:13:57Z",
-      "url": "https://www.youtube.com/watch?v=owN2lw2pBUs",
-      "engagement": 2,
-      "is_hot": false,
-      "author": "Trash Keeper",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/owN2lw2pBUs/hqdefault_live.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -1041,38 +914,31 @@
       "platform_region": "br"
     },
     {
-      "title": "[正面] funny game",
-      "summary": "funny game",
-      "source": "steam_review",
-      "time": "2026-06-12T02:58:41+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198353137953/recommended/3052450",
+      "title": "Trying To Get Saya&#39;s Weapon | #darkstar_2551 on #Twitch #morimens",
+      "summary": "shorts #morimens So, I finally got back to summoing in Morimens it's going well so far. https://www.twitch.tv/darkstar_2551.",
+      "source": "youtube",
+      "time": "2026-06-13T06:29:33Z",
+      "url": "https://www.youtube.com/watch?v=-RFkBJlMh7k",
       "engagement": 1,
       "is_hot": false,
-      "author": "76561198353137953",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 10997,
-        "votes_up": 1,
-        "timestamp_created": 1781233121
-      },
+      "author": "DARKSTAR2551",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/-RFkBJlMh7k/hqdefault.jpg",
+      "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "Realm Study gacha (part 1 out of 3)",
-      "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
+      "title": "100 FREE PULLS YAYAYAYYYYYY",
+      "summary": "Stream from 11 June 2026 ~~~~~ morimens!!! saya event and lots of pulls and learning how to upgrade cards yippeeeee!!!!!!",
       "source": "youtube",
-      "time": "2026-06-12T16:00:07Z",
-      "url": "https://www.youtube.com/watch?v=QNX5hRBeFUQ",
+      "time": "2026-06-13T04:12:33Z",
+      "url": "https://www.youtube.com/watch?v=AWxhWR83nW0",
       "engagement": 1,
       "is_hot": false,
-      "author": "Andrew Giusty",
+      "author": "Faust Stream VODs",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/QNX5hRBeFUQ/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/AWxhWR83nW0/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -1091,6 +957,396 @@
       "platform_region": "de"
     },
     {
+      "title": "PSA: If you're new and without a team, pull Vortice (180 hard pity)",
+      "summary": "Vortice on today&#39;s rotating banner is the best low investment carry. All she needs is her posse and to max out her &quot;Reload&quot; skill. &#x200B; Her team comprises of her and 3 defensive units. Hunker down, stall the enemy out and keep nuking them 1 at a time with your posse. &#x200B; She is a very slow unit, however I think she&#39;s the best carry at e0/e1. This is speaking from the experience of someone who speedruns the game multiple times focusing on multiple characters.  &#x200B; The only catch is that hard pity is 180 pulls, but you&#39;re more than likely to not reach it. &#x200B; To the unfortunate soul who probably did... I apologise but at least your carry is set.  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T01:15:39+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4ddjd/psa_if_youre_new_and_without_a_team_pull_vortice/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Angbak94",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Phone performance appreciation post",
+      "summary": "We need to appreciate for an indie company struggling with making money, this is the best mobile phone experience for any gacha game I have had till now. Most of the other gacha games don&#39;t even support background download, causing unnecessary heating. The text to read on the phone screens are nicely sized and I don&#39;t have to squint my eyes. Also phone starts heating after moderate time of gaming. Hope many more games make text readable for players playing on phone.  &#32; submitted by &#32;  /u/Then-Scale-9476   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T04:33:45+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4hbx1/phone_performance_appreciation_post/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Then-Scale-9476",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "shut up and take my money",
+      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T14:59:34+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3xp16/shut_up_and_take_my_money/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/new_acc256",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/zk0y5ez69v6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6100c7169dba397d1f797b1c47f5475b70d8043d",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Saya poison team go brrr",
+      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T00:41:33+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4cojh/saya_poison_team_go_brrr/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/HessianQrow",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/omz9gmw05y6h1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=b83e5f15c879a635bf5088e916ca1cf4a5259154",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Now I realized I dont know how to play the team....",
+      "summary": "&#32; submitted by &#32;  /u/Sorry_Cut907   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T15:49:44+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3z389/now_i_realized_i_dont_know_how_to_play_the_team/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Sorry_Cut907",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ydeswxj4iv6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7c5f364cac76655e6d546166ac8717b80eabbf72",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Sprout [Saya Fanart]",
+      "summary": "https://x.com/i/status/2065417875418927332 https://bsky.app/profile/kosova404.bsky.social/post/3mo3sc7z3ls2g  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T17:47:33+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u42eac/sprout_saya_fanart/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Kosova404",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/c9obwda43w6h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=14a38c3b5c54c982e5d284fdaaa82919c01fbe52",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "E12 Saya!",
+      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T13:56:21+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Witch_ninety9",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/4b5knpywxu6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a396ca7de1b031cff99de8a85eebb3e6429b8bac",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Enjoying the game as a new player",
+      "summary": "I finally decided to take the plunge even though I&#39;m not the biggest fan of horror and there&#39;s nothing too disturbing that I can&#39;t get over. And actually a lot of the character designs don&#39;t really show that much horror unless you look really closely.  But another question I had is there anything in the future of this game that I might find offensive as a Christian? I know a lot of games have their own version of the church and stuff so that doesn&#39;t really bother me. But again, Do you guys as more veteran players think there&#39;s anything that might be offensive to someone like me?  &#32; submitted by &#32;  /u/FLSon   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T22:18:55+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u49gnk/enjoying_the_game_as_a_new_player/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/FLSon",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Only 14 % have cleared the first chapter",
+      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T13:53:19+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Plenty_Mushroom_707",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/jkl2fcz6xu6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6f3ff73dcbd2be261c3a62c7d8c542c7d36a6d1b",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "D-zone Appreciation Post",
+      "summary": "There&#39;s been a bunch of appreciation shown by new players for various aspects of Morimens, and as another new player there&#39;s one area I&#39;d like to praise a bit as well. D-Effect Zone&#39;s ruleset is great! You can mix and match difficulty level or opt for extra clears, allowing for a lot of creativity, and no matter whether you&#39;re investing vertically or horizontally you&#39;re going to see results and increased rewards from it. You&#39;re encouraged to be creative with what your account has, and find the unique solve that works for you. The lowest difficulty level is accessible pretty much right away as you unlock the mode: lv20~35 units at e0-e2 clearing last rotation&#39;s wave 1 alert 1 This makes it immediately interesting to join in and give the mode a try, get some rewards, and experiment with teambuilding. One of my favorite things in gachas like this is finding creative ways to use the limited tools available to squeeze out as much as possible, and this gamemode not only caters to that, but it does so right from the start all the way up to endgame investment levels. It&#39;s nice that an endgame mode is not only playable right away, but is even outright interesting, instead of just a stat check for what limited units you&#39;ve been able to acquire and level. I had a lot of fun pushing for 325+ last rotation and I&#39;ll be trying to get a good score again now: Profile peek from last D-zone, 12 days, f2p, account lv 47 (a lot of non-stamina gated resources still available here, but I&#39;m already playing this game wayyyy too much hahah) That&#39;s my appreciation post for D-Zone! I hope other newbies will also be encouraged to check it out and give it a go. It&#39;s fun, trust me! except the current wave 3 which is very evil  &#32; submitted by &#32;  /u/EclipseEffigy   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T19:24:48+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u451ao/dzone_appreciation_post/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/EclipseEffigy",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ikmwak1nhw6h1.png?width=140&amp;height=129&amp;auto=webp&amp;s=95e5c1e6a4445ac1d98ab5b324a787628e14eed3",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Is Gnostic Potential worth wasting Pure Cores?",
+      "summary": "Hi I&#39;m new here, I saw Pure Cores are used for awakening and seem very bad deal to use it to upgrade my awakeners with it  &#32; submitted by &#32;  /u/FusionBetween   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T18:00:13+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u42qy6/is_gnostic_potential_worth_wasting_pure_cores/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/FusionBetween",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/f4nqwa2f5w6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d0733dd4ab12e15d067a04c2d8fa268d04a8b60f",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Team discussion",
+      "summary": "I&#39;ve been playing this game for a few months now, and I personally feel like I have gotten a gist of things and managed to scrounge up these teams! (I&#39;m planning to pull for Clem to put in the third team :3) &#x200B; I&#39;m posting it here for a general discussion because I&#39;m WAY more used to using the first team (as could be seen with the investment I have put) and I want more insight on what&#39;s best and not best in these teams &#x200B; I haven&#39;t fully invested in ALL of these teams yet (as seen in the photos)—since I&#39;m F2P and materials are very scarce... I have just been leveling them up and their skills for now to keep a wide roster to play in story and some easier end-game modes so I won&#39;t get bored using the same team over and over again &#x200B; Also, no—I&#39;m not really aiming to 425 D-Tide at all... But I do want to keep my teams seperate and not use the same character again and again &#x200B; Are the teams a bit biased and filled with my favorite characters only? ...Maybee... But I love my favs... &#x200B; Oh and, what is the best Main DPS GMurphy team? Mine is currently at E2 sadly... &#x200B; Please and thanks! &lt;3  &#32; submitted by &#32;  /u/syall01   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T04:19:58+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4h2ly/team_discussion/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/syall01",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/bk41vmxy7z6h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=b32f5f7c6299651b02ee8983f07addc61857e45d",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Is there a spreadsheet/database with the complete Traphase card catalogue?",
+      "summary": "Hi everyone!   I&#39;m currently looking for a complete catalogue of all the cards in the Traphase PvP mode (「相位對弈」), including all Awakeners (their Exalts and 4-card decks), Wheels of Destiny, and Posses.  I am not looking for meta builds or team tier lists. What I really need is a raw database or a spreadsheet (Excel / Google Sheets) that lists every single item&#39;s Name, Arithmetica Cost, and full Effect description.  Does anyone know if a document like this exists within the Global, Taiwanese, or Chinese communities?  Thanks in advance for any links or info!  &#32; submitted by &#32;  /u/Iozstal   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T01:01:28+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4d3ee/is_there_a_spreadsheetdatabase_with_the_complete/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Iozstal",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "How an Omori Collab could work after the saya event",
+      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T00:56:47+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Eman7548",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Stuck in Chapter 9 and Hardmode Chapter 7",
+      "summary": "Skill issue player here. Got meta dps and their dupes and still can&#39;t beat Arc 1 chapter 8 to 9 mobs without getting half my health or more drained. I do read their cards and know how to play them, at least at surface level... But then one bad rng turn and I&#39;m triggering death resistance. &#x200B; How are people using these meta dps units that are supposed to stomp both arc 1 and 2 easily?  &#32; submitted by &#32;  /u/Free-Skirt-8641   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T18:01:07+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u42rzx/stuck_in_chapter_9_and_hardmode_chapter_7/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Free-Skirt-8641",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ypnx1rtj5w6h1.jpg?width=140&amp;height=79&amp;auto=webp&amp;s=f36c8e8cfbd88e0f36dd18dd178f3004a737e1d8",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Is this a good enough (for now) team for Tawiwi?",
+      "summary": "I also have Goliath E2, Celeste E3, Sangra E3, Miryam, Tulu, Gmurphy and the other standard banner fellas. Currently I&#39;m going through arc 5 and so far this is pretty fun but I just wanted to make sure I was on the right path   &#32; submitted by &#32;  /u/Chans123541   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T00:54:31+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4cy8u/is_this_a_good_enough_for_now_team_for_tawiwi/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Chans123541",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/iaf3t87c7y6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2e4c9fa70ad8226e4a4c26046322e42738e69748",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I am once again asking for your team building support🙏",
+      "summary": "Started the game for Saya and honestly have been loving every second of it. I got Saya to +12 (probably a stupid decision but worth it to me) and was wondering the best team I could make. I have the selectors where I can choose a character and their WoD, but don’t know what would be best. I was thinking a poison team, but I’m not sure if that would be my best route right now. Any advice is greatly appreciated!!  &#32; submitted by &#32;  /u/Pikaguy324   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T20:37:23+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u46wkr/i_am_once_again_asking_for_your_team_building/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Pikaguy324",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/z5t0vikgxw6h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=33b39e567941cd333ee8124c8de2436985eb5cdd",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What was the Light ping about?",
+      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T13:31:19+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3vdf2/what_was_the_light_ping_about/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/HessianQrow",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Finally got it to 400 (again)",
+      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial W3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T06:33:57+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/KyuUwUketsuki_05",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/2tfgy27vvz6h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=eddcfb48646cb9318f012f8eccb966a96c9af297",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Saya Sanga guide - H5-11 final Boss, any D-Tide A5 cleared - Budget",
+      "summary": "&#32; submitted by &#32;  /u/HairDisastrous8348   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-12T16:44:39+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u40nn0/saya_sanga_guide_h511_final_boss_any_dtide_a5/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/HairDisastrous8348",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] intangibles, it's got em; wish there was JP or CN...",
+      "summary": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
+      "source": "steam_review",
+      "time": "2026-06-13T04:17:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199210941461/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199210941461",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7396,
+        "votes_up": 0,
+        "timestamp_created": 1781324273
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] bom",
+      "summary": "bom",
+      "source": "steam_review",
+      "time": "2026-06-13T01:53:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198110107840/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198110107840",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 706,
+        "votes_up": 0,
+        "timestamp_created": 1781315627
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "[正面] Finished the first chapter, love it so far.",
       "summary": "Finished the first chapter, love it so far.",
       "source": "steam_review",
@@ -1105,7 +1361,7 @@
       "language": "english",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 563,
+        "playtime_forever": 650,
         "votes_up": 0,
         "timestamp_created": 1781312705
       },
@@ -1237,7 +1493,7 @@
       "language": "koreana",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 5342,
+        "playtime_forever": 5402,
         "votes_up": 0,
         "timestamp_created": 1781277615
       },
@@ -1281,7 +1537,7 @@
       "language": "spanish",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 5871,
+        "playtime_forever": 5993,
         "votes_up": 0,
         "timestamp_created": 1781272281
       },
@@ -1303,7 +1559,7 @@
       "language": "schinese",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 368,
+        "playtime_forever": 412,
         "votes_up": 0,
         "timestamp_created": 1781267783
       },
@@ -1328,50 +1584,6 @@
         "playtime_forever": 789,
         "votes_up": 0,
         "timestamp_created": 1781250464
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[正面]",
-      "summary": "",
-      "source": "steam_review",
-      "time": "2026-06-12T04:19:55+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199792698334/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561199792698334",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 792,
-        "votes_up": 0,
-        "timestamp_created": 1781237995
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[正面] I like the story. Good game.",
-      "summary": "I like the story. Good game.",
-      "source": "steam_review",
-      "time": "2026-06-12T02:55:11+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198250563052/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198250563052",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 466,
-        "votes_up": 0,
-        "timestamp_created": 1781232911
       },
       "lang": "",
       "platform_region": "global"
@@ -1482,70 +1694,70 @@
       "platform_region": "global"
     },
     {
-      "title": "Morimens - Capítulo 1 parte 14",
-      "summary": "Capítulo 1 - Enigma en el distrito este El Londinium Antiguo está envuelto en niebla, y la oscuridad acecha donde las tenue luces ...",
+      "title": "Went For Saya Dupe Got Helot | #darkstar_2551 on #Twitch  #morimens",
+      "summary": "shorts #morimens Good to have another character I supppose. https://www.twitch.tv/darkstar_2551.",
       "source": "youtube",
-      "time": "2026-06-12T21:00:16Z",
-      "url": "https://www.youtube.com/watch?v=_vaKAwQI6ug",
+      "time": "2026-06-13T06:43:22Z",
+      "url": "https://www.youtube.com/watch?v=WfjlPBgjnpg",
       "engagement": 0,
       "is_hot": false,
-      "author": "Pablo Carajo",
+      "author": "DARKSTAR2551",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/_vaKAwQI6ug/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/WfjlPBgjnpg/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "Happy Friday let&#39;s get random",
-      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "title": "Got Saya&#39;s Wepon Early!!!! | #darkstar_2551 on #Twitch   #morimens",
+      "summary": "shorts #morimens Just like that I got Saya's weapon. https://www.twitch.tv/darkstar_2551.",
       "source": "youtube",
-      "time": "2026-06-12T14:44:33Z",
-      "url": "https://www.youtube.com/watch?v=HtajRwx3kw4",
+      "time": "2026-06-13T06:32:32Z",
+      "url": "https://www.youtube.com/watch?v=RtUCaOw47R0",
       "engagement": 0,
       "is_hot": false,
-      "author": "mankonren",
+      "author": "DARKSTAR2551",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/HtajRwx3kw4/hqdefault_live.jpg",
+      "media_url": "https://i.ytimg.com/vi/RtUCaOw47R0/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "Happy Friday let&#39;s get random (Vert)",
-      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "title": "Chap 9-12 A Long Dream&#39;s End | Morimens | UltraTeam | Tafnibite",
+      "summary": "",
       "source": "youtube",
-      "time": "2026-06-12T14:44:38Z",
-      "url": "https://www.youtube.com/watch?v=J_1dysp5pjE",
+      "time": "2026-06-13T04:52:25Z",
+      "url": "https://www.youtube.com/watch?v=Zu49K8eBQpQ",
       "engagement": 0,
       "is_hot": false,
-      "author": "mankonren",
+      "author": "Tafnibite Kar",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/J_1dysp5pjE/hqdefault_live.jpg",
+      "media_url": "https://i.ytimg.com/vi/Zu49K8eBQpQ/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:56.836823+00:00",
-      "url": "",
+      "title": "Morimens | Multiverse Link: My Turn!",
+      "summary": "this was sitting in my drafts and I forgot to upload it Outlander's Visit: 0:00 Duel of Will: 5:42 Cosmos Reforged: 7:02.",
+      "source": "youtube",
+      "time": "2026-06-13T03:45:27Z",
+      "url": "https://www.youtube.com/watch?v=cYeB2KWvFZg",
       "engagement": 0,
       "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
+      "author": "vy",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/cYeB2KWvFZg/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.848278+00:00",
+      "time": "2026-06-13T06:47:30.102962+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1560,23 +1772,8 @@
       "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
       "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.859730+00:00",
+      "time": "2026-06-13T06:47:30.116337+00:00",
       "url": "https://m.weibo.cn/status/5272049669112519",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:56.872856+00:00",
-      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1590,7 +1787,52 @@
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.884791+00:00",
+      "time": "2026-06-13T06:47:30.136357+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "source": "weibo",
+      "time": "2026-06-13T06:47:30.149267+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "source": "weibo",
+      "time": "2026-06-13T06:47:30.163874+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
+      "summary": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
+      "source": "weibo",
+      "time": "2026-06-13T06:47:30.176357+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1605,8 +1847,53 @@
       "title": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜",
       "summary": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜与忘却前夜的一张同人图，并不是黑吗喽的角色\n\n我本人从未绘制过任何来自黑吗喽的同人图，也从未游玩过黑吗喽，特此澄清\n\n目前我因谣言被无 ...全文",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.894672+00:00",
+      "time": "2026-06-13T06:47:30.188923+00:00",
       "url": "https://m.weibo.cn/status/5093779227019848",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！",
+      "summary": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n👇包括不限于：\n-𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫-前期设计 原画/立绘/表情\n-𝐒𝐭𝐨𝐫𝐲 𝐈𝐥𝐥𝐮 ...全文",
+      "source": "weibo",
+      "time": "2026-06-13T06:47:30.204800+00:00",
+      "url": "https://m.weibo.cn/status/5048835342868548",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "《忘却前夜》丨ED——「来自遗忘 」\n呼唤我的名字，在被忘却的黎明之前。\n\n献给每一位与弥萨格同行的守密人，愿银钥指引前路！\n\n企划：B.I.A.V. S",
+      "summary": "《忘却前夜》丨ED——「来自遗忘 」\n呼唤我的名字，在被忘却的黎明之前。\n\n献给每一位与弥萨格同行的守密人，愿银钥指引前路！\n\n企划：B.I.A.V. Studio\n中词：霁月 -B.I.A.V. Studio\n英译/曲：F.R.K. -B.I.A.V. Studio\n演唱/润色：Emi Evans -SCARLET MOON PRODUCTIONS\n特别鸣谢：Jayson Napoli ...全文",
+      "source": "weibo",
+      "time": "2026-06-13T04:05:00+00:00",
+      "url": "https://m.weibo.cn/status/5111587067138157",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
+      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
+      "source": "weibo",
+      "time": "2026-06-13T06:47:30.246544+00:00",
+      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1635,23 +1922,8 @@
       "title": "忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」\n诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案\n◆◆◆◆◆◆\n官方玩家交流群：\n⑪群：9",
       "summary": "忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」\n诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案\n◆◆◆◆◆◆\n官方玩家交流群：\n⑪群：947500294\n⑩群：839468990\n\n②群：991922107\n③群：755564537\n④群：779040377\n⑤群：874812954\n⑥群：478456129\n⑦群：70058700 ...全文",
       "source": "weibo",
-      "time": "2026-06-12T02:43:00+00:00",
+      "time": "2026-06-13T02:43:00+00:00",
       "url": "https://m.weibo.cn/status/5055427245244524",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:56.942031+00:00",
-      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1665,7 +1937,7 @@
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.951089+00:00",
+      "time": "2026-06-13T06:47:30.303029+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1680,37 +1952,7 @@
       "title": "之前给忘却前夜画的解禁了！！",
       "summary": "之前给忘却前夜画的解禁了！！",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.960574+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "阿巴阿巴……持续讨教中#忘却前夜超话##忘却前夜#忘却前夜#忘却前夜内容征集计划##角色设计#",
-      "summary": "阿巴阿巴……持续讨教中#忘却前夜超话##忘却前夜#忘却前夜#忘却前夜内容征集计划##角色设计#",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:56.970378+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 同步一下之前的\nooc致歉",
-      "summary": "忘却前夜 同步一下之前的\nooc致歉",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:56.979984+00:00",
+      "time": "2026-06-13T06:47:30.315464+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1725,23 +1967,8 @@
       "title": "忘却前夜#卡波##囚羽骨#\n🧱+🍎祝福家产抽52r，不抽家产的拆逆单推梦女，3.1开\n已开奖网页链接\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n你已同我一起犯下了过错",
       "summary": "忘却前夜#卡波##囚羽骨#\n🧱+🍎祝福家产抽52r，不抽家产的拆逆单推梦女，3.1开\n已开奖网页链接\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n你已同我一起犯下了过错\n一切都业已无可挽回\n无论健康 亦或疾病\n身处同样的噩梦中 永远和你在一起！\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n\n祝家产 ...全文",
       "source": "weibo",
-      "time": "2026-06-13T02:10:56.989147+00:00",
+      "time": "2026-06-13T06:47:30.327454+00:00",
       "url": "https://m.weibo.cn/status/5266011337261137",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「爱与死之芽」& 命轮活动唤醒「异生羽种」\n唤醒时间：5月30日 09:00 - 8月24日 09:00\n唤醒体「沙耶」&",
-      "summary": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「爱与死之芽」& 命轮活动唤醒「异生羽种」\n唤醒时间：5月30日 09:00 - 8月24日 09:00\n唤醒体「沙耶」& 命轮「愿世界化作芬芳」获取概率提升！\n\n◆「绽爱之蕊」角色试玩\n活动时间：5月30日 09:00 - 8月24日 09:00\n完成该唤醒体试玩之后可领取：\n流明之芯* ...全文",
-      "source": "weibo",
-      "time": "2026-06-13T02:10:57.002504+00:00",
-      "url": "https://m.weibo.cn/status/5304332901157224",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1755,7 +1982,7 @@
       "title": "代肝提醒\n小代肝注意了，小心黑心团。骗子没人性。骗你加微信入团的，还要交管理费的，大部分是骗子。说时间满多少单会反，其实会找各种借口拖延。价格低到离谱。还有各种",
       "summary": "代肝提醒\n小代肝注意了，小心黑心团。骗子没人性。骗你加微信入团的，还要交管理费的，大部分是骗子。说时间满多少单会反，其实会找各种借口拖延。价格低到离谱。还有各种相互内卷。你敢相信1600原石3块，沉默成本太高，大家都想把本钱收回来再走。结果又拖延工资。公司白嫖一个月劳动力。我刚刚从黑奴 ...全文",
       "source": "weibo",
-      "time": "2026-06-13T02:10:57.016489+00:00",
+      "time": "2026-06-13T06:47:30.343362+00:00",
       "url": "https://m.weibo.cn/status/5309185317142698",
       "engagement": 0,
       "is_hot": false,
@@ -1765,6 +1992,32 @@
       ],
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "PSA: If you're new and without a team, pull Vortice (180 hard pity)",
+      "summary": "Vortice on today&#39;s rotating banner is the best low investment carry. All she needs is her posse and to max out her &quot;Reload&quot; skill. &#x200B; Her team comprises of her and 3 defensive units. Hunker down, stall the enemy out and keep nuking them 1 at a time with your posse. &#x200B; She is a very slow unit, however I think she&#39;s the best carry at e0/e1. This is speaking from the experience of someone who speedruns the game multiple times focusing on multiple characters.  &#x200B; The only catch is that hard pity is 180 pulls, but you&#39;re more than likely to not reach it. &#x200B; To the unfortunate soul who probably did... I apologise but at least your carry is set.  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T01:15:39+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4ddjd/psa_if_youre_new_and_without_a_team_pull_vortice/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Angbak94",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Phone performance appreciation post",
+      "summary": "We need to appreciate for an indie company struggling with making money, this is the best mobile phone experience for any gacha game I have had till now. Most of the other gacha games don&#39;t even support background download, causing unnecessary heating. The text to read on the phone screens are nicely sized and I don&#39;t have to squint my eyes. Also phone starts heating after moderate time of gaming. Hope many more games make text readable for players playing on phone.  &#32; submitted by &#32;  /u/Then-Scale-9476   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T04:33:45+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4hbx1/phone_performance_appreciation_post/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Then-Scale-9476",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
     },
     {
       "title": "shut up and take my money",
@@ -1780,14 +2033,14 @@
       "platform_region": "global"
     },
     {
-      "title": "PSA: If you're new and without a team, pull Vortice (180 hard pity)",
-      "summary": "Vortice on today&#39;s rotating banner is the best low investment carry. All she needs is her posse and to max out her &quot;Reload&quot; skill. &#x200B; Her team comprises of her and 3 defensive units. Hunker down, stall the enemy out and keep nuking them 1 at a time with your posse. &#x200B; She is a very slow unit, however I think she&#39;s the best carry at e0/e1. This is speaking from the experience of someone who speedruns the game multiple times focusing on multiple characters.  &#x200B; The only catch is that hard pity is 180 pulls, but you&#39;re more than likely to not reach it. &#x200B; To the unfortunate soul who probably did... I apologise but at least your carry is set.  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "title": "Saya poison team go brrr",
+      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-13T01:15:39+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4ddjd/psa_if_youre_new_and_without_a_team_pull_vortice/",
+      "time": "2026-06-13T00:41:33+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4cojh/saya_poison_team_go_brrr/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Angbak94",
+      "author": "u//u/HessianQrow",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1806,19 +2059,6 @@
       "platform_region": "global"
     },
     {
-      "title": "E12 Saya!",
-      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-12T13:56:21+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Witch_ninety9",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "Sprout [Saya Fanart]",
       "summary": "https://x.com/i/status/2065417875418927332 https://bsky.app/profile/kosova404.bsky.social/post/3mo3sc7z3ls2g  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
       "source": "reddit",
@@ -1832,14 +2072,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Only 14 % have cleared the first chapter",
-      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
+      "title": "E12 Saya!",
+      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-12T13:53:19+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
+      "time": "2026-06-12T13:56:21+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Plenty_Mushroom_707",
+      "author": "u//u/Witch_ninety9",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1858,14 +2098,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Saya poison team go brrr",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
+      "title": "Only 14 % have cleared the first chapter",
+      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-13T00:41:33+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4cojh/saya_poison_team_go_brrr/",
+      "time": "2026-06-12T13:53:19+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/HessianQrow",
+      "author": "u//u/Plenty_Mushroom_707",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1897,6 +2137,19 @@
       "platform_region": "global"
     },
     {
+      "title": "Team discussion",
+      "summary": "I&#39;ve been playing this game for a few months now, and I personally feel like I have gotten a gist of things and managed to scrounge up these teams! (I&#39;m planning to pull for Clem to put in the third team :3) &#x200B; I&#39;m posting it here for a general discussion because I&#39;m WAY more used to using the first team (as could be seen with the investment I have put) and I want more insight on what&#39;s best and not best in these teams &#x200B; I haven&#39;t fully invested in ALL of these teams yet (as seen in the photos)—since I&#39;m F2P and materials are very scarce... I have just been leveling them up and their skills for now to keep a wide roster to play in story and some easier end-game modes so I won&#39;t get bored using the same team over and over again &#x200B; Also, no—I&#39;m not really aiming to 425 D-Tide at all... But I do want to keep my teams seperate and not use the same character again and again &#x200B; Are the teams a bit biased and filled with my favorite characters only? ...Maybee... But I love my favs... &#x200B; Oh and, what is the best Main DPS GMurphy team? Mine is currently at E2 sadly... &#x200B; Please and thanks! &lt;3  &#32; submitted by &#32;  /u/syall01   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T04:19:58+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4h2ly/team_discussion/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/syall01",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "Is there a spreadsheet/database with the complete Traphase card catalogue?",
       "summary": "Hi everyone!   I&#39;m currently looking for a complete catalogue of all the cards in the Traphase PvP mode (「相位對弈」), including all Awakeners (their Exalts and 4-card decks), Wheels of Destiny, and Posses.  I am not looking for meta builds or team tier lists. What I really need is a raw database or a spreadsheet (Excel / Google Sheets) that lists every single item&#39;s Name, Arithmetica Cost, and full Effect description.  Does anyone know if a document like this exists within the Global, Taiwanese, or Chinese communities?  Thanks in advance for any links or info!  &#32; submitted by &#32;  /u/Iozstal   [link] &#32; [comments]",
       "source": "reddit",
@@ -1905,6 +2158,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Iozstal",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "How an Omori Collab could work after the saya event",
+      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T00:56:47+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Eman7548",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1949,19 +2215,6 @@
       "platform_region": "global"
     },
     {
-      "title": "♡ saya ♡",
-      "summary": "so happy to have her maxed out ♡  i’ve loved saya no uta for many years so i was beyond happy to throw everything at this event :) i still need to min-max her covenant.. curious to hear how everyone else is building her!  &#32; submitted by &#32;  /u/AffectionateShift310   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-12T03:09:07+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3jmvu/saya/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/AffectionateShift310",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "What was the Light ping about?",
       "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
       "source": "reddit",
@@ -1970,6 +2223,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/HessianQrow",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Finally got it to 400 (again)",
+      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial W3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-13T06:33:57+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/KyuUwUketsuki_05",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1986,105 +2252,6 @@
       "tags": [],
       "lang": "en",
       "platform_region": "global"
-    },
-    {
-      "title": "I just got Hameln",
-      "summary": "What is this guy&#39;s team? Can I use him Tawil(E1)?   &#32; submitted by &#32;  /u/MAA_MT   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-12T19:58:20+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u45waa/i_just_got_hameln/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/MAA_MT",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "Standard WoD",
-      "summary": "Once I get both Incalculable factor and Blade of Titan at +12, what do I do? There is someone else WoD that deserve being pulled? Or it&#39;s better going for standard characters?   &#32; submitted by &#32;  /u/Aromatic_Holiday_347   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-12T23:17:32+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4atus/standard_wod/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Aromatic_Holiday_347",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "How an Omori Collab could work after the saya event",
-      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-13T00:56:47+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Eman7548",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
-      "summary": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
-      "source": "weibo",
-      "time": "2026-06-13T02:11:10.097501+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n",
-      "summary": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n👇包括不限于：\n-𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫-前期设计 原画/立绘/表情\n-𝐒𝐭𝐨𝐫𝐲 𝐈𝐥𝐥𝐮 ...全文",
-      "source": "weibo",
-      "time": "2026-06-13T02:11:10.329213+00:00",
-      "url": "https://m.weibo.cn/status/5048835342868548",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
-      "summary": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
-      "source": "weibo",
-      "time": "2026-06-13T02:11:10.690649+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（",
-      "summary": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（最后一张是之前给游戏供稿过的画师，这都不信那我也没话可说了）",
-      "source": "weibo",
-      "time": "2026-06-13T02:11:10.719753+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
     },
     {
       "title": "拉娘",
@@ -2962,7 +3129,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-06-13T02:11:03.397473+00:00",
+      "time": "2026-06-13T06:47:35.480607+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -2976,7 +3143,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-12T15:19:46+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDpRoAmiUC1NqThicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdColX4uhqTuGu_byfq1flICBVMhYxUyFs0GUGdqHf52WWhMKjpWP-rkEg-QqRZklfRfs90hInrsrXbn-x2B186ax2xlKyOfKOoLKyBmGe-VA7ukgIdqospCbwdVqCwyPdzA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=7A786912247E89BBB0A9FBB6AA54C107B08CE8C96A2CBC37",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDXZq6Y44-xyCThicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdClOW0Wz-eJgyMz0CjiKoSqNPJyoFr_C-9Nk_nhlLdSTIS9CPp49tbzCqUZ2-LALcN2ldUuUM2VCht6Hr67Ubi7qZcDO-E5QuxRqUP_CI4YjGbXT2fGVN1X0NGbbB75bUeA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=7BCAB058EDEB1F392D2B7930DBD312CD2D5A5E566A2CFD08",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -2989,7 +3156,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-12T15:19:46+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDNoAuS06R4LWThicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdColX4uhqTuGu_byfq1flICBVMhYxUyFs0Bpd49BtDw3uwhFpNSKEgV6XbIQlc-PmxXiYgzrFZmn0c4Au6lahV1tU2jae9I84W2fltSTDaCMUmDQhkPSa2ajf3q8uRDTfkw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=7A786F5E396097BAAEABF9B7B6A0D03EAE5079816A2CBC39",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDBxxAU84BLg-Thicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdClOW0Wz-eJgyMz0CjiKoSqNPJyoFr_C-9A-Q29469SaUopeA3pl3rgwv7AvuDwWciktvIbxX6qL8pSjzQ9SNUf9dJl2Qfc4T9SElQIZIzUv5so7tB8fLjQktPujwwRB2Pw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=7BCAB93A1F18ECCADED88AC226C80477DF3220DE6A2CFD0A",
       "engagement": 0,
       "is_hot": false,
       "author": "",

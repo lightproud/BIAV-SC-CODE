@@ -1,8 +1,8 @@
 {
   "date": "2026-06-13",
-  "archived_at": "2026-06-13T02:12:08.090333+00:00",
+  "archived_at": "2026-06-13T06:48:48.443835+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "title": "[负面] So convuluted and you are expected to go through u...",
@@ -110,6 +110,50 @@
         "playtime_forever": 416,
         "votes_up": 0,
         "timestamp_created": 1781309299
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] intangibles, it's got em; wish there was JP or CN...",
+      "summary": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
+      "source": "steam_review",
+      "time": "2026-06-13T04:17:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199210941461/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199210941461",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7396,
+        "votes_up": 0,
+        "timestamp_created": 1781324273
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] bom",
+      "summary": "bom",
+      "source": "steam_review",
+      "time": "2026-06-13T01:53:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198110107840/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198110107840",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 706,
+        "votes_up": 0,
+        "timestamp_created": 1781315627
       },
       "lang": "",
       "platform_region": "global"
