@@ -1,10 +1,11 @@
 {
   "date": "2026-06-10",
-  "messages": 19629,
+  "messages": 24609,
   "unique_authors": 550,
-  "reactions_total": 2283,
-  "attachments": 1108,
+  "reactions_total": 2752,
+  "attachments": 1324,
   "channel_activity": {
+    "🔸game-question": 4980,
     "🔸general-chat": 3034,
     "🔸綜合討論": 3072,
     "🔸剧情交流": 124,
@@ -114,24 +115,24 @@
     "1514237449772204214": 3
   },
   "hourly_activity": {
-    "0": 285,
-    "1": 701,
-    "2": 661,
-    "3": 716,
-    "4": 691,
-    "5": 689,
-    "6": 781,
-    "7": 751,
-    "8": 584,
-    "9": 1229,
-    "10": 967,
-    "11": 1105,
-    "12": 1490,
-    "13": 1537,
-    "14": 754,
-    "15": 1830,
-    "16": 1841,
-    "17": 1077,
+    "0": 482,
+    "1": 931,
+    "2": 1009,
+    "3": 871,
+    "4": 1012,
+    "5": 886,
+    "6": 963,
+    "7": 1149,
+    "8": 1126,
+    "9": 1502,
+    "10": 1229,
+    "11": 1517,
+    "12": 1687,
+    "13": 1759,
+    "14": 994,
+    "15": 2274,
+    "16": 2054,
+    "17": 1224,
     "18": 366,
     "19": 452,
     "20": 504,
@@ -140,10 +141,9 @@
     "23": 229
   },
   "message_types": {
-    "0": 2274,
-    "19": 756,
-    "20": 3,
-    "23": 1
+    "0": 3470,
+    "19": 1483,
+    "20": 27
   },
   "top_reacted_messages": [
     {
@@ -235,6 +235,14 @@
       "channel": "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering"
     },
     {
+      "id": "1514298951954726932",
+      "channel_id": "1433513650299076780",
+      "content": "Is Kathigu-ra fine with E2? \n\ncan only get her to E2 with these things so I'm pr",
+      "author": "takahirokoutaro",
+      "reactions": 9,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1514386394062000178",
       "channel_id": "1514386394062000178",
       "content": "",
@@ -267,6 +275,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1514281550831943731",
+      "channel_id": "1433513650299076780",
+      "content": "Who doesnt want to arouse Tulu? <:casiah_wink2:1333982149107253338>",
+      "author": "cornonthemacabre_",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1514366381242716261",
       "channel_id": "1180850818509971466",
       "content": "成功的從5410到3640了",
@@ -275,36 +291,20 @@
       "channel": "🔸相位对弈"
     },
     {
-      "id": "1514107700387254292",
-      "channel_id": "1400750050208125010",
-      "content": "i just finished 1-13",
-      "author": "moonandmymuse",
-      "reactions": 4,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1514220436827934731",
-      "channel_id": "1400750050208125010",
-      "content": "Leigh is caro",
-      "author": "xiii_c",
-      "reactions": 4,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1514319309386547371",
-      "channel_id": "1400750050208125010",
+      "id": "1514096894949855362",
+      "channel_id": "1433513650299076780",
       "content": "",
-      "author": "jmjmjm6667",
+      "author": "princess.goth",
       "reactions": 4,
-      "channel": "🔸general-chat"
+      "channel": "🔸game-question"
     },
     {
-      "id": "1514103306987896972",
-      "channel_id": "1400750050208125010",
-      "content": "Don't you talk like that about wife ever again.",
-      "author": "masiakasaurusofwar",
-      "reactions": 3,
-      "channel": "🔸general-chat"
+      "id": "1514291798388904137",
+      "channel_id": "1433513650299076780",
+      "content": "am i paying 10 dollars to turn her to the left??",
+      "author": "royalllotus",
+      "reactions": 4,
+      "channel": "🔸game-question"
     }
   ]
 }

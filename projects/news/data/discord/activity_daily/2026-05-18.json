@@ -1,11 +1,11 @@
 {
   "date": "2026-05-18",
-  "messages": 36677,
+  "messages": 41677,
   "unique_authors": 750,
-  "reactions_total": 3469,
-  "attachments": 2236,
+  "reactions_total": 4051,
+  "attachments": 2582,
   "channel_activity": {
-    "🔸morimens-game-chat": 7856,
+    "🔸morimens-game-chat": 12856,
     "🔸綜合討論": 6315,
     "🔸欢乐梗图": 3,
     "🔸课间休息闲聊": 13,
@@ -110,35 +110,34 @@
     "1505815024197828628": 3
   },
   "hourly_activity": {
+    "9": 2281,
+    "10": 2219,
+    "11": 1833,
+    "12": 1816,
+    "13": 2187,
+    "14": 2587,
+    "15": 1886,
+    "16": 1836,
+    "17": 1559,
     "3": 2570,
     "4": 2816,
     "5": 2140,
     "6": 1726,
     "7": 1915,
     "8": 1652,
-    "9": 1987,
     "0": 1758,
     "1": 1927,
     "2": 1849,
-    "12": 1326,
-    "13": 1553,
-    "14": 1981,
-    "15": 1354,
-    "16": 1224,
-    "17": 979,
     "18": 650,
     "19": 1367,
     "20": 1125,
     "21": 676,
     "22": 558,
-    "23": 744,
-    "10": 1502,
-    "11": 1298
+    "23": 744
   },
   "message_types": {
-    "0": 2835,
-    "19": 2164,
-    "46": 1
+    "19": 2192,
+    "0": 2808
   },
   "top_reacted_messages": [
     {
@@ -148,6 +147,14 @@
       "author": "somethingno1fan",
       "reactions": 37,
       "channel": "V2.5.1.0 停服维护公告"
+    },
+    {
+      "id": "1505987994220494998",
+      "channel_id": "1170692781216378960",
+      "content": "Big Damage is 5",
+      "author": "ahmedamr30",
+      "reactions": 35,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1505882555079983226",
@@ -246,6 +253,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1505889893664948385",
+      "channel_id": "1170692781216378960",
+      "content": "GUYS I GOT HER!",
+      "author": "suki_ilovechuuyafrombsd",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1505899754436034723",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -284,22 +299,6 @@
       "author": "psheep1234",
       "reactions": 10,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1505910967589015673",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1505803289810309291",
-      "channel_id": "1505801115898478752",
-      "content": "還有我消耗無垢升級不能算活動抽數能不能改一下\n我都花掉了至少給我算抽數吧<:takenotes:1357186646294138890>",
-      "author": "wild_pansy",
-      "reactions": 10,
-      "channel": "能不能手動空幻轉無垢"
     }
   ]
 }

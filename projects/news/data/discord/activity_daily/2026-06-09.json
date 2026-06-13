@@ -1,12 +1,12 @@
 {
   "date": "2026-06-09",
-  "messages": 26225,
+  "messages": 26245,
   "unique_authors": 519,
   "reactions_total": 2608,
-  "attachments": 1282,
+  "attachments": 1283,
   "channel_activity": {
+    "🔸game-question": 7145,
     "🔸general-chat": 3131,
-    "🔸game-question": 7125,
     "🔸綜合討論": 2958,
     "🔸阵容构建": 121,
     "🔸剧情交流": 10,
@@ -95,12 +95,12 @@
     "Team recommendations for story :D": 1
   },
   "hourly_activity": {
+    "23": 801,
     "18": 1019,
     "19": 590,
     "20": 730,
     "21": 597,
     "22": 1295,
-    "23": 781,
     "8": 1002,
     "9": 802,
     "10": 1336,
@@ -121,9 +121,9 @@
     "7": 1276
   },
   "message_types": {
-    "0": 3967,
-    "19": 2144,
-    "20": 25
+    "0": 13,
+    "19": 6,
+    "20": 1
   },
   "top_reacted_messages": [
     {
