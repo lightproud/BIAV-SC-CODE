@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T22:55:50.641724+00:00",
+  "updated_at": "2026-06-13T23:59:40.494758+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -39,14 +39,14 @@
       "level": "active",
       "last_success_date": "2026-06-14",
       "consecutive_silent_days": 0,
-      "total_items": 2002,
+      "total_items": 2004,
       "errors": []
     },
     "reddit": {
       "level": "active",
       "last_success_date": "2026-06-14",
       "consecutive_silent_days": 0,
-      "total_items": 2797,
+      "total_items": 2799,
       "errors": []
     },
     "nga": {
@@ -74,7 +74,7 @@
       "level": "active",
       "last_success_date": "2026-06-14",
       "consecutive_silent_days": 0,
-      "total_items": 6567,
+      "total_items": 6579,
       "errors": []
     },
     "zhihu": {
@@ -165,7 +165,7 @@
       "level": "active",
       "last_success_date": "2026-06-12",
       "consecutive_silent_days": 2,
-      "total_items": 2778,
+      "total_items": 2798,
       "errors": []
     }
   }
