@@ -1,9 +1,24 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-13T17:11:52.293833+00:00",
+  "archived_at": "2026-06-13T19:08:47.874426+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
+    {
+      "title": "【MORIMENS】STARTING CHAPTER 5 | SHOULD WE BE WORRIED...?",
+      "summary": "Are we going to be okay... Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
+      "source": "youtube",
+      "time": "2026-06-13T17:26:09Z",
+      "url": "https://www.youtube.com/watch?v=5CoSZbHy-Gk",
+      "engagement": 10,
+      "is_hot": false,
+      "author": "AdagioVT",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/5CoSZbHy-Gk/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
     {
       "title": "Realm Study gacha (part 3 out of 3)",
       "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
@@ -15,6 +30,21 @@
       "author": "Andrew Giusty",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/hmo8OMyqdS4/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Morimens - Gatcha Game - First Impression",
+      "summary": "morimens This was way better than I thought! Great art, characters, music, great game.",
+      "source": "youtube",
+      "time": "2026-06-13T19:00:24Z",
+      "url": "https://www.youtube.com/watch?v=Poj81s7cEXg",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "UPM Gaming",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/Poj81s7cEXg/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
