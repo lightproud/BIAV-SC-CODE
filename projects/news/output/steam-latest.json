@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-06-13T06:48:40.201497+00:00",
+  "collected_at": "2026-06-13T09:52:14.646067+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-13T07:02:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] nb",
+      "summary": "nb",
+      "url": "https://steamcommunity.com/profiles/76561198739263095/recommended/3052450",
+      "author": "76561198739263095",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "nb",
+      "timestamp_created": 1781334157,
+      "playtime_forever": 515
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-13T06:22:09+00:00",
+      "lang": "schinese",
+      "title": "[正面] 只适合零氪和重氪，随便玩玩",
+      "summary": "只适合零氪和重氪，随便玩玩",
+      "url": "https://steamcommunity.com/profiles/76561198242989436/recommended/3052450",
+      "author": "76561198242989436",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "只适合零氪和重氪，随便玩玩",
+      "timestamp_created": 1781331729,
+      "playtime_forever": 1946
+    },
     {
       "source": "steam",
       "time": "2026-06-13T04:17:53+00:00",
@@ -16,7 +46,7 @@
       "voted_up": true,
       "review": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
       "timestamp_created": 1781324273,
-      "playtime_forever": 7396
+      "playtime_forever": 7416
     },
     {
       "source": "steam",
@@ -136,7 +166,7 @@
       "voted_up": true,
       "review": "재밋음.",
       "timestamp_created": 1781277615,
-      "playtime_forever": 5402
+      "playtime_forever": 5552
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "Este juego me produce tal desgaste mental que tengo que tomarme un descanso para jugar algo cozy para no caer en la locura, simplemente Disolución. 10/10",
       "timestamp_created": 1781272281,
-      "playtime_forever": 5993
+      "playtime_forever": 6180
     },
     {
       "source": "steam",
@@ -182,21 +212,6 @@
       "review": "好玩",
       "timestamp_created": 1781267783,
       "playtime_forever": 412
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-12T07:47:44+00:00",
-      "lang": "schinese",
-      "title": "[正面] 菲茵特女鹅可爱捏",
-      "summary": "菲茵特女鹅可爱捏",
-      "url": "https://steamcommunity.com/profiles/76561199782256631/recommended/3052450",
-      "author": "76561199782256631",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "菲茵特女鹅可爱捏",
-      "timestamp_created": 1781250464,
-      "playtime_forever": 789
     }
   ]
 }

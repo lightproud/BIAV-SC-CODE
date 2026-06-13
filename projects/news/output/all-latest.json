@@ -1,43 +1,37 @@
 {
-  "collected_at": "2026-06-13T06:48:40.201497+00:00",
+  "collected_at": "2026-06-13T09:52:14.646067+00:00",
   "source": "all",
-  "item_count": 192,
+  "item_count": 191,
   "items": [
     {
-      "source": "bilibili",
-      "time": "2026-06-12T06:51:08+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】水母恐怖小连招",
-      "summary": "└ 末空纪蓝 (4赞): 这么强&lt;(ºOº)&gt;\n  └ 卿风难见故人 (3赞): 我们沙耶还是太有操作了[笑哭]\n  └ 当椿奶发生 (1赞): 好有手法[星星眼]",
-      "url": "https://www.bilibili.com/video/BV1CiEC6GEKX",
-      "author": "金发女人丨型",
-      "engagement": 2933,
-      "media_url": "http://i1.hdslb.com/bfs/archive/864b7b283a341b6b9ee90e5a90a5bb0d24291190.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 2917,
-        "comment_count": 16,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
+      "source": "steam",
+      "time": "2026-06-13T07:02:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] nb",
+      "summary": "nb",
+      "url": "https://steamcommunity.com/profiles/76561198739263095/recommended/3052450",
+      "author": "76561198739263095",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "nb",
+      "timestamp_created": 1781334157,
+      "playtime_forever": 515
     },
     {
-      "source": "bilibili",
-      "time": "2026-06-13T04:03:14+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】水母触发侵蚀的效率也太恐怖了",
-      "summary": "└ CYANjane (3赞): 吓哭了，是认知错乱\n  └ 金发女人丨型 (4赞): 一阶段和二阶段的牌序都有问题，差了点伤害没打死。\n不过水母这个侵蚀触发效率还是非常恐怖的\n  └ 露露米米_official (1赞): 入坑半个月，基本上所有资源都拉这一队了，最初只是因为水母很可爱，现在发现玩起来也真的很爽[doge]",
-      "url": "https://www.bilibili.com/video/BV1JMJJ6MEPz",
-      "author": "金发女人丨型",
-      "engagement": 1245,
-      "media_url": "http://i1.hdslb.com/bfs/archive/8f3fcb8327bdf057bd5307a082f8737e8873b281.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1234,
-        "comment_count": 11,
-        "comments_fetched": 3,
-        "danmaku": 1
-      }
+      "source": "steam",
+      "time": "2026-06-13T06:22:09+00:00",
+      "lang": "schinese",
+      "title": "[正面] 只适合零氪和重氪，随便玩玩",
+      "summary": "只适合零氪和重氪，随便玩玩",
+      "url": "https://steamcommunity.com/profiles/76561198242989436/recommended/3052450",
+      "author": "76561198242989436",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "只适合零氪和重氪，随便玩玩",
+      "timestamp_created": 1781331729,
+      "playtime_forever": 1946
     },
     {
       "source": "steam",
@@ -52,7 +46,7 @@
       "voted_up": true,
       "review": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
       "timestamp_created": 1781324273,
-      "playtime_forever": 7396
+      "playtime_forever": 7416
     },
     {
       "source": "steam",
@@ -172,7 +166,7 @@
       "voted_up": true,
       "review": "재밋음.",
       "timestamp_created": 1781277615,
-      "playtime_forever": 5402
+      "playtime_forever": 5552
     },
     {
       "source": "steam",
@@ -202,7 +196,7 @@
       "voted_up": true,
       "review": "Este juego me produce tal desgaste mental que tengo que tomarme un descanso para jugar algo cozy para no caer en la locura, simplemente Disolución. 10/10",
       "timestamp_created": 1781272281,
-      "playtime_forever": 5993
+      "playtime_forever": 6180
     },
     {
       "source": "steam",
@@ -218,21 +212,6 @@
       "review": "好玩",
       "timestamp_created": 1781267783,
       "playtime_forever": 412
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-12T07:47:44+00:00",
-      "lang": "schinese",
-      "title": "[正面] 菲茵特女鹅可爱捏",
-      "summary": "菲茵特女鹅可爱捏",
-      "url": "https://steamcommunity.com/profiles/76561199782256631/recommended/3052450",
-      "author": "76561199782256631",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "菲茵特女鹅可爱捏",
-      "timestamp_created": 1781250464,
-      "playtime_forever": 789
     },
     {
       "source": "discord",
@@ -544,38 +523,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T03:13:18Z",
-      "lang": "",
-      "title": "[Morimens] Content Stream - Just burned my uncle, now making videos Will do account reviews",
-      "summary": "Don't know how long.",
-      "url": "https://www.youtube.com/watch?v=A2BfRzu6G2Y",
-      "author": "Flares117",
-      "engagement": 797,
-      "media_url": "https://i.ytimg.com/vi/A2BfRzu6G2Y/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
       "time": "2026-06-13T02:58:50Z",
       "lang": "",
       "title": "[Morimens] Spreadsheet Update Posse Tier List 2026 and what is meta/why. On stream review.",
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=ZOlqkyhV6cU",
       "author": "Flares117",
-      "engagement": 374,
+      "engagement": 945,
       "media_url": "https://i.ytimg.com/vi/ZOlqkyhV6cU/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-06-12T09:00:23Z",
+      "time": "2026-06-13T03:13:18Z",
       "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨忘却より",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「忘却より」 最後の日々が迫る前、まだ忘却に沈まぬロンディニウム ...",
-      "url": "https://www.youtube.com/watch?v=YwoqnvtUKgg",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 240,
-      "media_url": "https://i.ytimg.com/vi/YwoqnvtUKgg/hqdefault.jpg",
+      "title": "[Morimens] Content Stream - Just burned my uncle, now making videos Will do account reviews",
+      "summary": "Don't know how long.",
+      "url": "https://www.youtube.com/watch?v=A2BfRzu6G2Y",
+      "author": "Flares117",
+      "engagement": 824,
+      "media_url": "https://i.ytimg.com/vi/A2BfRzu6G2Y/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -586,80 +553,8 @@
       "summary": "Review Game morimens menceritakan tentang dunia yang sekarat dan diselimuti bencana Dissolution (Pembubaran). Sebagai ...",
       "url": "https://www.youtube.com/watch?v=g6lXA2avDas",
       "author": "Akari Akabar",
-      "engagement": 193,
+      "engagement": 277,
       "media_url": "https://i.ytimg.com/vi/g6lXA2avDas/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:38Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨塵の旅路は続く",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「塵の旅路は続く」 先駆者はここに倒れ、調査員たちはなお旅を続ける。",
-      "url": "https://www.youtube.com/watch?v=eA38E7j1GV8",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 178,
-      "media_url": "https://i.ytimg.com/vi/eA38E7j1GV8/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:34Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨忘却前夜",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「忘却前夜」 闇夜の足音は探索者の背後を追い続ける—— その影は、かすかな ...",
-      "url": "https://www.youtube.com/watch?v=F_VWhBbhrjc",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 172,
-      "media_url": "https://i.ytimg.com/vi/F_VWhBbhrjc/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:14Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨危機のソナタ",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「危機のソナタ」 異界からの侵略者が、逆三角の印を掲げ、覚醒した世界に死 ...",
-      "url": "https://www.youtube.com/watch?v=Ew0ub1kA0O8",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 158,
-      "media_url": "https://i.ytimg.com/vi/Ew0ub1kA0O8/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:06Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨門を越えて来たる者",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「門を越えて来たる者」 銀色の六翼を持つ使者は存在の門を越え、昏き海に ...",
-      "url": "https://www.youtube.com/watch?v=NjQB1pVtSNU",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 134,
-      "media_url": "https://i.ytimg.com/vi/NjQB1pVtSNU/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:08Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨目覚めし霊",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「目覚めし霊」 シルバーコアに関する研究は、高位なる存在の霊を呼び覚ます ...",
-      "url": "https://www.youtube.com/watch?v=PyN-c4fligY",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 124,
-      "media_url": "https://i.ytimg.com/vi/PyN-c4fligY/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:01Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨雨の鍵塚",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「雨の鍵塚」 ミサゴ大学の教師や学生の過去と未来は、この地に葬られている ...",
-      "url": "https://www.youtube.com/watch?v=tQzAANR1W_I",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 123,
-      "media_url": "https://i.ytimg.com/vi/tQzAANR1W_I/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -670,33 +565,9 @@
       "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ふれんどよければなりましょー！ UID：200148472 まだの ...",
       "url": "https://www.youtube.com/watch?v=eQ_2_xrY0rg",
       "author": "卯咲乃ぬい",
-      "engagement": 92,
+      "engagement": 102,
       "media_url": "https://i.ytimg.com/vi/eQ_2_xrY0rg/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:03Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨存続の望み",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「存続の望み」 存続の理、存続の望みが、シルバーキーの一閃に宿る。 継承者 ...",
-      "url": "https://www.youtube.com/watch?v=1_WwkDjXIW4",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 86,
-      "media_url": "https://i.ytimg.com/vi/1_WwkDjXIW4/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-12T09:00:05Z",
-      "lang": "",
-      "title": "【忘却前夜】OST：門を開く銀の鍵丨霊知の潮流",
-      "summary": "忘却前夜Original Sound Track『門を開く銀の鍵』 「霊知の潮流」 霊知の潮流は太古の余波を運び、シルバーコアに宿る魂は高 ...",
-      "url": "https://www.youtube.com/watch?v=hcH36pG0mJU",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 74,
-      "media_url": "https://i.ytimg.com/vi/hcH36pG0mJU/hqdefault.jpg",
-      "content_type": "image"
+      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -706,8 +577,20 @@
       "summary": "パンディアの強い使い方を考えてみました。 ぜひ試してみてね。",
       "url": "https://www.youtube.com/watch?v=ItRHnaeJDAI",
       "author": "カチコチ",
-      "engagement": 64,
+      "engagement": 82,
       "media_url": "https://i.ytimg.com/vi/ItRHnaeJDAI/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T04:00:34Z",
+      "lang": "",
+      "title": "Realm Study gacha (part 2 out of 3)",
+      "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
+      "url": "https://www.youtube.com/watch?v=GLcPZjPMzWg",
+      "author": "Andrew Giusty",
+      "engagement": 74,
+      "media_url": "https://i.ytimg.com/vi/GLcPZjPMzWg/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -718,7 +601,7 @@
       "summary": "いろんな編成知りたい！ コケたらゴリアテ育てる。",
       "url": "https://www.youtube.com/watch?v=K0w-3a_74To",
       "author": "たこに名前を入力",
-      "engagement": 46,
+      "engagement": 65,
       "media_url": "https://i.ytimg.com/vi/K0w-3a_74To/hqdefault.jpg",
       "content_type": "image"
     },
@@ -730,44 +613,8 @@
       "summary": "7ー3 →ナウティラ♡好き♡可愛い♡ナウティラ♡ナウティラ♡ナウティラ♡♡♡♡♡♡ Twitter(X)→https://x.com/to_m4fuyu.",
       "url": "https://www.youtube.com/watch?v=fTQ4TkTVmaQ",
       "author": "to真冬",
-      "engagement": 37,
+      "engagement": 45,
       "media_url": "https://i.ytimg.com/vi/fTQ4TkTVmaQ/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T04:00:34Z",
-      "lang": "",
-      "title": "Realm Study gacha (part 2 out of 3)",
-      "summary": "Socials: Discord: https://discord.gg/62zTg7jJs2 Twitch: https://www.twitch.tv/andrewgiusty7 X: https://x.com/andrewgiusty7 Vod ...",
-      "url": "https://www.youtube.com/watch?v=GLcPZjPMzWg",
-      "author": "Andrew Giusty",
-      "engagement": 27,
-      "media_url": "https://i.ytimg.com/vi/GLcPZjPMzWg/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T00:16:50Z",
-      "lang": "",
-      "title": "忘卻前夜 Morimens Inverted Rebirth Collab Event - Dining Table Madness",
-      "summary": "This was the thing that was supposed to be uploaded last time but I put up the wrong one lol, still I hope you enjoy!",
-      "url": "https://www.youtube.com/watch?v=FCfFTurYJnU",
-      "author": "Kiro Takahashi",
-      "engagement": 19,
-      "media_url": "https://i.ytimg.com/vi/FCfFTurYJnU/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T05:08:10Z",
-      "lang": "",
-      "title": "Move Over Thais-- It&#39;s Vortice Time! | Morimens",
-      "summary": "Morimens until I'm King of Games TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens.",
-      "url": "https://www.youtube.com/watch?v=OJXEuv4Qajg",
-      "author": "LowLivve",
-      "engagement": 11,
-      "media_url": "https://i.ytimg.com/vi/OJXEuv4Qajg/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -778,8 +625,20 @@
       "summary": "忘卻前夜 #morimens.",
       "url": "https://www.youtube.com/watch?v=FOpheM7ITos",
       "author": "瑪爾",
-      "engagement": 9,
+      "engagement": 17,
       "media_url": "https://i.ytimg.com/vi/FOpheM7ITos/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T05:08:10Z",
+      "lang": "",
+      "title": "Move Over Thais-- It&#39;s Vortice Time! | Morimens",
+      "summary": "Morimens until I'm King of Games TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens.",
+      "url": "https://www.youtube.com/watch?v=OJXEuv4Qajg",
+      "author": "LowLivve",
+      "engagement": 14,
+      "media_url": "https://i.ytimg.com/vi/OJXEuv4Qajg/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -790,32 +649,68 @@
       "summary": "Are we going to be okay... Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
       "url": "https://www.youtube.com/watch?v=5CoSZbHy-Gk",
       "author": "AdagioVT",
-      "engagement": 9,
+      "engagement": 10,
       "media_url": "https://i.ytimg.com/vi/5CoSZbHy-Gk/hqdefault.jpg",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T00:12:45Z",
+      "time": "2026-06-13T08:45:38Z",
       "lang": "",
-      "title": "WAKE UP ITS KUSOGE TIME: Onechanbara Z2 - Morimens Later【Promisu EN】",
-      "summary": "Broadcasted live on Twitch -- Watch live at https://www.twitch.tv/euryaledrift.",
-      "url": "https://www.youtube.com/watch?v=T5DeCzOmVug",
-      "author": "Eury's Twitch VODs",
-      "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/T5DeCzOmVug/hqdefault.jpg",
+      "title": "망각전야 모스 음성 Morimens Vortice Voice",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=oq-WRSE7528",
+      "author": "8i2zed",
+      "engagement": 7,
+      "media_url": "https://i.ytimg.com/vi/oq-WRSE7528/hqdefault.jpg",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T06:29:33Z",
+      "time": "2026-06-13T06:43:22Z",
       "lang": "",
-      "title": "Trying To Get Saya&#39;s Weapon | #darkstar_2551 on #Twitch #morimens",
-      "summary": "shorts #morimens So, I finally got back to summoing in Morimens it's going well so far. https://www.twitch.tv/darkstar_2551.",
-      "url": "https://www.youtube.com/watch?v=-RFkBJlMh7k",
+      "title": "Went For Saya Dupe Got Helot | #darkstar_2551 on #Twitch  #morimens",
+      "summary": "shorts #morimens Good to have another character I supppose. https://www.twitch.tv/darkstar_2551.",
+      "url": "https://www.youtube.com/watch?v=WfjlPBgjnpg",
       "author": "DARKSTAR2551",
-      "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/-RFkBJlMh7k/hqdefault.jpg",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/WfjlPBgjnpg/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T06:32:32Z",
+      "lang": "",
+      "title": "Got Saya&#39;s Wepon Early!!!! | #darkstar_2551 on #Twitch   #morimens",
+      "summary": "shorts #morimens Just like that I got Saya's weapon. https://www.twitch.tv/darkstar_2551.",
+      "url": "https://www.youtube.com/watch?v=RtUCaOw47R0",
+      "author": "DARKSTAR2551",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/RtUCaOw47R0/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T07:52:19Z",
+      "lang": "",
+      "title": "bottom barrel scrapping for cards | Morimens",
+      "summary": "i cant stop discarding, i love discarding and deck reset.",
+      "url": "https://www.youtube.com/watch?v=mvIAqsG2tRc",
+      "author": "Kartoffy",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/mvIAqsG2tRc/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T04:52:25Z",
+      "lang": "",
+      "title": "Chap 9-12 A Long Dream&#39;s End | Morimens | UltraTeam | Tafnibite",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=Zu49K8eBQpQ",
+      "author": "Tafnibite Kar",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/Zu49K8eBQpQ/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -832,38 +727,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T06:43:22Z",
+      "time": "2026-06-13T06:29:33Z",
       "lang": "",
-      "title": "Went For Saya Dupe Got Helot | #darkstar_2551 on #Twitch  #morimens",
-      "summary": "shorts #morimens Good to have another character I supppose. https://www.twitch.tv/darkstar_2551.",
-      "url": "https://www.youtube.com/watch?v=WfjlPBgjnpg",
+      "title": "Trying To Get Saya&#39;s Weapon | #darkstar_2551 on #Twitch #morimens",
+      "summary": "shorts #morimens So, I finally got back to summoing in Morimens it's going well so far. https://www.twitch.tv/darkstar_2551.",
+      "url": "https://www.youtube.com/watch?v=-RFkBJlMh7k",
       "author": "DARKSTAR2551",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/WfjlPBgjnpg/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T06:32:32Z",
-      "lang": "",
-      "title": "Got Saya&#39;s Wepon Early!!!! | #darkstar_2551 on #Twitch   #morimens",
-      "summary": "shorts #morimens Just like that I got Saya's weapon. https://www.twitch.tv/darkstar_2551.",
-      "url": "https://www.youtube.com/watch?v=RtUCaOw47R0",
-      "author": "DARKSTAR2551",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/RtUCaOw47R0/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T04:52:25Z",
-      "lang": "",
-      "title": "Chap 9-12 A Long Dream&#39;s End | Morimens | UltraTeam | Tafnibite",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=Zu49K8eBQpQ",
-      "author": "Tafnibite Kar",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/Zu49K8eBQpQ/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/-RFkBJlMh7k/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -876,6 +747,18 @@
       "author": "vy",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/cYeB2KWvFZg/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T08:28:25Z",
+      "lang": "",
+      "title": "『忘却前夜/対人戦』誰でも編成可能！　限定無しの初心者様向け編成！『ゲーム実況』",
+      "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は初めての、解説アリ動画となっております。 自分もまだ対人戦を ...",
+      "url": "https://www.youtube.com/watch?v=VNFDxiT8Hv0",
+      "author": "薄めの『ゆゆ』",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/VNFDxiT8Hv0/hqdefault_live.jpg",
       "content_type": "image"
     },
     {
@@ -906,14 +789,29 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T14:59:34+00:00",
+      "time": "2026-06-13T06:33:57+00:00",
       "lang": "en",
-      "title": "shut up and take my money",
-      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u3xp16/shut_up_and_take_my_money/",
-      "author": "/u/new_acc256",
+      "title": "Finally got it to 400 (again)",
+      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial A3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
+      "author": "/u/KyuUwUketsuki_05",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/zk0y5ez69v6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6100c7169dba397d1f797b1c47f5475b70d8043d",
+      "media_url": "https://preview.redd.it/2tfgy27vvz6h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=eddcfb48646cb9318f012f8eccb966a96c9af297",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T09:03:14+00:00",
+      "lang": "en",
+      "title": "The difficulty spike is vertical ><",
+      "summary": "New player here just wanted to vent out on the fortress mechanic. Omw to experience chapter 9 really liking the game so far. I even retried and bought out the revives on the store, hopefully I can clear arc 1 today.  &#32; submitted by &#32;  /u/ExaminationExotic489   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4m16u/the_difficulty_spike_is_vertical/",
+      "author": "/u/ExaminationExotic489",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/0k8vlrl1l07h1.png?width=140&amp;height=73&amp;auto=webp&amp;s=c66a719f45d1bc28b9f2e42635c959ea57005505",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -936,14 +834,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T15:49:44+00:00",
+      "time": "2026-06-12T14:59:34+00:00",
       "lang": "en",
-      "title": "Now I realized I dont know how to play the team....",
-      "summary": "&#32; submitted by &#32;  /u/Sorry_Cut907   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u3z389/now_i_realized_i_dont_know_how_to_play_the_team/",
-      "author": "/u/Sorry_Cut907",
+      "title": "shut up and take my money",
+      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3xp16/shut_up_and_take_my_money/",
+      "author": "/u/new_acc256",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/ydeswxj4iv6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7c5f364cac76655e6d546166ac8717b80eabbf72",
+      "media_url": "https://preview.redd.it/zk0y5ez69v6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6100c7169dba397d1f797b1c47f5475b70d8043d",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -966,14 +864,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T13:56:21+00:00",
+      "time": "2026-06-12T15:49:44+00:00",
       "lang": "en",
-      "title": "E12 Saya!",
-      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
-      "author": "/u/Witch_ninety9",
+      "title": "Now I realized I dont know how to play the team....",
+      "summary": "&#32; submitted by &#32;  /u/Sorry_Cut907   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3z389/now_i_realized_i_dont_know_how_to_play_the_team/",
+      "author": "/u/Sorry_Cut907",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/4b5knpywxu6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a396ca7de1b031cff99de8a85eebb3e6429b8bac",
+      "media_url": "https://preview.redd.it/ydeswxj4iv6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7c5f364cac76655e6d546166ac8717b80eabbf72",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -994,15 +892,28 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T13:53:19+00:00",
+      "time": "2026-06-12T13:56:21+00:00",
       "lang": "en",
-      "title": "Only 14 % have cleared the first chapter",
-      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
-      "author": "/u/Plenty_Mushroom_707",
+      "title": "E12 Saya!",
+      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
+      "author": "/u/Witch_ninety9",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/jkl2fcz6xu6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6f3ff73dcbd2be261c3a62c7d8c542c7d36a6d1b",
+      "media_url": "https://preview.redd.it/4b5knpywxu6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a396ca7de1b031cff99de8a85eebb3e6429b8bac",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T07:12:58+00:00",
+      "lang": "en",
+      "title": "How do you get more D Jewel?",
+      "summary": "I&#39;ve look around and still haven&#39;t found where the place to replenish this thing  &#32; submitted by &#32;  /u/MAA_MT   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4k7ag/how_do_you_get_more_d_jewel/",
+      "author": "/u/MAA_MT",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -1024,14 +935,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T18:00:13+00:00",
+      "time": "2026-06-12T13:53:19+00:00",
       "lang": "en",
-      "title": "Is Gnostic Potential worth wasting Pure Cores?",
-      "summary": "Hi I&#39;m new here, I saw Pure Cores are used for awakening and seem very bad deal to use it to upgrade my awakeners with it  &#32; submitted by &#32;  /u/FusionBetween   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u42qy6/is_gnostic_potential_worth_wasting_pure_cores/",
-      "author": "/u/FusionBetween",
+      "title": "Only 14 % have cleared the first chapter",
+      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
+      "author": "/u/Plenty_Mushroom_707",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/f4nqwa2f5w6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d0733dd4ab12e15d067a04c2d8fa268d04a8b60f",
+      "media_url": "https://preview.redd.it/jkl2fcz6xu6h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6f3ff73dcbd2be261c3a62c7d8c542c7d36a6d1b",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -1054,25 +965,27 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T01:01:28+00:00",
+      "time": "2026-06-12T18:00:13+00:00",
       "lang": "en",
-      "title": "Is there a spreadsheet/database with the complete Traphase card catalogue?",
-      "summary": "Hi everyone!   I&#39;m currently looking for a complete catalogue of all the cards in the Traphase PvP mode (「相位對弈」), including all Awakeners (their Exalts and 4-card decks), Wheels of Destiny, and Posses.  I am not looking for meta builds or team tier lists. What I really need is a raw database or a spreadsheet (Excel / Google Sheets) that lists every single item&#39;s Name, Arithmetica Cost, and full Effect description.  Does anyone know if a document like this exists within the Global, Taiwanese, or Chinese communities?  Thanks in advance for any links or info!  &#32; submitted by &#32;  /u/Iozstal   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4d3ee/is_there_a_spreadsheetdatabase_with_the_complete/",
-      "author": "/u/Iozstal",
+      "title": "Is Gnostic Potential worth wasting Pure Cores?",
+      "summary": "Hi I&#39;m new here, I saw Pure Cores are used for awakening and seem very bad deal to use it to upgrade my awakeners with it  &#32; submitted by &#32;  /u/FusionBetween   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u42qy6/is_gnostic_potential_worth_wasting_pure_cores/",
+      "author": "/u/FusionBetween",
       "engagement": 0,
+      "media_url": "https://preview.redd.it/f4nqwa2f5w6h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d0733dd4ab12e15d067a04c2d8fa268d04a8b60f",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T00:56:47+00:00",
+      "time": "2026-06-13T01:01:28+00:00",
       "lang": "en",
-      "title": "How an Omori Collab could work after the saya event",
-      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
-      "author": "/u/Eman7548",
+      "title": "Is there a spreadsheet/database with the complete Traphase card catalogue?",
+      "summary": "Hi everyone!   I&#39;m currently looking for a complete catalogue of all the cards in the Traphase PvP mode (「相位對弈」), including all Awakeners (their Exalts and 4-card decks), Wheels of Destiny, and Posses.  I am not looking for meta builds or team tier lists. What I really need is a raw database or a spreadsheet (Excel / Google Sheets) that lists every single item&#39;s Name, Arithmetica Cost, and full Effect description.  Does anyone know if a document like this exists within the Global, Taiwanese, or Chinese communities?  Thanks in advance for any links or info!  &#32; submitted by &#32;  /u/Iozstal   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4d3ee/is_there_a_spreadsheetdatabase_with_the_complete/",
+      "author": "/u/Iozstal",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -1095,6 +1008,34 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-13T09:43:36+00:00",
+      "lang": "en",
+      "title": "New Player Team advice",
+      "summary": "Started playing yesterday, currently almost finishing chapter 4 Decided to pull for vortice and got her e1 + wheel Currently playing her team like shown on the image and will get her posse tomorrow But i would like to know if the team is fine like this or if there are better options with my current pull shown on the other 2 images   &#32; submitted by &#32;  /u/Constant_Top7183   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4momn/new_player_team_advice/",
+      "author": "/u/Constant_Top7183",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/jhnu7joct07h1.png?width=140&amp;height=74&amp;auto=webp&amp;s=909a9ffe3aacc3edec696db96c34ea3da430d1e1",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T00:56:47+00:00",
+      "lang": "en",
+      "title": "How an Omori Collab could work after the saya event",
+      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
+      "author": "/u/Eman7548",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-13T00:54:31+00:00",
       "lang": "en",
       "title": "Is this a good enough (for now) team for Tawiwi?",
@@ -1110,6 +1051,19 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-13T09:38:10+00:00",
+      "lang": "en",
+      "title": "Got Mouchette and Vortice, now thinking about Moonless Guide and Arachne, may I ask for opinion?",
+      "summary": "So thanks to whoever convinced me to pull Mouchette, I ended up pulling both Mouchette and Vortice. Don&#39;t know if it&#39;s a great idea to pull 2 DPSes, but I&#39;m happy I barely reached pity for either of those and still have lots of pulls left. I wanted to ask some questions for planning ahead (I still don&#39;t have anyone other than these 2, the free units, and Jenkin)  What 4 picks I should take from the Moonless Guide? I was thinking Thais and Horla because apparently they&#39;re great as-is, Ryker because he&#39;s good with Mouchette, Murphy because she&#39;s good with Vortice. Then I won&#39;t be too down if I only pull 1 SSR and it&#39;s not Thais. Is Arachne, who&#39;s coming tomorrow, a good support for either Mouchette and/or Vortice? Just making sure I&#39;m not taking a dangerous unit that can teamkill like GMurphy.  Side question: is there any benefit from hoarding pure cores (maybe some sort of &quot;how many pulls you do&quot; event or stronger characters moved to standard) or is it better to use them immediately (in multiples of 5)?  &#32; submitted by &#32;  /u/firzein   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4mlff/got_mouchette_and_vortice_now_thinking_about/",
+      "author": "/u/firzein",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-12T20:37:23+00:00",
       "lang": "en",
       "title": "I am once again asking for your team building support🙏",
@@ -1119,47 +1073,6 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/z5t0vikgxw6h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=33b39e567941cd333ee8124c8de2436985eb5cdd",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-12T13:31:19+00:00",
-      "lang": "en",
-      "title": "What was the Light ping about?",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u3vdf2/what_was_the_light_ping_about/",
-      "author": "/u/HessianQrow",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T06:33:57+00:00",
-      "lang": "en",
-      "title": "Finally got it to 400 (again)",
-      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial W3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
-      "author": "/u/KyuUwUketsuki_05",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/2tfgy27vvz6h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=eddcfb48646cb9318f012f8eccb966a96c9af297",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-12T16:44:39+00:00",
-      "lang": "en",
-      "title": "Saya Sanga guide - H5-11 final Boss, any D-Tide A5 cleared - Budget",
-      "summary": "&#32; submitted by &#32;  /u/HairDisastrous8348   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u40nn0/saya_sanga_guide_h511_final_boss_any_dtide_a5/",
-      "author": "/u/HairDisastrous8348",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -1186,12 +1099,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T14:59:34+00:00",
+      "time": "2026-06-13T06:33:57+00:00",
       "lang": "en",
-      "title": "shut up and take my money",
-      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3xp16/shut_up_and_take_my_money/",
-      "author": "u//u/new_acc256",
+      "title": "Finally got it to 400 (again)",
+      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial A3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
+      "author": "u//u/KyuUwUketsuki_05",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T09:03:14+00:00",
+      "lang": "en",
+      "title": "The difficulty spike is vertical ><",
+      "summary": "New player here just wanted to vent out on the fortress mechanic. Omw to experience chapter 9 really liking the game so far. I even retried and bought out the revives on the store, hopefully I can clear arc 1 today.  &#32; submitted by &#32;  /u/ExaminationExotic489   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4m16u/the_difficulty_spike_is_vertical/",
+      "author": "u//u/ExaminationExotic489",
       "engagement": 0
     },
     {
@@ -1206,12 +1129,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T15:49:44+00:00",
+      "time": "2026-06-12T14:59:34+00:00",
       "lang": "en",
-      "title": "Now I realized I dont know how to play the team....",
-      "summary": "&#32; submitted by &#32;  /u/Sorry_Cut907   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3z389/now_i_realized_i_dont_know_how_to_play_the_team/",
-      "author": "u//u/Sorry_Cut907",
+      "title": "shut up and take my money",
+      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3xp16/shut_up_and_take_my_money/",
+      "author": "u//u/new_acc256",
       "engagement": 0
     },
     {
@@ -1226,12 +1149,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T13:56:21+00:00",
+      "time": "2026-06-12T15:49:44+00:00",
       "lang": "en",
-      "title": "E12 Saya!",
-      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
-      "author": "u//u/Witch_ninety9",
+      "title": "Now I realized I dont know how to play the team....",
+      "summary": "&#32; submitted by &#32;  /u/Sorry_Cut907   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3z389/now_i_realized_i_dont_know_how_to_play_the_team/",
+      "author": "u//u/Sorry_Cut907",
       "engagement": 0
     },
     {
@@ -1246,12 +1169,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T13:53:19+00:00",
+      "time": "2026-06-12T13:56:21+00:00",
       "lang": "en",
-      "title": "Only 14 % have cleared the first chapter",
-      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
-      "author": "u//u/Plenty_Mushroom_707",
+      "title": "E12 Saya!",
+      "summary": "Hi y’all I just started playing and I I had a lot of rolls also spent like $150. I play CZN a bit, but I love morimens! Add me! Also team recommendations for saya?   &#32; submitted by &#32;  /u/Witch_ninety9   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3vzvx/e12_saya/",
+      "author": "u//u/Witch_ninety9",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T07:12:58+00:00",
+      "lang": "en",
+      "title": "How do you get more D Jewel?",
+      "summary": "I&#39;ve look around and still haven&#39;t found where the place to replenish this thing  &#32; submitted by &#32;  /u/MAA_MT   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4k7ag/how_do_you_get_more_d_jewel/",
+      "author": "u//u/MAA_MT",
       "engagement": 0
     },
     {
@@ -1266,12 +1199,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-12T18:00:13+00:00",
+      "time": "2026-06-12T13:53:19+00:00",
       "lang": "en",
-      "title": "Is Gnostic Potential worth wasting Pure Cores?",
-      "summary": "Hi I&#39;m new here, I saw Pure Cores are used for awakening and seem very bad deal to use it to upgrade my awakeners with it  &#32; submitted by &#32;  /u/FusionBetween   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u42qy6/is_gnostic_potential_worth_wasting_pure_cores/",
-      "author": "u//u/FusionBetween",
+      "title": "Only 14 % have cleared the first chapter",
+      "summary": "I just started and oh man this game is so good . But why do so many people quit without even playing the game properly?  &#32; submitted by &#32;  /u/Plenty_Mushroom_707   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u3vx0p/only_14_have_cleared_the_first_chapter/",
+      "author": "u//u/Plenty_Mushroom_707",
       "engagement": 0
     },
     {
@@ -1286,22 +1219,22 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-12T18:00:13+00:00",
+      "lang": "en",
+      "title": "Is Gnostic Potential worth wasting Pure Cores?",
+      "summary": "Hi I&#39;m new here, I saw Pure Cores are used for awakening and seem very bad deal to use it to upgrade my awakeners with it  &#32; submitted by &#32;  /u/FusionBetween   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u42qy6/is_gnostic_potential_worth_wasting_pure_cores/",
+      "author": "u//u/FusionBetween",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-13T01:01:28+00:00",
       "lang": "en",
       "title": "Is there a spreadsheet/database with the complete Traphase card catalogue?",
       "summary": "Hi everyone!   I&#39;m currently looking for a complete catalogue of all the cards in the Traphase PvP mode (「相位對弈」), including all Awakeners (their Exalts and 4-card decks), Wheels of Destiny, and Posses.  I am not looking for meta builds or team tier lists. What I really need is a raw database or a spreadsheet (Excel / Google Sheets) that lists every single item&#39;s Name, Arithmetica Cost, and full Effect description.  Does anyone know if a document like this exists within the Global, Taiwanese, or Chinese communities?  Thanks in advance for any links or info!  &#32; submitted by &#32;  /u/Iozstal   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1u4d3ee/is_there_a_spreadsheetdatabase_with_the_complete/",
       "author": "u//u/Iozstal",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T00:56:47+00:00",
-      "lang": "en",
-      "title": "How an Omori Collab could work after the saya event",
-      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
-      "author": "u//u/Eman7548",
       "engagement": 0
     },
     {
@@ -1316,6 +1249,26 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-13T09:43:36+00:00",
+      "lang": "en",
+      "title": "New Player Team advice",
+      "summary": "Started playing yesterday, currently almost finishing chapter 4 Decided to pull for vortice and got her e1 + wheel Currently playing her team like shown on the image and will get her posse tomorrow But i would like to know if the team is fine like this or if there are better options with my current pull shown on the other 2 images   &#32; submitted by &#32;  /u/Constant_Top7183   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4momn/new_player_team_advice/",
+      "author": "u//u/Constant_Top7183",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-13T00:56:47+00:00",
+      "lang": "en",
+      "title": "How an Omori Collab could work after the saya event",
+      "summary": "&#32; submitted by &#32;  /u/Eman7548   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4czyi/how_an_omori_collab_could_work_after_the_saya/",
+      "author": "u//u/Eman7548",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-13T00:54:31+00:00",
       "lang": "en",
       "title": "Is this a good enough (for now) team for Tawiwi?",
@@ -1326,42 +1279,22 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-13T09:38:10+00:00",
+      "lang": "en",
+      "title": "Got Mouchette and Vortice, now thinking about Moonless Guide and Arachne, may I ask for opinion?",
+      "summary": "So thanks to whoever convinced me to pull Mouchette, I ended up pulling both Mouchette and Vortice. Don&#39;t know if it&#39;s a great idea to pull 2 DPSes, but I&#39;m happy I barely reached pity for either of those and still have lots of pulls left. I wanted to ask some questions for planning ahead (I still don&#39;t have anyone other than these 2, the free units, and Jenkin)  What 4 picks I should take from the Moonless Guide? I was thinking Thais and Horla because apparently they&#39;re great as-is, Ryker because he&#39;s good with Mouchette, Murphy because she&#39;s good with Vortice. Then I won&#39;t be too down if I only pull 1 SSR and it&#39;s not Thais. Is Arachne, who&#39;s coming tomorrow, a good support for either Mouchette and/or Vortice? Just making sure I&#39;m not taking a dangerous unit that can teamkill like GMurphy.  Side question: is there any benefit from hoarding pure cores (maybe some sort of &quot;how many pulls you do&quot; event or stronger characters moved to standard) or is it better to use them immediately (in multiples of 5)?  &#32; submitted by &#32;  /u/firzein   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4mlff/got_mouchette_and_vortice_now_thinking_about/",
+      "author": "u//u/firzein",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-12T20:37:23+00:00",
       "lang": "en",
       "title": "I am once again asking for your team building support🙏",
       "summary": "Started the game for Saya and honestly have been loving every second of it. I got Saya to +12 (probably a stupid decision but worth it to me) and was wondering the best team I could make. I have the selectors where I can choose a character and their WoD, but don’t know what would be best. I was thinking a poison team, but I’m not sure if that would be my best route right now. Any advice is greatly appreciated!!  &#32; submitted by &#32;  /u/Pikaguy324   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1u46wkr/i_am_once_again_asking_for_your_team_building/",
       "author": "u//u/Pikaguy324",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-12T13:31:19+00:00",
-      "lang": "en",
-      "title": "What was the Light ping about?",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u3vdf2/what_was_the_light_ping_about/",
-      "author": "u//u/HessianQrow",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T06:33:57+00:00",
-      "lang": "en",
-      "title": "Finally got it to 400 (again)",
-      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial W3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
-      "author": "u//u/KyuUwUketsuki_05",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-12T16:44:39+00:00",
-      "lang": "en",
-      "title": "Saya Sanga guide - H5-11 final Boss, any D-Tide A5 cleared - Budget",
-      "summary": "&#32; submitted by &#32;  /u/HairDisastrous8348   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u40nn0/saya_sanga_guide_h511_final_boss_any_dtide_a5/",
-      "author": "u//u/HairDisastrous8348",
       "engagement": 0
     },
     {
@@ -1436,37 +1369,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.102962+00:00",
-      "lang": "zh",
-      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
-      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T06:47:30.116337+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
-      "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
-      "url": "https://m.weibo.cn/status/5272049669112519",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T06:47:30.136357+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T06:47:30.149267+00:00",
+      "time": "2026-06-13T09:51:03.933153+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1476,7 +1379,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.163874+00:00",
+      "time": "2026-06-13T09:51:03.948729+00:00",
+      "lang": "zh",
+      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
+      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-13T09:51:03.963811+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
+      "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
+      "url": "https://m.weibo.cn/status/5272049669112519",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-13T09:51:03.981381+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1486,7 +1409,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.176357+00:00",
+      "time": "2026-06-13T09:51:03.995495+00:00",
       "lang": "zh",
       "title": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
       "summary": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
@@ -1496,7 +1419,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.188923+00:00",
+      "time": "2026-06-13T09:51:04.008307+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-13T09:51:04.020577+00:00",
       "lang": "zh",
       "title": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜",
       "summary": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜与忘却前夜的一张同人图，并不是黑吗喽的角色\n\n我本人从未绘制过任何来自黑吗喽的同人图，也从未游玩过黑吗喽，特此澄清\n\n目前我因谣言被无 ...全文",
@@ -1506,7 +1439,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.204800+00:00",
+      "time": "2026-06-13T09:51:04.037376+00:00",
       "lang": "zh",
       "title": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！",
       "summary": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n👇包括不限于：\n-𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫-前期设计 原画/立绘/表情\n-𝐒𝐭𝐨𝐫𝐲 𝐈𝐥𝐥𝐮 ...全文",
@@ -1526,7 +1459,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.246544+00:00",
+      "time": "2026-06-13T09:51:04.079324+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1556,7 +1489,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.303029+00:00",
+      "time": "2026-06-13T09:51:04.135202+00:00",
       "lang": "zh",
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
@@ -1566,7 +1499,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.315464+00:00",
+      "time": "2026-06-13T09:51:04.147581+00:00",
       "lang": "zh",
       "title": "之前给忘却前夜画的解禁了！！",
       "summary": "之前给忘却前夜画的解禁了！！",
@@ -1576,7 +1509,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.327454+00:00",
+      "time": "2026-06-13T09:51:04.159615+00:00",
       "lang": "zh",
       "title": "忘却前夜#卡波##囚羽骨#\n🧱+🍎祝福家产抽52r，不抽家产的拆逆单推梦女，3.1开\n已开奖网页链接\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n你已同我一起犯下了过错",
       "summary": "忘却前夜#卡波##囚羽骨#\n🧱+🍎祝福家产抽52r，不抽家产的拆逆单推梦女，3.1开\n已开奖网页链接\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n你已同我一起犯下了过错\n一切都业已无可挽回\n无论健康 亦或疾病\n身处同样的噩梦中 永远和你在一起！\n•┈┈┈┈┈┈୨୧┈┈┈┈┈┈•\n\n祝家产 ...全文",
@@ -1586,23 +1519,43 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T06:47:30.343362+00:00",
+      "time": "2026-06-13T09:51:04.175421+00:00",
       "lang": "zh",
-      "title": "代肝提醒\n小代肝注意了，小心黑心团。骗子没人性。骗你加微信入团的，还要交管理费的，大部分是骗子。说时间满多少单会反，其实会找各种借口拖延。价格低到离谱。还有各种",
-      "summary": "代肝提醒\n小代肝注意了，小心黑心团。骗子没人性。骗你加微信入团的，还要交管理费的，大部分是骗子。说时间满多少单会反，其实会找各种借口拖延。价格低到离谱。还有各种相互内卷。你敢相信1600原石3块，沉默成本太高，大家都想把本钱收回来再走。结果又拖延工资。公司白嫖一个月劳动力。我刚刚从黑奴 ...全文",
-      "url": "https://m.weibo.cn/status/5309185317142698",
+      "title": "一堆人在那里觉得夜幕之下会凉，，，忘却前夜这么多年了还没凉呢，立绘pv qq人也都吊打夜幕之下，，但凡夜幕之下自己不跑路不走食物语老路子怎么会凉，，天天吵吵吵的",
+      "summary": "一堆人在那里觉得夜幕之下会凉，，，忘却前夜这么多年了还没凉呢，立绘pv qq人也都吊打夜幕之下，，但凡夜幕之下自己不跑路不走食物语老路子怎么会凉，，天天吵吵吵的，，还是糊点好吧，看5771都凉成那样了根本没人吵架了hhh\n我要安心经验我的大奶生活，，谢谢\n本来玩一下网是来看梗的，没想到被各种喷 ...全文",
+      "url": "https://m.weibo.cn/status/5309403009911928",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-13T09:51:19.170613+00:00",
+      "lang": "",
+      "title": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
+      "summary": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-13T09:51:19.209921+00:00",
+      "lang": "",
+      "title": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（",
+      "summary": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（最后一张是之前给游戏供稿过的画师，这都不信那我也没话可说了）",
+      "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "appstore",
-      "time": "2026-05-23T23:58:45-07:00",
-      "lang": "en",
-      "title": "Hidden gem",
-      "summary": "This game is so goated bro, alongside r1999 and arknights, Morimens deserve to be praised for their free to play friendliness and great lore and art. I hope this game continues to grow ❤️",
-      "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
-      "author": "4Cheeze",
-      "engagement": 5
+      "time": "2026-06-05T03:05:58-07:00",
+      "lang": "id",
+      "title": "Nice character design!",
+      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews",
+      "author": "Milesiya",
+      "engagement": 4
     },
     {
       "source": "google_play",
@@ -2116,6 +2069,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-06-13T09:51:06.749948+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-05-18T05:48:27+09:00",
       "lang": "",
       "title": "What if Keeper was a YouTuber",
@@ -2320,6 +2283,16 @@
     },
     {
       "source": "ruliweb",
+      "time": "2026-06-13T09:51:10.411547+00:00",
+      "lang": "ko",
+      "title": "11년인가 험블번들 생겼을때부터 조금씩 지르다가 쌓인 스팀키(스압주의)",
+      "summary": "10 Second Ninja100% Orange Juice100% Orange Juice Syura &amp; Nanako C...",
+      "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75551999",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "ruliweb",
       "time": "2026-05-28T15:00:00+00:00",
       "lang": "ko",
       "title": "[스타2] (임시 번역)스타크래프트 II 5.0.16 PTR 패치 노트",
@@ -2330,7 +2303,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-06-13T06:47:35.480607+00:00",
+      "time": "2026-06-13T09:51:10.703314+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -2344,7 +2317,7 @@
       "lang": "zh",
       "title": "[微信] 【忘却前夜*沙耶之歌】活动开奖┊V2.5.1 概念PV「悠久漂泊之歌」",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDXZq6Y44-xyCThicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdClOW0Wz-eJgyMz0CjiKoSqNPJyoFr_C-9Nk_nhlLdSTIS9CPp49tbzCqUZ2-LALcN2ldUuUM2VCht6Hr67Ubi7qZcDO-E5QuxRqUP_CI4YjGbXT2fGVN1X0NGbbB75bUeA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=7BCAB058EDEB1F392D2B7930DBD312CD2D5A5E566A2CFD08",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDSUIlSd3qZK8ID0OwjfTZfVqXa8Fplpd9mYl9nhYFmMvL16NCJtHvyt2OnxTKITeUFVgXpgOBFKVe4CfyzNH99ALCf3_QD70fF4P7TRtwTEmRGv8XHsSKm_FN0H0PyC0mMPcUYfizoiW-kbP2a4Ux4vVyHnRGRjsR33-z3bRLdfhm6IfElYCsTer_plKpg-GKdInNbYibhKujotuuiAmOIg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=7CA9CA0175AB36A29790C2881F112BEE97C8E90F6A2D280F",
       "author": "",
       "engagement": 0
     },
@@ -2354,7 +2327,7 @@
       "lang": "zh",
       "title": "[微信] 【忘却前夜*沙耶之歌】活动开奖┊V2.5.1 概念PV「悠久漂泊之歌」",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDBxxAU84BLg-Thicwo74G0FqXa8Fplpd9sOzk2xvD3L97FN-Sg1lfYAX0_aQc4EqOqr74cb1i-rtzFhMFZ2gdClOW0Wz-eJgyMz0CjiKoSqNPJyoFr_C-9A-Q29469SaUopeA3pl3rgwv7AvuDwWciktvIbxX6qL8pSjzQ9SNUf9dJl2Qfc4T9SElQIZIzUv5so7tB8fLjQktPujwwRB2Pw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=7BCAB93A1F18ECCADED88AC226C80477DF3220DE6A2CFD0A",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDI25gfzxI6bsID0OwjfTZfVqXa8Fplpd9mYl9nhYFmMvL16NCJtHvyt2OnxTKITeUFVgXpgOBFKVe4CfyzNH99ALCf3_QD70fF4P7TRtwTEmRGv8XHsSKm_PPtw5lD07qSt4C_7jpawIvlgRsE_YURiI2T7sT8wGm5wOf9-yYqoMyKehW0PNiAkYzL0Xt4JHiHZit9jacyOh6VKrzu_4XKA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=7CA9D231C9178B1E2B2D7E35A3B1BE432BB6CCD86A2D2810",
       "author": "",
       "engagement": 0
     }
