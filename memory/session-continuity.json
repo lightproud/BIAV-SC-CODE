@@ -1,17 +1,27 @@
 {
   "last_session": {
-    "id": "59f9205f",
-    "timestamp": "2026-06-12T21:04:53.921000+00:00",
-    "duration_minutes": 0.2,
-    "branch": "main",
-    "topics": [
-      "做梦Agent"
-    ],
+    "id": "d062dc8f",
+    "timestamp": "2026-06-13T12:13:36.642000+00:00",
+    "duration_minutes": 1.5,
+    "branch": "claude/pr-202-review-2m867w",
+    "topics": [],
     "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "59f9205f",
+      "timestamp": "2026-06-12T21:04:53.921000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "main",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "0c9fbbf3",
       "timestamp": "2026-06-11T21:20:29.038000+00:00",
@@ -132,32 +142,18 @@
       ],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "b3870dea",
-      "timestamp": "2026-06-09T23:12:09.856000+00:00",
-      "duration_minutes": 22.1,
-      "branch": "claude/claude-md-docs-ta7stm",
-      "topics": [
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 1.92,
-      "BPT": 1.38,
-      "MCP": 1.21,
-      "GitHub": 1.0,
-      "Wiki": 0.42
+      "做梦Agent": 1.54,
+      "BPT": 1.1,
+      "MCP": 0.97,
+      "GitHub": 0.8,
+      "Wiki": 0.34
     },
     "hot_files": [],
-    "total_sessions": 149
+    "total_sessions": 150
   },
-  "updated_at": "2026-06-12T21:04:54.221789+00:00"
+  "updated_at": "2026-06-13T12:16:38.933087+00:00"
 }
