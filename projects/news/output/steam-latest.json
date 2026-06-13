@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-13T17:11:51.045563+00:00",
+  "collected_at": "2026-06-13T19:08:46.005799+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "Absolutely amazing writing and story, it's very player-friendly and has very generous rewards, specially for a ''gacha'' game, stunning art, and fantastic gameplay to boot!. If you are reading this in the store page: INTALL IT. PLAY IT. NOW!!",
       "timestamp_created": 1781364552,
-      "playtime_forever": 1500
+      "playtime_forever": 1560
     },
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "내가 좋아하는 세계관에 캐릭터도 예쁘고 매력적이라 좋음\r\n스토리도 만족스러움",
       "timestamp_created": 1781361784,
-      "playtime_forever": 2373
+      "playtime_forever": 2499
     },
     {
       "source": "steam",
@@ -121,7 +121,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1781334157,
-      "playtime_forever": 676
+      "playtime_forever": 684
     },
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "只适合零氪和重氪，随便玩玩",
       "timestamp_created": 1781331729,
-      "playtime_forever": 2006
+      "playtime_forever": 2026
     },
     {
       "source": "steam",
@@ -226,22 +226,7 @@
       "voted_up": true,
       "review": "Spectacular. Morimens is a dream made true: a roguelite deckbuilder with gorgeous art, eerie music, and a memorable story. It's everything I ever wanted - the characters look fantastic, the vibes are peak, and the translation of the main storyline has improved dramatically over the years.\r\n\r\nThe most generous gachapon game you'll play... and something you'll always remember if you see it through, whether you experienced it entirely for free or paid for extra characters.\r\n\r\nGive it a try!",
       "timestamp_created": 1781292898,
-      "playtime_forever": 2688
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-12T17:32:31+00:00",
-      "lang": "english",
-      "title": "[负面] So convuluted and you are expected to go through u...",
-      "summary": "So convuluted and you are expected to go through university level courses just to understand the game. When the beginner handbook is 130 pages long this stops being a game",
-      "url": "https://steamcommunity.com/profiles/76561199486921782/recommended/3052450",
-      "author": "76561199486921782",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "So convuluted and you are expected to go through university level courses just to understand the game. When the beginner handbook is 130 pages long this stops being a game",
-      "timestamp_created": 1781285551,
-      "playtime_forever": 197
+      "playtime_forever": 2808
     }
   ]
 }
