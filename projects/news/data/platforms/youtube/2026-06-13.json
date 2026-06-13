@@ -1,8 +1,8 @@
 {
   "date": "2026-06-13",
-  "archived_at": "2026-06-13T11:48:24.586294+00:00",
+  "archived_at": "2026-06-13T13:25:04.934996+00:00",
   "source": "youtube",
-  "item_count": 32,
+  "item_count": 36,
   "items": [
     {
       "title": "[Morimens] Spreadsheet Update Posse Tier List 2026 and what is meta/why. On stream review.",
@@ -125,6 +125,21 @@
       "content_type": "video"
     },
     {
+      "title": "[Morimens] Vortice Comp Commentary D-Tide 6-13-26 W2A5",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-13T11:53:06Z",
+      "url": "https://www.youtube.com/watch?v=MPLPYlGcND0",
+      "engagement": 21,
+      "is_hot": false,
+      "author": "Zyocuh",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/MPLPYlGcND0/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "More Morimens",
       "summary": "",
       "source": "youtube",
@@ -240,6 +255,36 @@
       "author": "Noir",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/HSeQWQdmpcw/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] Mouchette Comp Commentary D-Tide 6-13-26 W2A5",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-13T13:04:26Z",
+      "url": "https://www.youtube.com/watch?v=v3TJo7AfoUw",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "Zyocuh",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/v3TJo7AfoUw/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Saturday gatcha and more (Vert)",
+      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "source": "youtube",
+      "time": "2026-06-13T12:17:12Z",
+      "url": "https://www.youtube.com/watch?v=ca9gexLCep0",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "mankonren",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/ca9gexLCep0/hqdefault_live.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -480,6 +525,21 @@
       "author": "Noir",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/Eca6dBKyuTc/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Saturday gatcha and more",
+      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "source": "youtube",
+      "time": "2026-06-13T12:17:06Z",
+      "url": "https://www.youtube.com/watch?v=_x3fTijxlUw",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "mankonren",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/_x3fTijxlUw/hqdefault_live.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"

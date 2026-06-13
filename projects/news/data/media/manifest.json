@@ -10674,6 +10674,41 @@
       "title": "#忘卻前夜 #morimens 星辰篇H5-5",
       "time": "2026-06-13T10:00:16Z",
       "downloaded_at": "2026-06-13T11:48:24.497429+00:00"
+    },
+    "https://i.ytimg.com/vi/MPLPYlGcND0/hqdefault.jpg": {
+      "filename": "youtube_636bd1eadf8a9136.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Vortice Comp Commentary D-Tide 6-13-26 W2A5",
+      "time": "2026-06-13T11:53:06Z",
+      "downloaded_at": "2026-06-13T13:25:00.518382+00:00"
+    },
+    "https://i.ytimg.com/vi/VNFDxiT8Hv0/hqdefault.jpg": {
+      "filename": "youtube_b11e766acc5ec1ea.jpg",
+      "source": "youtube",
+      "title": "『忘却前夜/対人戦』誰でも編成可能！　限定無しの初心者様向け編成！『ゲーム実況』",
+      "time": "2026-06-13T12:15:06Z",
+      "downloaded_at": "2026-06-13T13:25:00.966747+00:00"
+    },
+    "https://i.ytimg.com/vi/v3TJo7AfoUw/hqdefault.jpg": {
+      "filename": "youtube_56c27393ba08f7b9.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Mouchette Comp Commentary D-Tide 6-13-26 W2A5",
+      "time": "2026-06-13T13:04:26Z",
+      "downloaded_at": "2026-06-13T13:25:01.377173+00:00"
+    },
+    "https://i.ytimg.com/vi/ca9gexLCep0/hqdefault_live.jpg": {
+      "filename": "youtube_a349858af5635674.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more (Vert)",
+      "time": "2026-06-13T12:17:12Z",
+      "downloaded_at": "2026-06-13T13:25:02.383460+00:00"
+    },
+    "https://i.ytimg.com/vi/_x3fTijxlUw/hqdefault_live.jpg": {
+      "filename": "youtube_ddc3e80ba60657a6.jpg",
+      "source": "youtube",
+      "title": "Saturday gatcha and more",
+      "time": "2026-06-13T12:17:06Z",
+      "downloaded_at": "2026-06-13T13:25:04.848032+00:00"
     }
   },
   "failed": {
@@ -15971,6 +16006,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-13T11:48:23.116831+00:00"
+    },
+    "https://preview.redd.it/utpzb9x5r17h1.png?width=140&amp;height=70&amp;auto=webp&amp;s=29b7ab80fa4f5e5d0890c48c78840d335663aac6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T13:25:02.941424+00:00"
+    },
+    "https://preview.redd.it/6qn3tpfxv17h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=49f69593fb12d7f464f4f2cd8e7b4ffd580da0ee": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T13:25:03.317090+00:00"
+    },
+    "https://preview.redd.it/l04v8gbyk17h1.png?width=140&amp;height=100&amp;auto=webp&amp;s=3f685bddcbc61b65756e5ba5c78951a24b2528b8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T13:25:03.696124+00:00"
+    },
+    "https://preview.redd.it/yjszynvll17h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=c820dfcca8150544c82cd23e790d48e5f03f515c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-13T13:25:04.072570+00:00"
     }
   },
   "archived": []

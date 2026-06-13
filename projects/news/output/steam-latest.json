@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-13T11:48:20.714987+00:00",
+  "collected_at": "2026-06-13T13:24:59.804432+00:00",
   "source": "steam",
   "item_count": 16,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-13T12:07:38+00:00",
+      "lang": "schinese",
+      "title": "[负面] 校猫你妈死了",
+      "summary": "校猫你妈死了",
+      "url": "https://steamcommunity.com/profiles/76561198323671815/recommended/3052450",
+      "author": "76561198323671815",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "校猫你妈死了",
+      "timestamp_created": 1781352458,
+      "playtime_forever": 3392
+    },
     {
       "source": "steam",
       "time": "2026-06-13T10:24:11+00:00",
@@ -196,7 +211,7 @@
       "voted_up": true,
       "review": "재밋음.",
       "timestamp_created": 1781277615,
-      "playtime_forever": 5732
+      "playtime_forever": 5822
     },
     {
       "source": "steam",
@@ -211,7 +226,7 @@
       "voted_up": true,
       "review": "Sayaaaaaaaa",
       "timestamp_created": 1781277028,
-      "playtime_forever": 705
+      "playtime_forever": 714
     },
     {
       "source": "steam",
@@ -227,21 +242,6 @@
       "review": "Este juego me produce tal desgaste mental que tengo que tomarme un descanso para jugar algo cozy para no caer en la locura, simplemente Disolución. 10/10",
       "timestamp_created": 1781272281,
       "playtime_forever": 6180
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-12T12:36:23+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561198778209785/recommended/3052450",
-      "author": "76561198778209785",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1781267783,
-      "playtime_forever": 419
     }
   ]
 }
