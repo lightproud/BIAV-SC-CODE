@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-12T23:08:41.060871+00:00",
+  "collected_at": "2026-06-13T02:12:06.302153+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,33 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-12T00:47:18+00:00",
+      "time": "2026-06-13T01:05:05+00:00",
       "lang": "english",
-      "title": "[正面] Well crafted and enjoyable character & deckbuildin...",
-      "summary": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
-      "url": "https://steamcommunity.com/profiles/76561198049605642/recommended/3052450",
-      "author": "76561198049605642",
-      "engagement": 1,
+      "title": "[正面] Finished the first chapter, love it so far.",
+      "summary": "Finished the first chapter, love it so far.",
+      "url": "https://steamcommunity.com/profiles/76561199866562525/recommended/3052450",
+      "author": "76561199866562525",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Well crafted and enjoyable character & deckbuilding roguelite that hits every mark. High quality art and music, with a fantastic Lovecraft-inspired story. Card games rarely draw me in mechanically, but check my hours to see how that went this time. \n\nMost of the game has a proper English translation now, so it's even more accessible. It will be fully translated sometime this year. Despite being a gacha game, it may even convince people who hate gacha due to the high rates on acquiring characters as well as the endless sea of currency you're given.\n\n9.2/10",
-      "timestamp_created": 1781225238,
-      "playtime_forever": 15760
+      "review": "Finished the first chapter, love it so far.",
+      "timestamp_created": 1781312705,
+      "playtime_forever": 563
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-13T00:08:19+00:00",
+      "lang": "english",
+      "title": "[负面] Are you convicted of VN larping and impulsive gamb...",
+      "summary": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
+      "url": "https://steamcommunity.com/profiles/76561198873800932/recommended/3052450",
+      "author": "76561198873800932",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
+      "timestamp_created": 1781309299,
+      "playtime_forever": 416
     },
     {
       "source": "steam",
@@ -121,7 +136,7 @@
       "voted_up": true,
       "review": "Sayaaaaaaaa",
       "timestamp_created": 1781277028,
-      "playtime_forever": 631
+      "playtime_forever": 705
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "Este juego me produce tal desgaste mental que tengo que tomarme un descanso para jugar algo cozy para no caer en la locura, simplemente Disolución. 10/10",
       "timestamp_created": 1781272281,
-      "playtime_forever": 5691
+      "playtime_forever": 5871
     },
     {
       "source": "steam",
@@ -166,7 +181,7 @@
       "voted_up": true,
       "review": "菲茵特女鹅可爱捏",
       "timestamp_created": 1781250464,
-      "playtime_forever": 773
+      "playtime_forever": 789
     },
     {
       "source": "steam",
@@ -196,7 +211,7 @@
       "voted_up": true,
       "review": "I like the story. Good game.",
       "timestamp_created": 1781232911,
-      "playtime_forever": 436
+      "playtime_forever": 466
     }
   ]
 }
