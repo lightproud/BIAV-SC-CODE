@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T09:52:17.698194+00:00",
+  "updated_at": "2026-06-13T11:48:25.086843+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -18,7 +18,7 @@
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 1057,
+      "total_items": 1059,
       "errors": []
     },
     "taptap": {
@@ -39,14 +39,14 @@
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 1967,
+      "total_items": 1973,
       "errors": []
     },
     "reddit": {
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 2763,
+      "total_items": 2773,
       "errors": []
     },
     "nga": {
@@ -74,7 +74,7 @@
       "level": "active",
       "last_success_date": "2026-06-13",
       "consecutive_silent_days": 0,
-      "total_items": 6484,
+      "total_items": 6495,
       "errors": []
     },
     "zhihu": {
@@ -114,9 +114,9 @@
     },
     "appstore": {
       "level": "active",
-      "last_success_date": "2026-06-09",
-      "consecutive_silent_days": 4,
-      "total_items": 434,
+      "last_success_date": "2026-06-12",
+      "consecutive_silent_days": 1,
+      "total_items": 435,
       "errors": []
     },
     "google_play": {
@@ -165,7 +165,7 @@
       "level": "active",
       "last_success_date": "2026-06-12",
       "consecutive_silent_days": 1,
-      "total_items": 2638,
+      "total_items": 2658,
       "errors": []
     }
   }
