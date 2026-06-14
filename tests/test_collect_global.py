@@ -182,6 +182,18 @@ class TestFailureAggregation(unittest.TestCase):
         self.assertEqual(core_failures, [])
         self.assertEqual(len(items), 1)
 
+    def test_core_empty_not_hard_failure(self):
+        # 设计决策：核心源「静默吐 0」只告警（WARNING）+ 健康层降级，不进 core_failures。
+        # 部分核心源（如 taptap）本就低频长期 0，硬失败会让管线永久非零退出。
+        # 仅「抛异常」的核心源才进 core_failures（见 test_core_failure_recorded）。
+        self._patch_fetchers({
+            "Reddit": lambda: [_item("r", "https://r/1")],
+            # Bilibili / TapTap / NGA 等核心源默认返回 []（空）→ 只告警，不入 core_failures
+        })
+        items, core_failures = collect_global.run_zero_cost_collectors()
+        self.assertEqual(core_failures, [])
+        self.assertEqual(len(items), 1)
+
     def test_merge_order_deterministic(self):
         # Concurrent collection must merge in a stable, engagement-sorted order
         # regardless of which thread finishes first.

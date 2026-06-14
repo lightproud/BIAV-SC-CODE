@@ -76,6 +76,18 @@ CORE_SOURCES = [
     'steam', 'official', 'youtube', 'discord',
 ]
 
+# 需登录态 cookie / API key 才能采集的源 → 所需环境变量名（单一真相源）。
+# 未配置对应 secret 时：该源 0 产出属预期降级（标注「待配」，不计采集故障）；
+# 已配置 secret 仍 0 产出：才视为真故障。collect_global 据此区分「待配 cookie」与「核心源静默失败」。
+AUTH_GATED = {
+    'nga': 'NGA_COOKIE',
+    'zhihu': 'ZHIHU_COOKIE',
+    'naver_cafe': 'NAVER_COOKIE',
+    'youtube': 'YOUTUBE_API_KEY',
+    'discord': 'DISCORD_BOT_TOKEN',
+    'telegram': 'TELEGRAM_CHANNELS',
+}
+
 # Discord 有独立归档器（discord_archiver.py），不走 archive_platforms 的按日归档
 ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 
