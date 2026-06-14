@@ -147,6 +147,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `assets/data/interview-2026-04.json` | 53 问制作人深度采访（Light + 主文案霁月） |
 | `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 |
 | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 |
+| `assets/data/card-system.json` | 卡牌系统术语（指令卡等，解包字面验证） |
 | `projects/wiki/data/db/characters.json` | 72 角色基线（自举进度见 `memory/project-status.md`） |
 | `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色原始字段（客户端解包，自举数据源） |
 | `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
@@ -241,7 +242,8 @@ brain-in-a-vat/
 ### §8.2 CI 自动化（`.github/workflows/`，按职能分组）
 
 - **采集类**：新闻 / Discord / 视频评论 / 同人图的定时采集与回填（`update-news` /
-  `daily-report`（日报 3 源）/ `discord-*` / `backfill-*` / `collect-*` / `recover-*`）
+  `discord-*` / `backfill-*` / `collect-*` / `recover-*`）。日报定时已停用，报告改在
+  Claude Code 会话内订阅生成（详见 `memory/project-status.md`）
 - **做梦 Agent**：`dream`（哨兵 + 做梦三层）
 - **数据类**：wiki 数据抓取 / 游戏解包 / 数据校验 / 版本检测（`fetch-*` / `extract-*` /
   `validate-data` / `check-version`）
