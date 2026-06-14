@@ -88,7 +88,6 @@ BACKFILL_PLATFORMS = [
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。
 # 不再产出新数据，仅供审计可见（避免被静默源审计无视）。
 LEGACY_SOURCES = [
-    'dcinside',
     'gamerch',
     'miraheze_wiki',
     'taptap_post',

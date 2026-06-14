@@ -189,7 +189,6 @@ jobs:
               ('Douyin', c.fetch_douyin),
               ('Tieba', c.fetch_tieba),
               ('Naver Cafe', c.fetch_naver_cafe),
-              ('DCInside', c.fetch_dcinside),
               ('Arca.live', c.fetch_arca_live),
               ('Discord', c.fetch_discord),
               ('Facebook', c.fetch_facebook),
