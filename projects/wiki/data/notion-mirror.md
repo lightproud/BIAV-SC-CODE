@@ -3,12 +3,17 @@
 银芯解包数据 → Notion 结构化镜像的对接索引，供后续 AI 系统调用与增量同步。
 本档只记录「写到 Notion 的什么」与「源在仓库的哪里」，不复刻数据本体。
 
+**数据纪律**：Notion 镜像只收录**客户端解包所得的真实数据**。衍生/占位（fixture）
+数据不入 Notion（守密人 2026-06-14 裁定）。
+
 ## 数据库一览
 
 | Notion 数据库 | database_id | data_source_id | 条目 | 仓库数据源 |
 |---|---|---|---|---|
 | Morimens 角色配置(解包真实数据 · 72) | `dc29b0f7-f41c-40ed-b0f2-970196f6b504` | `40d3b7f4-c44b-42c3-89e2-fe92c1a28b12` | 72 唤醒体 | `projects/wiki/data/processed/characters.json` |
-| Morimens 界域配置(解包真实数据 · 4) | `b14af361-9953-4ebd-a387-a236e5a533c6` | `6037ffd8-d0fb-4238-969f-c990f3c2a13b` | 4 界域 | `projects/wiki/data/db/realms.json` |
+
+数据源 `processed/characters.json` 为客户端 `AwakerConfig.lua` 运行时内存解包
+（`_meta.total_characters = 72`，2026-04-25 生成），属真实解包数据。
 
 ## 角色库本次增补（2026-06-14）
 
@@ -25,11 +30,14 @@
 角色名 ↔ Notion page_id 映射见 `notion_character_page_map.json`（按解包 ID 键控，
 已对同名页「詹金」15578/15593、「熟悉的黑猫」78840/78841 经 ID 属性消歧）。
 
-## 界域库字段采信
+## 已撤销项
 
-`界域ID / 界域 / 英文名 / 主题色 / 核心机制 / 纯色共鸣` 为公开可查阅事实
-（来源 `memory/morimens-context.md` 界域系统）；`难度(fixture)` 与部分纯色共鸣
-细节为 fixture 占位，页内已标注，不得当正典引用（遵 realms.json 同款约定）。
+- **界域库（4 界域）**：曾于本次建立，后经守密人裁定撤销并移入 Notion 回收站
+  —— 其源 `realms.json` 多为 fixture 占位 + 衍生知识，非客户端解包真实数据，
+  不符 Notion 镜像「只收解包真实数据」纪律。
+- **`db/characters.json`（24 条草稿）**：已从仓库删除 —— 该文件为早期手工策展草稿
+  （1 fixture + 23 partial，技能多 pending），既非完整也非解包源；权威角色源为
+  `processed/characters.json`（72）。
 
 ## 已知遗留（非本次范围）
 
