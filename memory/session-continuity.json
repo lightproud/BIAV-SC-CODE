@@ -1,8 +1,8 @@
 {
   "last_session": {
     "id": "f16d8ec6",
-    "timestamp": "2026-06-14T07:28:04.766000+00:00",
-    "duration_minutes": 87.9,
+    "timestamp": "2026-06-14T07:37:52.523000+00:00",
+    "duration_minutes": 97.7,
     "branch": "claude/claude-md-docs-n7fsp1",
     "topics": [
       "MCP",
@@ -18,6 +18,24 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "f16d8ec6",
+      "timestamp": "2026-06-14T07:28:04.766000+00:00",
+      "duration_minutes": 87.9,
+      "branch": "claude/claude-md-docs-n7fsp1",
+      "topics": [
+        "MCP",
+        "日报"
+      ],
+      "decisions": [
+        "外科手术式修正点"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/test.yml",
+        "/home/user/brain-in-a-vat/CLAUDE.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "f16d8ec6",
       "timestamp": "2026-06-14T07:14:41.309000+00:00",
@@ -124,37 +142,21 @@
       "decisions": [],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "d384f7cb",
-      "timestamp": "2026-06-10T21:35:48.017000+00:00",
-      "duration_minutes": 10503.1,
-      "branch": "claude/kind-meitner-xyX97",
-      "topics": [],
-      "decisions": [
-        "规定如何落盘。按守密人硬约束（§6.1 动手前先想），先报告排查结果"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/news/GLOBAL_COLLECTION_SPEC.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "MCP": 2.76,
-      "日报": 2.44,
-      "做梦Agent": 0.91,
-      "GitHub": 0.78,
-      "BPT": 0.36,
-      "Wiki": 0.11
+      "MCP": 3.21,
+      "日报": 2.95,
+      "做梦Agent": 0.73,
+      "GitHub": 0.62,
+      "BPT": 0.29
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/.github/workflows/test.yml"
     ],
-    "total_sessions": 155
+    "total_sessions": 156
   },
-  "updated_at": "2026-06-14T07:28:04.889638+00:00"
+  "updated_at": "2026-06-14T07:37:52.642938+00:00"
 }
