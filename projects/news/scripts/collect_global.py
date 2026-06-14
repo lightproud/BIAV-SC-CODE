@@ -34,8 +34,9 @@ RAW_OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news-raw.json'
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
-# Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
-CORE_SOURCES = {'bilibili', 'reddit', 'nga', 'taptap'}
+# 核心源 + 需 secret 的源元数据统一取自 sources.py（单一真相源，杜绝硬编码漂移）。
+# 核心源失败（含静默吐 0）须以非零退出暴露（§4.2 R1：任一核心源失败即整次失败）。
+from sources import CORE_SOURCES, AUTH_GATED
 
 
 # ── Source mapping: collector source names → aggregator source names ──
@@ -249,11 +250,27 @@ def run_zero_cost_collectors() -> list[dict]:
             items.extend(result)
             succeeded.append((name, len(result)))
             logger.info(f"  {name}: +{len(result)} items")
+            if tracker:
+                tracker.update_platform_status(source_id, len(result))
         else:
             empty.append(name)
-            logger.info(f"  · {name}: 0 items")
-        if tracker:
-            tracker.update_platform_status(source_id, len(result))
+            gate_env = AUTH_GATED.get(source_id)
+            if gate_env and not os.environ.get(gate_env):
+                # 优雅降级：需 cookie/key 的源未配置 secret → 预期 0 产出，标注待配，不计采集故障
+                logger.info(f"  · {name}: 0 items (待配 {gate_env}，已降级)")
+                if tracker:
+                    tracker.update_platform_status(source_id, 0, note=f"待配 {gate_env}")
+            else:
+                # 核心源静默吐 0：从 INFO 提升为 WARNING，不再悄悄溜过（§4.2 R1 告警）。
+                # 不做硬失败：部分核心源（如 taptap）本就低频，0 产出不应阻断管线；
+                # 持久信号交由健康层按 consecutive_silent_days 自动 degraded/dormant。
+                # 硬失败（非零退出）仍只保留给抛异常的核心源（见 core_failures 主路径）。
+                if source_id in CORE_SOURCES:
+                    logger.warning(f"  {name}: CORE source 0 items — 已告警，健康层据连续沉默天数降级 (§4.2 R1)")
+                else:
+                    logger.info(f"  · {name}: 0 items")
+                if tracker:
+                    tracker.update_platform_status(source_id, 0)
 
     # Diagnostic summary
     logger.info("=== 采集诊断 ===")
