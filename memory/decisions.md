@@ -28,7 +28,8 @@
 | 建立交付物视觉规范 style-guide.md | 全局 |
 | 引入 lessons-learned 踩坑记录 | 全局 |
 | 引入 Plan/Execute 任务标注约定（未标注默认「直接执行」） | 全局 |
-| 记忆定位收回平台原生（2026-06-14）：记忆 = CLAUDE.md + `memory/*.md` 人工策展层，连续性承平台原生上下文管理；退役自造的会话蒸馏/语义召回/做梦自动环（删 inject/watch/distill 三钩子 + dream workflow + 102MB digests/vectors 存量），仅保留 SessionStart 同步钩子 | 全局 |
+| 记忆定位收回平台原生（2026-06-14）：记忆 = CLAUDE.md + `memory/*.md` 人工策展层，连续性承平台原生上下文管理；退役自造的会话蒸馏/语义召回/做梦自动环（删 inject/watch/distill 三钩子 + dream workflow + 102MB digests/vectors 存量），暂留 SessionStart 同步钩子（同日晚些时候亦退役，见下条） | 全局 |
+| **全部自定义钩子退役**（2026-06-14）：守密人裁定最后保留的 SessionStart 钩子 `session-start-sync.sh` 也退役（删脚本 + 清空 `.claude/settings.json` 的 hooks）。退役理由：长寿命云容器下每次开工都对严重分叉的本地 main 做硬重置 + 备份 ref，体感烦扰且 backup ref 从不清理。代价：lesson #28（HTTP 413 推送堵塞）防护改为按需手动 `git fetch origin main` 后对齐。至此仓库无任何自定义会话钩子 | 全局 |
 | 创建 .claude/commands/ 可复用工作流 | 全局 |
 | 各 CONTEXT.md 添加验证清单 | 全局 |
 | 引入 Claude Code GitHub Actions（Issue 驱动自动化） | 全局 |
