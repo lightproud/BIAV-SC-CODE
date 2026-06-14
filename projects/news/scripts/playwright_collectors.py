@@ -39,95 +39,6 @@ def _parse_relative_time(text: str) -> tuple[str, bool]:
     return news_common.parse_relative_time(text)
 
 
-def fetch_nga_playwright() -> List[Dict]:
-    """
-    Fetch NGA forum posts for Morimens.
-    Tested: Page loads with 51 topicrow elements.
-    Structure: TD[0]=replies, TD[1]=title, TD[2]=post_time, TD[3]=last_reply
-    """
-    items = []
-    
-    try:
-        from playwright.sync_api import sync_playwright
-        
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            page.set_default_timeout(TIMEOUT_MS)
-            
-            url = 'https://bbs.nga.cn/thread.php?fid=-447601'
-            logger.info(f'NGA: 访问 {url}')
-            page.goto(url, wait_until='networkidle')
-            page.wait_for_timeout(3000)
-            
-            rows = page.query_selector_all('.topicrow')
-            logger.info(f'NGA: 找到 {len(rows)} 个帖子')
-            
-            for row in rows[:30]:
-                try:
-                    tds = row.query_selector_all('td')
-                    if len(tds) < 4:
-                        continue
-                    
-                    # TD 0: 回复数
-                    reply_text = tds[0].inner_text().strip()
-                    reply_count = int(reply_text) if reply_text.isdigit() else 0
-                    
-                    # TD 1: 标题（需要清理）
-                    title_full = tds[1].inner_text().strip()
-                    # 清理标题：移除多余的标记
-                    title = title_full
-                    for remove in ['锁定', '单帖', '精华', '置顶']:
-                        title = title.replace(remove, '')
-                    # 取第一行作为标题
-                    title = title.split('\n')[0].strip()
-                    
-                    # 获取链接
-                    link_el = tds[0].query_selector('a[href*="read.php?tid"]')
-                    href = link_el.get_attribute('href') if link_el else ''
-                    if href and not href.startswith('http'):
-                        href = f'https://bbs.nga.cn{href}'
-                    
-                    # TD 2: 发帖时间
-                    post_time_text = tds[2].inner_text().strip() if len(tds) > 2 else ''
-                    parsed_time, time_approx = _parse_relative_time(post_time_text)
-
-                    # TD 3: 作者
-                    author = ''
-                    author_text = tds[3].inner_text()
-                    lines = author_text.split('\n')
-                    if len(lines) > 1:
-                        author = lines[-1].strip()
-
-                    if len(title) < 3:
-                        continue
-
-                    item = {
-                        'title': title[:100],
-                        'summary': '',
-                        'source': 'nga',
-                        'time': parsed_time,
-                        'url': href,
-                        'engagement': reply_count,
-                        'is_hot': reply_count > 50,
-                        'author': author,
-                        'tags': ['nga'],
-                    }
-                    if time_approx:
-                        item['time_is_approximate'] = True
-                    items.append(item)
-                except Exception as e:
-                    logger.debug(f'NGA 解析失败: {e}')
-                    continue
-            
-            browser.close()
-    except Exception as e:
-        logger.warning(f'NGA Playwright 失败: {e}')
-    
-    logger.info(f'NGA Playwright: fetched {len(items)} items')
-    return items
-
-
 def fetch_weibo_playwright() -> List[Dict]:
     """
     Fetch Weibo search results using mobile version.
@@ -399,62 +310,6 @@ def fetch_ruliweb_playwright() -> List[Dict]:
 
 # ── Japanese platforms ────────────────────────────────────────────────────
 
-def fetch_fivech_playwright() -> List[Dict]:
-    """
-    Fetch 5ch search results via Playwright (bypasses 503).
-    """
-    items = []
-    keywords = ["忘却前夜", "モリメンス"]
-
-    try:
-        from playwright.sync_api import sync_playwright
-
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            page.set_default_timeout(TIMEOUT_MS)
-
-            for keyword in keywords:
-                try:
-                    page.goto(
-                        f'https://find.5ch.net/search?q={keyword}',
-                        wait_until='networkidle',
-                    )
-                    page.wait_for_timeout(2000)
-
-                    links = page.query_selector_all('a[href*="5ch.net/test/read.cgi"]')
-                    for link in links:
-                        title = link.inner_text().strip()
-                        href = link.get_attribute('href') or ''
-                        if not title or len(title) < 3:
-                            continue
-
-                        items.append({
-                            'title': title[:100],
-                            'summary': '',
-                            'source': 'fivech',
-                            'time': datetime.now(timezone.utc).isoformat(),
-                            'time_is_approximate': True,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': False,
-                            'author': '',
-                            'tags': ['5ch'],
-                            'lang': 'ja',
-                            'platform_region': 'jp',
-                        })
-                    logger.info(f'5ch PW "{keyword}": {len(items)} total')
-                except Exception as e:
-                    logger.warning(f'5ch PW "{keyword}" failed: {e}')
-
-            browser.close()
-    except Exception as e:
-        logger.warning(f'5ch Playwright failed: {e}')
-
-    logger.info(f'5ch Playwright: fetched {len(items)} items')
-    return items
-
-
 def fetch_bahamut_playwright() -> List[Dict]:
     """
     Fetch Bahamut (gamer.com.tw) search results via Playwright.
@@ -522,12 +377,10 @@ def main():
     print("=" * 60)
 
     results = {
-        'nga': fetch_nga_playwright(),
         'weibo': fetch_weibo_playwright(),
         'taptap': fetch_taptap_playwright(),
         'arca_live': fetch_arca_live_playwright(),
         'ruliweb': fetch_ruliweb_playwright(),
-        'fivech': fetch_fivech_playwright(),
         'bahamut': fetch_bahamut_playwright(),
     }
 
