@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-14T10:46:20.334617+00:00",
+  "archived_at": "2026-06-14T12:59:21.543978+00:00",
   "source": "taptap_review",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "title": "哈吼哈哈哈哈哈",
@@ -126,6 +126,32 @@
       "summary": "来自 Android 设备",
       "source": "taptap_review",
       "time": "2026-06-14T10:45:39.826019+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "期待",
+      "summary": "期待",
+      "source": "taptap_review",
+      "time": "2026-06-14T12:58:39.133484+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "来自 Android 设备",
+      "summary": "来自 Android 设备",
+      "source": "taptap_review",
+      "time": "2026-06-14T12:58:39.133533+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,

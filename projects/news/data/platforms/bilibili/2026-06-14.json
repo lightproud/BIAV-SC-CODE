@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-14T10:46:20.313386+00:00",
+  "archived_at": "2026-06-14T12:59:21.528329+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 32,
   "items": [
     {
       "title": "一些gal角色",
@@ -457,6 +457,86 @@
       "platform_region": "cn"
     },
     {
+      "title": "350抽大战阿拉克涅已燃尽",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-06-14T11:16:02+00:00",
+      "url": "http://www.bilibili.com/video/av116748150054386",
+      "engagement": 50,
+      "is_hot": false,
+      "author": "白林_ROmp",
+      "tags": [
+        "原创音乐"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i1.hdslb.com/bfs/archive/af56bd1567f2dbdb499c2f216bc3bc51c5d845ff.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "350抽大战阿拉克涅已燃尽",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-14T11:16:02+00:00",
+      "url": "https://www.bilibili.com/video/BV1UAJN6LECe",
+      "engagement": 49,
+      "is_hot": false,
+      "author": "白林_ROmp",
+      "tags": [
+        "原创音乐"
+      ],
+      "metadata": {
+        "play": 49,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/af56bd1567f2dbdb499c2f216bc3bc51c5d845ff.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "校猫超绝大歪池，215抽2+3",
+      "summary": "被蜘蛛大人吓哭\n  └ 岭南阳光 (0赞): 看不懂但是我喜欢你[鸣潮·共鸣与群星_点赞]",
+      "source": "bilibili",
+      "time": "2026-06-14T11:58:37+00:00",
+      "url": "https://www.bilibili.com/video/BV1KtJP6gEzL",
+      "engagement": 37,
+      "is_hot": false,
+      "author": "椋-喵",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 36,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/e9579e6fa2ea4b832d8eab66a13367765c76c23f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "校猫超绝大歪池，215抽2+3",
+      "summary": "被蜘蛛大人吓哭",
+      "source": "bilibili",
+      "time": "2026-06-14T11:58:37+00:00",
+      "url": "http://www.bilibili.com/video/av116748334602840",
+      "engagement": 36,
+      "is_hot": false,
+      "author": "椋-喵",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/e9579e6fa2ea4b832d8eab66a13367765c76c23f.jpg",
+      "content_type": "video"
+    },
+    {
       "title": "260抽大战莫丝",
       "summary": "最欧的一集\n  └ 刹那一行 (0赞): 省流：4莫丝加5专武[doge]",
       "source": "bilibili",
@@ -494,6 +574,46 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/8c6f6857f269d2180fd122f6e80f31ecc4549b58.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【忘却前夜】燃尽了T T！——抽卡视频",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-14T10:57:12+00:00",
+      "url": "https://www.bilibili.com/video/BV19QJP6QEF7",
+      "engagement": 21,
+      "is_hot": false,
+      "author": "SherbetWhite",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 21,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/3996777764347c7b7d6e57887c617893a48a38a0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】燃尽了T T！——抽卡视频",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-14T10:57:12+00:00",
+      "url": "http://www.bilibili.com/video/av116748065964490",
+      "engagement": 21,
+      "is_hot": false,
+      "author": "SherbetWhite",
+      "tags": [
+        "网络游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/3996777764347c7b7d6e57887c617893a48a38a0.jpg",
       "content_type": "video"
     },
     {
