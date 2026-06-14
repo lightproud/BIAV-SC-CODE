@@ -1,8 +1,8 @@
 {
   "last_session": {
     "id": "f16d8ec6",
-    "timestamp": "2026-06-14T06:40:37.828000+00:00",
-    "duration_minutes": 40.4,
+    "timestamp": "2026-06-14T07:14:41.309000+00:00",
+    "duration_minutes": 74.5,
     "branch": "claude/claude-md-docs-n7fsp1",
     "topics": [
       "MCP",
@@ -12,11 +12,29 @@
       "外科手术式修正点"
     ],
     "files_changed": [
+      "/home/user/brain-in-a-vat/.github/workflows/test.yml",
       "/home/user/brain-in-a-vat/CLAUDE.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "f16d8ec6",
+      "timestamp": "2026-06-14T06:40:37.828000+00:00",
+      "duration_minutes": 40.4,
+      "branch": "claude/claude-md-docs-n7fsp1",
+      "topics": [
+        "MCP",
+        "日报"
+      ],
+      "decisions": [
+        "外科手术式修正点"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "d062dc8f",
       "timestamp": "2026-06-14T05:50:25.214000+00:00",
@@ -122,38 +140,21 @@
         "/home/user/brain-in-a-vat/scripts/session-end-distill.sh"
       ],
       "open_items": []
-    },
-    {
-      "id": "90b9df5e",
-      "timestamp": "2026-06-10T18:26:55.105000+00:00",
-      "duration_minutes": 102.3,
-      "branch": "claude/lucid-feynman-dhj63l",
-      "topics": [
-        "BPT",
-        "MCP",
-        "GitHub"
-      ],
-      "decisions": [
-        "了共享能省多少",
-        ",跟进程共不共享完全无关"
-      ],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "MCP": 1.5,
-      "做梦Agent": 1.42,
-      "GitHub": 1.21,
-      "日报": 1.0,
-      "BPT": 0.56,
-      "Wiki": 0.18
+      "MCP": 2.2,
+      "日报": 1.8,
+      "做梦Agent": 1.14,
+      "GitHub": 0.97,
+      "BPT": 0.45,
+      "Wiki": 0.14
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md"
     ],
-    "total_sessions": 153
+    "total_sessions": 154
   },
-  "updated_at": "2026-06-14T06:43:25.959276+00:00"
+  "updated_at": "2026-06-14T07:14:41.467790+00:00"
 }
