@@ -47,11 +47,11 @@
 | `projects/wiki/data/schemas/meta.schema.json` | 元数据 schema | Code-wiki |
 | `projects/wiki/data/schemas/realms.schema.json` | 界域数据 schema | Code-wiki |
 
-### Phase 2 待自举
+### 角色数据源
 
-| 目标文件 | 状态 | 预计建立时间 |
-|---------|------|-------------|
-| `projects/wiki/data/db/characters.json` | ⚠ 尚未建立，Phase 2 W1 首要任务 | 2026-04-27 ~ 05-03 |
+| 文件 | 状态 | 说明 |
+|------|------|------|
+| `projects/wiki/data/processed/characters.json` | 已建立（72 解包真实数据） | wiki 数据层唯一源；原 `db/characters.json`（24 条草稿）已于 2026-06-14 退役 |
 
 详细任务路线见 `projects/wiki/CONTEXT.md` Phase 2 权威路线图章节。
 

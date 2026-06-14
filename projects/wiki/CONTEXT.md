@@ -7,7 +7,7 @@ Code-wiki
 
 ## 2026-06-09 状态核验（实测）
 
-- **`data/db/characters.json` 已自举 24/72**（23 partial + 1 fixture，批 1 完成）——本档案下文凡写「尚未建立」处均为 4-26 前的过期描述，已逐处订正
+- **角色数据源已切换为 `data/processed/characters.json`（72 解包真实数据）**——2026-06-14 守密人裁定退役手工策展 `data/db/characters.json`（24 条草稿），wiki 数据层（`docs/.vitepress/theme/data/characters.ts`、`scripts/generate_pages.py`、`scripts/build_banner_character_index.py`）均改读 processed；本档下文凡提 `db/characters.json` 处均为退役前历史描述
 - **批 2/3（剩余 48 角色）未开工**：M2 窗口（5-11 → 6-10）即将到期，M2 六项任务均未完成，需 Code-wiki 接管推进
 - Pandia 垂直切片（12 Vue 组件 + 详情页 + 列表筛选）已落盘可访问（4-26 验收记录见下文）
 

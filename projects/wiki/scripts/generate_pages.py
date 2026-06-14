@@ -37,8 +37,28 @@ PROJECT_ROOT = SCRIPT_DIR.parent                       # projects/wiki
 DATA_DIR = PROJECT_ROOT / "data" / "db"
 DOCS_DIR = PROJECT_ROOT / "docs"
 
-CHARACTERS_JSON = DATA_DIR / "characters.json"
+# Source of truth (2026-06-14): the hand-curated db/characters.json (24 stubs)
+# was retired in favour of client-unpacked data/processed/characters.json (72
+# real awakeners, AwakerConfig.lua runtime extraction). processed is a flat
+# schema, so load_characters() normalises it into the keys used below.
+CHARACTERS_JSON = PROJECT_ROOT / "data" / "processed" / "characters.json"
 EQUIPMENT_JSON = DATA_DIR / "equipment.json"
+
+# Curated english slugs preserved from the retired db/characters.json (keyed by
+# id) so existing detail-page URLs and portrait filenames stay stable; the
+# remaining ids fall back to a deterministic `awk-<id>`. Keep in sync with
+# docs/.vitepress/theme/data/characters.ts (SLUG_MAP).
+SLUG_MAP: dict[str, str] = {
+    "15560": "pandia", "15561": "source_tincture", "15562": "lizz", "15563": "tulu",
+    "15564": "goliath", "15565": "notilia", "15566": "celeste", "15567": "bloodchain_hilo",
+    "15568": "cycle_ramona", "15569": "rotan", "15570": "dole", "15571": "garen",
+    "15572": "cassia", "15573": "orita", "15574": "tincture", "15575": "faros",
+    "15576": "murphy", "15577": "faint", "15578": "jenkin", "15579": "winkle",
+    "15580": "nymphia", "15581": "lily", "15582": "miriam", "15593": "jenkin_duplicate_15593",
+}
+# Confirmed public realm/role facts not carried by the unpacked source.
+REALM_OVERRIDES: dict[str, str] = {"15560": "caro"}
+ROLE_OVERRIDES: dict[str, str] = {"15560": "attack"}
 
 # ---------------------------------------------------------------------------
 # i18n labels (only needed for SEO title/description)
@@ -75,16 +95,40 @@ ROLE_NAMES: dict[str, dict[str, str]] = {
 # Data loading
 # ---------------------------------------------------------------------------
 
+def _normalise(char: dict[str, Any]) -> dict[str, Any]:
+    """Normalise a record into the keys this generator consumes.
+
+    The unpacked source (processed/characters.json) is a flat schema
+    (id:int, name, title, ...) with no slug/realm/role; map it onto the
+    db-style keys (id:str, name_zh, slug, realm, role). Records that already
+    carry db-style keys (legacy) pass through unchanged.
+    """
+    if "name_zh" in char or "slug" in char:
+        return char
+    cid = str(char.get("id"))
+    return {
+        **char,
+        "id": cid,
+        "name_zh": char.get("name"),
+        "title_zh": char.get("title") or char.get("name"),
+        "slug": SLUG_MAP.get(cid, f"awk-{cid}"),
+        "realm": REALM_OVERRIDES.get(cid),
+        "role": ROLE_OVERRIDES.get(cid),
+    }
+
+
 def load_characters() -> list[dict[str, Any]]:
-    """Load characters.json; handles both top-level array (current) and
-    legacy dict-with-characters-key shape."""
+    """Load characters; handles the unpacked processed shape
+    ({_meta, characters:[...]}), a top-level array, and the legacy
+    dict-with-characters-key shape."""
     with open(CHARACTERS_JSON, encoding="utf-8") as f:
         data = json.load(f)
     if isinstance(data, list):
-        return data
-    chars = list(data.get("characters", []))
-    chars.extend(data.get("sr_characters", []))
-    return chars
+        chars = data
+    else:
+        chars = list(data.get("characters", []))
+        chars.extend(data.get("sr_characters", []))
+    return [_normalise(c) for c in chars]
 
 
 # ---------------------------------------------------------------------------

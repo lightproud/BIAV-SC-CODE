@@ -40,9 +40,23 @@ DATA_DIR = SCRIPT_DIR.parent / "data"
 DB_DIR = DATA_DIR / "db"
 PROCESSED_DIR = DATA_DIR / "processed"
 
-CHARACTERS_JSON = DB_DIR / "characters.json"
+# Source of truth (2026-06-14): retired the hand-curated db/characters.json (24
+# stubs) in favour of client-unpacked data/processed/characters.json (72 real
+# awakeners). processed is a flat schema, normalised below into name_zh/slug.
+CHARACTERS_JSON = PROCESSED_DIR / "characters.json"
 SUMMON_JSON = PROCESSED_DIR / "summon.json"
 OUTPUT_PATH = PROCESSED_DIR / "banners_by_character.json"
+
+# Curated english slugs preserved from the retired db/characters.json (keyed by
+# id). Keep in sync with docs/.vitepress/theme/data/characters.ts (SLUG_MAP).
+SLUG_MAP: dict[str, str] = {
+    "15560": "pandia", "15561": "source_tincture", "15562": "lizz", "15563": "tulu",
+    "15564": "goliath", "15565": "notilia", "15566": "celeste", "15567": "bloodchain_hilo",
+    "15568": "cycle_ramona", "15569": "rotan", "15570": "dole", "15571": "garen",
+    "15572": "cassia", "15573": "orita", "15574": "tincture", "15575": "faros",
+    "15576": "murphy", "15577": "faint", "15578": "jenkin", "15579": "winkle",
+    "15580": "nymphia", "15581": "lily", "15582": "miriam", "15593": "jenkin_duplicate_15593",
+}
 
 
 def load_characters() -> list[dict]:
@@ -51,7 +65,21 @@ def load_characters() -> list[dict]:
         sys.exit(2)
     with open(CHARACTERS_JSON, encoding="utf-8") as f:
         data = json.load(f)
-    return data if isinstance(data, list) else data.get("characters", [])
+    rows = data if isinstance(data, list) else data.get("characters", [])
+    out: list[dict] = []
+    for c in rows:
+        if "name_zh" in c or "slug" in c:  # legacy db shape passes through
+            out.append(c)
+            continue
+        cid = str(c.get("id"))
+        out.append({
+            **c,
+            "id": cid,
+            "name_zh": c.get("name"),
+            "title_zh": c.get("title") or c.get("name"),
+            "slug": SLUG_MAP.get(cid, f"awk-{cid}"),
+        })
+    return out
 
 
 def load_banners() -> list[dict]:

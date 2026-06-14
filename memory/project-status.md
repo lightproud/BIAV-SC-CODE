@@ -64,7 +64,7 @@
 
 ### 游戏数据集（原 database）
 - **当前状态**（2026-04-20 B3 调研修正）：
-  - **`projects/wiki/data/db/characters.json` 基线尚未建立**（git 历史中无此文件），Phase 2 首要任务是自举基线
+  - **角色数据源已统一为 `projects/wiki/data/processed/characters.json`**（72 解包真实数据，`_meta.generated=2026-04-25`）；原手工策展 `db/characters.json`（24 条草稿）于 2026-06-14 退役，wiki 数据层（characters.ts / generate_pages.py）已改读 processed
   - 角色真实总数为 **72 角色**（含皮肤/联动/彩蛋），不是 63。来源：`projects/wiki/data/extracted/categorized/character_data.txt`（客户端逆向提取）
   - 数据覆盖度**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
   - 72/72 角色有元数据（EN/JA 描述、获取方式翻译完成），结构化卡牌/技能数据待 Phase 2 从 Fandom 抓取补充

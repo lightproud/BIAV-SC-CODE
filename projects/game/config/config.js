@@ -1,7 +1,7 @@
 // 自动生成（node build.mjs）。请勿手改，改 config/*.json 后重新生成。
 window.GAME_CONFIG = {
   "characters": {
-    "_meta": "环行记可玩唤醒体。名录取自 projects/wiki/data/db/characters.json 真实角色；界域归属与天赋为本同人玩法设计（DESIGN §2.4），非游戏正典强度。",
+    "_meta": "环行记可玩唤醒体。名录取自 projects/wiki/data/processed/characters.json 解包真实角色；界域归属与天赋为本同人玩法设计（DESIGN §2.4），非游戏正典强度。",
     "characters": [
       {
         "id": "ramona",

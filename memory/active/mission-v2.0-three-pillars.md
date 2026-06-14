@@ -87,7 +87,7 @@
 
 - `assets/data/morimens-context.md` — 游戏世界观（v2.0 三新使命 #2 知识底座的事实源）
 - `assets/data/card-system.json` — 卡牌系统结构化（Code-memory 2026-04-26 落档）
-- `projects/wiki/data/db/characters.json` — 24/72 角色基线（M1 前推完整化）
+- `projects/wiki/data/processed/characters.json` — 72 角色基线（解包真实数据，wiki 数据层唯一源；原 db/characters.json 草稿 2026-06-14 退役）
 
 ---
 

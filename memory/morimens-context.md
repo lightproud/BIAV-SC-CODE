@@ -125,7 +125,7 @@ Murphy: Fauxborn、Xu
 - **必抽角色**：24（全界域 S 级）、Murphy（深海 S 级）、Thais（血肉 S 级）
 
 > 完整角色数据原始源见 `projects/wiki/data/extracted/categorized/character_data.txt`（72 角色客户端解包）
-> 结构化归档文件 `projects/wiki/data/db/characters.json` 尚未建立，Phase 2 W1 自举中。
+> 结构化角色数据源为 `projects/wiki/data/processed/characters.json`（72 解包真实数据，wiki 数据层唯一源）；原 `db/characters.json` 24 条草稿已于 2026-06-14 退役。
 
 ## 战斗系统
 

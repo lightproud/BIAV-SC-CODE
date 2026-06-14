@@ -38,7 +38,7 @@
 | 社区情报 | `projects/news/output/daily-latest.md` | 黑池消费的每日动态 |
 | 平台数据 | `projects/news/output/{steam,bilibili,discord}-latest.json` | 黑池消费的平台原始数据 |
 | 全平台合并 | `projects/news/output/all-latest.json` | 黑池消费的合并视图 |
-| 角色数据库 | `projects/wiki/data/db/characters.json` | 黑池消费的事实圣经 |
+| 角色数据库 | `projects/wiki/data/processed/characters.json` | 黑池消费的事实圣经（72 解包真实数据；原 db/characters.json 草稿 2026-06-14 退役） |
 | 游戏世界观 | `memory/morimens-context.md` | 黑池消费的领域知识 |
 | 设计决策 | `assets/data/design-decisions.json` | 黑池消费的产品哲学 |
 | 卡牌系统 | `assets/data/card-system.json` | 黑池消费的机制结构化 |

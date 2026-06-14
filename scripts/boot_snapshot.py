@@ -73,7 +73,7 @@ def get_workflow_health() -> str:
         "news aggregator": (ROOT / "projects/news/output/news.json").exists(),
         "discord archive": (ROOT / "projects/news/data/discord/state.json").exists(),
         "dream journals": any((ROOT / "memory/dreams").glob("2*.json")) if (ROOT / "memory/dreams").exists() else False,
-        "wiki data": (ROOT / "projects/wiki/data/db/characters.json").exists(),
+        "wiki data": (ROOT / "projects/wiki/data/processed/characters.json").exists(),
     }
 
     lines = []
@@ -172,7 +172,7 @@ def generate_snapshot() -> str:
 - 项目详细状态 → `memory/project-status.md`
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
-- 角色数据库 → `projects/wiki/data/db/characters.json` ⚠（Phase 2 W1 自举完成 24/72）
+- 角色数据库 → `projects/wiki/data/processed/characters.json`（解包真实数据 72 唤醒体）
 - 最新社区数据 → `projects/news/output/all-latest.json`（输出层选样）+ `projects/news/data/platforms/`（archive 全量）
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`
