@@ -174,7 +174,8 @@ class SilentPlatformTracker:
         with open(self.health_path, 'w', encoding='utf-8') as f:
             json.dump(self.health_data, f, ensure_ascii=False, indent=2)
 
-    def update_platform_status(self, platform: str, items_count: int, error: Optional[str] = None):
+    def update_platform_status(self, platform: str, items_count: int,
+                               error: Optional[str] = None, note: Optional[str] = None):
         """
         更新平台状态。
 
@@ -182,6 +183,7 @@ class SilentPlatformTracker:
             platform: 平台名称
             items_count: 本次采集到的条目数
             error: 如果失败，错误信息
+            note: 降级原因标注（如「待配 NGA_COOKIE」），恢复产出后自动清除
         """
         today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
@@ -214,6 +216,12 @@ class SilentPlatformTracker:
                 p['level'] = self.LEVEL_DORMANT
             elif p['consecutive_silent_days'] >= self.DEGRADED_THRESHOLD:
                 p['level'] = self.LEVEL_DEGRADED
+
+        # 降级原因标注：恢复产出后清除，否则记录调用方给的 note（如「待配 cookie」）
+        if items_count > 0:
+            p.pop('note', None)
+        elif note:
+            p['note'] = note
 
         if error:
             p['errors'].append({
