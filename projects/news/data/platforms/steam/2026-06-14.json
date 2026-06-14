@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-14T02:56:10.893132+00:00",
+  "archived_at": "2026-06-14T07:18:17.004237+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Truly outstanding game. Haven't been too far in th...",
@@ -22,6 +22,116 @@
         "playtime_forever": 1228,
         "votes_up": 0,
         "timestamp_created": 1781385840
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Good game! Has Saya in it as well! Even better gam...",
+      "summary": "Good game! Has Saya in it as well! Even better game!",
+      "source": "steam_review",
+      "time": "2026-06-14T06:05:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198370110199/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198370110199",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 267,
+        "votes_up": 0,
+        "timestamp_created": 1781417111
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 매력적인 캐릭터 디자인과 스토리, 특색있는 계역 기믹과 짜임새 있는 게임성을 가진 덱빌딩...",
+      "summary": "매력적인 캐릭터 디자인과 스토리, 특색있는 계역 기믹과 짜임새 있는 게임성을 가진 덱빌딩 로그라이크 게임\n\n번역의 퀄리티가 좀 더 좋았더라면 훨씬 많은 사람들이 하지 않았을까 싶은 아쉬움이 남는다.\n+ 라모나는 내 아내임",
+      "source": "steam_review",
+      "time": "2026-06-14T05:15:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198035523644/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198035523644",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2958,
+        "votes_up": 0,
+        "timestamp_created": 1781414110
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩，全方面",
+      "summary": "好玩，全方面",
+      "source": "steam_review",
+      "time": "2026-06-14T05:07:09+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199837001360/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199837001360",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4648,
+        "votes_up": 0,
+        "timestamp_created": 1781413629
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 沙耶可爱捏",
+      "summary": "沙耶可爱捏",
+      "source": "steam_review",
+      "time": "2026-06-14T04:59:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199844511717/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199844511717",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 957,
+        "votes_up": 0,
+        "timestamp_created": 1781413144
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] this game has great story",
+      "summary": "this game has great story",
+      "source": "steam_review",
+      "time": "2026-06-14T02:56:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199021438986/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199021438986",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1086,
+        "votes_up": 0,
+        "timestamp_created": 1781405786
       },
       "lang": "",
       "platform_region": "global"
