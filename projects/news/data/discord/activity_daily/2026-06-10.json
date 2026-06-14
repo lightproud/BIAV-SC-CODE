@@ -1,11 +1,11 @@
 {
   "date": "2026-06-10",
-  "messages": 24609,
+  "messages": 25754,
   "unique_authors": 550,
-  "reactions_total": 2752,
-  "attachments": 1324,
+  "reactions_total": 2804,
+  "attachments": 1384,
   "channel_activity": {
-    "🔸game-question": 4980,
+    "🔸game-question": 6125,
     "🔸general-chat": 3034,
     "🔸綜合討論": 3072,
     "🔸剧情交流": 124,
@@ -115,6 +115,13 @@
     "1514237449772204214": 3
   },
   "hourly_activity": {
+    "17": 1247,
+    "18": 445,
+    "19": 541,
+    "20": 644,
+    "21": 571,
+    "22": 451,
+    "23": 410,
     "0": 482,
     "1": 931,
     "2": 1009,
@@ -131,19 +138,12 @@
     "13": 1759,
     "14": 994,
     "15": 2274,
-    "16": 2054,
-    "17": 1224,
-    "18": 366,
-    "19": 452,
-    "20": 504,
-    "21": 256,
-    "22": 133,
-    "23": 229
+    "16": 2054
   },
   "message_types": {
-    "0": 3470,
-    "19": 1483,
-    "20": 27
+    "19": 309,
+    "0": 831,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -275,6 +275,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1514350948447813673",
+      "channel_id": "1433513650299076780",
+      "content": "This is the top",
+      "author": "akatora_",
+      "reactions": 6,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1514281550831943731",
       "channel_id": "1433513650299076780",
       "content": "Who doesnt want to arouse Tulu? <:casiah_wink2:1333982149107253338>",
@@ -295,14 +303,6 @@
       "channel_id": "1433513650299076780",
       "content": "",
       "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1514291798388904137",
-      "channel_id": "1433513650299076780",
-      "content": "am i paying 10 dollars to turn her to the left??",
-      "author": "royalllotus",
       "reactions": 4,
       "channel": "🔸game-question"
     }

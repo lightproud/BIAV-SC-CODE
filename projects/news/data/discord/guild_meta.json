@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-06-14T18:52:24.086910+00:00",
+  "updated_at": "2026-06-14T19:15:54.484385+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1297,14 +1297,6 @@
       "parent_id": "1440851754311749733",
       "position": 13,
       "topic": "ModMail Channel 696599511597842452 1263896970456727592 (Please do not change this)"
-    },
-    {
-      "id": "1515790143942824001",
-      "name": "kagilocke",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 143,
-      "topic": "ModMail Channel 1512094969018581042 1515789992277049424 (Please do not change this)"
     }
   ]
 }
