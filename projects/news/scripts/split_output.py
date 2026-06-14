@@ -10,7 +10,6 @@ split_output.py — 按数据源分割 projects/news/output/news.json
   projects/news/output/twitter-latest.json
   projects/news/output/youtube-latest.json
   projects/news/output/reddit-latest.json
-  projects/news/output/nga-latest.json
   projects/news/output/official-latest.json
   projects/news/output/all-latest.json   ← 所有源合并（方便 Chat 会话一次性读取）
 

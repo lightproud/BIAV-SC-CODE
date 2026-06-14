@@ -24,16 +24,12 @@ KNOWN_SOURCES = [
     'discord',
     'youtube',
     'reddit',
-    'nga',
     'official',
     'steam_discussion',
     # 全球扩展平台
     'weibo',
-    'zhihu',
     'bahamut',
-    'naver_cafe',
     'arca_live',
-    'fivech',
     'appstore',
     'google_play',
     'pixiv',
@@ -64,7 +60,7 @@ SPARSE_SOURCES = {
     'weixin',
     'pixiv',
     'stopgame',
-    'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live', 'bahamut',
+    'note_com', 'ruliweb', 'arca_live', 'bahamut',
     'taptap',
     'discord',
     'twitter',  # 官方号公告，发布不频繁，用 30 天宽窗
@@ -72,7 +68,7 @@ SPARSE_SOURCES = {
 
 # 主管线核心源（aggregator.py 直采）。长期 0 产出 = 采集故障，健康门控据此告警。
 CORE_SOURCES = [
-    'reddit', 'bilibili', 'nga', 'taptap',
+    'reddit', 'bilibili', 'taptap',
     'steam', 'official', 'youtube', 'discord',
 ]
 
@@ -80,9 +76,6 @@ CORE_SOURCES = [
 # 未配置对应 secret 时：该源 0 产出属预期降级（标注「待配」，不计采集故障）；
 # 已配置 secret 仍 0 产出：才视为真故障。collect_global 据此区分「待配 cookie」与「核心源静默失败」。
 AUTH_GATED = {
-    'nga': 'NGA_COOKIE',
-    'zhihu': 'ZHIHU_COOKIE',
-    'naver_cafe': 'NAVER_COOKIE',
     'youtube': 'YOUTUBE_API_KEY',
     'discord': 'DISCORD_BOT_TOKEN',
     'telegram': 'TELEGRAM_CHANNELS',
@@ -94,7 +87,7 @@ ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 # backfill_platforms.py 的 PLATFORM_BACKFILLERS 实际支持的源（务必与之同步）
 BACKFILL_PLATFORMS = [
     'bilibili', 'appstore', 'steam_review', 'arca_live',
-    'naver_cafe', 'pixiv', 'ruliweb', 'weixin',
+    'pixiv', 'ruliweb', 'weixin',
 ]
 
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。

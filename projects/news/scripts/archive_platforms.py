@@ -14,8 +14,6 @@
   │   └── YYYY-MM-DD.json
   ├── youtube/
   │   └── YYYY-MM-DD.json
-  ├── nga/
-  │   └── YYYY-MM-DD.json
   └── taptap/
       └── YYYY-MM-DD.json
 

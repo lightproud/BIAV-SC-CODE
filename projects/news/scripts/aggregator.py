@@ -8,7 +8,6 @@
   - Twitter/X (@MorimensGlobal, 相关hashtag)
   - Bilibili (忘却前夜相关)
   - TapTap (忘却前夜社区)
-  - NGA (忘却前夜版块)
   - Discord (官方服务器摘要)
   - YouTube (官方频道及热门视频)
 
@@ -38,7 +37,7 @@ from aggregator_base import (
     validate_all_news,
 )
 from aggregator_collectors import (
-    fetch_bilibili, fetch_discord_local, fetch_nga, fetch_reddit,
+    fetch_bilibili, fetch_discord_local, fetch_reddit,
     fetch_steam_discussions, fetch_steam_news, fetch_steam_reviews,
     fetch_taptap, fetch_youtube,
 )
@@ -46,7 +45,7 @@ import news_common  # 哨兵文件摘要脱敏（H3）
 
 
 # Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
-CORE_SOURCES = {'reddit', 'bilibili', 'nga', 'taptap'}
+CORE_SOURCES = {'reddit', 'bilibili', 'taptap'}
 
 # H9: 失败哨兵文件。aggregator 直接 SystemExit(1) 会让 update-news.yml 跳过后续
 # collect_global/split/archive/commit 步骤，成功源数据随 runner 销毁丢失。改为：
@@ -74,7 +73,6 @@ def run():
     fetchers = [
         ('Reddit', fetch_reddit),
         ('Bilibili', fetch_bilibili),
-        ('NGA', fetch_nga),
         ('TapTap', fetch_taptap),
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
@@ -105,12 +103,11 @@ def run():
                 quality_tracker.update_platform_status(source_id, len(items))
 
             # Playwright fallback for specific sources when API returns empty or fails
-            if name in ('TapTap', 'NGA') and len(items) == 0:
+            if name == 'TapTap' and len(items) == 0:
                 pc = _get_playwright_collectors()
                 if pc:
                     pw_fetcher = {
                         'TapTap': pc.fetch_taptap_playwright,
-                        'NGA': pc.fetch_nga_playwright,
                     }.get(name)
                     if pw_fetcher:
                         try:
@@ -127,13 +124,12 @@ def run():
             if quality_tracker:
                 quality_tracker.update_platform_status(source_id, 0, error=str(e))
             recovered = False
-            # Try Playwright fallback for TapTap and NGA on crash
-            if name in ('TapTap', 'NGA'):
+            # Try Playwright fallback for TapTap on crash
+            if name == 'TapTap':
                 pc = _get_playwright_collectors()
                 if pc:
                     pw_fetcher = {
                         'TapTap': pc.fetch_taptap_playwright,
-                        'NGA': pc.fetch_nga_playwright,
                     }.get(name)
                     if pw_fetcher:
                         try:
@@ -170,7 +166,6 @@ def run():
     _SOURCE_META = {
         'reddit':           ('en', 'global'),
         'bilibili':         ('zh', 'cn'),
-        'nga':              ('zh', 'cn'),
         'taptap':           ('zh', 'cn'),
         'steam_review':     ('',   'global'),   # lang from review.language
         'steam':            ('',   'global'),

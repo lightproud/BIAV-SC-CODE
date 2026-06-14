@@ -52,7 +52,6 @@ ENGAGEMENT_WEIGHTS = {
 
     # 游戏社区
     'taptap': {'weight': 1.0},
-    'nga': {'weight': 1.0},
     'xiaohongshu': {'weight': 1.0},
 
     # 默认
@@ -69,7 +68,6 @@ HOT_THRESHOLDS = {
     'weibo': 100,
     'twitter': 100,
     'taptap': 50,
-    'nga': 30,
     'xiaohongshu': 50,
     'default': 50,
 }
