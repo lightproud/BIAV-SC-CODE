@@ -44,19 +44,21 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 
 ### §1.4 运作模型
 
-银芯作为黑池的「眼睛和耳朵」，靠四条自动闭环运转：
+银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
 
 1. **采集闭环**（使命#1）：GitHub Actions 定时采集器从各社区平台抓原始数据 →
    落「全量档案层」(`projects/news/data/`) → 过滤选样进「输出展示层」
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
 2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `projects/wiki/data/extracted/`
    原始字段 → 脚本 / 人工补齐 `characters.json`（72 角色基线）→ VitePress 构建社区 Wiki 站点。
-3. **记忆 + 做梦闭环**（使命#3 底座）：会话钩子按生命周期自动「注入上下文 →
-   观测工具 → 结束蒸馏」落 `memory/`；哨兵 + 做梦 Agent 定时反刍知识层，反哺下一次会话。
+3. **记忆层**（使命#3 底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
+   人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理；
+   SessionStart 钩子开工同步记忆层。原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台
+   原生记忆定位冲突，已于 2026-06-14 退役（决策见 `memory/decisions.md`）。
 4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端工具化访问知识层，
    守密人经会话派发任务。
 
-四闭环的「手动怎么跑哪条命令」见 §7；「机器自动怎么转」即本节。
+四条主线的「手动怎么跑哪条命令」见 §7。
 
 ---
 
@@ -200,7 +202,7 @@ brain-in-a-vat/
 │   └── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（5 个高频 hub，优先读这里再下钻）
-│   ├── archive/ dreams/ research/ session-digests/ strategy/
+│   ├── archive/ dreams/ research/ strategy/
 │   └── *.md / *.json              # 见 §5.3
 ├── scripts/                       # 顶层 Python 工具层（记忆 / 会话 / 做梦 / 解包）
 ├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
@@ -244,12 +246,12 @@ brain-in-a-vat/
 
 | 时机 | 钩子 | 作用 |
 |------|------|------|
-| SessionStart | `.claude/hooks/session-start-sync.sh` | 启动同步记忆层 |
-| UserPromptSubmit | `scripts/session_inject.py` | 注入上下文 |
-| PostToolUse | `scripts/session_watch.py` | 工具调用观测 |
-| SessionEnd | `scripts/session-end-distill.sh` | 会话蒸馏落档 |
+| SessionStart | `.claude/hooks/session-start-sync.sh` | 开工同步本地 main 与 origin/main（防推送堵塞，lesson #28）|
 
 MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具调用。
+
+> 原 UserPromptSubmit / PostToolUse / SessionEnd 三钩子（会话注入 / 工具观测 / 蒸馏）
+> 已于 2026-06-14 退役——记忆定位收回平台原生（见 §1.4 第 3 条 + `memory/decisions.md`）。
 
 ### §7.5 Slash 命令与技能
 
