@@ -39,8 +39,9 @@ projects/news/data/media/*.mp4
 projects/news/data/media/*.webm
 projects/news/data/media/*.tar.gz
 
-# auto-generated indexes (rebuilt by dream.py / memory_search.py)
-# vectors.json.gz is committed (compressed, ~3MB) so new sessions have instant search
+# auto-generated search index. vectors.json.gz IS committed (small after
+# layer-B retirement, ~9MB) so fresh clones have instant cross-archive
+# search; rebuild with: python scripts/memory_search.py --build
 assets/data/vectors.json
 assets/data/semantic-index.json
 assets/data/knowledge-graph.json
@@ -48,14 +49,10 @@ assets/data/memory-utility.json
 assets/data/precomputed-cache.json
 projects/news/output/alerts.json
 
-# session digests — only .md conversation records are committed;
-# .json metadata and .jsonl progress logs stay local (no longer generated in v0.3)
-memory/session-digests/*.json
-# .progress.jsonl 实时累积日志，每个 PostToolUse 追加，导致 stop hook
-# 误报循环（守密人 2026-04-26 裁定排除）。保留物理文件作过程追溯，
-# 但不入 git，避免反复 commit 噪音。
-memory/session-digests/*.jsonl
-memory/session-digests/*.progress.jsonl
+# session digests — layer-B auto-capture loop retired 2026-06-14
+# (memory positioning returned to platform-native: CLAUDE.md + curated
+# memory/*.md). The whole dir stays local; nothing here is committed.
+memory/session-digests/
 
 # frida hook 逆向工具临时产出（extracted_lua/ 下已入库的文件不受影响）
 extracted_lua/hook_capture/
