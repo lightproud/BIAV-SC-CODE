@@ -11234,6 +11234,76 @@
       "title": "What 1 Month of Playing Morimens Looks Like",
       "time": "2026-06-14T07:00:07Z",
       "downloaded_at": "2026-06-14T07:18:16.909453+00:00"
+    },
+    "https://i.ytimg.com/vi/h4TjhxilUXY/hqdefault.jpg": {
+      "filename": "youtube_09d56ae1598e50b3.jpg",
+      "source": "youtube",
+      "title": "[Morimens] - Waifu Tier List Stream - Vote on the waifu tier list",
+      "time": "2026-06-14T07:20:54Z",
+      "downloaded_at": "2026-06-14T10:46:11.068868+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/712a59d38d719fb8b41acc84420793575e8f8fab.jpg": {
+      "filename": "bilibili_a87117345ffd5e16.jpg",
+      "source": "bilibili",
+      "title": "［相位］“黑暗中的安眠是四费嘲讽”（NC杯特辑）",
+      "time": "2026-06-14T09:09:32+00:00",
+      "downloaded_at": "2026-06-14T10:46:11.721034+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/fc028540cf5ac4349b9e6e5882080f6d2480832d.jpg": {
+      "filename": "bilibili_cf1b77a78d0974e1.jpg",
+      "source": "bilibili",
+      "title": "200抽大战阿拉克涅",
+      "time": "2026-06-14T06:20:00+00:00",
+      "downloaded_at": "2026-06-14T10:46:13.439533+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/31f7b1a046f01e67ce19f3c991c5ed403dbd3932.jpg": {
+      "filename": "bilibili_a8f2527635da999a.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】第一个，无灵芝三星尤乌H5-11",
+      "time": "2026-06-13T18:55:03+00:00",
+      "downloaded_at": "2026-06-14T10:46:14.330029+00:00"
+    },
+    "https://i.ytimg.com/vi/qnsPVt0YfHg/hqdefault.jpg": {
+      "filename": "youtube_0696e3d54fdeed8b.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】忘れ去られることのない世界のために【ローグライクカードゲーム】",
+      "time": "2026-06-14T07:54:19Z",
+      "downloaded_at": "2026-06-14T10:46:15.062447+00:00"
+    },
+    "https://i.ytimg.com/vi/ZdP6VikA7O0/hqdefault_live.jpg": {
+      "filename": "youtube_04d06da29aff7294.jpg",
+      "source": "youtube",
+      "title": "【#忘却前夜  】融災禁区チャレンジ！！目指せ累計３３０！！【#推し活】",
+      "time": "2026-06-14T10:06:35Z",
+      "downloaded_at": "2026-06-14T10:46:15.424451+00:00"
+    },
+    "https://i.ytimg.com/vi/fc0NA5HmBUs/hqdefault.jpg": {
+      "filename": "youtube_0b212a5d6645ce3c.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone 3-5 Boss Fight! 融災3-5 Boss戰的部分!",
+      "time": "2026-06-14T10:00:22Z",
+      "downloaded_at": "2026-06-14T10:46:15.802865+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/793866f92f206dfcd8c061b8ec861f4e1396dc8a.jpg": {
+      "filename": "bilibili_3f3151014348b445.jpg",
+      "source": "bilibili",
+      "title": "ø",
+      "time": "2026-06-14T10:39:37+00:00",
+      "downloaded_at": "2026-06-14T10:46:16.974427+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/d3a4e8d56fa00c13967cc20e6c867f148688a7d7.jpg": {
+      "filename": "bilibili_82d20956d5c594f0.jpg",
+      "source": "bilibili",
+      "title": "ø",
+      "time": "2026-06-14T10:38:32+00:00",
+      "downloaded_at": "2026-06-14T10:46:19.817568+00:00"
+    },
+    "https://i.ytimg.com/vi/20OnlpMYLpw/hqdefault.jpg": {
+      "filename": "youtube_9456ac8f6f41030f.jpg",
+      "source": "youtube",
+      "title": "who cares about hand limit am I right | Morimens",
+      "time": "2026-06-14T08:47:26Z",
+      "downloaded_at": "2026-06-14T10:46:20.226764+00:00"
     }
   },
   "failed": {
@@ -16701,6 +16771,41 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-14T07:18:16.548520+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/712a59d38d719fb8b41acc84420793575e8f8fab.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:12.021591+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/fc028540cf5ac4349b9e6e5882080f6d2480832d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:13.740036+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/31f7b1a046f01e67ce19f3c991c5ed403dbd3932.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:14.630570+00:00"
+    },
+    "https://preview.redd.it/x6ch26c9x77h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=520143aed5de6a82433f1be8feccd34e29bfd6c3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:17.423778+00:00"
+    },
+    "https://preview.redd.it/bmj0045el77h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=bb7828f19a44af76b7eb77ec6451010a5b5dad31": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:17.751033+00:00"
+    },
+    "https://external-preview.redd.it/BA6yOnIZhPn_9plrxFonZmhJSAm7QOnynd1n2EM2Vw0.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=dbde1ef5e1999d316e4b4dabe7a8e9d6d63d1a43": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:18.089886+00:00"
+    },
+    "https://preview.redd.it/ltxlud05s67h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=d255825804d6746ad8e2b1a14133f86230124a82": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T10:46:18.417843+00:00"
     }
   },
   "archived": []

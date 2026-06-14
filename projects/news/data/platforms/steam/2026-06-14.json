@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-14T07:18:17.004237+00:00",
+  "archived_at": "2026-06-14T10:46:20.326408+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] Truly outstanding game. Haven't been too far in th...",
@@ -132,6 +132,72 @@
         "playtime_forever": 1086,
         "votes_up": 0,
         "timestamp_created": 1781405786
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 게임은 재밌는데 제발 번역쪽만 신경써줘",
+      "summary": "게임은 재밌는데 제발 번역쪽만 신경써줘",
+      "source": "steam_review",
+      "time": "2026-06-14T09:57:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198148712934/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198148712934",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1884,
+        "votes_up": 0,
+        "timestamp_created": 1781431021
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] A very generous gacha game, please give it a try.",
+      "summary": "A very generous gacha game, please give it a try.",
+      "source": "steam_review",
+      "time": "2026-06-14T09:46:28+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198108688263/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198108688263",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3340,
+        "votes_up": 0,
+        "timestamp_created": 1781430388
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 还行",
+      "summary": "还行",
+      "source": "steam_review",
+      "time": "2026-06-14T08:54:03+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199369822332/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199369822332",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 1773,
+        "votes_up": 0,
+        "timestamp_created": 1781427243
       },
       "lang": "",
       "platform_region": "global"
