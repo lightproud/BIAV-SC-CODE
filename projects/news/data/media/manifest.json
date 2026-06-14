@@ -11486,6 +11486,55 @@
       "title": "【忘却前夜】融災禁区・第1波・Ⅱ級警報（2026/06/14）",
       "time": "2026-06-14T15:17:57Z",
       "downloaded_at": "2026-06-14T17:09:33.547081+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/07a6aa6d62cb449ed63446a9553ed651e1ec348b.jpg": {
+      "filename": "bilibili_953c96f576ebca77.jpg",
+      "source": "bilibili",
+      "title": "桜花の幻想",
+      "time": "2026-06-14T13:22:51+00:00",
+      "downloaded_at": "2026-06-14T19:09:33.181265+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/17f96ba5010b9dd124f2ac5c594ddd46d11eda55.jpg": {
+      "filename": "bilibili_f00beed05148c6fc.jpg",
+      "source": "bilibili",
+      "title": "和沙耶的日常，吗？（番外篇）",
+      "time": "2026-06-14T14:50:23+00:00",
+      "downloaded_at": "2026-06-14T19:09:33.908120+00:00"
+    },
+    "https://i.ytimg.com/vi/MJoQ2a_XMGc/hqdefault.jpg": {
+      "filename": "youtube_982f59b24334f1ae.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능 망전공략 유루바 등장",
+      "time": "2026-06-14T17:27:51Z",
+      "downloaded_at": "2026-06-14T19:09:34.307541+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d98b2a36f39d6382eb8f37af6bfa53daf98c2b9f.jpg": {
+      "filename": "bilibili_05419e4777618566.jpg",
+      "source": "bilibili",
+      "title": "剑星更换女主引发争议！大才是好？史上最绝望的起飞瞬间！C108本子王确认！【每周ACG热点杂谈】",
+      "time": "2026-06-14T18:17:35+00:00",
+      "downloaded_at": "2026-06-14T19:09:35.372014+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/59166d50dd686f40e736b2c3473e0d5512d93369.jpg": {
+      "filename": "bilibili_52b23a3a55c4af22.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】融灾425竞速",
+      "time": "2026-06-14T17:15:22+00:00",
+      "downloaded_at": "2026-06-14T19:09:36.795950+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/5401b583fe4c2ba96bd152a600e69a0b4e47892a.jpg": {
+      "filename": "bilibili_a604b2537b2c69bc.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】什么第七章boss，什么母树，我看是减速带吧",
+      "time": "2026-06-14T18:26:16+00:00",
+      "downloaded_at": "2026-06-14T19:09:37.938564+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/15/02/59/16/146024746_p0_square1200.jpg": {
+      "filename": "pixiv_b2b1ba5cb01451a2.jpg",
+      "source": "pixiv",
+      "title": "熔朵",
+      "time": "2026-06-15T02:59:16+09:00",
+      "downloaded_at": "2026-06-14T19:09:39.109854+00:00"
     }
   },
   "failed": {
@@ -17033,6 +17082,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-14T17:09:31.524852+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/07a6aa6d62cb449ed63446a9553ed651e1ec348b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T19:09:33.481627+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/59166d50dd686f40e736b2c3473e0d5512d93369.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T19:09:37.096301+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/5401b583fe4c2ba96bd152a600e69a0b4e47892a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T19:09:38.238870+00:00"
     }
   },
   "archived": []

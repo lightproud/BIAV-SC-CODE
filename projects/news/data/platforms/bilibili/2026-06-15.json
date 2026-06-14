@@ -1,8 +1,8 @@
 {
   "date": "2026-06-15",
-  "archived_at": "2026-06-14T17:09:33.624200+00:00",
+  "archived_at": "2026-06-14T19:09:39.192136+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 7,
   "items": [
     {
       "title": "【忘却淋夜】2.5周年节奏榜弥萨格大乱斗，万字解析角色强度",
@@ -43,6 +43,109 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "剑星更换女主引发争议！大才是好？史上最绝望的起飞瞬间！C108本子王确认！【每周ACG热点杂谈】",
+      "summary": "加班加麻了\n  └ 友木Tomoki (0赞): 有一说一，Evie真是完美符合我的XP",
+      "source": "bilibili",
+      "time": "2026-06-14T18:17:35+00:00",
+      "url": "https://www.bilibili.com/video/BV1zHJN6wECG",
+      "engagement": 92,
+      "is_hot": false,
+      "author": "友木Tomoki",
+      "tags": [
+        "动漫杂谈"
+      ],
+      "metadata": {
+        "play": 91,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d98b2a36f39d6382eb8f37af6bfa53daf98c2b9f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】融灾425竞速",
+      "summary": "长草了试试竞速一下\n感觉打快了全是丑陋操作）\n  └ 無名Mumei- (0赞): 我了竞速\n  └ 伊莎玛拉-大群来了 (0赞): 我了大佬\n  └ 無名Mumei- (0赞): 助眠看[doge]",
+      "source": "bilibili",
+      "time": "2026-06-14T17:15:22+00:00",
+      "url": "https://www.bilibili.com/video/BV13JJK6pEo2",
+      "engagement": 80,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 77,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/59166d50dd686f40e736b2c3473e0d5512d93369.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】融灾425竞速",
+      "summary": "长草了试试竞速一下\n感觉打快了全是丑陋操作）",
+      "source": "bilibili",
+      "time": "2026-06-14T17:15:22+00:00",
+      "url": "http://www.bilibili.com/video/av116749525586964",
+      "engagement": 77,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/59166d50dd686f40e736b2c3473e0d5512d93369.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【忘却前夜】什么第七章boss，什么母树，我看是减速带吧",
+      "summary": "茉夏还是太离谱了。",
+      "source": "bilibili",
+      "time": "2026-06-14T18:26:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1zsJN6FEwB",
+      "engagement": 11,
+      "is_hot": false,
+      "author": "让崎妮洛",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 11,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/5401b583fe4c2ba96bd152a600e69a0b4e47892a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】什么第七章boss，什么母树，我看是减速带吧",
+      "summary": "茉夏还是太离谱了。",
+      "source": "bilibili",
+      "time": "2026-06-14T18:26:16+00:00",
+      "url": "http://www.bilibili.com/video/av116749861132042",
+      "engagement": 11,
+      "is_hot": false,
+      "author": "让崎妮洛",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i1.hdslb.com/bfs/archive/5401b583fe4c2ba96bd152a600e69a0b4e47892a.jpg",
+      "content_type": "video"
     }
   ]
 }

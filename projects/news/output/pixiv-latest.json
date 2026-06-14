@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-14T17:09:25.733986+00:00",
+  "collected_at": "2026-06-14T19:09:31.591985+00:00",
   "source": "pixiv",
-  "item_count": 32,
+  "item_count": 33,
   "items": [
     {
       "source": "pixiv",
@@ -241,6 +241,18 @@
       "author": "ソラミミ",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/20/58/49/145485946_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-15T02:59:16+09:00",
+      "lang": "",
+      "title": "熔朵",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/146024746",
+      "author": "きよ",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/15/02/59/16/146024746_p0_square1200.jpg",
       "content_type": "image"
     },
     {

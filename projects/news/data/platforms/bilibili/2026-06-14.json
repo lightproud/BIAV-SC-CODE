@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-14T17:09:33.622245+00:00",
+  "archived_at": "2026-06-14T19:09:39.190943+00:00",
   "source": "bilibili",
-  "item_count": 43,
+  "item_count": 46,
   "items": [
     {
       "title": "一些gal角色",
@@ -314,6 +314,46 @@
       "content_type": "video"
     },
     {
+      "title": "桜花の幻想",
+      "summary": "依旧产出莫名其妙低脂小视频ing\n  └ 烟已归 (0赞): [打call][打call][打call]\n  └ 大军阀洛佩拉 (0赞): [热词系列_吹爆]\n  └ 墨踪尘淡 (0赞): 守护最好的拉蒙娜[打call]",
+      "source": "bilibili",
+      "time": "2026-06-14T13:22:51+00:00",
+      "url": "https://www.bilibili.com/video/BV1THJP6VEZR",
+      "engagement": 128,
+      "is_hot": false,
+      "author": "风早櫌霜",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 121,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/07a6aa6d62cb449ed63446a9553ed651e1ec348b.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "桜花の幻想",
+      "summary": "依旧产出莫名其妙低脂小视频ing",
+      "source": "bilibili",
+      "time": "2026-06-14T13:22:51+00:00",
+      "url": "http://www.bilibili.com/video/av116748669946658",
+      "engagement": 121,
+      "is_hot": false,
+      "author": "风早櫌霜",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/07a6aa6d62cb449ed63446a9553ed651e1ec348b.jpg",
+      "content_type": "video"
+    },
+    {
       "title": "【忘却前夜】银钥充能属性讲解",
       "summary": "-\n  └ 子夜微雪 (1赞): 命轮漏了以下几种情况：\n纯混沌界域回合结束+250银钥\n银鳕鱼（24sr）造成伤害给银钥，共200银钥\n安魂曲（哈姆林专）造成伤害给银钥，共400%银钥\n安眠（🥚墨专）银钥充能提高20%\n催眠灵摆（医生sr）银钥充能提高10%\n极夜回合结束+200银钥\n樱花1费250-750银钥\n\n注：娜娜不光有额外银钥属性，其实还自带半个真理之门\n  └ SSGSSBJS (1赞): up，能告诉我这要抽阿尔克涅吗\n  └ Sky_Jerry (0赞): 做得好好！！",
       "source": "bilibili",
@@ -352,6 +392,29 @@
       "platform_region": "cn",
       "media_url": "//i1.hdslb.com/bfs/archive/ea0930a137f0dfd1f92905b7605509a36d8bd418.jpg",
       "content_type": "video"
+    },
+    {
+      "title": "和沙耶的日常，吗？（番外篇）",
+      "summary": "这一次有点微恐哦，大家手下留情，不喜欢可以评论区骂up，千万别弄下架了呀\n  └ 弦乐汽 (0赞): 可爱捏\n  └ 灵魂所向のSD (0赞): 可爱\n  └ 非酋夜语QAQ (0赞): 笑的好诡异",
+      "source": "bilibili",
+      "time": "2026-06-14T14:50:23+00:00",
+      "url": "https://www.bilibili.com/video/BV1CXJA6AEb8",
+      "engagement": 112,
+      "is_hot": false,
+      "author": "御生门",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 109,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/17f96ba5010b9dd124f2ac5c594ddd46d11eda55.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "【忘却前夜】第一个，无灵芝三星尤乌H5-11",
