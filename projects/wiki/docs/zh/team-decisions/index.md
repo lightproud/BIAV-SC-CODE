@@ -42,7 +42,7 @@ layout: page
 | 021 | [前台专岗不固定编制](./021-flex-front-posts.md) | 2026-04-14 |
 | 022 | [缸中之脑方向确认为方法论验证（交付物必须可用）](./022-methodology-direction.md) | 2026-04-14 |
 | 023 | [main 分支添加 Ruleset 保护规则（禁止删除）](./023-main-branch-ruleset.md) | 2026-04-14 |
-| 024 | [双系统架构：银芯（公开层）+ 黑池（内部层）](./024-dual-system-architecture.md) | 2026-04-14 |
+| 024 | [双系统架构：银芯（受限层）+ 黑池（内部层）](./024-dual-system-architecture.md) | 2026-04-14 |
 | 025 | [引入 occ-local 子项目：基于 ruvnet/open-claude-code (MIT) 的本地 Claude Code CLI](./025-occ-local-intro.md) | 2026-04-14 |
 | 026 | [BPT 新一代基于 occ-local 重建：采用路径 B（平行新建 projects/bpt-next/）+ Electron + React UI（继承 bpt/bpt-desktop）+ 最终收敛为单一 BPT（bpt / bpt-web / bpt-desktop 归档 archive/）](./026-bpt-next-on-occ-local.md) | 2026-04-14 |
 | 027 | [**改道决策**（2026-04-14 当日作废上一条）：深入核实 claw-code（instructkr/claw-code）后发现其本地模型 + 多 provider 能力超 occ-local（Ollama 开箱即用 / 5 层配置链 / 模型前缀路由 / proxy 原生 / xAI+DashScope+OpenRouter），故 bpt-next 改基于 claw-code 打造（Rust 48K 行）](./027-bpt-next-reroute-to-claw-code.md) | 2026-04-14 |
