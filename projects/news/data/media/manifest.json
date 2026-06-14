@@ -11395,6 +11395,55 @@
       "title": "ドール教授",
       "time": "2026-06-14T19:38:56+09:00",
       "downloaded_at": "2026-06-14T12:59:21.443527+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/038b3c8fc7c070a71e4748d76460bfc55afc640f.jpg": {
+      "filename": "bilibili_12918e83642f1e99.jpg",
+      "source": "bilibili",
+      "title": "我永远忘不了莉奥诺拉潮湿的眼睛",
+      "time": "2026-06-13T20:06:14+00:00",
+      "downloaded_at": "2026-06-14T15:07:33.155348+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4e254cc185f1edffc0068971eee63e6596eb8e1c.jpg": {
+      "filename": "bilibili_f6faa69d94e8518a.jpg",
+      "source": "bilibili",
+      "title": "【斩杀神游】萌新也能抄的阿拉克涅主c融灾5-5",
+      "time": "2026-06-14T09:14:20+00:00",
+      "downloaded_at": "2026-06-14T15:07:34.886998+00:00"
+    },
+    "https://i.ytimg.com/vi/ZdP6VikA7O0/hqdefault.jpg": {
+      "filename": "youtube_2fc483b576de1433.jpg",
+      "source": "youtube",
+      "title": "【#忘却前夜  】融災禁区チャレンジ！！目指せ累計３３０！！【#推し活】",
+      "time": "2026-06-14T10:06:35Z",
+      "downloaded_at": "2026-06-14T15:07:35.708380+00:00"
+    },
+    "https://i.ytimg.com/vi/MJoQ2a_XMGc/hqdefault_live.jpg": {
+      "filename": "youtube_1e113886896f0b59.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능 망전공략 유루바 등장",
+      "time": "2026-06-14T13:13:20Z",
+      "downloaded_at": "2026-06-14T15:07:36.164486+00:00"
+    },
+    "https://i.ytimg.com/vi/wk7r_NrW7l0/hqdefault.jpg": {
+      "filename": "youtube_df44526582194df7.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 망전공략유투바 등장",
+      "time": "2026-06-14T13:16:18Z",
+      "downloaded_at": "2026-06-14T15:07:36.560217+00:00"
+    },
+    "https://i.ytimg.com/vi/Hr5acfLCIRA/hqdefault.jpg": {
+      "filename": "youtube_afffa59307e3f8e8.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】融災禁区・第4波・Ⅴ級警報（2026/06/14）",
+      "time": "2026-06-14T14:18:51Z",
+      "downloaded_at": "2026-06-14T15:07:36.972049+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0af5e44cab3a32f6f18f0cdc32efe583fd16df61.jpg": {
+      "filename": "bilibili_0792888d0243b992.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌，官方授权同人立牌展示",
+      "time": "2026-06-14T15:00:00+00:00",
+      "downloaded_at": "2026-06-14T15:07:38.321700+00:00"
     }
   },
   "failed": {
@@ -16917,6 +16966,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-14T12:59:19.714037+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/038b3c8fc7c070a71e4748d76460bfc55afc640f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T15:07:33.455839+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/4e254cc185f1edffc0068971eee63e6596eb8e1c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T15:07:35.187542+00:00"
     }
   },
   "archived": []
