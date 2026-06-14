@@ -11444,6 +11444,48 @@
       "title": "沙耶之歌，官方授权同人立牌展示",
       "time": "2026-06-14T15:00:00+00:00",
       "downloaded_at": "2026-06-14T15:07:38.321700+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/a15fae87704a402de7e499ee58bba1d0583470aa.jpg": {
+      "filename": "bilibili_f0699885afbdc1be.jpg",
+      "source": "bilibili",
+      "title": "【忘却淋夜】2.5周年节奏榜弥萨格大乱斗，万字解析角色强度",
+      "time": "2026-06-14T16:51:26+00:00",
+      "downloaded_at": "2026-06-14T17:09:27.602756+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5d374b86bd211c86ef75a487da21211b8302d344.jpg": {
+      "filename": "bilibili_a47e8d99be0215e7.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 沙耶测试 艾瑞卡 融灾5-5大肉块",
+      "time": "2026-06-14T03:09:44+00:00",
+      "downloaded_at": "2026-06-14T17:09:29.004392+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/af6a1d5a966f6dc7b9e6341cb3a22664f8aa445f.jpg": {
+      "filename": "bilibili_778be4eeb73fcbca.jpg",
+      "source": "bilibili",
+      "title": "80级3启塔薇差造物少命轮1T5-5",
+      "time": "2026-06-14T15:36:39+00:00",
+      "downloaded_at": "2026-06-14T17:09:31.224400+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/62abbd9b741a860a297528a04c84a70cf8c3e2ec.jpg": {
+      "filename": "bilibili_9bf0fc9d5f9121a5.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌，官方授权同人立牌展示",
+      "time": "2026-06-14T15:00:00+00:00",
+      "downloaded_at": "2026-06-14T17:09:32.681875+00:00"
+    },
+    "https://i.ytimg.com/vi/CfLM4DEzBxM/hqdefault.jpg": {
+      "filename": "youtube_7cd6fc50aa274169.jpg",
+      "source": "youtube",
+      "title": "Sea and Sand (Stream 14) MORIMENS",
+      "time": "2026-06-14T16:00:08Z",
+      "downloaded_at": "2026-06-14T17:09:33.147807+00:00"
+    },
+    "https://i.ytimg.com/vi/QUiJIh-0GsA/hqdefault.jpg": {
+      "filename": "youtube_e7cd648d9452fc9a.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】融災禁区・第1波・Ⅱ級警報（2026/06/14）",
+      "time": "2026-06-14T15:17:57Z",
+      "downloaded_at": "2026-06-14T17:09:33.547081+00:00"
     }
   },
   "failed": {
@@ -16976,6 +17018,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-14T15:07:35.187542+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/a15fae87704a402de7e499ee58bba1d0583470aa.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T17:09:26.285219+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/5d374b86bd211c86ef75a487da21211b8302d344.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T17:09:29.304857+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/af6a1d5a966f6dc7b9e6341cb3a22664f8aa445f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T17:09:31.524852+00:00"
     }
   },
   "archived": []
