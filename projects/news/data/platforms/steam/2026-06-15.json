@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-15",
+  "archived_at": "2026-06-14T19:09:39.202352+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] eu amo emo morimens, ele só fica cansativo pelos b...",
+      "summary": "eu amo emo morimens, ele só fica cansativo pelos bugs que ocorrem no meu sistema operacional linux",
+      "source": "steam_review",
+      "time": "2026-06-14T17:10:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198757638275/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198757638275",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 11775,
+        "votes_up": 0,
+        "timestamp_created": 1781457010
+      },
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}
