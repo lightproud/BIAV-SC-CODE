@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-06-14T10:38:44.054898+00:00",
+  "updated_at": "2026-06-14T13:15:26.486535+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -55,7 +55,7 @@
       "name": "🔸綜合討論",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 49,
+      "position": 48,
       "topic": "您可以在此處談論一切遊戲相關的內容！"
     },
     {
@@ -63,7 +63,7 @@
       "name": "🔸阵容构建",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 50,
+      "position": 49,
       "topic": "编队搭配內容可隨時随时在此频道讨论唷~"
     },
     {
@@ -135,7 +135,7 @@
       "name": "🔸剧情交流",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 51,
+      "position": 50,
       "topic": "期待与各位守密人开启各种剧情和唤醒体的讨论！"
     },
     {
@@ -143,7 +143,7 @@
       "name": "🔸游戏攻略",
       "type": 15,
       "parent_id": "1355090412821418119",
-      "position": 39,
+      "position": 38,
       "topic": null
     },
     {
@@ -159,7 +159,7 @@
       "name": "🔸同人创作",
       "type": 15,
       "parent_id": "1355149143739203624",
-      "position": 44,
+      "position": 43,
       "topic": null
     },
     {
@@ -167,7 +167,7 @@
       "name": "🔸晒卡分享",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 54,
+      "position": 53,
       "topic": null
     },
     {
@@ -191,7 +191,7 @@
       "name": "🔸调查心得",
       "type": 15,
       "parent_id": "1355149654068691124",
-      "position": 58,
+      "position": 57,
       "topic": "守密人可以在此频道发帖讨论各种关卡心得~"
     },
     {
@@ -223,7 +223,7 @@
       "name": "🔸欢乐梗图",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 57,
+      "position": 56,
       "topic": null
     },
     {
@@ -239,7 +239,7 @@
       "name": "🔸相位对弈",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 53,
+      "position": 52,
       "topic": null
     },
     {
@@ -255,7 +255,7 @@
       "name": "🔸影片分享",
       "type": 15,
       "parent_id": "1355149143739203624",
-      "position": 46,
+      "position": 45,
       "topic": null
     },
     {
@@ -263,7 +263,7 @@
       "name": "🔸考據研究",
       "type": 15,
       "parent_id": "1355149143739203624",
-      "position": 45,
+      "position": 44,
       "topic": null
     },
     {
@@ -279,7 +279,7 @@
       "name": "🔸课间休息闲聊",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 55,
+      "position": 54,
       "topic": "各位守密人可在此处进行任意话题的闲聊~"
     },
     {
@@ -327,7 +327,7 @@
       "name": "🔸交友频道",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 56,
+      "position": 55,
       "topic": null
     },
     {
@@ -375,7 +375,7 @@
       "name": "🔸日本語チャンネル",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 59,
+      "position": 58,
       "topic": null
     },
     {
@@ -383,7 +383,7 @@
       "name": "🔸한국어-채팅방",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 60,
+      "position": 59,
       "topic": null
     },
     {
@@ -391,7 +391,7 @@
       "name": "🔸deutscher-chatraum",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 62,
+      "position": 61,
       "topic": "📢 Hinweis: Damit Sie Ihre sprachspezifischen Kanäle nicht verpassen, gehen Sie bitte so schnell wie möglich zu <id:customize> und wählen Sie Ihre Sprachrolle aus. Wir werden zukünftig die Kanalausblendung implementieren. Sie sehen dann nur noch die Kanäle, die den von Ihnen ausgewählten Rollen entsprechen."
     },
     {
@@ -399,7 +399,7 @@
       "name": "🔸chaîne-française",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 61,
+      "position": 60,
       "topic": null
     },
     {
@@ -407,7 +407,7 @@
       "name": "🔸русский-канал",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 63,
+      "position": 62,
       "topic": null
     },
     {
@@ -415,7 +415,7 @@
       "name": "🔸phòng-chat-tiếng-việt",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 64,
+      "position": 63,
       "topic": null
     },
     {
@@ -423,7 +423,7 @@
       "name": "🔸canal-español",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 67,
+      "position": 66,
       "topic": null
     },
     {
@@ -431,7 +431,7 @@
       "name": "🔸canal-português",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 66,
+      "position": 65,
       "topic": null
     },
     {
@@ -439,7 +439,7 @@
       "name": "🔸ruang-obrolan-indonesia",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 65,
+      "position": 64,
       "topic": null
     },
     {
@@ -447,7 +447,7 @@
       "name": "🔸ห้องสนทนาภาษาไทย",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 68,
+      "position": 67,
       "topic": null
     },
     {
@@ -455,7 +455,7 @@
       "name": "🔸art-and-memes",
       "type": 15,
       "parent_id": "1355149143739203624",
-      "position": 47,
+      "position": 46,
       "topic": "The original [media-corner] channel"
     },
     {
@@ -463,7 +463,7 @@
       "name": "🔸guides",
       "type": 15,
       "parent_id": "1355090412821418119",
-      "position": 42,
+      "position": 41,
       "topic": "The original [gameplay-discussion] channel"
     },
     {
@@ -495,7 +495,7 @@
       "name": "🔸traphase",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 35,
+      "position": 34,
       "topic": "Here you can share your thoughts and views about Traphase!"
     },
     {
@@ -911,7 +911,7 @@
       "name": "🔸lets-count",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 37,
+      "position": 36,
       "topic": null
     },
     {
@@ -975,7 +975,7 @@
       "name": "🔸新人帮助",
       "type": 15,
       "parent_id": "1355090412821418119",
-      "position": 40,
+      "position": 39,
       "topic": "新玩家可以在这里发帖求助，老玩家也可在此发布适合新手玩家的攻略贴、前期游戏建议等内容，以帮助新玩家上手游戏~\n\n🎁我们会给热心帮助新玩家的守密人掉落**神秘奖励**哟~"
     },
     {
@@ -983,7 +983,7 @@
       "name": "🔸newcomer-help",
       "type": 15,
       "parent_id": "1355090412821418119",
-      "position": 43,
+      "position": 42,
       "topic": "New players can post here for help, and veteran players can also post strategy posts and early game suggestions for novice players to help new players get started with the game~\n\n🎁We will give **mysterious rewards** to the keepers who are enthusiastic about helping new players~"
     },
     {
@@ -1023,7 +1023,7 @@
       "name": "🔸邀请码互助┊swap-invitation-codes",
       "type": 0,
       "parent_id": "1355090412821418119",
-      "position": 41,
+      "position": 40,
       "topic": "「弥萨格入学邀约」活动互助群，大家可以在这里分享邀请码。\n活动详细介绍见下方链接。\n\n「Mythag Enrollment Invite」 activity mutual assistance group, where you can share invitation codes.\nActivity details are available below.\n🔗https://discord.com/channels/1131791637933199470/1405128568035606568\n\n⚠请不要在本频道用无意义内容刷屏\n⚠Please do not flood the screen with meaningless content on this channel"
     },
     {
@@ -1103,7 +1103,7 @@
       "name": "🔸忘却前夜┊morimens-tv",
       "type": 0,
       "parent_id": "1355149143739203624",
-      "position": 48,
+      "position": 47,
       "topic": null
     },
     {
@@ -1111,7 +1111,7 @@
       "name": "🔸游戏问题",
       "type": 0,
       "parent_id": "1355149654068691124",
-      "position": 52,
+      "position": 51,
       "topic": null
     },
     {
@@ -1119,7 +1119,7 @@
       "name": "🔸friend-request",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 36,
+      "position": 35,
       "topic": "This channel is dedicated to connecting with other members of our mobile gaming community! Please follow these simple rules to keep things organized and helpful for everyone:\n\nRules for Posting:\n\nBe Specific: Please clearly state your UID and give a screenshot of your Keepers Archive. You may access this by clicking your in-game avatar found in the top left of the main menu.\n\nNo Spamming: Only post your request once. Do not repeatedly paste your information.\n\nStay Relevant: This channel is strictly for friend requests. \n\nDo not post general chat, game results, or off-topic content here.\n\nBe Respectful: All server rules apply here. Be polite when adding others and interacting with posts."
     },
     {
@@ -1143,7 +1143,7 @@
       "name": "🔸游戏常见问题解答┊game-faq",
       "type": 0,
       "parent_id": "1355090412821418119",
-      "position": 38,
+      "position": 37,
       "topic": null
     },
     {
@@ -1159,7 +1159,7 @@
       "name": "🔸flex",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 34,
+      "position": 33,
       "topic": "This is your dedicated spot to show off your achievements, lucky pulls, and some bragging rights.\n\nWhat you can \"flex\" here:\n🏆 Achievements & Milestones: Hit a new rank? Finally beat that tough level? Let us know!\n\n💎 Gacha Pulls: Did you finally snag that ultra-rare character/item? Share your luck (or commiserate over a bad pull)!\n\n⚔️ Highlights & Screenshots: Post your best gameplay moments.\n\n🎉 Event Progress: Show off how far you've gotten in the current event.\n\nA couple of quick rules for the channel:\n\nBe respectful: Celebrate others' wins and be kind when they share their losses.\n\nKeep it clean: Follow all general <#1131837874078232597> \n\nNo spamming: Use this channel for sharing content, not constant chatter (we have designated channels for this)."
     },
     {
@@ -1214,8 +1214,8 @@
       "id": "1486019364682465372",
       "name": "🔸erica-playground",
       "type": 0,
-      "parent_id": "1437857872011726879",
-      "position": 33,
+      "parent_id": "1511303613408870511",
+      "position": 68,
       "topic": null
     },
     {
@@ -1295,7 +1295,7 @@
       "name": "shirumi204",
       "type": 0,
       "parent_id": "1440851754311749733",
-      "position": 143,
+      "position": 13,
       "topic": "ModMail Channel 696599511597842452 1263896970456727592 (Please do not change this)"
     }
   ]
