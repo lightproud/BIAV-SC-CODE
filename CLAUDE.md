@@ -265,5 +265,10 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 - **合并默认规则**（守密人 2026-06-11 裁定）：feature 分支任务完成且全量验证通过后，
   守密人下达「合并」即默认合并 main，PR 无需停留等待逐项确认；遇合并冲突按
   「自动生成状态档案取最新、人工档案先报告再处置」原则解决。
+- **直接合并 main + 不订阅 PR（守密人 2026-06-14 裁定，硬约束）**：
+  Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
+  **绝不主动调用 `subscribe_pr_activity`**；若会话被环境自动订阅（出现
+  `<github-webhook-activity>` 提示），**立即 `unsubscribe_pr_activity` 退订**。
+  彻底关闭自动订阅需在 Web 环境配置侧设置（见 https://code.claude.com/docs/en/claude-code-on-the-web），仓库内无法根治。
 - commit message 可用英文，过程说明 / 状态报告用中文（§2.1.3）。
 - 产出文件后必附可点击超链接向守密人汇报（§2.2.2）。
