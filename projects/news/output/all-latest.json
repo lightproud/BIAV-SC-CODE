@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-13T23:59:38.939294+00:00",
+  "collected_at": "2026-06-14T02:56:06.919372+00:00",
   "source": "all",
-  "item_count": 198,
+  "item_count": 192,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "Absolutely amazing writing and story, it's very player-friendly and has very generous rewards, specially for a ''gacha'' game, stunning art, and fantastic gameplay to boot!. If you are reading this in the store page: INTALL IT. PLAY IT. NOW!!",
       "timestamp_created": 1781364552,
-      "playtime_forever": 1640
+      "playtime_forever": 1821
     },
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1781334157,
-      "playtime_forever": 749
+      "playtime_forever": 790
     },
     {
       "source": "steam",
@@ -151,7 +151,7 @@
       "voted_up": true,
       "review": "只适合零氪和重氪，随便玩玩",
       "timestamp_created": 1781331729,
-      "playtime_forever": 2026
+      "playtime_forever": 2033
     },
     {
       "source": "steam",
@@ -166,52 +166,7 @@
       "voted_up": true,
       "review": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
       "timestamp_created": 1781324273,
-      "playtime_forever": 7416
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T01:53:47+00:00",
-      "lang": "brazilian",
-      "title": "[正面] bom",
-      "summary": "bom",
-      "url": "https://steamcommunity.com/profiles/76561198110107840/recommended/3052450",
-      "author": "76561198110107840",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "bom",
-      "timestamp_created": 1781315627,
-      "playtime_forever": 715
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T01:05:05+00:00",
-      "lang": "english",
-      "title": "[正面] Finished the first chapter, love it so far.",
-      "summary": "Finished the first chapter, love it so far.",
-      "url": "https://steamcommunity.com/profiles/76561199866562525/recommended/3052450",
-      "author": "76561199866562525",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Finished the first chapter, love it so far.",
-      "timestamp_created": 1781312705,
-      "playtime_forever": 824
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T00:08:19+00:00",
-      "lang": "english",
-      "title": "[负面] Are you convicted of VN larping and impulsive gamb...",
-      "summary": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
-      "url": "https://steamcommunity.com/profiles/76561198873800932/recommended/3052450",
-      "author": "76561198873800932",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
-      "timestamp_created": 1781309299,
-      "playtime_forever": 416
+      "playtime_forever": 7596
     },
     {
       "source": "discord",
@@ -530,7 +485,7 @@
       "summary": "I've done most of D-Tide offline, only missing a W5 clear... surely it won't kick my ass. I have no Vortice copies, aiming for E1 + ...",
       "url": "https://www.youtube.com/watch?v=owN2lw2pBUs",
       "author": "Trash Keeper",
-      "engagement": 794,
+      "engagement": 842,
       "media_url": "https://i.ytimg.com/vi/owN2lw2pBUs/hqdefault.jpg",
       "content_type": "image"
     },
@@ -542,7 +497,7 @@
       "summary": "morimens #morimens #게임 #망각전야.",
       "url": "https://www.youtube.com/watch?v=Se2t5GcqAvE",
       "author": "에이칠오",
-      "engagement": 489,
+      "engagement": 490,
       "media_url": "https://i.ytimg.com/vi/Se2t5GcqAvE/hqdefault.jpg",
       "content_type": "image"
     },
@@ -554,32 +509,20 @@
       "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
       "url": "https://www.youtube.com/watch?v=J_1dysp5pjE",
       "author": "mankonren",
-      "engagement": 85,
+      "engagement": 87,
       "media_url": "https://i.ytimg.com/vi/J_1dysp5pjE/hqdefault.jpg",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T19:10:27Z",
+      "time": "2026-06-14T02:27:50Z",
       "lang": "",
-      "title": "망각전야Morimens) 진짜 &#39;사야&#39; 고수들은 무조건 이렇게 씁니다. 실전 핵심 압축 가이드",
-      "summary": "망각전야 #morimens #게임.",
-      "url": "https://www.youtube.com/watch?v=VYKMgBcc9Y0",
-      "author": "박현(Muyeong)",
-      "engagement": 78,
-      "media_url": "https://i.ytimg.com/vi/VYKMgBcc9Y0/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T19:21:07Z",
-      "lang": "",
-      "title": "망각전야Morimens) (대리뽑,상담시청가능)융재 설명회 날마다 오는게 아님",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "url": "https://www.youtube.com/watch?v=z4GAmtwliu0",
-      "author": "박현(Muyeong)",
-      "engagement": 67,
-      "media_url": "https://i.ytimg.com/vi/z4GAmtwliu0/hqdefault.jpg",
+      "title": "Saturday gatcha and more (Vert)",
+      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "url": "https://www.youtube.com/watch?v=ca9gexLCep0",
+      "author": "mankonren",
+      "engagement": 84,
+      "media_url": "https://i.ytimg.com/vi/ca9gexLCep0/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -590,20 +533,8 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は初めての、解説アリ動画となっております。 自分もまだ対人戦を ...",
       "url": "https://www.youtube.com/watch?v=VNFDxiT8Hv0",
       "author": "薄めの『ゆゆ』",
-      "engagement": 54,
+      "engagement": 62,
       "media_url": "https://i.ytimg.com/vi/VNFDxiT8Hv0/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T17:26:09Z",
-      "lang": "",
-      "title": "【MORIMENS】STARTING CHAPTER 5 | SHOULD WE BE WORRIED...?",
-      "summary": "Are we going to be okay... Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
-      "url": "https://www.youtube.com/watch?v=5CoSZbHy-Gk",
-      "author": "AdagioVT",
-      "engagement": 10,
-      "media_url": "https://i.ytimg.com/vi/5CoSZbHy-Gk/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -614,21 +545,9 @@
       "summary": "忘卻前夜#morimens.",
       "url": "https://www.youtube.com/watch?v=DNkuKgzQgQQ",
       "author": "瑪爾",
-      "engagement": 6,
+      "engagement": 13,
       "media_url": "https://i.ytimg.com/vi/DNkuKgzQgQQ/hqdefault.jpg",
       "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-13T22:00:20Z",
-      "lang": "",
-      "title": "【세라핌🌸】미리암 개인 스토리 : 모독 더빙!♪🥰  모리멘스 : 망각전야 w.톱밥입니다🌸💕 2026.06.13 라이브 방송🌸",
-      "summary": "【세라핌  】미리암 개인 스토리 : 모독 더빙!♪   모리멘스 : 망각전야 w.톱밥입니다     2026.06.13 라이브 방송   『 재생 목록   ...",
-      "url": "https://www.youtube.com/watch?v=eBw0ZlTXfZU",
-      "author": "세라핌🌸핌카이브🩷",
-      "engagement": 5,
-      "media_url": "https://i.ytimg.com/vi/eBw0ZlTXfZU/hqdefault.jpg",
-      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -638,9 +557,21 @@
       "summary": "忘卻前夜#morimens.",
       "url": "https://www.youtube.com/watch?v=mmYa85OjOJA",
       "author": "瑪爾",
-      "engagement": 4,
+      "engagement": 11,
       "media_url": "https://i.ytimg.com/vi/mmYa85OjOJA/hqdefault.jpg",
-      "content_type": "video"
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-13T22:00:20Z",
+      "lang": "",
+      "title": "【세라핌🌸】미리암 개인 스토리 : 모독 더빙!♪🥰  모리멘스 : 망각전야 w.톱밥입니다🌸💕 2026.06.13 라이브 방송🌸",
+      "summary": "【세라핌  】미리암 개인 스토리 : 모독 더빙!♪   모리멘스 : 망각전야 w.톱밥입니다     2026.06.13 라이브 방송   『 재생 목록   ...",
+      "url": "https://www.youtube.com/watch?v=eBw0ZlTXfZU",
+      "author": "세라핌🌸핌카이브🩷",
+      "engagement": 8,
+      "media_url": "https://i.ytimg.com/vi/eBw0ZlTXfZU/hqdefault.jpg",
+      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -656,6 +587,42 @@
     },
     {
       "source": "youtube",
+      "time": "2026-06-14T02:28:40Z",
+      "lang": "",
+      "title": "Saturday gatcha and more",
+      "summary": "Catcha deck builder and random games Controller today Flydigi Vader 5 Pro https://www.twitch.tv/mankonren ...",
+      "url": "https://www.youtube.com/watch?v=_x3fTijxlUw",
+      "author": "mankonren",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/_x3fTijxlUw/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-14T02:05:42Z",
+      "lang": "",
+      "title": "Morimens Chapter 2.11",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=EYP8e9t9iAM",
+      "author": "InoLifo",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/EYP8e9t9iAM/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-14T02:03:54Z",
+      "lang": "",
+      "title": "Morimens Chapter 2.10",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=dU51uTVbglw",
+      "author": "InoLifo",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/dU51uTVbglw/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
       "time": "2026-06-13T22:59:33Z",
       "lang": "",
       "title": "忘却前夜　3-13　6t",
@@ -664,6 +631,18 @@
       "author": "スイマー(シン",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/CfBQfFNW3dg/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-14T02:46:59Z",
+      "lang": "",
+      "title": "모리멘스 (망각전야) Morimens 忘卻前夜 첫 시작 튜토리얼",
+      "summary": "카제나가 한창 논란에 빠져있을 때, 비슷한 장르의 로그라이크 게임이 있다고 해서 하려고 했다가 이제서야 해보았다 템포가 상당히 ...",
+      "url": "https://www.youtube.com/watch?v=sKtgVhwOuzE",
+      "author": "고키챠",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/sKtgVhwOuzE/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -704,27 +683,30 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-13T19:00:24Z",
+      "time": "2026-06-14T00:39:06Z",
       "lang": "",
-      "title": "Morimens - Gatcha Game - First Impression",
-      "summary": "morimens This was way better than I thought! Great art, characters, music, great game.",
-      "url": "https://www.youtube.com/watch?v=Poj81s7cEXg",
-      "author": "UPM Gaming",
+      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画７",
+      "summary": "長いのでｋｓｋしてます.",
+      "url": "https://www.youtube.com/watch?v=MepE0v_lAzQ",
+      "author": "和音",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/Poj81s7cEXg/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/MepE0v_lAzQ/hqdefault.jpg",
       "content_type": "image"
     },
     {
-      "source": "youtube",
-      "time": "2026-06-13T18:38:32Z",
-      "lang": "",
-      "title": "엘바 스토리(번식광열)",
-      "summary": "엘바 스토리를 원문 번역으로 새롭게 올립니다 #morimens #게임스토리 #망각전야 #모리멘스 #번식광열.",
-      "url": "https://www.youtube.com/watch?v=3n9MvJZbY1Q",
-      "author": "에이칠오",
+      "source": "reddit",
+      "time": "2026-06-14T01:43:38+00:00",
+      "lang": "en",
+      "title": "As a new player finishing the main story",
+      "summary": "&#32; submitted by &#32;  /u/noraborialis   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u583l6/as_a_new_player_finishing_the_main_story/",
+      "author": "/u/noraborialis",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/3n9MvJZbY1Q/hqdefault.jpg",
-      "content_type": "image"
+      "media_url": "https://preview.redd.it/mwq0lug0l57h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=cff2d569a3b382cf772d1ea1e3677138a35d64c8",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     },
     {
       "source": "reddit",
@@ -773,12 +755,40 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-14T00:34:51+00:00",
+      "lang": "en",
+      "title": "Am I on the right path here, oooor?",
+      "summary": "Hi! So I&#39;ve been playing for two weeks-ish now and committed to getting Mouchette a few days ago. &#x200B; So what I&#39;m currently doing with Mouchette comp (with Saya, Helot, and Aigis) is basically spam strike cards and hope for the best &lt;/3 &#x200B; Am I doing Mouchette right? And also, is there any other team comp you could recommend with my available characters (not Mouchette-centric) &#x200B;  &#32; submitted by &#32;  /u/ElleMeetsArt   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u56pxy/am_i_on_the_right_path_here_oooor/",
+      "author": "/u/ElleMeetsArt",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/sdeeu5hq857h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=e887440aba7e66fc3b8f41e21c7b9836168910ef",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-13T18:16:38+00:00",
       "lang": "en",
       "title": "Confused about awakeners",
       "summary": "So, what exactly is an &quot;awakener&quot; in this story? I don&#39;t remember skipping any story but am very confused. ----Spoilers for Chapter 5--- By chapter 5, my confusion got sky high. So what I am guessing from what I know about mythos is that Cthulhu is the lord miryam and the others are talking about while the maiden or whatever should be Cthylla. Makes sense to this point. So why are we in a ship with &quot;tulu&quot; and &quot;murphy&quot; who are basically those two? I mean, I get that they aren&#39;t them but they are totally them outside of not being them in this situation. Tulu is %100 based on cthulhu and Murphy (Gmurphy) is basically Cthylla but they are not?... My brain hurts...  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
       "url": "https://old.reddit.com/r/Morimens/comments/1u4y28q/confused_about_awakeners/",
       "author": "/u/Embarrassed-Sign3106",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:35:14+00:00",
+      "lang": "en",
+      "title": "How hard is hard mode story mode?",
+      "summary": "I&#39;m curious if there is any statics regarding about the completion of hard mode story like if its something most veteran player are finished with or is it something only grinders do.   &#32; submitted by &#32;  /u/CabinetSpice   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u56q81/how_hard_is_hard_mode_story_mode/",
+      "author": "/u/CabinetSpice",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -814,14 +824,42 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T13:18:12+00:00",
+      "time": "2026-06-13T19:45:21+00:00",
       "lang": "en",
-      "title": "Team Comp",
-      "summary": "Should I change someone out for saya?  &#32; submitted by &#32;  /u/Little_Pollution7332   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4qs1l/team_comp/",
-      "author": "/u/Little_Pollution7332",
+      "title": "Is the English translation for morimens better now?",
+      "summary": "&#32; submitted by &#32;  /u/Acrobatic_Ad_1688   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u508jw/is_the_english_translation_for_morimens_better_now/",
+      "author": "/u/Acrobatic_Ad_1688",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/6qn3tpfxv17h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=49f69593fb12d7f464f4f2cd8e7b4ffd580da0ee",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:28:39+00:00",
+      "lang": "en",
+      "title": "How do you use poison?",
+      "summary": "I&#39;ve been trying to clear wave 3 with this team but I keep dying in the end. Ion really know what I&#39;m doing   &#32; submitted by &#32;  /u/Separate-Discount472   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u56lfs/how_do_you_use_poison/",
+      "author": "/u/Separate-Discount472",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/vaj8v9vm757h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1b8d0bf4933eae752aa4901840ea7bb634ccb8e1",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:01:53+00:00",
+      "lang": "en",
+      "title": "build me a fun team!!! :D",
+      "summary": "i lovelovelove ultra and aequor (as you can see 😛😛😛) i have more chars, the only ones i dont own are ghelot, gdoll, salvador, and doresain!  &#32; submitted by &#32;  /u/vapemasterlily   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u561no/build_me_a_fun_team_d/",
+      "author": "/u/vapemasterlily",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/lo6za72v257h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5df61ecaecbcb3fb76c30a297a09aba50b5ee119",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -842,13 +880,15 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T19:45:21+00:00",
+      "time": "2026-06-13T13:18:12+00:00",
       "lang": "en",
-      "title": "Is the English translation for morimens better now?",
-      "summary": "&#32; submitted by &#32;  /u/Acrobatic_Ad_1688   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u508jw/is_the_english_translation_for_morimens_better_now/",
-      "author": "/u/Acrobatic_Ad_1688",
+      "title": "Team Comp",
+      "summary": "Should I change someone out for saya?  &#32; submitted by &#32;  /u/Little_Pollution7332   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4qs1l/team_comp/",
+      "author": "/u/Little_Pollution7332",
       "engagement": 0,
+      "media_url": "https://preview.redd.it/6qn3tpfxv17h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=49f69593fb12d7f464f4f2cd8e7b4ffd580da0ee",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -864,6 +904,19 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/0k8vlrl1l07h1.png?width=140&amp;height=73&amp;auto=webp&amp;s=c66a719f45d1bc28b9f2e42635c959ea57005505",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T01:36:35+00:00",
+      "lang": "en",
+      "title": "Do we have any way of knowing/ guessing what banners are coming before ethereal cores expire?",
+      "summary": "I still have 90 of the things and I was wondering if I should just blow them all on Kaleido Recollections. I&#39;d rather use em for something specific but if there&#39;s probably not going to be anything I want in the next 70 days I may as well use them now.  Speaking of, what are the odds on a Murphy: Fauxborn rerun in this time frame?  &#32; submitted by &#32;  /u/Bloop-Bucket   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u57yhe/do_we_have_any_way_of_knowing_guessing_what/",
+      "author": "/u/Bloop-Bucket",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -898,12 +951,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T01:15:39+00:00",
+      "time": "2026-06-14T02:07:21+00:00",
       "lang": "en",
-      "title": "PSA: If you're new and without a team, pull Vortice (180 hard pity)",
-      "summary": "Vortice on today&#39;s rotating banner is the best low investment carry. All she needs is her posse and to max out her &quot;Reload&quot; skill. &#x200B; Her team comprises of her and 3 defensive units. Hunker down, stall the enemy out and keep nuking them 1 at a time with your posse. &#x200B; She is a very slow unit, however I think she&#39;s the best carry at e0/e1. This is speaking from the experience of someone who speedruns the game multiple times focusing on multiple characters.  &#x200B; The only catch is that hard pity is 180 pulls, but you&#39;re more than likely to not reach it. &#x200B; To the unfortunate soul who probably did... I apologise but at least your carry is set.  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4ddjd/psa_if_youre_new_and_without_a_team_pull_vortice/",
-      "author": "/u/Angbak94",
+      "title": "Code redeem",
+      "summary": "Hiii, does anyone want to exchange codes to claim rewards in the event? Lets help each other get the rewards! Heres my code: ZU0KNMVQHO  &#32; submitted by &#32;  /u/BookkeeperLive1532   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u58kui/code_redeem/",
+      "author": "/u/BookkeeperLive1532",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -918,21 +971,6 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1u4hbx1/phone_performance_appreciation_post/",
       "author": "/u/Then-Scale-9476",
       "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T10:56:00+00:00",
-      "lang": "en",
-      "title": "Thoughts as a new player?",
-      "summary": "I&#39;m still not sure what Wheels of Destiny are good for each Awakener.   &#32; submitted by &#32;  /u/Your_favorite_potato   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4nwd6/thoughts_as_a_new_player/",
-      "author": "/u/Your_favorite_potato",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/jnm3e3an617h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=043e09050c49aa9b9ab5a61ad904f43871facf7c",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -954,14 +992,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T06:33:57+00:00",
+      "time": "2026-06-13T10:56:00+00:00",
       "lang": "en",
-      "title": "Finally got it to 400 (again)",
-      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial A3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
-      "author": "/u/KyuUwUketsuki_05",
+      "title": "Thoughts as a new player?",
+      "summary": "I&#39;m still not sure what Wheels of Destiny are good for each Awakener.   &#32; submitted by &#32;  /u/Your_favorite_potato   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u4nwd6/thoughts_as_a_new_player/",
+      "author": "/u/Your_favorite_potato",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/2tfgy27vvz6h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=eddcfb48646cb9318f012f8eccb966a96c9af297",
+      "media_url": "https://preview.redd.it/jnm3e3an617h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=043e09050c49aa9b9ab5a61ad904f43871facf7c",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -969,87 +1007,13 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T11:07:50+00:00",
+      "time": "2026-06-14T01:43:38+00:00",
       "lang": "en",
-      "title": "What covenants and wheels to use for Mouchette team?",
-      "summary": "I already have Mouchettes posse and the team is good without it but I feel like I am doing less damage then I should and i think it could be a problem with either the way I play Mouchette or my covenants and wheels  &#32; submitted by &#32;  /u/ManufacturerFlashy23   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4o48r/what_covenants_and_wheels_to_use_for_mouchette/",
-      "author": "/u/ManufacturerFlashy23",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T13:32:26+00:00",
-      "lang": "en",
-      "title": "[Morimens] Pollux Comp Commentary D-Tide 6-13-26 W2A5",
-      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4r3et/morimens_pollux_comp_commentary_dtide_61326_w2a5/",
-      "author": "/u/zyocuh",
-      "engagement": 0,
-      "media_url": "https://external-preview.redd.it/T2dDmmfMGOH6JGWDs10ns2FcUIl87AP0C5ijMOohwhc.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=f0e1827b9a9601d93990cc62b69662fc89b507e9",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T12:23:00+00:00",
-      "lang": "en",
-      "title": "Asking for Team Comps",
-      "summary": "Hey everyone, I&#39;ve been playing Morimens for a while, and I have gained quite a lot of new awakeners and their dupes. I want to build some proper teams for clearing D-zones when I get strong enough soon, but I don&#39;t know which team comps I can use. Asking for help making some proper teams. The only &quot;functional&quot; team I&#39;ve been using to clear the story is a mono-caro realm team, picture attached. I got some more pulls saved up and my wallet for future anniversary banner characters, one of which I&#39;m aiming for is Arachne. Please feel free to suggest any team I can make out of what I have currently ❤️.  &#32; submitted by &#32;  /u/Poem_Vast   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4plbh/asking_for_team_comps/",
-      "author": "/u/Poem_Vast",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/l04v8gbyk17h1.png?width=140&amp;height=100&amp;auto=webp&amp;s=3f685bddcbc61b65756e5ba5c78951a24b2528b8",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T00:41:33+00:00",
-      "lang": "en",
-      "title": "Saya poison team go brrr",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4cojh/saya_poison_team_go_brrr/",
-      "author": "/u/HessianQrow",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/omz9gmw05y6h1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=b83e5f15c879a635bf5088e916ca1cf4a5259154",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T09:38:10+00:00",
-      "lang": "en",
-      "title": "Got Mouchette and Vortice, now thinking about Moonless Guide and Arachne, may I ask for opinion?",
-      "summary": "So thanks to whoever convinced me to pull Mouchette, I ended up pulling both Mouchette and Vortice. Don&#39;t know if it&#39;s a great idea to pull 2 DPSes, but I&#39;m happy I barely reached pity for either of those and still have lots of pulls left. I wanted to ask some questions for planning ahead (I still don&#39;t have anyone other than these 2, the free units, and Jenkin)  What 4 picks I should take from the Moonless Guide? I was thinking Thais and Horla because apparently they&#39;re great as-is, Ryker because he&#39;s good with Mouchette, Murphy because she&#39;s good with Vortice. Then I won&#39;t be too down if I only pull 1 SSR and it&#39;s not Thais. Is Arachne, who&#39;s coming tomorrow, a good support for either Mouchette and/or Vortice? Just making sure I&#39;m not taking a dangerous unit that can teamkill like GMurphy.  Side question: is there any benefit from hoarding pure cores (maybe some sort of &quot;how many pulls you do&quot; event or stronger characters moved to standard) or is it better to use them immediately (in multiples of 5)?  &#32; submitted by &#32;  /u/firzein   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4mlff/got_mouchette_and_vortice_now_thinking_about/",
-      "author": "/u/firzein",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T11:11:59+00:00",
-      "lang": "en",
-      "title": "Vortice any good at E0 sans Wheel?",
-      "summary": "She was kinda the last character I wanted for my account and I just barely managed to scrape enough to snipe her before her banner expired. How much are we looking at here in terms of investment? I wanna use her now but I&#39;m okay with waiting if she has breaking points honestly   &#32; submitted by &#32;  /u/TitanSniffer   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u4o70b/vortice_any_good_at_e0_sans_wheel/",
-      "author": "/u/TitanSniffer",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
+      "title": "As a new player finishing the main story",
+      "summary": "&#32; submitted by &#32;  /u/noraborialis   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u583l6/as_a_new_player_finishing_the_main_story/",
+      "author": "u//u/noraborialis",
+      "engagement": 0
     },
     {
       "source": "reddit",
@@ -1083,12 +1047,32 @@
     },
     {
       "source": "reddit",
+      "time": "2026-06-14T00:34:51+00:00",
+      "lang": "en",
+      "title": "Am I on the right path here, oooor?",
+      "summary": "Hi! So I&#39;ve been playing for two weeks-ish now and committed to getting Mouchette a few days ago. &#x200B; So what I&#39;m currently doing with Mouchette comp (with Saya, Helot, and Aigis) is basically spam strike cards and hope for the best &lt;/3 &#x200B; Am I doing Mouchette right? And also, is there any other team comp you could recommend with my available characters (not Mouchette-centric) &#x200B;  &#32; submitted by &#32;  /u/ElleMeetsArt   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u56pxy/am_i_on_the_right_path_here_oooor/",
+      "author": "u//u/ElleMeetsArt",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-06-13T18:16:38+00:00",
       "lang": "en",
       "title": "Confused about awakeners",
       "summary": "So, what exactly is an &quot;awakener&quot; in this story? I don&#39;t remember skipping any story but am very confused. ----Spoilers for Chapter 5--- By chapter 5, my confusion got sky high. So what I am guessing from what I know about mythos is that Cthulhu is the lord miryam and the others are talking about while the maiden or whatever should be Cthylla. Makes sense to this point. So why are we in a ship with &quot;tulu&quot; and &quot;murphy&quot; who are basically those two? I mean, I get that they aren&#39;t them but they are totally them outside of not being them in this situation. Tulu is %100 based on cthulhu and Murphy (Gmurphy) is basically Cthylla but they are not?... My brain hurts...  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1u4y28q/confused_about_awakeners/",
       "author": "u//u/Embarrassed-Sign3106",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:35:14+00:00",
+      "lang": "en",
+      "title": "How hard is hard mode story mode?",
+      "summary": "I&#39;m curious if there is any statics regarding about the completion of hard mode story like if its something most veteran player are finished with or is it something only grinders do.   &#32; submitted by &#32;  /u/CabinetSpice   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u56q81/how_hard_is_hard_mode_story_mode/",
+      "author": "u//u/CabinetSpice",
       "engagement": 0
     },
     {
@@ -1113,12 +1097,32 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T13:18:12+00:00",
+      "time": "2026-06-13T19:45:21+00:00",
       "lang": "en",
-      "title": "Team Comp",
-      "summary": "Should I change someone out for saya?  &#32; submitted by &#32;  /u/Little_Pollution7332   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4qs1l/team_comp/",
-      "author": "u//u/Little_Pollution7332",
+      "title": "Is the English translation for morimens better now?",
+      "summary": "&#32; submitted by &#32;  /u/Acrobatic_Ad_1688   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u508jw/is_the_english_translation_for_morimens_better_now/",
+      "author": "u//u/Acrobatic_Ad_1688",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:28:39+00:00",
+      "lang": "en",
+      "title": "How do you use poison?",
+      "summary": "I&#39;ve been trying to clear wave 3 with this team but I keep dying in the end. Ion really know what I&#39;m doing   &#32; submitted by &#32;  /u/Separate-Discount472   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u56lfs/how_do_you_use_poison/",
+      "author": "u//u/Separate-Discount472",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T00:01:53+00:00",
+      "lang": "en",
+      "title": "build me a fun team!!! :D",
+      "summary": "i lovelovelove ultra and aequor (as you can see 😛😛😛) i have more chars, the only ones i dont own are ghelot, gdoll, salvador, and doresain!  &#32; submitted by &#32;  /u/vapemasterlily   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u561no/build_me_a_fun_team_d/",
+      "author": "u//u/vapemasterlily",
       "engagement": 0
     },
     {
@@ -1133,12 +1137,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T19:45:21+00:00",
+      "time": "2026-06-13T13:18:12+00:00",
       "lang": "en",
-      "title": "Is the English translation for morimens better now?",
-      "summary": "&#32; submitted by &#32;  /u/Acrobatic_Ad_1688   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u508jw/is_the_english_translation_for_morimens_better_now/",
-      "author": "u//u/Acrobatic_Ad_1688",
+      "title": "Team Comp",
+      "summary": "Should I change someone out for saya?  &#32; submitted by &#32;  /u/Little_Pollution7332   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4qs1l/team_comp/",
+      "author": "u//u/Little_Pollution7332",
       "engagement": 0
     },
     {
@@ -1149,6 +1153,16 @@
       "summary": "New player here just wanted to vent out on the fortress mechanic. Omw to experience chapter 9 really liking the game so far. I even retried and bought out the revives on the store, hopefully I can clear arc 1 today.  &#32; submitted by &#32;  /u/ExaminationExotic489   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1u4m16u/the_difficulty_spike_is_vertical/",
       "author": "u//u/ExaminationExotic489",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-14T01:36:35+00:00",
+      "lang": "en",
+      "title": "Do we have any way of knowing/ guessing what banners are coming before ethereal cores expire?",
+      "summary": "I still have 90 of the things and I was wondering if I should just blow them all on Kaleido Recollections. I&#39;d rather use em for something specific but if there&#39;s probably not going to be anything I want in the next 70 days I may as well use them now.  Speaking of, what are the odds on a Murphy: Fauxborn rerun in this time frame?  &#32; submitted by &#32;  /u/Bloop-Bucket   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u57yhe/do_we_have_any_way_of_knowing_guessing_what/",
+      "author": "u//u/Bloop-Bucket",
       "engagement": 0
     },
     {
@@ -1173,12 +1187,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T01:15:39+00:00",
+      "time": "2026-06-14T02:07:21+00:00",
       "lang": "en",
-      "title": "PSA: If you're new and without a team, pull Vortice (180 hard pity)",
-      "summary": "Vortice on today&#39;s rotating banner is the best low investment carry. All she needs is her posse and to max out her &quot;Reload&quot; skill. &#x200B; Her team comprises of her and 3 defensive units. Hunker down, stall the enemy out and keep nuking them 1 at a time with your posse. &#x200B; She is a very slow unit, however I think she&#39;s the best carry at e0/e1. This is speaking from the experience of someone who speedruns the game multiple times focusing on multiple characters.  &#x200B; The only catch is that hard pity is 180 pulls, but you&#39;re more than likely to not reach it. &#x200B; To the unfortunate soul who probably did... I apologise but at least your carry is set.  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4ddjd/psa_if_youre_new_and_without_a_team_pull_vortice/",
-      "author": "u//u/Angbak94",
+      "title": "Code redeem",
+      "summary": "Hiii, does anyone want to exchange codes to claim rewards in the event? Lets help each other get the rewards! Heres my code: ZU0KNMVQHO  &#32; submitted by &#32;  /u/BookkeeperLive1532   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u58kui/code_redeem/",
+      "author": "u//u/BookkeeperLive1532",
       "engagement": 0
     },
     {
@@ -1193,16 +1207,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T10:56:00+00:00",
-      "lang": "en",
-      "title": "Thoughts as a new player?",
-      "summary": "I&#39;m still not sure what Wheels of Destiny are good for each Awakener.   &#32; submitted by &#32;  /u/Your_favorite_potato   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4nwd6/thoughts_as_a_new_player/",
-      "author": "u//u/Your_favorite_potato",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-06-13T12:19:53+00:00",
       "lang": "en",
       "title": "What are the best teams for Vortice? (both for D-tide and single team content)",
@@ -1213,72 +1217,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-06-13T06:33:57+00:00",
+      "time": "2026-06-13T10:56:00+00:00",
       "lang": "en",
-      "title": "Finally got it to 400 (again)",
-      "summary": "Last Monday I got to 390 (same W2 and W4 teams as below) with W1 and W3 A4 and W5 double A3. I got ticked by how annoying the meatblob boss was for Kath (I used her during my initial A3 clear but the boss ate the solarflare of all things so I can&#39;t really burst it down) then after a few more fails at A4 I got fed up, settled at A3 for a few days. Yesterday I tried to tackle D-Tide again but this time decided to move her team to W1 (her being OE clearing A3 doesn&#39;t sit well with me).  &#x200B; To deal with that annoying boss I tried to leave the bluewill team for it since it usually has solutions to any situation (could&#39;ve used nautila but gdoll&#39;s finale is too good to guarantee and speed up the clear. Maybe the Castor team using Arachne posse is questionable but upon initial tries with his posse I was not able to stack as many plumes during the second phase so I switched it for the shield and dmg amp as well as the Final Verdict stacks. &#x200B; The MVP team for me though is the Xu-Mouchette (kinda weird but heals and hp boost are welcome) because I cleared it the first time, I got super lucky with the death procs at 52% and 26%, leaving me at a very low 13% death proc rate at the end. &#x200B; Can now rest for next week 🤧  &#32; submitted by &#32;  /u/KyuUwUketsuki_05   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4jiuh/finally_got_it_to_400_again/",
-      "author": "u//u/KyuUwUketsuki_05",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T11:07:50+00:00",
-      "lang": "en",
-      "title": "What covenants and wheels to use for Mouchette team?",
-      "summary": "I already have Mouchettes posse and the team is good without it but I feel like I am doing less damage then I should and i think it could be a problem with either the way I play Mouchette or my covenants and wheels  &#32; submitted by &#32;  /u/ManufacturerFlashy23   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4o48r/what_covenants_and_wheels_to_use_for_mouchette/",
-      "author": "u//u/ManufacturerFlashy23",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T13:32:26+00:00",
-      "lang": "en",
-      "title": "[Morimens] Pollux Comp Commentary D-Tide 6-13-26 W2A5",
-      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4r3et/morimens_pollux_comp_commentary_dtide_61326_w2a5/",
-      "author": "u//u/zyocuh",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T12:23:00+00:00",
-      "lang": "en",
-      "title": "Asking for Team Comps",
-      "summary": "Hey everyone, I&#39;ve been playing Morimens for a while, and I have gained quite a lot of new awakeners and their dupes. I want to build some proper teams for clearing D-zones when I get strong enough soon, but I don&#39;t know which team comps I can use. Asking for help making some proper teams. The only &quot;functional&quot; team I&#39;ve been using to clear the story is a mono-caro realm team, picture attached. I got some more pulls saved up and my wallet for future anniversary banner characters, one of which I&#39;m aiming for is Arachne. Please feel free to suggest any team I can make out of what I have currently ❤️.  &#32; submitted by &#32;  /u/Poem_Vast   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4plbh/asking_for_team_comps/",
-      "author": "u//u/Poem_Vast",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T00:41:33+00:00",
-      "lang": "en",
-      "title": "Saya poison team go brrr",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4cojh/saya_poison_team_go_brrr/",
-      "author": "u//u/HessianQrow",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T09:38:10+00:00",
-      "lang": "en",
-      "title": "Got Mouchette and Vortice, now thinking about Moonless Guide and Arachne, may I ask for opinion?",
-      "summary": "So thanks to whoever convinced me to pull Mouchette, I ended up pulling both Mouchette and Vortice. Don&#39;t know if it&#39;s a great idea to pull 2 DPSes, but I&#39;m happy I barely reached pity for either of those and still have lots of pulls left. I wanted to ask some questions for planning ahead (I still don&#39;t have anyone other than these 2, the free units, and Jenkin)  What 4 picks I should take from the Moonless Guide? I was thinking Thais and Horla because apparently they&#39;re great as-is, Ryker because he&#39;s good with Mouchette, Murphy because she&#39;s good with Vortice. Then I won&#39;t be too down if I only pull 1 SSR and it&#39;s not Thais. Is Arachne, who&#39;s coming tomorrow, a good support for either Mouchette and/or Vortice? Just making sure I&#39;m not taking a dangerous unit that can teamkill like GMurphy.  Side question: is there any benefit from hoarding pure cores (maybe some sort of &quot;how many pulls you do&quot; event or stronger characters moved to standard) or is it better to use them immediately (in multiples of 5)?  &#32; submitted by &#32;  /u/firzein   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4mlff/got_mouchette_and_vortice_now_thinking_about/",
-      "author": "u//u/firzein",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-13T11:11:59+00:00",
-      "lang": "en",
-      "title": "Vortice any good at E0 sans Wheel?",
-      "summary": "She was kinda the last character I wanted for my account and I just barely managed to scrape enough to snipe her before her banner expired. How much are we looking at here in terms of investment? I wanna use her now but I&#39;m okay with waiting if she has breaking points honestly   &#32; submitted by &#32;  /u/TitanSniffer   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u4o70b/vortice_any_good_at_e0_sans_wheel/",
-      "author": "u//u/TitanSniffer",
+      "title": "Thoughts as a new player?",
+      "summary": "I&#39;m still not sure what Wheels of Destiny are good for each Awakener.   &#32; submitted by &#32;  /u/Your_favorite_potato   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u4nwd6/thoughts_as_a_new_player/",
+      "author": "u//u/Your_favorite_potato",
       "engagement": 0
     },
     {
@@ -1343,47 +1287,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.583884+00:00",
-      "lang": "zh",
-      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T23:58:28.598616+00:00",
-      "lang": "zh",
-      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
-      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T23:58:28.613219+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
-      "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
-      "url": "https://m.weibo.cn/status/5272049669112519",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T23:58:28.630172+00:00",
-      "lang": "zh",
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T23:58:28.643002+00:00",
+      "time": "2026-06-14T02:54:56.932925+00:00",
       "lang": "zh",
       "title": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
       "summary": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
@@ -1393,7 +1297,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.655521+00:00",
+      "time": "2026-06-14T02:54:56.947393+00:00",
+      "lang": "zh",
+      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
+      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-14T02:54:56.963412+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
+      "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
+      "url": "https://m.weibo.cn/status/5272049669112519",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-14T02:54:56.980351+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1403,7 +1327,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.667857+00:00",
+      "time": "2026-06-14T02:54:56.994088+00:00",
+      "lang": "zh",
+      "title": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！",
+      "summary": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n👇包括不限于：\n-𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫-前期设计 原画/立绘/表情\n-𝐒𝐭𝐨𝐫𝐲 𝐈𝐥𝐥𝐮 ...全文",
+      "url": "https://m.weibo.cn/status/5048835342868548",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-14T02:54:57.012338+00:00",
       "lang": "zh",
       "title": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜",
       "summary": "【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所展示的其他稿件也分别是艾尔登法环的梅琳娜与忘却前夜的一张同人图，并不是黑吗喽的角色\n\n我本人从未绘制过任何来自黑吗喽的同人图，也从未游玩过黑吗喽，特此澄清\n\n目前我因谣言被无 ...全文",
@@ -1413,11 +1347,11 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.684155+00:00",
+      "time": "2026-06-14T01:21:00+00:00",
       "lang": "zh",
-      "title": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！",
-      "summary": "🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌\n\n✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨\n\n🧠未来也会继续和大家分享各种独家内容！\n\n👇包括不限于：\n-𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫-前期设计 原画/立绘/表情\n-𝐒𝐭𝐨𝐫𝐲 𝐈𝐥𝐥𝐮 ...全文",
-      "url": "https://m.weibo.cn/status/5048835342868548",
+      "title": "忘却前夜#忘却前夜#\n《忘却前夜》概念PV——「银芯」\n那是自融蚀降临后，人类最后的希望。\n◆◆◆◆◆◆\n官方玩家交流群：700587004 忘却前夜的微博视频",
+      "summary": "忘却前夜#忘却前夜#\n《忘却前夜》概念PV——「银芯」\n那是自融蚀降临后，人类最后的希望。\n◆◆◆◆◆◆\n官方玩家交流群：700587004 忘却前夜的微博视频",
+      "url": "",
       "author": "",
       "engagement": 0
     },
@@ -1433,37 +1367,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.725285+00:00",
+      "time": "2026-06-14T02:54:57.074033+00:00",
       "lang": "zh",
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T02:43:00+00:00",
+      "time": "2026-06-14T02:54:57.086300+00:00",
       "lang": "zh",
-      "title": "忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」\n诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案\n◆◆◆◆◆◆\n官方玩家交流群：\n⑪群：9",
-      "summary": "忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」\n诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案\n◆◆◆◆◆◆\n官方玩家交流群：\n⑪群：947500294\n⑩群：839468990\n\n②群：991922107\n③群：755564537\n④群：779040377\n⑤群：874812954\n⑥群：478456129\n⑦群：70058700 ...全文",
-      "url": "https://m.weibo.cn/status/5055427245244524",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T01:21:00+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n《忘却前夜》概念PV——「银芯」\n那是自融蚀降临后，人类最后的希望。\n◆◆◆◆◆◆\n官方玩家交流群：700587004 忘却前夜的微博视频",
-      "summary": "忘却前夜#忘却前夜#\n《忘却前夜》概念PV——「银芯」\n那是自融蚀降临后，人类最后的希望。\n◆◆◆◆◆◆\n官方玩家交流群：700587004 忘却前夜的微博视频",
+      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.780336+00:00",
+      "time": "2026-06-14T02:54:57.098480+00:00",
       "lang": "zh",
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
@@ -1473,7 +1397,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.793070+00:00",
+      "time": "2026-06-14T02:54:57.110651+00:00",
       "lang": "zh",
       "title": "之前给忘却前夜画的解禁了！！",
       "summary": "之前给忘却前夜画的解禁了！！",
@@ -1483,7 +1407,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.805186+00:00",
+      "time": "2026-06-14T02:54:57.123420+00:00",
       "lang": "zh",
       "title": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
       "summary": "解禁拉！！终于解禁啦！那些年帮忙给忘细化的精二立绘，谢谢项目组老师的指导！忘江湖能再见，想念曾经的大家庭！忘却前夜",
@@ -1493,18 +1417,8 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:28.817223+00:00",
+      "time": "2026-06-14T02:54:57.135849+00:00",
       "lang": "zh",
-      "title": "yysy，忘却前夜的角色还挺好看的",
-      "summary": "yysy，忘却前夜的角色还挺好看的",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-06-13T23:58:44.445940+00:00",
-      "lang": "",
       "title": "忘却前夜 @易笙君CuO 女明星回应一下",
       "summary": "忘却前夜 @易笙君CuO 女明星回应一下",
       "url": "",
@@ -1513,10 +1427,20 @@
     },
     {
       "source": "weibo",
-      "time": "2026-06-13T23:58:44.479969+00:00",
-      "lang": "",
+      "time": "2026-06-14T02:54:57.149414+00:00",
+      "lang": "zh",
       "title": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（",
       "summary": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（最后一张是之前给游戏供稿过的画师，这都不信那我也没话可说了）",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-06-14T02:54:57.161997+00:00",
+      "lang": "zh",
+      "title": "yysy，忘却前夜的角色还挺好看的",
+      "summary": "yysy，忘却前夜的角色还挺好看的",
       "url": "",
       "author": "",
       "engagement": 0
@@ -2347,7 +2271,7 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-06-13T23:58:35.475479+00:00",
+      "time": "2026-06-14T02:55:02.944161+00:00",
       "lang": "ko",
       "title": "11년인가 험블번들 생겼을때부터 조금씩 지르다가 쌓인 스팀키(스압주의)",
       "summary": "10 Second Ninja100% Orange Juice100% Orange Juice Syura &amp; Nanako C...",
@@ -2367,7 +2291,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-06-13T23:58:34.893473+00:00",
+      "time": "2026-06-14T02:55:02.543420+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -2381,7 +2305,7 @@
       "lang": "zh",
       "title": "[微信] 【忘却前夜*沙耶之歌】活动开奖┊V2.5.1 概念PV「悠久漂泊之歌」",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuDCUsIzCvdOmAhXjIz7X0Mm1qXa8Fplpd9AcIeCAv7QpeloYVg3wrWQFx-v27fJnVXP_lcyKXdr0MeQM_yxw9XnpAeBIudUeSPw6p2ftf1KryNfFCEnGsw2KmK8oD16eAOiEqUuXKSfgWSoTDvumKvPekLMgL-t9qNT86K0n8pMIGmAjg2VgHujFNtkGCvSLFvQFAJp8FrazDzAjcIGepUqA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=80D2F2A62A145555F8FEADD3A7E130D9F91572696A2DEEAC",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0s4TYUhsDiOAp4J_4NVXVkhXjIz7X0Mm1qXa8Fplpd9AcIeCAv7QpeloYVg3wrWQFx-v27fJnVXP_lcyKXdr0MeQM_yxw9XnqfA7MjrRZcnPOFrCVhBs4zU0dHf-U9XybPXI7mMeMQCDnSXIFG7rrJodGbregp6jUgmxU9bQcqIWt6sMQIyXFi1wokOGG8yx-rP0nXeCSy5m4zBPxszQ9_RtmyIGw2VAg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=81ADC0878751A5839691C2BB40BBF1FF973414526A2E1807",
       "author": "",
       "engagement": 0
     },
@@ -2391,7 +2315,7 @@
       "lang": "zh",
       "title": "[微信] 【忘却前夜*沙耶之歌】活动开奖┊V2.5.1 概念PV「悠久漂泊之歌」",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3G5E5dYXVuD-QRkxp5bXywhXjIz7X0Mm1qXa8Fplpd9AcIeCAv7QpeloYVg3wrWQFx-v27fJnVXP_lcyKXdr0MeQM_yxw9XnpAeBIudUeSPw6p2ftf1KryNfFCEnGsw2MYDZ5kiH7N_VZdAJv5KPwERsoAq8VkhLDLWML_zvwAiN78VtqR8G2SPX8EKs8WbAW-xJpJcB70LhTlbiSQ_ZhjYl_Q5RRZQjg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=80D2F7E3C1F9BFBF131540384C2360C4143E422F6A2DEEAD",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0s4TYUhsDiOXSIWBhGK9L8hXjIz7X0Mm1qXa8Fplpd9AcIeCAv7QpeloYVg3wrWQFx-v27fJnVXP_lcyKXdr0MeQM_yxw9XnqfA7MjrRZcnPOFrCVhBs4zU0dHf-U9XyRuZ-vs0mpTrg8A5UD0it6C0vKEbxDyvEUCLCEhoOe2fJfGLT_XWIcEEgQrEOFcFoVp4G59sc-vI8ckFIBjwZalj3x9Nw6p-Fg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=81ADC99B1FC93E1A0E085920D846FF3D0EECDCFE6A2E1809",
       "author": "",
       "engagement": 0
     }
