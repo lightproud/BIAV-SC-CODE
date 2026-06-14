@@ -1,8 +1,8 @@
 {
   "date": "2026-06-15",
-  "archived_at": "2026-06-14T19:09:39.202352+00:00",
+  "archived_at": "2026-06-14T21:01:03.224895+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] eu amo emo morimens, ele só fica cansativo pelos b...",
@@ -22,6 +22,50 @@
         "playtime_forever": 11775,
         "votes_up": 0,
         "timestamp_created": 1781457010
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Best gacha",
+      "summary": "Best gacha",
+      "source": "steam_review",
+      "time": "2026-06-14T20:30:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198240490952/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198240490952",
+      "tags": [
+        "german"
+      ],
+      "language": "german",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3113,
+        "votes_up": 0,
+        "timestamp_created": 1781469032
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] If you like slay the spire, you'll like this game.",
+      "summary": "If you like slay the spire, you'll like this game.",
+      "source": "steam_review",
+      "time": "2026-06-14T19:01:38+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198229695080/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198229695080",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 326,
+        "votes_up": 0,
+        "timestamp_created": 1781463698
       },
       "lang": "",
       "platform_region": "global"

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-14T19:09:31.591985+00:00",
+  "collected_at": "2026-06-14T21:00:57.098151+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -35,6 +35,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-06-14T20:30:32+00:00",
+      "lang": "german",
+      "title": "[正面] Best gacha",
+      "summary": "Best gacha",
+      "url": "https://steamcommunity.com/profiles/76561198240490952/recommended/3052450",
+      "author": "76561198240490952",
+      "engagement": 0,
+      "language": "german",
+      "voted_up": true,
+      "review": "Best gacha",
+      "timestamp_created": 1781469032,
+      "playtime_forever": 3113
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-14T19:01:38+00:00",
+      "lang": "english",
+      "title": "[正面] If you like slay the spire, you'll like this game.",
+      "summary": "If you like slay the spire, you'll like this game.",
+      "url": "https://steamcommunity.com/profiles/76561198229695080/recommended/3052450",
+      "author": "76561198229695080",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "If you like slay the spire, you'll like this game.",
+      "timestamp_created": 1781463698,
+      "playtime_forever": 326
+    },
+    {
+      "source": "steam",
       "time": "2026-06-14T17:10:10+00:00",
       "lang": "brazilian",
       "title": "[正面] eu amo emo morimens, ele só fica cansativo pelos b...",
@@ -46,7 +76,7 @@
       "voted_up": true,
       "review": "eu amo emo morimens, ele só fica cansativo pelos bugs que ocorrem no meu sistema operacional linux",
       "timestamp_created": 1781457010,
-      "playtime_forever": 11775
+      "playtime_forever": 11925
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "好玩，全方面",
       "timestamp_created": 1781413629,
-      "playtime_forever": 5343
+      "playtime_forever": 5463
     },
     {
       "source": "steam",
