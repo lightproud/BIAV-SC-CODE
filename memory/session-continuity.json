@@ -1,21 +1,31 @@
 {
   "last_session": {
-    "id": "d062dc8f",
-    "timestamp": "2026-06-14T05:50:25.214000+00:00",
-    "duration_minutes": 1058.3,
-    "branch": "claude/pr-202-review-2m867w",
-    "topics": [
-      "GitHub"
-    ],
+    "id": "7fe0ce50",
+    "timestamp": "2026-06-14T07:42:13.934000+00:00",
+    "duration_minutes": 1.3,
+    "branch": "claude/news-aggregator-status-ne8r5j",
+    "topics": [],
     "decisions": [],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/README.md",
-      "/home/user/brain-in-a-vat/memory/active/silver-blackpool-interface.md"
-    ],
+    "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "d062dc8f",
+      "timestamp": "2026-06-14T05:50:25.214000+00:00",
+      "duration_minutes": 1058.3,
+      "branch": "claude/pr-202-review-2m867w",
+      "topics": [
+        "GitHub"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/README.md",
+        "/home/user/brain-in-a-vat/memory/active/silver-blackpool-interface.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "6a24d1d3",
       "timestamp": "2026-06-13T20:16:28.460000+00:00",
@@ -122,35 +132,18 @@
       ],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "90b9df5e",
-      "timestamp": "2026-06-10T18:26:55.105000+00:00",
-      "duration_minutes": 102.3,
-      "branch": "claude/lucid-feynman-dhj63l",
-      "topics": [
-        "BPT",
-        "MCP",
-        "GitHub"
-      ],
-      "decisions": [
-        "了共享能省多少",
-        ",跟进程共不共享完全无关"
-      ],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 1.78,
-      "GitHub": 1.51,
-      "BPT": 0.7,
-      "MCP": 0.62,
-      "Wiki": 0.22
+      "做梦Agent": 1.42,
+      "GitHub": 1.21,
+      "BPT": 0.56,
+      "MCP": 0.5,
+      "Wiki": 0.18
     },
     "hot_files": [],
-    "total_sessions": 152
+    "total_sessions": 153
   },
-  "updated_at": "2026-06-14T05:56:01.175702+00:00"
+  "updated_at": "2026-06-14T07:45:28.366949+00:00"
 }
