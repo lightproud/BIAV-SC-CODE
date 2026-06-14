@@ -7,12 +7,14 @@ on:
       - 'scripts/**'
       - 'projects/news/scripts/**'
       - 'tests/**'
+      - 'CLAUDE.md'
       - '.github/workflows/test.yml'
   pull_request:
     paths:
       - 'scripts/**'
       - 'projects/news/scripts/**'
       - 'tests/**'
+      - 'CLAUDE.md'
   workflow_dispatch:
 
 concurrency:
