@@ -11003,6 +11003,34 @@
       "title": "Morimens Ch. 6 (6.11, 6.12) and Saya banner pulls",
       "time": "2026-06-13T23:15:31Z",
       "downloaded_at": "2026-06-13T23:59:39.929690+00:00"
+    },
+    "https://i.ytimg.com/vi/EYP8e9t9iAM/hqdefault.jpg": {
+      "filename": "youtube_0fef4ab9b4299971.jpg",
+      "source": "youtube",
+      "title": "Morimens Chapter 2.11",
+      "time": "2026-06-14T02:05:42Z",
+      "downloaded_at": "2026-06-14T02:56:07.592754+00:00"
+    },
+    "https://i.ytimg.com/vi/dU51uTVbglw/hqdefault.jpg": {
+      "filename": "youtube_fcf99151866f35d8.jpg",
+      "source": "youtube",
+      "title": "Morimens Chapter 2.10",
+      "time": "2026-06-14T02:03:54Z",
+      "downloaded_at": "2026-06-14T02:56:07.996668+00:00"
+    },
+    "https://i.ytimg.com/vi/sKtgVhwOuzE/hqdefault.jpg": {
+      "filename": "youtube_cdf4b0e0c8102161.jpg",
+      "source": "youtube",
+      "title": "모리멘스 (망각전야) Morimens 忘卻前夜 첫 시작 튜토리얼",
+      "time": "2026-06-14T02:46:59Z",
+      "downloaded_at": "2026-06-14T02:56:10.415106+00:00"
+    },
+    "https://i.ytimg.com/vi/MepE0v_lAzQ/hqdefault.jpg": {
+      "filename": "youtube_47d554f11927e19a.jpg",
+      "source": "youtube",
+      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画７",
+      "time": "2026-06-14T00:39:06Z",
+      "downloaded_at": "2026-06-14T02:56:10.787442+00:00"
     }
   },
   "failed": {
@@ -16335,6 +16363,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-13T22:55:49.315247+00:00"
+    },
+    "https://preview.redd.it/mwq0lug0l57h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=cff2d569a3b382cf772d1ea1e3677138a35d64c8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T02:56:08.533152+00:00"
+    },
+    "https://preview.redd.it/sdeeu5hq857h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=e887440aba7e66fc3b8f41e21c7b9836168910ef": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T02:56:08.864176+00:00"
+    },
+    "https://preview.redd.it/vaj8v9vm757h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1b8d0bf4933eae752aa4901840ea7bb634ccb8e1": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T02:56:09.194184+00:00"
+    },
+    "https://preview.redd.it/lo6za72v257h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5df61ecaecbcb3fb76c30a297a09aba50b5ee119": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-14T02:56:09.523082+00:00"
     }
   },
   "archived": []

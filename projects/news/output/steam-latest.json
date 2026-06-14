@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-13T23:59:38.939294+00:00",
+  "collected_at": "2026-06-14T02:56:06.919372+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "Absolutely amazing writing and story, it's very player-friendly and has very generous rewards, specially for a ''gacha'' game, stunning art, and fantastic gameplay to boot!. If you are reading this in the store page: INTALL IT. PLAY IT. NOW!!",
       "timestamp_created": 1781364552,
-      "playtime_forever": 1640
+      "playtime_forever": 1821
     },
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1781334157,
-      "playtime_forever": 749
+      "playtime_forever": 790
     },
     {
       "source": "steam",
@@ -151,7 +151,7 @@
       "voted_up": true,
       "review": "只适合零氪和重氪，随便玩玩",
       "timestamp_created": 1781331729,
-      "playtime_forever": 2026
+      "playtime_forever": 2033
     },
     {
       "source": "steam",
@@ -166,52 +166,7 @@
       "voted_up": true,
       "review": "intangibles, it's got em; wish there was JP or CN voice acting but you adapt like you would a book.",
       "timestamp_created": 1781324273,
-      "playtime_forever": 7416
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T01:53:47+00:00",
-      "lang": "brazilian",
-      "title": "[正面] bom",
-      "summary": "bom",
-      "url": "https://steamcommunity.com/profiles/76561198110107840/recommended/3052450",
-      "author": "76561198110107840",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "bom",
-      "timestamp_created": 1781315627,
-      "playtime_forever": 715
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T01:05:05+00:00",
-      "lang": "english",
-      "title": "[正面] Finished the first chapter, love it so far.",
-      "summary": "Finished the first chapter, love it so far.",
-      "url": "https://steamcommunity.com/profiles/76561199866562525/recommended/3052450",
-      "author": "76561199866562525",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Finished the first chapter, love it so far.",
-      "timestamp_created": 1781312705,
-      "playtime_forever": 824
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T00:08:19+00:00",
-      "lang": "english",
-      "title": "[负面] Are you convicted of VN larping and impulsive gamb...",
-      "summary": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
-      "url": "https://steamcommunity.com/profiles/76561198873800932/recommended/3052450",
-      "author": "76561198873800932",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "Are you convicted of VN larping and impulsive gambling on gachas? \nThen this game is NOT for you.\n\nGiven how short the Collab content feels here, you would certainly get hooked on the base Saya no Uta plot faster, because I think the direction of said Visual Novel is just that great. ;)\nAlso, given how generous the devs are, the currency here is practically give for free, so if you get the kick out of high risk gambling, this gacha is a no go for you as well.",
-      "timestamp_created": 1781309299,
-      "playtime_forever": 416
+      "playtime_forever": 7596
     }
   ]
 }
