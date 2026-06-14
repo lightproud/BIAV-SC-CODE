@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-14T15:07:30.401044+00:00",
+  "collected_at": "2026-06-14T17:09:25.733986+00:00",
   "source": "steam",
   "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-14T14:40:23+00:00",
+      "lang": "koreana",
+      "title": "[正面] 카와잉",
+      "summary": "카와잉",
+      "url": "https://steamcommunity.com/profiles/76561199230457941/recommended/3052450",
+      "author": "76561199230457941",
+      "engagement": 1,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "카와잉",
+      "timestamp_created": 1781448023,
+      "playtime_forever": 147
+    },
     {
       "source": "steam",
       "time": "2026-06-13T21:24:00+00:00",
@@ -91,7 +106,7 @@
       "voted_up": false,
       "review": "还行",
       "timestamp_created": 1781427243,
-      "playtime_forever": 1773
+      "playtime_forever": 1793
     },
     {
       "source": "steam",
@@ -121,7 +136,7 @@
       "voted_up": true,
       "review": "매력적인 캐릭터 디자인과 스토리, 특색있는 계역 기믹과 짜임새 있는 게임성을 가진 덱빌딩 로그라이크 게임\n\n번역의 퀄리티가 좀 더 좋았더라면 훨씬 많은 사람들이 하지 않았을까 싶은 아쉬움이 남는다.\n+ 라모나는 내 아내임",
       "timestamp_created": 1781414110,
-      "playtime_forever": 2958
+      "playtime_forever": 2964
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "好玩，全方面",
       "timestamp_created": 1781413629,
-      "playtime_forever": 5103
+      "playtime_forever": 5193
     },
     {
       "source": "steam",
@@ -151,7 +166,7 @@
       "voted_up": true,
       "review": "沙耶可爱捏",
       "timestamp_created": 1781413144,
-      "playtime_forever": 1047
+      "playtime_forever": 1140
     },
     {
       "source": "steam",
@@ -166,22 +181,7 @@
       "voted_up": true,
       "review": "this game has great story",
       "timestamp_created": 1781405786,
-      "playtime_forever": 1116
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-13T15:29:12+00:00",
-      "lang": "english",
-      "title": "[正面] Absolutely amazing writing and story, it's very pl...",
-      "summary": "Absolutely amazing writing and story, it's very player-friendly and has very generous rewards, specially for a ''gacha'' game, stunning art, and fantastic gameplay to boot!. If you are reading this in the store page: INTALL IT. PLAY IT. NOW!!",
-      "url": "https://steamcommunity.com/profiles/76561198828573770/recommended/3052450",
-      "author": "76561198828573770",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Absolutely amazing writing and story, it's very player-friendly and has very generous rewards, specially for a ''gacha'' game, stunning art, and fantastic gameplay to boot!. If you are reading this in the store page: INTALL IT. PLAY IT. NOW!!",
-      "timestamp_created": 1781364552,
-      "playtime_forever": 1821
+      "playtime_forever": 1148
     }
   ]
 }
