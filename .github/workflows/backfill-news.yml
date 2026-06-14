@@ -37,7 +37,6 @@ jobs:
           - appstore
           - steam_review
           - arca_live
-          - naver_cafe
           - pixiv
           - ruliweb
           - weixin

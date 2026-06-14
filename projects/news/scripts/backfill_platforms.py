@@ -406,68 +406,6 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
     return total
 
 
-def backfill_naver_cafe(state: dict, max_pages: int) -> int:
-    """Backfill Naver Cafe search results."""
-    from global_collectors import _get, _make_item, KEYWORDS
-    ps = _platform_state(state, 'naver_cafe')
-    if ps['done']:
-        return 0
-
-    total = 0
-    start_page = ps['page']
-
-    for keyword in KEYWORDS['ko']:
-        for page in range(start_page, start_page + max_pages):
-            if _is_time_up():
-                break
-            try:
-                data = _get(
-                    "https://apis.naver.com/cafe-web/cafe2/ArticleSearchListV2.json",
-                    params={"query": keyword, "page": page, "sortBy": "date"},
-                    headers={"Referer": "https://cafe.naver.com"},
-                ).json()
-
-                articles = data.get("message", {}).get("result", {}).get("articleList", []) or []
-                if not articles:
-                    ps['done'] = True
-                    break
-
-                items = []
-                for article in articles:
-                    real_time = article.get("writeDateTimestamp", "")
-                    time_str = real_time or datetime.now(timezone.utc).isoformat()
-                    item = _make_item(
-                        title=article.get("subject", ""),
-                        summary=article.get("summary", ""),
-                        source="naver_cafe",
-                        platform_region="kr",
-                        time_str=time_str,
-                        url=article.get("articleUrl", ""),
-                        engagement=article.get("readCount", 0) + article.get("commentCount", 0),
-                        is_hot=article.get("readCount", 0) > 500,
-                        author=article.get("writerNickName", ""),
-                        lang="ko",
-                    )
-                    if not real_time:
-                        item["time_is_approximate"] = True
-                    items.append(item)
-
-                _archive_items('naver_cafe', items)
-                total += len(items)
-                ps['page'] = page + 1
-                ps['total'] += len(items)
-                _save_state(state)
-
-                logger.info(f'Naver Cafe backfill "{keyword}" p{page}: +{len(items)}')
-                time.sleep(REQUEST_DELAY)
-
-            except Exception as e:
-                logger.warning(f'Naver Cafe backfill "{keyword}" p{page} failed: {e}')
-                break
-
-    return total
-
-
 def backfill_pixiv(state: dict, max_pages: int) -> int:
     """Backfill Pixiv search results page by page."""
     from global_collectors import _get, _make_item, KEYWORDS
@@ -715,7 +653,6 @@ BACKFILL_REGISTRY = {
     'appstore': backfill_appstore,
     'steam_review': backfill_steam_reviews,
     'arca_live': backfill_arca_live,
-    'naver_cafe': backfill_naver_cafe,
     'pixiv': backfill_pixiv,
     'ruliweb': backfill_ruliweb,
     'weixin': backfill_weixin,

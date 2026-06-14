@@ -44,15 +44,11 @@ SOURCE_MAP = {
     'bilibili': 'bilibili',
     'reddit': 'reddit',
     'youtube': 'youtube',
-    'nga': 'nga',
     'taptap': 'taptap',
     'steam': 'steam_review',
     'weibo': 'weibo',
-    'zhihu': 'zhihu',
-    'naver_cafe': 'naver_cafe',
     'bahamut': 'bahamut',
     'arca_live': 'arca_live',
-    'fivech': 'fivech',
     'appstore': 'appstore',
     'google_play': 'google_play',
     'pixiv': 'pixiv',
@@ -124,10 +120,8 @@ def run_zero_cost_collectors() -> list[dict]:
     PW_FALLBACK: dict[str, str] = {
         # name → playwright_collectors function name
         'Arca.live':   'fetch_arca_live_playwright',
-        '5ch':         'fetch_fivech_playwright',
         'Ruliweb':     'fetch_ruliweb_playwright',
         'Bahamut':     'fetch_bahamut_playwright',
-        'Naver Cafe':  None,  # no PW yet, but unsuspended to try HTTP first
         'TapTap':      'fetch_taptap_playwright',
         'Weibo':       'fetch_weibo_playwright',
     }
@@ -143,12 +137,8 @@ def run_zero_cost_collectors() -> list[dict]:
     zero_cost_fetchers = [
         ('Bilibili', c.fetch_bilibili),
         ('Reddit', c.fetch_reddit),
-        ('NGA', c.fetch_nga),
         ('TapTap', c.fetch_taptap),
         ('Weibo', c.fetch_weibo),
-        ('Zhihu', c.fetch_zhihu),
-        ('Naver Cafe', c.fetch_naver_cafe),
-        ('5ch', c.fetch_fivech),
         ('App Store', c.fetch_appstore_reviews),
         ('Pixiv', c.fetch_pixiv),
         ('Note.com', c.fetch_note_com),
@@ -172,9 +162,8 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
-        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'NGA': 'nga', 'TapTap': 'taptap',
-        'Weibo': 'weibo', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
-        '5ch': 'fivech', 'App Store': 'appstore',
+        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'TapTap': 'taptap',
+        'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
         'YouTube': 'youtube', 'Discord API': 'discord',
