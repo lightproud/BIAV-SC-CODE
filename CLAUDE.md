@@ -244,13 +244,13 @@ brain-in-a-vat/
 
 ### §7.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
 
-| 时机 | 钩子 | 作用 |
-|------|------|------|
-| SessionStart | `.claude/hooks/session-start-sync.sh` | 开工同步本地 main 与 origin/main（防推送堵塞，lesson #28）|
+当前**无任何已注册的会话钩子**（`settings.json` 仅保留 schema 引用）。
 
 MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具调用。
 
-> 原 UserPromptSubmit / PostToolUse / SessionEnd 三钩子（会话注入 / 工具观测 / 蒸馏）
+> SessionStart 钩子 `session-start-sync.sh`（开工同步本地 main，源自 lesson #28）
+> 已于 2026-06-15 应守密人裁定从 `settings.json` 退役——脚本文件保留备查，可随时重新挂回。
+> 更早的 UserPromptSubmit / PostToolUse / SessionEnd 三钩子（会话注入 / 工具观测 / 蒸馏）
 > 已于 2026-06-14 退役——记忆定位收回平台原生（见 §1.4 第 3 条 + `memory/decisions.md`）。
 
 ### §7.5 Slash 命令与技能
