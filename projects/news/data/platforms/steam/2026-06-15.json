@@ -1,8 +1,8 @@
 {
   "date": "2026-06-15",
-  "archived_at": "2026-06-15T10:51:42.305504+00:00",
+  "archived_at": "2026-06-15T16:14:54.607451+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "title": "[正面] The Greatest Gacha Game You've Never Played.\n⣴⣿⣦⡀⠀...",
@@ -242,6 +242,72 @@
         "playtime_forever": 244,
         "votes_up": 0,
         "timestamp_created": 1781501148
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 卡池非常阴间，歪两个常驻再保底，阴完了，而且更新非常慢，不推荐大家玩，如果是冲着画风来的那随意",
+      "summary": "卡池非常阴间，歪两个常驻再保底，阴完了，而且更新非常慢，不推荐大家玩，如果是冲着画风来的那随意",
+      "source": "steam_review",
+      "time": "2026-06-15T12:11:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199418783774/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199418783774",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 4247,
+        "votes_up": 0,
+        "timestamp_created": 1781525460
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] круто",
+      "summary": "круто",
+      "source": "steam_review",
+      "time": "2026-06-15T10:45:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199675894832/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199675894832",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4846,
+        "votes_up": 0,
+        "timestamp_created": 1781520356
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 剧情牛逼",
+      "summary": "剧情牛逼",
+      "source": "steam_review",
+      "time": "2026-06-15T10:42:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199474721575/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199474721575",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1080,
+        "votes_up": 0,
+        "timestamp_created": 1781520179
       },
       "lang": "",
       "platform_region": "global"

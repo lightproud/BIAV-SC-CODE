@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-15T10:51:30.377912+00:00",
+  "collected_at": "2026-06-15T16:14:43.976097+00:00",
   "source": "pixiv",
-  "item_count": 34,
+  "item_count": 32,
   "items": [
     {
       "source": "pixiv",
@@ -329,16 +329,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-15T10:50:42.001462+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "pixiv",
       "time": "2026-05-25T09:22:38+09:00",
       "lang": "",
       "title": "Arachne (Morimens)",
@@ -395,18 +385,6 @@
       "author": "bla",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/18/05/48/27/144912469_p0_custom1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-05-16T22:58:20+09:00",
-      "lang": "",
-      "title": "忘卻前夜",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/144855523",
-      "author": "솜랑랑",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/16/22/58/20/144855523_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
