@@ -127,6 +127,7 @@ class TestFailureAggregation(unittest.TestCase):
             "YouTube": "fetch_youtube", "Discord API": "fetch_discord",
             "Telegram": "fetch_telegram", "Bahamut": "fetch_bahamut",
             "Arca.live": "fetch_arca_live", "Google Play": "fetch_google_play",
+            "Twitter": "fetch_twitter",
         }
         patches = []
         for name, attr in attr_by_name.items():
