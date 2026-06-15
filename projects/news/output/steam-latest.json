@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-15T16:14:43.976097+00:00",
+  "collected_at": "2026-06-15T20:23:18.235510+00:00",
   "source": "steam",
   "item_count": 14,
   "items": [
@@ -16,7 +16,37 @@
       "voted_up": true,
       "review": "The Greatest Gacha Game You've Never Played.\n⣴⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⣼⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⣼⣿⣿⣿⣿⣿⣿⣿⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣤⣶⣶⣿⣿⡗\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃\n⣿⣿⡇⠜⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀Got a cat here\n⣿⣿⣿⣶⣿⣿⣿⣿⣿⠋⡹⠙⣿⣿⣿⡇⠀ Friends passing\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⠛⠀⠀by can touch her\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠁⠀⠀and click Like to pet ♡\n⣿⣿⡿⠻⠿⠿⠿⠿⠛⠹⠑⠀⠀ Award for good luck, Take My Points for infinite pets ♡\n⠟⠁⠀",
       "timestamp_created": 1781511663,
-      "playtime_forever": 25279
+      "playtime_forever": 25549
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-15T20:04:29+00:00",
+      "lang": "english",
+      "title": "[正面] Peak",
+      "summary": "Peak",
+      "url": "https://steamcommunity.com/profiles/76561199256249250/recommended/3052450",
+      "author": "76561199256249250",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Peak",
+      "timestamp_created": 1781553869,
+      "playtime_forever": 869
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-15T16:14:11+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199638329589/recommended/3052450",
+      "author": "76561199638329589",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1781540051,
+      "playtime_forever": 194
     },
     {
       "source": "steam",
@@ -121,7 +151,7 @@
       "voted_up": true,
       "review": "I picked this game up on a whim.  Found it randomly and decided to give it a go. The first chapter instantly had me hooked, both the characters and the Lovecraftian setting. The gacha is very generous and they even give you a couple free characters and chances to claim your own. From what I know, the game is mostly translated in English with some incredible art to go with it. I can't wait to keep playing this game.",
       "timestamp_created": 1781509188,
-      "playtime_forever": 1585
+      "playtime_forever": 1665
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "Cathul Thatogin",
       "timestamp_created": 1781486447,
-      "playtime_forever": 769
+      "playtime_forever": 852
     },
     {
       "source": "steam",
@@ -181,37 +211,7 @@
       "voted_up": true,
       "review": "Best gacha",
       "timestamp_created": 1781469032,
-      "playtime_forever": 3173
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-14T19:01:38+00:00",
-      "lang": "english",
-      "title": "[正面] If you like slay the spire, you'll like this game.",
-      "summary": "If you like slay the spire, you'll like this game.",
-      "url": "https://steamcommunity.com/profiles/76561198229695080/recommended/3052450",
-      "author": "76561198229695080",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "If you like slay the spire, you'll like this game.",
-      "timestamp_created": 1781463698,
-      "playtime_forever": 571
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-14T17:10:10+00:00",
-      "lang": "brazilian",
-      "title": "[正面] eu amo emo morimens, ele só fica cansativo pelos b...",
-      "summary": "eu amo emo morimens, ele só fica cansativo pelos bugs que ocorrem no meu sistema operacional linux",
-      "url": "https://steamcommunity.com/profiles/76561198757638275/recommended/3052450",
-      "author": "76561198757638275",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "eu amo emo morimens, ele só fica cansativo pelos bugs que ocorrem no meu sistema operacional linux",
-      "timestamp_created": 1781457010,
-      "playtime_forever": 12080
+      "playtime_forever": 3206
     }
   ]
 }
