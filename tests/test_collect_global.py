@@ -125,7 +125,7 @@ class TestFailureAggregation(unittest.TestCase):
             "Note.com": "fetch_note_com", "Ruliweb": "fetch_ruliweb",
             "StopGame": "fetch_stopgame", "搜狗微信": "fetch_weixin",
             "YouTube": "fetch_youtube", "Discord API": "fetch_discord",
-            "Telegram": "fetch_telegram", "Bahamut": "fetch_bahamut",
+            "Bahamut": "fetch_bahamut",
             "Arca.live": "fetch_arca_live", "Google Play": "fetch_google_play",
             "Twitter": "fetch_twitter",
         }

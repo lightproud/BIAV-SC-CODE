@@ -38,6 +38,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
       - name: Backfill still-alive media (refresh Discord URLs)
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}

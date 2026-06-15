@@ -33,7 +33,6 @@ KNOWN_SOURCES = [
     'appstore',
     'google_play',
     'pixiv',
-    'telegram',
     # 日语扩展
     'note_com',
     # 韩语扩展
@@ -78,7 +77,6 @@ CORE_SOURCES = [
 AUTH_GATED = {
     'youtube': 'YOUTUBE_API_KEY',
     'discord': 'DISCORD_BOT_TOKEN',
-    'telegram': 'TELEGRAM_CHANNELS',
 }
 
 # Discord 有独立归档器（discord_archiver.py），不走 archive_platforms 的按日归档
@@ -97,6 +95,7 @@ LEGACY_SOURCES = [
     'gamerch',
     'miraheze_wiki',
     'taptap_post',
+    'telegram',  # 停采 2026-06-15：dormant 68 天、历史总产出仅 3 条，移出产线、保留历史档案供审计
 ]
 
 
