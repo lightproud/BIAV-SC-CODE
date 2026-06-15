@@ -1,9 +1,54 @@
 {
   "date": "2026-06-15",
-  "archived_at": "2026-06-15T10:51:42.306856+00:00",
+  "archived_at": "2026-06-15T16:14:54.601036+00:00",
   "source": "steam_discussion",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
+    {
+      "title": "[Steam论坛] Invitation Code",
+      "summary": "1D1EGZ10U1",
+      "source": "steam_discussion",
+      "time": "2026-06-15T15:12:07+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/603039786130771940/",
+      "engagement": 189,
+      "is_hot": true,
+      "author": "Znye",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] New invite code! 300 silver.",
+      "summary": "Code: TEAHFONZM5\nEnter it in the new Mythag Invite / Bind Invitation tab on the left.",
+      "source": "steam_discussion",
+      "time": "2026-06-15T11:54:39+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
+      "engagement": 148,
+      "is_hot": true,
+      "author": "mengluo123",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] ick",
+      "summary": "install for saya -> \"gpt translations\" -> uninstall",
+      "source": "steam_discussion",
+      "time": "2026-06-15T15:29:12+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/565910803680599883/",
+      "engagement": 20,
+      "is_hot": true,
+      "author": "lightyagaminumberonefan",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
     {
       "title": "[Steam论坛] Upcoming Controllersupport?",
       "summary": "Hello there a  potential player here[\\b].\nSince I'm unsure of current events and development subjects regarding the game, I was asking if native controller support is supported/ in the development pipeline?\n\nEitherway, thank you guyses for your time!...",

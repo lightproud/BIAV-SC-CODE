@@ -11766,6 +11766,83 @@
       "title": "#忘卻前夜 #morimens 星辰篇H5-7",
       "time": "2026-06-15T10:00:28Z",
       "downloaded_at": "2026-06-15T10:51:42.207881+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/29d6c7c4c82d7f223d91c692f1db236b2046d44f.jpg": {
+      "filename": "bilibili_b4830fe81817800d.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】3启医生主c融灾5-5",
+      "time": "2026-06-15T11:58:58+00:00",
+      "downloaded_at": "2026-06-15T16:14:46.150771+00:00"
+    },
+    "https://i.ytimg.com/vi/hHDNFLW8AkA/hqdefault.jpg": {
+      "filename": "youtube_1dfc3ab85ce917ac.jpg",
+      "source": "youtube",
+      "title": "Morimens \\\\ Крутим Клементину и играем Поезд на рандомных Пробужденных",
+      "time": "2026-06-15T14:27:43Z",
+      "downloaded_at": "2026-06-15T16:14:46.868912+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/97dd569f90ebf2cfb7ebcc30384fb80be32c1841.jpg": {
+      "filename": "bilibili_bc6c7897fc21314d.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】萌新融灾首次425纪念",
+      "time": "2026-06-15T11:27:28+00:00",
+      "downloaded_at": "2026-06-15T16:14:47.722847+00:00"
+    },
+    "https://i.ytimg.com/vi/yr5NdqdQFas/hqdefault_live.jpg": {
+      "filename": "youtube_8a9e59c3b2bbee51.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) 리버스 1999 이거 망전이랑 비슷하다며?",
+      "time": "2026-06-15T13:31:17Z",
+      "downloaded_at": "2026-06-15T16:14:48.807402+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/dc6d4523f4a0a5697808fb0363a545f75842a70e.jpg": {
+      "filename": "bilibili_17f98414874c16ee.jpg",
+      "source": "bilibili",
+      "title": "【哈·不·区】全网不首发哈姆林c H5-11之阿拉克涅得了mvp",
+      "time": "2026-06-15T13:44:24+00:00",
+      "downloaded_at": "2026-06-15T16:14:51.837878+00:00"
+    },
+    "https://i.ytimg.com/vi/GUI7X7yLgOo/hqdefault.jpg": {
+      "filename": "youtube_58bfa37588619ab4.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】いい加減冒涜を読もう",
+      "time": "2026-06-15T12:46:05Z",
+      "downloaded_at": "2026-06-15T16:14:52.535533+00:00"
+    },
+    "https://i.ytimg.com/vi/raDCp93vpvQ/hqdefault.jpg": {
+      "filename": "youtube_5c30bb63d8eeb20e.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 Morimens Inverted Rebirth Collab Event - Nightcap Madness",
+      "time": "2026-06-15T11:31:20Z",
+      "downloaded_at": "2026-06-15T16:14:52.938899+00:00"
+    },
+    "https://i.ytimg.com/vi/Aa5QR-Mg0Xs/hqdefault.jpg": {
+      "filename": "youtube_4a36c92b3462a1dd.jpg",
+      "source": "youtube",
+      "title": "yes yes mouch we get it, shining tornado it is | Morimens",
+      "time": "2026-06-15T12:28:56Z",
+      "downloaded_at": "2026-06-15T16:14:53.341686+00:00"
+    },
+    "https://i.ytimg.com/vi/XPuNczJE0uA/hqdefault.jpg": {
+      "filename": "youtube_6605c75f81470ab4.jpg",
+      "source": "youtube",
+      "title": "Morimens - Arc 1 Ch 7-12 Hard",
+      "time": "2026-06-15T14:47:17Z",
+      "downloaded_at": "2026-06-15T16:14:53.742343+00:00"
+    },
+    "https://i.ytimg.com/vi/gq5HDJnlQYE/hqdefault.jpg": {
+      "filename": "youtube_7d793cc212bce969.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens)  리버스1999찍먹 망전이랑 비슷하다며?",
+      "time": "2026-06-15T13:35:52Z",
+      "downloaded_at": "2026-06-15T16:14:54.136664+00:00"
+    },
+    "https://i.ytimg.com/vi/oIj7dxzQjRc/hqdefault.jpg": {
+      "filename": "youtube_7dcbdf7e029da930.jpg",
+      "source": "youtube",
+      "title": "Morimens | Chapter 3: Beware of Hounds",
+      "time": "2026-06-15T15:17:07Z",
+      "downloaded_at": "2026-06-15T16:14:54.522378+00:00"
     }
   },
   "failed": {
@@ -17448,6 +17525,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-15T10:51:35.347854+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/29d6c7c4c82d7f223d91c692f1db236b2046d44f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T16:14:46.451245+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/97dd569f90ebf2cfb7ebcc30384fb80be32c1841.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T16:14:48.023333+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/dc6d4523f4a0a5697808fb0363a545f75842a70e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T16:14:52.138273+00:00"
     }
   },
   "archived": []
