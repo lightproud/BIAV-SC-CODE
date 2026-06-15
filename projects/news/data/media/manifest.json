@@ -11619,6 +11619,55 @@
       "title": "【忘却前夜】復活！パチンコ大英雄【対人戦】",
       "time": "2026-06-14T22:00:32Z",
       "downloaded_at": "2026-06-14T22:09:25.203466+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c6b72548a092d57a07750254ea946d12a8399e67.jpg": {
+      "filename": "bilibili_94f774208ccecc58.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】6.8-6.22融灾个人400神秘配队记录（单走杜勒，超维血希）",
+      "time": "2026-06-15T01:34:13+00:00",
+      "downloaded_at": "2026-06-15T04:29:24.504951+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/74b0df37d0a36f2b5e0182946abb5c4480197b0d.jpg": {
+      "filename": "bilibili_5b01965c608e68fb.jpg",
+      "source": "bilibili",
+      "title": "雪莲主题曲《念雪莲》2.0倍速，氦气音谁家小孩？",
+      "time": "2026-06-14T14:55:59+00:00",
+      "downloaded_at": "2026-06-15T04:29:25.742171+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/df8ea86b4744e42877d7061311940b5b7f5f18fd.jpg": {
+      "filename": "bilibili_e7ac9714c77379a2.jpg",
+      "source": "bilibili",
+      "title": "【拉伊母女中心/手书】龙胆花",
+      "time": "2026-06-15T04:00:00+00:00",
+      "downloaded_at": "2026-06-15T04:29:27.970499+00:00"
+    },
+    "https://i.ytimg.com/vi/6oTCfhTU9Mo/hqdefault.jpg": {
+      "filename": "youtube_3462600e6c4841cc.jpg",
+      "source": "youtube",
+      "title": "♡ Morimens: A Lovely Lovecraftian Gacha | Satania&#39;s Gacha Gameplay ♡",
+      "time": "2026-06-15T02:32:56Z",
+      "downloaded_at": "2026-06-15T04:29:28.341217+00:00"
+    },
+    "https://i.ytimg.com/vi/hEown6VxZZs/hqdefault.jpg": {
+      "filename": "youtube_c3fb8813c2c01ea1.jpg",
+      "source": "youtube",
+      "title": "It’s Morimens Time~ 🦇🖤🗡️",
+      "time": "2026-06-15T04:08:24Z",
+      "downloaded_at": "2026-06-15T04:29:29.019232+00:00"
+    },
+    "https://i.ytimg.com/vi/nrU_pIDrzN8/hqdefault.jpg": {
+      "filename": "youtube_98aef8fd9f43cea9.jpg",
+      "source": "youtube",
+      "title": "6/7 D-tide yapping but it&#39;s a speedrun",
+      "time": "2026-06-14T23:59:50Z",
+      "downloaded_at": "2026-06-15T04:29:29.382780+00:00"
+    },
+    "https://i.ytimg.com/vi/wnUAwBZoJ-k/hqdefault.jpg": {
+      "filename": "youtube_b4a19c55d83a3097.jpg",
+      "source": "youtube",
+      "title": "Arcane Season 1 Ending | Morimens Traphase Draft Pick Replay",
+      "time": "2026-06-15T02:07:13Z",
+      "downloaded_at": "2026-06-15T04:29:29.754868+00:00"
     }
   },
   "failed": {
@@ -17186,6 +17235,106 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-14T21:00:59.174092+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c6b72548a092d57a07750254ea946d12a8399e67.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:23.033957+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/74b0df37d0a36f2b5e0182946abb5c4480197b0d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:26.042658+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/df8ea86b4744e42877d7061311940b5b7f5f18fd.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:28.641691+00:00"
+    },
+    "https://preview.redd.it/0pbiyqrosa7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=a88cd01934d71bb95f633ebc295412bdeac75bc5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:30.091814+00:00"
+    },
+    "https://preview.redd.it/1dh33fzpqc7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3582ece8cd61c2f644c83f46445be5e561072a20": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:30.417969+00:00"
+    },
+    "https://preview.redd.it/nbk5igspo87h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=fc702f3ae09af268754db1720747a11a961da9f0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:30.742986+00:00"
+    },
+    "https://preview.redd.it/oybax94q8a7h1.jpg?width=140&amp;height=54&amp;auto=webp&amp;s=ad3add39cbdcdc69fd79fca12e584ba2859d673b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:31.072021+00:00"
+    },
+    "https://preview.redd.it/985l6hidj97h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=46b9b7fe0840ce3e0410f64307fcf68d21eeed89": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:31.398341+00:00"
+    },
+    "https://preview.redd.it/f15fu5qkw97h1.png?width=108&amp;crop=smart&amp;auto=webp&amp;s=be48968af9a1b38f86ad73dfa440e0a190061ee5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:31.723600+00:00"
+    },
+    "https://preview.redd.it/fwbzyteisc7h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=afbb5c776014ed1813823468e827d915a92d2ee7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:32.049205+00:00"
+    },
+    "https://preview.redd.it/26ijkykqbb7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1f0b21f7eda3df00c22d29c4a84791e1cd8d0a87": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:32.377563+00:00"
+    },
+    "https://preview.redd.it/5c0bmcwac87h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=5e718f2575168f57721acff9832947b2cd5c5089": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:32.703915+00:00"
+    },
+    "https://preview.redd.it/eqtur2get87h1.jpg?width=140&amp;height=83&amp;auto=webp&amp;s=cf967a3267e09860cbe58e1a1ab663396f93825d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:33.029701+00:00"
+    },
+    "https://preview.redd.it/pp3ccxwa6d7h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=addd46c2c5f0c9a56a76df362c5c7889182ae013": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:33.357260+00:00"
+    },
+    "https://external-preview.redd.it/iYL-tf4E-KrK_Gk_yOA7hpcx9rRMhQ9184GGsuLmjog.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=d8f7bde42f74248f113b6889d36b86042b89c859": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:33.700154+00:00"
+    },
+    "https://preview.redd.it/7xwxwsvuhc7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f042d5b6e7f87ff92f23925afcf336c7b92ad226": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:34.025765+00:00"
+    },
+    "https://preview.redd.it/byre2gciwc7h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=91c34802e3f31d4a2e26fcbda685a24d133d49ae": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:34.351296+00:00"
+    },
+    "https://preview.redd.it/r33e72mo997h1.jpg?width=140&amp;height=79&amp;auto=webp&amp;s=3540699b6580937bb882ae28c27cf1e6d2b48749": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:34.677636+00:00"
+    },
+    "https://preview.redd.it/42uxvc93497h1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=c4f5d9c1179a7c14e383c25e12e4b6061b02ceff": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:35.004258+00:00"
+    },
+    "https://preview.redd.it/hgk46wnr7a7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=76797207c80eb91fdde82cc2dc583e99b9f6b248": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-15T04:29:35.331214+00:00"
     }
   },
   "archived": []

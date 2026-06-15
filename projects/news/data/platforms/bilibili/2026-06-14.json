@@ -1,8 +1,8 @@
 {
   "date": "2026-06-14",
-  "archived_at": "2026-06-15T00:02:45.848687+00:00",
+  "archived_at": "2026-06-15T04:29:35.419581+00:00",
   "source": "bilibili",
-  "item_count": 48,
+  "item_count": 50,
   "items": [
     {
       "title": "一些gal角色",
@@ -234,6 +234,29 @@
       "content_type": "video"
     },
     {
+      "title": "雪莲主题曲《念雪莲》2.0倍速，氦气音谁家小孩？",
+      "summary": "雪莲:你跑不过我你信么？\n  └ nickolas14 (1赞): 你知道我要说什么\n  └ 一只路过的居安安 (1赞): 🍬尽头\n  └ 不会住在世界尽头 (1赞): 本来是炼了个雪莲ai，但唱出来跟被阉了的公鸭子一样，实在是太难听了，就用普通ai跑了一遍[doge]",
+      "source": "bilibili",
+      "time": "2026-06-14T14:55:59+00:00",
+      "url": "https://www.bilibili.com/video/BV1AvJK6GEyT",
+      "engagement": 213,
+      "is_hot": false,
+      "author": "不会住在世界尽头",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 204,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/74b0df37d0a36f2b5e0182946abb5c4480197b0d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "200抽大战阿拉克涅",
       "summary": "",
       "source": "bilibili",
@@ -248,6 +271,23 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i0.hdslb.com/bfs/archive/fc028540cf5ac4349b9e6e5882080f6d2480832d.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "雪莲主题曲《念雪莲》2.0倍速，氦气音谁家小孩？",
+      "summary": "雪莲:你跑不过我你信么？",
+      "source": "bilibili",
+      "time": "2026-06-14T14:55:59+00:00",
+      "url": "http://www.bilibili.com/video/av116749022267370",
+      "engagement": 204,
+      "is_hot": false,
+      "author": "不会住在世界尽头",
+      "tags": [
+        "日常"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i1.hdslb.com/bfs/archive/74b0df37d0a36f2b5e0182946abb5c4480197b0d.jpg",
       "content_type": "video"
     },
     {

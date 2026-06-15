@@ -1,8 +1,8 @@
 {
   "date": "2026-06-15",
-  "archived_at": "2026-06-15T00:02:45.859121+00:00",
+  "archived_at": "2026-06-15T04:29:35.428504+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] eu amo emo morimens, ele só fica cansativo pelos b...",
@@ -66,6 +66,50 @@
         "playtime_forever": 326,
         "votes_up": 0,
         "timestamp_created": 1781463698
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Immaculate game. steam says I have 61, but I have...",
+      "summary": "Immaculate game. steam says I have 61, but I have over 100 on the actual game because there is a mobile version. It's long too, I would have double if not triple he hours if I had more attention on all the cutscenes and story, but even so, I still feel emersed and invested into the game play and what I do understand from the story, once you get the hang of the gameplay, collecting characters becomes not only easier, but also enjoyable. Speaking of, getting to gamble a lot makes my dopamine spike, so if you are like me, gambling is very accessable. Is very good game",
+      "source": "steam_review",
+      "time": "2026-06-15T03:13:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199025655035/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199025655035",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3685,
+        "votes_up": 0,
+        "timestamp_created": 1781493214
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Cathul Thatogin",
+      "summary": "Cathul Thatogin",
+      "source": "steam_review",
+      "time": "2026-06-15T01:20:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199286854777/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199286854777",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 692,
+        "votes_up": 0,
+        "timestamp_created": 1781486447
       },
       "lang": "",
       "platform_region": "global"

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-15T00:02:45.480506+00:00",
+  "collected_at": "2026-06-15T04:29:22.463060+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -17,6 +17,36 @@
       "review": "카와잉",
       "timestamp_created": 1781448023,
       "playtime_forever": 183
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-15T03:13:34+00:00",
+      "lang": "english",
+      "title": "[正面] Immaculate game. steam says I have 61, but I have...",
+      "summary": "Immaculate game. steam says I have 61, but I have over 100 on the actual game because there is a mobile version. It's long too, I would have double if not triple he hours if I had more attention on all the cutscenes and story, but even so, I still feel emersed and invested into the game play and what I do understand from the story, once you get the hang of the gameplay, collecting characters becomes not only easier, but also enjoyable. Speaking of, getting to gamble a lot makes my dopamine spike, so if you are like me, gambling is very accessable. Is very good game",
+      "url": "https://steamcommunity.com/profiles/76561199025655035/recommended/3052450",
+      "author": "76561199025655035",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Immaculate game. steam says I have 61, but I have over 100 on the actual game because there is a mobile version. It's long too, I would have double if not triple he hours if I had more attention on all the cutscenes and story, but even so, I still feel emersed and invested into the game play and what I do understand from the story, once you get the hang of the gameplay, collecting characters becomes not only easier, but also enjoyable. Speaking of, getting to gamble a lot makes my dopamine spike, so if you are like me, gambling is very accessable. Is very good game",
+      "timestamp_created": 1781493214,
+      "playtime_forever": 3685
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-15T01:20:47+00:00",
+      "lang": "english",
+      "title": "[正面] Cathul Thatogin",
+      "summary": "Cathul Thatogin",
+      "url": "https://steamcommunity.com/profiles/76561199286854777/recommended/3052450",
+      "author": "76561199286854777",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Cathul Thatogin",
+      "timestamp_created": 1781486447,
+      "playtime_forever": 692
     },
     {
       "source": "steam",
@@ -46,7 +76,7 @@
       "voted_up": true,
       "review": "If you like slay the spire, you'll like this game.",
       "timestamp_created": 1781463698,
-      "playtime_forever": 402
+      "playtime_forever": 571
     },
     {
       "source": "steam",
@@ -136,7 +166,7 @@
       "voted_up": false,
       "review": "还行",
       "timestamp_created": 1781427243,
-      "playtime_forever": 1793
+      "playtime_forever": 1835
     },
     {
       "source": "steam",
@@ -166,7 +196,7 @@
       "voted_up": true,
       "review": "매력적인 캐릭터 디자인과 스토리, 특색있는 계역 기믹과 짜임새 있는 게임성을 가진 덱빌딩 로그라이크 게임\n\n번역의 퀄리티가 좀 더 좋았더라면 훨씬 많은 사람들이 하지 않았을까 싶은 아쉬움이 남는다.\n+ 라모나는 내 아내임",
       "timestamp_created": 1781414110,
-      "playtime_forever": 2975
+      "playtime_forever": 2981
     },
     {
       "source": "steam",
@@ -181,7 +211,7 @@
       "voted_up": true,
       "review": "好玩，全方面",
       "timestamp_created": 1781413629,
-      "playtime_forever": 5632
+      "playtime_forever": 5902
     },
     {
       "source": "steam",
@@ -197,21 +227,6 @@
       "review": "沙耶可爱捏",
       "timestamp_created": 1781413144,
       "playtime_forever": 1140
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-14T02:56:26+00:00",
-      "lang": "english",
-      "title": "[正面] this game has great story",
-      "summary": "this game has great story",
-      "url": "https://steamcommunity.com/profiles/76561199021438986/recommended/3052450",
-      "author": "76561199021438986",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "this game has great story",
-      "timestamp_created": 1781405786,
-      "playtime_forever": 1148
     }
   ]
 }
