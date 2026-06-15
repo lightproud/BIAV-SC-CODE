@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-06-15T02:01:23.119369+00:00",
+  "updated_at": "2026-06-15T08:37:11.902429+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -591,7 +591,7 @@
       "name": "دردشة-عامة",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 71,
+      "position": 70,
       "topic": null
     },
     {
@@ -599,7 +599,7 @@
       "name": "دليل-اللعبة",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 72,
+      "position": 71,
       "topic": null
     },
     {
@@ -607,7 +607,7 @@
       "name": "一般聊天",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 73,
+      "position": 72,
       "topic": null
     },
     {
@@ -615,7 +615,7 @@
       "name": "游戏指南",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 74,
+      "position": 73,
       "topic": null
     },
     {
@@ -623,7 +623,7 @@
       "name": "一般聊天",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 75,
+      "position": 74,
       "topic": null
     },
     {
@@ -631,7 +631,7 @@
       "name": "遊戲指南",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 76,
+      "position": 75,
       "topic": null
     },
     {
@@ -639,7 +639,7 @@
       "name": "algemene-chat",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 77,
+      "position": 76,
       "topic": null
     },
     {
@@ -647,7 +647,7 @@
       "name": "spelgids",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 78,
+      "position": 77,
       "topic": null
     },
     {
@@ -655,7 +655,7 @@
       "name": "discussion-générale",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 80,
+      "position": 79,
       "topic": null
     },
     {
@@ -663,7 +663,7 @@
       "name": "guide-du-jeu",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 83,
+      "position": 82,
       "topic": null
     },
     {
@@ -671,7 +671,7 @@
       "name": "allgemeiner-chat",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 85,
+      "position": 84,
       "topic": null
     },
     {
@@ -679,7 +679,7 @@
       "name": "spielanleitung",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 86,
+      "position": 85,
       "topic": null
     },
     {
@@ -687,7 +687,7 @@
       "name": "צאט-כללי",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 88,
+      "position": 87,
       "topic": null
     },
     {
@@ -695,7 +695,7 @@
       "name": "מדריך-משחק",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 91,
+      "position": 90,
       "topic": null
     },
     {
@@ -703,7 +703,7 @@
       "name": "सामान्य-बातचीत",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 92,
+      "position": 91,
       "topic": null
     },
     {
@@ -711,7 +711,7 @@
       "name": "गेम-निर्देशिका",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 94,
+      "position": 93,
       "topic": null
     },
     {
@@ -719,7 +719,7 @@
       "name": "obrolan-umum",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 96,
+      "position": 95,
       "topic": null
     },
     {
@@ -727,7 +727,7 @@
       "name": "panduan-permainan",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 98,
+      "position": 97,
       "topic": null
     },
     {
@@ -735,7 +735,7 @@
       "name": "chiacchierata-generale",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 100,
+      "position": 99,
       "topic": null
     },
     {
@@ -743,7 +743,7 @@
       "name": "guida-al-gioco",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 103,
+      "position": 102,
       "topic": null
     },
     {
@@ -751,7 +751,7 @@
       "name": "一般的なチャット",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 104,
+      "position": 103,
       "topic": null
     },
     {
@@ -759,7 +759,7 @@
       "name": "ゲームガイド",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 81,
+      "position": 80,
       "topic": null
     },
     {
@@ -767,7 +767,7 @@
       "name": "일반-채팅",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 82,
+      "position": 81,
       "topic": null
     },
     {
@@ -775,7 +775,7 @@
       "name": "게임-가이드",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 84,
+      "position": 83,
       "topic": null
     },
     {
@@ -783,7 +783,7 @@
       "name": "pangkalahatang-chat",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 87,
+      "position": 86,
       "topic": null
     },
     {
@@ -791,7 +791,7 @@
       "name": "gabay-sa-laro",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 89,
+      "position": 88,
       "topic": null
     },
     {
@@ -799,7 +799,7 @@
       "name": "czat-ogólny",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 90,
+      "position": 89,
       "topic": null
     },
     {
@@ -807,7 +807,7 @@
       "name": "przewodnik-po-grze",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 93,
+      "position": 92,
       "topic": null
     },
     {
@@ -815,7 +815,7 @@
       "name": "bate-papo-geral",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 95,
+      "position": 94,
       "topic": null
     },
     {
@@ -823,7 +823,7 @@
       "name": "guia-do-jogo",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 97,
+      "position": 96,
       "topic": null
     },
     {
@@ -831,7 +831,7 @@
       "name": "bate-papo-geral",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 99,
+      "position": 98,
       "topic": null
     },
     {
@@ -839,7 +839,7 @@
       "name": "guia-do-jogo",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 101,
+      "position": 100,
       "topic": null
     },
     {
@@ -847,7 +847,7 @@
       "name": "общий-чат",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 102,
+      "position": 101,
       "topic": null
     },
     {
@@ -855,7 +855,7 @@
       "name": "руководство-по-игре",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 105,
+      "position": 104,
       "topic": null
     },
     {
@@ -863,7 +863,7 @@
       "name": "charla-general",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 106,
+      "position": 105,
       "topic": null
     },
     {
@@ -871,7 +871,7 @@
       "name": "guía-del-juego",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 107,
+      "position": 106,
       "topic": null
     },
     {
@@ -879,7 +879,7 @@
       "name": "allmän-chatt",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 108,
+      "position": 107,
       "topic": null
     },
     {
@@ -887,7 +887,7 @@
       "name": "spelguide",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 109,
+      "position": 108,
       "topic": null
     },
     {
@@ -895,7 +895,7 @@
       "name": "genel-sohbet",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 112,
+      "position": 111,
       "topic": null
     },
     {
@@ -903,7 +903,7 @@
       "name": "oyun-rehberi",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 113,
+      "position": 112,
       "topic": null
     },
     {
@@ -919,7 +919,7 @@
       "name": "game-guide",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 79,
+      "position": 78,
       "topic": null
     },
     {
@@ -927,7 +927,7 @@
       "name": "trò-chuyện-chung",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 114,
+      "position": 113,
       "topic": null
     },
     {
@@ -935,7 +935,7 @@
       "name": "hướng-dẫn-trò-chơi",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 115,
+      "position": 114,
       "topic": null
     },
     {
@@ -943,7 +943,7 @@
       "name": "การสนทนาทั่วไป",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 110,
+      "position": 109,
       "topic": null
     },
     {
@@ -951,7 +951,7 @@
       "name": "คู่มือเกม",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 111,
+      "position": 110,
       "topic": null
     },
     {
@@ -959,7 +959,7 @@
       "name": "🌎┊select-language",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 69,
+      "position": 68,
       "topic": null
     },
     {
@@ -967,7 +967,7 @@
       "name": "global-chat",
       "type": 0,
       "parent_id": "1355607635147362554",
-      "position": 70,
+      "position": 69,
       "topic": null
     },
     {
@@ -1215,7 +1215,7 @@
       "name": "🔸erica-playground",
       "type": 0,
       "parent_id": "1511303613408870511",
-      "position": 68,
+      "position": 115,
       "topic": null
     },
     {
