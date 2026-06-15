@@ -152,7 +152,6 @@ def run_zero_cost_collectors() -> list[dict]:
     api_fetchers = [
         ('YouTube', c.fetch_youtube),
         ('Discord API', c.fetch_discord),
-        ('Telegram', c.fetch_telegram),
         ('Bahamut', c.fetch_bahamut),
         ('Arca.live', c.fetch_arca_live),
         ('Google Play', c.fetch_google_play),
@@ -167,7 +166,7 @@ def run_zero_cost_collectors() -> list[dict]:
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
         'YouTube': 'youtube', 'Discord API': 'discord',
-        'Telegram': 'telegram', 'Bahamut': 'bahamut',
+        'Bahamut': 'bahamut',
         'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
 
