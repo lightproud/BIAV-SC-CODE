@@ -1,11 +1,11 @@
 {
   "date": "2026-06-11",
-  "messages": 19774,
+  "messages": 21903,
   "unique_authors": 517,
-  "reactions_total": 1766,
-  "attachments": 1311,
+  "reactions_total": 1900,
+  "attachments": 1399,
   "channel_activity": {
-    "🔸game-question": 3855,
+    "🔸game-question": 5984,
     "🔸general-chat": 2213,
     "🔸綜合討論": 3070,
     "🔸阵容构建": 373,
@@ -92,6 +92,15 @@
     "1514674769931272222": 1
   },
   "hourly_activity": {
+    "15": 1255,
+    "16": 1659,
+    "17": 1227,
+    "18": 705,
+    "19": 688,
+    "20": 555,
+    "21": 288,
+    "22": 172,
+    "23": 237,
     "0": 506,
     "1": 1023,
     "2": 1247,
@@ -106,21 +115,13 @@
     "11": 1085,
     "12": 1368,
     "13": 1175,
-    "14": 1192,
-    "15": 976,
-    "16": 1168,
-    "17": 935,
-    "18": 541,
-    "19": 375,
-    "20": 233,
-    "21": 128,
-    "22": 137,
-    "23": 164
+    "14": 1192
   },
   "message_types": {
-    "0": 2614,
-    "19": 1216,
-    "20": 25
+    "0": 1448,
+    "19": 669,
+    "20": 11,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -260,6 +261,14 @@
       "channel": "你好我是雲玩家"
     },
     {
+      "id": "1514729494668247090",
+      "channel_id": "1433513650299076780",
+      "content": "And please refrain from giving advice, unless you're confident in your knowledge",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1514460639567806655",
       "channel_id": "1433513650299076780",
       "content": "Ok I made up my mind and used all the horizons I had. My first OE Limited. From ",
@@ -274,14 +283,6 @@
       "author": "nemu_s_t_a_r",
       "reactions": 5,
       "channel": "V2.5.1.0 停服维护公告"
-    },
-    {
-      "id": "1514495373371117579",
-      "channel_id": "1131839817982947429",
-      "content": "。",
-      "author": "yusi4172",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }
