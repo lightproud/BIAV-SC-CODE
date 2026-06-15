@@ -2,7 +2,7 @@
   "date": "2026-04-09",
   "archived_at": "2026-04-09T10:24:13.951807+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,51 @@
       "review": "Ramona is very Paus",
       "timestamp_created": 1775684139,
       "playtime_forever": 4036
+    },
+    {
+      "title": "[正面] Просто супер",
+      "summary": "Просто супер",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-04-09T14:35:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198161744086/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198161744086",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] nice",
+      "summary": "nice",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "tchinese",
+      "time": "2026-04-09T14:12:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199875000424/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199875000424",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] yippe",
+      "summary": "yippe",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-09T10:32:38+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198880968246/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198880968246",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

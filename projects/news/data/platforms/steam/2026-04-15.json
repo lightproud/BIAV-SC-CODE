@@ -2,7 +2,7 @@
   "date": "2026-04-15",
   "archived_at": "2026-04-26T07:25:33.115312+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] 6，不小心把生活費課掉了",
@@ -60,6 +60,21 @@
       "engagement": 0,
       "is_hot": false,
       "author": "76561198097675889",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 3 часа побегал потыкал и мне пока что все нравится...",
+      "summary": "3 часа побегал потыкал и мне пока что все нравится. Буду дальше играть в нее",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-04-14T18:01:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199784881345/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199784881345",
       "tags": [],
       "content_type": "text",
       "media_url": ""

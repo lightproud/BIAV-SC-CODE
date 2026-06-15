@@ -1,0 +1,53 @@
+{
+  "date": "2025-05-11",
+  "archived_at": "2026-04-26T06:55:50.690065+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] the game was ok, not too bad.",
+      "summary": "the game was ok, not too bad.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-05-10T18:25:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198805485429/recommended/3052450",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "76561198805485429",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] It has an interesting gameplay loop though it can ...",
+      "summary": "It has an interesting gameplay loop though it can be a bit tedious. Also the art is amazing.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-05-11T15:27:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198984632616/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198984632616",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] When reverse 1999 meets slay the spire.\n\nThis is a...",
+      "summary": "When reverse 1999 meets slay the spire.\n\nThis is a good and fun game. Very generous too.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-05-11T02:22:31+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198301268582/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198301268582",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

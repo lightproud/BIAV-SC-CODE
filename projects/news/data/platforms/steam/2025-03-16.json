@@ -1,0 +1,38 @@
+{
+  "date": "2025-03-16",
+  "archived_at": "2026-04-26T06:55:54.325494+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[负面] Actual fun gameplay, but ruined by Gacha gameplay ...",
+      "summary": "Actual fun gameplay, but ruined by Gacha gameplay mechanics and jankey storytelling",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-03-16T11:18:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198069579747/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561198069579747",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] A sleeper hit, one of the best stories I`ve ever r...",
+      "summary": "A sleeper hit, one of the best stories I`ve ever read. Great characters, great devs, generous gacha that you don`t feel at all.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "ukrainian",
+      "time": "2025-03-15T16:04:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198179767079/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198179767079",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

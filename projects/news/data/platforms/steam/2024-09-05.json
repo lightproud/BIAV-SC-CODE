@@ -1,0 +1,38 @@
+{
+  "date": "2024-09-05",
+  "archived_at": "2026-04-26T10:37:13.634553+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] 豪玩。",
+      "summary": "豪玩。",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-09-05T10:54:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199477305838/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199477305838",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Nice game.",
+      "summary": "Nice game.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2024-09-04T23:01:28+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198302778797/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198302778797",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}
