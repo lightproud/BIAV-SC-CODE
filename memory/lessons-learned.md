@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-28 by Code-BPT 会话（lesson #32 生成连贯性压倒数据完整性 + 事实采信纪律 3 条硬规则）
+> 最后更新：2026-06-16 by 艾瑞卡会话（lesson #34 push 413/502 真因=本地 origin/main 陈旧，push 前必先 fetch 对齐 + 诊断命令清单）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -322,6 +322,22 @@
   - 模拟失败路径：`git remote set-url origin http://nonexistent.local/fake` → 同上 → 验证 hook exit 0（非阻塞）+ log 含「push failed (non-fatal, will retry next session)」+ commit 仍落地（仅未 push）
 - **取舍**：放弃「绝对不做 git push」的简洁性，换取 untracked 自动归档；用「软失败 + log 留痕 + 自愈循环」三重保险压制沉默失败风险——push 失败不丢数据（commit 已落地），下次 SessionStart 同步带过去。
 - **Impact**：守密人会话体验、untracked 累积消除、stop-hook 报警频率下降；SessionEnd hook 与 SessionStart hook 自愈循环正式建立；为未来 hook 扩展（如 SessionEnd 触发 dream phase / index rebuild）提供 commit/push 模式参考。**相关教训**：参考实现给的逻辑要先用「我的边界条件能不能命中」校验一遍，brief 模板的 if 条件链不一定覆盖所有 use case（本次 untracked-only 场景被 `git diff --quiet` 误判跳过即典型例）。
+
+## 34. push 413/502 真因是本地 origin/main 指针陈旧，push 前必先 fetch 对齐
+
+- **Context**：2026-06-16 feature 分支 `claude/wangque-qianye-wiki-zbk125`（删 wiki 结构化层 db/）任务完成，`git push -u` 连续约 10 次失败，远端经本地 git 代理（`127.0.0.1:38095`）返回 **HTTP 413 / 502** 交替 + `send-pack: unexpected disconnect while reading sideband packet`。期间尝试 HTTP/1.1 + 增大 postBuffer + 多轮延时退避，**全部无效**。
+- **Problem（误诊与真因）**：第一反应误判为「Cloudflare 网关瞬时抖动，等自愈」——这是不查数据的空泛归因。硬数据复盘才定位真因：
+  1. 本地 `origin/main` 指针陈旧停在 `c798cf8`，而远端真实 main 早已推进到 `2a8e2e7`（`git ls-remote origin` 一眼看穿）。
+  2. `git rev-list --objects origin/main..HEAD | git pack-objects --stdout | wc -c` = **12,790 字节**（相对陈旧 main 极小）；但 `git rev-list --objects HEAD | git pack-objects` = **713 MB**（全 history，仓库 news 数据 + `update_notices.json` 累积巨大）。
+  3. push 走 smart-HTTP 与服务器实时 want/have 协商。本地 refs 陈旧时协商无法干净对齐共同基底，代理把请求按超大体量退件 → 413（payload too large）/ 502。**413 是真实的「包太大」，不是误报**——只是「大」来自协商失败回退到接近全 history，而非我这次 12.5 KB 的改动。
+- **Fix**：`git fetch origin main` 把远端跟踪指针刷新到最新 `2a8e2e7` **之后**，立即重 push → 一次 PUSH_SUCCEEDED。协商瞬间收敛到最小包（1 提交 / 12.5 KB）。
+- **诊断命令清单**（可重现，遇 push 413/502 先跑这套再下结论）：
+  - `git ls-remote origin | head` —— 看服务器真实 refs，与本地 `git rev-parse origin/main` 对比是否漂移
+  - `git rev-list --objects origin/main..HEAD | git pack-objects --stdout | wc -c` —— 量待推包真实字节数（极小却 413 = 协商/对齐问题，非内容问题）
+  - `git merge-base --is-ancestor <我的基底> origin/main` —— 确认基底是否仍在远端历史
+- **根因归属**：lesson #28（Cloudflare HTTP 413 推送堵塞）+ lesson #31（main 漂移）**同源复发**。原靠 `session-start-sync.sh` 钩子开工自动对齐 main 根治；该钩子 2026-06-14 退役后改「按需手动 `git fetch origin main`」，本次正是漏了开工对齐这一步 → 复发。
+- **硬规则**：**push 前先 `git fetch origin <base>` 对齐远端跟踪指针**；遇 push 413/502 不要空泛归因「网关抖动」或盲目退避重试，先跑上面三条诊断命令用字节数据定位，再处置。
+- **Impact**：消除「push 失败 = 等自愈」的误诊惯性；为所有银芯子会话（钩子退役后手动对齐时代）提供 push 故障的标准诊断路径；呼应 lesson #32 事实采信纪律——结论必须由直接产出该事实的工具（`ls-remote` / `pack-objects` / `merge-base`）支撑，禁止凭印象外推。
 
 ---
 
