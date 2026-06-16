@@ -1,10 +1,12 @@
 {
   "date": "2025-08-23",
-  "messages": 64,
+  "messages": 277,
   "unique_authors": 12,
-  "reactions_total": 14,
-  "attachments": 4,
+  "reactions_total": 26,
+  "attachments": 19,
   "channel_activity": {
+    "english-english": 209,
+    "general-discussion": 4,
     "self-introductions": 2,
     "awakener lines in general (profile stories/quotes/voicelines)": 1,
     "Max Arithmetica(最大算力) / Arithmetica Limit(算力上限)": 48,
@@ -16,18 +18,23 @@
     "PT Contribution": 2
   },
   "hourly_activity": {
-    "10": 4,
-    "5": 32,
+    "8": 69,
+    "11": 2,
+    "17": 2,
+    "23": 8,
+    "5": 71,
+    "6": 65,
+    "7": 5,
+    "3": 41,
+    "10": 8,
     "2": 1,
-    "6": 17,
     "12": 3,
-    "14": 2,
-    "3": 4,
-    "17": 1
+    "14": 2
   },
   "message_types": {
-    "0": 61,
-    "19": 3
+    "0": 191,
+    "19": 21,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -37,6 +44,22 @@
       "author": "solgazm",
       "reactions": 4,
       "channel": "self-introductions"
+    },
+    {
+      "id": "1408731697369055252",
+      "channel_id": "1402538040253087766",
+      "content": "it would probably be the best verb choice to use for orisons",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408735718515146876",
+      "channel_id": "1402538040253087766",
+      "content": "but I don't like it",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "english-english"
     },
     {
       "id": "1408761545193689159",
@@ -53,6 +76,70 @@
       "author": "omnichromia",
       "reactions": 2,
       "channel": "Max Arithmetica(最大算力) / Arithmetica Limit(算力上限)"
+    },
+    {
+      "id": "1408730009396449421",
+      "channel_id": "1402538040253087766",
+      "content": "Cool. I've been looking for a good verb to use for attaching Orisons to cards.\n`",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408735385365909647",
+      "channel_id": "1402538040253087766",
+      "content": "(sometimes with inconsistent wording)",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408684015753498636",
+      "channel_id": "1402538040253087766",
+      "content": "it's okay I can feel my",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408693291939004471",
+      "channel_id": "1402538040253087766",
+      "content": "but csv is technically just a text file with text separated by commas (csv = com",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408693708861214720",
+      "channel_id": "1402538040253087766",
+      "content": "or are you just rawdogging the commandline like a pro",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408655295005069352",
+      "channel_id": "1402538040253087766",
+      "content": "for now I'm just organizing my sheets xD I find it hard to go on with the origin",
+      "author": "reapersakamaki",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408655705766101033",
+      "channel_id": "1402538040253087766",
+      "content": "just for funs sake I found a number skipped xD doing that",
+      "author": "reapersakamaki",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1408764757380431902",
+      "channel_id": "1402941858606219294",
+      "content": "slap that in <#1404748432328888401>, your answer should be coming with the gener",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
     },
     {
       "id": "1408632821790281859",

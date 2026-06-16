@@ -1,17 +1,31 @@
 {
   "date": "2025-09-14",
-  "messages": 37,
-  "unique_authors": 7,
-  "reactions_total": 7,
-  "attachments": 7,
+  "messages": 167,
+  "unique_authors": 8,
+  "reactions_total": 22,
+  "attachments": 20,
   "channel_activity": {
+    "english-english": 6,
+    "general-discussion": 107,
+    "project-coordination": 17,
     "relevant-forwards": 2,
     "Help Identify these Stories!": 33,
     "WoD Banner Details Text": 1,
     "TH Contribution": 1
   },
   "hourly_activity": {
-    "23": 2,
+    "11": 6,
+    "17": 1,
+    "23": 5,
+    "15": 2,
+    "19": 1,
+    "20": 13,
+    "21": 28,
+    "22": 17,
+    "0": 28,
+    "1": 11,
+    "2": 13,
+    "3": 7,
     "5": 5,
     "6": 24,
     "9": 1,
@@ -19,10 +33,18 @@
     "18": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 21
+    "0": 95,
+    "19": 35
   },
   "top_reacted_messages": [
+    {
+      "id": "1416906480128364636",
+      "channel_id": "1402941858606219294",
+      "content": "Example :\nthe EN group has submitted their (substantial) changes, and BIAV accep",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
     {
       "id": "1416668735888162876",
       "channel_id": "1416652703659982970",
@@ -30,6 +52,110 @@
       "author": "zier.0",
       "reactions": 2,
       "channel": "Help Identify these Stories!"
+    },
+    {
+      "id": "1416740558247956480",
+      "channel_id": "1402538040253087766",
+      "content": "Girl is a freak, she knows it, you know it, and you're the only one that can sto",
+      "author": "sophiechoice",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1416803012122378322",
+      "channel_id": "1402941858606219294",
+      "content": "oh my... thanks a lot!",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416887172954591235",
+      "channel_id": "1402941858606219294",
+      "content": "kind of like markdown & html if you will, markdown is legible, and you can choos",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416890983559204998",
+      "channel_id": "1402941858606219294",
+      "content": "while I totally agree with Goz's point of view in that Git has existing tools to",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416895433346908201",
+      "channel_id": "1402941858606219294",
+      "content": "at best I'd say it should be a google drive or sheets or something with a condit",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416898518928593038",
+      "channel_id": "1402941858606219294",
+      "content": "The other thing is, I'd be down to tackle that conversion if it meant people cou",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416912319031808162",
+      "channel_id": "1402941858606219294",
+      "content": "I'll try and explain it to you tomorrow, but that's a lot of small things",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416584585508159498",
+      "channel_id": "1402941858606219294",
+      "content": "downloaded a version in utf-8 specifically and will re-push with my updates, hop",
+      "author": "verz",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416588107477946389",
+      "channel_id": "1402941858606219294",
+      "content": "Great job catching that before it became a problem! (Hopefully!)",
+      "author": "sophiechoice",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416588621628182548",
+      "channel_id": "1402941858606219294",
+      "content": "I actually checked. My previous CSV wasn't showing properly on GitHub.",
+      "author": "sophiechoice",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416589209371934730",
+      "channel_id": "1402941858606219294",
+      "content": "authentic dissolution experience",
+      "author": "verz",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1416617796347101376",
+      "channel_id": "1416615133479960647",
+      "content": "for gameplay, I don't know waht you do, but the last excel you sent which have W",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1416622311020171384",
+      "channel_id": "1416615133479960647",
+      "content": "# My initial thoughts for this:\nI'd like to have a public repo any of us can pus",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
     },
     {
       "id": "1416935436839948308",

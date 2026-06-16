@@ -1,10 +1,12 @@
 {
   "date": "2025-09-09",
-  "messages": 33,
+  "messages": 123,
   "unique_authors": 12,
-  "reactions_total": 23,
-  "attachments": 3,
+  "reactions_total": 30,
+  "attachments": 6,
   "channel_activity": {
+    "english-english": 17,
+    "general-discussion": 73,
     "Aliemus ?": 2,
     "Implementation of newlines (\\n) and spaces ( )": 7,
     "A question regarding familiarity between Keeper and Awakeners": 4,
@@ -13,19 +15,25 @@
     "FR Team Contribution": 1
   },
   "hourly_activity": {
+    "3": 8,
+    "4": 5,
+    "14": 7,
+    "6": 51,
+    "7": 1,
+    "8": 1,
+    "9": 10,
+    "10": 21,
+    "5": 8,
     "16": 2,
     "2": 3,
-    "9": 7,
-    "10": 12,
     "11": 1,
-    "14": 3,
     "15": 3,
     "17": 1,
     "22": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 9
+    "19": 10,
+    "0": 80
   },
   "top_reacted_messages": [
     {
@@ -45,6 +53,22 @@
       "channel": "2025 September Contribution Log: V2.3.2 Update"
     },
     {
+      "id": "1414912825553584198",
+      "channel_id": "1402941858606219294",
+      "content": "Hello guys, please take a few minutes to confirm if we've logged your name and c",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1414917914217152534",
+      "channel_id": "1402941858606219294",
+      "content": "I just updated the FR Team Contribution in the <#1408291767207591976>, it's a bi",
+      "author": "legendaryredz",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
       "id": "1414917095086489621",
       "channel_id": "1408432819885310064",
       "content": "**Update** : Wheels of Destiny names, Major Characters names and codenames \n\n**C",
@@ -59,6 +83,14 @@
       "author": "nero_aliapoh",
       "reactions": 2,
       "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414913351942934590",
+      "channel_id": "1402941858606219294",
+      "content": "*you can list my name as \"Goz\", it's just that it wasn't available on github.*",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
     },
     {
       "id": "1414792563646398516",

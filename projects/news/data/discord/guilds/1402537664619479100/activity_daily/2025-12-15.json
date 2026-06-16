@@ -1,19 +1,21 @@
 {
   "date": "2025-12-15",
-  "messages": 7,
+  "messages": 15,
   "unique_authors": 5,
-  "reactions_total": 6,
+  "reactions_total": 7,
   "attachments": 0,
   "channel_activity": {
-    "project-coordination": 7
+    "project-coordination": 15
   },
   "hourly_activity": {
-    "4": 2,
+    "3": 6,
+    "4": 4,
     "5": 4,
     "18": 1
   },
   "message_types": {
-    "0": 7
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -22,6 +24,14 @@
       "content": "RU\n\"Не уходи беспечно в сладкий сон: безмолвием окованные души незримо выжидают ",
       "author": "theriddleofcards",
       "reactions": 2,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1449970468940677232",
+      "channel_id": "1416615133479960647",
+      "content": "VN:\nĐừng dễ dàng đắm chìm vào giấc mơ đẹp đẽ ấy , Ẩn sau trong màn ảo ảnh đó là ",
+      "author": "aegisx",
+      "reactions": 1,
       "channel": "project-coordination"
     },
     {

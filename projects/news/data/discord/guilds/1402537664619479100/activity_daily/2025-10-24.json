@@ -1,23 +1,36 @@
 {
   "date": "2025-10-24",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 3,
-  "attachments": 1,
+  "messages": 14,
+  "unique_authors": 5,
+  "reactions_total": 10,
+  "attachments": 2,
   "channel_activity": {
+    "general-discussion": 9,
     "announcements": 3,
     "Exalt voicelines?": 1,
     "TH Contribution": 1
   },
   "hourly_activity": {
-    "7": 2,
+    "7": 5,
+    "9": 4,
+    "11": 1,
+    "15": 1,
     "8": 2,
     "10": 1
   },
   "message_types": {
-    "0": 5
+    "0": 6,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1431216587322429440",
+      "channel_id": "1402941858606219294",
+      "content": "Hi guys, we updated the spelling of the NPC character 卡纳克's name from Karnahk to",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
     {
       "id": "1431190495132123177",
       "channel_id": "1407641395891535883",
@@ -25,6 +38,46 @@
       "author": "morimens_15",
       "reactions": 2,
       "channel": "announcements"
+    },
+    {
+      "id": "1431178835638096005",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1431179806934040605",
+      "channel_id": "1402941858606219294",
+      "content": "*Names in red are new names to be added to the list next update",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1431216208757264494",
+      "channel_id": "1402941858606219294",
+      "content": "I see!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1431243388803354697",
+      "channel_id": "1402941858606219294",
+      "content": "<@1376763322568937562> sent u a dm about this 🐝",
+      "author": "beenax.",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1431309764046094597",
+      "channel_id": "1402941858606219294",
+      "content": "Also DM'ed my UID!",
+      "author": "verz",
+      "reactions": 1,
+      "channel": "general-discussion"
     },
     {
       "id": "1431200809823109150",

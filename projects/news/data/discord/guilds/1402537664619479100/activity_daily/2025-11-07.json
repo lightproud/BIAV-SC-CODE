@@ -1,22 +1,26 @@
 {
   "date": "2025-11-07",
-  "messages": 11,
-  "unique_authors": 2,
+  "messages": 29,
+  "unique_authors": 6,
   "reactions_total": 3,
-  "attachments": 2,
+  "attachments": 4,
   "channel_activity": {
+    "english-english": 18,
     "relevant-forwards": 1,
     "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?": 10
   },
   "hourly_activity": {
+    "4": 6,
+    "6": 7,
+    "7": 8,
+    "8": 1,
     "3": 3,
-    "4": 4,
     "10": 3,
     "11": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 13,
+    "19": 5
   },
   "top_reacted_messages": [
     {

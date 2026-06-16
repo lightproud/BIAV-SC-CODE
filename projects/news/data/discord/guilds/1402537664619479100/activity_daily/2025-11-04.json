@@ -1,0 +1,32 @@
+{
+  "date": "2025-11-04",
+  "messages": 19,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "english-english": 2,
+    "general-discussion": 17
+  },
+  "hourly_activity": {
+    "20": 2,
+    "4": 2,
+    "5": 1,
+    "7": 3,
+    "8": 11
+  },
+  "message_types": {
+    "0": 13,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1435185112915644446",
+      "channel_id": "1402941858606219294",
+      "content": "I deleted the fork!",
+      "author": "wisteriavine11",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

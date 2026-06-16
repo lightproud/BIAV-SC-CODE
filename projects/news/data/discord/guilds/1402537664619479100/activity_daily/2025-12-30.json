@@ -1,20 +1,39 @@
 {
   "date": "2025-12-30",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 7,
+  "attachments": 1,
   "channel_activity": {
+    "general-discussion": 4,
     "english-english": 3
   },
   "hourly_activity": {
-    "10": 3
+    "10": 5,
+    "11": 1,
+    "13": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 2
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1455505008266317966",
+      "channel_id": "1402941858606219294",
+      "content": "Hi all,@everyone \n\nThe contributions in these most recent 5 updates will be impl",
+      "author": "morimens_15",
+      "reactions": 5,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1455505926311379040",
+      "channel_id": "1402941858606219294",
+      "content": "Ace, do take care of yourself.\nyour health is also important, u.u",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
     {
       "id": "1455507611444187136",
       "channel_id": "1402538040253087766",

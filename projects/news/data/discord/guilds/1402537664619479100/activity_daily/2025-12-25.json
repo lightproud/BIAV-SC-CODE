@@ -1,21 +1,23 @@
 {
   "date": "2025-12-25",
-  "messages": 8,
+  "messages": 15,
   "unique_authors": 5,
   "reactions_total": 2,
   "attachments": 0,
   "channel_activity": {
+    "general-discussion": 7,
     "project-coordination": 8
   },
   "hourly_activity": {
+    "18": 2,
+    "20": 5,
     "2": 5,
     "9": 1,
     "13": 1,
     "16": 1
   },
   "message_types": {
-    "19": 4,
-    "0": 4
+    "0": 7
   },
   "top_reacted_messages": [
     {

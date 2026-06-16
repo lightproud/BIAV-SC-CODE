@@ -1,23 +1,122 @@
 {
   "date": "2025-08-24",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 254,
+  "unique_authors": 8,
+  "reactions_total": 14,
+  "attachments": 6,
   "channel_activity": {
+    "english-english": 245,
     "Source Sheet and Term update process/timeline": 2,
     "About UI&Misc sheet": 6,
     "On adding Flavor where the Text is otherwise Bland": 1
   },
   "hourly_activity": {
-    "17": 2,
-    "5": 6,
-    "18": 1
+    "18": 14,
+    "20": 3,
+    "21": 1,
+    "5": 101,
+    "6": 13,
+    "8": 1,
+    "12": 1,
+    "15": 3,
+    "4": 82,
+    "0": 33,
+    "17": 2
   },
   "message_types": {
-    "0": 9
+    "0": 215,
+    "6": 1,
+    "19": 29
   },
   "top_reacted_messages": [
+    {
+      "id": "1409192140042403931",
+      "channel_id": "1402538040253087766",
+      "content": "Is the Kathigu-ra story in the updated sheets? Because after reading a couple of",
+      "author": "sophiechoice",
+      "reactions": 2,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409247663081390231",
+      "channel_id": "1402538040253087766",
+      "content": "alright I put together <#1409244176851144854> but I gotta get back to work now, ",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409282209747304458",
+      "channel_id": "1402538040253087766",
+      "content": "ahh. it's interesting you say that about the english usage, because as a semanti",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409146117236592743",
+      "channel_id": "1402538040253087766",
+      "content": "Just catching up and trying to parse this conversation woke me up faster than my",
+      "author": "sophiechoice",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409025069853835325",
+      "channel_id": "1402538040253087766",
+      "content": "I like Entourage for flavor",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409027130393890816",
+      "channel_id": "1402538040253087766",
+      "content": "joining in.. \nI would give 1 vote for entourage. the reason?, first, it gives of",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409027271569965066",
+      "channel_id": "1402538040253087766",
+      "content": "they renamed DPS/Tank/Support",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409028973798621204",
+      "channel_id": "1402538040253087766",
+      "content": "that said I really do wish we had a direct link to either a dev or a narrative d",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409033044731629680",
+      "channel_id": "1402538040253087766",
+      "content": "just add it to the \"ask devs\" list",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409034916020359239",
+      "channel_id": "1402538040253087766",
+      "content": "obligatory",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1409038845181431838",
+      "channel_id": "1402538040253087766",
+      "content": "Primarily:\n1. First, deciding on the necessity of the change - could things be l",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
     {
       "id": "1409233486920941578",
       "channel_id": "1409232320657100954",

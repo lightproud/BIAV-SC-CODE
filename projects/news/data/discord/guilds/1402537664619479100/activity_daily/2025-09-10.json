@@ -1,10 +1,12 @@
 {
   "date": "2025-09-10",
-  "messages": 64,
+  "messages": 95,
   "unique_authors": 7,
   "reactions_total": 13,
-  "attachments": 3,
+  "attachments": 4,
   "channel_activity": {
+    "english-english": 15,
+    "general-discussion": 16,
     "Implementation of newlines (\\n) and spaces ( )": 4,
     "About Term Base": 2,
     "2025 September Contribution Log: V2.3.2 Update": 6,
@@ -12,21 +14,25 @@
     "KR Team Contribution": 1
   },
   "hourly_activity": {
+    "11": 3,
+    "12": 9,
+    "13": 2,
+    "18": 1,
+    "4": 19,
+    "9": 4,
     "0": 4,
     "1": 2,
     "5": 1,
     "8": 7,
     "17": 1,
-    "4": 6,
     "7": 1,
-    "9": 1,
     "19": 18,
     "20": 18,
     "21": 5
   },
   "message_types": {
-    "19": 20,
-    "0": 44
+    "0": 30,
+    "19": 1
   },
   "top_reacted_messages": [
     {

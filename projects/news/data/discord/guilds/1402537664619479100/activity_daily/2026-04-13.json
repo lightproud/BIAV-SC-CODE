@@ -1,17 +1,80 @@
 {
   "date": "2026-04-13",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 93,
+  "unique_authors": 4,
+  "reactions_total": 8,
+  "attachments": 5,
   "channel_activity": {
+    "general-discussion": 92,
     "project-coordination": 1
   },
   "hourly_activity": {
-    "6": 1
+    "6": 24,
+    "2": 9,
+    "3": 4,
+    "4": 27,
+    "5": 29
   },
   "message_types": {
-    "19": 1
+    "19": 16,
+    "0": 76
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1493122249916682261",
+      "channel_id": "1402941858606219294",
+      "content": "it puts more of the emphasis on the 5 being counted down when it's Countdown: X",
+      "author": ".dredge.",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493083422363750461",
+      "channel_id": "1402941858606219294",
+      "content": "I think we used Countdown Moment in the infographic",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493122120694239304",
+      "channel_id": "1402941858606219294",
+      "content": "About keeping 'Strike' out of skill names (unless the Skill is already 'counted ",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493126873801162782",
+      "channel_id": "1402941858606219294",
+      "content": "...and it's actually still bugged",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493126954289860658",
+      "channel_id": "1402941858606219294",
+      "content": "once it's fixed, it's scheduled to go live on arachne patch",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493127196816965722",
+      "channel_id": "1402941858606219294",
+      "content": "rn the 'determine the value of [number] then display single or plural accordingl",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493130921333756024",
+      "channel_id": "1402941858606219294",
+      "content": "I like it assuming it translates well to game",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
 }

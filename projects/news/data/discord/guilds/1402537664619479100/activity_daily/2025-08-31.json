@@ -1,22 +1,44 @@
 {
   "date": "2025-08-31",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 42,
+  "unique_authors": 5,
+  "reactions_total": 2,
+  "attachments": 15,
   "channel_activity": {
+    "general-discussion": 37,
     "DE Team Contribution": 1,
     "FR Team Contribution": 1,
     "(mostly) Organized Worksheet for Interlude Menus": 3
   },
   "hourly_activity": {
+    "5": 7,
+    "6": 25,
+    "7": 5,
+    "11": 1,
     "16": 1,
     "19": 1,
-    "6": 1,
     "21": 2
   },
   "message_types": {
-    "0": 5
+    "0": 32,
+    "19": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1411599124104613940",
+      "channel_id": "1402941858606219294",
+      "content": "I agree. The Unicode definitely doesn't look out of place in CN, JP & KR, but I ",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1411603299047837724",
+      "channel_id": "1402941858606219294",
+      "content": "Turns out mass F&R is how we got into some of these shitshows in the first place",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-08-20",
-  "messages": 30,
+  "messages": 788,
   "unique_authors": 13,
-  "reactions_total": 43,
-  "attachments": 3,
+  "reactions_total": 102,
+  "attachments": 41,
   "channel_activity": {
+    "english-english": 694,
+    "general-discussion": 64,
     "links-and-resources": 1,
     "self-introductions": 12,
     "announcements": 6,
@@ -14,21 +16,30 @@
     "Use of realms as terminology": 4
   },
   "hourly_activity": {
-    "6": 4,
-    "4": 4,
-    "5": 1,
-    "8": 4,
-    "9": 7,
-    "10": 3,
-    "11": 1,
-    "12": 1,
-    "20": 1,
-    "17": 2,
-    "18": 1,
-    "19": 1
+    "20": 80,
+    "21": 2,
+    "22": 1,
+    "19": 65,
+    "15": 172,
+    "16": 46,
+    "17": 13,
+    "18": 22,
+    "14": 209,
+    "6": 29,
+    "8": 38,
+    "11": 2,
+    "13": 34,
+    "5": 53,
+    "7": 1,
+    "9": 9,
+    "10": 4,
+    "12": 4,
+    "4": 4
   },
   "message_types": {
-    "0": 30
+    "19": 125,
+    "0": 632,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -38,6 +49,14 @@
       "author": "morimens_15",
       "reactions": 7,
       "channel": "announcements"
+    },
+    {
+      "id": "1407612095217795073",
+      "channel_id": "1402538040253087766",
+      "content": "Hello! I just got my account back",
+      "author": "morimens_15",
+      "reactions": 5,
+      "channel": "english-english"
     },
     {
       "id": "1407648518637748234",
@@ -62,6 +81,54 @@
       "author": "mame_shirogane",
       "reactions": 3,
       "channel": "self-introductions"
+    },
+    {
+      "id": "1407816020290174997",
+      "channel_id": "1402538040253087766",
+      "content": "i would vote for the standardization of using \"gain\" in all instances of shield ",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "english-english"
+    },
+    {
+      "id": "1407742294031077486",
+      "channel_id": "1402538040253087766",
+      "content": "you mean right now for the translation ?\nNothing, I'm at work.\nThough i've prepa",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "english-english"
+    },
+    {
+      "id": "1407593731523346573",
+      "channel_id": "1402941858606219294",
+      "content": "Posted my self-intro, finished my Phantasmal Dive and immediately the next Awake",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1407622261011120168",
+      "channel_id": "1402941858606219294",
+      "content": "Reporting.\nMe and several Indo friends will be working on the Indonesian transla",
+      "author": "shiio4870",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1407641696413552691",
+      "channel_id": "1402941858606219294",
+      "content": "climbing the ladder very fast, I'm expected to be CEO of B.I.A.V by next month I",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1407766296199823500",
+      "channel_id": "1402941858606219294",
+      "content": "How about we just make a Thread? I'm gonna start one in <#1402538040253087766> .",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "general-discussion"
     },
     {
       "id": "1407587766673473618",
@@ -134,46 +201,6 @@
       "author": "baguettesuffering",
       "reactions": 2,
       "channel": "self-introductions"
-    },
-    {
-      "id": "1407679880346206238",
-      "channel_id": "1406970664145129473",
-      "content": "Hi, I'm Julia <:hello:1356053084790460437> \n\nI work for a German publishing hous",
-      "author": "strandiel",
-      "reactions": 2,
-      "channel": "self-introductions"
-    },
-    {
-      "id": "1407656857492783185",
-      "channel_id": "1407641395891535883",
-      "content": "",
-      "author": "morimens_15",
-      "reactions": 2,
-      "channel": "announcements"
-    },
-    {
-      "id": "1407612759574577254",
-      "channel_id": "1407612759574577254",
-      "content": "I just had a few questions that I was hoping could be cleared up:\n\n1. Given the ",
-      "author": "arkaether",
-      "reactions": 2,
-      "channel": "A few questions"
-    },
-    {
-      "id": "1407656670951379107",
-      "channel_id": "1407612759574577254",
-      "content": "**5. Marker existing translations:**\nYes, I do have a file containing the 60,000",
-      "author": "morimens_15",
-      "reactions": 1,
-      "channel": "A few questions"
-    },
-    {
-      "id": "1407786910360797286",
-      "channel_id": "1407785080025383157",
-      "content": "I would like to add the this is very weird as a reader, and something I'd instin",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "Use of realms as terminology"
     }
   ]
 }

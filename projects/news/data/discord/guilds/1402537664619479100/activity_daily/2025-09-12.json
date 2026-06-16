@@ -1,25 +1,36 @@
 {
   "date": "2025-09-12",
-  "messages": 7,
-  "unique_authors": 4,
-  "reactions_total": 2,
+  "messages": 18,
+  "unique_authors": 5,
+  "reactions_total": 3,
   "attachments": 1,
   "channel_activity": {
+    "english-english": 7,
+    "general-discussion": 4,
     "Aliemus ?": 2,
     "Basic Terms": 1,
     "About Term Base": 1,
     "2025 September Contribution Log: V2.3.2 Update": 3
   },
   "hourly_activity": {
-    "8": 5,
+    "8": 12,
+    "6": 1,
+    "7": 3,
     "9": 1,
     "3": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 1
+    "0": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1415978137610883114",
+      "channel_id": "1402538040253087766",
+      "content": "The NDA is about the game's CONTENT: that is, please don't share the source shee",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "english-english"
+    },
     {
       "id": "1415972963596894238",
       "channel_id": "1415016526179864576",

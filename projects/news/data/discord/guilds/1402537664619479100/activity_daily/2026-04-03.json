@@ -1,21 +1,49 @@
 {
   "date": "2026-04-03",
-  "messages": 8,
-  "unique_authors": 2,
-  "reactions_total": 7,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 4,
+  "reactions_total": 26,
+  "attachments": 5,
   "channel_activity": {
+    "general-discussion": 12,
     "coordination-uploads": 8
   },
   "hourly_activity": {
+    "7": 10,
+    "8": 1,
+    "23": 1,
     "4": 1,
     "5": 7
   },
   "message_types": {
-    "19": 5,
-    "0": 3
+    "0": 10,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1489521871153270804",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 14,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1489522871025008862",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, all players will be able to see it. It's made for everyone",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1489522966365732884",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
     {
       "id": "1489493574541250570",
       "channel_id": "1446619934565204231",
@@ -23,6 +51,14 @@
       "author": "anicillia",
       "reactions": 2,
       "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489523129796792330",
+      "channel_id": "1402941858606219294",
+      "content": "We got the idea from Keepers like you who wrote about this in the feedback chann",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
     },
     {
       "id": "1489491566895829072",

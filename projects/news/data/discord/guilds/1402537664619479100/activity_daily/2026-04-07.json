@@ -1,18 +1,22 @@
 {
   "date": "2026-04-07",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 13,
+  "messages": 14,
+  "unique_authors": 4,
+  "reactions_total": 17,
   "attachments": 0,
   "channel_activity": {
+    "general-discussion": 12,
     "announcements": 1,
     "project-coordination": 1
   },
   "hourly_activity": {
+    "7": 11,
+    "11": 1,
     "8": 2
   },
   "message_types": {
-    "0": 2
+    "0": 9,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -22,6 +26,22 @@
       "author": "morimens_15",
       "reactions": 13,
       "channel": "announcements"
+    },
+    {
+      "id": "1490984117230243880",
+      "channel_id": "1402941858606219294",
+      "content": "so we settled on Vortice - it still means whirlpool and is phonetically similar",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1490984441244422155",
+      "channel_id": "1402941858606219294",
+      "content": "Ohhh wow that’s a problem, I see",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+  "date": "2026-04-22",
+  "messages": 5,
+  "unique_authors": 1,
+  "reactions_total": 15,
+  "attachments": 0,
+  "channel_activity": {
+    "general-discussion": 5
+  },
+  "hourly_activity": {
+    "4": 5
+  },
+  "message_types": {
+    "19": 1,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1496362926448050328",
+      "channel_id": "1402941858606219294",
+      "content": "I'll upload the latest sourcesheet later today for everyone to work on!\nThis tim",
+      "author": "morimens_15",
+      "reactions": 9,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1496364888648581263",
+      "channel_id": "1402941858606219294",
+      "content": "lots of little bugs here and there. the issues posted in EN feedback channels ar",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1496367352860901386",
+      "channel_id": "1402941858606219294",
+      "content": "*(and i got to write leigh & caecus's AA comm messages...! i hope u found them c",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -1,19 +1,30 @@
 {
   "date": "2026-01-01",
-  "messages": 1,
+  "messages": 3,
   "unique_authors": 1,
-  "reactions_total": 1,
+  "reactions_total": 2,
   "attachments": 0,
   "channel_activity": {
+    "general-discussion": 2,
     "english-english": 1
   },
   "hourly_activity": {
+    "7": 2,
     "6": 1
   },
   "message_types": {
-    "19": 1
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1456182960985215187",
+      "channel_id": "1402941858606219294",
+      "content": "lol rip, my game crashes every time I use it",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
     {
       "id": "1456174810202640505",
       "channel_id": "1402538040253087766",

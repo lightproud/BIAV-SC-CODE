@@ -1,19 +1,29 @@
 {
   "date": "2025-08-19",
-  "messages": 8,
+  "messages": 11,
   "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 1,
+  "reactions_total": 3,
+  "attachments": 2,
   "channel_activity": {
+    "general-discussion": 3,
     "Some guidelines are not accessible": 5,
     "General server feedback": 3
   },
   "hourly_activity": {
+    "12": 3,
     "8": 8
   },
   "message_types": {
-    "19": 3,
-    "0": 5
+    "0": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1407346777287561227",
+      "channel_id": "1402941858606219294",
+      "content": "@everyone",
+      "author": "ace_asteria_lan",
+      "reactions": 3,
+      "channel": "general-discussion"
+    }
+  ]
 }

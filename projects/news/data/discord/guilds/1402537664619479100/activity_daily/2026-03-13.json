@@ -1,10 +1,11 @@
 {
   "date": "2026-03-13",
-  "messages": 21,
+  "messages": 69,
   "unique_authors": 10,
-  "reactions_total": 21,
-  "attachments": 3,
+  "reactions_total": 31,
+  "attachments": 9,
   "channel_activity": {
+    "general-discussion": 48,
     "self-introductions": 3,
     "announcements": 4,
     "project-coordination": 4,
@@ -14,20 +15,20 @@
     "1481967323492515932": 3
   },
   "hourly_activity": {
-    "6": 2,
+    "6": 25,
+    "7": 14,
+    "18": 15,
+    "21": 1,
     "8": 1,
     "11": 1,
     "4": 3,
     "10": 4,
-    "7": 4,
-    "18": 1,
     "19": 1,
     "2": 4
   },
   "message_types": {
-    "0": 13,
-    "18": 1,
-    "19": 7
+    "0": 34,
+    "19": 14
   },
   "top_reacted_messages": [
     {
@@ -55,12 +56,76 @@
       "channel": "announcements"
     },
     {
+      "id": "1482078228846739567",
+      "channel_id": "1402941858606219294",
+      "content": "Oof. For now here's some screenshots of the relevant parts",
+      "author": "omnichromia",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
       "id": "1481908998939738255",
       "channel_id": "1406970664145129473",
       "content": "hihi! I'm valentine! \nEnglish is my native language, but I can also read/speak a",
       "author": "bluepomander",
       "reactions": 3,
       "channel": "self-introductions"
+    },
+    {
+      "id": "1481902589544104017",
+      "channel_id": "1402941858606219294",
+      "content": "ohhh that's really help! Thank you",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1481910681442975875",
+      "channel_id": "1402941858606219294",
+      "content": "if you do that you can check fields ingame and look up the field to see which li",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1481911232591167518",
+      "channel_id": "1402941858606219294",
+      "content": "But as Lens said there is a way to determine the inverse, but it wouldn't help a",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1481918449633464330",
+      "channel_id": "1402941858606219294",
+      "content": "Probably better not to mess with it, I assume it's there to fix some bug or othe",
+      "author": "insigible",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1482077366581854309",
+      "channel_id": "1402941858606219294",
+      "content": "菲林 is an old way to say “film”, and then “詩社” means a club which is for discussi",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1482078504454721556",
+      "channel_id": "1402941858606219294",
+      "content": "so peak...",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1482079859114246216",
+      "channel_id": "1402941858606219294",
+      "content": "I'll make the appropriate changes when I have the chance! Thank you so much <:ce",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
     },
     {
       "id": "1481911685286465656",

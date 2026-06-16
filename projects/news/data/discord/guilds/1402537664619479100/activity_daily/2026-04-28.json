@@ -1,17 +1,33 @@
 {
   "date": "2026-04-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 37,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 8,
   "channel_activity": {
+    "general-discussion": 36,
     "How to address the player (formal vs informal)": 1
   },
   "hourly_activity": {
+    "15": 17,
+    "16": 6,
+    "2": 1,
+    "4": 1,
+    "9": 11,
     "14": 1
   },
   "message_types": {
-    "0": 1
+    "0": 29,
+    "19": 7
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1498504850848223242",
+      "channel_id": "1402941858606219294",
+      "content": "Hi, yes, we submit it via pull requests;\nYou only have to submit the KEY, CHINES",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
 }

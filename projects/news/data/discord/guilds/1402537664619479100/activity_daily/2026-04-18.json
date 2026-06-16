@@ -1,17 +1,17 @@
 {
   "date": "2026-04-18",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 1,
   "reactions_total": 0,
   "attachments": 0,
   "channel_activity": {
+    "general-discussion": 1,
     "Skill Description": 2
   },
   "hourly_activity": {
-    "8": 2
+    "8": 3
   },
   "message_types": {
-    "19": 1,
     "0": 1
   },
   "top_reacted_messages": []

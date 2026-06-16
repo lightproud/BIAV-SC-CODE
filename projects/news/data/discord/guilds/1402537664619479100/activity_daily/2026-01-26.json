@@ -1,27 +1,37 @@
 {
   "date": "2026-01-26",
-  "messages": 18,
+  "messages": 26,
   "unique_authors": 4,
-  "reactions_total": 2,
-  "attachments": 11,
+  "reactions_total": 3,
+  "attachments": 15,
   "channel_activity": {
+    "general-discussion": 8,
     "project-coordination": 1,
     "Autofill Template: Covenants!": 15,
     "2025 December & 2026 January Contribution Log: V2.4.X Updates": 2
   },
   "hourly_activity": {
+    "2": 3,
+    "6": 5,
+    "7": 4,
     "3": 1,
     "5": 11,
-    "6": 2,
-    "7": 2,
     "13": 1,
     "8": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 12
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1465227178298966169",
+      "channel_id": "1402941858606219294",
+      "content": "<@1376763322568937562> <@1384428399061106739> Suggestion:\nPlease reword Resonanc",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
     {
       "id": "1465183908294430963",
       "channel_id": "1416615133479960647",

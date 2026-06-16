@@ -1,17 +1,22 @@
 {
   "date": "2026-01-02",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 39,
+  "unique_authors": 2,
   "reactions_total": 0,
-  "attachments": 1,
+  "attachments": 2,
   "channel_activity": {
+    "general-discussion": 38,
     "Event Dialog Options Without Descriptions": 1
   },
   "hourly_activity": {
+    "2": 6,
+    "4": 1,
+    "1": 31,
     "0": 1
   },
   "message_types": {
-    "0": 1
+    "0": 36,
+    "19": 2
   },
   "top_reacted_messages": []
 }
