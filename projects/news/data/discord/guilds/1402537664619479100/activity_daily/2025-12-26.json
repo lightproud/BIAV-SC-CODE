@@ -1,0 +1,45 @@
+{
+  "date": "2025-12-26",
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 28,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 3,
+    "coordination-uploads": 3
+  },
+  "hourly_activity": {
+    "2": 3,
+    "18": 2,
+    "20": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1453939651466231919",
+      "channel_id": "1402941858606219294",
+      "content": "Hi Keepers! Merry Christmas!!\nWe prepared some gift in the form of Silver & Silv",
+      "author": "morimens_15",
+      "reactions": 24,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1453940401508454410",
+      "channel_id": "1402941858606219294",
+      "content": "<:aurita_beg2:1407642015428116541> <:aurita_beg2:1407642015428116541> <:aurita_b",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1454179158044184844",
+      "channel_id": "1446619934565204231",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    }
+  ]
+}

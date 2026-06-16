@@ -2,7 +2,7 @@
   "date": "2026-04-18",
   "archived_at": "2026-04-26T07:25:33.114211+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "title": "[负面] Logging into user center...",
@@ -150,6 +150,21 @@
       "engagement": 3,
       "is_hot": false,
       "author": "76561198025057726",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] Its a shame what they are doing to this game, the ...",
+      "summary": "Its a shame what they are doing to this game, the new \"Ethereal Cores\" are basically ruining a perfectly normal system.\nListen, the game is fun, and I want the devs to succeed and get that bag as well, but this is not it.\nit does seem they are taking feedback seriously though, so i hope that they can change this in the future.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-17T20:05:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199476495158/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199476495158",
       "tags": [],
       "content_type": "text",
       "media_url": ""

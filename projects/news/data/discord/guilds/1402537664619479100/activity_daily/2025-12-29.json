@@ -1,0 +1,71 @@
+{
+  "date": "2025-12-29",
+  "messages": 48,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 17,
+  "channel_activity": {
+    "general-discussion": 39,
+    "coordination-uploads": 6,
+    "\"Reproduction Frenzy\"?": 3
+  },
+  "hourly_activity": {
+    "6": 6,
+    "7": 7,
+    "8": 10,
+    "9": 6,
+    "18": 7,
+    "19": 1,
+    "23": 5,
+    "1": 1,
+    "5": 1,
+    "14": 1,
+    "4": 3
+  },
+  "message_types": {
+    "0": 37,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1455127321211310232",
+      "channel_id": "1402941858606219294",
+      "content": "idk what to tell you, you wanted a canon timeline order for the playable stories",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1455014413147963509",
+      "channel_id": "1446619934565204231",
+      "content": "TH Translation All Interlude 🧎 \nre-up.. because I forgot to remove other languag",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455080875506270341",
+      "channel_id": "1446619934565204231",
+      "content": "Okay! I credited you both for Assignments and just you for the rest. All good!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455207247603830956",
+      "channel_id": "1446619934565204231",
+      "content": "|ES|Miguel Angel|Translation |ES|Teje|Translation",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455048931024044155",
+      "channel_id": "1454683620978462863",
+      "content": "Definitely take everyone else's comments into account as well, I'm just 1 person",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "\"Reproduction Frenzy\"?"
+    }
+  ]
+}

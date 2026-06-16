@@ -1,0 +1,71 @@
+{
+  "date": "2025-09-30",
+  "messages": 156,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "english-english": 156
+  },
+  "hourly_activity": {
+    "6": 36,
+    "7": 12,
+    "13": 13,
+    "1": 1,
+    "5": 94
+  },
+  "message_types": {
+    "0": 140,
+    "19": 16
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422464332821827686",
+      "channel_id": "1402538040253087766",
+      "content": "<:karen_nervous:1408324291237511259>",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1422480077039341568",
+      "channel_id": "1402538040253087766",
+      "content": "btw there might be a few minor changes to the Indonesian section, I'm discussing",
+      "author": "lykantos.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1422572803592290414",
+      "channel_id": "1402538040253087766",
+      "content": "Alrighty thanks! Wanted to make sure c:",
+      "author": "jun_usami",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1422459264219222169",
+      "channel_id": "1402538040253087766",
+      "content": "nah hold on I got this\n`It watches them survive, multiply, fight—and in time, fo",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1422459610895482973",
+      "channel_id": "1402538040253087766",
+      "content": "anyway i'd just like to point out that i'm 171 lines into miryam's story after l",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1422460192238342225",
+      "channel_id": "1402538040253087766",
+      "content": "the imagery is that night is being drawn over the daylight like a curtain is ove",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    }
+  ]
+}

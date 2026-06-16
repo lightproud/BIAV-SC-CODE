@@ -1,0 +1,70 @@
+{
+  "date": "2025-12-15",
+  "messages": 15,
+  "unique_authors": 5,
+  "reactions_total": 7,
+  "attachments": 0,
+  "channel_activity": {
+    "project-coordination": 15
+  },
+  "hourly_activity": {
+    "3": 6,
+    "4": 4,
+    "5": 4,
+    "18": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1450189743735443456",
+      "channel_id": "1416615133479960647",
+      "content": "RU\n\"Не уходи беспечно в сладкий сон: безмолвием окованные души незримо выжидают ",
+      "author": "theriddleofcards",
+      "reactions": 2,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1449970468940677232",
+      "channel_id": "1416615133479960647",
+      "content": "VN:\nĐừng dễ dàng đắm chìm vào giấc mơ đẹp đẽ ấy , Ẩn sau trong màn ảo ảnh đó là ",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1449979361984909400",
+      "channel_id": "1416615133479960647",
+      "content": "it works quite well",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1449995456921731176",
+      "channel_id": "1416615133479960647",
+      "content": "KR:\n「순순히 깊은 꿈을 받아들이지 말라. 환몽의 밑바닥에는 차마 직시할 수 없는 영혼들이 말 없이 기다리고 있으니.」",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1449998659730149539",
+      "channel_id": "1416615133479960647",
+      "content": "TH\n\"อย่ายินยอมพร้อมรับกับภาพฝันอันอ่อนโยน เพราะก้นบึ้งของห้วงฝันลวงตานั้น ดวงวิญ",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1450003922314858637",
+      "channel_id": "1416615133479960647",
+      "content": "JP\n「あの穏やかな夢に、おとなしく身を委ねてはならない。幻夢の底には、目を向けることすら許されぬ魂が、沈黙のうちに待ち受けている。」",
+      "author": "alz_asn",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}

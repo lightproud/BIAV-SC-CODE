@@ -1,10 +1,11 @@
 {
   "date": "2026-06-11",
-  "messages": 15919,
+  "messages": 21903,
   "unique_authors": 517,
-  "reactions_total": 1307,
-  "attachments": 1151,
+  "reactions_total": 1900,
+  "attachments": 1399,
   "channel_activity": {
+    "🔸game-question": 5984,
     "🔸general-chat": 2213,
     "🔸綜合討論": 3070,
     "🔸阵容构建": 373,
@@ -91,35 +92,36 @@
     "1514674769931272222": 1
   },
   "hourly_activity": {
-    "9": 679,
-    "10": 850,
-    "11": 825,
-    "12": 1173,
-    "13": 885,
-    "14": 970,
-    "15": 948,
-    "16": 1168,
-    "17": 935,
-    "18": 541,
-    "19": 375,
-    "20": 233,
-    "21": 128,
-    "22": 137,
-    "23": 164,
-    "0": 297,
-    "1": 673,
-    "2": 864,
-    "3": 853,
-    "4": 714,
-    "5": 611,
-    "6": 686,
-    "7": 563,
-    "8": 647
+    "15": 1255,
+    "16": 1659,
+    "17": 1227,
+    "18": 705,
+    "19": 688,
+    "20": 555,
+    "21": 288,
+    "22": 172,
+    "23": 237,
+    "0": 506,
+    "1": 1023,
+    "2": 1247,
+    "3": 1261,
+    "4": 1149,
+    "5": 915,
+    "6": 885,
+    "7": 693,
+    "8": 769,
+    "9": 814,
+    "10": 1035,
+    "11": 1085,
+    "12": 1368,
+    "13": 1175,
+    "14": 1192
   },
   "message_types": {
-    "0": 1023,
-    "19": 359,
-    "20": 1
+    "0": 1448,
+    "19": 669,
+    "20": 11,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -137,6 +139,14 @@
       "author": "nnf02",
       "reactions": 10,
       "channel": "🔸交友频道"
+    },
+    {
+      "id": "1514631844782674001",
+      "channel_id": "1433513650299076780",
+      "content": "WHO THE FUCKED WHALED ME",
+      "author": "laplace.in.my.head",
+      "reactions": 8,
+      "channel": "🔸game-question"
     },
     {
       "id": "1514541458231918632",
@@ -161,6 +171,14 @@
       "author": "noeyebunny.nobunsu",
       "reactions": 8,
       "channel": "N"
+    },
+    {
+      "id": "1514631683570401484",
+      "channel_id": "1433513650299076780",
+      "content": "the house",
+      "author": "laplace.in.my.head",
+      "reactions": 7,
+      "channel": "🔸game-question"
     },
     {
       "id": "1514499636231016621",
@@ -243,44 +261,28 @@
       "channel": "你好我是雲玩家"
     },
     {
+      "id": "1514729494668247090",
+      "channel_id": "1433513650299076780",
+      "content": "And please refrain from giving advice, unless you're confident in your knowledge",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1514460639567806655",
+      "channel_id": "1433513650299076780",
+      "content": "Ok I made up my mind and used all the horizons I had. My first OE Limited. From ",
+      "author": "spruzzetto",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1514730892462002176",
       "channel_id": "1505167541818101862",
       "content": "714该做的事\n温馨小建议~情侣之间可以做的几件事\n别再只去酒店啦\n-前往丸亀製麵 基隆東岸廣場－基隆店（基隆市仁愛區仁二路236號3F）\n\n-前往丸亀製麵 新",
       "author": "nemu_s_t_a_r",
       "reactions": 5,
       "channel": "V2.5.1.0 停服维护公告"
-    },
-    {
-      "id": "1514495373371117579",
-      "channel_id": "1131839817982947429",
-      "content": "。",
-      "author": "yusi4172",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1514501930343465040",
-      "channel_id": "1131839817982947429",
-      "content": "剩我只能被大佬草死了",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1514511319120871464",
-      "channel_id": "1131839817982947429",
-      "content": "日服会上杯子吗",
-      "author": "ponponnyaru",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1514554885025300500",
-      "channel_id": "1131839817982947429",
-      "content": "你還要帶個暴雨才有燈",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

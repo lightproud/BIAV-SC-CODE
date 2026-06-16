@@ -1,0 +1,47 @@
+{
+  "date": "2025-11-24",
+  "messages": 39,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 6,
+  "channel_activity": {
+    "general-discussion": 39
+  },
+  "hourly_activity": {
+    "2": 17,
+    "5": 17,
+    "14": 3,
+    "17": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 35,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442339078824529962",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442385232475979839",
+      "channel_id": "1402941858606219294",
+      "content": "I dislike \"enjoys\" TBH",
+      "author": ".dredge.",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442347084681580655",
+      "channel_id": "1402941858606219294",
+      "content": "WOO WE FINALLY FIXED REALM MECHANICS",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-04-04",
+  "messages": 36,
+  "unique_authors": 8,
+  "reactions_total": 14,
+  "attachments": 4,
+  "channel_activity": {
+    "general-discussion": 35,
+    "project-coordination": 1
+  },
+  "hourly_activity": {
+    "5": 3,
+    "6": 5,
+    "7": 11,
+    "8": 1,
+    "9": 3,
+    "10": 11,
+    "16": 1,
+    "21": 1
+  },
+  "message_types": {
+    "19": 10,
+    "0": 25
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1489891603933036617",
+      "channel_id": "1402941858606219294",
+      "content": "Also it's my birthday, as of 40 minutes ago",
+      "author": "omnichromia",
+      "reactions": 8,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1489869782596456549",
+      "channel_id": "1402941858606219294",
+      "content": "update:\nI found 62 blank keys in my repo. It's gonna take me all night but I'll ",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1489876620478255145",
+      "channel_id": "1402941858606219294",
+      "content": "Even better, looks like all but 24 of them were deprecated keys, so I removed th",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1489906393241878600",
+      "channel_id": "1402941858606219294",
+      "content": "aww happy birthday! thx for your hard work and don't forget to take care of your",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1490029889548456000",
+      "channel_id": "1402941858606219294",
+      "content": "happy birthday!!! 🎉🎉🎉",
+      "author": "bluepomander",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

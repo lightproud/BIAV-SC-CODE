@@ -1,0 +1,53 @@
+{
+  "date": "2025-09-10",
+  "archived_at": "2026-04-26T03:27:49.292769+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] 是二游，想要角色的话就氪金，以上。估计就能劝退一小部分人了。",
+      "summary": "是二游，想要角色的话就氪金，以上。估计就能劝退一小部分人了。",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-09-10T08:56:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198806774669/recommended/3052450",
+      "engagement": 24,
+      "is_hot": true,
+      "author": "76561198806774669",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Buen juego lastima la traducción con ia, es la gra...",
+      "summary": "Buen juego lastima la traducción con ia, es la gran unica pega que le veo para los hispanohablantes",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "spanish",
+      "time": "2025-09-10T11:50:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198005370584/recommended/3052450",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "76561198005370584",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Игра интересная, но не знаю почему, но у меня она ...",
+      "summary": "Игра интересная, но не знаю почему, но у меня она работает онли с впном...",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-09-10T14:52:03+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198869607589/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561198869607589",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

@@ -94,7 +94,7 @@ BILIBILI_MORIMENS_CREATORS = {
 }
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo'}
+VALID_SOURCES = {'reddit', 'bilibili', 'taptap', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}

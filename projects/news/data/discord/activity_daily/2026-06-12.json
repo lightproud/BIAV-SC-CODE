@@ -1,10 +1,12 @@
 {
   "date": "2026-06-12",
-  "messages": 18665,
+  "messages": 24461,
   "unique_authors": 554,
-  "reactions_total": 2029,
-  "attachments": 1018,
+  "reactions_total": 2444,
+  "attachments": 1196,
   "channel_activity": {
+    "🔸game-question": 2871,
+    "🔸general-chat": 6542,
     "🔸綜合討論": 4184,
     "🔸阵容构建": 619,
     "🔸课间休息闲聊": 4,
@@ -20,7 +22,6 @@
     "🔸lore-chat": 301,
     "🔸lets-count": 27,
     "🔸team-building": 2000,
-    "🔸general-chat": 3617,
     "🔸邀请码互助┊swap-invitation-codes": 36,
     "🔸机器人命令┊bot-commands": 125,
     "V2.5.1.0 停服维护公告": 21,
@@ -85,35 +86,35 @@
     "GMurphy Main DPS Lemurian team": 5
   },
   "hourly_activity": {
-    "20": 133,
-    "21": 161,
-    "22": 202,
-    "23": 256,
-    "0": 85,
-    "1": 457,
-    "2": 803,
-    "3": 579,
-    "4": 674,
-    "5": 840,
-    "6": 780,
-    "7": 1099,
-    "8": 921,
-    "9": 547,
-    "10": 1155,
-    "11": 453,
-    "12": 1869,
+    "0": 103,
+    "1": 589,
+    "2": 1079,
+    "3": 1060,
+    "4": 876,
+    "5": 1006,
+    "6": 1133,
+    "7": 1404,
+    "8": 1073,
+    "9": 639,
+    "10": 1314,
+    "11": 804,
+    "12": 2053,
+    "19": 1143,
+    "20": 923,
+    "21": 1014,
+    "22": 798,
+    "23": 333,
     "13": 2005,
     "14": 1278,
     "15": 519,
     "16": 510,
     "17": 1068,
-    "18": 1737,
-    "19": 534
+    "18": 1737
   },
   "message_types": {
-    "0": 2768,
-    "19": 1587,
-    "20": 1
+    "0": 2031,
+    "19": 829,
+    "20": 11
   },
   "top_reacted_messages": [
     {
@@ -123,6 +124,14 @@
       "author": "lightproud",
       "reactions": 192,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1514851529209810944",
+      "channel_id": "1433513650299076780",
+      "content": "How long will it take f2p to complete all chapters in arc 1 and arc2 with hard m",
+      "author": "rs1506",
+      "reactions": 15,
+      "channel": "🔸game-question"
     },
     {
       "id": "1514975588761206905",
@@ -267,14 +276,6 @@
       "author": "rbotabratevvsrativysrat",
       "reactions": 7,
       "channel": "🔸русский-канал"
-    },
-    {
-      "id": "1514902052504080555",
-      "channel_id": "1241345906826153984",
-      "content": "求你別再開新戰場了吃雞配奶茶",
-      "author": "carrot_chicken",
-      "reactions": 7,
-      "channel": "打算開一個圖樓可能圖之後就丟這裡了"
     }
   ]
 }

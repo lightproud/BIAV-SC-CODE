@@ -119,15 +119,15 @@ class TestFailureAggregation(unittest.TestCase):
         """
         # Map display name → global_collectors attribute used by the fetcher list.
         attr_by_name = {
-            "Bilibili": "fetch_bilibili", "Reddit": "fetch_reddit", "NGA": "fetch_nga",
-            "TapTap": "fetch_taptap", "Weibo": "fetch_weibo", "Zhihu": "fetch_zhihu",
-            "Naver Cafe": "fetch_naver_cafe", "5ch": "fetch_fivech",
+            "Bilibili": "fetch_bilibili", "Reddit": "fetch_reddit",
+            "TapTap": "fetch_taptap", "Weibo": "fetch_weibo",
             "App Store": "fetch_appstore_reviews", "Pixiv": "fetch_pixiv",
             "Note.com": "fetch_note_com", "Ruliweb": "fetch_ruliweb",
             "StopGame": "fetch_stopgame", "搜狗微信": "fetch_weixin",
             "YouTube": "fetch_youtube", "Discord API": "fetch_discord",
-            "Telegram": "fetch_telegram", "Bahamut": "fetch_bahamut",
+            "Bahamut": "fetch_bahamut",
             "Arca.live": "fetch_arca_live", "Google Play": "fetch_google_play",
+            "Twitter": "fetch_twitter",
         }
         patches = []
         for name, attr in attr_by_name.items():
@@ -155,10 +155,10 @@ class TestFailureAggregation(unittest.TestCase):
         # main() must exit non-zero when a core source fails (§4.2 R1),
         # even though good items were collected and written.
         def boom():
-            raise RuntimeError("nga down")
+            raise RuntimeError("taptap down")
 
         self._patch_fetchers({
-            "NGA": boom,
+            "TapTap": boom,
             "Reddit": lambda: [_item("r", "https://r/1")],
         })
         with mock.patch.object(collect_global, "load_existing_news", return_value=[]), \
@@ -182,16 +182,28 @@ class TestFailureAggregation(unittest.TestCase):
         self.assertEqual(core_failures, [])
         self.assertEqual(len(items), 1)
 
+    def test_core_empty_not_hard_failure(self):
+        # 设计决策：核心源「静默吐 0」只告警（WARNING）+ 健康层降级，不进 core_failures。
+        # 部分核心源（如 taptap）本就低频长期 0，硬失败会让管线永久非零退出。
+        # 仅「抛异常」的核心源才进 core_failures（见 test_core_failure_recorded）。
+        self._patch_fetchers({
+            "Reddit": lambda: [_item("r", "https://r/1")],
+            # Bilibili / TapTap 等核心源默认返回 []（空）→ 只告警，不入 core_failures
+        })
+        items, core_failures = collect_global.run_zero_cost_collectors()
+        self.assertEqual(core_failures, [])
+        self.assertEqual(len(items), 1)
+
     def test_merge_order_deterministic(self):
         # Concurrent collection must merge in a stable, engagement-sorted order
         # regardless of which thread finishes first.
         def reddit():
             return [{"title": "low", "url": "https://x/low", "engagement": 5}]
 
-        def nga():
+        def weibo():
             return [{"title": "high", "url": "https://x/high", "engagement": 50}]
 
-        self._patch_fetchers({"Reddit": reddit, "NGA": nga})
+        self._patch_fetchers({"Reddit": reddit, "Weibo": weibo})
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
         merged = collect_global.merge_and_dedup([], items, apply_recency_filter=False)

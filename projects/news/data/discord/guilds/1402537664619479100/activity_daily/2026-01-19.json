@@ -1,0 +1,40 @@
+{
+  "date": "2026-01-19",
+  "messages": 20,
+  "unique_authors": 6,
+  "reactions_total": 2,
+  "attachments": 6,
+  "channel_activity": {
+    "Autofill Template: Covenants!": 18,
+    "KR Translation Hotfix 260119": 2
+  },
+  "hourly_activity": {
+    "5": 7,
+    "6": 9,
+    "9": 1,
+    "11": 1,
+    "0": 2
+  },
+  "message_types": {
+    "0": 10,
+    "19": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1462691452403585057",
+      "channel_id": "1458231430491672748",
+      "content": "yeah, awesome!",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "Autofill Template: Covenants!"
+    },
+    {
+      "id": "1462611910938722355",
+      "channel_id": "1462611910938722355",
+      "content": "Fixed some critical typos found in latest KR translation.\nI've created a pull re",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "KR Translation Hotfix 260119"
+    }
+  ]
+}

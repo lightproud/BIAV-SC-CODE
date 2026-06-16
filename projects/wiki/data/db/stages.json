@@ -1,5 +1,0 @@
-{
-  "description": "Stage (关卡) and stage-group database — curated authoritative records with drop tables and foreign-key references to items.json. Distinct from raw extraction in projects/wiki/data/processed/stages.json. Currently empty stub; to be populated in Phase 3 from stages.json + cross-reference work.",
-  "groups": [],
-  "stages": []
-}

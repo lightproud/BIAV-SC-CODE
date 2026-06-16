@@ -2,7 +2,7 @@
   "date": "2026-04-10",
   "archived_at": "2026-04-10T14:39:13.805023+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,21 @@
       "review": "갓-겜",
       "timestamp_created": 1775807242,
       "playtime_forever": 18974
+    },
+    {
+      "title": "[正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
+      "summary": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "japanese",
+      "time": "2026-04-10T10:36:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198355817923/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198355817923",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

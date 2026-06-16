@@ -48,7 +48,7 @@ jobs:
           import sys, json, traceback, time
           sys.path.insert(0, 'projects/news/scripts')
           from aggregator import (
-              fetch_reddit, fetch_bilibili, fetch_nga,
+              fetch_reddit, fetch_bilibili,
               fetch_taptap, fetch_steam_reviews, fetch_steam_news,
               fetch_steam_discussions, fetch_youtube,
               fetch_discord_local,
@@ -56,12 +56,11 @@ jobs:
           # Playwright collectors (fallback for API-limited platforms)
           try:
               from playwright_collectors import (
-                  fetch_taptap_playwright, fetch_nga_playwright,
+                  fetch_taptap_playwright,
                   fetch_xiaohongshu_playwright, fetch_weibo_playwright,
               )
               pw_fetchers = [
                   ('TapTap (Playwright)', fetch_taptap_playwright),
-                  ('NGA (Playwright)', fetch_nga_playwright),
                   ('Xiaohongshu', fetch_xiaohongshu_playwright),
                   ('Weibo', fetch_weibo_playwright),
               ]
@@ -71,7 +70,6 @@ jobs:
           fetchers = [
               ('Reddit', fetch_reddit),
               ('Bilibili', fetch_bilibili),
-              ('NGA', fetch_nga),
               ('TapTap', fetch_taptap),
               ('SteamReviews', fetch_steam_reviews),
               ('SteamNews', fetch_steam_news),
@@ -182,13 +180,11 @@ jobs:
               ('Twitter', c.fetch_twitter),
               ('YouTube', c.fetch_youtube),
               ('Bilibili', c.fetch_bilibili),
-              ('NGA', c.fetch_nga),
               ('TapTap', c.fetch_taptap),
               ('Weibo', c.fetch_weibo),
               ('Xiaohongshu', c.fetch_xiaohongshu),
               ('Douyin', c.fetch_douyin),
               ('Tieba', c.fetch_tieba),
-              ('Naver Cafe', c.fetch_naver_cafe),
               ('Arca.live', c.fetch_arca_live),
               ('Discord', c.fetch_discord),
               ('Facebook', c.fetch_facebook),
@@ -197,12 +193,10 @@ jobs:
               ('Lofter', c.fetch_lofter),
               ('Xianyu', c.fetch_xianyu),
               ('Taobao', c.fetch_taobao_merch),
-              ('5ch', c.fetch_fivech),
               ('Google Play', c.fetch_google_play),
               ('QooApp', c.fetch_qooapp),
               ('Epic Store', c.fetch_epic_store),
               ('TikTok', c.fetch_tiktok),
-              ('Zhihu', c.fetch_zhihu),
               ('Bahamut', c.fetch_bahamut),
               ('Telegram', c.fetch_telegram),
               ('Twitch', c.fetch_twitch),

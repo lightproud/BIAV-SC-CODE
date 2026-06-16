@@ -1,0 +1,69 @@
+{
+  "date": "2025-09-08",
+  "messages": 145,
+  "unique_authors": 9,
+  "reactions_total": 5,
+  "attachments": 9,
+  "channel_activity": {
+    "english-english": 81,
+    "general-discussion": 63,
+    "ID Team Contributions! <3": 1
+  },
+  "hourly_activity": {
+    "20": 39,
+    "21": 13,
+    "0": 14,
+    "13": 4,
+    "14": 4,
+    "19": 7,
+    "5": 12,
+    "6": 35,
+    "7": 17
+  },
+  "message_types": {
+    "0": 122,
+    "19": 22
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414716749512839239",
+      "channel_id": "1402538040253087766",
+      "content": "i wonder if maybe changing it to greek text would convey the intention clearer..",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414717675246194800",
+      "channel_id": "1402538040253087766",
+      "content": "WELL IT'S NOT MY FAULT BRITISH PEOPLE CALL IT FEET",
+      "author": "suver_",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414715401727643698",
+      "channel_id": "1402538040253087766",
+      "content": "Isn't it Ogier?",
+      "author": "suver_",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414502869922480128",
+      "channel_id": "1402941858606219294",
+      "content": "I've already finished ch4 and 5, about halfway through 6 atm and plan to finish ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1414509094026477669",
+      "channel_id": "1402941858606219294",
+      "content": "All good! Mystery solved. Sounds like the DE team is coordinating real well! Lov",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2025-10-14",
+  "archived_at": "2026-04-26T03:27:47.302502+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] GG",
+      "summary": "GG",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-10-14T04:32:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198041132865/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198041132865",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] it is a very well graphiced game for a free game. ...",
+      "summary": "it is a very well graphiced game for a free game. It has so much detail and its really fun. The only down side that i have is that i dont think there are enough characters and i think there could be more to the story but overall its very fun",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-10-13T19:31:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199223870008/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199223870008",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

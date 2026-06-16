@@ -1,0 +1,107 @@
+{
+  "date": "2025-09-02",
+  "messages": 67,
+  "unique_authors": 4,
+  "reactions_total": 13,
+  "attachments": 10,
+  "channel_activity": {
+    "general-discussion": 54,
+    "Putting (ArgX)s in a different order": 9,
+    "Question about the gender designation of the keeper.": 4
+  },
+  "hourly_activity": {
+    "0": 2,
+    "1": 2,
+    "4": 43,
+    "5": 2,
+    "6": 13,
+    "7": 1,
+    "20": 4
+  },
+  "message_types": {
+    "0": 50,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412326318124695573",
+      "channel_id": "1402941858606219294",
+      "content": "*inhale*\n*exhale*\n\nthere's a word Royalty (in Indonesia)... and I spent 15 minut",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412331048187985970",
+      "channel_id": "1402941858606219294",
+      "content": "WHEEEEE",
+      "author": "nero_aliapoh",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412238967629287495",
+      "channel_id": "1402941858606219294",
+      "content": "Max HP",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412239040475955201",
+      "channel_id": "1402941858606219294",
+      "content": "(i actually went 3-14 to check this)",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412293365613199361",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412297368778571808",
+      "channel_id": "1402941858606219294",
+      "content": "if we can at minimum get the basic wording consistent and everything at least so",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412298031486730332",
+      "channel_id": "1402941858606219294",
+      "content": "seriously I sorted out all those other organized sheets so that I could start wo",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412299024874213376",
+      "channel_id": "1402941858606219294",
+      "content": "hopefully Ace rests properly so we can take our time",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412299312947269654",
+      "channel_id": "1402941858606219294",
+      "content": "I figured whatever pace we get things done at is better than nothing, so I haven",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1412535924914524261",
+      "channel_id": "1412533191155122316",
+      "content": "yes, you can use the gender tag:\n```{Male=TEXT1,Female=TEXT2}```",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Question about the gender designation of the keeper."
+    }
+  ]
+}

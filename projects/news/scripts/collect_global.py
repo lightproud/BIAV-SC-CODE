@@ -34,8 +34,9 @@ RAW_OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news-raw.json'
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
-# Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
-CORE_SOURCES = {'bilibili', 'reddit', 'nga', 'taptap'}
+# 核心源 + 需 secret 的源元数据统一取自 sources.py（单一真相源，杜绝硬编码漂移）。
+# 核心源失败（含静默吐 0）须以非零退出暴露（§4.2 R1：任一核心源失败即整次失败）。
+from sources import CORE_SOURCES, AUTH_GATED
 
 
 # ── Source mapping: collector source names → aggregator source names ──
@@ -43,15 +44,11 @@ SOURCE_MAP = {
     'bilibili': 'bilibili',
     'reddit': 'reddit',
     'youtube': 'youtube',
-    'nga': 'nga',
     'taptap': 'taptap',
     'steam': 'steam_review',
     'weibo': 'weibo',
-    'zhihu': 'zhihu',
-    'naver_cafe': 'naver_cafe',
     'bahamut': 'bahamut',
     'arca_live': 'arca_live',
-    'fivech': 'fivech',
     'appstore': 'appstore',
     'google_play': 'google_play',
     'pixiv': 'pixiv',
@@ -60,7 +57,6 @@ SOURCE_MAP = {
     'stopgame': 'stopgame',
     'weixin': 'weixin',
     'discord': 'discord',
-    'telegram': 'telegram',
     'twitter': 'twitter',
 }
 
@@ -123,10 +119,8 @@ def run_zero_cost_collectors() -> list[dict]:
     PW_FALLBACK: dict[str, str] = {
         # name → playwright_collectors function name
         'Arca.live':   'fetch_arca_live_playwright',
-        '5ch':         'fetch_fivech_playwright',
         'Ruliweb':     'fetch_ruliweb_playwright',
         'Bahamut':     'fetch_bahamut_playwright',
-        'Naver Cafe':  None,  # no PW yet, but unsuspended to try HTTP first
         'TapTap':      'fetch_taptap_playwright',
         'Weibo':       'fetch_weibo_playwright',
     }
@@ -142,12 +136,8 @@ def run_zero_cost_collectors() -> list[dict]:
     zero_cost_fetchers = [
         ('Bilibili', c.fetch_bilibili),
         ('Reddit', c.fetch_reddit),
-        ('NGA', c.fetch_nga),
         ('TapTap', c.fetch_taptap),
         ('Weibo', c.fetch_weibo),
-        ('Zhihu', c.fetch_zhihu),
-        ('Naver Cafe', c.fetch_naver_cafe),
-        ('5ch', c.fetch_fivech),
         ('App Store', c.fetch_appstore_reviews),
         ('Pixiv', c.fetch_pixiv),
         ('Note.com', c.fetch_note_com),
@@ -161,7 +151,6 @@ def run_zero_cost_collectors() -> list[dict]:
     api_fetchers = [
         ('YouTube', c.fetch_youtube),
         ('Discord API', c.fetch_discord),
-        ('Telegram', c.fetch_telegram),
         ('Bahamut', c.fetch_bahamut),
         ('Arca.live', c.fetch_arca_live),
         ('Google Play', c.fetch_google_play),
@@ -171,13 +160,12 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
-        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'NGA': 'nga', 'TapTap': 'taptap',
-        'Weibo': 'weibo', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
-        '5ch': 'fivech', 'App Store': 'appstore',
+        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'TapTap': 'taptap',
+        'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
         'YouTube': 'youtube', 'Discord API': 'discord',
-        'Telegram': 'telegram', 'Bahamut': 'bahamut',
+        'Bahamut': 'bahamut',
         'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
 
@@ -249,11 +237,27 @@ def run_zero_cost_collectors() -> list[dict]:
             items.extend(result)
             succeeded.append((name, len(result)))
             logger.info(f"  {name}: +{len(result)} items")
+            if tracker:
+                tracker.update_platform_status(source_id, len(result))
         else:
             empty.append(name)
-            logger.info(f"  · {name}: 0 items")
-        if tracker:
-            tracker.update_platform_status(source_id, len(result))
+            gate_env = AUTH_GATED.get(source_id)
+            if gate_env and not os.environ.get(gate_env):
+                # 优雅降级：需 cookie/key 的源未配置 secret → 预期 0 产出，标注待配，不计采集故障
+                logger.info(f"  · {name}: 0 items (待配 {gate_env}，已降级)")
+                if tracker:
+                    tracker.update_platform_status(source_id, 0, note=f"待配 {gate_env}")
+            else:
+                # 核心源静默吐 0：从 INFO 提升为 WARNING，不再悄悄溜过（§4.2 R1 告警）。
+                # 不做硬失败：部分核心源（如 taptap）本就低频，0 产出不应阻断管线；
+                # 持久信号交由健康层按 consecutive_silent_days 自动 degraded/dormant。
+                # 硬失败（非零退出）仍只保留给抛异常的核心源（见 core_failures 主路径）。
+                if source_id in CORE_SOURCES:
+                    logger.warning(f"  {name}: CORE source 0 items — 已告警，健康层据连续沉默天数降级 (§4.2 R1)")
+                else:
+                    logger.info(f"  · {name}: 0 items")
+                if tracker:
+                    tracker.update_platform_status(source_id, 0)
 
     # Diagnostic summary
     logger.info("=== 采集诊断 ===")

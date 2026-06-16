@@ -388,7 +388,9 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
                     lang=language,
                 ))
 
-            _archive_items('steam_review', items)
+            # Steam 评论归一进 steam/（item.source 仍为 steam_review，靠 SOURCE_ALIASES 显示归一）。
+            # 2026-06-15 起不再单独写 steam_review/；历史归档已合并入 steam/。
+            _archive_items('steam', items)
             total += len(items)
             cursor = new_cursor
             ps['cursor'] = cursor
@@ -402,68 +404,6 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
         except Exception as e:
             logger.warning(f'Steam reviews backfill failed: {e}')
             break
-
-    return total
-
-
-def backfill_naver_cafe(state: dict, max_pages: int) -> int:
-    """Backfill Naver Cafe search results."""
-    from global_collectors import _get, _make_item, KEYWORDS
-    ps = _platform_state(state, 'naver_cafe')
-    if ps['done']:
-        return 0
-
-    total = 0
-    start_page = ps['page']
-
-    for keyword in KEYWORDS['ko']:
-        for page in range(start_page, start_page + max_pages):
-            if _is_time_up():
-                break
-            try:
-                data = _get(
-                    "https://apis.naver.com/cafe-web/cafe2/ArticleSearchListV2.json",
-                    params={"query": keyword, "page": page, "sortBy": "date"},
-                    headers={"Referer": "https://cafe.naver.com"},
-                ).json()
-
-                articles = data.get("message", {}).get("result", {}).get("articleList", []) or []
-                if not articles:
-                    ps['done'] = True
-                    break
-
-                items = []
-                for article in articles:
-                    real_time = article.get("writeDateTimestamp", "")
-                    time_str = real_time or datetime.now(timezone.utc).isoformat()
-                    item = _make_item(
-                        title=article.get("subject", ""),
-                        summary=article.get("summary", ""),
-                        source="naver_cafe",
-                        platform_region="kr",
-                        time_str=time_str,
-                        url=article.get("articleUrl", ""),
-                        engagement=article.get("readCount", 0) + article.get("commentCount", 0),
-                        is_hot=article.get("readCount", 0) > 500,
-                        author=article.get("writerNickName", ""),
-                        lang="ko",
-                    )
-                    if not real_time:
-                        item["time_is_approximate"] = True
-                    items.append(item)
-
-                _archive_items('naver_cafe', items)
-                total += len(items)
-                ps['page'] = page + 1
-                ps['total'] += len(items)
-                _save_state(state)
-
-                logger.info(f'Naver Cafe backfill "{keyword}" p{page}: +{len(items)}')
-                time.sleep(REQUEST_DELAY)
-
-            except Exception as e:
-                logger.warning(f'Naver Cafe backfill "{keyword}" p{page} failed: {e}')
-                break
 
     return total
 
@@ -708,6 +648,40 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
     return total
 
 
+def backfill_taptap(state: dict, max_pages: int) -> int:
+    """TapTap 帖子/评价历史回溯。
+
+    TapTap 无可用官方 API（webapiv2 端点全 404），复用 taptap_collector 的
+    Playwright 滚动深采：回溯模式下用深 cutoff（180 天）+ 放大滚动轮次
+    （max_pages*4），一次尽量多抓历史，并绕过增量短路（backfill=True）。
+    帖子归 taptap/、评价归 taptap_review/，与日常增量同目录、按 URL 去重合并。
+
+    注意：实际可补深度受 TapTap 懒加载放出的历史上限约束，无法保证补到任意
+    久远；浏览器采集需 CI 带 Chromium 环境，本地无浏览器时返回 0 不报错。
+    """
+    ps = _platform_state(state, 'taptap')
+    cutoff = datetime.now(timezone.utc) - timedelta(days=180)
+    try:
+        import asyncio
+        import taptap_collector
+        topics, reviews = asyncio.run(
+            taptap_collector.collect(
+                cutoff=cutoff, max_scrolls=max_pages * 4, backfill=True
+            )
+        )
+    except Exception as e:
+        logger.warning(f'TapTap backfill failed (browser env required): {e}')
+        return 0
+
+    _archive_items('taptap', topics)
+    _archive_items('taptap_review', reviews)
+    count = len(topics) + len(reviews)
+    ps['total'] = ps.get('total', 0) + count
+    ps['page'] = ps.get('page', 1) + 1
+    ps['last_run'] = datetime.now(timezone.utc).isoformat()
+    return count
+
+
 # ── Registry ──────────────────────────────────────────────────────────────
 
 BACKFILL_REGISTRY = {
@@ -715,10 +689,10 @@ BACKFILL_REGISTRY = {
     'appstore': backfill_appstore,
     'steam_review': backfill_steam_reviews,
     'arca_live': backfill_arca_live,
-    'naver_cafe': backfill_naver_cafe,
     'pixiv': backfill_pixiv,
     'ruliweb': backfill_ruliweb,
     'weixin': backfill_weixin,
+    'taptap': backfill_taptap,
 }
 
 

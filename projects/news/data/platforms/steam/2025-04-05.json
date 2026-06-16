@@ -1,0 +1,38 @@
+{
+  "date": "2025-04-05",
+  "archived_at": "2026-04-26T06:55:52.518749+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面]",
+      "summary": "",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-04-05T14:04:57+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199768100095/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199768100095",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 挺好玩的二游",
+      "summary": "挺好玩的二游",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-04-05T08:28:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199705462304/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199705462304",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

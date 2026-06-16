@@ -1,0 +1,109 @@
+{
+  "date": "2025-09-07",
+  "messages": 123,
+  "unique_authors": 9,
+  "reactions_total": 15,
+  "attachments": 4,
+  "channel_activity": {
+    "english-english": 88,
+    "general-discussion": 17,
+    "Tense & use of italics": 18
+  },
+  "hourly_activity": {
+    "3": 9,
+    "5": 24,
+    "23": 42,
+    "0": 28,
+    "1": 5,
+    "9": 6,
+    "14": 2,
+    "22": 4,
+    "21": 3
+  },
+  "message_types": {
+    "0": 101,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414256915575214080",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "shiio4870",
+      "reactions": 4,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1414186858962878476",
+      "channel_id": "1402941858606219294",
+      "content": "I like the \"D\"",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1414114197931032577",
+      "channel_id": "1402538040253087766",
+      "content": "im sticking to that then.. thank you xD",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414044009004925009",
+      "channel_id": "1402538040253087766",
+      "content": "probably don't assume anything based off them aside that they're meant to be a p",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414044534664597585",
+      "channel_id": "1402538040253087766",
+      "content": "Possibly not, in CN text “夫人” might be translated to Mrs. as it often refers to ",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414046713336823879",
+      "channel_id": "1402538040253087766",
+      "content": "https://i.redd.it/a56sssp8kbjf1.gif",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414061359649521674",
+      "channel_id": "1402538040253087766",
+      "content": "yeah it should be fine unless it's something more case sensitive",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1414186200696098877",
+      "channel_id": "1402941858606219294",
+      "content": "the english term sheet says to use Dissolution Phenomenon for D-Phenomena but ev",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1414387909884379287",
+      "channel_id": "1414364333726765056",
+      "content": "personally I have just been making my own judgements depending on the context - ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Tense & use of italics"
+    },
+    {
+      "id": "1414392108822958141",
+      "channel_id": "1414364333726765056",
+      "content": "agreed. use it sparingly, but use it.",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Tense & use of italics"
+    }
+  ]
+}

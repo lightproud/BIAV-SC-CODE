@@ -1,0 +1,29 @@
+{
+  "date": "2025-12-02",
+  "messages": 9,
+  "unique_authors": 3,
+  "reactions_total": 14,
+  "attachments": 4,
+  "channel_activity": {
+    "general-discussion": 6,
+    "announcements": 3
+  },
+  "hourly_activity": {
+    "10": 8,
+    "11": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1445368135669645434",
+      "channel_id": "1407641395891535883",
+      "content": "🛑 IMPORTANT: Lock on Gameplay Text Translation\n\nAs I previously mentioned, due t",
+      "author": "morimens_15",
+      "reactions": 14,
+      "channel": "announcements"
+    }
+  ]
+}

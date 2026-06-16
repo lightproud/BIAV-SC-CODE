@@ -1,0 +1,83 @@
+{
+  "date": "2025-02-15",
+  "archived_at": "2026-04-26T06:55:56.090485+00:00",
+  "source": "steam",
+  "item_count": 5,
+  "items": [
+    {
+      "title": "[负面] 手机里有一款角色刚出一周不到就无补偿削弱的游戏呀~",
+      "summary": "手机里有一款角色刚出一周不到就无补偿削弱的游戏呀~",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-02-14T16:37:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198196129483/recommended/3052450",
+      "engagement": 11,
+      "is_hot": true,
+      "author": "76561198196129483",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] 各位还在给策划当M的玩家撑住，我先润了:)",
+      "summary": "各位还在给策划当M的玩家撑住，我先润了:)",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-02-14T17:44:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199429397887/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561199429397887",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Um bastante interessante tanto na historia quanto ...",
+      "summary": "Um bastante interessante tanto na historia quanto na temática.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "brazilian",
+      "time": "2025-02-15T14:48:36+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198186186351/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198186186351",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 豪丸",
+      "summary": "豪丸",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-02-15T04:04:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199657936210/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199657936210",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] ху3та 3баная какая-то",
+      "summary": "ху3та 3баная какая-то",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-02-14T18:43:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198123905923/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198123905923",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

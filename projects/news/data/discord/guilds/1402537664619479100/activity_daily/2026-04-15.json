@@ -1,0 +1,88 @@
+{
+  "date": "2026-04-15",
+  "messages": 21,
+  "unique_authors": 6,
+  "reactions_total": 21,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 18,
+    "announcements": 3
+  },
+  "hourly_activity": {
+    "3": 4,
+    "4": 14,
+    "6": 1,
+    "15": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 16,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1493820900414328892",
+      "channel_id": "1407641395891535883",
+      "content": "**⚠️ Before You Start**\n\n**On length: **Please try to keep your translation to r",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": "announcements"
+    },
+    {
+      "id": "1493821081532760134",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493828025559814214",
+      "channel_id": "1402941858606219294",
+      "content": "Yes those would be great to have, but perhaps not this patch yet, like when we'r",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493824577858699476",
+      "channel_id": "1402941858606219294",
+      "content": "Some languages are just not possible to have length of 1.5 Chinese characters at",
+      "author": "haps",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493824956075741185",
+      "channel_id": "1402941858606219294",
+      "content": "I'd say the idea is just to keep brevity in mind, not to have a strict limit.",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493862874861273221",
+      "channel_id": "1402941858606219294",
+      "content": "Oh also, can I dm you about something related to translation?",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1493999884716478638",
+      "channel_id": "1402941858606219294",
+      "content": "Typo? Privilages > Privileges?",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1494018868639825920",
+      "channel_id": "1402941858606219294",
+      "content": "The RU translation of Arachne's terms is finished!\nContributors: Haps, Riddle",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

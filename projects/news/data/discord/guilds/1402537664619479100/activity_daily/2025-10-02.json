@@ -1,0 +1,58 @@
+{
+  "date": "2025-10-02",
+  "messages": 194,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 16,
+  "channel_activity": {
+    "general-discussion": 194
+  },
+  "hourly_activity": {
+    "12": 1,
+    "15": 2,
+    "17": 1,
+    "5": 136,
+    "6": 40,
+    "7": 12,
+    "9": 1,
+    "11": 1
+  },
+  "message_types": {
+    "19": 10,
+    "0": 184
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1423356966033428610",
+      "channel_id": "1402941858606219294",
+      "content": "If you started with a file from my GitHub, upload it back where you found it; ot",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1423327161292685313",
+      "channel_id": "1402941858606219294",
+      "content": "that makes more sense then",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1423187289831641118",
+      "channel_id": "1402941858606219294",
+      "content": "because aegis is literally the mythological shield used to protect against the g",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1423181506960031876",
+      "channel_id": "1402941858606219294",
+      "content": "it's not like innocent is mandatory, that might be sticking too much to the exac",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -36,6 +36,11 @@ _REPO_ROOT = Path(__file__).parent.parent.parent.parent
 DISCORD_DATA_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
+# 弥萨格大学官方服务器（Global）。其数据沿用 data/discord/ 根目录（向后兼容）；
+# 其余服务器（如志愿者服务器）自动分层到 data/discord/guilds/{guild_id}/，
+# 互不干扰。可用 DISCORD_DATA_ROOT 环境变量显式覆盖数据根。
+GLOBAL_GUILD_ID = '1131791637933199470'
+
 REQUEST_DELAY = 0.25          # seconds between API calls (Discord allows 50 req/s per bot)
 MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
@@ -115,9 +120,21 @@ class DiscordArchiver:
 
     def __init__(self):
         self.token = os.environ.get('DISCORD_BOT_TOKEN', '')
-        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or '1131791637933199470'
+        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or GLOBAL_GUILD_ID
         if not self.token:
             raise RuntimeError('DISCORD_BOT_TOKEN is required')
+
+        # 数据根按服务器分层：Global 留根目录（向后兼容），其余服务器进
+        # guilds/{guild_id}/；DISCORD_DATA_ROOT 可显式覆盖。state/meta/index/
+        # channels/activity_daily 全部挂在该根下，服务器之间天然隔离。
+        override = os.environ.get('DISCORD_DATA_ROOT')
+        if override:
+            self.data_dir = Path(override)
+        elif self.guild_id == GLOBAL_GUILD_ID:
+            self.data_dir = DISCORD_DATA_DIR
+        else:
+            self.data_dir = DISCORD_DATA_DIR / 'guilds' / self.guild_id
+        self.state_path = self.data_dir / 'state.json'
 
         self.headers = {
             'Authorization': f'Bot {self.token}',
@@ -149,9 +166,9 @@ class DiscordArchiver:
     # ── State persistence ────────────────────────────────────────────────────
 
     def _load_state(self) -> dict:
-        if STATE_PATH.exists():
+        if self.state_path.exists():
             try:
-                with open(STATE_PATH, 'r', encoding='utf-8') as f:
+                with open(self.state_path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
                 logger.warning(f'Failed to load state: {e}')
@@ -159,8 +176,8 @@ class DiscordArchiver:
 
     def _save_state(self):
         self.state['last_run'] = datetime.now(timezone.utc).isoformat()
-        STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-        with open(STATE_PATH, 'w', encoding='utf-8') as f:
+        self.state_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.state_path, 'w', encoding='utf-8') as f:
             json.dump(self.state, f, ensure_ascii=False, indent=2)
 
     def _ch_state(self, channel_id) -> dict:
@@ -169,10 +186,9 @@ class DiscordArchiver:
 
     # ── Storage helpers ──────────────────────────────────────────────────────
 
-    @staticmethod
-    def _ch_dir(channel_id) -> Path:
+    def _ch_dir(self, channel_id) -> Path:
         """Channel data directory: last 8 chars of ID (no emoji in filesystem path)."""
-        return DISCORD_DATA_DIR / 'channels' / str(channel_id)[-8:]
+        return self.data_dir / 'channels' / str(channel_id)[-8:]
 
     def _file_ids(self, file_path: Path) -> set:
         """Cached set of message IDs already present in a JSONL file (dedup support)."""
@@ -228,7 +244,7 @@ class DiscordArchiver:
                 for ch in channels
             ],
         }
-        meta_path = DISCORD_DATA_DIR / 'guild_meta.json'
+        meta_path = self.data_dir / 'guild_meta.json'
         meta_path.parent.mkdir(parents=True, exist_ok=True)
         with open(meta_path, 'w', encoding='utf-8') as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
@@ -251,7 +267,7 @@ class DiscordArchiver:
                 'parent_id': str(ch.get('parent_id') or ''),
                 'dir': ch_id[-8:],   # quick reference: the storage directory name
             }
-        index_path = DISCORD_DATA_DIR / 'channel_index.json'
+        index_path = self.data_dir / 'channel_index.json'
         index_path.parent.mkdir(parents=True, exist_ok=True)
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
@@ -356,10 +372,68 @@ class DiscordArchiver:
 
     # ── Track 1: Incremental (new messages since last run) ───────────────────
 
+    def _cold_start_backfill(self, channel_id, channel_name: str = '') -> int:
+        """First-ever pass for a channel: page BACKWARD (before cursor) from
+        newest to oldest, up to MAX_MESSAGES_PER_CHANNEL, so a freshly-added
+        guild/channel is archived in full on first run instead of only its
+        latest 100. Sets the incremental cursor to the newest message so
+        subsequent runs resume normal after-based incremental. Any messages
+        older than the cap fall to the historical backfill track.
+        """
+        ch_key = str(channel_id)
+        total = 0
+        before = None
+        newest_id = '0'
+
+        while total < MAX_MESSAGES_PER_CHANNEL:
+            if self._is_time_up():
+                logger.warning(f'Runtime limit during cold-start backfill: {channel_name}')
+                break
+            params = {'limit': 100}
+            if before:
+                params['before'] = before
+            try:
+                messages = self._api(f'/channels/{channel_id}/messages', **params)
+            except Exception as e:
+                logger.warning(f'Channel {channel_id} cold-start fetch failed: {e}')
+                break
+            if not isinstance(messages, list) or not messages:
+                break
+            messages.sort(key=lambda m: m['id'])  # ascending
+            if before is None:
+                # First batch (no cursor) holds the newest messages; the last
+                # after ascending sort is the channel's newest message overall.
+                newest_id = messages[-1]['id']
+            for msg in messages:
+                self._process_message(msg, channel_id, channel_name)
+                total += 1
+            before = messages[0]['id']  # page further back from the oldest in batch
+            time.sleep(REQUEST_DELAY)
+            if len(messages) < 100:
+                break
+
+        if newest_id != '0':
+            self._ch_state(ch_key)['last_message_id'] = newest_id
+            self._ch_state(ch_key)['name'] = channel_name
+            self._ch_state(ch_key)['cold_started'] = True
+
+        if total >= MAX_MESSAGES_PER_CHANNEL:
+            logger.info(f'Cold-start {channel_name}({channel_id}): hit cap {MAX_MESSAGES_PER_CHANNEL}, older history via backfill track')
+        else:
+            logger.info(f'Cold-start {channel_name}({channel_id}): {total} messages (full channel)')
+        return total
+
     def fetch_channel_incremental(self, channel_id, channel_name: str = '') -> int:
-        """Fetch all new messages since last archived message. Returns count."""
+        """Fetch all new messages since last archived message. Returns count.
+
+        On the very first pass for a channel (no stored cursor) this delegates
+        to a full backward backfill so freshly-added guilds capture their whole
+        history, not just the latest 100 messages.
+        """
         ch_key = str(channel_id)
         last_id = self._ch_state(ch_key).get('last_message_id', '0')
+        if last_id == '0':
+            return self._cold_start_backfill(channel_id, channel_name)
         total = 0
 
         while total < MAX_MESSAGES_PER_CHANNEL:
@@ -750,7 +824,7 @@ class DiscordArchiver:
 
     def _save_daily_stats(self):
         """Write (and merge with existing) daily stats JSON files."""
-        stats_dir = DISCORD_DATA_DIR / 'activity_daily'
+        stats_dir = self.data_dir / 'activity_daily'
         stats_dir.mkdir(parents=True, exist_ok=True)
 
         for date_str, stats in self.daily_stats.items():
@@ -811,7 +885,7 @@ class DiscordArchiver:
         logger.info(f'Starting monthly archive for {month_str}...')
 
         # Collect all JSONL files for this month across all channels
-        channels_dir = DISCORD_DATA_DIR / 'channels'
+        channels_dir = self.data_dir / 'channels'
         jsonl_files = []
         if channels_dir.exists():
             for ch_dir in sorted(channels_dir.iterdir()):
@@ -822,18 +896,22 @@ class DiscordArchiver:
             logger.info(f'No JSONL files found for {month_str}, nothing to archive')
             return
 
+        # Release tag/artifact 按 guild 隔离：Global 沿用旧命名（向后兼容），
+        # 其余服务器加 guild 后缀，避免 release tag 互相覆盖。
+        guild_suffix = '' if self.guild_id == GLOBAL_GUILD_ID else f'-{self.guild_id}'
+
         # Create tarball
-        archive_name = f'discord-archive-{month_str}.tar.gz'
-        archive_path = DISCORD_DATA_DIR / archive_name
+        archive_name = f'discord-archive-{month_str}{guild_suffix}.tar.gz'
+        archive_path = self.data_dir / archive_name
         with tarfile.open(archive_path, 'w:gz') as tar:
             for f in jsonl_files:
-                tar.add(f, arcname=str(f.relative_to(DISCORD_DATA_DIR)))
+                tar.add(f, arcname=str(f.relative_to(self.data_dir)))
         size_kb = archive_path.stat().st_size // 1024
         logger.info(f'Created {archive_name}: {len(jsonl_files)} files, {size_kb} KB')
 
         # Upload to GitHub Releases
         repo = os.environ.get('GITHUB_REPOSITORY', '')
-        tag = f'discord-archive-{month_str}'
+        tag = f'discord-archive-{month_str}{guild_suffix}'
         try:
             # Delete any existing release/tag first (idempotent re-runs)
             subprocess.run(

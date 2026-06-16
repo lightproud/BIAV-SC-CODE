@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-13",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "general-discussion": 4
+  },
+  "hourly_activity": {
+    "18": 3,
+    "19": 1
+  },
+  "message_types": {
+    "19": 3,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1504190493154607286",
+      "channel_id": "1402941858606219294",
+      "content": "I agree with the comment on Alien Crypsela - I think it's likely meant to be \"Cy",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1504191137093521670",
+      "channel_id": "1402941858606219294",
+      "content": "Chiming in as a 2nd voice that agrees with everything said here",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1504201450040070274",
+      "channel_id": "1402941858606219294",
+      "content": "Those two were mine, glad they helped! (kirill polivko is Riddle, just for commu",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}
