@@ -5,11 +5,9 @@ name: Discord Archive (Volunteer)
 #   - 复用同一 bot（DISCORD_BOT_TOKEN），仅 guild_id 不同
 #   - 频繁运行以快速回填历史；不触碰 Global 数据
 on:
-  # 定时暂停：bot 对该 guild 返回 403（未入驻/缺 View Channels），
-  # 接入修复并手动验证成功后再恢复下面的 schedule。
-  # schedule:
-  #   # 每小时一次，offset :15 错开 Global（:00 增量 / :30 历史回填）
-  #   - cron: '15 * * * *'
+  schedule:
+    # 每小时一次，offset :15 错开 Global（:00 增量 / :30 历史回填）
+    - cron: '15 * * * *'
   workflow_dispatch:
 
 concurrency:
