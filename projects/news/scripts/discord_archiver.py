@@ -36,6 +36,11 @@ _REPO_ROOT = Path(__file__).parent.parent.parent.parent
 DISCORD_DATA_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
+# 弥萨格大学官方服务器（Global）。其数据沿用 data/discord/ 根目录（向后兼容）；
+# 其余服务器（如志愿者服务器）自动分层到 data/discord/guilds/{guild_id}/，
+# 互不干扰。可用 DISCORD_DATA_ROOT 环境变量显式覆盖数据根。
+GLOBAL_GUILD_ID = '1131791637933199470'
+
 REQUEST_DELAY = 0.25          # seconds between API calls (Discord allows 50 req/s per bot)
 MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
@@ -115,9 +120,21 @@ class DiscordArchiver:
 
     def __init__(self):
         self.token = os.environ.get('DISCORD_BOT_TOKEN', '')
-        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or '1131791637933199470'
+        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or GLOBAL_GUILD_ID
         if not self.token:
             raise RuntimeError('DISCORD_BOT_TOKEN is required')
+
+        # 数据根按服务器分层：Global 留根目录（向后兼容），其余服务器进
+        # guilds/{guild_id}/；DISCORD_DATA_ROOT 可显式覆盖。state/meta/index/
+        # channels/activity_daily 全部挂在该根下，服务器之间天然隔离。
+        override = os.environ.get('DISCORD_DATA_ROOT')
+        if override:
+            self.data_dir = Path(override)
+        elif self.guild_id == GLOBAL_GUILD_ID:
+            self.data_dir = DISCORD_DATA_DIR
+        else:
+            self.data_dir = DISCORD_DATA_DIR / 'guilds' / self.guild_id
+        self.state_path = self.data_dir / 'state.json'
 
         self.headers = {
             'Authorization': f'Bot {self.token}',
@@ -149,9 +166,9 @@ class DiscordArchiver:
     # ── State persistence ────────────────────────────────────────────────────
 
     def _load_state(self) -> dict:
-        if STATE_PATH.exists():
+        if self.state_path.exists():
             try:
-                with open(STATE_PATH, 'r', encoding='utf-8') as f:
+                with open(self.state_path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
                 logger.warning(f'Failed to load state: {e}')
@@ -159,8 +176,8 @@ class DiscordArchiver:
 
     def _save_state(self):
         self.state['last_run'] = datetime.now(timezone.utc).isoformat()
-        STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-        with open(STATE_PATH, 'w', encoding='utf-8') as f:
+        self.state_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.state_path, 'w', encoding='utf-8') as f:
             json.dump(self.state, f, ensure_ascii=False, indent=2)
 
     def _ch_state(self, channel_id) -> dict:
@@ -169,10 +186,9 @@ class DiscordArchiver:
 
     # ── Storage helpers ──────────────────────────────────────────────────────
 
-    @staticmethod
-    def _ch_dir(channel_id) -> Path:
+    def _ch_dir(self, channel_id) -> Path:
         """Channel data directory: last 8 chars of ID (no emoji in filesystem path)."""
-        return DISCORD_DATA_DIR / 'channels' / str(channel_id)[-8:]
+        return self.data_dir / 'channels' / str(channel_id)[-8:]
 
     def _file_ids(self, file_path: Path) -> set:
         """Cached set of message IDs already present in a JSONL file (dedup support)."""
@@ -228,7 +244,7 @@ class DiscordArchiver:
                 for ch in channels
             ],
         }
-        meta_path = DISCORD_DATA_DIR / 'guild_meta.json'
+        meta_path = self.data_dir / 'guild_meta.json'
         meta_path.parent.mkdir(parents=True, exist_ok=True)
         with open(meta_path, 'w', encoding='utf-8') as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
@@ -251,7 +267,7 @@ class DiscordArchiver:
                 'parent_id': str(ch.get('parent_id') or ''),
                 'dir': ch_id[-8:],   # quick reference: the storage directory name
             }
-        index_path = DISCORD_DATA_DIR / 'channel_index.json'
+        index_path = self.data_dir / 'channel_index.json'
         index_path.parent.mkdir(parents=True, exist_ok=True)
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
@@ -750,7 +766,7 @@ class DiscordArchiver:
 
     def _save_daily_stats(self):
         """Write (and merge with existing) daily stats JSON files."""
-        stats_dir = DISCORD_DATA_DIR / 'activity_daily'
+        stats_dir = self.data_dir / 'activity_daily'
         stats_dir.mkdir(parents=True, exist_ok=True)
 
         for date_str, stats in self.daily_stats.items():
@@ -811,7 +827,7 @@ class DiscordArchiver:
         logger.info(f'Starting monthly archive for {month_str}...')
 
         # Collect all JSONL files for this month across all channels
-        channels_dir = DISCORD_DATA_DIR / 'channels'
+        channels_dir = self.data_dir / 'channels'
         jsonl_files = []
         if channels_dir.exists():
             for ch_dir in sorted(channels_dir.iterdir()):
@@ -822,18 +838,22 @@ class DiscordArchiver:
             logger.info(f'No JSONL files found for {month_str}, nothing to archive')
             return
 
+        # Release tag/artifact 按 guild 隔离：Global 沿用旧命名（向后兼容），
+        # 其余服务器加 guild 后缀，避免 release tag 互相覆盖。
+        guild_suffix = '' if self.guild_id == GLOBAL_GUILD_ID else f'-{self.guild_id}'
+
         # Create tarball
-        archive_name = f'discord-archive-{month_str}.tar.gz'
-        archive_path = DISCORD_DATA_DIR / archive_name
+        archive_name = f'discord-archive-{month_str}{guild_suffix}.tar.gz'
+        archive_path = self.data_dir / archive_name
         with tarfile.open(archive_path, 'w:gz') as tar:
             for f in jsonl_files:
-                tar.add(f, arcname=str(f.relative_to(DISCORD_DATA_DIR)))
+                tar.add(f, arcname=str(f.relative_to(self.data_dir)))
         size_kb = archive_path.stat().st_size // 1024
         logger.info(f'Created {archive_name}: {len(jsonl_files)} files, {size_kb} KB')
 
         # Upload to GitHub Releases
         repo = os.environ.get('GITHUB_REPOSITORY', '')
-        tag = f'discord-archive-{month_str}'
+        tag = f'discord-archive-{month_str}{guild_suffix}'
         try:
             # Delete any existing release/tag first (idempotent re-runs)
             subprocess.run(
