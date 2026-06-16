@@ -1,4 +1,8 @@
-import charactersJson from '../../../../data/db/characters.json'
+// 结构化角色基线 (data/db/characters.json) 已于 2026-06-15 删除：
+// 24/72 条全为 partial/fixture 占位、game_version 全 None，长期误导引用。
+// 此处暂以空数组占位，待 Phase 2 W2 从 data/extracted/ 一手解包字段重建可信基线后接回。
+// 接回方式：恢复 `import charactersJson from '../../../../data/db/characters.json'`
+// 并将下方 `raw` 改回 `charactersJson as unknown as MorimensCharacter[]`。
 
 export interface MorimensCharacter {
   id: string
@@ -39,7 +43,7 @@ export interface MorimensCharacter {
   cg_refs?: string[]
 }
 
-const raw = charactersJson as unknown as MorimensCharacter[]
+const raw: MorimensCharacter[] = []
 
 export const characters: MorimensCharacter[] = raw
 

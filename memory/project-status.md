@@ -12,7 +12,7 @@
 - **采集自动化持续运行**：git log 顶部为连续机器提交（Discord 回填 / 视频评论归档 / 社区新闻），无中断迹象
 - **工作流 19 个**：2026-06-05 新增 `collect-comments`（每日 02:00 UTC 视频评论归档）与 `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
 - **daily-report 定时已停用**：报告改在 Claude Code 会话内订阅生成（零 API 费），workflow 仅留手动触发备用
-- **wiki 基线**：`characters.json` 实测 24/72（23 partial + 1 fixture），W1 自举完成，W2 待批量补齐剩余 48
+- **wiki 结构化层已清空（2026-06-15 守密人裁定）**：`data/db/` 全 6 个 JSON + 24 个生成角色详情页删除。原 `characters.json` 24/72 全为 partial/fixture 占位、game_version 全 None，长期误导引用，故整层删除。数据桥 `characters.ts` 改导出空数组（保留类型/组件脚手架），VitePress 构建已验证通过（BUILD_OK）。W2 重建基线必须以 `data/extracted/` 一手解包字段为唯一数据源，禁止再用合成占位
 - **CLAUDE.md 治理**：易腐清单去枚举化 + 战略状态指针化（本档案权威化）+ 路径引用 CI 对账（`tests/test_claude_md.py`）
 - 下方 4-26 快照中的待办事项（守密人本地删分支 / dependabot #136-140）未在本次复核范围，实际状态以 GitHub 为准
 
@@ -30,7 +30,7 @@
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
-| wiki（数据集 + Wiki 站点） | **Phase 2 W1 自举完成 24/72**（6-9 实测） | Code-wiki | Phase 2 W2：批量补齐剩余 48 角色 characters.json 记录，再触发 fetch-wiki-data workflow |
+| wiki（数据集 + Wiki 站点） | **结构化层已清空（6-15 守密人裁定）**：db/ + 派生角色页删除，站点构建通过 | Code-wiki | Phase 2 W2：以 `data/extracted/` 一手解包字段重建可信 characters 基线（禁用合成占位），再接回数据桥与生成页 |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
