@@ -80,6 +80,61 @@ def _parse_taptap_dom_time(time_str):
     return news_common.parse_relative_time(time_str)[0]
 
 
+# ─── 滚动深采（懒加载分页）─────────────────────────────────────
+
+async def _autoscroll_collect(page, parse_fn, captured, max_scrolls: int, cutoff) -> list[dict]:
+    """滚动页面触发懒加载，累积并合并所有捕获 API 响应中的条目（按 item_id/url 去重）。
+
+    TapTap 评价/帖子页是 Nuxt 客户端渲染、滚动到底懒加载下一批。原逻辑只取首屏
+    第一个有效响应（约十几条），此函数下滑 max_scrolls 次、把每次新触发的 XHR
+    响应一并解析合并，直到：连续两轮无新增（到底）或已捕获条目最早时间早于 cutoff
+    （回溯深度足够）。返回去重后的 raw 条目列表。
+    """
+    merged: dict[str, dict] = {}
+
+    def _merge() -> None:
+        # captured 由 page.on("response") 持续追加，每轮重新全量合并即可
+        for _url, body in list(captured):
+            for it in parse_fn(body):
+                key = it.get("item_id") or it.get("url") or it.get("title", "")[:60]
+                if key and key not in merged:
+                    merged[key] = it
+
+    def _reached_cutoff() -> bool:
+        if not cutoff or not merged:
+            return False
+        try:
+            earliest = min(
+                datetime.fromisoformat(it["created"])
+                for it in merged.values()
+                if it.get("created")
+            )
+            return earliest < cutoff
+        except Exception:
+            return False
+
+    _merge()  # 首屏已捕获的先并入
+    stale = 0
+    for _ in range(max(0, max_scrolls)):
+        if _reached_cutoff():
+            break
+        prev = len(merged)
+        try:
+            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        except Exception:
+            pass
+        await page.wait_for_timeout(1800)  # 等待懒加载 XHR 返回
+        _merge()
+        if len(merged) == prev:
+            stale += 1
+            if stale >= 2:  # 连续两轮无新增 = 已到底
+                break
+        else:
+            stale = 0
+
+    return list(merged.values())
+
+
 # ─── 帖子页 ───────────────────────────────────────────────────
 
 def _parse_topic_api_body(body: dict) -> list[dict]:
@@ -153,8 +208,8 @@ def _parse_topic_api_body(body: dict) -> list[dict]:
     return results
 
 
-async def _extract_topics(page) -> list[dict]:
-    """访问帖子页，优先拦截网络响应，fallback 到 DOM 提取。"""
+async def _extract_topics(page, max_scrolls: int = 5, cutoff=None) -> list[dict]:
+    """访问帖子页，滚动累积拦截的网络响应，fallback 到 DOM 提取。"""
     captured: list[tuple[str, dict]] = []
 
     async def handle_response(response):
@@ -183,14 +238,13 @@ async def _extract_topics(page) -> list[dict]:
     # 额外等待 JS 异步渲染
     await page.wait_for_timeout(3000)
 
-    # 1. 从拦截的 API 响应中提取
-    for api_url, body in captured:
-        items = _parse_topic_api_body(body)
-        if items:
-            logger.info(f"TapTap topics: {len(items)} from API {api_url}")
-            return items
+    # 1. 滚动累积所有拦截到的 API 响应（合并去重）
+    items = await _autoscroll_collect(page, _parse_topic_api_body, captured, max_scrolls, cutoff)
+    if items:
+        logger.info(f"TapTap topics: {len(items)} after {max_scrolls}-scroll API merge")
+        return items
 
-    # 2. Fallback: DOM 提取
+    # 2. Fallback: DOM 提取（此时页面已滚动到底，DOM 含更多条目）
     logger.info("TapTap: API interception yielded no topics, falling back to DOM")
     return await _extract_topics_dom(page)
 
@@ -222,7 +276,7 @@ async def _extract_topics_dom(page) -> list[dict]:
         for (const sel of candidateSelectors) {
             const els = document.querySelectorAll(sel);
             if (els.length >= 3) {  // 至少3条才认为找到了
-                postElements = Array.from(els).slice(0, 30);
+                postElements = Array.from(els).slice(0, 200);
                 break;
             }
         }
@@ -355,8 +409,8 @@ def _parse_review_api_body(body: dict) -> list[dict]:
     return results
 
 
-async def _extract_reviews(page) -> list[dict]:
-    """访问评价页，优先拦截网络响应，fallback 到 DOM 提取。"""
+async def _extract_reviews(page, max_scrolls: int = 5, cutoff=None) -> list[dict]:
+    """访问评价页，滚动累积拦截的网络响应，fallback 到 DOM 提取。"""
     captured: list[tuple[str, dict]] = []
 
     async def handle_response(response):
@@ -383,11 +437,11 @@ async def _extract_reviews(page) -> list[dict]:
 
     await page.wait_for_timeout(3000)
 
-    for api_url, body in captured:
-        items = _parse_review_api_body(body)
-        if items:
-            logger.info(f"TapTap reviews: {len(items)} from API {api_url}")
-            return items
+    # 滚动累积所有拦截到的评价 API 响应（合并去重）
+    items = await _autoscroll_collect(page, _parse_review_api_body, captured, max_scrolls, cutoff)
+    if items:
+        logger.info(f"TapTap reviews: {len(items)} after {max_scrolls}-scroll API merge")
+        return items
 
     logger.info("TapTap: API interception yielded no reviews, falling back to DOM")
     return await _extract_reviews_dom(page)
@@ -417,7 +471,7 @@ async def _extract_reviews_dom(page) -> list[dict]:
         for (const sel of candidateSelectors) {
             const found = document.querySelectorAll(sel);
             if (found.length >= 3) {
-                els = Array.from(found).slice(0, 30);
+                els = Array.from(found).slice(0, 200);
                 break;
             }
         }
@@ -474,9 +528,19 @@ async def _extract_reviews_dom(page) -> list[dict]:
 
 # ─── 主入口 ───────────────────────────────────────────────────
 
-async def collect(cutoff: datetime | None = None) -> tuple[list[dict], list[dict]]:
+async def collect(
+    cutoff: datetime | None = None,
+    max_scrolls: int = 5,
+    backfill: bool = False,
+) -> tuple[list[dict], list[dict]]:
     """
     启动 headless Chromium，采集帖子和评价。
+
+    参数:
+      cutoff:      只保留晚于此时刻的条目；None 时默认近 24 小时（日常增量）。
+      max_scrolls: 每页下滑触发懒加载的最大轮次；回溯时调大以抓取更深历史。
+      backfill:    回溯模式。绕过「遇到上次最新 ID 即停」的增量短路，
+                   仅用 cutoff 控制时间深度，便于一次性补齐历史。
 
     返回 (topic_items, review_items)，每条均为 collector._make_item() 兼容的字典。
     """
@@ -504,7 +568,7 @@ async def collect(cutoff: datetime | None = None) -> tuple[list[dict], list[dict
             # 帖子页
             page = await context.new_page()
             try:
-                topic_raw = await _extract_topics(page)
+                topic_raw = await _extract_topics(page, max_scrolls, cutoff)
             except Exception as e:
                 logger.warning(f"TapTap topics extraction failed: {e}")
             finally:
@@ -513,7 +577,7 @@ async def collect(cutoff: datetime | None = None) -> tuple[list[dict], list[dict
             # 评价页
             page2 = await context.new_page()
             try:
-                review_raw = await _extract_reviews(page2)
+                review_raw = await _extract_reviews(page2, max_scrolls, cutoff)
             except Exception as e:
                 logger.warning(f"TapTap reviews extraction failed: {e}")
             finally:
@@ -563,8 +627,8 @@ async def collect(cutoff: datetime | None = None) -> tuple[list[dict], list[dict
     topic_items: list[dict] = []
     for raw in topic_raw:
         item_id = raw.get("item_id", "")
-        if item_id and item_id == last_post_id:
-            break  # 已处理到上次位置
+        if not backfill and item_id and item_id == last_post_id:
+            break  # 增量模式：已处理到上次位置（回溯模式不短路，靠 cutoff 控深度）
         if item_id and not new_last_post_id:
             new_last_post_id = item_id  # 记录本次最新ID（第一条）
         item = _to_item(raw, "taptap_post")
@@ -574,7 +638,7 @@ async def collect(cutoff: datetime | None = None) -> tuple[list[dict], list[dict
     review_items: list[dict] = []
     for raw in review_raw:
         item_id = raw.get("item_id", "")
-        if item_id and item_id == last_review_id:
+        if not backfill and item_id and item_id == last_review_id:
             break
         if item_id and not new_last_review_id:
             new_last_review_id = item_id

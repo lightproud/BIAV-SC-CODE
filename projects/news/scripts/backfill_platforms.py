@@ -648,6 +648,40 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
     return total
 
 
+def backfill_taptap(state: dict, max_pages: int) -> int:
+    """TapTap 帖子/评价历史回溯。
+
+    TapTap 无可用官方 API（webapiv2 端点全 404），复用 taptap_collector 的
+    Playwright 滚动深采：回溯模式下用深 cutoff（180 天）+ 放大滚动轮次
+    （max_pages*4），一次尽量多抓历史，并绕过增量短路（backfill=True）。
+    帖子归 taptap/、评价归 taptap_review/，与日常增量同目录、按 URL 去重合并。
+
+    注意：实际可补深度受 TapTap 懒加载放出的历史上限约束，无法保证补到任意
+    久远；浏览器采集需 CI 带 Chromium 环境，本地无浏览器时返回 0 不报错。
+    """
+    ps = _platform_state(state, 'taptap')
+    cutoff = datetime.now(timezone.utc) - timedelta(days=180)
+    try:
+        import asyncio
+        import taptap_collector
+        topics, reviews = asyncio.run(
+            taptap_collector.collect(
+                cutoff=cutoff, max_scrolls=max_pages * 4, backfill=True
+            )
+        )
+    except Exception as e:
+        logger.warning(f'TapTap backfill failed (browser env required): {e}')
+        return 0
+
+    _archive_items('taptap', topics)
+    _archive_items('taptap_review', reviews)
+    count = len(topics) + len(reviews)
+    ps['total'] = ps.get('total', 0) + count
+    ps['page'] = ps.get('page', 1) + 1
+    ps['last_run'] = datetime.now(timezone.utc).isoformat()
+    return count
+
+
 # ── Registry ──────────────────────────────────────────────────────────────
 
 BACKFILL_REGISTRY = {
@@ -658,6 +692,7 @@ BACKFILL_REGISTRY = {
     'pixiv': backfill_pixiv,
     'ruliweb': backfill_ruliweb,
     'weixin': backfill_weixin,
+    'taptap': backfill_taptap,
 }
 
 
