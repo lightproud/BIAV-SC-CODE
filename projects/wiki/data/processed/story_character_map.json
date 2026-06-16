@@ -4,7 +4,9 @@
     "method": "Title 直接匹配角色名",
     "generated": "2026-06-16",
     "total_entries": 1026,
-    "note": "CollectionHall 多数为世界观/物品 lore,非角色归属;此处仅抽出角色小传"
+    "note": "CollectionHall 多数为世界观/物品 lore,非角色归属;此处仅抽出角色小传",
+    "fills_gap": "world_lore.json(CollectionHall 提取)by_category.characters=0,未能归类任何角色小传;本文件用 Title==角色名补出这 55 条角色传记条目",
+    "relation_to_voice_map": "voice_character_map.json 已覆盖语音侧角色关系(含 about 八卦);本文件仅处理 CollectionHall 故事侧,无重复"
   },
   "assigned": [
     {
