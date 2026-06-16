@@ -372,10 +372,68 @@ class DiscordArchiver:
 
     # ── Track 1: Incremental (new messages since last run) ───────────────────
 
+    def _cold_start_backfill(self, channel_id, channel_name: str = '') -> int:
+        """First-ever pass for a channel: page BACKWARD (before cursor) from
+        newest to oldest, up to MAX_MESSAGES_PER_CHANNEL, so a freshly-added
+        guild/channel is archived in full on first run instead of only its
+        latest 100. Sets the incremental cursor to the newest message so
+        subsequent runs resume normal after-based incremental. Any messages
+        older than the cap fall to the historical backfill track.
+        """
+        ch_key = str(channel_id)
+        total = 0
+        before = None
+        newest_id = '0'
+
+        while total < MAX_MESSAGES_PER_CHANNEL:
+            if self._is_time_up():
+                logger.warning(f'Runtime limit during cold-start backfill: {channel_name}')
+                break
+            params = {'limit': 100}
+            if before:
+                params['before'] = before
+            try:
+                messages = self._api(f'/channels/{channel_id}/messages', **params)
+            except Exception as e:
+                logger.warning(f'Channel {channel_id} cold-start fetch failed: {e}')
+                break
+            if not isinstance(messages, list) or not messages:
+                break
+            messages.sort(key=lambda m: m['id'])  # ascending
+            if before is None:
+                # First batch (no cursor) holds the newest messages; the last
+                # after ascending sort is the channel's newest message overall.
+                newest_id = messages[-1]['id']
+            for msg in messages:
+                self._process_message(msg, channel_id, channel_name)
+                total += 1
+            before = messages[0]['id']  # page further back from the oldest in batch
+            time.sleep(REQUEST_DELAY)
+            if len(messages) < 100:
+                break
+
+        if newest_id != '0':
+            self._ch_state(ch_key)['last_message_id'] = newest_id
+            self._ch_state(ch_key)['name'] = channel_name
+            self._ch_state(ch_key)['cold_started'] = True
+
+        if total >= MAX_MESSAGES_PER_CHANNEL:
+            logger.info(f'Cold-start {channel_name}({channel_id}): hit cap {MAX_MESSAGES_PER_CHANNEL}, older history via backfill track')
+        else:
+            logger.info(f'Cold-start {channel_name}({channel_id}): {total} messages (full channel)')
+        return total
+
     def fetch_channel_incremental(self, channel_id, channel_name: str = '') -> int:
-        """Fetch all new messages since last archived message. Returns count."""
+        """Fetch all new messages since last archived message. Returns count.
+
+        On the very first pass for a channel (no stored cursor) this delegates
+        to a full backward backfill so freshly-added guilds capture their whole
+        history, not just the latest 100 messages.
+        """
         ch_key = str(channel_id)
         last_id = self._ch_state(ch_key).get('last_message_id', '0')
+        if last_id == '0':
+            return self._cold_start_backfill(channel_id, channel_name)
         total = 0
 
         while total < MAX_MESSAGES_PER_CHANNEL:

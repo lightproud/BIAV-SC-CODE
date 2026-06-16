@@ -1,7 +1,10 @@
+import os
 import sys
+import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 
@@ -9,12 +12,83 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "ne
 # no network), so the module can be imported directly.
 from discord_archiver import (
     DISCORD_EPOCH_MS,
+    DiscordArchiver,
     _dt_from_sf,
     _mstr,
     _month_bounds,
     _prev_month,
     _sf_from_dt,
 )
+
+
+def _msg(mid: int) -> dict:
+    """Minimal raw Discord message with a numeric snowflake id."""
+    return {
+        "id": str(mid),
+        "channel_id": "chan",
+        "type": 0,
+        "author": {"id": "u1", "username": "tester", "bot": False},
+        "content": f"msg {mid}",
+        "timestamp": "2026-05-03T14:41:39.000000+00:00",
+    }
+
+
+class TestColdStartBackfill(unittest.TestCase):
+    """First-ever channel pass pages backward to capture full history, not
+    just the latest 100 (regression guard for the volunteer-guild fix)."""
+
+    def _make_archiver(self, tmpdir):
+        env = {
+            "DISCORD_BOT_TOKEN": "dummy",
+            "DISCORD_GUILD_ID": "999",
+            "DISCORD_DATA_ROOT": tmpdir,
+        }
+        with mock.patch.dict(os.environ, env, clear=False):
+            return DiscordArchiver()
+
+    def test_cold_start_pages_backward_and_sets_cursor_to_newest(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            # 250 messages: ids 1001..1250. Discord returns newest-first per page.
+            all_ids = list(range(1001, 1251))
+
+            def fake_api(path, **params):
+                before = params.get("before")
+                # newest-first ordering
+                pool = sorted(all_ids, reverse=True)
+                if before is not None:
+                    pool = [i for i in pool if i < int(before)]
+                return [_msg(i) for i in pool[:100]]
+
+            with mock.patch.object(arch, "_api", side_effect=fake_api), \
+                    mock.patch("discord_archiver.time.sleep"):
+                total = arch.fetch_channel_incremental("chan", "general")
+
+            self.assertEqual(total, 250)  # full channel, not just latest 100
+            st = arch.state["channels"]["chan"]
+            self.assertEqual(st["last_message_id"], "1250")  # cursor = newest
+            self.assertTrue(st["cold_started"])
+
+    def test_second_run_uses_incremental_after_not_cold_start(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            arch.state["channels"]["chan"] = {"last_message_id": "2000"}
+            seen_params = []
+
+            def fake_api(path, **params):
+                seen_params.append(params)
+                if "after" in params:  # only new messages after 2000
+                    return [_msg(2001), _msg(2002)]
+                return []
+
+            with mock.patch.object(arch, "_api", side_effect=fake_api), \
+                    mock.patch("discord_archiver.time.sleep"):
+                total = arch.fetch_channel_incremental("chan", "general")
+
+            self.assertEqual(total, 2)
+            # Existing channel must use after-based incremental, never before-paging
+            self.assertTrue(all("after" in p for p in seen_params))
+            self.assertFalse(any("before" in p for p in seen_params))
 
 
 class TestSnowflakeHelpers(unittest.TestCase):
