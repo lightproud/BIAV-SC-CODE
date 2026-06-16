@@ -1,8 +1,8 @@
 {
   "date": "2026-06-16",
-  "archived_at": "2026-06-16T12:04:32.971251+00:00",
+  "archived_at": "2026-06-16T17:55:40.055448+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "title": "【忘却前夜】6.15-7.13三相池抽取建议",
@@ -165,6 +165,29 @@
       "content_type": "video"
     },
     {
+      "title": "【沙耶之歌】轻轻的亲亲",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-16T14:33:19+00:00",
+      "url": "https://www.bilibili.com/video/BV1ctjV6JER7",
+      "engagement": 22,
+      "is_hot": false,
+      "author": "就算白牙也黢黑",
+      "tags": [
+        "同人·手书"
+      ],
+      "metadata": {
+        "play": 22,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/3d13bc6b1035f9fb049fe53bbb6e7f344dc39ac8.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "肉",
       "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ dhhhsixd511100 (1赞): xiwa卡密沙麻————",
       "source": "bilibili",
@@ -206,6 +229,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/86d6320ba942c7e86c2eb84983cb55e0b9b1225f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "😌",
+      "summary": "终于看到正常美少女了",
+      "source": "bilibili",
+      "time": "2026-06-16T13:09:20+00:00",
+      "url": "https://www.bilibili.com/video/BV11ZjV6ZE1C",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "包子大王258",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/890b06b3a8324e131b1a5e0dbe2142ececfefd77.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
