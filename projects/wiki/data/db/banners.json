@@ -1,4 +1,0 @@
-{
-  "description": "Banner (卡池) database — curated authoritative records with numeric rates, banner categorization, and rate-up character/trinket foreign keys. Distinct from raw extraction in projects/wiki/data/processed/summon.json. Currently empty stub; to be populated in Phase 3 from summon.json + manual disambiguation.",
-  "banners": []
-}
