@@ -1,0 +1,53 @@
+{
+  "date": "2026-03-28",
+  "archived_at": "2026-04-26T03:27:25.287011+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] 제가 원하던 카오스 제로 나이트메어는 이런 게임이었어요....",
+      "summary": "제가 원하던 카오스 제로 나이트메어는 이런 게임이었어요....",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "koreana",
+      "time": "2026-03-28T13:06:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198159755070/recommended/3052450",
+      "engagement": 16,
+      "is_hot": true,
+      "author": "76561198159755070",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 福利挺好的",
+      "summary": "福利挺好的",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-03-28T02:16:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198763436005/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198763436005",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 好玩，剧情真的很不错，美术非常有特色，这样的剧情配上那充满遗憾的音乐很有感觉",
+      "summary": "好玩，剧情真的很不错，美术非常有特色，这样的剧情配上那充满遗憾的音乐很有感觉",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-03-27T16:35:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199812436415/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199812436415",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

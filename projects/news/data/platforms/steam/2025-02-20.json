@@ -1,0 +1,38 @@
+{
+  "date": "2025-02-20",
+  "archived_at": "2026-04-26T06:55:56.089515+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] 适当",
+      "summary": "适当",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-02-20T04:55:09+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199742138171/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199742138171",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Underated game fr\nEdited: The translation has beco...",
+      "summary": "Underated game fr\nEdited: The translation has become so good atm",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-02-19T18:35:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198408793050/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198408793050",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

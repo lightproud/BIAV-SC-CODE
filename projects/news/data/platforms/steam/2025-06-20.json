@@ -1,0 +1,68 @@
+{
+  "date": "2025-06-20",
+  "archived_at": "2026-04-26T03:27:59.131435+00:00",
+  "source": "steam",
+  "item_count": 4,
+  "items": [
+    {
+      "title": "[正面] 二次元版的杀戮尖塔？",
+      "summary": "二次元版的杀戮尖塔？",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-06-20T01:57:46+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198872058490/recommended/3052450",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "76561198872058490",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] El juego tiene buena pinta, pero no soporto las tr...",
+      "summary": "El juego tiene buena pinta, pero no soporto las traducciones hechas con Google translate, me parece horrible, ademas de que hay partes, que ni siquiera entiendes por el contexto que es lo que te quieren decir.\r\nSi en algún momento tiene alguna traducción un poco mas decente jugaré, por ahora lo dejo en la biblioteca.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "spanish",
+      "time": "2025-06-19T16:35:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198295216918/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198295216918",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面]  Visually appealing, but gameplay quickly becomes ...",
+      "summary": "Visually appealing, but gameplay quickly becomes repetitive. The story feels disjointed and character development is almost non-existent. Technical issues abound, often crashing mid-session. Avoid.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-06-20T11:40:55+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198378737827/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198378737827",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Good game, looking forward to more content. :)\nSti...",
+      "summary": "Good game, looking forward to more content. :)\nStill not well optimized for mobile. My iPhone burns like a hot iron after the first hour of playing. Some texts are too small to read on my phone screen. \nSteam PC client feels better in that regard - and your data is synced across platforms anyway.\nPC client is better than before now, they upgraded the clarity.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-06-20T05:24:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198413410297/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198413410297",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

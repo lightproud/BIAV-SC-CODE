@@ -2,7 +2,7 @@
   "date": "2026-04-04",
   "archived_at": "2026-04-04T15:55:49.891534+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,36 @@
       "review": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
       "timestamp_created": 1775238397,
       "playtime_forever": 29
+    },
+    {
+      "title": "[正面] worth checking out if you like sts or pmoon games",
+      "summary": "worth checking out if you like sts or pmoon games",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-04T15:42:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198131752763/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198131752763",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] kathi my mommy 10/10",
+      "summary": "kathi my mommy 10/10",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-04T06:42:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199072766739/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199072766739",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

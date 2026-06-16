@@ -2,7 +2,7 @@
   "date": "2026-04-07",
   "archived_at": "2026-04-07T15:02:14.274078+00:00",
   "source": "steam",
-  "item_count": 21,
+  "item_count": 23,
   "items": [
     {
       "source": "steam",
@@ -318,6 +318,36 @@
       "review": "갓겜입니다",
       "timestamp_created": 1775555843,
       "playtime_forever": 2909
+    },
+    {
+      "title": "[正面] cool visual design and story",
+      "summary": "cool visual design and story",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-07T11:20:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199197730982/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199197730982",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 夯爆了",
+      "summary": "夯爆了",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-07T11:04:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198782809937/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198782809937",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

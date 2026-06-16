@@ -1,0 +1,38 @@
+{
+  "date": "2024-09-01",
+  "archived_at": "2026-04-26T10:37:13.634937+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[负面] 有钱烧的玩这个",
+      "summary": "有钱烧的玩这个",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-09-01T14:34:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198296234627/recommended/3052450",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "76561198296234627",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Price? = Free\nGoodies? = Lots\nGame play? = Fun\nSto...",
+      "summary": "Price? = Free\nGoodies? = Lots\nGame play? = Fun\nStory? = Splendid\nArt? = Gorgeous\nTranslation? = ChatGPT, not planned, players asked and Devs gave it. Give it time. Easy to understand.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2024-08-31T17:21:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198048893775/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198048893775",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

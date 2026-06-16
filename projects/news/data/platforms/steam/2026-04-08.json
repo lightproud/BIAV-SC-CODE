@@ -2,7 +2,7 @@
   "date": "2026-04-08",
   "archived_at": "2026-04-08T15:03:53.460803+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 21,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,36 @@
       "review": "Great game, very good mechanic, dupe reliant but F2P friendly",
       "timestamp_created": 1775636609,
       "playtime_forever": 8575
+    },
+    {
+      "title": "[正面] Игра хорошая и затягивающая. Классная фоновая музы...",
+      "summary": "Игра хорошая и затягивающая. Классная фоновая музыка и звуковые эффекты.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-04-08T12:00:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198889706879/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198889706879",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 真不赖好吧",
+      "summary": "真不赖好吧",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-08T11:24:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199873224101/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199873224101",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

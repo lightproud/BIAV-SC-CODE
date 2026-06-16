@@ -2,7 +2,7 @@
   "date": "2026-04-12",
   "archived_at": "2026-04-12T14:12:22.130819+00:00",
   "source": "steam",
-  "item_count": 20,
+  "item_count": 24,
   "items": [
     {
       "source": "steam",
@@ -303,6 +303,66 @@
       "review": "とても面白いです",
       "timestamp_created": 1775991092,
       "playtime_forever": 776
+    },
+    {
+      "title": "[正面] I don't think I ever leave comments in steam, beca...",
+      "summary": "I don't think I ever leave comments in steam, because I don't want to comment bad games and good games are usually have a lot of comments anyways. But Morimens is a special case.\nFunnily enough I discovered Morimens only from AI suggestion and omg how glad I am!!! Morimens is truly a hidden  gem in gacha games world.\nI'm not the biggest fan of this type of gameplay, even though it's still very fun. Rich system of characteristic, buffs, debuffs, type of cards etc. And I never was a fan of horror type of games/stories.\nBut! Funny that the main thing that I personally love in Morimens is the story and design. This is the first time I'm playing gacha game and I love to read the story. I'm constantly thinking - ok, what is happening, what will happen next, I want to know!!\nStory, music, atmosphere is just so so good it's unbelievable that this game is not popular.\nI  definetely suggest anyone to try this game. Probaby it will not be your cup of tea, but IF you are a person who may like this game - you really miss the chance to play a hidden gem.\nSorry, English is not my native language, but I still want to leave my comment in English because I want more people to try this beautiful game :3",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-12T13:29:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198062838742/recommended/3052450",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "76561198062838742",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] 这游戏我只建议白嫖，因为这游戏毫无产能，零氪挑一个强力角色围绕去组队也够你打通主线了，你充的钱不会转...",
+      "summary": "这游戏我只建议白嫖，因为这游戏毫无产能，零氪挑一个强力角色围绕去组队也够你打通主线了，你充的钱不会转换成这游戏的一点产能，去年还有4个主线章节呢，今年呢？只有三个，虽然这游戏目前的内容量对于新人来说还是够玩小几个月的，但是玩完呢就是无尽的长草，一个月一个大月卡，新角色阿拉克妮延期两周那这两周咋办呢？再出一张为期两周的大月卡，各种限时主线礼包命轮礼包每周礼包更新礼包巴拉巴拉的，甚至15命都在路上了，但是提高产能做不到呢嘻嘻",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-12T13:58:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198066828152/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561198066828152",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 可以的|\\（U）/",
+      "summary": "可以的|\\（U）/",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-12T13:57:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199868891473/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199868891473",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] 史",
+      "summary": "史",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-12T12:52:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199867517550/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199867517550",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

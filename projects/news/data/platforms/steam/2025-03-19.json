@@ -1,0 +1,38 @@
+{
+  "date": "2025-03-19",
+  "archived_at": "2026-04-26T06:55:54.325061+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] 打牌爽，美术风格够暗黑，策划够史",
+      "summary": "打牌爽，美术风格够暗黑，策划够史",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-03-19T13:18:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198109180649/recommended/3052450",
+      "engagement": 14,
+      "is_hot": true,
+      "author": "76561198109180649",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Slay the Spire-inspired card battler roguelike; th...",
+      "summary": "Slay the Spire-inspired card battler roguelike; the team-building and character-focused gacha mechanics actually manage to improve on the core STS gameplay for me, and the art style and setting are very cool. If a proper english translation comes out (right now there is only LLM translation) it will be my fave gacha\n\nEdit: They fixed the core translation issues and it is now my favorite gacha",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-03-18T16:07:02+00:00",
+      "url": "https://steamcommunity.com/profiles/76561197995394700/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561197995394700",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

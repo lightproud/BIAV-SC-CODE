@@ -1,0 +1,53 @@
+{
+  "date": "2025-09-22",
+  "archived_at": "2026-04-26T03:27:47.326444+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] Дешево, сердито но интересно)",
+      "summary": "Дешево, сердито но интересно)",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-09-22T14:47:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198065613449/recommended/3052450",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "76561198065613449",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] peak",
+      "summary": "peak",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-09-22T15:59:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199100687226/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199100687226",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] ai번역. 모바일 글섭안나옴?",
+      "summary": "ai번역. 모바일 글섭안나옴?",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "koreana",
+      "time": "2025-09-22T13:12:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198453209172/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198453209172",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2024-10-24",
+  "archived_at": "2026-04-26T09:44:31.798264+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] für kostenlos insgesamt in ordnung.",
+      "summary": "für kostenlos insgesamt in ordnung.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "german",
+      "time": "2024-10-23T19:32:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198217318681/recommended/3052450",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "76561198217318681",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 杀戮尖塔缝合怪手游，东西不错，慢慢玩，有氪金点。自己衡量。",
+      "summary": "杀戮尖塔缝合怪手游，东西不错，慢慢玩，有氪金点。自己衡量。",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-10-24T14:22:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198074809337/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198074809337",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 菲茵特宝宝你好萌，，，",
+      "summary": "菲茵特宝宝你好萌，，，",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-10-23T18:08:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199028450044/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199028450044",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "date": "2026-04-05",
   "archived_at": "2026-04-05T15:00:03.321703+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,36 @@
       "review": "Gorgeous game with an amazing story direction. Have been playing it almost nonstop for some months now on steam and my phone and couldn't be happier with it! I play a lot of games with the gacha eleme",
       "timestamp_created": 1775384826,
       "playtime_forever": 4421
+    },
+    {
+      "title": "[正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에...",
+      "summary": "아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에도 스토리 자체가 재미있음!!",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "koreana",
+      "time": "2026-04-05T15:34:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198871848775/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198871848775",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Love the game, especially the story. The lovecraft...",
+      "summary": "Love the game, especially the story. The lovecraftian dark fiction with many factions pursuing their own goals. The worldbuilding up to that point is also splendid, with bits of information to keep the mysterious past. Min-maxing is fun, though i am only having to do it now in later parts, quite a lot so. I basically have all the awakeners to try out different builds and synergies, all i had to do to get the resources for the pulls was playing the game.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-05T14:27:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199823079520/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199823079520",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

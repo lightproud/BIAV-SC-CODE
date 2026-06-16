@@ -1,0 +1,68 @@
+{
+  "date": "2025-09-17",
+  "archived_at": "2026-04-26T03:27:49.284025+00:00",
+  "source": "steam",
+  "item_count": 4,
+  "items": [
+    {
+      "title": "[正面] прикольная",
+      "summary": "прикольная",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-09-17T11:42:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198094279120/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198094279120",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Amazing game",
+      "summary": "Amazing game",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-09-17T11:33:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199479607600/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199479607600",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] I hate the mesonic symbol in the story and the gam...",
+      "summary": "I hate the mesonic symbol in the story and the game design. 🤮",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-09-17T07:33:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198863615981/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198863615981",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 如果 把卡池改成不是不确定池子，我会充钱的，现在嘛，充了了个首充就好了",
+      "summary": "如果 把卡池改成不是不确定池子，我会充钱的，现在嘛，充了了个首充就好了",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-09-17T14:41:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198442274611/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198442274611",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}
