@@ -1,0 +1,38 @@
+{
+  "date": "2025-08-12",
+  "archived_at": "2026-04-26T03:27:53.137136+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[负面] 太慢了，啥都要加载，而且一关耗费的时间也很长。各种玩法也要时间肝",
+      "summary": "太慢了，啥都要加载，而且一关耗费的时间也很长。各种玩法也要时间肝",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-08-12T11:57:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199028645616/recommended/3052450",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "76561199028645616",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] leider mit chat gpt übersetzt aber macht spaß, eri...",
+      "summary": "leider mit chat gpt übersetzt aber macht spaß, erinnert an reverse 1999\r\ncharakter design ist absolut wunderschön und es ist sehr leicht pulls zu bekommen",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "german",
+      "time": "2025-08-12T10:59:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198972435680/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198972435680",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

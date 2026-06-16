@@ -1,0 +1,53 @@
+{
+  "date": "2025-01-09",
+  "archived_at": "2026-04-26T08:13:22.925394+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] 非常好游戏，使我的大脑旋转",
+      "summary": "非常好游戏，使我的大脑旋转",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2025-01-09T15:18:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199784049089/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199784049089",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 카드게임 골수유저가 만든듯한 게임",
+      "summary": "카드게임 골수유저가 만든듯한 게임",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "koreana",
+      "time": "2025-01-09T10:47:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198135763693/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198135763693",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] ta chido :v",
+      "summary": "ta chido :v",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "spanish",
+      "time": "2025-01-09T07:00:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198098637137/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198098637137",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

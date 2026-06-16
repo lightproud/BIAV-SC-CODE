@@ -388,7 +388,9 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
                     lang=language,
                 ))
 
-            _archive_items('steam_review', items)
+            # Steam 评论归一进 steam/（item.source 仍为 steam_review，靠 SOURCE_ALIASES 显示归一）。
+            # 2026-06-15 起不再单独写 steam_review/；历史归档已合并入 steam/。
+            _archive_items('steam', items)
             total += len(items)
             cursor = new_cursor
             ps['cursor'] = cursor

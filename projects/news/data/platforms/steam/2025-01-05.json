@@ -1,0 +1,38 @@
+{
+  "date": "2025-01-05",
+  "archived_at": "2026-04-26T08:13:22.925957+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] i played a bit, it's ok",
+      "summary": "i played a bit, it's ok",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-01-05T11:40:55+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198070382881/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198070382881",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Если бы мне давали по рублю каждый раз когда я игр...",
+      "summary": "Если бы мне давали по рублю каждый раз когда я играл в кидалки карточек с гачей, у меня бы был 1 рубль",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-01-04T20:20:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199733885666/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199733885666",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}

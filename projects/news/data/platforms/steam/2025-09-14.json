@@ -1,0 +1,53 @@
+{
+  "date": "2025-09-14",
+  "archived_at": "2026-04-26T03:27:49.287490+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] I'm not a fan of gacha games, so it's definitively...",
+      "summary": "I'm not a fan of gacha games, so it's definitively not something I'll play myself, but from the little bit I saw, Morimens does look pretty interesting. If they ever decide to make a version of this without in-game purchases, yeah, I'd probably buy it.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-09-14T15:07:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199697359125/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199697359125",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] its kinda like limbus and reverse 1999 to me",
+      "summary": "its kinda like limbus and reverse 1999 to me",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2025-09-13T19:29:20+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199139953949/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199139953949",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] gg",
+      "summary": "gg",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2025-09-13T17:18:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199028018621/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199028018621",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}
