@@ -160,8 +160,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 |
 | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 |
 | `assets/data/card-system.json` | 卡牌系统术语（指令卡等，解包字面验证） |
-| `projects/wiki/data/db/characters.json` | 72 角色基线（自举进度见 `memory/project-status.md`） |
-| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色原始字段（客户端解包，自举数据源） |
+| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色基线原始字段（客户端解包，自举数据源；原结构化角色数据层随 #221 退役、待 W2 重建，进度见 `memory/project-status.md`）|
 | `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
 
 ### §5.2 社区情报（先读 §4 数据纪律）
