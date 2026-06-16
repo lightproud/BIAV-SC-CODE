@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-16T17:55:25.539950+00:00",
+  "collected_at": "2026-06-16T20:37:58.678071+00:00",
   "source": "steam_discussion",
   "item_count": 6,
   "items": [
@@ -35,13 +35,23 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-16T17:12:52+00:00",
+      "time": "2026-06-16T19:24:07+00:00",
       "lang": "en",
       "title": "[Steam论坛] Question about team building",
       "summary": "Is Arachne/Clem/Thais/XU a good team for story? I am in chapter 6 and things are starting to get kinda rough,idk if its a team building issue or I am just a brainlet who cant pilot the team properly(tbh I dont rly understand how clem works)\nAny tips on what characters I should get to improve this?...",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904888719/",
       "author": "DingusDork",
-      "engagement": 2
+      "engagement": 5
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-16T19:55:22+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Invitation Code",
+      "summary": "E4158MVFRI",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904904739/",
+      "author": "nene",
+      "engagement": 0
     },
     {
       "source": "steam_discussion",
@@ -51,16 +61,6 @@
       "summary": "CDW21O0Q22",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904862551/",
       "author": "yang",
-      "engagement": 0
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-15T18:42:45+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Ошибка соединения",
-      "summary": "Пытаюсь авторизоваться при входе в игру, но выдаёт ошибку, мол небезопасное соединение. Код ошибки -1. Кто-нибудь знает что с этим делать?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904822897/",
-      "author": "Gamws",
       "engagement": 0
     }
   ]

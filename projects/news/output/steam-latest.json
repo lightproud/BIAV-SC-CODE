@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-16T17:55:25.539950+00:00",
+  "collected_at": "2026-06-16T20:37:58.678071+00:00",
   "source": "steam",
   "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-16T16:55:36+00:00",
+      "lang": "schinese",
+      "title": "[正面] 苦万",
+      "summary": "苦万",
+      "url": "https://steamcommunity.com/profiles/76561198723762439/recommended/3052450",
+      "author": "76561198723762439",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "苦万",
+      "timestamp_created": 1781628936,
+      "playtime_forever": 463
+    },
     {
       "source": "steam",
       "time": "2026-06-16T15:22:38+00:00",
@@ -92,21 +107,6 @@
       "review": "It's so good.",
       "timestamp_created": 1781571776,
       "playtime_forever": 984
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-15T20:04:29+00:00",
-      "lang": "english",
-      "title": "[正面] Peak",
-      "summary": "Peak",
-      "url": "https://steamcommunity.com/profiles/76561199256249250/recommended/3052450",
-      "author": "76561199256249250",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Peak",
-      "timestamp_created": 1781553869,
-      "playtime_forever": 922
     }
   ]
 }

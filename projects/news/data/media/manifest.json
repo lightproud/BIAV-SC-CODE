@@ -12270,6 +12270,27 @@
       "title": "day 9 N Morimens",
       "time": "2026-06-16T21:24:45+09:00",
       "downloaded_at": "2026-06-16T17:55:39.967723+00:00"
+    },
+    "https://i.ytimg.com/vi/jQfUYbyo1RM/hqdefault.jpg": {
+      "filename": "youtube_3ac75ebb5883ce73.jpg",
+      "source": "youtube",
+      "title": "JENKINMONOGATARI",
+      "time": "2026-06-16T18:00:33Z",
+      "downloaded_at": "2026-06-16T20:37:59.322033+00:00"
+    },
+    "https://i.ytimg.com/vi/a53anD7EVnU/hqdefault_live.jpg": {
+      "filename": "youtube_ce36273c8bae5006.jpg",
+      "source": "youtube",
+      "title": "Rechecking out Morimens After a Long Time",
+      "time": "2026-06-16T20:15:14Z",
+      "downloaded_at": "2026-06-16T20:38:00.383939+00:00"
+    },
+    "https://i.ytimg.com/vi/wpKB6O34zLE/hqdefault_live.jpg": {
+      "filename": "youtube_a7ad83f0627957cb.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-16T19:30:40Z",
+      "downloaded_at": "2026-06-16T20:38:05.564418+00:00"
     }
   },
   "failed": {
@@ -18072,6 +18093,56 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-16T17:55:28.183795+00:00"
+    },
+    "https://preview.redd.it/67kydoyf0p7h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=0a9766dfbfc71f7d03a9cb51937650d21d5d432d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:00.885834+00:00"
+    },
+    "https://preview.redd.it/svre453snl7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fad8abb366e41f799bf06e7e522d0ae4a85d880b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:01.208623+00:00"
+    },
+    "https://preview.redd.it/yi0u0ggv2o7h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=23ebce9e81ae620f64e39cd095506bdeab948b3f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:01.530925+00:00"
+    },
+    "https://preview.redd.it/vna6ewot2n7h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=9964c6957acca439fcd032e84204f7efc55b18a9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:01.854578+00:00"
+    },
+    "https://external-preview.redd.it/Mmx3bHdyZ2lzbTdoMRL_rWuTQOuBBN0p-sORJZRyJ0OdOu2xjkJV_R6A2TlV.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=4f3e1cc8745393b61bfb7971ec324a21bf040fe7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:02.353708+00:00"
+    },
+    "https://preview.redd.it/osz9qloxkk7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=58c529b8e0e4466ff36df91765f18df2dd32d5fc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:02.677179+00:00"
+    },
+    "https://preview.redd.it/8csgnw3j5l7h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=e9b66d7e3a3d565b0e961578d11cdac43e2b877c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:02.999511+00:00"
+    },
+    "https://external-preview.redd.it/N2phejY4aTNkcDdoMTTt6kwaJ5mngcneQdGpx5llbYNT6fkiNa5A52kAHNvL.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=a0e450ee874a1af60177e059775294e76e5c9de7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:03.320624+00:00"
+    },
+    "https://preview.redd.it/0ivpob4l2p7h1.jpg?width=140&amp;height=65&amp;auto=webp&amp;s=651ecaa01078ffddd95471e602d2b2ec7f0de82f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:03.644564+00:00"
+    },
+    "https://preview.redd.it/0wabz2asin7h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=dbc7a4d7ce4374a3c088fd568edbb6d19531b716": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T20:38:03.971520+00:00"
     }
   },
   "archived": []
