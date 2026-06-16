@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-16T00:24:38.243314+00:00",
+  "collected_at": "2026-06-16T06:25:54.417209+00:00",
   "source": "pixiv",
-  "item_count": 34,
+  "item_count": 33,
   "items": [
     {
       "source": "pixiv",
@@ -398,16 +398,6 @@
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/18/05/48/27/144912469_p0_custom1200.jpg",
       "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-16T00:23:49.967451+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
     }
   ]
 }
