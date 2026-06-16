@@ -1,0 +1,28 @@
+{
+  "date": "2025-08-30",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "ID Team Contributions! <3": 1,
+    "Organized Worksheet for Relics": 1
+  },
+  "hourly_activity": {
+    "14": 1,
+    "3": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1411187742548955167",
+      "channel_id": "1411187742548955167",
+      "content": "FOR VOLUNTEERS OF ALL LANGUAGES:\nHere's all the Relics I could find! Sectioned o",
+      "author": "omnichromia",
+      "reactions": 4,
+      "channel": "Organized Worksheet for Relics"
+    }
+  ]
+}

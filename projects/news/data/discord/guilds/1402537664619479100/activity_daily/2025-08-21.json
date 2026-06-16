@@ -1,0 +1,162 @@
+{
+  "date": "2025-08-21",
+  "messages": 53,
+  "unique_authors": 15,
+  "reactions_total": 48,
+  "attachments": 12,
+  "channel_activity": {
+    "self-introductions": 6,
+    "awakener lines in general (profile stories/quotes/voicelines)": 3,
+    "Cutscenes with embedded subtitles!": 16,
+    "Scene Title Cards": 10,
+    "Name translations": 16,
+    "Does anyone already did a language translation (that is not EN) ?": 2
+  },
+  "hourly_activity": {
+    "10": 1,
+    "11": 2,
+    "13": 1,
+    "14": 17,
+    "17": 3,
+    "18": 1,
+    "20": 4,
+    "21": 12,
+    "3": 4,
+    "4": 6,
+    "16": 2
+  },
+  "message_types": {
+    "0": 49,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1408090786305933353",
+      "channel_id": "1406970664145129473",
+      "content": "Hello, my name is Riddle! I'm a native Russian speaker and am also fluent in Eng",
+      "author": "theriddleofcards",
+      "reactions": 10,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408030968471879700",
+      "channel_id": "1406970664145129473",
+      "content": "Hi; I'm Shrimple!! \n\nI am... *me.*\n\nI am here to serve as an editor/proofreader ",
+      "author": "notsoshrimpleofficial",
+      "reactions": 5,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408139867837169756",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, my name is Bervernis (or Sin).\nI am a native Russian speaker and am also kno",
+      "author": "0catharsis01838",
+      "reactions": 4,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408097495954751690",
+      "channel_id": "1408095995535032400",
+      "content": "so in the case of ramona: timeworn, tulu: sovereign, and murphy: fauxborn, their",
+      "author": "arkaether",
+      "reactions": 4,
+      "channel": "Name translations"
+    },
+    {
+      "id": "1408119912488243322",
+      "channel_id": "1408091523026911343",
+      "content": "Just some tips and pointers would be:\n\n-Do not change the context of a sentence ",
+      "author": "reapersakamaki",
+      "reactions": 4,
+      "channel": "Does anyone already did a language translation (that is not EN) ?"
+    },
+    {
+      "id": "1408046466370633758",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, there! I usually go by the pen name \"ไอติมพริกเผา\" (pronounce: Aitim Phrik P",
+      "author": "darkerkuro",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408050507582406807",
+      "channel_id": "1406970664145129473",
+      "content": "Hi everyone! 👋\n\nI’m Serhii. My native languages are Russian and Ukrainian. I als",
+      "author": "kainoxis",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408079788127817758",
+      "channel_id": "1406970664145129473",
+      "content": "Hello everyone,\nMy name is Miguel, and I’m an IT professional with a strong inte",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407928126427758733",
+      "channel_id": "1407928126427758733",
+      "content": "Every scene in the game appears to have a separate English subtitle under it, wh",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "Scene Title Cards"
+    },
+    {
+      "id": "1407948349096853554",
+      "channel_id": "1407928126427758733",
+      "content": "yep that one i'm changing for sure, \"sleeved trump\" is a pretty bad literal MTL ",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "Scene Title Cards"
+    },
+    {
+      "id": "1408098194948227093",
+      "channel_id": "1408095995535032400",
+      "content": "yep, at least in my opinion",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "Name translations"
+    },
+    {
+      "id": "1408098260018528306",
+      "channel_id": "1408095995535032400",
+      "content": "For titles, it make sense imo",
+      "author": "shiio4870",
+      "reactions": 2,
+      "channel": "Name translations"
+    },
+    {
+      "id": "1408193037313511548",
+      "channel_id": "1408193037313511548",
+      "content": "One thing that became quickly apparent as I began working on the Prologue, is th",
+      "author": "sophiechoice",
+      "reactions": 1,
+      "channel": "Cutscenes with embedded subtitles!"
+    },
+    {
+      "id": "1407947739156971620",
+      "channel_id": "1407928126427758733",
+      "content": "Understood! I figured that was likely the case, so I've been translating the sta",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Scene Title Cards"
+    },
+    {
+      "id": "1407948113452204034",
+      "channel_id": "1407928126427758733",
+      "content": "-# just gonna add that \"Ace Up My Sleeve\" is only 16 characters so it fits\n-# ok",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Scene Title Cards"
+    },
+    {
+      "id": "1408096957200859236",
+      "channel_id": "1408095995535032400",
+      "content": "i.e., Daffodil isn't the word for the daffodil flower in chinese, it's 达芙黛尔, pro",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Name translations"
+    }
+  ]
+}

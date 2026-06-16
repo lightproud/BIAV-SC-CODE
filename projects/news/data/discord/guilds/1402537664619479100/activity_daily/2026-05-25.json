@@ -1,0 +1,27 @@
+{
+  "date": "2026-05-25",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 3
+  },
+  "hourly_activity": {
+    "7": 2,
+    "16": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1508365782709436456",
+      "channel_id": "1402941858606219294",
+      "content": "for some reason I don't think the \"for every 1%\" part should be included in the ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

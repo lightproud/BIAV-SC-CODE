@@ -1,0 +1,89 @@
+{
+  "date": "2026-03-12",
+  "messages": 27,
+  "unique_authors": 9,
+  "reactions_total": 33,
+  "attachments": 2,
+  "channel_activity": {
+    "links-and-resources": 2,
+    "english-english": 6,
+    "self-introductions": 4,
+    "announcements": 3,
+    "project-coordination": 7,
+    "1481487827626889388": 5
+  },
+  "hourly_activity": {
+    "2": 5,
+    "3": 11,
+    "12": 2,
+    "13": 2,
+    "14": 2,
+    "17": 3,
+    "22": 2
+  },
+  "message_types": {
+    "0": 21,
+    "18": 1,
+    "6": 2,
+    "19": 1,
+    "2": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481636333779947550",
+      "channel_id": "1406970664145129473",
+      "content": "Yooo!!\nI’m Starriex (Star works too). I’ve spent a good chunk of time translatin",
+      "author": "altsenti",
+      "reactions": 7,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481636698776670313",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! You can call me Allie. I suppose if we go with the definition of “first l",
+      "author": "tyrannorzhova.rex",
+      "reactions": 7,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481650350074102014",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! I'm Lislium but feel free to call me Lili. My native language is French a",
+      "author": "lislium",
+      "reactions": 6,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481655812593291376",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! \nI'm Cha and I'm translating to ID, I'm proficient in EN and I can read a",
+      "author": "cha.ryko",
+      "reactions": 6,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481478362063962224",
+      "channel_id": "1402537664619479103",
+      "content": "NEW TERM BASE:\nhttps://docs.google.com/spreadsheets/d/1jBBfRth1v3n2T5J7k3fZ67E0L",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1481477422795981022",
+      "channel_id": "1402537664619479103",
+      "content": "March Update!\n\n~~NEW SOURCE SHEET:\nhttps://drive.google.com/drive/folders/1sOyop",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1481713022895394917",
+      "channel_id": "1416615133479960647",
+      "content": "Welcome to the team!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}

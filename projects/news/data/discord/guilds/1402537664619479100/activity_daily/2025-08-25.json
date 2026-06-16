@@ -1,0 +1,90 @@
+{
+  "date": "2025-08-25",
+  "messages": 20,
+  "unique_authors": 7,
+  "reactions_total": 13,
+  "attachments": 2,
+  "channel_activity": {
+    "self-introductions": 1,
+    "About UI&Misc sheet": 1,
+    "Max Arithmetica(最大算力) / Arithmetica Limit(算力上限)": 1,
+    "Tagged term translation": 2,
+    "On adding Flavor where the Text is otherwise Bland": 2,
+    "Question on 虚无 vs. 空虚": 4,
+    "Use of realms as terminology": 3,
+    "About UI / Wording": 4,
+    "ID Team Contributions! <3": 1,
+    "DE Team Contribution": 1
+  },
+  "hourly_activity": {
+    "2": 7,
+    "16": 3,
+    "17": 2,
+    "22": 3,
+    "18": 3,
+    "19": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 17,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1409362491401699410",
+      "channel_id": "1406970664145129473",
+      "content": "Hey!! I'm Verz!\nI'm here to assist with proofreading and testing of EN! I've wor",
+      "author": "verz",
+      "reactions": 4,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1409363558621249700",
+      "channel_id": "1409244176851144854",
+      "content": "Introducing stylistic variations at this stage risks creating player confusion a",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "On adding Flavor where the Text is otherwise Bland"
+    },
+    {
+      "id": "1409362000147910656",
+      "channel_id": "1409041465757274112",
+      "content": "PanelText is supposed to be UI, and LanguageConfig contains some UI text and... ",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "About UI&Misc sheet"
+    },
+    {
+      "id": "1409363302529892483",
+      "channel_id": "1408765320465879121",
+      "content": "I kinda knew it but was not 100% sure. Thank you for confirming!",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "Tagged term translation"
+    },
+    {
+      "id": "1409575239326634025",
+      "channel_id": "1409573476309667950",
+      "content": "虚无 is \"void\" as in nihility. It's more of a high-level conceptual thing, so it's",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Question on 虚无 vs. 空虚"
+    },
+    {
+      "id": "1409605854344249438",
+      "channel_id": "1409601556851982417",
+      "content": "for that particular term, the phrase \"One-Click Collection\" seems to be used for",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "About UI / Wording"
+    },
+    {
+      "id": "1409621458795106324",
+      "channel_id": "1409601556851982417",
+      "content": "All good! I've added a simple overflow interface issue on the sheet, hopefully t",
+      "author": "verz",
+      "reactions": 1,
+      "channel": "About UI / Wording"
+    }
+  ]
+}

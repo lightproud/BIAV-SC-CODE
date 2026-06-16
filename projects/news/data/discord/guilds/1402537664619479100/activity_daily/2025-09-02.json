@@ -1,0 +1,28 @@
+{
+  "date": "2025-09-02",
+  "messages": 13,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 2,
+  "channel_activity": {
+    "Putting (ArgX)s in a different order": 9,
+    "Question about the gender designation of the keeper.": 4
+  },
+  "hourly_activity": {
+    "6": 9,
+    "20": 4
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412535924914524261",
+      "channel_id": "1412533191155122316",
+      "content": "yes, you can use the gender tag:\n```{Male=TEXT1,Female=TEXT2}```",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Question about the gender designation of the keeper."
+    }
+  ]
+}

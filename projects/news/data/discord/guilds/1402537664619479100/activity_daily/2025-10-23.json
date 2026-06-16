@@ -1,0 +1,36 @@
+{
+  "date": "2025-10-23",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "2025 October Contribution Log: V2.3.4 Update": 5
+  },
+  "hourly_activity": {
+    "6": 2,
+    "11": 3
+  },
+  "message_types": {
+    "19": 4,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1430875851448254589",
+      "channel_id": "1429802285365465148",
+      "content": "Got it! I'll add Loki Locstar, Basile, and Jun to the in-game list for now, it w",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "2025 October Contribution Log: V2.3.4 Update"
+    },
+    {
+      "id": "1430802002165764148",
+      "channel_id": "1429802285365465148",
+      "content": "Hello!\nSorry it's not taking effect yet! We will try to run it again this week",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "2025 October Contribution Log: V2.3.4 Update"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2025-10-24",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "announcements": 3,
+    "Exalt voicelines?": 1,
+    "TH Contribution": 1
+  },
+  "hourly_activity": {
+    "7": 2,
+    "8": 2,
+    "10": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1431190495132123177",
+      "channel_id": "1407641395891535883",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "announcements"
+    },
+    {
+      "id": "1431200809823109150",
+      "channel_id": "1429690851432464488",
+      "content": "Hello!\n\nWe'll release a file containing all the voicelines this weekend!!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Exalt voicelines?"
+    }
+  ]
+}

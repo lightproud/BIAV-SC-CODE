@@ -1,0 +1,68 @@
+{
+  "date": "2026-04-03",
+  "messages": 8,
+  "unique_authors": 2,
+  "reactions_total": 7,
+  "attachments": 0,
+  "channel_activity": {
+    "coordination-uploads": 8
+  },
+  "hourly_activity": {
+    "4": 1,
+    "5": 7
+  },
+  "message_types": {
+    "19": 5,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1489493574541250570",
+      "channel_id": "1446619934565204231",
+      "content": "And I like reading helpful information xD",
+      "author": "anicillia",
+      "reactions": 2,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489491566895829072",
+      "channel_id": "1446619934565204231",
+      "content": "Compiled~",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489492788478349432",
+      "channel_id": "1446619934565204231",
+      "content": "All good! No need to have any prior experience with Git, just follow <#141942915",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489493144092545034",
+      "channel_id": "1446619934565204231",
+      "content": "And yeah, people say I tend to \"overexplain\" things, but really I just always wa",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489493421071536319",
+      "channel_id": "1446619934565204231",
+      "content": "I like helping~",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1489494774816706740",
+      "channel_id": "1446619934565204231",
+      "content": "Compiled!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    }
+  ]
+}

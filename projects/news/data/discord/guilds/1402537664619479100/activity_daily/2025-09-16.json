@@ -1,0 +1,46 @@
+{
+  "date": "2025-09-16",
+  "messages": 19,
+  "unique_authors": 10,
+  "reactions_total": 2,
+  "attachments": 4,
+  "channel_activity": {
+    "NDAs have been sent!": 11,
+    "[ExDesc1] Tags in Junction": 1,
+    "WoD Banner Details Text": 2,
+    "ID Team Contributions! <3": 3,
+    "2025 September Contribution Log: V2.3.2 Update": 1,
+    "FR Team Contribution": 1
+  },
+  "hourly_activity": {
+    "5": 2,
+    "6": 4,
+    "7": 6,
+    "9": 2,
+    "16": 1,
+    "14": 3,
+    "11": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417396797315223572",
+      "channel_id": "1417045058862977025",
+      "content": "If you already signed it once, no need to do it again 🙂",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "NDAs have been sent!"
+    },
+    {
+      "id": "1417442818728656939",
+      "channel_id": "1414912367690514522",
+      "content": "<@1376763322568937562> sorry to bother and notify this late\nJulia and me also tr",
+      "author": "larvani",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    }
+  ]
+}

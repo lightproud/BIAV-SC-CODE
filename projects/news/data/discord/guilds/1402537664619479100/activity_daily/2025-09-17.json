@@ -1,0 +1,68 @@
+{
+  "date": "2025-09-17",
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "links-and-resources": 2,
+    "self-introductions": 2,
+    "NDAs have been sent!": 1,
+    "ES Contribution": 1,
+    "FR Team Contribution": 1
+  },
+  "hourly_activity": {
+    "7": 2,
+    "4": 1,
+    "20": 1,
+    "0": 1,
+    "19": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 6,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417977541267947700",
+      "channel_id": "1406970664145129473",
+      "content": "Hello, it's Cassius. I suppose I count as a native English speaker who simply lo",
+      "author": "ev_6185",
+      "reactions": 9,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1417734586661732427",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! Im Sơn , just call me Aegis \nIm Vietnamese . I big fan of Turnbase and ro",
+      "author": "aegisx",
+      "reactions": 5,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1417772428708286575",
+      "channel_id": "1402537664619479103",
+      "content": "Hello guys!\n\nThe latest comprehensive battle related source files can be found h",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1417774664012267664",
+      "channel_id": "1402537664619479103",
+      "content": "I've also updated the English term base: https://docs.google.com/spreadsheets/d/",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1417756635887304715",
+      "channel_id": "1408432819885310064",
+      "content": "thank you! sorry we missed these names; the in-game list will be edited to add t",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "FR Team Contribution"
+    }
+  ]
+}

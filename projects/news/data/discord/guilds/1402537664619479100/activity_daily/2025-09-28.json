@@ -1,0 +1,28 @@
+{
+  "date": "2025-09-28",
+  "messages": 4,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "relevant-forwards": 2,
+    "Resonance Questions": 2
+  },
+  "hourly_activity": {
+    "5": 2,
+    "21": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421977424609939498",
+      "channel_id": "1421974900742164500",
+      "content": "These are Resonance-related Map Nodes. What chapters or side stories do they bel",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Resonance Questions"
+    }
+  ]
+}

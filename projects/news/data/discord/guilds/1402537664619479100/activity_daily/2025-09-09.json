@@ -1,0 +1,112 @@
+{
+  "date": "2025-09-09",
+  "messages": 33,
+  "unique_authors": 12,
+  "reactions_total": 23,
+  "attachments": 3,
+  "channel_activity": {
+    "Aliemus ?": 2,
+    "Implementation of newlines (\\n) and spaces ( )": 7,
+    "A question regarding familiarity between Keeper and Awakeners": 4,
+    "ID Team Contributions! <3": 2,
+    "2025 September Contribution Log: V2.3.2 Update": 17,
+    "FR Team Contribution": 1
+  },
+  "hourly_activity": {
+    "16": 2,
+    "2": 3,
+    "9": 7,
+    "10": 12,
+    "11": 1,
+    "14": 3,
+    "15": 3,
+    "17": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 24,
+    "19": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414917115215089794",
+      "channel_id": "1414912367690514522",
+      "content": "Adelle, Alza-asn, Arkaether, Bervernis, darkerkuro, Dredge, ghostboots, Goz, Kai",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414912367690514522",
+      "channel_id": "1414912367690514522",
+      "content": "Dear @everyone,\n\nThank you so much from the bottom of our hearts for your help!\n",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414917095086489621",
+      "channel_id": "1408432819885310064",
+      "content": "**Update** : Wheels of Destiny names, Major Characters names and codenames \n\n**C",
+      "author": "legendaryredz",
+      "reactions": 3,
+      "channel": "FR Team Contribution"
+    },
+    {
+      "id": "1414916051254120551",
+      "channel_id": "1414912367690514522",
+      "content": "i was the only one who uploaded but we worked together!",
+      "author": "nero_aliapoh",
+      "reactions": 2,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414792563646398516",
+      "channel_id": "1414792563646398516",
+      "content": "Question for <@1376763322568937562>:\nI'd like to make liberal use of newlines an",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Implementation of newlines (\\n) and spaces ( )"
+    },
+    {
+      "id": "1414915847172133015",
+      "channel_id": "1414912367690514522",
+      "content": "Korean(KR)\nNero, LavenderJuly\nProofread major ui and gameplay elements consisten",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414938176492929065",
+      "channel_id": "1414912367690514522",
+      "content": "Japanese (JA)\nAlza\nProofread Prologe\n\nPlease list my name as “Alza”, not “Alza-a",
+      "author": "alz_asn",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414982565982634014",
+      "channel_id": "1414912367690514522",
+      "content": "https://tenor.com/view/its-happening-gif-23353691",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1414996383529959526",
+      "channel_id": "1414912367690514522",
+      "content": "Thank you Ace! I realized that the official patch notes generally list every cha",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1415101428094992504",
+      "channel_id": "1414912367690514522",
+      "content": "Hey <@1376763322568937562> I failed to catch a pretty severe error in my initial",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    }
+  ]
+}

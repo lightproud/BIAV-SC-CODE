@@ -1,0 +1,37 @@
+{
+  "date": "2025-09-07",
+  "messages": 18,
+  "unique_authors": 4,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "Tense & use of italics": 18
+  },
+  "hourly_activity": {
+    "21": 3,
+    "22": 2,
+    "23": 13
+  },
+  "message_types": {
+    "0": 16,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414387909884379287",
+      "channel_id": "1414364333726765056",
+      "content": "personally I have just been making my own judgements depending on the context - ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Tense & use of italics"
+    },
+    {
+      "id": "1414392108822958141",
+      "channel_id": "1414364333726765056",
+      "content": "agreed. use it sparingly, but use it.",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Tense & use of italics"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "date": "2025-08-22",
+  "messages": 72,
+  "unique_authors": 18,
+  "reactions_total": 62,
+  "attachments": 15,
+  "channel_activity": {
+    "self-introductions": 3,
+    "announcements": 1,
+    "Why \"Awakener\" ?": 2,
+    "No Kathigu-Ra related terms?": 3,
+    "Japanese translations": 3,
+    "Please disable profanity filter from Carl-Bot": 4,
+    "About Helot's ru name": 3,
+    "Questions about rewriting gameplay descriptions": 17,
+    "Max Arithmetica(最大算力) / Arithmetica Limit(算力上限)": 2,
+    "Does anyone already did a language translation (that is not EN) ?": 1,
+    "Ten Rings, Play!": 3,
+    "TH Contribution": 1,
+    "ID Team Contributions! <3": 7,
+    "DE Team Contribution": 1,
+    "ES Contribution": 2,
+    "FR Team Contribution": 1,
+    "KR Team Contribution": 2,
+    "PT Contribution": 15,
+    "RU Terms Contribution": 1
+  },
+  "hourly_activity": {
+    "8": 11,
+    "9": 6,
+    "12": 11,
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "0": 1,
+    "11": 2,
+    "6": 2,
+    "15": 4,
+    "13": 1,
+    "18": 2,
+    "19": 12,
+    "4": 5,
+    "5": 2,
+    "17": 6
+  },
+  "message_types": {
+    "0": 63,
+    "19": 6,
+    "4": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1408389768265601075",
+      "channel_id": "1407641395891535883",
+      "content": "@everyone Hi all!\n\nA new version of Source Sheets has been uploaded!\nIt now cont",
+      "author": "morimens_15",
+      "reactions": 15,
+      "channel": "announcements"
+    },
+    {
+      "id": "1408427035080134736",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, I'm El! I'm professional EN->RU and JP->RU translator. Have some knowledge o",
+      "author": "elandriah",
+      "reactions": 6,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408410092105240576",
+      "channel_id": "1408410092105240576",
+      "content": "Done: all of the Major Characters page, SSR Wheels.\nWIP: SR and R Wheels, Skills",
+      "author": "theriddleofcards",
+      "reactions": 6,
+      "channel": "RU Terms Contribution"
+    },
+    {
+      "id": "1408367050878877706",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! I'm Suver. I'm native russian and also know english. I have experience in",
+      "author": "suver_",
+      "reactions": 5,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408252685211271248",
+      "channel_id": "1408252685211271248",
+      "content": "There are now two examples of Carl-bot swiftly deleting 40+ minutes of detailed ",
+      "author": "omnichromia",
+      "reactions": 4,
+      "channel": "Please disable profanity filter from Carl-Bot"
+    },
+    {
+      "id": "1408422026875768842",
+      "channel_id": "1408422026875768842",
+      "content": "It's  long way to go but, let's do this!\n\nContributers:\n\nNero\nLavenderJuly",
+      "author": "nero_aliapoh",
+      "reactions": 4,
+      "channel": "KR Team Contribution"
+    },
+    {
+      "id": "1408376149679280269",
+      "channel_id": "1408332779497721940",
+      "content": "To sum up:\n\n1) For now: Let's **not do large sweeping edits yet**.\n2) I will col",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "Questions about rewriting gameplay descriptions"
+    },
+    {
+      "id": "1408302426833817662",
+      "channel_id": "1408302426833817662",
+      "content": "",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "ID Team Contributions! <3"
+    },
+    {
+      "id": "1408376224262258831",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! <a:kyuuwave:544653198229635073> \nYou can call me Nauravale or just Val.\n\n",
+      "author": "valoup",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1408435153935667261",
+      "channel_id": "1408434957638045849",
+      "content": "The main point being : **what are the essential concepts we need to convey with ",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "Why \"Awakener\" ?"
+    },
+    {
+      "id": "1408468009810395147",
+      "channel_id": "1408332779497721940",
+      "content": "Okay, awesome! Thanks for the confidence boost haha\nHere's what I'll plan to do,",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "Questions about rewriting gameplay descriptions"
+    },
+    {
+      "id": "1408432819885310064",
+      "channel_id": "1408432819885310064",
+      "content": "**WIP:** Wheels of Destiny names\n\n**Contributor:** Noah, Goz\n\nWe will update the",
+      "author": "baguettesuffering",
+      "reactions": 2,
+      "channel": "FR Team Contribution"
+    },
+    {
+      "id": "1408292447737479321",
+      "channel_id": "1408252685211271248",
+      "content": "Thank you! It was on by default, I'll look into how to disable it",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Please disable profanity filter from Carl-Bot"
+    },
+    {
+      "id": "1408296227833122867",
+      "channel_id": "1408252685211271248",
+      "content": "should be good now, I cleared the carlbot word blacklist so it can't trigger on ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Please disable profanity filter from Carl-Bot"
+    },
+    {
+      "id": "1408412329137143848",
+      "channel_id": "1408389499926478868",
+      "content": "Yes, corrected. Thank you!",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "About Helot's ru name"
+    },
+    {
+      "id": "1408332779497721940",
+      "channel_id": "1408332779497721940",
+      "content": "<@1376763322568937562> I don't wanna bug you *too* much so this'll be the last t",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Questions about rewriting gameplay descriptions"
+    },
+    {
+      "id": "1408377076993626194",
+      "channel_id": "1408332779497721940",
+      "content": "Like for example, they will read your suggestions, and improve the orignal Chine",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Questions about rewriting gameplay descriptions"
+    },
+    {
+      "id": "1408313795985670144",
+      "channel_id": "1408313795985670144",
+      "content": "currently working on the Skills and Mechanisms sections, might take time since i",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "TH Contribution"
+    },
+    {
+      "id": "1408322881724612739",
+      "channel_id": "1408302426833817662",
+      "content": "Adelle, <@1032147341060362332> And <@648457175076831233>",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "ID Team Contributions! <3"
+    },
+    {
+      "id": "1408500575045292183",
+      "channel_id": "1408500575045292183",
+      "content": "Contributors: **Larvani**, **Julia**\n\n# Important Terms Sheet\n\nWheels Tab: **Com",
+      "author": "strandiel",
+      "reactions": 1,
+      "channel": "DE Team Contribution"
+    }
+  ]
+}

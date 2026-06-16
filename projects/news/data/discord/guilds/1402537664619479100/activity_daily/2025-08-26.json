@@ -1,0 +1,88 @@
+{
+  "date": "2025-08-26",
+  "messages": 15,
+  "unique_authors": 7,
+  "reactions_total": 15,
+  "attachments": 2,
+  "channel_activity": {
+    "Does chapter 1 have 2 versions?": 2,
+    "Use of realms as terminology": 2,
+    "Github editing": 2,
+    "JP Settings UI": 4,
+    "ES Contribution": 1,
+    "FR Team Contribution": 1,
+    "KR Team Contribution": 1,
+    "Organized Worksheet for Wheels of Destiny": 2
+  },
+  "hourly_activity": {
+    "21": 3,
+    "22": 2,
+    "4": 1,
+    "5": 1,
+    "19": 2,
+    "15": 2,
+    "18": 3,
+    "20": 1
+  },
+  "message_types": {
+    "0": 15
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410020319196086393",
+      "channel_id": "1410020319196086393",
+      "content": "FOR VOLUNTEERS OF ALL LANGUAGES:\nI organized the scattered sheet rows relating t",
+      "author": "omnichromia",
+      "reactions": 8,
+      "channel": "Organized Worksheet for Wheels of Destiny"
+    },
+    {
+      "id": "1410001818783584297",
+      "channel_id": "1408432819885310064",
+      "content": "Wheel names are done. Tulu's might get a change in the coming days, but it will ",
+      "author": "baguettesuffering",
+      "reactions": 2,
+      "channel": "FR Team Contribution"
+    },
+    {
+      "id": "1410021187303637186",
+      "channel_id": "1410020401731342466",
+      "content": "I encountered the same thing for chapter 5 - as far as I can tell, the older/pre",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Does chapter 1 have 2 versions?"
+    },
+    {
+      "id": "1409764796307472458",
+      "channel_id": "1407785080025383157",
+      "content": "I'll check whenever I get there then",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Use of realms as terminology"
+    },
+    {
+      "id": "1409986054014107700",
+      "channel_id": "1409985520687120475",
+      "content": "yes! if the file is named the same you can open a new pull request with the upda",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "Github editing"
+    },
+    {
+      "id": "1409969088901550281",
+      "channel_id": "1408497218004189201",
+      "content": "All wheels complete",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "ES Contribution"
+    },
+    {
+      "id": "1410021438051844189",
+      "channel_id": "1410020319196086393",
+      "content": "what a genius",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "Organized Worksheet for Wheels of Destiny"
+    }
+  ]
+}

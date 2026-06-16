@@ -1,0 +1,30 @@
+{
+  "date": "2025-09-21",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "如何解決翻譯與校對人員的同步編輯衝突問題？": 1,
+    "ID Team Contributions! <3": 1,
+    "DE Team Contribution": 1
+  },
+  "hourly_activity": {
+    "4": 1,
+    "14": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1419179851272814602",
+      "channel_id": "1419179851272814602",
+      "content": "How to Resolve the Editing Sync Conflicts Between Translators and Proofreaders W",
+      "author": "ev_6185",
+      "reactions": 2,
+      "channel": "如何解決翻譯與校對人員的同步編輯衝突問題？"
+    }
+  ]
+}

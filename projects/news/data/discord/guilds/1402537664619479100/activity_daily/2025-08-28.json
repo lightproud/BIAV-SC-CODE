@@ -1,0 +1,51 @@
+{
+  "date": "2025-08-28",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 13,
+  "attachments": 0,
+  "channel_activity": {
+    "self-introductions": 1,
+    "A question regarding familiarity between Keeper and Awakeners": 2,
+    "DE Team Contribution": 1,
+    "KR Team Contribution": 2,
+    "(mostly) Organized Worksheet for Interlude Menus": 1
+  },
+  "hourly_activity": {
+    "10": 1,
+    "11": 2,
+    "17": 1,
+    "5": 1,
+    "15": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410576202070229043",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! I’m 拉娅妮丝, you can call me flarin here.\n\nI’m a Chinese native speaker and ",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1410486353166336081",
+      "channel_id": "1410486353166336081",
+      "content": "FOR VOLUNTEERS OF ALL LANGUAGES:\nI had so much positive feedback when I made an ",
+      "author": "omnichromia",
+      "reactions": 3,
+      "channel": "(mostly) Organized Worksheet for Interlude Menus"
+    },
+    {
+      "id": "1410676023741251604",
+      "channel_id": "1408500575045292183",
+      "content": "53% Skills done and double checked,\n\nI'm working on Mercy's Interlude Menus shee",
+      "author": "strandiel",
+      "reactions": 1,
+      "channel": "DE Team Contribution"
+    }
+  ]
+}

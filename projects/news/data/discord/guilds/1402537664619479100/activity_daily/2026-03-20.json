@@ -1,0 +1,27 @@
+{
+  "date": "2026-03-20",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 1,
+  "attachments": 2,
+  "channel_activity": {
+    "project-coordination": 3
+  },
+  "hourly_activity": {
+    "19": 2,
+    "23": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1484689854800466041",
+      "channel_id": "1416615133479960647",
+      "content": "Sent, sent, sent!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}

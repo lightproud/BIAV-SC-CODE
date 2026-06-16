@@ -1,0 +1,38 @@
+{
+  "date": "2025-08-24",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 2,
+  "attachments": 2,
+  "channel_activity": {
+    "Source Sheet and Term update process/timeline": 2,
+    "About UI&Misc sheet": 6,
+    "On adding Flavor where the Text is otherwise Bland": 1
+  },
+  "hourly_activity": {
+    "17": 2,
+    "5": 6,
+    "18": 1
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1409233486920941578",
+      "channel_id": "1409232320657100954",
+      "content": "Adding to this :\n1. it would be very nice if the csv conversion was done by BIAV",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "Source Sheet and Term update process/timeline"
+    },
+    {
+      "id": "1409244176851144854",
+      "channel_id": "1409244176851144854",
+      "content": "Here's some excerpts from a lengthy discussion that was had in <#140253804025308",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "On adding Flavor where the Text is otherwise Bland"
+    }
+  ]
+}

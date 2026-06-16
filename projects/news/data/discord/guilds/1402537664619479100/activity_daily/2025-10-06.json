@@ -1,0 +1,29 @@
+{
+  "date": "2025-10-06",
+  "messages": 18,
+  "unique_authors": 3,
+  "reactions_total": 1,
+  "attachments": 9,
+  "channel_activity": {
+    "Resonance Questions": 18
+  },
+  "hourly_activity": {
+    "5": 11,
+    "6": 2,
+    "16": 5
+  },
+  "message_types": {
+    "19": 6,
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1424633691329531914",
+      "channel_id": "1421974900742164500",
+      "content": "",
+      "author": "wisteriavine11",
+      "reactions": 1,
+      "channel": "Resonance Questions"
+    }
+  ]
+}

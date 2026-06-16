@@ -1,0 +1,26 @@
+{
+  "date": "2026-04-15",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 11,
+  "attachments": 0,
+  "channel_activity": {
+    "announcements": 3
+  },
+  "hourly_activity": {
+    "3": 3
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1493820900414328892",
+      "channel_id": "1407641395891535883",
+      "content": "**⚠️ Before You Start**\n\n**On length: **Please try to keep your translation to r",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": "announcements"
+    }
+  ]
+}

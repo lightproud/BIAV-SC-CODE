@@ -1,0 +1,45 @@
+{
+  "date": "2025-12-04",
+  "messages": 38,
+  "unique_authors": 4,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "english-english": 35,
+    "2025 November Contribution Log: V2.4.X Updates": 3
+  },
+  "hourly_activity": {
+    "8": 35,
+    "7": 3
+  },
+  "message_types": {
+    "0": 37,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1446061365037895783",
+      "channel_id": "1402538040253087766",
+      "content": "not his own actual posse which sucks",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "english-english"
+    },
+    {
+      "id": "1446061854068576400",
+      "channel_id": "1402538040253087766",
+      "content": "isn't Horla's posse technically a Discover effect?",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1446039128150900922",
+      "channel_id": "1445722221820772422",
+      "content": "I think <@605159327942049844> is worth crediting in this round of contributors (",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "2025 November Contribution Log: V2.4.X Updates"
+    }
+  ]
+}

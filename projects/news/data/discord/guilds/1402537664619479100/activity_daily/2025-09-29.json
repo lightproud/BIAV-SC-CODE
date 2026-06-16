@@ -1,0 +1,31 @@
+{
+  "date": "2025-09-29",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 1,
+  "attachments": 3,
+  "channel_activity": {
+    "ID Team Contributions! <3": 1,
+    "Resonance Questions": 3
+  },
+  "hourly_activity": {
+    "12": 1,
+    "0": 1,
+    "4": 1,
+    "5": 1
+  },
+  "message_types": {
+    "0": 2,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422015043175845958",
+      "channel_id": "1421974900742164500",
+      "content": "What kind of cards were \"Warm Family\", \"Sincere Friends\", \"Stable Life\", and \"Di",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Resonance Questions"
+    }
+  ]
+}

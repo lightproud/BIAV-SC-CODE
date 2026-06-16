@@ -1,0 +1,29 @@
+{
+  "date": "2025-10-20",
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "Exalt voicelines?": 1,
+    "2025 October Contribution Log: V2.3.4 Update": 3,
+    "VN Contribution": 2
+  },
+  "hourly_activity": {
+    "4": 1,
+    "12": 5
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429690851432464488",
+      "channel_id": "1429690851432464488",
+      "content": "Lots of Exalt voicelines(subtitles) are badly translated in Korean. I want to fi",
+      "author": "nero_aliapoh",
+      "reactions": 2,
+      "channel": "Exalt voicelines?"
+    }
+  ]
+}

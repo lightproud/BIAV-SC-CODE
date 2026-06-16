@@ -1,0 +1,98 @@
+{
+  "date": "2026-03-13",
+  "messages": 21,
+  "unique_authors": 10,
+  "reactions_total": 21,
+  "attachments": 3,
+  "channel_activity": {
+    "self-introductions": 3,
+    "announcements": 4,
+    "project-coordination": 4,
+    "coordination-uploads": 1,
+    "NDAs have been sent!": 2,
+    "1481487827626889388": 4,
+    "1481967323492515932": 3
+  },
+  "hourly_activity": {
+    "6": 2,
+    "8": 1,
+    "11": 1,
+    "4": 3,
+    "10": 4,
+    "7": 4,
+    "18": 1,
+    "19": 1,
+    "2": 4
+  },
+  "message_types": {
+    "0": 13,
+    "18": 1,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481978125591121943",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, I’m Sefa (it reads “seva” since it’s an old English word, btw). I suppose I’",
+      "author": "amstelredam",
+      "reactions": 6,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481928852690309120",
+      "channel_id": "1406970664145129473",
+      "content": "Heyo~ \n\nI'm Kate. English is not my native language, but I work with it constant",
+      "author": "dat_yandere",
+      "reactions": 4,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481870193583063201",
+      "channel_id": "1407641395891535883",
+      "content": "**👋 Welcome, New Volunteers!**\n\n\nJoining the server, participating in discussion",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "announcements"
+    },
+    {
+      "id": "1481908998939738255",
+      "channel_id": "1406970664145129473",
+      "content": "hihi! I'm valentine! \nEnglish is my native language, but I can also read/speak a",
+      "author": "bluepomander",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1481911685286465656",
+      "channel_id": "1416615133479960647",
+      "content": "Sent!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1481911922797576259",
+      "channel_id": "1416615133479960647",
+      "content": "Sent~",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1481842689623199836",
+      "channel_id": "1481487827626889388",
+      "content": "got it, thanks! I'll send you a file shortly",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481967692708581407",
+      "channel_id": "1481967323492515932",
+      "content": "There was a new gdoc to fill out with your email, to be sure you'll receive the ",
+      "author": "munzeria",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

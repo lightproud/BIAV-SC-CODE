@@ -1,0 +1,47 @@
+{
+  "date": "2025-11-07",
+  "messages": 11,
+  "unique_authors": 2,
+  "reactions_total": 3,
+  "attachments": 2,
+  "channel_activity": {
+    "relevant-forwards": 1,
+    "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?": 10
+  },
+  "hourly_activity": {
+    "3": 3,
+    "4": 4,
+    "10": 3,
+    "11": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1436202759648051260",
+      "channel_id": "1436202469402345563",
+      "content": "Hi!\n\nNo, we cannot omit any Args!\n\nIt will lead to bugs",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?"
+    },
+    {
+      "id": "1436203905108279319",
+      "channel_id": "1436202469402345563",
+      "content": "Okay, thanks! I'm definitely very curious about the RTTs though, as it would be ",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?"
+    },
+    {
+      "id": "1436210184052674652",
+      "channel_id": "1436202469402345563",
+      "content": "To be specific:\n\nWe can reorder, or repeat the Args in English translation. \n\nIf",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?"
+    }
+  ]
+}

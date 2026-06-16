@@ -1,0 +1,70 @@
+{
+  "date": "2025-09-18",
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 7,
+  "attachments": 5,
+  "channel_activity": {
+    "announcements": 1,
+    "relevant-forwards": 1,
+    "NDAs have been sent!": 1,
+    "Whoever own \"24's\" WoD can you SS it to me?": 3,
+    "TH Contribution": 2,
+    "VN Contribution": 1
+  },
+  "hourly_activity": {
+    "6": 1,
+    "3": 1,
+    "9": 1,
+    "12": 3,
+    "5": 1,
+    "8": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418114483037147166",
+      "channel_id": "1407641395891535883",
+      "content": "@everyone I've officially opened up my coordination repo!\nhttps://github.com/omn",
+      "author": "omnichromia",
+      "reactions": 3,
+      "channel": "announcements"
+    },
+    {
+      "id": "1418211219751436379",
+      "channel_id": "1418207838588637184",
+      "content": "Wasn't sure what exactly was needed, if it's something else please do lmk!",
+      "author": "strandiel",
+      "reactions": 1,
+      "channel": "Whoever own \"24's\" WoD can you SS it to me?"
+    },
+    {
+      "id": "1418211889774854247",
+      "channel_id": "1418207838588637184",
+      "content": "Arigatou !!!!",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "Whoever own \"24's\" WoD can you SS it to me?"
+    },
+    {
+      "id": "1418154381823709245",
+      "channel_id": "1408313795985670144",
+      "content": "Hello! Yes, you can Download the source sheets, edit the corresponding lines in ",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "TH Contribution"
+    },
+    {
+      "id": "1418267870898552872",
+      "channel_id": "1418267870898552872",
+      "content": "Im working on trans Wheel .\nSSR wheel 90%",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "VN Contribution"
+    }
+  ]
+}

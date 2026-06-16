@@ -1,0 +1,56 @@
+{
+  "date": "2025-12-29",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 4,
+  "attachments": 3,
+  "channel_activity": {
+    "coordination-uploads": 6,
+    "\"Reproduction Frenzy\"?": 3
+  },
+  "hourly_activity": {
+    "1": 1,
+    "5": 1,
+    "6": 3,
+    "14": 1,
+    "4": 3
+  },
+  "message_types": {
+    "0": 4,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1455014413147963509",
+      "channel_id": "1446619934565204231",
+      "content": "TH Translation All Interlude 🧎 \nre-up.. because I forgot to remove other languag",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455080875506270341",
+      "channel_id": "1446619934565204231",
+      "content": "Okay! I credited you both for Assignments and just you for the rest. All good!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455207247603830956",
+      "channel_id": "1446619934565204231",
+      "content": "|ES|Miguel Angel|Translation |ES|Teje|Translation",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    },
+    {
+      "id": "1455048931024044155",
+      "channel_id": "1454683620978462863",
+      "content": "Definitely take everyone else's comments into account as well, I'm just 1 person",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "\"Reproduction Frenzy\"?"
+    }
+  ]
+}

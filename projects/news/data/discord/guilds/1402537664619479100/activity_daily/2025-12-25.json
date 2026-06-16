@@ -1,0 +1,38 @@
+{
+  "date": "2025-12-25",
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "project-coordination": 8
+  },
+  "hourly_activity": {
+    "2": 5,
+    "9": 1,
+    "13": 1,
+    "16": 1
+  },
+  "message_types": {
+    "19": 4,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1453734711469015080",
+      "channel_id": "1416615133479960647",
+      "content": "DE: Geh nicht gelassen in die gute Nacht. Der Grund des Phantasmas beherbergt un",
+      "author": "strandiel",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1453791714820227124",
+      "channel_id": "1416615133479960647",
+      "content": "ES: No entres apaciblemente en ese buen sueño; en las profundidades de la ilusió",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}

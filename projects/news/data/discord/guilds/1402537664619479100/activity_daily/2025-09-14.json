@@ -1,0 +1,75 @@
+{
+  "date": "2025-09-14",
+  "messages": 37,
+  "unique_authors": 7,
+  "reactions_total": 7,
+  "attachments": 7,
+  "channel_activity": {
+    "relevant-forwards": 2,
+    "Help Identify these Stories!": 33,
+    "WoD Banner Details Text": 1,
+    "TH Contribution": 1
+  },
+  "hourly_activity": {
+    "23": 2,
+    "5": 5,
+    "6": 24,
+    "9": 1,
+    "10": 4,
+    "18": 1
+  },
+  "message_types": {
+    "0": 16,
+    "19": 21
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1416668735888162876",
+      "channel_id": "1416652703659982970",
+      "content": "It's the dialogue after viewing the final story node of arc 1 for the first time",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "Help Identify these Stories!"
+    },
+    {
+      "id": "1416935436839948308",
+      "channel_id": "1416934774525788180",
+      "content": "I'd like this channel to be specifically **ONLY for forwards**, of all of the im",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "relevant-forwards"
+    },
+    {
+      "id": "1416669931973644318",
+      "channel_id": "1416652703659982970",
+      "content": "Do note that it's not able to be viewed again in the current version of the game",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "Help Identify these Stories!"
+    },
+    {
+      "id": "1416670824290586724",
+      "channel_id": "1416652703659982970",
+      "content": "yes, you're correct",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "Help Identify these Stories!"
+    },
+    {
+      "id": "1416672060440186920",
+      "channel_id": "1416652703659982970",
+      "content": "Erica's inspiration/reference is \"The Tick-Tock Man\" if that helps you",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "Help Identify these Stories!"
+    },
+    {
+      "id": "1416673045266960447",
+      "channel_id": "1416652703659982970",
+      "content": "yap! how do I say this without spoiling lol before we fight with the eyes",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "Help Identify these Stories!"
+    }
+  ]
+}

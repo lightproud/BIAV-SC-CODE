@@ -1,0 +1,27 @@
+{
+  "date": "2026-04-07",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 13,
+  "attachments": 0,
+  "channel_activity": {
+    "announcements": 1,
+    "project-coordination": 1
+  },
+  "hourly_activity": {
+    "8": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1490988683354968234",
+      "channel_id": "1407641395891535883",
+      "content": "Hi Keepers!\n\nIntroducing our new in-house Korean Translator, Jelly! <@1488457102",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "announcements"
+    }
+  ]
+}

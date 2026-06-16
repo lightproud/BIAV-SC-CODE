@@ -1,0 +1,45 @@
+{
+  "date": "2025-09-15",
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 11,
+  "attachments": 0,
+  "channel_activity": {
+    "links-and-resources": 1,
+    "NDAs have been sent!": 8,
+    "Help Identify these Stories!": 2,
+    "WoD Banner Details Text": 1,
+    "TH Contribution": 1
+  },
+  "hourly_activity": {
+    "7": 4,
+    "11": 3,
+    "12": 2,
+    "0": 1,
+    "2": 1,
+    "9": 1,
+    "10": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417045058862977025",
+      "channel_id": "1417045058862977025",
+      "content": "Hello guys,\n\nAll NDA files have been mass sent out via Docusign!\nSorry for the d",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "NDAs have been sent!"
+    },
+    {
+      "id": "1417048891827818617",
+      "channel_id": "1402537664619479103",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "links-and-resources"
+    }
+  ]
+}

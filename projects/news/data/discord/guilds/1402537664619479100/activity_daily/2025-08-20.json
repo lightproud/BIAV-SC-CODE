@@ -1,0 +1,179 @@
+{
+  "date": "2025-08-20",
+  "messages": 30,
+  "unique_authors": 13,
+  "reactions_total": 43,
+  "attachments": 3,
+  "channel_activity": {
+    "links-and-resources": 1,
+    "self-introductions": 12,
+    "announcements": 6,
+    "A few questions": 5,
+    "Line feeds and \\n": 1,
+    "General server feedback": 1,
+    "Use of realms as terminology": 4
+  },
+  "hourly_activity": {
+    "6": 4,
+    "4": 4,
+    "5": 1,
+    "8": 4,
+    "9": 7,
+    "10": 3,
+    "11": 1,
+    "12": 1,
+    "20": 1,
+    "17": 2,
+    "18": 1,
+    "19": 1
+  },
+  "message_types": {
+    "0": 30
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1407648746539585650",
+      "channel_id": "1407641395891535883",
+      "content": "@everyone",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "announcements"
+    },
+    {
+      "id": "1407648518637748234",
+      "channel_id": "1407641395891535883",
+      "content": "Hello everyone,\n\nI'm writing to address some of the questions and suggestions yo",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "announcements"
+    },
+    {
+      "id": "1407692923675480095",
+      "channel_id": "1406970664145129473",
+      "content": "Hello everyone, pleased to see so many of you here with me 🥺 \nI'm Goz, a French ",
+      "author": "__goz__",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407709398448734319",
+      "channel_id": "1406970664145129473",
+      "content": "Hello! I'm Shirogane!\nI am a Japanese speaker, but my second languages are Engli",
+      "author": "mame_shirogane",
+      "reactions": 3,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407587766673473618",
+      "channel_id": "1406970664145129473",
+      "content": "First of all, thanks for having me here!\n\nYou can call me Jynn. I'm currently st",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407587962019123335",
+      "channel_id": "1406970664145129473",
+      "content": "Greetings to thee!\nI be Adelle, come forth to lend mine aid as translator (EN to",
+      "author": "shiio4870",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407588525125406811",
+      "channel_id": "1406970664145129473",
+      "content": "Hello, I'm Mercy! I speak only English and live in the Pacific Timezone of the U",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407593680436465694",
+      "channel_id": "1406970664145129473",
+      "content": "Hi hi everyone, I’m Sophie and while I speak both English and Portuguese fluentl",
+      "author": "sophiechoice",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407607871608455199",
+      "channel_id": "1406970664145129473",
+      "content": "Hello!\n\nI'm Lens on Discord, though I have gone by various different names depen",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407641472609554483",
+      "channel_id": "1406970664145129473",
+      "content": "Ayo!!!! \nMy name's Matt - I will be helping the community as a proofreader and t",
+      "author": "quasar_7",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407660656689152021",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, I'm Dredge. I'm currently working on an EN \"wiki\" for the game, so I'm fairl",
+      "author": ".dredge.",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407668445264220240",
+      "channel_id": "1406970664145129473",
+      "content": "Good morning, my name is Marcos, already have some experience with proofreading ",
+      "author": "reapersakamaki",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407675615603064893",
+      "channel_id": "1406970664145129473",
+      "content": "Hello everyone, I'm Noah!\n\nI'm working from home as an artist. I'm lucky enough ",
+      "author": "baguettesuffering",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407679880346206238",
+      "channel_id": "1406970664145129473",
+      "content": "Hi, I'm Julia <:hello:1356053084790460437> \n\nI work for a German publishing hous",
+      "author": "strandiel",
+      "reactions": 2,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1407656857492783185",
+      "channel_id": "1407641395891535883",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "announcements"
+    },
+    {
+      "id": "1407612759574577254",
+      "channel_id": "1407612759574577254",
+      "content": "I just had a few questions that I was hoping could be cleared up:\n\n1. Given the ",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "A few questions"
+    },
+    {
+      "id": "1407656670951379107",
+      "channel_id": "1407612759574577254",
+      "content": "**5. Marker existing translations:**\nYes, I do have a file containing the 60,000",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "A few questions"
+    },
+    {
+      "id": "1407786910360797286",
+      "channel_id": "1407785080025383157",
+      "content": "I would like to add the this is very weird as a reader, and something I'd instin",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "Use of realms as terminology"
+    }
+  ]
+}

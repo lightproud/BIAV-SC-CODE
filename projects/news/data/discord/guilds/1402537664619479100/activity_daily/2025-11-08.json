@@ -1,0 +1,26 @@
+{
+  "date": "2025-11-08",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?": 1
+  },
+  "hourly_activity": {
+    "2": 1
+  },
+  "message_types": {
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1436541863027937482",
+      "channel_id": "1436202469402345563",
+      "content": "Awesome! I'll say I have a preferable translation for the phrase when you have t",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Can I omit Args? and can I add Rich Text Tags to lines that didn't have them?"
+    }
+  ]
+}

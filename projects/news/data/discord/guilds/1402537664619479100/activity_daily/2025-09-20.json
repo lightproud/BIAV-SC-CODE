@@ -1,0 +1,77 @@
+{
+  "date": "2025-09-20",
+  "messages": 47,
+  "unique_authors": 5,
+  "reactions_total": 15,
+  "attachments": 2,
+  "channel_activity": {
+    "self-introductions": 1,
+    "銀芯科技到底該翻譯成什麼？(What’s the appropriate translation for “Silver Chip Technology”?)": 40,
+    "Progress Toward Coordination Repo": 2,
+    "VN Contribution": 1,
+    "喚醒體銀芯通訊重翻紀錄 (Awakener Text Retranslation Log)": 3
+  },
+  "hourly_activity": {
+    "5": 1,
+    "9": 36,
+    "17": 3,
+    "18": 1,
+    "21": 2,
+    "1": 1,
+    "8": 3
+  },
+  "message_types": {
+    "0": 43,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418836862189174964",
+      "channel_id": "1406970664145129473",
+      "content": "Aloha. You can call me Attchan. I'm a native Thai speaker, and can speake Englis",
+      "author": "zcaruterx",
+      "reactions": 7,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1419075028099535042",
+      "channel_id": "1419075028099535042",
+      "content": "ATTN: ALL VOLUNTEERS, ALL LANGUAGES\nI figured I should keep track of what is and",
+      "author": "omnichromia",
+      "reactions": 3,
+      "channel": "Progress Toward Coordination Repo"
+    },
+    {
+      "id": "1419075052208525322",
+      "channel_id": "1419075028099535042",
+      "content": "# Current Progress\nHere's my to-do of chunks I'm aware I can put together. Will ",
+      "author": "omnichromia",
+      "reactions": 2,
+      "channel": "Progress Toward Coordination Repo"
+    },
+    {
+      "id": "1418891572812185630",
+      "channel_id": "1418891370801922089",
+      "content": "which.....currently does not show the actual term, because it looks like Ace app",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "銀芯科技到底該翻譯成什麼？(What’s the appropriate translation for “Silver Chip Technology”?)"
+    },
+    {
+      "id": "1418893607074795551",
+      "channel_id": "1418891370801922089",
+      "content": "Unless we’re talking about just “pure silver” in the text",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "銀芯科技到底該翻譯成什麼？(What’s the appropriate translation for “Silver Chip Technology”?)"
+    },
+    {
+      "id": "1418875652718854164",
+      "channel_id": "1418505682075910145",
+      "content": "赫伯特 Herbert also has texts\n-# if that helps\nlines 1932-1951",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "喚醒體銀芯通訊重翻紀錄 (Awakener Text Retranslation Log)"
+    }
+  ]
+}

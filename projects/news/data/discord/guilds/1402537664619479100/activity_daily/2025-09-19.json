@@ -1,0 +1,75 @@
+{
+  "date": "2025-09-19",
+  "messages": 44,
+  "unique_authors": 5,
+  "reactions_total": 25,
+  "attachments": 1,
+  "channel_activity": {
+    "announcements": 1,
+    "\"Dimensional Image\"?": 39,
+    "TH Contribution": 1,
+    "喚醒體銀芯通訊重翻紀錄 (Awakener Text Retranslation Log)": 3
+  },
+  "hourly_activity": {
+    "3": 24,
+    "2": 16,
+    "6": 1,
+    "7": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 38,
+    "19": 4,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418446292689879081",
+      "channel_id": "1407641395891535883",
+      "content": "Hi guys,\n\nWe have recently been notified of a potential NDA breach, where the Go",
+      "author": "morimens_15",
+      "reactions": 19,
+      "channel": "announcements"
+    },
+    {
+      "id": "1418438299868991489",
+      "channel_id": "1418425109122908342",
+      "content": "On the other hand it's great we're catching awkward phrases in like Stage Names ",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "\"Dimensional Image\"?"
+    },
+    {
+      "id": "1418429320971423844",
+      "channel_id": "1418425109122908342",
+      "content": "I admire the motivation here but that's not entirely quite how language works",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "\"Dimensional Image\"?"
+    },
+    {
+      "id": "1418436189941137570",
+      "channel_id": "1418425109122908342",
+      "content": "imo the one issue with \"Dimensional Image\" is that it's a bit long, but overall ",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "\"Dimensional Image\"?"
+    },
+    {
+      "id": "1418438147162767414",
+      "channel_id": "1418425109122908342",
+      "content": "This is actually a great example of a common principle we follow: the balance be",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "\"Dimensional Image\"?"
+    },
+    {
+      "id": "1418505682075910145",
+      "channel_id": "1418505682075910145",
+      "content": "在此我將列出喚醒體名單並將挨個通訊重翻完畢之後將其名劃除。In this log I will list all awakeners in the game a",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "喚醒體銀芯通訊重翻紀錄 (Awakener Text Retranslation Log)"
+    }
+  ]
+}

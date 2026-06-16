@@ -1,0 +1,48 @@
+{
+  "date": "2026-05-30",
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 2,
+  "channel_activity": {
+    "general-discussion": 10,
+    "coordination-uploads": 1
+  },
+  "hourly_activity": {
+    "1": 4,
+    "8": 2,
+    "9": 1,
+    "10": 3,
+    "13": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1510204540392050698",
+      "channel_id": "1402941858606219294",
+      "content": "Additionally I would like to propose an idea for improving our volunteer recruit",
+      "author": "haps",
+      "reactions": 4,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1510222125947027507",
+      "channel_id": "1402941858606219294",
+      "content": "Providing both would be good for someone, who will translate from English text. ",
+      "author": "haps",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1510224360219349062",
+      "channel_id": "1402941858606219294",
+      "content": "Also if anyone need help with proper organisation of language teams, feel free t",
+      "author": "haps",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}
