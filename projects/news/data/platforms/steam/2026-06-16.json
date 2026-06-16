@@ -1,8 +1,8 @@
 {
   "date": "2026-06-16",
-  "archived_at": "2026-06-16T06:26:01.203443+00:00",
+  "archived_at": "2026-06-16T12:04:32.977626+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] Peak",
@@ -88,6 +88,28 @@
         "playtime_forever": 984,
         "votes_up": 0,
         "timestamp_created": 1781571776
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Best game i think",
+      "summary": "Best game i think",
+      "source": "steam_review",
+      "time": "2026-06-16T11:15:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199520731766/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199520731766",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5228,
+        "votes_up": 0,
+        "timestamp_created": 1781608543
       },
       "lang": "",
       "platform_region": "global"
