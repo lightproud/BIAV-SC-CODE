@@ -271,7 +271,7 @@ def suggest_prune(report: dict) -> None:
 def scan_unregistered_dirs() -> list[str]:
     """列出 data/platforms/ 下存在、但不在已注册源清单中的目录。
 
-    捕获采集逻辑已移除却仍留有历史归档的遗留源（dcinside / gamerch / ...），
+    捕获采集逻辑已移除却仍留有历史归档的遗留源（如 taptap_post），
     否则它们对沉默源审计完全不可见。
     """
     if not ARCHIVE_DIR.exists():

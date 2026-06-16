@@ -7,7 +7,7 @@
   中文: Bilibili, NGA, TapTap, Weibo, Xiaohongshu, Douyin, Tieba, QQ频道, Zhihu, Bahamut(巴哈姆特)
   同人: Pixiv, Lofter
   周边: 闲鱼, 淘宝
-  全球: Reddit, Twitter/X, YouTube, Discord, Facebook, TikTok, Telegram, Twitch, Instagram
+  全球: Reddit, Twitter/X, YouTube, Discord, Facebook, TikTok, Twitch, Instagram
   韩国: Naver Cafe, Arca.live
   日本: 5ch
   商店: App Store, Google Play
@@ -1016,78 +1016,6 @@ def fetch_bahamut():
     return items
 
 
-def fetch_telegram():
-    """从 Telegram 公开群组/频道获取忘却前夜讨论。"""
-    tg_channels = os.environ.get("TELEGRAM_CHANNELS", "").split(",")
-    if not tg_channels[0]:
-        logger.info("Telegram: TELEGRAM_CHANNELS not set, skipping")
-        return []
-
-    items = []
-    for channel in tg_channels:
-        channel = channel.strip()
-        if not channel:
-            continue
-        try:
-            # 使用 Telegram 公开频道的 JSON 导出 (t.me/s/ 格式)
-            data = _get(
-                f"https://t.me/s/{channel}",
-                headers={"Accept": "text/html"},
-            )
-            if data and data.status_code == 200:
-                # 简单解析 HTML 中的消息
-                # 实际部署建议用 Telegram Bot API 或 Telethon
-                html = data.text
-                # 提取消息块 (tgme_widget_message)
-                messages = re.findall(
-                    r'class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>',
-                    html, re.DOTALL
-                )
-                msg_dates = re.findall(
-                    r'<time[^>]*datetime="([^"]+)"',
-                    html
-                )
-                msg_views = re.findall(
-                    r'class="tgme_widget_message_views"[^>]*>([^<]+)',
-                    html
-                )
-
-                for i, msg_html in enumerate(messages[-20:]):  # 最近20条
-                    text = _strip_html(msg_html).strip()
-                    if not text:
-                        continue
-                    # 检查相关性
-                    if not any(kw.lower() in text.lower() for kw in ALL_KEYWORDS):
-                        continue
-
-                    views_str = msg_views[i] if i < len(msg_views) else "0"
-                    views = 0
-                    try:
-                        views_str = views_str.strip().replace("K", "000").replace("M", "000000").replace(".", "")
-                        views = int(views_str)
-                    except ValueError:
-                        pass
-
-                    has_date = i < len(msg_dates)
-                    items.append(_make_item(
-                        title=text[:100],
-                        summary=text,
-                        source="telegram",
-                        platform_region="global",
-                        time_str=msg_dates[i] if has_date else datetime.now(timezone.utc).isoformat(),
-                        url=f"https://t.me/{channel}",
-                        engagement=views,
-                        is_hot=views > 1000,
-                        author=f"@{channel}",
-                        lang="",
-                        time_is_approximate=not has_date,
-                    ))
-
-            logger.info(f"Telegram @{channel}: {len(items)} messages")
-        except Exception as e:
-            logger.warning(f"Telegram @{channel} failed: {e}")
-
-    return items
 def fetch_weixin():
     """通过搜狗微信搜索抓取忘却前夜相关公众号文章。
 

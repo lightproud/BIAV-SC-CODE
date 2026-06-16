@@ -57,7 +57,6 @@ SOURCE_MAP = {
     'stopgame': 'stopgame',
     'weixin': 'weixin',
     'discord': 'discord',
-    'telegram': 'telegram',
     'twitter': 'twitter',
 }
 
