@@ -85,7 +85,7 @@ ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 # backfill_platforms.py 的 PLATFORM_BACKFILLERS 实际支持的源（务必与之同步）
 BACKFILL_PLATFORMS = [
     'bilibili', 'appstore', 'steam_review', 'arca_live',
-    'pixiv', 'ruliweb', 'weixin',
+    'pixiv', 'ruliweb', 'weixin', 'taptap',
 ]
 
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。
