@@ -1,8 +1,8 @@
 {
   "date": "2026-06-16",
-  "archived_at": "2026-06-16T06:26:01.197589+00:00",
+  "archived_at": "2026-06-16T12:04:32.971251+00:00",
   "source": "bilibili",
-  "item_count": 8,
+  "item_count": 12,
   "items": [
     {
       "title": "【忘却前夜】6.15-7.13三相池抽取建议",
@@ -82,6 +82,86 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i0.hdslb.com/bfs/archive/e7794f9ec71e98e60b7eb3c5b75d6b06f0156296.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "愿此行 共抵彼岸",
+      "summary": "-\n  └ 古月巨阳111 (2赞): 玩5771的都来了",
+      "source": "bilibili",
+      "time": "2026-06-15T17:55:55+00:00",
+      "url": "https://www.bilibili.com/video/BV1FajP6dE9c",
+      "engagement": 119,
+      "is_hot": false,
+      "author": "穆雪临",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 117,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/9a2ba87ad7ff9b4faa6a8057ecf20285ca3ca00c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "愿此行 共抵彼岸",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-06-15T17:55:55+00:00",
+      "url": "http://www.bilibili.com/video/av116755380963314",
+      "engagement": 117,
+      "is_hot": false,
+      "author": "穆雪临",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/9a2ba87ad7ff9b4faa6a8057ecf20285ca3ca00c.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "满载而归打法",
+      "summary": "造物是每回合打出首张指令卡能多生效一次，但是打出后会弃掉比这个牌多算力或相同算力的牌，比如我打3算力的牌，就会把3算力及以上的指令卡全弃掉，所以这会让我们按算力从高到低的顺序去打牌，感觉比较适合高算力的图鲁什么的，不过我也是用新角色阿拉克涅打。\n       开局我们优先使用阿拉克涅的永恒织造叠斩杀线，由于每回合第一张出会额外生效一次，所以我们叠起来还是比较快的，思路跟之前差不多，在敌人有攻击意图的时候保住血量，然后靠进超维回合里用阿拉克涅的追击秒杀对面即可，如果容易顶不住的话可以多带点防御型角色。",
+      "source": "bilibili",
+      "time": "2026-06-16T06:55:31+00:00",
+      "url": "https://www.bilibili.com/video/BV1Ajju63E5X",
+      "engagement": 25,
+      "is_hot": false,
+      "author": "小冷部刑了",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 25,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/081fd41c738529b15611a74cf2c25c57905db8a0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "满载而归打法",
+      "summary": "造物是每回合打出首张指令卡能多生效一次，但是打出后会弃掉比这个牌多算力或相同算力的牌，比如我打3算力的牌，就会把3算力及以上的指令卡全弃掉，所以这会让我们按算力从高到低的顺序去打牌，感觉比较适合高算力的图鲁什么的，不过我也是用新角色阿拉克涅打。\n       开局我们优先使用阿拉克涅的永恒织造叠斩杀线，由于每回合第一张出会额外生效一次，所以我们叠起来还是比较快的，思路跟之前差不多，在敌人有攻击意图的时候保住血量，然后靠进超维回合里用阿拉克涅的追击秒杀对面即可，如果容易顶不住的话可以多带点防御型角色。",
+      "source": "bilibili",
+      "time": "2026-06-16T06:55:31+00:00",
+      "url": "http://www.bilibili.com/video/av116758451061112",
+      "engagement": 25,
+      "is_hot": false,
+      "author": "小冷部刑了",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/081fd41c738529b15611a74cf2c25c57905db8a0.jpg",
       "content_type": "video"
     },
     {

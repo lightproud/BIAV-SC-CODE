@@ -12081,6 +12081,69 @@
       "title": "Morimens player addiction - Day 82",
       "time": "2026-06-16T04:00:29Z",
       "downloaded_at": "2026-06-16T06:26:01.105754+00:00"
+    },
+    "https://i.ytimg.com/vi/sh30cBLcoxs/hqdefault.jpg": {
+      "filename": "youtube_181acbeccb35ab4e.jpg",
+      "source": "youtube",
+      "title": "Bài Ca Hồi Ức (MV Teaser) - Morimens X Saya no Uta - Theme Song | Song of Memento Vietnamese Cover.",
+      "time": "2026-06-16T08:05:52Z",
+      "downloaded_at": "2026-06-16T12:04:25.124505+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0b715bd73ab435bb6ef75b8a096b5fb7ed654f3c.jpg": {
+      "filename": "bilibili_9f4455c11b451c56.jpg",
+      "source": "bilibili",
+      "title": "忘却之歌-いとうかなこ(covered by 初音ミク)",
+      "time": "2026-06-15T15:08:04+00:00",
+      "downloaded_at": "2026-06-16T12:04:25.897581+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9a2ba87ad7ff9b4faa6a8057ecf20285ca3ca00c.jpg": {
+      "filename": "bilibili_ed83d17c7d7a61c3.jpg",
+      "source": "bilibili",
+      "title": "愿此行 共抵彼岸",
+      "time": "2026-06-15T17:55:55+00:00",
+      "downloaded_at": "2026-06-16T12:04:28.148875+00:00"
+    },
+    "https://i.ytimg.com/vi/IcvnF5GsQi0/hqdefault.jpg": {
+      "filename": "youtube_315b47612443c9f8.jpg",
+      "source": "youtube",
+      "title": "Finishing the Fight to Mythag! | Morimens: Story CH8 Finale (Power&#39;s Back)",
+      "time": "2026-06-16T07:37:38Z",
+      "downloaded_at": "2026-06-16T12:04:28.900076+00:00"
+    },
+    "https://i.ytimg.com/vi/7Wsc83gkhrU/hqdefault.jpg": {
+      "filename": "youtube_02e375d476395734.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Jenkins DPS Comp Commentary D-Tide 6-15-26 W2A5",
+      "time": "2026-06-16T10:30:04Z",
+      "downloaded_at": "2026-06-16T12:04:29.302752+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/081fd41c738529b15611a74cf2c25c57905db8a0.jpg": {
+      "filename": "bilibili_cabad3d734dbe746.jpg",
+      "source": "bilibili",
+      "title": "满载而归打法",
+      "time": "2026-06-16T06:55:31+00:00",
+      "downloaded_at": "2026-06-16T12:04:30.721822+00:00"
+    },
+    "https://i.ytimg.com/vi/tvwYDZPazT4/hqdefault.jpg": {
+      "filename": "youtube_110d6d2d9f659045.jpg",
+      "source": "youtube",
+      "title": "망각전야) 융재 2파~3파 무지성 리트 방지용 핵심 기믹 종결 공략",
+      "time": "2026-06-16T09:36:51Z",
+      "downloaded_at": "2026-06-16T12:04:31.465885+00:00"
+    },
+    "https://i.ytimg.com/vi/aveNl-m_QWw/hqdefault_live.jpg": {
+      "filename": "youtube_8bbc0d54a8743ed4.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (상담 대리뽑 신청가능)하멜른 뽑아야 할까??",
+      "time": "2026-06-16T11:41:07Z",
+      "downloaded_at": "2026-06-16T12:04:32.448910+00:00"
+    },
+    "https://i.ytimg.com/vi/C0fxr4uXhO8/hqdefault.jpg": {
+      "filename": "youtube_44863b40bd0c517b.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone 2-5 Boss Fight! 融災2-5 Boss戰的部分!",
+      "time": "2026-06-16T10:00:22Z",
+      "downloaded_at": "2026-06-16T12:04:32.887391+00:00"
     }
   },
   "failed": {
@@ -17863,6 +17926,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-16T06:25:59.987199+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0b715bd73ab435bb6ef75b8a096b5fb7ed654f3c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T12:04:26.198153+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9a2ba87ad7ff9b4faa6a8057ecf20285ca3ca00c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T12:04:28.449467+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/081fd41c738529b15611a74cf2c25c57905db8a0.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-16T12:04:31.022442+00:00"
     }
   },
   "archived": []
