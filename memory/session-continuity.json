@@ -1,15 +1,25 @@
 {
   "last_session": {
-    "id": "346a9eeb",
-    "timestamp": "2026-06-14T10:02:29.633000+00:00",
-    "duration_minutes": 0.2,
-    "branch": "claude/personal-reminders-integration-8ipcpq",
+    "id": "18142329",
+    "timestamp": "2026-06-14T10:19:27.260000+00:00",
+    "duration_minutes": 4.5,
+    "branch": "claude/notion-integration-nnk81r",
     "topics": [],
     "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "346a9eeb",
+      "timestamp": "2026-06-14T10:02:29.633000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "claude/personal-reminders-integration-8ipcpq",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "7fe0ce50",
       "timestamp": "2026-06-14T07:42:13.934000+00:00",
@@ -106,37 +116,18 @@
         "/home/user/brain-in-a-vat/projects/news/GLOBAL_COLLECTION_SPEC.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "90b9df5e",
-      "timestamp": "2026-06-10T20:18:48.991000+00:00",
-      "duration_minutes": 214.2,
-      "branch": "claude/lucid-feynman-dhj63l",
-      "topics": [
-        "BPT",
-        "MCP",
-        "GitHub"
-      ],
-      "decisions": [
-        "了共享能省多少",
-        ",跟进程共不共享完全无关"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/scripts/session-end-distill.sh"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "做梦Agent": 1.14,
-      "GitHub": 0.97,
-      "BPT": 0.45,
-      "MCP": 0.4,
-      "Wiki": 0.14
+      "做梦Agent": 0.91,
+      "GitHub": 0.78,
+      "BPT": 0.36,
+      "MCP": 0.32,
+      "Wiki": 0.11
     },
     "hot_files": [],
-    "total_sessions": 154
+    "total_sessions": 155
   },
-  "updated_at": "2026-06-14T10:06:45.604270+00:00"
+  "updated_at": "2026-06-14T10:24:29.701800+00:00"
 }
