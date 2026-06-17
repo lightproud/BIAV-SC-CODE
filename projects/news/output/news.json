@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-06-17T19:59:49.093753+00:00",
-  "summary": "Discord 社区日报 (2026-06-16)；steam十五款免费入库游戏介绍（有时间轴）；steam十五款免费入库游戏介绍（有时间轴）；【都市】醒来后，全世界都成了天素罗，唯独我和她不变？；这一击将贯穿星辰！。",
-  "sources_run": 1425,
+  "updated_at": "2026-06-17T21:57:26.416247+00:00",
+  "summary": "Discord 社区日报 (2026-06-17)；steam十五款免费入库游戏介绍（有时间轴）；steam十五款免费入库游戏介绍（有时间轴）；沙耶之榔:由大果组成的少女；【都市】醒来后，全世界都成了天素罗，唯独我和她不变？。",
+  "sources_run": 1426,
   "news": [
     {
-      "title": "Discord 社区日报 (2026-06-16)",
-      "summary": "今日 6,917 条消息，412 位活跃用户，1,041 次反应。热门频道：🔸綜合討論(1801)、🔸phòng-chat-tiếng-việt(1116)、🔸team-building(1003)、🔸阵容构建(480)、🔸ruang-obrolan-indonesia(462)",
+      "title": "Discord 社区日报 (2026-06-17)",
+      "summary": "今日 7,033 条消息，368 位活跃用户，898 次反应。热门频道：🔸綜合討論(2281)、🔸한국어-채팅방(993)、🔸team-building(697)、🔸ruang-obrolan-indonesia(591)、🔸ห้องสนทนาภาษาไทย(515)",
       "source": "discord",
-      "time": "2026-06-16T00:00:00+00:00",
+      "time": "2026-06-17T00:00:00+00:00",
       "url": "https://discord.com/channels/1131791637933199470",
-      "engagement": 6917,
+      "engagement": 7033,
       "is_hot": true,
       "author": "Discord Archiver",
       "tags": [
@@ -25,14 +25,14 @@
       "source": "bilibili",
       "time": "2026-06-17T13:49:00+00:00",
       "url": "https://www.bilibili.com/video/BV1AUL96PE7D",
-      "engagement": 908,
+      "engagement": 973,
       "is_hot": true,
       "author": "手残的路痴",
       "tags": [
         "日常"
       ],
       "metadata": {
-        "play": 901,
+        "play": 966,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
@@ -48,7 +48,7 @@
       "source": "bilibili",
       "time": "2026-06-17T13:49:00+00:00",
       "url": "http://www.bilibili.com/video/av116765732375324",
-      "engagement": 901,
+      "engagement": 966,
       "is_hot": false,
       "author": "手残的路痴",
       "tags": [
@@ -60,20 +60,43 @@
       "content_type": "video"
     },
     {
+      "title": "沙耶之榔:由大果组成的少女",
+      "summary": "-\n  └ 黄嘉宏实名玩网 (3赞): 口腔溃疡了，最近估计都不能自己配音😂\n  └ 旅行家说-- (2赞): 哥们你嚼槟榔嚼疯了吧[笑哭][笑哭]，这玩意有啥好的快戒了吧[笑哭][笑哭]\n  └ 喜欢橘猫_星星 (0赞): 退休[呲牙]",
+      "source": "bilibili",
+      "time": "2026-06-17T13:55:20+00:00",
+      "url": "https://www.bilibili.com/video/BV1wSL96YEhp",
+      "engagement": 572,
+      "is_hot": true,
+      "author": "黄嘉宏实名玩网",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 567,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/eac53472d810abb71eb8a07643c85d80aa03277a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "【都市】醒来后，全世界都成了天素罗，唯独我和她不变？",
       "summary": "脑子里有个奇怪的想法\n于是就付诸实践了\n【故事背景】\n阿光是一个普通的青年\n某天他发生事故之后\n发现醒来之后一切都变成了天素罗\n这让他很不习惯\n然而就在这个时候\n他却产生了奇怪的邂逅\n或许，这个世界的真相，并不简单？\n  └ 阿塔尼斯主教 (7赞): ！？背心男？！\n  └ 其中一个路人 (4赞): [doge]\n  └ 亻申的子午 (4赞): 欧耶之歌[呲牙]",
       "source": "bilibili",
       "time": "2026-06-17T14:42:31+00:00",
       "url": "https://www.bilibili.com/video/BV1VtL96mEhH",
-      "engagement": 526,
+      "engagement": 559,
       "is_hot": true,
       "author": "XYZ的世界",
       "tags": [
         "日常"
       ],
       "metadata": {
-        "play": 505,
-        "comment_count": 21,
+        "play": 537,
+        "comment_count": 22,
         "comments_fetched": 3,
         "danmaku": 4
       },
@@ -88,14 +111,14 @@
       "source": "bilibili",
       "time": "2026-06-17T01:46:57+00:00",
       "url": "https://www.bilibili.com/video/BV1GQjL6rEBV",
-      "engagement": 446,
+      "engagement": 447,
       "is_hot": true,
       "author": "Tsubasa小狼",
       "tags": [
         "手机游戏"
       ],
       "metadata": {
-        "play": 441,
+        "play": 442,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -111,7 +134,7 @@
       "source": "bilibili",
       "time": "2026-06-17T01:46:57+00:00",
       "url": "http://www.bilibili.com/video/av116762913870212",
-      "engagement": 441,
+      "engagement": 442,
       "is_hot": false,
       "author": "Tsubasa小狼",
       "tags": [
@@ -123,42 +146,19 @@
       "content_type": "video"
     },
     {
-      "title": "沙耶之榔:由大果组成的少女",
-      "summary": "-\n  └ 黄嘉宏实名玩网 (3赞): 口腔溃疡了，最近估计都不能自己配音😂\n  └ 旅行家说-- (2赞): 哥们你嚼槟榔嚼疯了吧[笑哭][笑哭]，这玩意有啥好的快戒了吧[笑哭][笑哭]\n  └ 喜欢橘猫_星星 (0赞): 退休[呲牙]",
-      "source": "bilibili",
-      "time": "2026-06-17T13:55:20+00:00",
-      "url": "https://www.bilibili.com/video/BV1wSL96YEhp",
-      "engagement": 429,
-      "is_hot": true,
-      "author": "黄嘉宏实名玩网",
-      "tags": [
-        "日常"
-      ],
-      "metadata": {
-        "play": 425,
-        "comment_count": 4,
-        "comments_fetched": 3,
-        "danmaku": 1
-      },
-      "media_url": "https://i2.hdslb.com/bfs/archive/eac53472d810abb71eb8a07643c85d80aa03277a.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
       "title": "猎奇纯爱精神污染，血肉世界的天使【藤Gal】",
       "summary": "",
       "source": "bilibili",
       "time": "2026-06-17T14:15:14+00:00",
       "url": "https://www.bilibili.com/video/BV1XMLR6JE6C",
-      "engagement": 406,
+      "engagement": 412,
       "is_hot": false,
       "author": "五夜藤",
       "tags": [
         "单机游戏"
       ],
       "metadata": {
-        "play": 406,
+        "play": 412,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -174,14 +174,14 @@
       "source": "bilibili",
       "time": "2026-06-16T22:22:40+00:00",
       "url": "https://www.bilibili.com/video/BV15Nj76DEdD",
-      "engagement": 321,
+      "engagement": 326,
       "is_hot": false,
       "author": "美丽知识强大",
       "tags": [
         "人文历史"
       ],
       "metadata": {
-        "play": 316,
+        "play": 321,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 1
@@ -197,14 +197,14 @@
       "source": "youtube",
       "time": "2026-06-17T07:21:40Z",
       "url": "https://www.youtube.com/watch?v=UOjnU2GH8G0",
-      "engagement": 255,
+      "engagement": 256,
       "is_hot": false,
       "author": "麻林薯北",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/UOjnU2GH8G0/hqdefault.jpg",
-      "content_type": "image",
       "lang": "",
-      "platform_region": "global"
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/UOjnU2GH8G0/hqdefault.jpg",
+      "content_type": "video"
     },
     {
       "title": "[Steam论坛] Invitation Code",
@@ -222,19 +222,34 @@
       "platform_region": "global"
     },
     {
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨Song of Memento(忘却の彼方-Emi Ver.)",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「Song of Memento(忘却の彼方-Emi Ver.)",
+      "source": "youtube",
+      "time": "2026-06-17T09:00:08Z",
+      "url": "https://www.youtube.com/watch?v=O5z9zhCCY4k",
+      "engagement": 181,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/O5z9zhCCY4k/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "指尖的触碰，让我感觉你存在",
       "summary": "分享焚决:帮我生成一个视频：第一人称主观视角镜头，以一名坐在电竞桌前的男性为视角，镜头等同于他的双眼。超大曲面超宽显示器填满画面，初始画面图片1屏内女主背面视角。整体画面为超写实风格，镜头带有轻微手持微颤效果；男子右手搭在键盘旁，皮肤拥有自然的肌理质感。屏幕里的女子突然转头望向镜头，双唇微张、面露错愕，仿佛察觉到正在注视她的男人。镜头骤然微微向后一颤，模拟男性受惊的反应，两人陷入短暂的双向错愕与静止。随后，男人缓缓抬起放在键盘上的右手，伸向显示器屏幕。屏幕内的女子迟疑地抬起手，复刻他的动作。二人指尖在屏幕\n  └ kaksyan (0赞): 可爱\n  └ 哈基沙大玉 (0赞): [Ave Mujica_诶]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "source": "bilibili",
       "time": "2026-06-17T07:27:09+00:00",
       "url": "https://www.bilibili.com/video/BV1jEL969Ex8",
-      "engagement": 153,
+      "engagement": 157,
       "is_hot": false,
       "author": "三七厨阿愚",
       "tags": [
         "手机游戏"
       ],
       "metadata": {
-        "play": 149,
+        "play": 153,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -243,6 +258,23 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "指尖的触碰，让我感觉你存在",
+      "summary": "分享焚决:帮我生成一个视频：第一人称主观视角镜头，以一名坐在电竞桌前的男性为视角，镜头等同于他的双眼。超大曲面超宽显示器填满画面，初始画面图片1屏内女主背面视角。整体画面为超写实风格，镜头带有轻微手持微颤效果；男子右手搭在键盘旁，皮肤拥有自然的肌理质感。屏幕里的女子突然转头望向镜头，双唇微张、面露错愕，仿佛察觉到正在注视她的男人。镜头骤然微微向后一颤，模拟男性受惊的反应，两人陷入短暂的双向错愕与静止。随后，男人缓缓抬起放在键盘上的右手，伸向显示器屏幕。屏幕内的女子迟疑地抬起手，复刻他的动作。二人指尖在屏幕",
+      "source": "bilibili",
+      "time": "2026-06-17T07:27:09+00:00",
+      "url": "http://www.bilibili.com/video/av116764239203804",
+      "engagement": 153,
+      "is_hot": false,
+      "author": "三七厨阿愚",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i1.hdslb.com/bfs/archive/3e567898803cab0a55cb046c6f6dcd0fce18d624.jpg",
+      "content_type": "video"
     },
     {
       "title": "[Steam论坛] New invite code! 300 silver.",
@@ -260,51 +292,65 @@
       "platform_region": "global"
     },
     {
-      "title": "指尖的触碰，让我感觉你存在",
-      "summary": "分享焚决:帮我生成一个视频：第一人称主观视角镜头，以一名坐在电竞桌前的男性为视角，镜头等同于他的双眼。超大曲面超宽显示器填满画面，初始画面图片1屏内女主背面视角。整体画面为超写实风格，镜头带有轻微手持微颤效果；男子右手搭在键盘旁，皮肤拥有自然的肌理质感。屏幕里的女子突然转头望向镜头，双唇微张、面露错愕，仿佛察觉到正在注视她的男人。镜头骤然微微向后一颤，模拟男性受惊的反应，两人陷入短暂的双向错愕与静止。随后，男人缓缓抬起放在键盘上的右手，伸向显示器屏幕。屏幕内的女子迟疑地抬起手，复刻他的动作。二人指尖在屏幕",
-      "source": "bilibili",
-      "time": "2026-06-17T07:27:09+00:00",
-      "url": "http://www.bilibili.com/video/av116764239203804",
-      "engagement": 149,
-      "is_hot": false,
-      "author": "三七厨阿愚",
-      "tags": [
-        "手机游戏"
-      ],
-      "lang": "zh",
-      "platform_region": "cn",
-      "media_url": "//i1.hdslb.com/bfs/archive/3e567898803cab0a55cb046c6f6dcd0fce18d624.jpg",
-      "content_type": "video"
-    },
-    {
       "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨雨季",
       "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「雨季」 愛は崇高で、貪欲で、祝福で、呪いでも ...",
       "source": "youtube",
       "time": "2026-06-17T09:00:36Z",
       "url": "https://www.youtube.com/watch?v=TpkvWuslfCg",
-      "engagement": 146,
+      "engagement": 149,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
+      "lang": "",
+      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/TpkvWuslfCg/hqdefault.jpg",
-      "content_type": "image",
+      "content_type": "video"
+    },
+    {
+      "title": "[DC] morimensstaff06@🔸活动资讯┊event-information: **Morimens × Saya no Uta - Theme Song丨Song of Memento - Vietnamese Cover.**  \"Li",
+      "summary": "**Morimens × Saya no Uta - Theme Song丨Song of Memento - Vietnamese Cover.**\n\n\"Liệu người nghe được em, khi hình bóng của em giờ đây đã phai?\"\n\"Liệu người nghe thấy em... gọi tên trong giấc mơ\"\n\n❤️  **MV Teaser**\nhttps://youtube.com/shorts/sh30cBLcoxs?si=7AWrjY8JHqpM-vMK\n\n💖  **Full Version**\nComing on 18.06.2026.\n\n**Original Credit**\n✦ Lyrics: Kotori Koiwai\n✦ Composition: F.R.K. @ B.I.A.V. Studio\n✦ Planning: B.I.A.V. Studio \n✦ Supervision: NITRO ORIGIN\n\n**Cover Credit**\n✦ Vocals: Sifa Hidora\n✦ Translated Lyrics: Anicillia\n✦ Illustrator: Oo Kodami\n✦ Arranger: Galassia Concerto\n✦ Mixer: Hannya\n✦ Animation: NekoNim AT\n✦ Editor: Anh Dung Le Van\n✦ Directed by Anicillia \n\n\n  └ morimensstaff06:",
+      "source": "discord",
+      "time": "2026-06-17T03:51:41.265000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1509916555075649657/1516651523667394721",
+      "engagement": 110,
+      "is_hot": false,
+      "author": "morimensstaff06",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "🇻🇳×18 ❤️×6 🫃×3 🔥×4 Castor_good×1 Uvhash_love×1 Lily_wow×1 Golih_spend×2",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸活动资讯┊event-information"
+      },
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨Song of Memento(忘却の彼方-Emi Ver.)",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「Song of Memento(忘却の彼方-Emi Ver.)",
-      "source": "youtube",
-      "time": "2026-06-17T09:00:08Z",
-      "url": "https://www.youtube.com/watch?v=O5z9zhCCY4k",
-      "engagement": 145,
+      "title": "沙耶之歌",
+      "summary": "-\n  └ -昆扬 (2赞): [魔法少女的魔女审判表情包_探头]\n  └ asksuki (2赞): [妙啊]\n  └ 哈基沙大玉 (0赞): 好看捏",
+      "source": "bilibili",
+      "time": "2026-06-17T15:53:10+00:00",
+      "url": "https://www.bilibili.com/video/BV1tsLo67Esn",
+      "engagement": 78,
       "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/O5z9zhCCY4k/hqdefault.jpg",
+      "author": "asksuki",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 72,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/531e8ef049ff8745549fea57db73961547451d45.jpg",
       "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨原罪",
@@ -317,6 +363,21 @@
       "author": "忘却前夜【日本版公式】",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/Zoq2KnjvFDo/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Directo relax del Morimens | Charlita",
+      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "source": "youtube",
+      "time": "2026-06-17T14:21:58Z",
+      "url": "https://www.youtube.com/watch?v=DdTioFthL_U",
+      "engagement": 72,
+      "is_hot": false,
+      "author": "OcteKG",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/DdTioFthL_U/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -337,16 +398,16 @@
       "platform_region": "global"
     },
     {
-      "title": "Directo relax del Morimens | Charlita",
-      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨始まりの讃歌",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「始まりの讃歌」 歌え、高らかに。 輝く生命は自由 ...",
       "source": "youtube",
-      "time": "2026-06-17T14:21:58Z",
-      "url": "https://www.youtube.com/watch?v=DdTioFthL_U",
-      "engagement": 71,
+      "time": "2026-06-17T09:00:15Z",
+      "url": "https://www.youtube.com/watch?v=eLQ8aOx-Xuo",
+      "engagement": 66,
       "is_hot": false,
-      "author": "OcteKG",
+      "author": "忘却前夜【日本版公式】",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/DdTioFthL_U/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/eLQ8aOx-Xuo/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -357,6 +418,44 @@
       "source": "bilibili",
       "time": "2026-06-17T14:21:01+00:00",
       "url": "https://www.bilibili.com/video/BV1oFLR6RESx",
+      "engagement": 61,
+      "is_hot": false,
+      "author": "千年之剑",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 56,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/13c7d82eaf254a9d9dccbd125c6ac4a3e990d3c5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨奇跡",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「奇跡」 ある日、あなたも私と同じように、 血と肉 ...",
+      "source": "youtube",
+      "time": "2026-06-17T09:00:04Z",
+      "url": "https://www.youtube.com/watch?v=jdB1D2Fc5Pk",
+      "engagement": 59,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/jdB1D2Fc5Pk/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘却前夜】主线6-14初见 全靠死亡抵抗",
+      "summary": "难度上来全靠死亡抵抗扛几轮伤害（差点被这个比一套秒了，还好我技高一筹.jpg）\n  └ 抱着狗狗不敢说话 (0赞): 世界演绎法，拿帷幕，是不是有点亏啊。。\n  └ 暮影寻曦 (0赞): 你这是被bug坑害了。那个跃迁刻印有些时候会导致超维空间需要的卡牌上限永久增加。",
+      "source": "bilibili",
+      "time": "2026-06-17T14:12:59+00:00",
+      "url": "https://www.bilibili.com/video/BV1XMLR6JEQR",
       "engagement": 57,
       "is_hot": false,
       "author": "千年之剑",
@@ -364,12 +463,12 @@
         "网络游戏"
       ],
       "metadata": {
-        "play": 52,
-        "comment_count": 5,
-        "comments_fetched": 3,
+        "play": 55,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       },
-      "media_url": "https://i2.hdslb.com/bfs/archive/13c7d82eaf254a9d9dccbd125c6ac4a3e990d3c5.jpg",
+      "media_url": "https://i0.hdslb.com/bfs/archive/5c73439a2a57adfd23546052e949e5efc4af7864.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -390,18 +489,37 @@
       "platform_region": "global"
     },
     {
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨始まりの讃歌",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「始まりの讃歌」 歌え、高らかに。 輝く生命は自由 ...",
-      "source": "youtube",
-      "time": "2026-06-17T09:00:15Z",
-      "url": "https://www.youtube.com/watch?v=eLQ8aOx-Xuo",
-      "engagement": 57,
+      "title": "【忘却前夜】主线7-18初见 谢谢你，塔薇",
+      "summary": "如果没有阿拉克涅我真不知道怎么清那几波小怪...\n目前为止打得最艰难的一战，演出很棒！打到最后已经意识模糊了，看到对面场攻够斩杀了我差点点击投降，还好转念一想让他打死算了....\n\n总之别放弃！",
+      "source": "bilibili",
+      "time": "2026-06-17T14:21:01+00:00",
+      "url": "http://www.bilibili.com/video/av116765866592134",
+      "engagement": 56,
       "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global",
-      "media_url": "https://i.ytimg.com/vi/eLQ8aOx-Xuo/hqdefault.jpg",
+      "author": "千年之剑",
+      "tags": [
+        "网络游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/13c7d82eaf254a9d9dccbd125c6ac4a3e990d3c5.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【忘却前夜】主线6-14初见 全靠死亡抵抗",
+      "summary": "难度上来全靠死亡抵抗扛几轮伤害（差点被这个比一套秒了，还好我技高一筹.jpg）",
+      "source": "bilibili",
+      "time": "2026-06-17T14:12:59+00:00",
+      "url": "http://www.bilibili.com/video/av116765849815638",
+      "engagement": 55,
+      "is_hot": false,
+      "author": "千年之剑",
+      "tags": [
+        "网络游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/5c73439a2a57adfd23546052e949e5efc4af7864.jpg",
       "content_type": "video"
     },
     {
@@ -420,109 +538,19 @@
       "platform_region": "global"
     },
     {
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨奇跡",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「奇跡」 ある日、あなたも私と同じように、 血と肉 ...",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨血の領域",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「血の領域」 凡庸で、単調で、退屈で、変化のない ...",
       "source": "youtube",
-      "time": "2026-06-17T09:00:04Z",
-      "url": "https://www.youtube.com/watch?v=jdB1D2Fc5Pk",
-      "engagement": 53,
+      "time": "2026-06-17T09:00:09Z",
+      "url": "https://www.youtube.com/watch?v=L4T-OhQQvYA",
+      "engagement": 50,
       "is_hot": false,
       "author": "忘却前夜【日本版公式】",
       "tags": [],
-      "lang": "",
-      "platform_region": "global",
-      "media_url": "https://i.ytimg.com/vi/jdB1D2Fc5Pk/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "title": "【忘却前夜】主线7-18初见 谢谢你，塔薇",
-      "summary": "如果没有阿拉克涅我真不知道怎么清那几波小怪...\n目前为止打得最艰难的一战，演出很棒！打到最后已经意识模糊了，看到对面场攻够斩杀了我差点点击投降，还好转念一想让他打死算了....\n\n总之别放弃！",
-      "source": "bilibili",
-      "time": "2026-06-17T14:21:01+00:00",
-      "url": "http://www.bilibili.com/video/av116765866592134",
-      "engagement": 53,
-      "is_hot": false,
-      "author": "千年之剑",
-      "tags": [
-        "网络游戏"
-      ],
-      "lang": "zh",
-      "platform_region": "cn",
-      "media_url": "//i2.hdslb.com/bfs/archive/13c7d82eaf254a9d9dccbd125c6ac4a3e990d3c5.jpg",
-      "content_type": "video"
-    },
-    {
-      "title": "沙耶之歌",
-      "summary": "-\n  └ -昆扬 (2赞): [魔法少女的魔女审判表情包_探头]\n  └ asksuki (2赞): [妙啊]\n  └ 哈基沙大玉 (0赞): 好看捏",
-      "source": "bilibili",
-      "time": "2026-06-17T15:53:10+00:00",
-      "url": "https://www.bilibili.com/video/BV1tsLo67Esn",
-      "engagement": 52,
-      "is_hot": false,
-      "author": "asksuki",
-      "tags": [
-        "绘画"
-      ],
-      "metadata": {
-        "play": 47,
-        "comment_count": 5,
-        "comments_fetched": 3,
-        "danmaku": 1
-      },
-      "media_url": "https://i0.hdslb.com/bfs/archive/531e8ef049ff8745549fea57db73961547451d45.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "[DC] sofiaebby@🔸art-and-memes: When you see peak art/guides  <:Coalsie_shock:",
-      "summary": "When you see peak art/guides   \n[附件: Illustration50_2.png]",
-      "source": "discord",
-      "time": "2026-06-16T04:19:05.871000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1516296033779449906/1516296033779449906",
-      "engagement": 52,
-      "is_hot": false,
-      "author": "sofiaebby",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "💖×11 Pollux_cute×3 William_thinking×2 Fkeeper_peak×1",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1516296033779449906/1516296034148417577/Illustration50_2.png?ex=6a32c8f9&is=6a317779&hm=7327ff9bf71f035b9df7340dbbd0c02df1919dec3bc92dcface72e017d1475e5&"
-        ],
-        "channel": "🔸art-and-memes"
-      },
-      "media_url": "https://cdn.discordapp.com/attachments/1516296033779449906/1516296034148417577/Illustration50_2.png?ex=6a32c8f9&is=6a317779&hm=7327ff9bf71f035b9df7340dbbd0c02df1919dec3bc92dcface72e017d1475e5&",
+      "media_url": "https://i.ytimg.com/vi/L4T-OhQQvYA/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
-    },
-    {
-      "title": "【忘却前夜】主线6-14初见 全靠死亡抵抗",
-      "summary": "难度上来全靠死亡抵抗扛几轮伤害（差点被这个比一套秒了，还好我技高一筹.jpg）\n  └ 抱着狗狗不敢说话 (0赞): 世界演绎法，拿帷幕，是不是有点亏啊。。\n  └ 暮影寻曦 (0赞): 你这是被bug坑害了。那个跃迁刻印有些时候会导致超维空间需要的卡牌上限永久增加。",
-      "source": "bilibili",
-      "time": "2026-06-17T14:12:59+00:00",
-      "url": "https://www.bilibili.com/video/BV1XMLR6JEQR",
-      "engagement": 51,
-      "is_hot": false,
-      "author": "千年之剑",
-      "tags": [
-        "网络游戏"
-      ],
-      "metadata": {
-        "play": 49,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      },
-      "media_url": "https://i0.hdslb.com/bfs/archive/5c73439a2a57adfd23546052e949e5efc4af7864.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
     },
     {
       "title": "【忘却前夜】主线5-14初见 阿拉克涅小试牛刀",
@@ -548,20 +576,45 @@
       "platform_region": "cn"
     },
     {
-      "title": "【忘却前夜】主线6-14初见 全靠死亡抵抗",
-      "summary": "难度上来全靠死亡抵抗扛几轮伤害（差点被这个比一套秒了，还好我技高一筹.jpg）",
-      "source": "bilibili",
-      "time": "2026-06-17T14:12:59+00:00",
-      "url": "http://www.bilibili.com/video/av116765849815638",
+      "title": "[DC] cristhesloth@🔸canal-español: Ni tan mal",
+      "summary": "Ni tan mal\n[附件: Screenshot_20260617-084224_Morimens.png]",
+      "source": "discord",
+      "time": "2026-06-17T12:45:06.867000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1300659662311526512/1516785764891889847",
       "engagement": 49,
       "is_hot": false,
-      "author": "千年之剑",
+      "author": "cristhesloth",
       "tags": [
-        "网络游戏"
+        "discord",
+        "full-text"
       ],
-      "lang": "zh",
-      "platform_region": "cn",
-      "media_url": "//i0.hdslb.com/bfs/archive/5c73439a2a57adfd23546052e949e5efc4af7864.jpg",
+      "metadata": {
+        "reactions": "🔥×2 Nautila_happy×4 Celeste_agree×4 🐳×4 🫃×2",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1516785764623581386/Screenshot_20260617-084224_Morimens.png?ex=6a33e852&is=6a3296d2&hm=0c2d27c50047896d0abed86a00e8db9562908e6aa1b36a2f3e1e5b49206de2e9&"
+        ],
+        "channel": "🔸canal-español"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1300659662311526512/1516785764623581386/Screenshot_20260617-084224_Morimens.png?ex=6a33e852&is=6a3296d2&hm=0c2d27c50047896d0abed86a00e8db9562908e6aa1b36a2f3e1e5b49206de2e9&",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨砂の海に漂う",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「砂の海に漂う」 広い空に、果てなく続く砂の海。",
+      "source": "youtube",
+      "time": "2026-06-17T09:00:31Z",
+      "url": "https://www.youtube.com/watch?v=Y8Zmhu4JZ0c",
+      "engagement": 48,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Y8Zmhu4JZ0c/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -582,115 +635,28 @@
       "content_type": "video"
     },
     {
-      "title": "[DC] xianrenwurao@🔸綜合討論: 看完覺得要溶蝕了是正常的",
-      "summary": "看完覺得要溶蝕了是正常的\n[附件: SPOILER_1_20260616192738.png, SPOILER_IMG_6859.png, SPOILER_1_20260616192738.png, SPOILER_IMG_6859.png, SPOILER_IMG_6860.png, SPOILER_1_20260616193250.png, SPOILER_1_20260616193250.png, SPOILER_2_20260616193702.png]\n  └ yusi4172: 幹怎麼連這種東西都有忘卻版",
+      "title": "[DC] egg1108@🔸阵容构建:  打贏了感謝",
+      "summary": " 打贏了感謝\n[附件: Screenshot_20260617_182804.jpg]\n  └ cwz.io: 為什麼那麼多反擊\n  └ corposant_1003: 大佬\n  └ trevorsuyu: 有魂誕不早說\n  └ cwz.io: 這是阿拉C嗎\n  └ n28250976: 大佬+12的力量",
       "source": "discord",
-      "time": "2026-06-16T11:49:30.677000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516409384031490192",
-      "engagement": 46,
+      "time": "2026-06-17T10:29:29.746000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1516751635332989079",
+      "engagement": 44,
       "is_hot": false,
-      "author": "xianrenwurao",
+      "author": "egg1108",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "❓×7 🛐×2 🌿×3",
-        "reply_count": 1,
-        "attachment_count": 8,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409380948672642/SPOILER_1_20260616192738.png?ex=6a3289c9&is=6a313849&hm=3315e118ab58d5c5b05fc18f2bb91be7e7bf326f972ebce207e1cd76e40dc9c4&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409381447667792/SPOILER_IMG_6859.png?ex=6a3289ca&is=6a31384a&hm=8069753c1e4b047999b6f9f609747d20d836b80b1e47e81fbe7416d211bf9b72&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409381858705469/SPOILER_1_20260616192738.png?ex=6a3289ca&is=6a31384a&hm=d6105da84408aae91d7d8127a6c913d7527160fe591f63933d0df33deb1df502&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409382370283590/SPOILER_IMG_6859.png?ex=6a3289ca&is=6a31384a&hm=ddb15ace216b39c79838540e916e3e03d330c5dc8d89279d021169e52e8760de&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409382785515540/SPOILER_IMG_6860.png?ex=6a3289ca&is=6a31384a&hm=94c15aa450ebff773e1739b5981b88fe7f1328d96f2dacd4ab1afd4c4e2cd3a8&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409383192625312/SPOILER_1_20260616193250.png?ex=6a3289ca&is=6a31384a&hm=9ff771c23e264e43ca810f066f66f75d7317205175fa6566cd2d1e3efece8830&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409383645348000/SPOILER_1_20260616193250.png?ex=6a3289ca&is=6a31384a&hm=2f617677513d0897c37076a45bf801a32ab2fff73bb8f5a2b3c3701d8a2db61b&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516409384069234688/SPOILER_2_20260616193702.png?ex=6a3289ca&is=6a31384a&hm=0bf439bd1c195f029d6dacd9e22031a280dacca21ad27fcf366ce738df6f49f3&"
-        ],
-        "channel": "🔸綜合討論"
-      },
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516409380948672642/SPOILER_1_20260616192738.png?ex=6a3289c9&is=6a313849&hm=3315e118ab58d5c5b05fc18f2bb91be7e7bf326f972ebce207e1cd76e40dc9c4&",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨砂の海に漂う",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「砂の海に漂う」 広い空に、果てなく続く砂の海。",
-      "source": "youtube",
-      "time": "2026-06-17T09:00:31Z",
-      "url": "https://www.youtube.com/watch?v=Y8Zmhu4JZ0c",
-      "engagement": 45,
-      "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/Y8Zmhu4JZ0c/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨血の領域",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「血の領域」 凡庸で、単調で、退屈で、変化のない ...",
-      "source": "youtube",
-      "time": "2026-06-17T09:00:09Z",
-      "url": "https://www.youtube.com/watch?v=L4T-OhQQvYA",
-      "engagement": 45,
-      "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global",
-      "media_url": "https://i.ytimg.com/vi/L4T-OhQQvYA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "title": "[DC] coleerouo@🔸綜合討論: 調教群友變成1",
-      "summary": "調教群友變成1",
-      "source": "discord",
-      "time": "2026-06-16T17:47:48.906000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516499554139115701",
-      "engagement": 42,
-      "is_hot": false,
-      "author": "coleerouo",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "🌿×7 🛐×4 Winkle_omg×3",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[DC] annaxxe_@🔸art-and-memes: aka my attempt to keep my will to draw alive <:Hameln_discontent:146825898144406",
-      "summary": "aka my attempt to keep my will to draw alive   \n[附件: hameln_line.jpg]",
-      "source": "discord",
-      "time": "2026-06-16T16:48:40.954000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1516484672949846036/1516484672949846036",
-      "engagement": 40,
-      "is_hot": false,
-      "author": "annaxxe_",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "Horla_shy×9 🩷×2 Hameln_love×2",
-        "reply_count": 0,
+        "reactions": "🛐×11",
+        "reply_count": 5,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1516484672949846036/1516484673612550174/hameln_line.jpg?ex=6a32cfe9&is=6a317e69&hm=4cf87b16ad8f23690663e070b9d98172637ac291e523b5a998b6e5845b696d2b&"
+          "https://cdn.discordapp.com/attachments/1131839874132090890/1516751634997448915/Screenshot_20260617_182804.jpg?ex=6a33c889&is=6a327709&hm=1052d3c621ea087b7d52dd3af2d921408fa59aee7588c3dfa90524fdfc320df8&"
         ],
-        "channel": "🔸art-and-memes"
+        "channel": "🔸阵容构建"
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1516484672949846036/1516484673612550174/hameln_line.jpg?ex=6a32cfe9&is=6a317e69&hm=4cf87b16ad8f23690663e070b9d98172637ac291e523b5a998b6e5845b696d2b&",
+      "media_url": "https://cdn.discordapp.com/attachments/1131839874132090890/1516751634997448915/Screenshot_20260617_182804.jpg?ex=6a33c889&is=6a327709&hm=1052d3c621ea087b7d52dd3af2d921408fa59aee7588c3dfa90524fdfc320df8&",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -719,33 +685,6 @@
       "platform_region": "cn"
     },
     {
-      "title": "[DC] akarut@🔸canal-español: Finalmente maxie a mi vieja🥹",
-      "summary": "Finalmente maxie a mi vieja🥹\n[附件: Morimens_2026-06-15-20-24-54.jpg]",
-      "source": "discord",
-      "time": "2026-06-16T00:37:10.105000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1300659662311526512/1516240183408988306",
-      "engagement": 37,
-      "is_hot": false,
-      "author": "akarut",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "🫃×1 Pandia_kiss×2 Celeste_agree×3 🐳×2 🦦×1 🗣️×2 🔥×1",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659662311526512/1516240183375302686/Morimens_2026-06-15-20-24-54.jpg?ex=6a3294f6&is=6a314376&hm=36565e2749f8443360e0641885d1a65237eab5b5d2b94a4fa60044f07cc53b86&"
-        ],
-        "channel": "🔸canal-español"
-      },
-      "media_url": "https://cdn.discordapp.com/attachments/1300659662311526512/1516240183375302686/Morimens_2026-06-15-20-24-54.jpg?ex=6a3294f6&is=6a314376&hm=36565e2749f8443360e0641885d1a65237eab5b5d2b94a4fa60044f07cc53b86&",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "墨菲",
       "summary": "一时兴起做的墨菲视频，用的steam自带的录屏，xbox game bar的说我硬件不满足。。",
       "source": "bilibili",
@@ -763,6 +702,44 @@
       "content_type": "video"
     },
     {
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)롤체 조금 하다가",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "source": "youtube",
+      "time": "2026-06-17T20:41:28Z",
+      "url": "https://www.youtube.com/watch?v=yMqHqcXktYc",
+      "engagement": 35,
+      "is_hot": false,
+      "author": "박현(Muyeong)",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/yMqHqcXktYc/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[DC] water_heart@🔸綜合討論: 有沒有大佬可以帶帶我",
+      "summary": "有沒有大佬可以帶帶我\n  └ sayo.0320: 完福塔朵拉",
+      "source": "discord",
+      "time": "2026-06-17T12:09:48.167000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516776878420267089",
+      "engagement": 35,
+      "is_hot": false,
+      "author": "water_heart",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "↖️×6 🛐×5",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "Rechecking out Morimens After a Long Time",
       "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
       "source": "youtube",
@@ -778,141 +755,84 @@
       "platform_region": "global"
     },
     {
-      "title": "[DC] alexander020768@🔸art-and-memes: 还根据原作 画了一些表情差分，抹茶小蛋糕我们喜欢你！ UID: 100909227  <:Sa",
-      "summary": "还根据原作 画了一些表情差分，抹茶小蛋糕我们喜欢你！\nUID: 100909227\n \n[附件: 0c321fbc764b0c71.png, 1.jpg]",
+      "title": "[DC] iulargerthan3@🔸晒卡分享: 醫生C真的好貴",
+      "summary": "醫生C真的好貴\n[附件: image.png]\n  └ cwz.io: 佬\n輸光...",
       "source": "discord",
-      "time": "2026-06-16T06:53:24.782000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1516334868466892800/1516334868466892800",
-      "engagement": 32,
+      "time": "2026-06-17T02:48:42.832000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1516635675771015278",
+      "engagement": 33,
       "is_hot": false,
-      "author": "alexander020768",
+      "author": "iulargerthan3",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "Saya_yum×10",
+        "reactions": "🛐×10",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1516635675460505690/image.png?ex=6a34054a&is=6a32b3ca&hm=d6aa712b49521c9228753f4082e37a53b3c0ccda5113d738aeb5ed3191fb7cd7&"
+        ],
+        "channel": "🔸晒卡分享"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1174983699935277147/1516635675460505690/image.png?ex=6a34054a&is=6a32b3ca&hm=d6aa712b49521c9228753f4082e37a53b3c0ccda5113d738aeb5ed3191fb7cd7&",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[DC] xu6_@🔸同人创作: 我4月17號時在融災禁區被4-5王關阿格里帕電爛後不氣急敗壞的挑戰中取得了0秒的好成績，快來試試吧！（打了5小時後有打過）  UID 100425856",
+      "summary": "我4月17號時在融災禁區被4-5王關阿格里帕電爛後不氣急敗壞的挑戰中取得了0秒的好成績，快來試試吧！（打了5小時後有打過）\n\nUID 100425856\n[附件: IMG_4309.png, IMG_4294.png]",
+      "source": "discord",
+      "time": "2026-06-17T12:18:25.700000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1516779049110999040/1516779049110999040",
+      "engagement": 32,
+      "is_hot": false,
+      "author": "xu6_",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "Agrippa_hug×10",
         "reply_count": 0,
         "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1516334868466892800/1516334870283161700/0c321fbc764b0c71.png?ex=6a32ed25&is=6a319ba5&hm=e55abe23736572d3d3a9cf4114b893ae85f827eb14e9b2317af1aab267a404bb&",
-          "https://cdn.discordapp.com/attachments/1516334868466892800/1516334871855890452/1.jpg?ex=6a32ed25&is=6a319ba5&hm=bc0bdeb045951b26e5e2e215da971dc74ba45ef257ab23ae520b58069871ef76&"
+          "https://cdn.discordapp.com/attachments/1516779049110999040/1516779049895071915/IMG_4309.png?ex=6a33e211&is=6a329091&hm=f5a9881fa19e0499099c880c8ed7a8d130951e464f9b0c6aaa033d1df599059a&",
+          "https://cdn.discordapp.com/attachments/1516779049110999040/1516779051010883664/IMG_4294.png?ex=6a33e212&is=6a329092&hm=4b885def48c43ec5fff279a91e3d6f3ffc83e5cf40d21a024ea4b06ed7c24ef3&"
         ],
-        "channel": "🔸art-and-memes"
+        "channel": "🔸同人创作"
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1516334868466892800/1516334870283161700/0c321fbc764b0c71.png?ex=6a32ed25&is=6a319ba5&hm=e55abe23736572d3d3a9cf4114b893ae85f827eb14e9b2317af1aab267a404bb&",
+      "media_url": "https://cdn.discordapp.com/attachments/1516779049110999040/1516779049895071915/IMG_4309.png?ex=6a33e211&is=6a329091&hm=f5a9881fa19e0499099c880c8ed7a8d130951e464f9b0c6aaa033d1df599059a&",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "[DC] anicillia@🔸phòng-chat-tiếng-việt: https://youtube.com/shorts/sh30cBLcoxs",
-      "summary": "https://youtube.com/shorts/sh30cBLcoxs\n  └ surrealclick: peak\n  └ baongocx1x2: Cần bản 1 tiếng \n  └ vermiyy: này à\n  └ gold4695:  kêu ông VH đăng page đi chứ đăng trong này trôi mất",
+      "title": "[DC] corposant_1003@🔸晒卡分享: (附件/嵌入)",
+      "summary": "[附件: 9k.png]",
       "source": "discord",
-      "time": "2026-06-16T08:07:13.492000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1516353443823095819",
-      "engagement": 32,
-      "is_hot": false,
-      "author": "anicillia",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "🔥×8",
-        "reply_count": 4,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[DC] xianrenwurao@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: SPOILER_3_20260616010403.png]\n  └ sayo.0320: 超好笑\n  └ hon_ey0: 那大小姐看一下這個",
-      "source": "discord",
-      "time": "2026-06-16T11:00:46.660000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516397119815286816",
-      "engagement": 32,
-      "is_hot": false,
-      "author": "xianrenwurao",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "Shocked×1 😆×4 William_shock×1 ❓×2 Jenkin_processing×1",
-        "reply_count": 2,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516397119504777236/SPOILER_3_20260616010403.png?ex=6a327e5e&is=6a312cde&hm=5ac2bf3af91ea801ff9000004dd74888189a0e7836139881e9c4f5b46329aebd&"
-        ],
-        "channel": "🔸綜合討論"
-      },
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516397119504777236/SPOILER_3_20260616010403.png?ex=6a327e5e&is=6a312cde&hm=5ac2bf3af91ea801ff9000004dd74888189a0e7836139881e9c4f5b46329aebd&",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[DC] ernest_heart@🔸綜合討論: 忘卻前夜又贏",
-      "summary": "忘卻前夜又贏\n  └ akkom730: https://www.goodsmile.com/zh/product/1142209/Chocopuni+%E7%8E%A9%E5%81%B6+%E6%B2%99%E8%80%B6?fbclid=IwZnRzaASeTR1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEehjKwLx69GH88j0pJhmM4Sy1pkEHpmtshOa6t3vzJsEP1ANtMcepB1mOv_VM_aem_HLm7S7zLZmHHJzHwYroCcQ",
-      "source": "discord",
-      "time": "2026-06-16T15:30:02.209000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516464881098821722",
-      "engagement": 32,
-      "is_hot": false,
-      "author": "ernest_heart",
-      "tags": [
-        "discord",
-        "full-text"
-      ],
-      "metadata": {
-        "reactions": "Saya_foto×8 😼×2",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "망각전야Morimens) (대리뽑,상담시청가능)롤체 조금 하다가",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "source": "youtube",
-      "time": "2026-06-17T12:36:29Z",
-      "url": "https://www.youtube.com/watch?v=yMqHqcXktYc",
+      "time": "2026-06-17T10:02:05.825000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1516744740228300962",
       "engagement": 31,
       "is_hot": false,
-      "author": "박현(Muyeong)",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/yMqHqcXktYc/hqdefault_live.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[DC] kongyue_@🔸綜合討論: 各位晚上好",
-      "summary": "各位晚上好\n  └ under_bright_light: 你是誰",
-      "source": "discord",
-      "time": "2026-06-16T17:23:49.609000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516493517290213507",
-      "engagement": 29,
-      "is_hot": false,
-      "author": "kongyue_",
+      "author": "corposant_1003",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "👀×3 👁️×6",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
+        "reactions": "🛐×10",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1516744739922382908/9k.png?ex=6a33c21d&is=6a32709d&hm=dce3417410ebfd3d0dc0cd6ab20698026ecf9b4b2175ac666883ea0d3d4a39a4&"
+        ],
+        "channel": "🔸晒卡分享"
       },
+      "media_url": "https://cdn.discordapp.com/attachments/1174983699935277147/1516744739922382908/9k.png?ex=6a33c21d&is=6a32709d&hm=dce3417410ebfd3d0dc0cd6ab20698026ecf9b4b2175ac666883ea0d3d4a39a4&",
+      "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
@@ -922,7 +842,7 @@
       "source": "youtube",
       "time": "2026-06-17T11:06:34Z",
       "url": "https://www.youtube.com/watch?v=JHgCwgMTi2Q",
-      "engagement": 28,
+      "engagement": 30,
       "is_hot": false,
       "author": "LowLivve",
       "tags": [],
@@ -932,52 +852,75 @@
       "platform_region": "global"
     },
     {
-      "title": "[DC] water_heart@🔸綜合討論: 之前是用這套 我就打了三次 12t 11t 10t",
-      "summary": "之前是用這套\n我就打了三次\n12t 11t 10t\n[附件: Screenshot_2026-06-09-09-37-25-697_com.qookkagames.z1.gp.hk.jpg]\n  └ yjr123: 有扇姐的狀況嗎",
+      "title": "[DC] 0.0._.0_0.@🔸阵容构建: ~~直接全圖鑑+12啦~~",
+      "summary": "~~直接全圖鑑+12啦~~\n  └ universe.dark: 求贊助",
       "source": "discord",
-      "time": "2026-06-16T10:38:49.189000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516391593941401631",
-      "engagement": 27,
+      "time": "2026-06-17T09:15:32.434000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1516733023897255946",
+      "engagement": 29,
       "is_hot": false,
-      "author": "water_heart",
+      "author": "0.0._.0_0.",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "🛐×4 worship×4",
+        "reactions": "↖️×5 🛐×4",
         "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516391593639284796/Screenshot_2026-06-09-09-37-25-697_com.qookkagames.z1.gp.hk.jpg?ex=6a327939&is=6a3127b9&hm=f685d417b269c9725af728b066b9931c578849eea12fc09111dd37d19a25ad62&"
-        ],
-        "channel": "🔸綜合討論"
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸阵容构建"
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516391593639284796/Screenshot_2026-06-09-09-37-25-697_com.qookkagames.z1.gp.hk.jpg?ex=6a327939&is=6a3127b9&hm=f685d417b269c9725af728b066b9931c578849eea12fc09111dd37d19a25ad62&",
-      "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "[DC] cameliia._.@🔸晒卡分享: 最後一張月卡命輪也+12了",
-      "summary": "最後一張月卡命輪也+12了",
+      "title": "[DC] ponponnyaru@🔸綜合討論: 对了，还有在阳台上做的",
+      "summary": "对了，还有在阳台上做的\n  └ coleerouo:  \n懷疑自己已經死了，不然怎麼會看見這麼多陰間東西\n  └ ling_an_: 大胆雕民...\n  └ kemomimi_: 哇，居然还有射雕英雄传\n  └ under_bright_light: 有錄影舉報嗎",
       "source": "discord",
-      "time": "2026-06-16T11:47:20.679000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1516408838780096512",
-      "engagement": 27,
+      "time": "2026-06-17T06:00:17.305000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516683887084834866",
+      "engagement": 29,
       "is_hot": false,
-      "author": "cameliia._.",
+      "author": "ponponnyaru",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "🛐×9",
-        "reply_count": 0,
+        "reactions": "Jenkin_processing×4 6️⃣×2 ❓×1",
+        "reply_count": 4,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸晒卡分享"
+        "channel": "🔸綜合討論"
       },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[DC] catlan_33586@🔸阵容构建: ",
+      "summary": "\n[附件: image.png]\n  └ ponponnyaru: 茉夏带星天",
+      "source": "discord",
+      "time": "2026-06-17T02:01:43.237000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1516623849532293264",
+      "engagement": 27,
+      "is_hot": false,
+      "author": "catlan_33586",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "🛐×8",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839874132090890/1516623849066594505/image.png?ex=6a33fa47&is=6a32a8c7&hm=24782369201f2047ccae238b06be7730e043c6ff4bea66c65c7d880874625b22&"
+        ],
+        "channel": "🔸阵容构建"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1131839874132090890/1516623849066594505/image.png?ex=6a33fa47&is=6a32a8c7&hm=24782369201f2047ccae238b06be7730e043c6ff4bea66c65c7d880874625b22&",
+      "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
@@ -997,70 +940,137 @@
       "platform_region": "global"
     },
     {
-      "title": "[DC] annabelle0868@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: SPOILER_Screenshot_20260616_090355_Instagram.jpg]\n  └ kongyue_: No..........\n  └ under_bright_light: 群裏南銅怎麼這麼多",
+      "title": "[DC] cwz.io@🔸綜合討論: 我在現實中看到克萊門汀的同伴了 （害怕的不要點開）",
+      "summary": "我在現實中看到克萊門汀的同伴了\n（害怕的不要點開）\n[附件: SPOILER_20260617_123252.jpg]\n  └ kemomimi_: 他可能是想来看看你的\n  └ cwz.io: 但是很漂亮\n  └ gensono0609: 其实这几天潮湿我在家还看到高脚白额\n  └ cwz.io: 但還是這隻比較漂亮\n  └ encyoverride: 还挺好看",
       "source": "discord",
-      "time": "2026-06-16T17:48:21.568000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516499691133468764",
+      "time": "2026-06-17T04:35:18.847000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516662502602178743",
       "engagement": 26,
       "is_hot": false,
-      "author": "annabelle0868",
+      "author": "cwz.io",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "🌿×5 🥵×1 Ayame_grass×1",
-        "reply_count": 2,
+        "reactions": "🌿×5",
+        "reply_count": 5,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1516499690819031120/SPOILER_Screenshot_20260616_090355_Instagram.jpg?ex=6a32dde5&is=6a318c65&hm=c8669f54a0b8a6f4f2f49136fe5272ffcbc0d5b5e0969970b0f87867078a684b&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1516662502317101076/SPOILER_20260617_123252.jpg?ex=6a341e46&is=6a32ccc6&hm=bbed0949d451881416a1a02a5af63c4d6cd470024494a1cbc36868ad3348f8e0&"
         ],
         "channel": "🔸綜合討論"
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516499690819031120/SPOILER_Screenshot_20260616_090355_Instagram.jpg?ex=6a32dde5&is=6a318c65&hm=c8669f54a0b8a6f4f2f49136fe5272ffcbc0d5b5e0969970b0f87867078a684b&",
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516662502317101076/SPOILER_20260617_123252.jpg?ex=6a341e46&is=6a32ccc6&hm=bbed0949d451881416a1a02a5af63c4d6cd470024494a1cbc36868ad3348f8e0&",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "[DC] lowtownnivn@🔸art-and-memes: (附件/嵌入)",
-      "summary": "[附件: Untitled535_20260616173903.png]",
+      "title": "[DC] calmdreab@🔸同人创作: 「我真受不了粗鲁的人。不过也没办法……」 「叽里咕噜说什么呢，吃我一记，闪耀☆龙卷风！！！」  uid100028052",
+      "summary": "「我真受不了粗鲁的人。不过也没办法……」\n「叽里咕噜说什么呢，吃我一记，闪耀☆龙卷风！！！」\n\nuid100028052\n[附件: Image_1781689593323.png, Image_1781689591650.png]",
       "source": "discord",
-      "time": "2026-06-16T10:43:28.809000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1516392766752690206/1516392766752690206",
-      "engagement": 25,
+      "time": "2026-06-17T09:47:48.730000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1516741145311445122/1516741145311445122",
+      "engagement": 26,
       "is_hot": false,
-      "author": "lowtownnivn",
+      "author": "calmdreab",
       "tags": [
         "discord",
         "full-text"
       ],
       "metadata": {
-        "reactions": "🩷×2 Faros_love×6",
+        "reactions": "Leigh_love×8",
         "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1516392766752690206/1516392767004086393/Untitled535_20260616173903.png?ex=6a327a50&is=6a3128d0&hm=72653935e26afd5433715821df838a96a3ed8f715a87f572f6920c8eac180864&"
+          "https://cdn.discordapp.com/attachments/1516741145311445122/1516741145856839740/Image_1781689593323.png?ex=6a33bec4&is=6a326d44&hm=781ff030e85c8f0e32f286fae719f7ad62fe97eacc945550c473cbd82e3d96fe&",
+          "https://cdn.discordapp.com/attachments/1516741145311445122/1516741146234060850/Image_1781689591650.png?ex=6a33bec4&is=6a326d44&hm=2305c928a102cee448eb95930416a6d081a4c74aab719eab1a3a6d1fbf2cda0b&"
         ],
-        "channel": "🔸art-and-memes"
+        "channel": "🔸同人创作"
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1516392766752690206/1516392767004086393/Untitled535_20260616173903.png?ex=6a327a50&is=6a3128d0&hm=72653935e26afd5433715821df838a96a3ed8f715a87f572f6920c8eac180864&",
+      "media_url": "https://cdn.discordapp.com/attachments/1516741145311445122/1516741145856839740/Image_1781689593323.png?ex=6a33bec4&is=6a326d44&hm=781ff030e85c8f0e32f286fae719f7ad62fe97eacc945550c473cbd82e3d96fe&",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
     },
     {
-      "title": "What&#39;s ACTUALLY Happening?? | Morimens: Ark 1 Finale",
-      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
-      "source": "youtube",
-      "time": "2026-06-17T06:45:45Z",
-      "url": "https://www.youtube.com/watch?v=0MjB5_4j2C4",
-      "engagement": 23,
+      "title": "[DC] anjuthemage@🔸art-and-memes: Day 10  Trust. You'll get AA",
+      "summary": "Day 10\n\nTrust. You'll get AA\n[附件: 20260616_1923492.jpg]",
+      "source": "discord",
+      "time": "2026-06-17T12:38:13.305000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1513948986963394692/1516784030287265892",
+      "engagement": 25,
       "is_hot": false,
-      "author": "LowLivve",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/0MjB5_4j2C4/hqdefault.jpg",
+      "author": "anjuthemage",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "💕×3 N_grin×3 💸×2",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1513948986963394692/1516784029821571194/20260616_1923492.jpg?ex=6a33e6b5&is=6a329535&hm=b0789fc8edf418b80da84dcbd102a9519f3e4b64bf0e0ca3af3c08628bd4e029&"
+        ],
+        "channel": "🔸art-and-memes"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1513948986963394692/1516784029821571194/20260616_1923492.jpg?ex=6a33e6b5&is=6a329535&hm=b0789fc8edf418b80da84dcbd102a9519f3e4b64bf0e0ca3af3c08628bd4e029&",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[DC] nikolazuli@🔸lore-chat: (附件/嵌入)",
+      "summary": "[附件: 32o16QIkIMgAAABBkZUJHMDM1ODk0NDdEQjFFMzcyQgpvz3AAAAAASUVORK5CYII.png]",
+      "source": "discord",
+      "time": "2026-06-17T06:28:01.598000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1516690867635884072",
+      "engagement": 25,
+      "is_hot": false,
+      "author": "nikolazuli",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "🔥×8",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1326453763355185215/1516690867270848592/32o16QIkIMgAAABBkZUJHMDM1ODk0NDdEQjFFMzcyQgpvz3AAAAAASUVORK5CYII.png?ex=6a3438b1&is=6a32e731&hm=1c443b3d6e47ee447e995cc04d8efc5bf585823101063cc839954eda9b27b5fb&"
+        ],
+        "channel": "🔸lore-chat"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1326453763355185215/1516690867270848592/32o16QIkIMgAAABBkZUJHMDM1ODk0NDdEQjFFMzcyQgpvz3AAAAAASUVORK5CYII.png?ex=6a3438b1&is=6a32e731&hm=1c443b3d6e47ee447e995cc04d8efc5bf585823101063cc839954eda9b27b5fb&",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[DC] arkaether@🔸綜合討論: ",
+      "summary": "\n[附件: image.png]",
+      "source": "discord",
+      "time": "2026-06-17T06:43:25.547000+00:00",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1516694742958870611",
+      "engagement": 25,
+      "is_hot": false,
+      "author": "arkaether",
+      "tags": [
+        "discord",
+        "full-text"
+      ],
+      "metadata": {
+        "reactions": "🛐×8",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1516694742627389542/image.png?ex=6a343c4d&is=6a32eacd&hm=5c93afb67ec608a0fde1af1a3f6a43c82c6d7b8c59f5f77819624f38d7bc311c&"
+        ],
+        "channel": "🔸綜合討論"
+      },
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1516694742627389542/image.png?ex=6a343c4d&is=6a32eacd&hm=5c93afb67ec608a0fde1af1a3f6a43c82c6d7b8c59f5f77819624f38d7bc311c&",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -1069,7 +1079,7 @@
       "title": "What&#39;s ACTUALLY Happening?? | Morimens: Ark 1 Finale (Burrito Edition)",
       "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
       "source": "youtube",
-      "time": "2026-06-17T06:37:17Z",
+      "time": "2026-06-17T21:40:37Z",
       "url": "https://www.youtube.com/watch?v=cqB1EXNxJlo",
       "engagement": 23,
       "is_hot": false,
@@ -1081,31 +1091,27 @@
       "platform_region": "global"
     },
     {
-      "title": "[DC] sorhavn@🔸art-and-memes: by   https://x.com/lavenderjun0/status/2066762537589211192",
-      "summary": "by \n\nhttps://x.com/lavenderjun0/status/2066762537589211192\n[附件: HK6dg_mXwAAyMyt.jpg]",
-      "source": "discord",
-      "time": "2026-06-16T15:10:27.657000+00:00",
-      "url": "https://discord.com/channels/1131791637933199470/1516459954670670055/1516459954670670055",
-      "engagement": 22,
+      "title": "&quot;抓住幸福其实比忍耐痛苦更需要勇气。&quot;",
+      "summary": "-\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 川崎繁子 (0赞): 用立绘+背景图，通过gpt生成的\n  └ 哈基沙大玉 (0赞): [Ave Mujica_挺好]",
+      "source": "bilibili",
+      "time": "2026-06-17T15:41:14+00:00",
+      "url": "https://www.bilibili.com/video/BV1gHLo6JEBa",
+      "engagement": 21,
       "is_hot": false,
-      "author": "sorhavn",
+      "author": "川崎繁子",
       "tags": [
-        "discord",
-        "full-text"
+        "动画综合"
       ],
       "metadata": {
-        "reactions": "💙×7",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1516459954670670055/1516459957363544275/HK6dg_mXwAAyMyt.jpg?ex=6a32b8e4&is=6a316764&hm=43fa47c3a6b9f6df40540567cab61149e2458f639b27795e2c8b7d1b5cc17d97&"
-        ],
-        "channel": "🔸art-and-memes"
+        "play": 17,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
       },
-      "media_url": "https://cdn.discordapp.com/attachments/1516459954670670055/1516459957363544275/HK6dg_mXwAAyMyt.jpg?ex=6a32b8e4&is=6a316764&hm=43fa47c3a6b9f6df40540567cab61149e2458f639b27795e2c8b7d1b5cc17d97&",
+      "media_url": "https://i1.hdslb.com/bfs/archive/1cbdf7297a6f2ee4c653f1e4287653b77abd2839.jpg",
       "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "忘卻前夜 Morimens ￼徐法墨2-5",
@@ -1113,37 +1119,29 @@
       "source": "youtube",
       "time": "2026-06-17T10:00:41Z",
       "url": "https://www.youtube.com/watch?v=z2VCXjKx5MQ",
-      "engagement": 20,
+      "engagement": 21,
       "is_hot": false,
       "author": "瑪爾",
       "tags": [],
+      "lang": "",
+      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/z2VCXjKx5MQ/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "More Morimens",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-17T21:41:05Z",
+      "url": "https://www.youtube.com/watch?v=CgkLtXZVFn8",
+      "engagement": 13,
+      "is_hot": false,
+      "author": "Nazoric",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/CgkLtXZVFn8/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
-    },
-    {
-      "title": "&quot;抓住幸福其实比忍耐痛苦更需要勇气。&quot;",
-      "summary": "-\n  └ 川崎繁子 (0赞): 用立绘+背景图，通过gpt生成的\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
-      "source": "bilibili",
-      "time": "2026-06-17T15:41:14+00:00",
-      "url": "https://www.bilibili.com/video/BV1gHLo6JEBa",
-      "engagement": 17,
-      "is_hot": false,
-      "author": "川崎繁子",
-      "tags": [
-        "动画综合"
-      ],
-      "metadata": {
-        "play": 14,
-        "comment_count": 3,
-        "comments_fetched": 2,
-        "danmaku": 0
-      },
-      "media_url": "https://i1.hdslb.com/bfs/archive/1cbdf7297a6f2ee4c653f1e4287653b77abd2839.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
     },
     {
       "title": "[Google Play 好评] ★5 給5星是因為我玩的真挺開心的，不過還是得說，如果要入坑這遊戲的話，還請務必做好被",
@@ -1188,9 +1186,9 @@
       "title": "[Steam论坛] Question about team building",
       "summary": "Is Arachne/Clem/Thais/XU a good team for story? I am in chapter 6 and things are starting to get kinda rough,idk if its a team building issue or I am just a brainlet who cant pilot the team properly(tbh I dont rly understand how clem works)\nAny tips on what characters I should get to improve this?...",
       "source": "steam_discussion",
-      "time": "2026-06-17T04:42:18+00:00",
+      "time": "2026-06-17T20:54:47+00:00",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904888719/",
-      "engagement": 6,
+      "engagement": 7,
       "is_hot": false,
       "author": "DingusDork",
       "tags": [
@@ -1209,10 +1207,10 @@
       "is_hot": false,
       "author": "Noir",
       "tags": [],
-      "lang": "",
-      "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/9jsRus1e5xk/hqdefault.jpg",
-      "content_type": "video"
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "Hands down the greatest Gacha game I’ve played, never been so addicted.",
@@ -1358,6 +1356,21 @@
       "platform_region": "us"
     },
     {
+      "title": "[Morimens] A Quitter&#39;s first W5A5 clear, or: How not to play Bluwil",
+      "summary": "Some of my teams are strong enough for A5, but my skill and will as a player aren't. I'm not getting any younger, so I might as well ...",
+      "source": "youtube",
+      "time": "2026-06-17T18:57:26Z",
+      "url": "https://www.youtube.com/watch?v=7mHdJheVPOE",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "A:\\Quitter",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/7mHdJheVPOE/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "Nice character design!",
       "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
       "source": "appstore",
@@ -1369,6 +1382,21 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id"
+    },
+    {
+      "title": "Morimens Arcade Mode W/Commentary",
+      "summary": "Thanks for Watching and please enjoy seeing how NOT to play Morimens. (I dont read my cards)",
+      "source": "youtube",
+      "time": "2026-06-17T21:27:14Z",
+      "url": "https://www.youtube.com/watch?v=dpFsizfktCU",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "Miss Stryfe",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/dpFsizfktCU/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
@@ -1384,19 +1412,19 @@
       "platform_region": "fr"
     },
     {
-      "title": "[Morimens] A Quitter&#39;s first W5A5 clear, or: How not to play Bluwil",
-      "summary": "Some of my teams are strong enough for A5, but my skill and will as a player aren't. I'm not getting any younger, so I might as well ...",
+      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画８",
+      "summary": "乱入者がいたけどまあいいでしょ.",
       "source": "youtube",
-      "time": "2026-06-17T18:57:26Z",
-      "url": "https://www.youtube.com/watch?v=7mHdJheVPOE",
+      "time": "2026-06-16T22:47:43Z",
+      "url": "https://www.youtube.com/watch?v=vnBKIdedWu8",
       "engagement": 2,
       "is_hot": false,
-      "author": "Alice Quitter",
+      "author": "和音",
       "tags": [],
-      "media_url": "https://i.ytimg.com/vi/7mHdJheVPOE/hqdefault.jpg",
-      "content_type": "image",
       "lang": "",
-      "platform_region": "global"
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/vnBKIdedWu8/hqdefault.jpg",
+      "content_type": "video"
     },
     {
       "title": "[Google Play 好评] ★5 game peak vcl",
@@ -1410,6 +1438,28 @@
       "tags": [],
       "lang": "vi",
       "platform_region": "vn"
+    },
+    {
+      "title": "[正面] fire gacha game",
+      "summary": "fire gacha game",
+      "source": "steam_review",
+      "time": "2026-06-17T18:40:05+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199222293752/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199222293752",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1992,
+        "votes_up": 1,
+        "timestamp_created": 1781721605
+      },
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "[负面] The game files is way to big(almost 15G). Also ani...",
@@ -1448,11 +1498,70 @@
       "language": "schinese",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 2148,
+        "playtime_forever": 2162,
         "votes_up": 1,
         "timestamp_created": 1781709320
       },
       "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] The game is surprisingly good. I played it because...",
+      "summary": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
+      "source": "steam_review",
+      "time": "2026-06-17T08:36:28+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198171557225/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198171557225",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1810,
+        "votes_up": 1,
+        "timestamp_created": 1781685388
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Really cool game. Not money-grabby at all so far....",
+      "summary": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
+      "source": "steam_review",
+      "time": "2026-06-17T02:46:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198085050028/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198085050028",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 716,
+        "votes_up": 1,
+        "timestamp_created": 1781664419
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Cards dont pop out on hover",
+      "summary": "This is the first time I've seen a game like this where part of the card is hidden off screen while in your hand and the card doesn't pop out so that you can read it when you hover over it.  It's pretty annoying grabbing the card and pulling it out to read it, then carefully placing it back in hand so that I don't accidentally play it.  I wonder if I'm doing something wrong or they really just haven't implemented this basic and standard feature to their game....",
+      "source": "steam_discussion",
+      "time": "2026-06-17T20:56:56+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624847350/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Ruckkus",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
       "platform_region": "global"
     },
     {
@@ -1541,21 +1650,6 @@
       "author": "Emmaaaa",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/wpKB6O34zLE/hqdefault.jpg",
-      "content_type": "image",
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画８",
-      "summary": "乱入者がいたけどまあいいでしょ.",
-      "source": "youtube",
-      "time": "2026-06-16T22:47:43Z",
-      "url": "https://www.youtube.com/watch?v=vnBKIdedWu8",
-      "engagement": 1,
-      "is_hot": false,
-      "author": "和音",
-      "tags": [],
-      "media_url": "https://i.ytimg.com/vi/vnBKIdedWu8/hqdefault.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -1709,6 +1803,22 @@
       "platform_region": "global"
     },
     {
+      "title": "Do Caro unit really give birth and eat their babies during fights? Or is this only a gameplay thing and not something they do in lore.",
+      "summary": "Title.  &#32; submitted by &#32;  /u/Lord_Vorgor   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T08:15:56+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u845nl/do_caro_unit_really_give_birth_and_eat_their/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Lord_Vorgor",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "67 total turns ❤️‍🩹❤️‍🩹",
       "summary": "&#32; submitted by &#32;  /u/thataokithegirl84   [link] &#32; [comments]",
       "source": "reddit",
@@ -1723,22 +1833,6 @@
       },
       "media_url": "https://preview.redd.it/pc42ht5abu7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=761b4490bbed272161432a8e4fb9b4cdfd9709ca",
       "content_type": "image",
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "Do Caro unit really give birth and eat their babies during fights? Or is this only a gameplay thing and not something they do in lore.",
-      "summary": "Title.  &#32; submitted by &#32;  /u/Lord_Vorgor   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-17T08:15:56+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u845nl/do_caro_unit_really_give_birth_and_eat_their/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/Lord_Vorgor",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
       "lang": "en",
       "platform_region": "global"
     },
@@ -1761,24 +1855,6 @@
       "platform_region": "global"
     },
     {
-      "title": "D-Tide 425 – Boss Breakdown & Team Recommendations [Ultra Ring] Jun 8th - Jun 21st",
-      "summary": "Wave 3 and Wave 5 are noticeably more challenging than the rest.  After the release of units like Mouchette, Moss, Arachne, and Saya, the gap between players who invested in them and those who didn&#39;t has become much more noticeable. ㅤ Below 350 For scores below 350 (A3 and below), the strategy remains largely unchanged: survivability comes first. Counter Relics and Poison Relics remain reliable options, allowing most teams to slowly stall their way through fights. Interestingly, Difficulty 5 is starting to feel similar in some ways. Boss HP continues to increase, and unless you have a highly invested DPS, many fights can easily last more than 10 turns. Recent D-Tides seem to be placing greater emphasis on survivability rather than pure damage output. ㅤ Wave 1  The boss applies Mark of Abyss to your cards. Playing marked cards grants the boss temporary STR. It can also summon adds, heal itself, and gradually gain more STR as the fight goes on. Overall, this is one of the easier fights in this D-Tide and shouldn&#39;t cause too many problems. Castor and Arachne teams are solid picks. ㅤ Wave 2  The key mechanic here is shield breaking. Every time Ogier&#39;s shield is destroyed, he immediately loses 25% of his HP. However, the shield becomes stronger each time while also granting additional STR and Temporary Fortress. Because of this, GHelot can trivialize the fight by breaking shields extremely efficiently. Counter teams are generally not recommended here, as they can make the fight drag on unnecessarily. ㅤ Wave 3 The boss applies Sabotage, which punishes card usage and continues to stack throughout the fight. It also summons additional enemies while dealing significant damage from the very beginning. Facing the boss immediately at the start of Wave 3 leaves almost no time to set up. The combination of high damage, constant pressure, and Sabotage can quickly force weaker teams into Death Resistance. High-investment Mouchette remains the most reliable solution, whi",
-      "source": "reddit",
-      "time": "2026-06-17T18:04:31+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u8hoiv/dtide_425_boss_breakdown_team_recommendations/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/Taki_002",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
-      "media_url": "https://preview.redd.it/6x34gr3osv7h1.jpg?width=140&amp;height=75&amp;auto=webp&amp;s=ed28115212d36597d099fc350646cd76da283b65",
-      "content_type": "image",
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "wtf",
       "summary": "Bruh And guess who dispelled over 2 million stacks of Final Verdict? :)  &#32; submitted by &#32;  /u/Shivter   [link] &#32; [comments]",
       "source": "reddit",
@@ -1795,37 +1871,19 @@
       "platform_region": "global"
     },
     {
-      "title": "Angbak F2P D-Tide Progression - Update 1",
-      "summary": "Hello, Angbak from discord here.  Even though there&#39;s still 4 days more to go, I think I&#39;m temporarily out of resources until next weekly rewards to push any further. Spoilers in the explanation to explain how each step works in detail. The overall account strategy for my F2P account was to hard roll on Kaliedo and Prototype whoever is near their respective breakpoints. The below units are the highlights of my account with SF 10 as they&#39;re worth it. E3 Pollux (OE ready, just not activated) - Pairs very well with E0/E1 Saya E1 Vortice - Stall comp E1 Arachne - A hard carry in Ultra tide. Not sure how she will perform out of it. These 3 units each did minimally Alert 4 and carried my 380.  My last wave was done with a mish mash of cheese units (Aurita/Goliath/Cassiah). Corpo was 1 enlightenment away from a breakpoint and an Alert 4 clear. https://preview.redd.it/d0wfhurv6r7h1.png?width=2340&amp;format=png&amp;auto=webp&amp;s=f0b593670aeaa05977aa16c66fd8f83d69528525 ________________________________________________________________________________________________  Wave 1: Arachne Carry https://preview.redd.it/i2b5d0v07r7h1.png?width=1699&amp;format=png&amp;auto=webp&amp;s=85d9f3002df7b21b088ccc2d336ab9ce2d1f4089 During Ultra Ring, Arachne&#39;s strikes and defenses immediately launches a pursuit which deals about 15k Final Verdict. Every Guiding String played increases the damage output by 10%. Arachne&#39;s Signature provides Damage Amplification which further amps up the Final Verdict damage.  With the boss having about 360k health, I had to maximise the Final Verdict damage in my initial burst.  The sequencing goes as below. Starting off with 5 cards in ultra turn: 1. Annihilation (to satisfy Exalt pursuit condition) 2. Exalt (to start off pursuit chain)  3. Play the NON-Annihilated Eternal Loom (This is to put it into ultra space in order for me to use it during ultra turn) 4. Play a Non-Arachne card (To trigger pursuit) 5. Play the original Guiding Strin",
+      "title": "D-Tide 425 – Boss Breakdown & Team Recommendations [Ultra Ring] Jun 8th - Jun 21st",
+      "summary": "Wave 3 and Wave 5 are noticeably more challenging than the rest.  After the release of units like Mouchette, Moss, Arachne, and Saya, the gap between players who invested in them and those who didn&#39;t has become much more noticeable. ㅤ Below 350 For scores below 350 (A3 and below), the strategy remains largely unchanged: survivability comes first. Counter Relics and Poison Relics remain reliable options, allowing most teams to slowly stall their way through fights. Interestingly, Difficulty 5 is starting to feel similar in some ways. Boss HP continues to increase, and unless you have a highly invested DPS, many fights can easily last more than 10 turns. Recent D-Tides seem to be placing greater emphasis on survivability rather than pure damage output. ㅤ Wave 1  The boss applies Mark of Abyss to your cards. Playing marked cards grants the boss temporary STR. It can also summon adds, heal itself, and gradually gain more STR as the fight goes on. Overall, this is one of the easier fights in this D-Tide and shouldn&#39;t cause too many problems. Castor and Arachne teams are solid picks. ㅤ Wave 2  The key mechanic here is shield breaking. Every time Ogier&#39;s shield is destroyed, he immediately loses 25% of his HP. However, the shield becomes stronger each time while also granting additional STR and Temporary Fortress. Because of this, GHelot can trivialize the fight by breaking shields extremely efficiently. Counter teams are generally not recommended here, as they can make the fight drag on unnecessarily. ㅤ Wave 3 The boss applies Sabotage, which punishes card usage and continues to stack throughout the fight. It also summons additional enemies while dealing significant damage from the very beginning. Facing the boss immediately at the start of Wave 3 leaves almost no time to set up. The combination of high damage, constant pressure, and Sabotage can quickly force weaker teams into Death Resistance. High-investment Mouchette remains the most reliable solution, whi",
       "source": "reddit",
-      "time": "2026-06-17T04:56:59+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u80o3s/angbak_f2p_dtide_progression_update_1/",
+      "time": "2026-06-17T18:04:31+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u8hoiv/dtide_425_boss_breakdown_team_recommendations/",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/Angbak94",
+      "author": "/u/Taki_002",
       "tags": [],
       "metadata": {
         "via": "rss"
       },
-      "media_url": "https://preview.redd.it/d0wfhurv6r7h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=c01bffb09f3b3666fb403cfda2cf25f3bc79d236",
-      "content_type": "image",
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "What's all the available Poison Awakener and Teams?",
-      "summary": "I really like the Poison Mechanism and wanted to know any more Poison character or Poison Team Support  &#32; submitted by &#32;  /u/JustMangoIncranation   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-17T11:14:28+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u879yc/whats_all_the_available_poison_awakener_and_teams/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/JustMangoIncranation",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
-      "media_url": "https://preview.redd.it/1460zxsitt7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=61da0e8a4769c13b89a2bf9a5ab959e33cde6b1f",
+      "media_url": "https://preview.redd.it/6x34gr3osv7h1.jpg?width=140&amp;height=75&amp;auto=webp&amp;s=ed28115212d36597d099fc350646cd76da283b65",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -1849,19 +1907,19 @@
       "platform_region": "global"
     },
     {
-      "title": "Outside of Pollux/ Vortice teams, any team recs or characters I should build?",
-      "summary": "&#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
+      "title": "Angbak F2P D-Tide Progression - Update 1",
+      "summary": "Hello, Angbak from discord here.  Even though there&#39;s still 4 days more to go, I think I&#39;m temporarily out of resources until next weekly rewards to push any further. Spoilers in the explanation to explain how each step works in detail. The overall account strategy for my F2P account was to hard roll on Kaliedo and Prototype whoever is near their respective breakpoints. The below units are the highlights of my account with SF 10 as they&#39;re worth it. E3 Pollux (OE ready, just not activated) - Pairs very well with E0/E1 Saya E1 Vortice - Stall comp E1 Arachne - A hard carry in Ultra tide. Not sure how she will perform out of it. These 3 units each did minimally Alert 4 and carried my 380.  My last wave was done with a mish mash of cheese units (Aurita/Goliath/Cassiah). Corpo was 1 enlightenment away from a breakpoint and an Alert 4 clear. https://preview.redd.it/d0wfhurv6r7h1.png?width=2340&amp;format=png&amp;auto=webp&amp;s=f0b593670aeaa05977aa16c66fd8f83d69528525 ________________________________________________________________________________________________  Wave 1: Arachne Carry https://preview.redd.it/i2b5d0v07r7h1.png?width=1699&amp;format=png&amp;auto=webp&amp;s=85d9f3002df7b21b088ccc2d336ab9ce2d1f4089 During Ultra Ring, Arachne&#39;s strikes and defenses immediately launches a pursuit which deals about 15k Final Verdict. Every Guiding String played increases the damage output by 10%. Arachne&#39;s Signature provides Damage Amplification which further amps up the Final Verdict damage.  With the boss having about 360k health, I had to maximise the Final Verdict damage in my initial burst.  The sequencing goes as below. Starting off with 5 cards in ultra turn: 1. Annihilation (to satisfy Exalt pursuit condition) 2. Exalt (to start off pursuit chain)  3. Play the NON-Annihilated Eternal Loom (This is to put it into ultra space in order for me to use it during ultra turn) 4. Play a Non-Arachne card (To trigger pursuit) 5. Play the original Guiding Strin",
       "source": "reddit",
-      "time": "2026-06-17T13:41:23+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u8aiv3/outside_of_pollux_vortice_teams_any_team_recs_or/",
+      "time": "2026-06-17T04:56:59+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u80o3s/angbak_f2p_dtide_progression_update_1/",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/Intrepid-Sound-4811",
+      "author": "/u/Angbak94",
       "tags": [],
       "metadata": {
         "via": "rss"
       },
-      "media_url": "https://preview.redd.it/ha0lwupsju7h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=6299bd9c5dbeb165feec8ee8acdebd137855c915",
+      "media_url": "https://preview.redd.it/d0wfhurv6r7h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=c01bffb09f3b3666fb403cfda2cf25f3bc79d236",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -1879,6 +1937,42 @@
       "metadata": {
         "via": "rss"
       },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What's all the available Poison Awakener and Teams?",
+      "summary": "I really like the Poison Mechanism and wanted to know any more Poison character or Poison Team Support  &#32; submitted by &#32;  /u/JustMangoIncranation   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T11:14:28+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u879yc/whats_all_the_available_poison_awakener_and_teams/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/JustMangoIncranation",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/1460zxsitt7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=61da0e8a4769c13b89a2bf9a5ab959e33cde6b1f",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Outside of Pollux/ Vortice teams, any team recs or characters I should build?",
+      "summary": "&#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T13:41:23+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u8aiv3/outside_of_pollux_vortice_teams_any_team_recs_or/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Intrepid-Sound-4811",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ha0lwupsju7h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=6299bd9c5dbeb165feec8ee8acdebd137855c915",
+      "content_type": "image",
       "lang": "en",
       "platform_region": "global"
     },
@@ -1917,18 +2011,20 @@
       "platform_region": "global"
     },
     {
-      "title": "can I skip the new character draw after the prologue and save it for later?",
-      "summary": "So this seems super dumb for me. I just finished the prologue, I essentially know nothing about the game but it immediately wants me to use the free draw thing and wont let me do anything else until I do. Why can&#39;t I just play the game and then when I get more familiar with the mechanics and what I might like choose then?  Why is the game trying to force me into this decision now and then pretending that it&#39;s giving me a choice by having the popup say &quot;are you sure you want to use this?&quot;, when I click cancel it literally won&#39;t let me do anything else.  &#32; submitted by &#32;  /u/leftofdanzig   [link] &#32; [comments]",
+      "title": "send help?",
+      "summary": "a little social experiment (think of it as a poll), but what&#39;s the first thing you notice here? https://preview.redd.it/baocdyksqs7h1.png?width=1245&amp;format=png&amp;auto=webp&amp;s=6ca6adae6e0ded7cc9f2f0b978d54c28d6daf400 (also hi reddit people I exist now, you may know me from the dumb rat decisions or the 545 turns of caecus)  &#32; submitted by &#32;  /u/Trick-Quail-265   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T07:00:04+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u82vgf/can_i_skip_the_new_character_draw_after_the/",
+      "time": "2026-06-17T07:37:41+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u83ind/send_help/",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/leftofdanzig",
+      "author": "/u/Trick-Quail-265",
       "tags": [],
       "metadata": {
         "via": "rss"
       },
+      "media_url": "https://preview.redd.it/baocdyksqs7h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=df7149aef44926838d38cd374f9a3705155bbc37",
+      "content_type": "image",
       "lang": "en",
       "platform_region": "global"
     },
@@ -1951,19 +2047,19 @@
       "platform_region": "global"
     },
     {
-      "title": "send help?",
-      "summary": "a little social experiment (think of it as a poll), but what&#39;s the first thing you notice here? https://preview.redd.it/baocdyksqs7h1.png?width=1245&amp;format=png&amp;auto=webp&amp;s=6ca6adae6e0ded7cc9f2f0b978d54c28d6daf400 (also hi reddit people I exist now, you may know me from the dumb rat decisions or the 545 turns of caecus)  &#32; submitted by &#32;  /u/Trick-Quail-265   [link] &#32; [comments]",
+      "title": "What team comp will help me carry to chapter 9 easy?",
+      "summary": "I feel so weak and idk what I’m doing TwT   &#32; submitted by &#32;  /u/thegothickorean   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T07:37:41+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1u83ind/send_help/",
+      "time": "2026-06-17T06:39:35+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1u82j2t/what_team_comp_will_help_me_carry_to_chapter_9/",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/Trick-Quail-265",
+      "author": "/u/thegothickorean",
       "tags": [],
       "metadata": {
         "via": "rss"
       },
-      "media_url": "https://preview.redd.it/baocdyksqs7h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=df7149aef44926838d38cd374f9a3705155bbc37",
+      "media_url": "https://preview.redd.it/lbin2vpjgs7h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f43b093a468ed2b016acf233502867e112510750",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -2006,72 +2102,6 @@
       "platform_region": "global"
     },
     {
-      "title": "[正面] The game is surprisingly good. I played it because...",
-      "summary": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
-      "source": "steam_review",
-      "time": "2026-06-17T08:36:28+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198171557225/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198171557225",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 1810,
-        "votes_up": 0,
-        "timestamp_created": 1781685388
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[正面] Really cool game. Not money-grabby at all so far....",
-      "summary": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
-      "source": "steam_review",
-      "time": "2026-06-17T02:46:59+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198085050028/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198085050028",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 716,
-        "votes_up": 0,
-        "timestamp_created": 1781664419
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[正面] The game is so graphic that despite being a Chines...",
-      "summary": "The game is so graphic that despite being a Chinese game, it cannot pass local regulation to be released at home. \n\nI think that should suffice to pique your curiosity.",
-      "source": "steam_review",
-      "time": "2026-06-16T21:24:00+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198039564038/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198039564038",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 10247,
-        "votes_up": 0,
-        "timestamp_created": 1781645040
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "[Steam新闻] 🎧 V2.5.1 Radio Drama - Messenger",
       "summary": "\"Beautiful moments never last. Every story has to come to an end.\"\"The mere thought of it makes my heart flutter. If you find me one day... I will be so, so happy...\"✦ Saya VA: Midori Kawamura",
       "source": "official",
@@ -2097,21 +2127,6 @@
       "author": "lqx02483534",
       "tags": [
         "Community Announcements"
-      ],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "[Steam论坛] Cards dont pop out on hover",
-      "summary": "This is the first time I've seen a game like this where part of the card is hidden off screen while in your hand and the card doesn't pop out so that you can read it when you hover over it.  It's pretty annoying grabbing the card and pulling it out to read it, then carefully placing it back in hand so that I don't accidentally play it.  I wonder if I'm doing something wrong or they really just haven't implemented this basic and standard feature to their game....",
-      "source": "steam_discussion",
-      "time": "2026-06-17T11:51:35+00:00",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624847350/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Ruckkus",
-      "tags": [
-        "steam_forum"
       ],
       "lang": "en",
       "platform_region": "global"
@@ -2150,7 +2165,7 @@
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.061824+00:00",
+      "time": "2026-06-17T21:56:36.787684+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2162,11 +2177,26 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
-      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
+      "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
+      "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.073366+00:00",
-      "url": "https://m.weibo.cn/status/5297404375991444",
+      "time": "2026-06-17T21:56:36.800865+00:00",
+      "url": "https://m.weibo.cn/status/5272049669112519",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "source": "weibo",
+      "time": "2026-06-17T21:56:36.822526+00:00",
+      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -2180,7 +2210,7 @@
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.088937+00:00",
+      "time": "2026-06-17T21:56:36.833454+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2195,22 +2225,7 @@
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.099436+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "source": "weibo",
-      "time": "2026-06-17T19:58:54.110374+00:00",
+      "time": "2026-06-17T21:56:36.844126+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2225,7 +2240,7 @@
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.120828+00:00",
+      "time": "2026-06-17T21:56:36.861817+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2237,10 +2252,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "之前给忘却前夜画的解禁了！！",
-      "summary": "之前给忘却前夜画的解禁了！！",
+      "title": "忘却前夜\n老师们我有这些角色应该怎么配队呀",
+      "summary": "忘却前夜\n老师们我有这些角色应该怎么配队呀",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.131582+00:00",
+      "time": "2026-06-17T21:56:36.877703+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2255,7 +2270,37 @@
       "title": "阿巴阿巴……持续讨教中#忘却前夜超话##忘却前夜#忘却前夜#忘却前夜内容征集计划##角色设计#",
       "summary": "阿巴阿巴……持续讨教中#忘却前夜超话##忘却前夜#忘却前夜#忘却前夜内容征集计划##角色设计#",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.143947+00:00",
+      "time": "2026-06-17T21:56:36.887901+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 刚玩没多久，有没有人能教一下怎么玩号是前几天买的初始，现在主线刚过完第四章，角色配对需要怎么养怎么打完全不懂",
+      "summary": "忘却前夜 刚玩没多久，有没有人能教一下怎么玩号是前几天买的初始，现在主线刚过完第四章，角色配对需要怎么养怎么打完全不懂",
+      "source": "weibo",
+      "time": "2026-06-17T21:56:36.898117+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 有人可以告诉禁忌试炼在哪里吗？",
+      "summary": "忘却前夜 有人可以告诉禁忌试炼在哪里吗？",
+      "source": "weibo",
+      "time": "2026-06-17T21:56:36.910681+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2270,53 +2315,8 @@
       "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
       "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.154695+00:00",
+      "time": "2026-06-17T21:56:36.921364+00:00",
       "url": "https://m.weibo.cn/status/5294895855830265",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜\n老师们我有这些角色应该怎么配队呀",
-      "summary": "忘却前夜\n老师们我有这些角色应该怎么配队呀",
-      "source": "weibo",
-      "time": "2026-06-17T19:58:54.169276+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "啥玩意，1999被爆抄袭我一直玩的那个小众变态二游忘却前夜....\n咱们5771还有被抄的时候？！",
-      "summary": "啥玩意，1999被爆抄袭我一直玩的那个小众变态二游忘却前夜....\n咱们5771还有被抄的时候？！",
-      "source": "weibo",
-      "time": "2026-06-17T19:58:54.179501+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 有十个给命轮叠位的有没有大佬知道应该给哪个叠啊",
-      "summary": "忘却前夜 有十个给命轮叠位的有没有大佬知道应该给哪个叠啊",
-      "source": "weibo",
-      "time": "2026-06-17T19:58:54.189744+00:00",
-      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -2330,7 +2330,7 @@
       "title": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「爱与死之芽」& 命轮活动唤醒「异生羽种」\n唤醒时间：5月30日 09:00 - 8月24日 09:00\n唤醒体「沙耶」&",
       "summary": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「爱与死之芽」& 命轮活动唤醒「异生羽种」\n唤醒时间：5月30日 09:00 - 8月24日 09:00\n唤醒体「沙耶」& 命轮「愿世界化作芬芳」获取概率提升！\n\n◆「绽爱之蕊」角色试玩\n活动时间：5月30日 09:00 - 8月24日 09:00\n完成该唤醒体试玩之后可领取：\n流明之芯* ...全文",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.200333+00:00",
+      "time": "2026-06-17T21:56:36.935359+00:00",
       "url": "https://m.weibo.cn/status/5304332901157224",
       "engagement": 0,
       "is_hot": false,
@@ -2345,7 +2345,7 @@
       "title": "忘却前夜 想问一下为什么榜上的大佬们的签名都有慕祈两个字呀",
       "summary": "忘却前夜 想问一下为什么榜上的大佬们的签名都有慕祈两个字呀",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.214055+00:00",
+      "time": "2026-06-17T21:56:36.949537+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2357,10 +2357,25 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜这个游戏是在干嘛呀？国际服人家都玩了多少年了？我们国服还不上线，是不是有病呀？你不喜欢我们国服玩家吗。。。。那你上tap步干嘛呀？你直接去只搞国际服算了",
-      "summary": "忘却前夜这个游戏是在干嘛呀？国际服人家都玩了多少年了？我们国服还不上线，是不是有病呀？你不喜欢我们国服玩家吗。。。。那你上tap步干嘛呀？你直接去只搞国际服算了，你还上tap干嘛呀",
+      "title": "啥玩意，1999被爆抄袭我一直玩的那个小众变态二游忘却前夜....\n咱们5771还有被抄的时候？！",
+      "summary": "啥玩意，1999被爆抄袭我一直玩的那个小众变态二游忘却前夜....\n咱们5771还有被抄的时候？！",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.224953+00:00",
+      "time": "2026-06-17T21:56:36.959786+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 刚入坑 求老大们给个配队建议",
+      "summary": "忘却前夜 刚入坑 求老大们给个配队建议",
+      "source": "weibo",
+      "time": "2026-06-17T21:56:36.969891+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2375,7 +2390,7 @@
       "title": "打了一把忘却前夜昏睡了一个小时是怎么回事",
       "summary": "打了一把忘却前夜昏睡了一个小时是怎么回事",
       "source": "weibo",
-      "time": "2026-06-17T19:58:54.235411+00:00",
+      "time": "2026-06-17T21:56:36.980209+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2478,19 +2493,6 @@
       "platform_region": "global"
     },
     {
-      "title": "67 total turns ❤️‍🩹❤️‍🩹",
-      "summary": "&#32; submitted by &#32;  /u/thataokithegirl84   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-17T12:53:39+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u89dk7/67_total_turns/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/thataokithegirl84",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "Do Caro unit really give birth and eat their babies during fights? Or is this only a gameplay thing and not something they do in lore.",
       "summary": "Title.  &#32; submitted by &#32;  /u/Lord_Vorgor   [link] &#32; [comments]",
       "source": "reddit",
@@ -2499,6 +2501,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Lord_Vorgor",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "67 total turns ❤️‍🩹❤️‍🩹",
+      "summary": "&#32; submitted by &#32;  /u/thataokithegirl84   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T12:53:39+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u89dk7/67_total_turns/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/thataokithegirl84",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2517,19 +2532,6 @@
       "platform_region": "global"
     },
     {
-      "title": "D-Tide 425 – Boss Breakdown & Team Recommendations [Ultra Ring] Jun 8th - Jun 21st",
-      "summary": "Wave 3 and Wave 5 are noticeably more challenging than the rest.  After the release of units like Mouchette, Moss, Arachne, and Saya, the gap between players who invested in them and those who didn&#39;t has become much more noticeable. ㅤ Below 350 For scores below 350 (A3 and below), the strategy remains largely unchanged: survivability comes first. Counter Relics and Poison Relics remain reliable options, allowing most teams to slowly stall their way through fights. Interestingly, Difficulty 5 is starting to feel similar in some ways. Boss HP continues to increase, and unless you have a highly invested DPS, many fights can easily last more than 10 turns. Recent D-Tides seem to be placing greater emphasis on survivability rather than pure damage output. ㅤ Wave 1  The boss applies Mark of Abyss to your cards. Playing marked cards grants the boss temporary STR. It can also summon adds, heal itself, and gradually gain more STR as the fight goes on. Overall, this is one of the easier fights in this D-Tide and shouldn&#39;t cause too many problems. Castor and Arachne teams are solid picks. ㅤ Wave 2  The key mechanic here is shield breaking. Every time Ogier&#39;s shield is destroyed, he immediately loses 25% of his HP. However, the shield becomes stronger each time while also granting additional STR and Temporary Fortress. Because of this, GHelot can trivialize the fight by breaking shields extremely efficiently. Counter teams are generally not recommended here, as they can make the fight drag on unnecessarily. ㅤ Wave 3 The boss applies Sabotage, which punishes card usage and continues to stack throughout the fight. It also summons additional enemies while dealing significant damage from the very beginning. Facing the boss immediately at the start of Wave 3 leaves almost no time to set up. The combination of high damage, constant pressure, and Sabotage can quickly force weaker teams into Death Resistance. High-investment Mouchette remains the most reliable solution, while Poison teams and some 24 Chaos compositions can also perform well. ㅤ Wave 4  The boss applies Hunting Mark to your cards. Playing marked cards grants the boss temporary STR, while defeating summoned enemies reduces Hunting Mark stacks. The mechanics are fairly straightforward. As long as you prioritize clearing the adds, the fight should remain manageable. ㅤ Wave 5  This is the first appearance of the new &quot;Fleshball&quot; boss. Its HP pool is massive, and the new Adaptation mechanic heavily punishes repeatedly relying on the same Awakener. As Adaptation stacks increase, the effectiveness of that Awakener’s cards gradually decreases, forcing players to rotate between multiple characters rather than relying on a single carry. Teams featuring Saya, Mouchette, Moss, and Castor &amp; Pollux perform particularly well. ㅤ Final Thoughts  Recent D-Tides seem to be moving toward longer fights and a greater emphasis on survivability.  At A5, bosses regularly deal 2,000+ damage per hit, making sustain, durability, and understanding mechanics increasingly important for high-score clears. What teams did you use for Wave 3 and Wave 5? Feel free to share your teams and strategies.  &#32; submitted by &#32;  /u/Taki_002   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-17T18:04:31+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u8hoiv/dtide_425_boss_breakdown_team_recommendations/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Taki_002",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "wtf",
       "summary": "Bruh And guess who dispelled over 2 million stacks of Final Verdict? :)  &#32; submitted by &#32;  /u/Shivter   [link] &#32; [comments]",
       "source": "reddit",
@@ -2543,27 +2545,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Angbak F2P D-Tide Progression - Update 1",
-      "summary": "Hello, Angbak from discord here.  Even though there&#39;s still 4 days more to go, I think I&#39;m temporarily out of resources until next weekly rewards to push any further. Spoilers in the explanation to explain how each step works in detail. The overall account strategy for my F2P account was to hard roll on Kaliedo and Prototype whoever is near their respective breakpoints. The below units are the highlights of my account with SF 10 as they&#39;re worth it. E3 Pollux (OE ready, just not activated) - Pairs very well with E0/E1 Saya E1 Vortice - Stall comp E1 Arachne - A hard carry in Ultra tide. Not sure how she will perform out of it. These 3 units each did minimally Alert 4 and carried my 380.  My last wave was done with a mish mash of cheese units (Aurita/Goliath/Cassiah). Corpo was 1 enlightenment away from a breakpoint and an Alert 4 clear. https://preview.redd.it/d0wfhurv6r7h1.png?width=2340&amp;format=png&amp;auto=webp&amp;s=f0b593670aeaa05977aa16c66fd8f83d69528525 ________________________________________________________________________________________________  Wave 1: Arachne Carry https://preview.redd.it/i2b5d0v07r7h1.png?width=1699&amp;format=png&amp;auto=webp&amp;s=85d9f3002df7b21b088ccc2d336ab9ce2d1f4089 During Ultra Ring, Arachne&#39;s strikes and defenses immediately launches a pursuit which deals about 15k Final Verdict. Every Guiding String played increases the damage output by 10%. Arachne&#39;s Signature provides Damage Amplification which further amps up the Final Verdict damage.  With the boss having about 360k health, I had to maximise the Final Verdict damage in my initial burst.  The sequencing goes as below. Starting off with 5 cards in ultra turn: 1. Annihilation (to satisfy Exalt pursuit condition) 2. Exalt (to start off pursuit chain)  3. Play the NON-Annihilated Eternal Loom (This is to put it into ultra space in order for me to use it during ultra turn) 4. Play a Non-Arachne card (To trigger pursuit) 5. Play the original Guiding Strings from step 3 (to amp Final Verdict damage and to get a stack) 6. Play a Non-Arachne card (To trigger pursuit) 7. Play Eternal Loom (For damage + obtain a Guiding Strings) 8. Play Guiding Strings 9. Repeat steps 6 to 9 accordingly. 10. When almost out of Arith, play defense in order to trigger 1 more pursuit. This maximises the Final verdict damage  Ultra turn Play all 3 Eternal Loom with Guiding Strings between each cast (to amp each Eternal Loom&#39;s damage) The moment I have sufficient Keyflare, Posse (Orbis Fatum) in order to get 1 more Eternal Loom and +50% damage amp. When out of cards to pursuit, use Jenkins exalt for 3 last procs. Overall damage: 349k damage dealt, with the final pursuit dealing 42k Final Verdict. https://preview.redd.it/0z84tdu6cr7h1.png?width=567&amp;format=png&amp;auto=webp&amp;s=36cf1b688047f6c6f8cbbb83bcfd5bda24ea2847 Battle is not over, and I had to survive 1 DR proc while waiting to draw my last strike/defense on turn 3 in order to finish the boss off. ________________________________________________________________________________________________ Wave 2: Saya Pollux carry https://preview.redd.it/0uycb1hecr7h1.png?width=1717&amp;format=png&amp;auto=webp&amp;s=1605b62d7049725eca8c16470fb3c93ff4f072bb Tbh, nothing too impressive. Exploration stage means Pollux scales. For the earlier stages, I just resetted to get 1 Viscera Blossom (Saya&#39;s 0 cost) in my initial hand.  The usual combo is to Sacred Heart (Pollux 1 cost) &gt; Saya 0 cost &gt; Sacred Heart &gt; Annihilation &gt; Sacred Heart &gt; double play any Pollux card.  This will probably clear the wave. Alternatively keep 1 mob alive and stall to build resources. Resources is defined as the below:   Each awakeners&#39; Aliemus (Energy) (Especially Aigis&#39; Exalt - To allow 1 turn petrify/stun as an emergency button)  Build up DR via Faint Stock up on Furnace via remaining at low health Keyflare Health  In order to stall and build resources, you&#39;ll need to learn to manage them and prioritise the correct resources to use.  E.g. 1. Using Aigis Exalt to buy 1 more turn and getting more keyflare/furnace/all awakener&#39;s Aliemus 2. Ending the turn early, killing via bleed damage to get End of Turn Keyflare 3. Using Keyflare to Rouse Aigis for Aliemus.  Boss fight Honestly played quite sloppily. Made quite a few mistakes but overwhelming DR saved me anyway. Without DR, I would have just resetted anyway. ________________________________________________________________________________________________ Wave 3 - Whale Mouchette Carry https://preview.redd.it/8c3k7u0cer7h1.png?width=1514&amp;format=png&amp;auto=webp&amp;s=804207e2164125ae03ff602b76780c75d2767640 https://www.reddit.com/r/Morimens/s/PkFFREq80F Basically described in the post above. I resetted this wave in order to free up Cassiah for wave 4.  Nothing too special ________________________________________________________________________________________________ Wave 4 - Discard + Aurita/Goliath cheese https://preview.redd.it/a8holb6oer7h1.png?width=1671&amp;format=png&amp;auto=webp&amp;s=54731e0d6d2f07bf5cfc4468248f21c02e2574f8 Entered the stage with 100% DR.  Without E2 Corpo for Weakness, or E3 Corpo for Vuln. This wave is impossible to do alert 4.  Had to burn 1 DR during the first elite.  Boss fight The win condition for this fight was: 1. Aurita must be marked (1 in 4 chance) (When the marked awakener&#39;s cards are played, draw a card and boss gains temp strength the next turn.) 2. I needed to survive 1 DR (1 in 2) As all runs are seeded, I had to reset in order to find the route where Aurita was the marked target.  Once this is done, I just kept playing Aurita cards in order to give the boss strength the turn after. 1 DR proc was needed on turn 4  On turn 6 After fully stacking the boss&#39;s strength, steal it using Goliath&#39;s Law (1.9k str), red stance and Goliath exalt to get even more strength (2.6k in the end).  Aurita machine gun with red stance gland division + exalt for a quick 170k burst. ________________________________________________________________________________________________ Wave 5 - Vortice pursuit spam  https://preview.redd.it/ds3dgwgkjr7h1.png?width=1535&amp;format=png&amp;auto=webp&amp;s=cf166eac2f22901d2c3d0877dbb5e5719386e6bf It was a very easy exploration stage for Vortice since SF10 one shots any single mob. Elite take 2 pursuit hits before changing to a non attack intention.  The relic plans for this stage was to get the following: 1. Realm mastery (does not boost Vortice pursuit damage) - helps in red stance and white stance shields 2. Aliemus (to pursuit more often via exalting with reload stacks) 3. Keyflare (to posse spam every turn) 4. Any defensive relics (Pocket watch - shield upon Annihilation)  Boss fight  The main strategy involves the following: 1. Posse every turn for chip damage 2. Exalts to proc pursuits when reload is available. Timing exalts were very important.  2a. Castor exalt to be used whenever boss is dealing damage an especially before ultra turn (His wheel recovers aliemus during ultra turn) 2b. Clem exalt to be used during ultra turn defensively 2c. Daff exalt to be used to put 1 card into ultra space to get ultra turn earlier.  Vortice exalt was only used 3 times. First two times during start of boss fight for ~100 RM Final one as a final burst dealing &gt;200k damage. There were a lot of minor mistakes that were made. Example being I should have immediately Daff exalt once ultra turn is over in order to ensure the first Annihilated card is Daff&#39;s exalt card. If her card isn&#39;t in ultra space, I get to use Daff&#39;s exalt to put it back inside, resulting in me getting a free Annihilation proc (for my relic shield) 3. Stalling and surviving via Posse choice, Castor, Clem exalt 4. Managing Adaptation stacks  https://preview.redd.it/4w55w3ahmr7h1.png?width=602&amp;format=png&amp;auto=webp&amp;s=7dac3ba1f4066a27c85316d4017c6fb33f014f41 The only stats on cards that matter were Castor&#39;s plumes retain shielding. Hence I needed to avoid playing Castor cards when possible and play other Awakeners&#39; cards in order to lower the Adaption stacks. This is to max out the shield provided from Castor. https://preview.redd.it/fpm83w9kkr7h1.png?width=1490&amp;format=png&amp;auto=webp&amp;s=d4b2cbc989488829064afc0c28b54e7e2d4bd3fb In the end, 50% + 34% of the boss damage dealt was via Vortice Pursuit. (Embers were mainly proc-ed using Pursuit). 2 DR procs were done from 44% to 11% (minor misplay resulted in it, but would have resetted anyway)  ________________________________________________________________________________________________ Let me know if there are any questions~ I&#39;ll probably be unable to do 380 next tide since the bulk of my carries function in Ultra Ring (Pollux/Castor, Arachne, Cassiah).  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "title": "D-Tide 425 – Boss Breakdown & Team Recommendations [Ultra Ring] Jun 8th - Jun 21st",
+      "summary": "Wave 3 and Wave 5 are noticeably more challenging than the rest.  After the release of units like Mouchette, Moss, Arachne, and Saya, the gap between players who invested in them and those who didn&#39;t has become much more noticeable. ㅤ Below 350 For scores below 350 (A3 and below), the strategy remains largely unchanged: survivability comes first. Counter Relics and Poison Relics remain reliable options, allowing most teams to slowly stall their way through fights. Interestingly, Difficulty 5 is starting to feel similar in some ways. Boss HP continues to increase, and unless you have a highly invested DPS, many fights can easily last more than 10 turns. Recent D-Tides seem to be placing greater emphasis on survivability rather than pure damage output. ㅤ Wave 1  The boss applies Mark of Abyss to your cards. Playing marked cards grants the boss temporary STR. It can also summon adds, heal itself, and gradually gain more STR as the fight goes on. Overall, this is one of the easier fights in this D-Tide and shouldn&#39;t cause too many problems. Castor and Arachne teams are solid picks. ㅤ Wave 2  The key mechanic here is shield breaking. Every time Ogier&#39;s shield is destroyed, he immediately loses 25% of his HP. However, the shield becomes stronger each time while also granting additional STR and Temporary Fortress. Because of this, GHelot can trivialize the fight by breaking shields extremely efficiently. Counter teams are generally not recommended here, as they can make the fight drag on unnecessarily. ㅤ Wave 3 The boss applies Sabotage, which punishes card usage and continues to stack throughout the fight. It also summons additional enemies while dealing significant damage from the very beginning. Facing the boss immediately at the start of Wave 3 leaves almost no time to set up. The combination of high damage, constant pressure, and Sabotage can quickly force weaker teams into Death Resistance. High-investment Mouchette remains the most reliable solution, while Poison teams and some 24 Chaos compositions can also perform well. ㅤ Wave 4  The boss applies Hunting Mark to your cards. Playing marked cards grants the boss temporary STR, while defeating summoned enemies reduces Hunting Mark stacks. The mechanics are fairly straightforward. As long as you prioritize clearing the adds, the fight should remain manageable. ㅤ Wave 5  This is the first appearance of the new &quot;Fleshball&quot; boss. Its HP pool is massive, and the new Adaptation mechanic heavily punishes repeatedly relying on the same Awakener. As Adaptation stacks increase, the effectiveness of that Awakener’s cards gradually decreases, forcing players to rotate between multiple characters rather than relying on a single carry. Teams featuring Saya, Mouchette, Moss, and Castor &amp; Pollux perform particularly well. ㅤ Final Thoughts  Recent D-Tides seem to be moving toward longer fights and a greater emphasis on survivability.  At A5, bosses regularly deal 2,000+ damage per hit, making sustain, durability, and understanding mechanics increasingly important for high-score clears. What teams did you use for Wave 3 and Wave 5? Feel free to share your teams and strategies.  &#32; submitted by &#32;  /u/Taki_002   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T04:56:59+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u80o3s/angbak_f2p_dtide_progression_update_1/",
+      "time": "2026-06-17T18:04:31+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u8hoiv/dtide_425_boss_breakdown_team_recommendations/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Angbak94",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "What's all the available Poison Awakener and Teams?",
-      "summary": "I really like the Poison Mechanism and wanted to know any more Poison character or Poison Team Support  &#32; submitted by &#32;  /u/JustMangoIncranation   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-06-17T11:14:28+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u879yc/whats_all_the_available_poison_awakener_and_teams/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/JustMangoIncranation",
+      "author": "u//u/Taki_002",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2582,14 +2571,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Outside of Pollux/ Vortice teams, any team recs or characters I should build?",
-      "summary": "&#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
+      "title": "Angbak F2P D-Tide Progression - Update 1",
+      "summary": "Hello, Angbak from discord here.  Even though there&#39;s still 4 days more to go, I think I&#39;m temporarily out of resources until next weekly rewards to push any further. Spoilers in the explanation to explain how each step works in detail. The overall account strategy for my F2P account was to hard roll on Kaliedo and Prototype whoever is near their respective breakpoints. The below units are the highlights of my account with SF 10 as they&#39;re worth it. E3 Pollux (OE ready, just not activated) - Pairs very well with E0/E1 Saya E1 Vortice - Stall comp E1 Arachne - A hard carry in Ultra tide. Not sure how she will perform out of it. These 3 units each did minimally Alert 4 and carried my 380.  My last wave was done with a mish mash of cheese units (Aurita/Goliath/Cassiah). Corpo was 1 enlightenment away from a breakpoint and an Alert 4 clear. https://preview.redd.it/d0wfhurv6r7h1.png?width=2340&amp;format=png&amp;auto=webp&amp;s=f0b593670aeaa05977aa16c66fd8f83d69528525 ________________________________________________________________________________________________  Wave 1: Arachne Carry https://preview.redd.it/i2b5d0v07r7h1.png?width=1699&amp;format=png&amp;auto=webp&amp;s=85d9f3002df7b21b088ccc2d336ab9ce2d1f4089 During Ultra Ring, Arachne&#39;s strikes and defenses immediately launches a pursuit which deals about 15k Final Verdict. Every Guiding String played increases the damage output by 10%. Arachne&#39;s Signature provides Damage Amplification which further amps up the Final Verdict damage.  With the boss having about 360k health, I had to maximise the Final Verdict damage in my initial burst.  The sequencing goes as below. Starting off with 5 cards in ultra turn: 1. Annihilation (to satisfy Exalt pursuit condition) 2. Exalt (to start off pursuit chain)  3. Play the NON-Annihilated Eternal Loom (This is to put it into ultra space in order for me to use it during ultra turn) 4. Play a Non-Arachne card (To trigger pursuit) 5. Play the original Guiding Strings from step 3 (to amp Final Verdict damage and to get a stack) 6. Play a Non-Arachne card (To trigger pursuit) 7. Play Eternal Loom (For damage + obtain a Guiding Strings) 8. Play Guiding Strings 9. Repeat steps 6 to 9 accordingly. 10. When almost out of Arith, play defense in order to trigger 1 more pursuit. This maximises the Final verdict damage  Ultra turn Play all 3 Eternal Loom with Guiding Strings between each cast (to amp each Eternal Loom&#39;s damage) The moment I have sufficient Keyflare, Posse (Orbis Fatum) in order to get 1 more Eternal Loom and +50% damage amp. When out of cards to pursuit, use Jenkins exalt for 3 last procs. Overall damage: 349k damage dealt, with the final pursuit dealing 42k Final Verdict. https://preview.redd.it/0z84tdu6cr7h1.png?width=567&amp;format=png&amp;auto=webp&amp;s=36cf1b688047f6c6f8cbbb83bcfd5bda24ea2847 Battle is not over, and I had to survive 1 DR proc while waiting to draw my last strike/defense on turn 3 in order to finish the boss off. ________________________________________________________________________________________________ Wave 2: Saya Pollux carry https://preview.redd.it/0uycb1hecr7h1.png?width=1717&amp;format=png&amp;auto=webp&amp;s=1605b62d7049725eca8c16470fb3c93ff4f072bb Tbh, nothing too impressive. Exploration stage means Pollux scales. For the earlier stages, I just resetted to get 1 Viscera Blossom (Saya&#39;s 0 cost) in my initial hand.  The usual combo is to Sacred Heart (Pollux 1 cost) &gt; Saya 0 cost &gt; Sacred Heart &gt; Annihilation &gt; Sacred Heart &gt; double play any Pollux card.  This will probably clear the wave. Alternatively keep 1 mob alive and stall to build resources. Resources is defined as the below:   Each awakeners&#39; Aliemus (Energy) (Especially Aigis&#39; Exalt - To allow 1 turn petrify/stun as an emergency button)  Build up DR via Faint Stock up on Furnace via remaining at low health Keyflare Health  In order to stall and build resources, you&#39;ll need to learn to manage them and prioritise the correct resources to use.  E.g. 1. Using Aigis Exalt to buy 1 more turn and getting more keyflare/furnace/all awakener&#39;s Aliemus 2. Ending the turn early, killing via bleed damage to get End of Turn Keyflare 3. Using Keyflare to Rouse Aigis for Aliemus.  Boss fight Honestly played quite sloppily. Made quite a few mistakes but overwhelming DR saved me anyway. Without DR, I would have just resetted anyway. ________________________________________________________________________________________________ Wave 3 - Whale Mouchette Carry https://preview.redd.it/8c3k7u0cer7h1.png?width=1514&amp;format=png&amp;auto=webp&amp;s=804207e2164125ae03ff602b76780c75d2767640 https://www.reddit.com/r/Morimens/s/PkFFREq80F Basically described in the post above. I resetted this wave in order to free up Cassiah for wave 4.  Nothing too special ________________________________________________________________________________________________ Wave 4 - Discard + Aurita/Goliath cheese https://preview.redd.it/a8holb6oer7h1.png?width=1671&amp;format=png&amp;auto=webp&amp;s=54731e0d6d2f07bf5cfc4468248f21c02e2574f8 Entered the stage with 100% DR.  Without E2 Corpo for Weakness, or E3 Corpo for Vuln. This wave is impossible to do alert 4.  Had to burn 1 DR during the first elite.  Boss fight The win condition for this fight was: 1. Aurita must be marked (1 in 4 chance) (When the marked awakener&#39;s cards are played, draw a card and boss gains temp strength the next turn.) 2. I needed to survive 1 DR (1 in 2) As all runs are seeded, I had to reset in order to find the route where Aurita was the marked target.  Once this is done, I just kept playing Aurita cards in order to give the boss strength the turn after. 1 DR proc was needed on turn 4  On turn 6 After fully stacking the boss&#39;s strength, steal it using Goliath&#39;s Law (1.9k str), red stance and Goliath exalt to get even more strength (2.6k in the end).  Aurita machine gun with red stance gland division + exalt for a quick 170k burst. ________________________________________________________________________________________________ Wave 5 - Vortice pursuit spam  https://preview.redd.it/ds3dgwgkjr7h1.png?width=1535&amp;format=png&amp;auto=webp&amp;s=cf166eac2f22901d2c3d0877dbb5e5719386e6bf It was a very easy exploration stage for Vortice since SF10 one shots any single mob. Elite take 2 pursuit hits before changing to a non attack intention.  The relic plans for this stage was to get the following: 1. Realm mastery (does not boost Vortice pursuit damage) - helps in red stance and white stance shields 2. Aliemus (to pursuit more often via exalting with reload stacks) 3. Keyflare (to posse spam every turn) 4. Any defensive relics (Pocket watch - shield upon Annihilation)  Boss fight  The main strategy involves the following: 1. Posse every turn for chip damage 2. Exalts to proc pursuits when reload is available. Timing exalts were very important.  2a. Castor exalt to be used whenever boss is dealing damage an especially before ultra turn (His wheel recovers aliemus during ultra turn) 2b. Clem exalt to be used during ultra turn defensively 2c. Daff exalt to be used to put 1 card into ultra space to get ultra turn earlier.  Vortice exalt was only used 3 times. First two times during start of boss fight for ~100 RM Final one as a final burst dealing &gt;200k damage. There were a lot of minor mistakes that were made. Example being I should have immediately Daff exalt once ultra turn is over in order to ensure the first Annihilated card is Daff&#39;s exalt card. If her card isn&#39;t in ultra space, I get to use Daff&#39;s exalt to put it back inside, resulting in me getting a free Annihilation proc (for my relic shield) 3. Stalling and surviving via Posse choice, Castor, Clem exalt 4. Managing Adaptation stacks  https://preview.redd.it/4w55w3ahmr7h1.png?width=602&amp;format=png&amp;auto=webp&amp;s=7dac3ba1f4066a27c85316d4017c6fb33f014f41 The only stats on cards that matter were Castor&#39;s plumes retain shielding. Hence I needed to avoid playing Castor cards when possible and play other Awakeners&#39; cards in order to lower the Adaption stacks. This is to max out the shield provided from Castor. https://preview.redd.it/fpm83w9kkr7h1.png?width=1490&amp;format=png&amp;auto=webp&amp;s=d4b2cbc989488829064afc0c28b54e7e2d4bd3fb In the end, 50% + 34% of the boss damage dealt was via Vortice Pursuit. (Embers were mainly proc-ed using Pursuit). 2 DR procs were done from 44% to 11% (minor misplay resulted in it, but would have resetted anyway)  ________________________________________________________________________________________________ Let me know if there are any questions~ I&#39;ll probably be unable to do 380 next tide since the bulk of my carries function in Ultra Ring (Pollux/Castor, Arachne, Cassiah).  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T13:41:23+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u8aiv3/outside_of_pollux_vortice_teams_any_team_recs_or/",
+      "time": "2026-06-17T04:56:59+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u80o3s/angbak_f2p_dtide_progression_update_1/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Intrepid-Sound-4811",
+      "author": "u//u/Angbak94",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2603,6 +2592,32 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/MAA_MT",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What's all the available Poison Awakener and Teams?",
+      "summary": "I really like the Poison Mechanism and wanted to know any more Poison character or Poison Team Support  &#32; submitted by &#32;  /u/JustMangoIncranation   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T11:14:28+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u879yc/whats_all_the_available_poison_awakener_and_teams/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/JustMangoIncranation",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Outside of Pollux/ Vortice teams, any team recs or characters I should build?",
+      "summary": "&#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-17T13:41:23+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u8aiv3/outside_of_pollux_vortice_teams_any_team_recs_or/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Intrepid-Sound-4811",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2634,14 +2649,14 @@
       "platform_region": "global"
     },
     {
-      "title": "can I skip the new character draw after the prologue and save it for later?",
-      "summary": "So this seems super dumb for me. I just finished the prologue, I essentially know nothing about the game but it immediately wants me to use the free draw thing and wont let me do anything else until I do. Why can&#39;t I just play the game and then when I get more familiar with the mechanics and what I might like choose then?  Why is the game trying to force me into this decision now and then pretending that it&#39;s giving me a choice by having the popup say &quot;are you sure you want to use this?&quot;, when I click cancel it literally won&#39;t let me do anything else.  &#32; submitted by &#32;  /u/leftofdanzig   [link] &#32; [comments]",
+      "title": "send help?",
+      "summary": "a little social experiment (think of it as a poll), but what&#39;s the first thing you notice here? https://preview.redd.it/baocdyksqs7h1.png?width=1245&amp;format=png&amp;auto=webp&amp;s=6ca6adae6e0ded7cc9f2f0b978d54c28d6daf400 (also hi reddit people I exist now, you may know me from the dumb rat decisions or the 545 turns of caecus)  &#32; submitted by &#32;  /u/Trick-Quail-265   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T07:00:04+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u82vgf/can_i_skip_the_new_character_draw_after_the/",
+      "time": "2026-06-17T07:37:41+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u83ind/send_help/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/leftofdanzig",
+      "author": "u//u/Trick-Quail-265",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2660,14 +2675,14 @@
       "platform_region": "global"
     },
     {
-      "title": "send help?",
-      "summary": "a little social experiment (think of it as a poll), but what&#39;s the first thing you notice here? https://preview.redd.it/baocdyksqs7h1.png?width=1245&amp;format=png&amp;auto=webp&amp;s=6ca6adae6e0ded7cc9f2f0b978d54c28d6daf400 (also hi reddit people I exist now, you may know me from the dumb rat decisions or the 545 turns of caecus)  &#32; submitted by &#32;  /u/Trick-Quail-265   [link] &#32; [comments]",
+      "title": "What team comp will help me carry to chapter 9 easy?",
+      "summary": "I feel so weak and idk what I’m doing TwT   &#32; submitted by &#32;  /u/thegothickorean   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-06-17T07:37:41+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1u83ind/send_help/",
+      "time": "2026-06-17T06:39:35+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1u82j2t/what_team_comp_will_help_me_carry_to_chapter_9/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Trick-Quail-265",
+      "author": "u//u/thegothickorean",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -2676,7 +2691,7 @@
       "title": "哈吼哈哈哈哈哈",
       "summary": "哈吼哈哈哈哈哈",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997720+00:00",
+      "time": "2026-06-17T21:57:01.297208+00:00",
       "url": "https://www.taptap.cn/review/48950782",
       "engagement": 0,
       "is_hot": false,
@@ -2689,7 +2704,7 @@
       "title": "哈吼哈哈哈哈哈",
       "summary": "哈吼哈哈哈哈哈",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997751+00:00",
+      "time": "2026-06-17T21:57:01.297239+00:00",
       "url": "https://www.taptap.cn/user/613600623",
       "engagement": 0,
       "is_hot": false,
@@ -2702,7 +2717,7 @@
       "title": "期待",
       "summary": "期待",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997775+00:00",
+      "time": "2026-06-17T21:57:01.297264+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2715,7 +2730,7 @@
       "title": "来自 Android 设备",
       "summary": "来自 Android 设备",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997822+00:00",
+      "time": "2026-06-17T21:57:01.297311+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2728,7 +2743,7 @@
       "title": "无\n : 求问群号在哪，没找到",
       "summary": "无\n : 求问群号在哪，没找到",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997826+00:00",
+      "time": "2026-06-17T21:57:01.297316+00:00",
       "url": "https://www.taptap.cn/user/519826740",
       "engagement": 0,
       "is_hot": false,
@@ -2741,7 +2756,7 @@
       "title": "1",
       "summary": "1",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997833+00:00",
+      "time": "2026-06-17T21:57:01.297323+00:00",
       "url": "https://www.taptap.cn/review/48950782#to-reply",
       "engagement": 0,
       "is_hot": false,
@@ -2754,7 +2769,7 @@
       "title": "咕咕嘎嘎",
       "summary": "咕咕嘎嘎",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997836+00:00",
+      "time": "2026-06-17T21:57:01.297326+00:00",
       "url": "https://www.taptap.cn/review/47077459",
       "engagement": 0,
       "is_hot": false,
@@ -2767,7 +2782,7 @@
       "title": "咕咕嘎嘎",
       "summary": "咕咕嘎嘎",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997840+00:00",
+      "time": "2026-06-17T21:57:01.297330+00:00",
       "url": "https://www.taptap.cn/user/679275104",
       "engagement": 0,
       "is_hot": false,
@@ -2780,7 +2795,7 @@
       "title": "来自 Honor X10",
       "summary": "来自 Honor X10",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997866+00:00",
+      "time": "2026-06-17T21:57:01.297356+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -2793,7 +2808,7 @@
       "title": "没凡恼\n : 怎么下载啊",
       "summary": "没凡恼\n : 怎么下载啊",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997873+00:00",
+      "time": "2026-06-17T21:57:01.297363+00:00",
       "url": "https://www.taptap.cn/user/585481016",
       "engagement": 0,
       "is_hot": false,
@@ -2806,190 +2821,8 @@
       "title": "17",
       "summary": "17",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997880+00:00",
+      "time": "2026-06-17T21:57:01.297371+00:00",
       "url": "https://www.taptap.cn/review/47077459#to-reply",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "MuKuRo",
-      "summary": "MuKuRo",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997884+00:00",
-      "url": "https://www.taptap.cn/review/46996261",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "MuKuRo",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "MuKuRo",
-      "summary": "MuKuRo",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997887+00:00",
-      "url": "https://www.taptap.cn/user/689060473",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "MuKuRo",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "展开",
-      "summary": "展开",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997912+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "来自 Vivo V2353A",
-      "summary": "来自 Vivo V2353A",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997933+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "阿巴阿巴\n : steam下的需要加速器吗",
-      "summary": "阿巴阿巴\n : steam下的需要加速器吗",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997936+00:00",
-      "url": "https://www.taptap.cn/user/70640911",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "阿巴阿巴",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "13",
-      "summary": "13",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997943+00:00",
-      "url": "https://www.taptap.cn/review/46996261#to-reply",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "Emiya Iii",
-      "summary": "Emiya Iii",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997947+00:00",
-      "url": "https://www.taptap.cn/review/45868862",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Emiya Iii",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "Emiya Iii",
-      "summary": "Emiya Iii",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997950+00:00",
-      "url": "https://www.taptap.cn/user/321224519",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Emiya Iii",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "User111601947\n : 挺有钱的",
-      "summary": "User111601947\n : 挺有钱的",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.997996+00:00",
-      "url": "https://www.taptap.cn/user/111601947",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "User111601947",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "2",
-      "summary": "2",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998003+00:00",
-      "url": "https://www.taptap.cn/review/45868862#to-reply",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "澄诚丶",
-      "summary": "澄诚丶",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998007+00:00",
-      "url": "https://www.taptap.cn/review/45428095",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "澄诚丶",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "澄诚丶",
-      "summary": "澄诚丶",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998010+00:00",
-      "url": "https://www.taptap.cn/user/25713227",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "澄诚丶",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "1ove2Dec_31\n : 国内开个加速器就能玩了啊，biubiu加速器和忘却前夜合作的，免费无广加速",
-      "summary": "1ove2Dec_31\n : 国内开个加速器就能玩了啊，biubiu加速器和忘却前夜合作的，免费无广加速",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998052+00:00",
-      "url": "https://www.taptap.cn/user/521244256",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "1ove2Dec_31",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "16",
-      "summary": "16",
-      "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998059+00:00",
-      "url": "https://www.taptap.cn/review/45428095#to-reply",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -3001,7 +2834,7 @@
       "title": "该用户已注销",
       "summary": "该用户已注销",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998063+00:00",
+      "time": "2026-06-17T21:57:01.297374+00:00",
       "url": "https://www.taptap.cn/review/46593677",
       "engagement": 0,
       "is_hot": false,
@@ -3014,7 +2847,7 @@
       "title": "该用户已注销",
       "summary": "该用户已注销",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998066+00:00",
+      "time": "2026-06-17T21:57:01.297378+00:00",
       "url": "https://www.taptap.cn/user/739479375",
       "engagement": 0,
       "is_hot": false,
@@ -3024,10 +2857,23 @@
       "platform_region": "cn"
     },
     {
+      "title": "展开",
+      "summary": "展开",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297402+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "来自 Nubia NX789J",
       "summary": "来自 Nubia NX789J",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998107+00:00",
+      "time": "2026-06-17T21:57:01.297423+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -3040,8 +2886,125 @@
       "title": "27",
       "summary": "27",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998111+00:00",
+      "time": "2026-06-17T21:57:01.297427+00:00",
       "url": "https://www.taptap.cn/review/46593677#to-reply",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "澄诚丶",
+      "summary": "澄诚丶",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297430+00:00",
+      "url": "https://www.taptap.cn/review/45428095",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "澄诚丶",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "澄诚丶",
+      "summary": "澄诚丶",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297434+00:00",
+      "url": "https://www.taptap.cn/user/25713227",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "澄诚丶",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "1ove2Dec_31\n : 国内开个加速器就能玩了啊，biubiu加速器和忘却前夜合作的，免费无广加速",
+      "summary": "1ove2Dec_31\n : 国内开个加速器就能玩了啊，biubiu加速器和忘却前夜合作的，免费无广加速",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297476+00:00",
+      "url": "https://www.taptap.cn/user/521244256",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "1ove2Dec_31",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "16",
+      "summary": "16",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297483+00:00",
+      "url": "https://www.taptap.cn/review/45428095#to-reply",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "MuKuRo",
+      "summary": "MuKuRo",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297486+00:00",
+      "url": "https://www.taptap.cn/review/46996261",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "MuKuRo",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "MuKuRo",
+      "summary": "MuKuRo",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297490+00:00",
+      "url": "https://www.taptap.cn/user/689060473",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "MuKuRo",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "来自 Vivo V2353A",
+      "summary": "来自 Vivo V2353A",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297533+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "阿巴阿巴\n : steam下的需要加速器吗",
+      "summary": "阿巴阿巴\n : steam下的需要加速器吗",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297536+00:00",
+      "url": "https://www.taptap.cn/user/70640911",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "阿巴阿巴",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "13",
+      "summary": "13",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297543+00:00",
+      "url": "https://www.taptap.cn/review/46996261#to-reply",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -3053,7 +3016,7 @@
       "title": "Kurisu",
       "summary": "Kurisu",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998114+00:00",
+      "time": "2026-06-17T21:57:01.297547+00:00",
       "url": "https://www.taptap.cn/review/46310244",
       "engagement": 0,
       "is_hot": false,
@@ -3066,7 +3029,7 @@
       "title": "Kurisu",
       "summary": "Kurisu",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998118+00:00",
+      "time": "2026-06-17T21:57:01.297550+00:00",
       "url": "https://www.taptap.cn/user/400100377",
       "engagement": 0,
       "is_hot": false,
@@ -3079,7 +3042,7 @@
       "title": "冰月\n : 会歪吗",
       "summary": "冰月\n : 会歪吗",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998161+00:00",
+      "time": "2026-06-17T21:57:01.297592+00:00",
       "url": "https://www.taptap.cn/user/715419416",
       "engagement": 0,
       "is_hot": false,
@@ -3092,8 +3055,60 @@
       "title": "10",
       "summary": "10",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998168+00:00",
+      "time": "2026-06-17T21:57:01.297599+00:00",
       "url": "https://www.taptap.cn/review/46310244#to-reply",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "Emiya Iii",
+      "summary": "Emiya Iii",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297602+00:00",
+      "url": "https://www.taptap.cn/review/45868862",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Emiya Iii",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "Emiya Iii",
+      "summary": "Emiya Iii",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297606+00:00",
+      "url": "https://www.taptap.cn/user/321224519",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Emiya Iii",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "User111601947\n : 挺有钱的",
+      "summary": "User111601947\n : 挺有钱的",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297654+00:00",
+      "url": "https://www.taptap.cn/user/111601947",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "User111601947",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "2",
+      "summary": "2",
+      "source": "taptap_review",
+      "time": "2026-06-17T21:57:01.297672+00:00",
+      "url": "https://www.taptap.cn/review/45868862#to-reply",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -3105,7 +3120,7 @@
       "title": "Sylus的猫",
       "summary": "Sylus的猫",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998172+00:00",
+      "time": "2026-06-17T21:57:01.297676+00:00",
       "url": "https://www.taptap.cn/review/44843360",
       "engagement": 0,
       "is_hot": false,
@@ -3118,7 +3133,7 @@
       "title": "Sylus的猫",
       "summary": "Sylus的猫",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998176+00:00",
+      "time": "2026-06-17T21:57:01.297681+00:00",
       "url": "https://www.taptap.cn/user/571672214",
       "engagement": 0,
       "is_hot": false,
@@ -3131,7 +3146,7 @@
       "title": "来自 小米24122RKC7C",
       "summary": "来自 小米24122RKC7C",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998214+00:00",
+      "time": "2026-06-17T21:57:01.297722+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -3144,7 +3159,7 @@
       "title": "꒦ິ^꒦ິ\n : 怎么下啊？",
       "summary": "꒦ິ^꒦ິ\n : 怎么下啊？",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998218+00:00",
+      "time": "2026-06-17T21:57:01.297725+00:00",
       "url": "https://www.taptap.cn/user/706400405",
       "engagement": 0,
       "is_hot": false,
@@ -3157,7 +3172,7 @@
       "title": "17",
       "summary": "17",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998225+00:00",
+      "time": "2026-06-17T21:57:01.297732+00:00",
       "url": "https://www.taptap.cn/review/44843360#to-reply",
       "engagement": 0,
       "is_hot": false,
@@ -3170,7 +3185,7 @@
       "title": "松本花冷",
       "summary": "松本花冷",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998229+00:00",
+      "time": "2026-06-17T21:57:01.297736+00:00",
       "url": "https://www.taptap.cn/review/38754219",
       "engagement": 0,
       "is_hot": false,
@@ -3183,7 +3198,7 @@
       "title": "松本花冷",
       "summary": "松本花冷",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998232+00:00",
+      "time": "2026-06-17T21:57:01.297740+00:00",
       "url": "https://www.taptap.cn/user/436583965",
       "engagement": 0,
       "is_hot": false,
@@ -3196,7 +3211,7 @@
       "title": "来自 华为 荣耀X10",
       "summary": "来自 华为 荣耀X10",
       "source": "taptap_review",
-      "time": "2026-06-17T19:59:48.998263+00:00",
+      "time": "2026-06-17T21:57:01.297770+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -3206,10 +3221,25 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜 刚入坑 求老大们给个配队建议",
-      "summary": "忘却前夜 刚入坑 求老大们给个配队建议",
+      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
+      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
       "source": "weibo",
-      "time": "2026-06-17T19:59:06.762497+00:00",
+      "time": "2026-06-17T21:56:50.015187+00:00",
+      "url": "https://m.weibo.cn/status/5297404375991444",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "",
+      "platform_region": ""
+    },
+    {
+      "title": "之前给忘却前夜画的解禁了！！",
+      "summary": "之前给忘却前夜画的解禁了！！",
+      "source": "weibo",
+      "time": "2026-06-17T21:56:50.121924+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -3551,19 +3581,6 @@
       "content_type": "image"
     },
     {
-      "title": "",
-      "summary": "",
-      "source": "pixiv",
-      "time": "2026-06-17T19:58:55.039256+00:00",
-      "url": "https://www.pixiv.net/artworks/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "月下",
       "summary": "",
       "source": "pixiv",
@@ -3602,6 +3619,27 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/18/01/145487097_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "風に乗る",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-01T21:01:36+09:00",
+      "url": "https://www.pixiv.net/artworks/145486249",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "ソラミミ",
+      "tags": [
+        "沙耶の唄",
+        "忘却前夜",
+        "コラボレーション",
+        "沙耶",
+        "種子"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/01/36/145486249_p0_square1200.jpg",
       "content_type": "image"
     },
     {
@@ -3869,7 +3907,7 @@
       "title": "망각전야) 슬더스라이크 해보고 싶어서 해봄",
       "summary": "사야의 노래도 재밌게 했어서 해봤는데 나름 재밌음근데 번역이 너무 구려ㅋㅋㅋㅋ스토리 번역은 기계번역하면 그럴 수 있다치고 못알...",
       "source": "ruliweb",
-      "time": "2026-06-17T19:58:55.472868+00:00",
+      "time": "2026-06-17T21:56:38.247870+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75586140",
       "engagement": 0,
       "is_hot": false,
@@ -4090,7 +4128,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-06-17T19:58:56.347300+00:00",
+      "time": "2026-06-17T21:56:38.638107+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -4104,7 +4142,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-16T15:32:19+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPjqdU-jO1aQNgxwJDVUDl3FqXa8Fplpd9fzQIQBg5_Nd_Kulzl6Twg9GmeQr82g53QCeEGRMG_N22kfrlU8j03I7VQn3fDnPaBJCtR6H41q-QOB5m1VBSPsCZT3ypygiajn0kAG7l_Gd7f3dZoMsXAzAPDIIbHX5RAlZn2cp9JGH3urP90GMRSmc-g_vedSYi6gZ39BPwlh-jotuuiAmOIg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9A6208ACB266FB6E5B5C0F23273C381B5B508B076A32FC80",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPPuCHkNJzVac__6pDZZHauVqXa8Fplpd94xdwKDJ8dGbgcI_X6KK38Yyy8mthG5ZAKUC4O2RjKJumcW5DJ-3HgaSCLJkmbtskydWnKOTeEnxy9m-Yr52edVYaYWA4jsiyAOBPqCBiH1U_R_5Pj6BJYHmzLU3VRDCez-wBLaSoKpcINRpweCW21sGRd1FaxIQxD46hgboGA0rFcvUoAZZH7Q..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9AFB8F1616C64D2531376648106D973A32D8A3276A331817",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -4117,7 +4155,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-17T13:27:00+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPjqdU-jO1aQNgxwJDVUDl3FqXa8Fplpd9ASNK8JUV_stz_TucqLz0VyZ6d-gpLNVzISqoK8LGLWjeFK3r9zdb1uUSDF1njjWdhIsccbTyZyDrrsx4rqYoIY8l3E27e1aHZFEtrrCgEBnxgtOi_sIikdxslsNo7TcJHf1R4Kld7n23aDGMJYS9I-TFv85akvHEfK9CP39Ubfn6zvkPgoArRQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9A6208ACB266FB6E5B5C0F23273C381B5B508B076A32FC80",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPPuCHkNJzVac__6pDZZHauVqXa8Fplpd9URoSErbRW5nOmtayaGf0M4pzJiK1YmMERxe1hmJwez_iyEq8aV996pReRGTb5BP610RS3nenb22veEjznwquledgoloPYFstS72SPOiA79BuOvi7Wx-MRPxKYsknoYHdWp6XRN4OxJGzfdubo2b3W4lNJ_K0NOOnhUq_zB13YJ8O8fIRwtipOg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9AFB8F1616C64D2531376648106D973A32D8A3276A331817",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -4130,7 +4168,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-14T14:47:33+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPjqdU-jO1aQNgxwJDVUDl3FqXa8Fplpd9fzQIQBg5_Nd_Kulzl6Twg9GmeQr82g53QCeEGRMG_N22kfrlU8j03HY7Q2R4Xh0ogTPzC_A_EaT6fss-GXzpjWJRSrbaF-P0GmBH-80w9UhsOFNZKpc5c5kQLx_0XN_6fDfzmHxI911Nt6g24Z65NK5l030tdf1y0P_tSxSYoaXvzHZXxeLdyg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9A6208ACB266FB6E5B5C0F23273C381B5B508B076A32FC80",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPPuCHkNJzVac__6pDZZHauVqXa8Fplpd94xdwKDJ8dGbgcI_X6KK38Yyy8mthG5ZAKUC4O2RjKJumcW5DJ-3HgeDEpQejwsLGREbN2WrkXgZUzSD7Rc-9k0HPWY91VNhhW6JQTXqZd0nCQXM3fGNqDIHJ-vrYySR1GIltrJ1pjRYUcjlHmDlZJBm7ErQnWaUBvGYiYBHJ54nm0CtGSSkZQQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=9AFB8F1616C64D2531376648106D973A32D8A3276A331817",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -4143,7 +4181,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-16T15:32:19+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPgzoDdg66K3ZgxwJDVUDl3FqXa8Fplpd9fzQIQBg5_Nd_Kulzl6Twg9GmeQr82g53QCeEGRMG_N22kfrlU8j03I7VQn3fDnPaBJCtR6H41q-QOB5m1VBSPoMEfOSxXQkc2ZbjPBWcfGcRDomMBDmWgieX_53YuNHifs4w6Z-xePVgRvv37faLpbrLraGTms3vrrduaoGsyK_I3OTRHYU2og..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9A620F828B5FC3576365361A1E1FCD0363D75C726A32FC82",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPpYAAcryyzg8__6pDZZHauVqXa8Fplpd94xdwKDJ8dGbgcI_X6KK38Yyy8mthG5ZAKUC4O2RjKJumcW5DJ-3HgaSCLJkmbtskydWnKOTeEnxy9m-Yr52edaGLMdHmRpEqJ57xz4BdWfZ6uVK5dFlxlEVzXoAauw6D2d1625j7nlqO6aKLaSgwaevQLnDpEJ6fiSxsTEPSG9pS6t2rFt2rnA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9AFB965030E36C071412476E3166F5631424CDC16A331819",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -4156,7 +4194,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-17T13:27:00+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPgzoDdg66K3ZgxwJDVUDl3FqXa8Fplpd9ASNK8JUV_stz_TucqLz0VyZ6d-gpLNVzISqoK8LGLWjeFK3r9zdb1uUSDF1njjWdhIsccbTyZyDrrsx4rqYoIUtthyPpD6CQgeoaYwoEwfDVpaLrSUFyKaMiigeL06ijBDtzqeF3_q174tKUP81gClIsvjLE0RM29-QPf00bqfpAe0f8bRARvQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9A620F828B5FC3576365361A1E1FCD0363D75C726A32FC82",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPpYAAcryyzg8__6pDZZHauVqXa8Fplpd9URoSErbRW5nOmtayaGf0M4pzJiK1YmMERxe1hmJwez_iyEq8aV996pReRGTb5BP610RS3nenb22veEjznwqulQ4FERNj1BKwsSWxRflMXMrPyAXd1i05-3TixFXbTuR9fXsxg1LYvqvmkd31aE7JOUn_hzfWerZhUcdXx95CGe8Y-UZGbO56rA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9AFB965030E36C071412476E3166F5631424CDC16A331819",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -4169,7 +4207,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-06-14T14:47:33+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPgzoDdg66K3ZgxwJDVUDl3FqXa8Fplpd9fzQIQBg5_Nd_Kulzl6Twg9GmeQr82g53QCeEGRMG_N22kfrlU8j03HY7Q2R4Xh0ogTPzC_A_EaT6fss-GXzpjaN3t6sk3tefCKMNa4jrKqNOtNyXSOmdgMPUNQEBKVKpCN9dt7jZQ_xVCyKexokfglN1upS48PiOPVVnZqsjfL-AFV_3u-a3OQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9A620F828B5FC3576365361A1E1FCD0363D75C726A32FC82",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_XmLfFp4-gPpYAAcryyzg8__6pDZZHauVqXa8Fplpd94xdwKDJ8dGbgcI_X6KK38Yyy8mthG5ZAKUC4O2RjKJumcW5DJ-3HgeDEpQejwsLGREbN2WrkXgZUzSD7Rc-9k__K28oJVnITudXzDaQX-fa65D3Y4N7OWkC46XNVO1oHBGkrCZTZ7oim9rN759sHlPumSEXXY-RfQBgq_zumFBLP28temKTOwg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=9AFB965030E36C071412476E3166F5631424CDC16A331819",
       "engagement": 0,
       "is_hot": false,
       "author": "",

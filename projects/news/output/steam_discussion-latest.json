@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-17T19:59:49.093753+00:00",
+  "collected_at": "2026-06-17T21:57:26.416247+00:00",
   "source": "steam_discussion",
   "item_count": 8,
   "items": [
@@ -35,13 +35,23 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-17T04:42:18+00:00",
+      "time": "2026-06-17T20:54:47+00:00",
       "lang": "en",
       "title": "[Steam论坛] Question about team building",
       "summary": "Is Arachne/Clem/Thais/XU a good team for story? I am in chapter 6 and things are starting to get kinda rough,idk if its a team building issue or I am just a brainlet who cant pilot the team properly(tbh I dont rly understand how clem works)\nAny tips on what characters I should get to improve this?...",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904888719/",
       "author": "DingusDork",
-      "engagement": 6
+      "engagement": 7
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-17T20:56:56+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Cards dont pop out on hover",
+      "summary": "This is the first time I've seen a game like this where part of the card is hidden off screen while in your hand and the card doesn't pop out so that you can read it when you hover over it.  It's pretty annoying grabbing the card and pulling it out to read it, then carefully placing it back in hand so that I don't accidentally play it.  I wonder if I'm doing something wrong or they really just haven't implemented this basic and standard feature to their game....",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624847350/",
+      "author": "Ruckkus",
+      "engagement": 1
     },
     {
       "source": "steam_discussion",
@@ -72,16 +82,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904822897/",
       "author": "Gamws",
       "engagement": 1
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-17T11:51:35+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Cards dont pop out on hover",
-      "summary": "This is the first time I've seen a game like this where part of the card is hidden off screen while in your hand and the card doesn't pop out so that you can read it when you hover over it.  It's pretty annoying grabbing the card and pulling it out to read it, then carefully placing it back in hand so that I don't accidentally play it.  I wonder if I'm doing something wrong or they really just haven't implemented this basic and standard feature to their game....",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624847350/",
-      "author": "Ruckkus",
-      "engagement": 0
     }
   ]
 }
