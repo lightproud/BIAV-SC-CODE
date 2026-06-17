@@ -1,0 +1,36 @@
+{
+  "date": "2025-11-20",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 7,
+  "attachments": 1,
+  "channel_activity": {
+    "レベル70〜80の救援覚醒体を固定している人の協力願": 1,
+    "🎥新覚醒体「サルバドル」のリプレイ動画募集中！": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440987954628788248",
+      "channel_id": "1417695507500765194",
+      "content": "ナウティラ82です。\n200027315",
+      "author": "k.karamine",
+      "reactions": 6,
+      "channel": "レベル70〜80の救援覚醒体を固定している人の協力願"
+    },
+    {
+      "id": "1440991592486797392",
+      "channel_id": "1438833860040331275",
+      "content": "#共有者：ジェーンドゥ（200082788）\n#\n#偏執・第四幕\n#\n#ソレール（鎖を断ち切る日、百万の寵愛の眼）\n#シレスト（導きの帆、苦しみの呪縛）\n#サル",
+      "author": "achachamaru",
+      "reactions": 1,
+      "channel": "🎥新覚醒体「サルバドル」のリプレイ動画募集中！"
+    }
+  ]
+}

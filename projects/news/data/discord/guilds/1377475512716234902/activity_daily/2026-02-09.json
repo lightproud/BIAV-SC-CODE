@@ -1,0 +1,38 @@
+{
+  "date": "2026-02-09",
+  "messages": 17,
+  "unique_authors": 4,
+  "reactions_total": 10,
+  "attachments": 2,
+  "channel_activity": {
+    "落書きや没とか": 1,
+    "元ネタ・モチーフ考察(ネタバレあり)": 2,
+    "初心者の構成について": 14
+  },
+  "hourly_activity": {
+    "11": 13,
+    "8": 2,
+    "10": 2
+  },
+  "message_types": {
+    "0": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1470373736405532683",
+      "channel_id": "1432264057666408518",
+      "content": "忙しすぎて滅すぎる\n描いてます",
+      "author": "izuizusaan",
+      "reactions": 7,
+      "channel": "落書きや没とか"
+    },
+    {
+      "id": "1470333282267697163",
+      "channel_id": "1421053111648125011",
+      "content": "まだ読んでる途中なので読み終わったら頑張ってまとめてみたい",
+      "author": "achachamaru",
+      "reactions": 3,
+      "channel": "元ネタ・モチーフ考察(ネタバレあり)"
+    }
+  ]
+}

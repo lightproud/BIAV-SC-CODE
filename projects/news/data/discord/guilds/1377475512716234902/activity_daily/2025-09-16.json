@@ -1,0 +1,46 @@
+{
+  "date": "2025-09-16",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "グロ版話題スレ": 6,
+    "コード入力数珠つなぎの会": 1
+  },
+  "hourly_activity": {
+    "5": 2,
+    "6": 1,
+    "13": 2,
+    "23": 2
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417509487824080958",
+      "channel_id": "1409568878752956579",
+      "content": "グロ版のキャラ名、日本版にあわされたっぽい？",
+      "author": "noodle.soumen_50397",
+      "reactions": 3,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1417390080724566026",
+      "channel_id": "1409568878752956579",
+      "content": "タイイスのコピーはいつも悪さする",
+      "author": "horydragon",
+      "reactions": 1,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1417653466863636601",
+      "channel_id": "1409568878752956579",
+      "content": "日本版未実装のキャラはまだっぽいけどタイイスがタイスになってて笑っちゃった",
+      "author": "noodle.soumen_50397",
+      "reactions": 1,
+      "channel": "グロ版話題スレ"
+    }
+  ]
+}

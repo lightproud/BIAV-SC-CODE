@@ -1,0 +1,35 @@
+{
+  "date": "2025-12-04",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 11,
+  "attachments": 4,
+  "channel_activity": {
+    "メインストーリークリア応援キャンペーン開催！": 1,
+    "12月11日15:00～17:00 メンテナンス実施のお知らせ": 1
+  },
+  "hourly_activity": {
+    "6": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1446022329267388436",
+      "channel_id": "1446022329267388436",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\nVersion1.4「無数の子孫の母」にて、「調査」第7章の追加を予定し",
+      "author": "mythag_navigator",
+      "reactions": 6,
+      "channel": "メインストーリークリア応援キャンペーン開催！"
+    },
+    {
+      "id": "1446018931960578138",
+      "channel_id": "1446018931960578138",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n2025年12月11日15時からVersion1.4「無数の子孫の母」の",
+      "author": "mythag_navigator",
+      "reactions": 5,
+      "channel": "12月11日15:00～17:00 メンテナンス実施のお知らせ"
+    }
+  ]
+}

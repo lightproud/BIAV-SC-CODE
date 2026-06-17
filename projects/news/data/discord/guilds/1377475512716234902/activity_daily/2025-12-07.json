@@ -1,0 +1,35 @@
+{
+  "date": "2025-12-07",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 15,
+  "attachments": 3,
+  "channel_activity": {
+    "落書きや没とか": 2
+  },
+  "hourly_activity": {
+    "8": 2
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1447149448143704074",
+      "channel_id": "1432264057666408518",
+      "content": "2ヶ月越しで申し訳ない…お誕生日おめでとうございます〜\n読み聞かせめちゃくちゃ聴きたい",
+      "author": "izuizusaan",
+      "reactions": 8,
+      "channel": "落書きや没とか"
+    },
+    {
+      "id": "1447150017394638939",
+      "channel_id": "1432264057666408518",
+      "content": "ニムフィーアさんのスケルトンおみ足めちゃくちゃ好きなので全身絵も描きたひ",
+      "author": "izuizusaan",
+      "reactions": 7,
+      "channel": "落書きや没とか"
+    }
+  ]
+}

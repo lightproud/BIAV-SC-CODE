@@ -1,0 +1,36 @@
+{
+  "date": "2026-03-18",
+  "messages": 20,
+  "unique_authors": 6,
+  "reactions_total": 1,
+  "attachments": 10,
+  "channel_activity": {
+    "🔰初心者質問": 9,
+    "誰でも質問": 10,
+    "キャラ毎の戦法（お作法or儀式）について": 1
+  },
+  "hourly_activity": {
+    "1": 4,
+    "3": 3,
+    "6": 1,
+    "11": 1,
+    "13": 2,
+    "14": 3,
+    "15": 5,
+    "5": 1
+  },
+  "message_types": {
+    "0": 19,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1483664574807801986",
+      "channel_id": "1391701560496623688",
+      "content": "ダフォですかねー",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}

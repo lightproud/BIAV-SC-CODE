@@ -1,0 +1,38 @@
+{
+  "date": "2025-12-27",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 53,
+  "attachments": 2,
+  "channel_activity": {
+    "ﾁｮｯﾄ動くやつ": 4,
+    "対人戦のおすすめ編成": 1
+  },
+  "hourly_activity": {
+    "12": 1,
+    "14": 2,
+    "15": 1,
+    "8": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1454453163263266847",
+      "channel_id": "1454453163263266847",
+      "content": "練習で描いたﾁｮﾄ動くトゥルーです<:T_sleep2:1356085993626665200>",
+      "author": "esukun125",
+      "reactions": 49,
+      "channel": "ﾁｮｯﾄ動くやつ"
+    },
+    {
+      "id": "1454489462988865748",
+      "channel_id": "1454453163263266847",
+      "content": "<:iine:1076733114883256430>",
+      "author": "esukun125",
+      "reactions": 4,
+      "channel": "ﾁｮｯﾄ動くやつ"
+    }
+  ]
+}

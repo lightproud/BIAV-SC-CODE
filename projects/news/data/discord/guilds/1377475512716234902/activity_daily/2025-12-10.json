@@ -1,0 +1,36 @@
+{
+  "date": "2025-12-10",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 31,
+  "attachments": 2,
+  "channel_activity": {
+    "落書きとか感想とか": 1,
+    "クオリティまちまちだけどお絵描き〜": 2
+  },
+  "hourly_activity": {
+    "8": 1,
+    "9": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1448235630533279824",
+      "channel_id": "1448235630533279824",
+      "content": "ただひたすらにキャラを愛でる\nリクエストなどあれば……暇な時に描きます……",
+      "author": "hashiridocoro",
+      "reactions": 25,
+      "channel": "落書きとか感想とか"
+    },
+    {
+      "id": "1448249753405100032",
+      "channel_id": "1416780884673167361",
+      "content": "正直に言おう！飽きた！",
+      "author": "nekoshinnja_97999",
+      "reactions": 6,
+      "channel": "クオリティまちまちだけどお絵描き〜"
+    }
+  ]
+}

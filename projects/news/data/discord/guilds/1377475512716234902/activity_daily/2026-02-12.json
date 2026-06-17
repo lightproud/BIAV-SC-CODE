@@ -1,0 +1,54 @@
+{
+  "date": "2026-02-12",
+  "messages": 17,
+  "unique_authors": 8,
+  "reactions_total": 5,
+  "attachments": 9,
+  "channel_activity": {
+    "誰でも質問": 17
+  },
+  "hourly_activity": {
+    "5": 1,
+    "7": 2,
+    "13": 6,
+    "16": 8
+  },
+  "message_types": {
+    "19": 1,
+    "0": 16
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1471408108893900956",
+      "channel_id": "1400058619726266462",
+      "content": "-# 超次元染めは永遠に使いこなせない…🫠",
+      "author": "shachi1019",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1471385084463546403",
+      "channel_id": "1400058619726266462",
+      "content": "ジェンキン使うと超次元で火力出そうとすると被ダメが増えがちなので注意してね",
+      "author": "sunquanrenge",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1471493381216534589",
+      "channel_id": "1400058619726266462",
+      "content": "深海×超次元で組むなら皆さんだとどうなりますかね…",
+      "author": "mu0240_87003",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1471493782888382514",
+      "channel_id": "1400058619726266462",
+      "content": "ダフォオルラカーシアミリ",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2025-11-25",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 26,
+  "attachments": 2,
+  "channel_activity": {
+    "覚醒体「24」の性能内容を先行公開！": 3
+  },
+  "hourly_activity": {
+    "8": 3
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442791953757638656",
+      "channel_id": "1442791953757638656",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n11月27日に追加予定の新覚醒体「24」と新運命の札「奇体の反噬」の性能",
+      "author": "mythag_navigator",
+      "reactions": 19,
+      "channel": "覚醒体「24」の性能内容を先行公開！"
+    },
+    {
+      "id": "1442792556256694293",
+      "channel_id": "1442791953757638656",
+      "content": "キーオーダー【すべてが彼女】\n\n1点の行動力を獲得し、界域知識を24増加する。\n「24」：ランダムに0～40狂気を獲得。\n※調査Lv.60時点の内容です。\n\n-",
+      "author": "mythag_navigator",
+      "reactions": 7,
+      "channel": "覚醒体「24」の性能内容を先行公開！"
+    }
+  ]
+}

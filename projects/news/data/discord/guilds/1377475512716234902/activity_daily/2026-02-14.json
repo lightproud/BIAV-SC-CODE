@@ -1,0 +1,39 @@
+{
+  "date": "2026-02-14",
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 12,
+  "attachments": 1,
+  "channel_activity": {
+    "誰でも質問": 9,
+    "カレン": 1
+  },
+  "hourly_activity": {
+    "12": 3,
+    "13": 1,
+    "14": 4,
+    "15": 1,
+    "21": 1
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1472344815051214940",
+      "channel_id": "1472344815051214940",
+      "content": "お友達に（無理に）リクエストしてもらって描いたやつです。（自分でお題を決められなかった）",
+      "author": "another05902",
+      "reactions": 10,
+      "channel": "カレン"
+    },
+    {
+      "id": "1472231487649616136",
+      "channel_id": "1400058619726266462",
+      "content": "てっきり修正をしたのかと思ってた\n不具合だけど他のカードとバランスわるいから消すわって書いてた\n笑う",
+      "author": "iihige",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    }
+  ]
+}

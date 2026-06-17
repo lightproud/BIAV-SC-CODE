@@ -1,0 +1,100 @@
+{
+  "date": "2026-03-17",
+  "messages": 66,
+  "unique_authors": 16,
+  "reactions_total": 12,
+  "attachments": 11,
+  "channel_activity": {
+    "🔰初心者質問": 2,
+    "誰でも質問": 57,
+    "キャラ毎の戦法（お作法or儀式）について": 7
+  },
+  "hourly_activity": {
+    "12": 2,
+    "5": 5,
+    "6": 14,
+    "7": 2,
+    "10": 5,
+    "11": 27,
+    "13": 10,
+    "14": 1
+  },
+  "message_types": {
+    "0": 59,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1483444562121719910",
+      "channel_id": "1391701560496623688",
+      "content": "カード使用時に、捨て札に移動する代わりに、コピーを手札に戻す能力です。\n発動すると、「残響○」の○の数字が1減ります。\n「残響0」のときにカードを使用すると、手",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1483356621823283270",
+      "channel_id": "1400058619726266462",
+      "content": "上方修正まだですか？",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483352675398713375",
+      "channel_id": "1400058619726266462",
+      "content": "多分運営的には本来力ボーナスが乗らないカードだけど、お情けとして力ボーナスの50%分あげるよ〜って感じ方なのかと思います。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483353581347274899",
+      "channel_id": "1400058619726266462",
+      "content": "リッツが思ったより火力出ない理由がこれ。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483354753986592799",
+      "channel_id": "1400058619726266462",
+      "content": "上方してええんやぞ",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483406134776954941",
+      "channel_id": "1400058619726266462",
+      "content": "ありがとうございます！！！ミッションクリアとかで全開放されるのかと血眼になって探してました",
+      "author": "winter_tomatoes",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483422604592287835",
+      "channel_id": "1400058619726266462",
+      "content": "すみません、これはもう終わっていて、キャラ選択迷っているのです。5枚のせようと思ったらスパム判定受けてしまって",
+      "author": "liannew0397",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483424864328093738",
+      "channel_id": "1400058619726266462",
+      "content": "タイスおらんやん",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1483462071713792182",
+      "channel_id": "1400058619726266462",
+      "content": "素材不足でも表示されてたかはちょっと思い出せない！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    }
+  ]
+}

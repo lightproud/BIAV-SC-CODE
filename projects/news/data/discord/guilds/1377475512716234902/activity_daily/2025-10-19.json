@@ -1,0 +1,28 @@
+{
+  "date": "2025-10-19",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 3,
+  "channel_activity": {
+    "ひとりごと": 1,
+    "ユウハシュメイン集まれー": 1
+  },
+  "hourly_activity": {
+    "12": 1,
+    "2": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429299509590229105",
+      "channel_id": "1425497871439892511",
+      "content": "ユウハシュメインじゃないし、ダメチャレとかいう邪道ですが...\n\nダメチャレでは一番火力出せる。\n力ボーナスが唯一青天井（現在5桁まで確認）で盛れるキャラ",
+      "author": "korokoro777",
+      "reactions": 4,
+      "channel": "ユウハシュメイン集まれー"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-02-25",
+  "messages": 10,
+  "unique_authors": 7,
+  "reactions_total": 29,
+  "attachments": 1,
+  "channel_activity": {
+    "誰でも質問": 8,
+    "皆さんの推しを描きたい": 1,
+    "対人大会運営本部": 1
+  },
+  "hourly_activity": {
+    "4": 3,
+    "11": 3,
+    "15": 2,
+    "12": 1,
+    "7": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1476200824177950852",
+      "channel_id": "1418083813422272552",
+      "content": "めっちゃ遅くなってしまって申し訳ない……！！環行ラモンナですわ！！",
+      "author": "hashiridocoro",
+      "reactions": 25,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1476181635107000370",
+      "channel_id": "1400058619726266462",
+      "content": "サングラスかけた強面の人にビンタされそう",
+      "author": "namenemue3",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1476180188672036989",
+      "channel_id": "1400058619726266462",
+      "content": "結論から言うね！\n英文の「house my friend」のfriendの部分に焦点を当てるとフレンドは日本語訳で“友達”になるね。つまりは「私のホウセイはあな",
+      "author": "aku08158",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1476122478563819613",
+      "channel_id": "1473567532249252063",
+      "content": "諸事情でキャラ・札の公開は3/3の21時に変更させていただきます",
+      "author": "_regen02b",
+      "reactions": 1,
+      "channel": "対人大会運営本部"
+    }
+  ]
+}

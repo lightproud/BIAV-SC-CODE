@@ -1,0 +1,45 @@
+{
+  "date": "2025-10-12",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 12,
+  "attachments": 2,
+  "channel_activity": {
+    "グロ版話題スレ": 5,
+    "ひとりごと": 1
+  },
+  "hourly_activity": {
+    "9": 1,
+    "10": 4,
+    "6": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426873319579324416",
+      "channel_id": "1409568878752956579",
+      "content": "ぴふ",
+      "author": "mekhane0885",
+      "reactions": 5,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1426863490735276104",
+      "channel_id": "1409568878752956579",
+      "content": "最終章クリアしました。マジでギリギリでした",
+      "author": "nin0876",
+      "reactions": 4,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1426813154268156028",
+      "channel_id": "1425427324534526004",
+      "content": "ついに3凸まで来ました\n完凸は...目指せたら目指します🫠",
+      "author": "tuyu1ro._.1128",
+      "reactions": 3,
+      "channel": "ひとりごと"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2025-08-18",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 36,
+  "attachments": 1,
+  "channel_activity": {
+    "引きたいキャラあげてけ": 1
+  },
+  "hourly_activity": {
+    "14": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1407006986100277370",
+      "channel_id": "1407006986100277370",
+      "content": "珊（大陸版での名前）\nはやく明日になれー",
+      "author": "ea02149",
+      "reactions": 36,
+      "channel": "引きたいキャラあげてけ"
+    }
+  ]
+}

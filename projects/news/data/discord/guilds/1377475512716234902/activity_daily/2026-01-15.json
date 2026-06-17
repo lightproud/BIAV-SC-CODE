@@ -1,0 +1,32 @@
+{
+  "date": "2026-01-15",
+  "messages": 14,
+  "unique_authors": 6,
+  "reactions_total": 10,
+  "attachments": 4,
+  "channel_activity": {
+    "繁殖熱狂話題スレ": 5,
+    "何やってるんですか!!!!幻夢して下さい!!!": 8,
+    "もうすぐ0.5周年＆Version1.5内容先行公開！": 1
+  },
+  "hourly_activity": {
+    "8": 4,
+    "18": 2,
+    "15": 7,
+    "6": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1461239011187232899",
+      "channel_id": "1461239011187232899",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n忘却前夜は、2/19に0.5周年を迎えます！\nまた、0.5周年に関する内",
+      "author": "mythag_navigator",
+      "reactions": 10,
+      "channel": "もうすぐ0.5周年＆Version1.5内容先行公開！"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2025-09-27",
+  "messages": 13,
+  "unique_authors": 4,
+  "reactions_total": 41,
+  "attachments": 3,
+  "channel_activity": {
+    "サンガーさんのらくがき": 1,
+    "密約について": 1,
+    "4章のネタバレあり！！": 3,
+    "運命の札について": 4,
+    "界域知識": 4
+  },
+  "hourly_activity": {
+    "7": 1,
+    "2": 1,
+    "12": 2,
+    "16": 1,
+    "3": 1,
+    "4": 2,
+    "6": 1,
+    "0": 1,
+    "1": 3
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421397542087819317",
+      "channel_id": "1421397542087819317",
+      "content": "",
+      "author": "okara6947",
+      "reactions": 40,
+      "channel": "サンガーさんのらくがき"
+    },
+    {
+      "id": "1421475207121731747",
+      "channel_id": "1421475068478750843",
+      "content": "こんなの使えないですよ...",
+      "author": "tuyu1ro._.1128",
+      "reactions": 1,
+      "channel": "4章のネタバレあり！！"
+    }
+  ]
+}

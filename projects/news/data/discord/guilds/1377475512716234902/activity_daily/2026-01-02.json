@@ -1,0 +1,26 @@
+{
+  "date": "2026-01-02",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "皆さんの推しを描きたい": 1
+  },
+  "hourly_activity": {
+    "6": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1456530450691657731",
+      "channel_id": "1418083813422272552",
+      "content": "お暇があったらロータンちゃんお願いしても大丈夫でしょうか…？",
+      "author": "r_173.",
+      "reactions": 1,
+      "channel": "皆さんの推しを描きたい"
+    }
+  ]
+}

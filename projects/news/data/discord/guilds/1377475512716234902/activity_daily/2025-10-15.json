@@ -1,0 +1,77 @@
+{
+  "date": "2025-10-15",
+  "messages": 18,
+  "unique_authors": 8,
+  "reactions_total": 36,
+  "attachments": 3,
+  "channel_activity": {
+    "元ネタ・モチーフ考察(ネタバレあり)": 3,
+    "対人戦のおすすめ編成": 3,
+    "グロ版話題スレ": 9,
+    "ひとりごと": 1,
+    "コード入力数珠つなぎの会": 1,
+    "覚醒体マーフィー登場！": 1
+  },
+  "hourly_activity": {
+    "5": 3,
+    "19": 2,
+    "9": 2,
+    "10": 4,
+    "0": 1,
+    "7": 6
+  },
+  "message_types": {
+    "0": 17,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1427968788460077098",
+      "channel_id": "1427968788460077098",
+      "content": "2025/10/16(木) 15:00からのメンテナンス終了後 ～",
+      "author": "mythag_navigator",
+      "reactions": 26,
+      "channel": "覚醒体マーフィー登場！"
+    },
+    {
+      "id": "1427890951694848021",
+      "channel_id": "1421053111648125011",
+      "content": "6章更新前なので告知\n6章関連の考察は勿論歓迎しますが、更新直後は伏字使って投稿してもらえると事故が減って助かります🙇‍♀️よろしくお願いいたします🙏",
+      "author": "okara6947",
+      "reactions": 5,
+      "channel": "元ネタ・モチーフ考察(ネタバレあり)"
+    },
+    {
+      "id": "1427928303330791486",
+      "channel_id": "1409568878752956579",
+      "content": "https://x.com/MorimensOfcl/status/1978368295645712612?t=Rdt5Y5dqDgXUSDHmwCX5Ew&s",
+      "author": "nin0876",
+      "reactions": 2,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1427895955729940593",
+      "channel_id": "1409568878752956579",
+      "content": "メインスト2.0 1章半",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1427921840545861693",
+      "channel_id": "1409568878752956579",
+      "content": "クリ抗もプレイヤー死ぬ",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1427966276805984369",
+      "channel_id": "1407669469177970732",
+      "content": "2G2UR6VH15",
+      "author": "yarishuixiangtai",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}

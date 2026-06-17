@@ -1,0 +1,26 @@
+{
+  "date": "2025-09-29",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "コード入力数珠つなぎの会": 1
+  },
+  "hourly_activity": {
+    "13": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422218989672730769",
+      "channel_id": "1407669469177970732",
+      "content": "5EM1STRU21",
+      "author": "takkle_",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}

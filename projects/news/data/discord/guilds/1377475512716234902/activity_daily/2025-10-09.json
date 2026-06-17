@@ -1,0 +1,28 @@
+{
+  "date": "2025-10-09",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 9,
+  "attachments": 1,
+  "channel_activity": {
+    "ひとりごと": 1,
+    "10月16日15:00～17:00 メンテナンス実施のお知らせ": 1
+  },
+  "hourly_activity": {
+    "12": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1425730873625415722",
+      "channel_id": "1425730873625415722",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます\n忘却前夜運営チームです\n\n2025年10月16日15時からVersion1.2「倒錯した星々」のアップ",
+      "author": "mythag_navigator",
+      "reactions": 9,
+      "channel": "10月16日15:00～17:00 メンテナンス実施のお知らせ"
+    }
+  ]
+}

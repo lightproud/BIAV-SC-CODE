@@ -1,0 +1,36 @@
+{
+  "date": "2026-02-03",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "全覚醒体描きます！": 1,
+    "誰か描きたい！": 1
+  },
+  "hourly_activity": {
+    "1": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1468057879759028234",
+      "channel_id": "1459443394148433960",
+      "content": "クオリティたっかいなぁ",
+      "author": "mag1kaando1",
+      "reactions": 1,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1468271102764519632",
+      "channel_id": "1461714387277709322",
+      "content": "ほんっとにごめんなさい…勉強とかで諸々描けていなくて…また改めて書くのでミニサンガーさん置いておきます！",
+      "author": "atoria0931_27433",
+      "reactions": 1,
+      "channel": "誰か描きたい！"
+    }
+  ]
+}

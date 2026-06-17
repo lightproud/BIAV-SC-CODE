@@ -1,0 +1,65 @@
+{
+  "date": "2025-12-16",
+  "messages": 9,
+  "unique_authors": 3,
+  "reactions_total": 15,
+  "attachments": 3,
+  "channel_activity": {
+    "対戦募集": 1,
+    "落書きとか感想とか": 3,
+    "たまには前夜以外で盛り上がろう": 4,
+    "サンタさんへ（mythag_navigatorさんへ）": 1
+  },
+  "hourly_activity": {
+    "0": 1,
+    "10": 1,
+    "15": 6,
+    "22": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1450507398845436066",
+      "channel_id": "1450506376613990422",
+      "content": "",
+      "author": "ugen_22zi",
+      "reactions": 6,
+      "channel": "たまには前夜以外で盛り上がろう"
+    },
+    {
+      "id": "1450278072107405424",
+      "channel_id": "1377481792335908945",
+      "content": "↑\n<@&1389155568274505819> \n上4つはスパムですので、削除対応お願いいたします。",
+      "author": "namenemue3",
+      "reactions": 3,
+      "channel": "対戦募集"
+    },
+    {
+      "id": "1450442244661448864",
+      "channel_id": "1448235630533279824",
+      "content": "しばらくイベのストーリーにどハマりしてその話ばっか描くかもなのでネタバレ注意です",
+      "author": "hashiridocoro",
+      "reactions": 3,
+      "channel": "落書きとか感想とか"
+    },
+    {
+      "id": "1450508869855088711",
+      "channel_id": "1448235630533279824",
+      "content": "サンドバックに入るレーアとか、マーフィーに対して後方腕組み父親ズラゴリアテとか色々思いついた",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "落書きとか感想とか"
+    },
+    {
+      "id": "1450517220605296834",
+      "channel_id": "1450506376613990422",
+      "content": "ﾈｺﾁｬｰﾝ",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "たまには前夜以外で盛り上がろう"
+    }
+  ]
+}

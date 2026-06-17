@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-08",
+  "messages": 13,
+  "unique_authors": 6,
+  "reactions_total": 8,
+  "attachments": 2,
+  "channel_activity": {
+    "誰でも質問": 10,
+    "描きたい時に描いてます": 3
+  },
+  "hourly_activity": {
+    "8": 1,
+    "11": 4,
+    "15": 7,
+    "7": 1
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1480107311958855732",
+      "channel_id": "1479041796121165915",
+      "content": "たまには",
+      "author": "uru_neo",
+      "reactions": 5,
+      "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1480219501134876743",
+      "channel_id": "1479041796121165915",
+      "content": "ゆるんゆるん",
+      "author": "uru_neo",
+      "reactions": 3,
+      "channel": "描きたい時に描いてます"
+    }
+  ]
+}

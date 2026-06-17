@@ -1,0 +1,38 @@
+{
+  "date": "2025-08-29",
+  "messages": 12,
+  "unique_authors": 11,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "対戦募集": 1,
+    "招待コード相互打ち": 6,
+    "コード入力数珠つなぎの会": 1,
+    "調査1-13攻略": 2,
+    "3-12から抜け出せません…": 2
+  },
+  "hourly_activity": {
+    "15": 1,
+    "6": 1,
+    "7": 3,
+    "8": 1,
+    "9": 1,
+    "14": 1,
+    "17": 1,
+    "16": 1,
+    "10": 2
+  },
+  "message_types": {
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1411027873736691873",
+      "channel_id": "1407669469177970732",
+      "content": "52EJA1AQKE",
+      "author": "3011yg_42081",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}

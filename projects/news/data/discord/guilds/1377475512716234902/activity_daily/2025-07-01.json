@@ -1,0 +1,28 @@
+{
+  "date": "2025-07-01",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 31,
+  "attachments": 1,
+  "channel_activity": {
+    "オリジナルキャラ描いてみた": 2
+  },
+  "hourly_activity": {
+    "10": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 1,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1389557819635798089",
+      "channel_id": "1389557819635798089",
+      "content": "",
+      "author": "zenimoon",
+      "reactions": 31,
+      "channel": "オリジナルキャラ描いてみた"
+    }
+  ]
+}

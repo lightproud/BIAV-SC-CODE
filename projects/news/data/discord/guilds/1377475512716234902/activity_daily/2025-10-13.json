@@ -1,0 +1,60 @@
+{
+  "date": "2025-10-13",
+  "messages": 14,
+  "unique_authors": 8,
+  "reactions_total": 18,
+  "attachments": 6,
+  "channel_activity": {
+    "落書き": 1,
+    "誰でもOKグロ版野次馬スレ": 1,
+    "対人戦のおすすめ編成": 5,
+    "グロ版話題スレ": 5,
+    "ひとりごと": 2
+  },
+  "hourly_activity": {
+    "21": 1,
+    "5": 1,
+    "4": 3,
+    "6": 4,
+    "3": 2,
+    "10": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 14
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1427408612804005980",
+      "channel_id": "1423581083580104795",
+      "content": "",
+      "author": "u__u.xx",
+      "reactions": 13,
+      "channel": "落書き"
+    },
+    {
+      "id": "1427134553931386900",
+      "channel_id": "1409568878752956579",
+      "content": "2.0",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1427297988115697776",
+      "channel_id": "1409568878752956579",
+      "content": "楽しみですねぇ",
+      "author": "horydragon",
+      "reactions": 2,
+      "channel": "グロ版話題スレ"
+    },
+    {
+      "id": "1427187020601622619",
+      "channel_id": "1425427324534526004",
+      "content": "15くらい貰えたらいいななんて...\nあと2回発動するやつは2回分貰えるのかな",
+      "author": "tuyu1ro._.1128",
+      "reactions": 1,
+      "channel": "ひとりごと"
+    }
+  ]
+}

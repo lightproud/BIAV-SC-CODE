@@ -1,0 +1,26 @@
+{
+  "date": "2026-02-07",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "日本版最新スト（イベスト含む）までネタバレOK板": 2
+  },
+  "hourly_activity": {
+    "7": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1469591731455529051",
+      "channel_id": "1449015772901937425",
+      "content": "想定外の方向",
+      "author": "imumuno",
+      "reactions": 1,
+      "channel": "日本版最新スト（イベスト含む）までネタバレOK板"
+    }
+  ]
+}

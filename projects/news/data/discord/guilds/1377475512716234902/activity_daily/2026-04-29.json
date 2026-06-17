@@ -1,0 +1,40 @@
+{
+  "date": "2026-04-29",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 4,
+  "channel_activity": {
+    "🔰初心者質問": 9,
+    "今日の〜シリーズver1.0": 1
+  },
+  "hourly_activity": {
+    "13": 1,
+    "16": 4,
+    "17": 3,
+    "18": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1499099794143051828",
+      "channel_id": "1391701560496623688",
+      "content": "大体キーチャ盛っとけばおけです！",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1498940095997415454",
+      "channel_id": "1459507965366112370",
+      "content": "今日の触手",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    }
+  ]
+}

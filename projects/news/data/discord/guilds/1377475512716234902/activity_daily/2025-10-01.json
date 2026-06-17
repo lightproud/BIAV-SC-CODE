@@ -1,0 +1,74 @@
+{
+  "date": "2025-10-01",
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 55,
+  "attachments": 17,
+  "channel_activity": {
+    "サンガーさんのらくがき": 1,
+    "ガチャ結果報告": 1,
+    "調査1-13攻略": 1,
+    "wiki整備中": 7,
+    "覚醒体リリー登場！": 1
+  },
+  "hourly_activity": {
+    "14": 1,
+    "8": 4,
+    "10": 1,
+    "6": 2,
+    "7": 3
+  },
+  "message_types": {
+    "0": 11
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422847906448408576",
+      "channel_id": "1422847906448408576",
+      "content": "2025/10/2(木) 15:00 ～",
+      "author": "anonymous_wax_figure",
+      "reactions": 29,
+      "channel": "覚醒体リリー登場！"
+    },
+    {
+      "id": "1422956927691788430",
+      "channel_id": "1421397542087819317",
+      "content": "サンガーさんが人間だった頃はどんな靴を履いていたのか知りたい",
+      "author": "okara6947",
+      "reactions": 20,
+      "channel": "サンガーさんのらくがき"
+    },
+    {
+      "id": "1422869401476268174",
+      "channel_id": "1422424893110222858",
+      "content": "念のためテキストも",
+      "author": "esukun125",
+      "reactions": 3,
+      "channel": "wiki整備中"
+    },
+    {
+      "id": "1422858913816252417",
+      "channel_id": "1419203289945342054",
+      "content": "はえぇ",
+      "author": "reen02357",
+      "reactions": 1,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1422844876474814526",
+      "channel_id": "1422424893110222858",
+      "content": "カエクス",
+      "author": "baku_and_also_sakura",
+      "reactions": 1,
+      "channel": "wiki整備中"
+    },
+    {
+      "id": "1422869226380726314",
+      "channel_id": "1422424893110222858",
+      "content": "ファイントちゃんです（タイムアウト喰らうの嫌で一つにまとめましたが不備あれば言ってください）",
+      "author": "esukun125",
+      "reactions": 1,
+      "channel": "wiki整備中"
+    }
+  ]
+}

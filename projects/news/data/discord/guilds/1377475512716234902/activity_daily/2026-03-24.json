@@ -1,0 +1,56 @@
+{
+  "date": "2026-03-24",
+  "messages": 21,
+  "unique_authors": 11,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "🔰初心者質問": 20,
+    "幻夢ボス別ステージ入口スクショ": 1
+  },
+  "hourly_activity": {
+    "2": 1,
+    "3": 13,
+    "6": 4,
+    "8": 2,
+    "13": 1
+  },
+  "message_types": {
+    "0": 16,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1485925851202846720",
+      "channel_id": "1391701560496623688",
+      "content": "汎用凸素材は強化押すと選べます",
+      "author": "8106ne",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1485835515969409145",
+      "channel_id": "1391701560496623688",
+      "content": "質問失礼します\n幻夢の深奥でボスとしてアイギスが出てきたんですけど、手札に鈍化や保持が付与されて、思うように回すことができなくて困っております\n今の編成は、サル",
+      "author": "guratanomuretusu",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1485840246204530808",
+      "channel_id": "1391701560496623688",
+      "content": "ありがとうございます〜！\nとすればガチャ画面とかで見た「自動強化」で既に強化されている可能性がありますかね…？",
+      "author": "mamiyatsukuyomi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1485841214778507415",
+      "channel_id": "1391701560496623688",
+      "content": "この顔文字の使い方は私と同世代の匂いがする( ｰ`дｰ´)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}

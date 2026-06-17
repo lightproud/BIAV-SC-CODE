@@ -1,0 +1,54 @@
+{
+  "date": "2026-01-12",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 15,
+  "attachments": 1,
+  "channel_activity": {
+    "全覚醒体描きます！": 2,
+    "【恒常+ミリアム】融災350": 4
+  },
+  "hourly_activity": {
+    "5": 2,
+    "7": 1,
+    "0": 1,
+    "13": 2
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1460141088432984114",
+      "channel_id": "1459443394148433960",
+      "content": "マーフィーのラフです！\nマーフィーめちゃくちゃ難しい…‼︎",
+      "author": "mitutya_33500",
+      "reactions": 10,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1460148074331639939",
+      "channel_id": "1459137908228362413",
+      "content": "ありがとうございます！350いけました！",
+      "author": "aoi5287.",
+      "reactions": 3,
+      "channel": "【恒常+ミリアム】融災350"
+    },
+    {
+      "id": "1460179481464410177",
+      "channel_id": "1459443394148433960",
+      "content": "可愛い！！！目キラキラしてて好き！",
+      "author": "anra2539_35702",
+      "reactions": 1,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1460067542482685993",
+      "channel_id": "1459137908228362413",
+      "content": "来た！やるぞ！うおー！！",
+      "author": "kazewa0358",
+      "reactions": 1,
+      "channel": "【恒常+ミリアム】融災350"
+    }
+  ]
+}

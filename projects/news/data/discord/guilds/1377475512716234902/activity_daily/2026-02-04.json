@@ -1,0 +1,47 @@
+{
+  "date": "2026-02-04",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "界域ごとの推しを描きたいテンプレ": 1,
+    "リハビリ リクエスト募📝": 2,
+    "恒常主体で組む毒パについて": 2,
+    "対人戦のおすすめ編成": 2
+  },
+  "hourly_activity": {
+    "7": 3,
+    "4": 2,
+    "9": 2
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1468507496032243825",
+      "channel_id": "1408778860748869732",
+      "content": "Xにも載せましたがこちらにも失礼します\n24、マーフィー、タイス、オルラです🫶\n素敵なテンプレありがとうございました！！",
+      "author": "muffmoff0626",
+      "reactions": 2,
+      "channel": "界域ごとの推しを描きたいテンプレ"
+    },
+    {
+      "id": "1468507780531879988",
+      "channel_id": "1468331087532134616",
+      "content": "24をぜひお願いします！\nあわよくば猫24…|´-`)ﾁﾗｯ",
+      "author": "muffmoff0626",
+      "reactions": 2,
+      "channel": "リハビリ リクエスト募📝"
+    },
+    {
+      "id": "1468501866567696535",
+      "channel_id": "1468331087532134616",
+      "content": "ソレールを！お願いします！",
+      "author": "mag1kaando1",
+      "reactions": 1,
+      "channel": "リハビリ リクエスト募📝"
+    }
+  ]
+}

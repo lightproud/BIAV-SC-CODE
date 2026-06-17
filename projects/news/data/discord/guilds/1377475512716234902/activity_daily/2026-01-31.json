@@ -1,0 +1,47 @@
+{
+  "date": "2026-01-31",
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 7,
+  "attachments": 2,
+  "channel_activity": {
+    "元ネタ・モチーフ考察(ネタバレあり)": 1,
+    "ガチャ結果報告": 1,
+    "恒常主体で組む毒パについて": 4
+  },
+  "hourly_activity": {
+    "11": 1,
+    "23": 1,
+    "8": 1,
+    "16": 3
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1467306311262928987",
+      "channel_id": "1419203289945342054",
+      "content": "うふ……",
+      "author": "hashiridocoro",
+      "reactions": 5,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1467124557675630726",
+      "channel_id": "1421053111648125011",
+      "content": "少し元ネタ考察とはズレているかもしれないですが、いずれハスターモチーフのキャラも来るのかなとか",
+      "author": "nandaka_totemo_nemui_01149",
+      "reactions": 1,
+      "channel": "元ネタ・モチーフ考察(ネタバレあり)"
+    },
+    {
+      "id": "1467074164837060701",
+      "channel_id": "1466865409117524113",
+      "content": "おお、ありがとうございます！\nタイスさん、狂気も撒けますしね！\n今度使ってみよう……！",
+      "author": "setsuna6228",
+      "reactions": 1,
+      "channel": "恒常主体で組む毒パについて"
+    }
+  ]
+}

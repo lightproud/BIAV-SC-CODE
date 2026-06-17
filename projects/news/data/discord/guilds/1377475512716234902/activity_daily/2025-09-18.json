@@ -1,0 +1,67 @@
+{
+  "date": "2025-09-18",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 88,
+  "attachments": 11,
+  "channel_activity": {
+    "皆さんの推しを描きたい": 4,
+    "グロ版話題スレ": 2,
+    "ソレール登場！": 2,
+    "Versionアップデート記念イベント実施": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "5": 1,
+    "8": 2,
+    "6": 3,
+    "10": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 8,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418083813422272552",
+      "channel_id": "1418083813422272552",
+      "content": "指で雑に描きます！！\n色んなキャラが描きたい！！\nこれは私の推しのカエクスくん",
+      "author": "hashiridocoro",
+      "reactions": 49,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1418146719446601808",
+      "channel_id": "1418083813422272552",
+      "content": "リクエストのオジールくんできました！！",
+      "author": "hashiridocoro",
+      "reactions": 28,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1418171304686780487",
+      "channel_id": "1418171304686780487",
+      "content": "『忘却前夜』をお楽しみいただき、誠にありがとうございます\n忘却前夜運営チームです\n\nアップデートを記念し、versionアップデート記念イベントを開催しました！",
+      "author": "mythag_navigator",
+      "reactions": 8,
+      "channel": "Versionアップデート記念イベント実施"
+    },
+    {
+      "id": "1418108975227994183",
+      "channel_id": "1418083813422272552",
+      "content": "お、オジールきゅんをリクエストしてもいい場所ですか…？",
+      "author": "sergeant_aoi",
+      "reactions": 2,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1418149098195783744",
+      "channel_id": "1418083813422272552",
+      "content": "ﾔｯﾀｰｶﾜｲｰ！",
+      "author": "sergeant_aoi",
+      "reactions": 1,
+      "channel": "皆さんの推しを描きたい"
+    }
+  ]
+}

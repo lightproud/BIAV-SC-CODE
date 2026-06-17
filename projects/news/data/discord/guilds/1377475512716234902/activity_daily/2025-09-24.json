@@ -1,0 +1,27 @@
+{
+  "date": "2025-09-24",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "グロ版話題スレ": 2
+  },
+  "hourly_activity": {
+    "23": 2
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1420551921395175585",
+      "channel_id": "1409568878752956579",
+      "content": "グロ版、こっちが20未満しかシールド立てれないのに、３桁×３とか雑にやってきますね",
+      "author": "nin0876",
+      "reactions": 2,
+      "channel": "グロ版話題スレ"
+    }
+  ]
+}

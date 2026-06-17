@@ -1,0 +1,26 @@
+{
+  "date": "2026-01-29",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "2月5日15:00～17:00 メンテナンス実施のお知らせ": 1
+  },
+  "hourly_activity": {
+    "6": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466313878773436563",
+      "channel_id": "1466313878773436563",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n2026年2月5日15時からVersion1.5「春に捧げる花束」のアッ",
+      "author": "mythag_navigator",
+      "reactions": 5,
+      "channel": "2月5日15:00～17:00 メンテナンス実施のお知らせ"
+    }
+  ]
+}

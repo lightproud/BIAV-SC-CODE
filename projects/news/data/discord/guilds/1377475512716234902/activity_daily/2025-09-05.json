@@ -1,0 +1,66 @@
+{
+  "date": "2025-09-05",
+  "messages": 13,
+  "unique_authors": 5,
+  "reactions_total": 101,
+  "attachments": 9,
+  "channel_activity": {
+    "対戦募集": 7,
+    "プチキャラシリーズ、4SR+混沌界域前半": 3,
+    "招待コード相互打ち": 2,
+    "コード入力数珠つなぎの会": 1
+  },
+  "hourly_activity": {
+    "14": 7,
+    "17": 3,
+    "3": 1,
+    "21": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1413572279547203825",
+      "channel_id": "1413568022278311936",
+      "content": "意外がないなら全キャラ頑張ります、今回は時間のわけから混沌キャラだけ(常駐)",
+      "author": "undecember_news",
+      "reactions": 36,
+      "channel": "プチキャラシリーズ、4SR+混沌界域前半"
+    },
+    {
+      "id": "1413572644011507894",
+      "channel_id": "1413568022278311936",
+      "content": "",
+      "author": "undecember_news",
+      "reactions": 34,
+      "channel": "プチキャラシリーズ、4SR+混沌界域前半"
+    },
+    {
+      "id": "1413572428461773012",
+      "channel_id": "1413568022278311936",
+      "content": "",
+      "author": "undecember_news",
+      "reactions": 29,
+      "channel": "プチキャラシリーズ、4SR+混沌界域前半"
+    },
+    {
+      "id": "1413361161818345483",
+      "channel_id": "1407257300976275530",
+      "content": "MY7QO4D6L0\nよろしくお願いいたします！",
+      "author": "futaketa",
+      "reactions": 1,
+      "channel": "招待コード相互打ち"
+    },
+    {
+      "id": "1413562230292877423",
+      "channel_id": "1407669469177970732",
+      "content": "ZFKFI5W7MR",
+      "author": "burusu0450",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}
