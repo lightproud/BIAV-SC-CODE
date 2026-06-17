@@ -1,8 +1,8 @@
 {
   "date": "2026-06-16",
-  "archived_at": "2026-06-16T22:52:23.662696+00:00",
+  "archived_at": "2026-06-17T00:10:30.089170+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "title": "【忘却前夜】6.15-7.13三相池抽取建议",
@@ -82,6 +82,46 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i0.hdslb.com/bfs/archive/e7794f9ec71e98e60b7eb3c5b75d6b06f0156296.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【6月推荐】沙耶之歌 猎奇界天花板 纯爱战神崩溃瞬间 安卓+PC解压即玩！",
+      "summary": "游戏链接：\nhttps://v.v8l.cn/s/Rkjihoy\n\n====及时保存，以防失效====\n\n如果对你有帮助的话请三连关注支持一下up吧！",
+      "source": "bilibili",
+      "time": "2026-06-16T06:05:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1ZWjT6oEFs",
+      "engagement": 229,
+      "is_hot": true,
+      "author": "银狼的game库",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 229,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/50796725499e193425a98943f6cd9814a528d93a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【6月推荐】沙耶之歌 猎奇界天花板 纯爱战神崩溃瞬间 安卓+PC解压即玩！",
+      "summary": "游戏链接：\nhttps://v.v8l.cn/s/Rkjihoy\n\n====及时保存，以防失效====\n\n如果对你有帮助的话请三连关注支持一下up吧！",
+      "source": "bilibili",
+      "time": "2026-06-16T06:05:00+00:00",
+      "url": "http://www.bilibili.com/video/av116755649273147",
+      "engagement": 229,
+      "is_hot": false,
+      "author": "银狼的game库",
+      "tags": [
+        "日常"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/50796725499e193425a98943f6cd9814a528d93a.jpg",
       "content_type": "video"
     },
     {

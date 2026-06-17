@@ -12396,6 +12396,13 @@
       "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画８",
       "time": "2026-06-16T22:47:43Z",
       "downloaded_at": "2026-06-16T22:52:23.591871+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/50796725499e193425a98943f6cd9814a528d93a.jpg": {
+      "filename": "bilibili_ddca3c37203977bb.jpg",
+      "source": "bilibili",
+      "title": "【6月推荐】沙耶之歌 猎奇界天花板 纯爱战神崩溃瞬间 安卓+PC解压即玩！",
+      "time": "2026-06-16T06:05:00+00:00",
+      "downloaded_at": "2026-06-17T00:10:29.699967+00:00"
     }
   },
   "failed": {
@@ -18258,6 +18265,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-16T22:52:21.911878+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/50796725499e193425a98943f6cd9814a528d93a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T00:10:30.000536+00:00"
     }
   },
   "archived": []
