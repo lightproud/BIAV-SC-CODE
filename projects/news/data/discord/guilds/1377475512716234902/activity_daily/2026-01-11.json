@@ -1,0 +1,53 @@
+{
+  "date": "2026-01-11",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "全覚醒体描きます！": 2,
+    "🎥新覚醒体「ミリアム」のリプレイ動画募集中！": 2
+  },
+  "hourly_activity": {
+    "12": 2,
+    "11": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1459887113863434300",
+      "channel_id": "1459443394148433960",
+      "content": "リッツさんをッ！お願いします！",
+      "author": "mag1kaando1",
+      "reactions": 2,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1459888528178548756",
+      "channel_id": "1459443394148433960",
+      "content": "分かりました！マーフィー描いてからなので待っててください！",
+      "author": "mitutya_33500",
+      "reactions": 1,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1459871478412480542",
+      "channel_id": "1459126806648066048",
+      "content": "#共有者：おチャラ（200008352）\n#\n#幻夢の深奥・超難度\n#\n#ファロス（魂の誕生、暴風雨の中で）\n#リリー（カウントダウン、箱の中の童心）\n#ミリア",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "🎥新覚醒体「ミリアム」のリプレイ動画募集中！"
+    },
+    {
+      "id": "1460048455165808813",
+      "channel_id": "1459126806648066048",
+      "content": "#共有者：おチャラ（200008352）\n#\n#証明・超難度\n#\n#ファロス（入学の日、暴風雨の中で）\n#リリー（時を遡る時計、箱の中の童心）\n#「24」（奇体",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "🎥新覚醒体「ミリアム」のリプレイ動画募集中！"
+    }
+  ]
+}

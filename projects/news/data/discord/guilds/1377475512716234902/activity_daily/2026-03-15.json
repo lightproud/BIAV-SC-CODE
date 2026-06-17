@@ -1,0 +1,135 @@
+{
+  "date": "2026-03-15",
+  "messages": 89,
+  "unique_authors": 15,
+  "reactions_total": 20,
+  "attachments": 14,
+  "channel_activity": {
+    "誰でも質問": 80,
+    "今日の〜シリーズver1.0": 1,
+    "密約・編成についてのご相談": 7,
+    "参加表明名簿": 1
+  },
+  "hourly_activity": {
+    "6": 29,
+    "7": 32,
+    "8": 3,
+    "10": 8,
+    "11": 5,
+    "19": 1,
+    "0": 3,
+    "4": 5,
+    "5": 2,
+    "12": 1
+  },
+  "message_types": {
+    "0": 74,
+    "19": 15
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1482627709036134410",
+      "channel_id": "1400058619726266462",
+      "content": "↑一部の人にとってはショッキングなので伏せてます",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482704504062218433",
+      "channel_id": "1482688918678671500",
+      "content": "なぐり書き気味ですが、キーチャージの強化とかまとめたので、こちらを参考にしていただければと…",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "密約・編成についてのご相談"
+    },
+    {
+      "id": "1482617913604178094",
+      "channel_id": "1400058619726266462",
+      "content": "24トゥルーだと多分こんな感じのが扱いやすい",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482620047661994044",
+      "channel_id": "1400058619726266462",
+      "content": "ワンダ（文面無視）",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482624774684545084",
+      "channel_id": "1400058619726266462",
+      "content": "良いってことよ！（後方腕組）",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482638129646276733",
+      "channel_id": "1400058619726266462",
+      "content": "ダフォダイルはそこそこ火力出るという感じですが、真の強みは1コストの全体軟化とダメージ強化の獲得にあります。\n味方の火力補助もしながら自分も火力出せるという感じ",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482638574133313650",
+      "channel_id": "1400058619726266462",
+      "content": "ライカーイベントのSR札もめっちゃ強いのでお忘れなく！",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482686238036332616",
+      "channel_id": "1400058619726266462",
+      "content": "あでも無性別のほうが…",
+      "author": "mu0240_87003",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482591080288489536",
+      "channel_id": "1400058619726266462",
+      "content": "サルバドル",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482603149725405255",
+      "channel_id": "1400058619726266462",
+      "content": "24トゥルーミリ…リリー？",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482630509237637133",
+      "channel_id": "1400058619726266462",
+      "content": "~~ラーメン屋じゃない?~~",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1482614971551453315",
+      "channel_id": "1459507965366112370",
+      "content": "今日のダメチャレ環ラモ\n過去最高！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1482690683276890132",
+      "channel_id": "1482688918678671500",
+      "content": "現在持っているキャラです",
+      "author": "yurasakurav",
+      "reactions": 1,
+      "channel": "密約・編成についてのご相談"
+    }
+  ]
+}

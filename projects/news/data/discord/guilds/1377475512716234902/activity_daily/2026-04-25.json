@@ -1,0 +1,49 @@
+{
+  "date": "2026-04-25",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 7,
+  "attachments": 3,
+  "channel_activity": {
+    "🔰初心者質問": 1,
+    "誰でも質問": 1,
+    "全覚醒体描きます！": 3,
+    "今日の〜シリーズver1.0": 1
+  },
+  "hourly_activity": {
+    "23": 2,
+    "7": 1,
+    "10": 2,
+    "4": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1497456179855622297",
+      "channel_id": "1459507965366112370",
+      "content": "リベンジ環ラモ\n遂にダメージ1000Kこえた！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 5,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1497548196442931290",
+      "channel_id": "1459443394148433960",
+      "content": "くっそ可愛すぎる！！好き！！",
+      "author": "mag1kaando1",
+      "reactions": 1,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1497548249513328670",
+      "channel_id": "1459443394148433960",
+      "content": "色使い好み！",
+      "author": "mag1kaando1",
+      "reactions": 1,
+      "channel": "全覚醒体描きます！"
+    }
+  ]
+}

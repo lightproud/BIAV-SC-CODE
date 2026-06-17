@@ -1,0 +1,123 @@
+{
+  "date": "2026-03-06",
+  "messages": 43,
+  "unique_authors": 13,
+  "reactions_total": 72,
+  "attachments": 14,
+  "channel_activity": {
+    "🔰初心者質問": 14,
+    "誰でも質問": 17,
+    "描きたい時に描いてます": 4,
+    "絵": 5,
+    "今日の〜シリーズver1.0": 3
+  },
+  "hourly_activity": {
+    "2": 17,
+    "0": 2,
+    "1": 3,
+    "3": 1,
+    "4": 2,
+    "5": 5,
+    "6": 1,
+    "8": 1,
+    "10": 6,
+    "12": 2,
+    "17": 1,
+    "20": 1,
+    "21": 1
+  },
+  "message_types": {
+    "0": 41,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1479423772258996406",
+      "channel_id": "1479423469077663935",
+      "content": "",
+      "author": "tanakaponta",
+      "reactions": 16,
+      "channel": "絵"
+    },
+    {
+      "id": "1479423809726713867",
+      "channel_id": "1479423469077663935",
+      "content": "",
+      "author": "tanakaponta",
+      "reactions": 13,
+      "channel": "絵"
+    },
+    {
+      "id": "1479302394809421825",
+      "channel_id": "1479041796121165915",
+      "content": "初描きです",
+      "author": "uru_neo",
+      "reactions": 9,
+      "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1479423469077663935",
+      "channel_id": "1479423469077663935",
+      "content": "忘却前夜関連の絵を描いたら載せます。見てもらえたら嬉しいです(●´ω｀●)",
+      "author": "tanakaponta",
+      "reactions": 8,
+      "channel": "絵"
+    },
+    {
+      "id": "1479423681146126417",
+      "channel_id": "1479423469077663935",
+      "content": "",
+      "author": "tanakaponta",
+      "reactions": 8,
+      "channel": "絵"
+    },
+    {
+      "id": "1479423735164567562",
+      "channel_id": "1479423469077663935",
+      "content": "",
+      "author": "tanakaponta",
+      "reactions": 8,
+      "channel": "絵"
+    },
+    {
+      "id": "1479453492115537941",
+      "channel_id": "1479041796121165915",
+      "content": "ヘロットちゃんで分からなくて描けなかったとこ描き加え",
+      "author": "uru_neo",
+      "reactions": 4,
+      "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1479309871940636763",
+      "channel_id": "1391701560496623688",
+      "content": "なるほどありがとうございます！アタッカーとかほんとにいないのでダフォ姉さん引きます！",
+      "author": "hinano0981",
+      "reactions": 3,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1479273977649168446",
+      "channel_id": "1400058619726266462",
+      "content": "ありがとうございます‼️参考にします‼️‼️",
+      "author": "sayuki_lean",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1479296318378872915",
+      "channel_id": "1400058619726266462",
+      "content": "はい！またラモンナは霊知覚醒も強く､札や密約でキーチャージを強化すると安定してキーチャージを溜められるので､24との相性がとても良くお勧めです！",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1479528307480596576",
+      "channel_id": "1459507965366112370",
+      "content": "今日のニム",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    }
+  ]
+}

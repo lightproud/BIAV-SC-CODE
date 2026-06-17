@@ -1,0 +1,107 @@
+{
+  "date": "2026-04-10",
+  "messages": 86,
+  "unique_authors": 12,
+  "reactions_total": 10,
+  "attachments": 52,
+  "channel_activity": {
+    "🔰初心者質問": 1,
+    "誰でも質問": 40,
+    "幻夢ボス別ステージ入口スクショ": 2,
+    "今日の〜シリーズver1.0": 5,
+    "日本版最新スト（イベスト含む）までネタバレOK板": 1,
+    "リリーさんの構成(毒パ)について": 9,
+    "逆向鑑賞が生み出す遺物について、知っておこう": 28
+  },
+  "hourly_activity": {
+    "0": 1,
+    "7": 18,
+    "8": 2,
+    "10": 6,
+    "11": 7,
+    "12": 2,
+    "15": 16,
+    "1": 1,
+    "14": 31,
+    "16": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 78,
+    "19": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1492067290534117487",
+      "channel_id": "1459507965366112370",
+      "content": "今日のリッツ",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1492061194926821466",
+      "channel_id": "1400058619726266462",
+      "content": "",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492130943132106792",
+      "channel_id": "1400058619726266462",
+      "content": "質問はこっちだったか。",
+      "author": "tianmoheizi_16992",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492131199680774275",
+      "channel_id": "1400058619726266462",
+      "content": "ルミナス一択です",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492193530142130380",
+      "channel_id": "1459507965366112370",
+      "content": "今日のニム",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1492123660365074463",
+      "channel_id": "1431211464324157450",
+      "content": "お！案外いけましたか!",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "リリーさんの構成(毒パ)について"
+    },
+    {
+      "id": "1492123937063178301",
+      "channel_id": "1431211464324157450",
+      "content": "ステージ構成的にはやっぱり毒はショップが２回使えるカエクスかカーシアのステージが良いのかな？",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "リリーさんの構成(毒パ)について"
+    },
+    {
+      "id": "1492166993485238502",
+      "channel_id": "1431211464324157450",
+      "content": "私めっちゃカエクスのステージ出てくるw",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "リリーさんの構成(毒パ)について"
+    },
+    {
+      "id": "1492166822034673664",
+      "channel_id": "1490318157221724332",
+      "content": "いいですよー",
+      "author": "96cat",
+      "reactions": 1,
+      "channel": "逆向鑑賞が生み出す遺物について、知っておこう"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2025-09-02",
+  "messages": 11,
+  "unique_authors": 6,
+  "reactions_total": 2,
+  "attachments": 7,
+  "channel_activity": {
+    "コード入力数珠つなぎの会": 3,
+    "フレンド募集板": 3,
+    "融災禁区ランキング上位者編成まとめ": 4,
+    "超次元の攻略方法": 1
+  },
+  "hourly_activity": {
+    "4": 1,
+    "6": 1,
+    "9": 1,
+    "12": 5,
+    "10": 1,
+    "15": 2
+  },
+  "message_types": {
+    "0": 11
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412291586636644413",
+      "channel_id": "1407669469177970732",
+      "content": "JMBFWY3YWM",
+      "author": "monk8772",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    },
+    {
+      "id": "1412414161266282517",
+      "channel_id": "1409619145363820685",
+      "content": "130ポイント:飽和した羊さん",
+      "author": "tokitoto",
+      "reactions": 1,
+      "channel": "融災禁区ランキング上位者編成まとめ"
+    }
+  ]
+}

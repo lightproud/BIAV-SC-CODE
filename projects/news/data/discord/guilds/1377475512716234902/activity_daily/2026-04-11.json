@@ -1,0 +1,155 @@
+{
+  "date": "2026-04-11",
+  "messages": 88,
+  "unique_authors": 10,
+  "reactions_total": 22,
+  "attachments": 12,
+  "channel_activity": {
+    "🔰初心者質問": 2,
+    "誰でも質問": 77,
+    "今日の〜シリーズver1.0": 4,
+    "リリーさんの構成(毒パ)について": 3,
+    "運用へタイムアウト無くしませんか？": 2
+  },
+  "hourly_activity": {
+    "7": 7,
+    "6": 12,
+    "12": 5,
+    "3": 17,
+    "4": 28,
+    "5": 10,
+    "8": 1,
+    "15": 1,
+    "16": 1,
+    "19": 1,
+    "14": 1,
+    "21": 2,
+    "13": 2
+  },
+  "message_types": {
+    "0": 85,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1492603798957326406",
+      "channel_id": "1459507965366112370",
+      "content": "３度目の正直！\nこれが運命の剣だ！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1492430509215846530",
+      "channel_id": "1391701560496623688",
+      "content": "育成と凸できるなら使いやすいと思いますー！",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1492501736491843736",
+      "channel_id": "1400058619726266462",
+      "content": "ボスで切り替えるかなって感じ！",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492370653754560523",
+      "channel_id": "1400058619726266462",
+      "content": "このゲームって、回復がキツい？",
+      "author": "tianmoheizi_16992",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492379297418313728",
+      "channel_id": "1400058619726266462",
+      "content": "あら、ゴリアテさんが出ちゃった",
+      "author": "tianmoheizi_16992",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492381338563776662",
+      "channel_id": "1400058619726266462",
+      "content": "自分、オープンワールドや死にｹﾞｰをやる場合、基本ハンマーや斧を使う脳筋なので相性は良さそうｗ",
+      "author": "tianmoheizi_16992",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492371711910219907",
+      "channel_id": "1400058619726266462",
+      "content": "深海は火力出すのに時間がかかるので、敵の体力が増えれば増える程にキツくなってくるけど序盤は安定感があるって感じ",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492375539254824980",
+      "channel_id": "1400058619726266462",
+      "content": "シールドでしたか。",
+      "author": "tianmoheizi_16992",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492375730452041968",
+      "channel_id": "1400058619726266462",
+      "content": "深海は触手が勝手に攻撃してくれるので、使用カードを防御カードに全振りしても敵を倒すことが出来るので序盤は楽なんですよ",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492375890305351740",
+      "channel_id": "1400058619726266462",
+      "content": "ただ、触手の火力が上げにくいので敵の体力が増えてきたらキツくなってきます",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492378376340770836",
+      "channel_id": "1400058619726266462",
+      "content": "ひげのおじさまやね",
+      "author": "tianmoheizi_16992",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492379089061806110",
+      "channel_id": "1400058619726266462",
+      "content": "なるほど。よーし、その二人狙って、ガチャ回してくる",
+      "author": "tianmoheizi_16992",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492391814974406757",
+      "channel_id": "1400058619726266462",
+      "content": "これコード入力できる数もう少し増やしてほしいよね(´・ω・｀)",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492407815556567111",
+      "channel_id": "1400058619726266462",
+      "content": "狂魔界域を使えるってのがタイスの最大の利点だから悩ましいよね",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1492448114202644500",
+      "channel_id": "1459507965366112370",
+      "content": "今日の触手\nタイス無しゴニキ環ラモver",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-19",
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 2,
+  "channel_activity": {
+    "🔰初心者質問": 5,
+    "誰でも質問": 1,
+    "今日の〜シリーズver1.0": 3,
+    "【対人戦】団体戦企画": 2
+  },
+  "hourly_activity": {
+    "13": 4,
+    "14": 1,
+    "23": 1,
+    "4": 1,
+    "10": 2,
+    "9": 2
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1495362219532222574",
+      "channel_id": "1457876779954995315",
+      "content": "開催日、5/2に変更致します🙇‍♀️",
+      "author": "sufure0611",
+      "reactions": 2,
+      "channel": "【対人戦】団体戦企画"
+    },
+    {
+      "id": "1495272979171512590",
+      "channel_id": "1459507965366112370",
+      "content": "８章の週ボス\n多分最短は10ターンですね！\nボス戦が３で〆れるはず",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1495366448690761788",
+      "channel_id": "1459507965366112370",
+      "content": "",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1495362115425271909",
+      "channel_id": "1457876779954995315",
+      "content": "☆大会ルール☆\n各チームで相談をして、各役割のキャラ1体ずつ、キーオーダー2つ、運命の札5つをBANします。\nBANされたキャラ、キーオーダー、札は相手チームは",
+      "author": "sufure0611",
+      "reactions": 1,
+      "channel": "【対人戦】団体戦企画"
+    }
+  ]
+}

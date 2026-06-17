@@ -1,0 +1,36 @@
+{
+  "date": "2025-12-08",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 21,
+  "attachments": 2,
+  "channel_activity": {
+    "元ネタ・モチーフ考察(ネタバレあり)": 2,
+    "覚醒体タイスの性能内容を先行公開！": 3
+  },
+  "hourly_activity": {
+    "15": 2,
+    "8": 3
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1447506299981135916",
+      "channel_id": "1447506299981135916",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n12月11日に追加予定の新覚醒体「タイス」と新運命の札「慈悲の育み」の性",
+      "author": "mythag_navigator",
+      "reactions": 17,
+      "channel": "覚醒体タイスの性能内容を先行公開！"
+    },
+    {
+      "id": "1447615556860514334",
+      "channel_id": "1421053111648125011",
+      "content": "もろにタイス様これやろーって感じですね。",
+      "author": "nin0876",
+      "reactions": 4,
+      "channel": "元ネタ・モチーフ考察(ネタバレあり)"
+    }
+  ]
+}

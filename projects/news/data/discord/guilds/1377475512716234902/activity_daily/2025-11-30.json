@@ -1,0 +1,36 @@
+{
+  "date": "2025-11-30",
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "対人戦のおすすめ編成": 5,
+    "🎥新覚醒体「サルバドル」のリプレイ動画募集中！": 1
+  },
+  "hourly_activity": {
+    "6": 5,
+    "14": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1444572446073028610",
+      "channel_id": "1416012052283260958",
+      "content": "パンティアに回れ回れもおすすめですよ〜蓄力付与使い回せます",
+      "author": "nara_mera",
+      "reactions": 1,
+      "channel": "対人戦のおすすめ編成"
+    },
+    {
+      "id": "1444701379808727203",
+      "channel_id": "1438833860040331275",
+      "content": "#共有者：はとむね（200066237）\n#\n#聖胎の詩Ⅱ\n#\n#ソレール（薔薇の名において、鎖を断ち切る日）\n#サルバドル（神言の石板、35mmの魔法）\n#ト",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "🎥新覚醒体「サルバドル」のリプレイ動画募集中！"
+    }
+  ]
+}

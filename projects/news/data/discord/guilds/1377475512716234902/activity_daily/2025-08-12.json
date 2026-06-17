@@ -1,0 +1,26 @@
+{
+  "date": "2025-08-12",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 485,
+  "attachments": 0,
+  "channel_activity": {
+    "🏛️学則": 1
+  },
+  "hourly_activity": {
+    "7": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1404725452165218366",
+      "channel_id": "1377488433425154158",
+      "content": "📚 ミサゴ大学ディスコード サーバールール\nようこそ、ミサゴ大学へ！この場所が、誰にとっても心地よく安心して交流できる空間となるよう、以下のルールを守ってご参加",
+      "author": "mythag_navigator",
+      "reactions": 485,
+      "channel": "🏛️学則"
+    }
+  ]
+}

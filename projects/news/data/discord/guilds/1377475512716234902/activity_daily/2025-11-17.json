@@ -1,0 +1,45 @@
+{
+  "date": "2025-11-17",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 23,
+  "attachments": 1,
+  "channel_activity": {
+    "落書きや没とか": 1,
+    "リプレイ機能垂れ流しスレ": 2
+  },
+  "hourly_activity": {
+    "8": 1,
+    "2": 1,
+    "20": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1439898551093039174",
+      "channel_id": "1432264057666408518",
+      "content": "サルバドルおじ　子ども覚醒体に絡まれてほしい",
+      "author": "izuizusaan",
+      "reactions": 19,
+      "channel": "落書きや没とか"
+    },
+    {
+      "id": "1439807422821699684",
+      "channel_id": "1438470206002561155",
+      "content": "シークできないの不便だと思うので、外部リンクで\n\n\n元気いっぱいユウハシュ撃破記念\n\nhttps://youtu.be/WnGpJD9076I?si=xvC2Y",
+      "author": "8106ne",
+      "reactions": 3,
+      "channel": "リプレイ機能垂れ流しスレ"
+    },
+    {
+      "id": "1440074490267697242",
+      "channel_id": "1438470206002561155",
+      "content": "#共有者：S*（200103906）\n#\n#幻夢の深奥・超難度\n#\n#トゥルー（神王の讃歌、暴風雨の中で）\n#マーフィー（秘められた誕生、女王の戒律）\n#サルバ",
+      "author": "esukun125",
+      "reactions": 1,
+      "channel": "リプレイ機能垂れ流しスレ"
+    }
+  ]
+}

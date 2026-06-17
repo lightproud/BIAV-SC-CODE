@@ -1,0 +1,54 @@
+{
+  "date": "2026-02-24",
+  "messages": 11,
+  "unique_authors": 8,
+  "reactions_total": 18,
+  "attachments": 5,
+  "channel_activity": {
+    "🔰初心者質問": 6,
+    "誰でも質問": 2,
+    "24": 1,
+    "今日の〜シリーズver1.0": 1,
+    "対人大会運営本部": 1
+  },
+  "hourly_activity": {
+    "0": 1,
+    "6": 2,
+    "15": 2,
+    "16": 1,
+    "11": 2,
+    "19": 1,
+    "1": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1475668826610864188",
+      "channel_id": "1475668826610864188",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 16,
+      "channel": "24"
+    },
+    {
+      "id": "1475817489429434399",
+      "channel_id": "1459507965366112370",
+      "content": "今日のダメチャレ24",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1475705622078033941",
+      "channel_id": "1473567532249252063",
+      "content": "その認識で大丈夫です",
+      "author": "_regen02b",
+      "reactions": 1,
+      "channel": "対人大会運営本部"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2025-10-11",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "サンガーさんのらくがき": 1
+  },
+  "hourly_activity": {
+    "8": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426491123471351860",
+      "channel_id": "1421397542087819317",
+      "content": "めちゃくちゃ好きです",
+      "author": "u__u.xx",
+      "reactions": 4,
+      "channel": "サンガーさんのらくがき"
+    }
+  ]
+}

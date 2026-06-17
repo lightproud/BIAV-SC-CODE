@@ -1,0 +1,48 @@
+{
+  "date": "2025-12-03",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "気ままに落書き": 1,
+    "元ネタ・モチーフ考察(ネタバレあり)": 1,
+    "リプレイ機能垂れ流しスレ": 3
+  },
+  "hourly_activity": {
+    "0": 1,
+    "8": 1,
+    "9": 2,
+    "13": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1445567094165864498",
+      "channel_id": "1445356684171018331",
+      "content": "Kawaii　と言う感想だけひとまず述べておこうかな…",
+      "author": "sergeant_aoi",
+      "reactions": 2,
+      "channel": "気ままに落書き"
+    },
+    {
+      "id": "1445716085893763143",
+      "channel_id": "1438470206002561155",
+      "content": "10万行った記念！",
+      "author": "kazewa0358",
+      "reactions": 2,
+      "channel": "リプレイ機能垂れ流しスレ"
+    },
+    {
+      "id": "1445776211207917772",
+      "channel_id": "1438470206002561155",
+      "content": "#共有者：iihige（200016212）\n#\n#幻夢の深奥・超難度\n#\n#「24」（アクートの春、35mmの魔法）\n#ジェンキン（パートナーの特訓、神言の石",
+      "author": "iihige",
+      "reactions": 1,
+      "channel": "リプレイ機能垂れ流しスレ"
+    }
+  ]
+}

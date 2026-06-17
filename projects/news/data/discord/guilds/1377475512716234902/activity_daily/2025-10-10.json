@@ -1,0 +1,64 @@
+{
+  "date": "2025-10-10",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 54,
+  "attachments": 3,
+  "channel_activity": {
+    "皆さんの推しを描きたい": 4,
+    "ひとりごと": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "9": 1,
+    "15": 1,
+    "17": 1,
+    "10": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426123405391826945",
+      "channel_id": "1418083813422272552",
+      "content": "1文字打つのに5秒くらいかかってそうなユウハシュ",
+      "author": "hashiridocoro",
+      "reactions": 25,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1426226682716754011",
+      "channel_id": "1418083813422272552",
+      "content": "オレッタちゃん！！是非健やかに過ごして欲しい……",
+      "author": "hashiridocoro",
+      "reactions": 21,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1426149071751483412",
+      "channel_id": "1425427324534526004",
+      "content": "ついに50代に到達、、！！",
+      "author": "tuyu1ro._.1128",
+      "reactions": 6,
+      "channel": "ひとりごと"
+    },
+    {
+      "id": "1426145748998684733",
+      "channel_id": "1418083813422272552",
+      "content": "なんて可愛い絵柄…好きです\nオレッタちゃんも、お願いできないでしょうか？",
+      "author": "o_msopy_o_93277",
+      "reactions": 1,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1426264427300393070",
+      "channel_id": "1418083813422272552",
+      "content": "んがわいいぃ！\nありがとうございます！",
+      "author": "o_msopy_o_93277",
+      "reactions": 1,
+      "channel": "皆さんの推しを描きたい"
+    }
+  ]
+}

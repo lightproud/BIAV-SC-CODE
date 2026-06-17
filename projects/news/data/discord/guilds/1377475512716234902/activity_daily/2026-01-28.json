@@ -1,0 +1,26 @@
+{
+  "date": "2026-01-28",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "全覚醒体描きます！": 2
+  },
+  "hourly_activity": {
+    "15": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466091292038533366",
+      "channel_id": "1459443394148433960",
+      "content": "",
+      "author": "mitutya_33500",
+      "reactions": 4,
+      "channel": "全覚醒体描きます！"
+    }
+  ]
+}

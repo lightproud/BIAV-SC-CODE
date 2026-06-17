@@ -1,0 +1,40 @@
+{
+  "date": "2026-01-13",
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 4,
+  "attachments": 4,
+  "channel_activity": {
+    "ガチャ結果報告": 2,
+    "【恒常+ミリアム】融災350": 1,
+    "バグ報告用スレ": 9
+  },
+  "hourly_activity": {
+    "14": 2,
+    "15": 1,
+    "6": 3,
+    "7": 5,
+    "13": 1
+  },
+  "message_types": {
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1460638646880440411",
+      "channel_id": "1419203289945342054",
+      "content": "合計で100連で収まったのはいい方のはず",
+      "author": "stalk3r_0w0",
+      "reactions": 3,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1460534605135478974",
+      "channel_id": "1460528076105580565",
+      "content": "バグ報告トリビア〜\nゲーム起動画面からじゃなくて、ゲーム内からバグ報告すると一部項目があらかじめ入力されてて楽です",
+      "author": "96cat",
+      "reactions": 1,
+      "channel": "バグ報告用スレ"
+    }
+  ]
+}

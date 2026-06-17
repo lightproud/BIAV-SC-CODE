@@ -1,0 +1,49 @@
+{
+  "date": "2025-09-14",
+  "messages": 6,
+  "unique_authors": 6,
+  "reactions_total": 44,
+  "attachments": 1,
+  "channel_activity": {
+    "クオリティまちまちだけどお絵描き〜": 1,
+    "やり始めてすぐに描いたカエクスくん": 2,
+    "招待コード相互打ち": 3
+  },
+  "hourly_activity": {
+    "13": 1,
+    "10": 1,
+    "17": 1,
+    "7": 1,
+    "15": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1416780884673167361",
+      "channel_id": "1416780884673167361",
+      "content": "作画コストえぐかった…けど可愛いからよし",
+      "author": "nekoshinnja_97999",
+      "reactions": 42,
+      "channel": "クオリティまちまちだけどお絵描き〜"
+    },
+    {
+      "id": "1416733897865035796",
+      "channel_id": "1416403946813263903",
+      "content": "かわいいピンクの魚",
+      "author": "dog794",
+      "reactions": 1,
+      "channel": "やり始めてすぐに描いたカエクスくん"
+    },
+    {
+      "id": "1416843106510442536",
+      "channel_id": "1416403946813263903",
+      "content": "ありがとうございます（カエクスのキモオタクより）",
+      "author": "octnaso",
+      "reactions": 1,
+      "channel": "やり始めてすぐに描いたカエクスくん"
+    }
+  ]
+}

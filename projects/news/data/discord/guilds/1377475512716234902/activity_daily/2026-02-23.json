@@ -1,0 +1,75 @@
+{
+  "date": "2026-02-23",
+  "messages": 54,
+  "unique_authors": 16,
+  "reactions_total": 12,
+  "attachments": 2,
+  "channel_activity": {
+    "🔰初心者質問": 4,
+    "誰でも質問": 46,
+    "アイロンビーズ！": 1,
+    "今日の〜シリーズver1.0": 2,
+    "対人大会運営本部": 1
+  },
+  "hourly_activity": {
+    "13": 10,
+    "14": 2,
+    "0": 2,
+    "3": 3,
+    "4": 3,
+    "6": 3,
+    "7": 2,
+    "8": 2,
+    "9": 1,
+    "12": 22,
+    "15": 1,
+    "10": 2,
+    "23": 1
+  },
+  "message_types": {
+    "0": 51,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1475512851111215154",
+      "channel_id": "1400058619726266462",
+      "content": "一部例外もあります☝",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1475440759925772330",
+      "channel_id": "1459507965366112370",
+      "content": "",
+      "author": "kuroneko4253",
+      "reactions": 3,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1475353416111886458",
+      "channel_id": "1400058619726266462",
+      "content": "<:gross:1356053080906666126>",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1475378267534917754",
+      "channel_id": "1400058619726266462",
+      "content": "https://x.com/i/status/1968627917623279920",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1475482353165013003",
+      "channel_id": "1400058619726266462",
+      "content": "ダメ強はパーティーで共有だけどクリ率ダメキーチャなどなどはつけてる個人にしか影響ないから",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    }
+  ]
+}

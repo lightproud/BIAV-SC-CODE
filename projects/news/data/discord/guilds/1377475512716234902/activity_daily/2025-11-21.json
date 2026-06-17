@@ -1,0 +1,36 @@
+{
+  "date": "2025-11-21",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 61,
+  "attachments": 2,
+  "channel_activity": {
+    "萌え萌え小クラゲ( ˉ͈̀꒳ˉ͈́ )": 1,
+    "【新覚醒体予告】分裂症患者 「24」": 1
+  },
+  "hourly_activity": {
+    "6": 1,
+    "10": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1441308515489812490",
+      "channel_id": "1441308515489812490",
+      "content": "小さなクラゲはかわいいだけでいいです( *ˊᵕˋ)",
+      "author": "silver_thimble",
+      "reactions": 40,
+      "channel": "萌え萌え小クラゲ( ˉ͈̀꒳ˉ͈́ )"
+    },
+    {
+      "id": "1441368131187773471",
+      "channel_id": "1441368131187773471",
+      "content": "2025/11/27(木) 15:00 ～",
+      "author": "mythag_navigator",
+      "reactions": 21,
+      "channel": "【新覚醒体予告】分裂症患者 「24」"
+    }
+  ]
+}

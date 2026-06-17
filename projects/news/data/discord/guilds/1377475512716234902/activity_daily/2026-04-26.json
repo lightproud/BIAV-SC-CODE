@@ -1,0 +1,194 @@
+{
+  "date": "2026-04-26",
+  "messages": 279,
+  "unique_authors": 12,
+  "reactions_total": 31,
+  "attachments": 18,
+  "channel_activity": {
+    "🔰初心者質問": 248,
+    "誰でも質問": 20,
+    "今日の〜シリーズver1.0": 1,
+    "ガチャ結果報告": 4,
+    "仕様書き殴り": 6
+  },
+  "hourly_activity": {
+    "12": 216,
+    "13": 17,
+    "17": 22,
+    "18": 1,
+    "1": 3,
+    "2": 2,
+    "4": 2,
+    "5": 1,
+    "6": 5,
+    "15": 5,
+    "16": 1,
+    "7": 4
+  },
+  "message_types": {
+    "0": 247,
+    "19": 32
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1497937585316561028",
+      "channel_id": "1391701560496623688",
+      "content": "本当にサルバ出てから一気に変わった",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497843252047511632",
+      "channel_id": "1400058619726266462",
+      "content": "ガチャポン引いてる時がやっぱり楽しいので私は絶対コア買ってます()\n手持ちが揃ってきても使う札はスクショで上げたのくらいになるとは思います。\n融災禁区ってコンテ",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1497853463726526504",
+      "channel_id": "1400058619726266462",
+      "content": "エリカ札は3凸までなら交換おすすめしておきますー",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1497860172524294275",
+      "channel_id": "1419203289945342054",
+      "content": "お陰でリッツちゃん極限使えるッ...!!!",
+      "author": "mag1kaando1",
+      "reactions": 2,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1497938219252322366",
+      "channel_id": "1391701560496623688",
+      "content": "りゅうのいかりみたいな技を連打してるのが深海です",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497938556520366151",
+      "channel_id": "1391701560496623688",
+      "content": "強くなきゃしんどくないすか外見",
+      "author": "mas65100",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497939159552360569",
+      "channel_id": "1391701560496623688",
+      "content": "ユウハシュ使いたくなったら救援で使ってね",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497939263960912034",
+      "channel_id": "1391701560496623688",
+      "content": "多分これから一生ないと思ってます",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497940111768420433",
+      "channel_id": "1391701560496623688",
+      "content": "死ぬほど欲しい時以外は我慢するタチなのでいけます",
+      "author": "mas65100",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497941483938906142",
+      "channel_id": "1391701560496623688",
+      "content": "てか、課金したくても欲しい商品常に無いのがね(笑)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497942374293442621",
+      "channel_id": "1391701560496623688",
+      "content": "爆薬",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497942434485633145",
+      "channel_id": "1391701560496623688",
+      "content": "ターン数…",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497944255669473291",
+      "channel_id": "1391701560496623688",
+      "content": "ピザです",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497934607952252979",
+      "channel_id": "1391701560496623688",
+      "content": "ヒント:エイプリルフール",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497934669054873612",
+      "channel_id": "1391701560496623688",
+      "content": "25日以上前なんだなぁ",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497934965013352651",
+      "channel_id": "1391701560496623688",
+      "content": "ただ癖が……",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497935194248970373",
+      "channel_id": "1391701560496623688",
+      "content": "でしたら、もう赤なんですよね",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497935574047395851",
+      "channel_id": "1391701560496623688",
+      "content": "笑っちゃいけなんだろうけど笑ってしまう",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497935735645278279",
+      "channel_id": "1391701560496623688",
+      "content": "🗡",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1497936839456198708",
+      "channel_id": "1391701560496623688",
+      "content": "夢がついえた",
+      "author": "mas65100",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}

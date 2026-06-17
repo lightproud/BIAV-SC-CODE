@@ -1,0 +1,59 @@
+{
+  "date": "2025-10-18",
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 32,
+  "attachments": 6,
+  "channel_activity": {
+    "ダフォダイル婦人ーーーーーーーーーーー": 1,
+    "ガチャ結果報告": 1,
+    "対人戦のおすすめ編成": 3,
+    "ひとりごと": 3,
+    "ユウハシュメイン集まれー": 1,
+    "慟哭": 1
+  },
+  "hourly_activity": {
+    "15": 3,
+    "17": 1,
+    "16": 3,
+    "3": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429135648094289920",
+      "channel_id": "1429135648094289920",
+      "content": "",
+      "author": "kotobuki_01",
+      "reactions": 23,
+      "channel": "ダフォダイル婦人ーーーーーーーーーーー"
+    },
+    {
+      "id": "1429029765372968981",
+      "channel_id": "1429029765372968981",
+      "content": "ジェンキン可愛いよ、ジェンキン",
+      "author": "ugen_22zi",
+      "reactions": 4,
+      "channel": "慟哭"
+    },
+    {
+      "id": "1429156915002212413",
+      "channel_id": "1419203289945342054",
+      "content": "え…？ぼくまだこのガチャ10回しか…",
+      "author": "tuyu1ro._.1128",
+      "reactions": 3,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1429030690846019686",
+      "channel_id": "1425497871439892511",
+      "content": "誰も居ねぇ",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "ユウハシュメイン集まれー"
+    }
+  ]
+}

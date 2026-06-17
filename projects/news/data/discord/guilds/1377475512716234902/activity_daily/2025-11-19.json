@@ -1,0 +1,36 @@
+{
+  "date": "2025-11-19",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 5,
+  "attachments": 2,
+  "channel_activity": {
+    "レベル70〜80の救援覚醒体を固定している人の協力願": 3,
+    "対人戦のおすすめ編成": 1
+  },
+  "hourly_activity": {
+    "1": 3,
+    "15": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440517659203600384",
+      "channel_id": "1417695507500765194",
+      "content": "",
+      "author": "megane0965_78083",
+      "reactions": 4,
+      "channel": "レベル70〜80の救援覚醒体を固定している人の協力願"
+    },
+    {
+      "id": "1440732909223936134",
+      "channel_id": "1416012052283260958",
+      "content": "この編成でしばらく遊んでましたがかなり勝てて楽しい編成でした",
+      "author": "nara_mera",
+      "reactions": 1,
+      "channel": "対人戦のおすすめ編成"
+    }
+  ]
+}

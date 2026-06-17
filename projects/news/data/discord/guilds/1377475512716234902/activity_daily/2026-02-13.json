@@ -1,0 +1,50 @@
+{
+  "date": "2026-02-13",
+  "messages": 22,
+  "unique_authors": 9,
+  "reactions_total": 3,
+  "attachments": 2,
+  "channel_activity": {
+    "誰でも質問": 11,
+    "日本版最新スト（イベスト含む）までネタバレOK板": 10,
+    "【恒常のみ】融災375": 1
+  },
+  "hourly_activity": {
+    "4": 4,
+    "9": 7,
+    "15": 1,
+    "16": 1,
+    "13": 8,
+    "22": 1
+  },
+  "message_types": {
+    "0": 21,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1471732000074235995",
+      "channel_id": "1400058619726266462",
+      "content": "双子白つけて引きまくっていっぱいぺしぺしする",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1471857537593638945",
+      "channel_id": "1449015772901937425",
+      "content": "謎道具",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "日本版最新スト（イベスト含む）までネタバレOK板"
+    },
+    {
+      "id": "1472003076918349854",
+      "channel_id": "1469954025242759359",
+      "content": "ありがとうございました☺️\nおかげで融災楽しかったです",
+      "author": "_yrgyrgk",
+      "reactions": 1,
+      "channel": "【恒常のみ】融災375"
+    }
+  ]
+}

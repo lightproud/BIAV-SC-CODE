@@ -1,0 +1,41 @@
+{
+  "date": "2026-03-01",
+  "messages": 19,
+  "unique_authors": 6,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "誰でも質問": 17,
+    "今日の〜シリーズver1.0": 1,
+    "レベル70〜80の救援覚醒体を固定している人の協力願": 1
+  },
+  "hourly_activity": {
+    "3": 7,
+    "4": 2,
+    "13": 3,
+    "14": 6,
+    "7": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1477520228840636564",
+      "channel_id": "1459507965366112370",
+      "content": "今日の触腕(？)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1477502505137995817",
+      "channel_id": "1400058619726266462",
+      "content": "歌愛ユキもそう言ってる",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    }
+  ]
+}

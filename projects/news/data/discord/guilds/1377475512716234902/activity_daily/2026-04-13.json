@@ -1,0 +1,84 @@
+{
+  "date": "2026-04-13",
+  "messages": 36,
+  "unique_authors": 10,
+  "reactions_total": 7,
+  "attachments": 3,
+  "channel_activity": {
+    "誰でも質問": 27,
+    "ゆるリク募　落書き置き場": 1,
+    "ハーバート猫吸い(諦めた": 1,
+    "元ネタ・モチーフ考察(ネタバレあり)": 1,
+    "リリーさんの構成(毒パ)について": 6
+  },
+  "hourly_activity": {
+    "11": 19,
+    "12": 4,
+    "13": 7,
+    "17": 1,
+    "0": 2,
+    "14": 2,
+    "15": 1
+  },
+  "message_types": {
+    "0": 36
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1493232353391153253",
+      "channel_id": "1400058619726266462",
+      "content": "やらしい人がいっぱい教えてくれますよ",
+      "author": "ecstasyrb",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1493232590956527746",
+      "channel_id": "1400058619726266462",
+      "content": "<:love:1356053099931897977>",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1493242302188228761",
+      "channel_id": "1400058619726266462",
+      "content": "僕は清楚なのでわからないことも多く手助けできません\nごめんネ",
+      "author": "ecstasyrb",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1493304796437020926",
+      "channel_id": "1400058619726266462",
+      "content": "みんな心にプリキュア飼ってるからね、大丈夫。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1493045069526208742",
+      "channel_id": "1471152940814172322",
+      "content": "失礼します！絵柄とっても好きです！もしよろしければ、リクエストでタイスをお願いしたいです＞＜",
+      "author": "liannew0397",
+      "reactions": 1,
+      "channel": "ゆるリク募　落書き置き場"
+    },
+    {
+      "id": "1493048728192286811",
+      "channel_id": "1492945052907999373",
+      "content": "猫のしもべだ",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "ハーバート猫吸い(諦めた"
+    },
+    {
+      "id": "1493257718473949485",
+      "channel_id": "1431211464324157450",
+      "content": "毒パじゃないけど、混沌染め知識盛り盛り楽しいす！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "リリーさんの構成(毒パ)について"
+    }
+  ]
+}

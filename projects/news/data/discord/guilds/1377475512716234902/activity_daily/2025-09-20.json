@@ -1,0 +1,40 @@
+{
+  "date": "2025-09-20",
+  "messages": 7,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 2,
+  "channel_activity": {
+    "グロ版話題スレ": 4,
+    "フレンド募集板": 1,
+    "みなさんの寮みせてください！": 2
+  },
+  "hourly_activity": {
+    "9": 1,
+    "14": 2,
+    "21": 1,
+    "22": 1,
+    "13": 2
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418965114672906292",
+      "channel_id": "1418956086567899268",
+      "content": "バグりちらかしたトゥルー",
+      "author": "stalk3r_0w0",
+      "reactions": 4,
+      "channel": "みなさんの寮みせてください！"
+    },
+    {
+      "id": "1418956086567899268",
+      "channel_id": "1418956086567899268",
+      "content": "ぼくはファイントさんと\nBGMは「雪の中の少女」です！",
+      "author": "europium_xx",
+      "reactions": 1,
+      "channel": "みなさんの寮みせてください！"
+    }
+  ]
+}

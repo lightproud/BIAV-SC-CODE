@@ -1,0 +1,65 @@
+{
+  "date": "2026-04-01",
+  "messages": 30,
+  "unique_authors": 12,
+  "reactions_total": 14,
+  "attachments": 6,
+  "channel_activity": {
+    "🔰初心者質問": 26,
+    "らくがき": 1,
+    "幻夢ボス別ステージ入口スクショ": 1,
+    "今日の〜シリーズver1.0": 1,
+    "運用へタイムアウト無くしませんか？": 1
+  },
+  "hourly_activity": {
+    "4": 1,
+    "9": 6,
+    "10": 3,
+    "11": 3,
+    "12": 5,
+    "13": 1,
+    "16": 3,
+    "17": 3,
+    "18": 3,
+    "14": 1,
+    "3": 1
+  },
+  "message_types": {
+    "0": 28,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1488878498927083610",
+      "channel_id": "1448993590247424041",
+      "content": "最近作ったmemeで二人とも元々のサイズが収まりきらなかったので\n供養(線画状態ですが…)",
+      "author": "suzuri9701",
+      "reactions": 7,
+      "channel": "らくがき"
+    },
+    {
+      "id": "1488879356322250753",
+      "channel_id": "1459507965366112370",
+      "content": "今日のパワー",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 4,
+      "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1488842485764722688",
+      "channel_id": "1391701560496623688",
+      "content": "ワンダ以外の未所持かサルバドル",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1488869936133701652",
+      "channel_id": "1391701560496623688",
+      "content": "恒常混沌ならニムかなぁ\nナウティラでもいいけど反撃より毒の方が出番あるし",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}

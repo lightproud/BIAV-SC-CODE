@@ -1,0 +1,65 @@
+{
+  "date": "2025-10-07",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 26,
+  "attachments": 1,
+  "channel_activity": {
+    "皆さんの推しを描きたい": 1,
+    "落書き": 1,
+    "元ネタ・モチーフ考察(ネタバレあり)": 1,
+    "コード入力数珠つなぎの会": 1,
+    "wiki整備中": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "5": 2,
+    "12": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1424995444630749257",
+      "channel_id": "1423581083580104795",
+      "content": "レーア",
+      "author": "u__u.xx",
+      "reactions": 11,
+      "channel": "落書き"
+    },
+    {
+      "id": "1425168247552082151",
+      "channel_id": "1422424893110222858",
+      "content": "10/8：覚醒体の基本情報すべて整備完了\n10/8：界域システムの基礎情報整備完了",
+      "author": "mevius8354",
+      "reactions": 9,
+      "channel": "wiki整備中"
+    },
+    {
+      "id": "1424986114258632744",
+      "channel_id": "1421053111648125011",
+      "content": "ヘロットはスパルタの奴隷階級を指す言葉だそうです(複数形はヘイロタイ)\nアイギスについて妖魔の盾の名前を娘につけるなんてと言ってますが本人の名前も中々",
+      "author": "taylor_266",
+      "reactions": 4,
+      "channel": "元ネタ・モチーフ考察(ネタバレあり)"
+    },
+    {
+      "id": "1424960503394074688",
+      "channel_id": "1418083813422272552",
+      "content": "もし良ければラモンナを、、、お願い致します🙏",
+      "author": "statice_11",
+      "reactions": 1,
+      "channel": "皆さんの推しを描きたい"
+    },
+    {
+      "id": "1425101693611413555",
+      "channel_id": "1407669469177970732",
+      "content": "ZCB2PN1GJI",
+      "author": "nara_mera",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2025-09-03",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 29,
+  "attachments": 2,
+  "channel_activity": {
+    "コード入力数珠つなぎの会": 1,
+    "フレンド募集板": 1,
+    "覚醒体ダフォダイルが登場！": 1
+  },
+  "hourly_activity": {
+    "7": 1,
+    "15": 1,
+    "8": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412722526114811924",
+      "channel_id": "1412722526114811924",
+      "content": "2025/9/4(木) 15:00 ～",
+      "author": "mythag_navigator",
+      "reactions": 29,
+      "channel": "覚醒体ダフォダイルが登場！"
+    }
+  ]
+}

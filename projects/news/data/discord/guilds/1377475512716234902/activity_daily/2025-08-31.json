@@ -1,0 +1,42 @@
+{
+  "date": "2025-08-31",
+  "messages": 24,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 20,
+  "channel_activity": {
+    "コード入力数珠つなぎの会": 3,
+    "融災禁区ランキング上位者編成まとめ": 10,
+    "超次元の攻略方法": 11
+  },
+  "hourly_activity": {
+    "9": 1,
+    "13": 5,
+    "14": 7,
+    "1": 6,
+    "7": 1,
+    "16": 3,
+    "23": 1
+  },
+  "message_types": {
+    "0": 24
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1411711491249274955",
+      "channel_id": "1407669469177970732",
+      "content": "RRCRCTWO4J",
+      "author": "gyarakusizyunnnenn",
+      "reactions": 4,
+      "channel": "コード入力数珠つなぎの会"
+    },
+    {
+      "id": "1411727197974302851",
+      "channel_id": "1407669469177970732",
+      "content": "6I9WVA6A2Q",
+      "author": "rio011811",
+      "reactions": 1,
+      "channel": "コード入力数珠つなぎの会"
+    }
+  ]
+}

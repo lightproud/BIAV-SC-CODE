@@ -1,0 +1,39 @@
+{
+  "date": "2026-01-25",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 1,
+  "channel_activity": {
+    "界域ごとの推しを描きたいテンプレ": 2,
+    "全覚醒体描きます！": 2
+  },
+  "hourly_activity": {
+    "0": 1,
+    "7": 1,
+    "4": 1,
+    "8": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1464844106328178699",
+      "channel_id": "1459443394148433960",
+      "content": "もう少しちゃんとラフ描いておけばよかったのに…って思いながら線画描きました。",
+      "author": "mitutya_33500",
+      "reactions": 4,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1464901213530226874",
+      "channel_id": "1459443394148433960",
+      "content": "口元可愛くて良き……",
+      "author": "anra2539_35702",
+      "reactions": 2,
+      "channel": "全覚醒体描きます！"
+    }
+  ]
+}

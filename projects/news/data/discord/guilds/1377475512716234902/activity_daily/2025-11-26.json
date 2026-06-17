@@ -1,0 +1,34 @@
+{
+  "date": "2025-11-26",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 15,
+  "attachments": 8,
+  "channel_activity": {
+    "リリース100日記念キャンペーン開催！": 2
+  },
+  "hourly_activity": {
+    "6": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1443120619658150030",
+      "channel_id": "1443120619658150030",
+      "content": "「忘却前夜」をお楽しみいただき、誠にありがとうございます。\n忘却前夜運営チームです。\n\n「忘却前夜」は、本日11/26にリリース100日を迎えました！\nユーザー",
+      "author": "mythag_navigator",
+      "reactions": 11,
+      "channel": "リリース100日記念キャンペーン開催！"
+    },
+    {
+      "id": "1443120876936499291",
+      "channel_id": "1443120619658150030",
+      "content": "◆リリース100日記念対人戦チャレンジキャンペーン\n開催期間\n ～ 2025年12月11日 14:59\n調査3-2クリアで解放される「対人戦」のチャレンジイベン",
+      "author": "mythag_navigator",
+      "reactions": 4,
+      "channel": "リリース100日記念キャンペーン開催！"
+    }
+  ]
+}

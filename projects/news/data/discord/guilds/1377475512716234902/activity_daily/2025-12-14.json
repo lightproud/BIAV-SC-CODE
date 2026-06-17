@@ -1,0 +1,36 @@
+{
+  "date": "2025-12-14",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 9,
+  "attachments": 1,
+  "channel_activity": {
+    "ガチャ結果報告": 1,
+    "🎥新覚醒体「タイス」のリプレイ動画募集中！": 1
+  },
+  "hourly_activity": {
+    "2": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1449583925952381029",
+      "channel_id": "1419203289945342054",
+      "content": "鼻血でました",
+      "author": "megane0965_78083",
+      "reactions": 7,
+      "channel": "ガチャ結果報告"
+    },
+    {
+      "id": "1449701392888496189",
+      "channel_id": "1448980709086855292",
+      "content": "#共有者：愛鳴（200002264）\n#\n#蜜腺・夢語り超難度\n#\n#カーシア（時を遡る時計、苦しみの呪縛）\n#リッツ（至高の秘蔵品、職責）\n#サルバドル（神言",
+      "author": "sub0044_36832",
+      "reactions": 2,
+      "channel": "🎥新覚醒体「タイス」のリプレイ動画募集中！"
+    }
+  ]
+}

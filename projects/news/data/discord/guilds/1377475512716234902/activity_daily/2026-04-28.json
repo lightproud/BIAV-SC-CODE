@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-28",
+  "messages": 38,
+  "unique_authors": 11,
+  "reactions_total": 11,
+  "attachments": 3,
+  "channel_activity": {
+    "誰でも質問": 21,
+    "今日の〜シリーズver1.0": 1,
+    "レベル70〜80の救援覚醒体を固定している人の協力願": 1,
+    "血の鎖・ヘロットの編成について": 15
+  },
+  "hourly_activity": {
+    "11": 2,
+    "13": 4,
+    "14": 1,
+    "3": 16,
+    "4": 3,
+    "6": 6,
+    "8": 3,
+    "10": 1,
+    "20": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 37,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1498533676387143691",
+      "channel_id": "1400058619726266462",
+      "content": "キーチャはあればあるだけ良いですよ多分\nチーム全体のダメージ強化50％よりもオーダー１回でも多く使えた方がやっぱり戦闘時は強いっす",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1498604377777246259",
+      "channel_id": "1417695507500765194",
+      "content": "才能MAX記念にダフォに変えときました\n200012037",
+      "author": "kuroneko4253",
+      "reactions": 3,
+      "channel": "レベル70〜80の救援覚醒体を固定している人の協力願"
+    },
+    {
+      "id": "1498654322660216872",
+      "channel_id": "1400058619726266462",
+      "content": "10とかで良いからよこせや、この3コスほぼゴミやぞ",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1498608578691596349",
+      "channel_id": "1400058619726266462",
+      "content": "ユウハシュさんは3コスに出血なかった？",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1498628389253287956",
+      "channel_id": "1400058619726266462",
+      "content": "グロ版は狂気",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1498781689579704472",
+      "channel_id": "1459507965366112370",
+      "content": "今日のロータン\n何かダメージが可愛い",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    }
+  ]
+}

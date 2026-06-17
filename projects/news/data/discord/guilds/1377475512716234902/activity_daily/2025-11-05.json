@@ -1,0 +1,36 @@
+{
+  "date": "2025-11-05",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 6,
+  "attachments": 3,
+  "channel_activity": {
+    "落書きや没とか": 2,
+    "対人戦のおすすめ編成": 3
+  },
+  "hourly_activity": {
+    "3": 2,
+    "12": 3
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1435475455175168102",
+      "channel_id": "1432264057666408518",
+      "content": "シルバーコア通信のユウハシュ萌えキャラ概念すき",
+      "author": "izuizusaan",
+      "reactions": 5,
+      "channel": "落書きや没とか"
+    },
+    {
+      "id": "1435601053835071539",
+      "channel_id": "1416012052283260958",
+      "content": "あと正直ワンダも別のシールダーでいいです（編成めちゃくちや）",
+      "author": "konpeitou0541",
+      "reactions": 1,
+      "channel": "対人戦のおすすめ編成"
+    }
+  ]
+}
