@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-17T06:00:51.891372+00:00",
+  "collected_at": "2026-06-17T10:52:50.655008+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-17T08:36:28+00:00",
+      "lang": "english",
+      "title": "[正面] The game is surprisingly good. I played it because...",
+      "summary": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
+      "url": "https://steamcommunity.com/profiles/76561198171557225/recommended/3052450",
+      "author": "76561198171557225",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
+      "timestamp_created": 1781685388,
+      "playtime_forever": 1810
+    },
     {
       "source": "steam",
       "time": "2026-06-17T02:46:59+00:00",
@@ -31,7 +46,7 @@
       "voted_up": true,
       "review": "The game is so graphic that despite being a Chinese game, it cannot pass local regulation to be released at home. \n\nI think that should suffice to pique your curiosity.",
       "timestamp_created": 1781645040,
-      "playtime_forever": 9970
+      "playtime_forever": 9996
     },
     {
       "source": "steam",
