@@ -12697,6 +12697,27 @@
       "title": "&quot;抓住幸福其实比忍耐痛苦更需要勇气。&quot;",
       "time": "2026-06-17T15:41:14+00:00",
       "downloaded_at": "2026-06-17T17:46:06.291032+00:00"
+    },
+    "https://i.ytimg.com/vi/7mHdJheVPOE/hqdefault.jpg": {
+      "filename": "youtube_4563e1041f529bcb.jpg",
+      "source": "youtube",
+      "title": "[Morimens] A Quitter&#39;s first W5A5 clear, or: How not to play Bluwil",
+      "time": "2026-06-17T18:57:26Z",
+      "downloaded_at": "2026-06-17T19:59:49.871952+00:00"
+    },
+    "https://i.ytimg.com/vi/OraTq78r5jk/hqdefault.jpg": {
+      "filename": "youtube_7f539810dd22901a.jpg",
+      "source": "youtube",
+      "title": "Invertí TODO en Saya (FULL DUPES + Rueda del Destino) | Mi Equipo Definitivo + mouchette | Morimens",
+      "time": "2026-06-17T19:05:04Z",
+      "downloaded_at": "2026-06-17T19:59:50.304763+00:00"
+    },
+    "https://i.ytimg.com/vi/efOnLgOXDfQ/hqdefault_live.jpg": {
+      "filename": "youtube_1d2f9d618a93ce97.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-17T19:44:21Z",
+      "downloaded_at": "2026-06-17T19:59:53.265013+00:00"
     }
   },
   "failed": {
@@ -18659,6 +18680,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-17T14:25:22.243621+00:00"
+    },
+    "https://preview.redd.it/5dkmigkc9v7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7bf4a385b83db65dc243aa77013a4303d9711b3e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T19:59:50.868908+00:00"
+    },
+    "https://preview.redd.it/w4phb8cyvu7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=21c59d3c72f9c137e78446a8c1bfd16a6ef36a8f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T19:59:51.244855+00:00"
+    },
+    "https://preview.redd.it/6x34gr3osv7h1.jpg?width=140&amp;height=75&amp;auto=webp&amp;s=ed28115212d36597d099fc350646cd76da283b65": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T19:59:51.621788+00:00"
+    },
+    "https://preview.redd.it/rbk31daq6w7h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=ae50aa2979635f3241d2dc10aca959d17d351cc0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T19:59:51.997477+00:00"
     }
   },
   "archived": []
