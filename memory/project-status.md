@@ -52,7 +52,7 @@
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
   - [ ] NGA — 需 NGA_FORUM_ID
   - [ ] TapTap — 需 TAPTAP_APP_ID
-  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）
+  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；多 guild 分层归档：Global（data/discord/ 根）/ 志愿者（guilds/）/ 日服（接入中，2026-06-17，guilds/）
   - [x] YouTube — 代码就绪，需配置 API 密钥
 
 ### 报告系统（新增，来自 new-session-7Plu3）
@@ -142,12 +142,14 @@
 Phase 0/1 已验收归档（2026-04-04）：Phase 0 止血完成、Stage 1 日报 14 天验证
 通过、记忆系统 9 模块 + 做梦 Agent 三层上线。详见 `memory/strategic-plan-2026.md`。
 
-## Workflow 触发方式（2026-06-09 按 yml 实测 cron 核验）
+## Workflow 触发方式（2026-06-09 按 yml 实测 cron 核验；2026-06-17 补日服 Discord 接入）
 
 | Workflow | 触发 | 状态 |
 |----------|------|------|
 | update-news.yml | 每小时（`0 * * * *`） | 运行中 |
-| discord-archive.yml | 每日 18:00 UTC + 每月 1 日月度归档 | 运行中 |
+| discord-archive.yml | 每日 18:00 UTC + 每月 1 日月度归档（Global 服） | 运行中 |
+| discord-archive-jp.yml | 手动 dispatch；填 `JP_GUILD_ID` 后开 `:45` cron | 待启用（2026-06-17 新增，日服 guild，Guard 保护空 ID 安全跳过） |
+| discord-discover-guilds.yml | 手动 dispatch | 可用（2026-06-17 新增，列 bot 所在 guild 以发现日服 ID） |
 | collect-comments.yml | 每日 02:00 UTC | 运行中（2026-06-05 新增） |
 | recover-fanart.yml | 手动 dispatch | 可用（2026-06-05 新增） |
 | daily-report.yml | 手动 dispatch（定时已停用，报告改会话内订阅生成） | 备用 |

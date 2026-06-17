@@ -1,0 +1,52 @@
+name: Discord Discover Guilds
+
+# 一次性发现工具：列出 bot 当前加入的所有服务器，对照已登记清单（Global / 志愿者）
+# 高亮「未登记」服务器，把快照写入 projects/news/data/discord/guilds_seen.json 并提交。
+# 用于新服务器（如日服）接入归档计划前取得其 guild ID。只读 API，不抓消息。
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: discord-discover-guilds-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
+      - name: List bot guilds
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: python projects/news/scripts/discord_list_guilds.py
+
+      - name: Commit snapshot if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/data/discord/guilds_seen.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: snapshot Discord guild list [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in $((i * 2))s..."
+              sleep $((i * 2))
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi

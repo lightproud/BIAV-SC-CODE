@@ -1,7 +1,7 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）
+> 最后更新：2026-06-17 by 艾瑞卡会话（新增日服 Discord 归档接入：探测 + 分层 workflow；上次 2026-06-09 主控台状态核验。实时进度权威在 `memory/project-status.md`）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -49,9 +49,27 @@
 
 ### 注意事项
 - update-news.yml 每小时运行一次（cron: '0 * * * *'）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档
+- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 data/discord/ 根）
+- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 guilds/{id}/）
+- discord-archive-jp.yml 日服服务器归档（数据落 guilds/{id}/）：待填 JP_GUILD_ID 并启用 :45 错峰 cron，详见下「日服 Discord 接入」
+- discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
 - daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
+
+### 日服 Discord 接入（2026-06-17）
+bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver.py`）按 guild_id 自动分层，
+无需改采集代码，复用同一 `DISCORD_BOT_TOKEN`（与志愿者服务器同模式）。两步启用：
+
+1. **发现 guild ID**：在 Actions 运行 `Discord Discover Guilds`（`discord-discover-guilds.yml`，
+   仅手动触发）。脚本 `discord_list_guilds.py` 调 `/users/@me/guilds` 列出 bot 所在全部服务器，
+   对照已登记清单（Global / 志愿者）高亮「未登记」者，快照写入
+   `projects/news/data/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。
+2. **启用归档**：把日服 ID 填入 `discord-archive-jp.yml` 的 `env.JP_GUILD_ID`，取消其
+   `schedule` 区块注释（保留 `:45` 错峰，避开 Global 与志愿者）。在 ID 配置前，该 workflow
+   经 Guard 步骤安全跳过——绝不因空 ID 回落到 Global guild。
+
+首跑会全量回溯日服建服至今的历史（归档器对新 guild 的 cold-start 行为），数据隔离落
+`data/discord/guilds/{JP_GUILD_ID}/`，与 Global / 志愿者互不污染。
 
 ## 已完成
 - [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
