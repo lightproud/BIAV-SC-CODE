@@ -1,18 +1,14 @@
 name: Discord Archive (JP)
 
-# 日服服务器采集，与 Global 完全隔离（数据落 guilds/{JP_GUILD_ID}/），复用同一 bot。
+# 日服服务器采集，与 Global 完全隔离（数据落 guilds/1377475512716234902/），复用同一 bot。
 #
-# 启用步骤（守密人 / 艾瑞卡）：
-#   1. 运行 'Discord Discover Guilds' workflow，从 guilds_seen.json 取得日服 guild ID
-#   2. 把该 ID 填入下方 env.JP_GUILD_ID
-#   3. 取消 schedule 区块注释以开启定时采集（保留 :45 错峰，避开 Global 与志愿者）
-#
-# 安全保证：ID 未配置前，本 workflow 手动触发会经 Guard 步骤安全跳过（绿色通过、
-# 不会因空 ID 回落到 Global guild）。schedule 默认注释，未启用前不会定时空跑。
+# guild = 1377475512716234902 ·【公式】忘却前夜サーバー（日服官方），2026-06-17 探测确认并启用。
+# 每小时 :45 增量 + 多月历史回填；首跑全量回溯建服至今。Guard 步骤保留：若 JP_GUILD_ID
+# 被清空则安全跳过、不回落 Global guild。
 on:
-  # schedule:
-  #   # 每小时一次，offset :45 错开 Global（每日 18:00）与志愿者（:15）
-  #   - cron: '45 * * * *'
+  schedule:
+    # 每小时一次，offset :45 错开 Global（每日 18:00）与志愿者（:15）
+    - cron: '45 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -23,8 +19,8 @@ permissions:
   contents: write
 
 env:
-  # 日服 guild ID —— 待 'Discord Discover Guilds' 探测后填入。留空时本 workflow 安全跳过。
-  JP_GUILD_ID: ''
+  # 日服 guild ID（【公式】忘却前夜サーバー）。留空时本 workflow 经 Guard 安全跳过。
+  JP_GUILD_ID: '1377475512716234902'
 
 jobs:
   archive:
@@ -36,7 +32,7 @@ jobs:
         id: guard
         run: |
           if [ -z "$JP_GUILD_ID" ]; then
-            echo "::notice::JP_GUILD_ID 未配置 —— 安全跳过。请先运行 'Discord Discover Guilds'，从 projects/news/data/discord/guilds_seen.json 取得日服 guild ID 填入 env.JP_GUILD_ID，并取消 schedule 注释。"
+            echo "::notice::JP_GUILD_ID 未配置 —— 安全跳过。请先运行 'Discord Discover Guilds'，从 projects/news/data/discord/guilds_seen.json 取得日服 guild ID 填入 env.JP_GUILD_ID。"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
