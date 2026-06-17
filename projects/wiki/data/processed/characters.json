@@ -5,11 +5,13 @@
     "generated": "2026-04-25",
     "category_criterion": "多维证据法:含以下任一即 playable —— summon_slogan(召唤台词)/ gacha_rateup(出现于卡池rate-up,抽卡可得)/ voice_block(有语音块)/ story_bio(有简介)。均无 = uncertain(可能未上线/纯Boss/彩蛋,待人工确认)。playable_evidence 字段记录命中依据供审计。",
     "category_counts": {
-      "playable": 66,
-      "uncertain": 6
+      "playable": 58,
+      "unreleased": 12,
+      "easter_egg": 2
     },
     "categorized": "2026-06-16",
-    "category_revision": "2026-06-16 修正:原『summonable/non_summonable』二分判据(仅看召唤台词)误将本源系/外神系正式角色判为非可玩;经守密人指正,改用多维证据法。本源萝坦/秃鹫/诺登斯/撒托古亚/沙耶等经卡池rate-up确认为正式可玩。"
+    "category_revision": "2026-06-16 守密人逐个人工确认:原自动判据(召唤台词/卡池rate-up等)不足以区分『已上线』与『未上线』——大量角色数据已埋入客户端但未正式上线。最终 18 个原存疑/单薄证据角色全部经守密人逐一裁定。",
+    "category_values": "playable=正式可玩 / unreleased=未上线(数据已埋入,卡池可能废弃或资料未足) / easter_egg=彩蛋NPC / boss=纯敌方。playable_evidence 仅作机器线索;最终归类以 confirmed_by 守密人人工裁定为准"
   },
   "characters": [
     {
@@ -49,9 +51,10 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
+      "category": "unreleased",
       "playable_evidence": [],
-      "variant_of_name_prefix": true
+      "variant_of_name_prefix": true,
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 15562,
@@ -1073,10 +1076,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77913,
@@ -1115,10 +1119,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77917,
@@ -1161,7 +1166,8 @@
       "category": "playable",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77921,
@@ -1178,10 +1184,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77922,
@@ -1243,10 +1250,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77925,
@@ -1308,10 +1316,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 77928,
@@ -1328,8 +1337,9 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
-      "playable_evidence": []
+      "category": "unreleased",
+      "playable_evidence": [],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 78754,
@@ -1346,9 +1356,10 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
+      "category": "unreleased",
       "playable_evidence": [],
-      "variant_of_name_prefix": true
+      "variant_of_name_prefix": true,
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 78840,
@@ -1365,8 +1376,9 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
-      "playable_evidence": []
+      "category": "easter_egg",
+      "playable_evidence": [],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 78841,
@@ -1383,8 +1395,9 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
-      "playable_evidence": []
+      "category": "easter_egg",
+      "playable_evidence": [],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 94450,
@@ -1423,9 +1436,10 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "uncertain",
+      "category": "unreleased",
       "playable_evidence": [],
-      "variant_of_name_prefix": true
+      "variant_of_name_prefix": true,
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 95786,
@@ -1465,11 +1479,12 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
       ],
-      "variant_of_name_prefix": true
+      "variant_of_name_prefix": true,
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 125346,
@@ -1511,7 +1526,8 @@
       "category": "playable",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 130375,
@@ -1528,10 +1544,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 130384,
@@ -1548,10 +1565,11 @@
       "introduction": "",
       "gameplay_intro": "",
       "summon_slogan": "",
-      "category": "playable",
+      "category": "unreleased",
       "playable_evidence": [
         "gacha_rateup"
-      ]
+      ],
+      "confirmed_by": "守密人 2026-06-16"
     },
     {
       "id": 130901,
