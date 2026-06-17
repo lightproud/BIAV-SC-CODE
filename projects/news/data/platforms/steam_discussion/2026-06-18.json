@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-17T19:59:53.356110+00:00",
+  "archived_at": "2026-06-17T21:57:33.521110+00:00",
   "source": "steam_discussion",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "title": "[Steam论坛] Invitation Code",
@@ -28,6 +28,36 @@
       "engagement": 149,
       "is_hot": true,
       "author": "mengluo123",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Question about team building",
+      "summary": "Is Arachne/Clem/Thais/XU a good team for story? I am in chapter 6 and things are starting to get kinda rough,idk if its a team building issue or I am just a brainlet who cant pilot the team properly(tbh I dont rly understand how clem works)\nAny tips on what characters I should get to improve this?...",
+      "source": "steam_discussion",
+      "time": "2026-06-17T20:54:47+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904888719/",
+      "engagement": 7,
+      "is_hot": false,
+      "author": "DingusDork",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Cards dont pop out on hover",
+      "summary": "This is the first time I've seen a game like this where part of the card is hidden off screen while in your hand and the card doesn't pop out so that you can read it when you hover over it.  It's pretty annoying grabbing the card and pulling it out to read it, then carefully placing it back in hand so that I don't accidentally play it.  I wonder if I'm doing something wrong or they really just haven't implemented this basic and standard feature to their game....",
+      "source": "steam_discussion",
+      "time": "2026-06-17T20:56:56+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624847350/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Ruckkus",
       "tags": [
         "steam_forum"
       ],

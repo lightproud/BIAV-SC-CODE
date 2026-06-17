@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-17T19:59:49.093753+00:00",
+  "collected_at": "2026-06-17T21:57:26.416247+00:00",
   "source": "youtube",
-  "item_count": 26,
+  "item_count": 27,
   "items": [
     {
       "source": "youtube",
@@ -11,8 +11,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=UOjnU2GH8G0",
       "author": "麻林薯北",
-      "engagement": 255,
+      "engagement": 256,
       "media_url": "https://i.ytimg.com/vi/UOjnU2GH8G0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-17T09:00:08Z",
+      "lang": "",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨Song of Memento(忘却の彼方-Emi Ver.)",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「Song of Memento(忘却の彼方-Emi Ver.)",
+      "url": "https://www.youtube.com/watch?v=O5z9zhCCY4k",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 181,
+      "media_url": "https://i.ytimg.com/vi/O5z9zhCCY4k/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -23,21 +35,9 @@
       "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「雨季」 愛は崇高で、貪欲で、祝福で、呪いでも ...",
       "url": "https://www.youtube.com/watch?v=TpkvWuslfCg",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 146,
+      "engagement": 149,
       "media_url": "https://i.ytimg.com/vi/TpkvWuslfCg/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-17T09:00:08Z",
-      "lang": "",
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨Song of Memento(忘却の彼方-Emi Ver.)",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「Song of Memento(忘却の彼方-Emi Ver.)",
-      "url": "https://www.youtube.com/watch?v=O5z9zhCCY4k",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 145,
-      "media_url": "https://i.ytimg.com/vi/O5z9zhCCY4k/hqdefault.jpg",
-      "content_type": "image"
+      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -49,6 +49,18 @@
       "author": "忘却前夜【日本版公式】",
       "engagement": 77,
       "media_url": "https://i.ytimg.com/vi/Zoq2KnjvFDo/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-17T14:21:58Z",
+      "lang": "",
+      "title": "Directo relax del Morimens | Charlita",
+      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "url": "https://www.youtube.com/watch?v=DdTioFthL_U",
+      "author": "OcteKG",
+      "engagement": 72,
+      "media_url": "https://i.ytimg.com/vi/DdTioFthL_U/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -65,14 +77,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T14:21:58Z",
+      "time": "2026-06-17T09:00:15Z",
       "lang": "",
-      "title": "Directo relax del Morimens | Charlita",
-      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
-      "url": "https://www.youtube.com/watch?v=DdTioFthL_U",
-      "author": "OcteKG",
-      "engagement": 71,
-      "media_url": "https://i.ytimg.com/vi/DdTioFthL_U/hqdefault.jpg",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨始まりの讃歌",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「始まりの讃歌」 歌え、高らかに。 輝く生命は自由 ...",
+      "url": "https://www.youtube.com/watch?v=eLQ8aOx-Xuo",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 66,
+      "media_url": "https://i.ytimg.com/vi/eLQ8aOx-Xuo/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-17T09:00:04Z",
+      "lang": "",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨奇跡",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「奇跡」 ある日、あなたも私と同じように、 血と肉 ...",
+      "url": "https://www.youtube.com/watch?v=jdB1D2Fc5Pk",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 59,
+      "media_url": "https://i.ytimg.com/vi/jdB1D2Fc5Pk/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -89,18 +113,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T09:00:15Z",
-      "lang": "",
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨始まりの讃歌",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「始まりの讃歌」 歌え、高らかに。 輝く生命は自由 ...",
-      "url": "https://www.youtube.com/watch?v=eLQ8aOx-Xuo",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 57,
-      "media_url": "https://i.ytimg.com/vi/eLQ8aOx-Xuo/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-06-17T11:48:04Z",
       "lang": "",
       "title": "망각전야) 융재 4파~5파 최종장 정복! 핵심 기믹 파훼 종결 공략",
@@ -113,15 +125,15 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T09:00:04Z",
+      "time": "2026-06-17T09:00:09Z",
       "lang": "",
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨奇跡",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「奇跡」 ある日、あなたも私と同じように、 血と肉 ...",
-      "url": "https://www.youtube.com/watch?v=jdB1D2Fc5Pk",
+      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨血の領域",
+      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「血の領域」 凡庸で、単調で、退屈で、変化のない ...",
+      "url": "https://www.youtube.com/watch?v=L4T-OhQQvYA",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 53,
-      "media_url": "https://i.ytimg.com/vi/jdB1D2Fc5Pk/hqdefault.jpg",
-      "content_type": "video"
+      "engagement": 50,
+      "media_url": "https://i.ytimg.com/vi/L4T-OhQQvYA/hqdefault.jpg",
+      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -131,21 +143,21 @@
       "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「砂の海に漂う」 広い空に、果てなく続く砂の海。",
       "url": "https://www.youtube.com/watch?v=Y8Zmhu4JZ0c",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 45,
+      "engagement": 48,
       "media_url": "https://i.ytimg.com/vi/Y8Zmhu4JZ0c/hqdefault.jpg",
-      "content_type": "image"
+      "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T09:00:09Z",
+      "time": "2026-06-17T20:41:28Z",
       "lang": "",
-      "title": "【忘却前夜 × 沙耶の唄】OST：タンポポの行方丨血の領域",
-      "summary": "「忘却前夜」×「沙耶の唄」コラボOriginal Sound Track『タンポポの行方』 「血の領域」 凡庸で、単調で、退屈で、変化のない ...",
-      "url": "https://www.youtube.com/watch?v=L4T-OhQQvYA",
-      "author": "忘却前夜【日本版公式】",
-      "engagement": 45,
-      "media_url": "https://i.ytimg.com/vi/L4T-OhQQvYA/hqdefault.jpg",
-      "content_type": "video"
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)롤체 조금 하다가",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "url": "https://www.youtube.com/watch?v=yMqHqcXktYc",
+      "author": "박현(Muyeong)",
+      "engagement": 35,
+      "media_url": "https://i.ytimg.com/vi/yMqHqcXktYc/hqdefault.jpg",
+      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -161,43 +173,19 @@
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T12:36:29Z",
-      "lang": "",
-      "title": "망각전야Morimens) (대리뽑,상담시청가능)롤체 조금 하다가",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "url": "https://www.youtube.com/watch?v=yMqHqcXktYc",
-      "author": "박현(Muyeong)",
-      "engagement": 31,
-      "media_url": "https://i.ytimg.com/vi/yMqHqcXktYc/hqdefault_live.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
       "time": "2026-06-17T11:06:34Z",
       "lang": "",
       "title": "What&#39;s ACTUALLY Happening?? | Morimens: Ark 1 Finale (Burrito Edition)",
       "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
       "url": "https://www.youtube.com/watch?v=JHgCwgMTi2Q",
       "author": "LowLivve",
-      "engagement": 28,
+      "engagement": 30,
       "media_url": "https://i.ytimg.com/vi/JHgCwgMTi2Q/hqdefault.jpg",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-06-17T06:45:45Z",
-      "lang": "",
-      "title": "What&#39;s ACTUALLY Happening?? | Morimens: Ark 1 Finale",
-      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
-      "url": "https://www.youtube.com/watch?v=0MjB5_4j2C4",
-      "author": "LowLivve",
-      "engagement": 23,
-      "media_url": "https://i.ytimg.com/vi/0MjB5_4j2C4/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-17T06:37:17Z",
+      "time": "2026-06-17T21:40:37Z",
       "lang": "",
       "title": "What&#39;s ACTUALLY Happening?? | Morimens: Ark 1 Finale (Burrito Edition)",
       "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
@@ -215,8 +203,20 @@
       "summary": "忘卻前夜#morimens.",
       "url": "https://www.youtube.com/watch?v=z2VCXjKx5MQ",
       "author": "瑪爾",
-      "engagement": 20,
+      "engagement": 21,
       "media_url": "https://i.ytimg.com/vi/z2VCXjKx5MQ/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-17T21:41:05Z",
+      "lang": "",
+      "title": "More Morimens",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=CgkLtXZVFn8",
+      "author": "Nazoric",
+      "engagement": 13,
+      "media_url": "https://i.ytimg.com/vi/CgkLtXZVFn8/hqdefault.jpg",
       "content_type": "image"
     },
     {
@@ -229,7 +229,7 @@
       "author": "Noir",
       "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/9jsRus1e5xk/hqdefault.jpg",
-      "content_type": "video"
+      "content_type": "image"
     },
     {
       "source": "youtube",
@@ -238,10 +238,34 @@
       "title": "[Morimens] A Quitter&#39;s first W5A5 clear, or: How not to play Bluwil",
       "summary": "Some of my teams are strong enough for A5, but my skill and will as a player aren't. I'm not getting any younger, so I might as well ...",
       "url": "https://www.youtube.com/watch?v=7mHdJheVPOE",
-      "author": "Alice Quitter",
-      "engagement": 2,
+      "author": "A:\\Quitter",
+      "engagement": 4,
       "media_url": "https://i.ytimg.com/vi/7mHdJheVPOE/hqdefault.jpg",
       "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-17T21:27:14Z",
+      "lang": "",
+      "title": "Morimens Arcade Mode W/Commentary",
+      "summary": "Thanks for Watching and please enjoy seeing how NOT to play Morimens. (I dont read my cards)",
+      "url": "https://www.youtube.com/watch?v=dpFsizfktCU",
+      "author": "Miss Stryfe",
+      "engagement": 3,
+      "media_url": "https://i.ytimg.com/vi/dpFsizfktCU/hqdefault.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-06-16T22:47:43Z",
+      "lang": "",
+      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画８",
+      "summary": "乱入者がいたけどまあいいでしょ.",
+      "url": "https://www.youtube.com/watch?v=vnBKIdedWu8",
+      "author": "和音",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/vnBKIdedWu8/hqdefault.jpg",
+      "content_type": "video"
     },
     {
       "source": "youtube",
@@ -277,18 +301,6 @@
       "author": "Emmaaaa",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/wpKB6O34zLE/hqdefault.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-06-16T22:47:43Z",
-      "lang": "",
-      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画８",
-      "summary": "乱入者がいたけどまあいいでしょ.",
-      "url": "https://www.youtube.com/watch?v=vnBKIdedWu8",
-      "author": "和音",
-      "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/vnBKIdedWu8/hqdefault.jpg",
       "content_type": "image"
     },
     {
