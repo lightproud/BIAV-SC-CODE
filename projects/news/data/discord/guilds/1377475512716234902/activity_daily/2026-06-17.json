@@ -1,12 +1,12 @@
 {
   "date": "2026-06-17",
-  "messages": 1422,
+  "messages": 1424,
   "unique_authors": 41,
-  "reactions_total": 379,
-  "attachments": 97,
+  "reactions_total": 382,
+  "attachments": 98,
   "channel_activity": {
-    "なんでも雑談": 1180,
-    "🔰初心者質問": 144,
+    "なんでも雑談": 1181,
+    "🔰初心者質問": 145,
     "元ネタ・モチーフ考察(ネタバレあり)": 1,
     "誰でも質問": 21,
     "描いたもの": 5,
@@ -19,6 +19,7 @@
     "招待コード共有会": 1
   },
   "hourly_activity": {
+    "20": 2,
     "18": 68,
     "15": 127,
     "16": 115,
@@ -40,7 +41,8 @@
     "2": 17
   },
   "message_types": {
-    "0": 60
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -172,6 +174,14 @@
       "channel": "誰でもOKグロ版野次馬スレ"
     },
     {
+      "id": "1516899780716921054",
+      "channel_id": "1377478664609857647",
+      "content": "何とか終わった… 2回もコンテ使わされた…",
+      "author": "kurokea",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1516850731963912224",
       "channel_id": "1377478664609857647",
       "content": "初めてのMy墓地(TT)",
@@ -191,14 +201,6 @@
       "id": "1516819817175318672",
       "channel_id": "1377478664609857647",
       "content": "~~ジュースさんやばいだけわかる~~",
-      "author": "foxcatfurry",
-      "reactions": 3,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1516819997186461897",
-      "channel_id": "1377478664609857647",
-      "content": "ジュースさん:カエクスえろ本適性",
       "author": "foxcatfurry",
       "reactions": 3,
       "channel": "なんでも雑談"
