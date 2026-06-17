@@ -1,0 +1,31 @@
+{
+  "date": "2025-09-04",
+  "messages": 7,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 5,
+    "TH Contribution": 1,
+    "DE Team Contribution": 1
+  },
+  "hourly_activity": {
+    "4": 5,
+    "14": 1,
+    "16": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1413017932220596244",
+      "channel_id": "1402941858606219294",
+      "content": "completely offtopic but i spent a few hours messing around with one of the boss ",
+      "author": "arkaether",
+      "reactions": 4,
+      "channel": "general-discussion"
+    }
+  ]
+}

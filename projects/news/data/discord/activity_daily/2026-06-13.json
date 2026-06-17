@@ -1,10 +1,11 @@
 {
   "date": "2026-06-13",
-  "messages": 17875,
+  "messages": 19907,
   "unique_authors": 457,
-  "reactions_total": 1498,
-  "attachments": 995,
+  "reactions_total": 1719,
+  "attachments": 1151,
   "channel_activity": {
+    "🔸game-question": 2032,
     "🔸general-chat": 4382,
     "🔸綜合討論": 3457,
     "🔸阵容构建": 327,
@@ -84,6 +85,13 @@
     "Who to use my 3 prototype horizons on?": 2
   },
   "hourly_activity": {
+    "0": 433,
+    "1": 926,
+    "2": 923,
+    "3": 762,
+    "4": 919,
+    "5": 856,
+    "6": 433,
     "13": 1109,
     "14": 1260,
     "15": 808,
@@ -95,13 +103,6 @@
     "21": 547,
     "22": 760,
     "23": 437,
-    "0": 252,
-    "1": 357,
-    "2": 473,
-    "3": 433,
-    "4": 718,
-    "5": 587,
-    "6": 400,
     "7": 962,
     "8": 916,
     "9": 851,
@@ -110,10 +111,9 @@
     "12": 1286
   },
   "message_types": {
-    "19": 744,
-    "0": 1554,
-    "23": 2,
-    "20": 7
+    "0": 1262,
+    "19": 754,
+    "20": 16
   },
   "top_reacted_messages": [
     {
@@ -197,6 +197,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1515187069511663637",
+      "channel_id": "1433513650299076780",
+      "content": "Got her in 15 pulls do I keep going",
+      "author": "spuddle",
+      "reactions": 6,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1515439792526196890",
       "channel_id": "1131839817982947429",
       "content": "这游戏的新手建议，先进语音频道谈谈心，了解一下人生哲学，分享屏幕理解他的box，看看钱包理解他的财力\n然后才能推荐他抽俩阿拉克涅一带三\n🤓 ☝️",
@@ -265,14 +273,6 @@
       "channel_id": "1131839817982947429",
       "content": "吃完饭一会去试一下5-5",
       "author": "xyakoto",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1515357559320481863",
-      "channel_id": "1131839817982947429",
-      "content": "日服聊天今天出現了婚禮戈\n水手服戈\n羞恥婚服戈",
-      "author": "foxcatfurry",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }

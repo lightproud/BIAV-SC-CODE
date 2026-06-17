@@ -1,0 +1,26 @@
+{
+  "date": "2025-10-11",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "english-english": 1
+  },
+  "hourly_activity": {
+    "9": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426495642145919026",
+      "channel_id": "1402538040253087766",
+      "content": "Hi guys,\n\nWe're still reviewing things, but I wanted to immediately share a coup",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "english-english"
+    }
+  ]
+}

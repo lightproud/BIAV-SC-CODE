@@ -1,0 +1,62 @@
+name: Discord Archive (Volunteer)
+
+# 志愿者服务器采集，与 Global 完全隔离：
+#   - 数据落 projects/news/data/discord/guilds/1402537664619479100/
+#   - 复用同一 bot（DISCORD_BOT_TOKEN），仅 guild_id 不同
+#   - 频繁运行以快速回填历史；不触碰 Global 数据
+on:
+  schedule:
+    # 每小时一次，offset :15 错开 Global（:00 增量 / :30 历史回填）
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: discord-archive-volunteer-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  VOLUNTEER_GUILD_ID: '1402537664619479100'
+
+jobs:
+  archive:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
+      - name: Run Discord archiver for volunteer guild
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ env.VOLUNTEER_GUILD_ID }}
+        # 默认 run()：增量 + 多月历史回填，频繁运行下历史会快速补齐。
+        # 数据根由 archiver 自动分层到 guilds/{guild_id}/（非 Global guild）。
+        run: python projects/news/scripts/discord_archiver.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/data/discord/guilds/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: archive volunteer Discord data [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in $((i * 2))s..."
+              sleep $((i * 2))
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi

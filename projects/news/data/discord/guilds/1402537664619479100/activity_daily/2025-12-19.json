@@ -1,0 +1,28 @@
+{
+  "date": "2025-12-19",
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 4,
+  "channel_activity": {
+    "general-discussion": 6
+  },
+  "hourly_activity": {
+    "4": 2,
+    "20": 4
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1451678049215971514",
+      "channel_id": "1402941858606219294",
+      "content": "starting from",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

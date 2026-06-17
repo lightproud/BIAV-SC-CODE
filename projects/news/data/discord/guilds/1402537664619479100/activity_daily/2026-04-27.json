@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-27",
+  "messages": 19,
+  "unique_authors": 4,
+  "reactions_total": 9,
+  "attachments": 7,
+  "channel_activity": {
+    "general-discussion": 14,
+    "links-and-resources": 5
+  },
+  "hourly_activity": {
+    "3": 10,
+    "7": 8,
+    "8": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1498160621269553253",
+      "channel_id": "1402537664619479103",
+      "content": "Hi guys, the latest source files are here!",
+      "author": "morimens_15",
+      "reactions": 5,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1498160721098440716",
+      "channel_id": "1402537664619479103",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "links-and-resources"
+    },
+    {
+      "id": "1498225443403464805",
+      "channel_id": "1402941858606219294",
+      "content": "if it didn't help, then when opening the `.csv` file, you'll need to open it fro",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1498226350417514557",
+      "channel_id": "1402941858606219294",
+      "content": "<:celeste_pray:1408324281624170566>",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

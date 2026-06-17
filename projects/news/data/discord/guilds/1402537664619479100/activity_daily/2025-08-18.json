@@ -1,0 +1,56 @@
+{
+  "date": "2025-08-18",
+  "messages": 8,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 4,
+  "channel_activity": {
+    "general-discussion": 1,
+    "self-introductions": 1,
+    "Some guidelines are not accessible": 3,
+    "General server feedback": 3
+  },
+  "hourly_activity": {
+    "11": 2,
+    "13": 2,
+    "14": 3,
+    "17": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1406970699574280283",
+      "channel_id": "1406970664145129473",
+      "content": "Hello, keepers! If you'd like, leave a short self-introduction here after grabbi",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "self-introductions"
+    },
+    {
+      "id": "1406996874061152286",
+      "channel_id": "1406996874061152286",
+      "content": "Reading through the github readme, I see that the \"**existing Term Base and Styl",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "Some guidelines are not accessible"
+    },
+    {
+      "id": "1407003693592870993",
+      "channel_id": "1407003693592870993",
+      "content": "1. currently the \\@everyone role has the right to make invites (i.e I was able t",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "General server feedback"
+    },
+    {
+      "id": "1407050754417491978",
+      "channel_id": "1407003693592870993",
+      "content": "Addendum to **2.** the order of the emotes on the role selection message is wron",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "General server feedback"
+    }
+  ]
+}

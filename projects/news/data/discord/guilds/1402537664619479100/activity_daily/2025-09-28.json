@@ -1,0 +1,69 @@
+{
+  "date": "2025-09-28",
+  "messages": 27,
+  "unique_authors": 3,
+  "reactions_total": 8,
+  "attachments": 9,
+  "channel_activity": {
+    "general-discussion": 17,
+    "project-coordination": 6,
+    "relevant-forwards": 2,
+    "Resonance Questions": 2
+  },
+  "hourly_activity": {
+    "4": 2,
+    "5": 17,
+    "3": 1,
+    "11": 1,
+    "14": 1,
+    "21": 3,
+    "22": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 19,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421694601177202729",
+      "channel_id": "1416615133479960647",
+      "content": "Here it is y'all! Let's all jump on this and get a huge chunk of content done al",
+      "author": "omnichromia",
+      "reactions": 4,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1421727385669079121",
+      "channel_id": "1402941858606219294",
+      "content": "well, remember we get event reruns with every rerun banner",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1421976184677470289",
+      "channel_id": "1416615133479960647",
+      "content": "Yes, including the flavor texts.",
+      "author": "wisteriavine11",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1422001219190132756",
+      "channel_id": "1416615133479960647",
+      "content": "Me and Nero did the translation and proofreading!",
+      "author": "wisteriavine11",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1421977424609939498",
+      "channel_id": "1421974900742164500",
+      "content": "These are Resonance-related Map Nodes. What chapters or side stories do they bel",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "Resonance Questions"
+    }
+  ]
+}

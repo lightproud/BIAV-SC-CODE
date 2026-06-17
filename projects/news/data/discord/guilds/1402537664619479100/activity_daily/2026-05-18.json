@@ -1,0 +1,67 @@
+{
+  "date": "2026-05-18",
+  "messages": 28,
+  "unique_authors": 8,
+  "reactions_total": 5,
+  "attachments": 5,
+  "channel_activity": {
+    "english-english": 3,
+    "general-discussion": 25
+  },
+  "hourly_activity": {
+    "4": 3,
+    "7": 6,
+    "8": 2,
+    "9": 1,
+    "15": 6,
+    "16": 2,
+    "17": 3,
+    "19": 5
+  },
+  "message_types": {
+    "0": 21,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1505828762435059772",
+      "channel_id": "1402941858606219294",
+      "content": "sure! Take your time. There is no rush",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1505951073049903235",
+      "channel_id": "1402941858606219294",
+      "content": "I don't know for the second image but for Sorel 2 cost, I see that in CN there's",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1505952943151644833",
+      "channel_id": "1402941858606219294",
+      "content": "Prolly that at some point, there was an Arg5 in the CN skill too but it has been",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1505953231853846618",
+      "channel_id": "1402941858606219294",
+      "content": "Got it",
+      "author": "anicillia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1505977104595161109",
+      "channel_id": "1402941858606219294",
+      "content": "Found someone who managed somehow to put the Rich Text Tag for Fiamma into their",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

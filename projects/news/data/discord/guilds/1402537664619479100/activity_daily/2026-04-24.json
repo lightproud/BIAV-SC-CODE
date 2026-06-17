@@ -1,0 +1,29 @@
+{
+  "date": "2026-04-24",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "project-coordination": 2,
+    "coordination-uploads": 2
+  },
+  "hourly_activity": {
+    "3": 3,
+    "4": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1497078472206454875",
+      "channel_id": "1446619934565204231",
+      "content": "Compiled!",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "coordination-uploads"
+    }
+  ]
+}

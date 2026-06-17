@@ -1,0 +1,36 @@
+{
+  "date": "2025-08-06",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 216,
+  "attachments": 0,
+  "channel_activity": {
+    "welcome-and-roles": 3,
+    "links-and-resources": 1
+  },
+  "hourly_activity": {
+    "7": 2,
+    "13": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1402549857943552051",
+      "channel_id": "1402537664619479102",
+      "content": "",
+      "author": "Carl-bot",
+      "reactions": 141,
+      "channel": "welcome-and-roles"
+    },
+    {
+      "id": "1402548257044828160",
+      "channel_id": "1402537664619479102",
+      "content": "",
+      "author": "Carl-bot",
+      "reactions": 75,
+      "channel": "welcome-and-roles"
+    }
+  ]
+}

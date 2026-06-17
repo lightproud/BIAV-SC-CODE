@@ -1,0 +1,32 @@
+{
+  "date": "2025-09-24",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "如何解決翻譯與校對人員的同步編輯衝突問題？": 1,
+    "Can Pickman's E1 draw Derived Commands?": 9
+  },
+  "hourly_activity": {
+    "3": 1,
+    "7": 1,
+    "8": 1,
+    "10": 2,
+    "11": 3,
+    "19": 2
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1420250141260124160",
+      "channel_id": "1419179851272814602",
+      "content": "RU team rep here\nRn we've got 5 people, we do have a professional orientalist sp",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "如何解決翻譯與校對人員的同步編輯衝突問題？"
+    }
+  ]
+}

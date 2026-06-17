@@ -85,17 +85,13 @@ ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 # backfill_platforms.py 的 PLATFORM_BACKFILLERS 实际支持的源（务必与之同步）
 BACKFILL_PLATFORMS = [
     'bilibili', 'appstore', 'steam_review', 'arca_live',
-    'pixiv', 'ruliweb', 'weixin',
+    'pixiv', 'ruliweb', 'weixin', 'taptap',
 ]
 
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。
 # 不再产出新数据，仅供审计可见（避免被静默源审计无视）。
 LEGACY_SOURCES = [
-    'dcinside',
-    'gamerch',
-    'miraheze_wiki',
     'taptap_post',
-    'telegram',  # 停采 2026-06-15：dormant 68 天、历史总产出仅 3 条，移出产线、保留历史档案供审计
 ]
 
 
