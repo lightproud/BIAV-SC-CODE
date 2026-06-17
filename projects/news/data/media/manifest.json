@@ -12816,6 +12816,13 @@
       "title": "Morimens Arcade Mode W/Commentary",
       "time": "2026-06-17T21:27:14Z",
       "downloaded_at": "2026-06-17T21:57:33.431166+00:00"
+    },
+    "https://i.ytimg.com/vi/efOnLgOXDfQ/hqdefault.jpg": {
+      "filename": "youtube_24da8f6b04fc29e0.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-17T19:44:21Z",
+      "downloaded_at": "2026-06-17T23:18:23.853621+00:00"
     }
   },
   "failed": {
@@ -18798,6 +18805,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-17T19:59:51.997477+00:00"
+    },
+    "https://preview.redd.it/minxju9xcu7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=83e9a98f8bdf01b819098b8b20dc35331d5f6330": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T23:18:23.102289+00:00"
+    },
+    "https://preview.redd.it/1wv907odax7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=755eaa41226ef14d25c289395896431ab6d50fbe": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-17T23:18:23.439376+00:00"
     }
   },
   "archived": []

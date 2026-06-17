@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-17T21:57:33.528999+00:00",
+  "archived_at": "2026-06-17T23:18:23.953997+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] fire gacha game",
@@ -44,6 +44,50 @@
         "playtime_forever": 61,
         "votes_up": 0,
         "timestamp_created": 1781716787
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] good",
+      "summary": "good",
+      "source": "steam_review",
+      "time": "2026-06-17T21:32:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199812206132/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199812206132",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7269,
+        "votes_up": 0,
+        "timestamp_created": 1781731927
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Какие же красивые и оригинальные арты в этой игре,...",
+      "summary": "Какие же красивые и оригинальные арты в этой игре, госпадее",
+      "source": "steam_review",
+      "time": "2026-06-17T20:56:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199442094030/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199442094030",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 125,
+        "votes_up": 0,
+        "timestamp_created": 1781729792
       },
       "lang": "",
       "platform_region": "global"

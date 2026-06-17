@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-17T21:57:26.416247+00:00",
+  "collected_at": "2026-06-17T23:18:22.350997+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -77,6 +77,36 @@
       "review": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
       "timestamp_created": 1781664419,
       "playtime_forever": 716
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-17T21:32:07+00:00",
+      "lang": "english",
+      "title": "[正面] good",
+      "summary": "good",
+      "url": "https://steamcommunity.com/profiles/76561199812206132/recommended/3052450",
+      "author": "76561199812206132",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good",
+      "timestamp_created": 1781731927,
+      "playtime_forever": 7269
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-17T20:56:32+00:00",
+      "lang": "russian",
+      "title": "[正面] Какие же красивые и оригинальные арты в этой игре,...",
+      "summary": "Какие же красивые и оригинальные арты в этой игре, госпадее",
+      "url": "https://steamcommunity.com/profiles/76561199442094030/recommended/3052450",
+      "author": "76561199442094030",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Какие же красивые и оригинальные арты в этой игре, госпадее",
+      "timestamp_created": 1781729792,
+      "playtime_forever": 125
     },
     {
       "source": "steam",
