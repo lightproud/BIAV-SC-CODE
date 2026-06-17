@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-17T00:10:27.348633+00:00",
+  "collected_at": "2026-06-17T06:00:51.891372+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-17T02:46:59+00:00",
+      "lang": "english",
+      "title": "[正面] Really cool game. Not money-grabby at all so far....",
+      "summary": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
+      "url": "https://steamcommunity.com/profiles/76561198085050028/recommended/3052450",
+      "author": "76561198085050028",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
+      "timestamp_created": 1781664419,
+      "playtime_forever": 716
+    },
     {
       "source": "steam",
       "time": "2026-06-16T21:24:00+00:00",
@@ -16,7 +31,7 @@
       "voted_up": true,
       "review": "The game is so graphic that despite being a Chinese game, it cannot pass local regulation to be released at home. \n\nI think that should suffice to pique your curiosity.",
       "timestamp_created": 1781645040,
-      "playtime_forever": 9865
+      "playtime_forever": 9970
     },
     {
       "source": "steam",
@@ -92,36 +107,6 @@
       "review": "Best game i think",
       "timestamp_created": 1781608543,
       "playtime_forever": 5228
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-16T04:55:20+00:00",
-      "lang": "english",
-      "title": "[正面] I don't normally feel good about recommending gach...",
-      "summary": "I don't normally feel good about recommending gacha games and this one is not without its flaws, but it's a real underrated gem.\n\nIf you like card battlers, Morimens is an addicting one, and one of the most generous gachas I've played (and I've unfortunately played a few lol). It's also inspired largely by Slay the Spire, so if you enjoy that style of cardbattler this could be for you. The story/lore is there, the gameplay is there, the art design is there, and the devs have shown time and again that they value player feedback and don't prioritize profit over truly fun and balanced gameplay; a rare phenomenon these days. Every unit is a viable option for endgame -- even the standard ones -- making the nonzero amount of powercreep essentially negligible. Really fun and interesting variation in playstyles, too, so there's something for everyone in that regard (my favorite build was Salvador, Sanga, and Thais (+ whoever, I could never decide lmao) - stacking a bunch of shield to convert it to damage and dealing half of or sometimes the entire boss's health bar is SO satisfying).\n\nIf you can get through the obligatory gacha overstimulation of it all (a million random items to claim on a million different screens, etc.), you'll see why it's worth the mild inconvenience. This game is made with honest to god love for the genre and it shows. It's also not without saying that the devs intend to optimize the game so that, should they ever go EOS, players can still enjoy it long after the servers have shut down. Pretty neat if you ask me!",
-      "url": "https://steamcommunity.com/profiles/76561198822717965/recommended/3052450",
-      "author": "76561198822717965",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I don't normally feel good about recommending gacha games and this one is not without its flaws, but it's a real underrated gem.\n\nIf you like card battlers, Morimens is an addicting one, and one of the most generous gachas I've played (and I've unfortunately played a few lol). It's also inspired largely by Slay the Spire, so if you enjoy that style of cardbattler this could be for you. The story/lore is there, the gameplay is there, the art design is there, and the devs have shown time and again that they value player feedback and don't prioritize profit over truly fun and balanced gameplay; a rare phenomenon these days. Every unit is a viable option for endgame -- even the standard ones -- making the nonzero amount of powercreep essentially negligible. Really fun and interesting variation in playstyles, too, so there's something for everyone in that regard (my favorite build was Salvador, Sanga, and Thais (+ whoever, I could never decide lmao) - stacking a bunch of shield to convert it to damage and dealing half of or sometimes the entire boss's health bar is SO satisfying).\n\nIf you can get through the obligatory gacha overstimulation of it all (a million random items to claim on a million different screens, etc.), you'll see why it's worth the mild inconvenience. This game is made with honest to god love for the genre and it shows. It's also not without saying that the devs intend to optimize the game so that, should they ever go EOS, players can still enjoy it long after the servers have shut down. Pretty neat if you ask me!",
-      "timestamp_created": 1781585720,
-      "playtime_forever": 6419
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-16T01:02:56+00:00",
-      "lang": "english",
-      "title": "[正面] It's so good.",
-      "summary": "It's so good.",
-      "url": "https://steamcommunity.com/profiles/76561198093962232/recommended/3052450",
-      "author": "76561198093962232",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "It's so good.",
-      "timestamp_created": 1781571776,
-      "playtime_forever": 984
     }
   ]
 }
