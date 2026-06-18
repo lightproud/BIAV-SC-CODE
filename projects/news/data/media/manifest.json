@@ -12858,6 +12858,55 @@
       "title": "Story Has Concluded.. So What Now? | Morimens: Ark 2- Start!",
       "time": "2026-06-17T10:55:20Z",
       "downloaded_at": "2026-06-18T02:36:53.874929+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f4a63ca20c477afbfeaa6b87d66737cbb744dfa6.jpg": {
+      "filename": "bilibili_bdff1b7e4cedc0a5.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌11",
+      "time": "2026-06-18T01:24:23+00:00",
+      "downloaded_at": "2026-06-18T07:28:03.797656+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/ea27857b36e06d5c45292e557edd3b4ac788b28e.jpg": {
+      "filename": "bilibili_a30c780fa8a07b23.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 鼠鼠打乐园 癫狂列车",
+      "time": "2026-06-17T14:29:47+00:00",
+      "downloaded_at": "2026-06-18T07:28:04.256241+00:00"
+    },
+    "https://i.ytimg.com/vi/99FX2A_XCPA/hqdefault.jpg": {
+      "filename": "youtube_20f442140e37b3e2.jpg",
+      "source": "youtube",
+      "title": "Story Has Concluded.. So What Now? | Morimens: Ark 2- Start!",
+      "time": "2026-06-18T06:28:03Z",
+      "downloaded_at": "2026-06-18T07:28:04.931250+00:00"
+    },
+    "https://i.ytimg.com/vi/M9YY1pqzu6s/hqdefault.jpg": {
+      "filename": "youtube_2b97e4ddcea66f31.jpg",
+      "source": "youtube",
+      "title": "Morimens - Day 6",
+      "time": "2026-06-18T05:18:40Z",
+      "downloaded_at": "2026-06-18T07:28:05.337635+00:00"
+    },
+    "https://i.ytimg.com/vi/oG5vOLiSiZE/hqdefault_live.jpg": {
+      "filename": "youtube_8c1c6f1e9be46838.jpg",
+      "source": "youtube",
+      "title": "Bài Ca Hồi Ức (MV) - Morimens X Saya no Uta - Theme Song | Song of Memento Vietnamese Cover.",
+      "time": "2026-06-18T06:42:12Z",
+      "downloaded_at": "2026-06-18T07:28:05.998742+00:00"
+    },
+    "https://i.ytimg.com/vi/2LOQNBF3Fcg/hqdefault.jpg": {
+      "filename": "youtube_1d0193db792e65a2.jpg",
+      "source": "youtube",
+      "title": "Morimens Aigis Story Conclusion",
+      "time": "2026-06-18T04:28:29Z",
+      "downloaded_at": "2026-06-18T07:28:06.826871+00:00"
+    },
+    "https://i.ytimg.com/vi/TZf_N__3dZI/hqdefault.jpg": {
+      "filename": "youtube_19e33649fb5f07f1.jpg",
+      "source": "youtube",
+      "title": "Morimens | Phantasmal Dive VI - Vortice/Nautila/Caecus/Tawil",
+      "time": "2026-06-18T03:06:50Z",
+      "downloaded_at": "2026-06-18T07:28:07.213883+00:00"
     }
   },
   "failed": {
@@ -18860,6 +18909,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T02:36:52.982754+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/ea27857b36e06d5c45292e557edd3b4ac788b28e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T07:28:04.556682+00:00"
     }
   },
   "archived": []

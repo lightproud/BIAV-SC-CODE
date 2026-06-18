@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T02:36:53.965875+00:00",
+  "archived_at": "2026-06-18T07:28:07.291206+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "【静止画MAD】你存在的证明【沙耶之歌】",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/9bf6627b9bee802ccce523211784b93971cd8310.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶之歌11",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-18T01:24:23+00:00",
+      "url": "https://www.bilibili.com/video/BV1MSjF6oEkW",
+      "engagement": 238,
+      "is_hot": false,
+      "author": "黑白魔狼",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 238,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/f4a63ca20c477afbfeaa6b87d66737cbb744dfa6.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-18T02:36:49.310722+00:00",
+  "collected_at": "2026-06-18T07:28:01.974272+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "好玩爱玩，卡牌发的感觉自己要长脑子了，但这个五星不是给校猫策划的，策划给到负数抓紧滚出世界",
       "timestamp_created": 1781709320,
-      "playtime_forever": 2162
+      "playtime_forever": 2219
     },
     {
       "source": "steam",
@@ -65,18 +65,78 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-17T02:46:59+00:00",
+      "time": "2026-06-18T06:18:04+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩，美术和音乐都好评，虽然后期全是数值逆天，但是还是爱不释手",
+      "summary": "好玩，美术和音乐都好评，虽然后期全是数值逆天，但是还是爱不释手",
+      "url": "https://steamcommunity.com/profiles/76561199690279305/recommended/3052450",
+      "author": "76561199690279305",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩，美术和音乐都好评，虽然后期全是数值逆天，但是还是爱不释手",
+      "timestamp_created": 1781763484,
+      "playtime_forever": 12264
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T02:18:31+00:00",
+      "lang": "spanish",
+      "title": "[正面] goty",
+      "summary": "goty",
+      "url": "https://steamcommunity.com/profiles/76561198099687683/recommended/3052450",
+      "author": "76561198099687683",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "goty",
+      "timestamp_created": 1781749111,
+      "playtime_forever": 62031
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T02:18:09+00:00",
       "lang": "english",
-      "title": "[正面] Really cool game. Not money-grabby at all so far....",
-      "summary": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
-      "url": "https://steamcommunity.com/profiles/76561198085050028/recommended/3052450",
-      "author": "76561198085050028",
-      "engagement": 1,
+      "title": "[正面] cute game",
+      "summary": "cute game",
+      "url": "https://steamcommunity.com/profiles/76561199886350330/recommended/3052450",
+      "author": "76561199886350330",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Really cool game. Not money-grabby at all so far. Actual skill involvement so you can go past the recommended level caps. Anime girl Black Butler in terms of plot; shockingly well written.",
-      "timestamp_created": 1781664419,
-      "playtime_forever": 716
+      "review": "cute game",
+      "timestamp_created": 1781749089,
+      "playtime_forever": 906
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T02:05:30+00:00",
+      "lang": "english",
+      "title": "[正面] Game good.",
+      "summary": "Game good.",
+      "url": "https://steamcommunity.com/profiles/76561198343261233/recommended/3052450",
+      "author": "76561198343261233",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Game good.",
+      "timestamp_created": 1781748330,
+      "playtime_forever": 679
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T01:21:47+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩爱玩，这种血腥克苏鲁风格的二游爽完了，福利也是非常到位",
+      "summary": "好玩爱玩，这种血腥克苏鲁风格的二游爽完了，福利也是非常到位",
+      "url": "https://steamcommunity.com/profiles/76561199218933137/recommended/3052450",
+      "author": "76561199218933137",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩爱玩，这种血腥克苏鲁风格的二游爽完了，福利也是非常到位",
+      "timestamp_created": 1781745707,
+      "playtime_forever": 380
     },
     {
       "source": "steam",
@@ -91,7 +151,7 @@
       "voted_up": true,
       "review": "good",
       "timestamp_created": 1781731927,
-      "playtime_forever": 7419
+      "playtime_forever": 7779
     },
     {
       "source": "steam",
