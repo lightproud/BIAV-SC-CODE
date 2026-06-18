@@ -1,10 +1,13 @@
 {
   "date": "2026-01-21",
-  "messages": 138,
-  "unique_authors": 30,
-  "reactions_total": 113,
-  "attachments": 21,
+  "messages": 12784,
+  "unique_authors": 238,
+  "reactions_total": 2298,
+  "attachments": 382,
   "channel_activity": {
+    "🔸綜合討論": 2079,
+    "🔸阵容构建": 38,
+    "🔸morimens-game-chat": 10529,
     "The Scholar's Last Paper": 1,
     "Gpreg": 2,
     "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 5,
@@ -27,31 +30,36 @@
     "1455822126568308957": 5
   },
   "hourly_activity": {
-    "15": 4,
-    "16": 7,
-    "3": 1,
-    "4": 3,
-    "7": 4,
-    "8": 7,
-    "12": 48,
-    "13": 8,
-    "14": 15,
-    "17": 3,
-    "22": 2,
-    "2": 2,
-    "18": 1,
-    "19": 1,
-    "5": 2,
-    "9": 4,
-    "10": 11,
-    "1": 4,
-    "23": 5,
-    "11": 2,
-    "6": 4
+    "0": 768,
+    "1": 334,
+    "2": 192,
+    "3": 427,
+    "4": 527,
+    "5": 374,
+    "6": 281,
+    "7": 193,
+    "8": 381,
+    "9": 631,
+    "10": 455,
+    "11": 837,
+    "12": 1444,
+    "13": 1173,
+    "14": 1023,
+    "15": 756,
+    "16": 481,
+    "17": 457,
+    "18": 276,
+    "19": 265,
+    "23": 530,
+    "20": 221,
+    "21": 499,
+    "22": 259
   },
   "message_types": {
-    "0": 63,
-    "19": 17
+    "0": 8625,
+    "19": 4019,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -60,6 +68,38 @@
       "author": "ass191044",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1463325697664745666",
+      "channel_id": "1170692781216378960",
+      "content": "I wanna vibe with people without having to be mindful",
+      "author": "brainrot_in_a_vat",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463623256970887313",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 13,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1463466210166312992",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463520368789819457",
+      "channel_id": "1170692781216378960",
+      "content": "Cn Xu teams are gonna have more hp than boss <:Tawil_loneliness:1460158738110349",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1463557310860496999",
@@ -76,11 +116,75 @@
       "channel": ""
     },
     {
+      "id": "1463536229088755792",
+      "channel_id": "1170692781216378960",
+      "content": "Hahahaaha LMFAO. The doresain cope",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463483838847127627",
       "content": "哎呦怎麼這裡有個男模🫳",
       "author": "ass191044",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1463325219664957487",
+      "channel_id": "1131839817982947429",
+      "content": "🍅",
+      "author": "zier.0",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463529742278983825",
+      "channel_id": "1131839817982947429",
+      "content": "沒事 有蔡徐..",
+      "author": "200000139",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463396478016946298",
+      "channel_id": "1131839817982947429",
+      "content": "然後記得我當時用著毒上限還沒提升的血肉毒\n80k毒打2000k血會復活5次的杜勒\n拼盡全力打贏了",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463520962317389846",
+      "channel_id": "1170692781216378960",
+      "content": "Salv xu goliath caecus\n0 synergy, 0 damage taken, 7m max hp",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463529567842078730",
+      "channel_id": "1170692781216378960",
+      "content": "<:agree:1400771815076528258> Kill all poison users",
+      "author": "joker_0108",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463538486991786066",
+      "channel_id": "1170692781216378960",
+      "content": "67%",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463538797672272149",
+      "channel_id": "1170692781216378960",
+      "content": "Yo nvm fuck you light",
+      "author": "sans_ia",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1463540146422022186",
@@ -90,109 +194,28 @@
       "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
-      "id": "1463518565956321353",
-      "content": "",
-      "author": "carme.0588",
-      "reactions": 6,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+      "id": "1463462676515520546",
+      "channel_id": "1131839817982947429",
+      "content": "我还有1万6的海胆",
+      "author": "bailuoxiao",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1463354386754437220",
-      "content": "https://x.com/i/status/2013355358358479178\nForgot",
-      "author": "kiriwoamizaki",
-      "reactions": 5,
-      "channel": "Art dump thread"
+      "id": "1463581798507221044",
+      "channel_id": "1131839817982947429",
+      "content": "终于过了",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1463606197545468098",
-      "content": "I'm soooo lazy",
-      "author": "kiriwoamizaki",
-      "reactions": 5,
-      "channel": "Art dump thread"
-    },
-    {
-      "id": "1463434461315338290",
-      "content": "I know Morimens have a small team and it is difficult at this time, but I hope a",
-      "author": "chiwazuki",
-      "reactions": 4,
-      "channel": "Global store to sell merch"
-    },
-    {
-      "id": "1463497315653517522",
-      "content": "我用不了",
-      "author": "akkom730",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1463512676788342916",
-      "content": "玲瓏骰子安紅豆，入骨相思知不知",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463387435130945652",
-      "content": "",
-      "author": "megadumb_aru",
-      "reactions": 2,
-      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
-    },
-    {
-      "id": "1463512503769239649",
-      "content": "non human humanoids ig",
-      "author": "rye_ribs",
-      "reactions": 2,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463354586956955751",
-      "content": "Incredible. Wow . Wow. I'm a big fan",
-      "author": "kiriwoamizaki",
-      "reactions": 2,
-      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
-    },
-    {
-      "id": "1463403108380971008",
-      "content": "正在努力把他畫得更狗💪💪",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
-    },
-    {
-      "id": "1463593276685811804",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1463515017050853491",
-      "content": "0启可用反正是",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463525229094768841",
-      "content": "感觉下毒效率一般？全靠一个二费，应该还是偏向毒爆辅助，没办法像融朵那样自己下毒自己爆？<:Brown_think:1459080117308620996>",
-      "author": "xmj140028",
-      "reactions": 1,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463615008985317448",
-      "content": "Xu kit revealed <:Helot_slack_off:1459092159465521184> That's francis but suppor",
-      "author": "yeriko703",
-      "reactions": 1,
-      "channel": "Awakener Kit Speculation: Francis"
-    },
-    {
-      "id": "1463462435527852134",
-      "content": "佬🛐",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": ""
+      "id": "1463515985926684807",
+      "channel_id": "1170692781216378960",
+      "content": "Kit out?",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

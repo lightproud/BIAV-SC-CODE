@@ -1,10 +1,13 @@
 {
   "date": "2026-01-10",
-  "messages": 116,
-  "unique_authors": 11,
-  "reactions_total": 45,
-  "attachments": 16,
+  "messages": 7749,
+  "unique_authors": 158,
+  "reactions_total": 1020,
+  "attachments": 340,
   "channel_activity": {
+    "🔸綜合討論": 1075,
+    "🔸阵容构建": 77,
+    "🔸morimens-game-chat": 6481,
     "I errr....": 12,
     "Tulu: Fauxborn": 2,
     "☔┆Lonely Club": 1,
@@ -26,35 +29,58 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "3": 12,
-    "0": 1,
-    "8": 2,
-    "15": 3,
-    "4": 3,
-    "9": 5,
-    "16": 5,
-    "1": 2,
-    "12": 1,
-    "14": 1,
-    "18": 3,
-    "5": 3,
-    "23": 1,
-    "10": 3,
-    "11": 69,
-    "13": 1,
-    "7": 1
+    "0": 209,
+    "2": 103,
+    "3": 263,
+    "4": 434,
+    "5": 197,
+    "6": 91,
+    "7": 356,
+    "8": 290,
+    "9": 311,
+    "10": 134,
+    "11": 241,
+    "12": 181,
+    "13": 813,
+    "14": 753,
+    "15": 519,
+    "16": 160,
+    "17": 622,
+    "18": 562,
+    "19": 525,
+    "20": 259,
+    "21": 72,
+    "23": 181,
+    "1": 97,
+    "22": 376
   },
   "message_types": {
-    "19": 3,
-    "0": 18
+    "0": 5583,
+    "19": 2050
   },
   "top_reacted_messages": [
+    {
+      "id": "1459534304702103655",
+      "channel_id": "1170692781216378960",
+      "content": "Dont pull ultra standard",
+      "author": "undeterredhomo",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1459566607503331409",
       "content": "",
       "author": "kirikonuto",
       "reactions": 16,
       "channel": "☔┆Lonely Club"
+    },
+    {
+      "id": "1459556176491708529",
+      "channel_id": "1131839817982947429",
+      "content": "視姦新手玩忘卻",
+      "author": "water_heart",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1459555990478524569",
@@ -64,60 +90,132 @@
       "channel": "Possibilty of rebalancing Wanda?"
     },
     {
-      "id": "1459413073269100574",
+      "id": "1459545164036046934",
+      "channel_id": "1131839817982947429",
+      "content": "5次😡",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1459568931256668257",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1459339459178004511",
+      "channel_id": "1170692781216378960",
+      "content": "Which realm are you betting on for the next unit?",
+      "author": "2ndselna",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459494080114331719",
+      "channel_id": "1170692781216378960",
+      "content": "POP DA BABY",
+      "author": "takatorrabatta",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459658224059027651",
+      "channel_id": "1170692781216378960",
+      "content": "i need to make more gif shitposts",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459412006036570243",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1459410265862045747",
+      "channel_id": "1131839874132090890",
+      "content": "~~我有46靈芝~~",
+      "author": "aaaa_00098",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1459336497500262595",
+      "channel_id": "1170692781216378960",
+      "content": "Finally got my first 400. Could still push further but don't feel like bothering",
+      "author": "volcanise",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459407853839454260",
+      "channel_id": "1170692781216378960",
+      "content": "even with dive being a deadge mode i managed to get a top 10 score which is kind",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459534528136610062",
+      "channel_id": "1170692781216378960",
+      "content": "Wait youre new? Can you use my code <:pray:1400771650064089112>",
+      "author": "undeterredhomo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459543712811057152",
+      "channel_id": "1170692781216378960",
+      "content": "6 and 7 are going to take a while even if you rush",
+      "author": "redo50",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459545326196359241",
+      "channel_id": "1170692781216378960",
+      "content": "I agree that Aequor used to be the worst realm at some point\nBut because of stat",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459584135210471544",
+      "channel_id": "1170692781216378960",
+      "content": "A bird delivers a baby",
+      "author": "sno_w",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459599251758649570",
+      "channel_id": "1170692781216378960",
+      "content": "Why don't we skip the tree and just stab her?",
+      "author": "hammer2830",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459371976677130535",
+      "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 4,
-      "channel": "建議讓戰鬥統計也能顯示助戰的具體數值"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1459488942544916542",
-      "content": "（可结合自制概念PV食用）\n\n超维·列维\n辅助型    体质：90  攻击力：180  防御力：180\n人格深化：界域精通，狂气回充      天赋：时空旅者\n",
-      "author": "luqia_29222_90947",
+      "id": "1459559695890255965",
+      "channel_id": "1131839817982947429",
+      "content": "我在視姦的是用摸蝦入坑3天就打到第八章的新手",
+      "author": "water_heart",
       "reactions": 4,
-      "channel": "唤醒体设计：列维"
-    },
-    {
-      "id": "1459504295199113349",
-      "content": "我想起了某深紅色腦子飛在空中的故人",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "唤醒体设计：列维"
-    },
-    {
-      "id": "1459337748975452446",
-      "content": "does that mean he got 🫃",
-      "author": "zzio_",
-      "reactions": 2,
-      "channel": "Tulu: Fauxborn"
-    },
-    {
-      "id": "1459585317429575864",
-      "content": "true that, here’s hoping they give Wanda literally anything, maybe after the thi",
-      "author": "bagels5899",
-      "reactions": 2,
-      "channel": "Possibilty of rebalancing Wanda?"
-    },
-    {
-      "id": "1459469838899740693",
-      "content": "I suppose it's either 🫃and GMurphy doesn't exist or he's GMurphy's son and Mirya",
-      "author": "happyskull",
-      "reactions": 1,
-      "channel": "Tulu: Fauxborn"
-    },
-    {
-      "id": "1459582253603750173",
-      "content": "My goal is only to just leave a ping for the devs to know that wanda enjoyers st",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "Possibilty of rebalancing Wanda?"
-    },
-    {
-      "id": "1459512180553551882",
-      "content": "~~边改边丢~~",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+      "channel": "🔸綜合討論"
     }
   ]
 }

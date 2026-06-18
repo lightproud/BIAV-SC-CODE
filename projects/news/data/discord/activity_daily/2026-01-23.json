@@ -1,10 +1,12 @@
 {
   "date": "2026-01-23",
-  "messages": 188,
-  "unique_authors": 26,
-  "reactions_total": 450,
-  "attachments": 31,
+  "messages": 8430,
+  "unique_authors": 180,
+  "reactions_total": 2207,
+  "attachments": 342,
   "channel_activity": {
+    "🔸綜合討論": 1593,
+    "🔸morimens-game-chat": 6649,
     "leonora": 15,
     "Tulu 👑": 4,
     "larry.": 5,
@@ -33,31 +35,36 @@
     "1455822126568308957": 17
   },
   "hourly_activity": {
-    "0": 5,
-    "2": 13,
-    "7": 9,
-    "8": 7,
-    "19": 4,
-    "20": 2,
-    "22": 3,
-    "10": 38,
-    "12": 40,
-    "18": 5,
-    "6": 11,
-    "11": 17,
-    "13": 7,
-    "15": 2,
-    "16": 2,
-    "17": 6,
-    "1": 2,
-    "3": 3,
-    "4": 2,
-    "14": 5,
-    "9": 5
+    "0": 57,
+    "1": 282,
+    "2": 190,
+    "3": 219,
+    "4": 632,
+    "5": 418,
+    "6": 254,
+    "7": 176,
+    "8": 320,
+    "9": 390,
+    "10": 623,
+    "11": 419,
+    "12": 419,
+    "13": 650,
+    "14": 429,
+    "15": 458,
+    "16": 622,
+    "17": 413,
+    "18": 490,
+    "20": 385,
+    "22": 108,
+    "23": 51,
+    "19": 283,
+    "21": 142
   },
   "message_types": {
-    "0": 56,
-    "19": 9
+    "0": 5701,
+    "19": 2539,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -110,11 +117,27 @@
       "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
     },
     {
+      "id": "1464255139023032544",
+      "channel_id": "1170692781216378960",
+      "content": "if you want an unfiltered opinion, then it's nice to see morimens returning to t",
+      "author": "reya.li",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1464205689214734500",
       "content": "",
       "author": "ahong0727",
       "reactions": 16,
       "channel": "larry."
+    },
+    {
+      "id": "1464248214151630984",
+      "channel_id": "1170692781216378960",
+      "content": "When light is involved he suggests sex toys",
+      "author": "kevsalvador",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1464159231505600676",
@@ -138,6 +161,14 @@
       "channel": "V2.4.2.0 停服维护公告"
     },
     {
+      "id": "1464328587334258769",
+      "channel_id": "1131839817982947429",
+      "content": "遲了兩個星期但還是過了<:agree:1400771815076528258>",
+      "author": "partycatss.",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1464337981979492556",
       "content": "UID: 101002861",
       "author": "happyskull",
@@ -150,6 +181,14 @@
       "author": "_venush",
       "reactions": 12,
       "channel": "V2.4.2.0 停服维护公告"
+    },
+    {
+      "id": "1464251990426124299",
+      "channel_id": "1170692781216378960",
+      "content": "I don't really care, I'm just here to 🍞 xu.\nI whimpered throughout the asmr, can",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1464234506784608337",
@@ -171,34 +210,6 @@
       "author": "morimens314",
       "reactions": 10,
       "channel": ""
-    },
-    {
-      "id": "1464217954387365973",
-      "content": "I think though if standard units need a buff they should just be buffed. Axiom a",
-      "author": "beenax.",
-      "reactions": 9,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464242985112834232",
-      "content": "【手拉手】小心塞壬",
-      "author": "yingmai_",
-      "reactions": 9,
-      "channel": ""
-    },
-    {
-      "id": "1464239917273186384",
-      "content": "🥵",
-      "author": "ahong0727",
-      "reactions": 7,
-      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
-    },
-    {
-      "id": "1464159067336478927",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges"
     }
   ]
 }

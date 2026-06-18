@@ -1,10 +1,12 @@
 {
   "date": "2026-01-02",
-  "messages": 51,
-  "unique_authors": 9,
-  "reactions_total": 113,
-  "attachments": 13,
+  "messages": 10928,
+  "unique_authors": 186,
+  "reactions_total": 1501,
+  "attachments": 444,
   "channel_activity": {
+    "🔸綜合討論": 917,
+    "🔸morimens-game-chat": 9960,
     "Ms Dean?": 6,
     "Happy 2026 Fellow Keepers": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 4,
@@ -27,27 +29,35 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "6": 2,
-    "8": 4,
-    "12": 5,
-    "3": 2,
-    "5": 3,
-    "11": 4,
-    "20": 2,
-    "15": 6,
-    "16": 2,
-    "22": 4,
-    "4": 3,
-    "17": 4,
-    "19": 1,
-    "2": 3,
-    "23": 1,
-    "0": 3,
-    "13": 2
+    "0": 304,
+    "2": 103,
+    "3": 214,
+    "4": 609,
+    "5": 374,
+    "6": 404,
+    "7": 495,
+    "8": 271,
+    "9": 92,
+    "10": 308,
+    "11": 914,
+    "12": 684,
+    "13": 536,
+    "14": 805,
+    "15": 744,
+    "16": 592,
+    "17": 405,
+    "18": 422,
+    "19": 527,
+    "20": 429,
+    "22": 403,
+    "23": 448,
+    "1": 205,
+    "21": 640
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "19": 3115,
+    "0": 7761,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -65,11 +75,43 @@
       "channel": "Happy 2026 Fellow Keepers"
     },
     {
+      "id": "1456634291348836486",
+      "channel_id": "1131839817982947429",
+      "content": "想說等不了了先充個深海池結果差點沒暈過去<:emoji_38:1359786084279521291>",
+      "author": "hon_ey0",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456614204629975112",
+      "channel_id": "1170692781216378960",
+      "content": "This will be Crx soon",
+      "author": "aurora3981",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456613463315972302",
+      "channel_id": "1170692781216378960",
+      "content": "TRUE",
+      "author": "velmi",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1456785570914242610",
       "content": "Here you are\n\nhttps://discord.com/channels/1131791637933199470/14563062878841120",
       "author": "amstelredam",
       "reactions": 10,
       "channel": "Enlightment Adjustment"
+    },
+    {
+      "id": "1456763340960301108",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1456541696794824724",
@@ -93,67 +135,84 @@
       "channel": "Options to turn off Enlihtens"
     },
     {
-      "id": "1456783552736661564",
-      "content": "I think it would benefit the community for us to be able to use lower enlightmen",
-      "author": "null.pointer_exception",
+      "id": "1456613511743668422",
+      "channel_id": "1170692781216378960",
+      "content": "rain may not be pregnant but i believe they can deliver this time",
+      "author": "zier.0",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456613872541761558",
+      "channel_id": "1170692781216378960",
+      "content": "doresain may not be pregnant...maybe thats why he always dont deliver",
+      "author": "undeterredhomo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456666733518524597",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456565685525413928",
+      "channel_id": "1170692781216378960",
+      "content": "MUST CORRECT PLAP PLAP PLAP",
+      "author": "grimalkaiser",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456644547810693255",
+      "channel_id": "1131839817982947429",
+      "content": "诡异的配队，但350（）",
+      "author": "dittoqwq",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456712675072413857",
+      "channel_id": "1131839817982947429",
+      "content": "<:wish:1356084702468899117>",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456597865681129493",
+      "channel_id": "1170692781216378960",
+      "content": "i would absolutely glaze gmurphy simply because she came to me 4 times in a row ",
+      "author": "lordbabel",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456621111763665040",
+      "channel_id": "1170692781216378960",
+      "content": "wainscawwet (thais wowshippew) it seems that even f-fwee access was i-incwuded i",
+      "author": "ntktooyah",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456708434757029899",
+      "channel_id": "1170692781216378960",
+      "content": "they scheduled it 3:30 so I have to go during work hours so they can make sure l",
+      "author": "flares117",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456648866127675483",
+      "channel_id": "1131839817982947429",
+      "content": "有三个了<:pray:1356053116260454534>",
+      "author": "dittoqwq",
       "reactions": 5,
-      "channel": "Enlightment Adjustment"
-    },
-    {
-      "id": "1456735281343365212",
-      "content": "Horla is definitely the biggest offender of this but there are also other units ",
-      "author": "dracozion",
-      "reactions": 3,
-      "channel": "Options to turn off Enlihtens"
-    },
-    {
-      "id": "1456528514177040527",
-      "content": "~~娜娜的盛世美顏500，您可以復刻娜娜盛世美顏的手藝500~~",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1456706337151914097",
-      "content": "This would help so much with testing the game and really understanding the compl",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "Options to turn off Enlihtens"
-    },
-    {
-      "id": "1456605061680599041",
-      "content": "I thought it would boost the game's discoverability if it had goodies on Steam f",
-      "author": "miruruvein",
-      "reactions": 2,
-      "channel": "Steam Achievements and/or Official Profile Backgrounds, Emotes, Stickers and Avatars"
-    },
-    {
-      "id": "1456775325387198516",
-      "content": "<@1131790839291596841> 觀戰時發現「愈」的誤字還出現在光之子的「聖癒」，同時不確定「侵食」是否本意是想表達「侵蝕」。\n\n另外，敵方對手牌添",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」"
-    },
-    {
-      "id": "1456779016936755493",
-      "content": "還有一件事 這次觀戰發現很多人第一回合就會打進第二階段，導致播放二階段劇情：「於麗埃特對門內的事物幻滅」，但是第二回合仍然會播放原本預定的劇情「於麗埃特崇敬門內",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」"
-    },
-    {
-      "id": "1456635780419027058",
-      "content": "It seems I'm not the only one who thinks their ASMR is very good",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456497674336473188",
-      "content": "2/1 update: happy new year!\n- Updated Kathigu-ra's codename\n- Added Mouchette's ",
-      "author": "nikolazuli",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
     }
   ]
 }

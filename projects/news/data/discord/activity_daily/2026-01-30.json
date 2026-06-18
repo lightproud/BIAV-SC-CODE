@@ -1,10 +1,12 @@
 {
   "date": "2026-01-30",
-  "messages": 202,
-  "unique_authors": 20,
-  "reactions_total": 200,
-  "attachments": 22,
+  "messages": 1104,
+  "unique_authors": 50,
+  "reactions_total": 358,
+  "attachments": 72,
   "channel_activity": {
+    "🔸綜合討論": 898,
+    "🔸阵容构建": 4,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 10,
     "求融災禁區配隊建議": 11,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 11,
@@ -32,32 +34,31 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
-    "7": 26,
-    "8": 11,
-    "9": 1,
-    "12": 7,
-    "13": 5,
-    "15": 8,
-    "16": 7,
-    "17": 8,
-    "23": 3,
+    "2": 20,
+    "3": 27,
+    "4": 66,
+    "5": 27,
+    "6": 49,
+    "7": 51,
+    "8": 21,
+    "9": 23,
+    "11": 11,
+    "12": 12,
+    "13": 36,
+    "14": 25,
+    "15": 265,
+    "16": 100,
+    "17": 21,
+    "18": 56,
+    "19": 236,
+    "20": 29,
+    "23": 5,
     "1": 16,
-    "2": 6,
-    "3": 5,
-    "4": 18,
-    "5": 14,
-    "6": 43,
-    "19": 6,
-    "0": 8,
-    "14": 1,
-    "11": 1,
-    "18": 5,
-    "20": 3
+    "0": 8
   },
   "message_types": {
-    "0": 17,
-    "6": 1,
-    "19": 3
+    "0": 661,
+    "19": 241
   },
   "top_reacted_messages": [
     {
@@ -103,6 +104,22 @@
       "channel": "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log"
     },
     {
+      "id": "1466727394244165846",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466727400745205807",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466679152047554683",
       "content": "算力調和的情況下延長你的連招表",
       "author": "foxcatfurry",
@@ -124,11 +141,51 @@
       "channel": ""
     },
     {
+      "id": "1466725756620111882",
+      "channel_id": "1131839817982947429",
+      "content": "哎呀\n圖魯得了\n# MVP",
+      "author": "dog794",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466815301143498990",
+      "channel_id": "1131839817982947429",
+      "content": "我現在要咬破所有男群友的衣服",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466684226308145202",
       "content": "-# and his exalt crit still fail to kill a mob",
       "author": "skyfallterminus",
       "reactions": 5,
       "channel": "Regarding the possible +12 Paywall"
+    },
+    {
+      "id": "1466650842097651884",
+      "channel_id": "1131839817982947429",
+      "content": "你說的是這個面板嗎",
+      "author": "r8776",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466764668252192798",
+      "channel_id": "1131839817982947429",
+      "content": "甚至心眼刻的還是鏡像",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466830858471342393",
+      "channel_id": "1131839817982947429",
+      "content": "~~徐今天有削弱~~",
+      "author": "yy42974466",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1466604592241573949",
@@ -150,55 +207,6 @@
       "author": "sunstopshining",
       "reactions": 4,
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
-    },
-    {
-      "id": "1466824072770879568",
-      "content": "Was just breezing through story and got to a message where it's forced to scroll",
-      "author": "dragonsoul333",
-      "reactions": 4,
-      "channel": "Text bugs during story"
-    },
-    {
-      "id": "1466767801980027147",
-      "content": "give a chance to let light continue on his promise that it isnt a necessity, but",
-      "author": "undeterredhomo",
-      "reactions": 4,
-      "channel": "Regarding the possible +12 Paywall"
-    },
-    {
-      "id": "1466862953633419399",
-      "content": "Covenant visualization became pretty great thanks to this update, but i feel lik",
-      "author": "detectivedango",
-      "reactions": 4,
-      "channel": "Suggestion: a new covenant filter"
-    },
-    {
-      "id": "1466618923599528037",
-      "content": "看了好几天哥们还在为萝坦发声，但你猫好像只回了你0个问题，你是我见过最坚持的厨子之一<:Helot_slack_off:1459092159465521184>",
-      "author": "yang015148",
-      "reactions": 3,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1466603426363478098",
-      "content": "<#1355085076500578363>\nSaid +1 arithmetica, in game it is 1 draw.",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "Xu posse doesn't match what event news said"
-    },
-    {
-      "id": "1466836321451511839",
-      "content": "No because then it might risk being good without Xu <:point:1356053112292511815>",
-      "author": "cornonthemacabre_",
-      "reactions": 3,
-      "channel": "Xu posse doesn't match what event news said"
-    },
-    {
-      "id": "1466614301241638994",
-      "content": "i dont mind AA bc i think that just a bonus for ppl whale or all in to their fav",
-      "author": "aegisx",
-      "reactions": 2,
-      "channel": "Regarding the possible +12 Paywall"
     }
   ]
 }

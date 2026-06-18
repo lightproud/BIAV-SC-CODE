@@ -1,10 +1,13 @@
 {
   "date": "2026-01-15",
-  "messages": 54,
-  "unique_authors": 15,
-  "reactions_total": 54,
-  "attachments": 19,
+  "messages": 6753,
+  "unique_authors": 141,
+  "reactions_total": 1100,
+  "attachments": 291,
   "channel_activity": {
+    "🔸綜合討論": 369,
+    "🔸阵容构建": 50,
+    "🔸morimens-game-chat": 6280,
     "Ms Dean?": 11,
     "whormentine + tournament": 4,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 5,
@@ -24,26 +27,35 @@
     "1445556242381672559": 2
   },
   "hourly_activity": {
-    "6": 6,
-    "7": 3,
-    "13": 6,
-    "14": 5,
-    "15": 3,
-    "8": 7,
-    "9": 4,
-    "11": 2,
-    "21": 1,
-    "10": 4,
-    "16": 3,
-    "17": 2,
-    "19": 3,
-    "20": 1,
-    "0": 3,
-    "1": 1
+    "0": 334,
+    "2": 359,
+    "3": 488,
+    "4": 168,
+    "5": 79,
+    "6": 144,
+    "7": 434,
+    "8": 346,
+    "9": 217,
+    "10": 317,
+    "11": 499,
+    "12": 294,
+    "13": 332,
+    "14": 405,
+    "15": 221,
+    "16": 250,
+    "17": 540,
+    "18": 337,
+    "19": 29,
+    "23": 441,
+    "1": 265,
+    "20": 9,
+    "21": 46,
+    "22": 199
   },
   "message_types": {
-    "0": 20,
-    "19": 6
+    "19": 1719,
+    "0": 4979,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -54,88 +66,156 @@
       "channel": "Art dump thread"
     },
     {
-      "id": "1461242936552456309",
-      "content": "\"https://x.com/TavvyVyes/status/2011683781472825535?s=20\"\naddition to the bnnuy ",
-      "author": "shiio4870",
+      "id": "1461320112266285090",
+      "channel_id": "1170692781216378960",
+      "content": "Something funny about my clear on 4-10 is I failed a 100% DR",
+      "author": "velmi",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461352211358421025",
+      "channel_id": "1170692781216378960",
+      "content": "5:31am",
+      "author": "brainrot_in_a_vat",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461414731519758357",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "brainrot_in_a_vat",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461221896908574720",
+      "channel_id": "1131839817982947429",
+      "content": "忘生第一个425",
+      "author": "jiangzehuai",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461258957380259988",
+      "channel_id": "1170692781216378960",
+      "content": "https://fixupx.com/i/status/2011426923294163427",
+      "author": "undeterredhomo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461204682767601737",
+      "channel_id": "1131839817982947429",
+      "content": "打完第七章困难后，一直在推主线从第一章一直推到到第四章。人快要傻掉了，终于推完了。",
+      "author": "mman64527",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461356045111791771",
+      "channel_id": "1170692781216378960",
+      "content": "I could get  a free bp",
+      "author": "tnimreppep",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461414458395070534",
+      "channel_id": "1170692781216378960",
+      "content": "Kade, stawp",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461414506621042718",
+      "channel_id": "1170692781216378960",
+      "content": "Im just a froggo",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461414518889382030",
+      "channel_id": "1170692781216378960",
+      "content": "<:YAMETEKUDASTOP:967693921868197888>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461418002439340145",
+      "channel_id": "1170692781216378960",
+      "content": "I didn't say anything wrong tho...",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461418058257010740",
+      "channel_id": "1170692781216378960",
+      "content": "Guys stop it",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461289874744279134",
+      "channel_id": "1131839817982947429",
+      "content": "自從在B站看過97%沒暴擊,我的嘴角就壓不住了",
+      "author": "tw9580",
       "reactions": 6,
-      "channel": "Ms Dean?"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1461444939064803500",
-      "content": "Thais and Alva modern au aka me not wanting to draw their outfits",
-      "author": "kiriwoamizaki",
-      "reactions": 5,
-      "channel": "Art dump thread"
+      "id": "1461311817048653845",
+      "channel_id": "1131839817982947429",
+      "content": "答案是两个手机会变成苦命鸳鸯",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1461453052446773466",
-      "content": "Drew salv",
-      "author": "kiriwoamizaki",
-      "reactions": 5,
-      "channel": "Art dump thread"
+      "id": "1461148363385999360",
+      "channel_id": "1170692781216378960",
+      "content": "i came abck in a weird time",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1461350314685759589",
-      "content": "Forgot one",
-      "author": "kiriwoamizaki",
-      "reactions": 4,
-      "channel": "Art dump thread"
+      "id": "1461148376157388955",
+      "channel_id": "1170692781216378960",
+      "content": "ello",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1461155535825932392",
-      "content": "~~在黑池裡放顆雞蛋能吃到溫泉蛋嗎~~",
-      "author": "shostakovich524",
-      "reactions": 3,
-      "channel": "疑似文本错误"
+      "id": "1461156069802770472",
+      "channel_id": "1170692781216378960",
+      "content": "<:jawdrop:1412439700798443550>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1461404127883038885",
-      "content": "Modern au tulu is always on that damn phone",
-      "author": "kiriwoamizaki",
-      "reactions": 2,
-      "channel": "Art dump thread"
+      "id": "1461352062674669578",
+      "channel_id": "1170692781216378960",
+      "content": "Morning",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1461295292157657281",
-      "content": "tysm!",
-      "author": "shirox0_.",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1461257089337790505",
-      "content": "hihii!! returning player here, so not that familiar with current meta, but from ",
-      "author": "glitzy_x",
-      "reactions": 1,
-      "channel": "Team Guidance/Character Investment Suggestions"
-    },
-    {
-      "id": "1461275204453007402",
-      "content": "Ah that right, my bad",
-      "author": "nee9211",
-      "reactions": 1,
-      "channel": "Casiah Telekinesis"
-    },
-    {
-      "id": "1461369555342463102",
-      "content": "依旧是进度！！（就这样一边型都没打好一边就匆匆开始填色游戏了<:Pollux_gift:1459081694148558943>",
-      "author": "yq0227",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461448023870537977",
-      "content": "嬷嬷发力了",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461151409436233982",
-      "content": "it has its use and they do allat in snooker fr fr",
-      "author": "zzio_",
-      "reactions": 1,
-      "channel": ""
+      "id": "1461418161252602020",
+      "channel_id": "1170692781216378960",
+      "content": "Im right tho...",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

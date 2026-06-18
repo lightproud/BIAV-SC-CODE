@@ -1,10 +1,12 @@
 {
   "date": "2026-01-08",
-  "messages": 63,
-  "unique_authors": 16,
-  "reactions_total": 107,
-  "attachments": 18,
+  "messages": 9456,
+  "unique_authors": 177,
+  "reactions_total": 1213,
+  "attachments": 392,
   "channel_activity": {
+    "🔸綜合討論": 550,
+    "🔸morimens-game-chat": 8843,
     "I errr....": 6,
     "Chibi Tulu": 1,
     "Karen meme": 1,
@@ -27,31 +29,34 @@
     "1305430084420898868": 9
   },
   "hourly_activity": {
-    "6": 4,
-    "9": 1,
-    "13": 5,
-    "22": 1,
-    "0": 4,
-    "21": 3,
-    "18": 2,
-    "20": 1,
-    "8": 8,
-    "14": 2,
-    "15": 7,
-    "7": 2,
-    "16": 3,
-    "4": 4,
-    "12": 1,
-    "11": 4,
-    "2": 1,
-    "10": 4,
-    "3": 1,
-    "17": 5
+    "0": 385,
+    "1": 299,
+    "2": 263,
+    "3": 318,
+    "4": 298,
+    "5": 305,
+    "6": 557,
+    "7": 582,
+    "8": 626,
+    "9": 371,
+    "10": 365,
+    "11": 443,
+    "12": 174,
+    "13": 383,
+    "14": 651,
+    "15": 593,
+    "16": 548,
+    "17": 588,
+    "18": 609,
+    "20": 219,
+    "21": 259,
+    "23": 148,
+    "19": 221,
+    "22": 251
   },
   "message_types": {
-    "0": 23,
-    "19": 5,
-    "4": 2
+    "19": 2997,
+    "0": 6396
   },
   "top_reacted_messages": [
     {
@@ -76,6 +81,110 @@
       "channel": "Karen meme"
     },
     {
+      "id": "1458941532789936149",
+      "channel_id": "1170692781216378960",
+      "content": "So mean 🙁 I'm just a new player trying to make friends",
+      "author": "Deleted User",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458885956294807817",
+      "channel_id": "1131839817982947429",
+      "content": "無靈芝過了",
+      "author": "axe_proficient",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458760283781857433",
+      "channel_id": "1170692781216378960",
+      "content": "I hate you",
+      "author": "satohkuzuo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458884964710879437",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458890826502504478",
+      "channel_id": "1170692781216378960",
+      "content": "https://www.youtube.com/@Alessiel/videos",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458642412607111381",
+      "channel_id": "1170692781216378960",
+      "content": "<@153999495347044352> I see what you mean by you don't need pollux in your strea",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458679881847144470",
+      "channel_id": "1170692781216378960",
+      "content": "Got her e2,its good?",
+      "author": "prdrip",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458698868899451035",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "tek2yuhdome",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458722130383601742",
+      "channel_id": "1170692781216378960",
+      "content": "I am freeeeee!",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458821366563471644",
+      "channel_id": "1170692781216378960",
+      "content": "Im a fraud",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458844358932697312",
+      "channel_id": "1170692781216378960",
+      "content": "<:bald:1442672161331347466>",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458950199425896725",
+      "channel_id": "1170692781216378960",
+      "content": "celeste dps work",
+      "author": "twilightsparkle163163",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458950687399481447",
+      "channel_id": "1170692781216378960",
+      "content": "Flares watching Raven use DPS Celeste(He'll put her in S Tier later)",
+      "author": "dragonshiny7",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1458885057270906995",
       "content": "Short video I made showing how to use someone's character as a support without n",
       "author": "velmi",
@@ -83,53 +192,28 @@
       "channel": "How to set someone as a \"Favorite\" support:"
     },
     {
-      "id": "1458733758185214007",
-      "content": "<@&1440553558238953482> \n感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✦ 奖励会在本周",
-      "author": "morimensstaff01",
+      "id": "1458630974962274325",
+      "channel_id": "1131839817982947429",
+      "content": "寒心從來不是大吵大鬧💔💔💔",
+      "author": "ahong0727",
       "reactions": 5,
-      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1458940797326987427",
-      "content": "UID: 101073278\n\nCase study on the most recent Chaos Ring of December 22nd, 2025 ",
-      "author": "dracozion",
-      "reactions": 3,
-      "channel": "Analysis of Minimum Limited Unit Overexalt Investment Required for 425 Dtide"
+      "id": "1458847025570517225",
+      "channel_id": "1131839817982947429",
+      "content": "我二等奖啊我去",
+      "author": "dittoqwq",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1458623559579603153",
-      "content": "",
-      "author": "duxadidus",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1458812155196604468",
-      "content": "Thank you ! <:pray:1356053116260454534>",
-      "author": "zzio_",
-      "reactions": 1,
-      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
-    },
-    {
-      "id": "1458773913113727099",
-      "content": "100687939<:agree:1400771815076528258>",
-      "author": "cqzheng_16468",
-      "reactions": 1,
-      "channel": "💭「处理中」bug反馈"
-    },
-    {
-      "id": "1458664035259121847",
-      "content": "神聖與褻瀆怎能以這樣的方式展現出來\n勞斯您太偉大了<:Cheerup:1400771555939844149>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1458623165826601095",
-      "content": "<@521775682578022413>",
-      "author": "duxadidus",
-      "reactions": 1,
-      "channel": ""
+      "id": "1458634211618717949",
+      "channel_id": "1170692781216378960",
+      "content": "oh lmao and here I was thinking of pulling the lily wheel",
+      "author": "grimalkaiser",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

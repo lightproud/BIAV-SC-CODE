@@ -1,10 +1,13 @@
 {
   "date": "2026-01-29",
-  "messages": 310,
-  "unique_authors": 28,
-  "reactions_total": 300,
-  "attachments": 41,
+  "messages": 8878,
+  "unique_authors": 158,
+  "reactions_total": 1542,
+  "attachments": 411,
   "channel_activity": {
+    "🔸綜合討論": 744,
+    "🔸阵容构建": 107,
+    "🔸morimens-game-chat": 7717,
     "Seeking covenant + wheel advice for Helot/Thais/Mouchette/Faint build": 10,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 23,
     "对各位守密人的致歉与近况说明 Apology and Update to All Keepers": 1,
@@ -40,32 +43,34 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "5": 2,
-    "6": 11,
-    "7": 10,
-    "0": 3,
-    "2": 4,
-    "3": 13,
-    "4": 1,
-    "11": 10,
-    "13": 16,
-    "14": 7,
-    "15": 100,
-    "9": 16,
-    "1": 1,
-    "23": 3,
-    "19": 11,
-    "12": 18,
-    "8": 38,
-    "16": 25,
-    "22": 4,
-    "18": 4,
-    "17": 4,
-    "10": 9
+    "0": 410,
+    "1": 349,
+    "2": 335,
+    "3": 285,
+    "4": 310,
+    "5": 316,
+    "6": 395,
+    "7": 347,
+    "8": 245,
+    "9": 316,
+    "10": 502,
+    "11": 295,
+    "12": 654,
+    "13": 292,
+    "14": 472,
+    "15": 443,
+    "16": 614,
+    "17": 523,
+    "18": 514,
+    "19": 393,
+    "20": 499,
+    "22": 33,
+    "23": 23,
+    "21": 313
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 6015,
+    "19": 2553
   },
   "top_reacted_messages": [
     {
@@ -109,6 +114,14 @@
       "author": "carme.0588",
       "reactions": 16,
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466445390005145805",
+      "channel_id": "1131839817982947429",
+      "content": "唉",
+      "author": "water_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1466360297278144697",
@@ -160,6 +173,22 @@
       "channel": "Regarding the possible +12 Paywall"
     },
     {
+      "id": "1466273249691172978",
+      "channel_id": "1131839817982947429",
+      "content": "我一直會忘記徐的爆發有給算力",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466355093308964967",
+      "channel_id": "1131839817982947429",
+      "content": "打出来了，茉夏大人太强了🛐",
+      "author": "_neyko_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466388487413563454",
       "content": "弱的只是超限吗？这角色拆的有多散做的有多畸形你自己不知道？你玩不玩自家游戏？不会做角色不想加强就再去加强徐的专造改成一回合免费叠两层痴醉好不好？以后专造都照着这",
       "author": "si05214",
@@ -167,46 +196,28 @@
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
-      "id": "1466255690380218573",
-      "content": "感覺給角色加個角色專屬留言功能(比如說可以讓各個玩家留言表達喜愛或者推薦玩法/配隊)的話也挺不錯🧐\n\n而且好想問會不會公開角色相關的數據(比如說持有率、使用率)",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+      "id": "1466239212557959334",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "yy42974466",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1466279060824129638",
-      "content": "You are 100% correct. As someone who recommended this game heavily among friends",
-      "author": "silencio3507",
-      "reactions": 5,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+      "id": "1466362923067642054",
+      "channel_id": "1131839817982947429",
+      "content": "<:Helot_slack_off:1459092159465521184> (你好)",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1466455404837077064",
-      "content": "不是哥們，這是第四章要給我的大驚喜還是其實神母不想跟我講話",
-      "author": "myth1538",
-      "reactions": 5,
-      "channel": "我們神母怎麼沒辦法講下去"
-    },
-    {
-      "id": "1466484310566633758",
-      "content": "Just a tier list review that was added to the Glossary\nhttps://youtu.be/s3XIMBR_",
-      "author": "zyocuh",
-      "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1466463265478410333",
-      "content": "uhh i saw someone post oc content here so this should be fine?? trying to replic",
-      "author": "mimiruku",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1466554149117104149",
-      "content": "I know this is a meme post, but its true that the last 3 awakeners have pristine",
-      "author": "zzio_",
-      "reactions": 4,
-      "channel": "Character designs"
+      "id": "1466488013474365839",
+      "channel_id": "1170692781216378960",
+      "content": "Anyway I got faros",
+      "author": "icnhseemcitsstry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

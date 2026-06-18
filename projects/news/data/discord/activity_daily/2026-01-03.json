@@ -1,10 +1,12 @@
 {
   "date": "2026-01-03",
-  "messages": 71,
-  "unique_authors": 13,
-  "reactions_total": 38,
-  "attachments": 19,
+  "messages": 8529,
+  "unique_authors": 195,
+  "reactions_total": 976,
+  "attachments": 410,
   "channel_activity": {
+    "🔸綜合討論": 581,
+    "🔸morimens-game-chat": 7877,
     "aequor doodle": 5,
     "Aurora's Guide to F2P Greed": 2,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 6,
@@ -21,28 +23,35 @@
     "1455453095592071269": 1
   },
   "hourly_activity": {
-    "10": 3,
-    "11": 2,
-    "13": 3,
-    "15": 1,
-    "17": 1,
-    "21": 4,
-    "5": 2,
-    "9": 1,
-    "16": 2,
-    "23": 1,
-    "19": 2,
-    "1": 1,
-    "2": 10,
-    "3": 28,
-    "4": 5,
-    "20": 4,
-    "18": 1
+    "0": 386,
+    "1": 218,
+    "2": 573,
+    "3": 532,
+    "4": 415,
+    "5": 187,
+    "6": 414,
+    "7": 252,
+    "8": 57,
+    "9": 116,
+    "10": 467,
+    "11": 269,
+    "12": 311,
+    "13": 589,
+    "14": 428,
+    "15": 628,
+    "21": 281,
+    "22": 167,
+    "23": 89,
+    "16": 473,
+    "17": 449,
+    "18": 325,
+    "19": 323,
+    "20": 580
   },
   "message_types": {
-    "0": 13,
-    "4": 1,
-    "19": 1
+    "0": 5903,
+    "19": 2554,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -53,6 +62,62 @@
       "channel": "Aurora's Guide to F2P Greed"
     },
     {
+      "id": "1456984890095571005",
+      "channel_id": "1170692781216378960",
+      "content": "I'm losing sanity points with each attempt to salvage this guide. \nThe voices in",
+      "author": "aurora3981",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456987269754917071",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457024683831463979",
+      "channel_id": "1131839817982947429",
+      "content": "帶哈基鯨是真吃力..",
+      "author": "heikwok",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456984248081842261",
+      "channel_id": "1170692781216378960",
+      "content": "get her to OE",
+      "author": "null.pointer_exception",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456938642541907999",
+      "channel_id": "1131839817982947429",
+      "content": "發現疑似校貓足跡",
+      "author": "ahong0727",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456993531808714936",
+      "channel_id": "1131839817982947429",
+      "content": "~~但我猜全裸打的比初見還快~~",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457092535733457150",
+      "channel_id": "1170692781216378960",
+      "content": "i was too lazy to change wheels they are from discard team lol",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1457002092760793191",
       "content": "a divine maiden btw..",
       "author": "deellln",
@@ -60,39 +125,92 @@
       "channel": "aequor doodle"
     },
     {
-      "id": "1456961930748231801",
-      "content": "work in progress",
-      "author": "deellln",
-      "reactions": 4,
-      "channel": "aequor doodle"
+      "id": "1456840366408990856",
+      "channel_id": "1131839817982947429",
+      "content": "我有洗\n但一直沒找到像這種的🥹",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1456815810520547498",
-      "content": "Technically, Faros only has a forehead and no scalp.",
+      "id": "1456998552017436748",
+      "channel_id": "1170692781216378960",
+      "content": "ok guys i got it🐔",
+      "author": "mo_cgness",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457043196449263744",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456898117256614121",
+      "channel_id": "1131839817982947429",
+      "content": "誕墨果然擅長打出高額傷害",
       "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "Forehead tierlist"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1456844427514614016",
-      "content": "In fact, I would argue Liz deserves to be in her own tier below gmurphy’s",
-      "author": "kezrin",
-      "reactions": 2,
-      "channel": "Forehead tierlist"
+      "id": "1456911616451809371",
+      "channel_id": "1131839817982947429",
+      "content": "可以数一下几位数",
+      "author": "ququ12358",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1456847965657370737",
-      "content": "It’s not a big deal",
-      "author": "kezrin",
-      "reactions": 1,
-      "channel": "Forehead tierlist"
+      "id": "1456808136303448260",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you🙏",
+      "author": "cometovilla",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1456868051034050581",
-      "content": "又有一個錯字，在彌利亞姆的異夢視界第一章",
-      "author": "ey1164",
-      "reactions": 1,
-      "channel": "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」"
+      "id": "1456958987999379627",
+      "channel_id": "1170692781216378960",
+      "content": "<:Clown:1400771541423226971> I should quit guide making, how dafuk does it suck ",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456988927054581770",
+      "channel_id": "1170692781216378960",
+      "content": "So you're just assuming Corposant has a receding hairline <:study:13560531682572",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457011237048025291",
+      "channel_id": "1170692781216378960",
+      "content": "Hey Mythag-GPT, find 2 old men yaoi awakeners and ask keeper to get them both ba",
+      "author": "nicholas250724",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457016803384627487",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "syruponstrawberrycake",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457027510884765760",
+      "channel_id": "1170692781216378960",
+      "content": "i really think pickman is fun af",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

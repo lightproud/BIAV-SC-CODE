@@ -1,10 +1,13 @@
 {
   "date": "2026-01-09",
-  "messages": 29,
-  "unique_authors": 8,
-  "reactions_total": 71,
-  "attachments": 9,
+  "messages": 8548,
+  "unique_authors": 175,
+  "reactions_total": 1088,
+  "attachments": 389,
   "channel_activity": {
+    "🔸綜合討論": 1103,
+    "🔸阵容构建": 14,
+    "🔸morimens-game-chat": 7402,
     "Chibi Tulu": 1,
     "Tulu: Fauxborn": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
@@ -19,25 +22,34 @@
     "1459114773768568882": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "21": 2,
-    "1": 1,
-    "10": 1,
-    "12": 1,
-    "22": 2,
-    "13": 2,
-    "16": 1,
-    "3": 4,
-    "5": 2,
-    "8": 3,
-    "9": 2,
-    "11": 1,
-    "14": 1,
-    "7": 5
+    "0": 254,
+    "1": 283,
+    "2": 540,
+    "3": 353,
+    "4": 316,
+    "5": 402,
+    "6": 268,
+    "7": 177,
+    "8": 431,
+    "9": 350,
+    "10": 675,
+    "11": 340,
+    "12": 384,
+    "13": 387,
+    "14": 578,
+    "15": 609,
+    "16": 165,
+    "17": 73,
+    "18": 298,
+    "19": 460,
+    "20": 178,
+    "21": 129,
+    "22": 390,
+    "23": 508
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 6176,
+    "19": 2343
   },
   "top_reacted_messages": [
     {
@@ -48,11 +60,99 @@
       "channel": "Tulu: Fauxborn"
     },
     {
+      "id": "1459267496396849172",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah me whaling saved the game from eos",
+      "author": "spooky_penguin_",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1459114773768568882",
       "content": "게을러졌어 ㅉㅉ",
       "author": "zay_chees3",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1459227692506288397",
+      "channel_id": "1131839817982947429",
+      "content": "||巧克力奶真的香||",
+      "author": "shchng.",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1459070571794006058",
+      "channel_id": "1170692781216378960",
+      "content": "Dont listen this chat.They just poor whales and hate all ppls who are rich by de",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459169188299149457",
+      "channel_id": "1170692781216378960",
+      "content": "Free pulls",
+      "author": "prdrip",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459259541895118952",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sleepypillow",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459303847557074964",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dracozion",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459006543600156783",
+      "channel_id": "1170692781216378960",
+      "content": "traphase",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459165132872487064",
+      "channel_id": "1170692781216378960",
+      "content": "Checks H4-10 clear history.\nWhat is bro doing?",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459176904384057344",
+      "channel_id": "1170692781216378960",
+      "content": "LOL reya at the time was like \"please take care of the resets i can't be on mori",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459210799321972913",
+      "channel_id": "1170692781216378960",
+      "content": "I hate this chat.You guys rn ruin next month income.Than go cry devs make anothe",
+      "author": "twilightsparkle163163",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459268540271038526",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dracozion",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1459060821211615254",
@@ -62,81 +162,52 @@
       "channel": ""
     },
     {
-      "id": "1459305534241898558",
-      "content": "A self-indulgent and gratifying video to showcase my first 425 and some of the \"",
-      "author": "frosthief",
+      "id": "1459051413861826580",
+      "channel_id": "1131839817982947429",
+      "content": "我們毒隊真是太有實力了",
+      "author": "water_heart",
       "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1459092503428071587",
-      "content": "<@1298268532017991702>都有咯<:T_snicker:1400771784982397049> \n\n<:Helot_slack_off:14",
-      "author": "morimensstaff01",
+      "id": "1459234716438888710",
+      "channel_id": "1131839817982947429",
+      "content": "誕墨強行通關",
+      "author": "shchng.",
       "reactions": 5,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1459217371389497528",
-      "content": "Ramona Exalt does not reduce the selected card's Arithmetica cost to 0 if it is ",
-      "author": "elenakrittik",
-      "reactions": 4,
-      "channel": "💭「Processing」Potential Ramona Exalt bug"
+      "id": "1459005129838694503",
+      "channel_id": "1170692781216378960",
+      "content": "<@1164303137293729792> No.You use characters=whale",
+      "author": "twilightsparkle163163",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1459097553445584939",
-      "content": "<:Dore_proud:1459076042722639905>",
-      "author": "dittoqwq",
-      "reactions": 4,
-      "channel": ""
+      "id": "1459005580642488414",
+      "channel_id": "1170692781216378960",
+      "content": "I Like the Sacrifice mechanic 🫃",
+      "author": "_voidling_",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1459172858688438423",
-      "content": "다시<:emoji_214:1448778300217626875>",
-      "author": "zay_chees3",
-      "reactions": 3,
-      "channel": ""
+      "id": "1459063228712620167",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1455503371975921881/a",
+      "author": "twilightsparkle163163",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1459181062084366464",
-      "content": "如果要說「抵達南極『大陸』」的話，是「登陸極地」才對⋯⋯「登入極地」聽起來像是極地是某個會員制網站⋯⋯",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "💭「处理中」人類「登入」極地"
-    },
-    {
-      "id": "1459033612828807261",
-      "content": "~~他說的應該是遊戲的阿爾比諾頭像不是表情包的表符吧~~\n~~我想要阿爾比諾的頭像~~",
-      "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1458982271066570888",
-      "content": "Is so cute!!",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "Chibi Tulu"
-    },
-    {
-      "id": "1459024248457793724",
-      "content": "<@456226577798135808>发过的，发在隔壁哈哈https://discord.com/channels/1131791637933199470/",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1459081047487680717",
-      "content": "戈雅戈雅，要这个dc表符<@1131790839291596841>",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1459084306004574301",
-      "content": "",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": ""
+      "id": "1459184111011762227",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/kCUCAHAdGA4?si=W9_m9myZ1s_D0EaP",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

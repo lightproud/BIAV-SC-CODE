@@ -1,10 +1,13 @@
 {
   "date": "2026-01-17",
-  "messages": 31,
-  "unique_authors": 10,
-  "reactions_total": 27,
-  "attachments": 14,
+  "messages": 8388,
+  "unique_authors": 163,
+  "reactions_total": 1295,
+  "attachments": 337,
   "channel_activity": {
+    "🔸綜合討論": 1224,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 7128,
     "Ms Dean?": 3,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
@@ -20,33 +23,90 @@
     "1193859503096070234": 1
   },
   "hourly_activity": {
-    "15": 2,
-    "21": 1,
-    "1": 2,
-    "4": 2,
-    "10": 1,
-    "17": 1,
-    "12": 2,
-    "13": 2,
-    "14": 5,
-    "16": 1,
-    "9": 1,
-    "19": 2,
-    "6": 2,
-    "7": 3,
-    "8": 4
+    "1": 110,
+    "2": 219,
+    "3": 308,
+    "4": 305,
+    "5": 226,
+    "7": 42,
+    "8": 134,
+    "9": 434,
+    "10": 253,
+    "11": 373,
+    "12": 285,
+    "13": 435,
+    "14": 503,
+    "15": 726,
+    "16": 611,
+    "17": 747,
+    "18": 729,
+    "19": 356,
+    "20": 623,
+    "23": 350,
+    "0": 63,
+    "6": 303,
+    "21": 239,
+    "22": 14
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "19": 2611,
+    "0": 5746
   },
   "top_reacted_messages": [
+    {
+      "id": "1462042677309866140",
+      "channel_id": "1170692781216378960",
+      "content": "this was too funny to not make",
+      "author": "annaxxe_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462040078204272660",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "annaxxe_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1462164133360173147",
       "content": "<@633215996508766229> 滚出来跪下\n为什么暗改伤害暗改血量\n是不是觉得融灾太简单了看不得玩家好的阴湿病又犯了\n是不是二周年赚到钱又去批发了一",
       "author": "nailong0565",
       "reactions": 11,
       "channel": "融灾王关血量伤害“bug”"
+    },
+    {
+      "id": "1462044145295032364",
+      "channel_id": "1170692781216378960",
+      "content": "<:breakinto:1400771681508790292>",
+      "author": "annaxxe_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462081588455145545",
+      "channel_id": "1170692781216378960",
+      "content": "boil idot 2026",
+      "author": "princess.goth",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462135140619915541",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "velmi",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462174184242286707",
+      "channel_id": "1170692781216378960",
+      "content": "**MOMMY MOMENT**",
+      "author": "brainrot_in_a_vat",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1462114857372487733",
@@ -56,18 +116,100 @@
       "channel": "Art dump thread"
     },
     {
-      "id": "1462084440845975824",
-      "content": "I hope she is a caro support that can help ease the burden on Thais",
-      "author": "angy_24_s",
-      "reactions": 6,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+      "id": "1462040974657327187",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "annaxxe_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1462054643944394843",
-      "content": "莱克应该是野兽，然后德克斯特是夜魔",
-      "author": "sleepy_amber",
-      "reactions": 1,
-      "channel": ""
+      "id": "1462082756468019362",
+      "channel_id": "1170692781216378960",
+      "content": "<:question1:1356085150869622965>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462036706562932777",
+      "channel_id": "1170692781216378960",
+      "content": "Oh my god Genesis Celeste",
+      "author": "sno_w",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462134639463239853",
+      "channel_id": "1170692781216378960",
+      "content": "im never taking a job as a teacher that shit will get my resume have a: has kill",
+      "author": "annaxxe_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461932687936720947",
+      "channel_id": "1170692781216378960",
+      "content": "only a woman can appreciate helot to her fullest",
+      "author": "velmi",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462021141399867455",
+      "channel_id": "1170692781216378960",
+      "content": "actual leak of the xu teaser coming later today or tomorrow\nhttps://fxtwitter.co",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462046386999656494",
+      "channel_id": "1170692781216378960",
+      "content": "back to the mines i go, fuck you albino",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462082896624877608",
+      "channel_id": "1170692781216378960",
+      "content": "Why are you guys eating him",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462111553376616662",
+      "channel_id": "1170692781216378960",
+      "content": "Even Cassiah's voice hurts my ears",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462121884463403152",
+      "channel_id": "1170692781216378960",
+      "content": "SEE YOU TOMATO'D ME",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462131114477883621",
+      "channel_id": "1170692781216378960",
+      "content": "this is me to ellie honestly",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1462223898996244584",
+      "channel_id": "1170692781216378960",
+      "content": "Fine\n\nGacha games are newbie friendly",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

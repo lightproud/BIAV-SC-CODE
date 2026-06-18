@@ -1,10 +1,13 @@
 {
   "date": "2026-01-22",
-  "messages": 305,
-  "unique_authors": 38,
-  "reactions_total": 183,
-  "attachments": 44,
+  "messages": 9035,
+  "unique_authors": 176,
+  "reactions_total": 1343,
+  "attachments": 342,
   "channel_activity": {
+    "🔸綜合討論": 1029,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 7700,
     "Murphy :3!": 4,
     "mouchette i drew during math class": 1,
     "Gpreg": 4,
@@ -37,32 +40,35 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "9": 10,
-    "10": 3,
-    "7": 2,
-    "0": 29,
-    "8": 5,
-    "12": 48,
-    "13": 1,
-    "3": 3,
-    "1": 21,
-    "2": 6,
-    "4": 10,
-    "5": 11,
-    "6": 11,
-    "11": 9,
-    "20": 2,
-    "14": 13,
-    "16": 5,
-    "15": 108,
-    "19": 2,
-    "21": 3,
-    "17": 1,
-    "23": 2
+    "0": 626,
+    "1": 547,
+    "2": 486,
+    "3": 380,
+    "4": 476,
+    "5": 511,
+    "6": 179,
+    "7": 241,
+    "8": 356,
+    "9": 306,
+    "10": 829,
+    "11": 316,
+    "12": 473,
+    "13": 357,
+    "14": 412,
+    "15": 518,
+    "16": 392,
+    "17": 414,
+    "18": 395,
+    "19": 259,
+    "20": 69,
+    "21": 108,
+    "23": 300,
+    "22": 85
   },
   "message_types": {
-    "19": 55,
-    "0": 183
+    "0": 6315,
+    "19": 2414,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -78,6 +84,14 @@
       "author": "0catharsis01838",
       "reactions": 25,
       "channel": "Nymphaea"
+    },
+    {
+      "id": "1463877149357248697",
+      "channel_id": "1170692781216378960",
+      "content": "Here are some of my drawings",
+      "author": "brainrot_in_a_vat",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1463766035239800914",
@@ -108,6 +122,14 @@
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
+      "id": "1463766231889871054",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463865231922167910",
       "content": "玉兰香🌫️、玫瑰香🌫️、茉莉花香🌫️\n自徐来到弥萨格大学后，学校似乎兴起了“制香”潮流。\n\n💭守密人想制作什么味道的香包？\n制香跟练版教程来啦，守密人快来试试看",
       "author": "morimensstaff01",
@@ -122,11 +144,67 @@
       "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
+      "id": "1463757659025965066",
+      "channel_id": "1131839817982947429",
+      "content": "分享个双金",
+      "author": "asarikotone",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463876524695355558",
+      "channel_id": "1170692781216378960",
+      "content": "I will draw myself as short haired Doll",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463865683975864370",
       "content": "First",
       "author": "._.aahh",
       "reactions": 7,
       "channel": "V2.4.2 ┊闻香识人The Poetry of Scent"
+    },
+    {
+      "id": "1463846048408670250",
+      "channel_id": "1131839817982947429",
+      "content": "反正+12這個活挺爛的",
+      "author": "navirecorbeau",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463698183711625236",
+      "channel_id": "1170692781216378960",
+      "content": "Best speed run limited character available after patch will be doresain. Nobody ",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463876264246120512",
+      "channel_id": "1170692781216378960",
+      "content": "I will just remain the gooner as I always am",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463876282843664488",
+      "channel_id": "1170692781216378960",
+      "content": "<:FrogExhaust:1393236794140790814>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1463879997784588398",
+      "channel_id": "1170692781216378960",
+      "content": "Found my recent art",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1463915224938578099",
@@ -141,69 +219,6 @@
       "author": "lanl4n",
       "reactions": 6,
       "channel": "想詢問關於徐的立繪設計"
-    },
-    {
-      "id": "1463932173882232832",
-      "content": "~~原來這就是我們敬愛的N先生進了卡池會發生的事嗎~~",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
-    },
-    {
-      "id": "1463800133161455771",
-      "content": "SHES SO CUTE I LOVE HER",
-      "author": "mimiruku",
-      "reactions": 4,
-      "channel": "mouchette i drew during math class"
-    },
-    {
-      "id": "1463913040780202107",
-      "content": "理性分析讨论哈",
-      "author": "liao_54332",
-      "reactions": 3,
-      "channel": "关于+12角色最终法则的分析"
-    },
-    {
-      "id": "1463741514692821105",
-      "content": "some very rushed coloring and shading <:Jointhefun1:1400771646293282918>",
-      "author": "h3ll0hu",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1463706291829739595",
-      "content": "不弱了\n痴醉常駐百分比減傷",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463710137121505299",
-      "content": "肿胀之女（指体质）",
-      "author": "rain_scarlet",
-      "reactions": 2,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463787089618407539",
-      "content": "支持也希望能放出設計圖⋯！想要遊戲能好好的，被罵也讓人很難過",
-      "author": "kaleido9441",
-      "reactions": 2,
-      "channel": "想詢問關於徐的立繪設計"
-    },
-    {
-      "id": "1463698053335748699",
-      "content": "Also yes I am a whale",
-      "author": "legendaryredz",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1463841172832387216",
-      "content": "THANK YOUUUUU",
-      "author": "celestial.noise",
-      "reactions": 1,
-      "channel": "Murphy :3!"
     }
   ]
 }

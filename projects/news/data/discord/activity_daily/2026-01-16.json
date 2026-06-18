@@ -1,10 +1,13 @@
 {
   "date": "2026-01-16",
-  "messages": 162,
-  "unique_authors": 40,
-  "reactions_total": 214,
-  "attachments": 29,
+  "messages": 10006,
+  "unique_authors": 209,
+  "reactions_total": 1917,
+  "attachments": 452,
   "channel_activity": {
+    "🔸綜合討論": 1302,
+    "🔸阵容构建": 12,
+    "🔸morimens-game-chat": 8530,
     "G Murphy Fan Splash": 6,
     "I errrr #3. (Kath and Corpo.": 4,
     "\"All-Father, please let me end everyone's suffering...\"": 1,
@@ -33,30 +36,35 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
-    "18": 14,
-    "20": 4,
-    "21": 2,
-    "13": 5,
-    "16": 6,
-    "9": 29,
-    "10": 9,
-    "11": 6,
-    "12": 3,
-    "8": 47,
-    "15": 7,
-    "19": 12,
-    "7": 7,
-    "22": 3,
-    "0": 3,
-    "3": 2,
-    "4": 1,
-    "5": 1,
-    "1": 1
+    "0": 212,
+    "1": 120,
+    "3": 404,
+    "4": 206,
+    "5": 52,
+    "6": 379,
+    "7": 559,
+    "8": 817,
+    "9": 859,
+    "10": 768,
+    "11": 249,
+    "12": 226,
+    "13": 406,
+    "14": 528,
+    "15": 679,
+    "16": 498,
+    "17": 649,
+    "19": 238,
+    "21": 483,
+    "2": 161,
+    "18": 329,
+    "20": 645,
+    "22": 431,
+    "23": 108
   },
   "message_types": {
-    "0": 82,
-    "19": 19,
-    "6": 1
+    "0": 6835,
+    "19": 3008,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -88,6 +96,14 @@
       "channel": "Art dump thread"
     },
     {
+      "id": "1461724016380215388",
+      "channel_id": "1170692781216378960",
+      "content": "I'm into that",
+      "author": "rye_ribs",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1461634829589418014",
       "content": "Is it possible to play tic tac toe with them?",
       "author": "moyashi0672",
@@ -95,11 +111,27 @@
       "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
     },
     {
+      "id": "1461663384092278806",
+      "channel_id": "1170692781216378960",
+      "content": "(There was a proposal from CN side to replace ligh with Goya)",
+      "author": "rain_scarlet",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1461718647838871664",
       "content": "I'm not sure if I posted this artwork here before but yeah, have more Salvador f",
       "author": "sofiaebby",
       "reactions": 12,
       "channel": "\"All-Father, please let me end everyone's suffering...\""
+    },
+    {
+      "id": "1461747613219946749",
+      "channel_id": "1131839817982947429",
+      "content": "~~我猜卡墨~~",
+      "author": "quackdayo",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1461637317017210880",
@@ -116,6 +148,54 @@
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
+      "id": "1461523903141904426",
+      "channel_id": "1131839817982947429",
+      "content": "幸運的一天",
+      "author": "luckyinitial",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461691282903666739",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461669155458646141",
+      "channel_id": "1170692781216378960",
+      "content": "I dont know hgow to get more purple buttplugs",
+      "author": "sno_w",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461742406591582283",
+      "channel_id": "1170692781216378960",
+      "content": "holy shit",
+      "author": "velmi",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461658629202509834",
+      "channel_id": "1131839817982947429",
+      "content": "我们忘却前夜虽然没什么人，但鉴ai鉴抄的像路边的野狗一样多",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461771594492940513",
+      "channel_id": "1170692781216378960",
+      "content": "consider \nusing aequor",
+      "author": "rye_ribs",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1461823918179619020",
       "content": "my modern teenager au (not linear timeline just two different au) inspired by ip",
       "author": "exhibitionism",
@@ -123,81 +203,20 @@
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
-      "id": "1461807851440963817",
-      "content": "海國詛咒又要來了嗎",
-      "author": "foxcatfurry",
+      "id": "1461659655238582343",
+      "channel_id": "1131839817982947429",
+      "content": "哎呀，更適合跟我們忘卻連動了不是嗎",
+      "author": "dongpormeat",
       "reactions": 8,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1461791627864445140",
-      "content": "這是一個純娛樂向，不講求幻夢高分速刷，純個人體驗靠手氣挑戰死裡逃生的娛樂組隊！\n第一次寫這種分享文可能很多細節不太清楚，甚至不知道這能不能算攻略請多多包涵。如過",
-      "author": "carrot_chicken",
-      "reactions": 7,
-      "channel": "諸君，我喜歡抽牌"
-    },
-    {
-      "id": "1461637581879115992",
-      "content": "But... How does she bear childs then if her mouth take all of the stomach and su",
-      "author": "moyashi0672",
-      "reactions": 5,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
-    },
-    {
-      "id": "1461635702516355152",
-      "content": "（结果数值很肿）",
-      "author": "cs001092",
-      "reactions": 4,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
-    },
-    {
-      "id": "1461642267017216143",
-      "content": "我是徐媽媽的狗",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
-    },
-    {
-      "id": "1461637628246888468",
-      "content": "红书那个不回应一下吗？那边也不知道这件事啊<:Brown_think:1459080117308620996>",
-      "author": "jutta.l.",
-      "reactions": 2,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
-    },
-    {
-      "id": "1461638198995193955",
-      "content": "你可以拿走我的300抽",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
-    },
-    {
-      "id": "1461657490549637216",
-      "content": "2. Gremona not worth it for current account progression, focus more on aequor st",
-      "author": "a3th3r_69708",
-      "reactions": 2,
-      "channel": "Team Guidance/Character Investment Suggestions"
-    },
-    {
-      "id": "1461627779979280549",
-      "content": "... No helot gmurphy + hameln gmurphy nerf for traphase?",
-      "author": "moyashi0672",
-      "reactions": 2,
-      "channel": "V2.4.1.3 在线维护公告"
-    },
-    {
-      "id": "1461825569116262400",
-      "content": "Looks amazing <:wow:1356053147029864518>\nI think it could win awards in UGC http",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "G Murphy Fan Splash"
-    },
-    {
-      "id": "1461829020407566367",
-      "content": "There's usually always one running at all times so keep an eye out",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "G Murphy Fan Splash"
+      "id": "1461784520977023154",
+      "channel_id": "1170692781216378960",
+      "content": "Rather than hated, Im just being tomato'd for abandonign Cassiah",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

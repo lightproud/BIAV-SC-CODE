@@ -1,10 +1,13 @@
 {
   "date": "2026-01-24",
-  "messages": 170,
-  "unique_authors": 14,
-  "reactions_total": 149,
-  "attachments": 12,
+  "messages": 8445,
+  "unique_authors": 161,
+  "reactions_total": 1310,
+  "attachments": 268,
   "channel_activity": {
+    "🔸綜合討論": 1453,
+    "🔸阵容构建": 16,
+    "🔸morimens-game-chat": 6806,
     "leonora": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "关于+12角色最终法则的分析": 3,
@@ -27,29 +30,36 @@
     "1455822126568308957": 6
   },
   "hourly_activity": {
-    "0": 1,
-    "4": 23,
-    "19": 2,
-    "21": 7,
-    "14": 5,
-    "3": 4,
-    "18": 2,
-    "23": 3,
-    "5": 67,
-    "6": 2,
-    "8": 5,
-    "9": 3,
-    "10": 12,
-    "11": 4,
-    "15": 9,
-    "16": 7,
-    "2": 3,
-    "7": 5,
-    "13": 4,
-    "12": 2
+    "2": 269,
+    "3": 106,
+    "4": 90,
+    "5": 320,
+    "6": 194,
+    "7": 195,
+    "8": 161,
+    "9": 292,
+    "10": 462,
+    "11": 237,
+    "12": 390,
+    "13": 732,
+    "14": 912,
+    "15": 949,
+    "16": 907,
+    "17": 440,
+    "18": 367,
+    "21": 159,
+    "22": 108,
+    "23": 348,
+    "0": 156,
+    "1": 262,
+    "19": 204,
+    "20": 185
   },
   "message_types": {
-    "0": 8
+    "0": 5768,
+    "19": 2505,
+    "46": 1,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -81,11 +91,107 @@
       "channel": "V2.4.2.0 停服维护公告"
     },
     {
+      "id": "1464646595843854356",
+      "channel_id": "1131839817982947429",
+      "content": "接接接接接",
+      "author": "ahong0727",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1464597936649408791",
       "content": "汇总一下近期完成度比较高的一些<:Corpo_advance:1459080545882341376>",
       "author": "yq0227",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1464620750957711360",
+      "channel_id": "1170692781216378960",
+      "content": "Its call having integrity. Which most of you don't understand. Just like telling",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464548331022716948",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sno_w",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464617865692053696",
+      "channel_id": "1170692781216378960",
+      "content": "I beat 200k hp doll with ramona just now, ramona s tier dps?",
+      "author": "chinkeeyong",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464626558571647230",
+      "channel_id": "1170692781216378960",
+      "content": "ur wrong\n\nmfgfmmgmfgfg",
+      "author": "chinkeeyong",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464628387057504329",
+      "channel_id": "1170692781216378960",
+      "content": "my current main team, hopefully chapter 5 doesn't fuck me over like it did chapt",
+      "author": "starfish3302",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464635945222672489",
+      "channel_id": "1170692781216378960",
+      "content": "In fact , it's ai because i cant draw well",
+      "author": "corposant_1003",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464650452586201313",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah like, Flares is a shitposter who spreads misinfo for fun, yes, but that's n",
+      "author": "jadlithon",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464569224323272715",
+      "channel_id": "1131839817982947429",
+      "content": "~~沒事，就算實裝了我還有四個用一輩子的血肉毒成員，至少能喝點湯~~",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1464587652530438228",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ahhot1217",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1464629840018804888",
+      "channel_id": "1170692781216378960",
+      "content": "I have proof guys, it definitely exists, it just goes to another high school in ",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1464695759885832457",
+      "channel_id": "1170692781216378960",
+      "content": "nothing makes me suffer inside more than watching h4-10 catena fights where she ",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1464766668075958449",
@@ -102,95 +208,12 @@
       "channel": ""
     },
     {
-      "id": "1464615900249591963",
-      "content": "fishy.....",
-      "author": "sirend3r",
+      "id": "1464512974659125301",
+      "channel_id": "1131839817982947429",
+      "content": "基本作業完成...",
+      "author": "lululu9858",
       "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1464652635461128369",
-      "content": "我主張打算賣帳號跑路的人不應該造成其他玩家的困擾(例如提出糟糕的建議，使玩家擔心未來發展)",
-      "author": "aaaa_00098",
-      "reactions": 4,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
-    },
-    {
-      "id": "1464655050570727607",
-      "content": "沒事我也不覺得他們該上天堂（欸",
-      "author": "carrot_chicken",
-      "reactions": 4,
-      "channel": "不是if線就是死後幻覺才有可能"
-    },
-    {
-      "id": "1464658325923696834",
-      "content": "兩人惡人就應當互相轉身走向自己的地獄\n再見已是傷痕累累的樣子口牙！",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "不是if線就是死後幻覺才有可能"
-    },
-    {
-      "id": "1464500355222995055",
-      "content": "大部分玩家氪不起+12",
-      "author": "15828894371",
-      "reactions": 3,
-      "channel": "能别搞最终法则吗！"
-    },
-    {
-      "id": "1464514484277088379",
-      "content": "就是因为氪不起所以逼你氪呗，你不花钱脑缸组为啥要听你意见，不花钱还想好好玩忘却前夜，不要想太美",
-      "author": "2300011747",
-      "reactions": 3,
-      "channel": "能别搞最终法则吗！"
-    },
-    {
-      "id": "1464479734875422730",
-      "content": "忘卻篇有個造物\n電池\n回合給狂\n回合結束時算力剩下越多\n配詩人疊算",
-      "author": "akkom730",
-      "reactions": 3,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464491302354948096",
-      "content": "甚至比較同期角色，拉蒙娜給每回合30%基傷成長，配合專屬鑰令生效2次，那女王之劍都比桀驁強多了，本身還給界精、回銀鑰，抽0費牌，超限雙發鑰令\n拉蒙娜還是輔助型呢",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464527493968167034",
-      "content": "At least 3 blow and 1 \"Blade of Defiance\" to get the max effect. \n\nHowever the \"",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464761891216949249",
-      "content": "Divine mother",
-      "author": "kiriwoamizaki",
-      "reactions": 2,
-      "channel": "Art dump thread"
-    },
-    {
-      "id": "1464570924811681895",
-      "content": "可以三持命輪",
-      "author": "200000139",
-      "reactions": 2,
-      "channel": "双持两个+12命轮的使用优化建议"
-    },
-    {
-      "id": "1464481748044746752",
-      "content": "不重要了，我反正准备卖号跑路了",
-      "author": "2300011747",
-      "reactions": 2,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464497004980994100",
-      "content": "对呀，所以我已经准备跑路了",
-      "author": "2300011747",
-      "reactions": 2,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
+      "channel": "🔸綜合討論"
     }
   ]
 }

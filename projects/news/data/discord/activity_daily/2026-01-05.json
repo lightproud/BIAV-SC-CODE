@@ -1,10 +1,12 @@
 {
   "date": "2026-01-05",
-  "messages": 45,
-  "unique_authors": 8,
-  "reactions_total": 36,
-  "attachments": 18,
+  "messages": 9810,
+  "unique_authors": 199,
+  "reactions_total": 914,
+  "attachments": 588,
   "channel_activity": {
+    "🔸綜合討論": 947,
+    "🔸morimens-game-chat": 8818,
     "my morning drawing with no effort": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
     "Team / Pull help": 3,
@@ -29,26 +31,34 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "15": 2,
-    "3": 1,
-    "9": 10,
-    "10": 4,
-    "21": 2,
-    "4": 2,
-    "14": 8,
-    "16": 1,
-    "20": 1,
-    "17": 4,
-    "22": 1,
-    "13": 2,
-    "6": 1,
-    "7": 4,
-    "5": 1,
-    "2": 1
+    "0": 633,
+    "1": 589,
+    "2": 305,
+    "3": 453,
+    "4": 437,
+    "5": 233,
+    "6": 337,
+    "7": 327,
+    "8": 494,
+    "9": 367,
+    "10": 394,
+    "11": 305,
+    "12": 358,
+    "13": 583,
+    "14": 531,
+    "15": 581,
+    "16": 634,
+    "17": 645,
+    "18": 361,
+    "19": 228,
+    "23": 371,
+    "20": 347,
+    "21": 149,
+    "22": 148
   },
   "message_types": {
-    "0": 6,
-    "4": 1
+    "0": 7335,
+    "19": 2430
   },
   "top_reacted_messages": [
     {
@@ -66,53 +76,148 @@
       "channel": "【OC】不高興彌薩格：異度·索瓦爾格·記仇"
     },
     {
-      "id": "1457639569116889142",
+      "id": "1457740643647623387",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "quackdayo",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457546279667236885",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457597529330810903",
+      "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
-      "reactions": 3,
-      "channel": ""
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1457598635054203003",
-      "content": "这样喔，我还以为是官图来着  \n辛苦戈雅啦<:A_pinch:1432980538536493057>",
+      "id": "1457701481397354597",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457638658143420416",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457684218296664228",
+      "channel_id": "1131839817982947429",
+      "content": "道中比王关难打<:dead:1356082627509092372>   \n我好像能理解呆呆松佬为什么喜欢门扉了<:pray:13560531162604545",
       "author": "sweet_25367",
-      "reactions": 2,
-      "channel": ""
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1457748785148072139",
-      "content": "<@1131790839291596841>",
-      "author": "shunia3055",
-      "reactions": 1,
-      "channel": "💭「处理中」典藏馆事件的解锁到底是什么机制？"
+      "id": "1457738109994270800",
+      "channel_id": "1131839817982947429",
+      "content": "話說事件給覺醒\n戰鬥第一次開銀鑰覺\n會直接扣2000（",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1457750145436487842",
-      "content": "把主线支线所有本全部重打了一遍，造物和事件各有大量无法解锁。过往活动全部毕业，但相关造物现在都没有自动解锁。",
-      "author": "shunia3055",
-      "reactions": 1,
-      "channel": "💭「处理中」典藏馆大量造物事件无法解锁"
+      "id": "1457621560574742548",
+      "channel_id": "1170692781216378960",
+      "content": "Would have been 3 if gacha wasn't rigged",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457867129973117039",
-      "content": "With the introduction of Replays, now it would be even better to be able to sear",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "Please, can a Search option for Dtide clears be implemented?"
+      "id": "1457645432141254678",
+      "channel_id": "1170692781216378960",
+      "content": "corpo aurita very broken at low investment trust",
+      "author": "syruponstrawberrycake",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457730488155377815",
-      "content": "https://youtu.be/Vf70PK3EvWY?si=ozgi5Uk0XXJTMVZm - Clearing with AURITA AURITA",
+      "id": "1457524111969357921",
+      "channel_id": "1170692781216378960",
+      "content": "Done. What next",
+      "author": "succubare",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457537647235829760",
+      "channel_id": "1170692781216378960",
+      "content": "I'm on crypto",
       "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457670168644685866",
-      "content": "No problem, I'll prioritize handling bug reports. General game suggestions are t",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "id": "1457538981603315815",
+      "channel_id": "1170692781216378960",
+      "content": "poor goya she's the definition of shooting the messenger",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457619677391093856",
+      "channel_id": "1170692781216378960",
+      "content": "I... I still have 700 dr you can't die yet <:takenotes:1357186646294138890>",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457696920104341505",
+      "channel_id": "1170692781216378960",
+      "content": "cmon",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457864607573086370",
+      "channel_id": "1170692781216378960",
+      "content": "no silver = not worth",
+      "author": "arandomflamev2",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457711462410748041",
+      "channel_id": "1131839817982947429",
+      "content": "下次你就看到什麼致奧爾拉，管家，蛹",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457714677789491356",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cameliia._.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457755765086617700",
+      "channel_id": "1131839817982947429",
+      "content": "想當初進混池撈就撈出這個",
+      "author": "freddiemercuryeyeofthetiger",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

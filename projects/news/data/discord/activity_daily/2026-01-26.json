@@ -1,10 +1,12 @@
 {
   "date": "2026-01-26",
-  "messages": 108,
-  "unique_authors": 37,
-  "reactions_total": 170,
-  "attachments": 54,
+  "messages": 12729,
+  "unique_authors": 275,
+  "reactions_total": 1991,
+  "attachments": 687,
   "channel_activity": {
+    "🔸綜合討論": 2394,
+    "🔸morimens-game-chat": 10227,
     "剛入坑，求配隊🙏": 2,
     "clementine": 4,
     "✅「Answered」Choose if OE or not.": 1,
@@ -38,27 +40,36 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "9": 4,
-    "10": 6,
-    "6": 4,
-    "7": 12,
-    "20": 1,
-    "13": 15,
-    "5": 4,
-    "17": 3,
-    "16": 7,
-    "4": 13,
-    "14": 8,
-    "3": 7,
-    "15": 5,
-    "2": 1,
-    "18": 5,
-    "11": 3,
-    "12": 9,
-    "8": 1
+    "0": 649,
+    "1": 558,
+    "2": 617,
+    "3": 733,
+    "4": 533,
+    "5": 863,
+    "6": 781,
+    "7": 508,
+    "8": 644,
+    "9": 540,
+    "10": 529,
+    "11": 685,
+    "12": 692,
+    "13": 514,
+    "14": 497,
+    "15": 628,
+    "16": 452,
+    "17": 332,
+    "18": 225,
+    "19": 313,
+    "20": 491,
+    "21": 662,
+    "22": 209,
+    "23": 74
   },
   "message_types": {
-    "0": 2
+    "0": 8711,
+    "19": 3907,
+    "23": 2,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -74,6 +85,22 @@
       "author": "satachan",
       "reactions": 25,
       "channel": "Regarding Absolute axiom (+12) on limited characters"
+    },
+    {
+      "id": "1465177285849120791",
+      "channel_id": "1170692781216378960",
+      "content": "My first time playing morimens what should i do?",
+      "author": "yaoshidoppa",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465182458772197542",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "notpantswagon",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1465213374060040336",
@@ -111,95 +138,92 @@
       "channel": "✅「Resolved」Resonance Reset"
     },
     {
-      "id": "1465184886229958852",
-      "content": "While as a fellow developer, I know that a patch canmot be taken out in the matt",
-      "author": "satachan",
-      "reactions": 5,
-      "channel": "Regarding Absolute axiom (+12) on limited characters"
+      "id": "1465468994856423588",
+      "channel_id": "1170692781216378960",
+      "content": "The brain takes great pleasure in taking in all these tomatos",
+      "author": "brainrot_in_a_vat",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465183921091121294",
-      "content": "To both tease a highly controversial mechanic and release it despite literally t",
-      "author": "bagels5899",
-      "reactions": 4,
-      "channel": "Regarding Absolute axiom (+12) on limited characters"
+      "id": "1465468112777515213",
+      "channel_id": "1170692781216378960",
+      "content": "<:g_frog_waving:1393238926252052563>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465177429797765161",
-      "content": "In TH Ver include other language ver., there are multiple sections that haven’t ",
-      "author": "darkerkuro",
-      "reactions": 4,
-      "channel": "There are multiple sections that haven’t been translated."
+      "id": "1465468204422922422",
+      "channel_id": "1170692781216378960",
+      "content": "getting **INSTANTLY** tomato'd",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465267084622696468",
-      "content": "摸了一點就要出門了🌿",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": ""
+      "id": "1465219465074708561",
+      "channel_id": "1131839817982947429",
+      "content": "靠北\n我只抽了這五抽",
+      "author": "candy1corn",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1465417594852081818",
-      "content": "Nap time with kiddos <:T_sleep2:1356085993626665200>",
-      "author": "happyskull",
-      "reactions": 4,
-      "channel": ""
+      "id": "1465294521310122149",
+      "channel_id": "1131839817982947429",
+      "content": "期间抽到了零个弥利",
+      "author": "jiangzehuai",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1465211077900898482",
-      "content": "如題，卡牌描述缺失",
-      "author": "myth1538",
-      "reactions": 3,
-      "channel": "我們克總被融蝕了嗎"
+      "id": "1465181080733880493",
+      "channel_id": "1170692781216378960",
+      "content": "this does not bode well",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465347841374289921",
-      "content": "建议大多数老玩家抽0启，新人如果抽数紧可以先观望不抽；\n毒队爱好者/重氪玩家可抽3启及以上\n\n详见：https://www.bilibili.com/video",
-      "author": "mtyl.eth",
-      "reactions": 3,
-      "channel": "【忘却前夜】徐-攻略：亲民角色，0启可用的毒队次辅/通用挂件"
+      "id": "1465181249940230305",
+      "channel_id": "1170692781216378960",
+      "content": "wow Karen wheel on Xu is actually cracked",
+      "author": "cornonthemacabre_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465243527142182985",
-      "content": "放心，以后角色包这样的",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "徐设计的什么逼玩意？恶心玩家"
+      "id": "1465181389895762002",
+      "channel_id": "1170692781216378960",
+      "content": "stay tuned my ass forget this game im ngl",
+      "author": "yurichansnails",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465335804959391954",
-      "content": "似乎所有常駐角色開到超限 這個位置還是叫人格深化\n\n限定有開到超限就是超限爆發名\n\n反正最後一定都是最終法則的名",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "希望統整一點"
+      "id": "1465239154416943266",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1453691146101457019/1465231099960754348/i",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465342800739434638",
-      "content": "刚好+4就是超限的名字，只要超过了就没了",
-      "author": "bailuoxiao",
-      "reactions": 2,
-      "channel": "希望統整一點"
+      "id": "1465440736353718273",
+      "channel_id": "1170692781216378960",
+      "content": "The 6/7? it’s like quality tier. Max is 8 from what I’ve seen",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465196436286214156",
-      "content": "They were too busy making AA to quality check this build version",
-      "author": "satachan",
-      "reactions": 2,
-      "channel": "Support Awakeners have their Omen and Soulforge at 0?"
-    },
-    {
-      "id": "1465317228219076723",
-      "content": "覺得彌利真的很慘==懷疑她可能一生不知何謂自由和真正的快樂\n即使是夢也想讓戈利亞帶她體驗一把自由，因為與海風相伴的信天翁理應是這種存在",
-      "author": "carrot_chicken",
-      "reactions": 2,
-      "channel": "不是if線就是死後幻覺才有可能"
-    },
-    {
-      "id": "1465346222943506453",
-      "content": "改版後完成率突然加的莫名其妙<:cry3:1356082134447558748> \n雖然啥也沒幹但看上去變強了<:wish:13560847024688991",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": ""
+      "id": "1465467670790148289",
+      "channel_id": "1170692781216378960",
+      "content": "I mean people would buy clown 24 just for the memes XD",
+      "author": "zyocuh",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

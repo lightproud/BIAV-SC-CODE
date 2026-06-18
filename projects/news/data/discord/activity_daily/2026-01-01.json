@@ -1,10 +1,13 @@
 {
   "date": "2026-01-01",
-  "messages": 173,
-  "unique_authors": 8,
-  "reactions_total": 98,
-  "attachments": 5,
+  "messages": 9513,
+  "unique_authors": 230,
+  "reactions_total": 1140,
+  "attachments": 431,
   "channel_activity": {
+    "🔸綜合討論": 1351,
+    "🔸阵容构建": 21,
+    "🔸morimens-game-chat": 7968,
     "Cooking with Doresain - A Doresain Guide": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 2,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
@@ -23,26 +26,35 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
-    "17": 32,
-    "9": 1,
-    "18": 4,
-    "12": 11,
-    "14": 93,
-    "15": 14,
-    "13": 5,
-    "2": 1,
-    "0": 1,
-    "16": 4,
-    "21": 1,
-    "8": 1,
-    "20": 1,
-    "10": 1,
-    "11": 1,
-    "3": 1,
-    "5": 1
+    "0": 424,
+    "1": 188,
+    "2": 365,
+    "3": 306,
+    "4": 305,
+    "5": 230,
+    "6": 346,
+    "7": 254,
+    "8": 416,
+    "9": 663,
+    "10": 456,
+    "11": 306,
+    "12": 366,
+    "13": 426,
+    "14": 662,
+    "15": 780,
+    "16": 427,
+    "17": 538,
+    "20": 350,
+    "21": 307,
+    "18": 520,
+    "19": 373,
+    "22": 254,
+    "23": 251
   },
   "message_types": {
-    "0": 4
+    "0": 6236,
+    "19": 3103,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -67,6 +79,30 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1456304791842984049",
+      "channel_id": "1131839817982947429",
+      "content": "富佬們讓我有遊戲玩的光輝閃耀到我無法睜眼...",
+      "author": "water_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456211862013087825",
+      "channel_id": "1170692781216378960",
+      "content": "i think you are trying way too hard to minmax, new players should have enough pu",
+      "author": "rain_scarlet",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456080492527878205",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1456333059644329984",
       "content": "https://docs.google.com/presentation/d/1VkEfTeIS2M3Pu02XdlF8BcNy-JJxROy-d_5edqhD",
       "author": "esserius",
@@ -74,116 +110,108 @@
       "channel": "Cooking with Doresain - A Doresain Guide"
     },
     {
-      "id": "1456257856339709983",
-      "content": "Rey-Khan\n\nRealm: Caro\nType: Warden\nBirthday: 17th Nov\nGender: Female\nNous index:",
+      "id": "1456132555450351636",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ququ12358",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456301478670106624",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456118513138929838",
+      "channel_id": "1170692781216378960",
+      "content": "just achieved 425 for my first time",
+      "author": "timbite",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456169350036983899",
+      "channel_id": "1131839817982947429",
+      "content": "英区怎么还有人用0启打第三波的",
       "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456174150518439988",
+      "channel_id": "1131839817982947429",
+      "content": "恭喜我",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456270030122651648",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456300028409937982",
+      "channel_id": "1131839817982947429",
+      "content": "||~~剛剛一眼看過去看成\n他裝起來就很唐~~||",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456118632038924378",
+      "channel_id": "1170692781216378960",
+      "content": "so i felt im good enough to help others<:Cheerup:1400771555939844149>",
+      "author": "timbite",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456210334657286145",
+      "channel_id": "1170692781216378960",
+      "content": "\"guys i just started the game and i'm having a blast, what should I do? i really",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456339122250584235",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456126353068920942",
+      "channel_id": "1131839817982947429",
+      "content": "新角強嗎",
+      "author": "arthasiv",
       "reactions": 5,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1456239100989542555",
-      "content": "Hello guys.\n\nI've been having this issue on both of my Android devices where aft",
-      "author": "kitsu_hsk",
-      "reactions": 4,
-      "channel": ""
+      "id": "1456283445566374000",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1456260766301687961",
-      "content": "Cool character kit but the ai art makes me want to puke",
-      "author": "nightjar0928",
-      "reactions": 3,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456281269607600371",
-      "content": "还没写<:please:1356053110375714817>",
-      "author": "rain_scarlet",
-      "reactions": 2,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456288864837832714",
-      "content": "https://tenor.com/view/cyclops-ryu-dap-me-up-dap-dap-up-gif-2485274535169214603",
-      "author": "i_me_myself_caffeine",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456289994942451881",
-      "content": "I am someone who appreciates many things, my friend",
-      "author": "i_me_myself_caffeine",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456290152350613709",
-      "content": "Just as you appreciate a peach, you have to appreciate a banana",
-      "author": "i_me_myself_caffeine",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456291389020049601",
-      "content": "isnt nsfw prohibited from this server???",
-      "author": "thespookboo",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456295177047244915",
-      "content": "It's fine",
-      "author": "lowtown77",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456296007791935611",
-      "content": "sue sure",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "I errr.... #2"
-    },
-    {
-      "id": "1456283108868489306",
-      "content": "然后纪行系命轮在末尾",
-      "author": "shunia3055",
-      "reactions": 1,
-      "channel": "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”"
-    },
-    {
-      "id": "1456258062603255981",
-      "content": "Stats: \nCon: 150\nAtk: 120\nDef: 138\nNo Psyche Surge: 【33.6% Death Resistance】 【10",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456258496906399844",
-      "content": "this is evil",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456305901312147466",
-      "content": "omg her exalt deals even less dmg than doorstain",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456331317460467937",
-      "content": "毕竟不是主c）",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456333554119213159",
-      "content": "哦你是说命轮效果和属性",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+      "id": "1456308510416572688",
+      "channel_id": "1131839817982947429",
+      "content": "多餘的消耗資源只是拖慢我練滿的速度😡",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2026-01-07",
-  "messages": 82,
-  "unique_authors": 14,
-  "reactions_total": 149,
-  "attachments": 34,
+  "messages": 9507,
+  "unique_authors": 180,
+  "reactions_total": 1282,
+  "attachments": 520,
   "channel_activity": {
+    "🔸綜合討論": 1078,
+    "🔸morimens-game-chat": 8347,
     "I errr....": 3,
     "Play house? (Collab story fancomic)": 1,
     "Happy 2026 Fellow Keepers": 1,
@@ -32,27 +34,35 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 5,
-    "18": 2,
-    "15": 4,
-    "17": 5,
-    "8": 12,
-    "9": 6,
-    "11": 6,
-    "4": 10,
-    "7": 7,
-    "2": 2,
-    "14": 3,
-    "16": 5,
-    "6": 1,
-    "10": 9,
-    "3": 3,
-    "21": 1
+    "0": 169,
+    "1": 236,
+    "2": 441,
+    "3": 320,
+    "4": 222,
+    "5": 521,
+    "6": 427,
+    "7": 354,
+    "8": 187,
+    "9": 386,
+    "10": 373,
+    "11": 541,
+    "12": 363,
+    "13": 452,
+    "14": 779,
+    "15": 860,
+    "16": 219,
+    "17": 473,
+    "18": 243,
+    "20": 364,
+    "21": 445,
+    "22": 432,
+    "23": 412,
+    "19": 288
   },
   "message_types": {
-    "19": 5,
-    "0": 19
+    "0": 6305,
+    "19": 3116,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -70,11 +80,35 @@
       "channel": ""
     },
     {
+      "id": "1458431097586192465",
+      "channel_id": "1131839817982947429",
+      "content": "<:blind:1356053033724674255>",
+      "author": "sweet_25367",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458589708194939004",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1458340548845895781",
       "content": "The Gmurphy Divine Aequor realm changing idea is a very nice touch to the game. ",
       "author": "sexysneakystoat1625",
       "reactions": 11,
       "channel": "Realm's effect/Synergy/Ideas"
+    },
+    {
+      "id": "1458422448398532628",
+      "channel_id": "1170692781216378960",
+      "content": "she should have been realized when tulu plap plapped her",
+      "author": "dinocider",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1458481774261833791",
@@ -91,6 +125,30 @@
       "channel": "忘却前夜OST：茉夏EP·迷雾消散之时"
     },
     {
+      "id": "1458313373866397759",
+      "channel_id": "1131839817982947429",
+      "content": "終於也是上過400的人了，以後繼續375擺爛<:dead:1356082627509092372>",
+      "author": "iamnotbunny",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458449902488256553",
+      "channel_id": "1131839817982947429",
+      "content": "這裡的大佬都會秀操作...輸光...",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458590210542669896",
+      "channel_id": "1170692781216378960",
+      "content": "cause i would think the regulars here know im a whale",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1458277578086416405",
       "content": "I wanna slap my Keeper-Investigator OCs because why not? My silly fellas <:FLAME",
       "author": "lotusbunyee",
@@ -98,95 +156,68 @@
       "channel": "Bunch of doodles and sillies"
     },
     {
-      "id": "1458481640220266638",
-      "content": "Oh ye, I do have these silly ones of my keeper-investigator ocs and just carries",
-      "author": "lotusbunyee",
-      "reactions": 4,
-      "channel": "Bunch of doodles and sillies"
+      "id": "1458283255437594857",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> yay",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458489416182927514",
-      "content": "Currently you cant preview the song without third party sources outside the game",
-      "author": "binis7705",
-      "reactions": 4,
-      "channel": ""
+      "id": "1458584859881771070",
+      "channel_id": "1170692781216378960",
+      "content": "2024 whales buy f2p.I was silent... 2025 f2p pull +12.I was silent...2026 f2p bu",
+      "author": "twilightsparkle163163",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458371914018979971",
-      "content": "關於追隨者可以選取為關注或互相關注來看\n但是關注不行，這樣導致要刪未關注的人還要慢慢的找\n所以希望新增跟追隨者一樣的功能",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": ""
+      "id": "1458594047709941873",
+      "channel_id": "1170692781216378960",
+      "content": "very inspired cross over, BIAV x flare's firm",
+      "author": "khykken",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458398266214449308",
-      "content": "Synergy boost with specific wheel just limits creativity. One build will be far ",
+      "id": "1458364519129550919",
+      "channel_id": "1131839817982947429",
+      "content": "我當初是卡包出來第一天直接砸保底拿的",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458491608147427462",
+      "channel_id": "1131839817982947429",
+      "content": "全隊90",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458573489580540047",
+      "channel_id": "1131839817982947429",
+      "content": "抄了下阿花的配队（  \n~~凯蒂古拉钥令最有用的一集~~  \n~~逃走~~",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458430860671062100",
+      "channel_id": "1170692781216378960",
+      "content": "https://www.youtube.com/watch?v=YQnnhLBHt_E",
       "author": "aurora3981",
-      "reactions": 3,
-      "channel": "Realm's effect/Synergy/Ideas"
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458400308588974164",
-      "content": "> do nerf only when really needed. Imo, nerf is bad, buff is better. You only ha",
-      "author": "elenakrittik",
-      "reactions": 3,
-      "channel": "Realm's effect/Synergy/Ideas"
-    },
-    {
-      "id": "1458421032405827616",
-      "content": "游佐岚",
-      "author": "gl0wtail",
-      "reactions": 2,
-      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
-    },
-    {
-      "id": "1458372320040190016",
-      "content": "<:H_immerse:1426122347643146250> 以上就是本次OST的全部曲目~\nThe above are all the tracks of",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "忘却前夜OST：茉夏EP·迷雾消散之时"
-    },
-    {
-      "id": "1458355051646160997",
-      "content": "Sounds overly complicated and puts further load on the players. Gacha players sh",
-      "author": "angy_24_s",
-      "reactions": 2,
-      "channel": "Realm's effect/Synergy/Ideas"
-    },
-    {
-      "id": "1458368566993748019",
-      "content": "Currently the In-Sheath supply daily item expire in 24 hours, making it impossib",
-      "author": "patrueree",
-      "reactions": 2,
-      "channel": "In-Sheath Supply pack possibility of stacking"
-    },
-    {
-      "id": "1458421187435565106",
-      "content": "https://youtu.be/mKr8YkXwclM?si=JxszqiiS7i8uczYJ - One year account overview.",
-      "author": "flares117",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1458479505512333425",
-      "content": "Happy 2026 🎉🎉🎉",
-      "author": "sofiaebby",
-      "reactions": 1,
-      "channel": "Happy 2026 Fellow Keepers"
-    },
-    {
-      "id": "1458421340603285607",
-      "content": "Ty!",
-      "author": "ellezard",
-      "reactions": 1,
-      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
-    },
-    {
-      "id": "1458405139869204545",
-      "content": "i do like listening to design talk tho so probably picked up a thing or two from",
-      "author": "elenakrittik",
-      "reactions": 1,
-      "channel": "Realm's effect/Synergy/Ideas"
+      "id": "1458431685552246837",
+      "channel_id": "1170692781216378960",
+      "content": "My aurita smart",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

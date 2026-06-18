@@ -1,10 +1,12 @@
 {
   "date": "2026-01-31",
-  "messages": 55,
-  "unique_authors": 14,
-  "reactions_total": 91,
-  "attachments": 11,
+  "messages": 1313,
+  "unique_authors": 39,
+  "reactions_total": 298,
+  "attachments": 104,
   "channel_activity": {
+    "🔸綜合討論": 1254,
+    "🔸阵容构建": 4,
     "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
     "求融災禁區配隊建議": 4,
@@ -32,28 +34,34 @@
     "1458187614879486146": 1
   },
   "hourly_activity": {
-    "18": 5,
-    "2": 8,
-    "0": 2,
-    "3": 5,
-    "5": 2,
-    "6": 5,
-    "9": 4,
-    "17": 4,
-    "1": 5,
-    "4": 3,
-    "20": 1,
-    "16": 4,
-    "11": 2,
-    "22": 1,
-    "14": 1,
-    "7": 1,
-    "19": 1,
-    "23": 1
+    "0": 3,
+    "1": 8,
+    "2": 40,
+    "3": 114,
+    "4": 11,
+    "5": 4,
+    "6": 20,
+    "7": 119,
+    "8": 133,
+    "9": 35,
+    "10": 69,
+    "11": 20,
+    "12": 16,
+    "13": 15,
+    "14": 7,
+    "15": 97,
+    "16": 197,
+    "17": 28,
+    "18": 10,
+    "20": 11,
+    "21": 156,
+    "22": 74,
+    "23": 125,
+    "19": 1
   },
   "message_types": {
-    "0": 4,
-    "19": 3
+    "19": 260,
+    "0": 998
   },
   "top_reacted_messages": [
     {
@@ -99,11 +107,59 @@
       "channel": ""
     },
     {
+      "id": "1467098920638484655",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1467177841216196650",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1467067016362987551",
+      "channel_id": "1131839817982947429",
+      "content": "學生很窮，抽角都靠消化道",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1467155798932066540",
+      "channel_id": "1131839817982947429",
+      "content": "这个好玩",
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466989878968582274",
       "content": "The reason i feel that way is in relation to both the dev's track record and wha",
       "author": "satachan",
       "reactions": 5,
       "channel": "Regarding the possible +12 Paywall"
+    },
+    {
+      "id": "1466996784969814204",
+      "channel_id": "1131839817982947429",
+      "content": "我記得羊媽好像至少2命",
+      "author": "forg30215",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1467097791527649368",
+      "channel_id": "1131839817982947429",
+      "content": "我剛沒睡醒想說買新的家長是什麼鬼",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1467037703022579845",
@@ -120,60 +176,44 @@
       "channel": ""
     },
     {
-      "id": "1467287388173762662",
-      "content": "having the same issue in the \"next Monday, Sir\" stage of the Happy Hunting Speci",
-      "author": "strikeing",
+      "id": "1466991410853974071",
+      "channel_id": "1131839817982947429",
+      "content": "去你的小小願望",
+      "author": "water_heart",
       "reactions": 3,
-      "channel": "Text bugs during story"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1467050620057030819",
-      "content": "I completely agree with you that there's no point in speculating. Though I'd hop",
-      "author": "sleppyissleepy",
-      "reactions": 2,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+      "id": "1466995772318027930",
+      "channel_id": "1131839817982947429",
+      "content": "明白了，謝謝瑪爾大佬！",
+      "author": "fengtengjayden9754",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1467117108256313531",
-      "content": "<@1131790839291596841>",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "✅「已回答」取消SSR命輪自動分解"
+      "id": "1466998879961616678",
+      "channel_id": "1131839817982947429",
+      "content": "然後虛弱易傷都不給我",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1466986557880664128",
-      "content": "if anything I think people misinterpreted them and we will still get the same am",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+      "id": "1467005172340232301",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1466987540295979028",
-      "content": "We'll see. Writing that would make things more obvious. So far, we have another ",
-      "author": "silencio3507",
-      "reactions": 1,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1467007561130709064",
-      "content": "對，我還沒打完\n最近才想說要繼續推主線的（",
-      "author": "myth1538",
-      "reactions": 1,
-      "channel": "我們神母怎麼沒辦法講下去"
-    },
-    {
-      "id": "1467066793024815237",
-      "content": "~~有沒有大佬幫我@~~",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "✅「已回答」取消SSR命輪自動分解"
-    },
-    {
-      "id": "1467231768238358528",
-      "content": "Most likely, the math when devouring an embryo works not as \"base_str * 2\", but ",
-      "author": "heransu",
-      "reactions": 1,
-      "channel": ""
+      "id": "1467042905561632861",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

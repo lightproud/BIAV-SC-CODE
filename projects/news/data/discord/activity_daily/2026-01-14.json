@@ -1,10 +1,13 @@
 {
   "date": "2026-01-14",
-  "messages": 94,
-  "unique_authors": 10,
-  "reactions_total": 112,
-  "attachments": 26,
+  "messages": 6692,
+  "unique_authors": 154,
+  "reactions_total": 967,
+  "attachments": 312,
   "channel_activity": {
+    "🔸綜合討論": 271,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 6321,
     "whormentine + tournament": 20,
     "Various art dump (+suggestive) updated!": 2,
     "Sea of Primordial Essence": 1,
@@ -29,24 +32,35 @@
     "1445556242381672559": 7
   },
   "hourly_activity": {
-    "23": 22,
-    "3": 4,
-    "15": 2,
-    "9": 3,
-    "2": 27,
-    "19": 1,
-    "5": 7,
-    "11": 6,
-    "20": 4,
-    "10": 2,
-    "7": 5,
-    "8": 5,
-    "6": 4,
-    "4": 2
+    "0": 342,
+    "1": 89,
+    "3": 323,
+    "4": 158,
+    "5": 142,
+    "6": 323,
+    "7": 83,
+    "8": 262,
+    "9": 248,
+    "10": 140,
+    "11": 311,
+    "12": 468,
+    "13": 508,
+    "14": 556,
+    "15": 453,
+    "16": 39,
+    "17": 304,
+    "18": 232,
+    "19": 120,
+    "2": 719,
+    "20": 166,
+    "21": 198,
+    "22": 73,
+    "23": 435
   },
   "message_types": {
-    "0": 12,
-    "19": 9
+    "19": 1713,
+    "0": 4883,
+    "46": 2
   },
   "top_reacted_messages": [
     {
@@ -78,6 +92,110 @@
       "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
     },
     {
+      "id": "1460970555787444388",
+      "channel_id": "1131839817982947429",
+      "content": "好耶 剩鯨魚了",
+      "author": "quackdayo",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1460986895831142594",
+      "channel_id": "1170692781216378960",
+      "content": "i also saw some screenshots of pickman being pathetic and i just like that on my",
+      "author": "hamillionthousand",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460941167481847944",
+      "channel_id": "1131839817982947429",
+      "content": "又要刷力了？",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1461143152734765118",
+      "channel_id": "1170692781216378960",
+      "content": "i said \"how are you doing\" to a russian woman cashier at a persian grocery store",
+      "author": "reya.li",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461037342818173032",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "chunfeifeiye",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1460883870785474623",
+      "channel_id": "1170692781216378960",
+      "content": "\"Eldritch Entity Reminisceth of the Ancient Past while under the influence of CB",
+      "author": "inana_istar",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460976224343167099",
+      "channel_id": "1170692781216378960",
+      "content": "Hoyo games are solo levellings of gachas",
+      "author": "sans_ia",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460989152467357881",
+      "channel_id": "1170692781216378960",
+      "content": "But Ryker is a fraud\nJack of all trades, master of none",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461009461635449058",
+      "channel_id": "1170692781216378960",
+      "content": "people are performative in like all social medias",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461024672475775067",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461052240793043129",
+      "channel_id": "1170692781216378960",
+      "content": "Im always a Francis lover!",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461071555965489416",
+      "channel_id": "1170692781216378960",
+      "content": "I dont lie",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1461024369915461722",
+      "channel_id": "1170692781216378960",
+      "content": "if i had a sister i wouldve cannibalised her too :/",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1460828182226669662",
       "content": "",
       "author": "ice_storys",
@@ -85,95 +203,20 @@
       "channel": ""
     },
     {
-      "id": "1461142056289173545",
-      "content": "",
-      "author": "h3ll0hu",
-      "reactions": 2,
-      "channel": "whormentine + tournament"
+      "id": "1460787416838176788",
+      "channel_id": "1131839817982947429",
+      "content": "助戰更新",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1461138198435598583",
-      "content": "I created a tournament for your favorite character in Mori—choose by your own cr",
-      "author": "meatloversus",
-      "reactions": 2,
-      "channel": "whormentine + tournament"
-    },
-    {
-      "id": "1461136858053476497",
-      "content": "Liz haters so strong they voted juliette so Liz would be last",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "whormentine + tournament"
-    },
-    {
-      "id": "1460842267052081314",
-      "content": "I love your art so so much <:Cheerup:1400771555939844149> <:Cheerup:140077155593",
-      "author": "kiriwoamizaki",
-      "reactions": 1,
-      "channel": "Various art dump (+suggestive) updated!"
-    },
-    {
-      "id": "1461082311238881464",
-      "content": "my apologies! 101212940 is my uid.. 🥹",
-      "author": "shirox0_.",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1460862401992986828",
-      "content": "如題，打出後死亡抵抗未依數字增加。若是因為戰鬥中已經經歷死亡抵抗導致獲得比例減少，卡面上也未額外說明\n檔案錯了請見二樓",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "達芙戴爾活動卡「禁忌的交易」無法獲得死亡抵抗"
-    },
-    {
-      "id": "1460863652482514944",
-      "content": "珠玉之卵卡面上的「回復生命」是黑字，實際效果卻會因「搖籃」加持而提升，從卡面的 5 點變為實際上是 7 點。其實我很希望珠玉之卵也可以受到各種治療加成，這樣一問",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "疑問：珠玉之卵治療效果是固定數值還是變動數值？"
-    },
-    {
-      "id": "1460828768297025578",
-      "content": "嗨，这个问题已经修复啦，会在下个版本放出🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」相位bug"
-    },
-    {
-      "id": "1460903126281228379",
-      "content": "杜勒赛因好帅！西维斯特也是个人！",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
-    },
-    {
-      "id": "1460918791285506172",
-      "content": "神秘吃飯男",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
-    },
-    {
-      "id": "1460934047957127242",
-      "content": "真是个英俊的男人！<:Dore_proud:1459076042722639905>",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
-    },
-    {
-      "id": "1460893531014172813",
-      "content": "I'm the table.",
-      "author": "exhibitionism",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461100541538078763",
-      "content": "ITS ALL OVER",
-      "author": "velvetrene._cake",
-      "reactions": 1,
-      "channel": ""
+      "id": "1460876246228537489",
+      "channel_id": "1131839817982947429",
+      "content": "以后不能玩愉快的算力大赛了",
+      "author": "carme.0588",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

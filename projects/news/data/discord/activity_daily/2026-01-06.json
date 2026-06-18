@@ -1,10 +1,12 @@
 {
   "date": "2026-01-06",
-  "messages": 50,
-  "unique_authors": 11,
-  "reactions_total": 45,
-  "attachments": 13,
+  "messages": 9049,
+  "unique_authors": 182,
+  "reactions_total": 1153,
+  "attachments": 392,
   "channel_activity": {
+    "🔸綜合討論": 675,
+    "🔸morimens-game-chat": 8324,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
     "星辰篇": 1,
@@ -32,31 +34,139 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
-    "3": 1,
-    "0": 3,
-    "14": 1,
-    "10": 14,
-    "12": 7,
-    "13": 2,
-    "15": 4,
-    "11": 9,
-    "23": 1,
-    "20": 1,
-    "8": 3,
-    "1": 2,
-    "19": 1,
-    "17": 1
+    "1": 388,
+    "2": 625,
+    "3": 395,
+    "4": 159,
+    "5": 634,
+    "6": 253,
+    "7": 226,
+    "8": 222,
+    "9": 286,
+    "10": 367,
+    "11": 237,
+    "12": 313,
+    "13": 515,
+    "14": 643,
+    "15": 685,
+    "16": 324,
+    "18": 573,
+    "19": 536,
+    "22": 109,
+    "0": 475,
+    "17": 320,
+    "20": 468,
+    "21": 244,
+    "23": 52
   },
   "message_types": {
-    "0": 4
+    "0": 6493,
+    "19": 2505,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1458112917479096450",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457988724536119516",
+      "channel_id": "1131839817982947429",
+      "content": "我425了",
+      "author": "water_heart",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458095972671422681",
+      "channel_id": "1170692781216378960",
+      "content": "he takes off the shirt and blinds you with how reflective his abs are",
+      "author": "khykken",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1458187614879486146",
       "content": "https://docs.google.com/spreadsheets/d/1sDqOc_JVw_qnMDNf0_GOeNKxxv9xMZ0CToQAOmUQ",
       "author": "yeriko703",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1457926355823099978",
+      "channel_id": "1170692781216378960",
+      "content": "MOUCHETTE ISNT THE 2ND BEST DPS IN GENERAL USE",
+      "author": "fibrinogen",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458054782127312917",
+      "channel_id": "1131839817982947429",
+      "content": "好耶！<:Cheerup:1400771555939844149>",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1458096101134700618",
+      "channel_id": "1170692781216378960",
+      "content": "\"stop praying for my grandpa he's getting too strong\"",
+      "author": "arandomflamev2",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458114615626956995",
+      "channel_id": "1170692781216378960",
+      "content": "Is mouch still good without image?",
+      "author": "lotan_045",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458156918278193204",
+      "channel_id": "1170692781216378960",
+      "content": "Hahahahha",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458113031702581309",
+      "channel_id": "1170692781216378960",
+      "content": "<:Dawww:965272358959079454>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458132207880110262",
+      "channel_id": "1170692781216378960",
+      "content": "67 turns",
+      "author": "undeterredhomo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458156985060032563",
+      "channel_id": "1170692781216378960",
+      "content": "Fuuuck this boss forever. I wanted to kill it with Wanda. It was painful, but I ",
+      "author": "sophiechoice",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1458248279262236851",
+      "channel_id": "1170692781216378960",
+      "content": "50 ailmeus so you can exalt turn 1 is no joke",
+      "author": "dddhunter",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1458061883071266974",
@@ -66,95 +176,52 @@
       "channel": ""
     },
     {
-      "id": "1458047380866859161",
-      "content": "I have Mouchette posse but it does not appear on my list of posses if I filter b",
-      "author": "syruponstrawberrycake",
+      "id": "1457990181289459795",
+      "channel_id": "1131839817982947429",
+      "content": "沒事\n下期就||有450||了",
+      "author": "0.0._.0_0.",
       "reactions": 5,
-      "channel": "💭「Processing」Mouchette posse not shown under Chaos posses"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1458059497187573862",
-      "content": "I was really disappointed to get a character (Mouchette) from a Sepirot Capture ",
-      "author": "nikol_marshava",
-      "reactions": 4,
-      "channel": ""
+      "id": "1457915031717937173",
+      "channel_id": "1170692781216378960",
+      "content": "had a great pdive run then I see the boss is Miryam and i'm playing an exalt rel",
+      "author": "velmi",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458078097252290676",
-      "content": "~~我突然又在想，一堂课也不一定要活生生的人要担任是吧~~",
-      "author": "ka_0414",
-      "reactions": 3,
-      "channel": "我有个剧情上的疑惑(第八章)"
+      "id": "1457937183544447056",
+      "channel_id": "1170692781216378960",
+      "content": "Friends with traphase benefits",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457890712837296431",
-      "content": "https://youtu.be/S5vQmk98urQ : hablando de las habilidades de Faros, equipos + c",
-      "author": "yaoshidoppa",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1458086016542838878",
+      "channel_id": "1170692781216378960",
+      "content": "morimens already EOSed",
+      "author": "khykken",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458096923482521804",
-      "content": "Languages[TH/EN]\n\nI will be running this week's dtide as well as try to complete",
-      "author": "satachan",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1458107270415126628",
+      "channel_id": "1170692781216378960",
+      "content": "That's Karen idiot",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1458075711444221962",
-      "content": "【防剧透】\n\n~~我终于开始推主线了，如果我问了个蠢问题，请见谅<:takenotes:1357186646294138890> ~~\n\n从第七章尾声那里我们应",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "我有个剧情上的疑惑(第八章)"
-    },
-    {
-      "id": "1458063600743874634",
-      "content": "# 守娜99",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1458048684225855662",
-      "content": "its also in the lineup copy above 😄",
-      "author": "patrueree",
-      "reactions": 1,
-      "channel": "💭「Processing」100% crash rate Lemurian team"
-    },
-    {
-      "id": "1458113404656156785",
-      "content": "豹豹貓貓，小人們又偶爾在戰場中央抱一起了(誤)，然後小人開狂氣又偶爾消失了 <:takenotes:1357186646294138890>",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "💭「处理中」錄像又開始偶爾出點小bug了"
-    },
-    {
-      "id": "1458195391236542818",
-      "content": "更怪的是共鳴樹的起點是「開學典禮」終點是「鑰塚儀式」，所以技能樹整個故事發生在序章之前，艾爾瓦更不可能已經在彌大XD",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "我有个剧情上的疑惑(第八章)"
-    },
-    {
-      "id": "1458048955274498110",
-      "content": "Hello, here is the feedback:\nThe 'Automatic Phase Transition Activation' is curr",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Mouchette Boss Strange stuffs"
-    },
-    {
-      "id": "1458061634487455926",
-      "content": "谢谢老大🥺💕💕",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1458156341641220199",
-      "content": "This ?",
-      "author": "valsk_x",
-      "reactions": 1,
-      "channel": ""
+      "id": "1458109575151616205",
+      "channel_id": "1170692781216378960",
+      "content": "You know, for a moment I got really confused as to why I got Thais in the standa",
+      "author": "dragonshiny7",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

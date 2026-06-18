@@ -3,72 +3,95 @@
     "1131791637933199472": {
       "last_message_id": "1180093020075470929",
       "name": "活動訊息",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1131796304050262126": {
       "last_message_id": "1181130841838059581",
       "name": "官方佈告（已停止使用）",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1131837874078232597": {
       "last_message_id": "1442250555585069130",
       "name": "🔸新生守则┊rules",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1131838787706699807": {
       "last_message_id": "1180498264764723251",
       "name": "禮包兌換碼",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1131839817982947429": {
       "last_message_id": "1516894332265697481",
       "name": "🔸綜合討論",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01"
     },
     "1131839874132090890": {
       "last_message_id": "1516866651507654767",
       "name": "🔸阵容构建",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01"
     },
     "1131840077237067837": {
       "last_message_id": "1181146262330953778",
       "name": "遊戲問題及bug回報",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1131840478267064320": {
       "last_message_id": "1180017414138761266",
       "name": "繪圖",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1132942133632974990": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1166623241293545492": {
       "last_message_id": "1181061966446465054",
       "name": "discord社群建議",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1467308467814400000",
+      "last_historical_month": "2026-01",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1168734000827863070": {
       "last_message_id": "1180848099678224424",
       "name": "校貓問答（已停止使用）",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1456074443980800000",
+      "last_historical_month": "2026-01",
+      "forbidden": true
     },
     "1170692781216378960": {
       "last_message_id": "1506673911046078524",
       "name": "🔸morimens-game-chat",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1466557954210926797",
+      "last_historical_month": "2026-01"
     },
     "1170913498579095634": {
       "last_message_id": "1181137487360446524",
@@ -102,7 +125,8 @@
     },
     "1179386963871150211": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1179745906283773952": {
       "last_message_id": "1179763775033847838",
@@ -112,7 +136,8 @@
     },
     "1179761516032032819": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1180437373012672522": {
       "last_message_id": "1516700020127301673",
@@ -146,7 +171,8 @@
     },
     "1194554310680391700": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1194835209242296410": {
       "last_message_id": "1516367935319310368",
@@ -246,7 +272,8 @@
     },
     "1324573371349860352": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1326453691527594035": {
       "last_message_id": "1516885393889431552",
@@ -262,7 +289,8 @@
     },
     "1351755074040496228": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1354754985119846581": {
       "last_message_id": "1514138499211853864",
@@ -278,163 +306,203 @@
     },
     "1355609481886826536": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355609693073969392": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610161842098469": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610239050711232": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610353370665375": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610435084353717": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610586876084336": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610715175780562": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355617858767294666": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355617966070300762": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355618342781845584": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355619870569529467": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622323029413989": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622592005931170": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622856225980637": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355623188708458767": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355623778956083442": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624136247869751": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624407896428674": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624604118417528": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624803603578980": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625161717711029": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625604199743689": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625824161759382": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626220661772508": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626481367126026": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626663576211527": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626833931927754": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627119216033792": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627327370821703": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627760974037163": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628090243551331": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628273207345322": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628524014272582": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628675319468304": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628872988758116": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629411281666150": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629622540111872": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629796507254794": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629973964198158": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355630588094320661": {
       "last_historical_message_id": "1477455328051200000",
@@ -444,23 +512,28 @@
     },
     "1355631357312635111": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355631663366803586": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355631764130889778": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355632527263404032": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355632743764987945": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1356008444615983256": {
       "last_message_id": "1512620430702285010",
@@ -470,7 +543,8 @@
     },
     "1356020305448931560": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1356538084828647546": {
       "last_message_id": "1356540792138764348",
@@ -504,7 +578,8 @@
     },
     "1407293732310614109": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1426837316533747823": {
       "last_message_id": "1515035975590478039",
@@ -532,7 +607,8 @@
     },
     "1435488403960631357": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1436097679653601340": {
       "last_message_id": "1492242595160654044",
@@ -542,7 +618,8 @@
     },
     "1436576905401991329": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1436766905628098632": {
       "last_message_id": "1436788306263146648",
@@ -558,19 +635,23 @@
     },
     "1437760064470646844": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1440338135434268783": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1440851755603722270": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1453650039493754981": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1469428901682872536": {
       "last_historical_message_id": "1467308467814400000",
@@ -33202,8 +33283,8 @@
       "last_message_id": "1516683671459856434"
     }
   },
-  "historical_month": "2026-02",
-  "last_run": "2026-06-17T23:58:31.530486+00:00",
+  "historical_month": "2026-01",
+  "last_run": "2026-06-18T06:05:15.507210+00:00",
   "forum_starter_backfill": {
     "completed": [
       "thread:1171395702887305216",
