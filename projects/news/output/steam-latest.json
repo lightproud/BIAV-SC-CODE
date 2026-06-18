@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-18T17:57:17.869309+00:00",
+  "collected_at": "2026-06-18T20:11:24.495153+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,48 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-17T18:40:05+00:00",
+      "time": "2026-06-18T19:36:27+00:00",
       "lang": "english",
-      "title": "[正面] fire gacha game",
-      "summary": "fire gacha game",
-      "url": "https://steamcommunity.com/profiles/76561199222293752/recommended/3052450",
-      "author": "76561199222293752",
-      "engagement": 1,
+      "title": "[正面] Great Game.",
+      "summary": "Great Game.",
+      "url": "https://steamcommunity.com/profiles/76561198157692022/recommended/3052450",
+      "author": "76561198157692022",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "fire gacha game",
-      "timestamp_created": 1781721605,
-      "playtime_forever": 1992
+      "review": "Great Game.",
+      "timestamp_created": 1781811387,
+      "playtime_forever": 5127
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T19:04:33+00:00",
+      "lang": "schinese",
+      "title": "[正面] 喜欢卡牌就玩吧呵呵呵。福利很多的",
+      "summary": "喜欢卡牌就玩吧呵呵呵。福利很多的",
+      "url": "https://steamcommunity.com/profiles/76561199835527827/recommended/3052450",
+      "author": "76561199835527827",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "喜欢卡牌就玩吧呵呵呵。福利很多的",
+      "timestamp_created": 1781809473,
+      "playtime_forever": 951
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T17:54:44+00:00",
+      "lang": "english",
+      "title": "[正面] Very good game. One of the only gacha which I wann...",
+      "summary": "Very good game. One of the only gacha which I wanna continue playing. Great storytelling, great gameplay which requires thinking and calculations. Hope the game gets better and better, and gets more player. The number of players now is definitely not what this game deserves. Fighting.",
+      "url": "https://steamcommunity.com/profiles/76561198202806776/recommended/3052450",
+      "author": "76561198202806776",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Very good game. One of the only gacha which I wanna continue playing. Great storytelling, great gameplay which requires thinking and calculations. Hope the game gets better and better, and gets more player. The number of players now is definitely not what this game deserves. Fighting.",
+      "timestamp_created": 1781805284,
+      "playtime_forever": 1234
     },
     {
       "source": "steam",

@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-19",
+  "archived_at": "2026-06-18T20:11:33.621873+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "title": "[正面] Great Game.",
+      "summary": "Great Game.",
+      "source": "steam_review",
+      "time": "2026-06-18T19:36:27+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198157692022/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198157692022",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5127,
+        "votes_up": 0,
+        "timestamp_created": 1781811387
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 喜欢卡牌就玩吧呵呵呵。福利很多的",
+      "summary": "喜欢卡牌就玩吧呵呵呵。福利很多的",
+      "source": "steam_review",
+      "time": "2026-06-18T19:04:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199835527827/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199835527827",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 951,
+        "votes_up": 0,
+        "timestamp_created": 1781809473
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Very good game. One of the only gacha which I wann...",
+      "summary": "Very good game. One of the only gacha which I wanna continue playing. Great storytelling, great gameplay which requires thinking and calculations. Hope the game gets better and better, and gets more player. The number of players now is definitely not what this game deserves. Fighting.",
+      "source": "steam_review",
+      "time": "2026-06-18T17:54:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198202806776/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198202806776",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1234,
+        "votes_up": 0,
+        "timestamp_created": 1781805284
+      },
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}

@@ -13082,6 +13082,69 @@
       "title": "沙耶之歌",
       "time": "2026-06-18T17:00:19+00:00",
       "downloaded_at": "2026-06-18T17:57:24.900964+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/cb2a68cfa711caa69982b177d649640a5e8466f5.jpg": {
+      "filename": "bilibili_d1115e194639b790.jpg",
+      "source": "bilibili",
+      "title": "列车2T核爆24亿。状态没做好，空过1回合，第二回合蹭行道，如果…状态…做好，我们…可以1T40e吗",
+      "time": "2026-06-18T18:43:44+00:00",
+      "downloaded_at": "2026-06-18T20:11:26.614545+00:00"
+    },
+    "https://i.ytimg.com/vi/1VHHUJsA80w/hqdefault.jpg": {
+      "filename": "youtube_1f1708b5fc2d684c.jpg",
+      "source": "youtube",
+      "title": "忘却前夜、垂れ流す　ゴリアテ潜行読んでゴリアテ使ってみるなど",
+      "time": "2026-06-18T18:59:44Z",
+      "downloaded_at": "2026-06-18T20:11:27.339770+00:00"
+    },
+    "https://i.ytimg.com/vi/vpHG1UoSgZI/hqdefault.jpg": {
+      "filename": "youtube_5676b0e822946fcf.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 술먹음",
+      "time": "2026-06-18T19:56:24Z",
+      "downloaded_at": "2026-06-18T20:11:27.983922+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4c4761eeaba5071b4a8efbdfb69df6d640f2e680.jpg": {
+      "filename": "bilibili_434eac6d8cfa30d4.jpg",
+      "source": "bilibili",
+      "title": "24列车8T红大一段1亿3千万",
+      "time": "2026-06-18T19:06:55+00:00",
+      "downloaded_at": "2026-06-18T20:11:29.838360+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/1d462c0c0b5cb2f2ca29d6e6c4a80d95cdc2a3b3.jpg": {
+      "filename": "bilibili_f02334614bb7f47d.jpg",
+      "source": "bilibili",
+      "title": "【ニコカラ/纯K投屏】君の存在証明【沙耶之歌】【黄金祭2026】",
+      "time": "2026-06-18T18:58:09+00:00",
+      "downloaded_at": "2026-06-18T20:11:30.676559+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/908d327f7f2b635a36e323b9609b58d49b8c10a7.jpg": {
+      "filename": "bilibili_1848b937e000041f.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］h5-11，完颜门汀带拉拉女子调教一抹多",
+      "time": "2026-06-18T19:42:08+00:00",
+      "downloaded_at": "2026-06-18T20:11:31.701770+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/c04d097a7ca7783e9c454a9f679517cefe364d64.jpg": {
+      "filename": "bilibili_3fb7fd781fa6d5bf.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】茉夏杀不了的困难列车请鸟弟来杀了，没有操作全是数值",
+      "time": "2026-06-18T18:37:34+00:00",
+      "downloaded_at": "2026-06-18T20:11:32.054230+00:00"
+    },
+    "https://i.ytimg.com/vi/n4eOWrcKY70/hqdefault.jpg": {
+      "filename": "youtube_e30ad36dd612678f.jpg",
+      "source": "youtube",
+      "title": "Loving Agrippa and Castor in Morimens Rail hard mode",
+      "time": "2026-06-18T18:45:02Z",
+      "downloaded_at": "2026-06-18T20:11:33.040515+00:00"
+    },
+    "https://i.ytimg.com/vi/YMLKa29ogiA/hqdefault_live.jpg": {
+      "filename": "youtube_32e9568cf5ed9198.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-18T19:39:56Z",
+      "downloaded_at": "2026-06-18T20:11:33.522415+00:00"
     }
   },
   "failed": {
@@ -19184,6 +19247,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T17:57:20.175898+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/cb2a68cfa711caa69982b177d649640a5e8466f5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T20:11:26.915113+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/4c4761eeaba5071b4a8efbdfb69df6d640f2e680.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T20:11:30.977107+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/c04d097a7ca7783e9c454a9f679517cefe364d64.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T20:11:32.354683+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/908d327f7f2b635a36e323b9609b58d49b8c10a7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T20:11:32.655200+00:00"
     }
   },
   "archived": []
