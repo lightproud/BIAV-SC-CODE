@@ -12984,6 +12984,55 @@
       "title": "忘却前夜、垂れ流す　ゴリアテ潜行読んでゴリアテ使ってみるなど",
       "time": "2026-06-18T11:43:53Z",
       "downloaded_at": "2026-06-18T11:46:40.311080+00:00"
+    },
+    "https://i.ytimg.com/vi/oG5vOLiSiZE/hqdefault.jpg": {
+      "filename": "youtube_2bd3868d841b1c73.jpg",
+      "source": "youtube",
+      "title": "Bài Ca Hồi Ức (MV) - Morimens X Saya no Uta - Theme Song | Song of Memento Vietnamese Cover.",
+      "time": "2026-06-18T12:00:06Z",
+      "downloaded_at": "2026-06-18T14:47:51.873238+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/70467427a969fb5259c8cf6c6b45d1e6e8e4f493.jpg": {
+      "filename": "bilibili_60f2b56fe0881093.jpg",
+      "source": "bilibili",
+      "title": "【授权转载】忘卻之歌 - 越南语翻唱 (MV) - 忘却前夜×沙耶之歌 - 主题曲",
+      "time": "2026-06-18T14:20:32+00:00",
+      "downloaded_at": "2026-06-18T14:47:52.877203+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/d2e30075bcbc4e517666676aed4fcdc971ffe7a9.jpg": {
+      "filename": "bilibili_043e62a997602900.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］剧情隐藏BOSS，五分钟带你轻松过๑&gt;ᴗO๑",
+      "time": "2026-06-18T10:55:40+00:00",
+      "downloaded_at": "2026-06-18T14:47:55.506270+00:00"
+    },
+    "https://i.ytimg.com/vi/8z0tiEVmZjo/hqdefault.jpg": {
+      "filename": "youtube_0958260588181f52.jpg",
+      "source": "youtube",
+      "title": "『忘却前夜/対人戦』一気に倒しきる！　超高火力で粉砕編成！『ゲーム実況』",
+      "time": "2026-06-18T12:15:06Z",
+      "downloaded_at": "2026-06-18T14:47:56.243266+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/83e4f2f205fe58f2b580326e219486dbd48a077d.jpg": {
+      "filename": "bilibili_5851880cb5b5c537.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜",
+      "time": "2026-06-18T12:40:07+00:00",
+      "downloaded_at": "2026-06-18T14:47:57.203125+00:00"
+    },
+    "https://i.ytimg.com/vi/1Q31ZkD6MUI/hqdefault.jpg": {
+      "filename": "youtube_0b360db3a281410c.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】平行世界の守秘者を倒せばうちのミサゴだけ救われるらしい",
+      "time": "2026-06-18T12:37:39Z",
+      "downloaded_at": "2026-06-18T14:47:57.933780+00:00"
+    },
+    "https://i.ytimg.com/vi/qBg0CHTkzk4/hqdefault.jpg": {
+      "filename": "youtube_884c43c7f25a2b0b.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】2兆年ぶりの復帰ついでにストーリー読む",
+      "time": "2026-06-18T11:46:07Z",
+      "downloaded_at": "2026-06-18T14:47:58.332238+00:00"
     }
   },
   "failed": {
@@ -19006,6 +19055,81 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T11:46:37.892591+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/70467427a969fb5259c8cf6c6b45d1e6e8e4f493.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:52.173745+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/d2e30075bcbc4e517666676aed4fcdc971ffe7a9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:55.806770+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/83e4f2f205fe58f2b580326e219486dbd48a077d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:57.503709+00:00"
+    },
+    "https://external-preview.redd.it/b29jNG5peTlwMDhoMRCqoQ0xjWF0OEDF0WBPVM5b_w5uX-PbLhMStbIvFhed.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e4d6615c139b2d0bd6d73534e85289c0da94af1a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:58.806600+00:00"
+    },
+    "https://preview.redd.it/4rhd0ssji18h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1919c6e72fd10df45a13124a806d98c5b1d9ece9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:59.285633+00:00"
+    },
+    "https://preview.redd.it/4md7gtcc118h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d04c95f43a6c4fe0a643ca14330cf1fdb5b7510d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:47:59.642964+00:00"
+    },
+    "https://preview.redd.it/1evwg44y7z7h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=99d27368fce47986372bb5099ba98e5654935c52": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:00.001625+00:00"
+    },
+    "https://preview.redd.it/esra2783308h1.png?width=140&amp;height=74&amp;auto=webp&amp;s=9ec4d33af30179f6a5bc04823e439553bc96e37b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:00.359492+00:00"
+    },
+    "https://preview.redd.it/tju58mggn08h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=1bdc7b659602ecb473364e06d7f7361d8eae64e3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:00.715691+00:00"
+    },
+    "https://preview.redd.it/1se9qsm9lx7h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=228e1a0eada7863eb4eb03e582d0d540ebc0eada": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:01.072079+00:00"
+    },
+    "https://preview.redd.it/dcmd185pb08h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=27e458838c92fee030beec48e1ddca3acd0c7a7c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:01.428712+00:00"
+    },
+    "https://preview.redd.it/x2nxnig5cy7h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=180ccd95b25456d54bd0e67eeec83574ccc30fbd": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:01.785394+00:00"
+    },
+    "https://preview.redd.it/nevo0jjnkz7h1.png?width=140&amp;height=37&amp;auto=webp&amp;s=ba94cf8b7ded3db557128536df389af8a2c81b3c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:02.147467+00:00"
+    },
+    "https://external-preview.redd.it/dnJwNjB4aHZueTdoMUMsSZZWUIU_22wXKyOTez-oj7UWpKiJOmogKDHEjOZ0.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fa8e6521ae3604074a5d0a777cac198c5d2a381e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:02.507249+00:00"
+    },
+    "https://preview.redd.it/xoinsnicvx7h1.png?width=140&amp;height=79&amp;auto=webp&amp;s=4164700e784c606d2feb82480602c4851286a406": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T14:48:02.865692+00:00"
     }
   },
   "archived": []
