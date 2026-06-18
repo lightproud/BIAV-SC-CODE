@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-18T20:11:33.621873+00:00",
+  "archived_at": "2026-06-18T22:53:56.895858+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] Great Game.",
@@ -66,6 +66,28 @@
         "playtime_forever": 1234,
         "votes_up": 0,
         "timestamp_created": 1781805284
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Los gráficos son uno de los puntos fuertes del jue...",
+      "summary": "Los gráficos son uno de los puntos fuertes del juego. Sin embargo, la historia y la jugabilidad dejan bastante que desear. Apenas unos minutos después de empezar, el juego te introduce en combate sin explicar adecuadamente las mecánicas básicas, lo que puede resultar confuso para jugadores nuevos. Además, la narrativa del prólogo y del acto 1 no logra captar mi interés, por lo que la experiencia inicial termina siendo poco atractiva.",
+      "source": "steam_review",
+      "time": "2026-06-18T22:18:46+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199747867152/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199747867152",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 68,
+        "votes_up": 0,
+        "timestamp_created": 1781821126
       },
       "lang": "",
       "platform_region": "global"

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-18T20:11:24.495153+00:00",
+  "collected_at": "2026-06-18T22:53:56.138226+00:00",
   "source": "pixiv",
-  "item_count": 34,
+  "item_count": 33,
   "items": [
     {
       "source": "pixiv",
@@ -197,6 +197,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-06-18T22:53:06.770446+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-06-01T21:42:24+09:00",
       "lang": "",
       "title": "沙耶",
@@ -229,18 +239,6 @@
       "author": "ソラミミ",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/18/01/145487097_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-01T21:01:36+09:00",
-      "lang": "",
-      "title": "風に乗る",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145486249",
-      "author": "ソラミミ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/01/36/145486249_p0_square1200.jpg",
       "content_type": "image"
     },
     {
@@ -397,18 +395,6 @@
       "author": "bla",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/21/06/51/09/145024649_p0_custom1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-05-20T07:36:55+09:00",
-      "lang": "",
-      "title": "Doll Blows you up with mind",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/144988655",
-      "author": "JaySin",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/20/07/36/55/144988655_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
