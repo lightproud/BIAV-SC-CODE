@@ -14,6 +14,7 @@ from discord_archiver import (
     DISCORD_EPOCH_MS,
     DiscordArchiver,
     _dt_from_sf,
+    _is_forbidden,
     _mstr,
     _month_bounds,
     _prev_month,
@@ -172,6 +173,78 @@ class TestMstr(unittest.TestCase):
 
     def test_zero_pads_year_to_four_digits(self):
         self.assertEqual(_mstr(999, 7), "0999-07")
+
+
+class TestForbiddenChannelHandling(unittest.TestCase):
+    """403 (no-permission) channels must not block the historical backfill
+    cursor — regression guard for the JP-guild private-channel deadlock where
+    unreadable channels (mod-log, hidden channels, etc.) pinned the cursor
+    forever on the first historical month."""
+
+    def _make_archiver(self, tmpdir):
+        env = {
+            "DISCORD_BOT_TOKEN": "dummy",
+            "DISCORD_GUILD_ID": "999",
+            "DISCORD_DATA_ROOT": tmpdir,
+        }
+        with mock.patch.dict(os.environ, env, clear=False):
+            return DiscordArchiver()
+
+    def test_is_forbidden_detects_403_only(self):
+        class _Resp:
+            def __init__(self, code):
+                self.status_code = code
+
+        class _Err(Exception):
+            def __init__(self, code):
+                self.response = _Resp(code)
+
+        self.assertTrue(_is_forbidden(_Err(403)))
+        self.assertFalse(_is_forbidden(_Err(500)))
+        self.assertFalse(_is_forbidden(Exception("no response attribute")))
+
+    def test_forbidden_channel_excluded_from_month_completion(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            month = "2026-05"
+            _, before_sf = _month_bounds(2026, 5)
+            arch.state["channels"]["readable"] = {
+                "last_historical_month": month,
+                "last_historical_message_id": before_sf,
+            }
+            arch.state["channels"]["locked"] = {"forbidden": True}
+            self.assertTrue(
+                arch._all_channels_done_for_month(["readable", "locked"], month, before_sf),
+                "forbidden channel must not block month completion",
+            )
+
+    def test_unreached_channel_still_blocks(self):
+        # 回归：非 forbidden 且未抓到月末的频道仍须阻止游标推进
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            month = "2026-05"
+            _, before_sf = _month_bounds(2026, 5)
+            arch.state["channels"]["readable"] = {
+                "last_historical_month": month,
+                "last_historical_message_id": before_sf,
+            }
+            arch.state["channels"]["lagging"] = {
+                "last_historical_month": month,
+                "last_historical_message_id": "0",
+            }
+            self.assertFalse(
+                arch._all_channels_done_for_month(["readable", "lagging"], month, before_sf)
+            )
+
+    def test_forbidden_channel_skips_history_fetch_without_api_call(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            arch.state["channels"]["locked"] = {"forbidden": True}
+            called = []
+            arch._api = lambda *a, **k: called.append(1) or []
+            result = arch.fetch_channel_history_month("locked", "locked-name", 2026, 5)
+            self.assertEqual(result, -1)
+            self.assertEqual(called, [], "forbidden channel must not trigger any API call")
 
 
 if __name__ == "__main__":
