@@ -1,9 +1,24 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-18T17:57:24.992283+00:00",
+  "archived_at": "2026-06-18T20:11:33.614430+00:00",
   "source": "youtube",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
+    {
+      "title": "忘却前夜、垂れ流す　ゴリアテ潜行読んでゴリアテ使ってみるなど",
+      "summary": "いまさらゴリアテ！？",
+      "source": "youtube",
+      "time": "2026-06-18T18:59:44Z",
+      "url": "https://www.youtube.com/watch?v=1VHHUJsA80w",
+      "engagement": 35,
+      "is_hot": false,
+      "author": "たこに名前を入力",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/1VHHUJsA80w/hqdefault.jpg",
+      "content_type": "video"
+    },
     {
       "title": "망각전야Morimens) (대리뽑,상담시청가능) 술먹음",
       "summary": "망각전야 #Morimens #이터널리턴.",
@@ -35,6 +50,21 @@
       "platform_region": "global"
     },
     {
+      "title": "Loving Agrippa and Castor in Morimens Rail hard mode",
+      "summary": "https://www.twitch.tv/Nazoric https://www.youtube.com/@Cirozan/streams.",
+      "source": "youtube",
+      "time": "2026-06-18T18:45:02Z",
+      "url": "https://www.youtube.com/watch?v=n4eOWrcKY70",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "Nazoric",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/n4eOWrcKY70/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "Skull Hunter (Stream 15) MORIMENS",
       "summary": "In which a Daffodil blooms.",
       "source": "youtube",
@@ -45,6 +75,21 @@
       "author": "GhotiVT",
       "tags": [],
       "media_url": "https://i.ytimg.com/vi/9hZ1h4r-_eg/hqdefault.jpg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-18T19:39:56Z",
+      "url": "https://www.youtube.com/watch?v=YMLKa29ogiA",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Emmaaaa",
+      "tags": [],
+      "media_url": "https://i.ytimg.com/vi/YMLKa29ogiA/hqdefault_live.jpg",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
