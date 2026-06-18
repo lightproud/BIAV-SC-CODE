@@ -1,17 +1,21 @@
 {
-  "collected_at": "2026-06-18T17:57:17.869309+00:00",
+  "date": "2026-06-19",
+  "archived_at": "2026-06-18T17:57:25.023734+00:00",
   "source": "stopgame",
   "item_count": 1,
   "items": [
     {
-      "source": "stopgame",
-      "time": "2026-06-18T17:56:29.384783+00:00",
-      "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
+      "source": "stopgame",
+      "time": "2026-06-18T17:56:29.384783+00:00",
       "url": "https://stopgame.ru/game/morimens",
+      "engagement": 0,
+      "is_hot": false,
       "author": "StopGame.ru",
-      "engagement": 0
+      "tags": [],
+      "lang": "ru",
+      "platform_region": "ru"
     }
   ]
 }

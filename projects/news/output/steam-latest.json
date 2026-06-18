@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-18T14:47:51.224806+00:00",
+  "collected_at": "2026-06-18T17:57:17.869309+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-18T13:11:51+00:00",
+      "lang": "english",
+      "title": "[负面] The art is AI generated. Also as expected from any...",
+      "summary": "The art is AI generated. Also as expected from any other mobile games with story elements, it secretly has more stuff to download after downloading the game initially.",
+      "url": "https://steamcommunity.com/profiles/76561199593469388/recommended/3052450",
+      "author": "76561199593469388",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": false,
+      "review": "The art is AI generated. Also as expected from any other mobile games with story elements, it secretly has more stuff to download after downloading the game initially.",
+      "timestamp_created": 1781788311,
+      "playtime_forever": 219
+    },
     {
       "source": "steam",
       "time": "2026-06-17T18:40:05+00:00",
@@ -20,48 +35,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-17T17:19:47+00:00",
+      "time": "2026-06-18T14:20:51+00:00",
       "lang": "english",
-      "title": "[负面] The game files is way to big(almost 15G). Also ani...",
-      "summary": "The game files is way to big(almost 15G). Also anime girls aren't my thing.",
-      "url": "https://steamcommunity.com/profiles/76561199106694921/recommended/3052450",
-      "author": "76561199106694921",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": false,
-      "review": "The game files is way to big(almost 15G). Also anime girls aren't my thing.",
-      "timestamp_created": 1781716787,
-      "playtime_forever": 61
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-17T15:15:20+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩爱玩，卡牌发的感觉自己要长脑子了，但这个五星不是给校猫策划的，策划给到负数抓紧滚出世界",
-      "summary": "好玩爱玩，卡牌发的感觉自己要长脑子了，但这个五星不是给校猫策划的，策划给到负数抓紧滚出世界",
-      "url": "https://steamcommunity.com/profiles/76561199768185729/recommended/3052450",
-      "author": "76561199768185729",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩爱玩，卡牌发的感觉自己要长脑子了，但这个五星不是给校猫策划的，策划给到负数抓紧滚出世界",
-      "timestamp_created": 1781709320,
-      "playtime_forever": 2572
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-18T13:11:51+00:00",
-      "lang": "english",
-      "title": "[负面] The art is AI generated. Also as expected from any...",
-      "summary": "The art is AI generated. Also as expected from any other mobile games with story elements, it secretly has more stuff to download after downloading the game initially.",
-      "url": "https://steamcommunity.com/profiles/76561199593469388/recommended/3052450",
-      "author": "76561199593469388",
+      "title": "[负面] The game looked incredible on the store page... Bu...",
+      "summary": "The game looked incredible on the store page... But the images are most definitely AI :(\nThe designs are super inconsistent, especially in the start of the story. It's a shame, i really wanted to love it",
+      "url": "https://steamcommunity.com/profiles/76561198177132774/recommended/3052450",
+      "author": "76561198177132774",
       "engagement": 0,
       "language": "english",
       "voted_up": false,
-      "review": "The art is AI generated. Also as expected from any other mobile games with story elements, it secretly has more stuff to download after downloading the game initially.",
-      "timestamp_created": 1781788311,
-      "playtime_forever": 219
+      "review": "The game looked incredible on the store page... But the images are most definitely AI :(\nThe designs are super inconsistent, especially in the start of the story. It's a shame, i really wanted to love it",
+      "timestamp_created": 1781792451,
+      "playtime_forever": 48
     },
     {
       "source": "steam",
@@ -151,7 +136,7 @@
       "voted_up": true,
       "review": "好玩，美术和音乐都好评，虽然后期全是数值逆天，但是还是爱不释手",
       "timestamp_created": 1781763484,
-      "playtime_forever": 12264
+      "playtime_forever": 12277
     },
     {
       "source": "steam",
@@ -211,7 +196,7 @@
       "voted_up": true,
       "review": "好玩爱玩，这种血腥克苏鲁风格的二游爽完了，福利也是非常到位",
       "timestamp_created": 1781745707,
-      "playtime_forever": 410
+      "playtime_forever": 441
     },
     {
       "source": "steam",
