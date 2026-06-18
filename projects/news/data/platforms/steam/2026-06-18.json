@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T14:48:02.964748+00:00",
+  "archived_at": "2026-06-18T17:57:25.000352+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "title": "[正面] fire gacha game",
@@ -330,6 +330,28 @@
         "playtime_forever": 546,
         "votes_up": 0,
         "timestamp_created": 1781781788
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] The game looked incredible on the store page... Bu...",
+      "summary": "The game looked incredible on the store page... But the images are most definitely AI :(\nThe designs are super inconsistent, especially in the start of the story. It's a shame, i really wanted to love it",
+      "source": "steam_review",
+      "time": "2026-06-18T14:20:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198177132774/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198177132774",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 48,
+        "votes_up": 0,
+        "timestamp_created": 1781792451
       },
       "lang": "",
       "platform_region": "global"

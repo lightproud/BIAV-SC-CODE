@@ -13033,6 +13033,55 @@
       "title": "【忘却前夜】2兆年ぶりの復帰ついでにストーリー読む",
       "time": "2026-06-18T11:46:07Z",
       "downloaded_at": "2026-06-18T14:47:58.332238+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/3abfc287cdc28353b88e24955b244f2bf4b27be6.jpg": {
+      "filename": "bilibili_b721e192f14d0527.jpg",
+      "source": "bilibili",
+      "title": "瓜塔哈莱h511三星无灵芝",
+      "time": "2026-06-18T15:07:42+00:00",
+      "downloaded_at": "2026-06-18T17:57:19.875385+00:00"
+    },
+    "https://i.ytimg.com/vi/vpHG1UoSgZI/hqdefault_live.jpg": {
+      "filename": "youtube_b2ce2352ee4fb230.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 술먹음",
+      "time": "2026-06-18T16:25:53Z",
+      "downloaded_at": "2026-06-18T17:57:21.021756+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5e7dde36db515dd13b207421317f71e7cc0ffca8.jpg": {
+      "filename": "bilibili_9425ac7352ab251f.jpg",
+      "source": "bilibili",
+      "title": "【七海Nana7mi】沙耶の唄",
+      "time": "2026-06-18T16:46:27+00:00",
+      "downloaded_at": "2026-06-18T17:57:22.286622+00:00"
+    },
+    "https://i.ytimg.com/vi/7AxnS669HPw/hqdefault.jpg": {
+      "filename": "youtube_a63d6363bc124c51.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】融災禁区・第5波・Ⅱ級警報（2026/06/19）",
+      "time": "2026-06-18T16:49:45Z",
+      "downloaded_at": "2026-06-18T17:57:22.649089+00:00"
+    },
+    "https://i.ytimg.com/vi/c4TTpllbX2Q/hqdefault.jpg": {
+      "filename": "youtube_2f9deafd8542c8d5.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】融災禁区・第2波・Ⅴ級警報（2026/06/19）",
+      "time": "2026-06-18T15:48:44Z",
+      "downloaded_at": "2026-06-18T17:57:23.044507+00:00"
+    },
+    "https://i.ytimg.com/vi/9hZ1h4r-_eg/hqdefault.jpg": {
+      "filename": "youtube_64a82aedd64e631c.jpg",
+      "source": "youtube",
+      "title": "Skull Hunter (Stream 15) MORIMENS",
+      "time": "2026-06-18T16:00:28Z",
+      "downloaded_at": "2026-06-18T17:57:23.438610+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/1b8c22ed3d7ca785e24cc441e3c85eacb238262b.jpg": {
+      "filename": "bilibili_94622fbab8483030.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-06-18T17:00:19+00:00",
+      "downloaded_at": "2026-06-18T17:57:24.900964+00:00"
     }
   },
   "failed": {
@@ -19130,6 +19179,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T14:48:02.865692+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/3abfc287cdc28353b88e24955b244f2bf4b27be6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T17:57:20.175898+00:00"
     }
   },
   "archived": []

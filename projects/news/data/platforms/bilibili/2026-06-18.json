@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T14:48:02.954601+00:00",
+  "archived_at": "2026-06-18T17:57:24.990469+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "title": "【静止画MAD】你存在的证明【沙耶之歌】",
@@ -254,6 +254,46 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/a71cdc72ea793ad83dd7dd5510d333769e96653f.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "瓜塔哈莱h511三星无灵芝",
+      "summary": "醋包饺子...打了三把才终于让hml伤害到50...\n隔壁四启24打了一把就是63伤害美美第一....\n  └ 唬隌洳鄞 (0赞): 加强hml...\n  └ 伊莎玛拉-大群来了 (0赞): 大佬\n  └ 半醒的鱼yyy (0赞): 大佬喵",
+      "source": "bilibili",
+      "time": "2026-06-18T15:07:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1K9ja65EBM",
+      "engagement": 52,
+      "is_hot": false,
+      "author": "唬隌洳鄞",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 45,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/3abfc287cdc28353b88e24955b244f2bf4b27be6.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "瓜塔哈莱h511三星无灵芝",
+      "summary": "醋包饺子...打了三把才终于让hml伤害到50...\n隔壁四启24打了一把就是63伤害美美第一....",
+      "source": "bilibili",
+      "time": "2026-06-18T15:07:42+00:00",
+      "url": "http://www.bilibili.com/video/av116771721844297",
+      "engagement": 47,
+      "is_hot": false,
+      "author": "唬隌洳鄞",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/3abfc287cdc28353b88e24955b244f2bf4b27be6.jpg",
       "content_type": "video"
     },
     {
