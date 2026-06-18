@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-18T07:28:01.974272+00:00",
+  "collected_at": "2026-06-18T11:46:28.324576+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -46,22 +46,37 @@
       "voted_up": true,
       "review": "好玩爱玩，卡牌发的感觉自己要长脑子了，但这个五星不是给校猫策划的，策划给到负数抓紧滚出世界",
       "timestamp_created": 1781709320,
-      "playtime_forever": 2219
+      "playtime_forever": 2428
     },
     {
       "source": "steam",
-      "time": "2026-06-17T08:36:28+00:00",
-      "lang": "english",
-      "title": "[正面] The game is surprisingly good. I played it because...",
-      "summary": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
-      "url": "https://steamcommunity.com/profiles/76561198171557225/recommended/3052450",
-      "author": "76561198171557225",
-      "engagement": 1,
-      "language": "english",
+      "time": "2026-06-18T09:13:35+00:00",
+      "lang": "schinese",
+      "title": "[负面] 数值绑定养成，养成令人绝望",
+      "summary": "数值绑定养成，养成令人绝望",
+      "url": "https://steamcommunity.com/profiles/76561199528055402/recommended/3052450",
+      "author": "76561199528055402",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "数值绑定养成，养成令人绝望",
+      "timestamp_created": 1781774015,
+      "playtime_forever": 68
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-18T09:09:18+00:00",
+      "lang": "schinese",
+      "title": "[正面] 还行",
+      "summary": "还行",
+      "url": "https://steamcommunity.com/profiles/76561199571482630/recommended/3052450",
+      "author": "76561199571482630",
+      "engagement": 0,
+      "language": "schinese",
       "voted_up": true,
-      "review": "The game is surprisingly good. I played it because of the Saya no Uta collaboration and expected it to be some gacha slop, but it subvert my expectation. The gameplay, story, and character designs have hooked me in.",
-      "timestamp_created": 1781685388,
-      "playtime_forever": 1810
+      "review": "还行",
+      "timestamp_created": 1781773758,
+      "playtime_forever": 271
     },
     {
       "source": "steam",
@@ -151,7 +166,7 @@
       "voted_up": true,
       "review": "good",
       "timestamp_created": 1781731927,
-      "playtime_forever": 7779
+      "playtime_forever": 7999
     },
     {
       "source": "steam",
@@ -181,7 +196,7 @@
       "voted_up": true,
       "review": "画风很好看，剧情也很好，重要的是抽卡爆率很高。。。",
       "timestamp_created": 1781707265,
-      "playtime_forever": 376
+      "playtime_forever": 490
     }
   ]
 }

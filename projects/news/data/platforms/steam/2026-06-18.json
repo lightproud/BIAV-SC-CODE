@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T07:28:07.295991+00:00",
+  "archived_at": "2026-06-18T11:46:40.389829+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] fire gacha game",
@@ -198,6 +198,50 @@
         "playtime_forever": 380,
         "votes_up": 0,
         "timestamp_created": 1781745707
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 数值绑定养成，养成令人绝望",
+      "summary": "数值绑定养成，养成令人绝望",
+      "source": "steam_review",
+      "time": "2026-06-18T09:13:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199528055402/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199528055402",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 68,
+        "votes_up": 0,
+        "timestamp_created": 1781774015
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 还行",
+      "summary": "还行",
+      "source": "steam_review",
+      "time": "2026-06-18T09:09:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199571482630/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199571482630",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 271,
+        "votes_up": 0,
+        "timestamp_created": 1781773758
       },
       "lang": "",
       "platform_region": "global"
