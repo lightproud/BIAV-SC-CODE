@@ -12907,6 +12907,83 @@
       "title": "Morimens | Phantasmal Dive VI - Vortice/Nautila/Caecus/Tawil",
       "time": "2026-06-18T03:06:50Z",
       "downloaded_at": "2026-06-18T07:28:07.213883+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/826b9351c5a25e8b11bef7d98ee1947d0a72e243.jpg": {
+      "filename": "bilibili_0fb6a7458d714b27.jpg",
+      "source": "bilibili",
+      "title": "解药",
+      "time": "2026-06-18T08:56:50+00:00",
+      "downloaded_at": "2026-06-18T11:46:29.811648+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/ebc2827a8eda0b1cab5ad16e3847554d8103abd4.jpg": {
+      "filename": "bilibili_f796c6a6d1d84352.jpg",
+      "source": "bilibili",
+      "title": "比起世界毁灭，我更想拥抱你，欢迎来到这个世界",
+      "time": "2026-06-18T06:42:42+00:00",
+      "downloaded_at": "2026-06-18T11:46:31.662576+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/ecd7a7323c6b436076e65329dac43e2aa981185b.jpg": {
+      "filename": "bilibili_a8c989ee98641404.jpg",
+      "source": "bilibili",
+      "title": "完颜门汀小姐暴力融灾5张图",
+      "time": "2026-06-18T07:52:16+00:00",
+      "downloaded_at": "2026-06-18T11:46:32.886572+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/e5cf706b564a41c3e293ede70a7d60655ba6d340.jpg": {
+      "filename": "bilibili_7710a8d35b71a170.jpg",
+      "source": "bilibili",
+      "title": "［相位］养 成 大 纺 织",
+      "time": "2026-06-18T11:38:17+00:00",
+      "downloaded_at": "2026-06-18T11:46:34.899805+00:00"
+    },
+    "https://i.ytimg.com/vi/oNS15xcmBP0/hqdefault.jpg": {
+      "filename": "youtube_31b74a0367f7a601.jpg",
+      "source": "youtube",
+      "title": "1st Time Playing Morimens! [VN/ENG]",
+      "time": "2026-06-18T10:13:00Z",
+      "downloaded_at": "2026-06-18T11:46:35.284456+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/aaf61a970c43da869fe691387b00388b17d06a63.jpg": {
+      "filename": "bilibili_162227bcf27b4564.jpg",
+      "source": "bilibili",
+      "title": "流量你自由了",
+      "time": "2026-06-18T10:18:00+00:00",
+      "downloaded_at": "2026-06-18T11:46:37.592147+00:00"
+    },
+    "https://i.ytimg.com/vi/7pi1leEF1RU/hqdefault.jpg": {
+      "filename": "youtube_8a65637807aac7ea.jpg",
+      "source": "youtube",
+      "title": "망각전야(Morimens) 융재금지구역 모샤+사야 덱 3파 5급 클리어 영상 06.08- 06.22",
+      "time": "2026-06-18T08:39:09Z",
+      "downloaded_at": "2026-06-18T11:46:38.297197+00:00"
+    },
+    "https://i.ytimg.com/vi/qXxcWE-3XNA/hqdefault.jpg": {
+      "filename": "youtube_515ef46db1d53098.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens 星辰篇H5-8 Re-record",
+      "time": "2026-06-18T10:00:15Z",
+      "downloaded_at": "2026-06-18T11:46:38.655220+00:00"
+    },
+    "https://i.ytimg.com/vi/qzWcAWes-O8/hqdefault.jpg": {
+      "filename": "youtube_3938ec7b828658e1.jpg",
+      "source": "youtube",
+      "title": "1st Run on Morimens Arc 1 Chapter 5 Boss",
+      "time": "2026-06-18T11:45:15Z",
+      "downloaded_at": "2026-06-18T11:46:39.292104+00:00"
+    },
+    "https://i.ytimg.com/vi/QpEisVjddi0/hqdefault.jpg": {
+      "filename": "youtube_fde6ab23b08e1f13.jpg",
+      "source": "youtube",
+      "title": "Morimens | Phantasmal Dive V - Arachne/Horla/Caecus/Sanga",
+      "time": "2026-06-18T07:39:39Z",
+      "downloaded_at": "2026-06-18T11:46:39.656346+00:00"
+    },
+    "https://i.ytimg.com/vi/1VHHUJsA80w/hqdefault_live.jpg": {
+      "filename": "youtube_e55a4fc94641b07c.jpg",
+      "source": "youtube",
+      "title": "忘却前夜、垂れ流す　ゴリアテ潜行読んでゴリアテ使ってみるなど",
+      "time": "2026-06-18T11:43:53Z",
+      "downloaded_at": "2026-06-18T11:46:40.311080+00:00"
     }
   },
   "failed": {
@@ -18914,6 +18991,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T07:28:04.556682+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/ecd7a7323c6b436076e65329dac43e2aa981185b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T11:46:33.187042+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/e5cf706b564a41c3e293ede70a7d60655ba6d340.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T11:46:33.487538+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/aaf61a970c43da869fe691387b00388b17d06a63.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T11:46:37.892591+00:00"
     }
   },
   "archived": []

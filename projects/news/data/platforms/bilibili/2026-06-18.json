@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T07:28:07.291206+00:00",
+  "archived_at": "2026-06-18T11:46:40.382767+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 12,
   "items": [
     {
       "title": "【静止画MAD】你存在的证明【沙耶之歌】",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/9bf6627b9bee802ccce523211784b93971cd8310.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "解药",
+      "summary": "那随风飘荡的蒲公英的种子 ，它会在什么时候，决定自己的归宿呢？\n  └ 映新天 (1赞): 那朵美丽的花儿\n  └ 纯白初遇 (0赞): [原神_嗯]\n  └ 路过的洋白菜 (0赞): 那位如同孤独飘零的蒲公英的少女……",
+      "source": "bilibili",
+      "time": "2026-06-18T08:56:50+00:00",
+      "url": "https://www.bilibili.com/video/BV1FNjc62EMB",
+      "engagement": 435,
+      "is_hot": false,
+      "author": "蒼響Verniy",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 426,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/826b9351c5a25e8b11bef7d98ee1947d0a72e243.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -49,6 +72,69 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "比起世界毁灭，我更想拥抱你，欢迎来到这个世界",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-18T06:42:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1BXjc6CEoc",
+      "engagement": 223,
+      "is_hot": false,
+      "author": "艾莉丝喵还在练剑",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 223,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/ebc2827a8eda0b1cab5ad16e3847554d8103abd4.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "完颜门汀小姐暴力融灾5张图",
+      "summary": "12医生太强了\n  └ 密斯卡托尼克的银猫 (3赞): 冷知识，队伍里面没有一个是官方认定的C\n  └ 想睡觉的雨酱 (1赞): 吓哭了\n  └ RatedRubyRue (1赞): 小伙伴看到你了，金斯洛澜堡来支持了[星星眼]",
+      "source": "bilibili",
+      "time": "2026-06-18T07:52:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1gxjc6AELv",
+      "engagement": 189,
+      "is_hot": false,
+      "author": "梦依流苏_myls",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 183,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/ecd7a7323c6b436076e65329dac43e2aa981185b.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "完颜门汀小姐暴力融灾5张图",
+      "summary": "12医生太强了",
+      "source": "bilibili",
+      "time": "2026-06-18T07:52:16+00:00",
+      "url": "http://www.bilibili.com/video/av116769977077187",
+      "engagement": 183,
+      "is_hot": false,
+      "author": "梦依流苏_myls",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i1.hdslb.com/bfs/archive/ecd7a7323c6b436076e65329dac43e2aa981185b.jpg",
+      "content_type": "video"
     },
     {
       "title": "60级24 通关2-5全流程，死扛是钥令爆的可以不爆",
@@ -88,6 +174,86 @@
       "lang": "zh",
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/a71cdc72ea793ad83dd7dd5510d333769e96653f.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "［相位］养 成 大 纺 织",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-06-18T11:38:17+00:00",
+      "url": "http://www.bilibili.com/video/av116770899755352",
+      "engagement": 34,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/e5cf706b564a41c3e293ede70a7d60655ba6d340.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "［相位］养 成 大 纺 织",
+      "summary": "-\n  └ 不知今世为何 (0赞): 第一",
+      "source": "bilibili",
+      "time": "2026-06-18T11:38:17+00:00",
+      "url": "https://www.bilibili.com/video/BV1yrjA6fEUu",
+      "engagement": 28,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 27,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/e5cf706b564a41c3e293ede70a7d60655ba6d340.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "流量你自由了",
+      "summary": "-\n  └ 我仍视你为最好 (0赞): 优秀啊",
+      "source": "bilibili",
+      "time": "2026-06-18T10:18:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1Hsjw6QECU",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "言時玖",
+      "tags": [
+        "GMV"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/aaf61a970c43da869fe691387b00388b17d06a63.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "流量你自由了",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-06-18T10:18:00+00:00",
+      "url": "http://www.bilibili.com/video/av116769658241388",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "言時玖",
+      "tags": [
+        "GMV"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/aaf61a970c43da869fe691387b00388b17d06a63.jpg",
       "content_type": "video"
     }
   ]
