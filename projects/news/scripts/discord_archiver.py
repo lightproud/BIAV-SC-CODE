@@ -113,6 +113,12 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
     raise last_exc
 
 
+def _is_forbidden(exc) -> bool:
+    """True if the exception is a Discord 403 — bot lacks permission to read the channel."""
+    resp = getattr(exc, 'response', None)
+    return getattr(resp, 'status_code', None) == 403
+
+
 # ── Main class ───────────────────────────────────────────────────────────────
 
 class DiscordArchiver:
@@ -395,7 +401,13 @@ class DiscordArchiver:
             try:
                 messages = self._api(f'/channels/{channel_id}/messages', **params)
             except Exception as e:
-                logger.warning(f'Channel {channel_id} cold-start fetch failed: {e}')
+                if _is_forbidden(e):
+                    ch_st = self._ch_state(ch_key)
+                    ch_st['forbidden'] = True
+                    ch_st['name'] = channel_name
+                    logger.info(f'Channel {channel_name}({channel_id}) inaccessible (403) — marked forbidden')
+                else:
+                    logger.warning(f'Channel {channel_id} cold-start fetch failed: {e}')
                 break
             if not isinstance(messages, list) or not messages:
                 break
@@ -431,6 +443,8 @@ class DiscordArchiver:
         history, not just the latest 100 messages.
         """
         ch_key = str(channel_id)
+        if self._ch_state(ch_key).get('forbidden'):
+            return 0  # no read permission (403) — skip, don't burn requests each run
         last_id = self._ch_state(ch_key).get('last_message_id', '0')
         if last_id == '0':
             return self._cold_start_backfill(channel_id, channel_name)
@@ -446,7 +460,11 @@ class DiscordArchiver:
             try:
                 messages = self._api(f'/channels/{channel_id}/messages', **params)
             except Exception as e:
-                logger.warning(f'Channel {channel_id} incremental fetch failed: {e}')
+                if _is_forbidden(e):
+                    self._ch_state(ch_key)['forbidden'] = True
+                    logger.info(f'Channel {channel_name}({channel_id}) inaccessible (403) — marked forbidden')
+                else:
+                    logger.warning(f'Channel {channel_id} incremental fetch failed: {e}')
                 break
             if not isinstance(messages, list) or not messages:
                 break
@@ -504,6 +522,8 @@ class DiscordArchiver:
         Returns -1 if channel was skipped (created after target month).
         """
         ch_key = str(channel_id)
+        if self._ch_state(ch_key).get('forbidden'):
+            return -1  # no read permission (403) — skip, excluded from completion check
         month_str = _mstr(year, month)
         after_sf, before_sf = _month_bounds(year, month)
 
@@ -546,7 +566,11 @@ class DiscordArchiver:
             try:
                 messages = self._api(f'/channels/{channel_id}/messages', **params)
             except Exception as e:
-                logger.warning(f'Channel {channel_id} history {month_str} failed: {e}')
+                if _is_forbidden(e):
+                    self._ch_state(ch_key)['forbidden'] = True
+                    logger.info(f'Channel {channel_name}({channel_id}) inaccessible (403) — marked forbidden')
+                else:
+                    logger.warning(f'Channel {channel_id} history {month_str} failed: {e}')
                 break
 
             if not isinstance(messages, list) or not messages:
@@ -594,6 +618,8 @@ class DiscordArchiver:
         """Return True if every channel has fully processed the given historical month."""
         for ch_id in channel_ids:
             ch_st = self.state['channels'].get(str(ch_id), {})
+            if ch_st.get('forbidden'):
+                continue  # 无权限频道(403)永远抓不到，排除出完成判定，否则游标永久卡死
             if ch_st.get('last_historical_month') != month_str:
                 return False
             if int(ch_st.get('last_historical_message_id', '0')) < int(before_sf):
