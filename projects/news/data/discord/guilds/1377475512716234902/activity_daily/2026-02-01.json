@@ -1,19 +1,31 @@
 {
   "date": "2026-02-01",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 17,
-  "attachments": 1,
+  "messages": 63,
+  "unique_authors": 8,
+  "reactions_total": 37,
+  "attachments": 2,
   "channel_activity": {
+    "なんでも雑談": 58,
+    "🔰初心者質問": 3,
     "落書き": 1,
     "リプレイ機能垂れ流しスレ": 1
   },
   "hourly_activity": {
-    "11": 1,
-    "2": 1
+    "7": 5,
+    "9": 6,
+    "10": 12,
+    "11": 23,
+    "15": 3,
+    "16": 2,
+    "18": 4,
+    "19": 3,
+    "22": 1,
+    "2": 3,
+    "6": 1
   },
   "message_types": {
-    "0": 2
+    "0": 58,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -23,6 +35,62 @@
       "author": "_urito",
       "reactions": 17,
       "channel": "落書き"
+    },
+    {
+      "id": "1467447904364138557",
+      "channel_id": "1377478664609857647",
+      "content": "このゲーム最近始めましたけどストーリーとか世界観がすごく良いですね！",
+      "author": "fiscally3764",
+      "reactions": 12,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467457581126783098",
+      "channel_id": "1377478664609857647",
+      "content": "ミリ虚無",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467462217157972092",
+      "channel_id": "1377478664609857647",
+      "content": "||ちょっとライカー実装に未練ある？||",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467474257784078428",
+      "channel_id": "1377478664609857647",
+      "content": "お金貯める時間出来るって考えたらいいか",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467477200784851150",
+      "channel_id": "1377478664609857647",
+      "content": "待ってもう融災終わり❓️",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467477313766817864",
+      "channel_id": "1377478664609857647",
+      "content": "運営:やです",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1467602833976332330",
+      "channel_id": "1377478664609857647",
+      "content": "なんが古い情報\nスルーして",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

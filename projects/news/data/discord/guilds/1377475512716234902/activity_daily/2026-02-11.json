@@ -1,27 +1,42 @@
 {
   "date": "2026-02-11",
-  "messages": 16,
-  "unique_authors": 9,
-  "reactions_total": 83,
-  "attachments": 3,
+  "messages": 929,
+  "unique_authors": 23,
+  "reactions_total": 164,
+  "attachments": 43,
   "channel_activity": {
-    "誰でも質問": 8,
+    "なんでも雑談": 870,
+    "🔰初心者質問": 10,
+    "誰でも質問": 41,
     "ゆるリク募　落書き置き場": 5,
     "【対人戦】団体戦企画": 1,
     "レベル70〜80の救援覚醒体を固定している人の協力願": 2
   },
   "hourly_activity": {
-    "8": 3,
-    "9": 1,
-    "10": 4,
-    "14": 2,
-    "15": 3,
-    "13": 1,
-    "5": 2
+    "0": 3,
+    "3": 35,
+    "4": 1,
+    "5": 4,
+    "6": 18,
+    "7": 6,
+    "8": 9,
+    "10": 15,
+    "11": 34,
+    "12": 32,
+    "13": 75,
+    "14": 155,
+    "15": 36,
+    "16": 86,
+    "17": 93,
+    "18": 165,
+    "19": 156,
+    "23": 2,
+    "2": 3,
+    "9": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 3
+    "0": 848,
+    "19": 65
   },
   "top_reacted_messages": [
     {
@@ -41,6 +56,38 @@
       "channel": "ゆるリク募　落書き置き場"
     },
     {
+      "id": "1471089335309832286",
+      "channel_id": "1377478664609857647",
+      "content": "やったー",
+      "author": "_regen02b",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471127194322604063",
+      "channel_id": "1377478664609857647",
+      "content": "https://x.com/bunariis/status/2021514656406184081?s=46&t=jvcx-qpZHFPQbzWaXyhn9g\n",
+      "author": "8106ne",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471166331985596532",
+      "channel_id": "1377478664609857647",
+      "content": "初回ボーナスってもしかしてリセットも対象❓",
+      "author": "xudabusakua",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471166680943038662",
+      "channel_id": "1377478664609857647",
+      "content": "💩",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1471011861620199434",
       "channel_id": "1417695507500765194",
       "content": "ニム再掲です\nレベル90\n才能12\n餅完凸\nサブ札:アクートの春\n密約:ダメ強、キーチャ、界域知識寄せに調整",
@@ -49,20 +96,108 @@
       "channel": "レベル70〜80の救援覚醒体を固定している人の協力願"
     },
     {
-      "id": "1471163401513336874",
-      "channel_id": "1471152940814172322",
-      "content": "凄く可愛い<:leigh_like:1468258513405870121> ありがとうございます(？)",
-      "author": "yasaizujusu",
-      "reactions": 1,
-      "channel": "ゆるリク募　落書き置き場"
+      "id": "1471023833069649962",
+      "channel_id": "1377478664609857647",
+      "content": "ワンダ教に入信すると富と名声が手に入ります。",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     },
     {
-      "id": "1471138142189912095",
-      "channel_id": "1457876779954995315",
-      "content": "第二回も勢いでやります🙌",
-      "author": "2nd_doji",
+      "id": "1471033751495770133",
+      "channel_id": "1377478664609857647",
+      "content": "とりあえず犬が最強",
+      "author": "sunquanrenge",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471157609405874256",
+      "channel_id": "1377478664609857647",
+      "content": "恒常引いたらレーアしか出てこねぇ",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471166142516166728",
+      "channel_id": "1377478664609857647",
+      "content": "スコア狙いたいのに全然ダメ<:chiiin:1390953055800791232>",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471200491386966022",
+      "channel_id": "1377478664609857647",
+      "content": "安心して",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471027067804975166",
+      "channel_id": "1377478664609857647",
+      "content": "倫理観が欠如してるだけでやってる事ﾊｰﾊﾞｰﾄﾞと変わんにゃい",
+      "author": "xudabusakua",
       "reactions": 1,
-      "channel": "【対人戦】団体戦企画"
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471028384199868581",
+      "channel_id": "1377478664609857647",
+      "content": "🤛🤦‍♀️",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471090607026995200",
+      "channel_id": "1377478664609857647",
+      "content": "4凸ダフォだからまだ伸ばせる",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471117373238153402",
+      "channel_id": "1377478664609857647",
+      "content": "おてて",
+      "author": "mu0240_87003",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471142117341401260",
+      "channel_id": "1377478664609857647",
+      "content": "それって元のやつキーチャ500？",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471147091958173890",
+      "channel_id": "1377478664609857647",
+      "content": "今だと1万課金すれば凸素材手に入るのも熱い‼️",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471147879543603220",
+      "channel_id": "1377478664609857647",
+      "content": "狂魔の正統アタッカーきたら両完凸いくか",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471149422741160068",
+      "channel_id": "1377478664609857647",
+      "content": "こっちは火力万出すのでさえ精一杯なのにね🥹‎",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2026-03-25",
-  "messages": 27,
-  "unique_authors": 10,
-  "reactions_total": 6,
-  "attachments": 9,
+  "messages": 98,
+  "unique_authors": 13,
+  "reactions_total": 42,
+  "attachments": 18,
   "channel_activity": {
+    "なんでも雑談": 71,
     "🔰初心者質問": 18,
     "誰でも質問": 5,
     "幻夢ボス別ステージ入口スクショ": 1,
@@ -12,21 +13,66 @@
     "Twitchでストリーミング配信": 1
   },
   "hourly_activity": {
-    "0": 14,
-    "6": 1,
+    "0": 16,
+    "4": 2,
+    "6": 4,
+    "8": 5,
+    "9": 25,
+    "10": 3,
+    "11": 8,
+    "12": 25,
+    "13": 2,
+    "17": 1,
     "14": 2,
     "15": 3,
     "7": 1,
-    "11": 2,
-    "23": 1,
-    "10": 2,
-    "12": 1
+    "23": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 21
+    "0": 67,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1486361611252797621",
+      "channel_id": "1377478664609857647",
+      "content": "融災で困ってる人は是非参考にしてみてください！\n(参考になるかは知らない笑)",
+      "author": "anonymous.409",
+      "reactions": 14,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486413877536100424",
+      "channel_id": "1377478664609857647",
+      "content": "https://discord.com/channels/1131791637933199470/1486411433087602802\n<@112909620",
+      "author": "foxcatfurry",
+      "reactions": 8,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486298738421923891",
+      "channel_id": "1377478664609857647",
+      "content": "すずめ",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486340264065761291",
+      "channel_id": "1377478664609857647",
+      "content": "野生生物に干渉するのはご法度なのでやりたい事やる。国家転覆とか",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486347993706659860",
+      "channel_id": "1377478664609857647",
+      "content": "オレッタでﾍﾟﾁﾍﾟﾁするのが楽しくてやめれねぇんだ…",
+      "author": "yamaiame_ql4",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1486347632023568535",
       "channel_id": "1459507965366112370",
@@ -34,6 +80,38 @@
       "author": "sugoitsubasanohaetaop",
       "reactions": 2,
       "channel": "今日の〜シリーズver1.0"
+    },
+    {
+      "id": "1486312137763721259",
+      "channel_id": "1377478664609857647",
+      "content": "あらためて見ると狂魔の回復量が狂ってる…（古の供物による回復もありますけど）",
+      "author": "megane0965_78083",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486336285915222016",
+      "channel_id": "1377478664609857647",
+      "content": "~~川のペンギン~~",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486337460290981980",
+      "channel_id": "1377478664609857647",
+      "content": "都市部のペンギン",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1486340105969991710",
+      "channel_id": "1377478664609857647",
+      "content": "じゃ、わて自認ペンギンなので人間よひれ伏しなさい。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1486155826975739985",

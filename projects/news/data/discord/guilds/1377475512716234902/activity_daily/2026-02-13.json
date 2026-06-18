@@ -1,50 +1,200 @@
 {
   "date": "2026-02-13",
-  "messages": 22,
-  "unique_authors": 9,
-  "reactions_total": 3,
-  "attachments": 2,
+  "messages": 169,
+  "unique_authors": 19,
+  "reactions_total": 59,
+  "attachments": 21,
   "channel_activity": {
+    "なんでも雑談": 134,
+    "🔰初心者質問": 13,
     "誰でも質問": 11,
     "日本版最新スト（イベスト含む）までネタバレOK板": 10,
     "【恒常のみ】融災375": 1
   },
   "hourly_activity": {
-    "4": 4,
-    "9": 7,
-    "15": 1,
-    "16": 1,
-    "13": 8,
-    "22": 1
+    "2": 2,
+    "3": 7,
+    "4": 9,
+    "5": 1,
+    "7": 6,
+    "9": 10,
+    "10": 9,
+    "11": 9,
+    "12": 2,
+    "13": 18,
+    "15": 11,
+    "16": 6,
+    "17": 43,
+    "18": 2,
+    "19": 28,
+    "22": 2,
+    "23": 2,
+    "14": 2
   },
   "message_types": {
-    "0": 21,
-    "19": 1
+    "0": 137,
+    "19": 10
   },
   "top_reacted_messages": [
     {
-      "id": "1471732000074235995",
-      "channel_id": "1400058619726266462",
-      "content": "双子白つけて引きまくっていっぱいぺしぺしする",
-      "author": "zzzorz",
-      "reactions": 1,
-      "channel": "誰でも質問"
+      "id": "1471917736765685852",
+      "channel_id": "1377478664609857647",
+      "content": "ダメチャレしてたら実績取れた！\nこれ持ってる人まだいないんじゃないかな＼(^o^)／",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 7,
+      "channel": "なんでも雑談"
     },
     {
-      "id": "1471857537593638945",
-      "channel_id": "1449015772901937425",
-      "content": "謎道具",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "日本版最新スト（イベスト含む）までネタバレOK板"
+      "id": "1471830266854117538",
+      "channel_id": "1377478664609857647",
+      "content": "お疲れ様でした",
+      "author": "ecstasyrb",
+      "reactions": 6,
+      "channel": "なんでも雑談"
     },
     {
-      "id": "1472003076918349854",
-      "channel_id": "1469954025242759359",
-      "content": "ありがとうございました☺️\nおかげで融災楽しかったです",
-      "author": "_yrgyrgk",
+      "id": "1472008896825659392",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "sub0044_36832",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471917789152280777",
+      "channel_id": "1377478664609857647",
+      "content": "年末調整の還付金で引いた戦利品",
+      "author": "ecstasyrb",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471919327421796455",
+      "channel_id": "1377478664609857647",
+      "content": "ターンだとこうなった！( ･´ｰ･｀)どやっ",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471705991002325266",
+      "channel_id": "1377478664609857647",
+      "content": "10年以上有効期限あるの笑う。",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471860430333804718",
+      "channel_id": "1377478664609857647",
+      "content": "中央で佇んでるﾄﾞｰﾙはガチなに❓",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471894830429896715",
+      "channel_id": "1377478664609857647",
+      "content": "多重人格の人で奇声を上げながら頭をかち割らせて敵を怖がらせましょう🐬",
+      "author": "8106ne",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471915486689235118",
+      "channel_id": "1391701560496623688",
+      "content": "デバフ解除効果を持つ詩を詳細なイメージにアップグレードさせた後に、ボスの覚醒後に来るデバフ祭りに合わせて使用するようにしましょう。\n注意点としてボス覚醒までにイ",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1471802226153357474",
+      "channel_id": "1377478664609857647",
+      "content": "オルライベボス\nありえない量のデバフで笑うしかない",
+      "author": "okara6947",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471809917839999048",
+      "channel_id": "1377478664609857647",
+      "content": "真面目にこれ毒か触腕以外でどうやって倒すんですか……？",
+      "author": "okara6947",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471687373321535559",
+      "channel_id": "1377478664609857647",
+      "content": "ストーリーすすめるのが少しきつくなってきたなー今回のイベントで素材集め頑張らねば",
+      "author": "sunquanrenge",
       "reactions": 1,
-      "channel": "【恒常のみ】融災375"
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471707883698786336",
+      "channel_id": "1377478664609857647",
+      "content": "つまり10年続くってことか…",
+      "author": "esukun125",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471711533938770012",
+      "channel_id": "1377478664609857647",
+      "content": "狂乱の宴へようこそって？",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471775086594752644",
+      "channel_id": "1377478664609857647",
+      "content": "ミリアムは蛇なでなでするタイプの司祭じゃないだろ",
+      "author": "okara6947",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471811442578817097",
+      "channel_id": "1377478664609857647",
+      "content": "自分はサルバドルとジェンキンで殴り倒しました…",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471821199930687562",
+      "channel_id": "1377478664609857647",
+      "content": "あれ汚染！",
+      "author": "anmianmakura.",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471857772516741183",
+      "channel_id": "1377478664609857647",
+      "content": "確かプレイヤーレベルに応じて自動的に難易度に補正がかかるんでしたっけ？",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471859900467646713",
+      "channel_id": "1377478664609857647",
+      "content": "https://twitter.com/bokyakuzenya/status/2022253162980086186?t=H4JuvvxNQ1jdiQbwc5",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1471917837256753254",
+      "channel_id": "1377478664609857647",
+      "content": "あまりに限定的すぎて辛い🥹",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

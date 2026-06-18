@@ -1,19 +1,40 @@
 {
   "date": "2025-12-10",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 31,
-  "attachments": 2,
+  "messages": 229,
+  "unique_authors": 21,
+  "reactions_total": 130,
+  "attachments": 7,
   "channel_activity": {
+    "なんでも雑談": 221,
+    "誰でも質問": 5,
     "落書きとか感想とか": 1,
     "クオリティまちまちだけどお絵描き〜": 2
   },
   "hourly_activity": {
-    "8": 1,
-    "9": 2
+    "1": 13,
+    "2": 36,
+    "3": 1,
+    "6": 15,
+    "7": 48,
+    "8": 33,
+    "9": 5,
+    "10": 1,
+    "11": 4,
+    "12": 39,
+    "13": 1,
+    "14": 4,
+    "15": 2,
+    "16": 13,
+    "17": 3,
+    "18": 3,
+    "20": 1,
+    "22": 1,
+    "23": 1,
+    "4": 5
   },
   "message_types": {
-    "0": 3
+    "19": 12,
+    "0": 214
   },
   "top_reacted_messages": [
     {
@@ -25,12 +46,156 @@
       "channel": "落書きとか感想とか"
     },
     {
+      "id": "1448346325371326586",
+      "channel_id": "1377478664609857647",
+      "content": "||このゲームのイケオジみんな良いオジすぎ||",
+      "author": "yasaizujusu",
+      "reactions": 7,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448229609144451123",
+      "channel_id": "1377478664609857647",
+      "content": "~~もう枯れた~~",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448344927116198020",
+      "channel_id": "1377478664609857647",
+      "content": "||エルトン船長の人間が出来すぎている。いい男だ||",
+      "author": "okara6947",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1448249753405100032",
       "channel_id": "1416780884673167361",
       "content": "正直に言おう！飽きた！",
       "author": "nekoshinnja_97999",
       "reactions": 6,
       "channel": "クオリティまちまちだけどお絵描き〜"
+    },
+    {
+      "id": "1448205521860694056",
+      "channel_id": "1377478664609857647",
+      "content": "明日の15時まで！やってほしい！",
+      "author": "baku_and_also_sakura",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448232446016622647",
+      "channel_id": "1377478664609857647",
+      "content": "えち",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448380158175346822",
+      "channel_id": "1377478664609857647",
+      "content": "シルバーコア3000くらい増えました\n待っててくれタイスさん……！",
+      "author": "okara6947",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448227900083015860",
+      "channel_id": "1377478664609857647",
+      "content": "タイスさんの使ったイスになりたいッス",
+      "author": "mekhane0885",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448351947999416467",
+      "channel_id": "1377478664609857647",
+      "content": "||割とエルトン船長の人の良さで繋がるハートフルストーリーみたいな所がある||",
+      "author": "yasaizujusu",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448355344731345007",
+      "channel_id": "1377478664609857647",
+      "content": "一瞬ですり抜けカウントを貯めてくれるレーアさん",
+      "author": "96cat",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448130216940797982",
+      "channel_id": "1377478664609857647",
+      "content": "某所のTier表見たら\nトゥルーがTier1を独占しててダフォソレールリリーマフィワンダが全員Tier2に居て草",
+      "author": "96cat",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448221442758938685",
+      "channel_id": "1377478664609857647",
+      "content": "無料or期間過ぎたら有償よね",
+      "author": "iihige",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448319947791929384",
+      "channel_id": "1377478664609857647",
+      "content": "キーチャージ",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448330075673067682",
+      "channel_id": "1377478664609857647",
+      "content": "銀ダラってスゲェんだ…",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448347048062488607",
+      "channel_id": "1377478664609857647",
+      "content": "24イベ回してますけどこのイベとワンダ相性💮すぎて感動してる。これがデフォだったら多分覇権取れてました☝",
+      "author": "aku08158",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448127772663742495",
+      "channel_id": "1377478664609857647",
+      "content": "たぶん\nただの\nバグ",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448131769193730058",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "sub0044_36832",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448138281685487798",
+      "channel_id": "1377478664609857647",
+      "content": "これホンマ売ってくれ😭",
+      "author": "esukun125",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1448141110173110353",
+      "channel_id": "1377478664609857647",
+      "content": "その札が初期勢しかないのひどいよぬ",
+      "author": "iihige",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     }
   ]
 }

@@ -4,78 +4,131 @@
       "last_message_id": "1516899780716921054",
       "name": "なんでも雑談",
       "cold_started": true,
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05",
+      "empty_months": [
+        "2025-05",
+        "2025-06",
+        "2025-07"
+      ]
     },
     "1377481792335908945": {
       "last_message_id": "1516002666218651670",
       "name": "対戦募集",
       "cold_started": true,
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05",
+      "empty_months": [
+        "2025-05",
+        "2025-06",
+        "2025-10",
+        "2026-02",
+        "2026-03",
+        "2026-04"
+      ]
     },
     "1377481920870482000": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "mod-log"
     },
     "1377481979255193700": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "setup-notes"
     },
     "1377488433425154158": {
       "last_message_id": "1480776276326355004",
       "name": "🏛️学則",
       "cold_started": true,
       "empty_months": [
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-04",
         "2026-05"
       ],
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05"
     },
     "1377488433425154161": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "moderator-only"
     },
     "1389169936701853716": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "dyno-アップデート通知"
     },
     "1389418757910171780": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "🚪コミュニティ情報（管理用）"
     },
     "1391693882240139306": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "フレンド募集（非表示）"
     },
     "1391701560496623688": {
       "last_message_id": "1516898092241391686",
       "name": "🔰初心者質問",
       "cold_started": true,
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05"
     },
     "1392055220539752579": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "💎ガチャ結果（非表示）"
     },
     "1400058365501116458": {
       "last_message_id": "1506556863058280628",
       "name": "🎁ギフトコード",
       "cold_started": true,
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05",
+      "empty_months": [
+        "2025-07",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04"
+      ]
     },
     "1400058619726266462": {
       "last_message_id": "1516724639043293234",
       "name": "誰でも質問",
       "cold_started": true,
-      "last_historical_message_id": "1510795011686400000",
-      "last_historical_month": "2026-05"
+      "last_historical_message_id": "1378523440742400000",
+      "last_historical_month": "2025-05",
+      "empty_months": [
+        "2025-07"
+      ]
     },
     "1408066283349737573": {
       "last_historical_message_id": "1499560987852800000",
-      "last_historical_month": "2026-05"
+      "last_historical_month": "2026-05",
+      "forbidden": true,
+      "name": "sandbox"
     },
     "thread:1516214167365750865": {
       "last_message_id": "1516214167365750865"
@@ -253,7 +306,7 @@
       "last_message_id": "1515718912942018580"
     },
     "thread:1514643520143757435": {
-      "last_message_id": "1516497927638487070"
+      "last_message_id": "1516949249676411003"
     },
     "thread:1513534173565030460": {
       "last_message_id": "1513794896652402718"
@@ -911,8 +964,17 @@
     },
     "thread:1479021158803177483": {
       "last_message_id": "1479116659548749865"
+    },
+    "thread:1452209885310615552": {
+      "last_message_id": "1452241193768456232"
+    },
+    "thread:1414551490118287433": {
+      "last_message_id": "1414551496162541599"
+    },
+    "thread:1416256868577312768": {
+      "last_message_id": "1418487559771656292"
     }
   },
-  "historical_month": "2026-05",
-  "last_run": "2026-06-17T23:08:35.462192+00:00"
+  "historical_month": null,
+  "last_run": "2026-06-18T01:37:17.742397+00:00"
 }

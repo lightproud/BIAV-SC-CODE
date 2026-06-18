@@ -1,17 +1,146 @@
 {
   "date": "2026-04-22",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 73,
+  "unique_authors": 13,
+  "reactions_total": 21,
+  "attachments": 6,
   "channel_activity": {
+    "なんでも雑談": 71,
     "今日の〜シリーズver1.0": 2
   },
   "hourly_activity": {
-    "14": 2
+    "1": 4,
+    "2": 1,
+    "3": 10,
+    "4": 1,
+    "5": 1,
+    "6": 23,
+    "7": 1,
+    "8": 2,
+    "11": 7,
+    "12": 3,
+    "13": 6,
+    "14": 4,
+    "16": 3,
+    "17": 5,
+    "18": 2
   },
   "message_types": {
-    "0": 2
+    "0": 63,
+    "19": 8
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1496546593497677936",
+      "channel_id": "1377478664609857647",
+      "content": "下手したら出血ありきで1キルかも",
+      "author": "chabo.chabo",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496402755533803600",
+      "channel_id": "1377478664609857647",
+      "content": "恒常キャラの力ボーナス盛りあまりにやる気無さすぎて死ぬ。",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496402983338905741",
+      "channel_id": "1377478664609857647",
+      "content": "🚮分かりやすいようにマークも貼っておくよ",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496478424145985606",
+      "channel_id": "1377478664609857647",
+      "content": "これ3回くらい投稿し直してるのよ…",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496491356170748075",
+      "channel_id": "1377478664609857647",
+      "content": "本日からイベントスタミナ回し得です。\n1億いった",
+      "author": "8106ne",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496564151596748960",
+      "channel_id": "1377478664609857647",
+      "content": "エリカ覚醒？\n\nエリカのｷｰｵｰﾀﾞｰである『儚き永遠』を装備させる\n次にステージ中に極限を2回撃ちます\n最後にボス戦でｷｰｵｰﾀﾞｰを使って極限を1回撃つと…",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496326714161102848",
+      "channel_id": "1377478664609857647",
+      "content": "前夜",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496345518224314458",
+      "channel_id": "1377478664609857647",
+      "content": "いや　ドわすれだよ",
+      "author": "chabo.chabo",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496354237108588645",
+      "channel_id": "1377478664609857647",
+      "content": "そいつも強くならないとね",
+      "author": "chabo.chabo",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496400819400999044",
+      "channel_id": "1377478664609857647",
+      "content": "擁護しようと思ったが､育成した狂魔キャラの中で唯一､融災で使っていないのがユウハシュだと言うことに気づきそっと口を閉じた…",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496401466750140558",
+      "channel_id": "1377478664609857647",
+      "content": "一応ゆうさい5-5やった人居る(グロ版",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496401598057021561",
+      "channel_id": "1377478664609857647",
+      "content": "霊知なしのれげげーんさんのﾕｳﾊｼｭ使わせて頂きましたけど、札の胚胎込み50%クリ率無限に外してて泣きました。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496477696488898630",
+      "channel_id": "1377478664609857647",
+      "content": "永遠に直ってなくてウケ",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1496509286531203273",
+      "channel_id": "1377478664609857647",
+      "content": "ゲーム最初のpvじゃない?",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
 }

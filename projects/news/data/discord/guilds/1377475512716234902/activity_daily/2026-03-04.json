@@ -1,29 +1,78 @@
 {
   "date": "2026-03-04",
-  "messages": 19,
-  "unique_authors": 11,
-  "reactions_total": 6,
-  "attachments": 1,
+  "messages": 275,
+  "unique_authors": 14,
+  "reactions_total": 45,
+  "attachments": 6,
   "channel_activity": {
+    "なんでも雑談": 256,
     "🔰初心者質問": 8,
     "誰でも質問": 11
   },
   "hourly_activity": {
-    "3": 5,
+    "1": 5,
+    "2": 5,
+    "3": 73,
+    "6": 12,
+    "7": 5,
+    "8": 12,
+    "9": 10,
+    "10": 39,
+    "11": 56,
+    "12": 11,
+    "13": 21,
+    "14": 12,
+    "19": 5,
+    "22": 5,
     "5": 2,
-    "8": 1,
-    "22": 2,
     "23": 1,
-    "0": 1,
-    "1": 3,
-    "2": 1,
-    "11": 3
+    "0": 1
   },
   "message_types": {
-    "0": 18,
-    "19": 1
+    "0": 239,
+    "19": 17
   },
   "top_reacted_messages": [
+    {
+      "id": "1478597043776786442",
+      "channel_id": "1377478664609857647",
+      "content": "細かいことよりもやっぱ筋肉よ！\n筋肉は全てを解決する",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478727226634539204",
+      "channel_id": "1377478664609857647",
+      "content": "うん、頑張ったよ。🥹",
+      "author": "xudabusakua",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478600644708405361",
+      "channel_id": "1377478664609857647",
+      "content": "密約はクリダメ、率、キーチャ、知識、ちょっとダメ強と欲しいもの多いのが悩み",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478658038733733898",
+      "channel_id": "1377478664609857647",
+      "content": "ついでにキャラ強化来い",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478740794688016597",
+      "channel_id": "1377478664609857647",
+      "content": "寝たい自分とぽこあやりたい自分とみんなと会話したい自分がいる。（なおその枠に忘却前夜をプレイするという選択はない模様）",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1478567640606703626",
       "channel_id": "1400058619726266462",
@@ -41,20 +90,108 @@
       "channel": "誰でも質問"
     },
     {
-      "id": "1478594726029693089",
-      "channel_id": "1391701560496623688",
-      "content": "カプセル使うのが現実的な気がします",
-      "author": "zzzorz",
+      "id": "1478572651651010602",
+      "channel_id": "1377478664609857647",
+      "content": "金👌",
+      "author": "foxcatfurry",
       "reactions": 1,
-      "channel": "🔰初心者質問"
+      "channel": "なんでも雑談"
     },
     {
-      "id": "1478890082055229501",
-      "channel_id": "1391701560496623688",
-      "content": "見つかりました！ありがとうございます🙇🏻‍♀️",
-      "author": "iyori____",
+      "id": "1478574766779793420",
+      "channel_id": "1377478664609857647",
+      "content": "ラスト5連の結果",
+      "author": "namenemue3",
       "reactions": 1,
-      "channel": "🔰初心者質問"
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478576802011021567",
+      "channel_id": "1377478664609857647",
+      "content": "わたし24欲しかったけど奇体1つしか出なかったよ🥹‪",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478588422355685447",
+      "channel_id": "1377478664609857647",
+      "content": "何気に“雨の讃歌”の効果も強いですよね。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478593413388439674",
+      "channel_id": "1377478664609857647",
+      "content": "（そう言い残した彼が二度とこのスレに現れることはなかったという）",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478595502046973952",
+      "channel_id": "1377478664609857647",
+      "content": "クリティカルダメージあがるオーダー来たらマジで強いんだけどね！",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478598596696997978",
+      "channel_id": "1377478664609857647",
+      "content": "クリダメ＜率\nだとは思いますけどねー\n確定クリ持ってるキャラ以外はまじでクリ出ないと無",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478602497823080530",
+      "channel_id": "1377478664609857647",
+      "content": "ゴリアテ札はとてもよき",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478639921102327912",
+      "channel_id": "1377478664609857647",
+      "content": "今エアライカーしてる",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478649017109053512",
+      "channel_id": "1377478664609857647",
+      "content": "イベントで思い出したけどイベ告知無いね<:Brown_think:1459080117308620996>",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478657785234329620",
+      "channel_id": "1377478664609857647",
+      "content": "今日告知来んじゃね<:Brown_think:1459080117308620996>",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478665582353059931",
+      "channel_id": "1377478664609857647",
+      "content": "せめてグロ版になれ",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1478704538490765354",
+      "channel_id": "1377478664609857647",
+      "content": "超次元と相性良いからサルバタイス極限にするのアリなんだけど絶対にタイスは極限にしない",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

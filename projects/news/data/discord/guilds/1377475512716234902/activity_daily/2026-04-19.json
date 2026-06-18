@@ -1,28 +1,126 @@
 {
   "date": "2026-04-19",
-  "messages": 11,
-  "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 2,
+  "messages": 112,
+  "unique_authors": 12,
+  "reactions_total": 55,
+  "attachments": 16,
   "channel_activity": {
+    "なんでも雑談": 101,
     "🔰初心者質問": 5,
     "誰でも質問": 1,
     "今日の〜シリーズver1.0": 3,
     "【対人戦】団体戦企画": 2
   },
   "hourly_activity": {
-    "13": 4,
-    "14": 1,
+    "4": 4,
+    "5": 1,
+    "6": 35,
+    "7": 1,
+    "8": 1,
+    "10": 7,
+    "11": 16,
+    "12": 4,
+    "13": 22,
+    "14": 3,
+    "15": 2,
+    "16": 5,
+    "17": 8,
     "23": 1,
-    "4": 1,
-    "10": 2,
     "9": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 96,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1495431714519126097",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "zzzorz",
+      "reactions": 9,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495377201833447664",
+      "channel_id": "1377478664609857647",
+      "content": "2位に浮上！",
+      "author": "8106ne",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495285657008865350",
+      "channel_id": "1377478664609857647",
+      "content": "ヘンテコ編成で何とかクリア出来た",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495380046209093723",
+      "channel_id": "1377478664609857647",
+      "content": "マーフィー3凸完了！",
+      "author": "0w04250",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495410694575755425",
+      "channel_id": "1377478664609857647",
+      "content": "このゲーム、色々なキャラ使いたくなるので困る。",
+      "author": "tianmoheizi_16992",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495341821608464496",
+      "channel_id": "1377478664609857647",
+      "content": "定時で帰れた！\nまだ外が明るい！\nやったぁ！（白目）",
+      "author": "ecstasyrb",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495408655531638794",
+      "channel_id": "1377478664609857647",
+      "content": "2章クリアしました。",
+      "author": "tianmoheizi_16992",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495408720069398718",
+      "channel_id": "1377478664609857647",
+      "content": "ジェンキーーーーン！😭",
+      "author": "tianmoheizi_16992",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495282100306186342",
+      "channel_id": "1377478664609857647",
+      "content": "怒りの休日出勤",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495419253904379925",
+      "channel_id": "1377478664609857647",
+      "content": "ジェンキンと24の姉妹大好き",
+      "author": "0w04250",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495480993690423598",
+      "channel_id": "1377478664609857647",
+      "content": "性格の表裏、隠し事とか色々考えたけどよくわからんかった",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1495362219532222574",
       "channel_id": "1457876779954995315",
@@ -32,28 +130,68 @@
       "channel": "【対人戦】団体戦企画"
     },
     {
+      "id": "1495305567168757780",
+      "channel_id": "1377478664609857647",
+      "content": "運ゲーの塊モード",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495305734823477349",
+      "channel_id": "1377478664609857647",
+      "content": "マジでドローの質悪いよねこのゲーム",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495310645841891520",
+      "channel_id": "1377478664609857647",
+      "content": "やっぱりカウントターン制は良くない",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495373419670147133",
+      "channel_id": "1377478664609857647",
+      "content": "最終日なのにクソステージで悲しみしかない(TT)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495388354370470019",
+      "channel_id": "1377478664609857647",
+      "content": "今週リリーMAP3回当たってライムさんの呪いにかかってました。orz…",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495394266070126695",
+      "channel_id": "1377478664609857647",
+      "content": "無課金最高峰アタッカーみたいな立ち位置な気がする",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1495396800205689013",
+      "channel_id": "1377478664609857647",
+      "content": "ダフォはねー幻夢だと厳しい",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1495272979171512590",
       "channel_id": "1459507965366112370",
       "content": "８章の週ボス\n多分最短は10ターンですね！\nボス戦が３で〆れるはず",
       "author": "sugoitsubasanohaetaop",
       "reactions": 1,
       "channel": "今日の〜シリーズver1.0"
-    },
-    {
-      "id": "1495366448690761788",
-      "channel_id": "1459507965366112370",
-      "content": "",
-      "author": "kuroneko4253",
-      "reactions": 1,
-      "channel": "今日の〜シリーズver1.0"
-    },
-    {
-      "id": "1495362115425271909",
-      "channel_id": "1457876779954995315",
-      "content": "☆大会ルール☆\n各チームで相談をして、各役割のキャラ1体ずつ、キーオーダー2つ、運命の札5つをBANします。\nBANされたキャラ、キーオーダー、札は相手チームは",
-      "author": "sufure0611",
-      "reactions": 1,
-      "channel": "【対人戦】団体戦企画"
     }
   ]
 }
