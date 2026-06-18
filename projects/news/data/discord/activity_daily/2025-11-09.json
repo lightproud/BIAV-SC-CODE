@@ -1,10 +1,29 @@
 {
   "date": "2025-11-09",
-  "messages": 7809,
-  "unique_authors": 191,
-  "reactions_total": 1690,
-  "attachments": 292,
+  "messages": 18217,
+  "unique_authors": 218,
+  "reactions_total": 3437,
+  "attachments": 707,
   "channel_activity": {
+    "🔸剧情交流": 37,
+    "🔸晒卡分享": 17,
+    "🔸相位对弈": 11,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 12,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 188,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 76,
+    "🔸canal-português": 94,
+    "🔸ruang-obrolan-indonesia": 10,
+    "🔸ห้องสนทนาภาษาไทย": 145,
+    "🔸traphase": 106,
+    "🔸lore-chat": 189,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 43,
+    "🔸频道建议┊server-suggestions": 13,
+    "🔸team-building": 1441,
+    "🔸general-chat": 7991,
     "🔸綜合討論": 1021,
     "🔸阵容构建": 3,
     "🔸morimens-game-chat": 6674,
@@ -27,46 +46,47 @@
     "✅「Answered」Pollux's Sacred Heart Exhaust Count and Ultra Space": 2,
     "About the limited stat buffs for 2nd aniv.": 2,
     "「我還記得你原本應該是什麼樣子」": 1,
-    "❤️": 3,
-    "🔸服务器公告┊server-announcement": 1
+    "❤️": 3
   },
   "hourly_activity": {
-    "0": 120,
-    "1": 506,
-    "2": 359,
-    "3": 334,
-    "4": 479,
-    "5": 502,
-    "6": 357,
-    "7": 541,
-    "8": 640,
-    "9": 412,
-    "10": 235,
-    "11": 245,
-    "12": 243,
-    "13": 250,
-    "14": 415,
-    "15": 165,
-    "16": 102,
-    "17": 130,
-    "18": 312,
-    "19": 269,
-    "20": 251,
-    "21": 266,
-    "22": 103,
-    "23": 573
+    "1": 963,
+    "5": 1005,
+    "6": 682,
+    "16": 500,
+    "17": 563,
+    "18": 617,
+    "7": 1024,
+    "12": 472,
+    "13": 896,
+    "14": 970,
+    "10": 944,
+    "11": 800,
+    "22": 778,
+    "9": 734,
+    "15": 348,
+    "20": 355,
+    "21": 833,
+    "23": 918,
+    "8": 1035,
+    "19": 331,
+    "0": 671,
+    "3": 804,
+    "4": 862,
+    "2": 1112
   },
   "message_types": {
-    "19": 2595,
-    "0": 5099,
-    "20": 4
+    "19": 3550,
+    "0": 6847,
+    "23": 5,
+    "20": 6
   },
   "top_reacted_messages": [
     {
       "id": "1437211905155399781",
+      "channel_id": "1354754985119846581",
       "content": "Hey Keepers!\n\nJust a quick update: The server's level/EXP system is now live on ",
       "author": "cometovilla",
-      "reactions": 255,
+      "reactions": 257,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -82,6 +102,14 @@
       "author": "dustsleeper_",
       "reactions": 39,
       "channel": "If Life was as usual for Castor and Pollux."
+    },
+    {
+      "id": "1436996141110526012",
+      "channel_id": "1385040039448412170",
+      "content": "<#1170692781216378960> Instead of removing embed permission for everyone, you sh",
+      "author": "aurora3981",
+      "reactions": 35,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1437219352041754786",
@@ -126,6 +154,14 @@
       "channel": "❤️"
     },
     {
+      "id": "1437081519666626674",
+      "channel_id": "1400750050208125010",
+      "content": "Arisu spammed reactions when I said that Arknight was a Kemonomimi game",
+      "author": "el.shaddoll.nephilim.is.my.ace",
+      "reactions": 13,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1436993311004168384",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -139,6 +175,14 @@
       "author": "junakaru4ever",
       "reactions": 11,
       "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
+      "id": "1436880049470050478",
+      "channel_id": "1400750050208125010",
+      "content": "ugh it's so tiring being the best person ever....\nSadly no one can take my role ",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1437124376779554898",
@@ -170,44 +214,20 @@
       "channel": "✅「Answered」Pollux's Sacred Heart Exhaust Count and Ultra Space"
     },
     {
-      "id": "1437090617393152090",
-      "channel_id": "1170692781216378960",
-      "content": "🙂",
-      "author": "username_not_avaiable",
+      "id": "1436962897027666052",
+      "channel_id": "1400749543288475770",
+      "content": "Oh",
+      "author": ".kibana",
       "reactions": 9,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸team-building"
     },
     {
-      "id": "1436987889555607655",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1437196829451354313",
-      "channel_id": "1131839817982947429",
-      "content": "比上輪多10點 <:pray:1356053116260454534>    感覺配隊好一點可以多拿5分  但也算是對得起新入隊的鳥人了 <:agree:140",
-      "author": "partycatss.",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1437128470445559891",
-      "channel_id": "1131839817982947429",
-      "content": "初见普通难度，斩了！一个复活没吃这块",
-      "author": "phlilp_alapa",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1437052793914523648",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "riasterism_",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
+      "id": "1436976103838191618",
+      "channel_id": "1400750050208125010",
+      "content": "https://huiji-public.huijistatic.com/morimens/uploads/7/74/%E5%87%AF%E8%92%82%E5",
+      "author": "idotly",
+      "reactions": 9,
+      "channel": "🔸general-chat"
     }
   ]
 }

@@ -1,13 +1,33 @@
 {
   "date": "2025-11-22",
-  "messages": 2993,
-  "unique_authors": 94,
-  "reactions_total": 589,
-  "attachments": 183,
+  "messages": 18310,
+  "unique_authors": 445,
+  "reactions_total": 1995,
+  "attachments": 888,
   "channel_activity": {
+    "🔸morimens-game-chat": 8747,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 101,
+    "🔸课间休息闲聊": 23,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 2063,
+    "🔸phòng-chat-tiếng-việt": 226,
+    "🔸canal-español": 469,
+    "🔸canal-português": 368,
+    "🔸ruang-obrolan-indonesia": 942,
+    "🔸ห้องสนทนาภาษาไทย": 841,
+    "🔸traphase": 196,
+    "🔸lore-chat": 176,
+    "🔸lets-count": 27,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸team-building": 1487,
     "🔸綜合討論": 2348,
     "🔸阵容构建": 33,
-    "🔸morimens-game-chat": 411,
     "Someone whose name starts with A which idk how to spell": 10,
     "wip keeper": 4,
     "Kathigu-Ra: Ardor Blossom Star": 1,
@@ -47,34 +67,35 @@
     "1441904635123208233": 1
   },
   "hourly_activity": {
-    "0": 382,
-    "1": 107,
-    "2": 80,
-    "3": 31,
-    "4": 62,
-    "5": 81,
-    "6": 177,
-    "7": 229,
-    "8": 255,
-    "9": 68,
-    "10": 47,
-    "11": 102,
-    "12": 94,
-    "13": 127,
-    "14": 128,
-    "15": 352,
-    "16": 427,
-    "17": 44,
-    "19": 32,
-    "21": 7,
-    "22": 109,
-    "23": 37,
-    "18": 8,
-    "20": 7
+    "1": 837,
+    "2": 668,
+    "3": 727,
+    "4": 760,
+    "5": 487,
+    "6": 944,
+    "7": 786,
+    "8": 467,
+    "9": 402,
+    "10": 1049,
+    "11": 990,
+    "12": 937,
+    "13": 853,
+    "14": 871,
+    "15": 1054,
+    "16": 1755,
+    "17": 924,
+    "18": 524,
+    "19": 585,
+    "20": 331,
+    "21": 613,
+    "22": 585,
+    "23": 557,
+    "0": 604
   },
   "message_types": {
-    "0": 2259,
-    "19": 533
+    "0": 10510,
+    "19": 4806,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -83,6 +104,14 @@
       "author": "game.producer.light",
       "reactions": 161,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1441677659951333416",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1441670566472978433\n@everyone",
+      "author": "game.producer.light",
+      "reactions": 82,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1441904635123208233",
@@ -106,6 +135,30 @@
       "channel": "✅「Answered」This game needs more marketing"
     },
     {
+      "id": "1441677863555174503",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone like and sub to the video",
+      "author": "crowlov1",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441773496429707315",
+      "channel_id": "1173463482503536711",
+      "content": "ㄐㄐ",
+      "author": "_buqi",
+      "reactions": 12,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1441706810825375754",
+      "channel_id": "1170692781216378960",
+      "content": "Saw this post on twitter and-.  1, 1, 1, PLEASE, please, PLEASE",
+      "author": "snowyarcher",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1441926731245031526",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -121,112 +174,84 @@
       "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
     },
     {
-      "id": "1441614009055969494",
-      "channel_id": "1131839817982947429",
+      "id": "1441835417937776814",
+      "channel_id": "1170692781216378960",
+      "content": "how ramona... (i got cyrene and hyacine early pity)",
+      "author": "deleted_user_594e7f97b6e",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441679089898492017",
+      "channel_id": "1170692781216378960",
+      "content": "Guys I think im trash at this game. My dtide is still 335 and ive played for lik",
+      "author": ".shabo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441635034313261077",
+      "channel_id": "1174983699935277147",
+      "content": "40抽\n前面歪一隻艾",
+      "author": "akkom730",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1441635165007904868",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "zier.0",
+      "author": "arkaether",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441803555202666648",
-      "channel_id": "1131839817982947429",
-      "content": "第一次400分",
-      "author": "iak.rm",
+      "id": "1441825313209450556",
+      "channel_id": "1170692781216378960",
+      "content": "I need funds for OE Pollux",
+      "author": "joker_0108",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441712474763296920",
-      "content": "對於遍地都是的簡轉繁錯字已經看到無奈了，從非常影響沉浸體驗到「反正忘卻前夜沒錢不計較了」，從看到就出戲到看到已麻木，請問這個校稿志工的位置該去哪裡、怎麼應徵呢？",
-      "author": "amstelredam",
+      "id": "1441841710157009090",
+      "channel_id": "1170692781216378960",
+      "content": "so.... this kath character... seems pretty strong huh...",
+      "author": "lavache.",
       "reactions": 6,
-      "channel": "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441699570202710037",
-      "channel_id": "1131839817982947429",
-      "content": "~~丢进黑池的流明和无垢~~",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1441938920412549202",
+      "channel_id": "1170692781216378960",
+      "content": "For now, time to finish arc 1 story <:A_pinch:1432980538536493057>",
+      "author": "lyriearia",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441699808397230100",
-      "channel_id": "1131839817982947429",
-      "content": "ctrl+v",
-      "author": "navirecorbeau",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1441678278250201119",
+      "channel_id": "1174983699935277147",
+      "content": "明年的6/29上",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1441706387976622225",
-      "channel_id": "1131839817982947429",
+      "id": "1441685363117658183",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "sakura8901",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "author": "dog_0630",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1441699616423677962",
-      "content": "This guy's name starts with A, he looked pretty, I saw his pic it was a sticker.",
-      "author": "yvaine_yve_43407",
-      "reactions": 5,
-      "channel": "Someone whose name starts with A which idk how to spell"
-    },
-    {
-      "id": "1441738656057397300",
-      "content": "就跟其他角色開大一樣 招式就是要把台詞喊出來 這樣比較帥",
-      "author": "lingcheng.0",
-      "reactions": 5,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1441844361032630413",
-      "content": "",
-      "author": "axe_proficient",
-      "reactions": 5,
-      "channel": "N的究極羞辱"
-    },
-    {
-      "id": "1441637051094143140",
-      "channel_id": "1131839817982947429",
-      "content": "https://cdn.discordapp.com/attachments/477755023787556866/1353522601259040788/d5",
-      "author": "dinosaur_ouo",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1441691602618941572",
-      "channel_id": "1131839817982947429",
-      "content": "没有一点点朵儿",
-      "author": "ququ12358",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1441695274824368148",
-      "channel_id": "1131839817982947429",
-      "content": "當初用皮打到這 刮一下就過去了\n~~強烈要求增加血量~~",
-      "author": "quackdayo",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1441755266713649316",
-      "channel_id": "1131839817982947429",
-      "content": "連幼圖都打不過，輸光..",
-      "author": "heikwok",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1441784161693208756",
-      "channel_id": "1131839817982947429",
-      "content": "抽了30抽3金，剛好補到2啟",
-      "author": "luckyinitial",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1441688668698972201",
+      "channel_id": "1300659802455674972",
+      "content": "กระดอ",
+      "author": "satachan",
+      "reactions": 6,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]
 }

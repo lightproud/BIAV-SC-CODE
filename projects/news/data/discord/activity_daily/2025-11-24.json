@@ -1,10 +1,30 @@
 {
   "date": "2025-11-24",
-  "messages": 3256,
-  "unique_authors": 88,
-  "reactions_total": 743,
-  "attachments": 314,
+  "messages": 23219,
+  "unique_authors": 669,
+  "reactions_total": 3139,
+  "attachments": 1795,
   "channel_activity": {
+    "🔸morimens-game-chat": 11575,
+    "🔸剧情交流": 305,
+    "🔸晒卡分享": 89,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 90,
+    "🔸交友频道": 17,
+    "🔸日本語チャンネル": 29,
+    "🔸한국어-채팅방": 454,
+    "🔸deutscher-chatraum": 11,
+    "🔸chaîne-française": 23,
+    "🔸русский-канал": 204,
+    "🔸phòng-chat-tiếng-việt": 175,
+    "🔸canal-español": 1358,
+    "🔸canal-português": 1002,
+    "🔸ruang-obrolan-indonesia": 1661,
+    "🔸ห้องสนทนาภาษาไทย": 840,
+    "🔸traphase": 261,
+    "🔸lore-chat": 393,
+    "🔸lets-count": 42,
+    "🔸team-building": 1427,
     "🔸綜合討論": 3051,
     "🔸阵容构建": 17,
     "Doresain x Pickman": 2,
@@ -67,34 +87,36 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "0": 62,
-    "1": 175,
-    "2": 171,
-    "3": 146,
-    "4": 219,
-    "5": 265,
-    "6": 274,
-    "7": 207,
-    "8": 332,
-    "9": 85,
-    "10": 290,
-    "11": 316,
-    "12": 119,
-    "13": 48,
-    "14": 95,
-    "15": 61,
-    "16": 124,
-    "17": 43,
-    "18": 93,
-    "21": 6,
-    "22": 26,
-    "23": 94,
-    "20": 3,
-    "19": 2
+    "0": 740,
+    "1": 1330,
+    "2": 1485,
+    "3": 1700,
+    "4": 1343,
+    "5": 1479,
+    "6": 1141,
+    "7": 1164,
+    "8": 1099,
+    "9": 727,
+    "10": 1097,
+    "11": 637,
+    "12": 722,
+    "13": 925,
+    "14": 1286,
+    "15": 1075,
+    "16": 736,
+    "17": 602,
+    "18": 562,
+    "19": 648,
+    "20": 628,
+    "21": 520,
+    "22": 525,
+    "23": 1048
   },
   "message_types": {
-    "0": 2467,
-    "19": 601
+    "0": 13595,
+    "19": 6366,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -119,6 +141,30 @@
       "channel": "corposant edit ayayay (ignore the intro plspls i have no ideas)"
     },
     {
+      "id": "1442334202283688027",
+      "channel_id": "1170692781216378960",
+      "content": "Its been 10 hours without morimens, I cannot stop shaking an I'm having severe m",
+      "author": "liluaa",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442332930184839261",
+      "channel_id": "1170692781216378960",
+      "content": "this took way too long to make",
+      "author": "weelaeta",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442337284866441226",
+      "channel_id": "1170692781216378960",
+      "content": "OMFG",
+      "author": "zier.0",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1442343622002606150",
       "content": "i lovr ramonora",
       "author": "enzoperry",
@@ -133,11 +179,83 @@
       "channel": "纯血神国..."
     },
     {
+      "id": "1442411754679173120",
+      "channel_id": "1170692781216378960",
+      "content": "What is this servers obsession with pregnancy",
+      "author": "snowyarcher",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1442583751602470962",
       "content": "I really love her design, she's so cool!",
       "author": "echidna7311",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1442365272269918220",
+      "channel_id": "1173463482503536711",
+      "content": "像吃了口糧又像吃了口石",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1442306038312206446",
+      "channel_id": "1170692781216378960",
+      "content": "why am I getting clown emoji’d on, I don’t have that much free time to build and",
+      "author": ".nickend",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442379208532951122",
+      "channel_id": "1170692781216378960",
+      "content": "Pollux is a BEAST at e0 so get him",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442384886110621760",
+      "channel_id": "1170692781216378960",
+      "content": "OE is a must for her",
+      "author": "gabris_79046",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442502240395853895",
+      "channel_id": "1170692781216378960",
+      "content": "Ass shot and boob shot the moment i open the cutscene this is gonna feel weird l",
+      "author": "james0064",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442589084030730260",
+      "channel_id": "1170692781216378960",
+      "content": "as f2p",
+      "author": "apsgsd",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442444393683488779",
+      "channel_id": "1173463482503536711",
+      "content": "第一眼還想說哪裡來的5個（~~凱刻斯再度被迫害~~",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1442354685490237450",
+      "channel_id": "1174983699935277147",
+      "content": "323抽10隻墨菲 38抽1張命輪",
+      "author": "ahong0727",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1442357323338088599",
@@ -148,104 +266,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1442373883561775184",
-      "content": "大家好这里是Timee，11.24日久违的深海迎来了全新的唤醒体sp墨菲并且带来了神国buff，效果十分强力，也在第一时间抽满测试了下效果。\n\n因为暂时没空做视",
-      "author": "timee_ky",
+      "id": "1442321232736424166",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "craux.",
       "reactions": 8,
-      "channel": "纯血神国..."
-    },
-    {
-      "id": "1442388156698857522",
-      "channel_id": "1131839817982947429",
-      "content": "終於有一隻角色可以秒天秒地秒自己",
-      "author": "heikwok",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442566530322927656",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "lurenjiao",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442409985673003028",
-      "content": "也是開了個3+0，目前體驗下來是算力跟銀鑰用不完，手中沒靈感或深海聖詠的話過牌比較困難一點\n\n誕塔隊而言的話，我覺得玩起來會更像兩個C，塔薇本身的直傷因為沒有夠",
-      "author": "ena04564",
-      "reactions": 7,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1442350384948445235",
-      "channel_id": "1131839817982947429",
-      "content": "# 什麼叫做第四章有死亡抵抗plus版",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442374436694130699",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442391985368338473",
-      "channel_id": "1131839817982947429",
-      "content": "消毒還打不倒我。",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442394215840616500",
-      "channel_id": "1131839817982947429",
-      "content": "哭了 670抽才+12",
-      "author": "quackdayo",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442397201585406073",
-      "channel_id": "1131839817982947429",
-      "content": "<:Clown:1400771541423226971> 佬們都在試著把自己獻祭 只有我在匍匐前進",
-      "author": "forg30215",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442425041718481041",
-      "channel_id": "1131839817982947429",
-      "content": "卧槽，意识模糊...把米粒看成福袋了......一个盘子喂给了米粒.................本来我福袋超限了的",
-      "author": "xyakoto",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442314028851527771",
-      "content": "Ref",
-      "author": "sunstopshining",
-      "reactions": 6,
-      "channel": "Doresain x Pickman"
-    },
-    {
-      "id": "1442647324575928441",
-      "content": "Hey, trying to make a community tool for new players to reference, so that they ",
-      "author": "neckchin",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1442360404964544513",
-      "channel_id": "1131839817982947429",
-      "content": "好了可以退坑了",
-      "author": "taayoui",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

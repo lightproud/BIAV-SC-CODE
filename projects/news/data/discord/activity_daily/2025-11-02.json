@@ -1,10 +1,25 @@
 {
   "date": "2025-11-02",
-  "messages": 5948,
-  "unique_authors": 178,
-  "reactions_total": 844,
-  "attachments": 264,
+  "messages": 18021,
+  "unique_authors": 225,
+  "reactions_total": 2507,
+  "attachments": 694,
   "channel_activity": {
+    "🔸晒卡分享": 22,
+    "🔸相位对弈": 2,
+    "🔸한국어-채팅방": 43,
+    "🔸русский-канал": 505,
+    "🔸phòng-chat-tiếng-việt": 13,
+    "🔸canal-español": 324,
+    "🔸canal-português": 95,
+    "🔸ruang-obrolan-indonesia": 125,
+    "🔸ห้องสนทนาภาษาไทย": 41,
+    "🔸traphase": 40,
+    "🔸lore-chat": 791,
+    "🔸lets-count": 48,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 445,
+    "🔸general-chat": 9578,
     "🔸綜合討論": 787,
     "🔸morimens-game-chat": 4873,
     "pumpkin murphy sketch": 3,
@@ -35,35 +50,37 @@
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "0": 281,
-    "1": 483,
-    "2": 323,
-    "3": 77,
-    "4": 206,
-    "5": 381,
-    "6": 385,
-    "10": 368,
-    "11": 250,
-    "12": 146,
-    "13": 371,
-    "14": 174,
-    "15": 536,
-    "16": 308,
-    "17": 203,
-    "18": 213,
-    "23": 236,
-    "7": 205,
-    "8": 52,
-    "9": 191,
-    "19": 66,
-    "20": 121,
-    "21": 122,
-    "22": 250
+    "4": 476,
+    "5": 749,
+    "7": 914,
+    "8": 712,
+    "11": 850,
+    "17": 1224,
+    "13": 989,
+    "15": 670,
+    "0": 1007,
+    "2": 719,
+    "3": 477,
+    "9": 1019,
+    "10": 850,
+    "14": 393,
+    "12": 493,
+    "16": 957,
+    "18": 657,
+    "20": 868,
+    "21": 480,
+    "22": 528,
+    "23": 355,
+    "6": 974,
+    "1": 1145,
+    "19": 515
   },
   "message_types": {
-    "19": 1750,
-    "0": 3909,
-    "20": 1
+    "0": 7732,
+    "19": 4334,
+    "23": 4,
+    "20": 2,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -74,11 +91,27 @@
       "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
     },
     {
+      "id": "1434600265008287892",
+      "channel_id": "1400750050208125010",
+      "content": "<@285755067213152257> <@313423147665850368>",
+      "author": "enternameunavailable",
+      "reactions": 19,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1434429431241379871",
       "content": "hi i like pumpkin murphy i hope you like my sketch <:M_satisfy:14007716903211541",
       "author": "syruponstrawberrycake",
       "reactions": 18,
       "channel": "pumpkin murphy sketch"
+    },
+    {
+      "id": "1434587990717497344",
+      "channel_id": "1400750050208125010",
+      "content": "The only cringe thing about food is having to cook it <:point:135605311229251181",
+      "author": "sirtealot",
+      "reactions": 16,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1434457749923823646",
@@ -88,12 +121,100 @@
       "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
     },
     {
+      "id": "1434599965958737941",
+      "channel_id": "1400750050208125010",
+      "content": "<@712358318018002985>\nCzn made a lot of gameplay designs that pissed me off\n- cl",
+      "author": "aurora3981",
+      "reactions": 14,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434598743403008000",
+      "channel_id": "1400750050208125010",
+      "content": "<@964125234871545886> <@523084324724146193> its fill with minced meat and chard",
+      "author": "blecnes",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434603476851101706",
+      "channel_id": "1400750050208125010",
+      "content": "Have you considered trying the hit game Morimens?",
+      "author": "hammer2830",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434464263531008040",
+      "channel_id": "1174983699935277147",
+      "content": "？？？",
+      "author": "quackdayo",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1434587804649787442",
+      "channel_id": "1400750050208125010",
+      "content": "\"food is cringe\" says the people that can barely stand up 🥀",
+      "author": "blecnes",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434592234631594115",
+      "channel_id": "1400750050208125010",
+      "content": "spooky and frost:",
+      "author": "blecnes",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434596439362900070",
+      "channel_id": "1400750050208125010",
+      "content": "I just have to say. I have nothing against frost. They just give me very funny r",
+      "author": "enternameunavailable",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434641635203088485",
+      "channel_id": "1400750050208125010",
+      "content": "And seen some people they want to raid next Korean stream of the game to spam th",
+      "author": "nerox36",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1434502497590054942",
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "YAGPDB.xyz",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434449268382371971",
+      "channel_id": "1400750050208125010",
+      "content": "<@153999495347044352> https://www.youtube.com/watch?v=YkZLAVDpSpQ Flares got bac",
+      "author": "good.th",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434568937760100444",
+      "channel_id": "1400750050208125010",
+      "content": "you're generally stupid",
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434600181378187398",
+      "channel_id": "1400750050208125010",
+      "content": "I don't love the way the gacha is structured, or the shop.\nThe story feels disjo",
+      "author": "hammer2830",
+      "reactions": 7,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1434405637256642671",
@@ -115,110 +236,6 @@
       "author": "sexysneakystoat1625",
       "reactions": 7,
       "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434358844607434782",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "zier.0",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434434222231388292",
-      "channel_id": "1170692781216378960",
-      "content": "<@523084324724146193> <:angry1:1356053023272599668>",
-      "author": "katesthio",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434629678160937084",
-      "channel_id": "1170692781216378960",
-      "content": "1.6 mil bleed. Can you show a Helot Catena screenshot with 1.6 million bleed? Be",
-      "author": "mengluo",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434568991245860957",
-      "channel_id": "1131839817982947429",
-      "content": "補了",
-      "author": "doudou4ji3",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1434334962517147648",
-      "channel_id": "1170692781216378960",
-      "content": "this is Morimens. It's LITERALLY an mpreg sim, most players are playing because ",
-      "author": "bagels5899",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434582090313367644",
-      "channel_id": "1170692781216378960",
-      "content": "NOW TIME FOR INCALC",
-      "author": "idotly",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434598251994157076",
-      "channel_id": "1170692781216378960",
-      "content": "Just you, I uninstalled czn in a day",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434548202224226337",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1434473091521577000",
-      "channel_id": "1170692781216378960",
-      "content": "<a:bcaBONKAngry:764167636400996422>",
-      "author": "arisuu0604",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434491702336426014",
-      "channel_id": "1170692781216378960",
-      "content": "He's got some similarities with Kath.......just a bird and he tickles to death w",
-      "author": "hitsu4",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434494954201284609",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "solxeko",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434520454269505587",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arisuu0604",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434535323395817653",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "hammer2830",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

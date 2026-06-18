@@ -1,10 +1,28 @@
 {
   "date": "2025-11-26",
-  "messages": 1871,
-  "unique_authors": 66,
-  "reactions_total": 616,
-  "attachments": 188,
+  "messages": 12740,
+  "unique_authors": 411,
+  "reactions_total": 1400,
+  "attachments": 922,
   "channel_activity": {
+    "🔸morimens-game-chat": 5555,
+    "🔸剧情交流": 267,
+    "🔸晒卡分享": 23,
+    "🔸课间休息闲聊": 29,
+    "🔸交友频道": 6,
+    "🔸한국어-채팅방": 16,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 21,
+    "🔸русский-канал": 698,
+    "🔸phòng-chat-tiếng-việt": 21,
+    "🔸canal-español": 435,
+    "🔸canal-português": 211,
+    "🔸ruang-obrolan-indonesia": 1685,
+    "🔸ห้องสนทนาภาษาไทย": 533,
+    "🔸traphase": 177,
+    "🔸lore-chat": 338,
+    "🔸lets-count": 49,
+    "🔸team-building": 798,
     "🔸綜合討論": 1710,
     "🔸阵容构建": 4,
     "How it feels when Tawil plays Ramona cards": 1,
@@ -49,35 +67,34 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
-    "0": 14,
-    "1": 12,
-    "2": 66,
-    "3": 68,
-    "4": 62,
-    "5": 76,
-    "6": 53,
-    "7": 110,
-    "8": 71,
-    "9": 127,
-    "10": 295,
-    "11": 217,
-    "12": 199,
-    "13": 111,
-    "14": 82,
-    "15": 50,
-    "16": 163,
-    "17": 19,
-    "18": 11,
-    "19": 16,
-    "20": 27,
-    "21": 6,
-    "22": 4,
-    "23": 12
+    "0": 578,
+    "1": 784,
+    "2": 623,
+    "3": 332,
+    "4": 401,
+    "5": 473,
+    "6": 646,
+    "7": 582,
+    "8": 317,
+    "9": 805,
+    "10": 738,
+    "11": 657,
+    "12": 732,
+    "13": 703,
+    "14": 399,
+    "15": 894,
+    "16": 542,
+    "17": 347,
+    "18": 591,
+    "19": 350,
+    "20": 220,
+    "21": 269,
+    "22": 242,
+    "23": 515
   },
   "message_types": {
-    "19": 365,
-    "0": 1348,
-    "46": 1
+    "0": 8008,
+    "19": 2861
   },
   "top_reacted_messages": [
     {
@@ -93,6 +110,14 @@
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443321006310555699",
+      "channel_id": "1170692781216378960",
+      "content": "Get fucked<:cute1:1356053053568192717>",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1443302731510190081",
@@ -116,6 +141,14 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1443244754468081768",
+      "channel_id": "1173463482503536711",
+      "content": "~~此前沒有資料可以喂ai只好親自手寫台詞~~",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1443084582348918785",
       "channel_id": "1131839817982947429",
       "content": "這種嗎",
@@ -131,12 +164,36 @@
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
+      "id": "1443254278126043281",
+      "channel_id": "1174983699935277147",
+      "content": "好愛普池",
+      "author": "dog_0630",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1443033346799304776",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "universe.dark",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443108865846542356",
+      "channel_id": "1173463482503536711",
+      "content": "凱刻斯也是",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1443164774446923828",
+      "channel_id": "1173463482503536711",
+      "content": "爸爸帶著小白臉殺媽媽綁女兒\n媽媽一言不合炸死全家\n女兒騙光所有人啃老",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1443191354325729361",
@@ -146,90 +203,52 @@
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
-      "id": "1443205318677889054",
-      "channel_id": "1131839817982947429",
-      "content": "215超限 OK",
-      "author": "dog_0630",
+      "id": "1443219785122054277",
+      "channel_id": "1170692781216378960",
+      "content": "someone please fund me",
+      "author": "tnimreppep",
       "reactions": 8,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1443277423696150709",
-      "channel_id": "1131839817982947429",
+      "id": "1443092948479639613",
+      "channel_id": "1173463482503536711",
+      "content": "其实戈sp是死灵法师",
+      "author": "carme.0588",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1443168657147691109",
+      "channel_id": "1173463482503536711",
+      "content": "或者戈利亞會跟凱刻斯說\n守密人喝檸檬汁被酸到的樣子太好笑了，今天再挑一顆酸一點的",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1443081099872833587",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "arthasiv",
+      "author": "cameliia._.",
       "reactions": 8,
-      "channel": "🔸綜合討論"
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1443228558364512327",
-      "content": "101281500\nsry, the birthday hat got in contact with some weird black slime 🙁",
-      "author": "_whoisthatguy_",
-      "reactions": 8,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1443256736168284202",
-      "content": "101161068\n~~这已经连不是帽子都不是了吧~~\n感谢潘狄娅赞助的蜡烛<:blowkiss:1356053035780014150> (等等，谁？",
-      "author": "ka_0414",
-      "reactions": 8,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1443153144011034686",
-      "channel_id": "1131839817982947429",
-      "content": "~~飛天意麵神教~~",
+      "id": "1443113293198655510",
+      "channel_id": "1174983699935277147",
+      "content": "",
       "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1443307216026337383",
-      "channel_id": "1131839817982947429",
-      "content": "副本爆出來的隨機比我洗100支筆還頂   可以多來5塊嗎<:processing:1357185814567718963>",
-      "author": "partycatss.",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443113171660574830",
-      "channel_id": "1131839817982947429",
-      "content": "剛剛過機場安檢，被攔了下來說我攜帶管制刀具，我不解，隨後工作人員指著我手機裡誕妄墨菲的圖片說：她的美麗是刺向別人的刀。",
-      "author": "undecember_news",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443117892454453259",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443165337666453534",
-      "channel_id": "1131839817982947429",
-      "content": "該給墨菲本地人國籍了",
-      "author": "freddiemercuryeyeofthetiger",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443165848197009480",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "shunia3055",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443224370087596062",
-      "channel_id": "1131839817982947429",
-      "content": "3T<:Cheerup:1400771555939844149>",
-      "author": "0.0._.0_0.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1443114414709538959",
+      "channel_id": "1174983699935277147",
+      "content": "這就是我的極限了嗎",
+      "author": "dog794",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     }
   ]
 }

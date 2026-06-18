@@ -1,10 +1,29 @@
 {
   "date": "2025-11-23",
-  "messages": 2607,
-  "unique_authors": 57,
-  "reactions_total": 2752,
-  "attachments": 191,
+  "messages": 14013,
+  "unique_authors": 388,
+  "reactions_total": 3736,
+  "attachments": 711,
   "channel_activity": {
+    "🔸morimens-game-chat": 7035,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 37,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 29,
+    "🔸交友频道": 2,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 781,
+    "🔸phòng-chat-tiếng-việt": 14,
+    "🔸canal-español": 769,
+    "🔸canal-português": 137,
+    "🔸ruang-obrolan-indonesia": 365,
+    "🔸ห้องสนทนาภาษาไทย": 986,
+    "🔸traphase": 208,
+    "🔸lore-chat": 247,
+    "🔸lets-count": 27,
+    "🔸team-building": 720,
     "🔸新生守则┊rules": 4,
     "🔸綜合討論": 2373,
     "🔸阵容构建": 17,
@@ -47,34 +66,36 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "20": 6,
-    "1": 10,
-    "2": 20,
-    "3": 103,
-    "4": 131,
-    "5": 125,
-    "6": 102,
-    "7": 157,
-    "8": 243,
-    "9": 157,
-    "10": 349,
-    "11": 377,
-    "12": 240,
-    "13": 171,
-    "14": 73,
-    "15": 32,
-    "16": 62,
-    "17": 15,
-    "18": 81,
-    "19": 8,
-    "22": 56,
-    "23": 81,
-    "0": 5,
-    "21": 3
+    "0": 390,
+    "1": 683,
+    "2": 318,
+    "3": 606,
+    "4": 646,
+    "5": 705,
+    "6": 584,
+    "7": 641,
+    "8": 746,
+    "9": 410,
+    "10": 718,
+    "11": 1081,
+    "12": 755,
+    "13": 629,
+    "14": 574,
+    "15": 381,
+    "16": 419,
+    "17": 490,
+    "18": 576,
+    "19": 566,
+    "20": 575,
+    "21": 527,
+    "22": 413,
+    "23": 580
   },
   "message_types": {
-    "0": 1945,
-    "19": 447
+    "0": 8147,
+    "19": 3257,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -106,6 +127,30 @@
       "author": "deldry8",
       "reactions": 14,
       "channel": "Aigis"
+    },
+    {
+      "id": "1442201113398087911",
+      "channel_id": "1170692781216378960",
+      "content": "do not sleep on pandia, only the setup might take a little long but it's totally",
+      "author": "reya.li",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442136568067395677",
+      "channel_id": "1170692781216378960",
+      "content": "Same\nI feel on edge\nI just want to blow my load of silver deep into her banner",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441966937809883268",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "human10062",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1442021634365198426",
@@ -152,6 +197,14 @@
       "channel": ""
     },
     {
+      "id": "1442155917276610665",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1442034396264661114",
       "channel_id": "1131839817982947429",
       "content": "最難的果然是H2-9",
@@ -174,58 +227,28 @@
       "channel": "救一下這個簡轉繁吧"
     },
     {
-      "id": "1442216988305784832",
-      "channel_id": "1131839817982947429",
-      "content": "忍不住了。还是太好看了。",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1442139585646694520",
+      "channel_id": "1173463482503536711",
+      "content": "如果能看到杜勒的上半身裸體，就算讓我當皮克曼的模特我也願意呀！",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     },
     {
-      "id": "1442211470157938718",
-      "content": "",
-      "author": "deldry8",
-      "reactions": 5,
-      "channel": "K-0617"
+      "id": "1442293198566461530",
+      "channel_id": "1300659662311526512",
+      "content": "porque aequor es lo q manda en el juego",
+      "author": "null.pointer_exception",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1442040718871887872",
-      "channel_id": "1131839817982947429",
-      "content": "180抽三只",
-      "author": "jiangzehuai",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442114006771830875",
-      "channel_id": "1131839817982947429",
-      "content": "困难3都没问题",
-      "author": "ququ12358",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442116139361763471",
-      "channel_id": "1131839817982947429",
-      "content": "<:Clown:1400771541423226971> 少一個0",
-      "author": "forg30215",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442175510284075128",
-      "channel_id": "1131839817982947429",
-      "content": "指玩家刷到精疲力盡沒時間噴他 這樣貓就減負了",
-      "author": "axe_proficient",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1442003479634907289",
-      "content": "",
-      "author": "hina_kanzaki",
-      "reactions": 4,
-      "channel": "💭「Processing」Time Rewind Bug"
+      "id": "1441951586480951427",
+      "channel_id": "1170692781216378960",
+      "content": "and ramona suddenly appeared irl and said \"you're the mori to my mens\"",
+      "author": "liluaa",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

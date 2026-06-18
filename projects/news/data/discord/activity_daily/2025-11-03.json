@@ -1,10 +1,29 @@
 {
   "date": "2025-11-03",
-  "messages": 6561,
-  "unique_authors": 200,
-  "reactions_total": 1016,
-  "attachments": 324,
+  "messages": 14886,
+  "unique_authors": 222,
+  "reactions_total": 2217,
+  "attachments": 674,
   "channel_activity": {
+    "🔸晒卡分享": 10,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 43,
+    "🔸课间休息闲聊": 6,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 28,
+    "🔸русский-канал": 683,
+    "🔸phòng-chat-tiếng-việt": 54,
+    "🔸canal-español": 276,
+    "🔸canal-português": 214,
+    "🔸ruang-obrolan-indonesia": 177,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 49,
+    "🔸lore-chat": 214,
+    "🔸lets-count": 42,
+    "🔸频道建议┊server-suggestions": 5,
+    "🔸team-building": 248,
+    "🔸general-chat": 6233,
     "🔸綜合討論": 1083,
     "🔸阵容构建": 13,
     "🔸morimens-game-chat": 5259,
@@ -41,34 +60,36 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "1": 233,
-    "2": 234,
-    "3": 253,
-    "4": 177,
-    "5": 99,
-    "6": 163,
-    "7": 54,
-    "8": 342,
-    "9": 254,
-    "10": 213,
-    "11": 147,
-    "12": 489,
-    "13": 482,
-    "14": 755,
-    "15": 342,
-    "16": 505,
-    "17": 272,
-    "18": 36,
-    "22": 223,
-    "23": 308,
-    "0": 261,
-    "19": 207,
-    "20": 191,
-    "21": 321
+    "5": 192,
+    "6": 326,
+    "10": 573,
+    "13": 846,
+    "2": 305,
+    "3": 513,
+    "4": 321,
+    "7": 334,
+    "11": 296,
+    "8": 864,
+    "18": 390,
+    "12": 771,
+    "9": 494,
+    "16": 1513,
+    "17": 588,
+    "14": 1124,
+    "15": 1268,
+    "19": 863,
+    "20": 407,
+    "21": 449,
+    "22": 669,
+    "1": 414,
+    "0": 322,
+    "23": 1044
   },
   "message_types": {
-    "19": 1974,
-    "0": 4381
+    "0": 5441,
+    "19": 2868,
+    "23": 15,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -110,6 +131,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1434694403775004743",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434789679902887966",
+      "channel_id": "1400750050208125010",
+      "content": "<a:bcaTrippyWoah:733746914792833026>",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1434794725285822575",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -123,6 +160,14 @@
       "author": "ee2x_",
       "reactions": 9,
       "channel": "Gdoll in Instagram"
+    },
+    {
+      "id": "1434842391667282083",
+      "channel_id": "1400750050208125010",
+      "content": "Remember people: Hugs save Lives",
+      "author": "dljam",
+      "reactions": 8,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1434827381889044543",
@@ -147,6 +192,14 @@
       "author": "sacred_promises",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434847669553070172",
+      "channel_id": "1174983699935277147",
+      "content": "最近回坑抽了个普池…第一次双黄蛋+双限定，这样下去这个5771是不得不玩了<:point:1356053112292511815>",
+      "author": "traumtanzer_4510471",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1434734694355832943",
@@ -189,44 +242,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434717717365133374",
-      "channel_id": "1170692781216378960",
-      "content": "BUT SHE IS E3",
-      "author": "dljam",
+      "id": "1434930589730996357",
+      "channel_id": "1400750050208125010",
+      "content": "My requirements for women:\n1. Sexy\n2. Cool\n3. Dangerous\n\nTLDR: Kill me with plea",
+      "author": "katesthio",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434912702211297472",
-      "channel_id": "1170692781216378960",
-      "content": "bc she’s in my bedroom so ofc I’m the one that should be sleeping with her",
-      "author": "_venush",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435025207688433749",
-      "channel_id": "1170692781216378960",
-      "content": "Is this luck or something?",
-      "author": "memento_mori_01",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434710013401632920",
-      "channel_id": "1170692781216378960",
-      "content": "<:Cheerup:1400771555939844149>",
-      "author": "truevanity",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1434863196698574949",
-      "channel_id": "1170692781216378960",
-      "content": "Dead chat",
-      "author": "spooky_penguin_",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸general-chat"
     }
   ]
 }

@@ -1,10 +1,26 @@
 {
   "date": "2025-11-30",
-  "messages": 1956,
-  "unique_authors": 62,
-  "reactions_total": 767,
-  "attachments": 154,
+  "messages": 15168,
+  "unique_authors": 380,
+  "reactions_total": 2018,
+  "attachments": 865,
   "channel_activity": {
+    "🔸morimens-game-chat": 9262,
+    "🔸剧情交流": 25,
+    "🔸晒卡分享": 5,
+    "🔸交友频道": 12,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 138,
+    "🔸русский-канал": 354,
+    "🔸phòng-chat-tiếng-việt": 349,
+    "🔸canal-español": 222,
+    "🔸canal-português": 216,
+    "🔸ruang-obrolan-indonesia": 868,
+    "🔸ห้องสนทนาภาษาไทย": 498,
+    "🔸traphase": 79,
+    "🔸lore-chat": 441,
+    "🔸lets-count": 29,
+    "🔸team-building": 712,
     "🔸綜合討論": 1684,
     "🔸阵容构建": 7,
     "morimens pixel art": 1,
@@ -46,35 +62,35 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "0": 13,
-    "1": 16,
-    "2": 47,
-    "3": 22,
-    "4": 17,
-    "5": 42,
-    "6": 57,
-    "7": 310,
-    "8": 191,
-    "9": 46,
-    "10": 14,
-    "11": 136,
-    "12": 85,
-    "13": 74,
-    "14": 284,
-    "15": 214,
-    "16": 274,
-    "17": 71,
-    "18": 4,
-    "19": 11,
-    "20": 5,
-    "21": 6,
-    "22": 5,
-    "23": 12
+    "0": 450,
+    "1": 619,
+    "2": 569,
+    "3": 674,
+    "4": 668,
+    "5": 388,
+    "6": 481,
+    "7": 995,
+    "8": 641,
+    "9": 271,
+    "10": 653,
+    "11": 769,
+    "12": 571,
+    "13": 736,
+    "14": 1561,
+    "15": 1169,
+    "16": 709,
+    "17": 471,
+    "18": 481,
+    "19": 679,
+    "20": 413,
+    "21": 301,
+    "22": 476,
+    "23": 423
   },
   "message_types": {
-    "19": 293,
-    "0": 1397,
-    "18": 1
+    "19": 3932,
+    "0": 9277,
+    "18": 3
   },
   "top_reacted_messages": [
     {
@@ -120,6 +136,14 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1444751277371293829",
+      "channel_id": "1326453763355185215",
+      "content": "MY SON <:takenotes:1357186646294138890> <:takenotes:1357186646294138890> <:taken",
+      "author": "mythicmoonwort",
+      "reactions": 15,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1444560696238149763",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -133,6 +157,22 @@
       "author": "casual_gh0st",
       "reactions": 14,
       "channel": "sanga x pickman wip"
+    },
+    {
+      "id": "1444761831880003654",
+      "channel_id": "1170692781216378960",
+      "content": "🤷‍♀️ i mean sure it is a perfect event for an unmarried 30 year old man living i",
+      "author": "bagels5899",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444638470390939700",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "cameliia._.",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1444632081752657980",
@@ -163,6 +203,22 @@
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
+      "id": "1444660970197618698",
+      "channel_id": "1170692781216378960",
+      "content": "Out of context screenshot",
+      "author": "enternameunavailable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444699915388325978",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1444559068038697060",
       "content": "I wish devs would reconsider this event. At its current state it seems like it's",
       "author": "binkureru",
@@ -182,42 +238,6 @@
       "author": "1234789aa",
       "reactions": 9,
       "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444678578380734676",
-      "channel_id": "1131839817982947429",
-      "content": "話說啊\n垃圾融災眼\n昨天才放情報的主要原因其實是為了被罵爆後他們也來不及改然後就可以裝死了對吧\n（陰謀論",
-      "author": "foxcatfurry",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444715837368832070",
-      "content": "uid:100425926     是杜勒赛因和皮克曼印象画的。",
-      "author": "dittoqwq",
-      "reactions": 8,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444656766922260661",
-      "content": "繼續搞這種操作 能不能撐到三周年還不好說",
-      "author": "quackdayo",
-      "reactions": 8,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444702821248274532",
-      "content": "修复了玩家太多的bug🤣",
-      "author": "phenomena_298",
-      "reactions": 8,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444506008704516107",
-      "content": "",
-      "author": "timee_ky",
-      "reactions": 8,
-      "channel": "纯血神国..."
     }
   ]
 }

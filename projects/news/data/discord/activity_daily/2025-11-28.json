@@ -1,10 +1,27 @@
 {
   "date": "2025-11-28",
-  "messages": 1805,
-  "unique_authors": 55,
-  "reactions_total": 698,
-  "attachments": 135,
+  "messages": 12908,
+  "unique_authors": 329,
+  "reactions_total": 1951,
+  "attachments": 688,
   "channel_activity": {
+    "🔸morimens-game-chat": 7262,
+    "🔸剧情交流": 283,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 22,
+    "🔸한국어-채팅방": 4,
+    "🔸chaîne-française": 20,
+    "🔸русский-канал": 104,
+    "🔸phòng-chat-tiếng-việt": 170,
+    "🔸canal-español": 502,
+    "🔸canal-português": 27,
+    "🔸ruang-obrolan-indonesia": 841,
+    "🔸ห้องสนทนาภาษาไทย": 780,
+    "🔸traphase": 47,
+    "🔸lore-chat": 723,
+    "🔸lets-count": 33,
+    "🔸team-building": 277,
     "🔸綜合討論": 1557,
     "🔸阵容构建": 21,
     "jenkins": 1,
@@ -59,34 +76,34 @@
     "1441326394817908736": 10
   },
   "hourly_activity": {
-    "0": 67,
-    "1": 36,
-    "2": 49,
-    "3": 119,
-    "4": 179,
-    "5": 183,
-    "6": 163,
-    "7": 39,
-    "8": 179,
-    "9": 116,
-    "10": 64,
-    "11": 157,
-    "12": 27,
-    "13": 80,
-    "14": 62,
-    "15": 29,
-    "16": 39,
-    "17": 74,
-    "18": 106,
-    "20": 4,
-    "21": 8,
-    "22": 19,
-    "23": 4,
-    "19": 2
+    "0": 452,
+    "1": 754,
+    "2": 460,
+    "3": 401,
+    "4": 352,
+    "5": 590,
+    "6": 552,
+    "7": 430,
+    "8": 704,
+    "9": 715,
+    "10": 575,
+    "11": 663,
+    "12": 557,
+    "13": 287,
+    "14": 457,
+    "15": 336,
+    "16": 523,
+    "17": 646,
+    "18": 730,
+    "19": 578,
+    "20": 665,
+    "21": 755,
+    "22": 451,
+    "23": 275
   },
   "message_types": {
-    "19": 251,
-    "0": 1327
+    "0": 7992,
+    "19": 3111
   },
   "top_reacted_messages": [
     {
@@ -118,11 +135,27 @@
       "channel": ""
     },
     {
+      "id": "1443975068895154306",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1443973863561105439",
       "content": "Sharing the progress of  my Castor fanart c: (from ArtOfStarseeker on X)",
       "author": "orpheusffxiv",
       "reactions": 24,
       "channel": "Castor WIP"
+    },
+    {
+      "id": "1444042364657336340",
+      "channel_id": "1170692781216378960",
+      "content": "For anyone that wants to, the Morimens team sponsored me for a YT video: https:/",
+      "author": "stix5500",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1444029360398008501",
@@ -139,11 +172,43 @@
       "channel": ""
     },
     {
+      "id": "1444010874527285329",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890> stop reacting. I'm sensitive and overthink",
+      "author": "enternameunavailable",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1443889624807374969",
       "content": "Should have one of G Ramona watching keeper in 4K with 🍿",
       "author": "aurora3981",
       "reactions": 11,
       "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
+    },
+    {
+      "id": "1443805622826041496",
+      "channel_id": "1174983699935277147",
+      "content": "嘿嘿。",
+      "author": "dittoqwq",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1444042563202977898",
+      "channel_id": "1170692781216378960",
+      "content": "If they sponsor a main stream creator that would be awesome",
+      "author": "superrmanda",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443907460212723814",
+      "channel_id": "1170692781216378960",
+      "content": "broke: tawil is bad cause her dmg is bad woke: tawil is bad cause her animations",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1443823626905456782",
@@ -178,65 +243,20 @@
       "channel": "🔸阵容构建"
     },
     {
-      "id": "1443905186958671955",
-      "channel_id": "1131839817982947429",
-      "content": "很好，65抽下去兩張虔誠",
-      "author": "dog794",
+      "id": "1443984185885855804",
+      "channel_id": "1170692781216378960",
+      "content": "I LOVE READING THE STORY",
+      "author": "solxeko",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1444062952708771982",
-      "content": "101165253",
-      "author": "chiedgaf",
+      "id": "1443999141150851162",
+      "channel_id": "1170692781216378960",
+      "content": "ok i'll humor you, if you want to do the math then why not say my kath is e3 + 4",
+      "author": "solaihy",
       "reactions": 7,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1443825052075430042",
-      "channel_id": "1131839817982947429",
-      "content": "我昨天哈姆林开了个超限，结果打完都没解封",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443826156976472124",
-      "channel_id": "1131839817982947429",
-      "content": "把所有恶心特性都带上",
-      "author": "xuanxue007",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1443883221660991551",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "halaleung",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444009344751636630",
-      "content": "Actually i posed this to ao3 a few days ago but only remembered to submit it for",
-      "author": "noname0963",
-      "reactions": 6,
-      "channel": "\"Reverie\" | Tulu fanfic"
-    },
-    {
-      "id": "1443816983849340990",
-      "content": "<:processing:1357185814567718963> 前几天我刚开始写一个主题几乎一样的同人文……预计在十二月二十日写完，打算当圣诞节贺文的……",
-      "author": "150_ripe",
-      "reactions": 6,
-      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
-    },
-    {
-      "id": "1443827643647655987",
-      "channel_id": "1131839817982947429",
-      "content": "沒辦法我的249k毒不允許他活到10回合以後",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

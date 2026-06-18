@@ -1,10 +1,29 @@
 {
   "date": "2025-11-20",
-  "messages": 10824,
+  "messages": 14908,
   "unique_authors": 356,
-  "reactions_total": 2633,
-  "attachments": 560,
+  "reactions_total": 3353,
+  "attachments": 834,
   "channel_activity": {
+    "🔸剧情交流": 64,
+    "🔸晒卡分享": 56,
+    "🔸欢乐梗图": 6,
+    "🔸相位对弈": 7,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 876,
+    "🔸phòng-chat-tiếng-việt": 66,
+    "🔸canal-español": 644,
+    "🔸canal-português": 109,
+    "🔸ruang-obrolan-indonesia": 540,
+    "🔸ห้องสนทนาภาษาไทย": 681,
+    "🔸traphase": 103,
+    "🔸lore-chat": 139,
+    "🔸服务器公告┊server-announcement": 4,
+    "🔸lets-count": 53,
+    "🔸频道建议┊server-suggestions": 43,
+    "🔸team-building": 677,
     "🔸綜合討論": 2474,
     "🔸阵容构建": 40,
     "🔸morimens-game-chat": 8069,
@@ -44,48 +63,46 @@
     "关于版本更新后助战的bug": 1,
     "【暴论】关于取消密契洗词条的提议": 9,
     "杜勒X皮的正史（肥腸確定": 52,
-    "🔸欢乐梗图": 3,
-    "🔸服务器公告┊server-announcement": 2,
     "1181998821291606097": 1,
     "1356210800091467928": 1
   },
   "hourly_activity": {
-    "0": 436,
-    "1": 468,
-    "2": 459,
-    "3": 326,
-    "4": 157,
-    "5": 488,
-    "6": 305,
-    "7": 405,
-    "8": 608,
-    "9": 475,
-    "10": 668,
-    "11": 471,
-    "12": 539,
-    "13": 608,
-    "14": 494,
-    "15": 573,
-    "16": 610,
-    "19": 507,
-    "22": 224,
-    "23": 385,
-    "17": 443,
-    "18": 312,
-    "20": 464,
-    "21": 399
+    "5": 609,
+    "6": 481,
+    "7": 540,
+    "9": 754,
+    "16": 765,
+    "0": 681,
+    "1": 802,
+    "2": 728,
+    "4": 225,
+    "14": 728,
+    "17": 504,
+    "18": 544,
+    "8": 637,
+    "11": 536,
+    "19": 647,
+    "3": 538,
+    "10": 785,
+    "12": 719,
+    "13": 803,
+    "15": 697,
+    "20": 744,
+    "21": 489,
+    "22": 514,
+    "23": 438
   },
   "message_types": {
-    "0": 7417,
-    "19": 3165,
-    "6": 1
+    "0": 3114,
+    "19": 970
   },
   "top_reacted_messages": [
     {
       "id": "1440858569976057967",
+      "channel_id": "1354754985119846581",
       "content": "大家好， \n\n我们想就近期大家对服务器管理方面的投诉做出回应。我们听到了大家的反馈，并向大家保证，管理工作将会得到改进。正如我们之前提到的，我们正在积极推进服务",
       "author": "cometovilla",
-      "reactions": 256,
+      "reactions": 261,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -145,6 +162,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1441103438514491524",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "dog794",
+      "reactions": 19,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1440985777776365609",
       "channel_id": "1170692781216378960",
       "content": "looking forward to pedophiles being gone from the server when applicable and as ",
@@ -169,11 +194,35 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1441103010158739467",
+      "channel_id": "1173463482503536711",
+      "content": "完了現在皮杜在我腦袋裡逐漸變成苦命鴛鴦的形狀🥀",
+      "author": "ass191044",
+      "reactions": 14,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1440987968134189207",
       "content": "摸個魚出門散步了差點忘了某人生日<:A_pinch:1432980538536493057>",
       "author": "navirecorbeau",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1440944626252124193",
+      "channel_id": "1173463482503536711",
+      "content": "打到3-5、6的時候在想皮皮答應為葬骸城創作藝術還乖乖地找囑咐拿屍體創作，這個背後的內心狀態是不是~~認為杜勒認同自己的藝術創作而感到高興~~\n所以被包圍打斷的",
+      "author": "ass191044",
+      "reactions": 12,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1440873861905383485",
+      "channel_id": "1385040039448412170",
+      "content": "I'm gonna break this down piece by piece. Because wooweee\n\nhttps://discord.com/c",
+      "author": "enternameunavailable",
+      "reactions": 12,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1441010544500015146",
@@ -202,38 +251,6 @@
       "channel_id": "1170692781216378960",
       "content": "its me all along",
       "author": "flares117",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440985956709830656",
-      "channel_id": "1170692781216378960",
-      "content": "im young",
-      "author": "flares117",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440986618008965140",
-      "channel_id": "1170692781216378960",
-      "content": "And it's not the first time they timeout that pedo even <:dead:13560826275090923",
-      "author": "iibenigml1588",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440986882568749066",
-      "channel_id": "1170692781216378960",
-      "content": "morimens daily dive? ❌\nmorimens daily drama? ✅",
-      "author": "zier.0",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440987188576653455",
-      "channel_id": "1170692781216378960",
-      "content": "the actual wannabe pedo definitely got banned in this case, they're not just tim",
-      "author": "reya.li",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
     }

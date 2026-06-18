@@ -1,10 +1,27 @@
 {
   "date": "2025-11-18",
-  "messages": 14252,
+  "messages": 18139,
   "unique_authors": 357,
-  "reactions_total": 2261,
-  "attachments": 681,
+  "reactions_total": 2608,
+  "attachments": 973,
   "channel_activity": {
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 191,
+    "🔸相位对弈": 2,
+    "🔸交友频道": 3,
+    "🔸한국어-채팅방": 39,
+    "🔸chaîne-française": 36,
+    "🔸русский-канал": 466,
+    "🔸phòng-chat-tiếng-việt": 173,
+    "🔸canal-español": 701,
+    "🔸canal-português": 288,
+    "🔸ruang-obrolan-indonesia": 200,
+    "🔸ห้องสนทนาภาษาไทย": 865,
+    "🔸traphase": 202,
+    "🔸lore-chat": 215,
+    "🔸lets-count": 73,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 430,
     "🔸綜合討論": 1943,
     "🔸阵容构建": 8,
     "🔸morimens-game-chat": 11809,
@@ -110,35 +127,34 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "0": 518,
-    "1": 657,
-    "2": 671,
-    "3": 500,
-    "4": 577,
-    "5": 507,
-    "6": 420,
-    "7": 1039,
-    "8": 760,
-    "9": 205,
-    "10": 333,
-    "11": 469,
-    "12": 753,
-    "13": 891,
-    "14": 1002,
-    "15": 759,
-    "16": 586,
-    "17": 549,
-    "18": 324,
-    "19": 507,
-    "23": 777,
-    "20": 526,
-    "21": 441,
-    "22": 481
+    "6": 501,
+    "13": 965,
+    "2": 900,
+    "5": 589,
+    "7": 1118,
+    "8": 831,
+    "10": 565,
+    "11": 830,
+    "12": 878,
+    "14": 1183,
+    "15": 880,
+    "16": 689,
+    "23": 904,
+    "17": 920,
+    "3": 636,
+    "4": 643,
+    "9": 358,
+    "18": 678,
+    "0": 814,
+    "22": 583,
+    "1": 896,
+    "19": 615,
+    "20": 609,
+    "21": 554
   },
   "message_types": {
-    "0": 9054,
-    "19": 4704,
-    "46": 1,
+    "0": 3057,
+    "19": 829,
     "20": 1
   },
   "top_reacted_messages": [
@@ -170,6 +186,14 @@
       "author": "wolfierce",
       "reactions": 29,
       "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
+      "id": "1440129516537385061",
+      "channel_id": "1300659662311526512",
+      "content": "es este?",
+      "author": "jollphoria",
+      "reactions": 20,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1440271089711448095",
@@ -277,19 +301,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1440143770724204655",
-      "channel_id": "1170692781216378960",
+      "id": "1440161682885312615",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "renaiya",
+      "author": "universe.dark",
       "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440401699218128977",
-      "content": "Putting this here too, for anyone that want to use it to Promote the game to fri",
-      "author": "vxvendetta97",
-      "reactions": 8,
-      "channel": "Morimens Anniversary Advertisement Message"
+      "channel": "🔸晒卡分享"
     }
   ]
 }

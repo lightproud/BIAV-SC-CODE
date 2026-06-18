@@ -1,10 +1,31 @@
 {
   "date": "2025-11-29",
-  "messages": 1790,
-  "unique_authors": 46,
-  "reactions_total": 1106,
-  "attachments": 112,
+  "messages": 12657,
+  "unique_authors": 385,
+  "reactions_total": 3413,
+  "attachments": 699,
   "channel_activity": {
+    "🔸morimens-game-chat": 7241,
+    "🔸剧情交流": 151,
+    "🔸晒卡分享": 8,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 3,
+    "🔸交友频道": 2,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 471,
+    "🔸phòng-chat-tiếng-việt": 37,
+    "🔸canal-español": 1019,
+    "🔸canal-português": 128,
+    "🔸ruang-obrolan-indonesia": 511,
+    "🔸ห้องสนทนาภาษาไทย": 326,
+    "🔸traphase": 60,
+    "🔸lore-chat": 404,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 43,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 424,
     "🔸綜合討論": 1511,
     "🔸阵容构建": 11,
     "Castor WIP": 1,
@@ -41,47 +62,47 @@
     "IOS App permissions": 1,
     "全SSR命輪解析與強度評比": 1,
     "【Thalassophobia 深海恐懼症】": 2,
-    "🔸礼包码┊gift-codes": 1,
     "1296113810549112874": 1,
     "1305430084420898868": 1,
     "1441326394817908736": 8
   },
   "hourly_activity": {
-    "0": 8,
-    "1": 65,
-    "2": 175,
-    "3": 85,
-    "4": 13,
-    "5": 118,
-    "6": 23,
-    "7": 77,
-    "8": 50,
-    "9": 154,
-    "10": 257,
-    "11": 141,
-    "12": 46,
-    "13": 246,
-    "14": 60,
-    "15": 49,
-    "16": 36,
-    "17": 40,
-    "20": 99,
-    "21": 8,
-    "22": 17,
-    "23": 8,
-    "18": 11,
-    "19": 4
+    "0": 295,
+    "1": 920,
+    "2": 789,
+    "3": 395,
+    "4": 387,
+    "5": 499,
+    "6": 583,
+    "7": 312,
+    "8": 343,
+    "9": 347,
+    "10": 1076,
+    "11": 745,
+    "12": 548,
+    "13": 802,
+    "14": 435,
+    "15": 471,
+    "16": 473,
+    "17": 479,
+    "18": 576,
+    "19": 579,
+    "20": 714,
+    "21": 335,
+    "22": 253,
+    "23": 301
   },
   "message_types": {
-    "0": 1198,
-    "19": 324
+    "0": 7576,
+    "19": 3291
   },
   "top_reacted_messages": [
     {
       "id": "1444340582096048288",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 31000守密人达成礼 / DC31000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
       "author": "morimensstaff01",
-      "reactions": 709,
+      "reactions": 716,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -99,6 +120,22 @@
       "channel": "【Thalassophobia 深海恐懼症】"
     },
     {
+      "id": "1444406021811470578",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1392146051590525010/9",
+      "author": "amirganj",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444403368335249489",
+      "channel_id": "1170692781216378960",
+      "content": "So what’s this new Murphy?",
+      "author": "luckymo777",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1444303746711687178",
       "content": "With the upcoming raid, we will get a lot of Dreamshard but no Dreamspark. Would",
       "author": "aurora3981",
@@ -111,6 +148,62 @@
       "author": "yingmai_",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1444341452791484506",
+      "channel_id": "1170692781216378960",
+      "content": "ZMRW-SLLM-FFRV",
+      "author": "climbkaly",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444359071057838121",
+      "channel_id": "1326453763355185215",
+      "content": "source material hunting with no context",
+      "author": "nikolazuli",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1444408458139926563",
+      "channel_id": "1170692781216378960",
+      "content": "What support you guys want?",
+      "author": "twilightsparkle163163",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444416588211290263",
+      "channel_id": "1170692781216378960",
+      "content": "5 month more guys",
+      "author": "apsgsd",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444412609393725651",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444417329449537787",
+      "channel_id": "1170692781216378960",
+      "content": "It's right there <:agree:1400771815076528258>",
+      "author": "sirtealot",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444194235619344415",
+      "channel_id": "1173463482503536711",
+      "content": "：為什麼你能上天堂\n：因為我看完過忘卻前夜星辰篇劇情三回還不眨眼",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1444272884578259039",
@@ -127,101 +220,36 @@
       "channel": "Raids suck"
     },
     {
-      "id": "1444184622198952117",
-      "channel_id": "1131839817982947429",
-      "content": "牢莉拼盡全力勉強取勝",
-      "author": "water_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1444240006464929857",
+      "channel_id": "1170692781216378960",
+      "content": "Wtf",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1444179579613745293",
-      "content": "然後鳥兄弟1.0確定了啊",
-      "author": "foxcatfurry",
-      "reactions": 8,
-      "channel": "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3"
-    },
-    {
-      "id": "1444180892560920647",
-      "content": "Doll hand reveal",
-      "author": "koppter",
-      "reactions": 8,
-      "channel": "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3"
-    },
-    {
-      "id": "1444477811371933756",
-      "content": "雖然很菜雞發言，但是每日試訓的出 50 張牌可不可以把戰敗的戰鬥中出的牌也算進去呀⋯⋯打了兩個小時融災打不過退出然後每日試訓紀錄我今天只打了 0 張牌實在是很傷",
-      "author": "amstelredam",
-      "reactions": 7,
-      "channel": "每日試訓的「打出50張牌」"
-    },
-    {
-      "id": "1444291641149231194",
-      "channel_id": "1131839817982947429",
-      "content": "我馬上換成1等雜湊",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444329841561436291",
-      "content": "如題",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 6,
-      "channel": "💭「处理中」圖魯長刺了"
-    },
-    {
-      "id": "1444428367486259311",
-      "content": "Total awakers should be 52",
+      "id": "1444240296454914231",
+      "channel_id": "1170692781216378960",
+      "content": "Ik the moment I do a single pull there the furry will get me",
       "author": "aurora3981",
-      "reactions": 6,
-      "channel": "✅「Answered」Jenkins shows up 2 times in friends list filter"
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1444339230355624107",
-      "content": "被你虐待的狗一言不發地盤算著怎麼咬死你（",
-      "author": "carrot_chicken",
-      "reactions": 6,
-      "channel": "【Thalassophobia 深海恐懼症】"
+      "id": "1444291605975797831",
+      "channel_id": "1170692781216378960",
+      "content": "I use my own personal discord to save your teams",
+      "author": "legendaryredz",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1444260174788431902",
-      "channel_id": "1131839817982947429",
-      "content": "你可以摸我<:pray:1356053116260454534>",
-      "author": "neptinu",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444294514570432686",
-      "channel_id": "1131839817982947429",
-      "content": "靠 差129K...",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444314154163900416",
-      "channel_id": "1131839817982947429",
-      "content": "終於肘贏了...",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444320604495937616",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1444202895657406597",
-      "content": "Progress",
-      "author": "orpheusffxiv",
-      "reactions": 5,
-      "channel": "Castor WIP"
+      "id": "1444253129846816861",
+      "channel_id": "1173463482503536711",
+      "content": "赫伯特297年17岁入学但是290/291年写了融蚀相关论文",
+      "author": "busy_dove_71904",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
     }
   ]
 }

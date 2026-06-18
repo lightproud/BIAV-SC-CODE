@@ -1,10 +1,28 @@
 {
   "date": "2025-11-14",
-  "messages": 7034,
+  "messages": 9219,
   "unique_authors": 213,
-  "reactions_total": 2352,
-  "attachments": 274,
+  "reactions_total": 3613,
+  "attachments": 398,
   "channel_activity": {
+    "🔸晒卡分享": 5,
+    "🔸课间休息闲聊": 3,
+    "🔸交友频道": 6,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 79,
+    "🔸русский-канал": 547,
+    "🔸phòng-chat-tiếng-việt": 23,
+    "🔸canal-español": 92,
+    "🔸canal-português": 182,
+    "🔸ruang-obrolan-indonesia": 101,
+    "🔸ห้องสนทนาภาษาไทย": 186,
+    "🔸traphase": 163,
+    "🔸lore-chat": 19,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 92,
+    "🔸频道建议┊server-suggestions": 91,
+    "🔸team-building": 575,
     "🔸綜合討論": 857,
     "🔸阵容构建": 5,
     "🔸morimens-game-chat": 6087,
@@ -30,47 +48,56 @@
     "✅「已回答」24日服的新皮肤，这边上吗？": 3,
     "給異格也P了一版仿官海報（）": 1,
     "希萊斯特同人文-海之聖女（下）": 1,
-    "堆一下忘却相关的图": 1,
-    "🔸礼包码┊gift-codes": 1
+    "堆一下忘却相关的图": 1
   },
   "hourly_activity": {
-    "0": 197,
-    "2": 173,
-    "3": 132,
-    "4": 55,
-    "5": 226,
-    "6": 874,
-    "7": 600,
-    "8": 452,
-    "9": 409,
-    "10": 415,
-    "11": 282,
-    "12": 256,
-    "13": 278,
-    "14": 290,
-    "15": 284,
-    "16": 452,
-    "17": 276,
-    "18": 211,
-    "22": 238,
-    "23": 139,
-    "19": 142,
-    "1": 143,
-    "20": 176,
-    "21": 334
+    "4": 139,
+    "7": 627,
+    "3": 151,
+    "5": 381,
+    "8": 505,
+    "11": 406,
+    "12": 327,
+    "13": 470,
+    "14": 478,
+    "19": 221,
+    "20": 340,
+    "1": 288,
+    "9": 619,
+    "21": 440,
+    "22": 322,
+    "6": 909,
+    "10": 489,
+    "15": 377,
+    "16": 512,
+    "17": 339,
+    "18": 293,
+    "0": 236,
+    "23": 152,
+    "2": 198
   },
   "message_types": {
-    "19": 2188,
-    "0": 4759,
-    "46": 2
+    "0": 1620,
+    "19": 563,
+    "6": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
       "id": "1438783520590790747",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 30000守密人达成礼 / DC30000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可在游戏邮箱",
       "author": "morimensstaff01",
-      "reactions": 953,
+      "reactions": 964,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1439018352751149139",
+      "channel_id": "1385040039448412170",
+      "content": "For example:",
+      "author": "Deleted User",
+      "reactions": 33,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1438954086916427957",
@@ -126,6 +153,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1438725886533701793",
+      "channel_id": "1181152750319456266",
+      "content": "記錄一下\n這牢也是坐了一年了",
+      "author": "glacy_9918",
+      "reactions": 12,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
       "id": "1438801799346782330",
       "channel_id": "1170692781216378960",
       "content": "6 copies of murphyfrom standard Aequor and 2 from kaleido <:pray:135605311626045",
@@ -142,6 +177,30 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1438901382714232945",
+      "channel_id": "1300659580446969918",
+      "content": "Но я не буду наряжаться в петуха сорян)",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1438867613215100998",
+      "channel_id": "1300659802455674972",
+      "content": "ขออนุญาต ฝากงานครับ😭😭😭\nhttps://x.com/peemaster3000/status/1989308024725406153?t=",
+      "author": "90angels",
+      "reactions": 9,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1438791770996478057",
+      "channel_id": "1355630588094320661",
+      "content": "1678",
+      "author": "syruponstrawberrycake",
+      "reactions": 9,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1438796837677961216",
       "channel_id": "1170692781216378960",
       "content": "20 pulls 3 pollux wheel <:gogogo:1356053074560422118>",
@@ -150,73 +209,35 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1439024344171806881",
+      "channel_id": "1355630588094320661",
+      "content": "1\n7\n# SIX.\n# SEVEN.",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1438968535656173729",
+      "channel_id": "1385040039448412170",
+      "content": "Profanity filters do not stop arguments, they just add to overall annoyance from",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1439018292969734255",
+      "channel_id": "1385040039448412170",
+      "content": "Morimens itself isn't family friendly, so i don't understand the reasoning behin",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
       "id": "1438685719139717140",
       "channel_id": "1170692781216378960",
       "content": "biav please have tulu buff be\n[Abyss Order]\n- Now has Prepare 1 and Retain.\n- Ad",
       "author": "zier.0",
       "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438722334960652338",
-      "channel_id": "1170692781216378960",
-      "content": "waiting for 2nd update so i can be lucky and pull Wheel unseen",
-      "author": "arisuu0604",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438975601267445810",
-      "content": "",
-      "author": "happyskull",
-      "reactions": 8,
-      "channel": "Liz painting"
-    },
-    {
-      "id": "1438800071977078814",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：逆转回合EP·万象旅店的回响 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
-      "author": "morimensstaff01",
-      "reactions": 8,
-      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
-    },
-    {
-      "id": "1438777087615041536",
-      "channel_id": "1131839817982947429",
-      "content": "嗚嗚嗚，怎麼會，我們家門汀怎會是被超距害慘，明明隔壁花魁的臭鳥靠一手黑羽混的風生水起，怎能和彌大媽在一塊腐爛，但彌大媽都要被她的小女兒帶走前去神國的路了，但我們",
-      "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1438864561011953756",
-      "channel_id": "1131839817982947429",
-      "content": "我就这么多资源了，抽不到墨菲12+12我就骂校猫",
-      "author": "lurenjiao",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1438738595283468488",
-      "channel_id": "1170692781216378960",
-      "content": "i prefer mpreg",
-      "author": "grass6247",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438876102217957523",
-      "channel_id": "1170692781216378960",
-      "content": "<@523084324724146193> I'm almost done<:Cheerup:1400771555939844149>",
-      "author": "enternameunavailable",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438888249518067723",
-      "channel_id": "1170692781216378960",
-      "content": "Should i buy the 24 skin when it comes out 🤔",
-      "author": "kevsalvador",
-      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
   ]

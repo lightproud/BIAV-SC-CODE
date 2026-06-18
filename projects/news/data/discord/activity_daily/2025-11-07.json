@@ -1,10 +1,27 @@
 {
   "date": "2025-11-07",
-  "messages": 9561,
+  "messages": 21573,
   "unique_authors": 225,
-  "reactions_total": 1890,
-  "attachments": 372,
+  "reactions_total": 3290,
+  "attachments": 742,
   "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 27,
+    "🔸课间休息闲聊": 14,
+    "🔸한국어-채팅방": 136,
+    "🔸chaîne-française": 68,
+    "🔸русский-канал": 558,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 172,
+    "🔸canal-português": 338,
+    "🔸ruang-obrolan-indonesia": 524,
+    "🔸ห้องสนทนาภาษาไทย": 397,
+    "🔸traphase": 210,
+    "🔸lore-chat": 92,
+    "🔸服务器公告┊server-announcement": 4,
+    "🔸lets-count": 31,
+    "🔸team-building": 1054,
+    "🔸general-chat": 8385,
     "🔸綜合討論": 940,
     "🔸morimens-game-chat": 8467,
     "Ramona Sketch": 8,
@@ -40,43 +57,46 @@
     "无塔薇血希本期425镇楼＋锐评下半预告": 13,
     "融灾攻略": 3,
     "甚至連疼痛都變得毫無意義": 38,
-    "🔸欢乐梗图": 1,
-    "🔸服务器公告┊server-announcement": 2,
     "1429401798439080028": 5
   },
   "hourly_activity": {
-    "0": 233,
-    "2": 88,
-    "3": 474,
-    "4": 641,
-    "5": 453,
-    "6": 352,
-    "7": 309,
-    "8": 526,
-    "9": 422,
-    "10": 456,
-    "11": 178,
-    "12": 982,
-    "13": 608,
-    "14": 536,
-    "15": 550,
-    "16": 381,
-    "17": 250,
-    "19": 357,
-    "21": 429,
-    "22": 328,
-    "1": 63,
-    "18": 447,
-    "20": 460,
-    "23": 38
+    "8": 557,
+    "5": 776,
+    "6": 1120,
+    "11": 972,
+    "12": 1979,
+    "13": 1433,
+    "14": 1025,
+    "9": 724,
+    "1": 731,
+    "7": 669,
+    "10": 1072,
+    "16": 1177,
+    "17": 855,
+    "19": 752,
+    "0": 850,
+    "15": 1116,
+    "20": 853,
+    "21": 1192,
+    "22": 632,
+    "23": 401,
+    "3": 569,
+    "18": 991,
+    "2": 199,
+    "4": 928
   },
   "message_types": {
-    "0": 6322,
-    "19": 3085
+    "19": 4139,
+    "0": 7858,
+    "6": 1,
+    "20": 7,
+    "46": 3,
+    "23": 4
   },
   "top_reacted_messages": [
     {
       "id": "1436327858086613034",
+      "channel_id": "1354754985119846581",
       "content": "I want to happily announce that we have unlocked a custom server invite link:\ndi",
       "author": "craux.",
       "reactions": 44,
@@ -84,6 +104,7 @@
     },
     {
       "id": "1436200019882410066",
+      "channel_id": "1354754985119846581",
       "content": "🚨 ***Warning: Immediate Action Required*** 🚨 \n\nIt has come to our attention that",
       "author": "cometovilla",
       "reactions": 38,
@@ -111,6 +132,14 @@
       "channel": "甚至連疼痛都變得毫無意義"
     },
     {
+      "id": "1436152302439370772",
+      "channel_id": "1355630588094320661",
+      "content": "https://tenor.com/view/67-67-meme-67-umpire-umpire-mlb-gif-16280715357512483999",
+      "author": "Deleted User",
+      "reactions": 20,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1436382986185609227",
       "content": "she's so hauntingly beautiful, mysterious and kinda off-putting....\nwhich means ",
       "author": "honolulu_37",
@@ -125,12 +154,44 @@
       "channel": "Team Management"
     },
     {
+      "id": "1436322665383202857",
+      "channel_id": "1400750050208125010",
+      "content": "wow! a manchild?!",
+      "author": "digitalstar.exe",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1436492676596760626",
+      "channel_id": "1400750050208125010",
+      "content": "<:A_pinch:1432980538536493057> <:A_pinch:1432980538536493057> <:A_pinch:14329805",
+      "author": "red_rest",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1436343075348942953",
       "channel_id": "1131839817982947429",
       "content": "Johny 戈來哄你go to bed",
       "author": "ass191044",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1436271332475142165",
+      "channel_id": "1180437373012672522",
+      "content": "剩下的兩張神國怪圖🌿",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1436355413691076750",
+      "channel_id": "1300659495550062592",
+      "content": "https://x.com/Keeper_Jayone/status/1986795354264944967",
+      "author": "jayone_j1",
+      "reactions": 9,
+      "channel": "🔸한국어-채팅방"
     },
     {
       "id": "1436291350348824576",
@@ -146,6 +207,14 @@
       "author": "aurora3981",
       "reactions": 9,
       "channel": "💭「Processing」Option to remove autoplay from UI"
+    },
+    {
+      "id": "1436412506087096391",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "satachan",
+      "reactions": 8,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1436333941509587006",
@@ -177,53 +246,6 @@
       "content": "Auto play will be the trap button you sometimes misclick when using posse and it",
       "author": "aurora3981",
       "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1436351371291918496",
-      "channel_id": "1170692781216378960",
-      "content": "I could +12 a limited wheel if I wanted to",
-      "author": "aurora3981",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1436271332475142165",
-      "content": "剩下的兩張神國怪圖🌿",
-      "author": "ass191044",
-      "reactions": 8,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1436275985959096350",
-      "channel_id": "1170692781216378960",
-      "content": "Sanga please leave me alone <:Pity:1400771620989308998>",
-      "author": ".ploner",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1436288760240406588",
-      "channel_id": "1170692781216378960",
-      "content": "We can start training him <:Cheerup:1400771555939844149>",
-      "author": "red_rest",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1436336248481648700",
-      "channel_id": "1170692781216378960",
-      "content": "Gmurphy powercreep Clem soon <:agree:1400771815076528258>",
-      "author": "iibenigml1588",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1436337039216873533",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arandomflamev2",
-      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
   ]

@@ -1,10 +1,30 @@
 {
   "date": "2025-11-06",
-  "messages": 6976,
-  "unique_authors": 211,
-  "reactions_total": 1881,
-  "attachments": 289,
+  "messages": 16212,
+  "unique_authors": 232,
+  "reactions_total": 3721,
+  "attachments": 599,
   "channel_activity": {
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 13,
+    "🔸课间休息闲聊": 6,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 57,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 50,
+    "🔸русский-канал": 528,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 767,
+    "🔸canal-português": 421,
+    "🔸ruang-obrolan-indonesia": 149,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 73,
+    "🔸lore-chat": 213,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 66,
+    "🔸频道建议┊server-suggestions": 17,
+    "🔸team-building": 568,
+    "🔸general-chat": 6244,
     "🔸綜合討論": 841,
     "🔸阵容构建": 2,
     "🔸morimens-game-chat": 6023,
@@ -29,46 +49,48 @@
     "是不是bug": 1,
     "相位對弈環境攻略": 1,
     "组队推荐": 1,
-    "🔸服务器公告┊server-announcement": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 588,
-    "1": 503,
-    "2": 346,
-    "3": 559,
-    "4": 421,
-    "5": 237,
-    "6": 220,
-    "7": 146,
-    "8": 357,
-    "9": 553,
-    "10": 470,
-    "11": 175,
-    "12": 104,
-    "13": 301,
-    "14": 540,
-    "15": 252,
-    "16": 478,
-    "19": 124,
-    "20": 47,
-    "21": 67,
-    "22": 121,
-    "23": 105,
-    "17": 125,
-    "18": 137
+    "6": 674,
+    "1": 885,
+    "15": 875,
+    "16": 783,
+    "22": 687,
+    "12": 397,
+    "18": 405,
+    "0": 1315,
+    "2": 443,
+    "8": 630,
+    "9": 907,
+    "10": 663,
+    "11": 408,
+    "13": 661,
+    "17": 437,
+    "19": 536,
+    "20": 846,
+    "4": 908,
+    "5": 723,
+    "7": 385,
+    "14": 912,
+    "21": 421,
+    "23": 602,
+    "3": 709
   },
   "message_types": {
-    "0": 4541,
-    "19": 2324,
-    "46": 1
+    "0": 6314,
+    "19": 2912,
+    "46": 3,
+    "23": 6,
+    "20": 1
   },
   "top_reacted_messages": [
     {
       "id": "1435783846925828136",
+      "channel_id": "1354754985119846581",
       "content": "🔊 ***As a reminder, please select your \"language\" role. The language channels an",
       "author": "cometovilla",
-      "reactions": 856,
+      "reactions": 864,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -86,6 +108,14 @@
       "author": ".craystal",
       "reactions": 15,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1436095945442988062",
+      "channel_id": "1300659662311526512",
+      "content": "🇧 🇴 🇲 🅱️ 🇦 💣 💥",
+      "author": "ancientbp",
+      "reactions": 14,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1436125416518844488",
@@ -109,6 +139,14 @@
       "author": "thebluestlime",
       "reactions": 10,
       "channel": "✅「Answered」Card Art for Awakener Skills/Rouse"
+    },
+    {
+      "id": "1435786593570000937",
+      "channel_id": "1400750050208125010",
+      "content": "Im already the best person",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1436033158339498014",
@@ -151,12 +189,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1435792006742806670",
+      "channel_id": "1400750050208125010",
+      "content": "It’s all over the screen",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1435927441716809799",
       "channel_id": "1170692781216378960",
       "content": "More thighs is never a bad thing…",
       "author": "pleasegodendme",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435899377561636906",
+      "channel_id": "1400750050208125010",
+      "content": "67",
+      "author": "syruponstrawberrycake",
+      "reactions": 7,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1435847717145411749",
@@ -188,38 +242,6 @@
       "author": "game.producer.light",
       "reactions": 7,
       "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
-    },
-    {
-      "id": "1435933200525295676",
-      "channel_id": "1131839817982947429",
-      "content": "那我去超修了，明天見",
-      "author": "universe.dark",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1435952321527021609",
-      "channel_id": "1170692781216378960",
-      "content": "Why am I so gorgeous",
-      "author": "meow4joscarl",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435954852034383962",
-      "channel_id": "1170692781216378960",
-      "content": "Yes I am",
-      "author": "shadowemperor7636",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435986713750143027",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

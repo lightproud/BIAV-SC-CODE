@@ -1,10 +1,27 @@
 {
   "date": "2025-11-21",
-  "messages": 10274,
+  "messages": 14829,
   "unique_authors": 260,
-  "reactions_total": 1735,
-  "attachments": 459,
+  "reactions_total": 2140,
+  "attachments": 772,
   "channel_activity": {
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 14,
+    "🔸相位对弈": 20,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 6,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 802,
+    "🔸phòng-chat-tiếng-việt": 37,
+    "🔸canal-español": 783,
+    "🔸canal-português": 198,
+    "🔸ruang-obrolan-indonesia": 341,
+    "🔸ห้องสนทนาภาษาไทย": 445,
+    "🔸traphase": 148,
+    "🔸lore-chat": 452,
+    "🔸lets-count": 43,
+    "🔸team-building": 1256,
     "🔸綜合討論": 1891,
     "🔸阵容构建": 64,
     "🔸morimens-game-chat": 7977,
@@ -72,34 +89,34 @@
     "綜上所述所以我畫了水仙視姦（？）": 3
   },
   "hourly_activity": {
-    "0": 476,
-    "1": 497,
-    "2": 307,
-    "3": 569,
-    "4": 588,
-    "5": 482,
-    "6": 401,
-    "7": 286,
-    "8": 294,
-    "9": 253,
-    "10": 399,
-    "11": 608,
-    "12": 618,
-    "13": 750,
-    "14": 484,
-    "15": 420,
-    "16": 426,
-    "17": 255,
-    "18": 347,
-    "19": 403,
-    "20": 488,
-    "21": 242,
-    "22": 260,
-    "23": 421
+    "12": 780,
+    "5": 645,
+    "6": 661,
+    "10": 471,
+    "13": 811,
+    "16": 968,
+    "17": 566,
+    "14": 676,
+    "11": 756,
+    "0": 661,
+    "1": 896,
+    "20": 568,
+    "2": 495,
+    "3": 840,
+    "4": 713,
+    "7": 334,
+    "8": 353,
+    "9": 296,
+    "15": 820,
+    "18": 551,
+    "19": 491,
+    "21": 479,
+    "22": 450,
+    "23": 548
   },
   "message_types": {
-    "0": 6986,
-    "19": 2946
+    "0": 3350,
+    "19": 1205
   },
   "top_reacted_messages": [
     {
@@ -129,6 +146,14 @@
       "author": "hhhh098962",
       "reactions": 14,
       "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441432552509276524",
+      "channel_id": "1181152750319456266",
+      "content": "",
+      "author": "ichikaguya._52033",
+      "reactions": 13,
+      "channel": "🔸课间休息闲聊"
     },
     {
       "id": "1441474576528834570",
@@ -193,6 +218,14 @@
       "channel": "V2.4.0.4 停服维护公告"
     },
     {
+      "id": "1441330116453072996",
+      "channel_id": "1326453763355185215",
+      "content": "1. 44th December AF315\n2. Time traveling Horla \n3. The Very Recent Roman Empire\n",
+      "author": "nikolazuli",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1441426251507040308",
       "channel_id": "1131839817982947429",
       "content": "所以我今天忍不住190抽超限ㄌ（顏控+聲優加持",
@@ -209,6 +242,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1441320786467225630",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "txt101225.",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1441470542057050122",
+      "channel_id": "1326453763355185215",
+      "content": "Why do pollux and castor type walls of text",
+      "author": "riasterism_",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1441357453819248674",
       "channel_id": "1131839817982947429",
       "content": "終於～",
@@ -223,37 +272,6 @@
       "author": "arandomflamev2",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1441527187315495105",
-      "channel_id": "1170692781216378960",
-      "content": "oh my god i finally completed Arc2 Hard Mode CH2 deathless..... took me a while ",
-      "author": "vndev",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1441529895674183750",
-      "channel_id": "1170692781216378960",
-      "content": "should i pull pollux or more pollux",
-      "author": "omenatyyppi",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1441445942787178517",
-      "content": "原本想說大佬都有各種塔薇解說，就沒想過做攻略了，畢竟我玩牌更偏向直覺，不可能比大佬更精於計算傷害，但群裡有人說玩塔薇頭腦快炸了跟玩塔薇手感很怪，還是打篇文試試看",
-      "author": "ena04564",
-      "reactions": 7,
-      "channel": "一點塔薇玩家的小小心得"
-    },
-    {
-      "id": "1441308956688515254",
-      "channel_id": "1131839817982947429",
-      "content": "反擊之下第一🫴",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

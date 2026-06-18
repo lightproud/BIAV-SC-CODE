@@ -1,10 +1,30 @@
 {
   "date": "2025-11-04",
-  "messages": 5758,
-  "unique_authors": 176,
-  "reactions_total": 664,
-  "attachments": 273,
+  "messages": 14017,
+  "unique_authors": 217,
+  "reactions_total": 1468,
+  "attachments": 657,
   "channel_activity": {
+    "🔸剧情交流": 103,
+    "🔸晒卡分享": 52,
+    "🔸欢乐梗图": 3,
+    "🔸相位对弈": 15,
+    "🔸课间休息闲聊": 5,
+    "🔸交友频道": 7,
+    "🔸한국어-채팅방": 8,
+    "🔸deutscher-chatraum": 10,
+    "🔸русский-канал": 847,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 186,
+    "🔸canal-português": 77,
+    "🔸ruang-obrolan-indonesia": 97,
+    "🔸ห้องสนทนาภาษาไทย": 60,
+    "🔸traphase": 197,
+    "🔸lore-chat": 415,
+    "🔸lets-count": 33,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 167,
+    "🔸general-chat": 5968,
     "🔸綜合討論": 707,
     "🔸阵容构建": 3,
     "🔸morimens-game-chat": 4856,
@@ -45,38 +65,40 @@
     "组队推荐": 3,
     "这次新的up池最值得抽的是哪一位？": 27,
     "虽然很少但总之依旧是一点守莱&守N": 1,
-    "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上": 7,
-    "🔸欢乐梗图": 1
+    "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上": 7
   },
   "hourly_activity": {
-    "0": 62,
-    "1": 127,
-    "2": 90,
-    "3": 158,
-    "4": 166,
-    "5": 218,
-    "6": 270,
-    "7": 416,
-    "8": 288,
-    "9": 495,
-    "10": 396,
-    "11": 273,
-    "12": 517,
-    "13": 206,
-    "14": 381,
-    "15": 214,
-    "16": 355,
-    "17": 437,
-    "18": 188,
-    "20": 98,
-    "23": 56,
-    "19": 162,
-    "21": 151,
-    "22": 34
+    "13": 1046,
+    "14": 782,
+    "17": 652,
+    "19": 364,
+    "1": 271,
+    "7": 845,
+    "9": 822,
+    "10": 768,
+    "11": 574,
+    "6": 761,
+    "12": 983,
+    "15": 774,
+    "23": 637,
+    "2": 292,
+    "3": 411,
+    "22": 258,
+    "4": 388,
+    "8": 590,
+    "16": 614,
+    "18": 505,
+    "5": 570,
+    "20": 196,
+    "21": 316,
+    "0": 598
   },
   "message_types": {
-    "19": 1715,
-    "0": 3851
+    "0": 5953,
+    "19": 2298,
+    "23": 4,
+    "46": 3,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -85,6 +107,14 @@
       "author": "chiedgaf",
       "reactions": 16,
       "channel": "Posters"
+    },
+    {
+      "id": "1435318537324466346",
+      "channel_id": "1400750050208125010",
+      "content": "Chudcel is too funny for anyone to use it unironically",
+      "author": "ludwig_101",
+      "reactions": 13,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1435281068063457524",
@@ -103,12 +133,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1435149498547437698",
+      "channel_id": "1180850818509971466",
+      "content": "3000！终于😭",
+      "author": "hello_oldmemory",
+      "reactions": 11,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1435273465757175838",
       "channel_id": "1131839817982947429",
       "content": "可以不看敌人不看机制随便进的融灾装甲车",
       "author": "shunia3055",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1435280312358801428",
+      "channel_id": "1180850818509971466",
+      "content": "",
+      "author": ".unloading",
+      "reactions": 9,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1435333007815999699",
@@ -126,12 +172,68 @@
       "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
     },
     {
+      "id": "1435268943790080141",
+      "channel_id": "1173463482503536711",
+      "content": "神图：未来我家海鲜会入侵你家我提前给你道歉\n杜勒：入侵已经终了です",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1435348438865809663",
+      "channel_id": "1173463482503536711",
+      "content": "目前打完星辰篇第一章後有個蠢蠢欲動的腦洞在我的腦袋瓜裡浮現🤔||有沒有一種可能星辰篇其實曾經存在彌薩格大學但它被融蝕了||",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1435226681878253669",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1435319353036771398",
       "channel_id": "1170692781216378960",
       "content": "https://youtu.be/0MOs8lfPa74?si=oNqKTuq9M9olc0GY",
       "author": "frosthief",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435079442929029140",
+      "channel_id": "1194835209242296410",
+      "content": "",
+      "author": "universe.dark",
+      "reactions": 6,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1435175948289970196",
+      "channel_id": "1355630588094320661",
+      "content": "12247",
+      "author": "syruponstrawberrycake",
+      "reactions": 6,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1435247677473292319",
+      "channel_id": "1385040039448412170",
+      "content": "You used Irish (🇮🇪) flag for Italy (🇮🇹)",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1435071168838369341",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 6,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1435141783670751273",
@@ -155,83 +257,6 @@
       "author": "noeyebunny.nobunsu",
       "reactions": 6,
       "channel": "Some old meme stuff"
-    },
-    {
-      "id": "1435274800586162299",
-      "content": "連動一下卡厄思吧 快死透了",
-      "author": "oct3000",
-      "reactions": 6,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1435205322464694322",
-      "content": "His exalt aims for the lowest HP, he gets strong dmg boost when target is low HP",
-      "author": "wolfierce",
-      "reactions": 6,
-      "channel": "✅「Answered」Make Doresain overflow damage on others when killing"
-    },
-    {
-      "id": "1435222313296724031",
-      "channel_id": "1131839817982947429",
-      "content": "~~這樣就是+36~~",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1435270982276350083",
-      "channel_id": "1131839817982947429",
-      "content": "這樣",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1435282674485821461",
-      "channel_id": "1131839817982947429",
-      "content": "看不懂<:cute1:1356053053568192717>",
-      "author": "wild_pansy",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1435247273293381765",
-      "channel_id": "1170692781216378960",
-      "content": "Shield is almost as big as tank horla",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435336643090583734",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "新手問配隊及抽取建議"
-    },
-    {
-      "id": "1435197828371578950",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "hitsu4",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435218532802494535",
-      "channel_id": "1170692781216378960",
-      "content": "Jenkin is a Disney princess",
-      "author": "enternameunavailable",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1435220698254672004",
-      "channel_id": "1170692781216378960",
-      "content": "Ugh",
-      "author": "aurora3981",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

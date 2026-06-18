@@ -1,10 +1,26 @@
 {
   "date": "2025-11-12",
-  "messages": 5495,
-  "unique_authors": 165,
-  "reactions_total": 644,
-  "attachments": 199,
+  "messages": 16178,
+  "unique_authors": 212,
+  "reactions_total": 2065,
+  "attachments": 545,
   "channel_activity": {
+    "🔸晒卡分享": 90,
+    "🔸欢乐梗图": 6,
+    "🔸相位对弈": 79,
+    "🔸课间休息闲聊": 17,
+    "🔸한국어-채팅방": 96,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 116,
+    "🔸canal-español": 196,
+    "🔸canal-português": 81,
+    "🔸ruang-obrolan-indonesia": 268,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 381,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 80,
+    "🔸team-building": 512,
+    "🔸general-chat": 8690,
     "🔸綜合討論": 448,
     "🔸morimens-game-chat": 4970,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 2,
@@ -26,38 +42,39 @@
     "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers": 4,
     "✅「已解决」我的忘卻篇主線的銀鑰析出好像BUG了": 1,
     "仔细看 这是一个尤乌": 1,
-    "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10,
-    "🔸欢乐梗图": 3
+    "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10
   },
   "hourly_activity": {
-    "0": 110,
-    "1": 56,
-    "2": 141,
-    "3": 252,
-    "4": 325,
-    "5": 177,
-    "6": 288,
-    "7": 358,
-    "8": 455,
-    "9": 94,
-    "10": 346,
-    "11": 184,
-    "12": 182,
-    "13": 273,
-    "14": 179,
-    "15": 388,
-    "16": 340,
-    "17": 169,
-    "18": 333,
-    "21": 306,
-    "22": 146,
-    "23": 292,
-    "19": 19,
-    "20": 82
+    "2": 320,
+    "6": 957,
+    "8": 849,
+    "9": 476,
+    "14": 783,
+    "15": 718,
+    "16": 529,
+    "23": 607,
+    "7": 1073,
+    "11": 651,
+    "3": 396,
+    "22": 347,
+    "12": 1036,
+    "13": 1016,
+    "10": 698,
+    "17": 316,
+    "18": 545,
+    "19": 536,
+    "20": 540,
+    "21": 959,
+    "0": 741,
+    "1": 548,
+    "4": 783,
+    "5": 754
   },
   "message_types": {
-    "0": 3648,
-    "19": 1769,
+    "0": 7074,
+    "19": 3603,
+    "20": 2,
+    "23": 3,
     "46": 1
   },
   "top_reacted_messages": [
@@ -67,6 +84,14 @@
       "author": "idotly",
       "reactions": 30,
       "channel": "Tulu gif I got from Twitter"
+    },
+    {
+      "id": "1438015023653060680",
+      "channel_id": "1355630588094320661",
+      "content": "1567",
+      "author": "yourdeadbeatdad",
+      "reactions": 25,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1438131912542654515",
@@ -81,6 +106,38 @@
       "author": "ykarus.obs",
       "reactions": 15,
       "channel": "Mango Murphy"
+    },
+    {
+      "id": "1438120322493714472",
+      "channel_id": "1355630588094320661",
+      "content": "1565",
+      "author": "syruponstrawberrycake",
+      "reactions": 11,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1438252855805870262",
+      "channel_id": "1400750050208125010",
+      "content": "if i dont come back astras pipe bomb exploded",
+      "author": "bongosjam",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1437987192210460852",
+      "channel_id": "1400750050208125010",
+      "content": "https://cdn.discordapp.com/attachments/1127161806717190184/1246388680835465326/U",
+      "author": "bongosjam",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438253430857666640",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1438067741297737810",
@@ -98,11 +155,51 @@
       "channel": "Ramona art i did"
     },
     {
+      "id": "1437957447242481819",
+      "channel_id": "1400750050208125010",
+      "content": "Hsr better then zzz",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438278785215762586",
+      "channel_id": "1400750050208125010",
+      "content": "spoon ky",
+      "author": "digitalstar.exe",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1438054388194213908",
       "content": "I have unlocked everything in Archives and Frenzy. Now I have no way to use them",
       "author": "aurora3981",
       "reactions": 9,
       "channel": "💭「Processing」Trade Reality Verge for something else"
+    },
+    {
+      "id": "1438099545031577650",
+      "channel_id": "1181152750319456266",
+      "content": "享受到的力量-25%\n造成的傷害-25%\n傷轉毒反出血再-25%",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1438151826590400622",
+      "channel_id": "1400750050208125010",
+      "content": "morimens x fish collab",
+      "author": "bongosjam",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438153454815281204",
+      "channel_id": "1400750050208125010",
+      "content": "no mre boobas",
+      "author": "ruanbius",
+      "reactions": 8,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1438029488389623948",
@@ -134,83 +231,6 @@
       "author": "dustsleeper_",
       "reactions": 8,
       "channel": "Tulu gif I got from Twitter"
-    },
-    {
-      "id": "1438123918262272062",
-      "channel_id": "1131839817982947429",
-      "content": "久了你就忘記以前的架構跟炎上",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1438020725909753876",
-      "channel_id": "1170692781216378960",
-      "content": "<@506143163312898076> <@510949582499217411> <@195401302145105920> <@706262934485",
-      "author": "joykaylee24",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438308249735532717",
-      "channel_id": "1131839817982947429",
-      "content": "因為佬很強",
-      "author": "universe.dark",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1437997393365831732",
-      "content": "我站之前墨菲的配音",
-      "author": "ahong0727",
-      "reactions": 6,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
-    },
-    {
-      "id": "1438303213274271774",
-      "channel_id": "1170692781216378960",
-      "content": "??",
-      "author": "coco_cocoa",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438185604339732631",
-      "content": "官方不回话这个问题很难得到答案 也就期待下你猫会不会把旧的做成替换语音包的模式吧 旧配墨菲确实不赖",
-      "author": "fantuan9711",
-      "reactions": 5,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
-    },
-    {
-      "id": "1438260199516278967",
-      "content": "众所周知 尤乌十分的帅气",
-      "author": "ahh_1234567890",
-      "reactions": 5,
-      "channel": "仔细看 这是一个尤乌"
-    },
-    {
-      "id": "1437973457823469789",
-      "channel_id": "1131839817982947429",
-      "content": "🤸 \n🦽 🏌️",
-      "author": "tsubaki9884",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1438017491715624991",
-      "channel_id": "1131839817982947429",
-      "content": "哇 黃金熊不是前幾天我在這碰到的那位強度黨嗎 <:processing:1357185814567718963>",
-      "author": "a4485",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1438069275146326138",
-      "channel_id": "1131839817982947429",
-      "content": "選開頭左上角三張就完事了",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }
