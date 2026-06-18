@@ -1,10 +1,11 @@
 {
   "date": "2025-12-14",
-  "messages": 140,
-  "unique_authors": 7,
-  "reactions_total": 192,
-  "attachments": 14,
+  "messages": 1256,
+  "unique_authors": 47,
+  "reactions_total": 442,
+  "attachments": 62,
   "channel_activity": {
+    "🔸綜合討論": 1116,
     "Ramona!": 1,
     "Crimson Kaede": 1,
     "Morimens Awakeners Database": 1,
@@ -22,25 +23,33 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "1": 2,
-    "2": 5,
-    "19": 1,
-    "20": 7,
-    "22": 2,
-    "23": 5,
-    "15": 8,
-    "16": 48,
-    "13": 3,
-    "0": 42,
-    "11": 1,
-    "12": 12,
-    "17": 1,
-    "9": 2,
-    "7": 1
+    "0": 45,
+    "1": 29,
+    "2": 47,
+    "3": 37,
+    "4": 58,
+    "5": 3,
+    "6": 50,
+    "7": 3,
+    "8": 9,
+    "9": 11,
+    "10": 14,
+    "11": 65,
+    "12": 229,
+    "13": 64,
+    "14": 54,
+    "15": 137,
+    "16": 161,
+    "17": 65,
+    "18": 27,
+    "19": 8,
+    "20": 13,
+    "23": 125,
+    "22": 2
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 910,
+    "19": 206
   },
   "top_reacted_messages": [
     {
@@ -65,11 +74,123 @@
       "channel": "Crimson Kaede"
     },
     {
+      "id": "1449617109662433391",
+      "channel_id": "1131839817982947429",
+      "content": "加強永恆面紗！",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449619288171348099",
+      "channel_id": "1131839817982947429",
+      "content": "可能無上意志是紅綠色盲",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449713602801176659",
+      "channel_id": "1131839817982947429",
+      "content": "找到了  昨天我說的那個佬  超利害<:pray:1356053116260454534>",
+      "author": "partycatss.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449722836402049167",
+      "channel_id": "1131839817982947429",
+      "content": "應該是最後一次說這句了紀念一下  這輪也是比上輪多10分<:agree:1400771815076528258>",
+      "author": "partycatss.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449756054719299626",
+      "channel_id": "1131839817982947429",
+      "content": "~~被開除國籍後 大家都不帶粉魚玩了 結果無人發現~~",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1449691818525589605",
       "content": "~~其實有做男守咪~~",
       "author": "souri.10244",
       "reactions": 7,
       "channel": "一點仿官"
+    },
+    {
+      "id": "1449588662260990034",
+      "channel_id": "1131839817982947429",
+      "content": "终于，好吧懒得+12了。",
+      "author": "dittoqwq",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449611326123933892",
+      "channel_id": "1131839817982947429",
+      "content": "這是一種瑪腦水母嗎",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449651715803713659",
+      "channel_id": "1131839817982947429",
+      "content": "简称诞墨",
+      "author": "carme.0588",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449593775654572143",
+      "channel_id": "1131839817982947429",
+      "content": "我應該是全網唯一教人怎麼玩活鯊魚跟法的人（\nhttps://discord.com/channels/1131791637933199470/142450022",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449732162520617001",
+      "channel_id": "1131839817982947429",
+      "content": "吃靈芝打過了<:dead:1356082627509092372> <:flop1:1356083604236800030>",
+      "author": "luckyinitial",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449742941810724919",
+      "channel_id": "1131839817982947429",
+      "content": "說不定下個深海sp是~~深海24~~",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449749825628143636",
+      "channel_id": "1131839817982947429",
+      "content": "經過這次融5我覺得應該能打",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449751303478710383",
+      "channel_id": "1131839817982947429",
+      "content": "謝邀\n常駐35%終傷\n王關自動變70%",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449798728079900845",
+      "channel_id": "1131839817982947429",
+      "content": "0启0技能鸟弟百万伤害轻松拿下难5融灾",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1449797547966070988",
@@ -79,67 +200,12 @@
       "channel": "求助，我是被版本淘汰了？"
     },
     {
-      "id": "1449751537512353863",
-      "content": "雖然是在別的遊戲看到的拿來提可能有一點失禮⋯⋯就是像是雷索納斯把潛能（類似忘卻的天賦）點開之後能暫時關閉、異象回聲把我角色疊數點開之後也能暫時關閉\n\n儘管不見得",
-      "author": "amstelredam",
+      "id": "1449593685573369916",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
       "reactions": 4,
-      "channel": "💭「处理中」是否考慮為喚醒體設置啟靈開關和天賦開關？"
-    },
-    {
-      "id": "1449691506234626189",
-      "content": "我的想法是能透過界域天賦和三大質體獲得牌所以設計的命輪\n但還沒想好要怎麼設計\n\n滿級\n命輪\n願銀鑰指引前路\n死亡抵抗\n                     ",
-      "author": "fpaper_27108",
-      "reactions": 3,
-      "channel": "一點仿官"
-    },
-    {
-      "id": "1449891949040373801",
-      "content": "A 60-ish second overview of the Interlude Lightless Realm.\nhttps://youtube.com/s",
-      "author": "nechromicon",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1449756090328940637",
-      "content": "目前靈塑10級，已經發動過狂氣爆發了，沒看到「反擊效果額外造成50%傷害」有生效",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "✅「已回答」凱刻斯靈塑內容"
-    },
-    {
-      "id": "1449571424325996637",
-      "content": "Best girl🥹💖謝謝你@我🥺",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "Ramona!"
-    },
-    {
-      "id": "1449759761695379610",
-      "content": "As in the video, Myriam 2 cost should apply poison equal to the damage dealt, an",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Possible Myriam 2 cost bug"
-    },
-    {
-      "id": "1449557384451199120",
-      "content": "塔数值比深海那些辅助高多了",
-      "author": "ququ12358",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
-    },
-    {
-      "id": "1449559580198699038",
-      "content": "看来还是太多啦，直接落地boss吧入药",
-      "author": "ququ12358",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
-    },
-    {
-      "id": "1449565125127307356",
-      "content": "不是 你們為啥在這裡聊😂 話題沒有問題但與本樓沒有半毛錢關係",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
+      "channel": "🔸綜合討論"
     }
   ]
 }

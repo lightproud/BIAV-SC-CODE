@@ -1,10 +1,12 @@
 {
   "date": "2025-12-29",
-  "messages": 196,
-  "unique_authors": 30,
-  "reactions_total": 142,
-  "attachments": 26,
+  "messages": 1929,
+  "unique_authors": 68,
+  "reactions_total": 481,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 1679,
+    "🔸阵容构建": 54,
     "I errr....": 7,
     "🌼 Pollux 🌼": 2,
     "Fish baby boy": 3,
@@ -63,31 +65,32 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "15": 4,
-    "16": 23,
-    "17": 2,
-    "19": 1,
-    "22": 8,
-    "6": 18,
-    "1": 8,
-    "0": 11,
-    "2": 1,
-    "4": 3,
-    "18": 3,
-    "7": 16,
-    "13": 1,
-    "8": 17,
-    "14": 1,
-    "9": 26,
-    "3": 34,
-    "10": 7,
-    "11": 9,
-    "12": 2,
-    "5": 1
+    "0": 28,
+    "1": 99,
+    "2": 191,
+    "3": 222,
+    "4": 335,
+    "5": 125,
+    "6": 53,
+    "7": 148,
+    "8": 199,
+    "9": 71,
+    "10": 22,
+    "11": 79,
+    "12": 37,
+    "13": 55,
+    "14": 13,
+    "15": 14,
+    "16": 84,
+    "17": 42,
+    "18": 39,
+    "19": 5,
+    "20": 57,
+    "22": 11
   },
   "message_types": {
-    "0": 16,
-    "19": 7
+    "0": 1402,
+    "19": 331
   },
   "top_reacted_messages": [
     {
@@ -105,11 +108,51 @@
       "channel": "Fish baby boy"
     },
     {
+      "id": "1455065584407679089",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455096468414271520",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1455320492364796111",
       "content": "Finally Corpo getting the revenge from Kath she deserves after her comment",
       "author": "legendaryredz",
       "reactions": 9,
       "channel": "I errr...."
+    },
+    {
+      "id": "1455058050628063302",
+      "channel_id": "1131839817982947429",
+      "content": "好吧，還給你看看",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455058502883082445",
+      "channel_id": "1131839817982947429",
+      "content": "吃完大保就看這個",
+      "author": "axe_proficient",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455114215743291484",
+      "channel_id": "1131839817982947429",
+      "content": "基傷27k的巨刃，並且每拍一張終傷+10%，每拍兩張觸發3次追擊🤓",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1455120559103934515",
@@ -126,109 +169,84 @@
       "channel": ""
     },
     {
-      "id": "1455046174284185632",
-      "content": "It doesn't show the Xmas thais art",
-      "author": "aurora3981",
-      "reactions": 4,
-      "channel": "✅「Answered」New Year Countdown Artwork Not Displayed"
+      "id": "1455051792206401662",
+      "channel_id": "1131839817982947429",
+      "content": "變成弱智質體了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1454991421990899855",
-      "content": "Hello! This is my appreciation post for this game – Morimens.\n\nThe reason behind",
-      "author": "akasha0069_59642",
-      "reactions": 4,
-      "channel": "My appreciation for Morimens."
+      "id": "1455058756546334771",
+      "channel_id": "1131839817982947429",
+      "content": "85抽3启，跑了",
+      "author": "jidu1418",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455328392626049267",
-      "content": "I agree, I would also love GRamona’s predetermined strike to be considered one t",
-      "author": "raumbobulus",
-      "reactions": 4,
-      "channel": ""
+      "id": "1455055210077622293",
+      "channel_id": "1131839817982947429",
+      "content": "正常應該要15~20抽一隻",
+      "author": "luckyinitial",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455085814081130589",
-      "content": "Thank you for providing the information. I have provided it to the programmer fo",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "💭「Processing」The Spacebar/Enter key on Steam PC version not working"
+      "id": "1455057132238930044",
+      "channel_id": "1131839817982947429",
+      "content": "哦耶叠满了",
+      "author": "jidu1418",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455323473315627049",
-      "content": "https://youtu.be/LBiD8LuK7ck - Mostrando a Mouchette + equipos y covenants",
-      "author": "yaoshidoppa",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1455057237927002285",
+      "channel_id": "1131839817982947429",
+      "content": "跳的高不高我不知道 但我腳麻了",
+      "author": "quackdayo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455104178673160253",
-      "content": "笑死我跟他在推特上已經相認（ㄍ",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "Bunch of doodles and sillies"
+      "id": "1455062795044393296",
+      "channel_id": "1131839817982947429",
+      "content": "開大投擲寶貝球收服敵方",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455134384423436390",
-      "content": "哈喽，反馈来了：会考虑一下是否采纳",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」無底創痕可以不計入溢出的回血量嗎"
+      "id": "1455098542434680853",
+      "channel_id": "1131839817982947429",
+      "content": "這樣只能算是白銀熊",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455109579410247754",
-      "content": "Reply:\n1）The base Tentacle damage is generated during exploration and remains co",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
+      "id": "1455098602421747838",
+      "channel_id": "1131839817982947429",
+      "content": "三個都刷滿才能是黃金熊",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455094812838727843",
-      "content": "目前是安排在了2.4.2修复更新，如果有其他紧急问题要修复，到时候可能这个也会提前一起放出更新",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」造物收藏～又沒收到～"
+      "id": "1455120910175699049",
+      "channel_id": "1131839817982947429",
+      "content": "||~~宁愿等画家复刻给画家超限让他对我呵呵哈嘿~~||",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455326448683454465",
-      "content": "It would be very nice is Ogier's Piercing STRIKE was considered a strike. the Mo",
-      "author": "zekiei",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1455285892670558314",
-      "content": "Mmm CorpoKath Yuri <:pray:1356053116260454534>",
-      "author": "seelkadoom0",
-      "reactions": 1,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455333360120369356",
-      "content": "Omg yuri 💕 we LOVE to see it",
-      "author": "celestial.noise",
-      "reactions": 1,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455135880678215868",
-      "content": "抱歉，这个建议暂不考虑",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」取消SSR命輪自動分解"
-    },
-    {
-      "id": "1455054542604337268",
-      "content": "相位對弈-輪選模式——戰鬥回放\n\n西維斯特（100025754）\n群星的庇佑、奧吉爾、拉蒙娜、熔燬·朵爾、莉茲\n海之祭、職責所在、希冀、黑暗中的安眠、藍環毒素\n",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "💭「处理中」回放bug"
-    },
-    {
-      "id": "1455158040440344776",
-      "content": "還有這兩天玩發現是我錯失了，實際上狂氣爆發跟超限帶來的幾次幾張幾回合的效果都會寫在隊伍狀態欄裡的，只是我沒有發現>< 搜哩><",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
+      "id": "1455121904959750277",
+      "channel_id": "1131839817982947429",
+      "content": "~~忘卻飛霄大人~~",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

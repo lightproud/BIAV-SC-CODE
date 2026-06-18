@@ -1,10 +1,12 @@
 {
   "date": "2025-12-31",
-  "messages": 129,
-  "unique_authors": 15,
-  "reactions_total": 456,
-  "attachments": 26,
+  "messages": 861,
+  "unique_authors": 53,
+  "reactions_total": 593,
+  "attachments": 71,
   "channel_activity": {
+    "🔸綜合討論": 729,
+    "🔸阵容构建": 3,
     "I errr....": 5,
     "aequor doodle": 15,
     "😌": 25,
@@ -38,32 +40,33 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "3": 9,
-    "9": 14,
-    "14": 6,
-    "15": 9,
-    "16": 5,
-    "17": 10,
-    "4": 7,
-    "6": 4,
-    "10": 17,
-    "12": 13,
-    "0": 2,
+    "0": 25,
+    "1": 19,
+    "2": 20,
+    "3": 47,
+    "4": 54,
+    "5": 30,
+    "6": 78,
+    "7": 25,
+    "8": 11,
+    "9": 22,
+    "10": 73,
+    "11": 68,
+    "12": 32,
+    "13": 71,
+    "14": 71,
+    "15": 24,
+    "16": 93,
+    "17": 58,
+    "18": 16,
+    "19": 12,
+    "23": 5,
     "20": 3,
-    "19": 2,
-    "18": 2,
-    "8": 1,
-    "13": 3,
-    "23": 4,
-    "21": 4,
-    "11": 8,
-    "2": 2,
-    "5": 1,
-    "7": 3
+    "21": 4
   },
   "message_types": {
-    "19": 15,
-    "0": 38
+    "19": 139,
+    "0": 593
   },
   "top_reacted_messages": [
     {
@@ -130,11 +133,43 @@
       "channel": ""
     },
     {
+      "id": "1455812362937569363",
+      "channel_id": "1131839817982947429",
+      "content": "-# 群通知：\n-# 今天晚上十二点，弥萨格校猫将准时发放200个0流明红包，和0个200流明红包，请大家准时参加。",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455971944532021434",
+      "channel_id": "1131839817982947429",
+      "content": "該打多少還是打多少",
+      "author": "water_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1456030749877866692",
       "content": "",
       "author": "ahong0727",
       "reactions": 9,
       "channel": "now spell."
+    },
+    {
+      "id": "1455955652080963595",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼不是發2026流明",
+      "author": "ahong0727",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1456004360071807068",
+      "channel_id": "1131839817982947429",
+      "content": "已經+12了",
+      "author": "axe_proficient",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1455947533581815929",
@@ -144,67 +179,44 @@
       "channel": "aequor doodle"
     },
     {
-      "id": "1455822775427006476",
-      "content": "How to play:\n\n1. Get the rouse card for mouch ASAP\n\n2. Sell Helot 4 cost ASAP(se",
-      "author": "rain_scarlet",
+      "id": "1455785070743916588",
+      "channel_id": "1131839817982947429",
+      "content": "登录天数一年了！虽然是24年四月入游戏的（）",
+      "author": "dittoqwq",
       "reactions": 5,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455974571034546318",
-      "content": "I WILL DEF DRAW OGIER IN THE FUTURE",
-      "author": "deellln",
-      "reactions": 2,
-      "channel": "aequor doodle"
+      "id": "1455873031321948317",
+      "channel_id": "1131839817982947429",
+      "content": "<:Clown:1400771541423226971>",
+      "author": "quackdayo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455848783400140871",
-      "content": "More corpokath ….",
-      "author": "sirmordreds_8080",
-      "reactions": 1,
-      "channel": "I errr...."
+      "id": "1455885558651027591",
+      "channel_id": "1131839817982947429",
+      "content": "小帳茉夏開荒 守密人33等 打完第八章",
+      "author": "lululu9858",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455866396423491595",
-      "content": "I trust my friend <@899814369926471750> to do it",
-      "author": "lowtown77",
-      "reactions": 1,
-      "channel": "😌"
+      "id": "1455921534928683028",
+      "channel_id": "1131839817982947429",
+      "content": "今天過完後今年就不玩了",
+      "author": "cynthiacurio",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455867360115298366",
-      "content": "Welp, here goes MoriR+18",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "😌"
-    },
-    {
-      "id": "1455872473848483840",
-      "content": "Bro.. lmao.\nfine then. I'll see what I can do, either later or tomorrow",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "😌"
-    },
-    {
-      "id": "1455850886763905211",
-      "content": "Solo se considera un Strike para beneficiarse de los buffs de Strike",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
-    },
-    {
-      "id": "1455851527020347566",
-      "content": "Oh , que mal que no active ese tipo de efectos , gracias por aclarar .",
-      "author": "salami_87",
-      "reactions": 1,
-      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
-    },
-    {
-      "id": "1455905287251951760",
-      "content": "如題\n我發現我在玩小水母的時侯嘎嘎亂丟\n發現有些時候明明擊殺但出血卻沒有淨化反而繼續累積\n附上可愛的小水母影片",
-      "author": "passerbycat",
-      "reactions": 1,
-      "channel": "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態"
+      "id": "1455922548268208369",
+      "channel_id": "1131839817982947429",
+      "content": "主要是看群里的老手腻了（）",
+      "author": "dittoqwq",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

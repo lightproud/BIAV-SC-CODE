@@ -1,10 +1,11 @@
 {
   "date": "2025-12-20",
-  "messages": 91,
-  "unique_authors": 21,
-  "reactions_total": 76,
-  "attachments": 29,
+  "messages": 1606,
+  "unique_authors": 47,
+  "reactions_total": 186,
+  "attachments": 93,
   "channel_activity": {
+    "🔸綜合討論": 1515,
     "✉️OC’s Birthday | You Have Received Two Mails": 2,
     "Sylvester": 7,
     "新手求助": 2,
@@ -34,29 +35,34 @@
     "1443848396585828363": 1
   },
   "hourly_activity": {
-    "17": 2,
-    "22": 2,
-    "6": 22,
-    "7": 4,
-    "8": 5,
-    "15": 3,
-    "16": 7,
-    "0": 11,
-    "2": 3,
-    "11": 6,
-    "14": 2,
-    "3": 1,
-    "5": 5,
-    "19": 2,
-    "9": 3,
-    "21": 3,
-    "10": 3,
-    "13": 1,
-    "23": 6
+    "0": 22,
+    "1": 65,
+    "2": 19,
+    "3": 93,
+    "4": 230,
+    "5": 60,
+    "6": 52,
+    "7": 45,
+    "8": 82,
+    "9": 58,
+    "10": 12,
+    "11": 40,
+    "12": 17,
+    "13": 91,
+    "14": 14,
+    "15": 13,
+    "16": 56,
+    "17": 163,
+    "18": 25,
+    "19": 7,
+    "20": 42,
+    "21": 254,
+    "22": 51,
+    "23": 95
   },
   "message_types": {
-    "0": 17,
-    "19": 3
+    "19": 204,
+    "0": 1311
   },
   "top_reacted_messages": [
     {
@@ -65,6 +71,22 @@
       "author": "that_one_chippy",
       "reactions": 20,
       "channel": "Sylvester"
+    },
+    {
+      "id": "1451937244033192126",
+      "channel_id": "1131839817982947429",
+      "content": "一發還是有120K",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451850406681378936",
+      "channel_id": "1131839817982947429",
+      "content": "難怪狗喜歡狗",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1451864366315212851",
@@ -79,6 +101,46 @@
       "author": "vxvendetta97",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1451754162952994966",
+      "channel_id": "1131839817982947429",
+      "content": "每日i圖（1/1）",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451758336272760852",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯超完提著褲子就走了，只留下一條交際腕在你體內",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451864288909201549",
+      "channel_id": "1131839817982947429",
+      "content": "把普通ssr命轮抽满才转过来抽角色的我<:nocomment:1356053106038673610>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451987474363584595",
+      "channel_id": "1131839817982947429",
+      "content": "老杜的夢魘 朵兒",
+      "author": "lululu9858",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452000561539973202",
+      "channel_id": "1131839817982947429",
+      "content": "3.0必須把算力調和改成5牌啟動",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1451859932642283621",
@@ -109,6 +171,38 @@
       "channel": "✉️OC生贺｜守密人，您收到了两封邮件♛"
     },
     {
+      "id": "1451937176827728086",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ailiduo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451978692057104530",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ailiduo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451983951814987977",
+      "channel_id": "1131839817982947429",
+      "content": "205抽 3疊補到+12",
+      "author": "quackdayo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451994307983708330",
+      "channel_id": "1131839817982947429",
+      "content": "然後莉莉又一直吃大保",
+      "author": "axe_proficient",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1451942053540925441",
       "content": "造價太高不敢抽",
       "author": "ahong0727",
@@ -121,83 +215,6 @@
       "author": "tksn.",
       "reactions": 3,
       "channel": "V2.4.0.12 在线维护公告"
-    },
-    {
-      "id": "1451973844872200202",
-      "content": "如題，相位莉莉有一招有「療癒」這個詞，同時包含莉茲個人劇情主軸的「天鵝輓歌」在內可能有非常多處「輓歌」，這兩個詞在繁中版都誤植了，分別變成「療愈」和「挽歌」。雖",
-      "author": "amstelredam",
-      "reactions": 3,
-      "channel": "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」"
-    },
-    {
-      "id": "1451959630920941725",
-      "content": "Just as you will communicate the existence of pity (regardless if it's hard pity",
-      "author": "soramaru",
-      "reactions": 3,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1451830238794485791",
-      "content": "i dont think Lens or most players would want to press it to the extreme like a l",
-      "author": "_creaz",
-      "reactions": 2,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1451835836394901536",
-      "content": "<@&1166257943742787615>\nI have attempted to try and restart it, used the fix opt",
-      "author": "seelkadoom0",
-      "reactions": 2,
-      "channel": "💭「Processing」I am unable to enter the game"
-    },
-    {
-      "id": "1451869276855336961",
-      "content": "醫生醫生我喜歡你",
-      "author": "tanchen0811",
-      "reactions": 2,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1451738208919359578",
-      "content": "<:thinking1:1356068128936820929>",
-      "author": "velvetrene._cake",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1451838293170716854",
-      "content": "https://discord.com/channels/1131791637933199470/1441010544500015146\nYou can sub",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "Sylvester"
-    },
-    {
-      "id": "1451778369212387511",
-      "content": "<@633215996508766229> 我已经氪完了游戏内所有能氪的礼包和纪行，虽然很缺材料，但是这个礼包的定价依旧让人没有购买的欲望，是否可以增加抽数或者",
-      "author": "grayifies",
-      "reactions": 1,
-      "channel": "V2.4.0.12 在线维护公告"
-    },
-    {
-      "id": "1451813536337760427",
-      "content": "考虑到目前两种礼包的性价比差异不大，是否可以考虑进一步做性价比分级，提供一个值得全体玩家消费的版本？",
-      "author": "qingming6054",
-      "reactions": 1,
-      "channel": "V2.4.0.12 在线维护公告"
-    },
-    {
-      "id": "1451817581433323564",
-      "content": "can I get thaiass back",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "💭「Processing」Can't see the new intro scene on Steam"
-    },
-    {
-      "id": "1451827529689075772",
-      "content": "We completely understand this concern, and we’ll discuss adding an explanation a",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     }
   ]
 }

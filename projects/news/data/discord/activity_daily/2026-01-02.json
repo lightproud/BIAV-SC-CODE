@@ -1,10 +1,31 @@
 {
   "date": "2026-01-02",
-  "messages": 10928,
-  "unique_authors": 186,
-  "reactions_total": 1501,
-  "attachments": 444,
+  "messages": 17783,
+  "unique_authors": 262,
+  "reactions_total": 1928,
+  "attachments": 778,
   "channel_activity": {
+    "🔸剧情交流": 60,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 10,
+    "🔸日本語チャンネル": 12,
+    "🔸한국어-채팅방": 5,
+    "🔸chaîne-française": 17,
+    "🔸русский-канал": 411,
+    "🔸phòng-chat-tiếng-việt": 1291,
+    "🔸canal-español": 109,
+    "🔸canal-português": 143,
+    "🔸ruang-obrolan-indonesia": 1097,
+    "🔸ห้องสนทนาภาษาไทย": 1151,
+    "🔸traphase": 121,
+    "🔸lore-chat": 370,
+    "🔸lets-count": 16,
+    "🔸team-building": 390,
+    "🔸general-chat": 228,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 1368,
+    "🔸游戏问题": 6,
+    "🔸机器人命令┊bot-commands": 35,
     "🔸綜合討論": 917,
     "🔸morimens-game-chat": 9960,
     "Ms Dean?": 6,
@@ -29,35 +50,35 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "0": 304,
-    "2": 103,
-    "3": 214,
-    "4": 609,
-    "5": 374,
-    "6": 404,
-    "7": 495,
-    "8": 271,
-    "9": 92,
-    "10": 308,
-    "11": 914,
-    "12": 684,
-    "13": 536,
-    "14": 805,
-    "15": 744,
-    "16": 592,
-    "17": 405,
-    "18": 422,
-    "19": 527,
-    "20": 429,
-    "22": 403,
-    "23": 448,
-    "1": 205,
-    "21": 640
+    "2": 204,
+    "3": 384,
+    "4": 928,
+    "5": 656,
+    "6": 716,
+    "1": 316,
+    "10": 681,
+    "11": 1260,
+    "13": 1220,
+    "14": 1440,
+    "0": 343,
+    "12": 1001,
+    "18": 614,
+    "22": 544,
+    "16": 1032,
+    "19": 706,
+    "9": 494,
+    "15": 1376,
+    "17": 580,
+    "20": 520,
+    "21": 942,
+    "7": 904,
+    "8": 428,
+    "23": 494
   },
   "message_types": {
-    "19": 3115,
-    "0": 7761,
-    "20": 1
+    "19": 1473,
+    "0": 5379,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -73,6 +94,14 @@
       "author": "hominam",
       "reactions": 20,
       "channel": "Happy 2026 Fellow Keepers"
+    },
+    {
+      "id": "1456567777488932914",
+      "channel_id": "1300659802455674972",
+      "content": "ถ้า a3 ลำบาก อาจจะไม่ใช่ดวงกาชานะ อาจจะเป็นปัญหาในการจัดทีม หรือ ปัญหาด้านการตัด",
+      "author": "2ndselna",
+      "reactions": 15,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1456634291348836486",
@@ -135,6 +164,14 @@
       "channel": "Options to turn off Enlihtens"
     },
     {
+      "id": "1456495126653173862",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "tweetug22",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1456613511743668422",
       "channel_id": "1170692781216378960",
       "content": "rain may not be pregnant but i believe they can deliver this time",
@@ -167,51 +204,35 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1456526921692086346",
+      "channel_id": "1173463482503536711",
+      "content": "守密可以肘擊大眼珠\n路人可以肘擊守密\n所以得證路人>>>大眼珠",
+      "author": "ice_storys",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1456576903203782666",
+      "channel_id": "1300659802455674972",
+      "content": "พ้อยคือ A3 ที่เธอลงไม่ไหว ไม่ใช่ที่ดวงขนาดนั้น เธอแค่มีสกิลอิชชู เราคิดว่าเธอควร",
+      "author": "2ndselna",
+      "reactions": 6,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1456482831973744640",
+      "channel_id": "1326453763355185215",
+      "content": "https://x.com/neme514/status/1997231336378298676?s=46&t=0MZKpAa5FhouJdY4GVvgbA",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1456644547810693255",
       "channel_id": "1131839817982947429",
       "content": "诡异的配队，但350（）",
       "author": "dittoqwq",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1456712675072413857",
-      "channel_id": "1131839817982947429",
-      "content": "<:wish:1356084702468899117>",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1456597865681129493",
-      "channel_id": "1170692781216378960",
-      "content": "i would absolutely glaze gmurphy simply because she came to me 4 times in a row ",
-      "author": "lordbabel",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1456621111763665040",
-      "channel_id": "1170692781216378960",
-      "content": "wainscawwet (thais wowshippew) it seems that even f-fwee access was i-incwuded i",
-      "author": "ntktooyah",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1456708434757029899",
-      "channel_id": "1170692781216378960",
-      "content": "they scheduled it 3:30 so I have to go during work hours so they can make sure l",
-      "author": "flares117",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1456648866127675483",
-      "channel_id": "1131839817982947429",
-      "content": "有三个了<:pray:1356053116260454534>",
-      "author": "dittoqwq",
-      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]

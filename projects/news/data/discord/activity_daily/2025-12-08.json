@@ -1,10 +1,11 @@
 {
   "date": "2025-12-08",
-  "messages": 158,
-  "unique_authors": 24,
-  "reactions_total": 96,
-  "attachments": 39,
+  "messages": 822,
+  "unique_authors": 43,
+  "reactions_total": 338,
+  "attachments": 128,
   "channel_activity": {
+    "🔸綜合討論": 664,
     "Explosion: Ramona": 2,
     "Nymphaea!": 1,
     "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 5,
@@ -46,30 +47,34 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "13": 8,
-    "15": 8,
-    "4": 8,
-    "14": 11,
-    "20": 5,
-    "6": 19,
-    "8": 5,
-    "7": 12,
-    "9": 10,
-    "10": 24,
-    "11": 4,
-    "12": 16,
-    "22": 1,
-    "23": 2,
-    "16": 2,
-    "18": 1,
-    "0": 3,
-    "5": 1,
-    "3": 16,
-    "1": 2
+    "0": 17,
+    "1": 27,
+    "2": 49,
+    "3": 47,
+    "4": 59,
+    "5": 46,
+    "6": 79,
+    "7": 34,
+    "8": 53,
+    "9": 77,
+    "10": 29,
+    "11": 16,
+    "12": 123,
+    "13": 16,
+    "14": 42,
+    "15": 24,
+    "16": 29,
+    "17": 14,
+    "18": 4,
+    "19": 6,
+    "21": 3,
+    "22": 4,
+    "23": 19,
+    "20": 5
   },
   "message_types": {
-    "0": 33,
-    "19": 3
+    "19": 118,
+    "0": 546
   },
   "top_reacted_messages": [
     {
@@ -87,11 +92,107 @@
       "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
     },
     {
+      "id": "1447530572040900658",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447446651969994773",
+      "channel_id": "1131839817982947429",
+      "content": "收工<:Cheerup:1400771555939844149>",
+      "author": "sweet_25367",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447643641098010636",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447425142216200224",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447476403443339316",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447407893061177394",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447528457813757984",
+      "channel_id": "1131839817982947429",
+      "content": "https://tenor.com/view/technology-plant-mover-gif-3457510",
+      "author": "ass191044",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1447467932258013235",
       "content": "",
       "author": "water_heart",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1447402954163359896",
+      "channel_id": "1131839817982947429",
+      "content": "过了好耶  \n诶不对，我血条怎么就剩五百了",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447427215250817065",
+      "channel_id": "1131839817982947429",
+      "content": "只要不拿哈姆林打融5就会变好的<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447427791275556915",
+      "channel_id": "1131839817982947429",
+      "content": "力量 回血 算力 盾",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447490780729180202",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447524557513687160",
+      "channel_id": "1131839817982947429",
+      "content": "~~然後盡量不要用皮4費把母樹直接鏟了~~",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1447469246576853013",
@@ -101,116 +202,36 @@
       "channel": ""
     },
     {
-      "id": "1447481457135190108",
-      "content": "",
-      "author": "souri.10244",
+      "id": "1447420570575704136",
+      "channel_id": "1131839817982947429",
+      "content": "垃圾造物",
+      "author": "sweet_25367",
       "reactions": 4,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447499207610208377",
-      "content": "成功+4",
-      "author": "santianliangjuesleep",
+      "id": "1447446260960464907",
+      "channel_id": "1131839817982947429",
+      "content": "我拿這隊去車第五波好了",
+      "author": "axe_proficient",
       "reactions": 4,
-      "channel": "新手求助"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447480841490923612",
-      "content": "有玩家提过类似建议，我们会想办法看看如何解决",
-      "author": "morimensstaff01",
+      "id": "1447449477341515899",
+      "channel_id": "1131839817982947429",
+      "content": "我也過了<:pray:1356053116260454534>",
+      "author": "0.0._.0_0.",
       "reactions": 4,
-      "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447617086636556471",
-      "content": "反正我时间多的是，每天来顶一下，也让大家看看",
-      "author": "2300011747",
-      "reactions": 3,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1447737130984935536",
-      "content": "🥹",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "✅「已回答」我們有機會提高關注上限嗎"
-    },
-    {
-      "id": "1447535503506280458",
-      "content": "<:agree:1400771815076528258> \n我正在把手繪電繪化",
-      "author": "tanchen0811",
-      "reactions": 3,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1447427658962178129",
-      "content": "I will inquire about it",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1447553477638094898",
-      "content": "Is it intentional for Doresain to target 1hp immune to dmg Doll clone rather tha",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "✅「Answered」Doresain targeting issue"
-    },
-    {
-      "id": "1447729791078895803",
-      "content": "how did you trigger it? did you used the rewind?",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Card bug"
-    },
-    {
-      "id": "1447501560157310986",
-      "content": "same day and time i posted",
-      "author": "hina_kanzaki",
-      "reactions": 1,
-      "channel": "✅「Answered」Dtide W3 Bug"
-    },
-    {
-      "id": "1447423313201598535",
-      "content": "UID:\n100336921",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "✅「已回答」未收到寧妃亞的生日信件"
-    },
-    {
-      "id": "1447438806004273183",
-      "content": "謝謝戈雅",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "✅「已回答」未收到寧妃亞的生日信件"
-    },
-    {
-      "id": "1447522113069121598",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447524074686251080",
-      "content": "🥢",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447529110808297542",
-      "content": "自娛自樂真的不知道該哭還是該笑了",
-      "author": "carrot_chicken",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447445528995696752",
-      "content": "She has elements of it yeah",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "id": "1447459898031079538",
+      "channel_id": "1131839817982947429",
+      "content": "校猫的小巧思之不开紫合金。按照分解公式1金等于3紫反推，1338紫/3=446金",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-12-19",
-  "messages": 213,
-  "unique_authors": 20,
-  "reactions_total": 156,
-  "attachments": 31,
+  "messages": 1047,
+  "unique_authors": 49,
+  "reactions_total": 294,
+  "attachments": 67,
   "channel_activity": {
+    "🔸綜合討論": 834,
     "G Doll Fan Splash Art": 1,
     "Ah, yes. The three genders.": 4,
     "健檢": 93,
@@ -38,32 +39,34 @@
     "1451677796085661888": 1
   },
   "hourly_activity": {
-    "19": 6,
-    "11": 5,
-    "12": 93,
-    "18": 4,
-    "13": 10,
+    "0": 21,
+    "1": 21,
+    "2": 13,
+    "3": 4,
+    "4": 28,
+    "5": 53,
+    "6": 162,
+    "7": 14,
+    "8": 17,
+    "9": 32,
+    "10": 87,
+    "11": 47,
+    "12": 107,
+    "13": 92,
+    "14": 81,
+    "15": 46,
+    "16": 117,
+    "17": 15,
+    "18": 30,
+    "19": 41,
+    "23": 3,
     "20": 11,
-    "14": 4,
-    "15": 9,
-    "16": 9,
-    "4": 18,
-    "9": 6,
-    "17": 2,
-    "2": 5,
-    "0": 12,
-    "1": 2,
-    "5": 2,
-    "6": 2,
-    "8": 4,
-    "7": 2,
     "22": 4,
-    "23": 2,
     "21": 1
   },
   "message_types": {
-    "0": 109,
-    "19": 14
+    "0": 713,
+    "19": 121
   },
   "top_reacted_messages": [
     {
@@ -102,11 +105,35 @@
       "channel": ""
     },
     {
+      "id": "1451462368197349447",
+      "channel_id": "1131839817982947429",
+      "content": "小騎士 輸光..",
+      "author": "heikwok",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1451538467493380229",
       "content": "一則無心的諭言\n一艘偏離航線的船\n編織著命運的線\n一切隨著夢沉入海中\n…\n\n「不要再吞咽這裡的水了。」\n「停止呼吸，余會帶你回到現實。」\n「……余剛剛說了，停止",
       "author": "kk0689",
       "reactions": 9,
       "channel": "圖魯睡覺"
+    },
+    {
+      "id": "1451404907352424540",
+      "channel_id": "1131839817982947429",
+      "content": "~~兩大坨呢？~~",
+      "author": "quackdayo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451463505684463688",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1173463482503536711/1442443113317797968/I",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1451703544494166046",
@@ -116,95 +143,83 @@
       "channel": "💭「Processing」Error 502 - Failed to connect"
     },
     {
+      "id": "1451523135097798746",
+      "channel_id": "1131839817982947429",
+      "content": "原来是看活跃度的吗",
+      "author": "bailuoxiao",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451384273083957478",
+      "channel_id": "1131839817982947429",
+      "content": "😡 \n不管\n唯一的低分就給這個了",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451407225015763157",
+      "channel_id": "1131839817982947429",
+      "content": "這樣才有繁衍狂熱2.0看",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451500611270082666",
+      "channel_id": "1131839817982947429",
+      "content": "攻密人",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451503087595290634",
+      "channel_id": "1131839817982947429",
+      "content": "會有讓男守好好感受一下腫脹之女的腫脹的超展開嗎",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451617188803772568",
+      "channel_id": "1131839817982947429",
+      "content": "我剛入坑，大佬請問這個禮包該課嗎",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451455779856056344",
+      "channel_id": "1131839817982947429",
+      "content": "然後現在才發現那個介面跟別人不一樣由此可見~~其實幾乎沒人注意到這件事~~",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451462940153872384",
+      "channel_id": "1131839817982947429",
+      "content": "看啊，他就像小時候的我",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451488329345401003",
+      "channel_id": "1131839817982947429",
+      "content": "我曾經想過類似的東西……比如說全員變獸人又或者全員變小動物……~~甚至還想過守密人販賣自己的共感娃娃來賺什麼經費之類的……(我懺悔🛐)~~",
+      "author": "shostakovich524",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1451606295504486602",
       "content": "（作者碎碎念：祝各位圣诞节快乐！）\n12月20日～12月25日每天都有一篇小故事，12月26日我将会发一些创作感想，大概是以Q&A的形式，各位与作者（灵感匮乏中",
       "author": "150_ripe",
       "reactions": 4,
       "channel": "银霜节日历（圣诞节贺文）"
-    },
-    {
-      "id": "1451656943046496410",
-      "content": "An overview of Horla in two minutes. Usually these are 60ish seconds, but Horla ",
-      "author": "nechromicon",
-      "reactions": 4,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1451547507749290076",
-      "content": "that IS a cool hat",
-      "author": "thespookboo",
-      "reactions": 3,
-      "channel": "Ah, yes. The three genders."
-    },
-    {
-      "id": "1451571294159245383",
-      "content": "<@633215996508766229> 一个头像到底凭什么卖268，你把你冯算进去了？😅",
-      "author": "rong486",
-      "reactions": 3,
-      "channel": "V2.4.0.12 在线维护公告"
-    },
-    {
-      "id": "1451482161839345780",
-      "content": "May I ask what the intention is behind refusing to process a refund despite havi",
-      "author": ".prayanne",
-      "reactions": 3,
-      "channel": "💭「Processing」Clarification Requested Regarding"
-    },
-    {
-      "id": "1451370454160904273",
-      "content": "with <@1312198151536509081> 's bass lines",
-      "author": "masian131",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1451379617092075592",
-      "content": "||in my bed||",
-      "author": "aegisx",
-      "reactions": 2,
-      "channel": "Who Ryker's Designer pls come talk ?"
-    },
-    {
-      "id": "1451399357042659419",
-      "content": "预告（）",
-      "author": "flim_of_life_burst",
-      "reactions": 2,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1451596037146935550",
-      "content": "<@633215996508766229> 我是厨子也不是给你这样薅钱的吧？一个头像268块一个表情68块？（这还没算汇率）然后再给点时尚小垃圾？你自己想想这合",
-      "author": "_kokawa_",
-      "reactions": 1,
-      "channel": "V2.4.0.12 在线维护公告"
-    },
-    {
-      "id": "1451704886075855069",
-      "content": "It does not have fleeting.",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "✅「Answered」Lex Genis Wrong Description"
-    },
-    {
-      "id": "1451482243049721907",
-      "content": "期待",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1451607230691545239",
-      "content": "期待期待<:emoji_37:1427886907588874262>",
-      "author": "kyoyapity",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1451545840593408060",
-      "content": "勞斯\n好餓～\n好吃好吃好吃好吃<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "圖魯睡覺"
     }
   ]
 }

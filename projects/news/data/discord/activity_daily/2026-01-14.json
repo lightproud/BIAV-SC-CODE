@@ -1,10 +1,31 @@
 {
   "date": "2026-01-14",
-  "messages": 6692,
-  "unique_authors": 154,
-  "reactions_total": 967,
-  "attachments": 312,
+  "messages": 11767,
+  "unique_authors": 212,
+  "reactions_total": 1316,
+  "attachments": 645,
   "channel_activity": {
+    "🔸剧情交流": 40,
+    "🔸晒卡分享": 38,
+    "🔸相位对弈": 79,
+    "🔸交友频道": 10,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 5,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 412,
+    "🔸phòng-chat-tiếng-việt": 1949,
+    "🔸canal-español": 276,
+    "🔸canal-português": 114,
+    "🔸ruang-obrolan-indonesia": 7,
+    "🔸ห้องสนทนาภาษาไทย": 180,
+    "🔸traphase": 322,
+    "🔸lore-chat": 201,
+    "🔸lets-count": 27,
+    "🔸team-building": 269,
+    "🔸general-chat": 367,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 745,
+    "🔸机器人命令┊bot-commands": 23,
     "🔸綜合討論": 271,
     "🔸阵容构建": 6,
     "🔸morimens-game-chat": 6321,
@@ -32,35 +53,34 @@
     "1445556242381672559": 7
   },
   "hourly_activity": {
-    "0": 342,
-    "1": 89,
-    "3": 323,
-    "4": 158,
-    "5": 142,
-    "6": 323,
-    "7": 83,
-    "8": 262,
-    "9": 248,
-    "10": 140,
-    "11": 311,
-    "12": 468,
-    "13": 508,
-    "14": 556,
-    "15": 453,
-    "16": 39,
-    "17": 304,
-    "18": 232,
-    "19": 120,
-    "2": 719,
-    "20": 166,
-    "21": 198,
-    "22": 73,
-    "23": 435
+    "5": 369,
+    "6": 515,
+    "7": 181,
+    "13": 941,
+    "1": 218,
+    "2": 985,
+    "9": 465,
+    "4": 395,
+    "8": 291,
+    "12": 793,
+    "14": 758,
+    "15": 670,
+    "18": 395,
+    "23": 584,
+    "0": 411,
+    "3": 982,
+    "11": 423,
+    "17": 504,
+    "10": 498,
+    "16": 430,
+    "19": 208,
+    "20": 218,
+    "21": 334,
+    "22": 199
   },
   "message_types": {
-    "19": 1713,
-    "0": 4883,
-    "46": 2
+    "0": 3947,
+    "19": 1128
   },
   "top_reacted_messages": [
     {
@@ -83,6 +103,22 @@
       "author": "exhibitionism",
       "reactions": 19,
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1460951571931074592",
+      "channel_id": "1326453763355185215",
+      "content": "She's so clingy give her that cookie (keeper) <:Tawil_loneliness:146015873811034",
+      "author": "seelkadoom0",
+      "reactions": 14,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1460845325525717256",
+      "channel_id": "1400750050208125010",
+      "content": "and has her niche of being racist to fish",
+      "author": "rain_scarlet",
+      "reactions": 12,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1460882071185788978",
@@ -122,6 +158,14 @@
       "author": "reya.li",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460983595031199745",
+      "channel_id": "1173463482503536711",
+      "content": "~~守密人被动技能是给别人放自己过去的一生的vcr吗~~",
+      "author": "navirecorbeau",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1461037342818173032",
@@ -194,29 +238,6 @@
       "author": "princess.goth",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1460828182226669662",
-      "content": "",
-      "author": "ice_storys",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1460787416838176788",
-      "channel_id": "1131839817982947429",
-      "content": "助戰更新",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1460876246228537489",
-      "channel_id": "1131839817982947429",
-      "content": "以后不能玩愉快的算力大赛了",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,33 @@
 {
   "date": "2026-01-10",
-  "messages": 7749,
-  "unique_authors": 158,
-  "reactions_total": 1020,
-  "attachments": 340,
+  "messages": 13661,
+  "unique_authors": 208,
+  "reactions_total": 1336,
+  "attachments": 658,
   "channel_activity": {
+    "🔸剧情交流": 48,
+    "🔸晒卡分享": 10,
+    "🔸相位对弈": 29,
+    "🔸课间休息闲聊": 2,
+    "🔸交友频道": 2,
+    "🔸日本語チャンネル": 15,
+    "🔸한국어-채팅방": 5,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 208,
+    "🔸phòng-chat-tiếng-việt": 1621,
+    "🔸canal-español": 106,
+    "🔸canal-português": 206,
+    "🔸ruang-obrolan-indonesia": 74,
+    "🔸ห้องสนทนาภาษาไทย": 300,
+    "🔸traphase": 160,
+    "🔸lore-chat": 222,
+    "🔸lets-count": 12,
+    "🔸team-building": 520,
+    "🔸general-chat": 511,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 1804,
+    "🔸游戏问题": 9,
+    "🔸机器人命令┊bot-commands": 31,
     "🔸綜合討論": 1075,
     "🔸阵容构建": 77,
     "🔸morimens-game-chat": 6481,
@@ -29,34 +52,35 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "0": 209,
-    "2": 103,
-    "3": 263,
-    "4": 434,
-    "5": 197,
-    "6": 91,
-    "7": 356,
-    "8": 290,
-    "9": 311,
-    "10": 134,
-    "11": 241,
-    "12": 181,
-    "13": 813,
-    "14": 753,
-    "15": 519,
-    "16": 160,
-    "17": 622,
-    "18": 562,
-    "19": 525,
-    "20": 259,
-    "21": 72,
-    "23": 181,
-    "1": 97,
-    "22": 376
+    "2": 243,
+    "5": 742,
+    "8": 564,
+    "10": 488,
+    "11": 469,
+    "12": 550,
+    "13": 1057,
+    "16": 781,
+    "17": 1136,
+    "6": 654,
+    "15": 781,
+    "7": 753,
+    "21": 122,
+    "9": 533,
+    "14": 970,
+    "0": 274,
+    "1": 174,
+    "23": 231,
+    "4": 528,
+    "3": 544,
+    "18": 610,
+    "22": 499,
+    "19": 570,
+    "20": 388
   },
   "message_types": {
-    "0": 5583,
-    "19": 2050
+    "0": 4484,
+    "19": 1425,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -88,6 +112,14 @@
       "author": "satachan",
       "reactions": 11,
       "channel": "Possibilty of rebalancing Wanda?"
+    },
+    {
+      "id": "1459433258856218806",
+      "channel_id": "1174983699935277147",
+      "content": "塔薇！",
+      "author": "jutta.l.",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1459545164036046934",
@@ -128,6 +160,14 @@
       "author": "princess.goth",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1459379758826524725",
+      "channel_id": "1300659662311526512",
+      "content": "<@276521152245923840>",
+      "author": "im_kike",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1459412006036570243",
@@ -200,22 +240,6 @@
       "author": "hammer2830",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1459371976677130535",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1459559695890255965",
-      "channel_id": "1131839817982947429",
-      "content": "我在視姦的是用摸蝦入坑3天就打到第八章的新手",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

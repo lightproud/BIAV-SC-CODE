@@ -1,10 +1,13 @@
 {
   "date": "2025-12-07",
-  "messages": 64,
-  "unique_authors": 15,
-  "reactions_total": 167,
-  "attachments": 21,
+  "messages": 4637,
+  "unique_authors": 188,
+  "reactions_total": 658,
+  "attachments": 208,
   "channel_activity": {
+    "🔸綜合討論": 1179,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 3391,
     "Nymphaea!": 5,
     "xmas castor": 6,
     "Tulu painting 💚": 4,
@@ -32,30 +35,35 @@
     "1447283719843872808": 5
   },
   "hourly_activity": {
-    "12": 4,
-    "13": 1,
-    "14": 8,
-    "17": 5,
-    "15": 6,
+    "0": 421,
+    "1": 348,
+    "2": 429,
+    "3": 545,
+    "4": 499,
+    "5": 220,
+    "6": 549,
+    "7": 358,
+    "8": 81,
+    "9": 191,
+    "10": 386,
+    "11": 25,
+    "12": 41,
+    "13": 56,
+    "14": 86,
+    "15": 230,
+    "16": 89,
+    "17": 9,
+    "18": 56,
+    "22": 6,
     "20": 5,
     "23": 5,
-    "19": 2,
-    "0": 6,
-    "5": 3,
-    "11": 2,
-    "1": 1,
-    "16": 2,
-    "2": 1,
-    "6": 2,
-    "22": 4,
-    "18": 3,
-    "9": 2,
-    "4": 1,
-    "3": 1
+    "19": 2
   },
   "message_types": {
-    "0": 19,
-    "19": 6
+    "0": 3384,
+    "19": 1184,
+    "20": 4,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -101,95 +109,116 @@
       "channel": "菲茵特"
     },
     {
-      "id": "1447052063036018771",
-      "content": "I encounter this issue all the time in regular games and traphase, today's boss ",
-      "author": "vigrace6",
-      "reactions": 4,
-      "channel": "💭「Processing」Bug/poor design with 'stacked' hand"
+      "id": "1447153907162939403",
+      "channel_id": "1131839817982947429",
+      "content": "80等了",
+      "author": "dog794",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447034682397954231",
-      "content": "He's my favorite npc 👌",
-      "author": "happyskull",
-      "reactions": 3,
-      "channel": "William painting"
+      "id": "1447160122995642399",
+      "channel_id": "1131839817982947429",
+      "content": "差点打不过<:dead:1356082627509092372>",
+      "author": "ling_an_",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447234089236168835",
-      "content": "蛐蛐空间所有人都在发圣诞帽于是摸了……不过不是还有十多天才到圣诞吗（挠头）",
-      "author": "yuuuuuuu__0103",
-      "reactions": 3,
-      "channel": "重开个存档楼）"
-    },
-    {
-      "id": "1447374541629161634",
-      "content": "aww, adorable as well! these both are very cute, thank you for sharing :D",
-      "author": "hallowednebulae",
-      "reactions": 1,
-      "channel": "xmas castor"
-    },
-    {
-      "id": "1447323980468977855",
-      "content": "it turned out nice <:agree:1400771815076528258>",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Tulu painting 💚"
-    },
-    {
-      "id": "1447184519961645151",
-      "content": "The girl that brings misfortune by Kikuohana",
-      "author": "kirikonuto",
-      "reactions": 1,
-      "channel": "The girl that brings misfortune (Aigis)"
-    },
-    {
-      "id": "1447021566784438424",
-      "content": "William mentioned wherever William is I am there",
-      "author": "velvetrene._cake",
-      "reactions": 1,
-      "channel": "William painting"
-    },
-    {
-      "id": "1447265641848639611",
+      "id": "1447109884096020510",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "ququ12358",
-      "reactions": 1,
-      "channel": "✅「已回答」繁中PC端黑屏"
+      "author": "quackdayo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447242270167535849",
-      "content": "手繪杜勒",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1447246380807487619",
-      "content": "抓到了是FB友列<:agree:1400771815076528258> 畫好好看我再吸一口",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1447239552509939916",
-      "content": "太強了 好帥的兒子 故事也寫的好好",
-      "author": "kyoyapity",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1447242391626186832",
-      "content": "不用謝 這個精細度真的太強了",
-      "author": "kyoyapity",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1447069504403407069",
-      "content": "还有这个<:wish:1356084702468899117>",
+      "id": "1447238714689458277",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
       "author": "sweet_25367",
-      "reactions": 1,
-      "channel": ""
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447032902058774578",
+      "channel_id": "1131839817982947429",
+      "content": "35抽||6金||\n300抽||8啟||\n為什麼角色比命輪好抽",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447060132952408176",
+      "channel_id": "1131839817982947429",
+      "content": "扒拉助战看到的",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447213801446310050",
+      "channel_id": "1131839817982947429",
+      "content": "這位兄弟你不是2.0的嗎",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447017543100272640",
+      "channel_id": "1170692781216378960",
+      "content": "I can't tell if this is stronger or weaker than the starting sr team",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447034319305572473",
+      "channel_id": "1131839817982947429",
+      "content": "卧草有夠G8",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447131010230653029",
+      "channel_id": "1131839817982947429",
+      "content": "赤石界传来喜讯",
+      "author": "zdttjqxwxmzs",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447122438910378126",
+      "channel_id": "1170692781216378960",
+      "content": "Frikie",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447104006030622801",
+      "channel_id": "1131839817982947429",
+      "content": "堵爛賽陰",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447188490273161389",
+      "channel_id": "1131839817982947429",
+      "content": "80抽補了三隻皮<:M_satisfy:1400771690321154110>",
+      "author": "partycatss.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447197379525607494",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

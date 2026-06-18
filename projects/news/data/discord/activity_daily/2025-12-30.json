@@ -1,10 +1,12 @@
 {
   "date": "2025-12-30",
-  "messages": 140,
-  "unique_authors": 23,
-  "reactions_total": 751,
-  "attachments": 31,
+  "messages": 1038,
+  "unique_authors": 48,
+  "reactions_total": 965,
+  "attachments": 69,
   "channel_activity": {
+    "🔸綜合討論": 892,
+    "🔸阵容构建": 6,
     "I errr....": 16,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 8,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
@@ -39,30 +41,33 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
-    "0": 5,
-    "4": 29,
-    "8": 11,
-    "10": 3,
-    "12": 15,
-    "13": 9,
-    "7": 19,
-    "16": 2,
+    "0": 9,
+    "1": 14,
+    "2": 9,
+    "3": 16,
+    "4": 69,
+    "5": 17,
+    "6": 21,
+    "7": 58,
+    "8": 54,
+    "9": 132,
+    "10": 147,
+    "11": 137,
+    "12": 162,
+    "13": 33,
+    "14": 66,
+    "15": 22,
+    "16": 24,
+    "17": 33,
+    "18": 5,
+    "23": 2,
     "19": 2,
     "21": 5,
-    "23": 1,
-    "3": 4,
-    "6": 13,
-    "9": 6,
-    "11": 4,
-    "17": 6,
-    "5": 1,
-    "18": 3,
-    "14": 1,
     "22": 1
   },
   "message_types": {
-    "0": 19,
-    "19": 8
+    "0": 753,
+    "19": 145
   },
   "top_reacted_messages": [
     {
@@ -87,6 +92,38 @@
       "channel": ""
     },
     {
+      "id": "1455451486699130900",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455627296819122353",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fym0701",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455461441065980027",
+      "channel_id": "1131839817982947429",
+      "content": "全裸打領帶是吧 發給你了不用謝",
+      "author": "a4485",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455466900007031020",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1455444851993739284",
       "content": "✦为大家奉上茉夏的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Mouchette as a so",
       "author": "morimensstaff01",
@@ -99,6 +136,38 @@
       "author": "morimensstaff01",
       "reactions": 7,
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
+    },
+    {
+      "id": "1455500379344080947",
+      "channel_id": "1131839817982947429",
+      "content": "谢谢你杜勒",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455564577168167047",
+      "channel_id": "1131839817982947429",
+      "content": "我還在努力無靈芝H4-10 輸光",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455582736185167975",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455472755607732379",
+      "channel_id": "1131839874132090890",
+      "content": "第一次过5-5<:A_pinch:1432980538536493057>",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
     },
     {
       "id": "1455444963687927882",
@@ -122,88 +191,36 @@
       "channel": "Add Tags to Awakeners and Cards"
     },
     {
-      "id": "1455689712667856948",
-      "content": "A simple guide and showcase video so new players can get a grasp of Mouchette's ",
-      "author": "frosthief",
+      "id": "1455428864967708723",
+      "channel_id": "1131839817982947429",
+      "content": "懂了，我的未來不忍直視",
+      "author": "ernest_heart",
       "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455520211636715634",
-      "content": "This Is annoying as shit. Thank you",
-      "author": "uchodotprichoda",
-      "reactions": 4,
-      "channel": "V2.4.1.2 在线维护公告"
-    },
-    {
-      "id": "1455352602471698483",
-      "content": "Woow, I didn't expect for the reaction.\nI guess I will make some of these again.",
-      "author": "shiio4870",
-      "reactions": 3,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455506674201657385",
-      "content": "Of course it is! it's Corpo!",
-      "author": "shiio4870",
-      "reactions": 3,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455399500750262312",
-      "content": "<#1180845276823564288> \n问问N可能实装吗？三权柱就N没有实装了，而且这个人设感觉也挺有意思的，想看N的繁衍剧情，不知道他这个性格会干啥。",
-      "author": "0399_ryomina",
-      "reactions": 3,
-      "channel": "Is there any chance that N could be added to the game? N有可能实装吗？"
-    },
-    {
-      "id": "1455429577710112941",
+      "id": "1455428962539802824",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "aegisx",
-      "reactions": 2,
-      "channel": "Who Ryker's Designer pls come talk ?"
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455463157278576754",
-      "content": "Thank you for the suggestion. The project team will adopt it. However, this feat",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?"
+      "id": "1455485843375525911",
+      "channel_id": "1131839817982947429",
+      "content": "帶跨越疼痛吧 ~~畢竟你都玩杜勒了 他的強度一定讓你很痛吧~~",
+      "author": "ailiduo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1455674884712829139",
-      "content": "At the moment, the effect of the wheel is just not present in Pure chaos.\nCould ",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1455557484696703181",
-      "content": "I'll see what I can do",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455540122991722578",
-      "content": "那就改成「抽到此卡的回合，若出牌數少於等於三」",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」症狀卡「多疑」效果疑不完全"
-    },
-    {
-      "id": "1455635547971391560",
-      "content": "多疑的效果實際上為\n抽到後，給予一層狀態 症狀：多疑”若本回合打出卡牌少於等於3張,下回合額外獲得2點算力。”\n實際並不是卡牌計算並給予後續效果\n是狀態計算並給",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」症狀卡「多疑」效果疑不完全"
-    },
-    {
-      "id": "1455423046687916032",
-      "content": "<:A_pinch:1432980538536493057>",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "✅「Answered」Pursuit does not count towards Mouchette's wheel"
+      "id": "1455488236615893178",
+      "channel_id": "1131839817982947429",
+      "content": "QWYL-GDYC-HVLG",
+      "author": "ailiduo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

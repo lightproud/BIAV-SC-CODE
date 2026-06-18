@@ -1,10 +1,12 @@
 {
   "date": "2025-12-24",
-  "messages": 297,
-  "unique_authors": 28,
-  "reactions_total": 438,
-  "attachments": 27,
+  "messages": 1620,
+  "unique_authors": 59,
+  "reactions_total": 661,
+  "attachments": 85,
   "channel_activity": {
+    "🔸綜合討論": 1321,
+    "🔸阵容构建": 2,
     "Morimens inspired": 8,
     "Uvash and Leigh": 33,
     "Senior William doodles": 2,
@@ -56,31 +58,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "9": 24,
-    "12": 7,
-    "14": 14,
-    "5": 1,
-    "8": 42,
-    "10": 22,
-    "1": 3,
-    "15": 60,
-    "16": 15,
+    "0": 5,
+    "1": 13,
+    "2": 23,
+    "3": 35,
+    "4": 23,
+    "5": 72,
+    "6": 124,
+    "7": 75,
+    "8": 84,
+    "9": 64,
+    "10": 117,
+    "11": 240,
+    "12": 122,
+    "13": 144,
+    "14": 172,
+    "15": 212,
+    "16": 30,
+    "17": 36,
+    "18": 1,
+    "20": 4,
+    "21": 6,
+    "23": 12,
     "22": 2,
-    "23": 2,
-    "11": 5,
-    "0": 2,
-    "4": 8,
-    "13": 19,
-    "17": 22,
-    "6": 5,
-    "7": 36,
-    "2": 1,
-    "19": 4,
-    "3": 3
+    "19": 4
   },
   "message_types": {
-    "0": 125,
-    "19": 44
+    "0": 1014,
+    "19": 309
   },
   "top_reacted_messages": [
     {
@@ -119,11 +124,51 @@
       "channel": "Uvash and Leigh"
     },
     {
+      "id": "1453204111754530989",
+      "channel_id": "1131839874132090890",
+      "content": "奇奇怪怪的略低配400",
+      "author": "qoob",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1453369266853380231",
+      "channel_id": "1131839874132090890",
+      "content": "不好意思打扰大家，我是蘿坦，我中了出血、麻痺、遲緩、纏繞、石化、眩晕，中毒，重創，死鬥，延遲破綻，易傷，虛弱，行動封鎖，狂氣封鎖，空虛，強效降低，嘲諷，破綻😭😭",
+      "author": "nahida._90",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1453433210099859539",
       "content": "考虑到我们产能非常宝贵，还是希望留出一些时间来继续《忘却前夜》自己的故事。",
       "author": "game.producer.light",
       "reactions": 7,
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453223913566765128",
+      "channel_id": "1131839817982947429",
+      "content": "我們舊時代的愚民好強啊\n沒有全隊90就能打過",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453348532206436448",
+      "channel_id": "1131839817982947429",
+      "content": "然後今期融災米拉還一直召粉魚，但沒國籍\n<:Clown:1400771541423226971>",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453349319628296315",
+      "channel_id": "1131839817982947429",
+      "content": "給我",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1453440638874943670",
@@ -140,88 +185,59 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
+      "id": "1453254941488713799",
+      "channel_id": "1131839817982947429",
+      "content": "蛐蛐1288k血🙄 💅",
+      "author": "dog794",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453343867062583399",
+      "channel_id": "1131839817982947429",
+      "content": "不夠黑心，不如每超過6～8回合降低上限算力，狂氣恢復減半+現有狂氣減半",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453344120058941462",
+      "channel_id": "1131839817982947429",
+      "content": "點滿靈塑給他+36了都",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453347992152182974",
+      "channel_id": "1131839817982947429",
+      "content": "該把珊丟進限定池了",
+      "author": "partycatss.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453364558180646993",
+      "channel_id": "1131839817982947429",
+      "content": "我在想鯊魚超限的高奢版4倍基傷刃威，能不能被新角1費印出來",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453424177800282315",
+      "channel_id": "1131839817982947429",
+      "content": "恭喜，低保拿啦",
+      "author": "ququ12358",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1453352846324928654",
       "content": "端上来了，来吃",
       "author": "morimensstaff01",
       "reactions": 4,
       "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1453224617110933525",
-      "content": "只是因為用的隊伍不是什麼很容易翻車的東西才沒出大事",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
-    },
-    {
-      "id": "1453416133515284622",
-      "content": "最近这段时间事务比较多，大家都忙得团团转，但也正因为如此，我们对未来的方向有了更多清晰的规划，会为大家尽全力把这些愿景一一点亮。\n转眼之间，看到了 rrkk00",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🐱light’s-nest"
-    },
-    {
-      "id": "1453432988271382771",
-      "content": "聖誕節快樂💖\n可惡，要是這篇晚點出就好了(",
-      "author": "shostakovich524",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1453433101345882185",
-      "content": "因为涉及不同的代理商、多家公司授权，情况会比较复杂，但我们会非常希望也会尽力让全地区内容保持统一。",
-      "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453434233895784560",
-      "content": "That is a nice approach, thank you for the clarifications",
-      "author": "vxvendetta97",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453435563695804697",
-      "content": "也就是你们把人家看板娘永久拐过来了",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453466223869165691",
-      "content": "關於蘿坦桀驁之刃覺醒與未覺醒之間的bug，我比較習慣起手覺醒所以沒怎麼注意到，但據說這個bug已經存在很長時間\n\n長痛不如短痛，蘿坦目前強度屬於偏低的那一批角色",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug"
-    },
-    {
-      "id": "1453402029702779024",
-      "content": "How do you deal damage in this game.\n\nYou're an another specimen who I need repl",
-      "author": "thpdom",
-      "reactions": 2,
-      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1453329788050866196",
-      "content": "Kk, tnx, mostly to be fair to the community and limit animosity",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1453297215023087689",
-      "content": "这个正常是要收录的，不收录是bug",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」什麼樣的造物會被收藏？"
-    },
-    {
-      "id": "1453299660197330975",
-      "content": "已经安排添加了，感谢守密人的反馈，会尽快更新<:proud:1400771683664658433>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」什麼樣的造物會被收藏？"
     }
   ]
 }

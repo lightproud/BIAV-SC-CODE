@@ -1,10 +1,13 @@
 {
   "date": "2025-12-02",
-  "messages": 207,
-  "unique_authors": 31,
-  "reactions_total": 357,
-  "attachments": 73,
+  "messages": 17884,
+  "unique_authors": 444,
+  "reactions_total": 4477,
+  "attachments": 729,
   "channel_activity": {
+    "🔸綜合討論": 4428,
+    "🔸阵容构建": 144,
+    "🔸morimens-game-chat": 13105,
     "Stolen memes of the day": 2,
     "Caecus 🐠": 1,
     "hi morimens meme dump (ooc warning me and oomf were goofing aruond)": 1,
@@ -65,36 +68,78 @@
     "1441326394817908736": 7
   },
   "hourly_activity": {
-    "5": 7,
-    "13": 14,
-    "2": 12,
-    "0": 5,
-    "8": 11,
-    "10": 13,
-    "11": 7,
-    "16": 5,
-    "17": 11,
-    "20": 3,
-    "18": 4,
-    "15": 12,
-    "14": 17,
-    "12": 32,
-    "1": 6,
-    "19": 2,
-    "21": 1,
-    "7": 10,
-    "4": 16,
-    "9": 4,
-    "6": 8,
-    "3": 4,
-    "22": 3
+    "0": 660,
+    "1": 633,
+    "2": 1048,
+    "3": 914,
+    "4": 1871,
+    "5": 2253,
+    "6": 1523,
+    "7": 1188,
+    "8": 958,
+    "9": 563,
+    "10": 630,
+    "11": 597,
+    "12": 560,
+    "13": 757,
+    "14": 665,
+    "15": 644,
+    "16": 384,
+    "17": 212,
+    "18": 412,
+    "19": 216,
+    "20": 294,
+    "21": 321,
+    "22": 144,
+    "23": 437
   },
   "message_types": {
-    "0": 47,
-    "19": 10,
-    "6": 1
+    "0": 11765,
+    "19": 5908,
+    "20": 3,
+    "46": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1445280911401685042",
+      "channel_id": "1131839817982947429",
+      "content": "@everyone “我们会将Raid 开放时间提前两天，立即开放第三个和第四个BOSS。以确保活动期间尽可能让所有时区的Keeper都能参与。”\n\n具体实装生",
+      "author": "game.producer.light",
+      "reactions": 149,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1445282614104821932",
+      "channel_id": "1170692781216378960",
+      "content": "Regarding the sex toy incident from about a year ago, I’ve seen that some people",
+      "author": "game.producer.light",
+      "reactions": 85,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445281797100540017",
+      "channel_id": "1170692781216378960",
+      "content": "“We will bring the Raid start time forward by two days and immediately unlock th",
+      "author": "game.producer.light",
+      "reactions": 63,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445263306033070200",
+      "channel_id": "1131839817982947429",
+      "content": "我们会将Raid 开放时间提前两天，立即开放第三个和第四个BOSS。以确保活动期间尽可能让所有时区的Keeper都能参与。@here",
+      "author": "game.producer.light",
+      "reactions": 57,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1445263505216507904",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone We will bring the Raid start time forward by two days and immediately ",
+      "author": "game.producer.light",
+      "reactions": 47,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1445393603261104170",
       "content": "代大尤老师一生之敌投\nuid100028052",
@@ -117,6 +162,14 @@
       "channel": ""
     },
     {
+      "id": "1445285514155659335",
+      "channel_id": "1131839817982947429",
+      "content": "“at 所有人，因为玩家打的太快，所以我们决定提前发售飞机杯，让大家都撸的高兴”",
+      "author": "xyakoto",
+      "reactions": 26,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1445247260014280734",
       "content": "My most reliable 🥰\n\nUID: 101274471",
       "author": "yukisetsura",
@@ -124,11 +177,27 @@
       "channel": "Caecus 🐠"
     },
     {
+      "id": "1445282699903500451",
+      "channel_id": "1170692781216378960",
+      "content": "I disagree, bring back the Thais cup",
+      "author": "kezrin",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1445337602738753596",
       "content": "Hes on all four",
       "author": "su_pp",
       "reactions": 22,
       "channel": "Pickman, Drawing without anatomy guide, wishing for the best for my poor brain"
+    },
+    {
+      "id": "1445407710924243034",
+      "channel_id": "1170692781216378960",
+      "content": "We need moar",
+      "author": "legendaryredz",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1445424300197675050",
@@ -145,95 +214,44 @@
       "channel": "Mini-rimens"
     },
     {
-      "id": "1445494642249433212",
-      "content": "畫了醫生",
-      "author": "souri.10244",
+      "id": "1445274262205235200",
+      "channel_id": "1170692781216378960",
+      "content": "You don't want to pick this fight. 1 CN complainer has the fortitude of 5 global",
+      "author": "hitsu4",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445283777856274504",
+      "channel_id": "1170692781216378960",
+      "content": "It was a misguided idea proposal, and at the time I wanted to ask everyone’s opi",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445282729250787421",
+      "channel_id": "1170692781216378960",
+      "content": "No no no it was a good idea",
+      "author": "flares117",
       "reactions": 15,
-      "channel": "蓋個圖樓"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1445363989411270739",
-      "content": "I doodled Karen and Aigis because I was bored<:scared1:1356053141816213507> <:Fe",
-      "author": "l0tusg4rd3n",
-      "reactions": 13,
-      "channel": "Some doodles"
+      "id": "1445293326633930822",
+      "channel_id": "1170692781216378960",
+      "content": "CN and Global after tonight",
+      "author": "velmi",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1445434185182613555",
-      "content": "",
-      "author": "imfreakyandiknowit",
-      "reactions": 12,
-      "channel": "I just wanna draw my favs"
-    },
-    {
-      "id": "1445321631026384998",
-      "content": "我已經參透你們這群落難男的話術了 看看你們一個個舔得跟什麼一樣（X",
-      "author": "carrot_chicken",
-      "reactions": 11,
-      "channel": ""
-    },
-    {
-      "id": "1445372464019406969",
-      "content": "Русская версия постера🌹 \n \n—— сделана российской организацией 【Morimens Ru Info ",
-      "author": "morimensstaff01",
-      "reactions": 10,
-      "channel": "V2.4.0.7 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1445343477440319488",
-      "content": "守密人你好：\n       弥萨格大学校务处将于12月2日17:20(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
-      "author": "morimensstaff02",
-      "reactions": 10,
-      "channel": "V2.4.0.9 在线维护公告"
-    },
-    {
-      "id": "1445428856642342942",
-      "content": "讓我想起某張圖",
-      "author": "tsubaki9884",
-      "reactions": 10,
-      "channel": ""
-    },
-    {
-      "id": "1445461612696830194",
-      "content": "Anyway just rough lines, because if i color her i might as well just dip my ball",
-      "author": "su_pp",
-      "reactions": 7,
-      "channel": "Morimens things"
-    },
-    {
-      "id": "1445398486014103672",
-      "content": "ai smell...",
-      "author": "meatloversus",
-      "reactions": 6,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1445401355081482311",
-      "content": "我新入坑的，想问下全服限时限次的意义是什么？每个人固定次数、活动期间内限时，众生平等不就好了？这两天打的上头还跟朋友推呢，结果上来整这一出啊👍",
-      "author": "xiaohuo1554",
-      "reactions": 6,
-      "channel": "V2.4.0.9 在线维护公告"
-    },
-    {
-      "id": "1445429741179113662",
-      "content": "管家的腿，管家老婆的手\n讓他們的戀情隔層軀幹",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1445427476552618188",
-      "content": "https://tenor.com/view/rowing-australia-mens-four-rowing-team-nbc-olympics-paddl",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1445287729419124737",
-      "content": "omg that's my Murphies and the cats art",
-      "author": "lotusbunyee",
-      "reactions": 4,
-      "channel": "Stolen memes of the day"
+      "id": "1445407667710328906",
+      "channel_id": "1170692781216378960",
+      "content": "Not enough Celeste here",
+      "author": "legendaryredz",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,31 @@
 {
   "date": "2026-01-26",
-  "messages": 12729,
-  "unique_authors": 275,
-  "reactions_total": 1991,
-  "attachments": 687,
+  "messages": 19848,
+  "unique_authors": 285,
+  "reactions_total": 2601,
+  "attachments": 1164,
   "channel_activity": {
+    "🔸剧情交流": 15,
+    "🔸晒卡分享": 40,
+    "🔸交友频道": 5,
+    "🔸日本語チャンネル": 32,
+    "🔸한국어-채팅방": 13,
+    "🔸deutscher-chatraum": 2,
+    "🔸русский-канал": 497,
+    "🔸phòng-chat-tiếng-việt": 1028,
+    "🔸canal-español": 672,
+    "🔸canal-português": 174,
+    "🔸ruang-obrolan-indonesia": 369,
+    "🔸ห้องสนทนาภาษาไทย": 748,
+    "🔸traphase": 163,
+    "🔸lore-chat": 190,
+    "🔸lets-count": 20,
+    "🔸team-building": 434,
+    "🔸general-chat": 1854,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 687,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 166,
     "🔸綜合討論": 2394,
     "🔸morimens-game-chat": 10227,
     "剛入坑，求配隊🙏": 2,
@@ -40,36 +61,35 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "0": 649,
-    "1": 558,
-    "2": 617,
-    "3": 733,
-    "4": 533,
-    "5": 863,
-    "6": 781,
-    "7": 508,
-    "8": 644,
-    "9": 540,
-    "10": 529,
-    "11": 685,
-    "12": 692,
-    "13": 514,
-    "14": 497,
-    "15": 628,
-    "16": 452,
-    "17": 332,
-    "18": 225,
-    "19": 313,
-    "20": 491,
-    "21": 662,
-    "22": 209,
-    "23": 74
+    "3": 1430,
+    "4": 1299,
+    "9": 735,
+    "10": 655,
+    "12": 1173,
+    "13": 1069,
+    "2": 986,
+    "5": 1196,
+    "7": 832,
+    "11": 1063,
+    "14": 761,
+    "22": 367,
+    "1": 679,
+    "21": 836,
+    "6": 987,
+    "8": 984,
+    "20": 557,
+    "0": 724,
+    "15": 750,
+    "16": 931,
+    "17": 576,
+    "18": 473,
+    "23": 260,
+    "19": 525
   },
   "message_types": {
-    "0": 8711,
-    "19": 3907,
-    "23": 2,
-    "46": 1
+    "0": 5586,
+    "19": 1532,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -117,6 +137,22 @@
       "channel": "Regarding Absolute axiom (+12) on limited characters"
     },
     {
+      "id": "1465389568344723516",
+      "channel_id": "1400750050208125010",
+      "content": "<@1228697861764550759> tf u want",
+      "author": "phi_squared",
+      "reactions": 13,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1465390986719920139",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/perlica-arknights-endfield-paypal-hacked-gif-219761166336",
+      "author": "bagels5899",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1465442292075855902",
       "content": "Redz's take about OE would be interesting.\nThe moment you have your over exalt b",
       "author": "sexysneakystoat1625",
@@ -146,6 +182,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1465214445897646171",
+      "channel_id": "1174983699935277147",
+      "content": "我剛剛只是點了一下",
+      "author": "candy1corn",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1465468112777515213",
       "channel_id": "1170692781216378960",
       "content": "<:g_frog_waving:1393238926252052563>",
@@ -162,68 +206,44 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1465212569563431078",
+      "channel_id": "1174983699935277147",
+      "content": "65抽3啟+0疊",
+      "author": "cwz.io",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1465309420337496196",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "_buqi",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1465282379290640396",
+      "channel_id": "1194835209242296410",
+      "content": "更新一下。",
+      "author": "dittoqwq",
+      "reactions": 7,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1465392027704365379",
+      "channel_id": "1400750050208125010",
+      "content": "🆘",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1465219465074708561",
       "channel_id": "1131839817982947429",
       "content": "靠北\n我只抽了這五抽",
       "author": "candy1corn",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1465294521310122149",
-      "channel_id": "1131839817982947429",
-      "content": "期间抽到了零个弥利",
-      "author": "jiangzehuai",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1465181080733880493",
-      "channel_id": "1170692781216378960",
-      "content": "this does not bode well",
-      "author": "flares117",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465181249940230305",
-      "channel_id": "1170692781216378960",
-      "content": "wow Karen wheel on Xu is actually cracked",
-      "author": "cornonthemacabre_",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465181389895762002",
-      "channel_id": "1170692781216378960",
-      "content": "stay tuned my ass forget this game im ngl",
-      "author": "yurichansnails",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465239154416943266",
-      "channel_id": "1170692781216378960",
-      "content": "https://cdn.discordapp.com/attachments/1453691146101457019/1465231099960754348/i",
-      "author": "frosthief",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465440736353718273",
-      "channel_id": "1170692781216378960",
-      "content": "The 6/7? it’s like quality tier. Max is 8 from what I’ve seen",
-      "author": "frosthief",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465467670790148289",
-      "channel_id": "1170692781216378960",
-      "content": "I mean people would buy clown 24 just for the memes XD",
-      "author": "zyocuh",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

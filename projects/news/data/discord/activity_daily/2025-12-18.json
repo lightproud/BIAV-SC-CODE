@@ -1,10 +1,12 @@
 {
   "date": "2025-12-18",
-  "messages": 181,
-  "unique_authors": 27,
-  "reactions_total": 148,
-  "attachments": 45,
+  "messages": 1777,
+  "unique_authors": 45,
+  "reactions_total": 468,
+  "attachments": 152,
   "channel_activity": {
+    "🔸綜合討論": 1593,
+    "🔸阵容构建": 3,
     "Pencil art": 3,
     "hi morimens meme dump (ooc warning me and oomf were goofing aruond)": 2,
     "By the Silver Key Advice": 6,
@@ -39,33 +41,34 @@
     "1451073706427285677": 3
   },
   "hourly_activity": {
+    "0": 51,
+    "1": 28,
+    "2": 204,
+    "3": 25,
+    "4": 65,
+    "5": 23,
+    "6": 74,
+    "7": 133,
+    "8": 117,
+    "9": 82,
+    "10": 44,
+    "11": 38,
+    "12": 91,
+    "13": 24,
+    "14": 230,
+    "15": 214,
+    "16": 187,
+    "17": 57,
+    "18": 23,
+    "20": 3,
+    "22": 11,
+    "23": 39,
     "21": 13,
-    "3": 5,
-    "5": 11,
-    "4": 16,
-    "6": 12,
-    "7": 14,
-    "13": 13,
-    "14": 5,
-    "17": 5,
-    "20": 1,
-    "9": 25,
-    "11": 9,
-    "15": 1,
-    "16": 4,
-    "23": 1,
-    "8": 15,
-    "10": 9,
-    "22": 8,
-    "19": 1,
-    "18": 1,
-    "0": 7,
-    "2": 3,
-    "12": 2
+    "19": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "19": 337,
+    "0": 1259
   },
   "top_reacted_messages": [
     {
@@ -83,11 +86,27 @@
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
+      "id": "1451059131891974236",
+      "channel_id": "1131839874132090890",
+      "content": "供參",
+      "author": "adsf45682",
+      "reactions": 10,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1451047931615379611",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1451093190802149418",
+      "channel_id": "1131839817982947429",
+      "content": "看不懂，最近练了几个角色，但是剩的海胆还是很多的",
+      "author": "bailuoxiao",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1451144531151028235",
@@ -104,6 +123,38 @@
       "channel": ""
     },
     {
+      "id": "1451036715253764217",
+      "channel_id": "1131839817982947429",
+      "content": "我星辰普通打完了，不過我忘卻篇困難剩下最後一章，正在攻略中哈",
+      "author": "soft_whisper",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451138623943606414",
+      "channel_id": "1131839817982947429",
+      "content": "黑日是N的大通道？好色哦（？）",
+      "author": "xyakoto",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451226418695377017",
+      "channel_id": "1131839817982947429",
+      "content": "||~~翻影片找不到\n還是看老圖吧\n這張其實是回5000但生命上限不夠~~||",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451241237901475961",
+      "channel_id": "1131839817982947429",
+      "content": "混沌歪24 歪到+12<:pray:1356053116260454534>",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1451247067270746182",
       "content": "神父的組圖！",
       "author": "kong760",
@@ -111,11 +162,35 @@
       "channel": "堆樓-忘卻cos相關（真人注意）"
     },
     {
+      "id": "1451129053087006812",
+      "channel_id": "1131839817982947429",
+      "content": "~~什么，没一个是人~~",
+      "author": "bailuoxiao",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1451200809613398038",
       "content": "||~~如果我不說，就沒人知道我從10月28開始寫到今天，也沒人知道我本來預計聖誕節左右出，更沒人知道我想趕在拉蒙娜生日出但是鴿了~~||",
       "author": "shostakovich524",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1451017653014761504",
+      "channel_id": "1131839817982947429",
+      "content": "急需安慰",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451314801220259990",
+      "channel_id": "1131839817982947429",
+      "content": "重新肘了個無死抗的",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1451270646070906880",
@@ -132,81 +207,20 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
-      "id": "1451332689281024131",
-      "content": "Nymphaea, was listening to sinking town and in my mind I think the song fits her",
-      "author": "nothing_of_wisdom",
-      "reactions": 4,
-      "channel": "Pencil art"
-    },
-    {
-      "id": "1451332897968488448",
-      "content": "Simple Horla drawing",
-      "author": "nothing_of_wisdom",
-      "reactions": 4,
-      "channel": "Pencil art"
-    },
-    {
-      "id": "1451333066113941614",
-      "content": "And WIP Caecus",
-      "author": "nothing_of_wisdom",
-      "reactions": 4,
-      "channel": "Pencil art"
-    },
-    {
-      "id": "1451052192541835295",
-      "content": "this one is kidna freaky dknt ban me guys",
-      "author": "enzoperry",
-      "reactions": 4,
-      "channel": "hi morimens meme dump (ooc warning me and oomf were goofing aruond)"
-    },
-    {
-      "id": "1451152833654296677",
-      "content": "The text advances too slow on its own, and slightly too fast when it's at 2x\nI a",
-      "author": "chocolateburgerkingfootlettuce",
-      "reactions": 4,
-      "channel": "The reading experience is not so good"
-    },
-    {
-      "id": "1451073706427285677",
-      "content": "https://drive.google.com/file/d/1NuvnH02LsS6KLJWSBM6neecTqg0peNvn/view?usp=drive",
-      "author": "masian131",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1451108635932491898",
-      "content": "except i now in trouble cause i did not attended the class meeting",
-      "author": "_creaz",
-      "reactions": 3,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1451116502408233034",
-      "content": "||In the 8-3 story section she should still have the awakener\\mouse sprite, but ",
-      "author": "vxvendetta97",
-      "reactions": 3,
-      "channel": "✅「Answered」Jenkin Sprite Error"
-    },
-    {
-      "id": "1451146142858350635",
-      "content": "前面甜甜後面刀你個猝不及防 哈哈！（邪惡的笑聲）",
-      "author": "souri.10244",
-      "reactions": 3,
-      "channel": "拉蒙娜生日快樂（遲到版）"
-    },
-    {
-      "id": "1451252832345915454",
+      "id": "1451061941199044688",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": ""
+      "author": "cameliia._.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1451129048058040503",
-      "content": "~~我也是😭我要過主線過到哭了😭(~~\n和平世界最好了<:Cheerup:1400771555939844149>",
-      "author": "shostakovich524",
-      "reactions": 3,
-      "channel": ""
+      "id": "1451075345720676505",
+      "channel_id": "1131839817982947429",
+      "content": "我常駐出了兩次差點被他封鎖",
+      "author": "souri.10244",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

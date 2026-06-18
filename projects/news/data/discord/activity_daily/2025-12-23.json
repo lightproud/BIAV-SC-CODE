@@ -1,10 +1,12 @@
 {
   "date": "2025-12-23",
-  "messages": 130,
-  "unique_authors": 27,
-  "reactions_total": 243,
-  "attachments": 65,
+  "messages": 1069,
+  "unique_authors": 51,
+  "reactions_total": 445,
+  "attachments": 135,
   "channel_activity": {
+    "🔸綜合討論": 910,
+    "🔸阵容构建": 29,
     "Ryker and Horla": 1,
     "G Doll Fan Splash Art": 1,
     "More references discovered": 6,
@@ -34,30 +36,33 @@
     "1443848396585828363": 2
   },
   "hourly_activity": {
-    "14": 3,
-    "1": 1,
-    "16": 17,
-    "3": 4,
-    "8": 13,
-    "9": 31,
-    "11": 3,
-    "12": 2,
-    "13": 5,
-    "5": 11,
-    "10": 10,
-    "23": 2,
-    "15": 5,
-    "18": 5,
-    "22": 4,
-    "2": 4,
-    "6": 2,
-    "0": 3,
-    "17": 4,
-    "20": 1
+    "0": 87,
+    "1": 3,
+    "2": 47,
+    "3": 21,
+    "4": 14,
+    "5": 15,
+    "6": 9,
+    "7": 8,
+    "8": 133,
+    "9": 220,
+    "10": 199,
+    "11": 24,
+    "12": 59,
+    "13": 49,
+    "14": 34,
+    "15": 17,
+    "16": 34,
+    "17": 55,
+    "18": 13,
+    "19": 10,
+    "20": 5,
+    "23": 9,
+    "22": 4
   },
   "message_types": {
-    "0": 45,
-    "19": 2
+    "0": 714,
+    "19": 225
   },
   "top_reacted_messages": [
     {
@@ -131,11 +136,43 @@
       "channel": ""
     },
     {
+      "id": "1453053453956808765",
+      "channel_id": "1131839817982947429",
+      "content": "这就是90等杜勒的输出吗（）",
+      "author": "rain_scarlet",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452883417887674378",
+      "channel_id": "1131839817982947429",
+      "content": "牢潘，你也太肉了，等之后看看能不能刷到尤乌什么的吧",
+      "author": "bailuoxiao",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452958433170030633",
+      "channel_id": "1131839817982947429",
+      "content": "醫生大的效果不是打死對面嗎<:Cheerup:1400771555939844149>",
+      "author": "partycatss.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1453017848094916723",
       "content": "I cannot skip story dialogue with these keys after the Anniversary overhaul upda",
       "author": "enumaellis",
       "reactions": 6,
       "channel": "💭「Processing」The Spacebar/Enter key on Steam PC version not working"
+    },
+    {
+      "id": "1452976162694369472",
+      "channel_id": "1131839817982947429",
+      "content": "流血秒二階還是看鳥弟吧",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1452892993823576147",
@@ -145,60 +182,36 @@
       "channel": ""
     },
     {
-      "id": "1452816807567163676",
-      "content": "A brief rundown on Gmurphy for Traphase players.\n https://youtu.be/m4aPsv9HVlk?s",
-      "author": "oatstemp",
-      "reactions": 4,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1452843879651999886",
-      "content": "https://youtu.be/DycP_4uk61Q Hablando de clementine equipos covenants y ruedas <",
-      "author": "yaoshidoppa",
-      "reactions": 4,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1452889692260401285",
-      "content": "omg william mentioned im gonna crack him…",
-      "author": "velvetrene._cake",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1452973698871988224",
-      "content": "感觉第五波的队伍可以打难3",
-      "author": "txt101225.",
-      "reactions": 2,
-      "channel": "求配队"
-    },
-    {
-      "id": "1453056165025026260",
-      "content": "Your two important points about Ryker—his design philosophy and understanding of",
-      "author": "tnimreppep",
-      "reactions": 2,
-      "channel": "Who Ryker's Designer pls come talk ?"
-    },
-    {
-      "id": "1452990419154632815",
-      "content": "常常會忘記堅韌意識疊到哪裡了",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1452820610370633906",
-      "content": "~~你叫課了禮包的人怎麼辦~~\n課完表情的下一刻無課就能換",
+      "id": "1452822347030724753",
+      "channel_id": "1131839817982947429",
+      "content": "~~因為我要練90潘~~",
       "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "✅「已回答」礼包头像和表情会不会加入自选里面"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1452961187145711698",
-      "content": "https://youtu.be/7T2WVDwEVUg?si=s6MApBCetmSFUwp7",
-      "author": "animeholic09",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1452852100966121603",
+      "channel_id": "1131839817982947429",
+      "content": "可以嗎<:Clown:1400771541423226971>",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452980991378456638",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453011159153246441",
+      "channel_id": "1131839817982947429",
+      "content": "~~能富裕的養老\n為什麼要窮酸的艱難呢~~",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

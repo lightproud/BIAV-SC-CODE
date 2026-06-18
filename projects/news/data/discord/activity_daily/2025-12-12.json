@@ -1,10 +1,12 @@
 {
   "date": "2025-12-12",
-  "messages": 152,
-  "unique_authors": 20,
-  "reactions_total": 91,
-  "attachments": 29,
+  "messages": 1802,
+  "unique_authors": 58,
+  "reactions_total": 385,
+  "attachments": 119,
   "channel_activity": {
+    "🔸綜合討論": 1518,
+    "🔸阵容构建": 132,
     "G Doll Fan Splash Art": 3,
     "中奖名单公布┊Lottery Winners Announced!": 1,
     "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊": 56,
@@ -37,29 +39,34 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "2": 2,
-    "6": 4,
-    "5": 5,
-    "10": 43,
-    "11": 20,
+    "0": 3,
+    "1": 7,
+    "2": 47,
+    "3": 143,
+    "4": 47,
+    "5": 33,
+    "6": 46,
+    "7": 119,
+    "8": 250,
+    "9": 17,
+    "10": 83,
+    "11": 78,
+    "12": 63,
+    "13": 166,
+    "14": 264,
+    "15": 160,
+    "16": 75,
+    "17": 138,
+    "18": 24,
+    "19": 15,
+    "23": 2,
     "20": 3,
     "21": 7,
-    "16": 2,
-    "7": 20,
-    "3": 3,
-    "22": 12,
-    "23": 1,
-    "12": 8,
-    "13": 5,
-    "17": 7,
-    "19": 6,
-    "8": 2,
-    "14": 1,
-    "15": 1
+    "22": 12
   },
   "message_types": {
-    "0": 44,
-    "19": 18
+    "0": 1191,
+    "19": 459
   },
   "top_reacted_messages": [
     {
@@ -84,11 +91,59 @@
       "channel": "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion"
     },
     {
+      "id": "1448963820771999825",
+      "channel_id": "1131839817982947429",
+      "content": "看板娘專屬鑰令也結案了，維持神秘小光點封面<:Clown:1400771541423226971>",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448959396666277971",
+      "channel_id": "1131839874132090890",
+      "content": "血越少回越多，所以血越少血越多",
+      "author": "bohan0621",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1448939789993771179",
       "content": "連動這個",
       "author": "beach55",
       "reactions": 6,
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1449003753125449819",
+      "channel_id": "1131839817982947429",
+      "content": "~~怎麼不用熔朵C~~",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449004823629267044",
+      "channel_id": "1131839817982947429",
+      "content": "發現個bug 回溯成0疊 依然是滿疊位的值",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449038459292356671",
+      "channel_id": "1131839817982947429",
+      "content": "~~也順便想起了美好的赤史時光~~\nhttps://youtu.be/-d9jK8AB4Rg?si=rmCPyL495U30oxmr",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449119381010387045",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1448956855077310575",
@@ -105,102 +160,68 @@
       "channel": "✅「Answered」About emote usage: Profile decoration and PvE emotes"
     },
     {
-      "id": "1448990089093972062",
-      "content": "不要理他",
-      "author": "void_1546.",
+      "id": "1448863027943182367",
+      "channel_id": "1131839817982947429",
+      "content": "一张命定回两管银钥<:pray:1356053116260454534>",
+      "author": "sweet_25367",
       "reactions": 4,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449167728551133234",
-      "content": "I was doing some testing on my alternate account with a full \"Lemuria\" team and ",
-      "author": "reya.li",
+      "id": "1448900193838825523",
+      "channel_id": "1131839817982947429",
+      "content": "是我錯覺還是大版本更新後幻境深潛越來越肝了？ 敵方單位血量倍增，新出的等級獎勵也難拿",
+      "author": "fong_gar",
       "reactions": 4,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449093660858912889",
-      "content": "Thanks! \n~~this is part of the final pic~~",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1448983774166651021",
-      "content": "嗨嗨嗨嗨嗨嗨，我是主線一路用菲茵特從1-1打到星辰有四章上半的常駐廚萊克N天生一對，我想來安麗上個月速通忘卻困難第七章的隊伍✌🏻如果能稍微幫到打算打下期活動拿銀",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991994599833641",
-      "content": "脾氣好（",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1449004495680835636",
-      "content": "我把+12迷失道路回溯了\nSSR 0~3疊應該只有14.4爆擊\n回溯成0疊 依然是滿疊位的數值\n\n多張截圖證明<:thumbsup:13560863402984",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "✅「已解决」良性bug"
-    },
-    {
-      "id": "1448985603956936778",
+      "id": "1448942994307809334",
+      "channel_id": "1131839817982947429",
       "content": "",
+      "author": "123zhang0036",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448943479462953111",
+      "channel_id": "1131839817982947429",
+      "content": "真強，1000彩抽的大佬都🛐 了",
+      "author": "elv_juan.carlos",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448959398562238474",
+      "channel_id": "1131839817982947429",
+      "content": "國際服欠我一個誕墨繁育0費自爆獻祭割草流😡",
       "author": "heikwok",
-      "reactions": 2,
-      "channel": "✅「已回答」拉蒙娜專屬鑰令"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1448937976615669821",
-      "content": "感谢建议，项目组未来会将它纳入规划并落地",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」希望典藏館-事件的提示能夠更詳細一點"
+      "id": "1449046987705024532",
+      "channel_id": "1131839817982947429",
+      "content": "只能給你看我最後一次打的混沌毒dae682f2-8314-3d68-ac6c-9ec98b580cf2#E#a",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1448910466956001331",
-      "content": "i had no idea i won the giveaway! never been this lucky in my life lol. thank yo",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "中奖名单公布┊Lottery Winners Announced!"
+      "id": "1449098666727178423",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1448990452551516283",
-      "content": "有，不過是他",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991409020600390",
-      "content": "星辰篇的凱克斯受環境影響強度大跌",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991876995616829",
-      "content": "你如果不想看到的話直接封鎖就好",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991893894598718",
-      "content": "他這甚至不是第二次而是至少第三次了🙄",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448992323865153648",
-      "content": "另一個嘴賤的人",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
+      "id": "1448952900880564224",
+      "channel_id": "1131839874132090890",
+      "content": "~~寶 請你滾~~",
+      "author": "quackdayo",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
     }
   ]
 }

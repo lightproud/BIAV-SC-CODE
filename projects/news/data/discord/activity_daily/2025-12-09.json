@@ -1,10 +1,11 @@
 {
   "date": "2025-12-09",
-  "messages": 118,
-  "unique_authors": 12,
-  "reactions_total": 509,
-  "attachments": 30,
+  "messages": 1114,
+  "unique_authors": 45,
+  "reactions_total": 743,
+  "attachments": 101,
   "channel_activity": {
+    "🔸綜合討論": 996,
     "Explosion: Ramona": 1,
     "求助一些队伍的输出手法": 11,
     "求神国推图输出手法以及星辰篇推图阵容相关建议": 2,
@@ -39,30 +40,34 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "11": 16,
-    "12": 13,
-    "13": 10,
-    "14": 2,
-    "10": 3,
+    "0": 153,
+    "1": 116,
+    "2": 22,
+    "3": 20,
+    "4": 6,
+    "5": 10,
+    "6": 5,
+    "8": 59,
+    "9": 26,
+    "10": 126,
+    "11": 155,
+    "12": 137,
+    "13": 111,
+    "14": 57,
+    "15": 39,
+    "16": 14,
+    "17": 11,
+    "18": 4,
+    "20": 2,
+    "21": 14,
+    "22": 1,
     "19": 2,
-    "17": 4,
-    "5": 3,
-    "6": 4,
     "23": 1,
-    "7": 23,
-    "2": 5,
-    "3": 19,
-    "4": 3,
-    "21": 1,
-    "8": 5,
-    "18": 1,
-    "9": 2
+    "7": 23
   },
   "message_types": {
-    "0": 43,
-    "19": 3,
-    "4": 1
+    "19": 198,
+    "0": 798
   },
   "top_reacted_messages": [
     {
@@ -80,6 +85,102 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448009133428052069",
+      "channel_id": "1131839817982947429",
+      "content": "小猫在不为人知的时候偷偷打过了融灾350与星辰篇1-12，~~还课了课题~~",
+      "author": "akalanden",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447769561532207134",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447778804704608306",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447811939265675426",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447869144329355274",
+      "channel_id": "1131839817982947429",
+      "content": "太傻逼了",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447905344071270410",
+      "channel_id": "1131839817982947429",
+      "content": "我是個打不出425的萌新",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447920189470671022",
+      "channel_id": "1131839817982947429",
+      "content": "正好今天up医生，补个超限（）",
+      "author": "xyakoto",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447763700021854352",
+      "channel_id": "1131839817982947429",
+      "content": "<:A_pinch:1432980538536493057> 打350 結束這一次融災",
+      "author": "forg30215",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447812124637270149",
+      "channel_id": "1131839817982947429",
+      "content": "針不搓",
+      "author": "dog794",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447870717281435771",
+      "channel_id": "1131839817982947429",
+      "content": "以前我可是天天給莉莉打72000的",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447904110107033611",
+      "channel_id": "1131839817982947429",
+      "content": "Box差不多這個樣子",
+      "author": "harowolf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447943528033550397",
+      "channel_id": "1131839817982947429",
+      "content": "我要來打H4-10了",
+      "author": "quackdayo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1447912791972511806",
       "content": "So, different people, from en and cn, have already expressed that his naming arc",
       "author": "vxvendetta97",
@@ -87,74 +188,44 @@
       "channel": "✅「Resolved」Name Changes for the bot Titles"
     },
     {
-      "id": "1447877232914862100",
-      "content": "Yes, QA has fixed it. Thank you very much❤️",
-      "author": "morimensstaff01",
+      "id": "1447899618158575796",
+      "channel_id": "1131839817982947429",
+      "content": "~~確定不是+12~~",
+      "author": "foxcatfurry",
       "reactions": 4,
-      "channel": "💭「Processing」Time Rewind Bug"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447946733278728275",
-      "content": "If you want more info, look in the guides section. I think there are Caro-focuse",
-      "author": "juuki0811",
-      "reactions": 3,
-      "channel": "how do caro teams work?"
+      "id": "1447905645494927380",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "dog794",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447785311923994764",
-      "content": "是希望提高好友上限吗？抱歉，这个目前不会考虑🙏 \n但是我们会优化批量管理好友，正在计划中",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」我們有機會提高關注上限嗎"
+      "id": "1447917240086302741",
+      "channel_id": "1131839817982947429",
+      "content": "瞎弄的...感觉优化空间很大（）医生C是这么带吗？",
+      "author": "xyakoto",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447953385214050445",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第22期（第49期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览49期·星辰篇✦"
+      "id": "1447917329391554612",
+      "channel_id": "1131839817982947429",
+      "content": "等一下，我融朵怎么带的4月",
+      "author": "xyakoto",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1447855601576050709",
-      "content": "💭「Processing」Origin of Time error",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Origin of Time error"
-    },
-    {
-      "id": "1447800158564782332",
-      "content": "<@298919354077151232> it looks like another bug i encountered here\n\nhttps://disc",
-      "author": "hina_kanzaki",
-      "reactions": 1,
-      "channel": "💭「Processing」Time Rewind Bug"
-    },
-    {
-      "id": "1447860505166479410",
-      "content": "<@298919354077151232> This issue has been fixed and will be updated and released",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Time Rewind Bug"
-    },
-    {
-      "id": "1447858916062134273",
-      "content": "Sorry for the misunderstanding it’s solved, I didn’t know it was bonus of the ot",
-      "author": "vissie",
-      "reactions": 1,
-      "channel": "✅「Resolved」First time purchase bonus not received bug"
-    },
-    {
-      "id": "1448031321891799071",
-      "content": "期待",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1447782184537686149",
-      "content": "https://cdn.discordapp.com/attachments/898126527558975488/901431904035815444/FB_",
-      "author": "lovefortruelovegod",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "id": "1447940133163765892",
+      "channel_id": "1131839817982947429",
+      "content": "诞墨，我小号一周就拿到了",
+      "author": "sense25.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

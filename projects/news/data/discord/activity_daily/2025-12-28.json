@@ -1,10 +1,12 @@
 {
   "date": "2025-12-28",
-  "messages": 80,
-  "unique_authors": 18,
-  "reactions_total": 259,
-  "attachments": 23,
+  "messages": 1191,
+  "unique_authors": 40,
+  "reactions_total": 464,
+  "attachments": 84,
   "channel_activity": {
+    "🔸綜合討論": 1108,
+    "🔸阵容构建": 3,
     "🌼 Pollux 🌼": 1,
     "Octopus Octopus We Like You Club joining benefit": 2,
     "Three Mismatched Lamps & Hairclips [Nautila & Alva Fanfic]": 3,
@@ -33,31 +35,34 @@
     "1445334381404094475": 11
   },
   "hourly_activity": {
-    "13": 12,
-    "15": 11,
-    "16": 4,
-    "9": 5,
-    "5": 5,
-    "2": 5,
-    "8": 2,
-    "12": 8,
-    "17": 3,
-    "19": 2,
-    "20": 1,
-    "23": 2,
-    "22": 2,
-    "6": 3,
-    "14": 5,
-    "3": 3,
-    "10": 1,
-    "11": 3,
-    "21": 2,
-    "18": 1
+    "0": 1,
+    "1": 5,
+    "2": 17,
+    "3": 40,
+    "4": 68,
+    "5": 112,
+    "6": 27,
+    "7": 23,
+    "8": 65,
+    "9": 74,
+    "10": 110,
+    "11": 154,
+    "12": 206,
+    "13": 178,
+    "14": 6,
+    "15": 24,
+    "16": 5,
+    "17": 51,
+    "18": 8,
+    "19": 3,
+    "21": 4,
+    "23": 6,
+    "22": 3,
+    "20": 1
   },
   "message_types": {
-    "0": 22,
-    "4": 1,
-    "19": 1
+    "19": 205,
+    "0": 906
   },
   "top_reacted_messages": [
     {
@@ -87,6 +92,14 @@
       "author": "root_51811",
       "reactions": 20,
       "channel": "此乃造谣24的笔记本内容（嗯）"
+    },
+    {
+      "id": "1454866142463262720",
+      "channel_id": "1131839817982947429",
+      "content": "看成serve for your head為你的頭服務",
+      "author": "ernest_heart",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1454859975292747856",
@@ -145,6 +158,46 @@
       "channel": "Happy New Year from GMurphy and Tulu!❄️"
     },
     {
+      "id": "1454764122724892682",
+      "channel_id": "1131839817982947429",
+      "content": "我不明白圖魯跟打傷害怎麼在一句話裡保持一致性的",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1454677257221050511",
+      "channel_id": "1131839817982947429",
+      "content": "😁 好玩",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1454765189554638997",
+      "channel_id": "1131839817982947429",
+      "content": "~~我突然感覺我是圖魯廚，+12的輪椅放在一邊用+4圖魯打傷害~~",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1454790943872909333",
+      "channel_id": "1131839817982947429",
+      "content": "~~集合嘍！曹氏宗親會~~",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1454985236155859191",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】融灾禁区3-5虫树 守密人单C-哔哩哔哩】 https://b23.tv/iZLO9YE",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1454958754310389953",
       "content": "A 2 minute overview of Helot: Catena.\nhttps://youtube.com/shorts/j76EGD_9VNc?si=",
       "author": "nechromicon",
@@ -157,48 +210,6 @@
       "author": "ass191044",
       "reactions": 5,
       "channel": ""
-    },
-    {
-      "id": "1454866938529321143",
-      "content": "tell you a joke, when I switched the game to English to see the English dialogue",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "Octopus Octopus We Like You Club joining benefit"
-    },
-    {
-      "id": "1454834076388163594",
-      "content": "101165253",
-      "author": "chiedgaf",
-      "reactions": 3,
-      "channel": "some GMurphy doodles"
-    },
-    {
-      "id": "1454715007609864377",
-      "content": "3) 24- unfinished (revised it, old art)",
-      "author": "kaira._.22",
-      "reactions": 2,
-      "channel": "Just any art"
-    },
-    {
-      "id": "1454662875766460528",
-      "content": "如題這為啥會出現在喚醒體身上，而且效果有問題",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "💭「处理中」相位算力上限"
-    },
-    {
-      "id": "1454678692465868841",
-      "content": "很影響觀感了",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」回放會跳出選項的bug"
-    },
-    {
-      "id": "1454773531526303744",
-      "content": "https://youtu.be/C-sJKZMhykI?si=B8FNsewBvNZvNlFs",
-      "author": "oatstemp",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
     }
   ]
 }

@@ -1,10 +1,29 @@
 {
   "date": "2026-01-25",
-  "messages": 10670,
-  "unique_authors": 187,
-  "reactions_total": 1702,
-  "attachments": 428,
+  "messages": 17924,
+  "unique_authors": 211,
+  "reactions_total": 2172,
+  "attachments": 766,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 1,
+    "🔸交友频道": 5,
+    "🔸русский-канал": 2937,
+    "🔸phòng-chat-tiếng-việt": 260,
+    "🔸canal-español": 244,
+    "🔸canal-português": 596,
+    "🔸ruang-obrolan-indonesia": 150,
+    "🔸ห้องสนทนาภาษาไทย": 565,
+    "🔸traphase": 98,
+    "🔸lore-chat": 94,
+    "🔸lets-count": 6,
+    "🔸team-building": 314,
+    "🔸general-chat": 748,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 1182,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 42,
     "🔸綜合討論": 1695,
     "🔸阵容构建": 13,
     "🔸morimens-game-chat": 8739,
@@ -24,7 +43,6 @@
     "银钥匙在说话": 15,
     "✦关卡地图「融灾禁区」总览52期·星辰篇✦": 1,
     "不是if線就是死後幻覺才有可能": 2,
-    "🔸忘却前夜┊morimens-tv": 2,
     "1464913090511503430": 1,
     "1463456408249831446": 3,
     "1462840887553032335": 1,
@@ -35,36 +53,35 @@
     "1455822126568308957": 7
   },
   "hourly_activity": {
-    "0": 148,
-    "1": 393,
-    "2": 427,
-    "3": 201,
-    "4": 513,
-    "5": 337,
-    "6": 268,
-    "7": 446,
-    "8": 516,
-    "9": 302,
-    "10": 124,
-    "11": 166,
-    "12": 290,
-    "13": 300,
-    "14": 602,
-    "15": 679,
-    "16": 698,
-    "17": 770,
-    "18": 791,
-    "19": 597,
-    "20": 416,
-    "21": 536,
-    "22": 595,
-    "23": 555
+    "17": 1606,
+    "15": 1269,
+    "16": 1549,
+    "23": 600,
+    "0": 403,
+    "1": 672,
+    "2": 633,
+    "3": 502,
+    "4": 700,
+    "5": 479,
+    "6": 370,
+    "7": 655,
+    "8": 668,
+    "9": 423,
+    "10": 435,
+    "11": 344,
+    "12": 533,
+    "13": 526,
+    "14": 1120,
+    "18": 1570,
+    "19": 1018,
+    "20": 513,
+    "21": 657,
+    "22": 679
   },
   "message_types": {
-    "0": 7342,
-    "19": 3101,
-    "46": 2,
-    "23": 2
+    "0": 5660,
+    "19": 1591,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -154,6 +171,14 @@
       "channel": ""
     },
     {
+      "id": "1464939448570478735",
+      "channel_id": "1400750050208125010",
+      "content": "spoiler cutscene in game",
+      "author": "phi_squared",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1464798274677506214",
       "channel_id": "1170692781216378960",
       "content": "should i drink more monster",
@@ -168,6 +193,14 @@
       "author": "_djee",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465097328192131206",
+      "channel_id": "1435483703114596503",
+      "content": "Hi <:Helot_slack_off:1459092159465521184> This is my sister's (original script) ",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
       "id": "1465034418367500353",
@@ -200,21 +233,6 @@
       "author": "spooky_penguin_",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465123616097177630",
-      "channel_id": "1170692781216378960",
-      "content": "well guys, I did my time took my chances. I went the distance now im back on my ",
-      "author": "lordbabel",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1465065148325826570",
-      "content": "After devs add more \"Limited awakener\" in standard banner you have less chance c",
-      "author": "yeriko703",
-      "reactions": 6,
-      "channel": "Origin of Time"
     }
   ]
 }

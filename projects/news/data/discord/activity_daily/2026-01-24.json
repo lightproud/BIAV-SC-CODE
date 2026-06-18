@@ -1,10 +1,32 @@
 {
   "date": "2026-01-24",
-  "messages": 8445,
-  "unique_authors": 161,
-  "reactions_total": 1310,
-  "attachments": 268,
+  "messages": 14029,
+  "unique_authors": 182,
+  "reactions_total": 1731,
+  "attachments": 572,
   "channel_activity": {
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 5,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 3,
+    "🔸한국어-채팅방": 4,
+    "🔸русский-канал": 2830,
+    "🔸phòng-chat-tiếng-việt": 153,
+    "🔸canal-español": 149,
+    "🔸canal-português": 78,
+    "🔸ruang-obrolan-indonesia": 105,
+    "🔸ห้องสนทนาภาษาไทย": 186,
+    "🔸traphase": 70,
+    "🔸lore-chat": 30,
+    "🔸lets-count": 8,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 259,
+    "🔸general-chat": 1103,
+    "🔸邀请码互助┊swap-invitation-codes": 2,
+    "🔸game-question": 444,
+    "🔸忘却前夜┊morimens-tv": 6,
+    "🔸游戏问题": 104,
+    "🔸机器人命令┊bot-commands": 43,
     "🔸綜合討論": 1453,
     "🔸阵容构建": 16,
     "🔸morimens-game-chat": 6806,
@@ -22,7 +44,6 @@
     "请尽快补全全部角色的最终法则": 2,
     "不是if線就是死後幻覺才有可能": 13,
     "表情包两枚": 4,
-    "🔸忘却前夜┊morimens-tv": 3,
     "1462840887553032335": 1,
     "1448648649486635128": 1,
     "1464565649803186217": 10,
@@ -30,36 +51,35 @@
     "1455822126568308957": 6
   },
   "hourly_activity": {
-    "2": 269,
-    "3": 106,
-    "4": 90,
-    "5": 320,
-    "6": 194,
-    "7": 195,
-    "8": 161,
-    "9": 292,
-    "10": 462,
-    "11": 237,
-    "12": 390,
-    "13": 732,
-    "14": 912,
-    "15": 949,
-    "16": 907,
-    "17": 440,
-    "18": 367,
-    "21": 159,
-    "22": 108,
-    "23": 348,
-    "0": 156,
-    "1": 262,
-    "19": 204,
-    "20": 185
+    "2": 385,
+    "3": 359,
+    "11": 507,
+    "15": 1240,
+    "4": 334,
+    "1": 301,
+    "5": 492,
+    "6": 331,
+    "7": 276,
+    "8": 410,
+    "9": 538,
+    "12": 748,
+    "13": 1352,
+    "14": 1488,
+    "16": 1260,
+    "17": 702,
+    "18": 722,
+    "19": 352,
+    "20": 281,
+    "21": 309,
+    "22": 380,
+    "23": 453,
+    "10": 587,
+    "0": 222
   },
   "message_types": {
-    "0": 5768,
-    "19": 2505,
-    "46": 1,
-    "23": 1
+    "0": 4157,
+    "19": 1426,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -114,6 +134,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1464589738445897892",
+      "channel_id": "1174983699935277147",
+      "content": "商店內能買的命輪畢業",
+      "author": "akkom730",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1464548331022716948",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -162,6 +190,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1464696810768568330",
+      "channel_id": "1433513650299076780",
+      "content": "Guys go to sleep\nIt's my turn to spread misinformation",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1464766668075958449",
+      "channel_id": "1435483703114596503",
+      "content": "https://youtu.be/C1AitSu_VG4 - dando mi opinion acerca del nuevo sistema \"Axiom\"",
+      "author": "yaoshidoppa",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1464569224323272715",
       "channel_id": "1131839817982947429",
       "content": "~~沒事，就算實裝了我還有四個用一輩子的血肉毒成員，至少能喝點湯~~",
@@ -192,28 +236,6 @@
       "author": "reya.li",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1464766668075958449",
-      "content": "https://youtu.be/C1AitSu_VG4 - dando mi opinion acerca del nuevo sistema \"Axiom\"",
-      "author": "yaoshidoppa",
-      "reactions": 6,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1464662629716066613",
-      "content": "I SWEAR IM FINISHED WITH IT (im not...)",
-      "author": "sirend3r",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1464512974659125301",
-      "channel_id": "1131839817982947429",
-      "content": "基本作業完成...",
-      "author": "lululu9858",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

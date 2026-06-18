@@ -1,10 +1,30 @@
 {
   "date": "2026-01-03",
-  "messages": 8529,
-  "unique_authors": 195,
-  "reactions_total": 976,
-  "attachments": 410,
+  "messages": 12933,
+  "unique_authors": 251,
+  "reactions_total": 1204,
+  "attachments": 646,
   "channel_activity": {
+    "🔸剧情交流": 56,
+    "🔸相位对弈": 45,
+    "🔸日本語チャンネル": 37,
+    "🔸한국어-채팅방": 2,
+    "🔸русский-канал": 363,
+    "🔸phòng-chat-tiếng-việt": 632,
+    "🔸canal-español": 250,
+    "🔸canal-português": 106,
+    "🔸ruang-obrolan-indonesia": 315,
+    "🔸ห้องสนทนาภาษาไทย": 161,
+    "🔸traphase": 125,
+    "🔸lore-chat": 499,
+    "🔸lets-count": 19,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 1033,
+    "🔸general-chat": 67,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 639,
+    "🔸游戏问题": 10,
+    "🔸机器人命令┊bot-commands": 31,
     "🔸綜合討論": 581,
     "🔸morimens-game-chat": 7877,
     "aequor doodle": 5,
@@ -23,35 +43,36 @@
     "1455453095592071269": 1
   },
   "hourly_activity": {
-    "0": 386,
-    "1": 218,
-    "2": 573,
-    "3": 532,
-    "4": 415,
-    "5": 187,
-    "6": 414,
-    "7": 252,
-    "8": 57,
-    "9": 116,
-    "10": 467,
-    "11": 269,
-    "12": 311,
-    "13": 589,
-    "14": 428,
-    "15": 628,
-    "21": 281,
-    "22": 167,
-    "23": 89,
-    "16": 473,
-    "17": 449,
-    "18": 325,
-    "19": 323,
-    "20": 580
+    "3": 698,
+    "4": 535,
+    "5": 306,
+    "7": 378,
+    "8": 182,
+    "10": 713,
+    "12": 516,
+    "21": 442,
+    "2": 688,
+    "11": 436,
+    "13": 721,
+    "15": 878,
+    "16": 969,
+    "17": 658,
+    "22": 266,
+    "14": 560,
+    "0": 457,
+    "1": 478,
+    "9": 263,
+    "18": 672,
+    "20": 745,
+    "23": 312,
+    "6": 597,
+    "19": 463
   },
   "message_types": {
-    "0": 5903,
-    "19": 2554,
-    "46": 1
+    "0": 3606,
+    "19": 795,
+    "6": 1,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -94,6 +115,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1456866288667332609",
+      "channel_id": "1400749543288475770",
+      "content": "**Pure Chaos**\nTawil - Hamelyn, Karen, Ryker\nKath - Karen, Ryker/Alva, FILLER (G",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸team-building"
+    },
+    {
       "id": "1456938642541907999",
       "channel_id": "1131839817982947429",
       "content": "發現疑似校貓足跡",
@@ -133,6 +162,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1457042723503607809",
+      "channel_id": "1400749543288475770",
+      "content": "Ramona is s tier in my heart <:takenotes:1357186646294138890>",
+      "author": "artistry_gaming",
+      "reactions": 6,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1456894858584391806",
+      "channel_id": "1400750050208125010",
+      "content": "<:S_threat:1400771719404196010>",
+      "author": "menezes64",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1456998552017436748",
       "channel_id": "1170692781216378960",
       "content": "ok guys i got it🐔",
@@ -147,6 +192,14 @@
       "author": "twilightsparkle163163",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456924025740595333",
+      "channel_id": "1173463482503536711",
+      "content": "我們頭好癢抓一抓掉的是頭皮屑，24抓下來的是銀芯",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1456898117256614121",
@@ -177,38 +230,6 @@
       "channel_id": "1170692781216378960",
       "content": "<:Clown:1400771541423226971> I should quit guide making, how dafuk does it suck ",
       "author": "aurora3981",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1456988927054581770",
-      "channel_id": "1170692781216378960",
-      "content": "So you're just assuming Corposant has a receding hairline <:study:13560531682572",
-      "author": "sirtealot",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1457011237048025291",
-      "channel_id": "1170692781216378960",
-      "content": "Hey Mythag-GPT, find 2 old men yaoi awakeners and ask keeper to get them both ba",
-      "author": "nicholas250724",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1457016803384627487",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "syruponstrawberrycake",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1457027510884765760",
-      "channel_id": "1170692781216378960",
-      "content": "i really think pickman is fun af",
-      "author": "monchi3524",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

@@ -1,10 +1,36 @@
 {
   "date": "2026-01-22",
-  "messages": 9035,
-  "unique_authors": 176,
-  "reactions_total": 1343,
-  "attachments": 342,
+  "messages": 16154,
+  "unique_authors": 195,
+  "reactions_total": 1832,
+  "attachments": 697,
   "channel_activity": {
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 4,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 24,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 1253,
+    "🔸phòng-chat-tiếng-việt": 745,
+    "🔸canal-español": 306,
+    "🔸canal-português": 257,
+    "🔸ruang-obrolan-indonesia": 91,
+    "🔸ห้องสนทนาภาษาไทย": 73,
+    "🔸traphase": 100,
+    "🔸lore-chat": 457,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 440,
+    "🔸general-chat": 2961,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 315,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 39,
     "🔸綜合討論": 1029,
     "🔸阵容构建": 1,
     "🔸morimens-game-chat": 7700,
@@ -30,8 +56,6 @@
     "Nymphaea": 2,
     "【自用】卡斯托尔×波吕克斯 稿件堆积": 3,
     "Awakener Kit Speculation: Francis": 1,
-    "🔸欢乐梗图": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 5,
     "1456123871383130243": 1,
     "1450001353064714320": 8,
@@ -40,35 +64,35 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "0": 626,
-    "1": 547,
-    "2": 486,
-    "3": 380,
-    "4": 476,
-    "5": 511,
-    "6": 179,
-    "7": 241,
-    "8": 356,
-    "9": 306,
-    "10": 829,
-    "11": 316,
-    "12": 473,
-    "13": 357,
-    "14": 412,
-    "15": 518,
-    "16": 392,
-    "17": 414,
-    "18": 395,
-    "19": 259,
-    "20": 69,
-    "21": 108,
-    "23": 300,
-    "22": 85
+    "5": 615,
+    "6": 271,
+    "21": 175,
+    "0": 843,
+    "2": 726,
+    "16": 649,
+    "7": 503,
+    "4": 611,
+    "1": 751,
+    "11": 870,
+    "3": 620,
+    "15": 855,
+    "18": 526,
+    "8": 1009,
+    "12": 923,
+    "9": 1070,
+    "10": 1294,
+    "13": 958,
+    "14": 1252,
+    "17": 529,
+    "19": 403,
+    "20": 189,
+    "22": 155,
+    "23": 357
   },
   "message_types": {
-    "0": 6315,
-    "19": 2414,
-    "20": 1
+    "0": 5740,
+    "19": 1375,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -108,6 +132,14 @@
       "channel": "【自用】卡斯托尔×波吕克斯 稿件堆积"
     },
     {
+      "id": "1463700927604195390",
+      "channel_id": "1385040039448412170",
+      "content": "Can we get a starboard channel?\nhttps://discord.com/discovery/applications/65539",
+      "author": "aurora3981",
+      "reactions": 12,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
       "id": "1463831865076224083",
       "content": "Русская версия постера <:dishes:1356083313063759922> \n—— сделана российской орга",
       "author": "morimensstaff01",
@@ -144,6 +176,14 @@
       "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
+      "id": "1463726554902433853",
+      "channel_id": "1174983699935277147",
+      "content": "常駐終於不出垃圾了<:takenotes:1357186646294138890>",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1463757659025965066",
       "channel_id": "1131839817982947429",
       "content": "分享个双金",
@@ -165,6 +205,14 @@
       "author": "._.aahh",
       "reactions": 7,
       "channel": "V2.4.2 ┊闻香识人The Poetry of Scent"
+    },
+    {
+      "id": "1463960661007798277",
+      "channel_id": "1400749543288475770",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "rascal_harmonize",
+      "reactions": 6,
+      "channel": "🔸team-building"
     },
     {
       "id": "1463846048408670250",
@@ -197,28 +245,6 @@
       "author": "brainrot_in_a_vat",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1463879997784588398",
-      "channel_id": "1170692781216378960",
-      "content": "Found my recent art",
-      "author": "brainrot_in_a_vat",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1463915224938578099",
-      "content": "抽卡記錄看了 沒有抽過他的卡池 看到技能那一頁感覺是bug",
-      "author": "v061875",
-      "reactions": 6,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
-    },
-    {
-      "id": "1463785315557838959",
-      "content": "您好!想詢問官方關於徐的立繪構圖與隔壁棚遊戲角色高度重合這點\n徐是位很有魅力的角色設計!但構圖的高度重合難免會讓人有所質疑，這件事情在別的社群中也有所討論\n因為",
-      "author": "lanl4n",
-      "reactions": 6,
-      "channel": "想詢問關於徐的立繪設計"
     }
   ]
 }

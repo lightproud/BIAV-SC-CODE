@@ -1,10 +1,32 @@
 {
   "date": "2026-01-30",
-  "messages": 1104,
-  "unique_authors": 50,
-  "reactions_total": 358,
-  "attachments": 72,
+  "messages": 13272,
+  "unique_authors": 241,
+  "reactions_total": 1434,
+  "attachments": 610,
   "channel_activity": {
+    "🔸morimens-game-chat": 6796,
+    "🔸剧情交流": 60,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 126,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 8,
+    "🔸русский-канал": 710,
+    "🔸phòng-chat-tiếng-việt": 194,
+    "🔸canal-español": 141,
+    "🔸canal-português": 326,
+    "🔸ruang-obrolan-indonesia": 75,
+    "🔸ห้องสนทนาภาษาไทย": 64,
+    "🔸traphase": 147,
+    "🔸lore-chat": 456,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 167,
+    "🔸general-chat": 2460,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 385,
+    "🔸游戏问题": 4,
+    "🔸机器人命令┊bot-commands": 24,
     "🔸綜合討論": 898,
     "🔸阵容构建": 4,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 10,
@@ -24,7 +46,6 @@
     "[建议] 关于优化“超次元”界域机制의建议": 6,
     "徐": 5,
     "预告片 || 杜勒赛因x西维斯特": 50,
-    "🔸游戏问题": 2,
     "1463456408249831446": 3,
     "1462840887553032335": 1,
     "1440735573206761734": 5,
@@ -34,31 +55,36 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
-    "2": 20,
-    "3": 27,
-    "4": 66,
-    "5": 27,
-    "6": 49,
-    "7": 51,
-    "8": 21,
-    "9": 23,
-    "11": 11,
-    "12": 12,
-    "13": 36,
-    "14": 25,
-    "15": 265,
-    "16": 100,
-    "17": 21,
-    "18": 56,
-    "19": 236,
-    "20": 29,
-    "23": 5,
-    "1": 16,
-    "0": 8
+    "0": 440,
+    "1": 281,
+    "2": 449,
+    "3": 479,
+    "4": 578,
+    "5": 466,
+    "6": 962,
+    "7": 978,
+    "8": 559,
+    "9": 372,
+    "10": 393,
+    "11": 841,
+    "12": 549,
+    "13": 514,
+    "14": 497,
+    "15": 993,
+    "16": 639,
+    "17": 726,
+    "18": 833,
+    "19": 585,
+    "20": 536,
+    "21": 283,
+    "22": 130,
+    "23": 189
   },
   "message_types": {
-    "0": 661,
-    "19": 241
+    "0": 8979,
+    "19": 3183,
+    "20": 5,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -90,6 +116,14 @@
       "channel": "预告片 || 杜勒赛因x西维斯特"
     },
     {
+      "id": "1466888944502440094",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1466823251404521594",
       "content": "keychain concept- continue mouchette’s otherworld adventures by taking her where",
       "author": "mimiruku",
@@ -97,11 +131,27 @@
       "channel": ""
     },
     {
+      "id": "1466898413185536051",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "lynexists",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1466694848315920395",
       "content": "恭喜以下守密人在留言活动中获奖，我们将在7个自然日内为您发放相应的奖励~\nCongratulations to the following Keepers fo",
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log"
+    },
+    {
+      "id": "1466614825319927890",
+      "channel_id": "1170692781216378960",
+      "content": "It is a good day fellas, failed to pull lily wod from last rerun and got it from",
+      "author": "caster5928",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1466727394244165846",
@@ -112,12 +162,68 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1466674372977758240",
+      "channel_id": "1173463482503536711",
+      "content": "突然意識到意識潛游也是一種快穿（",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1466826943172317441",
+      "channel_id": "1326453763355185215",
+      "content": "the \"when the wives came, her smile grew noticeably much wider\" line especially ",
+      "author": "reya.li",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1466727400745205807",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1466604998065656044",
+      "channel_id": "1170692781216378960",
+      "content": "highly dangerous drinking game: read xu's story and take a shot every time the t",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466854525196304607",
+      "channel_id": "1170692781216378960",
+      "content": "Aequor are all tentacles related because tentacles by itself doesn't do anything",
+      "author": "good.th",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466858920835551376",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "good.th",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466885593769181255",
+      "channel_id": "1170692781216378960",
+      "content": "I have 5 pyramids idk if I should pyramid dore or clem",
+      "author": "dracozion",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466806614106570956",
+      "channel_id": "1326453763355185215",
+      "content": "also reposting this",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1466679152047554683",
@@ -132,81 +238,6 @@
       "author": "heikwok",
       "reactions": 6,
       "channel": "蘿坦的最終法則與製作組預期目標相悖"
-    },
-    {
-      "id": "1466705806975176837",
-      "content": "食屍鬼boss死抗一次就給牌上一個遲緩還是有點太刺激了😅\n遲緩4⋯⋯還都給我加同一張牌真是謝了⋯⋯",
-      "author": "carrot_chicken",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1466725756620111882",
-      "channel_id": "1131839817982947429",
-      "content": "哎呀\n圖魯得了\n# MVP",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1466815301143498990",
-      "channel_id": "1131839817982947429",
-      "content": "我現在要咬破所有男群友的衣服",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1466684226308145202",
-      "content": "-# and his exalt crit still fail to kill a mob",
-      "author": "skyfallterminus",
-      "reactions": 5,
-      "channel": "Regarding the possible +12 Paywall"
-    },
-    {
-      "id": "1466650842097651884",
-      "channel_id": "1131839817982947429",
-      "content": "你說的是這個面板嗎",
-      "author": "r8776",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1466764668252192798",
-      "channel_id": "1131839817982947429",
-      "content": "甚至心眼刻的還是鏡像",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1466830858471342393",
-      "channel_id": "1131839817982947429",
-      "content": "~~徐今天有削弱~~",
-      "author": "yy42974466",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1466604592241573949",
-      "content": "this new update is a big disappointment.",
-      "author": "milky_w",
-      "reactions": 4,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1466596374572433592",
-      "content": "interesting<:thinking1:1356068128936820929>",
-      "author": "sunstopshining",
-      "reactions": 4,
-      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
-    },
-    {
-      "id": "1466596401843667068",
-      "content": "truly interesting <:thinking1:1356068128936820929>",
-      "author": "sunstopshining",
-      "reactions": 4,
-      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-12-13",
-  "messages": 91,
-  "unique_authors": 14,
-  "reactions_total": 73,
-  "attachments": 18,
+  "messages": 1823,
+  "unique_authors": 49,
+  "reactions_total": 338,
+  "attachments": 140,
   "channel_activity": {
+    "🔸綜合討論": 1732,
     "Ramona!": 1,
     "中奖名单公布┊Lottery Winners Announced!": 1,
     "新手求助": 1,
@@ -28,28 +29,33 @@
     "1442647324575928441": 1
   },
   "hourly_activity": {
-    "22": 5,
-    "1": 3,
-    "13": 4,
-    "12": 4,
-    "3": 1,
-    "5": 11,
-    "8": 15,
-    "4": 1,
-    "9": 9,
-    "10": 10,
-    "6": 1,
-    "7": 3,
-    "14": 1,
-    "18": 12,
-    "19": 3,
-    "17": 4,
-    "15": 3,
-    "20": 1
+    "0": 14,
+    "1": 136,
+    "2": 318,
+    "3": 79,
+    "4": 98,
+    "5": 118,
+    "6": 78,
+    "7": 12,
+    "8": 115,
+    "9": 60,
+    "10": 48,
+    "11": 87,
+    "12": 39,
+    "13": 29,
+    "14": 256,
+    "15": 179,
+    "16": 60,
+    "17": 23,
+    "18": 13,
+    "19": 19,
+    "20": 22,
+    "22": 13,
+    "23": 7
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "19": 414,
+    "0": 1318
   },
   "top_reacted_messages": [
     {
@@ -67,11 +73,43 @@
       "channel": "想不到的第二張水仙視姦"
     },
     {
+      "id": "1449431835967881279",
+      "channel_id": "1131839817982947429",
+      "content": "這是什麼要被獻祭的節奏嗎",
+      "author": "foxcatfurry",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449406110615212123",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1449269886336503868",
       "content": "现在看不出来哪个开了图鉴哪个没开<:A_pinch:1432980538536493057>",
       "author": "huanire",
       "reactions": 7,
       "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
+    },
+    {
+      "id": "1449407593146748978",
+      "channel_id": "1131839817982947429",
+      "content": "終於過了！！！",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449407653334745199",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1449467312821502013",
@@ -81,6 +119,38 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1449252587491823678",
+      "channel_id": "1131839817982947429",
+      "content": "可能經手過雕塑家協會",
+      "author": "tsubaki9884",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449265414323437679",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449293936769372261",
+      "channel_id": "1131839817982947429",
+      "content": "狂充什麼路邊一條",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449414181643223050",
+      "channel_id": "1131839817982947429",
+      "content": "今天在抓助戰學習怎麼用",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1449467061393948723",
       "content": "因為這次周年劇情又跑去打大眼睛了嘛 \n所以想做一個仿官的守咪打大眼睛的圖，包含守咪人自己的Q版和她的技能組（這邊選的女守咪），會持續更新到做完，和勞斯討論也會新",
       "author": "souri.10244",
@@ -88,109 +158,60 @@
       "channel": "一點仿官"
     },
     {
-      "id": "1449307237058347049",
-      "content": "就這麼默默的把東西搬過來然後給你們看低創鉛筆畫",
-      "author": "diapason0421",
+      "id": "1449247507300483114",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
       "reactions": 4,
-      "channel": "應該是圖樓"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449318572320100464",
-      "content": "Yes and exactly what i concern, i'd say nearly half of them should be and can be",
-      "author": "qingming6054",
-      "reactions": 3,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+      "id": "1449249082777534565",
+      "channel_id": "1131839817982947429",
+      "content": "深海有自己的超維空間",
+      "author": "tsubaki9884",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449523982675218537",
-      "content": "非常超級無敵之需要",
-      "author": "amstelredam",
-      "reactions": 3,
-      "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
+      "id": "1449252230514475108",
+      "channel_id": "1131839817982947429",
+      "content": "我现在一直用栗子打第二波难4,基本吊打,难5我懒得去凹,只打375<:takenotes:1357186646294138890>",
+      "author": "sense25.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449469203613749440",
-      "content": "終末,目視之餘：從牌庫中選取最多10張指令卡，加入手牌並使其算力消耗降低至0並且打出後獲得250點銀鑰充能；無視算力調和。\n\n晰夢,終有尾聲：從所有鑰令中選取一",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "一點仿官"
+      "id": "1449252313922535516",
+      "channel_id": "1131839817982947429",
+      "content": "2費靈知覺醒「夢境摺疊」：觸腕暴擊率+25%，觸腕每造成一次傷害，臨時觸腕暴擊傷害+2%。",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449525079015948318",
-      "content": "<@883992032530563082> <@614083839131648021> 來看守密人正宮",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "Ramona!"
+      "id": "1449315775298015294",
+      "channel_id": "1131839817982947429",
+      "content": "你媽燉雞隊拿這什麼拉基造物",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449389676958847017",
-      "content": "P.s Goya, don't worry, i already talked to Light about this ^\nBut we could still",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+      "id": "1449416834544697569",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1449405114971455639",
-      "content": "完成\n但我感覺我頭髮的畫法在跟我其他地方的畫法杯頭",
-      "author": "tanchen0811",
-      "reactions": 2,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1449472268001480815",
-      "content": "晚點我肝個設定",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "一點仿官"
-    },
-    {
-      "id": "1449456210620321822",
-      "content": "太好看了我要上訴",
-      "author": "souri.10244",
-      "reactions": 2,
-      "channel": "女守X鯊（OOC警告）"
-    },
-    {
-      "id": "1449429395726008381",
-      "content": "推特太太畫娜娜生賀然後我在畫這東西覺得草",
-      "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": "想不到的第二張水仙視姦"
-    },
-    {
-      "id": "1449494185433370664",
-      "content": "https://www.youtube.com/shorts/tqlti9aYY7A",
-      "author": "lonely_tree",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1449379359642226870",
-      "content": "Below daily quest",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "How to obtain D-Jewels?"
-    },
-    {
-      "id": "1449318057452372040",
-      "content": "如題，目前夏活鑰令仲夏留念和美夢一剎，以及現活動拉蒙娜鑰令重逢心願，都是沒有加入彌撒格&四界域分類的，在選鑰令時必須在全部鑰令的第一頁拉到最下面，並且也不是堆在",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？"
-    },
-    {
-      "id": "1449317635186491594",
-      "content": "I think i misunderstood u before, sorry for that. So u meant it should be treate",
-      "author": "qingming6054",
-      "reactions": 1,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449320110224572519",
-      "content": "Please <@1131790839291596841>, share this problem with the team, if needed we ca",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+      "id": "1449423305462517851",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }
