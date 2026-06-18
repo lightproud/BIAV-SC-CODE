@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-18T11:46:40.389829+00:00",
+  "archived_at": "2026-06-18T14:48:02.964748+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 15,
   "items": [
     {
       "title": "[正面] fire gacha game",
@@ -242,6 +242,94 @@
         "playtime_forever": 271,
         "votes_up": 0,
         "timestamp_created": 1781773758
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] The art is AI generated. Also as expected from any...",
+      "summary": "The art is AI generated. Also as expected from any other mobile games with story elements, it secretly has more stuff to download after downloading the game initially.",
+      "source": "steam_review",
+      "time": "2026-06-18T13:11:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199593469388/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199593469388",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 219,
+        "votes_up": 0,
+        "timestamp_created": 1781788311
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] W W W W W WW W W W W W W  W W W W W W W W W W W W...",
+      "summary": "W W W W W WW W W W W W W  W W W W W W W W W W W W W  W W  W W  W W game SUPER niche and keep it niche :boy who cried niche: but keep this underground becasue #thosepeople will ruin the ♥♥♥♥ out of this game",
+      "source": "steam_review",
+      "time": "2026-06-18T13:09:30+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199529380302/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199529380302",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 301,
+        "votes_up": 0,
+        "timestamp_created": 1781788170
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] The best roguelike with consumer friendly gacha me...",
+      "summary": "The best roguelike with consumer friendly gacha mechanics I've ever seen",
+      "source": "steam_review",
+      "time": "2026-06-18T12:16:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198004255126/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198004255126",
+      "tags": [
+        "polish"
+      ],
+      "language": "polish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 689,
+        "votes_up": 0,
+        "timestamp_created": 1781784994
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 最近游戏荒了，在搜克苏鲁相关和肉鸽like相关的时候找到了这个游戏\n虽然是款抽卡游戏，目前体验下来剧...",
+      "summary": "最近游戏荒了，在搜克苏鲁相关和肉鸽like相关的时候找到了这个游戏\n虽然是款抽卡游戏，目前体验下来剧情个人感觉写的不错，看到了PVP内容但是还没有体验，目前个人感觉是不怎么氪不怎么肝的，送的石头到现在都没抽完，比大部分二游良心太多了。\n目前才到第四章，感觉体力目前不是很够用了\n美术很棒，音乐很棒，剧情也不错\n当做日常消遣来说不错的",
+      "source": "steam_review",
+      "time": "2026-06-18T11:23:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198421009001/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198421009001",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 546,
+        "votes_up": 0,
+        "timestamp_created": 1781781788
       },
       "lang": "",
       "platform_region": "global"
