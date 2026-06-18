@@ -1,8 +1,8 @@
 {
   "date": "2026-06-17",
-  "archived_at": "2026-06-17T23:18:23.944293+00:00",
+  "archived_at": "2026-06-18T02:36:53.965046+00:00",
   "source": "bilibili",
-  "item_count": 24,
+  "item_count": 26,
   "items": [
     {
       "title": "【都市】醒来后，全世界都成了天素罗，唯独我和她不变？",
@@ -135,6 +135,46 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 莫丝 珊 沙耶开荒 主线简单 首领战第四至第八章",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-17T11:16:49+00:00",
+      "url": "https://www.bilibili.com/video/BV1RfLQ6mEQY",
+      "engagement": 133,
+      "is_hot": false,
+      "author": "維娅的紅茶",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 133,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2dd17188baef4d7ef5c060ab7ecd81180266f1d1.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 莫丝 珊 沙耶开荒 主线简单 首领战第四至第八章",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-06-17T11:16:49+00:00",
+      "url": "http://www.bilibili.com/video/av116765111619315",
+      "engagement": 133,
+      "is_hot": false,
+      "author": "維娅的紅茶",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/2dd17188baef4d7ef5c060ab7ecd81180266f1d1.jpg",
+      "content_type": "video"
     },
     {
       "title": "【忘却前夜】打击温菲2t融灾5-5 千万出伤",
