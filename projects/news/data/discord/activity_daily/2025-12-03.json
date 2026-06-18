@@ -1,10 +1,27 @@
 {
   "date": "2025-12-03",
-  "messages": 12271,
+  "messages": 14996,
   "unique_authors": 288,
-  "reactions_total": 2174,
-  "attachments": 572,
+  "reactions_total": 2529,
+  "attachments": 764,
   "channel_activity": {
+    "🔸剧情交流": 143,
+    "🔸晒卡分享": 66,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 2,
+    "🔸交友频道": 9,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 498,
+    "🔸phòng-chat-tiếng-việt": 131,
+    "🔸canal-español": 479,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 381,
+    "🔸ห้องสนทนาภาษาไทย": 353,
+    "🔸traphase": 101,
+    "🔸lore-chat": 467,
     "🔸綜合討論": 1808,
     "🔸阵容构建": 16,
     "🔸morimens-game-chat": 10271,
@@ -57,35 +74,34 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "0": 416,
-    "1": 374,
-    "2": 389,
-    "3": 450,
-    "4": 589,
-    "5": 469,
-    "6": 432,
-    "7": 586,
-    "8": 628,
-    "9": 254,
-    "10": 532,
-    "11": 679,
-    "12": 619,
-    "13": 836,
-    "14": 879,
-    "15": 689,
-    "16": 599,
-    "17": 421,
-    "18": 354,
-    "19": 270,
-    "20": 574,
-    "22": 382,
-    "23": 458,
-    "21": 392
+    "1": 512,
+    "5": 556,
+    "6": 486,
+    "11": 747,
+    "12": 881,
+    "13": 1146,
+    "14": 1006,
+    "15": 1013,
+    "16": 660,
+    "22": 400,
+    "8": 689,
+    "3": 529,
+    "7": 676,
+    "9": 379,
+    "21": 402,
+    "0": 589,
+    "2": 596,
+    "4": 873,
+    "10": 606,
+    "17": 460,
+    "18": 379,
+    "19": 289,
+    "20": 642,
+    "23": 480
   },
   "message_types": {
-    "0": 7913,
-    "19": 4181,
-    "46": 1
+    "0": 2150,
+    "19": 575
   },
   "top_reacted_messages": [
     {
@@ -122,6 +138,14 @@
       "author": "ena04564",
       "reactions": 14,
       "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1445582608191979522",
+      "channel_id": "1173463482503536711",
+      "content": "热血沸腾的组合技",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1445638723135078492",
@@ -163,12 +187,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1445584668916191344",
+      "channel_id": "1173463482503536711",
+      "content": "哥哥直搗弟弟的黃龍",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1445733196489555989",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "ernest_heart",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1445731532894371941",
+      "channel_id": "1326453763355185215",
+      "content": "ramona: \"huh why am i out of breath and exhausted every time gramona leaves... m",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1445769848754798682",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "baguettesuffering",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1445687314486657075",
@@ -209,38 +257,6 @@
       "author": "isntthisdbz",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1445792063802310807",
-      "channel_id": "1170692781216378960",
-      "content": "While CZN story/art isn’t my cup of tea i do hope it lives well so more people b",
-      "author": "riasterism_",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1445579757432340592",
-      "channel_id": "1131839817982947429",
-      "content": "+12/666666/+12/+10是基本",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1445641566663213077",
-      "channel_id": "1131839817982947429",
-      "content": "我現在大腦已經被血希、誕墨給撫平褶皺了",
-      "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1445641748293484708",
-      "channel_id": "1131839817982947429",
-      "content": "獻祭連接大腦，鏈球代替思考",
-      "author": "ena04564",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
     }
   ]
 }

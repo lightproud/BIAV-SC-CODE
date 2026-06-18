@@ -1,10 +1,27 @@
 {
   "date": "2025-12-26",
-  "messages": 703,
-  "unique_authors": 49,
-  "reactions_total": 371,
-  "attachments": 94,
+  "messages": 11505,
+  "unique_authors": 308,
+  "reactions_total": 1618,
+  "attachments": 585,
   "channel_activity": {
+    "🔸morimens-game-chat": 7595,
+    "🔸剧情交流": 63,
+    "🔸晒卡分享": 15,
+    "🔸相位对弈": 96,
+    "🔸课间休息闲聊": 16,
+    "🔸交友频道": 3,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 274,
+    "🔸phòng-chat-tiếng-việt": 844,
+    "🔸canal-español": 847,
+    "🔸canal-português": 528,
+    "🔸ruang-obrolan-indonesia": 157,
+    "🔸ห้องสนทนาภาษาไทย": 125,
+    "🔸traphase": 211,
     "🔸綜合討論": 489,
     "corposant edit ayayay (ignore the intro plspls i have no ideas)": 1,
     "pollux sketch! (lf references i cannot find any)": 1,
@@ -46,34 +63,35 @@
     "1403373754175721657": 9
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 24,
-    "2": 66,
-    "3": 46,
-    "4": 54,
-    "5": 30,
-    "6": 42,
-    "7": 21,
-    "8": 49,
-    "9": 63,
-    "10": 91,
-    "11": 81,
-    "12": 17,
-    "13": 8,
-    "14": 21,
-    "15": 49,
-    "16": 13,
-    "17": 4,
-    "18": 4,
-    "19": 3,
-    "20": 4,
-    "21": 2,
-    "22": 2,
-    "23": 3
+    "0": 221,
+    "1": 321,
+    "2": 259,
+    "3": 258,
+    "4": 252,
+    "5": 400,
+    "6": 385,
+    "7": 356,
+    "8": 472,
+    "9": 850,
+    "10": 537,
+    "11": 597,
+    "12": 299,
+    "13": 483,
+    "14": 426,
+    "15": 709,
+    "16": 572,
+    "17": 484,
+    "18": 465,
+    "19": 857,
+    "20": 817,
+    "21": 480,
+    "22": 543,
+    "23": 462
   },
   "message_types": {
-    "0": 396,
-    "19": 93
+    "0": 7738,
+    "19": 3063,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -106,6 +124,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1454093601301725357",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/jjk-jujutsu-kaisen-green-role-monkey-sukuna-gif-115274496",
+      "author": "tnimreppep",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1453922172207890596",
       "content": "簡略很多因為這傢伙太難畫☝️",
       "author": "Deleted User",
@@ -113,11 +139,67 @@
       "channel": "嗨又是我我又畫了哈姆林"
     },
     {
+      "id": "1454069503163109554",
+      "channel_id": "1170692781216378960",
+      "content": "what if swinging dih with the same motion Clem uses whatever she does to hypnoti",
+      "author": "dinocider",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453940645982113793",
+      "channel_id": "1174983699935277147",
+      "content": "1000！！",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1454146631841611799",
+      "channel_id": "1174983699935277147",
+      "content": "不应该换的，不然就40万+了",
+      "author": "ququ12358",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1454057012764872714",
+      "channel_id": "1170692781216378960",
+      "content": "I hope your account gets dissoluted",
+      "author": "vinsette",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454155467520606268",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1454030783298801760",
       "content": "https://youtu.be/LCGd_lWCTJc?si=fyrdr9o2q1jIXESe",
       "author": "zier.0",
       "reactions": 8,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454208397233623303",
+      "channel_id": "1170692781216378960",
+      "content": "<:tiefsurprised:1004514210178420749>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454094693397954653",
+      "channel_id": "1173463482503536711",
+      "content": "~~搞不好文案看到就有靈感了~~",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1453956447808520224",
@@ -158,74 +240,12 @@
       "channel": "蓋個圖樓"
     },
     {
-      "id": "1453968119033888840",
-      "channel_id": "1131839817982947429",
-      "content": "狂氣是「怎樣才能像你一樣強呢」",
-      "author": "ass191044",
+      "id": "1454051111500517504",
+      "channel_id": "1170692781216378960",
+      "content": "main Mouchette posse, swap to Voices or Ogier posse as needed",
+      "author": "mac2492",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453973373334847683",
-      "channel_id": "1131839817982947429",
-      "content": "還有個覺醒卡:破防了 輸光\n怎麼輸",
-      "author": "a4485",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453976212623069184",
-      "channel_id": "1131839817982947429",
-      "content": "多一層「你就繼續」印記",
-      "author": "liaoyucheng_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453976928137777374",
-      "channel_id": "1131839817982947429",
-      "content": "超限是將自身「馬扁」印記數翻倍施加在敵方身上",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454108976307503225",
-      "content": "Context:\nIn light of the crit rate bug in Sunfall, I wonder if any other crit so",
-      "author": "lavache.",
-      "reactions": 6,
-      "channel": "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?"
-    },
-    {
-      "id": "1453922495181754602",
-      "content": "私設守密人 不知道有沒有人雷\n所以放個防雷墻",
-      "author": "Deleted User",
-      "reactions": 6,
-      "channel": "嗨又是我我又畫了哈姆林"
-    },
-    {
-      "id": "1453975057704423709",
-      "channel_id": "1131839817982947429",
-      "content": "我剛剛還有想到效果是給自己上強化增益，技能卡打出給自己一層「馬扁」印記，狂氣爆發將「馬扁」印記轉移至敵方身上變「酉星」印記，每層增加最終傷害0.777%",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454128679717310629",
-      "channel_id": "1131839817982947429",
-      "content": "佬活动币留着，结束后比率40倍的兌换玫瑰卷",
-      "author": "ququ12358",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454144612313862215",
-      "channel_id": "1131839817982947429",
-      "content": "他回來了（喜",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,25 @@
 {
   "date": "2025-12-21",
-  "messages": 1301,
-  "unique_authors": 42,
-  "reactions_total": 410,
-  "attachments": 109,
+  "messages": 7049,
+  "unique_authors": 222,
+  "reactions_total": 876,
+  "attachments": 455,
   "channel_activity": {
+    "🔸morimens-game-chat": 3772,
+    "🔸剧情交流": 98,
+    "🔸晒卡分享": 4,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 4,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 302,
+    "🔸phòng-chat-tiếng-việt": 522,
+    "🔸canal-español": 228,
+    "🔸canal-português": 135,
+    "🔸ruang-obrolan-indonesia": 454,
+    "🔸ห้องสนทนาภาษาไทย": 35,
+    "🔸traphase": 104,
+    "🔸lore-chat": 79,
     "🔸綜合討論": 1165,
     "Senior William doodles": 3,
     "Pencil art": 3,
@@ -37,33 +52,34 @@
     "1447283719843872808": 1
   },
   "hourly_activity": {
-    "0": 181,
-    "1": 62,
-    "2": 27,
-    "3": 114,
-    "4": 28,
-    "5": 74,
-    "6": 25,
-    "7": 75,
-    "8": 144,
-    "9": 57,
-    "10": 15,
-    "11": 7,
-    "12": 24,
-    "13": 21,
-    "14": 62,
-    "15": 168,
-    "16": 177,
-    "17": 6,
-    "18": 8,
-    "19": 14,
-    "23": 6,
-    "22": 2,
-    "20": 4
+    "0": 339,
+    "1": 252,
+    "2": 147,
+    "3": 468,
+    "4": 239,
+    "5": 164,
+    "6": 79,
+    "7": 291,
+    "8": 575,
+    "9": 460,
+    "10": 374,
+    "11": 232,
+    "12": 206,
+    "13": 166,
+    "14": 447,
+    "15": 716,
+    "16": 381,
+    "17": 381,
+    "18": 194,
+    "19": 108,
+    "20": 263,
+    "21": 160,
+    "22": 202,
+    "23": 205
   },
   "message_types": {
-    "0": 953,
-    "19": 212
+    "0": 4447,
+    "19": 1301
   },
   "top_reacted_messages": [
     {
@@ -109,6 +125,14 @@
       "channel": "✅「已回答」可否增設命輪和密契的計數器"
     },
     {
+      "id": "1452334469066526921",
+      "channel_id": "1170692781216378960",
+      "content": "ngl, I didn't think I would have the gamer skills to make this",
+      "author": "thesecondcomingofdrenwee",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1452228628292042762",
       "channel_id": "1131839817982947429",
       "content": "樓上的都有90等真可怕",
@@ -117,12 +141,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1452270363898810571",
+      "channel_id": "1170692781216378960",
+      "content": "Because your account shows you're under 18, we've adjusted a few settings to cre",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1452308259359953126",
       "channel_id": "1131839817982947429",
       "content": "皮克曼还是好玩",
       "author": "grayifies",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452407476841615623",
+      "channel_id": "1170692781216378960",
+      "content": "i meant we wont have a char for a month",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1452176677294706728",
@@ -162,60 +202,36 @@
       "channel": "🎗️OC生贺｜命运之丝"
     },
     {
-      "id": "1452219422654730332",
-      "channel_id": "1131839817982947429",
-      "content": "不要到時候群裡人對我的評價是教壞人",
-      "author": "water_heart",
+      "id": "1452270623970689034",
+      "channel_id": "1170692781216378960",
+      "content": "Gmurphy is e2 i heard it must be e3 to be used",
+      "author": "why_so_serious_69",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1452219500249485393",
-      "channel_id": "1131839817982947429",
-      "content": "你也是一個合格的邪教教主了",
-      "author": "ernest_heart",
+      "id": "1452333002007904361",
+      "channel_id": "1170692781216378960",
+      "content": "Between Monchi hating Tawil\nElite hating Kath\nFlares hating Clem and Pollux\nAuro",
+      "author": "legendaryredz",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1452220301529321542",
-      "channel_id": "1131839817982947429",
-      "content": "因為男同比較多",
-      "author": "ernest_heart",
+      "id": "1452333165430706226",
+      "channel_id": "1170692781216378960",
+      "content": "26% too much",
+      "author": "bagels5899",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1452304337299701834",
-      "channel_id": "1131839817982947429",
-      "content": "願淫藥勾引前路",
-      "author": "ernest_heart",
+      "id": "1452384853998964796",
+      "channel_id": "1170692781216378960",
+      "content": "Could've gotten 410 but as a f2p player with no time, this is good enough for me",
+      "author": "destroyer06849",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1452309004805079070",
-      "channel_id": "1131839817982947429",
-      "content": "靠腰，是會跟我聊天的英區攻略佬在直播裡直接拿我代稱鯊魚",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1452329425109778514",
-      "channel_id": "1131839817982947429",
-      "content": "麻麻我上電視了",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1452336556286152744",
-      "channel_id": "1131839817982947429",
-      "content": "||~~你是我見過最優秀的沙包~~||",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

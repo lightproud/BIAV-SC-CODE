@@ -1,10 +1,25 @@
 {
   "date": "2025-12-28",
-  "messages": 1191,
-  "unique_authors": 40,
-  "reactions_total": 464,
-  "attachments": 84,
+  "messages": 11774,
+  "unique_authors": 255,
+  "reactions_total": 1488,
+  "attachments": 564,
   "channel_activity": {
+    "🔸morimens-game-chat": 6661,
+    "🔸剧情交流": 47,
+    "🔸晒卡分享": 26,
+    "🔸相位对弈": 70,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 21,
+    "🔸한국어-채팅방": 1,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 970,
+    "🔸phòng-chat-tiếng-việt": 1043,
+    "🔸canal-español": 628,
+    "🔸canal-português": 453,
+    "🔸ruang-obrolan-indonesia": 421,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 210,
     "🔸綜合討論": 1108,
     "🔸阵容构建": 3,
     "🌼 Pollux 🌼": 1,
@@ -35,34 +50,34 @@
     "1445334381404094475": 11
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 5,
-    "2": 17,
-    "3": 40,
-    "4": 68,
-    "5": 112,
-    "6": 27,
-    "7": 23,
-    "8": 65,
-    "9": 74,
-    "10": 110,
-    "11": 154,
-    "12": 206,
-    "13": 178,
-    "14": 6,
-    "15": 24,
-    "16": 5,
-    "17": 51,
-    "18": 8,
-    "19": 3,
-    "21": 4,
-    "23": 6,
-    "22": 3,
-    "20": 1
+    "0": 269,
+    "1": 168,
+    "2": 302,
+    "3": 311,
+    "4": 375,
+    "5": 450,
+    "6": 331,
+    "7": 581,
+    "8": 481,
+    "9": 197,
+    "10": 295,
+    "11": 656,
+    "12": 744,
+    "13": 711,
+    "14": 639,
+    "15": 735,
+    "16": 617,
+    "17": 1042,
+    "18": 304,
+    "19": 352,
+    "20": 457,
+    "21": 779,
+    "22": 419,
+    "23": 559
   },
   "message_types": {
-    "19": 205,
-    "0": 906
+    "0": 8048,
+    "19": 2535
   },
   "top_reacted_messages": [
     {
@@ -71,6 +86,14 @@
       "author": "ernest_heart",
       "reactions": 48,
       "channel": "Octopus Octopus We Like You Club joining benefit"
+    },
+    {
+      "id": "1454849657724211271",
+      "channel_id": "1170692781216378960",
+      "content": "Not whale level yet",
+      "author": "rain_scarlet",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1454842417571172392",
@@ -151,6 +174,38 @@
       "channel": "墨菲"
     },
     {
+      "id": "1454640104965406780",
+      "channel_id": "1300659662311526512",
+      "content": "Mientras voy a perder otra partida, les presento a Mary.",
+      "author": "sayokolefay",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1454921626528518185",
+      "channel_id": "1170692781216378960",
+      "content": "good night",
+      "author": "omni_colon",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454837345290551348",
+      "channel_id": "1174983699935277147",
+      "content": "😭",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1454754450118803620",
+      "channel_id": "1181152750319456266",
+      "content": "",
+      "author": "queen_bee66",
+      "reactions": 9,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
       "id": "1454858209348026368",
       "content": "uid: 101119523",
       "author": "anna3248",
@@ -158,58 +213,20 @@
       "channel": "Happy New Year from GMurphy and Tulu!❄️"
     },
     {
-      "id": "1454764122724892682",
-      "channel_id": "1131839817982947429",
-      "content": "我不明白圖魯跟打傷害怎麼在一句話裡保持一致性的",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1454692136535724162",
+      "channel_id": "1174983699935277147",
+      "content": "常駐撈了兩張<:please:1356053110375714817>",
+      "author": "queen_bee66",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1454677257221050511",
-      "channel_id": "1131839817982947429",
-      "content": "😁 好玩",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454765189554638997",
-      "channel_id": "1131839817982947429",
-      "content": "~~我突然感覺我是圖魯廚，+12的輪椅放在一邊用+4圖魯打傷害~~",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454790943872909333",
-      "channel_id": "1131839817982947429",
-      "content": "~~集合嘍！曹氏宗親會~~",
-      "author": "foxcatfurry",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454985236155859191",
-      "channel_id": "1131839817982947429",
-      "content": "【【忘却前夜】融灾禁区3-5虫树 守密人单C-哔哩哔哩】 https://b23.tv/iZLO9YE",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1454958754310389953",
-      "content": "A 2 minute overview of Helot: Catena.\nhttps://youtube.com/shorts/j76EGD_9VNc?si=",
-      "author": "nechromicon",
-      "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1454825513334870129",
-      "content": "二次嘗試杜勒睡衣設計~~太複雜失敗只能當私服~~",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": ""
+      "id": "1454892464966992036",
+      "channel_id": "1300659662311526512",
+      "content": "Me acabo de sacar el e2 de Thais",
+      "author": "rusheer.l",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     }
   ]
 }

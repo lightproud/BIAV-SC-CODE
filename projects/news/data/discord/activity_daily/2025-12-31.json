@@ -1,10 +1,24 @@
 {
   "date": "2025-12-31",
-  "messages": 861,
-  "unique_authors": 53,
-  "reactions_total": 593,
-  "attachments": 71,
+  "messages": 11267,
+  "unique_authors": 262,
+  "reactions_total": 1479,
+  "attachments": 564,
   "channel_activity": {
+    "🔸morimens-game-chat": 7052,
+    "🔸剧情交流": 48,
+    "🔸晒卡分享": 27,
+    "🔸相位对弈": 9,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 839,
+    "🔸phòng-chat-tiếng-việt": 576,
+    "🔸canal-español": 357,
+    "🔸canal-português": 310,
+    "🔸ruang-obrolan-indonesia": 676,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸traphase": 442,
     "🔸綜合討論": 729,
     "🔸阵容构建": 3,
     "I errr....": 5,
@@ -40,33 +54,34 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "0": 25,
-    "1": 19,
-    "2": 20,
-    "3": 47,
-    "4": 54,
-    "5": 30,
-    "6": 78,
-    "7": 25,
-    "8": 11,
-    "9": 22,
-    "10": 73,
-    "11": 68,
-    "12": 32,
-    "13": 71,
-    "14": 71,
-    "15": 24,
-    "16": 93,
-    "17": 58,
-    "18": 16,
-    "19": 12,
-    "23": 5,
-    "20": 3,
-    "21": 4
+    "0": 295,
+    "1": 350,
+    "2": 268,
+    "3": 334,
+    "4": 326,
+    "5": 248,
+    "6": 325,
+    "7": 320,
+    "8": 484,
+    "9": 521,
+    "10": 291,
+    "11": 397,
+    "12": 489,
+    "13": 737,
+    "14": 805,
+    "15": 694,
+    "16": 654,
+    "17": 784,
+    "18": 572,
+    "19": 355,
+    "20": 367,
+    "21": 924,
+    "22": 519,
+    "23": 208
   },
   "message_types": {
-    "19": 139,
-    "0": 593
+    "19": 2560,
+    "0": 7846
   },
   "top_reacted_messages": [
     {
@@ -133,6 +148,38 @@
       "channel": ""
     },
     {
+      "id": "1455971871983141027",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil has been a victim to effortcreep",
+      "author": "monchi3524",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455963676036038811",
+      "channel_id": "1170692781216378960",
+      "content": "shush dedush",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456057378976829552",
+      "channel_id": "1170692781216378960",
+      "content": "yeah she can do all the things you really don’t need way better than Kath",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455766526711042091",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1455812362937569363",
       "channel_id": "1131839817982947429",
       "content": "-# 群通知：\n-# 今天晚上十二点，弥萨格校猫将准时发放200个0流明红包，和0个200流明红包，请大家准时参加。",
@@ -156,6 +203,22 @@
       "channel": "now spell."
     },
     {
+      "id": "1456016603668807855",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456057568668422275",
+      "channel_id": "1170692781216378960",
+      "content": "I think all agree?",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1455955652080963595",
       "channel_id": "1131839817982947429",
       "content": "怎麼不是發2026流明",
@@ -164,59 +227,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1456004360071807068",
-      "channel_id": "1131839817982947429",
-      "content": "已經+12了",
-      "author": "axe_proficient",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455947533581815929",
-      "content": "",
-      "author": "deellln",
-      "reactions": 6,
-      "channel": "aequor doodle"
-    },
-    {
-      "id": "1455785070743916588",
-      "channel_id": "1131839817982947429",
-      "content": "登录天数一年了！虽然是24年四月入游戏的（）",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455873031321948317",
-      "channel_id": "1131839817982947429",
-      "content": "<:Clown:1400771541423226971>",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455885558651027591",
-      "channel_id": "1131839817982947429",
-      "content": "小帳茉夏開荒 守密人33等 打完第八章",
-      "author": "lululu9858",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455921534928683028",
-      "channel_id": "1131839817982947429",
-      "content": "今天過完後今年就不玩了",
-      "author": "cynthiacurio",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455922548268208369",
-      "channel_id": "1131839817982947429",
-      "content": "主要是看群里的老手腻了（）",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1455741996072173690",
+      "channel_id": "1170692781216378960",
+      "content": "In a fight right?",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

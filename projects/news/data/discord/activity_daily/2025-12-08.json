@@ -1,10 +1,28 @@
 {
   "date": "2025-12-08",
-  "messages": 822,
-  "unique_authors": 43,
-  "reactions_total": 338,
-  "attachments": 128,
+  "messages": 10479,
+  "unique_authors": 282,
+  "reactions_total": 1474,
+  "attachments": 660,
   "channel_activity": {
+    "🔸morimens-game-chat": 8035,
+    "🔸剧情交流": 50,
+    "🔸晒卡分享": 7,
+    "🔸相位对弈": 21,
+    "🔸课间休息闲聊": 1,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 228,
+    "🔸phòng-chat-tiếng-việt": 125,
+    "🔸canal-español": 457,
+    "🔸canal-português": 108,
+    "🔸ruang-obrolan-indonesia": 196,
+    "🔸ห้องสนทนาภาษาไทย": 126,
+    "🔸traphase": 37,
+    "🔸lore-chat": 237,
     "🔸綜合討論": 664,
     "Explosion: Ramona": 2,
     "Nymphaea!": 1,
@@ -47,34 +65,34 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "0": 17,
-    "1": 27,
-    "2": 49,
-    "3": 47,
-    "4": 59,
-    "5": 46,
-    "6": 79,
-    "7": 34,
-    "8": 53,
-    "9": 77,
-    "10": 29,
-    "11": 16,
-    "12": 123,
-    "13": 16,
-    "14": 42,
-    "15": 24,
-    "16": 29,
-    "17": 14,
-    "18": 4,
-    "19": 6,
-    "21": 3,
-    "22": 4,
-    "23": 19,
-    "20": 5
+    "0": 498,
+    "1": 648,
+    "2": 779,
+    "3": 679,
+    "4": 586,
+    "5": 336,
+    "6": 365,
+    "7": 214,
+    "8": 516,
+    "9": 295,
+    "10": 505,
+    "11": 380,
+    "12": 447,
+    "13": 414,
+    "14": 495,
+    "15": 636,
+    "16": 351,
+    "17": 284,
+    "18": 284,
+    "19": 447,
+    "20": 158,
+    "21": 478,
+    "22": 201,
+    "23": 483
   },
   "message_types": {
-    "19": 118,
-    "0": 546
+    "19": 2919,
+    "0": 6738
   },
   "top_reacted_messages": [
     {
@@ -108,12 +126,68 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1447385584866955345",
+      "channel_id": "1170692781216378960",
+      "content": "the only one im bending over for",
+      "author": "not_blueberry",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447436511212474530",
+      "channel_id": "1170692781216378960",
+      "content": "FK",
+      "author": "yurichansnails",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447476773133750273",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447454426058063872",
+      "channel_id": "1173463482503536711",
+      "content": "每打一次大眼熔朵的業績壓力+1",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1447643641098010636",
       "channel_id": "1131839817982947429",
       "content": "赤完了",
       "author": "ernest_heart",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447421426096406770",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447431844483039364",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447632397968474143",
+      "channel_id": "1170692781216378960",
+      "content": "Would beat kids again",
+      "author": "sno_w",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1447425142216200224",
@@ -132,105 +206,51 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1447445101700976760",
+      "channel_id": "1170692781216378960",
+      "content": "Men can be good girls dude.",
+      "author": "mitsukinanoka__",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447467859893555231",
+      "channel_id": "1170692781216378960",
+      "content": "gmurphy failed to bring a god into the world because we all know only men can ge",
+      "author": "khykken",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447530634540093532",
+      "channel_id": "1170692781216378960",
+      "content": "Will see what my reasonable goals will be",
+      "author": "mythicmoonwort",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447567675373912075",
+      "channel_id": "1170692781216378960",
+      "content": "here I present, the GOAT dps",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447672142056521778",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "yurichansnails",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1447407893061177394",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "0.0._.0_0.",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447528457813757984",
-      "channel_id": "1131839817982947429",
-      "content": "https://tenor.com/view/technology-plant-mover-gif-3457510",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447467932258013235",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1447402954163359896",
-      "channel_id": "1131839817982947429",
-      "content": "过了好耶  \n诶不对，我血条怎么就剩五百了",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447427215250817065",
-      "channel_id": "1131839817982947429",
-      "content": "只要不拿哈姆林打融5就会变好的<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447427791275556915",
-      "channel_id": "1131839817982947429",
-      "content": "力量 回血 算力 盾",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447490780729180202",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447524557513687160",
-      "channel_id": "1131839817982947429",
-      "content": "~~然後盡量不要用皮4費把母樹直接鏟了~~",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447469246576853013",
-      "content": "這期我是選擇給蜘蛛帶上旋轉旋轉\n可以掛機疊一點點毒\n還有出空間時的觸毒也可以補一點傷害",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1447420570575704136",
-      "channel_id": "1131839817982947429",
-      "content": "垃圾造物",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447446260960464907",
-      "channel_id": "1131839817982947429",
-      "content": "我拿這隊去車第五波好了",
-      "author": "axe_proficient",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447449477341515899",
-      "channel_id": "1131839817982947429",
-      "content": "我也過了<:pray:1356053116260454534>",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447459898031079538",
-      "channel_id": "1131839817982947429",
-      "content": "校猫的小巧思之不开紫合金。按照分解公式1金等于3紫反推，1338紫/3=446金",
-      "author": "akalanden",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]

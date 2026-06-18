@@ -1,10 +1,24 @@
 {
   "date": "2025-12-15",
-  "messages": 1808,
-  "unique_authors": 55,
-  "reactions_total": 620,
-  "attachments": 127,
+  "messages": 12706,
+  "unique_authors": 322,
+  "reactions_total": 1619,
+  "attachments": 705,
   "channel_activity": {
+    "🔸morimens-game-chat": 8158,
+    "🔸剧情交流": 49,
+    "🔸晒卡分享": 21,
+    "🔸相位对弈": 2,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 5,
+    "🔸русский-канал": 218,
+    "🔸phòng-chat-tiếng-việt": 183,
+    "🔸canal-español": 411,
+    "🔸canal-português": 117,
+    "🔸ruang-obrolan-indonesia": 478,
+    "🔸ห้องสนทนาภาษาไทย": 430,
+    "🔸traphase": 254,
+    "🔸lore-chat": 571,
     "🔸綜合討論": 1634,
     "pollux sketch! (lf references i cannot find any)": 3,
     "Liz : Hollow Dance of Destruction": 1,
@@ -47,33 +61,34 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "0": 49,
-    "1": 41,
-    "2": 54,
-    "3": 41,
-    "4": 147,
-    "5": 140,
-    "6": 54,
-    "7": 46,
-    "8": 148,
-    "9": 131,
-    "10": 142,
-    "11": 74,
-    "12": 159,
-    "13": 166,
-    "14": 172,
-    "15": 49,
-    "16": 36,
-    "17": 79,
-    "18": 7,
-    "19": 7,
-    "20": 42,
-    "22": 4,
-    "23": 20
+    "0": 462,
+    "1": 956,
+    "2": 771,
+    "3": 611,
+    "4": 593,
+    "5": 500,
+    "6": 741,
+    "7": 464,
+    "8": 648,
+    "9": 667,
+    "10": 667,
+    "11": 532,
+    "12": 409,
+    "13": 787,
+    "14": 536,
+    "15": 521,
+    "16": 526,
+    "17": 556,
+    "18": 142,
+    "19": 193,
+    "20": 552,
+    "21": 233,
+    "22": 227,
+    "23": 412
   },
   "message_types": {
-    "0": 1320,
-    "19": 314
+    "19": 2816,
+    "0": 8082
   },
   "top_reacted_messages": [
     {
@@ -105,6 +120,14 @@
       "author": "ernest_heart",
       "reactions": 12,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449949517964247090",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1449960898952302652",
@@ -139,6 +162,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1449980499928813699",
+      "channel_id": "1174983699935277147",
+      "content": "不好 浪費一個母版了",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1450013519834775736",
       "channel_id": "1131839817982947429",
       "content": "各位\n被H4-10全方面克制的尤烏也過了",
@@ -153,6 +184,30 @@
       "author": "quackdayo",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449936973879050354",
+      "channel_id": "1170692781216378960",
+      "content": "I want Pollux to stay in my apartment and make scrambled eggs every morning for ",
+      "author": "seynee_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449937853453959178",
+      "channel_id": "1170692781216378960",
+      "content": "flares is a smart boy, invested in bitcoin at the tender age of.... 5?",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450079095248392285",
+      "channel_id": "1326453763355185215",
+      "content": "~~although i find it weird that the teenagers are not given the same level of wr",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1450057457136308275",
@@ -178,59 +233,20 @@
       "channel": "💭「Processing」Recurring Notification from event"
     },
     {
-      "id": "1449962070094381151",
-      "channel_id": "1131839817982947429",
-      "content": "普抽怎麼是你",
-      "author": "axe_proficient",
+      "id": "1449991691183460467",
+      "channel_id": "1170692781216378960",
+      "content": "<:thumbsup:1356086340298473574>",
+      "author": "moyashi0672",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1449995528476823644",
-      "channel_id": "1131839817982947429",
-      "content": "像這樣",
-      "author": "ernest_heart",
+      "id": "1450053909266829414",
+      "channel_id": "1170692781216378960",
+      "content": "glowing pandia",
+      "author": "itsmemiki",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450062205994143764",
-      "channel_id": "1131839817982947429",
-      "content": "就剩我莉莉吃到大保底了",
-      "author": "axe_proficient",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450123342521696417",
-      "content": "**Online Maintenance Announcement**\n\nDear Keeper,\n    The Mythag University Admi",
-      "author": "morimensstaff02",
-      "reactions": 6,
-      "channel": "线上问题修复公告"
-    },
-    {
-      "id": "1449980115411795975",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cameliia._.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449980369234301061",
-      "channel_id": "1131839817982947429",
-      "content": "真是改变环境的强度呀",
-      "author": "ququ12358",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449997217590018211",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

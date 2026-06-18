@@ -1,10 +1,26 @@
 {
   "date": "2025-12-25",
-  "messages": 1161,
-  "unique_authors": 64,
-  "reactions_total": 1022,
-  "attachments": 91,
+  "messages": 12813,
+  "unique_authors": 301,
+  "reactions_total": 2004,
+  "attachments": 720,
   "channel_activity": {
+    "🔸morimens-game-chat": 7648,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 8,
+    "🔸相位对弈": 15,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 47,
+    "🔸chaîne-française": 13,
+    "🔸русский-канал": 1297,
+    "🔸phòng-chat-tiếng-việt": 1055,
+    "🔸canal-español": 605,
+    "🔸canal-português": 146,
+    "🔸ruang-obrolan-indonesia": 386,
+    "🔸ห้องสนทนาภาษาไทย": 200,
+    "🔸traphase": 195,
     "🔸綜合討論": 917,
     "🔸阵容构建": 1,
     "Thais.": 13,
@@ -34,32 +50,35 @@
     "1426215442783142041": 3
   },
   "hourly_activity": {
-    "0": 20,
-    "1": 40,
-    "2": 13,
-    "3": 112,
-    "4": 31,
-    "5": 38,
-    "6": 52,
-    "7": 234,
-    "8": 78,
-    "9": 46,
-    "10": 34,
-    "11": 38,
-    "12": 38,
-    "13": 46,
-    "14": 73,
-    "15": 141,
-    "16": 32,
-    "17": 66,
-    "18": 12,
-    "19": 12,
-    "22": 4,
-    "21": 1
+    "0": 338,
+    "1": 237,
+    "2": 303,
+    "3": 716,
+    "4": 489,
+    "5": 612,
+    "6": 506,
+    "7": 661,
+    "8": 594,
+    "9": 409,
+    "10": 570,
+    "11": 523,
+    "12": 587,
+    "13": 723,
+    "14": 677,
+    "15": 634,
+    "16": 927,
+    "17": 705,
+    "18": 644,
+    "19": 472,
+    "20": 230,
+    "21": 570,
+    "22": 387,
+    "23": 299
   },
   "message_types": {
-    "0": 817,
-    "19": 101
+    "0": 8707,
+    "19": 2944,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -142,12 +161,28 @@
       "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
     },
     {
+      "id": "1453586368482513000",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "cameliia._.",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1453598667796644015",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1453697911098572921",
+      "channel_id": "1170692781216378960",
+      "content": "i have kath e0",
+      "author": "lordbabel",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1453762066648273139",
@@ -163,6 +198,14 @@
       "author": "carrot_chicken",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1453732445089300573",
+      "channel_id": "1173463482503536711",
+      "content": "我有个大胆的想法\n把济贫院的贫字去掉不就没有穷人了吗？",
+      "author": "shangxianyue_sp",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1453595396474671124",
@@ -186,28 +229,6 @@
       "content": "這個限時活動是限3秒喔",
       "author": "ass191044",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453680084383830070",
-      "content": "Golden Goats Dance looks like typical New Year's art in every gacha game. It's s",
-      "author": "meatloversus",
-      "reactions": 7,
-      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1453677596150599763",
-      "content": "well, the whole \"going mad with denial, finishing your ancient summoning ritual ",
-      "author": "arkaether",
-      "reactions": 7,
-      "channel": ""
-    },
-    {
-      "id": "1453654019221491712",
-      "channel_id": "1131839817982947429",
-      "content": "未開始先結束",
-      "author": "heikwok",
-      "reactions": 6,
       "channel": "🔸綜合討論"
     }
   ]

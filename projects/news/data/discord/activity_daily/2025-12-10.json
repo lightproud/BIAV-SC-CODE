@@ -1,10 +1,26 @@
 {
   "date": "2025-12-10",
-  "messages": 1873,
-  "unique_authors": 62,
-  "reactions_total": 1043,
-  "attachments": 126,
+  "messages": 14608,
+  "unique_authors": 311,
+  "reactions_total": 2442,
+  "attachments": 753,
   "channel_activity": {
+    "🔸morimens-game-chat": 8931,
+    "🔸剧情交流": 45,
+    "🔸课间休息闲聊": 7,
+    "🔸交友频道": 167,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 6,
+    "🔸deutscher-chatraum": 27,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 406,
+    "🔸phòng-chat-tiếng-việt": 166,
+    "🔸canal-español": 198,
+    "🔸canal-português": 1219,
+    "🔸ruang-obrolan-indonesia": 222,
+    "🔸ห้องสนทนาภาษาไทย": 259,
+    "🔸traphase": 37,
+    "🔸lore-chat": 1037,
     "🔸綜合討論": 1474,
     "Pollux emote doodle": 1,
     "Last connection: Doll": 2,
@@ -51,34 +67,35 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 11,
-    "2": 54,
-    "3": 6,
-    "4": 33,
-    "5": 11,
-    "6": 6,
-    "7": 43,
-    "8": 127,
-    "9": 232,
-    "10": 505,
-    "11": 237,
-    "12": 43,
-    "13": 23,
-    "14": 80,
-    "15": 15,
-    "16": 15,
-    "18": 8,
-    "19": 51,
-    "20": 50,
-    "22": 130,
-    "23": 82,
-    "21": 3,
-    "17": 102
+    "0": 285,
+    "1": 332,
+    "2": 541,
+    "3": 411,
+    "4": 416,
+    "5": 547,
+    "6": 473,
+    "7": 644,
+    "8": 1027,
+    "9": 732,
+    "10": 1031,
+    "11": 903,
+    "12": 719,
+    "13": 678,
+    "14": 716,
+    "15": 1055,
+    "16": 670,
+    "17": 553,
+    "18": 609,
+    "19": 502,
+    "20": 456,
+    "21": 410,
+    "22": 419,
+    "23": 479
   },
   "message_types": {
-    "0": 1132,
-    "19": 342
+    "0": 9108,
+    "19": 3626,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -152,11 +169,27 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448255773820977275",
+      "channel_id": "1170692781216378960",
+      "content": "Time to spend 900 stamina pots",
+      "author": "monchi3524",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448378138500534344",
       "content": "Caecus on his fourth crying emote <:Pity:1400771620989308998> <:alone:1356053021",
       "author": "etheus",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1448463654243799192",
+      "channel_id": "1170692781216378960",
+      "content": "400 finally",
+      "author": "angbak",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1448150763141468323",
@@ -209,22 +242,6 @@
       "author": "ernest_heart",
       "reactions": 11,
       "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1448263954894946336",
-      "channel_id": "1131839817982947429",
-      "content": "其實爭取玩家權益不是什麼壞事啦\n~~但過於理想主義就不是很好了~~",
-      "author": "yusi4172",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448266353910743154",
-      "channel_id": "1131839817982947429",
-      "content": "我自己也是强迫症想洗单属性100%  \n但是贬低不同看法的玩家并不会让更多人支持你的看法诶",
-      "author": "sweet_25367",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
     }
   ]
 }

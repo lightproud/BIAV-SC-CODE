@@ -1,10 +1,24 @@
 {
   "date": "2025-12-29",
-  "messages": 1929,
-  "unique_authors": 68,
-  "reactions_total": 481,
-  "attachments": 130,
+  "messages": 16582,
+  "unique_authors": 366,
+  "reactions_total": 1784,
+  "attachments": 1019,
   "channel_activity": {
+    "🔸morimens-game-chat": 10138,
+    "🔸剧情交流": 26,
+    "🔸晒卡分享": 31,
+    "🔸相位对弈": 19,
+    "🔸交友频道": 8,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 2,
+    "🔸русский-канал": 382,
+    "🔸phòng-chat-tiếng-việt": 2140,
+    "🔸canal-español": 264,
+    "🔸canal-português": 333,
+    "🔸ruang-obrolan-indonesia": 601,
+    "🔸ห้องสนทนาภาษาไทย": 614,
+    "🔸traphase": 89,
     "🔸綜合討論": 1679,
     "🔸阵容构建": 54,
     "I errr....": 7,
@@ -65,32 +79,37 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 28,
-    "1": 99,
-    "2": 191,
-    "3": 222,
-    "4": 335,
-    "5": 125,
-    "6": 53,
-    "7": 148,
-    "8": 199,
-    "9": 71,
-    "10": 22,
-    "11": 79,
-    "12": 37,
-    "13": 55,
-    "14": 13,
-    "15": 14,
-    "16": 84,
-    "17": 42,
-    "18": 39,
-    "19": 5,
-    "20": 57,
-    "22": 11
+    "0": 521,
+    "1": 1047,
+    "2": 1261,
+    "3": 1091,
+    "4": 940,
+    "5": 804,
+    "6": 604,
+    "7": 791,
+    "8": 812,
+    "9": 541,
+    "10": 436,
+    "11": 567,
+    "12": 752,
+    "13": 708,
+    "14": 488,
+    "15": 1069,
+    "16": 841,
+    "17": 838,
+    "18": 375,
+    "19": 436,
+    "20": 604,
+    "21": 509,
+    "22": 390,
+    "23": 157
   },
   "message_types": {
-    "0": 1402,
-    "19": 331
+    "19": 3783,
+    "0": 10866,
+    "20": 1,
+    "46": 2,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -106,6 +125,38 @@
       "author": "yandrewm",
       "reactions": 22,
       "channel": "Fish baby boy"
+    },
+    {
+      "id": "1455008119938617444",
+      "channel_id": "1170692781216378960",
+      "content": "OE achieved in 200 pulls <:agree:1400771815076528258>",
+      "author": "rozu",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455204096708579419",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455231816154746913",
+      "channel_id": "1170692781216378960",
+      "content": "Legendary moment",
+      "author": "good.th",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455149247983915140",
+      "channel_id": "1173463482503536711",
+      "content": "自閉鯨，輸光...",
+      "author": "heikwok",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1455065584407679089",
@@ -129,6 +180,14 @@
       "author": "legendaryredz",
       "reactions": 9,
       "channel": "I errr...."
+    },
+    {
+      "id": "1455062853416386591",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1455058050628063302",
@@ -169,84 +228,44 @@
       "channel": ""
     },
     {
-      "id": "1455051792206401662",
-      "channel_id": "1131839817982947429",
-      "content": "變成弱智質體了",
-      "author": "ernest_heart",
+      "id": "1455001627277656196",
+      "channel_id": "1170692781216378960",
+      "content": "You know who else love hard things ?",
+      "author": "legendaryredz",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455058756546334771",
-      "channel_id": "1131839817982947429",
-      "content": "85抽3启，跑了",
-      "author": "jidu1418",
+      "id": "1455028465819717633",
+      "channel_id": "1170692781216378960",
+      "content": "<@330867601691639809> 300 for 5 copies and 4 wheels",
+      "author": "melwyn7591",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455055210077622293",
-      "channel_id": "1131839817982947429",
-      "content": "正常應該要15~20抽一隻",
-      "author": "luckyinitial",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1455062616497192960",
+      "channel_id": "1170692781216378960",
+      "content": "<:T_stare:1400771751650136145>",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455057132238930044",
-      "channel_id": "1131839817982947429",
-      "content": "哦耶叠满了",
-      "author": "jidu1418",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1455070327582359675",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "velmi",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455057237927002285",
-      "channel_id": "1131839817982947429",
-      "content": "跳的高不高我不知道 但我腳麻了",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455062795044393296",
-      "channel_id": "1131839817982947429",
-      "content": "開大投擲寶貝球收服敵方",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455098542434680853",
-      "channel_id": "1131839817982947429",
-      "content": "這樣只能算是白銀熊",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455098602421747838",
-      "channel_id": "1131839817982947429",
-      "content": "三個都刷滿才能是黃金熊",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455120910175699049",
-      "channel_id": "1131839817982947429",
-      "content": "||~~宁愿等画家复刻给画家超限让他对我呵呵哈嘿~~||",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455121904959750277",
-      "channel_id": "1131839817982947429",
-      "content": "~~忘卻飛霄大人~~",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1455137371694829588",
+      "channel_id": "1170692781216378960",
+      "content": "Cass mouchette can also do funny combo like telekinesis - > mortal blast - > tel",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

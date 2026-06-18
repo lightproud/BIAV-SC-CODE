@@ -1,10 +1,25 @@
 {
   "date": "2025-12-04",
-  "messages": 7450,
+  "messages": 8967,
   "unique_authors": 281,
-  "reactions_total": 1077,
-  "attachments": 415,
+  "reactions_total": 1249,
+  "attachments": 527,
   "channel_activity": {
+    "🔸剧情交流": 4,
+    "🔸晒卡分享": 73,
+    "🔸相位对弈": 1,
+    "🔸交友频道": 10,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 43,
+    "🔸deutscher-chatraum": 8,
+    "🔸русский-канал": 264,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 333,
+    "🔸canal-português": 91,
+    "🔸ruang-obrolan-indonesia": 181,
+    "🔸ห้องสนทนาภาษาไทย": 91,
+    "🔸traphase": 58,
+    "🔸lore-chat": 352,
     "🔸綜合討論": 982,
     "🔸阵容构建": 38,
     "🔸morimens-game-chat": 6320,
@@ -46,34 +61,34 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "0": 352,
-    "1": 118,
-    "2": 475,
-    "3": 528,
-    "4": 396,
-    "5": 121,
-    "6": 93,
-    "7": 362,
-    "8": 216,
-    "9": 322,
-    "10": 410,
-    "11": 223,
-    "12": 446,
-    "13": 408,
-    "14": 249,
-    "15": 409,
-    "16": 350,
-    "17": 485,
-    "18": 163,
-    "19": 352,
-    "22": 231,
-    "23": 173,
-    "20": 372,
-    "21": 196
+    "11": 320,
+    "13": 519,
+    "3": 612,
+    "4": 472,
+    "5": 170,
+    "14": 401,
+    "15": 580,
+    "17": 507,
+    "2": 529,
+    "6": 118,
+    "7": 391,
+    "18": 207,
+    "0": 397,
+    "1": 150,
+    "20": 414,
+    "22": 260,
+    "9": 347,
+    "10": 479,
+    "12": 493,
+    "16": 573,
+    "19": 378,
+    "21": 210,
+    "23": 202,
+    "8": 238
   },
   "message_types": {
-    "0": 5213,
-    "19": 2127
+    "19": 331,
+    "0": 1186
   },
   "top_reacted_messages": [
     {
@@ -145,6 +160,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1446192476665942179",
+      "channel_id": "1174983699935277147",
+      "content": "呀，又来双金了。",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1446053893719982112",
       "content": "<:W_falldown:1400771812542906389>",
       "author": "aurora3981",
@@ -171,6 +194,14 @@
       "author": "morimens_15",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1446126096465789008",
+      "channel_id": "1173463482503536711",
+      "content": "本以為要死了開始匆忙趕稿結果不小心死而復生所以~~開始亂了~~",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1446081973692006512",
@@ -210,22 +241,6 @@
       "author": "sense25.",
       "reactions": 6,
       "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1446116975582646382",
-      "channel_id": "1170692781216378960",
-      "content": "i mean clem will remove your depression",
-      "author": "arandomflamev2",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1446145837909409903",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/anime-bubble-sad-gif-9840505378859916279",
-      "author": "the_black_butterfly",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

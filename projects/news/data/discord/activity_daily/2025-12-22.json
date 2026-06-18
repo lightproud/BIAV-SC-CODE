@@ -1,10 +1,26 @@
 {
   "date": "2025-12-22",
-  "messages": 1428,
-  "unique_authors": 54,
-  "reactions_total": 701,
-  "attachments": 148,
+  "messages": 12327,
+  "unique_authors": 297,
+  "reactions_total": 1502,
+  "attachments": 742,
   "channel_activity": {
+    "🔸morimens-game-chat": 6819,
+    "🔸剧情交流": 134,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 18,
+    "🔸课间休息闲聊": 15,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 15,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1017,
+    "🔸phòng-chat-tiếng-việt": 589,
+    "🔸canal-español": 525,
+    "🔸canal-português": 271,
+    "🔸ruang-obrolan-indonesia": 689,
+    "🔸ห้องสนทนาภาษาไทย": 168,
+    "🔸traphase": 142,
+    "🔸lore-chat": 462,
     "🔸綜合討論": 1205,
     "🔸阵容构建": 5,
     "Morimens inspired": 1,
@@ -57,32 +73,35 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 27,
-    "1": 66,
-    "2": 80,
-    "3": 152,
-    "4": 91,
-    "5": 117,
-    "6": 20,
-    "7": 220,
-    "8": 97,
-    "9": 50,
-    "10": 43,
-    "11": 40,
-    "12": 156,
-    "13": 149,
-    "14": 55,
-    "15": 12,
-    "16": 7,
-    "21": 5,
-    "23": 34,
-    "17": 3,
-    "19": 3,
-    "22": 1
+    "0": 153,
+    "1": 185,
+    "2": 370,
+    "3": 426,
+    "4": 299,
+    "5": 378,
+    "6": 245,
+    "7": 1341,
+    "8": 583,
+    "9": 461,
+    "10": 653,
+    "11": 249,
+    "12": 563,
+    "13": 876,
+    "14": 670,
+    "15": 921,
+    "16": 764,
+    "17": 708,
+    "18": 576,
+    "19": 298,
+    "20": 626,
+    "21": 336,
+    "22": 121,
+    "23": 525
   },
   "message_types": {
-    "19": 226,
-    "0": 984
+    "19": 2636,
+    "0": 8262,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -138,6 +157,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1452613151399870507",
+      "channel_id": "1170692781216378960",
+      "content": "I did this last tide. Last 10 mins of rushing 3 waves <:takenotes:13571866462941",
+      "author": "enternameunavailable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1452651130696892509",
       "channel_id": "1131839817982947429",
       "content": "5級感覺像4級",
@@ -167,6 +194,14 @@
       "author": "yingmai_",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1452789098384195825",
+      "channel_id": "1174983699935277147",
+      "content": "||其一為大保底 🤡||",
+      "author": "qoob",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1452537567772934306",
@@ -222,21 +257,6 @@
       "author": "._.aahh",
       "reactions": 7,
       "channel": "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ"
-    },
-    {
-      "id": "1452562610418352264",
-      "content": "https://tenor.com/view/pepega-swipe-pepega-swipe-credit-card-credit-gif-23046210",
-      "author": "arisuu0604",
-      "reactions": 7,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452506236787494974",
-      "channel_id": "1131839817982947429",
-      "content": "公平起見全部人重置第4波",
-      "author": "corposant_1003",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

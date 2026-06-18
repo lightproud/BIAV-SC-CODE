@@ -1,10 +1,25 @@
 {
   "date": "2025-12-12",
-  "messages": 1802,
-  "unique_authors": 58,
-  "reactions_total": 385,
-  "attachments": 119,
+  "messages": 11847,
+  "unique_authors": 282,
+  "reactions_total": 1680,
+  "attachments": 521,
   "channel_activity": {
+    "🔸morimens-game-chat": 6769,
+    "🔸剧情交流": 835,
+    "🔸晒卡分享": 76,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 44,
+    "🔸русский-канал": 110,
+    "🔸phòng-chat-tiếng-việt": 94,
+    "🔸canal-español": 206,
+    "🔸canal-português": 111,
+    "🔸ruang-obrolan-indonesia": 637,
+    "🔸ห้องสนทนาภาษาไทย": 16,
+    "🔸traphase": 10,
+    "🔸lore-chat": 1129,
     "🔸綜合討論": 1518,
     "🔸阵容构建": 132,
     "G Doll Fan Splash Art": 3,
@@ -39,34 +54,34 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "0": 3,
-    "1": 7,
-    "2": 47,
-    "3": 143,
-    "4": 47,
-    "5": 33,
-    "6": 46,
-    "7": 119,
-    "8": 250,
-    "9": 17,
-    "10": 83,
-    "11": 78,
-    "12": 63,
-    "13": 166,
-    "14": 264,
-    "15": 160,
-    "16": 75,
-    "17": 138,
-    "18": 24,
-    "19": 15,
-    "23": 2,
-    "20": 3,
-    "21": 7,
-    "22": 12
+    "0": 271,
+    "1": 254,
+    "2": 399,
+    "3": 511,
+    "4": 457,
+    "5": 854,
+    "6": 629,
+    "7": 346,
+    "8": 485,
+    "9": 544,
+    "10": 436,
+    "11": 427,
+    "12": 419,
+    "13": 794,
+    "14": 646,
+    "15": 978,
+    "16": 655,
+    "17": 826,
+    "18": 607,
+    "19": 92,
+    "20": 284,
+    "21": 463,
+    "22": 280,
+    "23": 190
   },
   "message_types": {
-    "0": 1191,
-    "19": 459
+    "19": 2568,
+    "0": 7477
   },
   "top_reacted_messages": [
     {
@@ -77,6 +92,62 @@
       "channel": "铲不完了先用草稿顶一下，总之好娜娜生日快乐"
     },
     {
+      "id": "1449065651971821598",
+      "channel_id": "1170692781216378960",
+      "content": "Idot is a masochist",
+      "author": "idiota__",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449056148501168152",
+      "channel_id": "1170692781216378960",
+      "content": "am i dumb?",
+      "author": "arandomflamev2",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449059633363812432",
+      "channel_id": "1170692781216378960",
+      "content": "Got my Castor in 10 pulls!",
+      "author": "egcyric",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448996967907594270",
+      "channel_id": "1170692781216378960",
+      "content": "realized tawil is F tier",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449056232429195547",
+      "channel_id": "1170692781216378960",
+      "content": "wait don't tuff react me",
+      "author": "arandomflamev2",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449073254953128028",
+      "channel_id": "1170692781216378960",
+      "content": "<@1164303137293729792> Clem best character cuz can make even uselessain playable",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449088234150957126",
+      "channel_id": "1170692781216378960",
+      "content": "<@330867601691639809> fck this bullshit",
+      "author": "melwyn7591",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448990353519804467",
       "content": "守密人你好：\n       弥萨格大学预计于12月15日08:00~12:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，",
       "author": "morimensstaff02",
@@ -84,11 +155,51 @@
       "channel": "V2.4.0.11 停服维护公告"
     },
     {
+      "id": "1448894813729587332",
+      "channel_id": "1170692781216378960",
+      "content": "Are there actually 4 24s or is it just what team she's in? Cuz I hear people say",
+      "author": "nexskala",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449175580393341070",
+      "channel_id": "1170692781216378960",
+      "content": "Your two important points about Doorstain—his design philosophy and understandin",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1449157947665158256",
       "content": "With the lastest major patch, the Curiculum premium track was upgraded to provid",
       "author": "pyros_",
       "reactions": 7,
       "channel": "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion"
+    },
+    {
+      "id": "1448989494156984383",
+      "channel_id": "1170692781216378960",
+      "content": "is it time to do lvl 3",
+      "author": "grimalkaiser",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448900137954054288",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449006905279385774",
+      "channel_id": "1326453763355185215",
+      "content": "Just did Pollux's frenzy, I laughed a bit that ||both brothers are panicking as ",
+      "author": "mami7284",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1448963820771999825",
@@ -114,114 +225,20 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
-      "id": "1449003753125449819",
-      "channel_id": "1131839817982947429",
-      "content": "~~怎麼不用熔朵C~~",
-      "author": "heikwok",
+      "id": "1448932082330898524",
+      "channel_id": "1170692781216378960",
+      "content": "Guys do I pass the vibe check?",
+      "author": "three1361.",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1449004823629267044",
-      "channel_id": "1131839817982947429",
-      "content": "發現個bug 回溯成0疊 依然是滿疊位的值",
-      "author": "_buqi",
+      "id": "1448996516529180735",
+      "channel_id": "1170692781216378960",
+      "content": "everyone will get slandered when they are no match to kath e3",
+      "author": "arisuu0604",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449038459292356671",
-      "channel_id": "1131839817982947429",
-      "content": "~~也順便想起了美好的赤史時光~~\nhttps://youtu.be/-d9jK8AB4Rg?si=rmCPyL495U30oxmr",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449119381010387045",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "axe_proficient",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448956855077310575",
-      "content": "or an event that forces you to use specific teams like some more uncommonly used",
-      "author": "weaselkingweasel",
-      "reactions": 5,
-      "channel": "I believe a game mode with community made levels like mario maker would be pretty cool :)"
-    },
-    {
-      "id": "1448937798617796738",
-      "content": "Thank you for the suggestion. The project team will incorporate it into the plan",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Answered」About emote usage: Profile decoration and PvE emotes"
-    },
-    {
-      "id": "1448863027943182367",
-      "channel_id": "1131839817982947429",
-      "content": "一张命定回两管银钥<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448900193838825523",
-      "channel_id": "1131839817982947429",
-      "content": "是我錯覺還是大版本更新後幻境深潛越來越肝了？ 敵方單位血量倍增，新出的等級獎勵也難拿",
-      "author": "fong_gar",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448942994307809334",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "123zhang0036",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448943479462953111",
-      "channel_id": "1131839817982947429",
-      "content": "真強，1000彩抽的大佬都🛐 了",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448959398562238474",
-      "channel_id": "1131839817982947429",
-      "content": "國際服欠我一個誕墨繁育0費自爆獻祭割草流😡",
-      "author": "heikwok",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449046987705024532",
-      "channel_id": "1131839817982947429",
-      "content": "只能給你看我最後一次打的混沌毒dae682f2-8314-3d68-ac6c-9ec98b580cf2#E#a",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449098666727178423",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448952900880564224",
-      "channel_id": "1131839874132090890",
-      "content": "~~寶 請你滾~~",
-      "author": "quackdayo",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

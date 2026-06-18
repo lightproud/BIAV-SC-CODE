@@ -1,10 +1,24 @@
 {
   "date": "2025-12-14",
-  "messages": 1256,
-  "unique_authors": 47,
-  "reactions_total": 442,
-  "attachments": 62,
+  "messages": 11194,
+  "unique_authors": 262,
+  "reactions_total": 1478,
+  "attachments": 495,
   "channel_activity": {
+    "🔸morimens-game-chat": 7476,
+    "🔸剧情交流": 844,
+    "🔸晒卡分享": 25,
+    "🔸相位对弈": 10,
+    "🔸交友频道": 2,
+    "🔸한국어-채팅방": 1,
+    "🔸chaîne-française": 50,
+    "🔸русский-канал": 217,
+    "🔸phòng-chat-tiếng-việt": 172,
+    "🔸canal-español": 372,
+    "🔸canal-português": 91,
+    "🔸ruang-obrolan-indonesia": 166,
+    "🔸traphase": 414,
+    "🔸lore-chat": 98,
     "🔸綜合討論": 1116,
     "Ramona!": 1,
     "Crimson Kaede": 1,
@@ -23,33 +37,35 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "0": 45,
-    "1": 29,
-    "2": 47,
-    "3": 37,
-    "4": 58,
-    "5": 3,
-    "6": 50,
-    "7": 3,
-    "8": 9,
-    "9": 11,
-    "10": 14,
-    "11": 65,
-    "12": 229,
-    "13": 64,
-    "14": 54,
-    "15": 137,
-    "16": 161,
-    "17": 65,
-    "18": 27,
-    "19": 8,
-    "20": 13,
-    "23": 125,
-    "22": 2
+    "0": 549,
+    "1": 463,
+    "2": 360,
+    "3": 928,
+    "4": 697,
+    "5": 753,
+    "6": 650,
+    "7": 661,
+    "8": 407,
+    "9": 195,
+    "10": 217,
+    "11": 504,
+    "12": 719,
+    "13": 424,
+    "14": 341,
+    "15": 374,
+    "16": 477,
+    "17": 304,
+    "18": 406,
+    "19": 300,
+    "20": 457,
+    "21": 297,
+    "22": 286,
+    "23": 425
   },
   "message_types": {
-    "0": 910,
-    "19": 206
+    "0": 7028,
+    "19": 2909,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -82,6 +98,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1449614875167821834",
+      "channel_id": "1174983699935277147",
+      "content": "🐍了，60抽3皮",
+      "author": "glacy_9918",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449759660323246297",
+      "channel_id": "1326453763355185215",
+      "content": "maybe he also knows that the keeper can change gender for like 1k silver and he'",
+      "author": "michal132323",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1449619288171348099",
       "channel_id": "1131839817982947429",
       "content": "可能無上意志是紅綠色盲",
@@ -106,6 +138,30 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1449574925332516999",
+      "channel_id": "1170692781216378960",
+      "content": "Laugh at my pun right now",
+      "author": "guava3442",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449754621668102204",
+      "channel_id": "1173463482503536711",
+      "content": "距離高考/學測還有XXX天",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1449769791178149900",
+      "channel_id": "1326453763355185215",
+      "content": "I believe in m/fKeeper",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1449756054719299626",
       "channel_id": "1131839817982947429",
       "content": "~~被開除國籍後 大家都不帶粉魚玩了 結果無人發現~~",
@@ -121,6 +177,38 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1449608233957458013",
+      "channel_id": "1170692781216378960",
+      "content": "today's dose of dumb shit is already here i see",
+      "author": "isntthisdbz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449782757105598496",
+      "channel_id": "1174983699935277147",
+      "content": "神秘地獄數字",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449899869358653523",
+      "channel_id": "1300659662311526512",
+      "content": "el dupe que regalan se irá para nuestro querido amigo pick y sobreexaltacion des",
+      "author": "samael220521",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1449613984004313201",
+      "channel_id": "1326453763355185215",
+      "content": "im glad they chose the current design, I can't imagine Liz as anything but pure ",
+      "author": "yurichansnails",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1449588662260990034",
       "channel_id": "1131839817982947429",
       "content": "终于，好吧懒得+12了。",
@@ -134,77 +222,6 @@
       "content": "這是一種瑪腦水母嗎",
       "author": "ernest_heart",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449651715803713659",
-      "channel_id": "1131839817982947429",
-      "content": "简称诞墨",
-      "author": "carme.0588",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449593775654572143",
-      "channel_id": "1131839817982947429",
-      "content": "我應該是全網唯一教人怎麼玩活鯊魚跟法的人（\nhttps://discord.com/channels/1131791637933199470/142450022",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449732162520617001",
-      "channel_id": "1131839817982947429",
-      "content": "吃靈芝打過了<:dead:1356082627509092372> <:flop1:1356083604236800030>",
-      "author": "luckyinitial",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449742941810724919",
-      "channel_id": "1131839817982947429",
-      "content": "說不定下個深海sp是~~深海24~~",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449749825628143636",
-      "channel_id": "1131839817982947429",
-      "content": "經過這次融5我覺得應該能打",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449751303478710383",
-      "channel_id": "1131839817982947429",
-      "content": "謝邀\n常駐35%終傷\n王關自動變70%",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449798728079900845",
-      "channel_id": "1131839817982947429",
-      "content": "0启0技能鸟弟百万伤害轻松拿下难5融灾",
-      "author": "lurenjiao",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449797547966070988",
-      "content": "",
-      "author": "hello_oldmemory",
-      "reactions": 5,
-      "channel": "求助，我是被版本淘汰了？"
-    },
-    {
-      "id": "1449593685573369916",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]

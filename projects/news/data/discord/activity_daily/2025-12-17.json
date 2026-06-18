@@ -1,10 +1,25 @@
 {
   "date": "2025-12-17",
-  "messages": 1460,
-  "unique_authors": 49,
-  "reactions_total": 578,
-  "attachments": 72,
+  "messages": 10934,
+  "unique_authors": 257,
+  "reactions_total": 1487,
+  "attachments": 487,
   "channel_activity": {
+    "🔸morimens-game-chat": 7463,
+    "🔸剧情交流": 48,
+    "🔸晒卡分享": 20,
+    "🔸相位对弈": 4,
+    "🔸交友频道": 33,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 151,
+    "🔸русский-канал": 227,
+    "🔸phòng-chat-tiếng-việt": 304,
+    "🔸canal-español": 394,
+    "🔸canal-português": 58,
+    "🔸ruang-obrolan-indonesia": 171,
+    "🔸ห้องสนทนาภาษาไทย": 98,
+    "🔸traphase": 42,
+    "🔸lore-chat": 439,
     "🔸綜合討論": 1333,
     "如果想打400（）": 30,
     "Team Guidance/Character Investment Suggestions": 1,
@@ -31,34 +46,35 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 10,
-    "1": 3,
-    "2": 88,
-    "3": 77,
-    "5": 5,
-    "6": 9,
-    "7": 14,
-    "8": 230,
-    "9": 54,
-    "10": 66,
-    "11": 106,
-    "12": 133,
-    "13": 53,
-    "14": 222,
-    "15": 199,
-    "16": 101,
-    "17": 14,
-    "19": 29,
-    "20": 4,
-    "21": 2,
-    "22": 13,
-    "23": 14,
-    "4": 12,
-    "18": 2
+    "0": 334,
+    "1": 361,
+    "2": 441,
+    "3": 431,
+    "4": 280,
+    "5": 203,
+    "6": 448,
+    "7": 347,
+    "8": 455,
+    "9": 410,
+    "10": 629,
+    "11": 449,
+    "12": 396,
+    "13": 415,
+    "14": 837,
+    "15": 493,
+    "16": 525,
+    "17": 1028,
+    "18": 814,
+    "19": 325,
+    "20": 406,
+    "21": 358,
+    "22": 312,
+    "23": 237
   },
   "message_types": {
-    "0": 1019,
-    "19": 314
+    "0": 7065,
+    "19": 2408,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -74,6 +90,14 @@
       "author": "ass191044",
       "reactions": 11,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
+    },
+    {
+      "id": "1450807137302478868",
+      "channel_id": "1170692781216378960",
+      "content": "Are you constantly accused of being a whale in every game you touch? Do your fri",
+      "author": "hitsu4",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1450862557245214845",
@@ -116,6 +140,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1450902570993451180",
+      "channel_id": "1170692781216378960",
+      "content": "wanted to share that i was finally able to bead d-tide (wave 1-wave 4 on A3 and ",
+      "author": "yusz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1450862740733165675",
       "channel_id": "1131839817982947429",
       "content": "这队血条太稳了",
@@ -130,6 +162,30 @@
       "author": "water_heart",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450820620953587713",
+      "channel_id": "1170692781216378960",
+      "content": "2 more to go guys",
+      "author": "apsgsd",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450858976160780470",
+      "channel_id": "1173463482503536711",
+      "content": "有點害怕<:Feelguilty:1400771618174664775> 確定上弦月不是AI嗎\n丟了想法但好像沒互動",
+      "author": "tsubaki9884",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1450909434984271913",
+      "channel_id": "1326453763355185215",
+      "content": "I hope u dissolution so I can forget you",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1450763066877935676",
@@ -163,60 +219,20 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
-      "id": "1450762171754614836",
-      "channel_id": "1131839817982947429",
-      "content": "佬，輸光",
-      "author": "corposant_1003",
+      "id": "1450724635787132978",
+      "channel_id": "1170692781216378960",
+      "content": "(convinced another friend to play)",
+      "author": "dexetro",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1450771836529938515",
-      "channel_id": "1131839817982947429",
-      "content": "嗑小騎士x鼠 滿足bg也滿足鍊銅",
-      "author": "tsubaki9884",
+      "id": "1450764720641675368",
+      "channel_id": "1170692781216378960",
+      "content": "OH MY GAWD",
+      "author": "su_pp",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450820452644556903",
-      "channel_id": "1131839817982947429",
-      "content": "第一章：無敵打榜人的隕落",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450860847038595113",
-      "channel_id": "1131839817982947429",
-      "content": "1k2的临时界域<:wisdom:1400771656510734356>",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450884930774106252",
-      "channel_id": "1131839817982947429",
-      "content": "~~圖魯都有人借了~~",
-      "author": "dog794",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450888834966356010",
-      "channel_id": "1131839817982947429",
-      "content": "群山的部分\n如果抽牌堆沒有指定喚醒體的牌那就會從棄牌堆拉\n而這個從棄牌堆拉\n是必定拉先進棄牌堆的牌",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450770169742757991",
-      "channel_id": "1131839817982947429",
-      "content": "海國踢掉法洛思C4取2都能吃",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

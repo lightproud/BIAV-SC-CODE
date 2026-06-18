@@ -1,10 +1,24 @@
 {
   "date": "2025-12-16",
-  "messages": 1540,
-  "unique_authors": 38,
-  "reactions_total": 1018,
-  "attachments": 100,
+  "messages": 9669,
+  "unique_authors": 265,
+  "reactions_total": 1837,
+  "attachments": 524,
   "channel_activity": {
+    "🔸morimens-game-chat": 5950,
+    "🔸剧情交流": 73,
+    "🔸晒卡分享": 40,
+    "🔸交友频道": 35,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 21,
+    "🔸русский-канал": 164,
+    "🔸phòng-chat-tiếng-việt": 249,
+    "🔸canal-español": 581,
+    "🔸canal-português": 87,
+    "🔸ruang-obrolan-indonesia": 148,
+    "🔸ห้องสนทนาภาษาไทย": 199,
+    "🔸traphase": 131,
+    "🔸lore-chat": 429,
     "🔸綜合討論": 1442,
     "Pencil art": 1,
     "Liz : Hollow Dance of Destruction": 2,
@@ -40,34 +54,37 @@
     "🔸忘却前夜┊morimens-tv": 4
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 30,
-    "2": 18,
-    "3": 83,
-    "4": 87,
-    "5": 69,
-    "6": 116,
-    "7": 8,
-    "8": 69,
-    "9": 195,
-    "10": 85,
-    "11": 25,
-    "12": 134,
-    "13": 206,
-    "14": 167,
-    "15": 63,
-    "16": 22,
-    "17": 4,
-    "18": 8,
-    "19": 4,
-    "20": 13,
-    "21": 92,
-    "22": 15,
-    "23": 21
+    "0": 561,
+    "1": 335,
+    "2": 459,
+    "3": 623,
+    "4": 607,
+    "5": 501,
+    "6": 338,
+    "7": 140,
+    "8": 325,
+    "9": 338,
+    "10": 167,
+    "11": 251,
+    "12": 267,
+    "13": 548,
+    "14": 444,
+    "15": 518,
+    "16": 413,
+    "17": 312,
+    "18": 485,
+    "19": 404,
+    "20": 355,
+    "21": 462,
+    "22": 508,
+    "23": 308
   },
   "message_types": {
-    "19": 338,
-    "0": 1104
+    "0": 6429,
+    "19": 1697,
+    "46": 1,
+    "20": 1,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +93,14 @@
       "author": "morimensstaff01",
       "reactions": 618,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1450561823303663758",
+      "channel_id": "1300659662311526512",
+      "content": "y que el regalo tenga una bomba",
+      "author": "nebbercracker12.",
+      "reactions": 13,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1450536606179131562",
@@ -107,6 +132,14 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1450634005937389649",
+      "channel_id": "1170692781216378960",
+      "content": "\"Wow I cant wait to try to beat chapter 7, better log in and get go- OH MY GOD\"",
+      "author": "caster5928",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1450341538650390620",
       "channel_id": "1131839817982947429",
       "content": "既然主線打完了，要不去試試超過我的獻祭數量",
@@ -127,6 +160,14 @@
       "author": "souri.10244",
       "reactions": 7,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450471055884816509",
+      "channel_id": "1170692781216378960",
+      "content": "🧱 <@523084324724146193>",
+      "author": "iibenigml1588",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1450323298901561478",
@@ -169,60 +210,36 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1450338407904444537",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "universe.dark",
+      "id": "1450279972097884244",
+      "channel_id": "1170692781216378960",
+      "content": "When you're 3 damage off killing, blame damage amp",
+      "author": "aurora3981",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1450401548625772645",
-      "channel_id": "1131839817982947429",
-      "content": "ZMCT-NAQM-CDTH",
-      "author": "cs001092",
+      "id": "1450346312317931754",
+      "channel_id": "1170692781216378960",
+      "content": "monchi saw my gameplay and he think the nerf IS NEEDED",
+      "author": "arisuu0604",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1450416260914614407",
-      "channel_id": "1131839817982947429",
-      "content": "我的普通ssr命轮基本要抽满了",
-      "author": "cs001092",
+      "id": "1450495702298787911",
+      "channel_id": "1170692781216378960",
+      "content": "only 3 more levels <:takenotes:1357186646294138890>",
+      "author": "not_blueberry",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1450430118295109674",
-      "channel_id": "1131839817982947429",
-      "content": "我朋友跟我分享他昨天开车载着8个穿好全套工程拿着大锤的人 前面那辆车找茬 他一开车门，几个工程佬下车 前面那车的那个人直接滚回车上飙走了",
-      "author": "kemomimi_",
+      "id": "1450541893036412928",
+      "channel_id": "1170692781216378960",
+      "content": "KEEP THE LOLI IN THE BACK AND PROTECT THE PARTY WITH YORU HUGE BOSOMS, FAROS",
+      "author": "brainrot_in_a_vat",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450281508899389614",
-      "channel_id": "1131839817982947429",
-      "content": "看完佬的回放现在英区在说艾尔瓦t0了（）",
-      "author": "rain_scarlet",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450337697087623248",
-      "channel_id": "1131839817982947429",
-      "content": "~~抱歉了誕墨我是顏狗（抽杜勒~~",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1450337986519633940",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

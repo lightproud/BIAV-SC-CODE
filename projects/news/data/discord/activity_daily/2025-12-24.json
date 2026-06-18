@@ -1,10 +1,27 @@
 {
   "date": "2025-12-24",
-  "messages": 1620,
-  "unique_authors": 59,
-  "reactions_total": 661,
-  "attachments": 85,
+  "messages": 14864,
+  "unique_authors": 292,
+  "reactions_total": 2063,
+  "attachments": 847,
   "channel_activity": {
+    "🔸morimens-game-chat": 8406,
+    "🔸剧情交流": 110,
+    "🔸晒卡分享": 15,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1057,
+    "🔸phòng-chat-tiếng-việt": 1554,
+    "🔸canal-español": 453,
+    "🔸canal-português": 234,
+    "🔸ruang-obrolan-indonesia": 873,
+    "🔸ห้องสนทนาภาษาไทย": 214,
+    "🔸traphase": 16,
+    "🔸lore-chat": 296,
     "🔸綜合討論": 1321,
     "🔸阵容构建": 2,
     "Morimens inspired": 8,
@@ -58,34 +75,35 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 13,
-    "2": 23,
-    "3": 35,
-    "4": 23,
-    "5": 72,
-    "6": 124,
-    "7": 75,
-    "8": 84,
-    "9": 64,
-    "10": 117,
-    "11": 240,
-    "12": 122,
-    "13": 144,
-    "14": 172,
-    "15": 212,
-    "16": 30,
-    "17": 36,
-    "18": 1,
-    "20": 4,
-    "21": 6,
-    "23": 12,
-    "22": 2,
-    "19": 4
+    "0": 155,
+    "1": 438,
+    "2": 654,
+    "3": 335,
+    "4": 225,
+    "5": 353,
+    "6": 396,
+    "7": 640,
+    "8": 797,
+    "9": 567,
+    "10": 468,
+    "11": 870,
+    "12": 1318,
+    "13": 1222,
+    "14": 1052,
+    "15": 1477,
+    "16": 885,
+    "17": 761,
+    "18": 472,
+    "19": 544,
+    "20": 478,
+    "21": 370,
+    "22": 154,
+    "23": 233
   },
   "message_types": {
-    "0": 1014,
-    "19": 309
+    "0": 9662,
+    "19": 3581,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -117,11 +135,59 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
+      "id": "1453201863070449837",
+      "channel_id": "1170692781216378960",
+      "content": "Im gonna wawa yyou in a minute here",
+      "author": "brainrot_in_a_vat",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453205910108373156",
+      "channel_id": "1170692781216378960",
+      "content": "I shouldn't have done that",
+      "author": "wawafura",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453367293634412594",
+      "channel_id": "1170692781216378960",
+      "content": "Omg douchette 🙏",
+      "author": "sugarspawn",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1453252540819832987",
       "content": "Reproduction Frenzy ?",
       "author": "shiio4870",
       "reactions": 11,
       "channel": "Uvash and Leigh"
+    },
+    {
+      "id": "1453202149277438002",
+      "channel_id": "1170692781216378960",
+      "content": "his gonna wawa you, after being emptied by lily",
+      "author": "rain_scarlet",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453372032380178443",
+      "channel_id": "1170692781216378960",
+      "content": "if it was glotans kit i would be mad cause its worse than base lotan",
+      "author": "chinkeeyong",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453417862281826354",
+      "channel_id": "1300659662311526512",
+      "content": "Falso",
+      "author": "ancientbp",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1453204111754530989",
@@ -140,6 +206,46 @@
       "channel": "🔸阵容构建"
     },
     {
+      "id": "1453368913915285701",
+      "channel_id": "1170692781216378960",
+      "content": "Your two important points about Mouchette—her design philosophy and understandin",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453373246496968941",
+      "channel_id": "1170692781216378960",
+      "content": "mouchette stats in relation to every other chaos awakener",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453403178224849137",
+      "channel_id": "1170692781216378960",
+      "content": "does ogier dr proc eat dr?",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453433380707238083",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1453430808919543879",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453434408915828767",
+      "channel_id": "1170692781216378960",
+      "content": "and I did another cursed run in your honor",
+      "author": "dracozion",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1453433210099859539",
       "content": "考虑到我们产能非常宝贵，还是希望留出一些时间来继续《忘却前夜》自己的故事。",
       "author": "game.producer.light",
@@ -147,97 +253,12 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
-      "id": "1453223913566765128",
-      "channel_id": "1131839817982947429",
-      "content": "我們舊時代的愚民好強啊\n沒有全隊90就能打過",
-      "author": "water_heart",
+      "id": "1453205701672435872",
+      "channel_id": "1170692781216378960",
+      "content": "m",
+      "author": "hitsu4",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453348532206436448",
-      "channel_id": "1131839817982947429",
-      "content": "然後今期融災米拉還一直召粉魚，但沒國籍\n<:Clown:1400771541423226971>",
-      "author": "heikwok",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453349319628296315",
-      "channel_id": "1131839817982947429",
-      "content": "給我",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453440638874943670",
-      "content": "迟早会有的！",
-      "author": "game.producer.light",
-      "reactions": 6,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453435074321190973",
-      "content": "Thank you for the team this is pretty new in the gacha space and i hope your rev",
-      "author": "pinguimally3689",
-      "reactions": 5,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453254941488713799",
-      "channel_id": "1131839817982947429",
-      "content": "蛐蛐1288k血🙄 💅",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453343867062583399",
-      "channel_id": "1131839817982947429",
-      "content": "不夠黑心，不如每超過6～8回合降低上限算力，狂氣恢復減半+現有狂氣減半",
-      "author": "andy1123",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453344120058941462",
-      "channel_id": "1131839817982947429",
-      "content": "點滿靈塑給他+36了都",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453347992152182974",
-      "channel_id": "1131839817982947429",
-      "content": "該把珊丟進限定池了",
-      "author": "partycatss.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453364558180646993",
-      "channel_id": "1131839817982947429",
-      "content": "我在想鯊魚超限的高奢版4倍基傷刃威，能不能被新角1費印出來",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453424177800282315",
-      "channel_id": "1131839817982947429",
-      "content": "恭喜，低保拿啦",
-      "author": "ququ12358",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1453352846324928654",
-      "content": "端上来了，来吃",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

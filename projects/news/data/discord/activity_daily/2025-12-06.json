@@ -1,10 +1,24 @@
 {
   "date": "2025-12-06",
-  "messages": 12726,
+  "messages": 14754,
   "unique_authors": 265,
-  "reactions_total": 1881,
-  "attachments": 545,
+  "reactions_total": 1994,
+  "attachments": 677,
   "channel_activity": {
+    "🔸剧情交流": 25,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 18,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 487,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 276,
+    "🔸phòng-chat-tiếng-việt": 30,
+    "🔸canal-español": 238,
+    "🔸canal-português": 142,
+    "🔸ruang-obrolan-indonesia": 170,
+    "🔸ห้องสนทนาภาษาไทย": 344,
+    "🔸traphase": 125,
+    "🔸lore-chat": 155,
     "🔸綜合討論": 1944,
     "🔸阵容构建": 18,
     "🔸morimens-game-chat": 10706,
@@ -31,36 +45,34 @@
     "1241345906826153984": 3
   },
   "hourly_activity": {
-    "0": 415,
-    "1": 235,
-    "2": 370,
-    "3": 469,
-    "4": 430,
-    "5": 456,
-    "6": 336,
-    "7": 319,
-    "8": 499,
-    "9": 745,
-    "10": 996,
-    "11": 551,
-    "12": 634,
-    "13": 736,
-    "14": 531,
-    "15": 811,
-    "16": 896,
-    "17": 596,
-    "18": 516,
-    "19": 452,
-    "20": 309,
-    "21": 403,
-    "22": 548,
-    "23": 473
+    "2": 476,
+    "4": 490,
+    "5": 504,
+    "6": 489,
+    "7": 350,
+    "8": 526,
+    "0": 453,
+    "1": 342,
+    "9": 775,
+    "16": 1160,
+    "11": 613,
+    "12": 676,
+    "3": 524,
+    "13": 849,
+    "14": 964,
+    "15": 995,
+    "17": 616,
+    "22": 569,
+    "10": 1018,
+    "18": 548,
+    "21": 478,
+    "23": 544,
+    "20": 322,
+    "19": 473
   },
   "message_types": {
-    "0": 8618,
-    "19": 4046,
-    "18": 2,
-    "20": 2
+    "0": 1718,
+    "19": 310
   },
   "top_reacted_messages": [
     {
@@ -85,6 +97,14 @@
       "author": "undeterredhomo",
       "reactions": 14,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446897094186107069",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "_pix4l",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1446792928566444206",
@@ -117,6 +137,14 @@
       "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
     },
     {
+      "id": "1446789999835086909",
+      "channel_id": "1174983699935277147",
+      "content": "抽到啦，没有歪。呼，算是抽完限定池的了。",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1446712888285986947",
       "channel_id": "1170692781216378960",
       "content": "this is very funny to me since in a way goya is straight-up admitting that pollu",
@@ -138,6 +166,14 @@
       "author": "nactra",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446756780398084127",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1446829221354930206",
@@ -193,30 +229,6 @@
       "author": "carrot_chicken",
       "reactions": 7,
       "channel": ""
-    },
-    {
-      "id": "1446688764838674464",
-      "channel_id": "1131839817982947429",
-      "content": "打完了",
-      "author": "luckyinitial",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1446711515246760107",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "timee_ky",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1446742651977072661",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "_pix4l",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

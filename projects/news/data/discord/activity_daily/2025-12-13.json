@@ -1,10 +1,24 @@
 {
   "date": "2025-12-13",
-  "messages": 1823,
-  "unique_authors": 49,
-  "reactions_total": 338,
-  "attachments": 140,
+  "messages": 11307,
+  "unique_authors": 273,
+  "reactions_total": 1168,
+  "attachments": 655,
   "channel_activity": {
+    "🔸morimens-game-chat": 7850,
+    "🔸剧情交流": 142,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 13,
+    "🔸한국어-채팅방": 13,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 258,
+    "🔸phòng-chat-tiếng-việt": 216,
+    "🔸canal-español": 186,
+    "🔸canal-português": 49,
+    "🔸ruang-obrolan-indonesia": 503,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 34,
+    "🔸lore-chat": 214,
     "🔸綜合討論": 1732,
     "Ramona!": 1,
     "中奖名单公布┊Lottery Winners Announced!": 1,
@@ -29,33 +43,35 @@
     "1442647324575928441": 1
   },
   "hourly_activity": {
-    "0": 14,
-    "1": 136,
-    "2": 318,
-    "3": 79,
-    "4": 98,
-    "5": 118,
-    "6": 78,
-    "7": 12,
-    "8": 115,
-    "9": 60,
-    "10": 48,
-    "11": 87,
-    "12": 39,
-    "13": 29,
-    "14": 256,
-    "15": 179,
-    "16": 60,
-    "17": 23,
-    "18": 13,
-    "19": 19,
-    "20": 22,
-    "22": 13,
-    "23": 7
+    "0": 466,
+    "1": 752,
+    "2": 635,
+    "3": 319,
+    "4": 757,
+    "5": 613,
+    "6": 264,
+    "7": 107,
+    "8": 474,
+    "9": 394,
+    "10": 427,
+    "11": 345,
+    "12": 299,
+    "13": 486,
+    "14": 588,
+    "15": 732,
+    "16": 717,
+    "17": 660,
+    "18": 440,
+    "19": 517,
+    "20": 329,
+    "21": 289,
+    "22": 395,
+    "23": 302
   },
   "message_types": {
-    "19": 414,
-    "0": 1318
+    "0": 6710,
+    "19": 2773,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -66,11 +82,35 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1449386076283211870",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449389314629832817",
+      "channel_id": "1300659495550062592",
+      "content": "다음주 주말에 코믹월드 부스 참가합니다!",
+      "author": "jayone_j1",
+      "reactions": 10,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1449428653212438659",
       "content": "我也沒想到會有第二張\n涼拌唄\n\nUID:100336921",
       "author": "foxcatfurry",
       "reactions": 10,
       "channel": "想不到的第二張水仙視姦"
+    },
+    {
+      "id": "1449426380734599340",
+      "channel_id": "1170692781216378960",
+      "content": "how many goddamn times do i have to teach caecus this lesson",
+      "author": "chinkeeyong",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1449431835967881279",
@@ -79,6 +119,46 @@
       "author": "foxcatfurry",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449255927655038976",
+      "channel_id": "1170692781216378960",
+      "content": "No powerspikes if you use secret strategy",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449397320016855142",
+      "channel_id": "1170692781216378960",
+      "content": "was Faros ever introduced into the story or does she just remain an event in c6",
+      "author": "sno_w",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449414443330048021",
+      "channel_id": "1170692781216378960",
+      "content": "I was playing dtide when my mom walked in, she asked me \"Is the dishes and cloth",
+      "author": "undeterredhomo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449253794352468049",
+      "channel_id": "1170692781216378960",
+      "content": "fuck it im giving tulu life drain",
+      "author": "cornonthemacabre_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449362198165192814",
+      "channel_id": "1170692781216378960",
+      "content": "First good achievement",
+      "author": "shining_ark",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1449406110615212123",
@@ -94,6 +174,14 @@
       "author": "huanire",
       "reactions": 7,
       "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
+    },
+    {
+      "id": "1449214497578418288",
+      "channel_id": "1170692781216378960",
+      "content": "I saw how harass the bot and the bot fought back",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1449407593146748978",
@@ -119,99 +207,28 @@
       "channel": "一點仿官"
     },
     {
-      "id": "1449252587491823678",
-      "channel_id": "1131839817982947429",
-      "content": "可能經手過雕塑家協會",
-      "author": "tsubaki9884",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449265414323437679",
-      "channel_id": "1131839817982947429",
-      "content": "<:pray:1356053116260454534>",
-      "author": "navirecorbeau",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449293936769372261",
-      "channel_id": "1131839817982947429",
-      "content": "狂充什麼路邊一條",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449414181643223050",
-      "channel_id": "1131839817982947429",
-      "content": "今天在抓助戰學習怎麼用",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449467061393948723",
-      "content": "因為這次周年劇情又跑去打大眼睛了嘛 \n所以想做一個仿官的守咪打大眼睛的圖，包含守咪人自己的Q版和她的技能組（這邊選的女守咪），會持續更新到做完，和勞斯討論也會新",
-      "author": "souri.10244",
-      "reactions": 5,
-      "channel": "一點仿官"
-    },
-    {
-      "id": "1449247507300483114",
-      "channel_id": "1131839817982947429",
+      "id": "1449201640555937862",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "kezrin",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1449249082777534565",
-      "channel_id": "1131839817982947429",
-      "content": "深海有自己的超維空間",
-      "author": "tsubaki9884",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1449230485107769424",
+      "channel_id": "1170692781216378960",
+      "content": "# YURI",
+      "author": "enzoperry",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1449252230514475108",
-      "channel_id": "1131839817982947429",
-      "content": "我现在一直用栗子打第二波难4,基本吊打,难5我懒得去凹,只打375<:takenotes:1357186646294138890>",
-      "author": "sense25.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449252313922535516",
-      "channel_id": "1131839817982947429",
-      "content": "2費靈知覺醒「夢境摺疊」：觸腕暴擊率+25%，觸腕每造成一次傷害，臨時觸腕暴擊傷害+2%。",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449315775298015294",
-      "channel_id": "1131839817982947429",
-      "content": "你媽燉雞隊拿這什麼拉基造物",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449416834544697569",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1449423305462517851",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1449252687622307962",
+      "channel_id": "1170692781216378960",
+      "content": "endgame is uninstalling cos theres no endgame",
+      "author": "fibrinogen",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

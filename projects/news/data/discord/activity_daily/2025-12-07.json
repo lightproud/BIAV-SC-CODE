@@ -1,13 +1,27 @@
 {
   "date": "2025-12-07",
-  "messages": 4637,
-  "unique_authors": 188,
-  "reactions_total": 658,
-  "attachments": 208,
+  "messages": 10469,
+  "unique_authors": 230,
+  "reactions_total": 1279,
+  "attachments": 511,
   "channel_activity": {
+    "🔸morimens-game-chat": 7580,
+    "🔸剧情交流": 82,
+    "🔸晒卡分享": 24,
+    "🔸相位对弈": 20,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 10,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 466,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 98,
+    "🔸canal-português": 90,
+    "🔸ruang-obrolan-indonesia": 471,
+    "🔸ห้องสนทนาภาษาไทย": 122,
+    "🔸traphase": 71,
+    "🔸lore-chat": 171,
     "🔸綜合討論": 1179,
     "🔸阵容构建": 3,
-    "🔸morimens-game-chat": 3391,
     "Nymphaea!": 5,
     "xmas castor": 6,
     "Tulu painting 💚": 4,
@@ -35,35 +49,36 @@
     "1447283719843872808": 5
   },
   "hourly_activity": {
-    "0": 421,
-    "1": 348,
-    "2": 429,
-    "3": 545,
-    "4": 499,
-    "5": 220,
-    "6": 549,
-    "7": 358,
-    "8": 81,
-    "9": 191,
-    "10": 386,
-    "11": 25,
-    "12": 41,
-    "13": 56,
-    "14": 86,
-    "15": 230,
-    "16": 89,
-    "17": 9,
-    "18": 56,
-    "22": 6,
-    "20": 5,
-    "23": 5,
-    "19": 2
+    "10": 704,
+    "11": 361,
+    "12": 627,
+    "13": 355,
+    "14": 429,
+    "15": 1044,
+    "16": 574,
+    "17": 402,
+    "18": 294,
+    "19": 468,
+    "20": 352,
+    "21": 251,
+    "22": 73,
+    "23": 177,
+    "1": 388,
+    "2": 475,
+    "7": 396,
+    "9": 371,
+    "3": 633,
+    "8": 93,
+    "0": 448,
+    "5": 272,
+    "4": 519,
+    "6": 763
   },
   "message_types": {
-    "0": 3384,
-    "19": 1184,
-    "20": 4,
-    "46": 1
+    "0": 4097,
+    "19": 1733,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -102,11 +117,43 @@
       "channel": "Tulu painting 💚"
     },
     {
+      "id": "1447149116080656404",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "dog794",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1447158524667760742",
       "content": "「我在星間漂流的日子里，無數次夢到這一天......」",
       "author": "blue_yogurt_chan",
       "reactions": 11,
       "channel": "菲茵特"
+    },
+    {
+      "id": "1447306011852542114",
+      "channel_id": "1170692781216378960",
+      "content": "I have OE GMurphy too\nIt's just flavor \nI had way too much pulls and now my acco",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447044705513902191",
+      "channel_id": "1173463482503536711",
+      "content": "明明還有陽燧足、海羽星、蟹奴、北海天使、定居慎戎、大王俱足蟲、海星消耗病、奇異蟲、塔利怪物之類的小可愛",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1447123090575196260",
+      "channel_id": "1174983699935277147",
+      "content": "哇哈哈哈哈",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1447153907162939403",
@@ -117,12 +164,52 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1447321934776762510",
+      "channel_id": "1170692781216378960",
+      "content": "The real discord exp farming meta is opening a private thread then start erp ing",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447322527280926861",
+      "channel_id": "1170692781216378960",
+      "content": "ill be honest tinct i have my game on muted with music",
+      "author": "not_blueberry",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447190498107195442",
+      "channel_id": "1174983699935277147",
+      "content": "想开图鉴的结果5抽出了",
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1447160122995642399",
       "channel_id": "1131839817982947429",
       "content": "差点打不过<:dead:1356082627509092372>",
       "author": "ling_an_",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447234974645489848",
+      "channel_id": "1170692781216378960",
+      "content": "<@1288446421573304364> <@364412673275723779>",
+      "author": "vinsette",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447306470474383380",
+      "channel_id": "1170692781216378960",
+      "content": "As a new player, I'm committed tu pull for the new characters without reading th",
+      "author": "moondoggi3",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1447109884096020510",
@@ -141,84 +228,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1447032902058774578",
-      "channel_id": "1131839817982947429",
-      "content": "35抽||6金||\n300抽||8啟||\n為什麼角色比命輪好抽",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447060132952408176",
-      "channel_id": "1131839817982947429",
-      "content": "扒拉助战看到的",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447213801446310050",
-      "channel_id": "1131839817982947429",
-      "content": "這位兄弟你不是2.0的嗎",
-      "author": "foxcatfurry",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447017543100272640",
+      "id": "1447298241166180413",
       "channel_id": "1170692781216378960",
-      "content": "I can't tell if this is stronger or weaker than the starting sr team",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1447034319305572473",
-      "channel_id": "1131839817982947429",
-      "content": "卧草有夠G8",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447131010230653029",
-      "channel_id": "1131839817982947429",
-      "content": "赤石界传来喜讯",
-      "author": "zdttjqxwxmzs",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447122438910378126",
-      "channel_id": "1170692781216378960",
-      "content": "Frikie",
-      "author": "arisuu0604",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1447104006030622801",
-      "channel_id": "1131839817982947429",
-      "content": "堵爛賽陰",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447188490273161389",
-      "channel_id": "1131839817982947429",
-      "content": "80抽補了三隻皮<:M_satisfy:1400771690321154110>",
-      "author": "partycatss.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447197379525607494",
-      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "lotan_045",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

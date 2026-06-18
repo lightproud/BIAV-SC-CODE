@@ -1,10 +1,24 @@
 {
   "date": "2025-12-30",
-  "messages": 1038,
-  "unique_authors": 48,
-  "reactions_total": 965,
-  "attachments": 69,
+  "messages": 11988,
+  "unique_authors": 286,
+  "reactions_total": 2248,
+  "attachments": 645,
   "channel_activity": {
+    "🔸morimens-game-chat": 8145,
+    "🔸剧情交流": 51,
+    "🔸晒卡分享": 6,
+    "🔸相位对弈": 45,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 84,
+    "🔸русский-канал": 255,
+    "🔸phòng-chat-tiếng-việt": 931,
+    "🔸canal-español": 491,
+    "🔸canal-português": 193,
+    "🔸ruang-obrolan-indonesia": 307,
+    "🔸ห้องสนทนาภาษาไทย": 166,
+    "🔸traphase": 267,
     "🔸綜合討論": 892,
     "🔸阵容构建": 6,
     "I errr....": 16,
@@ -41,33 +55,34 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
-    "0": 9,
-    "1": 14,
-    "2": 9,
-    "3": 16,
-    "4": 69,
-    "5": 17,
-    "6": 21,
-    "7": 58,
-    "8": 54,
-    "9": 132,
-    "10": 147,
-    "11": 137,
-    "12": 162,
-    "13": 33,
-    "14": 66,
-    "15": 22,
-    "16": 24,
-    "17": 33,
-    "18": 5,
-    "23": 2,
-    "19": 2,
-    "21": 5,
-    "22": 1
+    "0": 268,
+    "1": 393,
+    "2": 261,
+    "3": 320,
+    "4": 564,
+    "5": 425,
+    "6": 415,
+    "7": 505,
+    "8": 507,
+    "9": 537,
+    "10": 426,
+    "11": 466,
+    "12": 505,
+    "13": 878,
+    "14": 1002,
+    "15": 1191,
+    "16": 1117,
+    "17": 692,
+    "18": 277,
+    "19": 418,
+    "20": 288,
+    "21": 108,
+    "22": 228,
+    "23": 197
   },
   "message_types": {
-    "0": 753,
-    "19": 145
+    "0": 7865,
+    "19": 3085
   },
   "top_reacted_messages": [
     {
@@ -92,6 +107,30 @@
       "channel": ""
     },
     {
+      "id": "1455696777918550140",
+      "channel_id": "1300659662311526512",
+      "content": "<@645758482305253422>  <@276521152245923840>  <@773194786655043636>  <@143036116",
+      "author": "sayokolefay",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1455379240286687415",
+      "channel_id": "1170692781216378960",
+      "content": "I added my insight so people don't feel too lost learning traphase",
+      "author": "dyssayah",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455592263676723442",
+      "channel_id": "1170692781216378960",
+      "content": "Cuz as a gooner, i deserve the best women",
+      "author": "brainrot_in_a_vat",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1455451486699130900",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -106,6 +145,38 @@
       "author": "fym0701",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455586251548917773",
+      "channel_id": "1170692781216378960",
+      "content": "I'm a whale, so i get special privileges",
+      "author": "dragonshiny7",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455593290643800327",
+      "channel_id": "1170692781216378960",
+      "content": "I want the world of gacha game to go like:\n\"Im gonna play CZN. But then i downlo",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455600171139338360",
+      "channel_id": "1170692781216378960",
+      "content": "Praise me please",
+      "author": "seynee_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455697701068083311",
+      "channel_id": "1300659662311526512",
+      "content": "por que la A en rojo?",
+      "author": "sayokolefay",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1455461441065980027",
@@ -138,89 +209,36 @@
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
-      "id": "1455500379344080947",
-      "channel_id": "1131839817982947429",
-      "content": "谢谢你杜勒",
-      "author": "rain_scarlet",
+      "id": "1455376025310597245",
+      "channel_id": "1170692781216378960",
+      "content": "Only Cat24 is godtier",
+      "author": "seynee_",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455564577168167047",
-      "channel_id": "1131839817982947429",
-      "content": "我還在努力無靈芝H4-10 輸光",
-      "author": "quackdayo",
+      "id": "1455383674290962658",
+      "channel_id": "1170692781216378960",
+      "content": "midchette",
+      "author": "redb100dedwoman",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455582736185167975",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
+      "id": "1455524303410823271",
+      "channel_id": "1170692781216378960",
+      "content": "<@1288446421573304364> Kath Clem Gdoll Pollux Gmurphy.Castor here too",
+      "author": "twilightsparkle163163",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455472755607732379",
-      "channel_id": "1131839874132090890",
-      "content": "第一次过5-5<:A_pinch:1432980538536493057>",
-      "author": "ling_an_",
+      "id": "1455580236375654490",
+      "channel_id": "1170692781216378960",
+      "content": "*stares at me with 10m rose script and is a veteran*",
+      "author": "brainrot_in_a_vat",
       "reactions": 6,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1455444963687927882",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 6,
-      "channel": "📸壁纸分享: 茉夏┊Wallpaper Sharing: Mouchette"
-    },
-    {
-      "id": "1455610444864815219",
-      "content": "it's a lie made by big crit so they can sell you more SSR wheels/Coves",
-      "author": "omni_colon",
-      "reactions": 6,
-      "channel": "V2.4.1.2 在线维护公告"
-    },
-    {
-      "id": "1455497859540582460",
-      "content": "To separate the concerns of card naming and card effects, and to better understa",
-      "author": "null.pointer_exception",
-      "reactions": 6,
-      "channel": "Add Tags to Awakeners and Cards"
-    },
-    {
-      "id": "1455428864967708723",
-      "channel_id": "1131839817982947429",
-      "content": "懂了，我的未來不忍直視",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455428962539802824",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455485843375525911",
-      "channel_id": "1131839817982947429",
-      "content": "帶跨越疼痛吧 ~~畢竟你都玩杜勒了 他的強度一定讓你很痛吧~~",
-      "author": "ailiduo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455488236615893178",
-      "channel_id": "1131839817982947429",
-      "content": "QWYL-GDYC-HVLG",
-      "author": "ailiduo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

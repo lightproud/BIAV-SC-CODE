@@ -1,10 +1,23 @@
 {
   "date": "2025-12-20",
-  "messages": 1606,
-  "unique_authors": 47,
-  "reactions_total": 186,
-  "attachments": 93,
+  "messages": 11887,
+  "unique_authors": 244,
+  "reactions_total": 986,
+  "attachments": 614,
   "channel_activity": {
+    "🔸morimens-game-chat": 6203,
+    "🔸剧情交流": 156,
+    "🔸晒卡分享": 6,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 446,
+    "🔸phòng-chat-tiếng-việt": 19,
+    "🔸canal-español": 427,
+    "🔸canal-português": 148,
+    "🔸ruang-obrolan-indonesia": 2222,
+    "🔸ห้องสนทนาภาษาไทย": 212,
+    "🔸traphase": 60,
+    "🔸lore-chat": 369,
     "🔸綜合討論": 1515,
     "✉️OC’s Birthday | You Have Received Two Mails": 2,
     "Sylvester": 7,
@@ -35,34 +48,35 @@
     "1443848396585828363": 1
   },
   "hourly_activity": {
-    "0": 22,
-    "1": 65,
-    "2": 19,
-    "3": 93,
-    "4": 230,
-    "5": 60,
-    "6": 52,
-    "7": 45,
-    "8": 82,
-    "9": 58,
-    "10": 12,
-    "11": 40,
-    "12": 17,
-    "13": 91,
-    "14": 14,
-    "15": 13,
-    "16": 56,
-    "17": 163,
-    "18": 25,
-    "19": 7,
-    "20": 42,
-    "21": 254,
-    "22": 51,
-    "23": 95
+    "0": 246,
+    "1": 327,
+    "2": 524,
+    "3": 222,
+    "4": 775,
+    "5": 870,
+    "6": 902,
+    "7": 569,
+    "8": 891,
+    "9": 595,
+    "10": 279,
+    "11": 613,
+    "12": 470,
+    "13": 452,
+    "14": 437,
+    "15": 359,
+    "16": 514,
+    "17": 581,
+    "18": 189,
+    "19": 397,
+    "20": 693,
+    "21": 595,
+    "22": 255,
+    "23": 132
   },
   "message_types": {
-    "19": 204,
-    "0": 1311
+    "19": 3143,
+    "0": 7136,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -73,12 +87,116 @@
       "channel": "Sylvester"
     },
     {
+      "id": "1451951350538703033",
+      "channel_id": "1173463482503536711",
+      "content": "我回来了\n没有萝莉上门服务\n只有银手镯一副\n在面临牢狱之灾前\n冲一发献给群友们\n有缘的话\n明天再见",
+      "author": "shangxianyue_sp",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1451937244033192126",
       "channel_id": "1131839817982947429",
       "content": "一發還是有120K",
       "author": "heikwok",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1451773432181293117",
+      "channel_id": "1170692781216378960",
+      "content": "Nuh uh, that thread doesnt exist",
+      "author": "kezrin",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1451980954326532309",
+      "channel_id": "1170692781216378960",
+      "content": "I only listen to the people who glaze my favorites",
+      "author": "omenatyyppi",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1451801670861324411",
+      "channel_id": "1174983699935277147",
+      "content": "快了就快了",
+      "author": "akkom730",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1451912083779092480",
+      "channel_id": "1326453763355185215",
+      "content": "yeah if he actually eat Keeper then he will remember this scene in 4k Ultra HD a",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1451906014621335613",
+      "channel_id": "1170692781216378960",
+      "content": "Remember when aqua 24 gets super glazed and clears d tide in like 3 turns?\nHisto",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1451958247035637771",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> I use only yours cuz i have only you and flares with 1-sho",
+      "author": "twilightsparkle163163",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1451965874662801428",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "evsian",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1452046887824654466",
+      "channel_id": "1170692781216378960",
+      "content": "numbers aren't even",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1452076982170030298",
+      "channel_id": "1170692781216378960",
+      "content": "Me when I want to build covenants\nBut\nThe game says \"f*** you\"",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1451942735824294110",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1451821008079159558",
+      "channel_id": "1300659662311526512",
+      "content": "Ya comieron?",
+      "author": "yaoshidoppa",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1451958795314925821",
+      "channel_id": "1326453763355185215",
+      "content": "we are the minority of weirdos",
+      "author": "chinkeeyong",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1451850406681378936",
@@ -103,118 +221,20 @@
       "channel": ""
     },
     {
-      "id": "1451754162952994966",
-      "channel_id": "1131839817982947429",
-      "content": "每日i圖（1/1）",
-      "author": "ernest_heart",
+      "id": "1451769517452689530",
+      "channel_id": "1170692781216378960",
+      "content": "What the hell Lotan been eating 😭",
+      "author": "cheryb",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1451758336272760852",
-      "channel_id": "1131839817982947429",
-      "content": "圖魯超完提著褲子就走了，只留下一條交際腕在你體內",
-      "author": "ernest_heart",
+      "id": "1451858474400223243",
+      "channel_id": "1170692781216378960",
+      "content": "why do you guys even care about someone opinion anw\ncreate your own doc to misin",
+      "author": "_venush",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451864288909201549",
-      "channel_id": "1131839817982947429",
-      "content": "把普通ssr命轮抽满才转过来抽角色的我<:nocomment:1356053106038673610>",
-      "author": "cs001092",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451987474363584595",
-      "channel_id": "1131839817982947429",
-      "content": "老杜的夢魘 朵兒",
-      "author": "lululu9858",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1452000561539973202",
-      "channel_id": "1131839817982947429",
-      "content": "3.0必須把算力調和改成5牌啟動",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451859932642283621",
-      "content": "Time to pull this out<:tuff_ramona:1441426630420467753>",
-      "author": "sunstopshining",
-      "reactions": 4,
-      "channel": "Sylvester"
-    },
-    {
-      "id": "1451816893152362597",
-      "content": "the new intro is beautiful, I love seeing it when I open the app on mobile, but ",
-      "author": "7.spades",
-      "reactions": 4,
-      "channel": "💭「Processing」Can't see the new intro scene on Steam"
-    },
-    {
-      "id": "1451830904086462576",
-      "content": "Thank you Light! I'm really sorry if I sounded like I was accusing you of anythi",
-      "author": "arkaether",
-      "reactions": 4,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1451968479438831699",
-      "content": "注：另有一枚包裹將於午休時間稍後送到！\n    \n⫘⫘⫘ˎˊ˗ ·˖✶ ☽ ☼ ☾ ✶˖· ˗ˏˋ⫘⫘⫘\n    \n守密人：\n\n還記得嗎，我曾問你，卡達斯覆滅之",
-      "author": "flim_of_life_burst",
-      "reactions": 4,
-      "channel": "✉️OC生贺｜守密人，您收到了两封邮件♛"
-    },
-    {
-      "id": "1451937176827728086",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ailiduo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451978692057104530",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ailiduo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451983951814987977",
-      "channel_id": "1131839817982947429",
-      "content": "205抽 3疊補到+12",
-      "author": "quackdayo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451994307983708330",
-      "channel_id": "1131839817982947429",
-      "content": "然後莉莉又一直吃大保",
-      "author": "axe_proficient",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1451942053540925441",
-      "content": "造價太高不敢抽",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "健檢"
-    },
-    {
-      "id": "1451821818301120604",
-      "content": "如果玩家想为养成材料付费，那没问题。我不会去抱怨那些本来就不是给我准备的礼包。别人想买就买，我不想买，也不会因为别人能买而不满。\n\n但把表情和头像强行绑定在礼包",
-      "author": "tksn.",
-      "reactions": 3,
-      "channel": "V2.4.0.12 在线维护公告"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

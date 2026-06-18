@@ -1,10 +1,29 @@
 {
   "date": "2025-12-09",
-  "messages": 1114,
-  "unique_authors": 45,
-  "reactions_total": 743,
-  "attachments": 101,
+  "messages": 11272,
+  "unique_authors": 290,
+  "reactions_total": 2391,
+  "attachments": 685,
   "channel_activity": {
+    "🔸morimens-game-chat": 6594,
+    "🔸剧情交流": 669,
+    "🔸晒卡分享": 8,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 14,
+    "🔸课间休息闲聊": 4,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 20,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 32,
+    "🔸русский-канал": 326,
+    "🔸phòng-chat-tiếng-việt": 534,
+    "🔸canal-español": 399,
+    "🔸canal-português": 69,
+    "🔸ruang-obrolan-indonesia": 256,
+    "🔸ห้องสนทนาภาษาไทย": 304,
+    "🔸traphase": 62,
+    "🔸lore-chat": 857,
     "🔸綜合討論": 996,
     "Explosion: Ramona": 1,
     "求助一些队伍的输出手法": 11,
@@ -36,38 +55,38 @@
     "✦关卡地图「融灾禁区」总览49期·星辰篇✦": 1,
     "蓋個圖樓": 1,
     "給異格也P了一版仿官海報（）": 2,
-    "🔸欢乐梗图": 1,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "0": 153,
-    "1": 116,
-    "2": 22,
-    "3": 20,
-    "4": 6,
-    "5": 10,
-    "6": 5,
-    "8": 59,
-    "9": 26,
-    "10": 126,
-    "11": 155,
-    "12": 137,
-    "13": 111,
-    "14": 57,
-    "15": 39,
-    "16": 14,
-    "17": 11,
-    "18": 4,
-    "20": 2,
-    "21": 14,
-    "22": 1,
-    "19": 2,
-    "23": 1,
-    "7": 23
+    "0": 606,
+    "1": 386,
+    "2": 404,
+    "3": 267,
+    "4": 448,
+    "5": 615,
+    "6": 583,
+    "7": 286,
+    "8": 354,
+    "9": 97,
+    "10": 226,
+    "11": 537,
+    "12": 661,
+    "13": 671,
+    "14": 519,
+    "15": 1274,
+    "16": 678,
+    "17": 446,
+    "18": 486,
+    "19": 379,
+    "20": 405,
+    "21": 337,
+    "22": 300,
+    "23": 307
   },
   "message_types": {
-    "19": 198,
-    "0": 798
+    "19": 2781,
+    "0": 7376,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -78,11 +97,35 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1448077664652103822",
+      "channel_id": "1170692781216378960",
+      "content": "dolphinus maximus",
+      "author": "dyssayah",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1447880793232773151",
       "content": "畫了性轉if拉蒙娜\n搭檔.......搭檔.......",
       "author": "souri.10244",
       "reactions": 14,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1447958947821654117",
+      "channel_id": "1170692781216378960",
+      "content": "use it on caecus he already bricked",
+      "author": "syruponstrawberrycake",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448098820767485992",
+      "channel_id": "1181152750319456266",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸课间休息闲聊"
     },
     {
       "id": "1448009133428052069",
@@ -93,139 +136,116 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1447769561532207134",
-      "channel_id": "1131839817982947429",
+      "id": "1448040779896324289",
+      "channel_id": "1170692781216378960",
+      "content": "i love gambling",
+      "author": "dexetro",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447741445871112334",
+      "channel_id": "1300659662311526512",
+      "content": "ni un dolar gaste",
+      "author": "yaoshidoppa",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1447760657893163089",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "author": "universe.dark",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1447778804704608306",
-      "channel_id": "1131839817982947429",
+      "id": "1447827037648588922",
+      "channel_id": "1170692781216378960",
+      "content": "yea he needs supports for the raid",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447983330833338378",
+      "channel_id": "1170692781216378960",
+      "content": "updated my kath highscore",
+      "author": "arkaether",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448045584404582554",
+      "channel_id": "1170692781216378960",
+      "content": "my best blue girl",
+      "author": "dexetro",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448083729447649514",
+      "channel_id": "1170692781216378960",
+      "content": "Wow Final Chapter Arc 1 is short\n\nMeaning there's aome bullshit tier enemies in ",
+      "author": "manman021.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447982040849977354",
+      "channel_id": "1326453763355185215",
       "content": "",
-      "author": "jidu1418",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1447811939265675426",
-      "channel_id": "1131839817982947429",
+      "id": "1447821422394085436",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "rain_scarlet",
+      "author": "flares117",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1447869144329355274",
-      "channel_id": "1131839817982947429",
-      "content": "太傻逼了",
-      "author": "water_heart",
+      "id": "1447928387455942840",
+      "channel_id": "1170692781216378960",
+      "content": "We have Homura at home\nHomura at home:",
+      "author": "alistiel",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1447905344071270410",
-      "channel_id": "1131839817982947429",
-      "content": "我是個打不出425的萌新",
+      "id": "1447958078879436822",
+      "channel_id": "1170692781216378960",
+      "content": "is it time? 🥹",
+      "author": "punshpwnz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447964830576410784",
+      "channel_id": "1170692781216378960",
+      "content": "This is so cool<:agree:1400771815076528258> <:agree:1400771815076528258>",
+      "author": "dorembo_mako8800",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448087141069357056",
+      "channel_id": "1170692781216378960",
+      "content": "arc 3 ||merges traphase with the main game||.",
+      "author": "kinbote.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447977696578768919",
+      "channel_id": "1173463482503536711",
+      "content": "人還是一樣容易瘋\n只是有南極洋菩薩這個法器所以比較強",
       "author": "ernest_heart",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447920189470671022",
-      "channel_id": "1131839817982947429",
-      "content": "正好今天up医生，补个超限（）",
-      "author": "xyakoto",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447763700021854352",
-      "channel_id": "1131839817982947429",
-      "content": "<:A_pinch:1432980538536493057> 打350 結束這一次融災",
-      "author": "forg30215",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447812124637270149",
-      "channel_id": "1131839817982947429",
-      "content": "針不搓",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447870717281435771",
-      "channel_id": "1131839817982947429",
-      "content": "以前我可是天天給莉莉打72000的",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447904110107033611",
-      "channel_id": "1131839817982947429",
-      "content": "Box差不多這個樣子",
-      "author": "harowolf",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447943528033550397",
-      "channel_id": "1131839817982947429",
-      "content": "我要來打H4-10了",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447912791972511806",
-      "content": "So, different people, from en and cn, have already expressed that his naming arc",
-      "author": "vxvendetta97",
-      "reactions": 5,
-      "channel": "✅「Resolved」Name Changes for the bot Titles"
-    },
-    {
-      "id": "1447899618158575796",
-      "channel_id": "1131839817982947429",
-      "content": "~~確定不是+12~~",
-      "author": "foxcatfurry",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447905645494927380",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447917240086302741",
-      "channel_id": "1131839817982947429",
-      "content": "瞎弄的...感觉优化空间很大（）医生C是这么带吗？",
-      "author": "xyakoto",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447917329391554612",
-      "channel_id": "1131839817982947429",
-      "content": "等一下，我融朵怎么带的4月",
-      "author": "xyakoto",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1447940133163765892",
-      "channel_id": "1131839817982947429",
-      "content": "诞墨，我小号一周就拿到了",
-      "author": "sense25.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸剧情交流"
     }
   ]
 }

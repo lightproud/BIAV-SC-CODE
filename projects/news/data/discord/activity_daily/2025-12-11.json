@@ -1,10 +1,28 @@
 {
   "date": "2025-12-11",
-  "messages": 1824,
-  "unique_authors": 65,
-  "reactions_total": 678,
-  "attachments": 134,
+  "messages": 14579,
+  "unique_authors": 334,
+  "reactions_total": 2262,
+  "attachments": 879,
   "channel_activity": {
+    "🔸morimens-game-chat": 8756,
+    "🔸剧情交流": 435,
+    "🔸晒卡分享": 16,
+    "🔸欢乐梗图": 12,
+    "🔸相位对弈": 3,
+    "🔸交友频道": 7,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 7,
+    "🔸deutscher-chatraum": 11,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 245,
+    "🔸phòng-chat-tiếng-việt": 286,
+    "🔸canal-español": 617,
+    "🔸canal-português": 136,
+    "🔸ruang-obrolan-indonesia": 924,
+    "🔸ห้องสนทนาภาษาไทย": 244,
+    "🔸traphase": 41,
+    "🔸lore-chat": 1014,
     "🔸綜合討論": 1658,
     "🔸阵容构建": 31,
     "Ramona!": 4,
@@ -38,41 +56,41 @@
     "蓋個圖樓": 11,
     "我也丟一下之前畫的 圖樓": 5,
     "踏莎行（拉蒙娜生日贺词）": 1,
-    "🔸欢乐梗图": 6,
     "1296113810549112874": 1,
     "1305430084420898868": 2,
     "1399369127008796723": 1,
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "0": 84,
-    "1": 26,
-    "2": 34,
-    "3": 33,
-    "4": 71,
-    "5": 25,
-    "6": 32,
-    "7": 107,
-    "8": 161,
-    "9": 125,
-    "10": 82,
-    "11": 350,
-    "12": 206,
-    "13": 22,
-    "14": 81,
-    "15": 20,
-    "16": 12,
-    "17": 166,
-    "18": 141,
-    "19": 12,
-    "20": 8,
-    "21": 4,
-    "22": 4,
-    "23": 18
+    "0": 538,
+    "1": 426,
+    "2": 780,
+    "3": 498,
+    "4": 827,
+    "5": 1189,
+    "6": 542,
+    "7": 763,
+    "8": 592,
+    "9": 644,
+    "10": 664,
+    "11": 925,
+    "12": 627,
+    "13": 687,
+    "14": 864,
+    "15": 720,
+    "16": 571,
+    "17": 711,
+    "18": 540,
+    "19": 383,
+    "20": 206,
+    "21": 423,
+    "22": 280,
+    "23": 179
   },
   "message_types": {
-    "0": 1251,
-    "19": 438
+    "19": 3238,
+    "0": 9516,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -125,11 +143,36 @@
       "channel": ""
     },
     {
+      "id": "1448688364189515908",
+      "channel_id": "1170692781216378960",
+      "content": "i am not an adult",
+      "author": "tnimreppep",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448634139082231913",
+      "channel_id": "1180437373012672522",
       "content": "",
       "author": "ass191044",
       "reactions": 11,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1448499944867627140",
+      "channel_id": "1170692781216378960",
+      "content": "1. Say youre gonna improve raids \n2. Make them even worse\n3. Community gets mad\n",
+      "author": "kezrin",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448736087273898106",
+      "channel_id": "1173463482503536711",
+      "content": "~~因為這邊一堆南桐0~~",
+      "author": "foxcatfurry",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1448467703886254140",
@@ -140,12 +183,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1448654816543768757",
+      "channel_id": "1174983699935277147",
+      "content": "挖了点矿，星辰篇好难打，困难融朵打不过，共战也没怎么打……",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1448505567256776776",
       "channel_id": "1131839817982947429",
       "content": "怕你吃劇情吃吐了",
       "author": "ernest_heart",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448621351035207741",
+      "channel_id": "1173463482503536711",
+      "content": "用七國語言回報",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1448783841048395959",
@@ -162,68 +221,28 @@
       "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
-      "id": "1448505711251161088",
-      "channel_id": "1131839817982947429",
-      "content": "<:pray:1356053116260454534>",
-      "author": "sweet_25367",
+      "id": "1448685194037952544",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "tnimreppep",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1448652392282456247",
-      "channel_id": "1131839817982947429",
-      "content": "我有一个很搞的想法\n刚刚在剧情讨论里讲过\n如果校猫乐意的话可以把他去年快要破产的事做个游戏内活动\n就叫弥萨格建校史上最恶最绝望の危机\n内容就是让守密人和唤醒体打",
+      "id": "1448696080911827098",
+      "channel_id": "1170692781216378960",
+      "content": "||we realize ramona is tawil at prologue right?||",
+      "author": "kezrin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448645620842889306",
+      "channel_id": "1173463482503536711",
+      "content": "我有一个很搞的想法\n如果校猫乐意的话可以把他去年快要破产的事做个游戏内活动\n就叫弥萨格建校史上最恶最绝望の危机\n内容就是让守密人和唤醒体打工还债\n组乐队出道做学",
       "author": "shangxianyue_sp",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448657144017715221",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448821881653432622",
-      "channel_id": "1131839817982947429",
-      "content": "好多大佬...",
-      "author": "quackdayo",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448822850281799831",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "rain_scarlet",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448473939532714166",
-      "channel_id": "1131839817982947429",
-      "content": "~~對挺屍復活的校貓而言我們都是兩腳獸奴才~~",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448488331208818820",
-      "channel_id": "1131839817982947429",
-      "content": "可以啦，不用继续洗洗啦",
-      "author": "ququ12358",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1448536878994428059",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸剧情交流"
     }
   ]
 }
