@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-17T23:18:23.946155+00:00",
+  "archived_at": "2026-06-18T02:36:53.967131+00:00",
   "source": "steam_discussion",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Steam论坛] Invitation Code",
@@ -43,6 +43,21 @@
       "engagement": 7,
       "is_hot": false,
       "author": "DingusDork",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Interface is Overwhelming",
+      "summary": "I love Saya no Uta, so I decided to give this game a try, but let me say.\n\nI haven't seen an interface 1/10 this convoluted and confusing in my life. Dwarf Fortress is simple and straightforward compared to this!\n\nHow many currencies does this thing have? How many sidequests (I assume that's what they are; don't really know) available from the very beginning, with no context?\n\nI don't know what order I should play things, for a balanced and challenging experience. Should I click on the Saya thin",
+      "source": "steam_discussion",
+      "time": "2026-06-18T00:40:48+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624818868/",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "ScorpionWasp",
       "tags": [
         "steam_forum"
       ],

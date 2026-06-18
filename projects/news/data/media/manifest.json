@@ -12823,6 +12823,41 @@
       "title": "[ENVtuber] Morimens and chill | !discord",
       "time": "2026-06-17T19:44:21Z",
       "downloaded_at": "2026-06-17T23:18:23.853621+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/9bf6627b9bee802ccce523211784b93971cd8310.jpg": {
+      "filename": "bilibili_70f917b8b17640b8.jpg",
+      "source": "bilibili",
+      "title": "【静止画MAD】你存在的证明【沙耶之歌】",
+      "time": "2026-06-18T00:00:00+00:00",
+      "downloaded_at": "2026-06-18T02:36:50.571212+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/2dd17188baef4d7ef5c060ab7ecd81180266f1d1.jpg": {
+      "filename": "bilibili_653880b866a11210.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 莫丝 珊 沙耶开荒 主线简单 首领战第四至第八章",
+      "time": "2026-06-17T11:16:49+00:00",
+      "downloaded_at": "2026-06-18T02:36:51.939430+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/a71cdc72ea793ad83dd7dd5510d333769e96653f.jpg": {
+      "filename": "bilibili_89e73b6d0495c285.jpg",
+      "source": "bilibili",
+      "title": "60级24 通关2-5全流程，死扛是钥令爆的可以不爆",
+      "time": "2026-06-17T16:20:38+00:00",
+      "downloaded_at": "2026-06-18T02:36:52.682252+00:00"
+    },
+    "https://i.ytimg.com/vi/ChdWZSCGYe0/hqdefault.jpg": {
+      "filename": "youtube_a2ea6c70d0731701.jpg",
+      "source": "youtube",
+      "title": "Directo relax del Morimens | Charlita (ALVA NO EXISTE)",
+      "time": "2026-06-17T23:29:56Z",
+      "downloaded_at": "2026-06-18T02:36:53.446242+00:00"
+    },
+    "https://i.ytimg.com/vi/99FX2A_XCPA/hqdefault_live.jpg": {
+      "filename": "youtube_9a6e44a6dfd50765.jpg",
+      "source": "youtube",
+      "title": "Story Has Concluded.. So What Now? | Morimens: Ark 2- Start!",
+      "time": "2026-06-17T10:55:20Z",
+      "downloaded_at": "2026-06-18T02:36:53.874929+00:00"
     }
   },
   "failed": {
@@ -18815,6 +18850,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-17T23:18:23.439376+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/2dd17188baef4d7ef5c060ab7ecd81180266f1d1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T02:36:52.239946+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/a71cdc72ea793ad83dd7dd5510d333769e96653f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-18T02:36:52.982754+00:00"
     }
   },
   "archived": []
