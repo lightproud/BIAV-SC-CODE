@@ -1,10 +1,19 @@
 {
   "date": "2025-12-30",
-  "messages": 11988,
+  "messages": 14375,
   "unique_authors": 286,
-  "reactions_total": 2248,
-  "attachments": 645,
+  "reactions_total": 3082,
+  "attachments": 776,
   "channel_activity": {
+    "🔸lore-chat": 148,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 21,
+    "🔸team-building": 759,
+    "🔸general-chat": 109,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 1288,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 47,
     "🔸morimens-game-chat": 8145,
     "🔸剧情交流": 51,
     "🔸晒卡分享": 6,
@@ -46,8 +55,6 @@
     "✅「Answered」emoji": 2,
     "Is there any chance that N could be added to the game? N有可能实装吗？": 8,
     "相位对弈中命轮「催眠灵摆」效果失效": 2,
-    "🔸礼包码┊gift-codes": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1455674884712829139": 2,
     "1455326448683454465": 3,
     "1455229843368317101": 1,
@@ -55,41 +62,43 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
-    "0": 268,
-    "1": 393,
-    "2": 261,
-    "3": 320,
-    "4": 564,
-    "5": 425,
-    "6": 415,
-    "7": 505,
-    "8": 507,
-    "9": 537,
-    "10": 426,
-    "11": 466,
-    "12": 505,
-    "13": 878,
-    "14": 1002,
-    "15": 1191,
-    "16": 1117,
-    "17": 692,
-    "18": 277,
-    "19": 418,
-    "20": 288,
-    "21": 108,
-    "22": 228,
-    "23": 197
+    "0": 386,
+    "1": 416,
+    "2": 308,
+    "3": 420,
+    "4": 603,
+    "5": 464,
+    "6": 573,
+    "7": 718,
+    "8": 608,
+    "9": 641,
+    "13": 1009,
+    "14": 1192,
+    "15": 1355,
+    "16": 1151,
+    "17": 752,
+    "18": 316,
+    "19": 538,
+    "20": 339,
+    "22": 388,
+    "10": 535,
+    "12": 530,
+    "23": 255,
+    "11": 547,
+    "21": 331
   },
   "message_types": {
-    "0": 7865,
-    "19": 3085
+    "0": 1888,
+    "19": 496,
+    "20": 3
   },
   "top_reacted_messages": [
     {
       "id": "1455487990448128128",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 34000守密人达成礼 / DC34000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 629,
+      "reactions": 631,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -155,6 +164,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1455613202317447392",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "binis7705",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1455593290643800327",
       "channel_id": "1170692781216378960",
       "content": "I want the world of gacha game to go like:\n\"Im gonna play CZN. But then i downlo",
@@ -209,6 +226,14 @@
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
+      "id": "1455395227648131253",
+      "channel_id": "1433513650299076780",
+      "content": "<@266297152911835147> i know its been a while but ive finally managed to scrape ",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1455376025310597245",
       "channel_id": "1170692781216378960",
       "content": "Only Cat24 is godtier",
@@ -221,22 +246,6 @@
       "channel_id": "1170692781216378960",
       "content": "midchette",
       "author": "redb100dedwoman",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1455524303410823271",
-      "channel_id": "1170692781216378960",
-      "content": "<@1288446421573304364> Kath Clem Gdoll Pollux Gmurphy.Castor here too",
-      "author": "twilightsparkle163163",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1455580236375654490",
-      "channel_id": "1170692781216378960",
-      "content": "*stares at me with 10m rose script and is a veteran*",
-      "author": "brainrot_in_a_vat",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

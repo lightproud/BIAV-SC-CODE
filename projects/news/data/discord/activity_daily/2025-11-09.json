@@ -1,10 +1,13 @@
 {
   "date": "2025-11-09",
-  "messages": 111,
-  "unique_authors": 32,
-  "reactions_total": 527,
-  "attachments": 22,
+  "messages": 7809,
+  "unique_authors": 191,
+  "reactions_total": 1690,
+  "attachments": 292,
   "channel_activity": {
+    "🔸綜合討論": 1021,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 6674,
     "If Life was as usual for Castor and Pollux.": 1,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 6,
     "Kathigu-Ra: Ardor Blossom Star": 4,
@@ -28,31 +31,35 @@
     "🔸服务器公告┊server-announcement": 1
   },
   "hourly_activity": {
-    "5": 2,
-    "3": 2,
-    "7": 1,
-    "10": 2,
-    "17": 5,
-    "18": 7,
-    "19": 2,
-    "1": 3,
-    "23": 12,
-    "21": 6,
-    "22": 6,
-    "0": 5,
-    "4": 1,
-    "6": 1,
-    "16": 36,
-    "20": 13,
-    "12": 2,
-    "9": 2,
-    "8": 2,
-    "15": 1
+    "0": 120,
+    "1": 506,
+    "2": 359,
+    "3": 334,
+    "4": 479,
+    "5": 502,
+    "6": 357,
+    "7": 541,
+    "8": 640,
+    "9": 412,
+    "10": 235,
+    "11": 245,
+    "12": 243,
+    "13": 250,
+    "14": 415,
+    "15": 165,
+    "16": 102,
+    "17": 130,
+    "18": 312,
+    "19": 269,
+    "20": 251,
+    "21": 266,
+    "22": 103,
+    "23": 573
   },
   "message_types": {
-    "0": 90,
-    "4": 1,
-    "19": 10
+    "19": 2595,
+    "0": 5099,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -119,11 +126,27 @@
       "channel": "❤️"
     },
     {
+      "id": "1436993311004168384",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1437186161436266710",
       "content": "而且我不拉踩，但你游实际上就是常驻池很多卡颜值厨力都比最新的星辰篇限定高啊，不像别的游戏限定都是最好看的人气最高的，你游还真不一定限定比常驻好看。很多最美的还是",
       "author": "junakaru4ever",
       "reactions": 11,
       "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
+      "id": "1437124376779554898",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "oct3000",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1437213272762745126",
@@ -147,53 +170,44 @@
       "channel": "✅「Answered」Pollux's Sacred Heart Exhaust Count and Ultra Space"
     },
     {
-      "id": "1437185443413233858",
-      "content": "fgo也摆明了数值种姓制，五星卡默认最高90级，四星80，三星70。 但是fgo可以低星厨喂圣杯，喂上去大家都可以120级。你游现在实际上就是从大家都默认最高6",
-      "author": "junakaru4ever",
+      "id": "1437090617393152090",
+      "channel_id": "1170692781216378960",
+      "content": "🙂",
+      "author": "username_not_avaiable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1436987889555607655",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1437196829451354313",
+      "channel_id": "1131839817982947429",
+      "content": "比上輪多10點 <:pray:1356053116260454534>    感覺配隊好一點可以多拿5分  但也算是對得起新入隊的鳥人了 <:agree:140",
+      "author": "partycatss.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1437128470445559891",
+      "channel_id": "1131839817982947429",
+      "content": "初见普通难度，斩了！一个复活没吃这块",
+      "author": "phlilp_alapa",
       "reactions": 7,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1436995091871957083",
-      "content": "I would love to see stat buffs on all units or none. Instead of just limited one",
-      "author": "thpdom",
-      "reactions": 6,
-      "channel": "About the limited stat buffs for 2nd aniv."
-    },
-    {
-      "id": "1437177636983017583",
-      "content": "让我相信他们有时间把所有限定所有常驻在限定加三维之后的组队情况使用率都完完整整全面测过了再落地，不如信我是秦始皇",
-      "author": "junakaru4ever",
-      "reactions": 3,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
-    },
-    {
-      "id": "1436976292078686339",
-      "content": "Rendering and lighting im done for the first image!!!!",
-      "author": "j.i9star.",
-      "reactions": 2,
-      "channel": "Working on karma bridge(alsnt) with morimens (wip drawings, editing)"
-    },
-    {
-      "id": "1437194382917894144",
-      "content": "waaaaaa it looks amazing!!!!!",
-      "author": "raumbobulus",
-      "reactions": 1,
-      "channel": "Mother of all"
-    },
-    {
-      "id": "1437218367428755557",
-      "content": "omg welcome!!!\nLove the art too\n\nreally quick rundown to help uhhh <#14335136502",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Helloo"
-    },
-    {
-      "id": "1437218992615063636",
-      "content": "<:pray:1356053116260454534>",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Helloo"
+      "id": "1437052793914523648",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "riasterism_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

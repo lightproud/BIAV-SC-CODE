@@ -1,10 +1,13 @@
 {
   "date": "2025-11-22",
-  "messages": 201,
-  "unique_authors": 75,
-  "reactions_total": 320,
-  "attachments": 23,
+  "messages": 2993,
+  "unique_authors": 94,
+  "reactions_total": 589,
+  "attachments": 183,
   "channel_activity": {
+    "🔸綜合討論": 2348,
+    "🔸阵容构建": 33,
+    "🔸morimens-game-chat": 411,
     "Someone whose name starts with A which idk how to spell": 10,
     "wip keeper": 4,
     "Kathigu-Ra: Ardor Blossom Star": 1,
@@ -44,34 +47,34 @@
     "1441904635123208233": 1
   },
   "hourly_activity": {
-    "7": 9,
-    "10": 7,
-    "14": 10,
-    "16": 13,
-    "19": 6,
-    "11": 13,
-    "12": 15,
-    "13": 14,
-    "15": 13,
-    "17": 6,
+    "0": 382,
+    "1": 107,
+    "2": 80,
+    "3": 31,
+    "4": 62,
+    "5": 81,
+    "6": 177,
+    "7": 229,
+    "8": 255,
+    "9": 68,
+    "10": 47,
+    "11": 102,
+    "12": 94,
+    "13": 127,
+    "14": 128,
+    "15": 352,
+    "16": 427,
+    "17": 44,
+    "19": 32,
+    "21": 7,
+    "22": 109,
+    "23": 37,
     "18": 8,
-    "20": 7,
-    "21": 2,
-    "22": 2,
-    "23": 3,
-    "4": 6,
-    "0": 21,
-    "1": 15,
-    "3": 2,
-    "8": 10,
-    "5": 6,
-    "2": 9,
-    "9": 2,
-    "6": 2
+    "20": 7
   },
   "message_types": {
-    "0": 97,
-    "19": 28
+    "0": 2259,
+    "19": 533
   },
   "top_reacted_messages": [
     {
@@ -103,6 +106,14 @@
       "channel": "✅「Answered」This game needs more marketing"
     },
     {
+      "id": "1441926731245031526",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1441589125559091201",
       "content": "典藏馆的事件那，要不给打过的老登直接解锁了，要不就加个指引啊，根本不清楚打哪关才能解锁<:dead:1356082627509092372>",
       "author": "zhi0202__77913",
@@ -110,11 +121,51 @@
       "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
     },
     {
+      "id": "1441614009055969494",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1441803555202666648",
+      "channel_id": "1131839817982947429",
+      "content": "第一次400分",
+      "author": "iak.rm",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1441712474763296920",
       "content": "對於遍地都是的簡轉繁錯字已經看到無奈了，從非常影響沉浸體驗到「反正忘卻前夜沒錢不計較了」，從看到就出戲到看到已麻木，請問這個校稿志工的位置該去哪裡、怎麼應徵呢？",
       "author": "amstelredam",
       "reactions": 6,
       "channel": "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？"
+    },
+    {
+      "id": "1441699570202710037",
+      "channel_id": "1131839817982947429",
+      "content": "~~丢进黑池的流明和无垢~~",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1441699808397230100",
+      "channel_id": "1131839817982947429",
+      "content": "ctrl+v",
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1441706387976622225",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1441699616423677962",
@@ -138,81 +189,44 @@
       "channel": "N的究極羞辱"
     },
     {
-      "id": "1441810703236206602",
-      "content": "在遙遠的彌撒格學院內，一處任何探測儀器也找不到的地下室內，就是N的所在之處。\n\n“守密人，你這是要做什麼！”\n\n此刻的N像是隻燒鵝一樣，被繩子捆綁在半空中。\n\n",
-      "author": "void_1546.",
+      "id": "1441637051094143140",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/477755023787556866/1353522601259040788/d5",
+      "author": "dinosaur_ouo",
       "reactions": 4,
-      "channel": "N的究極羞辱"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1441826104192012451",
-      "content": "||~~改成暴雷~~||",
-      "author": "ass191044",
+      "id": "1441691602618941572",
+      "channel_id": "1131839817982947429",
+      "content": "没有一点点朵儿",
+      "author": "ququ12358",
       "reactions": 4,
-      "channel": "N的究極羞辱"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1441828628915818618",
-      "content": "https://tenor.com/view/morimens-picmix-murphy-murphy-morimens-morimens-murphy-gi",
-      "author": "chiedgaf",
-      "reactions": 3,
-      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
+      "id": "1441695274824368148",
+      "channel_id": "1131839817982947429",
+      "content": "當初用皮打到這 刮一下就過去了\n~~強烈要求增加血量~~",
+      "author": "quackdayo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1441857962942533693",
-      "content": "繁衍狂熱配音也配收咪人就好了😭但是可惜也沒多少喚醒體有語音<:A_pinch:1432980538536493057>",
-      "author": "shostakovich524",
-      "reactions": 3,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
+      "id": "1441755266713649316",
+      "channel_id": "1131839817982947429",
+      "content": "連幼圖都打不過，輸光..",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1441712335852015708",
-      "content": "創死神🤩",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441857618674188388",
-      "content": "沒錯！對！這麼好聽怎麼能不多講點話！🥺",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1441780036913987626",
-      "content": "The channel also doesn't come up when searching for \"morimens official\"",
-      "author": "cm_richio",
-      "reactions": 1,
-      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
-    },
-    {
-      "id": "1441593626663587903",
-      "content": "因為我現在的關打痛苦榨取怪就沒了 有必要時還是會開大",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441601871256223825",
-      "content": "另外一個想帶啥都行",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441635799220228238",
-      "content": "都是看當天想玩誰",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441650907082260511",
-      "content": "抽深海的常駐，其實是想撈撈看墨菲來的...（之前常駐就剩墨菲了），然後沒成功...🫠",
-      "author": "wobuzai2830",
-      "reactions": 1,
-      "channel": "輪換抽卡"
+      "id": "1441784161693208756",
+      "channel_id": "1131839817982947429",
+      "content": "抽了30抽3金，剛好補到2啟",
+      "author": "luckyinitial",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

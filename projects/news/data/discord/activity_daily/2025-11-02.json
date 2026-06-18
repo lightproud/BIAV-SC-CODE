@@ -1,10 +1,12 @@
 {
   "date": "2025-11-02",
-  "messages": 288,
-  "unique_authors": 51,
-  "reactions_total": 129,
-  "attachments": 31,
+  "messages": 5948,
+  "unique_authors": 178,
+  "reactions_total": 844,
+  "attachments": 264,
   "channel_activity": {
+    "🔸綜合討論": 787,
+    "🔸morimens-game-chat": 4873,
     "pumpkin murphy sketch": 3,
     "go rat go!!": 1,
     "pollux doodle": 1,
@@ -33,29 +35,35 @@
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "6": 31,
-    "18": 4,
-    "5": 27,
-    "4": 21,
-    "7": 25,
-    "3": 36,
-    "9": 4,
-    "8": 8,
-    "10": 3,
-    "12": 1,
-    "16": 48,
-    "17": 2,
-    "23": 1,
-    "15": 23,
-    "1": 14,
-    "2": 31,
-    "19": 2,
-    "13": 5,
-    "21": 2
+    "0": 281,
+    "1": 483,
+    "2": 323,
+    "3": 77,
+    "4": 206,
+    "5": 381,
+    "6": 385,
+    "10": 368,
+    "11": 250,
+    "12": 146,
+    "13": 371,
+    "14": 174,
+    "15": 536,
+    "16": 308,
+    "17": 203,
+    "18": 213,
+    "23": 236,
+    "7": 205,
+    "8": 52,
+    "9": 191,
+    "19": 66,
+    "20": 121,
+    "21": 122,
+    "22": 250
   },
   "message_types": {
-    "0": 177,
-    "19": 84
+    "19": 1750,
+    "0": 3909,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -80,6 +88,14 @@
       "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
     },
     {
+      "id": "1434502497590054942",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1434405637256642671",
       "content": "是黑泥，不喜欢别看\n||你游官方是和黑暗子宫作者有什么合作关系吗，墨菲剧情，墨菲活动页面，墨菲命轮复读黑暗子宫还不够，sp墨背景继续复读\n克希拉首次出场的故事是",
       "author": "flarinsidia",
@@ -101,102 +117,108 @@
       "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
     },
     {
-      "id": "1434422115473559633",
-      "content": "還我墨菲的死人感算我求你了<:takenotes:1357186646294138890>",
-      "author": "lanl4n",
+      "id": "1434358844607434782",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434434222231388292",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> <:angry1:1356053023272599668>",
+      "author": "katesthio",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434629678160937084",
+      "channel_id": "1170692781216378960",
+      "content": "1.6 mil bleed. Can you show a Helot Catena screenshot with 1.6 million bleed? Be",
+      "author": "mengluo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434568991245860957",
+      "channel_id": "1131839817982947429",
+      "content": "補了",
+      "author": "doudou4ji3",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1434334962517147648",
+      "channel_id": "1170692781216378960",
+      "content": "this is Morimens. It's LITERALLY an mpreg sim, most players are playing because ",
+      "author": "bagels5899",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434582090313367644",
+      "channel_id": "1170692781216378960",
+      "content": "NOW TIME FOR INCALC",
+      "author": "idotly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434598251994157076",
+      "channel_id": "1170692781216378960",
+      "content": "Just you, I uninstalled czn in a day",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434548202224226337",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
       "reactions": 4,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434440261215195146",
-      "content": "https://tenor.com/view/yakuza-gif-18148683",
-      "author": "whirli_bri",
+      "id": "1434473091521577000",
+      "channel_id": "1170692781216378960",
+      "content": "<a:bcaBONKAngry:764167636400996422>",
+      "author": "arisuu0604",
       "reactions": 4,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434359989249638521",
-      "content": "界域是什么",
-      "author": "sailieli_59793_57722",
+      "id": "1434491702336426014",
+      "channel_id": "1170692781216378960",
+      "content": "He's got some similarities with Kath.......just a bird and he tickles to death w",
+      "author": "hitsu4",
       "reactions": 4,
-      "channel": "新手求助配队"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434422297225072700",
-      "content": "別的不説了，把白眼睛改回來",
-      "author": "navirecorbeau",
-      "reactions": 3,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1434494954201284609",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "solxeko",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434426846044356609",
-      "content": "我的死人墨菲呢",
-      "author": "muxia5978",
-      "reactions": 3,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1434520454269505587",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434457004901924964",
-      "content": "sp墨的畫風又不像會說這種話\n前面1.5周年有說過話好像也不是這風格🤔",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434475666375577712",
-      "content": "對啊對啊官方你爾多龍嗎😡😡😡",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434574209769672796",
-      "content": "这个臀腿比例太怪了，什么二次元卡戴珊。🙏血书重绘，听听玩家的声音吧",
-      "author": "leviatz",
-      "reactions": 3,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434394685195030558",
-      "content": "male leigh doodle",
-      "author": "ellumi",
-      "reactions": 2,
-      "channel": "pollux doodle"
-    },
-    {
-      "id": "1434431246515044475",
-      "content": "血液供給雙十一特價哥特洋裝",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434434800113942650",
-      "content": "改前派vs改後派",
-      "author": "nazhigezihk",
-      "reactions": 2,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434445604821667921",
-      "content": "Murphy but all traces of joy and silly are forever gone<:please:1356053110375714",
-      "author": "zekiei",
-      "reactions": 2,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434490856060223560",
-      "content": "這就是沒討到糖果而黑化的墨菲\n一切都對上了",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
-    },
-    {
-      "id": "1434429676339855371",
-      "content": "<:Cheerup:1400771555939844149>",
-      "author": "shagaru0802",
-      "reactions": 1,
-      "channel": "pumpkin murphy sketch"
+      "id": "1434535323395817653",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hammer2830",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

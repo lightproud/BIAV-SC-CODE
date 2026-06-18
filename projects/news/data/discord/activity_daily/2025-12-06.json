@@ -1,10 +1,18 @@
 {
   "date": "2025-12-06",
-  "messages": 14754,
+  "messages": 17789,
   "unique_authors": 265,
-  "reactions_total": 1994,
-  "attachments": 677,
+  "reactions_total": 2310,
+  "attachments": 876,
   "channel_activity": {
+    "🔸lets-count": 21,
+    "🔸频道建议┊server-suggestions": 40,
+    "🔸team-building": 746,
+    "🔸general-chat": 1032,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 1121,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 58,
     "🔸剧情交流": 25,
     "🔸晒卡分享": 16,
     "🔸相位对弈": 18,
@@ -45,36 +53,45 @@
     "1241345906826153984": 3
   },
   "hourly_activity": {
-    "2": 476,
-    "4": 490,
-    "5": 504,
-    "6": 489,
-    "7": 350,
-    "8": 526,
-    "0": 453,
-    "1": 342,
-    "9": 775,
-    "16": 1160,
-    "11": 613,
-    "12": 676,
-    "3": 524,
-    "13": 849,
-    "14": 964,
-    "15": 995,
-    "17": 616,
-    "22": 569,
-    "10": 1018,
-    "18": 548,
-    "21": 478,
-    "23": 544,
-    "20": 322,
-    "19": 473
+    "0": 600,
+    "1": 418,
+    "2": 519,
+    "3": 583,
+    "6": 554,
+    "7": 476,
+    "8": 862,
+    "9": 951,
+    "10": 1114,
+    "11": 919,
+    "13": 953,
+    "15": 1034,
+    "19": 509,
+    "20": 355,
+    "21": 502,
+    "16": 1291,
+    "17": 705,
+    "18": 604,
+    "4": 609,
+    "5": 868,
+    "12": 852,
+    "14": 1194,
+    "22": 719,
+    "23": 598
   },
   "message_types": {
-    "0": 1718,
-    "19": 310
+    "0": 2211,
+    "19": 818,
+    "20": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1446729700562047019",
+      "channel_id": "1400750050208125010",
+      "content": "-ban <@606955103601295381>  banned for repeatedly creating drama, baiting other ",
+      "author": "craux.",
+      "reactions": 60,
+      "channel": "🔸general-chat"
+    },
     {
       "id": "1447008109720768653",
       "content": "",
@@ -168,6 +185,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1446724403587977392",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/mods-mod-miguel-gato-cat-gif-22365379\n\nHes lying, I didn'",
+      "author": "dyssayah",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1446728448931532870",
+      "channel_id": "1400750050208125010",
+      "content": "IM FREE FROM EXAMS \nYEAHH",
+      "author": "forsmile0",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1446756780398084127",
       "channel_id": "1174983699935277147",
       "content": "",
@@ -206,29 +239,6 @@
       "author": "monchi3524",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1446911872170328117",
-      "channel_id": "1170692781216378960",
-      "content": "achoo",
-      "author": "velmi",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1446966874838663429",
-      "channel_id": "1170692781216378960",
-      "content": "<@191729618305155072> At least money x2 so not bad",
-      "author": "twilightsparkle163163",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1446842329376882799",
-      "content": "有去上課感覺畫黑色塊的技巧有提升 開心",
-      "author": "carrot_chicken",
-      "reactions": 7,
-      "channel": ""
     }
   ]
 }

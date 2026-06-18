@@ -1,10 +1,12 @@
 {
   "date": "2025-11-10",
-  "messages": 207,
-  "unique_authors": 65,
-  "reactions_total": 957,
-  "attachments": 79,
+  "messages": 8275,
+  "unique_authors": 199,
+  "reactions_total": 2418,
+  "attachments": 420,
   "channel_activity": {
+    "🔸綜合討論": 919,
+    "🔸morimens-game-chat": 7149,
     "Kathigu-Ra: Ardor Blossom Star": 2,
     "[Birthday wishes for Caecus /0：00]": 2,
     "[Birthday wishes for Caecus /1：00]": 1,
@@ -51,35 +53,35 @@
     "1432654338982940783": 2
   },
   "hourly_activity": {
-    "17": 4,
-    "20": 2,
-    "16": 7,
-    "22": 6,
-    "14": 5,
-    "4": 5,
-    "5": 3,
-    "1": 12,
-    "12": 6,
-    "3": 8,
-    "8": 32,
-    "9": 13,
-    "10": 24,
-    "13": 9,
-    "15": 6,
-    "18": 3,
-    "19": 4,
-    "23": 3,
-    "7": 25,
-    "11": 6,
-    "6": 17,
-    "2": 5,
-    "21": 2
+    "0": 495,
+    "1": 324,
+    "2": 347,
+    "3": 185,
+    "4": 300,
+    "5": 558,
+    "6": 399,
+    "7": 397,
+    "8": 207,
+    "9": 422,
+    "10": 476,
+    "11": 332,
+    "12": 278,
+    "13": 183,
+    "14": 408,
+    "15": 303,
+    "16": 493,
+    "17": 430,
+    "18": 280,
+    "19": 561,
+    "22": 232,
+    "20": 175,
+    "21": 118,
+    "23": 372
   },
   "message_types": {
-    "0": 105,
-    "19": 19,
-    "6": 1,
-    "4": 1
+    "0": 5176,
+    "19": 2891,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -95,6 +97,14 @@
       "author": "game.producer.light",
       "reactions": 64,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437390708637175839",
+      "channel_id": "1170692781216378960",
+      "content": "Is what I would say if it was actually out",
+      "author": "solxeko",
+      "reactions": 52,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1437334510181023897",
@@ -188,6 +198,14 @@
       "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     },
     {
+      "id": "1437479264281952288",
+      "channel_id": "1170692781216378960",
+      "content": "At BIAV we don't believe in the color blue",
+      "author": "joker_0108",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1437578048730955837",
       "content": "Love goes to best boi <a:bongo_cat_heart:837451354095878185>",
       "author": "gumseoi",
@@ -202,25 +220,12 @@
       "channel": "💭「Processing」Material synthesis and conversion"
     },
     {
-      "id": "1437361829893640223",
-      "content": "",
-      "author": "aurora3981",
-      "reactions": 15,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
-    },
-    {
-      "id": "1437461449713914037",
-      "content": "",
-      "author": "ren3816",
-      "reactions": 15,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
-    },
-    {
-      "id": "1437349338333581333",
-      "content": "Here, take a little break <:M_satisfy:1400771690321154110>",
-      "author": "zekiei",
-      "reactions": 14,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+      "id": "1437303164411056249",
+      "channel_id": "1170692781216378960",
+      "content": "🔥",
+      "author": "canker.thore",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

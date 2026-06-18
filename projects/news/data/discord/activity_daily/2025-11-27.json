@@ -1,10 +1,12 @@
 {
   "date": "2025-11-27",
-  "messages": 177,
-  "unique_authors": 40,
-  "reactions_total": 400,
-  "attachments": 40,
+  "messages": 1835,
+  "unique_authors": 58,
+  "reactions_total": 778,
+  "attachments": 121,
   "channel_activity": {
+    "🔸綜合討論": 1643,
+    "🔸阵容构建": 15,
     "jenkins": 2,
     "morimens pixel art": 5,
     "Helot art": 1,
@@ -41,33 +43,34 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "8": 20,
-    "9": 3,
-    "14": 13,
-    "19": 5,
-    "1": 3,
-    "16": 51,
-    "21": 1,
-    "10": 5,
-    "11": 3,
-    "2": 4,
-    "12": 3,
-    "17": 2,
-    "20": 2,
-    "7": 14,
-    "13": 3,
-    "6": 13,
-    "15": 13,
-    "23": 5,
-    "0": 3,
-    "22": 2,
-    "3": 6,
-    "4": 1,
-    "5": 2
+    "0": 7,
+    "1": 31,
+    "2": 103,
+    "3": 34,
+    "4": 21,
+    "5": 63,
+    "6": 201,
+    "7": 206,
+    "8": 126,
+    "9": 109,
+    "10": 240,
+    "11": 58,
+    "12": 41,
+    "13": 60,
+    "14": 62,
+    "15": 132,
+    "16": 122,
+    "17": 29,
+    "18": 6,
+    "19": 7,
+    "20": 5,
+    "22": 6,
+    "23": 165,
+    "21": 1
   },
   "message_types": {
-    "0": 98,
-    "19": 28
+    "0": 1276,
+    "19": 382
   },
   "top_reacted_messages": [
     {
@@ -141,6 +144,14 @@
       "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
+      "id": "1443749017862275152",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "neptinu",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1443509722505281658",
       "content": "Hi Keepers! Here's the CN-EN transcription of Murphy: Fauxborn's Radio Drama \"Se",
       "author": "morimens_15",
@@ -155,60 +166,60 @@
       "channel": "蓋個圖樓"
     },
     {
-      "id": "1443637328600895508",
-      "content": "有時候會卡手",
-      "author": "akkom730",
-      "reactions": 5,
-      "channel": "關於刪卡"
+      "id": "1443473036475891884",
+      "channel_id": "1131839817982947429",
+      "content": "就差一點了..",
+      "author": "yuexingyexiao",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1443605514432024716",
-      "content": "<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13560531162604545",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "morimens pixel art"
-    },
-    {
-      "id": "1443438381660110870",
-      "content": "Thank you for your reminder. I have conveyed it to my colleague in charge of the",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.4.0.6 在线维护公告"
-    },
-    {
-      "id": "1443524062922936331",
+      "id": "1443513470707564727",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "tsubaki9884",
-      "reactions": 3,
-      "channel": "⟨提燈雙子 - 破曉⟩"
+      "author": "forg30215",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1443581624670359562",
-      "content": "I'd like to thank Salvador for leading me to this game... Happy 2nd anniversary,",
-      "author": "sofiaebby",
-      "reactions": 2,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+      "id": "1443547956253949953",
+      "channel_id": "1131839817982947429",
+      "content": "神國毒隊",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1443505043511705600",
-      "content": "也是有錢了，可以請人畫漫畫了🙄💅",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
+      "id": "1443623392371544064",
+      "channel_id": "1131839817982947429",
+      "content": "||~~我昨天睡前通靈了sp小騎士感覺就是保護公主結果死掉後積攢怨念變成男鬼那種~~||",
+      "author": "ahong0727",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1443640370268340384",
-      "content": "有虛弱易傷",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於刪卡"
+      "id": "1443628335606530068",
+      "channel_id": "1131839817982947429",
+      "content": "我還想幫我的第二輛皮杜大黃車畫點~~色圖~~勒阿我沒空阿<:takenotes:1357186646294138890>",
+      "author": "ass191044",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1443640683498831955",
-      "content": "誕墨的海國重新讓50黑印變回圖圖4費",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於刪卡"
+      "id": "1443628985186517032",
+      "channel_id": "1131839817982947429",
+      "content": "老娘直接在你國土中間開闢一條航道",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443627810483867822",
+      "channel_id": "1131839817982947429",
+      "content": "海上遇到海盜但我不管，老娘直接保祐整艘船創翻路上所有海障",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

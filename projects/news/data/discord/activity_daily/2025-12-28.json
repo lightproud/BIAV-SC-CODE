@@ -1,10 +1,19 @@
 {
   "date": "2025-12-28",
-  "messages": 11774,
+  "messages": 13845,
   "unique_authors": 255,
-  "reactions_total": 1488,
-  "attachments": 564,
+  "reactions_total": 1636,
+  "attachments": 660,
   "channel_activity": {
+    "🔸lore-chat": 399,
+    "🔸lets-count": 25,
+    "🔸team-building": 529,
+    "🔸general-chat": 197,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 875,
+    "🔸忘却前夜┊morimens-tv": 10,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 32,
     "🔸morimens-game-chat": 6661,
     "🔸剧情交流": 47,
     "🔸晒卡分享": 26,
@@ -46,38 +55,37 @@
     "Happy New Year from GMurphy and Tulu!❄️": 2,
     "嗨又是我我又畫了哈姆林": 2,
     "some GMurphy doodles": 1,
-    "🔸忘却前夜┊morimens-tv": 5,
     "1445334381404094475": 11
   },
   "hourly_activity": {
-    "0": 269,
-    "1": 168,
-    "2": 302,
-    "3": 311,
-    "4": 375,
-    "5": 450,
-    "6": 331,
-    "7": 581,
-    "8": 481,
-    "9": 197,
-    "10": 295,
-    "11": 656,
-    "12": 744,
-    "13": 711,
-    "14": 639,
-    "15": 735,
-    "16": 617,
-    "17": 1042,
-    "18": 304,
-    "19": 352,
-    "20": 457,
-    "21": 779,
-    "22": 419,
-    "23": 559
+    "0": 331,
+    "1": 202,
+    "2": 325,
+    "3": 400,
+    "4": 436,
+    "5": 517,
+    "6": 562,
+    "7": 618,
+    "8": 762,
+    "9": 364,
+    "10": 340,
+    "11": 757,
+    "13": 746,
+    "14": 726,
+    "15": 778,
+    "16": 640,
+    "17": 1075,
+    "18": 329,
+    "19": 404,
+    "23": 602,
+    "20": 645,
+    "21": 821,
+    "22": 665,
+    "12": 800
   },
   "message_types": {
-    "0": 8048,
-    "19": 2535
+    "0": 1683,
+    "19": 388
   },
   "top_reacted_messages": [
     {
@@ -117,6 +125,14 @@
       "channel": "此乃造谣24的笔记本内容（嗯）"
     },
     {
+      "id": "1454907112466546860",
+      "channel_id": "1435483703114596503",
+      "content": "https://youtu.be/txI9d9P1nxE\nI'm very excited for Mouchette's upcoming release a",
+      "author": "reya.li",
+      "reactions": 19,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1454866142463262720",
       "channel_id": "1131839817982947429",
       "content": "看成serve for your head為你的頭服務",
@@ -130,13 +146,6 @@
       "author": "ernest_heart",
       "reactions": 19,
       "channel": "章魚章魚我們喜歡你社入社福利"
-    },
-    {
-      "id": "1454907112466546860",
-      "content": "https://youtu.be/txI9d9P1nxE\nI'm very excited for Mouchette's upcoming release a",
-      "author": "reya.li",
-      "reactions": 19,
-      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
       "id": "1454832153614356480",
@@ -161,6 +170,7 @@
     },
     {
       "id": "1454955322547376234",
+      "channel_id": "1435483703114596503",
       "content": "https://youtu.be/p8HnJyTOpHk\nI decided to improve my 5 turn clear on this... Tur",
       "author": "zier.0",
       "reactions": 12,

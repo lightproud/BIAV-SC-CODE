@@ -1,10 +1,13 @@
 {
   "date": "2025-11-16",
-  "messages": 178,
-  "unique_authors": 22,
-  "reactions_total": 216,
-  "attachments": 49,
+  "messages": 6003,
+  "unique_authors": 187,
+  "reactions_total": 915,
+  "attachments": 278,
   "channel_activity": {
+    "🔸綜合討論": 423,
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 5400,
     "Senior William doodle": 5,
     "AEQUOR": 3,
     "Lady Juliette comments the church": 1,
@@ -36,33 +39,35 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "17": 5,
-    "3": 5,
-    "15": 2,
-    "16": 34,
-    "11": 4,
-    "6": 14,
-    "0": 1,
-    "4": 1,
-    "12": 4,
-    "19": 7,
-    "22": 7,
-    "14": 44,
-    "2": 1,
-    "23": 1,
-    "13": 3,
-    "21": 2,
-    "1": 1,
-    "5": 3,
-    "7": 12,
-    "18": 6,
-    "8": 3,
-    "9": 16,
-    "10": 2
+    "1": 88,
+    "2": 76,
+    "4": 317,
+    "5": 229,
+    "6": 155,
+    "7": 305,
+    "8": 337,
+    "9": 248,
+    "10": 332,
+    "11": 485,
+    "12": 440,
+    "13": 456,
+    "14": 331,
+    "15": 274,
+    "16": 374,
+    "17": 228,
+    "21": 166,
+    "22": 280,
+    "23": 382,
+    "0": 46,
+    "3": 155,
+    "18": 34,
+    "19": 68,
+    "20": 197
   },
   "message_types": {
-    "0": 85,
-    "19": 22
+    "0": 4002,
+    "19": 1822,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -115,6 +120,14 @@
       "channel": "于麗埃特女士對提燈教會作出重大指示"
     },
     {
+      "id": "1439637991369736292",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kinokoortakenoko",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1439574720906395749",
       "content": "",
       "author": "flim_of_life_burst",
@@ -129,6 +142,14 @@
       "channel": ""
     },
     {
+      "id": "1439663522320617472",
+      "channel_id": "1170692781216378960",
+      "content": "<@298922504259502081> I remember you now.You make tierlists and it was better th",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1439742362174754920",
       "content": "倒騰了一晚上做了這些！等我慢慢寫正文吧",
       "author": "flim_of_life_burst",
@@ -136,67 +157,68 @@
       "channel": "試閱：▼▼▼▼之犬"
     },
     {
-      "id": "1439751478792421416",
-      "content": "As title stated, from what I have seen, we don't really have a Morimens Media ki",
-      "author": "satachan",
+      "id": "1439595227777077309",
+      "channel_id": "1170692781216378960",
+      "content": "btw is the pvp in this game well balanced and fun?",
+      "author": "solaihy",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439595456568234035",
+      "channel_id": "1170692781216378960",
+      "content": "full disclosure i played 5 pvp matches not knowing what the hell i was doing wha",
+      "author": "solaihy",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439617650782371900",
+      "channel_id": "1170692781216378960",
+      "content": "Finally, after 10 thousand years of imprisonment, I'm free to yap once more",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439618528851267645",
+      "channel_id": "1170692781216378960",
+      "content": "why Villa is the hitler 2.0, it should be me not him",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439744453693669580",
+      "channel_id": "1170692781216378960",
+      "content": "I haven’t been spending enough, I’ll buy every pack on reset dw chat 🫡",
+      "author": "bagels5899",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439757593705844788",
+      "channel_id": "1170692781216378960",
+      "content": "Its not november 13th thats why",
+      "author": "truevanity",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439427466476392458",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
       "reactions": 5,
-      "channel": "✅「Answered」Is it possible to have some official  art of events and such for content creation?"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1439549969735487508",
-      "content": "我比较喜欢关注剧情中的细节和小角色，因此以艾尔莎（在“特遣记录：狩猎愉快！”中一闪而过的角色）为主角写了一篇故事。同时我注意到了融蚀鼠王、融蚀疯马、融蚀野犬这三",
-      "author": "150_ripe",
-      "reactions": 4,
-      "channel": "苍翠草甸往事（原创故事）"
-    },
-    {
-      "id": "1439665443953446942",
-      "content": "LET'S GOOO",
-      "author": "idotly",
-      "reactions": 2,
-      "channel": "Senior William doodle"
-    },
-    {
-      "id": "1439619965933191190",
-      "content": "还有我看鸟哥弟很厉害",
-      "author": "mix6287",
-      "reactions": 2,
-      "channel": "主线打的艰难"
-    },
-    {
-      "id": "1439460154943737969",
-      "content": "<@1301813973703852035>",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "The stabbening™"
-    },
-    {
-      "id": "1439619620712480952",
-      "content": "专属命轮吗",
-      "author": "mix6287",
-      "reactions": 1,
-      "channel": "主线打的艰难"
-    },
-    {
-      "id": "1439594726318800956",
-      "content": "試著打出去了，一點效果都沒有",
-      "author": "vivian35._.",
-      "reactions": 1,
-      "channel": "💭「处理中」這是複製到哪去了"
-    },
-    {
-      "id": "1439495059652481034",
-      "content": "的話一聲槍響會如何受到加成",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "星辰篇未來鑰令受到刻痕加強"
-    },
-    {
-      "id": "1439520312244048044",
-      "content": "Hello. Could you share this emotes please?",
-      "author": "fantomwalker",
-      "reactions": 1,
-      "channel": ""
+      "id": "1439658030470922371",
+      "channel_id": "1131839817982947429",
+      "content": "比較像我今天白天去礦石展看到的\n化石（",
+      "author": "undecember_news",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

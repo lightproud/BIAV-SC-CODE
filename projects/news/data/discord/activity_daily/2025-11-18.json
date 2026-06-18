@@ -1,10 +1,13 @@
 {
   "date": "2025-11-18",
-  "messages": 492,
-  "unique_authors": 53,
-  "reactions_total": 390,
-  "attachments": 78,
+  "messages": 14252,
+  "unique_authors": 357,
+  "reactions_total": 2261,
+  "attachments": 681,
   "channel_activity": {
+    "🔸綜合討論": 1943,
+    "🔸阵容构建": 8,
+    "🔸morimens-game-chat": 11809,
     "I tried making Ramona in DoLP Goose+Mysterious": 1,
     "Salvador Cosplay Preview": 2,
     "The Butcheress and Her Idol [Sophia and Salvador Origin Fanfic]": 3,
@@ -107,34 +110,36 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "9": 30,
-    "12": 27,
-    "10": 26,
-    "14": 19,
-    "5": 10,
-    "6": 52,
-    "18": 3,
-    "19": 6,
-    "0": 6,
-    "17": 21,
-    "8": 59,
-    "11": 25,
-    "13": 24,
-    "15": 37,
-    "7": 13,
-    "16": 21,
-    "4": 9,
-    "20": 62,
-    "3": 19,
-    "21": 1,
-    "22": 3,
-    "23": 13,
-    "1": 6
+    "0": 518,
+    "1": 657,
+    "2": 671,
+    "3": 500,
+    "4": 577,
+    "5": 507,
+    "6": 420,
+    "7": 1039,
+    "8": 760,
+    "9": 205,
+    "10": 333,
+    "11": 469,
+    "12": 753,
+    "13": 891,
+    "14": 1002,
+    "15": 759,
+    "16": 586,
+    "17": 549,
+    "18": 324,
+    "19": 507,
+    "23": 777,
+    "20": 526,
+    "21": 441,
+    "22": 481
   },
   "message_types": {
-    "0": 72,
-    "19": 20,
-    "4": 1
+    "0": 9054,
+    "19": 4704,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -143,6 +148,14 @@
       "author": "game.producer.light",
       "reactions": 102,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440393694279634994",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1440393579121082378 @everyone",
+      "author": "game.producer.light",
+      "reactions": 89,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1440292212028997803",
@@ -187,11 +200,27 @@
       "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     },
     {
+      "id": "1440417601741131786",
+      "channel_id": "1170692781216378960",
+      "content": "This trully is our morimens",
+      "author": "menezes64",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1440259525599957124",
       "content": "Thank you all for your participation. I will strive to announce the award result",
       "author": "morimensstaff01",
       "reactions": 14,
       "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1440363808810995783",
+      "channel_id": "1131839817982947429",
+      "content": "？換出來長這樣是什麼鬼",
+      "author": "lingcheng.0",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1440254779744849960",
@@ -201,6 +230,30 @@
       "channel": "Arc 1 story content nerf"
     },
     {
+      "id": "1440477782831399113",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440291471591735428",
+      "channel_id": "1170692781216378960",
+      "content": "also tyyyyytt anni",
+      "author": "undeterredhomo",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440329531830435902",
+      "channel_id": "1170692781216378960",
+      "content": "Have you considered Sorel is hotter?",
+      "author": "enternameunavailable",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1440367476885160152",
       "content": "as a new player, i love this difficulty level, that's it, goodbye ❤️",
       "author": "rhatsu",
@@ -208,74 +261,35 @@
       "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     },
     {
+      "id": "1440144830792466533",
+      "channel_id": "1170692781216378960",
+      "content": "```\nYou have been ⚠Warned\nReason: Automoderator: The word fish is banned, watch ",
+      "author": "sugarspawn",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440267508442595339",
+      "channel_id": "1170692781216378960",
+      "content": "When Aigis see me I too would be rock ha-",
+      "author": "joker_0108",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440143770724204655",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "renaiya",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1440401699218128977",
       "content": "Putting this here too, for anyone that want to use it to Promote the game to fri",
       "author": "vxvendetta97",
       "reactions": 8,
       "channel": "Morimens Anniversary Advertisement Message"
-    },
-    {
-      "id": "1440292419164831810",
-      "content": "還有跟自家守密人的互動（～兩邊都沒什麼表情的很和平開心～）",
-      "author": "xu6_",
-      "reactions": 8,
-      "channel": "畫了這賽季的相位對弈貼圖☝️"
-    },
-    {
-      "id": "1440288765036855357",
-      "content": "深海的最大的特點同時也是問題就是慢啟動，現在深潛根本沒有要讓深海活的意思啊<:takenotes:1357186646294138890>",
-      "author": "lanl4n",
-      "reactions": 6,
-      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
-    },
-    {
-      "id": "1440378480293580811",
-      "content": "Our player base is more diverse than ever: story enthusiasts, art lovers, hardco",
-      "author": "game.producer.light",
-      "reactions": 5,
-      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
-    },
-    {
-      "id": "1440324421846831205",
-      "content": "They even complained that they didn't feel any stakes in the story just because ",
-      "author": "sophiechoice",
-      "reactions": 5,
-      "channel": "Arc 1 story content nerf"
-    },
-    {
-      "id": "1440302577139847270",
-      "content": "On PC (steam version), after going to Story Arc 1 Chapter 6, whenever Morimens i",
-      "author": "legendaryredz",
-      "reactions": 5,
-      "channel": "💭「Processing」Sound setting not working as intended"
-    },
-    {
-      "id": "1440336617460994071",
-      "content": "",
-      "author": "morimens_15",
-      "reactions": 4,
-      "channel": "V2.4.0.2 在线维护公告"
-    },
-    {
-      "id": "1440434570951655547",
-      "content": "In fact, we've found that some excellent voice actors don't actually cost as muc",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
-    },
-    {
-      "id": "1440291963210563675",
-      "content": "一直覺得吃回合數的積分機制很微妙，快攻隊與慢啟動隊都有各自的特色，一直採用回合限制分數只是在限制大家的玩法\n感覺可以加個不同的輪換積分制，比如像假設今天是最大毒",
-      "author": "lanl4n",
-      "reactions": 4,
-      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
-    },
-    {
-      "id": "1440300521570177065",
-      "content": "有點嗆請見諒",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     }
   ]
 }

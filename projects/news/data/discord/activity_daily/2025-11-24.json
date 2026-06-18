@@ -1,10 +1,12 @@
 {
   "date": "2025-11-24",
-  "messages": 188,
-  "unique_authors": 35,
-  "reactions_total": 158,
-  "attachments": 100,
+  "messages": 3256,
+  "unique_authors": 88,
+  "reactions_total": 743,
+  "attachments": 314,
   "channel_activity": {
+    "🔸綜合討論": 3051,
+    "🔸阵容构建": 17,
     "Doresain x Pickman": 2,
     "thais dump": 1,
     "corposant edit ayayay (ignore the intro plspls i have no ideas)": 1,
@@ -65,34 +67,34 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "0": 9,
-    "21": 1,
-    "2": 16,
-    "13": 6,
-    "18": 6,
-    "10": 10,
-    "11": 10,
-    "12": 8,
-    "8": 3,
-    "1": 6,
-    "5": 8,
-    "16": 3,
-    "20": 1,
-    "23": 3,
-    "4": 27,
-    "14": 21,
-    "3": 5,
-    "9": 15,
-    "7": 11,
-    "6": 9,
-    "15": 2,
-    "22": 2,
-    "17": 4,
+    "0": 62,
+    "1": 175,
+    "2": 171,
+    "3": 146,
+    "4": 219,
+    "5": 265,
+    "6": 274,
+    "7": 207,
+    "8": 332,
+    "9": 85,
+    "10": 290,
+    "11": 316,
+    "12": 119,
+    "13": 48,
+    "14": 95,
+    "15": 61,
+    "16": 124,
+    "17": 43,
+    "18": 93,
+    "21": 6,
+    "22": 26,
+    "23": 94,
+    "20": 3,
     "19": 2
   },
   "message_types": {
-    "0": 64,
-    "19": 14
+    "0": 2467,
+    "19": 601
   },
   "top_reacted_messages": [
     {
@@ -138,6 +140,14 @@
       "channel": ""
     },
     {
+      "id": "1442357323338088599",
+      "channel_id": "1131839817982947429",
+      "content": "我的天獻祭可以穿對面的盾",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1442373883561775184",
       "content": "大家好这里是Timee，11.24日久违的深海迎来了全新的唤醒体sp墨菲并且带来了神国buff，效果十分强力，也在第一时间抽满测试了下效果。\n\n因为暂时没空做视",
       "author": "timee_ky",
@@ -145,11 +155,75 @@
       "channel": "纯血神国..."
     },
     {
+      "id": "1442388156698857522",
+      "channel_id": "1131839817982947429",
+      "content": "終於有一隻角色可以秒天秒地秒自己",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442566530322927656",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1442409985673003028",
       "content": "也是開了個3+0，目前體驗下來是算力跟銀鑰用不完，手中沒靈感或深海聖詠的話過牌比較困難一點\n\n誕塔隊而言的話，我覺得玩起來會更像兩個C，塔薇本身的直傷因為沒有夠",
       "author": "ena04564",
       "reactions": 7,
       "channel": "誕塔隊初體驗"
+    },
+    {
+      "id": "1442350384948445235",
+      "channel_id": "1131839817982947429",
+      "content": "# 什麼叫做第四章有死亡抵抗plus版",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442374436694130699",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442391985368338473",
+      "channel_id": "1131839817982947429",
+      "content": "消毒還打不倒我。",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442394215840616500",
+      "channel_id": "1131839817982947429",
+      "content": "哭了 670抽才+12",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442397201585406073",
+      "channel_id": "1131839817982947429",
+      "content": "<:Clown:1400771541423226971> 佬們都在試著把自己獻祭 只有我在匍匐前進",
+      "author": "forg30215",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442425041718481041",
+      "channel_id": "1131839817982947429",
+      "content": "卧槽，意识模糊...把米粒看成福袋了......一个盘子喂给了米粒.................本来我福袋超限了的",
+      "author": "xyakoto",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1442314028851527771",
@@ -166,74 +240,12 @@
       "channel": ""
     },
     {
-      "id": "1442553773149917254",
-      "content": "Not yet! They're sponsoring me for a video, and then in December I'll also have ",
-      "author": "stix5500",
+      "id": "1442360404964544513",
+      "channel_id": "1131839817982947429",
+      "content": "好了可以退坑了",
+      "author": "taayoui",
       "reactions": 5,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1442502944984662159",
-      "content": "rt，与现有万能叠并行，每月可各兑换一个。价格相比万能叠适当降低，变相降井。利好叠过气老卡。",
-      "author": "shunia3055",
-      "reactions": 4,
-      "channel": "沉淀兑换新增仅可选择忘却篇限定唤醒体/命轮的叠位材料"
-    },
-    {
-      "id": "1442488046858539038",
-      "content": "UID：100872328\n\n在誕墨出了後，水船的成長和生存問題完全解決，誕墨給水船帶來了重要的抽牌和算力，以及高額的觸腕傷害成長和觸腕數量，在有超限的情況下還",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "誕墨水船隊"
-    },
-    {
-      "id": "1442484106519773235",
-      "content": "如題，在抽五次新出的誕妄墨菲後，出現快速喚醒的選項，打勾再抽五次，結果卻出現「與群星相會」的攻擊角色抽取結果，980源液直接噴出去🥲而且抽中的還是索蕾爾，殺人誅",
-      "author": "sam511011",
-      "reactions": 2,
-      "channel": "💭「处理中」快速喚醒有 bug，會抽到其他獎池［攸關源液，儲值的大家請小心！］"
-    },
-    {
-      "id": "1442468399409266758",
-      "content": "超绝反光发型",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "💭「处理中」希洛大招一直這麼過曝的嗎"
-    },
-    {
-      "id": "1442495615383634092",
-      "content": "和快速唤醒一样以勾选形式显示即可。流明不足时每五抽都要点击一次确定，拖累快速唤醒的体验，令人烦躁。",
-      "author": "shunia3055",
-      "reactions": 2,
-      "channel": "在抽卡界面增加流明之芯不足时自动购买流明的选项"
-    },
-    {
-      "id": "1442309907092209775",
-      "content": "TYYY!! I’m hopefully gonna be able to do a proper illustration sometime soon, I ",
-      "author": "raumbobulus",
-      "reactions": 1,
-      "channel": "Corpo Sketch :D"
-    },
-    {
-      "id": "1442370738018582560",
-      "content": "诞墨要抽吗？",
-      "author": "santianliangjuesleep",
-      "reactions": 1,
-      "channel": "新手求助"
-    },
-    {
-      "id": "1442525015525294121",
-      "content": "pollux needs at leasr his midgame stat ghrowth re-adjusted if this is the new ba",
-      "author": "thpdom",
-      "reactions": 1,
-      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
-    },
-    {
-      "id": "1442386642672291911",
-      "content": "Clearly she doesn't love you enough 😔",
-      "author": "crowlov1",
-      "reactions": 1,
-      "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
+      "channel": "🔸綜合討論"
     }
   ]
 }

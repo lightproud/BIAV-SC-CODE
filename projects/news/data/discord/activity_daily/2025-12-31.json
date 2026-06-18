@@ -1,10 +1,19 @@
 {
   "date": "2025-12-31",
-  "messages": 11267,
+  "messages": 13873,
   "unique_authors": 262,
-  "reactions_total": 1479,
-  "attachments": 564,
+  "reactions_total": 1913,
+  "attachments": 729,
   "channel_activity": {
+    "🔸lore-chat": 175,
+    "🔸lets-count": 23,
+    "🔸team-building": 1394,
+    "🔸general-chat": 160,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🐱light’s-nest": 2,
+    "🔸game-question": 808,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 34,
     "🔸morimens-game-chat": 7052,
     "🔸剧情交流": 48,
     "🔸晒卡分享": 27,
@@ -46,49 +55,49 @@
     "無法選中理智明燈": 3,
     "用笨圖開啟新的一年吧大家新年快樂": 1,
     "now spell.": 1,
-    "🐱light’s-nest": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1456019117805932636": 1,
     "1455882869410103458": 3,
     "1455874176534712330": 8,
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "0": 295,
-    "1": 350,
-    "2": 268,
-    "3": 334,
-    "4": 326,
-    "5": 248,
-    "6": 325,
-    "7": 320,
-    "8": 484,
-    "9": 521,
-    "10": 291,
-    "11": 397,
-    "12": 489,
-    "13": 737,
-    "14": 805,
-    "15": 694,
-    "16": 654,
-    "17": 784,
-    "18": 572,
-    "19": 355,
-    "20": 367,
-    "21": 924,
-    "22": 519,
-    "23": 208
+    "0": 369,
+    "1": 378,
+    "2": 332,
+    "3": 350,
+    "4": 423,
+    "5": 398,
+    "6": 483,
+    "7": 363,
+    "10": 378,
+    "13": 773,
+    "15": 856,
+    "16": 1046,
+    "17": 1201,
+    "18": 637,
+    "19": 457,
+    "20": 411,
+    "21": 983,
+    "22": 544,
+    "23": 277,
+    "9": 661,
+    "12": 528,
+    "8": 575,
+    "11": 465,
+    "14": 985
   },
   "message_types": {
-    "19": 2560,
-    "0": 7846
+    "0": 2118,
+    "19": 486,
+    "20": 2
   },
   "top_reacted_messages": [
     {
       "id": "1455958820076650697",
+      "channel_id": "1426837316533747823",
       "content": "Happy New Year to all Keepers from the entire B.I.A.V. Studio team！\nB.I.A.V. Stu",
       "author": "game.producer.light",
-      "reactions": 231,
+      "reactions": 233,
       "channel": "🐱light’s-nest"
     },
     {
@@ -139,6 +148,14 @@
       "author": "carrot_chicken",
       "reactions": 13,
       "channel": "用笨圖開啟新的一年吧大家新年快樂"
+    },
+    {
+      "id": "1455939681144279042",
+      "channel_id": "1400750050208125010",
+      "content": "I've never really become the \"most helpful\" review before but if anyone in here ",
+      "author": "solaihy",
+      "reactions": 12,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1455882869410103458",
@@ -225,14 +242,6 @@
       "author": "ahong0727",
       "reactions": 8,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1455741996072173690",
-      "channel_id": "1170692781216378960",
-      "content": "In a fight right?",
-      "author": "aurora3981",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-11-14",
-  "messages": 85,
-  "unique_authors": 15,
-  "reactions_total": 1038,
-  "attachments": 31,
+  "messages": 7034,
+  "unique_authors": 213,
+  "reactions_total": 2352,
+  "attachments": 274,
   "channel_activity": {
+    "🔸綜合討論": 857,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 6087,
     "What do i wanna play": 1,
     "Gmurphy Art": 1,
     "Liz painting": 1,
@@ -31,27 +34,35 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "3": 28,
-    "5": 4,
-    "19": 1,
-    "18": 2,
-    "0": 1,
-    "12": 2,
-    "13": 1,
-    "15": 3,
-    "16": 3,
-    "7": 6,
-    "8": 10,
-    "2": 3,
-    "9": 3,
-    "6": 14,
-    "11": 2,
-    "20": 1,
-    "4": 1
+    "0": 197,
+    "2": 173,
+    "3": 132,
+    "4": 55,
+    "5": 226,
+    "6": 874,
+    "7": 600,
+    "8": 452,
+    "9": 409,
+    "10": 415,
+    "11": 282,
+    "12": 256,
+    "13": 278,
+    "14": 290,
+    "15": 284,
+    "16": 452,
+    "17": 276,
+    "18": 211,
+    "22": 238,
+    "23": 139,
+    "19": 142,
+    "1": 143,
+    "20": 176,
+    "21": 334
   },
   "message_types": {
-    "0": 29,
-    "19": 11
+    "19": 2188,
+    "0": 4759,
+    "46": 2
   },
   "top_reacted_messages": [
     {
@@ -69,6 +80,14 @@
       "channel": "Rat be upon ye"
     },
     {
+      "id": "1438960111736455218",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1438763401181397062",
       "content": "",
       "author": "flares117",
@@ -76,11 +95,75 @@
       "channel": "Gmurphy Art"
     },
     {
+      "id": "1438797958836523048",
+      "channel_id": "1170692781216378960",
+      "content": "Took 30 pulls for last copy. Hit soft pity, see my luck is average",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1438734530700640447",
       "content": "好想吃饭（抓）饭来，饭从四面八方来",
       "author": "ikki142_79811",
       "reactions": 15,
       "channel": "堆一下忘却相关的图"
+    },
+    {
+      "id": "1438804122198605864",
+      "channel_id": "1170692781216378960",
+      "content": "they call me 007\n0 silver prime\n0 silver\n7 Cassiah",
+      "author": "arisuu0604",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438879306750103714",
+      "channel_id": "1170692781216378960",
+      "content": "Glasses are really versatile. First, you can have glasses-wearing girls take the",
+      "author": "hitsu4",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438801799346782330",
+      "channel_id": "1170692781216378960",
+      "content": "6 copies of murphyfrom standard Aequor and 2 from kaleido <:pray:135605311626045",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438982715020939444",
+      "channel_id": "1170692781216378960",
+      "content": "Please laugh",
+      "author": ".craystal",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438796837677961216",
+      "channel_id": "1170692781216378960",
+      "content": "20 pulls 3 pollux wheel <:gogogo:1356053074560422118>",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438685719139717140",
+      "channel_id": "1170692781216378960",
+      "content": "biav please have tulu buff be\n[Abyss Order]\n- Now has Prepare 1 and Retain.\n- Ad",
+      "author": "zier.0",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438722334960652338",
+      "channel_id": "1170692781216378960",
+      "content": "waiting for 2nd update so i can be lucky and pull Wheel unseen",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1438975601267445810",
@@ -97,81 +180,44 @@
       "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
     },
     {
-      "id": "1438737473558806698",
-      "content": "",
-      "author": "weeaboogod",
-      "reactions": 6,
-      "channel": "What do i wanna play"
+      "id": "1438777087615041536",
+      "channel_id": "1131839817982947429",
+      "content": "嗚嗚嗚，怎麼會，我們家門汀怎會是被超距害慘，明明隔壁花魁的臭鳥靠一手黑羽混的風生水起，怎能和彌大媽在一塊腐爛，但彌大媽都要被她的小女兒帶走前去神國的路了，但我們",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1438993825828831462",
-      "content": "",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "給異格也P了一版仿官海報（）"
+      "id": "1438864561011953756",
+      "channel_id": "1131839817982947429",
+      "content": "我就这么多资源了，抽不到墨菲12+12我就骂校猫",
+      "author": "lurenjiao",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1438923287320068127",
-      "content": "神他媽暗影詩章，增幅完然後開門是吧",
-      "author": "lin022.",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+      "id": "1438738595283468488",
+      "channel_id": "1170692781216378960",
+      "content": "i prefer mpreg",
+      "author": "grass6247",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438927284118749185",
-      "content": "",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+      "id": "1438876102217957523",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> I'm almost done<:Cheerup:1400771555939844149>",
+      "author": "enternameunavailable",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438954682251870389",
-      "content": "At the start i didn't realize that she don't upgrade the Tentacle stances but co",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1438801266569515131",
-      "content": "<:shocked:1400771713498746901> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
-    },
-    {
-      "id": "1438807686190989352",
-      "content": "这个不能作为借口啊，这事关游戏体验很重要的。你要产能真的那么不足干脆新剧情新角色都不做了，你觉得这样合适吗？走格子是游戏很关键的特色我觉得不太能省这里。",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "✅「已回答」还能见到星辰篇的地图吗"
-    },
-    {
-      "id": "1438776388281831506",
-      "content": "アドバイスに感謝して、私はこの問題をフィードバックします🙏 \n（上記の返信はAIによって翻訳されますのでご了承ください）",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」cancer battlepass"
-    },
-    {
-      "id": "1438732097173852180",
-      "content": "如題，戰鬥跟大廳的音樂莫名消失了，用了兩個裝置都一樣，有看過音量調整介面都開到最大聲，我的裝置都是安卓系統，不知道有沒有人跟我一樣有被靜音的問題（上上週還是正常",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "💭「处理中」背景音訊出問題"
-    },
-    {
-      "id": "1438810378233708617",
-      "content": "辛苦力🫂",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」背景音訊出問題"
-    },
-    {
-      "id": "1438751064722505892",
-      "content": "突然想起來這篇 我還是覺得你寫的很好",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "希萊斯特同人文-海之聖女（下）"
+      "id": "1438888249518067723",
+      "channel_id": "1170692781216378960",
+      "content": "Should i buy the 24 skin when it comes out 🤔",
+      "author": "kevsalvador",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

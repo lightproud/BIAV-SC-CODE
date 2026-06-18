@@ -1,10 +1,13 @@
 {
   "date": "2025-11-01",
-  "messages": 89,
-  "unique_authors": 21,
-  "reactions_total": 424,
-  "attachments": 41,
+  "messages": 5643,
+  "unique_authors": 173,
+  "reactions_total": 1318,
+  "attachments": 343,
   "channel_activity": {
+    "🔸綜合討論": 1086,
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 4464,
     "pollux doodle": 1,
     "\"For you, Pale Flame, I am not afraid to face the pyre once more.\"": 1,
     "🥀💜": 1,
@@ -35,31 +38,34 @@
     "🐱light’s-nest": 2
   },
   "hourly_activity": {
-    "18": 14,
-    "12": 7,
-    "8": 1,
-    "5": 1,
-    "6": 2,
-    "0": 1,
-    "10": 4,
-    "17": 5,
-    "20": 1,
-    "11": 16,
-    "15": 3,
-    "21": 1,
-    "9": 4,
-    "14": 12,
-    "3": 2,
-    "1": 1,
-    "2": 7,
-    "19": 1,
-    "23": 4,
-    "13": 2
+    "0": 68,
+    "1": 122,
+    "2": 156,
+    "3": 196,
+    "4": 320,
+    "5": 90,
+    "6": 176,
+    "7": 205,
+    "8": 140,
+    "9": 138,
+    "10": 130,
+    "11": 329,
+    "12": 253,
+    "13": 424,
+    "14": 423,
+    "15": 379,
+    "16": 311,
+    "17": 82,
+    "20": 299,
+    "23": 278,
+    "18": 121,
+    "19": 240,
+    "21": 239,
+    "22": 524
   },
   "message_types": {
-    "0": 48,
-    "4": 1,
-    "19": 5
+    "0": 3662,
+    "19": 1892
   },
   "top_reacted_messages": [
     {
@@ -119,67 +125,100 @@
       "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
     },
     {
-      "id": "1434252459039002665",
+      "id": "1434300880462811347",
+      "channel_id": "1170692781216378960",
+      "content": "GCaecus > GLotan",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434311989584466042",
+      "channel_id": "1170692781216378960",
+      "content": "❌ <:angry1:1356053023272599668> ❌",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434012669178019862",
+      "channel_id": "1131839817982947429",
+      "content": "把疼痛三启了",
+      "author": "carme.0588",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1434005793010745466",
+      "channel_id": "1170692781216378960",
+      "content": "<:like:1400771686965444648>",
+      "author": "bumcchi",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434272957881909258",
+      "channel_id": "1170692781216378960",
+      "content": "here my contribution 😄",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434013580197368028",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433991218395611217",
+      "channel_id": "1131839817982947429",
+      "content": "沒裝啊，事實都在眼前<:Cheerup:1400771555939844149>",
+      "author": "universe.dark",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433999205071982724",
+      "channel_id": "1131839817982947429",
+      "content": "大佬又在装萌新了",
+      "author": "kemomimi_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1434002925650317414",
+      "channel_id": "1131839817982947429",
+      "content": "是=萌新",
+      "author": "universe.dark",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1434086288155213927",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "yuuuuuuu__0103",
-      "reactions": 5,
-      "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
+      "author": "sakura8901",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434002043927793856",
-      "content": "这个月换完以后还多出55个碎片，算上融灾的产出，还是会一直溢出。",
-      "author": "lurenjiao",
-      "reactions": 4,
-      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+      "id": "1434133163189211137",
+      "channel_id": "1131839817982947429",
+      "content": "好耶",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434256656195387524",
-      "content": "大廳的音樂一直重覆同一首有點受不了，現在都直接把背景音樂靜音在玩，覺得好聽的音樂不少卻只能在特定的過場聽到很可惜，不知道能不能新增更換大廳音樂的功能<:flop",
-      "author": "roze_1201",
-      "reactions": 3,
-      "channel": "✅「已回答」大廳背景音樂"
-    },
-    {
-      "id": "1434328801285898442",
-      "content": "图鲁快醒醒",
-      "author": "human10062",
-      "reactions": 3,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
-    },
-    {
-      "id": "1434068811639951441",
-      "content": "Smash",
-      "author": "idotly",
-      "reactions": 2,
-      "channel": "leigh"
-    },
-    {
-      "id": "1434121555041845408",
-      "content": "As her banner is coming for the 2nd anniversary, this simple guide will help you",
-      "author": "rrzex_35227",
-      "reactions": 1,
-      "channel": "Video Guide to Rates, Banner Types & Characters for Beginners"
-    },
-    {
-      "id": "1434147931753021581",
-      "content": "「石頭」一章王就有吧？",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
-    },
-    {
-      "id": "1434156669088305276",
-      "content": "結果在試玩的地方是寫重新洗牌..lol",
-      "author": "rurumi4279",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
-    },
-    {
-      "id": "1434241055762546840",
-      "content": "非常见鬼的描述, 弃掉症状和状态卡, “将其他手牌洗入抽牌堆” 圣心应该进抽牌堆了吧",
-      "author": "human10062",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
+      "id": "1434157107971887167",
+      "channel_id": "1131839817982947429",
+      "content": "這樣深海就不用設計新角色了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

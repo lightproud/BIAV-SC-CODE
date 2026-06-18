@@ -1,10 +1,13 @@
 {
   "date": "2025-11-19",
-  "messages": 311,
-  "unique_authors": 37,
-  "reactions_total": 451,
-  "attachments": 83,
+  "messages": 13351,
+  "unique_authors": 388,
+  "reactions_total": 2417,
+  "attachments": 642,
   "channel_activity": {
+    "🔸綜合討論": 1132,
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 11904,
     "Our beautiful King~": 2,
     "Damn I thought Jenkins had a great vocal performance...": 1,
     "BP guide or why you might want to buy Premium Topic now (for Whales, trigger warning for F2P)": 2,
@@ -59,35 +62,44 @@
     "1234769700735418368": 5
   },
   "hourly_activity": {
-    "23": 3,
-    "1": 13,
-    "3": 23,
-    "7": 40,
-    "9": 36,
-    "22": 2,
-    "12": 4,
-    "4": 8,
-    "5": 35,
-    "11": 5,
-    "13": 11,
-    "15": 8,
-    "6": 54,
-    "8": 5,
-    "10": 7,
-    "16": 20,
-    "0": 8,
-    "2": 6,
-    "18": 4,
-    "19": 5,
-    "17": 5,
-    "20": 1,
-    "14": 8
+    "0": 936,
+    "1": 836,
+    "2": 507,
+    "3": 383,
+    "4": 707,
+    "5": 941,
+    "6": 746,
+    "7": 725,
+    "8": 469,
+    "9": 541,
+    "10": 393,
+    "11": 339,
+    "12": 455,
+    "13": 622,
+    "14": 532,
+    "15": 595,
+    "16": 353,
+    "17": 444,
+    "18": 293,
+    "21": 638,
+    "22": 457,
+    "23": 545,
+    "19": 302,
+    "20": 592
   },
   "message_types": {
-    "0": 12,
-    "19": 5
+    "0": 8329,
+    "19": 4711
   },
   "top_reacted_messages": [
+    {
+      "id": "1440566696933855274",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1440566066483826788 @everyone 1",
+      "author": "game.producer.light",
+      "reactions": 308,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1440705189475647518",
       "content": "",
@@ -115,6 +127,22 @@
       "author": "gumseoi",
       "reactions": 39,
       "channel": "Our beautiful King~"
+    },
+    {
+      "id": "1440599488275419198",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "solxeko",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440568658374955042",
+      "channel_id": "1170692781216378960",
+      "content": "I'm going to print this image out and put it up on the studio wall.",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1440732097131053158",
@@ -166,67 +194,52 @@
       "channel": "V2.4.0.3 在线维护公告"
     },
     {
-      "id": "1440846393798557777",
-      "content": "here is one without his crown <:owo:450773462152118274>",
-      "author": "gumseoi",
+      "id": "1440594434675707987",
+      "channel_id": "1131839817982947429",
+      "content": "<:A_pinch:1432980538536493057>",
+      "author": "navirecorbeau",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1440557413697585264",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> DID IT! HM CH 9 ANT Deathless",
+      "author": "monchi3524",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440574722902327358",
+      "channel_id": "1131839874132090890",
+      "content": "居然连我也能一遍过\n这就是新时代的角色🛐",
+      "author": "ling_an_",
+      "reactions": 9,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1440580592390508555",
+      "channel_id": "1170692781216378960",
+      "content": "🙏",
+      "author": "cometovilla",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440821987038593076",
+      "channel_id": "1170692781216378960",
+      "content": "Random note: dont know if anyone caught lights message in the chaos yesterday bu",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440574622373511178",
+      "channel_id": "1131839817982947429",
+      "content": "詳情請參考尤烏暴打5-5🫴 \nhttps://www.bilibili.com/video/BV1tNk6BhENc/?share_source=copy_we",
+      "author": "water_heart",
       "reactions": 8,
-      "channel": "Our beautiful King~"
-    },
-    {
-      "id": "1440631823192428564",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：原初宿命之战 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "忘却前夜OST：原初宿命之战"
-    },
-    {
-      "id": "1440526160436924520",
-      "content": "Can't comment on the business side because i don't know what you know - but must",
-      "author": "nactra",
-      "reactions": 7,
-      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
-    },
-    {
-      "id": "1440509117234937917",
-      "content": "",
-      "author": "omarpassione",
-      "reactions": 6,
-      "channel": "Damn I thought Jenkins had a great vocal performance..."
-    },
-    {
-      "id": "1440633762194001952",
-      "content": "**06. 敌人，友人-Foe, Friend-**\n\n一个完整的传奇不能缺少化敌为友。\n\nNo complete legend is without foes",
-      "author": "morimensstaff01",
-      "reactions": 6,
-      "channel": "忘却前夜OST：原初宿命之战"
-    },
-    {
-      "id": "1440564863167627366",
-      "content": "I do think the core Morimens experience is feeling like you're actually fighting",
-      "author": "onoyasumi",
-      "reactions": 6,
-      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
-    },
-    {
-      "id": "1440630829792493580",
-      "content": "**13. 来自遗忘<▼>-From the Oblivion-**\n\n呼唤我的名字，在被忘却的黎明之前。\n\nCall my name, please, bef",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "忘却前夜OST：创世痴愚之主"
-    },
-    {
-      "id": "1440501783700177059",
-      "content": "You can have both modes, just call one easy mode and the other normal. As someon",
-      "author": "dragoon2323",
-      "reactions": 5,
-      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
-    },
-    {
-      "id": "1440592752529379328",
-      "content": "he or she will be wacking enemies with the briefcase we carry around all the tim",
-      "author": "crowlov1",
-      "reactions": 4,
-      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
+      "channel": "🔸綜合討論"
     }
   ]
 }

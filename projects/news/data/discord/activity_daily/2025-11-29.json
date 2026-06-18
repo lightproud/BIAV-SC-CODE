@@ -1,10 +1,12 @@
 {
   "date": "2025-11-29",
-  "messages": 268,
-  "unique_authors": 41,
-  "reactions_total": 916,
-  "attachments": 34,
+  "messages": 1790,
+  "unique_authors": 46,
+  "reactions_total": 1106,
+  "attachments": 112,
   "channel_activity": {
+    "🔸綜合討論": 1511,
+    "🔸阵容构建": 11,
     "Castor WIP": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 1,
@@ -45,34 +47,34 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
-    "5": 7,
-    "12": 8,
-    "17": 6,
-    "13": 12,
-    "14": 12,
-    "15": 19,
+    "0": 8,
+    "1": 65,
+    "2": 175,
+    "3": 85,
+    "4": 13,
+    "5": 118,
+    "6": 23,
+    "7": 77,
+    "8": 50,
+    "9": 154,
+    "10": 257,
+    "11": 141,
+    "12": 46,
+    "13": 246,
+    "14": 60,
+    "15": 49,
+    "16": 36,
+    "17": 40,
+    "20": 99,
+    "21": 8,
+    "22": 17,
+    "23": 8,
     "18": 11,
-    "20": 91,
-    "22": 7,
-    "3": 3,
-    "4": 9,
-    "7": 10,
-    "19": 4,
-    "10": 5,
-    "1": 3,
-    "2": 1,
-    "8": 9,
-    "6": 3,
-    "0": 5,
-    "16": 25,
-    "23": 5,
-    "11": 2,
-    "21": 7,
-    "9": 4
+    "19": 4
   },
   "message_types": {
-    "0": 60,
-    "19": 12
+    "0": 1198,
+    "19": 324
   },
   "top_reacted_messages": [
     {
@@ -125,6 +127,14 @@
       "channel": "Raids suck"
     },
     {
+      "id": "1444184622198952117",
+      "channel_id": "1131839817982947429",
+      "content": "牢莉拼盡全力勉強取勝",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1444179579613745293",
       "content": "然後鳥兄弟1.0確定了啊",
       "author": "foxcatfurry",
@@ -144,6 +154,14 @@
       "author": "amstelredam",
       "reactions": 7,
       "channel": "每日試訓的「打出50張牌」"
+    },
+    {
+      "id": "1444291641149231194",
+      "channel_id": "1131839817982947429",
+      "content": "我馬上換成1等雜湊",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1444329841561436291",
@@ -167,53 +185,43 @@
       "channel": "【Thalassophobia 深海恐懼症】"
     },
     {
+      "id": "1444260174788431902",
+      "channel_id": "1131839817982947429",
+      "content": "你可以摸我<:pray:1356053116260454534>",
+      "author": "neptinu",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1444294514570432686",
+      "channel_id": "1131839817982947429",
+      "content": "靠 差129K...",
+      "author": "quackdayo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1444314154163900416",
+      "channel_id": "1131839817982947429",
+      "content": "終於肘贏了...",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1444320604495937616",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1444202895657406597",
       "content": "Progress",
       "author": "orpheusffxiv",
       "reactions": 5,
       "channel": "Castor WIP"
-    },
-    {
-      "id": "1444294266573684877",
-      "content": "title.",
-      "author": "frowningquokka",
-      "reactions": 5,
-      "channel": "Raids suck"
-    },
-    {
-      "id": "1444295289929339037",
-      "content": "https://discord.com/channels/1131791637933199470/1170692781216378960/13848825142",
-      "author": "frowningquokka",
-      "reactions": 5,
-      "channel": "Raids suck"
-    },
-    {
-      "id": "1444119884425597018",
-      "content": "let's ALL love Leigh",
-      "author": "echidna7311",
-      "reactions": 4,
-      "channel": "Leigh"
-    },
-    {
-      "id": "1444364269847052430",
-      "content": "楼主的当务之急是删除手机里的番茄小说app",
-      "author": "jef05",
-      "reactions": 4,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444355113283096608",
-      "content": "i regret the likely 30-40 dreamsparks i traded away",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "Please let us trade up with Dreamshard"
-    },
-    {
-      "id": "1444431703484534785",
-      "content": "Brown was the awaker all along",
-      "author": "omenatyyppi",
-      "reactions": 3,
-      "channel": "✅「Answered」Jenkins shows up 2 times in friends list filter"
     }
   ]
 }

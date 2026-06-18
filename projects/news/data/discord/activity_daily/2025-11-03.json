@@ -1,10 +1,13 @@
 {
   "date": "2025-11-03",
-  "messages": 206,
-  "unique_authors": 27,
-  "reactions_total": 95,
-  "attachments": 39,
+  "messages": 6561,
+  "unique_authors": 200,
+  "reactions_total": 1016,
+  "attachments": 324,
   "channel_activity": {
+    "🔸綜合討論": 1083,
+    "🔸阵容构建": 13,
+    "🔸morimens-game-chat": 5259,
     "William sketches": 10,
     "Gdoll in Instagram": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
@@ -38,32 +41,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "8": 2,
-    "9": 3,
-    "10": 49,
-    "23": 3,
-    "22": 1,
-    "17": 8,
-    "0": 7,
-    "3": 13,
-    "4": 17,
-    "5": 4,
-    "7": 2,
-    "13": 5,
-    "14": 18,
-    "15": 2,
-    "11": 31,
-    "12": 13,
-    "1": 16,
-    "18": 3,
-    "20": 1,
-    "19": 7,
-    "2": 1
+    "1": 233,
+    "2": 234,
+    "3": 253,
+    "4": 177,
+    "5": 99,
+    "6": 163,
+    "7": 54,
+    "8": 342,
+    "9": 254,
+    "10": 213,
+    "11": 147,
+    "12": 489,
+    "13": 482,
+    "14": 755,
+    "15": 342,
+    "16": 505,
+    "17": 272,
+    "18": 36,
+    "22": 223,
+    "23": 308,
+    "0": 261,
+    "19": 207,
+    "20": 191,
+    "21": 321
   },
   "message_types": {
-    "0": 83,
-    "4": 1,
-    "19": 49
+    "19": 1974,
+    "0": 4381
   },
   "top_reacted_messages": [
     {
@@ -81,6 +86,38 @@
       "channel": "「我還記得你原本應該是什麼樣子」"
     },
     {
+      "id": "1434872656594731068",
+      "channel_id": "1170692781216378960",
+      "content": "Hoping god keeps punishing her 🙏 ❤️",
+      "author": ".craystal",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434731350828777543",
+      "channel_id": "1131839817982947429",
+      "content": "+12了🥳",
+      "author": "axe_proficient",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1435039586915979344",
+      "channel_id": "1170692781216378960",
+      "content": "Coaching only works if the student is within whip distance <:wisdom:140077165651",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434794725285822575",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1435031045668995187",
       "content": "Made Doll:Inferno using the new instagram drawing feature :3\nI love her design s",
       "author": "ee2x_",
@@ -88,123 +125,108 @@
       "channel": "Gdoll in Instagram"
     },
     {
-      "id": "1434857066668757102",
-      "content": "我喜歡戈雅的效率",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
+      "id": "1434827381889044543",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "neptinu",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434843124953251890",
-      "content": "Not a big deal per say, but there's no pulling animation after doing my 100th si",
-      "author": "wolfierce",
-      "reactions": 2,
-      "channel": "✅「Resolved」Pull animation breaks after 100 single pulls"
+      "id": "1434970024971604119",
+      "channel_id": "1131839817982947429",
+      "content": "终于打完终章了",
+      "author": "alatin.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434856958023962625",
-      "content": "嗨守密人，我们对此有新的设计计划，未来会在公告中与大家说明🙏",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
+      "id": "1434722330327781477",
+      "channel_id": "1170692781216378960",
+      "content": "i’m happi chat <:pray:1356053116260454534>",
+      "author": "sacred_promises",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434763695136968765",
-      "content": "對他使出深海拳吧戈利亞（X",
-      "author": "carrot_chicken",
-      "reactions": 2,
-      "channel": "「我還記得你原本應該是什麼樣子」"
+      "id": "1434734694355832943",
+      "channel_id": "1131839817982947429",
+      "content": "哇嗚340抽9張隱密3張常駐",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1434845226844946526",
-      "content": "Senior William",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": "William sketches"
+      "id": "1434806399510249473",
+      "channel_id": "1170692781216378960",
+      "content": "This is tawil's best WoD other than giants blade right",
+      "author": "forsmile0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434963461883957290",
-      "content": "X8Z7AS03UO still looking for someone to help me get the skin!!! <:Cheerup:140077",
-      "author": "__morganlefay",
-      "reactions": 1,
-      "channel": "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!"
+      "id": "1434914195639373854",
+      "channel_id": "1170692781216378960",
+      "content": "i got 3 tawils in a row. lifes GOOD RN",
+      "author": "dose1694",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434703000005378119",
-      "content": "It’s the Genesis version, like Doll and Helot",
-      "author": "tny_gilgmsh",
-      "reactions": 1,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1434942959190544546",
+      "channel_id": "1170692781216378960",
+      "content": "And hella ads near best units",
+      "author": "lotan_045",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434704427515641936",
-      "content": "Alternate version",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1435023106258243664",
+      "channel_id": "1170692781216378960",
+      "content": "dang this game is good",
+      "author": "thecoziestgrave",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434747809323684003",
-      "content": "The eyes looks great, although i don't like how they added more hair, it became ",
-      "author": "moyashi0672",
-      "reactions": 1,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1434717717365133374",
+      "channel_id": "1170692781216378960",
+      "content": "BUT SHE IS E3",
+      "author": "dljam",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434751028049219614",
-      "content": "all of the genesis so far have also essentially been Bad End IDs lmao",
-      "author": "itsmemiki",
-      "reactions": 1,
-      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+      "id": "1434912702211297472",
+      "channel_id": "1170692781216378960",
+      "content": "bc she’s in my bedroom so ofc I’m the one that should be sleeping with her",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1434899563323592705",
-      "content": "如題，開始爆倉了，看好像效果都是隊伍唯一，想說是不是疊滿一張後多的都分解掉，但又聽說後面有多隊玩法，不知道那邊是不是可以留幾張同樣的命輪放在不同隊，或是還有其他",
-      "author": "nanfanggaosu",
-      "reactions": 1,
-      "channel": "R和SR命輪都是疊到+12就可以全分解了嗎？"
-    },
-    {
-      "id": "1434860088631234660",
-      "content": "啊我這裡推薦常駐抽全部不要抽下下禮拜羊媽進常駐",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "新號角色配隊及抽取"
-    },
-    {
-      "id": "1434865035242508288",
-      "content": "這隻嗎",
-      "author": "jay55662",
-      "reactions": 1,
-      "channel": "新號角色配隊及抽取"
-    },
-    {
-      "id": "1434885123668443248",
-      "content": "女僕換到三啟當個賭徒",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "新號角色配隊及抽取"
-    },
-    {
-      "id": "1434960879618887790",
-      "content": "You just click confirm to not use posse.\nIf your not doing dmg your doing someth",
-      "author": "enternameunavailable",
-      "reactions": 1,
-      "channel": "Tawil help"
-    },
-    {
-      "id": "1435003546616467527",
-      "content": "A general sentiment i heard from a lot of players is that this boss is very anno",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Aisha Boss Fight"
-    },
-    {
-      "id": "1434957422593835121",
-      "content": "I already fixed it",
+      "id": "1435025207688433749",
+      "channel_id": "1170692781216378960",
+      "content": "Is this luck or something?",
       "author": "memento_mori_01",
-      "reactions": 1,
-      "channel": "✅「Resolved」Error code (7009001)"
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434710013401632920",
+      "channel_id": "1170692781216378960",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "truevanity",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434863196698574949",
+      "channel_id": "1170692781216378960",
+      "content": "Dead chat",
+      "author": "spooky_penguin_",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

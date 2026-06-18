@@ -1,10 +1,13 @@
 {
   "date": "2025-11-20",
-  "messages": 241,
-  "unique_authors": 26,
-  "reactions_total": 356,
-  "attachments": 54,
+  "messages": 10824,
+  "unique_authors": 356,
+  "reactions_total": 2633,
+  "attachments": 560,
   "channel_activity": {
+    "🔸綜合討論": 2474,
+    "🔸阵容构建": 40,
+    "🔸morimens-game-chat": 8069,
     "A Small Problem": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 9,
@@ -47,32 +50,35 @@
     "1356210800091467928": 1
   },
   "hourly_activity": {
-    "19": 7,
-    "18": 11,
-    "10": 11,
-    "11": 11,
-    "4": 1,
-    "8": 3,
-    "14": 7,
-    "16": 25,
-    "9": 3,
-    "15": 71,
-    "7": 3,
-    "2": 4,
-    "12": 8,
-    "13": 18,
-    "6": 9,
-    "0": 5,
-    "20": 6,
-    "5": 1,
-    "17": 28,
-    "21": 4,
-    "22": 2,
-    "1": 3
+    "0": 436,
+    "1": 468,
+    "2": 459,
+    "3": 326,
+    "4": 157,
+    "5": 488,
+    "6": 305,
+    "7": 405,
+    "8": 608,
+    "9": 475,
+    "10": 668,
+    "11": 471,
+    "12": 539,
+    "13": 608,
+    "14": 494,
+    "15": 573,
+    "16": 610,
+    "19": 507,
+    "22": 224,
+    "23": 385,
+    "17": 443,
+    "18": 312,
+    "20": 464,
+    "21": 399
   },
   "message_types": {
-    "19": 47,
-    "0": 86
+    "0": 7417,
+    "19": 3165,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -81,6 +87,86 @@
       "author": "cometovilla",
       "reactions": 256,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1440985029806395412",
+      "channel_id": "1170692781216378960",
+      "content": "<@&1355606063348584610>  \nRecently, I received a complaint about someone dating ",
+      "author": "morimensstaff01",
+      "reactions": 137,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440985519818543164",
+      "channel_id": "1170692781216378960",
+      "content": "Please do not @ the parties involved. I have already communicated with them and ",
+      "author": "morimensstaff01",
+      "reactions": 31,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440985106163699823",
+      "channel_id": "1170692781216378960",
+      "content": "world's most insane random ping",
+      "author": "paperprince",
+      "reactions": 28,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440986449683153008",
+      "channel_id": "1170692781216378960",
+      "content": "Ban forever hello??? why would you time out a pedo",
+      "author": "swagmasterbigg",
+      "reactions": 27,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440985994676408383",
+      "channel_id": "1170692781216378960",
+      "content": "Let's not list down the minors please 💀.",
+      "author": "ayahsaurusrex",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440987395687190598",
+      "channel_id": "1170692781216378960",
+      "content": "PEDOPHILIA IS STILL PEDOPHILIA, DO NOT bring this shit up! By this definition, y",
+      "author": "disgustedingucci",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440986383329136691",
+      "channel_id": "1170692781216378960",
+      "content": "Just kick them out tbh. Even joking about it will never be funny.",
+      "author": "ayahsaurusrex",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440985777776365609",
+      "channel_id": "1170692781216378960",
+      "content": "looking forward to pedophiles being gone from the server when applicable and as ",
+      "author": "reya.li",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440986461716615209",
+      "channel_id": "1170692781216378960",
+      "content": "Only one way to solve this. 100 more pure cores.",
+      "author": "peggiebells",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441094156654215300",
+      "channel_id": "1170692781216378960",
+      "content": "Now that it has been a few days, time to scroll through morimens comments",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1440987968134189207",
@@ -104,116 +190,52 @@
       "channel": "【暴论】关于取消密契洗词条的提议"
     },
     {
-      "id": "1441114111717937232",
-      "content": "海深处，光线被剥夺的地方——\n\n杜勒赛因被海国的使者带走时，还保持着圣主应有的镇定。\n那是只有深海才能孕育的静默之色，明明没有触碰，却让人无法动弹。\n\n他被带入",
-      "author": "dittoqwq",
-      "reactions": 8,
-      "channel": "杜勒X皮的正史（肥腸確定"
+      "id": "1441088493680857212",
+      "channel_id": "1170692781216378960",
+      "content": "What does wolf guy do?",
+      "author": "sochinik",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1440892986883051521",
-      "content": "能不能给要挑战性的单开癫狂啊？\n是觉得主线很简单吗，能不要听氪佬吗，你自己拿全3启原始人打一打都会狠吃一口，而且新人谁给你抽全3启。人看到主线推不动直接就跑了。",
-      "author": "worriesair",
-      "reactions": 7,
-      "channel": "V2.4.0.3 在线维护公告"
-    },
-    {
-      "id": "1441030373852053514",
-      "content": "大家好，您們的遊戲真的厲害喔！\n\nI wanted to ask, if it would be possible to add a button or som",
-      "author": "konvergencia",
-      "reactions": 7,
-      "channel": "Quick clear lineup - feature suggestion"
-    },
-    {
-      "id": "1441127293522022574",
-      "content": "因意外被海國使者帶走聖主的守密人在突破層層守備後看到的是癱坐在宴席座位上、衣著怪異整齊昏厥過去的杜勒賽因；將不知道經歷什麼的葬骸城城主帶出海國領地逃離至某處荒涼",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441127680459276299",
-      "content": "我為什麼要在深夜食大份（無慈悲",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441077243248902174",
-      "content": "Hi, there seems to be a bug about Karen. When i play any of her cards on the pdi",
-      "author": "gogotheandi",
-      "reactions": 3,
-      "channel": "💭「Processing」Karen in-game bug"
-    },
-    {
-      "id": "1441109432636543048",
-      "content": "说实话要搞女穴吗",
-      "author": "dittoqwq",
-      "reactions": 3,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441117835966419026",
-      "content": "直接發瘋變成熔毀朵爾\n~~原來朵爾看到的真相是這個啊野史又多了一條~~",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441141826768863263",
-      "content": "讓皮用他的巨刃跟槍管，好好的輔助杜勒的子宮來隱密的誕生",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1440878817282359358",
-      "content": "是這張🌿覺得這張很滿意所以拿來當頭像ㄌ🌿🌿",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1441025648876322866",
-      "content": "There's no 2.4 tag",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1440990433915437178",
-      "content": "Is the idea to have two +12 standard wods so that you can use the reset thing on",
-      "author": "thigh_god.",
-      "reactions": 2,
-      "channel": "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled"
-    },
-    {
-      "id": "1441116657190834419",
-      "content": "朵爾腦缸看到這個會創飛所有朵爾嗎",
-      "author": "tsubaki9884",
-      "reactions": 2,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441066012001829014",
-      "content": "😡 ❓",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "新人配隊求助"
-    },
-    {
-      "id": "1441062804063912051",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "💭「处理中」舊日餘燼觸發bug"
-    },
-    {
-      "id": "1441122798625095760",
-      "content": "Just did testing, Karen poison soulforge isn't working properly compared to pre ",
+      "id": "1440985948228685916",
+      "channel_id": "1170692781216378960",
+      "content": "its me all along",
       "author": "flares117",
-      "reactions": 1,
-      "channel": "✅「Answered」Karen Bug"
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440985956709830656",
+      "channel_id": "1170692781216378960",
+      "content": "im young",
+      "author": "flares117",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440986618008965140",
+      "channel_id": "1170692781216378960",
+      "content": "And it's not the first time they timeout that pedo even <:dead:13560826275090923",
+      "author": "iibenigml1588",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440986882568749066",
+      "channel_id": "1170692781216378960",
+      "content": "morimens daily dive? ❌\nmorimens daily drama? ✅",
+      "author": "zier.0",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1440987188576653455",
+      "channel_id": "1170692781216378960",
+      "content": "the actual wannabe pedo definitely got banned in this case, they're not just tim",
+      "author": "reya.li",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

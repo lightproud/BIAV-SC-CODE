@@ -1,10 +1,13 @@
 {
   "date": "2025-11-05",
-  "messages": 277,
-  "unique_authors": 47,
-  "reactions_total": 269,
-  "attachments": 20,
+  "messages": 7698,
+  "unique_authors": 244,
+  "reactions_total": 1183,
+  "attachments": 301,
   "channel_activity": {
+    "🔸綜合討論": 960,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 6458,
     "G Murphy Apology Form": 1,
     "Ogier": 1,
     "what was once lost...": 1,
@@ -38,33 +41,46 @@
     "1296113810549112874": 1
   },
   "hourly_activity": {
-    "14": 58,
-    "13": 38,
-    "11": 1,
-    "4": 28,
-    "17": 24,
-    "21": 3,
-    "22": 2,
-    "15": 80,
-    "16": 5,
-    "18": 3,
-    "23": 2,
-    "1": 3,
-    "6": 7,
-    "19": 3,
-    "10": 2,
-    "3": 6,
-    "20": 1,
-    "8": 4,
-    "0": 2,
-    "7": 1,
-    "2": 4
+    "0": 164,
+    "1": 87,
+    "2": 103,
+    "3": 98,
+    "4": 287,
+    "5": 204,
+    "6": 124,
+    "7": 143,
+    "8": 274,
+    "9": 428,
+    "10": 420,
+    "11": 116,
+    "12": 154,
+    "13": 809,
+    "14": 912,
+    "15": 571,
+    "16": 453,
+    "17": 568,
+    "20": 348,
+    "23": 471,
+    "18": 324,
+    "19": 305,
+    "21": 187,
+    "22": 148
   },
   "message_types": {
-    "0": 113,
-    "19": 78
+    "0": 5147,
+    "19": 2271,
+    "20": 2,
+    "46": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1435678306480422922",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1435676638439276694 @everyone A",
+      "author": "game.producer.light",
+      "reactions": 106,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1435676638439276694",
       "content": "很抱歉，本次轮换唤醒活动设计考虑不周。我们会在版本更新时将V2.4唤醒体与命轮组合唤醒的形式更换为唤醒体与命轮独立唤醒的形式，敬请注意。\n\n\n我们将在近期发布更",
@@ -108,6 +124,22 @@
       "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
     },
     {
+      "id": "1435678510751547433",
+      "channel_id": "1170692781216378960",
+      "content": "and so awakens the chat",
+      "author": "michal132323",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435616755467681803",
+      "channel_id": "1170692781216378960",
+      "content": "\"Murphy\"",
+      "author": ".craystal",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1435683916978851933",
       "content": "If I got anything wrong please call me out\n\nhttps://docs.google.com/document/d/1",
       "author": "bagels5899",
@@ -120,6 +152,30 @@
       "author": "ass191044",
       "reactions": 10,
       "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435678696139653244",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1422582723654062120/1425831704173478060/a",
+      "author": "disgustedingucci",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435741153915043911",
+      "channel_id": "1170692781216378960",
+      "content": "<@285755067213152257> <@1164303137293729792> <@282543586275229706> <@46421335205",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435681869353062663",
+      "channel_id": "1170692781216378960",
+      "content": "https://docs.google.com/document/d/1PkrGY4Z3vcCiFW3vZWE4-dqpEzQgQz67jYx5wIAymzQ/",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1435679161850003557",
@@ -136,6 +192,22 @@
       "channel": "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1"
     },
     {
+      "id": "1435679230343118913",
+      "channel_id": "1131839817982947429",
+      "content": "誰懂我剛才快去睡了但被信息叫醒的救贖感",
+      "author": "shostakovich524",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1435678849022165092",
+      "channel_id": "1170692781216378960",
+      "content": "Before would have been better, but before is gone now.",
+      "author": "hammer2830",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1435624482625687572",
       "content": "其實鯊魚小人有露出來是尾椎",
       "author": "ernest_heart",
@@ -148,62 +220,6 @@
       "author": "yingmai_",
       "reactions": 7,
       "channel": ""
-    },
-    {
-      "id": "1435637032885162164",
-      "content": "反正先抽個深化12",
-      "author": "lingcheng.0",
-      "reactions": 5,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1435662494508257504",
-      "content": "荷包：🏚️ 💸 🚑 🏥 💀⚰️ 🪦",
-      "author": "cs001092",
-      "reactions": 5,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1435625385172668518",
-      "content": "~~裙子底下不都是黑洞嗎~~",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1435624195546681365",
-      "content": "伸縮自如",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1435624387813445754",
-      "content": "鯊魚就不知道了~~可能屁股吧~~",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1435677009576726771",
-      "content": "我要更多漏勺貓",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
-    },
-    {
-      "id": "1435540986410303538",
-      "content": "Sorry, there is indeed an issue here. The correct one should be:\n\n\"17th+ copies:",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Gnosis fragments"
-    },
-    {
-      "id": "1435752164818681997",
-      "content": "i promise it's all sincere aside from my use of the word \"brief\"",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1"
     }
   ]
 }

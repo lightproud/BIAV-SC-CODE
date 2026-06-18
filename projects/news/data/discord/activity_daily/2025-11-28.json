@@ -1,10 +1,12 @@
 {
   "date": "2025-11-28",
-  "messages": 227,
-  "unique_authors": 31,
-  "reactions_total": 409,
-  "attachments": 32,
+  "messages": 1805,
+  "unique_authors": 55,
+  "reactions_total": 698,
+  "attachments": 135,
   "channel_activity": {
+    "🔸綜合討論": 1557,
+    "🔸阵容构建": 21,
     "jenkins": 1,
     "morimens pixel art": 3,
     "\"Reverie\" | Tulu fanfic": 3,
@@ -57,35 +59,34 @@
     "1441326394817908736": 10
   },
   "hourly_activity": {
-    "13": 6,
-    "1": 10,
-    "8": 10,
-    "16": 10,
-    "17": 11,
-    "4": 9,
-    "14": 3,
-    "18": 7,
-    "10": 15,
-    "3": 25,
-    "20": 2,
-    "9": 13,
-    "5": 48,
-    "7": 10,
-    "11": 9,
-    "0": 5,
-    "2": 2,
-    "12": 1,
-    "15": 4,
-    "21": 2,
-    "22": 8,
+    "0": 67,
+    "1": 36,
+    "2": 49,
+    "3": 119,
+    "4": 179,
+    "5": 183,
+    "6": 163,
+    "7": 39,
+    "8": 179,
+    "9": 116,
+    "10": 64,
+    "11": 157,
+    "12": 27,
+    "13": 80,
+    "14": 62,
+    "15": 29,
+    "16": 39,
+    "17": 74,
+    "18": 106,
+    "20": 4,
+    "21": 8,
+    "22": 19,
     "23": 4,
-    "19": 2,
-    "6": 11
+    "19": 2
   },
   "message_types": {
-    "0": 49,
-    "4": 2,
-    "19": 13
+    "19": 251,
+    "0": 1327
   },
   "top_reacted_messages": [
     {
@@ -145,11 +146,75 @@
       "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
     },
     {
+      "id": "1443823626905456782",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443826284114215055",
+      "channel_id": "1131839817982947429",
+      "content": "四章关底缝了大眼的999易伤虚弱脆弱",
+      "author": "xuanxue007",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443829135276507136",
+      "channel_id": "1131839817982947429",
+      "content": "我莉即將上演10k忍耐報償淡淡秒了全世界\n🙄💅",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443950156449054750",
+      "channel_id": "1131839874132090890",
+      "content": "感謝各位，第九章順利打完了🙏",
+      "author": "michaelia.",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1443905186958671955",
+      "channel_id": "1131839817982947429",
+      "content": "很好，65抽下去兩張虔誠",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1444062952708771982",
       "content": "101165253",
       "author": "chiedgaf",
       "reactions": 7,
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443825052075430042",
+      "channel_id": "1131839817982947429",
+      "content": "我昨天哈姆林开了个超限，结果打完都没解封",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443826156976472124",
+      "channel_id": "1131839817982947429",
+      "content": "把所有恶心特性都带上",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443883221660991551",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "halaleung",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1444009344751636630",
@@ -166,67 +231,12 @@
       "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
     },
     {
-      "id": "1443832824552755241",
-      "content": "100772003",
-      "author": "mecohor_11034",
+      "id": "1443827643647655987",
+      "channel_id": "1131839817982947429",
+      "content": "沒辦法我的249k毒不允許他活到10回合以後",
+      "author": "water_heart",
       "reactions": 5,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444098121100558470",
-      "content": "On the chapter 9-4 eye, if he has more than 100 fortress and you use the Tawil s",
-      "author": "vxvendetta97",
-      "reactions": 5,
-      "channel": "💭「Processing」Over 100 Fortress bug"
-    },
-    {
-      "id": "1443908229712183310",
-      "content": "🥰",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Resolved」Store Frozen"
-    },
-    {
-      "id": "1443839619572564029",
-      "content": "慎入。\n\n主角是一位十恶不赦的反派。\n\n然后被杜勒抓了。\n\n含施暴，虐待，身体部位缺失，人身攻击言论。（被打，不过没有太多描写）\n\n不介意心理承受压力低的人观看",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "写一些惊恐的。"
-    },
-    {
-      "id": "1443951193515626516",
-      "content": "荡秋千那张有更清晰的露出另一只脚的尺寸吗🥺拜托了这对我真的很重要",
-      "author": "wushengchi7012",
-      "reactions": 3,
-      "channel": "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn"
-    },
-    {
-      "id": "1443922670134759435",
-      "content": "副歌part的骨架一半了(好少",
-      "author": "undecember_news",
-      "reactions": 3,
-      "channel": "我也要開圖樓"
-    },
-    {
-      "id": "1443865191736545341",
-      "content": "多來點",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
-    },
-    {
-      "id": "1444100420623401021",
-      "content": "originally i would be pretty content if it forced me to think about swapping my ",
-      "author": "lumato",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444102070058877130",
-      "content": "in fact, if you watch the replay for many of the no death resist no gnosis teams",
-      "author": "lumato",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+      "channel": "🔸綜合討論"
     }
   ]
 }
