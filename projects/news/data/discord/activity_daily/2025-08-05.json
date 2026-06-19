@@ -1,10 +1,26 @@
 {
   "date": "2025-08-05",
-  "messages": 9515,
+  "messages": 14065,
   "unique_authors": 212,
-  "reactions_total": 1196,
-  "attachments": 369,
+  "reactions_total": 1381,
+  "attachments": 541,
   "channel_activity": {
+    "🔸晒卡分享": 4,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 200,
+    "🔸phòng-chat-tiếng-việt": 54,
+    "🔸canal-español": 1020,
+    "🔸canal-português": 1770,
+    "🔸ruang-obrolan-indonesia": 961,
+    "🔸ห้องสนทนาภาษาไทย": 169,
+    "🔸traphase": 133,
+    "🔸lore-chat": 3,
+    "🔸lets-count": 14,
+    "🔸team-building": 30,
+    "🔸general-chat": 181,
     "🔸綜合討論": 3289,
     "🔸morimens-game-chat": 6146,
     "Doresain, in flesh (or not, idk i am stuck at 1st arc)": 1,
@@ -26,34 +42,34 @@
     "朋友画了赛淋涅（杜勒的妹妹）": 1
   },
   "hourly_activity": {
-    "0": 146,
-    "1": 194,
-    "2": 354,
-    "3": 460,
-    "4": 281,
-    "5": 135,
-    "6": 261,
-    "7": 234,
-    "8": 339,
-    "9": 215,
-    "10": 834,
-    "11": 1027,
-    "12": 743,
-    "13": 470,
-    "14": 483,
-    "15": 665,
-    "16": 230,
-    "17": 493,
-    "18": 384,
-    "19": 265,
-    "20": 343,
-    "21": 322,
-    "22": 473,
-    "23": 164
+    "2": 1002,
+    "12": 775,
+    "19": 273,
+    "22": 504,
+    "21": 343,
+    "11": 1093,
+    "13": 859,
+    "17": 518,
+    "3": 1153,
+    "4": 693,
+    "5": 557,
+    "7": 365,
+    "8": 476,
+    "9": 362,
+    "14": 570,
+    "16": 391,
+    "18": 461,
+    "20": 361,
+    "23": 192,
+    "1": 664,
+    "10": 970,
+    "15": 681,
+    "0": 241,
+    "6": 561
   },
   "message_types": {
-    "0": 6992,
-    "19": 2443
+    "0": 3256,
+    "19": 1294
   },
   "top_reacted_messages": [
     {
@@ -62,6 +78,14 @@
       "author": "rohaluss",
       "reactions": 56,
       "channel": "Doresain, in flesh (or not, idk i am stuck at 1st arc)"
+    },
+    {
+      "id": "1402122821655597167",
+      "channel_id": "1300659662311526512",
+      "content": "Muchas caritas nuevas",
+      "author": "vicho225_uvu",
+      "reactions": 23,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1402132769999425576",
@@ -202,13 +226,6 @@
       "author": "vinsette",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1402180841945174108",
-      "content": "是我朋友画给我的！请不要乱用！不过希望官方出一个妹妹的形象，感觉对杜勒很重要（悲\n\n不要问为什么没腿因为我朋友也不会画（\n\n...我发的帖子好像有点多了但这是给",
-      "author": "dittoqwq",
-      "reactions": 6,
-      "channel": "朋友画了赛淋涅（杜勒的妹妹）"
     }
   ]
 }

@@ -1,10 +1,29 @@
 {
   "date": "2025-08-21",
-  "messages": 11695,
-  "unique_authors": 273,
-  "reactions_total": 1403,
-  "attachments": 528,
+  "messages": 14488,
+  "unique_authors": 304,
+  "reactions_total": 1668,
+  "attachments": 656,
   "channel_activity": {
+    "🔸剧情交流": 25,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 53,
+    "🔸한국어-채팅방": 42,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 75,
+    "🔸русский-канал": 188,
+    "🔸phòng-chat-tiếng-việt": 19,
+    "🔸canal-español": 671,
+    "🔸canal-português": 186,
+    "🔸ruang-obrolan-indonesia": 971,
+    "🔸ห้องสนทนาภาษาไทย": 27,
+    "🔸traphase": 142,
+    "🔸lore-chat": 9,
+    "🔸lets-count": 9,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 11,
+    "🔸general-chat": 63,
+    "🔸邀请码互助┊swap-invitation-codes": 299,
     "🔸綜合討論": 1478,
     "🔸阵容构建": 4,
     "🔸morimens-game-chat": 10125,
@@ -37,35 +56,34 @@
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "0": 775,
-    "1": 405,
-    "2": 558,
-    "3": 657,
-    "4": 520,
-    "5": 628,
-    "6": 369,
-    "7": 444,
-    "8": 531,
-    "9": 498,
-    "10": 379,
-    "11": 604,
-    "12": 502,
-    "13": 507,
-    "14": 760,
-    "15": 679,
-    "16": 434,
-    "17": 470,
-    "22": 179,
-    "23": 415,
-    "18": 224,
-    "19": 464,
-    "20": 429,
-    "21": 264
+    "6": 423,
+    "7": 707,
+    "11": 648,
+    "8": 622,
+    "0": 1175,
+    "3": 726,
+    "4": 538,
+    "5": 671,
+    "9": 547,
+    "10": 446,
+    "2": 730,
+    "12": 561,
+    "13": 702,
+    "16": 522,
+    "17": 557,
+    "18": 341,
+    "20": 474,
+    "15": 833,
+    "1": 588,
+    "14": 1049,
+    "21": 303,
+    "22": 329,
+    "19": 483,
+    "23": 513
   },
   "message_types": {
-    "19": 3722,
-    "0": 7884,
-    "46": 1
+    "19": 703,
+    "0": 2090
   },
   "top_reacted_messages": [
     {
@@ -98,12 +116,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1407897716020875295",
+      "channel_id": "1300659662311526512",
+      "content": "No me digan manco",
+      "author": "yaoshidoppa",
+      "reactions": 11,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1408129954620903545",
       "channel_id": "1170692781216378960",
       "content": "I feel like flares is part of this game's secret marketing team but I just can't",
       "author": "aurora3981",
       "reactions": 11,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407891771609845770",
+      "channel_id": "1300659662311526512",
+      "content": "Me tomaré las molestias para que no sean tan pendejos como los que spamearon sus",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1408050275947647016",
+      "channel_id": "1405837769212821554",
+      "content": "7UXPVWVVOF pls 🙇‍♂️",
+      "author": "deodat",
+      "reactions": 9,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     },
     {
       "id": "1408073412857040896",
@@ -128,6 +170,14 @@
       "author": "cooked_chicken99",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408051646679879733",
+      "channel_id": "1405837769212821554",
+      "content": "L2XAYREZ2R",
+      "author": "watermelonfanatic",
+      "reactions": 8,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     },
     {
       "id": "1408044341586432081",
@@ -191,38 +241,6 @@
       "content": "<:cry3:1356082134447558748>",
       "author": "sirtealot",
       "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1407879646871289956",
-      "channel_id": "1131839817982947429",
-      "content": "想過困難主線請把你的圖魯隊伍三個都抽八隻🤡 🤡",
-      "author": "shchng.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1407880789533921382",
-      "channel_id": "1170692781216378960",
-      "content": "Finally got murphy",
-      "author": "averageshark",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1408025268743962647",
-      "channel_id": "1170692781216378960",
-      "content": "It is done",
-      "author": "drunk.biscuit",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1408025286972407850",
-      "channel_id": "1170692781216378960",
-      "content": "oh no....",
-      "author": "sexysneakystoat1625",
-      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
   ]

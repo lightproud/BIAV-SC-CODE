@@ -1,10 +1,12 @@
 {
   "date": "2025-07-08",
-  "messages": 38,
-  "unique_authors": 12,
-  "reactions_total": 21,
-  "attachments": 12,
+  "messages": 8052,
+  "unique_authors": 203,
+  "reactions_total": 583,
+  "attachments": 365,
   "channel_activity": {
+    "🔸綜合討論": 104,
+    "🔸morimens-game-chat": 7910,
     "My Caecus art": 4,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 13,
     "Feedback/general review on latest morimens merchandise": 4,
@@ -17,32 +19,98 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "2": 5,
-    "13": 3,
-    "0": 2,
-    "4": 1,
-    "5": 8,
-    "7": 1,
-    "9": 4,
-    "10": 2,
-    "23": 1,
-    "11": 4,
-    "12": 1,
-    "18": 2,
-    "3": 3,
-    "16": 1
+    "1": 508,
+    "3": 119,
+    "4": 40,
+    "5": 509,
+    "6": 248,
+    "8": 486,
+    "9": 316,
+    "10": 154,
+    "11": 295,
+    "12": 346,
+    "13": 440,
+    "14": 272,
+    "15": 543,
+    "16": 488,
+    "0": 703,
+    "2": 427,
+    "7": 292,
+    "17": 447,
+    "18": 291,
+    "19": 356,
+    "20": 129,
+    "21": 276,
+    "22": 117,
+    "23": 250
   },
   "message_types": {
-    "0": 1,
-    "19": 3
+    "0": 5596,
+    "19": 2418
   },
   "top_reacted_messages": [
+    {
+      "id": "1392136575391105024",
+      "channel_id": "1170692781216378960",
+      "content": "YIPPIEEEE I WAS CHANTING \"i need tulu\" 4 fun",
+      "author": "chi01y_q",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392129387968725043",
+      "channel_id": "1170692781216378960",
+      "content": "i don't actually find clem the hottest, (cw) ||she impregnated her dad and i tak",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392212337733144580",
+      "channel_id": "1170692781216378960",
+      "content": "muh ramona",
+      "author": "gardrobe10",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1392075768280125561",
       "content": "I have recieved the merchandise from the event giveaway and I am very happy to h",
       "author": "satachan",
       "reactions": 9,
       "channel": "Feedback/general review on latest morimens merchandise"
+    },
+    {
+      "id": "1392028669446193272",
+      "channel_id": "1170692781216378960",
+      "content": "let me find a monthly income calculation for you",
+      "author": "yonagoda",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392163899268268203",
+      "channel_id": "1170692781216378960",
+      "content": "<:wish:1356084702468899117>",
+      "author": "annaxxe_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392138265871519755",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392164850255532215",
+      "channel_id": "1170692781216378960",
+      "content": "Man they should just hire me fr",
+      "author": "ev_6185",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1392098452368003113",
@@ -52,46 +120,92 @@
       "channel": "✅「已回答」典藏館文字邏輯bug"
     },
     {
-      "id": "1392133067006804081",
-      "content": "sure, thank you",
-      "author": "tachwedd_glaw",
-      "reactions": 1,
-      "channel": "My Caecus art"
+      "id": "1392169771511976047",
+      "channel_id": "1131839817982947429",
+      "content": "如果带艾尔瓦的话道中的话确实不用输出，因为克莱门汀的伤害足够。boos关的话需要艾尔瓦去开超限然后第一条命慢慢磨掉，第二条命用屯的牌去做速杀，还是能起的到主C的",
+      "author": "timee_ky",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1392133399577366569",
-      "content": "nickname's Elathan \n🐟",
-      "author": "tachwedd_glaw",
-      "reactions": 1,
-      "channel": "My Caecus art"
+      "id": "1392059788577472563",
+      "channel_id": "1170692781216378960",
+      "content": "great i will make all the male characters into little goobers like my tulu paper",
+      "author": "gaylordtime",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392089075561005086",
-      "content": "Thank you!",
-      "author": "kabipo",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+      "id": "1392129765275734037",
+      "channel_id": "1170692781216378960",
+      "content": "make them kiss each other",
+      "author": "catcrox",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392101383477657682",
-      "content": "Thank you very much for your suggestion🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Feedback/general review on latest morimens merchandise"
+      "id": "1392130164670074881",
+      "channel_id": "1170692781216378960",
+      "content": "str*ght activities is prohibited",
+      "author": "gaylordtime",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1391976998288621610",
-      "content": "Hello, this situation is normal🌹 \nDeducting 2 fees exists as a halo and will be ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Hameln's rouse and searches that set cost to 0"
+      "id": "1392137643596316763",
+      "channel_id": "1170692781216378960",
+      "content": "paper goober tulu pays you a visit",
+      "author": "gaylordtime",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392015851879665796",
-      "content": "🫶 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Hameln's rouse and searches that set cost to 0"
+      "id": "1392165470743953570",
+      "channel_id": "1170692781216378960",
+      "content": "keep elevated focus, best support wheel fr <:wish:1356084702468899117>",
+      "author": "annaxxe_",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392090044243906642",
+      "channel_id": "1131839817982947429",
+      "content": "||打色情自動選字跳蘇俄是三小||",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1391943996192067750",
+      "channel_id": "1170692781216378960",
+      "content": "In other news, I got my 2nd lv80 awaker <:pray:1356053116260454534>",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392071892457750529",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "satachan",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392113205412892774",
+      "channel_id": "1170692781216378960",
+      "content": "Eventually  you don't read",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392123809829621912",
+      "channel_id": "1170692781216378960",
+      "content": "i bet the guy who flatlined got caught off guard too",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

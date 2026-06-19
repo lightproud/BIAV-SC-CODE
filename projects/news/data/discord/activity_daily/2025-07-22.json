@@ -1,10 +1,12 @@
 {
   "date": "2025-07-22",
-  "messages": 117,
-  "unique_authors": 14,
-  "reactions_total": 151,
-  "attachments": 66,
+  "messages": 606,
+  "unique_authors": 43,
+  "reactions_total": 226,
+  "attachments": 100,
   "channel_activity": {
+    "🔸綜合討論": 474,
+    "🔸阵容构建": 15,
     "Thais Warm up": 1,
     "24 and Caecus merch": 1,
     "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 4,
@@ -40,26 +42,33 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "23": 2,
-    "17": 8,
-    "6": 3,
-    "11": 3,
-    "12": 1,
-    "10": 10,
-    "13": 6,
-    "20": 2,
+    "0": 4,
+    "1": 1,
+    "2": 5,
+    "3": 6,
+    "4": 17,
+    "5": 49,
+    "6": 119,
+    "7": 84,
+    "9": 49,
+    "10": 29,
+    "11": 20,
+    "12": 79,
+    "13": 27,
+    "14": 26,
+    "15": 20,
+    "16": 19,
+    "17": 14,
+    "18": 2,
+    "20": 7,
+    "23": 5,
     "8": 23,
-    "9": 15,
-    "15": 3,
-    "16": 1,
-    "4": 6,
-    "7": 18,
-    "5": 14,
-    "14": 1,
     "19": 1
   },
   "message_types": {
-    "0": 9
+    "0": 438,
+    "19": 50,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -91,6 +100,22 @@
       "channel": "玩個杜勒拼豆"
     },
     {
+      "id": "1397078404473421864",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397242969169596538",
+      "channel_id": "1131839817982947429",
+      "content": "艰难400",
+      "author": "287405tjy_28066",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1397321347809677385",
       "content": "三更半夜睡不著，突發奇想做攻略。\n\n你好，我是淸淸梓燃，本篇為深海配隊中的水船隊攻略。\n若有任何問題可在下方留言（帳號UID100872328）（助戰圖魯）\n\n",
       "author": "void_1546.",
@@ -98,53 +123,108 @@
       "channel": "深海隊攻略之—水船隊"
     },
     {
-      "id": "1397097133638942810",
-      "content": "It’s perfect for an artist like me~ <:behave:1361909598067625984>",
-      "author": "ev_6185",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+      "id": "1397176269765873715",
+      "channel_id": "1131839817982947429",
+      "content": "🤓",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397157460455854190",
-      "content": "建议再发200银当公告",
+      "id": "1397078079217864806",
+      "channel_id": "1131839817982947429",
+      "content": "血量最大值的成長疑似是乘算的\n如果是的話，並且跟第二章一樣是道中6關+3融痕\n鯊凱船父的最大生命可以逼近5k",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397197562133348474",
+      "channel_id": "1131839817982947429",
+      "content": "我要会画画你游在r18分区已经多很多东西了",
       "author": "carme.0588",
-      "reactions": 1,
-      "channel": "📸V2.3 PV细节欣赏┊Appreciation of Details"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397152488980742205",
-      "content": "<@409650839402184704>🌹 The binding process is as follows:\nUser Center-Link Socia",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Problem signing in with Account"
+      "id": "1397145357225426975",
+      "channel_id": "1131839817982947429",
+      "content": "看到杜爺的繁衍劇情有語音，真希望之前的角色也都能補上～我想聽奧吉爾的羞赧撒驕音♥",
+      "author": "o5214658",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397141716733268069",
-      "content": "I'm really sorry for the misunderstanding caused. The English translation of the",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Incorrect wording with the description of 'Original Essence Chapter - Oblivion Chapter'"
+      "id": "1397040979445420124",
+      "channel_id": "1131839817982947429",
+      "content": "諾是借用的",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397134147192881152",
-      "content": "🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Softlocked?"
+      "id": "1397107763418497116",
+      "channel_id": "1131839817982947429",
+      "content": "能回我早就回了，+12紅夫躺倉庫半年長灰了",
+      "author": "qulqulli",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397122318131527793",
-      "content": "🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Text error in arc 2 chapter 3-4"
+      "id": "1397156996494397512",
+      "channel_id": "1131839817982947429",
+      "content": "但是實際打就是37801啊\n估計是12.6後面還有小數吧",
+      "author": "cwz.io",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397081684196720651",
-      "content": "Here are a few user interface bugs i've noticed, they're minor, but it would be ",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "✅「Answered」Some UI bugs/issues"
+      "id": "1397185640520618064",
+      "channel_id": "1131839817982947429",
+      "content": "https://youtu.be/OybbIMOE_4g?si=0A9p-c9TWAPaRQ2V",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397191201899413545",
+      "channel_id": "1131839817982947429",
+      "content": "400難",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397195846399037451",
+      "channel_id": "1131839817982947429",
+      "content": "眼交",
+      "author": "carme.0588",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397198413954809896",
+      "channel_id": "1131839817982947429",
+      "content": "~~媽拉 下下張就草他~~",
+      "author": "undecember_news",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397201026880372756",
+      "channel_id": "1131839817982947429",
+      "content": "~~圖實際的精神傷害不多~~",
+      "author": "undecember_news",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397216138085269504",
+      "channel_id": "1131839817982947429",
+      "content": "各位覺得如何",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

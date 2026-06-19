@@ -1,10 +1,12 @@
 {
   "date": "2025-07-23",
-  "messages": 118,
-  "unique_authors": 25,
-  "reactions_total": 474,
-  "attachments": 43,
+  "messages": 423,
+  "unique_authors": 38,
+  "reactions_total": 521,
+  "attachments": 76,
   "channel_activity": {
+    "🔸綜合討論": 297,
+    "🔸阵容构建": 8,
     "Thais Warm up": 1,
     "Silly Ryamonya art": 1,
     "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 2,
@@ -37,29 +39,34 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "13": 1,
-    "8": 25,
-    "17": 9,
+    "0": 10,
+    "3": 12,
+    "4": 12,
+    "5": 55,
+    "6": 21,
+    "7": 67,
+    "8": 30,
+    "9": 40,
+    "10": 25,
+    "11": 25,
+    "12": 7,
+    "13": 25,
+    "14": 12,
+    "15": 33,
+    "16": 6,
+    "17": 15,
+    "20": 2,
+    "21": 5,
+    "22": 1,
+    "23": 5,
+    "1": 1,
     "19": 4,
-    "4": 8,
-    "5": 13,
-    "11": 2,
-    "14": 4,
-    "16": 1,
-    "7": 12,
-    "9": 5,
     "18": 6,
-    "23": 2,
-    "3": 8,
-    "6": 8,
-    "15": 2,
-    "10": 1,
-    "0": 3,
     "2": 4
   },
   "message_types": {
-    "0": 10,
-    "19": 3
+    "19": 70,
+    "0": 235
   },
   "top_reacted_messages": [
     {
@@ -105,6 +112,30 @@
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
+      "id": "1397529482025369620",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sense25.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397487204745347144",
+      "channel_id": "1131839817982947429",
+      "content": "送圖",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397629633939116242",
+      "channel_id": "1131839817982947429",
+      "content": "下下張就能畫維度之足了",
+      "author": "undecember_news",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1397448679853523045",
       "content": "~~必須吐槽的是有時候明明點了跳過劇情卻還是會在打完首領後跳出劇情~~",
       "author": "water_heart",
@@ -117,6 +148,30 @@
       "author": "wild_pansy",
       "reactions": 6,
       "channel": "✅「已回答」點讚紀錄變卡頓了"
+    },
+    {
+      "id": "1397499587643838474",
+      "channel_id": "1131839817982947429",
+      "content": "......",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397572468742422558",
+      "channel_id": "1131839817982947429",
+      "content": "大部分石頭都拿去血肉了",
+      "author": "lion0504",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397596097073123484",
+      "channel_id": "1131839817982947429",
+      "content": "殺戮尖塔模組環拉更新了",
+      "author": "cwz.io",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1397464397353582592",
@@ -147,60 +202,20 @@
       "channel": "能不能出一个真正的想随时赌一把的那种的肉鸽玩法"
     },
     {
-      "id": "1397640262846517339",
-      "content": "Good decision, would have hated to hear if content was slowed down due to this.",
-      "author": "monchi3524",
+      "id": "1397546109114781776",
+      "channel_id": "1131839817982947429",
+      "content": "叠力杜磊大招爆一下",
+      "author": "carme.0588",
       "reactions": 2,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397494833739726859",
-      "content": "UID: 101025255",
-      "author": "xsky1993_83142",
+      "id": "1397581917301506091",
+      "channel_id": "1131839817982947429",
+      "content": "~~混沌跟深海看起來有前途嘛~~",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "✅「Answered」I bought a pack and it’s gone now"
-    },
-    {
-      "id": "1397519169699713167",
-      "content": "Hi, I have same issue with the same pack, my id is 100568318",
-      "author": "intoxic123",
-      "reactions": 2,
-      "channel": "✅「Answered」I bought a pack and it’s gone now"
-    },
-    {
-      "id": "1397482909425733684",
-      "content": "戈雅已反馈🙏",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
-    },
-    {
-      "id": "1397496488937914378",
-      "content": "哈喽，确实存在问题，已经安排修复啦，下次更新会放出🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
-    },
-    {
-      "id": "1397492187226439712",
-      "content": "Understood, the original intention is to avoid unnecessary conflicts caused by i",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "Server dissatisfaction"
-    },
-    {
-      "id": "1397414873566150726",
-      "content": "<@1131790839291596841> 我壓力大嗎？",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "💭「处理中」???"
-    },
-    {
-      "id": "1397451722728935515",
-      "content": "Awesome my favorite artifact",
-      "author": "aslechi",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+      "channel": "🔸綜合討論"
     }
   ]
 }

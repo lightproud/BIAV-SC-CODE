@@ -1,10 +1,31 @@
 {
   "date": "2025-08-25",
-  "messages": 959,
-  "unique_authors": 48,
-  "reactions_total": 399,
-  "attachments": 80,
+  "messages": 18104,
+  "unique_authors": 590,
+  "reactions_total": 2782,
+  "attachments": 1027,
   "channel_activity": {
+    "🔸morimens-game-chat": 12411,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 10,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 37,
+    "🔸한국어-채팅방": 47,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 47,
+    "🔸русский-канал": 1032,
+    "🔸phòng-chat-tiếng-việt": 44,
+    "🔸canal-español": 892,
+    "🔸canal-português": 260,
+    "🔸ruang-obrolan-indonesia": 1637,
+    "🔸ห้องสนทนาภาษาไทย": 137,
+    "🔸traphase": 137,
+    "🔸lore-chat": 47,
+    "🔸lets-count": 12,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 28,
+    "🔸general-chat": 13,
+    "🔸邀请码互助┊swap-invitation-codes": 345,
     "🔸綜合討論": 867,
     "🔸阵容构建": 6,
     "uvhash fan art submission": 2,
@@ -38,33 +59,35 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "0": 9,
-    "1": 42,
-    "2": 92,
-    "3": 110,
-    "4": 33,
-    "5": 36,
-    "6": 136,
-    "7": 50,
-    "8": 127,
-    "9": 16,
-    "10": 20,
-    "11": 30,
-    "12": 34,
-    "13": 90,
-    "14": 28,
-    "15": 54,
-    "16": 6,
-    "19": 15,
-    "23": 24,
-    "17": 4,
-    "20": 1,
-    "18": 1,
-    "22": 1
+    "0": 730,
+    "1": 943,
+    "2": 1498,
+    "3": 886,
+    "4": 696,
+    "5": 426,
+    "6": 737,
+    "7": 564,
+    "8": 412,
+    "9": 673,
+    "10": 477,
+    "11": 829,
+    "12": 849,
+    "13": 940,
+    "14": 975,
+    "15": 772,
+    "16": 639,
+    "17": 677,
+    "18": 742,
+    "19": 1176,
+    "20": 505,
+    "21": 526,
+    "22": 722,
+    "23": 710
   },
   "message_types": {
-    "0": 696,
-    "19": 177
+    "19": 6005,
+    "0": 11139,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -89,6 +112,102 @@
       "channel": "A tinct!"
     },
     {
+      "id": "1409610400827441152",
+      "channel_id": "1170692781216378960",
+      "content": "Goal is +8 before banner ends. +12 in 4 months after",
+      "author": "iceweaver",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409608793502781610",
+      "channel_id": "1170692781216378960",
+      "content": "Chat is she good",
+      "author": "doctorxyz",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409561525789659246",
+      "channel_id": "1170692781216378960",
+      "content": "BEHOLD MORTALS, THE FULL POWA OF THE SEA",
+      "author": "ackadio",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409604543700013056",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409609195136880802",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "joker_0108",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409643144538226700",
+      "channel_id": "1170692781216378960",
+      "content": "IT'S SO PEAK",
+      "author": "phonytail",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409605715244486726",
+      "channel_id": "1170692781216378960",
+      "content": "the only reason why i play morimens is for ultra other color mechanics are so fu",
+      "author": "frowningquokka",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409611759689666711",
+      "channel_id": "1170692781216378960",
+      "content": "faros",
+      "author": "maratd",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409622545656971528",
+      "channel_id": "1170692781216378960",
+      "content": "Whale Lotan wants OE for the true whale experience",
+      "author": "madhermit",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409635082146156717",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409640980369379499",
+      "channel_id": "1170692781216378960",
+      "content": "Ugh why are there so many eyeball bosses",
+      "author": ".shwqa",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409643489167282266",
+      "channel_id": "1170692781216378960",
+      "content": "BIAV is actually just one person with 10 brains puppeteering a single body",
+      "author": "fischperch",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1409568761450860657",
       "channel_id": "1131839817982947429",
       "content": "<:Emoji_YWHX_M_12:1400771817659957258>",
@@ -97,129 +216,36 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1409623953928097952",
-      "content": "Hello, i was thinking that maybe you guys can make some joke skins, in april foo",
-      "author": "moyashi0672",
-      "reactions": 7,
-      "channel": "✅「Answered」Fun Skin suggestions?"
+      "id": "1409467865358401596",
+      "channel_id": "1170692781216378960",
+      "content": "My pulls today <:pray:1356053116260454534> \n\nDidnt lose to any standard",
+      "author": "kevsalvador",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409502205790388294",
-      "channel_id": "1131839817982947429",
-      "content": "我是很缺紫色",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409532451491024896",
-      "channel_id": "1131839817982947429",
-      "content": "終於又疊滿一個了",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409408498076225677",
-      "channel_id": "1131839817982947429",
-      "content": "我要扔你去黑名單",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409414851373170729",
-      "channel_id": "1131839817982947429",
-      "content": "我萌新",
-      "author": "universe.dark",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409452938123808768",
-      "channel_id": "1131839817982947429",
-      "content": "可能要\n <@806384001895890965>",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409554733953450085",
-      "channel_id": "1131839817982947429",
+      "id": "1409592258067431465",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "author": "arandomflamev2",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409557306559037521",
-      "channel_id": "1131839817982947429",
-      "content": "開鑰令增加暴擊率  本身屬性也是暴擊率 ..",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409552999361286338",
-      "content": "逼課不可取喔，數值可不能太低了",
-      "author": "taoi002",
-      "reactions": 5,
-      "channel": "V2.3.1.3 在线维护公告"
-    },
-    {
-      "id": "1409521445020635136",
-      "content": "Hello,\n\nSo, i was wondering why those 3 girls didn't join the Realm's banners at",
-      "author": "madlax",
-      "reactions": 5,
-      "channel": "✅「Answered」About Myriam/Thais/Wanda"
-    },
-    {
-      "id": "1409365996728352818",
-      "channel_id": "1131839817982947429",
-      "content": "抽",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409367018649419948",
-      "channel_id": "1131839817982947429",
+      "id": "1409597817248288848",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "corposant_1003",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "hitsu4",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409387137878589490",
-      "channel_id": "1131839817982947429",
-      "content": "吃软饭",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409455245704302662",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "123zhang0036",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409498488320036886",
-      "channel_id": "1131839817982947429",
-      "content": "血希好愛我",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409500910148653127",
-      "channel_id": "1131839817982947429",
-      "content": "我在疑惑给我按这个🥵小表情是什么意思",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1409622331017396307",
+      "channel_id": "1170692781216378960",
+      "content": "Nah I want lotan whale form. So big that when you oe, her art takes up the whole",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

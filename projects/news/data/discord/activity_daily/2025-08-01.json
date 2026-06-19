@@ -1,10 +1,28 @@
 {
   "date": "2025-08-01",
-  "messages": 8631,
+  "messages": 11448,
   "unique_authors": 237,
-  "reactions_total": 940,
-  "attachments": 619,
+  "reactions_total": 1077,
+  "attachments": 792,
   "channel_activity": {
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 1,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 167,
+    "🔸phòng-chat-tiếng-việt": 44,
+    "🔸canal-español": 102,
+    "🔸canal-português": 1117,
+    "🔸ruang-obrolan-indonesia": 242,
+    "🔸ห้องสนทนาภาษาไทย": 554,
+    "🔸traphase": 114,
+    "🔸lore-chat": 105,
+    "🔸lets-count": 9,
+    "🔸频道建议┊server-suggestions": 21,
+    "🔸team-building": 243,
+    "🔸general-chat": 90,
     "🔸綜合討論": 612,
     "🔸morimens-game-chat": 7943,
     "Ghoul": 4,
@@ -28,35 +46,34 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "0": 343,
-    "1": 353,
-    "2": 400,
-    "3": 278,
-    "4": 411,
-    "5": 503,
-    "6": 211,
-    "7": 157,
-    "8": 367,
-    "9": 423,
-    "10": 378,
-    "11": 240,
-    "13": 277,
-    "15": 256,
-    "16": 236,
-    "17": 184,
-    "18": 564,
-    "19": 667,
-    "20": 411,
-    "21": 430,
-    "12": 431,
-    "14": 326,
-    "22": 446,
-    "23": 339
+    "21": 505,
+    "4": 628,
+    "14": 415,
+    "19": 823,
+    "20": 558,
+    "13": 314,
+    "0": 485,
+    "5": 616,
+    "6": 296,
+    "8": 473,
+    "9": 661,
+    "10": 511,
+    "11": 329,
+    "12": 523,
+    "15": 306,
+    "16": 268,
+    "22": 556,
+    "23": 512,
+    "7": 184,
+    "17": 258,
+    "18": 762,
+    "1": 470,
+    "2": 640,
+    "3": 355
   },
   "message_types": {
-    "0": 5692,
-    "19": 2862,
-    "6": 1
+    "0": 2333,
+    "19": 484
   },
   "top_reacted_messages": [
     {
@@ -81,12 +98,60 @@
       "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
+      "id": "1400794804669124618",
+      "channel_id": "1400750050208125010",
+      "content": "<@688983324915794017> WHY THOSE REACTIONS",
+      "author": "baguettesuffering",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1400890269716709472",
+      "channel_id": "1400750050208125010",
+      "content": "🍊",
+      "author": "jormiejormungandr",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1400877566566596629",
+      "channel_id": "1400750050208125010",
+      "content": "get him pregnant",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1400924714314240062",
       "channel_id": "1170692781216378960",
       "content": "u know i can t let 1. Caecus be considered useful and 2. let that dog shit wheel",
       "author": "monchi3524",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400757414760022141",
+      "channel_id": "1400750050208125010",
+      "content": "mpreg event?",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1400877545943072919",
+      "channel_id": "1400750050208125010",
+      "content": "the people yearn for mpreg Goliath",
+      "author": "_venush",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1400787409335222433",
+      "channel_id": "1400750050208125010",
+      "content": "I awake",
+      "author": "baguettesuffering",
+      "reactions": 7,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1400793560680366121",
@@ -166,54 +231,6 @@
       "content": "~~it's like she's looking at walking garbage. I love her~~",
       "author": "aurora3981",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400860285266432100",
-      "channel_id": "1170692781216378960",
-      "content": "AH",
-      "author": "cooked_chicken99",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400914255959560293",
-      "channel_id": "1170692781216378960",
-      "content": "i don't use lotan,,,",
-      "author": "catcrox",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400919004561805433",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "monchi3524",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400922266489065542",
-      "channel_id": "1170692781216378960",
-      "content": "<:jakadsalute:627450788872060929>",
-      "author": "Deleted User",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400927793050816554",
-      "channel_id": "1170692781216378960",
-      "content": "Wait tomorrow is Morimens first anniversary ?",
-      "author": "julien_akg",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400932169659973762",
-      "channel_id": "1170692781216378960",
-      "content": "thanks for supporting the game",
-      "author": "Deleted User",
-      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
   ]

@@ -1,10 +1,29 @@
 {
   "date": "2025-08-28",
-  "messages": 1228,
-  "unique_authors": 46,
-  "reactions_total": 539,
-  "attachments": 75,
+  "messages": 12766,
+  "unique_authors": 334,
+  "reactions_total": 1902,
+  "attachments": 624,
   "channel_activity": {
+    "🔸morimens-game-chat": 8859,
+    "🔸剧情交流": 101,
+    "🔸晒卡分享": 15,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 28,
+    "🔸한국어-채팅방": 12,
+    "🔸chaîne-française": 18,
+    "🔸русский-канал": 489,
+    "🔸phòng-chat-tiếng-việt": 19,
+    "🔸canal-español": 803,
+    "🔸canal-português": 19,
+    "🔸ruang-obrolan-indonesia": 828,
+    "🔸ห้องสนทนาภาษาไทย": 42,
+    "🔸traphase": 122,
+    "🔸lore-chat": 45,
+    "🔸lets-count": 9,
+    "🔸team-building": 17,
+    "🔸general-chat": 29,
+    "🔸邀请码互助┊swap-invitation-codes": 82,
     "🔸綜合討論": 1105,
     "uvhash fan art submission": 1,
     "goliath doodle": 4,
@@ -28,33 +47,34 @@
     "2.3表情包": 2
   },
   "hourly_activity": {
-    "0": 8,
-    "1": 85,
-    "2": 120,
-    "3": 38,
-    "4": 109,
-    "5": 59,
-    "6": 36,
-    "7": 10,
-    "8": 67,
-    "9": 87,
-    "10": 275,
-    "11": 98,
-    "12": 48,
-    "13": 33,
-    "14": 56,
-    "15": 42,
-    "16": 22,
-    "17": 23,
-    "18": 5,
-    "23": 3,
-    "22": 2,
-    "20": 1,
-    "21": 1
+    "0": 342,
+    "1": 885,
+    "2": 774,
+    "3": 658,
+    "4": 637,
+    "5": 240,
+    "6": 384,
+    "7": 323,
+    "8": 395,
+    "9": 578,
+    "10": 733,
+    "11": 460,
+    "12": 946,
+    "13": 490,
+    "14": 569,
+    "15": 622,
+    "16": 600,
+    "17": 868,
+    "18": 231,
+    "19": 297,
+    "20": 586,
+    "21": 528,
+    "22": 256,
+    "23": 364
   },
   "message_types": {
-    "0": 800,
-    "19": 305
+    "0": 8026,
+    "19": 3512
   },
   "top_reacted_messages": [
     {
@@ -87,11 +107,115 @@
       "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
     },
     {
+      "id": "1410623750583357610",
+      "channel_id": "1300659662311526512",
+      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "author": "blecnes",
+      "reactions": 18,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1410600693685031064",
+      "channel_id": "1170692781216378960",
+      "content": "ackshually clementine is technically (one of the only) male in her species so th",
+      "author": "reya.li",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410630313758953553",
+      "channel_id": "1170692781216378960",
+      "content": "What about me",
+      "author": "Deleted User",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410600556275437609",
+      "channel_id": "1170692781216378960",
+      "content": "Clem is a disgusting bug",
+      "author": "flares117",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410616579070234644",
+      "channel_id": "1170692781216378960",
+      "content": "<:angry2:1356053025034338505>",
+      "author": "arisuu0604",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410630563672490088",
+      "channel_id": "1170692781216378960",
+      "content": "Seaman what are u doing to my message",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410541463200333948",
+      "channel_id": "1170692781216378960",
+      "content": "Just making stuff up",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410617273336463371",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410631579708948520",
+      "channel_id": "1170692781216378960",
+      "content": "shoutout to the top 3 worst enemy lineup of all time",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1410570121189265442",
       "content": "插沙子裡了，變成稻草人",
       "author": "ena04564",
       "reactions": 9,
       "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410600458640293908",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410601333815513192",
+      "channel_id": "1170692781216378960",
+      "content": "hear me out on sarah",
+      "author": "linvssy",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410619871456268388",
+      "channel_id": "1170692781216378960",
+      "content": "lmao",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410642333778837565",
+      "channel_id": "1170692781216378960",
+      "content": "I keep getting this unit. This is my 6th time already. 😄",
+      "author": "xxyrxx",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410569027461582870",
@@ -102,114 +226,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1410556021268807832",
-      "channel_id": "1131839817982947429",
-      "content": "我可以幫他吹",
-      "author": "ahuahuahua",
+      "id": "1410443323113734268",
+      "channel_id": "1170692781216378960",
+      "content": "is the horla/colette relationship toxic? ✅ / ❎",
+      "author": "fishhazardthewizard",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410572160170328135",
-      "channel_id": "1131839817982947429",
-      "content": "我神父还差两只+12",
-      "author": "some_feng",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410603178482991245",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410546453020938241",
-      "content": "這復用有點好笑了，希望實裝好點",
-      "author": "navirecorbeau",
-      "reactions": 7,
-      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
-    },
-    {
-      "id": "1410635542651211826",
-      "content": "“放輕鬆，覺得癢是正常的。”\n\n克萊門汀捏起一根鵝毛，輕輕掃過守密人的耳尖，微微的搔癢感沿著肩膀傳來，守密人不自覺地輕輕顫抖。\n\n“這確定是朵兒教授讓你幫我做心",
-      "author": "void_1546.",
-      "reactions": 7,
-      "channel": "克萊門汀的特殊治療方法"
-    },
-    {
-      "id": "1410489684450349056",
-      "channel_id": "1131839817982947429",
-      "content": "我剛剛還順便去打了一場神父",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410576309821636683",
-      "channel_id": "1131839817982947429",
-      "content": "當初在第八章用珊撞死拉蒙娜是對的",
-      "author": "corposant_1003",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410639688292765696",
-      "channel_id": "1131839817982947429",
-      "content": "过了<:Emoji_YWHX_M_12:1400771817659957258>",
-      "author": "ling_an_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410439181393461249",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "eljdlf",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410555299047411762",
-      "channel_id": "1131839817982947429",
-      "content": "沒有，你現在去聽他語音他還是沒長好魚腮",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410557829911154800",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410575987799756871",
-      "channel_id": "1131839817982947429",
-      "content": "夏活環拉敲西瓜，守密當西瓜之類的",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410577014447931533",
-      "channel_id": "1131839817982947429",
-      "content": "~~神父泳裝~~",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410577459069325312",
-      "channel_id": "1131839817982947429",
-      "content": "骗他可以获得power就会乖乖穿上了😋",
-      "author": "some_feng",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

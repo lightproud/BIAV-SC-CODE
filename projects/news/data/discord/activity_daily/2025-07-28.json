@@ -1,10 +1,11 @@
 {
   "date": "2025-07-28",
-  "messages": 116,
-  "unique_authors": 15,
-  "reactions_total": 151,
-  "attachments": 25,
+  "messages": 1775,
+  "unique_authors": 46,
+  "reactions_total": 281,
+  "attachments": 78,
   "channel_activity": {
+    "🔸綜合討論": 1659,
     "Modern AU Goliath": 2,
     "just thinking what to eat for the next meal": 1,
     "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper": 7,
@@ -41,27 +42,32 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "6": 13,
-    "13": 2,
-    "7": 4,
-    "15": 2,
-    "8": 18,
-    "0": 2,
-    "1": 5,
-    "5": 10,
-    "9": 3,
-    "12": 7,
-    "14": 5,
-    "4": 2,
-    "10": 7,
-    "11": 3,
-    "19": 2,
-    "3": 21,
-    "2": 10
+    "0": 10,
+    "1": 59,
+    "2": 101,
+    "3": 145,
+    "4": 37,
+    "5": 85,
+    "6": 62,
+    "7": 40,
+    "8": 84,
+    "9": 18,
+    "10": 276,
+    "11": 268,
+    "12": 127,
+    "13": 96,
+    "14": 54,
+    "15": 99,
+    "16": 155,
+    "17": 15,
+    "18": 31,
+    "19": 7,
+    "20": 5,
+    "21": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 1
+    "0": 1424,
+    "19": 235
   },
   "top_reacted_messages": [
     {
@@ -93,11 +99,43 @@
       "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
     },
     {
+      "id": "1399386833246490695",
+      "channel_id": "1131839817982947429",
+      "content": "<@557599119401811978> <@883992032530563082>",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1399285366682292254",
       "content": "hi guys it is me again Drawing Doresain.\n\nI love high ponytail and glasses , hop",
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "just thinking what to eat for the next meal"
+    },
+    {
+      "id": "1399257667402465435",
+      "channel_id": "1131839817982947429",
+      "content": "現在我也是有+12虔誠的上等人了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399265864653475942",
+      "channel_id": "1131839817982947429",
+      "content": "<:c0f434581f38497d89b0a71d6bf9537f:1357888137233301584>",
+      "author": "xyakoto",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399321124243767429",
+      "channel_id": "1131839817982947429",
+      "content": "群佬除我",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1399284478148608040",
@@ -107,81 +145,84 @@
       "channel": "其实只是在想下一餐该吃什么"
     },
     {
-      "id": "1399277354697883739",
-      "content": "pickman the ||twinkman|| <:pray:1356053116260454534>",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper"
+      "id": "1399235344393830525",
+      "channel_id": "1131839817982947429",
+      "content": "我砸了幾百抽兩隻夫人抽不到神父\n交出你的神父",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399404733910880349",
+      "id": "1399258478740111372",
+      "channel_id": "1131839817982947429",
+      "content": "我還他媽溢出一張虔誠",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399327505646616687",
+      "channel_id": "1131839817982947429",
+      "content": "4.9k生命值（",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399366766626344990",
+      "channel_id": "1131839817982947429",
+      "content": "感覺觸傷也沒有高到哪裡去……",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399423992338583615",
+      "channel_id": "1131839817982947429",
+      "content": "一起當囤囤鼠🥹",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399215582594994206",
+      "channel_id": "1131839817982947429",
+      "content": "小號抽個3+3 羊媽噴了300-400流光 我是什麼很賤的人嗎🥺",
+      "author": "taayoui",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399215948178919444",
+      "channel_id": "1131839817982947429",
+      "content": "我血链3个210抽",
+      "author": "sense25.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399239446892908564",
+      "channel_id": "1131839817982947429",
+      "content": "我就有時間啃啃眼睛了",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399385488518807663",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 2,
-      "channel": "✅「已回答」希萊斯特的觸腕傷害出錯了"
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399386872328884296",
-      "content": "Thank you for the breakfast <:bow:1356053037159944473> <:bow:1356053037159944473",
-      "author": "mount_fisherman",
-      "reactions": 1,
-      "channel": "Modern AU Goliath"
-    },
-    {
-      "id": "1399259403710107741",
-      "content": "我在講A你在講B",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1399338923682959380",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」Bug report"
-    },
-    {
-      "id": "1399345524439515206",
-      "content": "When you borrowed the new doresain skin it doesn't show in the team lineup",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "✅「Answered」Preview skin bugged"
-    },
-    {
-      "id": "1399231960055939148",
-      "content": "🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda soulforge bug"
-    },
-    {
-      "id": "1399340173468368948",
-      "content": "Спасибо за обратную связь, мы поищем причину❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг при описании карты на русском языке."
-    },
-    {
-      "id": "1399245030488674405",
-      "content": "После обновления все работает как нужно. Можно закрыть тему ❤️<:goodjob2:1356053",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг \"увеличение для просмотра карты\""
-    },
-    {
-      "id": "1399276884696760420",
-      "content": "Thank you!",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "✅「Answered」bug - stage 3-4 arc 2 text error"
-    },
-    {
-      "id": "1399310715533398076",
-      "content": "yeah I didn't see that\nhabit took over reading\nsorry",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "OVEREXALTING TULU"
+      "id": "1399411215754596524",
+      "channel_id": "1131839817982947429",
+      "content": "我原视就给了栗子三个",
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

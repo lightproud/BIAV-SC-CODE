@@ -1,24 +1,37 @@
 {
   "date": "2025-07-13",
-  "messages": 104,
-  "unique_authors": 3,
-  "reactions_total": 50,
-  "attachments": 10,
+  "messages": 368,
+  "unique_authors": 19,
+  "reactions_total": 87,
+  "attachments": 25,
   "channel_activity": {
+    "🔸綜合討論": 264,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 6,
     "✅「已回答」如视频": 96,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "0": 10,
+    "1": 30,
+    "5": 2,
+    "7": 1,
+    "8": 28,
+    "9": 37,
+    "10": 3,
+    "11": 20,
+    "12": 77,
+    "13": 44,
+    "14": 10,
+    "18": 3,
+    "20": 4,
+    "23": 2,
     "21": 1,
-    "0": 6,
-    "16": 96,
-    "9": 1
+    "16": 96
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 213,
+    "19": 51
   },
   "top_reacted_messages": [
     {
@@ -50,6 +63,14 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
+      "id": "1393761194115858532",
+      "channel_id": "1131839817982947429",
+      "content": "超维三限定带栗子玩（）就是说福袋反正已经只起到一个进空间的作用那还不如带栗子输出呢x",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1393750230779953323",
       "content": "Very moody Doll piece \nlink to OG post: https://yuan3423.lofter.com/post/1ffed24",
       "author": "ev_6185",
@@ -57,18 +78,116 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
-      "id": "1394061975805366324",
-      "content": "I'm truly impressed wow. It's really amazing <:wow:1356053147029864518>",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "My Caecus art"
+      "id": "1393748575334301786",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1393894057306095616",
-      "content": "勞斯做飯最好吃了",
-      "author": "ena04564",
+      "id": "1393877881259556876",
+      "channel_id": "1131839817982947429",
+      "content": "我到現在都不習慣星辰篇按到覺醒後不能取消",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393883022767427665",
+      "channel_id": "1131839817982947429",
+      "content": "有時候想開鑰令會手殘按到",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393885002818650122",
+      "channel_id": "1131839817982947429",
+      "content": "不如刪除塔維吧",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393926824542736464",
+      "channel_id": "1131839817982947429",
+      "content": "我想看 <@599171149431046156> 佬賣肉",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393928309448114267",
+      "channel_id": "1131839817982947429",
+      "content": "~~那我還是繼續玩aaa和某鯊魚好了~~",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393944116517408768",
+      "channel_id": "1131839817982947429",
+      "content": "~~玩忘却的能有1？~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393945746385932358",
+      "channel_id": "1131839817982947429",
+      "content": "21更新???  意思是讓我在等8年???",
+      "author": "insomnia07763",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393823971220394077",
+      "channel_id": "1131839817982947429",
+      "content": "最早的時候好像還有bug使用了還有成就",
+      "author": "arr5721",
       "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393883300501782528",
+      "channel_id": "1131839817982947429",
+      "content": "~~許願混沌可以進其他混編組三色隊，限一角色加界域砍半(三色的情況)都好~~☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393927663248212109",
+      "channel_id": "1131839817982947429",
+      "content": "~~有可能十一月繼續延~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393928126341582969",
+      "channel_id": "1131839817982947429",
+      "content": "||那你會跟aaa一樣被我們玩喔||",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393928392600059914",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有可能他的二週目是在2.5周年",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393930052185493635",
+      "channel_id": "1131839817982947429",
+      "content": "你可以加入",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

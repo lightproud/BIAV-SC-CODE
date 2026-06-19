@@ -1,10 +1,12 @@
 {
   "date": "2025-07-07",
-  "messages": 132,
-  "unique_authors": 17,
-  "reactions_total": 849,
-  "attachments": 33,
+  "messages": 7794,
+  "unique_authors": 240,
+  "reactions_total": 1641,
+  "attachments": 419,
   "channel_activity": {
+    "🔸綜合討論": 301,
+    "🔸morimens-game-chat": 7361,
     "My Caecus art": 2,
     "*Translated & Credited* cn Fan Art Reposts": 11,
     "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 4,
@@ -27,28 +29,34 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "8": 7,
-    "14": 11,
-    "17": 5,
-    "19": 11,
-    "20": 1,
-    "4": 7,
-    "15": 4,
-    "16": 40,
-    "18": 2,
-    "3": 15,
-    "2": 8,
-    "7": 1,
-    "5": 8,
-    "6": 3,
-    "11": 1,
-    "0": 1,
-    "9": 1,
-    "10": 6
+    "1": 288,
+    "3": 479,
+    "4": 225,
+    "6": 502,
+    "8": 417,
+    "9": 160,
+    "10": 110,
+    "11": 226,
+    "12": 257,
+    "13": 262,
+    "14": 412,
+    "15": 432,
+    "16": 674,
+    "17": 586,
+    "18": 328,
+    "19": 480,
+    "22": 131,
+    "23": 200,
+    "0": 255,
+    "2": 259,
+    "5": 430,
+    "7": 176,
+    "20": 363,
+    "21": 142
   },
   "message_types": {
-    "0": 20,
-    "19": 5
+    "0": 5253,
+    "19": 2409
   },
   "top_reacted_messages": [
     {
@@ -59,11 +67,43 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1391822433367101603",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1391815771436486768 Preview：V2.",
+      "author": "game.producer.light",
+      "reactions": 90,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391826028791595120",
+      "channel_id": "1170692781216378960",
+      "content": "I think you can play with peace of mind—everything is going smoothly so far, and",
+      "author": "game.producer.light",
+      "reactions": 64,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1391692648544206870",
       "content": "",
       "author": "tachwedd_glaw",
       "reactions": 45,
       "channel": "My Caecus art"
+    },
+    {
+      "id": "1391825000671215788",
+      "channel_id": "1170692781216378960",
+      "content": "This might be achievable as early as July 21st, but potentially later. We’re pus",
+      "author": "game.producer.light",
+      "reactions": 31,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391782978299887717",
+      "channel_id": "1131839817982947429",
+      "content": "去約的稿",
+      "author": "undecember_news",
+      "reactions": 17,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1391871778984558633",
@@ -87,6 +127,22 @@
       "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
     },
     {
+      "id": "1391823932679524505",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "exaegrum",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391720328966705342",
+      "channel_id": "1131839817982947429",
+      "content": "大家好 我有满爆伤36油污 欢迎玩100408607",
+      "author": "rutsah_avhril",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1391781063017234452",
       "content": "害羞詹金真的很可愛",
       "author": "ftyannn",
@@ -94,102 +150,68 @@
       "channel": "詹金"
     },
     {
-      "id": "1391824470833893538",
-      "content": "You are a good company and your game is excellent... it's a pity there are so fe",
-      "author": ".cnork",
+      "id": "1391906767256027167",
+      "channel_id": "1131839817982947429",
+      "content": "幹你娘這遊戲是人玩的嗎",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1391875226135957504",
+      "channel_id": "1170692781216378960",
+      "content": "NO not THAT one anymore game !",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391826194562814114",
+      "channel_id": "1131839817982947429",
+      "content": "这剧情怎么老是死人",
+      "author": "frankli9028",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1391822211228373042",
+      "channel_id": "1170692781216378960",
+      "content": "holy fuc-",
+      "author": "poetonelone",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391865924654596167",
+      "channel_id": "1170692781216378960",
+      "content": "I thought it was this form of lotan this entire time🥲",
+      "author": "100bl_ueja",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391876094201954327",
+      "channel_id": "1170692781216378960",
+      "content": "i got another faint",
+      "author": "kshv0.7",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391880851704385548",
+      "channel_id": "1170692781216378960",
+      "content": "A thais in the first 12 pulls xD",
+      "author": "gabz05069",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391760198196269220",
+      "channel_id": "1131839817982947429",
+      "content": "没有那我写去了",
+      "author": "baishui9581",
       "reactions": 5,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
-    },
-    {
-      "id": "1391635935036444702",
-      "content": "我也不知道是想寫母女父女還是彌戈什麼的（好像也沒有彌戈）\n就是看到彌利亞姆的生日信有點感觸想產點東西出來\n總之就是這樣⋯⋯希望大家看得愉快",
-      "author": "unmasked0406",
-      "reactions": 5,
-      "channel": "《他們的女兒》"
-    },
-    {
-      "id": "1391789671771541535",
-      "content": "A Helot solo by the same artist, they're singlehandedly carrying the Helot fan a",
-      "author": "ev_6185",
-      "reactions": 4,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391791564451483759",
-      "content": "There's also this Helot chibi I found that has a dazed cuteness to it. \nlink to ",
-      "author": "ev_6185",
-      "reactions": 4,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391869115710439424",
-      "content": "<@1389312961574866995> It was actually hard to find quality art of Goliath in th",
-      "author": "ev_6185",
-      "reactions": 4,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391650735468580894",
-      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第11期（第38期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 4,
-      "channel": "关卡地图「融灾禁区」总览38期·星辰篇"
-    },
-    {
-      "id": "1391869857343082598",
-      "content": "Thank you so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,s",
-      "author": "chev_ron",
-      "reactions": 2,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391697903747076157",
-      "content": "嗯是本期，是我誤認為是上週五發了哈哈。這樣就沒事啦。謝謝。",
-      "author": "ev_6185",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
-    },
-    {
-      "id": "1391823411600429107",
-      "content": "Даниил ты чё",
-      "author": "jeka6670",
-      "reactions": 2,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
-    },
-    {
-      "id": "1391673001547661362",
-      "content": "忘却前夜2026新春会开始报名了，我们是忘却前夜玩家自发的同人组织，现邀请各位有相同爱好的朋友一起来参与，有意参加制作的朋友们可以进Q群报名，群号:102208",
-      "author": "tianfang5580",
-      "reactions": 2,
-      "channel": "2026忘却前夜新春会节目预告:道理剧场之误入弥大"
-    },
-    {
-      "id": "1391693111461285909",
-      "content": "https://tenor.com/view/usher-there-goes-my-baby-music-video-babygirl-mv-gif-2331",
-      "author": "prizemauv",
-      "reactions": 1,
-      "channel": "My Caecus art"
-    },
-    {
-      "id": "1391789221953405038",
-      "content": "THanks og",
-      "author": "ash2k25",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391839735156310140",
-      "content": "super cute",
-      "author": "ash2k25",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1391816840262582443",
-      "content": "延長朵兒卡池一週也可以<:hehe:1357185439089295390>",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,27 @@
 {
   "date": "2025-08-27",
-  "messages": 787,
-  "unique_authors": 35,
-  "reactions_total": 367,
-  "attachments": 75,
+  "messages": 15028,
+  "unique_authors": 350,
+  "reactions_total": 2322,
+  "attachments": 702,
   "channel_activity": {
+    "🔸morimens-game-chat": 11697,
+    "🔸剧情交流": 26,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 7,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 356,
+    "🔸phòng-chat-tiếng-việt": 35,
+    "🔸canal-español": 1436,
+    "🔸canal-português": 17,
+    "🔸ruang-obrolan-indonesia": 109,
+    "🔸ห้องสนทนาภาษาไทย": 72,
+    "🔸traphase": 249,
+    "🔸lore-chat": 60,
+    "🔸lets-count": 8,
+    "🔸team-building": 7,
+    "🔸general-chat": 35,
+    "🔸邀请码互助┊swap-invitation-codes": 115,
     "🔸綜合討論": 726,
     "🔸阵容构建": 3,
     "goliath doodle": 5,
@@ -34,33 +51,34 @@
     "因為要求要四界域，所以...": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 3,
-    "2": 22,
-    "3": 19,
-    "4": 90,
-    "5": 58,
-    "6": 89,
-    "7": 19,
-    "8": 69,
-    "9": 101,
-    "10": 57,
-    "11": 43,
-    "12": 6,
-    "13": 7,
-    "14": 80,
-    "15": 89,
-    "16": 5,
-    "17": 2,
-    "19": 1,
-    "23": 16,
-    "20": 2,
-    "21": 6,
-    "22": 1
+    "0": 596,
+    "1": 457,
+    "2": 591,
+    "3": 629,
+    "4": 666,
+    "5": 489,
+    "6": 617,
+    "7": 800,
+    "8": 691,
+    "9": 348,
+    "10": 408,
+    "11": 533,
+    "12": 464,
+    "13": 446,
+    "14": 806,
+    "15": 993,
+    "16": 663,
+    "17": 883,
+    "18": 708,
+    "19": 600,
+    "20": 496,
+    "21": 591,
+    "22": 761,
+    "23": 792
   },
   "message_types": {
-    "0": 530,
-    "19": 199
+    "19": 4729,
+    "0": 9512
   },
   "top_reacted_messages": [
     {
@@ -71,11 +89,27 @@
       "channel": "goliath doodle"
     },
     {
+      "id": "1410306197088768020",
+      "channel_id": "1300659662311526512",
+      "content": "Me volví pecesito",
+      "author": "vaimaaz",
+      "reactions": 32,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1410195499150999635",
       "content": "Time taken 9:12\nAlso sir come home pls",
       "author": "sunstopshining",
       "reactions": 28,
       "channel": "Hameln fanart"
+    },
+    {
+      "id": "1410226840869666987",
+      "channel_id": "1170692781216378960",
+      "content": "what does this even mean",
+      "author": "Deleted User",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410278172964032632",
@@ -85,11 +119,59 @@
       "channel": "Tawil Eat Clementine Wings (Dumb Request)"
     },
     {
+      "id": "1410177319712325692",
+      "channel_id": "1170692781216378960",
+      "content": "Pretty sure girls don’t exist",
+      "author": "lewyntapes",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410250135002153032",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "arisuu0604",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410316399385251953",
+      "channel_id": "1170692781216378960",
+      "content": "<@463913728103153664>",
+      "author": "twilightsparkle163163",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1410376936420675613",
       "content": "",
       "author": "yannic2112",
       "reactions": 16,
       "channel": "Get 'em! Brown!"
+    },
+    {
+      "id": "1410263276813684757",
+      "channel_id": "1170692781216378960",
+      "content": "<@1158864374291775529> <@523084324724146193> <@780305695392137258> <:Emoji_XLST_",
+      "author": "mount_fisherman",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410224170347925626",
+      "channel_id": "1170692781216378960",
+      "content": "You don't have to, I believe in you <:Emoji_AJE_M_04:1400771555939844149>",
+      "author": "sirtealot",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410406176117624903",
+      "channel_id": "1170692781216378960",
+      "content": "astra stop putting mpreg on my msgs",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410133953637126277",
@@ -99,121 +181,60 @@
       "channel": "因為要求要四界域，所以..."
     },
     {
-      "id": "1410131077288169575",
-      "channel_id": "1131839817982947429",
-      "content": "我们哈姆林也有7w2了",
-      "author": "sweet_25367",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1410225609279537223",
+      "channel_id": "1170692781216378960",
+      "content": "im more popular and better but ok",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410261553256730765",
-      "channel_id": "1131839817982947429",
-      "content": "【【忘却前夜】PVP从700到3000，只需3个半小时（直播实况）】 https://www.bilibili.com/video/BV1H2e2zTEFD/?",
-      "author": "mtyl.eth",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1410360388792619029",
+      "channel_id": "1170692781216378960",
+      "content": "What did I mean by this",
+      "author": "phonytail",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410195579203485716",
+      "id": "1410362001108111542",
+      "channel_id": "1170692781216378960",
+      "content": "yo how many of those stupud eyes do i have to kill in chapter 9",
+      "author": "67tittylover67",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410307412421775522",
+      "channel_id": "1300659662311526512",
+      "content": "De las quince copias, tres serán mensuales",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1410315753005256872",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sunstopshining",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410411802134581328",
+      "channel_id": "1170692781216378960",
+      "content": "LNRMW6N3EM",
+      "author": "spooky_penguin_",
       "reactions": 8,
-      "channel": "Hameln fanart"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410154123193749526",
-      "content": "There \"neutral\" sprites are normal but as soon as there expression changes, they",
-      "author": "omni_colon",
+      "id": "1410411811865624607",
+      "channel_id": "1170692781216378960",
+      "content": "LNRMW6N3EM",
+      "author": "spooky_penguin_",
       "reactions": 8,
-      "channel": "💭「Processing」A bug where all the characters in my game are floating heads."
-    },
-    {
-      "id": "1410161275710734378",
-      "channel_id": "1131839817982947429",
-      "content": "外加瘋狂預兆lv12",
-      "author": "cwz.io",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410130370304671794",
-      "channel_id": "1131839817982947429",
-      "content": "||校貓:免費的就是這樣||",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410180157440004098",
-      "channel_id": "1131839817982947429",
-      "content": "好  24跟船長+12了   下個換熔朵了😆",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410184401652027437",
-      "channel_id": "1131839817982947429",
-      "content": "只需要有戒指就可以難5",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410265510083301558",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410116801182044170",
-      "content": "希望可以把之前的兩個免費 (通過事件獲取) 的造物加回來！\n\n感覺除了少數喚醒體的幻夢深潛地圖 (如24和莉莉) 資源比較多，其他喚醒體的地圖都有點資源緊缺。尤",
-      "author": "cameliia._.",
-      "reactions": 5,
-      "channel": "✅「已回答」幻夢深潛體驗優化建議"
-    },
-    {
-      "id": "1410094346476453939",
-      "channel_id": "1131839817982947429",
-      "content": "||~~解包就有了但有夠難分類的~~||",
-      "author": "cwz.io",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410108234907254864",
-      "channel_id": "1131839817982947429",
-      "content": "👀",
-      "author": "corposant_1003",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410125169342550016",
-      "channel_id": "1131839817982947429",
-      "content": "幹我看成孤兒想說什麼命輪這個名字",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410130331087929465",
-      "channel_id": "1131839817982947429",
-      "content": "我的凱蒂古拉一張防禦只有370",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410161210929713254",
-      "channel_id": "1131839817982947429",
-      "content": "我應該只有熔朵滿而已",
-      "author": "cwz.io",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-08-09",
-  "messages": 6627,
+  "messages": 8154,
   "unique_authors": 175,
-  "reactions_total": 992,
-  "attachments": 290,
+  "reactions_total": 1099,
+  "attachments": 375,
   "channel_activity": {
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 35,
+    "🔸русский-канал": 349,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 657,
+    "🔸canal-português": 79,
+    "🔸ruang-obrolan-indonesia": 171,
+    "🔸ห้องสนทนาภาษาไทย": 47,
+    "🔸traphase": 99,
+    "🔸lore-chat": 2,
+    "🔸lets-count": 9,
+    "🔸team-building": 8,
+    "🔸general-chat": 37,
     "🔸綜合討論": 1060,
     "🔸morimens-game-chat": 5500,
     "Banner Priorities?": 1,
@@ -21,34 +35,34 @@
     "忘記誰點的小混帳了": 7
   },
   "hourly_activity": {
-    "1": 251,
-    "4": 184,
-    "5": 216,
-    "6": 322,
-    "7": 306,
-    "8": 150,
-    "9": 302,
-    "10": 264,
-    "11": 473,
-    "12": 489,
-    "13": 280,
-    "14": 234,
-    "15": 493,
-    "16": 264,
-    "17": 177,
-    "18": 77,
-    "19": 295,
-    "20": 394,
-    "0": 198,
-    "2": 167,
-    "3": 88,
-    "21": 277,
-    "22": 461,
-    "23": 265
+    "19": 337,
+    "20": 409,
+    "23": 424,
+    "3": 194,
+    "2": 303,
+    "9": 313,
+    "10": 284,
+    "11": 501,
+    "1": 385,
+    "8": 172,
+    "17": 259,
+    "18": 105,
+    "21": 429,
+    "22": 550,
+    "0": 229,
+    "5": 372,
+    "6": 417,
+    "12": 557,
+    "13": 302,
+    "14": 262,
+    "15": 508,
+    "4": 233,
+    "16": 299,
+    "7": 310
   },
   "message_types": {
-    "0": 4842,
-    "19": 1718
+    "19": 387,
+    "0": 1140
   },
   "top_reacted_messages": [
     {
@@ -106,6 +120,14 @@
       "channel": "来帮宣一下拉蒙娜的gk白膜"
     },
     {
+      "id": "1403769563874594899",
+      "channel_id": "1400750050208125010",
+      "content": "Pwogwess",
+      "author": "mount_fisherman",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1403680538396590091",
       "channel_id": "1170692781216378960",
       "content": "maybe if it takes too long theyll give some compensation, which i can easily see",
@@ -128,6 +150,14 @@
       "author": "frosthief",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1403659169466421288",
+      "channel_id": "1300659662311526512",
+      "content": "<@645758482305253422> cuanto gastaste en este tipo? 🐋",
+      "author": "blecnes",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1403756919533080577",
@@ -154,6 +184,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1403614714097045599",
+      "channel_id": "1300659662311526512",
+      "content": "Para que luego vengan a mi consultorio hablen de lo inseguro que se sienten prem",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1403619344407334984",
       "channel_id": "1131839817982947429",
       "content": "我前男友平常就會用這種姿勢在大街上跟我抱抱",
@@ -178,36 +216,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1403659763086135367",
-      "channel_id": "1131839817982947429",
-      "content": "英區的兄弟跟我說you make a such pretty art",
-      "author": "undecember_news",
+      "id": "1403621075132092466",
+      "channel_id": "1300659662311526512",
+      "content": "Amo la vida laboral",
+      "author": "duxadidus",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1403727058567299114",
-      "channel_id": "1131839817982947429",
-      "content": "話說這其實沒有副作用吧?  那3張本來也是多抽的 棄2也沒差  還可以棄原本自己手上的",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1403758816822038638",
-      "channel_id": "1131839817982947429",
-      "content": "但他既然堅持完了就算了",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1403713224381300777",
-      "channel_id": "1170692781216378960",
-      "content": "BRO LMFAO WHAT ??? FIRST 10 PULL FOR CAECUS TEAM",
-      "author": ".moo_rey",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     }
   ]
 }

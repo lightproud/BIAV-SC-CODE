@@ -1,10 +1,28 @@
 {
   "date": "2025-08-03",
-  "messages": 6798,
+  "messages": 8806,
   "unique_authors": 221,
-  "reactions_total": 618,
-  "attachments": 330,
+  "reactions_total": 724,
+  "attachments": 475,
   "channel_activity": {
+    "🔸剧情交流": 22,
+    "🔸相位对弈": 21,
+    "🔸课间休息闲聊": 10,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 35,
+    "🔸chaîne-française": 61,
+    "🔸русский-канал": 138,
+    "🔸phòng-chat-tiếng-việt": 10,
+    "🔸canal-español": 150,
+    "🔸canal-português": 738,
+    "🔸ruang-obrolan-indonesia": 90,
+    "🔸ห้องสนทนาภาษาไทย": 90,
+    "🔸traphase": 217,
+    "🔸lore-chat": 31,
+    "🔸lets-count": 8,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 38,
+    "🔸general-chat": 345,
     "🔸綜合討論": 809,
     "🔸阵容构建": 9,
     "🔸morimens-game-chat": 5956,
@@ -19,34 +37,34 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "0": 427,
-    "1": 250,
-    "2": 265,
-    "3": 273,
-    "4": 92,
-    "5": 178,
-    "6": 405,
-    "7": 403,
-    "8": 247,
-    "9": 349,
-    "10": 297,
-    "11": 366,
-    "12": 401,
-    "13": 391,
-    "14": 129,
-    "15": 237,
-    "16": 450,
-    "17": 284,
-    "18": 366,
-    "20": 261,
-    "21": 179,
-    "22": 87,
-    "23": 48,
-    "19": 413
+    "10": 363,
+    "11": 388,
+    "15": 458,
+    "6": 446,
+    "14": 165,
+    "19": 478,
+    "20": 350,
+    "23": 128,
+    "4": 150,
+    "13": 540,
+    "3": 303,
+    "7": 445,
+    "9": 364,
+    "12": 482,
+    "8": 260,
+    "1": 684,
+    "16": 561,
+    "22": 146,
+    "0": 639,
+    "2": 356,
+    "5": 192,
+    "17": 308,
+    "18": 410,
+    "21": 190
   },
   "message_types": {
-    "0": 4806,
-    "19": 1968
+    "0": 1578,
+    "19": 430
   },
   "top_reacted_messages": [
     {
@@ -77,6 +95,14 @@
       "author": "hexcerelle",
       "reactions": 15,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401586508284039168",
+      "channel_id": "1300659662311526512",
+      "content": "Por qué diablos no hablan",
+      "author": "shadow_20954",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1401672160950358016",
@@ -175,6 +201,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1401465403708014702",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "ice3564",
+      "reactions": 4,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1401462585802358854",
       "channel_id": "1131839817982947429",
       "content": "尼瑪 真不是給人玩的",
@@ -187,22 +221,6 @@
       "channel_id": "1170692781216378960",
       "content": "In my almost decade here. 0 lunch breaks 0 bathroom breaks at work",
       "author": "flares117",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401362890732339281",
-      "channel_id": "1170692781216378960",
-      "content": "banned. thanks",
-      "author": "craux.",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401386831194620006",
-      "channel_id": "1170692781216378960",
-      "content": "ok so",
-      "author": "arisuu0604",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }

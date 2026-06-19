@@ -1,10 +1,27 @@
 {
   "date": "2025-08-17",
-  "messages": 10415,
+  "messages": 12283,
   "unique_authors": 256,
-  "reactions_total": 1290,
-  "attachments": 433,
+  "reactions_total": 1403,
+  "attachments": 535,
   "channel_activity": {
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 52,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 6,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 246,
+    "🔸phòng-chat-tiếng-việt": 62,
+    "🔸canal-español": 454,
+    "🔸canal-português": 276,
+    "🔸ruang-obrolan-indonesia": 63,
+    "🔸ห้องสนทนาภาษาไทย": 13,
+    "🔸traphase": 597,
+    "🔸lore-chat": 31,
+    "🔸lets-count": 12,
+    "🔸team-building": 25,
+    "🔸general-chat": 25,
     "🔸綜合討論": 826,
     "🔸morimens-game-chat": 9526,
     "Clementine": 5,
@@ -33,35 +50,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 405,
-    "1": 455,
-    "2": 590,
-    "3": 642,
-    "4": 468,
-    "5": 374,
-    "6": 412,
-    "7": 345,
-    "8": 266,
-    "9": 472,
-    "10": 407,
-    "11": 673,
-    "12": 618,
-    "13": 450,
-    "14": 728,
-    "16": 213,
-    "17": 242,
-    "18": 166,
-    "19": 242,
-    "22": 245,
-    "23": 318,
-    "15": 638,
-    "20": 544,
-    "21": 502
+    "1": 479,
+    "12": 857,
+    "15": 717,
+    "19": 292,
+    "20": 627,
+    "21": 521,
+    "14": 740,
+    "5": 497,
+    "6": 432,
+    "22": 262,
+    "3": 687,
+    "8": 403,
+    "9": 690,
+    "10": 561,
+    "11": 751,
+    "13": 499,
+    "16": 297,
+    "17": 281,
+    "18": 187,
+    "23": 349,
+    "0": 426,
+    "4": 624,
+    "2": 714,
+    "7": 390
   },
   "message_types": {
-    "0": 7097,
-    "19": 3254,
-    "46": 1
+    "19": 346,
+    "0": 1522
   },
   "top_reacted_messages": [
     {
@@ -79,11 +95,27 @@
       "channel": "Clementine"
     },
     {
+      "id": "1406513662281252914",
+      "channel_id": "1300659662311526512",
+      "content": "Si no, en cuatro te ponemos",
+      "author": "duxadidus",
+      "reactions": 26,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1406657174603829369",
       "content": "https://docs.google.com/document/d/16AJ8QL4CbgSjF0NSnrJeNq39sDZiOZszcicLelfPEwI/",
       "author": "melwyn7591",
       "reactions": 18,
       "channel": "\"Questionable\" Rat comp"
+    },
+    {
+      "id": "1406772049657204817",
+      "channel_id": "1300659662311526512",
+      "content": "Ya quiero dejar mis tendenicas ludopatas sobre su banner",
+      "author": "ancientbp",
+      "reactions": 14,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1406667682006171829",
@@ -186,36 +218,20 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1406686002864586854",
+      "channel_id": "1300659662311526512",
+      "content": "La ballenita mantuvo estables los 70,000",
+      "author": "duxadidus",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1406598304048877599",
       "channel_id": "1131839817982947429",
       "content": "剩我只有1k2抽了\n输光…",
       "author": "flarinsidia",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1406607975207932034",
-      "channel_id": "1131839817982947429",
-      "content": "24什麼時候出小丑人格皮<:Emoji_24_P_11:1400771541423226971>",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1406648150000926834",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1406577942561165434",
-      "channel_id": "1170692781216378960",
-      "content": "end of sex. they will delete the reproductive frenzy game mode",
-      "author": "sleepypillow",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

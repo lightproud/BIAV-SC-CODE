@@ -1,10 +1,30 @@
 {
   "date": "2025-08-15",
-  "messages": 14388,
+  "messages": 17968,
   "unique_authors": 310,
-  "reactions_total": 3648,
-  "attachments": 533,
+  "reactions_total": 3847,
+  "attachments": 673,
   "channel_activity": {
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 8,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 71,
+    "🔸русский-канал": 127,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 415,
+    "🔸canal-português": 1419,
+    "🔸ruang-obrolan-indonesia": 582,
+    "🔸ห้องสนทนาภาษาไทย": 24,
+    "🔸traphase": 627,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 17,
+    "🔸频道建议┊server-suggestions": 7,
+    "🔸team-building": 2,
+    "🔸general-chat": 44,
+    "🔸邀请码互助┊swap-invitation-codes": 170,
     "🔸綜合討論": 2036,
     "🔸morimens-game-chat": 12135,
     "Tier List for 375-425": 2,
@@ -37,34 +57,35 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 659,
-    "1": 675,
-    "2": 599,
-    "3": 507,
-    "4": 667,
-    "5": 523,
-    "6": 574,
-    "7": 458,
-    "8": 792,
-    "9": 893,
-    "10": 729,
-    "11": 628,
-    "12": 512,
-    "13": 450,
-    "14": 758,
-    "15": 805,
-    "16": 775,
-    "17": 752,
-    "18": 581,
-    "19": 464,
-    "21": 502,
-    "23": 444,
-    "20": 285,
-    "22": 356
+    "13": 509,
+    "12": 529,
+    "7": 506,
+    "8": 1023,
+    "11": 648,
+    "9": 1042,
+    "5": 541,
+    "6": 591,
+    "16": 936,
+    "15": 1125,
+    "17": 944,
+    "18": 738,
+    "20": 475,
+    "22": 837,
+    "0": 701,
+    "14": 1022,
+    "19": 564,
+    "21": 1154,
+    "1": 709,
+    "3": 549,
+    "4": 683,
+    "10": 808,
+    "2": 652,
+    "23": 682
   },
   "message_types": {
-    "0": 8898,
-    "19": 5273
+    "19": 645,
+    "0": 2934,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -204,19 +225,20 @@
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
+      "id": "1405838723563917366",
+      "channel_id": "1405837769212821554",
+      "content": "you can't send the invite in game? we are forced to socialize? the horror",
+      "author": "jormiejormungandr",
+      "reactions": 15,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
       "id": "1405975249895555124",
       "channel_id": "1170692781216378960",
       "content": "Because our JP server is about to officially launch, our small engineering team ",
       "author": "game.producer.light",
       "reactions": 14,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1405864642265485424",
-      "content": "",
-      "author": "morimens_15",
-      "reactions": 14,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     }
   ]
 }

@@ -1,10 +1,28 @@
 {
   "date": "2025-08-31",
-  "messages": 1370,
-  "unique_authors": 40,
-  "reactions_total": 356,
-  "attachments": 132,
+  "messages": 16777,
+  "unique_authors": 330,
+  "reactions_total": 1905,
+  "attachments": 779,
   "channel_activity": {
+    "🔸morimens-game-chat": 12875,
+    "🔸剧情交流": 4,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 77,
+    "🔸deutscher-chatraum": 122,
+    "🔸chaîne-française": 21,
+    "🔸русский-канал": 400,
+    "🔸phòng-chat-tiếng-việt": 41,
+    "🔸canal-español": 617,
+    "🔸canal-português": 777,
+    "🔸ruang-obrolan-indonesia": 215,
+    "🔸ห้องสนทนาภาษาไทย": 17,
+    "🔸traphase": 84,
+    "🔸lore-chat": 69,
+    "🔸lets-count": 6,
+    "🔸team-building": 11,
+    "🔸general-chat": 3,
+    "🔸邀请码互助┊swap-invitation-codes": 67,
     "🔸綜合討論": 1205,
     "🫴💚👑🐙": 1,
     "Priority/Investment help.": 15,
@@ -33,33 +51,34 @@
     "一點拉郎": 5
   },
   "hourly_activity": {
-    "0": 65,
-    "1": 63,
-    "2": 40,
-    "3": 70,
-    "4": 57,
-    "5": 21,
-    "6": 120,
-    "7": 367,
-    "8": 70,
-    "9": 32,
-    "10": 105,
-    "11": 21,
-    "12": 75,
-    "13": 67,
-    "14": 135,
-    "15": 15,
-    "16": 7,
-    "22": 23,
-    "23": 7,
-    "17": 3,
-    "21": 5,
-    "18": 1,
-    "20": 1
+    "0": 811,
+    "1": 570,
+    "2": 887,
+    "3": 1025,
+    "4": 1194,
+    "5": 745,
+    "6": 762,
+    "7": 961,
+    "8": 363,
+    "9": 366,
+    "10": 649,
+    "11": 448,
+    "12": 393,
+    "13": 529,
+    "14": 704,
+    "15": 925,
+    "16": 862,
+    "17": 635,
+    "18": 848,
+    "19": 619,
+    "20": 457,
+    "21": 631,
+    "22": 677,
+    "23": 716
   },
   "message_types": {
-    "0": 924,
-    "19": 281
+    "19": 4867,
+    "0": 10540
   },
   "top_reacted_messages": [
     {
@@ -68,6 +87,30 @@
       "author": "rowlynt66",
       "reactions": 37,
       "channel": "🫴💚👑🐙"
+    },
+    {
+      "id": "1411760879506161665",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sanna7424",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411849173036175590",
+      "channel_id": "1300659662311526512",
+      "content": "<@280863122695258125> <@853462795676024833> <@456226577798135808> <@276521152245",
+      "author": "duxadidus",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1411761987272315064",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/writing-hot-fire-lit-gunna-gif-17747347915238583171",
+      "author": "mount_fisherman",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1411724561652908224",
@@ -85,6 +128,54 @@
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
+      "id": "1411650695353991198",
+      "channel_id": "1170692781216378960",
+      "content": "i dont have a dishwasher cuz I AM the dishwasher",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411727055581876274",
+      "channel_id": "1170692781216378960",
+      "content": "The jenkin off incident",
+      "author": "sirtealot",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411694472164540516",
+      "channel_id": "1170692781216378960",
+      "content": "WHY IS THIS GAME SO PEAK?!?",
+      "author": "swordbreak",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411704226916077619",
+      "channel_id": "1170692781216378960",
+      "content": "WT H is this???!!",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411720431781806132",
+      "channel_id": "1170692781216378960",
+      "content": "how many dupes does gelot need",
+      "author": "kezrin",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411740653016318054",
+      "channel_id": "1170692781216378960",
+      "content": "ahah so you know a bit of the process",
+      "author": "sexysneakystoat1625",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1411625333903462510",
       "channel_id": "1131839817982947429",
       "content": "我該打死我的追隨者嗎……\n說不定他會借我的「24」耶",
@@ -100,123 +191,52 @@
       "channel": "POSSES future and changes"
     },
     {
-      "id": "1411723541317025842",
-      "channel_id": "1131839817982947429",
-      "content": "能多拉一个70了（揣摩",
-      "author": "jidu1418",
+      "id": "1411545569628782603",
+      "channel_id": "1170692781216378960",
+      "content": "me",
+      "author": "arisuu0604",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411722964512014356",
-      "channel_id": "1131839817982947429",
-      "content": "额外通关狗都不打",
-      "author": "jidu1418",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1411652741981405336",
+      "channel_id": "1170692781216378960",
+      "content": "not the corpo I was hoping for",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411724077130846360",
-      "channel_id": "1131839817982947429",
-      "content": "墨菲啊，她进普池后我从三启捞到超限",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1411659446853177514",
+      "channel_id": "1170692781216378960",
+      "content": "Done",
+      "author": "kezrin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411610550500331570",
-      "content": "內有戈利亞X尤烏哈希拉郎， 只是一時興起的小短篇(T_T)一點貼貼⋯⋯\nUID:100047306\n\n—————————\n\n海水嚐起來是苦的。\n悲傷、痛苦，還有",
-      "author": "yolo_mode",
-      "reactions": 5,
-      "channel": "一點拉郎"
-    },
-    {
-      "id": "1411589275010601082",
-      "channel_id": "1131839817982947429",
-      "content": "||我不會說我第一眼看成校貓||",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411614960626434160",
-      "channel_id": "1131839817982947429",
-      "content": "杀戮尖塔",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411620354019037225",
-      "channel_id": "1131839817982947429",
-      "content": "遠看很像大雷欸",
-      "author": "undecember_news",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411622203900039181",
-      "channel_id": "1131839817982947429",
-      "content": "要借嗎 <:pray:1356053116260454534>",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411622419306774661",
-      "channel_id": "1131839817982947429",
-      "content": "新手缺金券  救救老殘窮",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411720172716429412",
-      "channel_id": "1131839817982947429",
+      "id": "1411696178004758552",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "swordbreak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411724497362485289",
-      "channel_id": "1131839817982947429",
-      "content": "三个旧时代深海老登就墨菲又亲民又好用了",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1411729912141844692",
+      "channel_id": "1170692781216378960",
+      "content": "<@964125234871545886>",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411559391043260557",
-      "channel_id": "1131839817982947429",
-      "content": "不要碰深海",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411564947590352998",
-      "channel_id": "1131839817982947429",
-      "content": "你很像什麼奇怪的推銷員",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411601406523211827",
-      "channel_id": "1131839817982947429",
-      "content": "||中區投訴他沒踢你就不錯了||",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411612574621110383",
-      "channel_id": "1131839817982947429",
-      "content": "肯定是的，198讓皮膚動\n360多觸摸特效\n680改小人模型\n960新增語音\n1280解鎖獨特繁衍狂熱劇情",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1411731867614580977",
+      "channel_id": "1170692781216378960",
+      "content": "drama fomo in a gacha community...",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

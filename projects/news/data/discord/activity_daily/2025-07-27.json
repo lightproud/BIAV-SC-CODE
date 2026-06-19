@@ -1,10 +1,11 @@
 {
   "date": "2025-07-27",
-  "messages": 94,
-  "unique_authors": 10,
-  "reactions_total": 80,
-  "attachments": 12,
+  "messages": 1155,
+  "unique_authors": 42,
+  "reactions_total": 165,
+  "attachments": 72,
   "channel_activity": {
+    "🔸綜合討論": 1061,
     "niko's silly meme arts": 1,
     "Doresain Fanart": 2,
     "Pretty boys..": 1,
@@ -25,32 +26,33 @@
     "不允許深海界域到現在還沒有一張濕衣服圖": 4
   },
   "hourly_activity": {
-    "11": 18,
-    "17": 5,
-    "16": 1,
-    "12": 2,
-    "18": 8,
-    "23": 5,
-    "10": 3,
-    "0": 6,
-    "1": 2,
-    "3": 2,
-    "4": 4,
-    "7": 4,
-    "14": 1,
-    "8": 5,
-    "19": 3,
-    "20": 3,
-    "2": 2,
-    "5": 2,
-    "6": 5,
-    "9": 5,
-    "13": 1,
-    "15": 7
+    "0": 13,
+    "1": 31,
+    "2": 15,
+    "3": 19,
+    "4": 19,
+    "5": 64,
+    "6": 65,
+    "7": 84,
+    "8": 110,
+    "9": 37,
+    "10": 203,
+    "11": 151,
+    "12": 39,
+    "13": 8,
+    "14": 66,
+    "15": 13,
+    "16": 49,
+    "17": 30,
+    "18": 88,
+    "19": 31,
+    "22": 5,
+    "23": 12,
+    "20": 3
   },
   "message_types": {
-    "19": 4,
-    "0": 12
+    "0": 835,
+    "19": 226
   },
   "top_reacted_messages": [
     {
@@ -89,6 +91,54 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398894892247421049",
+      "channel_id": "1131839817982947429",
+      "content": "怕 😰 為啥突然給兩張 今天不出門了",
+      "author": "taayoui",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398976086024523910",
+      "channel_id": "1131839817982947429",
+      "content": "命轮名字就叫狂气回充？",
+      "author": "123zhang0036",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398941975033417851",
+      "channel_id": "1131839817982947429",
+      "content": "所有認真玩忘卻的玩家都要有個+12子宮",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398942343419138169",
+      "channel_id": "1131839817982947429",
+      "content": "所有忘却男同都要至少试一次把子宫安到男人身上",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398946626428731553",
+      "channel_id": "1131839817982947429",
+      "content": "足够喂一整个界域的常驻+12了~~但是粉鱼喂满了也是吉祥物x~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399008118243065917",
+      "channel_id": "1131839817982947429",
+      "content": "这么和你说，你每期把通行证和月卡都氪了，平均下来一个角色池也就能抽个三启左右，想要抽一个超限要么额外氪要么再攒一段时间",
+      "author": "zzz12356",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1399099034286817482",
       "content": "下期角色預告-血肉聖祝之宴 • 晚禱\n出演-薩爾瓦多/索蕾爾/希洛/杜勒賽因",
       "author": "kong760",
@@ -96,81 +146,68 @@
       "channel": "堆樓-忘卻cos相關（真人注意）"
     },
     {
-      "id": "1398822298416316427",
-      "content": "埋骨地原先會先增幅25%死亡抵抗後，才由時空扭曲轉換成生命，改版後埋骨地優先級變成時空扭曲生效後才增幅25%死亡抵抗",
-      "author": "Deleted User",
+      "id": "1398871874582352053",
+      "channel_id": "1131839817982947429",
+      "content": "请问有人知道这是什么症状吗？",
+      "author": "ling_an_",
       "reactions": 2,
-      "channel": "V2.3.0.2 在线维护公告"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399105787011403877",
-      "content": "哇塞真的收米人欸",
-      "author": "ena04564",
+      "id": "1398904625792417794",
+      "channel_id": "1131839817982947429",
+      "content": "體力留給羊媽活動吧",
+      "author": "ahong0727",
       "reactions": 2,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398992301384269894",
-      "content": "没错我就是为了这个醋包的饺子",
+      "id": "1398922313956589570",
+      "channel_id": "1131839817982947429",
+      "content": "蓝色力量起到一个装饰性的作用，顺便暴击了还可以帮对面叠暴击抵抗",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398922569935093892",
+      "channel_id": "1131839817982947429",
+      "content": "我就要用我的4.5k生命力填滿那些亡靈敵人",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398934542345310259",
+      "channel_id": "1131839817982947429",
+      "content": "他在第七章的时候把学长银芯带到星辰篇复活",
       "author": "muliupan",
       "reactions": 2,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398997839614447717",
-      "content": "Oh, I love this man sm...\nGreen as tree✨️",
-      "author": "capunggaje",
-      "reactions": 1,
-      "channel": "niko's silly meme arts"
+      "id": "1398939097950851122",
+      "channel_id": "1131839817982947429",
+      "content": "像我們這些推完的只能回去砍砍樹、打打超維蛹來取樂",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399097266782076979",
-      "content": "https://discord.com/channels/1131791637933199470/1357183866183618741",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "What to do early game with rolls? Pure core."
+      "id": "1398945585255415818",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "123zhang0036",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398835880835289271",
-      "content": "And yeah, as said above, the team needs to keep a high standard and has to be he",
-      "author": "baguettesuffering",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398877113196613632",
-      "content": "不是啊，星辰篇開始後很長一段時間埋骨都是進場後+25%啊",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398879195668676608",
-      "content": "缺：\n他靈塑是寫每條觸腕攻擊時提高臨時觸傷\n優：\n回合結束因為有臨觸啥的觸腕通常會更多一點",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1399097821541568655",
-      "content": "明信片款",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
-    },
-    {
-      "id": "1399098093164695653",
-      "content": "普版A款",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
-    },
-    {
-      "id": "1398940964680241154",
-      "content": "~~溫柯爾的神秘妙妙工具~~",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1398977386036592722",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

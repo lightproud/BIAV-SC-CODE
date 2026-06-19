@@ -1,10 +1,12 @@
 {
   "date": "2025-07-01",
-  "messages": 48,
-  "unique_authors": 10,
-  "reactions_total": 59,
-  "attachments": 17,
+  "messages": 10397,
+  "unique_authors": 246,
+  "reactions_total": 888,
+  "attachments": 557,
   "channel_activity": {
+    "🔸綜合討論": 295,
+    "🔸morimens-game-chat": 10054,
     "求配隊": 4,
     "忘卻前夜OST：達芙黛爾EP·雨幕深處": 5,
     "关于氪金相关的问题。": 6,
@@ -21,23 +23,45 @@
     "混沌中毒隊🧪通關H2-12記錄與分享": 8
   },
   "hourly_activity": {
-    "10": 3,
-    "12": 1,
-    "8": 9,
-    "5": 4,
-    "7": 6,
-    "14": 2,
-    "6": 13,
-    "9": 1,
-    "21": 2,
-    "0": 1,
-    "1": 6
+    "0": 628,
+    "1": 426,
+    "2": 623,
+    "3": 474,
+    "4": 151,
+    "5": 282,
+    "7": 255,
+    "8": 464,
+    "9": 635,
+    "10": 235,
+    "11": 481,
+    "12": 902,
+    "13": 566,
+    "14": 675,
+    "15": 365,
+    "16": 260,
+    "17": 513,
+    "18": 426,
+    "19": 417,
+    "20": 247,
+    "6": 382,
+    "21": 233,
+    "22": 324,
+    "23": 433
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "19": 3911,
+    "0": 6437,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1389566432475353180",
+      "channel_id": "1170692781216378960",
+      "content": "Does anyone have recommendations for outstanding YouTubers who focus on gaming? ",
+      "author": "game.producer.light",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1389471578097455215",
       "content": "1，课题缩短周期少奖励的问题，如图，少了14天的翻倍奖励。\n2，灵核碎片大量溢出的问题，如图，今天是1号，商店刷新买完还溢出200+碎片，如果我不弃坑，这个溢出",
@@ -53,11 +77,123 @@
       "channel": "忘卻前夜OST：達芙黛爾EP·雨幕深處"
     },
     {
+      "id": "1389419571659804713",
+      "channel_id": "1131839817982947429",
+      "content": "又到了每月一号",
+      "author": "navirecorbeau",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389629606084219061",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389610637679792219",
+      "channel_id": "1131839817982947429",
+      "content": "这个是最近看到配置最低的了",
+      "author": "flarinsidia",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389562214314152026",
+      "channel_id": "1131839817982947429",
+      "content": "我们会调整兑换次数。",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389472710148620328",
+      "channel_id": "1131839817982947429",
+      "content": "<@633215996508766229> 我剛剛不小心坐到你了對不起🥺",
+      "author": "kong760",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389541711616806962",
+      "channel_id": "1131839817982947429",
+      "content": "要越用越多了",
+      "author": "lurenjiao",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389580736033722519",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389637265076129924",
+      "channel_id": "1131839817982947429",
+      "content": "米粒快生",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1389566963151536230",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "startofu_fish",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1389587628437016679",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1389600233050345542",
+      "channel_id": "1170692781216378960",
+      "content": "What are they keeping",
+      "author": "vinsette",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1389642529233702952",
+      "channel_id": "1170692781216378960",
+      "content": "me yesterday being happy for doing almost 100 dmg",
+      "author": "startofu_fish",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1389723394815299716",
+      "channel_id": "1170692781216378960",
+      "content": "Hello",
+      "author": "_kassxxdeya",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1389423794174693469",
       "content": "莉莉：提供死抗、坦傷害、回血、引爆毒（報償打擊）\n★道中扣0費報償打擊收頭有奇效\n\n熔朵：提供狂氣、回血、易傷虛弱\n★終末後讓普拉狂洗3費疊毒\n\n寧菲：沒什麼特",
       "author": "ichikaguya._52033",
       "reactions": 7,
       "channel": "混沌中毒隊🧪通關H2-12記錄與分享"
+    },
+    {
+      "id": "1389566808180396103",
+      "channel_id": "1170692781216378960",
+      "content": "Yes！",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1389477996548718663",
@@ -72,48 +208,6 @@
       "author": "taoi002",
       "reactions": 6,
       "channel": "关于氪金相关的问题。"
-    },
-    {
-      "id": "1389483545726156842",
-      "content": "支持萨摩",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "关于氪金相关的问题。"
-    },
-    {
-      "id": "1389423898394759239",
-      "content": "我是半週年入坑的玩家，當時的自選角色就是選莉莉！\n\n從開始玩就是毒隊一直線，熔朵還沒出來之前是玩深海毒（莉莉、寧菲亞、24、彌利亞姆）\n忘卻篇的時候看大佬們都是",
-      "author": "ichikaguya._52033",
-      "reactions": 2,
-      "channel": "混沌中毒隊🧪通關H2-12記錄與分享"
-    },
-    {
-      "id": "1389540872458207302",
-      "content": "100369683",
-      "author": "aaaa_00098",
-      "reactions": 1,
-      "channel": "✅「已回答」?"
-    },
-    {
-      "id": "1389501447883980893",
-      "content": "Thank you for the feedback. Players are able to unlock the corresponding voice w",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Quotes Bug? for Castor"
-    },
-    {
-      "id": "1389493281154531460",
-      "content": "This issue was fixed at 21:00 last night🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Supply box now bug"
-    },
-    {
-      "id": "1389511912986771579",
-      "content": "是的！一開始眼瞎沒注意到她的天賦，現在更正好了OuOb\n純粹的技能描述是寫100%，但因為米粒進場自己本身有帶暴傷，受到天賦效果加成影響會超過100%！\n應該是",
-      "author": "ichikaguya._52033",
-      "reactions": 1,
-      "channel": "混沌中毒隊🧪通關H2-12記錄與分享"
     }
   ]
 }

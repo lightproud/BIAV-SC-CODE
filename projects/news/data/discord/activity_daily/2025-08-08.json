@@ -1,10 +1,26 @@
 {
   "date": "2025-08-08",
-  "messages": 7097,
+  "messages": 7881,
   "unique_authors": 199,
-  "reactions_total": 1789,
-  "attachments": 281,
+  "reactions_total": 2935,
+  "attachments": 347,
   "channel_activity": {
+    "🔸课间休息闲聊": 7,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 8,
+    "🔸русский-канал": 214,
+    "🔸phòng-chat-tiếng-việt": 182,
+    "🔸canal-español": 109,
+    "🔸canal-português": 37,
+    "🔸ruang-obrolan-indonesia": 35,
+    "🔸ห้องสนทนาภาษาไทย": 51,
+    "🔸traphase": 51,
+    "🔸lore-chat": 26,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 9,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 7,
+    "🔸general-chat": 38,
     "🔸綜合討論": 1281,
     "🔸morimens-game-chat": 5774,
     "Team help": 2,
@@ -24,46 +40,45 @@
     "杜勒賽因的詳細解析！": 1,
     "克萊門汀滑鼠游標": 5,
     "我幻想的杜勒賽因加強": 2,
-    "🔸礼包码┊gift-codes": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 72,
-    "1": 173,
-    "2": 64,
-    "3": 201,
-    "4": 267,
-    "5": 138,
-    "6": 128,
-    "7": 218,
-    "8": 476,
-    "9": 604,
-    "10": 353,
-    "11": 269,
-    "12": 402,
-    "13": 526,
-    "14": 709,
-    "15": 551,
-    "16": 276,
-    "17": 277,
-    "18": 295,
-    "19": 364,
-    "20": 219,
-    "21": 170,
-    "22": 151,
-    "23": 194
+    "2": 74,
+    "7": 228,
+    "9": 646,
+    "13": 550,
+    "8": 491,
+    "10": 391,
+    "14": 778,
+    "1": 193,
+    "4": 315,
+    "12": 438,
+    "23": 260,
+    "6": 144,
+    "11": 331,
+    "15": 577,
+    "18": 326,
+    "19": 373,
+    "21": 200,
+    "22": 207,
+    "0": 85,
+    "3": 215,
+    "5": 194,
+    "16": 285,
+    "17": 348,
+    "20": 232
   },
   "message_types": {
-    "0": 5287,
-    "19": 1767,
-    "20": 1
+    "0": 584,
+    "19": 200
   },
   "top_reacted_messages": [
     {
       "id": "1403306642082234431",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 24000守密人达成礼 / DC24000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 1040,
+      "reactions": 1064,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -104,6 +119,14 @@
       "author": "undecember_news",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1403196786876616804",
+      "channel_id": "1300659662311526512",
+      "content": "Eso es cosa de ballenas",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1403380190872207471",
@@ -162,6 +185,30 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1403181698077818941",
+      "channel_id": "1300659662311526512",
+      "content": "😄 no falle, al numemo 29",
+      "author": "kryxcross",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1403356913617604629",
+      "channel_id": "1300659662311526512",
+      "content": "?????????? 10 dias",
+      "author": "blecnes",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1403404372569755680",
+      "channel_id": "1300659662311526512",
+      "content": "Diablo pero ese marco de 900$",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1403263232218632212",
       "channel_id": "1131839817982947429",
       "content": "但我剛才在做這隻",
@@ -182,38 +229,6 @@
       "channel_id": "1170692781216378960",
       "content": "Hat Liz",
       "author": "kevsalvador",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1403298124155588628",
-      "channel_id": "1170692781216378960",
-      "content": "So... i take back on my stance on ultra. Its fun",
-      "author": "drunk.biscuit",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1403317792249479259",
-      "channel_id": "1170692781216378960",
-      "content": "Close enough?",
-      "author": "eeeeeeeeseks",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1403364664292675626",
-      "channel_id": "1170692781216378960",
-      "content": "Our translator is actually from our fan community, not people we had to formally",
-      "author": "game.producer.light",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1403471099022545007",
-      "channel_id": "1170692781216378960",
-      "content": "1st time i read like 7 months to +12 caecus and got scared xD",
-      "author": "twilightsparkle163163",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

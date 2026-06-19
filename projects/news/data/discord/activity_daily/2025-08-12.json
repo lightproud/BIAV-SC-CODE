@@ -1,10 +1,26 @@
 {
   "date": "2025-08-12",
-  "messages": 10977,
+  "messages": 14141,
   "unique_authors": 228,
-  "reactions_total": 1411,
-  "attachments": 466,
+  "reactions_total": 1638,
+  "attachments": 610,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸한국어-채팅방": 63,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 48,
+    "🔸русский-канал": 269,
+    "🔸phòng-chat-tiếng-việt": 225,
+    "🔸canal-español": 640,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 278,
+    "🔸ห้องสนทนาภาษาไทย": 87,
+    "🔸traphase": 588,
+    "🔸lore-chat": 825,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 1,
+    "🔸general-chat": 104,
     "🔸綜合討論": 876,
     "🔸阵容构建": 17,
     "🔸morimens-game-chat": 9906,
@@ -27,34 +43,34 @@
     "一个大头的画": 2
   },
   "hourly_activity": {
-    "0": 455,
-    "1": 373,
-    "2": 508,
-    "3": 384,
-    "4": 273,
-    "5": 304,
-    "6": 546,
-    "7": 945,
-    "8": 818,
-    "9": 521,
-    "10": 554,
-    "11": 481,
-    "12": 496,
-    "13": 454,
-    "14": 605,
-    "15": 525,
-    "16": 588,
-    "17": 173,
-    "18": 329,
-    "19": 278,
-    "22": 296,
-    "23": 323,
-    "20": 395,
-    "21": 353
+    "0": 465,
+    "2": 641,
+    "3": 393,
+    "4": 280,
+    "7": 1130,
+    "8": 1132,
+    "12": 577,
+    "13": 557,
+    "14": 721,
+    "16": 786,
+    "17": 301,
+    "18": 551,
+    "6": 572,
+    "9": 633,
+    "10": 597,
+    "11": 668,
+    "15": 850,
+    "19": 308,
+    "20": 544,
+    "21": 627,
+    "1": 411,
+    "5": 318,
+    "22": 586,
+    "23": 493
   },
   "message_types": {
-    "0": 7465,
-    "19": 3334
+    "0": 2498,
+    "19": 666
   },
   "top_reacted_messages": [
     {
@@ -197,12 +213,12 @@
       "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
     },
     {
-      "id": "1404795551500992513",
-      "channel_id": "1170692781216378960",
-      "content": "HAmel, but cat",
-      "author": "flares117",
+      "id": "1404843047682048052",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "kevsalvador",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸general-chat"
     }
   ]
 }

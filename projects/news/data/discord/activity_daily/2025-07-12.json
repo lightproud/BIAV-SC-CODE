@@ -1,10 +1,11 @@
 {
   "date": "2025-07-12",
-  "messages": 26,
-  "unique_authors": 5,
-  "reactions_total": 59,
-  "attachments": 7,
+  "messages": 213,
+  "unique_authors": 29,
+  "reactions_total": 135,
+  "attachments": 17,
   "channel_activity": {
+    "🔸綜合討論": 187,
     "niko's silly meme arts": 2,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 6,
@@ -16,23 +17,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "15": 3,
-    "14": 3,
-    "3": 3,
+    "0": 2,
+    "1": 7,
+    "2": 1,
+    "3": 9,
+    "5": 46,
+    "6": 3,
+    "7": 6,
+    "8": 12,
+    "9": 7,
+    "10": 10,
+    "11": 17,
+    "12": 17,
+    "13": 1,
+    "14": 10,
+    "15": 14,
+    "16": 25,
+    "17": 9,
+    "18": 4,
+    "19": 4,
+    "20": 3,
+    "21": 3,
+    "23": 1,
     "4": 1,
-    "18": 1,
-    "22": 1,
-    "9": 2,
-    "19": 1,
-    "10": 1,
-    "5": 2,
-    "7": 3,
-    "8": 1,
-    "16": 4
+    "22": 1
   },
   "message_types": {
-    "0": 5,
-    "19": 4
+    "0": 138,
+    "19": 49
   },
   "top_reacted_messages": [
     {
@@ -50,11 +62,35 @@
       "channel": "niko's silly meme arts"
     },
     {
+      "id": "1393644982392328282",
+      "channel_id": "1131839817982947429",
+      "content": "复刻一下之前看到的四限定超维打蛹",
+      "author": "flarinsidia",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393532067748380744",
+      "channel_id": "1131839817982947429",
+      "content": "送大家一張圖",
+      "author": "corposant_1003",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1393599382666084412",
       "content": "摸完了一起發<:gogogo:1356053074560422118>",
       "author": "navirecorbeau",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1393400570571657318",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cwz.io",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1393599150871937199",
@@ -64,6 +100,78 @@
       "channel": ""
     },
     {
+      "id": "1393406008746840217",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jiji2404",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393608680561184850",
+      "channel_id": "1131839817982947429",
+      "content": "玩忘卻前夜本身就是一件既冷門又邪門的事情",
+      "author": "ahong0727",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393692738548928543",
+      "channel_id": "1131839817982947429",
+      "content": "哇，这游戏的双黄稀有吗？",
+      "author": "dittoqwq",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393387129631150171",
+      "channel_id": "1131839817982947429",
+      "content": "我這個雙金該笑還是該哭呢",
+      "author": "jiji2404",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393411092625096704",
+      "channel_id": "1131839817982947429",
+      "content": "拼尽全力无法战胜",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393695974584615065",
+      "channel_id": "1131839817982947429",
+      "content": "我雞肚了但是我有這個",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393466544113192961",
+      "channel_id": "1131839817982947429",
+      "content": "共感跟不上回狂真的哭死(",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393467993534763110",
+      "channel_id": "1131839817982947429",
+      "content": "醫生玩我建議是三啟以上，不然10層共感屬實有點雞肋了",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393636558816415805",
+      "channel_id": "1131839817982947429",
+      "content": "好了該把融災打完",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1393615990142537798",
       "content": "tawil die",
       "author": "nikolazuli",
@@ -71,46 +179,28 @@
       "channel": "niko's silly meme arts"
     },
     {
-      "id": "1393593879575396506",
-      "content": "thank you ^^",
-      "author": "tachwedd_glaw",
+      "id": "1393430761599799326",
+      "channel_id": "1131839817982947429",
+      "content": "那是我在b站找的",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "My Caecus art"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1393654876797665443",
-      "content": "Se presta para un futuro meme con Light, sí <:pray:1356053116260454534>",
-      "author": "duxadidus",
+      "id": "1393465950472245369",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇適性直接給20%力量拐加成有贏到(",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1393721540788490280",
-      "content": "De veras",
-      "author": "ev_6185",
+      "id": "1393466385379754054",
+      "channel_id": "1131839817982947429",
+      "content": "但凡共感多給點..",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1393545974432923658",
-      "content": "如题\n想看看蜘蛛的衣服结果这么糊，这对吗",
-      "author": "jidu1418",
-      "reactions": 1,
-      "channel": "幻衣大图能不能换画质好点的"
-    },
-    {
-      "id": "1393626111879024692",
-      "content": "蘿坦的請求\n\n你走在一條陰暗的小路中，忽然你感覺你的手被拉住，你轉過身一看，是羅坦，她表明她手癢難耐渴望與你切磋——\n\n\n選擇\n\n【切磋】經歷一場戰鬥（將「鯨躍",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
-    },
-    {
-      "id": "1393457629707108392",
-      "content": "求喚醒體克萊門汀和人類克萊門汀的立繪",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
     }
   ]
 }

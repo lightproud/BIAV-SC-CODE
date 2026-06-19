@@ -1,10 +1,12 @@
 {
   "date": "2025-07-25",
-  "messages": 314,
-  "unique_authors": 49,
-  "reactions_total": 198,
-  "attachments": 33,
+  "messages": 1121,
+  "unique_authors": 51,
+  "reactions_total": 282,
+  "attachments": 73,
   "channel_activity": {
+    "🔸綜合討論": 800,
+    "🔸阵容构建": 7,
     "Doresain Fanart": 1,
     "Wip": 1,
     "Flares' Awaker Review : Thais": 1,
@@ -35,31 +37,33 @@
     "現pa 尤烏哈希你是大明星": 1
   },
   "hourly_activity": {
-    "2": 47,
-    "8": 11,
+    "1": 7,
+    "2": 100,
+    "3": 15,
+    "4": 13,
+    "5": 17,
+    "6": 14,
+    "7": 15,
+    "8": 98,
+    "9": 75,
+    "10": 158,
+    "11": 101,
+    "12": 63,
+    "13": 123,
+    "14": 180,
+    "15": 29,
+    "16": 24,
+    "17": 37,
+    "18": 25,
+    "19": 5,
+    "20": 1,
+    "23": 16,
     "21": 1,
-    "12": 21,
-    "15": 4,
-    "17": 5,
-    "18": 4,
-    "23": 1,
-    "11": 85,
-    "13": 11,
-    "9": 29,
-    "10": 50,
-    "14": 16,
-    "16": 6,
-    "19": 3,
-    "0": 4,
-    "3": 5,
-    "1": 2,
-    "7": 5,
-    "4": 1,
-    "5": 3
+    "0": 4
   },
   "message_types": {
-    "0": 215,
-    "19": 45
+    "0": 694,
+    "19": 113
   },
   "top_reacted_messages": [
     {
@@ -119,11 +123,51 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
+      "id": "1398326694456201306",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398348706016661515",
+      "channel_id": "1131839817982947429",
+      "content": "森坪郁弥 （男）/ 谷鹿未来（女）",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398318363364823101",
       "content": "",
       "author": "_venush",
       "reactions": 7,
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398165063482736791",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398184032474234991",
+      "channel_id": "1131839817982947429",
+      "content": "⬇️不停抽限定池的成果⬇️",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398321073593909491",
+      "channel_id": "1131839817982947429",
+      "content": "沒想到5771竟然會出現在這個app中",
+      "author": "dog794",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1398264099120484383",
@@ -133,6 +177,22 @@
       "channel": "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!"
     },
     {
+      "id": "1398251000170676374",
+      "channel_id": "1131839817982947429",
+      "content": "<@1346803506316841021> 我都不知道旺達長這樣",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398352215172972636",
+      "channel_id": "1131839817982947429",
+      "content": "~~深夜捡一口双猫cp~~",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398317165358092372",
       "content": "Doresain needs different buffs to feel smoother... Like retain on his 3 cost car",
       "author": "beenax.",
@@ -140,67 +200,20 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
-      "id": "1398237770933338155",
-      "content": "老不死的",
-      "author": "ernest_heart",
+      "id": "1398353484629409823",
+      "channel_id": "1131839817982947429",
+      "content": "沒想到男守密那句台詞就讓我的耳朵誤以為是不煩躁的梅林（X",
+      "author": "magushermes",
       "reactions": 3,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398293935721287761",
-      "content": "a lot of limiteds have been added to standard so can we get their old SR wheels ",
-      "author": "_venush",
+      "id": "1398371071908118548",
+      "channel_id": "1131839817982947429",
+      "content": "你游现在还不至于和答辩比啦）",
+      "author": "flarinsidia",
       "reactions": 3,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398201793514831933",
-      "content": "過了一場最大生命還在3204",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "✅「已回答」共鳴「猩紅果實」沒有正確運作"
-    },
-    {
-      "id": "1398327735910137990",
-      "content": "No. 75\nUID: 101027230 *just saw the date, it popped notif so i thought this is n",
-      "author": "zicco_piyatat",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398358556360708280",
-      "content": "96\nUID 100901979\n\nCongratulations to the game on its anniversary. I have been pl",
-      "author": "uwulerauwu",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398235150382534740",
-      "content": "其实我倒是能理解这些加强都意在拓宽玩法和搭配。\n\n但主要是目前星辰篇数值和规则摆在这，任何不符合角色定位的小改动都显得非常多余😂",
-      "author": "xyakoto",
-      "reactions": 2,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398246630813077535",
-      "content": "but it definitely would help Goli gain more strength",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398218947123220541",
-      "content": "戈利亞潛遊第二關到底叫巨人列傳還是沉沒號角？\n而且關卡中踩事件的那一段小劇情的bgm貌似沒有被當成這個潛遊收錄的曲子之一<:neko_confused65:12",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」劇情標題錯誤"
-    },
-    {
-      "id": "1398282081506955378",
-      "content": "39",
-      "author": "tnimreppep",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-26",
-  "messages": 131,
-  "unique_authors": 18,
-  "reactions_total": 114,
-  "attachments": 14,
+  "messages": 1272,
+  "unique_authors": 44,
+  "reactions_total": 216,
+  "attachments": 49,
   "channel_activity": {
+    "🔸綜合討論": 1140,
+    "🔸阵容构建": 1,
     "Getting some Doresain fan art": 1,
     "niko's silly meme arts": 2,
     "Pretty boys..": 1,
@@ -24,26 +26,31 @@
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "5": 7,
-    "12": 5,
-    "4": 5,
-    "8": 9,
-    "14": 59,
+    "0": 3,
+    "1": 5,
+    "2": 243,
+    "3": 138,
+    "4": 31,
+    "5": 24,
+    "6": 128,
+    "7": 39,
+    "8": 15,
+    "9": 12,
+    "10": 18,
+    "11": 103,
+    "12": 103,
+    "13": 180,
+    "14": 174,
+    "15": 22,
+    "16": 8,
+    "17": 7,
     "20": 2,
-    "15": 2,
-    "16": 2,
     "19": 10,
-    "23": 7,
-    "10": 5,
-    "7": 6,
-    "1": 1,
-    "9": 5,
-    "13": 6
+    "23": 7
   },
   "message_types": {
-    "0": 13,
-    "4": 1,
-    "19": 1
+    "0": 991,
+    "19": 150
   },
   "top_reacted_messages": [
     {
@@ -68,6 +75,14 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398615189565345943",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398645751739060234",
       "content": "",
       "author": "nikolazuli",
@@ -82,11 +97,43 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398638456426467370",
+      "channel_id": "1131839817982947429",
+      "content": "100049920",
+      "author": "taayoui",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398639222641922058",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有佬可以施捨一下借我的鼠助戰",
+      "author": "corposant_1003",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398676276423692331",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398744092950663318",
       "content": "大家在意的還是這個皮膚放禮包的問題。\n從給的抽數這個角度上來說皮膚更像是一個贈品，對我來說也是如此。有沒有這個皮膚這個禮包我也會買。但是就是會有不少更在乎皮膚的",
       "author": "randomplayer852",
       "reactions": 8,
       "channel": "V2.3.0.2 在线维护公告"
+    },
+    {
+      "id": "1398519682738163712",
+      "channel_id": "1131839817982947429",
+      "content": "进行一个炫耀",
+      "author": "201225200913",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1398539766307360788",
@@ -110,6 +157,14 @@
       "channel": "Doresain \"skin\"."
     },
     {
+      "id": "1398664083959447553",
+      "channel_id": "1131839817982947429",
+      "content": "谢谢你的建议！",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398669841417633792",
       "content": "那个神人：没有那一天",
       "author": "carme.0588",
@@ -124,46 +179,28 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
-      "id": "1398689995468046427",
-      "content": "系統中勾選自動分解，不算入成就中，這已經是bug了吧?",
-      "author": "insomnia07763",
+      "id": "1398468907597299712",
+      "channel_id": "1131839817982947429",
+      "content": "終於阿",
+      "author": "cwz.io",
       "reactions": 3,
-      "channel": "💭「处理中」自動分解命輪 不能解成就"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398669039181500568",
-      "content": "I think this skin should at LEAST be released freely.",
-      "author": "phantasidreamin",
-      "reactions": 2,
-      "channel": "V2.3.0.2 在线维护公告"
+      "id": "1398498329633230898",
+      "channel_id": "1131839817982947429",
+      "content": "每次的感官就是莫名其妙上学回来，账户里面多了2000+银芯",
+      "author": "201225200913",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398769393395302536",
-      "content": "I'm afraid thise ended a while ago, just hasn't been locked yet. <:dizzy2:135608",
-      "author": "smolive_oil",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398810959866368041",
-      "content": "DO NOT TRUST BAIV. They have already let down Chinese players for a year.",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398561815025156227",
-      "content": "Plus, do we just lose the SR wheels from the other 2 characters events? \nHow wil",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "3 Reruns"
-    },
-    {
-      "id": "1398560994820751410",
-      "content": "用这个",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1398512471995846818",
+      "channel_id": "1131839817982947429",
+      "content": "然後對面反擊我哈姆林靈魂序曲+自己狂氣下去我死了",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

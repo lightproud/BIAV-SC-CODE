@@ -1,10 +1,12 @@
 {
   "date": "2025-07-18",
-  "messages": 226,
+  "messages": 945,
   "unique_authors": 62,
-  "reactions_total": 382,
-  "attachments": 55,
+  "reactions_total": 473,
+  "attachments": 76,
   "channel_activity": {
+    "🔸綜合討論": 644,
+    "🔸阵容构建": 75,
     "Tawil Fanart": 5,
     "Liz Sketch": 2,
     "Traphase gameplay mechanics. Arithmetica, hand reading, mulligan, and deck shuffle. YouTube video": 1,
@@ -24,31 +26,31 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "9": 8,
-    "2": 5,
-    "8": 5,
-    "11": 13,
-    "6": 18,
-    "7": 34,
-    "10": 6,
-    "12": 1,
-    "13": 49,
-    "14": 18,
-    "15": 3,
-    "16": 6,
+    "2": 10,
+    "3": 20,
+    "4": 67,
+    "5": 39,
+    "6": 48,
+    "7": 37,
+    "8": 21,
+    "9": 56,
+    "10": 86,
+    "11": 59,
+    "12": 53,
+    "13": 78,
+    "14": 309,
+    "15": 4,
+    "16": 10,
+    "18": 27,
+    "19": 6,
+    "20": 3,
+    "21": 1,
     "17": 9,
-    "23": 2,
-    "3": 12,
-    "4": 22,
-    "5": 10,
-    "19": 4,
-    "18": 1
+    "23": 2
   },
   "message_types": {
-    "0": 115,
-    "4": 3,
-    "19": 28,
-    "6": 1
+    "0": 601,
+    "19": 118
   },
   "top_reacted_messages": [
     {
@@ -87,6 +89,22 @@
       "channel": "Tawil Fanart"
     },
     {
+      "id": "1395777359969390635",
+      "channel_id": "1131839817982947429",
+      "content": "☝️",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395875848292274187",
+      "channel_id": "1131839817982947429",
+      "content": "給各位看兩個104🥹\n~~什麼時候湊齊114514~~",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1395808509823549501",
       "content": "①融灾吃满核心奖励需要400分是认真的吗（真的觉得之前能打375的队伍还能在多出5队打相同难度吗，多打5队的设定根本起不到所谓的减负，或者说其实就是专门这样设计",
       "author": "chunjuyi",
@@ -99,6 +117,14 @@
       "author": "game.producer.light",
       "reactions": 6,
       "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
+    },
+    {
+      "id": "1395776406306164939",
+      "channel_id": "1131839817982947429",
+      "content": "被穷笑了。",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1395590132232618095",
@@ -122,6 +148,38 @@
       "channel": "24's Birthday"
     },
     {
+      "id": "1395592079559888967",
+      "channel_id": "1131839817982947429",
+      "content": "~~今天真是一個美好的日子。 鳥兒在歌唱，花兒在綻放。 在這樣的日子裡，像你這樣的守密人... 就該在我肚子裡。~~",
+      "author": "undecember_news",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395649029974528040",
+      "channel_id": "1131839817982947429",
+      "content": "阿遙只教打法而已後面我自己凹的",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395778298516213862",
+      "channel_id": "1131839817982947429",
+      "content": "珊是老婆 奧吉爾是自己生的兒子 sp墨菲是自己生的女兒",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395778615492214894",
+      "channel_id": "1131839817982947429",
+      "content": "讓阿宏生出墨菲",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1395658359176302633",
       "content": "~~找尤乌哈希和阿格里帕帮忙<:thinking2:1356053172065534153> 他俩前阵子饿得天天夜潜学校后厨哩~~",
       "author": "morimensstaff01",
@@ -140,55 +198,6 @@
       "content": "晚一些。",
       "author": "game.producer.light",
       "reactions": 3,
-      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
-    },
-    {
-      "id": "1395758098781831249",
-      "content": "守密人你好：\n       弥萨格大学预计于7月21日08:00~11:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，补",
-      "author": "morimensstaff02",
-      "reactions": 3,
-      "channel": "V2.3.0.0 停服维护公告"
-    },
-    {
-      "id": "1395657089409617968",
-      "content": "Yummy <:huh1:1356053088552747141>",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395658341161897984",
-      "content": "<:cry3:1356082134447558748>",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395658823389286462",
-      "content": "❤️",
-      "author": "iibenigml1588",
-      "reactions": 2,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395765154930753646",
-      "content": "poor castor",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395616264508014612",
-      "content": "帶不帶都沒差的那種",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
-    },
-    {
-      "id": "1395618776472358922",
-      "content": "看來必須委託更多校貓的nsfw創作來激勵腦缸",
-      "author": "ernest_heart",
-      "reactions": 2,
       "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
     }
   ]

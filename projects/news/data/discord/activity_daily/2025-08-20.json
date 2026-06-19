@@ -1,10 +1,28 @@
 {
   "date": "2025-08-20",
-  "messages": 11493,
-  "unique_authors": 281,
-  "reactions_total": 1457,
-  "attachments": 477,
+  "messages": 15700,
+  "unique_authors": 682,
+  "reactions_total": 1884,
+  "attachments": 653,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸日本語チャンネル": 281,
+    "🔸한국어-채팅방": 33,
+    "🔸deutscher-chatraum": 14,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 560,
+    "🔸phòng-chat-tiếng-việt": 246,
+    "🔸canal-español": 654,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 324,
+    "🔸ห้องสนทนาภาษาไทย": 39,
+    "🔸traphase": 345,
+    "🔸lore-chat": 16,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 22,
+    "🔸general-chat": 798,
+    "🔸邀请码互助┊swap-invitation-codes": 775,
     "🔸綜合討論": 852,
     "🔸阵容构建": 5,
     "🔸morimens-game-chat": 10549,
@@ -44,34 +62,35 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "0": 213,
-    "1": 571,
-    "2": 613,
-    "3": 491,
-    "5": 669,
-    "6": 325,
-    "7": 267,
-    "8": 183,
-    "9": 413,
-    "10": 506,
-    "11": 303,
-    "12": 277,
-    "13": 388,
-    "14": 648,
-    "15": 830,
-    "16": 288,
-    "17": 470,
-    "18": 463,
-    "19": 604,
-    "20": 604,
-    "21": 663,
-    "22": 638,
-    "23": 800,
-    "4": 266
+    "9": 511,
+    "2": 1049,
+    "3": 758,
+    "4": 424,
+    "5": 1010,
+    "6": 630,
+    "7": 549,
+    "8": 417,
+    "10": 666,
+    "11": 449,
+    "12": 417,
+    "13": 494,
+    "14": 772,
+    "15": 979,
+    "17": 585,
+    "18": 625,
+    "19": 848,
+    "20": 765,
+    "21": 745,
+    "22": 671,
+    "23": 1008,
+    "16": 377,
+    "0": 288,
+    "1": 663
   },
   "message_types": {
-    "0": 7739,
-    "19": 3667
+    "0": 3476,
+    "19": 730,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -96,6 +115,14 @@
       "channel": "Cryptcur's Gallery"
     },
     {
+      "id": "1407551677464051746",
+      "channel_id": "1300659436804640788",
+      "content": "Hi, everyone can share invitation codes on this channel👉 👉 👉 https://discord.com",
+      "author": "morimensstaff01",
+      "reactions": 38,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1407633896090112053",
       "content": "<@1298268532017991702>💐",
       "author": "morimensstaff01",
@@ -108,6 +135,14 @@
       "author": "aurora3981",
       "reactions": 17,
       "channel": "Detailed Damage Formula Graphic"
+    },
+    {
+      "id": "1407553135722889257",
+      "channel_id": "1405837769212821554",
+      "content": "Please share the invitation code here, not on the Japanese chat channel😸 @everyo",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     },
     {
       "id": "1407557358808338562",
@@ -123,6 +158,14 @@
       "author": "morimensstaff01",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1407552840175456366",
+      "channel_id": "1300659436804640788",
+      "content": "https://tenor.com/view/reading-sign-cant-stop-me-no-one-can-stop-me-gif-13921932",
+      "author": "sins_snowlake",
+      "reactions": 12,
+      "channel": "🔸日本語チャンネル"
     },
     {
       "id": "1407528507634094101",
@@ -141,6 +184,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1407552548776185877",
+      "channel_id": "1300659436804640788",
+      "content": "<@484399449255182336><@585393986118615051><@276035414123610112><@276035414123610",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1407821632311132230",
+      "channel_id": "1300659603993923644",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 10,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1407557028825530491",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -156,6 +215,22 @@
       "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
+      "id": "1407554004191412285",
+      "channel_id": "1300659436804640788",
+      "content": "We have created a channel specifically for sharing invitation codes 👉 https://di",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1407821750896689333",
+      "channel_id": "1300659662311526512",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1407791982436286484",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -164,67 +239,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1407693621163069594",
-      "content": "",
-      "author": "cryptcur",
+      "id": "1407553308939256071",
+      "channel_id": "1405837769212821554",
+      "content": "is there a reason to mass share them?",
+      "author": "camillionaire_.",
       "reactions": 7,
-      "channel": "Cryptcur's Gallery"
-    },
-    {
-      "id": "1407524443269369950",
-      "channel_id": "1170692781216378960",
-      "content": "https://x.com/atsukimasahiro/status/1957806871705743398?t=vzT5_XyGKE70_JcnrLqzmQ",
-      "author": "kevsalvador",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1407573405657464953",
-      "channel_id": "1170692781216378960",
-      "content": "I thought this was silly.. 2 tulu",
-      "author": "iv_dog",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1407783494481875005",
-      "channel_id": "1170692781216378960",
-      "content": "it's to help you get faster breeding frenzy",
-      "author": "joker_0108",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1407801653200945353",
-      "channel_id": "1170692781216378960",
-      "content": "Did they removed the translator feature?",
-      "author": "moyashi0672",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1407635728133001256",
-      "channel_id": "1131839817982947429",
-      "content": "給各位看超整齊的觸腕傷害😭",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1407656023363293238",
-      "channel_id": "1131839817982947429",
-      "content": "怎么这样<:processing:1357185814567718963>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1407766292848578722",
-      "channel_id": "1131839817982947429",
-      "content": "給各位看整齊的180抽",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     }
   ]
 }

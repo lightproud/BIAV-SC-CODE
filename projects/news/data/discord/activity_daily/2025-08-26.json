@@ -1,10 +1,28 @@
 {
   "date": "2025-08-26",
-  "messages": 590,
-  "unique_authors": 33,
-  "reactions_total": 447,
-  "attachments": 66,
+  "messages": 14069,
+  "unique_authors": 391,
+  "reactions_total": 2012,
+  "attachments": 714,
   "channel_activity": {
+    "🔸morimens-game-chat": 11270,
+    "🔸晒卡分享": 5,
+    "🔸课间休息闲聊": 5,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 12,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 688,
+    "🔸phòng-chat-tiếng-việt": 83,
+    "🔸canal-español": 597,
+    "🔸canal-português": 171,
+    "🔸ruang-obrolan-indonesia": 236,
+    "🔸ห้องสนทนาภาษาไทย": 42,
+    "🔸traphase": 112,
+    "🔸lore-chat": 34,
+    "🔸lets-count": 4,
+    "🔸team-building": 18,
+    "🔸general-chat": 37,
+    "🔸邀请码互助┊swap-invitation-codes": 156,
     "🔸綜合討論": 536,
     "🔸阵容构建": 1,
     "tawil": 2,
@@ -29,32 +47,34 @@
     "託乎瓦波之夢": 1
   },
   "hourly_activity": {
-    "0": 9,
-    "1": 10,
-    "2": 8,
-    "3": 66,
-    "4": 70,
-    "5": 127,
-    "6": 10,
-    "7": 17,
-    "8": 59,
-    "9": 38,
-    "10": 24,
-    "11": 42,
-    "12": 58,
-    "13": 8,
-    "14": 12,
-    "15": 4,
-    "18": 3,
-    "19": 11,
-    "20": 4,
-    "22": 6,
-    "17": 3,
-    "21": 1
+    "0": 615,
+    "1": 544,
+    "2": 535,
+    "3": 548,
+    "4": 626,
+    "5": 500,
+    "6": 572,
+    "7": 450,
+    "8": 637,
+    "9": 538,
+    "10": 416,
+    "11": 414,
+    "12": 467,
+    "13": 625,
+    "14": 575,
+    "15": 776,
+    "16": 718,
+    "17": 784,
+    "18": 854,
+    "19": 729,
+    "20": 538,
+    "21": 487,
+    "22": 460,
+    "23": 661
   },
   "message_types": {
-    "0": 377,
-    "19": 160
+    "0": 9080,
+    "19": 4399
   },
   "top_reacted_messages": [
     {
@@ -100,11 +120,75 @@
       "channel": "doodles"
     },
     {
+      "id": "1409810689756758097",
+      "channel_id": "1170692781216378960",
+      "content": "guys",
+      "author": "69lzrjn69",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409811490000863306",
+      "channel_id": "1170692781216378960",
+      "content": "gacha gamer can't read, don't expect them to spell either",
+      "author": "wolfierce",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409822660149514341",
+      "channel_id": "1170692781216378960",
+      "content": "But dont worry guys.We keep game alive for f2p friends xD",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1409821028594614302",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：凯蒂古拉EP·烈火的葬礼，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": "忘却前夜OST：凯蒂古拉EP·烈火的葬礼"
+    },
+    {
+      "id": "1409824529907187774",
+      "channel_id": "1170692781216378960",
+      "content": "From Jynn",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409830744829984768",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lewyntapes",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409947510470086676",
+      "channel_id": "1170692781216378960",
+      "content": "Bring back something classically like mpreg",
+      "author": ".shwqa",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409951965881958521",
+      "channel_id": "1170692781216378960",
+      "content": "E4 = OE spread the word",
+      "author": "lotan_045",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409965282528854087",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone CORPO +12 OR DONT EVEN BOTHER PLAYING 😆",
+      "author": "ackadio",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1409897762790838353",
@@ -114,100 +198,36 @@
       "channel": "✅ 「已回答」克珀珊特天赋加強"
     },
     {
-      "id": "1409720642290581627",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
+      "id": "1409858126412251219",
+      "channel_id": "1170692781216378960",
+      "content": "Look at this gold I found in past messages",
+      "author": "mount_fisherman",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409886876063633429",
-      "channel_id": "1131839817982947429",
-      "content": "~~缺錢 都沒錢了~~",
-      "author": "insomnia07763",
+      "id": "1409860156463906857",
+      "channel_id": "1170692781216378960",
+      "content": "If a caro guy generates an embryo that's mpreg",
+      "author": "awethur",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409700335760707696",
-      "channel_id": "1131839817982947429",
-      "content": "吃了两個",
-      "author": "corposant_1003",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1409860424890978375",
+      "channel_id": "1170692781216378960",
+      "content": "proof of thais entering you and putting her seed in you",
+      "author": "kezrin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409747431444451423",
-      "channel_id": "1131839817982947429",
-      "content": "別人裝菜都沒事 永和裝菜就被喊閉嘴   那一定很強吧！",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409760523842752643",
-      "channel_id": "1131839817982947429",
-      "content": "這就是哈姆林嗎？ 神祕靈感人……<:processing:1357185814567718963>",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409909067492753592",
-      "channel_id": "1131839817982947429",
-      "content": "凹完跑路（）这周都不想碰深潜了x",
-      "author": "flarinsidia",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409779291994198028",
-      "channel_id": "1131839817982947429",
-      "content": "~~我选择不用血希~~",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409801933606359082",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409738245390209150",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409747065436766269",
-      "channel_id": "1131839817982947429",
-      "content": "原来我是新手",
-      "author": "dittoqwq",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409754189013450843",
-      "channel_id": "1131839817982947429",
-      "content": "我買的初始號 實際天數只有遊玩16天🥹",
-      "author": "quackdayo",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1409772411204800602",
-      "channel_id": "1131839817982947429",
-      "content": "我主玩的是血超",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1409956992013045944",
+      "channel_id": "1170692781216378960",
+      "content": "Pls <:wish:1356084702468899117> k<:wish:1356084702468899117> y<:wish:13560847024",
+      "author": "fischperch",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-24",
-  "messages": 99,
-  "unique_authors": 13,
-  "reactions_total": 1148,
-  "attachments": 16,
+  "messages": 457,
+  "unique_authors": 37,
+  "reactions_total": 1221,
+  "attachments": 43,
   "channel_activity": {
+    "🔸綜合討論": 357,
+    "🔸阵容构建": 1,
     "Thais Warm up": 1,
     "A Song of Blood and Hunger (Uvhash Morimens Fanfic)": 1,
     "My Morimens Gallery": 3,
@@ -30,29 +32,32 @@
     "1305430084420898868": 5
   },
   "hourly_activity": {
-    "9": 7,
-    "4": 25,
-    "10": 15,
-    "6": 7,
-    "7": 1,
-    "0": 7,
-    "13": 4,
-    "14": 3,
-    "23": 1,
-    "16": 3,
+    "0": 14,
+    "1": 16,
+    "2": 8,
+    "3": 31,
+    "4": 29,
+    "5": 16,
+    "6": 12,
+    "7": 11,
+    "8": 39,
+    "9": 18,
+    "10": 18,
+    "12": 5,
+    "13": 29,
+    "14": 90,
+    "15": 88,
+    "16": 15,
+    "19": 2,
+    "20": 1,
+    "22": 3,
+    "23": 3,
     "17": 3,
-    "1": 4,
-    "5": 2,
-    "3": 4,
-    "2": 4,
-    "12": 1,
-    "11": 6,
-    "22": 1,
-    "15": 1
+    "11": 6
   },
   "message_types": {
-    "19": 6,
-    "0": 36
+    "0": 295,
+    "19": 63
   },
   "top_reacted_messages": [
     {
@@ -91,6 +96,30 @@
       "channel": "Doresain x you fanfic 18+"
     },
     {
+      "id": "1397816036182724739",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397876560643489845",
+      "channel_id": "1131839817982947429",
+      "content": "固定後要打完王或精英怪才會改變（不知道有沒有改）\n建議要刷的話最好不要自己退出撐幾回合被打死再退\n自己退出好像有刷新上限會固定造物3還是5次忘了\n但也可以反向利",
+      "author": "wild_pansy",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397966429537435759",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1397795611293519882",
       "content": "The issue with Ouroboros Codex has been fixed, and any rewards you did not recei",
       "author": "morimensstaff01",
@@ -126,6 +155,14 @@
       "channel": "杜勒赛因x你 18+"
     },
     {
+      "id": "1397872925058531358",
+      "channel_id": "1131839817982947429",
+      "content": "換裝偷偷潛入校園",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1397883869037985853",
       "content": "",
       "author": "lowtownnivn",
@@ -140,60 +177,36 @@
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
-      "id": "1397876025421070456",
-      "content": "<:sakoneBow:1298330601706754128> i do a random drawing before getting to commiss",
-      "author": "rumbyy_",
+      "id": "1397778238146875392",
+      "channel_id": "1131839817982947429",
+      "content": "https://youtu.be/YuHKgxVUdt4?si=cJPoPBrA4kV_sUyv",
+      "author": "0.0._.0_0.",
       "reactions": 3,
-      "channel": "Thais Warm up"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397803601719726101",
-      "content": "",
-      "author": "fuckupa2",
+      "id": "1397913593680232488",
+      "channel_id": "1131839817982947429",
+      "content": "開打",
+      "author": "arthasiv",
       "reactions": 3,
-      "channel": "fuckupatoo's morimens fanfics"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397743939200749750",
-      "content": "Factual clarification: Most of the first three chapters have already been re-tra",
-      "author": "game.producer.light",
+      "id": "1397945087606132776",
+      "channel_id": "1131839817982947429",
+      "content": "綠狗",
+      "author": "ernest_heart",
       "reactions": 3,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1397801657953157131",
-      "content": "AHHHH THANK YOUUUUUU, hope i can deliver more like this in the future as well...",
-      "author": "fuckupa2",
-      "reactions": 2,
-      "channel": "fuckupatoo's morimens fanfics"
-    },
-    {
-      "id": "1397807696786493542",
-      "content": "MORIMENS DEV TEAM, GIVE ME MORIMENS MERCHANDISE AND MY LIFE IS YOURS <:pray:1356",
-      "author": "mushiware",
-      "reactions": 2,
-      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
-    },
-    {
-      "id": "1397793019121635400",
-      "content": "there is a feedback thread here in the discord https://discord.com/channels/1131",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
-    },
-    {
-      "id": "1397798182536085545",
-      "content": "I don’t have but when I read the warning, it says Helot 😦",
-      "author": "bert3",
-      "reactions": 2,
-      "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
-    },
-    {
-      "id": "1397883857021177986",
-      "content": "",
-      "author": "lowtownnivn",
-      "reactions": 1,
-      "channel": "My Morimens Gallery"
+      "id": "1397949770693349518",
+      "channel_id": "1131839817982947429",
+      "content": "剩我是爐主了",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

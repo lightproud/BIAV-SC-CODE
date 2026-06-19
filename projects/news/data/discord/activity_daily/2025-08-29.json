@@ -1,10 +1,29 @@
 {
   "date": "2025-08-29",
-  "messages": 1054,
-  "unique_authors": 40,
-  "reactions_total": 354,
-  "attachments": 123,
+  "messages": 11874,
+  "unique_authors": 331,
+  "reactions_total": 1314,
+  "attachments": 611,
   "channel_activity": {
+    "🔸morimens-game-chat": 8590,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 27,
+    "🔸한국어-채팅방": 367,
+    "🔸chaîne-française": 41,
+    "🔸русский-канал": 362,
+    "🔸phòng-chat-tiếng-việt": 141,
+    "🔸canal-español": 733,
+    "🔸canal-português": 55,
+    "🔸ruang-obrolan-indonesia": 103,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 148,
+    "🔸lore-chat": 52,
+    "🔸lets-count": 11,
+    "🔸team-building": 6,
+    "🔸general-chat": 36,
+    "🔸邀请码互助┊swap-invitation-codes": 88,
     "🔸綜合討論": 912,
     "Tulu doodling": 1,
     "goliath doodle": 1,
@@ -46,34 +65,34 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 35,
-    "2": 69,
-    "3": 57,
-    "4": 22,
-    "5": 55,
-    "6": 2,
-    "7": 89,
-    "8": 108,
-    "9": 42,
-    "10": 38,
-    "11": 83,
-    "12": 25,
-    "13": 63,
-    "14": 220,
-    "15": 23,
-    "16": 11,
-    "17": 60,
-    "18": 38,
-    "19": 3,
-    "20": 2,
-    "22": 1,
-    "23": 2,
-    "21": 4
+    "0": 316,
+    "1": 247,
+    "2": 496,
+    "3": 455,
+    "4": 616,
+    "5": 435,
+    "6": 579,
+    "7": 596,
+    "8": 681,
+    "9": 969,
+    "10": 422,
+    "11": 542,
+    "12": 562,
+    "13": 674,
+    "14": 776,
+    "15": 436,
+    "16": 499,
+    "17": 659,
+    "18": 528,
+    "19": 313,
+    "20": 485,
+    "21": 235,
+    "22": 96,
+    "23": 257
   },
   "message_types": {
-    "0": 723,
-    "19": 189
+    "0": 7918,
+    "19": 2902
   },
   "top_reacted_messages": [
     {
@@ -126,6 +145,14 @@
       "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
     },
     {
+      "id": "1411133829938413680",
+      "channel_id": "1170692781216378960",
+      "content": "hi losers!",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1411041196016668702",
       "content": "Alright then… what’s coming next is… (gets muffled by other devs)",
       "author": "game.producer.light",
@@ -139,6 +166,38 @@
       "author": "insomnia07763",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1410919338466087042",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "anphans371",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411003727543926834",
+      "channel_id": "1170692781216378960",
+      "content": "“should” mean i am SUPPOSE TO BE THE RIGHT GENDER WHICH IS A WOMAN",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411082559453925457",
+      "channel_id": "1170692781216378960",
+      "content": "hang on\ni'm not done yet",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411083803451068518",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410909737570144256",
@@ -162,65 +221,28 @@
       "channel": "📜V2.3.1 版本前瞻┊ Version Outlook"
     },
     {
-      "id": "1410863392666816542",
-      "channel_id": "1131839817982947429",
-      "content": "常駐池圖魯要是抽到超限你帳號也差不多廢了",
-      "author": "ernest_heart",
+      "id": "1410878080628691054",
+      "channel_id": "1170692781216378960",
+      "content": "WELL THAT JUST HAPPENED!",
+      "author": "jack0lantern21",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410891404439322645",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "0.0._.0_0.",
+      "id": "1411004054351515669",
+      "channel_id": "1170692781216378960",
+      "content": "I AM A WOMAN",
+      "author": "arisuu0604",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410911241798553631",
-      "content": "畫了不賣\n心胸狹隘",
-      "author": "void_1546.",
+      "id": "1411004224443125892",
+      "channel_id": "1170692781216378960",
+      "content": "WHY MPREG REACTIONS ON ME",
+      "author": "arisuu0604",
       "reactions": 6,
-      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
-    },
-    {
-      "id": "1411043708509491230",
-      "channel_id": "1131839817982947429",
-      "content": "~~難度都降兩次了~~",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411006455364194534",
-      "content": "簡單來說\n莉莉天賦表示獲得的忍耐量提升\n莉莉超限表示獲得等同最大生命值的忍耐\n那麼莉莉超限獲得的忍耐是否會受到天賦的影響而變高呢\n目前是不會受到天賦影響\n但還是",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問"
-    },
-    {
-      "id": "1410946105599983667",
-      "content": "扣扣扣——\n\n“請進，門沒鎖。”\n守密人推門而入，印入眼簾的是明亮寬敞的房間和落地窗邊擺著的圓桌。\n前些時候墨菲隨意向守密人所提出的邀約，而今日，正是她所謂的時",
-      "author": "void_1546.",
-      "reactions": 5,
-      "channel": "墨菲的下午茶時間"
-    },
-    {
-      "id": "1410856418478784534",
-      "channel_id": "1131839817982947429",
-      "content": "不喜歡打雷婭\n好硬🥺",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1410899487014256652",
-      "channel_id": "1131839817982947429",
-      "content": "抬手不是抱歉，是老弟你还得练吗",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

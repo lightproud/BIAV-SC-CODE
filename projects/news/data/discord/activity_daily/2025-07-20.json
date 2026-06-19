@@ -1,10 +1,12 @@
 {
   "date": "2025-07-20",
-  "messages": 38,
-  "unique_authors": 8,
-  "reactions_total": 38,
-  "attachments": 10,
+  "messages": 285,
+  "unique_authors": 33,
+  "reactions_total": 117,
+  "attachments": 29,
   "channel_activity": {
+    "🔸綜合討論": 245,
+    "🔸阵容构建": 2,
     "Wanda Sketch": 1,
     "Not even a single raw meat left": 1,
     "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 7,
@@ -20,23 +22,31 @@
     "1390375103707218041": 5
   },
   "hourly_activity": {
-    "20": 2,
-    "23": 1,
-    "11": 8,
-    "13": 2,
-    "16": 3,
-    "10": 3,
-    "15": 4,
-    "17": 2,
-    "3": 4,
-    "5": 3,
-    "2": 3,
-    "9": 2,
-    "18": 1
+    "1": 2,
+    "2": 7,
+    "3": 13,
+    "4": 3,
+    "5": 19,
+    "6": 20,
+    "7": 5,
+    "8": 7,
+    "9": 12,
+    "10": 14,
+    "11": 15,
+    "12": 12,
+    "13": 13,
+    "14": 70,
+    "15": 8,
+    "16": 14,
+    "17": 6,
+    "18": 7,
+    "19": 25,
+    "20": 12,
+    "23": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 3
+    "19": 25,
+    "0": 222
   },
   "top_reacted_messages": [
     {
@@ -47,11 +57,91 @@
       "channel": "Wanda Sketch"
     },
     {
+      "id": "1396482289621270548",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396487576000663592",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396373701103976550",
+      "channel_id": "1131839817982947429",
+      "content": "350懶人配隊參考 給今天才在趕ddl的",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396404366734397452",
+      "channel_id": "1131839817982947429",
+      "content": "主線朵爾分身會跟本體一起死欸（",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1396448851765760011",
       "content": "等旺达进普池之刻就是漂白旺达出之时",
       "author": "muliupan",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1396378093165482025",
+      "channel_id": "1131839817982947429",
+      "content": "其實阿宏只是喜歡開融災直播被罵而已",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396424401095888989",
+      "channel_id": "1131839817982947429",
+      "content": "哇我跟你差不多喔\n我現在期待他們每次炎上會帶來什麼驚喜",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396466932865040454",
+      "channel_id": "1131839817982947429",
+      "content": "時間限制就是上限",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396475794145939517",
+      "channel_id": "1131839817982947429",
+      "content": "# 我現在就要珊把我做成雕像",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396474419182043196",
+      "channel_id": "1131839817982947429",
+      "content": "~~子安太贵了~~",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396584638977413131",
+      "channel_id": "1131839817982947429",
+      "content": "实际上差距更大\n90级满灵塑血对比60级无灵塑血：\n60级血×1.375×1.3＝1.7875\n90级满灵塑多了78.75%血",
+      "author": "chunjuyi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1396642414713901187",
@@ -68,18 +158,52 @@
       "channel": "✅「已回答」兌換碼😭😭😭"
     },
     {
-      "id": "1396332304971989053",
-      "content": "用門扉鑰令抓到了被暈眩單位的牌\n過來我這也是鎖著的\n然後隔回解暈 還是沒辦法用<:dizzy2:1356083001926221874>",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "💭「处理中」對弈bug"
+      "id": "1396435587061383309",
+      "channel_id": "1131839817982947429",
+      "content": "<:1nekodrool:1206774407562006600>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1396519831590666261",
-      "content": "",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": ""
+      "id": "1396477444961341480",
+      "channel_id": "1131839817982947429",
+      "content": "# 好色",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396499361537724436",
+      "channel_id": "1131839817982947429",
+      "content": "先写个框架☝️🤓",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396501385759035462",
+      "channel_id": "1131839817982947429",
+      "content": "亡國現在好像是帶哈姆林",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396510261975715933",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯的觸手可以輕易的從我的喉嚨一路到我的⋯⋯，在把我四肢捆綁後呢還能輕易的捏住我的臉，強行讓我和他對視，再然後⋯⋯深情的與我親吻，他會慢慢的用一根、兩根、三根的",
+      "author": "dog794",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396584345355026463",
+      "channel_id": "1131839817982947429",
+      "content": "~~别来绿色矮子别来绿色矮子别来绿色矮子~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

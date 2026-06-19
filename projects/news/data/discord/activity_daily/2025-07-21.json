@@ -1,10 +1,12 @@
 {
   "date": "2025-07-21",
-  "messages": 154,
-  "unique_authors": 30,
-  "reactions_total": 98,
-  "attachments": 95,
+  "messages": 1530,
+  "unique_authors": 86,
+  "reactions_total": 281,
+  "attachments": 191,
   "channel_activity": {
+    "🔸綜合討論": 1373,
+    "🔸阵容构建": 3,
     "My Morimens Gallery": 1,
     "Flares' Awaker Review : Doresain.": 1,
     "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 3,
@@ -47,31 +49,33 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "12": 11,
-    "11": 5,
-    "7": 31,
-    "18": 2,
-    "9": 20,
-    "14": 9,
-    "3": 5,
-    "6": 16,
-    "10": 2,
-    "13": 11,
-    "23": 2,
-    "16": 2,
-    "17": 4,
-    "22": 1,
-    "21": 1,
-    "8": 15,
-    "5": 6,
-    "15": 1,
-    "19": 1,
-    "4": 8,
-    "2": 1
+    "1": 10,
+    "2": 55,
+    "3": 172,
+    "4": 83,
+    "5": 238,
+    "6": 116,
+    "7": 59,
+    "8": 129,
+    "9": 59,
+    "10": 50,
+    "11": 36,
+    "12": 56,
+    "13": 141,
+    "14": 90,
+    "15": 56,
+    "16": 18,
+    "17": 54,
+    "18": 24,
+    "19": 22,
+    "20": 46,
+    "21": 4,
+    "23": 11,
+    "22": 1
   },
   "message_types": {
-    "19": 5,
-    "0": 14
+    "0": 1190,
+    "19": 186
   },
   "top_reacted_messages": [
     {
@@ -96,11 +100,99 @@
       "channel": "WHERE IS THE ERICA BANNER?!!!!!!!!!!!!!"
     },
     {
+      "id": "1396900660313587814",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1396738455521726464",
       "content": "上次混池也是猛猛重复转轮，付费必得也重复转轮，这次开氪金福利随机也重复转轮。角色还重复了一个玫瑰，一个限定角色只指1个高级灵核碎片和3个普通灵核碎片真的太少了。",
       "author": "lurenjiao",
       "reactions": 8,
       "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
+    },
+    {
+      "id": "1396734613812150343",
+      "channel_id": "1131839817982947429",
+      "content": "4.1k了",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396734967396171776",
+      "channel_id": "1131839817982947429",
+      "content": "是否使深海毒死一次以獲得30黑印",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396745734820466728",
+      "channel_id": "1131839817982947429",
+      "content": "||就是说米粒生贺给我拖到不知道哪里去了是因为当时确实在搓本地化啦www||",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396687465787560009",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "qulqulli",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396699174149296230",
+      "channel_id": "1131839817982947429",
+      "content": "嘶哈嘶哈嘶哈~~馋你身子什么的~~",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396728767342182441",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396693059021963315",
+      "channel_id": "1131839817982947429",
+      "content": "👀",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396695847768428576",
+      "channel_id": "1131839817982947429",
+      "content": "新剧情的收米好炸毛喔 ||杜勒都邀请共舞了还要打人家，怎么没有陪他跳舞的选项x||",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396697343017095261",
+      "channel_id": "1131839817982947429",
+      "content": "萬能回覆",
+      "author": "ogrelam926",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1396801767848677477",
+      "channel_id": "1131839817982947429",
+      "content": "输光",
+      "author": "carme.0588",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1396730315220717689",
@@ -110,6 +202,14 @@
       "channel": "💭「处理中」你素……？"
     },
     {
+      "id": "1396740946569461831",
+      "channel_id": "1131839817982947429",
+      "content": "我就不该在角色没重的时候赞美校猫",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1396788266317119571",
       "content": "",
       "author": "morimensstaff01",
@@ -117,102 +217,20 @@
       "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
     },
     {
-      "id": "1396740070408458240",
-      "content": "Please add the montly pass back!! <:cry2:1356068126894194758>",
-      "author": "neyuse",
+      "id": "1396726037764767867",
+      "channel_id": "1131839817982947429",
+      "content": "<@861769877710700564> 這裡有你朋友",
+      "author": "ahong0727",
       "reactions": 3,
-      "channel": "V2.3.0.0 停服维护公告"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1396771126415462471",
-      "content": "\"Stun slows your thoughts.\" doesn't sound right. I'd go with something along the",
-      "author": "sophiechoice",
+      "id": "1396734943136321578",
+      "channel_id": "1131839817982947429",
+      "content": "球是这么做的吗",
+      "author": "ling_an_",
       "reactions": 3,
-      "channel": "✅「Answered」Some leftover awkward translations!"
-    },
-    {
-      "id": "1396865673807921214",
-      "content": "答案：两次牌效果相同，都是1算1抽，碟片实际上触发了四次。\n   \n   当防御牌被视为打击后，打击属性优先级更高，因此局内效果是先+2算丢1牌，再扣1算抽2牌",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "弥萨格造物学 经典问答题解析"
-    },
-    {
-      "id": "1396846464864616609",
-      "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第12期（第39期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首领\n",
-      "author": "menoctus",
-      "reactions": 3,
-      "channel": "关卡地图「融灾禁区」总览39期·星辰篇"
-    },
-    {
-      "id": "1396754353808736356",
-      "content": "",
-      "author": "rou_yi_rou",
-      "reactions": 2,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1396726935794749481",
-      "content": "BUG we will fix this soon. Sorry",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「Answered」Doresain's frenzy is playing GDoll's frenzy"
-    },
-    {
-      "id": "1396868993591017586",
-      "content": "大家好，这里是难忘今宵攻略组，本期给大家带来的是（星辰篇）第3章的流程图。\n按主线分为上、中、下3部分。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "◆第3章「餍飨」关卡流程总览·星辰篇"
-    },
-    {
-      "id": "1396825544749875231",
-      "content": "<:huh1:1356053088552747141>",
-      "author": "lipeege",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1396916505769414697",
-      "content": "Pretty <:rizz2:1356053138133614753>",
-      "author": "deification.",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1396788397812748429",
-      "content": "Thank you Goya!",
-      "author": "red_rest",
-      "reactions": 1,
-      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
-    },
-    {
-      "id": "1396788408159965274",
-      "content": "Maybe that's his aura. Been aura farming since human",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
-    },
-    {
-      "id": "1396862600402178128",
-      "content": "What the best team for herlot ?",
-      "author": "smollpasta",
-      "reactions": 1,
-      "channel": "Best team for herlot"
-    },
-    {
-      "id": "1396692304638771210",
-      "content": "The game's monthly pass is missing from the shop, has it been discontinued?",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "V2.3.0.0 停服维护公告"
-    },
-    {
-      "id": "1396846611925307452",
-      "content": "守密人你好：\n       弥萨格大学校务处将于7月21日21:40进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.3.0.1 在线维护公告"
+      "channel": "🔸綜合討論"
     }
   ]
 }

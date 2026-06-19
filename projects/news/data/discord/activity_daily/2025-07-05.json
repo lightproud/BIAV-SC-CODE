@@ -1,24 +1,46 @@
 {
   "date": "2025-07-05",
-  "messages": 13,
-  "unique_authors": 2,
-  "reactions_total": 106,
-  "attachments": 16,
+  "messages": 5972,
+  "unique_authors": 196,
+  "reactions_total": 656,
+  "attachments": 408,
   "channel_activity": {
+    "🔸綜合討論": 187,
+    "🔸morimens-game-chat": 5772,
     "My Morimens Gallery": 1,
     "*Translated & Credited* cn Fan Art Reposts": 9,
     "V2.2.3.0 停服維護公告": 1,
     "《雙人舞》": 2
   },
   "hourly_activity": {
-    "7": 1,
-    "18": 5,
-    "19": 4,
-    "16": 1,
-    "20": 2
+    "1": 383,
+    "4": 365,
+    "5": 189,
+    "6": 207,
+    "7": 145,
+    "9": 170,
+    "10": 136,
+    "12": 199,
+    "13": 281,
+    "14": 375,
+    "15": 288,
+    "17": 139,
+    "0": 238,
+    "2": 211,
+    "3": 243,
+    "8": 342,
+    "11": 86,
+    "16": 215,
+    "18": 368,
+    "19": 319,
+    "20": 272,
+    "21": 368,
+    "22": 359,
+    "23": 74
   },
   "message_types": {
-    "0": 10
+    "0": 3936,
+    "19": 2023
   },
   "top_reacted_messages": [
     {
@@ -36,6 +58,14 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
+      "id": "1391093058115862748",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "gaylordtime",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1391141198848327781",
       "content": "For the Tulu kins & cute stuff enjoyers \nlink to OG post: https://hydrogenbondin",
       "author": "ev_6185",
@@ -48,6 +78,46 @@
       "author": "ev_6185",
       "reactions": 13,
       "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391023693047791656",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mrs.doodoo",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390984456734773351",
+      "channel_id": "1131839817982947429",
+      "content": "到了耶✌️",
+      "author": "yang015148",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1391025475467477133",
+      "channel_id": "1170692781216378960",
+      "content": "he is complete",
+      "author": "gaylordtime",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390977520874029196",
+      "channel_id": "1170692781216378960",
+      "content": "We have collaborated with OPENSEA on a new free mint. Users in this server can p",
+      "author": "shakespear101",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391013839398502500",
+      "channel_id": "1170692781216378960",
+      "content": "That was intense wtf hahahah",
+      "author": "louche24",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1391139797283901624",
@@ -64,6 +134,38 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
+      "id": "1391194364998582393",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390945040364208228",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1391010181734862999",
+      "channel_id": "1170692781216378960",
+      "content": "celebratory tulu goober",
+      "author": "gaylordtime",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391022436614537277",
+      "channel_id": "1170692781216378960",
+      "content": "spoiler: Keeper is the ultimate bottom",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1391122381866795009",
       "content": "for people who like cute drawings here's 3 chibi pfps I found\nlink to OG post: h",
       "author": "ev_6185",
@@ -71,18 +173,28 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
-      "id": "1391120880221945906",
-      "content": "<@693905974750216212>  more silly drawings from the Jenkin artist for you \nlink ",
-      "author": "ev_6185",
-      "reactions": 4,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1390954386804445296",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "gaylordtime",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1391134926447050863",
-      "content": "link to OG post: ⁠https://weibo.com/7852855432/PxBHJchQB\nCreator Profile: https:",
-      "author": "ev_6185",
-      "reactions": 2,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1390967497905274901",
+      "channel_id": "1170692781216378960",
+      "content": "holy moly this is expensive",
+      "author": "gardrobe10",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1391022846884446229",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah.... update here uuuuuuh I don't know how to explain this emotional rollerco",
+      "author": "mrs.doodoo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

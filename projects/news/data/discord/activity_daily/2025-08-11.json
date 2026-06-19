@@ -1,10 +1,24 @@
 {
   "date": "2025-08-11",
-  "messages": 6100,
+  "messages": 8886,
   "unique_authors": 195,
-  "reactions_total": 934,
-  "attachments": 283,
+  "reactions_total": 1210,
+  "attachments": 391,
   "channel_activity": {
+    "🔸剧情交流": 4,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 49,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 116,
+    "🔸canal-português": 14,
+    "🔸ruang-obrolan-indonesia": 18,
+    "🔸ห้องสนทนาภาษาไทย": 48,
+    "🔸traphase": 89,
+    "🔸lore-chat": 733,
+    "🔸lets-count": 7,
+    "🔸team-building": 18,
+    "🔸general-chat": 1667,
     "🔸綜合討論": 657,
     "🔸阵容构建": 20,
     "🔸morimens-game-chat": 5341,
@@ -27,34 +41,34 @@
     "血肉喚醒體：菲尼克斯": 4
   },
   "hourly_activity": {
-    "0": 313,
-    "1": 166,
-    "2": 76,
-    "3": 80,
-    "4": 256,
-    "5": 93,
-    "6": 162,
-    "7": 229,
-    "8": 467,
-    "9": 358,
-    "10": 160,
-    "11": 420,
-    "12": 97,
-    "13": 229,
-    "14": 224,
-    "15": 358,
-    "16": 486,
-    "17": 350,
-    "18": 447,
-    "19": 265,
-    "20": 320,
-    "21": 207,
-    "22": 134,
-    "23": 203
+    "9": 385,
+    "11": 443,
+    "6": 180,
+    "8": 783,
+    "18": 485,
+    "14": 260,
+    "15": 387,
+    "16": 497,
+    "21": 229,
+    "0": 324,
+    "3": 437,
+    "7": 246,
+    "10": 196,
+    "13": 266,
+    "19": 272,
+    "20": 332,
+    "22": 168,
+    "23": 209,
+    "4": 503,
+    "5": 603,
+    "1": 453,
+    "2": 704,
+    "12": 110,
+    "17": 414
   },
   "message_types": {
-    "19": 1600,
-    "0": 4418
+    "0": 2274,
+    "19": 512
   },
   "top_reacted_messages": [
     {
@@ -168,6 +182,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1404394116074180699",
+      "channel_id": "1173463482503536711",
+      "content": "所以珊、奧瑞塔跟腐潮之傀其實是近親",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1404490442644652246",
       "channel_id": "1170692781216378960",
       "content": "She joins the party too",
@@ -203,14 +225,6 @@
       "content": "Bye for now Nymphaea",
       "author": "osakatrade",
       "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1404473017278398584",
-      "channel_id": "1170692781216378960",
-      "content": "First time trying dorsein hes so fun, but when i hear his voice i got hard, is i",
-      "author": "k3nt0t69",
-      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
   ]

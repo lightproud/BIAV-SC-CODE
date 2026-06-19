@@ -1,10 +1,12 @@
 {
   "date": "2025-07-10",
-  "messages": 106,
-  "unique_authors": 13,
-  "reactions_total": 58,
-  "attachments": 10,
+  "messages": 428,
+  "unique_authors": 34,
+  "reactions_total": 90,
+  "attachments": 22,
   "channel_activity": {
+    "🔸綜合討論": 314,
+    "🔸阵容构建": 8,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 8,
     "Upcoming Cash Shop Update/Spender Update + Spreadsheet update + Doresain delay": 1,
@@ -21,23 +23,31 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 4,
+    "3": 8,
+    "5": 33,
+    "6": 11,
+    "7": 16,
+    "8": 19,
+    "9": 30,
+    "10": 2,
+    "11": 9,
+    "12": 3,
+    "13": 91,
+    "14": 136,
+    "15": 6,
+    "19": 1,
+    "2": 37,
+    "4": 3,
+    "16": 3,
     "18": 8,
-    "9": 2,
-    "2": 36,
-    "11": 6,
     "21": 1,
-    "16": 1,
     "17": 1,
     "20": 1,
-    "6": 9,
-    "5": 27,
-    "1": 9,
-    "7": 1
+    "1": 9
   },
   "message_types": {
-    "19": 1,
-    "0": 9
+    "19": 60,
+    "0": 262
   },
   "top_reacted_messages": [
     {
@@ -62,11 +72,27 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
+      "id": "1392781712613838899",
+      "channel_id": "1131839817982947429",
+      "content": "深海37801怎麼突然變多",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1392835192787566722",
       "content": "the questions in themselves are not exactly rude and it's valid most of the time",
       "author": "zier.0",
       "reactions": 5,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392873356310872095",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1392695916200202372",
@@ -88,6 +114,38 @@
       "author": "applepieeater123",
       "reactions": 3,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392784105850277962",
+      "channel_id": "1131839817982947429",
+      "content": "~~深海24并非深海（）打倒非本家c邪教，胜利属于米粒鲨鱼~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392865547187781853",
+      "channel_id": "1131839817982947429",
+      "content": "但是我打完第五人格了",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392872530280452257",
+      "channel_id": "1131839817982947429",
+      "content": "叫他大瑪爾",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392879163245072405",
+      "channel_id": "1131839817982947429",
+      "content": "<@1006158341673865316> 看我頭像",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1392823194104369244",
@@ -118,67 +176,28 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
-      "id": "1392940852145553610",
-      "content": "",
-      "author": "ev_6185",
+      "id": "1392713172888064072",
+      "channel_id": "1131839817982947429",
+      "content": "🙏",
+      "author": "undecember_news",
       "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1392694532679929926",
-      "content": "Goya has already conveyed it to the art department~Thank you again🥰",
-      "author": "morimensstaff01",
+      "id": "1392767044977430641",
+      "channel_id": "1131839817982947429",
+      "content": "感謝告知！",
+      "author": "suggesiton1794",
       "reactions": 1,
-      "channel": "Feedback/general review on latest morimens merchandise"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1392694053136502967",
-      "content": "I remember that guy saying the game is going to EOS recently to new players",
-      "author": "skyfallterminus",
+      "id": "1392795477069529138",
+      "channel_id": "1131839817982947429",
+      "content": "~~有耐心的話可以在半夜3-4點匹配等三分鐘喔~~",
+      "author": "ahong0727",
       "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392694418930405446",
-      "content": "i don't think it's an absurd question, since as op said, it's a question that's ",
-      "author": "zier.0",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392695498783330325",
-      "content": "I can't be bothered anymore, they gonna believe what they want to believe and I ",
-      "author": "nightjar0928",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392695829503938680",
-      "content": "Yep, something something. Reading comprehension is a dying skill",
-      "author": "nightjar0928",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392697036511510610",
-      "content": "the downside of Morimens gaining tractions, we start getting fake fans like them",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392754557175595080",
-      "content": "So uh im vietnamese here i really dont care about this :-:, like if this is AI g",
-      "author": "nick_colas",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392688555238752400",
-      "content": "喔喔超好看，謝謝老師",
-      "author": "xuyu7162",
-      "reactions": 1,
-      "channel": "《他們的女兒》"
+      "channel": "🔸綜合討論"
     }
   ]
 }

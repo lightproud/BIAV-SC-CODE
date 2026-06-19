@@ -1,10 +1,11 @@
 {
   "date": "2025-07-16",
-  "messages": 130,
-  "unique_authors": 26,
-  "reactions_total": 85,
-  "attachments": 17,
+  "messages": 1131,
+  "unique_authors": 43,
+  "reactions_total": 359,
+  "attachments": 43,
   "channel_activity": {
+    "🔸綜合討論": 1001,
     "Leigh": 2,
     "*Translated & Credited* cn Fan Art Reposts": 7,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 3,
@@ -22,29 +23,34 @@
     "栗子": 1
   },
   "hourly_activity": {
-    "3": 4,
+    "2": 10,
+    "3": 6,
+    "4": 22,
+    "5": 6,
+    "7": 21,
+    "8": 13,
+    "9": 16,
+    "10": 198,
+    "11": 242,
+    "12": 131,
+    "13": 65,
+    "14": 22,
+    "15": 41,
+    "16": 169,
+    "17": 141,
+    "18": 1,
+    "19": 11,
+    "21": 3,
     "20": 7,
     "0": 3,
-    "11": 23,
-    "12": 27,
-    "13": 14,
-    "14": 5,
-    "16": 5,
-    "7": 12,
-    "17": 7,
-    "9": 7,
-    "10": 2,
     "22": 1,
-    "5": 2,
-    "15": 4,
-    "2": 4,
     "6": 1,
-    "1": 1,
-    "8": 1
+    "1": 1
   },
   "message_types": {
-    "0": 82,
-    "19": 12
+    "0": 836,
+    "19": 164,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -69,6 +75,22 @@
       "channel": "栗子"
     },
     {
+      "id": "1394911429437558786",
+      "channel_id": "1131839817982947429",
+      "content": "并不知道自己在画啥…",
+      "author": "zerathree",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395010910577492000",
+      "channel_id": "1131839817982947429",
+      "content": "畫很爛就是了",
+      "author": "undecember_news",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1394845758859120743",
       "content": "https://www.youtube.com/watch?v=jrlBAmjd_kY",
       "author": "reya.li",
@@ -76,116 +98,116 @@
       "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
     },
     {
-      "id": "1394982808027402341",
-      "content": "Wearing  👠?\nChef is <:slay:1103459199180099614>",
-      "author": "meatyexplosions",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
-    },
-    {
-      "id": "1395173053717151744",
-      "content": "",
-      "author": "mengdiehuan",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
-    },
-    {
-      "id": "1395142905387159713",
-      "content": "Been gatekeeping this one for a while but no more! Nothing is yummier than our t",
-      "author": "ev_6185",
-      "reactions": 3,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1395101472211075104",
-      "content": "For those that missed my discussion on Doresain in gen chat, they spiced up the ",
-      "author": "ev_6185",
-      "reactions": 3,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
-    },
-    {
-      "id": "1394874850362789939",
-      "content": "Thank you for your suggestion. Goya will submit it to the relevant responsible p",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "Suggestion: rework automatic locking of wheels before maxed"
-    },
-    {
-      "id": "1394876883757170831",
-      "content": "wow! <:love:1356053099931897977>",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "Leigh"
-    },
-    {
-      "id": "1395146466900578365",
-      "content": "A very well rendered Aigis piece for balance \nlink to OG post:⁠ https://lbhsqq.l",
-      "author": "ev_6185",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1395012362909782168",
-      "content": "殺死三隻可能不是同一個判定",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1395012913139552287",
-      "content": "神父专武护盾加成不限指令卡也不算",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1395027641672663151",
-      "content": "杜勒加强方案：杜勒生吃胚胎可以获得一层亡骸，每回合一次。",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1394939671112581232",
-      "content": "輔助超模是血肉傳統",
+      "id": "1394993778372378725",
+      "channel_id": "1131839817982947429",
+      "content": "有點害怕官方推出之後鬧出福袋事件二號",
       "author": "ena04564",
-      "reactions": 1,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1395036356819816589",
-      "content": "就是單純的necro+via",
+      "id": "1395006140533964872",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1169106999422754856/1208466574529531904/S",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394949746094903296",
-      "content": "稍微改了一下描述應該比較清楚一點<:perfect:1356084498630053979>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
+      "id": "1395094465420460032",
+      "channel_id": "1131839817982947429",
+      "content": "伪娘虫子",
+      "author": "carme.0588",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394931486423257109",
-      "content": "rt，這是4-6，可能有別的也沒加上紅點可以檢查一下（？",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
+      "id": "1395121492127121449",
+      "channel_id": "1131839817982947429",
+      "content": "深海固定毒都能把普通蛹當聖嬰捶",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394945545633660998",
-      "content": "感谢反馈~问题已收到🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
+      "id": "1394996413296803954",
+      "channel_id": "1131839817982947429",
+      "content": "我金幣爆在手機桌面上也算是給5771爆金幣了吧<:cry2:1356068126894194758>",
+      "author": "undecember_news",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394947790999912609",
-      "content": "您好，这里确实应该增加红点，会安排加上🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
+      "id": "1394980438002372619",
+      "channel_id": "1131839817982947429",
+      "content": "努力在一堆排單跟工作的夾縫為色圖求生存是正常的嗎555",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1394992399406596187",
+      "channel_id": "1131839817982947429",
+      "content": "杜師傅的立繪有點奇怪，但是杜師傅的數值彌補了這點",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1394992531154141306",
+      "channel_id": "1131839817982947429",
+      "content": "需要數值緊縮術嗎",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1394999813002498058",
+      "channel_id": "1131839817982947429",
+      "content": "~~有沒有杜勒活動最後一關要打普朵之類的超展開~~",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395002121794879659",
+      "channel_id": "1131839817982947429",
+      "content": "我童年很乖\n都在偷偷收錢離間情侶挑撥大人",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395003670558408804",
+      "channel_id": "1131839817982947429",
+      "content": "我看成你弟弟玩克萊門汀的蟲子然後門牙斷一半",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395011791783985285",
+      "channel_id": "1131839817982947429",
+      "content": "？",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395014294474719264",
+      "channel_id": "1131839817982947429",
+      "content": "~~還是不草貓了我去打主線(~~",
+      "author": "undecember_news",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395087811970990161",
+      "channel_id": "1131839817982947429",
+      "content": "激烈得我的手忍不住在繪圖應用上面反覆摩挲思考小貓的一百種玩法",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

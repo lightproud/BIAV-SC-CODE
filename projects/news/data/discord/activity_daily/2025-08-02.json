@@ -1,10 +1,26 @@
 {
   "date": "2025-08-02",
-  "messages": 6663,
+  "messages": 13142,
   "unique_authors": 200,
-  "reactions_total": 781,
-  "attachments": 327,
+  "reactions_total": 1533,
+  "attachments": 672,
   "channel_activity": {
+    "🔸剧情交流": 6,
+    "🔸课间休息闲聊": 4,
+    "🔸한국어-채팅방": 59,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 78,
+    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸canal-español": 106,
+    "🔸canal-português": 449,
+    "🔸ruang-obrolan-indonesia": 406,
+    "🔸ห้องสนทนาภาษาไทย": 192,
+    "🔸traphase": 270,
+    "🔸lore-chat": 49,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 134,
+    "🔸general-chat": 4676,
     "🔸綜合討論": 466,
     "🔸morimens-game-chat": 6169,
     "Pierot: Ultra Boy": 7,
@@ -19,34 +35,34 @@
     "通讯设备+首领战无效": 2
   },
   "hourly_activity": {
-    "0": 594,
-    "1": 690,
-    "2": 300,
-    "3": 195,
-    "4": 81,
-    "5": 175,
-    "6": 220,
-    "8": 194,
-    "9": 118,
-    "10": 224,
-    "11": 302,
-    "12": 147,
-    "13": 340,
-    "14": 177,
-    "15": 206,
-    "16": 351,
-    "17": 352,
-    "18": 335,
-    "19": 183,
-    "21": 455,
-    "23": 337,
-    "7": 126,
-    "20": 225,
-    "22": 336
+    "16": 909,
+    "18": 354,
+    "19": 207,
+    "14": 640,
+    "15": 799,
+    "1": 1048,
+    "6": 368,
+    "7": 193,
+    "8": 268,
+    "13": 561,
+    "11": 667,
+    "12": 906,
+    "21": 467,
+    "5": 366,
+    "10": 649,
+    "17": 548,
+    "0": 774,
+    "2": 955,
+    "9": 158,
+    "20": 261,
+    "22": 347,
+    "23": 362,
+    "3": 765,
+    "4": 570
   },
   "message_types": {
-    "0": 4518,
-    "19": 2117
+    "0": 5020,
+    "19": 1459
   },
   "top_reacted_messages": [
     {
@@ -62,6 +78,14 @@
       "author": "wraithdust",
       "reactions": 22,
       "channel": "professor doll says school is cool!"
+    },
+    {
+      "id": "1401202588686352385",
+      "channel_id": "1385040039448412170",
+      "content": "Not sure if this is the place for general server suggestions but would be nice i",
+      "author": "krait223",
+      "reactions": 11,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1401241889067372615",
@@ -95,12 +119,44 @@
       "channel": "Doresain still needs buff."
     },
     {
+      "id": "1401153375298388009",
+      "channel_id": "1400750050208125010",
+      "content": "Seamen was right",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401207162528596080",
+      "channel_id": "1400750050208125010",
+      "content": "wait seamen got a great idea",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1401178044722319402",
       "channel_id": "1170692781216378960",
       "content": "Source: Came to me in a dream",
       "author": "krait223",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401034076428701787",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401214574845497564",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1401228716125982851",
@@ -135,75 +191,35 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1401033579986817105",
+      "channel_id": "1400750050208125010",
+      "content": "Gimme",
+      "author": "lloyds_descendant",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401215597928513587",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "lloyds_descendant",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401248935829569669",
+      "channel_id": "1400750050208125010",
+      "content": "this is shit",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1401288500221051103",
       "channel_id": "1170692781216378960",
       "content": "guys, i did my second D-tide ever and got 300 points! this may not mean much, bu",
       "author": ".shabo",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401079579304530000",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1401090680121725011",
-      "channel_id": "1131839817982947429",
-      "content": "F佬都是打72000",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400997111381622795",
-      "channel_id": "1170692781216378960",
-      "content": "ugly",
-      "author": "krait223",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401003262919966790",
-      "channel_id": "1170692781216378960",
-      "content": "idc i like nautila i wanted more wife",
-      "author": "krait223",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401012248922558586",
-      "channel_id": "1170692781216378960",
-      "content": "So you show your face when I don't want to get you...",
-      "author": "el.shaddoll.nephilim.is.my.ace",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401127115772002344",
-      "channel_id": "1170692781216378960",
-      "content": "Cute nerdy gremlin save me...",
-      "author": "krait223",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401170232344576030",
-      "channel_id": "1170692781216378960",
-      "content": "so my oc keeper / back to sleep",
-      "author": "ja_mingyu",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1401172214044168294",
-      "channel_id": "1170692781216378960",
-      "content": "<:takenotes:1357186646294138890>",
-      "author": "joker_0108",
-      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
   ]

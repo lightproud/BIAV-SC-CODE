@@ -1,10 +1,11 @@
 {
   "date": "2025-07-29",
-  "messages": 220,
-  "unique_authors": 22,
-  "reactions_total": 84,
-  "attachments": 25,
+  "messages": 1234,
+  "unique_authors": 42,
+  "reactions_total": 238,
+  "attachments": 110,
   "channel_activity": {
+    "🔸綜合討論": 1014,
     "Jenkin & Brown card :mouse2:": 3,
     "All stages Arc 2 Ch 3 HM Deathless recap and Scuffed \"Guide\"": 1,
     "Arc 2 Ch 3 HM Final Boss Deathless. 83k Counter with Caecus.": 1,
@@ -35,29 +36,33 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
-    "8": 2,
-    "9": 4,
-    "11": 1,
-    "10": 1,
-    "5": 24,
-    "6": 19,
-    "12": 6,
-    "13": 70,
-    "7": 2,
-    "16": 1,
-    "2": 23,
-    "3": 10,
-    "4": 5,
-    "14": 46,
-    "20": 2,
-    "23": 1,
-    "17": 1,
-    "15": 1,
+    "1": 1,
+    "2": 33,
+    "3": 18,
+    "4": 33,
+    "5": 32,
+    "6": 37,
+    "7": 100,
+    "8": 47,
+    "9": 204,
+    "10": 165,
+    "11": 33,
+    "12": 63,
+    "13": 137,
+    "14": 108,
+    "15": 73,
+    "16": 25,
+    "17": 35,
+    "18": 29,
+    "19": 34,
+    "20": 20,
+    "21": 3,
+    "23": 3,
     "0": 1
   },
   "message_types": {
-    "0": 25,
-    "19": 10
+    "0": 870,
+    "19": 144
   },
   "top_reacted_messages": [
     {
@@ -75,6 +80,14 @@
       "channel": "Jenkin & Brown card :mouse2:"
     },
     {
+      "id": "1399781580989268008",
+      "channel_id": "1131839817982947429",
+      "content": "肘完了<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1399732024805294273",
       "content": "● Localization Fixes and Improvements (English Language Setting):\n    ○We fixed ",
       "author": "morimensstaff02",
@@ -82,116 +95,132 @@
       "channel": "V2.3.0.3 在线维护公告"
     },
     {
-      "id": "1399671924065304676",
-      "content": "This is such a fun concept! I love how dynamic it feels",
-      "author": "Deleted User",
-      "reactions": 3,
-      "channel": "Jenkin & Brown card :mouse2:"
+      "id": "1399691054340636722",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399657628308733972",
-      "content": "Would it be possible to somehow mark in game which story segments have been manu",
-      "author": "tharob",
-      "reactions": 3,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+      "id": "1399670836129960107",
+      "channel_id": "1131839817982947429",
+      "content": "吃我",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399684346238992436",
-      "content": "that is so nice, if only in the future the cards could have this type of persona",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "Jenkin & Brown card :mouse2:"
-    },
-    {
-      "id": "1399753765917032645",
-      "content": "~~我是希望不修好~~<:cute1:1356053053568192717>",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "✅「已回答」H2-9事件會出現重複造物"
-    },
-    {
-      "id": "1399591525880561794",
-      "content": "艾爾沃斯那白骨般的山脊在風中嶙峋，風雪漫天，如同撕裂天地的白色幕布，將世界吞沒於一片迷濛。\n\n一位少女，獨自走在荒野的長路上，靛藍色的斗篷早已被寒風扯成破碎的羽",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": "血希同人"
-    },
-    {
-      "id": "1399633314322579558",
-      "content": "so the chapter 1, gotcha",
-      "author": "markiecart",
-      "reactions": 1,
-      "channel": "How to play Uvhash in exploration?"
-    },
-    {
-      "id": "1399734980711546910",
-      "content": "绷，「暗潮虫鸣·限时预购」早结束几个月了怎么还有BUG",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "V2.3.0.3 在线维护公告"
-    },
-    {
-      "id": "1399743061453438996",
-      "content": "其實前幾次更新就出現了只是一直忘記來回報<:flop2:1356053072924774421> \nhttps://discord.com/channels/1",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
-    },
-    {
-      "id": "1399637127859404851",
-      "content": "Yes, we often receive this issue, but each one has a different cause. We have be",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」I can't start the game, it freezes"
-    },
-    {
-      "id": "1399583271259603097",
-      "content": "Hi, we have identified the cause of the issue and will update it as soon as poss",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda Soulforge Aptitude text error"
-    },
-    {
-      "id": "1399739478721171646",
-      "content": "如图",
+      "id": "1399788621229326448",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "xuanxue007",
-      "reactions": 1,
-      "channel": "💭「处理中」第三章主线最后一关无法正常结束战斗"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399752330106376202",
-      "content": "就是攻击欲望/伤害太高",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "關於爆擊爆率的問題"
+      "id": "1399707122513739820",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399756884839239843",
-      "content": "突然想到经典出门三鸟",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "關於爆擊爆率的問題"
+      "id": "1399840350658367612",
+      "channel_id": "1131839817982947429",
+      "content": "一遍过，但是一个专造没拿到",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399580914312286270",
-      "content": "Hi, we have identified the cause of the issue and will update it as soon as poss",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda soulforge bug"
+      "id": "1399596619267178628",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "201225200913",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399579374545797231",
-      "content": "Здравствуйте, этот вопрос уже запланирован к обработке и будет выпущен как можно",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг при описании карты на русском языке."
+      "id": "1399641674317041664",
+      "channel_id": "1131839817982947429",
+      "content": "是想要讓人知道杜勒賽因有多爛是不是",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399584402387763332",
-      "content": "转交可能比较困难，不过我们会转达的！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "阿空高速推活時刻"
+      "id": "1399687265155944448",
+      "channel_id": "1131839817982947429",
+      "content": "~~我退群了~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399690963219251311",
+      "channel_id": "1131839817982947429",
+      "content": "好可怕是福袋廚",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399693146220400641",
+      "channel_id": "1131839817982947429",
+      "content": "盲猜下期熔災直接出管家",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399697761343111208",
+      "channel_id": "1131839817982947429",
+      "content": "我如果跳杜勒他可能會變人權",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399698699646406746",
+      "channel_id": "1131839817982947429",
+      "content": "~~還是可以因為我抽杜勒超非~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399712152436080661",
+      "channel_id": "1131839817982947429",
+      "content": "哎，数值这方面",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399719512416325736",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399726790414696459",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399796305060171980",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

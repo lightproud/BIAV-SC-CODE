@@ -1,10 +1,26 @@
 {
   "date": "2025-08-07",
-  "messages": 7776,
+  "messages": 9055,
   "unique_authors": 251,
-  "reactions_total": 1317,
-  "attachments": 282,
+  "reactions_total": 1401,
+  "attachments": 343,
   "channel_activity": {
+    "🔸课间休息闲聊": 9,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 7,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 91,
+    "🔸phòng-chat-tiếng-việt": 82,
+    "🔸canal-español": 464,
+    "🔸canal-português": 159,
+    "🔸ruang-obrolan-indonesia": 54,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 190,
+    "🔸lore-chat": 100,
+    "🔸lets-count": 8,
+    "🔸team-building": 4,
+    "🔸general-chat": 66,
     "🔸綜合討論": 1446,
     "🔸morimens-game-chat": 6150,
     "daffodil": 1,
@@ -30,35 +46,34 @@
     "1390375103707218041": 2
   },
   "hourly_activity": {
-    "0": 360,
-    "1": 240,
-    "2": 309,
-    "3": 142,
-    "4": 139,
-    "5": 321,
-    "6": 373,
-    "7": 281,
-    "8": 307,
-    "9": 290,
-    "10": 379,
-    "11": 639,
-    "12": 649,
-    "13": 430,
-    "14": 555,
-    "15": 257,
-    "16": 144,
-    "17": 337,
-    "18": 317,
-    "19": 334,
-    "20": 381,
-    "21": 324,
-    "22": 130,
-    "23": 138
+    "2": 330,
+    "7": 325,
+    "8": 441,
+    "20": 426,
+    "11": 760,
+    "15": 337,
+    "3": 173,
+    "10": 390,
+    "1": 249,
+    "9": 319,
+    "12": 711,
+    "13": 614,
+    "16": 161,
+    "18": 398,
+    "19": 417,
+    "22": 177,
+    "23": 163,
+    "4": 174,
+    "6": 393,
+    "14": 647,
+    "17": 345,
+    "0": 390,
+    "5": 369,
+    "21": 346
   },
   "message_types": {
-    "0": 5649,
-    "19": 1945,
-    "20": 2
+    "0": 1045,
+    "19": 234
   },
   "top_reacted_messages": [
     {
@@ -116,6 +131,22 @@
       "author": "ernest_heart",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402909340859367477",
+      "channel_id": "1400749543288475770",
+      "content": "This is the kind of team that I look at, briefly question why the fuck anyone wo",
+      "author": "alistiel",
+      "reactions": 10,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1402875284805390400",
+      "channel_id": "1400750050208125010",
+      "content": "I lived",
+      "author": "lloyds_descendant",
+      "reactions": 10,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1402984086389395551",
@@ -202,22 +233,6 @@
       "author": "xuanxue007",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1402975432047071272",
-      "channel_id": "1170692781216378960",
-      "content": "EVERYONE WE NEED TO THANK THE 37k player",
-      "author": "lotan_045",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1403090969909268490",
-      "channel_id": "1170692781216378960",
-      "content": "Im on laptop",
-      "author": "lotan_045",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

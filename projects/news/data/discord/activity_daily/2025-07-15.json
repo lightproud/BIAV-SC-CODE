@@ -1,10 +1,11 @@
 {
   "date": "2025-07-15",
-  "messages": 68,
-  "unique_authors": 26,
-  "reactions_total": 172,
-  "attachments": 10,
+  "messages": 672,
+  "unique_authors": 37,
+  "reactions_total": 223,
+  "attachments": 28,
   "channel_activity": {
+    "🔸綜合討論": 604,
     "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain": 30,
     "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure": 10,
     "幫我姊求個配隊": 1,
@@ -20,28 +21,30 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "6": 6,
-    "7": 11,
-    "8": 1,
-    "9": 5,
-    "10": 12,
-    "15": 4,
+    "1": 4,
+    "2": 15,
+    "3": 5,
+    "4": 6,
+    "5": 3,
+    "6": 27,
+    "7": 115,
+    "8": 6,
+    "9": 29,
+    "10": 49,
+    "12": 7,
+    "13": 189,
+    "14": 122,
+    "15": 73,
+    "18": 5,
+    "20": 8,
+    "21": 1,
     "16": 1,
-    "18": 2,
     "19": 4,
-    "12": 3,
-    "1": 1,
-    "14": 1,
-    "23": 3,
-    "2": 7,
-    "13": 1,
-    "4": 3,
-    "3": 2,
-    "5": 1
+    "23": 3
   },
   "message_types": {
-    "0": 39,
-    "19": 2
+    "0": 523,
+    "19": 81
   },
   "top_reacted_messages": [
     {
@@ -87,6 +90,14 @@
       "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
     },
     {
+      "id": "1394696085364277248",
+      "channel_id": "1131839817982947429",
+      "content": "剩我是真的打不過了",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1394768483832827914",
       "content": "next on the biav kink list: hard vore lmfao",
       "author": "yonagoda",
@@ -99,6 +110,14 @@
       "author": "meatyexplosions",
       "reactions": 6,
       "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+    },
+    {
+      "id": "1394573125072584785",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1394607716919410708",
@@ -115,6 +134,14 @@
       "channel": "Suggestion: rework automatic locking of wheels before maxed"
     },
     {
+      "id": "1394696848211706018",
+      "channel_id": "1131839817982947429",
+      "content": "我是換了隊伍就不會玩的鹹魚<:sleep1:1356053155405762570>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1394576388484501524",
       "content": "",
       "author": "iTranslator",
@@ -129,25 +156,44 @@
       "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
     },
     {
-      "id": "1394763354991628401",
-      "content": "偶然發現的BUG<:flop2:1356053072924774421>\n使用鑰令的獵食後就無法再獲得體質卡的選項\n而且並非是當回合而是後續回合也都無法獲得選項",
-      "author": "wild_pansy",
+      "id": "1394571884011720796",
+      "channel_id": "1131839817982947429",
+      "content": "今天不能||预告了一个人尽皆知的事实||就没饼了吧",
+      "author": "navirecorbeau",
       "reactions": 3,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394823047294357566",
-      "content": "使用極夜薇光後沒有選擇三大刻印的指令卡加入手牌的階段",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
+      "id": "1394581193961246842",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394500530205626469",
-      "content": "It's about time the game and the manga had a crossover!\n\n之前沒注意，後面不小心看到覺得還真有幾分神似\n",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": "在忘卻前夜裡找到了〈鏈鋸人〉真紀真 I found Makima from 《Chainsaw Man》 on Morimens!"
+      "id": "1394622340687466556",
+      "channel_id": "1131839817982947429",
+      "content": "女角色不畫屑屑 我要進行對男性凝視",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1394691632372125786",
+      "channel_id": "1131839817982947429",
+      "content": "||铭心的爱的种子在kai的心中扎根，但在无数天的沉淀中开出了恨的玫瑰||",
+      "author": "zaitielushang",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1394693402964004998",
+      "channel_id": "1131839817982947429",
+      "content": "群色除我",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }
