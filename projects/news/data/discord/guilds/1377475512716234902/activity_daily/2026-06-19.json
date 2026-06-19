@@ -1,11 +1,12 @@
 {
   "date": "2026-06-19",
-  "messages": 1039,
+  "messages": 1042,
   "unique_authors": 30,
-  "reactions_total": 292,
-  "attachments": 75,
+  "reactions_total": 293,
+  "attachments": 76,
   "channel_activity": {
-    "なんでも雑談": 886,
+    "なんでも雑談": 888,
+    "今日の〜シリーズver1.0": 1,
     "🔰初心者質問": 100,
     "誰でも質問": 30,
     "諸々の備忘録": 8,
@@ -18,6 +19,7 @@
     "レベル70〜80の救援覚醒体を固定している人の協力願": 1
   },
   "hourly_activity": {
+    "18": 3,
     "16": 9,
     "17": 3,
     "12": 58,
@@ -38,7 +40,7 @@
     "0": 2
   },
   "message_types": {
-    "0": 12
+    "0": 3
   },
   "top_reacted_messages": [
     {
