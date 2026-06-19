@@ -13313,6 +13313,76 @@
       "title": "我感觉很想暗削，沙耶添得牌卖不了了",
       "time": "2026-06-19T10:38:23+00:00",
       "downloaded_at": "2026-06-19T11:16:50.517396+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/51845d68d451f968ce8b0447723bd9fcfcfb186c.jpg": {
+      "filename": "bilibili_c08ffc041e125113.jpg",
+      "source": "bilibili",
+      "title": "忘卻前夜 新人向黑话篇（启灵 角色 武器 不完全版：）",
+      "time": "2026-06-19T09:32:18+00:00",
+      "downloaded_at": "2026-06-19T14:43:06.504973+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/74c815d726dc3e14d0a16182413d636c23489c6c.jpg": {
+      "filename": "bilibili_7bc896c1192d3092.jpg",
+      "source": "bilibili",
+      "title": "有个绿色角色轻松防杀沙漏，你知道是谁",
+      "time": "2026-06-19T13:14:45+00:00",
+      "downloaded_at": "2026-06-19T14:43:07.664396+00:00"
+    },
+    "https://i.ytimg.com/vi/O7WCHFQ2h8A/hqdefault.jpg": {
+      "filename": "youtube_ef430b7eb82a0b49.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 칼바람 조금만",
+      "time": "2026-06-19T12:59:34Z",
+      "downloaded_at": "2026-06-19T14:43:08.026565+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/e3aeef3d7d4d8eefc24101d42b19fdb975aa891c.jpg": {
+      "filename": "bilibili_b472857fa54b11c0.jpg",
+      "source": "bilibili",
+      "title": "血液撕开伤口的裂缝",
+      "time": "2026-06-19T11:36:19+00:00",
+      "downloaded_at": "2026-06-19T14:43:09.921222+00:00"
+    },
+    "https://i.ytimg.com/vi/_eI-nTwlQ1g/hqdefault_live.jpg": {
+      "filename": "youtube_e5baf3d7c55ab8b1.jpg",
+      "source": "youtube",
+      "title": "Finally playing Myriam&#39;s Story (yes i&#39;m very late)",
+      "time": "2026-06-19T13:11:12Z",
+      "downloaded_at": "2026-06-19T14:43:10.302092+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/49fa4c608b0d2ec9daac466092fbf8a411f287bf.jpg": {
+      "filename": "bilibili_9252ac8fdcbefd7c.jpg",
+      "source": "bilibili",
+      "title": "这是谁眼中的纯净美丽之物",
+      "time": "2026-06-19T13:35:35+00:00",
+      "downloaded_at": "2026-06-19T14:43:13.373168+00:00"
+    },
+    "https://i.ytimg.com/vi/LHxg_74oIx0/hqdefault_live.jpg": {
+      "filename": "youtube_01cc92e6ca4c9eb4.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)티어표를 위한상시캐 연구소",
+      "time": "2026-06-19T14:24:22Z",
+      "downloaded_at": "2026-06-19T14:43:14.733752+00:00"
+    },
+    "https://i.ytimg.com/vi/VAWgBbrycSI/hqdefault.jpg": {
+      "filename": "youtube_9e4a5ae21309147f.jpg",
+      "source": "youtube",
+      "title": "The Arcade Demolishers | Arachne &amp; Mouchette | Morimens",
+      "time": "2026-06-19T11:30:15Z",
+      "downloaded_at": "2026-06-19T14:43:15.156853+00:00"
+    },
+    "https://i.ytimg.com/vi/SQx7HfsIQXo/hqdefault.jpg": {
+      "filename": "youtube_5ff00d020c4ae1a0.jpg",
+      "source": "youtube",
+      "title": "Morimens Story We&#39;re BACK! Star Chapter 2 Voiced Full and Clementine Cutscene!",
+      "time": "2026-06-19T13:53:40Z",
+      "downloaded_at": "2026-06-19T14:43:18.184042+00:00"
+    },
+    "https://i.ytimg.com/vi/xKtZX46_PL0/hqdefault_live.jpg": {
+      "filename": "youtube_bf262b288fc95501.jpg",
+      "source": "youtube",
+      "title": "【ゲーム】忘却前夜をプレイ🌌",
+      "time": "2026-06-19T11:38:48Z",
+      "downloaded_at": "2026-06-19T14:43:18.652776+00:00"
     }
   },
   "failed": {
@@ -19490,6 +19560,46 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-19T11:16:50.817992+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/51845d68d451f968ce8b0447723bd9fcfcfb186c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:06.805502+00:00"
+    },
+    "https://preview.redd.it/soizrlvw098h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=90463424c96f597e6558faad4b292ad23bdf55ef": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:15.635575+00:00"
+    },
+    "https://preview.redd.it/vio8iu55988h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f8090fe30ed135ede295251a7411040454f32831": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:15.975433+00:00"
+    },
+    "https://preview.redd.it/yrb9g182768h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=e264a8ebc7c796341166395cb94be8f8299a5977": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:16.318030+00:00"
+    },
+    "https://external-preview.redd.it/NTZwMWJwOWM5NThoMSO2vlWjP8y6JZIzhzUbiowdsvfKK6GwjXDiOKdUTlwz.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=970efcdc03b337547c098f17dc623af7e7f6b049": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:16.693788+00:00"
+    },
+    "https://preview.redd.it/no0bed5lv58h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5ab71a92f752131040373dbf4d8d3444bf6f1daa": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:17.038052+00:00"
+    },
+    "https://preview.redd.it/m5592yd2u58h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=6672209c6ac2060e3aef2942bf057af37b92807d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:17.380319+00:00"
+    },
+    "https://external-preview.redd.it/Z3RoeWRiYWFzNThoMXyI78uyq0jg_MiW5O6b68HYbFHeeusgATqRZbPLDiTM.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=d5c439830fc4ba3d2da8da228534d3f71236453f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T14:43:17.720227+00:00"
     }
   },
   "archived": []
