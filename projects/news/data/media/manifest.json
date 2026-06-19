@@ -13152,6 +13152,69 @@
       "title": "[ENVtuber] Morimens and chill | !discord",
       "time": "2026-06-18T19:39:56Z",
       "downloaded_at": "2026-06-18T22:53:56.800668+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0fb0772b960f7b8d9c668d578039bc97f47c6fb1.jpg": {
+      "filename": "bilibili_3df0831a889700cf.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌12",
+      "time": "2026-06-19T01:07:05+00:00",
+      "downloaded_at": "2026-06-19T06:09:53.957404+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/7478ef773cb2d760adced1e41523dce558992335.jpg": {
+      "filename": "bilibili_c7a713a57ebcbf9e.jpg",
+      "source": "bilibili",
+      "title": "24 8t 5-5",
+      "time": "2026-06-18T15:46:29+00:00",
+      "downloaded_at": "2026-06-19T06:09:54.987408+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/613618fa8ec2505d07a263468797513fcc75be14.jpg": {
+      "filename": "bilibili_c4429810f0c3d7be.jpg",
+      "source": "bilibili",
+      "title": "混塔H511三星无灵芝",
+      "time": "2026-06-19T04:35:09+00:00",
+      "downloaded_at": "2026-06-19T06:09:56.081187+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/65609d6e7d36686fd9597258428944d1339d14ed.jpg": {
+      "filename": "bilibili_e02a13e83b11c7e8.jpg",
+      "source": "bilibili",
+      "title": "玩了三天卡关了，5-14怎么打？有没有高人指点，然后必须要打完主线剧情才可以升阶吗，为什么我打完主线剧情才可以升阶，还是说要打其他的什么",
+      "time": "2026-06-19T04:24:58+00:00",
+      "downloaded_at": "2026-06-19T06:09:58.953393+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/cf86ea132ff12090192cb26e115172c8031345d9.jpg": {
+      "filename": "bilibili_29cee49c7bc7bd52.jpg",
+      "source": "bilibili",
+      "title": "医生主C H2-12",
+      "time": "2026-06-19T04:25:07+00:00",
+      "downloaded_at": "2026-06-19T06:10:01.085844+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/33d1b94fd265e3fc1492671044d28ec6ed74aea2.jpg": {
+      "filename": "bilibili_8b9853b0fff30419.jpg",
+      "source": "bilibili",
+      "title": "‍‍",
+      "time": "2026-06-19T05:41:44+00:00",
+      "downloaded_at": "2026-06-19T06:10:02.136031+00:00"
+    },
+    "https://i.ytimg.com/vi/jVXCgQn8U60/hqdefault.jpg": {
+      "filename": "youtube_40d48fbf4f49ac70.jpg",
+      "source": "youtube",
+      "title": "More Morimens",
+      "time": "2026-06-19T05:09:34Z",
+      "downloaded_at": "2026-06-19T06:10:02.778677+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/368968693403bf636dcbabc099693469ac3bedec.jpg": {
+      "filename": "bilibili_bc832b09cd52e0a9.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-06-19T05:12:51+00:00",
+      "downloaded_at": "2026-06-19T06:10:04.400426+00:00"
+    },
+    "https://i.ytimg.com/vi/7CJgM8nfxtI/hqdefault_live.jpg": {
+      "filename": "youtube_f2565a5214038a8e.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】2と3章ストーリー読んで行ければ4章入ってみる",
+      "time": "2026-06-19T05:30:58Z",
+      "downloaded_at": "2026-06-19T06:10:04.777884+00:00"
     }
   },
   "failed": {
@@ -19279,6 +19342,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-19T00:22:11.189843+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/7478ef773cb2d760adced1e41523dce558992335.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T06:09:55.287985+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/613618fa8ec2505d07a263468797513fcc75be14.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T06:09:56.381862+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/65609d6e7d36686fd9597258428944d1339d14ed.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T06:09:59.254204+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/cf86ea132ff12090192cb26e115172c8031345d9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T06:10:02.436523+00:00"
     }
   },
   "archived": []
