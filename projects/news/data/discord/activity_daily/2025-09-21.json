@@ -1,10 +1,17 @@
 {
   "date": "2025-09-21",
-  "messages": 1104,
-  "unique_authors": 43,
-  "reactions_total": 434,
-  "attachments": 65,
+  "messages": 9390,
+  "unique_authors": 263,
+  "reactions_total": 2970,
+  "attachments": 381,
   "channel_activity": {
+    "🔸morimens-game-chat": 8148,
+    "🔸剧情交流": 13,
+    "🔸晒卡分享": 66,
+    "🔸相位对弈": 18,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 32,
+    "🔸deutscher-chatraum": 2,
     "🔸綜合討論": 1059,
     "pickman and avery": 1,
     "Faint piece for the art contest": 2,
@@ -20,43 +27,74 @@
     "Bang Dream It's 利莫里亞!!!!!      【不會再邀你了/CRYCHIC】": 9
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 15,
-    "2": 4,
-    "3": 5,
-    "4": 12,
-    "5": 5,
-    "6": 10,
-    "7": 36,
-    "8": 1,
-    "9": 48,
-    "10": 32,
-    "11": 20,
-    "12": 227,
-    "13": 285,
-    "14": 272,
-    "15": 61,
-    "16": 44,
-    "17": 4,
-    "18": 9,
-    "23": 1,
-    "22": 1,
-    "20": 6,
-    "21": 4,
-    "19": 1
+    "0": 386,
+    "1": 420,
+    "2": 116,
+    "3": 151,
+    "4": 420,
+    "5": 585,
+    "6": 372,
+    "7": 281,
+    "8": 236,
+    "9": 470,
+    "10": 527,
+    "11": 122,
+    "12": 543,
+    "13": 753,
+    "14": 623,
+    "15": 334,
+    "16": 318,
+    "17": 297,
+    "18": 242,
+    "19": 442,
+    "20": 269,
+    "21": 422,
+    "22": 558,
+    "23": 503
   },
   "message_types": {
-    "0": 780,
-    "19": 278,
-    "20": 1
+    "0": 5072,
+    "19": 3214
   },
   "top_reacted_messages": [
+    {
+      "id": "1419291873721323603",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 791,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419294232929374249",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone  check this  plz maybe u will like it",
+      "author": "game.producer.light",
+      "reactions": 121,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419291958962032652",
+      "channel_id": "1170692781216378960",
+      "content": "A keeper made this https://x.com/libraryxtable/status/1969726745478926570?s=46&t",
+      "author": "game.producer.light",
+      "reactions": 38,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1419455762471587870",
       "content": "i liked the interaction between avery and pickman so i tried to imagine what ave",
       "author": "neta5133",
       "reactions": 33,
       "channel": "pickman and avery"
+    },
+    {
+      "id": "1419294965057585173",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/libraryxtable/status/1969726745478926570?s=46&t=XPiSSckMmKSQF9ZRRt",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1419421278825086987",
@@ -74,12 +112,76 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1419305399210741840",
+      "channel_id": "1170692781216378960",
+      "content": "This will be our first 2-star skin that replaces the combat model—will anyone be",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419269375092981834",
+      "channel_id": "1170692781216378960",
+      "content": "24 hours later he asked if he should buy the standard selectors",
+      "author": "angbak",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419461157680451604",
+      "channel_id": "1170692781216378960",
+      "content": "For my birthday i want everyone to beat you to death",
+      "author": "spooky_penguin_",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1419325980547219516",
       "channel_id": "1131839817982947429",
       "content": "会。",
       "author": "game.producer.light",
       "reactions": 15,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419309940442529983",
+      "channel_id": "1170692781216378960",
+      "content": "Whoever designed this man was definitely fruity",
+      "author": "houseofleaves_.",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419261591634841621",
+      "channel_id": "1170692781216378960",
+      "content": "That’s chp 8/9 with Hameln",
+      "author": "dddhunter",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419294393214570557",
+      "channel_id": "1170692781216378960",
+      "content": "Yes. Yes, we did.",
+      "author": "norionv",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419420244115722402",
+      "channel_id": "1170692781216378960",
+      "content": "Can't wait to beat up arisu again",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419193865113698384",
+      "channel_id": "1174983699935277147",
+      "content": "四百抽里程碑",
+      "author": "ena04564",
+      "reactions": 12,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1419296176007675924",
@@ -98,116 +200,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1419321451495952415",
-      "channel_id": "1131839817982947429",
-      "content": "每月商店換的次數要再提升",
-      "author": "arthasiv",
+      "id": "1419294812779315351",
+      "channel_id": "1170692781216378960",
+      "content": "Now were truly starting to form a gacha community SOMEONE GO DRAW SOME MPREG",
+      "author": "whirli_bri",
       "reactions": 11,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1419299651286208713",
-      "channel_id": "1131839817982947429",
-      "content": "疑似作法失敗被塞||口球||",
-      "author": "nazhigezihk",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419304388111110300",
-      "channel_id": "1131839817982947429",
-      "content": "沒用的小效果是指算力調和嗎",
-      "author": "foxcatfurry",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419319588356755566",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419230627999252540",
-      "channel_id": "1131839817982947429",
-      "content": "我们血希被小怪单防，好不容易过了小怪又被死扛单防，过了死扛以后就要迎接杜勒大人一刀超出我两条命的大伤害",
-      "author": "lurenjiao",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419298903341269063",
-      "channel_id": "1131839817982947429",
-      "content": "愛是會消失的，對嗎",
-      "author": "tofu0834",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419304895017779240",
-      "channel_id": "1131839817982947429",
-      "content": "虽然也可以完全做 3️⃣ 整套技能组替换，可以自由切换。",
-      "author": "game.producer.light",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419327387044417609",
-      "channel_id": "1131839817982947429",
-      "content": "資源耗盡 剩的跟新手差不多了",
-      "author": "arthasiv",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419299248641413141",
-      "channel_id": "1131839817982947429",
-      "content": "捂了嘴他就不能說不了🥵",
-      "author": "ernest_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419319275797352592",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "undecember_news",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419349615786065931",
-      "channel_id": "1131839817982947429",
-      "content": "4个专造<:wish:1356084702468899117>",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419302333933686966",
-      "channel_id": "1131839817982947429",
-      "content": "懂了，sp墨菲可能要先當一個月的啞巴",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419304668768505966",
-      "channel_id": "1131839817982947429",
-      "content": "没用的小效果是指哈姆林和羊妈的妙妙中毒流血那种么（",
-      "author": "flarinsidia",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419308941980074105",
-      "channel_id": "1131839817982947429",
-      "content": "我有一計\n我們將日服的改動做成另一套技能組，癲狂模式就用這套技能組打，但敵人是全球服的數值☝️🤓",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1419341496267575356",
+      "channel_id": "1170692781216378960",
+      "content": "BRUH",
+      "author": "le_fishmael",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

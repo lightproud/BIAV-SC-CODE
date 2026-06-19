@@ -1,10 +1,18 @@
 {
   "date": "2025-09-17",
-  "messages": 1292,
-  "unique_authors": 45,
-  "reactions_total": 377,
-  "attachments": 72,
+  "messages": 10159,
+  "unique_authors": 184,
+  "reactions_total": 1465,
+  "attachments": 343,
   "channel_activity": {
+    "🔸morimens-game-chat": 8646,
+    "🔸剧情交流": 18,
+    "🔸晒卡分享": 95,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸deutscher-chatraum": 6,
+    "🔸русский-канал": 94,
     "🔸綜合討論": 1202,
     "🔸阵容构建": 9,
     "Murphy 🍰": 2,
@@ -35,35 +43,52 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "0": 9,
-    "1": 31,
-    "2": 37,
-    "3": 93,
-    "4": 226,
-    "5": 74,
-    "6": 95,
-    "7": 179,
-    "8": 52,
-    "9": 30,
-    "10": 84,
-    "11": 39,
-    "12": 27,
-    "13": 22,
-    "14": 58,
-    "15": 90,
-    "16": 84,
-    "17": 9,
-    "22": 5,
-    "23": 31,
-    "20": 3,
-    "21": 2,
-    "18": 12
+    "0": 107,
+    "1": 505,
+    "2": 455,
+    "3": 347,
+    "4": 494,
+    "5": 535,
+    "6": 622,
+    "7": 429,
+    "8": 119,
+    "9": 341,
+    "10": 435,
+    "11": 553,
+    "12": 438,
+    "13": 544,
+    "14": 575,
+    "15": 631,
+    "16": 583,
+    "17": 537,
+    "18": 325,
+    "19": 528,
+    "20": 405,
+    "21": 339,
+    "22": 162,
+    "23": 150
   },
   "message_types": {
-    "0": 939,
-    "19": 272
+    "0": 6038,
+    "19": 2829
   },
   "top_reacted_messages": [
+    {
+      "id": "1417979392931397752",
+      "channel_id": "1170692781216378960",
+      "content": "Where are my fellow story skippers <:cry3:1356082134447558748>",
+      "author": "moyashi0672",
+      "reactions": 40,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418023422524657695",
+      "channel_id": "1170692781216378960",
+      "content": "hi everyone",
+      "author": "arisuu0604",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1418001662081105920",
       "content": "",
@@ -87,6 +112,14 @@
       "channel": "Kaly Tier Lists - Sept 2025"
     },
     {
+      "id": "1417964098850656367",
+      "channel_id": "1170692781216378960",
+      "content": "Only shard u shouldnt use is Horla because she nerfs ur hand at E2",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1417761650869538896",
       "content": "挺满意的一张，应该吧。至少我用了不同风格来作画。只要不细看就很好看啦（有点废话\n\n幸好我一直没发出来（我应该没发这张吧），这次有10000，不得不发了。\n\n发量",
       "author": "dittoqwq",
@@ -101,12 +134,68 @@
       "channel": "Morimens: Game Mechanics and Terms"
     },
     {
+      "id": "1417824058011291689",
+      "channel_id": "1170692781216378960",
+      "content": "I'm not falling for y'all mindgames im only into mpreg",
+      "author": "sugarspawn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417964663001448611",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> can we get a selector in archive  for game boot up screen ",
+      "author": "poodaloom",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417797069376065537",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "2041880926",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417842507760537692",
+      "channel_id": "1174983699935277147",
+      "content": "嘻嘻\n2800\n很乾淨的數字",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1417774285392445562",
       "channel_id": "1131839817982947429",
       "content": "然后迟点po融灾400🫠",
       "author": "cs001092",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417847158803005531",
+      "channel_id": "1170692781216378960",
+      "content": "Just got this for a dollar<:pray:1356053116260454534>",
+      "author": "elia041104",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417851473810690099",
+      "channel_id": "1170692781216378960",
+      "content": "can we bully lub",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417772495938781237",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1417783856978985011",
@@ -124,100 +213,20 @@
       "channel": "忘却前夜OST：皮克曼EP·疯画奇旅"
     },
     {
-      "id": "1417723280051142769",
-      "channel_id": "1131839817982947429",
-      "content": "我推薦所有忘卻前夜玩家去玩達芙黛爾",
-      "author": "sayo.0320",
+      "id": "1417726775286435861",
+      "channel_id": "1170692781216378960",
+      "content": "ok why people getting arisu’ed",
+      "author": "arisuu0604",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417781563135098932",
-      "channel_id": "1131839817982947429",
-      "content": "要是有餅乾糕點味道的就是開麵包店的小姑姑\n大姑姑最老頭髮是四個姑姑裡最白的\n二姑姑住美國，每次回來都很趕所以有時身上會出現忘記換的美金三姑姑非常刻薄",
-      "author": "wqin.",
+      "id": "1417750127623405580",
+      "channel_id": "1170692781216378960",
+      "content": "||🫃||||🫃||||🫃||||🫃||||🫃||||🫃||||🤰||||🫃||||🫃||\n||🫃||||🫃||||🫃||||🫃||||🤰||||🫃||||🫃|",
+      "author": "gisstar",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417784724000083989",
-      "channel_id": "1131839817982947429",
-      "content": "杜勒暴擊了沒\n500黑印湊夠了嗎\n趕緊把鳥人+12阿",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418020486587355320",
-      "channel_id": "1131839817982947429",
-      "content": "有西班牙區的人標我出來然後說我是另一個人的中國老婆？",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417714300814098544",
-      "channel_id": "1131839874132090890",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1417773997118066758",
-      "channel_id": "1131839817982947429",
-      "content": "這是因為阿狗是超高智商人士，不愧為無課戰神又有一堆限定90級+12的超級大佬🛐 🛐 🛐",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417774728806010930",
-      "channel_id": "1131839817982947429",
-      "content": "你應該邊上班邊打融災",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417776308800327732",
-      "channel_id": "1131839817982947429",
-      "content": "他們敢不幫我我就敢讓他們那些活著的都社死",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417776991762911252",
-      "channel_id": "1131839817982947429",
-      "content": "結果我阿嬤是大範圍托夢，我爸我 我在台北 美國 蘭嶼 金門 媽祖的侄子總共6人都夢到了",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417777604941054054",
-      "channel_id": "1131839817982947429",
-      "content": "我們家的人多少都有一點，最少的就是看到 摸到 感應 聽懂其中一種，最多的就是全部都有，然後外加一個交流",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417780549136678964",
-      "channel_id": "1131839817982947429",
-      "content": "經典「小時候抱過」但完全想不起來",
-      "author": "cameliia._.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417780785875910726",
-      "channel_id": "1131839817982947429",
-      "content": "「喂」",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

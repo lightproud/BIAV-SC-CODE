@@ -1,10 +1,18 @@
 {
   "date": "2025-09-16",
-  "messages": 1065,
-  "unique_authors": 49,
-  "reactions_total": 519,
-  "attachments": 82,
+  "messages": 8064,
+  "unique_authors": 202,
+  "reactions_total": 1409,
+  "attachments": 363,
   "channel_activity": {
+    "🔸morimens-game-chat": 6591,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 73,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 16,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 302,
     "🔸綜合討論": 877,
     "🔸阵容构建": 7,
     "⛓️": 7,
@@ -45,34 +53,35 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 19,
-    "2": 79,
-    "3": 47,
-    "4": 20,
-    "5": 1,
-    "6": 32,
-    "7": 85,
-    "8": 137,
-    "9": 134,
-    "10": 60,
-    "11": 30,
-    "12": 39,
-    "13": 99,
-    "14": 130,
-    "15": 86,
-    "16": 34,
-    "17": 8,
-    "18": 5,
-    "22": 5,
-    "23": 5,
-    "19": 3,
-    "21": 1,
-    "20": 1
+    "0": 170,
+    "1": 323,
+    "2": 264,
+    "3": 216,
+    "4": 280,
+    "5": 114,
+    "6": 183,
+    "7": 444,
+    "8": 526,
+    "9": 223,
+    "10": 391,
+    "11": 321,
+    "12": 317,
+    "13": 402,
+    "14": 537,
+    "15": 653,
+    "16": 770,
+    "17": 535,
+    "18": 316,
+    "19": 366,
+    "20": 133,
+    "21": 132,
+    "22": 314,
+    "23": 134
   },
   "message_types": {
-    "0": 642,
-    "19": 242
+    "0": 5062,
+    "19": 1936,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -97,12 +106,36 @@
       "channel": "⛓️"
     },
     {
+      "id": "1417543048963031111",
+      "channel_id": "1170692781216378960",
+      "content": "Horla is trash unironically",
+      "author": "frosthief",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417564959956668497",
+      "channel_id": "1170692781216378960",
+      "content": "I'm done, f the wave 3",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1417478128627880049",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 12,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417548199488651607",
+      "channel_id": "1170692781216378960",
+      "content": "Wanda > Doresain",
+      "author": "sophiechoice",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1417425703707611220",
@@ -128,6 +161,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1417529502778654903",
+      "channel_id": "1170692781216378960",
+      "content": "Just like American people speak American.",
+      "author": "sophiechoice",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1417424629445693514",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -142,6 +183,14 @@
       "author": "ernest_heart",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417513937892802721",
+      "channel_id": "1170692781216378960",
+      "content": "I don't really like feet",
+      "author": "username_not_avaiable",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1417432125224779856",
@@ -159,76 +208,36 @@
       "channel": "杜勒X皮克曼"
     },
     {
-      "id": "1417425110712713337",
-      "channel_id": "1131839817982947429",
-      "content": "不如改成去亞蘭與三大質體之一深度交流",
-      "author": "ahuahuahua",
+      "id": "1417507369113354372",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417426746449592401",
-      "channel_id": "1131839817982947429",
-      "content": "去上班了這破遊戲誰愛玩誰玩",
-      "author": "ahuahuahua",
+      "id": "1417525540998610957",
+      "channel_id": "1170692781216378960",
+      "content": "I’m an old man it’s too confusing",
+      "author": "frosthief",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417428567339565086",
-      "channel_id": "1131839817982947429",
-      "content": "在你群看到元素周期表可以说是很恐怖的事情了\n总觉得下一秒你游就要出一整族元素的大雷（x",
-      "author": "flarinsidia",
+      "id": "1417546353591975956",
+      "channel_id": "1170692781216378960",
+      "content": "Better?",
+      "author": "cooked_chicken99",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417556532417265765",
-      "channel_id": "1131839817982947429",
-      "content": "赤完了",
-      "author": "ernest_heart",
+      "id": "1417617401922453594",
+      "channel_id": "1170692781216378960",
+      "content": "Gacha games do love fishing",
+      "author": "xxxgirlkisserxxx",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417431966914969690",
-      "channel_id": "1131839874132090890",
-      "content": "接著醫生復刻佬要抽+12🛐 🛐🛐",
-      "author": "universe.dark",
-      "reactions": 6,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1417430805382303744",
-      "channel_id": "1131839817982947429",
-      "content": "我才超限而已",
-      "author": "universe.dark",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417442170717081622",
-      "channel_id": "1131839817982947429",
-      "content": "不喜歡吃校貓拉出來的東西",
-      "author": "noemyra",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417451103200608347",
-      "channel_id": "1131839817982947429",
-      "content": "<:spend:1356086121888747531>",
-      "author": "_buqi",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417462297542266911",
-      "channel_id": "1131839817982947429",
-      "content": "Sp阿狗",
-      "author": "elkmilu",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

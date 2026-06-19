@@ -1,10 +1,18 @@
 {
   "date": "2025-09-15",
-  "messages": 2046,
-  "unique_authors": 54,
-  "reactions_total": 532,
-  "attachments": 179,
+  "messages": 9235,
+  "unique_authors": 195,
+  "reactions_total": 1431,
+  "attachments": 432,
   "channel_activity": {
+    "🔸morimens-game-chat": 7050,
+    "🔸剧情交流": 4,
+    "🔸晒卡分享": 3,
+    "🔸课间休息闲聊": 7,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 13,
+    "🔸deutscher-chatraum": 8,
+    "🔸русский-канал": 102,
     "🔸綜合討論": 1923,
     "🔸阵容构建": 9,
     "Pickmin": 2,
@@ -48,35 +56,36 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "0": 16,
-    "1": 106,
-    "2": 61,
-    "3": 100,
-    "4": 22,
-    "5": 34,
-    "6": 58,
-    "7": 23,
-    "8": 423,
-    "9": 223,
-    "10": 37,
-    "11": 83,
-    "12": 161,
-    "13": 270,
-    "14": 211,
-    "15": 50,
-    "16": 67,
-    "17": 68,
-    "18": 7,
-    "19": 6,
-    "20": 13,
-    "21": 3,
-    "22": 1,
-    "23": 3
+    "0": 382,
+    "1": 389,
+    "2": 323,
+    "3": 464,
+    "4": 248,
+    "5": 436,
+    "6": 370,
+    "7": 237,
+    "8": 548,
+    "9": 432,
+    "10": 303,
+    "11": 668,
+    "12": 521,
+    "13": 635,
+    "14": 724,
+    "15": 400,
+    "16": 356,
+    "17": 378,
+    "18": 247,
+    "19": 347,
+    "20": 214,
+    "21": 139,
+    "22": 259,
+    "23": 215
   },
   "message_types": {
-    "0": 1397,
-    "19": 533,
-    "46": 2
+    "0": 5263,
+    "19": 1922,
+    "20": 3,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -111,6 +120,70 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1417187237463851229",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/diSIlqXoBtM <@1288446421573304364> i tried to do commentary but",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417236051285774337",
+      "channel_id": "1170692781216378960",
+      "content": "anyways my fav animal is a penguin",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417201029006753832",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417288956508115005",
+      "channel_id": "1174983699935277147",
+      "content": "90等了\n~~這應該也算一種曬卡~~",
+      "author": "cwz.io",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417120428870336582",
+      "channel_id": "1170692781216378960",
+      "content": "yes, Leigh now gains 3 str instead of 2 before",
+      "author": "wolfierce",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417064914429677630",
+      "channel_id": "1170692781216378960",
+      "content": "<@1288446421573304364>No.This ult every turn this idea lol.You have like 5 turns",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417204295501353020",
+      "channel_id": "1170692781216378960",
+      "content": "Bluewil forever",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416994300646129705",
+      "channel_id": "1174983699935277147",
+      "content": "忘记截图了，普池出跨越疼痛<:wish:1356084702468899117>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1417018457760731226",
       "channel_id": "1131839817982947429",
       "content": "赤完了<:dead:1356082627509092372>",
@@ -142,6 +215,14 @@
       "channel": "未曾寄出的书信#1"
     },
     {
+      "id": "1417205065755922513",
+      "channel_id": "1170692781216378960",
+      "content": "guys is tulu e3 gud <:sleepy:1400771754573692928>",
+      "author": "nonexistencenorin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1416959854114898021",
       "channel_id": "1131839817982947429",
       "content": "~~事已至此课个月卡假装这期打掉了吧（~~",
@@ -163,76 +244,6 @@
       "content": "别上陆服，审查能把你游剧情美术卡得人模鬼样（",
       "author": "flarinsidia",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417144043699441796",
-      "channel_id": "1131839817982947429",
-      "content": "到時候羊媽穿很多，差不多這樣",
-      "author": "noemyra",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417241361559851110",
-      "channel_id": "1131839817982947429",
-      "content": "属性全对100%计划更进一步（",
-      "author": "flarinsidia",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417197507741487207",
-      "content": "Hi,\nEarlier in the day I did a low score Deep Dive run as a test to check the bo",
-      "author": "reya.li",
-      "reactions": 7,
-      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
-    },
-    {
-      "id": "1417225669880057998",
-      "content": "When thinking about what to upgrade, it helps to see what bonuses the next level",
-      "author": "yannic2112",
-      "reactions": 7,
-      "channel": "✅「Answered」Add ability to see all card levels"
-    },
-    {
-      "id": "1417062278058217472",
-      "channel_id": "1131839817982947429",
-      "content": "算是修复前交个卷吧，没有算力调和就3t了，唉，算力调和真的是最恶心的机制了",
-      "author": "lurenjiao",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417068057121259631",
-      "channel_id": "1131839817982947429",
-      "content": "所以除了管理员你都随便推",
-      "author": "lurenjiao",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417071978719744092",
-      "channel_id": "1131839817982947429",
-      "content": "順便無聊小知識\n漫畫的杯數其實比現實誇大不少\n像是你說那個漫畫女角是d但其實現實而論已經要f或超過",
-      "author": "foxcatfurry",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417072709011116112",
-      "channel_id": "1131839817982947429",
-      "content": "（戈雅正在阴暗地爬行）（？",
-      "author": "flarinsidia",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417168253486366822",
-      "channel_id": "1131839817982947429",
-      "content": "收工<:dead:1356082627509092372>",
-      "author": "sweet_25367",
-      "reactions": 6,
       "channel": "🔸綜合討論"
     }
   ]

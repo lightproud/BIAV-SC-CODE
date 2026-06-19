@@ -1,10 +1,14 @@
 {
   "date": "2025-09-25",
-  "messages": 706,
-  "unique_authors": 41,
-  "reactions_total": 311,
-  "attachments": 74,
+  "messages": 8274,
+  "unique_authors": 169,
+  "reactions_total": 1786,
+  "attachments": 382,
   "channel_activity": {
+    "🔸morimens-game-chat": 7434,
+    "🔸晒卡分享": 39,
+    "🔸课间休息闲聊": 3,
+    "🔸chaîne-française": 92,
     "🔸綜合討論": 560,
     "Mythag`s Cat want to share cool art with you": 3,
     "Tier List & Banner Guide": 25,
@@ -34,32 +38,36 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 10,
-    "1": 72,
-    "2": 72,
-    "3": 62,
-    "4": 83,
-    "5": 16,
-    "6": 35,
-    "7": 8,
-    "8": 8,
-    "9": 38,
-    "10": 26,
-    "11": 11,
-    "12": 45,
-    "13": 15,
-    "14": 26,
-    "15": 67,
-    "16": 31,
-    "17": 36,
-    "18": 13,
-    "19": 9,
-    "20": 21,
-    "23": 2
+    "0": 69,
+    "1": 184,
+    "2": 359,
+    "3": 540,
+    "4": 197,
+    "5": 252,
+    "6": 279,
+    "7": 309,
+    "8": 546,
+    "9": 393,
+    "10": 247,
+    "11": 247,
+    "12": 447,
+    "13": 197,
+    "14": 480,
+    "15": 656,
+    "16": 363,
+    "17": 395,
+    "18": 453,
+    "19": 323,
+    "20": 462,
+    "21": 435,
+    "22": 346,
+    "23": 95
   },
   "message_types": {
-    "0": 411,
-    "19": 149
+    "0": 4841,
+    "19": 2725,
+    "20": 1,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -77,11 +85,83 @@
       "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
     },
     {
+      "id": "1420826341493833738",
+      "channel_id": "1170692781216378960",
+      "content": "<3 i'm not paying for child support btw",
+      "author": "runningaway_fs",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420734475041505353",
+      "channel_id": "1170692781216378960",
+      "content": "We hope everyone spends rationally and keeps a healthy balance between life and ",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1420702442680487998",
       "content": "She looks so pretty",
       "author": "spooky_penguin_",
       "reactions": 17,
       "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420747791805972501",
+      "channel_id": "1170692781216378960",
+      "content": "a year~ <:satisfy:1400771690321154110>",
+      "author": "annaxxe_",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420850476966215691",
+      "channel_id": "1170692781216378960",
+      "content": "seguro tonta",
+      "author": "canker.thore",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420784953570099230",
+      "channel_id": "1170692781216378960",
+      "content": "only u",
+      "author": "arisuu0604",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420840640585011240",
+      "channel_id": "1170692781216378960",
+      "content": "...Guys...I'm normal...",
+      "author": "frosthief",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420687116874158100",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420841206988013598",
+      "channel_id": "1170692781216378960",
+      "content": "Having Spooky on my side is like having Hitler on my team. Automatic loss",
+      "author": "frosthief",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420846149740531764",
+      "channel_id": "1170692781216378960",
+      "content": "emergency gnosis",
+      "author": "bagels5899",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1420735546178928692",
@@ -92,6 +172,38 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1420716991668293724",
+      "channel_id": "1170692781216378960",
+      "content": "She's floating cause she's holding her poop in before she drops it Inside keeper",
+      "author": "sugarspawn",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420837912362094622",
+      "channel_id": "1170692781216378960",
+      "content": "I would never be a gooner",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420849720317841588",
+      "channel_id": "1170692781216378960",
+      "content": "bomba 💣",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420920841775878164",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/casiah-morimens-gif-3142493654979058752",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1420867660370940005",
       "content": "Light if you're reading this, you can do the funniest thing right now.",
       "author": "aurora3981",
@@ -99,117 +211,20 @@
       "channel": "Mythag`s Cat want to share cool art with you"
     },
     {
-      "id": "1420811475353731222",
-      "content": "UID：100005174\n\n~~震驚？！聖河氾濫二度來襲，這次守咪人究竟如何守護他的🌼花----！？？~~\n\n本來標題是||在下守咪人，有何貴幹？||但打完後",
-      "author": "ass191044",
-      "reactions": 8,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420653274415235094",
-      "content": "This guide only covers Astral Reign, not Faded Legacy.",
-      "author": "lurenjiao",
-      "reactions": 7,
-      "channel": "Tier List & Banner Guide"
-    },
-    {
-      "id": "1420645988468658199",
-      "content": "Now that the thread is chill, I'd like to say: Having been more or less in your ",
-      "author": "wolfierce",
-      "reactions": 7,
-      "channel": ""
-    },
-    {
-      "id": "1420634919125647391",
-      "channel_id": "1131839817982947429",
-      "content": "輸光……",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420703891753795675",
-      "content": "Armpit and feet zoom in.\nWe have made it bros, the gacha skin standard <:Wait:14",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
-    },
-    {
-      "id": "1420628366121238608",
-      "channel_id": "1131839817982947429",
-      "content": "收工🌚",
-      "author": "taayoui",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420708645657641010",
-      "content": "Yeah I think this skin star rating system needs to be properly detailed in game ",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
-    },
-    {
-      "id": "1420598884895428742",
-      "channel_id": "1131839817982947429",
-      "content": "我也存了一些要來抽復刻",
-      "author": "quackdayo",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420621969442865243",
-      "channel_id": "1131839817982947429",
-      "content": "<@320087455556435968>",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420801683155452037",
-      "channel_id": "1131839817982947429",
-      "content": "孤羽甚至不用打出使用者卡牌 還有護盾加成",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420805542011736176",
-      "channel_id": "1131839817982947429",
-      "content": "牢玩家",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420702845501571073",
-      "content": "FEET",
+      "id": "1420829707670261760",
+      "channel_id": "1170692781216378960",
+      "content": "Im not a fraud",
       "author": "spooky_penguin_",
-      "reactions": 4,
-      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420709066027565076",
-      "content": "Worth for feet hole",
-      "author": "aurora3981",
-      "reactions": 4,
-      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
-    },
-    {
-      "id": "1420600394538811434",
-      "channel_id": "1131839817982947429",
-      "content": "有人要來陪我刷題嘛？（打算去語音房寫題的我）",
-      "author": "wqin.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420610923399217194",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1420839792836349963",
+      "channel_id": "1170692781216378960",
+      "content": "Live <:Cheerup:1400771555939844149> Reaction",
+      "author": "idotly",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

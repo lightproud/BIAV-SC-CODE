@@ -1,10 +1,18 @@
 {
   "date": "2025-09-13",
-  "messages": 1162,
-  "unique_authors": 42,
-  "reactions_total": 1189,
-  "attachments": 77,
+  "messages": 10696,
+  "unique_authors": 237,
+  "reactions_total": 2383,
+  "attachments": 500,
   "channel_activity": {
+    "🔸morimens-game-chat": 8500,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 755,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 255,
     "🔸綜合討論": 1086,
     "🔸阵容构建": 3,
     "Kath - RA Art Submission by Flares.": 2,
@@ -29,34 +37,34 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "1": 13,
-    "2": 6,
-    "3": 35,
-    "4": 67,
-    "5": 124,
-    "6": 14,
-    "7": 59,
-    "8": 119,
-    "9": 119,
-    "10": 252,
-    "11": 72,
-    "12": 120,
-    "13": 51,
-    "14": 20,
-    "15": 22,
-    "16": 27,
-    "17": 15,
-    "18": 12,
-    "19": 7,
-    "20": 1,
-    "22": 4,
-    "23": 1,
-    "21": 1,
-    "0": 1
+    "0": 418,
+    "1": 401,
+    "2": 339,
+    "3": 699,
+    "4": 655,
+    "5": 421,
+    "6": 349,
+    "7": 600,
+    "8": 661,
+    "9": 927,
+    "10": 695,
+    "11": 498,
+    "12": 588,
+    "13": 456,
+    "14": 437,
+    "15": 385,
+    "16": 346,
+    "17": 145,
+    "18": 164,
+    "19": 338,
+    "20": 368,
+    "21": 242,
+    "22": 249,
+    "23": 315
   },
   "message_types": {
-    "0": 843,
-    "19": 246
+    "0": 6526,
+    "19": 3008
   },
   "top_reacted_messages": [
     {
@@ -81,6 +89,14 @@
       "channel": "☄️"
     },
     {
+      "id": "1416366122235723879",
+      "channel_id": "1174983699935277147",
+      "content": "請大家友好討論發言哦！以下守密人因為違反社區管理規則，已經採取對應的處罰措施:\n\n<@456226577798135808> ——在曬卡頻道攻擊正常曬卡貼文、攻",
+      "author": "morimensstaff02",
+      "reactions": 23,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1416388364495622184",
       "content": "",
       "author": "chivervine",
@@ -88,11 +104,35 @@
       "channel": "CaeJun Seafood Boil - Art Submission - Shiv"
     },
     {
+      "id": "1416368164828217445",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 18,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1416219709925359667",
       "content": "小皮，其实是摸鱼混一下……👉👈\n\nuid100559282\n\n\n\n\n\n＃V2.3同人征集\n（其实我也不知为何我要再打一个这个）",
       "author": "xuyu0447_77124",
       "reactions": 17,
       "channel": "同人创作……"
+    },
+    {
+      "id": "1416241232526446713",
+      "channel_id": "1170692781216378960",
+      "content": "You get to in all waves except for 3",
+      "author": "aurora3981",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416572072892698746",
+      "channel_id": "1170692781216378960",
+      "content": "hello everyone",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1416355111952973854",
@@ -103,6 +143,38 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1416441158241882135",
+      "channel_id": "1170692781216378960",
+      "content": "the worst realm is the one you dislike 😤",
+      "author": "khykken",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416555011084779571",
+      "channel_id": "1170692781216378960",
+      "content": "it was downhill the moment you downloaded the game",
+      "author": "khykken",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416346303272583208",
+      "channel_id": "1174983699935277147",
+      "content": "祝我成年",
+      "author": "dog794",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416551402603282525",
+      "channel_id": "1174983699935277147",
+      "content": "如果是給其他的就更好了神王已經三疊了<:pray:1400771650064089112>",
+      "author": "wild_pansy",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1416367883407065199",
       "channel_id": "1131839817982947429",
       "content": "阿遙不只喜歡輸出高的 自己罵人輸出也很高",
@@ -111,108 +183,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1416368652558532678",
-      "channel_id": "1131839817982947429",
-      "content": "~~好色喔 擠一張床~~",
-      "author": "undecember_news",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1416242463055810734",
+      "channel_id": "1170692781216378960",
+      "content": "ok now what is this",
+      "author": "dominica_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416361596300824586",
-      "channel_id": "1131839817982947429",
-      "content": "感觉不如游戏群不让玩游戏",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1416342301504180235",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sophiechoice",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416367633464430702",
-      "channel_id": "1131839817982947429",
-      "content": "被判開掛",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1416418243203305522",
+      "channel_id": "1170692781216378960",
+      "content": "Its gonna be better i promise 😭",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416369793430327386",
-      "channel_id": "1131839817982947429",
-      "content": "结果他破防了",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1416449762802008266",
+      "channel_id": "1170692781216378960",
+      "content": "Easter was like 4 months ago",
+      "author": "notpantswagon",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416369912229658646",
-      "channel_id": "1131839817982947429",
-      "content": "誰才是最糖之巔",
-      "author": "undecember_news",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416278780716122132",
-      "channel_id": "1131839817982947429",
-      "content": "我也想裝啊，可是我是真菜啊！",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416283838665199686",
-      "channel_id": "1131839817982947429",
-      "content": "抽了船长带我的深海赔钱货们玩（",
-      "author": "timbite",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416286281658273993",
-      "channel_id": "1131839817982947429",
-      "content": "船長最好的出裝是+12巨刃+12藏品\n加油👍",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416288798702305402",
-      "channel_id": "1131839817982947429",
-      "content": "他乾了",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416319525410050098",
-      "channel_id": "1131839817982947429",
-      "content": "~~提前3年~~",
-      "author": "cwz.io",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416328208529362995",
-      "channel_id": "1131839817982947429",
-      "content": "意義哥",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416332719616430140",
-      "channel_id": "1131839817982947429",
-      "content": "我是什麼神廟嗎？",
-      "author": "kemomimi_",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416345224707313705",
-      "channel_id": "1131839817982947429",
-      "content": "吓我一跳英区有个不玩超维其他星辰角全+12的",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1416500876440502283",
+      "channel_id": "1170692781216378960",
+      "content": "Hello friends",
+      "author": "the_black_butterfly",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

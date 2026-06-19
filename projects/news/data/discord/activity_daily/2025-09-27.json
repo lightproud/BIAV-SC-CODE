@@ -1,10 +1,14 @@
 {
   "date": "2025-09-27",
-  "messages": 605,
-  "unique_authors": 32,
-  "reactions_total": 216,
-  "attachments": 87,
+  "messages": 8658,
+  "unique_authors": 172,
+  "reactions_total": 1551,
+  "attachments": 421,
   "channel_activity": {
+    "🔸morimens-game-chat": 8005,
+    "🔸晒卡分享": 8,
+    "🔸欢乐梗图": 4,
+    "🔸한국어-채팅방": 36,
     "🔸綜合討論": 509,
     "🔸阵容构建": 24,
     "Mythag`s Cat want to share cool art with you": 3,
@@ -22,30 +26,35 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
-    "1": 3,
-    "2": 1,
-    "3": 11,
-    "4": 106,
-    "5": 81,
-    "6": 29,
-    "7": 24,
-    "8": 45,
-    "9": 27,
-    "11": 13,
-    "12": 41,
-    "13": 95,
-    "14": 13,
-    "15": 16,
-    "16": 41,
-    "17": 32,
-    "20": 2,
-    "23": 1,
-    "10": 23,
-    "0": 1
+    "0": 258,
+    "1": 226,
+    "2": 461,
+    "3": 767,
+    "4": 716,
+    "5": 301,
+    "6": 437,
+    "7": 284,
+    "8": 334,
+    "9": 338,
+    "10": 322,
+    "11": 454,
+    "12": 196,
+    "13": 331,
+    "14": 442,
+    "15": 296,
+    "16": 417,
+    "17": 461,
+    "18": 126,
+    "19": 417,
+    "20": 346,
+    "21": 249,
+    "22": 163,
+    "23": 316
   },
   "message_types": {
-    "0": 427,
-    "19": 106
+    "0": 5297,
+    "19": 2755,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -77,6 +86,14 @@
       "channel": "忘却前夜OST：畸变丰穰之种"
     },
     {
+      "id": "1421301879501226096",
+      "channel_id": "1170692781216378960",
+      "content": "Paying discord for nitro to be able to share feet emote",
+      "author": "moyashi0672",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1421303622536527933",
       "content": "can we get the update for ddive and traphase leaderboard based rewards? moving i",
       "author": "lumato",
@@ -84,123 +101,116 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
-      "id": "1421340682974531629",
-      "channel_id": "1131839817982947429",
+      "id": "1421644038028791889",
+      "channel_id": "1170692781216378960",
+      "content": "I am an amateur voice actress, although would like to be hirede one-day <:cry3:1",
+      "author": "inana_istar",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421644186670596118",
+      "channel_id": "1170692781216378960",
+      "content": "Or just record “Mpreg” and we’d know",
+      "author": "fischperch",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421644657980477550",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "inana_istar",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421474857912242218",
-      "channel_id": "1131839817982947429",
+      "id": "1421441509818896477",
+      "channel_id": "1170692781216378960",
+      "content": "Well... Could have used ||penis|| as starting word for wordle <:dead:13560826275",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421473975963226213",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1392146051590525010/9",
+      "author": "amirganj",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421337413434867885",
+      "channel_id": "1174983699935277147",
+      "content": "第一次上大师，必须炫耀一下",
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421440903863734324",
+      "channel_id": "1174983699935277147",
+      "content": "普池",
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421432611137388605",
+      "channel_id": "1170692781216378960",
+      "content": "Why are u agreeing and celebrating!!!! <@1359156800108105941>",
+      "author": "red_rest",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421505857237024818",
+      "channel_id": "1170692781216378960",
+      "content": "gramona skin is real",
+      "author": "gisstar",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421587190571339999",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421480849425039511",
-      "channel_id": "1131839817982947429",
-      "content": "把衣服穿好 <:proud:1400771683664658433>",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421487792390672485",
-      "channel_id": "1131839817982947429",
-      "content": "星辰篇疑似投到大失敗San值-8，要瘋了",
+      "id": "1421521821420752916",
+      "channel_id": "1174983699935277147",
+      "content": "",
       "author": "ena04564",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421507312685682820",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1421450430512103467",
+      "channel_id": "1170692781216378960",
+      "content": "can i be Flares’s cheerleader?",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421508953719701634",
-      "channel_id": "1131839817982947429",
-      "content": "那我想你一定會願意跟：永恆輪迴、權力意志、弱者道德、拜火教跟作為意志與表象的世界等等做朋友",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1421480181385793607",
+      "channel_id": "1170692781216378960",
+      "content": "Hello guys",
+      "author": "speardroid",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421524732557267044",
-      "channel_id": "1131839817982947429",
-      "content": "我变成佬了",
-      "author": "jidu1418",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421452403105861743",
-      "content": "補發杜勒考官的戰績",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1421358835393757266",
-      "channel_id": "1131839817982947429",
-      "content": "喚醒體3啟、喚醒體+4、命輪3疊、命輪+12\n這幾個階段比較有意義\n可以依照自己的情況排順序",
-      "author": "tofu0834",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421411328098041946",
-      "channel_id": "1131839817982947429",
-      "content": "【【忘却前夜】从入坑到425！超简易新人攻略！几张图片解决你的萌新难题！（图片会随环境变化更新）-哔哩哔哩】 https://b23.tv/Vkv8qBE",
-      "author": "scholar_2",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421428339972767845",
-      "channel_id": "1131839817982947429",
-      "content": "菲神带了都没发挥",
-      "author": "timbite",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421479312124547267",
-      "channel_id": "1131839817982947429",
-      "content": "去Fan-art那裡看",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421482884820107406",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421483066035273739",
-      "channel_id": "1131839817982947429",
-      "content": "搞陆服猫又有借口拖产能了",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421487225094406174",
-      "channel_id": "1131839817982947429",
-      "content": "~~来骰个d100以决定下段剧情水平x~~",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1421509309174648913",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/yOW1X9c9Tl0\nmy aequor alt finally doing things, they grow so fa",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

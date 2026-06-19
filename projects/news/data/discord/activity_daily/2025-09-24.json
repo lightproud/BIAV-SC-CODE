@@ -1,10 +1,17 @@
 {
   "date": "2025-09-24",
-  "messages": 1146,
-  "unique_authors": 41,
-  "reactions_total": 426,
-  "attachments": 93,
+  "messages": 10161,
+  "unique_authors": 208,
+  "reactions_total": 2464,
+  "attachments": 510,
   "channel_activity": {
+    "🔸morimens-game-chat": 8838,
+    "🔸剧情交流": 57,
+    "🔸晒卡分享": 38,
+    "🔸相位对弈": 18,
+    "🔸课间休息闲聊": 17,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 40,
     "🔸綜合討論": 1079,
     "sleepiest lord": 2,
     "pickman": 4,
@@ -29,33 +36,34 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
-    "0": 17,
-    "1": 143,
-    "2": 9,
-    "3": 8,
-    "4": 14,
-    "5": 78,
-    "6": 181,
-    "7": 8,
-    "8": 6,
-    "9": 41,
-    "10": 49,
-    "11": 130,
-    "12": 59,
-    "13": 67,
-    "14": 180,
-    "15": 18,
-    "16": 108,
-    "17": 17,
-    "18": 4,
-    "20": 2,
-    "21": 2,
-    "22": 2,
-    "23": 3
+    "0": 276,
+    "1": 528,
+    "2": 501,
+    "3": 402,
+    "4": 337,
+    "5": 537,
+    "6": 717,
+    "7": 337,
+    "8": 346,
+    "9": 189,
+    "10": 405,
+    "11": 302,
+    "12": 349,
+    "13": 782,
+    "14": 662,
+    "15": 327,
+    "16": 397,
+    "17": 412,
+    "18": 456,
+    "19": 453,
+    "20": 588,
+    "21": 655,
+    "22": 170,
+    "23": 33
   },
   "message_types": {
-    "19": 302,
-    "0": 777
+    "0": 5717,
+    "19": 3298
   },
   "top_reacted_messages": [
     {
@@ -73,11 +81,43 @@
       "channel": "请支持我们绿玛瑙和恋爱奶酪"
     },
     {
+      "id": "1420461899451207732",
+      "channel_id": "1170692781216378960",
+      "content": "<@285755067213152257> \nThere aren't any supports for her rn\nBUT the beginner ban",
+      "author": "spooky_penguin_",
+      "reactions": 28,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1420223106852585545",
       "content": "started off as a lil doodle but i kept going",
       "author": "wraithdust",
       "reactions": 28,
       "channel": "sleepiest lord"
+    },
+    {
+      "id": "1420458546868523070",
+      "channel_id": "1170692781216378960",
+      "content": "it's time for us all to quit this team got 72000",
+      "author": "reya.li",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420364177897160734",
+      "channel_id": "1170692781216378960",
+      "content": "In some respect a Kade demanding PvP matches is up there with a melwyn asking me",
+      "author": "red_rest",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420269412308619356",
+      "channel_id": "1300659436804640788",
+      "content": "自分が融災禁域で使う頻度高めの鍵令を並べました。\n・汎用的\n鼠、海の祭：説明不要\n小さな願い：狂気爆発に依存してる構成ならどこでも。\n唯一の種子：保持付きの特定",
+      "author": "eyu17",
+      "reactions": 17,
+      "channel": "🔸日本語チャンネル"
     },
     {
       "id": "1420300715510726666",
@@ -87,6 +127,14 @@
       "channel": ""
     },
     {
+      "id": "1420371561252393051",
+      "channel_id": "1170692781216378960",
+      "content": "I have only joined for a week or so now, I forgot math but I still remember the ",
+      "author": "mount_fisherman",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1420459075506016368",
       "content": "厨力大爆发画了杜师傅！其实感觉滤镜比我会画画（）\nuid:100643599",
       "author": "astra098737",
@@ -94,122 +142,84 @@
       "channel": "✨冥府之路✨"
     },
     {
-      "id": "1420266101446803586",
-      "channel_id": "1131839817982947429",
-      "content": "這是實話",
-      "author": "universe.dark",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "id": "1420244196651958293",
+      "channel_id": "1170692781216378960",
+      "content": "Luminous core obv",
+      "author": "runningaway_fs",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420308335978352660",
-      "channel_id": "1131839817982947429",
-      "content": "## 国~庆~计~划~~\n10.1  通宵玩5771\n10.2 通宵玩5771\n10.3 通宵玩5771\n10.4 通宵玩5771\n10.5 猝死\n10.6 家",
-      "author": "akalanden",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "id": "1420462278196858990",
+      "channel_id": "1170692781216378960",
+      "content": "ah need to go to sleep now, have a nice day/night <:wish:1356084702468899117> <:",
+      "author": "annaxxe_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420410148811444284",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cs001092",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "id": "1420462926959087807",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420452035542782103",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "alatin.",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "id": "1420368574161096884",
+      "channel_id": "1170692781216378960",
+      "content": "In the past they handed out a selector and ran banners where you could get old u",
+      "author": "hitsu4",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420223511921954919",
-      "channel_id": "1131839817982947429",
-      "content": "https://cdn.discordapp.com/attachments/1131839817982947429/1401666050021523527/2",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1420378272533053533",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/bug-cat-capoo-blue-bug-cat-tail-gif-10566221701026217428",
+      "author": "tnimreppep",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420403715281653964",
-      "channel_id": "1131839817982947429",
-      "content": "鼠+10",
-      "author": "jidu1418",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1420296506514346036",
+      "channel_id": "1170692781216378960",
+      "content": "1️⃣  ecog or 2️⃣ eggnog ?",
+      "author": "fishhazardthewizard",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420370090209316914",
-      "channel_id": "1131839817982947429",
-      "content": "不 是朋友差邀请码把我又叫回来了😂",
-      "author": "oliveira_1453",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1420375989359476746",
+      "channel_id": "1170692781216378960",
+      "content": "it was a cooking experiment gone wrong",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420217615187447874",
-      "channel_id": "1131839817982947429",
-      "content": "圖魯可以安心格式化了",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1420473244141617223",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420220112287301665",
-      "channel_id": "1131839817982947429",
-      "content": "【牢希3星H3-10-哔哩哔哩】 https://b23.tv/Q4NUqVU",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1420246443972628554",
+      "channel_id": "1170692781216378960",
+      "content": "Having a job: <:Pity:1400771620989308998> <:dead:1356082627509092372> 💵\nHaving n",
+      "author": "runningaway_fs",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420403310845886514",
-      "channel_id": "1131839817982947429",
-      "content": "今天这普池有点折寿啊",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420409448282718301",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420410725888954579",
-      "channel_id": "1131839817982947429",
-      "content": "我記得他的密碼，我力氣比她大，她比我高又如何，我能直接把他扛肩上",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420447820644745267",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420233335078125568",
-      "content": "Hey everyone,\n\n<@201897606572539904> asked me yesterday to see runs of my DTide ",
-      "author": "climbkaly",
-      "reactions": 4,
-      "channel": "Recent Banners Example Teams in DTide"
-    },
-    {
-      "id": "1420253777444732938",
-      "content": "GIVE ME MORE FURRY AWAKER OR GRYKER  <:point:1356053112292511815> <:point:135605",
-      "author": "aegisx",
-      "reactions": 4,
-      "channel": ""
+      "id": "1420353928150646865",
+      "channel_id": "1170692781216378960",
+      "content": "hol on gimme like a few days and ill make ultra turn a simple guide or something",
+      "author": "nikolazuli",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

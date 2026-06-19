@@ -1,10 +1,16 @@
 {
   "date": "2025-09-28",
-  "messages": 795,
-  "unique_authors": 34,
-  "reactions_total": 265,
-  "attachments": 51,
+  "messages": 9557,
+  "unique_authors": 161,
+  "reactions_total": 1991,
+  "attachments": 366,
   "channel_activity": {
+    "🔸morimens-game-chat": 8521,
+    "🔸晒卡分享": 56,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 143,
+    "🔸한국어-채팅방": 6,
+    "🔸chaîne-française": 35,
     "🔸綜合討論": 641,
     "🔸阵容构建": 4,
     "Tinct on a swing": 8,
@@ -35,33 +41,35 @@
     "1420092491125755985": 5
   },
   "hourly_activity": {
-    "0": 2,
-    "2": 11,
-    "3": 9,
-    "4": 8,
-    "5": 11,
-    "6": 16,
-    "7": 11,
-    "8": 9,
-    "9": 80,
-    "10": 69,
-    "11": 111,
-    "12": 151,
-    "13": 199,
-    "14": 10,
-    "15": 54,
-    "17": 9,
-    "18": 8,
-    "23": 5,
-    "22": 4,
-    "1": 4,
-    "16": 2,
-    "20": 3,
-    "21": 9
+    "0": 160,
+    "1": 161,
+    "2": 527,
+    "3": 584,
+    "4": 516,
+    "5": 541,
+    "6": 299,
+    "7": 265,
+    "8": 204,
+    "9": 502,
+    "10": 502,
+    "11": 416,
+    "12": 763,
+    "13": 728,
+    "14": 481,
+    "15": 745,
+    "16": 496,
+    "17": 189,
+    "18": 163,
+    "19": 273,
+    "20": 342,
+    "21": 310,
+    "22": 89,
+    "23": 301
   },
   "message_types": {
-    "0": 496,
-    "19": 149
+    "19": 3032,
+    "0": 5729,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -79,6 +87,38 @@
       "channel": "24, Daffodil, Liz and Tulu Sketches!"
     },
     {
+      "id": "1421866863788560547",
+      "channel_id": "1170692781216378960",
+      "content": "<@364412673275723779> <@285755067213152257> <@1288446421573304364> i have provid",
+      "author": "reya.li",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421974613893840897",
+      "channel_id": "1170692781216378960",
+      "content": "Fpreg will become real",
+      "author": "spooky_penguin_",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421974579294769203",
+      "channel_id": "1170692781216378960",
+      "content": "Eating fetuses and abortion are banned",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421974657900347392",
+      "channel_id": "1170692781216378960",
+      "content": "Mpreg is banned",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1421748905800106015",
       "channel_id": "1131839817982947429",
       "content": "过了\n塔薇+觉醒哈姆林+莱克钥令+女仆算力卡vs医生boss\n享受不一般的美味😋",
@@ -87,137 +127,108 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1421794729372155925",
-      "channel_id": "1131839817982947429",
-      "content": "?",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1421974095855353959",
+      "channel_id": "1170692781216378960",
+      "content": "Im gonna Charlie kirk you out of the world",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421886811659174043",
-      "channel_id": "1131839817982947429",
-      "content": "資源不算很富裕 有點慌",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1421875354246844458",
+      "channel_id": "1174983699935277147",
+      "content": "丟下一張角色全圖鑑",
+      "author": "vivian35._.",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421827408897507399",
-      "channel_id": "1131839817982947429",
+      "id": "1421900307448729610",
+      "channel_id": "1170692781216378960",
+      "content": "I used AI ofcourse",
+      "author": "zodiustenebris",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421950861583581396",
+      "channel_id": "1170692781216378960",
+      "content": "idk i think im racist",
+      "author": "jollysquire",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421880074743054458",
+      "channel_id": "1170692781216378960",
+      "content": "Wait... So the Login Scene changes with the story?",
+      "author": "le_fishmael",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421974774237630545",
+      "channel_id": "1170692781216378960",
+      "content": "can we burn Spooky at the stake for herecy",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421745793781469234",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421843341447790725",
-      "channel_id": "1131839817982947429",
-      "content": "能",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1421751126247870605",
+      "channel_id": "1174983699935277147",
+      "content": "單抽出奇蹟😭",
+      "author": "shostakovich524",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421846676636827760",
-      "channel_id": "1131839817982947429",
-      "content": "隨緣",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1421869624126865429",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens chat talking about morimens <:processing:1357185814567718963>",
+      "author": "_hyuuun",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421917774451572737",
-      "channel_id": "1131839817982947429",
-      "content": "<:pray:1356053116260454534>",
-      "author": "chiew1737",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1421876748508860436",
+      "channel_id": "1170692781216378960",
+      "content": "spooky if you change youur name to Goliaths Bulge ill think about it",
+      "author": "devilishdesire222",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421825092941385931",
-      "content": "从星辰篇上线开始星辰篇的规则包括唤醒体的星辰篇天赋都有一定的调整，确实极大地改善了星辰篇的游戏体验。但是现在星辰篇的游戏性上来说还是有缺陷，比如作为一个出牌游戏",
-      "author": "2300011747",
-      "reactions": 4,
-      "channel": "星辰篇规则还会继续优化吗？"
+      "id": "1421974003437932676",
+      "channel_id": "1170692781216378960",
+      "content": "im president of the universe",
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421744650552606800",
-      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:cute1:",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「Answered」Add the ability to copy and paste teams"
+      "id": "1421829760811532368",
+      "channel_id": "1170692781216378960",
+      "content": "AHHHHH IT HAS BEEN DONE",
+      "author": "grimalkaiser",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421827622395973672",
-      "channel_id": "1131839817982947429",
-      "content": "命輪反了啦",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421845451426234369",
-      "channel_id": "1131839817982947429",
-      "content": "~~然後被自己搞沒了~~",
-      "author": "dog794",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421846874775617661",
-      "channel_id": "1131839817982947429",
-      "content": "皇室戰爭4個",
-      "author": "corposant_1003",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421852824953688105",
-      "channel_id": "1131839817982947429",
-      "content": "口口",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421860258820788387",
-      "channel_id": "1131839817982947429",
-      "content": "2k4了好耶",
-      "author": "jidu1418",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421832464392781856",
-      "content": "策畫策畫怎樣都好 拜託把算力調和砍了 <:dead:1356082627509092372>",
-      "author": "qqinfinity",
-      "reactions": 3,
-      "channel": "星辰篇规则还会继续优化吗？"
-    },
-    {
-      "id": "1421816563341725707",
-      "channel_id": "1131839817982947429",
-      "content": "倒在3黑印面前",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421822439851036832",
-      "channel_id": "1131839817982947429",
-      "content": "輸出哈姆林嗎",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421835754182676585",
-      "channel_id": "1131839817982947429",
-      "content": "可喜可賀我融災還有兩關沒打",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1421830711836540938",
+      "channel_id": "1170692781216378960",
+      "content": "if anyone ever needs guide ask me I’m literally top 1 guidemaker I’m just never ",
+      "author": "bagels5899",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

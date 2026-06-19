@@ -1,10 +1,16 @@
 {
   "date": "2025-09-30",
-  "messages": 759,
-  "unique_authors": 42,
-  "reactions_total": 148,
-  "attachments": 85,
+  "messages": 7133,
+  "unique_authors": 161,
+  "reactions_total": 1236,
+  "attachments": 371,
   "channel_activity": {
+    "🔸morimens-game-chat": 6330,
+    "🔸晒卡分享": 11,
+    "🔸相位对弈": 13,
+    "🔸课间休息闲聊": 2,
+    "🔸한국어-채팅방": 17,
+    "🔸deutscher-chatraum": 1,
     "🔸綜合討論": 696,
     "🔸阵容构建": 1,
     "Mythag`s Cat want to share cool art with you": 1,
@@ -29,34 +35,102 @@
     "1421408684776357929": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 2,
-    "2": 35,
-    "3": 46,
-    "4": 61,
-    "5": 21,
-    "6": 18,
-    "7": 7,
-    "8": 26,
-    "9": 35,
-    "10": 87,
-    "11": 52,
-    "12": 124,
-    "13": 86,
-    "14": 8,
-    "15": 13,
-    "16": 20,
-    "17": 10,
-    "18": 9,
-    "21": 36,
-    "22": 44,
-    "23": 17
+    "0": 213,
+    "1": 220,
+    "2": 137,
+    "3": 341,
+    "4": 375,
+    "5": 217,
+    "6": 304,
+    "7": 298,
+    "8": 538,
+    "9": 339,
+    "10": 251,
+    "11": 342,
+    "12": 401,
+    "13": 193,
+    "14": 268,
+    "15": 443,
+    "16": 407,
+    "17": 383,
+    "18": 195,
+    "19": 459,
+    "20": 265,
+    "21": 175,
+    "22": 166,
+    "23": 203
   },
   "message_types": {
-    "0": 555,
-    "19": 142
+    "19": 1935,
+    "0": 4437,
+    "20": 1,
+    "23": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1422605928095551498",
+      "channel_id": "1170692781216378960",
+      "content": "yeah i got double sorel",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422629217257914410",
+      "channel_id": "1170692781216378960",
+      "content": "Don't know. Never really checked.",
+      "author": "climbkaly",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422592881973137468",
+      "channel_id": "1170692781216378960",
+      "content": "hows my doresain out of 10?",
+      "author": "blecnes",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422605779931889696",
+      "channel_id": "1170692781216378960",
+      "content": "no i dont have a caro team yet",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422575960435462224",
+      "channel_id": "1170692781216378960",
+      "content": "<:wish:1356084702468899117> <:wish:1356084702468899117> <:wish:13560847024688991",
+      "author": "annaxxe_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422427432576749600",
+      "channel_id": "1170692781216378960",
+      "content": "discord powercouple frfr",
+      "author": "khykken",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422674598293540874",
+      "channel_id": "1170692781216378960",
+      "content": "Corruption only bad if I'm not involved",
+      "author": "lotan_045",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422553690124062781",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
     {
       "id": "1422457762830483516",
       "content": "已通過燈罩考官的試煉",
@@ -65,12 +139,76 @@
       "channel": ""
     },
     {
+      "id": "1422531441631170570",
+      "channel_id": "1170692781216378960",
+      "content": "Blue complete<:takenotes:1357186646294138890> <:takenotes:1357186646294138890>",
+      "author": "elia041104",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1422593934026211419",
       "channel_id": "1131839817982947429",
       "content": "<:blowkiss:1356053035780014150>",
       "author": "zhaoxing233",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422444396892262431",
+      "channel_id": "1170692781216378960",
+      "content": "I don't live in Serbia",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422557060498849813",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422598711686467694",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "shadowemperor7636",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422623986373754920",
+      "channel_id": "1170692781216378960",
+      "content": "Only some like clem the goddess",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422588409976848414",
+      "channel_id": "1170692781216378960",
+      "content": "this is so annoying <:sad:1356085505523187712>",
+      "author": "elpis_jn",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422626633650671837",
+      "channel_id": "1170692781216378960",
+      "content": "i'm not going to post this on reddit and such since it's just extra slop content",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422710610604327034",
+      "channel_id": "1170692781216378960",
+      "content": "ello",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1422410402641219735",
@@ -86,133 +224,6 @@
       "content": "孩子被融災噁心壞了😡",
       "author": "water_heart",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422421802143191121",
-      "channel_id": "1131839817982947429",
-      "content": "~~手里还有十七颗普核和十二颗精粹~~",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422476271757295657",
-      "channel_id": "1131839817982947429",
-      "content": "结束了",
-      "author": "jiangzehuai",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422398964417691728",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422431977092550719",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422446340016963645",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422457643737284608",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422521941201518644",
-      "channel_id": "1131839817982947429",
-      "content": "我都稱福袋為蘿莉",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422523147806310420",
-      "channel_id": "1131839817982947429",
-      "content": "我是大肌肉萌妹",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422526743301849182",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422558415636660316",
-      "channel_id": "1131839817982947429",
-      "content": "我上個廁所 再來玩  被你打尿了",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422569394080317491",
-      "channel_id": "1131839817982947429",
-      "content": "先冲个648庆祝一下",
-      "author": "human10062",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422628629212303441",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422625703072891012",
-      "content": "<:Sendflowers:1400771545370067118>",
-      "author": "le_fishmael",
-      "reactions": 3,
-      "channel": "Mythag`s Cat want to share cool art with you"
-    },
-    {
-      "id": "1422422364162883696",
-      "channel_id": "1131839817982947429",
-      "content": "||小猫什么时候出SP小骑士😚||",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422423227493257247",
-      "channel_id": "1131839817982947429",
-      "content": "这可素我辛辛苦苦攒下的聘礼😡",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422433224797323264",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jidu1418",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

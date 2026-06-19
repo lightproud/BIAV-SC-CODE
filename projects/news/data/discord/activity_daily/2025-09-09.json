@@ -1,10 +1,17 @@
 {
   "date": "2025-09-09",
-  "messages": 987,
-  "unique_authors": 50,
-  "reactions_total": 397,
-  "attachments": 99,
+  "messages": 9000,
+  "unique_authors": 239,
+  "reactions_total": 1629,
+  "attachments": 406,
   "channel_activity": {
+    "🔸morimens-game-chat": 7837,
+    "🔸剧情交流": 6,
+    "🔸晒卡分享": 9,
+    "🔸한국어-채팅방": 42,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 109,
     "🔸綜合討論": 784,
     "🔸阵容构建": 30,
     "Pickmin": 6,
@@ -45,33 +52,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "0": 34,
-    "1": 24,
-    "2": 28,
-    "3": 39,
-    "4": 39,
-    "5": 40,
-    "6": 36,
-    "7": 69,
-    "8": 70,
-    "9": 75,
-    "10": 124,
-    "11": 208,
-    "12": 52,
-    "13": 18,
-    "14": 18,
-    "15": 9,
-    "16": 48,
-    "17": 8,
-    "22": 10,
-    "19": 9,
-    "20": 8,
-    "18": 7,
-    "23": 14
+    "0": 209,
+    "1": 334,
+    "2": 360,
+    "3": 437,
+    "4": 221,
+    "5": 428,
+    "6": 360,
+    "7": 246,
+    "8": 166,
+    "9": 460,
+    "10": 735,
+    "11": 782,
+    "12": 428,
+    "13": 340,
+    "14": 299,
+    "15": 673,
+    "16": 532,
+    "17": 332,
+    "18": 565,
+    "19": 281,
+    "20": 421,
+    "21": 280,
+    "22": 42,
+    "23": 69
   },
   "message_types": {
-    "0": 685,
-    "19": 129
+    "19": 2512,
+    "0": 5501
   },
   "top_reacted_messages": [
     {
@@ -110,6 +118,22 @@
       "channel": "提灯长明"
     },
     {
+      "id": "1414864884344291388",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens saved my life. I used to have the shittiest sleep schedule. But when I ",
+      "author": "solxeko",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415031254436413522",
+      "channel_id": "1170692781216378960",
+      "content": "Lasagna is trash",
+      "author": "flares117",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1415020638560845906",
       "channel_id": "1131839817982947429",
       "content": "哇我又拿到這兩個了",
@@ -123,6 +147,14 @@
       "author": "llhwwc_89248",
       "reactions": 13,
       "channel": "忘却前夜队伍构筑思路讲解·上"
+    },
+    {
+      "id": "1415005387719184405",
+      "channel_id": "1170692781216378960",
+      "content": "Horla E2 top 5 dupe in game <:agree:1400771815076528258>",
+      "author": "lotan_045",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1414952298039345162",
@@ -140,91 +172,67 @@
       "channel": "忘却前夜队伍构筑思路讲解·上"
     },
     {
+      "id": "1414917423131398229",
+      "channel_id": "1170692781216378960",
+      "content": "I HAVE MIYABI AND I USE HER FREQUENTLY",
+      "author": "deadcatsoda",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414940659701383178",
+      "channel_id": "1170692781216378960",
+      "content": "ď๏ ñ๏ţ $ℓ̔̉€̉̔̔̉€̉̔ρ ๏ñ ţh͐͋ɨ͋͐$ ǥ͛ą͎̗͛ʍ̗͎̔̉€̉̔, ͐͋ɨ͋͐'˅̔̉€̉̔ ρℓ͛ą͛¥̔̉€̉̔ď $๏ ͎̗",
+      "author": "dddhunter",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414996290449834066",
+      "channel_id": "1170692781216378960",
+      "content": "Arisu is best waifu fr",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415030539718754324",
+      "channel_id": "1170692781216378960",
+      "content": "Bro u are the real flares",
+      "author": "sagemario.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415034857259536584",
+      "channel_id": "1170692781216378960",
+      "content": "Why do i get a x???",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415082860196397197",
+      "channel_id": "1170692781216378960",
+      "content": "I got pickman in a 1 spin if anyone cares",
+      "author": ".craystal",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414944972448206890",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1414884006549393521",
       "content": "題外話，~~我感覺我新學期快死掉了有好多情要做~~",
       "author": "_cwz_",
       "reactions": 7,
       "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1414811735436558476",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414811743494082635",
-      "channel_id": "1131839817982947429",
-      "content": "爽了",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414874562340065333",
-      "channel_id": "1131839817982947429",
-      "content": "为了庆祝第一次375抽个皮克曼本体好了",
-      "author": "jidu1418",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414891090368139315",
-      "channel_id": "1131839817982947429",
-      "content": "打完自動把記憶移除腦袋，以至於上次雪山復刻的時候還沒意識到要面臨什麼（乾",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414978679905452074",
-      "channel_id": "1131839817982947429",
-      "content": "<@926398065231921174> 我2t72000",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414981289718845530",
-      "channel_id": "1131839817982947429",
-      "content": "重新玩了一把感觉有点超模了说实话",
-      "author": "randomplayer852",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414894116176658555",
-      "channel_id": "1131839874132090890",
-      "content": "僥倖地拿了今天的一抽撈到了安魂曲，太好了 <:takenotes:1357186646294138890>",
-      "author": "qqinfinity",
-      "reactions": 6,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1414813488060174436",
-      "channel_id": "1131839817982947429",
-      "content": "跪三小",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414872148606058547",
-      "channel_id": "1131839817982947429",
-      "content": "都快自暴自弃下一把了但是她们硬是爆了两次死抗这不赢不行了啊（",
-      "author": "jidu1418",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414874049158582382",
-      "channel_id": "1131839817982947429",
-      "content": "名字每天改一次嗎🤣   明天241天\n我多你一天<:proud:1400771683664658433>",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

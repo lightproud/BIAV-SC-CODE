@@ -1,10 +1,18 @@
 {
   "date": "2025-09-02",
-  "messages": 1353,
-  "unique_authors": 48,
-  "reactions_total": 516,
-  "attachments": 130,
+  "messages": 13933,
+  "unique_authors": 241,
+  "reactions_total": 1715,
+  "attachments": 508,
   "channel_activity": {
+    "🔸morimens-game-chat": 11717,
+    "🔸剧情交流": 7,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 523,
+    "🔸deutscher-chatraum": 12,
+    "🔸chaîne-française": 82,
+    "🔸русский-канал": 230,
     "🔸綜合討論": 1114,
     "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 17,
     "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?": 6,
@@ -34,33 +42,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "1": 13,
-    "2": 22,
-    "3": 12,
-    "4": 41,
-    "5": 28,
-    "6": 7,
-    "7": 38,
-    "8": 125,
-    "9": 49,
-    "10": 194,
-    "11": 50,
-    "12": 131,
-    "13": 88,
-    "14": 100,
-    "15": 178,
-    "16": 150,
-    "17": 43,
-    "18": 26,
-    "21": 20,
-    "22": 4,
-    "19": 9,
-    "20": 24,
-    "0": 1
+    "0": 619,
+    "1": 513,
+    "2": 389,
+    "3": 543,
+    "4": 545,
+    "5": 331,
+    "6": 157,
+    "7": 355,
+    "8": 485,
+    "9": 617,
+    "10": 784,
+    "11": 659,
+    "12": 765,
+    "13": 592,
+    "14": 1219,
+    "15": 1054,
+    "16": 1076,
+    "17": 687,
+    "18": 621,
+    "19": 593,
+    "20": 387,
+    "21": 330,
+    "22": 417,
+    "23": 195
   },
   "message_types": {
-    "0": 936,
-    "19": 178
+    "0": 8736,
+    "19": 3844
   },
   "top_reacted_messages": [
     {
@@ -99,11 +108,27 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
+      "id": "1412469613723254845",
+      "channel_id": "1170692781216378960",
+      "content": "Whos after Kath?",
+      "author": "cooked_chicken99",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1412373316924211260",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 17,
       "channel": ""
+    },
+    {
+      "id": "1412397593278808065",
+      "channel_id": "1170692781216378960",
+      "content": "Stop clowing me",
+      "author": "spooky_penguin_",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1412467252296548412",
@@ -120,11 +145,27 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
+      "id": "1412435445085638757",
+      "channel_id": "1170692781216378960",
+      "content": "the  what?",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1412370091533664326",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 11,
       "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1412389923545157693",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/sonic-sonic-the-hedgehog-tails-knuckles-freaky-gif-128307",
+      "author": "faltracos",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1412461068776636637",
@@ -148,6 +189,14 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
+      "id": "1412399979783389224",
+      "channel_id": "1170692781216378960",
+      "content": "wait i have to look up what this word means",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1412298984801702048",
       "channel_id": "1131839817982947429",
       "content": "<:processing:1357185814567718963>",
@@ -163,49 +212,12 @@
       "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
     },
     {
-      "id": "1412307550506061914",
-      "channel_id": "1131839817982947429",
-      "content": "鸟蛛好玩诶",
-      "author": "xuanxue007",
+      "id": "1412390503470600252",
+      "channel_id": "1170692781216378960",
+      "content": "Or if u don’t have blade of titan +12",
+      "author": "poodaloom",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412349583308095520",
-      "channel_id": "1131839817982947429",
-      "content": "~~我要寫他和杜勒的文~~",
-      "author": "dog794",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412464648782876672",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 6,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
-    },
-    {
-      "id": "1412344831858049125",
-      "content": "I think I'm going to Pick this Man",
-      "author": "vxvendetta",
-      "reactions": 6,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
-    },
-    {
-      "id": "1412455039674482889",
-      "content": "",
-      "author": "reya.li",
-      "reactions": 6,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
-    },
-    {
-      "id": "1412418593458618478",
-      "channel_id": "1131839817982947429",
-      "content": "他想看大家赤石",
-      "author": "tianfang5580",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

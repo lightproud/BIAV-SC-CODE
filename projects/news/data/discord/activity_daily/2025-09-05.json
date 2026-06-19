@@ -1,10 +1,18 @@
 {
   "date": "2025-09-05",
-  "messages": 2037,
-  "unique_authors": 55,
-  "reactions_total": 480,
-  "attachments": 152,
+  "messages": 15359,
+  "unique_authors": 261,
+  "reactions_total": 1887,
+  "attachments": 616,
   "channel_activity": {
+    "🔸morimens-game-chat": 12451,
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 6,
+    "🔸日本語チャンネル": 12,
+    "🔸한국어-채팅방": 95,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 93,
+    "🔸русский-канал": 663,
     "🔸綜合討論": 1662,
     "uvhash fan art submission": 2,
     "D-dive 45K Aequor/Caro Guide": 7,
@@ -43,36 +51,44 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 11,
-    "1": 13,
-    "2": 13,
-    "3": 19,
-    "4": 34,
-    "5": 136,
-    "6": 129,
-    "7": 165,
-    "8": 106,
-    "9": 276,
-    "10": 133,
-    "11": 186,
-    "12": 165,
-    "13": 55,
-    "14": 172,
-    "15": 84,
-    "16": 49,
-    "17": 155,
-    "18": 67,
-    "19": 9,
-    "20": 25,
-    "21": 14,
-    "23": 20,
-    "22": 1
+    "0": 280,
+    "1": 352,
+    "2": 567,
+    "3": 723,
+    "4": 1069,
+    "5": 704,
+    "6": 636,
+    "7": 799,
+    "8": 521,
+    "9": 559,
+    "10": 775,
+    "11": 1164,
+    "12": 1292,
+    "13": 946,
+    "14": 741,
+    "15": 590,
+    "16": 557,
+    "17": 662,
+    "18": 476,
+    "19": 478,
+    "20": 364,
+    "21": 388,
+    "22": 169,
+    "23": 547
   },
   "message_types": {
-    "0": 1253,
-    "19": 409
+    "19": 3758,
+    "0": 9564
   },
   "top_reacted_messages": [
+    {
+      "id": "1413569027535671307",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1413568947625922590 @everyone",
+      "author": "game.producer.light",
+      "reactions": 50,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1413512439110172844",
       "content": "",
@@ -131,12 +147,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1413442123805495316",
+      "channel_id": "1170692781216378960",
+      "content": "Doresain is pregnant with Pickmans embryo",
+      "author": "averageshark",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1413417426141577276",
       "channel_id": "1131839817982947429",
       "content": "https://discord.com/channels/1131791637933199470/1413417240229056552",
       "author": "undecember_news",
       "reactions": 12,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413394235834499134",
+      "channel_id": "1170692781216378960",
+      "content": "Should I buy this?",
+      "author": ".lxyr.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1413491701238202479",
@@ -161,62 +193,44 @@
       "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
     },
     {
-      "id": "1413486916308832356",
-      "content": "守密人你好：\n       弥萨格大学预计于9月8日08:00~12:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，补给",
-      "author": "morimensstaff02",
-      "reactions": 7,
-      "channel": "V2.3.2.0 停服维护公告"
+      "id": "1413396557478367364",
+      "channel_id": "1170692781216378960",
+      "content": "Best str gain, best mechanic (Ultra), amazing healing, insane keyflare, and her ",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413487300423450689",
-      "channel_id": "1131839817982947429",
-      "content": "~~我只有四隻~~",
-      "author": "wild_pansy",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1413502154945069139",
+      "channel_id": "1170692781216378960",
+      "content": "PSA to all. Must pull char is CLEM!!!!!",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413490663382581358",
-      "channel_id": "1131839817982947429",
-      "content": "<:hitler:1124790256303100065>",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1413384206645727293",
+      "channel_id": "1170692781216378960",
+      "content": "Flares eats out monchi when",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413524337968943175",
-      "content": "日后会有一些类似pvp设计师对谈或采访之类的活动吗？对弈的平衡性调整已经是一种无法理解的情况了，或许至少可以让大家了解调整的原因及思路",
-      "author": "deadlykilling777",
-      "reactions": 6,
-      "channel": "V2.3.2.0 停服维护公告"
+      "id": "1413407682987163720",
+      "channel_id": "1170692781216378960",
+      "content": "<@153999495347044352> Here, I made your next video's thumbnail for you. Free of ",
+      "author": "sophiechoice",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413548256629096449",
-      "content": "You need 100% sigil to gain 100 each battle.",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
-    },
-    {
-      "id": "1413410878988226601",
-      "content": "<@1131790839291596841> Hello , for Ryker   Enhancement . Did you guys test it wi",
-      "author": "aegisx",
-      "reactions": 5,
-      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1413415887167557673",
-      "content": "(I don’t mind knowing his artist and his concepts actually)",
-      "author": "_venush",
-      "reactions": 5,
-      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
-    },
-    {
-      "id": "1413502996939280407",
-      "content": "would the obtained relics take up a relic slot, and will they show up even if i ",
-      "author": "gisstar",
-      "reactions": 5,
-      "channel": "Questions about Pickman's 2 cost"
+      "id": "1413439114828582973",
+      "channel_id": "1170692781216378960",
+      "content": "Hello, Can I ask whether or not someone who has just started this game today get",
+      "author": "emeraldzanycrocodrift",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

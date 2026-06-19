@@ -1,10 +1,18 @@
 {
   "date": "2025-09-08",
-  "messages": 2218,
-  "unique_authors": 63,
-  "reactions_total": 759,
-  "attachments": 144,
+  "messages": 16212,
+  "unique_authors": 374,
+  "reactions_total": 3798,
+  "attachments": 686,
   "channel_activity": {
+    "🔸morimens-game-chat": 12898,
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 9,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 30,
+    "🔸deutscher-chatraum": 23,
+    "🔸русский-канал": 1023,
     "🔸綜合討論": 2025,
     "pickman": 1,
     "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 24,
@@ -51,35 +59,44 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "0": 8,
-    "1": 90,
-    "2": 117,
-    "3": 151,
-    "4": 195,
-    "5": 207,
-    "6": 128,
-    "7": 69,
-    "8": 287,
-    "9": 264,
-    "10": 76,
-    "11": 200,
-    "12": 88,
-    "13": 75,
-    "14": 53,
-    "15": 112,
-    "16": 30,
-    "17": 13,
-    "18": 18,
-    "19": 4,
-    "20": 6,
-    "22": 2,
-    "23": 25
+    "0": 682,
+    "1": 930,
+    "2": 704,
+    "3": 806,
+    "4": 954,
+    "5": 780,
+    "6": 823,
+    "7": 1044,
+    "8": 681,
+    "9": 840,
+    "10": 745,
+    "11": 748,
+    "12": 603,
+    "13": 587,
+    "14": 724,
+    "15": 732,
+    "16": 589,
+    "17": 655,
+    "18": 382,
+    "19": 460,
+    "20": 496,
+    "21": 619,
+    "22": 343,
+    "23": 285
   },
   "message_types": {
-    "19": 398,
-    "0": 1627
+    "19": 4939,
+    "0": 9055
   },
   "top_reacted_messages": [
+    {
+      "id": "1414464978437541948",
+      "channel_id": "1170692781216378960",
+      "content": "I can say with confidence that B.I.A.V. Studio has a long task list and is also ",
+      "author": "game.producer.light",
+      "reactions": 412,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1414440005836734558",
       "content": "goodluck with pulls (uid - 100859200)",
@@ -95,11 +112,75 @@
       "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
     },
     {
+      "id": "1414592410750681199",
+      "channel_id": "1170692781216378960",
+      "content": "wtf im not a whale",
+      "author": "malfunction5497",
+      "reactions": 38,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414447381054750770",
+      "channel_id": "1170692781216378960",
+      "content": "hi guys!\n\nsorry, i was hospitalized for 3 days last week, and you may notice som",
+      "author": "morimens_15",
+      "reactions": 36,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414465112747802675",
+      "channel_id": "1170692781216378960",
+      "content": "please add exploration back in arc 2 astral reign <:takenotes:135718664629413889",
+      "author": "anphans371",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414465356797313148",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "ghislanditerrorstone",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414585155770908733",
+      "channel_id": "1170692781216378960",
+      "content": "I not a boy, stop using that emoji on me",
+      "author": "spooky_penguin_",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1414528271323762851",
       "content": "✦为大家奉上皮克曼的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦Here are pho",
       "author": "morimensstaff01",
       "reactions": 19,
       "channel": "📸壁纸分享: 皮克曼┊Wallpaper Sharing: Pickman"
+    },
+    {
+      "id": "1414673902386417694",
+      "channel_id": "1170692781216378960",
+      "content": "chicken butt!",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414672133635969064",
+      "channel_id": "1170692781216378960",
+      "content": "do not sleep on this game, i've played so many gacha games but this one is by fa",
+      "author": "moyashi0672",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414506610793119824",
+      "channel_id": "1170692781216378960",
+      "content": "do 👌😧 not sleep 😴🛌 on 🔛🎶 this 💦 game, i've 🤤 played 🕹 so 💯 many gacha games 👏 bu",
+      "author": "iibenigml1588",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1414528421383508030",
@@ -123,114 +204,44 @@
       "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
     },
     {
-      "id": "1414492310233681982",
-      "channel_id": "1131839817982947429",
-      "content": "成功PUA英區新手去玩皮克曼主C了",
-      "author": "ernest_heart",
+      "id": "1414584821786607698",
+      "channel_id": "1170692781216378960",
+      "content": "Hi newbies!! 👋 \nDo any of you have a unused code!🥺 🥺 🥺",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414591516768210995",
+      "channel_id": "1170692781216378960",
+      "content": "Whens the anniv?",
+      "author": "groupslug",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414464914164154399",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414465345523290224",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>❓❓",
+      "author": "sirtealot",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414446721588527176",
+      "channel_id": "1170692781216378960",
+      "content": "He paints u like one of his french boys",
+      "author": "kevsalvador",
       "reactions": 11,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414525933863567460",
-      "channel_id": "1131839817982947429",
-      "content": "剩我沒+12  輸光……",
-      "author": "lurenjiao",
-      "reactions": 11,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414533341956411452",
-      "channel_id": "1131839817982947429",
-      "content": "有人要借嗎",
-      "author": "taayoui",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414539297855377540",
-      "channel_id": "1131839817982947429",
-      "content": "我也才預訂兩隻🌚",
-      "author": "taayoui",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414534772880965733",
-      "content": "不过话说感觉他技能花里胡哨的但是没什么用，很符合他艺术生的人设（bushi）",
-      "author": "nekoiiii.",
-      "reactions": 8,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1414500304237494272",
-      "channel_id": "1131839817982947429",
-      "content": "90級杜勒這種廢物都有十個了怎麼就見不到90級的皮克曼",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414525316080074843",
-      "channel_id": "1131839817982947429",
-      "content": "莉莉+12佬",
-      "author": "sayo.0320",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414525880595648524",
-      "channel_id": "1131839817982947429",
-      "content": "# 永和佬\n# 輸光........",
-      "author": "sayo.0320",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414526168346005586",
-      "channel_id": "1131839817982947429",
-      "content": "截圖這個人的主頁了，以後新手問問題我就要拋出這個主頁讓他去問這個人",
-      "author": "sayo.0320",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414529122561949707",
-      "channel_id": "1131839817982947429",
-      "content": "我已經跟剛入坑的新手說你是大佬了",
-      "author": "sayo.0320",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414529760041762836",
-      "channel_id": "1131839817982947429",
-      "content": "又關我的是，而且我是實力超差的萌新",
-      "author": "universe.dark",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414530963429527586",
-      "channel_id": "1131839817982947429",
-      "content": "我0次，輸光",
-      "author": "universe.dark",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414532621068931092",
-      "channel_id": "1131839817982947429",
-      "content": "一群大佬再裝萌新，剩我真萌新",
-      "author": "universe.dark",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414541854070018119",
-      "content": "加強杜勒賽因",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

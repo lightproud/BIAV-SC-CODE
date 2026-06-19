@@ -1,10 +1,16 @@
 {
   "date": "2025-09-29",
-  "messages": 669,
-  "unique_authors": 37,
-  "reactions_total": 147,
-  "attachments": 69,
+  "messages": 9029,
+  "unique_authors": 177,
+  "reactions_total": 1593,
+  "attachments": 448,
   "channel_activity": {
+    "🔸morimens-game-chat": 8291,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 51,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 7,
     "🔸綜合討論": 614,
     "🔸阵容构建": 3,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 3,
@@ -26,32 +32,34 @@
     "血香腸大狗狗": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 3,
-    "2": 19,
-    "3": 21,
-    "4": 32,
-    "5": 14,
-    "6": 31,
-    "7": 25,
-    "8": 28,
-    "9": 29,
-    "10": 12,
-    "11": 40,
-    "12": 298,
-    "13": 56,
-    "14": 17,
-    "15": 12,
-    "16": 14,
-    "18": 2,
-    "21": 6,
-    "17": 1,
-    "23": 4,
-    "20": 1
+    "0": 543,
+    "1": 207,
+    "2": 278,
+    "3": 497,
+    "4": 391,
+    "5": 268,
+    "6": 321,
+    "7": 296,
+    "8": 376,
+    "9": 329,
+    "10": 341,
+    "11": 473,
+    "12": 765,
+    "13": 591,
+    "14": 405,
+    "15": 355,
+    "16": 242,
+    "17": 438,
+    "18": 379,
+    "19": 449,
+    "20": 401,
+    "21": 184,
+    "22": 328,
+    "23": 172
   },
   "message_types": {
-    "19": 126,
-    "0": 491
+    "0": 5650,
+    "19": 2710
   },
   "top_reacted_messages": [
     {
@@ -62,12 +70,52 @@
       "channel": "血香腸大狗狗"
     },
     {
+      "id": "1422018372664688731",
+      "channel_id": "1170692781216378960",
+      "content": "Skipping is based",
+      "author": "frosthief",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422284759664562268",
+      "channel_id": "1170692781216378960",
+      "content": "I Will ban all MPREG!",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1422242879253774456",
       "channel_id": "1131839817982947429",
       "content": "我竟然也有過375的一天，我真的一直在哭",
       "author": "nazhigezihk",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422158587689697301",
+      "channel_id": "1170692781216378960",
+      "content": "KYS",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422195979624382466",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422325139613155328",
+      "channel_id": "1170692781216378960",
+      "content": "Idk don’t ask me I just starting doing this thing called “thinking” last weekend",
+      "author": "red_rest",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1422133763357540362",
@@ -85,6 +133,30 @@
       "channel": "V2.3.3.0 停服维护公告"
     },
     {
+      "id": "1422021455239057539",
+      "channel_id": "1170692781216378960",
+      "content": "Merci d’avoir bien prononcé mon nom. Je vais ranger les miettes de pain et le Gl",
+      "author": "_hyuuun",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422024425846345980",
+      "channel_id": "1170692781216378960",
+      "content": "@mods this message makes me uncomfortable can you annihilate this person",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422284724109574287",
+      "channel_id": "1170692781216378960",
+      "content": "As the new president",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1422235382862446813",
       "channel_id": "1131839817982947429",
       "content": "我破防了",
@@ -93,123 +165,60 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1422234596199763968",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
+      "id": "1422049613614944358",
+      "channel_id": "1170692781216378960",
+      "content": "gg 15ff jg diff",
+      "author": "arisuu0604",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422281946817495241",
-      "channel_id": "1131839817982947429",
-      "content": "我真的很不喜欢打提灯Boss，每次遇到她就意味着我要打一个三难然后去别的地方再扣5分出来",
-      "author": "jiangzehuai",
+      "id": "1422062057011937432",
+      "channel_id": "1170692781216378960",
+      "content": "ugly design, I skip",
+      "author": "blecnes",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422258678559412296",
-      "channel_id": "1131839817982947429",
-      "content": "不想凹了",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1422136807117688954",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422084605560754188",
-      "channel_id": "1131839817982947429",
-      "content": "用完了！",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1422158708338589738",
+      "channel_id": "1170692781216378960",
+      "content": "i wish fpreg was real",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422095107317956688",
-      "channel_id": "1131839817982947429",
+      "id": "1422167475231002675",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "doktor.sex",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422215874529464362",
-      "channel_id": "1131839817982947429",
-      "content": "自從放棄了雷亞之後\n我發現我根本就沒有生存問題\n因為生存問題的來源就是雷亞那脆身板",
-      "author": "ice_storys",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422239314389237852",
-      "channel_id": "1131839817982947429",
+      "id": "1422191561663320305",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "_hyuuun",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422201920528977951",
-      "channel_id": "1131839817982947429",
-      "content": "<@320087455556435968> 大佬带我(",
-      "author": "kemomimi_",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422229218560835647",
-      "channel_id": "1131839817982947429",
-      "content": "終於打完低保了",
-      "author": "quackdayo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422134556437512194",
-      "content": "我破防了",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1422078865530028092",
-      "channel_id": "1131839817982947429",
-      "content": "昨天成功混上主宰了",
-      "author": "jidu1418",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422105537339723838",
-      "channel_id": "1131839817982947429",
-      "content": "影響蠻大的  朵爾和希萊不能復活後再接著開大復活",
-      "author": "insomnia07763",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422120506747781230",
-      "channel_id": "1131839817982947429",
-      "content": "我傳給你 你就會跳訊息了",
-      "author": "insomnia07763",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422131286297804811",
-      "channel_id": "1131839817982947429",
-      "content": "~~先來個同調15證明羈絆~~  開玩笑ㄉ",
-      "author": "insomnia07763",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422195547988557968",
-      "channel_id": "1131839817982947429",
-      "content": "~~我只知道打過關的是我的另一個人格~~\n回過神來就過關了",
-      "author": "insomnia07763",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1422193574916784250",
+      "channel_id": "1170692781216378960",
+      "content": "Wait a min, I have clem. I don't give a shit. I'll burst every turn",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

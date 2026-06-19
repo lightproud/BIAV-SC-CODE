@@ -1,10 +1,18 @@
 {
   "date": "2025-09-10",
-  "messages": 1252,
-  "unique_authors": 36,
-  "reactions_total": 256,
-  "attachments": 76,
+  "messages": 10304,
+  "unique_authors": 196,
+  "reactions_total": 1309,
+  "attachments": 436,
   "channel_activity": {
+    "🔸morimens-game-chat": 8859,
+    "🔸剧情交流": 30,
+    "🔸晒卡分享": 8,
+    "🔸相位对弈": 5,
+    "🔸한국어-채팅방": 42,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 106,
     "🔸綜合討論": 1103,
     "🔸阵容构建": 31,
     "Shhh… he’s sleeping~": 2,
@@ -44,33 +52,34 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "1": 5,
-    "3": 10,
-    "4": 125,
-    "5": 6,
-    "6": 31,
-    "8": 46,
-    "9": 51,
-    "10": 180,
-    "11": 57,
-    "12": 280,
-    "13": 84,
-    "14": 129,
-    "15": 50,
-    "16": 34,
-    "19": 1,
-    "20": 6,
-    "21": 8,
-    "22": 8,
-    "23": 114,
-    "7": 16,
-    "0": 7,
-    "17": 3,
-    "2": 1
+    "0": 293,
+    "1": 186,
+    "2": 368,
+    "3": 374,
+    "4": 597,
+    "5": 268,
+    "6": 614,
+    "7": 423,
+    "8": 494,
+    "9": 589,
+    "10": 487,
+    "11": 433,
+    "12": 672,
+    "13": 635,
+    "14": 606,
+    "15": 549,
+    "16": 552,
+    "17": 329,
+    "18": 378,
+    "19": 342,
+    "20": 335,
+    "21": 184,
+    "22": 178,
+    "23": 418
   },
   "message_types": {
-    "0": 848,
-    "19": 286
+    "19": 2640,
+    "0": 6412
   },
   "top_reacted_messages": [
     {
@@ -95,12 +104,116 @@
       "channel": "Happy Belated Birthday, Karen ♡"
     },
     {
+      "id": "1415403529010679878",
+      "channel_id": "1170692781216378960",
+      "content": "WE ALL LOVE SPOOKY",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415254931203690558",
+      "channel_id": "1174983699935277147",
+      "content": "真的能抽到超限嗎。。。<:dead:1356082627509092372>",
+      "author": "ahong0727",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1415272586274803814",
+      "channel_id": "1170692781216378960",
+      "content": "To resume things, there are 4 realms, i tried to tell the main points of each re",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415393341369221163",
+      "channel_id": "1170692781216378960",
+      "content": "Horla is good",
+      "author": "poodaloom",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1415195055161081926",
       "channel_id": "1131839817982947429",
       "content": "嗯我忘了拿銀白差分機",
       "author": "ahuahuahua",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415245652291616848",
+      "channel_id": "1170692781216378960",
+      "content": "damn no +13 kath, unuseable",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415324770790281329",
+      "channel_id": "1170692781216378960",
+      "content": "oh i forgot to switch account damn",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415154027997692056",
+      "channel_id": "1170692781216378960",
+      "content": "time for another gift code bois",
+      "author": "drunk.biscuit",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415195546687111178",
+      "channel_id": "1170692781216378960",
+      "content": "was going through something at the time of the event 🥹",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415224334493946009",
+      "channel_id": "1170692781216378960",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415288953656971354",
+      "channel_id": "1170692781216378960",
+      "content": "Damn OE Thais",
+      "author": "joker_0108",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415418642459267263",
+      "channel_id": "1170692781216378960",
+      "content": "<@1226191881877061725>  Да ли ме можеш разумјети?",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415481970661785763",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rainyakira",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415254197363802112",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1415185301021786274",
@@ -124,110 +237,6 @@
       "content": "<@926398065231921174> 喵喵",
       "author": "sayo.0320",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415192650104963113",
-      "channel_id": "1131839817982947429",
-      "content": "# 我的達芙黛爾從 2023/11/30到2025/08/01才+12\n# 總共花了609天\n# 輸光了...\n# 不愧是刹那佬...",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415280204976230400",
-      "channel_id": "1131839817982947429",
-      "content": "欸我把重生融掉了",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415274175232217178",
-      "channel_id": "1131839817982947429",
-      "content": "收穫一個忠實的杜勒黑",
-      "author": "xingkongzhiyao_",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415277837325176965",
-      "channel_id": "1131839817982947429",
-      "content": "這三小？我有看錯嗎",
-      "author": "taayoui",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415338229598785596",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415341461431648308",
-      "channel_id": "1131839817982947429",
-      "content": "这几天普抽50次来了7个普通SSR\n我真想说：就不能在限抽吗<:takenotes:1357186646294138890>",
-      "author": "cs001092",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415150335647023245",
-      "channel_id": "1131839817982947429",
-      "content": "这游戏的文本也非常像直肠排泄物的流体动力学轨迹（",
-      "author": "xyakoto",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415190147548319754",
-      "channel_id": "1131839817982947429",
-      "content": "最近都在稳定出巨刃以外的和石板",
-      "author": "kemomimi_",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415278861863878718",
-      "channel_id": "1131839817982947429",
-      "content": "靠北他又來了",
-      "author": "taayoui",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415292817487560715",
-      "channel_id": "1131839817982947429",
-      "content": "我沒打好\n但給過",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415246422512766977",
-      "channel_id": "1131839874132090890",
-      "content": "我現在分數也就27000，大佬們太可怕了",
-      "author": "qqinfinity",
-      "reactions": 3,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1415191080776892537",
-      "channel_id": "1131839817982947429",
-      "content": "大佬148天就有+12莉莉了",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415226826170564721",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

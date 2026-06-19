@@ -1,10 +1,17 @@
 {
   "date": "2025-09-11",
-  "messages": 1355,
-  "unique_authors": 40,
-  "reactions_total": 348,
-  "attachments": 94,
+  "messages": 8639,
+  "unique_authors": 206,
+  "reactions_total": 1152,
+  "attachments": 389,
   "channel_activity": {
+    "🔸morimens-game-chat": 6763,
+    "🔸剧情交流": 31,
+    "🔸晒卡分享": 7,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 461,
     "🔸綜合討論": 1309,
     "🔸阵容构建": 2,
     "Flares' Awakener Review : Ryker": 1,
@@ -23,35 +30,53 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 50,
-    "1": 109,
-    "2": 63,
-    "3": 74,
-    "4": 38,
-    "5": 25,
-    "6": 46,
-    "7": 27,
-    "8": 18,
-    "9": 16,
-    "10": 194,
-    "11": 147,
-    "12": 73,
-    "13": 8,
-    "14": 52,
-    "15": 78,
-    "16": 19,
-    "17": 179,
-    "18": 115,
-    "19": 16,
-    "21": 2,
-    "22": 3,
-    "23": 3
+    "0": 306,
+    "1": 413,
+    "2": 288,
+    "3": 413,
+    "4": 511,
+    "5": 192,
+    "6": 366,
+    "7": 539,
+    "8": 542,
+    "9": 405,
+    "10": 453,
+    "11": 273,
+    "12": 208,
+    "13": 319,
+    "14": 330,
+    "15": 492,
+    "16": 691,
+    "17": 422,
+    "18": 433,
+    "19": 134,
+    "20": 65,
+    "21": 162,
+    "22": 311,
+    "23": 371
   },
   "message_types": {
-    "19": 320,
-    "0": 991
+    "0": 5256,
+    "19": 2027,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1415836069584306176",
+      "channel_id": "1170692781216378960",
+      "content": "why pull more when you can pull better",
+      "author": "khykken",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415709749533741089",
+      "channel_id": "1170692781216378960",
+      "content": "\"I am Lucia, the leader of Gray Raven. Nice to meet you, commander\"\n\nJP might ha",
+      "author": "keiji_thiscord",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1415728805435150559",
       "channel_id": "1131839817982947429",
@@ -61,12 +86,68 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1415774923753914470",
+      "channel_id": "1174983699935277147",
+      "content": "普抽",
+      "author": "cs001092",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1415596757685108856",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1415648871299813376",
       "channel_id": "1131839817982947429",
       "content": "6界域72000",
       "author": "water_heart",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415813950691475476",
+      "channel_id": "1170692781216378960",
+      "content": "Does the game hate me fr",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415834948803362948",
+      "channel_id": "1170692781216378960",
+      "content": "the distinction wouldnt matter - the average gacha gamer would be too in a rage ",
+      "author": "khykken",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415836680396472330",
+      "channel_id": "1170692781216378960",
+      "content": "҉ 𝙙𝙤 ҉ 🫃 ҉ 𝙣𝙤𝙩 ҉ 🫃 ҉ 𝙨𝙡𝙚𝙚𝙥 ҉ 🫃 ҉ 𝙤𝙣🫃  ҉ 𝙩𝙝𝙞𝙨 ҉ 🫃 ҉ 𝙜𝙖𝙢𝙚🫃🤰 ҉ 🫄  ҉ , ҉ 𝙞'𝙫𝙚 ҉ 🫃 ҉ ",
+      "author": "dddhunter",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415837922229358654",
+      "channel_id": "1170692781216378960",
+      "content": "thnaks a lot for all the info guys <:point:1356053112292511815>",
+      "author": "thinmo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415840249791123456",
+      "channel_id": "1170692781216378960",
+      "content": "u can try Karen, Miryam, Nautila, 24 - just make sure the 24 is +12 lvl 90 with ",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1415504226775470170",
@@ -101,116 +182,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1415526093519065159",
-      "channel_id": "1131839817982947429",
-      "content": "靠著小皮第一次打到7W2  <:please:1356053110375714817>  皮克曼是我的神",
-      "author": "iak.rm",
+      "id": "1415599854066995201",
+      "channel_id": "1170692781216378960",
+      "content": "we know this",
+      "author": "Deleted User",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415547871431753729",
-      "channel_id": "1131839817982947429",
-      "content": "滿意了吧",
-      "author": "dog794",
+      "id": "1415616997172973648",
+      "channel_id": "1170692781216378960",
+      "content": "Is horla any good?",
+      "author": "treefartingguy",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415652727413014623",
-      "channel_id": "1131839817982947429",
-      "content": "我以為你死扛觸發11次",
-      "author": "sayo.0320",
+      "id": "1415641629544550522",
+      "channel_id": "1170692781216378960",
+      "content": "hello everyone",
+      "author": "arisuu0604",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415681561835077785",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jidu1418",
+      "id": "1415689351479955528",
+      "channel_id": "1170692781216378960",
+      "content": "I wish Tulu was a girl",
+      "author": "sirtealot",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415698347670634588",
-      "channel_id": "1131839817982947429",
-      "content": "999了 穩定緩慢增加中",
-      "author": "insomnia07763",
+      "id": "1415656644758474762",
+      "channel_id": "1173463482503536711",
+      "content": "看完了皮克曼的剧情\n真是…每一段都让人惊喜啊\n愿称之为迄今为止你游最有宇宙恐怖氛围和洛老原著精神的剧情之一",
+      "author": "flarinsidia",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415755173338419220",
-      "channel_id": "1131839817982947429",
-      "content": "||害我又想到b站影片在那邊什麼萊克大狗結的||",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415759553680904253",
-      "channel_id": "1131839817982947429",
-      "content": "不过嘛，联动确实有进行。会是另一个有些许遗憾的世界。",
-      "author": "game.producer.light",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415535603386421279",
-      "channel_id": "1131839817982947429",
-      "content": "那我必須得讓你們看看皮克曼池十抽四金二皮",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415585679349645342",
-      "channel_id": "1131839817982947429",
-      "content": "我賣身體給那個24芙朵2T的所以我現在也成為大佬了",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415741299973296158",
-      "channel_id": "1131839817982947429",
-      "content": "89等了",
-      "author": "cwz.io",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415755341127487670",
-      "channel_id": "1131839817982947429",
-      "content": "不小心一直狂看忘卻淋夜",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415518994659541015",
-      "channel_id": "1131839817982947429",
-      "content": "我才課一個980紀行",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415519649671675966",
-      "channel_id": "1131839817982947429",
-      "content": "我只有62抽",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415521709544570880",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸剧情交流"
     }
   ]
 }

@@ -1,10 +1,16 @@
 {
   "date": "2025-09-04",
-  "messages": 831,
-  "unique_authors": 41,
-  "reactions_total": 358,
-  "attachments": 94,
+  "messages": 11455,
+  "unique_authors": 208,
+  "reactions_total": 1361,
+  "attachments": 520,
   "channel_activity": {
+    "🔸morimens-game-chat": 10298,
+    "🔸剧情交流": 4,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 16,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 295,
     "🔸綜合討論": 691,
     "Carried": 1,
     "D-dive 45K Aequor/Caro Guide": 4,
@@ -32,32 +38,35 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 11,
-    "2": 69,
-    "3": 153,
-    "4": 28,
-    "5": 33,
-    "6": 66,
-    "7": 30,
-    "8": 13,
-    "9": 29,
-    "10": 86,
-    "11": 43,
-    "12": 57,
-    "13": 63,
-    "14": 52,
-    "15": 43,
-    "16": 15,
-    "17": 5,
-    "23": 13,
-    "19": 5,
-    "20": 8,
-    "22": 3
+    "0": 569,
+    "1": 581,
+    "2": 637,
+    "3": 704,
+    "4": 550,
+    "5": 423,
+    "6": 655,
+    "7": 581,
+    "8": 541,
+    "9": 575,
+    "10": 298,
+    "11": 394,
+    "12": 421,
+    "13": 863,
+    "14": 488,
+    "15": 767,
+    "16": 428,
+    "17": 296,
+    "18": 222,
+    "19": 496,
+    "20": 453,
+    "21": 324,
+    "22": 62,
+    "23": 127
   },
   "message_types": {
-    "19": 146,
-    "0": 545
+    "0": 7167,
+    "19": 3456,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -82,6 +91,14 @@
       "channel": "我喜歡卡斯托爾"
     },
     {
+      "id": "1413158251197108287",
+      "channel_id": "1170692781216378960",
+      "content": "Arisu is Aigis <:scared1:1356053141816213507>",
+      "author": "sirtealot",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1413195394317549801",
       "content": "everyone did such great work~ I hope he comes home for all of us ദ്ദി(˵ •̀ ᴗ - ˵",
       "author": "dahongtsa",
@@ -101,6 +118,14 @@
       "author": "poppypollen479",
       "reactions": 15,
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413147987080642570",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sirtealot",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1413104067441590353",
@@ -124,6 +149,22 @@
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
+      "id": "1413158627451338873",
+      "channel_id": "1170692781216378960",
+      "content": "arissu is evil",
+      "author": "sexysneakystoat1625",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413020698770669598",
+      "channel_id": "1173463482503536711",
+      "content": "我當球",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1413205162390192270",
       "channel_id": "1131839817982947429",
       "content": "你承認希洛女士貌美如花嗎<:wish:1356084702468899117>",
@@ -139,6 +180,22 @@
       "channel": "D-dive 45K Aequor/Caro Guide"
     },
     {
+      "id": "1413132384072630302",
+      "channel_id": "1170692781216378960",
+      "content": "Wahooo",
+      "author": "matwilldestroytheoriginal",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413156863746244679",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> if anyone send you bad inappropriate images or implication",
+      "author": "red_rest",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1413047670435741727",
       "content": "",
       "author": "wild_pansy",
@@ -146,61 +203,20 @@
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
-      "id": "1413188947143692441",
-      "channel_id": "1131839817982947429",
-      "content": "每天沒有捶一次水母就渾身不痛快",
-      "author": "ernest_heart",
+      "id": "1412954529544274140",
+      "channel_id": "1170692781216378960",
+      "content": "if you end up enjoying winkle, i'd say go for jenkins standard-wise, since she's",
+      "author": "fishhazardthewizard",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1412984310847508660",
-      "content": "This belongs in a museum",
-      "author": "zer0xpgained",
+      "id": "1413024997059989586",
+      "channel_id": "1170692781216378960",
+      "content": "Yay e1",
+      "author": "angbak",
       "reactions": 6,
-      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
-    },
-    {
-      "id": "1413071717060055131",
-      "content": "I drew you so pls come home next week Pickman🫶🏼",
-      "author": "myd334.",
-      "reactions": 6,
-      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
-    },
-    {
-      "id": "1413178542438486096",
-      "content": "手太難了",
-      "author": "rou_yi_rou",
-      "reactions": 5,
-      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
-    },
-    {
-      "id": "1413106760369045606",
-      "content": "Kit drop when ????????????????????????????¿¿???¿¿???¿¿???¿¿???... I need it.",
-      "author": "morified53",
-      "reactions": 5,
-      "channel": "V2.3.2 皮克曼情报3：探访画中世界，名额有限先到先得┊About Pickman: Explore the world within the painting"
-    },
-    {
-      "id": "1412997765553717292",
-      "content": "",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
-    },
-    {
-      "id": "1413090248103301191",
-      "content": "Hi, this issue has been fixed and we will update it in the next version~",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「Answered」Covenants visually misleading in lineups"
-    },
-    {
-      "id": "1413193995453993051",
-      "content": "第一届牢暮杯pve大型深潜赛：\n（因为没有赛事专区所以发在这了喵）\n通关忘却篇主线h8-10，要求:\n1，只能使用忘却界域队伍（禁用血海，血超，海超）\n2，通过",
-      "author": "zdttjqxwxmzs",
-      "reactions": 4,
-      "channel": "第一届牢暮杯pve大型深潜赛"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

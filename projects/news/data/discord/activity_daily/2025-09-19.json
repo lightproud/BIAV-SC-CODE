@@ -1,10 +1,13 @@
 {
   "date": "2025-09-19",
-  "messages": 991,
-  "unique_authors": 41,
-  "reactions_total": 320,
-  "attachments": 130,
+  "messages": 9237,
+  "unique_authors": 234,
+  "reactions_total": 2995,
+  "attachments": 475,
   "channel_activity": {
+    "🔸morimens-game-chat": 8225,
+    "🔸晒卡分享": 10,
+    "🔸한국어-채팅방": 11,
     "🔸綜合討論": 845,
     "🔸阵容构建": 1,
     "Thais Warm up": 4,
@@ -34,35 +37,45 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 7,
-    "2": 95,
-    "3": 206,
-    "4": 103,
-    "5": 41,
-    "6": 80,
-    "7": 40,
-    "8": 25,
-    "9": 14,
-    "10": 6,
-    "11": 31,
-    "12": 1,
-    "13": 8,
-    "14": 9,
-    "15": 109,
-    "16": 91,
-    "17": 13,
-    "18": 71,
-    "19": 6,
-    "20": 28,
-    "22": 2,
-    "23": 4
+    "0": 241,
+    "1": 304,
+    "2": 509,
+    "3": 362,
+    "4": 430,
+    "5": 494,
+    "6": 472,
+    "7": 368,
+    "8": 369,
+    "9": 226,
+    "10": 132,
+    "11": 236,
+    "12": 433,
+    "13": 533,
+    "14": 581,
+    "15": 462,
+    "16": 398,
+    "17": 487,
+    "18": 826,
+    "19": 286,
+    "20": 259,
+    "21": 269,
+    "22": 310,
+    "23": 250
   },
   "message_types": {
-    "19": 234,
-    "0": 612
+    "0": 5452,
+    "19": 2793,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1418664060467150959",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone Sorry to bother everyone. Quick poll: How many of you feel the game’s ",
+      "author": "game.producer.light",
+      "reactions": 978,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1418496479160696922",
       "content": "▎精彩同人作品分享，感谢大家精彩绝伦的创作！\n▎V2.3.2 UGC征集已开启，一等奖将获得10000银芯奖励，欢迎参与~\n\n——✦——✦—— ✦✦✦ ——✦—",
@@ -71,11 +84,99 @@
       "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
     },
     {
+      "id": "1418665813992276070",
+      "channel_id": "1170692781216378960",
+      "content": "No worries light! all is forgiven, we understand that game development is extrem",
+      "author": "drunk.biscuit",
+      "reactions": 33,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418746030127714305",
+      "channel_id": "1170692781216378960",
+      "content": "u guys are crazy lol",
+      "author": "monchi3524",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418659298048868382",
+      "channel_id": "1170692781216378960",
+      "content": "Lately B.I.A.V. Studio has been insanely busy… I miss everyone.\nI hope you’re al",
+      "author": "game.producer.light",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418667154416468110",
+      "channel_id": "1170692781216378960",
+      "content": "idk how good this is, though horla is now e2 and last verse is at a4",
+      "author": "boalecanadian",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418663269626937558",
+      "channel_id": "1170692781216378960",
+      "content": "I’d like to ask how many of you feel the game’s server response has gotten laggi",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418510493961945141",
+      "channel_id": "1170692781216378960",
+      "content": "idiots",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418590019396047011",
+      "channel_id": "1170692781216378960",
+      "content": "SECOND FIVE PULL.\nand shes tuff for use too",
+      "author": "1nt3rn3tskyspl1tt3r_02786",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418670567673958592",
+      "channel_id": "1170692781216378960",
+      "content": "Anyways who else agrees im the best person here!!",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1418510528275546203",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：奥尔拉EP·献给春天的花束 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵",
       "author": "morimensstaff01",
       "reactions": 16,
       "channel": "忘却前夜OST：奥尔拉EP·献给春天的花束"
+    },
+    {
+      "id": "1418665537050775672",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you all for the feedback! We’ll prioritize looking into this. Sorry for th",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418592376020140164",
+      "channel_id": "1170692781216378960",
+      "content": "🫃d🫃o 🫃 n🫃o 🫃t🫃 s🫃l🫃e🫃e🫃p 🫃o🫃n🫃 P🫃i🫃k🫃e🫃m🫃a🫃n🫃, 🫃I🫃'🫃v🫃e 🫃 p🫃l🫃a🫃y🫃e🫃d🫃s🫃o🫃m🫃a🫃n🫃",
+      "author": "fischperch",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418661458153177169",
+      "channel_id": "1170692781216378960",
+      "content": "There are many questions that I really find hard to answer… so maybe I should ju",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1418500231674462218",
@@ -92,127 +193,36 @@
       "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
     },
     {
-      "id": "1418486868886159381",
-      "content": "先警告，ooc警告。因为我觉得皮克曼没什么性知识，纯属造谣\n是发短信的那段剧情，不知道的就大概讲一下：皮克曼带着珊去偷杜勒赛因的食材。\n我写成搞笑文的感觉\n前戏",
-      "author": "dittoqwq",
+      "id": "1418623423344545873",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418653062448545916",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> <@1288446421573304364> <@873450579165331489> here's a full",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418611657852326302",
+      "channel_id": "1170692781216378960",
+      "content": "I shouldn't have invested on aequor",
+      "author": "sugarspawn",
       "reactions": 10,
-      "channel": "杜勒和皮克曼的车文来了"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418666249201778758",
-      "content": "綁鳥哥\n原本沒打算發這張不過世事難料\n耨個銀芯\nUID:\n100336921\n雖然我覺得沒啥但姑且打個碼好了",
-      "author": "foxcatfurry",
+      "id": "1418661828208230481",
+      "channel_id": "1170692781216378960",
+      "content": "I will bully you",
+      "author": "spooky_penguin_",
       "reactions": 10,
-      "channel": "啊欸嗯"
-    },
-    {
-      "id": "1418478206968664247",
-      "channel_id": "1131839817982947429",
-      "content": "給你看個猛的",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418651577291509911",
-      "content": "👉前言\n\n        我覺得皮克曼的短訊劇情以嚴謹的角度來看，無法立刻得出他跟杜勒賽因會打砲的可能結果；但是我想造謠他們打砲(認真)，於是他們打砲了（虫合。",
-      "author": "ass191044",
-      "reactions": 7,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
-    },
-    {
-      "id": "1418618466574925846",
-      "channel_id": "1131839817982947429",
-      "content": "算了，还是买了吧",
-      "author": "jiangzehuai",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418510050179289202",
-      "content": "<@998965744530370730> <@1006158341673865316> <@1182869265901162543> <@7021365609",
-      "author": "be_queitplease",
-      "reactions": 6,
-      "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
-    },
-    {
-      "id": "1418436898162212934",
-      "channel_id": "1131839817982947429",
-      "content": "为什么皮克曼考据搓完长度是杜勒的两倍…\n银芯使人丧失理智（闭眼）\n总之请吃（",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418434940269232239",
-      "channel_id": "1131839817982947429",
-      "content": "过了",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418545411618246677",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418668584749764799",
-      "channel_id": "1131839817982947429",
-      "content": "说实话不知道 但我们优先研究",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418668848449589419",
-      "channel_id": "1131839817982947429",
-      "content": "研究不出來你們改叫網卡前夜好了",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418509000802172969",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "杜勒和皮克曼的车文来了"
-    },
-    {
-      "id": "1418451119016771664",
-      "channel_id": "1131839817982947429",
-      "content": "全隊60一樣能打難4",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418461815523905566",
-      "channel_id": "1131839817982947429",
-      "content": "墨菲的狂氣不就是讓對方傷害一半嗎",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418588836807577721",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418612476622147614",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

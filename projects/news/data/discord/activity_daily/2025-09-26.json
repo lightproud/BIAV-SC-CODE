@@ -1,10 +1,15 @@
 {
   "date": "2025-09-26",
-  "messages": 1257,
-  "unique_authors": 42,
-  "reactions_total": 278,
-  "attachments": 85,
+  "messages": 10380,
+  "unique_authors": 174,
+  "reactions_total": 2094,
+  "attachments": 422,
   "channel_activity": {
+    "🔸morimens-game-chat": 9014,
+    "🔸晒卡分享": 8,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 89,
+    "🔸chaîne-française": 11,
     "🔸綜合討論": 1123,
     "🔸阵容构建": 38,
     "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,": 1,
@@ -26,32 +31,37 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
-    "0": 15,
-    "1": 9,
-    "2": 84,
-    "3": 73,
-    "4": 9,
-    "5": 12,
-    "6": 22,
-    "7": 59,
-    "8": 130,
-    "9": 281,
-    "10": 139,
-    "11": 25,
-    "12": 209,
-    "13": 31,
-    "14": 63,
-    "15": 69,
-    "16": 2,
-    "17": 4,
-    "19": 2,
-    "18": 1,
-    "20": 13,
-    "21": 5
+    "0": 74,
+    "1": 153,
+    "2": 419,
+    "3": 518,
+    "4": 532,
+    "5": 209,
+    "6": 206,
+    "7": 290,
+    "8": 747,
+    "9": 535,
+    "10": 445,
+    "11": 431,
+    "12": 664,
+    "13": 436,
+    "14": 587,
+    "15": 671,
+    "16": 633,
+    "17": 437,
+    "18": 237,
+    "19": 473,
+    "20": 399,
+    "21": 427,
+    "22": 456,
+    "23": 401
   },
   "message_types": {
-    "0": 896,
-    "19": 265
+    "19": 3068,
+    "0": 6052,
+    "20": 1,
+    "23": 1,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +86,14 @@
       "channel": "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,"
     },
     {
+      "id": "1421028654376423475",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1421037648377675807",
       "content": "So free to play 0%?",
       "author": "aurora3981",
@@ -83,128 +101,124 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
-      "id": "1421068168197046352",
-      "channel_id": "1131839817982947429",
-      "content": "等待福袋ing<:pray:1356053116260454534>",
-      "author": "wdxxl",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421159067090423909",
-      "channel_id": "1131839817982947429",
-      "content": "完結收工 不想在花時間凹分數<:nocomment:1356053106038673610>",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420976634919649441",
-      "channel_id": "1131839817982947429",
-      "content": "怎麼你們都在傳今天的活動癲狂，我是不是要來跟風一下？",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421071798006710342",
-      "channel_id": "1131839817982947429",
-      "content": "~~才发现明年6月份阿拉才进池子哦…我也要攒2k抽娶阿拉~~",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421052540614606919",
-      "channel_id": "1131839817982947429",
-      "content": "他掛機了！！！！！",
-      "author": "nazhigezihk",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421060308977320009",
-      "channel_id": "1131839817982947429",
-      "content": "~~对海国剧情没有期待了就是说，sp墨放周年也不会去期待她剧情~~",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421071421538570250",
-      "channel_id": "1131839817982947429",
-      "content": "~~鉴于最近猫的神秘操作，很希望他打复活赛了~~",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421042485152583722",
-      "content": "下一話：萊克的嘴筒x守咪人的||四角褲||",
-      "author": "nazhigezihk",
-      "reactions": 4,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420966276611969124",
-      "channel_id": "1131839817982947429",
-      "content": "還行",
-      "author": "dog794",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421042209326895165",
-      "channel_id": "1131839817982947429",
-      "content": "很美丽的配队惹（",
-      "author": "wdxxl",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421073383008763945",
-      "channel_id": "1131839817982947429",
-      "content": "打整天了啊",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1421154181942607964",
-      "channel_id": "1131839817982947429",
+      "id": "1421148338128158833",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "jidu1418",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "author": "anphans371",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421036054823174184",
-      "content": "English",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1421237272736694364",
+      "channel_id": "1170692781216378960",
+      "content": "Don't call me that I'm not a girl!!!",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421041927431913484",
-      "content": "~~看了一下标题，所以原来是普娜版本吗~~",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1420989608694513737",
+      "channel_id": "1170692781216378960",
+      "content": "Arisu is now the best pupper.",
+      "author": "sophiechoice",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421103159182360708",
-      "content": "之後活動也不要再刪除了好嗎<:please:1356053110375714817>",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1421065744636055563",
+      "channel_id": "1170692781216378960",
+      "content": "only 1 left to go",
+      "author": "medicineshow",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420970120532066394",
-      "channel_id": "1131839817982947429",
+      "id": "1421238336617578496",
+      "channel_id": "1170692781216378960",
+      "content": "Heart me if you love me ❤️",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421040294727778385",
+      "channel_id": "1170692781216378960",
+      "content": "What's pollux",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421146986358243439",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>",
+      "author": "annaxxe_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421155142442418228",
+      "channel_id": "1170692781216378960",
+      "content": "it's super toxic at some point that your whole popularity is based on how smart ",
+      "author": "runningaway_fs",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421171136913346590",
+      "channel_id": "1170692781216378960",
+      "content": "Nghhh~\nAghhh~\nMhmmm~\n\nLike those",
+      "author": "sugarspawn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421214597888868472",
+      "channel_id": "1170692781216378960",
+      "content": "Send him to the Aequor realm.",
+      "author": "sophiechoice",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421214669145772234",
+      "channel_id": "1170692781216378960",
+      "content": "sentenced to an eternity of league of legends",
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421138363876114472",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "author": "txt101225.",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1420996289453101086",
+      "channel_id": "1170692781216378960",
+      "content": "Water is better than coke <:point:1356053112292511815>",
+      "author": "red_rest",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421042094906015785",
+      "channel_id": "1170692781216378960",
+      "content": "Guess who has returned to share doom and news?\nNext week we are not eating, get ",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421078190113427588",
+      "channel_id": "1170692781216378960",
+      "content": "hehe Thais",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

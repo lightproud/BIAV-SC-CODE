@@ -1,10 +1,16 @@
 {
   "date": "2025-09-18",
-  "messages": 463,
-  "unique_authors": 41,
-  "reactions_total": 190,
-  "attachments": 65,
+  "messages": 7895,
+  "unique_authors": 182,
+  "reactions_total": 1341,
+  "attachments": 324,
   "channel_activity": {
+    "🔸morimens-game-chat": 7377,
+    "🔸晒卡分享": 14,
+    "🔸相位对弈": 10,
+    "🔸课间休息闲聊": 3,
+    "🔸한국어-채팅방": 9,
+    "🔸deutscher-chatraum": 19,
     "🔸綜合討論": 363,
     "🔸阵容构建": 22,
     "Tulu keychain!!!": 1,
@@ -43,35 +49,52 @@
     "短小精悍的腦洞皮杜刀（？": 4
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 49,
-    "2": 59,
-    "3": 47,
-    "4": 11,
-    "5": 21,
-    "6": 16,
-    "7": 23,
-    "8": 45,
-    "9": 20,
-    "10": 43,
-    "11": 13,
-    "12": 16,
-    "13": 7,
-    "14": 16,
-    "15": 30,
-    "16": 11,
-    "17": 4,
-    "18": 5,
-    "20": 6,
-    "22": 2,
-    "23": 8,
-    "19": 5
+    "0": 527,
+    "1": 277,
+    "2": 196,
+    "3": 240,
+    "4": 124,
+    "5": 67,
+    "6": 396,
+    "7": 395,
+    "8": 362,
+    "9": 206,
+    "10": 144,
+    "11": 289,
+    "12": 349,
+    "13": 546,
+    "14": 641,
+    "15": 583,
+    "16": 404,
+    "17": 416,
+    "18": 432,
+    "19": 282,
+    "20": 146,
+    "21": 356,
+    "22": 391,
+    "23": 126
   },
   "message_types": {
-    "0": 324,
-    "19": 61
+    "0": 5135,
+    "19": 2297
   },
   "top_reacted_messages": [
+    {
+      "id": "1418354406767988847",
+      "channel_id": "1170692781216378960",
+      "content": "Pull Blue! E3 Caecus and E2 Goliath then E3 Corposant then E3 Ramona.",
+      "author": "mengluo",
+      "reactions": 45,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418361628407234743",
+      "channel_id": "1170692781216378960",
+      "content": "i see ,you've got a point \nmy Greed has taken over me for a second ,i take that ",
+      "author": "taechyon",
+      "reactions": 38,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1418309362715328634",
       "content": "頭戴染血桂冠，無比美麗的嗜血白獅\n\nUID:100047306",
@@ -86,6 +109,102 @@
       "author": "akalanden",
       "reactions": 20,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418192416405454978",
+      "channel_id": "1170692781216378960",
+      "content": "spam blue pray for tulu",
+      "author": "omgwes.",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418378196835106937",
+      "channel_id": "1170692781216378960",
+      "content": "anyway i do sound like a mad hater rn but yea just ew some of the graphical choi",
+      "author": "renaiya",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418232112062005331",
+      "channel_id": "1170692781216378960",
+      "content": "oh my birthday luck",
+      "author": "deadcatsoda",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418360678259097761",
+      "channel_id": "1170692781216378960",
+      "content": "I’m not really planning to pull her multiple times that’s my current issue",
+      "author": "ludwig_101",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418228180631814344",
+      "channel_id": "1170692781216378960",
+      "content": "Yyoung people don't need that much sleep",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418231092867108874",
+      "channel_id": "1170692781216378960",
+      "content": "I kept seeing you get the same one relic over and over again, and it's just a di",
+      "author": "sirtealot",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418284224750026962",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418090013253439558",
+      "channel_id": "1170692781216378960",
+      "content": "my luck is on fire tonight  ! look who i just got !",
+      "author": "animevampire",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418231827214241924",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/shelirionach-wizardry-variants-daphne-sleepy-gif-73852320",
+      "author": "startofu_fish",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418236595194171422",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418307680723800156",
+      "channel_id": "1170692781216378960",
+      "content": "how about girls frontline 2",
+      "author": "runningaway_fs",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418359833954095154",
+      "channel_id": "1170692781216378960",
+      "content": "he'll see it an he'll cry anyways",
+      "author": "ancientbp",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1418072928183914608",
@@ -103,130 +222,20 @@
       "channel": "【收米人&OC向】【繁衍狂热向】梦境之外"
     },
     {
-      "id": "1418216938378629262",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
+      "id": "1418167854758498315",
+      "channel_id": "1170692781216378960",
+      "content": "I just want my compensation <:cute1:1356053053568192717> \n-# I haven't even done",
+      "author": "sirtealot",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418061467349155930",
-      "channel_id": "1131839817982947429",
-      "content": "評價為玩原神玩的👆🤓",
-      "author": "undecember_news",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418085777673293947",
-      "channel_id": "1131839817982947429",
-      "content": "❓ ❓",
-      "author": "elv_juan.carlos",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418139314428313652",
-      "channel_id": "1131839817982947429",
-      "content": "虽然我旁边没人玩这游戏，但我可是有朋友来画画的嘿嘿<:thinking2:1356053172065534153>",
-      "author": "dittoqwq",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418245011442634833",
-      "content": "⟨如果⟩\n\n        如果葬骸城之主並非永生，葬骸城的神明賜予被蠶食的王的靈魂至高榮耀，使王能將瀕臨死亡痛苦的靈魂化為自己的一部分銘記，並行使權能賦予其永",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "短小精悍的腦洞皮杜刀（？"
-    },
-    {
-      "id": "1418063442043998280",
-      "channel_id": "1131839817982947429",
-      "content": "我要看到吵架",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418068364118724769",
-      "channel_id": "1131839817982947429",
-      "content": "拼尽全力差点吃完灵芝",
-      "author": "jidu1418",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418173797667962911",
-      "channel_id": "1131839817982947429",
-      "content": "<:spend:1356086121888747531>",
-      "author": "_buqi",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418219376590454894",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "shchng.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418071811182035005",
-      "channel_id": "1131839817982947429",
-      "content": "我们深海被图图和弥利联手打压",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418215243464577124",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418139980282200156",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dittoqwq",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418216488921337906",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418067928359637002",
-      "channel_id": "1131839874132090890",
-      "content": "反正主C要有練度",
-      "author": "universe.dark",
-      "reactions": 3,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1418245657294274690",
-      "content": "~~長途大黃車還在路上下不了車所以分享臨時起意的小刀~~",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "短小精悍的腦洞皮杜刀（？"
-    },
-    {
-      "id": "1418059737773375568",
-      "channel_id": "1131839817982947429",
-      "content": "说的对！但是我们两河流域不这么看\n𒀰𒀱𒀲𒀳𒀴𒀵𒀶𒀷𒀸𒀹𒀺𒀻𒀼𒀽𒀾𒀿𒀰𒀱𒀲𒀳𒀴𒀵𒀶𒀷𒀸𒀹𒀺𒀻𒀼𒀽𒀾𒀿𒁀𒁁𒁂𒁃𒁄𒁅𒁆𒁇𒁈𒁉𒁊𒁋𒁌𒁍𒁎𒁏𒁐𒁑𒁒𒁓𒁔𒁕𒁖𒁗𒁘𒁀𒁁𒁂𒁃𒁄𒁅",
-      "author": "nahida._90",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1418227805245804554",
+      "channel_id": "1170692781216378960",
+      "content": "Lucky for once",
+      "author": "pedropolos",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

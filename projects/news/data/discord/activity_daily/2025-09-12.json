@@ -1,10 +1,19 @@
 {
   "date": "2025-09-12",
-  "messages": 1171,
-  "unique_authors": 40,
-  "reactions_total": 359,
-  "attachments": 84,
+  "messages": 8223,
+  "unique_authors": 216,
+  "reactions_total": 1016,
+  "attachments": 382,
   "channel_activity": {
+    "🔸morimens-game-chat": 6389,
+    "🔸剧情交流": 35,
+    "🔸晒卡分享": 262,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 22,
+    "🔸한국어-채팅방": 49,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 289,
     "🔸綜合討論": 1052,
     "🔸阵容构建": 1,
     "Pickmin": 1,
@@ -36,33 +45,34 @@
     "我喜歡卡斯托爾": 2
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 13,
-    "2": 135,
-    "3": 124,
-    "4": 180,
-    "5": 38,
-    "6": 67,
-    "7": 18,
-    "8": 44,
-    "9": 37,
-    "10": 37,
-    "11": 74,
-    "12": 50,
-    "13": 65,
-    "14": 235,
-    "15": 8,
-    "16": 17,
-    "17": 3,
-    "18": 8,
-    "19": 5,
-    "21": 3,
-    "22": 1,
-    "23": 4
+    "0": 371,
+    "1": 441,
+    "2": 343,
+    "3": 490,
+    "4": 490,
+    "5": 647,
+    "6": 460,
+    "7": 95,
+    "8": 132,
+    "9": 189,
+    "10": 401,
+    "11": 207,
+    "12": 300,
+    "13": 939,
+    "14": 838,
+    "15": 316,
+    "16": 176,
+    "17": 402,
+    "18": 161,
+    "19": 405,
+    "20": 196,
+    "21": 119,
+    "22": 45,
+    "23": 60
   },
   "message_types": {
-    "19": 257,
-    "0": 796
+    "0": 4889,
+    "19": 2163
   },
   "top_reacted_messages": [
     {
@@ -80,11 +90,43 @@
       "channel": "忘却前夜OST：神明诞生之日"
     },
     {
+      "id": "1416062904343466005",
+      "channel_id": "1174983699935277147",
+      "content": "畢竟我們醫生最溫柔了🫶",
+      "author": "undecember_news",
+      "reactions": 13,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1415904814088458352",
       "content": "写在前面——\n**点个薯条谢谢哇~**\n||**~~啊啊啊啊啊想参加想参加想参加啊啊啊啊啊一万银芯啊啊啊啊啊银芯宝宝等我等我等我我来带你回家啊啊啊啊啊（战吼起手",
       "author": "akalanden",
       "reactions": 13,
       "channel": "【收米人&OC向】【繁衍狂热向】晴空之下"
+    },
+    {
+      "id": "1416108394586177646",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "paidonce",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416051438211039303",
+      "channel_id": "1174983699935277147",
+      "content": "<@456226577798135808> \n# Bro比我多兩倍就曬出來讓大家羨慕啊，發什麼神經？\n\n我不知道我天天po抽數成長哪裡有問題了，炫耀自己撿，上次",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1415980028470231111",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1415978080903888968",
@@ -95,11 +137,43 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1416109331148968060",
+      "channel_id": "1170692781216378960",
+      "content": "I like saturn",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416052342112915547",
+      "channel_id": "1174983699935277147",
+      "content": "我找到樂子了",
+      "author": "undecember_news",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1415986703797063800",
       "content": "<:Cheerup:1400771555939844149> 感谢大家的投稿，V2.3.1 UGC获奖名单已公示~\n奖励将在下周五（9月19号前）发送到各位的邮",
       "author": "morimensstaff01",
       "reactions": 8,
       "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1415941624793665606",
+      "channel_id": "1170692781216378960",
+      "content": "The songs are good tho",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416017782436270182",
+      "channel_id": "1174983699935277147",
+      "content": "還是你沒有所以你覺得沒意義？",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1415968613185355859",
@@ -110,6 +184,38 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1415976007470682259",
+      "channel_id": "1174983699935277147",
+      "content": "常驻池",
+      "author": "txt101225.",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416053516421828728",
+      "channel_id": "1174983699935277147",
+      "content": "祝各位五抽出金不保底",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416055436372611202",
+      "channel_id": "1174983699935277147",
+      "content": "高斯這麼早死就是為了避你鋒芒嗎",
+      "author": "ice_storys",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416057582807683186",
+      "channel_id": "1174983699935277147",
+      "content": "||不覺得大人連花在自己愛好上的錢都拿不出來更慘嗎||",
+      "author": "yusi4172",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1416066948965601433",
       "content": "I really would like to swap to the other start screens. Honestly the arc 2 start",
       "author": "monchi3524",
@@ -117,106 +223,12 @@
       "channel": "✅「Answered」Can you let us choose the start screen (log in animation)?"
     },
     {
-      "id": "1415905233057349743",
-      "channel_id": "1131839817982947429",
-      "content": "然後貓有新屬性了",
-      "author": "foxcatfurry",
+      "id": "1416046395961643068",
+      "channel_id": "1174983699935277147",
+      "content": "這世上究竟有甚麼是有意義的呢 何必討論意義 討論意義多沒意思 快樂就好了 不是嗎",
+      "author": "undecember_news",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415909988672737291",
-      "channel_id": "1131839817982947429",
-      "content": "会有一个叫银河行星的萌新教你如何先开静海再开水母大",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416069098596466738",
-      "channel_id": "1131839817982947429",
-      "content": "一命了",
-      "author": "wqin.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416070553151868958",
-      "channel_id": "1131839817982947429",
-      "content": "突然想起上次有人打算糟蹋我的船長<:Bleed:1400771547710361640>",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416096719858307124",
-      "channel_id": "1131839817982947429",
-      "content": "話說有人在忘卻討論區\n問5771值不值得入坑\n難不成專版的人叫你快逃嗎<:processing:1357185814567718963>",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415981648075423744",
-      "content": "有时候经常在几个回合以后，出牌的时候发现出错了（尤其是手搓的时候，牌多真的很容易出错牌）。然后可能出错牌对于高难关卡来说结果是致命的只能重开，但是重开的话又得花",
-      "author": "2300011747",
-      "reactions": 5,
-      "channel": "能不能新增一个撤回上一张出牌的功能？"
-    },
-    {
-      "id": "1415896824631529543",
-      "channel_id": "1131839817982947429",
-      "content": "那SR四小強T0 建議練到90等",
-      "author": "elkmilu",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415954601949134848",
-      "channel_id": "1131839817982947429",
-      "content": "（裂開）",
-      "author": "wqin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415991344987508759",
-      "channel_id": "1131839817982947429",
-      "content": "信不信我進軍深海",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416042399137792020",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416063313842012241",
-      "channel_id": "1131839817982947429",
-      "content": "是猫死去的白月光（",
-      "author": "jidu1418",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416068037752393848",
-      "channel_id": "1131839817982947429",
-      "content": "~~+12圖魯不出現我就是正統的圖魯廚~~",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416139231662837830",
-      "content": "Doresain caked up <:kittyblush:1337763746042609736>💖",
-      "author": "snowvleopard",
-      "reactions": 4,
-      "channel": "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\""
+      "channel": "🔸晒卡分享"
     }
   ]
 }

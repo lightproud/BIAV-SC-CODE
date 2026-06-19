@@ -1,12 +1,19 @@
 {
   "date": "2025-09-01",
-  "messages": 4851,
-  "unique_authors": 163,
-  "reactions_total": 1649,
-  "attachments": 361,
+  "messages": 12863,
+  "unique_authors": 216,
+  "reactions_total": 2371,
+  "attachments": 745,
   "channel_activity": {
+    "🔸morimens-game-chat": 10849,
+    "🔸剧情交流": 29,
+    "🔸晒卡分享": 6,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 105,
+    "🔸deutscher-chatraum": 9,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 195,
     "🔸綜合討論": 1472,
-    "🔸morimens-game-chat": 3200,
     "uvhash fan art submission": 1,
     "Tulu keychain!!!": 8,
     "Carried": 1,
@@ -54,34 +61,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 644,
-    "1": 804,
-    "2": 614,
-    "3": 873,
-    "4": 675,
-    "5": 427,
-    "6": 184,
-    "7": 52,
-    "8": 31,
-    "9": 20,
-    "10": 91,
-    "11": 96,
-    "12": 52,
-    "13": 66,
-    "14": 76,
-    "15": 83,
-    "16": 29,
-    "17": 3,
-    "18": 9,
-    "19": 4,
-    "20": 3,
-    "23": 6,
-    "22": 7,
-    "21": 2
+    "6": 565,
+    "7": 566,
+    "8": 302,
+    "9": 575,
+    "10": 688,
+    "11": 552,
+    "12": 610,
+    "13": 414,
+    "14": 540,
+    "15": 470,
+    "16": 422,
+    "17": 515,
+    "18": 389,
+    "19": 433,
+    "20": 619,
+    "21": 460,
+    "22": 324,
+    "23": 296,
+    "3": 920,
+    "1": 807,
+    "2": 633,
+    "4": 684,
+    "5": 435,
+    "0": 644
   },
   "message_types": {
-    "0": 3402,
-    "19": 1269,
+    "0": 5471,
+    "19": 2540,
     "46": 1
   },
   "top_reacted_messages": [
@@ -105,6 +112,14 @@
       "author": "undecember_news",
       "reactions": 18,
       "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1411958290732159067",
+      "channel_id": "1170692781216378960",
+      "content": "this one?",
+      "author": "elldrielle",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1411956576377372702",
@@ -134,6 +149,30 @@
       "content": "being bald is a mental illness now?",
       "author": "atoricious",
       "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411998249283354715",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "borgirnecoarc",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1412024596458111016",
+      "channel_id": "1170692781216378960",
+      "content": "I kinda don't have the patience atp",
+      "author": "nicc.name",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1412220829650911406",
+      "channel_id": "1170692781216378960",
+      "content": "how good ramona time worn?",
+      "author": "devilishdesire222",
+      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -167,6 +206,30 @@
       "channel": "刻印模組的副產物"
     },
     {
+      "id": "1411997139583897621",
+      "channel_id": "1170692781216378960",
+      "content": "W? I was missing only her",
+      "author": "stefcolcurry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411997855111057542",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/pregnant-man-react-dont-dm-me-were-done-discord-react-don",
+      "author": "borgirnecoarc",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1412086752428032172",
+      "channel_id": "1174983699935277147",
+      "content": "<:proud2:1356053123445297233>",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1412033829475979276",
       "channel_id": "1131839817982947429",
       "content": "赤完了",
@@ -175,66 +238,10 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1411904274849599549",
-      "channel_id": "1131839817982947429",
-      "content": "24超限魅力時刻",
-      "author": "cameliia._.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412053892547739800",
-      "channel_id": "1131839817982947429",
-      "content": "收工<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412082137804439703",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412084266245820528",
-      "channel_id": "1131839817982947429",
-      "content": "窮酸鼠隊 沒想到能贏",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412139588184445008",
-      "channel_id": "1131839817982947429",
-      "content": "收工<:happy:1356053849894420683>",
-      "author": "cs001092",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411910780164509707",
-      "channel_id": "1170692781216378960",
-      "content": "Merch i won hehe\n\nThey have their wheels printed at the back",
-      "author": "kevsalvador",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1411911827838861426",
+      "id": "1411971612890239058",
       "channel_id": "1170692781216378960",
       "content": "",
-      "author": "kezrin",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1411911911657967659",
-      "channel_id": "1170692781216378960",
-      "content": "caecus would tank it",
-      "author": "aettitude",
+      "author": "flares117",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

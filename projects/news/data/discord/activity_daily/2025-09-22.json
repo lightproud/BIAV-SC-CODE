@@ -1,10 +1,18 @@
 {
   "date": "2025-09-22",
-  "messages": 1787,
-  "unique_authors": 51,
-  "reactions_total": 539,
-  "attachments": 132,
+  "messages": 14092,
+  "unique_authors": 246,
+  "reactions_total": 3022,
+  "attachments": 645,
   "channel_activity": {
+    "🔸morimens-game-chat": 12213,
+    "🔸剧情交流": 47,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 23,
+    "🔸deutscher-chatraum": 3,
     "🔸綜合討論": 1637,
     "🔸阵容构建": 33,
     "3D Render: Horla": 4,
@@ -33,35 +41,55 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 39,
-    "2": 114,
-    "3": 122,
-    "4": 123,
-    "5": 138,
-    "6": 98,
-    "7": 77,
-    "8": 75,
-    "10": 11,
-    "11": 85,
-    "12": 290,
-    "13": 177,
-    "14": 96,
-    "15": 99,
-    "16": 186,
-    "18": 9,
-    "19": 8,
-    "20": 14,
-    "22": 2,
-    "23": 1,
-    "9": 11,
-    "21": 8
+    "0": 349,
+    "1": 509,
+    "2": 737,
+    "3": 597,
+    "4": 592,
+    "5": 408,
+    "6": 668,
+    "7": 612,
+    "8": 436,
+    "9": 511,
+    "10": 661,
+    "11": 851,
+    "12": 984,
+    "13": 606,
+    "14": 758,
+    "15": 834,
+    "16": 502,
+    "17": 675,
+    "18": 556,
+    "19": 742,
+    "20": 211,
+    "21": 323,
+    "22": 490,
+    "23": 480
   },
   "message_types": {
-    "0": 1253,
-    "19": 417
+    "0": 7697,
+    "19": 4602,
+    "46": 3,
+    "20": 2,
+    "23": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1419556665786892400",
+      "channel_id": "1170692781216378960",
+      "content": "Clem out?",
+      "author": "lotan_045",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419535108079358002",
+      "channel_id": "1170692781216378960",
+      "content": "do 🫃 not 🫃 sleep 🫃 on🫃  this 🫃 game🫃🫄  , i've 🫃 played 🫃 so🫃  many🫃 gacha 🫃 game",
+      "author": "moyashi0672",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1419533512825897000",
       "content": "A little practice to render a painterly style in blender. \nHonestly could use mo",
@@ -77,6 +105,54 @@
       "channel": ""
     },
     {
+      "id": "1419502375156191263",
+      "channel_id": "1170692781216378960",
+      "content": "what is that",
+      "author": "supernat1",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419497284306993293",
+      "channel_id": "1170692781216378960",
+      "content": "unbricked accounts be like",
+      "author": "tatloch",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419641446394236959",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419476415421874287",
+      "channel_id": "1170692781216378960",
+      "content": "I’m chill aswell",
+      "author": "runningaway_fs",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419496751261417583",
+      "channel_id": "1170692781216378960",
+      "content": "garbage",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419600579252195379",
+      "channel_id": "1170692781216378960",
+      "content": "kath is trash",
+      "author": "jollysquire",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1419636845783941160",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -85,138 +161,75 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1419478292108541994",
+      "channel_id": "1170692781216378960",
+      "content": "WDYM ITS NOT SATURDAY",
+      "author": "runningaway_fs",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419590712088854731",
+      "channel_id": "1170692781216378960",
+      "content": "I could hear Clem speaking to me...she whispered to me to pull more...just a few",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419685443280306176",
+      "channel_id": "1170692781216378960",
+      "content": "# FORSEN ONLINE I AM SAVED",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419806198231994480",
+      "channel_id": "1170692781216378960",
+      "content": "Who has spooky muted?",
+      "author": "canker.thore",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419536395164323900",
+      "channel_id": "1170692781216378960",
+      "content": "there",
+      "author": "ancientbp",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419542812529262662",
+      "channel_id": "1170692781216378960",
+      "content": "People say clem mid,Is it true?<:processing:1357185814567718963>",
+      "author": "dorembo_mako8800",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419581375027089460",
+      "channel_id": "1170692781216378960",
+      "content": "Wow I just checked my character rates, 67 pulls per limited character",
+      "author": "supernat1",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419642649228476446",
+      "channel_id": "1170692781216378960",
+      "content": "Your talk about this game is so inappropriate that it's rated r99",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1419525884464992418",
       "content": "也算是一个小练习，试试看用blender来做出油画效果。但结果好像很一般.....<:takenotes:1357186646294138890>\n另外本来还想",
       "author": "xyakoto",
       "reactions": 9,
       "channel": "【3D渲染动画】奥尔拉"
-    },
-    {
-      "id": "1419504871195021402",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419690142183985223",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cs001092",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419717009137991760",
-      "channel_id": "1131839817982947429",
-      "content": "造價高那是塔薇的缺點嗎?  不 那是玩家的缺點",
-      "author": "insomnia07763",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419497719973679144",
-      "channel_id": "1131839817982947429",
-      "content": "340抽  7隻收工……",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419577420855378020",
-      "channel_id": "1131839817982947429",
-      "content": "都有錄影片 已經在上傳了\n晚點也會寫文字攻略",
-      "author": "0.0._.0_0.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419687383443439688",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419684565114425535",
-      "content": "打融灾打的我痛苦面具出来了，之后的融灾能不能控制一下难度，至少350别太难吧<:cry1:1356053046374961212>",
-      "author": "2300011747",
-      "reactions": 6,
-      "channel": "✅「已回答」融灾能不能别调这么难"
-    },
-    {
-      "id": "1419499057172316210",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419519956365742223",
-      "channel_id": "1131839817982947429",
-      "content": "<@320087455556435968>",
-      "author": "elv_juan.carlos",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419556506734432297",
-      "channel_id": "1131839817982947429",
-      "content": "抽到医生了",
-      "author": "alatin.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419692551224561715",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cs001092",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419722590603313223",
-      "channel_id": "1131839817982947429",
-      "content": "我們塔薇是綁隊友的、需要凹的、不穩定的、要手法的、bug多的、要高練的、清雜弱的、出牌多的、容易被針對的、容易算力調和的、容易無底創痕的、缺銀鑰的、啟動慢的實在",
-      "author": "xingkongzhiyao_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419499431275008093",
-      "channel_id": "1131839817982947429",
-      "content": "收工～",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419506339322789979",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419508100662038670",
-      "channel_id": "1131839817982947429",
-      "content": "124抽一只汀两只温妈两只鼠鼠四只医生和一张隐没",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419514712961454170",
-      "channel_id": "1131839817982947429",
-      "content": "www",
-      "author": "elv_juan.carlos",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

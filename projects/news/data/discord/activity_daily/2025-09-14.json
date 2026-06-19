@@ -1,10 +1,16 @@
 {
   "date": "2025-09-14",
-  "messages": 1732,
-  "unique_authors": 39,
-  "reactions_total": 535,
-  "attachments": 74,
+  "messages": 8592,
+  "unique_authors": 188,
+  "reactions_total": 1397,
+  "attachments": 355,
   "channel_activity": {
+    "🔸morimens-game-chat": 6180,
+    "🔸剧情交流": 66,
+    "🔸晒卡分享": 30,
+    "🔸课间休息闲聊": 65,
+    "🔸한국어-채팅방": 15,
+    "🔸русский-канал": 504,
     "🔸綜合討論": 1577,
     "🔸阵容构建": 35,
     "Flares' Pickman Fanart": 1,
@@ -29,35 +35,34 @@
     "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你": 7
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 7,
-    "2": 17,
-    "3": 9,
-    "4": 41,
-    "5": 202,
-    "6": 15,
-    "7": 126,
-    "8": 147,
-    "9": 128,
-    "10": 92,
-    "11": 162,
-    "12": 113,
-    "13": 79,
-    "14": 162,
-    "15": 218,
-    "16": 134,
-    "17": 11,
-    "18": 2,
-    "20": 3,
-    "22": 2,
-    "23": 56,
-    "19": 1,
-    "21": 1
+    "0": 240,
+    "1": 145,
+    "2": 368,
+    "3": 135,
+    "4": 159,
+    "5": 438,
+    "6": 308,
+    "7": 649,
+    "8": 540,
+    "9": 453,
+    "10": 766,
+    "11": 577,
+    "12": 348,
+    "13": 573,
+    "14": 492,
+    "15": 352,
+    "16": 579,
+    "17": 278,
+    "18": 353,
+    "19": 124,
+    "20": 95,
+    "21": 61,
+    "22": 237,
+    "23": 322
   },
   "message_types": {
-    "0": 1162,
-    "19": 449,
-    "46": 1
+    "19": 1858,
+    "0": 5002
   },
   "top_reacted_messages": [
     {
@@ -73,6 +78,70 @@
       "author": "flares117",
       "reactions": 26,
       "channel": "Flares' Pickman Fanart"
+    },
+    {
+      "id": "1416634191982104657",
+      "channel_id": "1170692781216378960",
+      "content": "Between Sanga uvash Leigh and Thais there’s like zero question girlkeeper isn’t ",
+      "author": "willow9661",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416802019607314553",
+      "channel_id": "1174983699935277147",
+      "content": "又要做沒意義的事情了<:proud:1400771808356991057>",
+      "author": "ena04564",
+      "reactions": 14,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416852516930584596",
+      "channel_id": "1170692781216378960",
+      "content": "Guys have you heard of dangaronpa new game",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416862713015177319",
+      "channel_id": "1170692781216378960",
+      "content": "I am a cat person",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416671971936309273",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "aaaa_00098",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416740283185496177",
+      "channel_id": "1174983699935277147",
+      "content": "~~意义哥真的还在看着我们吗？~~",
+      "author": "ling_an_",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416787228046393467",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416857303503863930",
+      "channel_id": "1170692781216378960",
+      "content": "what the hell is idv",
+      "author": "fischperch",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1416727971603157003",
@@ -99,6 +168,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1416693726989783050",
+      "channel_id": "1170692781216378960",
+      "content": "my sister saw you on my discord and wanted to say this",
+      "author": "reya.li",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416725013024735424",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "poodaloom",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1416736501735100507",
       "channel_id": "1131839817982947429",
       "content": "建議削弱畫家\n||衣服太厚了 我要他穿的跟雷亞一樣||",
@@ -114,107 +199,27 @@
       "channel": "Cat tulu"
     },
     {
+      "id": "1416694991538884729",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193>",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416701740530667560",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1416736054828072970",
       "channel_id": "1131839817982947429",
       "content": "加強繁衍狂熱🥵",
       "author": "ernest_heart",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416656121262903317",
-      "channel_id": "1131839817982947429",
-      "content": "啃完了",
-      "author": "shchng.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416678004930908231",
-      "channel_id": "1131839817982947429",
-      "content": "医生的强大 毋庸置疑",
-      "author": "ling_an_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416725363844972585",
-      "channel_id": "1131839817982947429",
-      "content": "穿的那么多又繁杂\n就是要一点一点的脱下来啊",
-      "author": "ling_an_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416805851657928846",
-      "channel_id": "1131839817982947429",
-      "content": "有人在另一個地方問了些問題\n我熱心的回答了很多\n說可以加我遊戲好友\n~~或好心幫我填個邀請碼~~\n\n過了三小時  回了我一句\n加了 謝謝\n我進遊戲 沒關注  也",
-      "author": "insomnia07763",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416654439733006417",
-      "channel_id": "1131839817982947429",
-      "content": "||我叫他禁的||",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416656498699927613",
-      "channel_id": "1131839817982947429",
-      "content": "我有用0啟鳥吃過蠻多次五級的",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416657324012998656",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416657341834858520",
-      "channel_id": "1131839817982947429",
-      "content": "其實你們沒超限是B-67\n我們有抽到超限的是B-68",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416658215164317746",
-      "channel_id": "1131839817982947429",
-      "content": "我用盾擊打完忘卻篇(自然打過9-1",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416687042208731238",
-      "channel_id": "1131839817982947429",
-      "content": "打的好艰难<:takenotes:1357186646294138890>",
-      "author": "timbite",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416809697771786363",
-      "channel_id": "1131839817982947429",
-      "content": "剩我還在完神秘頭顱女了",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416812832497860618",
-      "channel_id": "1131839817982947429",
-      "content": "已經是了",
-      "author": "ernest_heart",
-      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]

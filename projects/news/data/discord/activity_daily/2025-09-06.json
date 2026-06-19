@@ -1,10 +1,16 @@
 {
   "date": "2025-09-06",
-  "messages": 918,
-  "unique_authors": 33,
-  "reactions_total": 260,
-  "attachments": 73,
+  "messages": 11183,
+  "unique_authors": 198,
+  "reactions_total": 1450,
+  "attachments": 423,
   "channel_activity": {
+    "🔸morimens-game-chat": 8819,
+    "🔸晒卡分享": 2,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 16,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1420,
     "🔸綜合討論": 788,
     "uvhash fan art submission": 1,
     "Pickmin": 2,
@@ -27,34 +33,34 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
-    "0": 8,
-    "1": 5,
-    "2": 18,
-    "3": 16,
-    "4": 29,
-    "5": 54,
-    "6": 141,
-    "7": 3,
-    "8": 21,
-    "9": 61,
-    "10": 59,
-    "11": 62,
-    "12": 126,
-    "13": 109,
-    "14": 5,
-    "15": 28,
-    "16": 86,
-    "17": 37,
-    "18": 13,
-    "19": 2,
-    "20": 7,
-    "21": 11,
-    "23": 5,
-    "22": 12
+    "0": 579,
+    "1": 365,
+    "2": 468,
+    "3": 336,
+    "4": 446,
+    "5": 486,
+    "6": 521,
+    "7": 155,
+    "8": 142,
+    "9": 484,
+    "10": 367,
+    "11": 321,
+    "12": 612,
+    "13": 701,
+    "14": 371,
+    "15": 701,
+    "16": 856,
+    "17": 401,
+    "18": 430,
+    "19": 624,
+    "20": 591,
+    "21": 679,
+    "22": 422,
+    "23": 125
   },
   "message_types": {
-    "0": 589,
-    "19": 199
+    "19": 3397,
+    "0": 6868
   },
   "top_reacted_messages": [
     {
@@ -79,6 +85,22 @@
       "channel": "Pikmin"
     },
     {
+      "id": "1413926446371569664",
+      "channel_id": "1170692781216378960",
+      "content": "it's cause youre such a cutiepatootie",
+      "author": "aettitude",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413931798534291546",
+      "channel_id": "1170692781216378960",
+      "content": "Pregnancy is a symptom",
+      "author": "sirtealot",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1413985630198824982",
       "content": "drew kathigu-ra but i started falling asleep and couldnt render it 😔",
       "author": "oddyberry",
@@ -86,130 +108,116 @@
       "channel": "kathigu-ra fanart !!"
     },
     {
-      "id": "1413776974635204690",
-      "channel_id": "1131839817982947429",
-      "content": "~~要不一路走到黑吧~~",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1413980554746921142",
+      "channel_id": "1170692781216378960",
+      "content": "stop using the smart cat pic",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413882393667829822",
-      "channel_id": "1131839817982947429",
+      "id": "1413779553968459897",
+      "channel_id": "1170692781216378960",
+      "content": "I have this for mine. <:pray:1356053116260454534> she goes good with the event b",
+      "author": "sephirwind",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413928475563261953",
+      "channel_id": "1170692781216378960",
+      "content": "holy shit",
+      "author": "taechyon",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413920700057518190",
+      "channel_id": "1170692781216378960",
+      "content": "can someone just buy me silver.... Im a good girl!!!",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413932760896110603",
+      "channel_id": "1170692781216378960",
+      "content": "Join the coffee cult Keepers",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413975512065376318",
+      "channel_id": "1170692781216378960",
+      "content": "it was, indeed, meant to be <:dead:1356082627509092372>",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413981060450226256",
+      "channel_id": "1170692781216378960",
+      "content": "what did i say",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413871021794132048",
+      "channel_id": "1174983699935277147",
+      "content": "差一張三疊<:wish:1356084702468899117>",
+      "author": "wild_pansy",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1413923229726150748",
+      "channel_id": "1170692781216378960",
+      "content": "If only there was a strong and a cute boy who could help a poor girl like me....",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413934350180814918",
+      "channel_id": "1170692781216378960",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413963535305674874",
+      "channel_id": "1170692781216378960",
+      "content": "We love Ultra girls!💜💜💜",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413979155275579564",
+      "channel_id": "1170692781216378960",
+      "content": "it's so great that I fell asleep",
+      "author": "fischperch",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413980502775304336",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413938502286184540",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1414037169231630367",
-      "channel_id": "1131839817982947429",
-      "content": "連蠟燭都被幹沉默了",
-      "author": "tofu0834",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413907489585496275",
-      "channel_id": "1131839817982947429",
-      "content": "教我入dc",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413946585120899093",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413973606563708988",
-      "channel_id": "1131839817982947429",
-      "content": "為什麼我會排到七千多分的魔龍佬......",
-      "author": "tofu0834",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413678050519941200",
-      "channel_id": "1131839817982947429",
-      "content": "我封鎖一下",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413869017629851719",
-      "channel_id": "1131839817982947429",
-      "content": "~~虽然是诅咒兔灵魂诞生引舵莱克~~",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413871447671046177",
-      "channel_id": "1131839817982947429",
-      "content": "杜勒隊你也一定塞萊克進去",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413881769123647589",
-      "channel_id": "1131839817982947429",
-      "content": "🤓",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413929001931767900",
-      "channel_id": "1131839817982947429",
-      "content": "可以直接打50狂氣到我信箱嗎",
-      "author": "tofu0834",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413832384595492874",
-      "content": "<:Feelguilty:1400771618174664775> <:grin:1400771716665446471>",
-      "author": "le_fishmael",
-      "reactions": 2,
-      "channel": "Pickmin"
-    },
-    {
-      "id": "1413742134002974740",
-      "content": "所以前作才會倒啊🤣 ，攻擊方打倒對面的某一個角色，就是要阻止對面的攻勢最有危險的，結果總是輕易復活，還在送你爆發，那本來就是要阻止對面總攻擊才優先殺死的思考，對",
-      "author": "kjrr.",
-      "reactions": 2,
-      "channel": "前瞻：相位对弈改动 Traphase Changes"
-    },
-    {
-      "id": "1413677072311779470",
-      "channel_id": "1131839817982947429",
-      "content": "~~我要開始懷疑他沒基本沒在管了（欸~~",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1413726978799833140",
-      "channel_id": "1131839817982947429",
-      "content": "永久暴擊一直疊",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1413750787426750515",
+      "channel_id": "1174983699935277147",
+      "content": "開心也15同調了",
+      "author": "andy1123",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     }
   ]
 }

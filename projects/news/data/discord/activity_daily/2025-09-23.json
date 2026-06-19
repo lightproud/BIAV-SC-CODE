@@ -1,10 +1,15 @@
 {
   "date": "2025-09-23",
-  "messages": 1011,
-  "unique_authors": 39,
-  "reactions_total": 465,
-  "attachments": 82,
+  "messages": 10844,
+  "unique_authors": 277,
+  "reactions_total": 2791,
+  "attachments": 542,
   "channel_activity": {
+    "🔸morimens-game-chat": 9777,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 3,
+    "🔸한국어-채팅방": 49,
     "🔸綜合討論": 841,
     "pickman and avery": 5,
     "Hi! There is my first contribution for the Morimens Fan Art Contest.": 6,
@@ -36,42 +41,58 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 6,
-    "1": 8,
-    "2": 74,
-    "3": 30,
-    "4": 15,
-    "6": 8,
-    "7": 80,
-    "8": 19,
-    "9": 45,
-    "10": 39,
-    "11": 120,
-    "12": 20,
-    "13": 8,
-    "14": 205,
-    "15": 49,
-    "16": 59,
-    "17": 76,
-    "18": 68,
-    "19": 18,
-    "20": 12,
-    "22": 16,
-    "23": 18,
-    "5": 3,
-    "21": 15
+    "0": 192,
+    "1": 437,
+    "2": 332,
+    "3": 259,
+    "4": 269,
+    "5": 284,
+    "6": 549,
+    "7": 503,
+    "8": 402,
+    "9": 225,
+    "10": 661,
+    "11": 439,
+    "12": 821,
+    "13": 626,
+    "14": 573,
+    "15": 496,
+    "16": 635,
+    "17": 665,
+    "18": 597,
+    "19": 552,
+    "20": 515,
+    "21": 193,
+    "22": 374,
+    "23": 245
   },
   "message_types": {
-    "19": 179,
-    "0": 662
+    "19": 3586,
+    "0": 6247
   },
   "top_reacted_messages": [
+    {
+      "id": "1420022330251415582",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone Sorry to bother everyone again. We tried to optimize the network issue",
+      "author": "game.producer.light",
+      "reactions": 434,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1420072658090856531",
       "content": "Hope u like it!\nPickman\nUID: 101137749",
       "author": "reglisse8040",
       "reactions": 63,
       "channel": "Hi! There is my first contribution for the Morimens Fan Art Contest."
+    },
+    {
+      "id": "1420093352707100702",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1420092491125755985 @everyone",
+      "author": "game.producer.light",
+      "reactions": 52,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1420005000859353272",
@@ -109,11 +130,91 @@
       "channel": "無借角融災全4 400攻略血肉指環"
     },
     {
+      "id": "1420020798894374965",
+      "channel_id": "1170692781216378960",
+      "content": "Hello chatttt",
+      "author": "promici",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419911416046948452",
+      "channel_id": "1174983699935277147",
+      "content": "肝了五六个小时终于有环娜了",
+      "author": "txt101225.",
+      "reactions": 14,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1420170397252452533",
       "content": "Please don't bring the greedy and predatory parts of Altplus  to a wider audienc",
       "author": "angy_24_s",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1420038038519681196",
+      "channel_id": "1170692781216378960",
+      "content": "Guys lets not kink shame",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420024513210617896",
+      "channel_id": "1170692781216378960",
+      "content": "plz dont treat her like this",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420106749909930086",
+      "channel_id": "1170692781216378960",
+      "content": "D tier in most popular tier list",
+      "author": "lotan_045",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420119519430705243",
+      "channel_id": "1170692781216378960",
+      "content": "I think I have 600 pulls by the time gmurphy is out",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420140666310103171",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420033773487132783",
+      "channel_id": "1170692781216378960",
+      "content": "So hum, guys, here's my video about pickman, it's mostly for people who want to ",
+      "author": "wolfierce",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420055801036410980",
+      "channel_id": "1170692781216378960",
+      "content": "I believe in the power of friendship",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1420057057364541463",
+      "channel_id": "1170692781216378960",
+      "content": "they have her all to themselves",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1420015666907447308",
@@ -122,99 +223,6 @@
       "author": "foxcatfurry",
       "reactions": 9,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420102182707138671",
-      "content": "<@633215996508766229>鑰令的設計方向是否遇到瓶頸?目前大約有九成「新鑰令」都被綁定在新角色的專屬效果上，這樣的設計明顯過於單調，鑰令的初衷應",
-      "author": "taoi002",
-      "reactions": 8,
-      "channel": ""
-    },
-    {
-      "id": "1419854621739847690",
-      "channel_id": "1131839817982947429",
-      "content": "任何表格里面出现了绿毛并且他不在最底下，那就极大概率不是针对新手的表格",
-      "author": "lurenjiao",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419949469264379979",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "alatin.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420109560361914438",
-      "content": "密契最慘的是邊做邊被背刺\n忘卻篇計劃給鯨魚做滿暴傷的36環，結果被星辰篇背刺\n後面改做入藥，發現指令C的數值又跟不上，於是星辰篇計劃給鯨魚做滿暴傷的四月，結果又",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1419955891943505950",
-      "channel_id": "1131839817982947429",
-      "content": "我沒搖籃曲  所以我還是新手<:proud:1400771683664658433>",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420008880892543008",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420018543944274021",
-      "channel_id": "1131839817982947429",
-      "content": "我科系大多数南铜eh, 讲到这样<:dead:1356082627509092372>",
-      "author": "alatin.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420047985936699556",
-      "channel_id": "1131839817982947429",
-      "content": "終局熔爐上限2229",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420050311971737733",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420053386216079461",
-      "channel_id": "1131839817982947429",
-      "content": "紫色才需要深思熟慮",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420074378862923807",
-      "channel_id": "1131839817982947429",
-      "content": "因為英區的人比較不會欺負他",
-      "author": "insomnia07763",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1420043830526480518",
-      "content": "Hello everyone,\n\nI have released a video about reviewing pickman and his kit: ht",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "Pickman Review"
     }
   ]
 }
