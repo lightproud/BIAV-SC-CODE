@@ -1,10 +1,12 @@
 {
   "date": "2025-10-26",
-  "messages": 302,
-  "unique_authors": 21,
-  "reactions_total": 447,
-  "attachments": 27,
+  "messages": 482,
+  "unique_authors": 34,
+  "reactions_total": 514,
+  "attachments": 41,
   "channel_activity": {
+    "🔸綜合討論": 176,
+    "🔸阵容构建": 4,
     "A deranged midgame goldfish' guide on Pollux": 1,
     "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 2,
     "新手 求隊伍配置以及後續該朝哪方面補強": 94,
@@ -28,30 +30,31 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "15": 5,
-    "17": 21,
-    "16": 100,
-    "4": 76,
-    "23": 3,
-    "10": 2,
-    "11": 3,
+    "1": 6,
+    "4": 77,
+    "5": 13,
+    "6": 7,
+    "7": 12,
+    "8": 44,
+    "9": 5,
+    "10": 8,
+    "11": 18,
+    "12": 57,
+    "13": 67,
+    "14": 6,
+    "15": 14,
+    "16": 104,
+    "17": 30,
+    "23": 6,
     "20": 1,
-    "1": 5,
-    "6": 3,
-    "9": 1,
-    "12": 13,
-    "13": 50,
     "0": 2,
     "2": 1,
-    "5": 3,
-    "7": 7,
-    "14": 2,
     "18": 3,
     "3": 1
   },
   "message_types": {
-    "0": 154,
-    "19": 43
+    "0": 138,
+    "19": 42
   },
   "top_reacted_messages": [
     {
@@ -90,11 +93,43 @@
       "channel": "波呂克斯你是一只小鳥貓🥰"
     },
     {
+      "id": "1432035673115988068",
+      "channel_id": "1131839817982947429",
+      "content": "只要有700界精，就算是2k血的小身板也可以一鍵500盾",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432062506804842727",
+      "channel_id": "1131839817982947429",
+      "content": "終於過了🥳",
+      "author": "axe_proficient",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1431904062625808425",
       "content": "未完🫶🏻畫手手和線條好快樂\n最近重看了哈姆林的每一幕劇情👀\n魔鬼教師真的好卡哇<:H_immerse:1426122347643146250>",
       "author": "Deleted User",
       "reactions": 8,
       "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1431968796909768785",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ququ12358",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431882495422627921",
+      "channel_id": "1131839874132090890",
+      "content": "<@806384001895890965> 第一次那么安全",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
     },
     {
       "id": "1431817928537407609",
@@ -132,6 +167,30 @@
       "channel": "💭「Processing」Quality of Life Features"
     },
     {
+      "id": "1431981135516405891",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯打完眼球的感覺",
+      "author": "dog794",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432043301627760640",
+      "channel_id": "1131839817982947429",
+      "content": "每日笑話來一下",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431884344527552555",
+      "channel_id": "1131839874132090890",
+      "content": "下一个是画家",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1431796323387969567",
       "content": "话说今年才3章主线，纯混好吧😡 😡 😡 😡 😡 😡 😡 😡 😡",
       "author": "sense25.",
@@ -139,60 +198,12 @@
       "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
-      "id": "1432037289910866140",
-      "content": "我在偷臭綜合討論某一個意義不明的瘋子",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "新手 求隊伍配置以及後續該朝哪方面補強"
-    },
-    {
-      "id": "1432040464038494350",
-      "content": "我不會玩福袋",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "新手 求隊伍配置以及後續該朝哪方面補強"
-    },
-    {
-      "id": "1431864817853005975",
-      "content": "再次感謝你的幫助XD\n目前會先用深海推推主線然後拿拿資源來去養血希！",
-      "author": "shibainu_30",
-      "reactions": 2,
-      "channel": "回鍋新手求助"
-    },
-    {
-      "id": "1431996695033548830",
-      "content": "Pollux needs to get nerfed",
-      "author": "albomboklat",
-      "reactions": 2,
-      "channel": "V2.3.4.2 在线维护公告"
-    },
-    {
-      "id": "1431826173549219991",
-      "content": "Madness mode for Faded Legacy soon? <:az_Android_pleading:744800344394956870>",
-      "author": "rozu",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1432061974014988298",
-      "content": "Adding on to \"2,\" the ability to copy or rearrange teams would also be nice (e.g",
-      "author": "swadkon",
-      "reactions": 2,
-      "channel": "💭「Processing」Quality of Life Features"
-    },
-    {
-      "id": "1432075725921452184",
-      "content": "Yeah, honestly the possibility to copy a team set up and paste it elsewhere woul",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "💭「Processing」Quality of Life Features"
-    },
-    {
-      "id": "1432009347160084490",
-      "content": "",
-      "author": "nikolazuli",
-      "reactions": 2,
-      "channel": "✅「Answered」\"Sacred Bleeding Heart\" shows the wrong image"
+      "id": "1431921100891361401",
+      "channel_id": "1131839817982947429",
+      "content": "~~我比你快~~",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

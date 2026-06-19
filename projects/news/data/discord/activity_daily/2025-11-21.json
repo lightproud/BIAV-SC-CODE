@@ -1,10 +1,15 @@
 {
   "date": "2025-11-21",
-  "messages": 14829,
+  "messages": 19165,
   "unique_authors": 260,
-  "reactions_total": 2140,
-  "attachments": 772,
+  "reactions_total": 2306,
+  "attachments": 975,
   "channel_activity": {
+    "🔸general-chat": 1041,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 3184,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 98,
     "🔸剧情交流": 2,
     "🔸晒卡分享": 14,
     "🔸相位对弈": 20,
@@ -89,34 +94,35 @@
     "綜上所述所以我畫了水仙視姦（？）": 3
   },
   "hourly_activity": {
-    "12": 780,
-    "5": 645,
-    "6": 661,
-    "10": 471,
-    "13": 811,
-    "16": 968,
-    "17": 566,
-    "14": 676,
-    "11": 756,
-    "0": 661,
-    "1": 896,
-    "20": 568,
-    "2": 495,
-    "3": 840,
-    "4": 713,
-    "7": 334,
-    "8": 353,
-    "9": 296,
-    "15": 820,
-    "18": 551,
-    "19": 491,
-    "21": 479,
-    "22": 450,
-    "23": 548
+    "0": 716,
+    "1": 1030,
+    "2": 913,
+    "3": 1321,
+    "4": 856,
+    "5": 843,
+    "7": 446,
+    "8": 510,
+    "9": 325,
+    "10": 743,
+    "11": 844,
+    "12": 861,
+    "13": 930,
+    "14": 1013,
+    "15": 1255,
+    "16": 1354,
+    "17": 805,
+    "18": 672,
+    "19": 624,
+    "20": 626,
+    "21": 500,
+    "22": 567,
+    "6": 768,
+    "23": 643
   },
   "message_types": {
-    "0": 3350,
-    "19": 1205
+    "19": 1108,
+    "0": 3227,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -164,6 +170,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1441427464013353061",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "craux.",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1441526875514998895",
       "channel_id": "1170692781216378960",
       "content": "Apologies. I got a tad too emotional while talking to a player. They may be aski",
@@ -178,6 +192,14 @@
       "author": "0.0._.0_0.",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1441287554078081195",
+      "channel_id": "1435483703114596503",
+      "content": "This is more like a record of my playthrough, there might be an error in some pa",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 9,
+      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
       "id": "1441416752738209970",
@@ -256,22 +278,6 @@
       "author": "riasterism_",
       "reactions": 7,
       "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1441357453819248674",
-      "channel_id": "1131839817982947429",
-      "content": "終於～",
-      "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1441416866215100556",
-      "channel_id": "1170692781216378960",
-      "content": "\"That ultra got Gtinct now huh? \nI better keep my but on the chair and send auri",
-      "author": "arandomflamev2",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

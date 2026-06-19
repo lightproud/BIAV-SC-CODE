@@ -1,10 +1,13 @@
 {
   "date": "2025-10-11",
-  "messages": 169,
-  "unique_authors": 19,
-  "reactions_total": 136,
-  "attachments": 41,
+  "messages": 11661,
+  "unique_authors": 244,
+  "reactions_total": 2888,
+  "attachments": 488,
   "channel_activity": {
+    "🔸綜合討論": 1451,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 10036,
     "Standard Tier List - Early and Endgame": 9,
     "刚玩一个月小萌新，麻烦大佬们看看怎么配队": 6,
     "Clear D-effect with my team": 1,
@@ -43,30 +46,47 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "16": 1,
-    "18": 4,
-    "19": 3,
-    "20": 3,
-    "9": 20,
-    "13": 4,
-    "14": 3,
-    "15": 4,
-    "4": 16,
-    "5": 3,
-    "10": 24,
-    "11": 15,
-    "3": 23,
-    "7": 6,
-    "8": 22,
-    "23": 1,
-    "12": 5,
-    "6": 12
+    "0": 164,
+    "1": 113,
+    "2": 204,
+    "3": 682,
+    "4": 520,
+    "6": 389,
+    "7": 822,
+    "8": 380,
+    "9": 405,
+    "10": 212,
+    "12": 782,
+    "13": 891,
+    "14": 667,
+    "15": 820,
+    "16": 1158,
+    "17": 428,
+    "18": 279,
+    "19": 304,
+    "20": 642,
+    "21": 371,
+    "22": 126,
+    "23": 546,
+    "5": 390,
+    "11": 366
   },
   "message_types": {
-    "0": 19,
-    "19": 7
+    "0": 6879,
+    "19": 4596,
+    "20": 12,
+    "18": 1,
+    "23": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1426406380734124175",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone https://discord.com/channels/1131791637933199470/1426405667823947817 P",
+      "author": "game.producer.light",
+      "reactions": 170,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1426405667823947817",
       "content": "在此前日志 https://discord.com/channels/1131791637933199470/1402967510415839262 中给大家分",
@@ -75,137 +95,148 @@
       "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
     },
     {
-      "id": "1426419958891675770",
-      "content": "限定SSR命轮和唤醒体溢出的奖励我们会提高！",
+      "id": "1426676124288680070",
+      "channel_id": "1170692781216378960",
+      "content": "can you stop reacting to me its making me self conscious",
+      "author": "bongosjam",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426407732491063376",
+      "channel_id": "1170692781216378960",
+      "content": "",
       "author": "game.producer.light",
-      "reactions": 7,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426469295910551655",
-      "content": "<@633215996508766229> \n感覺兌換角色直接改成不限購也行，啟靈又不像命輪存在溢出能無限分解換成靈核碎片的情況\n反正珠子產量對新手也就那麼回事",
-      "author": "heikwok",
-      "reactions": 7,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426476471740010600",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah ok",
+      "author": "thescuttleunderthebed",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426471207955599360",
-      "content": "补一嘴能不能考虑增加/不限制次数兑换极夜破晓和纯银初心<:takenotes:1357186646294138890> 自建号玩家要换整整一年半才能+12，40",
-      "author": "_neyko_",
-      "reactions": 7,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426476398989807707",
+      "channel_id": "1170692781216378960",
+      "content": "How the fuck do you react so quickly",
+      "author": "thescuttleunderthebed",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426416565880098986",
-      "content": "对全勤老玩家来说暂时没有，我们会关注这个问题。今后余梦材料会由融蚀之珠每周兑换。融蚀之珠也会改为每周试炼任务奖励，并且比原先更多，保证可以换到比原先更多的余梦材",
-      "author": "game.producer.light",
-      "reactions": 6,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426603564553343037",
+      "channel_id": "1170692781216378960",
+      "content": "That's how we weed out the good from the bad. The bad stay <:H_immerse:142612234",
+      "author": "_hyuuun",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426479556650467490",
-      "content": "抱歉各位，帖子下面的讨论渐渐有些激动，戈雅先把帖子关闭了🙏 \n感谢各位守密人对忘却前夜一直以来的支持，我们一直心怀感恩<:Sendflowers:1400771",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "我们规划一下每个卡池的小版本全勤0氪150抽好吗"
+      "id": "1426476520926351480",
+      "channel_id": "1170692781216378960",
+      "content": "Damn that last one was fast af",
+      "author": "_hyuuun",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426523620842147994",
-      "content": "No problem! I'll look for it next Monday<:camera:1356053040251146460>",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": ""
+      "id": "1426681227682906132",
+      "channel_id": "1170692781216378960",
+      "content": "||He kinda did in the end, by delivering Jenkins' silver core to Mythag|| <:wish",
+      "author": "sirtealot",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426438786832924723",
-      "content": "<@633215996508766229>这个确实可以考虑，因为马上也周年了，最近陆陆续续入坑的新人也不少，这样开放限2可以让新人更有选择性的放弃一部分角色，集",
-      "author": "lurenjiao",
-      "reactions": 4,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426469077697691729",
+      "channel_id": "1170692781216378960",
+      "content": "cockroaches are supposed to be good protein sources",
+      "author": "themomonger",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426552475221233744",
-      "content": "星辰篇怎么不算一种去往异星吧(",
-      "author": "yingmai_",
-      "reactions": 4,
-      "channel": ""
+      "id": "1426584498799378513",
+      "channel_id": "1170692781216378960",
+      "content": "I am a firm \"zero rerolls\" believer",
+      "author": ".ploner",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426523827449626745",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：永无乡假日 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，OS",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "忘却前夜OST：永无乡假日"
+      "id": "1426630451874889868",
+      "channel_id": "1170692781216378960",
+      "content": "are u the cuck?",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426409503192121354",
-      "content": "I also wonder if its possible to add trial fights for bosses, the more bosses ad",
-      "author": "pinguimally3689",
-      "reactions": 3,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426712514779021413",
+      "channel_id": "1170692781216378960",
+      "content": "Something like this",
+      "author": "inana_istar",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426429572412473354",
-      "content": "考虑过开放深潜命轮启灵兑换限2给新人追进度吗",
-      "author": "fantuan9711",
-      "reactions": 3,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426510122019983553",
+      "channel_id": "1131839817982947429",
+      "content": "于是用3圣礼防御偷鸡艾瑞卡了（）就说脱没脱吧x",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1426558383464648796",
-      "content": "我个人建议的话空窗期的这十四天除了做一个小活动还可以做一个额外的融灾，但是银芯奖励得下放而且拿满奖励的上界不能太高（最高难度可以和深潜72000差不多拿满奖励的",
-      "author": "2300011747",
-      "reactions": 3,
-      "channel": "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？"
+      "id": "1426405952915243059",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426527472102670468",
-      "content": "Hi~Thank you for your suggestion. We will adopt it and implement this feature in",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Rotating menu background"
+      "id": "1426584422588612849",
+      "channel_id": "1170692781216378960",
+      "content": "you should reroll",
+      "author": "bongosjam",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426642022571446463",
-      "content": "Play around with Kathi.\n\nI'm using Kathi / Tinct / Clem / (Ryker or Castor)",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "Standard Tier List - Early and Endgame"
+      "id": "1426591852890685542",
+      "channel_id": "1170692781216378960",
+      "content": "Wait is this for real O_o",
+      "author": "xearoth",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426417353129984112",
-      "content": "溢出限定。。溢出限定。。咳咳。",
-      "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1426666074363002880",
+      "channel_id": "1170692781216378960",
+      "content": "<@282543586275229706> I found you in a comic today",
+      "author": "wolfierce",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426515360512737341",
-      "content": "不會",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "✅「已解决」现实起点和代理凭证溢出消耗掉了会给东西吗？"
+      "id": "1426711456216518787",
+      "channel_id": "1170692781216378960",
+      "content": "now this is a real image",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426528362695753879",
-      "content": "嗨 这个是bug，已经安排修复了，会尽快放出~",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」手冊介面"
-    },
-    {
-      "id": "1426501621432455260",
-      "content": "嗨守密人，此处的用词没有问题，不是错别字<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」错别字问题"
-    },
-    {
-      "id": "1426464226423083110",
-      "content": "给我高难度我还得说谢谢",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "我们规划一下每个卡池的小版本全勤0氪150抽好吗"
+      "id": "1426531198477402122",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

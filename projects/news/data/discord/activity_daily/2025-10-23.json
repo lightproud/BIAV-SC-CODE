@@ -1,10 +1,12 @@
 {
   "date": "2025-10-23",
-  "messages": 198,
-  "unique_authors": 36,
-  "reactions_total": 188,
-  "attachments": 45,
+  "messages": 1280,
+  "unique_authors": 49,
+  "reactions_total": 395,
+  "attachments": 122,
   "channel_activity": {
+    "🔸綜合討論": 1079,
+    "🔸阵容构建": 3,
     "go rat go!!": 8,
     "Morimens chap 8 be like": 3,
     "Morimens Glossary (Wheels and Covenants equip guide)": 1,
@@ -41,33 +43,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "5": 4,
-    "7": 7,
-    "11": 3,
-    "19": 3,
-    "23": 6,
-    "15": 7,
-    "16": 6,
-    "17": 2,
-    "6": 36,
-    "10": 2,
-    "2": 11,
-    "8": 4,
-    "9": 11,
-    "4": 10,
-    "12": 26,
-    "14": 16,
-    "13": 23,
-    "0": 3,
-    "1": 2,
-    "20": 3,
-    "21": 1,
-    "18": 2,
-    "3": 10
+    "0": 9,
+    "1": 25,
+    "2": 35,
+    "3": 55,
+    "4": 151,
+    "5": 14,
+    "6": 57,
+    "7": 115,
+    "8": 12,
+    "9": 78,
+    "10": 114,
+    "11": 241,
+    "12": 94,
+    "13": 87,
+    "14": 44,
+    "15": 35,
+    "16": 26,
+    "17": 56,
+    "18": 11,
+    "19": 5,
+    "20": 6,
+    "22": 1,
+    "23": 8,
+    "21": 1
   },
   "message_types": {
-    "0": 92,
-    "19": 22
+    "0": 840,
+    "19": 242
   },
   "top_reacted_messages": [
     {
@@ -83,6 +86,14 @@
       "author": "_venush",
       "reactions": 23,
       "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430963926639579279",
+      "channel_id": "1131839817982947429",
+      "content": "真正的傷害型：\n- 邊傷害邊抽牌邊回算\n- 自己傷害成長之餘還能輔助隊友傷害\n- 不打傷害的時候還能疊盾坦一下\n\n虛假的傷害型：\n- 哥哥請幫我抽牌\n- 哥哥等",
+      "author": "ernest_heart",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1430937427534676100",
@@ -134,11 +145,43 @@
       "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
+      "id": "1430880875402231879",
+      "channel_id": "1131839817982947429",
+      "content": "米爾低調這麼久也差不多是時候出手了",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1430848810292351008",
       "content": "自从融灾加奖励以后，融灾产出固定能换2两个，然后溢出的数量太多了，每个月3个的情况下，资源会一直溢出。",
       "author": "lurenjiao",
       "reactions": 7,
       "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+    },
+    {
+      "id": "1430859096285904976",
+      "channel_id": "1131839817982947429",
+      "content": "我不是大佬啦，大概還有這麼些。",
+      "author": "fengtengjayden9754",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430875514096324720",
+      "channel_id": "1131839817982947429",
+      "content": "又来一张凯刻丝？",
+      "author": "neptinu",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430877005733433385",
+      "channel_id": "1131839817982947429",
+      "content": "今天刚满<:S_threat:1400771719404196010>",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1430800662744272897",
@@ -148,67 +191,36 @@
       "channel": "The Boss Compendium Project"
     },
     {
-      "id": "1431004004468523018",
-      "content": "~~性癖在立繪上一覽無遺~~\n||為什麼我要設計這套破衣服直接讓他裸●⁠不好嗎（陰暗爬行||",
-      "author": "ass191044",
+      "id": "1430758409443213393",
+      "channel_id": "1131839817982947429",
+      "content": "小號終於300了",
+      "author": "elv_juan.carlos",
       "reactions": 4,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430744326828327013",
-      "content": "I inquired and it will be sent out today\nSorry for keeping everyone waiting🙏",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+      "id": "1430873783710777355",
+      "channel_id": "1131839817982947429",
+      "content": "~~就算0啟好像也沒法取代 畢竟是媽~~",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431026305855655936",
-      "content": "If you are looking purely from a meta standpoint, pulling now for Castor or in a",
-      "author": "hitsu4",
-      "reactions": 3,
-      "channel": "Pulling and Team Advice"
+      "id": "1430876072341278760",
+      "channel_id": "1131839817982947429",
+      "content": "开这个(流口水",
+      "author": "kemomimi_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430854971917860997",
-      "content": "I got it, thank you kindly for your work!",
-      "author": "sanna7424",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1430979863371841597",
-      "content": "don't let it get to you",
-      "author": "mutsukabezaka",
-      "reactions": 2,
-      "channel": "V2.3.4.2 在线维护公告"
-    },
-    {
-      "id": "1430801856141070367",
-      "content": "technically a lot more usable",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430802915517268028",
-      "content": "Even if you can't contribute directly, can try to spread the info around to help",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430804050646925453",
-      "content": "will be considered",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430972606575804459",
-      "content": "The 2.4 tag doesn't exist?",
-      "author": "jollysquire",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+      "id": "1430876514081046558",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

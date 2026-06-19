@@ -1,10 +1,16 @@
 {
   "date": "2025-11-19",
-  "messages": 16175,
+  "messages": 22420,
   "unique_authors": 388,
-  "reactions_total": 2743,
-  "attachments": 891,
+  "reactions_total": 3306,
+  "attachments": 1144,
   "channel_activity": {
+    "🔸general-chat": 2320,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🐱light’s-nest": 8,
+    "🔸game-question": 3787,
+    "🔸忘却前夜┊morimens-tv": 3,
+    "🔸机器人命令┊bot-commands": 114,
     "🔸剧情交流": 5,
     "🔸晒卡分享": 28,
     "🔸相位对弈": 11,
@@ -75,39 +81,39 @@
     "💭「Processing」Phantasmal Dive Recods Rewards wrong text for realm": 2,
     "✅「Resolved」9-5 Story Dialogue Bug": 1,
     "CORROSION and TOTAL DAMAGE not reflecting properly.": 7,
-    "🐱light’s-nest": 4,
     "1234769700735418368": 5
   },
   "hourly_activity": {
-    "7": 790,
-    "11": 402,
-    "16": 419,
-    "1": 871,
-    "2": 588,
-    "5": 1107,
-    "6": 808,
-    "13": 735,
-    "14": 630,
-    "17": 545,
-    "23": 575,
-    "3": 538,
-    "15": 827,
-    "20": 751,
-    "8": 506,
-    "18": 562,
-    "0": 1056,
-    "9": 649,
-    "10": 506,
-    "12": 546,
-    "19": 556,
-    "21": 727,
-    "22": 569,
-    "4": 912
+    "0": 1074,
+    "1": 1120,
+    "2": 1095,
+    "3": 787,
+    "5": 1247,
+    "6": 1254,
+    "7": 1091,
+    "8": 548,
+    "9": 685,
+    "10": 758,
+    "11": 584,
+    "12": 790,
+    "13": 975,
+    "14": 1083,
+    "15": 1035,
+    "16": 849,
+    "17": 1070,
+    "18": 755,
+    "19": 705,
+    "20": 1186,
+    "21": 1020,
+    "22": 811,
+    "4": 1188,
+    "23": 710
   },
   "message_types": {
-    "0": 2136,
-    "19": 687,
-    "20": 1
+    "0": 4553,
+    "19": 1679,
+    "20": 12,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -120,16 +126,18 @@
     },
     {
       "id": "1440705189475647518",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 92,
+      "reactions": 101,
       "channel": "🐱light’s-nest"
     },
     {
       "id": "1440733058411008062",
+      "channel_id": "1426837316533747823",
       "content": "While our work may seem like a Lovecraftian tribute, what we’ve always sought to",
       "author": "game.producer.light",
-      "reactions": 63,
+      "reactions": 65,
       "channel": "🐱light’s-nest"
     },
     {
@@ -164,6 +172,7 @@
     },
     {
       "id": "1440732097131053158",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
       "reactions": 17,
@@ -192,6 +201,14 @@
       "channel": ""
     },
     {
+      "id": "1440735248391475240",
+      "channel_id": "1426837316533747823",
+      "content": "我们虽然看起来所做的是一个Lovecraft致敬的作品，实际上我们要表达的始终是与宇宙虚无主义完全对立的课题———我们的游戏体验、我们的故事美术与音乐、我们的研",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🐱light’s-nest"
+    },
+    {
       "id": "1440588207057277049",
       "channel_id": "1174983699935277147",
       "content": "90了。",
@@ -207,18 +224,19 @@
       "channel": "Phantsamal dive"
     },
     {
-      "id": "1440735248391475240",
-      "content": "我们虽然看起来所做的是一个Lovecraft致敬的作品，实际上我们要表达的始终是与宇宙虚无主义完全对立的课题———我们的游戏体验、我们的故事美术与音乐、我们的研",
-      "author": "game.producer.light",
-      "reactions": 13,
-      "channel": "🐱light’s-nest"
-    },
-    {
       "id": "1440689818748063785",
       "content": "● Fixed the issue of abnormal display of the new tag for the \"Premium Hall\" entr",
       "author": "morimensstaff02",
       "reactions": 12,
       "channel": "V2.4.0.3 在线维护公告"
+    },
+    {
+      "id": "1440819380173672580",
+      "channel_id": "1400750050208125010",
+      "content": "middux",
+      "author": "kezrin",
+      "reactions": 11,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1440581303249534997",
@@ -251,14 +269,6 @@
       "author": "monchi3524",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440574722902327358",
-      "channel_id": "1131839874132090890",
-      "content": "居然连我也能一遍过\n这就是新时代的角色🛐",
-      "author": "ling_an_",
-      "reactions": 9,
-      "channel": "🔸阵容构建"
     }
   ]
 }

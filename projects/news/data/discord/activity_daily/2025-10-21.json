@@ -1,10 +1,12 @@
 {
   "date": "2025-10-21",
-  "messages": 246,
+  "messages": 1108,
   "unique_authors": 75,
-  "reactions_total": 404,
-  "attachments": 92,
+  "reactions_total": 636,
+  "attachments": 150,
   "channel_activity": {
+    "🔸綜合討論": 838,
+    "🔸阵容构建": 24,
     "🦅": 1,
     "Flares' Awakener Review : Pollux - C Tier": 3,
     "Português Tradução - Coleta de Feedback": 2,
@@ -50,30 +52,33 @@
     "🐱light’s-nest": 1
   },
   "hourly_activity": {
+    "0": 19,
+    "1": 16,
+    "2": 42,
+    "3": 44,
+    "4": 44,
+    "5": 10,
+    "6": 41,
+    "7": 15,
+    "8": 107,
+    "9": 145,
+    "10": 99,
+    "11": 72,
+    "12": 46,
+    "13": 124,
+    "14": 101,
+    "15": 29,
+    "16": 60,
+    "17": 42,
+    "22": 8,
+    "23": 16,
     "18": 8,
-    "2": 7,
-    "15": 7,
-    "11": 27,
-    "12": 15,
-    "13": 15,
-    "14": 6,
-    "16": 31,
     "19": 16,
-    "22": 3,
-    "23": 10,
-    "8": 8,
-    "4": 2,
-    "7": 4,
-    "17": 27,
-    "9": 8,
-    "1": 5,
-    "3": 35,
-    "0": 8,
     "21": 4
   },
   "message_types": {
-    "0": 121,
-    "19": 23
+    "0": 613,
+    "19": 249
   },
   "top_reacted_messages": [
     {
@@ -119,102 +124,116 @@
       "channel": "🦅"
     },
     {
-      "id": "1430266735059013783",
-      "content": "These three would be nice as candy",
-      "author": "rqwe1",
-      "reactions": 3,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1430162696493469737",
+      "channel_id": "1131839817982947429",
+      "content": "全球異變，融蝕降臨\n抵抗融災的過程中，部分人類在高壓環境下變異，覺醒天賦成為守密人\n為了追求更高火力於戰鬥中取得絕對優勢，傷害型角色成為眾人夢寐以求的連結對象\n",
+      "author": "heikwok",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430126007012167752",
-      "content": "e2/3",
-      "author": "flares117",
-      "reactions": 3,
-      "channel": "Pull advice"
+      "id": "1430192603240071331",
+      "channel_id": "1131839817982947429",
+      "content": "第一位幸運兒出現了",
+      "author": "dog794",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430313748580532337",
-      "content": "Example images following:",
-      "author": "siatarr",
-      "reactions": 3,
-      "channel": "💭「Processing」Caecus end of turn healing lowers bleed stacks but not bleed damage"
+      "id": "1430242605840728115",
+      "channel_id": "1131839817982947429",
+      "content": "我只有小骑士90<:please:1356053110375714817>",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430228861487939645",
-      "content": "深海完成！！！",
-      "author": "xcecilex.",
-      "reactions": 3,
-      "channel": "开个摸鱼楼✨"
+      "id": "1430004706901626971",
+      "channel_id": "1131839817982947429",
+      "content": "冒泡",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430326003418267780",
-      "content": "pollux was consumed by an eldritch abomination...",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
-    },
-    {
-      "id": "1430037936778510347",
-      "content": "会看的hh，只是早晚问题🫶",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
-    },
-    {
-      "id": "1430027703217684633",
-      "content": "可以在这个串@我，也可以给我发私信~我每天都会查看私信🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」關於二創徵集的參與獎"
-    },
-    {
-      "id": "1430005523889000459",
-      "content": "如题，之前都可以的，这个版本为什么删掉了流明和无垢后面的加号，建议加回来",
-      "author": "jidu1418",
-      "reactions": 2,
-      "channel": "✅「已回答」抽卡界面不能直接将银芯兑换为流明或无垢"
-    },
-    {
-      "id": "1430220955485208627",
-      "content": "又开始画画了！~",
-      "author": "xcecilex.",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
-    },
-    {
-      "id": "1430225234786521219",
+      "id": "1430036026218516611",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "xcecilex.",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430163227731296367",
+      "id": "1430046320218865776",
+      "channel_id": "1131839817982947429",
+      "content": "我菜到活動關卡都快打不過",
+      "author": "sakura8901",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430060435243008032",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "respawn_4_ever",
-      "reactions": 1,
-      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430272107652317234",
-      "content": "They pasted a blank 4th template that you can use. I used Krita to photoshop emo",
-      "author": "rqwe1",
-      "reactions": 1,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1430041671239864392",
+      "channel_id": "1131839817982947429",
+      "content": "冒泡",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430125019576401976",
-      "content": "<@1301813973703852035> 壞女人黑絲",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "📸壁纸分享: 波吕克斯┊Wallpaper Sharing: Pollux"
+      "id": "1430081316497522699",
+      "channel_id": "1131839817982947429",
+      "content": "扒拉助战看到一只殷红巨刃熔朵<:processing:1357185814567718963>",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430238622786912276",
-      "content": "你現在有兩個選項\n1.久遠的呼喚選羊媽抽他的命輪\n2直接抽卡斯托爾的命輪",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "回坑玩家求配隊、練角建議"
+      "id": "1430082684557856882",
+      "channel_id": "1131839817982947429",
+      "content": "我看成血希 看了兩遍才看出問題",
+      "author": "quackdayo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430120768401834106",
+      "channel_id": "1131839817982947429",
+      "content": "我是大佬 瑪爾是大神\n我跟他打我手都再抖",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430144359181058060",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430088021453049876",
+      "channel_id": "1131839817982947429",
+      "content": "我要凑+12宁<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430109510357483581",
+      "channel_id": "1131839817982947429",
+      "content": "朋友退坑后终于可以把名字换回来的我<:Cheerup:1400771555939844149>",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

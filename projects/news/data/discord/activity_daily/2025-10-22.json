@@ -1,10 +1,11 @@
 {
   "date": "2025-10-22",
-  "messages": 228,
+  "messages": 2211,
   "unique_authors": 69,
-  "reactions_total": 653,
-  "attachments": 104,
+  "reactions_total": 869,
+  "attachments": 193,
   "channel_activity": {
+    "🔸綜合討論": 1983,
     "🤷": 13,
     "Flares' Awakener Review : Pollux - C Tier": 3,
     "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
@@ -44,31 +45,33 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "2": 6,
-    "5": 4,
-    "6": 4,
-    "8": 52,
-    "23": 2,
-    "10": 34,
-    "11": 9,
-    "0": 5,
-    "1": 5,
-    "3": 5,
-    "4": 4,
-    "7": 9,
-    "9": 35,
-    "12": 3,
-    "14": 10,
-    "15": 6,
-    "16": 18,
-    "17": 5,
-    "19": 1,
-    "21": 1,
-    "13": 10
+    "0": 41,
+    "1": 49,
+    "2": 69,
+    "3": 38,
+    "4": 48,
+    "5": 50,
+    "6": 116,
+    "7": 81,
+    "8": 133,
+    "9": 129,
+    "10": 219,
+    "11": 159,
+    "12": 53,
+    "13": 157,
+    "14": 121,
+    "15": 59,
+    "16": 571,
+    "17": 58,
+    "18": 36,
+    "19": 2,
+    "20": 10,
+    "23": 11,
+    "21": 1
   },
   "message_types": {
-    "0": 108,
-    "19": 18
+    "0": 1556,
+    "19": 427
   },
   "top_reacted_messages": [
     {
@@ -128,6 +131,70 @@
       "channel": ""
     },
     {
+      "id": "1430590263125872793",
+      "channel_id": "1131839817982947429",
+      "content": "吵架不叫我有意思嗎",
+      "author": "xingkongzhiyao_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430555474117525536",
+      "channel_id": "1131839817982947429",
+      "content": "這逼好像扛不住我的神父欸",
+      "author": "dog_0630",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430599702403092591",
+      "channel_id": "1131839817982947429",
+      "content": "~~还不如没男同硬超呢~~",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430613906232967220",
+      "channel_id": "1131839817982947429",
+      "content": "我說菜逼圖魯是忘卻前夜的底層邏輯有沒有懂得",
+      "author": "xingkongzhiyao_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430368220434399403",
+      "channel_id": "1131839817982947429",
+      "content": "今日5抽（溢出了",
+      "author": "luckyinitial",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430374996487962745",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "elv_juan.carlos",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430500019173064794",
+      "channel_id": "1131839817982947429",
+      "content": "不如我打麻將立直",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1430593090649067550",
+      "channel_id": "1131839817982947429",
+      "content": "草",
+      "author": "sakura8901",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1430515590451302471",
       "content": "我想要这个",
       "author": "sweet_25367",
@@ -135,81 +202,28 @@
       "channel": ""
     },
     {
-      "id": "1430479691885576233",
-      "content": "",
-      "author": "dispotato",
+      "id": "1430500929203077281",
+      "channel_id": "1131839817982947429",
+      "content": "未尝不是一种otk（？",
+      "author": "jidu1418",
       "reactions": 4,
-      "channel": "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430470474227253318",
-      "content": "",
-      "author": "morimensstaff02",
+      "id": "1430590488179769418",
+      "channel_id": "1131839817982947429",
+      "content": "吵架帶上我啊我肯定把你們搞到大家一起被禁言",
+      "author": "xingkongzhiyao_",
       "reactions": 4,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1430504174373703691",
-      "content": "https://tenor.com/view/mega-starmie-starmie-pokemon-run-running-gif-810837627962",
-      "author": "tsubaki9884",
+      "id": "1430592904757379082",
+      "channel_id": "1131839817982947429",
+      "content": "我要是信瑪爾的話我現在就不會有發+12福袋",
+      "author": "sayo.0320",
       "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1430467420056977428",
-      "content": "",
-      "author": "duxadidus",
-      "reactions": 3,
-      "channel": "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers"
-    },
-    {
-      "id": "1430471574980530196",
-      "content": "",
-      "author": "duxadidus",
-      "reactions": 3,
-      "channel": "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers"
-    },
-    {
-      "id": "1430494758886838333",
-      "content": "名字也想好了就elder~~老東西~~\n個性是~~嬌氣遜砲敏感爆言仔~~",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1430469214447341648",
-      "content": "pollux would be the type to be grinding ascensions on slay the spire within thei",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers"
-    },
-    {
-      "id": "1430577291733237951",
-      "content": "都是鸽们<:Cheerup:1400771555939844149>",
-      "author": "juxibao.",
-      "reactions": 2,
-      "channel": "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers"
-    },
-    {
-      "id": "1430350466876706876",
-      "content": "he deserves so much better, especially if he was meant to be anni unit",
-      "author": "phantasidreamin",
-      "reactions": 2,
-      "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
-    },
-    {
-      "id": "1430463760903966731",
-      "content": "I can attach a video if needed",
-      "author": "prizrak9083",
-      "reactions": 2,
-      "channel": "✅「Answered」I launch the game through the Steam client, but I can't pay through Steam."
-    },
-    {
-      "id": "1430553177857458256",
-      "content": "你的确是拉我入坑的罪恶之源<:point:1356053112292511815>",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "虽然很少但总之依旧是一点守莱&守N"
+      "channel": "🔸綜合討論"
     }
   ]
 }

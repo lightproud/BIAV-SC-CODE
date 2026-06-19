@@ -1,10 +1,12 @@
 {
   "date": "2025-10-14",
-  "messages": 114,
-  "unique_authors": 22,
-  "reactions_total": 134,
-  "attachments": 28,
+  "messages": 10463,
+  "unique_authors": 213,
+  "reactions_total": 2138,
+  "attachments": 424,
   "channel_activity": {
+    "🔸綜合討論": 344,
+    "🔸morimens-game-chat": 10005,
     "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux": 4,
     "V2.3.4广播剧《净化》┊Radio Drama - Purification": 42,
     "Do I need more than one copy of a Wheel?": 2,
@@ -26,35 +28,69 @@
     "1234769700735418368": 3
   },
   "hourly_activity": {
-    "0": 1,
-    "8": 22,
-    "9": 3,
-    "6": 11,
-    "7": 32,
-    "17": 2,
-    "14": 2,
-    "5": 8,
-    "1": 3,
-    "2": 2,
-    "16": 1,
-    "13": 1,
-    "15": 9,
-    "3": 12,
-    "12": 1,
-    "10": 4
+    "0": 344,
+    "1": 102,
+    "2": 147,
+    "3": 291,
+    "4": 232,
+    "5": 398,
+    "6": 453,
+    "7": 422,
+    "8": 376,
+    "10": 738,
+    "11": 679,
+    "12": 604,
+    "13": 563,
+    "14": 595,
+    "15": 625,
+    "16": 510,
+    "17": 424,
+    "18": 545,
+    "19": 443,
+    "21": 372,
+    "23": 155,
+    "9": 650,
+    "20": 631,
+    "22": 164
   },
   "message_types": {
-    "0": 47,
-    "19": 12,
-    "6": 1
+    "19": 4086,
+    "0": 6252,
+    "46": 3,
+    "23": 5,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1427723729882054676",
+      "channel_id": "1170692781216378960",
+      "content": "Ok. We had no ultra male characters throughout the entire 1.X version, and this ",
+      "author": "game.producer.light",
+      "reactions": 45,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1427550350600175656",
       "content": "「脑海中哥哥的面容，为什么有些模糊了……」\n\n「这是……什么，卡斯托尔……是谁？\n好难过，为什么突然这么想流泪呢……」\n\n✦ 波吕克斯 CV：逢沢光明\n✦ 卡斯",
       "author": "morimensstaff01",
       "reactions": 40,
       "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
+    },
+    {
+      "id": "1427636082962337843",
+      "channel_id": "1170692781216378960",
+      "content": "no",
+      "author": "arisuu0604",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427722542264615084",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1427557358892220446",
@@ -64,11 +100,91 @@
       "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
     },
     {
+      "id": "1427478304709021777",
+      "channel_id": "1131839817982947429",
+      "content": "打完主線3-11石頭存了好多🥳",
+      "author": "axe_proficient",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1427691103708123227",
+      "channel_id": "1131839817982947429",
+      "content": "我要來炫耀",
+      "author": "undecember_news",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1427639565878821024",
+      "channel_id": "1170692781216378960",
+      "content": "u are doomed then",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427653759420600460",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427723550239752222",
+      "channel_id": "1170692781216378960",
+      "content": "Holy shi I tried Kaleido banner and got my first Murphy and Thais wheel <:uogh:1",
+      "author": ".smose.",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1427568689888104539",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1427767464095256603",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kezrin",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427667038800842762",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_hyuuun",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427668840518778982",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sirtealot",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427722717599105167",
+      "channel_id": "1170692781216378960",
+      "content": "<@464213352059502612> Oiled clem cosplay confirmed",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427756339593089024",
+      "channel_id": "1170692781216378960",
+      "content": "i'm not enjoying this game",
+      "author": "syruponstrawberrycake",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1427560140701302836",
@@ -78,116 +194,28 @@
       "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
     },
     {
-      "id": "1427589149103358023",
-      "content": "F my wallet i guess. Unless they give us some generous rewards for anni",
-      "author": "angy_24_s",
-      "reactions": 7,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427560034841137252",
+      "id": "1427747553293631550",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "morimens_15",
-      "reactions": 7,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
+      "author": "sayo.0320",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1427560183348858931",
-      "content": "Discord isn't letting me post the first part in text for some reason",
-      "author": "morimens_15",
-      "reactions": 7,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427574261626699856",
-      "content": "嗨~于丽埃特的CV信息已添加到正文里🌹 \n✦于丽埃特 CV：福尾美佳\n\nHi~Juliette's VA information has been added ",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427564642372288554",
+      "id": "1427670612565954713",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": ""
+      "author": "sleepypillow",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1427562206249357365",
-      "content": "Can we know Juliette VA? <:please:1356053110375714817>",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427503880261865543",
-      "content": "rt",
-      "author": "navirecorbeau",
-      "reactions": 3,
-      "channel": "✅「已回答」有沒有考慮每月重置一下三個商店裏的抽數"
-    },
-    {
-      "id": "1427577321593901086",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第18期（第45期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\nP.S.图片较长，在线预览无",
-      "author": "menoctus",
-      "reactions": 3,
-      "channel": "✦关卡地图「融灾禁区」总览45期·星辰篇✦"
-    },
-    {
-      "id": "1427567331709554719",
-      "content": "于丽推听广播剧be like：\n教主有声音了好诶好诶好诶—— ~~虽然想象中教主的声线会更冷静傲慢一点x~~\n~~总之是不是进池子可能性又增加了~~",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427568434215915591",
-      "content": "yes Juliette banner <:pray:1356053116260454534> \nmust +12",
-      "author": "_venush",
-      "reactions": 2,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427548872602812466",
-      "content": "Hi, this issue will be fixed soon and is expected to be released in the next ver",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Chapter 6 boss bug"
-    },
-    {
-      "id": "1427555774371987490",
-      "content": "<@984787164875329586> get your butt in here <:point:1356053112292511815>",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427556000445108314",
-      "content": "wait, Momo?",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427557409609744477",
-      "content": "(i really like it though)",
-      "author": "reya.li",
-      "reactions": 1,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427584349158641728",
-      "content": "<:shy:1356053151349997829> julliete why are you hijacking pollux asmr",
-      "author": "annaxxe_",
-      "reactions": 1,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
-    },
-    {
-      "id": "1427592772277370981",
-      "content": "she is a sadistic fool. poor castor and pollux getting their ahh whooped all the",
-      "author": "morified53",
-      "reactions": 1,
-      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
+      "id": "1427722306007863417",
+      "channel_id": "1170692781216378960",
+      "content": "<@167253065387343872> Basic starter rules: Aequor shit.Here you pull e2 goliath ",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

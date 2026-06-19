@@ -1,10 +1,13 @@
 {
   "date": "2025-10-12",
-  "messages": 175,
-  "unique_authors": 17,
-  "reactions_total": 2013,
-  "attachments": 13,
+  "messages": 12875,
+  "unique_authors": 200,
+  "reactions_total": 5599,
+  "attachments": 536,
   "channel_activity": {
+    "🔸綜合討論": 1554,
+    "🔸阵容构建": 37,
+    "🔸morimens-game-chat": 11109,
     "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 2,
     "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!": 1,
     "剛登入第四天 有些新手問題想問": 3,
@@ -25,33 +28,36 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "9": 4,
-    "15": 12,
-    "21": 1,
-    "4": 4,
-    "5": 1,
-    "10": 6,
-    "1": 17,
-    "2": 15,
-    "3": 13,
-    "20": 8,
-    "6": 8,
-    "7": 10,
-    "18": 3,
-    "19": 9,
-    "16": 12,
-    "13": 5,
-    "14": 1,
-    "11": 2,
-    "12": 2,
-    "17": 39,
-    "23": 1,
-    "8": 2
+    "1": 391,
+    "2": 457,
+    "3": 343,
+    "4": 665,
+    "5": 337,
+    "6": 566,
+    "7": 782,
+    "8": 612,
+    "9": 765,
+    "10": 609,
+    "11": 703,
+    "12": 592,
+    "13": 684,
+    "14": 374,
+    "15": 392,
+    "16": 798,
+    "17": 556,
+    "18": 678,
+    "20": 398,
+    "21": 300,
+    "22": 375,
+    "23": 501,
+    "0": 437,
+    "19": 560
   },
   "message_types": {
-    "19": 34,
-    "0": 38,
-    "4": 1
+    "0": 7619,
+    "19": 5074,
+    "20": 4,
+    "23": 3
   },
   "top_reacted_messages": [
     {
@@ -76,6 +82,22 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1426910335528468670",
+      "channel_id": "1170692781216378960",
+      "content": "Delete this",
+      "author": ".craystal",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426903292868431883",
+      "channel_id": "1170692781216378960",
+      "content": "Quick before ezra banner ends",
+      "author": "tnimreppep",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1426784828740730920",
       "content": "約稿分享，因為之後會拿來做同人本的封面所以不會投征集，但是太美麗了忍不住分享一下，請勿使用",
       "author": "knifep_",
@@ -83,102 +105,116 @@
       "channel": "荼靡"
     },
     {
-      "id": "1426884690127884288",
-      "content": "装死这一块",
-      "author": "fantuan9711",
-      "reactions": 4,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+      "id": "1427072507839516733",
+      "channel_id": "1170692781216378960",
+      "content": "Why are you slandering us so much?! We’re all kind and friendly and well behaved",
+      "author": "frosthief",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426962087770591273",
-      "content": "谢谢你！会仔细拜读！",
+      "id": "1426751772118093884",
+      "channel_id": "1170692781216378960",
+      "content": "Honestly\nH o n e s t l y \n`H o n e s t l y`",
+      "author": "inana_istar",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426806767039549500",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426908416193859590",
+      "channel_id": "1170692781216378960",
+      "content": "I am a top 100 traphase player, AMA!",
+      "author": "drunk.biscuit",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426803524796420227",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426881153456935024",
+      "channel_id": "1170692781216378960",
+      "content": "You deserve all the hard pity",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426903416449536094",
+      "channel_id": "1170692781216378960",
+      "content": "Ezra is s tier",
+      "author": "tnimreppep",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1426958002119774228",
+      "channel_id": "1170692781216378960",
+      "content": "Hi？",
       "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426978508307038330",
-      "content": "他本來就是對單的啊",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+      "id": "1426840500778041385",
+      "channel_id": "1170692781216378960",
+      "content": "<:M_satisfy:1400771690321154110>",
+      "author": "arisuu0604",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426978688481624134",
-      "content": "太慢界域",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+      "id": "1426959832451387452",
+      "channel_id": "1170692781216378960",
+      "content": "It wouldn’t be appropriate for me to share any detailed information about the an",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426980035625226310",
-      "content": "現在我們是：\n太慢的、臨時的、互卡的、全都要界域",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+      "id": "1426731063819898952",
+      "channel_id": "1170692781216378960",
+      "content": "That's *Colette*",
+      "author": "dispotato",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426923327858937928",
-      "content": "我们需要更多的大雷和瑟瑟",
-      "author": "human10062",
-      "reactions": 3,
-      "channel": "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？"
-    },
-    {
-      "id": "1427011821566558330",
-      "content": "I'm having a hard time getting all of the traphase rewards and considering we ha",
+      "id": "1427025122807775292",
+      "channel_id": "1170692781216378960",
+      "content": "At least my wife Clementine is real",
       "author": "spooky_penguin_",
-      "reactions": 3,
-      "channel": "Traphase Rewards"
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426977633887060073",
-      "content": "不如鯊魚",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+      "id": "1426730987148283966",
+      "channel_id": "1170692781216378960",
+      "content": "She’s a thief! And a plagiarist! She murdered her childhood best friend and publ",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1426749214351953952",
-      "content": "用汀的爆发减费",
-      "author": "txt101225.",
-      "reactions": 1,
-      "channel": "刚玩一个月小萌新，麻烦大佬们看看怎么配队"
-    },
-    {
-      "id": "1426958298082447472",
-      "content": "直说更新后能不能5分钟把日常做完?",
-      "author": "sense25.",
-      "reactions": 1,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
-    },
-    {
-      "id": "1426922711115894884",
-      "content": "產不出新角/新主線的機制跟劇情\n可以簡單想個五星誓約皮膚附死抗爆衣特效與祕蜜劇情！",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？"
-    },
-    {
-      "id": "1426971911753171096",
-      "content": "校貓表示我會聽取然後放在神圖上",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
-    },
-    {
-      "id": "1427012187473576026",
-      "content": "pretty sure we still have 1 month before the disappearance of the record one tim",
-      "author": "wolfierce",
-      "reactions": 1,
-      "channel": "Traphase Rewards"
-    },
-    {
-      "id": "1427012441606459422",
-      "content": "from my understanding, the next version next week will be 2.3.4, which will star",
-      "author": "wolfierce",
-      "reactions": 1,
-      "channel": "Traphase Rewards"
+      "id": "1426848920377757797",
+      "channel_id": "1170692781216378960",
+      "content": "Imagine dragon?",
+      "author": "faltracos",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

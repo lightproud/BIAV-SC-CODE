@@ -1,10 +1,11 @@
 {
   "date": "2025-10-17",
-  "messages": 300,
+  "messages": 1936,
   "unique_authors": 62,
-  "reactions_total": 377,
-  "attachments": 51,
+  "reactions_total": 662,
+  "attachments": 108,
   "channel_activity": {
+    "🔸綜合討論": 1636,
     "Тулу фанарт": 1,
     "Мудрость мышек - Jenkin": 2,
     "Video Guide to Rates, Banner Types & Characters for Beginners": 1,
@@ -33,31 +34,34 @@
     "相位對弈環境攻略": 8
   },
   "hourly_activity": {
-    "17": 4,
-    "18": 7,
-    "10": 15,
-    "6": 2,
-    "11": 11,
-    "12": 14,
-    "13": 33,
-    "9": 10,
-    "15": 39,
-    "14": 116,
-    "8": 25,
-    "19": 2,
-    "20": 4,
-    "21": 5,
-    "23": 3,
-    "3": 1,
-    "4": 5,
-    "7": 2,
-    "1": 1,
-    "5": 1
+    "0": 23,
+    "1": 13,
+    "2": 31,
+    "3": 71,
+    "4": 33,
+    "5": 41,
+    "6": 16,
+    "7": 23,
+    "8": 42,
+    "9": 12,
+    "10": 23,
+    "11": 21,
+    "12": 89,
+    "13": 218,
+    "14": 315,
+    "15": 350,
+    "16": 371,
+    "17": 165,
+    "18": 50,
+    "19": 5,
+    "20": 6,
+    "21": 7,
+    "22": 2,
+    "23": 9
   },
   "message_types": {
-    "19": 41,
-    "0": 159,
-    "4": 1
+    "19": 317,
+    "0": 1319
   },
   "top_reacted_messages": [
     {
@@ -103,6 +107,14 @@
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
     },
     {
+      "id": "1428781052083703959",
+      "channel_id": "1131839817982947429",
+      "content": "當忘卻前夜宣布關服，他們紛紛刪除手機裡的忘卻前夜的時候，我卻拼命往裡面充錢，甚至向銀行借錢貸款，他們都罵我是神經病，是貓孝子，但我不在意，因為只有我知道，在忘卻",
+      "author": "undecember_news",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1428694323976998982",
       "content": "@everyone 感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✍️ 下周戈雅会准备一个谷歌文档，文档里将放上",
       "author": "morimensstaff01",
@@ -129,6 +141,14 @@
       "author": "arandomflamev2",
       "reactions": 12,
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428649881521885185",
+      "channel_id": "1131839817982947429",
+      "content": "我也是要加入萌新了（x",
+      "author": "flarinsidia",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1428686248012152975",
@@ -184,20 +204,6 @@
       "content": "the old one is more better than the new one<:dead:1356082627509092372>",
       "author": "ahong0727",
       "reactions": 7,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1428720227255849031",
-      "content": "鼠鼠你可以吃糖",
-      "author": "panth3936",
-      "reactions": 7,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1428763543775482077",
-      "content": "Sorry but ...\nI kinda like the left one <:drool:1356053063139463248>",
-      "author": "legendaryredz",
-      "reactions": 6,
       "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
     }
   ]

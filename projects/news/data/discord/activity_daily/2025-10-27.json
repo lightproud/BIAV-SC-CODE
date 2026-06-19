@@ -1,10 +1,11 @@
 {
   "date": "2025-10-27",
-  "messages": 53,
-  "unique_authors": 15,
-  "reactions_total": 256,
-  "attachments": 16,
+  "messages": 293,
+  "unique_authors": 44,
+  "reactions_total": 386,
+  "attachments": 50,
   "channel_activity": {
+    "🔸綜合討論": 240,
     "Clementine!!!": 4,
     "Silver Core Studies": 1,
     "Pollux WIP": 2,
@@ -28,25 +29,33 @@
     "1421408684776357929": 2
   },
   "hourly_activity": {
-    "12": 4,
-    "15": 1,
+    "0": 5,
+    "1": 6,
+    "2": 11,
+    "3": 1,
+    "4": 17,
+    "5": 7,
+    "6": 21,
+    "7": 12,
+    "8": 4,
+    "9": 6,
+    "10": 37,
+    "11": 15,
+    "12": 33,
+    "13": 9,
+    "14": 9,
+    "15": 5,
+    "16": 53,
+    "17": 1,
+    "19": 1,
+    "23": 34,
     "21": 4,
     "22": 1,
-    "0": 3,
-    "6": 1,
-    "2": 7,
-    "4": 7,
-    "9": 1,
-    "16": 7,
-    "20": 1,
-    "7": 7,
-    "11": 2,
-    "13": 7
+    "20": 1
   },
   "message_types": {
-    "0": 20,
-    "4": 1,
-    "19": 6
+    "0": 195,
+    "19": 45
   },
   "top_reacted_messages": [
     {
@@ -85,6 +94,70 @@
       "channel": "Silver Core Studies"
     },
     {
+      "id": "1432263746625081416",
+      "channel_id": "1131839817982947429",
+      "content": "比上期簡單🫴",
+      "author": "water_heart",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432379554852241438",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1200502174799646791/1200502397991129128/S",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432224669703999558",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432240410272469002",
+      "channel_id": "1131839817982947429",
+      "content": "拿破爛0啟隊暴打第八章🌿",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432262416925982761",
+      "channel_id": "1131839817982947429",
+      "content": "融蝕初期症狀：偏執",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432325323269214218",
+      "channel_id": "1131839817982947429",
+      "content": "收工<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432325694276239370",
+      "channel_id": "1131839817982947429",
+      "content": "礼券开出来两个重复的刚好够换希莱头像<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432331534861471836",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "_buqi",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1432188305662804130",
       "content": "",
       "author": "water_heart",
@@ -92,67 +165,52 @@
       "channel": ""
     },
     {
-      "id": "1432256518748639242",
-      "content": "Yes, this is to tell everyone how to obtain the links onFB、 YTB and X. Generally",
-      "author": "morimensstaff01",
+      "id": "1432407384684363931",
+      "channel_id": "1131839817982947429",
+      "content": "~~死抗苟不過你還有菲因特\n菲因特苟不過你還有希萊\n希萊苟不過你還有重新挑戰\n重新挑戰苟不過因為你不是狗~~",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432410764911710288",
+      "channel_id": "1131839817982947429",
+      "content": "要成為合格的守咪人首先要成為靈芝藥頭（不是",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432411557215866910",
+      "channel_id": "1131839817982947429",
+      "content": "~~每次聽到靈芝都讓我想到桂格活靈芝~~",
+      "author": "tsubaki9884",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432248862835212400",
+      "channel_id": "1131839817982947429",
+      "content": "只是仗著繁育之理跟死抗亂玩的歡愉分子🌿\n菲茵特我之前有重溯過現在好像3、4啟有超限這樣",
+      "author": "ass191044",
       "reactions": 3,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1432368234438590607",
-      "content": "np, happy it worked <:proud:1400771683664658433>",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "✅「Resolved」My game doesn't load..."
+      "id": "1432311362226356224",
+      "channel_id": "1131839817982947429",
+      "content": "就这样了，后面打不过了",
+      "author": "jiangzehuai",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1432411175039012978",
-      "content": "I'm unsure if there's a hard turn cap, but I believe Flares mentioned at some po",
-      "author": "arkaether",
-      "reactions": 2,
-      "channel": "Is there a limit?"
-    },
-    {
-      "id": "1432496132445180025",
-      "content": "https://tenor.com/view/hungy-lizard-lick-gif-17981615152551697402",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Pollux WIP"
-    },
-    {
-      "id": "1432191146305650790",
-      "content": "熔朵先超限",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "新手 求隊伍配置以及後續該朝哪方面補強"
-    },
-    {
-      "id": "1432458846705811506",
-      "content": "can use it temporarily, it just doesn't synergize that well though",
-      "author": "syruponstrawberrycake",
-      "reactions": 1,
-      "channel": "i need help with team building"
-    },
-    {
-      "id": "1432478715115474945",
-      "content": "yeah you can. especially in the early game.\nI've used a similar team to clear mo",
-      "author": "unicorned_batman",
-      "reactions": 1,
-      "channel": "i need help with team building"
-    },
-    {
-      "id": "1432355266241888256",
-      "content": "have you tried to remove the morimen folder after unistalling?",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Resolved」My game doesn't load..."
-    },
-    {
-      "id": "1432361217652953268",
-      "content": "Alright, will definitely give it a try!",
-      "author": "iro_iro_",
-      "reactions": 1,
-      "channel": "✅「Resolved」My game doesn't load..."
+      "id": "1432400860918579212",
+      "channel_id": "1131839817982947429",
+      "content": "下次還填非常簡單",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

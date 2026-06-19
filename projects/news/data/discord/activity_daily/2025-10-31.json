@@ -1,10 +1,12 @@
 {
   "date": "2025-10-31",
-  "messages": 74,
-  "unique_authors": 8,
-  "reactions_total": 148,
-  "attachments": 34,
+  "messages": 900,
+  "unique_authors": 38,
+  "reactions_total": 364,
+  "attachments": 111,
   "channel_activity": {
+    "🔸綜合討論": 820,
+    "🔸阵容构建": 6,
     "🗡️": 2,
     "Тулу фанарт": 1,
     "Happy Halloween!!! I love Murphys skin sm": 1,
@@ -31,26 +33,33 @@
     "1432654338982940783": 3
   },
   "hourly_activity": {
-    "19": 1,
+    "0": 13,
+    "1": 8,
+    "2": 25,
+    "3": 19,
+    "4": 130,
+    "5": 49,
+    "6": 23,
+    "7": 34,
+    "8": 5,
+    "9": 20,
+    "10": 36,
+    "11": 98,
+    "12": 137,
+    "13": 62,
+    "14": 67,
+    "15": 102,
+    "16": 36,
+    "17": 17,
+    "19": 8,
+    "21": 1,
+    "23": 8,
     "20": 1,
-    "3": 18,
-    "0": 3,
-    "9": 1,
-    "2": 10,
-    "23": 1,
-    "6": 15,
-    "7": 7,
-    "15": 2,
-    "12": 4,
-    "18": 1,
-    "1": 1,
-    "5": 1,
-    "11": 4,
-    "16": 1,
-    "4": 3
+    "18": 1
   },
   "message_types": {
-    "0": 19
+    "0": 609,
+    "19": 217
   },
   "top_reacted_messages": [
     {
@@ -117,6 +126,38 @@
       "channel": "Happy Halloween!!! I love Murphys skin sm"
     },
     {
+      "id": "1433802878472159252",
+      "channel_id": "1131839817982947429",
+      "content": "打到最後也只有6.8k觸傷",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433827568934719548",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433733819952795658",
+      "channel_id": "1131839817982947429",
+      "content": "就只差一步........... <:dead:1356082627509092372>",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433894095486455921",
+      "channel_id": "1131839817982947429",
+      "content": "我好爛== 0星點活",
+      "author": "dog_0630",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1433711574329196574",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：波吕克斯EP·暴风起时 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
       "author": "morimensstaff01",
@@ -124,32 +165,52 @@
       "channel": "忘却前夜OST：波吕克斯EP·暴风起时"
     },
     {
-      "id": "1433701757988634656",
-      "content": "Hi, we have this plan and are currently preparing it🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Show traphase rank on keepers archive"
+      "id": "1433638057734570006",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433627464999108752",
-      "content": "Would it be possible to add Traphase rank/score under investigation progress?",
-      "author": "jearbear",
-      "reactions": 1,
-      "channel": "✅「Answered」Show traphase rank on keepers archive"
+      "id": "1433877646063833199",
+      "channel_id": "1131839817982947429",
+      "content": "<@855461987805822987> <@1301813973703852035> 聽我說，這東西比海國米粒好用阿",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433702050792869978",
-      "content": "Hi, we have this plan and are currently preparing it\nIt is expected to be launch",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Give us a way to view emote description"
+      "id": "1433808021858816190",
+      "channel_id": "1131839874132090890",
+      "content": "叠火女遇到这种攻击欲望不强的还是太好用了<:pray:1356053116260454534>",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1433716805343510610",
-      "content": "<@1115523266484895815>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "id": "1433632936137326652",
+      "channel_id": "1131839817982947429",
+      "content": "這遊戲想搞死我🫠",
+      "author": "asdfgvczr",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433672779432988712",
+      "channel_id": "1131839817982947429",
+      "content": "你就是大佬了",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433673232044527658",
+      "channel_id": "1131839817982947429",
+      "content": "而且佬會教萌新打融災深淺相對，根本天生就是佬",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

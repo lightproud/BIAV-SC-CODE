@@ -1,10 +1,13 @@
 {
   "date": "2025-10-07",
-  "messages": 41,
-  "unique_authors": 15,
-  "reactions_total": 26,
-  "attachments": 10,
+  "messages": 10686,
+  "unique_authors": 191,
+  "reactions_total": 1760,
+  "attachments": 400,
   "channel_activity": {
+    "🔸綜合討論": 473,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 10171,
     "Pickman's Model | Pickman and Sylvester fanfic with bonus fanart": 1,
     "Day 1 Newb": 8,
     "久遠的呼喚建議下池嗎（下版本": 4,
@@ -23,124 +26,198 @@
     "【收米人&OC向】【繁衍狂热向】岁月为笔相思": 4
   },
   "hourly_activity": {
-    "15": 6,
-    "12": 8,
-    "13": 1,
-    "14": 1,
-    "0": 4,
-    "23": 1,
-    "16": 3,
-    "18": 5,
-    "21": 2,
-    "7": 1,
-    "3": 2,
-    "10": 1,
-    "5": 1,
-    "6": 1,
-    "9": 4
+    "0": 377,
+    "1": 689,
+    "2": 603,
+    "3": 520,
+    "4": 238,
+    "5": 276,
+    "6": 238,
+    "7": 399,
+    "8": 481,
+    "9": 503,
+    "10": 370,
+    "11": 562,
+    "12": 709,
+    "13": 513,
+    "14": 716,
+    "15": 687,
+    "16": 255,
+    "17": 522,
+    "18": 279,
+    "20": 456,
+    "23": 577,
+    "19": 326,
+    "21": 192,
+    "22": 198
   },
   "message_types": {
-    "0": 19,
-    "19": 6
+    "0": 7530,
+    "19": 3102,
+    "46": 3,
+    "20": 3,
+    "23": 7
   },
   "top_reacted_messages": [
     {
-      "id": "1425057268923371540",
-      "content": "写在前面——\n**本来是想在昨天，也就是中秋节发的，~~但是我懒了拖到今天我有罪呜呜呜~~，所以来点讨论呗\n~~走过路过点个薯条谢谢哇~~**",
-      "author": "akalanden",
-      "reactions": 6,
-      "channel": "【收米人&OC向】【繁衍狂热向】岁月为笔相思"
+      "id": "1425167700962971861",
+      "channel_id": "1170692781216378960",
+      "content": "Flares is undoubtedly a bottom.",
+      "author": "inana_istar",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425017492534988862",
-      "content": "Maybe some people already asked for it, but it would be very nice to be able to ",
-      "author": "zekiei",
-      "reactions": 5,
-      "channel": "✅「Answered」Rotating menu background"
-    },
-    {
-      "id": "1425143191274782750",
+      "id": "1424989858606223423",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sweet_25367",
-      "reactions": 3,
-      "channel": "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？"
+      "author": "arisuu0604",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425099939062485002",
-      "content": "Good evening everyone. I keep getting recommendations from my friends and youtub",
-      "author": "lalalanz.",
-      "reactions": 2,
-      "channel": "Day 1 Newb"
+      "id": "1425160949219983430",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1425101741694648384",
-      "content": "<#1357184174485671966>",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
-    },
-    {
-      "id": "1425101829989208157",
-      "content": "to the holy spreadsheet you go friend",
+      "id": "1425219065630163124",
+      "channel_id": "1170692781216378960",
+      "content": "i dorgot thais existed lmao",
       "author": "omni_colon",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425101833835122772",
-      "content": "You can focus on caecus for the early chapters up to chapter 4 for now. Hameln i",
-      "author": "angbak",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
+      "id": "1425167278156153026",
+      "channel_id": "1170692781216378960",
+      "content": "If it's a date yall should fuck so then you'll know for sure he'll put in a good",
+      "author": "kezrin",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425101968036073576",
-      "content": "You should be able to unlock events at around chapter 2-8 or 2-9. Add friends an",
-      "author": "angbak",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
+      "id": "1425167655807226010",
+      "channel_id": "1170692781216378960",
+      "content": "His body apparently",
+      "author": "frosthief",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425116963063205928",
-      "content": "if you want to learn a bit better how the realms and game work in a more clear w",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
+      "id": "1425160043606839421",
+      "channel_id": "1170692781216378960",
+      "content": "<@474412169249947669> This just bug.You see i have 142 silver?This silver number",
+      "author": "twilightsparkle163163",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425126459655192777",
-      "content": "Thanks everyone 💚",
-      "author": "lalalanz.",
-      "reactions": 1,
-      "channel": "Day 1 Newb"
+      "id": "1424929431662755840",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sirtealot",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425191923424952446",
-      "content": "slap the Blade on Titan on Salv if you have it and he's carrying so hard when yo",
-      "author": "ellezard",
-      "reactions": 1,
-      "channel": "Team help"
+      "id": "1425103506498388048",
+      "channel_id": "1170692781216378960",
+      "content": "have i bricked my account",
+      "author": "anphans371",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425192071307989132",
-      "content": "I don't have access to Covenant Transcription yet due to being below level 55 an",
-      "author": "ellezard",
-      "reactions": 1,
-      "channel": "Team help"
+      "id": "1424938034729582623",
+      "channel_id": "1170692781216378960",
+      "content": "Reminds me of the teacher I knew who got arrested for soliciting feet pics from ",
+      "author": "dwang4875",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425094696346062860",
-      "content": "yes i’m going to save now, thanks a lot for your advice!",
-      "author": ".luobingge",
-      "reactions": 1,
-      "channel": "who should I pull on the timeless banner?"
+      "id": "1425104936286294087",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1425238387551375402",
-      "content": "current event let you choose to buy what you want, so theres no real reason to d",
-      "author": "reverie.is.dead",
-      "reactions": 1,
-      "channel": "Get help to pass 5-14"
+      "id": "1424933886001152061",
+      "channel_id": "1170692781216378960",
+      "content": "this ones going in the Arisu Scrapbook ™️",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424935324529856643",
+      "channel_id": "1170692781216378960",
+      "content": "I swear I’m also normal…(I FOUND A SERVER FULL OF TWINS)",
+      "author": "elonor0153_35875",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424989060627435570",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "whirli_bri",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425078492994998363",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425131428407939154",
+      "channel_id": "1170692781216378960",
+      "content": "Can't wait to graduate and be replaced by a clanker and work at fast food",
+      "author": "enternameunavailable",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425133078434680964",
+      "channel_id": "1170692781216378960",
+      "content": "arisu lets get you a job and a boyfriend",
+      "author": "tnimreppep",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425168319400640572",
+      "channel_id": "1170692781216378960",
+      "content": "the allegations will never be beaten",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424930582780969070",
+      "channel_id": "1170692781216378960",
+      "content": "lets give it a chance...",
+      "author": "bongosjam",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424931943702593556",
+      "channel_id": "1170692781216378960",
+      "content": "my hand kinda looks like this",
+      "author": "bongosjam",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

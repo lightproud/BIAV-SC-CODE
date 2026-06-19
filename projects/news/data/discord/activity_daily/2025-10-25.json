@@ -1,10 +1,12 @@
 {
   "date": "2025-10-25",
-  "messages": 86,
-  "unique_authors": 24,
-  "reactions_total": 236,
-  "attachments": 9,
+  "messages": 523,
+  "unique_authors": 41,
+  "reactions_total": 337,
+  "attachments": 41,
   "channel_activity": {
+    "🔸綜合討論": 435,
+    "🔸阵容构建": 2,
     "Blackjack!": 1,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
     "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!": 2,
@@ -23,24 +25,33 @@
     "1429401798439080028": 2
   },
   "hourly_activity": {
+    "1": 4,
+    "4": 15,
+    "5": 2,
+    "6": 31,
+    "7": 116,
+    "8": 93,
+    "9": 48,
+    "10": 47,
+    "11": 19,
+    "12": 12,
+    "13": 7,
+    "14": 18,
+    "15": 9,
+    "16": 6,
+    "17": 44,
+    "18": 20,
+    "20": 4,
+    "21": 7,
+    "22": 10,
+    "23": 5,
     "3": 1,
     "2": 1,
-    "12": 6,
-    "22": 2,
-    "10": 3,
-    "15": 2,
-    "19": 4,
-    "8": 4,
-    "13": 1,
-    "18": 15,
-    "21": 3,
-    "17": 40,
-    "20": 2,
-    "23": 1,
-    "7": 1
+    "19": 4
   },
   "message_types": {
-    "0": 18
+    "0": 312,
+    "19": 125
   },
   "top_reacted_messages": [
     {
@@ -72,11 +83,59 @@
       "channel": "V2.3.4.2 在线维护公告"
     },
     {
+      "id": "1431632610232107159",
+      "channel_id": "1131839817982947429",
+      "content": "換個助戰說不定能4-4   但還是算了  滿足 <:agree:1400771815076528258>",
+      "author": "partycatss.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431564886831267851",
+      "channel_id": "1131839874132090890",
+      "content": "右邊要放甚麼",
+      "author": "aaaa_00098",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1431696291536175204",
       "content": "",
       "author": "tomatoexistsforfame_65410",
       "reactions": 7,
       "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431528900407726152",
+      "channel_id": "1131839817982947429",
+      "content": "幹我凹了1小時半",
+      "author": "sakura8901",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431538059073032272",
+      "channel_id": "1131839817982947429",
+      "content": "哎呀，终于通关忘却篇了，累死我哩",
+      "author": "williams_69091",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431569474426765324",
+      "channel_id": "1131839817982947429",
+      "content": "玩了10天抽了快600抽，还用了60抽开环拉",
+      "author": "neptinu",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431607142019895296",
+      "channel_id": "1131839817982947429",
+      "content": "有点玩不明白",
+      "author": "jiangzehuai",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1431723503551254558",
@@ -93,6 +152,30 @@
       "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
+      "id": "1431508629701525586",
+      "channel_id": "1131839817982947429",
+      "content": "我又來凹啦",
+      "author": "sakura8901",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431544865027653763",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "kemomimi_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431753532184330271",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cameliia._.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1431747653577736233",
       "content": "算你愛赤石跟算你厲害選一個😭",
       "author": "ena04564",
@@ -100,88 +183,28 @@
       "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
-      "id": "1431699549973516338",
-      "content": "目前没有更多可透露的情报，但应该不会等待太久的！",
-      "author": "game.producer.light",
+      "id": "1431539256471584778",
+      "channel_id": "1131839817982947429",
+      "content": "我如果沒有環娜是不是就不會有命定",
+      "author": "sakura8901",
       "reactions": 3,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431751908317593741",
-      "content": "但小心如果什麼都調成沒難度整個過程就沒記憶點沒吸引力了      沒有人對三角型怪有特別記憶但電話怪打過的都記得  有一兩種這樣的怪不一定是壞事",
-      "author": "partycatss.",
-      "reactions": 3,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431552826798116956",
-      "content": "It's not super high priority, but when I boot up the game late at night, those f",
-      "author": "sophiechoice",
-      "reactions": 3,
-      "channel": "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video"
-    },
-    {
-      "id": "1431665078247231611",
-      "content": "So Aqueor (the tentacle realm) is pretty easy to get into, so pulling more of th",
-      "author": "sierrayagurl",
-      "reactions": 2,
-      "channel": "Which realm on standard banner to pull for? What mechanics do elements have?"
-    },
-    {
-      "id": "1431723411406589973",
-      "content": "A note that when playing ultra, you can click the left hand side of the gauge an",
-      "author": "reverie.is.dead",
-      "reactions": 2,
-      "channel": "Which realm on standard banner to pull for? What mechanics do elements have?"
-    },
-    {
-      "id": "1431699317378257059",
-      "content": "Actually, Kathigu-ra is the correct spelling of the name.",
-      "author": ".cnork",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431700304587391146",
-      "content": "I’ll check with our translation team about this. Thanks for the feedback!",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431714491271217413",
-      "content": "我们有多次讨论这个问题，我们会再审视一下。",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431716222902206534",
-      "content": "這邊有個拙見，緊急聯絡體的至少把力量成長改為臨時力量以及打出備用腦缸時不會觸發，聯絡體的護盾獲得量也需要下調\n再來是關卡B-68的boss血量太高了，作為一個打",
+      "id": "1431549529131454564",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇的機制是，只要這個遊戲有這個可玩角色就能印牌，而且牌的效果是依據塔薇自身的啟靈，也就是說，如果你塔薇是三啟，你摸到的牌就是那個角色抽到三啟後的效果",
       "author": "ena04564",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431779804016808078",
-      "content": "Science i've gotten heavy Problems with Clearing chapter 8 i'm delighted to read",
-      "author": "skyla064795",
-      "reactions": 2,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431663120010444810",
-      "content": "While I know u work on new reward system for Traphase that should come with anni",
-      "author": "stelladiosa",
-      "reactions": 2,
-      "channel": "💭「Processing」Suggestion - Traphase"
-    },
-    {
-      "id": "1431695702337130609",
-      "content": "非常好設計使我銀芯旋轉",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": ""
+      "id": "1431692495602978951",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

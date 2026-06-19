@@ -1,10 +1,12 @@
 {
   "date": "2025-10-28",
-  "messages": 142,
-  "unique_authors": 25,
-  "reactions_total": 266,
-  "attachments": 29,
+  "messages": 915,
+  "unique_authors": 47,
+  "reactions_total": 492,
+  "attachments": 82,
   "channel_activity": {
+    "🔸綜合討論": 765,
+    "🔸阵容构建": 8,
     "Collection of Morimens fanart and doodles": 1,
     "Clementine!!!": 7,
     "Sylvester fanart warning": 2,
@@ -39,30 +41,31 @@
     "1432654338982940783": 63
   },
   "hourly_activity": {
-    "13": 4,
-    "14": 15,
-    "7": 6,
-    "6": 3,
-    "20": 1,
-    "0": 1,
-    "1": 2,
-    "10": 24,
-    "15": 12,
-    "8": 4,
-    "3": 2,
-    "11": 6,
-    "9": 52,
-    "4": 1,
-    "23": 1,
-    "17": 1,
-    "2": 2,
-    "12": 1,
-    "16": 4
+    "0": 4,
+    "1": 48,
+    "2": 38,
+    "3": 11,
+    "4": 24,
+    "5": 6,
+    "6": 46,
+    "7": 18,
+    "8": 57,
+    "9": 93,
+    "10": 284,
+    "11": 59,
+    "12": 33,
+    "14": 20,
+    "15": 54,
+    "16": 36,
+    "17": 2,
+    "20": 3,
+    "22": 5,
+    "23": 70,
+    "13": 4
   },
   "message_types": {
-    "0": 24,
-    "4": 2,
-    "19": 7
+    "0": 591,
+    "19": 182
   },
   "top_reacted_messages": [
     {
@@ -101,11 +104,59 @@
       "channel": "現pa現pa"
     },
     {
+      "id": "1432682691014299809",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432583334449381417",
+      "channel_id": "1131839817982947429",
+      "content": "<:takenotes:1357186646294138890> 萌新30天了",
+      "author": "sakura8901",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432675498189656086",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "meow51103",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432876321150865519",
+      "channel_id": "1131839817982947429",
+      "content": "大佬帶帶我🛐 🛐 🛐",
+      "author": "universe.dark",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432831567520333946",
+      "channel_id": "1131839874132090890",
+      "content": "大佬们，问一下巨人之刃想叠满，是不是只能下池子不停的捞？🥲",
+      "author": "sadiss4399",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1432668243579109429",
       "content": "杜勒：什么叫我的章节我不好打（",
       "author": "rain_scarlet",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1432681585605611543",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ququ12358",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1432670163748130867",
@@ -115,81 +166,60 @@
       "channel": ""
     },
     {
-      "id": "1432667319708028991",
-      "content": "敵方受到傷害減半嗎",
-      "author": "shchng.",
+      "id": "1432877165812121642",
+      "channel_id": "1131839817982947429",
+      "content": "佬跟我共帳就知道什麼是壓力了<:proud:1400771683664658433> <:point:1356053112292511815>",
+      "author": "universe.dark",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432880969840463923",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432617914476789800",
+      "channel_id": "1131839817982947429",
+      "content": "其實艾爾瓦也適合，但艾爾瓦不適合",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432678979327885407",
+      "channel_id": "1131839817982947429",
+      "content": "我还有...",
+      "author": "neptinu",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1432600178665197700",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1432550042165837844",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "dog794",
       "reactions": 4,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1432667926405841019",
-      "content": "靈芝戰神",
-      "author": "axe_proficient",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1432698598981763204",
-      "content": "可不可以把N实装一下 我会大充特充的 求你了 弥撒格校猫",
-      "author": "itissoloong",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1432769128829292728",
-      "content": "赤石咯，毕竟前作都国际服都赤到关服了",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1432668947584647178",
-      "content": "great moment to be a new mori-man moving over from czn to morimens",
-      "author": "wesu.",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1432630082144571392",
-      "content": "continue pulling blue for standard, as anni is coming up i think there will be r",
-      "author": "a3th3r_69708",
-      "reactions": 1,
-      "channel": "Pulling and Team Advice"
-    },
-    {
-      "id": "1432672045237407875",
-      "content": "是说「容」和「荣」",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": "✅「已回答」相位对弈字打错了"
-    },
-    {
-      "id": "1432669999608107129",
-      "content": "Hi, this issue will be fixed in the next version",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」\"Sacred Bleeding Heart\" shows the wrong image"
-    },
-    {
-      "id": "1432731303870070835",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第19期（第46期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 1,
-      "channel": "✦关卡地图「融灾禁区」总览46期·星辰篇✦"
-    },
-    {
-      "id": "1432669362254381117",
-      "content": "You have until New Years to do it, so there's no rush.",
-      "author": "thunderbrother",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1432717980629864662",
-      "content": "你都+12医生了这有啥参考性吗[哭笑不得]",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": ""
+      "id": "1432599468502679654",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

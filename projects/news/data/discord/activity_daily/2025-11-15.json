@@ -1,10 +1,15 @@
 {
   "date": "2025-11-15",
-  "messages": 10668,
+  "messages": 18123,
   "unique_authors": 196,
-  "reactions_total": 2089,
-  "attachments": 437,
+  "reactions_total": 3151,
+  "attachments": 689,
   "channel_activity": {
+    "🔸general-chat": 6254,
+    "🔸邀请码互助┊swap-invitation-codes": 23,
+    "🔸game-question": 1017,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 160,
     "🔸晒卡分享": 9,
     "🔸相位对弈": 14,
     "🔸课间休息闲聊": 1,
@@ -46,34 +51,37 @@
     "1423337172655935600": 6
   },
   "hourly_activity": {
-    "9": 141,
-    "10": 183,
-    "11": 1112,
-    "12": 985,
-    "14": 954,
-    "18": 406,
-    "13": 961,
-    "15": 579,
-    "4": 555,
-    "7": 307,
-    "8": 234,
-    "16": 531,
-    "17": 313,
-    "19": 221,
-    "20": 249,
-    "21": 228,
-    "22": 363,
-    "0": 131,
-    "2": 609,
-    "5": 145,
-    "23": 116,
-    "1": 286,
-    "3": 660,
-    "6": 399
+    "0": 497,
+    "1": 468,
+    "2": 974,
+    "3": 1012,
+    "4": 1093,
+    "5": 687,
+    "6": 736,
+    "7": 922,
+    "8": 464,
+    "9": 528,
+    "10": 403,
+    "11": 1381,
+    "12": 1631,
+    "13": 1372,
+    "14": 1710,
+    "15": 961,
+    "16": 900,
+    "17": 476,
+    "18": 451,
+    "19": 274,
+    "20": 291,
+    "21": 343,
+    "22": 410,
+    "23": 139
   },
   "message_types": {
-    "0": 2726,
-    "19": 826
+    "0": 4832,
+    "19": 2591,
+    "20": 24,
+    "23": 5,
+    "46": 3
   },
   "top_reacted_messages": [
     {
@@ -124,6 +132,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1439262349558288414",
+      "channel_id": "1400750050208125010",
+      "content": "I believe that Flare's guide section for the awakener Clementine is highly inapp",
+      "author": "vinsette",
+      "reactions": 15,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1439100704827642069",
       "channel_id": "1355630588094320661",
       "content": "1818",
@@ -138,6 +154,14 @@
       "author": "game.producer.light",
       "reactions": 15,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439322690694549726",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 14,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1439073919016505375",
@@ -215,22 +239,6 @@
       "author": "game.producer.light",
       "reactions": 11,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1439261856492421173",
-      "channel_id": "1170692781216378960",
-      "content": "i regret this",
-      "author": "monchi3524",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1439246803529891881",
-      "channel_id": "1385040039448412170",
-      "content": "We really appreciate the update and consideration. \nAnother great addition, that",
-      "author": "vxvendetta97",
-      "reactions": 9,
-      "channel": "🔸频道建议┊server-suggestions"
     }
   ]
 }

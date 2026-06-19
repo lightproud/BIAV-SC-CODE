@@ -1,10 +1,15 @@
 {
   "date": "2025-11-16",
-  "messages": 9185,
+  "messages": 12074,
   "unique_authors": 187,
-  "reactions_total": 1081,
-  "attachments": 399,
+  "reactions_total": 1237,
+  "attachments": 542,
   "channel_activity": {
+    "🔸general-chat": 1264,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🔸game-question": 1505,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸机器人命令┊bot-commands": 95,
     "🔸晒卡分享": 3,
     "🔸相位对弈": 619,
     "🔸课间休息闲聊": 3,
@@ -56,34 +61,36 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "10": 631,
-    "3": 192,
-    "4": 364,
-    "5": 302,
-    "6": 173,
-    "8": 624,
-    "9": 336,
-    "11": 626,
-    "12": 769,
-    "13": 733,
-    "14": 376,
-    "15": 433,
-    "18": 45,
-    "1": 160,
-    "2": 188,
-    "23": 608,
-    "0": 294,
-    "7": 519,
-    "16": 578,
-    "17": 284,
-    "19": 90,
-    "20": 229,
-    "21": 218,
-    "22": 413
+    "0": 307,
+    "1": 382,
+    "2": 385,
+    "3": 271,
+    "4": 432,
+    "5": 364,
+    "6": 461,
+    "7": 759,
+    "8": 739,
+    "9": 407,
+    "11": 664,
+    "12": 922,
+    "13": 767,
+    "14": 518,
+    "15": 566,
+    "16": 789,
+    "17": 602,
+    "18": 225,
+    "19": 114,
+    "20": 242,
+    "21": 250,
+    "22": 532,
+    "23": 699,
+    "10": 677
   },
   "message_types": {
-    "0": 2533,
-    "19": 649
+    "0": 2066,
+    "19": 814,
+    "46": 1,
+    "20": 8
   },
   "top_reacted_messages": [
     {
@@ -166,6 +173,14 @@
       "channel": ""
     },
     {
+      "id": "1439739522832404502",
+      "channel_id": "1435483703114596503",
+      "content": "A summary of every Caro Realm awakener. This is meant to be a description of wha",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1439566560191713383",
       "channel_id": "1174983699935277147",
       "content": "",
@@ -225,14 +240,6 @@
       "channel_id": "1170692781216378960",
       "content": "I haven’t been spending enough, I’ll buy every pack on reset dw chat 🫡",
       "author": "bagels5899",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1439757593705844788",
-      "channel_id": "1170692781216378960",
-      "content": "Its not november 13th thats why",
-      "author": "truevanity",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

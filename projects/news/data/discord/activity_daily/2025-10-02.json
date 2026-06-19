@@ -1,10 +1,12 @@
 {
   "date": "2025-10-02",
-  "messages": 121,
-  "unique_authors": 15,
-  "reactions_total": 95,
-  "attachments": 43,
+  "messages": 10618,
+  "unique_authors": 179,
+  "reactions_total": 1691,
+  "attachments": 403,
   "channel_activity": {
+    "🔸綜合討論": 400,
+    "🔸morimens-game-chat": 10097,
     "Tinct on a swing": 1,
     "Thais Warm up": 1,
     "blackjack!": 1,
@@ -36,27 +38,36 @@
     "1423337172655935600": 3
   },
   "hourly_activity": {
-    "16": 5,
-    "11": 10,
-    "17": 2,
-    "12": 6,
-    "14": 6,
-    "15": 41,
-    "8": 12,
-    "23": 2,
-    "1": 15,
-    "13": 4,
-    "3": 2,
-    "9": 3,
-    "0": 5,
-    "5": 2,
-    "10": 1,
-    "18": 1,
-    "2": 4
+    "0": 263,
+    "1": 135,
+    "2": 98,
+    "3": 328,
+    "4": 436,
+    "5": 293,
+    "6": 521,
+    "7": 276,
+    "8": 514,
+    "9": 385,
+    "10": 362,
+    "11": 720,
+    "12": 410,
+    "13": 336,
+    "14": 892,
+    "16": 852,
+    "15": 779,
+    "17": 470,
+    "18": 546,
+    "19": 315,
+    "20": 382,
+    "21": 498,
+    "22": 378,
+    "23": 429
   },
   "message_types": {
-    "0": 35,
-    "19": 12
+    "0": 7251,
+    "19": 3226,
+    "23": 19,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -74,130 +85,148 @@
       "channel": "blackjack!"
     },
     {
-      "id": "1423326420289061045",
-      "content": "**15.母亲-Mother-**\n\n祂们拥抱着血脉、手足、爱人、挚友，他们献出自我，消融进一场黑甜的复生。\n祂们的骨归于母树，祂们的肉淌入圣河。\n\nThey ",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "忘却前夜OST：畸变丰穰之种"
+      "id": "1423338297010421902",
+      "channel_id": "1170692781216378960",
+      "content": "im shy",
+      "author": "arisuu0604",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423287753302343700",
-      "content": "簡單來說\n隊伍強效：43.2% （向上取整44%）\n寧妃攜帶鎖鏈 （基礎傷害提高40%）\n夜潮基傷：90\n夜潮成長：15\n90（基傷）×144%（強效）×140",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "✅「已回答」寧妃，夜潮，BUG"
+      "id": "1423367530717773854",
+      "channel_id": "1170692781216378960",
+      "content": "im right behind you ❤️",
+      "author": "bongosjam",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423323589721194627",
-      "content": "下下周会有<:Cheerup:1400771555939844149>",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1423189557175783444",
+      "channel_id": "1170692781216378960",
+      "content": "If u change spooky u change me!<:ptincess:1356053126247092476>",
+      "author": "._.aahh",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423326462328700939",
-      "content": "<:alone:1356053021318189307>",
-      "author": "xcecilex.",
-      "reactions": 3,
-      "channel": "开个摸鱼楼✨"
-    },
-    {
-      "id": "1423327216145797202",
-      "content": "啃啃戈雅",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
-    },
-    {
-      "id": "1423319181549506560",
-      "content": "<@883992032530563082>  圖魯寶寶來了！！！<:cute1:1356053053568192717>",
-      "author": "xcecilex.",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
-    },
-    {
-      "id": "1423322939243106354",
+      "id": "1423379300849156269",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "xcecilex.",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
+      "author": "monchi3524",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423327327378735136",
-      "content": "🎉 🎉 在這裏預早祝船長生日快樂 🎉 🎉",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
+      "id": "1423402780038529054",
+      "channel_id": "1170692781216378960",
+      "content": "this server is so man_in_manual_wheelchair_facing_right",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423330497064341534",
-      "content": "今天最后的了，下次继续<:pray:1356053116260454534>",
-      "author": "xcecilex.",
-      "reactions": 2,
-      "channel": "开个摸鱼楼✨"
+      "id": "1423216967854325782",
+      "channel_id": "1131839817982947429",
+      "content": "蛤第三波也太他媽簡單",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1423344568375710111",
-      "content": "oh this is beautiful!",
-      "author": "wraithdust",
-      "reactions": 1,
-      "channel": "Tinct on a swing"
+      "id": "1423310006270431447",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1423231075848556625",
-      "content": "im at 9-11 (so the final chapter of arc 1) and my units are skill level 3 to 4 o",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "I hit a wall need help to build a team"
+      "id": "1423309964381913088",
+      "channel_id": "1170692781216378960",
+      "content": "can we kill arisu",
+      "author": "nyctno",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423180892016480388",
-      "content": "probably not a bug? i kinda like this, it highlights the silver more. with the d",
-      "author": "morified53",
-      "reactions": 1,
-      "channel": "✅「Answered」Silver Background  Bug"
+      "id": "1423440540472447027",
+      "channel_id": "1170692781216378960",
+      "content": "Why you think i'm lewd <:cry3:1356082134447558748>",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423330087629094982",
-      "content": "我们查验一下🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」來自某被無視的不知名大佬"
+      "id": "1423151305014382643",
+      "channel_id": "1170692781216378960",
+      "content": "🥀",
+      "author": "craux.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423102684478574612",
-      "content": "<:pray:1400771650064089112> 是大佬我没救了，我还没动笔呢",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+      "id": "1423347507496357920",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "shagaru0802",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423146746539933819",
-      "content": "<:please:1356053110375714817>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+      "id": "1423365684422770718",
+      "channel_id": "1170692781216378960",
+      "content": "GCorposant will save game",
+      "author": "cooked_chicken99",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423323340055117835",
-      "content": "勞斯\n愛你❤️",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "开个摸鱼楼✨"
+      "id": "1423318880562057248",
+      "channel_id": "1170692781216378960",
+      "content": "Just mass report amethyst for the chance and every other person with a clem prof",
+      "author": "niamaru.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423326009289211904",
-      "content": "😋",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "开个摸鱼楼✨"
+      "id": "1423322238949789748",
+      "channel_id": "1170692781216378960",
+      "content": "I love her alternative splash art especially <:Sendflowers:1400771545370067118>",
+      "author": "sirtealot",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423326802109010111",
-      "content": "謝謝謝謝！！！<:hello:1356053084790460437>",
-      "author": "xcecilex.",
-      "reactions": 1,
-      "channel": "开个摸鱼楼✨"
+      "id": "1423327884226990152",
+      "channel_id": "1170692781216378960",
+      "content": "this is one of the cutest stickers i've seen",
+      "author": "elpis_jn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423347425514356879",
+      "channel_id": "1170692781216378960",
+      "content": "ok i think i should sleep this time for real",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423350904920215602",
+      "channel_id": "1170692781216378960",
+      "content": "Have you considered not paying your taxes?",
+      "author": "shagaru0802",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423213639829028925",
+      "channel_id": "1131839817982947429",
+      "content": "剩第三波了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

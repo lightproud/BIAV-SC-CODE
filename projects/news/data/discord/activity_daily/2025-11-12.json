@@ -1,10 +1,14 @@
 {
   "date": "2025-11-12",
-  "messages": 16178,
+  "messages": 17035,
   "unique_authors": 212,
-  "reactions_total": 2065,
-  "attachments": 545,
+  "reactions_total": 2152,
+  "attachments": 601,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 597,
+    "🔸忘却前夜┊morimens-tv": 3,
+    "🔸机器人命令┊bot-commands": 246,
     "🔸晒卡分享": 90,
     "🔸欢乐梗图": 6,
     "🔸相位对弈": 79,
@@ -45,37 +49,35 @@
     "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10
   },
   "hourly_activity": {
-    "2": 320,
-    "6": 957,
-    "8": 849,
-    "9": 476,
-    "14": 783,
-    "15": 718,
-    "16": 529,
-    "23": 607,
-    "7": 1073,
-    "11": 651,
-    "3": 396,
-    "22": 347,
-    "12": 1036,
-    "13": 1016,
-    "10": 698,
-    "17": 316,
-    "18": 545,
-    "19": 536,
-    "20": 540,
-    "21": 959,
-    "0": 741,
-    "1": 548,
-    "4": 783,
-    "5": 754
+    "2": 369,
+    "5": 771,
+    "7": 1100,
+    "8": 866,
+    "10": 721,
+    "12": 1083,
+    "13": 1045,
+    "14": 861,
+    "0": 844,
+    "1": 567,
+    "3": 425,
+    "4": 798,
+    "6": 1042,
+    "9": 523,
+    "11": 752,
+    "15": 743,
+    "16": 544,
+    "17": 341,
+    "18": 556,
+    "19": 565,
+    "20": 547,
+    "21": 992,
+    "22": 364,
+    "23": 616
   },
   "message_types": {
-    "0": 7074,
-    "19": 3603,
-    "20": 2,
-    "23": 3,
-    "46": 1
+    "0": 579,
+    "19": 253,
+    "20": 25
   },
   "top_reacted_messages": [
     {
@@ -178,6 +180,14 @@
       "channel": "💭「Processing」Trade Reality Verge for something else"
     },
     {
+      "id": "1438006499132837969",
+      "channel_id": "1435483703114596503",
+      "content": "A summary of every Chaos Realm awakener. This is meant to be a description of wh",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1438099545031577650",
       "channel_id": "1181152750319456266",
       "content": "享受到的力量-25%\n造成的傷害-25%\n傷轉毒反出血再-25%",
@@ -224,13 +234,6 @@
       "author": "alistiel",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1438154263086891100",
-      "content": "<:please:1356053110375714817>",
-      "author": "dustsleeper_",
-      "reactions": 8,
-      "channel": "Tulu gif I got from Twitter"
     }
   ]
 }

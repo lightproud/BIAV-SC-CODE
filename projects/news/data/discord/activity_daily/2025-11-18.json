@@ -1,10 +1,16 @@
 {
   "date": "2025-11-18",
-  "messages": 18139,
+  "messages": 22117,
   "unique_authors": 357,
-  "reactions_total": 2608,
-  "attachments": 973,
+  "reactions_total": 3020,
+  "attachments": 1172,
   "channel_activity": {
+    "🔸general-chat": 1902,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🐱light’s-nest": 4,
+    "🔸game-question": 1917,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 142,
     "🔸剧情交流": 2,
     "🔸晒卡分享": 191,
     "🔸相位对弈": 2,
@@ -123,46 +129,46 @@
     "💭「Processing」Myriam 2 cost bug": 1,
     "💭「处理中」穿刺伤害不穿刺": 2,
     "畫了這賽季的相位對弈貼圖☝️": 2,
-    "🐱light’s-nest": 2,
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "6": 501,
-    "13": 965,
-    "2": 900,
-    "5": 589,
-    "7": 1118,
-    "8": 831,
-    "10": 565,
-    "11": 830,
-    "12": 878,
-    "14": 1183,
-    "15": 880,
-    "16": 689,
-    "23": 904,
-    "17": 920,
-    "3": 636,
-    "4": 643,
-    "9": 358,
-    "18": 678,
-    "0": 814,
-    "22": 583,
-    "1": 896,
-    "19": 615,
-    "20": 609,
-    "21": 554
+    "0": 1249,
+    "1": 1168,
+    "2": 1102,
+    "3": 804,
+    "4": 960,
+    "5": 910,
+    "6": 649,
+    "7": 1204,
+    "8": 871,
+    "9": 504,
+    "10": 720,
+    "11": 1024,
+    "12": 977,
+    "13": 1255,
+    "14": 1348,
+    "15": 955,
+    "16": 856,
+    "17": 1055,
+    "18": 827,
+    "19": 660,
+    "20": 771,
+    "21": 651,
+    "22": 635,
+    "23": 962
   },
   "message_types": {
-    "0": 3057,
-    "19": 829,
-    "20": 1
+    "19": 1057,
+    "0": 2913,
+    "20": 8
   },
   "top_reacted_messages": [
     {
       "id": "1440232498662473728",
+      "channel_id": "1426837316533747823",
       "content": "收到了来自“精神健康与钓鱼中心”投喂的凯刻斯自制周边！与大家分享！",
       "author": "game.producer.light",
-      "reactions": 102,
+      "reactions": 105,
       "channel": "🐱light’s-nest"
     },
     {
@@ -179,6 +185,14 @@
       "author": "xu6_",
       "reactions": 39,
       "channel": "畫了這賽季的相位對弈貼圖☝️"
+    },
+    {
+      "id": "1440142212695588975",
+      "channel_id": "1400750050208125010",
+      "content": "idk man saying you'd do nsfw to a loli sounds very questionable considering loli",
+      "author": "Deleted User",
+      "reactions": 29,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1440302535184486521",
@@ -215,6 +229,14 @@
       "author": "game.producer.light",
       "reactions": 19,
       "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440144342600781844",
+      "channel_id": "1400750050208125010",
+      "content": "Sorry I just don’t feel quite safe unless Glutton is banned and if I don’t draw ",
+      "author": "red_rest",
+      "reactions": 18,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1440366074351714536",
@@ -291,22 +313,6 @@
       "author": "sugarspawn",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440267508442595339",
-      "channel_id": "1170692781216378960",
-      "content": "When Aigis see me I too would be rock ha-",
-      "author": "joker_0108",
-      "reactions": 9,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1440161682885312615",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "universe.dark",
-      "reactions": 8,
-      "channel": "🔸晒卡分享"
     }
   ]
 }

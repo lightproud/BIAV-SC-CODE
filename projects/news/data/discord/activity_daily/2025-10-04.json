@@ -1,10 +1,12 @@
 {
   "date": "2025-10-04",
-  "messages": 61,
-  "unique_authors": 18,
-  "reactions_total": 53,
-  "attachments": 39,
+  "messages": 10120,
+  "unique_authors": 187,
+  "reactions_total": 1913,
+  "attachments": 428,
   "channel_activity": {
+    "🔸綜合討論": 528,
+    "🔸morimens-game-chat": 9531,
     "The Persistence of Fading Glow | Tulu Fanfic": 1,
     "Hi! There is my first contribution for the Morimens Fan Art Contest.": 1,
     "William Delapore doodle(s)": 5,
@@ -30,40 +32,84 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "6": 1,
-    "14": 6,
-    "0": 2,
-    "3": 6,
-    "11": 3,
-    "18": 1,
-    "5": 1,
-    "20": 2,
-    "22": 3,
-    "10": 2,
-    "19": 8,
-    "1": 3,
-    "2": 2,
-    "13": 2,
-    "17": 2,
-    "7": 9,
-    "15": 3,
-    "8": 1,
-    "9": 1,
-    "23": 1,
-    "16": 1,
-    "4": 1
+    "2": 212,
+    "3": 375,
+    "4": 571,
+    "5": 361,
+    "6": 513,
+    "7": 444,
+    "8": 683,
+    "9": 224,
+    "10": 385,
+    "11": 816,
+    "12": 616,
+    "13": 542,
+    "15": 746,
+    "16": 477,
+    "17": 400,
+    "18": 412,
+    "22": 178,
+    "0": 198,
+    "1": 262,
+    "14": 460,
+    "19": 289,
+    "20": 273,
+    "21": 355,
+    "23": 328
   },
   "message_types": {
-    "0": 28,
-    "19": 3
+    "19": 3172,
+    "0": 6877,
+    "23": 7,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1424140883124551772",
+      "channel_id": "1170692781216378960",
+      "content": "Chat 😭 \n\nwas doing my dailies and got my standard pull\n\nWhere is my Murphyyyyyyy",
+      "author": "bagels5899",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1424103346041524275",
       "content": "Hi everyone!! Here is my submission for the miscellaneous works contest. I made ",
       "author": "chara_25",
       "reactions": 20,
       "channel": "Miscellaneous Works Contest Submission"
+    },
+    {
+      "id": "1423935178606116884",
+      "channel_id": "1170692781216378960",
+      "content": "Die",
+      "author": "._.aahh",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423889660676935753",
+      "channel_id": "1170692781216378960",
+      "content": "Maid flins is hottt",
+      "author": "kevsalvador",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424020758430089277",
+      "channel_id": "1170692781216378960",
+      "content": "There are only two real targets, Thais and Tawil",
+      "author": "good.th",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424134904106582108",
+      "channel_id": "1170692781216378960",
+      "content": "Idk, keeper in arc1 end is just a sleeper",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1423941553302409258",
@@ -73,81 +119,108 @@
       "channel": "忘却前夜OST：莱克 EP·狼的下周一"
     },
     {
-      "id": "1423990606518157414",
-      "content": "Without 🫳 emoji",
-      "author": "sunstopshining",
-      "reactions": 5,
-      "channel": "William Delapore doodle(s)"
+      "id": "1423922481877618760",
+      "channel_id": "1170692781216378960",
+      "content": "we all need thighs in our lives",
+      "author": "michal132323",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423863742562832496",
-      "content": "送你一隻圖魯",
+      "id": "1423954446240579665",
+      "channel_id": "1170692781216378960",
+      "content": "actually i know the reason tho",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424009890090844281",
+      "channel_id": "1131839817982947429",
+      "content": "完結收工",
       "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "这次的周年福利还会送限定角色吗"
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1423959418944618536",
-      "content": "<:Showoff:1400771654199541850>",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "忘却前夜OST：莱克 EP·狼的下周一"
+      "id": "1423953898221076611",
+      "channel_id": "1170692781216378960",
+      "content": "Kath e0 is...",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424063459838132254",
-      "content": "https://discord.com/channels/1131791637933199470/1323653598718197760/13236629529",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "主線癲狂難度"
+      "id": "1424116300493361263",
+      "channel_id": "1170692781216378960",
+      "content": "huh?",
+      "author": "echidna7311",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424089764981903360",
-      "content": "【《狂气Break》-哔哩哔哩】 https://b23.tv/HCvpQ8K",
-      "author": "ruhebaoyangsiwa_97871",
-      "reactions": 2,
-      "channel": "请大家多多捧场喵"
+      "id": "1424135429401219184",
+      "channel_id": "1170692781216378960",
+      "content": "Guys im really not dealing well with 9/11",
+      "author": "beenax.",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423912949050773567",
-      "content": "Omg that's so good. Well done dude",
-      "author": "angy_24_s",
-      "reactions": 1,
-      "channel": "The Persistence of Fading Glow | Tulu Fanfic"
+      "id": "1423979335697563779",
+      "channel_id": "1131839817982947429",
+      "content": "終於拿到了...",
+      "author": "quackdayo",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1423911385154326528",
-      "content": "She needs to be drawn hotter. She is the hottest woman in morimens.",
-      "author": "angy_24_s",
-      "reactions": 1,
-      "channel": "Francis cuz why not"
+      "id": "1423996011428319405",
+      "channel_id": "1131839817982947429",
+      "content": "<@1382233553357635674>  死抗成功",
+      "author": "insomnia07763",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1423935809303740416",
-      "content": "I think it better to wait for the anni event and see what happen bro maybe the m",
-      "author": "phanducthinh.com",
-      "reactions": 1,
-      "channel": "When do I shift realms"
+      "id": "1424037544584282226",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/rrkk00q/status/1972680480924524899?t=upKSuOSa0aFaYm0RHO2oyg&s=19",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423880918870917141",
-      "content": "如视频，虽然鼠标点击没有问题，但是银钥觉醒如果不选择具体角色就直接按下空格会吞掉银钥并且没有觉醒",
-      "author": "jidu1418",
-      "reactions": 1,
-      "channel": "✅「已回答」关于银钥觉醒和快捷键"
+      "id": "1423901885651226657",
+      "channel_id": "1131839817982947429",
+      "content": "終於抽到醫生了🤡 🤡",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1424036156651208776",
+      "id": "1423889400886198293",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/oprah-you-point-you-get-a-car-oprah-winfrey-gif-175106876",
+      "author": "phi_squared",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423975445522550945",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "fantuan9711",
-      "reactions": 1,
-      "channel": "这次的周年福利还会送限定角色吗"
+      "author": "._.aahh",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1423840231895076874",
-      "content": "<:Cheerup:1400771555939844149>",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+      "id": "1424009410048430322",
+      "channel_id": "1170692781216378960",
+      "content": "dude Everyone should try it",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

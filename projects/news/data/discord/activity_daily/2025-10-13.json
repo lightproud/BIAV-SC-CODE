@@ -1,10 +1,13 @@
 {
   "date": "2025-10-13",
-  "messages": 144,
-  "unique_authors": 52,
-  "reactions_total": 358,
-  "attachments": 23,
+  "messages": 12186,
+  "unique_authors": 238,
+  "reactions_total": 3072,
+  "attachments": 545,
   "channel_activity": {
+    "🔸綜合討論": 551,
+    "🔸阵容构建": 91,
+    "🔸morimens-game-chat": 11400,
     "Uvhash": 1,
     "Тулу фанарт": 4,
     "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 1,
@@ -34,32 +37,37 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "11": 3,
-    "8": 27,
-    "9": 5,
-    "4": 1,
-    "7": 12,
-    "10": 11,
-    "12": 5,
-    "13": 5,
-    "14": 32,
-    "15": 7,
-    "16": 3,
-    "18": 6,
-    "21": 2,
-    "23": 1,
-    "19": 2,
-    "22": 2,
-    "17": 1,
-    "0": 1,
-    "3": 14,
-    "1": 3,
-    "2": 1
+    "0": 336,
+    "1": 220,
+    "2": 135,
+    "3": 249,
+    "4": 188,
+    "5": 408,
+    "6": 455,
+    "7": 453,
+    "8": 746,
+    "9": 804,
+    "10": 703,
+    "11": 770,
+    "12": 709,
+    "13": 624,
+    "14": 831,
+    "15": 655,
+    "16": 598,
+    "17": 614,
+    "18": 621,
+    "23": 320,
+    "19": 541,
+    "20": 567,
+    "21": 359,
+    "22": 280
   },
   "message_types": {
-    "0": 91,
-    "19": 28,
-    "4": 1
+    "0": 7014,
+    "19": 5016,
+    "23": 6,
+    "20": 4,
+    "46": 2
   },
   "top_reacted_messages": [
     {
@@ -91,11 +99,99 @@
       "channel": "Uvhash"
     },
     {
+      "id": "1427089040821325966",
+      "channel_id": "1170692781216378960",
+      "content": "youre welcome to use my meme i made for your next morimens thumbnail if youd lik",
+      "author": "_hyuuun",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427413843289571501",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bongosjam",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427253319574753320",
+      "channel_id": "1170692781216378960",
+      "content": "Posses dont exist",
+      "author": "shanhaijingactivist",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1427329029467537570",
       "content": "摸點莫名其妙的東西<:clap:1356053042671255683>",
       "author": "navirecorbeau",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1427339825832267876",
+      "channel_id": "1131839817982947429",
+      "content": "15天打完N主線了",
+      "author": "sakura8901",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1427104715161862216",
+      "channel_id": "1170692781216378960",
+      "content": "This seems counterintuitive",
+      "author": ".ploner",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427404145010413850",
+      "channel_id": "1170692781216378960",
+      "content": "The infamous murphy body pillow",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427202119479459891",
+      "channel_id": "1170692781216378960",
+      "content": "im tired of evil twinks, all over fiction",
+      "author": "blecnes",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427253637050007603",
+      "channel_id": "1170692781216378960",
+      "content": "Arisu I need you to go rawdawg morimens characters or something.",
+      "author": "shanhaijingactivist",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427286184828207145",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/carry-me-gif-10909764881163324949",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427295706414317609",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1427415063022665769",
+      "channel_id": "1170692781216378960",
+      "content": "Damn \nNo wonder Flares hates Clem\nShe powercrept his favourite unit in the game",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1427198237059846216",
@@ -105,102 +201,28 @@
       "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
     },
     {
-      "id": "1427197057327829035",
-      "content": "Yooo Pollux he looks so cool <:proud1:1356053120651755641>",
-      "author": "zekiei",
+      "id": "1427128183492317275",
+      "channel_id": "1170692781216378960",
+      "content": "worth to buy? Seems expensive",
+      "author": "flinx",
       "reactions": 9,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1427209486547943434",
-      "content": "love of my life",
-      "author": "zier.0",
-      "reactions": 6,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
+      "id": "1427364127449419828",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953>  can you confirm?",
+      "author": "fischperch",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1427242015665688638",
-      "content": "這是週年慶的up嗎",
-      "author": "gazima",
-      "reactions": 6,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427273670249812131",
-      "content": "pls no bc I don’t have enough pulls",
-      "author": "_venush",
-      "reactions": 6,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427435002941018225",
-      "content": "Never had a waifu again. The only way is to spend it on another game. 😖",
-      "author": "brasilhao",
-      "reactions": 6,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427208374629437532",
-      "content": "backussy",
-      "author": "itsmemiki",
-      "reactions": 4,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427214318029504626",
-      "content": "Красота какая оч крутой вышел",
-      "author": "doodlelux",
-      "reactions": 3,
-      "channel": "Тулу фанарт"
-    },
-    {
-      "id": "1427202061401063516",
-      "content": "我們需要鳥哥和鳥弟的同人文",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427203419353120851",
-      "content": "Finally Pollux is here I pulled none of the reruns precisely for this",
-      "author": "linireo",
-      "reactions": 3,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427204174373847130",
-      "content": "So he will be out the 20th, next monday I guess? <:Cheerup:1400771555939844149>",
-      "author": "zekiei",
-      "reactions": 3,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427305215031378001",
-      "content": "only +4 <:Clown:1400771541423226971> 🔫",
-      "author": "jormiejormungandr",
-      "reactions": 3,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427402383767638139",
-      "content": "on behalf of <#1170692781216378960> , is pollux asian?",
-      "author": "frowningquokka",
-      "reactions": 3,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427224170768367647",
-      "content": "<:wow:1356053147029864518> i waited years for this",
-      "author": "annaxxe_",
-      "reactions": 2,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
-    },
-    {
-      "id": "1427305686202847303",
-      "content": "i pulled for clem <:takenotes:1357186646294138890>",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux"
+      "id": "1427366787489595402",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "fischperch",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

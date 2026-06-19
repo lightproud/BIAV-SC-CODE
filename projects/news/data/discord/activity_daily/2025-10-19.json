@@ -1,10 +1,11 @@
 {
   "date": "2025-10-19",
-  "messages": 88,
-  "unique_authors": 12,
-  "reactions_total": 94,
-  "attachments": 22,
+  "messages": 1736,
+  "unique_authors": 51,
+  "reactions_total": 341,
+  "attachments": 108,
   "channel_activity": {
+    "🔸綜合討論": 1648,
     "🤷": 2,
     "Hi": 1,
     "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!": 6,
@@ -23,28 +24,33 @@
     "1429401798439080028": 23
   },
   "hourly_activity": {
-    "10": 1,
-    "11": 6,
-    "8": 1,
-    "2": 10,
-    "6": 5,
-    "7": 1,
-    "1": 18,
-    "13": 8,
-    "15": 3,
-    "18": 1,
-    "5": 2,
-    "14": 5,
-    "12": 20,
-    "16": 3,
-    "4": 1,
-    "0": 1,
-    "19": 1,
-    "9": 1
+    "0": 7,
+    "1": 56,
+    "2": 50,
+    "3": 38,
+    "4": 17,
+    "5": 129,
+    "6": 206,
+    "7": 147,
+    "8": 40,
+    "9": 61,
+    "10": 267,
+    "11": 170,
+    "12": 212,
+    "13": 84,
+    "14": 152,
+    "15": 28,
+    "16": 36,
+    "17": 1,
+    "18": 5,
+    "20": 1,
+    "22": 23,
+    "23": 5,
+    "19": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "19": 355,
+    "0": 1293
   },
   "top_reacted_messages": [
     {
@@ -53,6 +59,14 @@
       "author": "sunstopshining",
       "reactions": 37,
       "channel": "🤷"
+    },
+    {
+      "id": "1429324204880171119",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "miyabyakuya",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1429384194005536839",
@@ -67,6 +81,22 @@
       "author": "morimensstaff02",
       "reactions": 8,
       "channel": "V2.3.4.0 停服维护公告"
+    },
+    {
+      "id": "1429414937028984875",
+      "channel_id": "1131839817982947429",
+      "content": "說個跟忘卻無關的，殺戮尖塔終於白金啦！\n意外的全成就的人有2.9%  真的有那麼多嗎?",
+      "author": "insomnia07763",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429422479125909674",
+      "channel_id": "1131839817982947429",
+      "content": "你甚麼時候跟詹金一起出道納米喵與詹金鼠",
+      "author": "xingkongzhiyao_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1429287431403733063",
@@ -90,88 +120,92 @@
       "channel": "我说把PVP改回大改动之前比现在平衡10000倍，有没有懂的？"
     },
     {
-      "id": "1429302359623991376",
-      "content": "",
-      "author": "bathoryp",
-      "reactions": 3,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1429376241743564952",
+      "channel_id": "1131839817982947429",
+      "content": "目前全体预兆10",
+      "author": "cs001092",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429357591191879802",
-      "content": "",
-      "author": "meatloversus",
-      "reactions": 3,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1429410000027258881",
+      "channel_id": "1131839817982947429",
+      "content": "不喜欢玩法其实完全没必要点开这个游戏",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429287023440826438",
-      "content": "【幻衣活动：不发糖就捣蛋】\n    ○ 在 10 月 20 日 9:00 - 12 月 15 日 9:00 期间，幻衣活动「不发糖就捣蛋」限时开放！\n     ",
-      "author": "morimensstaff02",
-      "reactions": 3,
-      "channel": "V2.3.4.0 停服维护公告"
+      "id": "1429411337859239966",
+      "channel_id": "1131839817982947429",
+      "content": "一看到礼包改版，马上就充钱了",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429426480017838234",
-      "content": "報告剛剛繼續找資料後發現用錯符號🌿我之後會再調整（陰暗爬行",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": ""
+      "id": "1429422768050671779",
+      "channel_id": "1131839817982947429",
+      "content": "喜歡嗎 死了",
+      "author": "xingkongzhiyao_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429343618933723198",
-      "content": "● 修复了「相位对弈」中唤醒体「希洛」的技能「宣战」无法正确获得蓄力的问题。\n明天更新內容",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "✅「已回答」希洛相位对弈bug"
+      "id": "1429426048797507676",
+      "channel_id": "1131839817982947429",
+      "content": "她們兩個同時出現代表情況不容樂觀",
+      "author": "xingkongzhiyao_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429430321484398723",
-      "content": "10/10",
-      "author": "idotly",
-      "reactions": 1,
-      "channel": "🤷"
-    },
-    {
-      "id": "1429366642818683012",
-      "content": "请支持糖果大盗墨菲本人",
-      "author": "nanmingyuan_02395",
-      "reactions": 1,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429287678188322846",
-      "content": "2. Battle\n[Awakener Enhancement]\n● Awakener \"Tawil\"\n    ○ Talent \"Soulforge Apti",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.3.4.0 停服维护公告"
-    },
-    {
-      "id": "1429478124806082740",
-      "content": "短暫的永恆毒觸發的效果被拔掉了",
-      "author": "snow.tubs",
-      "reactions": 1,
-      "channel": "相位對弈環境攻略"
-    },
-    {
-      "id": "1429442319634923641",
-      "content": "腦子被滿滿的兔子福瑞佔據",
+      "id": "1429508760241569853",
+      "channel_id": "1131839817982947429",
+      "content": "但是進展到一張打擊奶400了",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": ""
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429445640106283080",
-      "content": "喔，古老者？",
+      "id": "1429283138454032476",
+      "channel_id": "1131839817982947429",
+      "content": "其实是老登拉过来充邀请码的",
+      "author": "human10062",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429287022887178303",
+      "channel_id": "1131839817982947429",
+      "content": "說個笑話，塔薇加強了但深海還有一堆人沒加強＞\n深海平均強度與使用率勝過塔薇",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": ""
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1429446695045038191",
-      "content": "還有~~四處挖洞衣不蔽體~~奇怪五角衣物設計🌿",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
+      "id": "1429322999600910346",
+      "channel_id": "1131839817982947429",
+      "content": "源液買流明的管道好少\n充錢還是不夠流明來抽\n一堆源液🥲",
+      "author": "miyabyakuya",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429421472195022928",
+      "channel_id": "1131839817982947429",
+      "content": "「金色混沌攻擊者」",
+      "author": "corposant_1003",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429421959036403732",
+      "channel_id": "1131839817982947429",
+      "content": "阿遙成功的忘卻前夜玩家\nKai是失敗的忘卻前夜玩家",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

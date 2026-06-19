@@ -1,10 +1,16 @@
 {
   "date": "2025-11-22",
-  "messages": 18310,
+  "messages": 21156,
   "unique_authors": 445,
-  "reactions_total": 1995,
-  "attachments": 888,
+  "reactions_total": 2326,
+  "attachments": 1032,
   "channel_activity": {
+    "🔸general-chat": 220,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🐱light’s-nest": 6,
+    "🔸game-question": 2485,
+    "🔸忘却前夜┊morimens-tv": 5,
+    "🔸机器人命令┊bot-commands": 124,
     "🔸morimens-game-chat": 8747,
     "🔸剧情交流": 2,
     "🔸晒卡分享": 12,
@@ -63,46 +69,46 @@
     "誕妄．墨菲機制與搭配探討": 2,
     "N的究極羞辱": 7,
     "杜勒X皮的正史（肥腸確定": 7,
-    "🐱light’s-nest": 3,
     "1441904635123208233": 1
   },
   "hourly_activity": {
-    "1": 837,
-    "2": 668,
-    "3": 727,
-    "4": 760,
-    "5": 487,
-    "6": 944,
-    "7": 786,
-    "8": 467,
-    "9": 402,
-    "10": 1049,
-    "11": 990,
-    "12": 937,
-    "13": 853,
-    "14": 871,
-    "15": 1054,
-    "16": 1755,
-    "17": 924,
-    "18": 524,
-    "19": 585,
-    "20": 331,
-    "21": 613,
-    "22": 585,
-    "23": 557,
-    "0": 604
+    "0": 941,
+    "1": 1002,
+    "2": 952,
+    "3": 908,
+    "4": 1009,
+    "7": 845,
+    "8": 505,
+    "9": 463,
+    "10": 1159,
+    "11": 1046,
+    "12": 1009,
+    "13": 1026,
+    "14": 1097,
+    "15": 1162,
+    "16": 1847,
+    "17": 1180,
+    "18": 624,
+    "19": 611,
+    "20": 395,
+    "21": 627,
+    "22": 605,
+    "23": 583,
+    "6": 998,
+    "5": 562
   },
   "message_types": {
-    "0": 10510,
-    "19": 4806,
-    "46": 1
+    "19": 694,
+    "0": 2146,
+    "20": 6
   },
   "top_reacted_messages": [
     {
       "id": "1441697358722236478",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 161,
+      "reactions": 194,
       "channel": "🐱light’s-nest"
     },
     {
@@ -122,6 +128,7 @@
     },
     {
       "id": "1441699005733277717",
+      "channel_id": "1426837316533747823",
       "content": "It's hard to express how deeply her work has moved us. Her gentle colors have br",
       "author": "game.producer.light",
       "reactions": 24,
@@ -157,6 +164,14 @@
       "author": "snowyarcher",
       "reactions": 11,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441692744367214773",
+      "channel_id": "1435483703114596503",
+      "content": "A summary of every Ultra Realm awakener. This is meant to be a description of wh",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
       "id": "1441926731245031526",
@@ -198,6 +213,14 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1441801290085830669",
+      "channel_id": "1435483703114596503",
+      "content": "Edit with new V2.4 PV :3\n\nhttps://vm.tiktok.com/ZMATrBRpu/",
+      "author": "parovayabulochka",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1441635165007904868",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -236,22 +259,6 @@
       "author": "ena04564",
       "reactions": 6,
       "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1441685363117658183",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "dog_0630",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1441688668698972201",
-      "channel_id": "1300659802455674972",
-      "content": "กระดอ",
-      "author": "satachan",
-      "reactions": 6,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]
 }

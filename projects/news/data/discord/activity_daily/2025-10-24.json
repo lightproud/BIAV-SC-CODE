@@ -1,10 +1,12 @@
 {
   "date": "2025-10-24",
-  "messages": 133,
-  "unique_authors": 28,
-  "reactions_total": 253,
-  "attachments": 30,
+  "messages": 1092,
+  "unique_authors": 44,
+  "reactions_total": 396,
+  "attachments": 95,
   "channel_activity": {
+    "🔸綜合討論": 899,
+    "🔸阵容构建": 60,
     "24 Squish": 9,
     "Blackjack!": 3,
     "Karen": 2,
@@ -40,33 +42,33 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "18": 3,
+    "0": 14,
+    "1": 17,
+    "2": 25,
+    "3": 31,
+    "4": 22,
+    "5": 112,
+    "6": 28,
+    "7": 79,
+    "8": 15,
+    "9": 23,
+    "10": 174,
+    "11": 85,
+    "12": 48,
+    "13": 128,
+    "14": 232,
+    "15": 8,
+    "16": 5,
+    "17": 26,
+    "18": 7,
+    "23": 3,
     "19": 2,
     "21": 6,
-    "15": 3,
-    "17": 10,
-    "20": 2,
-    "4": 7,
-    "6": 9,
-    "3": 5,
-    "5": 11,
-    "7": 6,
-    "10": 13,
-    "0": 8,
-    "2": 2,
-    "11": 1,
-    "8": 6,
-    "12": 13,
-    "13": 4,
-    "9": 7,
-    "1": 8,
-    "16": 3,
-    "14": 3,
-    "23": 1
+    "20": 2
   },
   "message_types": {
-    "0": 62,
-    "19": 18
+    "19": 230,
+    "0": 729
   },
   "top_reacted_messages": [
     {
@@ -119,6 +121,30 @@
       "channel": "Karen"
     },
     {
+      "id": "1431198054140215356",
+      "channel_id": "1131839817982947429",
+      "content": "我请问呢<:dead:1356082627509092372>",
+      "author": "sweet_25367",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431275482317590540",
+      "channel_id": "1131839817982947429",
+      "content": "這照片是你嗎，崩壞星穹鐵道",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431346872127324232",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1431270786060128277",
       "content": "",
       "author": "yingmai_",
@@ -126,88 +152,76 @@
       "channel": ""
     },
     {
-      "id": "1431194558003281932",
-      "content": "丟一個把日期藏起來沒字ㄉ版本(⁠･ั⁠ω⁠･ั⁠)",
-      "author": "ass191044",
+      "id": "1431287170068512849",
+      "channel_id": "1131839817982947429",
+      "content": "【容灾5-5，纯逆天角色鸟弟隔着75加固打出百万流血，什么逆天数值-哔哩哔哩】 https://b23.tv/W4i6IO5\n~~都来看看加强的鸟弟多夸张~~",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431153300643778681",
+      "channel_id": "1131839817982947429",
+      "content": "好消息：真克寧妃了\n~~（前提是扛住死亡二連擊）~~",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431287492379938866",
+      "channel_id": "1131839817982947429",
+      "content": "昨天的幻梦他4t 320罪印",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431288880992096361",
+      "channel_id": "1131839817982947429",
+      "content": "（在我方也是",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431294080175833098",
+      "channel_id": "1131839817982947429",
+      "content": "周年也會七天登錄送一張sp墨菲嗎<:pray:1356053116260454534>",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431149908722978816",
+      "channel_id": "1131839817982947429",
+      "content": "在做了在做了 最快的话 V2.5",
+      "author": "game.producer.light",
       "reactions": 4,
-      "channel": "皮杜造謠同人圖"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431346801239396495",
-      "content": "(and I do too!!!)",
-      "author": "bagels5899",
-      "reactions": 2,
-      "channel": "24 Squish"
+      "id": "1431221715161317416",
+      "channel_id": "1131839817982947429",
+      "content": "人生中第一次摸到395🛐",
+      "author": "theal8893",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431160890702430298",
-      "content": "收到了，非常感谢解我燃眉之急<:pray:1356053116260454534> 接下来就等周年充值首冲再氪金了",
-      "author": "shanghuamochou8139",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+      "id": "1431269542897913976",
+      "channel_id": "1131839817982947429",
+      "content": "宣傳",
+      "author": "corposant_1003",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1431124281571414089",
-      "content": "其實是~~中性美人~~🌿",
-      "author": "ass191044",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1431334462553194509",
-      "content": "Ryker in this style is kinda spooky... ~~and hot~~",
-      "author": "nazhigezihk",
-      "reactions": 1,
-      "channel": "Blackjack!"
-    },
-    {
-      "id": "1431164425057996851",
-      "content": "The submission has been successful~\nThe video content complies with the submissi",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Morimens chap 8 be like"
-    },
-    {
-      "id": "1431165184826937355",
-      "content": "Many thanks mr Goya",
-      "author": "phanducthinh.com",
-      "reactions": 1,
-      "channel": "Morimens chap 8 be like"
-    },
-    {
-      "id": "1431164769565671424",
-      "content": "I have provided a detailed answer to this question in your post, you can take a ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1431223060198850671",
-      "content": "果然，我写的太黄还是不好啊，以后写清水算了（）",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1431249305372590212",
-      "content": "截到了！\nUid：100125811",
-      "author": "gooi6490",
-      "reactions": 1,
-      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
-    },
-    {
-      "id": "1431305727078695033",
-      "content": "Find Him!! UID:100365900",
-      "author": "35sui",
-      "reactions": 1,
-      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
-    },
-    {
-      "id": "1431255510706946078",
-      "content": "Ping me if you have other queries",
-      "author": "angbak",
-      "reactions": 1,
-      "channel": "Game Advice, Pulling, and Team Building"
+      "id": "1431272182134079639",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

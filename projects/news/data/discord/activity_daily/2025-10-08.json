@@ -1,10 +1,13 @@
 {
   "date": "2025-10-08",
-  "messages": 28,
-  "unique_authors": 10,
-  "reactions_total": 18,
-  "attachments": 8,
+  "messages": 12472,
+  "unique_authors": 214,
+  "reactions_total": 2594,
+  "attachments": 432,
   "channel_activity": {
+    "🔸綜合討論": 860,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 11583,
     "Beginner Progression Video Guide (with timestamps!) & Caro Realm Rundown": 2,
     "Flares' Comprehensive Beginner Guide to Morimens": 2,
     "team help": 3,
@@ -20,27 +23,63 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "1": 4,
-    "8": 1,
-    "14": 2,
-    "11": 1,
-    "18": 3,
-    "22": 2,
-    "23": 2,
-    "6": 1,
-    "13": 1,
-    "7": 5,
-    "17": 1,
-    "4": 2,
-    "9": 1,
-    "10": 1,
-    "12": 1
+    "0": 635,
+    "1": 663,
+    "2": 364,
+    "3": 433,
+    "4": 444,
+    "5": 354,
+    "6": 796,
+    "7": 730,
+    "8": 141,
+    "9": 207,
+    "10": 385,
+    "11": 533,
+    "12": 344,
+    "13": 584,
+    "14": 936,
+    "15": 654,
+    "16": 547,
+    "17": 781,
+    "18": 439,
+    "22": 425,
+    "23": 578,
+    "19": 378,
+    "20": 472,
+    "21": 649
   },
   "message_types": {
-    "0": 10,
-    "19": 5
+    "0": 8232,
+    "19": 4194,
+    "46": 2,
+    "23": 12,
+    "20": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1425293054805278742",
+      "channel_id": "1170692781216378960",
+      "content": "❌",
+      "author": "arisuu0604",
+      "reactions": 28,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425435511631384628",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sugarspawn",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425631851401183303",
+      "channel_id": "1170692781216378960",
+      "content": "Btw <@523084324724146193> in the scribbl.io thing they called you rawdawg, need ",
+      "author": "moyashi0672",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1425383929568956456",
       "content": "如题\n目前的环拉皮在游戏内没有完整立绘预览/局内战斗表现的界面展示\n导致玩家在购买前无法通过游戏内渠道知晓皮肤的相关细节 ~~甚至除去星级标识环拉皮和杜勒皮在购",
@@ -49,25 +88,132 @@
       "channel": "✅「已回答」是否考虑给皮肤增加预览/试玩界面"
     },
     {
-      "id": "1425379411573604382",
-      "content": "有bug有bug有bug",
-      "author": "lurenjiao",
-      "reactions": 4,
-      "channel": "✅「已回答」今天上线还是没发现有发延期补偿"
+      "id": "1425353566239064064",
+      "channel_id": "1170692781216378960",
+      "content": "i have a midterm later and i all i can think about is ghelot thais",
+      "author": "frowningquokka",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425380747853828206",
-      "content": "they just share the 0.5% SSR Awakener overall drop rate.",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？"
+      "id": "1425384407207903292",
+      "channel_id": "1170692781216378960",
+      "content": "(I read the books)",
+      "author": "nou._.101",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425343610450083894",
-      "content": "感谢您的帮助",
-      "author": "anzzz_a",
-      "reactions": 1,
-      "channel": "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？"
+      "id": "1425472536887558277",
+      "channel_id": "1170692781216378960",
+      "content": "HE IS COOKING ME",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425273521109598380",
+      "channel_id": "1170692781216378960",
+      "content": "guys if someone claims to be a girl here they're lying <:point:13560531122925118",
+      "author": "themomonger",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425275223007035523",
+      "channel_id": "1170692781216378960",
+      "content": "No they're not real",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425306025707180053",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425378860119232604",
+      "channel_id": "1170692781216378960",
+      "content": "Maybe I should pull Murphy in timeless <:scared2:1356085635374383145>",
+      "author": "iibenigml1588",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425379176311033886",
+      "channel_id": "1170692781216378960",
+      "content": "I've seen him rawdawg aigis... But I think that's a mistake we can all forgive",
+      "author": "enternameunavailable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425597559606481001",
+      "channel_id": "1170692781216378960",
+      "content": "h\ni\n\nc\nh\na\nt\n<:proud:1400771683664658433>",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425624241226907829",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425629344868597983",
+      "channel_id": "1170692781216378960",
+      "content": "why everyone is monkey react me",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425629526775300178",
+      "channel_id": "1170692781216378960",
+      "content": "yes i play League, i hate fun",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425276481914802326",
+      "channel_id": "1131839817982947429",
+      "content": "終於過了😄",
+      "author": "partycatss.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1425359822869762078",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425385426973098045",
+      "channel_id": "1170692781216378960",
+      "content": "I do not like cats",
+      "author": "red_rest",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425488071050133504",
+      "channel_id": "1170692781216378960",
+      "content": "have u played the game named HSR?",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-10-09",
-  "messages": 144,
-  "unique_authors": 21,
-  "reactions_total": 17,
-  "attachments": 12,
+  "messages": 11980,
+  "unique_authors": 198,
+  "reactions_total": 2238,
+  "attachments": 466,
   "channel_activity": {
+    "🔸綜合討論": 760,
+    "🔸阵容构建": 10,
+    "🔸morimens-game-chat": 11066,
     "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 1,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 7,
     "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 1,
@@ -37,131 +40,198 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "20": 1,
-    "0": 1,
-    "2": 21,
-    "3": 17,
-    "4": 2,
-    "6": 9,
-    "10": 10,
-    "11": 53,
-    "12": 2,
-    "23": 2,
-    "21": 2,
-    "8": 3,
-    "15": 3,
-    "19": 4,
-    "7": 1,
-    "13": 1,
-    "1": 3,
-    "9": 1,
-    "14": 2,
-    "18": 1,
-    "5": 4,
-    "16": 1
+    "0": 423,
+    "1": 496,
+    "2": 499,
+    "3": 653,
+    "4": 630,
+    "5": 387,
+    "6": 269,
+    "7": 441,
+    "8": 804,
+    "9": 705,
+    "10": 346,
+    "11": 846,
+    "12": 656,
+    "13": 538,
+    "14": 869,
+    "15": 722,
+    "16": 540,
+    "19": 167,
+    "20": 193,
+    "21": 466,
+    "22": 270,
+    "23": 557,
+    "17": 263,
+    "18": 240
   },
   "message_types": {
-    "0": 70,
-    "19": 25
+    "19": 4260,
+    "0": 7563,
+    "18": 1,
+    "23": 10,
+    "20": 2
   },
   "top_reacted_messages": [
     {
-      "id": "1425818686287253505",
+      "id": "1425853081278746636",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425832580409725010",
+      "channel_id": "1170692781216378960",
+      "content": "iibe if you can see this give me a sign",
+      "author": "bagels5899",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425960700810891275",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone on this server is trans",
+      "author": "inana_istar",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425781019885437040",
+      "channel_id": "1131839817982947429",
+      "content": "就差...億點...",
+      "author": "nazhigezihk",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1425718037159608385",
+      "channel_id": "1170692781216378960",
+      "content": "At least i didn't get muted BY THE DEVS",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425867558375915540",
+      "channel_id": "1170692781216378960",
+      "content": "I ignored flares tier list and Clem is my best character tbh",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425701206332014603",
+      "channel_id": "1170692781216378960",
+      "content": "The height of degeneracy, censored to protect innocent eyes",
+      "author": "kezrin",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425752599491117106",
+      "channel_id": "1170692781216378960",
+      "content": "bok choy",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425828960297816196",
+      "channel_id": "1170692781216378960",
+      "content": "i look completely gorgeous and cute",
+      "author": "nyctno",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425853258383097909",
+      "channel_id": "1170692781216378960",
       "content": "",
+      "author": "_hyuuun",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425856072639316070",
+      "channel_id": "1170692781216378960",
+      "content": "Maybe then u won't want to rawdawg kids",
+      "author": "lotan_045",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1425883721487352062",
+      "channel_id": "1131839817982947429",
+      "content": "那還得是血希",
       "author": "sakura8901",
-      "reactions": 2,
-      "channel": "剛登入第四天 有些新手問題想問"
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1425766811856539688",
-      "content": "100% skill issue here haha, here is my team to clear it as u can see i don't hav",
-      "author": "phanducthinh.com",
-      "reactions": 2,
-      "channel": "Get help to pass 5-14"
-    },
-    {
-      "id": "1425857100235538462",
-      "content": "<@734052554027040809>  Man i had bad new for u man, chap 7 sudden so hard for me",
-      "author": "phanducthinh.com",
-      "reactions": 2,
-      "channel": "Get help to pass 5-14"
-    },
-    {
-      "id": "1425669993231810712",
-      "content": "The list of winners will be announced in the comments section before next Friday",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1425671288755847238",
-      "content": "大家记得在把自己的作品填写到投稿链接里~戈雅发现有一些守密人没有填写链接<:Cheerup:1400771555939844149> \nRemember to ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1425800712457031720",
-      "content": "你確定不是1000盾的傷害",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "剛登入第四天 有些新手問題想問"
-    },
-    {
-      "id": "1425802269693317220",
-      "content": "居然有一片頂的",
+      "id": "1425926485172031538",
+      "channel_id": "1131839817982947429",
+      "content": "索了一個是本來就會期他也滿?",
       "author": "sakura8901",
-      "reactions": 1,
-      "channel": "剛登入第四天 有些新手問題想問"
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1425658493779578880",
-      "content": "i never used costco so i dont have much to say about the wheels, but i think fin",
-      "author": "reverie.is.dead",
-      "reactions": 1,
-      "channel": "Get help to pass 5-14"
+      "id": "1425852846355644436",
+      "channel_id": "1170692781216378960",
+      "content": "I did a5 with only a level 1 doll\n(in my dream last night)",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425729175079223346",
-      "content": "Thank everyone, I have passed the level by using 3 gnosis 🥲",
-      "author": "quan8122",
-      "reactions": 1,
-      "channel": "Get help to pass 5-14"
+      "id": "1425857800395034744",
+      "channel_id": "1170692781216378960",
+      "content": "im pretty sure if a dude was interested, you'd say yes",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425911067711770654",
-      "content": "101049058",
-      "author": "dusha_69",
-      "reactions": 1,
-      "channel": "✅「Answered」Name change"
+      "id": "1425712123924713574",
+      "channel_id": "1131839817982947429",
+      "content": "转了就100%了但是狂气回充没一点用…\n等待，等待",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1425732971981443170",
-      "content": "Thank you for the feedback. I will inquire about it🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?"
+      "id": "1425700531539804231",
+      "channel_id": "1170692781216378960",
+      "content": "🫄",
+      "author": "enternameunavailable",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425675222207565946",
-      "content": "感谢反馈，这个问题戈雅已经反馈了~还在确认中<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」手冊介面"
+      "id": "1425777061888524351",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "shagaru0802",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425686321241919488",
-      "content": "Hi, we have found the cause and it was due to incorrect identification and posit",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\""
+      "id": "1425806549594542131",
+      "channel_id": "1170692781216378960",
+      "content": "~~probably more than Arisu ~~",
+      "author": "_hyuuun",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1425674903150923838",
-      "content": "thanks a lot",
-      "author": "zerami",
-      "reactions": 1,
-      "channel": "✅「Answered」question about fan content"
+      "id": "1425828997601820744",
+      "channel_id": "1170692781216378960",
+      "content": "how dare you insult me, and tomimi\\",
+      "author": "nyctno",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

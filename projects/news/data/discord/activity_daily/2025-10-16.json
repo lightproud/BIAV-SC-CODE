@@ -1,10 +1,12 @@
 {
   "date": "2025-10-16",
-  "messages": 143,
-  "unique_authors": 25,
-  "reactions_total": 108,
-  "attachments": 21,
+  "messages": 7817,
+  "unique_authors": 196,
+  "reactions_total": 1338,
+  "attachments": 257,
   "channel_activity": {
+    "🔸綜合討論": 1044,
+    "🔸morimens-game-chat": 6630,
     "Pre Release - Pollux Kit Review.": 1,
     "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux": 4,
     "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 87,
@@ -24,29 +26,35 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "20": 1,
-    "1": 2,
-    "8": 4,
-    "10": 1,
-    "14": 93,
-    "16": 3,
-    "18": 3,
-    "22": 1,
-    "3": 11,
-    "4": 2,
-    "7": 4,
-    "6": 1,
-    "15": 2,
-    "17": 2,
-    "11": 4,
-    "13": 2,
-    "12": 1,
-    "23": 4,
-    "0": 2
+    "0": 180,
+    "1": 174,
+    "2": 331,
+    "3": 474,
+    "4": 481,
+    "5": 721,
+    "6": 696,
+    "7": 506,
+    "8": 187,
+    "9": 290,
+    "10": 461,
+    "11": 538,
+    "12": 619,
+    "13": 872,
+    "14": 792,
+    "15": 300,
+    "16": 31,
+    "17": 15,
+    "18": 14,
+    "19": 1,
+    "22": 7,
+    "23": 126,
+    "20": 1
   },
   "message_types": {
-    "0": 82,
-    "19": 27
+    "0": 5225,
+    "19": 2443,
+    "23": 3,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -64,11 +72,107 @@
       "channel": "🎧 V2.3.4 四星幻衣「墨菲·糖果劫案」广播剧：幽灵故事会┊Murphy's Skin \"Candy Snatcher\" Radio Drama - Ghost Story Time"
     },
     {
+      "id": "1428223314756767847",
+      "channel_id": "1170692781216378960",
+      "content": "going to +12 soon <:pray:1356053116260454534>",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428364645823156314",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1428385941294153759",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1428385734267502845\nMade a post",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428235574149648394",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428286175331745822",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428331821967605770",
+      "channel_id": "1131839817982947429",
+      "content": "是的是的",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1428284156793720842",
+      "channel_id": "1170692781216378960",
+      "content": "banned",
+      "author": "craux.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428359591552618496",
+      "channel_id": "1170692781216378960",
+      "content": "The reason why it's called MoriMen**s** is because of bugged AI translation",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1428388260446601336",
       "content": "就會被你們帶壞開始整天口口",
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428358822090768516",
+      "channel_id": "1131839817982947429",
+      "content": "通通跟深海一起當腦弱魚人",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1428227532498403369",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428319645399515266",
+      "channel_id": "1170692781216378960",
+      "content": "i want pollux frenzy to include male pregnancy",
+      "author": "tnimreppep",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428401741208096908",
+      "channel_id": "1170692781216378960",
+      "content": "her album is so bad if u slander it on twitter, no one send ded threats to u",
+      "author": "phi_squared",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1428391562596974614",
@@ -92,102 +196,20 @@
       "channel": "✅「已回答」什麼時候把這東西調回來"
     },
     {
-      "id": "1428392526699692244",
-      "content": "",
-      "author": "welcome8344",
-      "reactions": 4,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+      "id": "1428183761211621499",
+      "channel_id": "1131839817982947429",
+      "content": "我好像是186天",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1428390215751565485",
-      "content": "圖魯🚮",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428391466165735425",
-      "content": "機制寫明了玩法\n本身吃抽牌拐，就讓你在超維回合用其他方法把他的牌抽上來打\n壓根沒希望你把他的牌塞進空間的想法",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428225585758601236",
-      "content": "<@173143524324147200> <@1171539234176389241> Yes, but currently the English vers",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Question about fanart & merch"
-    },
-    {
-      "id": "1428387779859185716",
-      "content": "之前還看到有人會在下面發中文的，不過現在可能放棄了",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428387900424323234",
-      "content": "他有說郭他會試試看的!",
-      "author": "melody60925",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428388111792210000",
-      "content": "可以看得出來你很拘謹，Dc待幾個月後把校貓前塵往事了解完你就直接罵了🫰",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428388490634199100",
-      "content": "哈吉咪忘本也不是一天兩天的事了",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428388683874304032",
-      "content": "<:nekoinnocent:1200338279145414656>",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428390366221959179",
-      "content": "圖魯那個已經是~~霍金~~了",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428216579602256014",
-      "content": "you need a copy of her to use her skin, at least that's how it worked so far. sh",
-      "author": "silencio3507",
-      "reactions": 2,
-      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
-    },
-    {
-      "id": "1428518661299376158",
-      "content": "I AGREE WITH THIS GUY 👆",
-      "author": "bongosjam",
-      "reactions": 2,
-      "channel": "Agrippa background with open eyes"
-    },
-    {
-      "id": "1428387457480785920",
-      "content": "建議直接罵就好了，不用太禮貌",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428387485695742144",
-      "content": "建議直接罵就好了，不用太禮貌",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+      "id": "1428196099168014419",
+      "channel_id": "1131839817982947429",
+      "content": "不管 我要曬我的分數",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

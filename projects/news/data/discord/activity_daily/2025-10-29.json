@@ -1,10 +1,12 @@
 {
   "date": "2025-10-29",
-  "messages": 263,
-  "unique_authors": 46,
-  "reactions_total": 506,
-  "attachments": 46,
+  "messages": 1199,
+  "unique_authors": 47,
+  "reactions_total": 701,
+  "attachments": 107,
   "channel_activity": {
+    "🔸綜合討論": 932,
+    "🔸阵容构建": 4,
     "Clementine!!!": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
@@ -37,29 +39,33 @@
     "1356210707867107391": 2
   },
   "hourly_activity": {
-    "12": 19,
-    "15": 12,
-    "1": 2,
-    "7": 63,
-    "8": 6,
-    "9": 10,
-    "10": 15,
-    "11": 24,
-    "13": 25,
-    "14": 27,
-    "17": 3,
-    "22": 2,
-    "5": 20,
-    "6": 14,
-    "16": 4,
-    "19": 2,
-    "18": 8,
-    "3": 6,
-    "4": 1
+    "0": 24,
+    "1": 5,
+    "2": 113,
+    "3": 21,
+    "4": 74,
+    "5": 101,
+    "6": 45,
+    "7": 125,
+    "8": 39,
+    "9": 28,
+    "10": 25,
+    "11": 64,
+    "12": 36,
+    "13": 48,
+    "14": 270,
+    "15": 41,
+    "16": 74,
+    "17": 11,
+    "18": 12,
+    "19": 22,
+    "20": 3,
+    "22": 11,
+    "23": 7
   },
   "message_types": {
-    "0": 119,
-    "19": 42
+    "19": 225,
+    "0": 711
   },
   "top_reacted_messages": [
     {
@@ -147,11 +153,35 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1432989264613871647",
+      "channel_id": "1131839817982947429",
+      "content": "是因为联动这个便宜吗",
+      "author": "carme.0588",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1432994414388842497",
       "content": "# 銀芯科技還是太強大了",
       "author": "ena04564",
       "reactions": 10,
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432978405728583680",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433078858957062306",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "123zhang0036",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1432996517475651624",
@@ -161,45 +191,26 @@
       "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
     },
     {
+      "id": "1433011341685166130",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433225734821904454",
+      "channel_id": "1131839817982947429",
+      "content": "反正我都沒有",
+      "author": "universe.dark",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1432992406663331952",
       "content": "我不行了，你游是在cos什么二游送葬人吗？<:processing:1357185814567718963>",
       "author": "wuxu0045_64015",
       "reactions": 7,
-      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
-    },
-    {
-      "id": "1432998771226316872",
-      "content": "校🐱：先记录下这些游戏名，接下来有可能用得到<:takenotes:1357186646294138890>",
-      "author": "cs001092",
-      "reactions": 6,
-      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
-    },
-    {
-      "id": "1433092682644717568",
-      "content": "cheap collab and they get to do what ever they want with the IP, it's not like a",
-      "author": "wolfierce",
-      "reactions": 6,
-      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
-    },
-    {
-      "id": "1432994749731831869",
-      "content": "所以原來是專門去找屍體聯動的嗎",
-      "author": "ice_storys",
-      "reactions": 6,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433006952987754556",
-      "content": "Seconding Alchemy Stars~ I think the Grimlight devs would also be open to it!",
-      "author": "dahongtsa",
-      "reactions": 6,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433097890883964999",
-      "content": "So if I understand correctly, that one Posse which is traphase only is another c",
-      "author": "zekiei",
-      "reactions": 5,
       "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
     }
   ]

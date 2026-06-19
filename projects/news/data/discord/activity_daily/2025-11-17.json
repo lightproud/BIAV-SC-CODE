@@ -1,10 +1,15 @@
 {
   "date": "2025-11-17",
-  "messages": 25572,
+  "messages": 30903,
   "unique_authors": 468,
-  "reactions_total": 3631,
-  "attachments": 1731,
+  "reactions_total": 4052,
+  "attachments": 2039,
   "channel_activity": {
+    "🔸general-chat": 2601,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
+    "🔸game-question": 2467,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸机器人命令┊bot-commands": 234,
     "🔸剧情交流": 27,
     "🔸晒卡分享": 31,
     "🔸相位对弈": 52,
@@ -139,35 +144,35 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "7": 1065,
-    "10": 1218,
-    "11": 719,
-    "13": 1117,
-    "16": 881,
-    "18": 824,
-    "4": 2440,
-    "5": 1543,
-    "8": 1145,
-    "17": 999,
-    "22": 722,
-    "23": 1096,
-    "6": 1179,
-    "3": 1336,
-    "9": 839,
-    "12": 839,
-    "14": 935,
-    "15": 931,
-    "0": 757,
-    "1": 1097,
-    "2": 1547,
-    "19": 879,
-    "20": 826,
-    "21": 638
+    "0": 1075,
+    "1": 1293,
+    "2": 1907,
+    "3": 1501,
+    "4": 2575,
+    "5": 1768,
+    "6": 1390,
+    "7": 1454,
+    "8": 1413,
+    "9": 1061,
+    "10": 1361,
+    "11": 832,
+    "12": 1060,
+    "13": 1475,
+    "14": 1254,
+    "15": 1108,
+    "16": 1021,
+    "17": 1123,
+    "18": 854,
+    "19": 957,
+    "20": 933,
+    "21": 1199,
+    "22": 951,
+    "23": 1338
   },
   "message_types": {
-    "0": 7461,
-    "19": 2226,
-    "20": 1
+    "0": 3695,
+    "19": 1615,
+    "20": 21
   },
   "top_reacted_messages": [
     {
@@ -267,6 +272,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1440097313115602965",
+      "channel_id": "1400750050208125010",
+      "content": "I-i like bloons haha",
+      "author": "snca_genesis",
+      "reactions": 13,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1439822807763521556",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -299,27 +312,19 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1439920667872067594",
+      "channel_id": "1400750050208125010",
+      "content": "we got 🅱️ots",
+      "author": "hskzu",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1439820859576549388",
       "channel_id": "1170692781216378960",
       "content": "Have you ever heard of the hit game Morimens? Well let me tell you, do 👌😧 not sl",
       "author": "good.th",
       "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1439823175574884486",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1439779733389967400",
-      "channel_id": "1170692781216378960",
-      "content": "Hi im new lol",
-      "author": "james0064",
-      "reactions": 10,
       "channel": "🔸morimens-game-chat"
     }
   ]

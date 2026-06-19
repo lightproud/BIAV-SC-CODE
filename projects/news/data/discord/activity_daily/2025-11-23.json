@@ -1,10 +1,15 @@
 {
   "date": "2025-11-23",
-  "messages": 14013,
+  "messages": 16751,
   "unique_authors": 388,
-  "reactions_total": 3736,
-  "attachments": 711,
+  "reactions_total": 3824,
+  "attachments": 823,
   "channel_activity": {
+    "🔸general-chat": 121,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 2548,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 59,
     "🔸morimens-game-chat": 7035,
     "🔸剧情交流": 21,
     "🔸晒卡分享": 37,
@@ -66,36 +71,36 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "0": 390,
-    "1": 683,
-    "2": 318,
-    "3": 606,
-    "4": 646,
-    "5": 705,
-    "6": 584,
-    "7": 641,
-    "8": 746,
-    "9": 410,
-    "10": 718,
-    "11": 1081,
-    "12": 755,
-    "13": 629,
-    "14": 574,
-    "15": 381,
-    "16": 419,
-    "17": 490,
-    "18": 576,
-    "19": 566,
-    "20": 575,
-    "21": 527,
-    "22": 413,
-    "23": 580
+    "0": 422,
+    "1": 699,
+    "2": 363,
+    "3": 687,
+    "4": 972,
+    "5": 743,
+    "6": 699,
+    "7": 683,
+    "8": 784,
+    "10": 798,
+    "11": 1252,
+    "12": 840,
+    "14": 623,
+    "15": 631,
+    "16": 698,
+    "17": 562,
+    "18": 634,
+    "19": 664,
+    "20": 595,
+    "21": 597,
+    "22": 658,
+    "23": 875,
+    "9": 432,
+    "13": 840
   },
   "message_types": {
-    "0": 8147,
-    "19": 3257,
-    "46": 1,
-    "20": 1
+    "0": 2040,
+    "19": 694,
+    "6": 1,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -197,6 +202,22 @@
       "channel": ""
     },
     {
+      "id": "1442302680411406516",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1442116724903378984",
+      "channel_id": "1435483703114596503",
+      "content": "A quick clear of Pollux oneshotting HM Blessor <:M_satisfy:1400771690321154110> ",
+      "author": "annaxxe_",
+      "reactions": 8,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
       "id": "1442155917276610665",
       "channel_id": "1326453763355185215",
       "content": "",
@@ -233,22 +254,6 @@
       "author": "dog794",
       "reactions": 7,
       "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1442293198566461530",
-      "channel_id": "1300659662311526512",
-      "content": "porque aequor es lo q manda en el juego",
-      "author": "null.pointer_exception",
-      "reactions": 7,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1441951586480951427",
-      "channel_id": "1170692781216378960",
-      "content": "and ramona suddenly appeared irl and said \"you're the mori to my mens\"",
-      "author": "liluaa",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

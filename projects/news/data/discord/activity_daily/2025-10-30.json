@@ -1,10 +1,12 @@
 {
   "date": "2025-10-30",
-  "messages": 167,
-  "unique_authors": 15,
-  "reactions_total": 1135,
-  "attachments": 29,
+  "messages": 988,
+  "unique_authors": 47,
+  "reactions_total": 1346,
+  "attachments": 106,
   "channel_activity": {
+    "🔸綜合討論": 818,
+    "🔸阵容构建": 3,
     "Ogier": 2,
     "Тулу фанарт": 1,
     "Happy Halloween 🎃": 3,
@@ -25,26 +27,34 @@
     "1432654338982940783": 10
   },
   "hourly_activity": {
-    "7": 2,
-    "15": 106,
-    "19": 5,
-    "20": 1,
-    "6": 3,
-    "12": 4,
-    "16": 6,
-    "17": 4,
-    "18": 4,
-    "13": 4,
-    "14": 16,
-    "22": 3,
-    "5": 3,
-    "8": 2,
-    "21": 1,
-    "10": 3
+    "0": 7,
+    "1": 3,
+    "2": 82,
+    "3": 7,
+    "4": 16,
+    "5": 31,
+    "6": 65,
+    "7": 96,
+    "8": 45,
+    "9": 40,
+    "10": 82,
+    "11": 56,
+    "12": 56,
+    "13": 91,
+    "14": 119,
+    "15": 146,
+    "16": 9,
+    "17": 11,
+    "18": 6,
+    "20": 3,
+    "21": 2,
+    "22": 9,
+    "23": 1,
+    "19": 5
   },
   "message_types": {
-    "0": 93,
-    "19": 44
+    "0": 599,
+    "19": 222
   },
   "top_reacted_messages": [
     {
@@ -83,6 +93,14 @@
       "channel": "Erica my pookie"
     },
     {
+      "id": "1433582401736675369",
+      "channel_id": "1131839817982947429",
+      "content": "打了100天也是勉强吃了个400",
+      "author": "timbite",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1433426782308274257",
       "content": "I used to upload this on Tumblr and I just discover this channel\nSo I will uploa",
       "author": "noeyebunny.nobunsu",
@@ -97,6 +115,46 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1433357218647904381",
+      "channel_id": "1131839817982947429",
+      "content": "凹贏了",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433402134132690945",
+      "channel_id": "1131839817982947429",
+      "content": "凱刻斯是一種盲腸",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433465640789872822",
+      "channel_id": "1131839817982947429",
+      "content": "就不用浪費時間去改普圖的代碼了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433468334254461070",
+      "channel_id": "1131839817982947429",
+      "content": "發出了亞洲父母的聲音",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433474649290965083",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1433501852842070089",
       "content": "联动归龙潮吧，已经宣布停服了",
       "author": "fushengyihua",
@@ -104,88 +162,52 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
-      "id": "1433478774095089837",
-      "content": "also ||we actually know that BIAV has a Tsathoggua draft, still unsure if we wil",
-      "author": "_venush",
+      "id": "1433280465736957953",
+      "channel_id": "1131839817982947429",
+      "content": "看到一堆人說普發的一萬要拿去供給女聲優、女偶像、男偶像、Vtuber\n\n我還是要勸大家多把這筆錢花在自己的現實生活上。\n\n像我就很實際，一萬塊會拿去給我的醫生克",
+      "author": "undecember_news",
       "reactions": 4,
-      "channel": "Lovecraft and other reference I found in Morimens"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433473399312613569",
+      "id": "1433359240788971560",
+      "channel_id": "1131839817982947429",
+      "content": "||老玩家通常也都玩不起||",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1433359509971144804",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "aegisx",
-      "reactions": 3,
-      "channel": "✅「Answered」About new Ryker buff"
+      "author": "dog794",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433517744682172530",
-      "content": "N is everywhere",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 2,
-      "channel": "Lovecraft and other reference I found in Morimens"
+      "id": "1433363097216745563",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "neptinu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433475378046963762",
-      "content": "剛開始看到希洛就把常駐抽全灌在血肉池（當時覺得希洛算蠻好看的）然後大概就是按原神的邏輯配隊 連猩紅熔爐 胚胎吞噬都不知道",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 2,
-      "channel": "回坑玩家配队求助"
+      "id": "1433403478323232900",
+      "channel_id": "1131839817982947429",
+      "content": "珊的4费卡是不是进图就可以卖掉了",
+      "author": "neptinu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1433351255958491226",
-      "content": "o hey my bestie commd you recently",
-      "author": "zuraznable",
-      "reactions": 1,
-      "channel": "Ogier"
-    },
-    {
-      "id": "1433545228501123234",
-      "content": "I love your chibi artstyle <:happy:1356053849894420683>",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Happy Halloween 🎃"
-    },
-    {
-      "id": "1433480682918908059",
-      "content": "This game gives me a lot of inspiration for my own creation, I'm so excited",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433480854658879518",
-      "content": "But I guess I missed that event Orz",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433481445485183037",
-      "content": "This screenshot is not mine, but my friend shows it to me.\nAnd I was like \"WILBU",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433482313332686999",
-      "content": "Or else I would be \"Roger, tell me about my son!!! \"",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433467093663350935",
-      "content": "在第八章，8-11",
-      "author": "1458675044",
-      "reactions": 1,
-      "channel": "回坑玩家配队求助"
-    },
-    {
-      "id": "1433471167888363580",
-      "content": "複製神父二費",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "回坑玩家配队求助"
+      "id": "1433443878060556469",
+      "channel_id": "1131839817982947429",
+      "content": "感謝兌換碼<:Cheerup:1400771555939844149>",
+      "author": "0.0._.0_0.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }
