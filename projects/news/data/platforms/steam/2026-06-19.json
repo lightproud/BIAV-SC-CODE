@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T06:10:04.873308+00:00",
+  "archived_at": "2026-06-19T11:16:50.920248+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] Great Game.",
@@ -198,6 +198,50 @@
         "playtime_forever": 478,
         "votes_up": 0,
         "timestamp_created": 1781830381
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 豪丸",
+      "summary": "豪丸",
+      "source": "steam_review",
+      "time": "2026-06-19T08:52:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198847924171/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198847924171",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1151,
+        "votes_up": 0,
+        "timestamp_created": 1781859176
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Gothic maxxing",
+      "summary": "Gothic maxxing",
+      "source": "steam_review",
+      "time": "2026-06-19T06:12:48+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198838488073/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198838488073",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1659,
+        "votes_up": 0,
+        "timestamp_created": 1781849568
       },
       "lang": "",
       "platform_region": "global"

@@ -1,8 +1,18 @@
 {
-  "collected_at": "2026-06-19T06:09:52.787436+00:00",
+  "collected_at": "2026-06-19T11:16:35.955843+00:00",
   "source": "steam_discussion",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-19T07:21:23+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Stuck in Logging into the User Center",
+      "summary": "As the title suggest, I wanted to play on PC, I've tried this a bit before on my old phone and wanted to start fresh with a new account on Steam but I'm just stuck here at the front page and it just keeps saying stuck in logging into the user center, it loads a bit and then just disappears, I just keep spamming Enter Mythag to no avail.\n\nIs this a bug or what? My internet is pretty high, I run about 700-900mpbs so I highly doubt it's my internet....",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624941024/",
+      "author": "Keres",
+      "engagement": 4
+    },
     {
       "source": "steam_discussion",
       "time": "2026-06-18T11:52:02+00:00",
@@ -12,26 +22,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624818868/",
       "author": "ScorpionWasp",
       "engagement": 4
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-18T16:37:01+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Stuck in Logging into the User Center",
-      "summary": "As the title suggest, I wanted to play on PC, I've tried this a bit before on my old phone and wanted to start fresh with a new account on Steam but I'm just stuck here at the front page and it just keeps saying stuck in logging into the user center, it loads a bit and then just disappears, I just keep spamming Enter Mythag to no avail.\n\nIs this a bug or what? My internet is pretty high, I run about 700-900mpbs so I highly doubt it's my internet....",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624941024/",
-      "author": "Keres",
-      "engagement": 2
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-18T11:13:59+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Deadly Magic",
-      "summary": "There's an achievement in the first chapter called Deadly Magic that says you have to Exalt 3+ times in one turn. I've done this multiple times but it won't activate. Am I missing something, or is this a bug?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624915797/",
-      "author": "darthbeandip",
-      "engagement": 1
     }
   ]
 }
