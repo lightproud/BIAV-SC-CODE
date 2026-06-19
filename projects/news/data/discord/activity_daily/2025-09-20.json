@@ -1,10 +1,11 @@
 {
   "date": "2025-09-20",
-  "messages": 29,
-  "unique_authors": 5,
-  "reactions_total": 43,
-  "attachments": 8,
+  "messages": 1200,
+  "unique_authors": 37,
+  "reactions_total": 341,
+  "attachments": 66,
   "channel_activity": {
+    "🔸綜合討論": 1171,
     "Thais Warm up": 1,
     "Pls help explain how to play my team in depth": 1,
     "Worth buying Doll shards?": 1,
@@ -18,20 +19,31 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "2": 3,
-    "12": 1,
-    "20": 1,
-    "6": 1,
-    "23": 2,
-    "8": 2,
-    "10": 9,
-    "5": 2,
-    "14": 6,
-    "15": 1,
-    "16": 1
+    "1": 1,
+    "2": 11,
+    "3": 26,
+    "4": 33,
+    "5": 75,
+    "6": 251,
+    "7": 312,
+    "8": 145,
+    "9": 64,
+    "10": 57,
+    "11": 51,
+    "12": 29,
+    "13": 88,
+    "14": 15,
+    "15": 4,
+    "16": 13,
+    "17": 6,
+    "18": 10,
+    "20": 3,
+    "21": 3,
+    "23": 3
   },
   "message_types": {
-    "0": 3
+    "19": 355,
+    "0": 816
   },
   "top_reacted_messages": [
     {
@@ -40,6 +52,86 @@
       "author": "ftyannn",
       "reactions": 22,
       "channel": "詹金"
+    },
+    {
+      "id": "1418915264300585033",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418862849714819113",
+      "channel_id": "1131839817982947429",
+      "content": "生之於海\n用之於海\n食之於海\n死之於海",
+      "author": "magushermes",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419018153308192908",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418892166675304478",
+      "channel_id": "1131839817982947429",
+      "content": "小確幸 ...",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418958223762788453",
+      "channel_id": "1131839817982947429",
+      "content": "我一張罰單而已",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418817151741202552",
+      "channel_id": "1131839817982947429",
+      "content": "所以他偏心",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418836530319069266",
+      "channel_id": "1131839817982947429",
+      "content": "https://tenor.com/view/everyone-ping-discord-useless-gif-18197332",
+      "author": "aprohectus",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418850423057416275",
+      "channel_id": "1131839817982947429",
+      "content": "好像忘卻前夜已經倒了十年",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418861119002644530",
+      "channel_id": "1131839817982947429",
+      "content": "可以奧瑞塔",
+      "author": "magushermes",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418932294550556702",
+      "channel_id": "1131839817982947429",
+      "content": "打王  哇 塔薇大人\n進王關狀態不錯",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1418838897483579492",
@@ -63,25 +155,52 @@
       "channel": ""
     },
     {
-      "id": "1418853848847749181",
-      "content": "如题，部分角色立绘和幻衣放大后分辨率较差，后续是否会引入优化或是独立资源包？\n目前的重灾区是杜勒塞因幻衣勿忘我\n卡斯托尔和环行拉蒙娜这类立绘本身精度高/拥有动态",
-      "author": "rutsah_avhril",
+      "id": "1418840934904238102",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼那麼久還沒有炎上事件😡 😡",
+      "author": "shchng.",
       "reactions": 4,
-      "channel": "✅「已回答」角色立绘/缩略图画质优化"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418793371887079565",
-      "content": "<:pray:1400771650064089112>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+      "id": "1418843261770137710",
+      "channel_id": "1131839817982947429",
+      "content": "把塔微削成紅花的強度🤓 🤓",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418872460924813343",
-      "content": "the issue isn't that it's just Steam client, but SteamOS is based on a another O",
-      "author": "wolfierce",
-      "reactions": 1,
-      "channel": "✅「Answered」We need steamOS compatibility"
+      "id": "1418843404120489996",
+      "channel_id": "1131839817982947429",
+      "content": "不如把紅花增強成塔薇強度",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418867756639719557",
+      "channel_id": "1131839817982947429",
+      "content": "回朔芯   幾百年前用掉了🤔",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418878087923241022",
+      "channel_id": "1131839817982947429",
+      "content": "忘卻篇，有計劃給鯨魚做滿暴傷的36環，結果被星辰篇背刺\n星辰篇，有計劃給鯨魚做滿暴傷的四月，結果又被死抗怪背刺\n☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418958997549088948",
+      "channel_id": "1131839817982947429",
+      "content": "然後我就要買200件兔兔內褲",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

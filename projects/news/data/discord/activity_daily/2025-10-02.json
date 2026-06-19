@@ -1,10 +1,28 @@
 {
   "date": "2025-10-02",
-  "messages": 10618,
+  "messages": 11638,
   "unique_authors": 179,
-  "reactions_total": 1691,
-  "attachments": 403,
+  "reactions_total": 1873,
+  "attachments": 464,
   "channel_activity": {
+    "🔸晒卡分享": 7,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 6,
+    "🔸русский-канал": 421,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 111,
+    "🔸canal-português": 2,
+    "🔸ruang-obrolan-indonesia": 37,
+    "🔸ห้องสนทนาภาษาไทย": 15,
+    "🔸traphase": 46,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 12,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 19,
+    "🔸general-chat": 279,
+    "🔸邀请码互助┊swap-invitation-codes": 22,
     "🔸綜合討論": 400,
     "🔸morimens-game-chat": 10097,
     "Tinct on a swing": 1,
@@ -38,36 +56,34 @@
     "1423337172655935600": 3
   },
   "hourly_activity": {
-    "0": 263,
-    "1": 135,
-    "2": 98,
-    "3": 328,
-    "4": 436,
-    "5": 293,
-    "6": 521,
-    "7": 276,
-    "8": 514,
-    "9": 385,
-    "10": 362,
-    "11": 720,
-    "12": 410,
-    "13": 336,
-    "14": 892,
-    "16": 852,
-    "15": 779,
-    "17": 470,
-    "18": 546,
-    "19": 315,
-    "20": 382,
-    "21": 498,
-    "22": 378,
-    "23": 429
+    "2": 108,
+    "6": 554,
+    "8": 594,
+    "1": 146,
+    "4": 457,
+    "5": 303,
+    "13": 358,
+    "19": 330,
+    "22": 399,
+    "0": 308,
+    "12": 456,
+    "17": 615,
+    "18": 667,
+    "20": 481,
+    "21": 571,
+    "15": 791,
+    "16": 885,
+    "10": 367,
+    "11": 806,
+    "23": 454,
+    "7": 282,
+    "9": 481,
+    "3": 331,
+    "14": 894
   },
   "message_types": {
-    "0": 7251,
-    "19": 3226,
-    "23": 19,
-    "20": 1
+    "19": 158,
+    "0": 862
   },
   "top_reacted_messages": [
     {
@@ -91,6 +107,22 @@
       "author": "arisuu0604",
       "reactions": 16,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423299508896272455",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "vvsn2022_88658",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1423131780986306561",
+      "channel_id": "1174983699935277147",
+      "content": "舒服了",
+      "author": "quackdayo",
+      "reactions": 13,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1423367530717773854",
@@ -133,6 +165,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1423188378240815174",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "dog794",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1423310006270431447",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -155,6 +195,14 @@
       "author": "moyashi0672",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423220008619737168",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "elv_juan.carlos",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1423151305014382643",
@@ -195,38 +243,6 @@
       "author": "sirtealot",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423327884226990152",
-      "channel_id": "1170692781216378960",
-      "content": "this is one of the cutest stickers i've seen",
-      "author": "elpis_jn",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423347425514356879",
-      "channel_id": "1170692781216378960",
-      "content": "ok i think i should sleep this time for real",
-      "author": "arisuu0604",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423350904920215602",
-      "channel_id": "1170692781216378960",
-      "content": "Have you considered not paying your taxes?",
-      "author": "shagaru0802",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423213639829028925",
-      "channel_id": "1131839817982947429",
-      "content": "剩第三波了",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-26",
-  "messages": 96,
-  "unique_authors": 20,
-  "reactions_total": 113,
-  "attachments": 30,
+  "messages": 1257,
+  "unique_authors": 42,
+  "reactions_total": 278,
+  "attachments": 85,
   "channel_activity": {
+    "🔸綜合討論": 1123,
+    "🔸阵容构建": 38,
     "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,": 1,
     "🎨🖌️": 2,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 17,
@@ -24,29 +26,32 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
+    "0": 15,
+    "1": 9,
+    "2": 84,
+    "3": 73,
+    "4": 9,
+    "5": 12,
+    "6": 22,
+    "7": 59,
+    "8": 130,
+    "9": 281,
+    "10": 139,
+    "11": 25,
+    "12": 209,
+    "13": 31,
+    "14": 63,
+    "15": 69,
+    "16": 2,
+    "17": 4,
+    "19": 2,
     "18": 1,
-    "8": 17,
-    "13": 1,
     "20": 13,
-    "21": 5,
-    "3": 2,
-    "5": 6,
-    "6": 6,
-    "7": 22,
-    "11": 2,
-    "17": 2,
-    "10": 6,
-    "0": 4,
-    "1": 3,
-    "4": 2,
-    "9": 1,
-    "15": 1,
-    "16": 1,
-    "2": 1
+    "21": 5
   },
   "message_types": {
-    "0": 51,
-    "19": 14
+    "0": 896,
+    "19": 265
   },
   "top_reacted_messages": [
     {
@@ -78,11 +83,99 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
+      "id": "1421068168197046352",
+      "channel_id": "1131839817982947429",
+      "content": "等待福袋ing<:pray:1356053116260454534>",
+      "author": "wdxxl",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421159067090423909",
+      "channel_id": "1131839817982947429",
+      "content": "完結收工 不想在花時間凹分數<:nocomment:1356053106038673610>",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1420976634919649441",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼你們都在傳今天的活動癲狂，我是不是要來跟風一下？",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421071798006710342",
+      "channel_id": "1131839817982947429",
+      "content": "~~才发现明年6月份阿拉才进池子哦…我也要攒2k抽娶阿拉~~",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421052540614606919",
+      "channel_id": "1131839817982947429",
+      "content": "他掛機了！！！！！",
+      "author": "nazhigezihk",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421060308977320009",
+      "channel_id": "1131839817982947429",
+      "content": "~~对海国剧情没有期待了就是说，sp墨放周年也不会去期待她剧情~~",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421071421538570250",
+      "channel_id": "1131839817982947429",
+      "content": "~~鉴于最近猫的神秘操作，很希望他打复活赛了~~",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1421042485152583722",
       "content": "下一話：萊克的嘴筒x守咪人的||四角褲||",
       "author": "nazhigezihk",
       "reactions": 4,
       "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
+    {
+      "id": "1420966276611969124",
+      "channel_id": "1131839817982947429",
+      "content": "還行",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421042209326895165",
+      "channel_id": "1131839817982947429",
+      "content": "很美丽的配队惹（",
+      "author": "wdxxl",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421073383008763945",
+      "channel_id": "1131839817982947429",
+      "content": "打整天了啊",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421154181942607964",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1421036054823174184",
@@ -106,74 +199,12 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
-      "id": "1420932717641732097",
-      "content": "You may need to click multiple times. Sometimes the game is still loading and do",
-      "author": "angy_24_s",
-      "reactions": 2,
-      "channel": "💭「Processing」i can't enter the game via steam"
-    },
-    {
-      "id": "1420939581192147005",
-      "content": "如题",
-      "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "✅「已回答」能不能给复刻活动也加入星辰篇材料"
-    },
-    {
-      "id": "1420941011307331695",
-      "content": "😼：想太多",
+      "id": "1420970120532066394",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "sayo.0320",
       "reactions": 2,
-      "channel": "✅「已回答」能不能给复刻活动也加入星辰篇材料"
-    },
-    {
-      "id": "1421227939684421782",
-      "content": "好久没做DIY了，兴致上来一口气搓了四个，但是数值这方面没怎么把握，重在机制嘛。。（嗯）",
-      "author": "dyyqcwj",
-      "reactions": 2,
-      "channel": "创作欲大爆发，给每个界域手搓了一个新人"
-    },
-    {
-      "id": "1421235262117253243",
-      "content": "Thanks so much. Looks like there will be a new banner that includes Thais. i gue",
-      "author": "flinx",
-      "reactions": 1,
-      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
-    },
-    {
-      "id": "1421046886080577618",
-      "content": "凯姐版本唐突缩短成20天，然后接一个40天的版本，不会只多了个皮肤活动吧（",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
-    },
-    {
-      "id": "1421012907667230720",
-      "content": "原来在跟皮皮虾打架吗，我还以为是皮卡丘呢",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1421028387102916678",
-      "content": "對啊跟皮皮蝦展開了~~紳士間的對♂️決♂️~~",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1421032476649980006",
-      "content": "此事在杜勒和皮克曼的車文來了中亦有記載",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1421005005049172009",
-      "content": "if story mode is for baby then those babies will go complain even more about har",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-10",
-  "messages": 118,
-  "unique_authors": 17,
-  "reactions_total": 72,
-  "attachments": 23,
+  "messages": 1252,
+  "unique_authors": 36,
+  "reactions_total": 256,
+  "attachments": 76,
   "channel_activity": {
+    "🔸綜合討論": 1103,
+    "🔸阵容构建": 31,
     "Shhh… he’s sleeping~": 2,
     "Happy Belated Birthday, Karen ♡": 2,
     "Pieta": 3,
@@ -42,29 +44,33 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "13": 5,
-    "16": 6,
-    "12": 16,
-    "7": 13,
-    "8": 15,
+    "1": 5,
+    "3": 10,
+    "4": 125,
+    "5": 6,
+    "6": 31,
+    "8": 46,
+    "9": 51,
+    "10": 180,
+    "11": 57,
+    "12": 280,
+    "13": 84,
+    "14": 129,
+    "15": 50,
+    "16": 34,
+    "19": 1,
+    "20": 6,
+    "21": 8,
+    "22": 8,
+    "23": 114,
+    "7": 16,
     "0": 7,
-    "3": 6,
-    "11": 2,
-    "10": 5,
-    "14": 5,
     "17": 3,
-    "2": 1,
-    "4": 1,
-    "5": 1,
-    "6": 12,
-    "15": 5,
-    "21": 1,
-    "9": 14
+    "2": 1
   },
   "message_types": {
-    "0": 33,
-    "19": 14,
-    "4": 2
+    "0": 848,
+    "19": 286
   },
   "top_reacted_messages": [
     {
@@ -89,67 +95,140 @@
       "channel": "Happy Belated Birthday, Karen ♡"
     },
     {
-      "id": "1415241889841549343",
-      "content": "感谢建议，目前我们计划采纳其中一部分。具体落地大家可以参考后续的公告🙏",
-      "author": "morimensstaff01",
+      "id": "1415195055161081926",
+      "channel_id": "1131839817982947429",
+      "content": "嗯我忘了拿銀白差分機",
+      "author": "ahuahuahua",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415185301021786274",
+      "channel_id": "1131839817982947429",
+      "content": "我還是砸下去了😥 <@870225701855436801>",
+      "author": "taayoui",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415251073056374898",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415261687233249391",
+      "channel_id": "1131839817982947429",
+      "content": "<@926398065231921174> 喵喵",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415192650104963113",
+      "channel_id": "1131839817982947429",
+      "content": "# 我的達芙黛爾從 2023/11/30到2025/08/01才+12\n# 總共花了609天\n# 輸光了...\n# 不愧是刹那佬...",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415280204976230400",
+      "channel_id": "1131839817982947429",
+      "content": "欸我把重生融掉了",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415274175232217178",
+      "channel_id": "1131839817982947429",
+      "content": "收穫一個忠實的杜勒黑",
+      "author": "xingkongzhiyao_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415277837325176965",
+      "channel_id": "1131839817982947429",
+      "content": "這三小？我有看錯嗎",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415338229598785596",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415341461431648308",
+      "channel_id": "1131839817982947429",
+      "content": "这几天普抽50次来了7个普通SSR\n我真想说：就不能在限抽吗<:takenotes:1357186646294138890>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415150335647023245",
+      "channel_id": "1131839817982947429",
+      "content": "这游戏的文本也非常像直肠排泄物的流体动力学轨迹（",
+      "author": "xyakoto",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415190147548319754",
+      "channel_id": "1131839817982947429",
+      "content": "最近都在稳定出巨刃以外的和石板",
+      "author": "kemomimi_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415278861863878718",
+      "channel_id": "1131839817982947429",
+      "content": "靠北他又來了",
+      "author": "taayoui",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415292817487560715",
+      "channel_id": "1131839817982947429",
+      "content": "我沒打好\n但給過",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415246422512766977",
+      "channel_id": "1131839874132090890",
+      "content": "我現在分數也就27000，大佬們太可怕了",
+      "author": "qqinfinity",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1415191080776892537",
+      "channel_id": "1131839817982947429",
+      "content": "大佬148天就有+12莉莉了",
+      "author": "water_heart",
       "reactions": 2,
-      "channel": "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415246558873784350",
-      "content": "In theory one can edit the title, but is still a minor thing, is np.",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Pieta"
-    },
-    {
-      "id": "1415299557079781408",
-      "content": "oh is sanga not the main dps? 😂 I’ve just been stacking shields using her exalt ",
-      "author": "heartdeyna",
-      "reactions": 1,
-      "channel": "Flares' Comprehensive Beginner Guide to Morimens"
-    },
-    {
-      "id": "1415296046828884089",
-      "content": "https://discord.com/channels/1131791637933199470/1412201921913032714\nI suggest y",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "🥺 Need help with building 5 Dtide teams"
-    },
-    {
-      "id": "1415313363319259247",
-      "content": "So, on steam version of the game, at the startup screen with intro video and bef",
-      "author": "wolfierce",
-      "reactions": 1,
-      "channel": "💭「Processing」Steam game login bricked when hitting exit"
-    },
-    {
-      "id": "1415342413396054016",
-      "content": "Thank for the hard work",
-      "author": "arkismph",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug report!!!!"
-    },
-    {
-      "id": "1415178364238561300",
-      "content": "Mientras realizaba la Inmersión diaria la carta coste 4 de pickman por alguna ra",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "✅「Answered」Coste incorrecto"
-    },
-    {
-      "id": "1415224627390844970",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Coste incorrecto"
-    },
-    {
-      "id": "1415227683192967189",
-      "content": "Hola, hemos identificado la causa de este problema y lo Repararemos lo antes pos",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Coste incorrecto"
+      "id": "1415226826170564721",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "dog794",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

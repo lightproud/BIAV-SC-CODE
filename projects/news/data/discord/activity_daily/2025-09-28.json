@@ -1,10 +1,12 @@
 {
   "date": "2025-09-28",
-  "messages": 150,
-  "unique_authors": 19,
-  "reactions_total": 149,
-  "attachments": 20,
+  "messages": 795,
+  "unique_authors": 34,
+  "reactions_total": 265,
+  "attachments": 51,
   "channel_activity": {
+    "🔸綜合討論": 641,
+    "🔸阵容构建": 4,
     "Tinct on a swing": 8,
     "24, Daffodil, Liz and Tulu Sketches!": 1,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 2,
@@ -33,30 +35,33 @@
     "1420092491125755985": 5
   },
   "hourly_activity": {
+    "0": 2,
+    "2": 11,
+    "3": 9,
+    "4": 8,
+    "5": 11,
+    "6": 16,
+    "7": 11,
+    "8": 9,
+    "9": 80,
+    "10": 69,
+    "11": 111,
+    "12": 151,
+    "13": 199,
+    "14": 10,
+    "15": 54,
+    "17": 9,
+    "18": 8,
+    "23": 5,
+    "22": 4,
     "1": 4,
-    "2": 8,
-    "7": 9,
-    "11": 35,
-    "14": 4,
     "16": 2,
-    "13": 10,
     "20": 3,
-    "12": 3,
-    "6": 10,
-    "9": 16,
-    "5": 3,
-    "21": 9,
-    "22": 3,
-    "23": 2,
-    "17": 7,
-    "10": 9,
-    "3": 7,
-    "4": 6
+    "21": 9
   },
   "message_types": {
-    "0": 32,
-    "19": 9,
-    "4": 1
+    "0": 496,
+    "19": 149
   },
   "top_reacted_messages": [
     {
@@ -74,6 +79,62 @@
       "channel": "24, Daffodil, Liz and Tulu Sketches!"
     },
     {
+      "id": "1421748905800106015",
+      "channel_id": "1131839817982947429",
+      "content": "过了\n塔薇+觉醒哈姆林+莱克钥令+女仆算力卡vs医生boss\n享受不一般的美味😋",
+      "author": "ling_an_",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421794729372155925",
+      "channel_id": "1131839817982947429",
+      "content": "?",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421886811659174043",
+      "channel_id": "1131839817982947429",
+      "content": "資源不算很富裕 有點慌",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421827408897507399",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421843341447790725",
+      "channel_id": "1131839817982947429",
+      "content": "能",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421846676636827760",
+      "channel_id": "1131839817982947429",
+      "content": "隨緣",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421917774451572737",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "chiew1737",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1421825092941385931",
       "content": "从星辰篇上线开始星辰篇的规则包括唤醒体的星辰篇天赋都有一定的调整，确实极大地改善了星辰篇的游戏体验。但是现在星辰篇的游戏性上来说还是有缺陷，比如作为一个出牌游戏",
       "author": "2300011747",
@@ -88,6 +149,46 @@
       "channel": "✅「Answered」Add the ability to copy and paste teams"
     },
     {
+      "id": "1421827622395973672",
+      "channel_id": "1131839817982947429",
+      "content": "命輪反了啦",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421845451426234369",
+      "channel_id": "1131839817982947429",
+      "content": "~~然後被自己搞沒了~~",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421846874775617661",
+      "channel_id": "1131839817982947429",
+      "content": "皇室戰爭4個",
+      "author": "corposant_1003",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421852824953688105",
+      "channel_id": "1131839817982947429",
+      "content": "口口",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421860258820788387",
+      "channel_id": "1131839817982947429",
+      "content": "2k4了好耶",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1421832464392781856",
       "content": "策畫策畫怎樣都好 拜託把算力調和砍了 <:dead:1356082627509092372>",
       "author": "qqinfinity",
@@ -95,95 +196,28 @@
       "channel": "星辰篇规则还会继续优化吗？"
     },
     {
-      "id": "1421820323250307072",
-      "content": "的确如此(",
-      "author": "ka_0414",
+      "id": "1421816563341725707",
+      "channel_id": "1131839817982947429",
+      "content": "倒在3黑印面前",
+      "author": "water_heart",
       "reactions": 2,
-      "channel": "✅「已解决」不同界域的24"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421825524828733552",
-      "content": "還有你繼續裝",
+      "id": "1421822439851036832",
+      "channel_id": "1131839817982947429",
+      "content": "輸出哈姆林嗎",
       "author": "sayo.0320",
       "reactions": 2,
-      "channel": "✅「已解决」不同界域的24"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421694058081947841",
-      "content": "感谢反馈，戈雅去核对一下<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
+      "id": "1421835754182676585",
+      "channel_id": "1131839817982947429",
+      "content": "可喜可賀我融災還有兩關沒打",
+      "author": "ahong0727",
       "reactions": 2,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
-    },
-    {
-      "id": "1421690677254950944",
-      "content": "Such a perfect picture of an angel...<:like:1400771686965444648>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": "Tinct on a swing"
-    },
-    {
-      "id": "1421825407841341460",
-      "content": "?",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "✅「已解决」不同界域的24"
-    },
-    {
-      "id": "1421698102884307055",
-      "content": "先來跪拜兩位大佬",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
-    },
-    {
-      "id": "1421712270890897448",
-      "content": "來認領一下親友<:pray:1356053116260454534> \n我也很好奇，蹲一下後續<:wish:1356084702468899117>",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
-    },
-    {
-      "id": "1421714013506764850",
-      "content": "嗨守密人，确实是因为她当时还未成为唤醒体的特殊设计<:pray:1356053116260454534> \n\n<@614083839131648021> <@8",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
-    },
-    {
-      "id": "1421756739086319697",
-      "content": "~~廉價的渾沌界域~~",
-      "author": "insomnia07763",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
-    },
-    {
-      "id": "1421744095961026684",
-      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:Cheeru",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Add ability to see all card levels"
-    },
-    {
-      "id": "1421689539327688724",
-      "content": "Recharge is currently not supported in the Philippines. Please be patient and we",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Good day devs [problems with Apple Pay on iOS]"
-    },
-    {
-      "id": "1422005277036642314",
-      "content": "",
-      "author": "breezeg9527",
-      "reactions": 1,
-      "channel": "無借角融災全4 400攻略血肉指環"
-    },
-    {
-      "id": "1421852615611777104",
-      "content": "Normal mode with DR and revives is the most easy the game can get, if you're rea",
-      "author": "arctic59",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
     }
   ]
 }

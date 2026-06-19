@@ -1,10 +1,30 @@
 {
   "date": "2025-10-31",
-  "messages": 900,
-  "unique_authors": 38,
-  "reactions_total": 364,
-  "attachments": 111,
+  "messages": 15349,
+  "unique_authors": 289,
+  "reactions_total": 2241,
+  "attachments": 715,
   "channel_activity": {
+    "🔸morimens-game-chat": 5604,
+    "🔸晒卡分享": 83,
+    "🔸相位对弈": 46,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 13,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 258,
+    "🔸phòng-chat-tiếng-việt": 19,
+    "🔸canal-español": 327,
+    "🔸canal-português": 18,
+    "🔸ruang-obrolan-indonesia": 103,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 132,
+    "🔸lore-chat": 68,
+    "🔸lets-count": 71,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 475,
+    "🔸general-chat": 7114,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 91,
     "🔸綜合討論": 820,
     "🔸阵容构建": 6,
     "🗡️": 2,
@@ -33,33 +53,37 @@
     "1432654338982940783": 3
   },
   "hourly_activity": {
-    "0": 13,
-    "1": 8,
-    "2": 25,
-    "3": 19,
-    "4": 130,
-    "5": 49,
-    "6": 23,
-    "7": 34,
-    "8": 5,
-    "9": 20,
-    "10": 36,
-    "11": 98,
-    "12": 137,
-    "13": 62,
-    "14": 67,
-    "15": 102,
-    "16": 36,
-    "17": 17,
-    "19": 8,
-    "21": 1,
-    "23": 8,
-    "20": 1,
-    "18": 1
+    "0": 646,
+    "1": 611,
+    "2": 323,
+    "3": 411,
+    "4": 458,
+    "5": 666,
+    "6": 676,
+    "7": 748,
+    "8": 576,
+    "9": 604,
+    "10": 502,
+    "11": 576,
+    "12": 1002,
+    "13": 1024,
+    "14": 951,
+    "15": 1088,
+    "16": 676,
+    "17": 682,
+    "18": 219,
+    "19": 597,
+    "20": 488,
+    "21": 580,
+    "22": 398,
+    "23": 847
   },
   "message_types": {
-    "0": 609,
-    "19": 217
+    "0": 9807,
+    "19": 4634,
+    "46": 2,
+    "23": 4,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -91,11 +115,35 @@
       "channel": ""
     },
     {
+      "id": "1433794948238676130",
+      "channel_id": "1170692781216378960",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "syruponstrawberrycake",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433952478260625470",
+      "channel_id": "1400750050208125010",
+      "content": "<@1164303137293729792> Is the best coach",
+      "author": "memento_mori_01",
+      "reactions": 15,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1433715343817441372",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1433696049385705512",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ningyo0112",
+      "reactions": 13,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1433698759799476305",
@@ -119,98 +167,76 @@
       "channel": ""
     },
     {
-      "id": "1433620588848615465",
+      "id": "1433821991021969459",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "h3ll0hu",
+      "author": "quackdayo",
+      "reactions": 12,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1433652661051199541",
+      "channel_id": "1400750050208125010",
+      "content": "my favorite femboy <@285755067213152257>https://youtu.be/0MOs8lfPa74",
+      "author": "syruponstrawberrycake",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1433763756919488512",
+      "channel_id": "1170692781216378960",
+      "content": "Frost whimpering 30 mins uncut",
+      "author": "spooky_penguin_",
       "reactions": 10,
-      "channel": "Happy Halloween!!! I love Murphys skin sm"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433802878472159252",
-      "channel_id": "1131839817982947429",
-      "content": "打到最後也只有6.8k觸傷",
-      "author": "ernest_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1433827242747760811",
+      "channel_id": "1170692781216378960",
+      "content": "Add me for more jokes 😂🎉",
+      "author": "meow4joscarl",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433827568934719548",
-      "channel_id": "1131839817982947429",
+      "id": "1433827417494913188",
+      "channel_id": "1170692781216378960",
+      "content": "Stop with this mpreg",
+      "author": "meow4joscarl",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433799462265815040",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "sakura8901",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1433733819952795658",
-      "channel_id": "1131839817982947429",
-      "content": "就只差一步........... <:dead:1356082627509092372>",
-      "author": "corposant_1003",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1433754784191615036",
+      "channel_id": "1355630588094320661",
+      "content": "1069\n(here before Arisu figures it out)",
+      "author": "bagels5899",
+      "reactions": 10,
+      "channel": "🔸lets-count"
     },
     {
-      "id": "1433894095486455921",
-      "channel_id": "1131839817982947429",
-      "content": "我好爛== 0星點活",
-      "author": "dog_0630",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "id": "1433755199108808834",
+      "channel_id": "1355630588094320661",
+      "content": "1072 (hide your aigis, Arisu is coming)",
+      "author": "wolfierce",
+      "reactions": 10,
+      "channel": "🔸lets-count"
     },
     {
-      "id": "1433711574329196574",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：波吕克斯EP·暴风起时 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
-      "author": "morimensstaff01",
-      "reactions": 6,
-      "channel": "忘却前夜OST：波吕克斯EP·暴风起时"
-    },
-    {
-      "id": "1433638057734570006",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433877646063833199",
-      "channel_id": "1131839817982947429",
-      "content": "<@855461987805822987> <@1301813973703852035> 聽我說，這東西比海國米粒好用阿",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433808021858816190",
-      "channel_id": "1131839874132090890",
-      "content": "叠火女遇到这种攻击欲望不强的还是太好用了<:pray:1356053116260454534>",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1433632936137326652",
-      "channel_id": "1131839817982947429",
-      "content": "這遊戲想搞死我🫠",
-      "author": "asdfgvczr",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433672779432988712",
-      "channel_id": "1131839817982947429",
-      "content": "你就是大佬了",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433673232044527658",
-      "channel_id": "1131839817982947429",
-      "content": "而且佬會教萌新打融災深淺相對，根本天生就是佬",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1433620271444787200",
+      "channel_id": "1400750050208125010",
+      "content": "homework",
+      "author": "bagels5899",
+      "reactions": 10,
+      "channel": "🔸general-chat"
     }
   ]
 }

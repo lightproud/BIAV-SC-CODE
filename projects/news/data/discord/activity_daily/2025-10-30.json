@@ -1,10 +1,33 @@
 {
   "date": "2025-10-30",
-  "messages": 988,
-  "unique_authors": 47,
-  "reactions_total": 1346,
-  "attachments": 106,
+  "messages": 18660,
+  "unique_authors": 311,
+  "reactions_total": 4830,
+  "attachments": 814,
   "channel_activity": {
+    "🔸morimens-game-chat": 8913,
+    "🔸相位对弈": 18,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 21,
+    "🔸русский-канал": 725,
+    "🔸phòng-chat-tiếng-việt": 4,
+    "🔸canal-español": 62,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 115,
+    "🔸ห้องสนทนาภาษาไทย": 224,
+    "🔸traphase": 72,
+    "🔸lore-chat": 77,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 49,
+    "🔸频道建议┊server-suggestions": 71,
+    "🔸team-building": 229,
+    "🔸general-chat": 7017,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🐱light’s-nest": 4,
+    "🔸game-question": 15,
     "🔸綜合討論": 818,
     "🔸阵容构建": 3,
     "Ogier": 2,
@@ -21,51 +44,53 @@
     "✅「Answered」About new Ryker buff": 1,
     "✅「Answered」Tentacle Overflow Mechanic clarification": 1,
     "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？": 3,
-    "🔸服务器公告┊server-announcement": 1,
-    "🔸礼包码┊gift-codes": 1,
-    "🐱light’s-nest": 2,
     "1432654338982940783": 10
   },
   "hourly_activity": {
-    "0": 7,
-    "1": 3,
-    "2": 82,
-    "3": 7,
-    "4": 16,
-    "5": 31,
-    "6": 65,
-    "7": 96,
-    "8": 45,
-    "9": 40,
-    "10": 82,
-    "11": 56,
-    "12": 56,
-    "13": 91,
-    "14": 119,
-    "15": 146,
-    "16": 9,
-    "17": 11,
-    "18": 6,
-    "20": 3,
-    "21": 2,
-    "22": 9,
-    "23": 1,
-    "19": 5
+    "0": 732,
+    "1": 215,
+    "2": 465,
+    "3": 362,
+    "4": 279,
+    "5": 558,
+    "6": 737,
+    "7": 597,
+    "8": 781,
+    "9": 789,
+    "10": 937,
+    "11": 467,
+    "12": 1088,
+    "13": 716,
+    "14": 840,
+    "15": 1397,
+    "16": 1637,
+    "17": 1369,
+    "18": 968,
+    "19": 981,
+    "20": 743,
+    "21": 424,
+    "22": 833,
+    "23": 745
   },
   "message_types": {
-    "0": 599,
-    "19": 222
+    "0": 11725,
+    "19": 5934,
+    "46": 1,
+    "23": 4,
+    "20": 8
   },
   "top_reacted_messages": [
     {
       "id": "1433441135216562196",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 29000守密人达成礼 / DC29000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
       "author": "morimensstaff02",
-      "reactions": 605,
+      "reactions": 618,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
       "id": "1433472586955755550",
+      "channel_id": "1354754985119846581",
       "content": "Hi everyone. A few things that I wanted to bring up:\n\n大家好。有几件事我想提一下：\n\n1. To ensu",
       "author": "cometovilla",
       "reactions": 319,
@@ -73,10 +98,43 @@
     },
     {
       "id": "1433514801220292701",
+      "channel_id": "1426837316533747823",
       "content": "我想我们都知道画师的名字，大家万圣节快乐！🎃",
       "author": "game.producer.light",
-      "reactions": 140,
+      "reactions": 142,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1433439827939954698",
+      "channel_id": "1170692781216378960",
+      "content": "Females can get pregnant",
+      "author": "flares117",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433490056043298926",
+      "channel_id": "1170692781216378960",
+      "content": "CAN WE HAVE OTHER TOPICS?",
+      "author": "arisuu0604",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433434476394053667",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone loves Arisu.",
+      "author": "hitsu4",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433477821547679845",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1433533966006358087",
@@ -86,6 +144,22 @@
       "channel": "Happy Halloween 🎃"
     },
     {
+      "id": "1433377823388860556",
+      "channel_id": "1170692781216378960",
+      "content": "nah",
+      "author": "sexysneakystoat1625",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433378062673903758",
+      "channel_id": "1170692781216378960",
+      "content": "Remove the b NOW",
+      "author": "spooky_penguin_",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1433347849718071306",
       "content": "Who loves Erica?! I do!!",
       "author": "attano124.",
@@ -93,121 +167,76 @@
       "channel": "Erica my pookie"
     },
     {
-      "id": "1433582401736675369",
-      "channel_id": "1131839817982947429",
-      "content": "打了100天也是勉强吃了个400",
-      "author": "timbite",
+      "id": "1433454982253908080",
+      "channel_id": "1300659662311526512",
+      "content": "pon más barreras porfa",
+      "author": "rimachan__",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1433490430519017493",
+      "channel_id": "1170692781216378960",
+      "content": "I just wish the \"moderation team\" is actually active and not only come when ping",
+      "author": "good.th",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433549824656932884",
+      "channel_id": "1170692781216378960",
+      "content": "Guys can we perhaps go a day WITHOUT bullying me?",
+      "author": "frosthief",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433475235000221827",
+      "channel_id": "1170692781216378960",
+      "content": "there's been a ping? this channel's eos'd? <:stone:1356053165874741490>",
+      "author": "lavache.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433490649721733191",
+      "channel_id": "1170692781216378960",
+      "content": "this server is gonna get so booring without arisu saying some weird ass shit",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433542080470188104",
+      "channel_id": "1170692781216378960",
+      "content": "I hate this new emot",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433394873133826089",
+      "channel_id": "1170692781216378960",
+      "content": "You also said agis doesn't have a right to say no!",
+      "author": "spooky_penguin_",
       "reactions": 9,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433426782308274257",
-      "content": "I used to upload this on Tumblr and I just discover this channel\nSo I will uploa",
-      "author": "noeyebunny.nobunsu",
+      "id": "1433500432415850639",
+      "channel_id": "1170692781216378960",
+      "content": "good beginner team?",
+      "author": "will2286",
       "reactions": 9,
-      "channel": "Lovecraft and other reference I found in Morimens"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433372335142080633",
-      "content": "或者北洋政府",
-      "author": "ernest_heart",
+      "id": "1433530252533170186",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "deseo0774",
       "reactions": 9,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433357218647904381",
-      "channel_id": "1131839817982947429",
-      "content": "凹贏了",
-      "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433402134132690945",
-      "channel_id": "1131839817982947429",
-      "content": "凱刻斯是一種盲腸",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433465640789872822",
-      "channel_id": "1131839817982947429",
-      "content": "就不用浪費時間去改普圖的代碼了",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433468334254461070",
-      "channel_id": "1131839817982947429",
-      "content": "發出了亞洲父母的聲音",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433474649290965083",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sakura8901",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433501852842070089",
-      "content": "联动归龙潮吧，已经宣布停服了",
-      "author": "fushengyihua",
-      "reactions": 5,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433280465736957953",
-      "channel_id": "1131839817982947429",
-      "content": "看到一堆人說普發的一萬要拿去供給女聲優、女偶像、男偶像、Vtuber\n\n我還是要勸大家多把這筆錢花在自己的現實生活上。\n\n像我就很實際，一萬塊會拿去給我的醫生克",
-      "author": "undecember_news",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433359240788971560",
-      "channel_id": "1131839817982947429",
-      "content": "||老玩家通常也都玩不起||",
-      "author": "arr5721",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433359509971144804",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433363097216745563",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "neptinu",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433403478323232900",
-      "channel_id": "1131839817982947429",
-      "content": "珊的4费卡是不是进图就可以卖掉了",
-      "author": "neptinu",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433443878060556469",
-      "channel_id": "1131839817982947429",
-      "content": "感謝兌換碼<:Cheerup:1400771555939844149>",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

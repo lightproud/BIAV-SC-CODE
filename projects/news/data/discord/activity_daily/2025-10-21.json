@@ -1,10 +1,32 @@
 {
   "date": "2025-10-21",
-  "messages": 1108,
-  "unique_authors": 75,
-  "reactions_total": 636,
-  "attachments": 150,
+  "messages": 16173,
+  "unique_authors": 352,
+  "reactions_total": 3926,
+  "attachments": 929,
   "channel_activity": {
+    "🔸morimens-game-chat": 11362,
+    "🔸晒卡分享": 25,
+    "🔸相位对弈": 44,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 42,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 112,
+    "🔸русский-канал": 1018,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 263,
+    "🔸canal-português": 391,
+    "🔸ruang-obrolan-indonesia": 107,
+    "🔸ห้องสนทนาภาษาไทย": 154,
+    "🔸traphase": 161,
+    "🔸lore-chat": 177,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 403,
+    "🔸general-chat": 735,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🐱light’s-nest": 2,
     "🔸綜合討論": 838,
     "🔸阵容构建": 24,
     "🦅": 1,
@@ -48,45 +70,72 @@
     "💭「处理中」BUG反馈": 3,
     "✅「已回答」抽卡界面不能直接将银芯兑换为流明或无垢": 5,
     "✅「Answered」Purchase cores from awaken menu?": 2,
-    "开个摸鱼楼✨": 3,
-    "🐱light’s-nest": 1
+    "开个摸鱼楼✨": 3
   },
   "hourly_activity": {
-    "0": 19,
-    "1": 16,
-    "2": 42,
-    "3": 44,
-    "4": 44,
-    "5": 10,
-    "6": 41,
-    "7": 15,
-    "8": 107,
-    "9": 145,
-    "10": 99,
-    "11": 72,
-    "12": 46,
-    "13": 124,
-    "14": 101,
-    "15": 29,
-    "16": 60,
-    "17": 42,
-    "22": 8,
-    "23": 16,
-    "18": 8,
-    "19": 16,
-    "21": 4
+    "0": 575,
+    "1": 341,
+    "2": 704,
+    "3": 583,
+    "4": 743,
+    "5": 821,
+    "6": 835,
+    "7": 866,
+    "8": 879,
+    "9": 745,
+    "10": 486,
+    "11": 425,
+    "12": 326,
+    "13": 604,
+    "14": 873,
+    "15": 617,
+    "16": 968,
+    "17": 1003,
+    "18": 609,
+    "19": 1247,
+    "20": 718,
+    "21": 490,
+    "22": 378,
+    "23": 337
   },
   "message_types": {
-    "0": 613,
-    "19": 249
+    "0": 9639,
+    "19": 5414,
+    "23": 7,
+    "20": 5
   },
   "top_reacted_messages": [
     {
       "id": "1430055057423859784",
+      "channel_id": "1426837316533747823",
       "content": "又看到了rrkk00q的更新，很高兴我与这名画师取得了联络，得到了分享许可，她说：“如果因为我的活动，哪怕只有一个人因此认识到这部优秀的作品，我也会非常高兴。”",
       "author": "game.producer.light",
-      "reactions": 277,
+      "reactions": 279,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1430226044794699960",
+      "channel_id": "1170692781216378960",
+      "content": "stopp",
+      "author": "spooky_penguin_",
+      "reactions": 42,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430227750697828535",
+      "channel_id": "1170692781216378960",
+      "content": "thanks <:pray:1356053116260454534>",
+      "author": "kinokoortakenoko",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430233469467758674",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1429993224763740273",
@@ -103,11 +152,59 @@
       "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
     },
     {
+      "id": "1430199817610592267",
+      "channel_id": "1170692781216378960",
+      "content": "I never spent money",
+      "author": "spooky_penguin_",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430234128997023794",
+      "channel_id": "1170692781216378960",
+      "content": "Hey f2p",
+      "author": "twilightsparkle163163",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430246505087897681",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone",
+      "author": "nou._.101",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1430116552081932330",
       "content": "✦为大家奉上波吕克斯的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Pollux as a sou",
       "author": "morimensstaff01",
       "reactions": 15,
       "channel": "📸壁纸分享: 波吕克斯┊Wallpaper Sharing: Pollux"
+    },
+    {
+      "id": "1430202509619630264",
+      "channel_id": "1170692781216378960",
+      "content": "7 more months till im 18",
+      "author": "tnimreppep",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430195549461545080",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "blecnes",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430197026301284505",
+      "channel_id": "1170692781216378960",
+      "content": "I'm almost done...",
+      "author": "enternameunavailable",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1430231516289433660",
@@ -117,123 +214,52 @@
       "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1430268661922398229",
-      "content": "",
-      "author": "maeeeeeeeeeeeee",
-      "reactions": 9,
-      "channel": "🦅"
+      "id": "1430190799068594217",
+      "channel_id": "1170692781216378960",
+      "content": "krazy standard pull 😭",
+      "author": "fibrinogen",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430162696493469737",
-      "channel_id": "1131839817982947429",
-      "content": "全球異變，融蝕降臨\n抵抗融災的過程中，部分人類在高壓環境下變異，覺醒天賦成為守密人\n為了追求更高火力於戰鬥中取得絕對優勢，傷害型角色成為眾人夢寐以求的連結對象\n",
-      "author": "heikwok",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1430192700686340207",
+      "channel_id": "1170692781216378960",
+      "content": "I got lucky",
+      "author": "angbak",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430192603240071331",
-      "channel_id": "1131839817982947429",
-      "content": "第一位幸運兒出現了",
-      "author": "dog794",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1430222789364682852",
+      "channel_id": "1170692781216378960",
+      "content": "Am i lame",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430242605840728115",
-      "channel_id": "1131839817982947429",
-      "content": "我只有小骑士90<:please:1356053110375714817>",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430004706901626971",
-      "channel_id": "1131839817982947429",
-      "content": "冒泡",
-      "author": "akalanden",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430036026218516611",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430046320218865776",
-      "channel_id": "1131839817982947429",
-      "content": "我菜到活動關卡都快打不過",
-      "author": "sakura8901",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430060435243008032",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430041671239864392",
-      "channel_id": "1131839817982947429",
-      "content": "冒泡",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430081316497522699",
-      "channel_id": "1131839817982947429",
-      "content": "扒拉助战看到一只殷红巨刃熔朵<:processing:1357185814567718963>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430082684557856882",
-      "channel_id": "1131839817982947429",
-      "content": "我看成血希 看了兩遍才看出問題",
+      "id": "1430172549001515071",
+      "channel_id": "1174983699935277147",
+      "content": "還好只花了540抽 還以為會花更多",
       "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "reactions": 12,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1430120768401834106",
-      "channel_id": "1131839817982947429",
-      "content": "我是大佬 瑪爾是大神\n我跟他打我手都再抖",
-      "author": "insomnia07763",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1430214166081306674",
+      "channel_id": "1170692781216378960",
+      "content": "<@1006637111098736670> your scalp belongs on my wall",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430144359181058060",
-      "channel_id": "1131839817982947429",
+      "id": "1430214440573337721",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sakura8901",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430088021453049876",
-      "channel_id": "1131839817982947429",
-      "content": "我要凑+12宁<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1430109510357483581",
-      "channel_id": "1131839817982947429",
-      "content": "朋友退坑后终于可以把名字换回来的我<:Cheerup:1400771555939844149>",
-      "author": "ling_an_",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

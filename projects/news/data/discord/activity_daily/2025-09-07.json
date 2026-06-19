@@ -1,10 +1,11 @@
 {
   "date": "2025-09-07",
-  "messages": 128,
-  "unique_authors": 20,
-  "reactions_total": 190,
-  "attachments": 25,
+  "messages": 772,
+  "unique_authors": 36,
+  "reactions_total": 307,
+  "attachments": 64,
   "channel_activity": {
+    "🔸綜合討論": 644,
     "Salvador warmup doodle": 1,
     "My fan art submission uid 101084291": 6,
     "Kathigu-ra Fanart Submission": 2,
@@ -27,32 +28,33 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "7": 1,
-    "11": 3,
-    "16": 4,
-    "23": 1,
-    "12": 4,
-    "18": 2,
-    "15": 4,
-    "6": 6,
-    "5": 3,
-    "2": 1,
-    "4": 1,
-    "8": 24,
-    "13": 4,
-    "14": 4,
-    "9": 20,
-    "10": 28,
-    "21": 2,
-    "22": 11,
-    "19": 3,
-    "20": 1,
-    "1": 1
+    "0": 8,
+    "1": 6,
+    "2": 4,
+    "3": 13,
+    "4": 18,
+    "5": 9,
+    "6": 107,
+    "7": 48,
+    "8": 146,
+    "9": 154,
+    "10": 48,
+    "11": 21,
+    "12": 67,
+    "13": 60,
+    "14": 13,
+    "15": 14,
+    "16": 6,
+    "18": 3,
+    "19": 6,
+    "20": 4,
+    "22": 13,
+    "23": 2,
+    "21": 2
   },
   "message_types": {
-    "0": 80,
-    "4": 1,
-    "19": 25
+    "19": 124,
+    "0": 520
   },
   "top_reacted_messages": [
     {
@@ -98,11 +100,43 @@
       "channel": "Kathigu-ra sketch"
     },
     {
+      "id": "1414269926151164099",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1414279996842836060",
       "content": "deadline over but i just want to sher \nIts still far from done but welp ill just",
       "author": "eyadx23",
       "reactions": 11,
       "channel": "My fan art submission uid 101084291"
+    },
+    {
+      "id": "1414168099183132782",
+      "channel_id": "1131839817982947429",
+      "content": "我可能是第一次同時拿到這兩個（",
+      "author": "cwz.io",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414241753631952976",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414075955114278986",
+      "channel_id": "1131839817982947429",
+      "content": "我的日本觀眾已經超過了台灣觀眾\n這就是日服的威力嗎",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1414129765740183563",
@@ -112,53 +146,68 @@
       "channel": "i don't think i'm even something real at all (N Fanfic)"
     },
     {
-      "id": "1414204979027116123",
-      "content": "",
-      "author": "eyadx23",
+      "id": "1414163433850671199",
+      "channel_id": "1131839817982947429",
+      "content": "現在可不可以一堆人進去通話把英區的幹走",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414243035784413295",
+      "channel_id": "1131839817982947429",
+      "content": "密契忘了換新洗的 再打一場",
+      "author": "arthasiv",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414162270354800693",
+      "channel_id": "1131839817982947429",
+      "content": "可不可以請阿狗草嗣我",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414184521942700092",
+      "channel_id": "1131839817982947429",
+      "content": "||還好我兩張高級月亮一次解十四種狀態||",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414162369294368780",
+      "channel_id": "1131839817982947429",
+      "content": "他不行(能力上)",
+      "author": "arr5721",
       "reactions": 3,
-      "channel": "My fan art submission uid 101084291"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1414258276744564828",
-      "content": "温师傅生日快乐！",
-      "author": "yingmai_",
+      "id": "1414183770700910664",
+      "channel_id": "1131839817982947429",
+      "content": "所以我現在都封鎖我看到常駐出的藏品",
+      "author": "sayo.0320",
       "reactions": 3,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1414314129493327963",
-      "content": "Oh yeah, the sketch >>",
-      "author": "ezer2112",
-      "reactions": 2,
-      "channel": "Kathigu-ra Fanart Submission"
+      "id": "1414226150569545831",
+      "channel_id": "1131839817982947429",
+      "content": "我們還可以||打阿狗的屁屁<:love:1356053099931897977> ||",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1414377299062820945",
-      "content": "i just still don’t fully understand how to play the game",
-      "author": "gracinem",
-      "reactions": 1,
-      "channel": "Need help with team building and game in general"
-    },
-    {
-      "id": "1414378701340147805",
-      "content": "dont think my team is bad but im definitely not playing it right at all",
-      "author": "gracinem",
-      "reactions": 1,
-      "channel": "Need help with team building and game in general"
-    },
-    {
-      "id": "1414197921901183048",
-      "content": "以及老闆娘（鼠）的天賦",
-      "author": "taco94487",
-      "reactions": 1,
-      "channel": "前瞻：相位对弈改动 Traphase Changes"
-    },
-    {
-      "id": "1414237527136534598",
-      "content": "我還以為比的是中指",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "id": "1414239417509482670",
+      "channel_id": "1131839817982947429",
+      "content": "借一个满配血链就能过了",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

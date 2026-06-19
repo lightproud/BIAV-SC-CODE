@@ -1,10 +1,12 @@
 {
   "date": "2025-09-14",
-  "messages": 120,
-  "unique_authors": 22,
-  "reactions_total": 104,
-  "attachments": 15,
+  "messages": 1732,
+  "unique_authors": 39,
+  "reactions_total": 535,
+  "attachments": 74,
   "channel_activity": {
+    "🔸綜合討論": 1577,
+    "🔸阵容构建": 35,
     "Flares' Pickman Fanart": 1,
     "☄️": 2,
     "Cat tulu": 3,
@@ -27,32 +29,35 @@
     "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你": 7
   },
   "hourly_activity": {
-    "0": 1,
-    "13": 43,
+    "0": 4,
+    "1": 7,
+    "2": 17,
+    "3": 9,
+    "4": 41,
+    "5": 202,
+    "6": 15,
+    "7": 126,
+    "8": 147,
+    "9": 128,
+    "10": 92,
+    "11": 162,
+    "12": 113,
+    "13": 79,
+    "14": 162,
+    "15": 218,
+    "16": 134,
+    "17": 11,
+    "18": 2,
+    "20": 3,
+    "22": 2,
+    "23": 56,
     "19": 1,
-    "8": 4,
-    "16": 10,
-    "18": 1,
-    "21": 1,
-    "11": 2,
-    "12": 10,
-    "5": 5,
-    "3": 4,
-    "6": 9,
-    "14": 1,
-    "23": 1,
-    "1": 1,
-    "2": 3,
-    "9": 13,
-    "10": 2,
-    "7": 1,
-    "15": 4,
-    "17": 2,
-    "4": 1
+    "21": 1
   },
   "message_types": {
-    "0": 65,
-    "19": 26
+    "0": 1162,
+    "19": 449,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -70,6 +75,38 @@
       "channel": "Flares' Pickman Fanart"
     },
     {
+      "id": "1416727971603157003",
+      "channel_id": "1131839817982947429",
+      "content": "~~按在xx上把翅膀掰开各种xx完了还戴上腿环什么的~~",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416750048154226783",
+      "channel_id": "1131839817982947429",
+      "content": "他昨天還叫我寶寶",
+      "author": "sayo.0320",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416806358052765728",
+      "channel_id": "1131839817982947429",
+      "content": "~~我的建議是你可以直接檢舉他詐欺~~",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416736501735100507",
+      "channel_id": "1131839817982947429",
+      "content": "建議削弱畫家\n||衣服太厚了 我要他穿的跟雷亞一樣||",
+      "author": "0.0._.0_0.",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1416705171895091392",
       "content": "Miss sanga agrees <:sleep2:1356085993626665200>",
       "author": "noname0963",
@@ -77,123 +114,108 @@
       "channel": "Cat tulu"
     },
     {
-      "id": "1416705110737944688",
-      "content": "",
-      "author": "noname0963",
-      "reactions": 4,
-      "channel": "Cat tulu"
+      "id": "1416736054828072970",
+      "channel_id": "1131839817982947429",
+      "content": "加強繁衍狂熱🥵",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416652929796149308",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 4,
-      "channel": "收个卡斯托尔超限号…初始号"
+      "id": "1416656121262903317",
+      "channel_id": "1131839817982947429",
+      "content": "啃完了",
+      "author": "shchng.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416704809272213576",
-      "content": "這很直接地影響了遊戲體驗",
+      "id": "1416678004930908231",
+      "channel_id": "1131839817982947429",
+      "content": "医生的强大 毋庸置疑",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416725363844972585",
+      "channel_id": "1131839817982947429",
+      "content": "穿的那么多又繁杂\n就是要一点一点的脱下来啊",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416805851657928846",
+      "channel_id": "1131839817982947429",
+      "content": "有人在另一個地方問了些問題\n我熱心的回答了很多\n說可以加我遊戲好友\n~~或好心幫我填個邀請碼~~\n\n過了三小時  回了我一句\n加了 謝謝\n我進遊戲 沒關注  也",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416654439733006417",
+      "channel_id": "1131839817982947429",
+      "content": "||我叫他禁的||",
       "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "敵人不應被加強"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416679371862708225",
-      "content": "不要課",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "请问忘却适合氪金吗，最好氪什么？"
+      "id": "1416656498699927613",
+      "channel_id": "1131839817982947429",
+      "content": "我有用0啟鳥吃過蠻多次五級的",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416609051550158971",
-      "content": "把他丟掉",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "一個純萌新"
+      "id": "1416657324012998656",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416711518879481856",
-      "content": "勞倫斯先生留了一手<:cry3:1356082134447558748>",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "💭「处理中」意圖上沒有出血"
+      "id": "1416657341834858520",
+      "channel_id": "1131839817982947429",
+      "content": "其實你們沒超限是B-67\n我們有抽到超限的是B-68",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416806723628306432",
-      "content": "※皮克曼x穿越成为艺术经理的你\nUID：100173029\n\n\n\n1.\n「月亮－－它在看我！」\n听见又一句疑似针对皮克曼的汙衊。哪怕你人身在法兰西降灵会现场，身",
-      "author": "minuosi5196",
-      "reactions": 3,
-      "channel": "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你"
-    },
-    {
-      "id": "1416622790773047457",
-      "content": "我聞到深海味",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "刚入坑，这个配队可以吗？"
-    },
-    {
-      "id": "1416653246709104686",
-      "content": "校規要記得看<:Target:1400771609014435923>",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "收个卡斯托尔超限号…初始号"
-    },
-    {
-      "id": "1416671748723572807",
-      "content": "不是",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
-    },
-    {
-      "id": "1416779541766209610",
-      "content": "目前存着",
-      "author": "alatin.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
-    },
-    {
-      "id": "1416779660284657815",
-      "content": "引航女配船長 完美",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
-    },
-    {
-      "id": "1416780760832278579",
-      "content": "理性在說不要",
+      "id": "1416658215164317746",
+      "channel_id": "1131839817982947429",
+      "content": "我用盾擊打完忘卻篇(自然打過9-1",
       "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416781304225337495",
-      "content": "yaya，奥尔拉和哈姆林我都是各抽一只",
-      "author": "alatin.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416687042208731238",
+      "channel_id": "1131839817982947429",
+      "content": "打的好艰难<:takenotes:1357186646294138890>",
+      "author": "timbite",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416781389591744562",
-      "content": "嗯",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416809697771786363",
+      "channel_id": "1131839817982947429",
+      "content": "剩我還在完神秘頭顱女了",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416784141038653540",
-      "content": "我加了~",
-      "author": "alatin.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
-    },
-    {
-      "id": "1416786877532344361",
-      "content": "100872328",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416812832497860618",
+      "channel_id": "1131839817982947429",
+      "content": "已經是了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

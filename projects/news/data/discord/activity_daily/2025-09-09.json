@@ -1,10 +1,12 @@
 {
   "date": "2025-09-09",
-  "messages": 173,
-  "unique_authors": 31,
-  "reactions_total": 189,
-  "attachments": 46,
+  "messages": 987,
+  "unique_authors": 50,
+  "reactions_total": 397,
+  "attachments": 99,
   "channel_activity": {
+    "🔸綜合討論": 784,
+    "🔸阵容构建": 30,
     "Pickmin": 6,
     "Shhh… he’s sleeping~": 1,
     "Pieta": 3,
@@ -43,32 +45,33 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "11": 13,
-    "17": 4,
+    "0": 34,
+    "1": 24,
+    "2": 28,
+    "3": 39,
+    "4": 39,
+    "5": 40,
+    "6": 36,
+    "7": 69,
+    "8": 70,
+    "9": 75,
+    "10": 124,
+    "11": 208,
+    "12": 52,
+    "13": 18,
+    "14": 18,
+    "15": 9,
+    "16": 48,
+    "17": 8,
+    "22": 10,
     "19": 9,
     "20": 8,
     "18": 7,
-    "3": 8,
-    "7": 5,
-    "8": 16,
-    "10": 5,
-    "16": 2,
-    "22": 7,
-    "6": 8,
-    "1": 20,
-    "4": 10,
-    "12": 6,
-    "13": 7,
-    "23": 14,
-    "5": 5,
-    "2": 15,
-    "15": 1,
-    "9": 1,
-    "0": 2
+    "23": 14
   },
   "message_types": {
-    "0": 73,
-    "19": 22
+    "0": 685,
+    "19": 129
   },
   "top_reacted_messages": [
     {
@@ -107,11 +110,27 @@
       "channel": "提灯长明"
     },
     {
+      "id": "1415020638560845906",
+      "channel_id": "1131839817982947429",
+      "content": "哇我又拿到這兩個了",
+      "author": "cwz.io",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1415073161967571065",
       "content": "作者：法兰雀丝卡\nID：100029217\n\n这是一篇授人以渔的攻略，希望教会你忘却前夜这个游戏的底层逻辑【如何打出伤害】，以及怎样根据每个【伤害型】唤醒体的特",
       "author": "llhwwc_89248",
       "reactions": 13,
       "channel": "忘却前夜队伍构筑思路讲解·上"
+    },
+    {
+      "id": "1414952298039345162",
+      "channel_id": "1131839817982947429",
+      "content": "（拱火",
+      "author": "ling_an_",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1415074992525283430",
@@ -128,88 +147,84 @@
       "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
-      "id": "1414860636755595315",
-      "content": "<@702167871144591461>Thank you for liking them. These fonts are carefully custom",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+      "id": "1414811735436558476",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1414928345019318302",
-      "content": "Idk if it not being there is a bug or intended.",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "✅「Answered」Add background from summer event to archive"
+      "id": "1414811743494082635",
+      "channel_id": "1131839817982947429",
+      "content": "爽了",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1414940345925632000",
-      "content": "<@523084324724146193>",
-      "author": "le_fishmael",
-      "reactions": 2,
-      "channel": "Pickmin"
+      "id": "1414874562340065333",
+      "channel_id": "1131839817982947429",
+      "content": "为了庆祝第一次375抽个皮克曼本体好了",
+      "author": "jidu1418",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415045827256258661",
-      "content": "UID 100896287\nhttps://docs.google.com/document/d/1xZxHDopaPk34souvd7fc2TuGLBD7XB",
-      "author": "_pdt",
-      "reactions": 2,
-      "channel": "Ramona/Gramona F.A.Q"
+      "id": "1414891090368139315",
+      "channel_id": "1131839817982947429",
+      "content": "打完自動把記憶移除腦袋，以至於上次雪山復刻的時候還沒意識到要面臨什麼（乾",
+      "author": "ass191044",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415030868401197177",
-      "content": "for what i know, it should be about any Morimens related stuff, you can find dif",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+      "id": "1414978679905452074",
+      "channel_id": "1131839817982947429",
+      "content": "<@926398065231921174> 我2t72000",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415074963710546094",
-      "content": "第四节 · 乘区组合\n\n伤害乘区公式的推导过程其实很好理解。然而想要在忘却前夜几十个唤醒体中，精准挑出4个角色使其叠乘计算后得到最优输出，并不是一键容易的事。\n",
-      "author": "llhwwc_89248",
-      "reactions": 2,
-      "channel": "忘却前夜队伍构筑思路讲解·上"
+      "id": "1414981289718845530",
+      "channel_id": "1131839817982947429",
+      "content": "重新玩了一把感觉有点超模了说实话",
+      "author": "randomplayer852",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415065691735982143",
-      "content": "Holy cow this is gorgeous! ✨",
-      "author": "talecrafter8625",
-      "reactions": 1,
-      "channel": "Pieta"
+      "id": "1414894116176658555",
+      "channel_id": "1131839874132090890",
+      "content": "僥倖地拿了今天的一抽撈到了安魂曲，太好了 <:takenotes:1357186646294138890>",
+      "author": "qqinfinity",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1415065976948392018",
-      "content": "Thank you so much for your kind words 🥰",
-      "author": "sofiaebby",
-      "reactions": 1,
-      "channel": "Pieta"
+      "id": "1414813488060174436",
+      "channel_id": "1131839817982947429",
+      "content": "跪三小",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415032953502699651",
-      "content": "Goya, is the submitting date repeated?",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+      "id": "1414872148606058547",
+      "channel_id": "1131839817982947429",
+      "content": "都快自暴自弃下一把了但是她们硬是爆了两次死抗这不赢不行了啊（",
+      "author": "jidu1418",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415034220643876885",
-      "content": "Thank you very much 🙇‍♀️🙇‍♀️🙇‍♀️",
-      "author": "sofiaebby",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1414950192196751525",
-      "content": "Nah save it, you hoard them until you are ready . Probably for tawil",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "Flares' Comprehensive Beginner Guide to Morimens"
-    },
-    {
-      "id": "1414790682870288546",
-      "content": "but im only on chapter 2 so right now my sanga is still nuking the boss in 1 tur",
-      "author": "heartdeyna",
-      "reactions": 1,
-      "channel": "Need help with team building and game in general"
+      "id": "1414874049158582382",
+      "channel_id": "1131839817982947429",
+      "content": "名字每天改一次嗎🤣   明天241天\n我多你一天<:proud:1400771683664658433>",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

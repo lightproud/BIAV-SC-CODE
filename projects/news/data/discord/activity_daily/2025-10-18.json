@@ -1,10 +1,30 @@
 {
   "date": "2025-10-18",
-  "messages": 1209,
-  "unique_authors": 45,
-  "reactions_total": 207,
-  "attachments": 81,
+  "messages": 12977,
+  "unique_authors": 242,
+  "reactions_total": 2370,
+  "attachments": 590,
   "channel_activity": {
+    "🔸morimens-game-chat": 10503,
+    "🔸剧情交流": 118,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 116,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 5,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 24,
+    "🔸phòng-chat-tiếng-việt": 13,
+    "🔸canal-español": 142,
+    "🔸canal-português": 18,
+    "🔸ruang-obrolan-indonesia": 505,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 75,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 8,
+    "🔸team-building": 39,
+    "🔸general-chat": 132,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
     "🔸綜合討論": 1112,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
     "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 1,
@@ -20,41 +40,150 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 8,
-    "1": 50,
-    "2": 11,
-    "3": 10,
-    "4": 15,
-    "5": 14,
-    "6": 48,
-    "7": 15,
-    "8": 45,
-    "9": 101,
-    "10": 211,
-    "11": 121,
-    "12": 22,
-    "13": 116,
-    "14": 268,
-    "15": 118,
-    "16": 23,
-    "18": 3,
-    "19": 5,
-    "20": 1,
-    "23": 3,
-    "22": 1
+    "0": 485,
+    "1": 460,
+    "2": 348,
+    "3": 365,
+    "4": 398,
+    "5": 779,
+    "6": 630,
+    "7": 491,
+    "8": 546,
+    "9": 497,
+    "10": 393,
+    "11": 713,
+    "12": 303,
+    "13": 824,
+    "14": 799,
+    "15": 736,
+    "16": 750,
+    "17": 721,
+    "18": 681,
+    "19": 414,
+    "20": 350,
+    "21": 243,
+    "22": 570,
+    "23": 481
   },
   "message_types": {
-    "0": 909,
-    "19": 202,
-    "46": 1
+    "0": 7171,
+    "19": 4583,
+    "23": 7,
+    "46": 1,
+    "20": 5,
+    "18": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1429096099716665424",
+      "channel_id": "1170692781216378960",
+      "content": "whats gnosis?",
+      "author": "blecnes",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429096175184908429",
+      "channel_id": "1170692781216378960",
+      "content": "i have never seen those",
+      "author": "blecnes",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429026816147984394",
+      "channel_id": "1170692781216378960",
+      "content": "no wonder bluewil players think ultra is bad <:takenotes:1357186646294138890>",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428986289830760458",
+      "channel_id": "1173463482503536711",
+      "content": "我對選角有意見也大概是因為這個，主要就是克萊的目的應該是要讓守密留在夢境裡，可是人柱卻不是娜娜或朵兒這種對守密或觀眾情感連結都相對深刻的角色，而是奧爾拉和艾瑞卡",
+      "author": "yolo_mode",
+      "reactions": 13,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1429122165877248171",
+      "channel_id": "1170692781216378960",
+      "content": "4RSU should be called in for investigation",
+      "author": "phi_squared",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429065766459932742",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "red_rest",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1429042899722702858",
       "content": "请支持我们糖果小魔女",
       "author": "yingmai_",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1428984493703696505",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/czn-gif-14977533963359720485",
+      "author": "kinokoortakenoko",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429070430987096148",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hammer2830",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429096035946332191",
+      "channel_id": "1170692781216378960",
+      "content": "if I had a nickel for every time I brute force a stage with gnosis I could save ",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429119019352588470",
+      "channel_id": "1170692781216378960",
+      "content": "uh what do you guys spend this investigation badges on?",
+      "author": "kinokoortakenoko",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429167734176092200",
+      "channel_id": "1170692781216378960",
+      "content": "i will not use my time to draw on her forehead and i feel that is disrespectful",
+      "author": "silviaqade",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429227194495795443",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429053284819406990",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1429094188258955326",
@@ -65,6 +194,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1429098712352690268",
+      "channel_id": "1170692781216378960",
+      "content": "I love blu",
+      "author": "digitalstar.exe",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429098594324971674",
+      "channel_id": "1180850818509971466",
+      "content": "2600+到3000+花了30+场<:Clown:1400771541423226971>",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1429091950446903327",
       "channel_id": "1131839817982947429",
       "content": "好久沒打深潛了  來打深潛<:pray:1356053116260454534>",
@@ -73,138 +218,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1428944500637831280",
-      "channel_id": "1131839817982947429",
-      "content": "200觸腕易傷<:pray:1356053116260454534>",
-      "author": "ernest_heart",
+      "id": "1429027056196522075",
+      "channel_id": "1170692781216378960",
+      "content": "is this the legendary blessor?",
+      "author": "arisuu0604",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429062055578566731",
-      "content": "She dose not look happy about this lol",
-      "author": "whydoihavetodothis69",
+      "id": "1429098680186831023",
+      "channel_id": "1170692781216378960",
+      "content": "Red is my fav",
+      "author": "blecnes",
       "reactions": 6,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429053211712684032",
-      "channel_id": "1131839817982947429",
-      "content": "凑个整",
-      "author": "jidu1418",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429097480456376373",
-      "channel_id": "1131839817982947429",
-      "content": "抽完又5抽出24",
-      "author": "dog_0630",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429251530040676524",
-      "content": "Wonder what smug candy tastes like<:M_satisfy:1400771690321154110>",
-      "author": "whydoihavetodothis69",
-      "reactions": 5,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429034730287927348",
-      "channel_id": "1131839817982947429",
-      "content": "谁懂我半夜狂码八千字赶征文比赛的救赎感",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429039538503680071",
-      "channel_id": "1131839817982947429",
-      "content": "~~深海24我都把3費賣掉欸~~",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429107991570812978",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog_0630",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429141988871245969",
-      "channel_id": "1131839817982947429",
-      "content": "所以融災開放助戰5次吧",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1428985426760302685",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sakura8901",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429028783184154664",
-      "channel_id": "1131839817982947429",
-      "content": "用余光看墨菲仿佛怀孕一样",
-      "author": "neptinu",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429038776360894576",
-      "channel_id": "1131839817982947429",
-      "content": "||~~三三三三三三~~||",
-      "author": "dog794",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429051280537423883",
-      "channel_id": "1131839817982947429",
-      "content": "點這個挺累的(",
-      "author": "sakura8901",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429106115743846501",
-      "channel_id": "1131839817982947429",
-      "content": "抽了我40000銀芯",
-      "author": "dog_0630",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429113974707851324",
-      "channel_id": "1131839817982947429",
-      "content": "许多年后，又会想限定抽巴巴托斯一回合用女王之剑捅穿的那个下午",
-      "author": "shunia3055",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429126079305748592",
-      "channel_id": "1131839817982947429",
-      "content": "給鳥哥啦",
-      "author": "0.0._.0_0.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1429142401812922419",
-      "channel_id": "1131839817982947429",
-      "content": "~~然後就會想到有人包養我就會有錢~~",
-      "author": "undecember_news",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-15",
-  "messages": 114,
-  "unique_authors": 32,
-  "reactions_total": 75,
-  "attachments": 38,
+  "messages": 2046,
+  "unique_authors": 54,
+  "reactions_total": 532,
+  "attachments": 179,
   "channel_activity": {
+    "🔸綜合討論": 1923,
+    "🔸阵容构建": 9,
     "Pickmin": 2,
     "Morimens Glossary (Wheels and Covenants equip guide)": 1,
     "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 2,
@@ -46,28 +48,35 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "15": 9,
-    "19": 5,
-    "17": 5,
-    "18": 4,
-    "10": 5,
-    "11": 4,
-    "12": 12,
-    "20": 11,
-    "3": 12,
-    "6": 8,
-    "14": 9,
-    "16": 10,
-    "2": 10,
-    "8": 3,
-    "9": 2,
-    "5": 2,
-    "23": 2,
-    "0": 1
+    "0": 16,
+    "1": 106,
+    "2": 61,
+    "3": 100,
+    "4": 22,
+    "5": 34,
+    "6": 58,
+    "7": 23,
+    "8": 423,
+    "9": 223,
+    "10": 37,
+    "11": 83,
+    "12": 161,
+    "13": 270,
+    "14": 211,
+    "15": 50,
+    "16": 67,
+    "17": 68,
+    "18": 7,
+    "19": 6,
+    "20": 13,
+    "21": 3,
+    "22": 1,
+    "23": 3
   },
   "message_types": {
-    "0": 18,
-    "19": 4
+    "0": 1397,
+    "19": 533,
+    "46": 2
   },
   "top_reacted_messages": [
     {
@@ -78,11 +87,99 @@
       "channel": "Morimens Glossary (Wheels and Covenants equip guide)"
     },
     {
+      "id": "1416996663687512207",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416991118171570290",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417110094545420318",
+      "channel_id": "1131839817982947429",
+      "content": "刷500界精 🤣 (x",
+      "author": "corposant_1003",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417018457760731226",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了<:dead:1356082627509092372>",
+      "author": "dog794",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417072118377742356",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417074366784602182",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1417214585244614727",
       "content": "我亲爱的友人，黛博拉：\n\n我亲爱的友人，在我生日那天，我再一次想起你。弥利亚姆再一次想起黛博拉。\n\n当我挑选着给墨菲的甜品的时候，不知为何，我想起了你。你也很爱",
       "author": "knifep_",
       "reactions": 8,
       "channel": "未曾寄出的书信#1"
+    },
+    {
+      "id": "1416959854114898021",
+      "channel_id": "1131839817982947429",
+      "content": "~~事已至此课个月卡假装这期打掉了吧（~~",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417039350016770118",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "scholar_2",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417143581767897239",
+      "channel_id": "1131839817982947429",
+      "content": "别上陆服，审查能把你游剧情美术卡得人模鬼样（",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417144043699441796",
+      "channel_id": "1131839817982947429",
+      "content": "到時候羊媽穿很多，差不多這樣",
+      "author": "noemyra",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417241361559851110",
+      "channel_id": "1131839817982947429",
+      "content": "属性全对100%计划更进一步（",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1417197507741487207",
@@ -99,74 +196,44 @@
       "channel": "✅「Answered」Add ability to see all card levels"
     },
     {
-      "id": "1417118614162636903",
-      "content": "**V2.3.2.3 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
+      "id": "1417062278058217472",
+      "channel_id": "1131839817982947429",
+      "content": "算是修复前交个卷吧，没有算力调和就3t了，唉，算力调和真的是最恶心的机制了",
+      "author": "lurenjiao",
       "reactions": 6,
-      "channel": "V2.3.2.3 在线维护公告"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417128605590491207",
-      "content": "● The Awakener \"Ryker\" gains a new effect for the talent \"Soulforge Aptitude\": t",
-      "author": "aegisx",
+      "id": "1417068057121259631",
+      "channel_id": "1131839817982947429",
+      "content": "所以除了管理员你都随便推",
+      "author": "lurenjiao",
       "reactions": 6,
-      "channel": "✅「Answered」About new Ryker buff"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417156378056982669",
-      "content": "#V2.3同人征集# UID：100407587\n油管：https://www.youtube.com/watch?v=m4n1nXhOPjQ\nB站：https",
-      "author": "shanghuamochou8139",
-      "reactions": 5,
-      "channel": "【忘却前夜|群像】「仁慈的父我已坠入，看不见罪的国度」|《以父之名》"
+      "id": "1417071978719744092",
+      "channel_id": "1131839817982947429",
+      "content": "順便無聊小知識\n漫畫的杯數其實比現實誇大不少\n像是你說那個漫畫女角是d但其實現實而論已經要f或超過",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417164987083788328",
-      "content": "This is my test run with Ryker P12,max Soulforge Aptitude ,equip his SSR+SR WoD ",
-      "author": "aegisx",
-      "reactions": 4,
-      "channel": "✅「Answered」About new Ryker buff"
+      "id": "1417072709011116112",
+      "channel_id": "1131839817982947429",
+      "content": "（戈雅正在阴暗地爬行）（？",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417012381233451059",
-      "content": "融災難度上升的情形也很影響遊戲體驗",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "敵人不應被加強"
-    },
-    {
-      "id": "1417031905559314472",
-      "content": "關卡的敵人強度有問題",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "融災數值過高"
-    },
-    {
-      "id": "1417181807023227133",
-      "content": "我應該不用再去凹一場杜勒爆擊吧😔😔",
-      "author": "suggestion03038",
-      "reactions": 2,
-      "channel": "✅「已回答」打了血海36000結果沒有排名"
-    },
-    {
-      "id": "1417158678200717463",
-      "content": "I played for 4 matches but it didn't put me in the leaderboard, I checked the bo",
-      "author": "hskzu",
-      "reactions": 2,
-      "channel": "✅「Answered」Traphase rank placement not registered"
-    },
-    {
-      "id": "1417035536107049091",
-      "content": "thank you a lot for your dedication. Best wishes.<:Cheerup:1400771555939844149> ",
-      "author": "arkismph",
-      "reactions": 2,
-      "channel": "✅「Answered」Accidently miss click cost me 980 prime silver."
-    },
-    {
-      "id": "1416974203608895630",
-      "content": "感谢反馈，我们查验一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」意圖上沒有出血"
+      "id": "1417168253486366822",
+      "channel_id": "1131839817982947429",
+      "content": "收工<:dead:1356082627509092372>",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

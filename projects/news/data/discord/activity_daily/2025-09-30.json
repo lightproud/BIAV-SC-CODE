@@ -1,10 +1,12 @@
 {
   "date": "2025-09-30",
-  "messages": 62,
-  "unique_authors": 14,
-  "reactions_total": 22,
-  "attachments": 13,
+  "messages": 759,
+  "unique_authors": 42,
+  "reactions_total": 148,
+  "attachments": 85,
   "channel_activity": {
+    "🔸綜合討論": 696,
+    "🔸阵容构建": 1,
     "Mythag`s Cat want to share cool art with you": 1,
     "Thais Warm up": 1,
     "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 5,
@@ -27,27 +29,32 @@
     "1421408684776357929": 1
   },
   "hourly_activity": {
-    "16": 3,
-    "8": 8,
-    "3": 3,
-    "10": 11,
-    "14": 1,
-    "7": 3,
-    "9": 3,
-    "15": 3,
-    "17": 2,
-    "18": 5,
-    "23": 1,
-    "22": 7,
-    "0": 1,
-    "12": 5,
-    "2": 2,
-    "5": 3,
-    "4": 1
+    "0": 2,
+    "1": 2,
+    "2": 35,
+    "3": 46,
+    "4": 61,
+    "5": 21,
+    "6": 18,
+    "7": 7,
+    "8": 26,
+    "9": 35,
+    "10": 87,
+    "11": 52,
+    "12": 124,
+    "13": 86,
+    "14": 8,
+    "15": 13,
+    "16": 20,
+    "17": 10,
+    "18": 9,
+    "21": 36,
+    "22": 44,
+    "23": 17
   },
   "message_types": {
-    "0": 26,
-    "19": 12
+    "0": 555,
+    "19": 142
   },
   "top_reacted_messages": [
     {
@@ -58,6 +65,126 @@
       "channel": ""
     },
     {
+      "id": "1422593934026211419",
+      "channel_id": "1131839817982947429",
+      "content": "<:blowkiss:1356053035780014150>",
+      "author": "zhaoxing233",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422410402641219735",
+      "channel_id": "1131839817982947429",
+      "content": "终于熬完400了<:dead:1356082627509092372>",
+      "author": "cs001092",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422607303688847511",
+      "channel_id": "1131839817982947429",
+      "content": "孩子被融災噁心壞了😡",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422421802143191121",
+      "channel_id": "1131839817982947429",
+      "content": "~~手里还有十七颗普核和十二颗精粹~~",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422476271757295657",
+      "channel_id": "1131839817982947429",
+      "content": "结束了",
+      "author": "jiangzehuai",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422398964417691728",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "elv_juan.carlos",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422431977092550719",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422446340016963645",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422457643737284608",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422521941201518644",
+      "channel_id": "1131839817982947429",
+      "content": "我都稱福袋為蘿莉",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422523147806310420",
+      "channel_id": "1131839817982947429",
+      "content": "我是大肌肉萌妹",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422526743301849182",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422558415636660316",
+      "channel_id": "1131839817982947429",
+      "content": "我上個廁所 再來玩  被你打尿了",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422569394080317491",
+      "channel_id": "1131839817982947429",
+      "content": "先冲个648庆祝一下",
+      "author": "human10062",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422628629212303441",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1422625703072891012",
       "content": "<:Sendflowers:1400771545370067118>",
       "author": "le_fishmael",
@@ -65,74 +192,28 @@
       "channel": "Mythag`s Cat want to share cool art with you"
     },
     {
-      "id": "1422516685713313863",
-      "content": "I recon to try Jenkin, Winkle, Caecus and Murphy out and see how it goes. Also, ",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "I hit a wall need help to build a team"
+      "id": "1422422364162883696",
+      "channel_id": "1131839817982947429",
+      "content": "||小猫什么时候出SP小骑士😚||",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1422536909263081542",
-      "content": "Lacking in what way? Early on even trash units are good so there shouldn’t reall",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "I hit a wall need help to build a team"
+      "id": "1422423227493257247",
+      "channel_id": "1131839817982947429",
+      "content": "这可素我辛辛苦苦攒下的聘礼😡",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1422650369024065586",
-      "content": "Jenkins / Winkle/ Murphy/ caecus",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Who do I get from selector 2 & 3"
-    },
-    {
-      "id": "1422651901467562016",
-      "content": "Thanks a lot mate",
-      "author": "snowingmoon",
-      "reactions": 1,
-      "channel": "Who do I get from selector 2 & 3"
-    },
-    {
-      "id": "1422729978235064464",
-      "content": "Anniversary is coming up soon, there we will with a 99% chance get a new meta un",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Who do I get from selector 2 & 3"
-    },
-    {
-      "id": "1422384520472035358",
-      "content": "I tried to update the game but it get stuck on 95% and this error code appear. I",
-      "author": "shenn_o_o",
-      "reactions": 1,
-      "channel": "What's this error code mean?"
-    },
-    {
-      "id": "1422566154811080806",
-      "content": "I doubt we are looking at a full month without release after Pickman, but who kn",
-      "author": "zekiei",
-      "reactions": 1,
-      "channel": "V2.3.3.0 停服维护公告"
-    },
-    {
-      "id": "1422495175917305877",
-      "content": "I tried to update the game but it get stuck on 95% and this error code appear. I",
-      "author": "shenn_o_o",
-      "reactions": 1,
-      "channel": "💭「Processing」I cant update the game"
-    },
-    {
-      "id": "1422456742196936704",
-      "content": "Sadge, if it doesn't work you can try to use the official launcher from the mori",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "💭「Processing」i can't enter the game via steam"
-    },
-    {
-      "id": "1422457330372579363",
-      "content": "oh ty for the reminder, i forgot about that!",
-      "author": "gouphee",
-      "reactions": 1,
-      "channel": "💭「Processing」i can't enter the game via steam"
+      "id": "1422433224797323264",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

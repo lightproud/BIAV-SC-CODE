@@ -1,10 +1,11 @@
 {
   "date": "2025-09-02",
-  "messages": 239,
-  "unique_authors": 43,
-  "reactions_total": 371,
-  "attachments": 41,
+  "messages": 1353,
+  "unique_authors": 48,
+  "reactions_total": 516,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 1114,
     "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 17,
     "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?": 6,
     "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman": 5,
@@ -33,30 +34,33 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "15": 19,
-    "16": 6,
-    "22": 2,
-    "8": 67,
-    "9": 6,
-    "21": 19,
-    "10": 4,
-    "7": 18,
-    "11": 2,
-    "14": 25,
-    "5": 5,
-    "13": 5,
-    "17": 4,
-    "18": 7,
+    "1": 13,
+    "2": 22,
+    "3": 12,
+    "4": 41,
+    "5": 28,
+    "6": 7,
+    "7": 38,
+    "8": 125,
+    "9": 49,
+    "10": 194,
+    "11": 50,
+    "12": 131,
+    "13": 88,
+    "14": 100,
+    "15": 178,
+    "16": 150,
+    "17": 43,
+    "18": 26,
+    "21": 20,
+    "22": 4,
     "19": 9,
     "20": 24,
-    "2": 6,
-    "1": 7,
-    "12": 3,
     "0": 1
   },
   "message_types": {
-    "0": 143,
-    "19": 17
+    "0": 936,
+    "19": 178
   },
   "top_reacted_messages": [
     {
@@ -144,11 +148,35 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
+      "id": "1412298984801702048",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "xyakoto",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1412349823289524287",
       "content": "支持不做人統治世界喵",
       "author": "kong760",
       "reactions": 7,
       "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
+    },
+    {
+      "id": "1412307550506061914",
+      "channel_id": "1131839817982947429",
+      "content": "鸟蛛好玩诶",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1412349583308095520",
+      "channel_id": "1131839817982947429",
+      "content": "~~我要寫他和杜勒的文~~",
+      "author": "dog794",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1412464648782876672",
@@ -172,32 +200,12 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
-      "id": "1412572089935728640",
-      "content": "these look very similar to:\n\nWalbaum Fraktur SH\nDenver TS\nLobster\n\n<:thinking1:1",
-      "author": "theborkerr",
+      "id": "1412418593458618478",
+      "channel_id": "1131839817982947429",
+      "content": "他想看大家赤石",
+      "author": "tianfang5580",
       "reactions": 5,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
-    },
-    {
-      "id": "1412556675210023003",
-      "content": "wait pollux is in the background <:Showoff:1400771654199541850>\n(edit: never min",
-      "author": "reya.li",
-      "reactions": 5,
-      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
-    },
-    {
-      "id": "1412381824545722450",
-      "content": "Let him be a support unit I'm begging you.",
-      "author": "perokun6941",
-      "reactions": 5,
-      "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
-    },
-    {
-      "id": "1412350533636849715",
-      "content": "能扣到我的■■",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
+      "channel": "🔸綜合討論"
     }
   ]
 }

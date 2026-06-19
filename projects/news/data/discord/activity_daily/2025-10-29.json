@@ -1,10 +1,33 @@
 {
   "date": "2025-10-29",
-  "messages": 1199,
-  "unique_authors": 47,
-  "reactions_total": 701,
-  "attachments": 107,
+  "messages": 19330,
+  "unique_authors": 330,
+  "reactions_total": 3363,
+  "attachments": 887,
   "channel_activity": {
+    "🔸morimens-game-chat": 11003,
+    "🔸剧情交流": 6,
+    "🔸晒卡分享": 14,
+    "🔸相位对弈": 48,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 7,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 24,
+    "🔸русский-канал": 2319,
+    "🔸phòng-chat-tiếng-việt": 28,
+    "🔸canal-español": 268,
+    "🔸canal-português": 101,
+    "🔸ruang-obrolan-indonesia": 46,
+    "🔸ห้องสนทนาภาษาไทย": 26,
+    "🔸traphase": 145,
+    "🔸lore-chat": 91,
+    "🔸lets-count": 94,
+    "🔸频道建议┊server-suggestions": 19,
+    "🔸team-building": 879,
+    "🔸general-chat": 2983,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🐱light’s-nest": 2,
     "🔸綜合討論": 932,
     "🔸阵容构建": 4,
     "Clementine!!!": 1,
@@ -32,47 +55,53 @@
     "✅「已回答」相位对弈字打错了": 1,
     "✅「Answered」Can't Log In": 2,
     "2.3.4相位对弈": 1,
-    "🐱light’s-nest": 1,
     "1423337172655935600": 2,
     "1234769700735418368": 3,
     "1432654338982940783": 19,
     "1356210707867107391": 2
   },
   "hourly_activity": {
-    "0": 24,
-    "1": 5,
-    "2": 113,
-    "3": 21,
-    "4": 74,
-    "5": 101,
-    "6": 45,
-    "7": 125,
-    "8": 39,
-    "9": 28,
-    "10": 25,
-    "11": 64,
-    "12": 36,
-    "13": 48,
-    "14": 270,
-    "15": 41,
-    "16": 74,
-    "17": 11,
-    "18": 12,
-    "19": 22,
-    "20": 3,
-    "22": 11,
-    "23": 7
+    "0": 318,
+    "1": 254,
+    "2": 543,
+    "3": 181,
+    "4": 408,
+    "5": 815,
+    "6": 761,
+    "7": 968,
+    "8": 812,
+    "9": 1327,
+    "10": 726,
+    "11": 991,
+    "12": 827,
+    "13": 855,
+    "14": 1369,
+    "15": 1080,
+    "16": 1250,
+    "17": 978,
+    "18": 1034,
+    "19": 935,
+    "20": 770,
+    "21": 573,
+    "22": 878,
+    "23": 677
   },
   "message_types": {
-    "19": 225,
-    "0": 711
+    "0": 11902,
+    "19": 6215,
+    "20": 6,
+    "23": 5,
+    "46": 1,
+    "6": 1,
+    "18": 1
   },
   "top_reacted_messages": [
     {
       "id": "1432970002801102879",
+      "channel_id": "1426837316533747823",
       "content": "来自QQ频道“空空空空空”的作品！真希望未来有一天我们能够制作更多皮肤！\nA piece from the QQ channel “空空空空空”! I real",
       "author": "game.producer.light",
-      "reactions": 135,
+      "reactions": 136,
       "channel": "🐱light’s-nest"
     },
     {
@@ -81,6 +110,22 @@
       "author": "game.producer.light",
       "reactions": 94,
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1433179421011083294",
+      "channel_id": "1170692781216378960",
+      "content": "||im smart||",
+      "author": "spooky_penguin_",
+      "reactions": 63,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433228246115287071",
+      "channel_id": "1170692781216378960",
+      "content": "Long answer: https://youtu.be/0MOs8lfPa74?si=EzGWvYgEip2BDoEu",
+      "author": "frosthief",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1432994348089475082",
@@ -104,6 +149,14 @@
       "channel": ""
     },
     {
+      "id": "1433178130037604563",
+      "channel_id": "1170692781216378960",
+      "content": "Please congratulate me cause I just did the most irresponsible thing by getting ",
+      "author": "markiecart",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432995508380631130",
       "content": "会有角色",
       "author": "game.producer.light",
@@ -123,6 +176,14 @@
       "author": "ena04564",
       "reactions": 14,
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1433075665699209419",
+      "channel_id": "1170692781216378960",
+      "content": "If we get 30k we get 3k silver🫃",
+      "author": "enternameunavailable",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1433097055353573478",
@@ -153,65 +214,36 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1433001660598456332",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433050911852331047",
+      "channel_id": "1170692781216378960",
+      "content": "<:camera:1356053040251146460>",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433178978985709570",
+      "channel_id": "1170692781216378960",
+      "content": "im super funny so all of my messages are bangers",
+      "author": "bongosjam",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432989264613871647",
       "channel_id": "1131839817982947429",
       "content": "是因为联动这个便宜吗",
       "author": "carme.0588",
       "reactions": 10,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432994414388842497",
-      "content": "# 銀芯科技還是太強大了",
-      "author": "ena04564",
-      "reactions": 10,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1432978405728583680",
-      "channel_id": "1131839817982947429",
-      "content": "赤完了",
-      "author": "ernest_heart",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433078858957062306",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "123zhang0036",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432996517475651624",
-      "content": "和忘却前夜联动过的游戏",
-      "author": "muliupan",
-      "reactions": 9,
-      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
-    },
-    {
-      "id": "1433011341685166130",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1433225734821904454",
-      "channel_id": "1131839817982947429",
-      "content": "反正我都沒有",
-      "author": "universe.dark",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432992406663331952",
-      "content": "我不行了，你游是在cos什么二游送葬人吗？<:processing:1357185814567718963>",
-      "author": "wuxu0045_64015",
-      "reactions": 7,
-      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
     }
   ]
 }

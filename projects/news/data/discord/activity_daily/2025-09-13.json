@@ -1,10 +1,12 @@
 {
   "date": "2025-09-13",
-  "messages": 73,
-  "unique_authors": 17,
-  "reactions_total": 896,
-  "attachments": 22,
+  "messages": 1162,
+  "unique_authors": 42,
+  "reactions_total": 1189,
+  "attachments": 77,
   "channel_activity": {
+    "🔸綜合討論": 1086,
+    "🔸阵容构建": 3,
     "Kath - RA Art Submission by Flares.": 2,
     "☄️": 7,
     "Tawil fan art": 5,
@@ -27,30 +29,34 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "9": 2,
-    "12": 5,
-    "15": 8,
-    "16": 7,
-    "18": 3,
-    "19": 3,
-    "14": 9,
-    "11": 5,
-    "4": 2,
-    "13": 6,
-    "1": 5,
-    "2": 2,
-    "3": 6,
-    "17": 1,
+    "1": 13,
+    "2": 6,
+    "3": 35,
+    "4": 67,
+    "5": 124,
+    "6": 14,
+    "7": 59,
+    "8": 119,
+    "9": 119,
+    "10": 252,
+    "11": 72,
+    "12": 120,
+    "13": 51,
+    "14": 20,
+    "15": 22,
+    "16": 27,
+    "17": 15,
+    "18": 12,
+    "19": 7,
     "20": 1,
     "22": 4,
     "23": 1,
-    "8": 1,
     "21": 1,
     "0": 1
   },
   "message_types": {
-    "0": 39,
-    "19": 18
+    "0": 843,
+    "19": 246
   },
   "top_reacted_messages": [
     {
@@ -89,60 +95,124 @@
       "channel": "同人创作……"
     },
     {
-      "id": "1416399808750424179",
-      "content": "配水母",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416355111952973854",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416411596107808909",
-      "content": "Can't read full level achievement",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "💭「Processing」Level achievement text cutoff"
+      "id": "1416367883407065199",
+      "channel_id": "1131839817982947429",
+      "content": "阿遙不只喜歡輸出高的 自己罵人輸出也很高",
+      "author": "undecember_news",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416506028270551160",
-      "content": "Yup",
-      "author": "zharysche",
-      "reactions": 1,
-      "channel": "☄️"
+      "id": "1416368652558532678",
+      "channel_id": "1131839817982947429",
+      "content": "~~好色喔 擠一張床~~",
+      "author": "undecember_news",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416385104334422066",
-      "content": "只有这几个而已",
-      "author": "alatin.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416361596300824586",
+      "channel_id": "1131839817982947429",
+      "content": "感觉不如游戏群不让玩游戏",
+      "author": "carme.0588",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416564139282792489",
-      "content": "Gotcha, thanks for the help!",
-      "author": "naviking",
-      "reactions": 1,
-      "channel": "Evaluation of my initial teams"
+      "id": "1416367633464430702",
+      "channel_id": "1131839817982947429",
+      "content": "被判開掛",
+      "author": "ahong0727",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416278517980725319",
-      "content": "Joined because the art looked really nice, but super confused on teams. I've don",
-      "author": "sairaphis",
-      "reactions": 1,
-      "channel": "New Player Team Building Help"
+      "id": "1416369793430327386",
+      "channel_id": "1131839817982947429",
+      "content": "结果他破防了",
+      "author": "carme.0588",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416378968655007867",
-      "content": "Get a Corposant, she do well even in one dupe.\nKeep pulling in chaos for nautilu",
-      "author": "mount_fisherman",
-      "reactions": 1,
-      "channel": "New Player Team Building Help"
+      "id": "1416369912229658646",
+      "channel_id": "1131839817982947429",
+      "content": "誰才是最糖之巔",
+      "author": "undecember_news",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416403272494874725",
-      "content": "~~誰都可以是福袋~~",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」達芙黛爾的標籤出現在「福利」的好幾個地方"
+      "id": "1416278780716122132",
+      "channel_id": "1131839817982947429",
+      "content": "我也想裝啊，可是我是真菜啊！",
+      "author": "wqin.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416283838665199686",
+      "channel_id": "1131839817982947429",
+      "content": "抽了船长带我的深海赔钱货们玩（",
+      "author": "timbite",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416286281658273993",
+      "channel_id": "1131839817982947429",
+      "content": "船長最好的出裝是+12巨刃+12藏品\n加油👍",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416288798702305402",
+      "channel_id": "1131839817982947429",
+      "content": "他乾了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416319525410050098",
+      "channel_id": "1131839817982947429",
+      "content": "~~提前3年~~",
+      "author": "cwz.io",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416328208529362995",
+      "channel_id": "1131839817982947429",
+      "content": "意義哥",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416332719616430140",
+      "channel_id": "1131839817982947429",
+      "content": "我是什麼神廟嗎？",
+      "author": "kemomimi_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1416345224707313705",
+      "channel_id": "1131839817982947429",
+      "content": "吓我一跳英区有个不玩超维其他星辰角全+12的",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

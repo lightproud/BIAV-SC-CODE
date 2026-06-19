@@ -1,10 +1,31 @@
 {
   "date": "2025-10-14",
-  "messages": 10463,
+  "messages": 12019,
   "unique_authors": 213,
-  "reactions_total": 2138,
-  "attachments": 424,
+  "reactions_total": 2289,
+  "attachments": 509,
   "channel_activity": {
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 130,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 35,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 5,
+    "🔸chaîne-française": 8,
+    "🔸русский-канал": 200,
+    "🔸phòng-chat-tiếng-việt": 30,
+    "🔸canal-español": 68,
+    "🔸canal-português": 48,
+    "🔸ruang-obrolan-indonesia": 316,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 52,
+    "🔸lore-chat": 275,
+    "🔸lets-count": 18,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 41,
+    "🔸general-chat": 297,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
     "🔸綜合討論": 344,
     "🔸morimens-game-chat": 10005,
     "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux": 4,
@@ -28,37 +49,34 @@
     "1234769700735418368": 3
   },
   "hourly_activity": {
-    "0": 344,
-    "1": 102,
-    "2": 147,
-    "3": 291,
-    "4": 232,
-    "5": 398,
-    "6": 453,
-    "7": 422,
-    "8": 376,
-    "10": 738,
-    "11": 679,
-    "12": 604,
-    "13": 563,
-    "14": 595,
-    "15": 625,
-    "16": 510,
-    "17": 424,
-    "18": 545,
-    "19": 443,
-    "21": 372,
-    "23": 155,
-    "9": 650,
-    "20": 631,
-    "22": 164
+    "7": 507,
+    "0": 366,
+    "2": 169,
+    "8": 616,
+    "10": 842,
+    "11": 721,
+    "13": 782,
+    "17": 444,
+    "23": 164,
+    "5": 447,
+    "9": 701,
+    "3": 301,
+    "4": 268,
+    "6": 472,
+    "12": 715,
+    "14": 823,
+    "15": 772,
+    "16": 559,
+    "18": 555,
+    "19": 479,
+    "21": 381,
+    "22": 184,
+    "1": 120,
+    "20": 631
   },
   "message_types": {
-    "19": 4086,
-    "0": 6252,
-    "46": 3,
-    "23": 5,
-    "20": 3
+    "0": 1120,
+    "19": 436
   },
   "top_reacted_messages": [
     {
@@ -155,6 +173,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1427684048951705652",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 9,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1427667038800842762",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -194,28 +220,20 @@
       "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
     },
     {
+      "id": "1427681565504311368",
+      "channel_id": "1326453763355185215",
+      "content": "6-6, ending\n6-8, start\n6-14, before the boss fight",
+      "author": "arkaether",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1427747553293631550",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "sayo.0320",
       "reactions": 8,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1427670612565954713",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "sleepypillow",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1427722306007863417",
-      "channel_id": "1170692781216378960",
-      "content": "<@167253065387343872> Basic starter rules: Aequor shit.Here you pull e2 goliath ",
-      "author": "twilightsparkle163163",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

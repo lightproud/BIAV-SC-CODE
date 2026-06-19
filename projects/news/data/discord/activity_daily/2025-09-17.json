@@ -1,10 +1,12 @@
 {
   "date": "2025-09-17",
-  "messages": 81,
-  "unique_authors": 12,
-  "reactions_total": 88,
-  "attachments": 32,
+  "messages": 1292,
+  "unique_authors": 45,
+  "reactions_total": 377,
+  "attachments": 72,
   "channel_activity": {
+    "🔸綜合討論": 1202,
+    "🔸阵容构建": 9,
     "Murphy 🍰": 2,
     "Kaly Tier Lists - Sept 2025": 3,
     "Morimens: Game Mechanics and Terms": 1,
@@ -33,30 +35,33 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "22": 4,
-    "5": 2,
-    "8": 11,
-    "15": 1,
-    "4": 3,
+    "0": 9,
+    "1": 31,
+    "2": 37,
+    "3": 93,
+    "4": 226,
+    "5": 74,
+    "6": 95,
+    "7": 179,
+    "8": 52,
+    "9": 30,
+    "10": 84,
+    "11": 39,
+    "12": 27,
+    "13": 22,
+    "14": 58,
+    "15": 90,
+    "16": 84,
+    "17": 9,
+    "22": 5,
+    "23": 31,
     "20": 3,
     "21": 2,
-    "16": 4,
-    "7": 6,
-    "18": 12,
-    "11": 2,
-    "3": 10,
-    "6": 2,
-    "10": 2,
-    "17": 5,
-    "13": 5,
-    "14": 1,
-    "23": 1,
-    "1": 1,
-    "2": 4
+    "18": 12
   },
   "message_types": {
-    "0": 26,
-    "19": 6
+    "0": 939,
+    "19": 272
   },
   "top_reacted_messages": [
     {
@@ -65,6 +70,14 @@
       "author": "happyskull",
       "reactions": 17,
       "channel": "Murphy 🍰"
+    },
+    {
+      "id": "1417793440351256680",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "tofu0834",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1417749216842743899",
@@ -88,6 +101,22 @@
       "channel": "Morimens: Game Mechanics and Terms"
     },
     {
+      "id": "1417774285392445562",
+      "channel_id": "1131839817982947429",
+      "content": "然后迟点po融灾400🫠",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417783856978985011",
+      "channel_id": "1131839817982947429",
+      "content": "今年過年就有拿到啊，他老人家103歲了，老人年金沒啥地方要用的都存著，過年就包開心的，但是今年姑婆祖給我紅包前還有凹一下確認厚度才給我，給我大姐兩個小孩的才一人",
+      "author": "wqin.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1417792099675279361",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：皮克曼EP·疯画奇旅，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照",
       "author": "morimensstaff01",
@@ -95,109 +124,100 @@
       "channel": "忘却前夜OST：皮克曼EP·疯画奇旅"
     },
     {
-      "id": "1417690715818950706",
-      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=997&tnum=1",
-      "author": "taoi002",
-      "reactions": 4,
-      "channel": "阿拉克涅，技能與命輪介紹"
+      "id": "1417723280051142769",
+      "channel_id": "1131839817982947429",
+      "content": "我推薦所有忘卻前夜玩家去玩達芙黛爾",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417772173770358785",
+      "id": "1417781563135098932",
+      "channel_id": "1131839817982947429",
+      "content": "要是有餅乾糕點味道的就是開麵包店的小姑姑\n大姑姑最老頭髮是四個姑姑裡最白的\n二姑姑住美國，每次回來都很趕所以有時身上會出現忘記換的美金三姑姑非常刻薄",
+      "author": "wqin.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417784724000083989",
+      "channel_id": "1131839817982947429",
+      "content": "杜勒暴擊了沒\n500黑印湊夠了嗎\n趕緊把鳥人+12阿",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418020486587355320",
+      "channel_id": "1131839817982947429",
+      "content": "有西班牙區的人標我出來然後說我是另一個人的中國老婆？",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417714300814098544",
+      "channel_id": "1131839874132090890",
       "content": "",
-      "author": "yingmai_",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1417773997118066758",
+      "channel_id": "1131839817982947429",
+      "content": "這是因為阿狗是超高智商人士，不愧為無課戰神又有一堆限定90級+12的超級大佬🛐 🛐 🛐",
+      "author": "universe.dark",
       "reactions": 4,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418001782721740915",
-      "content": "Bonus doodles",
-      "author": "happyskull",
-      "reactions": 3,
-      "channel": "Murphy 🍰"
+      "id": "1417774728806010930",
+      "channel_id": "1131839817982947429",
+      "content": "你應該邊上班邊打融災",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417772740278095943",
-      "content": "神秘垂耳兔",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
+      "id": "1417776308800327732",
+      "channel_id": "1131839817982947429",
+      "content": "他們敢不幫我我就敢讓他們那些活著的都社死",
+      "author": "wqin.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417773023225843822",
-      "content": "醒图滤镜真好用吧",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
+      "id": "1417776991762911252",
+      "channel_id": "1131839817982947429",
+      "content": "結果我阿嬤是大範圍托夢，我爸我 我在台北 美國 蘭嶼 金門 媽祖的侄子總共6人都夢到了",
+      "author": "wqin.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417842352642588692",
-      "content": "I've attached my current box below, new to the game and is still trying to figur",
-      "author": "maririn.g",
-      "reactions": 2,
-      "channel": "Team Building, Selectors and Pulling Plan"
+      "id": "1417777604941054054",
+      "channel_id": "1131839817982947429",
+      "content": "我們家的人多少都有一點，最少的就是看到 摸到 感應 聽懂其中一種，最多的就是全部都有，然後外加一個交流",
+      "author": "wqin.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417766646642249819",
-      "content": "Almost everywhere, not just in the example image, of the Thai UI, the vowels are",
-      "author": "darkerkuro",
-      "reactions": 2,
-      "channel": "✅「Answered」Issue with Thai UI vowel positioning."
+      "id": "1417780549136678964",
+      "channel_id": "1131839817982947429",
+      "content": "經典「小時候抱過」但完全想不起來",
+      "author": "cameliia._.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417924145836196013",
-      "content": "总的来说会回调为更经典的体验 近期的新角色基本也会重做",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「已回答」缠绕机制能改下吗？"
-    },
-    {
-      "id": "1417925830817874010",
-      "content": "泪🔪回来吧，哪怕直能分解一次<:pray:1400771650064089112>",
-      "author": "cs001092",
-      "reactions": 2,
-      "channel": "✅「已回答」缠绕机制能改下吗？"
-    },
-    {
-      "id": "1417967240858566858",
-      "content": "Clem Horla winkle orgier. Pull Clem on the upcoming reruns\nTawil Ham Ryker Karen",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "what teams can i build or characters to summon for future teams?"
-    },
-    {
-      "id": "1417944493960724571",
-      "content": "you can't, that is why you stack them and then you dismantle the +12 you form",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "I can't Dismantle low rank WOD cause they're lock"
-    },
-    {
-      "id": "1417944691483348993",
-      "content": "Thank a lot",
-      "author": "andrewgotfame_38019",
-      "reactions": 1,
-      "channel": "I can't Dismantle low rank WOD cause they're lock"
-    },
-    {
-      "id": "1417915730187518144",
-      "content": "There are two posion teams endgame:\n\n1. 24 Blue. The unit 24 (you don't have) in",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Team Building, Selectors and Pulling Plan"
-    },
-    {
-      "id": "1417935601000255618",
-      "content": "Enjoy. Have fun!",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Team Building, Selectors and Pulling Plan"
-    },
-    {
-      "id": "1417736066307330168",
-      "content": "pls check DM if can",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」About new Ryker buff"
+      "id": "1417780785875910726",
+      "channel_id": "1131839817982947429",
+      "content": "「喂」",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

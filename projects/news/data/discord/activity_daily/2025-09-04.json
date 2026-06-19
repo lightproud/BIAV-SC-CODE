@@ -1,10 +1,11 @@
 {
   "date": "2025-09-04",
-  "messages": 140,
-  "unique_authors": 38,
-  "reactions_total": 274,
-  "attachments": 41,
+  "messages": 831,
+  "unique_authors": 41,
+  "reactions_total": 358,
+  "attachments": 94,
   "channel_activity": {
+    "🔸綜合討論": 691,
     "Carried": 1,
     "D-dive 45K Aequor/Caro Guide": 4,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
@@ -31,30 +32,32 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "10": 5,
+    "0": 6,
+    "1": 11,
+    "2": 69,
+    "3": 153,
+    "4": 28,
+    "5": 33,
+    "6": 66,
+    "7": 30,
+    "8": 13,
+    "9": 29,
+    "10": 86,
+    "11": 43,
+    "12": 57,
+    "13": 63,
+    "14": 52,
+    "15": 43,
+    "16": 15,
+    "17": 5,
+    "23": 13,
     "19": 5,
-    "1": 5,
     "20": 8,
-    "22": 3,
-    "2": 3,
-    "3": 1,
-    "4": 4,
-    "5": 4,
-    "6": 3,
-    "8": 3,
-    "13": 15,
-    "14": 6,
-    "15": 21,
-    "16": 10,
-    "9": 6,
-    "12": 34,
-    "0": 2,
-    "7": 1,
-    "17": 1
+    "22": 3
   },
   "message_types": {
-    "0": 68,
-    "19": 12
+    "19": 146,
+    "0": 545
   },
   "top_reacted_messages": [
     {
@@ -121,6 +124,14 @@
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
+      "id": "1413205162390192270",
+      "channel_id": "1131839817982947429",
+      "content": "你承認希洛女士貌美如花嗎<:wish:1356084702468899117>",
+      "author": "ice_storys",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1413237740140630036",
       "content": "**Overview:**\n\nI’ll provide a quick guide on one specific team that allows me to",
       "author": "wolfierce",
@@ -133,6 +144,14 @@
       "author": "wild_pansy",
       "reactions": 7,
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413188947143692441",
+      "channel_id": "1131839817982947429",
+      "content": "每天沒有捶一次水母就渾身不痛快",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1412984310847508660",
@@ -182,20 +201,6 @@
       "author": "zdttjqxwxmzs",
       "reactions": 4,
       "channel": "第一届牢暮杯pve大型深潜赛"
-    },
-    {
-      "id": "1413183717865816258",
-      "content": "謝謝 😭😭 卡斯托爾好可愛誰懂",
-      "author": "muggypeasant",
-      "reactions": 4,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413141513772339261",
-      "content": "血肉唤醒体：皮克曼（60级）\n体质130\n攻击142\n防御122\n————\n被动天赋：贪婪之噬\n战斗开始时，皮克曼每有1点狂气回充等级，我方最大生命值+0.5%",
-      "author": "zdttjqxwxmzs",
-      "reactions": 4,
-      "channel": "皮克曼技能组"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-09-05",
-  "messages": 375,
-  "unique_authors": 48,
-  "reactions_total": 262,
-  "attachments": 62,
+  "messages": 2037,
+  "unique_authors": 55,
+  "reactions_total": 480,
+  "attachments": 152,
   "channel_activity": {
+    "🔸綜合討論": 1662,
     "uvhash fan art submission": 2,
     "D-dive 45K Aequor/Caro Guide": 7,
     "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 60,
@@ -42,34 +43,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "2": 8,
-    "7": 24,
-    "11": 50,
-    "12": 28,
-    "13": 8,
-    "15": 17,
-    "17": 19,
-    "10": 27,
-    "6": 51,
-    "8": 9,
-    "1": 5,
-    "9": 37,
-    "21": 12,
-    "22": 1,
-    "14": 12,
-    "18": 7,
-    "19": 5,
-    "20": 17,
-    "16": 13,
-    "0": 9,
-    "5": 1,
-    "23": 1,
-    "4": 9,
-    "3": 5
+    "0": 11,
+    "1": 13,
+    "2": 13,
+    "3": 19,
+    "4": 34,
+    "5": 136,
+    "6": 129,
+    "7": 165,
+    "8": 106,
+    "9": 276,
+    "10": 133,
+    "11": 186,
+    "12": 165,
+    "13": 55,
+    "14": 172,
+    "15": 84,
+    "16": 49,
+    "17": 155,
+    "18": 67,
+    "19": 9,
+    "20": 25,
+    "21": 14,
+    "23": 20,
+    "22": 1
   },
   "message_types": {
-    "0": 206,
-    "19": 39
+    "0": 1253,
+    "19": 409
   },
   "top_reacted_messages": [
     {
@@ -122,6 +123,30 @@
       "channel": "小QQ系列-四小強+混沌界域上半"
     },
     {
+      "id": "1413490070228435056",
+      "channel_id": "1131839817982947429",
+      "content": "不是不抽是沒錢！",
+      "author": "undecember_news",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413417426141577276",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1413417240229056552",
+      "author": "undecember_news",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413491701238202479",
+      "channel_id": "1131839817982947429",
+      "content": "所以你應該把器官都賣光光來課金",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1413470721912475718",
       "content": "",
       "author": "pinguimally3689",
@@ -141,6 +166,22 @@
       "author": "morimensstaff02",
       "reactions": 7,
       "channel": "V2.3.2.0 停服维护公告"
+    },
+    {
+      "id": "1413487300423450689",
+      "channel_id": "1131839817982947429",
+      "content": "~~我只有四隻~~",
+      "author": "wild_pansy",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413490663382581358",
+      "channel_id": "1131839817982947429",
+      "content": "<:hitler:1124790256303100065>",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1413524337968943175",
@@ -176,41 +217,6 @@
       "author": "gisstar",
       "reactions": 5,
       "channel": "Questions about Pickman's 2 cost"
-    },
-    {
-      "id": "1413507868669509744",
-      "content": "https://discord.com/channels/1131791637933199470/1313054288976678932",
-      "author": "_cwz_",
-      "reactions": 4,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1413412768178114601",
-      "content": "maybe with a more MtG style of text would be clearer, there's a reason MtG has a",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1413414050423111822",
-      "content": "they'll reveal everything, his lore, his concept art, the artist behind it, befo",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
-    },
-    {
-      "id": "1413313840178925768",
-      "content": "如题，搓一把医生\n\n———观前须知———\n\n>依旧是星辰篇||神国降临||if线\n>包含对角色和星辰篇第二章剧情的极端个人理解\n>包含对心理咨询关系和心理理论的",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "[克莱门汀x女守密人]二重决断"
-    },
-    {
-      "id": "1413494329770639421",
-      "content": "<@633215996508766229> 創構造物能用來當成深潛8造物分數的最後一個造物嗎",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-11",
-  "messages": 44,
-  "unique_authors": 8,
-  "reactions_total": 9,
-  "attachments": 6,
+  "messages": 1355,
+  "unique_authors": 40,
+  "reactions_total": 348,
+  "attachments": 94,
   "channel_activity": {
+    "🔸綜合討論": 1309,
+    "🔸阵容构建": 2,
     "Flares' Awakener Review : Ryker": 1,
     "Need help with team building and game in general": 1,
     "Team Building Help": 8,
@@ -21,75 +23,194 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "8": 3,
-    "23": 1,
-    "10": 6,
-    "18": 3,
-    "19": 4,
-    "1": 3,
-    "16": 3,
-    "5": 5,
-    "13": 1,
-    "14": 2,
-    "2": 4,
-    "3": 5,
-    "7": 2,
-    "17": 1,
-    "6": 1
+    "0": 50,
+    "1": 109,
+    "2": 63,
+    "3": 74,
+    "4": 38,
+    "5": 25,
+    "6": 46,
+    "7": 27,
+    "8": 18,
+    "9": 16,
+    "10": 194,
+    "11": 147,
+    "12": 73,
+    "13": 8,
+    "14": 52,
+    "15": 78,
+    "16": 19,
+    "17": 179,
+    "18": 115,
+    "19": 16,
+    "21": 2,
+    "22": 3,
+    "23": 3
   },
   "message_types": {
-    "0": 15,
-    "19": 9
+    "19": 320,
+    "0": 991
   },
   "top_reacted_messages": [
     {
-      "id": "1415569147659685958",
-      "content": "該畫面顯示了守密人的算力足夠打出追憶迴旋曲但追憶迴旋曲依舊維持紅框特效",
+      "id": "1415728805435150559",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "water_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」追憶迴旋曲的特效問題"
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415751396288102552",
-      "content": "私👀",
-      "author": "_cwz_",
-      "reactions": 2,
-      "channel": "我喜歡卡斯托爾"
+      "id": "1415648871299813376",
+      "channel_id": "1131839817982947429",
+      "content": "6界域72000",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415646885791662182",
-      "content": "caecus-tawil (use the prototype from sediment shop to get E1) - ham - corpo\\naut",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Budget Pickman Team"
+      "id": "1415504226775470170",
+      "channel_id": "1131839817982947429",
+      "content": "那我去普池抽個藏品給你看就好了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415647545652150405",
-      "content": "Thank you!",
-      "author": "jezune",
-      "reactions": 1,
-      "channel": "Budget Pickman Team"
+      "id": "1415519847302828176",
+      "channel_id": "1131839817982947429",
+      "content": "100333221",
+      "author": "lemoncandy25",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415698629187993680",
-      "content": "這次活動偷偷沒有了癲狂喔",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "主線癲狂難度"
+      "id": "1415567583809114123",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415604522998300672",
-      "content": "this worked, thanks, I kept uninstalling and reinstalling, restarting my pc even",
-      "author": "kame.ria",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
+      "id": "1415651477925396501",
+      "channel_id": "1131839817982947429",
+      "content": "耶～(。∀ ﾟ)法洛絲抽到第三隻了",
+      "author": "wqin.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415606595433533491",
-      "content": "It seems that the folder is a common problem, the team can probably investigate ",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
+      "id": "1415526093519065159",
+      "channel_id": "1131839817982947429",
+      "content": "靠著小皮第一次打到7W2  <:please:1356053110375714817>  皮克曼是我的神",
+      "author": "iak.rm",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415547871431753729",
+      "channel_id": "1131839817982947429",
+      "content": "滿意了吧",
+      "author": "dog794",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415652727413014623",
+      "channel_id": "1131839817982947429",
+      "content": "我以為你死扛觸發11次",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415681561835077785",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415698347670634588",
+      "channel_id": "1131839817982947429",
+      "content": "999了 穩定緩慢增加中",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415755173338419220",
+      "channel_id": "1131839817982947429",
+      "content": "||害我又想到b站影片在那邊什麼萊克大狗結的||",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415759553680904253",
+      "channel_id": "1131839817982947429",
+      "content": "不过嘛，联动确实有进行。会是另一个有些许遗憾的世界。",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415535603386421279",
+      "channel_id": "1131839817982947429",
+      "content": "那我必須得讓你們看看皮克曼池十抽四金二皮",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415585679349645342",
+      "channel_id": "1131839817982947429",
+      "content": "我賣身體給那個24芙朵2T的所以我現在也成為大佬了",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415741299973296158",
+      "channel_id": "1131839817982947429",
+      "content": "89等了",
+      "author": "cwz.io",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415755341127487670",
+      "channel_id": "1131839817982947429",
+      "content": "不小心一直狂看忘卻淋夜",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415518994659541015",
+      "channel_id": "1131839817982947429",
+      "content": "我才課一個980紀行",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415519649671675966",
+      "channel_id": "1131839817982947429",
+      "content": "我只有62抽",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415521709544570880",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

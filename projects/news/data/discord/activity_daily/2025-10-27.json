@@ -1,10 +1,31 @@
 {
   "date": "2025-10-27",
-  "messages": 293,
-  "unique_authors": 44,
-  "reactions_total": 386,
-  "attachments": 50,
+  "messages": 12995,
+  "unique_authors": 345,
+  "reactions_total": 2618,
+  "attachments": 635,
   "channel_activity": {
+    "🔸morimens-game-chat": 10119,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 11,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 6,
+    "🔸русский-канал": 77,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 972,
+    "🔸canal-português": 107,
+    "🔸ruang-obrolan-indonesia": 67,
+    "🔸ห้องสนทนาภาษาไทย": 138,
+    "🔸traphase": 39,
+    "🔸lore-chat": 54,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 5,
+    "🔸team-building": 227,
+    "🔸general-chat": 813,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🐱light’s-nest": 6,
     "🔸綜合討論": 240,
     "Clementine!!!": 4,
     "Silver Core Studies": 1,
@@ -25,41 +46,60 @@
     "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video": 1,
     "💭「Processing」Suggestion - Traphase": 1,
     "✅「已解决」淺問一下正不正常（第八章的劇情&對話重複）": 1,
-    "🐱light’s-nest": 3,
     "1421408684776357929": 2
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 6,
-    "2": 11,
-    "3": 1,
-    "4": 17,
-    "5": 7,
-    "6": 21,
-    "7": 12,
-    "8": 4,
-    "9": 6,
-    "10": 37,
-    "11": 15,
-    "12": 33,
-    "13": 9,
-    "14": 9,
-    "15": 5,
-    "16": 53,
-    "17": 1,
-    "19": 1,
-    "23": 34,
-    "21": 4,
-    "22": 1,
-    "20": 1
+    "0": 453,
+    "1": 348,
+    "2": 335,
+    "3": 71,
+    "4": 561,
+    "5": 657,
+    "6": 308,
+    "7": 492,
+    "8": 687,
+    "9": 260,
+    "10": 339,
+    "11": 379,
+    "12": 318,
+    "13": 519,
+    "14": 869,
+    "15": 910,
+    "16": 474,
+    "17": 685,
+    "18": 818,
+    "19": 668,
+    "20": 786,
+    "21": 811,
+    "22": 733,
+    "23": 514
   },
   "message_types": {
-    "0": 195,
-    "19": 45
+    "0": 8083,
+    "19": 4612,
+    "23": 4,
+    "20": 3
   },
   "top_reacted_messages": [
     {
+      "id": "1432224675538276442",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 201,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432224906703142943",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone",
+      "author": "game.producer.light",
+      "reactions": 153,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432224307651674244",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
       "reactions": 105,
@@ -67,9 +107,10 @@
     },
     {
       "id": "1432224617908539512",
+      "channel_id": "1426837316533747823",
       "content": "A commission request from the official QQ channel “百合子”! Do we have a chance to ",
       "author": "game.producer.light",
-      "reactions": 51,
+      "reactions": 52,
       "channel": "🐱light’s-nest"
     },
     {
@@ -87,6 +128,22 @@
       "channel": "Pollux WIP"
     },
     {
+      "id": "1432389735204257995",
+      "channel_id": "1170692781216378960",
+      "content": "If you can get 5 reacts",
+      "author": "enternameunavailable",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432395182074101831",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "enternameunavailable",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432384047635632218",
       "content": "how many can you identify?",
       "author": "nikolazuli",
@@ -102,6 +159,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1432353237339603145",
+      "channel_id": "1174983699935277147",
+      "content": "<:processing:1357185814567718963>",
+      "author": "quackdayo",
+      "reactions": 13,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1432379554852241438",
       "channel_id": "1131839817982947429",
       "content": "https://cdn.discordapp.com/attachments/1200502174799646791/1200502397991129128/S",
@@ -110,107 +175,68 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1432224669703999558",
-      "channel_id": "1131839817982947429",
+      "id": "1432381043440222380",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193>",
+      "author": "fishhazardthewizard",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432375483978219684",
+      "channel_id": "1170692781216378960",
+      "content": "<@458431997459824640>",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432375690514268252",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "game.producer.light",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "author": "bongosjam",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432240410272469002",
-      "channel_id": "1131839817982947429",
-      "content": "拿破爛0啟隊暴打第八章🌿",
-      "author": "ass191044",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432262416925982761",
-      "channel_id": "1131839817982947429",
-      "content": "融蝕初期症狀：偏執",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432325323269214218",
-      "channel_id": "1131839817982947429",
-      "content": "收工<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432325694276239370",
-      "channel_id": "1131839817982947429",
-      "content": "礼券开出来两个重复的刚好够换希莱头像<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432331534861471836",
-      "channel_id": "1131839817982947429",
+      "id": "1432408630740914370",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "_buqi",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432188305662804130",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": ""
+      "id": "1432443502188560495",
+      "channel_id": "1170692781216378960",
+      "content": "czn actually lured me to this game tho. i never imagined sts could be a live ser",
+      "author": "wesu.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432407384684363931",
-      "channel_id": "1131839817982947429",
-      "content": "~~死抗苟不過你還有菲因特\n菲因特苟不過你還有希萊\n希萊苟不過你還有重新挑戰\n重新挑戰苟不過因為你不是狗~~",
-      "author": "foxcatfurry",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1432488334525071462",
+      "channel_id": "1170692781216378960",
+      "content": "Clem guide <:wish:1356084702468899117>",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432410764911710288",
-      "channel_id": "1131839817982947429",
-      "content": "要成為合格的守咪人首先要成為靈芝藥頭（不是",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1432495409347035166",
+      "channel_id": "1170692781216378960",
+      "content": "Yes spooky is my best friend",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432411557215866910",
-      "channel_id": "1131839817982947429",
-      "content": "~~每次聽到靈芝都讓我想到桂格活靈芝~~",
-      "author": "tsubaki9884",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432248862835212400",
-      "channel_id": "1131839817982947429",
-      "content": "只是仗著繁育之理跟死抗亂玩的歡愉分子🌿\n菲茵特我之前有重溯過現在好像3、4啟有超限這樣",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432311362226356224",
-      "channel_id": "1131839817982947429",
-      "content": "就这样了，后面打不过了",
-      "author": "jiangzehuai",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432400860918579212",
-      "channel_id": "1131839817982947429",
-      "content": "下次還填非常簡單",
-      "author": "dog794",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1432340391281164419",
+      "channel_id": "1174983699935277147",
+      "content": "||~~我相信这天很快到来~~||",
+      "author": "ling_an_",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     }
   ]
 }

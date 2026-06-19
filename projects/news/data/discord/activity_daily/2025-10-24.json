@@ -1,10 +1,31 @@
 {
   "date": "2025-10-24",
-  "messages": 1092,
-  "unique_authors": 44,
-  "reactions_total": 396,
-  "attachments": 95,
+  "messages": 13277,
+  "unique_authors": 286,
+  "reactions_total": 2108,
+  "attachments": 659,
   "channel_activity": {
+    "🔸morimens-game-chat": 9670,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 38,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 2,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 351,
+    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸canal-español": 167,
+    "🔸canal-português": 72,
+    "🔸ruang-obrolan-indonesia": 154,
+    "🔸ห้องสนทนาภาษาไทย": 47,
+    "🔸traphase": 61,
+    "🔸lore-chat": 267,
+    "🔸lets-count": 13,
+    "🔸team-building": 187,
+    "🔸general-chat": 1084,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
+    "🐱light’s-nest": 2,
     "🔸綜合討論": 899,
     "🔸阵容构建": 60,
     "24 Squish": 9,
@@ -36,46 +57,49 @@
     "虽然很少但总之依旧是一点守莱&守N": 1,
     "皮杜造謠同人圖": 14,
     "血肉界域覺醒體": 3,
-    "🐱light’s-nest": 1,
     "1429401798439080028": 3,
     "1296113810549112874": 4,
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "0": 14,
-    "1": 17,
-    "2": 25,
-    "3": 31,
-    "4": 22,
-    "5": 112,
-    "6": 28,
-    "7": 79,
-    "8": 15,
-    "9": 23,
-    "10": 174,
-    "11": 85,
-    "12": 48,
-    "13": 128,
-    "14": 232,
-    "15": 8,
-    "16": 5,
-    "17": 26,
-    "18": 7,
-    "23": 3,
-    "19": 2,
-    "21": 6,
-    "20": 2
+    "0": 463,
+    "1": 538,
+    "2": 618,
+    "3": 463,
+    "4": 533,
+    "5": 530,
+    "6": 405,
+    "7": 417,
+    "8": 613,
+    "9": 724,
+    "10": 757,
+    "11": 832,
+    "12": 797,
+    "13": 714,
+    "14": 734,
+    "15": 569,
+    "16": 351,
+    "17": 401,
+    "18": 293,
+    "19": 492,
+    "20": 658,
+    "21": 514,
+    "22": 422,
+    "23": 439
   },
   "message_types": {
-    "19": 230,
-    "0": 729
+    "19": 4503,
+    "0": 7672,
+    "23": 4,
+    "20": 6
   },
   "top_reacted_messages": [
     {
       "id": "1431146619109113866",
+      "channel_id": "1426837316533747823",
       "content": "- 最近留意到一款与我们玩法相近的游戏上线，很多朋友问我有没有去玩。虽然我还没实机体验，但确实有看到他们有不少做得很好的地方。\n- 我认为对我们而言，更重要的是",
       "author": "game.producer.light",
-      "reactions": 84,
+      "reactions": 85,
       "channel": "🐱light’s-nest"
     },
     {
@@ -107,11 +131,35 @@
       "channel": "皮杜造謠同人圖"
     },
     {
+      "id": "1431300477500260443",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/0MOs8lfPa74?si=wve9c880skoj65vA",
+      "author": "frosthief",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1431384442437369982",
+      "channel_id": "1170692781216378960",
+      "content": "you should be saving up for agrippa",
+      "author": "bongosjam",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1431222403220115516",
       "content": "嗨，V2.3.2的参赛作品终于整理成了在线表格~大家久等啦！ \n我用中英双语备注了投稿内容，大家可以按需食用<:Cheerup:1400771555939844",
       "author": "morimensstaff01",
       "reactions": 12,
       "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1431384073149874207",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/discord-gif-27442765",
+      "author": "bongosjam",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1431382700974936084",
@@ -121,12 +169,60 @@
       "channel": "Karen"
     },
     {
+      "id": "1431306478580535398",
+      "channel_id": "1355630588094320661",
+      "content": "923",
+      "author": "omni_colon",
+      "reactions": 8,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1431198054140215356",
       "channel_id": "1131839817982947429",
       "content": "我请问呢<:dead:1356082627509092372>",
       "author": "sweet_25367",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1431289690442432616",
+      "channel_id": "1170692781216378960",
+      "content": "she*",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1431289884072611840",
+      "channel_id": "1170692781216378960",
+      "content": "True the only female here is arisu",
+      "author": "supernat1",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1431291144251375688",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1431306507538141344",
+      "channel_id": "1170692781216378960",
+      "content": "<:blowkiss:1356053035780014150>",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1431380499917574224",
+      "channel_id": "1170692781216378960",
+      "content": "Dont listen this chat.They just poor f2p and hate all ppls who can whale by defa",
+      "author": "sirtealot",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1431275482317590540",
@@ -150,78 +246,6 @@
       "author": "yingmai_",
       "reactions": 7,
       "channel": ""
-    },
-    {
-      "id": "1431287170068512849",
-      "channel_id": "1131839817982947429",
-      "content": "【容灾5-5，纯逆天角色鸟弟隔着75加固打出百万流血，什么逆天数值-哔哩哔哩】 https://b23.tv/W4i6IO5\n~~都来看看加强的鸟弟多夸张~~",
-      "author": "ling_an_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431153300643778681",
-      "channel_id": "1131839817982947429",
-      "content": "好消息：真克寧妃了\n~~（前提是扛住死亡二連擊）~~",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431287492379938866",
-      "channel_id": "1131839817982947429",
-      "content": "昨天的幻梦他4t 320罪印",
-      "author": "ling_an_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431288880992096361",
-      "channel_id": "1131839817982947429",
-      "content": "（在我方也是",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431294080175833098",
-      "channel_id": "1131839817982947429",
-      "content": "周年也會七天登錄送一張sp墨菲嗎<:pray:1356053116260454534>",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431149908722978816",
-      "channel_id": "1131839817982947429",
-      "content": "在做了在做了 最快的话 V2.5",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431221715161317416",
-      "channel_id": "1131839817982947429",
-      "content": "人生中第一次摸到395🛐",
-      "author": "theal8893",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431269542897913976",
-      "channel_id": "1131839817982947429",
-      "content": "宣傳",
-      "author": "corposant_1003",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1431272182134079639",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

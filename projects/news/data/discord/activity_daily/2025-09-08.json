@@ -1,10 +1,11 @@
 {
   "date": "2025-09-08",
-  "messages": 193,
-  "unique_authors": 34,
-  "reactions_total": 245,
-  "attachments": 68,
+  "messages": 2218,
+  "unique_authors": 63,
+  "reactions_total": 759,
+  "attachments": 144,
   "channel_activity": {
+    "🔸綜合討論": 2025,
     "pickman": 1,
     "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 24,
     "📸壁纸分享: 皮克曼┊Wallpaper Sharing: Pickman": 3,
@@ -50,31 +51,33 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "2": 7,
-    "5": 12,
-    "8": 10,
-    "9": 11,
-    "10": 4,
-    "12": 9,
-    "14": 6,
-    "15": 16,
-    "6": 31,
-    "13": 4,
-    "3": 15,
-    "4": 25,
-    "16": 12,
-    "17": 2,
-    "11": 9,
-    "7": 11,
-    "18": 3,
-    "20": 4,
-    "23": 1,
-    "22": 1
+    "0": 8,
+    "1": 90,
+    "2": 117,
+    "3": 151,
+    "4": 195,
+    "5": 207,
+    "6": 128,
+    "7": 69,
+    "8": 287,
+    "9": 264,
+    "10": 76,
+    "11": 200,
+    "12": 88,
+    "13": 75,
+    "14": 53,
+    "15": 112,
+    "16": 30,
+    "17": 13,
+    "18": 18,
+    "19": 4,
+    "20": 6,
+    "22": 2,
+    "23": 25
   },
   "message_types": {
-    "0": 44,
-    "19": 6,
-    "4": 3
+    "19": 398,
+    "0": 1627
   },
   "top_reacted_messages": [
     {
@@ -120,6 +123,38 @@
       "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
     },
     {
+      "id": "1414492310233681982",
+      "channel_id": "1131839817982947429",
+      "content": "成功PUA英區新手去玩皮克曼主C了",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414525933863567460",
+      "channel_id": "1131839817982947429",
+      "content": "剩我沒+12  輸光……",
+      "author": "lurenjiao",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414533341956411452",
+      "channel_id": "1131839817982947429",
+      "content": "有人要借嗎",
+      "author": "taayoui",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414539297855377540",
+      "channel_id": "1131839817982947429",
+      "content": "我也才預訂兩隻🌚",
+      "author": "taayoui",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1414534772880965733",
       "content": "不过话说感觉他技能花里胡哨的但是没什么用，很符合他艺术生的人设（bushi）",
       "author": "nekoiiii.",
@@ -127,95 +162,75 @@
       "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
     },
     {
+      "id": "1414500304237494272",
+      "channel_id": "1131839817982947429",
+      "content": "90級杜勒這種廢物都有十個了怎麼就見不到90級的皮克曼",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414525316080074843",
+      "channel_id": "1131839817982947429",
+      "content": "莉莉+12佬",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414525880595648524",
+      "channel_id": "1131839817982947429",
+      "content": "# 永和佬\n# 輸光........",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414526168346005586",
+      "channel_id": "1131839817982947429",
+      "content": "截圖這個人的主頁了，以後新手問問題我就要拋出這個主頁讓他去問這個人",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414529122561949707",
+      "channel_id": "1131839817982947429",
+      "content": "我已經跟剛入坑的新手說你是大佬了",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414529760041762836",
+      "channel_id": "1131839817982947429",
+      "content": "又關我的是，而且我是實力超差的萌新",
+      "author": "universe.dark",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414530963429527586",
+      "channel_id": "1131839817982947429",
+      "content": "我0次，輸光",
+      "author": "universe.dark",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414532621068931092",
+      "channel_id": "1131839817982947429",
+      "content": "一群大佬再裝萌新，剩我真萌新",
+      "author": "universe.dark",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1414541854070018119",
       "content": "加強杜勒賽因",
       "author": "ahuahuahua",
       "reactions": 7,
       "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1414568618766762024",
-      "content": "我覺得這有違血肉界域的特色",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "為什麼血肉角色越穿越多"
-    },
-    {
-      "id": "1414485470334812180",
-      "content": "Doesn't seem to be broken even if the cost reduction remains",
-      "author": "rain_scarlet",
-      "reactions": 6,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1414653571147894834",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1414653607437140143",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1414444646607618049",
-      "content": "还有一张约得最满意的双人图",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
-    },
-    {
-      "id": "1414474944053776435",
-      "content": "This is just an example, I’m not sure if there're more, but I feel like untransl",
-      "author": "darkerkuro",
-      "reactions": 4,
-      "channel": "💭「Processing」Some cards or UI aren’t translated in TH ver."
-    },
-    {
-      "id": "1414653516559155384",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 3,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1414555908234809386",
-      "content": "求改善皮克曼2算力卡【绘影摹形】的说明，只留【下回合开始】\n刚开始读说明时挺困惑的<:processing:1357185814567718963>",
-      "author": "vaerre",
-      "reactions": 3,
-      "channel": "✅「已回答」皮克曼【绘影摹形】说明"
-    },
-    {
-      "id": "1414444179064492093",
-      "content": "早期约的单人图",
-      "author": "s64987866",
-      "reactions": 3,
-      "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
-    },
-    {
-      "id": "1414590170551812147",
-      "content": "我畫完了:D 一樣給守咪蓋被子 🛌\n原本想全部上色的但有點懶 塗了頭髮眼睛然後細化了一點點\n羽毛有夠難畫下次不畫了嗚嗚\n\n等一下來私或是先來戳我也可以",
-      "author": "muggypeasant",
-      "reactions": 3,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1414635742612815932",
-      "content": "无辜，惊人魔术真的很惊人（算力丢进去,啥都没有<:Bleed:1400771547710361640> ，算力消失术）",
-      "author": "cs001092",
-      "reactions": 2,
-      "channel": "💭「处理中」相位bug"
-    },
-    {
-      "id": "1414499812782641152",
-      "content": "Hi, this issue has been fixed🌹",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Covenant graphic bug in team builder"
     }
   ]
 }

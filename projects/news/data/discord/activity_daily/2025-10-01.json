@@ -1,10 +1,27 @@
 {
   "date": "2025-10-01",
-  "messages": 11335,
+  "messages": 12835,
   "unique_authors": 204,
-  "reactions_total": 1784,
-  "attachments": 435,
+  "reactions_total": 1954,
+  "attachments": 542,
   "channel_activity": {
+    "🔸晒卡分享": 21,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 20,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 293,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-español": 203,
+    "🔸canal-português": 23,
+    "🔸ruang-obrolan-indonesia": 130,
+    "🔸ห้องสนทนาภาษาไทย": 138,
+    "🔸traphase": 181,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 10,
+    "🔸team-building": 1,
+    "🔸general-chat": 424,
+    "🔸邀请码互助┊swap-invitation-codes": 23,
     "🔸綜合討論": 966,
     "🔸morimens-game-chat": 10336,
     "Shhh… he’s sleeping~": 1,
@@ -21,37 +38,44 @@
     "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）": 1
   },
   "hourly_activity": {
-    "0": 196,
-    "1": 228,
-    "2": 388,
-    "3": 199,
-    "4": 186,
-    "5": 479,
-    "6": 479,
-    "7": 748,
-    "8": 605,
-    "9": 574,
-    "10": 459,
-    "11": 614,
-    "12": 660,
-    "13": 462,
-    "14": 564,
-    "15": 724,
-    "16": 353,
-    "17": 401,
-    "18": 460,
-    "19": 406,
-    "20": 597,
-    "21": 680,
-    "22": 491,
-    "23": 382
+    "2": 424,
+    "3": 243,
+    "6": 584,
+    "7": 757,
+    "22": 564,
+    "4": 220,
+    "0": 220,
+    "1": 278,
+    "12": 741,
+    "13": 542,
+    "14": 798,
+    "15": 835,
+    "17": 468,
+    "21": 711,
+    "10": 485,
+    "11": 698,
+    "16": 387,
+    "18": 650,
+    "19": 479,
+    "23": 424,
+    "20": 613,
+    "8": 611,
+    "9": 615,
+    "5": 488
   },
   "message_types": {
-    "0": 7423,
-    "19": 3874,
-    "23": 5
+    "0": 1236,
+    "19": 264
   },
   "top_reacted_messages": [
+    {
+      "id": "1422954413999259880",
+      "channel_id": "1300659662311526512",
+      "content": "Díganle a vicho que deje de andar estafando gente , hay que chambear",
+      "author": "Deleted User",
+      "reactions": 29,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1422974532553150494",
       "channel_id": "1170692781216378960",
@@ -101,6 +125,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1422787195567214632",
+      "channel_id": "1355630588094320661",
+      "content": "618",
+      "author": "angbak",
+      "reactions": 8,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1422839179942952991",
       "channel_id": "1170692781216378960",
       "content": "🌻 🧟‍♂️",
@@ -131,6 +163,14 @@
       "author": "blecnes",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1422775010627551434",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1422852369108045854",
@@ -185,30 +225,6 @@
       "channel_id": "1170692781216378960",
       "content": "We can sacrifice him next anniversary for soft pity guaranteed pulls",
       "author": "._.aahh",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422936471949807787",
-      "channel_id": "1170692781216378960",
-      "content": "Good thing monchi isn't the dev or this will turn into granblue fantasy",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422954267593150547",
-      "channel_id": "1170692781216378960",
-      "content": "Done now to redo it again without the good sr wheel <:dead:1356082627509092372>",
-      "author": "red_rest",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423041854013833326",
-      "channel_id": "1170692781216378960",
-      "content": "https://external-preview.redd.it/lixXU17iIB7SuhwzcQEdJngdbKHVXZjOJubuSl6wSYk.jpg",
-      "author": "frosthief",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

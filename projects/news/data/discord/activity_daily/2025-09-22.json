@@ -1,10 +1,12 @@
 {
   "date": "2025-09-22",
-  "messages": 117,
-  "unique_authors": 14,
-  "reactions_total": 64,
-  "attachments": 26,
+  "messages": 1787,
+  "unique_authors": 51,
+  "reactions_total": 539,
+  "attachments": 132,
   "channel_activity": {
+    "🔸綜合討論": 1637,
+    "🔸阵容构建": 33,
     "3D Render: Horla": 4,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
     "Flares' Comprehensive Beginner Guide to Morimens": 1,
@@ -31,29 +33,33 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "3": 11,
-    "4": 25,
-    "8": 3,
-    "9": 6,
-    "18": 3,
-    "19": 5,
-    "20": 2,
-    "13": 11,
-    "15": 2,
-    "0": 3,
-    "6": 2,
-    "7": 13,
-    "14": 2,
-    "21": 8,
-    "12": 12,
-    "10": 1,
-    "1": 2,
-    "5": 1,
-    "11": 5
+    "0": 4,
+    "1": 39,
+    "2": 114,
+    "3": 122,
+    "4": 123,
+    "5": 138,
+    "6": 98,
+    "7": 77,
+    "8": 75,
+    "10": 11,
+    "11": 85,
+    "12": 290,
+    "13": 177,
+    "14": 96,
+    "15": 99,
+    "16": 186,
+    "18": 9,
+    "19": 8,
+    "20": 14,
+    "22": 2,
+    "23": 1,
+    "9": 11,
+    "21": 8
   },
   "message_types": {
-    "0": 16,
-    "19": 3
+    "0": 1253,
+    "19": 417
   },
   "top_reacted_messages": [
     {
@@ -71,11 +77,67 @@
       "channel": ""
     },
     {
+      "id": "1419636845783941160",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1419525884464992418",
       "content": "也算是一个小练习，试试看用blender来做出油画效果。但结果好像很一般.....<:takenotes:1357186646294138890>\n另外本来还想",
       "author": "xyakoto",
       "reactions": 9,
       "channel": "【3D渲染动画】奥尔拉"
+    },
+    {
+      "id": "1419504871195021402",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419690142183985223",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419717009137991760",
+      "channel_id": "1131839817982947429",
+      "content": "造價高那是塔薇的缺點嗎?  不 那是玩家的缺點",
+      "author": "insomnia07763",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419497719973679144",
+      "channel_id": "1131839817982947429",
+      "content": "340抽  7隻收工……",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419577420855378020",
+      "channel_id": "1131839817982947429",
+      "content": "都有錄影片 已經在上傳了\n晚點也會寫文字攻略",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419687383443439688",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "insomnia07763",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1419684565114425535",
@@ -85,109 +147,76 @@
       "channel": "✅「已回答」融灾能不能别调这么难"
     },
     {
-      "id": "1419628433260019722",
-      "content": "During the \"Detective Handbook\" event rerun, after doing \"Uninvited Guest\" level",
-      "author": "reynard_fuchs",
-      "reactions": 4,
-      "channel": "✅「Answered」[Bug] Loss of Chips of Victory"
-    },
-    {
-      "id": "1419619936032002048",
-      "content": "It feels like Aequor especially is suffering from the lack of Limiteds.\n\nHere's ",
-      "author": "zekiei",
-      "reactions": 3,
-      "channel": "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?"
-    },
-    {
-      "id": "1419665944355016868",
-      "content": "~~乾脆給他兩叫王姨（藝）吧~~",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "杜勒和皮克曼的车文来了"
-    },
-    {
-      "id": "1419520183885627522",
-      "content": "<@1339576837990514740> Fan art is usually a painting work, and for video works, ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1419767732911476846",
-      "content": "not really, you can activate it with no problem",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
-    },
-    {
-      "id": "1419768585475194992",
-      "content": "no reason, the only downside was a bug (auto-dismantle used to not count towards",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
-    },
-    {
-      "id": "1419698660672929812",
-      "content": "我覺得主要是那個死扛很噁心",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "✅「已回答」融灾能不能别调这么难"
-    },
-    {
-      "id": "1419586754976940043",
-      "content": "感谢建议，此前也收到类似的反馈，已针对性地解决了。我们也在思考更好的办法以期能避免类似问题的发生🙏 \n守密人提到的这些立绘和皮肤我们会先安排优化🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」角色立绘/缩略图画质优化"
-    },
-    {
-      "id": "1419580898478653491",
-      "content": "Around October, we will perform an upgrade and repair on the problematic file pa",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Launch the game via Steam and getting the \"Network busy\""
-    },
-    {
-      "id": "1419520558894153768",
-      "content": "<:pray:1356053116260454534> 近期会有消息~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」环娜皮肤是不是快出了"
-    },
-    {
-      "id": "1419526249612836921",
-      "content": "大佬好強",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "【3D渲染动画】奥尔拉"
-    },
-    {
-      "id": "1419547052773343303",
-      "content": "你說過你會",
+      "id": "1419499057172316210",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "【3D渲染动画】奥尔拉"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1419554131894472774",
-      "content": "創建文檔.jpg",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒和皮克曼的车文来了"
+      "id": "1419519956365742223",
+      "channel_id": "1131839817982947429",
+      "content": "<@320087455556435968>",
+      "author": "elv_juan.carlos",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1419579963195261029",
-      "content": "~~（左顧右盼）（緊張流汗）（舔）~~",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": ""
+      "id": "1419556506734432297",
+      "channel_id": "1131839817982947429",
+      "content": "抽到医生了",
+      "author": "alatin.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1419597934210584737",
-      "content": "我吃",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": ""
+      "id": "1419692551224561715",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419722590603313223",
+      "channel_id": "1131839817982947429",
+      "content": "我們塔薇是綁隊友的、需要凹的、不穩定的、要手法的、bug多的、要高練的、清雜弱的、出牌多的、容易被針對的、容易算力調和的、容易無底創痕的、缺銀鑰的、啟動慢的實在",
+      "author": "xingkongzhiyao_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419499431275008093",
+      "channel_id": "1131839817982947429",
+      "content": "收工～",
+      "author": "elv_juan.carlos",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419506339322789979",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419508100662038670",
+      "channel_id": "1131839817982947429",
+      "content": "124抽一只汀两只温妈两只鼠鼠四只医生和一张隐没",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419514712961454170",
+      "channel_id": "1131839817982947429",
+      "content": "www",
+      "author": "elv_juan.carlos",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

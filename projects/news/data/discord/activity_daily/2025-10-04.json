@@ -1,10 +1,28 @@
 {
   "date": "2025-10-04",
-  "messages": 10120,
+  "messages": 11220,
   "unique_authors": 187,
-  "reactions_total": 1913,
-  "attachments": 428,
+  "reactions_total": 2063,
+  "attachments": 538,
   "channel_activity": {
+    "🔸晒卡分享": 105,
+    "🔸欢乐梗图": 4,
+    "🔸相位对弈": 31,
+    "🔸课间休息闲聊": 5,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 263,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 68,
+    "🔸canal-português": 14,
+    "🔸ruang-obrolan-indonesia": 60,
+    "🔸ห้องสนทนาภาษาไทย": 15,
+    "🔸traphase": 119,
+    "🔸lore-chat": 12,
+    "🔸lets-count": 22,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸team-building": 82,
+    "🔸general-chat": 268,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
     "🔸綜合討論": 528,
     "🔸morimens-game-chat": 9531,
     "The Persistence of Fading Glow | Tulu Fanfic": 1,
@@ -32,36 +50,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "2": 212,
-    "3": 375,
-    "4": 571,
-    "5": 361,
-    "6": 513,
-    "7": 444,
-    "8": 683,
-    "9": 224,
-    "10": 385,
-    "11": 816,
-    "12": 616,
-    "13": 542,
-    "15": 746,
-    "16": 477,
-    "17": 400,
-    "18": 412,
-    "22": 178,
-    "0": 198,
-    "1": 262,
-    "14": 460,
-    "19": 289,
-    "20": 273,
-    "21": 355,
-    "23": 328
+    "4": 629,
+    "5": 484,
+    "6": 541,
+    "7": 504,
+    "8": 720,
+    "10": 415,
+    "9": 288,
+    "11": 838,
+    "16": 540,
+    "12": 646,
+    "13": 560,
+    "14": 600,
+    "20": 281,
+    "1": 287,
+    "0": 319,
+    "2": 226,
+    "15": 792,
+    "17": 458,
+    "18": 425,
+    "19": 321,
+    "22": 235,
+    "23": 346,
+    "3": 409,
+    "21": 356
   },
   "message_types": {
-    "19": 3172,
-    "0": 6877,
-    "23": 7,
-    "20": 3
+    "0": 890,
+    "19": 210
   },
   "top_reacted_messages": [
     {
@@ -135,6 +151,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1424031381582774384",
+      "channel_id": "1300659662311526512",
+      "content": "tkm pick me dps",
+      "author": "ancientbp",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1424009890090844281",
       "channel_id": "1131839817982947429",
       "content": "完結收工",
@@ -191,36 +215,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1423974888930148372",
+      "channel_id": "1300659662311526512",
+      "content": "<@266297152911835147>",
+      "author": "blecnes",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1423994617975804045",
+      "channel_id": "1355630588094320661",
+      "content": "pay your respects by posting other aspects of cthulhu.",
+      "author": "morified53",
+      "reactions": 7,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1423901885651226657",
       "channel_id": "1131839817982947429",
       "content": "終於抽到醫生了🤡 🤡",
       "author": "shchng.",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1423889400886198293",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/oprah-you-point-you-get-a-car-oprah-winfrey-gif-175106876",
-      "author": "phi_squared",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1423975445522550945",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "._.aahh",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1424009410048430322",
-      "channel_id": "1170692781216378960",
-      "content": "dude Everyone should try it",
-      "author": "flares117",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,33 @@
 {
   "date": "2025-10-28",
-  "messages": 915,
-  "unique_authors": 47,
-  "reactions_total": 492,
-  "attachments": 82,
+  "messages": 17170,
+  "unique_authors": 352,
+  "reactions_total": 3696,
+  "attachments": 820,
   "channel_activity": {
+    "🔸morimens-game-chat": 10979,
+    "🔸晒卡分享": 9,
+    "🔸欢乐梗图": 1,
+    "🔸相位对弈": 71,
+    "🔸课间休息闲聊": 29,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 15,
+    "🔸русский-канал": 1076,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 382,
+    "🔸canal-português": 211,
+    "🔸ruang-obrolan-indonesia": 81,
+    "🔸ห้องสนทนาภาษาไทย": 101,
+    "🔸traphase": 126,
+    "🔸lore-chat": 43,
+    "🔸lets-count": 21,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 479,
+    "🔸general-chat": 2588,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🐱light’s-nest": 8,
     "🔸綜合討論": 765,
     "🔸阵容构建": 8,
     "Collection of Morimens fanart and doodles": 1,
@@ -37,39 +60,52 @@
     "✅「Resolved」My game doesn't load...": 1,
     "✦关卡地图「融灾禁区」总览46期·星辰篇✦": 1,
     "現pa現pa": 2,
-    "🐱light’s-nest": 4,
     "1432654338982940783": 63
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 48,
-    "2": 38,
-    "3": 11,
-    "4": 24,
-    "5": 6,
-    "6": 46,
-    "7": 18,
-    "8": 57,
-    "9": 93,
-    "10": 284,
-    "11": 59,
-    "12": 33,
-    "14": 20,
-    "15": 54,
-    "16": 36,
-    "17": 2,
-    "20": 3,
-    "22": 5,
-    "23": 70,
-    "13": 4
+    "0": 598,
+    "1": 493,
+    "2": 396,
+    "3": 287,
+    "4": 430,
+    "5": 476,
+    "6": 551,
+    "7": 364,
+    "8": 544,
+    "9": 1010,
+    "10": 1125,
+    "11": 1079,
+    "12": 1171,
+    "13": 768,
+    "14": 598,
+    "15": 749,
+    "16": 994,
+    "17": 738,
+    "18": 846,
+    "19": 987,
+    "20": 831,
+    "21": 768,
+    "22": 921,
+    "23": 446
   },
   "message_types": {
-    "0": 591,
-    "19": 182
+    "19": 5614,
+    "0": 10634,
+    "23": 2,
+    "20": 5
   },
   "top_reacted_messages": [
     {
+      "id": "1432667089163784244",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1432654338982940783 @everyone T",
+      "author": "game.producer.light",
+      "reactions": 168,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432677898849882233",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
       "reactions": 113,
@@ -91,10 +127,43 @@
     },
     {
       "id": "1432677904533295244",
+      "channel_id": "1426837316533747823",
       "content": "https://x.com/atsukimasahiro?s=21&t=XPiSSckMmKSQF9ZRRtfHZQ",
       "author": "game.producer.light",
       "reactions": 27,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432678694328991864",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432666762670768179",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "_venush",
+      "reactions": 22,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1432661679275118644",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432664101804572754",
+      "channel_id": "1170692781216378960",
+      "content": "🫃",
+      "author": "iibenigml1588",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1432554702004027524",
@@ -112,6 +181,54 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1432668297832173610",
+      "channel_id": "1170692781216378960",
+      "content": "Light can we add a tic tac toe event during anniversary please? <:please:1356053",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432676844825739304",
+      "channel_id": "1170692781216378960",
+      "content": "And I hope my girlfriend was a billionaire so I wouldn't have to work another da",
+      "author": "shagaru0802",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432854044673704027",
+      "channel_id": "1170692781216378960",
+      "content": "laughing",
+      "author": "themomonger",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432703628401049741",
+      "channel_id": "1170692781216378960",
+      "content": "LETS FUCKINGGOOOOOOOOOOOOOOO",
+      "author": "blecnes",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432770109138669609",
+      "channel_id": "1170692781216378960",
+      "content": "Rat supremacy 🐀 🐀 🐀",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432662169232740364",
+      "channel_id": "1180437373012672522",
+      "content": "~~還有兩張神國小怪圖待補~~",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "🔸欢乐梗图"
+    },
+    {
       "id": "1432583334449381417",
       "channel_id": "1131839817982947429",
       "content": "<:takenotes:1357186646294138890> 萌新30天了",
@@ -120,106 +237,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1432675498189656086",
-      "channel_id": "1131839817982947429",
+      "id": "1432706158459617320",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "meow51103",
+      "author": "spooky_penguin_",
       "reactions": 9,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432876321150865519",
-      "channel_id": "1131839817982947429",
-      "content": "大佬帶帶我🛐 🛐 🛐",
-      "author": "universe.dark",
+      "id": "1432847057843916820",
+      "channel_id": "1170692781216378960",
+      "content": "Another update on my Celeste curse, downloaded the game after not playing for a ",
+      "author": "funginoria",
       "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432831567520333946",
-      "channel_id": "1131839874132090890",
-      "content": "大佬们，问一下巨人之刃想叠满，是不是只能下池子不停的捞？🥲",
-      "author": "sadiss4399",
-      "reactions": 8,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1432668243579109429",
-      "content": "杜勒：什么叫我的章节我不好打（",
-      "author": "rain_scarlet",
-      "reactions": 8,
-      "channel": ""
-    },
-    {
-      "id": "1432681585605611543",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "ququ12358",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432670163748130867",
-      "content": "（",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": ""
-    },
-    {
-      "id": "1432877165812121642",
-      "channel_id": "1131839817982947429",
-      "content": "佬跟我共帳就知道什麼是壓力了<:proud:1400771683664658433> <:point:1356053112292511815>",
-      "author": "universe.dark",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432880969840463923",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sakura8901",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432617914476789800",
-      "channel_id": "1131839817982947429",
-      "content": "其實艾爾瓦也適合，但艾爾瓦不適合",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432678979327885407",
-      "channel_id": "1131839817982947429",
-      "content": "我还有...",
-      "author": "neptinu",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432600178665197700",
-      "channel_id": "1131839874132090890",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1432550042165837844",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "dog794",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1432599468502679654",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

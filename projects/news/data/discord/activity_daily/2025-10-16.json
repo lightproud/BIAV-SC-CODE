@@ -1,12 +1,31 @@
 {
   "date": "2025-10-16",
-  "messages": 7817,
+  "messages": 13237,
   "unique_authors": 196,
-  "reactions_total": 1338,
-  "attachments": 257,
+  "reactions_total": 2393,
+  "attachments": 510,
   "channel_activity": {
+    "🔸morimens-game-chat": 10607,
+    "🔸晒卡分享": 24,
+    "🔸相位对弈": 69,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 27,
+    "🔸chaîne-française": 131,
+    "🔸русский-канал": 70,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 674,
+    "🔸canal-português": 3,
+    "🔸ruang-obrolan-indonesia": 89,
+    "🔸ห้องสนทนาภาษาไทย": 56,
+    "🔸traphase": 22,
+    "🔸lore-chat": 72,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 7,
+    "🔸team-building": 82,
+    "🔸general-chat": 93,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
     "🔸綜合討論": 1044,
-    "🔸morimens-game-chat": 6630,
     "Pre Release - Pollux Kit Review.": 1,
     "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux": 4,
     "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 87,
@@ -26,37 +45,46 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 180,
-    "1": 174,
-    "2": 331,
-    "3": 474,
-    "4": 481,
-    "5": 721,
-    "6": 696,
-    "7": 506,
-    "8": 187,
-    "9": 290,
-    "10": 461,
-    "11": 538,
-    "12": 619,
-    "13": 872,
-    "14": 792,
-    "15": 300,
-    "16": 31,
-    "17": 15,
-    "18": 14,
-    "19": 1,
-    "22": 7,
-    "23": 126,
-    "20": 1
+    "15": 606,
+    "16": 915,
+    "17": 557,
+    "18": 443,
+    "19": 337,
+    "20": 707,
+    "21": 492,
+    "22": 490,
+    "23": 551,
+    "7": 522,
+    "8": 207,
+    "10": 466,
+    "11": 588,
+    "12": 713,
+    "13": 999,
+    "14": 855,
+    "6": 701,
+    "3": 546,
+    "1": 291,
+    "5": 733,
+    "9": 337,
+    "2": 400,
+    "4": 598,
+    "0": 183
   },
   "message_types": {
-    "0": 5225,
-    "19": 2443,
-    "23": 3,
-    "20": 3
+    "0": 3642,
+    "19": 1773,
+    "20": 4,
+    "23": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1428482768672653394",
+      "channel_id": "1170692781216378960",
+      "content": "if i can do 400, all of you can too",
+      "author": "monchi3524",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1428385734267502845",
       "content": "<:pray:1356053116260454534>",
@@ -65,11 +93,43 @@
       "channel": "Please please please please"
     },
     {
+      "id": "1428481615058829394",
+      "channel_id": "1170692781216378960",
+      "content": "<@143784753823219712> Dont listen this chat.They just poor f2p and hate all ppls",
+      "author": "twilightsparkle163163",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1428285981164830730",
       "content": "“什么是糖果幽灵👻？”\n\n“靠过来点，你们可要竖起耳朵仔细听清楚，这个饥肠辘辘的亡灵的故事……”\n\n✦ 墨菲 CV：大内 茜\n\n——✦——✦—— ✦✦✦ ——✦",
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": "🎧 V2.3.4 四星幻衣「墨菲·糖果劫案」广播剧：幽灵故事会┊Murphy's Skin \"Candy Snatcher\" Radio Drama - Ghost Story Time"
+    },
+    {
+      "id": "1428518849145475165",
+      "channel_id": "1170692781216378960",
+      "content": "agrippa is so sexy",
+      "author": "wolfierce",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428472902793297992",
+      "channel_id": "1170692781216378960",
+      "content": "Rewind caecus instead",
+      "author": "aurora3981",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428485249192431669",
+      "channel_id": "1170692781216378960",
+      "content": "My 1000th investment into f2p 24, hoping for a return",
+      "author": "aurora3981",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1428223314756767847",
@@ -80,6 +140,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1428460088456380559",
+      "channel_id": "1170692781216378960",
+      "content": "rate my thumbnail",
+      "author": "zier.0",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428223674422526013",
+      "channel_id": "1300659662311526512",
+      "content": "La historia se divide en dos archos",
+      "author": "ancientbp",
+      "reactions": 13,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1428364645823156314",
       "channel_id": "1131839817982947429",
       "content": "赤完了",
@@ -88,11 +164,51 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1428416328842215495",
+      "channel_id": "1170692781216378960",
+      "content": "good night/day",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428481870735081623",
+      "channel_id": "1170692781216378960",
+      "content": "Dont listen this chat.They just poor f2p and hate all ppls who can whale by defa",
+      "author": "amirganj",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1428385941294153759",
       "channel_id": "1170692781216378960",
       "content": "https://discord.com/channels/1131791637933199470/1428385734267502845\nMade a post",
       "author": "aurora3981",
       "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428417595908030565",
+      "channel_id": "1170692781216378960",
+      "content": "Holy shit that ass is massive",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428481120705712259",
+      "channel_id": "1170692781216378960",
+      "content": "hopefully the anniv unit doesn't require dupes....",
+      "author": "themomonger",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428514609018568807",
+      "channel_id": "1170692781216378960",
+      "content": "<:dead:1356082627509092372>",
+      "author": "truevanity",
+      "reactions": 8,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -112,104 +228,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1428331821967605770",
-      "channel_id": "1131839817982947429",
-      "content": "是的是的",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1428284156793720842",
-      "channel_id": "1170692781216378960",
-      "content": "banned",
-      "author": "craux.",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1428359591552618496",
-      "channel_id": "1170692781216378960",
-      "content": "The reason why it's called MoriMen**s** is because of bugged AI translation",
-      "author": "legendaryredz",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1428388260446601336",
-      "content": "就會被你們帶壞開始整天口口",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428358822090768516",
-      "channel_id": "1131839817982947429",
-      "content": "通通跟深海一起當腦弱魚人",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1428227532498403369",
+      "id": "1428412204570382438",
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "hitsu4",
-      "reactions": 6,
+      "reactions": 7,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1428319645399515266",
-      "channel_id": "1170692781216378960",
-      "content": "i want pollux frenzy to include male pregnancy",
-      "author": "tnimreppep",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1428401741208096908",
-      "channel_id": "1170692781216378960",
-      "content": "her album is so bad if u slander it on twitter, no one send ded threats to u",
-      "author": "phi_squared",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1428391562596974614",
-      "content": "鳥弟：好想進去哥哥的空間口牙",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428392382520365156",
-      "content": "誰來做個梗圖\n進超維空間的時候鳥哥蹲在旁邊尖叫\n鳥弟拿著他的3費說：here's johny",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1428434564711321693",
-      "content": "醜得要命",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "✅「已回答」什麼時候把這東西調回來"
-    },
-    {
-      "id": "1428183761211621499",
-      "channel_id": "1131839817982947429",
-      "content": "我好像是186天",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1428196099168014419",
-      "channel_id": "1131839817982947429",
-      "content": "不管 我要曬我的分數",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

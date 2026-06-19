@@ -1,10 +1,12 @@
 {
   "date": "2025-09-19",
-  "messages": 145,
-  "unique_authors": 15,
-  "reactions_total": 173,
-  "attachments": 51,
+  "messages": 991,
+  "unique_authors": 41,
+  "reactions_total": 320,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 845,
+    "🔸阵容构建": 1,
     "Thais Warm up": 4,
     "doresain x pickman fan fic R18": 14,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
@@ -32,27 +34,33 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "7": 38,
-    "9": 2,
-    "17": 9,
-    "10": 2,
-    "8": 18,
-    "14": 2,
-    "18": 10,
-    "15": 1,
-    "4": 2,
-    "13": 1,
-    "3": 11,
-    "5": 2,
-    "2": 4,
-    "6": 38,
-    "11": 3,
-    "19": 1,
-    "23": 1
+    "0": 1,
+    "1": 7,
+    "2": 95,
+    "3": 206,
+    "4": 103,
+    "5": 41,
+    "6": 80,
+    "7": 40,
+    "8": 25,
+    "9": 14,
+    "10": 6,
+    "11": 31,
+    "12": 1,
+    "13": 8,
+    "14": 9,
+    "15": 109,
+    "16": 91,
+    "17": 13,
+    "18": 71,
+    "19": 6,
+    "20": 28,
+    "22": 2,
+    "23": 4
   },
   "message_types": {
-    "0": 35,
-    "19": 1
+    "19": 234,
+    "0": 612
   },
   "top_reacted_messages": [
     {
@@ -98,11 +106,27 @@
       "channel": "啊欸嗯"
     },
     {
+      "id": "1418478206968664247",
+      "channel_id": "1131839817982947429",
+      "content": "給你看個猛的",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1418651577291509911",
       "content": "👉前言\n\n        我覺得皮克曼的短訊劇情以嚴謹的角度來看，無法立刻得出他跟杜勒賽因會打砲的可能結果；但是我想造謠他們打砲(認真)，於是他們打砲了（虫合。",
       "author": "ass191044",
       "reactions": 7,
       "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1418618466574925846",
+      "channel_id": "1131839817982947429",
+      "content": "算了，还是买了吧",
+      "author": "jiangzehuai",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1418510050179289202",
@@ -112,6 +136,46 @@
       "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
     },
     {
+      "id": "1418436898162212934",
+      "channel_id": "1131839817982947429",
+      "content": "为什么皮克曼考据搓完长度是杜勒的两倍…\n银芯使人丧失理智（闭眼）\n总之请吃（",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418434940269232239",
+      "channel_id": "1131839817982947429",
+      "content": "过了",
+      "author": "jidu1418",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418545411618246677",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418668584749764799",
+      "channel_id": "1131839817982947429",
+      "content": "说实话不知道 但我们优先研究",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418668848449589419",
+      "channel_id": "1131839817982947429",
+      "content": "研究不出來你們改叫網卡前夜好了",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1418509000802172969",
       "content": "",
       "author": "ass191044",
@@ -119,81 +183,36 @@
       "channel": "杜勒和皮克曼的车文来了"
     },
     {
-      "id": "1418488308689932380",
-      "content": "Hi, all compensation will be completed before 9:40 pm UTC+8 tonight（<t:175828920",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
+      "id": "1418451119016771664",
+      "channel_id": "1131839817982947429",
+      "content": "全隊60一樣能打難4",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418422113110331463",
-      "content": "感谢守密人的建议❤️ 官网充值确实能更好地支持制作组，但出于各方面的考虑，目前还没有进一步优惠引导的计划🫂",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?"
+      "id": "1418461815523905566",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲的狂氣不就是讓對方傷害一半嗎",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418667126323023923",
-      "content": "斯哈斯哈斯哈～\n能夠在兩天內分別看見皮杜和杜皮真是～\n人-生-無-憾啊～",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+      "id": "1418588836807577721",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1418552019437748304",
-      "content": "发一下约稿——",
-      "author": "yingmai_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1418653325414371412",
-      "content": "This isn't really a guide per se, but I did do a full commentary of a 72000 Deep",
-      "author": "reya.li",
-      "reactions": 1,
-      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
-    },
-    {
-      "id": "1418504238874624102",
-      "content": "喵",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1418444392779350118",
-      "content": "<:please:1356053110375714817>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
-    },
-    {
-      "id": "1418460868898979910",
-      "content": "<:pray:1400771650064089112>",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
-    },
-    {
-      "id": "1418473184323174401",
-      "content": "<:pray:1400771650064089112>",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
-    },
-    {
-      "id": "1418512101449924699",
-      "content": "**10.最后的诗篇-The Last Verse-**\n\n每写下一段诗句，便会长出一片花瓣吧，她想。\n她用生命浇灌字句，当最后的诗篇完成，她们便能回到曾经的花",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：奥尔拉EP·献给春天的花束"
-    },
-    {
-      "id": "1418433040908025856",
-      "content": "Thank you for your suggestion. Although we currently have no plans for handheld ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」We need steamOS compatibility"
+      "id": "1418612476622147614",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-27",
-  "messages": 72,
-  "unique_authors": 11,
-  "reactions_total": 150,
-  "attachments": 55,
+  "messages": 605,
+  "unique_authors": 32,
+  "reactions_total": 216,
+  "attachments": 87,
   "channel_activity": {
+    "🔸綜合討論": 509,
+    "🔸阵容构建": 24,
     "Mythag`s Cat want to share cool art with you": 3,
     "Queens !": 2,
     "🎨🖌️": 1,
@@ -20,22 +22,30 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
+    "1": 3,
+    "2": 1,
+    "3": 11,
+    "4": 106,
+    "5": 81,
+    "6": 29,
+    "7": 24,
+    "8": 45,
+    "9": 27,
+    "11": 13,
+    "12": 41,
+    "13": 95,
+    "14": 13,
+    "15": 16,
+    "16": 41,
+    "17": 32,
+    "20": 2,
+    "23": 1,
     "10": 23,
-    "11": 6,
-    "0": 1,
-    "4": 2,
-    "6": 1,
-    "8": 26,
-    "1": 2,
-    "3": 1,
-    "5": 3,
-    "9": 3,
-    "14": 2,
-    "12": 2
+    "0": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "0": 427,
+    "19": 106
   },
   "top_reacted_messages": [
     {
@@ -74,6 +84,62 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
+      "id": "1421340682974531629",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421474857912242218",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421480849425039511",
+      "channel_id": "1131839817982947429",
+      "content": "把衣服穿好 <:proud:1400771683664658433>",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421487792390672485",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇疑似投到大失敗San值-8，要瘋了",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421507312685682820",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421508953719701634",
+      "channel_id": "1131839817982947429",
+      "content": "那我想你一定會願意跟：永恆輪迴、權力意志、弱者道德、拜火教跟作為意志與表象的世界等等做朋友",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421524732557267044",
+      "channel_id": "1131839817982947429",
+      "content": "我变成佬了",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1421452403105861743",
       "content": "補發杜勒考官的戰績",
       "author": "water_heart",
@@ -81,32 +147,60 @@
       "channel": ""
     },
     {
-      "id": "1421439785771335761",
-      "content": "",
-      "author": "akalanden",
+      "id": "1421358835393757266",
+      "channel_id": "1131839817982947429",
+      "content": "喚醒體3啟、喚醒體+4、命輪3疊、命輪+12\n這幾個階段比較有意義\n可以依照自己的情況排順序",
+      "author": "tofu0834",
       "reactions": 2,
-      "channel": "忘却前夜OST：畸变丰穰之种"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421383436022710282",
-      "content": "it's a sign my friend<:wink:1400771743630491749>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": "🎨🖌️"
+      "id": "1421411328098041946",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】从入坑到425！超简易新人攻略！几张图片解决你的萌新难题！（图片会随环境变化更新）-哔哩哔哩】 https://b23.tv/Vkv8qBE",
+      "author": "scholar_2",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421439063092891679",
-      "content": "<:snicker:1400771784982397049> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：畸变丰穰之种"
+      "id": "1421428339972767845",
+      "channel_id": "1131839817982947429",
+      "content": "菲神带了都没发挥",
+      "author": "timbite",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421511153502130339",
-      "content": "<:cry3:1356082134447558748>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "小皮小皮"
+      "id": "1421479312124547267",
+      "channel_id": "1131839817982947429",
+      "content": "去Fan-art那裡看",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421482884820107406",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421483066035273739",
+      "channel_id": "1131839817982947429",
+      "content": "搞陆服猫又有借口拖产能了",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421487225094406174",
+      "channel_id": "1131839817982947429",
+      "content": "~~来骰个d100以决定下段剧情水平x~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

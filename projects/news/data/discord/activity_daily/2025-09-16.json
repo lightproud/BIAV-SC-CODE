@@ -1,10 +1,12 @@
 {
   "date": "2025-09-16",
-  "messages": 181,
-  "unique_authors": 18,
-  "reactions_total": 170,
-  "attachments": 30,
+  "messages": 1065,
+  "unique_authors": 49,
+  "reactions_total": 519,
+  "attachments": 82,
   "channel_activity": {
+    "🔸綜合討論": 877,
+    "🔸阵容构建": 7,
     "⛓️": 7,
     "Morimens Glossary (Wheels and Covenants equip guide)": 1,
     "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 16,
@@ -43,31 +45,34 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
-    "10": 17,
-    "8": 11,
-    "0": 4,
-    "2": 12,
-    "4": 4,
-    "7": 6,
+    "0": 5,
+    "1": 19,
+    "2": 79,
+    "3": 47,
+    "4": 20,
+    "5": 1,
+    "6": 32,
+    "7": 85,
+    "8": 137,
+    "9": 134,
+    "10": 60,
+    "11": 30,
+    "12": 39,
+    "13": 99,
+    "14": 130,
+    "15": 86,
+    "16": 34,
+    "17": 8,
+    "18": 5,
+    "22": 5,
+    "23": 5,
+    "19": 3,
     "21": 1,
-    "22": 2,
-    "23": 1,
-    "11": 9,
-    "12": 4,
-    "14": 12,
-    "15": 26,
-    "9": 15,
-    "13": 8,
-    "1": 7,
-    "3": 21,
-    "6": 5,
-    "16": 12,
-    "17": 3,
     "20": 1
   },
   "message_types": {
-    "0": 55,
-    "19": 19
+    "0": 642,
+    "19": 242
   },
   "top_reacted_messages": [
     {
@@ -92,11 +97,59 @@
       "channel": "⛓️"
     },
     {
+      "id": "1417478128627880049",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417425703707611220",
+      "channel_id": "1131839817982947429",
+      "content": "今天的日服推特問題（已修正）\n福袋介紹動畫放成奧吉爾的了",
+      "author": "foxcatfurry",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1417459936497111120",
       "content": "感觉很适合做扑克牌之类的设计就做了。怎么说呢，就是我觉得他喝下酒的那刻真的很帅，有种视死如归的感觉！所以呢，就搞了个这玩意。唉，第一次画这样的画面，比例不对的话",
       "author": "dittoqwq",
       "reactions": 11,
       "channel": "画了杜勒赛因的卡牌！"
+    },
+    {
+      "id": "1417532464842412056",
+      "channel_id": "1131839817982947429",
+      "content": "需要誇獎",
+      "author": "iak.rm",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417424629445693514",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417515312869543936",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝妳，死抗超人",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417432125224779856",
+      "channel_id": "1131839874132090890",
+      "content": "大佬帶我啊🛐",
+      "author": "universe.dark",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
     },
     {
       "id": "1417437770368159776",
@@ -106,109 +159,76 @@
       "channel": "杜勒X皮克曼"
     },
     {
-      "id": "1417352887519940703",
-      "content": "Thank you for your feedback. We are urgently fixing these issues and apologize f",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
+      "id": "1417425110712713337",
+      "channel_id": "1131839817982947429",
+      "content": "不如改成去亞蘭與三大質體之一深度交流",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417468135363313706",
-      "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
+      "id": "1417426746449592401",
+      "channel_id": "1131839817982947429",
+      "content": "去上班了這破遊戲誰愛玩誰玩",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417428567339565086",
+      "channel_id": "1131839817982947429",
+      "content": "在你群看到元素周期表可以说是很恐怖的事情了\n总觉得下一秒你游就要出一整族元素的大雷（x",
       "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "杜勒X皮克曼"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417476613393612830",
-      "content": "上色了，感覺還行~~~<:pray:1356053116260454534>",
-      "author": "xcecilex.",
-      "reactions": 4,
-      "channel": "莉兹✨"
+      "id": "1417556532417265765",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417407507630002226",
-      "content": "<@885882671899746305> 嗨，笔和500银芯是重复获得头像框后转换的奖励，这边补发头像框会扣除误发的笔和银芯\n\n<@5245634987816",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
+      "id": "1417431966914969690",
+      "channel_id": "1131839874132090890",
+      "content": "接著醫生復刻佬要抽+12🛐 🛐🛐",
+      "author": "universe.dark",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1417449962362372117",
-      "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
-      "author": "dittoqwq",
-      "reactions": 3,
-      "channel": "杜勒X皮克曼"
+      "id": "1417430805382303744",
+      "channel_id": "1131839817982947429",
+      "content": "我才超限而已",
+      "author": "universe.dark",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417467592171585586",
-      "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": "杜勒X皮克曼"
+      "id": "1417442170717081622",
+      "channel_id": "1131839817982947429",
+      "content": "不喜歡吃校貓拉出來的東西",
+      "author": "noemyra",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417540508078706728",
-      "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "杜勒X皮克曼"
+      "id": "1417451103200608347",
+      "channel_id": "1131839817982947429",
+      "content": "<:spend:1356086121888747531>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417338102615375882",
-      "content": "<@885882671899746305> 抱歉 uid查重的时候出现了失误（头像框不能重复获取，我们会去重曾拿到过头像框的uid），我们稍后会给你补发🌹",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1417341628640923681",
-      "content": "<@524563498781638677>Sorry, there was indeed an error during the plagiarism chec",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1417348632264572938",
-      "content": "",
-      "author": "aegisx",
-      "reactions": 2,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1417507756314984450",
-      "content": "",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "✅「Answered」Summer event background locked"
-    },
-    {
-      "id": "1417527800037904518",
-      "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第16期（第43期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\nP.S.图片较长，在线预览无法显",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览43期·星辰篇✦"
-    },
-    {
-      "id": "1417480104082280519",
-      "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "杜勒X皮克曼"
-    },
-    {
-      "id": "1417520371112087593",
-      "content": "added a bit of info about Mythag's awakening ritual. the rest of the info from t",
-      "author": "nikolazuli",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1417531108270145650",
-      "content": "ive heard hes pretty good",
-      "author": "isakrai",
-      "reactions": 1,
-      "channel": "what banner should i pull for"
+      "id": "1417462297542266911",
+      "channel_id": "1131839817982947429",
+      "content": "Sp阿狗",
+      "author": "elkmilu",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }
