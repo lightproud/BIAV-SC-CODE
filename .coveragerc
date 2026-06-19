@@ -1,0 +1,16 @@
+# Coverage measurement config — keeps local and CI runs on the same footing.
+# Source roots mirror the --cov flags in .github/workflows/test.yml.
+[run]
+source =
+    scripts
+    projects/news/scripts
+    projects/wiki/scripts
+omit =
+    tests/*
+    */__pycache__/*
+    */tests/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
