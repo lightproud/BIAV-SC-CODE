@@ -1,10 +1,11 @@
 {
   "date": "2025-05-21",
-  "messages": 156,
-  "unique_authors": 33,
-  "reactions_total": 86,
-  "attachments": 10,
+  "messages": 488,
+  "unique_authors": 38,
+  "reactions_total": 152,
+  "attachments": 21,
   "channel_activity": {
+    "🔸綜合討論": 332,
     "Seimau Art": 1,
     "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 6,
     "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 84,
@@ -24,24 +25,31 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "2": 13,
+    "1": 9,
+    "2": 47,
+    "3": 12,
+    "4": 6,
+    "5": 18,
+    "6": 13,
+    "7": 23,
+    "8": 30,
+    "9": 102,
+    "10": 49,
+    "11": 65,
+    "12": 58,
+    "13": 17,
+    "14": 8,
+    "15": 12,
+    "16": 1,
+    "17": 4,
+    "18": 6,
+    "23": 5,
     "0": 2,
-    "1": 3,
-    "7": 17,
-    "11": 47,
-    "8": 27,
-    "9": 11,
-    "10": 12,
-    "23": 4,
-    "6": 8,
-    "3": 7,
-    "4": 3,
-    "5": 1,
     "20": 1
   },
   "message_types": {
-    "0": 110,
-    "19": 14
+    "19": 32,
+    "0": 300
   },
   "top_reacted_messages": [
     {
@@ -73,6 +81,38 @@
       "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
     },
     {
+      "id": "1374690321002397716",
+      "channel_id": "1131839817982947429",
+      "content": "虽然策划很多地方都很神人但是这个保留历史记录基本吊打其他二游了（",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374646624328093707",
+      "channel_id": "1131839817982947429",
+      "content": "# 我們血希活動是看不到血希的",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374655539254136832",
+      "channel_id": "1131839817982947429",
+      "content": "超好笑",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374701829329260585",
+      "channel_id": "1131839817982947429",
+      "content": "大佬配隊：8SSR課金命輪\n我：破防",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1374668512232079452",
       "content": "~~這個活動感覺隨機得很歹毒~~",
       "author": "kong760",
@@ -87,6 +127,54 @@
       "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
     },
     {
+      "id": "1374685170061545493",
+      "channel_id": "1131839817982947429",
+      "content": "1.0年底要给公司评判游戏前途，公司觉得忘却还有继续捞金的潜力，就给投资了。",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374745608023445596",
+      "channel_id": "1131839817982947429",
+      "content": "也不是不行（\n勉強能打個36000",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374581765104078979",
+      "channel_id": "1131839817982947429",
+      "content": "也不能這麼說\n~~小團隊有可能一個人身兼數職，有機率是數值策劃寫的~~",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374687670911111188",
+      "channel_id": "1131839817982947429",
+      "content": "你肝也没用",
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374697341050818643",
+      "channel_id": "1131839817982947429",
+      "content": "||還能衍生到大家到底是喜歡落地王關還是要跑圖的||",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374739516794994699",
+      "channel_id": "1131839817982947429",
+      "content": "：谁讲她没有伤害 她不是有打击啊<:point:1356053112292511815>",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1374550794732441672",
       "content": "yup of course!!\nSo glad  that you remember him😭😭",
       "author": "flim_of_life_burst",
@@ -94,53 +182,28 @@
       "channel": "拿下索瓦爾格商用權了慶祝一下XD"
     },
     {
-      "id": "1374577696369283243",
-      "content": "<:bow:1356053037159944473>",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "Seimau Art"
+      "id": "1374579779281354874",
+      "channel_id": "1131839817982947429",
+      "content": "船长游戏内剧情和广播剧/宣发时的设定…几乎完全不是一个人设",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1374651392115085393",
-      "content": "沒仔細看 我還一直點黑色防雷\n<:cry2:1356068126894194758>",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+      "id": "1374623109608378428",
+      "channel_id": "1131839817982947429",
+      "content": "佬\n脫光...",
+      "author": "nahida._90",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1374666364857483344",
-      "content": "感謝守密人的肯定與支持💗",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
-    },
-    {
-      "id": "1374577787142279292",
-      "content": "100005756",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "✅「已回答」520信件缺失"
-    },
-    {
-      "id": "1374594263660105782",
-      "content": "Tawil's version of 24's card has it color code swapped between damage and aliemu",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "✅「Answered」Game text bugged in tawil and traphase"
-    },
-    {
-      "id": "1374556765630365766",
-      "content": "Thank you so much 🙏 \nHe looks amazing 😭",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
-    },
-    {
-      "id": "1374556919561457744",
-      "content": "Thank you 😭😭😭",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+      "id": "1374688212328382494",
+      "channel_id": "1131839817982947429",
+      "content": "你還可以使用\n硬雞0肢體",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

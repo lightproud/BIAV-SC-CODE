@@ -1,10 +1,12 @@
 {
   "date": "2025-07-26",
-  "messages": 13068,
+  "messages": 14122,
   "unique_authors": 277,
-  "reactions_total": 995,
-  "attachments": 527,
+  "reactions_total": 1194,
+  "attachments": 540,
   "channel_activity": {
+    "🔸lore-chat": 1045,
+    "🔸lets-count": 9,
     "🔸morimens-game-chat": 8873,
     "🔸晒卡分享": 1,
     "🔸课间休息闲聊": 8,
@@ -39,36 +41,44 @@
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "0": 847,
-    "1": 563,
-    "2": 846,
-    "3": 802,
-    "4": 763,
-    "5": 334,
-    "6": 853,
-    "7": 493,
-    "8": 113,
-    "9": 157,
-    "10": 388,
-    "11": 805,
-    "12": 808,
-    "13": 893,
-    "14": 560,
-    "15": 513,
+    "1": 567,
+    "2": 853,
+    "3": 804,
+    "4": 774,
+    "5": 435,
+    "6": 985,
+    "7": 512,
+    "8": 129,
+    "9": 321,
+    "10": 403,
+    "11": 827,
+    "12": 847,
+    "13": 985,
+    "14": 941,
+    "15": 542,
+    "19": 509,
+    "21": 305,
+    "22": 296,
+    "0": 848,
+    "23": 334,
     "16": 681,
     "17": 401,
     "18": 476,
-    "19": 502,
-    "20": 347,
-    "21": 304,
-    "22": 288,
-    "23": 331
+    "20": 347
   },
   "message_types": {
-    "19": 3883,
-    "0": 7913
+    "0": 783,
+    "19": 271
   },
   "top_reacted_messages": [
+    {
+      "id": "1398660401767514194",
+      "channel_id": "1326453763355185215",
+      "content": "I sent it to castor and pollux’s writer when i first saw it. Please don’t stop, ",
+      "author": "morimens_15",
+      "reactions": 36,
+      "channel": "🔸lore-chat"
+    },
     {
       "id": "1398534592650149969",
       "content": "Drew my OC with the pretty boys of Morimens lol",
@@ -89,6 +99,14 @@
       "author": "zier.0",
       "reactions": 14,
       "channel": "V2.3.0.2 在线维护公告"
+    },
+    {
+      "id": "1398664401355145248",
+      "channel_id": "1326453763355185215",
+      "content": "Also thank you for your kind messages! I’m okay now. Tbh nobody asked me to come",
+      "author": "morimens_15",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1398743493085495439",
@@ -160,6 +178,30 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398644131949183048",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398658325478117438",
+      "channel_id": "1326453763355185215",
+      "content": "Also ||we’re all free to still hc him as anything as long as it makes us happy||",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398663815897415805",
+      "channel_id": "1326453763355185215",
+      "content": "I’ll make sure Doresain’s writer knows by monday. He’ll be happy<:thumbsup:13560",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1398756470723579984",
       "channel_id": "1170692781216378960",
       "content": "<@157679037240573953> 2 hours of retrying <:dishes:1356083313063759922>",
@@ -181,45 +223,6 @@
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "仿一点官方q版（失败版"
-    },
-    {
-      "id": "1398551250785669120",
-      "channel_id": "1170692781216378960",
-      "content": "something about devil's prostate or something",
-      "author": "zier.0",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1398467873588121632",
-      "channel_id": "1300659662311526512",
-      "content": "Yo recomiendo que le metan plata al juego , eso hace feliz al gato",
-      "author": "Deleted User",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1398669359190380604",
-      "content": "Agree with this.\n\nIf the skin can't be changed, and the cg is later revised, the",
-      "author": "baguettesuffering",
-      "reactions": 6,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398485940833620009",
-      "channel_id": "1170692781216378960",
-      "content": "+12 in 5 days.. and I can finally rest",
-      "author": "iv_dog",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1398531412134461451",
-      "channel_id": "1170692781216378960",
-      "content": "lets goooooo i got my Helot +12",
-      "author": "nicoplaynick",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-05-26",
-  "messages": 214,
-  "unique_authors": 25,
-  "reactions_total": 255,
-  "attachments": 46,
+  "messages": 2435,
+  "unique_authors": 78,
+  "reactions_total": 678,
+  "attachments": 171,
   "channel_activity": {
+    "🔸綜合討論": 2221,
     "Seimau Art": 1,
     "2.2.2 Half Anni Overview": 4,
     "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 8,
@@ -42,31 +43,34 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "23": 1,
-    "7": 8,
-    "13": 5,
-    "14": 2,
-    "3": 20,
-    "5": 7,
-    "6": 19,
-    "12": 23,
-    "8": 10,
-    "9": 54,
-    "10": 17,
-    "15": 3,
-    "2": 7,
-    "11": 23,
-    "17": 4,
-    "4": 3,
-    "1": 1,
-    "20": 1,
-    "22": 1,
-    "18": 5
+    "0": 7,
+    "1": 5,
+    "2": 47,
+    "3": 156,
+    "4": 156,
+    "5": 255,
+    "6": 353,
+    "7": 165,
+    "8": 283,
+    "9": 143,
+    "10": 62,
+    "11": 124,
+    "12": 176,
+    "13": 79,
+    "14": 26,
+    "15": 122,
+    "16": 52,
+    "17": 73,
+    "18": 21,
+    "19": 81,
+    "20": 12,
+    "21": 2,
+    "22": 3,
+    "23": 32
   },
   "message_types": {
-    "19": 19,
-    "0": 69,
-    "4": 1
+    "0": 1920,
+    "19": 301
   },
   "top_reacted_messages": [
     {
@@ -75,6 +79,14 @@
       "author": "morimensstaff01",
       "reactions": 182,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1376399712411979778",
+      "channel_id": "1131839817982947429",
+      "content": "图鲁迷最爽的一轮在我这里<:flop2:1356053072924774421>",
+      "author": "cs001092",
+      "reactions": 23,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1376508216141414443",
@@ -91,6 +103,14 @@
       "channel": "弥萨格校友号码本4.0"
     },
     {
+      "id": "1376381921231245453",
+      "channel_id": "1131839817982947429",
+      "content": "賠暈，我要緩緩",
+      "author": "randomplayer852",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1376508111572959303",
       "content": "上週收到了很多守密人的1.5周年祝福，回想起這548天如過山車一般：失意、驚喜、焦灼、感激……我們從谷底走來，是大家為我們搭起了通往山腰、山頂的階梯，讓1.5周",
       "author": "morimensstaff01",
@@ -98,116 +118,116 @@
       "channel": "🎊周年祝语：願銀鑰指引前路┊Anniversary wishes：May the silver key guide the way"
     },
     {
-      "id": "1376510199728181349",
-      "content": "BBCHDLREDGLK",
-      "author": "_buqi",
-      "reactions": 4,
-      "channel": "🎊周年祝语：願銀鑰指引前路┊Anniversary wishes：May the silver key guide the way"
-    },
-    {
-      "id": "1376543645217460267",
-      "content": "100005756\n80级 +4 24 +12巨刃和3启藏品 68%四月 疯狂预兆10级 灵塑10级",
-      "author": "be_queitplease",
-      "reactions": 4,
-      "channel": "弥萨格校友号码本4.0"
-    },
-    {
-      "id": "1376635610260832286",
+      "id": "1376476708718510170",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "shaw_51",
-      "reactions": 4,
-      "channel": "弥萨格校友号码本4.0"
+      "author": "cs001092",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376513582472368249",
-      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第8期（第35期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n新增造物\n\nP.S.图片较长，",
-      "author": "menoctus",
-      "reactions": 4,
-      "channel": "✦关卡地图「融灾禁区」总览35期·星辰篇✦"
-    },
-    {
-      "id": "1376509918986768414",
-      "content": "BBCHDLREDGLK",
-      "author": "_buqi",
-      "reactions": 3,
-      "channel": "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!"
-    },
-    {
-      "id": "1376688035399204945",
-      "content": "Hey again! I managed to fix the problem!\n\nIf anyone’s facing the same issue, thi",
-      "author": ".unphoque",
-      "reactions": 3,
-      "channel": "✅「Answered」Game not starting, Black screen after the launching"
-    },
-    {
-      "id": "1376545692012511232",
-      "content": "I'm so close to bingo, dev pls <:pray:1356053116260454534>",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "Move Chaos 24 demo to the left by 1 slot."
-    },
-    {
-      "id": "1376700117457047583",
-      "content": "ofc hes one of my favs!",
-      "author": "prizemauv",
-      "reactions": 1,
-      "channel": "Seimau Art"
-    },
-    {
-      "id": "1376454124467392627",
-      "content": "hello! I think you forgot to message me, so I texted you myself about this<:scar",
-      "author": "asterabyss",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1376588608169050122",
-      "content": "像這種打多次的關卡你們應該控制玩家打一局的時長",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
-    },
-    {
-      "id": "1376518069354233876",
-      "content": "101006349",
-      "author": ".sqrrl",
-      "reactions": 1,
-      "channel": "✅「Answered」bugged gift code"
-    },
-    {
-      "id": "1376440405180158083",
-      "content": "现在萌新也能打共战了，3w命的boss一下就不够看了\n\n这次老大掉血速度和当年老七差不多了。\n忘却前夜已经蒸蒸日上了，3w有点太贬低自己了。适当翻倍也是合理的。",
+      "id": "1376474620860960789",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "muliupan",
-      "reactions": 1,
-      "channel": "七海怪血量太低了"
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376531381190131722",
-      "content": "Yeah no problème i  sent you my email in dm discord",
-      "author": ".unphoque",
-      "reactions": 1,
-      "channel": "✅「Answered」Game not starting"
+      "id": "1376450919721467904",
+      "channel_id": "1131839817982947429",
+      "content": "44個人是要我按到手斷掉嗎",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376615300979753081",
-      "content": "Either translation is broken or the skin ticket cannot be claimed.\n\nI did the 20",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug - cannot claim skin ticket after 20 fights"
+      "id": "1376444635173486614",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376518499907665950",
-      "content": "This issue will be fixed🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Wrong text on faros rouse"
+      "id": "1376477311142199296",
+      "channel_id": "1131839817982947429",
+      "content": "一张防御200盾🤓",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376514767132430366",
-      "content": "問題收到🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」使用威廉看板點進活動再點出來會丟失"
+      "id": "1376399751892959352",
+      "channel_id": "1131839817982947429",
+      "content": "我恨你",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376441267344642058",
+      "channel_id": "1131839817982947429",
+      "content": "操尼瑪，我輸光了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376443283231998054",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376477739258744885",
+      "channel_id": "1131839817982947429",
+      "content": "栗子和汀都+12了，毕业（",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376479362727280681",
+      "channel_id": "1131839817982947429",
+      "content": "反正我仓库5k海胆是没有一点想打（",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376675020486480073",
+      "channel_id": "1131839817982947429",
+      "content": "深海反可以2星過H2-12了🤓",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376443037537800224",
+      "channel_id": "1131839817982947429",
+      "content": "脊椎简直是超维池里的雷，路过炸一下（",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376451917970018315",
+      "channel_id": "1131839817982947429",
+      "content": "<:dead:1356082627509092372>",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376452632369168384",
+      "channel_id": "1131839817982947429",
+      "content": "谁去提个建议让他们做一键回关按钮",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

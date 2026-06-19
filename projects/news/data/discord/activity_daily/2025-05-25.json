@@ -1,10 +1,11 @@
 {
   "date": "2025-05-25",
-  "messages": 41,
-  "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 6,
+  "messages": 620,
+  "unique_authors": 39,
+  "reactions_total": 47,
+  "attachments": 28,
   "channel_activity": {
+    "🔸綜合討論": 579,
     "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 7,
     "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 2,
     "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 2,
@@ -16,25 +17,120 @@
     "How do I change the window size?": 5
   },
   "hourly_activity": {
-    "6": 6,
-    "8": 5,
-    "9": 3,
-    "17": 2,
-    "10": 2,
-    "3": 5,
-    "4": 1,
-    "21": 1,
-    "7": 5,
-    "11": 1,
-    "12": 1,
-    "13": 5,
-    "23": 4
+    "2": 8,
+    "3": 11,
+    "4": 8,
+    "5": 14,
+    "6": 32,
+    "7": 58,
+    "8": 35,
+    "9": 61,
+    "10": 44,
+    "11": 74,
+    "12": 43,
+    "13": 22,
+    "14": 100,
+    "15": 17,
+    "16": 69,
+    "17": 8,
+    "19": 8,
+    "20": 2,
+    "23": 5,
+    "21": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 514,
+    "19": 65
   },
   "top_reacted_messages": [
+    {
+      "id": "1376206627031486494",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376174539595055124",
+      "channel_id": "1131839817982947429",
+      "content": "剩我抽中了（？",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376116843411935323",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376184472029892899",
+      "channel_id": "1131839817982947429",
+      "content": "在我的處女膜再過去一點",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376228771807494145",
+      "channel_id": "1131839817982947429",
+      "content": "都不用用我",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376241157352325251",
+      "channel_id": "1131839817982947429",
+      "content": "外面的世界只有想扒掉他衣服的人\n所以下集直接變成繁衍狂熱",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376020661419643020",
+      "channel_id": "1131839817982947429",
+      "content": "挺配阿花的",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376093035372482600",
+      "channel_id": "1131839817982947429",
+      "content": "公告里面打旺达2个字就总共就一点点人",
+      "author": "bailuoxiao",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376157629344383006",
+      "channel_id": "1131839817982947429",
+      "content": "||有些底層角色是注定翻不了身了||",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376159507108986940",
+      "channel_id": "1131839817982947429",
+      "content": "我發現你沒提醒我都忘記這個角色呢",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376203496646250556",
+      "channel_id": "1131839817982947429",
+      "content": "昨天是99%",
+      "author": "bailuoxiao",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1376058742860288010",
       "content": "坐等繁衍狂熱配音🥵",
@@ -50,11 +146,60 @@
       "channel": "喜歡綠色正太的每回合寸止嗎"
     },
     {
-      "id": "1376157897616265306",
-      "content": "~~這隻不是弱化版了嗎，之前改過一次了~~",
-      "author": "heikwok",
+      "id": "1376025210582597693",
+      "channel_id": "1131839817982947429",
+      "content": "只能肉償了",
+      "author": "ahuahuahua",
       "reactions": 1,
-      "channel": "喜歡綠色正太的每回合寸止嗎"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376098662777884782",
+      "channel_id": "1131839817982947429",
+      "content": "不是只有換版本名稱的那隻角色有pv嗎（",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376100433164242964",
+      "channel_id": "1131839817982947429",
+      "content": "~~我支持~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376124041449967718",
+      "channel_id": "1131839817982947429",
+      "content": "我是大猛1",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376130348680745141",
+      "channel_id": "1131839817982947429",
+      "content": "尼哥",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376144736364003388",
+      "channel_id": "1131839817982947429",
+      "content": "你知道旺達的永反轉臨反是不吃加成的嘛",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376152000164794369",
+      "channel_id": "1131839817982947429",
+      "content": "🤓 🤓",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

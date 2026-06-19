@@ -1,10 +1,11 @@
 {
   "date": "2025-07-05",
-  "messages": 7448,
+  "messages": 7449,
   "unique_authors": 196,
   "reactions_total": 690,
   "attachments": 468,
   "channel_activity": {
+    "🔸频道建议┊server-suggestions": 1,
     "🔸晒卡分享": 2,
     "🔸日本語チャンネル": 1,
     "🔸한국어-채팅방": 4,
@@ -25,12 +26,12 @@
     "《雙人舞》": 2
   },
   "hourly_activity": {
+    "1": 574,
     "13": 320,
     "3": 478,
     "12": 302,
     "6": 252,
     "9": 189,
-    "1": 573,
     "14": 402,
     "15": 399,
     "16": 260,
@@ -51,8 +52,7 @@
     "21": 371
   },
   "message_types": {
-    "0": 1144,
-    "19": 332
+    "19": 1
   },
   "top_reacted_messages": [
     {

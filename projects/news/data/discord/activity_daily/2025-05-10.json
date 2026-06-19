@@ -1,10 +1,11 @@
 {
   "date": "2025-05-10",
-  "messages": 33,
-  "unique_authors": 7,
-  "reactions_total": 64,
-  "attachments": 8,
+  "messages": 377,
+  "unique_authors": 32,
+  "reactions_total": 97,
+  "attachments": 25,
   "channel_activity": {
+    "🔸綜合討論": 344,
     "Ramona": 2,
     "TULU": 1,
     "Morimens lore video in Thai concering Dissolution!": 1,
@@ -20,22 +21,34 @@
     "女仆日当然是……": 3
   },
   "hourly_activity": {
-    "15": 1,
-    "20": 1,
-    "19": 5,
-    "11": 2,
-    "7": 3,
-    "9": 5,
-    "10": 5,
-    "12": 2,
-    "17": 1,
-    "18": 3,
-    "0": 1,
-    "5": 1,
-    "6": 3
+    "0": 13,
+    "1": 43,
+    "2": 18,
+    "3": 15,
+    "4": 10,
+    "5": 10,
+    "6": 10,
+    "7": 18,
+    "8": 29,
+    "9": 32,
+    "10": 51,
+    "11": 29,
+    "12": 8,
+    "13": 5,
+    "14": 1,
+    "15": 2,
+    "16": 11,
+    "17": 14,
+    "18": 13,
+    "19": 12,
+    "20": 4,
+    "21": 3,
+    "22": 7,
+    "23": 19
   },
   "message_types": {
-    "0": 4
+    "0": 304,
+    "19": 40
   },
   "top_reacted_messages": [
     {
@@ -60,6 +73,70 @@
       "channel": "女仆日当然是……"
     },
     {
+      "id": "1370581336477270056",
+      "channel_id": "1131839817982947429",
+      "content": "0乘以多少都是0",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370652460141772841",
+      "channel_id": "1131839817982947429",
+      "content": "衣服都被狗吃了沒有東西可以穿",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370704348132147312",
+      "channel_id": "1131839817982947429",
+      "content": "被你遊南通嚇暈",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370768649639432245",
+      "channel_id": "1131839817982947429",
+      "content": "你遊經典打牌不如打ㄆ",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370622183457685554",
+      "channel_id": "1131839817982947429",
+      "content": "有大佬可以帶帶我嗎",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370697665121095732",
+      "channel_id": "1131839817982947429",
+      "content": "是誰在跟我吃飯的時候一直在意淫同學的",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370704155986886780",
+      "channel_id": "1131839817982947429",
+      "content": "你可以去查查鯊魚的\n有兩根不是很長",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370720774020661290",
+      "channel_id": "1131839817982947429",
+      "content": "~~■■裏面有蟲洞可以直接穿越~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1370663491857416242",
       "content": "~~# 我更喜歡1週年送的100流明之芯，考慮一下嗎~~",
       "author": "Deleted User",
@@ -67,39 +144,68 @@
       "channel": "✅前瞻：1.5周年～活动福利篇"
     },
     {
-      "id": "1370865918602903554",
-      "content": "Cute <:point:1356053112292511815>",
-      "author": "vxvendetta",
+      "id": "1370553049755549767",
+      "channel_id": "1131839817982947429",
+      "content": "<:love:1356053099931897977>",
+      "author": "fengliyaowo",
       "reactions": 1,
-      "channel": "Ramona"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370665273966723173",
-      "content": "只有我是被卡墨跟小貓的奇異男同愛情吸引進來的嗎",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
-    },
-    {
-      "id": "1370703295483482124",
-      "content": "Thank you for your enthusiasm and development efforts! You have permission to us",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Permission of image use for planner app"
-    },
-    {
-      "id": "1370554581737803786",
-      "content": "被當實戰素材了<:dizzy2:1356083001926221874>",
+      "id": "1370565354702639164",
+      "channel_id": "1131839817982947429",
+      "content": "隕日偉力荒原狼 當輸出",
       "author": "_buqi",
       "reactions": 1,
-      "channel": "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370631040703402068",
-      "content": "媽媽我上電視了",
-      "author": "nahida._90",
+      "id": "1370571570493390929",
+      "channel_id": "1131839817982947429",
+      "content": "他又不是我的菜",
+      "author": "ernest_heart",
       "reactions": 1,
-      "channel": "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370575277490573422",
+      "channel_id": "1131839817982947429",
+      "content": "~~會讓我想起某兩次愉快又奇妙的ㄩㄆ經歷~~",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370575885622579220",
+      "channel_id": "1131839817982947429",
+      "content": "~~奧吉爾我都下手了~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370576042447736933",
+      "channel_id": "1131839817982947429",
+      "content": "🥵 真的能分到一晚吗。那也不是不行。",
+      "author": "randomplayer852",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370592422232588349",
+      "channel_id": "1131839817982947429",
+      "content": "那是aaa",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370594924613075048",
+      "channel_id": "1131839817982947429",
+      "content": "你做的到的估計是把人笑死不是把人草死",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

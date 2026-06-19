@@ -1,10 +1,25 @@
 {
   "date": "2025-06-09",
-  "messages": 73,
-  "unique_authors": 7,
-  "reactions_total": 16,
-  "attachments": 7,
+  "messages": 8439,
+  "unique_authors": 236,
+  "reactions_total": 653,
+  "attachments": 377,
   "channel_activity": {
+    "🔸綜合討論": 850,
+    "🔸morimens-game-chat": 6792,
+    "🔸相位对弈": 8,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 43,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 8,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 92,
+    "🔸canal-português": 99,
+    "🔸ruang-obrolan-indonesia": 321,
+    "🔸ห้องสนทนาภาษาไทย": 55,
+    "🔸traphase": 44,
+    "🔸lore-chat": 41,
     "Introduction to the Holy Spreadsheet.": 1,
     "🎊官周通販：淘寶全球可購！": 3,
     "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 2,
@@ -28,25 +43,84 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "1": 2,
-    "2": 12,
-    "11": 7,
-    "12": 1,
-    "16": 1,
-    "3": 15,
-    "5": 4,
-    "23": 3,
-    "6": 19,
-    "9": 1,
-    "4": 5,
-    "18": 1,
-    "19": 1
+    "0": 221,
+    "1": 100,
+    "2": 119,
+    "3": 276,
+    "4": 394,
+    "5": 375,
+    "6": 180,
+    "7": 329,
+    "8": 359,
+    "9": 214,
+    "10": 183,
+    "11": 257,
+    "12": 410,
+    "13": 510,
+    "14": 741,
+    "15": 377,
+    "16": 715,
+    "17": 444,
+    "18": 552,
+    "19": 568,
+    "22": 235,
+    "20": 274,
+    "21": 135,
+    "23": 471
   },
   "message_types": {
-    "0": 4
+    "0": 6399,
+    "19": 1967
   },
   "top_reacted_messages": [
+    {
+      "id": "1381738762605953165",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mchliszt",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381741235034656768",
+      "channel_id": "1170692781216378960",
+      "content": "oh I thought you were gonna pay for Can like a nice person",
+      "author": "mac2492",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381741550211694643",
+      "channel_id": "1170692781216378960",
+      "content": "a smile from me",
+      "author": "dose1694",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381738986267213887",
+      "channel_id": "1170692781216378960",
+      "content": "keep getting uvhash for some reason T.T",
+      "author": "mchliszt",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381565743925039185",
+      "channel_id": "1131839817982947429",
+      "content": "1.5周年改成弟弟進池\n活動介面來張玉足cg，畫的特別色那種\n鳥人叫他弟弟，但性別設定改成未知\n那營收估計會漲一波☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381741272787845293",
+      "channel_id": "1170692781216378960",
+      "content": "💳",
+      "author": "dose1694",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1381773770460495992",
       "content": "【【忘却前夜】歡迎來到不可思議國度!——满编60级0启全1技能无灵塑融灾禁区1-5-哔哩哔哩】 https://b23.tv/vtmyLJO\n\n如視頻卡茜亞造物",
@@ -55,60 +129,108 @@
       "channel": "卡茜亞狂氣爆發永久降力Bug"
     },
     {
-      "id": "1381505841659645993",
-      "content": "奧提斯\n奧提斯•奈傑爾•霍華德\nOutis 是奧德修斯用來欺騙獨眼巨人的假名\nNigel 有黑黝黝的意思\n霍華德致敬一下洛老",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
-    },
-    {
-      "id": "1381608059301789787",
-      "content": "Tried to play game on PC but stuck on update resource screen, then get error 35.",
-      "author": "guffy10",
-      "reactions": 1,
-      "channel": "💭「Processing」Pc ver. Stuck on update resource screen and then error 35"
-    },
-    {
-      "id": "1381504063442780222",
+      "id": "1381616855680159754",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "✅「已回答」魔女寬簷帽"
+      "author": "scholar_2",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1381478551286448139",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Untranslated Castor skill in TH ver."
+      "id": "1381598683728056351",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1381473701111009391",
-      "content": "問題已收到，感謝反饋🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「處理中」關於雙發鑰令"
+      "id": "1381648574986850447",
+      "channel_id": "1131839817982947429",
+      "content": "抽了一下，旺达跟我还真有缘分",
+      "author": "287405tjy_28066",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1381459651866005515",
-      "content": "鯊魚的工具人體質要利用到極致，順便賣個魚也是可以的吧（彌利：殺",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "利莫里亞沙丁魚罐頭"
+      "id": "1381704207819604008",
+      "channel_id": "1131839817982947429",
+      "content": "吃完了，沒肘到10回通關🤡",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1381459712855244871",
-      "content": "有點不習慣（無臉男突然有了臉還是這樣的斯文敗類）但！老師—好香的飯阿阿阿阿阿阿阿阿",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "id": "1381683196239937706",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "disgustedingucci",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1381484421089071275",
-      "content": "謝謝勞斯的飯飯，我愛你",
-      "author": "yun_lai_yi_meng_32",
-      "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "id": "1381740265471086602",
+      "channel_id": "1170692781216378960",
+      "content": "w wheels",
+      "author": "dose1694",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381617037696303184",
+      "channel_id": "1300659436804640788",
+      "content": "最近始めてめっちゃハマってます\n昨日9章クリアできた～",
+      "author": "urien0002",
+      "reactions": 5,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1381550564600713327",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381557723484782673",
+      "channel_id": "1131839817982947429",
+      "content": "腺体分裂❌\n**~~银芯分裂~~**✓",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381667565574557747",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】歡迎來到不可思議國度!——满编60级0启全1技能无灵塑融灾禁区1-5-哔哩哔哩】 https://b23.tv/XOzEgFQ",
+      "author": "scholar_2",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381709801913974794",
+      "channel_id": "1131839817982947429",
+      "content": "純混也只有2000",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381713730475130940",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381462144285151274",
+      "channel_id": "1170692781216378960",
+      "content": "fuck",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-31",
-  "messages": 12394,
+  "messages": 12534,
   "unique_authors": 263,
-  "reactions_total": 1215,
-  "attachments": 649,
+  "reactions_total": 1227,
+  "attachments": 652,
   "channel_activity": {
+    "🔸lore-chat": 128,
+    "🔸lets-count": 12,
     "🔸morimens-game-chat": 8219,
     "🔸晒卡分享": 2,
     "🔸课间休息闲聊": 5,
@@ -53,35 +55,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 516,
-    "1": 454,
-    "2": 600,
-    "3": 726,
-    "4": 624,
-    "5": 463,
-    "6": 288,
-    "7": 214,
-    "8": 479,
-    "9": 179,
-    "10": 385,
+    "0": 522,
+    "1": 463,
+    "2": 630,
+    "3": 729,
+    "4": 639,
+    "5": 469,
+    "6": 296,
+    "7": 222,
+    "15": 461,
+    "16": 369,
+    "17": 587,
+    "18": 398,
+    "23": 514,
+    "8": 480,
+    "9": 180,
+    "10": 387,
+    "12": 388,
+    "14": 498,
     "11": 452,
-    "12": 387,
     "13": 784,
-    "14": 497,
-    "15": 455,
-    "16": 361,
-    "17": 585,
-    "18": 394,
     "19": 588,
     "20": 859,
     "21": 914,
-    "22": 705,
-    "23": 485
+    "22": 705
   },
   "message_types": {
-    "0": 7231,
-    "19": 3640,
-    "6": 11
+    "19": 35,
+    "0": 105
   },
   "top_reacted_messages": [
     {
@@ -221,18 +222,18 @@
       "channel": "Jenkin & Brown card :mouse2:"
     },
     {
+      "id": "1400300100575559730",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1400370382707621949",
       "channel_id": "1170692781216378960",
       "content": "||she's black||",
       "author": "arisuu0604",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1400397693951545364",
-      "channel_id": "1170692781216378960",
-      "content": "Wanted to build a sample team for newbies and remembered I don't have caecus kek",
-      "author": "aurora3981",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }

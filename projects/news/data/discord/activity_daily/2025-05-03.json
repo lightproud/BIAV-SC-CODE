@@ -1,10 +1,11 @@
 {
   "date": "2025-05-03",
-  "messages": 56,
-  "unique_authors": 13,
-  "reactions_total": 140,
-  "attachments": 24,
+  "messages": 627,
+  "unique_authors": 23,
+  "reactions_total": 193,
+  "attachments": 47,
   "channel_activity": {
+    "🔸綜合討論": 571,
     "🐾喚醒體五一遊記┊Awaker Holiday Travels": 19,
     "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 7,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
@@ -18,24 +19,27 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "4": 13,
-    "5": 4,
-    "9": 2,
-    "10": 3,
-    "14": 13,
-    "3": 5,
-    "8": 5,
-    "2": 3,
-    "11": 1,
-    "15": 2,
-    "16": 1,
-    "6": 1,
-    "7": 1,
-    "13": 2
+    "0": 5,
+    "2": 19,
+    "3": 12,
+    "4": 33,
+    "6": 2,
+    "7": 4,
+    "8": 30,
+    "9": 63,
+    "10": 114,
+    "11": 161,
+    "12": 70,
+    "13": 27,
+    "14": 33,
+    "15": 35,
+    "16": 12,
+    "17": 3,
+    "5": 4
   },
   "message_types": {
-    "0": 18,
-    "19": 8
+    "19": 97,
+    "0": 474
   },
   "top_reacted_messages": [
     {
@@ -109,6 +113,14 @@
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
+      "id": "1368204846322290709",
+      "channel_id": "1131839817982947429",
+      "content": "缺前液",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1368115331662614588",
       "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=786&tnum=1",
       "author": "taoi002",
@@ -123,6 +135,22 @@
       "channel": "5771新春活动招人+预热"
     },
     {
+      "id": "1368154840177311786",
+      "channel_id": "1131839817982947429",
+      "content": "目前感谢大家的支持，我们的节目已经有20+了。",
+      "author": "tianfang5580",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368203587641147514",
+      "channel_id": "1131839817982947429",
+      "content": "沒關係，Aaa佬會盒出來",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1368170487297085500",
       "content": "I had the same issue with Wanda's 4 cost and 3 cost cards in the past, and i'll ",
       "author": "zier.0",
@@ -130,53 +158,35 @@
       "channel": "✅「Answered」 Strike to protect Bug"
     },
     {
+      "id": "1368181046247428158",
+      "channel_id": "1131839817982947429",
+      "content": "絕頂爆發",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368193237524942879",
+      "channel_id": "1131839817982947429",
+      "content": "~~不像我，直接在家裡賣自己，名義上無業不用繳稅~~",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368199733473972315",
+      "channel_id": "1131839817982947429",
+      "content": "Cs = 操死",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1368082859474030622",
       "content": "和你的名字一樣夢幻✨",
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1368136646150848512",
-      "content": "One of Lily's cards are broken, both on computer and mobile.\nWhen you go to use ",
-      "author": "rei_the_witch",
-      "reactions": 3,
-      "channel": "✅「Answered」 Strike to protect Bug"
-    },
-    {
-      "id": "1368081231417311255",
-      "content": "Another great summer day shopping at Costco",
-      "author": "flares117",
-      "reactions": 2,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1368062540915146782",
-      "content": "<@272394963642220545> 🛎️ Evil Jenkin stole the ingredients👿 ! There is no other ",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
-    },
-    {
-      "id": "1368153793555861586",
-      "content": "我覺得非利士人我好像都可以",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "以葛籣，角色技能與命輪介紹"
-    },
-    {
-      "id": "1368054319286583376",
-      "content": "親愛的海之心：\n\n問題已知悉，戈雅會整理給校工進行查驗，祝您週末愉快（90度鞠躬）（吻手💋 ）\n\n戈雅敬上🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
-    },
-    {
-      "id": "1368233748507787326",
-      "content": "好吧<:cry2:1356068126894194758> <:cry2:1356068126894194758>",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "神國圖魯教 星辰篇"
     }
   ]
 }

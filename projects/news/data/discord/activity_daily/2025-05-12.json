@@ -1,10 +1,11 @@
 {
   "date": "2025-05-12",
-  "messages": 84,
-  "unique_authors": 18,
-  "reactions_total": 25,
-  "attachments": 29,
+  "messages": 983,
+  "unique_authors": 33,
+  "reactions_total": 110,
+  "attachments": 75,
   "channel_activity": {
+    "🔸綜合討論": 899,
     "aomi's morimens fic dump ✍": 3,
     "D-Tide Frequency Tierlist (2025 May 11)": 4,
     "D-Tide Leaderboard (2025 May 16)": 1,
@@ -34,32 +35,63 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "5": 3,
-    "8": 7,
-    "2": 8,
-    "7": 3,
-    "6": 5,
-    "1": 2,
-    "3": 34,
-    "11": 2,
-    "19": 2,
-    "9": 3,
-    "10": 2,
-    "20": 4,
-    "14": 2,
-    "4": 7
+    "0": 86,
+    "1": 16,
+    "2": 23,
+    "3": 65,
+    "4": 30,
+    "5": 11,
+    "6": 7,
+    "7": 27,
+    "8": 61,
+    "9": 52,
+    "10": 13,
+    "11": 94,
+    "12": 70,
+    "13": 54,
+    "14": 184,
+    "15": 144,
+    "16": 21,
+    "17": 16,
+    "20": 5,
+    "22": 2,
+    "19": 2
   },
   "message_types": {
-    "0": 11,
-    "4": 1
+    "0": 766,
+    "19": 133
   },
   "top_reacted_messages": [
+    {
+      "id": "1371480496927801385",
+      "channel_id": "1131839817982947429",
+      "content": "# 妄圖挑戰忘卻的400之神aaa是愚蠢的",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1371324726990864414",
       "content": "融灾n3图鲁第一回合秒杀1000血的可怜深海队",
       "author": "muliupan",
       "reactions": 7,
       "channel": "✅「已回答」图鲁吃人事件"
+    },
+    {
+      "id": "1371469937645719593",
+      "channel_id": "1131839817982947429",
+      "content": "我也赤完了。比上期簡單一些。",
+      "author": "randomplayer852",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371323757381156976",
+      "channel_id": "1131839817982947429",
+      "content": "🚮",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1371362481649221642",
@@ -76,6 +108,30 @@
       "channel": "✅「已回答」图鲁吃人事件"
     },
     {
+      "id": "1371283991180869642",
+      "channel_id": "1131839817982947429",
+      "content": "我啊",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371387324629258241",
+      "channel_id": "1131839817982947429",
+      "content": "还是360摆烂好啊",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371538713523523584",
+      "channel_id": "1131839817982947429",
+      "content": "深海反肘贏了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1371307078173589545",
       "content": "",
       "author": "timee_ky",
@@ -83,46 +139,84 @@
       "channel": "深海界域维度影像一览"
     },
     {
-      "id": "1371326130677878824",
-      "content": "💭「Processing」Corposant Overexalt Lightning Retribution Bug?",
-      "author": "morimensstaff01",
+      "id": "1371283185907793960",
+      "channel_id": "1131839817982947429",
+      "content": "這裡只剩我純潔了",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "✅「Answered」Corposant Overexalt Lightning Retribution Bug?"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1371400791944073296",
-      "content": "This is really good!",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "aomi's morimens fic dump ✍"
+      "id": "1371285180060532758",
+      "channel_id": "1131839817982947429",
+      "content": "全部跟鯊魚生還是加了跟小孩的play(重新被融蝕淹沒)",
+      "author": "chilledren_fans",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1371306167850238034",
+      "id": "1371403997315072111",
+      "channel_id": "1131839817982947429",
+      "content": "因為當時我正在凹第三遍並且手機快沒電了（",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371411406762807306",
+      "channel_id": "1131839817982947429",
+      "content": "我想說抽幾個常駐給下次歪，結果歪出了2+2",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371411893528301568",
+      "channel_id": "1131839817982947429",
+      "content": "我常因為自己太過純潔而無法融入話題",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371413898728706118",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "D-Tide Frequency Tierlist (2025 May 11)"
+      "author": "nahida._90",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1371583765368930405",
-      "content": "This wheel buff the damage of the first card played by the user, but if he use a",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Daffodil SR wheel suggestion"
+      "id": "1371427975370768385",
+      "channel_id": "1131839817982947429",
+      "content": "~~這個bug存在已久~~",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1371327873377632276",
-      "content": "領航員正在追回中，已安排🙏 還需要些時日<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」图鲁吃人事件"
+      "id": "1371435351024996404",
+      "channel_id": "1131839817982947429",
+      "content": "我們修正了玩家可以遊玩5771的BUG",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1371395031121920122",
-      "content": "吃吃吃吃吃~~朵尔别当米戈了我来当~~吃吃吃",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "「我享受疼痛，女巫大人。」"
+      "id": "1371452930523136111",
+      "channel_id": "1131839817982947429",
+      "content": "🤓 🤓 那我活的很快樂欸",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371488923737526432",
+      "channel_id": "1131839817982947429",
+      "content": "朝星佬400分了，好强",
+      "author": "bailuoxiao",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

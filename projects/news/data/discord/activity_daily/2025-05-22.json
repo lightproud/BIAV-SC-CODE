@@ -1,10 +1,11 @@
 {
   "date": "2025-05-22",
-  "messages": 139,
-  "unique_authors": 27,
-  "reactions_total": 792,
-  "attachments": 11,
+  "messages": 615,
+  "unique_authors": 39,
+  "reactions_total": 811,
+  "attachments": 37,
   "channel_activity": {
+    "🔸綜合討論": 476,
     "Miss Coral": 2,
     "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant": 4,
     "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 3,
@@ -18,26 +19,32 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "2": 13,
-    "4": 2,
-    "9": 2,
-    "10": 4,
-    "11": 62,
-    "0": 1,
-    "12": 10,
-    "13": 2,
-    "15": 9,
-    "16": 6,
-    "17": 1,
-    "5": 5,
-    "6": 8,
-    "8": 2,
-    "3": 11,
-    "19": 1
+    "0": 9,
+    "1": 5,
+    "2": 27,
+    "3": 17,
+    "4": 3,
+    "5": 28,
+    "6": 9,
+    "7": 8,
+    "8": 4,
+    "9": 24,
+    "10": 5,
+    "11": 88,
+    "12": 123,
+    "13": 19,
+    "14": 11,
+    "15": 35,
+    "16": 50,
+    "17": 64,
+    "18": 82,
+    "19": 2,
+    "20": 1,
+    "22": 1
   },
   "message_types": {
-    "0": 91,
-    "19": 8
+    "19": 46,
+    "0": 430
   },
   "top_reacted_messages": [
     {
@@ -90,6 +97,14 @@
       "channel": "✅校猫碎碎念#序章配音决定"
     },
     {
+      "id": "1374933519226241064",
+      "channel_id": "1131839817982947429",
+      "content": "又偷到零死坑了",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1374978449286107226",
       "content": "我還在等繁衍狂熱2.0R18全配音動畫",
       "author": "ahuahuahua",
@@ -104,6 +119,30 @@
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
     },
     {
+      "id": "1375084730340479108",
+      "channel_id": "1131839817982947429",
+      "content": "给银芯",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375085449642508348",
+      "channel_id": "1131839817982947429",
+      "content": "为后面的完全幻衣做铺垫",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375130740081164288",
+      "channel_id": "1131839817982947429",
+      "content": "你游也是蒸蒸日上起来了",
+      "author": "mwuyue",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1375074771963744380",
       "content": "上面两个腿离谱",
       "author": "carme.0588",
@@ -116,6 +155,46 @@
       "author": "heikwok",
       "reactions": 2,
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375049314753187853",
+      "channel_id": "1131839817982947429",
+      "content": "這裡太骯髒了不適合純淨的我",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375050931154194574",
+      "channel_id": "1131839817982947429",
+      "content": "~~我已經被嚇到忘記了~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375082952962347089",
+      "channel_id": "1131839817982947429",
+      "content": "一眼做完任务领一件",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375083727922663455",
+      "channel_id": "1131839817982947429",
+      "content": "看起来是，而且只有这次能用",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375085529111986237",
+      "channel_id": "1131839817982947429",
+      "content": "完全幻衣卖你个280不过分吧",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

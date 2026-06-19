@@ -1,10 +1,23 @@
 {
   "date": "2025-06-15",
-  "messages": 55,
-  "unique_authors": 13,
-  "reactions_total": 61,
-  "attachments": 7,
+  "messages": 7287,
+  "unique_authors": 201,
+  "reactions_total": 602,
+  "attachments": 337,
   "channel_activity": {
+    "🔸綜合討論": 1001,
+    "🔸morimens-game-chat": 4090,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 7,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 384,
+    "🔸canal-português": 220,
+    "🔸ruang-obrolan-indonesia": 708,
+    "🔸ห้องสนทนาภาษาไทย": 139,
+    "🔸traphase": 113,
+    "🔸lore-chat": 554,
     "The twins": 6,
     "Reruns priority guide (for newcomers and general)": 2,
     "Monchi's Guide to DDive 36k.": 1,
@@ -19,27 +32,34 @@
     "杜勒赛因技能组diy": 2
   },
   "hourly_activity": {
-    "15": 5,
-    "18": 2,
-    "19": 2,
-    "23": 1,
-    "17": 2,
-    "3": 1,
-    "13": 7,
-    "8": 12,
-    "9": 5,
-    "14": 1,
-    "2": 2,
-    "6": 5,
-    "10": 1,
-    "11": 1,
-    "16": 1,
-    "1": 1,
-    "12": 6
+    "0": 147,
+    "1": 318,
+    "2": 288,
+    "3": 261,
+    "4": 316,
+    "5": 450,
+    "6": 343,
+    "7": 92,
+    "8": 210,
+    "9": 187,
+    "10": 355,
+    "11": 282,
+    "12": 411,
+    "13": 543,
+    "14": 646,
+    "15": 266,
+    "17": 312,
+    "18": 331,
+    "19": 274,
+    "20": 371,
+    "22": 120,
+    "16": 335,
+    "21": 145,
+    "23": 284
   },
   "message_types": {
-    "0": 23,
-    "19": 4
+    "0": 5531,
+    "19": 1701
   },
   "top_reacted_messages": [
     {
@@ -50,11 +70,131 @@
       "channel": "The twins"
     },
     {
+      "id": "1383847002902892574",
+      "channel_id": "1170692781216378960",
+      "content": "Winkle does great DPS. Her damage type is account damage.",
+      "author": "vinsette",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383776722947674214",
+      "channel_id": "1170692781216378960",
+      "content": "putting goliath and caecus on the same team:",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1383626556328382564",
       "content": "Many of us didn't get to view the full story of the event due to bugs or boss dy",
       "author": "aurora3981",
       "reactions": 6,
       "channel": "✅「Answered」View Glimpse Beyond Sanctum Story"
+    },
+    {
+      "id": "1383620371697111181",
+      "channel_id": "1131839817982947429",
+      "content": "半小时不到就没了",
+      "author": "ziyeweixue2112",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383704516704211025",
+      "channel_id": "1131839817982947429",
+      "content": "突然想到这张",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383760106948399114",
+      "channel_id": "1131839817982947429",
+      "content": "我記得我幾年前寫的第一個OC的設定\n就在那個TRPG圈裡面，被幾個人說「光是閱讀就生理不適」、「動人心弦的同時痛擊我的胃」、「整個人都不好了」\n||我其實沒有這",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383715085729661011",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/hello-chat-discord-cat-discord-cat-cat-chips-gif-23734919",
+      "author": "montresor._.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383692581283823637",
+      "channel_id": "1131839817982947429",
+      "content": "算起来你游卫星居然还挺多的（？",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383653557261045840",
+      "channel_id": "1170692781216378960",
+      "content": "gdoll +12 fund",
+      "author": "tatloch",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383659155805700238",
+      "channel_id": "1170692781216378960",
+      "content": "devs selling solutions to badly designed problems",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383762161289134160",
+      "channel_id": "1170692781216378960",
+      "content": "I said: As easy to deceive as a puppy love virgin male\nThe bot trans to: \nAs eas",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383846498222997647",
+      "channel_id": "1170692781216378960",
+      "content": "sad to need to go to discord for attention",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383849563395457265",
+      "channel_id": "1170692781216378960",
+      "content": ":). ♥️",
+      "author": "disgustedingucci",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383866668182274168",
+      "channel_id": "1170692781216378960",
+      "content": "I can't wait for gdoll to come so I can skip her and farm event mats ❤️",
+      "author": "penguin8er",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383868537570984036",
+      "channel_id": "1170692781216378960",
+      "content": "we have more newbies now so I can show this again \nworship your king",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383841923428651098",
+      "channel_id": "1300659662311526512",
+      "content": "‎Creo que lo que este server necesita es... Más personas. Vivir adecuadamente en",
+      "author": "arepademortadela",
+      "reactions": 4,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1383697672090947625",
@@ -64,39 +204,20 @@
       "channel": "杜勒赛因技能组diy"
     },
     {
-      "id": "1383834668750737560",
-      "content": "So stunning!<:wow:1356053147029864518>",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "The twins"
+      "id": "1383626379719086121",
+      "channel_id": "1131839817982947429",
+      "content": "什么时候能复刻老角色伴生的sr命轮啊",
+      "author": "zhc0828",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1383835043943944403",
-      "content": "Beautiful",
-      "author": "red_rest",
-      "reactions": 1,
-      "channel": "The twins"
-    },
-    {
-      "id": "1383883246839791658",
-      "content": "Truly beautiful",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The twins"
-    },
-    {
-      "id": "1383700462959726643",
-      "content": "六日放假（",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "應該要加強某些角色吧"
-    },
-    {
-      "id": "1383881672361246781",
-      "content": "如图",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": "💭「處理中」克莱门汀超限爆发获得的力量是不是不太对？"
+      "id": "1383635283135955025",
+      "channel_id": "1131839817982947429",
+      "content": "神王已經臍帶繞頸三圈，流了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

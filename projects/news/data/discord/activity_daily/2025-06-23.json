@@ -1,10 +1,23 @@
 {
   "date": "2025-06-23",
-  "messages": 33,
-  "unique_authors": 6,
-  "reactions_total": 29,
-  "attachments": 12,
+  "messages": 4877,
+  "unique_authors": 241,
+  "reactions_total": 776,
+  "attachments": 263,
   "channel_activity": {
+    "🔸綜合討論": 365,
+    "🔸morimens-game-chat": 3482,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 4,
+    "🔸русский-канал": 68,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 304,
+    "🔸canal-português": 84,
+    "🔸ruang-obrolan-indonesia": 184,
+    "🔸ห้องสนทนาภาษาไทย": 87,
+    "🔸traphase": 247,
+    "🔸lore-chat": 1,
     "Aurita First Big Mission Briefing": 1,
     "忘卻前夜 OST：「24」EP·寧靜的河流": 9,
     "💭「Processing」D-effect Zone First Time Reward Not Crediting": 2,
@@ -17,23 +30,58 @@
     "关卡地图「融灾禁区」总览37期·星辰篇": 1
   },
   "hourly_activity": {
-    "16": 3,
-    "8": 18,
-    "9": 3,
-    "15": 1,
-    "21": 1,
-    "17": 7
+    "0": 118,
+    "1": 207,
+    "2": 214,
+    "3": 163,
+    "4": 392,
+    "5": 75,
+    "6": 35,
+    "7": 137,
+    "8": 121,
+    "9": 81,
+    "10": 202,
+    "11": 169,
+    "12": 128,
+    "13": 141,
+    "14": 268,
+    "15": 291,
+    "16": 611,
+    "17": 320,
+    "18": 345,
+    "19": 345,
+    "21": 125,
+    "22": 15,
+    "23": 103,
+    "20": 271
   },
   "message_types": {
-    "0": 1
+    "0": 3812,
+    "19": 1032
   },
   "top_reacted_messages": [
+    {
+      "id": "1386739537233055766",
+      "channel_id": "1326453691527594035",
+      "content": "@everyone Who want this？Tell me. 谁想要这个？告诉我。",
+      "author": "game.producer.light",
+      "reactions": 262,
+      "channel": "🔸traphase"
+    },
     {
       "id": "1386618211168161882",
       "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：「24」EP·寧靜的河流，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創",
       "author": "morimensstaff01",
       "reactions": 16,
       "channel": "忘卻前夜 OST：「24」EP·寧靜的河流"
+    },
+    {
+      "id": "1386739964590686439",
+      "channel_id": "1326453691527594035",
+      "content": "That's not the Half Naked Ryker skin we ask for me but aight",
+      "author": "machidolche",
+      "reactions": 13,
+      "channel": "🔸traphase"
     },
     {
       "id": "1386633790306254848",
@@ -43,25 +91,132 @@
       "channel": "关卡地图「融灾禁区」总览37期·星辰篇"
     },
     {
-      "id": "1386625592249552939",
-      "content": "简介好美丽的英翻…\n你游本地化发力了<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "忘卻前夜 OST：「24」EP·寧靜的河流"
+      "id": "1386607607283847228",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1386741062936039635",
-      "content": "Can I use this as an icon match?",
-      "author": "junkinn",
-      "reactions": 1,
-      "channel": "Aurita First Big Mission Briefing"
+      "id": "1386670086986661949",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "byoru.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1386636611588198481",
-      "content": "會陸續收錄進去噠~<:pray:1356053116260454534>",
+      "id": "1386651907770024010",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386747269293805608",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386815225595953283",
+      "channel_id": "1131839817982947429",
+      "content": "||稍微數了一下我用了37SSR在裡面||",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386654656528384140",
+      "channel_id": "1170692781216378960",
+      "content": "It's already kicked out, thank you everyone🙏",
       "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜 OST：「24」EP·寧靜的河流"
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386697820718895135",
+      "channel_id": "1170692781216378960",
+      "content": "Wait another 5 days",
+      "author": "melwyn7591",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386752839426117693",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "good.th",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386711069388701846",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386746965026541698",
+      "channel_id": "1131839817982947429",
+      "content": "||星辰篇體感上也算新模式了吧||",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386637590916108349",
+      "channel_id": "1170692781216378960",
+      "content": "Easy one i guess",
+      "author": "lawww",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386783505534681210",
+      "channel_id": "1170692781216378960",
+      "content": "ill test",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386796446153445550",
+      "channel_id": "1170692781216378960",
+      "content": "When you're at full hand, you have a 100% chance to roll card draw cuz that fuck",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386606366952652910",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386697878470393897",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386725261235589220",
+      "channel_id": "1131839817982947429",
+      "content": "看了野猫佬带环拉打茧，遂跟着打一个（",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

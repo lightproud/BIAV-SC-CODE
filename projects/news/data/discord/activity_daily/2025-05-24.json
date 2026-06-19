@@ -1,10 +1,11 @@
 {
   "date": "2025-05-24",
-  "messages": 43,
-  "unique_authors": 19,
-  "reactions_total": 20,
-  "attachments": 2,
+  "messages": 962,
+  "unique_authors": 45,
+  "reactions_total": 56,
+  "attachments": 51,
   "channel_activity": {
+    "🔸綜合討論": 919,
     "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 9,
     "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 12,
     "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 2,
@@ -19,25 +20,34 @@
     "Increase the number of seals dropped from upcoming boss": 1
   },
   "hourly_activity": {
-    "4": 5,
-    "5": 4,
-    "9": 3,
-    "11": 2,
-    "13": 2,
-    "2": 4,
-    "12": 12,
-    "17": 2,
-    "3": 2,
-    "0": 2,
-    "16": 1,
-    "15": 1,
-    "6": 2,
-    "18": 1
+    "0": 6,
+    "1": 4,
+    "2": 16,
+    "3": 10,
+    "4": 12,
+    "5": 12,
+    "6": 76,
+    "7": 106,
+    "8": 141,
+    "9": 86,
+    "10": 30,
+    "11": 99,
+    "12": 42,
+    "13": 103,
+    "14": 64,
+    "15": 35,
+    "16": 71,
+    "17": 8,
+    "18": 32,
+    "19": 2,
+    "21": 3,
+    "22": 2,
+    "23": 2
   },
   "message_types": {
-    "0": 24,
-    "19": 6,
-    "6": 1
+    "0": 812,
+    "19": 103,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -46,6 +56,54 @@
       "author": "morimensstaff01",
       "reactions": 13,
       "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1375724292267839631",
+      "channel_id": "1131839817982947429",
+      "content": "之前的柱子活动 纯靠白嫖的银芯补了全家+4",
+      "author": "shunia3055",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375845474715697194",
+      "channel_id": "1131839817982947429",
+      "content": "🤓 🤓",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375662109559357451",
+      "channel_id": "1131839817982947429",
+      "content": "我是菜狗沒有+12不會玩",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375799051320033351",
+      "channel_id": "1131839817982947429",
+      "content": "中了你就要生下來",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375805576843493397",
+      "channel_id": "1131839817982947429",
+      "content": "有啊你中了小枕頭",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375820302025490502",
+      "channel_id": "1131839817982947429",
+      "content": "我選擇把環拉換出來",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1375833093855776922",
@@ -69,11 +127,84 @@
       "channel": "Increase the number of seals dropped from upcoming boss"
     },
     {
-      "id": "1375767865109643354",
-      "content": "你點戈雅頭像按傳送訊息看看",
+      "id": "1375681264744534086",
+      "channel_id": "1131839817982947429",
+      "content": "<:behave:1361909598067625984>",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375740025681219615",
+      "channel_id": "1131839817982947429",
+      "content": "~~凯刻斯~~，带灵魂诞生版.jpg",
+      "author": "bailuoxiao",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375741815394795600",
+      "channel_id": "1131839817982947429",
+      "content": "佬\n脫光…",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375742744303108096",
+      "channel_id": "1131839817982947429",
+      "content": "萊克跟福袋搶擊殺摳連",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375749019338407946",
+      "channel_id": "1131839817982947429",
+      "content": "【急需加强！塔薇1t拼尽全力250w勉强战胜矮子图】 https://www.bilibili.com/video/BV1RcJezEEK6/?share_so",
+      "author": "bailuoxiao",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375753846227210308",
+      "channel_id": "1131839817982947429",
+      "content": "~~一個造型不同配色\n可以水好幾期~~",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375756490849259593",
+      "channel_id": "1131839817982947429",
+      "content": "出戒指前5-5的boss血量是300k+300k，出戒指之后5-5boss的血量2个阶段加起来就超过2000k了",
+      "author": "bailuoxiao",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375792704960598017",
+      "channel_id": "1131839817982947429",
+      "content": "阿狗的■■影像",
       "author": "ernest_heart",
       "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375793203374198896",
+      "channel_id": "1131839817982947429",
+      "content": "你要看我的超音波嘛",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375794226150768720",
+      "channel_id": "1131839817982947429",
+      "content": "我是阿狗廚",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

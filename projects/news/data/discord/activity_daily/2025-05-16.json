@@ -1,10 +1,11 @@
 {
   "date": "2025-05-16",
-  "messages": 58,
-  "unique_authors": 8,
-  "reactions_total": 73,
-  "attachments": 22,
+  "messages": 613,
+  "unique_authors": 40,
+  "reactions_total": 132,
+  "attachments": 45,
   "channel_activity": {
+    "🔸綜合討論": 555,
     "GTulu Theory (with fanart) (this will age poorly, will it?)": 13,
     "N": 1,
     "24": 2,
@@ -23,24 +24,34 @@
     "Petition to rename Wheel Unseen to Concealed Truth": 1
   },
   "hourly_activity": {
-    "11": 3,
-    "12": 10,
-    "9": 7,
+    "0": 4,
+    "1": 8,
+    "3": 24,
+    "4": 15,
+    "5": 80,
+    "6": 25,
+    "7": 23,
+    "8": 69,
+    "9": 31,
+    "10": 28,
+    "11": 10,
+    "12": 20,
+    "13": 39,
+    "14": 128,
+    "15": 79,
+    "16": 7,
+    "17": 9,
+    "18": 1,
+    "19": 4,
+    "21": 3,
+    "22": 3,
+    "23": 1,
     "20": 1,
-    "22": 1,
-    "16": 2,
-    "17": 4,
-    "14": 1,
-    "19": 1,
-    "10": 20,
-    "13": 1,
-    "3": 2,
-    "8": 4,
     "2": 1
   },
   "message_types": {
-    "0": 19,
-    "4": 3
+    "0": 453,
+    "19": 102
   },
   "top_reacted_messages": [
     {
@@ -65,6 +76,14 @@
       "channel": "Haku Morimens Sketch Log"
     },
     {
+      "id": "1372970111111008337",
+      "channel_id": "1131839817982947429",
+      "content": "忘卻玩到破房\n跑去寫歌",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1372905582574440518",
       "content": "Okay so there was a question in ID chatgroup asking me if GTulu will be a bishou",
       "author": "rohaluss",
@@ -77,6 +96,14 @@
       "author": "vxvendetta",
       "reactions": 6,
       "channel": "✅「Answered」Strange cuts in the dialogue"
+    },
+    {
+      "id": "1372954197519106100",
+      "channel_id": "1131839817982947429",
+      "content": "這我都有買",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1372971188657192960",
@@ -100,25 +127,84 @@
       "channel": "Change the default settings of the game"
     },
     {
-      "id": "1372913169072390186",
-      "content": "Yes",
-      "author": "lowtownnivn",
-      "reactions": 1,
-      "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
+      "id": "1372809768653295738",
+      "channel_id": "1131839817982947429",
+      "content": "就是不能用常驻自选换出来",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1372875778789736478",
-      "content": "卑鄙的塔維黨",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "💭「處理中」通晓卡面UI bug"
+      "id": "1372810935328313486",
+      "channel_id": "1131839817982947429",
+      "content": "不玩战双，鸣潮原神星铁zzz明日方舟阴阳师燕云十六王者荣耀吃鸡金铲铲我也不玩",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1372849552809394196",
-      "content": "We will repair it~",
-      "author": "morimensstaff01",
+      "id": "1372859793470914641",
+      "channel_id": "1131839817982947429",
+      "content": "我才怕，你是大<:Word_Lao:856444531792019466> ，我又不是",
+      "author": "universe.dark",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372927695817539766",
+      "channel_id": "1131839817982947429",
+      "content": "阿狗 阿狗魂兮歸來",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372964234677452882",
+      "channel_id": "1131839817982947429",
+      "content": "90级的氪佬太强了。。。。哪有入坑3天的新手没用灵芝打过癫狂的😂",
+      "author": "xyakoto",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372809173749858325",
+      "channel_id": "1131839817982947429",
+      "content": "不是已經進了嗎",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "✅「Answered」Sanga's story bugs"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372809804107743283",
+      "channel_id": "1131839817982947429",
+      "content": "命轮也不能定向抽取",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372810002279960608",
+      "channel_id": "1131839817982947429",
+      "content": "100抽有出到4隻(",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372810019124412437",
+      "channel_id": "1131839817982947429",
+      "content": "但卡+3",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372810108509229128",
+      "channel_id": "1131839817982947429",
+      "content": "我昨天才抽到一只图图",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

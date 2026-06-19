@@ -1,10 +1,11 @@
 {
   "date": "2025-05-06",
-  "messages": 81,
-  "unique_authors": 11,
-  "reactions_total": 151,
-  "attachments": 14,
+  "messages": 885,
+  "unique_authors": 42,
+  "reactions_total": 295,
+  "attachments": 41,
   "channel_activity": {
+    "🔸綜合討論": 804,
     "Goliath": 2,
     "A Pair of Roses, Horla & Sanga Fanfic": 1,
     "Clementine": 5,
@@ -29,25 +30,33 @@
     "✅「Answered」Sanga misnamed as corposant": 1
   },
   "hourly_activity": {
-    "11": 1,
-    "15": 7,
-    "5": 1,
-    "16": 2,
-    "22": 2,
-    "6": 6,
-    "10": 6,
-    "3": 9,
-    "7": 20,
-    "8": 1,
-    "9": 7,
-    "2": 10,
-    "4": 3,
-    "17": 1,
+    "0": 43,
+    "1": 17,
+    "2": 24,
+    "3": 67,
+    "4": 156,
+    "5": 71,
+    "6": 39,
+    "7": 226,
+    "8": 26,
+    "9": 19,
+    "10": 37,
+    "11": 40,
+    "12": 1,
+    "13": 20,
+    "14": 18,
+    "15": 19,
+    "16": 4,
+    "17": 5,
+    "18": 32,
+    "19": 3,
+    "22": 7,
+    "23": 6,
     "21": 5
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "0": 685,
+    "19": 119
   },
   "top_reacted_messages": [
     {
@@ -72,6 +81,46 @@
       "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
     },
     {
+      "id": "1369160374716465182",
+      "channel_id": "1131839817982947429",
+      "content": "现在一个社区服务器有不同语言的玩家通知有时候会比较麻烦造成了困扰抱歉。往后会想更好的办法。",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369222497450328075",
+      "channel_id": "1131839817982947429",
+      "content": "好……簡單？\n這是海超之力，還是金錢之能？",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369160201566949460",
+      "channel_id": "1131839817982947429",
+      "content": "大家再見我要被踢了",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369259346508386334",
+      "channel_id": "1131839817982947429",
+      "content": "你們可能不知道的是我現在快遞填名字都不填本名，我填克萊門汀。\n快遞員送來是問：克萊門汀在家嗎？\n我：克萊門汀不在，我是克萊門汀的蟲子。",
+      "author": "undecember_news",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369260678547771432",
+      "channel_id": "1131839817982947429",
+      "content": "那也要睡到才行",
+      "author": "_buqi",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1369261464367534122",
       "content": "~~普通的學長普通地進行書籍閱覽~~",
       "author": "silverstream_s",
@@ -93,6 +142,46 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
+      "id": "1369181042228858960",
+      "channel_id": "1131839817982947429",
+      "content": "吞雞",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369190112197480608",
+      "channel_id": "1131839817982947429",
+      "content": "是本人 机翻+手动修正",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369221180346863626",
+      "channel_id": "1131839817982947429",
+      "content": "但是課很多",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369221452921835520",
+      "channel_id": "1131839817982947429",
+      "content": "群除我富",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369222906235719722",
+      "channel_id": "1131839817982947429",
+      "content": "門票是+12阿庫特",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1369245374526525471",
       "content": "原来不是扣一送吗",
       "author": "akalanden",
@@ -100,74 +189,28 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
-      "id": "1369332783071236136",
-      "content": "How dare he flaunt dem chest on grabbing distance (i'll risk my arm fr fr)",
-      "author": "rohaluss",
+      "id": "1369106294631305449",
+      "channel_id": "1131839817982947429",
+      "content": "我再也不乱玩梗了",
+      "author": "carme.0588",
       "reactions": 3,
-      "channel": "Goliath"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1369206084492988527",
-      "content": "高清還不錯",
-      "author": "Deleted User",
+      "id": "1369166916668882965",
+      "channel_id": "1131839817982947429",
+      "content": "~~他只覺得我們會講的都是原始人~~",
+      "author": "ahuahuahua",
       "reactions": 3,
-      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1369245256175845416",
-      "content": "这里没有零请不要扣一",
-      "author": "287405tjy_28066",
+      "id": "1369169797132058654",
+      "channel_id": "1131839817982947429",
+      "content": "客家人",
+      "author": "ahuahuahua",
       "reactions": 3,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369437869718110229",
-      "content": "My artist social is rohalussworld",
-      "author": "rohaluss",
-      "reactions": 2,
-      "channel": "Clementine"
-    },
-    {
-      "id": "1369248762215792650",
-      "content": "可以对某个人扣一或者零，然后得到他（仅限于男同对男同）",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369191456916639764",
-      "content": "YURI",
-      "author": "whirli_bri",
-      "reactions": 1,
-      "channel": "A Pair of Roses, Horla & Sanga Fanfic"
-    },
-    {
-      "id": "1369334742822158357",
-      "content": "Cool",
-      "author": "davin00977",
-      "reactions": 1,
-      "channel": "Clementine"
-    },
-    {
-      "id": "1369209708249874512",
-      "content": "你圖那麼愛睡就乾脆不要醒好了，缺狂氣缺算力缺傷害，給的還是尊貴不凡的臨觸。下次直接加強餘波效果好了，負責睡覺就可以了，符合角色設定。帶入藥跟女T專武，一直棄牌一",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369242503362117722",
-      "content": "儲值666就送超強角色神圖魯",
-      "author": "tofu0834",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369138584375791716",
-      "content": "OK, thanks for the feedback~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Sanga misnamed as corposant"
+      "channel": "🔸綜合討論"
     }
   ]
 }

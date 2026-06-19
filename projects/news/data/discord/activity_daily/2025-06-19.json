@@ -1,10 +1,25 @@
 {
   "date": "2025-06-19",
-  "messages": 48,
-  "unique_authors": 9,
-  "reactions_total": 17,
-  "attachments": 24,
+  "messages": 6307,
+  "unique_authors": 195,
+  "reactions_total": 691,
+  "attachments": 266,
   "channel_activity": {
+    "🔸綜合討論": 926,
+    "🔸morimens-game-chat": 4178,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 21,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 76,
+    "🔸русский-канал": 33,
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 135,
+    "🔸canal-português": 168,
+    "🔸ruang-obrolan-indonesia": 239,
+    "🔸ห้องสนทนาภาษาไทย": 91,
+    "🔸traphase": 196,
+    "🔸lore-chat": 141,
+    "🔸频道建议┊server-suggestions": 28,
     "Reading Your Opponent's Hand in Traphase": 3,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 1,
     "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 1,
@@ -17,23 +32,68 @@
     "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant": 4
   },
   "hourly_activity": {
-    "20": 3,
-    "7": 1,
-    "15": 1,
-    "10": 3,
-    "12": 14,
-    "11": 1,
-    "13": 1,
-    "0": 1,
-    "3": 1,
-    "9": 1,
-    "14": 17,
-    "1": 4
+    "0": 489,
+    "1": 124,
+    "2": 133,
+    "3": 381,
+    "4": 352,
+    "5": 531,
+    "6": 392,
+    "7": 96,
+    "8": 285,
+    "9": 179,
+    "10": 91,
+    "11": 245,
+    "12": 250,
+    "13": 277,
+    "14": 367,
+    "15": 404,
+    "16": 324,
+    "17": 333,
+    "18": 197,
+    "19": 84,
+    "20": 119,
+    "22": 307,
+    "21": 248,
+    "23": 99
   },
   "message_types": {
-    "0": 3
+    "0": 4912,
+    "19": 1347
   },
   "top_reacted_messages": [
+    {
+      "id": "1385400515113783408",
+      "channel_id": "1170692781216378960",
+      "content": "My friend’s artwork <:happi:1375486327059120158>",
+      "author": "antt72801",
+      "reactions": 27,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385115980648157214",
+      "channel_id": "1385040039448412170",
+      "content": "Can we please have?: \n\nTeam Building - Beginner \nTeam Building - Endgame\n\nI ofte",
+      "author": "climbkaly",
+      "reactions": 10,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1385192786428563637",
+      "channel_id": "1385040039448412170",
+      "content": "Definition of valid is also questionable as some d tide teams only works for tha",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1385295292978434140",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1385349955644035177",
       "content": "# Key Concept\n- All cards are organized in a specific order.\n- You can see which",
@@ -42,46 +102,124 @@
       "channel": "Reading Your Opponent's Hand in Traphase"
     },
     {
-      "id": "1385095190263369828",
-      "content": "Thank you🙏 , currently we do not have similar rules. I will write one as soon as",
-      "author": "morimensstaff01",
+      "id": "1385120916375339029",
+      "channel_id": "1131839817982947429",
+      "content": "奇怪的运气🤣",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1385352405784203395",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有望上4k血呢",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1385248307227529327",
+      "channel_id": "1170692781216378960",
+      "content": "Welp I'm off to a job interview now so no more Morimens for me. Wish me luck fri",
+      "author": "nightjar0928",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385400319449763952",
+      "channel_id": "1170692781216378960",
+      "content": "E3 ! /o/",
+      "author": "hurloup",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385327514582515894",
+      "channel_id": "1131839817982947429",
+      "content": "喜歡3.4k血有力量有觸傷有千盾有回血有反擊的隊伍嗎？",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1385076039075631114",
+      "channel_id": "1170692781216378960",
+      "content": "I'm glad they're working on an official translation, though. Don't get me wrong,",
+      "author": "jonspencerreviews",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385222757351948400",
+      "channel_id": "1170692781216378960",
+      "content": "I see, I'm guessing its mostly used for limited dupes cause they're more valuabl",
+      "author": "sugarspawn",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385281695497846874",
+      "channel_id": "1170692781216378960",
+      "content": "Subarashii",
+      "author": "ameumaru31",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385304629629292798",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> <@1228000209640886322> scuff af but i guess blessor is don",
+      "author": "melwyn7591",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385085217072480448",
+      "channel_id": "1131839817982947429",
+      "content": "赤了半天日服，现在看星辰篇都感觉眉清目秀",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1385260585255440486",
+      "channel_id": "1131839817982947429",
+      "content": "比如宁妃试用给你塞症状卡",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1385385677897596981",
+      "channel_id": "1170692781216378960",
+      "content": "i mean with the standard pulls i cant pull for wheels",
+      "author": "zapmistic",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1385073337914622014",
+      "channel_id": "1385040039448412170",
+      "content": "Team Building does fall under <#1356200968311803956> I can incorporate tags with",
+      "author": "cometovilla",
+      "reactions": 4,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1385120178337222686",
+      "channel_id": "1131839817982947429",
+      "content": "诺缔拉\n狂气爆发：不再获得50%当前护盾，不再造成等同于自身反击的固定伤害。获得护盾，获得临时反击\n灵知觉醒：诺缔拉施加的护盾和造成的狂气提高25%（一级）\n高",
+      "author": "akalanden",
       "reactions": 3,
-      "channel": "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1385247062991306792",
-      "content": "I'm not sure if Aurita can get a buff related to the change of  \"Aurithmatica Ha",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "Aurita 角色是否计划增强？"
-    },
-    {
-      "id": "1385266046738632775",
-      "content": "發現pvp裡的命輪沒有人仔細的介紹，所以就來介紹所有的命輪\n分為多篇，本篇為R級命輪篇\n純個人主觀看點，歡迎補充\n\n以下正文",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "相位對弈命輪介紹（R級篇）"
-    },
-    {
-      "id": "1385197680564633692",
-      "content": "如題。\n從編成，船長，船長技能裡需求，按周本的雕塑-→跳轉去周本中按進入時會跳錯",
-      "author": "ogrelam926",
-      "reactions": 1,
-      "channel": "✅「已回答」無法透過角色技能素材需求進入技本"
-    },
-    {
-      "id": "1385060817044770856",
-      "content": "I think they are asking about doujin work/secondary creation (二次創作) rules, for e",
-      "author": "sherrinford",
-      "reactions": 1,
-      "channel": "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers"
-    },
-    {
-      "id": "1385068667141755000",
-      "content": "“那好吧…雕刻和转变究竟是怎么回事？你们所说转变的终点就是这里的话，转变完成之后呢？”\n“来到赞达尔，即是自愿成为雕刻的材料。”珊的语气很轻，仿佛在说一件微不足",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant"
+      "id": "1385137307228569693",
+      "channel_id": "1131839817982947429",
+      "content": "佬，輸光...",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

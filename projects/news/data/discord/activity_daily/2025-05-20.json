@@ -1,10 +1,11 @@
 {
   "date": "2025-05-20",
-  "messages": 124,
-  "unique_authors": 30,
-  "reactions_total": 152,
-  "attachments": 14,
+  "messages": 624,
+  "unique_authors": 47,
+  "reactions_total": 218,
+  "attachments": 25,
   "channel_activity": {
+    "🔸綜合討論": 500,
     "Seimau Art": 2,
     "Celeste": 1,
     "24": 1,
@@ -26,26 +27,31 @@
     "拿下索瓦爾格商用權了慶祝一下XD": 2
   },
   "hourly_activity": {
-    "6": 1,
-    "7": 2,
+    "0": 3,
+    "1": 5,
+    "4": 32,
+    "5": 8,
+    "6": 29,
+    "7": 24,
+    "8": 116,
+    "9": 65,
+    "10": 61,
+    "11": 24,
+    "12": 25,
+    "13": 102,
+    "14": 82,
+    "15": 4,
+    "16": 8,
+    "17": 11,
+    "18": 13,
+    "19": 1,
+    "22": 3,
     "3": 3,
-    "11": 7,
-    "8": 5,
-    "9": 29,
-    "10": 37,
-    "12": 8,
-    "13": 11,
-    "14": 4,
-    "16": 2,
-    "17": 5,
-    "18": 3,
-    "15": 1,
-    "1": 1,
     "2": 5
   },
   "message_types": {
-    "0": 79,
-    "19": 17
+    "0": 432,
+    "19": 68
   },
   "top_reacted_messages": [
     {
@@ -98,6 +104,38 @@
       "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
     },
     {
+      "id": "1374388565579923567",
+      "channel_id": "1131839817982947429",
+      "content": "有生之年可以看到斬首改成aoe嗎",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374392052498042941",
+      "channel_id": "1131839817982947429",
+      "content": "不想再接我的委託了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374387587921481838",
+      "channel_id": "1131839817982947429",
+      "content": "# 希洛~~上我~~",
+      "author": "gyx_2829",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374394833669591131",
+      "channel_id": "1131839817982947429",
+      "content": "好色\n剩我吃女守被扣了",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1374310084682977332",
       "content": "Byakhee",
       "author": "kong760",
@@ -112,53 +150,59 @@
       "channel": "Add Off Topic Channel"
     },
     {
+      "id": "1374257229225787483",
+      "channel_id": "1131839817982947429",
+      "content": "520当天晚上\n20:00《我绝对不会碰你》\n20:15《你好香啊》\n20:30《我可以亲你一下吗》\n20：35《好像有点热是不是》\n20:40《要不你把衣服脱",
+      "author": "astesiakyu",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374285627591233639",
+      "channel_id": "1131839817982947429",
+      "content": "我知道，我血希12-12",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374344654538932326",
+      "channel_id": "1131839817982947429",
+      "content": "好想跟鯊魚過520\n5種姿勢 2個小時 我當0<:hehe:1357185439089295390>",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374392536407478282",
+      "channel_id": "1131839817982947429",
+      "content": "它只是變成了%貓的圖片",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374396737568899113",
+      "channel_id": "1131839817982947429",
+      "content": "剩我不會畫畫了",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1374431303033819267",
+      "channel_id": "1131839817982947429",
+      "content": "7天肘到第八章，好强",
+      "author": "sweet_25367",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1374311224019386410",
       "content": "Other flying creatures don't have feather as l know",
       "author": "kong760",
       "reactions": 3,
       "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
-    },
-    {
-      "id": "1374321108442021890",
-      "content": "唯有在宙斯身上才不奇怪的神秘剧情",
-      "author": "rain_scarlet",
-      "reactions": 3,
-      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
-    },
-    {
-      "id": "1374439250468274264",
-      "content": "Holi es mi primera vez y no se cómo hacerlo, para empezar amo el juego y quiero ",
-      "author": "vicho225_uvu",
-      "reactions": 3,
-      "channel": "💭「Processing」Bug con los colores"
-    },
-    {
-      "id": "1374414025739468800",
-      "content": "When gelot uses base chain (0/3), it gets slotted into the ultra bar as chain (1",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "💭「Processing」Gelot chain and Ultra bar UI bug"
-    },
-    {
-      "id": "1374345223664308277",
-      "content": "1.哈姆林 2.羊妈（喜欢蜘蛛） 3.戈利亚 4.宁妃（帽子和手捧花符合立绘） 5.新角色 6.拉蒙娜",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
-    },
-    {
-      "id": "1374447548030390344",
-      "content": "之前在别处说过，再说一下『刚刚玩了骑士 的个人剧情。真不错。没玩之前我是不太感兴趣。但是确实be美学了（）。你们的文案真的很会讲故事，然后音效音乐和美术也能三者",
-      "author": "kaap2880",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
-    },
-    {
-      "id": "1374205528229675129",
-      "content": "1.牌庫抽乾了 \n 建議提醒一下\n\n\n\n\n2.怒濤主動傷害會有觸腕拍擊，導致藏品、萊克收不到頭。\n\n建議怒濤下的主動傷害 觸腕擊殺也規在傷害者身上<:pray:",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "牌庫/深海怒濤機制 建議"
     }
   ]
 }

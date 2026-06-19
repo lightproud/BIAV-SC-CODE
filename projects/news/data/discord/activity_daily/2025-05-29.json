@@ -1,10 +1,11 @@
 {
   "date": "2025-05-29",
-  "messages": 153,
+  "messages": 293,
   "unique_authors": 31,
-  "reactions_total": 41,
-  "attachments": 21,
+  "reactions_total": 47,
+  "attachments": 36,
   "channel_activity": {
+    "🔸綜合討論": 140,
     "Castor Kit Review, Pre Release.": 1,
     "[Thai] Morimens lore: What is the dissolution?": 1,
     "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 20,
@@ -33,8 +34,12 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "0": 9,
+    "1": 53,
+    "2": 27,
+    "3": 40,
+    "4": 21,
     "17": 15,
-    "4": 7,
     "6": 1,
     "7": 23,
     "10": 9,
@@ -50,14 +55,11 @@
     "23": 2,
     "8": 18,
     "9": 2,
-    "3": 1,
-    "5": 1,
-    "1": 2
+    "5": 1
   },
   "message_types": {
-    "0": 69,
-    "19": 19,
-    "4": 4
+    "0": 130,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -89,6 +91,22 @@
       "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
     },
     {
+      "id": "1377460928324436048",
+      "channel_id": "1131839817982947429",
+      "content": "~~血肉负责熔炉拐触手和吃胎回狂~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1377489505711292417",
+      "channel_id": "1131839817982947429",
+      "content": "栗子劇情有特殊機制……不，栗子有劇情就已經謝天謝地了",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1377511436674273320",
       "content": "https://youtu.be/SBoabNYNVsE",
       "author": "satachan",
@@ -108,6 +126,22 @@
       "author": "ataraxion",
       "reactions": 2,
       "channel": "✅「Answered」In-game texts do not match the language selected in the settings."
+    },
+    {
+      "id": "1377447394152808619",
+      "channel_id": "1131839817982947429",
+      "content": "~~他的意思是有更好的遊戲可以選~~",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1377495759414628413",
+      "channel_id": "1131839817982947429",
+      "content": "栗子的钥令图用的这次皮肤",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1377697488525463653",
@@ -171,20 +205,6 @@
       "author": "aegisx",
       "reactions": 1,
       "channel": "✅「Answered」Annihilated Rebirth Wheel text wrong translate ?"
-    },
-    {
-      "id": "1377566689641893978",
-      "content": "Thank you",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "Can we have a dedicated community event channel with the event deadline in the title?"
-    },
-    {
-      "id": "1377613420399951955",
-      "content": "",
-      "author": "guiyibeibingyangzaowu",
-      "reactions": 1,
-      "channel": "弥萨格校友号码本4.0"
     }
   ]
 }

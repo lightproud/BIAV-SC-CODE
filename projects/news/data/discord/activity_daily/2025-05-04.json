@@ -1,10 +1,11 @@
 {
   "date": "2025-05-04",
-  "messages": 26,
-  "unique_authors": 8,
-  "reactions_total": 94,
-  "attachments": 9,
+  "messages": 500,
+  "unique_authors": 32,
+  "reactions_total": 132,
+  "attachments": 22,
   "channel_activity": {
+    "🔸綜合討論": 474,
     "Ramona": 1,
     "A Pair of Roses, Horla & Sanga Fanfic": 3,
     "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 3,
@@ -22,22 +23,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "15": 1,
-    "10": 3,
-    "12": 2,
-    "14": 3,
-    "16": 2,
-    "6": 5,
+    "1": 7,
+    "2": 12,
+    "3": 7,
+    "4": 7,
+    "5": 21,
+    "6": 35,
+    "7": 9,
+    "8": 10,
+    "9": 54,
+    "10": 14,
+    "11": 107,
+    "12": 69,
+    "13": 23,
+    "14": 27,
+    "15": 12,
+    "16": 3,
+    "17": 36,
+    "18": 31,
+    "19": 6,
+    "20": 1,
+    "22": 4,
+    "23": 3,
     "0": 1,
-    "3": 1,
-    "21": 1,
-    "9": 3,
-    "2": 2,
-    "7": 2
+    "21": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 392,
+    "19": 82
   },
   "top_reacted_messages": [
     {
@@ -83,6 +96,78 @@
       "channel": "血肉唤醒体DIY"
     },
     {
+      "id": "1368474102284685392",
+      "channel_id": "1131839817982947429",
+      "content": "~~話說汀神之前劇情有出過場嗎~~",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368493295545876553",
+      "channel_id": "1131839817982947429",
+      "content": "没有💰<:rich:1356085282604322826>",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368512975845064755",
+      "channel_id": "1131839817982947429",
+      "content": "~~建議等復刻~~",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368520042018504755",
+      "channel_id": "1131839817982947429",
+      "content": "總受",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368542394550845483",
+      "channel_id": "1131839817982947429",
+      "content": "我感覺 抽完沒直升90怪怪的 \n等大佬抽滿練滿我直接借",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368550029446611185",
+      "channel_id": "1131839817982947429",
+      "content": "男同也太多了",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368554934798385183",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝豆腐",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368566973616885786",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368649249486798941",
+      "channel_id": "1131839817982947429",
+      "content": "不說了要回去抽3+3船長了",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1368622272407146738",
       "content": "Very nice work, always good to see more english support for morimens.\nIs ok if i",
       "author": "vxvendetta",
@@ -90,11 +175,36 @@
       "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
     },
     {
-      "id": "1368598631757647903",
-      "content": "",
-      "author": "yingmai_",
+      "id": "1368449847954509885",
+      "channel_id": "1131839817982947429",
+      "content": "完成珈倫活動 拿完萬分獎勵會自動跳劇情",
+      "author": "_buqi",
       "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368476389442846810",
+      "channel_id": "1131839817982947429",
+      "content": "产能不足",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368476622633832459",
+      "channel_id": "1131839817982947429",
+      "content": "現在只是一個生在算力調和時代的凡夫了🥲",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368500570922680342",
+      "channel_id": "1131839817982947429",
+      "content": "我有一個大膽的想法",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-05-18",
-  "messages": 46,
-  "unique_authors": 8,
-  "reactions_total": 50,
-  "attachments": 10,
+  "messages": 703,
+  "unique_authors": 44,
+  "reactions_total": 141,
+  "attachments": 22,
   "channel_activity": {
+    "🔸綜合討論": 657,
     "Celeste": 1,
     "✅「已回答」找不到有互相關注的校友的助戰": 31,
     "一些便利性方面的建议": 2,
@@ -14,20 +15,31 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "16": 1,
-    "7": 8,
-    "8": 22,
-    "14": 6,
-    "15": 1,
-    "22": 1,
-    "9": 2,
-    "0": 1,
-    "1": 1,
-    "4": 1,
-    "5": 2
+    "0": 27,
+    "1": 7,
+    "2": 4,
+    "3": 73,
+    "4": 94,
+    "5": 13,
+    "6": 2,
+    "7": 47,
+    "8": 176,
+    "9": 30,
+    "10": 5,
+    "11": 48,
+    "12": 55,
+    "13": 45,
+    "14": 41,
+    "15": 13,
+    "16": 10,
+    "18": 6,
+    "19": 4,
+    "22": 2,
+    "23": 1
   },
   "message_types": {
-    "0": 1
+    "19": 119,
+    "0": 538
   },
   "top_reacted_messages": [
     {
@@ -45,6 +57,54 @@
       "channel": "醫生"
     },
     {
+      "id": "1373509848024485928",
+      "channel_id": "1131839817982947429",
+      "content": "本次涉及重要界域机制调整，会发放三个。",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373501807690645544",
+      "channel_id": "1131839817982947429",
+      "content": "如果说之前的梦想是活到半周年、一周年，现在来看更长远的发展也非常可能！我的新梦想是未来有一天能够制作一部序章动画！这非常非常困难，但生死扭转的奇迹我们都实现过了",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373502358256095312",
+      "channel_id": "1131839817982947429",
+      "content": "这次应该主要是战斗玩法相关的内容得到了基本的专业翻译保障，其他部份还需要许多工作！其他游戏或许有一大组人来进行，但我们只有一位！对一个人来说，游戏中的文本量大的",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373574561978646589",
+      "channel_id": "1131839817982947429",
+      "content": "900+",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373575429134225469",
+      "channel_id": "1131839817982947429",
+      "content": "上次抽限定 從0到+12 花了1300抽\n900得吃原型視界了",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373576071731089468",
+      "channel_id": "1131839817982947429",
+      "content": "應該要推出送禮功能",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1373674189994725386",
       "content": "钥令来源杂乱其实我想说好久了，基本所有地方都会有钥令产出，而且缺乏对应角色的专属效果。\n然后就是特删记录作为当前时间线主角参与的故事我觉得应该有主线级别的待遇，",
       "author": "ruhebaoyangsiwa_97871",
@@ -52,18 +112,92 @@
       "channel": "一些便利性方面的建议"
     },
     {
-      "id": "1373578396440858715",
-      "content": "只能提供莉莉給你",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "✅「已回答」找不到有互相關注的校友的助戰"
+      "id": "1373501079618060389",
+      "channel_id": "1131839817982947429",
+      "content": "日服更多具体内容不适合我来回应，到时候日本的运营方来说明。不过如果只是单独说配音的话，我非常希望能够为所有地区都添加序章的部份！",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1373789068625711114",
-      "content": "I recently went and reinstalled morimen's on a new computer and when I synched u",
-      "author": "hanedtom",
+      "id": "1373507210226831392",
+      "channel_id": "1131839817982947429",
+      "content": "很抱歉，是很可能会有一些没有达到期望，我们也讨论过是否要调整，但一些意见社区也有不同意见，反复调整也会继续带来更多困惑。因为目前大部分内容还没有完成我们第一轮优",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373514709885521991",
+      "channel_id": "1131839817982947429",
+      "content": "放鴿子",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373570375383908513",
+      "channel_id": "1131839817982947429",
+      "content": "~~鉴于你游文案似乎有意避开德雷斯角，老黄和克图感觉可以睡到明年~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373637814151024701",
+      "channel_id": "1131839817982947429",
+      "content": "庸醫",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373677125814587392",
+      "channel_id": "1131839817982947429",
+      "content": "好多指紋喔",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373510947062419527",
+      "channel_id": "1131839817982947429",
+      "content": "👆",
+      "author": "cs001092",
       "reactions": 2,
-      "channel": "✅「Answered」Corposant mysteriously missing all base art in my game"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373569644635619390",
+      "channel_id": "1131839817982947429",
+      "content": "她就是跑龍套的",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373574607054831706",
+      "channel_id": "1131839817982947429",
+      "content": "先祈祷nia",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373575203271213090",
+      "channel_id": "1131839817982947429",
+      "content": "分",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373575843019755551",
+      "channel_id": "1131839817982947429",
+      "content": "~~既然你都花抽了那培养皿能不能给我~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-07-09",
-  "messages": 10467,
+  "messages": 10468,
   "unique_authors": 205,
   "reactions_total": 1752,
   "attachments": 660,
   "channel_activity": {
+    "🔸lets-count": 1,
     "🔸morimens-game-chat": 9075,
     "🔸日本語チャンネル": 5,
     "🔸한국어-채팅방": 3,
@@ -29,6 +30,7 @@
     "1390375103707218041": 4
   },
   "hourly_activity": {
+    "5": 220,
     "18": 453,
     "19": 472,
     "20": 394,
@@ -51,12 +53,10 @@
     "7": 583,
     "9": 325,
     "11": 577,
-    "0": 106,
-    "5": 219
+    "0": 106
   },
   "message_types": {
-    "19": 721,
-    "0": 2250
+    "0": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-18",
-  "messages": 11234,
+  "messages": 11242,
   "unique_authors": 228,
-  "reactions_total": 1407,
+  "reactions_total": 1626,
   "attachments": 569,
   "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 7,
     "🔸morimens-game-chat": 6727,
     "🔸한국어-채팅방": 2,
     "🔸русский-канал": 37,
@@ -32,28 +34,27 @@
     "新版本融灾问题": 2,
     "24's Birthday": 2,
     "✅「Answered」Level up screen don't show up.": 9,
-    "先提前开一个杜勒加强方案筹划吧": 3,
-    "🔸礼包码┊gift-codes": 1
+    "先提前开一个杜勒加强方案筹划吧": 3
   },
   "hourly_activity": {
-    "0": 58,
-    "1": 243,
+    "17": 571,
+    "0": 60,
+    "1": 244,
+    "3": 341,
+    "6": 785,
+    "8": 319,
+    "12": 233,
     "2": 377,
-    "3": 340,
     "4": 897,
     "5": 940,
-    "6": 784,
     "7": 248,
-    "8": 318,
     "9": 341,
     "10": 362,
     "11": 279,
-    "12": 232,
     "13": 532,
     "14": 968,
     "15": 934,
     "16": 646,
-    "17": 570,
     "18": 219,
     "19": 690,
     "20": 763,
@@ -62,15 +63,15 @@
     "23": 42
   },
   "message_types": {
-    "0": 7074,
-    "19": 3215
+    "0": 8
   },
   "top_reacted_messages": [
     {
       "id": "1395823937081970820",
+      "channel_id": "1355094251775459399",
       "content": "🎁礼包码/Gift Code\n\n守密人可复制下方兑换码在【设置】→【账户】→【兑换码】处领取~\n\n🔹 兑换码：HastursRestaurant\n🔹 礼包内容：",
       "author": "morimensstaff02",
-      "reactions": 217,
+      "reactions": 219,
       "channel": "🔸礼包码┊gift-codes"
     },
     {

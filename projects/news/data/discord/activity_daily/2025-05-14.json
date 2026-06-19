@@ -1,10 +1,11 @@
 {
   "date": "2025-05-14",
-  "messages": 39,
-  "unique_authors": 6,
-  "reactions_total": 38,
-  "attachments": 36,
+  "messages": 187,
+  "unique_authors": 24,
+  "reactions_total": 69,
+  "attachments": 50,
   "channel_activity": {
+    "🔸綜合討論": 148,
     "study of morimens art style :))": 2,
     "Fishman 🐟": 1,
     "Murphy": 1,
@@ -24,22 +25,32 @@
     "✦关卡地图「融灾禁区」总览34期·星辰篇✦": 2
   },
   "hourly_activity": {
-    "4": 9,
-    "21": 1,
-    "2": 1,
-    "3": 6,
-    "18": 6,
-    "14": 3,
+    "0": 6,
+    "1": 6,
+    "2": 16,
+    "3": 7,
+    "4": 12,
+    "5": 6,
+    "7": 3,
+    "8": 7,
+    "10": 1,
+    "11": 22,
+    "12": 21,
+    "13": 23,
+    "14": 4,
+    "16": 28,
+    "18": 7,
+    "19": 7,
+    "20": 2,
+    "21": 2,
+    "22": 2,
+    "23": 2,
     "15": 2,
-    "8": 5,
-    "0": 1,
-    "12": 3,
-    "17": 1,
-    "5": 1
+    "17": 1
   },
   "message_types": {
-    "0": 16,
-    "4": 1
+    "0": 138,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -64,6 +75,126 @@
       "channel": "忘卻前夜OST：領航手記"
     },
     {
+      "id": "1372206966771945623",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372336229856837765",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "tofu0834",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372033249035157596",
+      "channel_id": "1131839817982947429",
+      "content": "好色",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372086350765097061",
+      "channel_id": "1131839817982947429",
+      "content": "有大佬可以帶帶我嗎",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372172861451669607",
+      "channel_id": "1131839817982947429",
+      "content": "群佬草我",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372245760480903388",
+      "channel_id": "1131839817982947429",
+      "content": "压不动了",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372185371865124895",
+      "channel_id": "1131839817982947429",
+      "content": "狗奴也是一種狗",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372290760212484310",
+      "channel_id": "1131839817982947429",
+      "content": "勉強拉到77%",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372036267755442227",
+      "channel_id": "1131839817982947429",
+      "content": "~~他默認了~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372090458548998198",
+      "channel_id": "1131839817982947429",
+      "content": "你不就是大佬吗",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372127664332083280",
+      "channel_id": "1131839817982947429",
+      "content": "船長後面就是超維男了吧，復刻算另一個池更新",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372188352077365368",
+      "channel_id": "1131839817982947429",
+      "content": "两条不够吧",
+      "author": "randomplayer852",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372210803033374740",
+      "channel_id": "1131839817982947429",
+      "content": "當數值不夠時會觸發被動：小貓幫忙加數值",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372210925716897915",
+      "channel_id": "1131839817982947429",
+      "content": "什麼時候幫幫阿狗",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372358330990727199",
+      "channel_id": "1131839817982947429",
+      "content": "🤔 从小萌新进化成欧皇了",
+      "author": "randomplayer852",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1372074014352212029",
       "content": "Enjoyable read. Thank u🥰",
       "author": "cometovilla",
@@ -73,27 +204,6 @@
     {
       "id": "1372276591564165351",
       "content": "Wave 2:",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "D-tide Budget Teams (2025 May 16)"
-    },
-    {
-      "id": "1372277007525740628",
-      "content": "Wave 3:",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "D-tide Budget Teams (2025 May 16)"
-    },
-    {
-      "id": "1372277342201712720",
-      "content": "Wave 4:",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "D-tide Budget Teams (2025 May 16)"
-    },
-    {
-      "id": "1372277579532341459",
-      "content": "Wave 5:",
       "author": "willsalvador",
       "reactions": 1,
       "channel": "D-tide Budget Teams (2025 May 16)"

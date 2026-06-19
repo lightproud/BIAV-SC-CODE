@@ -1,10 +1,27 @@
 {
   "date": "2025-06-01",
-  "messages": 36,
-  "unique_authors": 16,
-  "reactions_total": 68,
-  "attachments": 14,
+  "messages": 9917,
+  "unique_authors": 291,
+  "reactions_total": 1015,
+  "attachments": 618,
   "channel_activity": {
+    "🔸綜合討論": 941,
+    "🔸morimens-game-chat": 7148,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 20,
+    "🔸deutscher-chatraum": 94,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 2,
+    "🔸phòng-chat-tiếng-việt": 33,
+    "🔸canal-español": 393,
+    "🔸canal-português": 170,
+    "🔸ruang-obrolan-indonesia": 636,
+    "🔸ห้องสนทนาภาษาไทย": 411,
+    "🔸traphase": 21,
+    "🔸lets-count": 1,
     "Aurita": 1,
     "Mid-Issue D-tide Meta Report (2025 June 1)": 5,
     "🎊官周通販：淘寶全球可購！": 10,
@@ -21,24 +38,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "23": 1,
-    "13": 4,
-    "14": 6,
-    "3": 2,
-    "4": 1,
-    "7": 3,
-    "12": 2,
-    "15": 3,
-    "17": 1,
-    "20": 1,
-    "8": 3,
-    "11": 2,
-    "5": 2,
-    "16": 3,
-    "9": 2
+    "0": 185,
+    "1": 281,
+    "2": 358,
+    "3": 429,
+    "4": 509,
+    "5": 326,
+    "6": 359,
+    "7": 444,
+    "8": 514,
+    "9": 518,
+    "10": 458,
+    "11": 284,
+    "12": 577,
+    "13": 701,
+    "14": 889,
+    "15": 645,
+    "16": 316,
+    "17": 383,
+    "18": 349,
+    "19": 334,
+    "20": 224,
+    "21": 150,
+    "22": 212,
+    "23": 472
   },
   "message_types": {
-    "0": 20
+    "0": 7077,
+    "19": 2804
   },
   "top_reacted_messages": [
     {
@@ -49,6 +76,30 @@
       "channel": "Aurita"
     },
     {
+      "id": "1378726548885999626",
+      "channel_id": "1170692781216378960",
+      "content": "what is breeding system in this game. is there a picture?",
+      "author": "wintang0491",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378667234469085285",
+      "channel_id": "1170692781216378960",
+      "content": "i will cook baby goliath and turn him into takoyaki",
+      "author": "jormiejormungandr",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378757558323642458",
+      "channel_id": "1170692781216378960",
+      "content": "YES I FINALLY DID IT 💔",
+      "author": "dose1694",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1378693829649236031",
       "content": "如题\n\n提供木桩子~~类似pvp里的猫~~给玩家测试队伍伤害和手法之类\n最好能提供自选造物功能和一键满大招功能，毕竟你游现在各种乘区越来越多了，像星辰篇那堆基伤",
       "author": "flarinsidia",
@@ -56,53 +107,124 @@
       "channel": "考虑出个练习模式嘛"
     },
     {
-      "id": "1378733828708892752",
-      "content": "Here are the teams with most play rates in the current d-tide (started May 26). ",
-      "author": "willsalvador",
+      "id": "1378721502026792971",
+      "channel_id": "1170692781216378960",
+      "content": "noway francis is male ...it can't be",
+      "author": "uihanato",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378666865487773806",
+      "channel_id": "1170692781216378960",
+      "content": "gaecus reveal",
+      "author": "jormiejormungandr",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378680457532542977",
+      "channel_id": "1170692781216378960",
+      "content": "Nope, this is the slums",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378726448789065768",
+      "channel_id": "1170692781216378960",
+      "content": "ALOHA!!!!!!!!",
+      "author": "thebigbearrr",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378748734808133635",
+      "channel_id": "1170692781216378960",
+      "content": "ah here the enlightment tierlist Gale'sprior tier list (On discord)",
+      "author": "darecro29",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378668079650701403",
+      "channel_id": "1170692781216378960",
+      "content": "Keeper: Clem replay all breeding frenzy straight into their mind. Yes, 1 year wo",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378673578895081583",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/caecus-caecus-morimens-morimens-morimens-caecus-gif-13568",
+      "author": "disgustedingucci",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378746008573444158",
+      "channel_id": "1170692781216378960",
+      "content": "This",
+      "author": "climbkaly",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378709873558294643",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378669616062271569",
+      "channel_id": "1170692781216378960",
+      "content": "sir please share the memories",
+      "author": "jormiejormungandr",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378673145149521950",
+      "channel_id": "1170692781216378960",
+      "content": "You know I want to see Caecus' bare shoulders",
+      "author": "linireo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378727477194657822",
+      "channel_id": "1170692781216378960",
+      "content": "oh my",
+      "author": "vaish6421",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378729215041474660",
+      "channel_id": "1170692781216378960",
+      "content": "Morimes server is either extremely thirsty or arguing about semantics",
+      "author": "noire_2",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378665806899970109",
+      "channel_id": "1170692781216378960",
+      "content": "thais with legs skin is best",
+      "author": "renofon3331",
       "reactions": 6,
-      "channel": "Mid-Issue D-tide Meta Report (2025 June 1)"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1378756955236991056",
-      "content": "Was the wording removed in the astral reign ruleset about the 70% reduction in c",
-      "author": "monchi3524",
-      "reactions": 5,
-      "channel": "Counter Damage Conversion in ruleset"
-    },
-    {
-      "id": "1378720696867491911",
-      "content": "别说一天打20次了一天两次都懒得打……太恶心了",
-      "author": "lunar77_.",
-      "reactions": 3,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
-    },
-    {
-      "id": "1378733588564152381",
-      "content": "還有一個原因",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 3,
-      "channel": "求配隊"
-    },
-    {
-      "id": "1378658072741937215",
-      "content": "收米回家",
-      "author": "yingmai_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1378652960069779617",
-      "content": "超狗屎 還真沒見過週年活動這樣慶祝的 主C課到超限 週年獎勵關卡打到吃石頭 好好玩喔這遊戲",
-      "author": "rookie1017",
-      "reactions": 1,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
-    },
-    {
-      "id": "1378721442912403657",
-      "content": "可能因为是星辰篇出的吧",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "为什么意识潜游：热情归尘的战斗关卡是星辰篇"
+      "id": "1378667457962573874",
+      "channel_id": "1170692781216378960",
+      "content": "Not a day goes by without something reminding me of the fanart",
+      "author": "linireo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

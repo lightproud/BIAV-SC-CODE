@@ -1,10 +1,22 @@
 {
   "date": "2025-06-24",
-  "messages": 94,
-  "unique_authors": 29,
-  "reactions_total": 149,
-  "attachments": 25,
+  "messages": 6653,
+  "unique_authors": 187,
+  "reactions_total": 980,
+  "attachments": 397,
   "channel_activity": {
+    "🔸綜合討論": 190,
+    "🔸morimens-game-chat": 4561,
+    "🔸日本語チャンネル": 7,
+    "🔸deutscher-chatraum": 28,
+    "🔸русский-канал": 114,
+    "🔸phòng-chat-tiếng-việt": 63,
+    "🔸canal-español": 1094,
+    "🔸canal-português": 55,
+    "🔸ruang-obrolan-indonesia": 13,
+    "🔸ห้องสนทนาภาษาไทย": 160,
+    "🔸traphase": 196,
+    "🔸lore-chat": 78,
     "Aurita First Big Mission Briefing": 1,
     "Tulu doodle (but badly)": 3,
     "How To Aliemus 101 & 102": 2,
@@ -21,26 +33,34 @@
     "展示品？": 1
   },
   "hourly_activity": {
-    "3": 2,
-    "6": 1,
-    "8": 12,
-    "9": 7,
-    "20": 6,
-    "21": 7,
-    "7": 40,
-    "10": 2,
-    "12": 1,
-    "13": 4,
-    "15": 6,
-    "11": 2,
-    "23": 1,
-    "22": 1,
-    "0": 1,
-    "5": 1
+    "0": 371,
+    "3": 175,
+    "4": 311,
+    "5": 181,
+    "6": 61,
+    "7": 405,
+    "8": 475,
+    "10": 211,
+    "11": 267,
+    "12": 161,
+    "13": 490,
+    "14": 226,
+    "15": 328,
+    "16": 323,
+    "17": 340,
+    "18": 142,
+    "19": 392,
+    "20": 364,
+    "21": 190,
+    "22": 264,
+    "23": 395,
+    "1": 263,
+    "2": 148,
+    "9": 170
   },
   "message_types": {
-    "19": 6,
-    "0": 68
+    "0": 4993,
+    "19": 1566
   },
   "top_reacted_messages": [
     {
@@ -79,6 +99,38 @@
       "channel": "V2.2.3預告：特別幻衣活動┊V2.2.3 Preview: Awakener Skins Event"
     },
     {
+      "id": "1387128300102619156",
+      "channel_id": "1170692781216378960",
+      "content": "Chapter 6 finished! No eggnog used yet!",
+      "author": "nightjar0928",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386910019936583701",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】你的玫瑰已是风中残株，而我的蔷薇仍有千珠万朵——融灾禁区4-5之混沌戒指版-哔哩哔哩】 https://b23.tv/VFCfX69",
+      "author": "scholar_2",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1387132031187812374",
+      "channel_id": "1170692781216378960",
+      "content": "woo hoo, beeg numbers",
+      "author": "__zee__",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387083643217772636",
+      "channel_id": "1170692781216378960",
+      "content": "Another Sorel H2-12<:proud2:1356053123445297233>",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1386939666623893595",
       "content": "珊-二創\nUID:100349269",
       "author": "ainei_00",
@@ -86,53 +138,84 @@
       "channel": "展示品？"
     },
     {
-      "id": "1386970646352887828",
-      "content": "我的天\n是餅\n有油污\n簡稱油餅",
-      "author": "kong760",
+      "id": "1386919769239720067",
+      "channel_id": "1131839817982947429",
+      "content": "You can simply understand that certain people, in order to make his name appear ",
+      "author": "lurenjiao",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386975018398781520",
+      "channel_id": "1170692781216378960",
+      "content": "nice to see old concepts being adapted tho",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386989890452983828",
+      "channel_id": "1170692781216378960",
+      "content": "GTulu will impregnate Keeper on screen",
+      "author": "skyfallterminus",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387086150371377162",
+      "channel_id": "1170692781216378960",
+      "content": "Hello new and just beat ch 6",
+      "author": "shadowemperor7636",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387153384011993118",
+      "channel_id": "1170692781216378960",
+      "content": "am i cooked <:processing:1357185814567718963>",
+      "author": "gisstar",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387163043883909201",
+      "channel_id": "1170692781216378960",
+      "content": "<:24_clown:1374289675417686016>",
+      "author": "whitehorn_montellas",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1386913550454231111",
+      "channel_id": "1131839817982947429",
+      "content": "400了 很克難的過了",
+      "author": "arthasiv",
       "reactions": 5,
-      "channel": "V2.2.3預告: 版本活動「偉大的征服」┊V2.2.3 Preview: Version Event—The Great Conquering"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1387203316345344133",
-      "content": "The whole line with 70% is missing in English version.",
+      "id": "1387083273364181072",
+      "channel_id": "1131839817982947429",
+      "content": "唉没什么好玩的了，带绿色昏睡角打一下蛹吧（",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1386971229147365449",
+      "channel_id": "1170692781216378960",
+      "content": "It will be Uvhash eating out Agrippa to help her overcome past trauma",
+      "author": "skyfallterminus",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387002922293788813",
+      "channel_id": "1170692781216378960",
+      "content": "Wait I can't even equip agrippa skin, I don't own her",
       "author": "aurora3981",
-      "reactions": 2,
-      "channel": "✅「Answered」Rule set missing text"
-    },
-    {
-      "id": "1386912316322353162",
-      "content": "You can I allow",
-      "author": "rohaluss",
-      "reactions": 1,
-      "channel": "Aurita First Big Mission Briefing"
-    },
-    {
-      "id": "1387005733115265105",
-      "content": "Forever smol and sleepy",
-      "author": "rowlynt66",
-      "reactions": 1,
-      "channel": "Tulu doodle (but badly)"
-    },
-    {
-      "id": "1386978832182939700",
-      "content": "意思是6月30没新池子吗<:processing:1357185814567718963>",
-      "author": "rickycen",
-      "reactions": 1,
-      "channel": "V2.2.3預告: 版本活動「偉大的征服」┊V2.2.3 Preview: Version Event—The Great Conquering"
-    },
-    {
-      "id": "1387217156948889650",
-      "content": "",
-      "author": "sahmerann",
-      "reactions": 1,
-      "channel": "✅「Answered」LANGUAGE BUG."
-    },
-    {
-      "id": "1387097360496332800",
-      "content": "I just encounter maybe a visual bug after playing karen 0 cost and rather than t",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "💭「Processing」Card remain on screen and can not be interact with after being played"
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

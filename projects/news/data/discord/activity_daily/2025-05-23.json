@@ -1,10 +1,11 @@
 {
   "date": "2025-05-23",
-  "messages": 255,
+  "messages": 1027,
   "unique_authors": 50,
-  "reactions_total": 139,
-  "attachments": 20,
+  "reactions_total": 192,
+  "attachments": 40,
   "channel_activity": {
+    "🔸綜合討論": 772,
     "WIP of Thais": 1,
     "he's cranky": 2,
     "Seimau Art": 2,
@@ -26,32 +27,32 @@
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
+    "1": 3,
+    "2": 2,
+    "3": 7,
+    "4": 30,
+    "5": 5,
+    "6": 12,
+    "7": 186,
+    "8": 86,
+    "9": 6,
+    "10": 12,
+    "11": 29,
+    "12": 59,
+    "13": 117,
+    "14": 192,
+    "15": 164,
+    "16": 25,
+    "17": 33,
+    "18": 33,
+    "19": 7,
     "20": 14,
-    "13": 41,
-    "1": 2,
-    "5": 3,
-    "4": 8,
-    "15": 42,
-    "9": 4,
-    "10": 8,
-    "11": 5,
-    "12": 10,
-    "14": 25,
-    "16": 18,
-    "17": 25,
-    "18": 23,
-    "19": 3,
     "23": 3,
-    "2": 1,
-    "8": 3,
-    "7": 13,
-    "21": 2,
-    "3": 2
+    "21": 2
   },
   "message_types": {
-    "0": 144,
-    "19": 32,
-    "6": 1
+    "0": 683,
+    "19": 89
   },
   "top_reacted_messages": [
     {
@@ -90,6 +91,54 @@
       "channel": "🎊彌薩格藝術展：精彩同人作品分享┊Mythag Art Exhibition: Amazing Fan Art Showcase"
     },
     {
+      "id": "1375410175099273286",
+      "channel_id": "1131839817982947429",
+      "content": "||看到aaa破會興奮是正常的嗎||",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375336357953798235",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375357564719464498",
+      "channel_id": "1131839817982947429",
+      "content": "400了",
+      "author": "bailuoxiao",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375386634748432548",
+      "channel_id": "1131839817982947429",
+      "content": "我破防了",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375459020743376908",
+      "channel_id": "1131839817982947429",
+      "content": "~~希望能在卡池裡面抽到aaa~~",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375477726164549784",
+      "channel_id": "1131839817982947429",
+      "content": "我等不及要探索卡斯托爾的黑色叢林了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1375495232287801364",
       "content": "https://www.youtube.com/watch?v=9vygZZDqhbM&t=8s&ab_channel=Flares%27sidechannel",
       "author": "flares117",
@@ -118,81 +167,44 @@
       "channel": "V2.2.2.0 停服維護公告"
     },
     {
-      "id": "1375414520595353681",
-      "content": "damn my luck's suck  <:flop1:1356083604236800030>",
-      "author": "juans3854",
+      "id": "1375458263813984286",
+      "channel_id": "1131839817982947429",
+      "content": "~~深海血肉各有一只+24导致的~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375374548639289345",
+      "channel_id": "1131839817982947429",
+      "content": "<:nekowhoua:1200338290285477938>",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1375488766520852650",
-      "content": "[Guaranteed Activity: Awaken - The Unforgotten]\n●  The following activity will b",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": "V2.2.2.0 停服維護公告"
-    },
-    {
-      "id": "1375506824135970846",
-      "content": "yipeeee blue power and green alert",
-      "author": "thpdom",
-      "reactions": 2,
-      "channel": "✅「Answered」More wrong colours on passives"
-    },
-    {
-      "id": "1375288176259629210",
-      "content": "I HAV TULUBLESSED DAY I LOVE YOU THANK FOR DRAWING THE SQUID KING",
-      "author": "rohaluss",
-      "reactions": 1,
-      "channel": "Seimau Art"
-    },
-    {
-      "id": "1375466709309194310",
-      "content": "這太壞了，又重新私信了一次~辛苦再看看",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1375489782905573406",
-      "content": "吓死我了 \n还以为卡到广播站",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "V2.2.2.0 停服維護公告"
-    },
-    {
-      "id": "1375499543914877069",
-      "content": "蘿坦的傷害低到給了目前唯一的%傷但也因為有這個%傷導致校貓不敢給蘿坦添加直觀的加傷<:takenotes:1357186646294138890>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "V2.2.2.0 停服維護公告"
-    },
-    {
-      "id": "1375514067753762948",
-      "content": "我覺得最後一天的活動要需要限定一下固定一段時間內有次數上限",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "V2.2.2.0 停服維護公告"
-    },
-    {
-      "id": "1375565656631541900",
-      "content": "我自己玩星辰篇是用拉蒙娜專造的效果讓女王劍一直觸發2次充界精配合混沌鑰令效果充狂\n開局在手上一次+拉蒙娜專武回收一次+大拉回來一次+過牌上手一次\n通常只要控好都",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "V2.2.2.0 停服維護公告"
-    },
-    {
-      "id": "1375578416337916055",
-      "content": "每个海怪集群的总次数能有十万么",
+      "id": "1375392079840280596",
+      "channel_id": "1131839817982947429",
+      "content": "BYD五百也没有我是吧",
       "author": "akalanden",
-      "reactions": 1,
-      "channel": "V2.2.2.0 停服維護公告"
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1375487182864650370",
-      "content": "Indonesian",
-      "author": "f4everr_",
-      "reactions": 1,
-      "channel": "✅「Answered」Region lock.."
+      "id": "1375480944365928499",
+      "channel_id": "1131839817982947429",
+      "content": "🤓",
+      "author": "bailuoxiao",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1375516444632289375",
+      "channel_id": "1131839817982947429",
+      "content": "你用哈，我不用<:point:1356053112292511815>",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

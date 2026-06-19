@@ -1,10 +1,11 @@
 {
   "date": "2025-05-08",
-  "messages": 119,
-  "unique_authors": 25,
-  "reactions_total": 148,
-  "attachments": 16,
+  "messages": 1101,
+  "unique_authors": 61,
+  "reactions_total": 382,
+  "attachments": 49,
   "channel_activity": {
+    "🔸綜合討論": 982,
     "Goliath": 1,
     "study of morimens art style :))": 3,
     "Ogier sketch": 2,
@@ -26,27 +27,33 @@
     "1271491376881598494": 6
   },
   "hourly_activity": {
-    "2": 5,
-    "18": 2,
+    "0": 4,
+    "1": 29,
+    "2": 102,
+    "3": 30,
+    "5": 25,
+    "6": 264,
+    "7": 17,
+    "8": 29,
+    "9": 102,
+    "10": 30,
+    "11": 30,
+    "12": 4,
+    "13": 36,
+    "14": 62,
+    "15": 2,
+    "16": 160,
+    "17": 89,
+    "18": 51,
+    "22": 16,
+    "23": 14,
     "19": 1,
-    "0": 2,
     "21": 2,
-    "3": 2,
-    "16": 56,
-    "8": 6,
-    "1": 3,
-    "5": 6,
-    "6": 6,
-    "7": 2,
-    "9": 2,
-    "10": 4,
-    "13": 3,
-    "17": 14,
-    "11": 1,
     "4": 2
   },
   "message_types": {
-    "0": 12
+    "0": 818,
+    "19": 164
   },
   "top_reacted_messages": [
     {
@@ -55,6 +62,22 @@
       "author": "argo.4467",
       "reactions": 71,
       "channel": "study of morimens art style :))"
+    },
+    {
+      "id": "1370076732094152785",
+      "channel_id": "1131839817982947429",
+      "content": "bruh i cant read that",
+      "author": "abysalol",
+      "reactions": 55,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370076635717570693",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1370075486235000932 @everyone",
+      "author": "game.producer.light",
+      "reactions": 53,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1370085394888265899",
@@ -85,95 +108,108 @@
       "channel": "Karen"
     },
     {
-      "id": "1369921483928764436",
-      "content": "和气生财，和气生财。👀\n（要骂骂猫就好了",
+      "id": "1369954317976473620",
+      "channel_id": "1131839817982947429",
+      "content": "好想喝鯊奶",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369967066056228894",
+      "channel_id": "1131839817982947429",
+      "content": "計劃有變",
       "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "V2.2.1.3 在線維護公告"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370078683569717319",
-      "content": "我甚至每天买荒原狼和有机换印章<:takenotes:1357186646294138890>",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
-    },
-    {
-      "id": "1369951164711440464",
-      "content": "目前隨著角色增多，需求不同的密契，以及不同的屬性，配套的密契也越來越多。\n可不可以考慮按照密契约類型排序方便玩家選擇？",
-      "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "有沒有考慮出個命輪排序功能"
-    },
-    {
-      "id": "1369912455492276294",
-      "content": "輸出向 / 詩籤→隕日→巨人之刃（跨越疼痛→堅鋼意志） 「懲戒雷霆 刻印小丑」\n\n輔助拐 / 隱祕的誕生\n\n生存向 / 靈魂誕生→珊瑚女之死→跨越疼痛→吞噬搖籃",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1369866809833947156",
-      "content": "🔥 🔥",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "Goliath"
-    },
-    {
-      "id": "1370113118771875941",
-      "content": "wala pong social media other than discord 🥀",
-      "author": "argo.4467",
-      "reactions": 1,
-      "channel": "study of morimens art style :))"
-    },
-    {
-      "id": "1370078103552131224",
-      "content": "谢谢",
-      "author": "gyx_2829",
-      "reactions": 1,
-      "channel": "有塔薇佬的腿可以抱吗"
-    },
-    {
-      "id": "1369915217785524294",
-      "content": "我還沒提副作用你倒立刻貼上去，技術上這叫做打稻草人\n我也沒哭這幾個弱你就一路走到說血希垃圾，這個是滑坡\n顯然都不是抬槓的好策略吧？\n他們同期的其他角色做決策時幾",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1369931199505764424",
-      "content": "建議出四個深海+100觸傷的鑰令還有四海密契拉一下四海",
-      "author": "jackpot_7",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1369971074439184444",
-      "content": "它提供了6%的觸傷🤡 🤡",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1370078152612778147",
-      "content": "夭壽那全勤可以補破萬支欸",
+      "id": "1369977926195351552",
+      "channel_id": "1131839817982947429",
+      "content": "現在講克根本分不出來是克萊門汀還是克珀珊特（",
       "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370080304219422816",
-      "content": "~~分窝一点抽~~<:please:1356053110375714817>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "id": "1369879435112743022",
+      "channel_id": "1131839817982947429",
+      "content": "下班有時間再說",
+      "author": "fengliyaowo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370090730688614511",
-      "content": "B站有人录了，哦还有一个小bug，就是卡出来之后如果在剧情，这段剧情就会被掐掉了。比如说我战斗完之后看剧情，卡了再进，剧情直接跳过了。",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "id": "1370077425790222376",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "yusi4172",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370076928052297748",
+      "channel_id": "1131839817982947429",
+      "content": "Mf dragged me all the way out of an Episode of Dr House. this better be good",
+      "author": "mentallystuntedsavant",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369875718347034645",
+      "channel_id": "1131839817982947429",
+      "content": "國際盜懶叫集團",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369926767405437000",
+      "channel_id": "1131839817982947429",
+      "content": "这种针对特定怪物类型增伤的设计还是很不喜欢。20多趴就很勉强了，直接翻个倍的伤害就很呃呃<:dead:1356082627509092372>",
+      "author": "randomplayer852",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369931112268300319",
+      "channel_id": "1131839817982947429",
+      "content": "所以本源墨會在廣播裡生孩子\n神圖魯會在廣播裡發出啪噠啪噠的觸手聲嗎",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370046894285389864",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370077757337243648",
+      "channel_id": "1131839817982947429",
+      "content": "||刚才一瞬间看到了翻译在明天和翻译的名字||",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370080516539158590",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370086748645753077",
+      "channel_id": "1131839817982947429",
+      "content": "印章满满<:nocomment:1356053106038673610>",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

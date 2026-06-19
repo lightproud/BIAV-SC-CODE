@@ -1,10 +1,11 @@
 {
   "date": "2025-07-03",
-  "messages": 12367,
+  "messages": 12368,
   "unique_authors": 302,
   "reactions_total": 1741,
   "attachments": 481,
   "channel_activity": {
+    "🔸lets-count": 1,
     "🔸剧情交流": 3,
     "🔸한국어-채팅방": 11,
     "🔸deutscher-chatraum": 2,
@@ -36,13 +37,13 @@
     "1390375103707218041": 48
   },
   "hourly_activity": {
+    "1": 552,
     "17": 1009,
     "18": 786,
     "12": 362,
     "19": 569,
     "13": 500,
     "0": 553,
-    "1": 551,
     "2": 740,
     "3": 564,
     "6": 727,
@@ -62,8 +63,7 @@
     "22": 243
   },
   "message_types": {
-    "19": 512,
-    "0": 1800
+    "19": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-07",
-  "messages": 9023,
+  "messages": 9028,
   "unique_authors": 240,
-  "reactions_total": 1700,
-  "attachments": 491,
+  "reactions_total": 2415,
+  "attachments": 492,
   "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 4,
     "🔸剧情交流": 5,
     "🔸课间休息闲聊": 4,
     "🔸日本語チャンネル": 6,
@@ -36,16 +38,17 @@
     "《他們的女兒》": 8,
     "《雙人舞》": 1,
     "2026忘却前夜新春会节目预告:道理剧场之误入弥大": 2,
-    "🔸礼包码┊gift-codes": 1,
     "1296113810549112874": 4,
     "1390375103707218041": 15
   },
   "hourly_activity": {
+    "11": 236,
+    "6": 506,
+    "18": 370,
+    "20": 417,
     "4": 242,
     "12": 289,
     "9": 185,
-    "11": 235,
-    "18": 368,
     "13": 307,
     "14": 496,
     "22": 302,
@@ -53,7 +56,6 @@
     "16": 729,
     "17": 612,
     "19": 530,
-    "20": 416,
     "23": 530,
     "0": 270,
     "1": 315,
@@ -63,19 +65,19 @@
     "15": 475,
     "21": 197,
     "10": 133,
-    "6": 505,
     "7": 176
   },
   "message_types": {
-    "0": 916,
-    "19": 313
+    "0": 3,
+    "19": 2
   },
   "top_reacted_messages": [
     {
       "id": "1391748782806270014",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 21000守密人達成禮 / DC21000 Keepers Achievement Gift\n\n《忘卻前夜Morimens》DC全球頻道達到21000人",
       "author": "morimensstaff02",
-      "reactions": 709,
+      "reactions": 710,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -218,12 +220,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1391892431389065226",
-      "channel_id": "1300659662311526512",
-      "content": "",
-      "author": "kryxcross",
+      "id": "1391872107041787905",
+      "channel_id": "1355630588094320661",
+      "content": "Yes.",
+      "author": "s3441111",
       "reactions": 5,
-      "channel": "🔸canal-español"
+      "channel": "🔸lets-count"
     }
   ]
 }

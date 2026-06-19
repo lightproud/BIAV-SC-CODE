@@ -1,10 +1,13 @@
 {
   "date": "2025-07-28",
-  "messages": 17142,
+  "messages": 18117,
   "unique_authors": 379,
-  "reactions_total": 1813,
-  "attachments": 1010,
+  "reactions_total": 2040,
+  "attachments": 1021,
   "channel_activity": {
+    "🔸lore-chat": 962,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 3,
     "🔸morimens-game-chat": 12131,
     "🔸晒卡分享": 4,
     "🔸课间休息闲聊": 11,
@@ -54,35 +57,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 766,
+    "2": 969,
+    "3": 816,
+    "5": 700,
+    "6": 702,
+    "7": 722,
+    "8": 659,
+    "9": 567,
+    "10": 1155,
+    "11": 1260,
+    "12": 868,
+    "13": 716,
+    "16": 755,
+    "17": 566,
+    "18": 525,
+    "21": 591,
+    "23": 705,
+    "0": 771,
+    "19": 408,
     "1": 929,
-    "2": 966,
-    "3": 814,
     "4": 747,
-    "5": 693,
-    "6": 699,
-    "7": 691,
-    "8": 631,
-    "9": 457,
-    "10": 705,
-    "11": 1070,
-    "12": 802,
-    "13": 692,
     "14": 798,
     "15": 931,
-    "16": 722,
-    "17": 554,
-    "18": 520,
-    "19": 406,
     "20": 578,
-    "21": 590,
-    "22": 679,
-    "23": 702
+    "22": 679
   },
   "message_types": {
-    "0": 9621,
-    "19": 5745,
-    "18": 1
+    "0": 773,
+    "19": 202
   },
   "top_reacted_messages": [
     {
@@ -122,12 +124,44 @@
       "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
     },
     {
+      "id": "1399340800608829520",
+      "channel_id": "1326453763355185215",
+      "content": "sorry for causing difficulties in your reading\nit was somewhat long and I didn’t",
+      "author": "flarinsidia",
+      "reactions": 16,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399220684600643584",
+      "channel_id": "1326453763355185215",
+      "content": "Hey, just telling you that the proofread version of Miryam’s dreamscape seems to",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399341916855996458",
+      "channel_id": "1326453763355185215",
+      "content": "There were like 2k lines and I’m not a native English speaker and living in non-",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1399197346088353923",
       "channel_id": "1170692781216378960",
       "content": "omg  I feel like quitting",
       "author": "drunk.biscuit",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399255857996365864",
+      "channel_id": "1326453763355185215",
+      "content": "I’m sorry Miryam event interface still has machine translation issues; I fixed t",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1399269422761381888",
@@ -144,6 +178,22 @@
       "author": "fischperch",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399342223685980251",
+      "channel_id": "1326453763355185215",
+      "content": "actually for stories my favorite is 24’s and Wanda’s <:pray:1356053116260454534>",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399347404632883261",
+      "channel_id": "1326453763355185215",
+      "content": "hope that’s Bokrug",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1399211374550188213",
@@ -191,54 +241,6 @@
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "just thinking what to eat for the next meal"
-    },
-    {
-      "id": "1399189408372228156",
-      "channel_id": "1170692781216378960",
-      "content": "So far, this is like the most generous gacha I've seen?",
-      "author": "whitehorn_montellas",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399215105614544957",
-      "channel_id": "1170692781216378960",
-      "content": "sounds like a personal problem, i hope your struggles with such things can end i",
-      "author": "reya.li",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399250160520790016",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "gardrobe10",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399328075438624819",
-      "channel_id": "1170692781216378960",
-      "content": "new max hp record \n4.9k",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399396415771512903",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399396807254999142",
-      "channel_id": "1170692781216378960",
-      "content": "mods, delete his blade",
-      "author": "mistakendoge",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

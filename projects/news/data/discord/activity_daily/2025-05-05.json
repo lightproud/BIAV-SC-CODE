@@ -1,10 +1,11 @@
 {
   "date": "2025-05-05",
-  "messages": 117,
-  "unique_authors": 19,
-  "reactions_total": 153,
-  "attachments": 40,
+  "messages": 2239,
+  "unique_authors": 63,
+  "reactions_total": 377,
+  "attachments": 91,
   "channel_activity": {
+    "🔸綜合討論": 2122,
     "A Pair of Roses, Horla & Sanga Fanfic": 1,
     "Sanga": 2,
     "Fully enlightened Corposant 🌊": 2,
@@ -35,33 +36,43 @@
     "1271491376881598494": 2
   },
   "hourly_activity": {
-    "17": 1,
-    "23": 4,
-    "9": 12,
-    "22": 3,
-    "7": 1,
-    "16": 3,
-    "20": 1,
-    "6": 1,
-    "0": 3,
-    "10": 10,
-    "11": 3,
-    "12": 42,
-    "13": 10,
-    "14": 5,
-    "4": 6,
-    "5": 3,
-    "3": 2,
-    "2": 4,
-    "15": 2,
-    "1": 1
+    "0": 7,
+    "1": 27,
+    "2": 219,
+    "3": 100,
+    "4": 349,
+    "5": 128,
+    "6": 89,
+    "7": 22,
+    "8": 182,
+    "9": 94,
+    "10": 417,
+    "11": 105,
+    "12": 291,
+    "13": 133,
+    "14": 21,
+    "15": 15,
+    "16": 13,
+    "17": 11,
+    "18": 1,
+    "19": 1,
+    "22": 5,
+    "23": 8,
+    "20": 1
   },
   "message_types": {
-    "4": 1,
-    "0": 11,
-    "19": 1
+    "0": 1770,
+    "19": 352
   },
   "top_reacted_messages": [
+    {
+      "id": "1368892800095223889",
+      "channel_id": "1131839817982947429",
+      "content": "@everyone https://discord.com/channels/1131791637933199470/1368890341490556948 新",
+      "author": "game.producer.light",
+      "reactions": 65,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1368963004749713478",
       "content": "„ Gott ist tot “\n\nvideo：https://www.bilibili.com/video/BV1VBVKzZE68/\n\n-本家-\n_ピノキオ",
@@ -105,11 +116,51 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
+      "id": "1368981225301344287",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368830111083659274",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1368965706787455128",
       "content": "我知道字面上寫「戰鬥開始時，使所有敵人……」意思是戰鬥開始那一刻在場上的敵人，所以我是想建議改成「給自己觸手最終傷害+15%」的buff取代給敵人debuff。",
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "克珀珊特領航Bug與靈塑加強建議"
+    },
+    {
+      "id": "1368850821298786315",
+      "channel_id": "1131839817982947429",
+      "content": "希洛300万",
+      "author": "xili0434",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368786719205232640",
+      "channel_id": "1131839817982947429",
+      "content": "感觉船长强度好像还行",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368810331727466517",
+      "channel_id": "1131839817982947429",
+      "content": "说起来，我这期打400分融灾，没有使用塔薇",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1368932304042459196",
@@ -140,6 +191,14 @@
       "channel": "Tentacle Crit Build Theory Crafting"
     },
     {
+      "id": "1368830675297239100",
+      "channel_id": "1131839817982947429",
+      "content": "||我是500多天的小丑||",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1369055917722570762",
       "content": "а можно ему другого психолога",
       "author": "me4tgr1nder",
@@ -147,60 +206,12 @@
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
-      "id": "1368983271127388160",
-      "content": "卡最後一天丟嘻嘻，這是牛肉麵",
-      "author": "rou_yi_rou",
-      "reactions": 2,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1368933874314379336",
-      "content": "你也知道星辰篇主线难度大<:alone:1356053021318189307> 有没有考虑降低一些数值方面上的难度\n虽然看到在研究新玩法，但是我现在看到星辰篇",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368934492839870485",
-      "content": "<@633215996508766229> 自选池以后都是这样只能选一次，然后角色和专武共占大保底的机制吗。这个池子的现在最多的别称是毒池，给萌新最多的推荐是别",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368934561010024528",
-      "content": "有機會做個單角色闖關模式嗎，像試用那種，然後道中通關給各種數值能力提升/造物/增益牌之類的",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368960871354597468",
-      "content": "先猜sp鯨在星辰篇結尾出來顛覆神國，詳細劇本請參考忘卻篇熔朵☝️ 🤓",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368981546744418416",
-      "content": "猫，能不能把“触腕集结”这个buff改个图标呀，毕竟只要玩了深海队下面肯定会有触腕集结，感觉值得一个特殊图标",
-      "author": "nekoiiii.",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368880169510502423",
-      "content": "The 'Each time another Awaker unleashes Exalt, Winkle gains 5 Aliemus, and the A",
-      "author": "hakugin0_",
-      "reactions": 2,
-      "channel": "✅「Answered」Winkle Relic Not Working"
-    },
-    {
-      "id": "1368767835261632573",
-      "content": "I think in the patch notes it includes her star chapter talent, but in game I do",
-      "author": "starfish3302",
-      "reactions": 2,
-      "channel": "💭「Processing」Corposant Star Chapter Talent"
+      "id": "1368871695531642882",
+      "channel_id": "1131839817982947429",
+      "content": "带个熔朵就行了",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

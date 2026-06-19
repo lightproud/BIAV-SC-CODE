@@ -1,10 +1,11 @@
 {
   "date": "2025-05-09",
-  "messages": 159,
-  "unique_authors": 18,
-  "reactions_total": 43,
-  "attachments": 91,
+  "messages": 879,
+  "unique_authors": 49,
+  "reactions_total": 220,
+  "attachments": 108,
   "channel_activity": {
+    "🔸綜合討論": 720,
     "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 1,
     "Corposant": 1,
     "Design References to the Cthulhu Mythos": 4,
@@ -32,34 +33,74 @@
     "【MMD】神っぽいな「克莱门汀」": 2
   },
   "hourly_activity": {
-    "16": 7,
-    "7": 3,
-    "2": 5,
-    "9": 9,
+    "0": 24,
+    "1": 38,
+    "2": 33,
+    "3": 49,
+    "4": 21,
+    "5": 26,
+    "6": 151,
+    "7": 52,
+    "8": 52,
+    "9": 88,
+    "10": 62,
+    "11": 26,
+    "12": 36,
+    "13": 37,
+    "14": 65,
+    "15": 50,
+    "16": 12,
+    "17": 5,
+    "18": 2,
+    "22": 5,
+    "23": 2,
     "19": 3,
-    "5": 10,
-    "13": 12,
-    "14": 15,
-    "15": 23,
     "21": 20,
-    "1": 2,
-    "6": 19,
-    "4": 3,
-    "8": 4,
-    "11": 2,
-    "0": 2,
     "20": 20
   },
   "message_types": {
-    "0": 6
+    "0": 616,
+    "19": 104
   },
   "top_reacted_messages": [
+    {
+      "id": "1370284592233451520",
+      "channel_id": "1131839817982947429",
+      "content": "@everyone https://discord.com/channels/1131791637933199470/1370283266560626769 T",
+      "author": "game.producer.light",
+      "reactions": 92,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1370304811966398548",
       "content": "I love her alot",
       "author": "koi.monke",
       "reactions": 18,
       "channel": "Corposant"
+    },
+    {
+      "id": "1370285559674568804",
+      "channel_id": "1131839817982947429",
+      "content": "因为这个everyone只能全部 两边发都不对…",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370314361566134313",
+      "channel_id": "1131839817982947429",
+      "content": "什么时候来降力大赛",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370426872470437898",
+      "channel_id": "1131839817982947429",
+      "content": "我不拗了破防",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1370489285458923520",
@@ -69,11 +110,43 @@
       "channel": "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍"
     },
     {
+      "id": "1370248133078159392",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "kafka0u0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370281245111750676",
+      "channel_id": "1131839817982947429",
+      "content": "都是脑缸组的翅膀",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370237662266654770",
+      "channel_id": "1131839817982947429",
+      "content": "~~我都多一百氣哭~~",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1370335446277816350",
       "content": "Hey there! I've been really hooked to the game since the first day I found out a",
       "author": "hakuha",
       "reactions": 4,
       "channel": "✅「Answered」Permission of image use for planner app"
+    },
+    {
+      "id": "1370243563081826350",
+      "channel_id": "1131839817982947429",
+      "content": "我要她進超維",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1370438960903622767",
@@ -90,60 +163,59 @@
       "channel": "✅前瞻：1.5周年～活动福利篇"
     },
     {
+      "id": "1370189411333050489",
+      "channel_id": "1131839817982947429",
+      "content": "原来神国就是三国（）",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370205591745728593",
+      "channel_id": "1131839817982947429",
+      "content": "剩我沒被大調查了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370219759261716491",
+      "channel_id": "1131839817982947429",
+      "content": "我靠我怎么知道鲁迅写的“我有两棵树，一棵是枣树，另一棵也是枣树”蕴含了鲁迅当时什么样的情感",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370236661899857960",
+      "channel_id": "1131839817982947429",
+      "content": "~~有錢就是她大爺~~",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370349455693582417",
+      "channel_id": "1131839817982947429",
+      "content": "<:rizz1:1356085398379692165>",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370352008770617455",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>  \nI don't think it's a good thing to understan",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1370191277248745482",
       "content": "New player experience. Hard mode. I have 300 hours in the game and I am a decent",
       "author": "climbkaly",
       "reactions": 2,
       "channel": "Please help Ultra Survive"
-    },
-    {
-      "id": "1370482379394777149",
-      "content": "是的，感谢你的分享~制作组经常把这些文字当做装饰物塞在背景上",
-      "author": "silverstream_s",
-      "reactions": 1,
-      "channel": "游戏美术资源上的文字"
-    },
-    {
-      "id": "1370412332643258388",
-      "content": "你要加三回合冷卻🤓 🤓",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～活动福利篇"
-    },
-    {
-      "id": "1370261405550383174",
-      "content": "exalt or overexalt only discard 1 times . That why Prepare only proc 1 . Aftersh",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」Corposant Overexalt Lightning Retribution Bug?"
-    },
-    {
-      "id": "1370437118710775819",
-      "content": "thank you for the clarification <:processing:1357185814567718963>",
-      "author": "reya.li",
-      "reactions": 1,
-      "channel": "✅「Answered」Corposant Overexalt Lightning Retribution Bug?"
-    },
-    {
-      "id": "1370365801747710045",
-      "content": "Thats cool buddy",
-      "author": "junakaru4ever",
-      "reactions": 1,
-      "channel": "✅「Answered」Permission of image use for planner app"
-    },
-    {
-      "id": "1370312994319503370",
-      "content": "已定位到問題，正在嘗試修復🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」新角劇情第二章BGM怪怪的"
-    },
-    {
-      "id": "1370283091054301349",
-      "content": "您好，問題已與5月7日修復🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」讚的"
     }
   ]
 }

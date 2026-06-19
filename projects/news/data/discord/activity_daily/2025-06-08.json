@@ -1,10 +1,24 @@
 {
   "date": "2025-06-08",
-  "messages": 68,
-  "unique_authors": 8,
-  "reactions_total": 43,
-  "attachments": 10,
+  "messages": 8042,
+  "unique_authors": 217,
+  "reactions_total": 855,
+  "attachments": 389,
   "channel_activity": {
+    "🔸綜合討論": 853,
+    "🔸morimens-game-chat": 5628,
+    "🔸课间休息闲聊": 6,
+    "🔸한국어-채팅방": 70,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 8,
+    "🔸phòng-chat-tiếng-việt": 37,
+    "🔸canal-español": 141,
+    "🔸canal-português": 146,
+    "🔸ruang-obrolan-indonesia": 131,
+    "🔸ห้องสนทนาภาษาไทย": 186,
+    "🔸traphase": 94,
+    "🔸lore-chat": 672,
+    "🔸lets-count": 1,
     "✅「已回答」魔女寬簷帽": 1,
     "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
     "✅「Answered」Losing 1st posse": 3,
@@ -16,22 +30,34 @@
     "小水母生贺": 1
   },
   "hourly_activity": {
-    "6": 10,
-    "5": 3,
-    "2": 2,
-    "13": 2,
-    "7": 4,
-    "1": 3,
-    "11": 3,
-    "15": 21,
-    "16": 17,
-    "17": 1,
-    "23": 1,
-    "22": 1
+    "0": 132,
+    "1": 369,
+    "2": 134,
+    "3": 176,
+    "5": 263,
+    "6": 164,
+    "7": 149,
+    "8": 259,
+    "9": 301,
+    "10": 152,
+    "11": 175,
+    "12": 303,
+    "13": 728,
+    "14": 1241,
+    "15": 756,
+    "16": 341,
+    "17": 297,
+    "18": 232,
+    "19": 85,
+    "22": 482,
+    "23": 232,
+    "4": 372,
+    "20": 316,
+    "21": 383
   },
   "message_types": {
-    "0": 9,
-    "4": 1
+    "0": 6096,
+    "19": 1878
   },
   "top_reacted_messages": [
     {
@@ -42,6 +68,30 @@
       "channel": "利莫里亞沙丁魚罐頭"
     },
     {
+      "id": "1381299182521811016",
+      "channel_id": "1131839817982947429",
+      "content": "会想办法的。很抱歉这次想给大家更多可以收获的但考虑不周也带来了更多压力。",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381250742072901733",
+      "channel_id": "1170692781216378960",
+      "content": "Chat is this good",
+      "author": "mededwa",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381250875644973176",
+      "channel_id": "1170692781216378960",
+      "content": "ok back to back xdd",
+      "author": "mededwa",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1381305893903143023",
       "content": "想起来这还没发",
       "author": "gualu_.",
@@ -49,39 +99,124 @@
       "channel": "小水母生贺"
     },
     {
-      "id": "1381237824283480154",
-      "content": "黑白色很像老電影給你們看一下（",
-      "author": "yolo_mode",
-      "reactions": 3,
-      "channel": "利莫里亞沙丁魚罐頭"
+      "id": "1381246821099110623",
+      "channel_id": "1170692781216378960",
+      "content": "Anyways",
+      "author": "melwyn7591",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1381259230702600333",
+      "id": "1381238159341256745",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "darkerkuro",
-      "reactions": 1,
-      "channel": "💭「Processing」Untranslated Castor skill in TH ver."
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1381161042561732660",
-      "content": "我覺得也是，所以現在的重點是哪張臉符合他的氣質+跟萊克cp 搞起來賞心悅目（乾",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "id": "1381211266084769834",
+      "channel_id": "1170692781216378960",
+      "content": "it has begun out with flares and in with the new",
+      "author": "imdipset",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1381308024932794408",
-      "content": "🥺 會畫畫很厲害的",
-      "author": "yun_lai_yi_meng_32",
-      "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "id": "1381237134270140456",
+      "channel_id": "1170692781216378960",
+      "content": "tip: octopus gives other one of its tentacle to ■■■, so basically you were doing",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1381400828211892295",
-      "content": "受不了這破爛的網路<:cry2:1356068126894194758>",
-      "author": "yun_lai_yi_meng_32",
-      "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "id": "1381246943434506432",
+      "channel_id": "1170692781216378960",
+      "content": "Lmao these are expensive af",
+      "author": "melwyn7591",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381339212351017000",
+      "channel_id": "1170692781216378960",
+      "content": "i decided to pull castor banner for fun",
+      "author": "warmechanic",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381271897722851338",
+      "channel_id": "1131839817982947429",
+      "content": "有种||有学者用“苟”“勾”“构”概括三种人生态度:苟且偷生，勾画蓝图，构建未来。\n从苟到构，一定要勾吗?请你以“苟勾构，出发喽”写一篇文章。||的美",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381138958544797766",
+      "channel_id": "1170692781216378960",
+      "content": "\"hmph since this bug inconvenienced you heres 100 dusts, next time dont go doing",
+      "author": "undeterredhomo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381281119185666228",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/morimens-murphy-irish-irish-princess-gacha-gif-4210723630",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381270084315779112",
+      "channel_id": "1131839817982947429",
+      "content": "~~有没有可能等萌新从头推到星辰篇，尖塔2就出了~~",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381270572809588900",
+      "channel_id": "1131839817982947429",
+      "content": "||•珠子都被塞進小貓裡了||",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381325146182390070",
+      "channel_id": "1131839817982947429",
+      "content": "~~打完20场已经看不见活动了只想退出游戏~~",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381328695171743936",
+      "channel_id": "1131839817982947429",
+      "content": "多型態的王應該有七隻了吧\n海德拉、聖嬰、母樹、雙子、眼球、熔朵、超維蛹\n2周年活動七關就打這七隻",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1381115414678868018",
+      "channel_id": "1170692781216378960",
+      "content": "Hm",
+      "author": "dominica_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381216832383483947",
+      "channel_id": "1170692781216378960",
+      "content": "FINALLY GOT CASTOR AFTER LOSINH TO TINCT AND CASIAH, got jenkin to i guess",
+      "author": "forsmile0",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-05-27",
-  "messages": 111,
-  "unique_authors": 18,
-  "reactions_total": 58,
-  "attachments": 16,
+  "messages": 753,
+  "unique_authors": 50,
+  "reactions_total": 133,
+  "attachments": 60,
   "channel_activity": {
+    "🔸綜合討論": 642,
     "aomi’s morimens dump": 1,
     "Helot - Catena": 1,
     "New Beginner video for players joining during Half Anni.": 1,
@@ -42,26 +43,31 @@
     "弥萨格校友号码本4.0": 3
   },
   "hourly_activity": {
-    "8": 3,
-    "23": 4,
-    "15": 2,
-    "3": 7,
-    "7": 27,
-    "13": 5,
-    "9": 3,
-    "1": 1,
-    "5": 10,
-    "10": 17,
-    "11": 3,
-    "12": 4,
-    "4": 7,
-    "14": 2,
-    "6": 15,
-    "22": 1
+    "0": 2,
+    "1": 32,
+    "2": 18,
+    "3": 23,
+    "4": 36,
+    "5": 49,
+    "6": 33,
+    "7": 113,
+    "8": 27,
+    "9": 13,
+    "10": 39,
+    "11": 9,
+    "12": 173,
+    "13": 14,
+    "14": 42,
+    "15": 32,
+    "16": 57,
+    "17": 31,
+    "18": 1,
+    "22": 4,
+    "23": 5
   },
   "message_types": {
-    "0": 34,
-    "19": 6
+    "0": 524,
+    "19": 118
   },
   "top_reacted_messages": [
     {
@@ -77,6 +83,14 @@
       "author": "rain_scarlet",
       "reactions": 7,
       "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1376885497485328445",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1376842250125971547",
@@ -107,6 +121,94 @@
       "channel": "💭「處理中」塔薇放功了"
     },
     {
+      "id": "1376824617104052265",
+      "channel_id": "1131839817982947429",
+      "content": "為了雙滿 SP墨菲 我不能被欺騙",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376825092931190805",
+      "channel_id": "1131839817982947429",
+      "content": "不敢丟😂",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1377056913665294408",
+      "channel_id": "1131839817982947429",
+      "content": "一早看到這個也給太多了吧11000 WoW",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376793392004202607",
+      "channel_id": "1131839817982947429",
+      "content": "哪像我天天玩，夜夜玩",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376825826389266523",
+      "channel_id": "1131839817982947429",
+      "content": "我4个池都抽",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376830352441475073",
+      "channel_id": "1131839817982947429",
+      "content": "一样",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376952859123253259",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376827964670349393",
+      "channel_id": "1131839817982947429",
+      "content": "我沒",
+      "author": "0.0._.0_0.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376835701710000190",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376945004311744583",
+      "channel_id": "1131839817982947429",
+      "content": "h2-12也肘完了<:24_clown:1374289675417686016>",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376958415405973634",
+      "channel_id": "1131839817982947429",
+      "content": "90级角色又不是大佬的表现，再说我的星辰篇困难王关都是百洛晓帮我打的",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1376869443321466922",
       "content": "hh其实老东西打的也很累，虽然能通关但是真的很需要减负扫荡……新人我都不敢想，这活动就是对新人很不友好",
       "author": "nowimfaceless",
@@ -119,69 +221,6 @@
       "author": "muliupan",
       "reactions": 2,
       "channel": "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了"
-    },
-    {
-      "id": "1376758997713162380",
-      "content": "本來就很爛了\n\n經歷昨天刷活動\n助戰更亂了\n\n今天打血希活動 刷新不到常借的那位\n\n像是可以增加搜尋喚醒體或是其UID/名字\n\n<:cry2:135606812",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "助戰求優化"
-    },
-    {
-      "id": "1376773565701165186",
-      "content": "Hi, a friend of mine started playing the game today during the current event and",
-      "author": "kaanny",
-      "reactions": 2,
-      "channel": "✅「Answered」Bug locks you into first pulls instruction"
-    },
-    {
-      "id": "1377059641703534694",
-      "content": "20 times a day is a lot of time to put in front of players, I know no one is for",
-      "author": "foxblood13",
-      "reactions": 2,
-      "channel": "1.5 Event Grind"
-    },
-    {
-      "id": "1376896560972955711",
-      "content": "<:24_clown:1374289675417686016>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
-    },
-    {
-      "id": "1377061906795331704",
-      "content": "<@&1166257943742787615> \n<@1131790839291596841>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "💭「Processing」Aliemus text bug"
-    },
-    {
-      "id": "1376816299346362438",
-      "content": "Very sorry, the issue is due to an English translation error in the card pool de",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Misleading or wrong information in Kaleido banner"
-    },
-    {
-      "id": "1376809007057993728",
-      "content": "I will investigate the situation and give you a response once I have results~🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Bug in card descriptions."
-    },
-    {
-      "id": "1376804013659652146",
-      "content": "Hi~Please take a look at the description in the announcement🫶 \nThe English descr",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug - cannot claim skin ticket after 20 fights"
-    },
-    {
-      "id": "1376776886256140420",
-      "content": "100445763",
-      "author": "universe.dark",
-      "reactions": 1,
-      "channel": "弥萨格校友号码本4.0"
     }
   ]
 }

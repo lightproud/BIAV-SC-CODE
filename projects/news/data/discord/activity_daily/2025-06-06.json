@@ -1,10 +1,25 @@
 {
   "date": "2025-06-06",
-  "messages": 90,
-  "unique_authors": 11,
-  "reactions_total": 24,
-  "attachments": 18,
+  "messages": 10610,
+  "unique_authors": 260,
+  "reactions_total": 1486,
+  "attachments": 389,
   "channel_activity": {
+    "🔸綜合討論": 553,
+    "🔸morimens-game-chat": 8462,
+    "🔸剧情交流": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 59,
+    "🔸русский-канал": 16,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 138,
+    "🔸canal-português": 925,
+    "🔸ruang-obrolan-indonesia": 172,
+    "🔸ห้องสนทนาภาษาไทย": 113,
+    "🔸traphase": 52,
     "🎊官周通販：淘寶全球可購！": 19,
     "V2.2.2.6 在線維護公告": 11,
     "伺服器網路波動公告": 2,
@@ -22,28 +37,180 @@
     "趕快趁我還神智不清的時候": 2
   },
   "hourly_activity": {
-    "2": 20,
-    "3": 3,
-    "8": 15,
-    "9": 4,
-    "10": 1,
-    "11": 9,
-    "13": 3,
-    "12": 5,
-    "1": 5,
-    "23": 9,
-    "7": 10,
-    "14": 2,
-    "15": 1,
-    "0": 1,
-    "20": 1,
-    "18": 1
+    "0": 767,
+    "1": 663,
+    "2": 420,
+    "3": 324,
+    "4": 400,
+    "5": 237,
+    "6": 331,
+    "7": 303,
+    "8": 345,
+    "9": 423,
+    "10": 656,
+    "11": 708,
+    "12": 419,
+    "13": 499,
+    "14": 414,
+    "15": 824,
+    "16": 321,
+    "17": 649,
+    "18": 578,
+    "19": 254,
+    "20": 398,
+    "21": 75,
+    "22": 191,
+    "23": 411
   },
   "message_types": {
-    "19": 1,
-    "0": 18
+    "0": 7971,
+    "19": 2549
   },
   "top_reacted_messages": [
+    {
+      "id": "1380347983765180568",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone We have preliminarily identified unavoidable technical issues affectin",
+      "author": "game.producer.light",
+      "reactions": 203,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380348034503807096",
+      "channel_id": "1170692781216378960",
+      "content": "stop pinging everyone",
+      "author": "eatcakey",
+      "reactions": 34,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380339315074269232",
+      "channel_id": "1170692781216378960",
+      "content": "We apologize, our server is currently being checked!",
+      "author": "game.producer.light",
+      "reactions": 27,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380343297788215518",
+      "channel_id": "1170692781216378960",
+      "content": "We've just attempted to restore server services, so please try again to see if e",
+      "author": "game.producer.light",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380348327735857282",
+      "channel_id": "1170692781216378960",
+      "content": "your welcome guys, I sabotaged their servers so we can get free pulls",
+      "author": "insidecamp",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380568966182862939",
+      "channel_id": "1170692781216378960",
+      "content": "Yo I pulled gelot, is she good, what team to build her with",
+      "author": "rain_scarlet",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380488860336914506",
+      "channel_id": "1170692781216378960",
+      "content": "if its a Girl I'll name her Paimon",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380489372914286602",
+      "channel_id": "1170692781216378960",
+      "content": "i kinda wished there was more slice of life or silly moments with the keeper, i ",
+      "author": "nyctno",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380556951838130229",
+      "channel_id": "1170692781216378960",
+      "content": "If we bitch hard enough, maybe",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380568142660505733",
+      "channel_id": "1170692781216378960",
+      "content": "yall freaks",
+      "author": "phi_squared",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380621677020450877",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380628714441805906",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380485756312883280",
+      "channel_id": "1170692781216378960",
+      "content": "goliath makes sure theres no bed",
+      "author": "itsmemiki",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380493113507713085",
+      "channel_id": "1170692781216378960",
+      "content": "We really need G francis",
+      "author": "rain_scarlet",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380568613458542653",
+      "channel_id": "1170692781216378960",
+      "content": "the promo art goes so hard too",
+      "author": "meatyexplosions",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380569188170469598",
+      "channel_id": "1170692781216378960",
+      "content": "bro looking like he's having the hardest shit of his life",
+      "author": "khykken",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380570317487083601",
+      "channel_id": "1170692781216378960",
+      "content": "You guys are so welcome i complained about menophin when reporting bug XD",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380622215485325455",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1380457848533946398",
       "content": "<@1213364721328332840> <@1334599963077771266> <@214749389632176129><@27822409797",
@@ -52,53 +219,12 @@
       "channel": "🎊官周通販：淘寶全球可購！"
     },
     {
-      "id": "1380355838341808191",
-      "content": "Server Network Fluctuations Announcement\n\nKeeper, \n    We are very sorry that st",
-      "author": "morimensstaff02",
-      "reactions": 5,
-      "channel": "伺服器網路波動公告"
-    },
-    {
-      "id": "1380364473247731742",
-      "content": "如图，只有一种材料吃到了加成，另一种材料没吃到加成",
-      "author": "lurenjiao",
-      "reactions": 3,
-      "channel": "✅「已回答」鸟人活动bug"
-    },
-    {
-      "id": "1380455092016119859",
-      "content": "",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "✅「已回答」畸變+鎖鏈=2畸變?"
-    },
-    {
-      "id": "1380549461620690954",
-      "content": "目前混沌第二次鑰令新增了雙發鑰令\n但出現了一個問題就是會把全部雙發鑰令清空\n用拉蒙娜超限以及24抑鬱所獲得的兩層雙發鑰令開鑰令時應該為消耗一層\n但釋放混沌的第二",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "💭「處理中」關於雙發鑰令"
-    },
-    {
-      "id": "1380372344874340402",
-      "content": "中獎名單將在轉發活動結束後72小時內公布哩，戈雅今天庫庫搞完！<:please:1356053110375714817>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🎊官周通販：淘寶全球可購！"
-    },
-    {
-      "id": "1380689251989196831",
-      "content": "",
-      "author": "lumato",
-      "reactions": 1,
-      "channel": "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\""
-    },
-    {
-      "id": "1380376297082978434",
-      "content": "🫂 🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Please make animated backgrounds be able to be turned off. 請提供關閉動畫背景的選項。"
+      "id": "1380348666706923520",
+      "channel_id": "1170692781216378960",
+      "content": "even elden ring got hit",
+      "author": "shiyon_chan",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

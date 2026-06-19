@@ -1,10 +1,23 @@
 {
   "date": "2025-06-25",
-  "messages": 105,
-  "unique_authors": 28,
-  "reactions_total": 141,
-  "attachments": 12,
+  "messages": 7303,
+  "unique_authors": 196,
+  "reactions_total": 874,
+  "attachments": 302,
   "channel_activity": {
+    "🔸綜合討論": 363,
+    "🔸morimens-game-chat": 4995,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 33,
+    "🔸deutscher-chatraum": 14,
+    "🔸chaîne-française": 5,
+    "🔸phòng-chat-tiếng-việt": 533,
+    "🔸canal-español": 559,
+    "🔸canal-português": 218,
+    "🔸ruang-obrolan-indonesia": 144,
+    "🔸ห้องสนทนาภาษาไทย": 201,
+    "🔸traphase": 19,
+    "🔸lore-chat": 103,
     "A24 fan art": 4,
     "He surely did nothing (might art dump here)": 2,
     "I like her and wish she'll have a playable form...": 1,
@@ -24,25 +37,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "11": 4,
-    "12": 3,
-    "14": 5,
-    "15": 6,
-    "7": 17,
-    "0": 1,
-    "2": 5,
-    "3": 7,
-    "6": 1,
-    "9": 4,
-    "10": 3,
-    "8": 46,
-    "13": 1,
-    "5": 2
+    "1": 180,
+    "3": 42,
+    "4": 114,
+    "5": 106,
+    "6": 112,
+    "7": 511,
+    "8": 832,
+    "9": 462,
+    "10": 416,
+    "11": 235,
+    "12": 425,
+    "13": 205,
+    "14": 309,
+    "15": 731,
+    "16": 546,
+    "17": 478,
+    "18": 268,
+    "23": 176,
+    "0": 222,
+    "2": 171,
+    "19": 192,
+    "20": 186,
+    "21": 290,
+    "22": 94
   },
   "message_types": {
-    "0": 68,
-    "4": 1,
-    "19": 12
+    "0": 5518,
+    "19": 1680
   },
   "top_reacted_messages": [
     {
@@ -74,11 +96,59 @@
       "channel": "圣母怜子……"
     },
     {
+      "id": "1387457302570860705",
+      "channel_id": "1131839817982947429",
+      "content": "汪",
+      "author": "ahuahuahua",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1387336969876410378",
       "content": "Sarah is very cute!",
       "author": "yonagoda",
       "reactions": 11,
       "channel": "I like her and wish she'll have a playable form..."
+    },
+    {
+      "id": "1387408148180238478",
+      "channel_id": "1170692781216378960",
+      "content": "I no longer only have 1 caro",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387444626788450354",
+      "channel_id": "1170692781216378960",
+      "content": "I have clear chap 7",
+      "author": "asakuraenko",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387237230787039382",
+      "channel_id": "1170692781216378960",
+      "content": "YO ok..",
+      "author": "aslechi",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387238300825161728",
+      "channel_id": "1170692781216378960",
+      "content": "🐕‍🦺",
+      "author": "aslechi",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387406890647949363",
+      "channel_id": "1170692781216378960",
+      "content": "90 pulls into 2 giant's blade for +13 wasted",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1387449555250970715",
@@ -88,88 +158,68 @@
       "channel": "He surely did nothing (might art dump here)"
     },
     {
-      "id": "1387319113076183101",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 4,
-      "channel": "V2.2.3預告：特別幻衣活動┊V2.2.3 Preview: Awakener Skins Event"
+      "id": "1387477308998156309",
+      "channel_id": "1170692781216378960",
+      "content": "Let's start doomposting again.\neos in a year!",
+      "author": "mengluo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1387341593408835685",
-      "content": "这轮赌下去，我下轮新角就没法超限了<:24_clown:1374289675417686016>",
-      "author": "cs001092",
-      "reactions": 4,
-      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
-    },
-    {
-      "id": "1387404946818859139",
-      "content": "I love the colours and the composition! Amazing work<:cute1:1356053053568192717>",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "A24 fan art"
-    },
-    {
-      "id": "1387439375737950278",
-      "content": "Very beautiful",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "A24 fan art"
-    },
-    {
-      "id": "1387339237237719172",
-      "content": "這個混沌池對新手很好欸||~~不要抽到莉莉的話~~||",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
-    },
-    {
-      "id": "1387354786877280308",
-      "content": "催催游戏内请柬头像更新啦，谢谢戈雅！<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1387460326789742614",
-      "content": "Woah! I love it",
-      "author": "yonagoda",
-      "reactions": 1,
-      "channel": "A24 fan art"
-    },
-    {
-      "id": "1387353781553070111",
-      "content": "<@707595366513639425>沒收到訊息嗎？辛苦你把收件信息私信給我🌹",
+      "id": "1387355806328033352",
+      "channel_id": "1170692781216378960",
+      "content": "I kicked this advertising account out of the channel a few days ago, and when I ",
       "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🎊官周通販：淘寶全球可購！"
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1387354739938820249",
-      "content": "好，那我晚上傳，謝謝戈雅<:pray:1356053116260454534>",
-      "author": "xu6_",
-      "reactions": 1,
-      "channel": "🎊官周通販：淘寶全球可購！"
+      "id": "1387406158704410714",
+      "channel_id": "1170692781216378960",
+      "content": "Same as me, let's hope it's the next pull",
+      "author": "iibenigml1588",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1387266909778612314",
-      "content": "🙏 🌹",
+      "id": "1387406877465251983",
+      "channel_id": "1170692781216378960",
+      "content": "Pandia and nymph wheel",
+      "author": "melwyn7591",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387356963113013390",
+      "channel_id": "1300659436804640788",
+      "content": "この広告アカウントは先日チャンネルから蹴り出しましたが、ホームページを見たばかりでチャンネルにも入っていません、おかしいです\n私はすでにDCプラットフォームでこ",
       "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」UI bug (0/1 Hidden silver not appearing on some stages)"
+      "reactions": 6,
+      "channel": "🔸日本語チャンネル"
     },
     {
-      "id": "1387274640681996388",
-      "content": "Hello, Keeper! Thank you for letting us know. I have double checked with the com",
-      "author": "morimens_15",
-      "reactions": 1,
-      "channel": "Traphase inaccurate descriptions for Derison of Destiny and Wheel Unseen (Conceal)"
-    },
-    {
-      "id": "1387446703711453225",
+      "id": "1387465355814895627",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
+      "author": "rain_scarlet",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1387327492213178428",
+      "channel_id": "1170692781216378960",
+      "content": "Recommendations for the blanks",
+      "author": "shadowemperor7636",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1387437984663601314",
+      "channel_id": "1170692781216378960",
+      "content": "Ready for doereson <:point:1356053112292511815> unlike some of you",
+      "author": "mount_fisherman",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

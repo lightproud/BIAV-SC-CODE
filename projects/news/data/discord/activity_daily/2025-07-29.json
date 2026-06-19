@@ -1,10 +1,13 @@
 {
   "date": "2025-07-29",
-  "messages": 12229,
+  "messages": 12638,
   "unique_authors": 329,
-  "reactions_total": 953,
-  "attachments": 818,
+  "reactions_total": 999,
+  "attachments": 847,
   "channel_activity": {
+    "🔸lore-chat": 405,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 1,
     "🔸morimens-game-chat": 8467,
     "🔸剧情交流": 36,
     "🔸晒卡分享": 2,
@@ -51,34 +54,34 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
-    "0": 598,
-    "1": 445,
-    "2": 642,
-    "3": 321,
-    "4": 496,
-    "5": 697,
-    "6": 512,
-    "7": 534,
-    "8": 301,
-    "9": 402,
-    "10": 407,
-    "11": 487,
-    "12": 387,
-    "13": 762,
-    "14": 415,
-    "15": 535,
-    "16": 344,
+    "0": 600,
+    "1": 452,
+    "2": 663,
+    "3": 337,
+    "4": 499,
+    "5": 703,
+    "6": 513,
+    "7": 543,
+    "8": 316,
+    "9": 430,
+    "10": 443,
+    "11": 505,
+    "12": 396,
+    "13": 801,
+    "14": 526,
+    "15": 560,
+    "16": 406,
+    "21": 539,
     "17": 736,
     "18": 587,
     "19": 333,
     "20": 499,
-    "21": 538,
     "22": 667,
     "23": 584
   },
   "message_types": {
-    "0": 7519,
-    "19": 3476
+    "19": 99,
+    "0": 310
   },
   "top_reacted_messages": [
     {
@@ -110,6 +113,14 @@
       "author": "flares117",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399705838150750228",
+      "channel_id": "1326453763355185215",
+      "content": "Doresain in lore: Necrovia Tawil\nDoresain in gameplay: Another Caro Assault that",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1399747174161453176",
@@ -207,6 +218,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1399578337512394753",
+      "channel_id": "1326453763355185215",
+      "content": "omfg gkjdsnglxjknrodug",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1399569575259144362",
       "channel_id": "1170692781216378960",
       "content": "Nope, this guy beat up kids while they have less rights than him",
@@ -221,22 +240,6 @@
       "author": "aurora3981",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399862936507257084",
-      "channel_id": "1170692781216378960",
-      "content": "90 pulls finally got thais 🥲",
-      "author": "catcrox",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1399600836652437737",
-      "channel_id": "1173463482503536711",
-      "content": "||以及为什么王关剧情是回合制叠战力\n杜勒：帷幕 蹈海者：拆了\n杜勒：拆的是假的 蹈海者：原地拼好人\n杜勒：收米过来叠个buff 蹈海者：不知道从海里挖了个啥出",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "🔸剧情交流"
     }
   ]
 }

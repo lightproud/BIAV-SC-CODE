@@ -1,10 +1,11 @@
 {
   "date": "2025-05-11",
-  "messages": 57,
-  "unique_authors": 7,
-  "reactions_total": 40,
-  "attachments": 96,
+  "messages": 380,
+  "unique_authors": 33,
+  "reactions_total": 49,
+  "attachments": 115,
   "channel_activity": {
+    "🔸綜合討論": 323,
     "Old D-Tide Leaderboards": 14,
     "D-Tide Leaderboard (2025 May 11)": 2,
     "Design References to the Cthulhu Mythos": 1,
@@ -23,22 +24,33 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
+    "0": 20,
+    "2": 2,
+    "3": 5,
+    "4": 7,
+    "5": 62,
+    "6": 16,
+    "7": 49,
+    "8": 19,
+    "9": 30,
+    "10": 29,
+    "11": 22,
+    "12": 12,
+    "13": 2,
+    "14": 13,
+    "15": 8,
+    "19": 1,
+    "20": 4,
+    "21": 8,
+    "22": 5,
+    "23": 33,
     "17": 9,
     "18": 13,
-    "14": 2,
-    "7": 2,
-    "13": 1,
-    "21": 1,
-    "9": 7,
-    "15": 1,
-    "22": 2,
-    "10": 6,
-    "16": 11,
-    "23": 2
+    "16": 11
   },
   "message_types": {
-    "0": 17,
-    "4": 2
+    "0": 271,
+    "19": 52
   },
   "top_reacted_messages": [
     {
@@ -63,6 +75,14 @@
       "channel": ""
     },
     {
+      "id": "1371086024792342568",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1371136004261679266",
       "content": "Wave 1",
       "author": "willsalvador",
@@ -70,11 +90,43 @@
       "channel": "D-Tide Leaderboard (2025 May 11)"
     },
     {
+      "id": "1371047950393802873",
+      "channel_id": "1131839817982947429",
+      "content": "上来丢个80级24\n（潜水",
+      "author": "ling_an_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1371070122357297192",
       "content": "圖一是當前凱刻斯體質，3啟在回合結束時回體質×7.5%的生命值，也就是圖二計算出來的約15血。\n圖三是我的靈塑等級，體質增加18%，理論上應該要能回復圖四計算出",
       "author": "ernest_heart",
       "reactions": 2,
       "channel": "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血"
+    },
+    {
+      "id": "1370953596094386217",
+      "channel_id": "1131839817982947429",
+      "content": "打牌不如打ㄆ",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370991871974965258",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "nahida._90",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371063176262848572",
+      "channel_id": "1131839817982947429",
+      "content": "然后环拉是平行世界的拉蒙娜？",
+      "author": "gyx_2829",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1371180695074111619",
