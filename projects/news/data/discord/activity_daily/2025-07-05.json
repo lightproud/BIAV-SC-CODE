@@ -1,10 +1,22 @@
 {
   "date": "2025-07-05",
-  "messages": 5972,
+  "messages": 7448,
   "unique_authors": 196,
-  "reactions_total": 656,
-  "attachments": 408,
+  "reactions_total": 690,
+  "attachments": 468,
   "channel_activity": {
+    "🔸晒卡分享": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 4,
+    "🔸deutscher-chatraum": 9,
+    "🔸русский-канал": 28,
+    "🔸phòng-chat-tiếng-việt": 127,
+    "🔸canal-español": 34,
+    "🔸canal-português": 886,
+    "🔸ruang-obrolan-indonesia": 202,
+    "🔸ห้องสนทนาภาษาไทย": 76,
+    "🔸traphase": 36,
+    "🔸lore-chat": 71,
     "🔸綜合討論": 187,
     "🔸morimens-game-chat": 5772,
     "My Morimens Gallery": 1,
@@ -13,34 +25,34 @@
     "《雙人舞》": 2
   },
   "hourly_activity": {
-    "1": 383,
-    "4": 365,
-    "5": 189,
-    "6": 207,
-    "7": 145,
-    "9": 170,
-    "10": 136,
-    "12": 199,
-    "13": 281,
-    "14": 375,
-    "15": 288,
-    "17": 139,
-    "0": 238,
-    "2": 211,
-    "3": 243,
-    "8": 342,
-    "11": 86,
-    "16": 215,
-    "18": 368,
-    "19": 319,
-    "20": 272,
-    "21": 368,
-    "22": 359,
-    "23": 74
+    "13": 320,
+    "3": 478,
+    "12": 302,
+    "6": 252,
+    "9": 189,
+    "1": 573,
+    "14": 402,
+    "15": 399,
+    "16": 260,
+    "23": 84,
+    "2": 541,
+    "4": 422,
+    "5": 210,
+    "17": 150,
+    "0": 257,
+    "10": 162,
+    "11": 99,
+    "18": 426,
+    "20": 276,
+    "7": 211,
+    "8": 381,
+    "19": 323,
+    "22": 360,
+    "21": 371
   },
   "message_types": {
-    "0": 3936,
-    "19": 2023
+    "0": 1144,
+    "19": 332
   },
   "top_reacted_messages": [
     {
@@ -134,6 +146,14 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
+      "id": "1391053580735090688",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ioshift_24740",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1391194364998582393",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -185,14 +205,6 @@
       "channel_id": "1170692781216378960",
       "content": "holy moly this is expensive",
       "author": "gardrobe10",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1391022846884446229",
-      "channel_id": "1170692781216378960",
-      "content": "Yeah.... update here uuuuuuh I don't know how to explain this emotional rollerco",
-      "author": "mrs.doodoo",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

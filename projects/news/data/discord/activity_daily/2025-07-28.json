@@ -1,10 +1,22 @@
 {
   "date": "2025-07-28",
-  "messages": 1775,
-  "unique_authors": 46,
-  "reactions_total": 281,
-  "attachments": 78,
+  "messages": 17142,
+  "unique_authors": 379,
+  "reactions_total": 1813,
+  "attachments": 1010,
   "channel_activity": {
+    "🔸morimens-game-chat": 12131,
+    "🔸晒卡分享": 4,
+    "🔸课间休息闲聊": 11,
+    "🔸한국어-채팅방": 416,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 784,
+    "🔸phòng-chat-tiếng-việt": 87,
+    "🔸canal-español": 525,
+    "🔸canal-português": 579,
+    "🔸ruang-obrolan-indonesia": 290,
+    "🔸ห้องสนทนาภาษาไทย": 317,
+    "🔸traphase": 212,
     "🔸綜合討論": 1659,
     "Modern AU Goliath": 2,
     "just thinking what to eat for the next meal": 1,
@@ -42,34 +54,45 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 10,
-    "1": 59,
-    "2": 101,
-    "3": 145,
-    "4": 37,
-    "5": 85,
-    "6": 62,
-    "7": 40,
-    "8": 84,
-    "9": 18,
-    "10": 276,
-    "11": 268,
-    "12": 127,
-    "13": 96,
-    "14": 54,
-    "15": 99,
-    "16": 155,
-    "17": 15,
-    "18": 31,
-    "19": 7,
-    "20": 5,
-    "21": 1
+    "0": 766,
+    "1": 929,
+    "2": 966,
+    "3": 814,
+    "4": 747,
+    "5": 693,
+    "6": 699,
+    "7": 691,
+    "8": 631,
+    "9": 457,
+    "10": 705,
+    "11": 1070,
+    "12": 802,
+    "13": 692,
+    "14": 798,
+    "15": 931,
+    "16": 722,
+    "17": 554,
+    "18": 520,
+    "19": 406,
+    "20": 578,
+    "21": 590,
+    "22": 679,
+    "23": 702
   },
   "message_types": {
-    "0": 1424,
-    "19": 235
+    "0": 9621,
+    "19": 5745,
+    "18": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1399210599111725128",
+      "channel_id": "1170692781216378960",
+      "content": "Hello Keepers! Sorry, some of the localization fixes that were supposed to be re",
+      "author": "morimens_15",
+      "reactions": 78,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1399283287368794132",
       "content": "Ok I usually post in CN fan art channel, but I like this one so I want to post i",
@@ -99,6 +122,62 @@
       "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
     },
     {
+      "id": "1399197346088353923",
+      "channel_id": "1170692781216378960",
+      "content": "omg  I feel like quitting",
+      "author": "drunk.biscuit",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399269422761381888",
+      "channel_id": "1170692781216378960",
+      "content": "okay I am free yay",
+      "author": "phonytail",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399513134074429571",
+      "channel_id": "1170692781216378960",
+      "content": "The Ratmobile",
+      "author": "fischperch",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399211374550188213",
+      "channel_id": "1170692781216378960",
+      "content": "Alright hit OE thais",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399358699293638696",
+      "channel_id": "1170692781216378960",
+      "content": "Boys we did it we got 2k concurrent",
+      "author": "thecrimesivecommitted",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399362459541831721",
+      "channel_id": "1170692781216378960",
+      "content": "i am thaired of this",
+      "author": "drunk.biscuit",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399398563712073809",
+      "channel_id": "1170692781216378960",
+      "content": "LMFAO k*nky is banned",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399386833246490695",
       "channel_id": "1131839817982947429",
       "content": "<@557599119401811978> <@883992032530563082>",
@@ -114,115 +193,52 @@
       "channel": "just thinking what to eat for the next meal"
     },
     {
-      "id": "1399257667402465435",
-      "channel_id": "1131839817982947429",
-      "content": "現在我也是有+12虔誠的上等人了",
+      "id": "1399189408372228156",
+      "channel_id": "1170692781216378960",
+      "content": "So far, this is like the most generous gacha I've seen?",
+      "author": "whitehorn_montellas",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399215105614544957",
+      "channel_id": "1170692781216378960",
+      "content": "sounds like a personal problem, i hope your struggles with such things can end i",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399250160520790016",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "gardrobe10",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399328075438624819",
+      "channel_id": "1170692781216378960",
+      "content": "new max hp record \n4.9k",
       "author": "ernest_heart",
       "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399265864653475942",
-      "channel_id": "1131839817982947429",
-      "content": "<:c0f434581f38497d89b0a71d6bf9537f:1357888137233301584>",
-      "author": "xyakoto",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399321124243767429",
-      "channel_id": "1131839817982947429",
-      "content": "群佬除我",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399284478148608040",
-      "content": "听完广播剧我又死了啊啊啊，好爽。杜勒赛因还是那么帅，不过皮克曼吃东西的声音太搞笑了吧（褒义  \n\n是融合了一下我的xp，高马尾+眼镜\n\n还有就是他头上的刀叉，其",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "其实只是在想下一餐该吃什么"
-    },
-    {
-      "id": "1399235344393830525",
-      "channel_id": "1131839817982947429",
-      "content": "我砸了幾百抽兩隻夫人抽不到神父\n交出你的神父",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399258478740111372",
-      "channel_id": "1131839817982947429",
-      "content": "我還他媽溢出一張虔誠",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399327505646616687",
-      "channel_id": "1131839817982947429",
-      "content": "4.9k生命值（",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399366766626344990",
-      "channel_id": "1131839817982947429",
-      "content": "感覺觸傷也沒有高到哪裡去……",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399423992338583615",
-      "channel_id": "1131839817982947429",
-      "content": "一起當囤囤鼠🥹",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399215582594994206",
-      "channel_id": "1131839817982947429",
-      "content": "小號抽個3+3 羊媽噴了300-400流光 我是什麼很賤的人嗎🥺",
-      "author": "taayoui",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399215948178919444",
-      "channel_id": "1131839817982947429",
-      "content": "我血链3个210抽",
-      "author": "sense25.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399239446892908564",
-      "channel_id": "1131839817982947429",
-      "content": "我就有時間啃啃眼睛了",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399385488518807663",
-      "channel_id": "1131839817982947429",
+      "id": "1399396415771512903",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "carme.0588",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "author": "muliupan",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399411215754596524",
-      "channel_id": "1131839817982947429",
-      "content": "我原视就给了栗子三个",
-      "author": "carme.0588",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1399396807254999142",
+      "channel_id": "1170692781216378960",
+      "content": "mods, delete his blade",
+      "author": "mistakendoge",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

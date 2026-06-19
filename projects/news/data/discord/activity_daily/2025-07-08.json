@@ -1,10 +1,22 @@
 {
   "date": "2025-07-08",
-  "messages": 8052,
+  "messages": 10001,
   "unique_authors": 203,
-  "reactions_total": 583,
-  "attachments": 365,
+  "reactions_total": 642,
+  "attachments": 454,
   "channel_activity": {
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 17,
+    "🔸deutscher-chatraum": 19,
+    "🔸русский-канал": 16,
+    "🔸phòng-chat-tiếng-việt": 46,
+    "🔸canal-español": 408,
+    "🔸canal-português": 1117,
+    "🔸ruang-obrolan-indonesia": 73,
+    "🔸ห้องสนทนาภาษาไทย": 27,
+    "🔸traphase": 186,
+    "🔸lore-chat": 34,
     "🔸綜合討論": 104,
     "🔸morimens-game-chat": 7910,
     "My Caecus art": 4,
@@ -19,34 +31,34 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "1": 508,
-    "3": 119,
-    "4": 40,
-    "5": 509,
-    "6": 248,
-    "8": 486,
-    "9": 316,
-    "10": 154,
-    "11": 295,
-    "12": 346,
-    "13": 440,
-    "14": 272,
-    "15": 543,
-    "16": 488,
-    "0": 703,
-    "2": 427,
-    "7": 292,
-    "17": 447,
-    "18": 291,
-    "19": 356,
-    "20": 129,
-    "21": 276,
-    "22": 117,
-    "23": 250
+    "4": 181,
+    "6": 255,
+    "7": 295,
+    "22": 122,
+    "0": 1250,
+    "2": 651,
+    "5": 541,
+    "9": 341,
+    "13": 476,
+    "10": 222,
+    "17": 494,
+    "18": 329,
+    "19": 361,
+    "20": 137,
+    "23": 301,
+    "1": 1035,
+    "11": 351,
+    "12": 361,
+    "3": 127,
+    "14": 333,
+    "15": 558,
+    "16": 503,
+    "21": 291,
+    "8": 486
   },
   "message_types": {
-    "0": 5596,
-    "19": 2418
+    "0": 1492,
+    "19": 457
   },
   "top_reacted_messages": [
     {
@@ -95,6 +107,14 @@
       "author": "annaxxe_",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392138024724332554",
+      "channel_id": "1300659802455674972",
+      "content": "เจอแระ",
+      "author": "ice3564",
+      "reactions": 6,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1392138265871519755",
@@ -168,6 +188,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1392072064680071198",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "satachan",
+      "reactions": 4,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1392090044243906642",
       "channel_id": "1131839817982947429",
       "content": "||打色情自動選字跳蘇俄是三小||",
@@ -188,22 +216,6 @@
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "satachan",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1392113205412892774",
-      "channel_id": "1170692781216378960",
-      "content": "Eventually  you don't read",
-      "author": "flares117",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1392123809829621912",
-      "channel_id": "1170692781216378960",
-      "content": "i bet the guy who flatlined got caught off guard too",
-      "author": "flares117",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }

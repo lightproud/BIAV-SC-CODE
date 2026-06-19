@@ -1,10 +1,25 @@
 {
   "date": "2025-07-29",
-  "messages": 1234,
-  "unique_authors": 42,
-  "reactions_total": 238,
-  "attachments": 110,
+  "messages": 12229,
+  "unique_authors": 329,
+  "reactions_total": 953,
+  "attachments": 818,
   "channel_activity": {
+    "🔸morimens-game-chat": 8467,
+    "🔸剧情交流": 36,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 171,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 466,
+    "🔸phòng-chat-tiếng-việt": 133,
+    "🔸canal-español": 306,
+    "🔸canal-português": 720,
+    "🔸ruang-obrolan-indonesia": 420,
+    "🔸ห้องสนทนาภาษาไทย": 212,
+    "🔸traphase": 44,
     "🔸綜合討論": 1014,
     "Jenkin & Brown card :mouse2:": 3,
     "All stages Arc 2 Ch 3 HM Deathless recap and Scuffed \"Guide\"": 1,
@@ -36,33 +51,34 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
-    "1": 1,
-    "2": 33,
-    "3": 18,
-    "4": 33,
-    "5": 32,
-    "6": 37,
-    "7": 100,
-    "8": 47,
-    "9": 204,
-    "10": 165,
-    "11": 33,
-    "12": 63,
-    "13": 137,
-    "14": 108,
-    "15": 73,
-    "16": 25,
-    "17": 35,
-    "18": 29,
-    "19": 34,
-    "20": 20,
-    "21": 3,
-    "23": 3,
-    "0": 1
+    "0": 598,
+    "1": 445,
+    "2": 642,
+    "3": 321,
+    "4": 496,
+    "5": 697,
+    "6": 512,
+    "7": 534,
+    "8": 301,
+    "9": 402,
+    "10": 407,
+    "11": 487,
+    "12": 387,
+    "13": 762,
+    "14": 415,
+    "15": 535,
+    "16": 344,
+    "17": 736,
+    "18": 587,
+    "19": 333,
+    "20": 499,
+    "21": 538,
+    "22": 667,
+    "23": 584
   },
   "message_types": {
-    "0": 870,
-    "19": 144
+    "0": 7519,
+    "19": 3476
   },
   "top_reacted_messages": [
     {
@@ -80,6 +96,38 @@
       "channel": "Jenkin & Brown card :mouse2:"
     },
     {
+      "id": "1399744112718123146",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "akatora_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399860355177648282",
+      "channel_id": "1170692781216378960",
+      "content": "We voice acted ch 3 story lmao",
+      "author": "flares117",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399747174161453176",
+      "channel_id": "1170692781216378960",
+      "content": "guess what happens next",
+      "author": "sexysneakystoat1625",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399862848158437408",
+      "channel_id": "1170692781216378960",
+      "content": "IM BROKE",
+      "author": "iv_dog",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399781580989268008",
       "channel_id": "1131839817982947429",
       "content": "肘完了<:pray:1356053116260454534>",
@@ -88,11 +136,51 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1399591181108777081",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399627817259630613",
+      "channel_id": "1170692781216378960",
+      "content": "Halo\nNow what",
+      "author": "furretknight",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399671099842756662",
+      "channel_id": "1170692781216378960",
+      "content": "Wheel hell is real",
+      "author": "osakatrade",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399732024805294273",
       "content": "● Localization Fixes and Improvements (English Language Setting):\n    ○We fixed ",
       "author": "morimensstaff02",
       "reactions": 8,
       "channel": "V2.3.0.3 在线维护公告"
+    },
+    {
+      "id": "1399733760886313020",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399556947895914518",
+      "channel_id": "1300659662311526512",
+      "content": "En resúmen, Caro. La respuesta es y siempre será Caro.\n\nAbracen la supremacía Ca",
+      "author": "duxadidus",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1399691054340636722",
@@ -103,6 +191,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1399744351856361572",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rozu",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399670836129960107",
       "channel_id": "1131839817982947429",
       "content": "吃我",
@@ -111,116 +207,36 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1399788621229326448",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
+      "id": "1399569575259144362",
+      "channel_id": "1170692781216378960",
+      "content": "Nope, this guy beat up kids while they have less rights than him",
+      "author": "el.shaddoll.nephilim.is.my.ace",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399707122513739820",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "flares117",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1399676806394675281",
+      "channel_id": "1170692781216378960",
+      "content": "The fucking stars align and gave me infinite arithmetica in arc2. Thx rng",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399840350658367612",
-      "channel_id": "1131839817982947429",
-      "content": "一遍过，但是一个专造没拿到",
+      "id": "1399862936507257084",
+      "channel_id": "1170692781216378960",
+      "content": "90 pulls finally got thais 🥲",
+      "author": "catcrox",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399600836652437737",
+      "channel_id": "1173463482503536711",
+      "content": "||以及为什么王关剧情是回合制叠战力\n杜勒：帷幕 蹈海者：拆了\n杜勒：拆的是假的 蹈海者：原地拼好人\n杜勒：收米过来叠个buff 蹈海者：不知道从海里挖了个啥出",
       "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399596619267178628",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "201225200913",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399641674317041664",
-      "channel_id": "1131839817982947429",
-      "content": "是想要讓人知道杜勒賽因有多爛是不是",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399687265155944448",
-      "channel_id": "1131839817982947429",
-      "content": "~~我退群了~~",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399690963219251311",
-      "channel_id": "1131839817982947429",
-      "content": "好可怕是福袋廚",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399693146220400641",
-      "channel_id": "1131839817982947429",
-      "content": "盲猜下期熔災直接出管家",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399697761343111208",
-      "channel_id": "1131839817982947429",
-      "content": "我如果跳杜勒他可能會變人權",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399698699646406746",
-      "channel_id": "1131839817982947429",
-      "content": "~~還是可以因為我抽杜勒超非~~",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399712152436080661",
-      "channel_id": "1131839817982947429",
-      "content": "哎，数值这方面",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399719512416325736",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399726790414696459",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399796305060171980",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "reactions": 5,
+      "channel": "🔸剧情交流"
     }
   ]
 }

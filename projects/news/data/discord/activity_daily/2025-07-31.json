@@ -1,10 +1,24 @@
 {
   "date": "2025-07-31",
-  "messages": 1512,
-  "unique_authors": 33,
-  "reactions_total": 434,
-  "attachments": 69,
+  "messages": 12394,
+  "unique_authors": 263,
+  "reactions_total": 1215,
+  "attachments": 649,
   "channel_activity": {
+    "🔸morimens-game-chat": 8219,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 5,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 35,
+    "🔸phòng-chat-tiếng-việt": 50,
+    "🔸canal-español": 149,
+    "🔸canal-português": 1918,
+    "🔸ruang-obrolan-indonesia": 251,
+    "🔸ห้องสนทนาภาษาไทย": 185,
+    "🔸traphase": 55,
     "🔸綜合討論": 1420,
     "Jenkin & Brown card :mouse2:": 3,
     "Pierot: Ultra Boy": 1,
@@ -39,33 +53,35 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 3,
-    "1": 5,
-    "2": 6,
-    "3": 206,
-    "4": 339,
-    "5": 130,
-    "6": 67,
-    "7": 14,
-    "8": 95,
-    "9": 11,
-    "10": 23,
-    "11": 110,
-    "12": 54,
-    "13": 9,
-    "14": 22,
-    "15": 100,
-    "16": 21,
-    "17": 183,
-    "18": 78,
-    "19": 7,
-    "21": 15,
-    "22": 4,
-    "20": 10
+    "0": 516,
+    "1": 454,
+    "2": 600,
+    "3": 726,
+    "4": 624,
+    "5": 463,
+    "6": 288,
+    "7": 214,
+    "8": 479,
+    "9": 179,
+    "10": 385,
+    "11": 452,
+    "12": 387,
+    "13": 784,
+    "14": 497,
+    "15": 455,
+    "16": 361,
+    "17": 585,
+    "18": 394,
+    "19": 588,
+    "20": 859,
+    "21": 914,
+    "22": 705,
+    "23": 485
   },
   "message_types": {
-    "19": 254,
-    "0": 1166
+    "0": 7231,
+    "19": 3640,
+    "6": 11
   },
   "top_reacted_messages": [
     {
@@ -104,12 +120,28 @@
       "channel": "是复古报纸！"
     },
     {
+      "id": "1400510950427070686",
+      "channel_id": "1170692781216378960",
+      "content": "but i guess it makes sense that the best girl gets the best wheel",
+      "author": "ackadi",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1400358367628759071",
       "channel_id": "1131839817982947429",
       "content": "但剛剛我一回合直接把boss削了兩管半血條",
       "author": "shchng.",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1400457424447738049",
+      "channel_id": "1170692781216378960",
+      "content": "Did you know flares said miryam +4 gives 1 extra tentacle then a whale interpret",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1400456403172196454",
@@ -119,11 +151,43 @@
       "channel": "Doresain still needs buff."
     },
     {
+      "id": "1400595745081528342",
+      "channel_id": "1170692781216378960",
+      "content": "survived fight 1",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1400455217241391115",
       "content": "He is supposed to be as strong as Dio.",
       "author": "ahuahuahua",
       "reactions": 6,
       "channel": "Doresain still needs buff."
+    },
+    {
+      "id": "1400300622003175495",
+      "channel_id": "1170692781216378960",
+      "content": "also because omniscent verity can do double rat",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400326011308212246",
+      "channel_id": "1170692781216378960",
+      "content": "Spoiler alert guys:\n\n||It is done, holy shit this fight was epic (had to gnosis ",
+      "author": "drunk.biscuit",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400401206572093452",
+      "channel_id": "1300659662311526512",
+      "content": "❤️ https://discord.com/channels/1131791637933199470/1400400563195220019",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1400395342737965076",
@@ -157,68 +221,20 @@
       "channel": "Jenkin & Brown card :mouse2:"
     },
     {
-      "id": "1400313720965697666",
-      "channel_id": "1131839817982947429",
-      "content": "通關了",
-      "author": "corposant_1003",
+      "id": "1400370382707621949",
+      "channel_id": "1170692781216378960",
+      "content": "||she's black||",
+      "author": "arisuu0604",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400328076268666941",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
+      "id": "1400397693951545364",
+      "channel_id": "1170692781216378960",
+      "content": "Wanted to build a sample team for newbies and remembered I don't have caecus kek",
+      "author": "aurora3981",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400332359198441613",
-      "channel_id": "1131839817982947429",
-      "content": "我都2000然後幻夢主宰",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400341504085458944",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400343449072570379",
-      "channel_id": "1131839817982947429",
-      "content": "我花了1199",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400415462558531598",
-      "channel_id": "1131839817982947429",
-      "content": "野貓是飛機",
-      "author": "tofu0834",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400444157696151655",
-      "channel_id": "1131839817982947429",
-      "content": "我是一隻小貓咪 喵喵喵喵喵",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1400494646882472047",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "rain_scarlet",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

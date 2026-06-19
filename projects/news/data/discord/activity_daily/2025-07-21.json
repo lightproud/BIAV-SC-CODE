@@ -1,10 +1,27 @@
 {
   "date": "2025-07-21",
-  "messages": 1530,
-  "unique_authors": 86,
-  "reactions_total": 281,
-  "attachments": 191,
+  "messages": 20558,
+  "unique_authors": 501,
+  "reactions_total": 2249,
+  "attachments": 1618,
   "channel_activity": {
+    "🔸morimens-game-chat": 12529,
+    "🔸剧情交流": 35,
+    "🔸晒卡分享": 4,
+    "🔸相位对弈": 25,
+    "🔸课间休息闲聊": 6,
+    "🔸日本語チャンネル": 16,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 60,
+    "🔸русский-канал": 186,
+    "🔸phòng-chat-tiếng-việt": 217,
+    "🔸canal-español": 1237,
+    "🔸canal-português": 92,
+    "🔸ruang-obrolan-indonesia": 1792,
+    "🔸ห้องสนทนาภาษาไทย": 1720,
+    "🔸traphase": 237,
+    "🔸lore-chat": 838,
     "🔸綜合討論": 1373,
     "🔸阵容构建": 3,
     "My Morimens Gallery": 1,
@@ -49,41 +66,114 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "1": 10,
-    "2": 55,
-    "3": 172,
-    "4": 83,
-    "5": 238,
-    "6": 116,
-    "7": 59,
-    "8": 129,
-    "9": 59,
-    "10": 50,
-    "11": 36,
-    "12": 56,
-    "13": 141,
-    "14": 90,
-    "15": 56,
-    "16": 18,
-    "17": 54,
-    "18": 24,
-    "19": 22,
-    "20": 46,
-    "21": 4,
-    "23": 11,
-    "22": 1
+    "0": 433,
+    "1": 646,
+    "2": 1168,
+    "3": 1272,
+    "4": 1554,
+    "5": 1234,
+    "6": 1408,
+    "7": 1111,
+    "8": 1080,
+    "9": 599,
+    "10": 574,
+    "11": 859,
+    "12": 1132,
+    "13": 1548,
+    "14": 800,
+    "15": 923,
+    "16": 294,
+    "17": 697,
+    "18": 698,
+    "19": 723,
+    "20": 582,
+    "21": 417,
+    "22": 526,
+    "23": 280
   },
   "message_types": {
-    "0": 1190,
-    "19": 186
+    "0": 12775,
+    "19": 6253
   },
   "top_reacted_messages": [
+    {
+      "id": "1396705546089795584",
+      "channel_id": "1170692781216378960",
+      "content": "This answer is actually taboo for a developer. But for me, my answer would be G-",
+      "author": "game.producer.light",
+      "reactions": 32,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396691614843539580",
+      "channel_id": "1170692781216378960",
+      "content": "HOLY GUACAMOLE",
+      "author": "insigible",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396688210708660296",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/122846120702509058/1396688003682013298/IM",
+      "author": "meioh",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396819174134907023",
+      "channel_id": "1170692781216378960",
+      "content": "Hii keepers! We are about to push out another hotfix patch soon and it will incl",
+      "author": "morimens_15",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1396787130017124362",
       "content": "✦为大家奉上杜勒赛因的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Doresain as a s",
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
+    },
+    {
+      "id": "1396819214718996521",
+      "channel_id": "1170692781216378960",
+      "content": "Alsooo we got the talented Miryam lover <@1301813973703852035> 's help on improv",
+      "author": "morimens_15",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396740754034135113",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/fetus-gif-26710031",
+      "author": "eleegeant",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396747243226271865",
+      "channel_id": "1170692781216378960",
+      "content": "How Doresain feel after eating almost half of my silvers",
+      "author": "capunggaje",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396710514532417711",
+      "channel_id": "1170692781216378960",
+      "content": "I have Doresain's favor.",
+      "author": "mengluo",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396820021765738566",
+      "channel_id": "1170692781216378960",
+      "content": "It’s my pleasure! Hope you enjoy the translation❤️",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1396684405782610080",
@@ -100,136 +190,67 @@
       "channel": "WHERE IS THE ERICA BANNER?!!!!!!!!!!!!!"
     },
     {
+      "id": "1396686998269595720",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "madlax",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396689242666827932",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396749269217575055",
+      "channel_id": "1170692781216378960",
+      "content": "||Each hit gives the boss strength, and each tentacle hit counts||",
+      "author": ".galeroar",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396861177027498045",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396701126379704360",
+      "channel_id": "1170692781216378960",
+      "content": "The early main story English translation is currently only being revised to corr",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396701818649841818",
+      "channel_id": "1170692781216378960",
+      "content": "We’re very interested in this idea and hope that day will come!",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1396812034313683065",
+      "channel_id": "1170692781216378960",
+      "content": "Foaming at my mouth\nIt is so close",
+      "author": "zehirete",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1396900660313587814",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "randomplayer852",
       "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396738455521726464",
-      "content": "上次混池也是猛猛重复转轮，付费必得也重复转轮，这次开氪金福利随机也重复转轮。角色还重复了一个玫瑰，一个限定角色只指1个高级灵核碎片和3个普通灵核碎片真的太少了。",
-      "author": "lurenjiao",
-      "reactions": 8,
-      "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
-    },
-    {
-      "id": "1396734613812150343",
-      "channel_id": "1131839817982947429",
-      "content": "4.1k了",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396734967396171776",
-      "channel_id": "1131839817982947429",
-      "content": "是否使深海毒死一次以獲得30黑印",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396745734820466728",
-      "channel_id": "1131839817982947429",
-      "content": "||就是说米粒生贺给我拖到不知道哪里去了是因为当时确实在搓本地化啦www||",
-      "author": "flarinsidia",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396687465787560009",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "qulqulli",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396699174149296230",
-      "channel_id": "1131839817982947429",
-      "content": "嘶哈嘶哈嘶哈~~馋你身子什么的~~",
-      "author": "flarinsidia",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396728767342182441",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396693059021963315",
-      "channel_id": "1131839817982947429",
-      "content": "👀",
-      "author": "foxcatfurry",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396695847768428576",
-      "channel_id": "1131839817982947429",
-      "content": "新剧情的收米好炸毛喔 ||杜勒都邀请共舞了还要打人家，怎么没有陪他跳舞的选项x||",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396697343017095261",
-      "channel_id": "1131839817982947429",
-      "content": "萬能回覆",
-      "author": "ogrelam926",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396801767848677477",
-      "channel_id": "1131839817982947429",
-      "content": "输光",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396730315220717689",
-      "content": "我们完颜门汀女士也素凭借一招阴的成功上位葬骸城圣主🙄💅🏻💅🏻",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "💭「处理中」你素……？"
-    },
-    {
-      "id": "1396740946569461831",
-      "channel_id": "1131839817982947429",
-      "content": "我就不该在角色没重的时候赞美校猫",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396788266317119571",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
-    },
-    {
-      "id": "1396726037764767867",
-      "channel_id": "1131839817982947429",
-      "content": "<@861769877710700564> 這裡有你朋友",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396734943136321578",
-      "channel_id": "1131839817982947429",
-      "content": "球是这么做的吗",
-      "author": "ling_an_",
-      "reactions": 3,
       "channel": "🔸綜合討論"
     }
   ]

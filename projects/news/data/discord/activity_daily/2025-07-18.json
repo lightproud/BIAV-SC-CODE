@@ -1,10 +1,20 @@
 {
   "date": "2025-07-18",
-  "messages": 945,
-  "unique_authors": 62,
-  "reactions_total": 473,
-  "attachments": 76,
+  "messages": 11234,
+  "unique_authors": 228,
+  "reactions_total": 1407,
+  "attachments": 569,
   "channel_activity": {
+    "🔸morimens-game-chat": 6727,
+    "🔸한국어-채팅방": 2,
+    "🔸русский-канал": 37,
+    "🔸phòng-chat-tiếng-việt": 117,
+    "🔸canal-español": 402,
+    "🔸canal-português": 127,
+    "🔸ruang-obrolan-indonesia": 1331,
+    "🔸ห้องสนทนาภาษาไทย": 1382,
+    "🔸traphase": 159,
+    "🔸lore-chat": 5,
     "🔸綜合討論": 644,
     "🔸阵容构建": 75,
     "Tawil Fanart": 5,
@@ -26,31 +36,34 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "2": 10,
-    "3": 20,
-    "4": 67,
-    "5": 39,
-    "6": 48,
-    "7": 37,
-    "8": 21,
-    "9": 56,
-    "10": 86,
-    "11": 59,
-    "12": 53,
-    "13": 78,
-    "14": 309,
-    "15": 4,
-    "16": 10,
-    "18": 27,
-    "19": 6,
-    "20": 3,
-    "21": 1,
-    "17": 9,
-    "23": 2
+    "0": 58,
+    "1": 243,
+    "2": 377,
+    "3": 340,
+    "4": 897,
+    "5": 940,
+    "6": 784,
+    "7": 248,
+    "8": 318,
+    "9": 341,
+    "10": 362,
+    "11": 279,
+    "12": 232,
+    "13": 532,
+    "14": 968,
+    "15": 934,
+    "16": 646,
+    "17": 570,
+    "18": 219,
+    "19": 690,
+    "20": 763,
+    "21": 266,
+    "22": 185,
+    "23": 42
   },
   "message_types": {
-    "0": 601,
-    "19": 118
+    "0": 7074,
+    "19": 3215
   },
   "top_reacted_messages": [
     {
@@ -59,6 +72,14 @@
       "author": "morimensstaff02",
       "reactions": 217,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1395680276180504608",
+      "channel_id": "1170692781216378960",
+      "content": "its a scripted loss right? <:cough:1356082510928543834>",
+      "author": "darkfeet",
+      "reactions": 52,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1395656645580820523",
@@ -82,11 +103,59 @@
       "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
     },
     {
+      "id": "1395681888055595140",
+      "channel_id": "1170692781216378960",
+      "content": "Yay",
+      "author": "zehirete",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395789409412190240",
+      "channel_id": "1170692781216378960",
+      "content": "<@332573289438380032> thank you so much I did it<:proud1:1356053120651755641>",
+      "author": "alex20_",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395786037070004264",
+      "channel_id": "1170692781216378960",
+      "content": "Generally speaking, that’s true, but we really felt that there was someone who s",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1395693115368804392",
       "content": "What to put here?",
       "author": "capunggaje",
       "reactions": 12,
       "channel": "Tawil Fanart"
+    },
+    {
+      "id": "1395689065231417435",
+      "channel_id": "1170692781216378960",
+      "content": "more into tentacles imo",
+      "author": "sexysneakystoat1625",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395884512583618621",
+      "channel_id": "1170692781216378960",
+      "content": "Wait til you're fighting an 80% Fortress 50 Counter boss that hits for 1.2k ever",
+      "author": "vinsette",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395628555710234634",
+      "channel_id": "1170692781216378960",
+      "content": "⬆️",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1395777359969390635",
@@ -112,92 +181,42 @@
       "channel": "新版本融灾问题"
     },
     {
+      "id": "1395628488014303244",
+      "channel_id": "1170692781216378960",
+      "content": "I MISS U！Card masters！",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395803928930680945",
+      "channel_id": "1170692781216378960",
+      "content": "<@458431997459824640>",
+      "author": "soup1302313",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395824728903647332",
+      "channel_id": "1170692781216378960",
+      "content": "Time for aurita to go on a killing spree",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395857982247669830",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": ".s3npa1_666",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1395637693274132501",
       "content": "It will come, it just needs some more time.",
       "author": "game.producer.light",
       "reactions": 6,
-      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
-    },
-    {
-      "id": "1395776406306164939",
-      "channel_id": "1131839817982947429",
-      "content": "被穷笑了。",
-      "author": "ahong0727",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395590132232618095",
-      "content": "https://www.youtube.com/watch?v=tdTiertx9E4",
-      "author": "theandykat",
-      "reactions": 4,
-      "channel": "Traphase gameplay mechanics. Arithmetica, hand reading, mulligan, and deck shuffle. YouTube video"
-    },
-    {
-      "id": "1395736938232676472",
-      "content": "🔫 🕊️",
-      "author": "zier.0",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395852805272506479",
-      "content": "Maybe she has 24 birthdays <:24_clown:1374289675417686016>",
-      "author": "iibenigml1588",
-      "reactions": 4,
-      "channel": "24's Birthday"
-    },
-    {
-      "id": "1395592079559888967",
-      "channel_id": "1131839817982947429",
-      "content": "~~今天真是一個美好的日子。 鳥兒在歌唱，花兒在綻放。 在這樣的日子裡，像你這樣的守密人... 就該在我肚子裡。~~",
-      "author": "undecember_news",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395649029974528040",
-      "channel_id": "1131839817982947429",
-      "content": "阿遙只教打法而已後面我自己凹的",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395778298516213862",
-      "channel_id": "1131839817982947429",
-      "content": "珊是老婆 奧吉爾是自己生的兒子 sp墨菲是自己生的女兒",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395778615492214894",
-      "channel_id": "1131839817982947429",
-      "content": "讓阿宏生出墨菲",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395658359176302633",
-      "content": "~~找尤乌哈希和阿格里帕帮忙<:thinking2:1356053172065534153> 他俩前阵子饿得天天夜潜学校后厨哩~~",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
-    },
-    {
-      "id": "1395612826864717925",
-      "content": "【English HD Cut Picture 】",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
-    },
-    {
-      "id": "1395637725176139838",
-      "content": "晚一些。",
-      "author": "game.producer.light",
-      "reactions": 3,
       "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
     }
   ]

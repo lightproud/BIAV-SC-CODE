@@ -1,10 +1,25 @@
 {
   "date": "2025-07-16",
-  "messages": 1131,
-  "unique_authors": 43,
-  "reactions_total": 359,
-  "attachments": 43,
+  "messages": 13269,
+  "unique_authors": 255,
+  "reactions_total": 1536,
+  "attachments": 483,
   "channel_activity": {
+    "🔸morimens-game-chat": 10483,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 149,
+    "🔸phòng-chat-tiếng-việt": 132,
+    "🔸canal-español": 288,
+    "🔸canal-português": 50,
+    "🔸ruang-obrolan-indonesia": 82,
+    "🔸ห้องสนทนาภาษาไทย": 651,
+    "🔸traphase": 152,
+    "🔸lore-chat": 139,
     "🔸綜合討論": 1001,
     "Leigh": 2,
     "*Translated & Credited* cn Fan Art Reposts": 7,
@@ -23,34 +38,34 @@
     "栗子": 1
   },
   "hourly_activity": {
-    "2": 10,
-    "3": 6,
-    "4": 22,
-    "5": 6,
-    "7": 21,
-    "8": 13,
-    "9": 16,
-    "10": 198,
-    "11": 242,
-    "12": 131,
-    "13": 65,
-    "14": 22,
-    "15": 41,
-    "16": 169,
-    "17": 141,
-    "18": 1,
-    "19": 11,
-    "21": 3,
-    "20": 7,
-    "0": 3,
-    "22": 1,
-    "6": 1,
-    "1": 1
+    "0": 277,
+    "1": 383,
+    "2": 543,
+    "3": 357,
+    "4": 337,
+    "5": 417,
+    "6": 341,
+    "7": 518,
+    "8": 442,
+    "9": 313,
+    "10": 1422,
+    "11": 1111,
+    "12": 870,
+    "13": 724,
+    "14": 876,
+    "15": 726,
+    "16": 808,
+    "17": 715,
+    "18": 490,
+    "19": 384,
+    "20": 338,
+    "21": 375,
+    "22": 244,
+    "23": 258
   },
   "message_types": {
-    "0": 836,
-    "19": 164,
-    "46": 1
+    "19": 3858,
+    "0": 8280
   },
   "top_reacted_messages": [
     {
@@ -59,6 +74,14 @@
       "author": "morimensstaff01",
       "reactions": 27,
       "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
+    {
+      "id": "1394990026462462084",
+      "channel_id": "1170692781216378960",
+      "content": "Just get 1k crit dmg",
+      "author": ".galeroar",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1394981541053993022",
@@ -75,12 +98,44 @@
       "channel": "栗子"
     },
     {
+      "id": "1395022831351234601",
+      "channel_id": "1170692781216378960",
+      "content": "also, just saying",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1394911429437558786",
       "channel_id": "1131839817982947429",
       "content": "并不知道自己在画啥…",
       "author": "zerathree",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395000553146421260",
+      "channel_id": "1170692781216378960",
+      "content": "Push push push push <a:TheVoices:1285090685694906420>",
+      "author": "zehirete",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395025397791330348",
+      "channel_id": "1170692781216378960",
+      "content": "I KEEP FALLING INTO THE SAME LOOP OF \"the new unit looks cool. But eh, first opi",
+      "author": "thpdom",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394960924149944330",
+      "channel_id": "1170692781216378960",
+      "content": "Hehe",
+      "author": "kevsalvador",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1395010910577492000",
@@ -96,6 +151,54 @@
       "author": "reya.li",
       "reactions": 7,
       "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+    },
+    {
+      "id": "1395019644737163278",
+      "channel_id": "1170692781216378960",
+      "content": "I almost thrown my phone when Clem forced Caecus out of the closet",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395023048482099221",
+      "channel_id": "1170692781216378960",
+      "content": "||***have you ever eaten cock with your life on the line?!!??!?***||",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395026592748802098",
+      "channel_id": "1170692781216378960",
+      "content": "Fucking Goliath",
+      "author": "vinsette",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395033652328661103",
+      "channel_id": "1170692781216378960",
+      "content": "not critting > redo fight",
+      "author": "good.th",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395086452215513199",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens being mixed sex is great",
+      "author": "yonagoda",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395089835663954022",
+      "channel_id": "1170692781216378960",
+      "content": "If doresian was my boytoy he'd say \"please me hearty\" and id say \"no babe\" and h",
+      "author": "beenax.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1394993778372378725",
@@ -119,94 +222,6 @@
       "content": "伪娘虫子",
       "author": "carme.0588",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395121492127121449",
-      "channel_id": "1131839817982947429",
-      "content": "深海固定毒都能把普通蛹當聖嬰捶",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1394996413296803954",
-      "channel_id": "1131839817982947429",
-      "content": "我金幣爆在手機桌面上也算是給5771爆金幣了吧<:cry2:1356068126894194758>",
-      "author": "undecember_news",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1394980438002372619",
-      "channel_id": "1131839817982947429",
-      "content": "努力在一堆排單跟工作的夾縫為色圖求生存是正常的嗎555",
-      "author": "kong760",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1394992399406596187",
-      "channel_id": "1131839817982947429",
-      "content": "杜師傅的立繪有點奇怪，但是杜師傅的數值彌補了這點",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1394992531154141306",
-      "channel_id": "1131839817982947429",
-      "content": "需要數值緊縮術嗎",
-      "author": "ahong0727",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1394999813002498058",
-      "channel_id": "1131839817982947429",
-      "content": "~~有沒有杜勒活動最後一關要打普朵之類的超展開~~",
-      "author": "heikwok",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395002121794879659",
-      "channel_id": "1131839817982947429",
-      "content": "我童年很乖\n都在偷偷收錢離間情侶挑撥大人",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395003670558408804",
-      "channel_id": "1131839817982947429",
-      "content": "我看成你弟弟玩克萊門汀的蟲子然後門牙斷一半",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395011791783985285",
-      "channel_id": "1131839817982947429",
-      "content": "？",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395014294474719264",
-      "channel_id": "1131839817982947429",
-      "content": "~~還是不草貓了我去打主線(~~",
-      "author": "undecember_news",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1395087811970990161",
-      "channel_id": "1131839817982947429",
-      "content": "激烈得我的手忍不住在繪圖應用上面反覆摩挲思考小貓的一百種玩法",
-      "author": "kong760",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]

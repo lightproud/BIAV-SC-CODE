@@ -1,10 +1,20 @@
 {
   "date": "2025-07-02",
-  "messages": 7283,
+  "messages": 9047,
   "unique_authors": 201,
-  "reactions_total": 686,
-  "attachments": 298,
+  "reactions_total": 803,
+  "attachments": 385,
   "channel_activity": {
+    "🔸剧情交流": 207,
+    "🔸한국어-채팅방": 1,
+    "🔸русский-канал": 7,
+    "🔸phòng-chat-tiếng-việt": 326,
+    "🔸canal-español": 362,
+    "🔸canal-português": 47,
+    "🔸ruang-obrolan-indonesia": 354,
+    "🔸ห้องสนทนาภาษาไทย": 66,
+    "🔸traphase": 237,
+    "🔸lore-chat": 157,
     "🔸綜合討論": 152,
     "🔸morimens-game-chat": 7091,
     "Does Casiah's Telekinesis card count as Annihilation?": 5,
@@ -22,35 +32,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "2": 533,
-    "3": 710,
-    "4": 323,
-    "6": 128,
-    "7": 235,
-    "8": 253,
-    "9": 101,
-    "10": 256,
-    "11": 572,
-    "12": 402,
-    "13": 287,
-    "14": 333,
-    "15": 359,
-    "23": 94,
-    "0": 475,
-    "1": 364,
-    "5": 391,
-    "16": 123,
-    "17": 406,
-    "18": 307,
-    "19": 302,
-    "20": 221,
-    "21": 25,
-    "22": 83
+    "1": 416,
+    "2": 639,
+    "3": 808,
+    "4": 500,
+    "6": 245,
+    "7": 265,
+    "8": 327,
+    "9": 133,
+    "10": 379,
+    "15": 368,
+    "16": 189,
+    "5": 476,
+    "12": 439,
+    "13": 377,
+    "0": 571,
+    "11": 648,
+    "14": 391,
+    "17": 497,
+    "19": 324,
+    "23": 180,
+    "18": 320,
+    "20": 383,
+    "21": 40,
+    "22": 132
   },
   "message_types": {
-    "0": 4555,
-    "19": 2687,
-    "18": 1
+    "0": 1370,
+    "19": 394
   },
   "top_reacted_messages": [
     {
@@ -126,6 +135,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1389803769524654201",
+      "channel_id": "1326453763355185215",
+      "content": "i thought i'd share this here since it could maybe help you guys figure out the ",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1389801776969941084",
       "channel_id": "1170692781216378960",
       "content": "what a wholesome pair of friends i hope nothing bad happens to their relationshi",
@@ -156,6 +173,14 @@
       "author": "terrarius_",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1389860008547586150",
+      "channel_id": "1173463482503536711",
+      "content": "||~~感觉生日信有点像咱多年前设想的把米粒抓进密大阵营圆剧情的分支x~~\n她和图鲁的关系&和墨菲的关系都有那样一种矛盾和回避的共性（？）她对作为墨菲的母亲却准",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1389930105597333647",
@@ -194,22 +219,6 @@
       "channel_id": "1170692781216378960",
       "content": "Speaking of that be careful about grapefruit juice interactions with your meds g",
       "author": "ev_6185",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1389814954152169523",
-      "channel_id": "1170692781216378960",
-      "content": "There was a lady who died after a Butt Lift a few months ago here",
-      "author": "flares117",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1389815151926186116",
-      "channel_id": "1170692781216378960",
-      "content": "while this depressing subject burns out i am going to grab a drink",
-      "author": "waiumailykdis",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

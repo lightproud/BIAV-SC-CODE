@@ -1,10 +1,25 @@
 {
   "date": "2025-07-22",
-  "messages": 606,
-  "unique_authors": 43,
-  "reactions_total": 226,
-  "attachments": 100,
+  "messages": 12920,
+  "unique_authors": 344,
+  "reactions_total": 1252,
+  "attachments": 796,
   "channel_activity": {
+    "🔸morimens-game-chat": 9572,
+    "🔸剧情交流": 45,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 5,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 8,
+    "🔸chaîne-française": 25,
+    "🔸русский-канал": 109,
+    "🔸phòng-chat-tiếng-việt": 113,
+    "🔸canal-español": 306,
+    "🔸canal-português": 125,
+    "🔸ruang-obrolan-indonesia": 500,
+    "🔸ห้องสนทนาภาษาไทย": 486,
+    "🔸traphase": 243,
+    "🔸lore-chat": 766,
     "🔸綜合討論": 474,
     "🔸阵容构建": 15,
     "Thais Warm up": 1,
@@ -42,33 +57,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 1,
-    "2": 5,
-    "3": 6,
-    "4": 17,
-    "5": 49,
-    "6": 119,
-    "7": 84,
-    "9": 49,
-    "10": 29,
-    "11": 20,
-    "12": 79,
-    "13": 27,
-    "14": 26,
-    "15": 20,
-    "16": 19,
-    "17": 14,
-    "18": 2,
-    "20": 7,
-    "23": 5,
-    "8": 23,
-    "19": 1
+    "0": 584,
+    "1": 625,
+    "2": 762,
+    "3": 899,
+    "4": 668,
+    "5": 360,
+    "6": 576,
+    "7": 508,
+    "8": 509,
+    "9": 418,
+    "10": 332,
+    "11": 504,
+    "12": 338,
+    "13": 668,
+    "14": 785,
+    "15": 903,
+    "16": 510,
+    "17": 861,
+    "18": 399,
+    "19": 377,
+    "20": 570,
+    "21": 454,
+    "22": 146,
+    "23": 164
   },
   "message_types": {
-    "0": 438,
-    "19": 50,
-    "46": 1
+    "0": 8066,
+    "19": 4248
   },
   "top_reacted_messages": [
     {
@@ -86,6 +102,22 @@
       "channel": "📸V2.3 PV细节欣赏┊Appreciation of Details"
     },
     {
+      "id": "1397066404926193834",
+      "channel_id": "1170692781216378960",
+      "content": "too busy yesterday but as promised. i go back to my cave now  <:sleep2:135608599",
+      "author": "jormiejormungandr",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397320425893138433",
+      "channel_id": "1170692781216378960",
+      "content": "one sec",
+      "author": "monchi3524",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397276666514116668",
       "content": "I made myself a badge and a keychain with my art of them",
       "author": "happyskull",
@@ -98,6 +130,30 @@
       "author": "linsinmiza",
       "reactions": 11,
       "channel": "玩個杜勒拼豆"
+    },
+    {
+      "id": "1397056208166191114",
+      "channel_id": "1326453763355185215",
+      "content": "but gdoll would probably have a scent of burnt or damaged materials, no?",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1397062731005296752",
+      "channel_id": "1170692781216378960",
+      "content": "but long story short I gave the eye balls my signature KFC combo, the 4 wing 6 w",
+      "author": "drunk.biscuit",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397318171043561533",
+      "channel_id": "1170692781216378960",
+      "content": "They gave me a surprise when they introduced alcohol as an event theme <:idk:135",
+      "author": "fischperch",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1397078404473421864",
@@ -123,12 +179,52 @@
       "channel": "深海隊攻略之—水船隊"
     },
     {
+      "id": "1397332451310702724",
+      "channel_id": "1170692781216378960",
+      "content": "im gonna go spread the agrippa gospel to the spanish channel",
+      "author": "bongosjam",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397176269765873715",
       "channel_id": "1131839817982947429",
       "content": "🤓",
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1397042124653990034",
+      "channel_id": "1170692781216378960",
+      "content": "im gonna do morimens male only content/hj",
+      "author": "gaylordtime",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397059139959656558",
+      "channel_id": "1170692781216378960",
+      "content": "Time to pop a few gnosis",
+      "author": "drunk.biscuit",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397079045883166793",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> <@285755067213152257> arki bit the bullet and +12 +12 dore",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397276093815324672",
+      "channel_id": "1170692781216378960",
+      "content": "i see the troll wheel",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1397078079217864806",
@@ -144,86 +240,6 @@
       "content": "我要会画画你游在r18分区已经多很多东西了",
       "author": "carme.0588",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397145357225426975",
-      "channel_id": "1131839817982947429",
-      "content": "看到杜爺的繁衍劇情有語音，真希望之前的角色也都能補上～我想聽奧吉爾的羞赧撒驕音♥",
-      "author": "o5214658",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397040979445420124",
-      "channel_id": "1131839817982947429",
-      "content": "諾是借用的",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397107763418497116",
-      "channel_id": "1131839817982947429",
-      "content": "能回我早就回了，+12紅夫躺倉庫半年長灰了",
-      "author": "qulqulli",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397156996494397512",
-      "channel_id": "1131839817982947429",
-      "content": "但是實際打就是37801啊\n估計是12.6後面還有小數吧",
-      "author": "cwz.io",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397185640520618064",
-      "channel_id": "1131839817982947429",
-      "content": "https://youtu.be/OybbIMOE_4g?si=0A9p-c9TWAPaRQ2V",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397191201899413545",
-      "channel_id": "1131839817982947429",
-      "content": "400難",
-      "author": "arthasiv",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397195846399037451",
-      "channel_id": "1131839817982947429",
-      "content": "眼交",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397198413954809896",
-      "channel_id": "1131839817982947429",
-      "content": "~~媽拉 下下張就草他~~",
-      "author": "undecember_news",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397201026880372756",
-      "channel_id": "1131839817982947429",
-      "content": "~~圖實際的精神傷害不多~~",
-      "author": "undecember_news",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397216138085269504",
-      "channel_id": "1131839817982947429",
-      "content": "各位覺得如何",
-      "author": "ahong0727",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

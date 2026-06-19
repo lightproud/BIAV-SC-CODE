@@ -1,10 +1,23 @@
 {
   "date": "2025-07-27",
-  "messages": 1155,
-  "unique_authors": 42,
-  "reactions_total": 165,
-  "attachments": 72,
+  "messages": 17690,
+  "unique_authors": 313,
+  "reactions_total": 1562,
+  "attachments": 712,
   "channel_activity": {
+    "🔸morimens-game-chat": 12722,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸русский-канал": 1183,
+    "🔸phòng-chat-tiếng-việt": 18,
+    "🔸canal-español": 371,
+    "🔸canal-português": 1347,
+    "🔸ruang-obrolan-indonesia": 485,
+    "🔸ห้องสนทนาภาษาไทย": 260,
+    "🔸traphase": 128,
     "🔸綜合討論": 1061,
     "niko's silly meme arts": 1,
     "Doresain Fanart": 2,
@@ -26,33 +39,34 @@
     "不允許深海界域到現在還沒有一張濕衣服圖": 4
   },
   "hourly_activity": {
-    "0": 13,
-    "1": 31,
-    "2": 15,
-    "3": 19,
-    "4": 19,
-    "5": 64,
-    "6": 65,
-    "7": 84,
-    "8": 110,
-    "9": 37,
-    "10": 203,
-    "11": 151,
-    "12": 39,
-    "13": 8,
-    "14": 66,
-    "15": 13,
-    "16": 49,
-    "17": 30,
-    "18": 88,
-    "19": 31,
-    "22": 5,
-    "23": 12,
-    "20": 3
+    "0": 560,
+    "1": 507,
+    "2": 754,
+    "3": 591,
+    "4": 564,
+    "5": 975,
+    "6": 870,
+    "7": 638,
+    "8": 545,
+    "9": 610,
+    "10": 811,
+    "11": 758,
+    "12": 436,
+    "13": 446,
+    "14": 610,
+    "15": 784,
+    "16": 1176,
+    "17": 928,
+    "18": 957,
+    "19": 881,
+    "20": 942,
+    "21": 639,
+    "22": 720,
+    "23": 988
   },
   "message_types": {
-    "0": 835,
-    "19": 226
+    "0": 10365,
+    "19": 6170
   },
   "top_reacted_messages": [
     {
@@ -70,11 +84,35 @@
       "channel": "Doll and Alistair"
     },
     {
+      "id": "1399054529667792939",
+      "channel_id": "1170692781216378960",
+      "content": "*the three people in question:*",
+      "author": "lloyds_descendant",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399053955425894502",
+      "channel_id": "1170692781216378960",
+      "content": "Isn't Flares a god though? At least that's what I see here. He has a Bible and h",
+      "author": "_praxeum",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399097548404293722",
       "content": "因為這樣那樣的原因先蓋一個本樓\n之後如題相關的東西都會丟上來\n可能會想做一系列的拍立得企劃\n但是會傾向二創私服自搭 能看到各角色比較不一樣的一面（當然成本也是考",
       "author": "kong760",
       "reactions": 11,
       "channel": "堆樓-忘卻cos相關（真人注意）"
+    },
+    {
+      "id": "1398832501484421182",
+      "channel_id": "1170692781216378960",
+      "content": "I'm a cosmic entity",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1398835241736601722",
@@ -91,6 +129,70 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398854857657548800",
+      "channel_id": "1170692781216378960",
+      "content": "guys is my account bricked? I wasted a lot of pulls on Caro",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398984772210130986",
+      "channel_id": "1170692781216378960",
+      "content": "Too busy kissing doresain",
+      "author": "letsa11lovelain",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399153515464495196",
+      "channel_id": "1170692781216378960",
+      "content": "Huh.",
+      "author": "dispotato",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398849843459526686",
+      "channel_id": "1170692781216378960",
+      "content": "yeah if you pull ultra it's all one shot kills.\n\nBetter to play 16 rounds of she",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398918892679729302",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "taechyon",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399054186712137909",
+      "channel_id": "1170692781216378960",
+      "content": "<:wish:1356084702468899117> <:wish:1356084702468899117> <:wish:13560847024688991",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399070089503969440",
+      "channel_id": "1170692781216378960",
+      "content": "Im goinng to bite you",
+      "author": "runningaway_fs",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399101916641890316",
+      "channel_id": "1170692781216378960",
+      "content": "Like wdym you be talking about how stupid women are when you can't even do 357+6",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398894892247421049",
       "channel_id": "1131839817982947429",
       "content": "怕 😰 為啥突然給兩張 今天不出門了",
@@ -99,114 +201,27 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1398823495676330024",
+      "channel_id": "1170692781216378960",
+      "content": "hello cool people",
+      "author": "seiazen",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399045007121322084",
+      "channel_id": "1170692781216378960",
+      "content": "I did grow up. And I developed an actual sense of taste",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398976086024523910",
       "channel_id": "1131839817982947429",
       "content": "命轮名字就叫狂气回充？",
       "author": "123zhang0036",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398941975033417851",
-      "channel_id": "1131839817982947429",
-      "content": "所有認真玩忘卻的玩家都要有個+12子宮",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398942343419138169",
-      "channel_id": "1131839817982947429",
-      "content": "所有忘却男同都要至少试一次把子宫安到男人身上",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398946626428731553",
-      "channel_id": "1131839817982947429",
-      "content": "足够喂一整个界域的常驻+12了~~但是粉鱼喂满了也是吉祥物x~~",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399008118243065917",
-      "channel_id": "1131839817982947429",
-      "content": "这么和你说，你每期把通行证和月卡都氪了，平均下来一个角色池也就能抽个三启左右，想要抽一个超限要么额外氪要么再攒一段时间",
-      "author": "zzz12356",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1399099034286817482",
-      "content": "下期角色預告-血肉聖祝之宴 • 晚禱\n出演-薩爾瓦多/索蕾爾/希洛/杜勒賽因",
-      "author": "kong760",
-      "reactions": 3,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
-    },
-    {
-      "id": "1398871874582352053",
-      "channel_id": "1131839817982947429",
-      "content": "请问有人知道这是什么症状吗？",
-      "author": "ling_an_",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398904625792417794",
-      "channel_id": "1131839817982947429",
-      "content": "體力留給羊媽活動吧",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398922313956589570",
-      "channel_id": "1131839817982947429",
-      "content": "蓝色力量起到一个装饰性的作用，顺便暴击了还可以帮对面叠暴击抵抗",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398922569935093892",
-      "channel_id": "1131839817982947429",
-      "content": "我就要用我的4.5k生命力填滿那些亡靈敵人",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398934542345310259",
-      "channel_id": "1131839817982947429",
-      "content": "他在第七章的时候把学长银芯带到星辰篇复活",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398939097950851122",
-      "channel_id": "1131839817982947429",
-      "content": "像我們這些推完的只能回去砍砍樹、打打超維蛹來取樂",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398945585255415818",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "123zhang0036",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398977386036592722",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

@@ -1,10 +1,23 @@
 {
   "date": "2025-07-24",
-  "messages": 457,
-  "unique_authors": 37,
-  "reactions_total": 1221,
-  "attachments": 43,
+  "messages": 12869,
+  "unique_authors": 305,
+  "reactions_total": 2887,
+  "attachments": 742,
   "channel_activity": {
+    "🔸morimens-game-chat": 10871,
+    "🔸剧情交流": 14,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 7,
+    "🔸chaîne-française": 17,
+    "🔸русский-канал": 33,
+    "🔸phòng-chat-tiếng-việt": 59,
+    "🔸canal-español": 792,
+    "🔸canal-português": 228,
+    "🔸ruang-obrolan-indonesia": 206,
+    "🔸ห้องสนทนาภาษาไทย": 101,
+    "🔸traphase": 82,
     "🔸綜合討論": 357,
     "🔸阵容构建": 1,
     "Thais Warm up": 1,
@@ -32,32 +45,35 @@
     "1305430084420898868": 5
   },
   "hourly_activity": {
-    "0": 14,
-    "1": 16,
-    "2": 8,
-    "3": 31,
-    "4": 29,
-    "5": 16,
-    "6": 12,
-    "7": 11,
-    "8": 39,
-    "9": 18,
-    "10": 18,
-    "12": 5,
-    "13": 29,
-    "14": 90,
-    "15": 88,
-    "16": 15,
-    "19": 2,
-    "20": 1,
-    "22": 3,
-    "23": 3,
-    "17": 3,
-    "11": 6
+    "0": 353,
+    "1": 590,
+    "2": 619,
+    "3": 726,
+    "4": 689,
+    "5": 365,
+    "6": 538,
+    "7": 444,
+    "8": 514,
+    "9": 573,
+    "10": 219,
+    "11": 460,
+    "12": 524,
+    "13": 936,
+    "14": 720,
+    "15": 643,
+    "16": 863,
+    "17": 473,
+    "18": 335,
+    "19": 435,
+    "20": 249,
+    "21": 418,
+    "22": 353,
+    "23": 830
   },
   "message_types": {
-    "0": 295,
-    "19": 63
+    "19": 4252,
+    "0": 8159,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -89,11 +105,51 @@
       "channel": ""
     },
     {
+      "id": "1397947660425494549",
+      "channel_id": "1170692781216378960",
+      "content": "That, just the start",
+      "author": "uvhashhaha",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397887544909103125",
       "content": "I use chatgpt hope it work well. Not really good in English. I mean I know how t",
       "author": "dittoqwq",
       "reactions": 12,
       "channel": "Doresain x you fanfic 18+"
+    },
+    {
+      "id": "1397872430197903360",
+      "channel_id": "1170692781216378960",
+      "content": "Furry",
+      "author": "bootsnumerouno",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397756563783159878",
+      "channel_id": "1170692781216378960",
+      "content": "Best use of a pyramid.",
+      "author": "mengluo",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397947381454082108",
+      "channel_id": "1170692781216378960",
+      "content": "I love y'all",
+      "author": "uvhashhaha",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397956310536032296",
+      "channel_id": "1170692781216378960",
+      "content": "-32?",
+      "author": "vinsette",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1397816036182724739",
@@ -127,86 +183,51 @@
       "channel": "✅「Answered」I bought a pack and it’s gone now"
     },
     {
+      "id": "1397748768958451795",
+      "channel_id": "1170692781216378960",
+      "content": "In the last patch, I retranslated and edited story from Prologue through Chapter",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397888364190892114",
+      "channel_id": "1170692781216378960",
+      "content": "Hi...I wrote a fan fic I hope you can read it...and give a comment",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397911737008652379",
+      "channel_id": "1170692781216378960",
+      "content": "WOOOOOOOOOOOOO <@702167871144591461>",
+      "author": "linireo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397947812813213746",
+      "channel_id": "1170692781216378960",
+      "content": "It's voiced too......",
+      "author": "rambles_3057",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397961171998474423",
+      "channel_id": "1170692781216378960",
+      "content": "I got Ghelot",
+      "author": "zehirete",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397888129397948456",
       "content": "[Afterword / Epilogue:]\n\nYou: (waking up, looking at yourself in the mirror) …Wh",
       "author": "dittoqwq",
       "reactions": 8,
       "channel": "Doresain x you fanfic 18+"
-    },
-    {
-      "id": "1397803026504224798",
-      "content": "\"4:30. Ran 6 miles across the Isis River. [Uvhash] argued with a passerby elderl",
-      "author": "fuckupa2",
-      "reactions": 7,
-      "channel": "A Song of Blood and Hunger (Uvhash Morimens Fanfic)"
-    },
-    {
-      "id": "1397820803898150995",
-      "content": "I'm not sure who I should reach out to, but I'd like to volunteer.\n\nI'm only in ",
-      "author": "sophiechoice",
-      "reactions": 6,
-      "channel": "Volunteering to aid with the English translation!"
-    },
-    {
-      "id": "1397871303737872435",
-      "content": "开车内容，不好意思我不会开车。\n\n？主要是忘却没什么我嗑的男同，就开始写这种文了\n\n哇是子安武哎\n\n你=守密人，守密人≠你，懂？我怕ooc\n\n文画双修的我表示别",
-      "author": "dittoqwq",
-      "reactions": 6,
-      "channel": "杜勒赛因x你 18+"
-    },
-    {
-      "id": "1397872925058531358",
-      "channel_id": "1131839817982947429",
-      "content": "換裝偷偷潛入校園",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397883869037985853",
-      "content": "",
-      "author": "lowtownnivn",
-      "reactions": 4,
-      "channel": "My Morimens Gallery"
-    },
-    {
-      "id": "1397763806838521866",
-      "content": "I think you guys are really incredible, you are doing a lot with such a tiny tea",
-      "author": "junakaru4ever",
-      "reactions": 4,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
-    },
-    {
-      "id": "1397778238146875392",
-      "channel_id": "1131839817982947429",
-      "content": "https://youtu.be/YuHKgxVUdt4?si=cJPoPBrA4kV_sUyv",
-      "author": "0.0._.0_0.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397913593680232488",
-      "channel_id": "1131839817982947429",
-      "content": "開打",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397945087606132776",
-      "channel_id": "1131839817982947429",
-      "content": "綠狗",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1397949770693349518",
-      "channel_id": "1131839817982947429",
-      "content": "剩我是爐主了",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }

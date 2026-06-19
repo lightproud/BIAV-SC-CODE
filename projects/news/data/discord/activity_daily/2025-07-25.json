@@ -1,10 +1,23 @@
 {
   "date": "2025-07-25",
-  "messages": 1121,
-  "unique_authors": 51,
-  "reactions_total": 282,
-  "attachments": 73,
+  "messages": 13757,
+  "unique_authors": 324,
+  "reactions_total": 1733,
+  "attachments": 743,
   "channel_activity": {
+    "🔸morimens-game-chat": 9674,
+    "🔸剧情交流": 28,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 5,
+    "🔸한국어-채팅방": 148,
+    "🔸chaîne-française": 47,
+    "🔸русский-канал": 38,
+    "🔸phòng-chat-tiếng-việt": 152,
+    "🔸canal-español": 970,
+    "🔸canal-português": 155,
+    "🔸ruang-obrolan-indonesia": 912,
+    "🔸ห้องสนทนาภาษาไทย": 432,
+    "🔸traphase": 74,
     "🔸綜合討論": 800,
     "🔸阵容构建": 7,
     "Doresain Fanart": 1,
@@ -37,33 +50,35 @@
     "現pa 尤烏哈希你是大明星": 1
   },
   "hourly_activity": {
-    "1": 7,
-    "2": 100,
-    "3": 15,
-    "4": 13,
-    "5": 17,
-    "6": 14,
-    "7": 15,
-    "8": 98,
-    "9": 75,
-    "10": 158,
-    "11": 101,
-    "12": 63,
-    "13": 123,
-    "14": 180,
-    "15": 29,
-    "16": 24,
-    "17": 37,
-    "18": 25,
-    "19": 5,
-    "20": 1,
-    "23": 16,
-    "21": 1,
-    "0": 4
+    "0": 226,
+    "1": 375,
+    "2": 710,
+    "3": 421,
+    "4": 368,
+    "5": 225,
+    "6": 168,
+    "7": 264,
+    "8": 646,
+    "9": 780,
+    "10": 736,
+    "11": 848,
+    "12": 683,
+    "13": 825,
+    "14": 736,
+    "15": 825,
+    "16": 733,
+    "17": 917,
+    "18": 413,
+    "19": 485,
+    "20": 565,
+    "21": 457,
+    "22": 606,
+    "23": 745
   },
   "message_types": {
-    "0": 694,
-    "19": 113
+    "0": 8199,
+    "19": 4436,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -88,6 +103,14 @@
       "channel": "現pa 尤烏哈希你是大明星"
     },
     {
+      "id": "1398350956302962869",
+      "channel_id": "1170692781216378960",
+      "content": "Previously, everyone suggested that we should invest some resources in promotion",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398227871431917588",
       "content": "It is pretty nice to have more choices on what to pick, considering the delays, ",
       "author": "vxvendetta",
@@ -109,6 +132,38 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
+      "id": "1398443780985585717",
+      "channel_id": "1170692781216378960",
+      "content": "we doom post about jp because we no longer doompost about eos",
+      "author": "khykken",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398351314265833633",
+      "channel_id": "1170692781216378960",
+      "content": "CHAOS",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398352113683271740",
+      "channel_id": "1170692781216378960",
+      "content": "I’ve already given more than enough information as an exception—I really can’t s",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398096057514201209",
+      "channel_id": "1300659662311526512",
+      "content": "esa ludopatia nos salvo del eos",
+      "author": "nebbercracker12.",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1398238085103485052",
       "content": "那就開回溯吧",
       "author": "0.0._.0_0.",
@@ -116,104 +171,67 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
+      "id": "1398118605937442858",
+      "channel_id": "1170692781216378960",
+      "content": "use this guy",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398139456019501056",
+      "channel_id": "1170692781216378960",
+      "content": "Caecus even more useless now xD",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398270285932662805",
+      "channel_id": "1170692781216378960",
+      "content": "I read it it was hilarious. Some guy thought genesis units are skins",
+      "author": "riasterism_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398272879631663145",
+      "channel_id": "1170692781216378960",
+      "content": "OMG we wont get thais rerun event!!!!!!!!",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398295852124082307",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398367535920975892",
+      "channel_id": "1170692781216378960",
+      "content": "Just get lucky.",
+      "author": "whitehorn_montellas",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398410989279379526",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dose1694",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398242949740892250",
       "content": "福袋是被nerf\n杜勒是buff炎上我覺得也是稀世美景的",
       "author": "ernest_heart",
       "reactions": 8,
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398326694456201306",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398348706016661515",
-      "channel_id": "1131839817982947429",
-      "content": "森坪郁弥 （男）/ 谷鹿未来（女）",
-      "author": "game.producer.light",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398318363364823101",
-      "content": "",
-      "author": "_venush",
-      "reactions": 7,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398165063482736791",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398184032474234991",
-      "channel_id": "1131839817982947429",
-      "content": "⬇️不停抽限定池的成果⬇️",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398321073593909491",
-      "channel_id": "1131839817982947429",
-      "content": "沒想到5771竟然會出現在這個app中",
-      "author": "dog794",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398264099120484383",
-      "content": "然後他們事後才給杜勒皮膚加特效",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!"
-    },
-    {
-      "id": "1398251000170676374",
-      "channel_id": "1131839817982947429",
-      "content": "<@1346803506316841021> 我都不知道旺達長這樣",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398352215172972636",
-      "channel_id": "1131839817982947429",
-      "content": "~~深夜捡一口双猫cp~~",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398317165358092372",
-      "content": "Doresain needs different buffs to feel smoother... Like retain on his 3 cost car",
-      "author": "beenax.",
-      "reactions": 4,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398353484629409823",
-      "channel_id": "1131839817982947429",
-      "content": "沒想到男守密那句台詞就讓我的耳朵誤以為是不煩躁的梅林（X",
-      "author": "magushermes",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398371071908118548",
-      "channel_id": "1131839817982947429",
-      "content": "你游现在还不至于和答辩比啦）",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }

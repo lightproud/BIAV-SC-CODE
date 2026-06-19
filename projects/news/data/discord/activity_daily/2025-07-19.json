@@ -1,10 +1,24 @@
 {
   "date": "2025-07-19",
-  "messages": 1027,
-  "unique_authors": 53,
-  "reactions_total": 881,
-  "attachments": 92,
+  "messages": 13811,
+  "unique_authors": 319,
+  "reactions_total": 3132,
+  "attachments": 662,
   "channel_activity": {
+    "🔸morimens-game-chat": 10391,
+    "🔸剧情交流": 26,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 8,
+    "🔸chaîne-française": 31,
+    "🔸русский-канал": 59,
+    "🔸phòng-chat-tiếng-việt": 276,
+    "🔸canal-español": 415,
+    "🔸canal-português": 9,
+    "🔸ruang-obrolan-indonesia": 604,
+    "🔸ห้องสนทนาภาษาไทย": 831,
+    "🔸traphase": 50,
+    "🔸lore-chat": 78,
     "🔸綜合討論": 908,
     "🔸阵容构建": 2,
     "My Morimens Gallery": 1,
@@ -36,36 +50,45 @@
     "1390375103707218041": 5
   },
   "hourly_activity": {
-    "1": 7,
-    "4": 30,
-    "5": 145,
-    "6": 96,
-    "7": 33,
-    "8": 101,
-    "9": 195,
-    "10": 100,
-    "11": 23,
-    "12": 15,
-    "13": 75,
-    "14": 11,
-    "15": 46,
-    "16": 81,
-    "17": 29,
-    "18": 6,
-    "19": 3,
-    "20": 5,
-    "21": 16,
-    "22": 1,
-    "23": 5,
-    "0": 1,
-    "3": 1,
-    "2": 2
+    "0": 307,
+    "1": 403,
+    "2": 701,
+    "3": 787,
+    "4": 369,
+    "5": 1218,
+    "6": 1001,
+    "7": 588,
+    "8": 713,
+    "9": 681,
+    "10": 593,
+    "11": 1124,
+    "12": 642,
+    "13": 569,
+    "14": 724,
+    "15": 732,
+    "16": 683,
+    "17": 481,
+    "18": 269,
+    "19": 563,
+    "20": 252,
+    "21": 129,
+    "22": 186,
+    "23": 96
   },
   "message_types": {
-    "19": 186,
-    "0": 724
+    "0": 8638,
+    "19": 4145,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1396045863393955920",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone https://youtu.be/kCPCJ6EIn7s?si=zMNhEuabyJeYqHt8&utm_source=ZTQxO\n\nWe’",
+      "author": "game.producer.light",
+      "reactions": 333,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1396012735615074335",
       "content": "",
@@ -81,11 +104,27 @@
       "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
     },
     {
+      "id": "1396047456030031913",
+      "channel_id": "1170692781216378960",
+      "content": "We’re sorry if this may disturb some people. If you don’t wish to be pinged, ple",
+      "author": "game.producer.light",
+      "reactions": 64,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1395990503719440394",
       "content": "精彩同人作品分享，感谢大家精彩绝伦的创作！\nIncredible fan art! Thank you for bringing our world to li",
       "author": "morimensstaff01",
       "reactions": 54,
       "channel": "弥萨格艺术展2┊Mythag Art Exhibition 2"
+    },
+    {
+      "id": "1396033467459833856",
+      "channel_id": "1170692781216378960",
+      "content": "We are very grateful to Altplus for providing financial support for the prologue",
+      "author": "game.producer.light",
+      "reactions": 37,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1395997979797623019",
@@ -100,6 +139,14 @@
       "author": "moyashi0672",
       "reactions": 31,
       "channel": "Lore Accurate Doresain"
+    },
+    {
+      "id": "1396210298054115498",
+      "channel_id": "1170692781216378960",
+      "content": "try removing the purple units(ultrash) she does a lot better when you use blue u",
+      "author": "monchi3524",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1396198342345625600",
@@ -144,11 +191,27 @@
       "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
     },
     {
+      "id": "1396209682074439680",
+      "channel_id": "1170692781216378960",
+      "content": "not blue, completely useless",
+      "author": "monchi3524",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1396037366715777074",
       "content": "（p1是威廉和他的友人，但是没有官方形象故自己搓了一个）",
       "author": "gualu_.",
       "reactions": 16,
       "channel": "男同女同啃嘴图"
+    },
+    {
+      "id": "1396034260854374561",
+      "channel_id": "1170692781216378960",
+      "content": "an offering for doresain (wet)",
+      "author": "nikolazuli",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1396133690517487636",
@@ -163,50 +226,6 @@
       "author": "moyashi0672",
       "reactions": 14,
       "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
-    },
-    {
-      "id": "1396021040672542730",
-      "content": "ok forget what i said about only e3ing him. I AM PULLING FOR OE",
-      "author": "jormiejormungandr",
-      "reactions": 13,
-      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
-    },
-    {
-      "id": "1396060203765469224",
-      "content": "中间那撮毛（？）和冒火的眼睛似乎再次一会在左边一会在右边了\n可以透露一下是有意为之还是失误吗（",
-      "author": "flarinsidia",
-      "reactions": 12,
-      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
-    },
-    {
-      "id": "1396002426636472423",
-      "content": "画点祈祷姿势的…画几张算几张吧…",
-      "author": "zerathree",
-      "reactions": 12,
-      "channel": "开祷！"
-    },
-    {
-      "id": "1395989931741941812",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1396022118445219880",
-      "content": "i am going to spend a lot of money to show my heartfelt thanks <:dishes:13560833",
-      "author": "jormiejormungandr",
-      "reactions": 10,
-      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
-    },
-    {
-      "id": "1396045028522070100",
-      "channel_id": "1131839817982947429",
-      "content": "所以宁愿重配、延期也想试试。希望这未来能够尽量少发生，或提前就决定规划好，这毕竟意味着一定工作浪费和版本节奏打乱。很抱歉。希望最终结果大家能喜欢。",
-      "author": "game.producer.light",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,23 @@
 {
   "date": "2025-07-26",
-  "messages": 1272,
-  "unique_authors": 44,
-  "reactions_total": 216,
-  "attachments": 49,
+  "messages": 13068,
+  "unique_authors": 277,
+  "reactions_total": 995,
+  "attachments": 527,
   "channel_activity": {
+    "🔸morimens-game-chat": 8873,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 575,
+    "🔸phòng-chat-tiếng-việt": 23,
+    "🔸canal-español": 849,
+    "🔸canal-português": 488,
+    "🔸ruang-obrolan-indonesia": 640,
+    "🔸ห้องสนทนาภาษาไทย": 259,
+    "🔸traphase": 59,
     "🔸綜合討論": 1140,
     "🔸阵容构建": 1,
     "Getting some Doresain fan art": 1,
@@ -26,31 +39,34 @@
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "0": 3,
-    "1": 5,
-    "2": 243,
-    "3": 138,
-    "4": 31,
-    "5": 24,
-    "6": 128,
-    "7": 39,
-    "8": 15,
-    "9": 12,
-    "10": 18,
-    "11": 103,
-    "12": 103,
-    "13": 180,
-    "14": 174,
-    "15": 22,
-    "16": 8,
-    "17": 7,
-    "20": 2,
-    "19": 10,
-    "23": 7
+    "0": 847,
+    "1": 563,
+    "2": 846,
+    "3": 802,
+    "4": 763,
+    "5": 334,
+    "6": 853,
+    "7": 493,
+    "8": 113,
+    "9": 157,
+    "10": 388,
+    "11": 805,
+    "12": 808,
+    "13": 893,
+    "14": 560,
+    "15": 513,
+    "16": 681,
+    "17": 401,
+    "18": 476,
+    "19": 502,
+    "20": 347,
+    "21": 304,
+    "22": 288,
+    "23": 331
   },
   "message_types": {
-    "0": 991,
-    "19": 150
+    "19": 3883,
+    "0": 7913
   },
   "top_reacted_messages": [
     {
@@ -75,6 +91,14 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398743493085495439",
+      "channel_id": "1170692781216378960",
+      "content": "I want +12 gdoll",
+      "author": "derrickc0222",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398615189565345943",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -95,6 +119,14 @@
       "author": "risend",
       "reactions": 9,
       "channel": "V2.3.0.2 在线维护公告"
+    },
+    {
+      "id": "1398743978807132302",
+      "channel_id": "1170692781216378960",
+      "content": "I played my own part in sustening the game when the patch launched...",
+      "author": "baguettesuffering",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1398638456426467370",
@@ -128,6 +160,14 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398756470723579984",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> 2 hours of retrying <:dishes:1356083313063759922>",
+      "author": "melwyn7591",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398519682738163712",
       "channel_id": "1131839817982947429",
       "content": "进行一个炫耀",
@@ -143,6 +183,22 @@
       "channel": "仿一点官方q版（失败版"
     },
     {
+      "id": "1398551250785669120",
+      "channel_id": "1170692781216378960",
+      "content": "something about devil's prostate or something",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398467873588121632",
+      "channel_id": "1300659662311526512",
+      "content": "Yo recomiendo que le metan plata al juego , eso hace feliz al gato",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1398669359190380604",
       "content": "Agree with this.\n\nIf the skin can't be changed, and the cg is later revised, the",
       "author": "baguettesuffering",
@@ -150,57 +206,20 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
-      "id": "1398474192982380554",
-      "content": "I'm a massive Doresain fan, but I feel like for the first awaker with a paid ski",
-      "author": "phantasidreamin",
+      "id": "1398485940833620009",
+      "channel_id": "1170692781216378960",
+      "content": "+12 in 5 days.. and I can finally rest",
+      "author": "iv_dog",
       "reactions": 5,
-      "channel": "Doresain \"skin\"."
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1398664083959447553",
-      "channel_id": "1131839817982947429",
-      "content": "谢谢你的建议！",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398669841417633792",
-      "content": "那个神人：没有那一天",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398671301589336084",
-      "content": "We are fine with skin monetization \nbut Doresain skin is not this",
-      "author": "_venush",
-      "reactions": 4,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398468907597299712",
-      "channel_id": "1131839817982947429",
-      "content": "終於阿",
-      "author": "cwz.io",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398498329633230898",
-      "channel_id": "1131839817982947429",
-      "content": "每次的感官就是莫名其妙上学回来，账户里面多了2000+银芯",
-      "author": "201225200913",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1398512471995846818",
-      "channel_id": "1131839817982947429",
-      "content": "然後對面反擊我哈姆林靈魂序曲+自己狂氣下去我死了",
-      "author": "sayo.0320",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1398531412134461451",
+      "channel_id": "1170692781216378960",
+      "content": "lets goooooo i got my Helot +12",
+      "author": "nicoplaynick",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

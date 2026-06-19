@@ -1,10 +1,23 @@
 {
   "date": "2025-07-04",
-  "messages": 7737,
+  "messages": 9883,
   "unique_authors": 219,
-  "reactions_total": 1276,
-  "attachments": 396,
+  "reactions_total": 1314,
+  "attachments": 491,
   "channel_activity": {
+    "🔸剧情交流": 24,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 3,
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 96,
+    "🔸canal-português": 695,
+    "🔸ruang-obrolan-indonesia": 649,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 566,
+    "🔸lore-chat": 61,
     "🔸綜合討論": 97,
     "🔸morimens-game-chat": 7594,
     "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 2,
@@ -21,34 +34,34 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "2": 246,
-    "5": 304,
-    "7": 223,
-    "8": 244,
-    "9": 326,
-    "10": 205,
-    "11": 275,
-    "12": 301,
-    "13": 363,
-    "14": 271,
-    "15": 327,
-    "16": 443,
-    "18": 429,
-    "20": 344,
-    "21": 344,
-    "0": 309,
-    "1": 341,
-    "3": 489,
-    "4": 265,
-    "6": 311,
-    "17": 391,
-    "19": 334,
-    "22": 383,
-    "23": 269
+    "7": 268,
+    "8": 277,
+    "9": 365,
+    "2": 288,
+    "11": 294,
+    "3": 534,
+    "5": 484,
+    "15": 364,
+    "0": 691,
+    "20": 571,
+    "22": 404,
+    "1": 581,
+    "4": 291,
+    "6": 447,
+    "10": 297,
+    "12": 324,
+    "14": 421,
+    "23": 330,
+    "19": 358,
+    "16": 460,
+    "17": 401,
+    "18": 458,
+    "13": 449,
+    "21": 526
   },
   "message_types": {
-    "0": 5044,
-    "19": 2647
+    "0": 1573,
+    "19": 573
   },
   "top_reacted_messages": [
     {
@@ -168,6 +181,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1390545230452752567",
+      "channel_id": "1300659662311526512",
+      "content": "https://discord.com/channels/1131791637933199470/1170692781216378960/13905427124",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1390645349001072652",
       "channel_id": "1131839817982947429",
       "content": "無聊到帶勾巴隊伍打蟲",
@@ -196,14 +217,6 @@
       "channel_id": "1170692781216378960",
       "content": "Don't forget redeem code:\n\nHVGX-HLDX-QKKN\nQKBQ-SSDG-JZYU\nCatsgift\nDc5000\nSilverk",
       "author": "moyashi0672",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1390741678624604160",
-      "channel_id": "1170692781216378960",
-      "content": "Tulu the only awakener who isn’t happy about enlightenment levels lmao",
-      "author": "ev_6185",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
