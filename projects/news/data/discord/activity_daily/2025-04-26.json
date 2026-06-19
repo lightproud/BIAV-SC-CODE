@@ -1,10 +1,11 @@
 {
   "date": "2025-04-26",
-  "messages": 29,
-  "unique_authors": 7,
-  "reactions_total": 26,
-  "attachments": 5,
+  "messages": 226,
+  "unique_authors": 27,
+  "reactions_total": 100,
+  "attachments": 11,
   "channel_activity": {
+    "🔸綜合討論": 197,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "Goliath Fanart": 2,
     "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 4,
@@ -17,22 +18,42 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "5": 2,
-    "3": 1,
-    "9": 5,
-    "10": 12,
-    "19": 1,
-    "14": 1,
-    "20": 1,
-    "7": 1,
-    "18": 4,
-    "21": 1
+    "0": 2,
+    "1": 5,
+    "2": 26,
+    "3": 8,
+    "4": 18,
+    "5": 13,
+    "6": 40,
+    "7": 9,
+    "8": 17,
+    "9": 23,
+    "10": 17,
+    "11": 2,
+    "13": 9,
+    "14": 6,
+    "15": 5,
+    "16": 2,
+    "17": 8,
+    "18": 5,
+    "19": 3,
+    "21": 2,
+    "23": 5,
+    "20": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 181,
+    "19": 16
   },
   "top_reacted_messages": [
+    {
+      "id": "1365599894231842866",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1365807416687464448",
       "content": "90级了，来更新一下（",
@@ -48,6 +69,78 @@
       "channel": "血链希洛忘却篇星辰篇造物抓取二图流攻略"
     },
     {
+      "id": "1365570785137397771",
+      "channel_id": "1131839817982947429",
+      "content": "阿狗過了一個淫亂的忘卻人生",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365622251889627169",
+      "channel_id": "1131839817982947429",
+      "content": "我等等還要加班四小時",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365583809835307030",
+      "channel_id": "1131839817982947429",
+      "content": "嗚嗚嗚嗚嗚嗚我沒有歪成功+12😭",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365620759787081823",
+      "channel_id": "1131839817982947429",
+      "content": "~~牢貓 敢不敢出 出了我更萬字肉文直接讓守密死在床上~~",
+      "author": "fengliyaowo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365742006357201056",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "287405tjy_28066",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365570903185948714",
+      "channel_id": "1131839817982947429",
+      "content": "好了自選卡池改選圖魯把他補到+8",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365693253126717622",
+      "channel_id": "1131839817982947429",
+      "content": "||5771的純愛都是純做愛||",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365769304762486834",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365568422578229380",
+      "channel_id": "1131839817982947429",
+      "content": "XX",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1365554644696432681",
       "content": "Another companion image to go with it, Jenkins is still cuter though.",
       "author": "starfish3302",
@@ -55,25 +148,60 @@
       "channel": "Just a pixel image of Jenkin looking outside with Brown"
     },
     {
-      "id": "1365531449155129384",
-      "content": "Giving nips is a must in my house <:o7:1311002802331582647>",
-      "author": "meatyexplosions",
+      "id": "1365567789615677481",
+      "channel_id": "1131839817982947429",
+      "content": "什麼時候出r18繁衍狂熱2.0",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "Goliath Fanart"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365765790984569035",
-      "content": "This guide goes over the starting topics of:\n\n1. Keeper Level\n2. Menophin how to",
-      "author": "climbkaly",
+      "id": "1365569732295655535",
+      "channel_id": "1131839817982947429",
+      "content": "你過了一個成功的忘卻人生",
+      "author": "shchng.",
       "reactions": 2,
-      "channel": "Beginner Navigation Guide"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365640574396272700",
-      "content": "<:behave:1361909598067625984>",
-      "author": "huangziqiao_45693",
+      "id": "1365571710006333460",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "fengliyaowo",
       "reactions": 2,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365572972999610398",
+      "channel_id": "1131839817982947429",
+      "content": "有什麼糟糕的東西一閃而過",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365575006242869288",
+      "channel_id": "1131839817982947429",
+      "content": "||~~可以放進兩隻浣熊~~||",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365637437573042186",
+      "channel_id": "1131839817982947429",
+      "content": "剩我連大福都沒有了",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365685835386585158",
+      "channel_id": "1131839817982947429",
+      "content": "下班",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

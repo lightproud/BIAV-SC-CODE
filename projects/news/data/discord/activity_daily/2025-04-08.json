@@ -1,10 +1,11 @@
 {
   "date": "2025-04-08",
-  "messages": 41,
-  "unique_authors": 9,
-  "reactions_total": 25,
-  "attachments": 12,
+  "messages": 884,
+  "unique_authors": 41,
+  "reactions_total": 82,
+  "attachments": 45,
   "channel_activity": {
+    "🔸綜合討論": 843,
     "Flares' Submission to the Fanart Contest. 24 with Jenkins and Brown": 2,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 1,
     "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！": 2,
@@ -23,26 +24,32 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "8": 8,
-    "12": 2,
-    "7": 2,
-    "5": 5,
-    "4": 1,
-    "9": 1,
-    "18": 1,
-    "14": 4,
-    "13": 1,
-    "15": 1,
-    "6": 3,
-    "2": 7,
-    "3": 1,
-    "10": 1,
-    "23": 2,
-    "1": 1
+    "0": 1,
+    "1": 29,
+    "2": 10,
+    "3": 17,
+    "4": 15,
+    "5": 29,
+    "6": 57,
+    "7": 23,
+    "8": 65,
+    "9": 20,
+    "10": 16,
+    "11": 57,
+    "12": 59,
+    "13": 194,
+    "14": 187,
+    "15": 39,
+    "16": 52,
+    "17": 5,
+    "20": 2,
+    "22": 2,
+    "23": 4,
+    "18": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 3
+    "0": 692,
+    "19": 151
   },
   "top_reacted_messages": [
     {
@@ -60,6 +67,102 @@
       "channel": "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！"
     },
     {
+      "id": "1359184558180012032",
+      "channel_id": "1131839817982947429",
+      "content": "<:cute1:1356053053568192717>",
+      "author": "zhaoxing233",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359164034372468837",
+      "channel_id": "1131839817982947429",
+      "content": "做動畫不如跟我做",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359176103100551209",
+      "channel_id": "1131839817982947429",
+      "content": "他克萊門汀附身",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359049673507082430",
+      "channel_id": "1131839817982947429",
+      "content": "只是我們沒撿到而已，不代表真的沒銀芯析出",
+      "author": "yizilven",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359175344732639262",
+      "channel_id": "1131839817982947429",
+      "content": "路線還是比較好",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359175908283383950",
+      "channel_id": "1131839817982947429",
+      "content": "👁️",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359178127036645376",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇 熔朵 超不超限  两个角色",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359178344247066724",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇没专武就没循环 根本堆不起来银钥",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359180633997316250",
+      "channel_id": "1131839817982947429",
+      "content": "我們的醫生沒有料也很色，畢竟有多少角色是完全鏤空的呢",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359191920089370644",
+      "channel_id": "1131839817982947429",
+      "content": "全是英文  好好笑",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359210099616256222",
+      "channel_id": "1131839817982947429",
+      "content": "下隻會是蛇嗎",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359257682560815337",
+      "channel_id": "1131839817982947429",
+      "content": "豆腐總下",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1359081696783499397",
       "content": "🎁獎勵新增“限定頭像框”與無門檻參與獎，歡迎各位守密人一起來創作遊戲攻略！\n\n**🎯【投稿時間】**\n2025年4月7日00:00-2025年5月4日23:59",
       "author": "morimensstaff01",
@@ -67,18 +170,44 @@
       "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
     },
     {
-      "id": "1359176930347192350",
-      "content": "免得大家都說我們產能拿來幹嘛",
-      "author": "kong760",
+      "id": "1358985229301186600",
+      "channel_id": "1131839817982947429",
+      "content": "官方說之後可能會改",
+      "author": "ena04564",
       "reactions": 1,
-      "channel": "[克蘇魯神話元素] 溫柯爾裡面的人"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1359313847042969732",
-      "content": "hope one day, maybe next year or 2 in future you will implement this",
-      "author": "maegu",
+      "id": "1359008574704980038",
+      "channel_id": "1131839817982947429",
+      "content": "<#1174179624096378930>",
+      "author": "arr5721",
       "reactions": 1,
-      "channel": "2nd artwork for characters"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359010003851280405",
+      "channel_id": "1131839817982947429",
+      "content": "~~這樣一堆頻道會塞滿你的眼睛~~",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359011976000311447",
+      "channel_id": "1131839817982947429",
+      "content": "~~这次更新后最大收获就是知道要怎样隐藏频道了~~",
+      "author": "ling_an_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359014845147779203",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

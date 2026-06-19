@@ -1,10 +1,25 @@
 {
   "date": "2025-05-09",
-  "messages": 879,
-  "unique_authors": 49,
-  "reactions_total": 220,
-  "attachments": 108,
+  "messages": 10625,
+  "unique_authors": 185,
+  "reactions_total": 594,
+  "attachments": 433,
   "channel_activity": {
+    "🔸morimens-game-chat": 8498,
+    "🔸剧情交流": 16,
+    "🔸相位对弈": 5,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 121,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 10,
+    "🔸phòng-chat-tiếng-việt": 58,
+    "🔸canal-español": 151,
+    "🔸canal-português": 23,
+    "🔸ruang-obrolan-indonesia": 281,
+    "🔸ห้องสนทนาภาษาไทย": 382,
+    "🔸traphase": 169,
+    "🔸lore-chat": 23,
     "🔸綜合討論": 720,
     "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 1,
     "Corposant": 1,
@@ -33,34 +48,34 @@
     "【MMD】神っぽいな「克莱门汀」": 2
   },
   "hourly_activity": {
-    "0": 24,
-    "1": 38,
-    "2": 33,
-    "3": 49,
-    "4": 21,
-    "5": 26,
-    "6": 151,
-    "7": 52,
-    "8": 52,
-    "9": 88,
-    "10": 62,
-    "11": 26,
-    "12": 36,
-    "13": 37,
-    "14": 65,
-    "15": 50,
-    "16": 12,
-    "17": 5,
-    "18": 2,
-    "22": 5,
-    "23": 2,
-    "19": 3,
-    "21": 20,
-    "20": 20
+    "0": 506,
+    "1": 435,
+    "2": 571,
+    "3": 466,
+    "4": 734,
+    "5": 621,
+    "6": 921,
+    "7": 450,
+    "8": 338,
+    "9": 421,
+    "10": 438,
+    "11": 274,
+    "12": 532,
+    "13": 268,
+    "14": 307,
+    "15": 548,
+    "16": 565,
+    "17": 420,
+    "18": 459,
+    "19": 224,
+    "20": 94,
+    "21": 429,
+    "22": 310,
+    "23": 294
   },
   "message_types": {
-    "0": 616,
-    "19": 104
+    "0": 7631,
+    "19": 2115
   },
   "top_reacted_messages": [
     {
@@ -87,6 +102,38 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1370390877712941158",
+      "channel_id": "1170692781216378960",
+      "content": "A secret photo of Thais has been found.\n\n(Actually I just want to send you a pho",
+      "author": "irrational_obelisk",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370404906296676403",
+      "channel_id": "1170692781216378960",
+      "content": "Was thinking of this sketch as G 24",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370278407220494387",
+      "channel_id": "1170692781216378960",
+      "content": "Really can't say more for now, sorry—expect more details to be rolled out gradua",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370444319076646953",
+      "channel_id": "1170692781216378960",
+      "content": "I could aslo join the Marine, they are basically begging for me at this point bu",
+      "author": "van_ehre",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1370314361566134313",
       "channel_id": "1131839817982947429",
       "content": "什么时候来降力大赛",
@@ -110,6 +157,30 @@
       "channel": "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍"
     },
     {
+      "id": "1370205776097968129",
+      "channel_id": "1170692781216378960",
+      "content": "1h Morimens video jumpscare https://www.youtube.com/watch?v=9iwsS5TOvmg",
+      "author": "nguyenduc2710",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370437420318982174",
+      "channel_id": "1170692781216378960",
+      "content": "gelot is ganna become obsolete just in time for g-gelot",
+      "author": "khykken",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370541232022880267",
+      "channel_id": "1300659436804640788",
+      "content": "翻訳の都合で理解が難しそうな箇所があったので補足しておきます。\n\n### 1, 5/30から始まる1.5周年イベント「神国上浮」ではレイドボス討伐イベントが開催",
+      "author": "eyu17",
+      "reactions": 5,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1370248133078159392",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -126,96 +197,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1370237662266654770",
-      "channel_id": "1131839817982947429",
-      "content": "~~我都多一百氣哭~~",
-      "author": "ahuahuahua",
+      "id": "1370276288983470111",
+      "channel_id": "1170692781216378960",
+      "content": "Ultra x Male",
+      "author": "game.producer.light",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370335446277816350",
-      "content": "Hey there! I've been really hooked to the game since the first day I found out a",
-      "author": "hakuha",
+      "id": "1370279070570647645",
+      "channel_id": "1170692781216378960",
+      "content": "uh oh",
+      "author": "nekomatadawnhorizon",
       "reactions": 4,
-      "channel": "✅「Answered」Permission of image use for planner app"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370243563081826350",
-      "channel_id": "1131839817982947429",
-      "content": "我要她進超維",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1370436529230708816",
+      "channel_id": "1170692781216378960",
+      "content": "One of my friends who started at anniversary with me quit because he said catena",
+      "author": "applepieeater123",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370438960903622767",
-      "content": "Thank you two for thine patronage, We hope to create further ASMR content for th",
-      "author": "inana_istar",
-      "reactions": 3,
-      "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
+      "id": "1370443550193614960",
+      "channel_id": "1170692781216378960",
+      "content": "i don't think so, flares would be the kind of guy to spam dm constantly, but he'",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370422632880799897",
-      "content": "不知道打了多少場",
-      "author": "arr5721",
-      "reactions": 3,
-      "channel": "✅前瞻：1.5周年～活动福利篇"
-    },
-    {
-      "id": "1370189411333050489",
-      "channel_id": "1131839817982947429",
-      "content": "原来神国就是三国（）",
-      "author": "rain_scarlet",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370205591745728593",
-      "channel_id": "1131839817982947429",
-      "content": "剩我沒被大調查了",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370219759261716491",
-      "channel_id": "1131839817982947429",
-      "content": "我靠我怎么知道鲁迅写的“我有两棵树，一棵是枣树，另一棵也是枣树”蕴含了鲁迅当时什么样的情感",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370236661899857960",
-      "channel_id": "1131839817982947429",
-      "content": "~~有錢就是她大爺~~",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370349455693582417",
-      "channel_id": "1131839817982947429",
-      "content": "<:rizz1:1356085398379692165>",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370352008770617455",
-      "channel_id": "1131839817982947429",
-      "content": "<:processing:1357185814567718963>  \nI don't think it's a good thing to understan",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370191277248745482",
-      "content": "New player experience. Hard mode. I have 300 hours in the game and I am a decent",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "Please help Ultra Survive"
+      "id": "1370451185353494539",
+      "channel_id": "1170692781216378960",
+      "content": "https://tiermaker.com/create/morimens-characters--16608782?downloadedImage=true",
+      "author": "noire_2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

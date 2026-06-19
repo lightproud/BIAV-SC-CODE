@@ -1,10 +1,26 @@
 {
   "date": "2025-05-08",
-  "messages": 1101,
-  "unique_authors": 61,
-  "reactions_total": 382,
-  "attachments": 49,
+  "messages": 8522,
+  "unique_authors": 203,
+  "reactions_total": 663,
+  "attachments": 370,
   "channel_activity": {
+    "🔸morimens-game-chat": 5924,
+    "🔸剧情交流": 92,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 322,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 245,
+    "🔸русский-канал": 101,
+    "🔸phòng-chat-tiếng-việt": 10,
+    "🔸canal-español": 243,
+    "🔸canal-português": 105,
+    "🔸ruang-obrolan-indonesia": 276,
+    "🔸ห้องสนทนาภาษาไทย": 44,
+    "🔸traphase": 18,
+    "🔸lore-chat": 21,
     "🔸綜合討論": 982,
     "Goliath": 1,
     "study of morimens art style :))": 3,
@@ -27,33 +43,34 @@
     "1271491376881598494": 6
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 29,
-    "2": 102,
-    "3": 30,
-    "5": 25,
-    "6": 264,
-    "7": 17,
-    "8": 29,
-    "9": 102,
-    "10": 30,
-    "11": 30,
-    "12": 4,
-    "13": 36,
-    "14": 62,
-    "15": 2,
-    "16": 160,
-    "17": 89,
-    "18": 51,
-    "22": 16,
-    "23": 14,
-    "19": 1,
-    "21": 2,
-    "4": 2
+    "0": 140,
+    "1": 268,
+    "2": 521,
+    "3": 507,
+    "4": 291,
+    "5": 279,
+    "6": 336,
+    "7": 146,
+    "8": 111,
+    "9": 169,
+    "10": 225,
+    "11": 176,
+    "12": 372,
+    "13": 439,
+    "14": 477,
+    "15": 240,
+    "16": 497,
+    "17": 721,
+    "18": 320,
+    "19": 178,
+    "20": 564,
+    "21": 547,
+    "22": 490,
+    "23": 508
   },
   "message_types": {
-    "0": 818,
-    "19": 164
+    "0": 5818,
+    "19": 1603
   },
   "top_reacted_messages": [
     {
@@ -108,12 +125,44 @@
       "channel": "Karen"
     },
     {
+      "id": "1370077787091632179",
+      "channel_id": "1170692781216378960",
+      "content": "Our apologies! We'll send out the official English version tomorrow.",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370079148936134727",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "madlax",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370077151201726494",
+      "channel_id": "1170692781216378960",
+      "content": "Welcome to the second part of the 1.5th anniversary update preview!\n\nThis time w",
+      "author": "omegamart",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1369954317976473620",
       "channel_id": "1131839817982947429",
       "content": "好想喝鯊奶",
       "author": "fengliyaowo",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370118211244392580",
+      "channel_id": "1170692781216378960",
+      "content": "There's an artbook 😭 i want a copy",
+      "author": "kevsalvador",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1369967066056228894",
@@ -132,6 +181,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1370094222954336377",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370155833282793622",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1369879435112743022",
       "channel_id": "1131839817982947429",
       "content": "下班有時間再說",
@@ -148,68 +213,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1370076928052297748",
-      "channel_id": "1131839817982947429",
-      "content": "Mf dragged me all the way out of an Episode of Dr House. this better be good",
-      "author": "mentallystuntedsavant",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1369875718347034645",
-      "channel_id": "1131839817982947429",
-      "content": "國際盜懶叫集團",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1369926767405437000",
-      "channel_id": "1131839817982947429",
-      "content": "这种针对特定怪物类型增伤的设计还是很不喜欢。20多趴就很勉强了，直接翻个倍的伤害就很呃呃<:dead:1356082627509092372>",
-      "author": "randomplayer852",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1369931112268300319",
-      "channel_id": "1131839817982947429",
-      "content": "所以本源墨會在廣播裡生孩子\n神圖魯會在廣播裡發出啪噠啪噠的觸手聲嗎",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370046894285389864",
-      "channel_id": "1131839817982947429",
+      "id": "1369843524551311502",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "bailuoxiao",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370077757337243648",
-      "channel_id": "1131839817982947429",
-      "content": "||刚才一瞬间看到了翻译在明天和翻译的名字||",
-      "author": "navirecorbeau",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370080516539158590",
-      "channel_id": "1131839817982947429",
-      "content": "佬",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370086748645753077",
-      "channel_id": "1131839817982947429",
-      "content": "印章满满<:nocomment:1356053106038673610>",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1369868473676726412",
+      "channel_id": "1170692781216378960",
+      "content": "People on the internet became so paranoid to the point of debating if good art i",
+      "author": "doktor.sex",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

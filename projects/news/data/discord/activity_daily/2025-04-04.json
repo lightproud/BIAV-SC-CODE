@@ -1,10 +1,11 @@
 {
   "date": "2025-04-04",
-  "messages": 66,
-  "unique_authors": 15,
-  "reactions_total": 70,
-  "attachments": 10,
+  "messages": 725,
+  "unique_authors": 28,
+  "reactions_total": 121,
+  "attachments": 50,
   "channel_activity": {
+    "🔸綜合討論": 659,
     "Today's this man's birthdays": 2,
     "New Player Mechanics and Progression Guide": 1,
     "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 3,
@@ -24,28 +25,31 @@
     "「   」的故事（上）": 4
   },
   "hourly_activity": {
-    "15": 7,
-    "17": 2,
-    "5": 4,
-    "6": 10,
-    "7": 1,
-    "14": 6,
+    "0": 3,
+    "1": 1,
+    "2": 6,
+    "4": 7,
+    "5": 13,
+    "6": 26,
+    "7": 34,
+    "8": 131,
+    "9": 124,
+    "10": 33,
+    "11": 39,
+    "12": 26,
+    "13": 13,
+    "14": 19,
+    "15": 36,
+    "17": 50,
+    "18": 145,
+    "19": 10,
+    "23": 5,
     "16": 3,
-    "8": 8,
-    "10": 2,
-    "18": 2,
-    "12": 10,
-    "13": 3,
-    "9": 1,
-    "11": 2,
-    "20": 1,
-    "2": 3,
-    "4": 1
+    "20": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 7,
-    "4": 1
+    "0": 553,
+    "19": 106
   },
   "top_reacted_messages": [
     {
@@ -70,6 +74,46 @@
       "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
     },
     {
+      "id": "1357571471223820421",
+      "channel_id": "1131839817982947429",
+      "content": "这就是这期容灾最难BOSS吗",
+      "author": "kafka0u0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357696891285930086",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357678902675378360",
+      "channel_id": "1131839817982947429",
+      "content": "24快要加强哩，等我2回合秒杀4-5雷娅",
+      "author": "bailuoxiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357695971475198134",
+      "channel_id": "1131839817982947429",
+      "content": "脫離苦海",
+      "author": "randomplayer852",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357740264902496387",
+      "channel_id": "1131839817982947429",
+      "content": "我还是等24加强吧，加强之后摸一摸2回合融灾4-5不死扛版本（）",
+      "author": "bailuoxiao",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1357600630121959556",
       "content": "守密人你好：\n       彌薩格大學預計於4月7日08:00~12:00（UTC+8）進行校內設施維護。\n       維護結束後需要重新登入並進行更新，補給",
       "author": "morimensstaff02",
@@ -84,6 +128,14 @@
       "channel": "关于时间原点"
     },
     {
+      "id": "1357688254320611329",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1357627067713323031",
       "content": "I should be getting more due to higher total level",
       "author": "aurora3981",
@@ -96,6 +148,30 @@
       "author": "luhongran",
       "reactions": 3,
       "channel": "退游倒计时"
+    },
+    {
+      "id": "1357628330748153856",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357649870713782427",
+      "channel_id": "1131839817982947429",
+      "content": "~~`塔維在這個隊伍是負責抓強者為尊跟螺湮逆流的~~",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357668898937245808",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1357664591672381532",
@@ -124,41 +200,6 @@
       "author": "sam511011",
       "reactions": 2,
       "channel": "「   」的故事（上）"
-    },
-    {
-      "id": "1357743417966329996",
-      "content": "||原本誰知道25%是多少||，然後對面有損血就能觸發了",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
-    },
-    {
-      "id": "1357608053561888809",
-      "content": "<@702167871144591461>Hi~ The voice actor is 国実 久留子 (Kunimi Kuruko)✨",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
-    },
-    {
-      "id": "1357608525928468571",
-      "content": "Thank you! <:dishes:1356083313063759922>",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
-    },
-    {
-      "id": "1357719084795560137",
-      "content": "Oh okay thanks",
-      "author": "axisstorm_",
-      "reactions": 1,
-      "channel": "Tulu team recommendation"
-    },
-    {
-      "id": "1357539359754293248",
-      "content": "感谢喜欢！！",
-      "author": "jueduishigemeng",
-      "reactions": 1,
-      "channel": "*千面幻象*达芙黛尔单人向"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-04-27",
-  "messages": 46,
-  "unique_authors": 9,
-  "reactions_total": 590,
-  "attachments": 6,
+  "messages": 588,
+  "unique_authors": 33,
+  "reactions_total": 682,
+  "attachments": 17,
   "channel_activity": {
+    "🔸綜合討論": 542,
     "Goliath Fanart": 4,
     "Overexalt": 2,
     "✅「Answered」Error on game launch": 3,
@@ -24,25 +25,32 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "5": 6,
-    "6": 1,
-    "9": 2,
-    "16": 2,
-    "17": 3,
-    "3": 8,
-    "2": 9,
-    "7": 1,
-    "8": 1,
-    "15": 1,
-    "14": 1,
-    "4": 5,
-    "18": 3,
-    "13": 2,
-    "12": 1
+    "0": 2,
+    "1": 13,
+    "2": 17,
+    "3": 10,
+    "4": 9,
+    "5": 9,
+    "6": 51,
+    "7": 17,
+    "8": 135,
+    "9": 32,
+    "10": 55,
+    "11": 27,
+    "12": 80,
+    "13": 16,
+    "14": 53,
+    "15": 7,
+    "16": 8,
+    "17": 13,
+    "18": 5,
+    "20": 2,
+    "21": 2,
+    "22": 25
   },
   "message_types": {
-    "0": 3,
-    "19": 3
+    "19": 54,
+    "0": 488
   },
   "top_reacted_messages": [
     {
@@ -53,11 +61,27 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1366035786159493181",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1365884553163706409",
       "content": "守密人的建議校工一直在關注🥰 請期待吧<:cute1:1356053053568192717>",
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1366024844335906878",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1366120365457277068",
@@ -67,46 +91,124 @@
       "channel": "自製角色（目前有深海一名、超維一名）"
     },
     {
-      "id": "1365947702055276575",
-      "content": "真的嗎",
+      "id": "1366005498838651001",
+      "channel_id": "1131839817982947429",
+      "content": "~~我都擔心內容~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366033752752652328",
+      "channel_id": "1131839817982947429",
+      "content": "跟我一樣欸",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366183343615512627",
+      "channel_id": "1131839817982947429",
+      "content": "~~不如下一篇文讓守密生~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365939151924494386",
+      "channel_id": "1131839817982947429",
+      "content": "兩個忙",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365939872455720972",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365939872862306374",
+      "channel_id": "1131839817982947429",
+      "content": "我负责坐里面一边吃水果一边玩手机一边吹风扇给你们抬的人画饼",
+      "author": "zaitielushang",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365957460367642724",
+      "channel_id": "1131839817982947429",
+      "content": "<:question2:1356053130336272414>",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365979469059326034",
+      "channel_id": "1131839817982947429",
+      "content": "玩鯊魚可以抽狂宴\n巨刃滿的話\n我tm溢出了",
       "author": "kong760",
       "reactions": 2,
-      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365878796938510388",
-      "content": "It isn't device locked, but your device does save the currently logged in accoun",
-      "author": "zier.0",
+      "id": "1365993171330269255",
+      "channel_id": "1131839817982947429",
+      "content": "觸手新型態：串珠",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "✅「Answered」Steam account switching"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365983044875325541",
-      "content": "Ehe <:goodjob1:1356083729558274149>",
-      "author": "oketan",
-      "reactions": 1,
-      "channel": "Goliath Fanart"
+      "id": "1366004106430382182",
+      "channel_id": "1131839817982947429",
+      "content": "<:love:1356053099931897977> <:love:1356053099931897977>",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1366085170209357864",
-      "content": "1. You need 8 copies total for an overexalt.\n\nIn other words: 3 Star +4\n\n2. The ",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Overexalt"
+      "id": "1366004525269516309",
+      "channel_id": "1131839817982947429",
+      "content": "||我要變成觸手狠狠的抽打你們<:love:1356053099931897977> <:love:1356053099931897977> ||",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1366071232122064957",
-      "content": "羊妈每有1点狂气充能效率，增加1%～5%的大招伤害，上毒，造成出血。\n\n向血链看齐。\n\n哈姆林的天赋也能这么搞。\n\n说真的血链国家队最大的问题还真是四个人的大招",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "羊妈星辰篇天赋建议"
+      "id": "1366018751052513361",
+      "channel_id": "1131839817982947429",
+      "content": "我是清純大猛1",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365916404733448206",
-      "content": "感謝建議，Goya會去溝通一下🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "技能文本字型大小過小"
+      "id": "1366033354746630165",
+      "channel_id": "1131839817982947429",
+      "content": "输光…",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366034559543672955",
+      "channel_id": "1131839817982947429",
+      "content": "DISCORD17000",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366096220619149362",
+      "channel_id": "1131839817982947429",
+      "content": "<@456226577798135808>",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

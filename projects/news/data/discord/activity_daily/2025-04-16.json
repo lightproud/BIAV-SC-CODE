@@ -1,10 +1,11 @@
 {
   "date": "2025-04-16",
-  "messages": 73,
-  "unique_authors": 13,
-  "reactions_total": 19,
-  "attachments": 9,
+  "messages": 981,
+  "unique_authors": 28,
+  "reactions_total": 177,
+  "attachments": 45,
   "channel_activity": {
+    "🔸綜合討論": 908,
     "V2.2.0.3 在線維護公告": 3,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
     "V2.2.0.2 停服維護公告": 1,
@@ -31,23 +32,33 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "2": 20,
-    "3": 25,
-    "7": 1,
-    "6": 1,
-    "12": 3,
-    "15": 1,
-    "10": 3,
-    "11": 3,
-    "9": 2,
-    "0": 8,
-    "1": 3,
-    "17": 1,
-    "14": 2
+    "0": 15,
+    "1": 8,
+    "2": 86,
+    "3": 206,
+    "4": 20,
+    "5": 33,
+    "6": 23,
+    "7": 107,
+    "8": 32,
+    "9": 17,
+    "10": 8,
+    "11": 51,
+    "12": 45,
+    "13": 39,
+    "14": 78,
+    "15": 37,
+    "16": 103,
+    "17": 22,
+    "18": 20,
+    "19": 12,
+    "20": 17,
+    "22": 2
   },
   "message_types": {
-    "19": 6,
-    "0": 3
+    "0": 795,
+    "19": 112,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -58,46 +69,156 @@
       "channel": "计算一下克莱门汀这次活动里，材料的刷取价值"
     },
     {
-      "id": "1361899186575904951",
-      "content": "<:blowkiss:1356053035780014150>",
+      "id": "1362004878083227818",
+      "channel_id": "1131839817982947429",
+      "content": "完结撒花",
+      "author": "kafka0u0.",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361866591146348666",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361889804677283940",
+      "channel_id": "1131839817982947429",
+      "content": "佬都能把對面降到1x3",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361971267086844014",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361972238009630720",
+      "channel_id": "1131839817982947429",
+      "content": "願淫藥指引前~~列腺~~路",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361971454907912296",
+      "channel_id": "1131839817982947429",
+      "content": "99%都凹不过的路过🤡",
+      "author": "cs001092",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361982317949878384",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362109011540840459",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲+3圣礼防御=耐活王",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362127629397790890",
+      "channel_id": "1131839817982947429",
+      "content": "4回合砍穿了",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362156117622390944",
+      "channel_id": "1131839817982947429",
+      "content": "是因为这关怪不强吗",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361883362222014524",
+      "channel_id": "1131839817982947429",
+      "content": "~~再等我的po文~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361905648907845743",
+      "channel_id": "1131839817982947429",
+      "content": "不行，除非我給米粒+12演算+12人偶，然後再帶個入藥甚麼的",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361906415291207812",
+      "channel_id": "1131839817982947429",
+      "content": "又是男同又会玩",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361908804177887377",
+      "channel_id": "1131839817982947429",
+      "content": "肯定是男同（？？？？",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361939082783228056",
+      "channel_id": "1131839817982947429",
+      "content": "H2-12的道中真的有難到",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361962588094599179",
+      "channel_id": "1131839817982947429",
+      "content": "鯊門桿菌",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362002787986313377",
+      "channel_id": "1131839817982947429",
+      "content": "<@1101784402754801755>",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362052628489437344",
+      "channel_id": "1131839817982947429",
+      "content": "三维越高的角色升级给的数值越多（",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362101623861809324",
+      "channel_id": "1131839817982947429",
+      "content": "~~「水群依赖性综合症」~~",
       "author": "akalanden",
-      "reactions": 2,
-      "channel": "V2.2.0.3 在線維護公告"
-    },
-    {
-      "id": "1361861136160391279",
-      "content": "第一幕 东区秘事篇 完",
-      "author": "libery9150",
-      "reactions": 2,
-      "channel": "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）"
-    },
-    {
-      "id": "1361898354686038167",
-      "content": "多段攻擊會對應觸發多次怨恨鎖鏈🙏 屬於正常情況",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "V2.2.0.3 在線維護公告"
-    },
-    {
-      "id": "1361888960875331615",
-      "content": "**01.遠航-Eternal Voyage-**\n\n月光於夜空中傾瀉，海浪低吟著永恆的細語，斑駁的巨輪緩緩向前。\n你站在薄霧瀰漫的甲板上，隻身編織晦澀的夜曲。",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：深港幽靈之船"
-    },
-    {
-      "id": "1361902731664556225",
-      "content": "(*^▽^*)校工後續會更新修復~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」魔術師取物超距卡沒減費用"
-    },
-    {
-      "id": "1361894066794663998",
-      "content": "謝謝戈雅",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "✅「已回答」典藏館又被融蝕了"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,22 @@
 {
   "date": "2025-05-28",
-  "messages": 843,
-  "unique_authors": 44,
-  "reactions_total": 316,
-  "attachments": 72,
+  "messages": 10789,
+  "unique_authors": 228,
+  "reactions_total": 957,
+  "attachments": 455,
   "channel_activity": {
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 8325,
+    "🔸剧情交流": 2,
+    "🔸한국어-채팅방": 371,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 40,
+    "🔸phòng-chat-tiếng-việt": 65,
+    "🔸canal-español": 123,
+    "🔸canal-português": 47,
+    "🔸ruang-obrolan-indonesia": 493,
+    "🔸ห้องสนทนาภาษาไทย": 230,
+    "🔸traphase": 236,
     "🔸綜合討論": 740,
     "aomi’s morimens dump": 2,
     "Clementine": 1,
@@ -41,34 +53,34 @@
     "血链羊妈体系常用四种输出流程": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 15,
-    "2": 35,
-    "3": 27,
-    "4": 40,
-    "5": 11,
-    "6": 23,
-    "7": 12,
-    "8": 22,
-    "9": 183,
-    "10": 208,
-    "11": 32,
-    "12": 25,
-    "13": 32,
-    "14": 28,
-    "15": 54,
-    "16": 33,
-    "17": 22,
-    "18": 16,
-    "19": 5,
-    "20": 3,
-    "22": 1,
-    "23": 13,
-    "21": 2
+    "13": 599,
+    "0": 200,
+    "1": 402,
+    "2": 511,
+    "3": 407,
+    "4": 557,
+    "5": 403,
+    "6": 240,
+    "7": 303,
+    "8": 423,
+    "9": 750,
+    "10": 830,
+    "11": 469,
+    "12": 598,
+    "14": 524,
+    "15": 615,
+    "16": 462,
+    "17": 675,
+    "18": 515,
+    "19": 391,
+    "20": 343,
+    "21": 172,
+    "22": 153,
+    "23": 247
   },
   "message_types": {
-    "0": 668,
-    "19": 72
+    "19": 2902,
+    "0": 7044
   },
   "top_reacted_messages": [
     {
@@ -91,6 +103,14 @@
       "author": "lowtownnivn",
       "reactions": 25,
       "channel": "Clementine"
+    },
+    {
+      "id": "1377372312520757410",
+      "channel_id": "1170692781216378960",
+      "content": "https://i.imgur.com/v9C7t7I.jpeg ohh nice",
+      "author": "toradorable",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1377245053726232596",
@@ -129,6 +149,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1377366891013869618",
+      "channel_id": "1170692781216378960",
+      "content": "Hello everynyan. I found an extremely beautiful flower earlier online and I thou",
+      "author": "disgustedingucci",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1377252035354689627",
       "content": "thanks for ur effort guys, I can't wait to have at least the combat naming stand",
       "author": "nayrath",
@@ -165,6 +193,14 @@
       "channel": "弥萨格校友号码本4.0"
     },
     {
+      "id": "1377260772824186930",
+      "channel_id": "1170692781216378960",
+      "content": "I asked the AI ​​to give me 10 positive reviews for Morimens\nAi: I don’t know it",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1377220525541163029",
       "channel_id": "1131839817982947429",
       "content": "我有，32.8%强效的生机榨取🤓",
@@ -193,30 +229,6 @@
       "channel_id": "1131839817982947429",
       "content": "但負面評價可以",
       "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1377288653344079933",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "bailuoxiao",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1377326393066524773",
-      "channel_id": "1131839817982947429",
-      "content": "哭死 拿艾繼絲主C打h2-12翻車了",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1377329841182998630",
-      "channel_id": "1131839817982947429",
-      "content": "把神父看成叉开腿",
-      "author": "287405tjy_28066",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

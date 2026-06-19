@@ -1,33 +1,54 @@
 {
   "date": "2025-04-17",
-  "messages": 12,
-  "unique_authors": 4,
-  "reactions_total": 1225,
-  "attachments": 6,
+  "messages": 747,
+  "unique_authors": 30,
+  "reactions_total": 2542,
+  "attachments": 37,
   "channel_activity": {
+    "🔸新生守则┊rules": 2,
+    "🔸綜合討論": 734,
     "ALL HAIL SQUID KING TULU": 2,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
     "✅「已回答」钥令未成功触发": 4,
     "✅「已回答」如图所示,怨恨锁链生效不正常": 1,
-    "💭「處理中」相位对弈红夫人开大不消耗算力自动上命轮": 2,
-    "🔸新生守则┊rules": 1
+    "💭「處理中」相位对弈红夫人开大不消耗算力自动上命轮": 2
   },
   "hourly_activity": {
-    "14": 2,
-    "2": 2,
-    "3": 2,
-    "16": 5,
-    "11": 1
+    "11": 22,
+    "0": 3,
+    "3": 9,
+    "4": 26,
+    "5": 39,
+    "6": 75,
+    "7": 86,
+    "8": 18,
+    "9": 66,
+    "10": 21,
+    "12": 179,
+    "13": 96,
+    "14": 11,
+    "15": 24,
+    "16": 35,
+    "17": 17,
+    "18": 8,
+    "19": 1,
+    "20": 1,
+    "21": 1,
+    "22": 6,
+    "23": 1,
+    "2": 2
   },
   "message_types": {
-    "0": 2
+    "0": 633,
+    "19": 102
   },
   "top_reacted_messages": [
     {
       "id": "1362387347756552262",
+      "channel_id": "1131837874078232597",
       "content": "",
       "author": "morimensstaff01",
-      "reactions": 1199,
+      "reactions": 1268,
       "channel": "🔸新生守则┊rules"
     },
     {
@@ -38,6 +59,62 @@
       "channel": "ALL HAIL SQUID KING TULU"
     },
     {
+      "id": "1362400140748652714",
+      "channel_id": "1131839817982947429",
+      "content": "小知識：抽15+15期望值大概要1155抽",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362324281916260412",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362412765490315335",
+      "channel_id": "1131839817982947429",
+      "content": "差點又要重打",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362402143406919780",
+      "channel_id": "1131839817982947429",
+      "content": "買不平等是因為人生過得太順遂嗎",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362402612913111221",
+      "channel_id": "1131839817982947429",
+      "content": "脫光...",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362423424344920285",
+      "channel_id": "1131839817982947429",
+      "content": "沒打通星辰篇普通模式肯定打不過旺達的困難模式",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362557874768711842",
+      "channel_id": "1131839817982947429",
+      "content": "隨處被鯊魚用",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1362464621402918952",
       "content": "如视频所示，仍然是塔薇自带的减一费而不是零费",
       "author": "287405tjy_28066",
@@ -45,11 +122,84 @@
       "channel": "✅「已回答」钥令未成功触发"
     },
     {
-      "id": "1362275533660098581",
-      "content": "谢谢",
-      "author": "287405tjy_28066",
+      "id": "1362267174386794658",
+      "channel_id": "1131839817982947429",
+      "content": "？？？？？我在普池裡歪出了跨越疼痛？？？？",
+      "author": ".2.718281828",
       "reactions": 1,
-      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362267295422091416",
+      "channel_id": "1131839817982947429",
+      "content": "我還沒中過任意一個",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362276110364180612",
+      "channel_id": "1131839817982947429",
+      "content": "我是歪到薔薇之名",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362283610639564933",
+      "channel_id": "1131839817982947429",
+      "content": "之前就有歪到过(",
+      "author": "aprohectus",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362283650078474342",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯莉莉都進普池了",
+      "author": "yuanshuang_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362283982326075544",
+      "channel_id": "1131839817982947429",
+      "content": "讲道理這种卡不是大小保底去抽出来的话就非常赚(",
+      "author": "aprohectus",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362322064840593529",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇这个觉醒事件好坑…赛到队伍一觉位然后觉醒卡沉底<:flop2:1356053072924774421>",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362331788449546370",
+      "channel_id": "1131839817982947429",
+      "content": "鯊凱父母、鯊凱24都要三甚至四覺",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362356696114266122",
+      "channel_id": "1131839817982947429",
+      "content": "我拿的是給易傷的",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362399016687505589",
+      "channel_id": "1131839817982947429",
+      "content": "新角色到底是指非sp还是未出场呢（",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

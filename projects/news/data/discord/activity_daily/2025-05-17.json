@@ -1,10 +1,25 @@
 {
   "date": "2025-05-17",
-  "messages": 867,
-  "unique_authors": 41,
-  "reactions_total": 77,
-  "attachments": 32,
+  "messages": 9169,
+  "unique_authors": 160,
+  "reactions_total": 324,
+  "attachments": 407,
   "channel_activity": {
+    "🔸morimens-game-chat": 6854,
+    "🔸相位对弈": 12,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 71,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 14,
+    "🔸русский-канал": 70,
+    "🔸phòng-chat-tiếng-việt": 59,
+    "🔸canal-español": 241,
+    "🔸canal-português": 28,
+    "🔸ruang-obrolan-indonesia": 749,
+    "🔸ห้องสนทนาภาษาไทย": 71,
+    "🔸traphase": 118,
+    "🔸lore-chat": 6,
+    "🔸lets-count": 1,
     "🔸綜合討論": 858,
     "D-Tide Leaderboard (2025 May 16)": 3,
     "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 1,
@@ -14,37 +29,60 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "1": 8,
-    "2": 7,
-    "3": 86,
-    "4": 8,
-    "6": 15,
-    "7": 57,
-    "8": 3,
-    "9": 6,
-    "10": 26,
-    "11": 11,
-    "12": 14,
-    "13": 14,
-    "14": 15,
-    "15": 32,
-    "16": 101,
-    "17": 35,
-    "18": 28,
-    "19": 60,
-    "20": 155,
-    "21": 139,
-    "22": 2,
-    "23": 43,
-    "5": 1,
-    "0": 1
+    "0": 313,
+    "1": 155,
+    "2": 351,
+    "3": 478,
+    "4": 301,
+    "5": 256,
+    "6": 136,
+    "7": 307,
+    "8": 420,
+    "9": 426,
+    "10": 422,
+    "11": 213,
+    "12": 448,
+    "13": 367,
+    "14": 559,
+    "15": 443,
+    "16": 760,
+    "17": 354,
+    "18": 318,
+    "19": 544,
+    "20": 792,
+    "21": 522,
+    "22": 50,
+    "23": 234
   },
   "message_types": {
-    "19": 190,
-    "0": 666,
-    "20": 2
+    "0": 6101,
+    "19": 2201
   },
   "top_reacted_messages": [
+    {
+      "id": "1373371379897860116",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "figaro0326_39017",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373307479638937783",
+      "channel_id": "1170692781216378960",
+      "content": "D-tide Usage Rates (past 4 days + 12 hours)\n\nData gathered from the top 15 playe",
+      "author": "kevsalvador",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373394505729966122",
+      "channel_id": "1170692781216378960",
+      "content": "Here it is",
+      "author": "shining_ark",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1373257749357531296",
       "channel_id": "1131839817982947429",
@@ -70,6 +108,54 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1373106706128834661",
+      "channel_id": "1170692781216378960",
+      "content": "i thought celeste's card had a cap on the increased healing but it seems like it",
+      "author": "applepieeater123",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373136370138218587",
+      "channel_id": "1170692781216378960",
+      "content": "since u guys are talking about dtide, tbh i feel like i could never go above 350",
+      "author": "buntou",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373289619390726244",
+      "channel_id": "1170692781216378960",
+      "content": "Hell you can say Karen will one shot",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373408338913792061",
+      "channel_id": "1170692781216378960",
+      "content": "<@1031618460414918686>",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373205984356339733",
+      "channel_id": "1300659753197764688",
+      "content": "",
+      "author": "maegu",
+      "reactions": 3,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1373221569559662653",
+      "channel_id": "1300659753197764688",
+      "content": "",
+      "author": "rosemry",
+      "reactions": 3,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
       "id": "1373394710911123496",
       "channel_id": "1131839817982947429",
       "content": "这里只是单纯作为游戏内容相关讨论的社区",
@@ -86,123 +172,52 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1373139221509963797",
-      "channel_id": "1131839817982947429",
-      "content": "自从这些材料可以换精粹碎片后就不想多给咯。",
-      "author": "randomplayer852",
+      "id": "1373237424892940400",
+      "channel_id": "1170692781216378960",
+      "content": "I'm not a loli enjoyer <@1228000209640886322> can help with that.",
+      "author": "flares117",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373148240014344293",
-      "channel_id": "1131839817982947429",
-      "content": "「沒有虛弱，難道不會靜海嗎？」",
-      "author": "ernest_heart",
+      "id": "1373301093932732678",
+      "channel_id": "1170692781216378960",
+      "content": "This was my experience",
+      "author": "noire_2",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373148502447624302",
-      "channel_id": "1131839817982947429",
-      "content": "也扛了够久的咯<:nocomment:1356053106038673610>",
-      "author": "cs001092",
+      "id": "1373316954202439872",
+      "channel_id": "1170692781216378960",
+      "content": "Is she good? (got her in standard)",
+      "author": "disgustedingucci",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373201327697432586",
-      "channel_id": "1131839817982947429",
-      "content": "校🐱：感谢各位提供的建议\n<:thumbsup:1356086340298473574> 我们会认真实施的<:behave:136190959806762598",
-      "author": "cs001092",
+      "id": "1373351645219655822",
+      "channel_id": "1170692781216378960",
+      "content": "schrodinger's lotan",
+      "author": "omegamart",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373226297991499797",
-      "channel_id": "1131839817982947429",
-      "content": "克珀珊特用完了\n感謝\n<@484555315447332864>",
-      "author": "Deleted User",
+      "id": "1373362388027572255",
+      "channel_id": "1170692781216378960",
+      "content": "his final betrayal is being a loving husband and father when she finally starts ",
+      "author": "applepieeater123",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373273252423532665",
-      "channel_id": "1131839817982947429",
-      "content": "靠 少一造物 白打了",
-      "author": "arthasiv",
+      "id": "1373395172217454712",
+      "channel_id": "1170692781216378960",
+      "content": "we need counter flare spropoganda",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373322089955725404",
-      "channel_id": "1131839817982947429",
-      "content": "只有群管理不是南通",
-      "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373391608547905656",
-      "channel_id": "1131839817982947429",
-      "content": "不排除我太敏感了，但是我玩美服也是顶着中文id玩，天天被串子串麻了，真的很烦",
-      "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373402009838944316",
-      "channel_id": "1131839817982947429",
-      "content": "只有小故事，~~常驻还想要活动~~",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373437352437088356",
-      "channel_id": "1131839817982947429",
-      "content": "我只关注了这四个区",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373439000953753751",
-      "channel_id": "1131839817982947429",
-      "content": "主要是 他想把這個頻道改成俄文頻道\n甚至希望我們叫他爺爺？",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373099326569578600",
-      "content": "黑印够买造物吗？\n5.14莉莉，钱还挺够的\n5.15卡茜亚，缺钱程度堪比小鱼但是没那么惨\n5.16珈伦，还好但是只能买少量黄金，be like：1个\n5.17艾",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "關卡地圖「幻夢深潛」總覽Ⅲ"
-    },
-    {
-      "id": "1373139096234491976",
-      "channel_id": "1131839817982947429",
-      "content": "现在融珠根本不够换",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373140252297793557",
-      "channel_id": "1131839817982947429",
-      "content": "那东西氪的也没几个人了，专坑爱给你游氪金的人是吧",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373140322460110928",
-      "channel_id": "1131839817982947429",
-      "content": "因为部分限定进了常驻，常驻抽也不想多给了(",
-      "author": "randomplayer852",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

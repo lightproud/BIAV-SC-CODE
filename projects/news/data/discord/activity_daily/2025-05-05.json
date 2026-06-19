@@ -1,10 +1,26 @@
 {
   "date": "2025-05-05",
-  "messages": 2239,
-  "unique_authors": 63,
-  "reactions_total": 377,
-  "attachments": 91,
+  "messages": 12510,
+  "unique_authors": 254,
+  "reactions_total": 695,
+  "attachments": 564,
   "channel_activity": {
+    "🔸morimens-game-chat": 8446,
+    "🔸晒卡分享": 5,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 18,
+    "🔸한국어-채팅방": 234,
+    "🔸deutscher-chatraum": 6,
+    "🔸русский-канал": 64,
+    "🔸phòng-chat-tiếng-việt": 17,
+    "🔸canal-español": 451,
+    "🔸canal-português": 19,
+    "🔸ruang-obrolan-indonesia": 324,
+    "🔸ห้องสนทนาภาษาไทย": 488,
+    "🔸traphase": 162,
+    "🔸lore-chat": 29,
+    "🔸lets-count": 3,
     "🔸綜合討論": 2122,
     "A Pair of Roses, Horla & Sanga Fanfic": 1,
     "Sanga": 2,
@@ -36,33 +52,35 @@
     "1271491376881598494": 2
   },
   "hourly_activity": {
-    "0": 7,
-    "1": 27,
-    "2": 219,
-    "3": 100,
-    "4": 349,
-    "5": 128,
-    "6": 89,
-    "7": 22,
-    "8": 182,
-    "9": 94,
-    "10": 417,
-    "11": 105,
-    "12": 291,
-    "13": 133,
-    "14": 21,
-    "15": 15,
-    "16": 13,
-    "17": 11,
-    "18": 1,
-    "19": 1,
-    "22": 5,
-    "23": 8,
-    "20": 1
+    "0": 321,
+    "1": 535,
+    "2": 761,
+    "3": 799,
+    "4": 977,
+    "5": 673,
+    "6": 583,
+    "7": 378,
+    "8": 529,
+    "9": 561,
+    "10": 1071,
+    "11": 569,
+    "12": 617,
+    "13": 373,
+    "14": 461,
+    "15": 547,
+    "16": 538,
+    "17": 282,
+    "18": 389,
+    "19": 323,
+    "20": 356,
+    "21": 165,
+    "22": 355,
+    "23": 347
   },
   "message_types": {
-    "0": 1770,
-    "19": 352
+    "0": 7716,
+    "19": 2554,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -116,6 +134,14 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
+      "id": "1368773222367105085",
+      "channel_id": "1174983699935277147",
+      "content": "雙船<:pray:1356053116260454534>",
+      "author": "_buqi",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1368981225301344287",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -139,12 +165,52 @@
       "channel": "克珀珊特領航Bug與靈塑加強建議"
     },
     {
+      "id": "1368772680857161739",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368881421728616499",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368883398831116308",
+      "channel_id": "1170692781216378960",
+      "content": "If you look closely you can see that G tinct is gonna have a penis",
+      "author": "satachan",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1368850821298786315",
       "channel_id": "1131839817982947429",
       "content": "希洛300万",
       "author": "xili0434",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1368769858363461744",
+      "channel_id": "1170692781216378960",
+      "content": "Light i would be so upset if you sent me 100 pulls like AAAGHHH why would the de",
+      "author": "aslechi",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369060988103426140",
+      "channel_id": "1170692781216378960",
+      "content": "I love it when I pull Corposant on the Corposant banner, truly a moment.",
+      "author": "__goz__",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1368786719205232640",
@@ -168,50 +234,6 @@
       "author": "game.producer.light",
       "reactions": 5,
       "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368935262335406130",
-      "content": "能不能尽快更新，或者多讲一下更新内容，补个戈雅碎碎念也行。主线通关之后光吃融灾很单调",
-      "author": "287405tjy_28066",
-      "reactions": 5,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368916549863211008",
-      "content": "官群大佬用萌新号打了下试用，发现虽然角色给的是50级的，但血量转化比例是跟着账号等级走的，于是就出现了55血打1w6血的试用。\n试用这种练度独立的模式会被玩家账",
-      "author": "muliupan",
-      "reactions": 5,
-      "channel": "✅「已回答」试用机制是否有些不合理"
-    },
-    {
-      "id": "1368923751898546197",
-      "content": "# Why not stack strength and tentacle damage via full aqua team?\nI find tentacle",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "Tentacle Crit Build Theory Crafting"
-    },
-    {
-      "id": "1368830675297239100",
-      "channel_id": "1131839817982947429",
-      "content": "||我是500多天的小丑||",
-      "author": "arr5721",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1369055917722570762",
-      "content": "а можно ему другого психолога",
-      "author": "me4tgr1nder",
-      "reactions": 4,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1368871695531642882",
-      "channel_id": "1131839817982947429",
-      "content": "带个熔朵就行了",
-      "author": "287405tjy_28066",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }

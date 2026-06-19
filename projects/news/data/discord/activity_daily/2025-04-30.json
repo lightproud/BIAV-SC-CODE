@@ -1,10 +1,11 @@
 {
   "date": "2025-04-30",
-  "messages": 120,
+  "messages": 157,
   "unique_authors": 21,
-  "reactions_total": 84,
-  "attachments": 19,
+  "reactions_total": 86,
+  "attachments": 20,
   "channel_activity": {
+    "🔸綜合討論": 37,
     "Tulu is adorable": 1,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "Realm Guide Playlist - From Flares' of the Costco": 1,
@@ -23,9 +24,11 @@
     "✅「已回答」基础打防是什么意思": 1
   },
   "hourly_activity": {
+    "0": 3,
+    "1": 10,
+    "2": 32,
     "4": 1,
     "6": 11,
-    "0": 1,
     "8": 17,
     "7": 4,
     "9": 26,
@@ -36,13 +39,11 @@
     "14": 2,
     "15": 18,
     "16": 1,
-    "3": 4,
-    "2": 7
+    "3": 4
   },
   "message_types": {
-    "0": 63,
-    "19": 23,
-    "4": 1
+    "0": 35,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -151,6 +152,22 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
+      "id": "1366964462451429428",
+      "channel_id": "1131839817982947429",
+      "content": "虽然档案和繁衍狂热还没写完，又要烧脑细胞了",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366969107173343313",
+      "channel_id": "1131839817982947429",
+      "content": "🚮",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1367060165614112898",
       "content": "Sorry for the long wait, Goya will go and find out the situation~",
       "author": "morimensstaff01",
@@ -170,20 +187,6 @@
       "author": "muliupan",
       "reactions": 1,
       "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
-    },
-    {
-      "id": "1367091350750756975",
-      "content": "好建議！戈雅會去提提<:cute1:1356053053568192717>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）"
-    },
-    {
-      "id": "1367055162811748393",
-      "content": "Sorry！ Goya  look now",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "About translate correction"
     }
   ]
 }

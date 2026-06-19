@@ -1,10 +1,23 @@
 {
   "date": "2025-05-25",
-  "messages": 620,
-  "unique_authors": 39,
-  "reactions_total": 47,
-  "attachments": 28,
+  "messages": 6756,
+  "unique_authors": 179,
+  "reactions_total": 330,
+  "attachments": 244,
   "channel_activity": {
+    "🔸morimens-game-chat": 5504,
+    "🔸剧情交流": 10,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 15,
+    "🔸русский-канал": 10,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-español": 73,
+    "🔸canal-português": 159,
+    "🔸ruang-obrolan-indonesia": 303,
+    "🔸ห้องสนทนาภาษาไทย": 11,
+    "🔸traphase": 15,
+    "🔸lets-count": 1,
     "🔸綜合討論": 579,
     "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 7,
     "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 2,
@@ -17,30 +30,34 @@
     "How do I change the window size?": 5
   },
   "hourly_activity": {
-    "2": 8,
-    "3": 11,
-    "4": 8,
-    "5": 14,
-    "6": 32,
-    "7": 58,
-    "8": 35,
-    "9": 61,
-    "10": 44,
-    "11": 74,
-    "12": 43,
-    "13": 22,
-    "14": 100,
-    "15": 17,
-    "16": 69,
-    "17": 8,
-    "19": 8,
-    "20": 2,
-    "23": 5,
-    "21": 1
+    "0": 365,
+    "1": 225,
+    "2": 265,
+    "3": 398,
+    "4": 429,
+    "5": 79,
+    "6": 180,
+    "7": 217,
+    "8": 121,
+    "9": 182,
+    "10": 200,
+    "11": 400,
+    "12": 237,
+    "13": 698,
+    "14": 832,
+    "15": 601,
+    "16": 509,
+    "17": 191,
+    "18": 59,
+    "19": 171,
+    "20": 144,
+    "21": 102,
+    "22": 106,
+    "23": 45
   },
   "message_types": {
-    "0": 514,
-    "19": 65
+    "0": 4554,
+    "19": 1582
   },
   "top_reacted_messages": [
     {
@@ -52,12 +69,92 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1376013091699163176",
+      "channel_id": "1170692781216378960",
+      "content": "<:Nothing:827222660521787403>",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376140541154037816",
+      "channel_id": "1170692781216378960",
+      "content": "I like this, her smile must be protected. <:pray:1356053116260454534>",
+      "author": "adrelius",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376269735599276163",
+      "channel_id": "1170692781216378960",
+      "content": "this cannot be",
+      "author": "doktor.sex",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376285457100570745",
+      "channel_id": "1170692781216378960",
+      "content": "I'm ready for anniversary to drop already.",
+      "author": "bantacune",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376320516536664215",
+      "channel_id": "1170692781216378960",
+      "content": "LETS GO",
+      "author": "endexer929",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376192272420438086",
+      "channel_id": "1173463482503536711",
+      "content": "脑缸组非常尊重为克苏鲁神话添砖加瓦的每一份创作。《忘却前夜》虽然与其有许多致敬关联，但我们的创作也不从受限于其中任何一派。所以可以无需这种猜测和约束，脑缸组是自",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1376244676931358864",
+      "channel_id": "1300659662311526512",
+      "content": "Estaba desayunando un pastel de anoche cuando de repente me pregunté «¿Qué habrá",
+      "author": "duxadidus",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1376174539595055124",
       "channel_id": "1131839817982947429",
       "content": "剩我抽中了（？",
       "author": "ahong0727",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376141271890006027",
+      "channel_id": "1170692781216378960",
+      "content": "Holy aigis power",
+      "author": "melwyn7591",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376206178438217738",
+      "channel_id": "1170692781216378960",
+      "content": "<@340713722345553921> , i did it, H9-2 deathless",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376238939706490941",
+      "channel_id": "1170692781216378960",
+      "content": "i can post my questions here too right?",
+      "author": "cakevin",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376116843411935323",
@@ -92,114 +189,36 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1376020661419643020",
-      "channel_id": "1131839817982947429",
-      "content": "挺配阿花的",
-      "author": "287405tjy_28066",
+      "id": "1376017069778407434",
+      "channel_id": "1170692781216378960",
+      "content": "a lot of it is rock paper scissors, and figuring out what you're comfortable wit",
+      "author": "teleportingninja",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376093035372482600",
-      "channel_id": "1131839817982947429",
-      "content": "公告里面打旺达2个字就总共就一点点人",
-      "author": "bailuoxiao",
+      "id": "1376075703149396038",
+      "channel_id": "1170692781216378960",
+      "content": "tomorow, about 20 hour 30m later",
+      "author": "nguyenduc2710",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376157629344383006",
-      "channel_id": "1131839817982947429",
-      "content": "||有些底層角色是注定翻不了身了||",
-      "author": "ahuahuahua",
+      "id": "1376097221832867921",
+      "channel_id": "1170692781216378960",
+      "content": "what is this never seen it before",
+      "author": "buntou",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376159507108986940",
-      "channel_id": "1131839817982947429",
-      "content": "我發現你沒提醒我都忘記這個角色呢",
-      "author": "shchng.",
+      "id": "1376097847157461002",
+      "channel_id": "1170692781216378960",
+      "content": "I barely remember anything here",
+      "author": "thesecondcomingofdrenwee",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376203496646250556",
-      "channel_id": "1131839817982947429",
-      "content": "昨天是99%",
-      "author": "bailuoxiao",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376058742860288010",
-      "content": "坐等繁衍狂熱配音🥵",
-      "author": "yiwu2015",
-      "reactions": 2,
-      "channel": "✅校猫碎碎念#序章配音决定"
-    },
-    {
-      "id": "1376176243732644015",
-      "content": "我就知道是aaa打勾，AAA游戏理解比较高",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "喜歡綠色正太的每回合寸止嗎"
-    },
-    {
-      "id": "1376025210582597693",
-      "channel_id": "1131839817982947429",
-      "content": "只能肉償了",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376098662777884782",
-      "channel_id": "1131839817982947429",
-      "content": "不是只有換版本名稱的那隻角色有pv嗎（",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376100433164242964",
-      "channel_id": "1131839817982947429",
-      "content": "~~我支持~~",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376124041449967718",
-      "channel_id": "1131839817982947429",
-      "content": "我是大猛1",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376130348680745141",
-      "channel_id": "1131839817982947429",
-      "content": "尼哥",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376144736364003388",
-      "channel_id": "1131839817982947429",
-      "content": "你知道旺達的永反轉臨反是不吃加成的嘛",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376152000164794369",
-      "channel_id": "1131839817982947429",
-      "content": "🤓 🤓",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

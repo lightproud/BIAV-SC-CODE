@@ -1,10 +1,11 @@
 {
   "date": "2025-04-14",
-  "messages": 147,
-  "unique_authors": 19,
-  "reactions_total": 70,
-  "attachments": 34,
+  "messages": 1443,
+  "unique_authors": 32,
+  "reactions_total": 219,
+  "attachments": 98,
   "channel_activity": {
+    "🔸綜合討論": 1296,
     "aomi’s morimens dump": 1,
     "Clementine": 1,
     "Arc 2 Chapter 2 H2-12 Deathless 3 Star Blue tawil": 1,
@@ -41,27 +42,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "2": 8,
-    "4": 10,
-    "23": 1,
-    "0": 2,
-    "7": 13,
-    "6": 10,
-    "9": 4,
-    "14": 3,
-    "15": 8,
-    "8": 32,
-    "10": 15,
-    "16": 3,
-    "3": 6,
-    "22": 5,
-    "11": 5,
-    "12": 15,
-    "5": 7
+    "0": 209,
+    "1": 35,
+    "2": 19,
+    "3": 39,
+    "4": 57,
+    "5": 64,
+    "6": 36,
+    "7": 82,
+    "8": 103,
+    "9": 70,
+    "10": 56,
+    "11": 182,
+    "12": 229,
+    "13": 43,
+    "14": 36,
+    "15": 77,
+    "16": 13,
+    "17": 10,
+    "18": 38,
+    "19": 25,
+    "20": 4,
+    "21": 1,
+    "23": 10,
+    "22": 5
   },
   "message_types": {
-    "19": 3,
-    "0": 8
+    "0": 1126,
+    "19": 170
   },
   "top_reacted_messages": [
     {
@@ -79,11 +87,51 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
+      "id": "1361169802961621224",
+      "channel_id": "1131839817982947429",
+      "content": "克萊門汀\n第一回合\n\n第二回合",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1361255986618171544",
       "content": "經校工查驗，克萊門汀不是蟲族生物🙏她是喚醒體，和蟲族生物有本質區別",
       "author": "morimensstaff01",
       "reactions": 8,
       "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
+    },
+    {
+      "id": "1361198516633997442",
+      "channel_id": "1131839817982947429",
+      "content": "已经遇到5个bug了",
+      "author": "muliupan",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361133284922359838",
+      "channel_id": "1131839817982947429",
+      "content": "👁️",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361155177293418559",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361439711050207294",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1361241998606073916",
@@ -100,6 +148,70 @@
       "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
     },
     {
+      "id": "1361136167495536761",
+      "channel_id": "1131839817982947429",
+      "content": "只有我没被塔薇眷顾了\n输光……",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361149508666396805",
+      "channel_id": "1131839817982947429",
+      "content": "~~把你夾住，不給你升~~",
+      "author": ".moon_leaf",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361319448115548430",
+      "channel_id": "1131839817982947429",
+      "content": "抖m",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361134763548737810",
+      "channel_id": "1131839817982947429",
+      "content": "抽到了",
+      "author": "haiselittlebat",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361134883631661267",
+      "channel_id": "1131839817982947429",
+      "content": "瘋狂預兆是資源很閒的時候開的",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361135743254134936",
+      "channel_id": "1131839817982947429",
+      "content": "資源存了一年以上\n不推薦新手\n新手還是把目標設定大c\n塔薇 血鏈希洛",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361203277739462867",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361279414242902046",
+      "channel_id": "1131839817982947429",
+      "content": "对不起，拉蒙娜，我已经有灵芝，用不到你😭",
+      "author": "sense25.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1361249765882331258",
       "content": "2-2和2-14的事件一模一样，这不太对",
       "author": "silverstream_s",
@@ -107,102 +219,12 @@
       "channel": "✅「已回答」星辰篇2章克莱门汀事件重复"
     },
     {
-      "id": "1361290513843490906",
-      "content": "已经没有东西可以拿出来||炒冷饭||展示给大家看了……\n看来只能拿出那个||新建文件夹之界域主线、新建文件夹之特遣纪录、新建文件夹之繁衍狂热、新建文件夹之立绘命",
-      "author": "akalanden",
+      "id": "1361132718632472687",
+      "channel_id": "1131839817982947429",
+      "content": "反正其他有助戰",
+      "author": "universe.dark",
       "reactions": 2,
-      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
-    },
-    {
-      "id": "1361311464400355611",
-      "content": "我記得以前復活藥戰鬥失敗會返還的，但是我打星辰篇時候戰鬥失敗的靈芝消耗是沒有返還的，請問是我記憶錯亂還是官方有改？麻煩請告訴我一下這真的很重要",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於靈知消耗"
-    },
-    {
-      "id": "1361318377557070026",
-      "content": "流程是這樣的\n第一次戰鬥失敗-點靈芝-依然失敗-放棄戰鬥\n然後下次再戰鬥的時候靈芝的狀態減一了",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於靈知消耗"
-    },
-    {
-      "id": "1361248540570947624",
-      "content": "👁️催眠妖虫是不是虫族，说话.jpg",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
-    },
-    {
-      "id": "1361167102433558699",
-      "content": "Goya去問問👁️ 👁️",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
-    },
-    {
-      "id": "1361215609869701241",
-      "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第5期（第32期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\nP.S.图片较长，在线预览无法显",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览32期·星辰篇✦"
-    },
-    {
-      "id": "1361166851962437812",
-      "content": "Haha, no worries~ Wishing you success in your studies!✨",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
-    },
-    {
-      "id": "1361242524575858708",
-      "content": "Very interesting haha😆 “hi , please give me a can of protein🪳 ”",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
-    },
-    {
-      "id": "1361283953885052988",
-      "content": "嗨大家好，V2.1【毀損灰霧之都】二創征集獲獎名單公佈！\n感謝大家的精彩創作🎉 獎勵將在本週內發給大家~\n\nHi everyone, the list of w",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
-    },
-    {
-      "id": "1361283617090965685",
-      "content": "嗨大家好，V2.1【毀損灰霧之都】攻略征集獲獎名單公佈！\n感謝大家的精彩創作👏 獎勵將在本週內發給大家~\n\nHi everyone, the list of w",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！"
-    },
-    {
-      "id": "1361261337094782976",
-      "content": "**01.天才的煩惱-Prodigy's Faux Pas-**\n\n天才的腦迴路總有那麼一些蜿蜒、曲折、與眾不同，但那正是她的可愛之處，不是嗎？\nThe bra",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
-    },
-    {
-      "id": "1361261433811243019",
-      "content": "**02.孤獨救援-Solitary Rescue-**\n\n她的靈魂在你身後，你一人即是此刻唯一的城牆，而命運的無力感將你牢牢俘獲，你改變不了那個結局。\n那個她",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
-    },
-    {
-      "id": "1361230542074282114",
-      "content": "好滴🫶",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」如图所示,怨恨锁链生效不正常"
-    },
-    {
-      "id": "1361252734551986296",
-      "content": "嗨~校工已查驗到問題，後續會修復多層封印疊加的情況🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」如图所示,怨恨锁链生效不正常"
+      "channel": "🔸綜合討論"
     }
   ]
 }

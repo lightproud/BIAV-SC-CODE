@@ -1,10 +1,21 @@
 {
   "date": "2025-05-21",
-  "messages": 488,
-  "unique_authors": 38,
-  "reactions_total": 152,
-  "attachments": 21,
+  "messages": 9018,
+  "unique_authors": 182,
+  "reactions_total": 600,
+  "attachments": 322,
   "channel_activity": {
+    "🔸morimens-game-chat": 7473,
+    "🔸剧情交流": 2,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 368,
+    "🔸русский-канал": 23,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 237,
+    "🔸canal-português": 134,
+    "🔸ruang-obrolan-indonesia": 144,
+    "🔸ห้องสนทนาภาษาไทย": 21,
+    "🔸traphase": 116,
     "🔸綜合討論": 332,
     "Seimau Art": 1,
     "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 6,
@@ -25,31 +36,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "1": 9,
-    "2": 47,
-    "3": 12,
-    "4": 6,
-    "5": 18,
-    "6": 13,
-    "7": 23,
-    "8": 30,
-    "9": 102,
-    "10": 49,
-    "11": 65,
-    "12": 58,
-    "13": 17,
-    "14": 8,
-    "15": 12,
-    "16": 1,
-    "17": 4,
-    "18": 6,
-    "23": 5,
-    "0": 2,
-    "20": 1
+    "0": 240,
+    "1": 236,
+    "2": 524,
+    "3": 676,
+    "4": 431,
+    "5": 225,
+    "6": 250,
+    "7": 207,
+    "8": 370,
+    "9": 378,
+    "10": 463,
+    "11": 622,
+    "12": 588,
+    "13": 413,
+    "14": 581,
+    "15": 338,
+    "16": 274,
+    "17": 387,
+    "18": 189,
+    "19": 301,
+    "20": 81,
+    "21": 279,
+    "22": 360,
+    "23": 605
   },
   "message_types": {
-    "19": 32,
-    "0": 300
+    "0": 6136,
+    "19": 2394
   },
   "top_reacted_messages": [
     {
@@ -79,6 +93,14 @@
       "author": "muliupan",
       "reactions": 8,
       "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+    },
+    {
+      "id": "1374721559163306005",
+      "channel_id": "1170692781216378960",
+      "content": "a wheel used to be named 'suck'",
+      "author": "riasterism_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1374690321002397716",
@@ -113,6 +135,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1374578728583299113",
+      "channel_id": "1170692781216378960",
+      "content": "i just started chap 5 and i already suspect tulu to be the god myriam trying to ",
+      "author": "phi_squared",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1374722170013614181",
+      "channel_id": "1170692781216378960",
+      "content": "Oh Jesus christ I did not watch the full gif",
+      "author": "thpdom",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1374668512232079452",
       "content": "~~這個活動感覺隨機得很歹毒~~",
       "author": "kong760",
@@ -127,83 +165,60 @@
       "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
     },
     {
-      "id": "1374685170061545493",
-      "channel_id": "1131839817982947429",
-      "content": "1.0年底要给公司评判游戏前途，公司觉得忘却还有继续捞金的潜力，就给投资了。",
-      "author": "muliupan",
+      "id": "1374597201732440154",
+      "channel_id": "1170692781216378960",
+      "content": "Lol. Lmao even. So what are good units to look out for reruns of other then Thai",
+      "author": "reltats.",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374745608023445596",
-      "channel_id": "1131839817982947429",
-      "content": "也不是不行（\n勉強能打個36000",
-      "author": "water_heart",
+      "id": "1374608313664147456",
+      "channel_id": "1170692781216378960",
+      "content": "nihlium right now",
+      "author": "khykken",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374581765104078979",
-      "channel_id": "1131839817982947429",
-      "content": "也不能這麼說\n~~小團隊有可能一個人身兼數職，有機率是數值策劃寫的~~",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1374632649137848360",
+      "channel_id": "1170692781216378960",
+      "content": "flare said reviving is gay",
+      "author": "chitoge7",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374687670911111188",
-      "channel_id": "1131839817982947429",
-      "content": "你肝也没用",
-      "author": "carme.0588",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1374712470974890067",
+      "channel_id": "1170692781216378960",
+      "content": "Finally... I got her after 61 pulls 😭😭 now who do i use if i dont have thais",
+      "author": "kevsalvador",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374697341050818643",
-      "channel_id": "1131839817982947429",
-      "content": "||還能衍生到大家到底是喜歡落地王關還是要跑圖的||",
-      "author": "arr5721",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1374720137093054558",
+      "channel_id": "1170692781216378960",
+      "content": "Can we not mention this I get tilted whenever I think of the 150 pulls I used to",
+      "author": "dwang4875",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374739516794994699",
-      "channel_id": "1131839817982947429",
-      "content": "：谁讲她没有伤害 她不是有打击啊<:point:1356053112292511815>",
-      "author": "ling_an_",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1374720584285687838",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/angry-fist-arthur-%E6%86%A4%E6%80%92-gif-5794225",
+      "author": "mr.gem7in7i",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374550794732441672",
-      "content": "yup of course!!\nSo glad  that you remember him😭😭",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
-    },
-    {
-      "id": "1374579779281354874",
-      "channel_id": "1131839817982947429",
-      "content": "船长游戏内剧情和广播剧/宣发时的设定…几乎完全不是一个人设",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1374623109608378428",
-      "channel_id": "1131839817982947429",
-      "content": "佬\n脫光...",
-      "author": "nahida._90",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1374688212328382494",
-      "channel_id": "1131839817982947429",
-      "content": "你還可以使用\n硬雞0肢體",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1374721003191668826",
+      "channel_id": "1170692781216378960",
+      "content": "im just built better",
+      "author": "lichkin",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,21 @@
 {
   "date": "2025-05-04",
-  "messages": 500,
-  "unique_authors": 32,
-  "reactions_total": 132,
-  "attachments": 22,
+  "messages": 5757,
+  "unique_authors": 143,
+  "reactions_total": 244,
+  "attachments": 282,
   "channel_activity": {
+    "🔸morimens-game-chat": 4493,
+    "🔸한국어-채팅방": 112,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 1,
+    "🔸canal-español": 228,
+    "🔸canal-português": 22,
+    "🔸ruang-obrolan-indonesia": 252,
+    "🔸ห้องสนทนาภาษาไทย": 79,
+    "🔸traphase": 29,
+    "🔸lore-chat": 28,
     "🔸綜合討論": 474,
     "Ramona": 1,
     "A Pair of Roses, Horla & Sanga Fanfic": 3,
@@ -23,34 +34,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "1": 7,
-    "2": 12,
-    "3": 7,
-    "4": 7,
-    "5": 21,
-    "6": 35,
-    "7": 9,
-    "8": 10,
-    "9": 54,
-    "10": 14,
-    "11": 107,
-    "12": 69,
-    "13": 23,
-    "14": 27,
-    "15": 12,
-    "16": 3,
-    "17": 36,
-    "18": 31,
-    "19": 6,
-    "20": 1,
-    "22": 4,
-    "23": 3,
-    "0": 1,
-    "21": 1
+    "0": 100,
+    "1": 212,
+    "2": 264,
+    "3": 439,
+    "4": 275,
+    "5": 111,
+    "6": 184,
+    "7": 88,
+    "8": 73,
+    "9": 83,
+    "10": 31,
+    "11": 263,
+    "12": 118,
+    "13": 459,
+    "14": 466,
+    "15": 330,
+    "16": 437,
+    "17": 199,
+    "18": 368,
+    "19": 690,
+    "20": 214,
+    "21": 42,
+    "22": 134,
+    "23": 177
   },
   "message_types": {
-    "0": 392,
-    "19": 82
+    "0": 3942,
+    "19": 1315
   },
   "top_reacted_messages": [
     {
@@ -82,6 +93,30 @@
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
+      "id": "1368429796694163507",
+      "channel_id": "1170692781216378960",
+      "content": "!!!!!! after 45 rolls (free to play silver grind lmao) tawil bagged!!!!",
+      "author": "camillionaire_.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368527051698733147",
+      "channel_id": "1326453763355185215",
+      "content": "gtinct asmr gonna go wild",
+      "author": "itsmemiki",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1368623068423131277",
+      "channel_id": "1300659753197764688",
+      "content": "Besok ya?",
+      "author": "davin00977",
+      "reactions": 4,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
       "id": "1368385463869636711",
       "content": "[N] enjoying a nice little stroll on his day off <:slick:1356053160531198064>",
       "author": "reya.li",
@@ -96,115 +131,92 @@
       "channel": "血肉唤醒体DIY"
     },
     {
-      "id": "1368474102284685392",
-      "channel_id": "1131839817982947429",
-      "content": "~~話說汀神之前劇情有出過場嗎~~",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1368477903104245841",
+      "channel_id": "1170692781216378960",
+      "content": "woohoo at chapter 7 now",
+      "author": "malfunction5497",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1368493295545876553",
-      "channel_id": "1131839817982947429",
-      "content": "没有💰<:rich:1356085282604322826>",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368512975845064755",
-      "channel_id": "1131839817982947429",
-      "content": "~~建議等復刻~~",
-      "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368520042018504755",
-      "channel_id": "1131839817982947429",
-      "content": "總受",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368542394550845483",
-      "channel_id": "1131839817982947429",
-      "content": "我感覺 抽完沒直升90怪怪的 \n等大佬抽滿練滿我直接借",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368550029446611185",
-      "channel_id": "1131839817982947429",
-      "content": "男同也太多了",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368554934798385183",
-      "channel_id": "1131839817982947429",
-      "content": "謝謝豆腐",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368566973616885786",
-      "channel_id": "1131839817982947429",
+      "id": "1368403364030971947",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "shchng.",
+      "author": "monchi3524",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1368649249486798941",
-      "channel_id": "1131839817982947429",
-      "content": "不說了要回去抽3+3船長了",
-      "author": "shchng.",
+      "id": "1368423166929670185",
+      "channel_id": "1170692781216378960",
+      "content": "Complain about account level timewall, then wait half a year for your max hp to ",
+      "author": "mengluo",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1368622272407146738",
-      "content": "Very nice work, always good to see more english support for morimens.\nIs ok if i",
+      "id": "1368460757037088880",
+      "channel_id": "1170692781216378960",
+      "content": "Okay finished testing overexalt Clementine. It made my team strong enough to sto",
+      "author": "mengluo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368479910083035207",
+      "channel_id": "1170692781216378960",
+      "content": "After completing ch9 yes",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368533284102996041",
+      "channel_id": "1170692781216378960",
+      "content": "Tell you Ideal Genesis Char:",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368591019054071818",
+      "channel_id": "1170692781216378960",
+      "content": "she's ramona",
+      "author": "madlax",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368626320740978798",
+      "channel_id": "1170692781216378960",
+      "content": "Good, caro stay high class. Filter the poor",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368665689124110426",
+      "channel_id": "1170692781216378960",
+      "content": "Guess who got Murphy from a standard pull..!!",
+      "author": "mikudayoo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368682200140222586",
+      "channel_id": "1170692781216378960",
+      "content": "i like doing the funny card copy",
+      "author": "akitenshi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368720727489904791",
+      "channel_id": "1170692781216378960",
+      "content": "P.s <@332573289438380032> <@398880845630275585> Look in dm",
       "author": "vxvendetta",
       "reactions": 2,
-      "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
-    },
-    {
-      "id": "1368449847954509885",
-      "channel_id": "1131839817982947429",
-      "content": "完成珈倫活動 拿完萬分獎勵會自動跳劇情",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368476389442846810",
-      "channel_id": "1131839817982947429",
-      "content": "产能不足",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368476622633832459",
-      "channel_id": "1131839817982947429",
-      "content": "現在只是一個生在算力調和時代的凡夫了🥲",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368500570922680342",
-      "channel_id": "1131839817982947429",
-      "content": "我有一個大膽的想法",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

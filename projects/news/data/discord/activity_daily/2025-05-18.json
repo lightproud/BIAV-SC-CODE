@@ -1,10 +1,23 @@
 {
   "date": "2025-05-18",
-  "messages": 703,
-  "unique_authors": 44,
-  "reactions_total": 141,
-  "attachments": 22,
+  "messages": 5229,
+  "unique_authors": 150,
+  "reactions_total": 307,
+  "attachments": 267,
   "channel_activity": {
+    "🔸morimens-game-chat": 3907,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 12,
+    "🔸한국어-채팅방": 49,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 12,
+    "🔸phòng-chat-tiếng-việt": 8,
+    "🔸canal-español": 82,
+    "🔸canal-português": 59,
+    "🔸ruang-obrolan-indonesia": 216,
+    "🔸ห้องสนทนาภาษาไทย": 27,
+    "🔸traphase": 141,
+    "🔸lore-chat": 8,
     "🔸綜合討論": 657,
     "Celeste": 1,
     "✅「已回答」找不到有互相關注的校友的助戰": 31,
@@ -15,31 +28,34 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "0": 27,
-    "1": 7,
-    "2": 4,
-    "3": 73,
-    "4": 94,
-    "5": 13,
-    "6": 2,
-    "7": 47,
-    "8": 176,
-    "9": 30,
-    "10": 5,
-    "11": 48,
-    "12": 55,
-    "13": 45,
-    "14": 41,
-    "15": 13,
-    "16": 10,
-    "18": 6,
-    "19": 4,
-    "22": 2,
-    "23": 1
+    "0": 194,
+    "1": 154,
+    "2": 290,
+    "3": 137,
+    "4": 187,
+    "5": 130,
+    "6": 74,
+    "7": 106,
+    "8": 248,
+    "9": 121,
+    "10": 166,
+    "11": 359,
+    "12": 289,
+    "13": 196,
+    "14": 127,
+    "15": 551,
+    "16": 465,
+    "17": 216,
+    "18": 383,
+    "19": 213,
+    "20": 139,
+    "21": 213,
+    "22": 132,
+    "23": 139
   },
   "message_types": {
-    "19": 119,
-    "0": 538
+    "0": 3472,
+    "19": 1054
   },
   "top_reacted_messages": [
     {
@@ -63,6 +79,14 @@
       "author": "game.producer.light",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1373483002599968838",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1373501807690645544",
@@ -112,6 +136,46 @@
       "channel": "一些便利性方面的建议"
     },
     {
+      "id": "1373481866945888257",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373575474743349250",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373683385494540389",
+      "channel_id": "1170692781216378960",
+      "content": "I was like \"I don't wanna use caecus on my 24 team... who do I have spar- oh... ",
+      "author": "thpdom",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373690037488717955",
+      "channel_id": "1170692781216378960",
+      "content": "couldn't resist E1 24",
+      "author": "eatelier",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373806323283529862",
+      "channel_id": "1180850818509971466",
+      "content": "然後就是環境的問題，現在環境玩什麼好，這就要看當下的匹配裡面有誰了，畢竟現在的平衡也做得不錯了，我講幾個比較熱門（我比較常看到）的隊伍吧\n幻影隊\n通常是帶有油污",
+      "author": "nahida._90",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1373501079618060389",
       "channel_id": "1131839817982947429",
       "content": "日服更多具体内容不适合我来回应，到时候日本的运营方来说明。不过如果只是单独说配音的话，我非常希望能够为所有地区都添加序章的部份！",
@@ -149,54 +213,6 @@
       "content": "庸醫",
       "author": "shchng.",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373677125814587392",
-      "channel_id": "1131839817982947429",
-      "content": "好多指紋喔",
-      "author": "kong760",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373510947062419527",
-      "channel_id": "1131839817982947429",
-      "content": "👆",
-      "author": "cs001092",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373569644635619390",
-      "channel_id": "1131839817982947429",
-      "content": "她就是跑龍套的",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373574607054831706",
-      "channel_id": "1131839817982947429",
-      "content": "先祈祷nia",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373575203271213090",
-      "channel_id": "1131839817982947429",
-      "content": "分",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1373575843019755551",
-      "channel_id": "1131839817982947429",
-      "content": "~~既然你都花抽了那培养皿能不能给我~~",
-      "author": "flarinsidia",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

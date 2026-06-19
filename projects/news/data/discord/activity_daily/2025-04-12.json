@@ -1,10 +1,11 @@
 {
   "date": "2025-04-12",
-  "messages": 42,
-  "unique_authors": 10,
-  "reactions_total": 611,
-  "attachments": 16,
+  "messages": 615,
+  "unique_authors": 36,
+  "reactions_total": 684,
+  "attachments": 37,
   "channel_activity": {
+    "🔸綜合討論": 573,
     "aomi’s morimens dump": 5,
     "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 5,
     "✅校猫碎碎念#近况分享": 4,
@@ -18,21 +19,31 @@
     "1296113810549112874": 8
   },
   "hourly_activity": {
-    "3": 1,
-    "9": 3,
-    "10": 12,
-    "7": 4,
-    "12": 1,
-    "13": 7,
-    "8": 2,
-    "11": 1,
-    "14": 2,
-    "2": 1,
-    "6": 8
+    "0": 1,
+    "2": 14,
+    "3": 8,
+    "4": 147,
+    "5": 59,
+    "6": 57,
+    "7": 37,
+    "8": 19,
+    "9": 21,
+    "10": 21,
+    "11": 9,
+    "12": 94,
+    "13": 30,
+    "14": 26,
+    "15": 20,
+    "16": 10,
+    "17": 14,
+    "18": 7,
+    "19": 13,
+    "22": 4,
+    "23": 4
   },
   "message_types": {
-    "0": 7,
-    "19": 3
+    "0": 491,
+    "19": 82
   },
   "top_reacted_messages": [
     {
@@ -43,11 +54,35 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1360568768119570543",
+      "channel_id": "1131839817982947429",
+      "content": "我是個只玩了50小時的新手",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1360612803039465542",
       "content": "o well, i'll just post this anyways, hopefully someone finds it funny <:love:135",
       "author": "reya.li",
       "reactions": 10,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1360457898899279983",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360513552724787330",
+      "channel_id": "1131839817982947429",
+      "content": "MYTHAG500DAYS",
+      "author": "jackpot_7",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1360501065346191553",
@@ -57,11 +92,91 @@
       "channel": ""
     },
     {
+      "id": "1360513251644805291",
+      "channel_id": "1131839817982947429",
+      "content": "500天送500銀芯\n不應該送500抽嗎",
+      "author": "kuritani_yuu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1360612914008035612",
       "content": "",
       "author": "meowtwo57",
       "reactions": 4,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1360568620337463357",
+      "channel_id": "1131839817982947429",
+      "content": "我是個只玩了455天的新手",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360570757662375956",
+      "channel_id": "1131839817982947429",
+      "content": "你",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360471616919961650",
+      "channel_id": "1131839817982947429",
+      "content": "Aaaaa閉嘴",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360483774889988147",
+      "channel_id": "1131839817982947429",
+      "content": "可以 隨便打 只是要課金高 才有暴擊",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360490347050045500",
+      "channel_id": "1131839817982947429",
+      "content": "🥺 lai跟狐狸佬要養我嗎",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360493533311668407",
+      "channel_id": "1131839817982947429",
+      "content": "~~lai已被醫生包養~~",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360517037142577202",
+      "channel_id": "1131839817982947429",
+      "content": "攻略同人活动也能有",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360602947066658948",
+      "channel_id": "1131839817982947429",
+      "content": "~~怪醫克萊克~~",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360618949980590211",
+      "channel_id": "1131839817982947429",
+      "content": "克莱门汀主C的话该怎样配队",
+      "author": "art1_2_3",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1360552386308997292",
@@ -83,41 +198,6 @@
       "author": "navirecorbeau",
       "reactions": 2,
       "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
-    },
-    {
-      "id": "1360462854830161930",
-      "content": "💋 😍",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
-    },
-    {
-      "id": "1360546330417823887",
-      "content": "cant wait to see what comes of this",
-      "author": "al_leyway",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
-    },
-    {
-      "id": "1360518860083691590",
-      "content": "",
-      "author": "yiwen_94018_52861",
-      "reactions": 1,
-      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
-    },
-    {
-      "id": "1360565714645291159",
-      "content": "it turns out it can be like that, thank you for the information, it is very help",
-      "author": "clover5758",
-      "reactions": 1,
-      "channel": "Changing the conditions for claiming prizes in Trapashe"
-    },
-    {
-      "id": "1360499978837164114",
-      "content": "守密人，晚上是吹陆风",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

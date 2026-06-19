@@ -1,10 +1,23 @@
 {
   "date": "2025-05-22",
-  "messages": 615,
-  "unique_authors": 39,
-  "reactions_total": 811,
-  "attachments": 37,
+  "messages": 6642,
+  "unique_authors": 237,
+  "reactions_total": 2512,
+  "attachments": 280,
   "channel_activity": {
+    "🔸morimens-game-chat": 4807,
+    "🔸한국어-채팅방": 63,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 443,
+    "🔸canal-português": 83,
+    "🔸ruang-obrolan-indonesia": 451,
+    "🔸ห้องสนทนาภาษาไทย": 80,
+    "🔸traphase": 70,
+    "🔸lore-chat": 13,
+    "🔸礼包码┊gift-codes": 2,
     "🔸綜合討論": 476,
     "Miss Coral": 2,
     "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant": 4,
@@ -15,43 +28,53 @@
     "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!": 1,
     "✅校猫碎碎念#序章配音决定": 33,
     "✅前瞻：1.5周年～战斗增强篇": 2,
-    "Dynamic Battle Sprite | 动态战斗立绘": 4,
-    "🔸礼包码┊gift-codes": 1
+    "Dynamic Battle Sprite | 动态战斗立绘": 4
   },
   "hourly_activity": {
-    "0": 9,
-    "1": 5,
-    "2": 27,
-    "3": 17,
-    "4": 3,
-    "5": 28,
-    "6": 9,
-    "7": 8,
-    "8": 4,
-    "9": 24,
-    "10": 5,
-    "11": 88,
-    "12": 123,
-    "13": 19,
-    "14": 11,
-    "15": 35,
-    "16": 50,
-    "17": 64,
-    "18": 82,
-    "19": 2,
-    "20": 1,
-    "22": 1
+    "0": 83,
+    "1": 643,
+    "2": 360,
+    "3": 231,
+    "4": 541,
+    "5": 329,
+    "6": 153,
+    "7": 179,
+    "8": 171,
+    "9": 135,
+    "10": 91,
+    "11": 469,
+    "12": 473,
+    "13": 384,
+    "14": 376,
+    "15": 439,
+    "16": 280,
+    "17": 173,
+    "18": 149,
+    "19": 453,
+    "20": 117,
+    "21": 145,
+    "22": 165,
+    "23": 103
   },
   "message_types": {
-    "19": 46,
-    "0": 430
+    "0": 4563,
+    "19": 1464
   },
   "top_reacted_messages": [
     {
+      "id": "1374941907242717274",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone \n\nIt has long been known that the B.I.A.V. Studio is a creative group ",
+      "author": "game.producer.light",
+      "reactions": 688,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1375084177241673882",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 18000守密人達成禮 / DC18000 Keepers Achievement Gift\n\n《忘卻前夜Morimens》DC全球頻道達到18000人",
       "author": "morimensstaff02",
-      "reactions": 661,
+      "reactions": 664,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -60,6 +83,14 @@
       "author": "game.producer.light",
       "reactions": 63,
       "channel": "✅校猫碎碎念#序章配音决定"
+    },
+    {
+      "id": "1374942608706506753",
+      "channel_id": "1170692781216378960",
+      "content": "This update is currently limited to the prologue, but I sincerely hope that in t",
+      "author": "game.producer.light",
+      "reactions": 56,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1374937614100070511",
@@ -76,11 +107,35 @@
       "channel": "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!"
     },
     {
+      "id": "1375138734357614712",
+      "channel_id": "1326453763355185215",
+      "content": "totally™ real™ canon™ Castor© lore leak ™™",
+      "author": "zier.0",
+      "reactions": 14,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1375083783119831101",
       "content": "Are there any plans to implement dynamic battle sprites in the future? It is und",
       "author": "zier.0",
       "reactions": 9,
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375085994705031229",
+      "channel_id": "1170692781216378960",
+      "content": "Jenkin rule 34",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1375095021690425374",
+      "channel_id": "1170692781216378960",
+      "content": "Despite the shitpost quality, I *can* do normal art lmao",
+      "author": "inkouah",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1375075849841414155",
@@ -97,104 +152,68 @@
       "channel": "✅校猫碎碎念#序章配音决定"
     },
     {
-      "id": "1374933519226241064",
-      "channel_id": "1131839817982947429",
-      "content": "又偷到零死坑了",
-      "author": "xuanxue007",
+      "id": "1375154396958294098",
+      "channel_id": "1170692781216378960",
+      "content": "where she tries to kill you and you throw her body into an incinerator",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1375243373266468997",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": ".unphoque",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1374943964905341029",
+      "channel_id": "1170692781216378960",
+      "content": "Prob jp no?",
+      "author": "azams78.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1375012240499019846",
+      "channel_id": "1170692781216378960",
+      "content": "I was at one hp and my enemy had counter 😭😭",
+      "author": "kevsalvador",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1375150199663755415",
+      "channel_id": "1170692781216378960",
+      "content": "RAHHH FINALLY GOT HER",
+      "author": "duskisnotdust",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1374943534431338496",
+      "channel_id": "1170692781216378960",
+      "content": "Please let them all be aggressively british",
+      "author": "echotracker",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1374978449286107226",
-      "content": "我還在等繁衍狂熱2.0R18全配音動畫",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "✅校猫碎碎念#序章配音决定"
+      "id": "1374972964604215326",
+      "channel_id": "1170692781216378960",
+      "content": "Scameln isnt needed",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1375147793081176184",
-      "content": "你是說被深海蟲子寄生後身體會■■■■嗎？",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "Dynamic Battle Sprite | 动态战斗立绘"
-    },
-    {
-      "id": "1375084730340479108",
-      "channel_id": "1131839817982947429",
-      "content": "给银芯",
-      "author": "sadanshishen",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375085449642508348",
-      "channel_id": "1131839817982947429",
-      "content": "为后面的完全幻衣做铺垫",
-      "author": "sadanshishen",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375130740081164288",
-      "channel_id": "1131839817982947429",
-      "content": "你游也是蒸蒸日上起来了",
-      "author": "mwuyue",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375074771963744380",
-      "content": "上面两个腿离谱",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!"
-    },
-    {
-      "id": "1375095915177578569",
-      "content": "支持\n哪怕只有敵方加入動態變化也有很棒的效果\n章節boss也有好幾招不同招式，多加點怪物的變化，克系氛圍就來了",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "Dynamic Battle Sprite | 动态战斗立绘"
-    },
-    {
-      "id": "1375049314753187853",
-      "channel_id": "1131839817982947429",
-      "content": "這裡太骯髒了不適合純淨的我",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375050931154194574",
-      "channel_id": "1131839817982947429",
-      "content": "~~我已經被嚇到忘記了~~",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375082952962347089",
-      "channel_id": "1131839817982947429",
-      "content": "一眼做完任务领一件",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375083727922663455",
-      "channel_id": "1131839817982947429",
-      "content": "看起来是，而且只有这次能用",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1375085529111986237",
-      "channel_id": "1131839817982947429",
-      "content": "完全幻衣卖你个280不过分吧",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1375068141931073537",
+      "channel_id": "1170692781216378960",
+      "content": "salvador is slaying",
+      "author": "itsmemiki",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

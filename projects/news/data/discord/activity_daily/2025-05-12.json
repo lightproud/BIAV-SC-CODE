@@ -1,10 +1,24 @@
 {
   "date": "2025-05-12",
-  "messages": 983,
-  "unique_authors": 33,
-  "reactions_total": 110,
-  "attachments": 75,
+  "messages": 5163,
+  "unique_authors": 150,
+  "reactions_total": 279,
+  "attachments": 337,
   "channel_activity": {
+    "🔸morimens-game-chat": 3810,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 34,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 24,
+    "🔸canal-español": 82,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 173,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 1,
+    "🔸lore-chat": 10,
+    "🔸lets-count": 2,
     "🔸綜合討論": 899,
     "aomi's morimens fic dump ✍": 3,
     "D-Tide Frequency Tierlist (2025 May 11)": 4,
@@ -35,33 +49,44 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 86,
-    "1": 16,
-    "2": 23,
-    "3": 65,
-    "4": 30,
-    "5": 11,
-    "6": 7,
-    "7": 27,
-    "8": 61,
-    "9": 52,
-    "10": 13,
-    "11": 94,
-    "12": 70,
-    "13": 54,
-    "14": 184,
-    "15": 144,
-    "16": 21,
-    "17": 16,
-    "20": 5,
-    "22": 2,
-    "19": 2
+    "0": 180,
+    "1": 334,
+    "2": 136,
+    "3": 262,
+    "4": 248,
+    "5": 80,
+    "6": 106,
+    "7": 133,
+    "8": 213,
+    "9": 176,
+    "10": 82,
+    "11": 183,
+    "12": 249,
+    "13": 240,
+    "14": 378,
+    "15": 333,
+    "16": 303,
+    "17": 139,
+    "18": 155,
+    "19": 205,
+    "20": 132,
+    "21": 150,
+    "22": 319,
+    "23": 427
   },
   "message_types": {
-    "0": 766,
-    "19": 133
+    "0": 3160,
+    "19": 1020
   },
   "top_reacted_messages": [
+    {
+      "id": "1371318836342554676",
+      "channel_id": "1170692781216378960",
+      "content": "It is finally done [LT_Pray](https://cdn.discordapp.com/emojis/90345814050539932",
+      "author": "rozu",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1371480496927801385",
       "channel_id": "1131839817982947429",
@@ -78,12 +103,52 @@
       "channel": "✅「已回答」图鲁吃人事件"
     },
     {
+      "id": "1371508847524577373",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "doktor.sex",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1371469937645719593",
       "channel_id": "1131839817982947429",
       "content": "我也赤完了。比上期簡單一些。",
       "author": "randomplayer852",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371321319743819818",
+      "channel_id": "1170692781216378960",
+      "content": "top™️ ranking™️ dtide™️ player™️\n<:flop2:1356053072924774421>",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371314947983806594",
+      "channel_id": "1300659662311526512",
+      "content": "La MVP del capitulo 2 🐀",
+      "author": "maxxros",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1371341087486247052",
+      "channel_id": "1170692781216378960",
+      "content": "watch them hit +12 liz before jenkins",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371375682864549889",
+      "channel_id": "1170692781216378960",
+      "content": "Yay 380.",
+      "author": "mengluo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1371323757381156976",
@@ -108,6 +173,46 @@
       "channel": "✅「已回答」图鲁吃人事件"
     },
     {
+      "id": "1371334182021763093",
+      "channel_id": "1170692781216378960",
+      "content": "Wait... so they gave the retaliate relic for wave 2 but the boss doesn't even mu",
+      "author": "mengluo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371630623806062592",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371637472659902505",
+      "channel_id": "1170692781216378960",
+      "content": "what if I don't apply tulu in my blue 400\nso I can spread rumors that tulu is no",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371476356738711603",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1371593213634154538",
+      "channel_id": "1300659662311526512",
+      "content": "que lindo caecus 😦",
+      "author": "hexagonal23_23",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1371283991180869642",
       "channel_id": "1131839817982947429",
       "content": "我啊",
@@ -129,93 +234,6 @@
       "content": "深海反肘贏了",
       "author": "ernest_heart",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371307078173589545",
-      "content": "",
-      "author": "timee_ky",
-      "reactions": 3,
-      "channel": "深海界域维度影像一览"
-    },
-    {
-      "id": "1371283185907793960",
-      "channel_id": "1131839817982947429",
-      "content": "這裡只剩我純潔了",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371285180060532758",
-      "channel_id": "1131839817982947429",
-      "content": "全部跟鯊魚生還是加了跟小孩的play(重新被融蝕淹沒)",
-      "author": "chilledren_fans",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371403997315072111",
-      "channel_id": "1131839817982947429",
-      "content": "因為當時我正在凹第三遍並且手機快沒電了（",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371411406762807306",
-      "channel_id": "1131839817982947429",
-      "content": "我想說抽幾個常駐給下次歪，結果歪出了2+2",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371411893528301568",
-      "channel_id": "1131839817982947429",
-      "content": "我常因為自己太過純潔而無法融入話題",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371413898728706118",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "nahida._90",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371427975370768385",
-      "channel_id": "1131839817982947429",
-      "content": "~~這個bug存在已久~~",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371435351024996404",
-      "channel_id": "1131839817982947429",
-      "content": "我們修正了玩家可以遊玩5771的BUG",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371452930523136111",
-      "channel_id": "1131839817982947429",
-      "content": "🤓 🤓 那我活的很快樂欸",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371488923737526432",
-      "channel_id": "1131839817982947429",
-      "content": "朝星佬400分了，好强",
-      "author": "bailuoxiao",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

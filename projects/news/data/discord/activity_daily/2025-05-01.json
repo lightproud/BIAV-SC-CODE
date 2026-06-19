@@ -1,10 +1,20 @@
 {
   "date": "2025-05-01",
-  "messages": 926,
-  "unique_authors": 27,
-  "reactions_total": 135,
-  "attachments": 37,
+  "messages": 5666,
+  "unique_authors": 145,
+  "reactions_total": 237,
+  "attachments": 229,
   "channel_activity": {
+    "🔸morimens-game-chat": 4339,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 6,
+    "🔸한국어-채팅방": 150,
+    "🔸phòng-chat-tiếng-việt": 49,
+    "🔸canal-español": 23,
+    "🔸ruang-obrolan-indonesia": 50,
+    "🔸ห้องสนทนาภาษาไทย": 41,
+    "🔸traphase": 80,
+    "🔸lore-chat": 1,
     "🔸綜合討論": 769,
     "Tulu is adorable": 1,
     "Murphy": 1,
@@ -21,34 +31,35 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 1
   },
   "hourly_activity": {
-    "0": 29,
-    "1": 1,
-    "2": 18,
-    "3": 8,
-    "4": 4,
-    "5": 2,
-    "6": 42,
-    "7": 35,
-    "8": 33,
-    "9": 97,
-    "10": 70,
-    "11": 18,
-    "12": 37,
-    "13": 34,
-    "14": 22,
-    "15": 111,
-    "16": 62,
-    "17": 118,
-    "18": 102,
-    "19": 24,
-    "20": 1,
-    "21": 9,
-    "22": 29,
-    "23": 20
+    "0": 97,
+    "1": 348,
+    "2": 382,
+    "3": 191,
+    "4": 172,
+    "5": 73,
+    "6": 148,
+    "7": 182,
+    "8": 114,
+    "9": 176,
+    "10": 153,
+    "11": 269,
+    "12": 250,
+    "13": 551,
+    "14": 258,
+    "15": 220,
+    "16": 285,
+    "17": 326,
+    "18": 326,
+    "19": 91,
+    "20": 352,
+    "21": 153,
+    "22": 187,
+    "23": 362
   },
   "message_types": {
-    "0": 651,
-    "19": 118
+    "0": 3696,
+    "19": 1043,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -64,6 +75,14 @@
       "author": "Deleted User",
       "reactions": 17,
       "channel": "Murphy"
+    },
+    {
+      "id": "1367360845230899342",
+      "channel_id": "1174983699935277147",
+      "content": "商店命輪滿疊完成<:happy:1356053849894420683>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1367403593333866638",
@@ -137,6 +156,46 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1367339546441810022",
+      "channel_id": "1170692781216378960",
+      "content": "A tier hips, compared to rest of roster",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1367342688373833810",
+      "channel_id": "1170692781216378960",
+      "content": "Yay spent 3 loops on Clem wheel",
+      "author": "mengluo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1367452972631588864",
+      "channel_id": "1170692781216378960",
+      "content": "i should uh, always stack my wheel of destiny right?",
+      "author": "nyctno",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1367486351871578152",
+      "channel_id": "1170692781216378960",
+      "content": "I have read Oliver Twist and Wuthering Heights if that helps",
+      "author": "thesecondcomingofdrenwee",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1367368776626081842",
+      "channel_id": "1300659662311526512",
+      "content": "Tawil a la primera y la rueda a la tercera\nSaqué dupe de Tawil tambien\nLa suerte",
+      "author": "rusheer.l",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1367327733868269670",
       "channel_id": "1131839817982947429",
       "content": "魔術帽只差一張就+12，怎麼半路殺出一張藏品",
@@ -157,54 +216,6 @@
       "channel_id": "1131839817982947429",
       "content": "<:processing:1357185814567718963>",
       "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367390191534477374",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367438497367068764",
-      "channel_id": "1131839817982947429",
-      "content": "《論背景素材複用導致記憶錯亂》",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367439154719363092",
-      "channel_id": "1131839817982947429",
-      "content": "我以為彌大頂多只會出現類似：喚醒體因為吃不到小蛋糕用觸手把廚師甩來甩",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367447519491133533",
-      "channel_id": "1131839817982947429",
-      "content": "他在視姦你的畫面",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367503215083388991",
-      "channel_id": "1131839817982947429",
-      "content": "肉還行，但愛太多，人不夠壞，東西不夠獵奇",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1367528217711480984",
-      "channel_id": "1131839817982947429",
-      "content": "明年再说吧",
-      "author": "287405tjy_28066",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

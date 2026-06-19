@@ -1,10 +1,20 @@
 {
   "date": "2025-05-10",
-  "messages": 377,
-  "unique_authors": 32,
-  "reactions_total": 97,
-  "attachments": 25,
+  "messages": 7621,
+  "unique_authors": 145,
+  "reactions_total": 306,
+  "attachments": 344,
   "channel_activity": {
+    "🔸morimens-game-chat": 6651,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 103,
+    "🔸canal-español": 14,
+    "🔸canal-português": 244,
+    "🔸ruang-obrolan-indonesia": 162,
+    "🔸ห้องสนทนาภาษาไทย": 10,
+    "🔸traphase": 42,
+    "🔸lore-chat": 15,
     "🔸綜合討論": 344,
     "Ramona": 2,
     "TULU": 1,
@@ -21,34 +31,34 @@
     "女仆日当然是……": 3
   },
   "hourly_activity": {
-    "0": 13,
-    "1": 43,
-    "2": 18,
-    "3": 15,
-    "4": 10,
-    "5": 10,
-    "6": 10,
-    "7": 18,
-    "8": 29,
-    "9": 32,
-    "10": 51,
-    "11": 29,
-    "12": 8,
-    "13": 5,
-    "14": 1,
-    "15": 2,
-    "16": 11,
-    "17": 14,
-    "18": 13,
-    "19": 12,
-    "20": 4,
-    "21": 3,
-    "22": 7,
-    "23": 19
+    "0": 536,
+    "1": 288,
+    "2": 468,
+    "3": 372,
+    "4": 213,
+    "5": 114,
+    "6": 87,
+    "7": 115,
+    "8": 70,
+    "9": 245,
+    "10": 368,
+    "11": 348,
+    "12": 318,
+    "13": 353,
+    "14": 478,
+    "15": 583,
+    "16": 390,
+    "17": 463,
+    "18": 395,
+    "19": 442,
+    "20": 533,
+    "21": 172,
+    "22": 97,
+    "23": 173
   },
   "message_types": {
-    "0": 304,
-    "19": 40
+    "0": 5456,
+    "19": 1788
   },
   "top_reacted_messages": [
     {
@@ -71,6 +81,86 @@
       "author": "cjsyds9784",
       "reactions": 12,
       "channel": "女仆日当然是……"
+    },
+    {
+      "id": "1370803045851729920",
+      "channel_id": "1170692781216378960",
+      "content": "anyway!",
+      "author": "galacticnaexia",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370759850274983996",
+      "channel_id": "1170692781216378960",
+      "content": "and you can run the hetra without anaxa",
+      "author": "apsgsd",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370606989067157554",
+      "channel_id": "1170692781216378960",
+      "content": "I hope this game gets more attention <:takenotes:1357186646294138890>",
+      "author": "kevsalvador",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370725480923271238",
+      "channel_id": "1300659802455674972",
+      "content": "https://youtu.be/SBoabNYNVsE",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1370725355085889557",
+      "channel_id": "1326453763355185215",
+      "content": "<@702167871144591461>  The lore video is finally out but it's in thai though, To",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1370607497722859661",
+      "channel_id": "1170692781216378960",
+      "content": "My videos already dead on arrival sadly",
+      "author": "thpdom",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370757367502868500",
+      "channel_id": "1170692781216378960",
+      "content": "single pull tho",
+      "author": "apsgsd",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370757970740121672",
+      "channel_id": "1170692781216378960",
+      "content": "i have thias sanga murphy and ghelot team in trap",
+      "author": "apsgsd",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370759456098615437",
+      "channel_id": "1170692781216378960",
+      "content": "bounce for days",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370574660676354178",
+      "channel_id": "1300659495550062592",
+      "content": "코퍼산트 라디오 드라마 끗",
+      "author": "shrike784",
+      "reactions": 3,
+      "channel": "🔸한국어-채팅방"
     },
     {
       "id": "1370581336477270056",
@@ -105,107 +195,28 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1370622183457685554",
-      "channel_id": "1131839817982947429",
-      "content": "有大佬可以帶帶我嗎",
-      "author": "ahuahuahua",
+      "id": "1370605515301851257",
+      "channel_id": "1170692781216378960",
+      "content": "This took so long but it works I guess <:idk:1356084138280489080>",
+      "author": "melwyn7591",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370697665121095732",
-      "channel_id": "1131839817982947429",
-      "content": "是誰在跟我吃飯的時候一直在意淫同學的",
-      "author": "ahuahuahua",
+      "id": "1370727628754911312",
+      "channel_id": "1170692781216378960",
+      "content": "Here's the sig wheels for the standard banner\n\nhttps://www.reddit.com/r/Morimens",
+      "author": "kevsalvador",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370704155986886780",
-      "channel_id": "1131839817982947429",
-      "content": "你可以去查查鯊魚的\n有兩根不是很長",
-      "author": "foxcatfurry",
+      "id": "1370727739635662929",
+      "channel_id": "1170692781216378960",
+      "content": "thank you kind people",
+      "author": "eatelier",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370720774020661290",
-      "channel_id": "1131839817982947429",
-      "content": "~~■■裏面有蟲洞可以直接穿越~~",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370663491857416242",
-      "content": "~~# 我更喜歡1週年送的100流明之芯，考慮一下嗎~~",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～活动福利篇"
-    },
-    {
-      "id": "1370553049755549767",
-      "channel_id": "1131839817982947429",
-      "content": "<:love:1356053099931897977>",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370565354702639164",
-      "channel_id": "1131839817982947429",
-      "content": "隕日偉力荒原狼 當輸出",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370571570493390929",
-      "channel_id": "1131839817982947429",
-      "content": "他又不是我的菜",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370575277490573422",
-      "channel_id": "1131839817982947429",
-      "content": "~~會讓我想起某兩次愉快又奇妙的ㄩㄆ經歷~~",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370575885622579220",
-      "channel_id": "1131839817982947429",
-      "content": "~~奧吉爾我都下手了~~",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370576042447736933",
-      "channel_id": "1131839817982947429",
-      "content": "🥵 真的能分到一晚吗。那也不是不行。",
-      "author": "randomplayer852",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370592422232588349",
-      "channel_id": "1131839817982947429",
-      "content": "那是aaa",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1370594924613075048",
-      "channel_id": "1131839817982947429",
-      "content": "你做的到的估計是把人笑死不是把人草死",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

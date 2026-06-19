@@ -1,10 +1,11 @@
 {
   "date": "2025-04-29",
-  "messages": 76,
-  "unique_authors": 16,
-  "reactions_total": 152,
-  "attachments": 30,
+  "messages": 803,
+  "unique_authors": 37,
+  "reactions_total": 283,
+  "attachments": 49,
   "channel_activity": {
+    "🔸綜合討論": 727,
     "Tulu is adorable": 4,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "V2.2.1.2 在線維護公告": 2,
@@ -28,29 +29,33 @@
     "1350059696945500171": 13
   },
   "hourly_activity": {
-    "14": 2,
-    "15": 5,
+    "0": 23,
+    "1": 105,
+    "2": 23,
+    "3": 9,
+    "4": 15,
+    "5": 11,
+    "6": 6,
+    "7": 41,
+    "8": 43,
+    "9": 139,
+    "10": 61,
+    "11": 125,
+    "12": 81,
+    "13": 10,
+    "14": 23,
+    "15": 8,
+    "16": 9,
+    "17": 5,
+    "18": 45,
+    "20": 4,
+    "23": 3,
     "21": 1,
-    "12": 5,
-    "8": 14,
-    "6": 4,
-    "2": 8,
-    "3": 2,
-    "7": 5,
-    "5": 2,
-    "16": 5,
-    "17": 1,
-    "18": 3,
-    "23": 2,
-    "9": 1,
-    "0": 1,
-    "1": 1,
-    "10": 1,
     "22": 13
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 656,
+    "19": 71
   },
   "top_reacted_messages": [
     {
@@ -96,6 +101,22 @@
       "channel": "忘卻前夜OST：迷幻蟲巢之夢"
     },
     {
+      "id": "1366785605303926796",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366866990215725137",
+      "channel_id": "1131839817982947429",
+      "content": "看來我成功在國際服植入忘卻前夜有很多男同的信念了",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1366691367270613054",
       "content": "<:slick:1356053160531198064> 以上就是本次OST的全部曲目囉~\nThe above are all the tracks of th",
       "author": "morimensstaff01",
@@ -108,6 +129,38 @@
       "author": "taoi002",
       "reactions": 5,
       "channel": "從克蘇魯神話視角解讀《忘卻前夜》：角色與設定的神話源流分析"
+    },
+    {
+      "id": "1366592529117479052",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366641980758560808",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366688783839531068",
+      "channel_id": "1131839817982947429",
+      "content": "跑路了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366788224302973043",
+      "channel_id": "1131839817982947429",
+      "content": "群色除我",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1366692153388044308",
@@ -131,32 +184,28 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
-      "id": "1366691268297625610",
-      "content": "**09.集群意志-Hive Will-**\n\n你與之戰鬥的，是無數個同心同體的靈魂。他們抗拒你、他們邀請你，放下無謂的自我吧，讓你無知的大腦，一同加入永不孤獨",
-      "author": "morimensstaff01",
+      "id": "1366601077146914867",
+      "channel_id": "1131839817982947429",
+      "content": "哇甚至三角虐戀",
+      "author": "kong760",
       "reactions": 3,
-      "channel": "忘卻前夜OST：迷幻蟲巢之夢"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1366668673439367168",
-      "content": "艾尔瓦命轮带进来的打防不能吃到船长一启吗",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "✅「已回答」基础打防是什么意思"
+      "id": "1366692077903020092",
+      "channel_id": "1131839817982947429",
+      "content": "每天打一波就好了。打太多傷身體。",
+      "author": "randomplayer852",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1366599994987253811",
-      "content": "抱歉！已加上🥹 🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」想問第二期同人活動的標籤在哪？"
-    },
-    {
-      "id": "1366793600679018647",
-      "content": "不好！與卡茜亞撞設定了，忽然想起了她的劇情，但他是個大明星的設定還是可以保留，但其他的我得重新調整了",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "自製角色（目前有深海一名、超維一名）"
+      "id": "1366724784339161220",
+      "channel_id": "1131839817982947429",
+      "content": "好玩 愛玩",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

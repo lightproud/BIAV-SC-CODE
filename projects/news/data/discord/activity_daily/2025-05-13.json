@@ -1,10 +1,19 @@
 {
   "date": "2025-05-13",
-  "messages": 425,
-  "unique_authors": 28,
-  "reactions_total": 146,
-  "attachments": 51,
+  "messages": 6490,
+  "unique_authors": 140,
+  "reactions_total": 300,
+  "attachments": 241,
   "channel_activity": {
+    "🔸morimens-game-chat": 5756,
+    "🔸剧情交流": 2,
+    "🔸한국어-채팅방": 26,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 34,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 149,
+    "🔸ห้องสนทนาภาษาไทย": 85,
+    "🔸lets-count": 1,
     "🔸綜合討論": 360,
     "Murphy": 1,
     "Old D-Tide Leaderboards": 1,
@@ -28,31 +37,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 14,
-    "2": 13,
-    "3": 12,
-    "4": 41,
-    "5": 15,
-    "7": 7,
-    "8": 101,
-    "9": 13,
-    "10": 11,
-    "11": 54,
-    "12": 39,
-    "13": 12,
-    "14": 15,
-    "15": 45,
-    "16": 8,
-    "17": 6,
-    "18": 4,
-    "20": 2,
-    "22": 3,
-    "23": 5
+    "0": 385,
+    "1": 405,
+    "2": 446,
+    "3": 390,
+    "4": 282,
+    "5": 186,
+    "6": 37,
+    "7": 62,
+    "8": 223,
+    "9": 212,
+    "10": 252,
+    "11": 234,
+    "12": 269,
+    "13": 227,
+    "14": 526,
+    "15": 379,
+    "16": 241,
+    "17": 315,
+    "18": 298,
+    "19": 100,
+    "20": 176,
+    "21": 343,
+    "22": 221,
+    "23": 281
   },
   "message_types": {
-    "0": 295,
-    "19": 65
+    "0": 4829,
+    "19": 1236
   },
   "top_reacted_messages": [
     {
@@ -85,6 +97,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1371852125466001418",
+      "channel_id": "1170692781216378960",
+      "content": "I chose a Wanda back then",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371876071435272395",
+      "channel_id": "1170692781216378960",
+      "content": "<:ta:1246228478622171247> <:ta:1246228478622171247> <:ta:1246228478622171247>",
+      "author": "galacticnaexia",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1371781111411376148",
       "channel_id": "1131839817982947429",
       "content": "脱光...",
@@ -99,6 +127,14 @@
       "author": "ahuahuahua",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371889214878126100",
+      "channel_id": "1170692781216378960",
+      "content": "It's more like Jenkins is better than all of Caros standards",
+      "author": "lumography",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1371771612092694649",
@@ -140,76 +176,52 @@
       "channel": "黑潮"
     },
     {
-      "id": "1371701333006090250",
-      "channel_id": "1131839817982947429",
-      "content": "单加固还是太简单了，建议与高维之茧一起食用",
-      "author": "akalanden",
+      "id": "1371642697722368042",
+      "channel_id": "1170692781216378960",
+      "content": "just need 1 pull",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371702895959080991",
-      "channel_id": "1131839817982947429",
-      "content": "我要是失物处的负责人早一巴掌拍过去了：“说人话！”",
-      "author": "akalanden",
+      "id": "1371674436234907648",
+      "channel_id": "1170692781216378960",
+      "content": "corpo feels like shes made for future aequor chars tbh. she focuses a lot on dis",
+      "author": "monchi3524",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371706189259473028",
-      "channel_id": "1131839817982947429",
-      "content": "佬",
-      "author": "ahuahuahua",
+      "id": "1371674849872711681",
+      "channel_id": "1170692781216378960",
+      "content": "half anni coming up",
+      "author": "monchi3524",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371709847971561564",
-      "channel_id": "1131839817982947429",
-      "content": "作文佔成績一半",
-      "author": "arr5721",
+      "id": "1371686174321672285",
+      "channel_id": "1170692781216378960",
+      "content": "<:love:1356053099931897977>",
+      "author": "zier.0",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371766256767860778",
-      "channel_id": "1131839817982947429",
-      "content": "~~公就是帶薙魂的背鍋狗~~",
-      "author": "kong760",
+      "id": "1371687520168837260",
+      "channel_id": "1170692781216378960",
+      "content": "Am I crazy or is it so hard to fight anything in chapter 8 without triggering de",
+      "author": "thesecondcomingofdrenwee",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371766867282104340",
-      "channel_id": "1131839817982947429",
-      "content": "你已經在忘卻當狗了可能沒什麼差了",
-      "author": "foxcatfurry",
+      "id": "1371776764841431091",
+      "channel_id": "1170692781216378960",
+      "content": "reproduction frenzy with goliath, read it, thats rape",
+      "author": "abysalol",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371768515358359624",
-      "channel_id": "1131839817982947429",
-      "content": "~~被阿狗插口了~~",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371768531577733190",
-      "channel_id": "1131839817982947429",
-      "content": "没有人类的道德观念",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1371811770716389407",
-      "channel_id": "1131839817982947429",
-      "content": "~~是抖欸姆的游戲~~",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-04-11",
-  "messages": 102,
-  "unique_authors": 14,
-  "reactions_total": 155,
-  "attachments": 41,
+  "messages": 915,
+  "unique_authors": 33,
+  "reactions_total": 305,
+  "attachments": 81,
   "channel_activity": {
+    "🔸綜合討論": 813,
     "aomi’s morimens dump": 3,
     "Wheel List": 5,
     "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 7,
@@ -27,30 +28,33 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 11,
-    "13": 1,
-    "2": 3,
-    "5": 1,
-    "7": 15,
-    "8": 10,
-    "17": 1,
-    "14": 6,
-    "16": 4,
-    "20": 6,
+    "0": 1,
+    "2": 40,
+    "3": 89,
+    "4": 53,
+    "5": 19,
+    "6": 1,
+    "7": 16,
+    "8": 43,
+    "9": 13,
+    "10": 12,
+    "11": 22,
+    "12": 52,
+    "13": 135,
+    "14": 55,
+    "15": 137,
+    "16": 78,
+    "17": 96,
+    "18": 30,
+    "20": 13,
     "22": 2,
-    "15": 24,
     "19": 2,
-    "1": 6,
-    "3": 5,
-    "11": 1,
-    "10": 1,
-    "18": 2,
-    "12": 1
+    "1": 6
   },
   "message_types": {
-    "0": 20,
-    "19": 5,
-    "4": 1
+    "0": 684,
+    "19": 128,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -75,11 +79,35 @@
       "channel": "aomi’s morimens dump"
     },
     {
+      "id": "1360207878069420052",
+      "channel_id": "1131839817982947429",
+      "content": "<@1131790839291596841> 我比較想了解我嗑的CP何時官方發糧🥺",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1360288624071151857",
       "content": "",
       "author": "nekoiiii.",
       "reactions": 7,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1360168372360187965",
+      "channel_id": "1131839817982947429",
+      "content": "蔷薇转一下20k，这还是阿红吗（）",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360246183318126612",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1360278399452577945",
@@ -96,6 +124,22 @@
       "channel": "✦第2章「克莱门汀」无提示事件·星辰篇✦"
     },
     {
+      "id": "1360092238188904458",
+      "channel_id": "1131839817982947429",
+      "content": "呜呜呜这样一对比，银河行星懦弱到~~简直就是阴沟里的老鼠~~<:cry2:1356068126894194758>",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360167524460921016",
+      "channel_id": "1131839817982947429",
+      "content": "阿红鞭一下努比亚pro",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1360264595322966066",
       "content": "水一個，我覺得這很好用欸",
       "author": "ena04564",
@@ -110,88 +154,60 @@
       "channel": "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）"
     },
     {
-      "id": "1360271800168218684",
-      "content": "迷薩格最新生髮技術之－－超限爆髮",
+      "id": "1360089369029120060",
+      "channel_id": "1131839817982947429",
+      "content": "我先徹掉，你們當沒有發生",
+      "author": "huangyu0876",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360089939064131615",
+      "channel_id": "1131839817982947429",
+      "content": "我的名字被盜用了，太可惡了吧",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360092698270372062",
+      "channel_id": "1131839817982947429",
+      "content": "一個偷我名字，一個硬塞帳號說是我，這連環計我給過",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360107071114182676",
+      "channel_id": "1131839817982947429",
+      "content": "這才是你，真正大佬",
+      "author": "universe.dark",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360107139057848351",
+      "channel_id": "1131839817982947429",
+      "content": "這個到底是誰拉，偷我名字好玩嗎",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360163568347123832",
+      "channel_id": "1131839817982947429",
+      "content": "提醒一下豆腐，融災快過期了，這次不要忘記打了喔",
       "author": "tofu0834",
       "reactions": 3,
-      "channel": "V2.2.0.2 停服維護公告"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1360181108431388763",
-      "content": "我有個提議我們來個深海扶他",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1360166247408599060",
-      "content": "The school staff will fix this problem~Thanks for the feedback🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Relic Description Cutoff"
-    },
-    {
-      "id": "1360163689591734293",
-      "content": "Thanks for the feedback~will be fixed in the next update🫂",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Time Worm Missing Relic Description"
-    },
-    {
-      "id": "1360286589430792335",
-      "content": "因為很長，需要保存後看才會顯示正常畫質（瀏覽器查看圖片好像也可以）",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "✦第2章「蜕变」关卡流程总览·星辰篇✦"
-    },
-    {
-      "id": "1360236800026611923",
-      "content": "更新下\n86等+密契換了50爆傷二律背反",
-      "author": "xu6_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1360270614350532820",
-      "content": "<:processing:1357185814567718963>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "V2.2.0.2 停服維護公告"
-    },
-    {
-      "id": "1360219180175069297",
-      "content": "Ah thanks, I can login now",
-      "author": "f4everr_",
-      "reactions": 1,
-      "channel": "✅「Answered」Region lock.."
-    },
-    {
-      "id": "1360163617399636180",
-      "content": "好的",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "✅「已回答」如图所示"
-    },
-    {
-      "id": "1360098868448202982",
-      "content": "It seems that the max HP increase from Salvador's talent when choosing \"Percepti",
-      "author": "sherrinford",
-      "reactions": 1,
-      "channel": "✅「Answered」Salvador Star Chapter talent bug"
-    },
-    {
-      "id": "1360154982254510131",
-      "content": "This issue will be fixed next week❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Salvador Star Chapter talent bug"
-    },
-    {
-      "id": "1360069365243969566",
-      "content": "自便",
-      "author": "yizilven",
-      "reactions": 1,
-      "channel": "有关于同人文创作的一些问题"
+      "id": "1360264235296493728",
+      "channel_id": "1131839817982947429",
+      "content": "玩忘卻我把把都帶",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

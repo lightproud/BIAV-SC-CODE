@@ -1,10 +1,22 @@
 {
   "date": "2025-05-16",
-  "messages": 613,
-  "unique_authors": 40,
-  "reactions_total": 132,
-  "attachments": 45,
+  "messages": 6819,
+  "unique_authors": 155,
+  "reactions_total": 409,
+  "attachments": 313,
   "channel_activity": {
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 4944,
+    "🔸相位对弈": 19,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 138,
+    "🔸deutscher-chatraum": 1,
+    "🔸canal-español": 25,
+    "🔸canal-português": 36,
+    "🔸ruang-obrolan-indonesia": 580,
+    "🔸ห้องสนทนาภาษาไทย": 35,
+    "🔸traphase": 412,
+    "🔸lets-count": 3,
     "🔸綜合討論": 555,
     "GTulu Theory (with fanart) (this will age poorly, will it?)": 13,
     "N": 1,
@@ -24,34 +36,35 @@
     "Petition to rename Wheel Unseen to Concealed Truth": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 8,
-    "3": 24,
-    "4": 15,
-    "5": 80,
-    "6": 25,
-    "7": 23,
-    "8": 69,
-    "9": 31,
-    "10": 28,
-    "11": 10,
-    "12": 20,
-    "13": 39,
-    "14": 128,
-    "15": 79,
-    "16": 7,
-    "17": 9,
-    "18": 1,
-    "19": 4,
-    "21": 3,
-    "22": 3,
-    "23": 1,
-    "20": 1,
-    "2": 1
+    "5": 254,
+    "9": 264,
+    "10": 228,
+    "0": 290,
+    "1": 547,
+    "2": 338,
+    "3": 356,
+    "4": 441,
+    "6": 112,
+    "7": 134,
+    "8": 464,
+    "11": 296,
+    "12": 346,
+    "13": 583,
+    "14": 494,
+    "15": 340,
+    "16": 375,
+    "17": 109,
+    "18": 75,
+    "19": 185,
+    "20": 56,
+    "21": 240,
+    "22": 88,
+    "23": 204
   },
   "message_types": {
-    "0": 453,
-    "19": 102
+    "0": 4709,
+    "19": 1496,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -60,6 +73,14 @@
       "author": "argo.4467",
       "reactions": 25,
       "channel": "24"
+    },
+    {
+      "id": "1373008948227211285",
+      "channel_id": "1170692781216378960",
+      "content": "I just saw this video today, and the main content truly moved me to tears. All t",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1372875996495351889",
@@ -91,11 +112,91 @@
       "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
     },
     {
+      "id": "1372881966252294205",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1372875454633214053",
       "content": "There are some strange cuts in the dialogue in the story and events, that weren'",
       "author": "vxvendetta",
       "reactions": 6,
       "channel": "✅「Answered」Strange cuts in the dialogue"
+    },
+    {
+      "id": "1372811758590365776",
+      "channel_id": "1170692781216378960",
+      "content": "Soon",
+      "author": "noire_2",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372854857437937694",
+      "channel_id": "1170692781216378960",
+      "content": "[HELLO...M...Y.....CHIL....D4EE....N]",
+      "author": "aldry_143u",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373075192112349224",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372733384651964437",
+      "channel_id": "1170692781216378960",
+      "content": "Just started playing Morimens yesterday and I got dragged into the abyss",
+      "author": "16bit.exe",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372853206421340251",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372854149447946320",
+      "channel_id": "1170692781216378960",
+      "content": "reya would know..",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372861856275894353",
+      "channel_id": "1170692781216378960",
+      "content": "damn this art style is so long to match to",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372908057981485116",
+      "channel_id": "1170692781216378960",
+      "content": "I feel some what aged <:GLOBALPASSIVE:1356363843491725434>",
+      "author": "melwyn7591",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373059520724729988",
+      "channel_id": "1170692781216378960",
+      "content": "also a few days ago i could play fine but recently the game wont work on my phon",
+      "author": "pudding_ala_mode",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1372954197519106100",
@@ -118,93 +219,6 @@
       "author": "vxvendetta",
       "reactions": 3,
       "channel": "💭「Processing」Music overlap"
-    },
-    {
-      "id": "1372934831029358632",
-      "content": "Change it so all options in image are On by default. \n\nExalt confirmation: \nso n",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "Change the default settings of the game"
-    },
-    {
-      "id": "1372809768653295738",
-      "channel_id": "1131839817982947429",
-      "content": "就是不能用常驻自选换出来",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372810935328313486",
-      "channel_id": "1131839817982947429",
-      "content": "不玩战双，鸣潮原神星铁zzz明日方舟阴阳师燕云十六王者荣耀吃鸡金铲铲我也不玩",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372859793470914641",
-      "channel_id": "1131839817982947429",
-      "content": "我才怕，你是大<:Word_Lao:856444531792019466> ，我又不是",
-      "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372927695817539766",
-      "channel_id": "1131839817982947429",
-      "content": "阿狗 阿狗魂兮歸來",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372964234677452882",
-      "channel_id": "1131839817982947429",
-      "content": "90级的氪佬太强了。。。。哪有入坑3天的新手没用灵芝打过癫狂的😂",
-      "author": "xyakoto",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372809173749858325",
-      "channel_id": "1131839817982947429",
-      "content": "不是已經進了嗎",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372809804107743283",
-      "channel_id": "1131839817982947429",
-      "content": "命轮也不能定向抽取",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372810002279960608",
-      "channel_id": "1131839817982947429",
-      "content": "100抽有出到4隻(",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372810019124412437",
-      "channel_id": "1131839817982947429",
-      "content": "但卡+3",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1372810108509229128",
-      "channel_id": "1131839817982947429",
-      "content": "我昨天才抽到一只图图",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

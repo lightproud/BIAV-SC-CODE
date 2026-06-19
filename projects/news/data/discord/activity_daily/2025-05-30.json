@@ -1,10 +1,27 @@
 {
   "date": "2025-05-30",
-  "messages": 149,
-  "unique_authors": 25,
-  "reactions_total": 978,
-  "attachments": 35,
+  "messages": 12241,
+  "unique_authors": 336,
+  "reactions_total": 2567,
+  "attachments": 504,
   "channel_activity": {
+    "🔸綜合討論": 540,
+    "🔸morimens-game-chat": 9386,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 481,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 401,
+    "🔸phòng-chat-tiếng-việt": 13,
+    "🔸canal-español": 48,
+    "🔸canal-português": 176,
+    "🔸ruang-obrolan-indonesia": 640,
+    "🔸ห้องสนทนาภาษาไทย": 237,
+    "🔸traphase": 155,
+    "🔸lore-chat": 1,
+    "🔸礼包码┊gift-codes": 4,
+    "🔸lets-count": 2,
     "WIP of Thais": 3,
     "Caecus 🐟": 1,
     "Lee’s art dump": 1,
@@ -39,46 +56,52 @@
     "數不清的▒▒▒▒是5張無形者請柬？？？？": 7,
     "✅「已回答」莉兹个人剧情结束后无通讯器幕间": 2,
     "弥萨格经济学课：分解无用命轮换等级碎片": 12,
-    "🔸礼包码┊gift-codes": 2,
     "1271491376881598494": 2,
     "1296113810549112874": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "14": 14,
-    "16": 8,
-    "19": 3,
-    "15": 12,
-    "1": 1,
-    "3": 9,
-    "4": 2,
-    "23": 2,
-    "11": 5,
-    "12": 36,
-    "13": 11,
-    "6": 2,
-    "8": 10,
-    "9": 18,
-    "10": 5,
-    "7": 3,
-    "18": 4,
-    "2": 1,
-    "17": 3
+    "0": 352,
+    "1": 158,
+    "2": 157,
+    "3": 314,
+    "4": 690,
+    "5": 713,
+    "6": 239,
+    "7": 644,
+    "8": 346,
+    "9": 549,
+    "10": 484,
+    "11": 413,
+    "12": 457,
+    "13": 771,
+    "14": 904,
+    "15": 874,
+    "16": 704,
+    "17": 719,
+    "23": 429,
+    "18": 957,
+    "19": 529,
+    "20": 301,
+    "21": 308,
+    "22": 229
   },
   "message_types": {
-    "0": 55,
-    "19": 12
+    "0": 8944,
+    "19": 3148
   },
   "top_reacted_messages": [
     {
       "id": "1378020136270692503",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 19000守密人達成禮 / DC19000 Keepers Achievement Gift\n\n《忘卻前夜Morimens》DC全球頻道達到19000人",
       "author": "morimensstaff02",
-      "reactions": 442,
+      "reactions": 443,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
       "id": "1378028262478971021",
+      "channel_id": "1355094251775459399",
       "content": "因為生效存在短暫延遲【DC19000KEEPERS】剛才暫未生效，現已恢復，請領取失敗的守密人重新嘗試🥹 \nDue to a brief delay in ac",
       "author": "morimensstaff02",
       "reactions": 421,
@@ -120,6 +143,46 @@
       "channel": "✅「Answered」Solved - New code not working"
     },
     {
+      "id": "1378013854226714684",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377995831483039915",
+      "channel_id": "1131839817982947429",
+      "content": "終於升滿了🥰",
+      "author": "a12090217",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1377950678927933450",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/sDb0LBynFcM?si=Y3YDj5aTB8RSrTu4",
+      "author": "linireo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377953409038159883",
+      "channel_id": "1170692781216378960",
+      "content": "I've done a lot of pulls... I'm not getting gelot<:cry2:1356068126894194758>",
+      "author": "abyssal_starre",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378008276876132475",
+      "channel_id": "1170692781216378960",
+      "content": "The cat staying in my mom’s arms. The cat is sooo pretty and she’s so small too.",
+      "author": "disgustedingucci",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1378021300941099100",
       "content": "Thais yippie!!! (I love her.)",
       "author": "hakugin0_",
@@ -127,88 +190,60 @@
       "channel": "Haku Morimens Sketch Log"
     },
     {
-      "id": "1378062939583680552",
-      "content": "如题\n\n倒也不是非要有嘛…\n~~但是过剧情的时候有点磕到栗子和守的cp~~\n以及正好栗子新皮肤有提到她会做噩梦梦到那时候的事…~~如果她正好收米潜游那天梦到原主",
-      "author": "flarinsidia",
+      "id": "1377924522191097937",
+      "channel_id": "1170692781216378960",
+      "content": "~~gemini draw me a picture of castor sleeping with pollux~~",
+      "author": "khykken",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377949663906238617",
+      "channel_id": "1170692781216378960",
+      "content": "LMAO WHY IS THAIS VIDEO CENSORED ON YT 😭",
+      "author": "phi_squared",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378006338042335402",
+      "channel_id": "1170692781216378960",
+      "content": "Hello everynyan! The stray cat my mom has been taking care of brought her (new) ",
+      "author": "disgustedingucci",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378034778292359188",
+      "channel_id": "1170692781216378960",
+      "content": "banned thx",
+      "author": "craux.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377834505963835415",
+      "channel_id": "1170692781216378960",
+      "content": "<:proud1:1356053120651755641>",
+      "author": ".sqrrl",
       "reactions": 4,
-      "channel": "✅「已回答」莉兹个人剧情结束后无通讯器幕间"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1378052982813360259",
-      "content": "墨菲密契100了",
-      "author": "lingcheng.0",
+      "id": "1377852618176462938",
+      "channel_id": "1170692781216378960",
+      "content": "tulu +12 is coming",
+      "author": "craux.",
       "reactions": 4,
-      "channel": ""
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1378041783073771530",
-      "content": "感觉也没什么人爱看，\n仿生小女仆莉奥和眼罩娜",
-      "author": "yingmai_",
+      "id": "1377924836554178612",
+      "channel_id": "1170692781216378960",
+      "content": "naturally castor gets pregnant",
+      "author": "zier.0",
       "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1377954542154682469",
-      "content": "In the 1.5 update the default stance give 1 permanent tentacle the next turn, th",
-      "author": "vxvendetta",
-      "reactions": 3,
-      "channel": "✅「Answered」Surging tides description"
-    },
-    {
-      "id": "1377853666748399687",
-      "content": "嗨大家好，V2.2【窺視靈魂之旅】二創征集獲獎名單公佈！\n感謝大家的精彩創作🎉 獎勵已發至郵箱~\n\nHi everyone, the list of winne",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！"
-    },
-    {
-      "id": "1378015471693201418",
-      "content": "New player here, created a few accounts to see which one would get the best unit",
-      "author": "guinchox",
-      "reactions": 2,
-      "channel": "💭「Processing」Can't access the game"
-    },
-    {
-      "id": "1378045034422730917",
-      "content": "sadly I have been working overtime and had alot going on so this is as far as I ",
-      "author": "polarisu",
-      "reactions": 1,
-      "channel": "WIP of Thais"
-    },
-    {
-      "id": "1378045314572882093",
-      "content": "Still very beautiful!! Take your time <:bow:1356053037159944473>  <:bow:13560530",
-      "author": "melanheart",
-      "reactions": 1,
-      "channel": "WIP of Thais"
-    },
-    {
-      "id": "1378028202324393984",
-      "content": "waaah thank you she's one of my favs, had to do her justice <:please:13560531103",
-      "author": "hakugin0_",
-      "reactions": 1,
-      "channel": "Haku Morimens Sketch Log"
-    },
-    {
-      "id": "1377920932630499430",
-      "content": "B站还没审核好吗",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🎧 卡斯托爾 Castor丨2.2.2 廣播劇《飛鳥尚未墜落之時》（建議佩戴耳機）"
-    },
-    {
-      "id": "1377924078480134194",
-      "content": "審核過了",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "🎧 卡斯托爾 Castor丨2.2.2 廣播劇《飛鳥尚未墜落之時》（建議佩戴耳機）"
-    },
-    {
-      "id": "1377853796968960000",
-      "content": "嗨大家好，V2.2【窺視靈魂之旅】攻略征集獲獎名單公佈！\n感謝大家的精彩創作👏 獎勵已發至郵箱~\n\nHi everyone, the list of winne",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

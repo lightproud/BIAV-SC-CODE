@@ -1,10 +1,11 @@
 {
   "date": "2025-04-01",
-  "messages": 65,
-  "unique_authors": 9,
-  "reactions_total": 249,
-  "attachments": 33,
+  "messages": 172,
+  "unique_authors": 25,
+  "reactions_total": 256,
+  "attachments": 42,
   "channel_activity": {
+    "🔸綜合討論": 107,
     "Speedrun Team for Early Game": 1,
     "How To Create a Team + Other Information": 3,
     "Team for newer players (only standard, shop or free units and wheels)": 6,
@@ -25,21 +26,28 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "4": 6,
-    "1": 2,
+    "1": 9,
+    "3": 14,
+    "4": 16,
+    "5": 6,
+    "6": 20,
+    "7": 1,
+    "9": 4,
+    "10": 13,
+    "11": 6,
+    "12": 21,
+    "13": 11,
+    "14": 13,
+    "15": 4,
+    "16": 4,
+    "17": 2,
+    "18": 5,
     "2": 6,
-    "3": 5,
-    "8": 17,
-    "10": 3,
-    "13": 2,
-    "12": 15,
-    "6": 7,
-    "14": 1,
-    "5": 1
+    "8": 17
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 89,
+    "19": 18
   },
   "top_reacted_messages": [
     {
@@ -99,6 +107,14 @@
       "channel": "🔸翻译器教程┊translator-tutorial"
     },
     {
+      "id": "1356668465607475350",
+      "channel_id": "1131839817982947429",
+      "content": "超限一拳就有39K\n三拳就大概120K了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1356469266936762450",
       "content": "<:point:1356053112292511815>",
       "author": "_buqi",
@@ -111,6 +127,14 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356625500839350332",
+      "channel_id": "1131839817982947429",
+      "content": "第二届NC杯奖励重磅加码！！游戏内限定头像框来了！！\n在经过和官方的沟通后，官方表明可以为我们提供一定量的头像框奖励，所以！！\n\n⭐⭐本次比赛四强选手，将会获得",
+      "author": "tianfang5580",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1356454078774902845",
@@ -134,6 +158,22 @@
       "channel": "游戏美术资源上的文字"
     },
     {
+      "id": "1356562680181166091",
+      "channel_id": "1131839817982947429",
+      "content": "<#1174179624096378930>",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1356633905272455228",
+      "channel_id": "1131839817982947429",
+      "content": "腦殘，賽制是真的挺奇葩的",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1356619150268698728",
       "content": "好久不見<:hello:1356053084790460437> 感謝潤色～",
       "author": "silverstream_s",
@@ -153,13 +193,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」Main Illust go transparent"
-    },
-    {
-      "id": "1356580642493567016",
-      "content": "偷偷摸摸的伸出手(大力的戳一下)",
-      "author": "huangziqiao_45693",
-      "reactions": 1,
-      "channel": "不会再有了"
     }
   ]
 }

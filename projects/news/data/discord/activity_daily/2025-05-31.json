@@ -1,10 +1,25 @@
 {
   "date": "2025-05-31",
-  "messages": 67,
-  "unique_authors": 45,
-  "reactions_total": 16,
-  "attachments": 7,
+  "messages": 10193,
+  "unique_authors": 247,
+  "reactions_total": 494,
+  "attachments": 458,
   "channel_activity": {
+    "🔸綜合討論": 826,
+    "🔸morimens-game-chat": 8027,
+    "🔸晒卡分享": 2,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 16,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 187,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 77,
+    "🔸canal-português": 406,
+    "🔸ruang-obrolan-indonesia": 386,
+    "🔸ห้องสนทนาภาษาไทย": 154,
+    "🔸traphase": 23,
+    "🔸lets-count": 5,
     "🎊官周通販：淘寶全球可購！": 44,
     "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum": 2,
     "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 1,
@@ -17,38 +32,122 @@
     "赫伯曼：孩子们你们的学长回来了": 1
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 1,
-    "2": 2,
-    "3": 5,
-    "4": 6,
-    "5": 4,
-    "6": 6,
-    "7": 5,
-    "8": 2,
-    "9": 3,
-    "10": 2,
-    "11": 5,
-    "12": 9,
-    "14": 4,
-    "16": 1,
-    "17": 2,
-    "18": 1,
-    "19": 1,
-    "22": 2,
-    "13": 1
+    "0": 916,
+    "1": 487,
+    "2": 305,
+    "3": 477,
+    "4": 454,
+    "5": 436,
+    "6": 125,
+    "7": 111,
+    "8": 314,
+    "9": 385,
+    "10": 348,
+    "11": 690,
+    "12": 329,
+    "13": 654,
+    "14": 376,
+    "15": 397,
+    "16": 544,
+    "17": 260,
+    "18": 303,
+    "19": 447,
+    "20": 615,
+    "21": 598,
+    "22": 431,
+    "23": 191
   },
   "message_types": {
-    "0": 48,
-    "19": 4
+    "0": 7728,
+    "19": 2398
   },
   "top_reacted_messages": [
+    {
+      "id": "1378316303101595738",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378345257007190189",
+      "channel_id": "1170692781216378960",
+      "content": "<:poggers:581732366918090755>",
+      "author": "aegisx",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378191910673449074",
+      "channel_id": "1131839817982947429",
+      "content": "全血肉拼好400，纯本家c哦<:proud1:1356053120651755641>",
+      "author": "scholar_2",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378379433118797976",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1378500396062081136",
       "content": "How about a Ryker themed poker set? I think that would be perfect merch for it.",
       "author": "suver_",
       "reactions": 6,
       "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1378287493664997470",
+      "channel_id": "1131839817982947429",
+      "content": "<@1301813973703852035>",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378387532684857375",
+      "channel_id": "1131839817982947429",
+      "content": "確燉雞可以無靈芝對我這種手殘很好<:thumbsup:1356086340298473574>",
+      "author": "navirecorbeau",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378434754852159559",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲主C",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378245948500742266",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "linireo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378444506596118628",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/yippee-cat-kitty-gif-6540808372197226742",
+      "author": "nikushanika32",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378453017925255269",
+      "channel_id": "1170692781216378960",
+      "content": "you need to exalt a lot in order to get him working\nand at low level it's not re",
+      "author": "sexysneakystoat1625",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1378501200365883514",
@@ -58,32 +157,68 @@
       "channel": "🎊官周通販：淘寶全球可購！"
     },
     {
-      "id": "1378243238200213505",
-      "content": "空的几天直接发打满的资源好吗好的",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+      "id": "1378235399222329517",
+      "channel_id": "1131839817982947429",
+      "content": "||的吉祥物||",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1378280151820931122",
-      "content": "做切头像成就时发现的",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "✅「已回答」切换头像时头像选择界面会变成这样"
+      "id": "1378239636895432766",
+      "channel_id": "1131839817982947429",
+      "content": "終於打過了😂",
+      "author": "a12090217",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1378171398295523340",
-      "content": "出萊克的硬幣好像也蠻有趣的",
-      "author": "diito_diito",
-      "reactions": 1,
-      "channel": "🎊官周通販：淘寶全球可購！"
+      "id": "1378344536979407068",
+      "channel_id": "1131839817982947429",
+      "content": "怕啦這東西終於出現了",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1378378930985242734",
-      "content": "I would love to see an artbook, or maybe a book about the stories and lore in th",
-      "author": "moriii_zzz",
-      "reactions": 1,
-      "channel": "🎊官周通販：淘寶全球可購！"
+      "id": "1378463898004623414",
+      "channel_id": "1131839817982947429",
+      "content": "剩我还在打h2-9玩了…\n有自动触毒之后变简单好多喔（",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1378194219704909877",
+      "channel_id": "1170692781216378960",
+      "content": "Yes.\n\nWhen you dupe her flames, you don't need to pay for the cost...",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378214954540466268",
+      "channel_id": "1170692781216378960",
+      "content": "just use prototype every month for someone instead",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378227208111525958",
+      "channel_id": "1170692781216378960",
+      "content": "i got tulu 3 times :')",
+      "author": "wraithdust",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1378266998483714048",
+      "channel_id": "1170692781216378960",
+      "content": "Lost to two wheels then got Murphy in the Kaleido banner\n\nI--",
+      "author": "kevsalvador",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

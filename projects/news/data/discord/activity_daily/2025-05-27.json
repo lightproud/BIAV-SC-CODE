@@ -1,10 +1,25 @@
 {
   "date": "2025-05-27",
-  "messages": 753,
-  "unique_authors": 50,
-  "reactions_total": 133,
-  "attachments": 60,
+  "messages": 12495,
+  "unique_authors": 281,
+  "reactions_total": 849,
+  "attachments": 667,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 9234,
+    "🔸剧情交流": 4,
+    "🔸课间休息闲聊": 5,
+    "🔸交友频道": 37,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 396,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 648,
+    "🔸phòng-chat-tiếng-việt": 49,
+    "🔸canal-español": 302,
+    "🔸canal-português": 244,
+    "🔸ruang-obrolan-indonesia": 611,
+    "🔸ห้องสนทนาภาษาไทย": 197,
+    "🔸lets-count": 1,
     "🔸綜合討論": 642,
     "aomi’s morimens dump": 1,
     "Helot - Catena": 1,
@@ -43,33 +58,44 @@
     "弥萨格校友号码本4.0": 3
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 32,
-    "2": 18,
-    "3": 23,
-    "4": 36,
-    "5": 49,
-    "6": 33,
-    "7": 113,
-    "8": 27,
-    "9": 13,
-    "10": 39,
-    "11": 9,
-    "12": 173,
-    "13": 14,
-    "14": 42,
-    "15": 32,
-    "16": 57,
-    "17": 31,
-    "18": 1,
-    "22": 4,
-    "23": 5
+    "5": 508,
+    "0": 304,
+    "1": 280,
+    "2": 248,
+    "3": 551,
+    "4": 425,
+    "6": 835,
+    "7": 899,
+    "8": 263,
+    "9": 528,
+    "10": 544,
+    "11": 333,
+    "12": 505,
+    "13": 755,
+    "14": 742,
+    "15": 650,
+    "16": 560,
+    "17": 624,
+    "18": 623,
+    "19": 475,
+    "20": 674,
+    "21": 329,
+    "22": 483,
+    "23": 357
   },
   "message_types": {
-    "0": 524,
-    "19": 118
+    "0": 8180,
+    "19": 3562
   },
   "top_reacted_messages": [
+    {
+      "id": "1376927174904516688",
+      "channel_id": "1170692781216378960",
+      "content": "yup\nand then guess what tentacle penetration is in this game",
+      "author": "sexysneakystoat1625",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1377069952393281556",
       "content": "I'm only wearing the base color, I hope to finish soon, I'll upload how it turns",
@@ -78,11 +104,35 @@
       "channel": "Helot - Catena"
     },
     {
+      "id": "1376925545538785381",
+      "channel_id": "1170692781216378960",
+      "content": "Gatcha players can't read",
+      "author": "rain_scarlet",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1376869238618456168",
       "content": "比起一个个刷，不如是到达里程碑后所有玩家一起获得奖励",
       "author": "rain_scarlet",
       "reactions": 7,
       "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1376816999551860737",
+      "channel_id": "1170692781216378960",
+      "content": "\"hey so dont sin like this, *sin like this*.\"",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376974990854848523",
+      "channel_id": "1170692781216378960",
+      "content": "i dont even want to look at arc 1 anymore",
+      "author": "noire_2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376885497485328445",
@@ -114,11 +164,51 @@
       "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
     },
     {
+      "id": "1376893579888164956",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rikka3103",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377005651762479235",
+      "channel_id": "1170692781216378960",
+      "content": "Hey, my friend drew my OC as the Clementine reference, cause they are both moths",
+      "author": "irrational_obelisk",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376714871915155527",
+      "channel_id": "1194835209242296410",
+      "content": "上課用手機",
+      "author": "akkom730",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
       "id": "1376863199718277140",
       "content": ".",
       "author": ".galeroar",
       "reactions": 5,
       "channel": "💭「處理中」塔薇放功了"
+    },
+    {
+      "id": "1376813460293419079",
+      "channel_id": "1170692781216378960",
+      "content": "i goon to evelynn in league of legends and that girl is next",
+      "author": "arturtia",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376928189019852820",
+      "channel_id": "1170692781216378960",
+      "content": "I just relied on my memory",
+      "author": "noire_2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376824617104052265",
@@ -145,82 +235,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1376793392004202607",
-      "channel_id": "1131839817982947429",
-      "content": "哪像我天天玩，夜夜玩",
-      "author": "ernest_heart",
+      "id": "1376724036070936706",
+      "channel_id": "1170692781216378960",
+      "content": "Fuck her",
+      "author": ".galeroar",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376825826389266523",
-      "channel_id": "1131839817982947429",
-      "content": "我4个池都抽",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376830352441475073",
-      "channel_id": "1131839817982947429",
-      "content": "一样",
-      "author": "287405tjy_28066",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376952859123253259",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376827964670349393",
-      "channel_id": "1131839817982947429",
-      "content": "我沒",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376835701710000190",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376945004311744583",
-      "channel_id": "1131839817982947429",
-      "content": "h2-12也肘完了<:24_clown:1374289675417686016>",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376958415405973634",
-      "channel_id": "1131839817982947429",
-      "content": "90级角色又不是大佬的表现，再说我的星辰篇困难王关都是百洛晓帮我打的",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376869443321466922",
-      "content": "hh其实老东西打的也很累，虽然能通关但是真的很需要减负扫荡……新人我都不敢想，这活动就是对新人很不友好",
-      "author": "nowimfaceless",
-      "reactions": 2,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
-    },
-    {
-      "id": "1376930764788203611",
-      "content": "收回分解资源，返还角色，上限改为20，要抽60个",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

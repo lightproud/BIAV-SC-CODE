@@ -1,10 +1,11 @@
 {
   "date": "2025-04-19",
-  "messages": 38,
-  "unique_authors": 6,
-  "reactions_total": 14,
-  "attachments": 2,
+  "messages": 279,
+  "unique_authors": 23,
+  "reactions_total": 52,
+  "attachments": 14,
   "channel_activity": {
+    "🔸綜合討論": 241,
     "Star Chapter 1 + 2 Tier List": 19,
     "忘卻前夜OST：深港幽靈之船": 1,
     "✅校猫碎碎念#近况分享": 1,
@@ -13,22 +14,54 @@
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 9
   },
   "hourly_activity": {
-    "14": 4,
-    "16": 1,
+    "0": 1,
+    "2": 2,
+    "3": 3,
+    "5": 13,
+    "6": 12,
+    "7": 18,
+    "8": 9,
+    "9": 3,
+    "10": 15,
+    "11": 19,
+    "12": 13,
+    "13": 35,
+    "14": 107,
+    "15": 8,
+    "16": 4,
+    "22": 2,
     "23": 14,
-    "3": 1,
-    "11": 1,
-    "6": 5,
-    "13": 8,
-    "1": 1,
-    "5": 1,
-    "12": 2
+    "1": 1
   },
   "message_types": {
-    "0": 17,
-    "19": 2
+    "0": 215,
+    "19": 26
   },
   "top_reacted_messages": [
+    {
+      "id": "1362974400801931475",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "taayoui",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363112920208375990",
+      "channel_id": "1131839817982947429",
+      "content": "拜託不要出男角我會忍不住",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363194037451886873",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sense25.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1363138260360101970",
       "content": "在寫下去收尾只懷了",
@@ -44,11 +77,91 @@
       "channel": "一个小故事（但不好看）"
     },
     {
+      "id": "1363130499656323193",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1363146979236118649",
       "content": "[窥视灵魂之旅]活动 UID：100377735\n\n          熔朵说，只要我乖乖当她的狗，她就站在我这一边，不会对克莱泄露我的行踪，并且额外添加一道程",
       "author": "287405tjy_28066",
       "reactions": 3,
       "channel": "一个小故事（但不好看）"
+    },
+    {
+      "id": "1363098174209655024",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363147813998956554",
+      "channel_id": "1131839817982947429",
+      "content": "写好了，已发",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363052355918106746",
+      "channel_id": "1131839817982947429",
+      "content": "是深海的",
+      "author": "jackpot_7",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363098681422643261",
+      "channel_id": "1131839817982947429",
+      "content": "~~現在到底該怎麼收尾呢~~",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363109929703178270",
+      "channel_id": "1131839817982947429",
+      "content": "我投女",
+      "author": "huangyu0876",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363132737296269424",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363138460533129469",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363145038346981426",
+      "channel_id": "1131839817982947429",
+      "content": "所以愛就是DO出來的",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363163104971854054",
+      "channel_id": "1131839817982947429",
+      "content": "~~打牌哪有炒飯好玩~~",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1363155917490618469",

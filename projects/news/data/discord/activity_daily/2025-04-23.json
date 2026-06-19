@@ -1,10 +1,11 @@
 {
   "date": "2025-04-23",
-  "messages": 37,
-  "unique_authors": 7,
-  "reactions_total": 34,
-  "attachments": 8,
+  "messages": 310,
+  "unique_authors": 22,
+  "reactions_total": 112,
+  "attachments": 11,
   "channel_activity": {
+    "🔸綜合討論": 273,
     "Tawil and Merlin on Traphase": 2,
     "Clem": 2,
     "V2.2.0.5 在線維護公告": 4,
@@ -19,24 +20,32 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "18": 3,
-    "15": 2,
-    "16": 1,
-    "12": 2,
-    "14": 1,
-    "10": 6,
-    "11": 2,
-    "1": 1,
-    "2": 8,
-    "3": 1,
+    "1": 4,
+    "2": 28,
+    "3": 30,
+    "4": 2,
+    "5": 13,
+    "6": 2,
+    "7": 8,
+    "8": 16,
+    "9": 54,
+    "10": 22,
+    "11": 14,
+    "12": 15,
+    "13": 45,
+    "14": 30,
+    "15": 6,
+    "16": 2,
+    "18": 4,
+    "19": 2,
+    "22": 5,
+    "23": 4,
     "17": 2,
-    "20": 2,
-    "7": 5,
-    "9": 1
+    "20": 2
   },
   "message_types": {
-    "0": 3,
-    "4": 1
+    "19": 42,
+    "0": 231
   },
   "top_reacted_messages": [
     {
@@ -54,6 +63,14 @@
       "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
     },
     {
+      "id": "1364539495155892254",
+      "channel_id": "1131839817982947429",
+      "content": "||我只看得到無盡的黑洞||",
+      "author": "shchng.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1364626040105861163",
       "content": "Mfw I cant even play the chapter so i just slapped scraps\nUid: 100687199",
       "author": "undeterredhomo",
@@ -61,11 +78,132 @@
       "channel": "Clem"
     },
     {
-      "id": "1364551314130079764",
-      "content": "戈雅去問問~",
-      "author": "morimensstaff01",
+      "id": "1364527286946238475",
+      "channel_id": "1131839817982947429",
+      "content": "我是來打砲的 不是來打牌的",
+      "author": "fengliyaowo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364597502137077780",
+      "channel_id": "1131839817982947429",
+      "content": "卡墨可能不参加，但卡墨不参加不太可能",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364602387607588955",
+      "channel_id": "1131839817982947429",
+      "content": "果然只剩我純潔了",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364602687722881075",
+      "channel_id": "1131839817982947429",
+      "content": "Aaa好懂喔不像我什麼都不知道",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364602818199294013",
+      "channel_id": "1131839817982947429",
+      "content": "該開趴了",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364602838390542407",
+      "channel_id": "1131839817982947429",
+      "content": "太可怕了\n只有我纯洁了",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364602981756178442",
+      "channel_id": "1131839817982947429",
+      "content": "<:rizz1:1356085398379692165>",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364603106729525259",
+      "channel_id": "1131839817982947429",
+      "content": "~~鯊魚還在等我睡~~",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364604480854822922",
+      "channel_id": "1131839817982947429",
+      "content": "果然只剩我純潔了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364530926276579350",
+      "channel_id": "1131839817982947429",
+      "content": "在腸胃裡",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364534335935483966",
+      "channel_id": "1131839817982947429",
+      "content": "有人提到男同嘛",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364603019601117334",
+      "channel_id": "1131839817982947429",
+      "content": "他们真的很恐怖\n但我觉得如果我开趴\n应该是比不上他们的10%功力<:goodjob1:1356083729558274149>",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364603050072735856",
+      "channel_id": "1131839817982947429",
+      "content": "現在該躺平了",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364605265084682383",
+      "channel_id": "1131839817982947429",
+      "content": "~~大聲宣揚自己大猛1和不論什麼都可以好色的大騷0在說什麼呢~~",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364556670520397895",
+      "channel_id": "1131839817982947429",
+      "content": "~~新文我預計大概沒肉欸~~",
+      "author": "fengliyaowo",
       "reactions": 2,
-      "channel": "忘卻前夜OST：深港幽靈之船"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364575831481122846",
+      "channel_id": "1131839817982947429",
+      "content": "不像我\n不止不进\n还不起哄<:pray:1356053116260454534>",
+      "author": "ling_an_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-04-21",
-  "messages": 53,
-  "unique_authors": 11,
-  "reactions_total": 10,
-  "attachments": 28,
+  "messages": 1108,
+  "unique_authors": 39,
+  "reactions_total": 223,
+  "attachments": 58,
   "channel_activity": {
+    "🔸綜合討論": 1055,
     "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j": 1,
     "Flares' Comprehensive Guide V3 (D-Tide/Arc 2 HM/Tier List/24 update)": 1,
     "Star Chapter 1 + 2 Tier List": 2,
@@ -20,22 +21,32 @@
     "跟我朋友零元購了一個稿，成效甚好": 1
   },
   "hourly_activity": {
-    "6": 7,
-    "0": 1,
-    "5": 4,
-    "8": 1,
-    "7": 1,
-    "14": 2,
-    "11": 3,
-    "15": 3,
-    "16": 3,
-    "1": 16,
-    "3": 6,
-    "2": 2,
-    "4": 4
+    "0": 3,
+    "1": 17,
+    "2": 20,
+    "3": 13,
+    "4": 28,
+    "5": 54,
+    "6": 66,
+    "7": 59,
+    "8": 160,
+    "9": 92,
+    "10": 20,
+    "11": 160,
+    "12": 141,
+    "13": 140,
+    "14": 23,
+    "15": 5,
+    "16": 6,
+    "19": 5,
+    "20": 13,
+    "21": 4,
+    "22": 6,
+    "23": 73
   },
   "message_types": {
-    "0": 8
+    "0": 873,
+    "19": 182
   },
   "top_reacted_messages": [
     {
@@ -46,11 +57,156 @@
       "channel": "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j"
     },
     {
-      "id": "1363694161546580008",
-      "content": "原本要發，發現有人發了\n這裡提供影片",
-      "author": "rou_yi_rou",
-      "reactions": 1,
-      "channel": "✅「已回答」试用关卡「24」bug"
+      "id": "1363868565387874455",
+      "channel_id": "1131839817982947429",
+      "content": "~~生一個棒球場~~",
+      "author": "fengliyaowo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364013749501038746",
+      "channel_id": "1131839817982947429",
+      "content": "人壞掉是不夠的，還要千刀萬剮🤓",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363858651814694975",
+      "channel_id": "1131839817982947429",
+      "content": "~~感覺麻糬的老鼠表符也可以和阿狗的好色一樣被我列入每日簽到了~~",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363870944426197165",
+      "channel_id": "1131839817982947429",
+      "content": "正式名稱叫🐢頭球",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363883811460481074",
+      "channel_id": "1131839817982947429",
+      "content": "ABO的話要看作者設定，有些就純粹一根",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364022504699465818",
+      "channel_id": "1131839817982947429",
+      "content": "# 名言：你都玩忘卻了還要什麼臉面",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364023898458554543",
+      "channel_id": "1131839817982947429",
+      "content": "我有一天一定會被你們南桐嚇死",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363748634000363550",
+      "channel_id": "1131839817982947429",
+      "content": "這是牢貓的莫忘初衷",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363763782383439973",
+      "channel_id": "1131839817982947429",
+      "content": "說什麼呢 24根本是神，試用直接4.8顆限定抽☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363778821391646841",
+      "channel_id": "1131839817982947429",
+      "content": "所以是不給銀不給傷嗎",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363798132697202799",
+      "channel_id": "1131839817982947429",
+      "content": "兩個大佬在討論，沒有插嘴空間",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363798343825883277",
+      "channel_id": "1131839817982947429",
+      "content": "兩個大佬在討論，沒有插嘴空間\n輸光...",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363852158201757756",
+      "channel_id": "1131839817982947429",
+      "content": "至少我就有打375",
+      "author": "anzhimodaoshi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363852572003401871",
+      "channel_id": "1131839817982947429",
+      "content": "只換紅石",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363855203668983890",
+      "channel_id": "1131839817982947429",
+      "content": "少年，你太年輕了。你以為這個Dc上真的有那麼多人回覆你的留言？其實都是我一個人回的，不然我再換個ID發同樣的話給你看。",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363868201401712650",
+      "channel_id": "1131839817982947429",
+      "content": "進進出出5771的<:cute1:1356053053568192717>",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363870890156363826",
+      "channel_id": "1131839817982947429",
+      "content": "嘿\n龜0球",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363874500894130267",
+      "channel_id": "1131839817982947429",
+      "content": "~~夢裡應該會有靈感~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363874509953695897",
+      "channel_id": "1131839817982947429",
+      "content": "就\n本子那種\n常有的描寫（",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

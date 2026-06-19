@@ -1,10 +1,23 @@
 {
   "date": "2025-05-03",
-  "messages": 627,
-  "unique_authors": 23,
-  "reactions_total": 193,
-  "attachments": 47,
+  "messages": 6915,
+  "unique_authors": 140,
+  "reactions_total": 343,
+  "attachments": 335,
   "channel_activity": {
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 5314,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 388,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 4,
+    "🔸phòng-chat-tiếng-việt": 83,
+    "🔸canal-español": 49,
+    "🔸canal-português": 8,
+    "🔸ruang-obrolan-indonesia": 267,
+    "🔸ห้องสนทนาภาษาไทย": 24,
+    "🔸traphase": 140,
+    "🔸lore-chat": 4,
     "🔸綜合討論": 571,
     "🐾喚醒體五一遊記┊Awaker Holiday Travels": 19,
     "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 7,
@@ -19,27 +32,33 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 5,
-    "2": 19,
-    "3": 12,
-    "4": 33,
-    "6": 2,
-    "7": 4,
-    "8": 30,
-    "9": 63,
-    "10": 114,
-    "11": 161,
-    "12": 70,
-    "13": 27,
-    "14": 33,
-    "15": 35,
-    "16": 12,
-    "17": 3,
-    "5": 4
+    "1": 282,
+    "2": 630,
+    "7": 188,
+    "0": 245,
+    "3": 768,
+    "4": 618,
+    "5": 294,
+    "6": 443,
+    "8": 132,
+    "9": 136,
+    "10": 212,
+    "11": 430,
+    "12": 318,
+    "13": 531,
+    "14": 519,
+    "15": 297,
+    "16": 157,
+    "17": 153,
+    "18": 226,
+    "19": 207,
+    "21": 27,
+    "22": 38,
+    "23": 64
   },
   "message_types": {
-    "19": 97,
-    "0": 474
+    "0": 4694,
+    "19": 1594
   },
   "top_reacted_messages": [
     {
@@ -55,6 +74,14 @@
       "author": "arki1i_",
       "reactions": 17,
       "channel": "好久没画依然是没细化完的一张，先发发了"
+    },
+    {
+      "id": "1368237954266300577",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 15,
+      "channel": "🔸русский-канал"
     },
     {
       "id": "1368094335395954788",
@@ -113,6 +140,14 @@
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
+      "id": "1368096111222329415",
+      "channel_id": "1300659580446969918",
+      "content": "Вспомнил значит видос такой по гашне, и решил кекнуть и сделать подобие из-за но",
+      "author": "closetom",
+      "reactions": 5,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1368204846322290709",
       "channel_id": "1131839817982947429",
       "content": "缺前液",
@@ -133,6 +168,14 @@
       "author": "tianfang5580",
       "reactions": 5,
       "channel": "5771新春活动招人+预热"
+    },
+    {
+      "id": "1368238226325901314",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1368154840177311786",
@@ -164,29 +207,6 @@
       "author": "ernest_heart",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368193237524942879",
-      "channel_id": "1131839817982947429",
-      "content": "~~不像我，直接在家裡賣自己，名義上無業不用繳稅~~",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368199733473972315",
-      "channel_id": "1131839817982947429",
-      "content": "Cs = 操死",
-      "author": "Deleted User",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1368082859474030622",
-      "content": "和你的名字一樣夢幻✨",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     }
   ]
 }

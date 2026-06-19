@@ -1,10 +1,11 @@
 {
   "date": "2025-04-18",
-  "messages": 47,
-  "unique_authors": 9,
-  "reactions_total": 16,
-  "attachments": 12,
+  "messages": 651,
+  "unique_authors": 29,
+  "reactions_total": 107,
+  "attachments": 43,
   "channel_activity": {
+    "🔸綜合討論": 604,
     "ALL HAIL SQUID KING TULU": 1,
     "Dum dum dum": 1,
     "刚回坑": 9,
@@ -21,30 +22,136 @@
     "希洛": 4
   },
   "hourly_activity": {
-    "11": 4,
-    "3": 8,
-    "4": 9,
-    "14": 4,
-    "15": 1,
-    "9": 7,
-    "2": 1,
-    "7": 4,
-    "10": 1,
-    "16": 3,
-    "0": 1,
+    "0": 2,
+    "1": 22,
+    "2": 3,
+    "3": 53,
+    "4": 14,
+    "5": 1,
+    "6": 8,
+    "7": 20,
+    "8": 62,
+    "9": 230,
+    "10": 55,
+    "11": 10,
+    "12": 31,
+    "13": 7,
+    "14": 36,
+    "15": 18,
+    "16": 45,
+    "17": 18,
+    "18": 7,
+    "19": 2,
+    "20": 3,
     "21": 4
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 513,
+    "19": 91
   },
   "top_reacted_messages": [
+    {
+      "id": "1362798054327193793",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1362632879691268197",
       "content": "如题所示，本人基于目前星辰篇主线关卡、融灾禁区等玩法中感受到的三点较为明显的不合理之处提出三点建议：\n（1）灵塑适性养成材料的平衡性问题。星辰篇中，灵塑适性养成",
       "author": "nowimfaceless",
       "reactions": 7,
       "channel": "针对星辰篇部分系统设定的三点建议"
+    },
+    {
+      "id": "1362737417672724480",
+      "channel_id": "1131839817982947429",
+      "content": "餓了就吃我",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362584618922148041",
+      "channel_id": "1131839817982947429",
+      "content": "||牢貓，我真的好想要鯊魚lp.gif||",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362694677886668963",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry2:1356068126894194758> 只剩我純潔了",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362703742037786644",
+      "channel_id": "1131839817982947429",
+      "content": "毕竟也没人真的和鲨鱼做过",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362704418914697326",
+      "channel_id": "1131839817982947429",
+      "content": "沒事我一直都是天井派玩家的",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362759695818817636",
+      "channel_id": "1131839817982947429",
+      "content": "開打H",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362761939113087016",
+      "channel_id": "1131839817982947429",
+      "content": "我這麼清純",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362694280354992218",
+      "channel_id": "1131839817982947429",
+      "content": "@ern",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362703549250928740",
+      "channel_id": "1131839817982947429",
+      "content": "||跟鲨鱼do到眼冒白光怎么不是一种纯洁呢，白白的，嗯嗯||",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362704633860194385",
+      "channel_id": "1131839817982947429",
+      "content": "~~感謝我各位，你們沒有保底的歐氣都是我給的~~",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362721480684732528",
+      "channel_id": "1131839817982947429",
+      "content": "~~我玩血海的，4张圣礼3张胎，直接不用操作了~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1362648547379515542",
@@ -61,18 +168,44 @@
       "channel": "希洛"
     },
     {
-      "id": "1362748162711748678",
-      "content": "HAIL TULU",
-      "author": "mount_fisherman",
+      "id": "1362630761471283341",
+      "channel_id": "1131839817982947429",
+      "content": "那還是不更了",
+      "author": "fengliyaowo",
       "reactions": 2,
-      "channel": "ALL HAIL SQUID KING TULU"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1362579729710055494",
-      "content": "星辰篇苦痛圣腕在用怒涛消耗掉最后一根额外触腕后的下一回合不会生成一根永久触腕，而是生成二根临时触腕",
-      "author": "zhaoxing233",
-      "reactions": 1,
-      "channel": "✅「已回答」星辰篇苦痛圣腕bug"
+      "id": "1362671003859419357",
+      "channel_id": "1131839817982947429",
+      "content": "野貓，餓餓，飯飯",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362713662946541720",
+      "channel_id": "1131839817982947429",
+      "content": "建议你买号",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362718762536669225",
+      "channel_id": "1131839817982947429",
+      "content": "||好色我們可以一起爬他的床嗎||",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362719151675805908",
+      "channel_id": "1131839817982947429",
+      "content": "~~50黑印吧~~",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

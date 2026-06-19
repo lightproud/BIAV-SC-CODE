@@ -1,10 +1,27 @@
 {
   "date": "2025-05-26",
-  "messages": 2435,
-  "unique_authors": 78,
-  "reactions_total": 678,
-  "attachments": 171,
+  "messages": 18087,
+  "unique_authors": 380,
+  "reactions_total": 1668,
+  "attachments": 1151,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 11160,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 3,
+    "🔸交友频道": 12,
+    "🔸日本語チャンネル": 20,
+    "🔸한국어-채팅방": 1016,
+    "🔸chaîne-française": 58,
+    "🔸русский-канал": 221,
+    "🔸phòng-chat-tiếng-việt": 34,
+    "🔸canal-español": 845,
+    "🔸canal-português": 104,
+    "🔸ruang-obrolan-indonesia": 940,
+    "🔸ห้องสนทนาภาษาไทย": 1177,
+    "🔸traphase": 52,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 6,
     "🔸綜合討論": 2221,
     "Seimau Art": 1,
     "2.2.2 Half Anni Overview": 4,
@@ -39,45 +56,45 @@
     "關於【1.5周年特別活動:窺覷神國的陰影】": 1,
     "喜歡綠色正太的每回合寸止嗎": 2,
     "弥萨格校友号码本4.0": 18,
-    "✦关卡地图「融灾禁区」总览35期·星辰篇✦": 1,
-    "🔸礼包码┊gift-codes": 1
+    "✦关卡地图「融灾禁区」总览35期·星辰篇✦": 1
   },
   "hourly_activity": {
-    "0": 7,
-    "1": 5,
-    "2": 47,
-    "3": 156,
-    "4": 156,
-    "5": 255,
-    "6": 353,
-    "7": 165,
-    "8": 283,
-    "9": 143,
-    "10": 62,
-    "11": 124,
-    "12": 176,
-    "13": 79,
-    "14": 26,
-    "15": 122,
-    "16": 52,
-    "17": 73,
-    "18": 21,
-    "19": 81,
-    "20": 12,
-    "21": 2,
-    "22": 3,
-    "23": 32
+    "3": 1785,
+    "0": 327,
+    "1": 706,
+    "2": 1166,
+    "4": 1109,
+    "5": 927,
+    "6": 1151,
+    "7": 735,
+    "8": 859,
+    "9": 633,
+    "10": 543,
+    "11": 596,
+    "12": 920,
+    "13": 855,
+    "14": 1037,
+    "15": 786,
+    "16": 719,
+    "17": 1109,
+    "18": 306,
+    "19": 464,
+    "20": 484,
+    "21": 496,
+    "22": 171,
+    "23": 203
   },
   "message_types": {
-    "0": 1920,
-    "19": 301
+    "0": 11398,
+    "19": 4254
   },
   "top_reacted_messages": [
     {
       "id": "1376511091282018374",
+      "channel_id": "1355094251775459399",
       "content": "🎁「簡約幻衣繪型券(一期)」\n🔹 兌換碼：BBCHDLREDGLK\n🔹 使用期限：5 月 26 日 9:00 - 6 月 9 日 9:00\n\n——◆——◆—— ",
       "author": "morimensstaff01",
-      "reactions": 182,
+      "reactions": 183,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -87,6 +104,14 @@
       "author": "cs001092",
       "reactions": 23,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376396561537302663",
+      "channel_id": "1170692781216378960",
+      "content": "It was fated.",
+      "author": "kifru",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376508216141414443",
@@ -118,12 +143,36 @@
       "channel": "🎊周年祝语：願銀鑰指引前路┊Anniversary wishes：May the silver key guide the way"
     },
     {
+      "id": "1376404473836077186",
+      "channel_id": "1170692781216378960",
+      "content": "Because the incorrect guarantee description could lead to misunderstandings, we ",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1376476708718510170",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "cs001092",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376393657481039914",
+      "channel_id": "1170692781216378960",
+      "content": "OH LORD IM BUUUUUUSSSSSSSSSSSSSSING",
+      "author": "lichkin",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376563624893485177",
+      "channel_id": "1170692781216378960",
+      "content": "bro this activly felt bad to play",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376474620860960789",
@@ -134,12 +183,36 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1376382865301831771",
+      "channel_id": "1170692781216378960",
+      "content": "IM GOING TO KILL MYSELF",
+      "author": "dwang4875",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1376450919721467904",
       "channel_id": "1131839817982947429",
       "content": "44個人是要我按到手斷掉嗎",
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1376585333541703681",
+      "channel_id": "1170692781216378960",
+      "content": "okay i'm done with the game",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376647101974446201",
+      "channel_id": "1170692781216378960",
+      "content": "She did not come home",
+      "author": "melanheart",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1376444635173486614",
@@ -158,76 +231,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1376399751892959352",
-      "channel_id": "1131839817982947429",
-      "content": "我恨你",
-      "author": "shchng.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376441267344642058",
-      "channel_id": "1131839817982947429",
-      "content": "操尼瑪，我輸光了",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376443283231998054",
-      "channel_id": "1131839817982947429",
+      "id": "1376382065712300183",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "cs001092",
+      "author": "khykken",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376477739258744885",
-      "channel_id": "1131839817982947429",
-      "content": "栗子和汀都+12了，毕业（",
-      "author": "flarinsidia",
+      "id": "1376418307607105647",
+      "channel_id": "1170692781216378960",
+      "content": "Salvador loves me.",
+      "author": "irrational_obelisk",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376479362727280681",
-      "channel_id": "1131839817982947429",
-      "content": "反正我仓库5k海胆是没有一点想打（",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376675020486480073",
-      "channel_id": "1131839817982947429",
-      "content": "深海反可以2星過H2-12了🤓",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376443037537800224",
-      "channel_id": "1131839817982947429",
-      "content": "脊椎简直是超维池里的雷，路过炸一下（",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376451917970018315",
-      "channel_id": "1131839817982947429",
-      "content": "<:dead:1356082627509092372>",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1376452632369168384",
-      "channel_id": "1131839817982947429",
-      "content": "谁去提个建议让他们做一键回关按钮",
-      "author": "flarinsidia",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

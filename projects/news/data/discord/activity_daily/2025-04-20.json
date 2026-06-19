@@ -1,32 +1,44 @@
 {
   "date": "2025-04-20",
-  "messages": 24,
-  "unique_authors": 5,
-  "reactions_total": 15,
-  "attachments": 4,
+  "messages": 275,
+  "unique_authors": 29,
+  "reactions_total": 50,
+  "attachments": 10,
   "channel_activity": {
+    "🔸綜合討論": 251,
     "Star Chapter 1 + 2 Tier List": 18,
     "Pls, anyone with ideas for an Ultra team": 2,
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 1,
     "跟我朋友零元購了一個稿，成效甚好": 3
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 6,
-    "3": 2,
-    "4": 1,
-    "5": 1,
-    "10": 3,
+    "0": 18,
+    "1": 24,
+    "2": 9,
+    "3": 19,
+    "4": 18,
+    "5": 4,
+    "6": 5,
+    "7": 18,
+    "8": 7,
+    "9": 14,
+    "10": 31,
+    "11": 20,
+    "12": 34,
+    "13": 4,
+    "14": 19,
+    "15": 7,
+    "16": 3,
+    "17": 4,
+    "22": 5,
+    "23": 9,
     "20": 1,
     "21": 1,
-    "23": 1,
-    "17": 2,
     "18": 1
   },
   "message_types": {
-    "0": 18,
-    "19": 1,
-    "6": 1
+    "0": 226,
+    "19": 25
   },
   "top_reacted_messages": [
     {
@@ -37,11 +49,156 @@
       "channel": "跟我朋友零元購了一個稿，成效甚好"
     },
     {
-      "id": "1363587332040556574",
+      "id": "1363489760592531608",
+      "channel_id": "1131839817982947429",
+      "content": "神子也有了🤓 🤓",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363335414332653608",
+      "channel_id": "1131839817982947429",
+      "content": "觸手是忘卻前夜的底層輸出",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363531864501129488",
+      "channel_id": "1131839817982947429",
+      "content": "【80抽3个神王4个暴雨-哔哩哔哩】 https://b23.tv/9tXwPGY",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363552463524860165",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "ena04564",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363354739542200403",
+      "channel_id": "1131839817982947429",
+      "content": "等等去黑池裡面do",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363440431437971536",
+      "channel_id": "1131839817982947429",
+      "content": "~~結尾又在哪~~",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363441114610270369",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry2:1356068126894194758>",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363447874301591717",
+      "channel_id": "1131839817982947429",
+      "content": "被超四了斷開連結導致鯊魚喚醒體暴走對著屍體又是一頓趁熱",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363473262847201523",
+      "channel_id": "1131839817982947429",
+      "content": "如果新角是大奶公獸那我怎麼辦",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363547997312516146",
+      "channel_id": "1131839817982947429",
+      "content": "再戰一場",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363371698480484413",
+      "channel_id": "1131839817982947429",
+      "content": "你出去罰站",
+      "author": "fengliyaowo",
       "reactions": 1,
-      "channel": "跟我朋友零元購了一個稿，成效甚好"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363387221352251562",
+      "channel_id": "1131839817982947429",
+      "content": "~~非利士族就靠我生了~~",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363444174577209424",
+      "channel_id": "1131839817982947429",
+      "content": "~~那是我的殺手揀~~",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363460538839072779",
+      "channel_id": "1131839817982947429",
+      "content": "就剩我還沒打過主線",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363489659698679990",
+      "channel_id": "1131839817982947429",
+      "content": "||然後圖魯就懷孕了||",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363496428181258432",
+      "channel_id": "1131839817982947429",
+      "content": "沒有xp誰要玩5771",
+      "author": "fengliyaowo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363497537964736654",
+      "channel_id": "1131839817982947429",
+      "content": "xp-主C-体质最高且经常上场的辅助/生存位",
+      "author": "ling_an_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363506896463728691",
+      "channel_id": "1131839817982947429",
+      "content": "~~我废了，俩号都在玩深海24，毫无区别（不是~~",
+      "author": "bailuoxiao",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363561320263454831",
+      "channel_id": "1131839817982947429",
+      "content": "我这里也是\n24<:pray:1356053116260454534>",
+      "author": "ling_an_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }
