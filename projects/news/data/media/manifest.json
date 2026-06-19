@@ -19274,6 +19274,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-18T20:11:32.655200+00:00"
+    },
+    "https://preview.redd.it/eqk43mrgu38h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=d9870499c57b4e504b902cd02307c66183cac6b3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T00:22:11.189843+00:00"
     }
   },
   "archived": []
