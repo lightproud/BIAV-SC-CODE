@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T14:43:18.747155+00:00",
+  "archived_at": "2026-06-19T17:14:06.759161+00:00",
   "source": "bilibili",
-  "item_count": 43,
+  "item_count": 44,
   "items": [
     {
       "title": "我这封面很低俗吗？",
@@ -192,6 +192,29 @@
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/51845d68d451f968ce8b0447723bd9fcfcfb186c.jpg",
       "content_type": "video"
+    },
+    {
+      "title": "𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐨𝐟 𝐒𝐚𝐲𝐚",
+      "summary": "原作：\t《沙耶之歌》\n音乐：\t《认真的雪》\n  └ 哈基沙大玉 (2赞): [Ave Mujica_挺好]\n  └ Anafabula怎么那么美丽啊 (2赞): saya酱[星星眼]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
+      "source": "bilibili",
+      "time": "2026-06-19T06:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1ACjc6DEHB",
+      "engagement": 133,
+      "is_hot": false,
+      "author": "风起鸣谷",
+      "tags": [
+        "MAD·AMV"
+      ],
+      "metadata": {
+        "play": 129,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/17b0f6508ca2637e0f6f4deb777a388cd24ac41a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "或许是b站最雷霆的沙耶之歌讲解视频 补档",

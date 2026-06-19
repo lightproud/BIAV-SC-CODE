@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T14:43:18.758794+00:00",
+  "archived_at": "2026-06-19T17:14:06.770222+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "[正面] Great Game.",
@@ -352,6 +352,28 @@
         "playtime_forever": 181,
         "votes_up": 0,
         "timestamp_created": 1781865584
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] W Ultra Realm my goat",
+      "summary": "W Ultra Realm my goat",
+      "source": "steam_review",
+      "time": "2026-06-19T15:53:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199206751861/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199206751861",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2583,
+        "votes_up": 0,
+        "timestamp_created": 1781884419
       },
       "lang": "",
       "platform_region": "global"

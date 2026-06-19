@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-20",
+  "archived_at": "2026-06-19T17:14:06.769297+00:00",
+  "source": "bilibili",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "ø",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-19T16:12:29+00:00",
+      "url": "https://www.bilibili.com/video/BV1SJj66zEFF",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "尹春日",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/191a5cf92a46e1d7c6afb912287f8c47239e5fec.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    }
+  ]
+}

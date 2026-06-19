@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T14:43:18.757473+00:00",
+  "archived_at": "2026-06-19T17:14:06.769574+00:00",
   "source": "steam_discussion",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Steam论坛] Stuck in Logging into the User Center",
@@ -13,6 +13,21 @@
       "engagement": 2,
       "is_hot": false,
       "author": "Keres",
+      "tags": [
+        "steam_forum"
+      ],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Ошибка соединения",
+      "summary": "Пытаюсь авторизоваться при входе в игру, но выдаёт ошибку, мол небезопасное соединение. Код ошибки -1. Кто-нибудь знает что с этим делать?",
+      "source": "steam_discussion",
+      "time": "2026-06-19T14:45:22+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904822897/",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "Gamws",
       "tags": [
         "steam_forum"
       ],
