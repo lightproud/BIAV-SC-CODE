@@ -57,7 +57,7 @@
       "name": "russian-русский"
     },
     "1402538040253087766": {
-      "last_message_id": "1513227464208416949",
+      "last_message_id": "1517592899984822396",
       "name": "english-english",
       "cold_started": true,
       "last_historical_message_id": "1411863124377600000",
@@ -471,5 +471,5 @@
     }
   },
   "historical_month": null,
-  "last_run": "2026-06-19T18:12:13.458959+00:00"
+  "last_run": "2026-06-19T20:05:55.571065+00:00"
 }
