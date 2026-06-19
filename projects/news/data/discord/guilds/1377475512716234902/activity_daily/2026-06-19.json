@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-19",
+  "messages": 16,
+  "unique_authors": 7,
+  "reactions_total": 2,
+  "attachments": 3,
+  "channel_activity": {
+    "なんでも雑談": 5,
+    "🔰初心者質問": 10,
+    "レベル70〜80の救援覚醒体を固定している人の協力願": 1
+  },
+  "hourly_activity": {
+    "1": 10,
+    "2": 4,
+    "0": 2
+  },
+  "message_types": {
+    "0": 15,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1517342636523126945",
+      "channel_id": "1377478664609857647",
+      "content": "まさかのずっとゲストアカウントだった。",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517319792154116146",
+      "channel_id": "1417695507500765194",
+      "content": "200005816\n誰かエリカの可能性を発掘してください🙏",
+      "author": "katen5747",
+      "reactions": 1,
+      "channel": "レベル70〜80の救援覚醒体を固定している人の協力願"
+    }
+  ]
+}
