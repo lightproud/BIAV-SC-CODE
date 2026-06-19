@@ -1,10 +1,12 @@
 {
   "date": "2025-08-02",
-  "messages": 28,
-  "unique_authors": 8,
-  "reactions_total": 74,
-  "attachments": 9,
+  "messages": 6663,
+  "unique_authors": 200,
+  "reactions_total": 781,
+  "attachments": 327,
   "channel_activity": {
+    "🔸綜合討論": 466,
+    "🔸morimens-game-chat": 6169,
     "Pierot: Ultra Boy": 7,
     "professor doll says school is cool!": 1,
     "buy magic hat they said": 1,
@@ -17,22 +19,34 @@
     "通讯设备+首领战无效": 2
   },
   "hourly_activity": {
-    "14": 7,
-    "8": 1,
-    "13": 1,
-    "10": 1,
-    "22": 4,
-    "0": 3,
-    "5": 5,
-    "12": 2,
-    "17": 1,
-    "15": 1,
-    "1": 1,
-    "3": 1
+    "0": 594,
+    "1": 690,
+    "2": 300,
+    "3": 195,
+    "4": 81,
+    "5": 175,
+    "6": 220,
+    "8": 194,
+    "9": 118,
+    "10": 224,
+    "11": 302,
+    "12": 147,
+    "13": 340,
+    "14": 177,
+    "15": 206,
+    "16": 351,
+    "17": 352,
+    "18": 335,
+    "19": 183,
+    "21": 455,
+    "23": 337,
+    "7": 126,
+    "20": 225,
+    "22": 336
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 4518,
+    "19": 2117
   },
   "top_reacted_messages": [
     {
@@ -50,6 +64,30 @@
       "channel": "professor doll says school is cool!"
     },
     {
+      "id": "1401241889067372615",
+      "channel_id": "1170692781216378960",
+      "content": "here's what I buy",
+      "author": "climbkaly",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401263395860250728",
+      "channel_id": "1170692781216378960",
+      "content": "amazing",
+      "author": "krait223",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401224384827490436",
+      "channel_id": "1170692781216378960",
+      "content": "Have a lovely day friends remember I love you all",
+      "author": "the_black_butterfly",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1401181134259355781",
       "content": "校貓你說新的設計要像日服那樣，久久才能開一次狂氣爆發，讓狂氣爆發更有意義，但杜勒蠻失敗的，他需要付出的代價太多，不管是高配輔助還有血線的掌握",
       "author": "Deleted User",
@@ -57,25 +95,116 @@
       "channel": "Doresain still needs buff."
     },
     {
-      "id": "1401150698673930345",
-      "content": "note: this is **Not** a meta based recommendation. this list is based on what is",
-      "author": "nikolazuli",
-      "reactions": 3,
-      "channel": "(moved to #gameplay-guide)"
+      "id": "1401178044722319402",
+      "channel_id": "1170692781216378960",
+      "content": "Source: Came to me in a dream",
+      "author": "krait223",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1401212961950793819",
-      "content": "cool",
-      "author": "startofu_fish",
-      "reactions": 1,
-      "channel": "Pierot: Ultra Boy"
+      "id": "1401228716125982851",
+      "channel_id": "1131839817982947429",
+      "content": "<:Emoji_YWHX_M_12:1400771817659957258>",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1401328819368890431",
-      "content": "i appreciate the helpful direction! thanks niko!",
-      "author": "mutsukabezaka",
-      "reactions": 1,
-      "channel": "(moved to #gameplay-guide)"
+      "id": "1401007515012956312",
+      "channel_id": "1170692781216378960",
+      "content": "tulu is meta everywhere",
+      "author": "lewyntapes",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401071508909981778",
+      "channel_id": "1170692781216378960",
+      "content": "where my whale status <:angry3:1356053026863058994>",
+      "author": "aleph2410",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401232532397359295",
+      "channel_id": "1170692781216378960",
+      "content": "gonna try getting cae e3",
+      "author": "noobwannabe",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401288500221051103",
+      "channel_id": "1170692781216378960",
+      "content": "guys, i did my second D-tide ever and got 300 points! this may not mean much, bu",
+      "author": ".shabo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401079579304530000",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401090680121725011",
+      "channel_id": "1131839817982947429",
+      "content": "F佬都是打72000",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1400997111381622795",
+      "channel_id": "1170692781216378960",
+      "content": "ugly",
+      "author": "krait223",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401003262919966790",
+      "channel_id": "1170692781216378960",
+      "content": "idc i like nautila i wanted more wife",
+      "author": "krait223",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401012248922558586",
+      "channel_id": "1170692781216378960",
+      "content": "So you show your face when I don't want to get you...",
+      "author": "el.shaddoll.nephilim.is.my.ace",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401127115772002344",
+      "channel_id": "1170692781216378960",
+      "content": "Cute nerdy gremlin save me...",
+      "author": "krait223",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401170232344576030",
+      "channel_id": "1170692781216378960",
+      "content": "so my oc keeper / back to sleep",
+      "author": "ja_mingyu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401172214044168294",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "joker_0108",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

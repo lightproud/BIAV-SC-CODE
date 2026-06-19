@@ -1,10 +1,22 @@
 {
   "date": "2025-09-13",
-  "messages": 10696,
+  "messages": 12602,
   "unique_authors": 237,
-  "reactions_total": 2383,
-  "attachments": 500,
+  "reactions_total": 3430,
+  "attachments": 616,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 382,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 1260,
+    "🔸ห้องสนทนาภาษาไทย": 30,
+    "🔸traphase": 102,
+    "🔸lore-chat": 55,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 5,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸general-chat": 39,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
     "🔸morimens-game-chat": 8500,
     "🔸剧情交流": 3,
     "🔸晒卡分享": 755,
@@ -33,45 +45,45 @@
     "✅「已回答」代发——关于邮箱换绑": 3,
     "✅「已回答」達芙黛爾的標籤出現在「福利」的好幾個地方": 4,
     "邀請碼互助/Invitation code help each other": 1,
-    "同人创作……": 2,
-    "🔸礼包码┊gift-codes": 1
+    "同人创作……": 2
   },
   "hourly_activity": {
-    "0": 418,
-    "1": 401,
-    "2": 339,
-    "3": 699,
-    "4": 655,
-    "5": 421,
-    "6": 349,
-    "7": 600,
-    "8": 661,
-    "9": 927,
-    "10": 695,
-    "11": 498,
-    "12": 588,
-    "13": 456,
-    "14": 437,
-    "15": 385,
-    "16": 346,
-    "17": 145,
-    "18": 164,
-    "19": 338,
-    "20": 368,
-    "21": 242,
-    "22": 249,
-    "23": 315
+    "13": 703,
+    "0": 456,
+    "1": 477,
+    "2": 382,
+    "3": 734,
+    "4": 772,
+    "5": 681,
+    "6": 436,
+    "7": 608,
+    "8": 691,
+    "9": 1035,
+    "11": 561,
+    "12": 623,
+    "14": 472,
+    "15": 469,
+    "16": 397,
+    "17": 230,
+    "18": 280,
+    "19": 399,
+    "20": 372,
+    "21": 247,
+    "22": 266,
+    "23": 319,
+    "10": 992
   },
   "message_types": {
-    "0": 6526,
-    "19": 3008
+    "0": 1303,
+    "19": 603
   },
   "top_reacted_messages": [
     {
       "id": "1416271869958557848",
+      "channel_id": "1355094251775459399",
       "content": "**🎁DC 27000守密人达成礼 / DC27000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 792,
+      "reactions": 799,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -82,11 +94,35 @@
       "channel": "Tawil fan art"
     },
     {
+      "id": "1416447088916697339",
+      "channel_id": "1300659662311526512",
+      "content": "Falso ya salgan de mi cabeza",
+      "author": "Deleted User",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416467206287655013",
+      "channel_id": "1300659662311526512",
+      "content": "Estoy laborando ahorita  no puedo hacerle caso a mis delirios",
+      "author": "Deleted User",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416396759025979402",
       "content": "UID: 101086498",
       "author": "zharysche",
       "reactions": 27,
       "channel": "☄️"
+    },
+    {
+      "id": "1416477086981292114",
+      "channel_id": "1300659662311526512",
+      "content": "Me exploto dc",
+      "author": "ancientbp",
+      "reactions": 26,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1416366122235723879",
@@ -112,11 +148,27 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1416491906191458374",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "jhonny365",
+      "reactions": 17,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416219709925359667",
       "content": "小皮，其实是摸鱼混一下……👉👈\n\nuid100559282\n\n\n\n\n\n＃V2.3同人征集\n（其实我也不知为何我要再打一个这个）",
       "author": "xuyu0447_77124",
       "reactions": 17,
       "channel": "同人创作……"
+    },
+    {
+      "id": "1416522875535360122",
+      "channel_id": "1300659662311526512",
+      "content": "ala",
+      "author": "ancientbp",
+      "reactions": 16,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1416241232526446713",
@@ -181,46 +233,6 @@
       "author": "undecember_news",
       "reactions": 9,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416242463055810734",
-      "channel_id": "1170692781216378960",
-      "content": "ok now what is this",
-      "author": "dominica_",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416342301504180235",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "sophiechoice",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416418243203305522",
-      "channel_id": "1170692781216378960",
-      "content": "Its gonna be better i promise 😭",
-      "author": "spooky_penguin_",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416449762802008266",
-      "channel_id": "1170692781216378960",
-      "content": "Easter was like 4 months ago",
-      "author": "notpantswagon",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416500876440502283",
-      "channel_id": "1170692781216378960",
-      "content": "Hello friends",
-      "author": "the_black_butterfly",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

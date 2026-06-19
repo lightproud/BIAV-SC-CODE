@@ -1,10 +1,21 @@
 {
   "date": "2025-09-06",
-  "messages": 11183,
+  "messages": 12382,
   "unique_authors": 198,
-  "reactions_total": 1450,
-  "attachments": 423,
+  "reactions_total": 1534,
+  "attachments": 499,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 46,
+    "🔸canal-español": 505,
+    "🔸canal-português": 22,
+    "🔸ruang-obrolan-indonesia": 299,
+    "🔸ห้องสนทนาภาษาไทย": 82,
+    "🔸traphase": 74,
+    "🔸lore-chat": 22,
+    "🔸lets-count": 10,
+    "🔸team-building": 18,
+    "🔸general-chat": 96,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
     "🔸morimens-game-chat": 8819,
     "🔸晒卡分享": 2,
     "🔸日本語チャンネル": 7,
@@ -33,34 +44,34 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
-    "0": 579,
-    "1": 365,
-    "2": 468,
-    "3": 336,
-    "4": 446,
-    "5": 486,
-    "6": 521,
-    "7": 155,
-    "8": 142,
-    "9": 484,
-    "10": 367,
-    "11": 321,
-    "12": 612,
-    "13": 701,
-    "14": 371,
-    "15": 701,
-    "16": 856,
-    "17": 401,
-    "18": 430,
-    "19": 624,
-    "20": 591,
-    "21": 679,
-    "22": 422,
-    "23": 125
+    "0": 650,
+    "1": 448,
+    "2": 485,
+    "3": 374,
+    "4": 512,
+    "5": 531,
+    "8": 150,
+    "17": 463,
+    "6": 550,
+    "9": 492,
+    "10": 414,
+    "11": 388,
+    "12": 646,
+    "14": 420,
+    "15": 1001,
+    "16": 933,
+    "18": 438,
+    "19": 649,
+    "20": 613,
+    "21": 718,
+    "22": 443,
+    "23": 153,
+    "7": 193,
+    "13": 718
   },
   "message_types": {
-    "19": 3397,
-    "0": 6868
+    "19": 257,
+    "0": 942
   },
   "top_reacted_messages": [
     {
@@ -108,12 +119,28 @@
       "channel": "kathigu-ra fanart !!"
     },
     {
+      "id": "1413973052332576778",
+      "channel_id": "1300659662311526512",
+      "content": "puedo decir que cumplí mi misión de subirla, mi primer personaje a 60 y de paso ",
+      "author": "rider_astolfo_lover",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1413980554746921142",
       "channel_id": "1170692781216378960",
       "content": "stop using the smart cat pic",
       "author": "spooky_penguin_",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413725706659172352",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "kryxcross",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1413779553968459897",
@@ -172,6 +199,22 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1413865510994575400",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "blecnes",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1413779360208654336",
+      "channel_id": "1326453763355185215",
+      "content": "for me it’s chapter 5-6-7",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1413923229726150748",
       "channel_id": "1170692781216378960",
       "content": "If only there was a strong and a cute boy who could help a poor girl like me....",
@@ -186,38 +229,6 @@
       "author": "moyashi0672",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413963535305674874",
-      "channel_id": "1170692781216378960",
-      "content": "We love Ultra girls!💜💜💜",
-      "author": "spooky_penguin_",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413979155275579564",
-      "channel_id": "1170692781216378960",
-      "content": "it's so great that I fell asleep",
-      "author": "fischperch",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413980502775304336",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "Deleted User",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413750787426750515",
-      "channel_id": "1174983699935277147",
-      "content": "開心也15同調了",
-      "author": "andy1123",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
     }
   ]
 }

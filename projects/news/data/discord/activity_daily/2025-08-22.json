@@ -1,10 +1,12 @@
 {
   "date": "2025-08-22",
-  "messages": 139,
-  "unique_authors": 71,
-  "reactions_total": 200,
-  "attachments": 14,
+  "messages": 12954,
+  "unique_authors": 331,
+  "reactions_total": 1961,
+  "attachments": 519,
   "channel_activity": {
+    "🔸綜合討論": 1713,
+    "🔸morimens-game-chat": 11102,
     "Tawil fan model": 1,
     "ogier": 4,
     "Kath - RA Art Submission by Flares.": 1,
@@ -24,31 +26,34 @@
     "彌撒格最般配的男同性戀2.0": 2
   },
   "hourly_activity": {
-    "16": 71,
-    "6": 2,
-    "7": 1,
-    "9": 4,
-    "12": 5,
-    "10": 4,
-    "17": 10,
-    "18": 2,
-    "19": 3,
-    "22": 3,
-    "23": 2,
-    "2": 12,
-    "20": 1,
-    "21": 2,
-    "3": 3,
-    "5": 6,
-    "8": 2,
-    "0": 1,
-    "4": 2,
-    "13": 1,
-    "14": 2
+    "0": 434,
+    "1": 261,
+    "2": 237,
+    "3": 441,
+    "4": 549,
+    "5": 376,
+    "6": 613,
+    "7": 628,
+    "8": 497,
+    "9": 482,
+    "10": 715,
+    "11": 914,
+    "12": 835,
+    "13": 916,
+    "14": 910,
+    "15": 559,
+    "16": 762,
+    "17": 427,
+    "18": 452,
+    "20": 403,
+    "21": 537,
+    "23": 290,
+    "19": 438,
+    "22": 278
   },
   "message_types": {
-    "0": 7,
-    "19": 3
+    "0": 8247,
+    "19": 4568
   },
   "top_reacted_messages": [
     {
@@ -59,11 +64,35 @@
       "channel": "ogier"
     },
     {
+      "id": "1408483801516085399",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1408483619437154364/14084836194",
+      "author": "game.producer.light",
+      "reactions": 50,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408468951574511667",
+      "channel_id": "1170692781216378960",
+      "content": "No gingers slander in the chat please <:cry3:1356082134447558748>",
+      "author": "sirtealot",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1408543814506774588",
       "content": "Some characters, like Horla and Jenkin for example, have Enlightens that change ",
       "author": "sophiechoice",
       "reactions": 18,
       "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
+    },
+    {
+      "id": "1408468842312765460",
+      "channel_id": "1170692781216378960",
+      "content": "so, the game may EoS in a year...?",
+      "author": "edelgale",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1408487065141907506",
@@ -73,11 +102,67 @@
       "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
+      "id": "1408490882214396009",
+      "channel_id": "1170692781216378960",
+      "content": "I didn't realize\nBut we broke the concurrent players record on steam",
+      "author": "legendaryredz",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408465416505790565",
+      "channel_id": "1170692781216378960",
+      "content": "for the starter team, should I replace Ogier for Doll?",
+      "author": "edelgale",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1408484133922930800",
       "content": "Hopefully the game'll last for longer, anyways where's our three hundred luminou",
       "author": "solxeko",
       "reactions": 11,
       "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408379799344386100",
+      "channel_id": "1131839817982947429",
+      "content": "這遊戲\n輔助型是功能完整的C\n防禦型是攻防一體的C\n傷害型是需要輪椅的C\n☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1408469291912663170",
+      "channel_id": "1170692781216378960",
+      "content": "It's not a true Morimens story if a child isn't going through hell.",
+      "author": "sophiechoice",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408556420890103820",
+      "channel_id": "1170692781216378960",
+      "content": "is this convo lol",
+      "author": "monchi3524",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408485217538281512",
+      "channel_id": "1170692781216378960",
+      "content": "Don't worry... just... whatever you do... never collab with Persona 5.",
+      "author": "sophiechoice",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408498700845842523",
+      "channel_id": "1170692781216378960",
+      "content": "Every gacha game should have a whale character. It just so obvious",
+      "author": ".shwqa",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1408458276898734161",
@@ -87,109 +172,44 @@
       "channel": "彌撒格最般配的男同性戀2.0"
     },
     {
-      "id": "1408485553522999417",
-      "content": "Need some billionaire to support morimens.\nAny Billionaire around here ?",
-      "author": "sexysneakystoat1625",
-      "reactions": 7,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "id": "1408413047621423194",
+      "channel_id": "1131839817982947429",
+      "content": "不會阿 洗到滿數值 很療育",
+      "author": "insomnia07763",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1408534369660047422",
-      "content": "文案产能这块呢\n凯蒂的文案拉成什么样了，错别字，诡异自造词，吃书\n半周年海国剧情之后说好的文案反思呢",
-      "author": "flarinsidia",
-      "reactions": 7,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "id": "1408363037131542569",
+      "channel_id": "1170692781216378960",
+      "content": "Rate my lineup",
+      "author": "solxeko",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408484996540403823",
-      "content": "I have fallen in love with this game and it's world, this makes me insanely happ",
-      "author": "neyuse",
-      "reactions": 6,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "id": "1408369274099339275",
+      "channel_id": "1170692781216378960",
+      "content": "and now that i have kath e3 im not using any of them",
+      "author": ".dang",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408487949640794123",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 5,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "id": "1408457681215291492",
+      "channel_id": "1170692781216378960",
+      "content": "That is the joke",
+      "author": "poodaloom",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408484082026938449",
-      "content": "please keep cooking",
-      "author": "starfish3302",
-      "reactions": 3,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484276852359279",
-      "content": "Continuation of service announcement <:STONKS:703686480555409500>",
-      "author": "naviking",
-      "reactions": 3,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484651151921323",
-      "content": "please buff Death Resistance again 🥹",
-      "author": "skyfallterminus",
-      "reactions": 3,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484890818773062",
-      "content": "https://tenor.com/view/absolute-cinema-ultrakill-v1-gif-13645334871069381593",
-      "author": "disgustedingucci",
-      "reactions": 3,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408492297196273804",
-      "content": "make Dexter playable and you will get more funds <:point:1356053112292511815>",
-      "author": "theborkerr",
-      "reactions": 3,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484118790012969",
-      "content": "Thank you mr kitty kat",
-      "author": "whirli_bri",
-      "reactions": 2,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484136766930974",
-      "content": "THE CAT DID IT AGAIN, THEY SAVED MYTHAG",
-      "author": "null.pointer_exception",
-      "reactions": 2,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484492288720926",
-      "content": "每一次觸發死亡抵抗，笑死\n你說的是對面觸發抵抗吧\n我們在星辰篇的死抗都被弄沒了",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408485338338426941",
-      "content": "~~我真的很需要限定回溯把杜勒回了~~",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408427718382714943",
-      "content": "Thanks, u may! Please credit my twitter @ ruppitus or link the post https://x.co",
-      "author": "ruppit",
-      "reactions": 1,
-      "channel": "ogier"
-    },
-    {
-      "id": "1408519379338924193",
-      "content": "https://www.youtube.com/watch?v=bW5XXMt37DE\nDoresain, Thais, Hameln/G. Ramona/Ka",
-      "author": "limewareplatter",
-      "reactions": 1,
-      "channel": "Hi! I'd like advice on teams ..."
+      "id": "1408463046871089202",
+      "channel_id": "1170692781216378960",
+      "content": "casiah is hot",
+      "author": "grimalkaiser",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

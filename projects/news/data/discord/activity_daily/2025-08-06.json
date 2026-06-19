@@ -1,10 +1,12 @@
 {
   "date": "2025-08-06",
-  "messages": 98,
-  "unique_authors": 16,
-  "reactions_total": 120,
-  "attachments": 26,
+  "messages": 7272,
+  "unique_authors": 187,
+  "reactions_total": 935,
+  "attachments": 387,
   "channel_activity": {
+    "🔸綜合討論": 869,
+    "🔸morimens-game-chat": 6305,
     "Doresain, in flesh (or not, idk i am stuck at 1st arc)": 1,
     "corpo acrylic figure (#v2.3 Fan Art)": 1,
     "7.28：400   Character appearance rate": 2,
@@ -31,28 +33,34 @@
     "偽造之物": 3
   },
   "hourly_activity": {
-    "15": 1,
-    "10": 6,
-    "20": 5,
-    "14": 1,
-    "16": 5,
-    "21": 6,
-    "22": 5,
-    "7": 6,
-    "11": 17,
-    "13": 1,
-    "19": 1,
-    "8": 3,
-    "18": 9,
-    "12": 4,
-    "2": 2,
-    "3": 4,
-    "6": 15,
-    "4": 2,
-    "1": 5
+    "2": 203,
+    "3": 230,
+    "4": 189,
+    "6": 211,
+    "7": 222,
+    "8": 230,
+    "9": 232,
+    "10": 338,
+    "11": 493,
+    "12": 343,
+    "13": 317,
+    "14": 317,
+    "15": 703,
+    "16": 316,
+    "17": 463,
+    "18": 255,
+    "19": 441,
+    "20": 482,
+    "0": 126,
+    "1": 226,
+    "5": 149,
+    "21": 331,
+    "22": 265,
+    "23": 190
   },
   "message_types": {
-    "0": 8
+    "0": 5328,
+    "19": 1846
   },
   "top_reacted_messages": [
     {
@@ -63,11 +71,35 @@
       "channel": "corpo acrylic figure (#v2.3 Fan Art)"
     },
     {
+      "id": "1402771919391948820",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/mystical-wise-tree-a-little-goofy-omg-rofl-lmfao-gif-3707",
+      "author": "darkfeet",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1402782248314605598",
       "content": "一家子都是鬼，好呀（起立鼓掌\n\nUID: 100047306",
       "author": "yolo_mode",
       "reactions": 22,
       "channel": "偽造之物"
+    },
+    {
+      "id": "1402621161778450583",
+      "channel_id": "1170692781216378960",
+      "content": "omg",
+      "author": "drunk.biscuit",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402449745506467862",
+      "channel_id": "1170692781216378960",
+      "content": "here is mono chaos its also good",
+      "author": "imdipset",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1402763327456677908",
@@ -77,6 +109,22 @@
       "channel": "[杜勒塞因原型解读]弧月高悬之处"
     },
     {
+      "id": "1402618002087739513",
+      "channel_id": "1131839817982947429",
+      "content": "下周烙饼给大家吃<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402679570691260556",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1402564599366029364",
       "content": "Greetings, Keeper!\n\nTo clarify, the 0.5% Limited SSR rate in the Standard Banner",
       "author": "morimens_15",
@@ -84,102 +132,92 @@
       "channel": "✅「Answered」Clarification on gacha odds for standard limited"
     },
     {
-      "id": "1402747858628907168",
-      "content": "Additional note: Wave 3 from the previous issue had a special method of passing.",
-      "author": "lurenjiao",
-      "reactions": 5,
-      "channel": "7.28：400   Character appearance rate"
+      "id": "1402653051994509425",
+      "channel_id": "1131839817982947429",
+      "content": "<:wish:1356084702468899117> <:wish:1356084702468899117>",
+      "author": "annaxxe_",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402602278518657075",
-      "content": "🙏 感谢理解与支持，有问题也欢迎大家@或私信戈雅，我们会尽快出面解决",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "管理員又封錯人"
+      "id": "1402450469569302659",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/chili-dog-chili-dog-hot-dog-sonic-the-hedgehog-gif-265934",
+      "author": "lewyntapes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402462153608527912",
-      "content": "从2.0新材料需要排名拿去预告开始我就是反对的，现在作为已经过完1.5周年马上2周年的节点请尽快更新减负深潜奖励机制，把一个养成的必须材料放在排名机制里前期可以",
-      "author": "ruhebaoyangsiwa_97871",
-      "reactions": 5,
-      "channel": "请尽快重视深潜奖励机制的问题"
+      "id": "1402621439785439306",
+      "channel_id": "1170692781216378960",
+      "content": "and another one",
+      "author": "drunk.biscuit",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402496668569567354",
-      "content": "好的，是昨晚約九點左右的時候。不是你們的工作人員，是中文區下放群裡成員的管理員jackpot。\n這位已經多次不去瞭解事情整體經過也不去針對當事人做調解，或根本不",
-      "author": "kong760",
-      "reactions": 4,
-      "channel": "管理員又封錯人"
+      "id": "1402651754834825297",
+      "channel_id": "1170692781216378960",
+      "content": "yayayayyayayay <:wish:1356084702468899117>",
+      "author": "annaxxe_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402651804512288879",
-      "content": "要么直接把奖励直接放到分数里面，靠分数拿奖励，要么就拿出来放到别的活动里面。核心就是把奖励变成单机的，能不能拿到，不同练度拿到多少，那就另说，但是这些起码只是玩",
-      "author": "lurenjiao",
-      "reactions": 3,
-      "channel": "关于幻梦深潜"
+      "id": "1402695633420419233",
+      "channel_id": "1131839817982947429",
+      "content": "终于400了<:cry2:1356068126894194758>",
+      "author": "cs001092",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402537870086115359",
-      "content": "感谢戈雅善解人意<:blowkiss:1356053035780014150>",
-      "author": "carme.0588",
-      "reactions": 3,
-      "channel": "管理員又封錯人"
+      "id": "1402610917149245530",
+      "channel_id": "1170692781216378960",
+      "content": "https://media.discordapp.net/attachments/722910044219506828/956711990485721128/b",
+      "author": "alfa1a",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402681974229045299",
-      "content": "this is amazing 🛐",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "Doresain, in flesh (or not, idk i am stuck at 1st arc)"
-    },
-    {
-      "id": "1402695950866059295",
-      "content": "||因為你也知道我們的策劃是沒有什麼良心的||",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "关于幻梦深潜"
-    },
-    {
-      "id": "1402621605640929291",
-      "content": "不只是鼠鼠，其他角色也有这个问题",
-      "author": "ioshift_24740",
-      "reactions": 1,
-      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
-    },
-    {
-      "id": "1402621878929068082",
-      "content": "对了，唤醒体实训也用不了了",
-      "author": "ioshift_24740",
-      "reactions": 1,
-      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
-    },
-    {
-      "id": "1402623446520823929",
+      "id": "1402621594685276255",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "ioshift_24740",
-      "reactions": 1,
-      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
+      "author": "drunk.biscuit",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402546474331410473",
-      "content": "Thank you for your feedback. We will fix it this afternoon! At that time, everyo",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Survey links bug"
+      "id": "1402673746476662966",
+      "channel_id": "1170692781216378960",
+      "content": "Mon-chi is someone that has meditated for centuries and mastered the way of the ",
+      "author": "torph.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402613968354283530",
-      "content": "啊。气晕了",
-      "author": "randomplayer852",
-      "reactions": 1,
-      "channel": "分享一下这期425融灾的配队，顺便简评一下各个角色的使用感受。"
+      "id": "1402675366765527145",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>  you gonna love it when pandia appear in every sing",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402614064642920480",
-      "content": "我把帖子删了，整理一下再发。",
-      "author": "randomplayer852",
-      "reactions": 1,
-      "channel": "分享一下这期425融灾的配队，顺便简评一下各个角色的使用感受。"
+      "id": "1402679358212149268",
+      "channel_id": "1170692781216378960",
+      "content": "Here's my new player tier list:\nS: The ones I like\nD: The rest",
+      "author": "omenatyyppi",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402664630014312480",
+      "channel_id": "1170692781216378960",
+      "content": "<:dead:1356082627509092372>",
+      "author": "allyera.emano.hemafuri",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

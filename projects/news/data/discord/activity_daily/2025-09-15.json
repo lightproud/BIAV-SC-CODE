@@ -1,10 +1,21 @@
 {
   "date": "2025-09-15",
-  "messages": 9235,
+  "messages": 11339,
   "unique_authors": 195,
-  "reactions_total": 1431,
-  "attachments": 432,
+  "reactions_total": 1647,
+  "attachments": 562,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 41,
+    "🔸canal-español": 359,
+    "🔸canal-português": 162,
+    "🔸ruang-obrolan-indonesia": 1259,
+    "🔸ห้องสนทนาภาษาไทย": 25,
+    "🔸traphase": 130,
+    "🔸lore-chat": 84,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸general-chat": 8,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
     "🔸morimens-game-chat": 7050,
     "🔸剧情交流": 4,
     "🔸晒卡分享": 3,
@@ -56,38 +67,45 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "0": 382,
-    "1": 389,
-    "2": 323,
-    "3": 464,
-    "4": 248,
-    "5": 436,
-    "6": 370,
-    "7": 237,
-    "8": 548,
-    "9": 432,
-    "10": 303,
-    "11": 668,
-    "12": 521,
-    "13": 635,
-    "14": 724,
-    "15": 400,
-    "16": 356,
-    "17": 378,
-    "18": 247,
-    "19": 347,
-    "20": 214,
-    "21": 139,
-    "22": 259,
-    "23": 215
+    "0": 439,
+    "10": 369,
+    "11": 748,
+    "12": 588,
+    "13": 695,
+    "14": 837,
+    "15": 838,
+    "16": 663,
+    "17": 426,
+    "18": 275,
+    "1": 457,
+    "2": 474,
+    "3": 530,
+    "4": 304,
+    "6": 503,
+    "7": 337,
+    "8": 576,
+    "9": 459,
+    "20": 313,
+    "21": 149,
+    "22": 290,
+    "23": 239,
+    "19": 369,
+    "5": 461
   },
   "message_types": {
-    "0": 5263,
-    "19": 1922,
-    "20": 3,
-    "46": 1
+    "0": 1346,
+    "19": 757,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1416949926780473447",
+      "channel_id": "1300659662311526512",
+      "content": "EZ a ese N con una potenciación del 60% de vida y 25%, creo, de ataque",
+      "author": "duxadidus",
+      "reactions": 20,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1417237861412896859",
       "content": "This is a resource from the Mythag University server containing a general indica",
@@ -96,12 +114,28 @@
       "channel": "Morimens Glossary (Wheels and Covenants equip guide)"
     },
     {
+      "id": "1417209913452789812",
+      "channel_id": "1300659662311526512",
+      "content": "💣",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416996663687512207",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "twilightsparkle163163",
       "reactions": 15,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417204232250982581",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 14,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1416991118171570290",
@@ -215,36 +249,12 @@
       "channel": "未曾寄出的书信#1"
     },
     {
-      "id": "1417205065755922513",
-      "channel_id": "1170692781216378960",
-      "content": "guys is tulu e3 gud <:sleepy:1400771754573692928>",
-      "author": "nonexistencenorin",
+      "id": "1417060203349938287",
+      "channel_id": "1300659662311526512",
+      "content": "skill issue <:point:1356053112292511815>",
+      "author": "blecnes",
       "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416959854114898021",
-      "channel_id": "1131839817982947429",
-      "content": "~~事已至此课个月卡假装这期打掉了吧（~~",
-      "author": "flarinsidia",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417039350016770118",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "scholar_2",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417143581767897239",
-      "channel_id": "1131839817982947429",
-      "content": "别上陆服，审查能把你游剧情美术卡得人模鬼样（",
-      "author": "flarinsidia",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸canal-español"
     }
   ]
 }

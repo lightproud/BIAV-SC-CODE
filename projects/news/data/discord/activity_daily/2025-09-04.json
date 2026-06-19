@@ -1,10 +1,20 @@
 {
   "date": "2025-09-04",
-  "messages": 11455,
+  "messages": 13555,
   "unique_authors": 208,
-  "reactions_total": 1361,
-  "attachments": 520,
+  "reactions_total": 1546,
+  "attachments": 634,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 131,
+    "🔸canal-español": 910,
+    "🔸canal-português": 364,
+    "🔸ruang-obrolan-indonesia": 169,
+    "🔸ห้องสนทนาภาษาไทย": 85,
+    "🔸traphase": 89,
+    "🔸lore-chat": 130,
+    "🔸lets-count": 8,
+    "🔸general-chat": 185,
+    "🔸邀请码互助┊swap-invitation-codes": 29,
     "🔸morimens-game-chat": 10298,
     "🔸剧情交流": 4,
     "🔸日本語チャンネル": 8,
@@ -38,35 +48,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 569,
-    "1": 581,
-    "2": 637,
-    "3": 704,
-    "4": 550,
-    "5": 423,
-    "6": 655,
-    "7": 581,
-    "8": 541,
-    "9": 575,
-    "10": 298,
-    "11": 394,
-    "12": 421,
-    "13": 863,
-    "14": 488,
-    "15": 767,
-    "16": 428,
-    "17": 296,
-    "18": 222,
-    "19": 496,
-    "20": 453,
-    "21": 324,
-    "22": 62,
-    "23": 127
+    "0": 968,
+    "3": 835,
+    "4": 585,
+    "5": 438,
+    "6": 664,
+    "7": 697,
+    "8": 576,
+    "9": 613,
+    "10": 392,
+    "11": 485,
+    "12": 464,
+    "13": 962,
+    "14": 569,
+    "15": 871,
+    "16": 466,
+    "1": 666,
+    "2": 689,
+    "17": 433,
+    "18": 415,
+    "19": 654,
+    "20": 477,
+    "21": 348,
+    "22": 128,
+    "23": 160
   },
   "message_types": {
-    "0": 7167,
-    "19": 3456,
-    "46": 1
+    "0": 1674,
+    "19": 426
   },
   "top_reacted_messages": [
     {
@@ -157,6 +166,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1413153562543784037",
+      "channel_id": "1400750050208125010",
+      "content": "she looks harmonzie and light",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1413020698770669598",
       "channel_id": "1173463482503536711",
       "content": "我當球",
@@ -180,6 +197,14 @@
       "channel": "D-dive 45K Aequor/Caro Guide"
     },
     {
+      "id": "1413202860791038076",
+      "channel_id": "1300659662311526512",
+      "content": "Exacto, roba cartas y have que los tentáculos ataquen (si tienes a otros pj que ",
+      "author": "haripax",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1413132384072630302",
       "channel_id": "1170692781216378960",
       "content": "Wahooo",
@@ -201,22 +226,6 @@
       "author": "wild_pansy",
       "reactions": 7,
       "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
-    },
-    {
-      "id": "1412954529544274140",
-      "channel_id": "1170692781216378960",
-      "content": "if you end up enjoying winkle, i'd say go for jenkins standard-wise, since she's",
-      "author": "fishhazardthewizard",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413024997059989586",
-      "channel_id": "1170692781216378960",
-      "content": "Yay e1",
-      "author": "angbak",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

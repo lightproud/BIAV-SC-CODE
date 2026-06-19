@@ -1,10 +1,11 @@
 {
   "date": "2025-08-30",
-  "messages": 256,
-  "unique_authors": 30,
-  "reactions_total": 246,
-  "attachments": 31,
+  "messages": 762,
+  "unique_authors": 35,
+  "reactions_total": 357,
+  "attachments": 73,
   "channel_activity": {
+    "🔸綜合討論": 506,
     "uvhash fan art submission": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
     "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 5,
@@ -52,32 +53,34 @@
     "全4級400融災攻略": 54
   },
   "hourly_activity": {
-    "2": 2,
-    "1": 1,
-    "11": 9,
-    "17": 22,
-    "21": 2,
-    "3": 3,
-    "4": 11,
-    "15": 4,
-    "16": 44,
-    "18": 10,
-    "23": 14,
-    "7": 24,
-    "19": 3,
-    "20": 5,
-    "5": 12,
-    "12": 3,
-    "6": 12,
-    "14": 7,
-    "9": 35,
-    "10": 25,
-    "8": 8
+    "0": 3,
+    "1": 25,
+    "2": 30,
+    "3": 81,
+    "4": 26,
+    "5": 32,
+    "6": 45,
+    "7": 45,
+    "8": 18,
+    "9": 44,
+    "10": 41,
+    "11": 20,
+    "12": 13,
+    "13": 11,
+    "14": 32,
+    "15": 68,
+    "16": 123,
+    "17": 45,
+    "18": 14,
+    "19": 11,
+    "20": 7,
+    "22": 8,
+    "23": 18,
+    "21": 2
   },
   "message_types": {
-    "0": 27,
-    "19": 1,
-    "4": 1
+    "0": 430,
+    "19": 76
   },
   "top_reacted_messages": [
     {
@@ -107,6 +110,14 @@
       "author": "quasar_7",
       "reactions": 11,
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411311040439914506",
+      "channel_id": "1131839817982947429",
+      "content": "好  抽\n聽Kai佬的",
+      "author": "insomnia07763",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1411417140120129788",
@@ -165,6 +176,22 @@
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
+      "id": "1411331492889755678",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1411436399152070858",
+      "channel_id": "1131839817982947429",
+      "content": "当然不是过分的要求。不过我希望他们能够更专注于把事情尽可能做好。\n\n我们内容团队重建工作极其困难，高质量的产出期待和低预算的现实状况让人望而生畏，加上紧张的生产",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1411394156886233188",
       "content": "保留原墨菲最好",
       "author": "muliupan",
@@ -179,46 +206,28 @@
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
-      "id": "1411360921544036363",
-      "content": "Please always remember: for some people, making games is a way to make money. Fo",
-      "author": "game.producer.light",
+      "id": "1411228732516991067",
+      "channel_id": "1131839817982947429",
+      "content": "顯然你遊最平衡的是pvp",
+      "author": "ernest_heart",
       "reactions": 5,
-      "channel": "✅「Answered」Triple Reruns in the Future"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411394813521035426",
-      "content": "钉宫",
-      "author": "muliupan",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1411323775018078230",
+      "channel_id": "1131839817982947429",
+      "content": "成功登上800小目標",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411402329449566319",
-      "content": "I wouldn't mind paying directly the higher rarity skin even if they're 3280 or m",
-      "author": "chunliba",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411447209332834324",
-      "content": "I honestly don't see the point of gacha skin, because skins are a show off and d",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411363124518453320",
-      "content": "<:wish:1356084702468899117> thanks for the response\n\nwill there be anything done",
-      "author": "zier.0",
-      "reactions": 4,
-      "channel": "✅「Answered」Triple Reruns in the Future"
-    },
-    {
-      "id": "1411224678831226933",
-      "content": "@everyone",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
+      "id": "1411373364416872611",
+      "channel_id": "1131839817982947429",
+      "content": "玩忘卻前夜1.75年後，菜貓我終於學會怎麼玩超維了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

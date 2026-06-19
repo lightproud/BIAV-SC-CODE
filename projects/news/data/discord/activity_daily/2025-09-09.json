@@ -1,10 +1,22 @@
 {
   "date": "2025-09-09",
-  "messages": 9000,
+  "messages": 11514,
   "unique_authors": 239,
-  "reactions_total": 1629,
-  "attachments": 406,
+  "reactions_total": 1829,
+  "attachments": 550,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 68,
+    "🔸canal-español": 480,
+    "🔸canal-português": 14,
+    "🔸ruang-obrolan-indonesia": 867,
+    "🔸ห้องสนทนาภาษาไทย": 535,
+    "🔸traphase": 22,
+    "🔸lore-chat": 468,
+    "🔸lets-count": 9,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 6,
+    "🔸general-chat": 20,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
     "🔸morimens-game-chat": 7837,
     "🔸剧情交流": 6,
     "🔸晒卡分享": 9,
@@ -52,34 +64,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "0": 209,
-    "1": 334,
-    "2": 360,
-    "3": 437,
-    "4": 221,
-    "5": 428,
-    "6": 360,
-    "7": 246,
-    "8": 166,
-    "9": 460,
-    "10": 735,
-    "11": 782,
-    "12": 428,
-    "13": 340,
-    "14": 299,
-    "15": 673,
-    "16": 532,
-    "17": 332,
-    "18": 565,
-    "19": 281,
-    "20": 421,
-    "21": 280,
-    "22": 42,
-    "23": 69
+    "4": 573,
+    "10": 774,
+    "12": 471,
+    "15": 830,
+    "16": 603,
+    "17": 414,
+    "0": 251,
+    "1": 433,
+    "2": 467,
+    "3": 683,
+    "5": 498,
+    "9": 512,
+    "11": 847,
+    "13": 424,
+    "14": 632,
+    "18": 652,
+    "19": 305,
+    "20": 430,
+    "21": 284,
+    "22": 54,
+    "23": 106,
+    "6": 639,
+    "7": 304,
+    "8": 328
   },
   "message_types": {
-    "19": 2512,
-    "0": 5501
+    "0": 1784,
+    "19": 730
   },
   "top_reacted_messages": [
     {
@@ -95,6 +107,14 @@
       "author": "sofiaebby",
       "reactions": 33,
       "channel": "Pieta"
+    },
+    {
+      "id": "1414807294377459855",
+      "channel_id": "1300659662311526512",
+      "content": "Una preguntita, sorel es buena?",
+      "author": "makapaka__.",
+      "reactions": 23,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1414879504316497980",
@@ -165,6 +185,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1415037640025313351",
+      "channel_id": "1300659662311526512",
+      "content": "Buenas a todos, como prometí aqui esta la parte I. \n\nEsta es la base de las habi",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1415074992525283430",
       "content": "说到底，这个过程看起来复杂，实际上只有三个步骤：\n\n1、根据唤醒体的基础技能组，梳理其「制造伤害」的方式，整理各个乘区对ta伤害能力提升的「增幅比例」。\n\n2、",
       "author": "llhwwc_89248",
@@ -218,21 +246,6 @@
       "author": ".craystal",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1414944972448206890",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "dog794",
-      "reactions": 7,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1414884006549393521",
-      "content": "題外話，~~我感覺我新學期快死掉了有好多情要做~~",
-      "author": "_cwz_",
-      "reactions": 7,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     }
   ]
 }

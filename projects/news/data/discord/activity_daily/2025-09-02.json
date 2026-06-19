@@ -1,10 +1,20 @@
 {
   "date": "2025-09-02",
-  "messages": 13933,
+  "messages": 15438,
   "unique_authors": 241,
-  "reactions_total": 1715,
-  "attachments": 508,
+  "reactions_total": 1832,
+  "attachments": 584,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 27,
+    "🔸canal-español": 633,
+    "🔸canal-português": 106,
+    "🔸ruang-obrolan-indonesia": 409,
+    "🔸ห้องสนทนาภาษาไทย": 48,
+    "🔸traphase": 91,
+    "🔸lore-chat": 80,
+    "🔸lets-count": 4,
+    "🔸general-chat": 61,
+    "🔸邀请码互助┊swap-invitation-codes": 46,
     "🔸morimens-game-chat": 11717,
     "🔸剧情交流": 7,
     "🔸课间休息闲聊": 1,
@@ -42,34 +52,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 619,
-    "1": 513,
-    "2": 389,
-    "3": 543,
-    "4": 545,
-    "5": 331,
-    "6": 157,
-    "7": 355,
-    "8": 485,
-    "9": 617,
-    "10": 784,
-    "11": 659,
-    "12": 765,
-    "13": 592,
-    "14": 1219,
-    "15": 1054,
-    "16": 1076,
-    "17": 687,
-    "18": 621,
-    "19": 593,
-    "20": 387,
-    "21": 330,
-    "22": 417,
-    "23": 195
+    "2": 452,
+    "4": 571,
+    "5": 520,
+    "6": 217,
+    "7": 480,
+    "8": 562,
+    "9": 665,
+    "11": 740,
+    "12": 779,
+    "13": 639,
+    "14": 1272,
+    "17": 829,
+    "18": 652,
+    "19": 611,
+    "0": 659,
+    "1": 540,
+    "3": 728,
+    "15": 1100,
+    "16": 1120,
+    "20": 444,
+    "21": 352,
+    "22": 429,
+    "23": 231,
+    "10": 846
   },
   "message_types": {
-    "0": 8736,
-    "19": 3844
+    "0": 1131,
+    "19": 374
   },
   "top_reacted_messages": [
     {
@@ -189,6 +199,22 @@
       "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
+      "id": "1412545160318816359",
+      "channel_id": "1300659662311526512",
+      "content": "En efecto. Padeces del Síndrome de 24. En estado terminal",
+      "author": "duxadidus",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1412571846397661255",
+      "channel_id": "1300659662311526512",
+      "content": "<:Showoff:1400771654199541850>",
+      "author": "ancientbp",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1412399979783389224",
       "channel_id": "1170692781216378960",
       "content": "wait i have to look up what this word means",
@@ -203,21 +229,6 @@
       "author": "xyakoto",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1412349823289524287",
-      "content": "支持不做人統治世界喵",
-      "author": "kong760",
-      "reactions": 7,
-      "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
-    },
-    {
-      "id": "1412390503470600252",
-      "channel_id": "1170692781216378960",
-      "content": "Or if u don’t have blade of titan +12",
-      "author": "poodaloom",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

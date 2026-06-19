@@ -1,10 +1,12 @@
 {
   "date": "2025-08-07",
-  "messages": 180,
-  "unique_authors": 20,
-  "reactions_total": 62,
-  "attachments": 12,
+  "messages": 7776,
+  "unique_authors": 251,
+  "reactions_total": 1317,
+  "attachments": 282,
   "channel_activity": {
+    "🔸綜合討論": 1446,
+    "🔸morimens-game-chat": 6150,
     "daffodil": 1,
     "7.28：400   Character appearance rate": 2,
     "求求补启和配队建议": 7,
@@ -28,32 +30,109 @@
     "1390375103707218041": 2
   },
   "hourly_activity": {
-    "0": 5,
-    "1": 1,
-    "19": 3,
-    "3": 4,
-    "4": 7,
-    "8": 4,
-    "11": 9,
-    "15": 10,
-    "14": 37,
-    "12": 33,
-    "13": 40,
-    "16": 6,
-    "17": 3,
-    "6": 4,
-    "7": 1,
-    "2": 3,
-    "9": 5,
-    "10": 3,
-    "5": 2
+    "0": 360,
+    "1": 240,
+    "2": 309,
+    "3": 142,
+    "4": 139,
+    "5": 321,
+    "6": 373,
+    "7": 281,
+    "8": 307,
+    "9": 290,
+    "10": 379,
+    "11": 639,
+    "12": 649,
+    "13": 430,
+    "14": 555,
+    "15": 257,
+    "16": 144,
+    "17": 337,
+    "18": 317,
+    "19": 334,
+    "20": 381,
+    "21": 324,
+    "22": 130,
+    "23": 138
   },
   "message_types": {
-    "0": 15,
-    "19": 1,
-    "4": 1
+    "0": 5649,
+    "19": 1945,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1402969680435478631",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1402967510415839262/14029690138",
+      "author": "game.producer.light",
+      "reactions": 89,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1403113391186251877",
+      "channel_id": "1170692781216378960",
+      "content": "ok pullng yellow thanks",
+      "author": "severedsage",
+      "reactions": 63,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402969937366224927",
+      "channel_id": "1170692781216378960",
+      "content": "Thought they were shutting the game down for a sec lmao",
+      "author": "krait223",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1403113971296370779",
+      "channel_id": "1170692781216378960",
+      "content": "oop I mean jenkin but yeah",
+      "author": "severedsage",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402818663299678329",
+      "channel_id": "1170692781216378960",
+      "content": "*lesigh* guess im doing pvp for today's daily",
+      "author": "nikolazuli",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1403001636640653355",
+      "channel_id": "1131839817982947429",
+      "content": "我比較陽剛的意思",
+      "author": "ahuahuahua",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1403061439123685560",
+      "channel_id": "1131839817982947429",
+      "content": "我的血條快趕上對面了",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402984086389395551",
+      "channel_id": "1131839817982947429",
+      "content": "https://www.youtube.com/watch?v=SArh0IoxN9k <:please:1356053110375714817> <:plea",
+      "author": "annaxxe_",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402975670950432808",
+      "channel_id": "1170692781216378960",
+      "content": "Light after getting pushed off 36k",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1402997331280003134",
       "content": "我们先把繁衍狂热的语音给补了再考虑……",
@@ -69,130 +148,76 @@
       "channel": "✅「已回答」杜勒需要加強"
     },
     {
-      "id": "1402997876245794857",
-      "content": "既然他說是負面效果那肯定是你回合開始要打音遊，沒有AP就減傷50%",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1403000024618635475",
-      "content": "塞三張石頭到敵人眼睛裡",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1402998507383689289",
-      "content": "是圖魯廚\n快跑",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": "✅「已回答」杜勒需要加強"
-    },
-    {
-      "id": "1402997799854932019",
-      "content": "音游应该是本地的 hhh所以应该不会lag",
+      "id": "1402901633784090684",
+      "channel_id": "1170692781216378960",
+      "content": "I have already conveyed everyone’s feedback to the Japanese publishing team. I c",
       "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402851343026356234",
-      "content": "Thank you for your feedback. We will fix the issues mentioned above as soon as p",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Rus translate"
+      "id": "1402972814494924820",
+      "channel_id": "1170692781216378960",
+      "content": "ok now with the fun update can we also get the \"i wasn't playing the game yet\" u",
+      "author": "lokao",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402997625447256154",
-      "content": "~~5000延迟打音游~~",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "id": "1402976857267245075",
+      "channel_id": "1170692781216378960",
+      "content": "I won",
+      "author": "spaively",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1403002326347812905",
-      "content": "打管家，但是8回合限制",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "id": "1403060462232408220",
+      "channel_id": "1170692781216378960",
+      "content": "We were trying to reach you to talk about your extended car warranty",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1403003161446453269",
-      "content": "需要深海再叫我",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "✅「已回答」杜勒需要加強"
+      "id": "1403090743500996628",
+      "channel_id": "1170692781216378960",
+      "content": "Buckle up once you get to chapters 7-9 and beyond",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402972046467661855",
-      "content": "天賦：殘骸上限提高到10，可選擇不食用殘骸或一次食用更多殘骸獲得多次加成。\n\n狂氣爆發：新增造成的傷害必定暴擊。\n吞噬：本次狂氣爆發的暴擊率+15%改為獲得一個",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "我幻想的杜勒賽因加強"
+      "id": "1402969767241056288",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/ping-pingeveryone-gif-18070386",
+      "author": "niemowa",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402809660850831454",
-      "content": "Omgg ily",
-      "author": "eirdonne_",
-      "reactions": 1,
-      "channel": "daffodil"
+      "id": "1402870559813140551",
+      "channel_id": "1131839817982947429",
+      "content": "400了 有点像没苦硬吃",
+      "author": "xuanxue007",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402831613817262181",
-      "content": "I checked the Chinese version, and the order is correct, but “faint” was acciden",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "7.28：400   Character appearance rate"
+      "id": "1402975432047071272",
+      "channel_id": "1170692781216378960",
+      "content": "EVERYONE WE NEED TO THANK THE 37k player",
+      "author": "lotan_045",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402999640231776410",
-      "content": "~~按照盾获得暴击伤害~~",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1403002560771784825",
-      "content": "大型叠叠乐肉鸽可是不得不品鉴的一环",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1403005097826586688",
-      "content": "打完整首發現對面還是活的\n身上還剩3次死亡抵抗",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1403046430641225738",
-      "content": "",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1402864861238792284",
-      "content": "显示问题",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "💭「处理中」三角血量"
-    },
-    {
-      "id": "1402997722172100669",
-      "content": "感谢反馈，我们查验看看<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」三角血量"
-    },
-    {
-      "id": "1402954293098709023",
-      "content": "are there plans to add 120 fps mode to steam or any other platform?",
-      "author": "clavinmclavin",
-      "reactions": 1,
-      "channel": "120 fps mode"
+      "id": "1403090969909268490",
+      "channel_id": "1170692781216378960",
+      "content": "Im on laptop",
+      "author": "lotan_045",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

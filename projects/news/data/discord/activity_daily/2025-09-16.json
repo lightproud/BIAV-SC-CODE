@@ -1,10 +1,19 @@
 {
   "date": "2025-09-16",
-  "messages": 8064,
+  "messages": 9126,
   "unique_authors": 202,
-  "reactions_total": 1409,
-  "attachments": 363,
+  "reactions_total": 1556,
+  "attachments": 417,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸canal-español": 226,
+    "🔸canal-português": 90,
+    "🔸ruang-obrolan-indonesia": 537,
+    "🔸ห้องสนทนาภาษาไทย": 77,
+    "🔸traphase": 17,
+    "🔸lore-chat": 78,
+    "🔸lets-count": 3,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
     "🔸morimens-game-chat": 6591,
     "🔸剧情交流": 5,
     "🔸晒卡分享": 73,
@@ -53,35 +62,34 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
-    "0": 170,
-    "1": 323,
-    "2": 264,
-    "3": 216,
-    "4": 280,
-    "5": 114,
-    "6": 183,
-    "7": 444,
-    "8": 526,
-    "9": 223,
-    "10": 391,
-    "11": 321,
-    "12": 317,
-    "13": 402,
-    "14": 537,
-    "15": 653,
-    "16": 770,
-    "17": 535,
-    "18": 316,
-    "19": 366,
-    "20": 133,
-    "21": 132,
-    "22": 314,
-    "23": 134
+    "1": 370,
+    "4": 398,
+    "5": 190,
+    "8": 538,
+    "13": 576,
+    "14": 708,
+    "15": 666,
+    "16": 792,
+    "0": 250,
+    "2": 288,
+    "3": 250,
+    "6": 191,
+    "9": 228,
+    "12": 382,
+    "17": 581,
+    "18": 350,
+    "19": 409,
+    "20": 144,
+    "23": 152,
+    "22": 323,
+    "7": 449,
+    "10": 406,
+    "11": 353,
+    "21": 132
   },
   "message_types": {
-    "0": 5062,
-    "19": 1936,
-    "20": 1
+    "0": 759,
+    "19": 303
   },
   "top_reacted_messages": [
     {
@@ -99,11 +107,27 @@
       "channel": ""
     },
     {
+      "id": "1417336452286517340",
+      "channel_id": "1300659662311526512",
+      "content": "Ta bonito",
+      "author": "yaoshidoppa",
+      "reactions": 29,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1417458001098571857",
       "content": "",
       "author": "zharysche",
       "reactions": 27,
       "channel": "⛓️"
+    },
+    {
+      "id": "1417483040090882118",
+      "channel_id": "1300659662311526512",
+      "content": "se gasto los personajes y ruedas mas rotas que tiene",
+      "author": "ancientbp",
+      "reactions": 20,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1417543048963031111",
@@ -153,12 +177,28 @@
       "channel": "画了杜勒赛因的卡牌！"
     },
     {
+      "id": "1417586697453174807",
+      "channel_id": "1300659662311526512",
+      "content": "“El gringo Frosthief”",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1417532464842412056",
       "channel_id": "1131839817982947429",
       "content": "需要誇獎",
       "author": "iak.rm",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417559535559905340",
+      "channel_id": "1300659662311526512",
+      "content": "🥰",
+      "author": "sayo.0320",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1417529502778654903",
@@ -206,38 +246,6 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "杜勒X皮克曼"
-    },
-    {
-      "id": "1417507369113354372",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "YAGPDB.xyz",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1417525540998610957",
-      "channel_id": "1170692781216378960",
-      "content": "I’m an old man it’s too confusing",
-      "author": "frosthief",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1417546353591975956",
-      "channel_id": "1170692781216378960",
-      "content": "Better?",
-      "author": "cooked_chicken99",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1417617401922453594",
-      "channel_id": "1170692781216378960",
-      "content": "Gacha games do love fishing",
-      "author": "xxxgirlkisserxxx",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

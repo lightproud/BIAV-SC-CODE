@@ -1,10 +1,22 @@
 {
   "date": "2025-09-28",
-  "messages": 9557,
+  "messages": 10783,
   "unique_authors": 161,
-  "reactions_total": 1991,
-  "attachments": 366,
+  "reactions_total": 2133,
+  "attachments": 429,
   "channel_activity": {
+    "🔸русский-канал": 200,
+    "🔸phòng-chat-tiếng-việt": 16,
+    "🔸canal-español": 325,
+    "🔸canal-português": 121,
+    "🔸ruang-obrolan-indonesia": 213,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 21,
+    "🔸lore-chat": 7,
+    "🔸lets-count": 2,
+    "🔸team-building": 16,
+    "🔸general-chat": 254,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
     "🔸morimens-game-chat": 8521,
     "🔸晒卡分享": 56,
     "🔸相位对弈": 1,
@@ -41,35 +53,34 @@
     "1420092491125755985": 5
   },
   "hourly_activity": {
-    "0": 160,
-    "1": 161,
-    "2": 527,
-    "3": 584,
-    "4": 516,
-    "5": 541,
-    "6": 299,
-    "7": 265,
-    "8": 204,
-    "9": 502,
-    "10": 502,
-    "11": 416,
-    "12": 763,
-    "13": 728,
-    "14": 481,
-    "15": 745,
-    "16": 496,
-    "17": 189,
-    "18": 163,
-    "19": 273,
-    "20": 342,
-    "21": 310,
-    "22": 89,
-    "23": 301
+    "1": 190,
+    "4": 521,
+    "8": 221,
+    "9": 546,
+    "10": 529,
+    "12": 788,
+    "13": 861,
+    "14": 661,
+    "15": 832,
+    "16": 580,
+    "17": 229,
+    "18": 195,
+    "19": 373,
+    "23": 318,
+    "3": 619,
+    "7": 320,
+    "2": 554,
+    "5": 562,
+    "20": 427,
+    "0": 232,
+    "11": 440,
+    "22": 106,
+    "6": 350,
+    "21": 329
   },
   "message_types": {
-    "19": 3032,
-    "0": 5729,
-    "46": 1
+    "0": 976,
+    "19": 250
   },
   "top_reacted_messages": [
     {
@@ -93,6 +104,14 @@
       "author": "reya.li",
       "reactions": 24,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421871308874190858",
+      "channel_id": "1300659662311526512",
+      "content": "todos son multicuenas de 24",
+      "author": "ancientbp",
+      "reactions": 17,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1421974613893840897",
@@ -119,12 +138,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1421683208457687172",
+      "channel_id": "1300659662311526512",
+      "content": "Quién lo manda a sobrevivir",
+      "author": "duxadidus",
+      "reactions": 11,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1421748905800106015",
       "channel_id": "1131839817982947429",
       "content": "过了\n塔薇+觉醒哈姆林+莱克钥令+女仆算力卡vs医生boss\n享受不一般的美味😋",
       "author": "ling_an_",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1421914097007595560",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "ancientbp",
+      "reactions": 10,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1421974095855353959",
@@ -191,43 +226,19 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1421677728809226271",
+      "channel_id": "1300659662311526512",
+      "content": "gracias papa dio",
+      "author": "ancientbp",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1421869624126865429",
       "channel_id": "1170692781216378960",
       "content": "Morimens chat talking about morimens <:processing:1357185814567718963>",
       "author": "_hyuuun",
       "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1421876748508860436",
-      "channel_id": "1170692781216378960",
-      "content": "spooky if you change youur name to Goliaths Bulge ill think about it",
-      "author": "devilishdesire222",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1421974003437932676",
-      "channel_id": "1170692781216378960",
-      "content": "im president of the universe",
-      "author": "bongosjam",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1421829760811532368",
-      "channel_id": "1170692781216378960",
-      "content": "AHHHHH IT HAS BEEN DONE",
-      "author": "grimalkaiser",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1421830711836540938",
-      "channel_id": "1170692781216378960",
-      "content": "if anyone ever needs guide ask me I’m literally top 1 guidemaker I’m just never ",
-      "author": "bagels5899",
-      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
   ]

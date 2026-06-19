@@ -1,10 +1,22 @@
 {
   "date": "2025-09-29",
-  "messages": 9029,
+  "messages": 11684,
   "unique_authors": 177,
-  "reactions_total": 1593,
-  "attachments": 448,
+  "reactions_total": 2059,
+  "attachments": 627,
   "channel_activity": {
+    "🔸русский-канал": 177,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 350,
+    "🔸canal-português": 27,
+    "🔸ruang-obrolan-indonesia": 331,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 1262,
+    "🔸lore-chat": 50,
+    "🔸lets-count": 8,
+    "🔸team-building": 29,
+    "🔸general-chat": 367,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
     "🔸morimens-game-chat": 8291,
     "🔸晒卡分享": 3,
     "🔸相位对弈": 1,
@@ -32,42 +44,74 @@
     "血香腸大狗狗": 1
   },
   "hourly_activity": {
-    "0": 543,
-    "1": 207,
-    "2": 278,
-    "3": 497,
-    "4": 391,
-    "5": 268,
-    "6": 321,
-    "7": 296,
-    "8": 376,
-    "9": 329,
-    "10": 341,
-    "11": 473,
-    "12": 765,
-    "13": 591,
-    "14": 405,
-    "15": 355,
-    "16": 242,
-    "17": 438,
-    "18": 379,
-    "19": 449,
-    "20": 401,
-    "21": 184,
-    "22": 328,
-    "23": 172
+    "0": 567,
+    "1": 231,
+    "2": 463,
+    "3": 683,
+    "4": 736,
+    "12": 787,
+    "13": 690,
+    "14": 703,
+    "15": 826,
+    "16": 354,
+    "17": 530,
+    "18": 432,
+    "19": 574,
+    "20": 447,
+    "22": 415,
+    "5": 459,
+    "6": 350,
+    "8": 405,
+    "9": 392,
+    "10": 390,
+    "11": 518,
+    "21": 199,
+    "23": 208,
+    "7": 325
   },
   "message_types": {
-    "0": 5650,
-    "19": 2710
+    "0": 2180,
+    "19": 475
   },
   "top_reacted_messages": [
+    {
+      "id": "1422238097088708658",
+      "channel_id": "1326453691527594035",
+      "content": "@everyone Sorry—we’re urgently tweaking balance so that before V2.4 arrives, the",
+      "author": "game.producer.light",
+      "reactions": 225,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1422239062651047956",
+      "channel_id": "1326453691527594035",
+      "content": "enjoy lotan‘s last happy night",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1422238212251979807",
+      "channel_id": "1326453691527594035",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 22,
+      "channel": "🔸traphase"
+    },
     {
       "id": "1422178516425769120",
       "content": "好喜歡狗狗<:power:1400771817659957258> <:power:1400771817659957258> <:power:140077181",
       "author": "sanyi2914",
       "reactions": 22,
       "channel": "血香腸大狗狗"
+    },
+    {
+      "id": "1422238284435951777",
+      "channel_id": "1326453691527594035",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 21,
+      "channel": "🔸traphase"
     },
     {
       "id": "1422018372664688731",
@@ -78,6 +122,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1422239946546348032",
+      "channel_id": "1326453691527594035",
+      "content": "two weeks later",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🔸traphase"
+    },
+    {
       "id": "1422284759664562268",
       "channel_id": "1170692781216378960",
       "content": "I Will ban all MPREG!",
@@ -86,12 +138,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1422265106007457882",
+      "channel_id": "1300659662311526512",
+      "content": "Ya salgan de mi cabeza 😭",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1422242879253774456",
       "channel_id": "1131839817982947429",
       "content": "我竟然也有過375的一天，我真的一直在哭",
       "author": "nazhigezihk",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1422269482315026492",
+      "channel_id": "1300659662311526512",
+      "content": "¿Cómo que la coste X no se guarda por mil turnos?",
+      "author": "duxadidus",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1422158587689697301",
@@ -133,6 +201,14 @@
       "channel": "V2.3.3.0 停服维护公告"
     },
     {
+      "id": "1422036588979945616",
+      "channel_id": "1400750050208125010",
+      "content": "wrong channel",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1422021455239057539",
       "channel_id": "1170692781216378960",
       "content": "Merci d’avoir bien prononcé mon nom. Je vais ranger les miettes de pain et le Gl",
@@ -154,70 +230,6 @@
       "content": "As the new president",
       "author": "spooky_penguin_",
       "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422235382862446813",
-      "channel_id": "1131839817982947429",
-      "content": "我破防了",
-      "author": "shchng.",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1422049613614944358",
-      "channel_id": "1170692781216378960",
-      "content": "gg 15ff jg diff",
-      "author": "arisuu0604",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422062057011937432",
-      "channel_id": "1170692781216378960",
-      "content": "ugly design, I skip",
-      "author": "blecnes",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422136807117688954",
-      "channel_id": "1170692781216378960",
-      "content": "<:takenotes:1357186646294138890>",
-      "author": "arisuu0604",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422158708338589738",
-      "channel_id": "1170692781216378960",
-      "content": "i wish fpreg was real",
-      "author": "spooky_penguin_",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422167475231002675",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "doktor.sex",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422191561663320305",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "_hyuuun",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1422193574916784250",
-      "channel_id": "1170692781216378960",
-      "content": "Wait a min, I have clem. I don't give a shit. I'll burst every turn",
-      "author": "aurora3981",
-      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
   ]

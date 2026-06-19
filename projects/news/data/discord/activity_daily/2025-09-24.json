@@ -1,10 +1,20 @@
 {
   "date": "2025-09-24",
-  "messages": 10161,
+  "messages": 10659,
   "unique_authors": 208,
-  "reactions_total": 2464,
-  "attachments": 510,
+  "reactions_total": 2501,
+  "attachments": 547,
   "channel_activity": {
+    "🔸русский-канал": 90,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 162,
+    "🔸ruang-obrolan-indonesia": 159,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 21,
+    "🔸lets-count": 7,
+    "🔸team-building": 16,
+    "🔸general-chat": 20,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
     "🔸morimens-game-chat": 8838,
     "🔸剧情交流": 57,
     "🔸晒卡分享": 38,
@@ -36,34 +46,34 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
-    "0": 276,
-    "1": 528,
-    "2": 501,
-    "3": 402,
-    "4": 337,
-    "5": 537,
-    "6": 717,
-    "7": 337,
-    "8": 346,
-    "9": 189,
-    "10": 405,
-    "11": 302,
-    "12": 349,
-    "13": 782,
-    "14": 662,
-    "15": 327,
-    "16": 397,
-    "17": 412,
-    "18": 456,
-    "19": 453,
-    "20": 588,
-    "21": 655,
-    "22": 170,
-    "23": 33
+    "0": 283,
+    "3": 415,
+    "5": 545,
+    "7": 357,
+    "8": 367,
+    "9": 204,
+    "10": 425,
+    "11": 313,
+    "12": 355,
+    "15": 469,
+    "16": 407,
+    "18": 469,
+    "19": 471,
+    "6": 735,
+    "1": 556,
+    "13": 791,
+    "14": 669,
+    "17": 415,
+    "20": 616,
+    "21": 661,
+    "22": 253,
+    "23": 40,
+    "2": 505,
+    "4": 338
   },
   "message_types": {
-    "0": 5717,
-    "19": 3298
+    "19": 102,
+    "0": 396
   },
   "top_reacted_messages": [
     {
@@ -142,6 +152,14 @@
       "channel": "✨冥府之路✨"
     },
     {
+      "id": "1420552476892856371",
+      "channel_id": "1300659662311526512",
+      "content": "Cuerpo santificado 🗣️🗣️🗣️🗣️",
+      "author": "isu3579",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1420244196651958293",
       "channel_id": "1170692781216378960",
       "content": "Luminous core obv",
@@ -210,14 +228,6 @@
       "channel_id": "1170692781216378960",
       "content": "Having a job: <:Pity:1400771620989308998> <:dead:1356082627509092372> 💵\nHaving n",
       "author": "runningaway_fs",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1420353928150646865",
-      "channel_id": "1170692781216378960",
-      "content": "hol on gimme like a few days and ill make ultra turn a simple guide or something",
-      "author": "nikolazuli",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
     }

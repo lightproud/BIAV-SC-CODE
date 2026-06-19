@@ -1,10 +1,12 @@
 {
   "date": "2025-08-17",
-  "messages": 63,
-  "unique_authors": 19,
-  "reactions_total": 187,
-  "attachments": 13,
+  "messages": 10415,
+  "unique_authors": 256,
+  "reactions_total": 1290,
+  "attachments": 433,
   "channel_activity": {
+    "🔸綜合討論": 826,
+    "🔸morimens-game-chat": 9526,
     "Clementine": 5,
     "Wplace tulu": 5,
     "Memories Within and Without [GDoll Fanfic]": 3,
@@ -31,26 +33,35 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "13": 6,
-    "14": 5,
-    "18": 4,
-    "17": 9,
-    "15": 4,
-    "16": 5,
-    "6": 4,
-    "7": 2,
-    "5": 1,
-    "11": 2,
-    "10": 4,
-    "21": 6,
-    "2": 1,
-    "9": 7,
-    "20": 2,
-    "12": 1
+    "0": 405,
+    "1": 455,
+    "2": 590,
+    "3": 642,
+    "4": 468,
+    "5": 374,
+    "6": 412,
+    "7": 345,
+    "8": 266,
+    "9": 472,
+    "10": 407,
+    "11": 673,
+    "12": 618,
+    "13": 450,
+    "14": 728,
+    "16": 213,
+    "17": 242,
+    "18": 166,
+    "19": 242,
+    "22": 245,
+    "23": 318,
+    "15": 638,
+    "20": 544,
+    "21": 502
   },
   "message_types": {
-    "0": 29,
-    "19": 8
+    "0": 7097,
+    "19": 3254,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -82,11 +93,27 @@
       "channel": "Memories Within and Without [GDoll Fanfic]"
     },
     {
+      "id": "1406580197393698827",
+      "channel_id": "1170692781216378960",
+      "content": "Yo glasses",
+      "author": "h1karv",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1406647040729157662",
       "content": "https://docs.google.com/document/d/19oZAR-tf-J668M4lq8wX-SXCiTLlIiqAvXgsAj7gp5g/",
       "author": "reya.li",
       "reactions": 12,
       "channel": "Beginner Guide to Caro"
+    },
+    {
+      "id": "1406637992361328722",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "doomsser",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1406654481071996939",
@@ -96,6 +123,22 @@
       "channel": "萊克"
     },
     {
+      "id": "1406580267862462556",
+      "channel_id": "1170692781216378960",
+      "content": "Im going to mpreg react u",
+      "author": "cooked_chicken99",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406567810452422656",
+      "channel_id": "1170692781216378960",
+      "content": "maybe your threats arent good enough",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1406664681208152225",
       "content": "<@633215996508766229>\n*如果取得slay the spire使用遊戲中ip和角色的使用許可，是否可以在遊戲打著與slay the spir",
       "author": "taoi002",
@@ -103,81 +146,76 @@
       "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406579599751647372",
-      "content": "This is still a capacity issue. Due to a lot of combat design work for the JP se",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+      "id": "1406681504590987356",
+      "channel_id": "1170692781216378960",
+      "content": "I was a day late 😔",
+      "author": "h1karv",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1406579737505042524",
-      "content": "我们正在努力做到这一点。",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+      "id": "1406609995054714940",
+      "channel_id": "1131839817982947429",
+      "content": "這題我會力量輔、力量盾、力倍角",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406635469818826762",
-      "content": "When entering the fight on the bottom left conner behind the mist, the battle is",
-      "author": "melwyn7591",
-      "reactions": 2,
-      "channel": "✅「Answered」Normal battle is treat as boss battle in H9-11"
+      "id": "1406613074747719750",
+      "channel_id": "1131839817982947429",
+      "content": "期待",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406708075150180402",
-      "content": "Yes 👍",
-      "author": "0_010",
-      "reactions": 1,
-      "channel": "Clementine"
+      "id": "1406566770055315477",
+      "channel_id": "1170692781216378960",
+      "content": "I'm so unlucky in this game bruh",
+      "author": "teemixd",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1406673713927295106",
-      "content": "You managed to capture Dolls character perfectly! It was a really nice read<:Emo",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "Memories Within and Without [GDoll Fanfic]"
+      "id": "1406578779337523220",
+      "channel_id": "1170692781216378960",
+      "content": "The characters are already weird on their own + the ppl here are also weird (pos",
+      "author": "h1karv",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1406647491981475972",
-      "content": "Luv u 🫶",
-      "author": "k3nt0t69",
-      "reactions": 1,
-      "channel": "Beginner Guide to Caro"
+      "id": "1406598304048877599",
+      "channel_id": "1131839817982947429",
+      "content": "剩我只有1k2抽了\n输光…",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406526885080596520",
-      "content": "https://youtu.be/-k1FW4M0rWg https://docs.google.com/spreadsheets/d/1cC7FOebdy_J",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "Flares' Comprehensive PvP Guide Spreadsheet + Video"
+      "id": "1406607975207932034",
+      "channel_id": "1131839817982947429",
+      "content": "24什麼時候出小丑人格皮<:Emoji_24_P_11:1400771541423226971>",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406749525485555804",
-      "content": "1. Generally events\n2. No, getting all the special items is enough. Some events ",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "farming priorities?"
+      "id": "1406648150000926834",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406677489258074303",
-      "content": "rn Nymp is considered unusable. Agrippa is somewhat viable but I think her main ",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "What do i need or who do i need for this team"
-    },
-    {
-      "id": "1406526088611369002",
-      "content": "Will there be a dedicated smaller part of the team that adds content to the roug",
-      "author": "thpdom",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406697694902358280",
-      "content": "<@1131790839291596841>",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Help"
+      "id": "1406577942561165434",
+      "channel_id": "1170692781216378960",
+      "content": "end of sex. they will delete the reproductive frenzy game mode",
+      "author": "sleepypillow",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,21 @@
 {
   "date": "2025-09-12",
-  "messages": 8223,
+  "messages": 9522,
   "unique_authors": 216,
-  "reactions_total": 1016,
-  "attachments": 382,
+  "reactions_total": 1090,
+  "attachments": 452,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 8,
+    "🔸canal-español": 183,
+    "🔸canal-português": 59,
+    "🔸ruang-obrolan-indonesia": 592,
+    "🔸ห้องสนทนาภาษาไทย": 143,
+    "🔸traphase": 105,
+    "🔸lore-chat": 113,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸general-chat": 76,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
     "🔸morimens-game-chat": 6389,
     "🔸剧情交流": 35,
     "🔸晒卡分享": 262,
@@ -45,34 +56,35 @@
     "我喜歡卡斯托爾": 2
   },
   "hourly_activity": {
-    "0": 371,
-    "1": 441,
-    "2": 343,
-    "3": 490,
-    "4": 490,
-    "5": 647,
-    "6": 460,
-    "7": 95,
-    "8": 132,
-    "9": 189,
-    "10": 401,
-    "11": 207,
-    "12": 300,
-    "13": 939,
-    "14": 838,
-    "15": 316,
-    "16": 176,
-    "17": 402,
-    "18": 161,
-    "19": 405,
-    "20": 196,
-    "21": 119,
-    "22": 45,
-    "23": 60
+    "4": 521,
+    "8": 176,
+    "11": 250,
+    "17": 505,
+    "0": 383,
+    "1": 469,
+    "2": 388,
+    "3": 516,
+    "5": 728,
+    "6": 482,
+    "9": 267,
+    "12": 410,
+    "13": 959,
+    "14": 894,
+    "15": 356,
+    "16": 436,
+    "18": 202,
+    "19": 501,
+    "21": 136,
+    "22": 59,
+    "23": 101,
+    "20": 205,
+    "7": 158,
+    "10": 420
   },
   "message_types": {
-    "0": 4889,
-    "19": 2163
+    "0": 925,
+    "19": 373,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -160,6 +172,14 @@
       "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
     },
     {
+      "id": "1415945750025605191",
+      "channel_id": "1300659662311526512",
+      "content": "cuando el pickman consegue la reliquias de aumento de daño base y sangrado es bo",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1415941624793665606",
       "channel_id": "1170692781216378960",
       "content": "The songs are good tho",
@@ -221,14 +241,6 @@
       "author": "monchi3524",
       "reactions": 6,
       "channel": "✅「Answered」Can you let us choose the start screen (log in animation)?"
-    },
-    {
-      "id": "1416046395961643068",
-      "channel_id": "1174983699935277147",
-      "content": "這世上究竟有甚麼是有意義的呢 何必討論意義 討論意義多沒意思 快樂就好了 不是嗎",
-      "author": "undecember_news",
-      "reactions": 5,
-      "channel": "🔸晒卡分享"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-08-16",
-  "messages": 156,
-  "unique_authors": 23,
-  "reactions_total": 1460,
-  "attachments": 21,
+  "messages": 10197,
+  "unique_authors": 332,
+  "reactions_total": 3925,
+  "attachments": 487,
   "channel_activity": {
+    "🔸綜合討論": 1158,
+    "🔸阵容构建": 12,
+    "🔸morimens-game-chat": 8871,
     "corpo acrylic figure (#v2.3 Fan Art)": 1,
     "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 2,
     "📜V2.3.1 版本前瞻┊ Version Outlook": 9,
@@ -28,35 +31,34 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "16": 4,
-    "5": 3,
-    "9": 4,
-    "18": 3,
-    "19": 4,
-    "20": 17,
-    "4": 1,
-    "21": 9,
-    "22": 1,
-    "0": 2,
-    "1": 3,
-    "3": 1,
-    "2": 2,
-    "6": 2,
-    "11": 41,
-    "12": 4,
-    "13": 9,
-    "14": 17,
-    "15": 7,
-    "23": 6,
-    "7": 1,
-    "8": 8,
-    "10": 4,
-    "17": 3
+    "0": 159,
+    "1": 375,
+    "2": 484,
+    "3": 489,
+    "4": 261,
+    "5": 196,
+    "6": 257,
+    "7": 378,
+    "8": 551,
+    "9": 576,
+    "10": 656,
+    "11": 451,
+    "12": 360,
+    "13": 550,
+    "14": 664,
+    "15": 760,
+    "16": 520,
+    "17": 637,
+    "18": 364,
+    "19": 360,
+    "20": 204,
+    "21": 213,
+    "23": 340,
+    "22": 392
   },
   "message_types": {
-    "4": 1,
-    "0": 38,
-    "19": 8
+    "0": 6684,
+    "19": 3357
   },
   "top_reacted_messages": [
     {
@@ -65,6 +67,14 @@
       "author": "morimensstaff02",
       "reactions": 1229,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1406228363198205955",
+      "channel_id": "1170692781216378960",
+      "content": "Great news — they replied! While they won’t do anything on their side and won’t ",
+      "author": "game.producer.light",
+      "reactions": 537,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1406236357449224202",
@@ -81,6 +91,38 @@
       "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
+      "id": "1406201844627144787",
+      "channel_id": "1170692781216378960",
+      "content": "Reality: Oh no she is actually terrible",
+      "author": "drunk.biscuit",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406238943783030887",
+      "channel_id": "1170692781216378960",
+      "content": "Honestly, without Slay the Spire, Morimens would never be what it is today! They",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406243326121869408",
+      "channel_id": "1170692781216378960",
+      "content": "i would eat uvhash babies (He preggo)",
+      "author": "cooked_chicken99",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406302842343653527",
+      "channel_id": "1170692781216378960",
+      "content": "We completely understand that I might seem a bit overreactive, but Slay the Spir",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1406237024305942669",
       "content": "now we can have bottled tornado awakener https://cdn.discordapp.com/attachments/",
       "author": "lokao",
@@ -95,6 +137,62 @@
       "channel": "Wplace像素繪"
     },
     {
+      "id": "1406241451733549137",
+      "channel_id": "1170692781216378960",
+      "content": "1) The long-form roguelike mode we mentioned will have a flow and route structur",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406236468124581918",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1406236357449224202",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406243557760827413",
+      "channel_id": "1170692781216378960",
+      "content": "i got him preggo (trust)",
+      "author": "cooked_chicken99",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406247751792201942",
+      "channel_id": "1170692781216378960",
+      "content": "New monsters, new relics, a new game mode, and stories about what would happen i",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406241745414651915",
+      "channel_id": "1170692781216378960",
+      "content": "Slay Morimens Spire",
+      "author": "solxeko",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406346063694004234",
+      "channel_id": "1170692781216378960",
+      "content": "E2 Doresain everyone!!!",
+      "author": "disgustedingucci",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406242186848239727",
+      "channel_id": "1170692781216378960",
+      "content": "Can someone answer what is the meaning of this sentence?",
+      "author": ".cnork",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1406237014688399461",
       "content": "先許願一下，想要個單角色闖塔模式(畢竟沿用4人1隊設計跟現在也沒什麼差別)\n每隻角色做幾種不同玩法的專造(例如墨菲沒傷害可以直接弄個新機制出傷如承傷或獻祭層數按",
       "author": "heikwok",
@@ -102,102 +200,20 @@
       "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406337292972327146",
-      "content": "How to trigger:\nGo to Awakers menu\nSelect normal Ramona.\nusing the bottom button",
-      "author": ".naptune",
-      "reactions": 5,
-      "channel": "💭「Processing」Ramona normal form remains black after transformation."
+      "id": "1406185639896023081",
+      "channel_id": "1170692781216378960",
+      "content": "No way on any planet is she older than 18 🥀🥀",
+      "author": "cooked_chicken99",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1406285155013886044",
-      "content": "As the title suggests, application of the discount after acquiring 1st Tawil's e",
-      "author": "darkfeet",
-      "reactions": 5,
-      "channel": "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)"
-    },
-    {
-      "id": "1406294872272535725",
-      "content": "如題 最近官方發布的貼文和活動內容使用簡體中文的情況變多了，甚至連角色機制介紹的長圖也都是簡體中文，看到忘卻前夜有在努力做英文日文等其他語言的翻譯，希望也不要忽",
-      "author": "unmasked0406",
-      "reactions": 4,
-      "channel": "✅「已回答」最近的簡體中文變多了"
-    },
-    {
-      "id": "1406237623130914867",
-      "content": "just one more run, the spire does not slay itself <:Emoji_24_P_11:14007715414232",
-      "author": "alfa1a",
-      "reactions": 3,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406222086808141834",
-      "content": "继上次超维和血肉的尝试之后，这次试图写一个混沌界域的\n感谢上次的指正让我对数值的设计有了一点概念，希望这次写的不是错误的🙈\nuid：100832341",
-      "author": "y_win7",
-      "reactions": 3,
-      "channel": "混沌唤醒体DIY"
-    },
-    {
-      "id": "1406236866826731651",
-      "content": "還有更重要的 會把打肉鴿的獎勵塞到排名嗎",
-      "author": "xingkongzhiyao_",
-      "reactions": 2,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406266215172931798",
-      "content": "故障機器人艾瑞卡說是",
-      "author": "xingkongzhiyao_",
-      "reactions": 2,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406363584354713700",
-      "content": "i do hope they think about it",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "📜V2.3.1 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1406374980102652035",
-      "content": "Hello! I'm a new player, i have been playing for four days. Before making this p",
-      "author": "hipermanuel",
-      "reactions": 1,
-      "channel": "What does the object Prototype Horizon do?"
-    },
-    {
-      "id": "1406237690378195026",
-      "content": "1. How do you plan to incorporate roguelike mechanics into your game's design an",
-      "author": ".cnork",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406239049252995132",
-      "content": "It's just so peak",
+      "id": "1406242328150282370",
+      "channel_id": "1170692781216378960",
+      "content": "And we'll be harvesting your embryo afterwards",
       "author": "solxeko",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406263085995659394",
-      "content": "所以新角色的元素奶也是致敬的一部分吗（不是）",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406278587190870057",
-      "content": "make bottled flame and bottled lightning as new relics but replace the picture w",
-      "author": "whirli_bri",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406279256925016138",
-      "content": "~~那殺戮尖塔方未來有希望和我們連動嗎~~",
-      "author": "tofu0834",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

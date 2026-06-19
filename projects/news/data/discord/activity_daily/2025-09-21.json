@@ -1,10 +1,22 @@
 {
   "date": "2025-09-21",
-  "messages": 9390,
+  "messages": 11343,
   "unique_authors": 263,
-  "reactions_total": 2970,
-  "attachments": 381,
+  "reactions_total": 3219,
+  "attachments": 507,
   "channel_activity": {
+    "🔸русский-канал": 877,
+    "🔸phòng-chat-tiếng-việt": 35,
+    "🔸canal-español": 475,
+    "🔸canal-português": 20,
+    "🔸ruang-obrolan-indonesia": 199,
+    "🔸ห้องสนทนาภาษาไทย": 38,
+    "🔸traphase": 61,
+    "🔸lore-chat": 10,
+    "🔸lets-count": 10,
+    "🔸team-building": 24,
+    "🔸general-chat": 194,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
     "🔸morimens-game-chat": 8148,
     "🔸剧情交流": 13,
     "🔸晒卡分享": 66,
@@ -27,34 +39,34 @@
     "Bang Dream It's 利莫里亞!!!!!      【不會再邀你了/CRYCHIC】": 9
   },
   "hourly_activity": {
-    "0": 386,
-    "1": 420,
-    "2": 116,
-    "3": 151,
-    "4": 420,
-    "5": 585,
-    "6": 372,
-    "7": 281,
-    "8": 236,
-    "9": 470,
-    "10": 527,
-    "11": 122,
-    "12": 543,
-    "13": 753,
-    "14": 623,
-    "15": 334,
-    "16": 318,
-    "17": 297,
-    "18": 242,
-    "19": 442,
-    "20": 269,
-    "21": 422,
-    "22": 558,
-    "23": 503
+    "0": 411,
+    "3": 196,
+    "4": 492,
+    "5": 669,
+    "6": 519,
+    "7": 395,
+    "8": 317,
+    "9": 542,
+    "10": 677,
+    "11": 244,
+    "12": 745,
+    "13": 828,
+    "14": 669,
+    "15": 387,
+    "16": 455,
+    "17": 357,
+    "18": 255,
+    "19": 474,
+    "20": 456,
+    "21": 453,
+    "23": 514,
+    "1": 575,
+    "2": 129,
+    "22": 584
   },
   "message_types": {
-    "0": 5072,
-    "19": 3214
+    "19": 436,
+    "0": 1517
   },
   "top_reacted_messages": [
     {
@@ -120,6 +132,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1419427540262588418",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "Deleted User",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1419269375092981834",
       "channel_id": "1170692781216378960",
       "content": "24 hours later he asked if he should buy the standard selectors",
@@ -150,6 +170,14 @@
       "author": "houseofleaves_.",
       "reactions": 13,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419140287501963296",
+      "channel_id": "1300659662311526512",
+      "content": "Eso fué sin querer, no lo pensé así",
+      "author": "lykansilver",
+      "reactions": 12,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1419261591634841621",
@@ -198,22 +226,6 @@
       "author": "game.producer.light",
       "reactions": 12,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1419294812779315351",
-      "channel_id": "1170692781216378960",
-      "content": "Now were truly starting to form a gacha community SOMEONE GO DRAW SOME MPREG",
-      "author": "whirli_bri",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1419341496267575356",
-      "channel_id": "1170692781216378960",
-      "content": "BRUH",
-      "author": "le_fishmael",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

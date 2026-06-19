@@ -1,10 +1,20 @@
 {
   "date": "2025-09-05",
-  "messages": 15359,
+  "messages": 18622,
   "unique_authors": 261,
-  "reactions_total": 1887,
-  "attachments": 616,
+  "reactions_total": 2024,
+  "attachments": 785,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 122,
+    "🔸canal-español": 910,
+    "🔸canal-português": 818,
+    "🔸ruang-obrolan-indonesia": 390,
+    "🔸ห้องสนทนาภาษาไทย": 756,
+    "🔸traphase": 61,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 6,
+    "🔸general-chat": 151,
+    "🔸邀请码互助┊swap-invitation-codes": 28,
     "🔸morimens-game-chat": 12451,
     "🔸剧情交流": 1,
     "🔸晒卡分享": 6,
@@ -51,34 +61,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "0": 280,
-    "1": 352,
-    "2": 567,
-    "3": 723,
-    "4": 1069,
-    "5": 704,
-    "6": 636,
-    "7": 799,
-    "8": 521,
-    "9": 559,
-    "10": 775,
-    "11": 1164,
-    "12": 1292,
-    "13": 946,
-    "14": 741,
-    "15": 590,
-    "16": 557,
-    "17": 662,
-    "18": 476,
-    "19": 478,
-    "20": 364,
-    "21": 388,
-    "22": 169,
-    "23": 547
+    "5": 731,
+    "6": 721,
+    "7": 1054,
+    "9": 667,
+    "10": 848,
+    "11": 1626,
+    "13": 1161,
+    "14": 848,
+    "15": 798,
+    "16": 661,
+    "17": 695,
+    "0": 315,
+    "1": 432,
+    "2": 599,
+    "3": 795,
+    "4": 1264,
+    "8": 871,
+    "12": 1760,
+    "18": 518,
+    "19": 589,
+    "20": 383,
+    "22": 224,
+    "23": 666,
+    "21": 396
   },
   "message_types": {
-    "19": 3758,
-    "0": 9564
+    "0": 2587,
+    "19": 676
   },
   "top_reacted_messages": [
     {
@@ -163,6 +173,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1413443310881738825",
+      "channel_id": "1326453763355185215",
+      "content": "was trying to find the N fanart it reminded me of and while I couldn't find the ",
+      "author": "insigible",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1413394235834499134",
       "channel_id": "1170692781216378960",
       "content": "Should I buy this?",
@@ -221,14 +239,6 @@
       "channel_id": "1170692781216378960",
       "content": "<@153999495347044352> Here, I made your next video's thumbnail for you. Free of ",
       "author": "sophiechoice",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1413439114828582973",
-      "channel_id": "1170692781216378960",
-      "content": "Hello, Can I ask whether or not someone who has just started this game today get",
-      "author": "emeraldzanycrocodrift",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
     }

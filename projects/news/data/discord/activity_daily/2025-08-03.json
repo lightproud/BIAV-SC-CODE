@@ -1,10 +1,13 @@
 {
   "date": "2025-08-03",
-  "messages": 24,
-  "unique_authors": 5,
-  "reactions_total": 101,
-  "attachments": 5,
+  "messages": 6798,
+  "unique_authors": 221,
+  "reactions_total": 618,
+  "attachments": 330,
   "channel_activity": {
+    "🔸綜合討論": 809,
+    "🔸阵容构建": 9,
+    "🔸morimens-game-chat": 5956,
     "daffodil": 1,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "✅「Answered」Ban by mistake refund": 1,
@@ -16,19 +19,34 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "22": 2,
-    "16": 1,
-    "2": 2,
-    "3": 1,
-    "15": 1,
-    "12": 4,
-    "13": 6,
-    "10": 5,
-    "5": 1,
-    "18": 1
+    "0": 427,
+    "1": 250,
+    "2": 265,
+    "3": 273,
+    "4": 92,
+    "5": 178,
+    "6": 405,
+    "7": 403,
+    "8": 247,
+    "9": 349,
+    "10": 297,
+    "11": 366,
+    "12": 401,
+    "13": 391,
+    "14": 129,
+    "15": 237,
+    "16": 450,
+    "17": 284,
+    "18": 366,
+    "20": 261,
+    "21": 179,
+    "22": 87,
+    "23": 48,
+    "19": 413
   },
   "message_types": {
-    "0": 1
+    "0": 4806,
+    "19": 1968
   },
   "top_reacted_messages": [
     {
@@ -53,32 +71,140 @@
       "channel": ""
     },
     {
-      "id": "1401606277049745558",
-      "content": "Hi! Hello! I was banned from Morimens and I think I know why: I stupidly request",
-      "author": "xraven90",
-      "reactions": 3,
-      "channel": "✅「Answered」Ban by mistake refund"
+      "id": "1401558214469746810",
+      "channel_id": "1170692781216378960",
+      "content": "stop impregnating me",
+      "author": "hexcerelle",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1401695895350808788",
-      "content": "我们计划在未来的大版本中处理。可能不会很快，但会追溯。 @everyone",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
+      "id": "1401672160950358016",
+      "channel_id": "1170692781216378960",
+      "content": "its to answer the question wrongly",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1401404345102373008",
-      "content": "https://discord.com/channels/1131791637933199470/1400569715276910724",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」调查数据有误"
+      "id": "1401558090209300551",
+      "channel_id": "1170692781216378960",
+      "content": "keep it that way",
+      "author": "hexcerelle",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1401583413156380863",
-      "content": "Oh no. That's fine. At least you checked the record. Thanks admin! Appreciate yo",
-      "author": "bert3",
-      "reactions": 1,
-      "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
+      "id": "1401669304822268028",
+      "channel_id": "1170692781216378960",
+      "content": "I'd do it again",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401671409209573376",
+      "channel_id": "1170692781216378960",
+      "content": "<:dead:1356082627509092372>",
+      "author": "lewyntapes",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401666050239758409",
+      "channel_id": "1131839817982947429",
+      "content": "<@1301813973703852035> 阿紅過了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401466070404956211",
+      "channel_id": "1170692781216378960",
+      "content": "finally my main team goes OE !",
+      "author": "ice3564",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401670474978689175",
+      "channel_id": "1170692781216378960",
+      "content": "Pandia jumpscare",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401463013147410493",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401466207458168864",
+      "channel_id": "1131839817982947429",
+      "content": "拉蒙娜為銀鑰手通常屬性選擇為銀鑰為主\n可以帶 專注精神 聚首時刻\n蘿坦為輸出手通常屬性著重於爆傷\n可以帶 死亡與剖析 致摯友 臨界點 海之夢 遺忘之手\n（看主屬",
+      "author": "wild_pansy",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401464069617225779",
+      "channel_id": "1170692781216378960",
+      "content": "horse",
+      "author": "mistakendoge",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401557353362620627",
+      "channel_id": "1170692781216378960",
+      "content": "brush his calls",
+      "author": "sexysneakystoat1625",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401603452236468275",
+      "channel_id": "1170692781216378960",
+      "content": "and tips from 400. but this next relic is blue/chaos.",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401462585802358854",
+      "channel_id": "1131839817982947429",
+      "content": "尼瑪 真不是給人玩的",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401357533293187122",
+      "channel_id": "1170692781216378960",
+      "content": "In my almost decade here. 0 lunch breaks 0 bathroom breaks at work",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401362890732339281",
+      "channel_id": "1170692781216378960",
+      "content": "banned. thanks",
+      "author": "craux.",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401386831194620006",
+      "channel_id": "1170692781216378960",
+      "content": "ok so",
+      "author": "arisuu0604",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

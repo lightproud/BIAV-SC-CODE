@@ -1,10 +1,12 @@
 {
   "date": "2025-08-15",
-  "messages": 217,
-  "unique_authors": 44,
-  "reactions_total": 427,
-  "attachments": 45,
+  "messages": 14388,
+  "unique_authors": 310,
+  "reactions_total": 3648,
+  "attachments": 533,
   "channel_activity": {
+    "🔸綜合討論": 2036,
+    "🔸morimens-game-chat": 12135,
     "Tier List for 375-425": 2,
     "Flares' Awaker Review : Corpo -  2 Videos. Recap Review. A tier Discard": 3,
     "Flares' Awaker Review : Horla - S Tier Support": 2,
@@ -35,41 +37,58 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "15": 5,
-    "0": 3,
-    "4": 7,
-    "5": 5,
-    "2": 3,
-    "3": 16,
-    "6": 8,
-    "8": 18,
-    "9": 8,
-    "10": 19,
-    "7": 18,
-    "16": 10,
-    "11": 10,
-    "19": 4,
-    "20": 5,
-    "21": 7,
-    "23": 4,
-    "17": 9,
-    "14": 18,
-    "12": 30,
-    "13": 6,
-    "18": 4
+    "0": 659,
+    "1": 675,
+    "2": 599,
+    "3": 507,
+    "4": 667,
+    "5": 523,
+    "6": 574,
+    "7": 458,
+    "8": 792,
+    "9": 893,
+    "10": 729,
+    "11": 628,
+    "12": 512,
+    "13": 450,
+    "14": 758,
+    "15": 805,
+    "16": 775,
+    "17": 752,
+    "18": 581,
+    "19": 464,
+    "21": 502,
+    "23": 444,
+    "20": 285,
+    "22": 356
   },
   "message_types": {
-    "0": 72,
-    "19": 16,
-    "6": 1
+    "0": 8898,
+    "19": 5273
   },
   "top_reacted_messages": [
+    {
+      "id": "1405923439285370931",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone Please note our latest updates on localization! Heartfelt thanks to <@",
+      "author": "game.producer.light",
+      "reactions": 443,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1405864369371349072",
       "content": "Hey there, Keepers!\nIt's me, Ace! I'm back with the Second Issue of Localization",
       "author": "morimens_15",
       "reactions": 93,
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405971027514757270",
+      "channel_id": "1170692781216378960",
+      "content": "Just a personal thought: I really, really want to do an homage crossover with Sl",
+      "author": "game.producer.light",
+      "reactions": 77,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1405929628673114194",
@@ -86,6 +105,14 @@
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
+      "id": "1405974144931205191",
+      "channel_id": "1170692781216378960",
+      "content": "Quick update to share with everyone:\nThe not-so-great news: our new art team has",
+      "author": "game.producer.light",
+      "reactions": 34,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1405911257936298015",
       "content": "",
       "author": "aurora3981",
@@ -98,6 +125,46 @@
       "author": "morimensstaff01",
       "reactions": 21,
       "channel": "V2.3.1 广播剧《永燃不烬的追猎》┊Radio Drama - Everburning Hunt"
+    },
+    {
+      "id": "1405928196205051935",
+      "channel_id": "1170692781216378960",
+      "content": "Haha i remember seeing that",
+      "author": ".galeroar",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405929507361263736",
+      "channel_id": "1170692781216378960",
+      "content": "After we finish the text translation, we’ll look into ways to improve the readin",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405924553070215271",
+      "channel_id": "1170692781216378960",
+      "content": "First, we did large-scale proofreading, maintained professional termbases, and i",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405927889354096681",
+      "channel_id": "1170692781216378960",
+      "content": "Even before we used AI, we already saw early players using on-screen translators",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405971524803891330",
+      "channel_id": "1170692781216378960",
+      "content": "Only My dream. Not Reality.",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1405865644515135538",
@@ -114,6 +181,22 @@
       "channel": ""
     },
     {
+      "id": "1405938267227951204",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "good.th",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405967428533354506",
+      "channel_id": "1170692781216378960",
+      "content": "Awakers are mostly non-alive people",
+      "author": "joker_0108",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1405864967885951017",
       "content": "",
       "author": "morimens_15",
@@ -121,87 +204,18 @@
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
+      "id": "1405975249895555124",
+      "channel_id": "1170692781216378960",
+      "content": "Because our JP server is about to officially launch, our small engineering team ",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1405864642265485424",
       "content": "",
       "author": "morimens_15",
       "reactions": 14,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405924718774714489",
-      "content": "Yeah am not going back to replay old chapters just because they were re-translat",
-      "author": "chiefcornflake",
-      "reactions": 14,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405927208001867939",
-      "content": "Correction, people with a full time job don't have time for that.",
-      "author": "chiefcornflake",
-      "reactions": 14,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405865053030322209",
-      "content": "**Upcoming UI Updates**\n\n● We're working on a feature that will let you **check ",
-      "author": "morimens_15",
-      "reactions": 13,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405864912500031578",
-      "content": "",
-      "author": "morimens_15",
-      "reactions": 12,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405823552359370824",
-      "content": "<:dishes:1356083313063759922> Here's the transcript of this time's Radio Drama, ",
-      "author": "morimens_15",
-      "reactions": 11,
-      "channel": "V2.3.1 广播剧《永燃不烬的追猎》┊Radio Drama - Everburning Hunt"
-    },
-    {
-      "id": "1405865128959807499",
-      "content": "**Term Updates**\n\nFinally, here's a selection of new terms for those of you who ",
-      "author": "morimens_15",
-      "reactions": 8,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405873278974824448",
-      "content": "if this is the translating bgm... I have no words XD",
-      "author": "thpdom",
-      "reactions": 7,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405873528850350174",
-      "content": "Oops is something playing? I was recording with headphones off<:takenotes:135718",
-      "author": "morimens_15",
-      "reactions": 7,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405873697591398401",
-      "content": "~~...You were playing music but you had your headphones off~~",
-      "author": "zier.0",
-      "reactions": 7,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405924961104691211",
-      "content": "Can you imagine walking into buckingham palace and the music playing is aviici",
-      "author": "whirli_bri",
-      "reactions": 7,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405878540578066505",
-      "content": "Appreciate you and the team works as always 🙏",
-      "author": "_venush",
-      "reactions": 5,
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     }
   ]

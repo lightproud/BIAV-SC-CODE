@@ -1,10 +1,11 @@
 {
   "date": "2025-08-31",
-  "messages": 165,
-  "unique_authors": 14,
-  "reactions_total": 87,
-  "attachments": 47,
+  "messages": 1370,
+  "unique_authors": 40,
+  "reactions_total": 356,
+  "attachments": 132,
   "channel_activity": {
+    "🔸綜合討論": 1205,
     "🫴💚👑🐙": 1,
     "Priority/Investment help.": 15,
     "Help me.": 1,
@@ -32,32 +33,33 @@
     "一點拉郎": 5
   },
   "hourly_activity": {
-    "0": 10,
-    "9": 11,
-    "14": 14,
-    "15": 5,
-    "16": 5,
+    "0": 65,
+    "1": 63,
+    "2": 40,
+    "3": 70,
+    "4": 57,
+    "5": 21,
+    "6": 120,
+    "7": 367,
+    "8": 70,
+    "9": 32,
+    "10": 105,
+    "11": 21,
+    "12": 75,
+    "13": 67,
+    "14": 135,
+    "15": 15,
+    "16": 7,
+    "22": 23,
+    "23": 7,
     "17": 3,
     "21": 5,
-    "23": 3,
-    "12": 11,
-    "3": 2,
-    "4": 2,
-    "8": 2,
-    "10": 17,
-    "13": 18,
-    "2": 23,
-    "7": 13,
-    "22": 9,
-    "1": 2,
-    "5": 5,
     "18": 1,
-    "6": 3,
     "20": 1
   },
   "message_types": {
-    "0": 83,
-    "19": 22
+    "0": 924,
+    "19": 281
   },
   "top_reacted_messages": [
     {
@@ -68,11 +70,27 @@
       "channel": "🫴💚👑🐙"
     },
     {
+      "id": "1411724561652908224",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲我用這個換的",
+      "author": "insomnia07763",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1411783513950392412",
       "content": "反正就審慎考慮好再做吧，別翻車就好\n\n目前也沒多少角色合適做成高級皮，一些常駐角色甚至從來沒有登場過，目前文案相比忘卻篇水平大幅下降也是事實\n\n星辰篇連||常駐",
       "author": "heikwok",
       "reactions": 13,
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411625333903462510",
+      "channel_id": "1131839817982947429",
+      "content": "我該打死我的追隨者嗎……\n說不定他會借我的「24」耶",
+      "author": "insomnia07763",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1411659585072398388",
@@ -82,6 +100,30 @@
       "channel": "POSSES future and changes"
     },
     {
+      "id": "1411723541317025842",
+      "channel_id": "1131839817982947429",
+      "content": "能多拉一个70了（揣摩",
+      "author": "jidu1418",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1411722964512014356",
+      "channel_id": "1131839817982947429",
+      "content": "额外通关狗都不打",
+      "author": "jidu1418",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1411724077130846360",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲啊，她进普池后我从三启捞到超限",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1411610550500331570",
       "content": "內有戈利亞X尤烏哈希拉郎， 只是一時興起的小短篇(T_T)一點貼貼⋯⋯\nUID:100047306\n\n—————————\n\n海水嚐起來是苦的。\n悲傷、痛苦，還有",
       "author": "yolo_mode",
@@ -89,109 +131,92 @@
       "channel": "一點拉郎"
     },
     {
-      "id": "1411606617580896266",
-      "content": "Yes, that is a bug! I have confirmed via the original Chinese text that the corr",
-      "author": "arkaether",
-      "reactions": 3,
-      "channel": "✅「Answered」PARADOX mistranslation \\bug"
-    },
-    {
-      "id": "1411604721357295628",
-      "content": "實際上獎勵是300筆，購買這邊只顯示150，我只注意到這個 官方可以再檢查其他獎勵看看",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "✅「已回答」課題的獎勵數量顯示錯誤"
-    },
-    {
-      "id": "1411586697916842135",
-      "content": "可以省下鯊魚褲子的費用花在神圖上嗎",
+      "id": "1411589275010601082",
+      "channel_id": "1131839817982947429",
+      "content": "||我不會說我第一眼看成校貓||",
       "author": "shchng.",
-      "reactions": 2,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411613476803055667",
-      "content": "考虑给环拉皮肤和之前的皮肤出周边吗，皮肤卖这么贵了那谷子能不能卖便宜点",
-      "author": "yingmai_",
-      "reactions": 2,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1411614960626434160",
+      "channel_id": "1131839817982947429",
+      "content": "杀戮尖塔",
+      "author": "carme.0588",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411624909335040072",
-      "content": "Some units intentions can break or bug the Aigis Petrify status, like Myriam att",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "💭「Processing」Petrify dispel"
+      "id": "1411620354019037225",
+      "channel_id": "1131839817982947429",
+      "content": "遠看很像大雷欸",
+      "author": "undecember_news",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411603511782670419",
-      "content": "偷偷放一個逃課隊伍",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "全4級400融災攻略"
+      "id": "1411622203900039181",
+      "channel_id": "1131839817982947429",
+      "content": "要借嗎 <:pray:1356053116260454534>",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411614659420749926",
-      "content": "我是預設這倆傢伙坐在床上<:hehe:1357185439089295390>",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "一點拉郎"
+      "id": "1411622419306774661",
+      "channel_id": "1131839817982947429",
+      "content": "新手缺金券  救救老殘窮",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411701252198236201",
-      "content": "From paid 5x pulls",
-      "author": "mrcheekyy",
-      "reactions": 1,
-      "channel": "Team Building Help"
+      "id": "1411720172716429412",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411705241522667540",
-      "content": "收到",
-      "author": "mrcheekyy",
-      "reactions": 1,
-      "channel": "Team Building Help"
+      "id": "1411724497362485289",
+      "channel_id": "1131839817982947429",
+      "content": "三个旧时代深海老登就墨菲又亲民又好用了",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411509121835859968",
-      "content": "probably 'cause of her exalt",
-      "author": "zev0558",
-      "reactions": 1,
-      "channel": "Just a few questions"
+      "id": "1411559391043260557",
+      "channel_id": "1131839817982947429",
+      "content": "不要碰深海",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411742151242682460",
-      "content": "For the standard wheel banner, pull for Titan, it’s the best dps wheel rn so try",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Investment Help"
+      "id": "1411564947590352998",
+      "channel_id": "1131839817982947429",
+      "content": "你很像什麼奇怪的推銷員",
+      "author": "sayo.0320",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1411705781446770780",
-      "content": "Yeah, the fact that they have an additional effect with the unit means that the ",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "POSSES future and changes"
-    },
-    {
-      "id": "1411811415936991313",
-      "content": "I suggest adding a testing stage where you can test your units. For example if I",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Testing stage"
-    },
-    {
-      "id": "1411539087046742069",
-      "content": "We will check this . Thanks for your feedback！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Interacting with an ultra space with the goal to consult the card,  leads to a softlock"
-    },
-    {
-      "id": "1411613685331394570",
-      "content": "低頭恐怕不夠，鯊魚要半蹲才能把頭靠上去",
+      "id": "1411601406523211827",
+      "channel_id": "1131839817982947429",
+      "content": "||中區投訴他沒踢你就不錯了||",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "一點拉郎"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1411612574621110383",
+      "channel_id": "1131839817982947429",
+      "content": "肯定是的，198讓皮膚動\n360多觸摸特效\n680改小人模型\n960新增語音\n1280解鎖獨特繁衍狂熱劇情",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

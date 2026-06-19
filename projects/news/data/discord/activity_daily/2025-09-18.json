@@ -1,10 +1,21 @@
 {
   "date": "2025-09-18",
-  "messages": 7895,
+  "messages": 9974,
   "unique_authors": 182,
-  "reactions_total": 1341,
-  "attachments": 324,
+  "reactions_total": 1643,
+  "attachments": 430,
   "channel_activity": {
+    "🔸русский-канал": 237,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 551,
+    "🔸canal-português": 225,
+    "🔸ruang-obrolan-indonesia": 227,
+    "🔸ห้องสนทนาภาษาไทย": 450,
+    "🔸traphase": 24,
+    "🔸lore-chat": 332,
+    "🔸lets-count": 4,
+    "🔸general-chat": 6,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
     "🔸morimens-game-chat": 7377,
     "🔸晒卡分享": 14,
     "🔸相位对弈": 10,
@@ -49,34 +60,34 @@
     "短小精悍的腦洞皮杜刀（？": 4
   },
   "hourly_activity": {
-    "0": 527,
-    "1": 277,
-    "2": 196,
-    "3": 240,
-    "4": 124,
-    "5": 67,
-    "6": 396,
-    "7": 395,
-    "8": 362,
-    "9": 206,
-    "10": 144,
-    "11": 289,
-    "12": 349,
-    "13": 546,
-    "14": 641,
-    "15": 583,
-    "16": 404,
-    "17": 416,
-    "18": 432,
-    "19": 282,
-    "20": 146,
-    "21": 356,
-    "22": 391,
-    "23": 126
+    "5": 358,
+    "6": 491,
+    "7": 459,
+    "8": 398,
+    "11": 436,
+    "13": 581,
+    "16": 647,
+    "17": 443,
+    "18": 547,
+    "19": 381,
+    "20": 173,
+    "21": 374,
+    "12": 646,
+    "0": 642,
+    "1": 317,
+    "3": 306,
+    "4": 189,
+    "9": 231,
+    "10": 159,
+    "14": 669,
+    "15": 622,
+    "22": 408,
+    "23": 259,
+    "2": 238
   },
   "message_types": {
-    "0": 5135,
-    "19": 2297
+    "0": 1584,
+    "19": 495
   },
   "top_reacted_messages": [
     {
@@ -103,12 +114,28 @@
       "channel": "角鬥士"
     },
     {
+      "id": "1418279293037056161",
+      "channel_id": "1300659662311526512",
+      "content": "Me encanta esa respuesta de la IA jajajaj",
+      "author": "haripax",
+      "reactions": 21,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418114105222500392",
       "channel_id": "1131839817982947429",
       "content": "~~呜呜呜点个薯条谢谢大家银河想吃疯狂星期四呜呜呜~~\nhttps://discord.com/channels/1131791637933199470/141",
       "author": "akalanden",
       "reactions": 20,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418363167938973736",
+      "channel_id": "1300659662311526512",
+      "content": "esparciendo la palabra de 24 a nuevos horizontes",
+      "author": "ancientbp",
+      "reactions": 16,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1418192416405454978",
@@ -119,12 +146,44 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1418025073050259570",
+      "channel_id": "1300659662311526512",
+      "content": "Deja de exponerme , ya tienes pareja",
+      "author": "Deleted User",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418274616866242642",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418304476191784980",
+      "channel_id": "1300659662311526512",
+      "content": "es el dueno",
+      "author": "null.pointer_exception",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418378196835106937",
       "channel_id": "1170692781216378960",
       "content": "anyway i do sound like a mad hater rn but yea just ew some of the graphical choi",
       "author": "renaiya",
       "reactions": 13,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418024714420486345",
+      "channel_id": "1300659662311526512",
+      "content": "Viva el amor",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1418232112062005331",
@@ -167,74 +226,27 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1418303104507449416",
+      "channel_id": "1300659662311526512",
+      "content": "<:Feelguilty:1400771618174664775> gente una duda pq tenemos a un miembro taiwane",
+      "author": "isu3579",
+      "reactions": 8,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418306956908560436",
+      "channel_id": "1300659718653476925",
+      "content": "https://www.youtube.com/watch?v=vpmF0jgQRpw",
+      "author": "ranzinzza",
+      "reactions": 8,
+      "channel": "🔸canal-português"
+    },
+    {
       "id": "1418090013253439558",
       "channel_id": "1170692781216378960",
       "content": "my luck is on fire tonight  ! look who i just got !",
       "author": "animevampire",
       "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418231827214241924",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/shelirionach-wizardry-variants-daphne-sleepy-gif-73852320",
-      "author": "startofu_fish",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418236595194171422",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "tnimreppep",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418307680723800156",
-      "channel_id": "1170692781216378960",
-      "content": "how about girls frontline 2",
-      "author": "runningaway_fs",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418359833954095154",
-      "channel_id": "1170692781216378960",
-      "content": "he'll see it an he'll cry anyways",
-      "author": "ancientbp",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418072928183914608",
-      "channel_id": "1131839817982947429",
-      "content": "24以外剩下的才是塔薇\n~~還有偶爾冒出來的怪東西~~",
-      "author": "water_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1418113399069605938",
-      "content": "写在前面——\n**赏个薯条给银河想吃疯狂星期四谢谢大家呜呜呜**",
-      "author": "akalanden",
-      "reactions": 8,
-      "channel": "【收米人&OC向】【繁衍狂热向】梦境之外"
-    },
-    {
-      "id": "1418167854758498315",
-      "channel_id": "1170692781216378960",
-      "content": "I just want my compensation <:cute1:1356053053568192717> \n-# I haven't even done",
-      "author": "sirtealot",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418227805245804554",
-      "channel_id": "1170692781216378960",
-      "content": "Lucky for once",
-      "author": "pedropolos",
-      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
   ]

@@ -1,10 +1,21 @@
 {
   "date": "2025-09-10",
-  "messages": 10304,
+  "messages": 11484,
   "unique_authors": 196,
-  "reactions_total": 1309,
-  "attachments": 436,
+  "reactions_total": 1492,
+  "attachments": 531,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 4,
+    "🔸canal-español": 291,
+    "🔸canal-português": 8,
+    "🔸ruang-obrolan-indonesia": 136,
+    "🔸ห้องสนทนาภาษาไทย": 182,
+    "🔸traphase": 19,
+    "🔸lore-chat": 445,
+    "🔸lets-count": 8,
+    "🔸team-building": 1,
+    "🔸general-chat": 70,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
     "🔸morimens-game-chat": 8859,
     "🔸剧情交流": 30,
     "🔸晒卡分享": 8,
@@ -52,34 +63,34 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "0": 293,
-    "1": 186,
-    "2": 368,
-    "3": 374,
-    "4": 597,
-    "5": 268,
-    "6": 614,
-    "7": 423,
-    "8": 494,
-    "9": 589,
-    "10": 487,
-    "11": 433,
-    "12": 672,
-    "13": 635,
-    "14": 606,
-    "15": 549,
-    "16": 552,
-    "17": 329,
-    "18": 378,
-    "19": 342,
-    "20": 335,
-    "21": 184,
-    "22": 178,
-    "23": 418
+    "0": 296,
+    "14": 611,
+    "1": 210,
+    "2": 403,
+    "3": 490,
+    "4": 659,
+    "6": 710,
+    "7": 434,
+    "9": 658,
+    "12": 909,
+    "13": 771,
+    "15": 602,
+    "16": 604,
+    "17": 403,
+    "18": 389,
+    "19": 350,
+    "20": 363,
+    "21": 189,
+    "22": 179,
+    "23": 430,
+    "11": 460,
+    "5": 301,
+    "8": 571,
+    "10": 492
   },
   "message_types": {
-    "19": 2640,
-    "0": 6412
+    "0": 935,
+    "19": 245
   },
   "top_reacted_messages": [
     {
@@ -160,6 +171,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1415155839802802333",
+      "channel_id": "1300659662311526512",
+      "content": "Main cuerpo santificado desde la beta",
+      "author": "vaimaaz",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1415154027997692056",
       "channel_id": "1170692781216378960",
       "content": "time for another gift code bois",
@@ -228,14 +247,6 @@
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "akalanden",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1415261687233249391",
-      "channel_id": "1131839817982947429",
-      "content": "<@926398065231921174> 喵喵",
-      "author": "sayo.0320",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }

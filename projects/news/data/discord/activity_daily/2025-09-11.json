@@ -1,10 +1,21 @@
 {
   "date": "2025-09-11",
-  "messages": 8639,
+  "messages": 10031,
   "unique_authors": 206,
-  "reactions_total": 1152,
-  "attachments": 389,
+  "reactions_total": 1295,
+  "attachments": 492,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 613,
+    "🔸canal-português": 28,
+    "🔸ruang-obrolan-indonesia": 445,
+    "🔸ห้องสนทนาภาษาไทย": 117,
+    "🔸traphase": 109,
+    "🔸lore-chat": 43,
+    "🔸lets-count": 6,
+    "🔸team-building": 1,
+    "🔸general-chat": 7,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
     "🔸morimens-game-chat": 6763,
     "🔸剧情交流": 31,
     "🔸晒卡分享": 7,
@@ -30,35 +41,34 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 306,
-    "1": 413,
-    "2": 288,
-    "3": 413,
-    "4": 511,
-    "5": 192,
-    "6": 366,
-    "7": 539,
-    "8": 542,
-    "9": 405,
-    "10": 453,
-    "11": 273,
-    "12": 208,
-    "13": 319,
-    "14": 330,
-    "15": 492,
-    "16": 691,
-    "17": 422,
-    "18": 433,
-    "19": 134,
-    "20": 65,
-    "21": 162,
-    "22": 311,
-    "23": 371
+    "10": 497,
+    "11": 313,
+    "15": 575,
+    "19": 171,
+    "0": 386,
+    "1": 516,
+    "2": 444,
+    "3": 430,
+    "4": 552,
+    "5": 242,
+    "6": 433,
+    "7": 558,
+    "12": 327,
+    "13": 433,
+    "14": 394,
+    "16": 794,
+    "17": 497,
+    "18": 480,
+    "22": 347,
+    "23": 411,
+    "21": 167,
+    "8": 559,
+    "9": 418,
+    "20": 87
   },
   "message_types": {
-    "0": 5256,
-    "19": 2027,
-    "20": 1
+    "0": 1046,
+    "19": 346
   },
   "top_reacted_messages": [
     {
@@ -182,44 +192,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1415599854066995201",
-      "channel_id": "1170692781216378960",
-      "content": "we know this",
-      "author": "Deleted User",
+      "id": "1415764281680465992",
+      "channel_id": "1300659662311526512",
+      "content": "ahora si, lechuga como un fresco",
+      "author": "neroku69",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1415616997172973648",
-      "channel_id": "1170692781216378960",
-      "content": "Is horla any good?",
-      "author": "treefartingguy",
+      "id": "1415764332238864624",
+      "channel_id": "1300659662311526512",
+      "content": "que se cuentan?",
+      "author": "neroku69",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1415641629544550522",
-      "channel_id": "1170692781216378960",
-      "content": "hello everyone",
-      "author": "arisuu0604",
+      "id": "1415766014859411567",
+      "channel_id": "1300659662311526512",
+      "content": "buh, pareces mas vieja que los viejos",
+      "author": "neroku69",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1415689351479955528",
-      "channel_id": "1170692781216378960",
-      "content": "I wish Tulu was a girl",
-      "author": "sirtealot",
+      "id": "1415766178982527048",
+      "channel_id": "1300659662311526512",
+      "content": "el que usa bandera arcoiris es gae",
+      "author": "neroku69",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1415656644758474762",
-      "channel_id": "1173463482503536711",
-      "content": "看完了皮克曼的剧情\n真是…每一段都让人惊喜啊\n愿称之为迄今为止你游最有宇宙恐怖氛围和洛老原著精神的剧情之一",
-      "author": "flarinsidia",
+      "id": "1415766187089985599",
+      "channel_id": "1300659662311526512",
+      "content": "ah",
+      "author": "neroku69",
       "reactions": 5,
-      "channel": "🔸剧情交流"
+      "channel": "🔸canal-español"
     }
   ]
 }

@@ -1,10 +1,22 @@
 {
   "date": "2025-09-14",
-  "messages": 8592,
+  "messages": 10133,
   "unique_authors": 188,
-  "reactions_total": 1397,
-  "attachments": 355,
+  "reactions_total": 1775,
+  "attachments": 455,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 299,
+    "🔸canal-português": 105,
+    "🔸ruang-obrolan-indonesia": 621,
+    "🔸ห้องสนทนาภาษาไทย": 38,
+    "🔸traphase": 95,
+    "🔸lore-chat": 115,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 5,
+    "🔸general-chat": 236,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
     "🔸morimens-game-chat": 6180,
     "🔸剧情交流": 66,
     "🔸晒卡分享": 30,
@@ -35,36 +47,68 @@
     "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你": 7
   },
   "hourly_activity": {
-    "0": 240,
-    "1": 145,
-    "2": 368,
-    "3": 135,
-    "4": 159,
-    "5": 438,
-    "6": 308,
-    "7": 649,
-    "8": 540,
-    "9": 453,
-    "10": 766,
-    "11": 577,
-    "12": 348,
-    "13": 573,
-    "14": 492,
-    "15": 352,
-    "16": 579,
-    "17": 278,
-    "18": 353,
-    "19": 124,
-    "20": 95,
-    "21": 61,
-    "22": 237,
-    "23": 322
+    "17": 302,
+    "23": 424,
+    "0": 330,
+    "1": 196,
+    "2": 466,
+    "3": 303,
+    "4": 199,
+    "6": 349,
+    "7": 685,
+    "11": 820,
+    "12": 415,
+    "15": 409,
+    "16": 618,
+    "18": 455,
+    "19": 139,
+    "20": 141,
+    "21": 83,
+    "22": 263,
+    "10": 781,
+    "13": 601,
+    "14": 502,
+    "5": 483,
+    "8": 603,
+    "9": 566
   },
   "message_types": {
-    "19": 1858,
-    "0": 5002
+    "0": 1137,
+    "19": 404
   },
   "top_reacted_messages": [
+    {
+      "id": "1416882526365941996",
+      "channel_id": "1300659662311526512",
+      "content": "De donde vino lo de poner bomba a los mensajes?",
+      "author": "isu3579",
+      "reactions": 41,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416882545202692126",
+      "channel_id": "1300659662311526512",
+      "content": "<:point:1356053112292511815>",
+      "author": "isu3579",
+      "reactions": 41,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416882566086266950",
+      "channel_id": "1300659662311526512",
+      "content": "No me se ese lore",
+      "author": "isu3579",
+      "reactions": 41,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416880603915092169",
+      "channel_id": "1300659662311526512",
+      "content": "y no se me ocurrio acumulacion",
+      "author": "yaoshidoppa",
+      "reactions": 33,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1416705034011414578",
       "content": "Cthulhu\nCa tu lu\nCat Tulu\n\nUID : 101012654",
@@ -73,11 +117,43 @@
       "channel": "Cat tulu"
     },
     {
+      "id": "1416860110210465944",
+      "channel_id": "1300659662311526512",
+      "content": "Ya salgan de mi cabeza",
+      "author": "Deleted User",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416883695251488909",
+      "channel_id": "1300659662311526512",
+      "content": "<:angry3:1356053026863058994>",
+      "author": "isu3579",
+      "reactions": 27,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416576394477047960",
       "content": "",
       "author": "flares117",
       "reactions": 26,
       "channel": "Flares' Pickman Fanart"
+    },
+    {
+      "id": "1416847929796464670",
+      "channel_id": "1300659662311526512",
+      "content": "Para envidiosas que no cayeron en mi",
+      "author": "Deleted User",
+      "reactions": 19,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416686941285519381",
+      "channel_id": "1300659662311526512",
+      "content": "<@645758482305253422> ud no duerme o q",
+      "author": "mokachinn_",
+      "reactions": 14,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1416634191982104657",
@@ -94,6 +170,22 @@
       "author": "ena04564",
       "reactions": 14,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416808813880807485",
+      "channel_id": "1300659662311526512",
+      "content": "<:cute1:1356053053568192717>",
+      "author": "amagawa.mary",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416885480519368784",
+      "channel_id": "1300659662311526512",
+      "content": "puedes transmitir o te explota boom ?",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1416852516930584596",
@@ -142,85 +234,6 @@
       "author": "fischperch",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416727971603157003",
-      "channel_id": "1131839817982947429",
-      "content": "~~按在xx上把翅膀掰开各种xx完了还戴上腿环什么的~~",
-      "author": "flarinsidia",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416750048154226783",
-      "channel_id": "1131839817982947429",
-      "content": "他昨天還叫我寶寶",
-      "author": "sayo.0320",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416806358052765728",
-      "channel_id": "1131839817982947429",
-      "content": "~~我的建議是你可以直接檢舉他詐欺~~",
-      "author": "ernest_heart",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416693726989783050",
-      "channel_id": "1170692781216378960",
-      "content": "my sister saw you on my discord and wanted to say this",
-      "author": "reya.li",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416725013024735424",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "poodaloom",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416736501735100507",
-      "channel_id": "1131839817982947429",
-      "content": "建議削弱畫家\n||衣服太厚了 我要他穿的跟雷亞一樣||",
-      "author": "0.0._.0_0.",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1416705171895091392",
-      "content": "Miss sanga agrees <:sleep2:1356085993626665200>",
-      "author": "noname0963",
-      "reactions": 8,
-      "channel": "Cat tulu"
-    },
-    {
-      "id": "1416694991538884729",
-      "channel_id": "1170692781216378960",
-      "content": "<@523084324724146193>",
-      "author": "spooky_penguin_",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1416701740530667560",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 7,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1416736054828072970",
-      "channel_id": "1131839817982947429",
-      "content": "加強繁衍狂熱🥵",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
     }
   ]
 }

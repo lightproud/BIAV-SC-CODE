@@ -1,10 +1,12 @@
 {
   "date": "2025-08-01",
-  "messages": 76,
-  "unique_authors": 12,
-  "reactions_total": 88,
-  "attachments": 27,
+  "messages": 8631,
+  "unique_authors": 237,
+  "reactions_total": 940,
+  "attachments": 619,
   "channel_activity": {
+    "🔸綜合討論": 612,
+    "🔸morimens-game-chat": 7943,
     "Ghoul": 4,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
     "Call for Community Volunteer Translators: Applications Open!": 2,
@@ -26,29 +28,35 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "15": 3,
-    "16": 9,
-    "17": 6,
-    "18": 1,
-    "4": 27,
-    "7": 1,
-    "1": 2,
-    "2": 2,
-    "11": 1,
-    "12": 1,
-    "19": 1,
-    "6": 6,
-    "8": 2,
-    "3": 9,
-    "14": 1,
-    "0": 1,
-    "5": 1,
-    "9": 1,
-    "10": 1
+    "0": 343,
+    "1": 353,
+    "2": 400,
+    "3": 278,
+    "4": 411,
+    "5": 503,
+    "6": 211,
+    "7": 157,
+    "8": 367,
+    "9": 423,
+    "10": 378,
+    "11": 240,
+    "13": 277,
+    "15": 256,
+    "16": 236,
+    "17": 184,
+    "18": 564,
+    "19": 667,
+    "20": 411,
+    "21": 430,
+    "12": 431,
+    "14": 326,
+    "22": 446,
+    "23": 339
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 5692,
+    "19": 2862,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -73,60 +81,140 @@
       "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
-      "id": "1400914204659290113",
-      "content": "I've been quite busy in real life, but in the next week or so I plan to update t",
-      "author": "reya.li",
-      "reactions": 4,
-      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+      "id": "1400924714314240062",
+      "channel_id": "1170692781216378960",
+      "content": "u know i can t let 1. Caecus be considered useful and 2. let that dog shit wheel",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400762010345410632",
-      "content": "根本不够用啊，群里高练度的群友都说缺钢笔洗密契，如果出相关礼包一定会买，比起红石头来说大家更需要钢笔，希望尽快上新礼包🙏🏻",
-      "author": "cheshire0529",
-      "reactions": 4,
-      "channel": "能不能考虑出钢笔礼包"
+      "id": "1400793560680366121",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah, yeah. Very funny putting the 🛌 there",
+      "author": "dragonshiny7",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400670500606316596",
-      "content": "关于【最高力量为0】的问题，我们已经查找到原因了，会尽快修复放出<:pray:1356053116260454534> \n其他问题我们看看<:Emoji_XLS",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」调查数据bug：最高力量"
+      "id": "1400920805684150374",
+      "channel_id": "1170692781216378960",
+      "content": "I just started, but I’m too deep in",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400891222603599924",
-      "content": "Yes. I have been experimenting with different styles lately so I thought of maki",
-      "author": "ayla1425",
-      "reactions": 1,
-      "channel": "Ghoul"
+      "id": "1400937393627861196",
+      "channel_id": "1131839817982947429",
+      "content": "让我们说谢谢野猫（）结论是谁打毒啊不如打击爽",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1400685122319155263",
-      "content": "還可以啦",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "神國圖魯教 星辰篇"
+      "id": "1400792929324503190",
+      "channel_id": "1170692781216378960",
+      "content": "It's so weird to sleep for longer than 4 hours, how do you guys do it?",
+      "author": "dragonshiny7",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400693990822777035",
-      "content": "去深海常駐撈看看有沒有圖魯跟墨菲",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "神國圖魯教 星辰篇"
+      "id": "1400852147100319905",
+      "channel_id": "1170692781216378960",
+      "content": "Like “support” Tawil",
+      "author": "red_rest",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400697262698664039",
-      "content": "四張",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "神國圖魯教 星辰篇"
+      "id": "1400878955875274954",
+      "channel_id": "1170692781216378960",
+      "content": "What is 24 btw",
+      "author": "noobwannabe",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400697511945048146",
-      "content": "手牌+2，回鑰能300每回合開鑰令不是夢，最重要的全體回狂讓他可以抵消鑰令的負面buff",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "神國圖魯教 星辰篇"
+      "id": "1400923884802543757",
+      "channel_id": "1170692781216378960",
+      "content": "alright trying to get it fixed",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400924988370059326",
+      "channel_id": "1170692781216378960",
+      "content": "what is this game even about, man, i am so lost",
+      "author": "krait223",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400925119672614992",
+      "channel_id": "1170692781216378960",
+      "content": "I don’t have that many units, I guess I’ll save it?",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400948611927507184",
+      "channel_id": "1170692781216378960",
+      "content": "~~it's like she's looking at walking garbage. I love her~~",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400860285266432100",
+      "channel_id": "1170692781216378960",
+      "content": "AH",
+      "author": "cooked_chicken99",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400914255959560293",
+      "channel_id": "1170692781216378960",
+      "content": "i don't use lotan,,,",
+      "author": "catcrox",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400919004561805433",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400922266489065542",
+      "channel_id": "1170692781216378960",
+      "content": "<:jakadsalute:627450788872060929>",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400927793050816554",
+      "channel_id": "1170692781216378960",
+      "content": "Wait tomorrow is Morimens first anniversary ?",
+      "author": "julien_akg",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400932169659973762",
+      "channel_id": "1170692781216378960",
+      "content": "thanks for supporting the game",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

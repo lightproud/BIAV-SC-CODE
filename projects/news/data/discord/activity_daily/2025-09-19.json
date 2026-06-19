@@ -1,10 +1,21 @@
 {
   "date": "2025-09-19",
-  "messages": 9237,
+  "messages": 10515,
   "unique_authors": 234,
-  "reactions_total": 2995,
-  "attachments": 475,
+  "reactions_total": 3317,
+  "attachments": 560,
   "channel_activity": {
+    "🔸русский-канал": 198,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 620,
+    "🔸canal-português": 44,
+    "🔸ruang-obrolan-indonesia": 270,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 17,
+    "🔸lore-chat": 29,
+    "🔸lets-count": 3,
+    "🔸general-chat": 76,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
     "🔸morimens-game-chat": 8225,
     "🔸晒卡分享": 10,
     "🔸한국어-채팅방": 11,
@@ -37,35 +48,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 241,
-    "1": 304,
-    "2": 509,
-    "3": 362,
-    "4": 430,
-    "5": 494,
-    "6": 472,
-    "7": 368,
-    "8": 369,
-    "9": 226,
-    "10": 132,
-    "11": 236,
-    "12": 433,
-    "13": 533,
-    "14": 581,
-    "15": 462,
-    "16": 398,
-    "17": 487,
-    "18": 826,
-    "19": 286,
-    "20": 259,
-    "21": 269,
-    "22": 310,
-    "23": 250
+    "0": 387,
+    "4": 465,
+    "6": 498,
+    "7": 397,
+    "12": 480,
+    "13": 577,
+    "14": 668,
+    "15": 497,
+    "17": 568,
+    "18": 881,
+    "19": 334,
+    "21": 336,
+    "23": 291,
+    "1": 401,
+    "2": 633,
+    "3": 426,
+    "5": 506,
+    "8": 452,
+    "9": 248,
+    "10": 144,
+    "11": 256,
+    "16": 406,
+    "20": 291,
+    "22": 373
   },
   "message_types": {
-    "0": 5452,
-    "19": 2793,
-    "20": 1
+    "0": 965,
+    "19": 313
   },
   "top_reacted_messages": [
     {
@@ -84,6 +94,14 @@
       "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
     },
     {
+      "id": "1418461022112452608",
+      "channel_id": "1300659662311526512",
+      "content": "Veo que te identificaste",
+      "author": "Deleted User",
+      "reactions": 36,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418665813992276070",
       "channel_id": "1170692781216378960",
       "content": "No worries light! all is forgiven, we understand that game development is extrem",
@@ -100,12 +118,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1418415522323628114",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 22,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418659298048868382",
       "channel_id": "1170692781216378960",
       "content": "Lately B.I.A.V. Studio has been insanely busy… I miss everyone.\nI hope you’re al",
       "author": "game.producer.light",
       "reactions": 22,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418568997632475268",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 21,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418658545859297352",
+      "channel_id": "1300659662311526512",
+      "content": "Pero ns q es",
+      "author": "mokachinn_",
+      "reactions": 21,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1418667154416468110",
@@ -122,6 +164,14 @@
       "author": "game.producer.light",
       "reactions": 20,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418463481392271391",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 18,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1418510493961945141",
@@ -163,6 +213,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1418450067978850345",
+      "channel_id": "1300659662311526512",
+      "content": "Bomba",
+      "author": "Deleted User",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418592376020140164",
       "channel_id": "1170692781216378960",
       "content": "🫃d🫃o 🫃 n🫃o 🫃t🫃 s🫃l🫃e🫃e🫃p 🫃o🫃n🫃 P🫃i🫃k🫃e🫃m🫃a🫃n🫃, 🫃I🫃'🫃v🫃e 🫃 p🫃l🫃a🫃y🫃e🫃d🫃s🫃o🫃m🫃a🫃n🫃",
@@ -176,52 +234,6 @@
       "content": "There are many questions that I really find hard to answer… so maybe I should ju",
       "author": "game.producer.light",
       "reactions": 13,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418500231674462218",
-      "content": "okay not putting tags since I already post one in chinese.Still, I am posting R1",
-      "author": "dittoqwq",
-      "reactions": 12,
-      "channel": "doresain x pickman fan fic R18"
-    },
-    {
-      "id": "1418431862858186813",
-      "content": "如题，大薅特薅\n\n———观前须知———\n>是基于皮克曼意识潜游及个人故事/语音等资料所做的人物考据，请在至少阅读过皮克曼意识潜游后食用以保证顺畅体验\n>不预先假",
-      "author": "flarinsidia",
-      "reactions": 12,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
-    },
-    {
-      "id": "1418623423344545873",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arisuu0604",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418653062448545916",
-      "channel_id": "1170692781216378960",
-      "content": "<@523084324724146193> <@1288446421573304364> <@873450579165331489> here's a full",
-      "author": "reya.li",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418611657852326302",
-      "channel_id": "1170692781216378960",
-      "content": "I shouldn't have invested on aequor",
-      "author": "sugarspawn",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1418661828208230481",
-      "channel_id": "1170692781216378960",
-      "content": "I will bully you",
-      "author": "spooky_penguin_",
-      "reactions": 10,
       "channel": "🔸morimens-game-chat"
     }
   ]

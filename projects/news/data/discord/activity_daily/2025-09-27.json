@@ -1,10 +1,22 @@
 {
   "date": "2025-09-27",
-  "messages": 8658,
+  "messages": 9499,
   "unique_authors": 172,
-  "reactions_total": 1551,
-  "attachments": 421,
+  "reactions_total": 1650,
+  "attachments": 483,
   "channel_activity": {
+    "🔸русский-канал": 219,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 111,
+    "🔸canal-português": 31,
+    "🔸ruang-obrolan-indonesia": 22,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 32,
+    "🔸lore-chat": 8,
+    "🔸lets-count": 8,
+    "🔸team-building": 120,
+    "🔸general-chat": 170,
+    "🔸邀请码互助┊swap-invitation-codes": 22,
     "🔸morimens-game-chat": 8005,
     "🔸晒卡分享": 8,
     "🔸欢乐梗图": 4,
@@ -26,35 +38,34 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
-    "0": 258,
-    "1": 226,
-    "2": 461,
-    "3": 767,
-    "4": 716,
-    "5": 301,
-    "6": 437,
-    "7": 284,
-    "8": 334,
-    "9": 338,
-    "10": 322,
-    "11": 454,
-    "12": 196,
-    "13": 331,
-    "14": 442,
-    "15": 296,
-    "16": 417,
-    "17": 461,
-    "18": 126,
-    "19": 417,
-    "20": 346,
-    "21": 249,
-    "22": 163,
-    "23": 316
+    "6": 444,
+    "9": 354,
+    "10": 466,
+    "12": 229,
+    "13": 360,
+    "14": 523,
+    "15": 357,
+    "16": 460,
+    "17": 506,
+    "18": 158,
+    "19": 432,
+    "20": 442,
+    "21": 348,
+    "22": 208,
+    "1": 237,
+    "0": 275,
+    "3": 787,
+    "4": 723,
+    "7": 286,
+    "11": 462,
+    "23": 330,
+    "8": 342,
+    "2": 466,
+    "5": 304
   },
   "message_types": {
-    "0": 5297,
-    "19": 2755,
-    "23": 1
+    "19": 133,
+    "0": 708
   },
   "top_reacted_messages": [
     {
@@ -84,6 +95,14 @@
       "author": "morimensstaff01",
       "reactions": 17,
       "channel": "忘却前夜OST：畸变丰穰之种"
+    },
+    {
+      "id": "1421360015717040302",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 15,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1421301879501226096",
@@ -201,14 +220,6 @@
       "channel_id": "1170692781216378960",
       "content": "Hello guys",
       "author": "speardroid",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1421509309174648913",
-      "channel_id": "1170692781216378960",
-      "content": "https://youtu.be/yOW1X9c9Tl0\nmy aequor alt finally doing things, they grow so fa",
-      "author": "zier.0",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

@@ -1,10 +1,12 @@
 {
   "date": "2025-08-24",
-  "messages": 57,
-  "unique_authors": 14,
-  "reactions_total": 83,
-  "attachments": 17,
+  "messages": 616,
+  "unique_authors": 43,
+  "reactions_total": 226,
+  "attachments": 39,
   "channel_activity": {
+    "🔸綜合討論": 557,
+    "🔸阵容构建": 2,
     "My fan art submission uid 101084291": 2,
     "Ryker fanart repost": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 4,
@@ -27,32 +29,34 @@
     "1408838316153114716": 1
   },
   "hourly_activity": {
-    "22": 4,
-    "9": 2,
-    "1": 2,
-    "5": 2,
-    "19": 1,
-    "20": 1,
-    "13": 2,
-    "12": 5,
-    "8": 4,
-    "7": 1,
-    "16": 6,
-    "4": 2,
+    "1": 15,
+    "2": 38,
+    "3": 37,
+    "4": 18,
+    "5": 104,
+    "6": 129,
+    "7": 24,
+    "8": 7,
+    "9": 45,
+    "10": 23,
+    "11": 17,
+    "12": 19,
+    "13": 45,
+    "14": 40,
+    "15": 11,
+    "16": 13,
+    "19": 4,
+    "20": 3,
+    "21": 6,
+    "22": 8,
+    "23": 1,
     "18": 1,
-    "3": 4,
-    "6": 2,
     "17": 2,
-    "21": 5,
-    "10": 2,
-    "14": 1,
-    "15": 1,
-    "11": 1,
     "0": 6
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "0": 396,
+    "19": 163
   },
   "top_reacted_messages": [
     {
@@ -70,11 +74,99 @@
       "channel": "My fan art submission uid 101084291"
     },
     {
+      "id": "1409136423948390410",
+      "channel_id": "1131839817982947429",
+      "content": "宿敵就是要素對方的迪",
+      "author": "ernest_heart",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1408969158619566200",
       "content": "如题，其实是你游的七夕份怪味小零食\n\n———观前须知———\n>星辰篇神国降临if线\n>有原创世界观和对你游设定的个人理解混入\n>有虚构史学家环节\n>女守中心视角",
       "author": "flarinsidia",
       "reactions": 8,
       "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+    },
+    {
+      "id": "1409184008239186079",
+      "channel_id": "1131839817982947429",
+      "content": "新手盡力了",
+      "author": "insomnia07763",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409054618318536784",
+      "channel_id": "1131839817982947429",
+      "content": "~~國際服玩家希望實裝小丑24幻衣~~",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409139265291419731",
+      "channel_id": "1131839817982947429",
+      "content": "只能和好變成枯燥乏味的情侶了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1408999054779744367",
+      "channel_id": "1131839817982947429",
+      "content": "水母覺醒是真硬阿\n1100盾",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409019180241391638",
+      "channel_id": "1131839817982947429",
+      "content": "为什么主c0启吃这么差，副c起飞超限",
+      "author": "sense25.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409020957493952653",
+      "channel_id": "1131839817982947429",
+      "content": "~~羊媽是經紀人~~",
+      "author": "dog794",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409021742772387932",
+      "channel_id": "1131839817982947429",
+      "content": "~~啊不過我是有+12子宮所以敢這麼說~~",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409054220375691274",
+      "channel_id": "1131839817982947429",
+      "content": "<@633215996508766229> \n~~日服玩家說希望貼圖可以上架line~~",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409186301185364100",
+      "channel_id": "1131839817982947429",
+      "content": "沒有72000當然是新手",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409186351370211490",
+      "channel_id": "1131839817982947429",
+      "content": "45000 其他人用腳都能打",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1409039733090156605",
@@ -98,53 +190,28 @@
       "channel": "相位對弈—認識隊伍"
     },
     {
-      "id": "1409293515610914937",
-      "content": "but yeah probably just post things in the thread, I've been going through that t",
-      "author": "arkaether",
+      "id": "1409001719966203925",
+      "channel_id": "1131839817982947429",
+      "content": "哦原來今天是隱密擺\n難怪想說不應該這麼誇張才對",
+      "author": "cwz.io",
       "reactions": 2,
-      "channel": "💭「Processing」Missing updated text and errors"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1409099471962378353",
-      "content": "https://vxtwitter.com/H135M7/status/1957363939815375027?t=i6ZXJPpRmpmr-7XdODhI2Q",
-      "author": "nazhigezihk",
+      "id": "1409008784638087169",
+      "channel_id": "1131839817982947429",
+      "content": "6",
+      "author": "rain_scarlet",
       "reactions": 2,
-      "channel": "萊克同人轉載"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1409071754550313013",
-      "content": "赶紧把商城兑换奖励这个端上来可以吗，我不想天天打那个破相位对弈了",
-      "author": "nekoiiii.",
-      "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1409233238118895739",
-      "content": "I tested this ingame and Lasting Loathe is indeed treated as a strike, so I'll a",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "💭「Processing」Missing updated text and errors"
-    },
-    {
-      "id": "1409104931797078068",
-      "content": "好色",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "萊克同人轉載"
-    },
-    {
-      "id": "1408983659150573688",
-      "content": "好美丽的饭……\n好赤（嚼嚼嚼）",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
-    },
-    {
-      "id": "1409011587590918318",
-      "content": "老蘇（嚼嚼嚼）這麼好赤的飯（嚼嚼嚼）怎麼現在才上（嚼嚼嚼）",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+      "id": "1409017955517206588",
+      "channel_id": "1131839817982947429",
+      "content": "心理医生不算医生.jpg",
+      "author": "lukinsky",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

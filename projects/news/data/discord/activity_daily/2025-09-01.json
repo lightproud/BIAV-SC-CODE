@@ -1,10 +1,21 @@
 {
   "date": "2025-09-01",
-  "messages": 12863,
+  "messages": 14394,
   "unique_authors": 216,
-  "reactions_total": 2371,
-  "attachments": 745,
+  "reactions_total": 3292,
+  "attachments": 883,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 64,
+    "🔸canal-español": 829,
+    "🔸canal-português": 220,
+    "🔸ruang-obrolan-indonesia": 212,
+    "🔸ห้องสนทนาภาษาไทย": 45,
+    "🔸traphase": 19,
+    "🔸lore-chat": 37,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 4,
+    "🔸general-chat": 31,
+    "🔸邀请码互助┊swap-invitation-codes": 69,
     "🔸morimens-game-chat": 10849,
     "🔸剧情交流": 29,
     "🔸晒卡分享": 6,
@@ -57,46 +68,45 @@
     "一點拉郎": 1,
     "刻印模組的副產物": 2,
     "板寫守密人遺書": 1,
-    "🔸礼包码┊gift-codes": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "6": 565,
-    "7": 566,
-    "8": 302,
-    "9": 575,
-    "10": 688,
-    "11": 552,
-    "12": 610,
-    "13": 414,
-    "14": 540,
-    "15": 470,
-    "16": 422,
-    "17": 515,
-    "18": 389,
-    "19": 433,
-    "20": 619,
-    "21": 460,
-    "22": 324,
-    "23": 296,
-    "3": 920,
-    "1": 807,
-    "2": 633,
-    "4": 684,
-    "5": 435,
-    "0": 644
+    "1": 1037,
+    "2": 793,
+    "3": 1090,
+    "5": 480,
+    "6": 618,
+    "7": 611,
+    "8": 313,
+    "9": 606,
+    "10": 738,
+    "0": 752,
+    "4": 748,
+    "11": 591,
+    "12": 628,
+    "13": 481,
+    "14": 648,
+    "15": 539,
+    "16": 449,
+    "17": 569,
+    "18": 397,
+    "19": 523,
+    "20": 644,
+    "21": 478,
+    "22": 333,
+    "23": 328
   },
   "message_types": {
-    "0": 5471,
-    "19": 2540,
-    "46": 1
+    "0": 1119,
+    "19": 412
   },
   "top_reacted_messages": [
     {
       "id": "1412015431887224914",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 26000守密人达成礼 / DC26000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 792,
+      "reactions": 801,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -112,6 +122,14 @@
       "author": "undecember_news",
       "reactions": 18,
       "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1411960648958476359",
+      "channel_id": "1300659662311526512",
+      "content": "<@633215996508766229>  if you're seeing this, the spanish community loves you! Y",
+      "author": "haripax",
+      "reactions": 17,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1411958290732159067",
@@ -236,14 +254,6 @@
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1411971612890239058",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "flares117",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

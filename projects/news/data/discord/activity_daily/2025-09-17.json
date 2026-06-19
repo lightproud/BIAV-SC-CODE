@@ -1,10 +1,22 @@
 {
   "date": "2025-09-17",
-  "messages": 10159,
+  "messages": 11204,
   "unique_authors": 184,
-  "reactions_total": 1465,
-  "attachments": 343,
+  "reactions_total": 1649,
+  "attachments": 394,
   "channel_activity": {
+    "🔸русский-канал": 178,
+    "🔸phòng-chat-tiếng-việt": 34,
+    "🔸canal-español": 472,
+    "🔸canal-português": 11,
+    "🔸ruang-obrolan-indonesia": 240,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 42,
+    "🔸lore-chat": 9,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 8,
+    "🔸general-chat": 36,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
     "🔸morimens-game-chat": 8646,
     "🔸剧情交流": 18,
     "🔸晒卡分享": 95,
@@ -12,7 +24,6 @@
     "🔸课间休息闲聊": 3,
     "🔸日本語チャンネル": 1,
     "🔸deutscher-chatraum": 6,
-    "🔸русский-канал": 94,
     "🔸綜合討論": 1202,
     "🔸阵容构建": 9,
     "Murphy 🍰": 2,
@@ -43,34 +54,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "0": 107,
-    "1": 505,
-    "2": 455,
-    "3": 347,
-    "4": 494,
-    "5": 535,
-    "6": 622,
-    "7": 429,
-    "8": 119,
-    "9": 341,
-    "10": 435,
-    "11": 553,
-    "12": 438,
-    "13": 544,
-    "14": 575,
-    "15": 631,
-    "16": 583,
-    "17": 537,
-    "18": 325,
-    "19": 528,
-    "20": 405,
-    "21": 339,
-    "22": 162,
-    "23": 150
+    "15": 644,
+    "16": 595,
+    "17": 565,
+    "18": 374,
+    "20": 427,
+    "21": 405,
+    "4": 538,
+    "5": 539,
+    "8": 136,
+    "9": 362,
+    "10": 467,
+    "12": 568,
+    "13": 643,
+    "14": 587,
+    "0": 125,
+    "1": 533,
+    "2": 478,
+    "3": 362,
+    "7": 457,
+    "19": 533,
+    "22": 228,
+    "23": 399,
+    "6": 631,
+    "11": 608
   },
   "message_types": {
-    "0": 6038,
-    "19": 2829
+    "0": 747,
+    "19": 298
   },
   "top_reacted_messages": [
     {
@@ -82,6 +93,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1417950052516626596",
+      "channel_id": "1300659662311526512",
+      "content": "1% probabilidades 99% de fe(de 53% a 7% dr)",
+      "author": "amagawa.mary",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418023422524657695",
       "channel_id": "1170692781216378960",
       "content": "hi everyone",
@@ -90,11 +109,27 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1417687338171109508",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 18,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1418001662081105920",
       "content": "",
       "author": "happyskull",
       "reactions": 17,
       "channel": "Murphy 🍰"
+    },
+    {
+      "id": "1417985519853502465",
+      "channel_id": "1300659662311526512",
+      "content": "bloquear usuario",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1417793440351256680",
@@ -110,6 +145,22 @@
       "author": "climbkaly",
       "reactions": 14,
       "channel": "Kaly Tier Lists - Sept 2025"
+    },
+    {
+      "id": "1417935199429464084",
+      "channel_id": "1300659662311526512",
+      "content": "Maldito vicio",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418010417166291168",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "ancientbp",
+      "reactions": 10,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1417964098850656367",
@@ -187,45 +238,6 @@
       "content": "can we bully lub",
       "author": "arisuu0604",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1417772495938781237",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1417783856978985011",
-      "channel_id": "1131839817982947429",
-      "content": "今年過年就有拿到啊，他老人家103歲了，老人年金沒啥地方要用的都存著，過年就包開心的，但是今年姑婆祖給我紅包前還有凹一下確認厚度才給我，給我大姐兩個小孩的才一人",
-      "author": "wqin.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1417792099675279361",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：皮克曼EP·疯画奇旅，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照",
-      "author": "morimensstaff01",
-      "reactions": 6,
-      "channel": "忘却前夜OST：皮克曼EP·疯画奇旅"
-    },
-    {
-      "id": "1417726775286435861",
-      "channel_id": "1170692781216378960",
-      "content": "ok why people getting arisu’ed",
-      "author": "arisuu0604",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1417750127623405580",
-      "channel_id": "1170692781216378960",
-      "content": "||🫃||||🫃||||🫃||||🫃||||🫃||||🫃||||🤰||||🫃||||🫃||\n||🫃||||🫃||||🫃||||🫃||||🤰||||🫃||||🫃|",
-      "author": "gisstar",
-      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
   ]
