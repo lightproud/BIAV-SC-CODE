@@ -1,9 +1,49 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-19T17:14:06.769297+00:00",
+  "archived_at": "2026-06-19T19:27:00.121025+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
+    {
+      "title": "第四届N厨杯-第十三日录播（蘸豆蠢享）",
+      "summary": "第十三日直播录播\n有观众提议做个只有打牌的版本，今天试做一下，反响好的话后续继续做。",
+      "source": "bilibili",
+      "time": "2026-06-19T17:51:48+00:00",
+      "url": "https://www.bilibili.com/video/BV12ajk6uEnA",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第四届N厨杯-第十三日录播（蘸豆蠢享）",
+      "summary": "第十三日直播录播\n有观众提议做个只有打牌的版本，今天试做一下，反响好的话后续继续做。",
+      "source": "bilibili",
+      "time": "2026-06-19T17:51:48+00:00",
+      "url": "http://www.bilibili.com/video/av116778013365900",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "video"
+    },
     {
       "title": "ø",
       "summary": "",

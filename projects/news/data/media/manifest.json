@@ -13397,6 +13397,27 @@
       "title": "ø",
       "time": "2026-06-19T16:12:29+00:00",
       "downloaded_at": "2026-06-19T17:14:06.667214+00:00"
+    },
+    "https://i.ytimg.com/vi/_eI-nTwlQ1g/hqdefault.jpg": {
+      "filename": "youtube_dc80383d73b8b1d1.jpg",
+      "source": "youtube",
+      "title": "Finally playing Myriam&#39;s Story (yes i&#39;m very late)",
+      "time": "2026-06-19T13:11:12Z",
+      "downloaded_at": "2026-06-19T19:26:57.900083+00:00"
+    },
+    "https://i.ytimg.com/vi/H-TC4r19OYc/hqdefault_live.jpg": {
+      "filename": "youtube_7afa33169fee8607.jpg",
+      "source": "youtube",
+      "title": "Morimens Tentacles go BRRRRRRT Chapter 3",
+      "time": "2026-06-19T19:14:03Z",
+      "downloaded_at": "2026-06-19T19:26:58.472547+00:00"
+    },
+    "https://i.ytimg.com/vi/0i9NT-dSRTA/hqdefault.jpg": {
+      "filename": "youtube_62ce2b39d8e7dd8c.jpg",
+      "source": "youtube",
+      "title": "Morimens Ch. 6 Finale!",
+      "time": "2026-06-19T19:04:59Z",
+      "downloaded_at": "2026-06-19T19:26:58.857959+00:00"
     }
   },
   "failed": {
@@ -19614,6 +19635,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-19T14:43:17.720227+00:00"
+    },
+    "https://preview.redd.it/op21in0qe98h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7f96b87cda3fe71f7adc6a75fa1d0be51cff61d2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T19:26:59.348301+00:00"
+    },
+    "https://preview.redd.it/fxulavnqk98h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b1a55f32b6ba68ba9b094cd7f1ec9f4de42816c5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T19:26:59.687169+00:00"
+    },
+    "https://preview.redd.it/tebbhxkk5a8h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=16650fa7915b904440d082e335c8f886dae15c38": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T19:27:00.031862+00:00"
     }
   },
   "archived": []
