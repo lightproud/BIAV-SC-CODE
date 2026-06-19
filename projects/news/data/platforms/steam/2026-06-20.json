@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-19T19:27:00.127678+00:00",
+  "archived_at": "2026-06-19T21:03:21.000163+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] good game, pretty art",
@@ -22,6 +22,28 @@
         "playtime_forever": 342,
         "votes_up": 0,
         "timestamp_created": 1781892485
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] F2P и упрощённый Darkest Dungeon с азиатским виден...",
+      "summary": "F2P и упрощённый Darkest Dungeon с азиатским виденьем. Зачем это выпускать в Steam, если не в силах сделать даже английский текст без ИИ? Зачем играть в это, если можно сыграть в серию Darkest Dungeon? \n\nАх, да. Забыл упомянуть, есть существует такая игра как Darkest Dungeon. Хы-хы.\n\n10 страж \\ 10 страж\n[hr][/hr]\nЦелевая аудитория игры - мобильные игроки. Насколько целесообразно публиковать ф2п мобильный клон DD в стиме без пучка локализаций? Не знаю.\n[spoiler][i]Кто-то эту [strike]игру[/strike] продукт полюбит, но явно не я.[/i] На меня будто выплюнули пережёванный Darkest Dungeon с примесью анимешной версии Bloodborne. Оставил бы позитивную оценку, но не люблю играть в эмульсии других игр.[/spoiler]",
+      "source": "steam_review",
+      "time": "2026-06-19T20:27:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199388710922/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199388710922",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 13,
+        "votes_up": 0,
+        "timestamp_created": 1781900838
       },
       "lang": "",
       "platform_region": "global"

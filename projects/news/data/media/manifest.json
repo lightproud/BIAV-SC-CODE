@@ -13418,6 +13418,34 @@
       "title": "Morimens Ch. 6 Finale!",
       "time": "2026-06-19T19:04:59Z",
       "downloaded_at": "2026-06-19T19:26:58.857959+00:00"
+    },
+    "https://i.ytimg.com/vi/LHxg_74oIx0/hqdefault.jpg": {
+      "filename": "youtube_f14af6ef2f7f7c5c.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)티어표를 위한상시캐 연구소",
+      "time": "2026-06-19T20:34:02Z",
+      "downloaded_at": "2026-06-19T21:03:16.864872+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/26ffe0751bacfdcad343a792a2cebb02412df3fc.jpg": {
+      "filename": "bilibili_064b5644726ae9d3.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］新手攻略 白送角色  第一章：1-5 思路解决全过程",
+      "time": "2026-06-19T13:31:21+00:00",
+      "downloaded_at": "2026-06-19T21:03:17.774871+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4f364d6f5e7405f12ebf86c4985f1df6c3a86ba4.jpg": {
+      "filename": "bilibili_aed76b70ac33657c.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］新手攻略 免费角色      第一章：1-2全程思路加战斗过程",
+      "time": "2026-06-19T13:15:18+00:00",
+      "downloaded_at": "2026-06-19T21:03:19.142886+00:00"
+    },
+    "https://i.ytimg.com/vi/Gw6QVuLZ43A/hqdefault_live.jpg": {
+      "filename": "youtube_ed7ba216c6ccb12f.jpg",
+      "source": "youtube",
+      "title": "[ENVtuber] Morimens and chill | !discord",
+      "time": "2026-06-19T19:53:22Z",
+      "downloaded_at": "2026-06-19T21:03:20.895902+00:00"
     }
   },
   "failed": {
@@ -19650,6 +19678,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-06-19T19:27:00.031862+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/26ffe0751bacfdcad343a792a2cebb02412df3fc.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T21:03:19.443398+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/4f364d6f5e7405f12ebf86c4985f1df6c3a86ba4.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T21:03:19.743955+00:00"
+    },
+    "https://preview.redd.it/bh1dypqjna8h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=dacb0aa2208e41a34493a49ab402ee7264ea2f49": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-19T21:03:20.242147+00:00"
     }
   },
   "archived": []
