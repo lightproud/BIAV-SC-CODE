@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T14:43:18.760335+00:00",
+  "archived_at": "2026-06-19T19:27:00.131227+00:00",
   "source": "weibo",
-  "item_count": 86,
+  "item_count": 87,
   "items": [
     {
       "title": "参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导\n\n忘却前夜",
@@ -1293,6 +1293,21 @@
       ],
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 #诞妄墨菲#\n做了一个微博主页背景",
+      "summary": "忘却前夜 #诞妄墨菲#\n做了一个微博主页背景",
+      "source": "weibo",
+      "time": "2026-06-19T00:32:00+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "",
+      "platform_region": ""
     }
   ]
 }

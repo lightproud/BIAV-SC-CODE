@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-19T17:14:06.772015+00:00",
+  "archived_at": "2026-06-19T19:27:00.126659+00:00",
   "source": "reddit",
-  "item_count": 30,
+  "item_count": 31,
   "items": [
     {
       "title": "How to get Pollux??",
@@ -449,6 +449,24 @@
       "is_hot": false,
       "author": "u//u/Few_Regret7377",
       "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Bug with Uvhash, please fix",
+      "summary": "Recently, I found this bug with Uvhash on the Arcade mode... and damn does it make it a pain to play Uvhash. Please fix.  &#32; submitted by &#32;  /u/Few_Regret7377   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-19T15:39:38+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1ua5bwh/bug_with_uvhash_please_fix/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Few_Regret7377",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/op21in0qe98h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7f96b87cda3fe71f7adc6a75fa1d0be51cff61d2",
+      "content_type": "image",
       "lang": "en",
       "platform_region": "global"
     }
