@@ -4,22 +4,22 @@
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
-    "reachability_method": "从活编排入口（工作流/MCP/命令/钩子）沿 Python 模块级 import 图做传递闭包；status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
+    "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 22,
-      "scripts_top": 14,
+      "scripts_top": 12,
       "scripts_news": 25,
       "scripts_wiki": 16,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 1,
       "projects": 4,
-      "total": 90
+      "total": 88
     },
     "reachability": {
-      "live": 44,
-      "test-only": 9,
-      "orphaned": 2
+      "live": 53,
+      "test-only": 0,
+      "orphaned": 0
     }
   },
   "workflows": [
@@ -242,17 +242,11 @@
   ],
   "scripts_top": [
     {
-      "id": "boot_snapshot.py",
-      "path": "scripts/boot_snapshot.py",
-      "summary": "boot_snapshot.py — 银芯启动快照生成器",
-      "planes": [],
-      "status": "orphaned"
-    },
-    {
       "id": "build_capability_registry.py",
       "path": "scripts/build_capability_registry.py",
       "summary": "build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -262,6 +256,7 @@
       "path": "scripts/character_persona.py",
       "summary": "character_persona.py — Character Persona Prompt Generator",
       "planes": [
+        "cli",
         "mcp"
       ],
       "status": "live",
@@ -272,31 +267,27 @@
       "path": "scripts/generate_wiki_pages.py",
       "summary": "Generate VitePress Markdown pages from processed JSON data.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
-    },
-    {
-      "id": "io_utils.py",
-      "path": "scripts/io_utils.py",
-      "summary": "io_utils.py — shared atomic file write helper.",
-      "planes": [],
-      "status": "orphaned"
     },
     {
       "id": "lua_parse.py",
       "path": "scripts/lua_parse.py",
       "summary": "Shared parser for runtime-extracted Lua table dumps.",
       "planes": [
-        "test"
+        "import"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。"
     },
     {
       "id": "mcp_server.py",
       "path": "scripts/mcp_server.py",
       "summary": "mcp_server.py — BIAV-SC Memory MCP Server",
       "planes": [
+        "cli",
         "mcp"
       ],
       "status": "live",
@@ -307,51 +298,57 @@
       "path": "scripts/parse_awaker_config.py",
       "summary": "Parse AwakerConfig.lua into structured character profiles JSON.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "[CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。"
     },
     {
       "id": "parse_cg_gallery.py",
       "path": "scripts/parse_cg_gallery.py",
       "summary": "Parse art_assets manifest.json to extract CG gallery data grouped by chapter.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "[CLI 手动] 解析 CG 画廊清单为分章 JSON。"
     },
     {
       "id": "parse_collection_hall.py",
       "path": "scripts/parse_collection_hall.py",
       "summary": "Parse CollectionHall.lua into structured JSON for world lore encyclopedia.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "[CLI 手动] 解析 CollectionHall.lua 为世界观百科 JSON。"
     },
     {
       "id": "parse_item_stories.py",
       "path": "scripts/parse_item_stories.py",
       "summary": "Parse Item.lua to extract items with background stories (StoryDesc field).",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "[CLI 手动] 解析 Item.lua 提取带背景故事的道具。"
     },
     {
       "id": "parse_voice_lines.py",
       "path": "scripts/parse_voice_lines.py",
       "summary": "Parse Voice.lua into structured JSON for wiki voice lines page.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only"
+      "status": "live",
+      "note_zh": "[CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。"
     },
     {
       "id": "report_render.py",
       "path": "scripts/report_render.py",
       "summary": "银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。",
       "planes": [
+        "cli",
         "command"
       ],
       "status": "live"
@@ -361,6 +358,7 @@
       "path": "scripts/silver_memory_tools.py",
       "summary": "silver_memory_tools.py —— 银芯记忆增强工具集",
       "planes": [
+        "cli",
         "mcp"
       ],
       "status": "live",
@@ -373,6 +371,7 @@
       "path": "projects/news/scripts/aggregator.py",
       "summary": "忘却前夜 Morimens - 社区热点聚合器",
       "planes": [
+        "cli",
         "command",
         "workflow"
       ],
@@ -401,6 +400,7 @@
       "path": "projects/news/scripts/archive_discord.py",
       "summary": "Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -410,6 +410,7 @@
       "path": "projects/news/scripts/archive_platforms.py",
       "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -419,6 +420,7 @@
       "path": "projects/news/scripts/backfill_forum_starters.py",
       "summary": "backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -428,6 +430,7 @@
       "path": "projects/news/scripts/backfill_gap.py",
       "summary": "backfill_gap.py — One-time script to backfill the Apr 13-25 data gap.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -437,6 +440,7 @@
       "path": "projects/news/scripts/backfill_media.py",
       "summary": "媒体补录器 — 扫全量归档，把仍存活的图片全部下载归档，二进制走 Releases（决策 038/059）。",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -446,6 +450,7 @@
       "path": "projects/news/scripts/backfill_platforms.py",
       "summary": "backfill_platforms.py — 多平台历史数据回溯采集",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -455,6 +460,7 @@
       "path": "projects/news/scripts/collect_fanart.py",
       "summary": "同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -464,6 +470,7 @@
       "path": "projects/news/scripts/collect_global.py",
       "summary": "collect_global.py — 全球社区采集桥接脚本",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -473,6 +480,7 @@
       "path": "projects/news/scripts/collect_video_comments.py",
       "summary": "YouTube 视频评论采集器（累积归档版）。",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -491,7 +499,7 @@
       "path": "projects/news/scripts/data_quality.py",
       "summary": "数据质量增强模块",
       "planes": [
-        "import"
+        "cli"
       ],
       "status": "live"
     },
@@ -500,6 +508,7 @@
       "path": "projects/news/scripts/discord_archiver.py",
       "summary": "Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -509,6 +518,7 @@
       "path": "projects/news/scripts/discord_list_guilds.py",
       "summary": "Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -518,6 +528,7 @@
       "path": "projects/news/scripts/download_media.py",
       "summary": "download_media.py — 全平台媒体资源下载器",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -545,7 +556,7 @@
       "path": "projects/news/scripts/playwright_collectors.py",
       "summary": "Playwright-based collectors for Morimens community news.",
       "planes": [
-        "import"
+        "cli"
       ],
       "status": "live"
     },
@@ -554,6 +565,7 @@
       "path": "projects/news/scripts/repair_gaps.py",
       "summary": "repair_gaps.py — Detect and report date gaps in platform archives.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -563,6 +575,7 @@
       "path": "projects/news/scripts/silent_sources_audit.py",
       "summary": "silent_sources_audit.py — 沉默源审计（基于归档历史）",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -581,6 +594,7 @@
       "path": "projects/news/scripts/split_output.py",
       "summary": "split_output.py — 按数据源分割 projects/news/output/news.json",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live"
@@ -590,7 +604,7 @@
       "path": "projects/news/scripts/taptap_collector.py",
       "summary": "TapTap 社区采集器 - Playwright 无头浏览器方案",
       "planes": [
-        "import"
+        "cli"
       ],
       "status": "live"
     }
@@ -601,9 +615,9 @@
       "path": "projects/wiki/scripts/build_banner_character_index.py",
       "summary": "Build a banner <-> character cross-index for Morimens summon banners.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only",
+      "status": "live",
       "note_zh": "构建卡池角色索引。"
     },
     {
@@ -611,9 +625,9 @@
       "path": "projects/wiki/scripts/build_drop_index.py",
       "summary": "Build a reverse drop index for Morimens stages.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only",
+      "status": "live",
       "note_zh": "构建掉落物索引。"
     },
     {
@@ -621,6 +635,7 @@
       "path": "projects/wiki/scripts/check_version.py",
       "summary": "check_version.py - Automated version update tracker for Morimens wiki.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -631,9 +646,9 @@
       "path": "projects/wiki/scripts/decrypt_and_extract.py",
       "summary": "Decrypt and extract Morimens encrypted AssetBundles.",
       "planes": [
-        "test"
+        "cli"
       ],
-      "status": "test-only",
+      "status": "live",
       "note_zh": "客户端解密 + 解包流水线（经子进程/手动调用）。"
     },
     {
@@ -641,6 +656,7 @@
       "path": "projects/wiki/scripts/extract_client_data.py",
       "summary": "Extract game data from Morimens Unity client using UnityPy.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -651,6 +667,7 @@
       "path": "projects/wiki/scripts/fetch_cards.py",
       "summary": "Fetch and enrich card data for all characters from Fandom wiki.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -661,6 +678,7 @@
       "path": "projects/wiki/scripts/fetch_lore.py",
       "summary": "Fetch detailed story/lore data from wiki sources and update lore.json.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -671,6 +689,7 @@
       "path": "projects/wiki/scripts/fetch_portraits.py",
       "summary": "Fetch character portrait images from wiki sources.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -681,6 +700,7 @@
       "path": "projects/wiki/scripts/fetch_skills.py",
       "summary": "Fetch character skill data from Fandom MediaWiki API and update characters.json.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -691,6 +711,7 @@
       "path": "projects/wiki/scripts/fetch_stages.py",
       "summary": "Fetch and enrich stage/level data with drop tables and recommended levels.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -701,6 +722,7 @@
       "path": "projects/wiki/scripts/fetch_stats.py",
       "summary": "Fetch character base stats (HP/ATK/DEF) from Fandom wiki sources.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -711,6 +733,7 @@
       "path": "projects/wiki/scripts/fetch_wheels.py",
       "summary": "Fetch Wheel of Destiny effect data from Fandom MediaWiki API.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -721,6 +744,7 @@
       "path": "projects/wiki/scripts/generate_pages.py",
       "summary": "Auto-generate VitePress character detail pages from characters.json + equipment.json.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -731,6 +755,7 @@
       "path": "projects/wiki/scripts/generate_rss.py",
       "summary": "generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",
@@ -741,6 +766,7 @@
       "path": "projects/wiki/scripts/validate_data.py",
       "summary": "Validate all wiki JSON data files against schemas and cross-references.",
       "planes": [
+        "cli",
         "workflow"
       ],
       "status": "live",

@@ -16,7 +16,13 @@
   "scripts_top": {
     "silver_memory_tools.py": "记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。",
     "character_persona.py": "艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。",
-    "mcp_server.py": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
+    "mcp_server.py": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。",
+    "lua_parse.py": "解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。",
+    "parse_awaker_config.py": "[CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。",
+    "parse_cg_gallery.py": "[CLI 手动] 解析 CG 画廊清单为分章 JSON。",
+    "parse_collection_hall.py": "[CLI 手动] 解析 CollectionHall.lua 为世界观百科 JSON。",
+    "parse_item_stories.py": "[CLI 手动] 解析 Item.lua 提取带背景故事的道具。",
+    "parse_voice_lines.py": "[CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。"
   },
   "scripts_wiki": {
     "wiki_sources.py": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。",
