@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T03:32:35.122456+00:00",
+  "archived_at": "2026-06-20T07:44:41.042388+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 9,
   "items": [
     {
       "title": "沙耶×洛天依",
@@ -26,6 +26,109 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "开花",
+      "summary": "-\n  └ Nautilus114 (0赞): 荧光的翅膀\n  └ Nautilus114 (0赞): 神了[笑哭]\n  └ lbl-li (0赞): ？！强强？！[热词系列_啊?]",
+      "source": "bilibili",
+      "time": "2026-06-20T04:05:11+00:00",
+      "url": "https://www.bilibili.com/video/BV1C3jE6vE7c",
+      "engagement": 206,
+      "is_hot": false,
+      "author": "忘忘忘月",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 203,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/d9beb62a7ab85595fb7e1213f19510042e74a842.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 四小強5-5",
+      "summary": "蹭獎用\n  └ iq2233 (0赞): 强强，重逢心愿能把女王之剑抓回来也挺不错的",
+      "source": "bilibili",
+      "time": "2026-06-19T19:12:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1rcjk68EVC",
+      "engagement": 107,
+      "is_hot": false,
+      "author": "呆呆松OWO",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 106,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/d2d30f030b33d2601bfaf8ebb2f2f388cc4cad16.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】经典尤乌队10t过主线h5-11",
+      "summary": "这队又能战到何时呢？\n昨天晚上闲下来想起来h5-11，最后的遗憾没打，借朋友号打个榜\n还是没赶上端午（\n  └ 弩箭陷阱 (2赞): 坚持传统吗，uw怎么会这样\n  └ 梦依流苏_myls (1赞): [香奈美·追寻那道光 应援装扮_让我看看][香奈美·追寻那道光 应援装扮_让我看看][香奈美·追寻那道光 应援装扮_让我看看]\n  └ 耳背的梨子 (1赞): [INTP逻辑学家_抛瓦]",
+      "source": "bilibili",
+      "time": "2026-06-20T04:38:06+00:00",
+      "url": "https://www.bilibili.com/video/BV1zWjE64ENg",
+      "engagement": 106,
+      "is_hot": false,
+      "author": "跳段木偶舞",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 91,
+        "comment_count": 15,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/83ed70611d7695c4025ee81a9cee34b62439e70a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 四小強5-5",
+      "summary": "蹭獎用",
+      "source": "bilibili",
+      "time": "2026-06-19T19:12:58+00:00",
+      "url": "http://www.bilibili.com/video/av116778348844719",
+      "engagement": 106,
+      "is_hot": false,
+      "author": "呆呆松OWO",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/d2d30f030b33d2601bfaf8ebb2f2f388cc4cad16.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "【忘却前夜】经典尤乌队10t过主线h5-11",
+      "summary": "这队又能战到何时呢？\n昨天晚上闲下来想起来h5-11，最后的遗憾没打，借朋友号打个榜\n还是没赶上端午（",
+      "source": "bilibili",
+      "time": "2026-06-20T04:38:06+00:00",
+      "url": "http://www.bilibili.com/video/av116780580213023",
+      "engagement": 92,
+      "is_hot": false,
+      "author": "跳段木偶舞",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/83ed70611d7695c4025ee81a9cee34b62439e70a.jpg",
+      "content_type": "video"
     },
     {
       "title": "第四届N厨杯-第十三日录播（蘸豆蠢享）",

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-20T03:32:29.692609+00:00",
+  "collected_at": "2026-06-20T07:44:32.675394+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -17,6 +17,96 @@
       "review": "W Ultra Realm my goat",
       "timestamp_created": 1781884419,
       "playtime_forever": 2583
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T05:41:20+00:00",
+      "lang": "english",
+      "title": "[负面] the download lasted longer than my interest in thi...",
+      "summary": "the download lasted longer than my interest in this game.  blah blah blah play a card blah blah blah blah blah play a card blah blah blah.  so much manga \"my classmate is so mean\" exposition i think they forgot that there was a card game in there.",
+      "url": "https://steamcommunity.com/profiles/76561198146581191/recommended/3052450",
+      "author": "76561198146581191",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "the download lasted longer than my interest in this game.  blah blah blah play a card blah blah blah blah blah play a card blah blah blah.  so much manga \"my classmate is so mean\" exposition i think they forgot that there was a card game in there.",
+      "timestamp_created": 1781934080,
+      "playtime_forever": 17
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T04:36:31+00:00",
+      "lang": "koreana",
+      "title": "[正面] 다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
+      "summary": "다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
+      "url": "https://steamcommunity.com/profiles/76561199698513210/recommended/3052450",
+      "author": "76561199698513210",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
+      "timestamp_created": 1781930191,
+      "playtime_forever": 7452
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T04:19:23+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199759037117/recommended/3052450",
+      "author": "76561199759037117",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1781929163,
+      "playtime_forever": 2444
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:43:14+00:00",
+      "lang": "english",
+      "title": "[正面] I have no idea what I am doing and not sure I am f...",
+      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
+      "author": "76561198035846757",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "timestamp_created": 1781926994,
+      "playtime_forever": 1736
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:15:00+00:00",
+      "lang": "english",
+      "title": "[正面] Hammy gives me stuff I like Hammy",
+      "summary": "Hammy gives me stuff I like Hammy",
+      "url": "https://steamcommunity.com/profiles/76561197964368748/recommended/3052450",
+      "author": "76561197964368748",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Hammy gives me stuff I like Hammy",
+      "timestamp_created": 1781925300,
+      "playtime_forever": 5750
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:07:31+00:00",
+      "lang": "english",
+      "title": "[正面] this game deserves way more recognition. story is...",
+      "summary": "this game deserves way more recognition. story is peak, character design is peak, and the card combat is actually fun. started for the Saya collab, but i will definitely be staying. if you're into lovecraftian style stuff & aesthetics like bloodborne, etc., then you will probably very much enjoy this game.",
+      "url": "https://steamcommunity.com/profiles/76561199466953504/recommended/3052450",
+      "author": "76561199466953504",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "this game deserves way more recognition. story is peak, character design is peak, and the card combat is actually fun. started for the Saya collab, but i will definitely be staying. if you're into lovecraftian style stuff & aesthetics like bloodborne, etc., then you will probably very much enjoy this game.",
+      "timestamp_created": 1781924851,
+      "playtime_forever": 1240
     },
     {
       "source": "steam",
@@ -91,7 +181,7 @@
       "voted_up": true,
       "review": "一款综合了明日方舟、星铁和杀戮尖塔的游戏，还是非常有感觉的！",
       "timestamp_created": 1781877751,
-      "playtime_forever": 1417
+      "playtime_forever": 1687
     },
     {
       "source": "steam",
@@ -106,7 +196,7 @@
       "voted_up": true,
       "review": "Знаете, в отличии от других гача-игр в эту можно залипнуть. Она в целом неплохая, но рекомендую всё таки играть на английском (перевод очень плох и меняется от обновы к обнове). Кому нравится карточный геймплей и гача элементы пойдёт, остальным не очень.",
       "timestamp_created": 1781874084,
-      "playtime_forever": 13243
+      "playtime_forever": 13361
     },
     {
       "source": "steam",
@@ -121,7 +211,7 @@
       "voted_up": true,
       "review": "At first I was skeptical about this game.\nI entered with expectation it was another cashgrab gacha game.\n\nI was wrong, the game was much better than what I initially expect. Although the bad side of gacha exist (like Fomo schemes, 2 types monthly subscription, etc), it is not something that the game really focus on.\nMost of the gaming experience can be enjoyed even without being dolphin or whales, the fomo on characters is not as bad as in other gacha game.\n\nCombat Gameplay & Team building:\nThe meat of the game, you can spend lots of time just thinking of the team setups.\nGame is not exactly easy and each turn you keep thinking how to do the best with what you have. \nThe shiny new units are definitely strong, but it's not exactly straightforward, and even with shiny newer units bad team setups won't win you the game.\n\nIronically, there are not many team building guides (although, their Discord is cooperative when asked for help), and this is surprisingly beneficial for the game. As players like me will often decide to go blind when tackling the stages instead of looking at guides, and crafting our own team, which is fun.\n\nStory:\nIt is good, and definitely not whatever-written.\nWhile it is not an award winning story, it is definitely an enjoyment to read (Many other gacha games, even the mainstream one, I just skip their awful story).\n\nDaily routine load:\nIf you're on the phase of just playing for the daily reward.\nIt is very Light (about 5~10 min), if you don't want to play daily, it is fine skipping some of the daily rewards.\nThe weekly is more important. However, daily gives you currency that unlocks side stories or past events, so newer players might want many of those from dailies.\n\nOthers:\nThere are many of the dev touch that made me appreciate the game, underappreciated little stuff that people easily missed, things that even if the devs did not do it it will still be ok, yet they still do it.\nThese are usually the case if the some members of the devs are passionate of their own game, something that devs that only interested in $ will never do.\n\nWeakness:\nThe 16 dupes is actually glaring issue for those that don't know much about this game.\n\nText describing skills and effects could be better, more concise and readable.\n\nSometimes, the power level goes far out of control, not in a good way, because most of it come from unnecessary complexities from certain character kits. So the teambuilding ceiling is (uncontrolled) awfully high, the difference between the bottom and top team is simply insane.\n\nIf you are completely F2P, the stamina may feel very strict and stingy, especially at beginning. Since the need to build 5 complete team (20 character) will be exhausting lots of resources.",
       "timestamp_created": 1781872235,
-      "playtime_forever": 5386
+      "playtime_forever": 5690
     },
     {
       "source": "steam",
@@ -166,37 +256,7 @@
       "voted_up": true,
       "review": "豪丸",
       "timestamp_created": 1781859176,
-      "playtime_forever": 1151
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T06:12:48+00:00",
-      "lang": "english",
-      "title": "[正面] Gothic maxxing",
-      "summary": "Gothic maxxing",
-      "url": "https://steamcommunity.com/profiles/76561198838488073/recommended/3052450",
-      "author": "76561198838488073",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Gothic maxxing",
-      "timestamp_created": 1781849568,
-      "playtime_forever": 1659
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T03:49:43+00:00",
-      "lang": "schinese",
-      "title": "[正面] 不赖",
-      "summary": "不赖",
-      "url": "https://steamcommunity.com/profiles/76561199077633940/recommended/3052450",
-      "author": "76561199077633940",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "不赖",
-      "timestamp_created": 1781840983,
-      "playtime_forever": 8845
+      "playtime_forever": 1154
     }
   ]
 }
