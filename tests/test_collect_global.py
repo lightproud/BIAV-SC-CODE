@@ -118,10 +118,10 @@ class TestFailureAggregation(unittest.TestCase):
         names mapped through NAME_TO_SOURCE_ID.
         """
         # Map display name → global_collectors attribute used by the fetcher list.
-        # ARCH-01 收敛（decisions.md 2026-06-20）：reddit/bilibili/discord 已移出 GC 编排
-        # （归 AC / archiver），故不在此映射；youtube 为 GC 保留的核心源。
+        # ARCH-01 收敛（decisions.md 2026-06-20）：reddit/bilibili/discord/taptap 已移出 GC
+        # 编排（归 AC / archiver），故不在此映射；youtube 为 GC 保留的核心源。
         attr_by_name = {
-            "TapTap": "fetch_taptap", "Weibo": "fetch_weibo",
+            "Weibo": "fetch_weibo",
             "App Store": "fetch_appstore_reviews", "Pixiv": "fetch_pixiv",
             "Note.com": "fetch_note_com", "Ruliweb": "fetch_ruliweb",
             "StopGame": "fetch_stopgame", "搜狗微信": "fetch_weixin",
@@ -156,11 +156,11 @@ class TestFailureAggregation(unittest.TestCase):
         # main() must exit non-zero when a core source fails (§4.2 R1),
         # even though good items were collected and written.
         def boom():
-            raise RuntimeError("taptap down")
+            raise RuntimeError("youtube down")
 
         self._patch_fetchers({
-            "TapTap": boom,
-            "Reddit": lambda: [_item("r", "https://r/1")],
+            "YouTube": boom,
+            "Twitter": lambda: [_item("t", "https://t/1")],
         })
         # Isolate all output writes: main() now persists via news_common.dump_json_atomic
         # (temp file + os.replace), which bypasses builtins.open — so stub it out to a

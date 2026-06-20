@@ -607,7 +607,30 @@ def fetch_taptap():
         offset += 10
         time.sleep(0.5)
 
-    logger.info(f'TapTap: fetched {len(items)} reviews')
+    review_count = len(items)
+
+    # ARCH-01 收敛（decisions.md 2026-06-20，守密人「GC 功能合并到 AC」）：吸收 GC 栈
+    # 独有的 topic 帖子能力（AC 原本仅评价）。topic 经 taptap_collector（Playwright）抓取；
+    # 评价优先用上面 webapiv2 富字段版，仅当 webapiv2 空时回退取 collector 的评价。
+    # Playwright 不可用（如纯 CI/测试环境）时静默跳过 topic，不影响 webapiv2 评价。
+    try:
+        import asyncio
+        import taptap_collector as _tc
+        topic_items, pw_reviews = asyncio.run(_tc.collect(cutoff=cutoff))
+        items.extend(topic_items)
+        if review_count == 0:
+            items.extend(pw_reviews)
+        logger.info(
+            f'TapTap: + {len(topic_items)} topic posts'
+            + ('' if review_count else f' + {len(pw_reviews)} fallback reviews')
+            + ' (taptap_collector)'
+        )
+    except ImportError:
+        logger.info('TapTap: taptap_collector/playwright unavailable, topic posts skipped')
+    except Exception as e:
+        logger.warning(f'TapTap topic collect failed: {e}')
+
+    logger.info(f'TapTap: fetched {len(items)} items ({review_count} webapiv2 reviews)')
     return items
 
 

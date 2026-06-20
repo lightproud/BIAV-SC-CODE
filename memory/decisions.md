@@ -74,6 +74,7 @@
 | **脑缸组信息分类法则 v1.0 落档 — 守密人 2026-05-06 采纳**：守密人 5-6 发布脑缸组级信息分类元法则 v1.0，落档于银芯：`memory/biav-info-classification.md`（守密人 Q1 裁定法则归属银芯 / 不内嵌 BIAV-SC.md，单独成档以避免膨胀）。**核心架构**：7 类主轴（IP / 游戏产品 / 周边产品 / 品牌建设 / 社区运营 / 组织 / AI）+ 3 性质标记（正典 / 记载 / 法则）+ 多字段轴（service_variant / stage / event_type / provenance / owner / lineage）。**核心原则 4 条**：主轴优先 标记其上 / 多轴正交 / 开放写入 异常捕捉 / 演化容忍。**派生视图替代「状态」**（如「当前线上版本」从正典 + 记载派生，不是独立性质）。**银芯特别约定**（守密人 Q3 裁定）：银芯所有 AI 会话角色 `owner` 字段统称「银芯」，不区分主控台 / Code-* 子角色。**retrofit** 既有银芯档案打元数据字段（守密人 Q2 裁定属工程议题）派给 Code-memory，brief 落档 `memory/dispatch-brief-code-memory-info-classification-retrofit.md`，先调研 + 试点，不做全量。**法则演化路径**：v1.0 是最小集，每接入新信息源回头迭代字段（§11 落地建议）。BIAV-SC.md 1.5 patch 完成后新 §6 内部协作章引用本法则。详见 `memory/biav-info-classification.md` | 全局 / 信息分类 |
 | **入口架构反转 — 守密人 2026-05-19 裁定**（覆盖 5-6 关于 CLAUDE.md / BIAV-SC.md 的全部裁定）：触发于守密人 5-19 关键洞察「BIAV-SC.md 必然是弱约束，这是 Claude 结构决定的」——LLM 注意力衰减 + 无硬执行机制 + 长文档稀释规则强度。**反转裁定**：(1) **CLAUDE.md 成为唯一 AI 入口**（Claude Code 平台自动加载 = 平台级强约束，比 BIAV-SC.md 弱约束有效），完整迁入艾瑞卡人格 / 项目本质 / 数据消费纪律 / 接入方能力盘点 / 知识模块索引 / 内部协作 + 工程操作 / 卡帕西原则引用 / 信息分类法则引用 + Light 维护速查附录；(2) **BIAV-SC.md 彻底废弃**（不保留指针，外部 AI 接入咒语改为直接读 CLAUDE.md raw URL —— Claude Code 自动加载 + 外部 raw URL 同源单一入口）；(3) **README.md 接入指引**改指向 CLAUDE.md。**废弃路径**：(a) decisions.md 同日收缩条目 + batch 1.5 patch brief 标 deprecated；(b) entry redesign batch 1 实施成果（BIAV-SC.md 350 行）作为内容来源逆向迁移到 CLAUDE.md，原文件 git rm；(c) 批量更新各 dispatch-brief / methodology / contribution-protocol 等引用 BIAV-SC.md 的地方 → CLAUDE.md。**接入咒语**改：「读 https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md 后以艾瑞卡身份协助我」。**多层约束分布表**（弱约束本质的实战应对）：工具层 enforce（硬）/ dispatch-brief 当下任务（强）/ 守密人即时纠正（强）/ session-digest 反向喂养（中）/ CLAUDE.md 自动加载（最强文档级，因为平台保证）。**实施派 Code-site**（新 brief：`memory/dispatch-brief-code-site-claude-md-unify.md`）。**回滚**：直推 main 政策下 git revert 即可。**新增 lesson #33 候选**：弱约束本质——任何 prompt 级 instructions 都是软约束，真正硬约束在工具层 / 平台层。详见本会话讨论 + 新 brief | 全局 / 入口架构 |
 | **卡帕西编码 4 原则采纳 — 守密人 2026-05-10 采纳**（本条为守密人 2026-06-09 授权补录，依据 CLAUDE.md §6 与 `memory/karpathy-coding-principles.md`）：上游为 Andrej Karpathy 2026-01-26 LLM 编码行为观察，与守密人硬约束「精简优雅可维护」同构。四原则：(1) **Think Before Coding**——动手前明示假设、多解释全部列出、简化路径主动提、不明就停手（反 pattern：列 5 个等价选项让守密人挑）；(2) **Simplicity First**——只写解决问题的最小代码，不做投机性功能 / 单用途抽象 / 未要求的可配置性；(3) **Surgical Changes**——只动必须动的行，不顺手「改进」相邻代码，只清理自己制造的孤儿；(4) **Goal-Driven Execution**——任务转化为可验证目标，定义成功标准后自主循环至验证通过。落地位置：CLAUDE.md §6 全文（所有写代码会话必读硬约束）。2026-06-09 审查发现本条目缺录（决策日志与 CLAUDE.md §6 脱节，lesson #29 同款模式），经守密人授权补录 | 全局 / 工程纪律 |
+| **pre-push 钩子重新引入防 413 — 守密人 2026-06-20 裁定（/grill 会话）**（部分推翻 2026-06-14「全部钩子退役」对本项约束）：触发于本会话推送 grill 移植成果时实测 HTTP 413，确认 lesson #28/#34/#39 真因——本地 origin/main 指针陈旧时 push 打「胖包」。裁定建 `.githooks/pre-push`：push 前自动 `git fetch origin main`，若当前分支落后则自动 `git rebase origin/main` 对齐（冲突则 abort 并提示手动），网络失败降级放行。**与 6-14 退役的区分**：6-14 退役的是会话生命周期钩子（settings.json 的 SessionStart 等，烦扰真因是「每次开工硬重置 + backup ref 不清理」）；本项是 git 层钩子，仅 push 时触发一次，不重蹈该坑。**装配**：git 不自动信任仓内 hooksPath，每个新克隆 / 云容器须跑一次 `git config core.hooksPath .githooks`。**形态诚实记录**：pre-push 阶段 rebase 会使本次 push 的引用失效，故对齐后需「重推一次」，非守密人设想的「同次放行」——此为 pre-push 技术边界，非缺陷。CLAUDE.md §7.4 同步 | 全局 / 基础设施 |
 
 ### 子项目
 
@@ -128,6 +129,11 @@ appstore/pixiv/google_play/bahamut/weixin/note_com/ruliweb/stopgame 保留。
 
 **god module 不拆**（关联裁定）：拆分会让 `test_aggregator_collectors` 100+ 处 mock（`ac.requests` 60 +
 `ac.` 内部 helper 49）失效，须重写上百处打桩、回归风险落在活的使命#1 管线，收益仅文件变短，不值得。
+
+**统一采集入口（2026-06-20 守密人 goal「合并所有采集器功能到 AC」）**：`aggregator.py` 成为唯一采集入口——
+先采 AC 平台，再内部调 `collect_global.main()` 采全球平台并产出最终 `news.json` + `news-raw.json`。
+`update-news.yml` 原独立的「Run global collectors」步并入 aggregator 步（env 取两步并集），删除单独步以免重复采集。
+`global_collectors.py` / `collect_global.py` 保留为被调库（函数与单测不动，避免 #4 的 mock 破坏），仅不再单独作为 workflow 步骤。
 
 ---
 

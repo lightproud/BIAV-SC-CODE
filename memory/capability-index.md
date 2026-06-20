@@ -4,7 +4,7 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-20
-- 功能总数：**78**
+- 功能总数：**81**
 - 脚本可达性：活 44 / 仅测试 0 / 孤儿 0
 
 ## 总览
@@ -17,7 +17,7 @@
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
-| 仓内技能 | 1 |
+| 仓内技能 | 4 |
 | 子项目 | 4 |
 
 ## 动态编排与可达性
@@ -128,7 +128,7 @@
   `projects/news/scripts/backfill_platforms.py`
 - **`collect_fanart.py`** _[活:cli+workflow]_ — 同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。  
   `projects/news/scripts/collect_fanart.py`
-- **`collect_global.py`** _[活:cli+workflow]_ — collect_global.py — 全球社区采集桥接脚本  
+- **`collect_global.py`** _[活:cli]_ — collect_global.py — 全球社区采集桥接脚本  
   `projects/news/scripts/collect_global.py`
 - **`collect_video_comments.py`** _[活:cli+workflow]_ — YouTube 视频评论采集器（累积归档版）。  
   `projects/news/scripts/collect_video_comments.py`
@@ -198,10 +198,16 @@
 - **`validate-data`** — 校验 wiki 数据库全部 JSON 数据文件。  
   `.claude/commands/validate-data.md`
 
-## 仓内技能（1）
+## 仓内技能（4）
 
 - **`anysearch`** — 实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。  
   `.claude/skills/anysearch/SKILL.md`
+- **`domain-modeling`** — Build and sharpen 银芯's shared language, and record decisions as they crystallise. Use when the keeper wants to pin down terminology, resolve a fuzzy term, capture an architectural decision, or when another skill (e.g. /grilling) needs to maintain the model.  
+  `.claude/skills/domain-modeling/SKILL.md`
+- **`grill`** — 拷问对齐 + 落档。守密人手动召唤，对一个计划/设计展开关系式逼问，并把结晶出的术语与决策实时落档。  
+  `.claude/skills/grill/SKILL.md`
+- **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
+  `.claude/skills/grilling/SKILL.md`
 
 ## 子项目（4）
 
