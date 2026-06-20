@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T07:44:41.533103+00:00",
+  "updated_at": "2026-06-20T10:28:56.936135+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -12,7 +12,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2167,
+      "total_items": 2170,
       "errors": []
     },
     "steam": {
@@ -20,7 +20,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 4951,
+      "total_items": 4955,
       "errors": []
     },
     "taptap": {
@@ -36,7 +36,7 @@
       "last_success_date": "2026-06-17",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 3,
-      "total_items": 6392754,
+      "total_items": 6666902,
       "errors": []
     },
     "youtube": {
@@ -44,7 +44,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2179,
+      "total_items": 2185,
       "errors": []
     },
     "reddit": {
@@ -52,7 +52,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3116,
+      "total_items": 3119,
       "errors": []
     },
     "official": {
@@ -68,7 +68,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 33,
+      "total_items": 34,
       "errors": []
     },
     "weibo": {
@@ -76,7 +76,7 @@
       "last_success_date": "2026-06-20",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 7229,
+      "total_items": 7244,
       "errors": []
     },
     "bahamut": {
@@ -148,7 +148,7 @@
       "last_success_date": "2026-06-18",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 2,
-      "total_items": 3718,
+      "total_items": 3738,
       "errors": []
     },
     "twitter": {

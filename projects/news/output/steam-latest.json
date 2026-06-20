@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-20T07:44:32.675394+00:00",
+  "collected_at": "2026-06-20T10:28:50.371705+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -17,6 +17,66 @@
       "review": "W Ultra Realm my goat",
       "timestamp_created": 1781884419,
       "playtime_forever": 2583
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T08:14:57+00:00",
+      "lang": "schinese",
+      "title": "[负面] 以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "summary": "以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "url": "https://steamcommunity.com/profiles/76561198859254261/recommended/3052450",
+      "author": "76561198859254261",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "timestamp_created": 1781943297,
+      "playtime_forever": 57
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T08:05:25+00:00",
+      "lang": "english",
+      "title": "[正面] Peak",
+      "summary": "Peak",
+      "url": "https://steamcommunity.com/profiles/76561198404468946/recommended/3052450",
+      "author": "76561198404468946",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Peak",
+      "timestamp_created": 1781942725,
+      "playtime_forever": 704
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T07:50:26+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "url": "https://steamcommunity.com/profiles/76561199755262590/recommended/3052450",
+      "author": "76561199755262590",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好看",
+      "timestamp_created": 1781941826,
+      "playtime_forever": 9835
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T07:26:02+00:00",
+      "lang": "schinese",
+      "title": "[正面] 哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底...",
+      "summary": "哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底的可以玩了",
+      "url": "https://steamcommunity.com/profiles/76561199732581586/recommended/3052450",
+      "author": "76561199732581586",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底的可以玩了",
+      "timestamp_created": 1781940362,
+      "playtime_forever": 1842
     },
     {
       "source": "steam",
@@ -46,7 +106,7 @@
       "voted_up": true,
       "review": "다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
       "timestamp_created": 1781930191,
-      "playtime_forever": 7452
+      "playtime_forever": 7535
     },
     {
       "source": "steam",
@@ -181,7 +241,7 @@
       "voted_up": true,
       "review": "一款综合了明日方舟、星铁和杀戮尖塔的游戏，还是非常有感觉的！",
       "timestamp_created": 1781877751,
-      "playtime_forever": 1687
+      "playtime_forever": 1793
     },
     {
       "source": "steam",
@@ -242,21 +302,6 @@
       "review": "this game have saya.",
       "timestamp_created": 1781865584,
       "playtime_forever": 235
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T08:52:56+00:00",
-      "lang": "schinese",
-      "title": "[正面] 豪丸",
-      "summary": "豪丸",
-      "url": "https://steamcommunity.com/profiles/76561198847924171/recommended/3052450",
-      "author": "76561198847924171",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "豪丸",
-      "timestamp_created": 1781859176,
-      "playtime_forever": 1154
     }
   ]
 }

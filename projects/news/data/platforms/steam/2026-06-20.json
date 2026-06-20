@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T07:44:41.049392+00:00",
+  "archived_at": "2026-06-20T10:28:56.463663+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 14,
   "items": [
     {
       "title": "[正面] good game, pretty art",
@@ -220,6 +220,94 @@
         "playtime_forever": 1240,
         "votes_up": 0,
         "timestamp_created": 1781924851
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "summary": "以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "source": "steam_review",
+      "time": "2026-06-20T08:14:57+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198859254261/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198859254261",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 57,
+        "votes_up": 0,
+        "timestamp_created": 1781943297
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Peak",
+      "summary": "Peak",
+      "source": "steam_review",
+      "time": "2026-06-20T08:05:25+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198404468946/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198404468946",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 704,
+        "votes_up": 0,
+        "timestamp_created": 1781942725
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "source": "steam_review",
+      "time": "2026-06-20T07:50:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199755262590/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199755262590",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 9835,
+        "votes_up": 0,
+        "timestamp_created": 1781941826
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底...",
+      "summary": "哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底的可以玩了",
+      "source": "steam_review",
+      "time": "2026-06-20T07:26:02+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199732581586/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199732581586",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1842,
+        "votes_up": 0,
+        "timestamp_created": 1781940362
       },
       "lang": "",
       "platform_region": "global"
