@@ -39,8 +39,11 @@ from aggregator_base import (
 from aggregator_collectors import (
     fetch_bilibili, fetch_discord_local, fetch_reddit,
     fetch_steam_discussions, fetch_steam_news, fetch_steam_reviews,
-    fetch_taptap, fetch_youtube,
+    fetch_taptap,
 )
+# NOTE: ARCH-01 收敛（decisions.md 2026-06-20）：youtube 唯一权威实现归 GC 栈
+# （collect_global 的官方 googleapis API）。AC 不再调度 fetch_youtube；该函数与其
+# 单测保留在 aggregator_collectors，仅退出生产编排，避免与 GC 重复采集。
 import news_common  # 哨兵文件摘要脱敏（H3）
 from sources import R1_HARD_FAIL_SOURCES  # §4.2 R1 硬失败源（单一真相源，sources.py）
 
@@ -74,9 +77,8 @@ def run():
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
         ('SteamDiscussions', fetch_steam_discussions),
-        ('YouTube', fetch_youtube),
         ('DiscordLocal', fetch_discord_local),
-    ]
+    ]  # YouTube 归 GC 栈（ARCH-01 收敛）
 
     # Initialize quality tracker for platform health monitoring
     quality_tracker = _get_quality_tracker()

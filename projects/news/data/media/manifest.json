@@ -13684,6 +13684,55 @@
       "title": "최상의 미미",
       "time": "2026-06-20T19:44:02+09:00",
       "downloaded_at": "2026-06-20T12:26:03.481173+00:00"
+    },
+    "https://i.ytimg.com/vi/5wpOn9iUwWQ/hqdefault.jpg": {
+      "filename": "youtube_92fa1d7e7ad87bda.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】反則級のデバフが付与されましたｗ【#shorts 】",
+      "time": "2026-06-20T13:15:33Z",
+      "downloaded_at": "2026-06-20T15:02:26.901450+00:00"
+    },
+    "https://i.ytimg.com/vi/DeCMMRxbsDM/hqdefault.jpg": {
+      "filename": "youtube_01bcfd0587875e26.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 오늘만 특별히 무료 융재 상담",
+      "time": "2026-06-20T13:15:13Z",
+      "downloaded_at": "2026-06-20T15:02:27.308668+00:00"
+    },
+    "https://i.ytimg.com/vi/L5lUkFi26Us/hqdefault_live.jpg": {
+      "filename": "youtube_e1a840c202693fd8.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 오늘만 특별히 무료 융재상담",
+      "time": "2026-06-20T13:27:15Z",
+      "downloaded_at": "2026-06-20T15:02:28.108822+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/4611ac2162373d76aef7a96088f6a9ca873a41d6.jpg": {
+      "filename": "bilibili_a413c61fbb5352e6.jpg",
+      "source": "bilibili",
+      "title": "60多级了现在是大佬了~吗？骗你的新手村还没出",
+      "time": "2026-06-20T13:13:58+00:00",
+      "downloaded_at": "2026-06-20T15:02:31.010848+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/9d593f5db667d40b4ac4d8bed9ac192231b583a3.jpg": {
+      "filename": "bilibili_903c42e2f9a0c3ef.jpg",
+      "source": "bilibili",
+      "title": "寂静的深夜，沙耶在医院做什么呢……",
+      "time": "2026-06-20T13:42:58+00:00",
+      "downloaded_at": "2026-06-20T15:02:34.039476+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/a166a581d19d14efcabcd3746a168a5676a4b0ff.jpg": {
+      "filename": "bilibili_011179bf49f6c131.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-06-20T12:26:53+00:00",
+      "downloaded_at": "2026-06-20T15:02:35.575941+00:00"
+    },
+    "https://i.ytimg.com/vi/U8ZlxEUbdBo/hqdefault.jpg": {
+      "filename": "youtube_52b93ae7c5d140bc.jpg",
+      "source": "youtube",
+      "title": "Kathigu-Ra Pulls! | MORIMENS",
+      "time": "2026-06-20T12:47:12Z",
+      "downloaded_at": "2026-06-20T15:02:36.009369+00:00"
     }
   },
   "failed": {
@@ -19951,6 +20000,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-20T12:25:58.518029+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/4611ac2162373d76aef7a96088f6a9ca873a41d6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-20T15:02:31.311374+00:00"
     }
   },
   "archived": []

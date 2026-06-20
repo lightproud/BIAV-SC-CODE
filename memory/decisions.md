@@ -104,6 +104,30 @@
 | BPT Server 变更检测用文件 mtime 扫描替代 git diff/log | bpt |
 | BPT 不依赖 brain-in-a-vat 仓库，独立部署于内网 SVN | bpt |
 | 银芯社区数据单向同步到 BPT（银芯 -> 脱敏 -> BPT），不反向 | bpt |
+| 双采集栈逐平台收敛（2026-06-20，详见下方专条） | news |
+| god module 不拆分（aggregator_collectors / global_collectors 保持现状，2026-06-20） | news |
+
+---
+
+### 2026-06-20 双采集栈（ARCH-01）逐平台收敛裁定（守密人）
+
+**背景**：`aggregator.py`(AC 栈) 与 `collect_global.py`(GC 栈) 在 `update-news.yml` 中**先后都跑**，
+导致 reddit/bilibili/youtube/taptap/discord 5 个重叠平台被**采集两遍、字段形态不同**（即审计 ARCH-01
+`# NOTE: divergent ... not merged`）。守密人逐平台裁定唯一权威实现，消除重复采集：
+
+| 平台 | 裁定 | 操作 |
+|------|------|------|
+| reddit | **AC 富数据为准**（JSON 分页+评论+媒体+search 回退）| GC 停采 reddit |
+| bilibili | **AC 富数据为准**（官方 API+评论+用户空间+search）| GC 停采 bilibili |
+| youtube | **GC 官方 API 为准**（googleapis YouTube Data API，稳健）| AC 停采 youtube（弃网页爬取）|
+| taptap | **两侧字段合并**（AC 双区 .cn/.io+moment + GC topic 取并集）| 融成一份 |
+| discord | **三路径归一**：`discord_archiver.py`（活 API→落归档）为唯一活 API 采集器；AC `fetch_discord_local` 读归档入流；**删 GC `fetch_discord` 冗余活抓**（其独有频道并入 archiver 配置）| 删 GC 活抓 |
+
+**非重叠平台不动**：AC 独有 steam（reviews/news/discussions）保留；GC 独有 twitter/weibo/arca_live/
+appstore/pixiv/google_play/bahamut/weixin/note_com/ruliweb/stopgame 保留。
+
+**god module 不拆**（关联裁定）：拆分会让 `test_aggregator_collectors` 100+ 处 mock（`ac.requests` 60 +
+`ac.` 内部 helper 49）失效，须重写上百处打桩、回归风险落在活的使命#1 管线，收益仅文件变短，不值得。
 
 ---
 
