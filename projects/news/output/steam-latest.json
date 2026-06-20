@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-20T16:20:09.176753+00:00",
+  "collected_at": "2026-06-20T18:07:28.028234+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:43:14+00:00",
+      "lang": "english",
+      "title": "[正面] I have no idea what I am doing and not sure I am f...",
+      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
+      "author": "76561198035846757",
+      "engagement": 2,
+      "language": "english",
+      "voted_up": true,
+      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "timestamp_created": 1781926994,
+      "playtime_forever": 1946
+    },
     {
       "source": "steam",
       "time": "2026-06-20T13:53:54+00:00",
@@ -50,18 +65,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-20T03:43:14+00:00",
-      "lang": "english",
-      "title": "[正面] I have no idea what I am doing and not sure I am f...",
-      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
-      "author": "76561198035846757",
-      "engagement": 1,
-      "language": "english",
+      "time": "2026-06-20T16:51:18+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "url": "https://steamcommunity.com/profiles/76561198686513407/recommended/3052450",
+      "author": "76561198686513407",
+      "engagement": 0,
+      "language": "schinese",
       "voted_up": true,
-      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "timestamp_created": 1781926994,
-      "playtime_forever": 1886
+      "review": "好看",
+      "timestamp_created": 1781974278,
+      "playtime_forever": 249
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "honestly one of the best gacha games ive ever played, the fact that this game almost eos'd a year in and is now thriving at its 2.5 anni is so wonderful to me.\r\nthe fact that regardless of its earlier decline people continued to support the game and allowed it to make improvements like fully human translations for the english and korean dubs is also something i really appreciate since ai translations are not only less effective but also like boo ai lame.\r\nmorimens also has some of the best character designs out of any gacha ive touched, the lovecraftian visuals and more mature story and character themes make the story actually pretty interesting aswell\r\n10/10 would recommend <3",
       "timestamp_created": 1781953122,
-      "playtime_forever": 2484
+      "playtime_forever": 2544
     },
     {
       "source": "steam",
@@ -181,7 +196,7 @@
       "voted_up": true,
       "review": "Hammy gives me stuff I like Hammy",
       "timestamp_created": 1781925300,
-      "playtime_forever": 5873
+      "playtime_forever": 5918
     },
     {
       "source": "steam",

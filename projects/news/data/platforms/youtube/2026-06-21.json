@@ -1,8 +1,8 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-20T16:20:13.703683+00:00",
+  "archived_at": "2026-06-20T18:07:30.555057+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "【MORIMENS】FINISHING CHAPTER 5 | POSSIBLE SHORT STREAM???",
@@ -17,6 +17,36 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/kxwHUaRSNEM/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "Clementine Edit (Morimens + Path to Nowhere)",
+      "summary": "clementine #clementineedit #morimens #morimensedit #pathtonowhere #pathtonowhereedit #gachagame #gameedit #edit #fyp ...",
+      "source": "youtube",
+      "time": "2026-06-20T16:55:22Z",
+      "url": "https://www.youtube.com/watch?v=X-QKnlCiaMU",
+      "engagement": 12,
+      "is_hot": false,
+      "author": "seelie♡︎",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/X-QKnlCiaMU/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "title": "Morimens: Chaos Explained #morimens #animehorrorgame #lovecraftianhorror #guides",
+      "summary": "A 3 minute overview of the core mechanics of the Chaos Realm in Morimens. It may be the tutorial realm, but don't discount it!",
+      "source": "youtube",
+      "time": "2026-06-20T18:00:02Z",
+      "url": "https://www.youtube.com/watch?v=2YzS0C_TT_A",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "Nechromicon",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/2YzS0C_TT_A/hqdefault.jpg",
       "content_type": "video"
     }
   ]

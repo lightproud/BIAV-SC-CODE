@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T16:20:13.701255+00:00",
+  "archived_at": "2026-06-20T18:07:30.552368+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "title": "沙雪耶老师",
@@ -175,6 +175,29 @@
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg",
       "content_type": "video"
+    },
+    {
+      "title": "今天玩忘却篇居然突然加了一个打到100回合直接结算。以后应该没办法这样叠伤害了吧。",
+      "summary": "昨天都还能打上千个回合，今天居然直接限制到只能打100回合。\n  └ 我草莓招了啊QAQ (0赞): 我们5771还是太休闲了[千恋万花表情包_丛雨Ciallo][千恋万花表情包_丛雨Ciallo]\n  └ 抱着狗狗不敢说话 (0赞): 建议以后加疲劳机制 每回合按回合数扣血  加个特殊boss 按战斗时长反弹伤害卡 类似凝视 反弹，打了六回合发一张，九回合发2张，15回合发3张加一张伤口撕裂，直到自动打出，满血两千的话，损失100血 相当于一种症状卡了，应该也是符合设计的[笑哭][笑哭]，只不过没有必要加这种机制防拖时间，毕竟高难的boss输出端太强了",
+      "source": "bilibili",
+      "time": "2026-06-20T10:43:55+00:00",
+      "url": "https://www.bilibili.com/video/BV1pijJ6MEKX",
+      "engagement": 111,
+      "is_hot": false,
+      "author": "芬香失节",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 109,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/b3cb43b70ee8d178c466539b2e5f79e1b52e02ae.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "忘卻前夜 四小強5-5",
