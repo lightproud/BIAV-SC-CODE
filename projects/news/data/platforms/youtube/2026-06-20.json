@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T15:02:36.108627+00:00",
+  "archived_at": "2026-06-20T16:20:13.702201+00:00",
   "source": "youtube",
-  "item_count": 29,
+  "item_count": 30,
   "items": [
     {
       "title": "Finally playing Myriam&#39;s Story (yes i&#39;m very late)",
@@ -438,6 +438,21 @@
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
+    },
+    {
+      "title": "Clem Makes Doorstain Look Good | Morimens Arc 2 H2-12 9 Turn Clear",
+      "summary": "Ultra-Caro comp made in a minute, surprisingly works! Doresain felt more like a sub-dps lol Replay: Investigation-Myriad Dreams ...",
+      "source": "youtube",
+      "time": "2026-06-20T15:23:36Z",
+      "url": "https://www.youtube.com/watch?v=FbHA4ecf7R0",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Damniel DB",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/FbHA4ecf7R0/hqdefault.jpg",
+      "content_type": "video"
     }
   ]
 }
