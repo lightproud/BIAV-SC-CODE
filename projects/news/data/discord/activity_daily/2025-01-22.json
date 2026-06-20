@@ -1,10 +1,18 @@
 {
   "date": "2025-01-22",
-  "messages": 161,
-  "unique_authors": 26,
-  "reactions_total": 129,
-  "attachments": 6,
+  "messages": 5027,
+  "unique_authors": 105,
+  "reactions_total": 391,
+  "attachments": 191,
   "channel_activity": {
+    "🔸綜合討論": 287,
+    "🔸morimens-game-chat": 3963,
+    "🔸한국어-채팅방": 119,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 202,
+    "🔸phòng-chat-tiếng-việt": 78,
+    "🔸canal-español": 10,
+    "🔸canal-português": 202,
     "morimens story recap channel": 5,
     "《忘卻前夜》周邊企劃說明": 2,
     "V2.0.0.4 在線維護公告": 1,
@@ -25,28 +33,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 9,
-    "1": 11,
-    "6": 26,
-    "3": 7,
-    "2": 35,
-    "13": 1,
-    "15": 21,
-    "4": 3,
-    "5": 10,
-    "7": 18,
-    "10": 6,
-    "11": 1,
-    "12": 2,
-    "0": 1,
-    "14": 3,
-    "17": 1,
-    "16": 2,
-    "8": 3,
-    "20": 1
+    "0": 148,
+    "1": 221,
+    "2": 193,
+    "3": 151,
+    "4": 355,
+    "5": 565,
+    "6": 450,
+    "7": 363,
+    "8": 688,
+    "9": 151,
+    "10": 257,
+    "11": 116,
+    "12": 294,
+    "13": 37,
+    "14": 63,
+    "15": 162,
+    "16": 74,
+    "17": 145,
+    "18": 342,
+    "19": 50,
+    "20": 73,
+    "21": 51,
+    "22": 42,
+    "23": 36
   },
   "message_types": {
-    "0": 5
+    "0": 3827,
+    "19": 1039
   },
   "top_reacted_messages": [
     {
@@ -92,6 +106,22 @@
       "channel": ""
     },
     {
+      "id": "1331619255979868272",
+      "channel_id": "1131839817982947429",
+      "content": "原來官方是知道有很多鑰令是來汙染鑰令池的",
+      "author": "mob1065",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1331508782362263583",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "alicefrom_wonderland",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1331470897554391061",
       "content": "鯊魚才是最強降力輔\n塔薇是誰\n不認識",
       "author": "kong760",
@@ -104,6 +134,14 @@
       "author": "xuanxue007",
       "reactions": 5,
       "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1331598504539324416",
+      "channel_id": "1131839817982947429",
+      "content": "玄學的旺達82了吧",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1331614508359221269",
@@ -127,67 +165,52 @@
       "channel": "【守密人×小蛋糕】纱麻"
     },
     {
-      "id": "1331641694722064384",
-      "content": "珊到是用不到保留，珊改成所有牌减一费就好了",
-      "author": "busy_chipmunk_73748_41947",
+      "id": "1331631798811230302",
+      "channel_id": "1131839817982947429",
+      "content": "打完融災三關5級了",
+      "author": "pray_unbeliever",
       "reactions": 3,
-      "channel": "✅前瞻：V2.1 维度影像"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1331444138440130740",
-      "content": "真要弄 可以弄到一千熔爐",
-      "author": "mob1065",
-      "reactions": 2,
-      "channel": "✅前瞻：V2.1 维度影像"
+      "id": "1331515968773689404",
+      "channel_id": "1170692781216378960",
+      "content": "📞 <:sleep:1238448786540462130>",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1331444665882513520",
-      "content": "到時候環境慢 一回合60力量也是很誇張",
-      "author": "mob1065",
-      "reactions": 2,
-      "channel": "✅前瞻：V2.1 维度影像"
+      "id": "1331565323488591894",
+      "channel_id": "1170692781216378960",
+      "content": "I mean sometimes slowing it down is better then blowing your load early",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1331551046518177843",
-      "content": "希望可以讲一下这些专造的设计理念",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "✅前瞻：V2.1 维度影像"
+      "id": "1331585244477915166",
+      "channel_id": "1170692781216378960",
+      "content": "<:proud2:1236950158500040764>",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1331558563692286045",
-      "content": "打黑化朵儿我用的尤乌雷姬逃课队",
-      "author": "luoqixikiss",
-      "reactions": 2,
-      "channel": "請問第九章最終boss怎麼過?"
+      "id": "1331596932921032786",
+      "channel_id": "1170692781216378960",
+      "content": "i dont see her on there <:KEKW:629740073977380882>",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1331652341610446879",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "請問第九章最終boss怎麼過?"
-    },
-    {
-      "id": "1331469838396293200",
-      "content": "180秒...",
-      "author": "tofu0834",
-      "reactions": 2,
-      "channel": "忘却前夜匹配时间长不能加个人机"
-    },
-    {
-      "id": "1331548597677981758",
-      "content": "玄學都一堆朋友和錢\n輸光...",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": "約稿展示 請大家吃飯"
-    },
-    {
-      "id": "1331428561424482325",
-      "content": "奈亞拉托提普特有的滿魅力",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "前瞻：V2.2+ 版本规划"
+      "id": "1331598552484413492",
+      "channel_id": "1170692781216378960",
+      "content": "Question: is Pandia viable to play? I think she's cute",
+      "author": "oddeyesight",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

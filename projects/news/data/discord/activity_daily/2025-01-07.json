@@ -1,10 +1,21 @@
 {
   "date": "2025-01-07",
-  "messages": 200,
-  "unique_authors": 28,
-  "reactions_total": 169,
-  "attachments": 10,
+  "messages": 6435,
+  "unique_authors": 169,
+  "reactions_total": 649,
+  "attachments": 208,
   "channel_activity": {
+    "🔸綜合討論": 592,
+    "🔸阵容构建": 28,
+    "🔸morimens-game-chat": 5154,
+    "🔸剧情交流": 2,
+    "🔸相位对弈": 9,
+    "🔸한국어-채팅방": 22,
+    "🔸русский-канал": 40,
+    "🔸phòng-chat-tiếng-việt": 317,
+    "🔸canal-español": 30,
+    "🔸canal-português": 29,
+    "🔸ruang-obrolan-indonesia": 12,
     "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185": 1,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 67,
     "✅前瞻：V2.0 玩法奖励追加": 2,
@@ -22,28 +33,34 @@
     "宝宝们": 4
   },
   "hourly_activity": {
-    "11": 4,
-    "9": 12,
-    "12": 8,
-    "13": 65,
-    "15": 1,
-    "16": 6,
-    "4": 12,
-    "10": 3,
-    "14": 6,
-    "3": 15,
-    "6": 4,
-    "8": 5,
-    "2": 13,
-    "19": 2,
-    "20": 1,
-    "23": 6,
-    "1": 30,
-    "0": 6,
-    "17": 1
+    "1": 88,
+    "2": 117,
+    "3": 90,
+    "4": 194,
+    "5": 153,
+    "6": 34,
+    "7": 38,
+    "8": 58,
+    "9": 191,
+    "10": 100,
+    "11": 293,
+    "12": 435,
+    "13": 425,
+    "14": 736,
+    "15": 629,
+    "16": 846,
+    "17": 745,
+    "18": 614,
+    "23": 48,
+    "0": 111,
+    "22": 71,
+    "19": 319,
+    "20": 10,
+    "21": 90
   },
   "message_types": {
-    "0": 1
+    "0": 4603,
+    "19": 1632
   },
   "top_reacted_messages": [
     {
@@ -89,6 +106,14 @@
       "channel": "關卡地圖「融災禁區」總覽25期"
     },
     {
+      "id": "1326226084672442390",
+      "channel_id": "1170692781216378960",
+      "content": "Hi~ We are considering expanding our English channels to make English discussion",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1326187695915012129",
       "content": "~~我覺得精通應該這樣改：守密人的精通屬性越高越能輕鬆地把喚醒體的衣服扒掉~~",
       "author": "shchng.",
@@ -117,6 +142,30 @@
       "channel": "关于助战数量"
     },
     {
+      "id": "1326037585616830495",
+      "channel_id": "1131839817982947429",
+      "content": "非台灣人可以線下和校貓pvp呀<:wish:1236951537788649492>",
+      "author": "cra0261_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326323452143206470",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "kurumimywife",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1326040164429992047",
+      "channel_id": "1180850818509971466",
+      "content": "🥹",
+      "author": "sixfeetunder_04",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1326185305971359875",
       "content": "代價圖魯的指令卡當回合無法使用",
       "author": "shchng.",
@@ -131,60 +180,36 @@
       "channel": "关于助战数量"
     },
     {
-      "id": "1326183550189441084",
-      "content": "新鑰令：群星的庇佑\n沉眠：獲得48點護盾及一層「星辰庇佑」選擇後鑰令返還三分之一的能量且不進入冷卻可再次使用，但獲得的護盾會減半。此效果不受溶蝕的每開一次鑰令增",
-      "author": "shchng.",
+      "id": "1326021924165517333",
+      "channel_id": "1131839817982947429",
+      "content": "~~雖然豐富，但拿不到等於沒有~~",
+      "author": "tofu0834",
       "reactions": 4,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326178601015574578",
-      "content": "如果就只是把罵娘的問候合理化，那恕我無法苟同也不想理解你的意見。\n充滿情緒化、且沒有理性的去思考如何更好地建議讓遊戲更進步的意見，只會一昧吠叫，我不會再看你的發",
-      "author": "pray_unbeliever",
+      "id": "1326029920329273468",
+      "channel_id": "1131839817982947429",
+      "content": "非台湾人要参加还要自掏腰包买飞机票😡",
+      "author": "ling_an_",
       "reactions": 4,
-      "channel": "校猫碎碎念#自我风评反思"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326105032109592617",
-      "content": "这个问题很早有人讨论过，如果不开筛选功能，能就别有任何改动了，现在已经找个助战都翻得头疼了，到时候3000个助战，可能用自己的打完了都没翻到想借的",
-      "author": "lurenjiao",
+      "id": "1326167752817377370",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "whshhsa",
       "reactions": 4,
-      "channel": "关于助战数量"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326185015033331774",
-      "content": "新鑰令：群星的庇佑\n沉眠：獲得48點護盾及一層「星辰庇佑」選擇後鑰令返還三分之一的能量且不進入冷卻可再次使用，但獲得的護盾會減半。在首领战时多睡一次🤓此效果不受",
-      "author": "yang015148",
-      "reactions": 3,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1326179725948751913",
-      "content": "校猫踢人的时候也很情绪化啊，没感觉它有多理性啊",
-      "author": "chitose7777",
-      "reactions": 3,
-      "channel": "校猫碎碎念#自我风评反思"
-    },
-    {
-      "id": "1326029663939858464",
-      "content": "希望能在借助戰功能下新增一個篩選喚醒體的功能\n不然有些比較少的角色要找常常找不到，全部都是血鏈塔薇",
-      "author": "_cwz_",
-      "reactions": 3,
-      "channel": "关于助战数量"
-    },
-    {
-      "id": "1326181651289477162",
-      "content": "不是阿深海這個界域需要精通但提供精通的鑰令少得可憐",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1326184140952834110",
-      "content": "我也覺得很薄",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
+      "id": "1326235549052174396",
+      "channel_id": "1170692781216378960",
+      "content": "Elden Ring open world was pretty well made though, it felt like it consistently ",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

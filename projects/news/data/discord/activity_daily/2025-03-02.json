@@ -1,10 +1,17 @@
 {
   "date": "2025-03-02",
-  "messages": 2003,
+  "messages": 2569,
   "unique_authors": 117,
-  "reactions_total": 120,
-  "attachments": 91,
+  "reactions_total": 130,
+  "attachments": 148,
   "channel_activity": {
+    "🔸русский-канал": 9,
+    "🔸canal-español": 58,
+    "🔸canal-português": 12,
+    "🔸ruang-obrolan-indonesia": 261,
+    "🔸ห้องสนทนาภาษาไทย": 149,
+    "🔸traphase": 73,
+    "🔸lore-chat": 4,
     "🔸綜合討論": 213,
     "🔸阵容构建": 13,
     "🔸morimens-game-chat": 1709,
@@ -17,34 +24,34 @@
     "命輪似乎未生效": 1
   },
   "hourly_activity": {
-    "0": 22,
-    "1": 14,
-    "2": 42,
-    "3": 134,
-    "4": 53,
-    "5": 26,
-    "6": 25,
-    "7": 83,
-    "8": 158,
-    "9": 274,
-    "10": 44,
-    "12": 67,
-    "13": 381,
-    "14": 359,
-    "15": 17,
-    "16": 33,
-    "17": 76,
-    "21": 8,
-    "20": 43,
-    "11": 65,
-    "18": 11,
-    "19": 41,
-    "22": 17,
-    "23": 10
+    "13": 401,
+    "20": 49,
+    "1": 19,
+    "9": 301,
+    "14": 477,
+    "15": 40,
+    "16": 45,
+    "17": 90,
+    "18": 106,
+    "21": 16,
+    "22": 28,
+    "23": 26,
+    "2": 54,
+    "12": 101,
+    "3": 144,
+    "4": 59,
+    "5": 39,
+    "6": 72,
+    "7": 115,
+    "8": 164,
+    "10": 53,
+    "11": 102,
+    "0": 27,
+    "19": 41
   },
   "message_types": {
-    "0": 1520,
-    "19": 471
+    "19": 142,
+    "0": 424
   },
   "top_reacted_messages": [
     {
@@ -143,6 +150,14 @@
       "channel": "New Player Mechanics and Progression Guide"
     },
     {
+      "id": "1345732435421298729",
+      "channel_id": "1300659718653476925",
+      "content": "Mas se n me engano ja está disponível no próprio jogo no patch notes da atualiza",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸canal-português"
+    },
+    {
       "id": "1345582745971200001",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -195,14 +210,6 @@
       "channel_id": "1170692781216378960",
       "content": "Lini highkey i started playing Gramona because of you and not going to lie hitti",
       "author": "aslechi",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1345763622273417246",
-      "channel_id": "1170692781216378960",
-      "content": "I'll check m*le story after doing all the female",
-      "author": "aurora3981",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }

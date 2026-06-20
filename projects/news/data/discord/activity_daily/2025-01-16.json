@@ -1,10 +1,20 @@
 {
   "date": "2025-01-16",
-  "messages": 32,
-  "unique_authors": 11,
-  "reactions_total": 18,
-  "attachments": 4,
+  "messages": 2790,
+  "unique_authors": 140,
+  "reactions_total": 265,
+  "attachments": 150,
   "channel_activity": {
+    "🔸綜合討論": 647,
+    "🔸阵容构建": 74,
+    "🔸morimens-game-chat": 1558,
+    "🔸剧情交流": 21,
+    "🔸한국어-채팅방": 248,
+    "🔸русский-канал": 78,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 28,
+    "🔸canal-português": 97,
+    "🔸ruang-obrolan-indonesia": 5,
     "Stats and realm mechanics (and some tips)": 1,
     "V2.0.0.3 在線維護公告": 6,
     "English Page pls !!": 3,
@@ -17,20 +27,34 @@
     "死抗序列": 3
   },
   "hourly_activity": {
-    "0": 7,
-    "13": 5,
-    "14": 5,
-    "5": 1,
-    "8": 2,
-    "9": 1,
-    "10": 4,
-    "19": 1,
-    "15": 1,
-    "3": 2,
-    "16": 3
+    "0": 51,
+    "2": 70,
+    "3": 68,
+    "4": 22,
+    "5": 11,
+    "6": 160,
+    "7": 126,
+    "8": 201,
+    "9": 112,
+    "10": 97,
+    "11": 207,
+    "12": 153,
+    "14": 525,
+    "15": 82,
+    "16": 97,
+    "17": 45,
+    "18": 33,
+    "19": 45,
+    "23": 44,
+    "1": 25,
+    "20": 21,
+    "22": 36,
+    "13": 495,
+    "21": 64
   },
   "message_types": {
-    "0": 1
+    "19": 631,
+    "0": 2127
   },
   "top_reacted_messages": [
     {
@@ -41,6 +65,30 @@
       "channel": "問卷調查的必要性"
     },
     {
+      "id": "1329425086146412554",
+      "channel_id": "1131839817982947429",
+      "content": "# 建议吊死开大赛的",
+      "author": "whshhsa",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329496087873978418",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329288021086044173",
+      "channel_id": "1173463482503536711",
+      "content": "還在鞭屍我家院長\n          😭\n    🫴 ｜🫴\n   _  / _  /",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1329444598652735589",
       "content": "關於調查問卷的重啟我們是在計劃中的哦~\n不過由於新版本上線時間還比較短，我們希望大家有更長一些的時間能夠體驗新版本的內容，因此會在版本末期再投放問卷的，屆時大家",
       "author": "lubi_17667",
@@ -48,18 +96,123 @@
       "channel": "問卷調查的必要性"
     },
     {
+      "id": "1329363423422709892",
+      "channel_id": "1131839817982947429",
+      "content": "上一版本的癲五還能滿分",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329385885342629939",
+      "channel_id": "1131839817982947429",
+      "content": "繁衍狂熱（水仙）",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329404131538108426",
+      "channel_id": "1131839817982947429",
+      "content": "可能是圖魯的支配快結束了吧",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329425053397417994",
+      "channel_id": "1131839817982947429",
+      "content": "开办大赛的人太坏了",
+      "author": "whshhsa",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329465483195584522",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "galagalaguo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329361370298322965",
+      "channel_id": "1131839817982947429",
+      "content": "我因为初版解包内容投资了超限汀",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329362359604613162",
+      "channel_id": "1131839817982947429",
+      "content": "汀神這麼強 我只看過老外拿出來當主力",
+      "author": "irut9513",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329369704610922571",
+      "channel_id": "1131839817982947429",
+      "content": "不弱的",
+      "author": "sadanshishen",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329370184946946142",
+      "channel_id": "1131839817982947429",
+      "content": "不知道怎麼平衡\n就打死所有角色",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329374764854280236",
+      "channel_id": "1131839817982947429",
+      "content": "毒隊狂充有人比得過彌利羊媽嗎",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329375927724937247",
+      "channel_id": "1131839817982947429",
+      "content": "然後再叫兩隻小怪助戰",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329376224476135446",
+      "channel_id": "1131839817982947429",
+      "content": "然後死掉後還可以爆炸",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329384452727508994",
+      "channel_id": "1131839817982947429",
+      "content": "我们猫猫获得了新投资 不需要赚太多钱了",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329457476709388359",
+      "channel_id": "1131839817982947429",
+      "content": "无脑阿巴阿巴阿巴丢牌就完了",
+      "author": "luoqixikiss",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1329439521988804701",
       "content": "守密人你好：\n       彌薩格大學校務處將於1月16日21:20進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會",
       "author": "lubi_17667",
       "reactions": 3,
       "channel": "V2.0.0.3 在線維護公告"
-    },
-    {
-      "id": "1329448963895464006",
-      "content": "收到！叫校工起床加班！",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "莉莉的狂气爆发没有享受到中毒加成"
     }
   ]
 }

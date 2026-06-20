@@ -1,10 +1,21 @@
 {
   "date": "2025-01-12",
-  "messages": 39,
-  "unique_authors": 18,
-  "reactions_total": 60,
-  "attachments": 4,
+  "messages": 3326,
+  "unique_authors": 130,
+  "reactions_total": 194,
+  "attachments": 164,
   "channel_activity": {
+    "🔸綜合討論": 169,
+    "🔸阵容构建": 63,
+    "🔸morimens-game-chat": 2625,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 6,
+    "🔸한국어-채팅방": 119,
+    "🔸русский-канал": 19,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 68,
+    "🔸canal-português": 129,
+    "🔸ruang-obrolan-indonesia": 79,
     "V2.0.0.0 停服維護公告": 2,
     "有沒有考慮新增好友私信功能？": 1,
     "对不起我蠢,我的停服维修补偿什哪里？": 3,
@@ -17,19 +28,35 @@
     "好餓哦，雜食來吃飯了": 9
   },
   "hourly_activity": {
-    "14": 8,
-    "21": 1,
-    "11": 4,
-    "7": 8,
-    "17": 2,
-    "5": 3,
-    "13": 2,
-    "4": 4,
-    "2": 4,
-    "3": 3
+    "1": 119,
+    "2": 20,
+    "3": 45,
+    "4": 63,
+    "5": 213,
+    "6": 133,
+    "7": 73,
+    "8": 156,
+    "9": 178,
+    "10": 181,
+    "11": 140,
+    "12": 149,
+    "13": 129,
+    "14": 452,
+    "15": 143,
+    "16": 257,
+    "17": 127,
+    "18": 221,
+    "21": 76,
+    "23": 140,
+    "0": 84,
+    "19": 43,
+    "20": 66,
+    "22": 118
   },
   "message_types": {
-    "0": 2
+    "19": 592,
+    "0": 2691,
+    "18": 4
   },
   "top_reacted_messages": [
     {
@@ -61,6 +88,22 @@
       "channel": "好餓哦，雜食來吃飯了"
     },
     {
+      "id": "1327868657488891906",
+      "channel_id": "1131839817982947429",
+      "content": "~~不過一定先把序曲跟生祭出掉所以其實也不用考慮那些~~",
+      "author": "kong760",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1327945081684103200",
+      "channel_id": "1131839817982947429",
+      "content": "戈利亞大人會",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1327904777069400125",
       "content": "1/13還沒到，這只是公告",
       "author": "yami_no_gemu",
@@ -75,6 +118,38 @@
       "channel": "好餓哦，雜食來吃飯了"
     },
     {
+      "id": "1327862039271440444",
+      "channel_id": "1131839817982947429",
+      "content": "凱c和鯊c",
+      "author": "kuritani_yuu",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1327928903335022624",
+      "channel_id": "1131839817982947429",
+      "content": "但是課了🥹",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1327946807275163749",
+      "channel_id": "1170692781216378960",
+      "content": "Caecus is spending the keepers money on penis pills",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1327845515517497467",
+      "channel_id": "1174983699935277147",
+      "content": "爽歪",
+      "author": "akkom730",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1328110235390443530",
       "content": "你遊的更新內容都能塞進國文素養題了（",
       "author": "qiyun0493",
@@ -82,25 +157,60 @@
       "channel": "V2.0.0.0 停服維護公告"
     },
     {
-      "id": "1328049344481591408",
-      "content": "A run takes quite awhile (just like doing story, except with assist usable), so ",
-      "author": "mozaic2nd",
+      "id": "1327868451716599839",
+      "channel_id": "1131839817982947429",
+      "content": "~~在上在下的分別~~\n我是說\n關係到先賣誰的牌",
+      "author": "kong760",
       "reactions": 2,
-      "channel": "[Feature Request] Sweep or instant clear for weekly skill material (Transcendental Entity)?"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1327895494642634762",
-      "content": "This card duplicated Nymphea's card, which I got from Tawil's Exalt. It does 0 d",
-      "author": "mozaic2nd",
-      "reactions": 1,
-      "channel": "[Bug] Delirium Symptom Card Does 0 damage"
+      "id": "1327871185081602059",
+      "channel_id": "1131839817982947429",
+      "content": "~~反正只要有一個人帶子宮極夜生機掛機就好~~",
+      "author": "lemoncandy25",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1327833712670281728",
-      "content": "算一半\n還是水仙",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "好餓哦，雜食來吃飯了"
+      "id": "1327916679598182400",
+      "channel_id": "1131839817982947429",
+      "content": "但都扣20%分，60福音",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328109952438505594",
+      "channel_id": "1131839817982947429",
+      "content": "<@655338276554801152> 普通削弱前打完了但沒時間凹血量的成就了想睡覺了<:sleep:1238448786540462130>",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1327818220052414587",
+      "channel_id": "1170692781216378960",
+      "content": "<:Coffee:1240919421791375380>",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1327910124974637118",
+      "channel_id": "1170692781216378960",
+      "content": "Remove MEMus and put Nautila(no joke)",
+      "author": "twilightsparkle163163",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1327941787855360031",
+      "channel_id": "1170692781216378960",
+      "content": "Your acc is exactly 30 days older than mine",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

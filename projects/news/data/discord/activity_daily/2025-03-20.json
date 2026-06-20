@@ -1,10 +1,18 @@
 {
   "date": "2025-03-20",
-  "messages": 4286,
+  "messages": 4757,
   "unique_authors": 83,
-  "reactions_total": 108,
-  "attachments": 179,
+  "reactions_total": 120,
+  "attachments": 204,
   "channel_activity": {
+    "🔸русский-канал": 38,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 11,
+    "🔸canal-português": 15,
+    "🔸ruang-obrolan-indonesia": 277,
+    "🔸ห้องสนทนาภาษาไทย": 55,
+    "🔸traphase": 59,
+    "🔸lore-chat": 13,
     "🔸綜合討論": 118,
     "🔸阵容构建": 18,
     "🔸morimens-game-chat": 3730,
@@ -30,34 +38,34 @@
     "不会再有了": 5
   },
   "hourly_activity": {
-    "0": 184,
-    "1": 394,
-    "2": 202,
-    "4": 228,
-    "5": 334,
-    "7": 73,
-    "8": 19,
-    "9": 8,
-    "10": 68,
-    "11": 148,
-    "12": 425,
-    "15": 252,
-    "16": 225,
-    "17": 164,
-    "20": 149,
-    "23": 18,
-    "3": 339,
-    "6": 144,
-    "13": 203,
-    "14": 225,
-    "18": 66,
-    "19": 34,
-    "21": 130,
-    "22": 254
+    "5": 363,
+    "6": 148,
+    "13": 229,
+    "14": 227,
+    "15": 264,
+    "16": 340,
+    "17": 269,
+    "18": 88,
+    "22": 275,
+    "19": 38,
+    "20": 153,
+    "23": 22,
+    "2": 212,
+    "8": 44,
+    "4": 234,
+    "7": 77,
+    "10": 84,
+    "11": 155,
+    "12": 464,
+    "21": 133,
+    "0": 187,
+    "1": 400,
+    "3": 342,
+    "9": 9
   },
   "message_types": {
-    "0": 3285,
-    "19": 924
+    "19": 113,
+    "0": 358
   },
   "top_reacted_messages": [
     {
@@ -73,6 +81,14 @@
       "author": "287405tjy_28066",
       "reactions": 5,
       "channel": "福利"
+    },
+    {
+      "id": "1352161893292445718",
+      "channel_id": "1326453691527594035",
+      "content": "Longtime lurker here, but the new event’s made me touch traphase and i’m really ",
+      "author": "essayking566",
+      "reactions": 4,
+      "channel": "🔸traphase"
     },
     {
       "id": "1352135232320573510",
@@ -120,6 +136,14 @@
       "author": "happylife321",
       "reactions": 3,
       "channel": "不会再有了"
+    },
+    {
+      "id": "1352182695731400784",
+      "channel_id": "1326453691527594035",
+      "content": "game is fun",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "🔸traphase"
     },
     {
       "id": "1352250508878020662",
@@ -185,36 +209,20 @@
       "channel": "✅「已回答」拉蒙娜你好惨啊"
     },
     {
-      "id": "1352103024981577791",
-      "channel_id": "1131839817982947429",
-      "content": "~~重點還是已經斷氣的遊戲劇情~~",
-      "author": "chilledren_fans",
+      "id": "1352353094838521978",
+      "channel_id": "1300659580446969918",
+      "content": "Обожаю перевод.",
+      "author": "irrational_obelisk",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1352190468842192967",
-      "channel_id": "1131839817982947429",
-      "content": "之前有一週改成星辰篇深潛\n砍了每日 用擺替代\n\n更之前還有每日造物時  粉魚圖就很容易少造物",
-      "author": "_buqi",
+      "id": "1352152640523337748",
+      "channel_id": "1300659753197764688",
+      "content": "Okelah 👌",
+      "author": "fellosatr",
       "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1352265396790755464",
-      "channel_id": "1131839817982947429",
-      "content": "肝不到2小時 快拿完紅石碎塊了 2500咱就停手",
-      "author": "chilledren_fans",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1352331493451763715",
-      "channel_id": "1131839817982947429",
-      "content": "結果還是爆靈知了🥲",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸ruang-obrolan-indonesia"
     }
   ]
 }

@@ -1,10 +1,20 @@
 {
   "date": "2025-01-15",
-  "messages": 84,
-  "unique_authors": 14,
-  "reactions_total": 36,
-  "attachments": 11,
+  "messages": 3279,
+  "unique_authors": 145,
+  "reactions_total": 303,
+  "attachments": 263,
   "channel_activity": {
+    "🔸綜合討論": 406,
+    "🔸阵容构建": 142,
+    "🔸morimens-game-chat": 2088,
+    "🔸剧情交流": 64,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 295,
+    "🔸русский-канал": 94,
+    "🔸canal-español": 37,
+    "🔸canal-português": 65,
+    "🔸ruang-obrolan-indonesia": 3,
     "V2.0.0.1 在線維護公告": 5,
     "V2.0.0.2 在線維護公告": 3,
     "✅「已回答」請勿輕信官方PC跳轉連結": 1,
@@ -21,20 +31,34 @@
     "快哉快哉": 1
   },
   "hourly_activity": {
-    "12": 10,
-    "7": 7,
-    "15": 6,
-    "18": 3,
-    "14": 3,
-    "8": 39,
-    "16": 3,
-    "9": 7,
-    "10": 5,
-    "2": 1
+    "1": 71,
+    "2": 69,
+    "3": 111,
+    "4": 269,
+    "5": 53,
+    "6": 69,
+    "7": 63,
+    "8": 120,
+    "9": 202,
+    "10": 298,
+    "11": 33,
+    "12": 125,
+    "13": 69,
+    "14": 506,
+    "15": 411,
+    "16": 145,
+    "18": 42,
+    "19": 49,
+    "0": 149,
+    "17": 52,
+    "20": 25,
+    "21": 58,
+    "22": 123,
+    "23": 167
   },
   "message_types": {
-    "19": 3,
-    "0": 5
+    "0": 2526,
+    "19": 669
   },
   "top_reacted_messages": [
     {
@@ -45,6 +69,38 @@
       "channel": "快哉快哉"
     },
     {
+      "id": "1328980134589632523",
+      "channel_id": "1131839817982947429",
+      "content": "https://tenor.com/view/obachan-my-oni-girl-myonigirl-myonigirl-food-myonigirl-ob",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328919760213377104",
+      "channel_id": "1173463482503536711",
+      "content": "戈是菲的父，菲是圖的母\n所以戈是圖的爺🤓👆",
+      "author": "ice_storys",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1329091774173413459",
+      "channel_id": "1131839874132090890",
+      "content": "亮亮按按陣容4.0",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1328920016095154349",
+      "channel_id": "1173463482503536711",
+      "content": "戈利亞：小章魚！叫爺爺~",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1329023746345795634",
       "content": "Bug真多，你們乾脆讓我們隨時都能切換性別好了",
       "author": "ena04564",
@@ -52,39 +108,116 @@
       "channel": "中途變性"
     },
     {
-      "id": "1328996822643114028",
-      "content": "如題，剛剛刻了一個回聲在血希的鏈條上丟出去這牌直接虛無掉整場不再出現，好像是bug",
+      "id": "1328974828614717462",
+      "channel_id": "1131839817982947429",
+      "content": "莉莉活動❎\n打樁活動✅",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329119994251972631",
+      "channel_id": "1131839817982947429",
+      "content": "我看清了我跟Aaa是不同世界的人\n他就像三餐吃魚子醬，把鈔票當衛生紙擦嘴的人\n而我是喝他洗腳水過日子的人",
+      "author": "nemu_s_t_a_r",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329157797602000986",
+      "channel_id": "1181152750319456266",
+      "content": "賭運關出封印的怪歡愉沒抽到船帆又打不死就一直重開<:scared:1239910882943832065>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1328969288605892668",
+      "channel_id": "1131839817982947429",
+      "content": "<:laugh:1243502404394160208>",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328972059283423356",
+      "channel_id": "1131839817982947429",
+      "content": "你可以學我準備等一年的原型視界",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328974342310068245",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "kong760",
       "reactions": 3,
-      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1329031944553500694",
-      "content": "就能繼續按照現在的流程去走",
-      "author": "mob1065",
+      "id": "1328979095853203478",
+      "channel_id": "1131839817982947429",
+      "content": "2/10還要好久我是不是應該先打到9-13",
+      "author": "cwz.io",
       "reactions": 3,
-      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1329068840201748572",
-      "content": "😭 URL的跳轉沒有處理好，需要用進程管理器關掉才可以啦。\n下次我們會優化的。",
-      "author": "lubi_17667",
-      "reactions": 2,
-      "channel": "✅「已回答」請勿輕信官方PC跳轉連結"
+      "id": "1329034299001012265",
+      "channel_id": "1131839817982947429",
+      "content": "太強我還在10050",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1329068331344330774",
-      "content": "修了修了！",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "中途變性"
+      "id": "1329053313227952158",
+      "channel_id": "1131839817982947429",
+      "content": "我是小菜鸡呜呜",
+      "author": "whshhsa",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1329029424364130376",
-      "content": "我覺得應該是回聲要讓第一次鏈條生效兩次然後一樣打完鏈球消耗掉",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
+      "id": "1329107787862511627",
+      "channel_id": "1131839817982947429",
+      "content": "# 问就是我打过",
+      "author": "whshhsa",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329109755347734538",
+      "channel_id": "1131839817982947429",
+      "content": "血肉超维的大师线是深海超维榜首(",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1329116230463783003",
+      "channel_id": "1131839817982947429",
+      "content": "趕緊+12",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328937728380764190",
+      "channel_id": "1131839874132090890",
+      "content": "不然到時候投資結果發現到不適用2.1機制會想哭",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1328990299242106901",
+      "channel_id": "1131839874132090890",
+      "content": "🛐",
+      "author": "ice_storys",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
     }
   ]
 }

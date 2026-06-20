@@ -1,10 +1,17 @@
 {
   "date": "2025-03-15",
-  "messages": 2619,
+  "messages": 4136,
   "unique_authors": 91,
-  "reactions_total": 107,
-  "attachments": 149,
+  "reactions_total": 186,
+  "attachments": 207,
   "channel_activity": {
+    "🔸русский-канал": 89,
+    "🔸canal-español": 4,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 306,
+    "🔸ห้องสนทนาภาษาไทย": 152,
+    "🔸traphase": 227,
+    "🔸lore-chat": 732,
     "🔸綜合討論": 135,
     "🔸morimens-game-chat": 2311,
     "🔸相位对弈": 69,
@@ -21,34 +28,34 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "3": 312,
-    "4": 171,
-    "6": 84,
-    "7": 70,
-    "8": 62,
-    "9": 9,
-    "10": 32,
-    "11": 180,
-    "12": 372,
-    "13": 435,
-    "14": 140,
-    "15": 265,
-    "17": 23,
-    "18": 18,
-    "20": 19,
-    "21": 3,
-    "0": 19,
-    "1": 10,
-    "2": 168,
-    "5": 28,
-    "16": 130,
-    "19": 18,
-    "22": 37,
-    "23": 14
+    "4": 172,
+    "9": 36,
+    "10": 196,
+    "14": 482,
+    "15": 317,
+    "16": 174,
+    "17": 115,
+    "20": 122,
+    "21": 80,
+    "23": 38,
+    "0": 21,
+    "1": 21,
+    "11": 306,
+    "12": 433,
+    "2": 176,
+    "5": 64,
+    "7": 81,
+    "8": 81,
+    "13": 606,
+    "18": 50,
+    "19": 82,
+    "22": 46,
+    "6": 125,
+    "3": 312
   },
   "message_types": {
-    "0": 1810,
-    "19": 782
+    "0": 1067,
+    "19": 450
   },
   "top_reacted_messages": [
     {
@@ -81,6 +88,30 @@
       "author": "brainrot_in_a_vat",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350427270569000971",
+      "channel_id": "1326453763355185215",
+      "content": "I have all of the notes for dissolution written out, the rest is probably how to",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350480147614269570",
+      "channel_id": "1326453763355185215",
+      "content": "William comeback when?",
+      "author": "alfarro09",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350481158609043546",
+      "channel_id": "1326453763355185215",
+      "content": "after GDoll every new awaker need Overexalt",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1350323313163112489",
@@ -123,6 +154,54 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1350441445055664138",
+      "channel_id": "1300659802455674972",
+      "content": "https://tenor.com/view/supfkers-supfker-mfer-supfkers-moon-supfker-spiderman-gif",
+      "author": "littleyoukai",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1350412225344704513",
+      "channel_id": "1326453763355185215",
+      "content": "btw if you do manage to get a whole bunch of lore compiled together, i wouldnt m",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350427096698060903",
+      "channel_id": "1326453763355185215",
+      "content": "Chaos limited: a child with balls, wtf is this girl deal?, SH if Arthur Conan Do",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350469082725613569",
+      "channel_id": "1326453763355185215",
+      "content": "||Wait so can keeper summon N cosplaying as sorel for lolz||",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350476348539535413",
+      "channel_id": "1326453763355185215",
+      "content": "Dark Dwellers are mostly people that betrayed their path and become lesbians",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350480751522615440",
+      "channel_id": "1326453763355185215",
+      "content": "\"Keeper, I have a most ingenious idea\"",
+      "author": "re_rena12",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1350390353236332616",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -137,77 +216,6 @@
       "author": "aslechi",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350431789973245996",
-      "channel_id": "1170692781216378960",
-      "content": "Arc 2 becoming so lewd than thais? crazy",
-      "author": "undeterredhomo",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350455253115469894",
-      "channel_id": "1170692781216378960",
-      "content": "MS paint",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350463926092959774",
-      "channel_id": "1170692781216378960",
-      "content": "I can get Tulu from this right?",
-      "author": "caseoh_25",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350482757377196062",
-      "channel_id": "1170692781216378960",
-      "content": "Other game could never",
-      "author": "re_rena12",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350390115297529947",
-      "content": "「守秘者」も「シークレットキーパー」「秘密保持者」のほか「守密人」（中国語と同じ）があります。ラモンナ(Ramona)がボイスで言うのは「守秘者」です。",
-      "author": "x013318908",
-      "reactions": 2,
-      "channel": "【日本語訳】フィードバック"
-    },
-    {
-      "id": "1350389668608475168",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1350389970346704956",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1350391650081308692",
-      "channel_id": "1131839817982947429",
-      "content": "那個怪物血量還在100初，沒有什麼加固鎖血的美好世界🥵",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1350429153563770941",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,27 @@
 {
   "date": "2025-02-15",
-  "messages": 73,
-  "unique_authors": 19,
-  "reactions_total": 86,
-  "attachments": 25,
+  "messages": 2374,
+  "unique_authors": 144,
+  "reactions_total": 243,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 114,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 1065,
+    "🔸剧情交流": 13,
+    "🔸相位对弈": 63,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 627,
+    "🔸chaîne-française": 40,
+    "🔸русский-канал": 76,
+    "🔸phòng-chat-tiếng-việt": 33,
+    "🔸canal-español": 63,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 6,
+    "🔸ห้องสนทนาภาษาไทย": 2,
+    "🔸traphase": 118,
+    "🔸lore-chat": 2,
     "Tier list as of 2.0": 2,
     "I'm new !": 2,
     "💟獻上愛的圖騰——來自小花腦的信函": 6,
@@ -29,27 +46,34 @@
     "1271491376881598494": 3
   },
   "hourly_activity": {
-    "19": 2,
-    "7": 6,
-    "3": 2,
-    "9": 11,
-    "15": 1,
-    "12": 15,
-    "13": 2,
-    "18": 6,
-    "1": 3,
-    "5": 5,
-    "16": 2,
-    "17": 1,
-    "22": 2,
-    "2": 6,
-    "6": 3,
-    "11": 3,
-    "8": 2,
-    "14": 1
+    "0": 27,
+    "1": 108,
+    "2": 90,
+    "5": 155,
+    "7": 74,
+    "8": 43,
+    "9": 63,
+    "10": 59,
+    "11": 257,
+    "12": 253,
+    "13": 93,
+    "15": 202,
+    "16": 70,
+    "17": 37,
+    "18": 26,
+    "23": 24,
+    "3": 373,
+    "4": 185,
+    "6": 74,
+    "14": 42,
+    "19": 62,
+    "20": 16,
+    "21": 17,
+    "22": 24
   },
   "message_types": {
-    "0": 4
+    "0": 1997,
+    "19": 304
   },
   "top_reacted_messages": [
     {
@@ -74,6 +98,22 @@
       "channel": "【手拉手】对不起亲爱的不该死在你的梦里"
     },
     {
+      "id": "1340263125026476116",
+      "channel_id": "1173463482503536711",
+      "content": "罰你被娜娜壓在身下好好看她",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1340281827377549352",
+      "channel_id": "1170692781216378960",
+      "content": "Keeper : Ramona, where did my Retaliate go?\nRamona, with a suspicious Retaliate-",
+      "author": "nekomatadawnhorizon",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1340145222801297439",
       "content": "有點抽象了w負的是認真的嗎？\n想說體驗看看完全融合的雙子，結果不僅銀鑰負的，角色也剩下熔朵了。",
       "author": "xiangan3069",
@@ -88,6 +128,38 @@
       "channel": "✅前瞻：V2.1.0.2 星辰篇规则"
     },
     {
+      "id": "1340307488234541107",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1340303608901799956",
+      "channel_id": "1173463482503536711",
+      "content": "肯定是因為平常都沒看人家眼睛看的是別的地方",
+      "author": "zhuanzhifanche",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1340356015387836497",
+      "channel_id": "1300659662311526512",
+      "content": "https://tenor.com/view/supreme-victory-duck-mortal-kombat-gif-22176031",
+      "author": "hanabi.82",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1340352377525370951",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "lurvi_",
+      "reactions": 5,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1340198752966938734",
       "content": "~~「抱歉...要不打超過你們的條約分太難了」~~\n－－By 路人",
       "author": "tofu0834",
@@ -95,53 +167,68 @@
       "channel": "謹告各位守密人關於深潛36000條約"
     },
     {
-      "id": "1340297030743883820",
-      "content": "受到星辰篇規則各種限制影響，熔朵因為本身機制與綁定隊友等等各種原因出現各種躺槍被削到的連鎖反應，希望至少官方考慮優化掉機制上的毒點，給熔朵保留一定程度的後續體驗",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "建議優化熔朵天賦機制"
+      "id": "1340297095428571176",
+      "channel_id": "1131839817982947429",
+      "content": "輸光…",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1340298197708312677",
-      "content": "幫你更正一下\n超限也不能在道中獲得終末",
-      "author": "_cwz_",
-      "reactions": 3,
-      "channel": "建議優化熔朵天賦機制"
+      "id": "1340286265420943401",
+      "channel_id": "1170692781216378960",
+      "content": "I have seen stalls, but not stores",
+      "author": "nekomatadawnhorizon",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1340243806263443527",
-      "content": "被送了周邊禮盒回饋我得意了",
-      "author": "flim_of_life_burst",
-      "reactions": 2,
-      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
-    },
-    {
-      "id": "1340256095150674012",
-      "content": "喔喔喔喔是索瓦爾格的繁衍狂熱我們有救了",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
-    },
-    {
-      "id": "1340360841354022985",
-      "content": "那一位只剩下血超 沒72000了",
-      "author": "cuanbingtao",
-      "reactions": 1,
-      "channel": "謹告各位守密人關於深潛36000條約"
-    },
-    {
-      "id": "1340196516450664468",
-      "content": "We apologize for the inconvenience you're experiencing. Our team will gather dia",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Steam Client No Longer Working"
-    },
-    {
-      "id": "1340152772510879827",
+      "id": "1340234112836833352",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "xiangan3069",
-      "reactions": 1,
-      "channel": "什麼情況，銀鑰負的"
+      "author": "xx.usama.xx",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1340254972490809448",
+      "channel_id": "1131839817982947429",
+      "content": "有病我才再打一次",
+      "author": "devis0212",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1340248118746153021",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1340288734637326437",
+      "channel_id": "1170692781216378960",
+      "content": "there needs to be a balance in manual and auto",
+      "author": "mozaic2nd",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1340289493529399297",
+      "channel_id": "1170692781216378960",
+      "content": "Arknights after making you micro-manage your operators only for their auto-play ",
+      "author": "nekomatadawnhorizon",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1340210629507813417",
+      "channel_id": "1173463482503536711",
+      "content": "只有我是阿庫特子宮圖魯主拐了……",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
     }
   ]
 }

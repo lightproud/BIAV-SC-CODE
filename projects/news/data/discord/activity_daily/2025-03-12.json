@@ -1,10 +1,17 @@
 {
   "date": "2025-03-12",
-  "messages": 2075,
+  "messages": 2968,
   "unique_authors": 100,
-  "reactions_total": 214,
-  "attachments": 194,
+  "reactions_total": 256,
+  "attachments": 257,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 20,
+    "🔸canal-português": 42,
+    "🔸ruang-obrolan-indonesia": 192,
+    "🔸ห้องสนทนาภาษาไทย": 468,
+    "🔸traphase": 146,
+    "🔸lore-chat": 23,
     "🔸綜合討論": 189,
     "🔸阵容构建": 49,
     "🔸morimens-game-chat": 1562,
@@ -34,34 +41,35 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 154,
-    "1": 149,
-    "2": 88,
-    "3": 63,
-    "4": 49,
-    "5": 18,
-    "6": 57,
-    "7": 59,
-    "9": 97,
-    "10": 52,
-    "11": 138,
-    "12": 144,
-    "13": 68,
-    "14": 180,
-    "15": 102,
-    "16": 121,
-    "23": 63,
-    "8": 19,
-    "17": 66,
-    "18": 9,
-    "19": 67,
-    "20": 165,
-    "21": 85,
-    "22": 62
+    "0": 177,
+    "2": 102,
+    "6": 60,
+    "10": 107,
+    "12": 339,
+    "13": 86,
+    "14": 189,
+    "16": 190,
+    "18": 88,
+    "19": 72,
+    "15": 113,
+    "1": 153,
+    "3": 67,
+    "4": 66,
+    "5": 50,
+    "8": 24,
+    "9": 117,
+    "11": 226,
+    "21": 90,
+    "22": 69,
+    "23": 70,
+    "17": 281,
+    "7": 65,
+    "20": 167
   },
   "message_types": {
-    "19": 356,
-    "0": 1625
+    "0": 668,
+    "19": 224,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -165,52 +173,52 @@
       "channel": "什么时候把第九章ost放出来？"
     },
     {
-      "id": "1349233819911196763",
-      "channel_id": "1131839817982947429",
-      "content": "好色",
-      "author": "ahuahuahua",
+      "id": "1349200394038804614",
+      "channel_id": "1300659662311526512",
+      "content": "Hola gente",
+      "author": "omar_valencia",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1349240231856967711",
-      "channel_id": "1131839817982947429",
-      "content": "剩我力量跟愛都沒有了",
-      "author": "ahuahuahua",
+      "id": "1349348208207466608",
+      "channel_id": "1300659753197764688",
+      "content": "Ok makasih bang infonya",
+      "author": "drimi321",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸ruang-obrolan-indonesia"
     },
     {
-      "id": "1349258939992375317",
-      "channel_id": "1131839817982947429",
-      "content": "我得凹黄金匕首+诺专+一堆反击造物才有可能10回合",
-      "author": "Deleted User",
+      "id": "1349357702047993946",
+      "channel_id": "1300659802455674972",
+      "content": "เอาดอลแทนโอเกียร์น่าจะดีกว่า โซเรลต้องใช้ตัวอ่อน ลีอามันช่วยเจนตัวอ่อน",
+      "author": "littleyoukai",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349351685130293349",
-      "channel_id": "1131839874132090890",
-      "content": "去排行榜找大佬互關",
-      "author": "arr5721",
+      "id": "1349425299934412831",
+      "channel_id": "1300659802455674972",
+      "content": "สิ่งที่จะฆ่าฉันไม่ใช่บอส แต่เป็นอันนี้",
+      "author": "2ndselna",
       "reactions": 2,
-      "channel": "🔸阵容构建"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349403902231183451",
-      "channel_id": "1170692781216378960",
-      "content": "I dont think its worth running Goliath and Tulu until you can start stacking cri",
-      "author": "cornonthemacabre_",
+      "id": "1349449779159236682",
+      "channel_id": "1300659802455674972",
+      "content": "พึ่งเล่นเนื้อเรื่องบทแรกจบบ นั่งซึ้งอยู่",
+      "author": "2ndselna",
       "reactions": 2,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349435704480108655",
-      "channel_id": "1170692781216378960",
-      "content": "i just want the kits to not change the words every 5 lines lol",
-      "author": "sheepybeeby",
+      "id": "1349523123334156378",
+      "channel_id": "1326453763355185215",
+      "content": "Keeper doesn't have the balls to stand up to miryam",
+      "author": "aurora3981",
       "reactions": 2,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸lore-chat"
     }
   ]
 }

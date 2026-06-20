@@ -1,10 +1,20 @@
 {
   "date": "2025-01-29",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 1996,
+  "unique_authors": 139,
+  "reactions_total": 106,
+  "attachments": 95,
   "channel_activity": {
+    "🔸綜合討論": 331,
+    "🔸阵容构建": 48,
+    "🔸morimens-game-chat": 1411,
+    "🔸剧情交流": 1,
+    "🔸한국어-채팅방": 15,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 29,
+    "🔸phòng-chat-tiếng-việt": 11,
+    "🔸canal-español": 16,
+    "🔸canal-português": 122,
     "morimens story recap channel": 2,
     "《忘卻前夜》周邊企劃說明": 1,
     "English Page pls !!": 3,
@@ -12,14 +22,195 @@
     "aomi's morimens fan content corner (english ver.) 🎨": 1
   },
   "hourly_activity": {
-    "10": 3,
-    "0": 2,
-    "5": 2,
-    "23": 1,
-    "2": 1
+    "0": 35,
+    "1": 42,
+    "2": 78,
+    "3": 71,
+    "4": 40,
+    "5": 97,
+    "6": 26,
+    "7": 160,
+    "8": 114,
+    "9": 99,
+    "10": 90,
+    "11": 147,
+    "12": 80,
+    "13": 143,
+    "14": 74,
+    "15": 85,
+    "16": 138,
+    "17": 219,
+    "18": 94,
+    "19": 73,
+    "23": 53,
+    "20": 22,
+    "21": 10,
+    "22": 6
   },
   "message_types": {
-    "0": 2
+    "0": 1569,
+    "19": 418
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1333986986167500820",
+      "channel_id": "1131839817982947429",
+      "content": "好，好耶...",
+      "author": ".moon_leaf",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334097849612238868",
+      "channel_id": "1131839817982947429",
+      "content": "這是不是其實有機會1t啊",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334182874777129084",
+      "channel_id": "1131839817982947429",
+      "content": "能组10队的也不需要作业",
+      "author": "galagalaguo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334000089613598791",
+      "channel_id": "1131839817982947429",
+      "content": "如果....",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334139610162397279",
+      "channel_id": "1131839817982947429",
+      "content": "新年快樂㊗️",
+      "author": "hamnett",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334215426875592814",
+      "channel_id": "1131839817982947429",
+      "content": "真強啊Aaa\nAaa就是超維之神\n左踩阿花右扁cra",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334004712479129660",
+      "channel_id": "1131839817982947429",
+      "content": "对于牢忘的平衡能力我持悲观态度<:cry:1243502872021438475>",
+      "author": "yang015148",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334069049440735272",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇商店没有诅咒造物了",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334104181191086131",
+      "channel_id": "1131839817982947429",
+      "content": "剩我打不了1t了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334199689444069476",
+      "channel_id": "1131839817982947429",
+      "content": "我用飯店wifi也不能",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334202918341050490",
+      "channel_id": "1131839817982947429",
+      "content": "剛剛失敗五次是三小",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334179822179586110",
+      "channel_id": "1131839874132090890",
+      "content": "百萬蒙寵之眼可以給血希用嗎？",
+      "author": "tostacat",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1334126242252722237",
+      "channel_id": "1170692781216378960",
+      "content": "you just need to get 2 barrier card like a skilled player",
+      "author": "good.th",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1334212643690381342",
+      "channel_id": "1170692781216378960",
+      "content": "Faint when 99% deathres doesn’t proc",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1333959143605665853",
+      "channel_id": "1131839817982947429",
+      "content": "愿您蛇年快乐",
+      "author": "fengtengjayden9754",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333959769890750594",
+      "channel_id": "1131839817982947429",
+      "content": "我的汉语还是这么生硬（",
+      "author": "fengtengjayden9754",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333974226545279008",
+      "channel_id": "1131839817982947429",
+      "content": "开玩笑的啦<:cute:1239911255121068082> 也祝你新年快乐,新的一年华文能多多进步<:rose1:1234798154000633949>",
+      "author": "yang015148",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333974731438952542",
+      "channel_id": "1131839817982947429",
+      "content": "就算过新年大家也要努力爆校猫银芯喔<:wish:1236951537788649492>",
+      "author": "yang015148",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333985531088080976",
+      "channel_id": "1131839817982947429",
+      "content": "邮箱发了10抽，估计是没有兑换码了",
+      "author": "sense25.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334058637378850826",
+      "channel_id": "1131839817982947429",
+      "content": "血希還好，畢竟血希單張的輸出很高，而且血希沒開超限的話能輸出的牌也不多，她可以繼續當她的超模大C\n慘的是塔薇跟尤烏，前者不必多說，後者這遊戲光是回合抽牌五張，以",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
 }

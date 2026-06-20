@@ -1,10 +1,22 @@
 {
   "date": "2025-02-22",
-  "messages": 89,
-  "unique_authors": 23,
-  "reactions_total": 75,
-  "attachments": 7,
+  "messages": 3190,
+  "unique_authors": 147,
+  "reactions_total": 220,
+  "attachments": 202,
   "channel_activity": {
+    "🔸綜合討論": 301,
+    "🔸阵容构建": 45,
+    "🔸morimens-game-chat": 1705,
+    "🔸相位对弈": 28,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 466,
+    "🔸русский-канал": 38,
+    "🔸canal-español": 70,
+    "🔸ruang-obrolan-indonesia": 333,
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸traphase": 84,
+    "🔸lore-chat": 18,
     "💟獻上愛的圖騰——來自小花腦的信函": 1,
     "✅前瞻：V2.1 关卡篇章": 1,
     "✅前瞻：V2.1.1 相位对弈联动": 37,
@@ -22,26 +34,34 @@
     "不会再有了": 1
   },
   "hourly_activity": {
-    "11": 19,
-    "10": 17,
-    "9": 9,
-    "13": 4,
-    "14": 5,
-    "15": 8,
-    "20": 1,
-    "17": 1,
-    "2": 1,
-    "3": 2,
-    "7": 6,
-    "8": 9,
-    "23": 1,
-    "16": 5,
-    "5": 1
+    "1": 109,
+    "2": 133,
+    "4": 227,
+    "6": 175,
+    "7": 155,
+    "8": 254,
+    "9": 114,
+    "10": 240,
+    "11": 129,
+    "12": 217,
+    "13": 215,
+    "14": 339,
+    "15": 119,
+    "16": 120,
+    "18": 62,
+    "19": 20,
+    "3": 174,
+    "5": 181,
+    "0": 50,
+    "17": 72,
+    "20": 13,
+    "21": 6,
+    "22": 33,
+    "23": 33
   },
   "message_types": {
-    "0": 26,
-    "4": 6,
-    "19": 16
+    "0": 2392,
+    "19": 709
   },
   "top_reacted_messages": [
     {
@@ -80,6 +100,14 @@
       "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
+      "id": "1342958827548704799",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "rusheer.l",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1342804338036441181",
       "content": "不会，这些产能还是留给忘却前夜吧！主要是一些小表情小剧情和相位对弈专属的一个钥令以及限时相位对弈任务奖励。",
       "author": "game.producer.light",
@@ -101,6 +129,70 @@
       "channel": "活動打出兩張虛無是正常的嗎？"
     },
     {
+      "id": "1342756628721700874",
+      "channel_id": "1131839817982947429",
+      "content": "脱光…",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342809933594497044",
+      "channel_id": "1131839817982947429",
+      "content": "剩一堆狗在玩",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342836465016770653",
+      "channel_id": "1131839817982947429",
+      "content": "明明屎也很好吃",
+      "author": "kyle8227",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342837488510832660",
+      "channel_id": "1131839817982947429",
+      "content": "## **校貓都沒有給我錢**",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342864777877393498",
+      "channel_id": "1131839817982947429",
+      "content": "我剛把它用+12",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342878691457372231",
+      "channel_id": "1131839817982947429",
+      "content": "豆腐！",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1342734415318745159",
+      "channel_id": "1170692781216378960",
+      "content": "Are you the reason why all child must die",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1342763362991472640",
+      "channel_id": "1300659753197764688",
+      "content": "<@1300555356333670451> <@1032147341060362332> Thank You, lagi menyelesaikan bab ",
+      "author": "03005217",
+      "reactions": 3,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
       "id": "1342890506241314846",
       "content": "> ﻿🟪﻿ \nWinkle：七緒 凜（Rin Nanao，English translation \"Rin Nanase\" is incorrect❌﻿）\nWa",
       "author": "menta_y_menta",
@@ -108,81 +200,20 @@
       "channel": "About Voice Actor"
     },
     {
-      "id": "1342825621402947584",
-      "content": "總之加油🍟 ，雖然還有很多問題沒有改善就是了<:cry:1239910167668326480> 。",
-      "author": "07_li",
+      "id": "1342758749453942785",
+      "channel_id": "1131839817982947429",
+      "content": "你的圖魯呢😡 😡",
+      "author": "shchng.",
       "reactions": 2,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1342828001666011147",
-      "content": "我現在遊戲也不登了 每天上社群就為了看這遊戲甚麼時候4已祭奠我氪的首儲",
-      "author": "ama3409",
+      "id": "1342760164213653534",
+      "channel_id": "1131839817982947429",
+      "content": "現在只靠著3天一次的禮包+每日有抽就抽<:cry:1239910167668326480>",
+      "author": "pray_unbeliever",
       "reactions": 2,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
-    },
-    {
-      "id": "1342908420571009096",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "✅「已回答」知無不言還是沒有正確聯動反擊造物"
-    },
-    {
-      "id": "1342686059057643561",
-      "content": "你这个不是bug啦，一个是活动造物一个是融朵自己的",
-      "author": "qaym.",
-      "reactions": 2,
-      "channel": "活動打出兩張虛無是正常的嗎？"
-    },
-    {
-      "id": "1342764813952221224",
-      "content": "不過今天尤烏好難湊，一下就被旺達刮死了<:flop:1236937860922343466>",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "活動打出兩張虛無是正常的嗎？"
-    },
-    {
-      "id": "1342769764497494176",
-      "content": "~~那就是有利于玩家的bug不要声张~~😡",
-      "author": "sense25.",
-      "reactions": 2,
-      "channel": "活動打出兩張虛無是正常的嗎？"
-    },
-    {
-      "id": "1342765065258008626",
-      "content": "Unfortunately I already paid a few minutes ago lol",
-      "author": "legion_schindler",
-      "reactions": 2,
-      "channel": "Page moved"
-    },
-    {
-      "id": "1342768462875070486",
-      "content": "因为融朵叠10层也给一个，如果是做那个爆发研究的话，可以做到同时给两的",
-      "author": "sense25.",
-      "reactions": 1,
-      "channel": "活動打出兩張虛無是正常的嗎？"
-    },
-    {
-      "id": "1342758718843916350",
-      "content": "My page suddenly move to store during battle",
-      "author": "legion_schindler",
-      "reactions": 1,
-      "channel": "Page moved"
-    },
-    {
-      "id": "1342825127502413825",
-      "content": "<@&1166257943742787615> 這個應該不是你們的手段吧🤣",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "Page moved"
-    },
-    {
-      "id": "1342776198903627797",
-      "content": "Is Anyone can let me know every characters' voice actor?",
-      "author": "legion_schindler",
-      "reactions": 1,
-      "channel": "About Voice Actor"
+      "channel": "🔸綜合討論"
     }
   ]
 }

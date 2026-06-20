@@ -1,10 +1,24 @@
 {
   "date": "2025-02-03",
-  "messages": 31,
-  "unique_authors": 8,
-  "reactions_total": 102,
-  "attachments": 6,
+  "messages": 4670,
+  "unique_authors": 133,
+  "reactions_total": 609,
+  "attachments": 224,
   "channel_activity": {
+    "🔸綜合討論": 349,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 3669,
+    "🔸剧情交流": 18,
+    "🔸晒卡分享": 2,
+    "🔸한국어-채팅방": 11,
+    "🔸русский-канал": 258,
+    "🔸phòng-chat-tiếng-việt": 19,
+    "🔸canal-español": 47,
+    "🔸canal-português": 89,
+    "🔸ruang-obrolan-indonesia": 32,
+    "🔸ห้องสนทนาภาษาไทย": 2,
+    "🔸traphase": 19,
+    "🔸lore-chat": 121,
     "GPT translation synonyms": 1,
     "Chapter 9": 1,
     "✨為喚醒體著新裝！": 1,
@@ -18,22 +32,34 @@
     "關卡地圖「融災禁區」總覽27期": 1
   },
   "hourly_activity": {
-    "18": 7,
-    "0": 2,
-    "11": 1,
-    "8": 9,
-    "9": 3,
-    "14": 2,
-    "19": 1,
-    "20": 1,
-    "4": 1,
-    "5": 1,
-    "17": 1,
-    "22": 1,
-    "13": 1
+    "1": 47,
+    "2": 104,
+    "3": 264,
+    "4": 159,
+    "5": 114,
+    "6": 137,
+    "7": 70,
+    "8": 101,
+    "9": 90,
+    "11": 50,
+    "12": 116,
+    "13": 319,
+    "14": 559,
+    "15": 829,
+    "16": 847,
+    "17": 454,
+    "20": 52,
+    "0": 110,
+    "10": 24,
+    "18": 47,
+    "19": 103,
+    "21": 28,
+    "22": 33,
+    "23": 13
   },
   "message_types": {
-    "0": 2
+    "0": 3378,
+    "19": 1261
   },
   "top_reacted_messages": [
     {
@@ -58,6 +84,38 @@
       "channel": "《忘卻前夜》丨2.1廣播劇——《缸中之夢》（建議佩戴耳機🎧）"
     },
     {
+      "id": "1335851985638789200",
+      "channel_id": "1173463482503536711",
+      "content": "快開門，守咪，我是拉蒙娜",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1335977100808556575",
+      "channel_id": "1170692781216378960",
+      "content": "Side note. This is hysterical",
+      "author": "oddeyesight",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1335982591148298260",
+      "channel_id": "1170692781216378960",
+      "content": "the introduction of alpha male to common parlance and its consequences.....",
+      "author": "khykken",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1335991231444025475",
+      "channel_id": "1170692781216378960",
+      "content": "she created the finest girlfailure in history",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1335896839358124083",
       "content": "~~守咪醒了之後會不會發現自己是用朵爾的備用身體~~\n~~好想看到這種劇情哦~~",
       "author": "_cwz_",
@@ -72,46 +130,91 @@
       "channel": "關卡地圖「融災禁區」總覽27期"
     },
     {
+      "id": "1335842864722083873",
+      "channel_id": "1131839817982947429",
+      "content": "喵喵",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1335890663421509643",
+      "channel_id": "1131839817982947429",
+      "content": "oh为什么打完了只有380特训值",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1335898261164261416",
+      "channel_id": "1131839817982947429",
+      "content": "不是直接來個神經交流嗎?連接彼此的神經然後給予刺激",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1335999772225572907",
+      "channel_id": "1131839817982947429",
+      "content": "相片好神<:wish:1236951537788649492>",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336077994153873408",
+      "channel_id": "1131839817982947429",
+      "content": "甚至比以前的IV級簡單",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1335976651955245096",
+      "channel_id": "1170692781216378960",
+      "content": "i like him a totally normal amount",
+      "author": "optimisticyum",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1335979503067074612",
+      "channel_id": "1170692781216378960",
+      "content": "she’s purple so I don’t even think about the word “straight” lol",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1335992070351097948",
+      "channel_id": "1170692781216378960",
+      "content": "she must be happy now that she can be a support to the Great Aurita",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1336008723935662132",
+      "channel_id": "1170692781216378960",
+      "content": "me when hameln uses his looping melody on me and I have to piss twice 😩",
+      "author": "insigible",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1335994223190610053",
+      "channel_id": "1300659580446969918",
+      "content": "Почитай что такое идл проекты",
+      "author": "sergey321.",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1336094363645907016",
       "content": "第二十七期融災禁區\n\n汪汪，其實感覺比以前的IV還要簡單",
       "author": "ernest_heart",
       "reactions": 4,
       "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
-    },
-    {
-      "id": "1336065699566583849",
-      "content": "幸好discord上的大伙都很温柔，换别的地方你的浮木可能保不了一点",
-      "author": "shiqihongya",
-      "reactions": 3,
-      "channel": "大过年过来吐槽"
-    },
-    {
-      "id": "1335987072120393800",
-      "content": "这哥们要么小学生要么正宗唐氏吧？名字+迷惑发言+密契没一个不唐的，创个b站号整天发他那相位对弈阴间局，打不过人家给人家挂网上说人家阴间，真就被融蚀了？",
-      "author": "nowimfaceless",
-      "reactions": 2,
-      "channel": "大过年过来吐槽"
-    },
-    {
-      "id": "1335837101597655123",
-      "content": "虽然但是，每天登陆看到校猫被暴揍了 10w+次我就心情舒畅🤤😋",
-      "author": "mzmz07033",
-      "reactions": 2,
-      "channel": "好想要烏撒貓貓律當宿舍背景🐾"
-    },
-    {
-      "id": "1336043589473538143",
-      "content": "降力對潘影響蠻大的",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "2.0 BOSS難度排行榜"
-    },
-    {
-      "id": "1336041819431108700",
-      "content": "性別可以轉換成沃爾瑪購物袋了",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "《忘卻前夜》丨2.1廣播劇——《缸中之夢》（建議佩戴耳機🎧）"
     }
   ]
 }

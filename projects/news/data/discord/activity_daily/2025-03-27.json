@@ -1,10 +1,19 @@
 {
   "date": "2025-03-27",
-  "messages": 2660,
+  "messages": 3410,
   "unique_authors": 100,
-  "reactions_total": 497,
-  "attachments": 130,
+  "reactions_total": 901,
+  "attachments": 178,
   "channel_activity": {
+    "🔸한국어-채팅방": 51,
+    "🔸русский-канал": 202,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 13,
+    "🔸ruang-obrolan-indonesia": 185,
+    "🔸ห้องสนทนาภาษาไทย": 35,
+    "🔸traphase": 246,
+    "🔸lore-chat": 8,
+    "🔸服务器公告┊server-announcement": 10,
     "🔸綜合討論": 541,
     "🔸morimens-game-chat": 2029,
     "🔸相位对弈": 55,
@@ -19,52 +28,52 @@
     "不会再有了": 1,
     "《巨人的新娘》戈利亞X妳": 1,
     "印了戈利亞的流沙票根": 2,
-    "🔸服务器公告┊server-announcement": 5,
     "1181998821291606097": 1,
     "1350060160739184690": 1,
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "0": 254,
-    "1": 121,
-    "2": 55,
-    "3": 25,
-    "4": 34,
-    "5": 7,
-    "6": 18,
-    "8": 18,
-    "9": 133,
-    "10": 168,
-    "11": 238,
-    "12": 31,
-    "13": 201,
-    "14": 273,
-    "15": 366,
-    "16": 284,
-    "17": 28,
-    "18": 53,
-    "7": 35,
-    "19": 58,
-    "20": 13,
-    "21": 19,
-    "22": 23,
-    "23": 205
+    "3": 60,
+    "5": 34,
+    "10": 204,
+    "11": 322,
+    "12": 82,
+    "14": 384,
+    "16": 304,
+    "1": 125,
+    "6": 49,
+    "9": 169,
+    "13": 303,
+    "15": 403,
+    "18": 68,
+    "19": 170,
+    "20": 14,
+    "0": 255,
+    "22": 26,
+    "2": 62,
+    "4": 40,
+    "7": 45,
+    "17": 32,
+    "21": 25,
+    "8": 28,
+    "23": 206
   },
   "message_types": {
-    "0": 2034,
-    "19": 590,
-    "46": 1
+    "0": 591,
+    "19": 159
   },
   "top_reacted_messages": [
     {
       "id": "1354757147828682872",
+      "channel_id": "1354754985119846581",
       "content": "",
       "author": "morimensstaff01",
-      "reactions": 191,
+      "reactions": 193,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
       "id": "1354756858820169859",
+      "channel_id": "1354754985119846581",
       "content": "🌹 \n**Below is a brief description of several important channels. For detailed in",
       "author": "morimensstaff01",
       "reactions": 114,
@@ -72,9 +81,10 @@
     },
     {
       "id": "1354756718495797399",
+      "channel_id": "1354754985119846581",
       "content": "——————————————————————\n\n\nHello,  Keeper🌹\nIn order to improve the channel experie",
       "author": "morimensstaff01",
-      "reactions": 42,
+      "reactions": 43,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -86,17 +96,35 @@
     },
     {
       "id": "1354756061604745226",
+      "channel_id": "1354754985119846581",
       "content": "**【伺服器煥新說明/Server Update Notes】**\n————————————\n\n你好，守密人🌹\n為提升各位守密人的頻道使用體驗，我們將在3月28",
       "author": "morimensstaff01",
-      "reactions": 17,
+      "reactions": 18,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
       "id": "1354757031076298886",
+      "channel_id": "1354754985119846581",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354742296951787580",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "6____6",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1354896064771002599",
+      "channel_id": "1300659580446969918",
+      "content": "Как сказал бы один мудрец, я сосал, ты сосал",
+      "author": "eagle4alan",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
     },
     {
       "id": "1354767651649622037",
@@ -105,6 +133,54 @@
       "author": "shchng.",
       "reactions": 3,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354754072950870076",
+      "channel_id": "1300659580446969918",
+      "content": "легендарный ивент снова в игре",
+      "author": "sakamoto8727",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1354776835656781894",
+      "channel_id": "1300659580446969918",
+      "content": "<@527852401806409730> Макиато вообще топовый персонаж кстати.Наверное единственн",
+      "author": "somethingno1fan",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1354902684221575419",
+      "channel_id": "1300659580446969918",
+      "content": "А и еще.Если вдруг кто не знал, то дроп валюты ивента зависит от уровня ивентово",
+      "author": "somethingno1fan",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1354621092248948746",
+      "channel_id": "1300659603993923644",
+      "content": "she mean we dont have giftcode when update 2.0",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1354847018023129289",
+      "channel_id": "1326453691527594035",
+      "content": "Rerun?",
+      "author": "xesin0575",
+      "reactions": 2,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1354925022174777526",
+      "channel_id": "1326453763355185215",
+      "content": "I don't think you need help to do that",
+      "author": "superpotato869",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1354651023079248105",
@@ -145,70 +221,6 @@
       "author": "noire_2",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354647348055248938",
-      "channel_id": "1170692781216378960",
-      "content": "so it has finally begun",
-      "author": "noire_2",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354777717136162971",
-      "channel_id": "1170692781216378960",
-      "content": "For next ssr you are guaranteed banner char",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354934122975465655",
-      "channel_id": "1170692781216378960",
-      "content": "someone please kill this fucking bitch",
-      "author": "omegamart",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354936588118917367",
-      "channel_id": "1170692781216378960",
-      "content": "<@735137568307282011> you wanna say that again",
-      "author": "omegamart",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354656292752326707",
-      "channel_id": "1131839817982947429",
-      "content": "不用收回",
-      "author": "huangyu0876",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1354696281829801994",
-      "channel_id": "1131839817982947429",
-      "content": "萊克下方是血希的",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1354761168992079952",
-      "channel_id": "1131839817982947429",
-      "content": "這下知道資金拿去買什麼東西了",
-      "author": "yizilven",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1354761252160667660",
-      "channel_id": "1131839817982947429",
-      "content": "報告！夠用啦，我們充了高級會員🔥",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

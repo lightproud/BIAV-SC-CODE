@@ -1,10 +1,17 @@
 {
   "date": "2025-03-18",
-  "messages": 3819,
+  "messages": 5663,
   "unique_authors": 110,
-  "reactions_total": 213,
-  "attachments": 209,
+  "reactions_total": 244,
+  "attachments": 316,
   "channel_activity": {
+    "🔸русский-канал": 595,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-português": 129,
+    "🔸ruang-obrolan-indonesia": 210,
+    "🔸ห้องสนทนาภาษาไทย": 311,
+    "🔸traphase": 590,
+    "🔸lore-chat": 7,
     "🔸綜合討論": 590,
     "🔸阵容构建": 13,
     "🔸morimens-game-chat": 3020,
@@ -42,34 +49,34 @@
     "1350059696945500171": 2
   },
   "hourly_activity": {
-    "0": 8,
-    "2": 76,
-    "4": 264,
-    "5": 184,
-    "6": 565,
-    "7": 448,
-    "9": 103,
-    "10": 69,
-    "11": 163,
-    "12": 167,
-    "13": 135,
-    "14": 114,
-    "15": 268,
-    "16": 229,
-    "17": 220,
-    "18": 147,
-    "20": 80,
-    "23": 117,
-    "1": 145,
-    "3": 36,
-    "8": 55,
-    "19": 111,
-    "21": 76,
-    "22": 39
+    "1": 165,
+    "4": 348,
+    "7": 496,
+    "8": 127,
+    "9": 277,
+    "10": 371,
+    "11": 380,
+    "12": 451,
+    "13": 190,
+    "14": 168,
+    "16": 312,
+    "17": 285,
+    "18": 172,
+    "19": 130,
+    "20": 103,
+    "21": 117,
+    "22": 65,
+    "5": 220,
+    "2": 132,
+    "15": 286,
+    "0": 52,
+    "3": 107,
+    "6": 587,
+    "23": 122
   },
   "message_types": {
-    "0": 2981,
-    "19": 716
+    "0": 1522,
+    "19": 322
   },
   "top_reacted_messages": [
     {
@@ -186,44 +193,44 @@
       "channel": "你有这样的光污染进入弥萨格"
     },
     {
+      "id": "1351494551902228511",
+      "channel_id": "1300659580446969918",
+      "content": "гг удаляю игру",
+      "author": "bobsleu",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1351506572345479249",
+      "channel_id": "1300659580446969918",
+      "content": "ждите 2 сезон аниме",
+      "author": "sakamoto8727",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1351418520847515739",
+      "channel_id": "1300659802455674972",
+      "content": "ของ​ Sanga​ ก็ได้ครับ คุณเล่นทีมสะท้อนใช่ไหม ผมว่าน่าจะเหมาะ เสกหนวดได้ กับเจนโล",
+      "author": "c2reayus",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1351570278148345919",
+      "channel_id": "1300659802455674972",
+      "content": "ไม่อยากเล่น pvp เลยแงงง",
+      "author": "2ndselna",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1351436531046547488",
       "channel_id": "1131839817982947429",
       "content": "感覺要換掉哈姆林",
       "author": "shchng.",
       "reactions": 2,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1351438389500579861",
-      "channel_id": "1131839817982947429",
-      "content": "剛好可以忽略",
-      "author": "tofu0834",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1351538229983055955",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1351436077478445077",
-      "channel_id": "1170692781216378960",
-      "content": "Not just tone, but most words are completely different pronunciations",
-      "author": ".galeroar",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1351440967978455090",
-      "channel_id": "1170692781216378960",
-      "content": "smh I only play games with no women",
-      "author": "khykken",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

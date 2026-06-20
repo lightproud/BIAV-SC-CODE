@@ -1,10 +1,23 @@
 {
   "date": "2025-02-08",
-  "messages": 122,
-  "unique_authors": 24,
-  "reactions_total": 129,
-  "attachments": 4,
+  "messages": 3603,
+  "unique_authors": 132,
+  "reactions_total": 342,
+  "attachments": 175,
   "channel_activity": {
+    "🔸綜合討論": 230,
+    "🔸阵容构建": 65,
+    "🔸morimens-game-chat": 1941,
+    "🔸剧情交流": 7,
+    "🔸相位对弈": 429,
+    "🔸한국어-채팅방": 106,
+    "🔸русский-канал": 267,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 49,
+    "🔸canal-português": 279,
+    "🔸ruang-obrolan-indonesia": 4,
+    "🔸traphase": 70,
+    "🔸lore-chat": 31,
     "GDoll preview rough TL": 3,
     "Any advice on what to choose based on what i already have": 2,
     "V2.1.0.0 停服維護公告": 93,
@@ -17,27 +30,34 @@
     "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎": 2
   },
   "hourly_activity": {
-    "0": 4,
-    "17": 2,
-    "1": 8,
-    "2": 17,
-    "3": 3,
-    "4": 47,
-    "5": 12,
-    "6": 3,
-    "7": 7,
-    "8": 7,
-    "14": 1,
-    "16": 1,
-    "10": 1,
-    "12": 2,
-    "13": 2,
-    "21": 1,
-    "11": 1,
-    "18": 3
+    "2": 216,
+    "3": 403,
+    "4": 506,
+    "5": 161,
+    "6": 89,
+    "7": 137,
+    "8": 92,
+    "9": 115,
+    "10": 110,
+    "11": 56,
+    "12": 197,
+    "13": 209,
+    "14": 162,
+    "15": 156,
+    "17": 364,
+    "19": 23,
+    "20": 53,
+    "21": 9,
+    "22": 60,
+    "1": 60,
+    "0": 86,
+    "16": 165,
+    "18": 116,
+    "23": 58
   },
   "message_types": {
-    "0": 5
+    "0": 2925,
+    "19": 556
   },
   "top_reacted_messages": [
     {
@@ -83,11 +103,35 @@
       "channel": "V2.1.0.0 停服維護公告"
     },
     {
+      "id": "1337606216943272026",
+      "channel_id": "1131839817982947429",
+      "content": "好耶",
+      "author": "cwz.io",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1337751547211157584",
+      "channel_id": "1180850818509971466",
+      "content": "幻影强度确实是不低，正好帮朋友打号，试了下用幻影随便上3000。",
+      "author": "tianfang5580",
+      "reactions": 6,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1337646897640247297",
       "content": "🤓",
       "author": "whshhsa",
       "reactions": 6,
       "channel": "V2.1.0.0 停服維護公告"
+    },
+    {
+      "id": "1337583063345004628",
+      "channel_id": "1180850818509971466",
+      "content": "以及推一个罗坦队，这队说不上强，但每个版本都能用，且造价极低，几乎人人都能配出来，操作难度不高。个人实测能稳上2000，再往上要有一定熟练度和个人硬实力",
+      "author": "tianfang5580",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1337685195574218823",
@@ -111,6 +155,30 @@
       "channel": "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎"
     },
     {
+      "id": "1337683180156882954",
+      "channel_id": "1131839817982947429",
+      "content": "打不過就吃復活",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1337738339880538172",
+      "channel_id": "1131839817982947429",
+      "content": "蒸蚌",
+      "author": "qqinfinity",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1337802805783826522",
+      "channel_id": "1131839817982947429",
+      "content": "話說熔朵這活動名稱「半步之隔」，跟環拉潛游名稱「一步之遙」……好像有關係🤔",
+      "author": "magushermes",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1337649178536317023",
       "content": "按照45抽1个期望角色估算，500沉淀可以约等于45抽，50沉淀也就是4.5抽，往下就是9抽，13.5抽……，没有哪个游戏会这样收费解锁编队栏……而且你游也是我",
       "author": "147asd",
@@ -132,53 +200,12 @@
       "channel": "V2.1.0.0 停服維護公告"
     },
     {
-      "id": "1337615662213894195",
-      "content": "啊？新材料又要每天凹深潜了？",
-      "author": "mate0321",
-      "reactions": 3,
-      "channel": "V2.1.0.0 停服維護公告"
-    },
-    {
-      "id": "1337641408546471978",
-      "content": "我覺得還是很貴阿（",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "V2.1.0.0 停服維護公告"
-    },
-    {
-      "id": "1337642941606395995",
-      "content": "“我们直接加赤石材料，玩家可能会喷，但是我们加一手沉淀再小滑轨一下🤓 ，那玩家应该就愿意赤了”",
-      "author": "nidie0256_61327",
-      "reactions": 3,
-      "channel": "V2.1.0.0 停服維護公告"
-    },
-    {
-      "id": "1337697997189808162",
-      "content": "各位，以後有朋友要入坑趕快勸對方三思",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "V2.1.0.0 停服維護公告"
-    },
-    {
-      "id": "1337603804165705729",
-      "content": "~~如果發現校貓的發言突然通順了，那就是被公關調教過的~~",
+      "id": "1337619850264186953",
+      "channel_id": "1131839817982947429",
+      "content": "沒有每回合免費150盾的隊才是低人一等的",
       "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "V2.1.0.0 停服維護公告"
-    },
-    {
-      "id": "1337750536094482493",
-      "content": "I m just download game for first time dont have account yet and keep stucking in",
-      "author": "thesiras",
-      "reactions": 2,
-      "channel": "💭「Processing」Stuck in \"Checking for resource updates\""
-    },
-    {
-      "id": "1337579204300243038",
-      "content": "配队需要增加本来就是官方组队功能特别辣鸡的缘故，每次组队都要必须上命轮，如果要更改密契还得上密契，现在官方却因此推出收费编队组合，我只能说真的不要脸<:fing",
-      "author": "sense25.",
-      "reactions": 2,
-      "channel": "编队组合要求增加至少十组"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

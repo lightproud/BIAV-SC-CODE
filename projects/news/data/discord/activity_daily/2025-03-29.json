@@ -1,10 +1,18 @@
 {
   "date": "2025-03-29",
-  "messages": 3089,
+  "messages": 3317,
   "unique_authors": 86,
-  "reactions_total": 148,
-  "attachments": 151,
+  "reactions_total": 160,
+  "attachments": 173,
   "channel_activity": {
+    "🔸한국어-채팅방": 51,
+    "🔸русский-канал": 56,
+    "🔸canal-español": 4,
+    "🔸canal-português": 5,
+    "🔸ruang-obrolan-indonesia": 29,
+    "🔸ห้องสนทนาภาษาไทย": 33,
+    "🔸traphase": 47,
+    "🔸lore-chat": 3,
     "🔸綜合討論": 137,
     "🔸morimens-game-chat": 2847,
     "🔸剧情交流": 1,
@@ -22,34 +30,34 @@
     "*千面幻象*达芙黛尔单人向": 3
   },
   "hourly_activity": {
-    "1": 201,
-    "2": 105,
-    "4": 252,
-    "6": 60,
-    "7": 83,
-    "9": 60,
-    "10": 100,
-    "11": 63,
-    "12": 100,
-    "13": 241,
-    "16": 54,
-    "17": 228,
-    "23": 102,
-    "0": 102,
-    "3": 105,
-    "5": 153,
-    "8": 68,
-    "14": 73,
-    "15": 104,
-    "18": 89,
-    "19": 21,
-    "20": 143,
-    "21": 328,
-    "22": 254
+    "3": 110,
+    "4": 261,
+    "5": 163,
+    "6": 68,
+    "7": 89,
+    "8": 81,
+    "9": 69,
+    "10": 114,
+    "12": 120,
+    "13": 248,
+    "14": 84,
+    "15": 118,
+    "17": 271,
+    "18": 90,
+    "22": 259,
+    "23": 126,
+    "0": 107,
+    "2": 110,
+    "11": 65,
+    "20": 150,
+    "21": 330,
+    "16": 57,
+    "19": 26,
+    "1": 201
   },
   "message_types": {
-    "19": 647,
-    "0": 2427
+    "0": 189,
+    "19": 39
   },
   "top_reacted_messages": [
     {
@@ -105,6 +113,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1355513519923007639",
+      "channel_id": "1300659580446969918",
+      "content": "Всем ку, не думал, что тут рус канал есть)",
+      "author": "jobzhik",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1355584648817938626",
       "channel_id": "1131839817982947429",
       "content": "<:cry:1239910167668326480> 我只有5000初",
@@ -128,84 +144,76 @@
       "channel": "💭「Processing」Korean Translation get worse after resources update."
     },
     {
-      "id": "1355365650406834237",
-      "channel_id": "1131839817982947429",
-      "content": "珠子本来就不够用吧",
-      "author": "287405tjy_28066",
+      "id": "1355434423964663949",
+      "channel_id": "1300659495550062592",
+      "content": "막간연습에서 캐릭터 체험해보시고 뽑으세요!",
+      "author": "legion_schindler",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸한국어-채팅방"
     },
     {
-      "id": "1355507662137200802",
-      "channel_id": "1131839817982947429",
-      "content": "把你的XP改造成强度",
-      "author": "akalanden",
+      "id": "1355519504221995209",
+      "channel_id": "1300659495550062592",
+      "content": "회귀시계 우선에 나머지는 취향껏 하셔요",
+      "author": "lurvi_",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸한국어-채팅방"
     },
     {
-      "id": "1355378582825992263",
-      "channel_id": "1170692781216378960",
-      "content": "... So extra steps?",
-      "author": "aurora3981",
+      "id": "1355522687157534810",
+      "channel_id": "1300659495550062592",
+      "content": "우선이랄게...딱히 없긴함요 근데 게임에는 일단 정답이.없음...",
+      "author": "legion_schindler",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸한국어-채팅방"
     },
     {
-      "id": "1355407924582809880",
-      "channel_id": "1170692781216378960",
-      "content": "impromptu need sustain i think",
-      "author": "actuallyjeff",
+      "id": "1355539883439030496",
+      "channel_id": "1300659580446969918",
+      "content": "когда нибудь разраб захочет сделать миллионы и сделает ее играбельной",
+      "author": "sakamoto8727",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1355457850754728026",
-      "channel_id": "1170692781216378960",
-      "content": "I say as gale loads caro aqua",
-      "author": "aurora3981",
+      "id": "1355552812192502063",
+      "channel_id": "1300659580446969918",
+      "content": "ставь лайк, если ты фанат кала для дэбилов",
+      "author": "sakamoto8727",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1355497025424064605",
-      "channel_id": "1170692781216378960",
-      "content": "we don’t know much",
-      "author": "itsmemiki",
+      "id": "1355599285261176852",
+      "channel_id": "1300659580446969918",
+      "content": "еще бы смуту показал",
+      "author": "6____6",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1355499027424088235",
-      "channel_id": "1170692781216378960",
-      "content": "cant go wrong with either ramona or ogier",
-      "author": "itsmemiki",
+      "id": "1355600395153707061",
+      "channel_id": "1300659580446969918",
+      "content": "Бтв вк щас помойка.Старый вк супертоп был",
+      "author": "somethingno1fan",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1355529629628108941",
-      "channel_id": "1170692781216378960",
-      "content": "Account level 35",
-      "author": "aurora3981",
+      "id": "1355396187552747670",
+      "channel_id": "1300659802455674972",
+      "content": "แต่ถ้าอยากกดสักใบ กดดาบมาใช้ก้ได้นะครับ silver key เป็นสเตตัสที่ใช้ได้เกือบทุกบ้",
+      "author": "2ndselna",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1355533312814350427",
-      "channel_id": "1170692781216378960",
-      "content": "just dumping all defense cards and then ults",
-      "author": "quirk15",
+      "id": "1355558351689220290",
+      "channel_id": "1300659802455674972",
+      "content": "มันแลกทีเดียวจบ แค่มันจะเปลืองแต้มเกลือกาชา เลยแนะนำแลกของอย่างพวกหินกาชากับเศษเ",
+      "author": "darkerkuro",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1355647616364581076",
-      "channel_id": "1170692781216378960",
-      "content": "Characters like ryker would be good for a salv dps team as he has good stats, is",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]
 }

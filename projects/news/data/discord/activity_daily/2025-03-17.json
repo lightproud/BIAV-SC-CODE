@@ -1,10 +1,17 @@
 {
   "date": "2025-03-17",
-  "messages": 2273,
+  "messages": 3068,
   "unique_authors": 93,
-  "reactions_total": 121,
-  "attachments": 122,
+  "reactions_total": 137,
+  "attachments": 170,
   "channel_activity": {
+    "🔸русский-канал": 58,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 3,
+    "🔸canal-português": 38,
+    "🔸ruang-obrolan-indonesia": 215,
+    "🔸ห้องสนทนาภาษาไทย": 235,
+    "🔸traphase": 244,
     "🔸綜合討論": 482,
     "🔸阵容构建": 31,
     "🔸morimens-game-chat": 1568,
@@ -36,34 +43,34 @@
     "1350059696945500171": 1
   },
   "hourly_activity": {
-    "0": 36,
-    "1": 32,
-    "2": 16,
-    "3": 24,
-    "4": 89,
-    "5": 91,
-    "6": 198,
-    "7": 117,
-    "8": 96,
-    "9": 106,
-    "10": 48,
-    "11": 36,
-    "12": 92,
-    "13": 126,
-    "14": 214,
-    "15": 181,
-    "16": 148,
-    "17": 27,
-    "22": 75,
-    "23": 265,
-    "18": 11,
-    "19": 215,
-    "20": 23,
-    "21": 7
+    "5": 98,
+    "6": 204,
+    "12": 143,
+    "13": 186,
+    "15": 282,
+    "17": 89,
+    "19": 231,
+    "21": 19,
+    "2": 20,
+    "8": 105,
+    "18": 28,
+    "3": 32,
+    "10": 69,
+    "20": 41,
+    "1": 95,
+    "4": 96,
+    "7": 124,
+    "9": 113,
+    "11": 80,
+    "14": 442,
+    "16": 153,
+    "0": 41,
+    "22": 96,
+    "23": 281
   },
   "message_types": {
-    "0": 1686,
-    "19": 424
+    "19": 186,
+    "0": 609
   },
   "top_reacted_messages": [
     {
@@ -119,6 +126,14 @@
       "author": ".galeroar",
       "reactions": 3,
       "channel": "💭「處理中」应该是生效次数变蓝，不是2.5%"
+    },
+    {
+      "id": "1351201367892426866",
+      "channel_id": "1300659802455674972",
+      "content": "เอาสตูว์กบกูคืนมา",
+      "author": "littleyoukai",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1351067290870743133",
@@ -213,14 +228,6 @@
       "channel_id": "1170692781216378960",
       "content": "I feel like we're not on the same page. Slight alterations and keeping the same ",
       "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1351188234272768072",
-      "channel_id": "1170692781216378960",
-      "content": "Find a charcter you like first",
-      "author": ".galeroar",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }

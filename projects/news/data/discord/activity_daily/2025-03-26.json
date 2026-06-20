@@ -1,10 +1,19 @@
 {
   "date": "2025-03-26",
-  "messages": 3448,
+  "messages": 4261,
   "unique_authors": 93,
-  "reactions_total": 75,
-  "attachments": 159,
+  "reactions_total": 102,
+  "attachments": 217,
   "channel_activity": {
+    "🔸한국어-채팅방": 144,
+    "🔸русский-канал": 165,
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 2,
+    "🔸canal-português": 54,
+    "🔸ruang-obrolan-indonesia": 319,
+    "🔸ห้องสนทนาภาษาไทย": 75,
+    "🔸traphase": 8,
+    "🔸lore-chat": 26,
     "🔸綜合討論": 211,
     "🔸morimens-game-chat": 3166,
     "🔸相位对弈": 14,
@@ -26,36 +35,44 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "2": 88,
-    "3": 184,
-    "4": 116,
-    "5": 125,
-    "6": 176,
-    "7": 56,
-    "8": 27,
-    "9": 40,
-    "10": 70,
-    "11": 75,
-    "12": 74,
-    "13": 216,
-    "14": 195,
-    "15": 256,
-    "16": 398,
-    "17": 172,
-    "18": 74,
-    "23": 134,
-    "0": 15,
-    "1": 127,
-    "19": 18,
-    "20": 320,
-    "21": 301,
-    "22": 191
+    "2": 96,
+    "3": 200,
+    "6": 300,
+    "7": 84,
+    "8": 59,
+    "9": 120,
+    "10": 139,
+    "13": 283,
+    "14": 215,
+    "16": 426,
+    "17": 265,
+    "0": 16,
+    "4": 121,
+    "5": 136,
+    "11": 158,
+    "15": 283,
+    "18": 78,
+    "19": 45,
+    "23": 176,
+    "12": 93,
+    "1": 135,
+    "20": 325,
+    "21": 302,
+    "22": 206
   },
   "message_types": {
-    "19": 727,
-    "0": 2669
+    "0": 645,
+    "19": 168
   },
   "top_reacted_messages": [
+    {
+      "id": "1354485619119620289",
+      "channel_id": "1300659580446969918",
+      "content": "ода",
+      "author": "6____6",
+      "reactions": 6,
+      "channel": "🔸русский-канал"
+    },
     {
       "id": "1354566683351846963",
       "channel_id": "1170692781216378960",
@@ -63,6 +80,14 @@
       "author": "melanheart",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354285740116148235",
+      "channel_id": "1300659802455674972",
+      "content": "สปอยผลงาน 3d ที่ผมกำลังทำอยู่",
+      "author": "c2reayus",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1354496526306639972",
@@ -128,92 +153,76 @@
       "channel": "沒有喚醒體技能搶先看了嗎"
     },
     {
-      "id": "1354303200416763994",
-      "channel_id": "1131839817982947429",
-      "content": "我打II級（",
-      "author": "ahuahuahua",
+      "id": "1354297591185281095",
+      "channel_id": "1300659495550062592",
+      "content": "인간의 욕심은 끝이없고 같은 실수를 반복한다!",
+      "author": "jovial_avocado_39107",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸한국어-채팅방"
     },
     {
-      "id": "1354412707171799060",
-      "channel_id": "1131839817982947429",
-      "content": "這什麼東西😂血條突破天際了",
-      "author": "taayoui",
+      "id": "1354396578437402635",
+      "channel_id": "1300659580446969918",
+      "content": "С вылуплением, если это так! :з",
+      "author": "irrational_obelisk",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1354435832555110491",
-      "channel_id": "1131839817982947429",
-      "content": "沒讓你打輸噴橡果已經很好了（X",
-      "author": "ernest_heart",
+      "id": "1354406932936654999",
+      "channel_id": "1300659580446969918",
+      "content": "настоящая женщина та - кто вместе с тобой трахает других женщин",
+      "author": "sakamoto8727",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1354463024722739210",
-      "channel_id": "1131839817982947429",
-      "content": "福袋胡起来比血希好打多了",
-      "author": "galagalaguo",
+      "id": "1354461251417145375",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "6____6",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1354477819270533192",
-      "channel_id": "1131839817982947429",
-      "content": "目前星辰只有融災 和劇情",
-      "author": "Deleted User",
+      "id": "1354466694814503052",
+      "channel_id": "1300659580446969918",
+      "content": "едать, у меня послезавтра. Овны элитка!",
+      "author": "eagle4alan",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1354281100725456957",
-      "channel_id": "1170692781216378960",
-      "content": "short answer, all of those R wheels combined, lets you practically buy out the w",
-      "author": "flares117",
+      "id": "1354477798428774420",
+      "channel_id": "1300659580446969918",
+      "content": "поставил китаезу",
+      "author": "6____6",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1354297780226756629",
-      "channel_id": "1170692781216378960",
-      "content": "~~have you heard of our lady sorel~~",
-      "author": "khykken",
+      "id": "1354594554552254474",
+      "channel_id": "1300659662311526512",
+      "content": "nautila usala donde te falte un shielder, dira que es el mejor personaje del per",
+      "author": "nebbercracker12.",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1354298148306157588",
-      "channel_id": "1170692781216378960",
-      "content": "according to AI, yes",
-      "author": "flares117",
+      "id": "1354271509530677389",
+      "channel_id": "1300659753197764688",
+      "content": "wanda, 24 ultra, winkle",
+      "author": "craux.",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸ruang-obrolan-indonesia"
     },
     {
-      "id": "1354301248324767908",
-      "channel_id": "1170692781216378960",
-      "content": "Clementine restarted <:cry:1243502872021438475>",
-      "author": "aurora3981",
+      "id": "1354343817276293190",
+      "channel_id": "1300659753197764688",
+      "content": "owalah ... berati ke scal ke lvl rata-rata akun gitu ... ?",
+      "author": "ag29690",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354305465840042064",
-      "channel_id": "1170692781216378960",
-      "content": "so is calling Caesus blobfish considered as racist to him ? 😂",
-      "author": "nayuki33",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354305585738420346",
-      "channel_id": "1170692781216378960",
-      "content": "what if were simply descendants of lemuria",
-      "author": "itsmemiki",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸ruang-obrolan-indonesia"
     }
   ]
 }

@@ -1,16 +1,24 @@
 {
   "date": "2025-03-22",
-  "messages": 3713,
+  "messages": 4489,
   "unique_authors": 87,
-  "reactions_total": 113,
-  "attachments": 100,
+  "reactions_total": 139,
+  "attachments": 142,
   "channel_activity": {
+    "🔸한국어-채팅방": 371,
+    "🔸русский-канал": 51,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 13,
+    "🔸canal-português": 4,
+    "🔸ruang-obrolan-indonesia": 137,
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "🔸traphase": 230,
+    "🔸lore-chat": 19,
     "🔸綜合討論": 215,
     "🔸阵容构建": 72,
     "🔸morimens-game-chat": 3270,
     "🔸剧情交流": 25,
     "🔸相位对弈": 32,
-    "🔸한국어-채팅방": 61,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
     "Is this a good team?": 14,
     "การรวบรวมคำติชมการแปลภาษาไทย": 1,
@@ -24,34 +32,34 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 262,
-    "1": 45,
-    "2": 207,
-    "3": 129,
-    "4": 217,
-    "5": 67,
-    "6": 54,
-    "7": 9,
-    "8": 30,
-    "9": 11,
-    "11": 81,
-    "12": 56,
-    "13": 67,
-    "16": 282,
-    "10": 31,
-    "14": 558,
-    "15": 194,
-    "17": 478,
-    "18": 93,
-    "19": 7,
-    "20": 112,
-    "21": 149,
-    "22": 342,
-    "23": 232
+    "4": 342,
+    "8": 114,
+    "9": 48,
+    "11": 109,
+    "12": 149,
+    "13": 161,
+    "10": 47,
+    "14": 701,
+    "15": 213,
+    "16": 290,
+    "19": 24,
+    "0": 268,
+    "2": 228,
+    "3": 158,
+    "18": 99,
+    "21": 150,
+    "23": 239,
+    "1": 73,
+    "5": 68,
+    "7": 16,
+    "17": 480,
+    "20": 115,
+    "22": 343,
+    "6": 54
   },
   "message_types": {
-    "0": 3005,
-    "19": 670
+    "0": 695,
+    "19": 81
   },
   "top_reacted_messages": [
     {
@@ -132,6 +140,46 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1352988316462747648",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1353008349787979806",
+      "channel_id": "1300659580446969918",
+      "content": "Никому не нужный факт, но я сейчас читаю Сны в ведьмином доме Лавкрафта, и там ф",
+      "author": "irrational_obelisk",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1352799912709849210",
+      "channel_id": "1300659662311526512",
+      "content": "esta es tremenda waifu, por que de noche deliciosas es una discoteca :´v",
+      "author": "princeoftheocean",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1352824834614362240",
+      "channel_id": "1300659662311526512",
+      "content": "ya me vi el cap, por que apenas lei el reglon era spoiler. Me salio una lagrimit",
+      "author": "princeoftheocean",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1352857093635313714",
+      "channel_id": "1326453763355185215",
+      "content": "the true reason why keeper cant drink with sorel",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1352805725499428926",
       "channel_id": "1131839817982947429",
       "content": "剛才上了一輛公車，裡面都是人，座位也被坐滿了，唯獨沒有人敢碰的博愛座。\n我直接坐了上去，結果前面的阿婆指責我，說：「現在年輕人就是不懂事！這種位置就是該禮讓不方",
@@ -170,45 +218,6 @@
       "author": "sheepybeeby",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1353050453809696838",
-      "channel_id": "1170692781216378960",
-      "content": "nope",
-      "author": "flares117",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1353152069422546994",
-      "channel_id": "1170692781216378960",
-      "content": "God forbid a man have hobbies",
-      "author": "daegudollz",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1353002586713624576",
-      "channel_id": "1180850818509971466",
-      "content": "~~裝上薔薇開始祈禱就好~~",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1352862020076179486",
-      "content": "现在的：垃圾场直接随便塞",
-      "author": "molove0286",
-      "reactions": 2,
-      "channel": "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？"
-    },
-    {
-      "id": "1352806570001567924",
-      "channel_id": "1131839817982947429",
-      "content": "不過認真來說我覺得博愛座就是一個藉口",
-      "author": "huangyu0876",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

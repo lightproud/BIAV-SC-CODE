@@ -1,10 +1,17 @@
 {
   "date": "2025-03-07",
-  "messages": 3294,
+  "messages": 4330,
   "unique_authors": 117,
-  "reactions_total": 143,
-  "attachments": 133,
+  "reactions_total": 173,
+  "attachments": 181,
   "channel_activity": {
+    "🔸русский-канал": 4,
+    "🔸canal-español": 16,
+    "🔸canal-português": 128,
+    "🔸ruang-obrolan-indonesia": 244,
+    "🔸ห้องสนทนาภาษาไทย": 365,
+    "🔸traphase": 227,
+    "🔸lore-chat": 52,
     "🔸綜合討論": 492,
     "🔸阵容构建": 46,
     "🔸morimens-game-chat": 2612,
@@ -23,34 +30,34 @@
     "女守X鯊（OOC警告）": 1
   },
   "hourly_activity": {
-    "0": 104,
-    "2": 135,
-    "3": 298,
-    "4": 182,
-    "5": 390,
-    "6": 192,
-    "7": 219,
-    "8": 177,
-    "9": 109,
-    "10": 89,
-    "11": 46,
-    "12": 62,
-    "13": 277,
-    "14": 169,
-    "15": 57,
-    "16": 149,
-    "17": 55,
-    "18": 239,
-    "22": 13,
-    "1": 10,
-    "19": 62,
-    "20": 113,
-    "21": 144,
-    "23": 3
+    "19": 76,
+    "3": 335,
+    "6": 270,
+    "22": 57,
+    "23": 10,
+    "2": 158,
+    "8": 214,
+    "10": 220,
+    "11": 115,
+    "12": 94,
+    "13": 390,
+    "14": 243,
+    "15": 99,
+    "16": 162,
+    "17": 92,
+    "18": 254,
+    "20": 117,
+    "21": 152,
+    "0": 115,
+    "1": 99,
+    "5": 427,
+    "7": 252,
+    "9": 175,
+    "4": 204
   },
   "message_types": {
-    "0": 2513,
-    "19": 669
+    "0": 822,
+    "19": 214
   },
   "top_reacted_messages": [
     {
@@ -132,6 +139,46 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1347456280205201420",
+      "channel_id": "1300659662311526512",
+      "content": "Ajustes Despertados:\n○ Murphy-Adaptabilidad Espiritual: Cada vez que gana Sacrif",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1347447366114086983",
+      "channel_id": "1300659802455674972",
+      "content": ".",
+      "author": "snowpdl",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1347493548286672988",
+      "channel_id": "1300659802455674972",
+      "content": "คุณคิดว่าเราเป้นโอลด์ก็อดเหรอ",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1347513659613646868",
+      "channel_id": "1300659802455674972",
+      "content": "สวัสดีคนที่ 5",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1347514619098300517",
+      "channel_id": "1300659802455674972",
+      "content": "เรียกนางว่าฮาฟฟู่",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1347460331827499018",
       "channel_id": "1131839817982947429",
       "content": "星辰的鼠鼠都好打很多",
@@ -170,45 +217,6 @@
       "author": "frogatall1_the_realone_40544",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1347493942081617930",
-      "channel_id": "1170692781216378960",
-      "content": "Then either use it for enlightenment or all on winkle so you can skip ultra stan",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1347612567752806412",
-      "channel_id": "1170692781216378960",
-      "content": "I’m having fun with Morimens it’s so much fun",
-      "author": "xue_er2024",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1347566379431100486",
-      "content": "只有前面两个大段位才有这个票，为啥不能普及一下……",
-      "author": "luhongran",
-      "reactions": 2,
-      "channel": "以前的表情+头像获取方式不能再多点么？"
-    },
-    {
-      "id": "1347434367370133575",
-      "channel_id": "1131839817982947429",
-      "content": "100，互刷的話一勝一負就翻倍",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1347436658034868345",
-      "channel_id": "1131839817982947429",
-      "content": "我要拿鯊魚作弊了",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

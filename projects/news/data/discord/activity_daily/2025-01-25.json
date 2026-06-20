@@ -1,10 +1,19 @@
 {
   "date": "2025-01-25",
-  "messages": 53,
-  "unique_authors": 23,
-  "reactions_total": 13,
-  "attachments": 9,
+  "messages": 3174,
+  "unique_authors": 130,
+  "reactions_total": 185,
+  "attachments": 123,
   "channel_activity": {
+    "🔸綜合討論": 295,
+    "🔸morimens-game-chat": 2406,
+    "🔸剧情交流": 3,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 38,
+    "🔸русский-канал": 152,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 4,
+    "🔸canal-português": 213,
     "morimens story recap channel": 6,
     "✅前瞻：V2.1 灵塑适性与钥令收集": 1,
     "✅前瞻：V2.1 维度影像": 1,
@@ -20,34 +29,123 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "18": 8,
-    "5": 6,
-    "7": 1,
-    "12": 2,
-    "15": 4,
-    "23": 1,
-    "4": 2,
-    "3": 1,
-    "10": 3,
-    "13": 2,
-    "14": 2,
-    "16": 2,
-    "6": 1,
-    "8": 3,
-    "9": 1,
-    "11": 13,
-    "17": 1
+    "0": 51,
+    "1": 100,
+    "2": 335,
+    "3": 314,
+    "4": 222,
+    "5": 180,
+    "6": 136,
+    "7": 187,
+    "8": 62,
+    "9": 80,
+    "10": 242,
+    "11": 75,
+    "12": 160,
+    "13": 180,
+    "14": 216,
+    "15": 239,
+    "16": 65,
+    "17": 33,
+    "18": 175,
+    "19": 18,
+    "20": 11,
+    "21": 48,
+    "22": 30,
+    "23": 15
   },
   "message_types": {
-    "0": 6
+    "19": 622,
+    "0": 2497,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1332688509471031367",
+      "channel_id": "1131839817982947429",
+      "content": "亲爱的朋友们大家好，我是一名英国游戏玩家。经过深入讨论后，我被要求创建这个图像，今天我与大家分享。我看到一个粘糊糊的怪物用触手缠住我的喉咙，让我窒息。每天晚上，",
+      "author": "roto_rooster",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332559621910695967",
+      "channel_id": "1131839817982947429",
+      "content": "比角色本身强",
+      "author": "whshhsa",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1332580336307015761",
       "content": "三叠隐秘+九十七欢宴😋",
       "author": "akalanden",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1332704591610908712",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332649073458544742",
+      "channel_id": "1170692781216378960",
+      "content": "I wish you could save loadout for each character instead of team, so I can just ",
+      "author": "good.th",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332589860548247603",
+      "channel_id": "1131839817982947429",
+      "content": "剛好1111血量",
+      "author": "andy1123",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332694504406388799",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有+36神父 我需要<:rose1:1234798154000633949>",
+      "author": "mob1065",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332758474127577169",
+      "channel_id": "1131839817982947429",
+      "content": "一堆佬言佬语",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332689131049844747",
+      "channel_id": "1170692781216378960",
+      "content": "I must admit the game is a genius giving us the gold retaliate relic on the helo",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332712643466887259",
+      "channel_id": "1170692781216378960",
+      "content": "Truly a myth to discover",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332715900842938369",
+      "channel_id": "1170692781216378960",
+      "content": "Dw guys she's a healer now",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1332587992388341791",
@@ -64,18 +162,60 @@
       "channel": "谵望 通晓会改变技能所属于的对象"
     },
     {
-      "id": "1332780798260019231",
-      "content": "最好给一个每次开狂盾转伤倍率就加75%，超限+100%，而且觉醒给的那些不高不低的戒备也是食之无味弃之可惜，不如改成给一点基础的戒备，然后每次打出打击就涨一丢丢",
-      "author": "xmj140028",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.1 维度影像"
+      "id": "1332541029810704426",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1332717350218240093",
-      "content": "||母女丼||",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "弗朗西斯考不考慮進池（考慮就好）"
+      "id": "1332620169834528768",
+      "channel_id": "1131839817982947429",
+      "content": "双大鲨鱼给的力量太多了<:rose1:1234798154000633949> 好像还吃奥尔拉的力量加成",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332676519830753280",
+      "channel_id": "1131839817982947429",
+      "content": "有混沌",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332679431214469150",
+      "channel_id": "1131839817982947429",
+      "content": "還能少什麼<:cry:1239910167668326480>",
+      "author": "nemu_s_t_a_r",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332754089695645696",
+      "channel_id": "1131839817982947429",
+      "content": "大佬可以帶帶我嗎",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332534274594963508",
+      "channel_id": "1170692781216378960",
+      "content": "woo",
+      "author": "flocke999",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332640830590287926",
+      "channel_id": "1170692781216378960",
+      "content": "Aurita and tulu's defenseless anus",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,20 @@
 {
   "date": "2025-03-28",
-  "messages": 3930,
+  "messages": 4325,
   "unique_authors": 97,
-  "reactions_total": 909,
-  "attachments": 121,
+  "reactions_total": 1648,
+  "attachments": 154,
   "channel_activity": {
+    "🔸한국어-채팅방": 158,
+    "🔸русский-канал": 22,
+    "🔸phòng-chat-tiếng-việt": 11,
+    "🔸canal-español": 10,
+    "🔸canal-português": 26,
+    "🔸ruang-obrolan-indonesia": 68,
+    "🔸ห้องสนทนาภาษาไทย": 22,
+    "🔸traphase": 70,
+    "🔸lore-chat": 7,
+    "🔸礼包码┊gift-codes": 2,
     "🔸綜合討論": 196,
     "🔸morimens-game-chat": 3692,
     "🔸剧情交流": 3,
@@ -22,45 +32,46 @@
     "✅「已回答」小騎士維度影像": 2,
     "✅「Answered」Does the OST Won't update to Netease Music Anymore?": 2,
     "请问羊妈估计几月份复刻啊": 1,
-    "是雷婭": 3,
-    "🔸礼包码┊gift-codes": 1
+    "是雷婭": 3
   },
   "hourly_activity": {
-    "1": 332,
-    "2": 38,
-    "3": 336,
-    "4": 381,
-    "5": 436,
-    "6": 25,
-    "8": 226,
-    "9": 107,
-    "10": 70,
-    "11": 24,
-    "12": 341,
-    "13": 213,
-    "14": 79,
-    "15": 186,
-    "16": 68,
-    "17": 29,
-    "23": 39,
-    "0": 469,
-    "7": 325,
-    "18": 44,
-    "19": 86,
-    "20": 40,
-    "21": 23,
-    "22": 13
+    "0": 471,
+    "1": 334,
+    "2": 40,
+    "3": 401,
+    "4": 398,
+    "5": 448,
+    "6": 39,
+    "8": 228,
+    "9": 198,
+    "10": 82,
+    "11": 63,
+    "14": 84,
+    "15": 193,
+    "7": 330,
+    "12": 352,
+    "18": 47,
+    "22": 23,
+    "13": 232,
+    "17": 45,
+    "21": 43,
+    "16": 89,
+    "19": 94,
+    "20": 48,
+    "23": 43
   },
   "message_types": {
-    "0": 2944,
-    "19": 960
+    "0": 347,
+    "19": 44,
+    "20": 4
   },
   "top_reacted_messages": [
     {
       "id": "1355109729847742465",
+      "channel_id": "1355094251775459399",
       "content": "**🎁DC 16000守密人達成禮 / DC16000 Keepers Achievement Gift**\n\n《忘卻前夜Morimens》DC全球頻道達到16",
       "author": "morimensstaff01",
-      "reactions": 713,
+      "reactions": 715,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -80,12 +91,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1355195851898884389",
+      "channel_id": "1300659495550062592",
+      "content": "기프트코드 공유드려요",
+      "author": "jovial_avocado_39107",
+      "reactions": 4,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1355110074250428489",
       "channel_id": "1131839817982947429",
       "content": "DC16000KEEPERS",
       "author": "watermelomz",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355169187294871612",
+      "channel_id": "1300659662311526512",
+      "content": "esa murphy que salga ya",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1355201872922804387",
@@ -152,6 +179,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1355118108787998730",
+      "channel_id": "1300659802455674972",
+      "content": "แพนดินไหวปลอดภัยกันนะครับทุกท่าน",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1354969197700055173",
       "channel_id": "1170692781216378960",
       "content": "to be honest, and i say this in a neutral way, flares just wants attention",
@@ -188,30 +223,6 @@
       "channel_id": "1170692781216378960",
       "content": "ya can we just get someone to assassinate rfk jr so he doesnt get me killed by s",
       "author": "omegamart",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354978353534210179",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "brainrot_in_a_vat",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354978667637243986",
-      "channel_id": "1170692781216378960",
-      "content": "sorry, forgot to reply\ni don't disagree, but in fairness, it does mean there's b",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1354980736800915688",
-      "channel_id": "1170692781216378960",
-      "content": "so sophia doesnt crash out again",
-      "author": "itsmemiki",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }

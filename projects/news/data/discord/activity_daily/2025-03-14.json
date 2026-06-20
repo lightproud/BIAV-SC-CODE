@@ -1,10 +1,20 @@
 {
   "date": "2025-03-14",
-  "messages": 2651,
+  "messages": 3486,
   "unique_authors": 155,
-  "reactions_total": 555,
-  "attachments": 160,
+  "reactions_total": 592,
+  "attachments": 200,
   "channel_activity": {
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 113,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 11,
+    "🔸canal-português": 33,
+    "🔸ruang-obrolan-indonesia": 288,
+    "🔸ห้องสนทนาภาษาไทย": 66,
+    "🔸traphase": 316,
+    "🔸lore-chat": 2,
     "🔸綜合討論": 468,
     "🔸阵容构建": 138,
     "🔸morimens-game-chat": 1651,
@@ -38,36 +48,35 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "1": 45,
-    "2": 74,
-    "3": 230,
-    "4": 144,
-    "5": 53,
-    "7": 107,
-    "8": 38,
-    "9": 17,
-    "10": 28,
-    "11": 228,
-    "12": 159,
-    "13": 438,
-    "14": 339,
-    "15": 308,
-    "16": 136,
-    "17": 41,
-    "18": 59,
-    "19": 75,
-    "22": 12,
-    "0": 60,
-    "6": 35,
-    "20": 14,
-    "21": 4,
-    "23": 7
+    "11": 297,
+    "3": 232,
+    "13": 521,
+    "14": 393,
+    "15": 374,
+    "16": 157,
+    "17": 53,
+    "18": 67,
+    "19": 97,
+    "22": 20,
+    "1": 48,
+    "21": 31,
+    "5": 63,
+    "10": 240,
+    "4": 154,
+    "6": 58,
+    "7": 140,
+    "9": 66,
+    "12": 181,
+    "20": 102,
+    "0": 64,
+    "23": 11,
+    "8": 43,
+    "2": 74
   },
   "message_types": {
-    "0": 2010,
-    "19": 552,
-    "6": 3,
-    "23": 1
+    "0": 594,
+    "6": 8,
+    "19": 233
   },
   "top_reacted_messages": [
     {
@@ -125,6 +134,14 @@
       "channel": ""
     },
     {
+      "id": "1350063613582512179",
+      "channel_id": "1300659580446969918",
+      "content": "😊 Рады приглашать вас делиться своими предложениями и вопросами по 【локализации ",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1350044105291464714",
       "channel_id": "1131839817982947429",
       "content": "~~不敢打星辰篇只好來打個H9-11速殺~~",
@@ -146,6 +163,14 @@
       "author": "morimensstaff01",
       "reactions": 6,
       "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+    },
+    {
+      "id": "1350064405483753492",
+      "channel_id": "1300659802455674972",
+      "content": "🥰 ยินดีต้อนรับให้คุณมาแชร์คำแนะนำและคำถามของคุณเกี่ยวกับ การแปลและทำให้เหมาะกับท",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1349981764751458305",
@@ -171,6 +196,22 @@
       "channel": "Português Tradução - Coleta de Feedback"
     },
     {
+      "id": "1350140076666912829",
+      "channel_id": "1300659580446969918",
+      "content": "<@527852401806409730> https://www.youtube.com/watch?v=QonczYLm_PY",
+      "author": "somethingno1fan",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1350063898295930902",
+      "channel_id": "1300659662311526512",
+      "content": "😊 ¡Bienvenidos a compartir sus sugerencias y preguntas sobre la 【traducción loca",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1350100167990181990",
       "channel_id": "1131839817982947429",
       "content": "原本心情好好的 今天睡不好了",
@@ -193,38 +234,6 @@
       "author": "shchng.",
       "reactions": 3,
       "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1350099266915536937",
-      "channel_id": "1170692781216378960",
-      "content": "Code that gives 10000 silver pls",
-      "author": "omnipotentkun",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350104608978243615",
-      "channel_id": "1170692781216378960",
-      "content": "It isnt much of a surprise I am not exactly high ranking",
-      "author": "mentallystuntedsavant",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350106341955600386",
-      "channel_id": "1170692781216378960",
-      "content": "I do not worry since my luck never fails",
-      "author": "linireo",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1350062910755442810",
-      "channel_id": "1300659495550062592",
-      "content": "🥰 이 게시물 아래에서 【게임 텍스트 번역 현지화】에 대한 의견과 질문을 공유해 주시는 것을 환영합니다!\n\n🔥https://discord.com",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "🔸한국어-채팅방"
     }
   ]
 }

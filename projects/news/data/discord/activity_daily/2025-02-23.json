@@ -1,10 +1,22 @@
 {
   "date": "2025-02-23",
-  "messages": 89,
-  "unique_authors": 16,
-  "reactions_total": 83,
-  "attachments": 6,
+  "messages": 2894,
+  "unique_authors": 137,
+  "reactions_total": 163,
+  "attachments": 151,
   "channel_activity": {
+    "🔸綜合討論": 283,
+    "🔸阵容构建": 12,
+    "🔸morimens-game-chat": 1854,
+    "🔸剧情交流": 1,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 105,
+    "🔸русский-канал": 64,
+    "🔸canal-español": 25,
+    "🔸canal-português": 103,
+    "🔸ruang-obrolan-indonesia": 294,
+    "🔸traphase": 56,
+    "🔸lore-chat": 3,
     "2.1 Tier List / Character Guide": 1,
     "✅前瞻：V2.1.1 相位对弈联动": 59,
     "✅前瞻：V2.1 灵塑适性与钥令收集": 1,
@@ -19,23 +31,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "4": 5,
-    "5": 2,
-    "6": 40,
-    "7": 12,
-    "8": 5,
-    "12": 3,
-    "13": 8,
-    "14": 2,
-    "16": 1,
-    "17": 2,
-    "11": 4,
-    "9": 2,
-    "15": 2,
-    "3": 1
+    "0": 86,
+    "2": 135,
+    "4": 74,
+    "5": 90,
+    "6": 247,
+    "7": 129,
+    "10": 90,
+    "11": 54,
+    "12": 141,
+    "13": 236,
+    "14": 580,
+    "15": 249,
+    "16": 93,
+    "17": 70,
+    "22": 46,
+    "1": 102,
+    "3": 120,
+    "8": 108,
+    "9": 77,
+    "18": 38,
+    "19": 13,
+    "20": 18,
+    "21": 26,
+    "23": 72
   },
   "message_types": {
-    "4": 1
+    "19": 680,
+    "0": 2125
   },
   "top_reacted_messages": [
     {
@@ -74,6 +97,14 @@
       "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
+      "id": "1343078240062799922",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sadanshishen",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1343104409873416275",
       "content": "想說一句大逆風的話啦：\n那些說星辰篇機制跟屎一樣的玩家，是無腦智障一鍵收割免洗手遊玩太多嗎？",
       "author": "magushermes",
@@ -86,6 +117,30 @@
       "author": "magushermes",
       "reactions": 6,
       "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1343107516829012059",
+      "channel_id": "1131839817982947429",
+      "content": "||嘻嘻嘻我不會說是我附身到香香的赫佬身上的||",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1343056064178032701",
+      "channel_id": "1300659436804640788",
+      "content": "これ超つよいですねー、800近く力奪って、巨大剣連発したらめっちゃダメージ出た",
+      "author": "dekopon4682",
+      "reactions": 5,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1343098089002504202",
+      "channel_id": "1131839817982947429",
+      "content": "是新長出來的韭菜欸\n你好阿我們是小丑韭菜🤡 🤡",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1343146958738554900",
@@ -116,46 +171,44 @@
       "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
-      "id": "1343111894801846295",
-      "content": "也不是不讓你支持星晨篇，但你地圖炮罵所有人是真屌",
-      "author": "ttim",
+      "id": "1343095859608551494",
+      "channel_id": "1131839817982947429",
+      "content": "之前遇到心软的富婆了",
+      "author": "a9527b",
       "reactions": 2,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1343113973477933170",
-      "content": "~~我慶幸我還有其他遊戲可以躲回去~~\n只是身為克蘇魯神話元素與洛夫克拉夫特小說愛好者，看著忘卻前夜爛掉真的無法釋懷",
-      "author": "magushermes",
+      "id": "1343265524049510401",
+      "channel_id": "1131839817982947429",
+      "content": "看了一下，真游戏没怎么玩，猛氪",
+      "author": "sense25.",
       "reactions": 2,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1343142821296607334",
-      "content": "正確的豆腐！",
-      "author": "0.0w0",
+      "id": "1343045938742300724",
+      "channel_id": "1170692781216378960",
+      "content": "But Miryam always seals the highest aliemus awaker",
+      "author": "linireo",
       "reactions": 2,
-      "channel": "活動打出兩張虛無是正常的嗎？"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1343111979178393622",
-      "content": "有沒有一種可能 \n玩家說退回忘卻篇 \n不是真的排斥新版本\n一點更新都不想有 \n\n而是你貓的新版本做的爛到 \n大家寧願回去玩舊版",
-      "author": "lazuritefox",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+      "id": "1343129647398785147",
+      "channel_id": "1170692781216378960",
+      "content": "Sorel looks like this",
+      "author": "cornonthemacabre_",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1343257991364874340",
-      "content": "我觉得现在的pvp游戏模式有点太枯燥了，因为一直平衡，很多队伍都被直接优化到不能再玩了。所以我觉得可以参考炉石，整一个pvp周轮的特殊模式（类似于深潜），玩家在",
-      "author": "luoqixikiss",
-      "reactions": 1,
-      "channel": "pvp周轮乱斗模式"
-    },
-    {
-      "id": "1343093682232098816",
-      "content": "我的朋友新入坑忘却前夜，忘记密码后用邮箱重置，结果登不进去了，说要联系客服才能解决，具体应该怎么解决呢？\nUID：100899323",
-      "author": "mtyl.eth",
-      "reactions": 1,
-      "channel": "登录bug：为什么重置密码以后登不进去了？"
+      "id": "1343338223979593798",
+      "channel_id": "1170692781216378960",
+      "content": "~~its not good for old players~~",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

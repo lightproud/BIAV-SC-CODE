@@ -1,10 +1,17 @@
 {
   "date": "2025-03-09",
-  "messages": 2796,
+  "messages": 4275,
   "unique_authors": 103,
-  "reactions_total": 137,
-  "attachments": 163,
+  "reactions_total": 191,
+  "attachments": 297,
   "channel_activity": {
+    "🔸русский-канал": 3,
+    "🔸canal-español": 68,
+    "🔸canal-português": 48,
+    "🔸ruang-obrolan-indonesia": 692,
+    "🔸ห้องสนทนาภาษาไทย": 611,
+    "🔸traphase": 55,
+    "🔸lore-chat": 2,
     "🔸綜合討論": 387,
     "🔸阵容构建": 228,
     "🔸morimens-game-chat": 1999,
@@ -18,34 +25,34 @@
     "相位对弈命轮能不能改改": 1
   },
   "hourly_activity": {
-    "0": 142,
-    "1": 101,
-    "2": 21,
-    "3": 45,
-    "4": 54,
-    "5": 76,
-    "6": 113,
-    "7": 111,
-    "8": 48,
-    "9": 55,
-    "10": 76,
-    "12": 286,
-    "13": 38,
-    "14": 120,
-    "15": 478,
-    "16": 239,
-    "17": 300,
-    "23": 80,
-    "11": 121,
-    "18": 172,
-    "19": 25,
-    "20": 60,
-    "21": 27,
-    "22": 8
+    "19": 47,
+    "23": 88,
+    "4": 68,
+    "6": 215,
+    "7": 198,
+    "14": 452,
+    "16": 267,
+    "18": 218,
+    "20": 76,
+    "21": 65,
+    "22": 29,
+    "0": 151,
+    "1": 102,
+    "2": 80,
+    "3": 56,
+    "5": 111,
+    "8": 196,
+    "9": 85,
+    "10": 147,
+    "11": 143,
+    "12": 362,
+    "13": 246,
+    "17": 311,
+    "15": 562
   },
   "message_types": {
-    "0": 2145,
-    "19": 567
+    "0": 1120,
+    "19": 359
   },
   "top_reacted_messages": [
     {
@@ -77,6 +84,30 @@
       "author": "arthasiv",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348136710134829176",
+      "channel_id": "1300659718653476925",
+      "content": "consegui maximizar todo o povo",
+      "author": "santicoutocms",
+      "reactions": 3,
+      "channel": "🔸canal-português"
+    },
+    {
+      "id": "1348306212260937808",
+      "channel_id": "1300659802455674972",
+      "content": "ไม่ได้ใส่อะไรเลยครับ มาตัวเปล่าๆ",
+      "author": "c2reayus",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348310839148417045",
+      "channel_id": "1300659802455674972",
+      "content": "มาถึงบอสแล้ว",
+      "author": "c2reayus",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1348152957635657729",
@@ -119,6 +150,46 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1348219295431266336",
+      "channel_id": "1300659753197764688",
+      "content": "Mainkan transcendal entity sekarang",
+      "author": "rosemry",
+      "reactions": 2,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1348403254609842196",
+      "channel_id": "1300659753197764688",
+      "content": "udah ni, tinggal ngumpulin PC nya",
+      "author": "katsu02852",
+      "reactions": 2,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1348276060503937044",
+      "channel_id": "1300659802455674972",
+      "content": "เหตุผลแปลกๆแต่ผมเข้าใจ",
+      "author": "shalashaskca",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348304496471572490",
+      "channel_id": "1300659802455674972",
+      "content": "ก้อปวาง",
+      "author": "2ndselna",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348306611453689867",
+      "channel_id": "1300659802455674972",
+      "content": "ปัญหาคือมันไม่สุ่มมาให้",
+      "author": "littleyoukai",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1348152519830011916",
       "channel_id": "1131839817982947429",
       "content": "剩我抽不到圖魯了",
@@ -141,70 +212,6 @@
       "author": "cwz.io",
       "reactions": 2,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1348310395017760790",
-      "channel_id": "1131839817982947429",
-      "content": "~~我已经是全跳党了，一想到以后要额外按十五次往上就很麻~~",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1348273280708247664",
-      "channel_id": "1131839874132090890",
-      "content": "~~珊瑚女之死真的不考慮一下嘛~~",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1348092378308939799",
-      "channel_id": "1170692781216378960",
-      "content": "Does this game have reruns?",
-      "author": "pelu_2024",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348273862185320488",
-      "channel_id": "1170692781216378960",
-      "content": "Hello I'm new to the game",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348310405046603808",
-      "channel_id": "1170692781216378960",
-      "content": "If I speak, I'm in big trouble",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348311809798705172",
-      "channel_id": "1170692781216378960",
-      "content": "#ChangeItBack",
-      "author": "potassium1234",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348316853298139300",
-      "channel_id": "1170692781216378960",
-      "content": "winkle just becomes racist",
-      "author": "zier.0",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348317642754228316",
-      "channel_id": "1170692781216378960",
-      "content": "https://www.tiktok.com/t/ZT2XHWYqD/",
-      "author": "potassium1234",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

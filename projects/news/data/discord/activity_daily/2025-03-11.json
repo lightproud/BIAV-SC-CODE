@@ -1,10 +1,16 @@
 {
   "date": "2025-03-11",
-  "messages": 2805,
+  "messages": 4534,
   "unique_authors": 113,
-  "reactions_total": 154,
-  "attachments": 133,
+  "reactions_total": 216,
+  "attachments": 216,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-español": 13,
+    "🔸canal-português": 15,
+    "🔸ruang-obrolan-indonesia": 590,
+    "🔸ห้องสนทนาภาษาไทย": 255,
+    "🔸traphase": 855,
     "🔸綜合討論": 217,
     "🔸阵容构建": 13,
     "🔸morimens-game-chat": 2431,
@@ -33,34 +39,34 @@
     "做了忘却前夜产品连线表格老师们请用！": 3
   },
   "hourly_activity": {
-    "0": 153,
-    "4": 79,
-    "5": 178,
-    "6": 352,
-    "7": 217,
-    "8": 71,
-    "9": 58,
-    "10": 36,
-    "11": 35,
-    "12": 184,
-    "13": 91,
-    "14": 78,
-    "15": 85,
-    "16": 51,
-    "17": 41,
-    "18": 197,
-    "20": 12,
-    "23": 165,
-    "1": 239,
-    "2": 85,
-    "3": 126,
-    "19": 22,
-    "21": 139,
-    "22": 111
+    "14": 129,
+    "0": 160,
+    "1": 389,
+    "2": 202,
+    "6": 435,
+    "17": 170,
+    "18": 205,
+    "19": 75,
+    "21": 141,
+    "20": 175,
+    "22": 117,
+    "3": 139,
+    "4": 187,
+    "5": 322,
+    "7": 227,
+    "8": 92,
+    "9": 74,
+    "10": 158,
+    "11": 270,
+    "12": 196,
+    "13": 100,
+    "15": 167,
+    "16": 239,
+    "23": 165
   },
   "message_types": {
-    "0": 2179,
-    "19": 539
+    "0": 1309,
+    "19": 420
   },
   "top_reacted_messages": [
     {
@@ -145,6 +151,38 @@
       "channel": "扔一点最近的"
     },
     {
+      "id": "1348990210280783923",
+      "channel_id": "1300659753197764688",
+      "content": "Sememtara pake sedapetnya aja.\n\nleveling dulu nanti baru kebuka smua tempat farm",
+      "author": "dellon_sam",
+      "reactions": 2,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1348977338700005469",
+      "channel_id": "1300659802455674972",
+      "content": "เรียกแม่สิ",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348978753564442664",
+      "channel_id": "1300659802455674972",
+      "content": "ลิ้งนี้ไปได้ฮะ ภถถถ",
+      "author": "shalashaskca",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348832900354932831",
+      "channel_id": "1326453691527594035",
+      "content": "We will also see how many versions of fucking helot cleave ill make",
+      "author": ".nymphchan",
+      "reactions": 2,
+      "channel": "🔸traphase"
+    },
+    {
       "id": "1348925307494862911",
       "channel_id": "1131839874132090890",
       "content": "",
@@ -183,38 +221,6 @@
       "author": "sheepybeeby",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1348816373677162589",
-      "channel_id": "1131839817982947429",
-      "content": "第一波固定没精英的吧",
-      "author": "sense25.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1348890185206857828",
-      "channel_id": "1131839817982947429",
-      "content": "貓的狂氣是對一個單位造成最大生命50%的傷害，自身回100狂",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1348943166333784104",
-      "channel_id": "1131839817982947429",
-      "content": "可能是因為你帶了圖魯",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1348997573033201665",
-      "channel_id": "1131839817982947429",
-      "content": "難怪神國會覆滅",
-      "author": "tofu0834",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

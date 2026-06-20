@@ -1,10 +1,21 @@
 {
   "date": "2025-01-09",
-  "messages": 69,
-  "unique_authors": 15,
-  "reactions_total": 31,
-  "attachments": 8,
+  "messages": 5233,
+  "unique_authors": 145,
+  "reactions_total": 236,
+  "attachments": 291,
   "channel_activity": {
+    "🔸綜合討論": 483,
+    "🔸阵容构建": 56,
+    "🔸morimens-game-chat": 3322,
+    "🔸剧情交流": 11,
+    "🔸相位对弈": 23,
+    "🔸한국어-채팅방": 449,
+    "🔸русский-канал": 492,
+    "🔸phòng-chat-tiếng-việt": 124,
+    "🔸canal-español": 98,
+    "🔸canal-português": 40,
+    "🔸ruang-obrolan-indonesia": 66,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 17,
     "✅前瞻：V2.1 融灾与篇章调整": 1,
     "✅「已回答」典藏館與命輪文案衝突": 3,
@@ -23,28 +34,34 @@
     "画了穿弥大校服的雷娅": 1
   },
   "hourly_activity": {
-    "12": 6,
-    "13": 7,
-    "14": 7,
-    "16": 5,
-    "18": 4,
-    "0": 4,
-    "1": 2,
-    "4": 1,
-    "8": 4,
-    "15": 5,
-    "10": 1,
-    "23": 1,
-    "2": 2,
-    "3": 12,
-    "19": 3,
-    "9": 3,
-    "20": 1,
-    "11": 1
+    "0": 187,
+    "1": 402,
+    "2": 384,
+    "3": 267,
+    "4": 223,
+    "5": 55,
+    "6": 59,
+    "7": 557,
+    "8": 462,
+    "9": 238,
+    "10": 129,
+    "11": 218,
+    "12": 345,
+    "13": 456,
+    "14": 256,
+    "15": 131,
+    "16": 78,
+    "19": 64,
+    "22": 178,
+    "17": 70,
+    "18": 212,
+    "20": 94,
+    "21": 84,
+    "23": 84
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 4221,
+    "19": 943
   },
   "top_reacted_messages": [
     {
@@ -55,11 +72,51 @@
       "channel": "恭喜索索喜提本源"
     },
     {
+      "id": "1326956010400776223",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "whshhsa",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326848013687062600",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/hatsune-miku-brazil-brazilian-miku-brazilian-miku-gif-183",
+      "author": "ughhhhard",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1326881043319357510",
       "content": "“怎么样，还挺合适的吧？”\n有一瞬间，你看到了卡文迪许家那个曾经无忧无虑的少女。\n\n（弥大校服好难画！）",
       "author": "roresia",
       "reactions": 8,
       "channel": "画了穿弥大校服的雷娅"
+    },
+    {
+      "id": "1326907624721088562",
+      "channel_id": "1131839817982947429",
+      "content": "~~畢竟剛復活，身體還是冷的~~",
+      "author": "tofu0834",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326915860266356817",
+      "channel_id": "1131839817982947429",
+      "content": "我超，為什麼<:angry:1239909764163698748>",
+      "author": "iamnotbunny",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326986842683215922",
+      "channel_id": "1170692781216378960",
+      "content": "i swear i win those || absolutely fcking not ||",
+      "author": "borderofspade",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1326923674602831905",
@@ -69,6 +126,62 @@
       "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
     },
     {
+      "id": "1326776073911926845",
+      "channel_id": "1131839817982947429",
+      "content": "<@655338276554801152>",
+      "author": "whshhsa",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326941197054513153",
+      "channel_id": "1131839817982947429",
+      "content": "只揍愛繼絲",
+      "author": "anyang0v0",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1327009211405832358",
+      "channel_id": "1300659662311526512",
+      "content": "Pero me dió muchos puntos jajaka",
+      "author": "100779708",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1326854536739950674",
+      "channel_id": "1170692781216378960",
+      "content": "Soy Quixote 👀",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1326917249692467200",
+      "channel_id": "1170692781216378960",
+      "content": "Guys my friend who doesn't even play card games got reccomended morimens he sent",
+      "author": "aslechi",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1327009284508094464",
+      "channel_id": "1170692781216378960",
+      "content": "Q.Q",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1326909364883161120",
+      "channel_id": "1173463482503536711",
+      "content": "太久沒用伺服器個人資料功能來改一下wwww\n沒特別指誰，只是催校貓趕快把其他本源型態做出來😈😈😈",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1326924268377866362",
       "content": "~~更有大量南梁混入其中~~",
       "author": "ena04564",
@@ -76,32 +189,36 @@
       "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
     },
     {
-      "id": "1326913070974505112",
-      "content": "~~说不定3.0还真会这样~~",
-      "author": "yang015148",
+      "id": "1326879082951999599",
+      "channel_id": "1131839817982947429",
+      "content": "~~次回 固定反之死~~",
+      "author": "heikwok",
       "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326842110405509191",
-      "content": "牢斯索爾瓦格豪帥我現在就要想辦法跨越緯度被他抓😭😭",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "本源喚醒體：異度·索瓦爾格"
+      "id": "1326900648649687072",
+      "channel_id": "1131839817982947429",
+      "content": "尤烏能用溫雙大\n只是不能玩超限了<:__:1239909731125035058>",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326847163279347723",
-      "content": "那很好了！",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "本源喚醒體：異度·索瓦爾格"
+      "id": "1326905023770394665",
+      "channel_id": "1131839817982947429",
+      "content": "之前哈姆林出來有限定不給衍生牌上雙發",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326705861376344144",
-      "content": "i love the rendering so much",
-      "author": "aomi_crinklies04",
-      "reactions": 1,
-      "channel": "24"
+      "id": "1326906013562961972",
+      "channel_id": "1131839817982947429",
+      "content": "應該是衍生指令沒錯，上次有人洗到牌庫用通曉弄出複製",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
