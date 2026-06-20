@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-21",
+  "archived_at": "2026-06-20T18:07:30.562215+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "source": "steam_review",
+      "time": "2026-06-20T16:51:18+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198686513407/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198686513407",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 249,
+        "votes_up": 0,
+        "timestamp_created": 1781974278
+      },
+      "lang": "",
+      "platform_region": "global"
+    }
+  ]
+}
