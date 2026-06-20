@@ -374,6 +374,13 @@
 - **Fix**：本快速移动仓库里，**每次 push 前必先 `git fetch origin main && git rebase origin/main`**，把包压到最小快进增量再推；复刻这一条件后历次推送均一次成功。
 - **Impact**：与 #38 并列为本环境两条独立推送约束（权限 / 基线）；排查推送失败先分清是「含工作流」还是「基线落后」，对症下药，别把两者混为一谈。
 
+## 40. 侦察不全就下结论，差点让守密人重写已存在的系统（#35 同款再犯）
+
+- **Context**：2026-06-20 `/grill 优化银芯仓库` B 分支，规划体量瘦身。`grep "releases/download|gh release"` 仅扫 `.py` 脚本为空，便断言「决策 179/199 立了 Releases 归档却从未写脚本」，并据此写进方案文档 + decisions.md（PR #263 合并入 main）。
+- **Problem**：归档系统**早已完整存在**——`discord_archiver.py`/`archive_discord.py` + `discord-archive.yml` 等 4 workflow + `archive-log.json`（标 2023-11~2026-04 全 uploaded），9+ 月归档 release 在线为证。grep 漏看是因为上传逻辑在 workflow yaml 与未命中关键词的脚本里，单一 grep 判据想当然（同 lesson #36）。错误论断已污染 main，险些让守密人去重写已存在系统（同 lesson #35「动手前不 ls 既有产物」）。
+- **Fix**：守密人「先验证上传」一问逼出真相。诚实更正方案文档 + decisions.md，并列上传链路验证结论（workflow 可行 / 云容器手动不可行）。**规则**：对「某能力是否存在」下否定结论前，须查全三处——脚本（多关键词）、`.github/workflows/`、运行产物（release/log），任一命中即推翻「从未实现」。
+- **Impact**：拷问（/grill）的真正价值之一是逼出自己的错误假设；「先验证」优于「先规划」。否定性结论（「从未/不存在」）比肯定性结论更需穷尽侦察。
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
