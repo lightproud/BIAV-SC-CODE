@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T10:28:56.453421+00:00",
+  "archived_at": "2026-06-20T12:26:03.566830+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 15,
   "items": [
     {
       "title": "沙雪耶老师",
@@ -114,6 +114,46 @@
       "platform_region": "cn"
     },
     {
+      "title": "第一次 425达成",
+      "summary": "嘻嘻\n  └ 静寂夏至 (2赞): 是大佬喵[星星眼]\n  └ 菲比又干了 (1赞): ？！强强\n  └ 傲娇神母勾引养胃主祭 (1赞): 吓哭了",
+      "source": "bilibili",
+      "time": "2026-06-20T04:26:58+00:00",
+      "url": "https://www.bilibili.com/video/BV11NjE6zEhu",
+      "engagement": 158,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 145,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第一次 425达成",
+      "summary": "嘻嘻",
+      "source": "bilibili",
+      "time": "2026-06-20T04:26:58+00:00",
+      "url": "http://www.bilibili.com/video/av116780513103326",
+      "engagement": 145,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg",
+      "content_type": "video"
+    },
+    {
       "title": "忘卻前夜 四小強5-5",
       "summary": "蹭獎用\n  └ iq2233 (0赞): 强强，重逢心愿能把女王之剑抓回来也挺不错的",
       "source": "bilibili",
@@ -192,6 +232,29 @@
       "platform_region": "cn",
       "media_url": "//i0.hdslb.com/bfs/archive/83ed70611d7695c4025ee81a9cee34b62439e70a.jpg",
       "content_type": "video"
+    },
+    {
+      "title": "【沙耶之歌】沙耶印象派捏人（附One Last Kiss MMD）",
+      "summary": "刷了一天血肉终于看到美少女了\n【Motion】\nO one last kiss 动作配布/作者：庆先生\n[Camera】\nO one last kiss 镜头/作者：庆先生\n【BGM]\nO one last kiss ——新世纪福音战士\n由于我不会ps跟建模，所以用的都是恋活原有的东西做的，不能做到百分百还原，请见谅。\nmmd新手，有部分穿模，请见谅\n  └ 橘霭囚鸽 (1赞): 刷了一天的血肉终于看到美少女了[doge]🤩😋\n胸口的领结原本是绿色的，我后面渲染好像调错了什么东西不小心变成红色的了，我剪完视频才发现，有点影响观感了，请见谅",
+      "source": "bilibili",
+      "time": "2026-06-20T11:34:57+00:00",
+      "url": "https://www.bilibili.com/video/BV1a7jJ6nEoW",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "橘霭囚鸽",
+      "tags": [
+        "宅舞"
+      ],
+      "metadata": {
+        "play": 7,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/0480c312b1af5930277feaeedecf063990945daa.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "第四届N厨杯-第十三日录播（蘸豆蠢享）",
