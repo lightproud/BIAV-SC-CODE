@@ -459,8 +459,7 @@
       "path": "projects/news/scripts/collect_global.py",
       "summary": "collect_global.py — 全球社区采集桥接脚本",
       "planes": [
-        "cli",
-        "workflow"
+        "cli"
       ],
       "status": "live"
     },

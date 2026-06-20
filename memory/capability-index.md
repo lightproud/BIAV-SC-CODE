@@ -128,7 +128,7 @@
   `projects/news/scripts/backfill_platforms.py`
 - **`collect_fanart.py`** _[活:cli+workflow]_ — 同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。  
   `projects/news/scripts/collect_fanart.py`
-- **`collect_global.py`** _[活:cli+workflow]_ — collect_global.py — 全球社区采集桥接脚本  
+- **`collect_global.py`** _[活:cli]_ — collect_global.py — 全球社区采集桥接脚本  
   `projects/news/scripts/collect_global.py`
 - **`collect_video_comments.py`** _[活:cli+workflow]_ — YouTube 视频评论采集器（累积归档版）。  
   `projects/news/scripts/collect_video_comments.py`
