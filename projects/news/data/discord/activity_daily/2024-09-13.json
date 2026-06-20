@@ -1,10 +1,15 @@
 {
   "date": "2024-09-13",
-  "messages": 51,
-  "unique_authors": 14,
-  "reactions_total": 73,
-  "attachments": 9,
+  "messages": 2415,
+  "unique_authors": 98,
+  "reactions_total": 270,
+  "attachments": 131,
   "channel_activity": {
+    "🔸綜合討論": 1473,
+    "🔸阵容构建": 52,
+    "🔸morimens-game-chat": 810,
+    "🔸剧情交流": 4,
+    "🔸相位对弈": 25,
     "V1.6.1.2 在線維護公告": 5,
     "手機版忘卻前夜卡頓問題": 20,
     "✅「已回答」无法进入游戏": 6,
@@ -19,24 +24,34 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
-    "13": 7,
-    "14": 19,
-    "15": 1,
-    "23": 1,
-    "7": 2,
-    "8": 1,
-    "9": 1,
-    "10": 5,
-    "1": 3,
-    "11": 1,
-    "16": 3,
-    "17": 4,
-    "18": 1,
-    "2": 1,
-    "4": 1
+    "0": 127,
+    "1": 33,
+    "2": 79,
+    "3": 155,
+    "4": 106,
+    "5": 24,
+    "6": 46,
+    "7": 56,
+    "8": 42,
+    "9": 169,
+    "10": 125,
+    "11": 221,
+    "12": 364,
+    "13": 159,
+    "14": 128,
+    "15": 83,
+    "16": 190,
+    "17": 47,
+    "18": 136,
+    "19": 27,
+    "20": 12,
+    "23": 19,
+    "21": 53,
+    "22": 14
   },
   "message_types": {
-    "0": 5
+    "19": 500,
+    "0": 1864
   },
   "top_reacted_messages": [
     {
@@ -61,11 +76,35 @@
       "channel": "忘却喵（？）夜"
     },
     {
+      "id": "1284131202625962085",
+      "channel_id": "1131839817982947429",
+      "content": "~~不知道是誰就一律當成cra吧~~",
+      "author": "xinyue.57",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1284162371715203102",
       "content": "看著像是能把我的尊嚴踩碎的樣子\n愛了愛了",
       "author": "hananichiya",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1284081211727413340",
+      "channel_id": "1131839817982947429",
+      "content": "拿子宮來比就沒有命輪需要抽了（",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1284130490764496977",
+      "channel_id": "1131839817982947429",
+      "content": "就是那個人",
+      "author": "cra0261_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1284150612719697920",
@@ -82,46 +121,92 @@
       "channel": "能不能做個隱藏uid和時間網速的開關"
     },
     {
-      "id": "1284098442788077589",
-      "content": "",
-      "author": "timee_ky",
+      "id": "1284029803107844159",
+      "channel_id": "1131839817982947429",
+      "content": "可以破膜嗎",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1284187722835034183",
+      "channel_id": "1131839817982947429",
+      "content": "~~哪會不快樂~~",
+      "author": "xinyue.57",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1283991991226466304",
+      "channel_id": "1131839817982947429",
+      "content": "每日汪汪",
+      "author": "ahuahuahua",
       "reactions": 3,
-      "channel": "哈姆林.."
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1284163828900298887",
-      "content": "之前用ipad玩閃退超級嚴重，5～10分鐘必閃退一次，要不就是黑屏卡死",
-      "author": "joyce7275",
-      "reactions": 2,
-      "channel": "手機版忘卻前夜卡頓問題"
+      "id": "1284015896846667858",
+      "channel_id": "1131839817982947429",
+      "content": "（超維）的確是爛\n爛即是超維",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1284179642395136071",
-      "content": "安卓本人無事發生",
-      "author": "harowolf",
-      "reactions": 2,
-      "channel": "手機版忘卻前夜卡頓問題"
+      "id": "1284093345123274805",
+      "channel_id": "1131839817982947429",
+      "content": "有些人要疊半天力量\n有些人一鍵獲得對面疊半天的力量",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1284094655033511957",
-      "content": "天啊是威廉學長🥹🥹🥹",
-      "author": "kkklavier",
-      "reactions": 2,
-      "channel": ""
+      "id": "1284099274560376873",
+      "channel_id": "1131839817982947429",
+      "content": "每1000金卷代表一個孤獨的人",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1284152036996419654",
-      "content": "偶爾，玩超維時比較容易發生",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "手機版忘卻前夜卡頓問題"
+      "id": "1284132452352135169",
+      "channel_id": "1131839817982947429",
+      "content": "其實第二隻會入普池可能不會是索蕾爾",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1284152929288327260",
-      "content": "最快的圖魯 原則上是一年",
-      "author": "whimsical_starfish_19845",
-      "reactions": 1,
-      "channel": "手機版忘卻前夜卡頓問題"
+      "id": "1284134199439396944",
+      "channel_id": "1131839817982947429",
+      "content": "開服就送可能就不會有這麼多圖魯黑（",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1284166530032074846",
+      "channel_id": "1131839817982947429",
+      "content": "https://www.cool3c.com/article/224455?fbclid=IwY2xjawFRMlJleHRuA2FlbQIxMQABHSBjn",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1284183452987691109",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "soitdzz",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1284187244709679187",
+      "channel_id": "1131839817982947429",
+      "content": "玩圖魯會度過相對快樂的一生",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

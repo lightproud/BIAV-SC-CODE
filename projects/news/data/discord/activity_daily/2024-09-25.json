@@ -1,10 +1,13 @@
 {
   "date": "2024-09-25",
-  "messages": 64,
-  "unique_authors": 16,
-  "reactions_total": 26,
-  "attachments": 18,
+  "messages": 3400,
+  "unique_authors": 115,
+  "reactions_total": 155,
+  "attachments": 163,
   "channel_activity": {
+    "🔸綜合討論": 2091,
+    "🔸morimens-game-chat": 1231,
+    "🔸剧情交流": 14,
     "蹈海野貓雜技團（釘選有目錄）": 1,
     "如鸢上线了忘却前夜不送点啥嘛": 4,
     "超维进不去空间bug": 5,
@@ -22,26 +25,34 @@
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "20": 1,
-    "7": 2,
-    "11": 1,
-    "13": 12,
-    "14": 2,
-    "3": 9,
-    "12": 1,
-    "15": 2,
-    "16": 8,
-    "22": 1,
-    "6": 4,
-    "9": 4,
-    "0": 2,
-    "17": 4,
-    "23": 6,
-    "5": 1,
-    "10": 4
+    "0": 14,
+    "1": 15,
+    "2": 23,
+    "3": 90,
+    "4": 89,
+    "5": 34,
+    "6": 93,
+    "7": 73,
+    "8": 192,
+    "9": 260,
+    "10": 240,
+    "11": 544,
+    "12": 560,
+    "13": 415,
+    "14": 162,
+    "15": 86,
+    "16": 155,
+    "17": 37,
+    "18": 17,
+    "19": 18,
+    "22": 22,
+    "23": 182,
+    "20": 42,
+    "21": 37
   },
   "message_types": {
-    "0": 1
+    "0": 2823,
+    "19": 513
   },
   "top_reacted_messages": [
     {
@@ -59,6 +70,38 @@
       "channel": "如鸢上线了忘却前夜不送点啥嘛"
     },
     {
+      "id": "1288520497696473130",
+      "channel_id": "1131839817982947429",
+      "content": "3+3不一直都是基本的嗎<:__:1239909731125035058>",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288573418534338580",
+      "channel_id": "1170692781216378960",
+      "content": "Finally got my Wanda converted to 24 <:BarbaraBless:784442226683543562> I gotta ",
+      "author": "casia",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1288406273334841398",
+      "channel_id": "1131839817982947429",
+      "content": "笑死超寄",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288549046092435478",
+      "channel_id": "1170692781216378960",
+      "content": "Blue god Realm",
+      "author": "yaoshidoppa",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1288454765306708003",
       "content": "",
       "author": "guanzhuangzhangyuruantang",
@@ -66,18 +109,108 @@
       "channel": "存一些之前画过的同人"
     },
     {
-      "id": "1288546004370456739",
-      "content": "猜你想看https://discord.com/channels/1131791637933199470/1175389912598593627",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": ""
+      "id": "1288422415780548608",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1288547674697629696",
-      "content": "感謝你，我終有一天想要把珊給出了，好喜歡好喜歡",
-      "author": "lianmi.",
-      "reactions": 1,
-      "channel": ""
+      "id": "1288438227664900108",
+      "channel_id": "1131839817982947429",
+      "content": "所以說粥跟忘卻還是佛",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288440109393383497",
+      "channel_id": "1131839817982947429",
+      "content": "我会永远视奸你，cra",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288403547041562635",
+      "channel_id": "1131839817982947429",
+      "content": "豆腐界域",
+      "author": "0.0w0",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288411037703606323",
+      "channel_id": "1131839817982947429",
+      "content": "~~深海24~~",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288411490239512616",
+      "channel_id": "1131839817982947429",
+      "content": "sp豆腐",
+      "author": "10253426",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288411581880733718",
+      "channel_id": "1131839817982947429",
+      "content": "變成黑豆腐?",
+      "author": "youling5802",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288438545446342716",
+      "channel_id": "1131839817982947429",
+      "content": "你怎麼知道我20抽出圖圖",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288439979445583913",
+      "channel_id": "1131839817982947429",
+      "content": "我会永远视奸你，校猫",
+      "author": "jester_romut",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288452360208650291",
+      "channel_id": "1131839817982947429",
+      "content": "然後我錯了，毒的傷害也會減少喔....幹哩",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288491392456462388",
+      "channel_id": "1131839817982947429",
+      "content": "有 别问我为什么知道",
+      "author": "ling_an_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288491842106691616",
+      "channel_id": "1131839817982947429",
+      "content": "~~搞不好可以用希洛測出到底會出什麼牌~~",
+      "author": "pray_unbeliever",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288507766465495156",
+      "channel_id": "1131839817982947429",
+      "content": "她倆腹部交疊算不算一種魯班鎖",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

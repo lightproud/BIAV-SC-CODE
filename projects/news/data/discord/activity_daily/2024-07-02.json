@@ -1,10 +1,11 @@
 {
   "date": "2024-07-02",
-  "messages": 198,
-  "unique_authors": 31,
-  "reactions_total": 94,
-  "attachments": 8,
+  "messages": 1241,
+  "unique_authors": 51,
+  "reactions_total": 135,
+  "attachments": 36,
   "channel_activity": {
+    "🔸綜合討論": 1043,
     "V1.4.4.1 在線維護公告": 1,
     "求泥工佬24": 41,
     "請問超限爆發": 3,
@@ -30,27 +31,32 @@
     "菲茵特同人創作手串": 2
   },
   "hourly_activity": {
-    "19": 1,
-    "2": 4,
-    "3": 10,
-    "4": 29,
-    "5": 13,
-    "7": 1,
-    "8": 4,
-    "9": 4,
-    "10": 6,
-    "15": 53,
-    "11": 3,
-    "12": 1,
-    "13": 5,
-    "14": 42,
-    "16": 5,
-    "17": 10,
-    "18": 2,
-    "0": 5
+    "0": 14,
+    "1": 14,
+    "2": 9,
+    "3": 12,
+    "4": 30,
+    "5": 22,
+    "6": 116,
+    "7": 82,
+    "8": 65,
+    "9": 159,
+    "10": 73,
+    "11": 7,
+    "12": 139,
+    "13": 62,
+    "14": 59,
+    "15": 87,
+    "16": 114,
+    "17": 168,
+    "18": 3,
+    "19": 3,
+    "20": 1,
+    "21": 2
   },
   "message_types": {
-    "0": 1
+    "0": 869,
+    "19": 174
   },
   "top_reacted_messages": [
     {
@@ -89,6 +95,14 @@
       "channel": "莉茲跟守密人的同人文（已完結）"
     },
     {
+      "id": "1257776132871159889",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝真的是比過氣的女人強多了",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1257554457365839925",
       "content": "昨天見mob寶用完後有點賢者模式了 我不想失去他<:bow:1243504932460433498>",
       "author": "sod212",
@@ -117,6 +131,54 @@
       "channel": "超限狂氣爆發的特效，不盡人意……"
     },
     {
+      "id": "1257583763198578728",
+      "channel_id": "1131839817982947429",
+      "content": "跑路了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257621760812257281",
+      "channel_id": "1131839817982947429",
+      "content": "但是玩家这么搞就没事",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257622468269707314",
+      "channel_id": "1131839817982947429",
+      "content": "那初见那个加视野范围的r命轮也就起效了",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257630799512080385",
+      "channel_id": "1131839817982947429",
+      "content": "又我",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257681430994096138",
+      "channel_id": "1131839817982947429",
+      "content": "笑死很會解讀是吧",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257683095981789264",
+      "channel_id": "1131839817982947429",
+      "content": "阿花可是我們監獄的模範生",
+      "author": "whimsical_starfish_19845",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1257553906809176064",
       "content": "好了",
       "author": "sod212",
@@ -143,55 +205,6 @@
       "author": "hailananxie7110",
       "reactions": 2,
       "channel": "請問超限爆發"
-    },
-    {
-      "id": "1257556271427489883",
-      "content": "他没看到也会想出各种鬼点子",
-      "author": "tranquil_monkey_73179",
-      "reactions": 1,
-      "channel": "求泥工佬24"
-    },
-    {
-      "id": "1257703394039169064",
-      "content": "然後這裡好像有點不太適合談論這個話題",
-      "author": "falst_over_",
-      "reactions": 1,
-      "channel": "校貓謝謝"
-    },
-    {
-      "id": "1257703478126710784",
-      "content": "但我才不管",
-      "author": "falst_over_",
-      "reactions": 1,
-      "channel": "校貓謝謝"
-    },
-    {
-      "id": "1257706526395727882",
-      "content": "某种意义上挺像原神的",
-      "author": "weidianqibailan6933",
-      "reactions": 1,
-      "channel": "校貓謝謝"
-    },
-    {
-      "id": "1257711174087086100",
-      "content": "不過目前聽下來模擬器出問題的情況更多",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "校貓謝謝"
-    },
-    {
-      "id": "1257711872975573002",
-      "content": "我怎麼就這麼卡呢",
-      "author": "whimsical_starfish_19845",
-      "reactions": 1,
-      "channel": "校貓謝謝"
-    },
-    {
-      "id": "1257714346742513854",
-      "content": "手機的話 卡的好像都是埃鳳",
-      "author": "whimsical_starfish_19845",
-      "reactions": 1,
-      "channel": "校貓謝謝"
     }
   ]
 }

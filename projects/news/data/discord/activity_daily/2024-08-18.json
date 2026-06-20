@@ -1,10 +1,15 @@
 {
   "date": "2024-08-18",
-  "messages": 91,
-  "unique_authors": 17,
-  "reactions_total": 51,
-  "attachments": 17,
+  "messages": 1339,
+  "unique_authors": 89,
+  "reactions_total": 115,
+  "attachments": 92,
   "channel_activity": {
+    "🔸綜合討論": 718,
+    "🔸morimens-game-chat": 386,
+    "🔸剧情交流": 78,
+    "🔸欢乐梗图": 1,
+    "🔸相位对弈": 65,
     "✅「已回答」斷關續連能不能續在當前回合數": 3,
     "💭「處理中」ios優化": 19,
     "不是，新劇情我們艾瑞卡怎麽成n的狗了": 6,
@@ -20,25 +25,33 @@
     "1193859503096070234": 1
   },
   "hourly_activity": {
-    "8": 5,
-    "9": 1,
-    "10": 2,
-    "11": 1,
-    "16": 5,
-    "17": 27,
-    "21": 1,
-    "2": 2,
-    "4": 4,
-    "14": 5,
-    "12": 32,
-    "13": 2,
-    "0": 1,
-    "7": 2,
-    "15": 1
+    "1": 15,
+    "3": 53,
+    "4": 31,
+    "5": 19,
+    "6": 55,
+    "8": 89,
+    "9": 41,
+    "10": 46,
+    "11": 71,
+    "12": 134,
+    "13": 115,
+    "14": 14,
+    "15": 11,
+    "16": 209,
+    "17": 200,
+    "18": 189,
+    "19": 17,
+    "20": 2,
+    "23": 9,
+    "2": 7,
+    "7": 8,
+    "21": 3,
+    "0": 1
   },
   "message_types": {
-    "0": 55,
-    "19": 3
+    "19": 164,
+    "0": 1084
   },
   "top_reacted_messages": [
     {
@@ -70,6 +83,14 @@
       "channel": "不是，新劇情我們艾瑞卡怎麽成n的狗了"
     },
     {
+      "id": "1274764651082678405",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cra0261_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1274704235669225583",
       "content": "> 大家好，這裡是難忘今宵攻略組，這次為大家帶來的是萊克支線地圖。\n\n最近紫地板退環境了，沒有時間為紫地板默哀，下一個接替登場的是紅地板！\n\n注意：\n紅地板「血",
       "author": "menoctus",
@@ -82,6 +103,62 @@
       "author": "yang_42",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1274760725549682809",
+      "channel_id": "1170692781216378960",
+      "content": "I lowkey hope they add her as one of the pullable characters, I have been sketch",
+      "author": "rozu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1274686445512294520",
+      "channel_id": "1180850818509971466",
+      "content": "當你想麻好麻滿，但對面有鼠鼠在T2爆發時",
+      "author": "ariate",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1274763666545311856",
+      "channel_id": "1131839817982947429",
+      "content": "歡宴..",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1274764130699444244",
+      "channel_id": "1131839817982947429",
+      "content": "讓我秀一手20抽兩個藏品",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1274771797270597703",
+      "channel_id": "1131839817982947429",
+      "content": "你媽我剛剛藏品歪掉",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1274790706451320937",
+      "channel_id": "1131839817982947429",
+      "content": "零重開我就問浮不浮誇",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1274792351411474524",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼到處都是福袋黑啊",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1274673046392803348",
@@ -98,25 +175,36 @@
       "channel": "💭「處理中」ios優化"
     },
     {
-      "id": "1274665257192656927",
-      "content": "有时不会继承回合直接从1回合,有时会正常继承",
-      "author": "yang_42",
-      "reactions": 1,
-      "channel": "✅「已回答」斷關續連能不能續在當前回合數"
+      "id": "1274674333574365194",
+      "channel_id": "1131839817982947429",
+      "content": "~~怎麼會有人抽阿姨~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1274644796576628766",
-      "content": "很可愛，多了些俏皮，少了些腹黑的版本，確實不錯",
-      "author": "hailananxie7110",
-      "reactions": 1,
-      "channel": "珈倫"
+      "id": "1274751505500737657",
+      "channel_id": "1131839817982947429",
+      "content": "cra||被我||牆了",
+      "author": "xinyue.57",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1274737504821444729",
-      "content": "q人不錯，多畫點保你能在同人區占一席之地，",
-      "author": "jester_romut",
-      "reactions": 1,
-      "channel": "珈倫"
+      "id": "1274762819245576335",
+      "channel_id": "1131839817982947429",
+      "content": "提前五天回來了",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1274762983955763252",
+      "channel_id": "1131839817982947429",
+      "content": "看小說看到現在",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

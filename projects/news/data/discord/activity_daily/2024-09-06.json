@@ -1,10 +1,14 @@
 {
   "date": "2024-09-06",
-  "messages": 281,
-  "unique_authors": 26,
-  "reactions_total": 66,
-  "attachments": 28,
+  "messages": 3214,
+  "unique_authors": 88,
+  "reactions_total": 219,
+  "attachments": 149,
   "channel_activity": {
+    "🔸綜合討論": 1781,
+    "🔸阵容构建": 93,
+    "🔸morimens-game-chat": 997,
+    "🔸相位对弈": 62,
     "V1.6 PV「A小調：終末交響曲」┊A Minor: Final Symphony": 27,
     "V1.6.1.0 停服維護公告": 13,
     "📜哈姆林喚醒體&命輪介紹": 84,
@@ -22,23 +26,33 @@
     "（已封存）【蚰蜒的vrm影像馆】": 2
   },
   "hourly_activity": {
-    "11": 19,
-    "12": 100,
-    "13": 60,
-    "18": 5,
-    "14": 45,
-    "15": 10,
-    "16": 1,
-    "17": 2,
-    "23": 1,
-    "3": 3,
-    "4": 1,
-    "10": 1,
-    "1": 33
+    "0": 13,
+    "1": 55,
+    "2": 32,
+    "3": 45,
+    "4": 10,
+    "5": 7,
+    "6": 27,
+    "7": 53,
+    "8": 17,
+    "9": 45,
+    "10": 44,
+    "11": 175,
+    "12": 331,
+    "13": 288,
+    "14": 314,
+    "15": 470,
+    "16": 506,
+    "17": 541,
+    "18": 205,
+    "19": 1,
+    "21": 30,
+    "22": 3,
+    "23": 2
   },
   "message_types": {
-    "0": 210,
-    "19": 13
+    "0": 2512,
+    "19": 421
   },
   "top_reacted_messages": [
     {
@@ -77,11 +91,35 @@
       "channel": "莱克攻略(共3期)"
     },
     {
+      "id": "1281650027663724575",
+      "channel_id": "1131839817982947429",
+      "content": "~~羊媽專武已經成為必備命倫~~",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1281629585880121424",
       "content": "打开电脑后手不自主地就又开始修瓦姐的摸了……",
       "author": "nancyjofla",
       "reactions": 5,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1281421876375326761",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mckashira",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1281427507756667016",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mo_cgness",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1281610631312838758",
@@ -91,6 +129,46 @@
       "channel": "📜《忘卻前夜 Morimens》V1.6.1即將開放！精彩資訊一網打盡！"
     },
     {
+      "id": "1281506020904009780",
+      "channel_id": "1131839817982947429",
+      "content": "猜我王關總共打了幾鞭",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281651235497447568",
+      "channel_id": "1131839817982947429",
+      "content": "~~那得先到周年才行~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281674193561325622",
+      "channel_id": "1131839817982947429",
+      "content": "不存在的东西立起来了！",
+      "author": "bashibashibash",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281674560663457878",
+      "channel_id": "1131839817982947429",
+      "content": "欸我完全忘了還有凱刻斯<:thinking1:949369841528209408>",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281614800429907979",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mckashira",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1281453570054422622",
       "content": "融灾第一关古怪钩爪没有加暴击率",
       "author": "15828894371",
@@ -98,67 +176,36 @@
       "channel": "融灾第一关造物bug"
     },
     {
-      "id": "1281593377225314466",
-      "content": "看到一堆樂器 想到湯姆貓<:stoppage:1236938521365839872>",
-      "author": "_buqi",
+      "id": "1281526335461789719",
+      "channel_id": "1131839817982947429",
+      "content": "被打生綠炎的",
+      "author": "xinyue.57",
       "reactions": 2,
-      "channel": "V1.6 PV「A小調：終末交響曲」┊A Minor: Final Symphony"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1281598521748885524",
-      "content": "貓鼠隊還在輸出😭😭",
-      "author": "mezen4181",
+      "id": "1281545405854781500",
+      "channel_id": "1131839817982947429",
+      "content": "~~建議出自定義關卡讓玩家互相噁心彼此~~",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "V1.6 PV「A小調：終末交響曲」┊A Minor: Final Symphony"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1281418614133489796",
-      "content": "打了超维，混沌，深海3界域1t，靠摆和呓语无限刷算力和力量",
-      "author": "sadanshishen",
+      "id": "1281596198662312029",
+      "channel_id": "1131839817982947429",
+      "content": "||~~Brown-Vialetto-Van Laere syndrome~~||",
+      "author": "nemu_s_t_a_r",
       "reactions": 2,
-      "channel": "3界域1t颠五"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1281640158546104433",
-      "content": "三周",
-      "author": "rock1234_47882",
-      "reactions": 1,
-      "channel": "V1.6.1.0 停服維護公告"
-    },
-    {
-      "id": "1281643192596303893",
-      "content": "~~打牌會演奏音樂 硬是玩成音遊~~",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "V1.6.1.0 停服維護公告"
-    },
-    {
-      "id": "1281587578625327115",
-      "content": "我的潘已经完美转型凯刻斯发射器了",
-      "author": "tranquil_monkey_73179",
-      "reactions": 1,
-      "channel": "📜哈姆林喚醒體&命輪介紹"
-    },
-    {
-      "id": "1281621337600819371",
-      "content": "沒有比黑單cra佬更吸引人的了",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "📜《忘卻前夜 Morimens》V1.6.1即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1281432895298207755",
-      "content": "感觉还是差点意思",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "3界域1t颠五"
-    },
-    {
-      "id": "1281577350424825957",
-      "content": "下半要鸽了哈哈哈哈 没精力写太多",
-      "author": "tranquil_monkey_73179",
-      "reactions": 1,
-      "channel": "莱克攻略(共3期)"
+      "id": "1281596886729359444",
+      "channel_id": "1131839817982947429",
+      "content": "出了第一件事 把同調率刷到10看繁衍狂熱(<:rose1:1234798154000633949>",
+      "author": "lemoncandy25",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

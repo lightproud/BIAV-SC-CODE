@@ -1,10 +1,15 @@
 {
   "date": "2024-09-26",
-  "messages": 58,
-  "unique_authors": 16,
-  "reactions_total": 38,
-  "attachments": 15,
+  "messages": 3547,
+  "unique_authors": 111,
+  "reactions_total": 181,
+  "attachments": 164,
   "channel_activity": {
+    "🔸綜合討論": 2175,
+    "🔸阵容构建": 28,
+    "🔸morimens-game-chat": 1266,
+    "🔸剧情交流": 14,
+    "🔸相位对弈": 6,
     "命輪成就計算錯誤": 2,
     "如鸢上线了忘却前夜不送点啥嘛": 1,
     "逆天160%加固": 2,
@@ -26,33 +31,57 @@
     "我們偉大的音樂家（哈姆林樓？）": 2
   },
   "hourly_activity": {
-    "4": 3,
-    "2": 9,
-    "11": 5,
-    "12": 3,
-    "6": 2,
-    "7": 11,
-    "3": 7,
-    "15": 2,
-    "0": 1,
-    "1": 2,
-    "8": 5,
-    "9": 4,
-    "13": 2,
-    "22": 1,
-    "16": 1
+    "0": 98,
+    "1": 25,
+    "2": 101,
+    "3": 80,
+    "4": 78,
+    "5": 36,
+    "6": 148,
+    "7": 119,
+    "8": 84,
+    "9": 364,
+    "10": 210,
+    "11": 272,
+    "12": 124,
+    "13": 486,
+    "14": 474,
+    "15": 176,
+    "16": 76,
+    "17": 219,
+    "20": 7,
+    "21": 90,
+    "22": 96,
+    "23": 174,
+    "18": 10
   },
   "message_types": {
-    "19": 19,
-    "0": 27
+    "0": 2977,
+    "19": 512
   },
   "top_reacted_messages": [
+    {
+      "id": "1288843271489191970",
+      "channel_id": "1131839817982947429",
+      "content": "汪。",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1288801736059912212",
       "content": "又畫了我姆林🥲🙏🏻別懷疑衣服都是忘了怎麼畫才塗的（#",
       "author": "Deleted User",
       "reactions": 17,
       "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1288840515873276005",
+      "channel_id": "1131839817982947429",
+      "content": "经典重温",
+      "author": "lyaistra",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1288993540638248990",
@@ -69,32 +98,124 @@
       "channel": "深潜改版后比较适合老玩家拿3W6的阵容~超限珊诺"
     },
     {
-      "id": "1288698937598939290",
-      "content": "非常抱歉，戈雅來晚了🥹 關於喚醒體詳情到靈知深化這一跳轉界面的優化，我們已提上日程🌹謝謝各位守密人的反饋！",
-      "author": "morimensstaff01",
+      "id": "1288770517305790504",
+      "channel_id": "1131839817982947429",
+      "content": "~~就是那个喜欢睡觉的害的~~",
+      "author": "tranquil_monkey_73179",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288773624379080767",
+      "channel_id": "1131839817982947429",
+      "content": "凹兩小時開局，然後打一把的深潛🤡",
+      "author": "randomplayer852",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288783533346783299",
+      "channel_id": "1131839817982947429",
+      "content": "<@1137328302135181312> 當作我滿分吧🫠",
+      "author": "whimsical_starfish_19845",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288886417824681994",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mckashira",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1288695506155077646",
+      "channel_id": "1131839817982947429",
+      "content": "只给我发一个刻印是让我靠给对面生孩子吓死对面吗",
+      "author": "jiujiyuzhouguairen",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288789489317318689",
+      "channel_id": "1131839817982947429",
+      "content": "~~劇情也一股要大結局的氣息是能說的嗎~~",
+      "author": "soitdzz",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288854326462382131",
+      "channel_id": "1131839817982947429",
+      "content": "發福以來最成功的長期投資",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288867665225453590",
+      "channel_id": "1131839817982947429",
+      "content": "可以把紅悸換成入藥",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288736154547388466",
+      "channel_id": "1131839817982947429",
+      "content": "傷害強效以外的屬性好像也沒什麼用（",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "靈知深化很容易誤觸"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1288819898138624030",
-      "content": "沒什麼\n就是讓大夥看看玩不起是什麼樣子",
-      "author": "hananichiya",
-      "reactions": 1,
-      "channel": "逆天160%加固"
+      "id": "1288797797294014575",
+      "channel_id": "1131839817982947429",
+      "content": "腦袋有個想法，主角最後就算結束，世界沒毀滅，結果本人在其他維度漂流+失憶，認識其他本源腳色，神國未曾滅亡的深海界域，亞蘭+教會+N三股勢力互相牽制的血肉，像是萬",
+      "author": "andy1123",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1288708658686853201",
-      "content": "你好守密人，戈雅已收到反饋！有關喚醒體特遣的顯示問題會在下次更新時修復❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "這算一種bug嘛"
+      "id": "1288867218511102083",
+      "channel_id": "1131839817982947429",
+      "content": "還沒破我就來破你了",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1288834613564936283",
-      "content": "好看 愛看",
-      "author": "muggypeasant",
-      "reactions": 1,
-      "channel": "我們偉大的音樂家（哈姆林樓？）"
+      "id": "1288871123949453364",
+      "channel_id": "1131839817982947429",
+      "content": "然後12好運時間有黑印又有暴擊",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288884600457924652",
+      "channel_id": "1131839817982947429",
+      "content": "我都不打PVP我是菜狗",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1288754984686583892",
+      "channel_id": "1131839874132090890",
+      "content": "因為可以用整手聖女作成洗觸傷",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1288665767931281460",
+      "channel_id": "1170692781216378960",
+      "content": "https://i.imgur.com/Gz4PFk4.jpeg",
+      "author": "toradorable",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

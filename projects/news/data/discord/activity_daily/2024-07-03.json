@@ -1,10 +1,11 @@
 {
   "date": "2024-07-03",
-  "messages": 272,
-  "unique_authors": 29,
-  "reactions_total": 100,
-  "attachments": 19,
+  "messages": 1382,
+  "unique_authors": 51,
+  "reactions_total": 146,
+  "attachments": 61,
   "channel_activity": {
+    "🔸綜合討論": 1110,
     "⭐《忘卻前夜》登陸上Steam囉⭐": 69,
     "📝『彌薩格大學』攻略募集活動五期開始啦！": 1,
     "V1.4.4.1 在線維護公告": 1,
@@ -47,30 +48,30 @@
     "新融災": 1
   },
   "hourly_activity": {
-    "13": 27,
-    "14": 42,
-    "15": 16,
-    "16": 38,
-    "8": 2,
-    "3": 13,
-    "9": 16,
-    "10": 28,
-    "11": 6,
-    "12": 5,
-    "2": 2,
-    "4": 14,
+    "1": 29,
+    "2": 93,
+    "3": 99,
+    "4": 330,
+    "5": 223,
+    "6": 39,
+    "7": 24,
+    "8": 9,
+    "9": 86,
+    "10": 121,
+    "11": 23,
+    "12": 9,
+    "13": 43,
+    "14": 102,
+    "15": 34,
+    "16": 104,
     "17": 10,
-    "6": 18,
-    "7": 16,
-    "5": 6,
-    "1": 9,
     "0": 1,
     "18": 2,
     "22": 1
   },
   "message_types": {
-    "0": 57,
-    "19": 14
+    "19": 217,
+    "0": 893
   },
   "top_reacted_messages": [
     {
@@ -116,6 +117,30 @@
       "channel": "新融災黑潮效果預告"
     },
     {
+      "id": "1257896276050317364",
+      "channel_id": "1131839817982947429",
+      "content": "~~多關注同人區，少吃假消息~~",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257920206152536084",
+      "channel_id": "1131839817982947429",
+      "content": "腸絨毛：",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1258003440999596175",
+      "channel_id": "1131839817982947429",
+      "content": "借錢的竟然還敢得罪欠錢的😡",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1258060051286065213",
       "content": "功能建議\n\n1.被動同意好友申請\n\n2.好友上限\n\n3.助戰角色排行榜\n\n4.助戰可訂選常用好友\n\n以上",
       "author": "devis0212",
@@ -128,6 +153,46 @@
       "author": "alan_turing",
       "reactions": 3,
       "channel": "steam版幾個建議"
+    },
+    {
+      "id": "1257874525719101450",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "whitepaw_7412",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257888417564463186",
+      "channel_id": "1131839817982947429",
+      "content": "融災又不能借一堆角色，一般玩家除了四小強外應該都開不了超限吧",
+      "author": "vegoutdino",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257926006681894922",
+      "channel_id": "1131839817982947429",
+      "content": "~~我以為獵奇比較多是體外的東西跑進去體內~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257928726549889046",
+      "channel_id": "1131839817982947429",
+      "content": "蚊子x孚忒",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1257940050176380948",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "whitepaw_7412",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1258058361757372569",
@@ -156,62 +221,6 @@
       "author": ".weiyu",
       "reactions": 2,
       "channel": "求泥工佬24"
-    },
-    {
-      "id": "1258096531110756382",
-      "content": "如果你指的佬是在下的話<:stoppage:1236938521365839872>",
-      "author": "sod212",
-      "reactions": 2,
-      "channel": "求泥工佬24"
-    },
-    {
-      "id": "1258079819359453194",
-      "content": "<:stoppage:1236938521365839872>",
-      "author": ".weiyu",
-      "reactions": 2,
-      "channel": "steam版幾個建議"
-    },
-    {
-      "id": "1257938174869770271",
-      "content": "啊啊啊我清楚了是一个up耗两次计数，打扰大家真的麻烦了😫",
-      "author": "sinaly0504",
-      "reactions": 2,
-      "channel": "保底补偿计数"
-    },
-    {
-      "id": "1257958346628268084",
-      "content": "感謝守密人協助解答🫂 🌹",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」不確定是不是bug 可能是我純眼幹🤡"
-    },
-    {
-      "id": "1258059533494911039",
-      "content": "不確定 但大概是了",
-      "author": "whimsical_starfish_19845",
-      "reactions": 1,
-      "channel": "⭐《忘卻前夜》登陸上Steam囉⭐"
-    },
-    {
-      "id": "1258059588305948803",
-      "content": "先去加所有大神好友",
-      "author": "devis0212",
-      "reactions": 1,
-      "channel": "⭐《忘卻前夜》登陸上Steam囉⭐"
-    },
-    {
-      "id": "1258059677590360216",
-      "content": "应该会送一个 不然现在这地图难度 没有三体人真的没法玩",
-      "author": "weidianqibailan6933",
-      "reactions": 1,
-      "channel": "⭐《忘卻前夜》登陸上Steam囉⭐"
-    },
-    {
-      "id": "1258062842305708104",
-      "content": "不在乎这些",
-      "author": "jiujiyuzhouguairen",
-      "reactions": 1,
-      "channel": "⭐《忘卻前夜》登陸上Steam囉⭐"
     }
   ]
 }

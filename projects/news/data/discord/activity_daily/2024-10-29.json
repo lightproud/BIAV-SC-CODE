@@ -1,10 +1,25 @@
 {
   "date": "2024-10-29",
-  "messages": 61,
-  "unique_authors": 15,
-  "reactions_total": 160,
-  "attachments": 10,
+  "messages": 3651,
+  "unique_authors": 143,
+  "reactions_total": 476,
+  "attachments": 115,
   "channel_activity": {
+    "🔸綜合討論": 709,
+    "🔸阵容构建": 63,
+    "🔸morimens-game-chat": 2537,
+    "🔸剧情交流": 9,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 14,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 29,
+    "🔸phòng-chat-tiếng-việt": 49,
+    "🔸canal-español": 146,
+    "🔸canal-português": 2,
+    "🔸ruang-obrolan-indonesia": 10,
+    "🔸ห้องสนทนาภาษาไทย": 1,
     "V1.6.4.5 在線維護公告": 6,
     "V1.6.4.6 在線維護公告": 1,
     "沒別的意思 就是覺得深海國家打不動了": 1,
@@ -23,27 +38,34 @@
     "打扰了": 2
   },
   "hourly_activity": {
-    "4": 6,
-    "6": 3,
-    "7": 4,
-    "15": 3,
-    "14": 6,
-    "9": 2,
-    "10": 5,
-    "16": 9,
-    "17": 4,
-    "19": 1,
-    "23": 1,
-    "20": 4,
-    "2": 4,
-    "5": 1,
-    "0": 1,
-    "3": 5,
-    "1": 2
+    "0": 199,
+    "1": 141,
+    "2": 31,
+    "3": 101,
+    "4": 53,
+    "5": 68,
+    "6": 125,
+    "7": 70,
+    "8": 85,
+    "9": 135,
+    "10": 133,
+    "11": 403,
+    "12": 453,
+    "13": 336,
+    "14": 389,
+    "15": 337,
+    "16": 207,
+    "17": 38,
+    "18": 153,
+    "19": 93,
+    "20": 20,
+    "21": 2,
+    "22": 12,
+    "23": 67
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 2819,
+    "19": 771
   },
   "top_reacted_messages": [
     {
@@ -75,11 +97,27 @@
       "channel": "打扰了"
     },
     {
+      "id": "1300790525401497632",
+      "channel_id": "1170692781216378960",
+      "content": "some eldritch abomination selecting the fattest ass to be its representative in ",
+      "author": "khykken",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1300822594496495646",
       "content": "守密人你好：\n       彌薩格大學校務處將於10月29日22:10(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶",
       "author": "morimensstaff02",
       "reactions": 10,
       "channel": "V1.6.4.6 在線維護公告"
+    },
+    {
+      "id": "1300828313115430942",
+      "channel_id": "1300659718653476925",
+      "content": "hi",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸canal-português"
     },
     {
       "id": "1300728629512245329",
@@ -96,6 +134,38 @@
       "channel": "又被骂了…"
     },
     {
+      "id": "1300741675148382239",
+      "channel_id": "1131839817982947429",
+      "content": "沒有，是Ai翻的，說真的這遊戲搞多語言好像太早了，遊戲受眾還沒有那麼大來著",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1300829917646291005",
+      "channel_id": "1170692781216378960",
+      "content": "New patch should fixed some text problem",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1300784400006381640",
+      "channel_id": "1300659436804640788",
+      "content": "本当の日本人がいなさそうなチャンネル。。。",
+      "author": "silenceeve",
+      "reactions": 7,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1300803241793294407",
+      "channel_id": "1131839817982947429",
+      "content": "一堆佬言佬語",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1300768442063912981",
       "content": "> 大家好，這裡是難忘今宵攻略組，本期為大家帶來的是第20期「融災禁區」地圖，以及時靈擺和對應效果與怪物首領。\n\n★★★注意：第一次出現了活動關地圖，打希洛活動",
       "author": "menoctus",
@@ -110,32 +180,44 @@
       "channel": "又被骂了…"
     },
     {
-      "id": "1300847113177141391",
-      "content": "我是人權律師，請不要漠視Boss的生存權",
-      "author": "tofu0834",
-      "reactions": 4,
-      "channel": "V1.6.4.5 在線維護公告"
-    },
-    {
-      "id": "1300651749765545984",
-      "content": "對面角色的影子沒有跟著本體一起反過來面向我方",
+      "id": "1300717412920070206",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得狂氣爆發沒有翻譯成crazy air explosion 已經很棒了",
       "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "相位對戰影子方向錯誤"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1300669970451271722",
-      "content": "這讓我想到敝校所有校版文章必打ntr跟做愛標籤...這是一種校風的具象化嗎（",
-      "author": "kong760",
-      "reactions": 3,
-      "channel": "🔞繁衍狂熱，但是貓鯊🔞"
+      "id": "1300820812697178163",
+      "channel_id": "1131839817982947429",
+      "content": "可惡 慢了",
+      "author": "lemoncandy25",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1300867696438542406",
-      "content": "~~話說回來在這邊點嗎？（一整個想來亂的人~~",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "死亡已經迫近，消亡已經開始"
+      "id": "1300707085738315776",
+      "channel_id": "1300659580446969918",
+      "content": "Добро пожаловать всем русскоязычным пользователям, рад вас познакомить! Пожалуйс",
+      "author": "07_li",
+      "reactions": 5,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1300657432585834618",
+      "channel_id": "1131839817982947429",
+      "content": "校貓真的很香嗎？🥵",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1300755751173750855",
+      "channel_id": "1131839817982947429",
+      "content": "~~校貓跟50根可拆卸式尾巴~~",
+      "author": "xinyue.57",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }
