@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-20
-- 功能总数：**88**
-- 脚本可达性：活 53 / 仅测试 0 / 孤儿 0
+- 功能总数：**79**
+- 脚本可达性：活 44 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -14,7 +14,7 @@
 | CI 自动化工作流（编排入口·定时/事件平面） | 22 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 12 |
 | news 采集器脚本 | 25 |
-| wiki 数据脚本 | 16 |
+| wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 1 |
@@ -161,7 +161,7 @@
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
-## wiki 数据脚本（16）
+## wiki 数据脚本（7）
 
 - **`build_banner_character_index.py`** _[活:cli]_ — 构建卡池角色索引。  
   `projects/wiki/scripts/build_banner_character_index.py`
@@ -173,28 +173,10 @@
   `projects/wiki/scripts/decrypt_and_extract.py`
 - **`extract_client_data.py`** _[活:cli+workflow]_ — 从客户端解包提取结构化游戏数据。  
   `projects/wiki/scripts/extract_client_data.py`
-- **`fetch_cards.py`** _[活:cli+workflow]_ — 抓取卡牌数据。  
-  `projects/wiki/scripts/fetch_cards.py`
-- **`fetch_lore.py`** _[活:cli+workflow]_ — 抓取世界观/剧情文本。  
-  `projects/wiki/scripts/fetch_lore.py`
-- **`fetch_portraits.py`** _[活:cli+workflow]_ — 抓取立绘数据。  
-  `projects/wiki/scripts/fetch_portraits.py`
-- **`fetch_skills.py`** _[活:cli+workflow]_ — 抓取技能数据。  
-  `projects/wiki/scripts/fetch_skills.py`
-- **`fetch_stages.py`** _[活:cli+workflow]_ — 抓取关卡数据。  
-  `projects/wiki/scripts/fetch_stages.py`
-- **`fetch_stats.py`** _[活:cli+workflow]_ — 抓取数值数据。  
-  `projects/wiki/scripts/fetch_stats.py`
-- **`fetch_wheels.py`** _[活:cli+workflow]_ — 抓取命轮数据。  
-  `projects/wiki/scripts/fetch_wheels.py`
-- **`generate_pages.py`** _[活:cli+workflow]_ — 由抓取的 JSON 生成 VitePress 角色页。  
-  `projects/wiki/scripts/generate_pages.py`
-- **`generate_rss.py`** _[活:cli+workflow]_ — 生成 wiki 更新 RSS。  
+- **`generate_rss.py`** _[活:cli+workflow]_ — generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.  
   `projects/wiki/scripts/generate_rss.py`
 - **`validate_data.py`** _[活:cli+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
-- **`wiki_sources.py`** _[活:import]_ — wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。  
-  `projects/wiki/scripts/wiki_sources.py`
 
 ## MCP 知识层工具（编排入口·AI 动态平面）（4）
 

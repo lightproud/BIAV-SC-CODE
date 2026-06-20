@@ -25,16 +25,6 @@
     "parse_voice_lines.py": "[CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。"
   },
   "scripts_wiki": {
-    "wiki_sources.py": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。",
-    "fetch_cards.py": "抓取卡牌数据。",
-    "fetch_skills.py": "抓取技能数据。",
-    "fetch_portraits.py": "抓取立绘数据。",
-    "fetch_stats.py": "抓取数值数据。",
-    "fetch_stages.py": "抓取关卡数据。",
-    "fetch_wheels.py": "抓取命轮数据。",
-    "fetch_lore.py": "抓取世界观/剧情文本。",
-    "generate_pages.py": "由抓取的 JSON 生成 VitePress 角色页。",
-    "generate_rss.py": "生成 wiki 更新 RSS。",
     "validate_data.py": "校验 wiki 数据库全部 JSON。",
     "check_version.py": "检测 Morimens 客户端版本更新。",
     "extract_client_data.py": "从客户端解包提取结构化游戏数据。",
