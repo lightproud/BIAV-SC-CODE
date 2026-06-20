@@ -133,10 +133,12 @@ def run_zero_cost_collectors() -> list[dict]:
     except ImportError:
         logger.debug('playwright_collectors not available')
 
+    # NOTE: ARCH-01 收敛（decisions.md 2026-06-20）：reddit / bilibili 唯一权威实现归 AC 栈
+    # （aggregator 富数据版：评论+媒体+search），discord 唯一活 API 采集器归 discord_archiver
+    # （AC fetch_discord_local 读其归档入流）。GC 不再调度这三者，消除重复采集；GC 的
+    # fetch_reddit / fetch_bilibili / fetch_discord 函数与其单测保留，仅退出生产编排。
     # Zero-cost collectors (no API key / no cookie required)
     zero_cost_fetchers = [
-        ('Bilibili', c.fetch_bilibili),
-        ('Reddit', c.fetch_reddit),
         ('TapTap', c.fetch_taptap),
         ('Weibo', c.fetch_weibo),
         ('App Store', c.fetch_appstore_reviews),
@@ -151,7 +153,6 @@ def run_zero_cost_collectors() -> list[dict]:
     # Collectors that may use API keys when available, fall back to public endpoints otherwise
     api_fetchers = [
         ('YouTube', c.fetch_youtube),
-        ('Discord API', c.fetch_discord),
         ('Bahamut', c.fetch_bahamut),
         ('Arca.live', c.fetch_arca_live),
         ('Google Play', c.fetch_google_play),
@@ -161,11 +162,11 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
-        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'TapTap': 'taptap',
+        'TapTap': 'taptap',
         'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
-        'YouTube': 'youtube', 'Discord API': 'discord',
+        'YouTube': 'youtube',
         'Bahamut': 'bahamut',
         'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
