@@ -1,9 +1,32 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T00:02:10.636663+00:00",
+  "archived_at": "2026-06-20T03:32:35.122456+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
+    {
+      "title": "沙耶×洛天依",
+      "summary": "画好后突发奇想做meme 第一次做\n歌是内田温的 いいおとこ☆イイオトコ 剪辑了一部分\n  └ Reiiiee (3赞): 想不到的组合！\n  └ 闻寻森 (1赞): 其实一开始的选曲有想过要用食己少女的，这两首纠结了很久最后还是用了内田温这首\n  └ 䭩㟗 (1赞): 三连送上~",
+      "source": "bilibili",
+      "time": "2026-06-19T18:03:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1mxjk6VEJS",
+      "engagement": 224,
+      "is_hot": false,
+      "author": "闻寻森",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 217,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/9a307d77de1c5ce3b9627819cfab4ea75e592815.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "第四届N厨杯-第十三日录播（蘸豆蠢享）",
       "summary": "第十三日直播录播\n有观众提议做个只有打牌的版本，今天试做一下，反响好的话后续继续做。",
