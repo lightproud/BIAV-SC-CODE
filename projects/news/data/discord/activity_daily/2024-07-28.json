@@ -1,10 +1,16 @@
 {
   "date": "2024-07-28",
-  "messages": 46,
-  "unique_authors": 10,
-  "reactions_total": 17,
-  "attachments": 11,
+  "messages": 1750,
+  "unique_authors": 42,
+  "reactions_total": 118,
+  "attachments": 90,
   "channel_activity": {
+    "🔸綜合討論": 1435,
+    "🔸阵容构建": 43,
+    "🔸morimens-game-chat": 130,
+    "🔸剧情交流": 12,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 83,
     "🎊《忘卻前夜》Steam加入願望清單有好康，預約解鎖全服福利🎊": 1,
     "V1.5.2.0 停服維護公告": 8,
     "游戏美术资源上的文字": 2,
@@ -21,25 +27,33 @@
     "臨摹鯊魚": 1
   },
   "hourly_activity": {
-    "6": 2,
-    "5": 2,
-    "8": 7,
-    "9": 3,
-    "20": 2,
-    "10": 6,
-    "13": 3,
-    "18": 1,
-    "19": 3,
-    "0": 4,
-    "1": 3,
-    "7": 1,
-    "15": 1,
-    "2": 2,
-    "14": 2,
-    "16": 4
+    "0": 5,
+    "1": 5,
+    "3": 6,
+    "4": 21,
+    "5": 137,
+    "6": 191,
+    "7": 84,
+    "8": 101,
+    "9": 62,
+    "10": 69,
+    "11": 57,
+    "12": 32,
+    "13": 29,
+    "14": 237,
+    "15": 390,
+    "16": 245,
+    "17": 17,
+    "19": 18,
+    "20": 4,
+    "2": 3,
+    "18": 31,
+    "21": 2,
+    "23": 4
   },
   "message_types": {
-    "0": 12
+    "0": 1432,
+    "19": 272
   },
   "top_reacted_messages": [
     {
@@ -57,11 +71,148 @@
       "channel": "第2章「以蠟像之名」關卡地圖總覽"
     },
     {
-      "id": "1266913025772752999",
-      "content": "打災區我的想法：\n第一波：24+騎士+羅坦+朵爾\n第二波：艾瑞卡+詩人+加侖+溫\n第三波：圖魯+墨菲+珊+米粒\n第四波：大佬的24+拉蒙+混沌雙盾\n第五：紅夫人",
+      "id": "1267024143090450467",
+      "channel_id": "1131839817982947429",
+      "content": "我一直都活著 但是在帕魯",
+      "author": "tt1036",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267149632715227227",
+      "channel_id": "1131839817982947429",
+      "content": "法應該也有子宮吧",
       "author": "yi000607",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1266995969900281886",
+      "channel_id": "1131839817982947429",
+      "content": "卑鄙的混沌人",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267007240536064092",
+      "channel_id": "1131839817982947429",
+      "content": "這件是亮就按界域病",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267065109952335952",
+      "channel_id": "1131839817982947429",
+      "content": "cra佬展現出了無論天涯海角都要壓花的專情",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267128384014520445",
+      "channel_id": "1131839817982947429",
+      "content": "選用環拉 分數歸零",
+      "author": "whimsical_starfish_19845",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267132898448769154",
+      "channel_id": "1131839817982947429",
+      "content": "是不是突然講了什麼很難的東西（",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267135304691875953",
+      "channel_id": "1131839817982947429",
+      "content": "抓到姦夫淫婦",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267137852483833876",
+      "channel_id": "1131839817982947429",
+      "content": "你說的那不就是阿姨嗎",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267137939238817952",
+      "channel_id": "1131839817982947429",
+      "content": "~~有被我破梗到嗎~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267014086454022184",
+      "channel_id": "1170692781216378960",
+      "content": "It really is ENgpt bug",
+      "author": "flinwander",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1266992222147051630",
+      "channel_id": "1131839817982947429",
+      "content": "<:play:1238448692441251910> 🦾",
+      "author": "ernest_heart",
       "reactions": 1,
-      "channel": "咸魚玩家求教"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1266997449185296447",
+      "channel_id": "1131839817982947429",
+      "content": "目前聽說，是這樣沒錯，3覺後每回合多少執妄，就X15%的成長率",
+      "author": "hailananxie7110",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1266998269569925243",
+      "channel_id": "1131839817982947429",
+      "content": "水母：你找我？！",
+      "author": "hailananxie7110",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267000052560298055",
+      "channel_id": "1131839817982947429",
+      "content": "也不吃力量",
+      "author": "whimsical_starfish_19845",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267000597937262614",
+      "channel_id": "1131839817982947429",
+      "content": "多一根觸手",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267002911351636000",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼雜湊還打了六回合😡",
+      "author": "qiyuan48",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1267006986369896468",
+      "channel_id": "1131839817982947429",
+      "content": "生祭又沒吃觸傷",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,14 @@
 {
   "date": "2024-06-02",
-  "messages": 157,
-  "unique_authors": 29,
-  "reactions_total": 39,
-  "attachments": 21,
+  "messages": 3529,
+  "unique_authors": 64,
+  "reactions_total": 167,
+  "attachments": 122,
   "channel_activity": {
+    "🔸綜合討論": 3296,
+    "🔸阵容构建": 38,
+    "🔸剧情交流": 20,
+    "🔸相位对弈": 18,
     "🎥忘卻前夜半週年": 3,
     "📝『彌薩格大學』攻略募集活動五期開始啦！": 3,
     "關於4月1日「我，哈斯塔，打錢」郵件補發問題": 2,
@@ -38,32 +42,34 @@
     "自設守秘人圖堆🥤": 9
   },
   "hourly_activity": {
-    "2": 11,
-    "7": 6,
-    "8": 3,
-    "4": 5,
-    "6": 13,
-    "10": 24,
-    "0": 3,
-    "1": 1,
-    "15": 5,
-    "20": 2,
-    "21": 2,
-    "22": 1,
-    "16": 3,
-    "19": 2,
-    "11": 20,
-    "9": 23,
-    "13": 7,
-    "17": 1,
-    "3": 7,
-    "12": 8,
-    "14": 9,
-    "5": 1
+    "0": 11,
+    "1": 28,
+    "2": 31,
+    "3": 67,
+    "4": 18,
+    "5": 204,
+    "6": 337,
+    "7": 247,
+    "8": 130,
+    "9": 304,
+    "10": 78,
+    "11": 303,
+    "12": 339,
+    "13": 328,
+    "14": 387,
+    "15": 438,
+    "16": 89,
+    "17": 148,
+    "18": 9,
+    "19": 6,
+    "20": 11,
+    "23": 9,
+    "21": 4,
+    "22": 3
   },
   "message_types": {
-    "19": 3,
-    "0": 7
+    "0": 2582,
+    "19": 790
   },
   "top_reacted_messages": [
     {
@@ -72,6 +78,46 @@
       "author": "xu6_",
       "reactions": 19,
       "channel": "自設守秘人圖堆🥤"
+    },
+    {
+      "id": "1246808718490996848",
+      "channel_id": "1131839817982947429",
+      "content": "這我",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1246726880548098048",
+      "channel_id": "1131839817982947429",
+      "content": "好扯怎麼每個人都在速殺",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1246727633551626282",
+      "channel_id": "1131839817982947429",
+      "content": "每天都三萬+的金卷",
+      "author": "devis0212",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1246758122480074773",
+      "channel_id": "1131839817982947429",
+      "content": "有些人喜新厭舊",
+      "author": "scholar_2",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1246810742368370839",
+      "channel_id": "1131839817982947429",
+      "content": "你我都是已經被榨乾價值的忘卻底盤",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1246851543064645652",
@@ -88,81 +134,100 @@
       "channel": "强效属性对固定毒反的作用"
     },
     {
-      "id": "1246781940892438528",
-      "content": "場景CG都很好看～\n希望能放到主頁，跟喚醒體出門🥹",
-      "author": "mengdiehuan",
+      "id": "1246632981657817129",
+      "channel_id": "1131839817982947429",
+      "content": "0T",
+      "author": "wodebaobaoxiaodangaovi",
       "reactions": 2,
-      "channel": "希望主頁背景可更換"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246826030459523083",
-      "content": "不然二創活動的銀芯獎勵就要被茶茶偷偷拿走啦～",
-      "author": "momoshiocha",
+      "id": "1246647369508847638",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "anyang0v0",
       "reactions": 2,
-      "channel": "珈倫同調率三"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246921959061586032",
-      "content": "耶謝謝茶茶<:heart:1239910691218001961>",
-      "author": "lanl4n",
+      "id": "1246726998626275399",
+      "channel_id": "1131839817982947429",
+      "content": "癲五出來前裝一下佬，癲五後我就當小丑",
+      "author": "vegoutdino",
       "reactions": 2,
-      "channel": "珈倫同調率三"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246629843198804018",
-      "content": "Yes",
-      "author": "yi000607",
-      "reactions": 1,
-      "channel": "《忘卻前夜 Morimens》V1.4.2即將開放！精彩資訊一網打盡！"
+      "id": "1246783834536542268",
+      "channel_id": "1131839817982947429",
+      "content": "当时把凯鲨都回溯了的🤡",
+      "author": "yang_42",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246845597940715652",
-      "content": "對，現實奇點還能拿去打特遣、潛游，打通後會解鎖對應的鑰令",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "繁衍狂热这个活动可不可以延长几天"
+      "id": "1246795945094414368",
+      "channel_id": "1131839817982947429",
+      "content": "😡",
+      "author": "kervin_joshua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246713482569842709",
-      "content": "聖誕老公公快樂",
-      "author": "xuan4185",
-      "reactions": 1,
-      "channel": "薩爾瓦多HBD小笨圖"
+      "id": "1246802373133729803",
+      "channel_id": "1131839817982947429",
+      "content": "常駐命輪+12",
+      "author": "nemu_s_t_a_r",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246720268848726136",
-      "content": "凡信汀的人必不至於羞愧",
-      "author": "whimsical_starfish_19845",
-      "reactions": 1,
-      "channel": "汀們"
+      "id": "1246804731389673482",
+      "channel_id": "1131839817982947429",
+      "content": "# 老燈爆點媳婦",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246777287739838544",
-      "content": "最好吃",
-      "author": "sannia",
-      "reactions": 1,
-      "channel": "自設守秘人圖堆🥤"
+      "id": "1246809016768659586",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "nemu_s_t_a_r",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246777434989133874",
-      "content": "吃一口脆迪酥奶昔",
-      "author": "_bonkumeep",
-      "reactions": 1,
-      "channel": "自設守秘人圖堆🥤"
+      "id": "1246812326837882961",
+      "channel_id": "1131839817982947429",
+      "content": "打牌丟一丟欸我排庫怎麼空了? 才開始乖乖看BOSS意圖",
+      "author": "vegoutdino",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246777656750510240",
-      "content": "奶昔寶薄！",
-      "author": "mi3hua1",
-      "reactions": 1,
-      "channel": "自設守秘人圖堆🥤"
+      "id": "1246813126276546600",
+      "channel_id": "1131839817982947429",
+      "content": "是庫姆打阿紅才對🤣",
+      "author": "chennnn328",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1246825635133919273",
-      "content": "好好看，喜歡精神污染的樣子！",
-      "author": "momoshiocha",
-      "reactions": 1,
-      "channel": "自設守秘人圖堆🥤"
+      "id": "1246815970215985152",
+      "channel_id": "1131839817982947429",
+      "content": "意思是 玩尤烏就要給我暴",
+      "author": "chennnn328",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1246873551202684929",
+      "channel_id": "1131839817982947429",
+      "content": "重开吧",
+      "author": "yuanjiekongcan",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
