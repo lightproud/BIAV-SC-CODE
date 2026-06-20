@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#
+# 银芯 pre-push 钩子 —— 防 413 胖包
+#
+# 真因（lesson #28 / #34 / #39）：本地 origin/main 指针陈旧时，push 会把
+# 「陈旧基底到当前提交」的整段历史打成胖包，触发代理体积上限（HTTP 413 / 断连）。
+# 防护：push 前自动把当前分支基底对齐到最新 origin/main。
+#
+# 装配（每个新克隆 / 云容器一次）：git config core.hooksPath .githooks
+#
+# 守密人 2026-06-20 裁定重新引入（推翻 2026-06-14「全部钩子退役」对本项的约束）：
+# 退役的是会话生命周期钩子（开工硬重置烦扰）；pre-push 是 git 层钩子，仅 push 时
+# 触发一次，不重蹈「每次开工硬重置 + backup ref 不清理」的坑。
+
+set -euo pipefail
+
+remote_name="$1"
+
+# 仅对 origin 生效；其他 remote 放行
+[ "$remote_name" = "origin" ] || exit 0
+
+# 拉取最新 main。网络失败时降级放行（不因网络问题阻断正常 push）
+if ! git fetch -q origin main 2>/dev/null; then
+  echo "[pre-push] 警告：fetch origin main 失败（网络？），跳过基底对齐校验，直接放行。" >&2
+  exit 0
+fi
+
+behind=$(git rev-list --count HEAD..origin/main 2>/dev/null || echo 0)
+
+if [ "$behind" -eq 0 ]; then
+  exit 0   # 基底已是最新，放行
+fi
+
+echo "[pre-push] 当前分支落后 origin/main ${behind} 个提交 —— 直接 push 易触发 413 胖包。" >&2
+echo "[pre-push] 正在自动 rebase 对齐到最新 origin/main..." >&2
+
+if git rebase origin/main >&2; then
+  echo "[pre-push] 已对齐。本次 push 的引用已随 rebase 失效，请重新执行 push（基底已最小化，不会再发胖包）。" >&2
+  exit 1
+else
+  git rebase --abort 2>/dev/null || true
+  echo "[pre-push] 自动 rebase 遇冲突，已 abort 回到 push 前状态。" >&2
+  echo "[pre-push] 请手动：git fetch origin main && git rebase origin/main，解决冲突后重推。" >&2
+  exit 1
+fi
