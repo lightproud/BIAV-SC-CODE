@@ -246,19 +246,26 @@ brain-in-a-vat/
 
 ### §7.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
 
-**当前无任何自定义会话钩子**——`.claude/settings.json` 仅保留 `$schema`。
+**当前无任何自定义「会话生命周期钩子」**——`.claude/settings.json` 仅保留 `$schema`。
+
+**git 钩子（与会话钩子是两类东西）**：`.githooks/pre-push` 防 413 胖包——push 前自动把
+当前分支基底对齐到最新 origin/main（lesson #28/#34/#39 真因防护）。装配：每个新克隆 /
+云容器跑一次 `git config core.hooksPath .githooks`（git 不自动信任仓内 hooksPath，需手动启用）。
+守密人 2026-06-20 裁定重新引入（仅 git 层、push 时触发一次，不重蹈会话钩子「开工硬重置」的坑）。
 
 MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具调用。
 
 > 钩子退役历程：UserPromptSubmit / PostToolUse / SessionEnd 三钩子（会话注入 / 工具观测 / 蒸馏）
 > 于 2026-06-14 退役（记忆定位收回平台原生，见 §1.4 第 3 条）；最后保留的 SessionStart
 > 同步钩子 `session-start-sync.sh` 亦于 2026-06-14 退役（守密人裁定，见 `memory/decisions.md`）。
-> main 与 origin 的同步改为按需手动 `git fetch origin main` + 对齐，不再开工自动硬重置。
+> 上述退役的均为**会话生命周期钩子**；2026-06-20 复活的 pre-push 属 **git 钩子**，性质不同。
 
 ### §7.5 Slash 命令与技能
 
 `.claude/commands/`：`/biav-report` `/daily-news` `/sync-memory` `/validate-data`；
-`.claude/skills/`：`anysearch`（实时网络检索）。详见各自定义文件。
+`.claude/skills/`：`anysearch`（实时网络检索）、`grill`（拷问对齐并落档，user-invoked）、
+`grilling`（核心拷问循环）、`domain-modeling`（术语锐化 + 决策落档）。技能写作审计标尺见
+`memory/skill-authoring-standard.md`。详见各自定义文件。
 
 ### §7.6 分支与提交
 
