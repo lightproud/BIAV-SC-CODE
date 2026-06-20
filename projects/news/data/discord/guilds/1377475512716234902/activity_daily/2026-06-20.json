@@ -1,23 +1,26 @@
 {
   "date": "2026-06-20",
-  "messages": 125,
-  "unique_authors": 15,
-  "reactions_total": 33,
-  "attachments": 18,
+  "messages": 170,
+  "unique_authors": 17,
+  "reactions_total": 48,
+  "attachments": 25,
   "channel_activity": {
-    "なんでも雑談": 40,
+    "なんでも雑談": 82,
+    "描いたもの": 1,
+    "戦闘記録お焚き上げ場": 2,
+    "諸々の備忘録": 3,
     "🔰初心者質問": 72,
-    "戦闘記録お焚き上げ場": 1,
     "幻夢ボス別ステージ入口スクショ": 1,
     "つぶやき": 8,
-    "諸々の備忘録": 2,
     "招待コード共有会": 1
   },
   "hourly_activity": {
+    "8": 31,
+    "9": 15,
+    "10": 26,
     "5": 15,
     "6": 25,
     "7": 34,
-    "8": 27,
     "0": 5,
     "2": 6,
     "3": 5,
@@ -25,8 +28,8 @@
     "1": 1
   },
   "message_types": {
-    "0": 88,
-    "19": 13
+    "19": 9,
+    "0": 36
   },
   "top_reacted_messages": [
     {
@@ -36,6 +39,30 @@
       "author": "anonymous.409",
       "reactions": 4,
       "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1517845654377074780",
+      "channel_id": "1377478664609857647",
+      "content": "なーーーが",
+      "author": "ugen_22zi",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517832745655603311",
+      "channel_id": "1377478664609857647",
+      "content": "トゥルかわ",
+      "author": "0w04250",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517835421353119814",
+      "channel_id": "1377478664609857647",
+      "content": "高難易度8−6やっとクリアできました…まだ先長いです。\n他の人の戦歴見てたらAnonymousさんがワンパンしてて震えました。",
+      "author": "ya.ma.00",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1517799100941209701",
@@ -60,6 +87,70 @@
       "author": "tenseikarennatomato_82997",
       "reactions": 2,
       "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1517810727350567013",
+      "channel_id": "1377478664609857647",
+      "content": "どうも､なにも考えずにサルバでゴリ押しした人です😎",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517823873968504963",
+      "channel_id": "1377478664609857647",
+      "content": "え、バリア張るのか…",
+      "author": "ecstasyrb",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517835296664981604",
+      "channel_id": "1377478664609857647",
+      "content": "気持ちだけ受け取るよ",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517838197097238619",
+      "channel_id": "1377478664609857647",
+      "content": "えっ同じ思い込みをしていた守秘者がほかにもおるの！？",
+      "author": "osoba_08688",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517841894116167792",
+      "channel_id": "1377478664609857647",
+      "content": "チュートリアルと||8章道中||やねぇ",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517845950486417602",
+      "channel_id": "1377478664609857647",
+      "content": "これで90レベ3人目嬉しい",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517846217437216950",
+      "channel_id": "1377478664609857647",
+      "content": "虚無の3人目を見てたらしい",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1517826063235813568",
+      "channel_id": "1510230929678008420",
+      "content": "月の光",
+      "author": "tajimal_drawing",
+      "reactions": 1,
+      "channel": "描いたもの"
     },
     {
       "id": "1517776673452593162",
@@ -100,94 +191,6 @@
       "author": "megane0965_78083",
       "reactions": 1,
       "channel": "なんでも雑談"
-    },
-    {
-      "id": "1517792973948190731",
-      "channel_id": "1377478664609857647",
-      "content": "タイス24の存在に頭は抱えていると思います笑。越えられない頂点を出してしまったわけですから…",
-      "author": "megane0965_78083",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1517794210810691595",
-      "channel_id": "1377478664609857647",
-      "content": "これに並ぶバカ編成出てきたら皆で笑おう",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1517761550155255939",
-      "channel_id": "1391701560496623688",
-      "content": "ダフォorタイスではあると思う",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517770274852831312",
-      "channel_id": "1391701560496623688",
-      "content": "本体3凸と餅無かったらサルバはアタッカー出来ないですね",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517779521422491699",
-      "channel_id": "1391701560496623688",
-      "content": "本体3凸無餅のわいのサルバは立派なアタッカーしてる…",
-      "author": "kiripo0080",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517796115167187056",
-      "channel_id": "1391701560496623688",
-      "content": "いつもアリガトウ",
-      "author": "evuansu0726",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517797233465102446",
-      "channel_id": "1391701560496623688",
-      "content": "キーチャ役をしつつ、狂気をどんどん回して2回発動や難化で補助をしていくって感じですかね",
-      "author": "tenseikarennatomato_82997",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517799821287624724",
-      "channel_id": "1391701560496623688",
-      "content": "あ、1コス効果を読み違えてました\n0コスになるから、1コスト増えるのか！と思ってたら、\n消費したコストを回復するなんですねーー",
-      "author": "tenseikarennatomato_82997",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517801915310673970",
-      "channel_id": "1391701560496623688",
-      "content": "タイス極限が様子おかしいって話ですかね()",
-      "author": "tenseikarennatomato_82997",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517802243171155988",
-      "channel_id": "1391701560496623688",
-      "content": "あれは運営が血迷ったとしか思えないので…",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1517803223103307938",
-      "channel_id": "1391701560496623688",
-      "content": "わかりました！！\nサルバメインで2コスをバンバン使う\nコピーしてみたり、軟化つけたりして補助してくって感じですかね",
-      "author": "tenseikarennatomato_82997",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
     }
   ]
 }
