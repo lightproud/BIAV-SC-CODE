@@ -1,17 +1,8 @@
 {
   "_meta": {
-    "purpose": "角色 -> 故事链路:角色小传如何解锁(原始 lock_tip 逐字)+ 解锁类型 + 所属剧情单元(若有)",
-    "source": "story_character_map.json (角色↔小传id) + story/lore_entries.json (lock_tip/story_unit)",
-    "unlock_types": {
-      "main_story": 4,
-      "acquire_character": 32,
-      "special_record": 7,
-      "event_stage": 2,
-      "mind_dive": 10
-    },
-    "note": "unlock_condition 为原始文本逐字;story_unit 仅当解锁文案含叙事章节时非空(14/55)",
+    "purpose": "角色 -> 故事链路",
     "total": 55,
-    "generated": "2026-06-17"
+    "generated": "2026-06-21"
   },
   "links": [
     {

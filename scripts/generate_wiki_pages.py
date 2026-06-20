@@ -733,9 +733,9 @@ CATEGORY_SECTIONS = [
 ]
 UNLOCK_LABEL = {
     'acquire_character': '获取角色后解锁', 'main_story': '主线剧情解锁',
-    'mind_dive': '意识潜游解锁', 'special_record': '特遣纪录解锁',
-    'event_stage': '活动关卡解锁', 'clear_stage': '通关关卡解锁',
-    'other': '其他', 'unknown': '未知',
+    'star_arc': '星辰篇解锁', 'mind_dive': '意识潜游解锁',
+    'special_record': '特遣纪录解锁', 'event_stage': '活动关卡解锁',
+    'clear_stage': '通关关卡解锁', 'other': '其他', 'unknown': '未知',
 }
 
 
@@ -1370,7 +1370,7 @@ def generate_story():
     def esc(t):
         return _html.escape(t or '', quote=False)
 
-    tl = {'prologue': '序章', 'main_chapter': '主线', 'mind_dive': '意识潜游'}
+    tl = {'prologue': '序章', 'main_chapter': '主线', 'star_chapter': '星辰篇', 'mind_dive': '意识潜游'}
     L = ['# 剧情时间线', '']
     L.append('> 按**剧情单元**（序章 → 调查行动主线 → 意识潜游）组织的故事浏览页。')
     L.append('> 数据来源：CollectionHall.lua（收藏馆词条，正文逐字）+ StageGroup.lua（关卡组）。')

@@ -1,12 +1,10 @@
 {
   "_meta": {
-    "purpose": "剧情单元(章节)脊柱:序章 / 调查行动主线章 / 意识潜游支线,作为所有故事数据的组织枢纽",
-    "source": "解析自 lore_entries.json 的 lock_tip(原始解锁文案);关卡侧名称见 stages.json",
-    "types": "prologue=序章, main_chapter=调查行动主线, mind_dive=意识潜游支线/活动",
-    "order_note": "mind_dive 无内在章号,order 按首条 lore id 近似排列,非确切剧情时序",
-    "total_units": 26,
-    "generated": "2026-06-17",
-    "enriched_2026-06-17": "已回填各单元 stage_group_ids(关卡组关联,见 stages_by_unit.json)"
+    "purpose": "剧情单元脊柱:序章 / 调查行动主线 / 星辰篇 / 意识潜游",
+    "types": "prologue, main_chapter, star_chapter(星辰篇), mind_dive",
+    "note": "mind_dive 的 order 按首条 lore id 近似;star_chapter 为第二剧情弧",
+    "total_units": 31,
+    "generated": "2026-06-21"
   },
   "units": [
     {
@@ -25,7 +23,7 @@
       "type": "main_chapter",
       "chapter_no": 1,
       "short_name": "东区秘事",
-      "lore_count": 27,
+      "lore_count": 37,
       "first_lore_id": 48609,
       "order": 1,
       "stage_group_ids": [
@@ -40,7 +38,7 @@
       "type": "main_chapter",
       "chapter_no": 2,
       "short_name": "以蜡像之名",
-      "lore_count": 14,
+      "lore_count": 53,
       "first_lore_id": 48619,
       "order": 2,
       "stage_group_ids": [
@@ -55,7 +53,7 @@
       "type": "main_chapter",
       "chapter_no": 3,
       "short_name": "谨防恶犬",
-      "lore_count": 10,
+      "lore_count": 24,
       "first_lore_id": 49764,
       "order": 3,
       "stage_group_ids": [
@@ -70,7 +68,7 @@
       "type": "main_chapter",
       "chapter_no": 4,
       "short_name": "于无声处",
-      "lore_count": 12,
+      "lore_count": 22,
       "first_lore_id": 49759,
       "order": 4,
       "stage_group_ids": [
@@ -85,7 +83,7 @@
       "type": "main_chapter",
       "chapter_no": 5,
       "short_name": "风暴之眼",
-      "lore_count": 7,
+      "lore_count": 19,
       "first_lore_id": 49758,
       "order": 5,
       "stage_group_ids": [
@@ -100,8 +98,8 @@
       "type": "main_chapter",
       "chapter_no": 6,
       "short_name": "倒错的群星",
-      "lore_count": 8,
-      "first_lore_id": 51404,
+      "lore_count": 17,
+      "first_lore_id": 49104,
       "order": 6,
       "stage_group_ids": [
         15890,
@@ -115,8 +113,8 @@
       "type": "main_chapter",
       "chapter_no": 7,
       "short_name": "欲河",
-      "lore_count": 8,
-      "first_lore_id": 51019,
+      "lore_count": 26,
+      "first_lore_id": 49740,
       "order": 7,
       "stage_group_ids": [
         48868,
@@ -130,7 +128,7 @@
       "type": "main_chapter",
       "chapter_no": 8,
       "short_name": "终末交响曲",
-      "lore_count": 3,
+      "lore_count": 11,
       "first_lore_id": 51409,
       "order": 8,
       "stage_group_ids": [
@@ -141,13 +139,80 @@
       "stage_group_count": 3
     },
     {
+      "unit": "调查行动第9章",
+      "type": "main_chapter",
+      "chapter_no": 9,
+      "short_name": "第9章",
+      "lore_count": 33,
+      "first_lore_id": 70283,
+      "order": 9,
+      "stage_group_ids": [],
+      "stage_group_count": 0
+    },
+    {
+      "unit": "调查行动星辰篇第1章「重临雾都」",
+      "type": "star_chapter",
+      "chapter_no": 1,
+      "short_name": "重临雾都",
+      "lore_count": 12,
+      "first_lore_id": 51444,
+      "order": 10,
+      "stage_group_ids": [
+        70939,
+        72075
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第2章「蜕变」",
+      "type": "star_chapter",
+      "chapter_no": 2,
+      "short_name": "蜕变",
+      "lore_count": 14,
+      "first_lore_id": 51445,
+      "order": 11,
+      "stage_group_ids": [
+        70938,
+        72074
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第3章「餍飨」",
+      "type": "star_chapter",
+      "chapter_no": 3,
+      "short_name": "餍飨",
+      "lore_count": 14,
+      "first_lore_id": 51440,
+      "order": 12,
+      "stage_group_ids": [
+        70940,
+        72073
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第4章「乐园」",
+      "type": "star_chapter",
+      "chapter_no": 4,
+      "short_name": "乐园",
+      "lore_count": 25,
+      "first_lore_id": 51423,
+      "order": 13,
+      "stage_group_ids": [
+        118157,
+        118158
+      ],
+      "stage_group_count": 2
+    },
+    {
       "unit": "意识潜游「一步之遥：似雨之泪」",
       "type": "mind_dive",
       "chapter_no": null,
       "short_name": "一步之遥：似雨之泪",
       "lore_count": 1,
       "first_lore_id": 48625,
-      "order": 9,
+      "order": 14,
       "stage_group_ids": [],
       "stage_group_count": 0
     },
@@ -158,7 +223,7 @@
       "short_name": "燃烧的群宴",
       "lore_count": 7,
       "first_lore_id": 57604,
-      "order": 10,
+      "order": 15,
       "stage_group_ids": [
         36625,
         36626,
@@ -173,7 +238,7 @@
       "short_name": "不朽极昼",
       "lore_count": 6,
       "first_lore_id": 57606,
-      "order": 11,
+      "order": 16,
       "stage_group_ids": [
         95184
       ],
@@ -186,7 +251,7 @@
       "short_name": "一步之遥",
       "lore_count": 8,
       "first_lore_id": 57613,
-      "order": 12,
+      "order": 17,
       "stage_group_ids": [
         24552,
         24553,
@@ -201,7 +266,7 @@
       "short_name": "巨人的陨落",
       "lore_count": 6,
       "first_lore_id": 57628,
-      "order": 13,
+      "order": 18,
       "stage_group_ids": [
         43515,
         43516,
@@ -216,7 +281,7 @@
       "short_name": "骑士的愿望",
       "lore_count": 5,
       "first_lore_id": 57630,
-      "order": 14,
+      "order": 19,
       "stage_group_ids": [
         20449,
         20452,
@@ -231,7 +296,7 @@
       "short_name": "血与沙",
       "lore_count": 5,
       "first_lore_id": 57638,
-      "order": 15,
+      "order": 20,
       "stage_group_ids": [
         15888,
         15923,
@@ -246,7 +311,7 @@
       "short_name": "苍白后裔",
       "lore_count": 7,
       "first_lore_id": 57640,
-      "order": 16,
+      "order": 21,
       "stage_group_ids": [
         20446,
         20450,
@@ -261,7 +326,7 @@
       "short_name": "如歌的雕琢",
       "lore_count": 5,
       "first_lore_id": 57642,
-      "order": 17,
+      "order": 22,
       "stage_group_ids": [
         20222,
         20223,
@@ -276,7 +341,7 @@
       "short_name": "扭曲核心",
       "lore_count": 5,
       "first_lore_id": 57716,
-      "order": 18,
+      "order": 23,
       "stage_group_ids": [
         20447,
         20448,
@@ -291,7 +356,7 @@
       "short_name": "诸事如常",
       "lore_count": 5,
       "first_lore_id": 59454,
-      "order": 19,
+      "order": 24,
       "stage_group_ids": [
         35544,
         35545,
@@ -306,7 +371,7 @@
       "short_name": "最后的引航",
       "lore_count": 5,
       "first_lore_id": 84328,
-      "order": 20,
+      "order": 25,
       "stage_group_ids": [
         81262
       ],
@@ -319,7 +384,7 @@
       "short_name": "畸世绘",
       "lore_count": 7,
       "first_lore_id": 97208,
-      "order": 21,
+      "order": 26,
       "stage_group_ids": [
         96834
       ],
@@ -332,7 +397,7 @@
       "short_name": "天边之外·下",
       "lore_count": 1,
       "first_lore_id": 117621,
-      "order": 22,
+      "order": 27,
       "stage_group_ids": [
         99734
       ],
@@ -345,7 +410,7 @@
       "short_name": "加冕之日",
       "lore_count": 4,
       "first_lore_id": 121383,
-      "order": 23,
+      "order": 28,
       "stage_group_ids": [
         71850
       ],
@@ -358,7 +423,7 @@
       "short_name": "扇下夜谈",
       "lore_count": 10,
       "first_lore_id": 126906,
-      "order": 24,
+      "order": 29,
       "stage_group_ids": [
         125338
       ],
@@ -371,7 +436,7 @@
       "short_name": "沉溺",
       "lore_count": 1,
       "first_lore_id": 131663,
-      "order": 25,
+      "order": 30,
       "stage_group_ids": [
         130895
       ],

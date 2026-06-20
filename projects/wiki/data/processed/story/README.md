@@ -7,15 +7,17 @@
 
 ## 一、组织枢纽：剧情单元
 
-所有故事数据以**剧情单元**为枢纽组织，共 26 个：
+所有故事数据以**剧情单元**为枢纽组织，共 31 个：
 
 | 类型 | 数量 | 说明 |
 |------|------|------|
 | `prologue` 序章 | 1 | 游戏开篇 |
-| `main_chapter` 调查行动主线 | 8 | 第 1-8 章（东区秘事 … 终末交响曲）|
+| `main_chapter` 调查行动主线 | 9 | 第 1-9 章（东区秘事 … 终末交响曲；第 9 章暂无标题）|
+| `star_chapter` 调查行动星辰篇 | 4 | 第二剧情弧：重临雾都 / 蜕变 / 餍飨 / 乐园 |
 | `mind_dive` 意识潜游 | 17 | 支线 / 活动剧情 |
 
 单元目录与元数据见 [`story_units.json`](./story_units.json)。
+该层由 [`scripts/build_story_layer.py`](../../../../../scripts/build_story_layer.py) 可复现生成。
 
 ---
 
@@ -23,13 +25,12 @@
 
 | 文件 | 内容 | 条目数 |
 |------|------|--------|
-| [`story_units.json`](./story_units.json) | 剧情单元脊柱（类型 / 章号 / 顺序 / 各单元 lore 数 / **关卡组 id**）| 26 单元 |
+| [`story_units.json`](./story_units.json) | 剧情单元脊柱（类型 / 章号 / 顺序 / 各单元 lore 数 / **关卡组 id**）| 31 单元 |
 | [`lore_entries.json`](./lore_entries.json) | 全量 lore 结构化记录（**找回正文** + 章节关联 + 分类）| 1026 条（798 含正文）|
-| [`lore_by_unit.json`](./lore_by_unit.json) | 剧情单元 → 该单元解锁的 lore id 列表（导航索引）| 覆盖 184 条 |
-| [`stages_by_unit.json`](./stages_by_unit.json) | 剧情单元 → 关卡组（StageGroup）映射 | 58 组 / 24 单元 |
+| [`lore_by_unit.json`](./lore_by_unit.json) | 剧情单元 → 该单元解锁的 lore id 列表（导航索引）| 覆盖 402 条 |
+| [`stages_by_unit.json`](./stages_by_unit.json) | 剧情单元 → 关卡组（StageGroup）映射 | 66 组 / 28 单元 |
 | [`character_story_links.json`](./character_story_links.json) | 角色 → 故事链路（小传解锁条件 + 类型 + 所属单元）| 55 角色 |
-| [`index.json`](./index.json) | **故事主索引**：每单元聚合 lore / 关卡组 / 登场角色 | 26 单元 |
-| [`STORY_TIMELINE.md`](./STORY_TIMELINE.md) | 人类可读剧情时间线浏览页（由 index 自动生成）| 26 单元 |
+| [`index.json`](./index.json) | **故事主索引**：每单元聚合 lore / 关卡组 / 登场角色 | 31 单元 |
 
 ### `lore_entries.json` 字段
 
@@ -79,13 +80,13 @@
   StageGroup.lua / stages.json  ────────►  story/stages_by_unit.json（章节 → 关卡组）
 ```
 
-> **关卡关联边界**：`Stage.lua` 与 `StageGroup.lua` 解包数据间**无外键**，单个关卡无法归组，故关卡仅关联到**关卡组**层级（按组名归一化后精确匹配章节短名，已规避「一步之遥」类子串歧义）。序章与「一步之遥：似雨之泪」无匹配关卡组（24/26 单元有关卡组）。
+> **关卡关联边界**：`Stage.lua` 与 `StageGroup.lua` 解包数据间**无外键**，单个关卡无法归组，故关卡仅关联到**关卡组**层级（按组名归一化后精确匹配章节短名，已规避「一步之遥」类子串歧义）。序章与「一步之遥：似雨之泪」无匹配关卡组（28/31 单元有关卡组）。
 
 ---
 
 ## 五、已知边界（诚实标注）
 
-- **184/1026** 条 lore 能从 `lock_tip` 挂到具体剧情单元；其余 842 条无章节解锁线索（`story_unit=null`），多为道具/概念类常驻 lore。
+- **402/1026** 条 lore 能从 `lock_tip` 挂到具体剧情单元；其余 624 条无章节解锁线索（`story_unit=null`），多为道具/概念类常驻 lore。
 - `mind_dive` 单元的 `order` 按首条 lore id **近似**排列，**非确切剧情时序**。
 - `category` 沿用 world_lore 原始自动分类（character_bio 除外，后者经 story_character_map 校验）；分类完善需后续人工核对，本层不臆断。
 - 语音行 → 剧情单元**不可自动关联**（语音按角色获取/启灵等级解锁，不带章节信息）。
