@@ -122,7 +122,6 @@ def run_zero_cost_collectors() -> list[dict]:
         'Arca.live':   'fetch_arca_live_playwright',
         'Ruliweb':     'fetch_ruliweb_playwright',
         'Bahamut':     'fetch_bahamut_playwright',
-        'TapTap':      'fetch_taptap_playwright',
         'Weibo':       'fetch_weibo_playwright',
     }
 
@@ -135,11 +134,11 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # NOTE: ARCH-01 收敛（decisions.md 2026-06-20）：reddit / bilibili 唯一权威实现归 AC 栈
     # （aggregator 富数据版：评论+媒体+search），discord 唯一活 API 采集器归 discord_archiver
-    # （AC fetch_discord_local 读其归档入流）。GC 不再调度这三者，消除重复采集；GC 的
-    # fetch_reddit / fetch_bilibili / fetch_discord 函数与其单测保留，仅退出生产编排。
+    # （AC fetch_discord_local 读其归档入流）。taptap 亦归 AC（守密人「GC 功能合并到 AC」：
+    # AC fetch_taptap 已吸收本栈 taptap_collector 的 topic 帖子能力 + 保留 webapiv2 富评价）。
+    # GC 不再调度这四者，消除重复采集；对应函数与其单测保留，仅退出生产编排。
     # Zero-cost collectors (no API key / no cookie required)
     zero_cost_fetchers = [
-        ('TapTap', c.fetch_taptap),
         ('Weibo', c.fetch_weibo),
         ('App Store', c.fetch_appstore_reviews),
         ('Pixiv', c.fetch_pixiv),
@@ -162,7 +161,6 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
-        'TapTap': 'taptap',
         'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
