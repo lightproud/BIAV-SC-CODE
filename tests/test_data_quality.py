@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 
@@ -159,6 +160,115 @@ class TestSilentPlatformTracker(unittest.TestCase):
         data = json.loads(self.health_path.read_text(encoding="utf-8"))
         self.assertIn("updated_at", data)
         self.assertIn("reddit", data["platforms"])
+
+    def test_note_recorded_on_silent_then_cleared_on_recovery(self):
+        t = self._tracker()
+        # Silent update with a note records it (degrade reason annotation).
+        t.update_platform_status("nga", items_count=0, note="待配 NGA_COOKIE")
+        self.assertEqual(t.health_data["platforms"]["nga"]["note"], "待配 NGA_COOKIE")
+        # A successful collection clears the note (line 222 branch).
+        t.update_platform_status("nga", items_count=3)
+        self.assertNotIn("note", t.health_data["platforms"]["nga"])
+
+    def test_should_skip_dormant_only_after_today_check(self):
+        # Dormant but not checked today → still gets one probe (returns False).
+        t = self._tracker()
+        t.health_data["platforms"]["telegram"] = {
+            "level": SilentPlatformTracker.LEVEL_DORMANT,
+            "last_check_date": "2000-01-01",
+            "consecutive_silent_days": 40,
+            "total_items": 0,
+            "errors": [],
+        }
+        self.assertFalse(t.should_skip_platform("telegram"))
+
+    def test_report_buckets_dormant_platform(self):
+        # Exercises the dormant else-branch of get_report (line 279).
+        t = self._tracker()
+        self._seed_silent(t, "telegram", SilentPlatformTracker.DORMANT_THRESHOLD - 1)
+        t.update_platform_status("telegram", items_count=0)
+        report = t.get_report()
+        self.assertEqual(report["summary"]["dormant_count"], 1)
+        self.assertEqual(report["dormant_platforms"][0]["platform"], "telegram")
+
+
+class TestGenerateHealthReport(unittest.TestCase):
+    """generate_health_report stitches tracker state + all-latest.json + recs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.out_dir = Path(self._tmp.name)
+        self.health_path = self.out_dir / "source-health.json"
+        # Redirect module-level paths into the temp dir. HEALTH_PATH is the
+        # SilentPlatformTracker default arg, frozen at class-def time, so the
+        # no-arg tracker built inside generate_health_report() must be steered
+        # by wrapping the constructor to inject the temp path.
+        _orig_init = data_quality.SilentPlatformTracker.__init__
+        tmp_health = self.health_path
+
+        def _init(self, health_path=tmp_health):
+            _orig_init(self, health_path=health_path)
+
+        self._patches = [
+            mock.patch.object(data_quality, "OUTPUT_DIR", self.out_dir),
+            mock.patch.object(data_quality, "HEALTH_PATH", self.health_path),
+            mock.patch.object(data_quality.SilentPlatformTracker, "__init__", _init),
+        ]
+        for p in self._patches:
+            p.start()
+            self.addCleanup(p.stop)
+
+    def _seed_health(self):
+        t = SilentPlatformTracker(health_path=self.health_path)
+        t.update_platform_status("reddit", items_count=5)
+        # Force a dormant + degraded platform via direct state.
+        t.health_data["platforms"]["nga"] = {
+            "level": SilentPlatformTracker.LEVEL_DEGRADED,
+            "last_success_date": None, "last_check_date": "2000-01-01",
+            "consecutive_silent_days": 8, "total_items": 0, "errors": [],
+        }
+        t.health_data["platforms"]["telegram"] = {
+            "level": SilentPlatformTracker.LEVEL_DORMANT,
+            "last_success_date": None, "last_check_date": "2000-01-01",
+            "consecutive_silent_days": 35, "total_items": 0, "errors": [],
+        }
+        t._save_health()
+
+    def test_report_without_all_latest_has_no_last_collection(self):
+        self._seed_health()
+        report = data_quality.generate_health_report()
+        self.assertNotIn("last_collection", report)
+        # Recommendations cover degraded (investigate) + dormant (skip).
+        actions = {(r["platform"], r["action"]) for r in report["recommendations"]}
+        self.assertIn(("telegram", "skip"), actions)
+        self.assertIn(("nga", "investigate"), actions)
+
+    def test_report_with_all_latest_adds_collection_breakdown(self):
+        self._seed_health()
+        (self.out_dir / "all-latest.json").write_text(json.dumps({
+            "collected_at": "2026-06-19T00:00:00+00:00",
+            "items": [
+                {"source": "reddit"}, {"source": "reddit"}, {"source": "bilibili"},
+                {},  # missing source → 'unknown'
+            ],
+        }), encoding="utf-8")
+        report = data_quality.generate_health_report()
+        lc = report["last_collection"]
+        self.assertEqual(lc["total_items"], 4)
+        self.assertEqual(lc["platform_breakdown"]["reddit"], 2)
+        self.assertEqual(lc["platform_breakdown"]["bilibili"], 1)
+        self.assertEqual(lc["platform_breakdown"]["unknown"], 1)
+
+    def test_print_health_report_runs(self):
+        # print_health_report walks every print branch; just assert no raise.
+        self._seed_health()
+        (self.out_dir / "all-latest.json").write_text(json.dumps({
+            "collected_at": "2026-06-19T00:00:00+00:00",
+            "items": [{"source": "reddit"}],
+        }), encoding="utf-8")
+        with mock.patch("builtins.print"):
+            data_quality.print_health_report()
 
 
 if __name__ == "__main__":

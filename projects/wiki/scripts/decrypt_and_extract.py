@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 Decrypt and extract Morimens encrypted AssetBundles.
 
 Uses UnityPy's brute_force_key with global-metadata.dat to find the
@@ -31,6 +31,58 @@ try:
 except ImportError:
     print("ERROR: UnityPy not installed. Run: pip install UnityPy")
     sys.exit(1)
+
+
+def parse_signatures(error_msg: str):
+    """Parse key_sig / data_sig byte literals from a UnityPy error message.
+
+    Returns ``(key_sig, data_sig)`` as bytes on success, or ``None`` if the
+    signatures are absent or cannot be decoded.
+    """
+    import ast
+    import re
+
+    key_sig_match = re.search(r"key_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
+    data_sig_match = re.search(r"data_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
+    if not key_sig_match or not data_sig_match:
+        return None
+    try:
+        key_sig = ast.literal_eval(key_sig_match.group(1))
+        data_sig = ast.literal_eval(data_sig_match.group(1))
+    except Exception:
+        return None
+    return key_sig, data_sig
+
+
+def decode_script(script):
+    """Decode a TextAsset m_Script to text, or None if undecodable binary."""
+    if isinstance(script, bytes):
+        for enc in ("utf-8", "utf-8-sig"):
+            try:
+                return script.decode(enc)
+            except UnicodeDecodeError:
+                continue
+        return None
+    return script
+
+
+def classify_text_extension(text: str) -> str:
+    """Pick a file extension for an extracted TextAsset body.
+
+    JSON content is NOT re-validated here (unlike extract_client_data) — this
+    matches the original decrypt path behavior.
+    """
+    stripped = text.strip()
+    if stripped.startswith(("{", "[")):
+        return ".json"
+    if stripped.startswith("--") or "function " in stripped[:200] or "local " in stripped[:200]:
+        return ".lua"
+    first_line = stripped.split("\n")[0]
+    if "\t" in first_line:
+        return ".tsv"
+    if "," in first_line and stripped.count("\n") > 1:
+        return ".csv"
+    return ".txt"
 
 
 def find_paths(game_root: Path) -> dict:
@@ -70,25 +122,12 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
             return None
 
     # Parse key_sig and data_sig from error message
-    import ast
-    import re
-    key_sig_match = re.search(r"key_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
-    data_sig_match = re.search(r"data_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
-
-    if not key_sig_match or not data_sig_match:
+    sigs = parse_signatures(error_msg)
+    if sigs is None:
         print(f"  Could not parse signatures from error message")
         print(f"  Error: {error_msg[:500]}")
         return None
-
-    # Use ast.literal_eval to properly decode byte strings with \x escapes
-    try:
-        key_sig = ast.literal_eval(key_sig_match.group(1))
-        data_sig = ast.literal_eval(data_sig_match.group(1))
-    except Exception as e:
-        print(f"  Failed to parse signatures: {e}")
-        print(f"  key_sig raw: {key_sig_match.group(1)}")
-        print(f"  data_sig raw: {data_sig_match.group(1)}")
-        return None
+    key_sig, data_sig = sigs
 
     print(f"  key_sig = {key_sig} ({len(key_sig)} bytes)")
     print(f"  data_sig = {data_sig} ({len(data_sig)} bytes)")
@@ -174,31 +213,14 @@ def extract_with_key(
                 data = obj.read()
                 name = data.m_Name
                 script = data.m_Script
-                if isinstance(script, bytes):
-                    try:
-                        text = script.decode("utf-8")
-                    except UnicodeDecodeError:
-                        try:
-                            text = script.decode("utf-8-sig")
-                        except UnicodeDecodeError:
-                            continue
-                else:
-                    text = script
+                text = decode_script(script)
+                if text is None:
+                    continue
 
                 if not text or len(text.strip()) < 2:
                     continue
 
-                stripped = text.strip()
-                if stripped.startswith(("{", "[")):
-                    ext = ".json"
-                elif stripped.startswith("--") or "function " in stripped[:200] or "local " in stripped[:200]:
-                    ext = ".lua"
-                elif "\t" in stripped.split("\n")[0]:
-                    ext = ".tsv"
-                elif "," in stripped.split("\n")[0] and stripped.count("\n") > 1:
-                    ext = ".csv"
-                else:
-                    ext = ".txt"
+                ext = classify_text_extension(text)
 
                 out = output_dir / "text" / f"{name}{ext}"
                 out.parent.mkdir(parents=True, exist_ok=True)

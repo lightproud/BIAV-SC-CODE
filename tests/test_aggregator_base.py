@@ -3,6 +3,8 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 
 import aggregator_base
@@ -149,6 +151,11 @@ class TestValidateNewsItem(unittest.TestCase):
         self.assertEqual(cleaned["language"], "zh")
         self.assertEqual(cleaned["metadata"], {"play": 100})
 
+    def test_lang_field_preserved(self):
+        ok, cleaned = aggregator_base.validate_news_item(_valid_item(lang="ja"))
+        self.assertTrue(ok)
+        self.assertEqual(cleaned["lang"], "ja")
+
 
 class TestValidateAllNews(unittest.TestCase):
     def test_filters_invalid_keeps_valid(self):
@@ -200,6 +207,117 @@ class TestGenerateSummary(unittest.TestCase):
                                   side_effect=RuntimeError("api down")):
             out = aggregator_base.generate_summary(self._news(3))
         self.assertEqual(out, "今日热门话题：。")
+
+
+class TestGetPlaywrightCollectors(unittest.TestCase):
+    def setUp(self):
+        # Reset the module-level memoization so each test drives a fresh probe.
+        self._saved = (
+            aggregator_base._playwright_collectors,
+            aggregator_base._playwright_import_attempted,
+            aggregator_base._playwright_runtime_available,
+        )
+
+        def _restore():
+            (aggregator_base._playwright_collectors,
+             aggregator_base._playwright_import_attempted,
+             aggregator_base._playwright_runtime_available) = self._saved
+        self.addCleanup(_restore)
+        aggregator_base._playwright_collectors = None
+        aggregator_base._playwright_import_attempted = False
+        aggregator_base._playwright_runtime_available = None
+
+    def test_runtime_missing_returns_none(self):
+        # Simulate playwright runtime not installed → quiet None.
+        with mock.patch("importlib.import_module", side_effect=ImportError("no pw")):
+            self.assertIsNone(aggregator_base._get_playwright_collectors())
+        self.assertFalse(aggregator_base._playwright_runtime_available)
+
+    def test_memoized_after_first_attempt(self):
+        with mock.patch("importlib.import_module", side_effect=ImportError("no pw")):
+            aggregator_base._get_playwright_collectors()
+        # Second call returns cached result without re-probing import_module.
+        with mock.patch("importlib.import_module",
+                        side_effect=AssertionError("should not re-import")):
+            self.assertIsNone(aggregator_base._get_playwright_collectors())
+
+    def test_runtime_present_loads_collectors_module(self):
+        import types
+        fake_pc = types.ModuleType("playwright_collectors")
+        with mock.patch("importlib.import_module", return_value=mock.MagicMock()), \
+                mock.patch.dict(sys.modules, {"playwright_collectors": fake_pc}):
+            out = aggregator_base._get_playwright_collectors()
+        self.assertIs(out, fake_pc)
+
+
+class TestGetWithRetry(unittest.TestCase):
+    def _resp(self, status):
+        r = mock.MagicMock()
+        r.status_code = status
+        return r
+
+    def test_success_2xx_returned_immediately(self):
+        ok = self._resp(200)
+        with mock.patch.object(aggregator_base.requests, "get", return_value=ok) as g, \
+                mock.patch.object(aggregator_base.time, "sleep"):
+            out = aggregator_base._get_with_retry("https://x.com", retries=2)
+        self.assertIs(out, ok)
+        g.assert_called_once()
+
+    def test_4xx_returned_without_retry(self):
+        # Divergent semantics: 4xx is returned, not retried (caller inspects status).
+        notfound = self._resp(404)
+        with mock.patch.object(aggregator_base.requests, "get", return_value=notfound) as g, \
+                mock.patch.object(aggregator_base.time, "sleep"):
+            out = aggregator_base._get_with_retry("https://x.com", retries=2)
+        self.assertEqual(out.status_code, 404)
+        g.assert_called_once()
+
+    def test_5xx_retried_then_returned_on_last_attempt(self):
+        err = self._resp(503)
+        with mock.patch.object(aggregator_base.requests, "get", return_value=err) as g, \
+                mock.patch.object(aggregator_base.time, "sleep"):
+            out = aggregator_base._get_with_retry("https://x.com", retries=2)
+        # 503 keeps retrying; on the final attempt the response is returned anyway.
+        self.assertEqual(out.status_code, 503)
+        self.assertEqual(g.call_count, 3)
+
+    def test_timeout_retried_then_raised(self):
+        with mock.patch.object(aggregator_base.requests, "get",
+                               side_effect=requests.exceptions.Timeout("slow")), \
+                mock.patch.object(aggregator_base.time, "sleep"):
+            with self.assertRaises(requests.exceptions.Timeout):
+                aggregator_base._get_with_retry("https://x.com", retries=1)
+
+    def test_connection_error_recovers_on_retry(self):
+        good = self._resp(200)
+        with mock.patch.object(
+                aggregator_base.requests, "get",
+                side_effect=[requests.exceptions.ConnectionError("x"), good]) as g, \
+                mock.patch.object(aggregator_base.time, "sleep"):
+            out = aggregator_base._get_with_retry("https://x.com", retries=2)
+        self.assertIs(out, good)
+        self.assertEqual(g.call_count, 2)
+
+
+class TestGetQualityTracker(unittest.TestCase):
+    def test_returns_none_on_import_error(self):
+        # Force the `from scripts.data_quality import ...` to fail.
+        with mock.patch.dict(sys.modules, {"scripts.data_quality": None}):
+            self.assertIsNone(aggregator_base._get_quality_tracker())
+
+    def test_returns_tracker_when_import_succeeds(self):
+        # Inject a fake scripts.data_quality exposing SilentPlatformTracker so the
+        # success path (instance construction) is exercised.
+        import types
+        sentinel = object()
+        fake_mod = types.ModuleType("scripts.data_quality")
+        fake_mod.SilentPlatformTracker = lambda: sentinel
+        fake_pkg = types.ModuleType("scripts")
+        fake_pkg.data_quality = fake_mod
+        with mock.patch.dict(sys.modules, {"scripts": fake_pkg,
+                                           "scripts.data_quality": fake_mod}):
+            self.assertIs(aggregator_base._get_quality_tracker(), sentinel)
 
 
 if __name__ == "__main__":

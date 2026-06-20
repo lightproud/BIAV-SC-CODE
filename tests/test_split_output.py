@@ -1,7 +1,10 @@
+import json
 import sys
+import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 
@@ -122,6 +125,99 @@ class TestExtractSteamItem(unittest.TestCase):
         self.assertEqual(item["engagement"], 0)
         self.assertEqual(item["playtime_forever"], 0)
         self.assertEqual(item["timestamp_created"], 0)
+
+
+class TestWriteSourceFile(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.out_dir = Path(self._tmp.name)
+        p = mock.patch.object(split_output, "OUTPUT_DIR", self.out_dir)
+        p.start()
+        self.addCleanup(p.stop)
+
+    def test_writes_wrapped_payload(self):
+        items = [{"title": "a"}, {"title": "b"}]
+        split_output.write_source_file("reddit", items, "2026-06-19T00:00:00+00:00")
+        payload = json.loads((self.out_dir / "reddit-latest.json").read_text("utf-8"))
+        self.assertEqual(payload["source"], "reddit")
+        self.assertEqual(payload["item_count"], 2)
+        self.assertEqual(payload["collected_at"], "2026-06-19T00:00:00+00:00")
+        self.assertEqual(payload["items"], items)
+
+
+class TestMain(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.root = Path(self._tmp.name)
+        self.out_dir = self.root / "output"
+        self.out_dir.mkdir()
+        self.input_path = self.out_dir / "news.json"
+        for attr, val in (("OUTPUT_DIR", self.out_dir), ("INPUT_PATH", self.input_path)):
+            p = mock.patch.object(split_output, attr, val)
+            p.start()
+            self.addCleanup(p.stop)
+
+    def _write_input(self, payload):
+        self.input_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    def test_missing_input_exits_nonzero(self):
+        # INPUT_PATH does not exist → sys.exit(1).
+        with mock.patch("builtins.print"):
+            with self.assertRaises(SystemExit) as cm:
+                split_output.main()
+        self.assertEqual(cm.exception.code, 1)
+
+    def test_groups_known_and_unknown_sources_and_writes_all(self):
+        self._write_input({
+            "updated_at": "2026-06-19T00:00:00+00:00",
+            "news": [
+                {"source": "reddit", "time": _iso_hours_ago(1), "title": "r"},
+                {"source": "bilibili_articles", "time": _iso_hours_ago(2), "title": "b"},
+                # unknown source still gets its own file (future-source path)
+                {"source": "mystery", "time": _iso_hours_ago(1), "title": "m"},
+            ],
+        })
+        with mock.patch("builtins.print"):
+            split_output.main()
+        reddit = json.loads((self.out_dir / "reddit-latest.json").read_text("utf-8"))
+        self.assertEqual(reddit["item_count"], 1)
+        # alias normalized into bilibili file
+        bili = json.loads((self.out_dir / "bilibili-latest.json").read_text("utf-8"))
+        self.assertEqual(bili["item_count"], 1)
+        # unknown source got a dedicated file
+        myst = json.loads((self.out_dir / "mystery-latest.json").read_text("utf-8"))
+        self.assertEqual(myst["item_count"], 1)
+        all_latest = json.loads((self.out_dir / "all-latest.json").read_text("utf-8"))
+        self.assertEqual(all_latest["item_count"], 3)
+        self.assertEqual(all_latest["source"], "all")
+
+    @mock.patch.object(split_output, "MAX_AGE_HOURS", 24)
+    @mock.patch.object(split_output, "OFFICIAL_MAX_AGE_HOURS", 720)
+    def test_old_high_freq_item_filtered_but_sparse_kept(self):
+        # reddit (high-freq) at 100h is dropped; official (sparse, 30d window) kept.
+        self._write_input({
+            "updated_at": "2026-06-19T00:00:00+00:00",
+            "news": [
+                {"source": "reddit", "time": _iso_hours_ago(100), "title": "old"},
+                {"source": "official", "time": _iso_hours_ago(100), "title": "ann"},
+            ],
+        })
+        with mock.patch("builtins.print"):
+            split_output.main()
+        reddit = json.loads((self.out_dir / "reddit-latest.json").read_text("utf-8"))
+        self.assertEqual(reddit["item_count"], 0)
+        official = json.loads((self.out_dir / "official-latest.json").read_text("utf-8"))
+        self.assertEqual(official["item_count"], 1)
+
+    def test_missing_updated_at_defaults_to_now(self):
+        self._write_input({"news": []})
+        with mock.patch("builtins.print"):
+            split_output.main()
+        all_latest = json.loads((self.out_dir / "all-latest.json").read_text("utf-8"))
+        # collected_at falls back to a current ISO timestamp (parseable).
+        datetime.fromisoformat(all_latest["collected_at"])
 
 
 if __name__ == "__main__":
