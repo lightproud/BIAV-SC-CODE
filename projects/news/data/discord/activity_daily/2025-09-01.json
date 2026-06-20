@@ -1,10 +1,30 @@
 {
   "date": "2025-09-01",
-  "messages": 179,
-  "unique_authors": 25,
-  "reactions_total": 981,
-  "attachments": 43,
+  "messages": 14394,
+  "unique_authors": 216,
+  "reactions_total": 3292,
+  "attachments": 883,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 64,
+    "🔸canal-español": 829,
+    "🔸canal-português": 220,
+    "🔸ruang-obrolan-indonesia": 212,
+    "🔸ห้องสนทนาภาษาไทย": 45,
+    "🔸traphase": 19,
+    "🔸lore-chat": 37,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 4,
+    "🔸general-chat": 31,
+    "🔸邀请码互助┊swap-invitation-codes": 69,
+    "🔸morimens-game-chat": 10849,
+    "🔸剧情交流": 29,
+    "🔸晒卡分享": 6,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 105,
+    "🔸deutscher-chatraum": 9,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 195,
+    "🔸綜合討論": 1472,
     "uvhash fan art submission": 1,
     "Tulu keychain!!!": 8,
     "Carried": 1,
@@ -48,45 +68,45 @@
     "一點拉郎": 1,
     "刻印模組的副產物": 2,
     "板寫守密人遺書": 1,
-    "🔸礼包码┊gift-codes": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "0": 18,
-    "10": 16,
-    "12": 5,
-    "17": 2,
-    "18": 3,
-    "11": 4,
-    "23": 2,
-    "13": 1,
-    "14": 3,
-    "16": 3,
-    "22": 7,
-    "4": 12,
-    "6": 8,
-    "9": 5,
-    "1": 11,
-    "2": 8,
-    "5": 7,
-    "3": 38,
-    "8": 8,
-    "15": 12,
-    "21": 2,
-    "20": 1,
-    "7": 3
+    "1": 1037,
+    "2": 793,
+    "3": 1090,
+    "5": 480,
+    "6": 618,
+    "7": 611,
+    "8": 313,
+    "9": 606,
+    "10": 738,
+    "0": 752,
+    "4": 748,
+    "11": 591,
+    "12": 628,
+    "13": 481,
+    "14": 648,
+    "15": 539,
+    "16": 449,
+    "17": 569,
+    "18": 397,
+    "19": 523,
+    "20": 644,
+    "21": 478,
+    "22": 333,
+    "23": 328
   },
   "message_types": {
-    "0": 58,
-    "4": 1,
-    "19": 1
+    "0": 1119,
+    "19": 412
   },
   "top_reacted_messages": [
     {
       "id": "1412015431887224914",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 26000守密人达成礼 / DC26000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 792,
+      "reactions": 801,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -104,6 +124,30 @@
       "channel": "我也要開圖樓"
     },
     {
+      "id": "1411960648958476359",
+      "channel_id": "1300659662311526512",
+      "content": "<@633215996508766229>  if you're seeing this, the spanish community loves you! Y",
+      "author": "haripax",
+      "reactions": 17,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1411958290732159067",
+      "channel_id": "1170692781216378960",
+      "content": "this one?",
+      "author": "elldrielle",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411956576377372702",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1411906234583355472",
       "content": "日服这个是开服纪行，100抽很容易凑够，但国际服这里是版本中期开的夏日纪行，要抽池子的的早抽完了，上哪再凑100抽呢。\n希望能换个任务。\nThis is the",
       "author": "muliupan",
@@ -116,6 +160,54 @@
       "author": "ahuahuahua",
       "reactions": 10,
       "channel": "救救狗吧融災求助"
+    },
+    {
+      "id": "1411931412789067827",
+      "channel_id": "1170692781216378960",
+      "content": "being bald is a mental illness now?",
+      "author": "atoricious",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411998249283354715",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "borgirnecoarc",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1412024596458111016",
+      "channel_id": "1170692781216378960",
+      "content": "I kinda don't have the patience atp",
+      "author": "nicc.name",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1412220829650911406",
+      "channel_id": "1170692781216378960",
+      "content": "how good ramona time worn?",
+      "author": "devilishdesire222",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411951203130015805",
+      "channel_id": "1131839817982947429",
+      "content": "~~看校貓中元節要不要再發個一百抽來治我們這些餓死鬼~~",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1411956077930483813",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1411947372921229312",
@@ -132,95 +224,36 @@
       "channel": "刻印模組的副產物"
     },
     {
-      "id": "1412016030976311357",
-      "content": "如题\n鉴于序幕剧情存在极大程度的||对忘却篇终章剧情的||暴雷\n以及序幕剧情会在活动界面切换到夏活时直接播放\n是否考虑在播放剧情前插入一个「以下剧情含有对xxx",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": "✅「已回答」夏活剧情序幕暴雷问题"
+      "id": "1411997139583897621",
+      "channel_id": "1170692781216378960",
+      "content": "W? I was missing only her",
+      "author": "stefcolcurry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411954712265232384",
-      "content": "<:celestepray:1397414070100951110>",
-      "author": "arkaether",
-      "reactions": 5,
-      "channel": "✅「Answered」Heart of Silver's unclear effect"
+      "id": "1411997855111057542",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/pregnant-man-react-dont-dm-me-were-done-discord-react-don",
+      "author": "borgirnecoarc",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1412033266449645621",
-      "content": "專屬繁衍狂熱故事好🥵 🥵 🥵 \n但扭蛋壞文明！！<:flop1:1356083604236800030> <:flop1:1356083604236800030",
-      "author": "yiwu2015",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1412086752428032172",
+      "channel_id": "1174983699935277147",
+      "content": "<:proud2:1356053123445297233>",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1411965563097321532",
-      "content": "（寫到後面越來越潦草了何嘗不是一種rp）100000287",
-      "author": "calmdreab",
-      "reactions": 4,
-      "channel": "板寫守密人遺書"
-    },
-    {
-      "id": "1412019009938788494",
-      "content": "ITS HERE",
-      "author": "rowlynt66",
-      "reactions": 3,
-      "channel": "Tulu keychain!!!"
-    },
-    {
-      "id": "1412056094599286877",
-      "content": "",
-      "author": "rowlynt66",
-      "reactions": 3,
-      "channel": "Tulu keychain!!!"
-    },
-    {
-      "id": "1412020838403670180",
-      "content": "Thank you, we will check first🙏",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "💭「Processing」Petrify dispel"
-    },
-    {
-      "id": "1412011525732040785",
-      "content": "After confirming with team, the English description of this Covenant should be: ",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」“Bug” with paradox and overexalt?"
-    },
-    {
-      "id": "1411982376887914537",
-      "content": "dude i thought she runs linux. but android is fine too.",
-      "author": "morified53",
-      "reactions": 2,
-      "channel": "✅「Answered」[PVP] Erica‘s sprite animation does look way worse than all the others"
-    },
-    {
-      "id": "1411924930123272265",
-      "content": "不是池子的问题，哪怕它现在开个新池，我也没资源抽一百发了",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "夏日纪行任务设置不合理/The mission design in the Summer Event Battle Pass is unreasonable."
-    },
-    {
-      "id": "1411925183253577848",
-      "content": "因为在复刻池地瓜池端出来的时候就抽完了",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "夏日纪行任务设置不合理/The mission design in the Summer Event Battle Pass is unreasonable."
-    },
-    {
-      "id": "1411935167710232666",
-      "content": "How is that okay? I already paid for a bundle, now I have to use wishes for a ba",
-      "author": "silencio3507",
-      "reactions": 2,
-      "channel": "✅「Answered」New event?"
-    },
-    {
-      "id": "1411925607129808906",
-      "content": "可以先反馈给日服的客服~我们后续和日服沟通一下 能否在DC增加官方问答频道<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」日服BUG可以在這底回報嗎"
+      "id": "1412033829475979276",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

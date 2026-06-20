@@ -1,10 +1,33 @@
 {
   "date": "2025-12-13",
-  "messages": 91,
-  "unique_authors": 14,
-  "reactions_total": 73,
-  "attachments": 18,
+  "messages": 14905,
+  "unique_authors": 273,
+  "reactions_total": 1369,
+  "attachments": 882,
   "channel_activity": {
+    "🔸lets-count": 29,
+    "🔸频道建议┊server-suggestions": 9,
+    "🔸team-building": 727,
+    "🔸general-chat": 323,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸game-question": 2447,
+    "🔸忘却前夜┊morimens-tv": 3,
+    "🔸机器人命令┊bot-commands": 42,
+    "🔸morimens-game-chat": 7850,
+    "🔸剧情交流": 142,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 13,
+    "🔸한국어-채팅방": 13,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 258,
+    "🔸phòng-chat-tiếng-việt": 216,
+    "🔸canal-español": 186,
+    "🔸canal-português": 49,
+    "🔸ruang-obrolan-indonesia": 503,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 34,
+    "🔸lore-chat": 214,
+    "🔸綜合討論": 1732,
     "Ramona!": 1,
     "中奖名单公布┊Lottery Winners Announced!": 1,
     "新手求助": 1,
@@ -24,32 +47,38 @@
     "女守X鯊（OOC警告）": 5,
     "想不到的第二張水仙視姦": 3,
     "應該是圖樓": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1442647324575928441": 1
   },
   "hourly_activity": {
-    "22": 5,
-    "1": 3,
-    "13": 4,
-    "12": 4,
-    "3": 1,
-    "5": 11,
-    "8": 15,
-    "4": 1,
-    "9": 9,
-    "10": 10,
-    "6": 1,
-    "7": 3,
-    "14": 1,
-    "18": 12,
-    "19": 3,
-    "17": 4,
-    "15": 3,
-    "20": 1
+    "2": 875,
+    "3": 451,
+    "4": 1010,
+    "5": 955,
+    "7": 146,
+    "8": 540,
+    "9": 553,
+    "13": 629,
+    "14": 778,
+    "17": 763,
+    "18": 464,
+    "19": 640,
+    "20": 398,
+    "23": 495,
+    "16": 894,
+    "0": 501,
+    "1": 862,
+    "6": 502,
+    "10": 584,
+    "11": 578,
+    "12": 420,
+    "15": 1093,
+    "21": 340,
+    "22": 434
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 2630,
+    "19": 967,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -60,11 +89,91 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1449386076283211870",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449389314629832817",
+      "channel_id": "1300659495550062592",
+      "content": "다음주 주말에 코믹월드 부스 참가합니다!",
+      "author": "jayone_j1",
+      "reactions": 10,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1449428653212438659",
       "content": "我也沒想到會有第二張\n涼拌唄\n\nUID:100336921",
       "author": "foxcatfurry",
       "reactions": 10,
       "channel": "想不到的第二張水仙視姦"
+    },
+    {
+      "id": "1449426380734599340",
+      "channel_id": "1170692781216378960",
+      "content": "how many goddamn times do i have to teach caecus this lesson",
+      "author": "chinkeeyong",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449431835967881279",
+      "channel_id": "1131839817982947429",
+      "content": "這是什麼要被獻祭的節奏嗎",
+      "author": "foxcatfurry",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449255927655038976",
+      "channel_id": "1170692781216378960",
+      "content": "No powerspikes if you use secret strategy",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449397320016855142",
+      "channel_id": "1170692781216378960",
+      "content": "was Faros ever introduced into the story or does she just remain an event in c6",
+      "author": "sno_w",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449414443330048021",
+      "channel_id": "1170692781216378960",
+      "content": "I was playing dtide when my mom walked in, she asked me \"Is the dishes and cloth",
+      "author": "undeterredhomo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449253794352468049",
+      "channel_id": "1170692781216378960",
+      "content": "fuck it im giving tulu life drain",
+      "author": "cornonthemacabre_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449362198165192814",
+      "channel_id": "1170692781216378960",
+      "content": "First good achievement",
+      "author": "shining_ark",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449406110615212123",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1449269886336503868",
@@ -74,6 +183,30 @@
       "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
     },
     {
+      "id": "1449214497578418288",
+      "channel_id": "1170692781216378960",
+      "content": "I saw how harass the bot and the bot fought back",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449407593146748978",
+      "channel_id": "1131839817982947429",
+      "content": "終於過了！！！",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449407653334745199",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "quackdayo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1449467312821502013",
       "content": "還有剛剛畫的女守咪Q版線稿",
       "author": "souri.10244",
@@ -81,116 +214,28 @@
       "channel": "一點仿官"
     },
     {
-      "id": "1449467061393948723",
-      "content": "因為這次周年劇情又跑去打大眼睛了嘛 \n所以想做一個仿官的守咪打大眼睛的圖，包含守咪人自己的Q版和她的技能組（這邊選的女守咪），會持續更新到做完，和勞斯討論也會新",
-      "author": "souri.10244",
+      "id": "1449265573581291621",
+      "channel_id": "1433513650299076780",
+      "content": "don't need combust when you have",
+      "author": "arkaether",
       "reactions": 5,
-      "channel": "一點仿官"
+      "channel": "🔸game-question"
     },
     {
-      "id": "1449307237058347049",
-      "content": "就這麼默默的把東西搬過來然後給你們看低創鉛筆畫",
-      "author": "diapason0421",
-      "reactions": 4,
-      "channel": "應該是圖樓"
+      "id": "1449375532302073979",
+      "channel_id": "1433513650299076780",
+      "content": "quick question \nwhy is flyre guy always so mean and rude? \nI know he was recomme",
+      "author": "philipp07460",
+      "reactions": 5,
+      "channel": "🔸game-question"
     },
     {
-      "id": "1449318572320100464",
-      "content": "Yes and exactly what i concern, i'd say nearly half of them should be and can be",
-      "author": "qingming6054",
-      "reactions": 3,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449523982675218537",
-      "content": "非常超級無敵之需要",
-      "author": "amstelredam",
-      "reactions": 3,
-      "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
-    },
-    {
-      "id": "1449469203613749440",
-      "content": "終末,目視之餘：從牌庫中選取最多10張指令卡，加入手牌並使其算力消耗降低至0並且打出後獲得250點銀鑰充能；無視算力調和。\n\n晰夢,終有尾聲：從所有鑰令中選取一",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "一點仿官"
-    },
-    {
-      "id": "1449525079015948318",
-      "content": "<@883992032530563082> <@614083839131648021> 來看守密人正宮",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "Ramona!"
-    },
-    {
-      "id": "1449389676958847017",
-      "content": "P.s Goya, don't worry, i already talked to Light about this ^\nBut we could still",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449405114971455639",
-      "content": "完成\n但我感覺我頭髮的畫法在跟我其他地方的畫法杯頭",
-      "author": "tanchen0811",
-      "reactions": 2,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1449472268001480815",
-      "content": "晚點我肝個設定",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "一點仿官"
-    },
-    {
-      "id": "1449456210620321822",
-      "content": "太好看了我要上訴",
-      "author": "souri.10244",
-      "reactions": 2,
-      "channel": "女守X鯊（OOC警告）"
-    },
-    {
-      "id": "1449429395726008381",
-      "content": "推特太太畫娜娜生賀然後我在畫這東西覺得草",
-      "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": "想不到的第二張水仙視姦"
-    },
-    {
-      "id": "1449494185433370664",
-      "content": "https://www.youtube.com/shorts/tqlti9aYY7A",
-      "author": "lonely_tree",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1449379359642226870",
-      "content": "Below daily quest",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "How to obtain D-Jewels?"
-    },
-    {
-      "id": "1449318057452372040",
-      "content": "如題，目前夏活鑰令仲夏留念和美夢一剎，以及現活動拉蒙娜鑰令重逢心願，都是沒有加入彌撒格&四界域分類的，在選鑰令時必須在全部鑰令的第一頁拉到最下面，並且也不是堆在",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？"
-    },
-    {
-      "id": "1449317635186491594",
-      "content": "I think i misunderstood u before, sorry for that. So u meant it should be treate",
-      "author": "qingming6054",
-      "reactions": 1,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449320110224572519",
-      "content": "Please <@1131790839291596841>, share this problem with the team, if needed we ca",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+      "id": "1449201640555937862",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kezrin",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,25 @@
 {
   "date": "2025-04-25",
-  "messages": 226,
-  "unique_authors": 29,
-  "reactions_total": 95,
-  "attachments": 15,
+  "messages": 7616,
+  "unique_authors": 140,
+  "reactions_total": 468,
+  "attachments": 279,
   "channel_activity": {
+    "🔸morimens-game-chat": 5118,
+    "🔸相位对弈": 21,
+    "🔸课间休息闲聊": 18,
+    "🔸한국어-채팅방": 390,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 18,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 111,
+    "🔸canal-português": 34,
+    "🔸ruang-obrolan-indonesia": 303,
+    "🔸ห้องสนทนาภาษาไทย": 152,
+    "🔸traphase": 96,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 1,
+    "🔸綜合討論": 1101,
     "brown attack!": 4,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "Goliath Fanart": 3,
@@ -26,28 +41,35 @@
     "跟我朋友零元購了一個稿，成效甚好": 4
   },
   "hourly_activity": {
-    "0": 2,
-    "2": 7,
-    "3": 6,
-    "4": 9,
-    "18": 1,
-    "19": 2,
-    "10": 34,
-    "11": 32,
-    "12": 32,
-    "13": 68,
-    "15": 2,
-    "16": 9,
-    "14": 10,
-    "21": 7,
-    "1": 1,
-    "6": 3,
-    "5": 1
+    "0": 81,
+    "1": 141,
+    "2": 183,
+    "3": 280,
+    "4": 239,
+    "5": 158,
+    "6": 10,
+    "7": 106,
+    "8": 143,
+    "9": 177,
+    "10": 450,
+    "11": 866,
+    "12": 712,
+    "13": 975,
+    "14": 459,
+    "15": 735,
+    "16": 399,
+    "17": 205,
+    "18": 230,
+    "19": 199,
+    "20": 307,
+    "21": 251,
+    "22": 122,
+    "23": 188
   },
   "message_types": {
-    "0": 70,
-    "19": 14,
-    "6": 3
+    "19": 1508,
+    "0": 4780,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -72,6 +94,14 @@
       "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
     },
     {
+      "id": "1365354741160218665",
+      "channel_id": "1131839817982947429",
+      "content": "<:sleep2:1356085993626665200>",
+      "author": "zhaoxing233",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1365276043233071135",
       "content": "原型，史密斯的《亚威隆尼之兽》里带来恶魔的彗星",
       "author": "flarinsidia",
@@ -84,6 +114,38 @@
       "author": "aurora3981",
       "reactions": 8,
       "channel": "Ultra Greed"
+    },
+    {
+      "id": "1365280080229564486",
+      "channel_id": "1170692781216378960",
+      "content": "My thoughts",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365127142932742245",
+      "channel_id": "1131839817982947429",
+      "content": "他們訛傳「中文區每個人都在看野貓的攻略，所以每個攻略佬都有融災全深海350的紀錄」",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365220810981249036",
+      "channel_id": "1131839817982947429",
+      "content": "那個延伸進去的我很有想法 牢貓",
+      "author": "fengliyaowo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365308597294076017",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1365278131065196554",
@@ -100,95 +162,68 @@
       "channel": "一人血书戈雅出碎碎念"
     },
     {
-      "id": "1365359971121889411",
-      "content": "棄牌生效改為詞綴 “餘波”，想起卡牌的不嚴謹敘述，以下是整理出的增傷敘述\n建議統一改成 “ 造成(？\\*力量+100)傷害 ” / “ 造成(？%\\*觸腕傷害+",
-      "author": "elkmilu",
+      "id": "1365428521215721502",
+      "channel_id": "1170692781216378960",
+      "content": "man I'm glad I discovered this game randomly while searching stuff to play to fo",
+      "author": "van_ehre",
       "reactions": 4,
-      "channel": "✅「已回答」Bug—技能敘述—增傷"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365284946796740618",
-      "content": "# 傳下去，鐵T沒辦法拯救陰盛陽衰",
-      "author": "kong760",
-      "reactions": 3,
-      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+      "id": "1365431604415037450",
+      "channel_id": "1181152750319456266",
+      "content": "完工<:pray:1356053116260454534>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1365285363949633558",
-      "content": "然後你發現那是個扶他<:love:1356053099931897977> <:love:1356053099931897977>",
+      "id": "1365131364101521418",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "chkevo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365221935088144444",
+      "channel_id": "1131839817982947429",
+      "content": "<:rizz1:1356085398379692165>",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365272426014965781",
+      "channel_id": "1131839817982947429",
+      "content": "好冷门的原型",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365287553367806023",
+      "channel_id": "1131839817982947429",
+      "content": "要不是我沒有子宮 你以為現在會少子化嗎",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365301677623611413",
+      "channel_id": "1131839817982947429",
+      "content": "<@1131790839291596841> 你有沒有考慮開一個戈雅碎碎念嗎",
       "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365155520100696074",
-      "content": "上面的東西火藥味這麼重都沒爆",
-      "author": "yizilven",
-      "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1365309058298544139",
-      "content": "為什麼寫兩次久遠的呼喚",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "V2.2.1.0 停服維護公告"
-    },
-    {
-      "id": "1365322861669257336",
-      "content": "這是墨菲十回合的傷害",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "V2.2.1.0 停服維護公告"
-    },
-    {
-      "id": "1365331529995391037",
-      "content": "<:pray:1356053116260454534> pls pls pls",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "✅「Answered」More discord emotes pls"
-    },
-    {
-      "id": "1365209440663375894",
-      "content": "We will have  goodies plans in the future~ You can pay attention to it🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Is there any plan to sell official Goodies?"
-    },
-    {
-      "id": "1365276745904816241",
-      "content": "如果洗面奶的話會不會被電",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
-    },
-    {
-      "id": "1365284425314734091",
-      "content": "半周年的时间好像也快到了",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
-    },
-    {
-      "id": "1365156619280715826",
-      "content": "火爆的都被踢走了",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1365355679862227007",
-      "content": "It gives another card retain when played",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "Bug report 24 cost 3 card"
-    },
-    {
-      "id": "1365329211354644542",
-      "content": "拉蒙娜3費 症狀牌好像有？",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "V2.2.1.0 停服維護公告"
+      "id": "1365345312650170449",
+      "channel_id": "1131839817982947429",
+      "content": "||小心他们全听把卢大王的也给听走了||",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

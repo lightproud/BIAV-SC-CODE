@@ -1,10 +1,22 @@
 {
   "date": "2025-06-29",
-  "messages": 26,
-  "unique_authors": 7,
-  "reactions_total": 222,
-  "attachments": 11,
+  "messages": 7603,
+  "unique_authors": 216,
+  "reactions_total": 952,
+  "attachments": 361,
   "channel_activity": {
+    "🔸綜合討論": 146,
+    "🔸morimens-game-chat": 6377,
+    "🔸한국어-채팅방": 4,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 33,
+    "🔸phòng-chat-tiếng-việt": 186,
+    "🔸canal-español": 381,
+    "🔸canal-português": 197,
+    "🔸ruang-obrolan-indonesia": 71,
+    "🔸ห้องสนทนาภาษาไทย": 66,
+    "🔸traphase": 44,
+    "🔸lore-chat": 69,
     "Tulu Being Sleepy": 6,
     "Castor": 1,
     "Higher quality of my caecus art for the contest": 1,
@@ -20,22 +32,34 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
-    "3": 1,
-    "5": 1,
-    "7": 1,
-    "9": 3,
-    "15": 2,
-    "14": 4,
-    "22": 1,
-    "1": 1,
-    "21": 2,
-    "10": 5,
-    "12": 1,
-    "13": 4
+    "1": 192,
+    "2": 166,
+    "3": 89,
+    "5": 154,
+    "8": 363,
+    "9": 279,
+    "10": 564,
+    "11": 483,
+    "12": 458,
+    "14": 238,
+    "15": 524,
+    "16": 420,
+    "17": 306,
+    "18": 389,
+    "21": 547,
+    "22": 251,
+    "0": 126,
+    "4": 73,
+    "6": 192,
+    "7": 304,
+    "13": 291,
+    "19": 278,
+    "20": 646,
+    "23": 270
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 5311,
+    "19": 2266
   },
   "top_reacted_messages": [
     {
@@ -88,18 +112,108 @@
       "channel": "Artist credit on the character designs!"
     },
     {
-      "id": "1388899982605680712",
-      "content": "<:happyhappy:1091991086953664522>",
-      "author": "firepanda95",
-      "reactions": 2,
-      "channel": "Tulu Being Sleepy"
+      "id": "1388881831457325077",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "huangyu0876",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1388994439585992815",
-      "content": "",
-      "author": "iTranslator",
-      "reactions": 1,
-      "channel": "關於腳本/外掛賬號的處理說明"
+      "id": "1388845652162646057",
+      "channel_id": "1170692781216378960",
+      "content": "Instead, just keep pulling copies of Sorel, like me. Eventually it'll work out.",
+      "author": "hammer2830",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388860411352449104",
+      "channel_id": "1170692781216378960",
+      "content": "Pulled some more.... walked away with a Castor, Tinct and Winkle. I am now back ",
+      "author": "rambles_3057",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388861562399494154",
+      "channel_id": "1170692781216378960",
+      "content": "out of the fated soiree banner, what realm would be most inteligent to spend on?",
+      "author": "junjuicy",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388863454919659663",
+      "channel_id": "1170692781216378960",
+      "content": "MOTHER GOAT HAS COME HOME??? YESS, I CAN SKIP SCAM BANNERRRRR\n\n\nBut I don't have",
+      "author": "rambles_3057",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388907822229491765",
+      "channel_id": "1170692781216378960",
+      "content": "I'm not here to read, I'm here to listen to Goliath growl into my ears",
+      "author": "rambles_3057",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388922704777838613",
+      "channel_id": "1170692781216378960",
+      "content": "Nevermind. Micegirl is so funny",
+      "author": "ninkpt",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388824666768019569",
+      "channel_id": "1170692781216378960",
+      "content": "I think this was the best possible case for my account",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388837791277912185",
+      "channel_id": "1170692781216378960",
+      "content": "WAIT I WAS TALKING ABOUT GOLI NOT TULU, I'M NOT A CREEP OMFG NOW I JUST REALIZED",
+      "author": "ouiuiouiui",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388870758184390687",
+      "channel_id": "1170692781216378960",
+      "content": "Gdoll OE",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388945666901934241",
+      "channel_id": "1170692781216378960",
+      "content": "Because she's a rat",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388719147864686775",
+      "channel_id": "1170692781216378960",
+      "content": "Hi, i came here because of this exact video. Literally just start playing 5 mins",
+      "author": "angin6813",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1388720579414331403",
+      "channel_id": "1170692781216378960",
+      "content": "I made it in time for the fan art event… I finally get to sleep now",
+      "author": "ev_6185",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

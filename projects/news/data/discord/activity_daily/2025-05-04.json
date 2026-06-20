@@ -1,10 +1,22 @@
 {
   "date": "2025-05-04",
-  "messages": 26,
-  "unique_authors": 8,
-  "reactions_total": 94,
-  "attachments": 9,
+  "messages": 5757,
+  "unique_authors": 143,
+  "reactions_total": 244,
+  "attachments": 282,
   "channel_activity": {
+    "🔸morimens-game-chat": 4493,
+    "🔸한국어-채팅방": 112,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 1,
+    "🔸canal-español": 228,
+    "🔸canal-português": 22,
+    "🔸ruang-obrolan-indonesia": 252,
+    "🔸ห้องสนทนาภาษาไทย": 79,
+    "🔸traphase": 29,
+    "🔸lore-chat": 28,
+    "🔸綜合討論": 474,
     "Ramona": 1,
     "A Pair of Roses, Horla & Sanga Fanfic": 3,
     "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 3,
@@ -22,22 +34,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "15": 1,
-    "10": 3,
-    "12": 2,
-    "14": 3,
-    "16": 2,
-    "6": 5,
-    "0": 1,
-    "3": 1,
-    "21": 1,
-    "9": 3,
-    "2": 2,
-    "7": 2
+    "0": 100,
+    "1": 212,
+    "2": 264,
+    "3": 439,
+    "4": 275,
+    "5": 111,
+    "6": 184,
+    "7": 88,
+    "8": 73,
+    "9": 83,
+    "10": 31,
+    "11": 263,
+    "12": 118,
+    "13": 459,
+    "14": 466,
+    "15": 330,
+    "16": 437,
+    "17": 199,
+    "18": 368,
+    "19": 690,
+    "20": 214,
+    "21": 42,
+    "22": 134,
+    "23": 177
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 3942,
+    "19": 1315
   },
   "top_reacted_messages": [
     {
@@ -69,6 +93,30 @@
       "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
+      "id": "1368429796694163507",
+      "channel_id": "1170692781216378960",
+      "content": "!!!!!! after 45 rolls (free to play silver grind lmao) tawil bagged!!!!",
+      "author": "camillionaire_.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368527051698733147",
+      "channel_id": "1326453763355185215",
+      "content": "gtinct asmr gonna go wild",
+      "author": "itsmemiki",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1368623068423131277",
+      "channel_id": "1300659753197764688",
+      "content": "Besok ya?",
+      "author": "davin00977",
+      "reactions": 4,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
       "id": "1368385463869636711",
       "content": "[N] enjoying a nice little stroll on his day off <:slick:1356053160531198064>",
       "author": "reya.li",
@@ -83,18 +131,92 @@
       "channel": "血肉唤醒体DIY"
     },
     {
-      "id": "1368622272407146738",
-      "content": "Very nice work, always good to see more english support for morimens.\nIs ok if i",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
+      "id": "1368477903104245841",
+      "channel_id": "1170692781216378960",
+      "content": "woohoo at chapter 7 now",
+      "author": "malfunction5497",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1368598631757647903",
+      "id": "1368403364030971947",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368423166929670185",
+      "channel_id": "1170692781216378960",
+      "content": "Complain about account level timewall, then wait half a year for your max hp to ",
+      "author": "mengluo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368460757037088880",
+      "channel_id": "1170692781216378960",
+      "content": "Okay finished testing overexalt Clementine. It made my team strong enough to sto",
+      "author": "mengluo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368479910083035207",
+      "channel_id": "1170692781216378960",
+      "content": "After completing ch9 yes",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368533284102996041",
+      "channel_id": "1170692781216378960",
+      "content": "Tell you Ideal Genesis Char:",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368591019054071818",
+      "channel_id": "1170692781216378960",
+      "content": "she's ramona",
+      "author": "madlax",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368626320740978798",
+      "channel_id": "1170692781216378960",
+      "content": "Good, caro stay high class. Filter the poor",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368665689124110426",
+      "channel_id": "1170692781216378960",
+      "content": "Guess who got Murphy from a standard pull..!!",
+      "author": "mikudayoo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368682200140222586",
+      "channel_id": "1170692781216378960",
+      "content": "i like doing the funny card copy",
+      "author": "akitenshi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1368720727489904791",
+      "channel_id": "1170692781216378960",
+      "content": "P.s <@332573289438380032> <@398880845630275585> Look in dm",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

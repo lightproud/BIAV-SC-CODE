@@ -1,10 +1,21 @@
 {
   "date": "2025-01-31",
-  "messages": 19,
-  "unique_authors": 5,
-  "reactions_total": 9,
-  "attachments": 2,
+  "messages": 2436,
+  "unique_authors": 112,
+  "reactions_total": 121,
+  "attachments": 106,
   "channel_activity": {
+    "🔸traphase": 28,
+    "🔸lore-chat": 65,
+    "🔸綜合討論": 97,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 2101,
+    "🔸相位对弈": 2,
+    "🔸한국어-채팅방": 17,
+    "🔸русский-канал": 42,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 9,
+    "🔸canal-português": 53,
     "Tier list as of 2.0": 6,
     "morimens story recap channel": 3,
     "English Page pls !!": 1,
@@ -14,20 +25,34 @@
     "Miryam": 5
   },
   "hourly_activity": {
-    "17": 2,
-    "18": 2,
-    "19": 2,
-    "5": 2,
-    "12": 1,
-    "23": 1,
-    "4": 1,
-    "10": 1,
-    "15": 1,
-    "16": 6
+    "23": 235,
+    "1": 75,
+    "2": 133,
+    "3": 132,
+    "4": 139,
+    "5": 53,
+    "6": 160,
+    "11": 34,
+    "12": 119,
+    "13": 56,
+    "14": 237,
+    "15": 98,
+    "16": 126,
+    "17": 79,
+    "18": 22,
+    "20": 126,
+    "0": 94,
+    "7": 105,
+    "8": 45,
+    "9": 7,
+    "10": 50,
+    "19": 14,
+    "21": 63,
+    "22": 234
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "0": 73,
+    "19": 20
   },
   "top_reacted_messages": [
     {
@@ -38,6 +63,54 @@
       "channel": "Tier list as of 2.0"
     },
     {
+      "id": "1334858390224109581",
+      "channel_id": "1326453763355185215",
+      "content": "木 is the that exist as a village for the district, seems to be close enough to t",
+      "author": "aruein1",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334725480850391090",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334725873592438795",
+      "channel_id": "1131839817982947429",
+      "content": "像我不用特別刷造物就能打了",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334823106170191873",
+      "channel_id": "1131839817982947429",
+      "content": "戒备改成临时戒备 翻10倍 就可以了",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334868783143190539",
+      "channel_id": "1131839817982947429",
+      "content": "~~一個月的富婆~~",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334916610179338271",
+      "channel_id": "1180850818509971466",
+      "content": "會",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1334829234916429895",
       "content": "号码本的大佬珊已经弃坑了的样子👀",
       "author": "nidie0256_61327",
@@ -45,18 +118,100 @@
       "channel": "还有佬助战满练度珊嘛"
     },
     {
-      "id": "1334942153989689376",
-      "content": "shield up on <Reliable Barrier> well past the point of overcap, do you wan to de",
+      "id": "1334861461482377362",
+      "channel_id": "1326453763355185215",
+      "content": "https://tenor.com/view/tower-of-god-baam-black-march-surprised-anime-gif-1740699",
       "author": "aruein1",
-      "reactions": 1,
-      "channel": "Tier list as of 2.0"
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1334919733669138513",
-      "content": "<:HS_NekoHeart:1200338515788046346>",
-      "author": "ernest_heart",
+      "id": "1334845730652950578",
+      "channel_id": "1131839817982947429",
+      "content": "是隻豬",
+      "author": "tofu0834",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334871718677975060",
+      "channel_id": "1131839817982947429",
+      "content": "富婆高丸豆腐",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334786719316316202",
+      "channel_id": "1170692781216378960",
+      "content": "Bye Lily...",
+      "author": "versailles",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1334931217270702182",
+      "channel_id": "1170692781216378960",
+      "content": "more like Aurora can’t fathom Gelot eldritch existence",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1334938747950727289",
+      "channel_id": "1170692781216378960",
+      "content": "<@504904676853153812> This np cuz this players have money when someone take help",
+      "author": "xba163",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1334908666075287593",
+      "channel_id": "1300659580446969918",
+      "content": "ТЕРПЕТЬ!(пздц пулить охота, реально аж руки трясутся).Надо че-то делать ведь в т",
+      "author": "xba163",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1335036863525818370",
+      "channel_id": "1326453691527594035",
+      "content": "bringing revive is also good",
+      "author": "catgirlnyaa",
       "reactions": 1,
-      "channel": "Miryam"
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1334713062766415973",
+      "channel_id": "1326453763355185215",
+      "content": "is that true lmao",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334713480565100636",
+      "channel_id": "1326453763355185215",
+      "content": "suddenly caecus being scammed makes so much sense",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334749929721040896",
+      "channel_id": "1326453763355185215",
+      "content": "Oh God, give me a minute to open the game",
+      "author": "oddeyesight",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334846362189172747",
+      "channel_id": "1326453763355185215",
+      "content": "10-4 affirmative for Tenshi still being the word for an angel",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
     }
   ]
 }

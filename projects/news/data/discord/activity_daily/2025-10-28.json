@@ -1,10 +1,35 @@
 {
   "date": "2025-10-28",
-  "messages": 142,
-  "unique_authors": 25,
-  "reactions_total": 266,
-  "attachments": 29,
+  "messages": 17170,
+  "unique_authors": 352,
+  "reactions_total": 3696,
+  "attachments": 820,
   "channel_activity": {
+    "🔸morimens-game-chat": 10979,
+    "🔸晒卡分享": 9,
+    "🔸欢乐梗图": 1,
+    "🔸相位对弈": 71,
+    "🔸课间休息闲聊": 29,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 15,
+    "🔸русский-канал": 1076,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 382,
+    "🔸canal-português": 211,
+    "🔸ruang-obrolan-indonesia": 81,
+    "🔸ห้องสนทนาภาษาไทย": 101,
+    "🔸traphase": 126,
+    "🔸lore-chat": 43,
+    "🔸lets-count": 21,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 479,
+    "🔸general-chat": 2588,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🐱light’s-nest": 8,
+    "🔸綜合討論": 765,
+    "🔸阵容构建": 8,
     "Collection of Morimens fanart and doodles": 1,
     "Clementine!!!": 7,
     "Sylvester fanart warning": 2,
@@ -35,38 +60,52 @@
     "✅「Resolved」My game doesn't load...": 1,
     "✦关卡地图「融灾禁区」总览46期·星辰篇✦": 1,
     "現pa現pa": 2,
-    "🐱light’s-nest": 4,
     "1432654338982940783": 63
   },
   "hourly_activity": {
-    "13": 4,
-    "14": 15,
-    "7": 6,
-    "6": 3,
-    "20": 1,
-    "0": 1,
-    "1": 2,
-    "10": 24,
-    "15": 12,
-    "8": 4,
-    "3": 2,
-    "11": 6,
-    "9": 52,
-    "4": 1,
-    "23": 1,
-    "17": 1,
-    "2": 2,
-    "12": 1,
-    "16": 4
+    "0": 598,
+    "1": 493,
+    "2": 396,
+    "3": 287,
+    "4": 430,
+    "5": 476,
+    "6": 551,
+    "7": 364,
+    "8": 544,
+    "9": 1010,
+    "10": 1125,
+    "11": 1079,
+    "12": 1171,
+    "13": 768,
+    "14": 598,
+    "15": 749,
+    "16": 994,
+    "17": 738,
+    "18": 846,
+    "19": 987,
+    "20": 831,
+    "21": 768,
+    "22": 921,
+    "23": 446
   },
   "message_types": {
-    "0": 24,
-    "4": 2,
-    "19": 7
+    "19": 5614,
+    "0": 10634,
+    "23": 2,
+    "20": 5
   },
   "top_reacted_messages": [
     {
+      "id": "1432667089163784244",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1432654338982940783 @everyone T",
+      "author": "game.producer.light",
+      "reactions": 168,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1432677898849882233",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
       "reactions": 113,
@@ -88,10 +127,43 @@
     },
     {
       "id": "1432677904533295244",
+      "channel_id": "1426837316533747823",
       "content": "https://x.com/atsukimasahiro?s=21&t=XPiSSckMmKSQF9ZRRtfHZQ",
       "author": "game.producer.light",
       "reactions": 27,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432678694328991864",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432666762670768179",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "_venush",
+      "reactions": 22,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1432661679275118644",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1432664101804572754",
+      "channel_id": "1170692781216378960",
+      "content": "🫃",
+      "author": "iibenigml1588",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1432554702004027524",
@@ -101,95 +173,84 @@
       "channel": "現pa現pa"
     },
     {
-      "id": "1432668243579109429",
-      "content": "杜勒：什么叫我的章节我不好打（",
-      "author": "rain_scarlet",
-      "reactions": 8,
-      "channel": ""
+      "id": "1432682691014299809",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1432670163748130867",
-      "content": "（",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": ""
+      "id": "1432668297832173610",
+      "channel_id": "1170692781216378960",
+      "content": "Light can we add a tic tac toe event during anniversary please? <:please:1356053",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432667319708028991",
-      "content": "敵方受到傷害減半嗎",
-      "author": "shchng.",
-      "reactions": 4,
-      "channel": ""
+      "id": "1432676844825739304",
+      "channel_id": "1170692781216378960",
+      "content": "And I hope my girlfriend was a billionaire so I wouldn't have to work another da",
+      "author": "shagaru0802",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432667926405841019",
-      "content": "靈芝戰神",
-      "author": "axe_proficient",
-      "reactions": 3,
-      "channel": ""
+      "id": "1432854044673704027",
+      "channel_id": "1170692781216378960",
+      "content": "laughing",
+      "author": "themomonger",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432698598981763204",
-      "content": "可不可以把N实装一下 我会大充特充的 求你了 弥撒格校猫",
-      "author": "itissoloong",
-      "reactions": 3,
-      "channel": ""
+      "id": "1432703628401049741",
+      "channel_id": "1170692781216378960",
+      "content": "LETS FUCKINGGOOOOOOOOOOOOOOO",
+      "author": "blecnes",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432769128829292728",
-      "content": "赤石咯，毕竟前作都国际服都赤到关服了",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": ""
+      "id": "1432770109138669609",
+      "channel_id": "1170692781216378960",
+      "content": "Rat supremacy 🐀 🐀 🐀",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432668947584647178",
-      "content": "great moment to be a new mori-man moving over from czn to morimens",
-      "author": "wesu.",
-      "reactions": 2,
-      "channel": ""
+      "id": "1432662169232740364",
+      "channel_id": "1180437373012672522",
+      "content": "~~還有兩張神國小怪圖待補~~",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1432630082144571392",
-      "content": "continue pulling blue for standard, as anni is coming up i think there will be r",
-      "author": "a3th3r_69708",
-      "reactions": 1,
-      "channel": "Pulling and Team Advice"
+      "id": "1432583334449381417",
+      "channel_id": "1131839817982947429",
+      "content": "<:takenotes:1357186646294138890> 萌新30天了",
+      "author": "sakura8901",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1432672045237407875",
-      "content": "是说「容」和「荣」",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": "✅「已回答」相位对弈字打错了"
+      "id": "1432706158459617320",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1432669999608107129",
-      "content": "Hi, this issue will be fixed in the next version",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」\"Sacred Bleeding Heart\" shows the wrong image"
-    },
-    {
-      "id": "1432731303870070835",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第19期（第46期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 1,
-      "channel": "✦关卡地图「融灾禁区」总览46期·星辰篇✦"
-    },
-    {
-      "id": "1432669362254381117",
-      "content": "You have until New Years to do it, so there's no rush.",
-      "author": "thunderbrother",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1432717980629864662",
-      "content": "你都+12医生了这有啥参考性吗[哭笑不得]",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": ""
+      "id": "1432847057843916820",
+      "channel_id": "1170692781216378960",
+      "content": "Another update on my Celeste curse, downloaded the game after not playing for a ",
+      "author": "funginoria",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

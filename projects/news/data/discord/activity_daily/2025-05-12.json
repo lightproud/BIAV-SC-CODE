@@ -1,10 +1,25 @@
 {
   "date": "2025-05-12",
-  "messages": 84,
-  "unique_authors": 18,
-  "reactions_total": 25,
-  "attachments": 29,
+  "messages": 5163,
+  "unique_authors": 150,
+  "reactions_total": 279,
+  "attachments": 337,
   "channel_activity": {
+    "🔸morimens-game-chat": 3810,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 34,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 24,
+    "🔸canal-español": 82,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 173,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 1,
+    "🔸lore-chat": 10,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 899,
     "aomi's morimens fic dump ✍": 3,
     "D-Tide Frequency Tierlist (2025 May 11)": 4,
     "D-Tide Leaderboard (2025 May 16)": 1,
@@ -34,32 +49,114 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "5": 3,
-    "8": 7,
-    "2": 8,
-    "7": 3,
-    "6": 5,
-    "1": 2,
-    "3": 34,
-    "11": 2,
-    "19": 2,
-    "9": 3,
-    "10": 2,
-    "20": 4,
-    "14": 2,
-    "4": 7
+    "0": 180,
+    "1": 334,
+    "2": 136,
+    "3": 262,
+    "4": 248,
+    "5": 80,
+    "6": 106,
+    "7": 133,
+    "8": 213,
+    "9": 176,
+    "10": 82,
+    "11": 183,
+    "12": 249,
+    "13": 240,
+    "14": 378,
+    "15": 333,
+    "16": 303,
+    "17": 139,
+    "18": 155,
+    "19": 205,
+    "20": 132,
+    "21": 150,
+    "22": 319,
+    "23": 427
   },
   "message_types": {
-    "0": 11,
-    "4": 1
+    "0": 3160,
+    "19": 1020
   },
   "top_reacted_messages": [
+    {
+      "id": "1371318836342554676",
+      "channel_id": "1170692781216378960",
+      "content": "It is finally done [LT_Pray](https://cdn.discordapp.com/emojis/90345814050539932",
+      "author": "rozu",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371480496927801385",
+      "channel_id": "1131839817982947429",
+      "content": "# 妄圖挑戰忘卻的400之神aaa是愚蠢的",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1371324726990864414",
       "content": "融灾n3图鲁第一回合秒杀1000血的可怜深海队",
       "author": "muliupan",
       "reactions": 7,
       "channel": "✅「已回答」图鲁吃人事件"
+    },
+    {
+      "id": "1371508847524577373",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "doktor.sex",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371469937645719593",
+      "channel_id": "1131839817982947429",
+      "content": "我也赤完了。比上期簡單一些。",
+      "author": "randomplayer852",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371321319743819818",
+      "channel_id": "1170692781216378960",
+      "content": "top™️ ranking™️ dtide™️ player™️\n<:flop2:1356053072924774421>",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371314947983806594",
+      "channel_id": "1300659662311526512",
+      "content": "La MVP del capitulo 2 🐀",
+      "author": "maxxros",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1371341087486247052",
+      "channel_id": "1170692781216378960",
+      "content": "watch them hit +12 liz before jenkins",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371375682864549889",
+      "channel_id": "1170692781216378960",
+      "content": "Yay 380.",
+      "author": "mengluo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371323757381156976",
+      "channel_id": "1131839817982947429",
+      "content": "🚮",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1371362481649221642",
@@ -76,53 +173,68 @@
       "channel": "✅「已回答」图鲁吃人事件"
     },
     {
-      "id": "1371307078173589545",
-      "content": "",
-      "author": "timee_ky",
+      "id": "1371334182021763093",
+      "channel_id": "1170692781216378960",
+      "content": "Wait... so they gave the retaliate relic for wave 2 but the boss doesn't even mu",
+      "author": "mengluo",
       "reactions": 3,
-      "channel": "深海界域维度影像一览"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371326130677878824",
-      "content": "💭「Processing」Corposant Overexalt Lightning Retribution Bug?",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Corposant Overexalt Lightning Retribution Bug?"
-    },
-    {
-      "id": "1371400791944073296",
-      "content": "This is really good!",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "aomi's morimens fic dump ✍"
-    },
-    {
-      "id": "1371306167850238034",
+      "id": "1371630623806062592",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "D-Tide Frequency Tierlist (2025 May 11)"
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371583765368930405",
-      "content": "This wheel buff the damage of the first card played by the user, but if he use a",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Daffodil SR wheel suggestion"
+      "id": "1371637472659902505",
+      "channel_id": "1170692781216378960",
+      "content": "what if I don't apply tulu in my blue 400\nso I can spread rumors that tulu is no",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371327873377632276",
-      "content": "領航員正在追回中，已安排🙏 還需要些時日<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」图鲁吃人事件"
+      "id": "1371476356738711603",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 3,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1371395031121920122",
-      "content": "吃吃吃吃吃~~朵尔别当米戈了我来当~~吃吃吃",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "「我享受疼痛，女巫大人。」"
+      "id": "1371593213634154538",
+      "channel_id": "1300659662311526512",
+      "content": "que lindo caecus 😦",
+      "author": "hexagonal23_23",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1371283991180869642",
+      "channel_id": "1131839817982947429",
+      "content": "我啊",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371387324629258241",
+      "channel_id": "1131839817982947429",
+      "content": "还是360摆烂好啊",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1371538713523523584",
+      "channel_id": "1131839817982947429",
+      "content": "深海反肘贏了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

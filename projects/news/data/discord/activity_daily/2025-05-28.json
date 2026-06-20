@@ -1,10 +1,23 @@
 {
   "date": "2025-05-28",
-  "messages": 103,
-  "unique_authors": 12,
-  "reactions_total": 216,
-  "attachments": 41,
+  "messages": 10789,
+  "unique_authors": 228,
+  "reactions_total": 957,
+  "attachments": 455,
   "channel_activity": {
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 8325,
+    "🔸剧情交流": 2,
+    "🔸한국어-채팅방": 371,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 40,
+    "🔸phòng-chat-tiếng-việt": 65,
+    "🔸canal-español": 123,
+    "🔸canal-português": 47,
+    "🔸ruang-obrolan-indonesia": 493,
+    "🔸ห้องสนทนาภาษาไทย": 230,
+    "🔸traphase": 236,
+    "🔸綜合討論": 740,
     "aomi’s morimens dump": 2,
     "Clementine": 1,
     "Comprehensive Gelot Team Comp Video. Going over all meta comps. With and Without Thais": 1,
@@ -40,26 +53,34 @@
     "血链羊妈体系常用四种输出流程": 1
   },
   "hourly_activity": {
-    "2": 10,
-    "14": 7,
-    "17": 3,
-    "4": 1,
-    "7": 11,
-    "8": 13,
-    "16": 1,
-    "10": 14,
-    "11": 5,
-    "12": 5,
-    "15": 5,
-    "21": 2,
-    "19": 1,
-    "3": 9,
-    "6": 12,
-    "9": 4
+    "13": 599,
+    "0": 200,
+    "1": 402,
+    "2": 511,
+    "3": 407,
+    "4": 557,
+    "5": 403,
+    "6": 240,
+    "7": 303,
+    "8": 423,
+    "9": 750,
+    "10": 830,
+    "11": 469,
+    "12": 598,
+    "14": 524,
+    "15": 615,
+    "16": 462,
+    "17": 675,
+    "18": 515,
+    "19": 391,
+    "20": 343,
+    "21": 172,
+    "22": 153,
+    "23": 247
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "19": 2902,
+    "0": 7044
   },
   "top_reacted_messages": [
     {
@@ -82,6 +103,14 @@
       "author": "lowtownnivn",
       "reactions": 25,
       "channel": "Clementine"
+    },
+    {
+      "id": "1377372312520757410",
+      "channel_id": "1170692781216378960",
+      "content": "https://i.imgur.com/v9C7t7I.jpeg ohh nice",
+      "author": "toradorable",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1377245053726232596",
@@ -112,6 +141,22 @@
       "channel": "弥萨格经济学课：分解无用命轮换等级碎片"
     },
     {
+      "id": "1377260099461976125",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1377366891013869618",
+      "channel_id": "1170692781216378960",
+      "content": "Hello everynyan. I found an extremely beautiful flower earlier online and I thou",
+      "author": "disgustedingucci",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1377252035354689627",
       "content": "thanks for ur effort guys, I can't wait to have at least the combat naming stand",
       "author": "nayrath",
@@ -133,6 +178,14 @@
       "channel": "V2.2.2.2 在線維護公告"
     },
     {
+      "id": "1377258312491470969",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "qqinfinity",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1377130779708096644",
       "content": "借塔薇的小伙伴比较多，所以暂时换回来并且拉成90级了，需要借克莱门汀的小伙伴可以私信我",
       "author": "timee_ky",
@@ -140,67 +193,44 @@
       "channel": "弥萨格校友号码本4.0"
     },
     {
-      "id": "1377236184740139049",
-      "content": "**Combat-Related Text Progress:**\n\nThis month, we reviewed:\n**● 1,208 Skill Name",
-      "author": "morimens_15",
+      "id": "1377260772824186930",
+      "channel_id": "1170692781216378960",
+      "content": "I asked the AI ​​to give me 10 positive reviews for Morimens\nAi: I don’t know it",
+      "author": "ernest_heart",
       "reactions": 5,
-      "channel": "Morimens English Localization Notes #1"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1377226087884390481",
-      "content": "够把猫100258814",
-      "author": "847590850",
+      "id": "1377220525541163029",
+      "channel_id": "1131839817982947429",
+      "content": "我有，32.8%强效的生机榨取🤓",
+      "author": "bailuoxiao",
       "reactions": 5,
-      "channel": "血链羊妈体系常用四种输出流程"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1377322362692964514",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+      "id": "1377236240566583388",
+      "channel_id": "1131839817982947429",
+      "content": "你們也能挑戰",
+      "author": "arr5721",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1377305795926167586",
-      "content": "100377735\n90级血链，命轮12+12，天赋11+10\n更新一下，密契100％了",
-      "author": "287405tjy_28066",
-      "reactions": 3,
-      "channel": "弥萨格校友号码本4.0"
+      "id": "1377248468346732564",
+      "channel_id": "1131839817982947429",
+      "content": "菜花阿狗",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1377337514158854155",
-      "content": "https://www.youtube.com/watch?v=t-_sLI85zS4&ab_channel=Flares%27sidechannel",
-      "author": "flares117",
-      "reactions": 2,
-      "channel": "Comprehensive Gelot Team Comp Video. Going over all meta comps. With and Without Thais"
-    },
-    {
-      "id": "1377143834009403453",
-      "content": "It's kinda solid actually\nHe shares his color scheme, realm & swan theme with Li",
-      "author": "theriddleofcards",
-      "reactions": 2,
-      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
-    },
-    {
-      "id": "1377203661297422357",
-      "content": "2-7 \"Medical Handbook\"",
-      "author": "adrelius",
-      "reactions": 2,
-      "channel": "💭「Processing」Cutscene Error"
-    },
-    {
-      "id": "1377107773669769347",
-      "content": "Keep it coming",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
-    },
-    {
-      "id": "1377107860319768787",
-      "content": "<:bow:1356053037159944473> <:love:1356053099931897977>",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
+      "id": "1377262699922063462",
+      "channel_id": "1131839817982947429",
+      "content": "但負面評價可以",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

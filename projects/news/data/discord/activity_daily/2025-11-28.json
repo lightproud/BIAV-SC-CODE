@@ -1,10 +1,35 @@
 {
   "date": "2025-11-28",
-  "messages": 227,
-  "unique_authors": 31,
-  "reactions_total": 409,
-  "attachments": 32,
+  "messages": 14425,
+  "unique_authors": 329,
+  "reactions_total": 2237,
+  "attachments": 801,
   "channel_activity": {
+    "🔸general-chat": 218,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🐱light’s-nest": 2,
+    "🔸game-question": 1233,
+    "🔸忘却前夜┊morimens-tv": 5,
+    "🔸机器人命令┊bot-commands": 46,
+    "🔸morimens-game-chat": 7262,
+    "🔸剧情交流": 283,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 22,
+    "🔸한국어-채팅방": 4,
+    "🔸chaîne-française": 20,
+    "🔸русский-канал": 104,
+    "🔸phòng-chat-tiếng-việt": 170,
+    "🔸canal-español": 502,
+    "🔸canal-português": 27,
+    "🔸ruang-obrolan-indonesia": 841,
+    "🔸ห้องสนทนาภาษาไทย": 780,
+    "🔸traphase": 47,
+    "🔸lore-chat": 723,
+    "🔸lets-count": 33,
+    "🔸team-building": 277,
+    "🔸綜合討論": 1557,
+    "🔸阵容构建": 21,
     "jenkins": 1,
     "morimens pixel art": 3,
     "\"Reverie\" | Tulu fanfic": 3,
@@ -52,47 +77,47 @@
     "✅「Resolved」Store Frozen": 4,
     "我也要開圖樓": 5,
     "写一些惊恐的。": 57,
-    "🐱light’s-nest": 1,
     "1443848396585828363": 2,
     "1441326394817908736": 10
   },
   "hourly_activity": {
-    "13": 6,
-    "1": 10,
-    "8": 10,
-    "16": 10,
-    "17": 11,
-    "4": 9,
-    "14": 3,
-    "18": 7,
-    "10": 15,
-    "3": 25,
-    "20": 2,
-    "9": 13,
-    "5": 48,
-    "7": 10,
-    "11": 9,
-    "0": 5,
-    "2": 2,
-    "12": 1,
-    "15": 4,
-    "21": 2,
-    "22": 8,
-    "23": 4,
-    "19": 2,
-    "6": 11
+    "2": 533,
+    "3": 444,
+    "4": 395,
+    "5": 607,
+    "6": 585,
+    "7": 566,
+    "8": 789,
+    "9": 747,
+    "10": 600,
+    "11": 724,
+    "12": 664,
+    "13": 356,
+    "14": 517,
+    "15": 417,
+    "16": 621,
+    "17": 843,
+    "18": 756,
+    "19": 654,
+    "20": 761,
+    "22": 474,
+    "23": 297,
+    "0": 470,
+    "1": 763,
+    "21": 842
   },
   "message_types": {
-    "0": 49,
-    "4": 2,
-    "19": 13
+    "19": 467,
+    "0": 1045,
+    "20": 5
   },
   "top_reacted_messages": [
     {
       "id": "1443784728628166687",
+      "channel_id": "1426837316533747823",
       "content": "It seems like rrkk00q really likes Ryker! rrkk00q 似乎非常喜欢莱克！",
       "author": "game.producer.light",
-      "reactions": 136,
+      "reactions": 149,
       "channel": "🐱light’s-nest"
     },
     {
@@ -117,11 +142,27 @@
       "channel": ""
     },
     {
+      "id": "1443975068895154306",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1443973863561105439",
       "content": "Sharing the progress of  my Castor fanart c: (from ArtOfStarseeker on X)",
       "author": "orpheusffxiv",
       "reactions": 24,
       "channel": "Castor WIP"
+    },
+    {
+      "id": "1444042364657336340",
+      "channel_id": "1170692781216378960",
+      "content": "For anyone that wants to, the Morimens team sponsored me for a YT video: https:/",
+      "author": "stix5500",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1444029360398008501",
@@ -138,6 +179,22 @@
       "channel": ""
     },
     {
+      "id": "1444010874527285329",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890> stop reacting. I'm sensitive and overthink",
+      "author": "enternameunavailable",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443926466197717073",
+      "channel_id": "1400750050208125010",
+      "content": "<@153999495347044352> i got a report of your youtube video contains harassment t",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1443889624807374969",
       "content": "Should have one of G Ramona watching keeper in 4K with 🍿",
       "author": "aurora3981",
@@ -145,88 +202,68 @@
       "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
     },
     {
-      "id": "1444062952708771982",
-      "content": "101165253",
-      "author": "chiedgaf",
-      "reactions": 7,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444009344751636630",
-      "content": "Actually i posed this to ao3 a few days ago but only remembered to submit it for",
-      "author": "noname0963",
-      "reactions": 6,
-      "channel": "\"Reverie\" | Tulu fanfic"
-    },
-    {
-      "id": "1443816983849340990",
-      "content": "<:processing:1357185814567718963> 前几天我刚开始写一个主题几乎一样的同人文……预计在十二月二十日写完，打算当圣诞节贺文的……",
-      "author": "150_ripe",
-      "reactions": 6,
-      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
-    },
-    {
-      "id": "1443832824552755241",
-      "content": "100772003",
-      "author": "mecohor_11034",
-      "reactions": 5,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444098121100558470",
-      "content": "On the chapter 9-4 eye, if he has more than 100 fortress and you use the Tawil s",
-      "author": "vxvendetta97",
-      "reactions": 5,
-      "channel": "💭「Processing」Over 100 Fortress bug"
-    },
-    {
-      "id": "1443908229712183310",
-      "content": "🥰",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Resolved」Store Frozen"
-    },
-    {
-      "id": "1443839619572564029",
-      "content": "慎入。\n\n主角是一位十恶不赦的反派。\n\n然后被杜勒抓了。\n\n含施暴，虐待，身体部位缺失，人身攻击言论。（被打，不过没有太多描写）\n\n不介意心理承受压力低的人观看",
+      "id": "1443805622826041496",
+      "channel_id": "1174983699935277147",
+      "content": "嘿嘿。",
       "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "写一些惊恐的。"
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1443951193515626516",
-      "content": "荡秋千那张有更清晰的露出另一只脚的尺寸吗🥺拜托了这对我真的很重要",
-      "author": "wushengchi7012",
-      "reactions": 3,
-      "channel": "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn"
+      "id": "1444042563202977898",
+      "channel_id": "1170692781216378960",
+      "content": "If they sponsor a main stream creator that would be awesome",
+      "author": "superrmanda",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1443922670134759435",
-      "content": "副歌part的骨架一半了(好少",
-      "author": "undecember_news",
-      "reactions": 3,
-      "channel": "我也要開圖樓"
+      "id": "1443907460212723814",
+      "channel_id": "1170692781216378960",
+      "content": "broke: tawil is bad cause her dmg is bad woke: tawil is bad cause her animations",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1443865191736545341",
-      "content": "多來點",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
+      "id": "1443823626905456782",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1444100420623401021",
-      "content": "originally i would be pretty content if it forced me to think about swapping my ",
-      "author": "lumato",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+      "id": "1443826284114215055",
+      "channel_id": "1131839817982947429",
+      "content": "四章关底缝了大眼的999易伤虚弱脆弱",
+      "author": "xuanxue007",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1444102070058877130",
-      "content": "in fact, if you watch the replay for many of the no death resist no gnosis teams",
-      "author": "lumato",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+      "id": "1443829135276507136",
+      "channel_id": "1131839817982947429",
+      "content": "我莉即將上演10k忍耐報償淡淡秒了全世界\n🙄💅",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1443950156449054750",
+      "channel_id": "1131839874132090890",
+      "content": "感謝各位，第九章順利打完了🙏",
+      "author": "michaelia.",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1443984185885855804",
+      "channel_id": "1170692781216378960",
+      "content": "I LOVE READING THE STORY",
+      "author": "solxeko",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

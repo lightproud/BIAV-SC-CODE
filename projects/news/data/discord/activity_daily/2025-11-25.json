@@ -1,10 +1,36 @@
 {
   "date": "2025-11-25",
-  "messages": 213,
-  "unique_authors": 35,
-  "reactions_total": 310,
-  "attachments": 69,
+  "messages": 20011,
+  "unique_authors": 448,
+  "reactions_total": 2053,
+  "attachments": 1214,
   "channel_activity": {
+    "🔸general-chat": 253,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸game-question": 1861,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 78,
+    "🔸morimens-game-chat": 9087,
+    "🔸剧情交流": 28,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 7,
+    "🔸交友频道": 11,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 595,
+    "🔸chaîne-française": 39,
+    "🔸русский-канал": 382,
+    "🔸phòng-chat-tiếng-việt": 13,
+    "🔸canal-español": 1399,
+    "🔸canal-português": 245,
+    "🔸ruang-obrolan-indonesia": 1428,
+    "🔸ห้องสนทนาภาษาไทย": 759,
+    "🔸traphase": 89,
+    "🔸lore-chat": 601,
+    "🔸lets-count": 31,
+    "🔸team-building": 1267,
+    "🔸綜合討論": 1570,
+    "🔸阵容构建": 13,
     "Caecus doodle": 1,
     "Murphy: Fauxborn fanart": 1,
     "2.4": 2,
@@ -89,34 +115,35 @@
     "1234769700735418368": 1
   },
   "hourly_activity": {
-    "2": 6,
-    "19": 2,
-    "22": 1,
-    "11": 15,
-    "12": 8,
-    "16": 10,
-    "17": 12,
-    "10": 5,
-    "13": 2,
-    "15": 11,
-    "18": 10,
-    "23": 5,
-    "7": 29,
-    "9": 17,
-    "14": 3,
-    "6": 11,
-    "4": 17,
-    "0": 3,
-    "3": 15,
-    "21": 1,
-    "20": 5,
-    "5": 6,
-    "8": 17,
-    "1": 2
+    "0": 1277,
+    "1": 1469,
+    "2": 766,
+    "3": 617,
+    "4": 1054,
+    "5": 600,
+    "6": 682,
+    "8": 659,
+    "9": 647,
+    "10": 833,
+    "11": 831,
+    "12": 1152,
+    "13": 981,
+    "14": 1294,
+    "15": 1405,
+    "16": 762,
+    "17": 710,
+    "18": 563,
+    "19": 618,
+    "20": 622,
+    "22": 806,
+    "23": 720,
+    "7": 430,
+    "21": 513
   },
   "message_types": {
-    "0": 55,
-    "19": 8
+    "19": 583,
+    "0": 1625,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -169,6 +196,14 @@
       "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
     },
     {
+      "id": "1442921489585279124",
+      "channel_id": "1170692781216378960",
+      "content": "no need to play when you can just make the auto smoke another ecog <:tuff_ramona",
+      "author": "reya.li",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1442825647138406480",
       "content": "各位守密人在「忘却前夜」是否有许多或有趣或难忘的记忆？哪些时刻最能代表你当时的经历和心情？\n📸游戏高光截图、欧皇时刻、痛扁boss、CG、音乐……\n📸因游戏结缘",
       "author": "morimensstaff01",
@@ -197,11 +232,51 @@
       "channel": "搞了點手作"
     },
     {
+      "id": "1442682428492746814",
+      "channel_id": "1326453763355185215",
+      "content": "biav: we have an official timeline now :)\nniko: so you fixed the paradoxes right",
+      "author": "nikolazuli",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1442738985846706247",
       "content": "This is the Korean Steam game ranking.\n\nI don’t know how the ranking system dete",
       "author": "baegjeongjang1568",
       "reactions": 10,
       "channel": "i just want to show you this"
+    },
+    {
+      "id": "1442923051783159828",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "not_blueberry",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442843275483680769",
+      "channel_id": "1173463482503536711",
+      "content": "我們還不知道當初尤烏哈希被翻成尤烏雜湊的謎",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1442805586290020362",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1442783481640779786",
+      "channel_id": "1131839817982947429",
+      "content": "该给自己上2000献祭了（",
+      "author": "xyakoto",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1442939478208675945",
@@ -216,48 +291,6 @@
       "author": "souri.10244",
       "reactions": 9,
       "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1442939626267611176",
-      "content": "想舔",
-      "author": "souri.10244",
-      "reactions": 8,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1442961498648477909",
-      "content": "",
-      "author": "lurenjiao",
-      "reactions": 7,
-      "channel": "2.4"
-    },
-    {
-      "id": "1442843833078517801",
-      "content": "~~更正一下，图里面那个名字是错误的，“咖”改成“啡”即可<:A_pinch:1432980538536493057> ~~",
-      "author": "ka_0414",
-      "reactions": 6,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
-    },
-    {
-      "id": "1442938114321551421",
-      "content": "When I used Lotan for everything <:proud1:1356053120651755641>",
-      "author": "airithyll",
-      "reactions": 6,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
-    },
-    {
-      "id": "1442961773060690112",
-      "content": "",
-      "author": "lurenjiao",
-      "reactions": 6,
-      "channel": "2.4 角色命轮榜单"
-    },
-    {
-      "id": "1442900403061788702",
-      "content": "我不知道 我覺得很好笑\n平均降生儀式",
-      "author": "oct3000",
-      "reactions": 6,
-      "channel": "You should sacrifice yourself now"
     }
   ]
 }

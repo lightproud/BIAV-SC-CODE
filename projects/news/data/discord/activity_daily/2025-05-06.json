@@ -1,10 +1,24 @@
 {
   "date": "2025-05-06",
-  "messages": 81,
-  "unique_authors": 11,
-  "reactions_total": 151,
-  "attachments": 14,
+  "messages": 8559,
+  "unique_authors": 181,
+  "reactions_total": 838,
+  "attachments": 285,
   "channel_activity": {
+    "🔸morimens-game-chat": 6588,
+    "🔸剧情交流": 27,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 573,
+    "🔸русский-канал": 16,
+    "🔸canal-español": 147,
+    "🔸canal-português": 68,
+    "🔸ruang-obrolan-indonesia": 141,
+    "🔸ห้องสนทนาภาษาไทย": 36,
+    "🔸traphase": 30,
+    "🔸lore-chat": 41,
+    "🔸lets-count": 3,
+    "🔸綜合討論": 804,
     "Goliath": 2,
     "A Pair of Roses, Horla & Sanga Fanfic": 1,
     "Clementine": 5,
@@ -29,33 +43,58 @@
     "✅「Answered」Sanga misnamed as corposant": 1
   },
   "hourly_activity": {
-    "11": 1,
-    "15": 7,
-    "5": 1,
-    "16": 2,
-    "22": 2,
-    "6": 6,
-    "10": 6,
-    "3": 9,
-    "7": 20,
-    "8": 1,
-    "9": 7,
-    "2": 10,
-    "4": 3,
-    "17": 1,
-    "21": 5
+    "0": 482,
+    "1": 305,
+    "2": 222,
+    "3": 746,
+    "4": 371,
+    "5": 501,
+    "6": 339,
+    "7": 285,
+    "8": 81,
+    "9": 208,
+    "10": 224,
+    "11": 380,
+    "12": 744,
+    "13": 501,
+    "14": 284,
+    "15": 552,
+    "16": 437,
+    "17": 362,
+    "18": 333,
+    "19": 309,
+    "20": 295,
+    "21": 253,
+    "22": 124,
+    "23": 221
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "0": 5943,
+    "19": 1731
   },
   "top_reacted_messages": [
+    {
+      "id": "1369158360926261269",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone English Version Notes：\n\nDear Keepers,\n\nThe global version of Morimens ",
+      "author": "game.producer.light",
+      "reactions": 146,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1369274916364357643",
       "content": "I like him <:hehe:1357185439089295390>  so I draw <:hehe:1357185439089295390>",
       "author": "oketan",
       "reactions": 67,
       "channel": "Goliath"
+    },
+    {
+      "id": "1369158372489953361",
+      "channel_id": "1170692781216378960",
+      "content": "[Faded Legacy Difficulty Lowered]\nThe difficulty of Chapter 8 and the Final Chap",
+      "author": "game.producer.light",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1369333243890896956",
@@ -65,6 +104,38 @@
       "channel": "Clementine"
     },
     {
+      "id": "1369288193115029615",
+      "channel_id": "1170692781216378960",
+      "content": "I want a worldline that his follower die for him in the rebellion that leave him",
+      "author": "ernest_heart",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369158699142348800",
+      "channel_id": "1170692781216378960",
+      "content": "May 30th",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369163302109839463",
+      "channel_id": "1170692781216378960",
+      "content": "We are already working on it! However, we’re sorry to say it won’t be ready very",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369192175295926293",
+      "channel_id": "1170692781216378960",
+      "content": "I’m really glad to see so many questions from everyone—I can truly feel your ent",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1369205637015277659",
       "content": "為大家奉上克珀珊特的留影作為紀念~守密人可在留言區保存平板、手機尺寸的壁紙🌹 。\n\n「人世間的航線，無法指引向幸福。」\n「終於，在獻上一切後，我看到了……」\n\n",
       "author": "morimensstaff01",
@@ -72,102 +143,92 @@
       "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
     },
     {
-      "id": "1369261464367534122",
-      "content": "~~普通的學長普通地進行書籍閱覽~~",
-      "author": "silverstream_s",
-      "reactions": 6,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1369205760243798046",
-      "content": "<:cute1:1356053053568192717> 平板和手機尺寸的壁紙\nTablet and phone sized wallpapers",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
-    },
-    {
-      "id": "1369157515270422599",
-      "content": "[Faded Legacy Difficulty Lowered]\nThe difficulty of Chapter 8 and the Final Chap",
+      "id": "1369180389226319892",
+      "channel_id": "1170692781216378960",
+      "content": "I’m sorry about that. To improve the experience of this side mode, we could cons",
       "author": "game.producer.light",
-      "reactions": 5,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369245374526525471",
-      "content": "原来不是扣一送吗",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
+      "id": "1369175842927804487",
+      "channel_id": "1170692781216378960",
+      "content": "I’ve played quite a few games and have a deep love for many of them, such as The",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369332783071236136",
-      "content": "How dare he flaunt dem chest on grabbing distance (i'll risk my arm fr fr)",
-      "author": "rohaluss",
-      "reactions": 3,
-      "channel": "Goliath"
+      "id": "1369186743055814658",
+      "channel_id": "1170692781216378960",
+      "content": "In terms of gameplay design, The design principles of My Turn serve as the found",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369206084492988527",
-      "content": "高清還不錯",
-      "author": "Deleted User",
-      "reactions": 3,
-      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
+      "id": "1369159345165697134",
+      "channel_id": "1170692781216378960",
+      "content": "Doing my part to make sure we get a proper English translation",
+      "author": "tadders",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369245256175845416",
-      "content": "这里没有零请不要扣一",
-      "author": "287405tjy_28066",
-      "reactions": 3,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
+      "id": "1369164097517785128",
+      "channel_id": "1170692781216378960",
+      "content": "We hope that new characters will feel powerful to everyone, while previous chara",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369437869718110229",
-      "content": "My artist social is rohalussworld",
-      "author": "rohaluss",
-      "reactions": 2,
-      "channel": "Clementine"
+      "id": "1369188548934369300",
+      "channel_id": "1170692781216378960",
+      "content": "The team’s financial support and the confidence of our members are both much mor",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369248762215792650",
-      "content": "可以对某个人扣一或者零，然后得到他（仅限于男同对男同）",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
+      "id": "1369160374716465182",
+      "channel_id": "1131839817982947429",
+      "content": "现在一个社区服务器有不同语言的玩家通知有时候会比较麻烦造成了困扰抱歉。往后会想更好的办法。",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1369191456916639764",
-      "content": "YURI",
-      "author": "whirli_bri",
-      "reactions": 1,
-      "channel": "A Pair of Roses, Horla & Sanga Fanfic"
+      "id": "1369222497450328075",
+      "channel_id": "1131839817982947429",
+      "content": "好……簡單？\n這是海超之力，還是金錢之能？",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1369334742822158357",
-      "content": "Cool",
-      "author": "davin00977",
-      "reactions": 1,
-      "channel": "Clementine"
+      "id": "1369177906554863626",
+      "channel_id": "1170692781216378960",
+      "content": "My love for turn-based strategy and tactical RPG games runs deep. I enjoy some a",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369209708249874512",
-      "content": "你圖那麼愛睡就乾脆不要醒好了，缺狂氣缺算力缺傷害，給的還是尊貴不凡的臨觸。下次直接加強餘波效果好了，負責睡覺就可以了，符合角色設定。帶入藥跟女T專武，一直棄牌一",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
+      "id": "1369179080892612608",
+      "channel_id": "1170692781216378960",
+      "content": "We will work towards this goal. Although it’s quite challenging to ensure a heal",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1369242503362117722",
-      "content": "儲值666就送超強角色神圖魯",
-      "author": "tofu0834",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369138584375791716",
-      "content": "OK, thanks for the feedback~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Sanga misnamed as corposant"
+      "id": "1369286529955922033",
+      "channel_id": "1170692781216378960",
+      "content": "Where's my GShark daddy",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

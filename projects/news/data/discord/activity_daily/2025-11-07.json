@@ -1,10 +1,31 @@
 {
   "date": "2025-11-07",
-  "messages": 154,
-  "unique_authors": 25,
-  "reactions_total": 251,
-  "attachments": 28,
+  "messages": 22851,
+  "unique_authors": 225,
+  "reactions_total": 3375,
+  "attachments": 804,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1262,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 27,
+    "🔸课间休息闲聊": 14,
+    "🔸한국어-채팅방": 136,
+    "🔸chaîne-française": 68,
+    "🔸русский-канал": 558,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 172,
+    "🔸canal-português": 338,
+    "🔸ruang-obrolan-indonesia": 524,
+    "🔸ห้องสนทนาภาษาไทย": 397,
+    "🔸traphase": 210,
+    "🔸lore-chat": 92,
+    "🔸服务器公告┊server-announcement": 4,
+    "🔸lets-count": 31,
+    "🔸team-building": 1054,
+    "🔸general-chat": 8385,
+    "🔸綜合討論": 940,
+    "🔸morimens-game-chat": 8467,
     "Ramona Sketch": 8,
     "Team Management": 2,
     "Murphy Fauxborn wip": 1,
@@ -38,42 +59,42 @@
     "无塔薇血希本期425镇楼＋锐评下半预告": 13,
     "融灾攻略": 3,
     "甚至連疼痛都變得毫無意義": 38,
-    "🔸欢乐梗图": 1,
-    "🔸服务器公告┊server-announcement": 2,
     "1429401798439080028": 5
   },
   "hourly_activity": {
-    "4": 11,
-    "5": 2,
-    "6": 11,
-    "9": 3,
-    "15": 5,
-    "16": 8,
-    "14": 2,
-    "17": 5,
-    "18": 6,
-    "20": 1,
-    "7": 14,
-    "3": 7,
-    "23": 4,
-    "2": 2,
-    "1": 9,
-    "8": 18,
-    "13": 11,
-    "0": 29,
-    "12": 2,
-    "19": 3,
-    "22": 1
+    "0": 902,
+    "3": 698,
+    "4": 983,
+    "6": 1137,
+    "7": 684,
+    "8": 563,
+    "12": 1980,
+    "14": 1138,
+    "15": 1389,
+    "16": 1218,
+    "17": 935,
+    "1": 774,
+    "2": 207,
+    "5": 916,
+    "9": 764,
+    "10": 1080,
+    "11": 977,
+    "13": 1445,
+    "18": 1018,
+    "19": 756,
+    "20": 920,
+    "21": 1283,
+    "22": 677,
+    "23": 407
   },
   "message_types": {
-    "0": 36,
-    "4": 1,
-    "19": 8,
-    "6": 1
+    "0": 900,
+    "19": 378
   },
   "top_reacted_messages": [
     {
       "id": "1436327858086613034",
+      "channel_id": "1354754985119846581",
       "content": "I want to happily announce that we have unlocked a custom server invite link:\ndi",
       "author": "craux.",
       "reactions": 44,
@@ -81,6 +102,7 @@
     },
     {
       "id": "1436200019882410066",
+      "channel_id": "1354754985119846581",
       "content": "🚨 ***Warning: Immediate Action Required*** 🚨 \n\nIt has come to our attention that",
       "author": "cometovilla",
       "reactions": 38,
@@ -108,6 +130,14 @@
       "channel": "甚至連疼痛都變得毫無意義"
     },
     {
+      "id": "1436152302439370772",
+      "channel_id": "1355630588094320661",
+      "content": "https://tenor.com/view/67-67-meme-67-umpire-umpire-mlb-gif-16280715357512483999",
+      "author": "Deleted User",
+      "reactions": 20,
+      "channel": "🔸lets-count"
+    },
+    {
       "id": "1436382986185609227",
       "content": "she's so hauntingly beautiful, mysterious and kinda off-putting....\nwhich means ",
       "author": "honolulu_37",
@@ -122,6 +152,54 @@
       "channel": "Team Management"
     },
     {
+      "id": "1436322665383202857",
+      "channel_id": "1400750050208125010",
+      "content": "wow! a manchild?!",
+      "author": "digitalstar.exe",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1436492676596760626",
+      "channel_id": "1400750050208125010",
+      "content": "<:A_pinch:1432980538536493057> <:A_pinch:1432980538536493057> <:A_pinch:14329805",
+      "author": "red_rest",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1436343075348942953",
+      "channel_id": "1131839817982947429",
+      "content": "Johny 戈來哄你go to bed",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1436271332475142165",
+      "channel_id": "1180437373012672522",
+      "content": "剩下的兩張神國怪圖🌿",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1436355413691076750",
+      "channel_id": "1300659495550062592",
+      "content": "https://x.com/Keeper_Jayone/status/1986795354264944967",
+      "author": "jayone_j1",
+      "reactions": 9,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1436291350348824576",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1436349618035097742",
       "content": "I feel like this is gonna be a trap button which you sometimes misclick when usi",
       "author": "aurora3981",
@@ -129,88 +207,44 @@
       "channel": "💭「Processing」Option to remove autoplay from UI"
     },
     {
-      "id": "1436271332475142165",
-      "content": "剩下的兩張神國怪圖🌿",
-      "author": "ass191044",
-      "reactions": 8,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1436368263171801158",
-      "content": "<@1372028651175936080> do you think this is harmful to the game",
-      "author": "tnimreppep",
-      "reactions": 5,
-      "channel": "Posse Per Second (PPS)"
-    },
-    {
-      "id": "1436250611313279057",
+      "id": "1436412506087096391",
+      "channel_id": "1300659802455674972",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+      "author": "satachan",
+      "reactions": 8,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1436370496181506159",
-      "content": "Would be nice if this mode was expanded to eventually be pure-realm  stages,it w",
-      "author": "thigh_god.",
-      "reactions": 4,
-      "channel": "✅「Answered」Lightless realm expansion"
+      "id": "1436333941509587006",
+      "channel_id": "1170692781216378960",
+      "content": "Finally",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1436154151452147762",
-      "content": "圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬",
-      "author": "yolo_mode",
-      "reactions": 3,
-      "channel": "甚至連疼痛都變得毫無意義"
+      "id": "1436338051503751238",
+      "channel_id": "1170692781216378960",
+      "content": "I feel like this is gonna cause greedy ppl to brick their accounts.\n+12 alva and",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1436154764235898930",
-      "content": "想看誕墨用那張死人臉陰惻惻地叫戈利亞爸爸",
-      "author": "yolo_mode",
-      "reactions": 3,
-      "channel": "甚至連疼痛都變得毫無意義"
+      "id": "1436347423781032087",
+      "channel_id": "1170692781216378960",
+      "content": "Omg so many new features\n\nI like that they save a replay",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1436163586123628635",
-      "content": "抱歉我第一眼看成了性感（我懺悔",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "甚至連疼痛都變得毫無意義"
-    },
-    {
-      "id": "1436211201641156719",
-      "content": "我會努力多抽一點的",
-      "author": "dog_0630",
-      "reactions": 2,
-      "channel": "不算新的新人求助"
-    },
-    {
-      "id": "1436267515838992395",
-      "content": "Sorry, currently we do not have enough funds and personnel to implement this sug",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Card Art for Awakener Skills/Rouse"
-    },
-    {
-      "id": "1436164864392298527",
-      "content": "因為他有大肌肌",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "甚至連疼痛都變得毫無意義"
-    },
-    {
-      "id": "1436179742184308796",
-      "content": "粗獷但纖細<:wow:1356053147029864518>",
-      "author": "tsubaki9884",
-      "reactions": 2,
-      "channel": "甚至連疼痛都變得毫無意義"
-    },
-    {
-      "id": "1436249541262311514",
-      "content": "Русская версия постера<:camera:1356053040251146460> \n—— сделана российской орган",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+      "id": "1436347911465209947",
+      "channel_id": "1170692781216378960",
+      "content": "Auto play will be the trap button you sometimes misclick when using posse and it",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

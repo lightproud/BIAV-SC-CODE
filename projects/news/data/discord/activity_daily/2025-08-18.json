@@ -1,10 +1,35 @@
 {
   "date": "2025-08-18",
-  "messages": 187,
-  "unique_authors": 39,
-  "reactions_total": 841,
-  "attachments": 52,
+  "messages": 24751,
+  "unique_authors": 627,
+  "reactions_total": 5365,
+  "attachments": 1463,
   "channel_activity": {
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 6,
+    "🔸相位对弈": 6,
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 49,
+    "🔸한국어-채팅방": 159,
+    "🔸deutscher-chatraum": 44,
+    "🔸chaîne-française": 404,
+    "🔸русский-канал": 707,
+    "🔸phòng-chat-tiếng-việt": 242,
+    "🔸canal-español": 1874,
+    "🔸canal-português": 1171,
+    "🔸ruang-obrolan-indonesia": 656,
+    "🔸ห้องสนทนาภาษาไทย": 673,
+    "🔸traphase": 640,
+    "🔸lore-chat": 144,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 9,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 14,
+    "🔸general-chat": 68,
+    "🔸邀请码互助┊swap-invitation-codes": 726,
+    "🔸綜合討論": 2010,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 14939,
     "Tulu keychain!!!": 1,
     "Tulu Being Sleepy": 3,
     "Flares' Awaker Review : Kathigu - Ra.": 2,
@@ -53,45 +78,47 @@
     "✅「Answered」Can't log in": 2,
     "相位對弈—凱蒂古拉OTK隊": 1,
     "萊克": 1,
-    "🔸礼包码┊gift-codes": 1,
     "1350058287688712253": 1
   },
   "hourly_activity": {
-    "16": 6,
-    "1": 4,
-    "10": 14,
-    "18": 5,
-    "11": 6,
-    "2": 16,
-    "3": 12,
-    "4": 4,
-    "5": 3,
-    "7": 8,
-    "13": 8,
-    "14": 7,
-    "17": 1,
-    "20": 38,
-    "23": 5,
-    "19": 3,
-    "21": 2,
-    "12": 4,
-    "9": 5,
-    "15": 6,
-    "6": 26,
-    "22": 1,
-    "8": 3
+    "3": 1737,
+    "19": 745,
+    "20": 541,
+    "2": 1507,
+    "5": 1035,
+    "15": 965,
+    "18": 963,
+    "12": 909,
+    "13": 1182,
+    "17": 692,
+    "4": 1358,
+    "6": 1717,
+    "7": 1355,
+    "8": 953,
+    "9": 766,
+    "10": 722,
+    "11": 930,
+    "14": 1677,
+    "16": 829,
+    "21": 601,
+    "22": 909,
+    "0": 919,
+    "1": 951,
+    "23": 788
   },
   "message_types": {
-    "0": 85,
-    "19": 7,
-    "4": 1
+    "0": 6246,
+    "19": 1360,
+    "6": 1,
+    "18": 3
   },
   "top_reacted_messages": [
     {
       "id": "1406885254513295391",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 25000守密人达成礼 / DC25000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 700,
+      "reactions": 701,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -102,6 +129,118 @@
       "channel": "Tulu keychain!!!"
     },
     {
+      "id": "1407125224813629490",
+      "channel_id": "1170692781216378960",
+      "content": "ok, I'm heading off. take care ya all",
+      "author": "alfa1a",
+      "reactions": 26,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406823231389696062",
+      "channel_id": "1170692781216378960",
+      "content": "my wife when she found out I was with another woman",
+      "author": "impurpleq",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406825678258704456",
+      "channel_id": "1170692781216378960",
+      "content": "This server needs to be purified <:dead:1356082627509092372>",
+      "author": "pesky2",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406865354759864462",
+      "channel_id": "1170692781216378960",
+      "content": "Disgusting",
+      "author": "akatora_",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406792631232630926",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "shadow_20954",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1406811358254596148",
+      "channel_id": "1170692781216378960",
+      "content": "it's eos not maintenance",
+      "author": "grass6247",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406898806263382057",
+      "channel_id": "1170692781216378960",
+      "content": "GUYS! YOU MISSED 1 IMPORTANT THING ABOUT THE KATHIGU-RA REVEAL",
+      "author": "gardrobe10",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407087549138075763",
+      "channel_id": "1170692781216378960",
+      "content": "no you cannot have my gnosises",
+      "author": "ve1tedrose",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407113567114756136",
+      "channel_id": "1170692781216378960",
+      "content": "Hi guys im new to the game and would like to know what banners to pull on etc. F",
+      "author": "hidengamer",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406886372735717459",
+      "channel_id": "1170692781216378960",
+      "content": "I'm missing lore why is the pregnant emote used so much? lol",
+      "author": "neyuse",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406829282625454160",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1406817610070491286",
+      "channel_id": "1170692781216378960",
+      "content": "The cost to collab with Slay the Spire is EoS",
+      "author": "allyera.emano.hemafuri",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406823508767412357",
+      "channel_id": "1170692781216378960",
+      "content": "I hope you get mpreg",
+      "author": "valiway",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1406955554546647211",
+      "channel_id": "1170692781216378960",
+      "content": "I will make kath work at e0",
+      "author": "drunk.biscuit",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1407085166781792386",
       "content": "Kathigu-ra is a pretty nice unit and it can be very strong, but the difference f",
       "author": "vxvendetta",
@@ -109,123 +248,28 @@
       "channel": "✅「Answered」Potential changes for Kathi"
     },
     {
-      "id": "1406806080654151720",
-      "content": "I wasn't kidding when I said I rushed my submission so I'll finish it one of the",
-      "author": "ev_6185",
-      "reactions": 6,
-      "channel": "Tulu Being Sleepy"
-    },
-    {
-      "id": "1407028141045583944",
-      "content": "I am on story chapter 4, and after the update rolled out, any text that has more",
-      "author": "yunayukivrc",
-      "reactions": 6,
-      "channel": "✅「Answered」Text auto-scrolling down on PC version after update"
-    },
-    {
-      "id": "1406941330390913086",
-      "content": "https://youtu.be/bW5XXMt37DE",
-      "author": "flares117",
-      "reactions": 4,
-      "channel": "Flares' Awaker Review : Kathigu - Ra."
-    },
-    {
-      "id": "1406943508614352976",
-      "content": "",
+      "id": "1406827358878564493",
+      "channel_id": "1131839817982947429",
+      "content": "笑鼠，今天准备<:Emoji_AJE_M_04:1400771555939844149>",
       "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1406842817770291200",
-      "content": "It says the wheel generates large amounts of Crit Rate, when in reality it only ",
-      "author": "sophiechoice",
-      "reactions": 4,
-      "channel": "✅「Answered」Kathigu-Ra's wheel's description on the banner page is incorrect!"
+      "id": "1406825139198234665",
+      "channel_id": "1170692781216378960",
+      "content": "also stop with the mpreg what is this server",
+      "author": "universalbutterfly",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1406869654139306014",
-      "content": "Hello Keeper! I have confirmed this is a text display code issue. It does not im",
-      "author": "morimens_15",
-      "reactions": 4,
-      "channel": "✅「Answered」Clementine scaling is wrong"
-    },
-    {
-      "id": "1406965241660833923",
-      "content": "Yeah it was one of the very first terms hand picked by the lead writers so when ",
-      "author": "morimens_15",
-      "reactions": 3,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1407090461981802620",
-      "content": "who do i bug about \"ralic\" lol",
-      "author": "clocks",
-      "reactions": 3,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1407023317486927942",
-      "content": "守密人你好：\n       弥萨格大学校务处将于8月18日 23:20 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": "V2.3.1.1 在线维护公告"
-    },
-    {
-      "id": "1407023472533700700",
-      "content": "● Wheel of Destiny \"Treasured Rarity\" effect adjusted to: Gain 3 layers of Entwi",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": "V2.3.1.1 在线维护公告"
-    },
-    {
-      "id": "1406886334857220178",
-      "content": "I’m sorry, but we’ve discussed this part of the story and currently have no plan",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1406925768843333673",
-      "content": "典藏馆的cg放到主页面能不能支持缩放呀。。多好看的图，为什么一刚到宿舍就自动变成那样，还不能改。。",
-      "author": "nekoiiii.",
-      "reactions": 2,
-      "channel": "✅「已回答」典藏馆cg"
-    },
-    {
-      "id": "1406945166039711784",
-      "content": "goya it's the wrong name",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
-    },
-    {
-      "id": "1406951682948075570",
-      "content": "好酷",
-      "author": "danwangmofei",
-      "reactions": 1,
-      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
-    },
-    {
-      "id": "1407094729501446185",
-      "content": "Theres a silver relic that grants u shield per tentacle, extra in shield stance",
-      "author": "swaggymutton",
-      "reactions": 1,
-      "channel": "is there a way to view all available relics?"
-    },
-    {
-      "id": "1407105304960958535",
-      "content": "done it! didn't need to change posse",
-      "author": "lavache.",
-      "reactions": 1,
-      "channel": "is there a way to view all available relics?"
-    },
-    {
-      "id": "1406991755726819389",
-      "content": "yup confirmed the rewards don't reset, phew no pressure",
-      "author": "lavache.",
-      "reactions": 1,
-      "channel": "do traphase points rewards reset every season?"
+      "id": "1406826602490368001",
+      "channel_id": "1170692781216378960",
+      "content": "Daily reminder to drink water, keep hydrated",
+      "author": "h1karv",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

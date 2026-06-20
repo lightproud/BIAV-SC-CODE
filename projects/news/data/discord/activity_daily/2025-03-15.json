@@ -1,10 +1,22 @@
 {
   "date": "2025-03-15",
-  "messages": 27,
-  "unique_authors": 8,
-  "reactions_total": 15,
-  "attachments": 6,
+  "messages": 4136,
+  "unique_authors": 91,
+  "reactions_total": 186,
+  "attachments": 207,
   "channel_activity": {
+    "🔸русский-канал": 89,
+    "🔸canal-español": 4,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 306,
+    "🔸ห้องสนทนาภาษาไทย": 152,
+    "🔸traphase": 227,
+    "🔸lore-chat": 732,
+    "🔸綜合討論": 135,
+    "🔸morimens-game-chat": 2311,
+    "🔸相位对弈": 69,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 73,
     "How can I make a good team": 8,
     "Morimens loading screen lore compilation": 4,
     "【日本語訳】フィードバック": 4,
@@ -16,20 +28,34 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "12": 1,
-    "13": 4,
-    "14": 5,
-    "15": 1,
-    "11": 10,
-    "8": 1,
-    "20": 2,
-    "9": 1,
-    "23": 1,
-    "21": 1
+    "4": 172,
+    "9": 36,
+    "10": 196,
+    "14": 482,
+    "15": 317,
+    "16": 174,
+    "17": 115,
+    "20": 122,
+    "21": 80,
+    "23": 38,
+    "0": 21,
+    "1": 21,
+    "11": 306,
+    "12": 433,
+    "2": 176,
+    "5": 64,
+    "7": 81,
+    "8": 81,
+    "13": 606,
+    "18": 50,
+    "19": 82,
+    "22": 46,
+    "6": 125,
+    "3": 312
   },
   "message_types": {
-    "19": 5,
-    "0": 11
+    "0": 1067,
+    "19": 450
   },
   "top_reacted_messages": [
     {
@@ -40,25 +66,156 @@
       "channel": "✅「Answered」Add crafting for Shattered Remnant of Dreams"
     },
     {
-      "id": "1350390115297529947",
-      "content": "「守秘者」も「シークレットキーパー」「秘密保持者」のほか「守密人」（中国語と同じ）があります。ラモンナ(Ramona)がボイスで言うのは「守秘者」です。",
-      "author": "x013318908",
+      "id": "1350422501666066533",
+      "channel_id": "1131839817982947429",
+      "content": "快去當受",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350468498194694255",
+      "channel_id": "1131839817982947429",
+      "content": "还好我有了",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350466479396753428",
+      "channel_id": "1170692781216378960",
+      "content": "https://media.discordapp.net/attachments/694412819860553848/1184004232903401502/",
+      "author": "brainrot_in_a_vat",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350427270569000971",
+      "channel_id": "1326453763355185215",
+      "content": "I have all of the notes for dissolution written out, the rest is probably how to",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350480147614269570",
+      "channel_id": "1326453763355185215",
+      "content": "William comeback when?",
+      "author": "alfarro09",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350481158609043546",
+      "channel_id": "1326453763355185215",
+      "content": "after GDoll every new awaker need Overexalt",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350323313163112489",
+      "channel_id": "1131839817982947429",
+      "content": "輸光…",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350456899564474430",
+      "channel_id": "1131839817982947429",
+      "content": "校貓應該向我支付遊玩這款遊戲的費用\n||~~或者一套包含收米人手提箱、各種亞克力角色立繪、命輪立牌、各種典藏館美圖以及全套設定集的周邊~~||",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350517811809751060",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350431682083160065",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah like how arc 2 chapter 1 had gdoll ||sleep with the keeper||",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350518998948909076",
+      "channel_id": "1170692781216378960",
+      "content": "Hello am new! The art is fantastic.",
+      "author": "wisewwivard_10391",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350441445055664138",
+      "channel_id": "1300659802455674972",
+      "content": "https://tenor.com/view/supfkers-supfker-mfer-supfkers-moon-supfker-spiderman-gif",
+      "author": "littleyoukai",
       "reactions": 2,
-      "channel": "【日本語訳】フィードバック"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1350428931836084236",
-      "content": "itd be really funny if all the EN optimisations have drastically changed the tex",
+      "id": "1350412225344704513",
+      "channel_id": "1326453763355185215",
+      "content": "btw if you do manage to get a whole bunch of lore compiled together, i wouldnt m",
       "author": "itsmemiki",
-      "reactions": 1,
-      "channel": "Morimens loading screen lore compilation"
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1350581729760645224",
-      "content": "При усилении реликвии описание полностью не помещается",
-      "author": "karsh_1",
-      "reactions": 1,
-      "channel": ""
+      "id": "1350427096698060903",
+      "channel_id": "1326453763355185215",
+      "content": "Chaos limited: a child with balls, wtf is this girl deal?, SH if Arthur Conan Do",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350469082725613569",
+      "channel_id": "1326453763355185215",
+      "content": "||Wait so can keeper summon N cosplaying as sorel for lolz||",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350476348539535413",
+      "channel_id": "1326453763355185215",
+      "content": "Dark Dwellers are mostly people that betrayed their path and become lesbians",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350480751522615440",
+      "channel_id": "1326453763355185215",
+      "content": "\"Keeper, I have a most ingenious idea\"",
+      "author": "re_rena12",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1350390353236332616",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350303200422662214",
+      "channel_id": "1170692781216378960",
+      "content": "⚠️",
+      "author": "aslechi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

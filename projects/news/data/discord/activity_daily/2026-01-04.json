@@ -1,10 +1,35 @@
 {
   "date": "2026-01-04",
-  "messages": 70,
-  "unique_authors": 11,
-  "reactions_total": 57,
-  "attachments": 31,
+  "messages": 10602,
+  "unique_authors": 223,
+  "reactions_total": 946,
+  "attachments": 544,
   "channel_activity": {
+    "🔸剧情交流": 13,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 10,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 33,
+    "🔸русский-канал": 116,
+    "🔸phòng-chat-tiếng-việt": 907,
+    "🔸canal-español": 207,
+    "🔸canal-português": 116,
+    "🔸ruang-obrolan-indonesia": 303,
+    "🔸ห้องสนทนาภาษาไทย": 51,
+    "🔸traphase": 92,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 19,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 838,
+    "🔸general-chat": 744,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 606,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 33,
+    "🔸綜合討論": 699,
+    "🔸阵容构建": 39,
+    "🔸morimens-game-chat": 5656,
     "aequor doodle": 3,
     "Morimens Awakeners Database": 1,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
@@ -26,7 +51,6 @@
     "克莱门汀": 1,
     "蓋個圖樓": 1,
     "我造謠了": 2,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 4,
     "1457468446353653792": 1,
     "1456239100989542555": 1,
@@ -37,27 +61,35 @@
     "1457202535138857132": 4
   },
   "hourly_activity": {
-    "4": 5,
-    "6": 1,
-    "19": 2,
-    "3": 14,
-    "7": 1,
-    "9": 18,
-    "16": 1,
-    "8": 8,
-    "11": 1,
-    "18": 4,
-    "17": 1,
-    "5": 1,
-    "2": 2,
-    "14": 1,
-    "20": 1,
-    "10": 8,
-    "13": 1
+    "7": 327,
+    "13": 437,
+    "14": 587,
+    "18": 299,
+    "10": 279,
+    "12": 255,
+    "3": 299,
+    "4": 535,
+    "19": 320,
+    "5": 736,
+    "8": 133,
+    "0": 200,
+    "9": 409,
+    "11": 166,
+    "15": 1417,
+    "16": 1008,
+    "17": 430,
+    "22": 431,
+    "23": 500,
+    "1": 295,
+    "2": 267,
+    "6": 599,
+    "21": 407,
+    "20": 266
   },
   "message_types": {
-    "19": 3,
-    "0": 8
+    "0": 3424,
+    "19": 711,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -68,137 +100,156 @@
       "channel": ""
     },
     {
-      "id": "1457314509428494347",
-      "content": "",
-      "author": "morimensstaff01",
+      "id": "1457397487559250004",
+      "channel_id": "1170692781216378960",
+      "content": "is tawil secretly the most ass awakener for beginners",
+      "author": "zier.0",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457394430452437176",
+      "channel_id": "1170692781216378960",
+      "content": "hey guys should i get e3 doresain?",
+      "author": "chocobutternut",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457393144030171137",
+      "channel_id": "1170692781216378960",
+      "content": "doresain",
+      "author": "vermiyy",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457436705656406097",
+      "channel_id": "1170692781216378960",
+      "content": "Holy shit, first try no emergency",
+      "author": "nee9211",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457386101239976079",
+      "channel_id": "1170692781216378960",
+      "content": "She touched me",
+      "author": "dragonshiny7",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457387588980834385",
+      "channel_id": "1170692781216378960",
+      "content": "To be fair to [them]\n[This character] like [The other character] is both a dps a",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457445506270625933",
+      "channel_id": "1170692781216378960",
+      "content": "Evil woman good <:camera:1356053040251146460>",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457279866713014324",
+      "channel_id": "1173463482503536711",
+      "content": "眾所周知飛天意麵神教是2006左右的東西，而忘卻世界大概在19__年左右，所以守密人是時間旅行者🤓而說到旅行者，據野史記載，守密人曾經前往提瓦特大陸……",
+      "author": "shostakovich524",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1457288643344470208",
+      "channel_id": "1131839817982947429",
+      "content": "二阶段的20永反害了我",
+      "author": "jidu1418",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1457382539944529930",
+      "channel_id": "1170692781216378960",
+      "content": "1 gnosis per level",
+      "author": "sno_w",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457385966737031250",
+      "channel_id": "1170692781216378960",
+      "content": "Time to touch her...",
+      "author": "kevsalvador",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457276154032685211",
+      "channel_id": "1131839817982947429",
+      "content": "山地瓜：你好，我們是盾擊隊，原理是把防禦力轉換成傷害，步驟是運用傷害型角色高超的防禦能力，由防禦型角色轉換成傷害。\n\n他遊玩家：你要不要聽聽你在說什麼？",
+      "author": "amstelredam",
       "reactions": 5,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1457308953984766105",
-      "content": "That's why i don't count hair style, otherwise everyone would be S tier",
-      "author": "moyashi0672",
-      "reactions": 4,
-      "channel": "Forehead tierlist"
+      "id": "1457350724538208346",
+      "channel_id": "1170692781216378960",
+      "content": "finnaly",
+      "author": "lahung123",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457284698186453033",
-      "content": "如何繪畫瘋狗大男",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1457468446353653792",
-      "content": "24 在「女工指南」說的日語是「刺繍入門書」，那麼在繁體中文對應的字其實是「女紅指南」，這裡「紅」發「工」音。「女工指南」聽起來比較像是「給女性工作者的職場備忘",
-      "author": "amstelredam",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1457440638651072686",
-      "content": "if you haven't figured it out already, that orison will exhaust the card after u",
-      "author": "genosus",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1457424300603871540",
-      "content": "感覺填這種表蠻有趣的",
-      "author": "souri.10244",
-      "reactions": 3,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1457232589604786359",
-      "content": "<:Cheerup:1400771555939844149> <:pray:1356053116260454534>",
-      "author": "deellln",
-      "reactions": 2,
-      "channel": "aequor doodle"
-    },
-    {
-      "id": "1457267196303773762",
-      "content": "baby is growing so fast",
-      "author": "deellln",
-      "reactions": 2,
-      "channel": "aequor doodle"
-    },
-    {
-      "id": "1457300684163776564",
-      "content": "好的，巨刃是命轮对吧？",
-      "author": "l_1427_08233",
-      "reactions": 1,
-      "channel": "请求支援"
-    },
-    {
-      "id": "1457406215972720815",
-      "content": "100274470",
-      "author": "huanire",
-      "reactions": 1,
-      "channel": "💭「处理中」典藏馆事件的解锁到底是什么机制？"
-    },
-    {
-      "id": "1457328286387540172",
-      "content": "gpu: amd 6700xt\ncpu: amd r5 7500f\nram: 64gb ddr5\n\nit first occur when i try to c",
-      "author": "patrueree",
-      "reactions": 1,
-      "channel": "💭「Processing」100% crash rate Lemurian team"
-    },
-    {
-      "id": "1457299143419629742",
-      "content": "during the battle it was visually just in my deck",
-      "author": "quirk6009",
-      "reactions": 1,
-      "channel": "💭「Processing」Kathi's Hyperflare gone"
-    },
-    {
-      "id": "1457440254771331318",
-      "content": "謝謝戈雅～～\n逛了一圈想起旺達啟三也有跟萊克天賦類似的百分比換算",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1457294182166167658",
-      "content": "<@374160183116562432>Hi, after checking the issue, we found that it was caused b",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Endless Download on Steam"
-    },
-    {
-      "id": "1457218182912938015",
-      "content": "哈喽，感谢反馈，这里确实是写错了，后续会修改更新❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」茉夏劇情文本中的「未知而不詳」？"
-    },
-    {
-      "id": "1457250059002445887",
-      "content": "酷耶！",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "我造謠了"
-    },
-    {
-      "id": "1457203031480205333",
-      "content": "A 2 minute overview of Corposant! <:realm_aequor:1437283645051375777> \nhttps://y",
-      "author": "nechromicon",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1457313480737816815",
+      "id": "1457394453613510781",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "author": "salveluiz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1457319057450733746",
-      "content": "謝謝謝謝孩子復活了<:takenotes:1357186646294138890> <:pray:1356053116260454534>",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "id": "1457396091627638866",
+      "channel_id": "1170692781216378960",
+      "content": "Back in my days, I was clearing pre nerfed arc 1 with tulu",
+      "author": "rain_scarlet",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457414442995286149",
+      "channel_id": "1170692781216378960",
+      "content": "Like it or not, flares is saving Morimens <:dizzy2:1356083001926221874>",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457446224188674290",
+      "channel_id": "1170692781216378960",
+      "content": "Im going to make you the divine mother",
+      "author": "guava3442",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457451506646122722",
+      "channel_id": "1170692781216378960",
+      "content": "red flags in women are attractive",
+      "author": "redb100dedwoman",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1457523920545644667",
+      "channel_id": "1170692781216378960",
+      "content": "look the easiest answer is here: wear both",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

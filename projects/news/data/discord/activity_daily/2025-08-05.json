@@ -1,10 +1,28 @@
 {
   "date": "2025-08-05",
-  "messages": 80,
-  "unique_authors": 11,
-  "reactions_total": 137,
-  "attachments": 32,
+  "messages": 14065,
+  "unique_authors": 212,
+  "reactions_total": 1381,
+  "attachments": 541,
   "channel_activity": {
+    "🔸晒卡分享": 4,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 200,
+    "🔸phòng-chat-tiếng-việt": 54,
+    "🔸canal-español": 1020,
+    "🔸canal-português": 1770,
+    "🔸ruang-obrolan-indonesia": 961,
+    "🔸ห้องสนทนาภาษาไทย": 169,
+    "🔸traphase": 133,
+    "🔸lore-chat": 3,
+    "🔸lets-count": 14,
+    "🔸team-building": 30,
+    "🔸general-chat": 181,
+    "🔸綜合討論": 3289,
+    "🔸morimens-game-chat": 6146,
     "Doresain, in flesh (or not, idk i am stuck at 1st arc)": 1,
     "Tier List for 375-425": 21,
     "求求补启和配队建议": 5,
@@ -24,32 +42,34 @@
     "朋友画了赛淋涅（杜勒的妹妹）": 1
   },
   "hourly_activity": {
-    "12": 6,
-    "0": 2,
-    "2": 1,
-    "6": 3,
-    "7": 4,
-    "14": 16,
-    "5": 1,
-    "3": 3,
-    "4": 2,
-    "8": 1,
-    "13": 1,
-    "10": 3,
-    "15": 3,
-    "11": 3,
-    "16": 4,
-    "21": 1,
-    "22": 4,
-    "1": 2,
-    "19": 5,
-    "20": 7,
-    "23": 1,
-    "17": 7
+    "2": 1002,
+    "12": 775,
+    "19": 273,
+    "22": 504,
+    "21": 343,
+    "11": 1093,
+    "13": 859,
+    "17": 518,
+    "3": 1153,
+    "4": 693,
+    "5": 557,
+    "7": 365,
+    "8": 476,
+    "9": 362,
+    "14": 570,
+    "16": 391,
+    "18": 461,
+    "20": 361,
+    "23": 192,
+    "1": 664,
+    "10": 970,
+    "15": 681,
+    "0": 241,
+    "6": 561
   },
   "message_types": {
-    "0": 25,
-    "19": 6
+    "0": 3256,
+    "19": 1294
   },
   "top_reacted_messages": [
     {
@@ -60,6 +80,14 @@
       "channel": "Doresain, in flesh (or not, idk i am stuck at 1st arc)"
     },
     {
+      "id": "1402122821655597167",
+      "channel_id": "1300659662311526512",
+      "content": "Muchas caritas nuevas",
+      "author": "vicho225_uvu",
+      "reactions": 23,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1402132769999425576",
       "content": "幻梦深潜已经半年没更新了，既然实质上已经放弃这个模式去做新内容，应该稍微减负了吧？你们应该也希望玩家把更多的时间花在体验你们集中精力产出的新内容上<:Emoji",
       "author": "zhaoxing233",
@@ -67,11 +95,67 @@
       "channel": "关于幻梦深潜"
     },
     {
+      "id": "1402315913960624128",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402176755975847977",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/anime-all-might-my-hero-academia-boku-no-hero-academia-mh",
+      "author": "lotan_045",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402351785661694182",
+      "channel_id": "1131839817982947429",
+      "content": "好欸 終於過了",
+      "author": "hao0204",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1402246276870832229",
       "content": "居然还是五连抽，居然不出金",
       "author": "akalanden",
       "reactions": 11,
       "channel": "✅「已回答」宁妃在意想不到的地方更加赔钱了"
+    },
+    {
+      "id": "1402204591793115227",
+      "channel_id": "1131839817982947429",
+      "content": "谁谁你为什么打多少多少分",
+      "author": "carme.0588",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402254673896804502",
+      "channel_id": "1131839817982947429",
+      "content": "水母打1-5好棒\n道中最難了<:dead:1356082627509092372>",
+      "author": "_buqi",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402268456769945711",
+      "channel_id": "1131839817982947429",
+      "content": "繼續36000對大家都好",
+      "author": "xingkongzhiyao_",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1402309593354211518",
+      "channel_id": "1131839817982947429",
+      "content": "~~要不要試試創一個新帳號英文名字標籤也全部改成英文~~",
+      "author": "wild_pansy",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1402090181590384744",
@@ -88,109 +172,60 @@
       "channel": "针对新融灾375-425的角色榜单"
     },
     {
-      "id": "1402180841945174108",
-      "content": "是我朋友画给我的！请不要乱用！不过希望官方出一个妹妹的形象，感觉对杜勒很重要（悲\n\n不要问为什么没腿因为我朋友也不会画（\n\n...我发的帖子好像有点多了但这是给",
-      "author": "dittoqwq",
-      "reactions": 6,
-      "channel": "朋友画了赛淋涅（杜勒的妹妹）"
+      "id": "1402253481884258394",
+      "channel_id": "1131839817982947429",
+      "content": "我說難聽的 這傻逼遊戲還一堆人在玩 大家都是傻逼",
+      "author": "xingkongzhiyao_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402233530469187614",
-      "content": "加一句“并使本回合临时手牌上限加1”即可\n我代表我被小小愿望卡没的100个链球发出此帖",
-      "author": "muliupan",
-      "reactions": 5,
-      "channel": "您好，加强一下艾继丝三启，谢谢"
+      "id": "1402120918666576014",
+      "channel_id": "1170692781216378960",
+      "content": "sadge 24 need to make her smile again",
+      "author": "reapersakamaki",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402291884428366086",
+      "id": "1402342538194718842",
+      "channel_id": "1170692781216378960",
+      "content": "We have mpreg",
+      "author": "vinsette",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1402259663944159343",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "lotan_045",
-      "reactions": 4,
-      "channel": "Tier List for 375-425"
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402400913406034051",
-      "content": "~~The wheel's description says it should be 2% Crit Rate per enemy killed, but a",
-      "author": "sophiechoice",
-      "reactions": 3,
-      "channel": "✅「Answered」Not a bug, missed an important detail!"
+      "id": "1402264922733281360",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1402290417789304953",
-      "content": "Lotan's performance in difficulty IV and difficulty V is not optimistic.",
-      "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "Tier List for 375-425"
+      "id": "1402342006503768157",
+      "channel_id": "1170692781216378960",
+      "content": "Okay, excuse me, everyone. Good night, everyone.",
+      "author": "shuijueshuijue0118",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1402376360462127166",
-      "content": "把400的獎勵放到350也行",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "救救狗吧融災求助"
-    },
-    {
-      "id": "1402377529934745701",
-      "content": "支持下調<:pray:1356053116260454534>",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "救救狗吧融災求助"
-    },
-    {
-      "id": "1402266888100249661",
-      "content": "You just need to stop the mindset of staying permanently in joy",
-      "author": "good.th",
-      "reactions": 1,
-      "channel": "Tier List for 375-425"
-    },
-    {
-      "id": "1402290596672180406",
-      "content": "oh,mb.The first tulu1* should be murphy1*.",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "Tier List for 375-425"
-    },
-    {
-      "id": "1402291047006208175",
-      "content": "This issue is controversial, but based on all the circumstances, I believe that ",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "Tier List for 375-425"
-    },
-    {
-      "id": "1402281483510743040",
-      "content": "现在还会有人因为排行榜吵起来。最根本的原因就在于这个排行榜机制。早点优化掉吧。",
-      "author": "xyakoto",
-      "reactions": 1,
-      "channel": "关于幻梦深潜"
-    },
-    {
-      "id": "1402312621058949354",
-      "content": "說真的這好像不是一天兩天，國際dc社區目前的中文區管理員不知道是因為現生還是什麼問題，每次社區產生爭端都不了解事件全貌就隨便禁言別人，常常導致根本不是當事人只是",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "管理員又封錯人"
-    },
-    {
-      "id": "1402324802160689243",
-      "content": "截圖已指出具體問題出現的位置。",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已回答」發現了新的特殊代稱翻譯問題"
-    },
-    {
-      "id": "1402321474777514107",
-      "content": "截圖已突出具體翻譯出問題的地方，感覺圖魯的代稱是翻譯問題的重災區……",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已回答」通訊器-圖魯的特殊代稱存在翻譯問題"
-    },
-    {
-      "id": "1402099480093790300",
-      "content": "有回应就行，不然连个盼头都没有，每次溢出都是对心态的一次重击。",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
+      "id": "1402342773331591219",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "vinsette",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

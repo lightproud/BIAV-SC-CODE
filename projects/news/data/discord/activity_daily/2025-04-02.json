@@ -1,10 +1,23 @@
 {
   "date": "2025-04-02",
-  "messages": 129,
-  "unique_authors": 18,
-  "reactions_total": 121,
-  "attachments": 34,
+  "messages": 6556,
+  "unique_authors": 113,
+  "reactions_total": 258,
+  "attachments": 242,
   "channel_activity": {
+    "🔸morimens-game-chat": 4832,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 132,
+    "🔸русский-канал": 195,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 71,
+    "🔸canal-português": 8,
+    "🔸ruang-obrolan-indonesia": 335,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸traphase": 16,
+    "🔸lore-chat": 1,
+    "🔸綜合討論": 766,
     "An Overview of Various Aequor Teams in the Stellar Chapter (use GPT trans)": 12,
     "Which team should I use?": 1,
     "Clementine translated kit.": 61,
@@ -26,29 +39,36 @@
     "塔薇杯賽制同款表格開源！": 1
   },
   "hourly_activity": {
-    "22": 13,
-    "13": 2,
-    "6": 18,
-    "7": 21,
-    "10": 15,
-    "11": 29,
-    "8": 5,
-    "12": 1,
-    "14": 2,
-    "17": 2,
-    "2": 1,
-    "3": 9,
-    "9": 5,
-    "20": 1,
-    "23": 2,
-    "16": 2,
-    "18": 1
+    "0": 23,
+    "1": 286,
+    "2": 303,
+    "3": 226,
+    "4": 102,
+    "5": 93,
+    "6": 268,
+    "7": 374,
+    "8": 136,
+    "9": 98,
+    "10": 84,
+    "11": 175,
+    "12": 735,
+    "13": 305,
+    "14": 387,
+    "15": 245,
+    "16": 349,
+    "17": 429,
+    "18": 304,
+    "19": 290,
+    "20": 470,
+    "21": 265,
+    "22": 334,
+    "23": 275
   },
   "message_types": {
-    "0": 80,
-    "4": 1,
-    "19": 14,
-    "6": 2
+    "0": 4411,
+    "19": 1248,
+    "20": 1,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -80,6 +100,14 @@
       "channel": "蹈海者不過是一群精神生活在忘卻篇的愚民｜星辰篇各式深海隊伍概覽"
     },
     {
+      "id": "1356932809045839932",
+      "channel_id": "1300659436804640788",
+      "content": "ボスと初期レリックが良かったので初めての72000点チャレンジ成功<:proud1:1356053120651755641>",
+      "author": "eyu17",
+      "reactions": 7,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1356956625679810751",
       "content": "",
       "author": "morimensstaff01",
@@ -101,6 +129,30 @@
       "channel": "🏆相位對弈•玩家賽事頒獎！Traphase•Player Tournament Awards！"
     },
     {
+      "id": "1356994321345413282",
+      "channel_id": "1170692781216378960",
+      "content": "Gonna try clem here when she comes out",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1356860943275004076",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357002234931712050",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1356889960988540950",
       "content": "This is probably overkill for early game but if it's straight to the boss then w",
       "author": "aurora3981",
@@ -108,88 +160,68 @@
       "channel": "Speedrun Team for Early Game"
     },
     {
-      "id": "1357116282721402960",
-      "content": "## Aequor Shield-Slam Team\n- Alternate Characters:\n Alva can replace Caecus or M",
-      "author": "ernest_heart",
+      "id": "1356823243914481694",
+      "channel_id": "1170692781216378960",
+      "content": "this is still 100 times better then aisha",
+      "author": "noire_2",
       "reactions": 2,
-      "channel": "An Overview of Various Aequor Teams in the Stellar Chapter (use GPT trans)"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356950506890723328",
-      "content": "<:sleep2:1356085993626665200> （是這樣對吧",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy"
-    },
-    {
-      "id": "1356998747065679942",
-      "content": "...but remember, that's a secret.",
-      "author": "_avienna",
-      "reactions": 2,
-      "channel": "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy"
-    },
-    {
-      "id": "1356907783479496775",
-      "content": "and i pull the circle wheel that u equip on Tulu so i already got all copied now",
-      "author": "zweihander_2h",
-      "reactions": 2,
-      "channel": "Speedrun Team for Early Game"
-    },
-    {
-      "id": "1356918151119638683",
-      "content": "The game isn't frozen since the blue effect still happens upon clicking the scre",
-      "author": "black_stock",
-      "reactions": 2,
-      "channel": "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen."
-    },
-    {
-      "id": "1356926110558064650",
-      "content": "The steam version is of April 2, 2025 so its not an old version. So I guess its ",
-      "author": "black_stock",
-      "reactions": 2,
-      "channel": "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen."
-    },
-    {
-      "id": "1356834467242840164",
-      "content": "廬大王(´▽｀)ノ這個問題將在後續版本修復~😘",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」7；40为啥诺缔拉死了还能抽到他的牌？"
-    },
-    {
-      "id": "1356986514885705855",
-      "content": "賽後整理了一個新的表格出來，新加了留言板和塗鴉牆可以去畫像素畫，權限設置了所有人可編輯\n“卡牌信息”表里也有復刻上一屆NC杯賽制的全隨機玩法！\n【腾讯文档】塔薇",
-      "author": "calmdreab",
-      "reactions": 2,
-      "channel": "塔薇杯賽制同款表格開源！"
-    },
-    {
-      "id": "1356945980259438733",
-      "content": "Yeah, all her cards have the same 20 str buff leap",
-      "author": "good.th",
-      "reactions": 1,
-      "channel": "Clementine translated kit."
-    },
-    {
-      "id": "1356950700000808960",
-      "content": "maybe chap 2 enemy will havr madess buff",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "Clementine translated kit."
-    },
-    {
-      "id": "1356957612377116703",
-      "content": "Neither is bug race i think",
+      "id": "1356892823235854367",
+      "channel_id": "1170692781216378960",
+      "content": "Nah nymphea was playable day 1",
       "author": ".galeroar",
-      "reactions": 1,
-      "channel": "Clementine translated kit."
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356829830553010348",
-      "content": "Ah! I see Thank you🥲🥲🥲🥲",
-      "author": "legion_schindler",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：深港幽靈之船"
+      "id": "1356897401310543983",
+      "channel_id": "1170692781216378960",
+      "content": "<:anastuteobservationishallmeticul:1356530226791714886>",
+      "author": "undeterredhomo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1356962619906457732",
+      "channel_id": "1170692781216378960",
+      "content": "Wait hold up clem e3 is broken if I'm reading this correctly. Reduce damage deal",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357040625454944560",
+      "channel_id": "1170692781216378960",
+      "content": "Pog. My luck on the chaos banners been insane",
+      "author": "quirk15",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357068634857410641",
+      "channel_id": "1170692781216378960",
+      "content": "I feel like Ghelot fucks all bosses",
+      "author": "lotan_045",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357112843530670090",
+      "channel_id": "1170692781216378960",
+      "content": "its actually impressive",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357028596924940389",
+      "channel_id": "1300659802455674972",
+      "content": "เห็นไม่มีใครตอบเลย เราพึ่งเปิดดิส ขออนุญาตตอบ\nทีมที่มองว่าทำได้ และการโฟกัส\nทีมพ",
+      "author": "2ndselna",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]
 }

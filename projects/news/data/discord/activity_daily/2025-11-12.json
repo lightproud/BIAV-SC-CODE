@@ -1,10 +1,32 @@
 {
   "date": "2025-11-12",
-  "messages": 77,
-  "unique_authors": 21,
-  "reactions_total": 121,
-  "attachments": 38,
+  "messages": 17035,
+  "unique_authors": 212,
+  "reactions_total": 2152,
+  "attachments": 601,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 597,
+    "🔸忘却前夜┊morimens-tv": 3,
+    "🔸机器人命令┊bot-commands": 246,
+    "🔸晒卡分享": 90,
+    "🔸欢乐梗图": 6,
+    "🔸相位对弈": 79,
+    "🔸课间休息闲聊": 17,
+    "🔸한국어-채팅방": 96,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 116,
+    "🔸canal-español": 196,
+    "🔸canal-português": 81,
+    "🔸ruang-obrolan-indonesia": 268,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 381,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 80,
+    "🔸team-building": 512,
+    "🔸general-chat": 8690,
+    "🔸綜合討論": 448,
+    "🔸morimens-game-chat": 4970,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 2,
     "Tulu gif I got from Twitter": 6,
     "Ramona art i did": 3,
@@ -24,34 +46,38 @@
     "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers": 4,
     "✅「已解决」我的忘卻篇主線的銀鑰析出好像BUG了": 1,
     "仔细看 这是一个尤乌": 1,
-    "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10,
-    "🔸欢乐梗图": 3
+    "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10
   },
   "hourly_activity": {
-    "12": 2,
-    "13": 9,
-    "23": 3,
-    "17": 1,
-    "3": 4,
-    "10": 4,
-    "2": 16,
-    "4": 3,
-    "7": 2,
-    "15": 11,
-    "9": 5,
-    "14": 4,
-    "1": 3,
-    "18": 3,
-    "6": 1,
-    "11": 2,
-    "21": 1,
-    "20": 1,
-    "0": 1,
-    "8": 1
+    "2": 369,
+    "5": 771,
+    "7": 1100,
+    "8": 866,
+    "10": 721,
+    "12": 1083,
+    "13": 1045,
+    "14": 861,
+    "0": 844,
+    "1": 567,
+    "3": 425,
+    "4": 798,
+    "6": 1042,
+    "9": 523,
+    "11": 752,
+    "15": 743,
+    "16": 544,
+    "17": 341,
+    "18": 556,
+    "19": 565,
+    "20": 547,
+    "21": 992,
+    "22": 364,
+    "23": 616
   },
   "message_types": {
-    "0": 39,
-    "19": 12
+    "0": 579,
+    "19": 253,
+    "20": 25
   },
   "top_reacted_messages": [
     {
@@ -60,6 +86,14 @@
       "author": "idotly",
       "reactions": 30,
       "channel": "Tulu gif I got from Twitter"
+    },
+    {
+      "id": "1438015023653060680",
+      "channel_id": "1355630588094320661",
+      "content": "1567",
+      "author": "yourdeadbeatdad",
+      "reactions": 25,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1438131912542654515",
@@ -76,11 +110,67 @@
       "channel": "Mango Murphy"
     },
     {
+      "id": "1438120322493714472",
+      "channel_id": "1355630588094320661",
+      "content": "1565",
+      "author": "syruponstrawberrycake",
+      "reactions": 11,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1438252855805870262",
+      "channel_id": "1400750050208125010",
+      "content": "if i dont come back astras pipe bomb exploded",
+      "author": "bongosjam",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1437987192210460852",
+      "channel_id": "1400750050208125010",
+      "content": "https://cdn.discordapp.com/attachments/1127161806717190184/1246388680835465326/U",
+      "author": "bongosjam",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438253430857666640",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438067741297737810",
+      "channel_id": "1131839817982947429",
+      "content": "拚盡全力終於3000分了",
+      "author": "axe_proficient",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1438314180389245058",
       "content": "uhhh fanart i guess, first time actually locking in with a digital art app",
       "author": "nothing_of_wisdom",
       "reactions": 10,
       "channel": "Ramona art i did"
+    },
+    {
+      "id": "1437957447242481819",
+      "channel_id": "1400750050208125010",
+      "content": "Hsr better then zzz",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438278785215762586",
+      "channel_id": "1400750050208125010",
+      "content": "spoon ky",
+      "author": "digitalstar.exe",
+      "reactions": 9,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1438054388194213908",
@@ -90,102 +180,60 @@
       "channel": "💭「Processing」Trade Reality Verge for something else"
     },
     {
-      "id": "1438154263086891100",
-      "content": "<:please:1356053110375714817>",
-      "author": "dustsleeper_",
+      "id": "1438006499132837969",
+      "channel_id": "1435483703114596503",
+      "content": "A summary of every Chaos Realm awakener. This is meant to be a description of wh",
+      "author": "frosthief",
       "reactions": 8,
-      "channel": "Tulu gif I got from Twitter"
+      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
-      "id": "1437997393365831732",
-      "content": "我站之前墨菲的配音",
-      "author": "ahong0727",
-      "reactions": 6,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+      "id": "1438099545031577650",
+      "channel_id": "1181152750319456266",
+      "content": "享受到的力量-25%\n造成的傷害-25%\n傷轉毒反出血再-25%",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1438185604339732631",
-      "content": "官方不回话这个问题很难得到答案 也就期待下你猫会不会把旧的做成替换语音包的模式吧 旧配墨菲确实不赖",
-      "author": "fantuan9711",
-      "reactions": 5,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+      "id": "1438151826590400622",
+      "channel_id": "1400750050208125010",
+      "content": "morimens x fish collab",
+      "author": "bongosjam",
+      "reactions": 8,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1438260199516278967",
-      "content": "众所周知 尤乌十分的帅气",
-      "author": "ahh_1234567890",
-      "reactions": 5,
-      "channel": "仔细看 这是一个尤乌"
+      "id": "1438153454815281204",
+      "channel_id": "1400750050208125010",
+      "content": "no mre boobas",
+      "author": "ruanbius",
+      "reactions": 8,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1438158252373311601",
-      "content": "<@633215996508766229> 有空看梦女吵架还要装死甘霖耐",
-      "author": "fantuan9711",
-      "reactions": 4,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+      "id": "1438029488389623948",
+      "channel_id": "1131839817982947429",
+      "content": "都說了他是大佬",
+      "author": "corposant_1003",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1438095314757226577",
-      "content": "起因是當時給地獄犬oc起名在查閱資料中，在克蘇魯公社的“姆西斯哈”條目中發現了這樣一句話——“原型為北歐神話中的芬里爾”（P3英文克蘇魯wiki也證實了這一點）",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "【考據】第三章中的怪物「嘉爾姆？」的原型"
+      "id": "1438032226292858900",
+      "channel_id": "1131839817982947429",
+      "content": "果然是大佬",
+      "author": "universe.dark",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1438153244848422922",
-      "content": "<:takenotes:1357186646294138890> oh my... I was about to post it",
-      "author": "dustsleeper_",
-      "reactions": 2,
-      "channel": "Tulu gif I got from Twitter"
-    },
-    {
-      "id": "1437999442157637713",
-      "content": "+1",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
-    },
-    {
-      "id": "1438143071995957290",
-      "content": "Sketch for next scene",
-      "author": "j.i9star.",
-      "reactions": 1,
-      "channel": "Working on karma bridge(alsnt) with morimens (wip drawings, editing)"
-    },
-    {
-      "id": "1438015545562628219",
-      "content": "欸<:agree:1400771815076528258>",
-      "author": "suggestion088922",
-      "reactions": 1,
-      "channel": "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate"
-    },
-    {
-      "id": "1437983680483037355",
-      "content": "+4",
-      "author": "jollysquire",
-      "reactions": 1,
-      "channel": "At which Psyche Surge level is Over-Exaltation available?"
-    },
-    {
-      "id": "1437985641974599792",
-      "content": "大佬大佬",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》"
-    },
-    {
-      "id": "1437987287844524032",
-      "content": "哎呀謝謝<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:1356053116260",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》"
-    },
-    {
-      "id": "1438090605489164360",
-      "content": "戈雅一定是不小心抓錯了怎麼抓住了我的心<:Sendflowers:1400771545370067118>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "id": "1438261050188369960",
+      "channel_id": "1170692781216378960",
+      "content": "I like Ultra tho",
+      "author": "alistiel",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

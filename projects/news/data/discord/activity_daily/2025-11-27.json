@@ -1,10 +1,36 @@
 {
   "date": "2025-11-27",
-  "messages": 177,
-  "unique_authors": 40,
-  "reactions_total": 400,
-  "attachments": 40,
+  "messages": 14480,
+  "unique_authors": 359,
+  "reactions_total": 1767,
+  "attachments": 830,
   "channel_activity": {
+    "🔸general-chat": 618,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸game-question": 1429,
+    "🔸机器人命令┊bot-commands": 75,
+    "🔸morimens-game-chat": 6530,
+    "🔸剧情交流": 75,
+    "🔸晒卡分享": 82,
+    "🔸相位对弈": 13,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 39,
+    "🔸deutscher-chatraum": 9,
+    "🔸chaîne-française": 8,
+    "🔸русский-канал": 157,
+    "🔸phòng-chat-tiếng-việt": 11,
+    "🔸canal-español": 992,
+    "🔸canal-português": 226,
+    "🔸ruang-obrolan-indonesia": 740,
+    "🔸ห้องสนทนาภาษาไทย": 194,
+    "🔸traphase": 54,
+    "🔸lore-chat": 414,
+    "🔸lets-count": 45,
+    "🔸频道建议┊server-suggestions": 17,
+    "🔸team-building": 897,
+    "🔸綜合討論": 1643,
+    "🔸阵容构建": 15,
     "jenkins": 2,
     "morimens pixel art": 5,
     "Helot art": 1,
@@ -41,33 +67,36 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "8": 20,
-    "9": 3,
-    "14": 13,
-    "19": 5,
-    "1": 3,
-    "16": 51,
-    "21": 1,
-    "10": 5,
-    "11": 3,
-    "2": 4,
-    "12": 3,
-    "17": 2,
-    "20": 2,
-    "7": 14,
-    "13": 3,
-    "6": 13,
-    "15": 13,
-    "23": 5,
-    "0": 3,
-    "22": 2,
-    "3": 6,
-    "4": 1,
-    "5": 2
+    "0": 441,
+    "1": 413,
+    "2": 727,
+    "4": 663,
+    "5": 428,
+    "6": 661,
+    "7": 706,
+    "8": 566,
+    "9": 937,
+    "10": 767,
+    "11": 648,
+    "12": 600,
+    "13": 1019,
+    "14": 802,
+    "15": 707,
+    "16": 512,
+    "17": 469,
+    "18": 433,
+    "19": 248,
+    "20": 444,
+    "21": 475,
+    "22": 544,
+    "23": 534,
+    "3": 736
   },
   "message_types": {
-    "0": 98,
-    "19": 28
+    "19": 629,
+    "0": 1499,
+    "23": 2,
+    "20": 10
   },
   "top_reacted_messages": [
     {
@@ -134,11 +163,67 @@
       "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
     },
     {
+      "id": "1443514724187897866",
+      "channel_id": "1170692781216378960",
+      "content": "Coucou <@523084324724146193> 👋",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443685096115933396",
+      "channel_id": "1170692781216378960",
+      "content": "Try to avoid vulnerability",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443604100171301045",
+      "channel_id": "1173463482503536711",
+      "content": "但我覺得是官方複製貼上忘記改",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1443487302503632969",
+      "channel_id": "1170692781216378960",
+      "content": "That person probably helped fund the game and kept it alive. We should all be th",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1443548206519816376",
       "content": "感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✦ 奖励会在本周五24点前发到大家的邮箱~\n一等奖的头像框如果以前",
       "author": "morimensstaff01",
       "reactions": 8,
       "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1443497791791042603",
+      "channel_id": "1170692781216378960",
+      "content": "Lore accurate \"friendship\"",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443526510953762898",
+      "channel_id": "1170692781216378960",
+      "content": "How light see eos games",
+      "author": "enternameunavailable",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1443749017862275152",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "neptinu",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1443509722505281658",
@@ -155,60 +240,12 @@
       "channel": "蓋個圖樓"
     },
     {
-      "id": "1443637328600895508",
-      "content": "有時候會卡手",
-      "author": "akkom730",
-      "reactions": 5,
-      "channel": "關於刪卡"
-    },
-    {
-      "id": "1443605514432024716",
-      "content": "<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13560531162604545",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "morimens pixel art"
-    },
-    {
-      "id": "1443438381660110870",
-      "content": "Thank you for your reminder. I have conveyed it to my colleague in charge of the",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.4.0.6 在线维护公告"
-    },
-    {
-      "id": "1443524062922936331",
-      "content": "",
-      "author": "tsubaki9884",
-      "reactions": 3,
-      "channel": "⟨提燈雙子 - 破曉⟩"
-    },
-    {
-      "id": "1443581624670359562",
-      "content": "I'd like to thank Salvador for leading me to this game... Happy 2nd anniversary,",
-      "author": "sofiaebby",
-      "reactions": 2,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
-    },
-    {
-      "id": "1443505043511705600",
-      "content": "也是有錢了，可以請人畫漫畫了🙄💅",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
-    },
-    {
-      "id": "1443640370268340384",
-      "content": "有虛弱易傷",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於刪卡"
-    },
-    {
-      "id": "1443640683498831955",
-      "content": "誕墨的海國重新讓50黑印變回圖圖4費",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "關於刪卡"
+      "id": "1443513447961596026",
+      "channel_id": "1170692781216378960",
+      "content": "the difference between GHelot and Helot is that one of them flails and one of th",
+      "author": "mac2492",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

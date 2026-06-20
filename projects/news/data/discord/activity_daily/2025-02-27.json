@@ -1,10 +1,22 @@
 {
   "date": "2025-02-27",
-  "messages": 176,
-  "unique_authors": 17,
-  "reactions_total": 61,
-  "attachments": 13,
+  "messages": 3139,
+  "unique_authors": 154,
+  "reactions_total": 169,
+  "attachments": 149,
   "channel_activity": {
+    "🔸綜合討論": 262,
+    "🔸阵容构建": 104,
+    "🔸morimens-game-chat": 2036,
+    "🔸相位对弈": 83,
+    "🔸한국어-채팅방": 22,
+    "🔸русский-канал": 68,
+    "🔸canal-español": 18,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 71,
+    "🔸ห้องสนทนาภาษาไทย": 11,
+    "🔸traphase": 247,
+    "🔸lore-chat": 34,
     "Star Chapter 2.1 Tier List": 9,
     "Team Comps": 3,
     "Can anyone please tell me who are the characters that pair well with the red doll?": 1,
@@ -28,26 +40,34 @@
     "喧囂海洋與大冒險：水母神國🪼（幻夢36000分向）": 3
   },
   "hourly_activity": {
-    "15": 5,
-    "16": 7,
-    "5": 7,
-    "10": 1,
-    "12": 8,
-    "0": 16,
-    "2": 14,
-    "7": 12,
-    "8": 66,
-    "1": 1,
-    "3": 11,
-    "9": 1,
-    "13": 4,
-    "14": 3,
-    "6": 8,
-    "4": 12
+    "0": 120,
+    "1": 64,
+    "2": 70,
+    "3": 168,
+    "4": 64,
+    "5": 158,
+    "7": 91,
+    "8": 106,
+    "9": 63,
+    "10": 88,
+    "11": 105,
+    "12": 160,
+    "13": 278,
+    "14": 413,
+    "15": 159,
+    "16": 172,
+    "17": 124,
+    "18": 196,
+    "20": 33,
+    "21": 20,
+    "23": 200,
+    "6": 109,
+    "19": 6,
+    "22": 172
   },
   "message_types": {
-    "19": 5,
-    "0": 13
+    "0": 2362,
+    "19": 601
   },
   "top_reacted_messages": [
     {
@@ -79,11 +99,75 @@
       "channel": "關於星辰篇劇情走格子探索地圖要素"
     },
     {
+      "id": "1344629680032186430",
+      "channel_id": "1131839817982947429",
+      "content": "~~習慣了~~",
+      "author": "cwz.io",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344629209414238308",
+      "channel_id": "1131839817982947429",
+      "content": "說真的真想躺著吃葷糧",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1344504520712917033",
       "content": "现阶段我更喜欢波次，因为有很多的烂格子，比如最早第9章的血池要么扣狂气无事发生，要么回血拿症状连上限也不加，纯纯的负面限制，还有恶心的地刺，走过就扣血",
       "author": "sadanshishen",
       "reactions": 4,
       "channel": "關於星辰篇劇情走格子探索地圖要素"
+    },
+    {
+      "id": "1344464260973072445",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "playstone5",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344465340158967811",
+      "channel_id": "1131839817982947429",
+      "content": "~~看起來像是把汀壓回黑池然後又跳出來的樣子~~",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344595280892264529",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344631847493046364",
+      "channel_id": "1131839817982947429",
+      "content": "~~希莱这种道中总想省着大的，超限稳赚~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344621589236416542",
+      "channel_id": "1131839874132090890",
+      "content": "你像是被玩的",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1344661105426960466",
+      "channel_id": "1131839874132090890",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
     },
     {
       "id": "1344610131282886697",
@@ -93,67 +177,52 @@
       "channel": "Team Comps"
     },
     {
-      "id": "1344493579808149585",
-      "content": "To put it quite simply, there's a lot of different things you can do with trapha",
-      "author": "teleportingninja",
+      "id": "1344493018941624330",
+      "channel_id": "1131839817982947429",
+      "content": "獻上屁屁",
+      "author": "shchng.",
       "reactions": 2,
-      "channel": "New To Traphase and want tips."
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344655256344330272",
-      "content": "說不出有什麼體驗好的點，忘卻篇好像完勝...",
-      "author": "heikwok",
+      "id": "1344610195136970857",
+      "channel_id": "1131839817982947429",
+      "content": "反正以后看到这家公司的游戏别入坑就行",
+      "author": "sense25.",
       "reactions": 2,
-      "channel": "關於攻略募集"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344704638506762351",
-      "content": "—————————\n🌟少許的感言（碎碎念）（廢話）\n今天早上打開深潛榜單，一直翻，發現沒人玩水母（現在打開一看也沒多少），\n但我覺得水母是一個特別可愛的角色，而",
-      "author": "kuritani_yuu",
+      "id": "1344629746981535744",
+      "channel_id": "1131839817982947429",
+      "content": "那我跪回去",
+      "author": "foxcatfurry",
       "reactions": 2,
-      "channel": "喧囂海洋與大冒險：水母神國🪼（幻夢36000分向）"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344517741419302993",
-      "content": "<:cry:1239910167668326480> 我是說我自己凹看看",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "💭「處理中」戈利亞影像"
+      "id": "1344705216439779410",
+      "channel_id": "1131839817982947429",
+      "content": "我也很喜歡他",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344530233256312933",
-      "content": "不过36000还是忘却看老攻略应该可以吧",
-      "author": "damisi.",
-      "reactions": 1,
-      "channel": "關於攻略募集"
+      "id": "1344608977421602826",
+      "channel_id": "1180850818509971466",
+      "content": "誰那麼狗",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
     },
     {
-      "id": "1344536778048012328",
-      "content": "滿等355555應該就夠了吧<:__:1239909731125035058>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "關於攻略募集"
-    },
-    {
-      "id": "1344581038168477809",
-      "content": "好像每期1顆 還有碎片?",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "關於攻略募集"
-    },
-    {
-      "id": "1344582874946338826",
-      "content": "然後上次毒反上限就他說的😡",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "關於攻略募集"
-    },
-    {
-      "id": "1344499301727862906",
-      "content": "好像是，不过现在是两个都稳定触发",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "✅「已回答」塔维繁育这bug还不修?"
+      "id": "1344654084510187541",
+      "channel_id": "1180850818509971466",
+      "content": "大佬不要虐我",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
     }
   ]
 }

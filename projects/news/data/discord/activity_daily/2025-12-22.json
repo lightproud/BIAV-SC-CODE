@@ -1,10 +1,36 @@
 {
   "date": "2025-12-22",
-  "messages": 218,
-  "unique_authors": 54,
-  "reactions_total": 282,
-  "attachments": 32,
+  "messages": 14765,
+  "unique_authors": 297,
+  "reactions_total": 1687,
+  "attachments": 850,
   "channel_activity": {
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 13,
+    "🔸频道建议┊server-suggestions": 20,
+    "🔸team-building": 438,
+    "🔸general-chat": 228,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 1667,
+    "🔸机器人命令┊bot-commands": 59,
+    "🔸morimens-game-chat": 6819,
+    "🔸剧情交流": 134,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 18,
+    "🔸课间休息闲聊": 15,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 15,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1017,
+    "🔸phòng-chat-tiếng-việt": 589,
+    "🔸canal-español": 525,
+    "🔸canal-português": 271,
+    "🔸ruang-obrolan-indonesia": 689,
+    "🔸ห้องสนทนาภาษาไทย": 168,
+    "🔸traphase": 142,
+    "🔸lore-chat": 462,
+    "🔸綜合討論": 1205,
+    "🔸阵容构建": 5,
     "Morimens inspired": 1,
     "Senior William doodles": 3,
     "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ": 30,
@@ -47,7 +73,6 @@
     "V2.4 全SSR命輪解析與強度評比": 1,
     "星辰篇盾击焚决": 3,
     "银霜节日历（圣诞节贺文）": 2,
-    "🔸服务器公告┊server-announcement": 1,
     "1452158639874904217": 1,
     "1296113810549112874": 1,
     "1241345906826153984": 6,
@@ -55,39 +80,44 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "14": 2,
-    "0": 2,
-    "1": 3,
-    "2": 8,
-    "7": 40,
-    "8": 60,
-    "9": 13,
-    "10": 12,
-    "11": 10,
-    "15": 2,
-    "16": 5,
-    "12": 34,
-    "13": 5,
-    "17": 3,
-    "19": 3,
-    "3": 1,
-    "22": 1,
-    "4": 2,
-    "5": 8,
-    "21": 2,
-    "23": 1,
-    "6": 1
+    "21": 641,
+    "0": 181,
+    "3": 484,
+    "4": 361,
+    "5": 399,
+    "8": 601,
+    "9": 664,
+    "10": 745,
+    "12": 601,
+    "17": 789,
+    "15": 1021,
+    "1": 190,
+    "2": 463,
+    "6": 269,
+    "7": 1373,
+    "11": 283,
+    "13": 1025,
+    "16": 827,
+    "18": 738,
+    "19": 422,
+    "20": 653,
+    "22": 454,
+    "23": 786,
+    "14": 795
   },
   "message_types": {
-    "0": 84,
-    "19": 17
+    "0": 1910,
+    "19": 524,
+    "20": 3,
+    "6": 1
   },
   "top_reacted_messages": [
     {
       "id": "1452778800243937411",
+      "channel_id": "1354754985119846581",
       "content": "<@&1440133908661534790> \n\nHey Everyone,  \n\nAs some of you are already aware, we ",
       "author": "cometovilla",
-      "reactions": 91,
+      "reactions": 92,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -98,11 +128,27 @@
       "channel": "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ"
     },
     {
+      "id": "1452566339209134173",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 24,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1452584680435224578",
       "content": "||茉夏别看，全是恶评<:Feelguilty:1400771618174664775> ||",
       "author": "morimensstaff01",
       "reactions": 22,
       "channel": "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ"
+    },
+    {
+      "id": "1452659484366340189",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 17,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1452676472673140903",
@@ -112,6 +158,46 @@
       "channel": "Morimens inspired"
     },
     {
+      "id": "1452661297081487513",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452613151399870507",
+      "channel_id": "1170692781216378960",
+      "content": "I did this last tide. Last 10 mins of rushing 3 waves <:takenotes:13571866462941",
+      "author": "enternameunavailable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1452651130696892509",
+      "channel_id": "1131839817982947429",
+      "content": "5級感覺像4級",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452561267058282637",
+      "channel_id": "1131839817982947429",
+      "content": "# 這不是我們親愛的80%加固嗎",
+      "author": "ena04564",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452593331258527815",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1452526201997361182",
       "content": "命運的兩面\n大小姐生日快樂！",
       "author": "yingmai_",
@@ -119,109 +205,67 @@
       "channel": ""
     },
     {
+      "id": "1452789098384195825",
+      "channel_id": "1174983699935277147",
+      "content": "||其一為大保底 🤡||",
+      "author": "qoob",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1452537567772934306",
+      "channel_id": "1131839817982947429",
+      "content": "我讨厌虫子",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452566025382920323",
+      "channel_id": "1131839817982947429",
+      "content": "每获得一次护盾永久增加10戒备\n护盾可超过血量上限\n🤓 👆",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452590498907684967",
+      "channel_id": "1131839817982947429",
+      "content": "笑死",
+      "author": "ahong0727",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452658845489954858",
+      "channel_id": "1131839817982947429",
+      "content": "在香菜拉麵上",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452660506983923825",
+      "channel_id": "1131839817982947429",
+      "content": "奇怪，我的章魚刺身奶茶的圖怎麼不見了",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1452683675102613576",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1452584901772841031",
       "content": "Whats happening",
       "author": "._.aahh",
       "reactions": 7,
       "channel": "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ"
-    },
-    {
-      "id": "1452562610418352264",
-      "content": "https://tenor.com/view/pepega-swipe-pepega-swipe-credit-card-credit-gif-23046210",
-      "author": "arisuu0604",
-      "reactions": 7,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452618582172237845",
-      "content": "🙏 Please. So many great designs!",
-      "author": "silencio3507",
-      "reactions": 5,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452493152782127316",
-      "content": "1.分析增强\n\n觉醒增强数值由1到2\n对于打击伤害翻倍，对于心眼伤害提高33%。提高幅度很高，但数值太低了导致现在还是差数值。\n临战从过一回合翻倍变为+1次，更",
-      "author": "busy_chipmunk_73748_41947",
-      "reactions": 5,
-      "channel": "星辰篇盾击焚决"
-    },
-    {
-      "id": "1452564610883256320",
-      "content": "有強化格檔，技能給個加固麻煩一下",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452607404310134796",
-      "content": "是V2.4.1版本的限定角色",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452638083270049947",
-      "content": "<@1131790839291596841> \n戈雅 戈雅\n明天可以有技能餅嗎<:pray:1356053116260454534>",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452663838645424290",
-      "content": "等等，这个是真限定还是会正常复刻的，如果是真限定我抽诞墨没资源了啊<:A_pinch:1432980538536493057>",
-      "author": "xmj140028",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452591559026671727",
-      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1185&tnum=1",
-      "author": "taoi002",
-      "reactions": 4,
-      "channel": "V2.4 全SSR命輪解析與強度評比"
-    },
-    {
-      "id": "1452613769069854771",
-      "content": "*me with 1500 premium pulls, forced to finally part with some of them*",
-      "author": "crowlov1",
-      "reactions": 3,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452638301554217031",
-      "content": "",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452638491455524935",
-      "content": "also goddess Hecate pls",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1452536317253652652",
-      "content": "支持 如果能放個冷卻提示會很棒",
-      "author": "elkmilu",
-      "reactions": 3,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1452600730937724938",
-      "content": "more so, it will be stated in the banners description?",
-      "author": "vxvendetta97",
-      "reactions": 3,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1452585163979489280",
-      "content": "如题，礼包内容有点差，但是268买一个头像也太难顶了，如果会加入自选那我可以慢慢等。",
-      "author": "lurenjiao",
-      "reactions": 3,
-      "channel": "✅「已回答」礼包头像和表情会不会加入自选里面"
     }
   ]
 }

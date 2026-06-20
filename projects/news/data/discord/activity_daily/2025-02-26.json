@@ -1,10 +1,24 @@
 {
   "date": "2025-02-26",
-  "messages": 134,
-  "unique_authors": 18,
-  "reactions_total": 27,
-  "attachments": 13,
+  "messages": 4413,
+  "unique_authors": 184,
+  "reactions_total": 337,
+  "attachments": 223,
   "channel_activity": {
+    "🔸綜合討論": 696,
+    "🔸阵容构建": 167,
+    "🔸morimens-game-chat": 2542,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 74,
+    "🔸한국어-채팅방": 89,
+    "🔸русский-канал": 382,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 74,
+    "🔸canal-português": 22,
+    "🔸ruang-obrolan-indonesia": 87,
+    "🔸ห้องสนทนาภาษาไทย": 17,
+    "🔸traphase": 113,
+    "🔸lore-chat": 13,
     "New To Traphase and want tips.": 1,
     "Origin of time": 1,
     "Team comp recs?": 3,
@@ -22,29 +36,154 @@
     "命輪定向": 1
   },
   "hourly_activity": {
-    "21": 1,
-    "5": 4,
-    "12": 3,
-    "13": 1,
-    "20": 1,
-    "7": 1,
-    "15": 5,
-    "11": 104,
-    "3": 6,
-    "1": 4,
-    "2": 2,
-    "6": 2
+    "0": 148,
+    "1": 78,
+    "2": 65,
+    "3": 97,
+    "4": 173,
+    "5": 193,
+    "6": 336,
+    "7": 173,
+    "8": 150,
+    "9": 89,
+    "10": 191,
+    "11": 227,
+    "12": 615,
+    "13": 232,
+    "14": 140,
+    "15": 226,
+    "16": 403,
+    "17": 243,
+    "18": 162,
+    "19": 174,
+    "20": 162,
+    "21": 45,
+    "22": 62,
+    "23": 29
   },
   "message_types": {
-    "0": 5
+    "0": 3446,
+    "19": 833
   },
   "top_reacted_messages": [
+    {
+      "id": "1344372710968397896",
+      "channel_id": "1131839817982947429",
+      "content": "還...還剩一點<:angry:1236950506803560509>",
+      "author": "wild_pansy",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344351761112109148",
+      "channel_id": "1131839817982947429",
+      "content": "~~吓得我去看了看背包，看到还有4k多个贤石碎片就放心了~~",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1344204637611491379",
       "content": "是的，逆轉回合就是貓心中的Crychic(惱",
       "author": ".leesean",
       "reactions": 8,
       "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1344293873068933150",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "mob1065",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344298314266312734",
+      "channel_id": "1131839817982947429",
+      "content": "你才會發現是大學上了你",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344260076323737650",
+      "channel_id": "1131839817982947429",
+      "content": "Aaa身為開盒專家 說的話肯定是有公信力的",
+      "author": "mob1065",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344260094577344555",
+      "channel_id": "1131839817982947429",
+      "content": "哪一個 說出來踢走那壞份子",
+      "author": "nemu_s_t_a_r",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344280321390280755",
+      "channel_id": "1131839817982947429",
+      "content": "好害羞喔 看到阿狗借我的鯊魚打深潛<:heart:1239910691218001961> \n都有100%四月了，又是唯一效果 少一個密契了耶<:cash:12",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344336938253160490",
+      "channel_id": "1131839817982947429",
+      "content": "打一個隊伍久了 除了發現到課金才能快速變強以外 \n通常都是會發現到怎麼狂氣常常差那一點點就能夠開了 那就是代表要去提升能加狂氣的打擊防禦還有其他能加狂氣的指令\n",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344203205193764896",
+      "channel_id": "1131839817982947429",
+      "content": "其實可，但只會觸發一個效果，另一個只有基礎屬性",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344295040855441481",
+      "channel_id": "1131839817982947429",
+      "content": "這裡只有大小姐90級分",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344296967395741717",
+      "channel_id": "1131839817982947429",
+      "content": "||我要去舔腹肌跟胸肌了||",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344252426961686548",
+      "channel_id": "1131839874132090890",
+      "content": "-寧菲婭-",
+      "author": "ivebeenkick",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1344294223658225705",
+      "channel_id": "1131839874132090890",
+      "content": "剩我在帶奧吉爾了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1344383137341505620",
+      "channel_id": "1300659662311526512",
+      "content": "Ericka es una tiktoker jajaja",
+      "author": "100779708",
+      "reactions": 4,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1344197843157520404",
@@ -54,74 +193,36 @@
       "channel": "紅夫人回溯"
     },
     {
-      "id": "1344125811187519630",
-      "content": "討論區也有相同情況\nhttps://discord.com/channels/1131791637933199470/1131839817982947429/1",
-      "author": "_buqi",
+      "id": "1344186973988065382",
+      "channel_id": "1131839817982947429",
+      "content": "无人在意的角落其实这个也没了",
+      "author": "navirecorbeau",
       "reactions": 3,
-      "channel": "✅「已回答」達芙黛爾活動商店沒辦法換"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344330026488827984",
-      "content": "只能说 6，不知道该说什么了",
-      "author": "lurenjiao",
+      "id": "1344202881498087454",
+      "channel_id": "1131839817982947429",
+      "content": "是不是不行",
+      "author": "playstone5",
       "reactions": 3,
-      "channel": "偷偷摸摸把氪金礼包里面的常驻抽删掉了？"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344268593944072253",
-      "content": "我後面再打變成 \n牠被我開狂那回合可以正常拿到超維盾\n但換牠回合行動那時候無法主動獲得1盾",
+      "id": "1344205836397973605",
+      "channel_id": "1131839817982947429",
+      "content": "先放個我再打400我就是狗在這裡...",
       "author": "pray_unbeliever",
-      "reactions": 2,
-      "channel": "✅「已回答」剧情怪护盾bug"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344275201931608066",
-      "content": "感謝守密人的反饋！查證確實有問題，我們將在後續進行修復~",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "✅「已回答」典藏館解鎖的朵和活動頁面不一致"
-    },
-    {
-      "id": "1344266668033052672",
-      "content": "沒有 我找一下之前打狗的影片",
-      "author": "pray_unbeliever",
-      "reactions": 1,
-      "channel": "✅「已回答」剧情怪护盾bug"
-    },
-    {
-      "id": "1344269121260486686",
-      "content": "啟靈強化直接加入文字敘述內",
-      "author": "pray_unbeliever",
-      "reactions": 1,
-      "channel": "✅「已回答」剧情怪护盾bug"
-    },
-    {
-      "id": "1344276053887025164",
-      "content": "We fixed the issue earlier today, please try again❤️",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "✅「Answered」Cannot roll daffodil's event"
-    },
-    {
-      "id": "1344178501632393259",
-      "content": "現在算是最容易抽取的時間了，那0.5%是界域內的限角均分，所以現在只有一隻才真是0.5%，後面第二隻進來就是0.25%中牢紅了☝️ 🤓",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "紅夫人回溯"
-    },
-    {
-      "id": "1344121567700975688",
-      "content": "我猜他指的是那種遊戲裡放在設置裡可以調整全螢幕跟視窗的功能，然後他要的是可以用快捷鍵調整的。",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "ALT+ENTER 不能全螢幕跟小視窗互相切換嗎?"
-    },
-    {
-      "id": "1344146029817364512",
-      "content": "崩鐵 原神 絕區零 鳴潮 爐石戰記都有，1999太久沒登了不確定，甚至STEAM裡面的遊戲 你啟動後，大部分按ALT+ENTER 應該都有這功能",
-      "author": "inukami2266",
-      "reactions": 1,
-      "channel": "ALT+ENTER 不能全螢幕跟小視窗互相切換嗎?"
+      "id": "1344259383969976320",
+      "channel_id": "1131839817982947429",
+      "content": "3號死了<:cry:1239910167668326480>",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

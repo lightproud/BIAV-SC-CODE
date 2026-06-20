@@ -1,23 +1,57 @@
 {
   "date": "2025-07-13",
-  "messages": 104,
-  "unique_authors": 3,
-  "reactions_total": 50,
-  "attachments": 10,
+  "messages": 7825,
+  "unique_authors": 183,
+  "reactions_total": 845,
+  "attachments": 384,
   "channel_activity": {
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸morimens-game-chat": 6399,
+    "🔸日本語チャンネル": 9,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 14,
+    "🔸phòng-chat-tiếng-việt": 123,
+    "🔸canal-español": 643,
+    "🔸canal-português": 12,
+    "🔸ruang-obrolan-indonesia": 23,
+    "🔸ห้องสนทนาภาษาไทย": 40,
+    "🔸traphase": 55,
+    "🔸lore-chat": 134,
+    "🔸綜合討論": 264,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 6,
     "✅「已回答」如视频": 96,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "21": 1,
-    "0": 6,
-    "16": 96,
-    "9": 1
+    "3": 64,
+    "8": 571,
+    "14": 576,
+    "23": 620,
+    "0": 182,
+    "1": 229,
+    "2": 110,
+    "4": 93,
+    "5": 79,
+    "6": 226,
+    "7": 233,
+    "9": 483,
+    "10": 620,
+    "11": 481,
+    "12": 229,
+    "13": 362,
+    "15": 224,
+    "16": 464,
+    "17": 388,
+    "18": 296,
+    "19": 283,
+    "20": 399,
+    "21": 179,
+    "22": 434
   },
   "message_types": {
-    "0": 6,
+    "0": 3,
     "19": 1
   },
   "top_reacted_messages": [
@@ -36,11 +70,107 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
+      "id": "1393786468572463236",
+      "channel_id": "1170692781216378960",
+      "content": "out of steam so likely not finishing any time soon but here’s this for my fellow",
+      "author": "mosske",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394015571128881325",
+      "channel_id": "1170692781216378960",
+      "content": "I can finally build my first Caro team 😌",
+      "author": "dianethedeadly",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1393748895430869214",
       "content": "Jellyfish \nlink to OG post: https://kikuko4545.lofter.com/post/33e2ba_2baf9df97\n",
       "author": "ev_6185",
       "reactions": 11,
       "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393855816557269023",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arjay5830",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393930588976844984",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kabipo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393956535578656829",
+      "channel_id": "1170692781216378960",
+      "content": "My first daffodillll heheh",
+      "author": "kevsalvador",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394013751312781423",
+      "channel_id": "1170692781216378960",
+      "content": "Average f2p player that clear 80% of the game",
+      "author": "melwyn7591",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393756790491058188",
+      "channel_id": "1170692781216378960",
+      "content": "Bout to board the plane rn. This the progress",
+      "author": "cooked_chicken99",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393761428124729385",
+      "channel_id": "1170692781216378960",
+      "content": "Liz main h2-12<:pray:1356053116260454534>",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393883678723014768",
+      "channel_id": "1170692781216378960",
+      "content": "a miserable pile of secrets",
+      "author": "hammer2830",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394013319165378672",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil whale account",
+      "author": "frosthief",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394018439290425516",
+      "channel_id": "1170692781216378960",
+      "content": "69% is a nice number to stop at. I do that for pizza I'm not that sweaty about",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393957860521808134",
+      "channel_id": "1326453763355185215",
+      "content": "early access preview of the project in its current form https://docs.google.com/",
+      "author": "nikolazuli",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1393752149279903846",
@@ -50,25 +180,36 @@
       "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
-      "id": "1393750230779953323",
-      "content": "Very moody Doll piece \nlink to OG post: https://yuan3423.lofter.com/post/1ffed24",
-      "author": "ev_6185",
-      "reactions": 3,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1393767677809660058",
+      "channel_id": "1170692781216378960",
+      "content": "Doresain better be amazing with how long they are holding info on him.  I'm read",
+      "author": "bantacune",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394061975805366324",
-      "content": "I'm truly impressed wow. It's really amazing <:wow:1356053147029864518>",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "My Caecus art"
+      "id": "1393852189436285020",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393894057306095616",
-      "content": "勞斯做飯最好吃了",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": ""
+      "id": "1393877239929503766",
+      "channel_id": "1170692781216378960",
+      "content": "me to you Barcelona people",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394015222833877043",
+      "channel_id": "1170692781216378960",
+      "content": "This game seems to love me almost as much as I love it (first SSR on selector)",
+      "author": "dianethedeadly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

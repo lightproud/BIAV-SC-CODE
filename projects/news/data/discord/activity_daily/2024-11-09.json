@@ -1,10 +1,19 @@
 {
   "date": "2024-11-09",
-  "messages": 31,
-  "unique_authors": 10,
-  "reactions_total": 20,
-  "attachments": 5,
+  "messages": 4202,
+  "unique_authors": 109,
+  "reactions_total": 247,
+  "attachments": 219,
   "channel_activity": {
+    "🔸綜合討論": 509,
+    "🔸morimens-game-chat": 3072,
+    "🔸剧情交流": 8,
+    "🔸相位对弈": 15,
+    "🔸日本語チャンネル": 2,
+    "🔸chaîne-française": 19,
+    "🔸русский-канал": 111,
+    "🔸phòng-chat-tiếng-việt": 162,
+    "🔸canal-español": 273,
     "GPT translation synonyms": 3,
     "蹈海野貓雜技團（釘選有目錄）": 2,
     "覺得羅坦需要加強": 9,
@@ -15,28 +24,66 @@
     "凯刻斯生贺预告": 1
   },
   "hourly_activity": {
-    "15": 4,
-    "0": 2,
-    "9": 3,
-    "10": 2,
-    "12": 4,
-    "14": 7,
-    "17": 3,
-    "19": 1,
-    "11": 3,
-    "5": 1,
-    "16": 1
+    "0": 42,
+    "1": 193,
+    "2": 373,
+    "3": 95,
+    "4": 110,
+    "5": 115,
+    "6": 110,
+    "7": 149,
+    "8": 20,
+    "9": 37,
+    "10": 66,
+    "11": 113,
+    "12": 31,
+    "13": 159,
+    "14": 376,
+    "15": 547,
+    "16": 489,
+    "17": 372,
+    "18": 48,
+    "19": 102,
+    "20": 73,
+    "21": 195,
+    "22": 242,
+    "23": 145
   },
   "message_types": {
-    "0": 3
+    "0": 3334,
+    "19": 837
   },
   "top_reacted_messages": [
+    {
+      "id": "1304766330565562419",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1304837975741562890",
       "content": "帮可令怕老师代发，请期待11号的小鱼生贺！",
       "author": "phantom_ye",
       "reactions": 9,
       "channel": "凯刻斯生贺预告"
+    },
+    {
+      "id": "1304808669585608725",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304768866144227429",
+      "channel_id": "1131839817982947429",
+      "content": "明明我就是一個卑微下賤的強度黨而已",
+      "author": "cra0261_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1304679769463324682",
@@ -46,32 +93,124 @@
       "channel": "死抗序列"
     },
     {
-      "id": "1304790591493898292",
-      "content": "~~或者以蘿莉bba形象出隻sp之類的~~",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "覺得羅坦需要加強"
-    },
-    {
-      "id": "1304828179994906665",
-      "content": "我記得深海毒出過很多片了<:neko_confused65:1200338269951508551> \n~~還是剛好每一部的彌利跟24都錯開~~",
+      "id": "1304764704572313660",
+      "channel_id": "1131839817982947429",
+      "content": "把菲茵特換掉，然後在結算畫面P上菲茵特",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "第八章羊媽召喚的艾繼絲機制"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1304867370384359526",
-      "content": "血量上限在這個b黑潮對深海特別重要，崩盤了就會一直崩下去\n超限跟這個比倒不是那麼重要了",
+      "id": "1304769629830516747",
+      "channel_id": "1131839817982947429",
+      "content": "~~收購後半身~~",
+      "author": "cra0261_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304653225294561311",
+      "channel_id": "1131839817982947429",
+      "content": "我也不接受反駁",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304671923606917202",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1229420110528385074",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304681089264254996",
+      "channel_id": "1131839817982947429",
+      "content": "~~其實道中就被玩到剩21%了~~",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304681886668296273",
+      "channel_id": "1131839817982947429",
+      "content": "我還沒疊完反擊，對面KKS就自殺了，可惡",
+      "author": ".moon_leaf",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304769342365368393",
+      "channel_id": "1131839817982947429",
+      "content": "cra总要收购dc",
+      "author": "qiamo0664",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304820889849958411",
+      "channel_id": "1131839817982947429",
+      "content": "我已經退游了",
+      "author": "0.0w0",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304849444268933120",
+      "channel_id": "1131839817982947429",
+      "content": "我們這種菜雞就沒有生存空間了",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "第八章羊媽召喚的艾繼絲機制"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1304765733456056400",
-      "content": "很抱歉影响了你的游戏体验",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "相位對弈進場卡死"
+      "id": "1304640921928994840",
+      "channel_id": "1131839817982947429",
+      "content": "爱来自深海",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304807401077080145",
+      "channel_id": "1131839817982947429",
+      "content": "~~一定是佬的+12阿库特导致的~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304816096158683147",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304819881828679712",
+      "channel_id": "1131839817982947429",
+      "content": "沒空\n我要畫萊克裸體",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304820929683263519",
+      "channel_id": "1131839817982947429",
+      "content": "現在的我是無敵的",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304821145132072989",
+      "channel_id": "1131839817982947429",
+      "content": "沒\n你現在要小心崩鐵帳號被舉報了",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,36 @@
 {
   "date": "2025-11-09",
-  "messages": 111,
-  "unique_authors": 32,
-  "reactions_total": 527,
-  "attachments": 22,
+  "messages": 20089,
+  "unique_authors": 218,
+  "reactions_total": 3511,
+  "attachments": 812,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 1722,
+    "🔸游戏问题": 2,
+    "🔸机器人命令┊bot-commands": 137,
+    "🔸剧情交流": 37,
+    "🔸晒卡分享": 17,
+    "🔸相位对弈": 11,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 12,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 188,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 76,
+    "🔸canal-português": 94,
+    "🔸ruang-obrolan-indonesia": 10,
+    "🔸ห้องสนทนาภาษาไทย": 145,
+    "🔸traphase": 106,
+    "🔸lore-chat": 189,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 43,
+    "🔸频道建议┊server-suggestions": 13,
+    "🔸team-building": 1441,
+    "🔸general-chat": 7991,
+    "🔸綜合討論": 1021,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 6674,
     "If Life was as usual for Castor and Pollux.": 1,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 6,
     "Kathigu-Ra: Ardor Blossom Star": 4,
@@ -24,42 +50,47 @@
     "✅「Answered」Pollux's Sacred Heart Exhaust Count and Ultra Space": 2,
     "About the limited stat buffs for 2nd aniv.": 2,
     "「我還記得你原本應該是什麼樣子」": 1,
-    "❤️": 3,
-    "🔸服务器公告┊server-announcement": 1
+    "❤️": 3
   },
   "hourly_activity": {
-    "5": 2,
-    "3": 2,
-    "7": 1,
-    "10": 2,
-    "17": 5,
-    "18": 7,
-    "19": 2,
-    "1": 3,
-    "23": 12,
-    "21": 6,
-    "22": 6,
-    "0": 5,
-    "4": 1,
-    "6": 1,
-    "16": 36,
-    "20": 13,
-    "12": 2,
-    "9": 2,
-    "8": 2,
-    "15": 1
+    "4": 865,
+    "5": 1007,
+    "7": 1142,
+    "9": 835,
+    "12": 645,
+    "14": 1078,
+    "15": 358,
+    "18": 696,
+    "0": 675,
+    "1": 1055,
+    "2": 1158,
+    "3": 972,
+    "6": 703,
+    "8": 1320,
+    "10": 947,
+    "11": 852,
+    "13": 979,
+    "16": 589,
+    "17": 832,
+    "19": 337,
+    "20": 384,
+    "21": 856,
+    "22": 807,
+    "23": 997
   },
   "message_types": {
-    "0": 90,
-    "4": 1,
-    "19": 10
+    "0": 1277,
+    "19": 566,
+    "20": 26,
+    "6": 3
   },
   "top_reacted_messages": [
     {
       "id": "1437211905155399781",
+      "channel_id": "1354754985119846581",
       "content": "Hey Keepers!\n\nJust a quick update: The server's level/EXP system is now live on ",
       "author": "cometovilla",
-      "reactions": 255,
+      "reactions": 257,
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
@@ -75,6 +106,14 @@
       "author": "dustsleeper_",
       "reactions": 39,
       "channel": "If Life was as usual for Castor and Pollux."
+    },
+    {
+      "id": "1436996141110526012",
+      "channel_id": "1385040039448412170",
+      "content": "<#1170692781216378960> Instead of removing embed permission for everyone, you sh",
+      "author": "aurora3981",
+      "reactions": 35,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1437219352041754786",
@@ -119,11 +158,43 @@
       "channel": "❤️"
     },
     {
+      "id": "1437081519666626674",
+      "channel_id": "1400750050208125010",
+      "content": "Arisu spammed reactions when I said that Arknight was a Kemonomimi game",
+      "author": "el.shaddoll.nephilim.is.my.ace",
+      "reactions": 13,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1436993311004168384",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1437186161436266710",
       "content": "而且我不拉踩，但你游实际上就是常驻池很多卡颜值厨力都比最新的星辰篇限定高啊，不像别的游戏限定都是最好看的人气最高的，你游还真不一定限定比常驻好看。很多最美的还是",
       "author": "junakaru4ever",
       "reactions": 11,
       "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
+      "id": "1436880049470050478",
+      "channel_id": "1400750050208125010",
+      "content": "ugh it's so tiring being the best person ever....\nSadly no one can take my role ",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1437124376779554898",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "oct3000",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1437213272762745126",
@@ -147,53 +218,20 @@
       "channel": "✅「Answered」Pollux's Sacred Heart Exhaust Count and Ultra Space"
     },
     {
-      "id": "1437185443413233858",
-      "content": "fgo也摆明了数值种姓制，五星卡默认最高90级，四星80，三星70。 但是fgo可以低星厨喂圣杯，喂上去大家都可以120级。你游现在实际上就是从大家都默认最高6",
-      "author": "junakaru4ever",
-      "reactions": 7,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+      "id": "1436962897027666052",
+      "channel_id": "1400749543288475770",
+      "content": "Oh",
+      "author": ".kibana",
+      "reactions": 9,
+      "channel": "🔸team-building"
     },
     {
-      "id": "1436995091871957083",
-      "content": "I would love to see stat buffs on all units or none. Instead of just limited one",
-      "author": "thpdom",
-      "reactions": 6,
-      "channel": "About the limited stat buffs for 2nd aniv."
-    },
-    {
-      "id": "1437177636983017583",
-      "content": "让我相信他们有时间把所有限定所有常驻在限定加三维之后的组队情况使用率都完完整整全面测过了再落地，不如信我是秦始皇",
-      "author": "junakaru4ever",
-      "reactions": 3,
-      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
-    },
-    {
-      "id": "1436976292078686339",
-      "content": "Rendering and lighting im done for the first image!!!!",
-      "author": "j.i9star.",
-      "reactions": 2,
-      "channel": "Working on karma bridge(alsnt) with morimens (wip drawings, editing)"
-    },
-    {
-      "id": "1437194382917894144",
-      "content": "waaaaaa it looks amazing!!!!!",
-      "author": "raumbobulus",
-      "reactions": 1,
-      "channel": "Mother of all"
-    },
-    {
-      "id": "1437218367428755557",
-      "content": "omg welcome!!!\nLove the art too\n\nreally quick rundown to help uhhh <#14335136502",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Helloo"
-    },
-    {
-      "id": "1437218992615063636",
-      "content": "<:pray:1356053116260454534>",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Helloo"
+      "id": "1436976103838191618",
+      "channel_id": "1400750050208125010",
+      "content": "https://huiji-public.huijistatic.com/morimens/uploads/7/74/%E5%87%AF%E8%92%82%E5",
+      "author": "idotly",
+      "reactions": 9,
+      "channel": "🔸general-chat"
     }
   ]
 }

@@ -1,10 +1,26 @@
 {
   "date": "2025-04-05",
-  "messages": 126,
-  "unique_authors": 13,
-  "reactions_total": 142,
-  "attachments": 18,
+  "messages": 6036,
+  "unique_authors": 113,
+  "reactions_total": 307,
+  "attachments": 196,
   "channel_activity": {
+    "🔸阵容构建": 11,
+    "🔸morimens-game-chat": 5137,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 18,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 33,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 3,
+    "🔸canal-português": 2,
+    "🔸ruang-obrolan-indonesia": 200,
+    "🔸ห้องสนทนาภาษาไทย": 30,
+    "🔸traphase": 91,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 371,
     "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 6,
     "📜克萊門汀┊喚醒體&命輪介紹": 83,
     "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 1,
@@ -26,25 +42,34 @@
     "【Morimens】弥萨格的サカバンバスピス": 1
   },
   "hourly_activity": {
-    "4": 4,
-    "7": 1,
-    "9": 5,
-    "8": 4,
-    "10": 5,
-    "11": 2,
-    "12": 1,
-    "14": 35,
-    "15": 49,
-    "5": 7,
-    "6": 6,
-    "18": 2,
-    "19": 1,
-    "0": 2,
-    "3": 2
+    "0": 237,
+    "1": 226,
+    "2": 324,
+    "3": 369,
+    "4": 238,
+    "5": 297,
+    "6": 109,
+    "7": 184,
+    "8": 95,
+    "9": 36,
+    "10": 82,
+    "11": 78,
+    "12": 659,
+    "13": 477,
+    "14": 525,
+    "15": 394,
+    "16": 122,
+    "17": 74,
+    "18": 144,
+    "19": 165,
+    "20": 407,
+    "21": 285,
+    "22": 152,
+    "23": 357
   },
   "message_types": {
-    "0": 65,
-    "19": 25
+    "0": 4231,
+    "19": 1308
   },
   "top_reacted_messages": [
     {
@@ -83,6 +108,14 @@
       "channel": "血肉+深海diy唤醒体设定"
     },
     {
+      "id": "1357964185207832576",
+      "channel_id": "1131839817982947429",
+      "content": "他的下半生在我這裏了",
+      "author": "ahuahuahua",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1358080744697626695",
       "content": "別人退遊我會感嘆一下，但這個退遊我只能說你真6",
       "author": "ena04564",
@@ -104,6 +137,30 @@
       "channel": "【Morimens】弥萨格的サカバンバスピス"
     },
     {
+      "id": "1358091642946715930",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357957649949524149",
+      "channel_id": "1131839817982947429",
+      "content": "希望杜勒賽因的PV也可以有什麼東西彈出來",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358081294973534268",
+      "channel_id": "1131839817982947429",
+      "content": "视奸的时候记得把对话框清了() 要不然一直显示正在输入",
+      "author": "galagalaguo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1358096722458316810",
       "content": "~~不得不说，克莱门汀真是个偷税犯啊~~",
       "author": "silverstream_s",
@@ -118,74 +175,52 @@
       "channel": "超维新唤醒体DIY创作"
     },
     {
-      "id": "1358021415642857533",
-      "content": "萊克萊聯盟",
-      "author": "tofu0834",
+      "id": "1357916383668731955",
+      "channel_id": "1170692781216378960",
+      "content": "she lets me exalt twice with 24 every turn though :<",
+      "author": "zier.0",
       "reactions": 3,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358083325113274609",
-      "content": "換沉澱是個好習慣👍",
-      "author": "ena04564",
+      "id": "1357926158213320775",
+      "channel_id": "1170692781216378960",
+      "content": "u paying 80 or 90",
+      "author": "noire_2",
       "reactions": 3,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358013852045934662",
-      "content": "【V2.2】克莱门汀pv\n主视角到医生门前，门牌上写的是：\nDR.CLEMENTINE'S\nSANATORIUM FOR NERVOUS DISORDERS\n克",
-      "author": "silverstream_s",
+      "id": "1358103914242773016",
+      "channel_id": "1170692781216378960",
+      "content": "miriyam woulda had a simplier life if she had known of mpreg tech",
+      "author": "khykken",
       "reactions": 3,
-      "channel": "游戏美术资源上的文字"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1357970594078916718",
-      "content": "BUG回報 - > 遊戲建議\n240 Max - > ∞",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "✅「Answered」Incorrect Assignment Rewards"
+      "id": "1358190310093619211",
+      "channel_id": "1170692781216378960",
+      "content": "tulu isn't as good for super high stat content because his main strength is long",
+      "author": "applepieeater123",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358083366032769187",
-      "content": "好爽哦 醫生起飛",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+      "id": "1358102883463205125",
+      "channel_id": "1181152750319456266",
+      "content": "我第一次看到15回合的超級卡牌好猛但能早點給就好了<:dead:1356082627509092372>",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1358087511720595687",
-      "content": "pv真像恐怖電影",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
-    },
-    {
-      "id": "1358087625042300968",
-      "content": "看完直接傻眼",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
-    },
-    {
-      "id": "1358088134654558439",
-      "content": "廣播劇也是，很喜歡醫生單方面發話透露的詭異（主要是那個抽神經的asmr很讚",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
-    },
-    {
-      "id": "1358088546539278548",
-      "content": "用耳機聽可太爽了",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
-    },
-    {
-      "id": "1358101742319042803",
-      "content": "比較好奇後面其他新角要怎樣圓角色劇情，畢竟兩個世界，用通訊器補多少有點劇透/吃書",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+      "id": "1358052137602519102",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

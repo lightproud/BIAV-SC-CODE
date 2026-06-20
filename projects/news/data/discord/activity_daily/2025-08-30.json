@@ -1,10 +1,30 @@
 {
   "date": "2025-08-30",
-  "messages": 256,
-  "unique_authors": 30,
-  "reactions_total": 246,
-  "attachments": 31,
+  "messages": 15184,
+  "unique_authors": 395,
+  "reactions_total": 2946,
+  "attachments": 720,
   "channel_activity": {
+    "🔸morimens-game-chat": 11730,
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 10,
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 56,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 29,
+    "🔸русский-канал": 583,
+    "🔸phòng-chat-tiếng-việt": 144,
+    "🔸canal-español": 782,
+    "🔸canal-português": 218,
+    "🔸ruang-obrolan-indonesia": 79,
+    "🔸ห้องสนทนาภาษาไทย": 296,
+    "🔸traphase": 268,
+    "🔸lore-chat": 47,
+    "🔸lets-count": 6,
+    "🔸general-chat": 62,
+    "🔸邀请码互助┊swap-invitation-codes": 81,
+    "🔸綜合討論": 506,
     "uvhash fan art submission": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
     "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 5,
@@ -52,40 +72,82 @@
     "全4級400融災攻略": 54
   },
   "hourly_activity": {
-    "2": 2,
-    "1": 1,
-    "11": 9,
-    "17": 22,
-    "21": 2,
-    "3": 3,
-    "4": 11,
-    "15": 4,
-    "16": 44,
-    "18": 10,
-    "23": 14,
-    "7": 24,
-    "19": 3,
-    "20": 5,
-    "5": 12,
-    "12": 3,
-    "6": 12,
-    "14": 7,
-    "9": 35,
-    "10": 25,
-    "8": 8
+    "0": 448,
+    "1": 475,
+    "2": 486,
+    "3": 466,
+    "4": 363,
+    "5": 509,
+    "6": 398,
+    "7": 426,
+    "8": 350,
+    "9": 385,
+    "10": 524,
+    "11": 477,
+    "12": 595,
+    "13": 589,
+    "14": 764,
+    "15": 1053,
+    "16": 1326,
+    "17": 842,
+    "18": 584,
+    "19": 570,
+    "20": 653,
+    "21": 905,
+    "22": 983,
+    "23": 1013
   },
   "message_types": {
-    "0": 27,
-    "19": 1,
-    "4": 1
+    "0": 9978,
+    "19": 4444
   },
   "top_reacted_messages": [
+    {
+      "id": "1411374312518320219",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1411373175513677925 @everyone n",
+      "author": "game.producer.light",
+      "reactions": 118,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411363643043352710",
+      "channel_id": "1170692781216378960",
+      "content": "Because I was told that many suggestions in the Q&A haven’t been handled or resp",
+      "author": "game.producer.light",
+      "reactions": 54,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411378358914252830",
+      "channel_id": "1170692781216378960",
+      "content": "No stats only skin.",
+      "author": "game.producer.light",
+      "reactions": 39,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1411411788293083247",
       "content": "!! Please think of the following situation. You go to the department store to bu",
       "author": "tksn.",
       "reactions": 38,
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411393135484993567",
+      "channel_id": "1170692781216378960",
+      "content": "On that note, I’m sorry to inform everyone that Murphy’s voice actor has retired",
+      "author": "game.producer.light",
+      "reactions": 33,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411379012302934197",
+      "channel_id": "1170692781216378960",
+      "content": "I'm sad now, cheer me up0 by telling me the color of the next awaker 🙂",
+      "author": "flares117",
+      "reactions": 31,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1411240188641939588",
@@ -95,6 +157,46 @@
       "channel": "全4級400融災攻略"
     },
     {
+      "id": "1411400713740746792",
+      "channel_id": "1170692781216378960",
+      "content": "ok I was curious and added agrippa to ai and see what it made. I created a horro",
+      "author": "flares117",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411384187793182831",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "solxeko",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411376493082447884",
+      "channel_id": "1170692781216378960",
+      "content": "We’re recruiting new members to speed up story localization!",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411361372683370620",
+      "channel_id": "1170692781216378960",
+      "content": "<:Emoji_XLST_O_02:1400771815076528258>",
+      "author": "iibenigml1588",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411362677825077323",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1411441117324644424",
       "content": "@everyone 感谢大家的热烈反馈，我们内部会仔细讨论这一切，然后在实装之前做出可能需要的调整。Thank you all for the enthusia",
       "author": "game.producer.light",
@@ -102,123 +204,60 @@
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
-      "id": "1411398048084398321",
-      "content": "money will come",
-      "author": "quasar_7",
+      "id": "1411380033666158743",
+      "channel_id": "1170692781216378960",
+      "content": "Sorry—you’re muted for one day. This kind of message is not welcome.",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411378843591114927",
+      "channel_id": "1170692781216378960",
+      "content": "We’ve considered it, but a setup like that isn’t suitable for us.",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411379370303684640",
+      "channel_id": "1170692781216378960",
+      "content": "We’re currently only in the experimental planning stage, so the number may be qu",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411266177996558386",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kevsalvador",
       "reactions": 11,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411417140120129788",
-      "content": "I think, instead of gacha, it should be a fixed price with benefits. For example",
-      "author": "tksn.",
-      "reactions": 10,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1411360059102855259",
+      "channel_id": "1170692781216378960",
+      "content": "SJMCXYJP9C use mine",
+      "author": "tnimreppep",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411360566026698884",
-      "content": "@everyone \n\nI’m truly grateful for everyone’s passionate discussion—and even for",
-      "author": "game.producer.light",
-      "reactions": 10,
-      "channel": "✅「Answered」Triple Reruns in the Future"
+      "id": "1411382328168808508",
+      "channel_id": "1170692781216378960",
+      "content": "Miryam is hot Salv is hot. Miryam is a priest, Salve is a priest. Miryam is Aequ",
+      "author": "frosthief",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411365114686476371",
-      "content": "After a character joins the standard pool, we also plan to add their SR Wheels o",
-      "author": "game.producer.light",
-      "reactions": 10,
-      "channel": "✅「Answered」Triple Reruns in the Future"
-    },
-    {
-      "id": "1411399213228622057",
-      "content": "5⭐️皮肤水准到底有多高\n有全新语音吗，\n有炫酷特效吗\n有抖来抖去的LV2d立绘，并且有四五个点击动作吗\n有待机特殊动作吗\n有回城特效吗\n有买装备特殊语音吗\n有",
-      "author": "muliupan",
-      "reactions": 9,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411419340636684330",
-      "content": "不是这……摆明了要大圈特圈💰啊，演都不演了，关键是你们做的皮肤质量能对得起这个标价吗，你游又没有什么首充双倍的优惠，而且充值还有汇率，花比68块还多的钱买一张图",
-      "author": "rdaw5211_53564",
-      "reactions": 9,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411393879940534452",
-      "content": "不需要重配吧?  sp找相似的聲音配就好 sp性格不同 聲音有些許不同也很正常",
-      "author": "insomnia07763",
-      "reactions": 8,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411394349627084810",
-      "content": "考虑到我们还需要给墨菲补充新需要的语音，这是必须之举。",
-      "author": "game.producer.light",
-      "reactions": 8,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411494393919045706",
-      "content": "阿出都還沒出你是要怎麼知道值不值 甚至連卡池概率也沒有 而且皮膚是什麼會影響到你玩遊戲嗎 覺得不值不要買不就好了 又不是有人拿槍指著你要你買",
-      "author": "undecember_news",
-      "reactions": 7,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411394156886233188",
-      "content": "保留原墨菲最好",
-      "author": "muliupan",
-      "reactions": 6,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411395507187875922",
-      "content": "你不是校貓\n還我們漏勺校貓",
-      "author": "shchng.",
-      "reactions": 6,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411360921544036363",
-      "content": "Please always remember: for some people, making games is a way to make money. Fo",
-      "author": "game.producer.light",
-      "reactions": 5,
-      "channel": "✅「Answered」Triple Reruns in the Future"
-    },
-    {
-      "id": "1411394813521035426",
-      "content": "钉宫",
-      "author": "muliupan",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411402329449566319",
-      "content": "I wouldn't mind paying directly the higher rarity skin even if they're 3280 or m",
-      "author": "chunliba",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411447209332834324",
-      "content": "I honestly don't see the point of gacha skin, because skins are a show off and d",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1411363124518453320",
-      "content": "<:wish:1356084702468899117> thanks for the response\n\nwill there be anything done",
-      "author": "zier.0",
-      "reactions": 4,
-      "channel": "✅「Answered」Triple Reruns in the Future"
-    },
-    {
-      "id": "1411224678831226933",
-      "content": "@everyone",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
+      "id": "1411387476211142728",
+      "channel_id": "1170692781216378960",
+      "content": "i could jerk u off <@523084324724146193>",
+      "author": "tnimreppep",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

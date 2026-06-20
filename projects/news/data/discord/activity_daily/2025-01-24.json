@@ -1,10 +1,25 @@
 {
   "date": "2025-01-24",
-  "messages": 61,
-  "unique_authors": 15,
-  "reactions_total": 89,
-  "attachments": 56,
+  "messages": 5150,
+  "unique_authors": 165,
+  "reactions_total": 448,
+  "attachments": 323,
   "channel_activity": {
+    "🔸ruang-obrolan-indonesia": 21,
+    "🔸ห้องสนทนาภาษาไทย": 4,
+    "🔸traphase": 75,
+    "🔸lore-chat": 11,
+    "🔸綜合討論": 269,
+    "🔸morimens-game-chat": 3772,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 24,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 139,
+    "🔸phòng-chat-tiếng-việt": 144,
+    "🔸canal-español": 14,
+    "🔸canal-português": 596,
     "✨為喚醒體著新裝！": 37,
     "《忘卻前夜》周邊企劃說明": 1,
     "English Page pls !!": 1,
@@ -16,26 +31,52 @@
     "cat fist": 1
   },
   "hourly_activity": {
-    "6": 27,
-    "7": 8,
-    "8": 2,
-    "11": 4,
-    "12": 8,
-    "13": 3,
-    "14": 1,
-    "15": 2,
-    "23": 1,
-    "0": 1,
-    "17": 1,
-    "9": 2,
-    "10": 1
+    "9": 189,
+    "10": 215,
+    "12": 155,
+    "13": 193,
+    "14": 367,
+    "16": 277,
+    "18": 83,
+    "5": 294,
+    "3": 269,
+    "4": 544,
+    "6": 183,
+    "17": 63,
+    "23": 123,
+    "19": 138,
+    "20": 70,
+    "0": 217,
+    "1": 187,
+    "2": 412,
+    "8": 95,
+    "11": 115,
+    "15": 386,
+    "7": 390,
+    "21": 108,
+    "22": 77
   },
   "message_types": {
-    "0": 33,
-    "6": 1,
-    "19": 4
+    "19": 18,
+    "0": 93
   },
   "top_reacted_messages": [
+    {
+      "id": "1332221638724288594",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone Hi everyone~ We've initially received feedback from Steam stating that",
+      "author": "game.producer.light",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332221746199400499",
+      "channel_id": "1131839817982947429",
+      "content": "@everyone Hi～ 我们初步收到Steam的反馈，说是有杀毒软件将游戏识别为有害应用所以自动屏蔽了。我们需要查找是哪个杀毒软件哪个代码部份导致。请问使用",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1332237794772516934",
       "content": "🧨新春將近，彌薩格大學也想要趕趕這來自遠東的時髦。\n除了將全校上下布置成喜慶的紅色、燃放帶有奇異火光的煙火、與熟悉的親友一起共進團圓飯……喚醒體們還希望多完成一",
@@ -79,6 +120,14 @@
       "channel": "✨為喚醒體著新裝！"
     },
     {
+      "id": "1332183361015251015",
+      "channel_id": "1170692781216378960",
+      "content": "damn imagine not having every wheel",
+      "author": ".galeroar",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1332242246354862101",
       "content": "",
       "author": "yolo_mode",
@@ -86,39 +135,84 @@
       "channel": "需要吃一點只能在垃圾桶找到的愛情線"
     },
     {
-      "id": "1332239371570774038",
-      "content": "",
-      "author": "morimensstaff01",
+      "id": "1332415064107647077",
+      "channel_id": "1131839817982947429",
+      "content": "第一天就100粉了，好開心",
+      "author": "kevin.yienwenst",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1332149984383996026",
+      "channel_id": "1170692781216378960",
+      "content": "she'll be good 5% of the time now <:gladge:791034783156142149>",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332150246767202420",
+      "channel_id": "1170692781216378960",
+      "content": "hes the King of Retaliate by default because all the other retaliate characters ",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332211650278854687",
+      "channel_id": "1170692781216378960",
+      "content": "Wow Nymphea is amazing, I just beat a 2000 hp boss",
+      "author": "mengluo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1332223475837829162",
+      "channel_id": "1300659436804640788",
+      "content": "えっ！！！スマホ版と正式日本語版がくるんです！？？！？",
+      "author": "murphy.p",
+      "reactions": 4,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1332233968187080785",
+      "channel_id": "1131839817982947429",
+      "content": "長輩圖大量發生中",
+      "author": "tofu0834",
       "reactions": 3,
-      "channel": "✨為喚醒體著新裝！"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1332263697430872104",
-      "content": "<@1131790839291596841> 校貓的素材呢🥺 🥺",
-      "author": "shchng.",
+      "id": "1332259247903211601",
+      "channel_id": "1131839817982947429",
+      "content": "66大順",
+      "author": "lazuritefox",
       "reactions": 3,
-      "channel": "✨為喚醒體著新裝！"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1332326660342812735",
-      "content": "我拼个图你就懂了真的蛮明显(目移)",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": "✨為喚醒體著新裝！"
+      "id": "1332149425979789383",
+      "channel_id": "1170692781216378960",
+      "content": "To turn it into a book",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1332234848278020118",
-      "content": "小破圖罷了⋯",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "需要吃一點只能在垃圾桶找到的愛情線"
+      "id": "1332150440011497513",
+      "channel_id": "1170692781216378960",
+      "content": "The world is somehow balanced\nAll the caecus glazing is balanced out by 400's ha",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1332238543514374236",
-      "content": "我們需要更多馴狗劇情",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "需要吃一點只能在垃圾桶找到的愛情線"
+      "id": "1332152051609632788",
+      "channel_id": "1170692781216378960",
+      "content": "I hear in China theyve postponed the year of the snake to make it the year of th",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,21 @@
 {
   "date": "2024-11-02",
-  "messages": 60,
-  "unique_authors": 14,
-  "reactions_total": 53,
-  "attachments": 13,
+  "messages": 3951,
+  "unique_authors": 131,
+  "reactions_total": 306,
+  "attachments": 213,
   "channel_activity": {
+    "🔸綜合討論": 658,
+    "🔸阵容构建": 398,
+    "🔸morimens-game-chat": 1941,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 33,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 3,
+    "🔸русский-канал": 728,
+    "🔸phòng-chat-tiếng-việt": 67,
+    "🔸canal-español": 59,
+    "🔸ห้องสนทนาภาษาไทย": 2,
     "V1.6.5.0 停服維護公告": 1,
     "蹈海野貓雜技團（釘選有目錄）": 2,
     "求高清圖": 9,
@@ -21,25 +32,52 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "1": 1,
-    "14": 3,
-    "18": 1,
-    "10": 5,
-    "11": 17,
-    "13": 2,
-    "21": 1,
-    "19": 1,
-    "9": 2,
-    "16": 20,
-    "7": 1,
-    "5": 3,
-    "3": 2,
-    "2": 1
+    "2": 165,
+    "3": 120,
+    "4": 186,
+    "5": 51,
+    "6": 71,
+    "7": 52,
+    "8": 130,
+    "9": 85,
+    "10": 77,
+    "11": 64,
+    "13": 230,
+    "14": 360,
+    "15": 579,
+    "16": 349,
+    "18": 258,
+    "19": 343,
+    "20": 32,
+    "21": 141,
+    "12": 44,
+    "0": 36,
+    "1": 96,
+    "17": 158,
+    "22": 206,
+    "23": 118
   },
   "message_types": {
-    "0": 3
+    "0": 3333,
+    "19": 558
   },
   "top_reacted_messages": [
+    {
+      "id": "1302275572638027827",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you all very much for your love for Morimens; it is you who have shown us ",
+      "author": "game.producer.light",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1302190797592199218",
+      "channel_id": "1180850818509971466",
+      "content": "卡牌大师，欢迎穿越万象宇宙，来到了《忘却前夜》。我是超凶地狱犬～Light。",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸相位对弈"
+    },
     {
       "id": "1302302199195500614",
       "content": "牢索：我媽被駭死了？！\n*實際上是養母。\n*表情很安詳是因為畫手顏藝苦手。",
@@ -62,11 +100,83 @@
       "channel": "复工通知"
     },
     {
+      "id": "1302280902696505395",
+      "channel_id": "1170692781216378960",
+      "content": "pls live",
+      "author": "lumato",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1302094214783438858",
+      "channel_id": "1131839817982947429",
+      "content": "這信是不是有點可怕",
+      "author": "natsuya_shoko",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1302290764994318448",
+      "channel_id": "1131839874132090890",
+      "content": "我只会速射",
+      "author": "qiamo0664",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1302301561376210954",
+      "channel_id": "1170692781216378960",
+      "content": "Twinkle is the Ultra husband everyone need",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1302220514181517393",
       "content": "我記得限定都有除了某位沉睡之主<:sleep:1238448786540462130>",
       "author": "wild_pansy",
       "reactions": 5,
       "channel": "求高清圖"
+    },
+    {
+      "id": "1302101936618868837",
+      "channel_id": "1131839817982947429",
+      "content": "提醒一下新手好了，記得稱這次活動把體力all in喔，很少有這種體力返還的活動",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1302297044853194885",
+      "channel_id": "1131839817982947429",
+      "content": "上行音+石质分解白嫖5算力",
+      "author": "ioshift_24740",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1302292652443697255",
+      "channel_id": "1131839874132090890",
+      "content": "~~可以慢速射擊我的要害嗎~~",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1302258911084019743",
+      "channel_id": "1170692781216378960",
+      "content": "Horla’s murderer",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1302337999589212200",
+      "channel_id": "1170692781216378960",
+      "content": "took me like 2 hours but yay",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1302198048830787695",
@@ -83,67 +193,28 @@
       "channel": "八維癮犯了，給你遊角色判型"
     },
     {
-      "id": "1302225641336344657",
-      "content": "小红书有高清",
-      "author": "qiamo0664",
+      "id": "1302294920685551686",
+      "channel_id": "1131839817982947429",
+      "content": "~~我覺得還蠻有用的~~<:cry:1239910167668326480>",
+      "author": "wild_pansy",
       "reactions": 2,
-      "channel": "求高清圖"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1302381247917588640",
-      "content": "Great work on the game! I especially love the characters and their personality, ",
-      "author": "starfish3302",
+      "id": "1302301554816057365",
+      "channel_id": "1131839817982947429",
+      "content": "偷腐",
+      "author": "xinyue.57",
       "reactions": 2,
-      "channel": "suggestion regarding breeding frenzy event"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1302304772510191696",
-      "content": "她的Te是服務於Ni（向所有人復仇的未來）",
-      "author": "ena04564",
+      "id": "1302345320000127057",
+      "channel_id": "1131839817982947429",
+      "content": "我那个时候还不知道这是什么呢",
+      "author": "lusisferre",
       "reactions": 2,
-      "channel": "八維癮犯了，給你遊角色判型"
-    },
-    {
-      "id": "1302218609623568404",
-      "content": "想請問有幾張喜歡的活動圖\n能不能要高清版🥺🥺🙏🏻\n1. 獻給春天的花束\n2.莉莉抽選的含背景圖\n3.墨菲的活動圖",
-      "author": "kkklavier",
-      "reactions": 1,
-      "channel": "求高清圖"
-    },
-    {
-      "id": "1302240346473889896",
-      "content": "可以整个去水印",
-      "author": "qiamo0664",
-      "reactions": 1,
-      "channel": "求高清圖"
-    },
-    {
-      "id": "1302286031474786336",
-      "content": "買小碑送大碑 不用念大碑咒",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "離開前的感謝"
-    },
-    {
-      "id": "1302305042589679647",
-      "content": "原本要用魚翅羹的，但章魚燒跟鯊魚煙有壓ㄚ一的韻",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "八維癮犯了，給你遊角色判型"
-    },
-    {
-      "id": "1302308728929915024",
-      "content": "不用！這個我還是有一點點了解啦（雖然只有一點點）",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "八維癮犯了，給你遊角色判型"
-    },
-    {
-      "id": "1302309702612418643",
-      "content": "但同為Te 2位，希洛依然很重視客觀結果，所以選擇了跟赫柏特合作，因為赫伯特的確提供幫助",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "八維癮犯了，給你遊角色判型"
+      "channel": "🔸綜合討論"
     }
   ]
 }

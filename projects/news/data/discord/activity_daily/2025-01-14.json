@@ -1,10 +1,24 @@
 {
   "date": "2025-01-14",
-  "messages": 61,
-  "unique_authors": 21,
-  "reactions_total": 66,
-  "attachments": 11,
+  "messages": 3863,
+  "unique_authors": 170,
+  "reactions_total": 278,
+  "attachments": 237,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 13,
+    "🔸traphase": 124,
+    "🔸lore-chat": 14,
+    "🔸綜合討論": 455,
+    "🔸阵容构建": 132,
+    "🔸morimens-game-chat": 2265,
+    "🔸剧情交流": 14,
+    "🔸相位对弈": 9,
+    "🔸한국어-채팅방": 185,
+    "🔸русский-канал": 72,
+    "🔸phòng-chat-tiếng-việt": 90,
+    "🔸canal-español": 174,
+    "🔸canal-português": 254,
+    "🔸ruang-obrolan-indonesia": 1,
     "V2.0.0.1 在線維護公告": 3,
     "English Page pls !!": 3,
     "Login issue": 3,
@@ -24,28 +38,34 @@
     "【攻略】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币）": 6
   },
   "hourly_activity": {
-    "2": 10,
-    "0": 2,
-    "23": 1,
-    "6": 3,
-    "8": 2,
-    "13": 7,
-    "15": 4,
-    "22": 1,
-    "5": 6,
-    "7": 8,
-    "11": 2,
-    "3": 3,
-    "10": 2,
-    "9": 1,
-    "4": 4,
-    "1": 1,
-    "16": 1,
-    "18": 3
+    "1": 302,
+    "9": 110,
+    "10": 163,
+    "11": 114,
+    "15": 115,
+    "0": 111,
+    "3": 206,
+    "4": 160,
+    "5": 125,
+    "6": 168,
+    "7": 178,
+    "8": 103,
+    "12": 440,
+    "18": 327,
+    "19": 131,
+    "20": 64,
+    "21": 57,
+    "22": 73,
+    "23": 220,
+    "2": 204,
+    "13": 177,
+    "16": 175,
+    "17": 60,
+    "14": 80
   },
   "message_types": {
-    "0": 1,
-    "19": 2
+    "0": 133,
+    "19": 18
   },
   "top_reacted_messages": [
     {
@@ -63,6 +83,30 @@
       "channel": "建議在主線中加入類似日/月相加成類系統（類似時靈擺）"
     },
     {
+      "id": "1328664824745562135",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1043157626298581032/1328530931195183180/F",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328568181404733557",
+      "channel_id": "1173463482503536711",
+      "content": "小圖圖可愛捏",
+      "author": "kong760",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1328708472774201477",
+      "channel_id": "1131839817982947429",
+      "content": "你比較好用",
+      "author": "mob1065",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1328724114869059685",
       "content": "附议。\n我还希望在星辰篇到来之前，新造物都轮替一下让大家熟悉熟悉。",
       "author": "galagalaguo",
@@ -77,11 +121,75 @@
       "channel": "小玫瑰的惧是不是该加流血了"
     },
     {
+      "id": "1328566422472884245",
+      "channel_id": "1131839817982947429",
+      "content": "演算終於滿了<:wish:1236951537788649492> <:wish:1236951537788649492>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1328795119515730034",
       "content": "抄完作業回來了",
       "author": "harowolf",
       "reactions": 5,
       "channel": "【攻略】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币）"
+    },
+    {
+      "id": "1328626903812276315",
+      "channel_id": "1173463482503536711",
+      "content": "死刑犯的家屬：我的兒子是個好人⋯嗯？他的頭怎麼就不見了？！",
+      "author": "07_li",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1328718362389512253",
+      "channel_id": "1131839817982947429",
+      "content": "低配攻略做好了<:cry:1239910167668326480> \n【【忘却前夜】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328720742841323560",
+      "channel_id": "1131839817982947429",
+      "content": "感谢AI界的肯定",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328628635837665311",
+      "channel_id": "1131839874132090890",
+      "content": "沒凱 沒諾 沒珊",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1328628887059697695",
+      "channel_id": "1131839874132090890",
+      "content": "300左右吧\n~~雖然我是開服玩家~~",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1328629527899013131",
+      "channel_id": "1131839874132090890",
+      "content": "夫人那次回溯了\n之後就沒抽到",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1328794613192069150",
+      "channel_id": "1170692781216378960",
+      "content": "I was very adamant on beating the game without popping revives and then i fought",
+      "author": "aslechi",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1328585905526538302",
@@ -91,25 +199,28 @@
       "channel": "小玫瑰的惧是不是该加流血了"
     },
     {
-      "id": "1328712300357615627",
-      "content": "【浅聊一下忘却前夜】 https://www.bilibili.com/video/BV1bYc8edEGs/?share_source=copy_web&vd",
-      "author": "ruhebaoyangsiwa_97871",
+      "id": "1328586619862781973",
+      "channel_id": "1131839817982947429",
+      "content": "不想她受苦",
+      "author": "xuanxue007",
       "reactions": 2,
-      "channel": "一些游戏感想和建议吧大概"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1328560728197562441",
-      "content": "你好守密人，該BUG已修復~",
-      "author": "morimensstaff01",
+      "id": "1328672151313846355",
+      "channel_id": "1131839817982947429",
+      "content": "我感覺到圖魯會睡過頭",
+      "author": "shchng.",
       "reactions": 2,
-      "channel": "（已解決）超維回合的下一回合減半效果還在"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1328720503598223472",
-      "content": "好強！！！",
-      "author": "2041880926",
-      "reactions": 1,
-      "channel": "【攻略】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币）"
+      "id": "1328697643517345792",
+      "channel_id": "1131839817982947429",
+      "content": "~~哈姆林子宮~~",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

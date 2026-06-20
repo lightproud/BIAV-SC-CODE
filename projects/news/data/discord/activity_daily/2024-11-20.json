@@ -1,10 +1,24 @@
 {
   "date": "2024-11-20",
-  "messages": 69,
-  "unique_authors": 17,
-  "reactions_total": 82,
-  "attachments": 15,
+  "messages": 3523,
+  "unique_authors": 156,
+  "reactions_total": 299,
+  "attachments": 195,
   "channel_activity": {
+    "🔸綜合討論": 722,
+    "🔸阵容构建": 25,
+    "🔸morimens-game-chat": 2153,
+    "🔸剧情交流": 36,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 11,
+    "🔸한국어-채팅방": 24,
+    "🔸chaîne-française": 27,
+    "🔸русский-канал": 70,
+    "🔸phòng-chat-tiếng-việt": 262,
+    "🔸canal-español": 28,
+    "🔸canal-português": 4,
+    "🔸ruang-obrolan-indonesia": 80,
+    "🔸ห้องสนทนาภาษาไทย": 11,
     "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough": 9,
     "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185": 6,
     "Relic Tierlist": 3,
@@ -28,28 +42,34 @@
     "早安…": 3
   },
   "hourly_activity": {
-    "9": 6,
-    "10": 3,
-    "14": 3,
-    "15": 2,
-    "16": 2,
-    "11": 5,
-    "12": 1,
-    "2": 9,
-    "20": 1,
-    "0": 3,
-    "8": 3,
-    "7": 1,
-    "5": 1,
-    "18": 3,
-    "21": 1,
-    "6": 15,
-    "4": 3,
-    "3": 7
+    "0": 205,
+    "1": 140,
+    "2": 155,
+    "3": 363,
+    "4": 48,
+    "5": 74,
+    "6": 82,
+    "7": 141,
+    "8": 362,
+    "9": 72,
+    "10": 288,
+    "11": 137,
+    "12": 283,
+    "13": 177,
+    "14": 213,
+    "15": 333,
+    "16": 278,
+    "17": 20,
+    "22": 13,
+    "23": 20,
+    "18": 28,
+    "19": 25,
+    "20": 41,
+    "21": 25
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "19": 669,
+    "0": 2785
   },
   "top_reacted_messages": [
     {
@@ -67,11 +87,59 @@
       "channel": "早安…"
     },
     {
+      "id": "1308834319154024468",
+      "channel_id": "1180850818509971466",
+      "content": "1700分的看见1470分的就不能让一下是吧，拿个新角色一直复活恶心我，没木琴的贱种",
+      "author": "jiayang0511",
+      "reactions": 17,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1308641891235004496",
+      "channel_id": "1131839817982947429",
+      "content": "今日脑缸组。",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308858613141471293",
+      "channel_id": "1180850818509971466",
+      "content": "友善讨论",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1308667726880968744",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "qiamo0664",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1308730391825354845",
       "content": "Hello everyone, I'm 鯊魚腳下的野貓 aka Ernest the Silver hunter.\nThis time, I'd like to",
       "author": "ernest_heart",
       "reactions": 8,
       "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
+    },
+    {
+      "id": "1308627549240295485",
+      "channel_id": "1131839817982947429",
+      "content": "我都乱用资源了，刚1000沉淀换了不公平交换",
+      "author": "sense25.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308652683653156934",
+      "channel_id": "1131839817982947429",
+      "content": "不然日常任务就是必须72000才能拿了",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1308710450426282066",
@@ -81,11 +149,67 @@
       "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
+      "id": "1308628583639420980",
+      "channel_id": "1131839817982947429",
+      "content": "就是不平等😡，凭什么一个钥令要用两个原型视界的沉淀😭",
+      "author": "sense25.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308806692078878771",
+      "channel_id": "1173463482503536711",
+      "content": "粉聰明",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1308623540953813022",
       "content": "近期收到守密人反饋，iOS設備使用Facebook帳戶進行認證登入時，可能出現重複彈出登入認證介面，但無法完成登入的情況。\n    該問題需要在手機【設置】-【",
       "author": "lubi_17667",
       "reactions": 4,
       "channel": "Facebook帳戶登入失敗解決方法"
+    },
+    {
+      "id": "1308639567162900532",
+      "channel_id": "1131839817982947429",
+      "content": "好想提升含鯊量",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308754307914661899",
+      "channel_id": "1131839817982947429",
+      "content": "打开书：阿格莱雅\n合上书：阿莱斯特\n打开书：阿格莱雅\n合上书：巴黎欧莱雅\n打开书：阿格莱雅\n合上书：雅塔……雷霆雅塔莱斯！",
+      "author": "aprohectus",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308821192081276990",
+      "channel_id": "1131839817982947429",
+      "content": "珈倫3費也開始沉海底",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308744471135129620",
+      "channel_id": "1131839874132090890",
+      "content": "我的+12，所以可能不準",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1308596200026411078",
+      "channel_id": "1170692781216378960",
+      "content": "the only one they didnt do all aequor was the aisha + hameln + thais dtide seaso",
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1308631726452506625",
@@ -95,81 +219,12 @@
       "channel": "关于塔薇"
     },
     {
-      "id": "1308795753728311317",
-      "content": "chaos seem to be mising 24 \n\nher best enlighten is the one that improves her 3-c",
-      "author": "andrewaw",
+      "id": "1308626618838679594",
+      "channel_id": "1131839817982947429",
+      "content": "好家伙高維之繭",
+      "author": "ena04564",
       "reactions": 2,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308730508963745792",
-      "content": "## Tentacle <:sleep:1238448786540462130> <:Heartbeat:1236951458176565389> \n**Adv",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
-    },
-    {
-      "id": "1308738724267560960",
-      "content": "",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
-    },
-    {
-      "id": "1308795175723859988",
-      "content": "Hello i made a guide to help me and others find the best Enlighten",
-      "author": "andiekitten",
-      "reactions": 1,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308799679688867972",
-      "content": "<:heart:1239910691218001961> I have updated the sheet for 24 and Sorel, thank yo",
-      "author": "andiekitten",
-      "reactions": 1,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308817841843339284",
-      "content": "I think Tawil can stop at E2\nsince she can get crit from relics, supports and wh",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308825352797290607",
-      "content": "Since this is a f2p guide, I think it is worth mentioning that tulu will likely ",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308826607925858387",
-      "content": "Tulu will have abyssal rate so his status won’t be that different",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
-    },
-    {
-      "id": "1308758970093011005",
-      "content": "<@1168738854837166162>   I gave an example in English above. You might understan",
-      "author": "reireal",
-      "reactions": 1,
-      "channel": "New Thai language ( GPT beta ) so bad"
-    },
-    {
-      "id": "1308631524694036552",
-      "content": "We are working on making the mobile version available on more regions' App Store",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "How to buy currency on mobile?"
-    },
-    {
-      "id": "1308629363834491001",
-      "content": "我们会检查一下 感谢反馈",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "塔薇的Bug"
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,31 @@
 {
   "date": "2025-09-17",
-  "messages": 81,
-  "unique_authors": 12,
-  "reactions_total": 88,
-  "attachments": 32,
+  "messages": 11204,
+  "unique_authors": 184,
+  "reactions_total": 1649,
+  "attachments": 394,
   "channel_activity": {
+    "🔸русский-канал": 178,
+    "🔸phòng-chat-tiếng-việt": 34,
+    "🔸canal-español": 472,
+    "🔸canal-português": 11,
+    "🔸ruang-obrolan-indonesia": 240,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 42,
+    "🔸lore-chat": 9,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 8,
+    "🔸general-chat": 36,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸morimens-game-chat": 8646,
+    "🔸剧情交流": 18,
+    "🔸晒卡分享": 95,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸deutscher-chatraum": 6,
+    "🔸綜合討論": 1202,
+    "🔸阵容构建": 9,
     "Murphy 🍰": 2,
     "Kaly Tier Lists - Sept 2025": 3,
     "Morimens: Game Mechanics and Terms": 1,
@@ -33,32 +54,68 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "22": 4,
-    "5": 2,
-    "8": 11,
-    "15": 1,
-    "4": 3,
-    "20": 3,
-    "21": 2,
-    "16": 4,
-    "7": 6,
-    "18": 12,
-    "11": 2,
-    "3": 10,
-    "6": 2,
-    "10": 2,
-    "17": 5,
-    "13": 5,
-    "14": 1,
-    "23": 1,
-    "1": 1,
-    "2": 4
+    "15": 644,
+    "16": 595,
+    "17": 565,
+    "18": 374,
+    "20": 427,
+    "21": 405,
+    "4": 538,
+    "5": 539,
+    "8": 136,
+    "9": 362,
+    "10": 467,
+    "12": 568,
+    "13": 643,
+    "14": 587,
+    "0": 125,
+    "1": 533,
+    "2": 478,
+    "3": 362,
+    "7": 457,
+    "19": 533,
+    "22": 228,
+    "23": 399,
+    "6": 631,
+    "11": 608
   },
   "message_types": {
-    "0": 26,
-    "19": 6
+    "0": 747,
+    "19": 298
   },
   "top_reacted_messages": [
+    {
+      "id": "1417979392931397752",
+      "channel_id": "1170692781216378960",
+      "content": "Where are my fellow story skippers <:cry3:1356082134447558748>",
+      "author": "moyashi0672",
+      "reactions": 40,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417950052516626596",
+      "channel_id": "1300659662311526512",
+      "content": "1% probabilidades 99% de fe(de 53% a 7% dr)",
+      "author": "amagawa.mary",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418023422524657695",
+      "channel_id": "1170692781216378960",
+      "content": "hi everyone",
+      "author": "arisuu0604",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417687338171109508",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 18,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1418001662081105920",
       "content": "",
@@ -67,11 +124,51 @@
       "channel": "Murphy 🍰"
     },
     {
+      "id": "1417985519853502465",
+      "channel_id": "1300659662311526512",
+      "content": "bloquear usuario",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1417793440351256680",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "tofu0834",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1417749216842743899",
       "content": "Often new players are asking for a Tier List.  I'm not really a fan of a large g",
       "author": "climbkaly",
       "reactions": 14,
       "channel": "Kaly Tier Lists - Sept 2025"
+    },
+    {
+      "id": "1417935199429464084",
+      "channel_id": "1300659662311526512",
+      "content": "Maldito vicio",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418010417166291168",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "ancientbp",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1417964098850656367",
+      "channel_id": "1170692781216378960",
+      "content": "Only shard u shouldnt use is Horla because she nerfs ur hand at E2",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1417761650869538896",
@@ -88,116 +185,60 @@
       "channel": "Morimens: Game Mechanics and Terms"
     },
     {
-      "id": "1417792099675279361",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：皮克曼EP·疯画奇旅，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照",
-      "author": "morimensstaff01",
-      "reactions": 6,
-      "channel": "忘却前夜OST：皮克曼EP·疯画奇旅"
+      "id": "1417824058011291689",
+      "channel_id": "1170692781216378960",
+      "content": "I'm not falling for y'all mindgames im only into mpreg",
+      "author": "sugarspawn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417690715818950706",
-      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=997&tnum=1",
-      "author": "taoi002",
-      "reactions": 4,
-      "channel": "阿拉克涅，技能與命輪介紹"
+      "id": "1417964663001448611",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> can we get a selector in archive  for game boot up screen ",
+      "author": "poodaloom",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417772173770358785",
+      "id": "1417797069376065537",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "yingmai_",
-      "reactions": 4,
-      "channel": ""
+      "author": "2041880926",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1418001782721740915",
-      "content": "Bonus doodles",
-      "author": "happyskull",
-      "reactions": 3,
-      "channel": "Murphy 🍰"
+      "id": "1417842507760537692",
+      "channel_id": "1174983699935277147",
+      "content": "嘻嘻\n2800\n很乾淨的數字",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1417772740278095943",
-      "content": "神秘垂耳兔",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1417773023225843822",
-      "content": "醒图滤镜真好用吧",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1417842352642588692",
-      "content": "I've attached my current box below, new to the game and is still trying to figur",
-      "author": "maririn.g",
-      "reactions": 2,
-      "channel": "Team Building, Selectors and Pulling Plan"
-    },
-    {
-      "id": "1417766646642249819",
-      "content": "Almost everywhere, not just in the example image, of the Thai UI, the vowels are",
-      "author": "darkerkuro",
-      "reactions": 2,
-      "channel": "✅「Answered」Issue with Thai UI vowel positioning."
-    },
-    {
-      "id": "1417924145836196013",
-      "content": "总的来说会回调为更经典的体验 近期的新角色基本也会重做",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「已回答」缠绕机制能改下吗？"
-    },
-    {
-      "id": "1417925830817874010",
-      "content": "泪🔪回来吧，哪怕直能分解一次<:pray:1400771650064089112>",
+      "id": "1417774285392445562",
+      "channel_id": "1131839817982947429",
+      "content": "然后迟点po融灾400🫠",
       "author": "cs001092",
-      "reactions": 2,
-      "channel": "✅「已回答」缠绕机制能改下吗？"
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1417967240858566858",
-      "content": "Clem Horla winkle orgier. Pull Clem on the upcoming reruns\nTawil Ham Ryker Karen",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "what teams can i build or characters to summon for future teams?"
+      "id": "1417847158803005531",
+      "channel_id": "1170692781216378960",
+      "content": "Just got this for a dollar<:pray:1356053116260454534>",
+      "author": "elia041104",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1417944493960724571",
-      "content": "you can't, that is why you stack them and then you dismantle the +12 you form",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "I can't Dismantle low rank WOD cause they're lock"
-    },
-    {
-      "id": "1417944691483348993",
-      "content": "Thank a lot",
-      "author": "andrewgotfame_38019",
-      "reactions": 1,
-      "channel": "I can't Dismantle low rank WOD cause they're lock"
-    },
-    {
-      "id": "1417915730187518144",
-      "content": "There are two posion teams endgame:\n\n1. 24 Blue. The unit 24 (you don't have) in",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Team Building, Selectors and Pulling Plan"
-    },
-    {
-      "id": "1417935601000255618",
-      "content": "Enjoy. Have fun!",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Team Building, Selectors and Pulling Plan"
-    },
-    {
-      "id": "1417736066307330168",
-      "content": "pls check DM if can",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」About new Ryker buff"
+      "id": "1417851473810690099",
+      "channel_id": "1170692781216378960",
+      "content": "can we bully lub",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

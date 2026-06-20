@@ -1,10 +1,22 @@
 {
   "date": "2024-12-09",
-  "messages": 24,
-  "unique_authors": 6,
-  "reactions_total": 37,
-  "attachments": 8,
+  "messages": 4132,
+  "unique_authors": 132,
+  "reactions_total": 264,
+  "attachments": 199,
   "channel_activity": {
+    "🔸綜合討論": 597,
+    "🔸阵容构建": 51,
+    "🔸morimens-game-chat": 2728,
+    "🔸剧情交流": 20,
+    "🔸相位对弈": 12,
+    "🔸한국어-채팅방": 8,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 13,
+    "🔸phòng-chat-tiếng-việt": 317,
+    "🔸canal-español": 58,
+    "🔸canal-português": 289,
+    "🔸ruang-obrolan-indonesia": 4,
     "Rykerrrr": 1,
     "[Official Giveaway] Blessing Beyond Dimensions": 4,
     "🏆【已開獎】彌薩格週年頒獎典禮": 2,
@@ -14,20 +26,34 @@
     "原初之影 第六關 瘋狂之視 分享": 5
   },
   "hourly_activity": {
-    "6": 1,
-    "16": 4,
-    "0": 2,
-    "3": 2,
-    "4": 5,
-    "9": 3,
-    "13": 2,
-    "5": 1,
-    "8": 1,
-    "10": 2,
-    "11": 1
+    "0": 87,
+    "1": 133,
+    "2": 188,
+    "3": 170,
+    "4": 215,
+    "5": 111,
+    "6": 111,
+    "7": 308,
+    "8": 364,
+    "9": 72,
+    "10": 63,
+    "11": 197,
+    "12": 168,
+    "13": 171,
+    "14": 166,
+    "15": 165,
+    "17": 70,
+    "18": 119,
+    "19": 124,
+    "20": 130,
+    "21": 185,
+    "23": 294,
+    "16": 140,
+    "22": 381
   },
   "message_types": {
-    "0": 5
+    "0": 3470,
+    "19": 638
   },
   "top_reacted_messages": [
     {
@@ -45,6 +71,70 @@
       "channel": "遊戲大廳能否可以自行更改遊戲的BGM?"
     },
     {
+      "id": "1315665475195113493",
+      "channel_id": "1131839874132090890",
+      "content": "3T血肉塔薇高配強殺\n塔薇：狂氣爆發全抓1、0費的卡，這是拿來丟的不要拍掉，前兩次開狂後拍縱貫拿雙倍翼卡\n哈姆林：回算＆重複生效工具人，主要對塔薇的縱貫(拿翼卡",
+      "author": "pray_unbeliever",
+      "reactions": 10,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1315605778459262996",
+      "channel_id": "1131839817982947429",
+      "content": "貓應該新增成就，就叫「你染上忘卻前夜了？！」",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315659199195123763",
+      "channel_id": "1131839817982947429",
+      "content": "用腦還有眼睛換來的2分半的3T",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315717323264495739",
+      "channel_id": "1173463482503536711",
+      "content": "~~這學校的正太控怎麼那麼多~~",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1315608715361255444",
+      "channel_id": "1131839817982947429",
+      "content": "推一個深海毒隊><\n4分鐘一場無腦開毒",
+      "author": "ichikaguya._52033",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315540771079852073",
+      "channel_id": "1173463482503536711",
+      "content": "記得沒錯現在看到的大部分童話故事都是改編過的才對",
+      "author": "07_li",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1315691550541484033",
+      "channel_id": "1173463482503536711",
+      "content": "感覺像是地獄笑話",
+      "author": "andy1123",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1315544654011174984",
+      "channel_id": "1180850818509971466",
+      "content": "結論：天胡",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1315715106491076669",
       "content": "Through the eyes of the Creator, countless Keepers from multiple worlds stand si",
       "author": "gd_prawl",
@@ -52,18 +142,76 @@
       "channel": "[Official Giveaway] Blessing Beyond Dimensions"
     },
     {
-      "id": "1315626371372027926",
-      "content": "誠意推薦深海毒🌹 \n二十幾場平均5-6回合結束\n回合出牌數平均7-10張\nhttps://youtu.be/bCREKhsj2qo",
-      "author": "ichikaguya._52033",
-      "reactions": 2,
-      "channel": "原初之影 第六關 瘋狂之視 分享"
+      "id": "1315582337626411038",
+      "channel_id": "1131839817982947429",
+      "content": "我染上忘卻前夜了😭",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1315636868146266162",
-      "content": "第九章主線打到9-3",
+      "id": "1315643157496725534",
+      "channel_id": "1131839817982947429",
+      "content": "好吧我才知道纯血队是没有炉子的<:flop:1243504846062223360>",
+      "author": "forfun1900",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315535041018855484",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯<:wish:1236951537788649492> \n雖然主要是24打的比較多",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315636041021132900",
+      "channel_id": "1131839817982947429",
+      "content": "低配混沌組，助戰隨便拉一隻普拉就行。\n有鑰令開鑰令，小小心願24滿給普拉，紅24時再拉3費來打，打不快但練好感剛好",
       "author": "plk214",
-      "reactions": 1,
-      "channel": "原初之影 第六關 瘋狂之視 分享"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315690600904786034",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry:1239910167668326480> 是現在新角太強等級低就能打到這",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315706357797879819",
+      "channel_id": "1131839817982947429",
+      "content": "耐活王",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315532954226659358",
+      "channel_id": "1131839874132090890",
+      "content": "我記得是\n希洛 蘿坦 羊媽 艾繼絲\n或者羊媽換雷婭",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1315774185997340712",
+      "channel_id": "1170692781216378960",
+      "content": "Shes so different bro...",
+      "author": "aslechi",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1315809252417470475",
+      "channel_id": "1170692781216378960",
+      "content": "I do dive and pvp, i like to vary a bit between the 2",
+      "author": "pinguimally3689",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

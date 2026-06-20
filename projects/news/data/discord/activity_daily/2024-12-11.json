@@ -1,10 +1,25 @@
 {
   "date": "2024-12-11",
-  "messages": 62,
-  "unique_authors": 18,
-  "reactions_total": 129,
-  "attachments": 15,
+  "messages": 3834,
+  "unique_authors": 146,
+  "reactions_total": 399,
+  "attachments": 191,
   "channel_activity": {
+    "🔸綜合討論": 576,
+    "🔸阵容构建": 11,
+    "🔸morimens-game-chat": 2843,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 17,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 6,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 11,
+    "🔸phòng-chat-tiếng-việt": 146,
+    "🔸canal-español": 104,
+    "🔸canal-português": 24,
+    "🔸ruang-obrolan-indonesia": 27,
+    "🔸ห้องสนทนาภาษาไทย": 2,
     "[Official Announcement]V1.7.3.0 Maintenance Announcement": 2,
     "腳本及外掛處理規則": 16,
     "🌌【已開獎】超越維度的祝福": 3,
@@ -19,25 +34,34 @@
     "這太美麗了😭": 7
   },
   "hourly_activity": {
-    "14": 3,
-    "2": 14,
-    "3": 6,
-    "8": 1,
-    "11": 8,
-    "12": 4,
-    "13": 6,
-    "15": 1,
-    "5": 1,
-    "6": 6,
-    "21": 1,
-    "23": 2,
-    "17": 2,
-    "4": 2,
-    "7": 3,
-    "10": 2
+    "0": 29,
+    "1": 95,
+    "2": 125,
+    "3": 153,
+    "4": 91,
+    "5": 204,
+    "6": 191,
+    "7": 101,
+    "8": 131,
+    "9": 190,
+    "10": 102,
+    "11": 291,
+    "12": 381,
+    "13": 115,
+    "14": 132,
+    "15": 116,
+    "16": 241,
+    "18": 380,
+    "20": 35,
+    "23": 115,
+    "17": 169,
+    "19": 219,
+    "21": 67,
+    "22": 161
   },
   "message_types": {
-    "0": 2
+    "19": 633,
+    "0": 3139
   },
   "top_reacted_messages": [
     {
@@ -53,6 +77,14 @@
       "author": "xuanxue007",
       "reactions": 33,
       "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1316284678461722695",
+      "channel_id": "1131839874132090890",
+      "content": "~~所以羊媽劇情誰有腦補出那篝火晚會144P的劇情 我需要那段~~",
+      "author": "pray_unbeliever",
+      "reactions": 28,
+      "channel": "🔸阵容构建"
     },
     {
       "id": "1316457053627224134",
@@ -90,11 +122,51 @@
       "channel": "腳本及外掛處理規則"
     },
     {
+      "id": "1316274069150109759",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1316374539285954580",
       "content": "~~搞不好是因為要開最後一關了趕快砍一下血鏈 說不定最後一關有黃金造物能刷所以才要避免血鏈太強勢~~",
       "author": "pray_unbeliever",
       "reactions": 6,
       "channel": "V1.7.3.0 停服維護公告"
+    },
+    {
+      "id": "1316355604981481525",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "love_kiana",
+      "reactions": 5,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1316314976729694268",
+      "channel_id": "1131839817982947429",
+      "content": "你可以趴下睡觉(●—●)",
+      "author": "shimizusakukoi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316401731755839509",
+      "channel_id": "1131839817982947429",
+      "content": "稍微曬一下",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316366554882899979",
+      "channel_id": "1300659436804640788",
+      "content": "https://store.steampowered.com/news/app/3052450/view/535462330398408734",
+      "author": "lubi_17667",
+      "reactions": 4,
+      "channel": "🔸日本語チャンネル"
     },
     {
       "id": "1316235099003424809",
@@ -104,18 +176,44 @@
       "channel": "腳本及外掛處理規則"
     },
     {
-      "id": "1316457188968894605",
-      "content": "感謝反饋。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "原初之影 瘋狂之視 釋放鑰令不會抽牌"
+      "id": "1316235995963854899",
+      "channel_id": "1131839817982947429",
+      "content": "100笔下去10个最低",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1316299839876763648",
-      "content": "超好看耶",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "這太美麗了😭"
+      "id": "1316265691401162773",
+      "channel_id": "1131839817982947429",
+      "content": "高热铺满手的感觉",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316337718506029106",
+      "channel_id": "1131839874132090890",
+      "content": "~~同時拿20台3C放片就行了~~",
+      "author": "ice_storys",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1316544258697723977",
+      "channel_id": "1131839874132090890",
+      "content": "https://discord.com/channels/1131791637933199470/1131839874132090890/13138737091",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1316311719957495818",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1312332281427398706\nnot sure if",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

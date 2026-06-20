@@ -1,100 +1,1105 @@
 {
   "meta": {
-    "generated_at": "2026-04-14",
-    "generated_by": "Code-主控台 subagent (艾瑞卡扫描任务)",
-    "scope": "BIAV Studio team-internal (silver side inventory)",
-    "note": "v1 初版能力清单，对应黑池架构需求 5（团队共享技能/代理/MCP）。后续由艾瑞卡 review 扩展。扫描范围：.claude/commands, .claude/skills, .claude/agents, scripts/mcp_server.py, assets/data/character-personas/",
-    "source_paths_scanned": [
-      ".claude/commands/",
-      ".claude/skills/ (不存在)",
-      ".claude/agents/ (不存在)",
-      "scripts/mcp_server.py",
-      "assets/data/character-personas/"
-    ]
+    "generated_at": "2026-06-20",
+    "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
+    "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
+    "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
+    "reachability_method": "从活编排入口（工作流/MCP/命令/钩子）沿 Python 模块级 import 图做传递闭包；status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
+    "counts": {
+      "workflows": 22,
+      "scripts_top": 36,
+      "scripts_news": 25,
+      "scripts_wiki": 17,
+      "mcp_tools": 16,
+      "commands": 4,
+      "skills": 1,
+      "projects": 4,
+      "total": 125
+    },
+    "reachability": {
+      "live": 63,
+      "test-only": 9,
+      "orphaned": 6
+    }
   },
-  "skills": [
+  "workflows": [
     {
-      "name": "daily-news",
-      "path": ".claude/commands/daily-news.md",
-      "summary": "Run the news aggregator and verify output"
+      "id": "backfill-gap.yml",
+      "name": "Backfill Data Gap",
+      "path": ".github/workflows/backfill-gap.yml",
+      "triggers": [
+        "manual"
+      ],
+      "note_zh": "手动回填指定时间段的数据缺口。"
     },
     {
-      "name": "sync-memory",
-      "path": ".claude/commands/sync-memory.md",
-      "summary": "Check all sub-project actual file states and sync shared memory files"
+      "id": "backfill-media.yml",
+      "name": "Backfill & Archive Media",
+      "path": ".github/workflows/backfill-media.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时回填并归档媒体文件（同人图等）。"
     },
     {
-      "name": "validate-data",
-      "path": ".claude/commands/validate-data.md",
-      "summary": "Validate all JSON data files in the wiki database"
+      "id": "backfill-news.yml",
+      "name": "Backfill Historical News",
+      "path": ".github/workflows/backfill-news.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时回填历史社区新闻。"
+    },
+    {
+      "id": "build-capability-registry.yml",
+      "name": "Build Capability Registry",
+      "path": ".github/workflows/build-capability-registry.yml",
+      "triggers": [
+        "push",
+        "manual"
+      ],
+      "note_zh": "功能源变动时自动重生成银芯功能目录。"
+    },
+    {
+      "id": "check-version.yml",
+      "name": "Check Morimens Version Updates",
+      "path": ".github/workflows/check-version.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时检测 Morimens 客户端版本更新。"
+    },
+    {
+      "id": "claude.yml",
+      "name": "Claude Code",
+      "path": ".github/workflows/claude.yml",
+      "triggers": [],
+      "note_zh": "Claude Code GitHub 协作入口（@claude 触发）。"
+    },
+    {
+      "id": "cleanup-stale-branches.yml",
+      "name": "Cleanup Stale Branches",
+      "path": ".github/workflows/cleanup-stale-branches.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时清理过期分支。"
+    },
+    {
+      "id": "collect-comments.yml",
+      "name": "Collect Video Comments",
+      "path": ".github/workflows/collect-comments.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时采集视频评论。"
+    },
+    {
+      "id": "collect-fanart.yml",
+      "name": "Collect Fan Art",
+      "path": ".github/workflows/collect-fanart.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时采集同人图。"
+    },
+    {
+      "id": "deploy-site.yml",
+      "name": "Deploy Site",
+      "path": ".github/workflows/deploy-site.yml",
+      "triggers": [
+        "push",
+        "manual"
+      ],
+      "note_zh": "push 触发部署 site 静态站。"
+    },
+    {
+      "id": "discord-archive-jp.yml",
+      "name": "Discord Archive (JP)",
+      "path": ".github/workflows/discord-archive-jp.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时归档日服 Discord 数据。"
+    },
+    {
+      "id": "discord-archive-volunteer.yml",
+      "name": "Discord Archive (Volunteer)",
+      "path": ".github/workflows/discord-archive-volunteer.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时归档志愿者 Discord 数据。"
+    },
+    {
+      "id": "discord-archive.yml",
+      "name": "Discord Archive",
+      "path": ".github/workflows/discord-archive.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时归档主 Discord 数据。"
+    },
+    {
+      "id": "discord-discover-guilds.yml",
+      "name": "Discord Discover Guilds",
+      "path": ".github/workflows/discord-discover-guilds.yml",
+      "triggers": [
+        "manual"
+      ],
+      "note_zh": "定时发现新的 Discord 服务器。"
+    },
+    {
+      "id": "discord-history-backfill.yml",
+      "name": "Discord History Backfill",
+      "path": ".github/workflows/discord-history-backfill.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "定时回填 Discord 历史消息。"
+    },
+    {
+      "id": "extract-game-data.yml",
+      "name": "Extract Game Data from Client",
+      "path": ".github/workflows/extract-game-data.yml",
+      "triggers": [
+        "push",
+        "manual"
+      ],
+      "note_zh": "解包提取客户端游戏数据（wiki 数据源）。"
+    },
+    {
+      "id": "fetch-wiki-data.yml",
+      "name": "Fetch Wiki Data",
+      "path": ".github/workflows/fetch-wiki-data.yml",
+      "triggers": [
+        "schedule",
+        "push",
+        "manual"
+      ],
+      "note_zh": "定时抓取 wiki 数据。"
+    },
+    {
+      "id": "recover-fanart.yml",
+      "name": "Recover Fan Art",
+      "path": ".github/workflows/recover-fanart.yml",
+      "triggers": [
+        "manual"
+      ],
+      "note_zh": "恢复丢失的同人图。"
+    },
+    {
+      "id": "test-collectors.yml",
+      "name": "Test All Data Collectors",
+      "path": ".github/workflows/test-collectors.yml",
+      "triggers": [
+        "manual"
+      ],
+      "note_zh": "运行采集器单元测试。"
+    },
+    {
+      "id": "test.yml",
+      "name": "Run Tests",
+      "path": ".github/workflows/test.yml",
+      "triggers": [
+        "push",
+        "pull_request",
+        "manual"
+      ],
+      "note_zh": "运行全量 pytest 单元测试。"
+    },
+    {
+      "id": "update-news.yml",
+      "name": "Update Community News",
+      "path": ".github/workflows/update-news.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ],
+      "note_zh": "每小时采集社区新闻并更新输出层。"
+    },
+    {
+      "id": "validate-data.yml",
+      "name": "Validate Wiki Data",
+      "path": ".github/workflows/validate-data.yml",
+      "triggers": [
+        "push",
+        "pull_request",
+        "manual"
+      ],
+      "note_zh": "校验 wiki JSON 数据（push/PR 触发）。"
     }
   ],
-  "agents": [],
+  "scripts_top": [
+    {
+      "id": "boot_snapshot.py",
+      "path": "scripts/boot_snapshot.py",
+      "summary": "boot_snapshot.py — 银芯启动快照生成器",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "build_capability_registry.py",
+      "path": "scripts/build_capability_registry.py",
+      "summary": "build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "character_persona.py",
+      "path": "scripts/character_persona.py",
+      "summary": "character_persona.py — Character Persona Prompt Generator",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "context_manager.py",
+      "path": "scripts/context_manager.py",
+      "summary": "context_manager.py — Virtual Context Manager (MemGPT-style)",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream.py",
+      "path": "scripts/dream.py",
+      "summary": "dream.py — 4-Phase AutoDream Memory Consolidation System",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_ai.py",
+      "path": "scripts/dream_ai.py",
+      "summary": "AI-powered consolidation + sleep-time precompute cache.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_archive.py",
+      "path": "scripts/dream_archive.py",
+      "summary": "Archive integrity scan — detect broken path references in repo docs.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_config.py",
+      "path": "scripts/dream_config.py",
+      "summary": "Shared configuration constants for the dream.py memory-consolidation system.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_health.py",
+      "path": "scripts/dream_health.py",
+      "summary": "Memory hygiene checks — staleness, broken refs, duplicate decisions, etc.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_io.py",
+      "path": "scripts/dream_io.py",
+      "summary": "Dream persistence — journal, insights and access-log read/write.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_rem.py",
+      "path": "scripts/dream_rem.py",
+      "summary": "REM phase — weekly deep reflection: cross-session pattern analysis,",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "dream_sentinel.py",
+      "path": "scripts/dream_sentinel.py",
+      "summary": "Sentinel layer — proactive anomaly detection over news data sources.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "extract_art.py",
+      "path": "scripts/extract_art.py",
+      "summary": "Batch extract art assets from Morimens encrypted AssetBundles.",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。"
+    },
+    {
+      "id": "fact_store.py",
+      "path": "scripts/fact_store.py",
+      "summary": "fact_store.py — AI-driven Fact Storage with Semantic Deduplication",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "generate_wiki_pages.py",
+      "path": "scripts/generate_wiki_pages.py",
+      "summary": "Generate VitePress Markdown pages from processed JSON data.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "io_utils.py",
+      "path": "scripts/io_utils.py",
+      "summary": "io_utils.py — shared atomic file write helper.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "knowledge_graph.py",
+      "path": "scripts/knowledge_graph.py",
+      "summary": "knowledge_graph.py — Knowledge Graph Builder & Query Engine",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "lua_parse.py",
+      "path": "scripts/lua_parse.py",
+      "summary": "Shared parser for runtime-extracted Lua table dumps.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "mcp_server.py",
+      "path": "scripts/mcp_server.py",
+      "summary": "mcp_server.py — BIAV-SC Memory MCP Server",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "memory_search.py",
+      "path": "scripts/memory_search.py",
+      "summary": "memory_search.py — Semantic Memory Search with TF-IDF Vectors + Reranker",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "memory_writeback.py",
+      "path": "scripts/memory_writeback.py",
+      "summary": "memory_writeback.py — Long-term Memory Write-back Loop",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "memrl.py",
+      "path": "scripts/memrl.py",
+      "summary": "memrl.py — MemRL-lite: Memory Utility Tracking & Adaptive Reranking",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_awaker_config.py",
+      "path": "scripts/parse_awaker_config.py",
+      "summary": "Parse AwakerConfig.lua into structured character profiles JSON.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "parse_cg_gallery.py",
+      "path": "scripts/parse_cg_gallery.py",
+      "summary": "Parse art_assets manifest.json to extract CG gallery data grouped by chapter.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "parse_collection_hall.py",
+      "path": "scripts/parse_collection_hall.py",
+      "summary": "Parse CollectionHall.lua into structured JSON for world lore encyclopedia.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "parse_item_stories.py",
+      "path": "scripts/parse_item_stories.py",
+      "summary": "Parse Item.lua to extract items with background stories (StoryDesc field).",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "parse_voice_lines.py",
+      "path": "scripts/parse_voice_lines.py",
+      "summary": "Parse Voice.lua into structured JSON for wiki voice lines page.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only"
+    },
+    {
+      "id": "reflexion.py",
+      "path": "scripts/reflexion.py",
+      "summary": "reflexion.py — Reflexion: Automatic Failure Learning",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "report_render.py",
+      "path": "scripts/report_render.py",
+      "summary": "银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。",
+      "planes": [
+        "command"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "session_briefing.py",
+      "path": "scripts/session_briefing.py",
+      "summary": "session_briefing.py — Smart Session Briefing Generator",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "session_distiller.py",
+      "path": "scripts/session_distiller.py",
+      "summary": "session_distiller.py — Claude Code SessionEnd transcript distiller (v0.4 md+meta).",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "[退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。"
+    },
+    {
+      "id": "session_inject.py",
+      "path": "scripts/session_inject.py",
+      "summary": "session_inject.py —— UserPromptSubmit hook：每次用户输入前注入历史会话上下文。",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "[退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。"
+    },
+    {
+      "id": "session_reflexion.py",
+      "path": "scripts/session_reflexion.py",
+      "summary": "session_reflexion.py — Session-end reflexion hook",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "[退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。"
+    },
+    {
+      "id": "session_watch.py",
+      "path": "scripts/session_watch.py",
+      "summary": "session_watch.py —— PostToolUse hook：实时追加会话工具调用事件到 progress.jsonl。",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "[退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。"
+    },
+    {
+      "id": "silver_memory_tools.py",
+      "path": "scripts/silver_memory_tools.py",
+      "summary": "silver_memory_tools.py —— 银芯记忆增强工具集",
+      "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "text_utils.py",
+      "path": "scripts/text_utils.py",
+      "summary": "Shared text tokenization for the memory system.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    }
+  ],
+  "scripts_news": [
+    {
+      "id": "aggregator.py",
+      "path": "projects/news/scripts/aggregator.py",
+      "summary": "忘却前夜 Morimens - 社区热点聚合器",
+      "planes": [
+        "command",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "aggregator_base.py",
+      "path": "projects/news/scripts/aggregator_base.py",
+      "summary": "Shared base for the news aggregator: HTTP/logging setup, config",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "aggregator_collectors.py",
+      "path": "projects/news/scripts/aggregator_collectors.py",
+      "summary": "Per-platform news collectors (Reddit, Bilibili, NGA, TapTap, Steam,",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "archive_discord.py",
+      "path": "projects/news/scripts/archive_discord.py",
+      "summary": "Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "archive_platforms.py",
+      "path": "projects/news/scripts/archive_platforms.py",
+      "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "backfill_forum_starters.py",
+      "path": "projects/news/scripts/backfill_forum_starters.py",
+      "summary": "backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "backfill_gap.py",
+      "path": "projects/news/scripts/backfill_gap.py",
+      "summary": "backfill_gap.py — One-time script to backfill the Apr 13-25 data gap.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "backfill_media.py",
+      "path": "projects/news/scripts/backfill_media.py",
+      "summary": "媒体补录器 — 扫全量归档，把仍存活的图片全部下载归档，二进制走 Releases（决策 038/059）。",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "backfill_platforms.py",
+      "path": "projects/news/scripts/backfill_platforms.py",
+      "summary": "backfill_platforms.py — 多平台历史数据回溯采集",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "collect_fanart.py",
+      "path": "projects/news/scripts/collect_fanart.py",
+      "summary": "同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "collect_global.py",
+      "path": "projects/news/scripts/collect_global.py",
+      "summary": "collect_global.py — 全球社区采集桥接脚本",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "collect_video_comments.py",
+      "path": "projects/news/scripts/collect_video_comments.py",
+      "summary": "YouTube 视频评论采集器（累积归档版）。",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "collection_state.py",
+      "path": "projects/news/scripts/collection_state.py",
+      "summary": "collection_state.py — Adaptive time window for news collection pipeline.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "data_quality.py",
+      "path": "projects/news/scripts/data_quality.py",
+      "summary": "数据质量增强模块",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_archiver.py",
+      "path": "projects/news/scripts/discord_archiver.py",
+      "summary": "Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_list_guilds.py",
+      "path": "projects/news/scripts/discord_list_guilds.py",
+      "summary": "Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "download_media.py",
+      "path": "projects/news/scripts/download_media.py",
+      "summary": "download_media.py — 全平台媒体资源下载器",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "global_collectors.py",
+      "path": "projects/news/scripts/global_collectors.py",
+      "summary": "忘却前夜 Morimens - 全球信息收集器",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "news_common.py",
+      "path": "projects/news/scripts/news_common.py",
+      "summary": "news_common.py — 采集层共享工具（ARCH-01/02 收敛单一归属）",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "playwright_collectors.py",
+      "path": "projects/news/scripts/playwright_collectors.py",
+      "summary": "Playwright-based collectors for Morimens community news.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "repair_gaps.py",
+      "path": "projects/news/scripts/repair_gaps.py",
+      "summary": "repair_gaps.py — Detect and report date gaps in platform archives.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "silent_sources_audit.py",
+      "path": "projects/news/scripts/silent_sources_audit.py",
+      "summary": "silent_sources_audit.py — 沉默源审计（基于归档历史）",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "sources.py",
+      "path": "projects/news/scripts/sources.py",
+      "summary": "sources.py — 采集源单一真相源（single source of truth）",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "split_output.py",
+      "path": "projects/news/scripts/split_output.py",
+      "summary": "split_output.py — 按数据源分割 projects/news/output/news.json",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "taptap_collector.py",
+      "path": "projects/news/scripts/taptap_collector.py",
+      "summary": "TapTap 社区采集器 - Playwright 无头浏览器方案",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    }
+  ],
+  "scripts_wiki": [
+    {
+      "id": "build_banner_character_index.py",
+      "path": "projects/wiki/scripts/build_banner_character_index.py",
+      "summary": "Build a banner <-> character cross-index for Morimens summon banners.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only",
+      "note_zh": "构建卡池角色索引。"
+    },
+    {
+      "id": "build_drop_index.py",
+      "path": "projects/wiki/scripts/build_drop_index.py",
+      "summary": "Build a reverse drop index for Morimens stages.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only",
+      "note_zh": "构建掉落物索引。"
+    },
+    {
+      "id": "build_notion_voice_enrichment.py",
+      "path": "projects/wiki/scripts/build_notion_voice_enrichment.py",
+      "summary": "Build per-character voice-line enrichment for the Notion character database.",
+      "planes": [],
+      "status": "orphaned",
+      "note_zh": "[一次性·孤儿] 从 Notion 富化语音数据，无活入口。"
+    },
+    {
+      "id": "check_version.py",
+      "path": "projects/wiki/scripts/check_version.py",
+      "summary": "check_version.py - Automated version update tracker for Morimens wiki.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "检测 Morimens 客户端版本更新。"
+    },
+    {
+      "id": "decrypt_and_extract.py",
+      "path": "projects/wiki/scripts/decrypt_and_extract.py",
+      "summary": "Decrypt and extract Morimens encrypted AssetBundles.",
+      "planes": [
+        "test"
+      ],
+      "status": "test-only",
+      "note_zh": "客户端解密 + 解包流水线（经子进程/手动调用）。"
+    },
+    {
+      "id": "extract_client_data.py",
+      "path": "projects/wiki/scripts/extract_client_data.py",
+      "summary": "Extract game data from Morimens Unity client using UnityPy.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "从客户端解包提取结构化游戏数据。"
+    },
+    {
+      "id": "fetch_cards.py",
+      "path": "projects/wiki/scripts/fetch_cards.py",
+      "summary": "Fetch and enrich card data for all characters from Fandom wiki.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取卡牌数据。"
+    },
+    {
+      "id": "fetch_lore.py",
+      "path": "projects/wiki/scripts/fetch_lore.py",
+      "summary": "Fetch detailed story/lore data from wiki sources and update lore.json.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取世界观/剧情文本。"
+    },
+    {
+      "id": "fetch_portraits.py",
+      "path": "projects/wiki/scripts/fetch_portraits.py",
+      "summary": "Fetch character portrait images from wiki sources.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取立绘数据。"
+    },
+    {
+      "id": "fetch_skills.py",
+      "path": "projects/wiki/scripts/fetch_skills.py",
+      "summary": "Fetch character skill data from Fandom MediaWiki API and update characters.json.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取技能数据。"
+    },
+    {
+      "id": "fetch_stages.py",
+      "path": "projects/wiki/scripts/fetch_stages.py",
+      "summary": "Fetch and enrich stage/level data with drop tables and recommended levels.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取关卡数据。"
+    },
+    {
+      "id": "fetch_stats.py",
+      "path": "projects/wiki/scripts/fetch_stats.py",
+      "summary": "Fetch character base stats (HP/ATK/DEF) from Fandom wiki sources.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取数值数据。"
+    },
+    {
+      "id": "fetch_wheels.py",
+      "path": "projects/wiki/scripts/fetch_wheels.py",
+      "summary": "Fetch Wheel of Destiny effect data from Fandom MediaWiki API.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "抓取命轮数据。"
+    },
+    {
+      "id": "generate_pages.py",
+      "path": "projects/wiki/scripts/generate_pages.py",
+      "summary": "Auto-generate VitePress character detail pages from characters.json + equipment.json.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "由抓取的 JSON 生成 VitePress 角色页。"
+    },
+    {
+      "id": "generate_rss.py",
+      "path": "projects/wiki/scripts/generate_rss.py",
+      "summary": "generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "生成 wiki 更新 RSS。"
+    },
+    {
+      "id": "validate_data.py",
+      "path": "projects/wiki/scripts/validate_data.py",
+      "summary": "Validate all wiki JSON data files against schemas and cross-references.",
+      "planes": [
+        "workflow"
+      ],
+      "status": "live",
+      "note_zh": "校验 wiki 数据库全部 JSON。"
+    },
+    {
+      "id": "wiki_sources.py",
+      "path": "projects/wiki/scripts/wiki_sources.py",
+      "summary": "Shared Fandom / Bilibili wiki source constants for the fetch_*.py scripts.",
+      "planes": [
+        "import"
+      ],
+      "status": "live",
+      "note_zh": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。"
+    }
+  ],
   "mcp_tools": [
     {
-      "name": "memory_search",
+      "id": "memory_search",
       "module": "scripts/mcp_server.py",
-      "summary": "搜索银芯知识库，基于 TF-IDF 向量检索 + 4 维重排序（语义/新鲜度/访问频率/图谱距离），返回最相关的知识块"
+      "summary": "搜索银芯知识库，返回最相关的知识块。"
     },
     {
-      "name": "graph_query",
+      "id": "graph_query",
       "module": "scripts/mcp_server.py",
-      "summary": "查询知识图谱中的实体及其关联，支持角色名、系统名、概念名"
+      "summary": "查询知识图谱中的实体及其关联。"
     },
     {
-      "name": "graph_related_files",
+      "id": "graph_related_files",
       "module": "scripts/mcp_server.py",
-      "summary": "查找与实体相关的文件，按图谱距离排序"
+      "summary": "查找与实体相关的文件，按图谱距离排序。"
     },
     {
-      "name": "memory_utility",
+      "id": "memory_utility",
       "module": "scripts/mcp_server.py",
-      "summary": "查看记忆文件效用排名（MemRL-lite EMA 追踪），识别高价值/待归档文件"
+      "summary": "查看记忆文件效用排名。"
     },
     {
-      "name": "check_cache",
+      "id": "check_cache",
       "module": "scripts/mcp_server.py",
-      "summary": "查询 Sleep-Time Compute 预计算缓存（深睡时预生成的常见问题答案）"
+      "summary": "查询 Sleep-Time Compute 预计算缓存。"
     },
     {
-      "name": "recommend_context",
+      "id": "recommend_context",
       "module": "scripts/mcp_server.py",
-      "summary": "根据当前话题推荐应加载的知识文件（向量检索 + 图谱 + 效用综合）"
+      "summary": "根据当前话题推荐应加载的知识文件（虚拟上下文管理）。"
     },
     {
-      "name": "rebuild_indexes",
+      "id": "rebuild_indexes",
       "module": "scripts/mcp_server.py",
-      "summary": "重建所有索引：向量索引 + 知识图谱 + 效用分数"
+      "summary": "重建所有索引（向量索引 + 知识图谱 + 效用分数）。"
     },
     {
-      "name": "store_facts",
+      "id": "store_facts",
       "module": "scripts/mcp_server.py",
-      "summary": "存储本次对话中发现的重要知识事实，支持自动去重（相似度 >75% 合并）"
+      "summary": "存储本次对话中发现的重要知识事实。"
     },
     {
-      "name": "memory_writeback",
+      "id": "memory_writeback",
       "module": "scripts/mcp_server.py",
-      "summary": "将当前会话产生的新知识写回知识库，自动检测 git 变更并增量重索引"
+      "summary": "将当前会话产生的新知识写回知识库。"
     },
     {
-      "name": "session_briefing",
+      "id": "session_briefing",
       "module": "scripts/mcp_server.py",
-      "summary": "新会话启动智能简报，综合 6 个数据源（上次回顾/git 变更/做梦发现/话题动量/效用趋势/推荐上下文）"
+      "summary": "新会话启动时调用，获取智能 briefing。"
     },
     {
-      "name": "character_persona",
+      "id": "character_persona",
       "module": "scripts/mcp_server.py",
-      "summary": "激活角色人格模式，让 AI 以游戏角色语气进行对话，跨平台支持银芯/黑池终端/黑池系统"
+      "summary": "激活角色人格模式，让AI以游戏角色的语气进行对话。"
+    },
+    {
+      "id": "recall_session",
+      "module": "scripts/mcp_server.py",
+      "summary": "在历史 session digest 中语义搜索相关 session（TF-IDF + 4 维重排）。"
+    },
+    {
+      "id": "current_continuity",
+      "module": "scripts/mcp_server.py",
+      "summary": "读取 session 连续性链（上次 session 快照 + topics_hint）。"
+    },
+    {
+      "id": "record_decision",
+      "module": "scripts/mcp_server.py",
+      "summary": "追加决策条目到 memory/decisions.md 的当前有效决策表格末尾。"
+    },
+    {
+      "id": "record_lesson",
+      "module": "scripts/mcp_server.py",
+      "summary": "追加教训条目到 memory/lessons-learned.md 末尾。"
+    },
+    {
+      "id": "session_progress",
+      "module": "scripts/mcp_server.py",
+      "summary": "读取指定 session 的 progress.jsonl 增量事件列表（由 session_watch hook 记录）。"
     }
   ],
-  "character_personas": [
+  "commands": [
     {
-      "name": "erica",
-      "display_name": "艾瑞卡",
-      "display_name_en": "Erica",
-      "path": "assets/data/character-personas/erica.json",
-      "affiliation": "弥萨格大学",
-      "role_in_silver_core": "数据库终端 / 自动人偶，默认会话角色人格"
+      "id": "biav-report",
+      "path": ".claude/commands/biav-report.md",
+      "summary": "Produce a silver-core community intelligence report (deep analysis / role recommendations / bug-fault list / weekly digest) from the full-archive layer, render it to a styled PDF + HTML, commit, push, and report back with hyperlinks. Use when the Keeper asks for a report, analysis, recommendation deck, or defect list built from community data.",
+      "note_zh": "产出银芯社区情报深度报告（角色推荐 / bug 修复优先级等）。"
+    },
+    {
+      "id": "daily-news",
+      "path": ".claude/commands/daily-news.md",
+      "summary": "Run the news aggregator and verify output",
+      "note_zh": "运行 news 采集器并校验输出，非空才提交。"
+    },
+    {
+      "id": "sync-memory",
+      "path": ".claude/commands/sync-memory.md",
+      "summary": "Check all sub-project actual file states and sync shared memory files",
+      "note_zh": "核对各子项目实际文件状态，同步共享记忆文件。"
+    },
+    {
+      "id": "validate-data",
+      "path": ".claude/commands/validate-data.md",
+      "summary": "Validate all JSON data files in the wiki database",
+      "note_zh": "校验 wiki 数据库全部 JSON 数据文件。"
+    }
+  ],
+  "skills": [
+    {
+      "id": "anysearch",
+      "path": ".claude/skills/anysearch/SKILL.md",
+      "name": "anysearch",
+      "summary": "Live web search via the AnySearch API for current or external information — community discussion, news, cross-region (CN/JP/TW) sources, and full-page content extraction. Use when a query needs up-to-date web results or sources beyond the local repo and the news pipeline. Falls back to the built-in WebSearch tool when AnySearch is unavailable.",
+      "note_zh": "实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。"
+    }
+  ],
+  "projects": [
+    {
+      "id": "game",
+      "path": "projects/game/",
+      "summary": "> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 game 重定位 — **退主线**）",
+      "note_zh": "衍生游戏，退出主线，守密人个人兴趣，不主线派发。"
+    },
+    {
+      "id": "news",
+      "path": "projects/news/",
+      "summary": "> 启动时请先阅读根目录 `CLAUDE.md` 了解全局。",
+      "note_zh": "使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。"
+    },
+    {
+      "id": "site",
+      "path": "projects/site/",
+      "summary": "> 最后更新：2026-04-26 by 艾瑞卡（Code-site 维护会话，D-fix + D-mission + 自审清理 + D-biav 落地后状态同步）",
+      "note_zh": "使命#3 对外门户：静态站 public/ + 设计令牌 design/。"
+    },
+    {
+      "id": "wiki",
+      "path": "projects/wiki/",
+      "summary": "> 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）",
+      "note_zh": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。"
     }
   ]
 }

@@ -1,10 +1,37 @@
 {
   "date": "2025-11-24",
-  "messages": 188,
-  "unique_authors": 35,
-  "reactions_total": 158,
-  "attachments": 100,
+  "messages": 27166,
+  "unique_authors": 669,
+  "reactions_total": 3287,
+  "attachments": 1996,
   "channel_activity": {
+    "🔸general-chat": 703,
+    "🔸邀请码互助┊swap-invitation-codes": 20,
+    "🔸game-question": 3049,
+    "🔸忘却前夜┊morimens-tv": 5,
+    "🔸机器人命令┊bot-commands": 170,
+    "🔸morimens-game-chat": 11575,
+    "🔸剧情交流": 305,
+    "🔸晒卡分享": 89,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 90,
+    "🔸交友频道": 17,
+    "🔸日本語チャンネル": 29,
+    "🔸한국어-채팅방": 454,
+    "🔸deutscher-chatraum": 11,
+    "🔸chaîne-française": 23,
+    "🔸русский-канал": 204,
+    "🔸phòng-chat-tiếng-việt": 175,
+    "🔸canal-español": 1358,
+    "🔸canal-português": 1002,
+    "🔸ruang-obrolan-indonesia": 1661,
+    "🔸ห้องสนทนาภาษาไทย": 840,
+    "🔸traphase": 261,
+    "🔸lore-chat": 393,
+    "🔸lets-count": 42,
+    "🔸team-building": 1427,
+    "🔸綜合討論": 3051,
+    "🔸阵容构建": 17,
     "Doresain x Pickman": 2,
     "thais dump": 1,
     "corposant edit ayayay (ignore the intro plspls i have no ideas)": 1,
@@ -65,34 +92,35 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "0": 9,
-    "21": 1,
-    "2": 16,
-    "13": 6,
-    "18": 6,
-    "10": 10,
-    "11": 10,
-    "12": 8,
-    "8": 3,
-    "1": 6,
-    "5": 8,
-    "16": 3,
-    "20": 1,
-    "23": 3,
-    "4": 27,
-    "14": 21,
-    "3": 5,
-    "9": 15,
-    "7": 11,
-    "6": 9,
-    "15": 2,
-    "22": 2,
-    "17": 4,
-    "19": 2
+    "0": 950,
+    "1": 1515,
+    "2": 1584,
+    "3": 1820,
+    "4": 1557,
+    "5": 1751,
+    "6": 1214,
+    "8": 1149,
+    "9": 815,
+    "11": 685,
+    "13": 1035,
+    "14": 1444,
+    "15": 1139,
+    "16": 797,
+    "17": 911,
+    "18": 1033,
+    "19": 1014,
+    "21": 646,
+    "22": 630,
+    "7": 1296,
+    "10": 1301,
+    "12": 760,
+    "20": 997,
+    "23": 1123
   },
   "message_types": {
-    "0": 64,
-    "19": 14
+    "0": 2757,
+    "19": 1181,
+    "20": 9
   },
   "top_reacted_messages": [
     {
@@ -117,6 +145,30 @@
       "channel": "corposant edit ayayay (ignore the intro plspls i have no ideas)"
     },
     {
+      "id": "1442334202283688027",
+      "channel_id": "1170692781216378960",
+      "content": "Its been 10 hours without morimens, I cannot stop shaking an I'm having severe m",
+      "author": "liluaa",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442332930184839261",
+      "channel_id": "1170692781216378960",
+      "content": "this took way too long to make",
+      "author": "weelaeta",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442337284866441226",
+      "channel_id": "1170692781216378960",
+      "content": "OMFG",
+      "author": "zier.0",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1442343622002606150",
       "content": "i lovr ramonora",
       "author": "enzoperry",
@@ -131,6 +183,14 @@
       "channel": "纯血神国..."
     },
     {
+      "id": "1442411754679173120",
+      "channel_id": "1170692781216378960",
+      "content": "What is this servers obsession with pregnancy",
+      "author": "snowyarcher",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1442583751602470962",
       "content": "I really love her design, she's so cool!",
       "author": "echidna7311",
@@ -138,102 +198,84 @@
       "channel": ""
     },
     {
-      "id": "1442373883561775184",
-      "content": "大家好这里是Timee，11.24日久违的深海迎来了全新的唤醒体sp墨菲并且带来了神国buff，效果十分强力，也在第一时间抽满测试了下效果。\n\n因为暂时没空做视",
-      "author": "timee_ky",
+      "id": "1442365272269918220",
+      "channel_id": "1173463482503536711",
+      "content": "像吃了口糧又像吃了口石",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1442306038312206446",
+      "channel_id": "1170692781216378960",
+      "content": "why am I getting clown emoji’d on, I don’t have that much free time to build and",
+      "author": ".nickend",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442379208532951122",
+      "channel_id": "1170692781216378960",
+      "content": "Pollux is a BEAST at e0 so get him",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442384886110621760",
+      "channel_id": "1170692781216378960",
+      "content": "OE is a must for her",
+      "author": "gabris_79046",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442502240395853895",
+      "channel_id": "1170692781216378960",
+      "content": "Ass shot and boob shot the moment i open the cutscene this is gonna feel weird l",
+      "author": "james0064",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442589084030730260",
+      "channel_id": "1170692781216378960",
+      "content": "as f2p",
+      "author": "apsgsd",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442444393683488779",
+      "channel_id": "1173463482503536711",
+      "content": "第一眼還想說哪裡來的5個（~~凱刻斯再度被迫害~~",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1442354685490237450",
+      "channel_id": "1174983699935277147",
+      "content": "323抽10隻墨菲 38抽1張命輪",
+      "author": "ahong0727",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1442357323338088599",
+      "channel_id": "1131839817982947429",
+      "content": "我的天獻祭可以穿對面的盾",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1442321232736424166",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "craux.",
       "reactions": 8,
-      "channel": "纯血神国..."
-    },
-    {
-      "id": "1442409985673003028",
-      "content": "也是開了個3+0，目前體驗下來是算力跟銀鑰用不完，手中沒靈感或深海聖詠的話過牌比較困難一點\n\n誕塔隊而言的話，我覺得玩起來會更像兩個C，塔薇本身的直傷因為沒有夠",
-      "author": "ena04564",
-      "reactions": 7,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1442314028851527771",
-      "content": "Ref",
-      "author": "sunstopshining",
-      "reactions": 6,
-      "channel": "Doresain x Pickman"
-    },
-    {
-      "id": "1442647324575928441",
-      "content": "Hey, trying to make a community tool for new players to reference, so that they ",
-      "author": "neckchin",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1442553773149917254",
-      "content": "Not yet! They're sponsoring me for a video, and then in December I'll also have ",
-      "author": "stix5500",
-      "reactions": 5,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1442502944984662159",
-      "content": "rt，与现有万能叠并行，每月可各兑换一个。价格相比万能叠适当降低，变相降井。利好叠过气老卡。",
-      "author": "shunia3055",
-      "reactions": 4,
-      "channel": "沉淀兑换新增仅可选择忘却篇限定唤醒体/命轮的叠位材料"
-    },
-    {
-      "id": "1442488046858539038",
-      "content": "UID：100872328\n\n在誕墨出了後，水船的成長和生存問題完全解決，誕墨給水船帶來了重要的抽牌和算力，以及高額的觸腕傷害成長和觸腕數量，在有超限的情況下還",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "誕墨水船隊"
-    },
-    {
-      "id": "1442484106519773235",
-      "content": "如題，在抽五次新出的誕妄墨菲後，出現快速喚醒的選項，打勾再抽五次，結果卻出現「與群星相會」的攻擊角色抽取結果，980源液直接噴出去🥲而且抽中的還是索蕾爾，殺人誅",
-      "author": "sam511011",
-      "reactions": 2,
-      "channel": "💭「处理中」快速喚醒有 bug，會抽到其他獎池［攸關源液，儲值的大家請小心！］"
-    },
-    {
-      "id": "1442468399409266758",
-      "content": "超绝反光发型",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "💭「处理中」希洛大招一直這麼過曝的嗎"
-    },
-    {
-      "id": "1442495615383634092",
-      "content": "和快速唤醒一样以勾选形式显示即可。流明不足时每五抽都要点击一次确定，拖累快速唤醒的体验，令人烦躁。",
-      "author": "shunia3055",
-      "reactions": 2,
-      "channel": "在抽卡界面增加流明之芯不足时自动购买流明的选项"
-    },
-    {
-      "id": "1442309907092209775",
-      "content": "TYYY!! I’m hopefully gonna be able to do a proper illustration sometime soon, I ",
-      "author": "raumbobulus",
-      "reactions": 1,
-      "channel": "Corpo Sketch :D"
-    },
-    {
-      "id": "1442370738018582560",
-      "content": "诞墨要抽吗？",
-      "author": "santianliangjuesleep",
-      "reactions": 1,
-      "channel": "新手求助"
-    },
-    {
-      "id": "1442525015525294121",
-      "content": "pollux needs at leasr his midgame stat ghrowth re-adjusted if this is the new ba",
-      "author": "thpdom",
-      "reactions": 1,
-      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
-    },
-    {
-      "id": "1442386642672291911",
-      "content": "Clearly she doesn't love you enough 😔",
-      "author": "crowlov1",
-      "reactions": 1,
-      "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

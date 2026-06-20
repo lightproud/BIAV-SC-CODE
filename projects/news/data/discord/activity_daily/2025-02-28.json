@@ -1,10 +1,23 @@
 {
   "date": "2025-02-28",
-  "messages": 162,
-  "unique_authors": 17,
-  "reactions_total": 65,
-  "attachments": 8,
+  "messages": 5811,
+  "unique_authors": 178,
+  "reactions_total": 334,
+  "attachments": 240,
   "channel_activity": {
+    "🔸綜合討論": 534,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 3286,
+    "🔸剧情交流": 5,
+    "🔸相位对弈": 25,
+    "🔸한국어-채팅방": 69,
+    "🔸русский-канал": 911,
+    "🔸canal-español": 14,
+    "🔸canal-português": 17,
+    "🔸ruang-obrolan-indonesia": 163,
+    "🔸ห้องสนทนาภาษาไทย": 383,
+    "🔸traphase": 223,
+    "🔸lore-chat": 16,
     "New Player Mechanics and Progression Guide": 3,
     "Star Chapter 2.1 Tier List": 2,
     "Can anyone please tell me who are the characters that pair well with the red doll?": 4,
@@ -18,29 +31,34 @@
     "I Made a fan caption in Korean": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "19": 1,
-    "21": 1,
-    "1": 3,
-    "10": 48,
-    "18": 2,
-    "23": 1,
-    "9": 28,
-    "11": 5,
-    "12": 4,
-    "13": 25,
-    "5": 2,
-    "7": 11,
-    "8": 1,
-    "16": 1,
-    "3": 10,
-    "6": 15,
-    "15": 2,
-    "4": 1
+    "0": 273,
+    "1": 293,
+    "2": 243,
+    "3": 164,
+    "4": 138,
+    "5": 199,
+    "6": 168,
+    "7": 55,
+    "8": 32,
+    "9": 64,
+    "10": 179,
+    "11": 191,
+    "12": 634,
+    "13": 758,
+    "14": 445,
+    "15": 615,
+    "16": 423,
+    "17": 315,
+    "22": 9,
+    "19": 97,
+    "18": 262,
+    "20": 129,
+    "21": 79,
+    "23": 46
   },
   "message_types": {
-    "0": 5,
-    "19": 4
+    "0": 4229,
+    "19": 1420
   },
   "top_reacted_messages": [
     {
@@ -65,6 +83,22 @@
       "channel": "忘却前夜第一届交易大赛!"
     },
     {
+      "id": "1344921166355238952",
+      "channel_id": "1131839817982947429",
+      "content": "請離開了",
+      "author": "mob1065",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1344986333436968990",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1344914150958305332",
       "content": "# 我用新角色办比赛",
       "author": "molove0286",
@@ -72,11 +106,43 @@
       "channel": "忘却前夜第一届交易大赛!"
     },
     {
+      "id": "1345026251013750905",
+      "channel_id": "1131839817982947429",
+      "content": "所以說那是病人服（",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1344970980878979093",
       "content": "由於栗子加強過了所以我們不會再加強栗子了，我們決定把更多心力花在如何讓其他角色變得跟栗子一樣",
       "author": "shchng.",
       "reactions": 5,
       "channel": "V2.1.0.5 停服維護公告"
+    },
+    {
+      "id": "1345019543822532628",
+      "channel_id": "1131839817982947429",
+      "content": "必須是卡墨那種等級的男娘",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345023593855189135",
+      "channel_id": "1170692781216378960",
+      "content": "this is your fault Lini\ni build Tinct strike",
+      "author": "annaxxe_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1344949339432288266",
+      "channel_id": "1180850818509971466",
+      "content": "Aaa覺得你根本不懂PVP",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1344973075787026432",
@@ -100,67 +166,52 @@
       "channel": "I Made a fan caption in Korean"
     },
     {
-      "id": "1344973108519632967",
-      "content": "這個我們根本測不出來還不跟我們說",
-      "author": "shchng.",
+      "id": "1345037830325403721",
+      "channel_id": "1131839817982947429",
+      "content": "我介紹一下阿花\n他深愛著福袋，但阿花還沒發現她對福袋的喜歡，把心動的感覺誤認為厭惡，等他發現他對福袋的喜歡後就是追妻火葬場的劇情",
+      "author": "nemu_s_t_a_r",
       "reactions": 3,
-      "channel": "V2.1.0.5 停服維護公告"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344951128152084490",
-      "content": "波次等於沒了肉鴿要素，就跟星辰篇的造物一樣，毫無變化，單純加數值，沒有策略成分\n建議改成簡化版的走格子，把主線搞得跟流水活動一樣無聊，也是真有你的",
-      "author": "taoi002",
+      "id": "1345041829413781534",
+      "channel_id": "1131839817982947429",
+      "content": "磨過5-5了",
+      "author": "pray_unbeliever",
       "reactions": 3,
-      "channel": "關於星辰篇劇情走格子探索地圖要素"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1344978221866815489",
-      "content": "I love Liz, she's so back\n我愛莉茲，她回來了 <:cute:1239911255121068082>",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "V2.1.0.5 停服維護公告"
+      "id": "1345009039464988723",
+      "channel_id": "1170692781216378960",
+      "content": "meta chars wont help your skill issue",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1344898173994401823",
-      "content": "什么时候才能出双方同时选卡牌的活动，有时候真是对面天克我，大概类似于七圣召唤的热斗模式？<:flop:1236937860922343466>",
-      "author": "3416518066",
-      "reactions": 2,
-      "channel": "什么时候才能出双方同时选卡牌的活动？"
+      "id": "1345057975328440422",
+      "channel_id": "1170692781216378960",
+      "content": "So naut, winkle, daffodil, then gdoll?",
+      "author": "louitlog",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1345068573277814838",
-      "content": "波次别的都能适应但是没法回头买造物个人觉得体验感很差劲，有的时候就喜欢先规划着王关前再一起买造物",
-      "author": "nowimfaceless",
-      "reactions": 2,
-      "channel": "關於星辰篇劇情走格子探索地圖要素"
+      "id": "1344950065403269140",
+      "channel_id": "1180850818509971466",
+      "content": "aa能用你說的康特贏你",
+      "author": "jackpot_7",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
     },
     {
-      "id": "1345019163491700769",
-      "content": "新人也是忘卻孝子\n甘拜下風",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "忘却前夜第一届交易大赛!"
-    },
-    {
-      "id": "1345153033759232141",
-      "content": "glad it was helpful <:PeepoHappy:402867832175460363>",
-      "author": "cornonthemacabre_",
-      "reactions": 1,
-      "channel": "New Player Mechanics and Progression Guide"
-    },
-    {
-      "id": "1344972860686471220",
-      "content": "很想罵髒話\n有bug不早說",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "V2.1.0.5 停服維護公告"
-    },
-    {
-      "id": "1344972930777612388",
-      "content": "這個就是欠罵",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "V2.1.0.5 停服維護公告"
+      "id": "1344912674206519407",
+      "channel_id": "1300659580446969918",
+      "content": "как она может быть лучше дамагера",
+      "author": "6____6",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
     }
   ]
 }

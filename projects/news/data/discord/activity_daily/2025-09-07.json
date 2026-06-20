@@ -1,10 +1,29 @@
 {
   "date": "2025-09-07",
-  "messages": 128,
-  "unique_authors": 20,
-  "reactions_total": 190,
-  "attachments": 25,
+  "messages": 10666,
+  "unique_authors": 210,
+  "reactions_total": 1900,
+  "attachments": 556,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 24,
+    "🔸canal-español": 290,
+    "🔸canal-português": 239,
+    "🔸ruang-obrolan-indonesia": 535,
+    "🔸ห้องสนทนาภาษาไทย": 36,
+    "🔸traphase": 34,
+    "🔸lore-chat": 144,
+    "🔸lets-count": 5,
+    "🔸general-chat": 16,
+    "🔸邀请码互助┊swap-invitation-codes": 56,
+    "🔸morimens-game-chat": 8198,
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 2,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 1,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 299,
+    "🔸綜合討論": 644,
     "Salvador warmup doodle": 1,
     "My fan art submission uid 101084291": 6,
     "Kathigu-ra Fanart Submission": 2,
@@ -27,32 +46,34 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "7": 1,
-    "11": 3,
-    "16": 4,
-    "23": 1,
-    "12": 4,
-    "18": 2,
-    "15": 4,
-    "6": 6,
-    "5": 3,
-    "2": 1,
-    "4": 1,
-    "8": 24,
-    "13": 4,
-    "14": 4,
-    "9": 20,
-    "10": 28,
-    "21": 2,
-    "22": 11,
-    "19": 3,
-    "20": 1,
-    "1": 1
+    "0": 514,
+    "1": 373,
+    "2": 252,
+    "3": 431,
+    "5": 678,
+    "8": 566,
+    "14": 748,
+    "15": 844,
+    "18": 341,
+    "19": 419,
+    "21": 177,
+    "4": 617,
+    "10": 203,
+    "11": 478,
+    "12": 440,
+    "13": 495,
+    "16": 547,
+    "17": 513,
+    "20": 347,
+    "22": 139,
+    "23": 379,
+    "6": 481,
+    "9": 288,
+    "7": 396
   },
   "message_types": {
-    "0": 80,
-    "4": 1,
-    "19": 25
+    "19": 360,
+    "0": 1019
   },
   "top_reacted_messages": [
     {
@@ -70,11 +91,43 @@
       "channel": "Kathigu-ra Fanart Submission"
     },
     {
+      "id": "1414263684280090707",
+      "channel_id": "1170692781216378960",
+      "content": "All hail me spooky",
+      "author": "spooky_penguin_",
+      "reactions": 27,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414265655477141566",
+      "channel_id": "1170692781216378960",
+      "content": "Spooky did nothing wrong <:agree:1400771815076528258>",
+      "author": "sirtealot",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414201691955531937",
+      "channel_id": "1170692781216378960",
+      "content": "Ryker Rerun 👀",
+      "author": "solxeko",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1414269972414333038",
       "content": "These are the early color sketches, ended up picking the third one bcs of the vi",
       "author": "haneopng",
       "reactions": 18,
       "channel": "Doll: Inferno Fanart Submission"
+    },
+    {
+      "id": "1414264427712090203",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1414155998599581706",
@@ -91,11 +144,51 @@
       "channel": "[Custom Awakener Kit] Kaom: Viator ex Nihilo"
     },
     {
+      "id": "1414171094994124810",
+      "channel_id": "1170692781216378960",
+      "content": "what does biav stand for",
+      "author": "noobwannabe",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1414277138068279378",
       "content": "UID: 101035604",
       "author": "mobiosity",
       "reactions": 14,
       "channel": "Kathigu-ra sketch"
+    },
+    {
+      "id": "1414246356893175818",
+      "channel_id": "1170692781216378960",
+      "content": "damage per screenshot",
+      "author": "gisstar",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414269926151164099",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414347408883716118",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414175710737862667",
+      "channel_id": "1174983699935277147",
+      "content": "希望限定池也是這樣<:dead:1356082627509092372>",
+      "author": "nazhigezihk",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1414279996842836060",
@@ -105,60 +198,36 @@
       "channel": "My fan art submission uid 101084291"
     },
     {
-      "id": "1414129765740183563",
-      "content": "A retelling of Kathigu-Ra's side story from N's perspective.\n\nhttps://archiveofo",
-      "author": "fuckupa2",
-      "reactions": 6,
-      "channel": "i don't think i'm even something real at all (N Fanfic)"
+      "id": "1414254254184599643",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815> all Leigh simps must castrated and hanged",
+      "author": "joker_0108",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1414204979027116123",
+      "id": "1414272421208526848",
+      "channel_id": "1170692781216378960",
+      "content": "finally now i just need Corposant",
+      "author": "dimitrescullij",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414168099183132782",
+      "channel_id": "1131839817982947429",
+      "content": "我可能是第一次同時拿到這兩個（",
+      "author": "cwz.io",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1414241753631952976",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "eyadx23",
-      "reactions": 3,
-      "channel": "My fan art submission uid 101084291"
-    },
-    {
-      "id": "1414258276744564828",
-      "content": "温师傅生日快乐！",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1414314129493327963",
-      "content": "Oh yeah, the sketch >>",
-      "author": "ezer2112",
-      "reactions": 2,
-      "channel": "Kathigu-ra Fanart Submission"
-    },
-    {
-      "id": "1414377299062820945",
-      "content": "i just still don’t fully understand how to play the game",
-      "author": "gracinem",
-      "reactions": 1,
-      "channel": "Need help with team building and game in general"
-    },
-    {
-      "id": "1414378701340147805",
-      "content": "dont think my team is bad but im definitely not playing it right at all",
-      "author": "gracinem",
-      "reactions": 1,
-      "channel": "Need help with team building and game in general"
-    },
-    {
-      "id": "1414197921901183048",
-      "content": "以及老闆娘（鼠）的天賦",
-      "author": "taco94487",
-      "reactions": 1,
-      "channel": "前瞻：相位对弈改动 Traphase Changes"
-    },
-    {
-      "id": "1414237527136534598",
-      "content": "我還以為比的是中指",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "author": "arthasiv",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     }
   ]
 }

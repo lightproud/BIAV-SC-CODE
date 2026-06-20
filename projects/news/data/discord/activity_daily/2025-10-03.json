@@ -1,10 +1,28 @@
 {
   "date": "2025-10-03",
-  "messages": 132,
-  "unique_authors": 39,
-  "reactions_total": 358,
-  "attachments": 31,
+  "messages": 10820,
+  "unique_authors": 176,
+  "reactions_total": 2027,
+  "attachments": 510,
   "channel_activity": {
+    "🔸晒卡分享": 18,
+    "🔸相位对弈": 387,
+    "🔸课间休息闲聊": 9,
+    "🔸한국어-채팅방": 3,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 434,
+    "🔸canal-español": 65,
+    "🔸canal-português": 28,
+    "🔸ruang-obrolan-indonesia": 63,
+    "🔸ห้องสนทนาภาษาไทย": 90,
+    "🔸traphase": 46,
+    "🔸lore-chat": 83,
+    "🔸lets-count": 18,
+    "🔸team-building": 31,
+    "🔸general-chat": 44,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸綜合討論": 591,
+    "🔸morimens-game-chat": 8759,
     "The Persistence of Fading Glow | Tulu Fanfic": 1,
     "William Delapore doodle(s)": 20,
     "blackjack!": 1,
@@ -30,29 +48,35 @@
     "1423337172655935600": 1
   },
   "hourly_activity": {
-    "15": 3,
-    "1": 6,
-    "2": 5,
-    "3": 5,
-    "4": 3,
-    "5": 2,
-    "6": 15,
-    "8": 11,
-    "9": 19,
-    "11": 13,
-    "14": 2,
-    "23": 2,
-    "13": 13,
-    "16": 2,
-    "7": 14,
-    "10": 7,
-    "12": 5,
-    "18": 3,
-    "17": 2
+    "8": 489,
+    "11": 475,
+    "12": 318,
+    "0": 465,
+    "1": 683,
+    "2": 540,
+    "3": 443,
+    "5": 487,
+    "13": 435,
+    "15": 769,
+    "16": 400,
+    "17": 403,
+    "18": 560,
+    "19": 432,
+    "23": 235,
+    "9": 378,
+    "22": 372,
+    "7": 525,
+    "4": 248,
+    "6": 417,
+    "10": 411,
+    "14": 442,
+    "20": 421,
+    "21": 472
   },
   "message_types": {
-    "0": 80,
-    "19": 19
+    "0": 1114,
+    "19": 223,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -112,6 +136,22 @@
       "channel": "William Delapore doodle(s)"
     },
     {
+      "id": "1423705918444540055",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423693417430519859",
+      "channel_id": "1170692781216378960",
+      "content": "I've been doing fiddlesticks impressions for a long time now. I'm a fiddlesticks",
+      "author": "sugarspawn",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1423485755883262056",
       "content": "",
       "author": "sunstopshining",
@@ -140,6 +180,14 @@
       "channel": "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!"
     },
     {
+      "id": "1423677292504289320",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1423524789275856926",
       "content": "详情可移步排行榜425A牛肉批发黄姨查看，所以你游没有这种公认T0角色也可以满分好吗！",
       "author": "dyyqcwj",
@@ -147,53 +195,35 @@
       "channel": "无塔薇血希425分震撼达成！"
     },
     {
+      "id": "1423685304170188810",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/shibaijiayo/status/1974009103560159640?t=-Y4jTwpez5mEtyzZH9EfFg&s=",
+      "author": "kevsalvador",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423693756082814976",
+      "channel_id": "1170692781216378960",
+      "content": "i have average height",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1423781487244742658",
+      "channel_id": "1170692781216378960",
+      "content": "Why did I get bombed 💔💔",
+      "author": "ludwig_101",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1423591224807264338",
       "content": "",
       "author": "ass191044",
       "reactions": 7,
       "channel": "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!"
-    },
-    {
-      "id": "1423664069042507906",
-      "content": "Meow, meow~<:Meow:1400771520757891123>",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!"
-    },
-    {
-      "id": "1423505691196391586",
-      "content": "there should be M logo on the back but it's too late to add it",
-      "author": "sunstopshining",
-      "reactions": 6,
-      "channel": "William Delapore doodle(s)"
-    },
-    {
-      "id": "1423524568777363478",
-      "content": "",
-      "author": "sunstopshining",
-      "reactions": 6,
-      "channel": "William Delapore doodle(s)"
-    },
-    {
-      "id": "1423551577720885298",
-      "content": "",
-      "author": "sunstopshining",
-      "reactions": 6,
-      "channel": "William Delapore doodle(s)"
-    },
-    {
-      "id": "1423563310405648396",
-      "content": "捏完之後立刻退團加入墨菲",
-      "author": "ahong0727",
-      "reactions": 6,
-      "channel": "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!"
-    },
-    {
-      "id": "1423586354369007656",
-      "content": "Pov: senior looking at my grades",
-      "author": "sunstopshining",
-      "reactions": 5,
-      "channel": "William Delapore doodle(s)"
     }
   ]
 }

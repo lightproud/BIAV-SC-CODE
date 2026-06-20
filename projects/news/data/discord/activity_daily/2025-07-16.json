@@ -1,10 +1,27 @@
 {
   "date": "2025-07-16",
-  "messages": 130,
-  "unique_authors": 26,
-  "reactions_total": 85,
-  "attachments": 17,
+  "messages": 13276,
+  "unique_authors": 255,
+  "reactions_total": 1536,
+  "attachments": 483,
   "channel_activity": {
+    "🔸lets-count": 7,
+    "🔸morimens-game-chat": 10483,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 149,
+    "🔸phòng-chat-tiếng-việt": 132,
+    "🔸canal-español": 288,
+    "🔸canal-português": 50,
+    "🔸ruang-obrolan-indonesia": 82,
+    "🔸ห้องสนทนาภาษาไทย": 651,
+    "🔸traphase": 152,
+    "🔸lore-chat": 139,
+    "🔸綜合討論": 1001,
     "Leigh": 2,
     "*Translated & Credited* cn Fan Art Reposts": 7,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 3,
@@ -22,29 +39,33 @@
     "栗子": 1
   },
   "hourly_activity": {
-    "3": 4,
-    "20": 7,
-    "0": 3,
-    "11": 23,
-    "12": 27,
-    "13": 14,
-    "14": 5,
-    "16": 5,
-    "7": 12,
-    "17": 7,
-    "9": 7,
-    "10": 2,
-    "22": 1,
-    "5": 2,
-    "15": 4,
-    "2": 4,
-    "6": 1,
-    "1": 1,
-    "8": 1
+    "0": 278,
+    "6": 343,
+    "9": 314,
+    "20": 339,
+    "23": 260,
+    "1": 383,
+    "2": 543,
+    "3": 357,
+    "4": 337,
+    "5": 417,
+    "7": 518,
+    "8": 442,
+    "10": 1422,
+    "11": 1111,
+    "12": 870,
+    "13": 724,
+    "14": 876,
+    "15": 726,
+    "16": 808,
+    "17": 715,
+    "18": 490,
+    "19": 384,
+    "21": 375,
+    "22": 244
   },
   "message_types": {
-    "0": 82,
-    "19": 12
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -53,6 +74,14 @@
       "author": "morimensstaff01",
       "reactions": 27,
       "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
+    {
+      "id": "1394990026462462084",
+      "channel_id": "1170692781216378960",
+      "content": "Just get 1k crit dmg",
+      "author": ".galeroar",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1394981541053993022",
@@ -69,6 +98,54 @@
       "channel": "栗子"
     },
     {
+      "id": "1395022831351234601",
+      "channel_id": "1170692781216378960",
+      "content": "also, just saying",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394911429437558786",
+      "channel_id": "1131839817982947429",
+      "content": "并不知道自己在画啥…",
+      "author": "zerathree",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1395000553146421260",
+      "channel_id": "1170692781216378960",
+      "content": "Push push push push <a:TheVoices:1285090685694906420>",
+      "author": "zehirete",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395025397791330348",
+      "channel_id": "1170692781216378960",
+      "content": "I KEEP FALLING INTO THE SAME LOOP OF \"the new unit looks cool. But eh, first opi",
+      "author": "thpdom",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394960924149944330",
+      "channel_id": "1170692781216378960",
+      "content": "Hehe",
+      "author": "kevsalvador",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395010910577492000",
+      "channel_id": "1131839817982947429",
+      "content": "畫很爛就是了",
+      "author": "undecember_news",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1394845758859120743",
       "content": "https://www.youtube.com/watch?v=jrlBAmjd_kY",
       "author": "reya.li",
@@ -76,116 +153,76 @@
       "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
     },
     {
-      "id": "1394982808027402341",
-      "content": "Wearing  👠?\nChef is <:slay:1103459199180099614>",
-      "author": "meatyexplosions",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+      "id": "1395019644737163278",
+      "channel_id": "1170692781216378960",
+      "content": "I almost thrown my phone when Clem forced Caecus out of the closet",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395173053717151744",
-      "content": "",
-      "author": "mengdiehuan",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+      "id": "1395023048482099221",
+      "channel_id": "1170692781216378960",
+      "content": "||***have you ever eaten cock with your life on the line?!!??!?***||",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395142905387159713",
-      "content": "Been gatekeeping this one for a while but no more! Nothing is yummier than our t",
-      "author": "ev_6185",
-      "reactions": 3,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1395026592748802098",
+      "channel_id": "1170692781216378960",
+      "content": "Fucking Goliath",
+      "author": "vinsette",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395101472211075104",
-      "content": "For those that missed my discussion on Doresain in gen chat, they spiced up the ",
-      "author": "ev_6185",
-      "reactions": 3,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "id": "1395033652328661103",
+      "channel_id": "1170692781216378960",
+      "content": "not critting > redo fight",
+      "author": "good.th",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394874850362789939",
-      "content": "Thank you for your suggestion. Goya will submit it to the relevant responsible p",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "Suggestion: rework automatic locking of wheels before maxed"
+      "id": "1395086452215513199",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens being mixed sex is great",
+      "author": "yonagoda",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394876883757170831",
-      "content": "wow! <:love:1356053099931897977>",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "Leigh"
+      "id": "1395089835663954022",
+      "channel_id": "1170692781216378960",
+      "content": "If doresian was my boytoy he'd say \"please me hearty\" and id say \"no babe\" and h",
+      "author": "beenax.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395146466900578365",
-      "content": "A very well rendered Aigis piece for balance \nlink to OG post:⁠ https://lbhsqq.l",
-      "author": "ev_6185",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1395012362909782168",
-      "content": "殺死三隻可能不是同一個判定",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1395012913139552287",
-      "content": "神父专武护盾加成不限指令卡也不算",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1395027641672663151",
-      "content": "杜勒加强方案：杜勒生吃胚胎可以获得一层亡骸，每回合一次。",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1394939671112581232",
-      "content": "輔助超模是血肉傳統",
+      "id": "1394993778372378725",
+      "channel_id": "1131839817982947429",
+      "content": "有點害怕官方推出之後鬧出福袋事件二號",
       "author": "ena04564",
-      "reactions": 1,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1395036356819816589",
-      "content": "就是單純的necro+via",
+      "id": "1395006140533964872",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1169106999422754856/1208466574529531904/S",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1394949746094903296",
-      "content": "稍微改了一下描述應該比較清楚一點<:perfect:1356084498630053979>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
-    },
-    {
-      "id": "1394931486423257109",
-      "content": "rt，這是4-6，可能有別的也沒加上紅點可以檢查一下（？",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
-    },
-    {
-      "id": "1394945545633660998",
-      "content": "感谢反馈~问题已收到🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
-    },
-    {
-      "id": "1394947790999912609",
-      "content": "您好，这里确实应该增加红点，会安排加上🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」多階段主綫boss沒加上階段紅點"
+      "id": "1395094465420460032",
+      "channel_id": "1131839817982947429",
+      "content": "伪娘虫子",
+      "author": "carme.0588",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

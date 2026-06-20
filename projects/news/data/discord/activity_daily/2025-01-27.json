@@ -1,10 +1,24 @@
 {
   "date": "2025-01-27",
-  "messages": 41,
-  "unique_authors": 8,
-  "reactions_total": 11,
-  "attachments": 2,
+  "messages": 4881,
+  "unique_authors": 156,
+  "reactions_total": 328,
+  "attachments": 263,
   "channel_activity": {
+    "🔸ruang-obrolan-indonesia": 2,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 61,
+    "🔸lore-chat": 292,
+    "🔸綜合討論": 494,
+    "🔸morimens-game-chat": 2488,
+    "🔸相位对弈": 20,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 97,
+    "🔸chaîne-française": 8,
+    "🔸русский-канал": 594,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 104,
+    "🔸canal-português": 665,
     "✨為喚醒體著新裝！": 1,
     "✅前瞻：V2.1 灵塑适性与钥令收集": 3,
     "English Page pls !!": 3,
@@ -16,57 +30,195 @@
     "［為喚醒體換新裝］图鲁 灯会主题新年皮 含服设和简单二分立绘思路": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "15": 11,
-    "19": 1,
-    "23": 1,
-    "13": 6,
-    "14": 9,
-    "16": 2,
-    "12": 1,
-    "10": 5,
-    "17": 1,
-    "20": 1,
-    "1": 1
+    "3": 274,
+    "1": 262,
+    "13": 206,
+    "14": 350,
+    "4": 436,
+    "10": 200,
+    "21": 70,
+    "22": 140,
+    "0": 115,
+    "5": 229,
+    "6": 190,
+    "8": 185,
+    "9": 304,
+    "11": 211,
+    "12": 94,
+    "15": 175,
+    "17": 323,
+    "18": 168,
+    "19": 63,
+    "20": 123,
+    "23": 158,
+    "2": 213,
+    "7": 168,
+    "16": 224
   },
   "message_types": {
-    "0": 4
+    "0": 300,
+    "19": 64
   },
   "top_reacted_messages": [
     {
-      "id": "1333440781309972623",
-      "content": "我記得界域材料4個為一組 \n積分沒差的\n經驗瓶、升階、技能材料",
-      "author": "_buqi",
+      "id": "1333272027976437852",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": ".tainaoi",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333390439251836958",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333390919311036497",
+      "channel_id": "1131839817982947429",
+      "content": "最後來個性轉sp朵爾",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333246416067362879",
+      "channel_id": "1170692781216378960",
+      "content": "Anyhow I CAN FINALLY SAY THAT I HAVE EVERY AWAKER LESGOOO",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1333508809213345833",
+      "channel_id": "1170692781216378960",
+      "content": "SOREL LOOKS FIRE",
+      "author": "mikudayoo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1333283215187775520",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333368341968191531",
+      "channel_id": "1131839817982947429",
+      "content": "~~那邊是開銀趴的地方 這裡要裝作像是人一點 但是也有早就不當人的 像是我~~",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333372812341284934",
+      "channel_id": "1131839817982947429",
+      "content": "就是因为你们这种人莱克才会穿6件衣服的",
+      "author": "sadisticgirl.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333376775459176499",
+      "channel_id": "1131839817982947429",
+      "content": "這邊也都是0，看上面那個阿狗跟kai",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333376859886456894",
+      "channel_id": "1131839817982947429",
+      "content": "↖️然後還有正常性向的",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333386287532478525",
+      "channel_id": "1131839817982947429",
+      "content": "~~可見校貓也吃~~",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333389608997752843",
+      "channel_id": "1131839817982947429",
+      "content": "還有之前每天拍拍校貓送1000銀芯的活動",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333390207013093447",
+      "channel_id": "1131839817982947429",
+      "content": "~~遊戲是不是要倒了~~",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333391054774337578",
+      "channel_id": "1131839817982947429",
+      "content": "校貓再不發福利我要阿花拉瓜了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333399664619163721",
+      "channel_id": "1131839817982947429",
+      "content": "靈芝吃完了（。",
+      "author": "kuritani_yuu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333465714262151198",
+      "channel_id": "1131839817982947429",
+      "content": "~~歪到超限吧牢图~~",
+      "author": "yang015148",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1333371814021304373",
+      "channel_id": "1170692781216378960",
+      "content": "<:Poggies:1279928356736864276>",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1333319098095894600",
+      "channel_id": "1131839817982947429",
+      "content": "畢竟要翻牆",
+      "author": "tofu0834",
       "reactions": 3,
-      "channel": "活动材料分布"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1333385897504280576",
-      "content": "我要抱怨：艾瑞卡分明是Insane",
-      "author": "akkom730",
+      "id": "1333321382703923283",
+      "channel_id": "1131839817982947429",
+      "content": "沒有兌換碼定期發下來感覺就是少了某些東西",
+      "author": "pray_unbeliever",
       "reactions": 3,
-      "channel": "2.0 BOSS難度排行榜"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1333386391895150654",
-      "content": "給我調回去啊，害我以為是簡單的王就上難三被暴打",
-      "author": "akkom730",
-      "reactions": 2,
-      "channel": "2.0 BOSS難度排行榜"
-    },
-    {
-      "id": "1333484531298078853",
-      "content": "可以用旺達隊解，旺達還在扛",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "2.0 BOSS難度排行榜"
-    },
-    {
-      "id": "1333424233711140995",
-      "content": "結論我菜",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "2.0 BOSS難度排行榜"
+      "id": "1333365689074974762",
+      "channel_id": "1131839817982947429",
+      "content": "你游社区能发涩图吗",
+      "author": "sadisticgirl.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

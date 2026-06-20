@@ -1,10 +1,27 @@
 {
   "date": "2025-07-26",
-  "messages": 131,
-  "unique_authors": 18,
-  "reactions_total": 114,
-  "attachments": 14,
+  "messages": 14122,
+  "unique_authors": 277,
+  "reactions_total": 1194,
+  "attachments": 540,
   "channel_activity": {
+    "🔸lore-chat": 1045,
+    "🔸lets-count": 9,
+    "🔸morimens-game-chat": 8873,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 8,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 575,
+    "🔸phòng-chat-tiếng-việt": 23,
+    "🔸canal-español": 849,
+    "🔸canal-português": 488,
+    "🔸ruang-obrolan-indonesia": 640,
+    "🔸ห้องสนทนาภาษาไทย": 259,
+    "🔸traphase": 59,
+    "🔸綜合討論": 1140,
+    "🔸阵容构建": 1,
     "Getting some Doresain fan art": 1,
     "niko's silly meme arts": 2,
     "Pretty boys..": 1,
@@ -24,28 +41,44 @@
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "5": 7,
-    "12": 5,
-    "4": 5,
-    "8": 9,
-    "14": 59,
-    "20": 2,
-    "15": 2,
-    "16": 2,
-    "19": 10,
-    "23": 7,
-    "10": 5,
-    "7": 6,
-    "1": 1,
-    "9": 5,
-    "13": 6
+    "1": 567,
+    "2": 853,
+    "3": 804,
+    "4": 774,
+    "5": 435,
+    "6": 985,
+    "7": 512,
+    "8": 129,
+    "9": 321,
+    "10": 403,
+    "11": 827,
+    "12": 847,
+    "13": 985,
+    "14": 941,
+    "15": 542,
+    "19": 509,
+    "21": 305,
+    "22": 296,
+    "0": 848,
+    "23": 334,
+    "16": 681,
+    "17": 401,
+    "18": 476,
+    "20": 347
   },
   "message_types": {
-    "0": 13,
-    "4": 1,
-    "19": 1
+    "0": 783,
+    "19": 271
   },
   "top_reacted_messages": [
+    {
+      "id": "1398660401767514194",
+      "channel_id": "1326453763355185215",
+      "content": "I sent it to castor and pollux’s writer when i first saw it. Please don’t stop, ",
+      "author": "morimens_15",
+      "reactions": 36,
+      "channel": "🔸lore-chat"
+    },
     {
       "id": "1398534592650149969",
       "content": "Drew my OC with the pretty boys of Morimens lol",
@@ -68,6 +101,30 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398664401355145248",
+      "channel_id": "1326453763355185215",
+      "content": "Also thank you for your kind messages! I’m okay now. Tbh nobody asked me to come",
+      "author": "morimens_15",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398743493085495439",
+      "channel_id": "1170692781216378960",
+      "content": "I want +12 gdoll",
+      "author": "derrickc0222",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398615189565345943",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398645751739060234",
       "content": "",
       "author": "nikolazuli",
@@ -82,6 +139,38 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398743978807132302",
+      "channel_id": "1170692781216378960",
+      "content": "I played my own part in sustening the game when the patch launched...",
+      "author": "baguettesuffering",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398638456426467370",
+      "channel_id": "1131839817982947429",
+      "content": "100049920",
+      "author": "taayoui",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398639222641922058",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有佬可以施捨一下借我的鼠助戰",
+      "author": "corposant_1003",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1398676276423692331",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398744092950663318",
       "content": "大家在意的還是這個皮膚放禮包的問題。\n從給的抽數這個角度上來說皮膚更像是一個贈品，對我來說也是如此。有沒有這個皮膚這個禮包我也會買。但是就是會有不少更在乎皮膚的",
       "author": "randomplayer852",
@@ -89,81 +178,51 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
+      "id": "1398644131949183048",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398658325478117438",
+      "channel_id": "1326453763355185215",
+      "content": "Also ||we’re all free to still hc him as anything as long as it makes us happy||",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398663815897415805",
+      "channel_id": "1326453763355185215",
+      "content": "I’ll make sure Doresain’s writer knows by monday. He’ll be happy<:thumbsup:13560",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1398756470723579984",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> 2 hours of retrying <:dishes:1356083313063759922>",
+      "author": "melwyn7591",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398519682738163712",
+      "channel_id": "1131839817982947429",
+      "content": "进行一个炫耀",
+      "author": "201225200913",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1398539766307360788",
       "content": "说实话，我是觉得游戏里的q版头像很好看的，于是决定抄一下画风，但到了下身我就开始我行我素了。因为我不管了。\n\n问了一下眼睛要两边火还是一边火，不过我有选择困难症",
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "仿一点官方q版（失败版"
-    },
-    {
-      "id": "1398669359190380604",
-      "content": "Agree with this.\n\nIf the skin can't be changed, and the cg is later revised, the",
-      "author": "baguettesuffering",
-      "reactions": 6,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398474192982380554",
-      "content": "I'm a massive Doresain fan, but I feel like for the first awaker with a paid ski",
-      "author": "phantasidreamin",
-      "reactions": 5,
-      "channel": "Doresain \"skin\"."
-    },
-    {
-      "id": "1398669841417633792",
-      "content": "那个神人：没有那一天",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398671301589336084",
-      "content": "We are fine with skin monetization \nbut Doresain skin is not this",
-      "author": "_venush",
-      "reactions": 4,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398689995468046427",
-      "content": "系統中勾選自動分解，不算入成就中，這已經是bug了吧?",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "💭「处理中」自動分解命輪 不能解成就"
-    },
-    {
-      "id": "1398669039181500568",
-      "content": "I think this skin should at LEAST be released freely.",
-      "author": "phantasidreamin",
-      "reactions": 2,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398769393395302536",
-      "content": "I'm afraid thise ended a while ago, just hasn't been locked yet. <:dizzy2:135608",
-      "author": "smolive_oil",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398810959866368041",
-      "content": "DO NOT TRUST BAIV. They have already let down Chinese players for a year.",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398561815025156227",
-      "content": "Plus, do we just lose the SR wheels from the other 2 characters events? \nHow wil",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "3 Reruns"
-    },
-    {
-      "id": "1398560994820751410",
-      "content": "用这个",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
     }
   ]
 }

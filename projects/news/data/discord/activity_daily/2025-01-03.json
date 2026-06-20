@@ -1,10 +1,22 @@
 {
   "date": "2025-01-03",
-  "messages": 290,
-  "unique_authors": 42,
-  "reactions_total": 193,
-  "attachments": 6,
+  "messages": 7933,
+  "unique_authors": 155,
+  "reactions_total": 762,
+  "attachments": 228,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸綜合討論": 1763,
+    "🔸阵容构建": 92,
+    "🔸morimens-game-chat": 4987,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 64,
+    "🔸한국어-채팅방": 22,
+    "🔸русский-канал": 127,
+    "🔸phòng-chat-tiếng-việt": 534,
+    "🔸canal-español": 3,
+    "🔸canal-português": 26,
+    "🔸ruang-obrolan-indonesia": 19,
     "Rykerrrr": 1,
     "Stats and realm mechanics (and some tips)": 1,
     "GPT translation synonyms": 2,
@@ -28,31 +40,33 @@
     "一个迟到的年终总结": 1
   },
   "hourly_activity": {
-    "5": 4,
-    "12": 23,
-    "15": 2,
-    "21": 1,
-    "11": 23,
-    "16": 29,
-    "22": 4,
-    "2": 9,
-    "3": 13,
-    "4": 6,
-    "9": 52,
-    "1": 5,
-    "6": 28,
-    "7": 8,
-    "10": 51,
-    "13": 1,
-    "8": 17,
-    "23": 2,
-    "17": 5,
-    "0": 1,
-    "19": 1,
-    "20": 4,
-    "14": 1
+    "12": 213,
+    "17": 360,
+    "0": 159,
+    "1": 220,
+    "2": 141,
+    "3": 301,
+    "4": 634,
+    "5": 783,
+    "6": 806,
+    "7": 675,
+    "8": 554,
+    "9": 211,
+    "10": 181,
+    "11": 427,
+    "13": 179,
+    "14": 277,
+    "15": 418,
+    "16": 695,
+    "18": 203,
+    "19": 64,
+    "20": 35,
+    "21": 201,
+    "22": 150,
+    "23": 46
   },
   "message_types": {
+    "19": 1,
     "0": 4
   },
   "top_reacted_messages": [
@@ -106,6 +120,14 @@
       "channel": "于新版本建议"
     },
     {
+      "id": "1324680597594963968",
+      "channel_id": "1131839817982947429",
+      "content": "# 請問大佬忘卻2.0反击要怎麼玩啊",
+      "author": "whshhsa",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1324712524981076020",
       "content": "沒想到校貓本真的要來了XD\n但誠心建議改動不宜過大，必須循序漸進，且難度與獎勵應該要覆蓋到多數受眾-也就是玩家。\n可以出高難挑戰讓頂尖玩家進行挑戰，像無限迴廊與",
       "author": "xiaoxiaogao.",
@@ -127,74 +149,76 @@
       "channel": "✅前瞻：V2.0 唤醒体与命轮加强"
     },
     {
-      "id": "1324781530912133121",
-      "content": "思考一下，如果可以的話，改用每月時間跟自選限定UP的方式來控制，改入常駐的限定腳色或命輪取得，界域研習，讓限定每月一次不歪，讓玩家有想要的人可以取得管道，也可以",
-      "author": "andy1123",
+      "id": "1324548865806045194",
+      "channel_id": "1131839817982947429",
+      "content": "艾希亞娃娃……好色喔……",
+      "author": "ernest_heart",
       "reactions": 4,
-      "channel": "✅前瞻：V2.0 唤醒与守密人等级"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1324681726559256670",
-      "content": "# 然后决定不针对塔微针对其他人",
+      "id": "1324603635606224918",
+      "channel_id": "1131839817982947429",
+      "content": "好像還有隊伍唯一?",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1324736952834199614",
+      "channel_id": "1131839817982947429",
+      "content": "反而融災那新4條都沒常態的高壓",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1324778191348301828",
+      "channel_id": "1131839817982947429",
+      "content": "被踢15次還回來這就是你的最佳證據",
+      "author": "nemu_s_t_a_r",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1324783015620247602",
+      "channel_id": "1131839817982947429",
+      "content": "我早拉黑了",
       "author": "whshhsa",
       "reactions": 4,
-      "channel": "前瞻：V2.X 版本规划与计划事项"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1324611414198976543",
-      "content": "水母有機會碰到加強她的那一天嗎？",
-      "author": "jerry9107",
+      "id": "1324693544879001661",
+      "channel_id": "1131839874132090890",
+      "content": "🛐",
+      "author": "pray_unbeliever",
       "reactions": 4,
-      "channel": "✅前瞻：V2.0 唤醒体与命轮加强"
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1324564794065289291",
-      "content": "还有深潜按分段发养成材料和375这个事，我只能说想强行通过养成素材来逼玩家去卷榜/打高难，最后的结果基本都是适得其反，况且这俩玩法都是周期性玩法还不是那种一个版",
-      "author": "iceyss_",
+      "id": "1324613165367038023",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
       "reactions": 4,
-      "channel": "于新版本建议"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1324613538580267069",
-      "content": "https://vk.com/sidim_v_vk_privykli",
-      "author": "vetka2781",
-      "reactions": 3,
-      "channel": "Rykerrrr"
+      "id": "1324622363890815056",
+      "channel_id": "1170692781216378960",
+      "content": "~~if cancel culture is real why is it so hard to cancel a gym membership~~",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1324781252754014300",
-      "content": "那算我低能兒吧！ 還能玩到現在",
+      "id": "1324765728116834407",
+      "channel_id": "1300659662311526512",
+      "content": "",
       "author": "Deleted User",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.1 关卡篇章"
-    },
-    {
-      "id": "1324544473837080636",
-      "content": "键帽都这样了，还有人想是不是别人顶号，牛的，＋12也是让你们惯出来的",
-      "author": "weidianqibailan6933",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.0 唤醒与守密人等级"
-    },
-    {
-      "id": "1324589407147266058",
-      "content": "超限也是惯出来的",
-      "author": "chitose7777",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.0 唤醒与守密人等级"
-    },
-    {
-      "id": "1324692109025873980",
-      "content": "過氣限定共享",
-      "author": "cra0261_",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.0 唤醒与守密人等级"
-    },
-    {
-      "id": "1324711668973830175",
-      "content": "可能是5%中的0.5%吧 4.5%是普池角之類的",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.0 唤醒与守密人等级"
+      "reactions": 4,
+      "channel": "🔸canal-español"
     }
   ]
 }

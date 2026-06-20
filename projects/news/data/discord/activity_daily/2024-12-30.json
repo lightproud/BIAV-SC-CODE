@@ -1,10 +1,21 @@
 {
   "date": "2024-12-30",
-  "messages": 69,
-  "unique_authors": 22,
-  "reactions_total": 50,
-  "attachments": 10,
+  "messages": 7334,
+  "unique_authors": 187,
+  "reactions_total": 512,
+  "attachments": 320,
   "channel_activity": {
+    "🔸綜合討論": 1444,
+    "🔸阵容构建": 39,
+    "🔸morimens-game-chat": 4515,
+    "🔸相位对弈": 49,
+    "🔸한국어-채팅방": 258,
+    "🔸русский-канал": 51,
+    "🔸phòng-chat-tiếng-việt": 556,
+    "🔸canal-español": 79,
+    "🔸canal-português": 227,
+    "🔸ruang-obrolan-indonesia": 1,
+    "🔸ห้องสนทนาภาษาไทย": 46,
     "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)": 4,
     "V1.7.4.0 在線維護公告": 10,
     "V1.7.4.1 在線維護公告": 6,
@@ -23,35 +34,58 @@
     "利莫里亞元首宣言": 1
   },
   "hourly_activity": {
-    "13": 6,
-    "0": 1,
-    "1": 3,
-    "2": 2,
-    "8": 4,
-    "9": 4,
-    "10": 3,
-    "4": 11,
-    "5": 5,
-    "3": 2,
-    "7": 9,
-    "14": 4,
-    "16": 6,
-    "19": 1,
-    "6": 5,
-    "17": 2,
-    "11": 1
+    "0": 344,
+    "1": 587,
+    "2": 783,
+    "3": 536,
+    "4": 685,
+    "5": 550,
+    "6": 291,
+    "7": 272,
+    "8": 398,
+    "9": 328,
+    "10": 211,
+    "11": 113,
+    "12": 476,
+    "13": 441,
+    "14": 383,
+    "15": 155,
+    "16": 120,
+    "17": 115,
+    "18": 202,
+    "19": 55,
+    "21": 66,
+    "22": 40,
+    "23": 7,
+    "20": 176
   },
   "message_types": {
-    "19": 2,
-    "0": 2
+    "0": 5797,
+    "19": 1468
   },
   "top_reacted_messages": [
+    {
+      "id": "1323309240777179177",
+      "channel_id": "1131839817982947429",
+      "content": "用脓包把不规则形态调到牌库里了。如果买了蛇鳞，应该可以无限刷力量，有点像玉玉",
+      "author": "xili0434",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1323253126761025637",
       "content": "",
       "author": "ernest_heart",
       "reactions": 10,
       "channel": "利莫里亞元首宣言"
+    },
+    {
+      "id": "1323105176495587399",
+      "channel_id": "1131839817982947429",
+      "content": "這外域改造對敵我都施加虛弱<:flop:1243504846062223360>  賣掉賣掉",
+      "author": "_buqi",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1323147870257545238",
@@ -68,11 +102,99 @@
       "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
     },
     {
+      "id": "1323111279228883045",
+      "channel_id": "1131839817982947429",
+      "content": "加強深海（X\n出新的深海角把圖魯丟掉（O",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323113737015656540",
+      "channel_id": "1131839817982947429",
+      "content": "由於哈姆林的迴環太過強勢 我們決定接下來的角色關鍵牌都是消耗",
+      "author": "ailiduo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323116673351417917",
+      "channel_id": "1131839817982947429",
+      "content": "專屬命輪加成穿刺傷害\n\n\n\n||然後所有人都給塔薇用||",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1323143138528989364",
       "content": "正不正式怎么了，我只要50银芯",
       "author": "niubi.plusv587",
       "reactions": 6,
       "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
+    },
+    {
+      "id": "1323110685139402752",
+      "channel_id": "1131839817982947429",
+      "content": "~~我給羊媽印他2費我能回277×3欸~~",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323111106813890602",
+      "channel_id": "1131839817982947429",
+      "content": "所以混沌界域該加強了",
+      "author": "toweldewulf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323129873400729641",
+      "channel_id": "1131839817982947429",
+      "content": "圖圖強度全在活動增益上<:sleep:1238448786540462130>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323145934577860689",
+      "channel_id": "1131839817982947429",
+      "content": "誰是狗",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323157519526395934",
+      "channel_id": "1131839817982947429",
+      "content": "<@1301806476570001440>",
+      "author": "xuanxue007",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323161737154789427",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "laoyueshoufaxinyangzhe",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323199731387596833",
+      "channel_id": "1131839817982947429",
+      "content": "我破防了",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323292686035451945",
+      "channel_id": "1131839817982947429",
+      "content": "還好我有幸運風衣不會骰到1",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1323221531513458739",
@@ -82,53 +204,20 @@
       "channel": "图鲁sr bug"
     },
     {
-      "id": "1323325442228486255",
-      "content": "墨菲活動給鯊魚頭像就沒事\n為什麼圖魯活動就把核心課題的圖魯拿出來送\n凱刻斯推要會通靈先課金是不是\n圖魯推要通靈課金拿的頭像之後會被拿出來送是不是",
-      "author": "mmm.08.yu",
+      "id": "1323146308898394223",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
       "reactions": 4,
-      "channel": "活動頭像"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1323321716310544424",
-      "content": "总不能1年11月也是一年吧",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "图鲁怎么还没进池"
-    },
-    {
-      "id": "1323124370595385447",
-      "content": "“很少有人主要要求”→主动要求",
-      "author": "niubi.plusv587",
-      "reactions": 3,
-      "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
-    },
-    {
-      "id": "1323239889986256907",
-      "content": "如图\n普通主线打到9-13了，但首页显示进度在9-1",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "更新后主线关卡进度显示错误"
-    },
-    {
-      "id": "1323106044360261732",
-      "content": "9點就更新完了 這次沒停服",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "V1.7.4.0 在線維護公告"
-    },
-    {
-      "id": "1323286429085859880",
-      "content": "算了還是R命輪更有性價比",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "V1.7.4.0 在線維護公告"
-    },
-    {
-      "id": "1323207583049187439",
-      "content": "通靈課金",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "關於本次活動送的頭像問題"
+      "id": "1323196929500385280",
+      "channel_id": "1131839817982947429",
+      "content": "搞不好十年也算一年後呢",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

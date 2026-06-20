@@ -1,10 +1,22 @@
 {
   "date": "2024-11-15",
-  "messages": 136,
-  "unique_authors": 25,
-  "reactions_total": 102,
-  "attachments": 15,
+  "messages": 3626,
+  "unique_authors": 143,
+  "reactions_total": 202,
+  "attachments": 150,
   "channel_activity": {
+    "🔸綜合討論": 389,
+    "🔸morimens-game-chat": 2519,
+    "🔸相位对弈": 31,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 104,
+    "🔸русский-канал": 263,
+    "🔸phòng-chat-tiếng-việt": 87,
+    "🔸canal-español": 57,
+    "🔸canal-português": 3,
+    "🔸ruang-obrolan-indonesia": 5,
+    "🔸ห้องสนทนาภาษาไทย": 28,
     "Overexalt list": 5,
     "V1.7.1.0 停服維護公告": 17,
     "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 2,
@@ -25,28 +37,34 @@
     "喬治色圖（未滿18慎入，有碼）": 2
   },
   "hourly_activity": {
-    "10": 15,
-    "12": 12,
-    "13": 6,
-    "7": 18,
-    "14": 9,
-    "0": 4,
-    "1": 6,
-    "2": 6,
-    "3": 9,
-    "6": 1,
-    "8": 5,
-    "9": 3,
-    "18": 1,
-    "20": 4,
-    "4": 5,
-    "11": 11,
-    "19": 1,
-    "17": 16,
-    "16": 4
+    "0": 108,
+    "4": 146,
+    "5": 52,
+    "6": 145,
+    "7": 83,
+    "8": 101,
+    "9": 91,
+    "10": 242,
+    "11": 69,
+    "12": 336,
+    "13": 361,
+    "14": 184,
+    "15": 133,
+    "16": 104,
+    "17": 126,
+    "18": 11,
+    "19": 31,
+    "20": 179,
+    "21": 156,
+    "1": 55,
+    "2": 281,
+    "3": 464,
+    "22": 75,
+    "23": 93
   },
   "message_types": {
-    "0": 5
+    "0": 2883,
+    "19": 607
   },
   "top_reacted_messages": [
     {
@@ -85,6 +103,14 @@
       "channel": "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！"
     },
     {
+      "id": "1306932566137245747",
+      "channel_id": "1131839817982947429",
+      "content": "14天速通全角+12",
+      "author": "gd_prawl",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1306922490253279232",
       "content": "Overexalt effects for all awakers (except Tawil). \nWill update Tawil overexalt l",
       "author": "_venush",
@@ -97,6 +123,14 @@
       "author": "moyan0454",
       "reactions": 6,
       "channel": "问问校猫"
+    },
+    {
+      "id": "1307027104772390982",
+      "channel_id": "1131839817982947429",
+      "content": "那就过几天再打呗，反正每天都有",
+      "author": "shimizusakukoi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1306894451272323093",
@@ -113,6 +147,14 @@
       "channel": "喬治（粗製濫造中）"
     },
     {
+      "id": "1306958605446021190",
+      "channel_id": "1131839817982947429",
+      "content": "發展得好的話能活，不盡人意就感謝各位守密人為彌薩格的付出，我們將在…",
+      "author": "gd_prawl",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1307042029028638771",
       "content": "（精神狀態美好\n畫完後自己都覺得自己到底畫了什麼\n太™邪門了\n\n想看去p站看，叫天輪，就是我，我怕在這會出事\n\n\nhttps://www.pixiv.net/a",
       "author": "ice_storys",
@@ -127,39 +169,52 @@
       "channel": "羅傑斯畫像第二彈"
     },
     {
-      "id": "1306926528008814633",
-      "content": "i love how the standard's realm is on the right and the limited's realm is on th",
-      "author": "maximus__111",
-      "reactions": 1,
-      "channel": "Overexalt list"
-    },
-    {
-      "id": "1306931167949226035",
-      "content": "神國的真神XD",
+      "id": "1306932574295294044",
+      "channel_id": "1131839817982947429",
+      "content": "雖然旺達+4真的很強但我還是補到3就收了吧",
       "author": "kevin.yienwenst",
-      "reactions": 1,
-      "channel": "請願加強圖魯和深海新角"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1306808996748853258",
-      "content": "爹咪愛你",
-      "author": "nazhigezihk",
-      "reactions": 1,
-      "channel": "死亡已經迫近，消亡已經開始"
+      "id": "1306829882449330239",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": ".nymphchan",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1306835924042387550",
-      "content": "~~所以才說是快睡著時寫了\n主打一個怎麼厲害怎麼來~~",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "二創喚醒體-威廉學長(鑰令販賣機）"
+      "id": "1306832098287550535",
+      "channel_id": "1170692781216378960",
+      "content": "I’ll let them know once the game’s situation stabilizes",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1307027177027403826",
-      "content": "（精神狀態美好\n畫完後自己都覺得自己到底畫了什麼\n太™邪門了\n\n喬治：羅…羅傑斯大人，不要碰那裡-嗯-這裡很敏感-啊-小力一點啊-",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "喬治色圖（R18，有碼無防爆雷"
+      "id": "1306845371485388892",
+      "channel_id": "1131839817982947429",
+      "content": "沒有羊媽怎麼玩血肉？\n答：直接不玩血肉",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306929942990295042",
+      "channel_id": "1131839817982947429",
+      "content": "😆",
+      "author": "harowolf",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306931729704943708",
+      "channel_id": "1131839817982947429",
+      "content": "極夜+12玩家就無感了",
+      "author": "kevin.yienwenst",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

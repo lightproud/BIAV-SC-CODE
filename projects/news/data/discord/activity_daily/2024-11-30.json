@@ -1,10 +1,25 @@
 {
   "date": "2024-11-30",
-  "messages": 197,
-  "unique_authors": 37,
-  "reactions_total": 335,
-  "attachments": 30,
+  "messages": 10937,
+  "unique_authors": 366,
+  "reactions_total": 962,
+  "attachments": 557,
   "channel_activity": {
+    "🔸綜合討論": 2045,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 6671,
+    "🔸剧情交流": 18,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 86,
+    "🔸chaîne-française": 39,
+    "🔸русский-канал": 253,
+    "🔸phòng-chat-tiếng-việt": 753,
+    "🔸canal-español": 512,
+    "🔸canal-português": 283,
+    "🔸ruang-obrolan-indonesia": 36,
+    "🔸ห้องสนทนาภาษาไทย": 33,
     "🌌【已開獎】超越維度的祝福": 30,
     "🕧【已開獎】決勝戰總動員": 20,
     "「決勝：原初之影」黑屏問題處理貼": 5,
@@ -35,32 +50,35 @@
     "1193859503096070234": 3
   },
   "hourly_activity": {
-    "8": 28,
-    "9": 19,
-    "11": 3,
-    "12": 11,
-    "13": 7,
-    "14": 17,
-    "18": 25,
-    "19": 9,
-    "10": 7,
-    "15": 9,
-    "16": 3,
-    "5": 8,
-    "3": 6,
-    "17": 6,
-    "7": 6,
-    "4": 7,
-    "6": 3,
-    "2": 16,
-    "1": 2,
-    "0": 5
+    "0": 761,
+    "1": 730,
+    "2": 662,
+    "3": 692,
+    "4": 381,
+    "5": 446,
+    "6": 493,
+    "7": 456,
+    "8": 617,
+    "9": 423,
+    "10": 565,
+    "11": 651,
+    "12": 479,
+    "13": 494,
+    "14": 719,
+    "15": 287,
+    "16": 466,
+    "17": 537,
+    "18": 181,
+    "19": 288,
+    "21": 166,
+    "20": 236,
+    "22": 102,
+    "23": 105
   },
   "message_types": {
-    "0": 67,
-    "19": 17,
-    "4": 2,
-    "6": 1
+    "0": 8839,
+    "19": 1900,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -69,6 +87,22 @@
       "author": "game.producer.light",
       "reactions": 182,
       "channel": "手书【结局未完待续】by 守密人付草"
+    },
+    {
+      "id": "1312218312356270232",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1312217011845070939\n\nI'm sorry ",
+      "author": "game.producer.light",
+      "reactions": 48,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1312279825414881380",
+      "channel_id": "1131839817982947429",
+      "content": "虽然未来可能还有诸多不确定性……\n但是，各位守密人啊。\n这一年来，感谢有你们。\n愿银钥指引前路。",
+      "author": "game.producer.light",
+      "reactions": 35,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1312332281427398706",
@@ -85,11 +119,51 @@
       "channel": "🕧【已開獎】決勝戰總動員"
     },
     {
+      "id": "1312218057384398909",
+      "channel_id": "1131839817982947429",
+      "content": "@everyone 请务必看看这个创作 抱歉pin大家",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312279533415829556",
+      "channel_id": "1170692781216378960",
+      "content": "Although there may still be many uncertainties in the future...\nBut, my dear kee",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1312374290842386533",
       "content": "别挂鲨鱼，别人用不到就懒得加，挂莱克哈姆林拉啥的肯定有人加",
       "author": "asher_zh",
       "reactions": 17,
       "channel": "加点互相关注打新本！"
+    },
+    {
+      "id": "1312408346048987239",
+      "channel_id": "1131839817982947429",
+      "content": "一周年到處加好友的我be like：",
+      "author": "nazhigezihk",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312279575689957446",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1312476101519478804",
+      "channel_id": "1131839817982947429",
+      "content": "頂配配置",
+      "author": "sod212",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1312388058145882152",
@@ -106,6 +180,30 @@
       "channel": "活動強迫助戰"
     },
     {
+      "id": "1312388426372485180",
+      "channel_id": "1131839874132090890",
+      "content": "<@426913095701495811> 的",
+      "author": "arr5721",
+      "reactions": 10,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1312275758676185180",
+      "channel_id": "1131839817982947429",
+      "content": "不給被嫌周年福利沒誠意，給了被問遊戲是不是要關了",
+      "author": "huangyu0876",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312490566843629673",
+      "channel_id": "1173463482503536711",
+      "content": "繪師本人發的設計稿\n微博挖的",
+      "author": "kong760",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1312253480089682000",
       "content": "~~在他進之前抽一抽避免被汙染卡池~~",
       "author": "arr5721",
@@ -113,95 +211,28 @@
       "channel": "图鲁是不是要进常驻了"
     },
     {
-      "id": "1312488514356645920",
-      "content": "~~我也忘記\n但我去上面拿別人的來用\n這樣顯的我比較重視~~",
-      "author": "ice_storys",
+      "id": "1312237084211286047",
+      "channel_id": "1131839817982947429",
+      "content": "请知晓。",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312218558020714566",
+      "channel_id": "1131839817982947429",
+      "content": "很用心的二創\n真心希望遊戲能活久一點😂",
+      "author": "timchen0331",
       "reactions": 7,
-      "channel": "🌌【已開獎】超越維度的祝福"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312286900219940897",
-      "content": "守密人你好：\n       彌薩格大學校務處將於11月30日15:50進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們",
-      "author": "morimensstaff02",
-      "reactions": 5,
-      "channel": "V1.7.2.1 在線維護公告"
-    },
-    {
-      "id": "1312336330834972683",
-      "content": "能不能直接给我一份🥹看在我含辛茹苦这么多年",
-      "author": "dyyqcwj",
-      "reactions": 4,
-      "channel": "🌌【已開獎】超越維度的祝福"
-    },
-    {
-      "id": "1312340481799360613",
-      "content": "<@333957728466894851> 完蛋 希望官方會幫我們翻譯吧🥲",
-      "author": "2041880926",
-      "reactions": 4,
-      "channel": "🌌【已開獎】超越維度的祝福"
-    },
-    {
-      "id": "1312320261256777759",
-      "content": "有没有人加好友啊，发现好友不够用来打新的7个本了（淡淡死去）\nuid：100067782\n来点人救救我吧！",
-      "author": "tristlanto",
-      "reactions": 3,
-      "channel": "加点互相关注打新本！"
-    },
-    {
-      "id": "1312239011472998542",
-      "content": "",
+      "id": "1312251254210166927",
+      "channel_id": "1131839817982947429",
+      "content": "一般人：趕緊把牌打光以免變石頭\n高手：故意留廢牌變石頭以加速循環\n我：覺醒變石頭、鎖鏈變石頭、主C技能變石頭、聖禮變石頭、回禮變石頭",
       "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "這又是哪個維度啊"
-    },
-    {
-      "id": "1312218978977841233",
-      "content": "Amazing! Bless the artist",
-      "author": "satachan",
-      "reactions": 3,
-      "channel": "手书【结局未完待续】by 守密人付草"
-    },
-    {
-      "id": "1312464053033242677",
-      "content": "那就不加吧，发现只是不能重复同一个好友而已，也够打7个眼睛了，不用对我挂啥做建议",
-      "author": "tristlanto",
-      "reactions": 2,
-      "channel": "加点互相关注打新本！"
-    },
-    {
-      "id": "1312240925132455938",
-      "content": "打完就進來了",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "這又是哪個維度啊"
-    },
-    {
-      "id": "1312362609051439124",
-      "content": "继续速报",
-      "author": "nancyjofla",
-      "reactions": 2,
-      "channel": "（已封存）【蚰蜒的vrm影像馆】"
-    },
-    {
-      "id": "1312219991550201938",
-      "content": "absolute cinema",
-      "author": "nerdmui",
-      "reactions": 2,
-      "channel": "手书【结局未完待续】by 守密人付草"
-    },
-    {
-      "id": "1312493162719215707",
-      "content": "野獸\n最沒有理智的那個分身",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1312422596633165865",
-      "content": "聖誕節不到一個月了欸 感覺來不及",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "🌌【已開獎】超越維度的祝福"
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     }
   ]
 }

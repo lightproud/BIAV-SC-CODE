@@ -1,10 +1,27 @@
 {
   "date": "2025-04-27",
-  "messages": 46,
-  "unique_authors": 9,
-  "reactions_total": 590,
-  "attachments": 6,
+  "messages": 6715,
+  "unique_authors": 132,
+  "reactions_total": 1368,
+  "attachments": 253,
   "channel_activity": {
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 5242,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 321,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 88,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 215,
+    "🔸canal-português": 30,
+    "🔸ruang-obrolan-indonesia": 158,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 35,
+    "🔸lore-chat": 16,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 3,
+    "🔸綜合討論": 542,
     "Goliath Fanart": 4,
     "Overexalt": 2,
     "✅「Answered」Error on game launch": 3,
@@ -20,37 +37,54 @@
     "血链希洛忘却篇星辰篇造物抓取二图流攻略": 5,
     "自製角色（目前有深海一名、超維一名）": 3,
     "一點點鯊守私設文...吧? （清水.jpg）": 2,
-    "Ultra Greed": 1,
-    "🔸礼包码┊gift-codes": 1
+    "Ultra Greed": 1
   },
   "hourly_activity": {
-    "5": 6,
-    "6": 1,
-    "9": 2,
-    "16": 2,
-    "17": 3,
-    "3": 8,
-    "2": 9,
-    "7": 1,
-    "8": 1,
-    "15": 1,
-    "14": 1,
-    "4": 5,
-    "18": 3,
-    "13": 2,
-    "12": 1
+    "3": 265,
+    "5": 139,
+    "0": 447,
+    "1": 374,
+    "2": 376,
+    "4": 368,
+    "6": 165,
+    "7": 137,
+    "8": 245,
+    "9": 93,
+    "10": 210,
+    "11": 68,
+    "12": 249,
+    "13": 460,
+    "14": 138,
+    "15": 564,
+    "16": 231,
+    "17": 164,
+    "18": 43,
+    "19": 214,
+    "20": 584,
+    "21": 257,
+    "22": 438,
+    "23": 486
   },
   "message_types": {
-    "0": 3,
-    "19": 3
+    "0": 4918,
+    "19": 1209
   },
   "top_reacted_messages": [
     {
       "id": "1366033974123827241",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 17000守密人達成禮 / DC17000 Keepers Achievement Gift\n\n《忘卻前夜Morimens》DC全球頻道達到17000人",
       "author": "morimensstaff02",
-      "reactions": 573,
+      "reactions": 574,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1366035786159493181",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1365884553163706409",
@@ -60,6 +94,14 @@
       "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
     },
     {
+      "id": "1366024844335906878",
+      "channel_id": "1131839817982947429",
+      "content": "<:processing:1357185814567718963>",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1366120365457277068",
       "content": "界域：深海\n輔助型\n\n————————————————\n克薩諾斯（Kthanid）\n\n————————————————\n狀態\n\n等級：60\n\n體質92\n攻擊11",
       "author": "void_1546.",
@@ -67,46 +109,124 @@
       "channel": "自製角色（目前有深海一名、超維一名）"
     },
     {
-      "id": "1365947702055276575",
-      "content": "真的嗎",
+      "id": "1366005498838651001",
+      "channel_id": "1131839817982947429",
+      "content": "~~我都擔心內容~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366033752752652328",
+      "channel_id": "1131839817982947429",
+      "content": "跟我一樣欸",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366183343615512627",
+      "channel_id": "1131839817982947429",
+      "content": "~~不如下一篇文讓守密生~~",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365874748323528734",
+      "channel_id": "1170692781216378960",
+      "content": "mine is perma at 0",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365893691411271690",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1170692781216378960/13297363836",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1366142549546504343",
+      "channel_id": "1170692781216378960",
+      "content": "21th century depressing version of middle class lol",
+      "author": "dwang4875",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1366143150241874020",
+      "channel_id": "1170692781216378960",
+      "content": "~~there's a middle? I thought it was just rich? True or false~~",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1366193210824589345",
+      "channel_id": "1170692781216378960",
+      "content": "Awakener headpats?",
+      "author": "jasonthe223rd",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1366069291115479101",
+      "channel_id": "1173463482503536711",
+      "content": "在遊戲裡聽廣播劇會換圖片欸",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1365939151924494386",
+      "channel_id": "1131839817982947429",
+      "content": "兩個忙",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365939872455720972",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365939872862306374",
+      "channel_id": "1131839817982947429",
+      "content": "我负责坐里面一边吃水果一边玩手机一边吹风扇给你们抬的人画饼",
+      "author": "zaitielushang",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365957460367642724",
+      "channel_id": "1131839817982947429",
+      "content": "<:question2:1356053130336272414>",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365979469059326034",
+      "channel_id": "1131839817982947429",
+      "content": "玩鯊魚可以抽狂宴\n巨刃滿的話\n我tm溢出了",
       "author": "kong760",
       "reactions": 2,
-      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1365878796938510388",
-      "content": "It isn't device locked, but your device does save the currently logged in accoun",
-      "author": "zier.0",
+      "id": "1365993171330269255",
+      "channel_id": "1131839817982947429",
+      "content": "觸手新型態：串珠",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "✅「Answered」Steam account switching"
-    },
-    {
-      "id": "1365983044875325541",
-      "content": "Ehe <:goodjob1:1356083729558274149>",
-      "author": "oketan",
-      "reactions": 1,
-      "channel": "Goliath Fanart"
-    },
-    {
-      "id": "1366085170209357864",
-      "content": "1. You need 8 copies total for an overexalt.\n\nIn other words: 3 Star +4\n\n2. The ",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "Overexalt"
-    },
-    {
-      "id": "1366071232122064957",
-      "content": "羊妈每有1点狂气充能效率，增加1%～5%的大招伤害，上毒，造成出血。\n\n向血链看齐。\n\n哈姆林的天赋也能这么搞。\n\n说真的血链国家队最大的问题还真是四个人的大招",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "羊妈星辰篇天赋建议"
-    },
-    {
-      "id": "1365916404733448206",
-      "content": "感謝建議，Goya會去溝通一下🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "技能文本字型大小過小"
+      "channel": "🔸綜合討論"
     }
   ]
 }

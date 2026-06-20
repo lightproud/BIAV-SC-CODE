@@ -1,10 +1,23 @@
 {
   "date": "2024-12-08",
-  "messages": 35,
-  "unique_authors": 13,
-  "reactions_total": 47,
-  "attachments": 6,
+  "messages": 3308,
+  "unique_authors": 133,
+  "reactions_total": 297,
+  "attachments": 173,
   "channel_activity": {
+    "🔸綜合討論": 638,
+    "🔸阵容构建": 51,
+    "🔸morimens-game-chat": 2076,
+    "🔸剧情交流": 10,
+    "🔸相位对弈": 12,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 28,
+    "🔸phòng-chat-tiếng-việt": 104,
+    "🔸canal-español": 324,
+    "🔸canal-português": 9,
+    "🔸ruang-obrolan-indonesia": 1,
     "🏆【已開獎】彌薩格週年頒獎典禮": 1,
     "🌌【已開獎】超越維度的祝福": 2,
     "Re open Dupe pack E2/P3 for Awaker already P4 when get new dupe": 3,
@@ -19,22 +32,34 @@
     "自創界域燒壞我腦袋的cpu了": 7
   },
   "hourly_activity": {
-    "4": 4,
-    "3": 3,
-    "14": 2,
-    "5": 5,
-    "2": 5,
-    "9": 1,
-    "10": 1,
-    "15": 1,
-    "16": 3,
-    "17": 2,
-    "18": 1,
-    "19": 1,
-    "6": 6
+    "1": 315,
+    "2": 119,
+    "3": 203,
+    "4": 465,
+    "5": 189,
+    "7": 328,
+    "8": 217,
+    "9": 69,
+    "10": 164,
+    "11": 189,
+    "12": 115,
+    "13": 106,
+    "14": 121,
+    "15": 190,
+    "16": 26,
+    "17": 20,
+    "18": 72,
+    "19": 62,
+    "21": 61,
+    "23": 58,
+    "0": 50,
+    "6": 90,
+    "20": 77,
+    "22": 2
   },
   "message_types": {
-    "0": 3
+    "0": 2631,
+    "19": 642
   },
   "top_reacted_messages": [
     {
@@ -43,6 +68,14 @@
       "author": "game.producer.light",
       "reactions": 26,
       "channel": "能不能再来个100抽"
+    },
+    {
+      "id": "1315220273468936222",
+      "channel_id": "1173463482503536711",
+      "content": "區區7根，白雲公主吃得下",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1315253652692406333",
@@ -59,32 +92,132 @@
       "channel": "能不能再来个100抽"
     },
     {
-      "id": "1315324747340320799",
-      "content": "We will consider about this thanks for your feedback.",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "Re open Dupe pack E2/P3 for Awaker already P4 when get new dupe"
+      "id": "1315168996731125852",
+      "channel_id": "1131839817982947429",
+      "content": ":这什么破游戏，不赚钱",
+      "author": "qiamo0664",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1315353521511600179",
-      "content": "如題，遊戲裡配裝有許多選擇是種優勢，但太多選擇真的滿容易讓新手迷茫的，可不可以有這種簡易的推薦系統，讓新手在熟悉機制前比較好上手呢？\n\n畢竟在組隊時要一直切出去",
-      "author": "deafening.",
-      "reactions": 1,
-      "channel": "如果活下來，可以出按照調查排行一鍵穿戴命輪或密契的功能嗎？"
+      "id": "1315347278143295498",
+      "channel_id": "1131839817982947429",
+      "content": "其實你貓的意思是~~會記住大家的遺言~~",
+      "author": "nazhigezihk",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1315203138524807250",
-      "content": "這樣是不是16回合才可以把四隻角色輪迴完啊",
+      "id": "1315325134810120254",
+      "channel_id": "1131839874132090890",
+      "content": "活動關是目前最肥而且只需要消耗好友就能打的關卡",
+      "author": "pray_unbeliever",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1315169555198513203",
+      "channel_id": "1131839817982947429",
+      "content": "# 可惡的資本主義",
+      "author": "shimizusakukoi",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315172929260093491",
+      "channel_id": "1131839817982947429",
+      "content": "從0開始的融蝕生活",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315144860688191538",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315169686291484722",
+      "channel_id": "1131839817982947429",
+      "content": "# 可惡的資本主義",
+      "author": "cwz.io",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315283348259737730",
+      "channel_id": "1131839817982947429",
+      "content": "保存了你就要被口口了",
+      "author": "qiamo0664",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315300460487245847",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "ekko9950",
-      "reactions": 1,
-      "channel": "自創界域燒壞我腦袋的cpu了"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1315204588210618449",
-      "content": "晚點再寫，先出門買東西",
+      "id": "1315309267984846858",
+      "channel_id": "1131839817982947429",
+      "content": "一個一個刪好累",
       "author": "ekko9950",
-      "reactions": 1,
-      "channel": "自創界域燒壞我腦袋的cpu了"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315121551636693083",
+      "channel_id": "1131839817982947429",
+      "content": "海膽神威",
+      "author": "huangyu0876",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315145324498653225",
+      "channel_id": "1131839817982947429",
+      "content": "旺达两张上行脊刺也有这么美的伤害",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315169293171949660",
+      "channel_id": "1131839817982947429",
+      "content": "游戏不赚钱指定放弃",
+      "author": "qiamo0664",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315169514144534598",
+      "channel_id": "1131839817982947429",
+      "content": "# 可惡的資本主義",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315170196641681429",
+      "channel_id": "1131839817982947429",
+      "content": "没事如果忘却前夜4了我就把旺达当oc养😋😋😋",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315282734020689971",
+      "channel_id": "1131839817982947429",
+      "content": "鎖鏈連塞給我兩張諾三費",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

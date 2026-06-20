@@ -1,10 +1,35 @@
 {
   "date": "2025-12-31",
-  "messages": 129,
-  "unique_authors": 15,
-  "reactions_total": 456,
-  "attachments": 26,
+  "messages": 13873,
+  "unique_authors": 262,
+  "reactions_total": 1913,
+  "attachments": 729,
   "channel_activity": {
+    "🔸lore-chat": 175,
+    "🔸lets-count": 23,
+    "🔸team-building": 1394,
+    "🔸general-chat": 160,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🐱light’s-nest": 2,
+    "🔸game-question": 808,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 34,
+    "🔸morimens-game-chat": 7052,
+    "🔸剧情交流": 48,
+    "🔸晒卡分享": 27,
+    "🔸相位对弈": 9,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 839,
+    "🔸phòng-chat-tiếng-việt": 576,
+    "🔸canal-español": 357,
+    "🔸canal-português": 310,
+    "🔸ruang-obrolan-indonesia": 676,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸traphase": 442,
+    "🔸綜合討論": 729,
+    "🔸阵容构建": 3,
     "I errr....": 5,
     "aequor doodle": 15,
     "😌": 25,
@@ -30,47 +55,49 @@
     "無法選中理智明燈": 3,
     "用笨圖開啟新的一年吧大家新年快樂": 1,
     "now spell.": 1,
-    "🐱light’s-nest": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1456019117805932636": 1,
     "1455882869410103458": 3,
     "1455874176534712330": 8,
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "3": 9,
-    "9": 14,
-    "14": 6,
-    "15": 9,
-    "16": 5,
-    "17": 10,
-    "4": 7,
-    "6": 4,
-    "10": 17,
-    "12": 13,
-    "0": 2,
-    "20": 3,
-    "19": 2,
-    "18": 2,
-    "8": 1,
-    "13": 3,
-    "23": 4,
-    "21": 4,
-    "11": 8,
-    "2": 2,
-    "5": 1,
-    "7": 3
+    "0": 369,
+    "1": 378,
+    "2": 332,
+    "3": 350,
+    "4": 423,
+    "5": 398,
+    "6": 483,
+    "7": 363,
+    "10": 378,
+    "13": 773,
+    "15": 856,
+    "16": 1046,
+    "17": 1201,
+    "18": 637,
+    "19": 457,
+    "20": 411,
+    "21": 983,
+    "22": 544,
+    "23": 277,
+    "9": 661,
+    "12": 528,
+    "8": 575,
+    "11": 465,
+    "14": 985
   },
   "message_types": {
-    "19": 15,
-    "0": 38
+    "0": 2118,
+    "19": 486,
+    "20": 2
   },
   "top_reacted_messages": [
     {
       "id": "1455958820076650697",
+      "channel_id": "1426837316533747823",
       "content": "Happy New Year to all Keepers from the entire B.I.A.V. Studio team！\nB.I.A.V. Stu",
       "author": "game.producer.light",
-      "reactions": 231,
+      "reactions": 233,
       "channel": "🐱light’s-nest"
     },
     {
@@ -123,11 +150,67 @@
       "channel": "用笨圖開啟新的一年吧大家新年快樂"
     },
     {
+      "id": "1455939681144279042",
+      "channel_id": "1400750050208125010",
+      "content": "I've never really become the \"most helpful\" review before but if anyone in here ",
+      "author": "solaihy",
+      "reactions": 12,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1455882869410103458",
       "content": "So, the Arc2 Counter changes were put in place primarily to stop the op combo of",
       "author": "vxvendetta97",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1455971871983141027",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil has been a victim to effortcreep",
+      "author": "monchi3524",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455963676036038811",
+      "channel_id": "1170692781216378960",
+      "content": "shush dedush",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1456057378976829552",
+      "channel_id": "1170692781216378960",
+      "content": "yeah she can do all the things you really don’t need way better than Kath",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1455766526711042091",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1455812362937569363",
+      "channel_id": "1131839817982947429",
+      "content": "-# 群通知：\n-# 今天晚上十二点，弥萨格校猫将准时发放200个0流明红包，和0个200流明红包，请大家准时参加。",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1455971944532021434",
+      "channel_id": "1131839817982947429",
+      "content": "該打多少還是打多少",
+      "author": "water_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1456030749877866692",
@@ -137,74 +220,28 @@
       "channel": "now spell."
     },
     {
-      "id": "1455947533581815929",
+      "id": "1456016603668807855",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "deellln",
-      "reactions": 6,
-      "channel": "aequor doodle"
+      "author": "arkaether",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455822775427006476",
-      "content": "How to play:\n\n1. Get the rouse card for mouch ASAP\n\n2. Sell Helot 4 cost ASAP(se",
-      "author": "rain_scarlet",
-      "reactions": 5,
-      "channel": ""
+      "id": "1456057568668422275",
+      "channel_id": "1170692781216378960",
+      "content": "I think all agree?",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1455974571034546318",
-      "content": "I WILL DEF DRAW OGIER IN THE FUTURE",
-      "author": "deellln",
-      "reactions": 2,
-      "channel": "aequor doodle"
-    },
-    {
-      "id": "1455848783400140871",
-      "content": "More corpokath ….",
-      "author": "sirmordreds_8080",
-      "reactions": 1,
-      "channel": "I errr...."
-    },
-    {
-      "id": "1455866396423491595",
-      "content": "I trust my friend <@899814369926471750> to do it",
-      "author": "lowtown77",
-      "reactions": 1,
-      "channel": "😌"
-    },
-    {
-      "id": "1455867360115298366",
-      "content": "Welp, here goes MoriR+18",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "😌"
-    },
-    {
-      "id": "1455872473848483840",
-      "content": "Bro.. lmao.\nfine then. I'll see what I can do, either later or tomorrow",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "😌"
-    },
-    {
-      "id": "1455850886763905211",
-      "content": "Solo se considera un Strike para beneficiarse de los buffs de Strike",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
-    },
-    {
-      "id": "1455851527020347566",
-      "content": "Oh , que mal que no active ese tipo de efectos , gracias por aclarar .",
-      "author": "salami_87",
-      "reactions": 1,
-      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
-    },
-    {
-      "id": "1455905287251951760",
-      "content": "如題\n我發現我在玩小水母的時侯嘎嘎亂丟\n發現有些時候明明擊殺但出血卻沒有淨化反而繼續累積\n附上可愛的小水母影片",
-      "author": "passerbycat",
-      "reactions": 1,
-      "channel": "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態"
+      "id": "1455955652080963595",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼不是發2026流明",
+      "author": "ahong0727",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     }
   ]
 }

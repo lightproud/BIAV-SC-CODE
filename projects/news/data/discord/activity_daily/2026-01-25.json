@@ -1,10 +1,32 @@
 {
   "date": "2026-01-25",
-  "messages": 223,
-  "unique_authors": 16,
-  "reactions_total": 211,
-  "attachments": 27,
+  "messages": 17924,
+  "unique_authors": 211,
+  "reactions_total": 2172,
+  "attachments": 766,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 1,
+    "🔸交友频道": 5,
+    "🔸русский-канал": 2937,
+    "🔸phòng-chat-tiếng-việt": 260,
+    "🔸canal-español": 244,
+    "🔸canal-português": 596,
+    "🔸ruang-obrolan-indonesia": 150,
+    "🔸ห้องสนทนาภาษาไทย": 565,
+    "🔸traphase": 98,
+    "🔸lore-chat": 94,
+    "🔸lets-count": 6,
+    "🔸team-building": 314,
+    "🔸general-chat": 748,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 1182,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 42,
+    "🔸綜合討論": 1695,
+    "🔸阵容构建": 13,
+    "🔸morimens-game-chat": 8739,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
     "刚入坑没多久，问问配对攻略": 100,
     "V2.4.2.0 停服维护公告": 5,
@@ -21,7 +43,6 @@
     "银钥匙在说话": 15,
     "✦关卡地图「融灾禁区」总览52期·星辰篇✦": 1,
     "不是if線就是死後幻覺才有可能": 2,
-    "🔸忘却前夜┊morimens-tv": 2,
     "1464913090511503430": 1,
     "1463456408249831446": 3,
     "1462840887553032335": 1,
@@ -32,32 +53,35 @@
     "1455822126568308957": 7
   },
   "hourly_activity": {
-    "13": 7,
-    "14": 8,
-    "5": 34,
-    "6": 58,
-    "8": 7,
-    "9": 29,
-    "10": 7,
-    "15": 17,
-    "0": 1,
-    "4": 2,
-    "19": 5,
-    "23": 2,
-    "2": 3,
-    "18": 19,
-    "21": 2,
-    "7": 9,
-    "17": 1,
-    "11": 5,
-    "1": 3,
-    "3": 1,
-    "12": 2,
-    "16": 1
+    "17": 1606,
+    "15": 1269,
+    "16": 1549,
+    "23": 600,
+    "0": 403,
+    "1": 672,
+    "2": 633,
+    "3": 502,
+    "4": 700,
+    "5": 479,
+    "6": 370,
+    "7": 655,
+    "8": 668,
+    "9": 423,
+    "10": 435,
+    "11": 344,
+    "12": 533,
+    "13": 526,
+    "14": 1120,
+    "18": 1570,
+    "19": 1018,
+    "20": 513,
+    "21": 657,
+    "22": 679
   },
   "message_types": {
-    "0": 70,
-    "19": 32
+    "0": 5660,
+    "19": 1591,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -80,6 +104,14 @@
       "author": "inana_istar",
       "reactions": 24,
       "channel": "Eternal Moratorium - Xu Fan ASMR [Link]"
+    },
+    {
+      "id": "1465049171752128788",
+      "channel_id": "1170692781216378960",
+      "content": "And it would be 4 clems",
+      "author": "frosthief",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1464913090511503430",
@@ -117,6 +149,14 @@
       "channel": ""
     },
     {
+      "id": "1465053974833926378",
+      "channel_id": "1170692781216378960",
+      "content": "My fav hospital meme",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1464815724387373099",
       "content": "🫃  *100",
       "author": "zzio_",
@@ -131,74 +171,68 @@
       "channel": ""
     },
     {
-      "id": "1465065148325826570",
-      "content": "After devs add more \"Limited awakener\" in standard banner you have less chance c",
-      "author": "yeriko703",
-      "reactions": 6,
-      "channel": "Origin of Time"
+      "id": "1464939448570478735",
+      "channel_id": "1400750050208125010",
+      "content": "spoiler cutscene in game",
+      "author": "phi_squared",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1464798274677506214",
+      "channel_id": "1170692781216378960",
+      "content": "should i drink more monster",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465113604138467349",
+      "channel_id": "1170692781216378960",
+      "content": "oh. Right after that one",
+      "author": "_djee",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1465097328192131206",
+      "channel_id": "1435483703114596503",
       "content": "Hi <:Helot_slack_off:1459092159465521184> This is my sister's (original script) ",
       "author": "reya.li",
       "reactions": 6,
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
-      "id": "1465001381684318350",
-      "content": "when ur too broke so u just make ur own",
-      "author": "sirend3r",
+      "id": "1465034418367500353",
+      "channel_id": "1131839817982947429",
+      "content": "至少十五",
+      "author": "ahuahuahua",
       "reactions": 6,
-      "channel": ""
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1464814376094666916",
-      "content": "Caec and Castor",
-      "author": "kiriwoamizaki",
-      "reactions": 3,
-      "channel": "Art dump thread"
+      "id": "1465003846853198010",
+      "channel_id": "1170692781216378960",
+      "content": "stalk as in bullying someone out of a community and following them to another to",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1464951404497080437",
-      "content": "> 大家好，这里是难忘今宵攻略组 。本期为大家带来的是星辰篇第25期（第52期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 3,
-      "channel": "✦关卡地图「融灾禁区」总览52期·星辰篇✦"
+      "id": "1465050592690049207",
+      "channel_id": "1170692781216378960",
+      "content": "Wait \nI've been disgusting the whole time ?? <:Tawil_loneliness:1460158738110349",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1465005924774187079",
-      "content": "lowk story’s peak I’ve been giving my thoughts in memes as I get through it",
-      "author": "mimiruku",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1464900168725041274",
-      "content": "The cat's reputation is truly at his all time low <:fail:1356083552923422770>",
-      "author": "satachan",
-      "reactions": 2,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
-    },
-    {
-      "id": "1465046317448302808",
-      "content": "~~我们守密人是被吃了吗(~~",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "银钥匙在说话"
-    },
-    {
-      "id": "1465047018081882395",
-      "content": "不总是出现，和珈伦的料理一样摸不着头脑(<:Helot_slack_off:1459092159465521184>",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "银钥匙在说话"
-    },
-    {
-      "id": "1465049856727974051",
-      "content": "像是地面上一个坑害人摔倒，于是从其他地面上挖了一些土填进去<:Helot_slack_off:1459092159465521184>",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "银钥匙在说话"
+      "id": "1465052476792377426",
+      "channel_id": "1170692781216378960",
+      "content": "ALL HAIL SATAN",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

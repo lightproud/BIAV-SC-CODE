@@ -1,10 +1,21 @@
 {
   "date": "2025-04-22",
-  "messages": 85,
-  "unique_authors": 7,
-  "reactions_total": 68,
-  "attachments": 15,
+  "messages": 5119,
+  "unique_authors": 124,
+  "reactions_total": 302,
+  "attachments": 240,
   "channel_activity": {
+    "🔸morimens-game-chat": 3395,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 572,
+    "🔸chaîne-française": 33,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 2,
+    "🔸canal-português": 51,
+    "🔸ruang-obrolan-indonesia": 325,
+    "🔸ห้องสนทนาภาษาไทย": 70,
+    "🔸traphase": 154,
+    "🔸綜合討論": 426,
     "V2.2 Submission || Tulu": 2,
     "Erica": 2,
     "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j": 1,
@@ -27,24 +38,35 @@
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 1
   },
   "hourly_activity": {
-    "13": 5,
-    "17": 2,
-    "8": 1,
-    "12": 39,
-    "3": 4,
-    "7": 2,
-    "11": 11,
-    "14": 1,
-    "23": 2,
-    "19": 2,
-    "6": 5,
-    "4": 3,
-    "2": 7,
-    "10": 1
+    "0": 200,
+    "1": 143,
+    "2": 257,
+    "3": 322,
+    "4": 334,
+    "5": 199,
+    "6": 254,
+    "7": 123,
+    "8": 100,
+    "9": 237,
+    "10": 131,
+    "11": 136,
+    "12": 476,
+    "13": 474,
+    "14": 408,
+    "15": 202,
+    "16": 334,
+    "17": 100,
+    "18": 114,
+    "19": 126,
+    "20": 158,
+    "21": 111,
+    "22": 46,
+    "23": 134
   },
   "message_types": {
-    "0": 18,
-    "19": 5
+    "0": 3714,
+    "19": 891,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -62,11 +84,43 @@
       "channel": "Erica"
     },
     {
+      "id": "1364105682235953233",
+      "channel_id": "1131839817982947429",
+      "content": "寄",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1364231541101826088",
       "content": "嗨 又是我(?) 不知為何就是想寫一下鯊鯊的另一面(?\n\n老樣子\n#OOC我的\n~~#吵架就是我對~~\n~~#如有雷同 就是你抄我~~\n\n這次預計沒那麼多肉..",
       "author": "fengliyaowo",
       "reactions": 7,
       "channel": "一點點鯊守私設文...吧? （清水.jpg）"
+    },
+    {
+      "id": "1364285061696061531",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "noire_2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1364028863058808892",
+      "channel_id": "1131839817982947429",
+      "content": "~~泳装鲨鱼，睡衣鲨鱼，礼服鲨鱼~~",
+      "author": "bailuoxiao",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364265319434027038",
+      "channel_id": "1131839817982947429",
+      "content": "像Aaa一人大概就佔了五個男同的份",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1364199601367683072",
@@ -83,60 +137,92 @@
       "channel": "相位对弈新速攻队伍攻略"
     },
     {
-      "id": "1364252054817869937",
-      "content": "號令可以成功的減兩費但螺湮只能減一費",
-      "author": "shchng.",
+      "id": "1364061656350593084",
+      "channel_id": "1131839817982947429",
+      "content": "好可怕這遊戲怎麼有夫人廚",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364221517151338580",
+      "channel_id": "1131839817982947429",
+      "content": "我之前寫過我跟朋友跑團的oc……小不點法師×大隻少根筋食人鄰家男孩野蠻人\n法師操控鬼火……dnd的鬼火造成閃電傷害……進入我的野蠻人的■■在■■■進行■■",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364228829102735583",
+      "channel_id": "1131839817982947429",
+      "content": "想看聖嬰用它口中的手收緊緊■■戈利亞",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364233974431486104",
+      "channel_id": "1131839817982947429",
+      "content": "你需要的是这个",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364212961228357703",
+      "channel_id": "1300659802455674972",
+      "content": "แบบนี้เรียกว่าเล่นได้มั้ยนะ",
+      "author": "2ndselna",
       "reactions": 3,
-      "channel": "✅「已回答」蟲族羊媽狂氣減費bug"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1364190375023087616",
-      "content": "~~其實是指這次結束後繼續兩三天更一次肉文~~",
-      "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
-    },
-    {
-      "id": "1364212327519490088",
-      "content": "||這個海苔||",
+      "id": "1364031844106108968",
+      "channel_id": "1131839817982947429",
+      "content": "<:cute1:1356053053568192717>",
       "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1364288630599975105",
-      "content": "gila bagus bat",
-      "author": "masian131",
-      "reactions": 1,
-      "channel": "ALL HAIL SQUID KING TULU"
+      "id": "1364152649846620160",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1364200917469237249",
-      "content": "~~我只是超譯一下野貓的話而已（？~~",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "id": "1364163627896143923",
+      "channel_id": "1131839817982947429",
+      "content": "....又有大佬了",
+      "author": "universe.dark",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1364203623722258552",
-      "content": "<:processing:1357185814567718963>",
+      "id": "1364165256531804222",
+      "channel_id": "1131839817982947429",
+      "content": "貓的",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364232256150966414",
+      "channel_id": "1131839817982947429",
+      "content": "<:cute1:1356053053568192717> 先弄個小短篇",
       "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1364205782920466504",
-      "content": "~~你只能\n繼續開車了~~",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
-    },
-    {
-      "id": "1364211865726619731",
-      "content": "樓尾整理一下四章 方便閱讀",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "id": "1364268868213673984",
+      "channel_id": "1131839817982947429",
+      "content": "<@655338276554801152> 真的不當gay嗎\nhttps://www.facebook.com/share/r/162cEssNnZ/",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

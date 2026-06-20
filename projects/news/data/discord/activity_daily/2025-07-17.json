@@ -1,10 +1,23 @@
 {
   "date": "2025-07-17",
-  "messages": 118,
-  "unique_authors": 32,
-  "reactions_total": 356,
-  "attachments": 21,
+  "messages": 9578,
+  "unique_authors": 217,
+  "reactions_total": 1457,
+  "attachments": 339,
   "channel_activity": {
+    "🔸lets-count": 1,
+    "🔸morimens-game-chat": 6919,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 2,
+    "🔸русский-канал": 61,
+    "🔸phòng-chat-tiếng-việt": 99,
+    "🔸canal-español": 436,
+    "🔸canal-português": 5,
+    "🔸ruang-obrolan-indonesia": 269,
+    "🔸ห้องสนทนาภาษาไทย": 97,
+    "🔸traphase": 37,
+    "🔸lore-chat": 989,
+    "🔸綜合討論": 542,
     "Hammy Chibi": 15,
     "Casiah Sketch": 1,
     "Pandia": 1,
@@ -28,31 +41,33 @@
     "早期蟲族捕捉哈基米的珍貴影像(修正版)": 6
   },
   "hourly_activity": {
-    "6": 6,
-    "8": 19,
-    "12": 5,
-    "21": 3,
-    "23": 5,
-    "4": 4,
-    "1": 1,
-    "0": 3,
-    "2": 3,
-    "9": 15,
-    "10": 9,
-    "11": 11,
-    "13": 4,
-    "16": 6,
-    "7": 13,
-    "3": 1,
-    "14": 3,
-    "17": 2,
-    "18": 2,
-    "15": 3
+    "23": 132,
+    "0": 263,
+    "1": 396,
+    "2": 452,
+    "3": 201,
+    "4": 320,
+    "5": 493,
+    "6": 497,
+    "7": 576,
+    "8": 519,
+    "9": 331,
+    "10": 685,
+    "11": 751,
+    "12": 684,
+    "13": 296,
+    "14": 523,
+    "15": 687,
+    "16": 139,
+    "17": 400,
+    "18": 518,
+    "19": 239,
+    "20": 201,
+    "21": 221,
+    "22": 54
   },
   "message_types": {
-    "0": 63,
-    "19": 12,
-    "4": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -84,11 +99,27 @@
       "channel": "《忘却前夜》序章语音追加┊Morimens Prologue voice addition"
     },
     {
+      "id": "1395423966033875078",
+      "channel_id": "1170692781216378960",
+      "content": "OK, hey marketing team, you're fired! Wait, did we ever even have a marketing te",
+      "author": "game.producer.light",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1395255653379080294",
       "content": "quick liz doodle",
       "author": "rumbyy_",
       "reactions": 20,
       "channel": "Liz Sketch"
+    },
+    {
+      "id": "1395425795266183179",
+      "channel_id": "1170692781216378960",
+      "content": "We used to have only one operations staff member handling all the shops, all pla",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1395328361261436998",
@@ -126,6 +157,14 @@
       "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
     },
     {
+      "id": "1395427870209343628",
+      "channel_id": "1170692781216378960",
+      "content": "Yes, we have indeed separated from EOS, but everything is still developing with ",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1395237692480163900",
       "content": "Glad u liked it Keeper o7",
       "author": "morimens_15",
@@ -140,60 +179,44 @@
       "channel": "蟲門friend的點圖～"
     },
     {
-      "id": "1395366042133594122",
-      "content": "<@633215996508766229> 不要忘記野貓今天幫你點的畫喔",
-      "author": "shchng.",
+      "id": "1395429303772119071",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> I need Goliath asmr so bad please make a exclusive activit",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1395344232578945054",
+      "channel_id": "1300659436804640788",
+      "content": "忘却編プロローグと最終章のフルボイス化、予告が出ました。\nhttps://youtu.be/tM1nw-BXNoQ\n英語字幕版もYouTubeにあります。",
+      "author": "x013318908",
+      "reactions": 10,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1395342773284114503",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "itsmemiki",
       "reactions": 9,
-      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395312380975513785",
-      "content": "我覺得沒到獵奇或g\n阿不過死人\n自己注意\n結果直接偏離怪圖了哈哈哈\n\nShall we dance",
-      "author": "foxcatfurry",
+      "id": "1395429825421774858",
+      "channel_id": "1170692781216378960",
+      "content": "I’ll check with the writers about this issue!",
+      "author": "game.producer.light",
       "reactions": 9,
-      "channel": "說好的怪圖呢"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1395420094221520989",
-      "content": "好久不见，大家！\n终于写完第二幕的故事了，感觉等了好久好久（其实就是写太多了，停不下来了，导致文字量快赶上第一幕的两倍了）\n总之，非常看过我的故事，以及感谢愿意",
-      "author": "libery9150",
-      "reactions": 8,
-      "channel": "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）"
-    },
-    {
-      "id": "1395307037998714980",
-      "content": "We're fixing this machine translation<:takenotes:1357186646294138890>",
-      "author": "morimens_15",
-      "reactions": 7,
-      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
-    },
-    {
-      "id": "1395307705769398313",
-      "content": "什么都吃，只会让大家||营养均衡👍 ||",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
-    },
-    {
-      "id": "1395324504200183949",
-      "content": "為什麼校貓能夠寫出蛻變這章，各位有所不知，校貓曾經賣過XX給蟲族老爺，從而換取收集蟲族外型的機會，感謝新．克萊門汀醫生的蟲子．聞台讓這段歷史重現",
-      "author": "void_1546.",
-      "reactions": 7,
-      "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
-    },
-    {
-      "id": "1395195527884308661",
-      "content": "数值看着挺强的，唯一不太理解的是，既然都设计好残骸这个机制了，怎么就只和狂气爆发有联动，其它能力都和残骸机制无关？",
-      "author": "rain_scarlet",
-      "reactions": 3,
-      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1395302369994080327",
-      "content": "<@1131790839291596841> \n12：00到就啃啃戈雅",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
+      "id": "1395514683544571964",
+      "channel_id": "1170692781216378960",
+      "content": "you guys dont even know how far the depths of my love for agrippa go",
+      "author": "bongosjam",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

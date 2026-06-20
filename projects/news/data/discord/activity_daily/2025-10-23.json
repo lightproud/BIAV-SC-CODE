@@ -1,10 +1,32 @@
 {
   "date": "2025-10-23",
-  "messages": 198,
-  "unique_authors": 36,
-  "reactions_total": 188,
-  "attachments": 45,
+  "messages": 16857,
+  "unique_authors": 322,
+  "reactions_total": 3208,
+  "attachments": 816,
   "channel_activity": {
+    "🔸morimens-game-chat": 12196,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 21,
+    "🔸交友频道": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 53,
+    "🔸русский-канал": 1069,
+    "🔸phòng-chat-tiếng-việt": 52,
+    "🔸canal-español": 160,
+    "🔸canal-português": 213,
+    "🔸ruang-obrolan-indonesia": 338,
+    "🔸ห้องสนทนาภาษาไทย": 31,
+    "🔸traphase": 162,
+    "🔸lore-chat": 190,
+    "🔸lets-count": 20,
+    "🔸team-building": 510,
+    "🔸general-chat": 505,
+    "🔸邀请码互助┊swap-invitation-codes": 30,
+    "🔸綜合討論": 1079,
+    "🔸阵容构建": 3,
     "go rat go!!": 8,
     "Morimens chap 8 be like": 3,
     "Morimens Glossary (Wheels and Covenants equip guide)": 1,
@@ -41,33 +63,36 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "5": 4,
-    "7": 7,
-    "11": 3,
-    "19": 3,
-    "23": 6,
-    "15": 7,
-    "16": 6,
-    "17": 2,
-    "6": 36,
-    "10": 2,
-    "2": 11,
-    "8": 4,
-    "9": 11,
-    "4": 10,
-    "12": 26,
-    "14": 16,
-    "13": 23,
-    "0": 3,
-    "1": 2,
-    "20": 3,
-    "21": 1,
-    "18": 2,
-    "3": 10
+    "0": 891,
+    "1": 502,
+    "2": 589,
+    "3": 659,
+    "4": 792,
+    "5": 819,
+    "6": 668,
+    "7": 533,
+    "8": 479,
+    "9": 937,
+    "10": 770,
+    "11": 753,
+    "12": 416,
+    "13": 668,
+    "14": 707,
+    "15": 1147,
+    "16": 758,
+    "17": 790,
+    "18": 1043,
+    "19": 899,
+    "20": 733,
+    "21": 629,
+    "22": 239,
+    "23": 436
   },
   "message_types": {
-    "0": 92,
-    "19": 22
+    "19": 6002,
+    "0": 9562,
+    "23": 9,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -83,6 +108,14 @@
       "author": "_venush",
       "reactions": 23,
       "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430963926639579279",
+      "channel_id": "1131839817982947429",
+      "content": "真正的傷害型：\n- 邊傷害邊抽牌邊回算\n- 自己傷害成長之餘還能輔助隊友傷害\n- 不打傷害的時候還能疊盾坦一下\n\n虛假的傷害型：\n- 哥哥請幫我抽牌\n- 哥哥等",
+      "author": "ernest_heart",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1430937427534676100",
@@ -106,11 +139,51 @@
       "channel": "忘却前夜OST：图鲁EP·幼王的孤途"
     },
     {
+      "id": "1430827616658526269",
+      "channel_id": "1170692781216378960",
+      "content": "he summoned hydrogen bomb (ghelot) against william",
+      "author": "arandomflamev2",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1430939973468819487",
       "content": "A fan try to join the Fan Art contest but can't draw and have skill issue.\n\nUID:",
       "author": "phanducthinh.com",
       "reactions": 15,
       "channel": "Morimens chap 8 be like"
+    },
+    {
+      "id": "1430752984727294022",
+      "channel_id": "1170692781216378960",
+      "content": "good year",
+      "author": "dljam",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430973258320314540",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "good.th",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430953873211789414",
+      "channel_id": "1170692781216378960",
+      "content": "yes",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430996525873369199",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1430851062503313478",
@@ -120,6 +193,22 @@
       "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
     },
     {
+      "id": "1430954689075347536",
+      "channel_id": "1170692781216378960",
+      "content": "hate everything equally",
+      "author": "arandomflamev2",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1430976267091710162",
+      "channel_id": "1170692781216378960",
+      "content": "THEY NERF HIS BOOBIES",
+      "author": "mount_fisherman",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1430995529021521941",
       "content": "i mean i guess i drew castor as well?",
       "author": "fishhazardthewizard",
@@ -127,88 +216,36 @@
       "channel": "go rat go!!"
     },
     {
-      "id": "1430842617805017110",
-      "content": "奖励已经发到大家邮箱咯~\n一等奖的头像框如果以前获取过，在点击“领奖”后会自动转化成500银芯和50个追念羽笔🥰 \n如果奖励方面有问题也请联系我<:Cheeru",
-      "author": "morimensstaff01",
-      "reactions": 8,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+      "id": "1430849677389070386",
+      "channel_id": "1170692781216378960",
+      "content": "Spend 30 bucks on me",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430848810292351008",
-      "content": "自从融灾加奖励以后，融灾产出固定能换2两个，然后溢出的数量太多了，每个月3个的情况下，资源会一直溢出。",
-      "author": "lurenjiao",
-      "reactions": 7,
-      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+      "id": "1430965990971277505",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "olfff",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1430800662744272897",
-      "content": "Hi everyone, we wanted to let you all know of a great community project that is ",
-      "author": "vxvendetta",
-      "reactions": 5,
-      "channel": "The Boss Compendium Project"
+      "id": "1430968797845782678",
+      "channel_id": "1170692781216378960",
+      "content": "<:OverlySmugPandia:1419369451891195954> <:mawatemawate:1419369248677036053>",
+      "author": "sirtealot",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1431004004468523018",
-      "content": "~~性癖在立繪上一覽無遺~~\n||為什麼我要設計這套破衣服直接讓他裸●⁠不好嗎（陰暗爬行||",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1430744326828327013",
-      "content": "I inquired and it will be sent out today\nSorry for keeping everyone waiting🙏",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1431026305855655936",
-      "content": "If you are looking purely from a meta standpoint, pulling now for Castor or in a",
-      "author": "hitsu4",
-      "reactions": 3,
-      "channel": "Pulling and Team Advice"
-    },
-    {
-      "id": "1430854971917860997",
-      "content": "I got it, thank you kindly for your work!",
-      "author": "sanna7424",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1430979863371841597",
-      "content": "don't let it get to you",
-      "author": "mutsukabezaka",
-      "reactions": 2,
-      "channel": "V2.3.4.2 在线维护公告"
-    },
-    {
-      "id": "1430801856141070367",
-      "content": "technically a lot more usable",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430802915517268028",
-      "content": "Even if you can't contribute directly, can try to spread the info around to help",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430804050646925453",
-      "content": "will be considered",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "The Boss Compendium Project"
-    },
-    {
-      "id": "1430972606575804459",
-      "content": "The 2.4 tag doesn't exist?",
-      "author": "jollysquire",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+      "id": "1430981539751002152",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/2-kMddhMub0 <@285755067213152257> <@1288446421573304364> <@2648",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-07-12",
-  "messages": 26,
-  "unique_authors": 5,
-  "reactions_total": 59,
-  "attachments": 7,
+  "messages": 6976,
+  "unique_authors": 192,
+  "reactions_total": 831,
+  "attachments": 344,
   "channel_activity": {
+    "🔸lets-count": 4,
+    "🔸morimens-game-chat": 5868,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 12,
+    "🔸phòng-chat-tiếng-việt": 113,
+    "🔸canal-español": 185,
+    "🔸canal-português": 82,
+    "🔸ruang-obrolan-indonesia": 186,
+    "🔸ห้องสนทนาภาษาไทย": 110,
+    "🔸traphase": 130,
+    "🔸lore-chat": 68,
+    "🔸綜合討論": 187,
     "niko's silly meme arts": 2,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 6,
@@ -16,23 +30,33 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "15": 3,
-    "14": 3,
-    "3": 3,
-    "4": 1,
-    "18": 1,
-    "22": 1,
-    "9": 2,
-    "19": 1,
-    "10": 1,
-    "5": 2,
-    "7": 3,
-    "8": 1,
-    "16": 4
+    "3": 525,
+    "5": 126,
+    "10": 392,
+    "17": 80,
+    "0": 208,
+    "1": 412,
+    "2": 573,
+    "4": 367,
+    "6": 387,
+    "7": 516,
+    "8": 259,
+    "9": 379,
+    "11": 518,
+    "12": 180,
+    "13": 196,
+    "14": 228,
+    "15": 244,
+    "16": 175,
+    "18": 101,
+    "19": 190,
+    "20": 320,
+    "21": 223,
+    "22": 65,
+    "23": 312
   },
   "message_types": {
-    "0": 5,
-    "19": 4
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -50,11 +74,59 @@
       "channel": "niko's silly meme arts"
     },
     {
+      "id": "1393616763656339488",
+      "channel_id": "1170692781216378960",
+      "content": "needs cleanup but here’s my sketch contribution to Corposant art hour",
+      "author": "mosske",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393682613121843313",
+      "channel_id": "1170692781216378960",
+      "content": "cleaned",
+      "author": "mosske",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393585994342858814",
+      "channel_id": "1300659580446969918",
+      "content": "Ребята, забрала сегодня свой лотерейный выигрыш, разрешите красотой похвастаться",
+      "author": "irrational_obelisk",
+      "reactions": 10,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1393644982392328282",
+      "channel_id": "1131839817982947429",
+      "content": "复刻一下之前看到的四限定超维打蛹",
+      "author": "flarinsidia",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393532067748380744",
+      "channel_id": "1131839817982947429",
+      "content": "送大家一張圖",
+      "author": "corposant_1003",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1393599382666084412",
       "content": "摸完了一起發<:gogogo:1356053074560422118>",
       "author": "navirecorbeau",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1393400570571657318",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cwz.io",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1393599150871937199",
@@ -64,53 +136,84 @@
       "channel": ""
     },
     {
-      "id": "1393615990142537798",
-      "content": "tawil die",
-      "author": "nikolazuli",
-      "reactions": 2,
-      "channel": "niko's silly meme arts"
+      "id": "1393654831998046332",
+      "channel_id": "1170692781216378960",
+      "content": "for tulu, is his 4 cost card worth keeping or is it just 50+ sigils",
+      "author": "llllllllll0407",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393593879575396506",
-      "content": "thank you ^^",
-      "author": "tachwedd_glaw",
-      "reactions": 1,
-      "channel": "My Caecus art"
+      "id": "1393410908176257146",
+      "channel_id": "1170692781216378960",
+      "content": "i went to gamba",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393654876797665443",
-      "content": "Se presta para un futuro meme con Light, sí <:pray:1356053116260454534>",
-      "author": "duxadidus",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1393685211467874416",
+      "channel_id": "1170692781216378960",
+      "content": "second double on this banner dang",
+      "author": "dianethedeadly",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393721540788490280",
-      "content": "De veras",
-      "author": "ev_6185",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "id": "1393685678360887430",
+      "channel_id": "1170692781216378960",
+      "content": "I wanna try out Caecus Naut in Arc2 chapter 2 but I have a feeling I'll just get",
+      "author": "vinsette",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393545974432923658",
-      "content": "如题\n想看看蜘蛛的衣服结果这么糊，这对吗",
-      "author": "jidu1418",
-      "reactions": 1,
-      "channel": "幻衣大图能不能换画质好点的"
+      "id": "1393686175172268173",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393626111879024692",
-      "content": "蘿坦的請求\n\n你走在一條陰暗的小路中，忽然你感覺你的手被拉住，你轉過身一看，是羅坦，她表明她手癢難耐渴望與你切磋——\n\n\n選擇\n\n【切磋】經歷一場戰鬥（將「鯨躍",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1393406008746840217",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jiji2404",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1393457629707108392",
-      "content": "求喚醒體克萊門汀和人類克萊門汀的立繪",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": ""
+      "id": "1393497590577889371",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/pigeon-mode-pigeon-freshest-kitchen-gif-55007886941878743",
+      "author": "moyashi0672",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393497834590044211",
+      "channel_id": "1170692781216378960",
+      "content": "meow",
+      "author": "firepanda95",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393601470862987274",
+      "channel_id": "1170692781216378960",
+      "content": "Vro WHY IS HER EARRING SO GODDAMN LONG-\n\n(im trying to draw corpo)",
+      "author": "cooked_chicken99",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393654700427055154",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

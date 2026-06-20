@@ -1,10 +1,28 @@
 {
   "date": "2025-04-28",
-  "messages": 116,
-  "unique_authors": 20,
-  "reactions_total": 103,
-  "attachments": 18,
+  "messages": 14268,
+  "unique_authors": 229,
+  "reactions_total": 637,
+  "attachments": 650,
   "channel_activity": {
+    "🔸阵容构建": 23,
+    "🔸morimens-game-chat": 10124,
+    "🔸剧情交流": 4,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 531,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 12,
+    "🔸phòng-chat-tiếng-việt": 62,
+    "🔸canal-español": 179,
+    "🔸canal-português": 107,
+    "🔸ruang-obrolan-indonesia": 495,
+    "🔸ห้องสนทนาภาษาไทย": 203,
+    "🔸traphase": 88,
+    "🔸lore-chat": 4,
+    "🔸lets-count": 4,
+    "🔸綜合討論": 2302,
     "Just a pixel image of Jenkin looking outside with Brown": 4,
     "한국어 번역 피드백 컬렉션": 1,
     "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 30,
@@ -27,31 +45,34 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 5
   },
   "hourly_activity": {
-    "16": 3,
-    "22": 2,
-    "5": 4,
-    "10": 8,
-    "11": 23,
-    "12": 7,
-    "14": 8,
-    "8": 5,
-    "15": 2,
-    "13": 5,
-    "21": 2,
-    "6": 12,
-    "20": 2,
-    "23": 1,
-    "17": 8,
-    "18": 2,
-    "7": 3,
-    "9": 8,
-    "3": 3,
-    "4": 7,
-    "0": 1
+    "2": 972,
+    "3": 1113,
+    "7": 770,
+    "9": 390,
+    "11": 572,
+    "12": 708,
+    "21": 470,
+    "0": 561,
+    "1": 210,
+    "4": 1130,
+    "5": 639,
+    "6": 652,
+    "8": 494,
+    "10": 576,
+    "13": 728,
+    "14": 352,
+    "15": 573,
+    "16": 611,
+    "17": 381,
+    "18": 422,
+    "19": 423,
+    "20": 494,
+    "22": 632,
+    "23": 395
   },
   "message_types": {
-    "19": 8,
-    "0": 27
+    "0": 8987,
+    "19": 2863
   },
   "top_reacted_messages": [
     {
@@ -62,11 +83,107 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
+      "id": "1366433820395573298",
+      "channel_id": "1131839817982947429",
+      "content": "<:sleep2:1356085993626665200>",
+      "author": "zhaoxing233",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366418734209568789",
+      "channel_id": "1170692781216378960",
+      "content": "<@1130409224388759632> try harder got her on 26th pull",
+      "author": "coptheflop",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1366342033987338251",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366368655490678828",
+      "channel_id": "1131839817982947429",
+      "content": "校貓×鯊魚",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366416867866181683",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1366461968638017547",
       "content": "A lot of names, numbers and descriptions broke from translation update. I don't ",
       "author": "aurora3981",
       "reactions": 7,
       "channel": "Can we rollback the translations?"
+    },
+    {
+      "id": "1366278635031367700",
+      "channel_id": "1131839817982947429",
+      "content": "Wo hui shou yidian zhong wen. \n\nMostly I coach climbing and say \"Jiayou\" to athl",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366333237814628364",
+      "channel_id": "1131839817982947429",
+      "content": "这样就能过了",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366331097641648161",
+      "channel_id": "1131839817982947429",
+      "content": "第五波拼盡全力。剩下四波估計再打一波就歇菜了。",
+      "author": "randomplayer852",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366335830280638504",
+      "channel_id": "1131839817982947429",
+      "content": "45%死扛凹出来了。",
+      "author": "randomplayer852",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366387094166966333",
+      "channel_id": "1131839817982947429",
+      "content": "我對小貓咪的態度也很平和阿，嘿嘿嘿小貓咪過來<:love:1356053099931897977>",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366390032650211338",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366408454692147322",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1366363981412962426",
@@ -104,53 +221,12 @@
       "channel": "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車"
     },
     {
-      "id": "1366391258733477898",
-      "content": "守密人你好：\n       彌薩格大學校務處將於4月28日 21:15 進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我",
-      "author": "morimensstaff02",
-      "reactions": 3,
-      "channel": "V2.2.1.1 在線維護公告"
-    },
-    {
-      "id": "1366300814120980481",
-      "content": "我知道星辰篇有但這是深潛我記得是不會加的~~也可能我記憶錯亂了~~",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "✅「已回答」我印象中刷新應該是不會加黑印吧"
-    },
-    {
-      "id": "1366260164017131621",
-      "content": "如圖\n只回了1點<:angry1:1356053023272599668>",
-      "author": "_buqi",
-      "reactions": 3,
-      "channel": "💭「處理中」對弈戈利亞 狂氣爆發恢復有誤"
-    },
-    {
-      "id": "1366375520295587850",
-      "content": "我直接进去空过挂机",
-      "author": "molove0286",
-      "reactions": 2,
-      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
-    },
-    {
-      "id": "1366378179811344446",
-      "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第6期（第33期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：新增造物\n图二：地图\n图三",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览33期·星辰篇✦"
-    },
-    {
-      "id": "1366203494943428648",
-      "content": "~~你这是铁了心要把某个绿色矮子踢出深海~~",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "自製角色（目前有深海一名、超維一名）"
-    },
-    {
-      "id": "1366452028406104185",
+      "id": "1366239222251655220",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "starfish3302",
-      "reactions": 1,
-      "channel": "Just a pixel image of Jenkin looking outside with Brown"
+      "author": "dwang4875",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-04-03",
-  "messages": 67,
-  "unique_authors": 12,
-  "reactions_total": 479,
-  "attachments": 15,
+  "messages": 5858,
+  "unique_authors": 109,
+  "reactions_total": 1165,
+  "attachments": 253,
   "channel_activity": {
+    "🔸morimens-game-chat": 4452,
+    "🔸相位对弈": 4,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 30,
+    "🔸русский-канал": 140,
+    "🔸canal-español": 4,
+    "🔸ruang-obrolan-indonesia": 238,
+    "🔸ห้องสนทนาภาษาไทย": 127,
+    "🔸traphase": 37,
+    "🔸lore-chat": 4,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 1,
+    "🔸新生守则┊rules": 2,
+    "🔸綜合討論": 750,
     "Tier list as of 2.0": 1,
     "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy": 1,
     "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 15,
@@ -23,45 +37,54 @@
     "至2.1版本全角色暱稱綽號一覽": 6,
     "「   」的故事（上）": 1,
     "嘗試做了網頁:33": 3,
-    "🔸新生守则┊rules": 1,
-    "🔸礼包码┊gift-codes": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "1": 1,
-    "8": 20,
-    "9": 11,
-    "10": 14,
-    "16": 2,
-    "13": 5,
-    "20": 1,
-    "23": 1,
-    "7": 4,
-    "14": 2,
-    "3": 2,
-    "12": 1,
-    "11": 1,
-    "5": 1,
-    "2": 1
+    "0": 243,
+    "1": 201,
+    "2": 114,
+    "3": 231,
+    "4": 478,
+    "5": 135,
+    "6": 113,
+    "7": 201,
+    "8": 168,
+    "9": 282,
+    "10": 242,
+    "11": 406,
+    "12": 546,
+    "13": 480,
+    "14": 363,
+    "15": 139,
+    "16": 264,
+    "17": 193,
+    "18": 57,
+    "19": 292,
+    "20": 229,
+    "21": 159,
+    "22": 164,
+    "23": 158
   },
   "message_types": {
-    "20": 1,
-    "19": 3,
-    "0": 16
+    "0": 3804,
+    "19": 1235,
+    "20": 1
   },
   "top_reacted_messages": [
     {
       "id": "1357297989554540634",
+      "channel_id": "1131837874078232597",
       "content": "Keeper, welcome to 《Morimens》. Please read the school rules, after which you wil",
       "author": "morimensstaff01",
-      "reactions": 228,
+      "reactions": 324,
       "channel": "🔸新生守则┊rules"
     },
     {
       "id": "1357306897908236439",
+      "channel_id": "1355094251775459399",
       "content": "🎁 **【搬運】長期有效的禮包兌換碼**\n\n1️⃣ 禮包碼：SILVERKEY\n       禮包內容：無垢之芯×10\n\n2️⃣ 禮包碼：CATSGIFT\n  ",
       "author": "morimensstaff01",
-      "reactions": 166,
+      "reactions": 172,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -93,11 +116,35 @@
       "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
     },
     {
+      "id": "1357249588037161132",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "kuzura_noob",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1357307022269485158",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有杜勒賽因性愛PV",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1357224836983689318",
       "content": "https://shuangyue.cms.webnode.page/\n如果有侵權行為，或是錯誤可以告訴我!!!!!!!!!!!!!!\n(爆肝",
       "author": "huangziqiao_45693",
       "reactions": 6,
       "channel": "嘗試做了網頁:33"
+    },
+    {
+      "id": "1357361466088620162",
+      "channel_id": "1131839817982947429",
+      "content": "代表有頭腦的人都不生小孩",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1357269638861295697",
@@ -107,60 +154,76 @@
       "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
     },
     {
-      "id": "1357269456996405419",
-      "content": "🔥 **【繁中高清切圖】**",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
-    },
-    {
-      "id": "1357293591990636567",
-      "content": "喔喔喔網頁",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "嘗試做了網頁:33"
-    },
-    {
-      "id": "1357282974906716201",
-      "content": "<@655338276554801152> 我们的推角 \n# 强化了",
-      "author": "be_queitplease",
-      "reactions": 2,
-      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
-    },
-    {
-      "id": "1357393380438446100",
-      "content": "應該是像尤烏那樣，前十張布朗不受算力調和影響之類的吧",
+      "id": "1357299956414939167",
+      "channel_id": "1131839817982947429",
+      "content": "直接開啟第三人格",
       "author": "heikwok",
-      "reactions": 2,
-      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1357341523120754770",
-      "content": "一篇忘却前夜PVP模式相位对弈攻略，作者为前榜一，现常驻高分玩家:维克多-100197209。欢迎大家观看探讨。\nhttps://b23.tv/JKQ2u2y",
-      "author": "deadlykilling777",
-      "reactions": 2,
-      "channel": "忘却前夜相位对弈构筑攻略"
+      "id": "1357320293546463274",
+      "channel_id": "1131839817982947429",
+      "content": "群佬除我",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1357248838330749068",
-      "content": "下方圖標出現紫色向下箭頭 旁邊描述多出一個保留狀態\n請問是正常的嗎\n編輯：融災2-3",
-      "author": "elkmilu",
-      "reactions": 2,
-      "channel": "💭「處理中」狀態BUG"
+      "id": "1357192807302823966",
+      "channel_id": "1170692781216378960",
+      "content": "<:worryGibRoses:584580280426430465>",
+      "author": "aegisx",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1357256242585931786",
-      "content": "Error cood 7028001\n\nWhat's wrong?\nHow do I fix it?",
-      "author": "patwigim",
-      "reactions": 1,
-      "channel": "💭「Processing」Error 7028001"
+      "id": "1357190875440087204",
+      "channel_id": "1300659802455674972",
+      "content": "อ่านเข้าใจง่ายแถมทำเราเห็นภาพด้วย จะเอาไปปรับใช้ค่ะ",
+      "author": "90angels",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1357303828101464165",
-      "content": "謝謝戈雅",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "💭「處理中」狀態BUG"
+      "id": "1357313838898352361",
+      "channel_id": "1300659802455674972",
+      "content": "โดยเฉพาะคนเล่นใหม่ แบบคนนี้ <@845876843332501554>",
+      "author": "littleyoukai",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1357279779988045887",
+      "channel_id": "1131839817982947429",
+      "content": "塑塑你的",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357326128020324573",
+      "channel_id": "1131839817982947429",
+      "content": "剛拿到這個 請問如果再打一次比賽 頭像框會重複嗎？",
+      "author": "harrypun",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357326391548580002",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1357467997094154391",
+      "channel_id": "1131839817982947429",
+      "content": "四位數死抗達成",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

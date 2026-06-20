@@ -1,10 +1,31 @@
 {
   "date": "2025-10-18",
-  "messages": 97,
-  "unique_authors": 21,
-  "reactions_total": 39,
-  "attachments": 12,
+  "messages": 12977,
+  "unique_authors": 242,
+  "reactions_total": 2370,
+  "attachments": 590,
   "channel_activity": {
+    "🔸morimens-game-chat": 10503,
+    "🔸剧情交流": 118,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 116,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 5,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 24,
+    "🔸phòng-chat-tiếng-việt": 13,
+    "🔸canal-español": 142,
+    "🔸canal-português": 18,
+    "🔸ruang-obrolan-indonesia": 505,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 75,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 8,
+    "🔸team-building": 39,
+    "🔸general-chat": 132,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸綜合討論": 1112,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
     "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 1,
     "📜V2.3.4 版本前瞻┊ Version Outlook": 13,
@@ -19,31 +40,88 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "2": 1,
-    "10": 3,
-    "9": 8,
-    "11": 8,
-    "13": 9,
-    "14": 2,
-    "8": 4,
-    "16": 2,
-    "22": 1,
-    "23": 2,
-    "4": 10,
-    "6": 25,
-    "7": 3,
-    "12": 4,
-    "18": 1,
-    "0": 6,
-    "1": 4,
-    "3": 3,
-    "5": 1
+    "0": 485,
+    "1": 460,
+    "2": 348,
+    "3": 365,
+    "4": 398,
+    "5": 779,
+    "6": 630,
+    "7": 491,
+    "8": 546,
+    "9": 497,
+    "10": 393,
+    "11": 713,
+    "12": 303,
+    "13": 824,
+    "14": 799,
+    "15": 736,
+    "16": 750,
+    "17": 721,
+    "18": 681,
+    "19": 414,
+    "20": 350,
+    "21": 243,
+    "22": 570,
+    "23": 481
   },
   "message_types": {
-    "0": 39,
-    "19": 14
+    "0": 7171,
+    "19": 4583,
+    "23": 7,
+    "46": 1,
+    "20": 5,
+    "18": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1429096099716665424",
+      "channel_id": "1170692781216378960",
+      "content": "whats gnosis?",
+      "author": "blecnes",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429096175184908429",
+      "channel_id": "1170692781216378960",
+      "content": "i have never seen those",
+      "author": "blecnes",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429026816147984394",
+      "channel_id": "1170692781216378960",
+      "content": "no wonder bluewil players think ultra is bad <:takenotes:1357186646294138890>",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428986289830760458",
+      "channel_id": "1173463482503536711",
+      "content": "我對選角有意見也大概是因為這個，主要就是克萊的目的應該是要讓守密留在夢境裡，可是人柱卻不是娜娜或朵兒這種對守密或觀眾情感連結都相對深刻的角色，而是奧爾拉和艾瑞卡",
+      "author": "yolo_mode",
+      "reactions": 13,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1429122165877248171",
+      "channel_id": "1170692781216378960",
+      "content": "4RSU should be called in for investigation",
+      "author": "phi_squared",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429065766459932742",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "red_rest",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1429042899722702858",
       "content": "请支持我们糖果小魔女",
@@ -52,102 +130,108 @@
       "channel": ""
     },
     {
-      "id": "1429062055578566731",
-      "content": "She dose not look happy about this lol",
-      "author": "whydoihavetodothis69",
+      "id": "1428984493703696505",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/czn-gif-14977533963359720485",
+      "author": "kinokoortakenoko",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429070430987096148",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hammer2830",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429096035946332191",
+      "channel_id": "1170692781216378960",
+      "content": "if I had a nickel for every time I brute force a stage with gnosis I could save ",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429119019352588470",
+      "channel_id": "1170692781216378960",
+      "content": "uh what do you guys spend this investigation badges on?",
+      "author": "kinokoortakenoko",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429167734176092200",
+      "channel_id": "1170692781216378960",
+      "content": "i will not use my time to draw on her forehead and i feel that is disrespectful",
+      "author": "silviaqade",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429227194495795443",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429053284819406990",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1429094188258955326",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429098712352690268",
+      "channel_id": "1170692781216378960",
+      "content": "I love blu",
+      "author": "digitalstar.exe",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429098594324971674",
+      "channel_id": "1180850818509971466",
+      "content": "2600+到3000+花了30+场<:Clown:1400771541423226971>",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1429091950446903327",
+      "channel_id": "1131839817982947429",
+      "content": "好久沒打深潛了  來打深潛<:pray:1356053116260454534>",
+      "author": "insomnia07763",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429027056196522075",
+      "channel_id": "1170692781216378960",
+      "content": "is this the legendary blessor?",
+      "author": "arisuu0604",
       "reactions": 6,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429251530040676524",
-      "content": "Wonder what smug candy tastes like<:M_satisfy:1400771690321154110>",
-      "author": "whydoihavetodothis69",
-      "reactions": 5,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429046554584551475",
-      "content": "No quasar or leap?",
-      "author": "rose_okkotsu",
-      "reactions": 3,
-      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1429061367939334186",
-      "content": "I like new one better\nOld one is white eyes, white skin low contrast, feels like",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1429033129955295342",
-      "content": "我是說2.0pv發的時候頭身比例的爭議比較大<:pray:1356053116260454534> \n然後他們卻沒有改在點上<:dizzy:1356053061",
-      "author": "glacy_9918",
-      "reactions": 2,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1429171798041427978",
-      "content": "感覺原版像是不情不願生下那個胎（？），現在變成名正言順母親大人\n兩版都好看只是劇情的氛圍不太一樣",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1428962804441813053",
-      "content": "you can get some extra as variation",
-      "author": "tksn.",
-      "reactions": 2,
-      "channel": "✅「Answered」Event currency bug"
-    },
-    {
-      "id": "1429046249067380799",
-      "content": "Old one captures the Gmurphy vibes better. The new one looks more generic.",
-      "author": "morified53",
-      "reactions": 1,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1429063936128319680",
-      "content": "GMurphy is Murphy but what if she’s not the cake lover we know and already disca",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1429064070455099402",
-      "content": "tldr: red eyes suck",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1429064665383567381",
-      "content": "Couldn't you keep it red but just dead",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1429028344250372106",
-      "content": "詭異的點一直都不在眼睛",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1429095201145622609",
-      "content": "原本那個空洞感才是他好看的點",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1428909245486596268",
-      "content": "临时降力+获得临力",
-      "author": "txt101225.",
-      "reactions": 1,
-      "channel": "✅「已回答」汀克特【安魂曲】bug"
+      "id": "1429098680186831023",
+      "channel_id": "1170692781216378960",
+      "content": "Red is my fav",
+      "author": "blecnes",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

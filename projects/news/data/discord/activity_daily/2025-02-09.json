@@ -1,10 +1,24 @@
 {
   "date": "2025-02-09",
-  "messages": 69,
-  "unique_authors": 15,
-  "reactions_total": 68,
-  "attachments": 10,
+  "messages": 3493,
+  "unique_authors": 135,
+  "reactions_total": 304,
+  "attachments": 183,
   "channel_activity": {
+    "🔸綜合討論": 563,
+    "🔸morimens-game-chat": 2517,
+    "🔸剧情交流": 18,
+    "🔸相位对弈": 18,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 36,
+    "🔸русский-канал": 97,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 23,
+    "🔸canal-português": 77,
+    "🔸ruang-obrolan-indonesia": 3,
+    "🔸ห้องสนทนาภาษาไทย": 28,
+    "🔸traphase": 25,
+    "🔸lore-chat": 12,
     "GDoll preview rough TL": 10,
     "V2.1.0.0 停服維護公告": 7,
     "📜熔燬·朵爾喚醒體&命輪介紹": 2,
@@ -20,25 +34,34 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
-    "3": 9,
-    "5": 4,
-    "8": 3,
-    "11": 3,
-    "4": 12,
-    "13": 4,
-    "1": 2,
-    "10": 11,
-    "9": 7,
-    "14": 2,
-    "15": 3,
-    "0": 2,
-    "2": 5,
-    "6": 1,
-    "12": 1
+    "0": 91,
+    "1": 35,
+    "2": 75,
+    "3": 375,
+    "4": 353,
+    "5": 314,
+    "6": 114,
+    "7": 275,
+    "8": 88,
+    "9": 47,
+    "10": 129,
+    "11": 113,
+    "12": 82,
+    "13": 161,
+    "14": 250,
+    "15": 284,
+    "16": 148,
+    "17": 100,
+    "21": 23,
+    "22": 74,
+    "18": 51,
+    "19": 107,
+    "20": 144,
+    "23": 60
   },
   "message_types": {
-    "19": 2,
-    "0": 8
+    "0": 2701,
+    "19": 723
   },
   "top_reacted_messages": [
     {
@@ -61,6 +84,14 @@
       "author": "tianfang5580",
       "reactions": 9,
       "channel": "忘却前夜相位对弈(PVP)攻略"
+    },
+    {
+      "id": "1338106600120127540",
+      "channel_id": "1173463482503536711",
+      "content": "||确定不是因为你是色胚||",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1338000251742584852",
@@ -91,6 +122,54 @@
       "channel": "别给500沉淀转移注意了，深潜养成材料更是重量级"
     },
     {
+      "id": "1337985627492454420",
+      "channel_id": "1131839817982947429",
+      "content": "课题等级能到112<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1338024297029042196",
+      "channel_id": "1131839817982947429",
+      "content": "每日任務關了本身聽起來就是個bug",
+      "author": "tofu0834",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1338109967307116576",
+      "channel_id": "1131839817982947429",
+      "content": "脫光…",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1338157640957562921",
+      "channel_id": "1131839817982947429",
+      "content": "我常驻池全是凯和图<:cry:1239910167668326480>",
+      "author": "yang015148",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1337996386112765997",
+      "channel_id": "1170692781216378960",
+      "content": "hes the reason mythag made that gender change update",
+      "author": "undeterredhomo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1338075424835637299",
+      "channel_id": "1173463482503536711",
+      "content": "~~好演員~~",
+      "author": "navirecorbeau",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1337968566020083762",
       "content": "",
       "author": "randomplayer852",
@@ -98,46 +177,44 @@
       "channel": "别给500沉淀转移注意了，深潜养成材料更是重量级"
     },
     {
-      "id": "1338098716497936415",
-      "content": "？？这也太草台班子了",
-      "author": "two_of_us",
-      "reactions": 2,
-      "channel": "✅「已回答」這眼睛顔色不對吧.jpg"
+      "id": "1338060430731382854",
+      "channel_id": "1131839817982947429",
+      "content": "~~或是課間閒聊區~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1338015109028773898",
-      "content": "Unless I misunderstood she basically gets to overexalt every other turn due to a",
-      "author": ".dredge.",
-      "reactions": 1,
-      "channel": "GDoll preview rough TL"
+      "id": "1338130954018885744",
+      "channel_id": "1131839817982947429",
+      "content": "到時候一鍵回溯爆出一堆樂園",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1337989801659601006",
-      "content": "沒有耶，我這次沒擺",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "拿圖去印了明信片和膠片✌"
+      "id": "1338188511538577540",
+      "channel_id": "1131839817982947429",
+      "content": "這挺正常吧\n6000而已",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1338007587832074320",
-      "content": "不是",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "拿圖去印了明信片和膠片✌"
+      "id": "1337949512244924486",
+      "channel_id": "1170692781216378960",
+      "content": "winkle is so relatable",
+      "author": "reya.li",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1338007716165058661",
-      "content": "問就是即使不是我推的東西也是直接花錢支持的好嗎",
-      "author": "yusi4172",
-      "reactions": 1,
-      "channel": "拿圖去印了明信片和膠片✌"
-    },
-    {
-      "id": "1338145840396763166",
-      "content": "好会画！我偷我偷",
-      "author": "two_of_us",
-      "reactions": 1,
-      "channel": ""
+      "id": "1337996902288851014",
+      "channel_id": "1170692781216378960",
+      "content": "is that 10 saxophones in your pocket or are you just happy to see me",
+      "author": "undeterredhomo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

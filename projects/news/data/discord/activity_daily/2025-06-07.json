@@ -1,10 +1,28 @@
 {
   "date": "2025-06-07",
-  "messages": 94,
-  "unique_authors": 10,
-  "reactions_total": 6,
-  "attachments": 10,
+  "messages": 11551,
+  "unique_authors": 282,
+  "reactions_total": 927,
+  "attachments": 442,
   "channel_activity": {
+    "🔸綜合討論": 748,
+    "🔸morimens-game-chat": 9130,
+    "🔸剧情交流": 44,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 86,
+    "🔸한국어-채팅방": 13,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 17,
+    "🔸phòng-chat-tiếng-việt": 15,
+    "🔸canal-español": 172,
+    "🔸canal-português": 663,
+    "🔸ruang-obrolan-indonesia": 240,
+    "🔸ห้องสนทนาภาษาไทย": 212,
+    "🔸traphase": 74,
+    "🔸lore-chat": 31,
+    "🔸lets-count": 1,
     "Seimau Art": 3,
     "Morimens' Extensive Lore Video Part 1 : Chaos, Primer and Chaos Units by Flares.": 1,
     "V2.2.2.7 在線維護公告": 2,
@@ -19,36 +37,195 @@
     "我要吃現pa 我現在就要吃現pa 👊": 3
   },
   "hourly_activity": {
-    "5": 5,
-    "6": 65,
-    "22": 1,
-    "3": 4,
-    "4": 3,
-    "1": 4,
-    "12": 2,
-    "14": 3,
-    "19": 1,
-    "2": 1,
-    "0": 4,
-    "16": 1
+    "0": 485,
+    "1": 554,
+    "2": 252,
+    "3": 354,
+    "4": 413,
+    "5": 378,
+    "6": 632,
+    "7": 670,
+    "8": 363,
+    "9": 368,
+    "10": 497,
+    "11": 314,
+    "12": 317,
+    "13": 724,
+    "14": 835,
+    "15": 811,
+    "16": 726,
+    "17": 686,
+    "18": 768,
+    "19": 435,
+    "20": 645,
+    "21": 170,
+    "22": 105,
+    "23": 49
   },
   "message_types": {
-    "0": 4
+    "0": 8590,
+    "19": 2867
   },
   "top_reacted_messages": [
     {
-      "id": "1380717824917377125",
-      "content": "如題\n而且強效數值也不對",
-      "author": "_buqi",
-      "reactions": 4,
-      "channel": "✅「已回答」鑰令效果哪個才是正確的"
+      "id": "1380804216389632051",
+      "channel_id": "1170692781216378960",
+      "content": "i will kiss pollux silly when he bitches about anything",
+      "author": "zier.0",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1380757353011347566",
-      "content": "",
-      "author": "satachan",
-      "reactions": 2,
-      "channel": "✅「Answered」Untranslated text for castor"
+      "id": "1380812612966678540",
+      "channel_id": "1170692781216378960",
+      "content": "That doesn’t stop the fact they look like children and people are getting off to",
+      "author": "endexer929",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380909017316200478",
+      "channel_id": "1300659662311526512",
+      "content": "goddamn, black souls <:point:1356053112292511815>",
+      "author": "ktsuhohi",
+      "reactions": 8,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1380811180662325248",
+      "channel_id": "1170692781216378960",
+      "content": "it’s good that Morimens also hates children",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380963251252232303",
+      "channel_id": "1131839817982947429",
+      "content": "我快要控制不住我的手了",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1380812576836816926",
+      "channel_id": "1170692781216378960",
+      "content": "Am lawyer, nobody care about actual laws on internet",
+      "author": "good.th",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380921655810986094",
+      "channel_id": "1170692781216378960",
+      "content": "tinct too",
+      "author": "auernia_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380710122921267311",
+      "channel_id": "1170692781216378960",
+      "content": "I'm doing none and call it a day cause there is nothing left when i start",
+      "author": "melwyn7591",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380921865471529010",
+      "channel_id": "1170692781216378960",
+      "content": "U r stuck with the rat she will never leave",
+      "author": "red_rest",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380718206473469972",
+      "channel_id": "1170692781216378960",
+      "content": "so true",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380731310859091988",
+      "channel_id": "1170692781216378960",
+      "content": "perm lag yes",
+      "author": "mintynow",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380749666865381427",
+      "channel_id": "1170692781216378960",
+      "content": "(im done with the mine today)",
+      "author": "good.th",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380802695027495035",
+      "channel_id": "1170692781216378960",
+      "content": "Positive, normal and respectful behaviour are now a tragic fate to have. How sad",
+      "author": "red_rest",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380807613620420661",
+      "channel_id": "1170692781216378960",
+      "content": "But could be worse, could be an ultra enjoyer",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380809342281842808",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah idk man I’d prefer to not have pedophiles in here 🥀🥀🥀",
+      "author": "endexer929",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380818367010701382",
+      "channel_id": "1170692781216378960",
+      "content": "By gross I mean something like that",
+      "author": "el.shaddoll.nephilim.is.my.ace",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380913088752254976",
+      "channel_id": "1170692781216378960",
+      "content": "\"gelot if your best option if you dont want gelot team\"",
+      "author": "renofon3331",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380914001508175994",
+      "channel_id": "1170692781216378960",
+      "content": "I used to call kaleido scam but I see the dev vision now. \nNormal banners have n",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1380921047079190619",
+      "channel_id": "1170692781216378960",
+      "content": "hate that rat bitch",
+      "author": "auernia_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1381007191615471717",
+      "channel_id": "1170692781216378960",
+      "content": "Kaleido gone right for the first time???",
+      "author": "ameumaru31",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

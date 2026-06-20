@@ -1,10 +1,28 @@
 {
   "date": "2025-05-19",
-  "messages": 139,
-  "unique_authors": 26,
-  "reactions_total": 46,
-  "attachments": 12,
+  "messages": 11652,
+  "unique_authors": 263,
+  "reactions_total": 875,
+  "attachments": 483,
   "channel_activity": {
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 8658,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 190,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 27,
+    "🔸phòng-chat-tiếng-việt": 17,
+    "🔸canal-español": 528,
+    "🔸canal-português": 674,
+    "🔸ruang-obrolan-indonesia": 353,
+    "🔸ห้องสนทนาภาษาไทย": 160,
+    "🔸traphase": 203,
+    "🔸lore-chat": 186,
+    "🔸lets-count": 1,
+    "🔸綜合討論": 498,
     "aomi’s morimens dump": 1,
     "24": 1,
     "Fun Morimen's Music Video I made": 1,
@@ -28,37 +46,122 @@
     "關卡地圖「幻夢深潛」總覽Ⅰ（重置版）": 1
   },
   "hourly_activity": {
-    "13": 3,
-    "11": 15,
-    "20": 1,
-    "6": 18,
-    "7": 47,
-    "8": 8,
-    "9": 3,
-    "10": 8,
-    "12": 2,
-    "15": 4,
-    "16": 2,
-    "17": 8,
-    "3": 3,
-    "5": 9,
-    "1": 2,
-    "2": 4,
-    "0": 1,
-    "21": 1
+    "1": 659,
+    "2": 587,
+    "0": 497,
+    "3": 412,
+    "4": 374,
+    "5": 659,
+    "6": 755,
+    "7": 628,
+    "8": 314,
+    "9": 283,
+    "10": 254,
+    "11": 477,
+    "12": 241,
+    "13": 571,
+    "14": 732,
+    "15": 783,
+    "16": 934,
+    "17": 365,
+    "18": 328,
+    "19": 386,
+    "20": 310,
+    "21": 540,
+    "22": 155,
+    "23": 408
   },
   "message_types": {
-    "0": 73,
-    "19": 20,
-    "4": 1
+    "0": 7971,
+    "19": 3044
   },
   "top_reacted_messages": [
+    {
+      "id": "1373915786292363264",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1373903856588816414 @everyone",
+      "author": "game.producer.light",
+      "reactions": 95,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373917318391922760",
+      "channel_id": "1170692781216378960",
+      "content": "This simple skin only changes the poses and movements of the character's illustr",
+      "author": "game.producer.light",
+      "reactions": 35,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373903028914225193",
+      "channel_id": "1326453763355185215",
+      "content": "What the ……",
+      "author": "game.producer.light",
+      "reactions": 29,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1373918432713637959",
+      "channel_id": "1170692781216378960",
+      "content": "A completely redesigned skin is on the way! This could take several months! We n",
+      "author": "game.producer.light",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1374017678712246364",
       "content": "keeping this alive with a wip fan animation i’m making with winkle!",
       "author": "aomi_crinklies04",
       "reactions": 17,
       "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1373916131030597694",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373920006362107914",
+      "channel_id": "1170692781216378960",
+      "content": "We will explore appropriate boundaries for this, as we want skins to encompass a",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373923799879385088",
+      "channel_id": "1170692781216378960",
+      "content": "That's an interesting idea! Perhaps in the more distant future, we might conside",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373919230986162217",
+      "channel_id": "1170692781216378960",
+      "content": "Who's next? If I were to say it outright, that might come off as too hasty. Howe",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373903580863664312",
+      "channel_id": "1326453763355185215",
+      "content": "please do continue hinting at this blessed information with current and future c",
+      "author": "reya.li",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1374055464777547950",
+      "channel_id": "1355630588094320661",
+      "content": "24",
+      "author": "monohalls",
+      "reactions": 10,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1373959860227674172",
@@ -68,67 +171,68 @@
       "channel": "融灾"
     },
     {
-      "id": "1374124584789610586",
-      "content": "https://www.youtube.com/watch?v=8aDSBw8ewKg&ab_channel=Flares%27sidechannel I'm ",
-      "author": "flares117",
-      "reactions": 4,
-      "channel": "Fun Morimen's Music Video I made"
+      "id": "1373927941620105276",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bestdaddeh",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373932891943473174",
-      "content": "神父終於要露胸了",
-      "author": "foxcatfurry",
-      "reactions": 4,
-      "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
+      "id": "1374024415242616852",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "northernpolarity",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373918476208439337",
-      "content": "都說了是超維 男",
-      "author": "_buqi",
-      "reactions": 3,
-      "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
+      "id": "1373954612670758963",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1374130540130861067",
-      "content": "Hi devs, this was a lot of set up and it just feels like maybe it could be bette",
-      "author": "climbkaly",
-      "reactions": 3,
-      "channel": "Sorel buff better?"
+      "id": "1373834385140220037",
+      "channel_id": "1170692781216378960",
+      "content": "13th pull hard pity; but it was a double; so i guess profit???",
+      "author": "dwang4875",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373976289525895190",
-      "content": "100000214",
-      "author": "nahida._90",
-      "reactions": 1,
-      "channel": "✅「已回答」找不到有互相關注的校友的助戰"
-    },
-    {
-      "id": "1374021139130744842",
-      "content": "100761727",
-      "author": "ditooyh_",
-      "reactions": 1,
-      "channel": "✅「已回答」找不到有互相關注的校友的助戰"
-    },
-    {
-      "id": "1373987433888088146",
-      "content": "During the Chinese New Year period, there was a mini event about editing pics wi",
+      "id": "1373916800299044955",
+      "channel_id": "1170692781216378960",
+      "content": "The old man shall be sexualized",
       "author": "lucchi018",
-      "reactions": 1,
-      "channel": "Possibility of skin contests one?"
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373976961629556796",
-      "content": "脫光",
-      "author": "nahida._90",
-      "reactions": 1,
-      "channel": "點讚100000次有成就嗎"
+      "id": "1373915201245548584",
+      "channel_id": "1170692781216378960",
+      "content": "Ani: removes turn limit\n\nNew unit: we are currently flying into the sun and will",
+      "author": "thpdom",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1373911372001443910",
-      "content": "If it's on the title screen then it should be this\nUID:101006759",
-      "author": "hanedtom",
-      "reactions": 1,
-      "channel": "✅「Answered」Corposant mysteriously missing all base art in my game"
+      "id": "1373860594272178307",
+      "channel_id": "1326453763355185215",
+      "content": "since this is on topic, i did in fact create this lore accurate™️ tier categoriz",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1373888059434598453",
+      "channel_id": "1326453763355185215",
+      "content": "it’s her specie transmitter to ensure the next generation of cosmic bugs will be",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
     }
   ]
 }

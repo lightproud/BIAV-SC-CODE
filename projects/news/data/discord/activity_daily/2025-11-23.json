@@ -1,10 +1,37 @@
 {
   "date": "2025-11-23",
-  "messages": 215,
-  "unique_authors": 25,
-  "reactions_total": 580,
-  "attachments": 57,
+  "messages": 16751,
+  "unique_authors": 388,
+  "reactions_total": 3824,
+  "attachments": 823,
   "channel_activity": {
+    "🔸general-chat": 121,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 2548,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 59,
+    "🔸morimens-game-chat": 7035,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 37,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 29,
+    "🔸交友频道": 2,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 781,
+    "🔸phòng-chat-tiếng-việt": 14,
+    "🔸canal-español": 769,
+    "🔸canal-português": 137,
+    "🔸ruang-obrolan-indonesia": 365,
+    "🔸ห้องสนทนาภาษาไทย": 986,
+    "🔸traphase": 208,
+    "🔸lore-chat": 247,
+    "🔸lets-count": 27,
+    "🔸team-building": 720,
+    "🔸新生守则┊rules": 4,
+    "🔸綜合討論": 2373,
+    "🔸阵容构建": 17,
     "Senior William doodle": 2,
     "Corpo Sketch :D": 1,
     "K-0617": 1,
@@ -41,44 +68,55 @@
     "誕妄．墨菲機制與搭配探討": 7,
     "我也要開圖樓": 3,
     "相位对弈之后": 1,
-    "🔸新生守则┊rules": 2,
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "0": 5,
-    "9": 2,
-    "23": 9,
-    "17": 5,
-    "2": 15,
-    "15": 12,
-    "1": 6,
-    "6": 29,
-    "21": 3,
-    "5": 6,
-    "12": 20,
-    "16": 6,
-    "11": 14,
-    "4": 3,
-    "7": 3,
-    "8": 2,
-    "22": 47,
-    "10": 2,
-    "13": 8,
-    "14": 9,
-    "18": 6,
-    "19": 1,
-    "20": 2
+    "0": 422,
+    "1": 699,
+    "2": 363,
+    "3": 687,
+    "4": 972,
+    "5": 743,
+    "6": 699,
+    "7": 683,
+    "8": 784,
+    "10": 798,
+    "11": 1252,
+    "12": 840,
+    "14": 623,
+    "15": 631,
+    "16": 698,
+    "17": 562,
+    "18": 634,
+    "19": 664,
+    "20": 595,
+    "21": 597,
+    "22": 658,
+    "23": 875,
+    "9": 432,
+    "13": 840
   },
   "message_types": {
-    "19": 8,
-    "0": 49
+    "0": 2040,
+    "19": 694,
+    "6": 1,
+    "20": 3
   },
   "top_reacted_messages": [
     {
       "id": "1442250555585069130",
+      "channel_id": "1131837874078232597",
       "content": "",
       "author": "iamVilla",
-      "reactions": 418,
+      "reactions": 1807,
+      "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1442249411693379624",
+      "channel_id": "1131837874078232597",
+      "content": "",
+      "author": "iamVilla",
+      "reactions": 137,
       "channel": "🔸新生守则┊rules"
     },
     {
@@ -89,13 +127,6 @@
       "channel": "Corpo Sketch :D"
     },
     {
-      "id": "1442249411693379624",
-      "content": "",
-      "author": "iamVilla",
-      "reactions": 21,
-      "channel": "🔸新生守则┊rules"
-    },
-    {
       "id": "1442211169397112945",
       "content": "",
       "author": "deldry8",
@@ -103,11 +134,51 @@
       "channel": "Aigis"
     },
     {
+      "id": "1442201113398087911",
+      "channel_id": "1170692781216378960",
+      "content": "do not sleep on pandia, only the setup might take a little long but it's totally",
+      "author": "reya.li",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1442136568067395677",
+      "channel_id": "1170692781216378960",
+      "content": "Same\nI feel on edge\nI just want to blow my load of silver deep into her banner",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441966937809883268",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "human10062",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1442021634365198426",
+      "channel_id": "1131839817982947429",
+      "content": "我打的",
+      "author": "sweet_25367",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1442299505499177122",
       "content": "当弥利亚姆发现戈利亚真的少用了八成力气之后，她心底蔓延出来的是被轻视的怒火和对方擅作主张的不愉。所以当战斗一结束，戈利亚的手腕就立刻被弥利亚姆抓住，主祭瘦弱的手",
       "author": "knifep_",
       "reactions": 10,
       "channel": "相位对弈之后"
+    },
+    {
+      "id": "1442148850889658499",
+      "channel_id": "1131839817982947429",
+      "content": "觸手是我的正宮\n||圖魯是我的子宮||",
+      "author": "shchng.",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1442191663517929716",
@@ -131,6 +202,38 @@
       "channel": ""
     },
     {
+      "id": "1442302680411406516",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1442116724903378984",
+      "channel_id": "1435483703114596503",
+      "content": "A quick clear of Pollux oneshotting HM Blessor <:M_satisfy:1400771690321154110> ",
+      "author": "annaxxe_",
+      "reactions": 8,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1442155917276610665",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1442034396264661114",
+      "channel_id": "1131839817982947429",
+      "content": "最難的果然是H2-9",
+      "author": "axe_proficient",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1441972906161737868",
       "content": "<@1307852017468964877> hey aint this ur man.",
       "author": "enzoperry",
@@ -145,74 +248,12 @@
       "channel": "救一下這個簡轉繁吧"
     },
     {
-      "id": "1442211470157938718",
-      "content": "",
-      "author": "deldry8",
-      "reactions": 5,
-      "channel": "K-0617"
-    },
-    {
-      "id": "1442003479634907289",
-      "content": "",
-      "author": "hina_kanzaki",
-      "reactions": 4,
-      "channel": "💭「Processing」Time Rewind Bug"
-    },
-    {
-      "id": "1442008521163149343",
-      "content": "Currently there's a disclaimer when unlocking a side story, which chapter the pl",
-      "author": "thigh_god.",
-      "reactions": 4,
-      "channel": "Add a side story guide."
-    },
-    {
-      "id": "1441979284381110292",
-      "content": "能給個隱藏自動戰鬥的選項嗎（\n那玩意放在鑰令上真的很容易不小心按到\n要是打高端局打到一半不小心按到就悲劇了",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "能不能把自動戰鬥的按鈕隱藏起來"
-    },
-    {
-      "id": "1441942882058637312",
-      "content": "是本來活動劇情在開啟前就會提示建議先讀過主線第幾章的劇情之後能有較好的閱讀體驗，並且這些提示在最近版本裡變得更細緻，我個人覺得不是強制先讀過而是明示先讀過哪些讀",
-      "author": "amstelredam",
-      "reactions": 3,
-      "channel": "主線劇情的建議前置活動劇情"
-    },
-    {
-      "id": "1442177315596533761",
-      "content": "我也有同样的问题，所以根据游戏公告做了如上表格，希望在有官方说法之前可以帮到你们",
-      "author": "qingming6054",
-      "reactions": 3,
-      "channel": "主線劇情的建議前置活動劇情"
-    },
-    {
-      "id": "1441966513912287242",
-      "content": "surely nothing bad will happen to Murphy 🙂",
-      "author": "alma2658",
-      "reactions": 2,
-      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
-    },
-    {
-      "id": "1442029824410521752",
-      "content": "First video here\n\nhttps://youtu.be/K-W_Q9Qe-_A\n\nOnce i enter ultra turn, the bac",
-      "author": "satachan",
-      "reactions": 2,
-      "channel": "💭「Processing」Several serious display and performance issues in replay mode"
-    },
-    {
-      "id": "1442197094625448007",
-      "content": "if you want, you can do it, but your life comes first, playing and participating",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1441969507450228769",
-      "content": "是这样的，主线第九章一群人喊着友情啊羁绊啊就冲上去了，但这些人都是谁啊<:dead:1356082627509092372>",
-      "author": "hhhh098962",
-      "reactions": 2,
-      "channel": "主線劇情的建議前置活動劇情"
+      "id": "1442139585646694520",
+      "channel_id": "1173463482503536711",
+      "content": "如果能看到杜勒的上半身裸體，就算讓我當皮克曼的模特我也願意呀！",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
     }
   ]
 }

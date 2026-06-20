@@ -1,10 +1,25 @@
 {
   "date": "2025-07-30",
-  "messages": 34,
-  "unique_authors": 7,
-  "reactions_total": 22,
-  "attachments": 9,
+  "messages": 10511,
+  "unique_authors": 269,
+  "reactions_total": 980,
+  "attachments": 682,
   "channel_activity": {
+    "🔸lore-chat": 61,
+    "🔸lets-count": 6,
+    "🔸morimens-game-chat": 8417,
+    "🔸剧情交流": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 8,
+    "🔸chaîne-française": 20,
+    "🔸русский-канал": 192,
+    "🔸phòng-chat-tiếng-việt": 27,
+    "🔸canal-español": 264,
+    "🔸canal-português": 662,
+    "🔸ruang-obrolan-indonesia": 270,
+    "🔸ห้องสนทนาภาษาไทย": 154,
+    "🔸traphase": 78,
+    "🔸綜合討論": 315,
     "Sanga": 1,
     "Event's should you do them?": 4,
     "忘却前夜OST：戈利亚EP·踏上新的征途": 1,
@@ -21,19 +36,34 @@
     "◆第3章「餍飨」关卡流程总览·星辰篇": 1
   },
   "hourly_activity": {
-    "5": 1,
-    "0": 5,
-    "2": 12,
-    "1": 1,
-    "3": 6,
-    "23": 1,
-    "6": 4,
-    "14": 2,
-    "17": 1,
-    "4": 1
+    "1": 784,
+    "2": 539,
+    "7": 324,
+    "8": 536,
+    "11": 154,
+    "12": 237,
+    "14": 407,
+    "15": 414,
+    "16": 324,
+    "18": 375,
+    "0": 495,
+    "4": 660,
+    "5": 905,
+    "10": 258,
+    "3": 544,
+    "6": 358,
+    "9": 514,
+    "13": 395,
+    "17": 403,
+    "19": 323,
+    "20": 576,
+    "21": 328,
+    "22": 354,
+    "23": 304
   },
   "message_types": {
-    "0": 5
+    "0": 55,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -44,53 +74,156 @@
       "channel": "Sanga"
     },
     {
-      "id": "1399954657643859978",
-      "content": "Buff Doresain please. <:pray:1356053116260454534> \nPreview description also impl",
-      "author": "mengluo",
-      "reactions": 2,
-      "channel": "✅「Answered」Doresain new Talent bug"
+      "id": "1399930231699144714",
+      "channel_id": "1170692781216378960",
+      "content": "Let that sink in",
+      "author": "runningaway_fs",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1400167307128471583",
-      "content": "The $30 and $50 packages give more silver prime per dollar than the $100 one. Us",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "Why is the $100 silver prime package not the best value?"
+      "id": "1400239922119573725",
+      "channel_id": "1170692781216378960",
+      "content": "<:pray:1356053116260454534>",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399941495833886834",
-      "content": "Ah, there we go...\"Through the Gateway.\" Thank you.",
-      "author": "frimmoth",
-      "reactions": 1,
-      "channel": "忘却前夜OST：戈利亚EP·踏上新的征途"
+      "id": "1399971094747938917",
+      "channel_id": "1170692781216378960",
+      "content": "Astra, I really think it would be better to speak to Niko with a bit more respec",
+      "author": "runningaway_fs",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399944903902888006",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
+      "id": "1400091508635598929",
+      "channel_id": "1170692781216378960",
+      "content": "chap 3 completed but without arc2 character",
+      "author": "flarinsidia",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399940556297076856",
-      "content": "Let's check and see🫣",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」Bug report"
+      "id": "1400154394842103991",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】超低练度无塔薇5血肉队425（索蕾尔杜勒双C打榜版）-哔哩哔哩】 https://b23.tv/Q3wuzg3",
+      "author": "scholar_2",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399950840357191803",
-      "content": "<@328412633176866827>嗨 守密人反馈的两个问题，已修复并在昨晚更新放出：https://discord.com/channels/11317",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」Bug report"
+      "id": "1400115646490214430",
+      "channel_id": "1170692781216378960",
+      "content": "Finally got the pussy",
+      "author": ".hechen",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399952644126150840",
-      "content": "Oh shit you are right. It does say **Doresain** gains the corpse.",
-      "author": "mengluo",
-      "reactions": 1,
-      "channel": "✅「Answered」Doresain new Talent bug"
+      "id": "1400161786338082929",
+      "channel_id": "1131839817982947429",
+      "content": "羊媽詩人醫生都沒有不知道怎麼玩",
+      "author": "ahuahuahua",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399948337720987863",
+      "channel_id": "1170692781216378960",
+      "content": "I’m back from my mission",
+      "author": "lloyds_descendant",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400093044451315842",
+      "channel_id": "1170692781216378960",
+      "content": "bullshit boss",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400119030337114222",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil (Btuie ver) soon",
+      "author": "cooked_chicken99",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400135135659294882",
+      "channel_id": "1300659580446969918",
+      "content": "Почти.",
+      "author": "whitehorn_montellas",
+      "reactions": 6,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1400203781219815604",
+      "channel_id": "1131839817982947429",
+      "content": "脱完了（）有专造应该能进13t，没专造一大半时间都在努力活着",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399929243659407600",
+      "channel_id": "1170692781216378960",
+      "content": "he is a jerk",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399930069182447627",
+      "channel_id": "1170692781216378960",
+      "content": "Astra why r u 🫃",
+      "author": "runningaway_fs",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399930865890496694",
+      "channel_id": "1170692781216378960",
+      "content": "Walks into a conversation he has no context about and starts giving orders",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400072540315058207",
+      "channel_id": "1170692781216378960",
+      "content": "<:wish:1356084702468899117>",
+      "author": "annaxxe_",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400093431480713266",
+      "channel_id": "1170692781216378960",
+      "content": "<@521775682578022413> not whale",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1400031748951113770",
+      "channel_id": "1300659662311526512",
+      "content": "Looking for players for a Morimens-themed DnD 5e Oneshot/Campaign. You will be g",
+      "author": "kyomugami",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1399930869866692749",
+      "channel_id": "1170692781216378960",
+      "content": "Just beat everyone",
+      "author": "red_rest",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,35 @@
 {
   "date": "2026-01-12",
-  "messages": 341,
-  "unique_authors": 18,
-  "reactions_total": 231,
-  "attachments": 33,
+  "messages": 12168,
+  "unique_authors": 230,
+  "reactions_total": 1421,
+  "attachments": 560,
   "channel_activity": {
+    "🔸剧情交流": 20,
+    "🔸晒卡分享": 29,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 4,
+    "🔸русский-канал": 300,
+    "🔸phòng-chat-tiếng-việt": 959,
+    "🔸canal-español": 68,
+    "🔸canal-português": 275,
+    "🔸ruang-obrolan-indonesia": 68,
+    "🔸ห้องสนทนาภาษาไทย": 58,
+    "🔸traphase": 74,
+    "🔸lore-chat": 71,
+    "🔸lets-count": 12,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 358,
+    "🔸general-chat": 174,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 1303,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 17,
+    "🔸机器人命令┊bot-commands": 27,
+    "🔸綜合討論": 605,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 7396,
     "I errr....": 1,
     "Ms Dean?": 3,
     "I errrr #3. (Kath and Corpo.": 4,
@@ -38,7 +63,6 @@
     "血肉防禦型喚醒體—卡洛斯": 77,
     "喚醒體設計 烏爾托斯": 52,
     "杜老爺": 17,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1296113810549112874": 2,
     "1455874176534712330": 4,
     "1305430084420898868": 1,
@@ -46,32 +70,35 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
-    "17": 1,
-    "12": 3,
-    "13": 3,
-    "15": 5,
-    "18": 2,
-    "23": 2,
-    "6": 30,
-    "7": 75,
-    "19": 4,
-    "5": 6,
-    "2": 16,
-    "3": 11,
-    "4": 14,
-    "9": 42,
-    "11": 3,
-    "16": 2,
-    "20": 2,
-    "8": 3,
-    "0": 3,
-    "1": 9,
-    "10": 102,
-    "14": 3
+    "1": 439,
+    "2": 776,
+    "3": 842,
+    "4": 420,
+    "6": 532,
+    "7": 253,
+    "8": 478,
+    "10": 657,
+    "17": 361,
+    "9": 833,
+    "11": 526,
+    "12": 457,
+    "14": 358,
+    "15": 514,
+    "18": 499,
+    "19": 283,
+    "20": 291,
+    "21": 516,
+    "0": 399,
+    "5": 834,
+    "13": 713,
+    "16": 465,
+    "23": 303,
+    "22": 419
   },
   "message_types": {
-    "0": 85,
-    "19": 32
+    "0": 2907,
+    "19": 917,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -96,6 +123,14 @@
       "channel": "chapter 9 out of context"
     },
     {
+      "id": "1460280933973364849",
+      "channel_id": "1131839874132090890",
+      "content": "成功了不吃靈知過第一章困難boss😭",
+      "author": "ena04564",
+      "reactions": 13,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1460288744673509562",
       "content": "",
       "author": "noeyebunny.nobunsu",
@@ -108,6 +143,30 @@
       "author": "zzio_",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1460235088607580190",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1460210178799702087",
+      "channel_id": "1170692781216378960",
+      "content": "OMG MY FIRST 400 POINTS",
+      "author": "drunk.biscuit",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460137434619842671",
+      "channel_id": "1131839817982947429",
+      "content": "这...？我拿两万？真的假的",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1460242263287533631",
@@ -124,6 +183,30 @@
       "channel": "杜老爺"
     },
     {
+      "id": "1460097749696385155",
+      "channel_id": "1131839817982947429",
+      "content": "今天是玩你遊第365天\n祝你遊不會死在哈吉咪手上\n還有戈雅你趕緊篡位\n我們會為你加冕成王的",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1460222800114745587",
+      "channel_id": "1170692781216378960",
+      "content": "No",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1460330145511637014",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1460169263678750752",
       "content": "實際上說的是這個杜蕾斯（都怪選字亂選",
       "author": "ass191044",
@@ -131,88 +214,44 @@
       "channel": "杜老爺"
     },
     {
-      "id": "1460257427013505076",
-      "content": "淺畫個汀克特大招",
-      "author": "myth1538",
+      "id": "1460204227774382232",
+      "channel_id": "1326453763355185215",
+      "content": "shes just copying the keeper strat",
+      "author": "binis7705",
       "reactions": 6,
-      "channel": "圖樓"
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1460143333350572125",
-      "content": "||之前杜勒出來的時候我跟朋友都戲稱~~杜蕾絲~~||",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "杜老爺"
+      "id": "1460154035800903765",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1460193650414977205",
-      "content": "暂时跑路一周，多花校猫一点银芯跟要他命一样！负债中<:cry3:1356082134447558748> <:cry3:1356082134447558748>",
-      "author": "yingmai_",
-      "reactions": 5,
-      "channel": ""
+      "id": "1460188311988736011",
+      "channel_id": "1131839817982947429",
+      "content": "破防了 死抗凹不过",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1460167223166369958",
-      "content": "UID：100872328\n界域：血肉\n防禦型\n\n————————————————\n卡洛斯（Carlos）\n\n————————————————\n狀態\n\n等級：6",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "血肉防禦型喚醒體—卡洛斯"
+      "id": "1460094422011351191",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1460203981610418341",
-      "content": "烏爾托斯 混沌 輔助型\n屬性\n體質 140 攻擊 90 防禦 150\n人格深化：界域精通 24 (72)\n銀鑰回充等級 22.2 (36.6)\n\n天賦\n烏爾托斯",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "喚醒體設計 烏爾托斯"
-    },
-    {
-      "id": "1460198317022515270",
-      "content": "第一次見到負數銀芯的",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1460161682012901398",
-      "content": "What happened to my thread",
-      "author": "exhibitionism",
-      "reactions": 3,
-      "channel": "Various art dump (+suggestive) updated!"
-    },
-    {
-      "id": "1460171211685498911",
-      "content": "Love how this thread is jsut 3 insane william posters in their echochamber",
-      "author": "exhibitionism",
-      "reactions": 3,
-      "channel": "Various art dump (+suggestive) updated!"
-    },
-    {
-      "id": "1460084014248497363",
-      "content": "YIPPEEE DAILY RESET FIXED IT",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": "💭「Processing」game client crashed...somewhat"
-    },
-    {
-      "id": "1460120642904002674",
-      "content": "replays of all my D-tide clears for 400 <:please:1356053110375714817> \nhttps://w",
-      "author": "syruponstrawberrycake",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1460159461208494234",
-      "content": "thats what you get for drawing pants where they shouldnt be !",
-      "author": "zzio_",
-      "reactions": 2,
-      "channel": "Various art dump (+suggestive) updated!"
-    },
-    {
-      "id": "1460160374325121084",
-      "content": "hoping bob ross finds that spam entertaining",
-      "author": "zzio_",
-      "reactions": 2,
-      "channel": "Various art dump (+suggestive) updated!"
+      "id": "1460249051843788872",
+      "channel_id": "1170692781216378960",
+      "content": "<:HelotFish:1441898290047353004>",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

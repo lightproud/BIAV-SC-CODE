@@ -1,10 +1,22 @@
 {
   "date": "2025-05-02",
-  "messages": 36,
-  "unique_authors": 7,
-  "reactions_total": 74,
-  "attachments": 4,
+  "messages": 5891,
+  "unique_authors": 121,
+  "reactions_total": 219,
+  "attachments": 255,
   "channel_activity": {
+    "🔸morimens-game-chat": 4090,
+    "🔸剧情交流": 1,
+    "🔸课间休息闲聊": 11,
+    "🔸한국어-채팅방": 632,
+    "🔸русский-канал": 14,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 19,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 165,
+    "🔸ห้องสนทนาภาษาไทย": 139,
+    "🔸traphase": 155,
+    "🔸綜合討論": 550,
     "Tulu is adorable": 2,
     "Uvhash fanart": 1,
     "Murphy": 1,
@@ -20,23 +32,34 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
-    "3": 4,
-    "4": 7,
-    "12": 1,
-    "7": 1,
-    "8": 4,
-    "0": 3,
-    "6": 1,
-    "2": 2,
-    "10": 5,
-    "5": 2,
-    "16": 1,
-    "17": 4,
-    "11": 1
+    "0": 439,
+    "1": 286,
+    "2": 235,
+    "3": 338,
+    "4": 410,
+    "5": 65,
+    "6": 33,
+    "7": 301,
+    "8": 72,
+    "9": 116,
+    "10": 168,
+    "11": 300,
+    "12": 423,
+    "13": 357,
+    "14": 74,
+    "15": 45,
+    "16": 87,
+    "17": 336,
+    "18": 318,
+    "19": 194,
+    "20": 175,
+    "21": 437,
+    "22": 373,
+    "23": 309
   },
   "message_types": {
-    "0": 14,
-    "19": 2
+    "0": 4235,
+    "19": 1070
   },
   "top_reacted_messages": [
     {
@@ -45,6 +68,14 @@
       "author": "meatyexplosions",
       "reactions": 20,
       "channel": "Uvhash fanart"
+    },
+    {
+      "id": "1367718411853107301",
+      "channel_id": "1131839817982947429",
+      "content": "喔不對我是大猛1",
+      "author": "ahuahuahua",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1367719008354173008",
@@ -75,6 +106,54 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
+      "id": "1367712812603936878",
+      "channel_id": "1131839817982947429",
+      "content": "見過我了還能保持本真才是真直男",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1367745565508767765",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1367831444117917817",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇，希洛应该能百万",
+      "author": "xili0434",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1367704353145880638",
+      "channel_id": "1300659753197764688",
+      "content": "Gua simp FEMC makasih",
+      "author": "lowtownnivn",
+      "reactions": 3,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1367714807524098100",
+      "channel_id": "1131839817982947429",
+      "content": "||我快被鯊魚艸融化了||",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1367718374427328612",
+      "channel_id": "1131839817982947429",
+      "content": "這我",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1367716635267305524",
       "content": "",
       "author": "rain_scarlet",
@@ -96,46 +175,44 @@
       "channel": "一點點鯊守私設文...吧? （清水.jpg）"
     },
     {
-      "id": "1367803864652320769",
-      "content": "<:fail:1356083552923422770>",
-      "author": "ernest_heart",
+      "id": "1367692635518799952",
+      "channel_id": "1170692781216378960",
+      "content": "be constantly at 1 hp, planning your draws next turn, generating embryo just to ",
+      "author": "van_ehre",
       "reactions": 2,
-      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1367716731770110124",
-      "content": "珈伦来送饭了（）",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+      "id": "1367718935633334302",
+      "channel_id": "1170692781216378960",
+      "content": "Sometimes in life when i play other realms i click end turn and wonder why the e",
+      "author": "aslechi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1367703594811523112",
-      "content": "抽不起就+12演算+神王",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+      "id": "1367788568428150804",
+      "channel_id": "1170692781216378960",
+      "content": "Tawill pandia erica clem",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1367910807924641954",
-      "content": "————————————————\n基礎資訊\n\n名字：亞弗戈蒙\n英文名：Avergomon\n生日：9月16日\n性別：男\n身高：5 ' 1.2 \"\n體重：123lb",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "自製角色（目前有深海一名、超維一名）"
+      "id": "1367795478787526666",
+      "channel_id": "1170692781216378960",
+      "content": "it's spine animation",
+      "author": "tombmonkey",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1367720131647639674",
-      "content": "<:pray:1356053116260454534>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1367735582536761365",
-      "content": "珊瑚白巧克力蛋糕",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "id": "1367815720246841384",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1365269969809702933",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,29 @@
 {
   "date": "2025-09-26",
-  "messages": 96,
-  "unique_authors": 20,
-  "reactions_total": 113,
-  "attachments": 30,
+  "messages": 11326,
+  "unique_authors": 174,
+  "reactions_total": 2173,
+  "attachments": 505,
   "channel_activity": {
+    "🔸русский-канал": 215,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 223,
+    "🔸canal-português": 51,
+    "🔸ruang-obrolan-indonesia": 184,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 39,
+    "🔸lore-chat": 1,
+    "🔸lets-count": 2,
+    "🔸team-building": 19,
+    "🔸general-chat": 90,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸morimens-game-chat": 9014,
+    "🔸晒卡分享": 8,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 89,
+    "🔸chaîne-française": 11,
+    "🔸綜合討論": 1123,
+    "🔸阵容构建": 38,
     "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,": 1,
     "🎨🖌️": 2,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 17,
@@ -24,29 +43,34 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
-    "18": 1,
-    "8": 17,
-    "13": 1,
-    "20": 13,
-    "21": 5,
-    "3": 2,
-    "5": 6,
-    "6": 6,
-    "7": 22,
-    "11": 2,
-    "17": 2,
-    "10": 6,
-    "0": 4,
-    "1": 3,
-    "4": 2,
-    "9": 1,
-    "15": 1,
-    "16": 1,
-    "2": 1
+    "7": 321,
+    "8": 804,
+    "9": 551,
+    "10": 470,
+    "11": 513,
+    "12": 786,
+    "13": 465,
+    "14": 615,
+    "15": 679,
+    "16": 668,
+    "18": 286,
+    "19": 541,
+    "20": 459,
+    "21": 436,
+    "22": 486,
+    "0": 91,
+    "1": 188,
+    "2": 463,
+    "3": 572,
+    "5": 224,
+    "17": 447,
+    "23": 436,
+    "4": 577,
+    "6": 248
   },
   "message_types": {
-    "0": 51,
-    "19": 14
+    "19": 253,
+    "0": 693
   },
   "top_reacted_messages": [
     {
@@ -55,6 +79,14 @@
       "author": "sunstopshining",
       "reactions": 29,
       "channel": "🎨🖌️"
+    },
+    {
+      "id": "1421228258027901038",
+      "channel_id": "1300659662311526512",
+      "content": "Dejen de exponerme",
+      "author": "Deleted User",
+      "reactions": 25,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1421035896999907379",
@@ -71,6 +103,14 @@
       "channel": "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,"
     },
     {
+      "id": "1421028654376423475",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1421037648377675807",
       "content": "So free to play 0%?",
       "author": "aurora3981",
@@ -78,102 +118,116 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
-      "id": "1421042485152583722",
-      "content": "下一話：萊克的嘴筒x守咪人的||四角褲||",
-      "author": "nazhigezihk",
-      "reactions": 4,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+      "id": "1421148338128158833",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "anphans371",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421036054823174184",
-      "content": "English",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1421237272736694364",
+      "channel_id": "1170692781216378960",
+      "content": "Don't call me that I'm not a girl!!!",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421041927431913484",
-      "content": "~~看了一下标题，所以原来是普娜版本吗~~",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1420989608694513737",
+      "channel_id": "1170692781216378960",
+      "content": "Arisu is now the best pupper.",
+      "author": "sophiechoice",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421103159182360708",
-      "content": "之後活動也不要再刪除了好嗎<:please:1356053110375714817>",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1421065744636055563",
+      "channel_id": "1170692781216378960",
+      "content": "only 1 left to go",
+      "author": "medicineshow",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420932717641732097",
-      "content": "You may need to click multiple times. Sometimes the game is still loading and do",
-      "author": "angy_24_s",
-      "reactions": 2,
-      "channel": "💭「Processing」i can't enter the game via steam"
+      "id": "1421238336617578496",
+      "channel_id": "1170692781216378960",
+      "content": "Heart me if you love me ❤️",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420939581192147005",
-      "content": "如题",
-      "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "✅「已回答」能不能给复刻活动也加入星辰篇材料"
+      "id": "1421040294727778385",
+      "channel_id": "1170692781216378960",
+      "content": "What's pollux",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1420941011307331695",
-      "content": "😼：想太多",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "✅「已回答」能不能给复刻活动也加入星辰篇材料"
+      "id": "1421146986358243439",
+      "channel_id": "1170692781216378960",
+      "content": "<:point:1356053112292511815>",
+      "author": "annaxxe_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421227939684421782",
-      "content": "好久没做DIY了，兴致上来一口气搓了四个，但是数值这方面没怎么把握，重在机制嘛。。（嗯）",
-      "author": "dyyqcwj",
-      "reactions": 2,
-      "channel": "创作欲大爆发，给每个界域手搓了一个新人"
+      "id": "1421155142442418228",
+      "channel_id": "1170692781216378960",
+      "content": "it's super toxic at some point that your whole popularity is based on how smart ",
+      "author": "runningaway_fs",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421235262117253243",
-      "content": "Thanks so much. Looks like there will be a new banner that includes Thais. i gue",
-      "author": "flinx",
-      "reactions": 1,
-      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+      "id": "1421171136913346590",
+      "channel_id": "1170692781216378960",
+      "content": "Nghhh~\nAghhh~\nMhmmm~\n\nLike those",
+      "author": "sugarspawn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421046886080577618",
-      "content": "凯姐版本唐突缩短成20天，然后接一个40天的版本，不会只多了个皮肤活动吧（",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1421214597888868472",
+      "channel_id": "1170692781216378960",
+      "content": "Send him to the Aequor realm.",
+      "author": "sophiechoice",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421012907667230720",
-      "content": "原来在跟皮皮虾打架吗，我还以为是皮卡丘呢",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+      "id": "1421214669145772234",
+      "channel_id": "1170692781216378960",
+      "content": "sentenced to an eternity of league of legends",
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421028387102916678",
-      "content": "對啊跟皮皮蝦展開了~~紳士間的對♂️決♂️~~",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+      "id": "1421138363876114472",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "txt101225.",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421032476649980006",
-      "content": "此事在杜勒和皮克曼的車文來了中亦有記載",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+      "id": "1420996289453101086",
+      "channel_id": "1170692781216378960",
+      "content": "Water is better than coke <:point:1356053112292511815>",
+      "author": "red_rest",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421005005049172009",
-      "content": "if story mode is for baby then those babies will go complain even more about har",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": ""
+      "id": "1421042094906015785",
+      "channel_id": "1170692781216378960",
+      "content": "Guess who has returned to share doom and news?\nNext week we are not eating, get ",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,21 @@
 {
   "date": "2025-05-15",
-  "messages": 24,
-  "unique_authors": 7,
-  "reactions_total": 16,
-  "attachments": 5,
+  "messages": 6326,
+  "unique_authors": 138,
+  "reactions_total": 276,
+  "attachments": 280,
   "channel_activity": {
+    "🔸morimens-game-chat": 4427,
+    "🔸相位对弈": 8,
+    "🔸한국어-채팅방": 100,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-español": 22,
+    "🔸canal-português": 201,
+    "🔸ruang-obrolan-indonesia": 713,
+    "🔸ห้องสนทนาภาษาไทย": 9,
+    "🔸traphase": 5,
+    "🔸lets-count": 1,
+    "🔸綜合討論": 815,
     "Old D-Tide Leaderboards": 1,
     "忘卻前夜OST：領航手記": 1,
     "✅前瞻：1.5周年～活动福利篇": 9,
@@ -16,27 +27,146 @@
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
-    "16": 4,
-    "2": 5,
-    "1": 1,
-    "10": 5,
-    "11": 3,
-    "5": 1,
-    "20": 1,
-    "12": 1,
-    "15": 2,
-    "17": 1
+    "0": 15,
+    "1": 341,
+    "2": 356,
+    "3": 495,
+    "4": 255,
+    "5": 188,
+    "6": 59,
+    "7": 163,
+    "8": 434,
+    "9": 252,
+    "10": 144,
+    "11": 163,
+    "12": 222,
+    "13": 357,
+    "14": 396,
+    "15": 411,
+    "16": 417,
+    "17": 329,
+    "18": 217,
+    "19": 152,
+    "20": 248,
+    "21": 257,
+    "22": 285,
+    "23": 170
   },
   "message_types": {
-    "4": 1
+    "0": 4151,
+    "19": 1336
   },
   "top_reacted_messages": [
+    {
+      "id": "1372435784900018197",
+      "channel_id": "1131839817982947429",
+      "content": "這是我從柔佬那裏聽來的，絕對不會錯",
+      "author": "huangyu0876",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372667828012060682",
+      "channel_id": "1131839817982947429",
+      "content": "拼盡全力無法戰勝破狗",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372613764092002496",
+      "channel_id": "1131839817982947429",
+      "content": "昨晚想凹血希带三个一级去打的，但是血量还是太勉强了",
+      "author": "lurenjiao",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372633054513991831",
+      "channel_id": "1180850818509971466",
+      "content": "關於開場就4蓄力切割aoe，被我賽到白鴿淨化打崩道心這件事",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸相位对弈"
+    },
     {
       "id": "1372394499833069659",
       "content": "",
       "author": "water_heart",
       "reactions": 6,
       "channel": "點讚100000次有成就嗎"
+    },
+    {
+      "id": "1372435670542319869",
+      "channel_id": "1131839817982947429",
+      "content": "忘卻篇，用4小強推能輕鬆不吃靈芝到第6章",
+      "author": "huangyu0876",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372567858995003523",
+      "channel_id": "1170692781216378960",
+      "content": "yay, finally 100%",
+      "author": "johnnyjoyce",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372652199053758606",
+      "channel_id": "1170692781216378960",
+      "content": "guys wheres the monchi hentai scene?",
+      "author": "apsgsd",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372432244605718559",
+      "channel_id": "1131839817982947429",
+      "content": "主線聽別的大佬說隨便都能虐到第7章",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372502996235063397",
+      "channel_id": "1131839817982947429",
+      "content": "雙蛋黃",
+      "author": "harrison1011.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372503880562118727",
+      "channel_id": "1131839817982947429",
+      "content": "我都已經要棄坑了（",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372519432538292294",
+      "channel_id": "1131839817982947429",
+      "content": "以前封印沒層數，只有是否有該狀態而已",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372616762855657575",
+      "channel_id": "1131839817982947429",
+      "content": "天天反复重置融灾吃",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1372619557730254940",
+      "channel_id": "1131839817982947429",
+      "content": "前作前期PvP角色都有等级的，连伤害都有一定差距<:nocomment:1356053106038673610>",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1372526243743793193",
@@ -53,25 +183,36 @@
       "channel": "✅前瞻：1.5周年～活动福利篇"
     },
     {
-      "id": "1372627148011077804",
-      "content": "姓名：克柏珊特\n職業：戰士\n推薦位置：上路\n\n\n被動：引領。友方英雄朝向自身、「旗幟」移動或自身朝向友方單位、「旗幟」移動時增加20%移速；對敵方英雄造成傷害後",
-      "author": "void_1546.",
+      "id": "1372406549997158493",
+      "channel_id": "1170692781216378960",
+      "content": "The first ultra male unit will be coming out on half anni",
+      "author": ".galeroar",
       "reactions": 2,
-      "channel": "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1372603109637095497",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "「已回答✅ 」如图所示，温柯尔弃牌不触发余波效果"
+      "id": "1372416671947554937",
+      "channel_id": "1170692781216378960",
+      "content": "im tempted to just spend another 350 dollars to justify ghelot",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1372605716673597551",
-      "content": "我刚测了，触发",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "「已回答✅ 」如图所示，温柯尔弃牌不触发余波效果"
+      "id": "1372422752174215199",
+      "channel_id": "1170692781216378960",
+      "content": "3.5k crits on brown cards is kinda funny",
+      "author": "noire_2",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372472608939049031",
+      "channel_id": "1170692781216378960",
+      "content": "Someone just revived their entire team in traphase lmao",
+      "author": "tallythetalarin",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

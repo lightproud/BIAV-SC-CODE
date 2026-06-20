@@ -1,10 +1,26 @@
 {
   "date": "2025-04-29",
-  "messages": 76,
-  "unique_authors": 16,
-  "reactions_total": 152,
-  "attachments": 30,
+  "messages": 6940,
+  "unique_authors": 161,
+  "reactions_total": 422,
+  "attachments": 239,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 5044,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 212,
+    "🔸русский-канал": 21,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 122,
+    "🔸canal-português": 541,
+    "🔸ruang-obrolan-indonesia": 46,
+    "🔸ห้องสนทนาภาษาไทย": 119,
+    "🔸traphase": 18,
+    "🔸lore-chat": 4,
+    "🔸lets-count": 1,
+    "🔸綜合討論": 727,
     "Tulu is adorable": 4,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "V2.2.1.2 在線維護公告": 2,
@@ -28,29 +44,34 @@
     "1350059696945500171": 13
   },
   "hourly_activity": {
-    "14": 2,
-    "15": 5,
-    "21": 1,
-    "12": 5,
-    "8": 14,
-    "6": 4,
-    "2": 8,
-    "3": 2,
-    "7": 5,
-    "5": 2,
-    "16": 5,
-    "17": 1,
-    "18": 3,
-    "23": 2,
-    "9": 1,
-    "0": 1,
-    "1": 1,
-    "10": 1,
-    "22": 13
+    "12": 295,
+    "0": 272,
+    "1": 245,
+    "2": 366,
+    "3": 271,
+    "4": 127,
+    "5": 117,
+    "6": 103,
+    "7": 139,
+    "8": 150,
+    "9": 164,
+    "10": 293,
+    "11": 250,
+    "13": 222,
+    "14": 341,
+    "15": 256,
+    "16": 471,
+    "17": 362,
+    "18": 250,
+    "19": 192,
+    "20": 366,
+    "21": 384,
+    "22": 675,
+    "23": 629
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 4760,
+    "19": 1377
   },
   "top_reacted_messages": [
     {
@@ -75,6 +96,14 @@
       "channel": "English Localization Fixes & What's Next"
     },
     {
+      "id": "1366835147571466330",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "9029.",
+      "reactions": 14,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1366749169829806140",
       "content": "● Fixed \"Recommended\" button displaying as \"HOT\" (same tool issue).\n● We are cur",
       "author": "morimensstaff02",
@@ -96,6 +125,22 @@
       "channel": "忘卻前夜OST：迷幻蟲巢之夢"
     },
     {
+      "id": "1366785605303926796",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366866990215725137",
+      "channel_id": "1131839817982947429",
+      "content": "看來我成功在國際服植入忘卻前夜有很多男同的信念了",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1366691367270613054",
       "content": "<:slick:1356053160531198064> 以上就是本次OST的全部曲目囉~\nThe above are all the tracks of th",
       "author": "morimensstaff01",
@@ -103,11 +148,51 @@
       "channel": "忘卻前夜OST：迷幻蟲巢之夢"
     },
     {
+      "id": "1366695808128253992",
+      "channel_id": "1180850818509971466",
+      "content": "麻痺真的好醜 手掌樣<:flop1:1356083604236800030>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
       "id": "1366723303829536899",
       "content": "想了解《忘卻前夜》背後的克蘇魯神話設定嗎？這位巴哈大神的考據太猛了，推爆🔥\nhttps://forum.gamer.com.tw/C.php?bsn=78829",
       "author": "taoi002",
       "reactions": 5,
       "channel": "從克蘇魯神話視角解讀《忘卻前夜》：角色與設定的神話源流分析"
+    },
+    {
+      "id": "1366592529117479052",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366641980758560808",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366688783839531068",
+      "channel_id": "1131839817982947429",
+      "content": "跑路了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1366788224302973043",
+      "channel_id": "1131839817982947429",
+      "content": "群色除我",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1366692153388044308",
@@ -131,32 +216,12 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
-      "id": "1366691268297625610",
-      "content": "**09.集群意志-Hive Will-**\n\n你與之戰鬥的，是無數個同心同體的靈魂。他們抗拒你、他們邀請你，放下無謂的自我吧，讓你無知的大腦，一同加入永不孤獨",
-      "author": "morimensstaff01",
+      "id": "1366749763134820402",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1366749080042209330",
+      "author": "morimensstaff02",
       "reactions": 3,
-      "channel": "忘卻前夜OST：迷幻蟲巢之夢"
-    },
-    {
-      "id": "1366668673439367168",
-      "content": "艾尔瓦命轮带进来的打防不能吃到船长一启吗",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "✅「已回答」基础打防是什么意思"
-    },
-    {
-      "id": "1366599994987253811",
-      "content": "抱歉！已加上🥹 🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」想問第二期同人活動的標籤在哪？"
-    },
-    {
-      "id": "1366793600679018647",
-      "content": "不好！與卡茜亞撞設定了，忽然想起了她的劇情，但他是個大明星的設定還是可以保留，但其他的我得重新調整了",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "自製角色（目前有深海一名、超維一名）"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

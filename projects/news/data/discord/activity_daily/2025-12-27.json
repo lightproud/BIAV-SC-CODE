@@ -1,10 +1,33 @@
 {
   "date": "2025-12-27",
-  "messages": 179,
-  "unique_authors": 22,
-  "reactions_total": 268,
-  "attachments": 55,
+  "messages": 14329,
+  "unique_authors": 228,
+  "reactions_total": 1760,
+  "attachments": 674,
   "channel_activity": {
+    "🔸lore-chat": 304,
+    "🔸lets-count": 34,
+    "🔸team-building": 416,
+    "🔸general-chat": 170,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 1223,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 39,
+    "🔸morimens-game-chat": 6809,
+    "🔸剧情交流": 61,
+    "🔸欢乐梗图": 2,
+    "🔸한국어-채팅방": 4,
+    "🔸deutscher-chatraum": 368,
+    "🔸русский-канал": 309,
+    "🔸phòng-chat-tiếng-việt": 640,
+    "🔸canal-español": 1179,
+    "🔸canal-português": 187,
+    "🔸ruang-obrolan-indonesia": 254,
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸traphase": 407,
+    "🔸綜合討論": 1726,
+    "🔸阵容构建": 6,
     "[Fan Awakener Kit] Sophia, the Vindictive Liberator": 1,
     "Water color tulu fanart": 5,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 7,
@@ -37,40 +60,39 @@
     "嗨又是我我又畫了哈姆林": 2,
     "银霜节日历（圣诞节贺文）": 1,
     "我也丟一下之前畫的 圖樓": 2,
-    "🔸欢乐梗图": 1,
-    "🔸忘却前夜┊morimens-tv": 2,
     "1296113810549112874": 8,
     "1454438358351609857": 24
   },
   "hourly_activity": {
-    "14": 9,
-    "9": 10,
-    "10": 14,
-    "13": 5,
-    "16": 10,
-    "17": 6,
-    "18": 3,
-    "15": 26,
-    "1": 29,
-    "4": 5,
-    "3": 15,
-    "2": 4,
-    "5": 2,
-    "6": 4,
-    "7": 3,
-    "21": 2,
-    "12": 3,
-    "11": 13,
-    "19": 7,
-    "20": 2,
-    "8": 2,
-    "0": 3,
-    "22": 2
+    "3": 433,
+    "4": 535,
+    "5": 632,
+    "7": 873,
+    "8": 462,
+    "9": 265,
+    "11": 612,
+    "14": 612,
+    "15": 594,
+    "17": 1041,
+    "19": 587,
+    "1": 457,
+    "2": 510,
+    "6": 754,
+    "12": 623,
+    "16": 977,
+    "21": 516,
+    "22": 435,
+    "23": 551,
+    "0": 545,
+    "10": 255,
+    "13": 862,
+    "18": 558,
+    "20": 640
   },
   "message_types": {
-    "0": 29,
-    "19": 2,
-    "4": 1
+    "0": 1712,
+    "19": 477,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -102,6 +124,22 @@
       "channel": "[Fan Awakener Kit] Sophia, the Vindictive Liberator"
     },
     {
+      "id": "1454312858828542147",
+      "channel_id": "1355630588094320661",
+      "content": "3000 <:tuff_ramona:1441426630420467753><:kath_cool:1447714576413233315>",
+      "author": "idiota__",
+      "reactions": 17,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1454525391321698336",
+      "channel_id": "1170692781216378960",
+      "content": "I'm the only sane person here",
+      "author": "flares117",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1454438358351609857",
       "content": "I always use my sona for MC in every game I play.\nBut this one, I prefer her to ",
       "author": "noeyebunny.nobunsu",
@@ -123,11 +161,67 @@
       "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
     },
     {
+      "id": "1454266472871231713",
+      "channel_id": "1170692781216378960",
+      "content": "<@113374123798859776>",
+      "author": "twilightsparkle163163",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454523003776794755",
+      "channel_id": "1170692781216378960",
+      "content": "Holy fucking shit no wonder they rumored that you got cancer who the fuck use li",
+      "author": "joker_0108",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454527193433641182",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454379466594979934",
+      "channel_id": "1131839817982947429",
+      "content": "<:wish:1356084702468899117>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1454399327098241047",
       "content": "There was an attempt... <:takenotes:1357186646294138890>\n\nUID : 101012654",
       "author": "noname0963",
       "reactions": 9,
       "channel": "Water color tulu fanart"
+    },
+    {
+      "id": "1454525233628446919",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone",
+      "author": "idotly",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454414961433509908",
+      "channel_id": "1131839817982947429",
+      "content": "~~原來官方說的血希上限高生存困難是在玩過誕墨之後嗎~~",
+      "author": "ass191044",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1454422878962585661",
+      "channel_id": "1131839817982947429",
+      "content": "因為有個角色超限血扣的比血希還兇而且都只有少少的固力加成還完全沒回血機制<:evil:1356083443020337152>",
+      "author": "ass191044",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1454281210829344769",
@@ -137,81 +231,20 @@
       "channel": "Bunch of doodles and sillies"
     },
     {
-      "id": "1454281046068559892",
-      "content": "",
-      "author": "lotusbunyee",
-      "reactions": 6,
-      "channel": "Bunch of doodles and sillies"
+      "id": "1454371883872026645",
+      "channel_id": "1131839817982947429",
+      "content": "誕妄墨菲完全不解能力運作方式只好跳過\n等神王圖",
+      "author": "magushermes",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1454283155493093497",
-      "content": "Some of the ladies in suits because yes",
-      "author": "lotusbunyee",
-      "reactions": 6,
-      "channel": "Bunch of doodles and sillies"
-    },
-    {
-      "id": "1454513599098650769",
-      "content": "",
-      "author": "nnf02",
-      "reactions": 5,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1454405574446944359",
-      "content": "下禮拜一戈雅要遞交一本字典厚度的玩家建議清單了",
-      "author": "elkmilu",
-      "reactions": 4,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1454424754533564416",
-      "content": "Ramona's Assault Thesis card has the wrong description. Seems to be Doll's mecha",
-      "author": "reccyls",
-      "reactions": 4,
-      "channel": "💭「Processing」Incorrect card description"
-    },
-    {
-      "id": "1454420017327112205",
-      "content": "延續這一串 https://discord.com/channels/1131791637933199470/1454108976307503225\n\n由於現在",
-      "author": "amstelredam",
-      "reactions": 4,
-      "channel": "✅「已回答」希望長按卡片顯示數值計算公式"
-    },
-    {
-      "id": "1454368891512950856",
-      "content": "希望可以给出更高的知识赠礼的上限, 现在的氪金点非常容易超过这个上限",
-      "author": "grayifies",
-      "reactions": 4,
-      "channel": "✅「已回答」是否有拉高知识赠礼上限的计划?"
-    },
-    {
-      "id": "1454414985298972753",
-      "content": "珊——看得出来不会画珊瑚…",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1454281815417294918",
-      "content": "",
-      "author": "lotusbunyee",
-      "reactions": 2,
-      "channel": "Bunch of doodles and sillies"
-    },
-    {
-      "id": "1454288349719166977",
-      "content": "",
-      "author": "lotusbunyee",
-      "reactions": 2,
-      "channel": "Bunch of doodles and sillies"
-    },
-    {
-      "id": "1454454168344334387",
-      "content": "你的也是<:agree:1400771815076528258>",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "嗨又是我我又畫了哈姆林"
+      "id": "1454372205579472936",
+      "channel_id": "1131839817982947429",
+      "content": "~~結果神王跟誕墨吵架不能放一起~~",
+      "author": "foxcatfurry",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,25 @@
 {
   "date": "2025-04-24",
-  "messages": 123,
-  "unique_authors": 13,
-  "reactions_total": 43,
-  "attachments": 4,
+  "messages": 5462,
+  "unique_authors": 135,
+  "reactions_total": 241,
+  "attachments": 176,
   "channel_activity": {
+    "🔸morimens-game-chat": 4343,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 170,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 5,
+    "🔸phòng-chat-tiếng-việt": 16,
+    "🔸canal-español": 6,
+    "🔸canal-português": 49,
+    "🔸ruang-obrolan-indonesia": 279,
+    "🔸ห้องสนทนาภาษาไทย": 18,
+    "🔸traphase": 63,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 380,
     "brown attack!": 2,
     "Tawil and Merlin on Traphase": 2,
     "Star Chapter 1 + 2 Tier List": 2,
@@ -19,24 +34,34 @@
     "一點點鯊守私設文...吧? （清水.jpg）": 2
   },
   "hourly_activity": {
-    "5": 1,
-    "7": 1,
-    "11": 1,
-    "15": 11,
-    "20": 2,
-    "22": 1,
-    "14": 78,
-    "16": 12,
-    "21": 4,
-    "2": 6,
-    "1": 1,
-    "3": 3,
-    "12": 1,
-    "13": 1
+    "0": 69,
+    "1": 175,
+    "2": 162,
+    "3": 202,
+    "4": 103,
+    "5": 84,
+    "6": 57,
+    "7": 146,
+    "8": 180,
+    "9": 323,
+    "10": 323,
+    "11": 217,
+    "12": 350,
+    "13": 294,
+    "14": 437,
+    "15": 219,
+    "16": 425,
+    "17": 447,
+    "18": 161,
+    "19": 145,
+    "20": 90,
+    "21": 214,
+    "22": 242,
+    "23": 397
   },
   "message_types": {
-    "0": 87,
-    "19": 15
+    "0": 3807,
+    "19": 1152
   },
   "top_reacted_messages": [
     {
@@ -47,6 +72,94 @@
       "channel": "brown attack!"
     },
     {
+      "id": "1364869105177329674",
+      "channel_id": "1170692781216378960",
+      "content": "I already enjoyed Ahab in Limbus",
+      "author": "al_leyway",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365080232712867930",
+      "channel_id": "1170692781216378960",
+      "content": "🪱 vs 🐛 palce yer bets",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1364894549813497888",
+      "channel_id": "1131839817982947429",
+      "content": "小貓\n# 給我男角",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364922875731247194",
+      "channel_id": "1131839817982947429",
+      "content": "~~你知道的，消失的這一年我都在備孕，沒甚麼時間滑手機~~",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364902002206834689",
+      "channel_id": "1170692781216378960",
+      "content": "her mother maybe",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365089359983939638",
+      "channel_id": "1170692781216378960",
+      "content": "An ultra character with a card that replaces all symptoms in your hand with a di",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365111597474775040",
+      "channel_id": "1170692781216378960",
+      "content": "Pa Pa Ya <:point:1356053112292511815>",
+      "author": "ughhhhard",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1364872394769960971",
+      "channel_id": "1131839817982947429",
+      "content": "这个世界的神王需要撞一撞才能醒，很合理",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365010566514741290",
+      "channel_id": "1131839817982947429",
+      "content": "血肉 深海 超維 混沌，那個紫紫的最沒用",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365108322813870121",
+      "channel_id": "1131839817982947429",
+      "content": "聽起來會把人變得很銀亂",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365109119408672880",
+      "channel_id": "1131839817982947429",
+      "content": "會把人變神國黑",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1364972999631048836",
       "content": "||啊啊，N也没有吗||",
       "author": "flarinsidia",
@@ -54,102 +167,60 @@
       "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
     },
     {
-      "id": "1364967846899355829",
-      "content": "卖卡无所谓，别除了卖卡什么内容没有就行",
-      "author": "flarinsidia",
+      "id": "1364914828682199040",
+      "channel_id": "1170692781216378960",
+      "content": "hey",
+      "author": "muliupan",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364968484672503818",
-      "content": "通篇賣女角卡\n@game.producer.light \n你最近是不是在回歸旅行的初衷",
-      "author": "kong760",
+      "id": "1364935583041982475",
+      "channel_id": "1170692781216378960",
+      "content": "Not exactly, some time the developers give some info, in the last ones they say ",
+      "author": "vxvendetta",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364974078779461642",
-      "content": "你可以去玩吊五\n我可以去玩陰陽師\n這樣你可以擁有哈斯塔本尊\n我可以擁有禍神血肉盛宴跟月球章魚惡神\n眾所周知克蘇魯正宗在網易\n我們都有美好的未來",
-      "author": "kong760",
+      "id": "1364971151750598676",
+      "channel_id": "1170692781216378960",
+      "content": "Tbf, nobody is really \"unfixable\". It is hard to define what a normal mental sta",
+      "author": "thesecondcomingofdrenwee",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364992319752900699",
-      "content": "差評",
-      "author": "ernest_heart",
+      "id": "1364974044348158066",
+      "channel_id": "1170692781216378960",
+      "content": "Mind u he's been nerfed maybe a couple times so at least they did something but ",
+      "author": "daegudollz",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365072629383434352",
-      "content": "Here is a guide to Wheels in the game",
-      "author": "climbkaly",
+      "id": "1365013746279387227",
+      "channel_id": "1170692781216378960",
+      "content": "Nvm then have fun with the game",
+      "author": "noire_2",
       "reactions": 2,
-      "channel": "Wheel Guide - In Depth"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365092207845052508",
-      "content": "<@1131790839291596841> 麻烦看一下私信",
-      "author": "tianfang5580",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
+      "id": "1365015777966559323",
+      "channel_id": "1170692781216378960",
+      "content": "i avoided him not my type",
+      "author": "apsgsd",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364965681606430730",
-      "content": "加固流水流失圖表吧\n你們也只能加固這個了",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1364967087256375408",
-      "content": "新手如何卸載忘卻前夜",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1364967197620965448",
-      "content": "到底誰想寫林卡特超厚超全沒劇情大圖鑑",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1364970689890615306",
-      "content": "不是\n我是指遊戲在客戶端的存檔內容",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1364996831146147852",
-      "content": "~~血源詛咒太難了~~",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1365004846821933166",
-      "content": "那我就抽到+4，剩下+8的錢我拿去上貢吾主",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1364796633824497756",
-      "content": "The question has been received. Goya will discuss the solution🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Stuck on Checking Resources (mobile)"
-    },
-    {
-      "id": "1364805654627356733",
-      "content": "謝謝戈雅",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "✅「已回答」典藏館與命輪文案衝突"
+      "id": "1365059105697304648",
+      "channel_id": "1170692781216378960",
+      "content": "furrys are willing to spend big money",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

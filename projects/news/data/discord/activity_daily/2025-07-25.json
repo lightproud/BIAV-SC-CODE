@@ -1,10 +1,28 @@
 {
   "date": "2025-07-25",
-  "messages": 314,
-  "unique_authors": 49,
-  "reactions_total": 198,
-  "attachments": 33,
+  "messages": 14101,
+  "unique_authors": 324,
+  "reactions_total": 1782,
+  "attachments": 752,
   "channel_activity": {
+    "🔸lore-chat": 325,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 9,
+    "🔸morimens-game-chat": 9674,
+    "🔸剧情交流": 28,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 5,
+    "🔸한국어-채팅방": 148,
+    "🔸chaîne-française": 47,
+    "🔸русский-канал": 38,
+    "🔸phòng-chat-tiếng-việt": 152,
+    "🔸canal-español": 970,
+    "🔸canal-português": 155,
+    "🔸ruang-obrolan-indonesia": 912,
+    "🔸ห้องสนทนาภาษาไทย": 432,
+    "🔸traphase": 74,
+    "🔸綜合討論": 800,
+    "🔸阵容构建": 7,
     "Doresain Fanart": 1,
     "Wip": 1,
     "Flares' Awaker Review : Thais": 1,
@@ -35,31 +53,34 @@
     "現pa 尤烏哈希你是大明星": 1
   },
   "hourly_activity": {
-    "2": 47,
-    "8": 11,
-    "21": 1,
-    "12": 21,
-    "15": 4,
-    "17": 5,
-    "18": 4,
-    "23": 1,
-    "11": 85,
-    "13": 11,
-    "9": 29,
-    "10": 50,
-    "14": 16,
-    "16": 6,
-    "19": 3,
-    "0": 4,
-    "3": 5,
-    "1": 2,
-    "7": 5,
-    "4": 1,
-    "5": 3
+    "1": 388,
+    "2": 722,
+    "3": 427,
+    "4": 373,
+    "5": 238,
+    "6": 220,
+    "7": 275,
+    "9": 831,
+    "10": 753,
+    "11": 851,
+    "12": 698,
+    "13": 832,
+    "14": 744,
+    "15": 837,
+    "16": 840,
+    "17": 920,
+    "18": 417,
+    "19": 488,
+    "20": 566,
+    "22": 607,
+    "0": 226,
+    "8": 646,
+    "21": 457,
+    "23": 745
   },
   "message_types": {
-    "0": 215,
-    "19": 45
+    "0": 278,
+    "19": 66
   },
   "top_reacted_messages": [
     {
@@ -84,6 +105,14 @@
       "channel": "現pa 尤烏哈希你是大明星"
     },
     {
+      "id": "1398350956302962869",
+      "channel_id": "1170692781216378960",
+      "content": "Previously, everyone suggested that we should invest some resources in promotion",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398227871431917588",
       "content": "It is pretty nice to have more choices on what to pick, considering the delays, ",
       "author": "vxvendetta",
@@ -105,6 +134,38 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
+      "id": "1398443780985585717",
+      "channel_id": "1170692781216378960",
+      "content": "we doom post about jp because we no longer doompost about eos",
+      "author": "khykken",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398351314265833633",
+      "channel_id": "1170692781216378960",
+      "content": "CHAOS",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398352113683271740",
+      "channel_id": "1170692781216378960",
+      "content": "I’ve already given more than enough information as an exception—I really can’t s",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398096057514201209",
+      "channel_id": "1300659662311526512",
+      "content": "esa ludopatia nos salvo del eos",
+      "author": "nebbercracker12.",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1398238085103485052",
       "content": "那就開回溯吧",
       "author": "0.0._.0_0.",
@@ -112,95 +173,67 @@
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
+      "id": "1398118605937442858",
+      "channel_id": "1170692781216378960",
+      "content": "use this guy",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398139456019501056",
+      "channel_id": "1170692781216378960",
+      "content": "Caecus even more useless now xD",
+      "author": "twilightsparkle163163",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398270285932662805",
+      "channel_id": "1170692781216378960",
+      "content": "I read it it was hilarious. Some guy thought genesis units are skins",
+      "author": "riasterism_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398272879631663145",
+      "channel_id": "1170692781216378960",
+      "content": "OMG we wont get thais rerun event!!!!!!!!",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398295852124082307",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398367535920975892",
+      "channel_id": "1170692781216378960",
+      "content": "Just get lucky.",
+      "author": "whitehorn_montellas",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398410989279379526",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dose1694",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1398242949740892250",
       "content": "福袋是被nerf\n杜勒是buff炎上我覺得也是稀世美景的",
       "author": "ernest_heart",
       "reactions": 8,
       "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398318363364823101",
-      "content": "",
-      "author": "_venush",
-      "reactions": 7,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398264099120484383",
-      "content": "然後他們事後才給杜勒皮膚加特效",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!"
-    },
-    {
-      "id": "1398317165358092372",
-      "content": "Doresain needs different buffs to feel smoother... Like retain on his 3 cost car",
-      "author": "beenax.",
-      "reactions": 4,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398237770933338155",
-      "content": "老不死的",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398293935721287761",
-      "content": "a lot of limiteds have been added to standard so can we get their old SR wheels ",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398201793514831933",
-      "content": "過了一場最大生命還在3204",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "✅「已回答」共鳴「猩紅果實」沒有正確運作"
-    },
-    {
-      "id": "1398327735910137990",
-      "content": "No. 75\nUID: 101027230 *just saw the date, it popped notif so i thought this is n",
-      "author": "zicco_piyatat",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398358556360708280",
-      "content": "96\nUID 100901979\n\nCongratulations to the game on its anniversary. I have been pl",
-      "author": "uwulerauwu",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
-    },
-    {
-      "id": "1398235150382534740",
-      "content": "其实我倒是能理解这些加强都意在拓宽玩法和搭配。\n\n但主要是目前星辰篇数值和规则摆在这，任何不符合角色定位的小改动都显得非常多余😂",
-      "author": "xyakoto",
-      "reactions": 2,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398246630813077535",
-      "content": "but it definitely would help Goli gain more strength",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1398218947123220541",
-      "content": "戈利亞潛遊第二關到底叫巨人列傳還是沉沒號角？\n而且關卡中踩事件的那一段小劇情的bgm貌似沒有被當成這個潛遊收錄的曲子之一<:neko_confused65:12",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」劇情標題錯誤"
-    },
-    {
-      "id": "1398282081506955378",
-      "content": "39",
-      "author": "tnimreppep",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     }
   ]
 }

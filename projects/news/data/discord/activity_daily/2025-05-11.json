@@ -1,10 +1,23 @@
 {
   "date": "2025-05-11",
-  "messages": 57,
-  "unique_authors": 7,
-  "reactions_total": 40,
-  "attachments": 96,
+  "messages": 6290,
+  "unique_authors": 149,
+  "reactions_total": 239,
+  "attachments": 364,
   "channel_activity": {
+    "🔸morimens-game-chat": 5504,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 6,
+    "🔸한국어-채팅방": 141,
+    "🔸русский-канал": 9,
+    "🔸phòng-chat-tiếng-việt": 8,
+    "🔸canal-español": 41,
+    "🔸canal-português": 14,
+    "🔸ruang-obrolan-indonesia": 75,
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸traphase": 47,
+    "🔸lore-chat": 58,
+    "🔸綜合討論": 323,
     "Old D-Tide Leaderboards": 14,
     "D-Tide Leaderboard (2025 May 11)": 2,
     "Design References to the Cthulhu Mythos": 1,
@@ -23,22 +36,34 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
-    "17": 9,
-    "18": 13,
-    "14": 2,
-    "7": 2,
-    "13": 1,
-    "21": 1,
-    "9": 7,
-    "15": 1,
-    "22": 2,
-    "10": 6,
-    "16": 11,
-    "23": 2
+    "0": 487,
+    "1": 257,
+    "2": 143,
+    "3": 326,
+    "4": 486,
+    "5": 420,
+    "6": 116,
+    "7": 270,
+    "8": 97,
+    "9": 84,
+    "10": 136,
+    "11": 200,
+    "12": 210,
+    "13": 244,
+    "14": 511,
+    "15": 442,
+    "16": 378,
+    "17": 273,
+    "18": 217,
+    "19": 337,
+    "20": 67,
+    "21": 211,
+    "22": 171,
+    "23": 207
   },
   "message_types": {
-    "0": 17,
-    "4": 2
+    "19": 1405,
+    "0": 4505
   },
   "top_reacted_messages": [
     {
@@ -47,6 +72,14 @@
       "author": "yolo_mode",
       "reactions": 20,
       "channel": "「我享受疼痛，女巫大人。」"
+    },
+    {
+      "id": "1371251336015777833",
+      "channel_id": "1170692781216378960",
+      "content": "teams with tulu+murphy cores can clear almost every event madness with free whee",
+      "author": "applepieeater123",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1371059967376887838",
@@ -63,6 +96,102 @@
       "channel": ""
     },
     {
+      "id": "1370972010552885318",
+      "channel_id": "1170692781216378960",
+      "content": "the half anniversary character is actually going to be deborah clearly, just loo",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371248873254813766",
+      "channel_id": "1170692781216378960",
+      "content": "tulu's main strength comes from really long battles because a lot of the value t",
+      "author": "applepieeater123",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371110665569435738",
+      "channel_id": "1174983699935277147",
+      "content": "普池出了一張夫人專<:ptincess:1356053126247092476>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1371086024792342568",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370930023648854116",
+      "channel_id": "1170692781216378960",
+      "content": "\"I just want someone to boss around\"",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370973122093781136",
+      "channel_id": "1170692781216378960",
+      "content": "<:pray:1356053116260454534>",
+      "author": "aegisx",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370981996091805756",
+      "channel_id": "1170692781216378960",
+      "content": "thais has a big dick and tawil has a little dick if that helps narrow it down fo",
+      "author": "reya.li",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371019516808527964",
+      "channel_id": "1170692781216378960",
+      "content": "i want thighs",
+      "author": "malfunction5497",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371051595026137171",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/KHvrDOqBhok lv1 clementine can beat lv65 goliath",
+      "author": "applepieeater123",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371144567876878376",
+      "channel_id": "1170692781216378960",
+      "content": "not bad for my 2nd dtide",
+      "author": "dwang4875",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371201689515855954",
+      "channel_id": "1170692781216378960",
+      "content": "I just started the game",
+      "author": "ouiuiouiui",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1371240851728236605",
+      "channel_id": "1170692781216378960",
+      "content": "30th May\nconventionally speaking, they will drop the big details probably about ",
+      "author": "reya.li",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1371136004261679266",
       "content": "Wave 1",
       "author": "willsalvador",
@@ -70,46 +199,28 @@
       "channel": "D-Tide Leaderboard (2025 May 11)"
     },
     {
-      "id": "1371070122357297192",
-      "content": "圖一是當前凱刻斯體質，3啟在回合結束時回體質×7.5%的生命值，也就是圖二計算出來的約15血。\n圖三是我的靈塑等級，體質增加18%，理論上應該要能回復圖四計算出",
-      "author": "ernest_heart",
+      "id": "1370927645490942046",
+      "channel_id": "1170692781216378960",
+      "content": "god curse/bless the japanese for anime",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371180695074111619",
-      "content": "2025 April 27\n\nUser 4267",
-      "author": "willsalvador",
-      "reactions": 1,
-      "channel": "Old D-Tide Leaderboards"
+      "id": "1370951906263957565",
+      "channel_id": "1170692781216378960",
+      "content": "Obscure Morimens fact I just realized: Song of the Mob gives you two arithmetica",
+      "author": "thesecondcomingofdrenwee",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1371022670371749909",
-      "content": "https://discord.com/channels/1131791637933199470/1326453763355185215/13315201968",
-      "author": "inkouah",
-      "reactions": 1,
-      "channel": "Design References to the Cthulhu Mythos"
-    },
-    {
-      "id": "1371109880466772028",
-      "content": "v2.3的攻略徵集什麼時候開始🥹",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
-    },
-    {
-      "id": "1371159774451990590",
-      "content": "Sorry if this has been asked before or isn't a problem too anyone else...\n\nWhene",
-      "author": "rei_the_witch",
-      "reactions": 1,
-      "channel": "✅「Answered」Logo Is very bright..."
-    },
-    {
-      "id": "1371160696687034597",
-      "content": "謝謝還有人在捧場大男的飯TT",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "「我享受疼痛，女巫大人。」"
+      "id": "1370961702715265075",
+      "channel_id": "1170692781216378960",
+      "content": "Magic hat makes it into 5 rounds. Can still beat it without the hat though.",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

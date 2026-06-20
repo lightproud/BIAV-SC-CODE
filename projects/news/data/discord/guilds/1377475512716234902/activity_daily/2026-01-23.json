@@ -1,23 +1,133 @@
 {
   "date": "2026-01-23",
-  "messages": 4,
-  "unique_authors": 3,
-  "reactions_total": 3,
-  "attachments": 1,
+  "messages": 135,
+  "unique_authors": 17,
+  "reactions_total": 55,
+  "attachments": 14,
   "channel_activity": {
+    "なんでも雑談": 122,
+    "🔰初心者質問": 9,
     "界域ごとの推しを描きたいテンプレ": 3,
     "【対人戦】団体戦企画": 1
   },
   "hourly_activity": {
-    "3": 2,
-    "5": 1,
-    "15": 1
+    "0": 3,
+    "2": 2,
+    "3": 15,
+    "4": 4,
+    "5": 12,
+    "6": 14,
+    "7": 7,
+    "8": 3,
+    "9": 1,
+    "10": 4,
+    "15": 3,
+    "17": 1,
+    "18": 47,
+    "19": 18,
+    "20": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 3
+    "0": 128,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1464286134761951449",
+      "channel_id": "1377478664609857647",
+      "content": "できました<:doya:1390953027959001148>",
+      "author": "aiaiai6055",
+      "reactions": 10,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464078465572536412",
+      "channel_id": "1377478664609857647",
+      "content": "瞬く間に歴代課金額1位のゲームに躍り出てしまった",
+      "author": "muffmoff0626",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464169896161316876",
+      "channel_id": "1377478664609857647",
+      "content": "これはイベント最短記録を樹立したかもしれない！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464096594688344209",
+      "channel_id": "1377478664609857647",
+      "content": "計画的に完凸しようね",
+      "author": "zzzorz",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464162200724705327",
+      "channel_id": "1377478664609857647",
+      "content": "また海外版グッズだしてる、日本もハフバグッズだして",
+      "author": "iihige",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464163258985349193",
+      "channel_id": "1377478664609857647",
+      "content": "それはそれとして日本版のグッズはほしい",
+      "author": "esukun125",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464204131601219624",
+      "channel_id": "1377478664609857647",
+      "content": "とくに静水は深く流れるってやつ",
+      "author": "muffmoff0626",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464095895644536862",
+      "channel_id": "1377478664609857647",
+      "content": "課金は計画的に！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464096155741847602",
+      "channel_id": "1377478664609857647",
+      "content": "１度課金し始めると何か際限なくしちゃうからね",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464153254291181782",
+      "channel_id": "1377478664609857647",
+      "content": "ありがと！無事に辿り着けました！\nダフォとサンガー見てきた！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464106710636560498",
+      "channel_id": "1377478664609857647",
+      "content": "3月",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464168677439045682",
+      "channel_id": "1377478664609857647",
+      "content": "ぬいキャラまってます",
+      "author": "inokeshinn",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1464102261771866112",
       "channel_id": "1408778860748869732",
@@ -25,6 +135,30 @@
       "author": "aoirochuppi",
       "reactions": 2,
       "channel": "界域ごとの推しを描きたいテンプレ"
+    },
+    {
+      "id": "1464049734678352004",
+      "channel_id": "1377478664609857647",
+      "content": "半周年(6ヶ月中)に2ver更新されてますので、また3ヶ月後くらいに新章来ると思います🫶",
+      "author": "esukun125",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464144377218732043",
+      "channel_id": "1377478664609857647",
+      "content": "普通に狂宴のところから解放できない…？",
+      "author": "esukun125",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1464144725786366048",
+      "channel_id": "1391701560496623688",
+      "content": "サンガーさんボイス好き",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
     },
     {
       "id": "1464130345774481631",

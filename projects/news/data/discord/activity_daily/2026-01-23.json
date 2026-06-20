@@ -1,10 +1,34 @@
 {
   "date": "2026-01-23",
-  "messages": 188,
-  "unique_authors": 26,
-  "reactions_total": 450,
-  "attachments": 31,
+  "messages": 13701,
+  "unique_authors": 197,
+  "reactions_total": 2628,
+  "attachments": 614,
   "channel_activity": {
+    "🔸剧情交流": 6,
+    "🔸晒卡分享": 10,
+    "🔸课间休息闲聊": 10,
+    "🔸日本語チャンネル": 24,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 29,
+    "🔸русский-канал": 626,
+    "🔸phòng-chat-tiếng-việt": 319,
+    "🔸canal-español": 353,
+    "🔸canal-português": 185,
+    "🔸ruang-obrolan-indonesia": 201,
+    "🔸ห้องสนทนาภาษาไทย": 606,
+    "🔸traphase": 127,
+    "🔸lore-chat": 267,
+    "🔸lets-count": 16,
+    "🔸team-building": 276,
+    "🔸general-chat": 1386,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 792,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 27,
+    "🔸綜合討論": 1593,
+    "🔸morimens-game-chat": 6649,
     "leonora": 15,
     "Tulu 👑": 4,
     "larry.": 5,
@@ -22,7 +46,6 @@
     "Swap Aigis and Aurita Absolute Axiom": 3,
     "建議讓戰鬥統計也能顯示助戰的具體數值": 2,
     "简中，但「记忆归档」是繁体字": 5,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 1,
     "1296113810549112874": 3,
     "1463188507659993200": 2,
@@ -33,31 +56,35 @@
     "1455822126568308957": 17
   },
   "hourly_activity": {
-    "0": 5,
-    "2": 13,
-    "7": 9,
-    "8": 7,
-    "19": 4,
-    "20": 2,
-    "22": 3,
-    "10": 38,
-    "12": 40,
-    "18": 5,
-    "6": 11,
-    "11": 17,
-    "13": 7,
-    "15": 2,
-    "16": 2,
-    "17": 6,
-    "1": 2,
-    "3": 3,
-    "4": 2,
-    "14": 5,
-    "9": 5
+    "5": 519,
+    "0": 102,
+    "4": 838,
+    "15": 595,
+    "6": 386,
+    "8": 651,
+    "9": 811,
+    "12": 807,
+    "14": 635,
+    "17": 492,
+    "7": 413,
+    "11": 1043,
+    "20": 462,
+    "19": 401,
+    "1": 503,
+    "2": 443,
+    "3": 546,
+    "10": 1111,
+    "13": 1021,
+    "16": 858,
+    "18": 646,
+    "21": 199,
+    "22": 147,
+    "23": 72
   },
   "message_types": {
-    "0": 56,
-    "19": 9
+    "19": 1042,
+    "0": 4226,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -110,11 +137,27 @@
       "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
     },
     {
+      "id": "1464255139023032544",
+      "channel_id": "1170692781216378960",
+      "content": "if you want an unfiltered opinion, then it's nice to see morimens returning to t",
+      "author": "reya.li",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1464205689214734500",
       "content": "",
       "author": "ahong0727",
       "reactions": 16,
       "channel": "larry."
+    },
+    {
+      "id": "1464248214151630984",
+      "channel_id": "1170692781216378960",
+      "content": "When light is involved he suggests sex toys",
+      "author": "kevsalvador",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1464159231505600676",
@@ -138,6 +181,14 @@
       "channel": "V2.4.2.0 停服维护公告"
     },
     {
+      "id": "1464328587334258769",
+      "channel_id": "1131839817982947429",
+      "content": "遲了兩個星期但還是過了<:agree:1400771815076528258>",
+      "author": "partycatss.",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1464337981979492556",
       "content": "UID: 101002861",
       "author": "happyskull",
@@ -152,6 +203,22 @@
       "channel": "V2.4.2.0 停服维护公告"
     },
     {
+      "id": "1464047310395932763",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1464251990426124299",
+      "channel_id": "1170692781216378960",
+      "content": "I don't really care, I'm just here to 🍞 xu.\nI whimpered throughout the asmr, can",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1464234506784608337",
       "content": "“姆妈”是流行于中国南方方言区（如吴语、赣语、湘语）对母亲的尊称或口语称呼，在上海话、江苏宜兴、常州及浙江宁波等地使用普遍。它既可指生母，也可泛指跟母亲年龄相近",
       "author": "rain_scarlet",
@@ -164,41 +231,6 @@
       "author": "angy_24_s",
       "reactions": 10,
       "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464158531304554698",
-      "content": "2025 December & January contribution list is here!\nWe sincerely thank the below ",
-      "author": "morimens314",
-      "reactions": 10,
-      "channel": ""
-    },
-    {
-      "id": "1464217954387365973",
-      "content": "I think though if standard units need a buff they should just be buffed. Axiom a",
-      "author": "beenax.",
-      "reactions": 9,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464242985112834232",
-      "content": "【手拉手】小心塞壬",
-      "author": "yingmai_",
-      "reactions": 9,
-      "channel": ""
-    },
-    {
-      "id": "1464239917273186384",
-      "content": "🥵",
-      "author": "ahong0727",
-      "reactions": 7,
-      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
-    },
-    {
-      "id": "1464159067336478927",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges"
     }
   ]
 }

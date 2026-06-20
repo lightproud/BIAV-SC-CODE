@@ -1,10 +1,26 @@
 {
   "date": "2025-07-04",
-  "messages": 46,
-  "unique_authors": 9,
-  "reactions_total": 87,
-  "attachments": 10,
+  "messages": 9884,
+  "unique_authors": 219,
+  "reactions_total": 1314,
+  "attachments": 491,
   "channel_activity": {
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸剧情交流": 24,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 2,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 3,
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 96,
+    "🔸canal-português": 695,
+    "🔸ruang-obrolan-indonesia": 649,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 566,
+    "🔸lore-chat": 61,
+    "🔸綜合討論": 97,
+    "🔸morimens-game-chat": 7594,
     "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 2,
     "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 2,
     "Team for progressing main story": 5,
@@ -19,31 +35,89 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "7": 4,
-    "3": 4,
-    "4": 1,
-    "2": 3,
-    "20": 3,
-    "21": 1,
-    "23": 2,
-    "14": 3,
-    "13": 9,
-    "15": 3,
-    "0": 8,
-    "1": 4,
-    "11": 1
+    "23": 331,
+    "7": 268,
+    "8": 277,
+    "9": 365,
+    "2": 288,
+    "11": 294,
+    "3": 534,
+    "5": 484,
+    "15": 364,
+    "0": 691,
+    "20": 571,
+    "22": 404,
+    "1": 581,
+    "4": 291,
+    "6": 447,
+    "10": 297,
+    "12": 324,
+    "14": 421,
+    "19": 358,
+    "16": 460,
+    "17": 401,
+    "18": 458,
+    "13": 449,
+    "21": 526
   },
   "message_types": {
-    "0": 7,
-    "4": 2
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1390542712473911407",
+      "channel_id": "1170692781216378960",
+      "content": "With everyone’s support, we’ve already overcome the biggest crisis. During the m",
+      "author": "game.producer.light",
+      "reactions": 44,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1390705330786271332",
       "content": "题目虽为人，但离人很远，离神很近了",
       "author": "tianfang5580",
       "reactions": 23,
       "channel": "命轮二创画像：《人》"
+    },
+    {
+      "id": "1390539175949766801",
+      "channel_id": "1170692781216378960",
+      "content": "If we were to add simple glasses versions of some characters as simple skins, wo",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390540739665985657",
+      "channel_id": "1170692781216378960",
+      "content": "We don’t have plans for these basic skins to serve any real commercial purpose. ",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390493510440059011",
+      "channel_id": "1170692781216378960",
+      "content": "Truth be told I’d have stayed at kuro if I wasn’t into cosmic body horror degene",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390494017237684334",
+      "channel_id": "1170692781216378960",
+      "content": "Very true! We requested programmers help to specifically write up a new rich tex",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390538725758603346",
+      "channel_id": "1170692781216378960",
+      "content": "We’re sorry, but we don’t have plans for that at the moment. Our art team’s capa",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1390490801125064714",
@@ -67,74 +141,84 @@
       "channel": ""
     },
     {
-      "id": "1390682956200415316",
-      "content": "彌利亞姆X戈利亞，情節捏造有，自我理解擴寫有\n時間線是緊接彌利個人劇情獻祭了第一個聖女之後，沒有打炮沒有談情說愛只有癲婆和男狗打架！\n\n樓主的眼睛不太好所以有錯",
-      "author": "yolo_mode",
-      "reactions": 6,
-      "channel": "《雙人舞》"
-    },
-    {
-      "id": "1390490997120569404",
-      "content": "I believe it’s 7/21",
+      "id": "1390492433124561007",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you for volunteering, Keeper! We’ve been talking to the higherups etc and ",
       "author": "morimens_15",
-      "reactions": 6,
-      "channel": ""
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390597446832492667",
-      "content": "✨ 嗨大家好，V2.2.2【窥视灵魂之旅】二创征集获奖名单公布！\n感谢大家的精彩创作~奖励将在下周五前发至邮箱\n*注：个别作品因不符合投稿规则，故未参与评价。在",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
+      "id": "1390491369818292285",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390795442781950003",
-      "content": "Can we please have text-free full images of the wheels in-game or at least relea",
-      "author": "theborkerr",
-      "reactions": 4,
-      "channel": "Image of wheels in Archive"
+      "id": "1390545046230667338",
+      "channel_id": "1170692781216378960",
+      "content": "Maybe……If you don’t like it, we will drop this idea.",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390685051179761726",
-      "content": "—————\n\n放個已經很久了的惡役雙人組（沒有要完稿的意思（草",
-      "author": "yolo_mode",
-      "reactions": 3,
-      "channel": "《雙人舞》"
+      "id": "1390814964822048890",
+      "channel_id": "1170692781216378960",
+      "content": "the staff's work schedule is something like\n0800 - 0900: 'research' online for c",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390840059984482304",
-      "content": "<:takenotes:1357186646294138890> <:takenotes:1357186646294138890>",
-      "author": "venustoglasskin",
-      "reactions": 1,
-      "channel": "💭「Processing」Dont know if this is a bug but here it is"
+      "id": "1390537030576115743",
+      "channel_id": "1170692781216378960",
+      "content": "There are more and more characters in the game now. Tulu already had a rerun in ",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390510222434635817",
-      "content": "wait, is it true?\nI don’t see this in the announcement? 🥹",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": ""
+      "id": "1390545230452752567",
+      "channel_id": "1300659662311526512",
+      "content": "https://discord.com/channels/1131791637933199470/1170692781216378960/13905427124",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1390510478765199491",
-      "content": "Yup, Light mentioned it in the English channel.\nhttps://discord.com/channels/113",
-      "author": "mac2492",
-      "reactions": 1,
-      "channel": ""
+      "id": "1390645349001072652",
+      "channel_id": "1131839817982947429",
+      "content": "無聊到帶勾巴隊伍打蟲",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1390510564471607336",
-      "content": "yay",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": ""
+      "id": "1390492797773152278",
+      "channel_id": "1170692781216378960",
+      "content": "Big dev’s always watching you",
+      "author": "ev_6185",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390516236877692969",
-      "content": "suitable va for the best chef? i'll wait 🛐",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": ""
+      "id": "1390537774398177421",
+      "channel_id": "1170692781216378960",
+      "content": "Yes, we completely understand, which is why we’ve arranged it this way to take c",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390681657891098727",
+      "channel_id": "1170692781216378960",
+      "content": "Don't forget redeem code:\n\nHVGX-HLDX-QKKN\nQKBQ-SSDG-JZYU\nCatsgift\nDc5000\nSilverk",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,28 @@
 {
   "date": "2025-10-05",
-  "messages": 99,
-  "unique_authors": 20,
-  "reactions_total": 189,
-  "attachments": 35,
+  "messages": 12716,
+  "unique_authors": 196,
+  "reactions_total": 3167,
+  "attachments": 625,
   "channel_activity": {
+    "🔸晒卡分享": 76,
+    "🔸欢乐梗图": 1,
+    "🔸chaîne-française": 24,
+    "🔸русский-канал": 163,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 387,
+    "🔸canal-português": 13,
+    "🔸ruang-obrolan-indonesia": 24,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 107,
+    "🔸lore-chat": 23,
+    "🔸lets-count": 15,
+    "🔸team-building": 69,
+    "🔸general-chat": 31,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🔸綜合討論": 630,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 11014,
     "Kitty kat abs": 1,
     "Pickdog": 1,
     "[Morimens ASMR Drama] Deprivation Echo Chamber": 1,
@@ -39,31 +57,34 @@
     "超维界域唤醒体DIY": 1
   },
   "hourly_activity": {
-    "16": 2,
-    "23": 1,
-    "19": 3,
-    "18": 4,
-    "10": 6,
-    "1": 8,
-    "9": 3,
-    "17": 2,
-    "12": 11,
-    "15": 2,
-    "3": 2,
-    "13": 12,
-    "14": 1,
-    "2": 10,
-    "8": 5,
-    "4": 2,
-    "5": 1,
-    "20": 4,
-    "7": 15,
-    "11": 4,
-    "21": 1
+    "4": 411,
+    "5": 529,
+    "6": 415,
+    "7": 396,
+    "8": 519,
+    "12": 457,
+    "16": 991,
+    "19": 347,
+    "9": 745,
+    "10": 695,
+    "11": 370,
+    "0": 538,
+    "1": 579,
+    "2": 461,
+    "13": 593,
+    "14": 603,
+    "15": 859,
+    "17": 745,
+    "20": 414,
+    "21": 392,
+    "22": 500,
+    "18": 426,
+    "23": 312,
+    "3": 419
   },
   "message_types": {
-    "0": 31,
-    "19": 3
+    "0": 825,
+    "19": 142
   },
   "top_reacted_messages": [
     {
@@ -95,11 +116,67 @@
       "channel": "Into Pickman's Reality"
     },
     {
+      "id": "1424376665282318409",
+      "channel_id": "1170692781216378960",
+      "content": "United by rice",
+      "author": "lotan_045",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1424475507080167518",
       "content": "https://www.youtube.com/watch?v=dvMpXNgCRNs\n\n*Thou hast fallen in a deep slumber",
       "author": "inana_istar",
       "reactions": 18,
       "channel": "[Morimens ASMR Drama] Deprivation Echo Chamber"
+    },
+    {
+      "id": "1424191014356123688",
+      "channel_id": "1170692781216378960",
+      "content": "The Frost chan is scaring me ngl",
+      "author": "frosthief",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424192987117781023",
+      "channel_id": "1300659662311526512",
+      "content": "<:processing:1357185814567718963>",
+      "author": "arisuu0604",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1424425126232854661",
+      "channel_id": "1170692781216378960",
+      "content": "USA number 1",
+      "author": "flares117",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424316222954143815",
+      "channel_id": "1170692781216378960",
+      "content": "at least we beat girls front line <:dead:1356082627509092372>",
+      "author": "sacred_promises",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424383185973809164",
+      "channel_id": "1170692781216378960",
+      "content": "Got the injection",
+      "author": "drunk.biscuit",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1424394934793932810",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/shigure-ui-aizen-phonk-edit-gif-479828949689260022",
+      "author": "hitsu4",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1424500221433614507",
@@ -116,95 +193,52 @@
       "channel": "图鲁的梦"
     },
     {
-      "id": "1424439934147760169",
-      "content": "UID: 101149262\n1 participation award please<:pray:1400771650064089112> \nWanted t",
-      "author": "whydoihavetodothis69",
-      "reactions": 7,
-      "channel": "Kitty kat abs"
+      "id": "1424376868525707294",
+      "channel_id": "1170692781216378960",
+      "content": "Fuck rice <:angry2:1356053025034338505>",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424444670964138037",
-      "content": "can the pack just be 740 or 800 instead of 788 <:dead:1356082627509092372>",
-      "author": "jollysquire",
-      "reactions": 6,
-      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+      "id": "1424515058091688066",
+      "channel_id": "1170692781216378960",
+      "content": "Horla completely unplayable E0. She is at least a character in the game at e1 I ",
+      "author": "frosthief",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424512018257547345",
-      "content": "每期**分形的角落**開始時，系統（或官方）將為__至純混沌、至純深海、至純血肉、至純超維、深海血肉、深海超維、血肉超維__等七個界域各安排一個隊伍，其中的角色",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "新周常模式：分形的角落"
+      "id": "1424234882217017415",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> im going to sleep, but before i wanted to tell you to try ",
+      "author": "blecnes",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424379464774844426",
-      "content": "最近翻了一下《克苏鲁神话》，写个这个看看能不能拿点银芯\n一、游戏背景与世界观中的克系元素\n关于“融蚀”\n设定中，世界被一种称为 “融蚀”的现象侵袭：被融蚀的东西",
-      "author": "txt101225.",
-      "reactions": 4,
-      "channel": "《忘却前夜》与《克苏鲁神话》的关系"
+      "id": "1424199191453892648",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> im a bad trasnlator",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424312592830169118",
-      "content": "打主線突然遇到的，所以沒有事先錄影\n鑰令三選一看到群山的覺悟，本想抽個雷霆出來電的\n結果抽出兩張領航<:processing:13571858145677189",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "✅「已回答」鑰令 群山的覺悟"
+      "id": "1424204726014312523",
+      "channel_id": "1170692781216378960",
+      "content": "ñiñiñiñiñiñiñiñi",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1424316597513879563",
-      "content": "~~快進到玩家討伐XX隊伍XX界域解不了成就要求改條件~~",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "💭「处理中」考不考虑把星辰篇主线的成就奖励加回来"
-    },
-    {
-      "id": "1424374324655034368",
-      "content": "<:Sendflowers:1400771545370067118>",
-      "author": "tsubaki9884",
-      "reactions": 2,
-      "channel": "你應當征服青空，直至墜落海洋"
-    },
-    {
-      "id": "1424407488987398144",
-      "content": "Alright good to know. So I can level them up without worrying about them getting",
-      "author": "blumenwiz",
-      "reactions": 1,
-      "channel": "Do old covenants get substats after I turn acc lv 55?"
-    },
-    {
-      "id": "1424342684075819158",
-      "content": "Still had to burn 2 gnosis, but managed to punch through with a couple tries aft",
-      "author": "sra.esqueleto",
-      "reactions": 1,
-      "channel": "Help teambuilding for 9-11"
-    },
-    {
-      "id": "1424216820423852112",
-      "content": "just try out the teams and see if you like them.\n\nBoth Winkle and Faint are heav",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "D-Effect Zone Help"
-    },
-    {
-      "id": "1424331945260879968",
-      "content": "I was able to level up Faint and I love her, stacking Death Resist feels like ch",
-      "author": "momomigo",
-      "reactions": 1,
-      "channel": "D-Effect Zone Help"
-    },
-    {
-      "id": "1424313768569081898",
-      "content": "Also other languages like french still work, only english doesnt work.",
-      "author": "black_stock",
-      "reactions": 1,
-      "channel": "💭「Processing」English translation not translation to english. (Pc version)"
-    },
-    {
-      "id": "1424373299776847915",
-      "content": "uid：100832341\n太爱超维了，所以又试着整了一个异想天开的DIY\n症状卡和诅咒造物目前看到甚少有唤醒体指令卡/命轮联动，所以想着尝试创作",
-      "author": "y_win7",
-      "reactions": 1,
-      "channel": "超维界域唤醒体DIY2.0（幻想版）"
+      "id": "1424273540261216286",
+      "channel_id": "1170692781216378960",
+      "content": "real games like princess dress-up",
+      "author": "Deleted User",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

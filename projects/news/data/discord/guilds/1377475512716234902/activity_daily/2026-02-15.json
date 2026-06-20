@@ -1,26 +1,36 @@
 {
   "date": "2026-02-15",
-  "messages": 14,
-  "unique_authors": 8,
-  "reactions_total": 23,
-  "attachments": 1,
+  "messages": 168,
+  "unique_authors": 16,
+  "reactions_total": 59,
+  "attachments": 12,
   "channel_activity": {
+    "なんでも雑談": 102,
+    "🔰初心者質問": 52,
     "誰でも質問": 10,
     "アイロンビーズ！": 3,
     "【恒常のみ】融災375": 1
   },
   "hourly_activity": {
-    "10": 1,
-    "16": 6,
-    "22": 2,
+    "1": 1,
+    "7": 38,
+    "8": 26,
+    "9": 7,
+    "10": 2,
+    "11": 13,
+    "12": 12,
+    "14": 1,
+    "16": 36,
+    "17": 9,
+    "21": 1,
+    "22": 4,
+    "6": 14,
     "23": 1,
-    "15": 3,
-    "6": 1
+    "15": 3
   },
   "message_types": {
-    "19": 1,
-    "0": 12,
-    "4": 1
+    "0": 143,
+    "19": 11
   },
   "top_reacted_messages": [
     {
@@ -30,6 +40,70 @@
       "author": "konpeitou0541",
       "reactions": 19,
       "channel": "アイロンビーズ！"
+    },
+    {
+      "id": "1472404083099959410",
+      "channel_id": "1377478664609857647",
+      "content": "ヘロ目当てでガシャ引いてるけど出ないねぇ😞2キャラ極限できちゃったよ",
+      "author": "inokeshinn",
+      "reactions": 10,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472485394863095861",
+      "channel_id": "1391701560496623688",
+      "content": "取り敢えず最初は3セットボーナスの発動を意識して、無理のない範疇で密約を揃えて行くことをおすすめいたします。",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1472516091841351693",
+      "channel_id": "1377478664609857647",
+      "content": "# 燃やし!",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472632498117677179",
+      "channel_id": "1377478664609857647",
+      "content": "タイムアウト食らった",
+      "author": "sub0044_36832",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472647534462763028",
+      "channel_id": "1377478664609857647",
+      "content": "ソレール1人で犬上からシバけた",
+      "author": "sub0044_36832",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472485505550520383",
+      "channel_id": "1391701560496623688",
+      "content": "",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1472493833680850995",
+      "channel_id": "1391701560496623688",
+      "content": "、",
+      "author": "su0719",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1472719386526748754",
+      "channel_id": "1391701560496623688",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "esukun125",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
     },
     {
       "id": "1472534751285088256",
@@ -46,6 +120,78 @@
       "author": "kara4691",
       "reactions": 2,
       "channel": "【恒常のみ】融災375"
+    },
+    {
+      "id": "1472494125487095929",
+      "channel_id": "1377478664609857647",
+      "content": "ソレールバカすぎる",
+      "author": "sub0044_36832",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472507406566293584",
+      "channel_id": "1377478664609857647",
+      "content": "レーア来て最悪や",
+      "author": "sub0044_36832",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472529936198795375",
+      "channel_id": "1377478664609857647",
+      "content": "|| https://discord.com/channels/1131791637933199470/1131839817982947429/14725292",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472552436286750720",
+      "channel_id": "1377478664609857647",
+      "content": "なんか、イメージの弱さで上方決まってる気がするw",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472559736527261779",
+      "channel_id": "1377478664609857647",
+      "content": "防御型としてはかなり完成されてるから仕方ないといえば仕方が無いよね。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472561564836954183",
+      "channel_id": "1377478664609857647",
+      "content": "ソレールキー実装された時もダフォキーが良いって評価あったな",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472562923791454320",
+      "channel_id": "1377478664609857647",
+      "content": "ソレールが基礎50盛るからそんな気はする",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472631672238248047",
+      "channel_id": "1377478664609857647",
+      "content": "だいたい時間だったら消えてるけど",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1472632431805730847",
+      "channel_id": "1377478664609857647",
+      "content": "ヤバジュニキ仕事して。",
+      "author": "anra2539_35702",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

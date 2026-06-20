@@ -1,10 +1,34 @@
 {
   "date": "2025-10-20",
-  "messages": 237,
-  "unique_authors": 43,
-  "reactions_total": 1094,
-  "attachments": 80,
+  "messages": 20482,
+  "unique_authors": 405,
+  "reactions_total": 5284,
+  "attachments": 1174,
   "channel_activity": {
+    "🔸morimens-game-chat": 14628,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 43,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 8,
+    "🔸한국어-채팅방": 85,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 18,
+    "🔸русский-канал": 857,
+    "🔸phòng-chat-tiếng-việt": 86,
+    "🔸canal-español": 309,
+    "🔸canal-português": 296,
+    "🔸ruang-obrolan-indonesia": 347,
+    "🔸ห้องสนทนาภาษาไทย": 458,
+    "🔸traphase": 243,
+    "🔸lore-chat": 153,
+    "🔸礼包码┊gift-codes": 4,
+    "🔸lets-count": 23,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 60,
+    "🔸general-chat": 553,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸綜合討論": 2042,
+    "🔸阵容构建": 4,
     "🤷": 2,
     "If Dissolution Never Happened - Lily": 5,
     "Flares' Awakener Review : Pollux - C Tier": 3,
@@ -58,7 +82,6 @@
     "御四家H8-10全成就 10t 2死抗": 1,
     "我想画点莱克的梗图": 5,
     "上课怎么可能不听课呢": 1,
-    "🔸礼包码┊gift-codes": 2,
     "1429401798439080028": 3,
     "1296113810549112874": 2,
     "1417419008898109492": 1,
@@ -66,47 +89,52 @@
     "1350060973083590666": 1
   },
   "hourly_activity": {
-    "0": 3,
-    "5": 6,
-    "16": 4,
-    "21": 2,
-    "7": 30,
-    "10": 5,
-    "3": 14,
-    "2": 10,
-    "12": 11,
-    "9": 11,
-    "19": 1,
-    "8": 20,
-    "15": 9,
-    "18": 10,
-    "6": 17,
-    "14": 31,
-    "17": 4,
-    "13": 31,
-    "11": 11,
-    "4": 4,
-    "1": 3
+    "0": 680,
+    "1": 797,
+    "2": 1053,
+    "3": 967,
+    "4": 1271,
+    "5": 935,
+    "6": 1112,
+    "7": 653,
+    "8": 776,
+    "9": 906,
+    "10": 891,
+    "11": 671,
+    "12": 866,
+    "13": 967,
+    "14": 869,
+    "15": 1525,
+    "16": 899,
+    "17": 991,
+    "18": 596,
+    "19": 567,
+    "20": 373,
+    "21": 868,
+    "22": 662,
+    "23": 587
   },
   "message_types": {
-    "0": 65,
-    "19": 11,
-    "6": 1,
-    "4": 1
+    "0": 11200,
+    "19": 6986,
+    "23": 8,
+    "20": 5
   },
   "top_reacted_messages": [
     {
       "id": "1429813625681481729",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 28000守密人达成礼 / DC28000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
       "author": "morimensstaff02",
-      "reactions": 442,
+      "reactions": 467,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
       "id": "1429658348667535370",
+      "channel_id": "1355094251775459399",
       "content": "🎁 社区互动兑换码┊Community Activity Interactive Redemption Code：https://discord.com/cha",
       "author": "morimensstaff01",
-      "reactions": 380,
+      "reactions": 389,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -122,6 +150,14 @@
       "author": "climbkaly",
       "reactions": 26,
       "channel": "Pollux and Game Feedback"
+    },
+    {
+      "id": "1429781325434458193",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "olfff",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1429752071103451208",
@@ -159,11 +195,27 @@
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
     },
     {
+      "id": "1429640803105378344",
+      "channel_id": "1170692781216378960",
+      "content": "this is what i have",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1429804731571638372",
       "content": "阿尔比诺老师很伤心。\n\n但是阿尔比诺你为什么又去当上老师了（），我本来以为你是来这里走走，结果怎么当上老师了。（震惊）",
       "author": "dittoqwq",
       "reactions": 15,
       "channel": "上课怎么可能不听课呢"
+    },
+    {
+      "id": "1429707380328759307",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "notpantswagon",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1429827459007647807",
@@ -173,67 +225,52 @@
       "channel": ""
     },
     {
-      "id": "1429656076923703388",
-      "content": "<@143784753823219712>抱歉忘了告诉大家，奖励本周内会尽快发放到大家的邮箱\nSorry for forgetting to tell ever",
-      "author": "morimensstaff01",
-      "reactions": 8,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1429748379046645842",
-      "content": "麦艾斯",
-      "author": "navirecorbeau",
-      "reactions": 6,
-      "channel": "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!"
-    },
-    {
-      "id": "1429849771438506155",
+      "id": "1429807664539369500",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "q07957",
-      "reactions": 6,
-      "channel": "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!"
+      "author": "hitsu4",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429624332807573615",
-      "content": "That is all, thanks!",
-      "author": "meioh",
-      "reactions": 6,
-      "channel": "Can we not have maintenances starting an hour before weekly reset?"
+      "id": "1429837086055337986",
+      "channel_id": "1170692781216378960",
+      "content": "To resume things, there are 4 realms, i tried to tell the main points of each re",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429754895275397191",
-      "content": "🇰🇵 🪖 🔫",
-      "author": "albomboklat",
-      "reactions": 5,
-      "channel": "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!"
+      "id": "1429871405394165961",
+      "channel_id": "1170692781216378960",
+      "content": "finally oe tulu <:pray:1356053116260454534>",
+      "author": "iibenigml1588",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429892854343532708",
+      "id": "1429713565568471050",
+      "channel_id": "1170692781216378960",
+      "content": "Omfg. Oh my god.\n\nI have made the worst mistake of my gacha life.\n\nI made 7k sil",
+      "author": "dljam",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429707537564831836",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "mobiosity",
-      "reactions": 5,
-      "channel": "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!"
+      "author": "helminx",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429826165815906504",
-      "content": "",
-      "author": "thpdom",
-      "reactions": 5,
-      "channel": "💭「Processing」0 shield ahh"
-    },
-    {
-      "id": "1429946834134106154",
-      "content": "<@1223503015852380160> 我似乎跟上你了<:Wait:1400771580757409844>",
-      "author": "wild_pansy",
-      "reactions": 4,
-      "channel": "御四家H8-10全成就 10t 2死抗"
-    },
-    {
-      "id": "1429803525264900118",
-      "content": "October contributions list is here!\nWe sincerely thank the below <@&130158980413",
-      "author": "morimens_15",
-      "reactions": 4,
-      "channel": ""
+      "id": "1429756747408478298",
+      "channel_id": "1170692781216378960",
+      "content": "Chat whats the verdict on Pollux",
+      "author": "dianethedeadly",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

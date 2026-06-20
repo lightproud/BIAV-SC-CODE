@@ -1,10 +1,31 @@
 {
   "date": "2025-09-15",
-  "messages": 114,
-  "unique_authors": 32,
-  "reactions_total": 75,
-  "attachments": 38,
+  "messages": 11339,
+  "unique_authors": 195,
+  "reactions_total": 1647,
+  "attachments": 562,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 41,
+    "🔸canal-español": 359,
+    "🔸canal-português": 162,
+    "🔸ruang-obrolan-indonesia": 1259,
+    "🔸ห้องสนทนาภาษาไทย": 25,
+    "🔸traphase": 130,
+    "🔸lore-chat": 84,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸general-chat": 8,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
+    "🔸morimens-game-chat": 7050,
+    "🔸剧情交流": 4,
+    "🔸晒卡分享": 3,
+    "🔸课间休息闲聊": 7,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 13,
+    "🔸deutscher-chatraum": 8,
+    "🔸русский-канал": 102,
+    "🔸綜合討論": 1923,
+    "🔸阵容构建": 9,
     "Pickmin": 2,
     "Morimens Glossary (Wheels and Covenants equip guide)": 1,
     "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 2,
@@ -46,36 +67,179 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "15": 9,
-    "19": 5,
-    "17": 5,
-    "18": 4,
-    "10": 5,
-    "11": 4,
-    "12": 12,
-    "20": 11,
-    "3": 12,
-    "6": 8,
-    "14": 9,
-    "16": 10,
-    "2": 10,
-    "8": 3,
-    "9": 2,
-    "5": 2,
-    "23": 2,
-    "0": 1
+    "0": 439,
+    "10": 369,
+    "11": 748,
+    "12": 588,
+    "13": 695,
+    "14": 837,
+    "15": 838,
+    "16": 663,
+    "17": 426,
+    "18": 275,
+    "1": 457,
+    "2": 474,
+    "3": 530,
+    "4": 304,
+    "6": 503,
+    "7": 337,
+    "8": 576,
+    "9": 459,
+    "20": 313,
+    "21": 149,
+    "22": 290,
+    "23": 239,
+    "19": 369,
+    "5": 461
   },
   "message_types": {
-    "0": 18,
-    "19": 4
+    "0": 1346,
+    "19": 757,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1416949926780473447",
+      "channel_id": "1300659662311526512",
+      "content": "EZ a ese N con una potenciación del 60% de vida y 25%, creo, de ataque",
+      "author": "duxadidus",
+      "reactions": 20,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1417237861412896859",
       "content": "This is a resource from the Mythag University server containing a general indica",
       "author": "vxvendetta",
       "reactions": 18,
       "channel": "Morimens Glossary (Wheels and Covenants equip guide)"
+    },
+    {
+      "id": "1417209913452789812",
+      "channel_id": "1300659662311526512",
+      "content": "💣",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416996663687512207",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417204232250982581",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416991118171570290",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417110094545420318",
+      "channel_id": "1131839817982947429",
+      "content": "刷500界精 🤣 (x",
+      "author": "corposant_1003",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417187237463851229",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/diSIlqXoBtM <@1288446421573304364> i tried to do commentary but",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417236051285774337",
+      "channel_id": "1170692781216378960",
+      "content": "anyways my fav animal is a penguin",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417201029006753832",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417288956508115005",
+      "channel_id": "1174983699935277147",
+      "content": "90等了\n~~這應該也算一種曬卡~~",
+      "author": "cwz.io",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417120428870336582",
+      "channel_id": "1170692781216378960",
+      "content": "yes, Leigh now gains 3 str instead of 2 before",
+      "author": "wolfierce",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417064914429677630",
+      "channel_id": "1170692781216378960",
+      "content": "<@1288446421573304364>No.This ult every turn this idea lol.You have like 5 turns",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417204295501353020",
+      "channel_id": "1170692781216378960",
+      "content": "Bluewil forever",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1416994300646129705",
+      "channel_id": "1174983699935277147",
+      "content": "忘记截图了，普池出跨越疼痛<:wish:1356084702468899117>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417018457760731226",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了<:dead:1356082627509092372>",
+      "author": "dog794",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417072118377742356",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417074366784602182",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1417214585244614727",
@@ -85,88 +249,12 @@
       "channel": "未曾寄出的书信#1"
     },
     {
-      "id": "1417197507741487207",
-      "content": "Hi,\nEarlier in the day I did a low score Deep Dive run as a test to check the bo",
-      "author": "reya.li",
+      "id": "1417060203349938287",
+      "channel_id": "1300659662311526512",
+      "content": "skill issue <:point:1356053112292511815>",
+      "author": "blecnes",
       "reactions": 7,
-      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
-    },
-    {
-      "id": "1417225669880057998",
-      "content": "When thinking about what to upgrade, it helps to see what bonuses the next level",
-      "author": "yannic2112",
-      "reactions": 7,
-      "channel": "✅「Answered」Add ability to see all card levels"
-    },
-    {
-      "id": "1417118614162636903",
-      "content": "**V2.3.2.3 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
-      "reactions": 6,
-      "channel": "V2.3.2.3 在线维护公告"
-    },
-    {
-      "id": "1417128605590491207",
-      "content": "● The Awakener \"Ryker\" gains a new effect for the talent \"Soulforge Aptitude\": t",
-      "author": "aegisx",
-      "reactions": 6,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1417156378056982669",
-      "content": "#V2.3同人征集# UID：100407587\n油管：https://www.youtube.com/watch?v=m4n1nXhOPjQ\nB站：https",
-      "author": "shanghuamochou8139",
-      "reactions": 5,
-      "channel": "【忘却前夜|群像】「仁慈的父我已坠入，看不见罪的国度」|《以父之名》"
-    },
-    {
-      "id": "1417164987083788328",
-      "content": "This is my test run with Ryker P12,max Soulforge Aptitude ,equip his SSR+SR WoD ",
-      "author": "aegisx",
-      "reactions": 4,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1417012381233451059",
-      "content": "融災難度上升的情形也很影響遊戲體驗",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "敵人不應被加強"
-    },
-    {
-      "id": "1417031905559314472",
-      "content": "關卡的敵人強度有問題",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "融災數值過高"
-    },
-    {
-      "id": "1417181807023227133",
-      "content": "我應該不用再去凹一場杜勒爆擊吧😔😔",
-      "author": "suggestion03038",
-      "reactions": 2,
-      "channel": "✅「已回答」打了血海36000結果沒有排名"
-    },
-    {
-      "id": "1417158678200717463",
-      "content": "I played for 4 matches but it didn't put me in the leaderboard, I checked the bo",
-      "author": "hskzu",
-      "reactions": 2,
-      "channel": "✅「Answered」Traphase rank placement not registered"
-    },
-    {
-      "id": "1417035536107049091",
-      "content": "thank you a lot for your dedication. Best wishes.<:Cheerup:1400771555939844149> ",
-      "author": "arkismph",
-      "reactions": 2,
-      "channel": "✅「Answered」Accidently miss click cost me 980 prime silver."
-    },
-    {
-      "id": "1416974203608895630",
-      "content": "感谢反馈，我们查验一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」意圖上沒有出血"
+      "channel": "🔸canal-español"
     }
   ]
 }

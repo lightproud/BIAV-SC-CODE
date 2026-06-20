@@ -1,10 +1,38 @@
 {
   "date": "2026-01-28",
-  "messages": 257,
-  "unique_authors": 67,
-  "reactions_total": 334,
-  "attachments": 24,
+  "messages": 18534,
+  "unique_authors": 315,
+  "reactions_total": 3034,
+  "attachments": 793,
   "channel_activity": {
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 7,
+    "🔸欢乐梗图": 4,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 1,
+    "🔸交友频道": 9,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 19,
+    "🔸русский-канал": 1361,
+    "🔸phòng-chat-tiếng-việt": 426,
+    "🔸canal-español": 454,
+    "🔸canal-português": 444,
+    "🔸ruang-obrolan-indonesia": 54,
+    "🔸ห้องสนทนาภาษาไทย": 789,
+    "🔸traphase": 202,
+    "🔸lore-chat": 156,
+    "🔸lets-count": 22,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸team-building": 93,
+    "🔸general-chat": 1270,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 304,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 37,
+    "🔸机器人命令┊bot-commands": 64,
+    "🔸綜合討論": 3422,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 9118,
     "V2.4.2.1 在线维护公告": 22,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 50,
     "对各位守密人的致歉与近况说明 Apology and Update to All Keepers": 99,
@@ -19,9 +47,6 @@
     "新命輪故事用字問題": 3,
     "圖樓": 1,
     "不是if線就是死後幻覺才有可能": 1,
-    "🔸欢乐梗图": 2,
-    "🔸忘却前夜┊morimens-tv": 2,
-    "🔸游戏问题": 18,
     "1462840887553032335": 1,
     "1440735573206761734": 18,
     "1403373754175721657": 1,
@@ -31,35 +56,53 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "11": 20,
-    "12": 28,
-    "15": 10,
-    "17": 3,
-    "13": 8,
-    "14": 8,
-    "18": 4,
-    "19": 6,
-    "22": 8,
-    "23": 1,
-    "5": 35,
-    "6": 38,
-    "7": 14,
-    "8": 27,
-    "9": 9,
-    "10": 20,
-    "4": 1,
-    "0": 1,
-    "21": 4,
-    "3": 8,
-    "16": 2,
-    "2": 2
+    "12": 1091,
+    "13": 921,
+    "14": 978,
+    "15": 961,
+    "8": 705,
+    "9": 525,
+    "16": 865,
+    "1": 449,
+    "11": 1362,
+    "10": 1619,
+    "5": 1131,
+    "6": 1477,
+    "3": 477,
+    "4": 660,
+    "7": 816,
+    "20": 376,
+    "0": 315,
+    "2": 799,
+    "17": 557,
+    "18": 373,
+    "19": 559,
+    "21": 860,
+    "23": 324,
+    "22": 334
   },
   "message_types": {
-    "0": 130,
-    "19": 42,
-    "20": 1
+    "0": 4469,
+    "19": 1261,
+    "20": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1465942478996770857",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1465941823553015931 @everyone",
+      "author": "game.producer.light",
+      "reactions": 65,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466009248784711808",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1466007306566242399 @everyone",
+      "author": "game.producer.light",
+      "reactions": 42,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1466068509174927422",
       "content": "<@633215996508766229> 只要还能保持推出一定数量的男性角色，即便像“忘却篇”那样女性角色比例较高，我个人觉得也是完全没问题的——尽管我是那种",
@@ -75,6 +118,14 @@
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
+      "id": "1465989803676795011",
+      "channel_id": "1131839817982947429",
+      "content": "阿弥陀佛",
+      "author": "xyakoto",
+      "reactions": 18,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466058418929405992",
       "content": "关于最终法则，有些话想说，整体不做评价，因为他说的话不少是有道理的，我也是从开服第一天开始玩到现在的，产能是真的比第一年掉很多很多，毕竟第一年前期甚至会有一个版",
       "author": "yiyiyi524810_13458",
@@ -82,11 +133,27 @@
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
+      "id": "1465942546609082389",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1465941823553015931 @everyone",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1466074602232086682",
       "content": "~~像是某只绿色的鸟这样吗~~",
       "author": "ka_0414",
       "reactions": 16,
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1465943130099552339",
+      "channel_id": "1170692781216378960",
+      "content": "1 person = 50% of the stuff",
+      "author": "rain_scarlet",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1465948582560661607",
@@ -110,11 +177,43 @@
       "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
+      "id": "1466056709725360253",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1465941632061800451",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1466012633164415141",
+      "channel_id": "1170692781216378960",
+      "content": "Anyways <@633215996508766229> can we get a compensation?",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1465972446078435421",
       "content": "感谢大家的理解。我也收到了大家在这个帖子内的反馈，我会优先完成后续其他内容的说明日志，再尽我所能的回应一些问题。\n\nThank you for your und",
       "author": "game.producer.light",
       "reactions": 12,
       "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
+    },
+    {
+      "id": "1466014914123665451",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> pls stop spending money on well known VA and focus more on",
+      "author": "sunless_echoing",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1465865439484580107",
@@ -125,80 +224,19 @@
     },
     {
       "id": "1466112412074901504",
+      "channel_id": "1180437373012672522",
       "content": "發覺我沒有在這裡發過之前的梗圖遂發之",
       "author": "souri.10244",
       "reactions": 10,
       "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1466053067140108504",
-      "content": "有沒有可能會出一個像一鍵已讀公告那樣，在典藏館搞一個一鍵消滅煩人的「新」的小按鈕？🧐",
-      "author": "shostakovich524",
-      "reactions": 9,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1466197794900676669",
-      "content": "還有就是你們應該有想到：盡然第一波最重法則是商店角色，那應該有想到增加原型視界的販賣數量吧？還有專造能不能換成是一種賣角色、鼓勵角色抽取的動機，那能不能在關卡放",
-      "author": "gazima",
-      "reactions": 9,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1465947010694647890",
-      "content": "<@633215996508766229> 不是說沒有放棄溝通 發完就跑是幾個意思",
-      "author": "quackdayo",
-      "reactions": 9,
-      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
-    },
-    {
-      "id": "1465911369714110661",
-      "content": "<@1071686976283082782> WAAAH SHES SOOO CUTE",
-      "author": "mimiruku",
-      "reactions": 8,
-      "channel": ""
-    },
-    {
-      "id": "1466031286622748826",
-      "content": "Triple the amount of spellbound? Does that mean Xu's OE inflicts 8 spellbound?",
-      "author": "necronomikkon",
-      "reactions": 7,
-      "channel": "V2.4.2.1 在线维护公告"
-    },
-    {
-      "id": "1466048479188095037",
-      "content": "我们会考虑一下这件事！谢谢你的意见！",
-      "author": "game.producer.light",
-      "reactions": 7,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1466048986774241445",
-      "content": "关系网暂时没有计划，这可能会非常复杂而且会随着剧情发展而变化。不过我们对于调查行动、特遣纪录、意识潜游等内容最建议的顺序做一个指南。",
-      "author": "game.producer.light",
-      "reactions": 7,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1466050081466744842",
-      "content": "喔對了可以問下典藏館的\"新\"很必要嗎，命輪點的好煩躁",
-      "author": "arr5721",
-      "reactions": 7,
-      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
-    },
-    {
-      "id": "1465943669625585809",
-      "content": "Be confident, 10000 a day!",
-      "author": "carme.0588",
-      "reactions": 7,
-      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
-    },
-    {
-      "id": "1466016714972991488",
-      "content": "打牌打到一半怎麼有人自體發光",
-      "author": "ying_papa",
-      "reactions": 6,
-      "channel": "✅「已回答」你是電你是光你是唯一的神話"
+      "id": "1465955781860921651",
+      "channel_id": "1170692781216378960",
+      "content": "I love that Light previously pinged everyone to apologize for pinging everyone t",
+      "author": "mac2492",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

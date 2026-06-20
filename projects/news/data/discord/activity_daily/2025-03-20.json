@@ -1,10 +1,24 @@
 {
   "date": "2025-03-20",
-  "messages": 77,
-  "unique_authors": 10,
-  "reactions_total": 25,
-  "attachments": 17,
+  "messages": 4757,
+  "unique_authors": 83,
+  "reactions_total": 120,
+  "attachments": 204,
   "channel_activity": {
+    "🔸русский-канал": 38,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 11,
+    "🔸canal-português": 15,
+    "🔸ruang-obrolan-indonesia": 277,
+    "🔸ห้องสนทนาภาษาไทย": 55,
+    "🔸traphase": 59,
+    "🔸lore-chat": 13,
+    "🔸綜合討論": 118,
+    "🔸阵容构建": 18,
+    "🔸morimens-game-chat": 3730,
+    "🔸剧情交流": 184,
+    "🔸相位对弈": 6,
+    "🔸한국어-채팅방": 153,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
     "Need help with team comps I'm new": 5,
     "Need help": 8,
@@ -24,25 +38,34 @@
     "不会再有了": 5
   },
   "hourly_activity": {
-    "0": 2,
-    "14": 3,
-    "19": 2,
-    "8": 7,
-    "12": 10,
-    "7": 17,
-    "9": 2,
-    "11": 9,
-    "18": 3,
-    "10": 5,
-    "2": 3,
-    "13": 2,
-    "6": 4,
-    "3": 7,
-    "16": 1
+    "5": 363,
+    "6": 148,
+    "13": 229,
+    "14": 227,
+    "15": 264,
+    "16": 340,
+    "17": 269,
+    "18": 88,
+    "22": 275,
+    "19": 38,
+    "20": 153,
+    "23": 22,
+    "2": 212,
+    "8": 44,
+    "4": 234,
+    "7": 77,
+    "10": 84,
+    "11": 155,
+    "12": 464,
+    "21": 133,
+    "0": 187,
+    "1": 400,
+    "3": 342,
+    "9": 9
   },
   "message_types": {
-    "19": 4,
-    "0": 15
+    "19": 113,
+    "0": 358
   },
   "top_reacted_messages": [
     {
@@ -60,11 +83,123 @@
       "channel": "福利"
     },
     {
+      "id": "1352161893292445718",
+      "channel_id": "1326453691527594035",
+      "content": "Longtime lurker here, but the new event’s made me touch traphase and i’m really ",
+      "author": "essayking566",
+      "reactions": 4,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1352135232320573510",
+      "channel_id": "1131839817982947429",
+      "content": "||野貓喜歡從後面來||",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352247687000625244",
+      "channel_id": "1131839817982947429",
+      "content": "2500橡果嚕 <:play:1238448692441251910>",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352250541773950996",
+      "channel_id": "1131839817982947429",
+      "content": "更盤了",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352404459048665189",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "brainrot_in_a_vat",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1352114827405037639",
+      "channel_id": "1173463482503536711",
+      "content": "羅坦：哇草 位面之子 好想打一下\n還是羅坦：我草你圖魯",
+      "author": "ruko9999",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1352115352359665805",
       "content": "但是看你寫的卻沒有這感覺哈哈",
       "author": "happylife321",
       "reactions": 3,
       "channel": "不会再有了"
+    },
+    {
+      "id": "1352182695731400784",
+      "channel_id": "1326453691527594035",
+      "content": "game is fun",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1352250508878020662",
+      "channel_id": "1131839817982947429",
+      "content": "我現在有+4深海國家隊了",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352264141250756649",
+      "channel_id": "1131839817982947429",
+      "content": "手把手握手把",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352322884533747722",
+      "channel_id": "1131839817982947429",
+      "content": "好多外國新人入坑都自選了圖魯<:flop:1243504846062223360> 。",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352137624281677864",
+      "channel_id": "1170692781216378960",
+      "content": "I too chain up Hameln",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1352118621949661218",
+      "channel_id": "1173463482503536711",
+      "content": "米粒獲得海德拉的力量是現代\n神王圖的米粒不知道要怎麼樣才能獲得海德拉的認同\n本源墨菲代表跟137的世界大概差不多的劇情 那米粒頂多就是心態不一樣 跟我們認識的大",
+      "author": "ruko9999",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1352119103934042174",
+      "channel_id": "1173463482503536711",
+      "content": "神王圖大概會看到 然後還有可能有閨蜜活著\n白墨我也覺得是被吃了",
+      "author": "ruko9999",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1352231559645630516",
+      "channel_id": "1173463482503536711",
+      "content": "我開始好奇本源kks了",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1352268390999265402",
@@ -74,18 +209,20 @@
       "channel": "✅「已回答」拉蒙娜你好惨啊"
     },
     {
-      "id": "1352188293785325649",
-      "content": "後半普有加固鎖血那些更不好打吧 不算1-10的話",
-      "author": "heikwok",
+      "id": "1352353094838521978",
+      "channel_id": "1300659580446969918",
+      "content": "Обожаю перевод.",
+      "author": "irrational_obelisk",
       "reactions": 1,
-      "channel": "一般隊伍玩不了遊戲的BUG"
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1352161062744494152",
-      "content": "Здравствуйте, это нормально. Это потому, что срабатывает \"Ярость\", а \"Намерение\"",
-      "author": "morimensstaff01",
+      "id": "1352152640523337748",
+      "channel_id": "1300659753197764688",
+      "content": "Okelah 👌",
+      "author": "fellosatr",
       "reactions": 1,
-      "channel": "✅「Ответ дан」Баг в событии или так и должно быть?"
+      "channel": "🔸ruang-obrolan-indonesia"
     }
   ]
 }

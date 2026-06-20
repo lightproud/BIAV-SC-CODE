@@ -1,10 +1,30 @@
 {
   "date": "2025-10-19",
-  "messages": 88,
-  "unique_authors": 12,
-  "reactions_total": 94,
-  "attachments": 22,
+  "messages": 12940,
+  "unique_authors": 259,
+  "reactions_total": 2211,
+  "attachments": 616,
   "channel_activity": {
+    "🔸morimens-game-chat": 9551,
+    "🔸剧情交流": 52,
+    "🔸晒卡分享": 24,
+    "🔸课间休息闲聊": 14,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 142,
+    "🔸chaîne-française": 44,
+    "🔸русский-канал": 104,
+    "🔸phòng-chat-tiếng-việt": 17,
+    "🔸canal-español": 134,
+    "🔸canal-português": 46,
+    "🔸ruang-obrolan-indonesia": 306,
+    "🔸ห้องสนทนาภาษาไทย": 15,
+    "🔸traphase": 514,
+    "🔸lore-chat": 28,
+    "🔸lets-count": 24,
+    "🔸team-building": 81,
+    "🔸general-chat": 95,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸綜合討論": 1648,
     "🤷": 2,
     "Hi": 1,
     "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!": 6,
@@ -23,36 +43,134 @@
     "1429401798439080028": 23
   },
   "hourly_activity": {
-    "10": 1,
-    "11": 6,
-    "8": 1,
-    "2": 10,
-    "6": 5,
-    "7": 1,
-    "1": 18,
-    "13": 8,
-    "15": 3,
-    "18": 1,
-    "5": 2,
-    "14": 5,
-    "12": 20,
-    "16": 3,
-    "4": 1,
-    "0": 1,
-    "19": 1,
-    "9": 1
+    "0": 377,
+    "1": 628,
+    "2": 501,
+    "3": 408,
+    "4": 471,
+    "5": 525,
+    "6": 793,
+    "7": 555,
+    "8": 531,
+    "9": 490,
+    "10": 851,
+    "11": 692,
+    "12": 685,
+    "13": 672,
+    "14": 670,
+    "15": 360,
+    "16": 560,
+    "17": 501,
+    "18": 303,
+    "19": 377,
+    "20": 561,
+    "21": 464,
+    "22": 368,
+    "23": 597
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 7349,
+    "19": 3838,
+    "23": 5,
+    "20": 6,
+    "46": 1,
+    "18": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1429452643155050588",
+      "channel_id": "1170692781216378960",
+      "content": "spam more reactions",
+      "author": "arisuu0604",
+      "reactions": 44,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429412336606777354",
+      "channel_id": "1170692781216378960",
+      "content": "BLEC STOP BOOMING ME",
+      "author": "ludwig_101",
+      "reactions": 37,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1429421793306873896",
       "content": "",
       "author": "sunstopshining",
       "reactions": 37,
       "channel": "🤷"
+    },
+    {
+      "id": "1429452401303093270",
+      "channel_id": "1170692781216378960",
+      "content": "K*nkysu think about you <:please:1356053110375714817> <:please:13560531103757148",
+      "author": "moyashi0672",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429466465752449095",
+      "channel_id": "1170692781216378960",
+      "content": "erm",
+      "author": "arisuu0604",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429513782786523268",
+      "channel_id": "1170692781216378960",
+      "content": "should we redistribute some abuse from arisu to frost then?",
+      "author": "lavache.",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429465930269724803",
+      "channel_id": "1170692781216378960",
+      "content": "Hello there! I love you all! You deserve happiness! I fade into the darkness now",
+      "author": "the_black_butterfly",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429470115426205737",
+      "channel_id": "1170692781216378960",
+      "content": "Wizardry variants daphne <:Cheerup:1400771555939844149> <:Cheerup:14007715559398",
+      "author": "moyashi0672",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429314172889469031",
+      "channel_id": "1170692781216378960",
+      "content": "💣",
+      "author": "blecnes",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429445441174372432",
+      "channel_id": "1170692781216378960",
+      "content": "Casiah>Doresain in my personal tier-list",
+      "author": "twilightsparkle163163",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429324204880171119",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "miyabyakuya",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1429444311694446695",
+      "channel_id": "1170692781216378960",
+      "content": "Kath too",
+      "author": "tnimreppep",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1429384194005536839",
@@ -62,116 +180,60 @@
       "channel": "Hi"
     },
     {
-      "id": "1429288231626739764",
-      "content": "● Fixed the severe lag issue when opening and dragging the \"Awakening Details\" i",
-      "author": "morimensstaff02",
+      "id": "1429265056503169146",
+      "channel_id": "1170692781216378960",
+      "content": "This is morimens btw",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429398503645249608",
+      "channel_id": "1170692781216378960",
+      "content": "<:Clown:1400771541423226971>",
+      "author": "kinokoortakenoko",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429473152244777051",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429474990847426620",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1429428070489653259",
+      "channel_id": "1170692781216378960",
+      "content": "Please do",
+      "author": "nou._.101",
       "reactions": 8,
-      "channel": "V2.3.4.0 停服维护公告"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429287431403733063",
-      "content": "**V2.3.4.0 Maintenance Announcement**\n\nDear Keeper,\nMythag University is schedul",
-      "author": "morimensstaff02",
-      "reactions": 6,
-      "channel": "V2.3.4.0 停服维护公告"
+      "id": "1429439772673179728",
+      "channel_id": "1170692781216378960",
+      "content": "That 300 silver got me Tawil",
+      "author": "minauwu358",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1429465846509473935",
-      "content": "不要笑挑战",
-      "author": "rong486",
-      "reactions": 6,
-      "channel": "V2.3.4.0 停服维护公告"
-    },
-    {
-      "id": "1429467304898592768",
-      "content": "",
-      "author": "rong486",
-      "reactions": 6,
-      "channel": "我说把PVP改回大改动之前比现在平衡10000倍，有没有懂的？"
-    },
-    {
-      "id": "1429302359623991376",
-      "content": "",
-      "author": "bathoryp",
-      "reactions": 3,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429357591191879802",
-      "content": "",
-      "author": "meatloversus",
-      "reactions": 3,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429287023440826438",
-      "content": "【幻衣活动：不发糖就捣蛋】\n    ○ 在 10 月 20 日 9:00 - 12 月 15 日 9:00 期间，幻衣活动「不发糖就捣蛋」限时开放！\n     ",
-      "author": "morimensstaff02",
-      "reactions": 3,
-      "channel": "V2.3.4.0 停服维护公告"
-    },
-    {
-      "id": "1429426480017838234",
-      "content": "報告剛剛繼續找資料後發現用錯符號🌿我之後會再調整（陰暗爬行",
-      "author": "ass191044",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1429343618933723198",
-      "content": "● 修复了「相位对弈」中唤醒体「希洛」的技能「宣战」无法正确获得蓄力的问题。\n明天更新內容",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "✅「已回答」希洛相位对弈bug"
-    },
-    {
-      "id": "1429430321484398723",
-      "content": "10/10",
-      "author": "idotly",
-      "reactions": 1,
-      "channel": "🤷"
-    },
-    {
-      "id": "1429366642818683012",
-      "content": "请支持糖果大盗墨菲本人",
-      "author": "nanmingyuan_02395",
-      "reactions": 1,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1429287678188322846",
-      "content": "2. Battle\n[Awakener Enhancement]\n● Awakener \"Tawil\"\n    ○ Talent \"Soulforge Apti",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.3.4.0 停服维护公告"
-    },
-    {
-      "id": "1429478124806082740",
-      "content": "短暫的永恆毒觸發的效果被拔掉了",
-      "author": "snow.tubs",
-      "reactions": 1,
-      "channel": "相位對弈環境攻略"
-    },
-    {
-      "id": "1429442319634923641",
-      "content": "腦子被滿滿的兔子福瑞佔據",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1429445640106283080",
-      "content": "喔，古老者？",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1429446695045038191",
-      "content": "還有~~四處挖洞衣不蔽體~~奇怪五角衣物設計🌿",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
+      "id": "1429515648026808400",
+      "channel_id": "1170692781216378960",
+      "content": "frost x horla",
+      "author": "frowningquokka",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

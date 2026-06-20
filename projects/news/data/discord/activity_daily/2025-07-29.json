@@ -1,10 +1,29 @@
 {
   "date": "2025-07-29",
-  "messages": 220,
-  "unique_authors": 22,
-  "reactions_total": 84,
-  "attachments": 25,
+  "messages": 12638,
+  "unique_authors": 329,
+  "reactions_total": 999,
+  "attachments": 847,
   "channel_activity": {
+    "🔸lore-chat": 405,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸morimens-game-chat": 8467,
+    "🔸剧情交流": 36,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 171,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 466,
+    "🔸phòng-chat-tiếng-việt": 133,
+    "🔸canal-español": 306,
+    "🔸canal-português": 720,
+    "🔸ruang-obrolan-indonesia": 420,
+    "🔸ห้องสนทนาภาษาไทย": 212,
+    "🔸traphase": 44,
+    "🔸綜合討論": 1014,
     "Jenkin & Brown card :mouse2:": 3,
     "All stages Arc 2 Ch 3 HM Deathless recap and Scuffed \"Guide\"": 1,
     "Arc 2 Ch 3 HM Final Boss Deathless. 83k Counter with Caecus.": 1,
@@ -35,29 +54,34 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
-    "8": 2,
-    "9": 4,
-    "11": 1,
-    "10": 1,
-    "5": 24,
-    "6": 19,
-    "12": 6,
-    "13": 70,
-    "7": 2,
-    "16": 1,
-    "2": 23,
-    "3": 10,
-    "4": 5,
-    "14": 46,
-    "20": 2,
-    "23": 1,
-    "17": 1,
-    "15": 1,
-    "0": 1
+    "0": 600,
+    "1": 452,
+    "2": 663,
+    "3": 337,
+    "4": 499,
+    "5": 703,
+    "6": 513,
+    "7": 543,
+    "8": 316,
+    "9": 430,
+    "10": 443,
+    "11": 505,
+    "12": 396,
+    "13": 801,
+    "14": 526,
+    "15": 560,
+    "16": 406,
+    "21": 539,
+    "17": 736,
+    "18": 587,
+    "19": 333,
+    "20": 499,
+    "22": 667,
+    "23": 584
   },
   "message_types": {
-    "0": 25,
-    "19": 10
+    "19": 99,
+    "0": 310
   },
   "top_reacted_messages": [
     {
@@ -75,6 +99,78 @@
       "channel": "Jenkin & Brown card :mouse2:"
     },
     {
+      "id": "1399744112718123146",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "akatora_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399860355177648282",
+      "channel_id": "1170692781216378960",
+      "content": "We voice acted ch 3 story lmao",
+      "author": "flares117",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399705838150750228",
+      "channel_id": "1326453763355185215",
+      "content": "Doresain in lore: Necrovia Tawil\nDoresain in gameplay: Another Caro Assault that",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399747174161453176",
+      "channel_id": "1170692781216378960",
+      "content": "guess what happens next",
+      "author": "sexysneakystoat1625",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399862848158437408",
+      "channel_id": "1170692781216378960",
+      "content": "IM BROKE",
+      "author": "iv_dog",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399781580989268008",
+      "channel_id": "1131839817982947429",
+      "content": "肘完了<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1399591181108777081",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399627817259630613",
+      "channel_id": "1170692781216378960",
+      "content": "Halo\nNow what",
+      "author": "furretknight",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399671099842756662",
+      "channel_id": "1170692781216378960",
+      "content": "Wheel hell is real",
+      "author": "osakatrade",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399732024805294273",
       "content": "● Localization Fixes and Improvements (English Language Setting):\n    ○We fixed ",
       "author": "morimensstaff02",
@@ -82,116 +178,68 @@
       "channel": "V2.3.0.3 在线维护公告"
     },
     {
-      "id": "1399671924065304676",
-      "content": "This is such a fun concept! I love how dynamic it feels",
-      "author": "Deleted User",
-      "reactions": 3,
-      "channel": "Jenkin & Brown card :mouse2:"
+      "id": "1399733760886313020",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399657628308733972",
-      "content": "Would it be possible to somehow mark in game which story segments have been manu",
-      "author": "tharob",
-      "reactions": 3,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+      "id": "1399556947895914518",
+      "channel_id": "1300659662311526512",
+      "content": "En resúmen, Caro. La respuesta es y siempre será Caro.\n\nAbracen la supremacía Ca",
+      "author": "duxadidus",
+      "reactions": 7,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1399684346238992436",
-      "content": "that is so nice, if only in the future the cards could have this type of persona",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "Jenkin & Brown card :mouse2:"
+      "id": "1399691054340636722",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399753765917032645",
-      "content": "~~我是希望不修好~~<:cute1:1356053053568192717>",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "✅「已回答」H2-9事件會出現重複造物"
+      "id": "1399744351856361572",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rozu",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399591525880561794",
-      "content": "艾爾沃斯那白骨般的山脊在風中嶙峋，風雪漫天，如同撕裂天地的白色幕布，將世界吞沒於一片迷濛。\n\n一位少女，獨自走在荒野的長路上，靛藍色的斗篷早已被寒風扯成破碎的羽",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": "血希同人"
+      "id": "1399670836129960107",
+      "channel_id": "1131839817982947429",
+      "content": "吃我",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1399633314322579558",
-      "content": "so the chapter 1, gotcha",
-      "author": "markiecart",
-      "reactions": 1,
-      "channel": "How to play Uvhash in exploration?"
+      "id": "1399578337512394753",
+      "channel_id": "1326453763355185215",
+      "content": "omfg gkjdsnglxjknrodug",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1399734980711546910",
-      "content": "绷，「暗潮虫鸣·限时预购」早结束几个月了怎么还有BUG",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "V2.3.0.3 在线维护公告"
+      "id": "1399569575259144362",
+      "channel_id": "1170692781216378960",
+      "content": "Nope, this guy beat up kids while they have less rights than him",
+      "author": "el.shaddoll.nephilim.is.my.ace",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399743061453438996",
-      "content": "其實前幾次更新就出現了只是一直忘記來回報<:flop2:1356053072924774421> \nhttps://discord.com/channels/1",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
-    },
-    {
-      "id": "1399637127859404851",
-      "content": "Yes, we often receive this issue, but each one has a different cause. We have be",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」I can't start the game, it freezes"
-    },
-    {
-      "id": "1399583271259603097",
-      "content": "Hi, we have identified the cause of the issue and will update it as soon as poss",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda Soulforge Aptitude text error"
-    },
-    {
-      "id": "1399739478721171646",
-      "content": "如图",
-      "author": "xuanxue007",
-      "reactions": 1,
-      "channel": "💭「处理中」第三章主线最后一关无法正常结束战斗"
-    },
-    {
-      "id": "1399752330106376202",
-      "content": "就是攻击欲望/伤害太高",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "關於爆擊爆率的問題"
-    },
-    {
-      "id": "1399756884839239843",
-      "content": "突然想到经典出门三鸟",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "關於爆擊爆率的問題"
-    },
-    {
-      "id": "1399580914312286270",
-      "content": "Hi, we have identified the cause of the issue and will update it as soon as poss",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda soulforge bug"
-    },
-    {
-      "id": "1399579374545797231",
-      "content": "Здравствуйте, этот вопрос уже запланирован к обработке и будет выпущен как можно",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг при описании карты на русском языке."
-    },
-    {
-      "id": "1399584402387763332",
-      "content": "转交可能比较困难，不过我们会转达的！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "阿空高速推活時刻"
+      "id": "1399676806394675281",
+      "channel_id": "1170692781216378960",
+      "content": "The fucking stars align and gave me infinite arithmetica in arc2. Thx rng",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

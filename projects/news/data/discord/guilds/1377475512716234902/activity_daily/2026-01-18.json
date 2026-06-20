@@ -1,17 +1,196 @@
 {
   "date": "2026-01-18",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 212,
+  "unique_authors": 18,
+  "reactions_total": 42,
+  "attachments": 10,
   "channel_activity": {
+    "なんでも雑談": 202,
+    "誰でも質問": 9,
     "何やってるんですか!!!!幻夢して下さい!!!": 1
   },
   "hourly_activity": {
-    "15": 1
+    "0": 24,
+    "1": 21,
+    "3": 1,
+    "4": 2,
+    "6": 2,
+    "7": 4,
+    "8": 2,
+    "9": 7,
+    "10": 4,
+    "13": 9,
+    "14": 28,
+    "15": 6,
+    "16": 88,
+    "17": 7,
+    "18": 4,
+    "11": 3
   },
   "message_types": {
-    "0": 1
+    "0": 194,
+    "19": 17
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1462329295535083623",
+      "channel_id": "1377478664609857647",
+      "content": "ようやくヘロット極限出来た<:yoshiyoshi:1390953015686729738> <:yoshiyoshi:1390953015686729738>",
+      "author": "sub0044_36832",
+      "reactions": 9,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462254857300738243",
+      "channel_id": "1377478664609857647",
+      "content": "私多分皆勤賞！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462332948723269697",
+      "channel_id": "1377478664609857647",
+      "content": "これでやっとリリー使えるね！！",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462447445127725128",
+      "channel_id": "1377478664609857647",
+      "content": "-# 今回の幻夢ボス24さんだからジェンキンでシバいてたの控えめに言って人の心案件だよな…",
+      "author": "namenemue3",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462454392878927882",
+      "channel_id": "1377478664609857647",
+      "content": "<:yoshiyoshi:1390953015686729738>",
+      "author": "sub0044_36832",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462468096588779692",
+      "channel_id": "1377478664609857647",
+      "content": "ちょっと知らない人ですね…",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462480102578323579",
+      "channel_id": "1377478664609857647",
+      "content": "別に呼び捨てにしてて良いですよw\nあだ名ですし！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462249773078679583",
+      "channel_id": "1377478664609857647",
+      "content": "ですな",
+      "author": "iihige",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462254154503164037",
+      "channel_id": "1377478664609857647",
+      "content": "4日くらい体調くずした結果ログイン途切れてしまった",
+      "author": "iihige",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462436424048447610",
+      "channel_id": "1377478664609857647",
+      "content": "育成したい欲(余裕もってバトルクリアしたい)により7章まだ未着手…🫠トゥルー君の号令がやっとLv6にできました！\n皆のスキルMAXにしたい…\nいつになったら7章",
+      "author": "geragera2",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462477780745846979",
+      "channel_id": "1377478664609857647",
+      "content": "多分ワンダの極限の強さが実感し難いのは元のカードのコストが高くて結局連発するのが厳しいからだと思う(笑)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462477988695376047",
+      "channel_id": "1377478664609857647",
+      "content": "多分１週間前くらいに完凸させました♪\n満足感高い＼(^o^)／",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462478948691611698",
+      "channel_id": "1377478664609857647",
+      "content": "文字数が多くてよくわからん",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462481678923727013",
+      "channel_id": "1377478664609857647",
+      "content": "恒常キャラにマウントを取って悦に浸るの小物すぎる。",
+      "author": "aku08158",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462484400389357856",
+      "channel_id": "1377478664609857647",
+      "content": "ステージ全部のターン？ボス戦だけ？",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462484898639249650",
+      "channel_id": "1377478664609857647",
+      "content": "つらい",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462487203715481711",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462488691703287828",
+      "channel_id": "1377478664609857647",
+      "content": "最近対人が楽しいからノーダメージで良かった",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462489589552779497",
+      "channel_id": "1377478664609857647",
+      "content": "~~やってないから噂聞いただけpvp~~",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1462490715891437822",
+      "channel_id": "1377478664609857647",
+      "content": "さて風呂入ったしそろそろ忘却やるぞ！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
 }

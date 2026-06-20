@@ -1,10 +1,37 @@
 {
   "date": "2025-12-08",
-  "messages": 158,
-  "unique_authors": 24,
-  "reactions_total": 96,
-  "attachments": 39,
+  "messages": 12578,
+  "unique_authors": 282,
+  "reactions_total": 1596,
+  "attachments": 798,
   "channel_activity": {
+    "🔸lets-count": 28,
+    "🔸频道建议┊server-suggestions": 7,
+    "🔸team-building": 337,
+    "🔸general-chat": 454,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1209,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 47,
+    "🔸morimens-game-chat": 8035,
+    "🔸剧情交流": 50,
+    "🔸晒卡分享": 7,
+    "🔸相位对弈": 21,
+    "🔸课间休息闲聊": 1,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 228,
+    "🔸phòng-chat-tiếng-việt": 125,
+    "🔸canal-español": 457,
+    "🔸canal-português": 108,
+    "🔸ruang-obrolan-indonesia": 196,
+    "🔸ห้องสนทนาภาษาไทย": 126,
+    "🔸traphase": 37,
+    "🔸lore-chat": 237,
+    "🔸綜合討論": 664,
     "Explosion: Ramona": 2,
     "Nymphaea!": 1,
     "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 5,
@@ -46,30 +73,35 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "13": 8,
-    "15": 8,
-    "4": 8,
-    "14": 11,
-    "20": 5,
-    "6": 19,
-    "8": 5,
-    "7": 12,
-    "9": 10,
-    "10": 24,
-    "11": 4,
-    "12": 16,
-    "22": 1,
-    "23": 2,
-    "16": 2,
-    "18": 1,
-    "0": 3,
-    "5": 1,
-    "3": 16,
-    "1": 2
+    "0": 637,
+    "1": 821,
+    "3": 728,
+    "4": 627,
+    "5": 371,
+    "6": 454,
+    "9": 330,
+    "10": 590,
+    "13": 461,
+    "15": 886,
+    "16": 402,
+    "21": 564,
+    "23": 538,
+    "2": 831,
+    "7": 478,
+    "8": 573,
+    "11": 424,
+    "12": 492,
+    "14": 675,
+    "18": 420,
+    "19": 555,
+    "20": 186,
+    "22": 218,
+    "17": 317
   },
   "message_types": {
-    "0": 33,
-    "19": 3
+    "0": 1565,
+    "19": 526,
+    "20": 8
   },
   "top_reacted_messages": [
     {
@@ -87,130 +119,148 @@
       "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
     },
     {
-      "id": "1447467932258013235",
+      "id": "1447530572040900658",
+      "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447446651969994773",
+      "channel_id": "1131839817982947429",
+      "content": "收工<:Cheerup:1400771555939844149>",
+      "author": "sweet_25367",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447385584866955345",
+      "channel_id": "1170692781216378960",
+      "content": "the only one im bending over for",
+      "author": "not_blueberry",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447436511212474530",
+      "channel_id": "1170692781216378960",
+      "content": "FK",
+      "author": "yurichansnails",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447476773133750273",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447454426058063872",
+      "channel_id": "1173463482503536711",
+      "content": "每打一次大眼熔朵的業績壓力+1",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1447643641098010636",
+      "channel_id": "1131839817982947429",
+      "content": "赤完了",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447421426096406770",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "twilightsparkle163163",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447431844483039364",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447632397968474143",
+      "channel_id": "1170692781216378960",
+      "content": "Would beat kids again",
+      "author": "sno_w",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447425142216200224",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447476403443339316",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1447429338910822463",
+      "channel_id": "1355630588094320661",
+      "content": "2692",
+      "author": "megadumb_aru",
       "reactions": 6,
-      "channel": ""
+      "channel": "🔸lets-count"
     },
     {
-      "id": "1447469246576853013",
-      "content": "這期我是選擇給蜘蛛帶上旋轉旋轉\n可以掛機疊一點點毒\n還有出空間時的觸毒也可以補一點傷害",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": ""
+      "id": "1447445101700976760",
+      "channel_id": "1170692781216378960",
+      "content": "Men can be good girls dude.",
+      "author": "mitsukinanoka__",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1447481457135190108",
+      "id": "1447467859893555231",
+      "channel_id": "1170692781216378960",
+      "content": "gmurphy failed to bring a god into the world because we all know only men can ge",
+      "author": "khykken",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447530634540093532",
+      "channel_id": "1170692781216378960",
+      "content": "Will see what my reasonable goals will be",
+      "author": "mythicmoonwort",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447567675373912075",
+      "channel_id": "1170692781216378960",
+      "content": "here I present, the GOAT dps",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1447672142056521778",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "souri.10244",
-      "reactions": 4,
-      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
-    },
-    {
-      "id": "1447499207610208377",
-      "content": "成功+4",
-      "author": "santianliangjuesleep",
-      "reactions": 4,
-      "channel": "新手求助"
-    },
-    {
-      "id": "1447480841490923612",
-      "content": "有玩家提过类似建议，我们会想办法看看如何解决",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
-    },
-    {
-      "id": "1447617086636556471",
-      "content": "反正我时间多的是，每天来顶一下，也让大家看看",
-      "author": "2300011747",
-      "reactions": 3,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1447737130984935536",
-      "content": "🥹",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "✅「已回答」我們有機會提高關注上限嗎"
-    },
-    {
-      "id": "1447535503506280458",
-      "content": "<:agree:1400771815076528258> \n我正在把手繪電繪化",
-      "author": "tanchen0811",
-      "reactions": 3,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1447427658962178129",
-      "content": "I will inquire about it",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1447553477638094898",
-      "content": "Is it intentional for Doresain to target 1hp immune to dmg Doll clone rather tha",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "✅「Answered」Doresain targeting issue"
-    },
-    {
-      "id": "1447729791078895803",
-      "content": "how did you trigger it? did you used the rewind?",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Card bug"
-    },
-    {
-      "id": "1447501560157310986",
-      "content": "same day and time i posted",
-      "author": "hina_kanzaki",
-      "reactions": 1,
-      "channel": "✅「Answered」Dtide W3 Bug"
-    },
-    {
-      "id": "1447423313201598535",
-      "content": "UID:\n100336921",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "✅「已回答」未收到寧妃亞的生日信件"
-    },
-    {
-      "id": "1447438806004273183",
-      "content": "謝謝戈雅",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "✅「已回答」未收到寧妃亞的生日信件"
-    },
-    {
-      "id": "1447522113069121598",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447524074686251080",
-      "content": "🥢",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447529110808297542",
-      "content": "自娛自樂真的不知道該哭還是該笑了",
-      "author": "carrot_chicken",
-      "reactions": 1,
-      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
-    },
-    {
-      "id": "1447445528995696752",
-      "content": "She has elements of it yeah",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
+      "author": "yurichansnails",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

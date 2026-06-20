@@ -1,10 +1,23 @@
 {
   "date": "2025-03-12",
-  "messages": 94,
-  "unique_authors": 15,
-  "reactions_total": 149,
-  "attachments": 40,
+  "messages": 2968,
+  "unique_authors": 100,
+  "reactions_total": 256,
+  "attachments": 257,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 20,
+    "🔸canal-português": 42,
+    "🔸ruang-obrolan-indonesia": 192,
+    "🔸ห้องสนทนาภาษาไทย": 468,
+    "🔸traphase": 146,
+    "🔸lore-chat": 23,
+    "🔸綜合討論": 189,
+    "🔸阵容构建": 49,
+    "🔸morimens-game-chat": 1562,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 6,
+    "🔸한국어-채팅방": 174,
     "Star Chapter 2.1 Tier List": 15,
     "Genesis Garden Pick": 1,
     "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！": 3,
@@ -28,29 +41,35 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 11,
-    "1": 2,
-    "3": 15,
-    "13": 6,
-    "17": 1,
-    "11": 2,
-    "12": 1,
-    "4": 12,
-    "5": 3,
-    "6": 12,
-    "15": 7,
-    "7": 3,
-    "9": 2,
-    "10": 2,
-    "14": 3,
-    "19": 2,
-    "16": 2,
-    "8": 7,
-    "2": 1
+    "0": 177,
+    "2": 102,
+    "6": 60,
+    "10": 107,
+    "12": 339,
+    "13": 86,
+    "14": 189,
+    "16": 190,
+    "18": 88,
+    "19": 72,
+    "15": 113,
+    "1": 153,
+    "3": 67,
+    "4": 66,
+    "5": 50,
+    "8": 24,
+    "9": 117,
+    "11": 226,
+    "21": 90,
+    "22": 69,
+    "23": 70,
+    "17": 281,
+    "7": 65,
+    "20": 167
   },
   "message_types": {
-    "19": 3,
-    "0": 13
+    "0": 668,
+    "19": 224,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -66,6 +85,14 @@
       "author": "morimensstaff01",
       "reactions": 24,
       "channel": "《忘卻前夜》OST：復甦黑日之世"
+    },
+    {
+      "id": "1349195672817107055",
+      "channel_id": "1131839817982947429",
+      "content": "汪汪汪汪汪汪汪汪",
+      "author": "ahuahuahua",
+      "reactions": 17,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1349229925940596776",
@@ -117,6 +144,14 @@
       "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
     },
     {
+      "id": "1349326094360383554",
+      "channel_id": "1131839817982947429",
+      "content": "那我要出來接客了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1349272817551806474",
       "content": "7.熔毀終末讚歌-Coda of Scorch-\n高唱吧，高唱吧！讓熔毀的機械奏鳴響徹寰宇，讚頌名為永恆黑暗的終末！\nSing loudly, sing lou",
       "author": "morimensstaff01",
@@ -138,60 +173,52 @@
       "channel": "什么时候把第九章ost放出来？"
     },
     {
-      "id": "1349365608059375658",
-      "content": "守密人你好：\n       彌薩格大學校務處將於3月12日21:05進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會",
-      "author": "morimensstaff02",
+      "id": "1349200394038804614",
+      "channel_id": "1300659662311526512",
+      "content": "Hola gente",
+      "author": "omar_valencia",
       "reactions": 2,
-      "channel": "V2.1.1.2 在線維護公告"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1349230875421966406",
-      "content": "9.血肉同源-Same Source Blood -\n我要將你帶回去，帶回去見“主人”，只有這樣…\nI want to take you back, take ",
-      "author": "morimensstaff01",
+      "id": "1349348208207466608",
+      "channel_id": "1300659753197764688",
+      "content": "Ok makasih bang infonya",
+      "author": "drimi321",
       "reactions": 2,
-      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+      "channel": "🔸ruang-obrolan-indonesia"
     },
     {
-      "id": "1349231180364648448",
-      "content": "12.癲狂執念-Obsessive Madness-\n血肉翻飛，利刃狂舞，怪物用無法理解的言語高聲歌唱。狂暴的大腦中只剩下一個念頭──抓住她，不惜一切代價，抓住",
-      "author": "morimensstaff01",
+      "id": "1349357702047993946",
+      "channel_id": "1300659802455674972",
+      "content": "เอาดอลแทนโอเกียร์น่าจะดีกว่า โซเรลต้องใช้ตัวอ่อน ลีอามันช่วยเจนตัวอ่อน",
+      "author": "littleyoukai",
       "reactions": 2,
-      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349332340014317621",
-      "content": "",
-      "author": "galagalaguo",
+      "id": "1349425299934412831",
+      "channel_id": "1300659802455674972",
+      "content": "สิ่งที่จะฆ่าฉันไม่ใช่บอส แต่เป็นอันนี้",
+      "author": "2ndselna",
       "reactions": 2,
-      "channel": "相位对弈中故意拖延时间的有什么办法么"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349262128527441964",
-      "content": "Haha~ In the future, we will try our best to provide both Chinese and English ve",
-      "author": "morimensstaff01",
+      "id": "1349449779159236682",
+      "channel_id": "1300659802455674972",
+      "content": "พึ่งเล่นเนื้อเรื่องบทแรกจบบ นั่งซึ้งอยู่",
+      "author": "2ndselna",
       "reactions": 2,
-      "channel": "English Page pls !!"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1349230473079160873",
-      "content": "4.水仙小屋-Daffodil Cottage-\n淡雅的清香，琳瑯的商品，可又有幾人，能支付水仙夫人開出的價格？\nThe elegant fragrance, ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
-    },
-    {
-      "id": "1349351056840065034",
-      "content": "I have a problem, game become like this after i miss click, and i tried to log i",
-      "author": "nyan_sus",
-      "reactions": 1,
-      "channel": "✅「Answered」PC steam version help"
-    },
-    {
-      "id": "1349180075177939085",
-      "content": "",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "English Page pls !!"
+      "id": "1349523123334156378",
+      "channel_id": "1326453763355185215",
+      "content": "Keeper doesn't have the balls to stand up to miryam",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     }
   ]
 }

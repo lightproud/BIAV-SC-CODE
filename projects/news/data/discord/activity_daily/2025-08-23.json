@@ -1,10 +1,30 @@
 {
   "date": "2025-08-23",
-  "messages": 67,
-  "unique_authors": 12,
-  "reactions_total": 88,
-  "attachments": 7,
+  "messages": 13971,
+  "unique_authors": 360,
+  "reactions_total": 1386,
+  "attachments": 615,
   "channel_activity": {
+    "🔸morimens-game-chat": 9414,
+    "🔸剧情交流": 12,
+    "🔸晒卡分享": 3,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 14,
+    "🔸한국어-채팅방": 20,
+    "🔸chaîne-française": 22,
+    "🔸русский-канал": 635,
+    "🔸phòng-chat-tiếng-việt": 97,
+    "🔸canal-español": 805,
+    "🔸canal-português": 274,
+    "🔸ruang-obrolan-indonesia": 823,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 30,
+    "🔸lore-chat": 38,
+    "🔸lets-count": 5,
+    "🔸team-building": 14,
+    "🔸general-chat": 258,
+    "🔸邀请码互助┊swap-invitation-codes": 175,
+    "🔸綜合討論": 1239,
     "Tawil fan model": 8,
     "ogier": 1,
     "[Doll] Brain in a Bat~": 1,
@@ -21,30 +41,34 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "2": 5,
-    "3": 14,
-    "14": 4,
-    "4": 1,
-    "5": 4,
-    "6": 4,
-    "13": 1,
-    "20": 2,
-    "1": 3,
-    "11": 5,
-    "12": 3,
-    "19": 2,
-    "9": 4,
-    "8": 5,
-    "0": 1,
-    "7": 1,
-    "16": 1,
-    "18": 3,
-    "17": 2,
-    "15": 2
+    "8": 565,
+    "9": 579,
+    "10": 671,
+    "11": 707,
+    "12": 877,
+    "13": 1021,
+    "14": 670,
+    "15": 402,
+    "16": 1000,
+    "17": 639,
+    "18": 337,
+    "19": 188,
+    "20": 555,
+    "21": 569,
+    "22": 230,
+    "23": 384,
+    "3": 515,
+    "4": 545,
+    "7": 620,
+    "6": 469,
+    "5": 609,
+    "1": 650,
+    "2": 805,
+    "0": 364
   },
   "message_types": {
-    "19": 7,
-    "0": 12
+    "19": 3090,
+    "0": 6052
   },
   "top_reacted_messages": [
     {
@@ -62,102 +86,148 @@
       "channel": ""
     },
     {
-      "id": "1408859678494163215",
-      "content": "薅一下日推的模板🫳",
-      "author": "navirecorbeau",
-      "reactions": 6,
-      "channel": ""
+      "id": "1408866897079828681",
+      "channel_id": "1170692781216378960",
+      "content": "10 pulls from a code",
+      "author": "sagemario.",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408647570246602815",
-      "content": "Thank you for always working hard despite all the hurdles and obstacles you guys",
-      "author": "kuronxx",
-      "reactions": 5,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408660476811808888",
-      "content": "I hope their situation will be better",
-      "author": ".cnork",
-      "reactions": 5,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408786549721661551",
-      "content": "因为大家每一次触发死亡抵抗都不放弃，所以你就要在星辰篇里把大伙的死亡抵抗直接扣光让大伙一次死亡抵抗都触发不了吗，哈基米你这家伙",
-      "author": "xmj140028",
-      "reactions": 4,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408685535912005763",
-      "content": "如圖中顯示每天只要有獲得素材，物資裡就會顯示新的提示\n可是每一樣都是舊的，只是增加數量而已\n建議物資從零到有在顯示新物資的提示即可",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "✅「已回答」能不要顯示新物資的提示嗎?"
-    },
-    {
-      "id": "1408741560757260359",
-      "content": "可以做成一個選項，關閉已有的物資增加的提示",
-      "author": "_cwz_",
-      "reactions": 2,
-      "channel": "✅「已回答」能不要顯示新物資的提示嗎?"
-    },
-    {
-      "id": "1408862949170348153",
-      "content": "佬\n輸光...",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1408653958632701982",
-      "content": "its day here but thanks!",
-      "author": "cooked_chicken99",
-      "reactions": 1,
-      "channel": "Tawil fan model"
-    },
-    {
-      "id": "1408779634266603684",
-      "content": "希望强度膨胀不要太厉害<:Emoji_SLE_P_09:1400771743630491749>  常驻和忘却片唤醒体在四年后也能发光发热，可以吗？",
-      "author": "nekoiiii.",
-      "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408783935135289474",
-      "content": "不可",
+      "id": "1408746597130702930",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "danwangmofei",
-      "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "reactions": 13,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1408695488097681409",
-      "content": "大佬都好多資源<:cry3:1356082134447558748>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」能不要顯示新物資的提示嗎?"
+      "id": "1408746742618525767",
+      "channel_id": "1170692781216378960",
+      "content": "hi <@422408090462322688> shaggy waggy shake that booty",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408731867699609621",
-      "content": "I will get 1, 4, and 5 fixed",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "💭「Processing」Missing updated text and errors"
+      "id": "1408744152325161091",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1408736758216134666",
-      "content": "nope, just a volunteer helper",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "💭「Processing」Missing updated text and errors"
+      "id": "1408686491986558987",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/alien-stage-alnst-hyuna-hyuna-alnst-hyuna-alien-stage-gif",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1408878226847170561",
-      "content": "You sort've touched on it in the Genesis section, but for OC purposes it might b",
-      "author": "insigible",
-      "reactions": 1,
-      "channel": ""
+      "id": "1408865774621429804",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/atsukimasahiro/status/1959214771921965116?t=8lKC-6ctp_LUOoEKZublDQ",
+      "author": "kevsalvador",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408775876199452693",
+      "channel_id": "1170692781216378960",
+      "content": "So basically what asen is saying is that i should throw my remaining 120 pulls a",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408783495282823343",
+      "channel_id": "1170692781216378960",
+      "content": "<@1082113450743955596> NRPL756Y95\n\nUse that code at lobby last icon for free res",
+      "author": "mizukiyuki",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408925237919350894",
+      "channel_id": "1170692781216378960",
+      "content": "Why do I have a ping from the JP channel?",
+      "author": "xandit",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408684921278693481",
+      "channel_id": "1170692781216378960",
+      "content": "Help teams. Idk what im doing",
+      "author": "cooked_chicken99",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408795411363139674",
+      "channel_id": "1131839817982947429",
+      "content": "這次計畫抽船長要用6480源液",
+      "author": "corposant_1003",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1408654042829164697",
+      "channel_id": "1170692781216378960",
+      "content": "guys how did my friend do",
+      "author": "itsjeffitsjeffitsjeff",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408774931461701652",
+      "channel_id": "1170692781216378960",
+      "content": "What about Horla",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408819820052353196",
+      "channel_id": "1170692781216378960",
+      "content": "Where's my reward for 50 lvl 20 keeper invites.",
+      "author": "mengluo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408860168984330412",
+      "channel_id": "1170692781216378960",
+      "content": "I'm stupid and should wear a dunce hat, sorry.",
+      "author": "sophiechoice",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408808312249782363",
+      "channel_id": "1131839817982947429",
+      "content": "终于十回合内了",
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1408687467023962232",
+      "channel_id": "1170692781216378960",
+      "content": "One gnosis it",
+      "author": "cooked_chicken99",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1408693112314007652",
+      "channel_id": "1170692781216378960",
+      "content": "I think i’ve got some good aeqour stuff on this account",
+      "author": "baul_punyan",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-05-07",
-  "messages": 108,
-  "unique_authors": 22,
-  "reactions_total": 152,
-  "attachments": 30,
+  "messages": 6048,
+  "unique_authors": 160,
+  "reactions_total": 367,
+  "attachments": 306,
   "channel_activity": {
+    "🔸morimens-game-chat": 4852,
+    "🔸剧情交流": 37,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 50,
+    "🔸chaîne-française": 17,
+    "🔸русский-канал": 29,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 130,
+    "🔸canal-português": 19,
+    "🔸ruang-obrolan-indonesia": 102,
+    "🔸ห้องสนทนาภาษาไทย": 91,
+    "🔸traphase": 73,
+    "🔸lore-chat": 201,
+    "🔸綜合討論": 330,
     "Goliath": 1,
     "Ogier sketch": 2,
     "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 1,
@@ -31,28 +45,34 @@
     "1350059696945500171": 2
   },
   "hourly_activity": {
-    "5": 6,
-    "19": 3,
-    "21": 1,
-    "17": 4,
-    "3": 5,
-    "15": 13,
-    "16": 3,
-    "6": 5,
-    "12": 8,
-    "13": 18,
-    "14": 17,
-    "8": 9,
-    "4": 4,
-    "9": 1,
-    "1": 2,
-    "2": 6,
-    "18": 1,
-    "7": 2
+    "0": 576,
+    "1": 251,
+    "2": 177,
+    "3": 284,
+    "4": 602,
+    "5": 374,
+    "6": 69,
+    "7": 53,
+    "8": 46,
+    "9": 232,
+    "10": 218,
+    "11": 200,
+    "12": 165,
+    "13": 273,
+    "14": 193,
+    "15": 330,
+    "16": 226,
+    "17": 374,
+    "18": 171,
+    "19": 265,
+    "20": 562,
+    "21": 193,
+    "22": 49,
+    "23": 165
   },
   "message_types": {
-    "0": 15,
-    "19": 4
+    "0": 4375,
+    "19": 1235
   },
   "top_reacted_messages": [
     {
@@ -77,11 +97,27 @@
       "channel": "Ogier sketch"
     },
     {
+      "id": "1369503159944347708",
+      "channel_id": "1131839817982947429",
+      "content": "沒有人：\n野貓：",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1369669171620745329",
       "content": "Greetings, Keepers!\n    Today we are bringing you a complete glossary of Wheel o",
       "author": "morimensstaff02",
       "reactions": 11,
       "channel": "Complete glossary of Wheel of Destiny names"
+    },
+    {
+      "id": "1369604682325950527",
+      "channel_id": "1170692781216378960",
+      "content": "Maybe ryker if you're gay",
+      "author": "flares117",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1369691248784310444",
@@ -91,11 +127,27 @@
       "channel": "Murphy (Cropped Version)"
     },
     {
+      "id": "1369640269460406282",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "9029.",
+      "reactions": 8,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1369668725783138324",
       "content": "● Fixed the issue where \"Alumni Donation Fund\" could not be claimed.\n● Fixed the",
       "author": "morimensstaff02",
       "reactions": 8,
       "channel": "V2.2.1.3 在線維護公告"
+    },
+    {
+      "id": "1369606248668074136",
+      "channel_id": "1170692781216378960",
+      "content": "Cause it never occurred to me someone would use it for that",
+      "author": "flares117",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1369589878429454367",
@@ -112,6 +164,22 @@
       "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
     },
     {
+      "id": "1369613577144500264",
+      "channel_id": "1170692781216378960",
+      "content": "average morimons translation experience",
+      "author": "khykken",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369785912954847402",
+      "channel_id": "1173463482503536711",
+      "content": "佬都博學多聞",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1369589148499054603",
       "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：無還的血與沙，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同人規",
       "author": "morimensstaff01",
@@ -119,81 +187,43 @@
       "channel": "忘卻前夜OST：無還的血與沙"
     },
     {
+      "id": "1369601375968825384",
+      "channel_id": "1170692781216378960",
+      "content": "In most of the standard banners, the highlight for the flavor text is \"Call upon",
+      "author": "kevsalvador",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369606532903469086",
+      "channel_id": "1170692781216378960",
+      "content": "Soo I have 102 limited pulls right now, f2p user, do I try to pull on Corp or do",
+      "author": "valaery",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369698439545356411",
+      "channel_id": "1300659495550062592",
+      "content": "<:angry2:1356053025034338505> <:angry2:1356053025034338505> <:angry2:13560530250",
+      "author": "floren_67_54933",
+      "reactions": 4,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1369484794043437066",
+      "channel_id": "1131839817982947429",
+      "content": "深海反有呼吸了！……現在是可以活到王關只是打不死對面的植物人",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1369668198999527516",
       "content": "守密人你好：\n       彌薩格大學校務處將於5月7日21:40進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準",
       "author": "morimensstaff02",
       "reactions": 4,
       "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1369584274558418974",
-      "content": "Hola <@1131790839291596841> espero que estés bien <:hug:1356083899553288382> .  ",
-      "author": "Deleted User",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1369711689775316992",
-      "content": "https://tenor.com/view/morimens-murphy-irish-irish-princess-gacha-gif-4210723630",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "Murphy (Cropped Version)"
-    },
-    {
-      "id": "1369562331901591604",
-      "content": "<@854689680305160212>「我在看著你…👁️ 」恭喜獲得200銀芯獎勵，請把遊戲UID私訊給我~\n«Я наблюдаю за тобой...",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
-    },
-    {
-      "id": "1369689103813185645",
-      "content": "we need that archive section up and running",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "Complete glossary of Wheel of Destiny names"
-    },
-    {
-      "id": "1369549792987975775",
-      "content": "再看看 我其實也挺想的",
-      "author": "lingcheng.0",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1369682840962465824",
-      "content": "我们有计划增加这个提示功能，还需要一些时间。",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
-    },
-    {
-      "id": "1369704834751660112",
-      "content": "她不是蟲我喜歡什麼，你以為我的xp是人類嗎",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
-    },
-    {
-      "id": "1369543195230208122",
-      "content": "U DID IT WOOOO <a:LETSGO:909313455482347530> <:gooned:1323426486543454332> <a:Su",
-      "author": "meatyexplosions",
-      "reactions": 1,
-      "channel": "Goliath"
-    },
-    {
-      "id": "1369694749006631002",
-      "content": "Aaaaah, phone user, now I understand",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "Murphy (Cropped Version)"
-    },
-    {
-      "id": "1369562126825422998",
-      "content": "<@735137568307282011> 美麗的路邊似乎潛藏著「危機」~恭喜keeper獲得200銀芯獎勵，請把遊戲UID私訊給我~\nThe beautifu",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     }
   ]
 }

@@ -1,10 +1,36 @@
 {
   "date": "2025-11-10",
-  "messages": 207,
-  "unique_authors": 65,
-  "reactions_total": 957,
-  "attachments": 79,
+  "messages": 18032,
+  "unique_authors": 211,
+  "reactions_total": 3829,
+  "attachments": 946,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 36,
+    "🐱light’s-nest": 6,
+    "🔸game-question": 955,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 597,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 13,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 9,
+    "🔸deutscher-chatraum": 6,
+    "🔸русский-канал": 558,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 276,
+    "🔸canal-português": 341,
+    "🔸ruang-obrolan-indonesia": 348,
+    "🔸ห้องสนทนาภาษาไทย": 82,
+    "🔸traphase": 236,
+    "🔸lore-chat": 61,
+    "🔸lets-count": 48,
+    "🔸频道建议┊server-suggestions": 9,
+    "🔸team-building": 840,
+    "🔸general-chat": 5321,
+    "🔸綜合討論": 919,
+    "🔸morimens-game-chat": 7149,
     "Kathigu-Ra: Ardor Blossom Star": 2,
     "[Birthday wishes for Caecus /0：00]": 2,
     "[Birthday wishes for Caecus /1：00]": 1,
@@ -46,61 +72,71 @@
     "【1111凯刻斯生贺/1:00】": 1,
     "【1111凯刻斯生贺/0:00】": 1,
     "「我還記得你原本應該是什麼樣子」": 1,
-    "🐱light’s-nest": 3,
     "1421408684776357929": 4,
     "1432654338982940783": 2
   },
   "hourly_activity": {
-    "17": 4,
-    "20": 2,
-    "16": 7,
-    "22": 6,
-    "14": 5,
-    "4": 5,
-    "5": 3,
-    "1": 12,
-    "12": 6,
-    "3": 8,
-    "8": 32,
-    "9": 13,
-    "10": 24,
-    "13": 9,
-    "15": 6,
-    "18": 3,
-    "19": 4,
-    "23": 3,
-    "7": 25,
-    "11": 6,
-    "6": 17,
-    "2": 5,
-    "21": 2
+    "0": 855,
+    "2": 544,
+    "3": 580,
+    "4": 911,
+    "5": 856,
+    "6": 978,
+    "10": 876,
+    "11": 898,
+    "13": 537,
+    "14": 693,
+    "15": 448,
+    "16": 684,
+    "18": 515,
+    "20": 1077,
+    "21": 544,
+    "22": 467,
+    "1": 679,
+    "7": 1038,
+    "8": 877,
+    "12": 984,
+    "17": 688,
+    "19": 883,
+    "23": 486,
+    "9": 934
   },
   "message_types": {
-    "0": 105,
-    "19": 19,
-    "6": 1,
-    "4": 1
+    "0": 1050,
+    "19": 486,
+    "20": 60
   },
   "top_reacted_messages": [
     {
       "id": "1437334461061533788",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 167,
+      "reactions": 173,
       "channel": "🐱light’s-nest"
     },
     {
       "id": "1437334432959696936",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 64,
+      "reactions": 68,
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1437390708637175839",
+      "channel_id": "1170692781216378960",
+      "content": "Is what I would say if it was actually out",
+      "author": "solxeko",
+      "reactions": 52,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1437334510181023897",
+      "channel_id": "1426837316533747823",
       "content": "<:processing:1357185814567718963> <:processing:1357185814567718963> <:processing",
       "author": "game.producer.light",
-      "reactions": 45,
+      "reactions": 46,
       "channel": "🐱light’s-nest"
     },
     {
@@ -188,6 +224,14 @@
       "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     },
     {
+      "id": "1437479264281952288",
+      "channel_id": "1170692781216378960",
+      "content": "At BIAV we don't believe in the color blue",
+      "author": "joker_0108",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1437578048730955837",
       "content": "Love goes to best boi <a:bongo_cat_heart:837451354095878185>",
       "author": "gumseoi",
@@ -202,25 +246,12 @@
       "channel": "💭「Processing」Material synthesis and conversion"
     },
     {
-      "id": "1437361829893640223",
-      "content": "",
-      "author": "aurora3981",
-      "reactions": 15,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
-    },
-    {
-      "id": "1437461449713914037",
-      "content": "",
-      "author": "ren3816",
-      "reactions": 15,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
-    },
-    {
-      "id": "1437349338333581333",
-      "content": "Here, take a little break <:M_satisfy:1400771690321154110>",
-      "author": "zekiei",
-      "reactions": 14,
-      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+      "id": "1437303164411056249",
+      "channel_id": "1170692781216378960",
+      "content": "🔥",
+      "author": "canker.thore",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

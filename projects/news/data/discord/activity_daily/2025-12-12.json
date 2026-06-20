@@ -1,10 +1,35 @@
 {
   "date": "2025-12-12",
-  "messages": 152,
-  "unique_authors": 20,
-  "reactions_total": 91,
-  "attachments": 29,
+  "messages": 15659,
+  "unique_authors": 282,
+  "reactions_total": 2005,
+  "attachments": 765,
   "channel_activity": {
+    "🔸lets-count": 23,
+    "🔸频道建议┊server-suggestions": 16,
+    "🔸team-building": 664,
+    "🔸general-chat": 131,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 2917,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 43,
+    "🔸morimens-game-chat": 6769,
+    "🔸剧情交流": 835,
+    "🔸晒卡分享": 76,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 44,
+    "🔸русский-канал": 110,
+    "🔸phòng-chat-tiếng-việt": 94,
+    "🔸canal-español": 206,
+    "🔸canal-português": 111,
+    "🔸ruang-obrolan-indonesia": 637,
+    "🔸ห้องสนทนาภาษาไทย": 16,
+    "🔸traphase": 10,
+    "🔸lore-chat": 1129,
+    "🔸綜合討論": 1518,
+    "🔸阵容构建": 132,
     "G Doll Fan Splash Art": 3,
     "中奖名单公布┊Lottery Winners Announced!": 1,
     "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊": 56,
@@ -37,29 +62,35 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "2": 2,
-    "6": 4,
-    "5": 5,
-    "10": 43,
-    "11": 20,
-    "20": 3,
-    "21": 7,
-    "16": 2,
-    "7": 20,
-    "3": 3,
-    "22": 12,
-    "23": 1,
-    "12": 8,
-    "13": 5,
-    "17": 7,
-    "19": 6,
-    "8": 2,
-    "14": 1,
-    "15": 1
+    "0": 394,
+    "2": 524,
+    "4": 842,
+    "5": 1203,
+    "6": 974,
+    "7": 630,
+    "9": 714,
+    "11": 725,
+    "14": 664,
+    "15": 1049,
+    "18": 698,
+    "19": 253,
+    "21": 527,
+    "22": 296,
+    "23": 310,
+    "13": 839,
+    "20": 376,
+    "1": 331,
+    "3": 589,
+    "8": 567,
+    "10": 778,
+    "12": 598,
+    "16": 782,
+    "17": 996
   },
   "message_types": {
-    "0": 44,
-    "19": 18
+    "0": 2913,
+    "19": 895,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -70,11 +101,91 @@
       "channel": "铲不完了先用草稿顶一下，总之好娜娜生日快乐"
     },
     {
+      "id": "1449065651971821598",
+      "channel_id": "1170692781216378960",
+      "content": "Idot is a masochist",
+      "author": "idiota__",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449056148501168152",
+      "channel_id": "1170692781216378960",
+      "content": "am i dumb?",
+      "author": "arandomflamev2",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449059633363812432",
+      "channel_id": "1170692781216378960",
+      "content": "Got my Castor in 10 pulls!",
+      "author": "egcyric",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448996967907594270",
+      "channel_id": "1170692781216378960",
+      "content": "realized tawil is F tier",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449056232429195547",
+      "channel_id": "1170692781216378960",
+      "content": "wait don't tuff react me",
+      "author": "arandomflamev2",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449073254953128028",
+      "channel_id": "1170692781216378960",
+      "content": "<@1164303137293729792> Clem best character cuz can make even uselessain playable",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449088234150957126",
+      "channel_id": "1170692781216378960",
+      "content": "<@330867601691639809> fck this bullshit",
+      "author": "melwyn7591",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448990353519804467",
       "content": "守密人你好：\n       弥萨格大学预计于12月15日08:00~12:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，",
       "author": "morimensstaff02",
       "reactions": 9,
       "channel": "V2.4.0.11 停服维护公告"
+    },
+    {
+      "id": "1448941669994205235",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "yurichansnails",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1448894813729587332",
+      "channel_id": "1170692781216378960",
+      "content": "Are there actually 4 24s or is it just what team she's in? Cuz I hear people say",
+      "author": "nexskala",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449175580393341070",
+      "channel_id": "1170692781216378960",
+      "content": "Your two important points about Doorstain—his design philosophy and understandin",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1449157947665158256",
@@ -84,6 +195,46 @@
       "channel": "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion"
     },
     {
+      "id": "1448989494156984383",
+      "channel_id": "1170692781216378960",
+      "content": "is it time to do lvl 3",
+      "author": "grimalkaiser",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448900137954054288",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449006905279385774",
+      "channel_id": "1326453763355185215",
+      "content": "Just did Pollux's frenzy, I laughed a bit that ||both brothers are panicking as ",
+      "author": "mami7284",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1448963820771999825",
+      "channel_id": "1131839817982947429",
+      "content": "看板娘專屬鑰令也結案了，維持神秘小光點封面<:Clown:1400771541423226971>",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448959396666277971",
+      "channel_id": "1131839874132090890",
+      "content": "血越少回越多，所以血越少血越多",
+      "author": "bohan0621",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1448939789993771179",
       "content": "連動這個",
       "author": "beach55",
@@ -91,116 +242,12 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
-      "id": "1448956855077310575",
-      "content": "or an event that forces you to use specific teams like some more uncommonly used",
-      "author": "weaselkingweasel",
+      "id": "1448901682145525842",
+      "channel_id": "1433513650299076780",
+      "content": "The game knows I just reset her with a pyramid.",
+      "author": "hitsu4",
       "reactions": 5,
-      "channel": "I believe a game mode with community made levels like mario maker would be pretty cool :)"
-    },
-    {
-      "id": "1448937798617796738",
-      "content": "Thank you for the suggestion. The project team will incorporate it into the plan",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Answered」About emote usage: Profile decoration and PvE emotes"
-    },
-    {
-      "id": "1448990089093972062",
-      "content": "不要理他",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1449167728551133234",
-      "content": "I was doing some testing on my alternate account with a full \"Lemuria\" team and ",
-      "author": "reya.li",
-      "reactions": 4,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449093660858912889",
-      "content": "Thanks! \n~~this is part of the final pic~~",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1448983774166651021",
-      "content": "嗨嗨嗨嗨嗨嗨，我是主線一路用菲茵特從1-1打到星辰有四章上半的常駐廚萊克N天生一對，我想來安麗上個月速通忘卻困難第七章的隊伍✌🏻如果能稍微幫到打算打下期活動拿銀",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991994599833641",
-      "content": "脾氣好（",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1449004495680835636",
-      "content": "我把+12迷失道路回溯了\nSSR 0~3疊應該只有14.4爆擊\n回溯成0疊 依然是滿疊位的數值\n\n多張截圖證明<:thumbsup:13560863402984",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "✅「已解决」良性bug"
-    },
-    {
-      "id": "1448985603956936778",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "✅「已回答」拉蒙娜專屬鑰令"
-    },
-    {
-      "id": "1448937976615669821",
-      "content": "感谢建议，项目组未来会将它纳入规划并落地",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」希望典藏館-事件的提示能夠更詳細一點"
-    },
-    {
-      "id": "1448910466956001331",
-      "content": "i had no idea i won the giveaway! never been this lucky in my life lol. thank yo",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "中奖名单公布┊Lottery Winners Announced!"
-    },
-    {
-      "id": "1448990452551516283",
-      "content": "有，不過是他",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991409020600390",
-      "content": "星辰篇的凱克斯受環境影響強度大跌",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991876995616829",
-      "content": "你如果不想看到的話直接封鎖就好",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448991893894598718",
-      "content": "他這甚至不是第二次而是至少第三次了🙄",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
-    },
-    {
-      "id": "1448992323865153648",
-      "content": "另一個嘴賤的人",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
+      "channel": "🔸game-question"
     }
   ]
 }

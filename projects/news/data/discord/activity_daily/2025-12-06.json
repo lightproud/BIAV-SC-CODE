@@ -1,10 +1,35 @@
 {
   "date": "2025-12-06",
-  "messages": 58,
-  "unique_authors": 16,
-  "reactions_total": 83,
-  "attachments": 22,
+  "messages": 17789,
+  "unique_authors": 265,
+  "reactions_total": 2310,
+  "attachments": 876,
   "channel_activity": {
+    "🔸lets-count": 21,
+    "🔸频道建议┊server-suggestions": 40,
+    "🔸team-building": 746,
+    "🔸general-chat": 1032,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 1121,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 58,
+    "🔸剧情交流": 25,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 18,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 487,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 276,
+    "🔸phòng-chat-tiếng-việt": 30,
+    "🔸canal-español": 238,
+    "🔸canal-português": 142,
+    "🔸ruang-obrolan-indonesia": 170,
+    "🔸ห้องสนทนาภาษาไทย": 344,
+    "🔸traphase": 125,
+    "🔸lore-chat": 155,
+    "🔸綜合討論": 1944,
+    "🔸阵容构建": 18,
+    "🔸morimens-game-chat": 10706,
     "The girl that brings misfortune (Aigis)": 2,
     "Detailed Damage Formula Graphic": 3,
     "Beginner Navigation Guide": 1,
@@ -28,35 +53,91 @@
     "1241345906826153984": 3
   },
   "hourly_activity": {
-    "23": 10,
-    "17": 10,
-    "21": 1,
-    "22": 1,
-    "18": 1,
-    "11": 4,
-    "5": 2,
-    "14": 1,
-    "0": 3,
-    "4": 10,
-    "6": 2,
-    "13": 1,
-    "15": 3,
-    "3": 4,
-    "20": 1,
-    "12": 3,
-    "10": 1
+    "0": 600,
+    "1": 418,
+    "2": 519,
+    "3": 583,
+    "6": 554,
+    "7": 476,
+    "8": 862,
+    "9": 951,
+    "10": 1114,
+    "11": 919,
+    "13": 953,
+    "15": 1034,
+    "19": 509,
+    "20": 355,
+    "21": 502,
+    "16": 1291,
+    "17": 705,
+    "18": 604,
+    "4": 609,
+    "5": 868,
+    "12": 852,
+    "14": 1194,
+    "22": 719,
+    "23": 598
   },
   "message_types": {
-    "0": 9,
-    "19": 5
+    "0": 2211,
+    "19": 818,
+    "20": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1446729700562047019",
+      "channel_id": "1400750050208125010",
+      "content": "-ban <@606955103601295381>  banned for repeatedly creating drama, baiting other ",
+      "author": "craux.",
+      "reactions": 60,
+      "channel": "🔸general-chat"
+    },
     {
       "id": "1447008109720768653",
       "content": "",
       "author": "kirikonuto",
       "reactions": 24,
       "channel": "The girl that brings misfortune (Aigis)"
+    },
+    {
+      "id": "1446878316601806988",
+      "channel_id": "1170692781216378960",
+      "content": "yk that reminds me maybe my monthly dupes will be slowly spent on oe tawiwi",
+      "author": "tatsutets",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446884543247155300",
+      "channel_id": "1170692781216378960",
+      "content": "Dont 🫃  listen 🫃 this chat.They 🫃 just poor 🫃 🫃 and hate🫃  all ppls who can use ",
+      "author": "undeterredhomo",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446897094186107069",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "_pix4l",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1446792928566444206",
+      "channel_id": "1170692781216378960",
+      "content": "go outside",
+      "author": "grass6247",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446887418585153599",
+      "channel_id": "1170692781216378960",
+      "content": "<:cough:1356082510928543834>",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1446829311758696498",
@@ -73,6 +154,22 @@
       "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
     },
     {
+      "id": "1446789999835086909",
+      "channel_id": "1174983699935277147",
+      "content": "抽到啦，没有歪。呼，算是抽完限定池的了。",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1446712888285986947",
+      "channel_id": "1170692781216378960",
+      "content": "this is very funny to me since in a way goya is straight-up admitting that pollu",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1446891464775700561",
       "content": "我之前存档的那个楼咋找不到了（茫然）\n继续存，画风摸索中",
       "author": "yuuuuuuu__0103",
@@ -80,81 +177,68 @@
       "channel": "重开个存档楼）"
     },
     {
-      "id": "1446842329376882799",
-      "content": "有去上課感覺畫黑色塊的技巧有提升 開心",
-      "author": "carrot_chicken",
+      "id": "1446885801706393710",
+      "channel_id": "1170692781216378960",
+      "content": "I own unequal exchange",
+      "author": "nactra",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446724403587977392",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/mods-mod-miguel-gato-cat-gif-22365379\n\nHes lying, I didn'",
+      "author": "dyssayah",
       "reactions": 7,
-      "channel": ""
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1446720201797406802",
-      "content": "這劇情怎麼連回放都能入侵",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
+      "id": "1446728448931532870",
+      "channel_id": "1400750050208125010",
+      "content": "IM FREE FROM EXAMS \nYEAHH",
+      "author": "forsmile0",
+      "reactions": 7,
+      "channel": "🔸general-chat"
     },
     {
-      "id": "1446806809074602066",
-      "content": "The existing official art is nice but I find it kind of hard to reference when t",
-      "author": "serialexperimentsmid",
-      "reactions": 5,
-      "channel": "Will official character design reference sheets of Awakeners and Characters be created?"
+      "id": "1446756780398084127",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1446988263129874504",
-      "content": "Hahahah\nRats: rat about corpo racism bug\nBlesser gets a massive buff*\nWhen will ",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "Detailed Damage Formula Graphic"
+      "id": "1446829221354930206",
+      "channel_id": "1131839817982947429",
+      "content": "我破防了",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1446931443249975376",
-      "content": "This was initially started when I played the game for 2 months and I wanted a \"s",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "Beginner Navigation Guide"
+      "id": "1446714436638343220",
+      "channel_id": "1170692781216378960",
+      "content": "I will NOT be able to contain myself. It is on SITE with that mother fucker.",
+      "author": "mitsukinanoka__",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1446825727449239737",
-      "content": "Can i have your profile picture",
-      "author": "._.aahh",
-      "reactions": 2,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+      "id": "1446715918532083813",
+      "channel_id": "1170692781216378960",
+      "content": "Sorry she* i misgender my wife to lower her confidence so she depends on my vali",
+      "author": "mitsukinanoka__",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1446916344590241863",
-      "content": "達芙戴爾路過後，拉蒙娜提醒詹金的對話前後文有衝突\n最近在重看劇情，希望我不會太頻繁出現在這裡 <:Clown:1400771541423226971>\n\n喔，還",
-      "author": "soleil_sun",
-      "reactions": 2,
-      "channel": "💭「处理中」2-2【三條規則】前後文衝突、其他文案繁體化有誤（錯字）"
-    },
-    {
-      "id": "1446829380469915658",
-      "content": "Thanks",
-      "author": "._.aahh",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1446757133562413179",
-      "content": "我打開目標資料夾裡面只有一個檔案，所以我把整個資料夾壓縮傳給你們。",
-      "author": "o5214658",
-      "reactions": 1,
-      "channel": "✅「已回答」繁中PC端黑屏"
-    },
-    {
-      "id": "1446962464330743961",
-      "content": "I used to be able to click on my team and see how many stacks of metaphor I have",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "✅「Answered」Stacks Missing in Battle"
-    },
-    {
-      "id": "1446910496849662105",
-      "content": "<:processing:1357185814567718963>",
-      "author": "ququ12358",
-      "reactions": 1,
-      "channel": ""
+      "id": "1446803695756115989",
+      "channel_id": "1170692781216378960",
+      "content": "Anywyas need to fly now",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

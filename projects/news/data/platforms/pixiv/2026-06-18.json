@@ -1,8 +1,8 @@
 {
   "date": "2026-06-18",
-  "archived_at": "2026-06-17T17:46:06.394077+00:00",
+  "archived_at": "2026-06-20T07:44:41.056275+00:00",
   "source": "pixiv",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "ゴリリオつめ",
@@ -57,6 +57,19 @@
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/17/21/37/15/146125659_p0_square1200.jpg",
       "content_type": "image"
+    },
+    {
+      "title": "",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-17T19:58:55.039256+00:00",
+      "url": "https://www.pixiv.net/artworks/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global"
     }
   ]
 }

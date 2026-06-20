@@ -1,10 +1,23 @@
 {
   "date": "2025-07-11",
-  "messages": 31,
-  "unique_authors": 9,
-  "reactions_total": 89,
-  "attachments": 9,
+  "messages": 8748,
+  "unique_authors": 188,
+  "reactions_total": 1001,
+  "attachments": 370,
   "channel_activity": {
+    "🔸morimens-game-chat": 7691,
+    "🔸deutscher-chatraum": 5,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 3,
+    "🔸phòng-chat-tiếng-việt": 132,
+    "🔸canal-español": 80,
+    "🔸canal-português": 45,
+    "🔸ruang-obrolan-indonesia": 114,
+    "🔸ห้องสนทนาภาษาไทย": 26,
+    "🔸traphase": 123,
+    "🔸lore-chat": 22,
+    "🔸綜合討論": 459,
+    "🔸阵容构建": 15,
     "Aurita First Big Mission Briefing": 1,
     "Tulu Being Sleepy": 2,
     "drowsy king": 1,
@@ -20,25 +33,34 @@
     "Slay the Spire Morimens Mod Text Provided Post": 8
   },
   "hourly_activity": {
-    "2": 2,
-    "6": 2,
-    "21": 1,
-    "4": 1,
-    "23": 1,
-    "11": 1,
-    "14": 2,
-    "3": 3,
-    "0": 1,
-    "7": 3,
-    "8": 2,
-    "17": 1,
-    "18": 2,
-    "10": 2,
-    "13": 7
+    "0": 151,
+    "1": 193,
+    "2": 428,
+    "3": 656,
+    "4": 363,
+    "5": 497,
+    "6": 283,
+    "7": 571,
+    "8": 285,
+    "9": 283,
+    "10": 376,
+    "11": 331,
+    "12": 202,
+    "13": 336,
+    "14": 500,
+    "15": 569,
+    "16": 779,
+    "17": 271,
+    "18": 379,
+    "19": 424,
+    "20": 422,
+    "21": 312,
+    "22": 58,
+    "23": 79
   },
   "message_types": {
-    "0": 10,
-    "19": 2
+    "0": 5657,
+    "19": 2586
   },
   "top_reacted_messages": [
     {
@@ -63,6 +85,54 @@
       "channel": "drowsy king"
     },
     {
+      "id": "1393134449893576807",
+      "channel_id": "1170692781216378960",
+      "content": "be so fr how lucky am i ...",
+      "author": "bobi_tea",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393328415997689989",
+      "channel_id": "1131839817982947429",
+      "content": "哦豁",
+      "author": "flarinsidia",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393183634139385886",
+      "channel_id": "1170692781216378960",
+      "content": "Anyways it's Tulu, Goliath, Caecus and naurilus",
+      "author": "mistakendoge",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393045210958921899",
+      "channel_id": "1131839817982947429",
+      "content": "沒抽到我鯊我破防",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1393342401661108317",
+      "channel_id": "1170692781216378960",
+      "content": "like look at it ugh",
+      "author": "ev_6185",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393067668025638953",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ioshift_24740",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1393067500903596043",
       "content": "**⭐「旧日梦呓」忘却篇-镭射票补货说明⭐**\n各位守密人，第二批「旧日梦呓」忘却篇-镭射票将陆续上架淘宝“灵犀互娱官方旗舰店”：https://s.tb.cn",
       "author": "morimensstaff01",
@@ -70,60 +140,84 @@
       "channel": "🚚周边补货说明┊Official Merchandise Restock Notice"
     },
     {
-      "id": "1393088731438776352",
-      "content": "horlaaaaa",
+      "id": "1393215133848961147",
+      "channel_id": "1170692781216378960",
+      "content": "Love this game",
+      "author": "bo.re.d",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393304992580108299",
+      "channel_id": "1170692781216378960",
+      "content": "Boys I need to your opinion.  Ive played for exactly 9 days. Summoned a bit on t",
+      "author": "akatora_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1393314600040005662",
+      "channel_id": "1170692781216378960",
+      "content": "woah hi there",
       "author": "fishhazardthewizard",
-      "reactions": 4,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393186988269768787",
-      "content": "sweet !",
-      "author": "sexysneakystoat1625",
-      "reactions": 3,
-      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
+      "id": "1393186156505468999",
+      "channel_id": "1170692781216378960",
+      "content": "This ball",
+      "author": "pamants",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393283292656304229",
-      "content": "I suggest adding (HP + Shield) number next to the total incoming damage number s",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "✅Add HP + Shield UI"
+      "id": "1393328582457294851",
+      "channel_id": "1170692781216378960",
+      "content": "Credit card front and back uncensored (this is a joke)",
+      "author": "ev_6185",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393296523860775015",
-      "content": "We’ll take it into consideration, thank you!",
-      "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "✅Add HP + Shield UI"
+      "id": "1393156099879993394",
+      "channel_id": "1170692781216378960",
+      "content": "~~Ernest and Light, cat gay, well and good~~",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393061621059817523",
-      "content": "This is  literally my main team for story content",
-      "author": "shadowemperor7636",
-      "reactions": 2,
-      "channel": "Aurita First Big Mission Briefing"
+      "id": "1393180991849369611",
+      "channel_id": "1170692781216378960",
+      "content": "i beat it 😭😭",
+      "author": "kshv0.7",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393178803181846610",
-      "content": "i use windows 11 and i downloaded the game on mobile it works fine there. so i g",
-      "author": "asura2526",
-      "reactions": 2,
-      "channel": "💭「Processing」Error 7028001"
+      "id": "1393280155392151752",
+      "channel_id": "1170692781216378960",
+      "content": "im on 9-11 rn and im struggling to beat it",
+      "author": "nick0121203",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393078472834023565",
-      "content": "哇刚说就收到了，谢谢！<:pray:1356053116260454534>",
-      "author": "kepler0519",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
+      "id": "1393341417132130506",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890> pandia player that mute every sound and skip st",
+      "author": "moyashi0672",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1393183588450697236",
-      "content": "A figure in the mist\n\nThick fog swiftly engulfed the surroundings. The damp, icy",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1393246177499283506",
+      "channel_id": "1131839874132090890",
+      "content": "~~四小強~~<:camera:1356053040251146460>",
+      "author": "wild_pansy",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
     }
   ]
 }

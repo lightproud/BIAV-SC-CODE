@@ -1,10 +1,33 @@
 {
   "date": "2025-11-15",
-  "messages": 189,
-  "unique_authors": 26,
-  "reactions_total": 439,
-  "attachments": 20,
+  "messages": 18123,
+  "unique_authors": 196,
+  "reactions_total": 3151,
+  "attachments": 689,
   "channel_activity": {
+    "🔸general-chat": 6254,
+    "🔸邀请码互助┊swap-invitation-codes": 23,
+    "🔸game-question": 1017,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 160,
+    "🔸晒卡分享": 9,
+    "🔸相位对弈": 14,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 10,
+    "🔸русский-канал": 550,
+    "🔸phòng-chat-tiếng-việt": 8,
+    "🔸canal-español": 31,
+    "🔸canal-português": 107,
+    "🔸ruang-obrolan-indonesia": 540,
+    "🔸ห้องสนทนาภาษาไทย": 672,
+    "🔸traphase": 487,
+    "🔸lore-chat": 630,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 92,
+    "🔸频道建议┊server-suggestions": 38,
+    "🔸team-building": 362,
+    "🔸綜合討論": 757,
+    "🔸morimens-game-chat": 6170,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 1,
     "A Small Problem": 1,
     "Gmurphy Art": 2,
@@ -25,41 +48,65 @@
     "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story": 1,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 1,
     "墨菲水手服？！": 2,
-    "🔸服务器公告┊server-announcement": 1,
     "1423337172655935600": 6
   },
   "hourly_activity": {
-    "12": 19,
-    "22": 1,
-    "11": 33,
-    "16": 64,
-    "9": 4,
-    "6": 7,
-    "3": 1,
-    "7": 9,
-    "10": 1,
-    "14": 11,
-    "15": 10,
-    "19": 1,
-    "13": 6,
-    "17": 1,
-    "23": 1,
-    "5": 1,
-    "4": 8,
-    "8": 6,
-    "0": 5
+    "0": 497,
+    "1": 468,
+    "2": 974,
+    "3": 1012,
+    "4": 1093,
+    "5": 687,
+    "6": 736,
+    "7": 922,
+    "8": 464,
+    "9": 528,
+    "10": 403,
+    "11": 1381,
+    "12": 1631,
+    "13": 1372,
+    "14": 1710,
+    "15": 961,
+    "16": 900,
+    "17": 476,
+    "18": 451,
+    "19": 274,
+    "20": 291,
+    "21": 343,
+    "22": 410,
+    "23": 139
   },
   "message_types": {
-    "0": 73,
-    "19": 22
+    "0": 4832,
+    "19": 2591,
+    "20": 24,
+    "23": 5,
+    "46": 3
   },
   "top_reacted_messages": [
     {
       "id": "1439232520951562332",
+      "channel_id": "1354754985119846581",
       "content": "Hello everyone,\n\nAs you all are aware we are updating our server rules to create",
       "author": "cometovilla",
-      "reactions": 281,
+      "reactions": 282,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1439267196760100935",
+      "channel_id": "1170692781216378960",
+      "content": "There really will be a lot of bugs for a while. We’ll fix them as soon as we can",
+      "author": "game.producer.light",
+      "reactions": 58,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439087710357946389",
+      "channel_id": "1385040039448412170",
+      "content": "Again.. We understand the game is borderline rated R.  But like I said we are un",
+      "author": "cometovilla",
+      "reactions": 44,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1439185535644995644",
@@ -69,11 +116,107 @@
       "channel": "3+1 [Pollux and Castor Fanfic]"
     },
     {
+      "id": "1439245852014284820",
+      "channel_id": "1385040039448412170",
+      "content": "Hey, everyone, please don't get upset🙏 \nWe sincerely apologize for the fact that",
+      "author": "morimensstaff01",
+      "reactions": 32,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1439269975910252745",
+      "channel_id": "1170692781216378960",
+      "content": "I’m very glad everyone likes this skin. We’ll bring it to the global server in a",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439262349558288414",
+      "channel_id": "1400750050208125010",
+      "content": "I believe that Flare's guide section for the awakener Clementine is highly inapp",
+      "author": "vinsette",
+      "reactions": 15,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1439100704827642069",
+      "channel_id": "1355630588094320661",
+      "content": "1818",
+      "author": "syruponstrawberrycake",
+      "reactions": 15,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1439271243479253236",
+      "channel_id": "1170692781216378960",
+      "content": "We really do need to take a break. Recently, many team members haven’t had any d",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439322690694549726",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 14,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1439073919016505375",
+      "channel_id": "1385040039448412170",
+      "content": "Summary of my main concerns with using a swear filter.\n1. Stopping people from s",
+      "author": "dispotato",
+      "reactions": 14,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
       "id": "1439386065143336970",
       "content": "Get out of there, Ryker. No more games, i'm trying to think here.",
       "author": "ykarus.obs",
       "reactions": 14,
       "channel": "A Small Problem"
+    },
+    {
+      "id": "1439053353220046908",
+      "channel_id": "1385040039448412170",
+      "content": "This perceived degree of \"peace\" comes at the cost of people having to tiptoe ar",
+      "author": "zier.0",
+      "reactions": 13,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1439274823544082596",
+      "channel_id": "1170692781216378960",
+      "content": "We really enjoyed creating this event, but it did put an even heavier strain on ",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439390297560846541",
+      "channel_id": "1170692781216378960",
+      "content": "No need to play someone u hate gameplay off if it gonna make u unhappy. Fun and ",
+      "author": "red_rest",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1439088176449716284",
+      "channel_id": "1385040039448412170",
+      "content": "Discord ToS does not have a rule against cursing or swearing.",
+      "author": "vinsette",
+      "reactions": 12,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1439263445894561994",
+      "channel_id": "1170692781216378960",
+      "content": "sеx",
+      "author": "tnimreppep",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1439144587368206418",
@@ -90,109 +233,12 @@
       "channel": "V2.4.0.0 停服维护公告"
     },
     {
-      "id": "1439227104381370448",
-      "content": "cause no one plays tulu",
-      "author": "rain_scarlet",
-      "reactions": 9,
-      "channel": "V2.4.0.0 停服维护公告"
-    },
-    {
-      "id": "1439105622309343356",
-      "content": "为什么服务器上会有这些角色名称？我不明白“术士”、“幽灵”、“诅咒”和“凡人”与《忘卻前夜》有什么关系？这个服务器现在变成了修仙网文吗？凡人和术士和洛夫克拉夫特",
-      "author": "tksn.",
-      "reactions": 8,
-      "channel": "✅「已回答」仙网"
-    },
-    {
-      "id": "1439145481996599389",
-      "content": "最後 這是第一次發這種需要邏輯的長文 若有不清楚或冒犯到誰的請見諒",
-      "author": "linling.xup615",
-      "reactions": 7,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439222028698914837",
-      "content": "都有在派股息（叠加奖励）<:processing:1357185814567718963>",
-      "author": "cs001092",
-      "reactions": 7,
-      "channel": "V2.4.0.0 停服维护公告"
-    },
-    {
-      "id": "1439289624567484688",
-      "content": "我也好你也罢大家都是利莫里亚了",
-      "author": "junakaru4ever",
-      "reactions": 6,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439108402646224896",
-      "content": "這很正常啊，畢竟校貓都開啟搞起歧視了（Sp墨）現在所有角色都爭相入籍神國",
-      "author": "corposant_1003",
-      "reactions": 6,
-      "channel": "✅「已回答」仙网"
-    },
-    {
-      "id": "1439253486599671838",
-      "content": "There is a bug in the English localization with a description of Caren's ult. My",
-      "author": "shyva2",
-      "reactions": 6,
-      "channel": "💭「Processing」bug in the description Caren ult"
-    },
-    {
-      "id": "1439340324949332098",
-      "content": "BuffGmurphy",
-      "author": "sexysneakystoat1625",
-      "reactions": 5,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439152561952395316",
-      "content": "別告訴當初給你看了，還說給自己的內部人員做參考了。\n\n很明顯沒有甚至敷衍。尤其是船長，他的覺醒只有一點是有符合我說要有的，但卻就做那一個。\n\n結果給你那麼多時間",
-      "author": "suggestion088922",
-      "reactions": 4,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439291482463932466",
-      "content": "~~所以我選擇先罵為敬🤓 ~~",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439139965501182034",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 3,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1439151424494895104",
-      "content": "講了，也不清楚小貓要不要看了，甚至給你一大堆時間設計，卻是這樣的。給你範本了不看給你真正的設計也不看，然後搬日服的垃圾設定過來就叫神國。\n\n我告訴妳，這叫自殺甚",
-      "author": "suggestion088922",
-      "reactions": 2,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1439187178470248498",
-      "content": "This is my favorite Morimens fanfic set ever truthfully <:M_satisfy:140077169032",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "3+1 [Pollux and Castor Fanfic]"
-    },
-    {
-      "id": "1439107943151697920",
-      "content": "don’t disrespect <@523084324724146193> the egirl aigis dogger like that",
-      "author": "frowningquokka",
-      "reactions": 2,
-      "channel": "✅「已回答」仙网"
-    },
-    {
-      "id": "1439246707098386543",
-      "content": "In the main story, we first meet Goliath in the new world when the Seafarers try",
-      "author": "theborkerr",
-      "reactions": 2,
-      "channel": "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story"
+      "id": "1439269282830614649",
+      "channel_id": "1170692781216378960",
+      "content": "Although we’re growing and now have more Keepers than ever before, we still need",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

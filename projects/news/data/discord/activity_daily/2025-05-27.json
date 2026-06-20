@@ -1,10 +1,26 @@
 {
   "date": "2025-05-27",
-  "messages": 111,
-  "unique_authors": 18,
-  "reactions_total": 58,
-  "attachments": 16,
+  "messages": 12495,
+  "unique_authors": 281,
+  "reactions_total": 849,
+  "attachments": 667,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 9234,
+    "🔸剧情交流": 4,
+    "🔸课间休息闲聊": 5,
+    "🔸交友频道": 37,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 396,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 648,
+    "🔸phòng-chat-tiếng-việt": 49,
+    "🔸canal-español": 302,
+    "🔸canal-português": 244,
+    "🔸ruang-obrolan-indonesia": 611,
+    "🔸ห้องสนทนาภาษาไทย": 197,
+    "🔸lets-count": 1,
+    "🔸綜合討論": 642,
     "aomi’s morimens dump": 1,
     "Helot - Catena": 1,
     "New Beginner video for players joining during Half Anni.": 1,
@@ -42,28 +58,44 @@
     "弥萨格校友号码本4.0": 3
   },
   "hourly_activity": {
-    "8": 3,
-    "23": 4,
-    "15": 2,
-    "3": 7,
-    "7": 27,
-    "13": 5,
-    "9": 3,
-    "1": 1,
-    "5": 10,
-    "10": 17,
-    "11": 3,
-    "12": 4,
-    "4": 7,
-    "14": 2,
-    "6": 15,
-    "22": 1
+    "5": 508,
+    "0": 304,
+    "1": 280,
+    "2": 248,
+    "3": 551,
+    "4": 425,
+    "6": 835,
+    "7": 899,
+    "8": 263,
+    "9": 528,
+    "10": 544,
+    "11": 333,
+    "12": 505,
+    "13": 755,
+    "14": 742,
+    "15": 650,
+    "16": 560,
+    "17": 624,
+    "18": 623,
+    "19": 475,
+    "20": 674,
+    "21": 329,
+    "22": 483,
+    "23": 357
   },
   "message_types": {
-    "0": 34,
-    "19": 6
+    "0": 8180,
+    "19": 3562
   },
   "top_reacted_messages": [
+    {
+      "id": "1376927174904516688",
+      "channel_id": "1170692781216378960",
+      "content": "yup\nand then guess what tentacle penetration is in this game",
+      "author": "sexysneakystoat1625",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1377069952393281556",
       "content": "I'm only wearing the base color, I hope to finish soon, I'll upload how it turns",
@@ -72,11 +104,43 @@
       "channel": "Helot - Catena"
     },
     {
+      "id": "1376925545538785381",
+      "channel_id": "1170692781216378960",
+      "content": "Gatcha players can't read",
+      "author": "rain_scarlet",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1376869238618456168",
       "content": "比起一个个刷，不如是到达里程碑后所有玩家一起获得奖励",
       "author": "rain_scarlet",
       "reactions": 7,
       "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1376816999551860737",
+      "channel_id": "1170692781216378960",
+      "content": "\"hey so dont sin like this, *sin like this*.\"",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376974990854848523",
+      "channel_id": "1170692781216378960",
+      "content": "i dont even want to look at arc 1 anymore",
+      "author": "noire_2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376885497485328445",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1376842250125971547",
@@ -100,6 +164,30 @@
       "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
     },
     {
+      "id": "1376893579888164956",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "rikka3103",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1377005651762479235",
+      "channel_id": "1170692781216378960",
+      "content": "Hey, my friend drew my OC as the Clementine reference, cause they are both moths",
+      "author": "irrational_obelisk",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1376714871915155527",
+      "channel_id": "1194835209242296410",
+      "content": "上課用手機",
+      "author": "akkom730",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
       "id": "1376863199718277140",
       "content": ".",
       "author": ".galeroar",
@@ -107,81 +195,52 @@
       "channel": "💭「處理中」塔薇放功了"
     },
     {
-      "id": "1376869443321466922",
-      "content": "hh其实老东西打的也很累，虽然能通关但是真的很需要减负扫荡……新人我都不敢想，这活动就是对新人很不友好",
-      "author": "nowimfaceless",
-      "reactions": 2,
-      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+      "id": "1376813460293419079",
+      "channel_id": "1170692781216378960",
+      "content": "i goon to evelynn in league of legends and that girl is next",
+      "author": "arturtia",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376930764788203611",
-      "content": "收回分解资源，返还角色，上限改为20，要抽60个",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了"
+      "id": "1376928189019852820",
+      "channel_id": "1170692781216378960",
+      "content": "I just relied on my memory",
+      "author": "noire_2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1376758997713162380",
-      "content": "本來就很爛了\n\n經歷昨天刷活動\n助戰更亂了\n\n今天打血希活動 刷新不到常借的那位\n\n像是可以增加搜尋喚醒體或是其UID/名字\n\n<:cry2:135606812",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "助戰求優化"
+      "id": "1376824617104052265",
+      "channel_id": "1131839817982947429",
+      "content": "為了雙滿 SP墨菲 我不能被欺騙",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376773565701165186",
-      "content": "Hi, a friend of mine started playing the game today during the current event and",
-      "author": "kaanny",
-      "reactions": 2,
-      "channel": "✅「Answered」Bug locks you into first pulls instruction"
+      "id": "1376825092931190805",
+      "channel_id": "1131839817982947429",
+      "content": "不敢丟😂",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1377059641703534694",
-      "content": "20 times a day is a lot of time to put in front of players, I know no one is for",
-      "author": "foxblood13",
-      "reactions": 2,
-      "channel": "1.5 Event Grind"
+      "id": "1377056913665294408",
+      "channel_id": "1131839817982947429",
+      "content": "一早看到這個也給太多了吧11000 WoW",
+      "author": "taayoui",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1376896560972955711",
-      "content": "<:24_clown:1374289675417686016>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
-    },
-    {
-      "id": "1377061906795331704",
-      "content": "<@&1166257943742787615> \n<@1131790839291596841>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "💭「Processing」Aliemus text bug"
-    },
-    {
-      "id": "1376816299346362438",
-      "content": "Very sorry, the issue is due to an English translation error in the card pool de",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Misleading or wrong information in Kaleido banner"
-    },
-    {
-      "id": "1376809007057993728",
-      "content": "I will investigate the situation and give you a response once I have results~🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Bug in card descriptions."
-    },
-    {
-      "id": "1376804013659652146",
-      "content": "Hi~Please take a look at the description in the announcement🫶 \nThe English descr",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug - cannot claim skin ticket after 20 fights"
-    },
-    {
-      "id": "1376776886256140420",
-      "content": "100445763",
-      "author": "universe.dark",
-      "reactions": 1,
-      "channel": "弥萨格校友号码本4.0"
+      "id": "1376724036070936706",
+      "channel_id": "1170692781216378960",
+      "content": "Fuck her",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

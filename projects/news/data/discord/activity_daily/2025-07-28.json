@@ -1,10 +1,26 @@
 {
   "date": "2025-07-28",
-  "messages": 116,
-  "unique_authors": 15,
-  "reactions_total": 151,
-  "attachments": 25,
+  "messages": 18117,
+  "unique_authors": 379,
+  "reactions_total": 2040,
+  "attachments": 1021,
   "channel_activity": {
+    "🔸lore-chat": 962,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸morimens-game-chat": 12131,
+    "🔸晒卡分享": 4,
+    "🔸课间休息闲聊": 11,
+    "🔸한국어-채팅방": 416,
+    "🔸chaîne-française": 11,
+    "🔸русский-канал": 784,
+    "🔸phòng-chat-tiếng-việt": 87,
+    "🔸canal-español": 525,
+    "🔸canal-português": 579,
+    "🔸ruang-obrolan-indonesia": 290,
+    "🔸ห้องสนทนาภาษาไทย": 317,
+    "🔸traphase": 212,
+    "🔸綜合討論": 1659,
     "Modern AU Goliath": 2,
     "just thinking what to eat for the next meal": 1,
     "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper": 7,
@@ -41,29 +57,44 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "6": 13,
-    "13": 2,
-    "7": 4,
-    "15": 2,
-    "8": 18,
-    "0": 2,
-    "1": 5,
-    "5": 10,
-    "9": 3,
-    "12": 7,
-    "14": 5,
-    "4": 2,
-    "10": 7,
-    "11": 3,
-    "19": 2,
-    "3": 21,
-    "2": 10
+    "2": 969,
+    "3": 816,
+    "5": 700,
+    "6": 702,
+    "7": 722,
+    "8": 659,
+    "9": 567,
+    "10": 1155,
+    "11": 1260,
+    "12": 868,
+    "13": 716,
+    "16": 755,
+    "17": 566,
+    "18": 525,
+    "21": 591,
+    "23": 705,
+    "0": 771,
+    "19": 408,
+    "1": 929,
+    "4": 747,
+    "14": 798,
+    "15": 931,
+    "20": 578,
+    "22": 679
   },
   "message_types": {
-    "0": 15,
-    "19": 1
+    "0": 773,
+    "19": 202
   },
   "top_reacted_messages": [
+    {
+      "id": "1399210599111725128",
+      "channel_id": "1170692781216378960",
+      "content": "Hello Keepers! Sorry, some of the localization fixes that were supposed to be re",
+      "author": "morimens_15",
+      "reactions": 78,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1399283287368794132",
       "content": "Ok I usually post in CN fan art channel, but I like this one so I want to post i",
@@ -93,95 +124,123 @@
       "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
     },
     {
+      "id": "1399340800608829520",
+      "channel_id": "1326453763355185215",
+      "content": "sorry for causing difficulties in your reading\nit was somewhat long and I didn’t",
+      "author": "flarinsidia",
+      "reactions": 16,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399220684600643584",
+      "channel_id": "1326453763355185215",
+      "content": "Hey, just telling you that the proofread version of Miryam’s dreamscape seems to",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399341916855996458",
+      "channel_id": "1326453763355185215",
+      "content": "There were like 2k lines and I’m not a native English speaker and living in non-",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399197346088353923",
+      "channel_id": "1170692781216378960",
+      "content": "omg  I feel like quitting",
+      "author": "drunk.biscuit",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399255857996365864",
+      "channel_id": "1326453763355185215",
+      "content": "I’m sorry Miryam event interface still has machine translation issues; I fixed t",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399269422761381888",
+      "channel_id": "1170692781216378960",
+      "content": "okay I am free yay",
+      "author": "phonytail",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399513134074429571",
+      "channel_id": "1170692781216378960",
+      "content": "The Ratmobile",
+      "author": "fischperch",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399342223685980251",
+      "channel_id": "1326453763355185215",
+      "content": "actually for stories my favorite is 24’s and Wanda’s <:pray:1356053116260454534>",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399347404632883261",
+      "channel_id": "1326453763355185215",
+      "content": "hope that’s Bokrug",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1399211374550188213",
+      "channel_id": "1170692781216378960",
+      "content": "Alright hit OE thais",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399358699293638696",
+      "channel_id": "1170692781216378960",
+      "content": "Boys we did it we got 2k concurrent",
+      "author": "thecrimesivecommitted",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399362459541831721",
+      "channel_id": "1170692781216378960",
+      "content": "i am thaired of this",
+      "author": "drunk.biscuit",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399398563712073809",
+      "channel_id": "1170692781216378960",
+      "content": "LMFAO k*nky is banned",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399386833246490695",
+      "channel_id": "1131839817982947429",
+      "content": "<@557599119401811978> <@883992032530563082>",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1399285366682292254",
       "content": "hi guys it is me again Drawing Doresain.\n\nI love high ponytail and glasses , hop",
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "just thinking what to eat for the next meal"
-    },
-    {
-      "id": "1399284478148608040",
-      "content": "听完广播剧我又死了啊啊啊，好爽。杜勒赛因还是那么帅，不过皮克曼吃东西的声音太搞笑了吧（褒义  \n\n是融合了一下我的xp，高马尾+眼镜\n\n还有就是他头上的刀叉，其",
-      "author": "dittoqwq",
-      "reactions": 5,
-      "channel": "其实只是在想下一餐该吃什么"
-    },
-    {
-      "id": "1399277354697883739",
-      "content": "pickman the ||twinkman|| <:pray:1356053116260454534>",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper"
-    },
-    {
-      "id": "1399404733910880349",
-      "content": "",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 2,
-      "channel": "✅「已回答」希萊斯特的觸腕傷害出錯了"
-    },
-    {
-      "id": "1399386872328884296",
-      "content": "Thank you for the breakfast <:bow:1356053037159944473> <:bow:1356053037159944473",
-      "author": "mount_fisherman",
-      "reactions": 1,
-      "channel": "Modern AU Goliath"
-    },
-    {
-      "id": "1399259403710107741",
-      "content": "我在講A你在講B",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1399338923682959380",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」Bug report"
-    },
-    {
-      "id": "1399345524439515206",
-      "content": "When you borrowed the new doresain skin it doesn't show in the team lineup",
-      "author": "melwyn7591",
-      "reactions": 1,
-      "channel": "✅「Answered」Preview skin bugged"
-    },
-    {
-      "id": "1399231960055939148",
-      "content": "🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Wanda soulforge bug"
-    },
-    {
-      "id": "1399340173468368948",
-      "content": "Спасибо за обратную связь, мы поищем причину❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг при описании карты на русском языке."
-    },
-    {
-      "id": "1399245030488674405",
-      "content": "После обновления все работает как нужно. Можно закрыть тему ❤️<:goodjob2:1356053",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "✅「Ответ дан」Баг \"увеличение для просмотра карты\""
-    },
-    {
-      "id": "1399276884696760420",
-      "content": "Thank you!",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "✅「Answered」bug - stage 3-4 arc 2 text error"
-    },
-    {
-      "id": "1399310715533398076",
-      "content": "yeah I didn't see that\nhabit took over reading\nsorry",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "OVEREXALTING TULU"
     }
   ]
 }

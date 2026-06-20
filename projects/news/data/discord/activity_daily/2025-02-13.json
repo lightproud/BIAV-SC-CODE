@@ -1,10 +1,25 @@
 {
   "date": "2025-02-13",
-  "messages": 115,
-  "unique_authors": 26,
-  "reactions_total": 122,
-  "attachments": 12,
+  "messages": 3966,
+  "unique_authors": 169,
+  "reactions_total": 336,
+  "attachments": 157,
   "channel_activity": {
+    "🔸綜合討論": 917,
+    "🔸阵容构建": 8,
+    "🔸morimens-game-chat": 1378,
+    "🔸剧情交流": 21,
+    "🔸相位对弈": 24,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 203,
+    "🔸русский-канал": 457,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 299,
+    "🔸canal-português": 184,
+    "🔸ruang-obrolan-indonesia": 56,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 249,
+    "🔸lore-chat": 14,
     "能还我抽了+4朵的几百抽吗": 56,
     "I can't get into the game": 2,
     "哺育是不是失效了？": 3,
@@ -23,27 +38,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 46,
-    "15": 3,
-    "16": 15,
-    "23": 2,
-    "3": 1,
-    "8": 3,
-    "18": 4,
-    "19": 2,
-    "6": 3,
-    "10": 5,
-    "11": 2,
-    "12": 6,
-    "13": 4,
-    "7": 12,
-    "2": 1,
-    "4": 3,
-    "17": 3
+    "1": 66,
+    "2": 147,
+    "3": 182,
+    "4": 141,
+    "5": 156,
+    "6": 169,
+    "7": 105,
+    "8": 208,
+    "9": 319,
+    "10": 157,
+    "11": 105,
+    "12": 246,
+    "13": 362,
+    "14": 41,
+    "15": 105,
+    "16": 294,
+    "17": 120,
+    "18": 66,
+    "19": 282,
+    "22": 154,
+    "0": 124,
+    "20": 230,
+    "21": 75,
+    "23": 112
   },
   "message_types": {
-    "0": 79,
-    "19": 15
+    "0": 3197,
+    "19": 654
   },
   "top_reacted_messages": [
     {
@@ -75,11 +97,35 @@
       "channel": "【母女组】are you big"
     },
     {
+      "id": "1339631509078016161",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "two_of_us",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1339502453854437461",
       "content": "【褪色遗骨】\n感覺沒啥問題，出了再說。\n【灰烬遗迹】\n感覺沒啥問題，出了再說。\n【战斗奖励】\n刻印沒了有點痛苦，沒了暴食命輪的加成神父先哭(後面還要再哭一次。\n",
       "author": "pray_unbeliever",
       "reactions": 6,
       "channel": "吐槽2.1.0.X"
+    },
+    {
+      "id": "1339426993074344028",
+      "channel_id": "1131839874132090890",
+      "content": "昨天打的\n忘记发了\n开服菜狗终于打了36000<:flop:1243504846062223360>",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1339633479989596240",
+      "channel_id": "1326453763355185215",
+      "content": "Did the male mc lift his skirt also?",
+      "author": "ryugaminehibiki",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1339570863632158761",
@@ -89,6 +135,30 @@
       "channel": "獵顱魔女"
     },
     {
+      "id": "1339499837904916602",
+      "channel_id": "1131839817982947429",
+      "content": "校貓好聰明喔在公告前出很強的sp朵爾，這樣你們才會抽🤡 🤡",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339500028212940846",
+      "channel_id": "1131839817982947429",
+      "content": "這算騙課嗎",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339510601398882355",
+      "channel_id": "1131839817982947429",
+      "content": "壞分子都被趕走啦",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1339424813155881042",
       "content": "我還是覺得這就是杯弓蛇影，深潛與相位應該只是添頭的獲取途徑，活動跟主線可能才是真正的渠道",
       "author": "ernest_heart",
@@ -96,95 +166,60 @@
       "channel": "貓咪 幻夢的初衷"
     },
     {
-      "id": "1339529968010395759",
-      "content": "真庆幸入坑了忘却前夜，这个游戏几乎陪伴了我整个青春。挺感谢的，要是没有它的话，我可能就过上好日子了。 ​",
-      "author": "two_of_us",
+      "id": "1339575481997197372",
+      "channel_id": "1173463482503536711",
+      "content": "門中之門\n門一直開",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1339460581962420244",
+      "channel_id": "1131839817982947429",
+      "content": "旺達",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "能还我抽了+4朵的几百抽吗"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339531792822177895",
-      "content": "反转了🤓 jm在下大棋\n把角色和新主线搞烂，那你们就得乖乖去他的白月光PVP，通通白嫖个0+0就够辣\n最为玩家着想的一集🥰",
-      "author": "nidie0256_61327",
+      "id": "1339499117105381376",
+      "channel_id": "1131839817982947429",
+      "content": "只能说\n最大输家是氪金强度党玩家",
+      "author": "ling_an_",
       "reactions": 2,
-      "channel": "能还我抽了+4朵的几百抽吗"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339491022186610688",
-      "content": "天天喷🐱的多了。但你这种疑似有唐式的我还是第一次见。",
-      "author": "mate0321",
+      "id": "1339510634349334538",
+      "channel_id": "1131839817982947429",
+      "content": "只有某些開了15個小號的還在",
+      "author": "mob1065",
       "reactions": 2,
-      "channel": "大过年过来吐槽"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339534595330150532",
-      "content": "不不不不，歌不是我唱的<:cry:1239910167668326480> 音频来自BV161BkYdEsh嗯嗯",
-      "author": "yingmai_",
+      "id": "1339511136273567777",
+      "channel_id": "1131839817982947429",
+      "content": "這次應該是不會了",
+      "author": "mob1065",
       "reactions": 2,
-      "channel": "【母女组】are you big"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339528632242012201",
-      "content": "你現實生活討厭的人",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "能还我抽了+4朵的几百抽吗"
+      "id": "1339511677435117588",
+      "channel_id": "1131839817982947429",
+      "content": "新的也不敢抽吧。",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339529829841637378",
-      "content": "进来一看唐猫发言吓得分分钟跑路",
-      "author": "two_of_us",
-      "reactions": 1,
-      "channel": "能还我抽了+4朵的几百抽吗"
-    },
-    {
-      "id": "1339530111019520010",
-      "content": "玩这游戏增加掉san耐性<:Coffee:1240919421791375380>",
-      "author": "cs001092",
-      "reactions": 1,
-      "channel": "能还我抽了+4朵的几百抽吗"
-    },
-    {
-      "id": "1339634571049832469",
-      "content": "这人怎么能这么做游戏呢…真的这操作真的太逆天了",
-      "author": "bolkon0218",
-      "reactions": 1,
-      "channel": "能还我抽了+4朵的几百抽吗"
-    },
-    {
-      "id": "1339687448158011433",
-      "content": "有回復說下禮拜更新修\nhttps://discord.com/channels/1131791637933199470/1338792424532606996\n",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "关于莱克的特遣纪录"
-    },
-    {
-      "id": "1339641842194448517",
-      "content": "同題",
-      "author": "ekko9950",
-      "reactions": 1,
-      "channel": "相位對弈之後會不會新增裝備密契的功能？"
-    },
-    {
-      "id": "1339637632476647435",
-      "content": "<@1131790839291596841> <@546511962977337344> thanks 2 you for helping me. Someho",
-      "author": "harmonce_mel",
-      "reactions": 1,
-      "channel": "💭「Processing」Stuck in \"Checking for resource updates\""
-    },
-    {
-      "id": "1339543734387343441",
-      "content": "",
-      "author": "aaaa_00098",
-      "reactions": 1,
-      "channel": "死抗序列"
-    },
-    {
-      "id": "1339581130491297792",
-      "content": "佬",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "獵顱魔女"
+      "id": "1339512144449896489",
+      "channel_id": "1131839817982947429",
+      "content": "超維主宰天天72000 傷到貓咪的心了",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

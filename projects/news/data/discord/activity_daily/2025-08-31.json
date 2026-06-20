@@ -1,10 +1,29 @@
 {
   "date": "2025-08-31",
-  "messages": 165,
-  "unique_authors": 14,
-  "reactions_total": 87,
-  "attachments": 47,
+  "messages": 16777,
+  "unique_authors": 330,
+  "reactions_total": 1905,
+  "attachments": 779,
   "channel_activity": {
+    "🔸morimens-game-chat": 12875,
+    "🔸剧情交流": 4,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 77,
+    "🔸deutscher-chatraum": 122,
+    "🔸chaîne-française": 21,
+    "🔸русский-канал": 400,
+    "🔸phòng-chat-tiếng-việt": 41,
+    "🔸canal-español": 617,
+    "🔸canal-português": 777,
+    "🔸ruang-obrolan-indonesia": 215,
+    "🔸ห้องสนทนาภาษาไทย": 17,
+    "🔸traphase": 84,
+    "🔸lore-chat": 69,
+    "🔸lets-count": 6,
+    "🔸team-building": 11,
+    "🔸general-chat": 3,
+    "🔸邀请码互助┊swap-invitation-codes": 67,
+    "🔸綜合討論": 1205,
     "🫴💚👑🐙": 1,
     "Priority/Investment help.": 15,
     "Help me.": 1,
@@ -32,32 +51,34 @@
     "一點拉郎": 5
   },
   "hourly_activity": {
-    "0": 10,
-    "9": 11,
-    "14": 14,
-    "15": 5,
-    "16": 5,
-    "17": 3,
-    "21": 5,
-    "23": 3,
-    "12": 11,
-    "3": 2,
-    "4": 2,
-    "8": 2,
-    "10": 17,
-    "13": 18,
-    "2": 23,
-    "7": 13,
-    "22": 9,
-    "1": 2,
-    "5": 5,
-    "18": 1,
-    "6": 3,
-    "20": 1
+    "0": 811,
+    "1": 570,
+    "2": 887,
+    "3": 1025,
+    "4": 1194,
+    "5": 745,
+    "6": 762,
+    "7": 961,
+    "8": 363,
+    "9": 366,
+    "10": 649,
+    "11": 448,
+    "12": 393,
+    "13": 529,
+    "14": 704,
+    "15": 925,
+    "16": 862,
+    "17": 635,
+    "18": 848,
+    "19": 619,
+    "20": 457,
+    "21": 631,
+    "22": 677,
+    "23": 716
   },
   "message_types": {
-    "0": 83,
-    "19": 22
+    "19": 4867,
+    "0": 10540
   },
   "top_reacted_messages": [
     {
@@ -68,11 +89,99 @@
       "channel": "🫴💚👑🐙"
     },
     {
+      "id": "1411760879506161665",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sanna7424",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411849173036175590",
+      "channel_id": "1300659662311526512",
+      "content": "<@280863122695258125> <@853462795676024833> <@456226577798135808> <@276521152245",
+      "author": "duxadidus",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1411761987272315064",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/writing-hot-fire-lit-gunna-gif-17747347915238583171",
+      "author": "mount_fisherman",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411724561652908224",
+      "channel_id": "1131839817982947429",
+      "content": "墨菲我用這個換的",
+      "author": "insomnia07763",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1411783513950392412",
       "content": "反正就審慎考慮好再做吧，別翻車就好\n\n目前也沒多少角色合適做成高級皮，一些常駐角色甚至從來沒有登場過，目前文案相比忘卻篇水平大幅下降也是事實\n\n星辰篇連||常駐",
       "author": "heikwok",
       "reactions": 13,
       "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411650695353991198",
+      "channel_id": "1170692781216378960",
+      "content": "i dont have a dishwasher cuz I AM the dishwasher",
+      "author": "arisuu0604",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411727055581876274",
+      "channel_id": "1170692781216378960",
+      "content": "The jenkin off incident",
+      "author": "sirtealot",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411694472164540516",
+      "channel_id": "1170692781216378960",
+      "content": "WHY IS THIS GAME SO PEAK?!?",
+      "author": "swordbreak",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411704226916077619",
+      "channel_id": "1170692781216378960",
+      "content": "WT H is this???!!",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411720431781806132",
+      "channel_id": "1170692781216378960",
+      "content": "how many dupes does gelot need",
+      "author": "kezrin",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411740653016318054",
+      "channel_id": "1170692781216378960",
+      "content": "ahah so you know a bit of the process",
+      "author": "sexysneakystoat1625",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1411625333903462510",
+      "channel_id": "1131839817982947429",
+      "content": "我該打死我的追隨者嗎……\n說不定他會借我的「24」耶",
+      "author": "insomnia07763",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1411659585072398388",
@@ -82,116 +191,52 @@
       "channel": "POSSES future and changes"
     },
     {
-      "id": "1411610550500331570",
-      "content": "內有戈利亞X尤烏哈希拉郎， 只是一時興起的小短篇(T_T)一點貼貼⋯⋯\nUID:100047306\n\n—————————\n\n海水嚐起來是苦的。\n悲傷、痛苦，還有",
-      "author": "yolo_mode",
-      "reactions": 5,
-      "channel": "一點拉郎"
+      "id": "1411545569628782603",
+      "channel_id": "1170692781216378960",
+      "content": "me",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411606617580896266",
-      "content": "Yes, that is a bug! I have confirmed via the original Chinese text that the corr",
-      "author": "arkaether",
-      "reactions": 3,
-      "channel": "✅「Answered」PARADOX mistranslation \\bug"
+      "id": "1411652741981405336",
+      "channel_id": "1170692781216378960",
+      "content": "not the corpo I was hoping for",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411604721357295628",
-      "content": "實際上獎勵是300筆，購買這邊只顯示150，我只注意到這個 官方可以再檢查其他獎勵看看",
-      "author": "insomnia07763",
-      "reactions": 3,
-      "channel": "✅「已回答」課題的獎勵數量顯示錯誤"
+      "id": "1411659446853177514",
+      "channel_id": "1170692781216378960",
+      "content": "Done",
+      "author": "kezrin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411586697916842135",
-      "content": "可以省下鯊魚褲子的費用花在神圖上嗎",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1411696178004758552",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "swordbreak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411613476803055667",
-      "content": "考虑给环拉皮肤和之前的皮肤出周边吗，皮肤卖这么贵了那谷子能不能卖便宜点",
-      "author": "yingmai_",
-      "reactions": 2,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+      "id": "1411729912141844692",
+      "channel_id": "1170692781216378960",
+      "content": "<@964125234871545886>",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1411624909335040072",
-      "content": "Some units intentions can break or bug the Aigis Petrify status, like Myriam att",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "💭「Processing」Petrify dispel"
-    },
-    {
-      "id": "1411603511782670419",
-      "content": "偷偷放一個逃課隊伍",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "全4級400融災攻略"
-    },
-    {
-      "id": "1411614659420749926",
-      "content": "我是預設這倆傢伙坐在床上<:hehe:1357185439089295390>",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "一點拉郎"
-    },
-    {
-      "id": "1411701252198236201",
-      "content": "From paid 5x pulls",
-      "author": "mrcheekyy",
-      "reactions": 1,
-      "channel": "Team Building Help"
-    },
-    {
-      "id": "1411705241522667540",
-      "content": "收到",
-      "author": "mrcheekyy",
-      "reactions": 1,
-      "channel": "Team Building Help"
-    },
-    {
-      "id": "1411509121835859968",
-      "content": "probably 'cause of her exalt",
-      "author": "zev0558",
-      "reactions": 1,
-      "channel": "Just a few questions"
-    },
-    {
-      "id": "1411742151242682460",
-      "content": "For the standard wheel banner, pull for Titan, it’s the best dps wheel rn so try",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Investment Help"
-    },
-    {
-      "id": "1411705781446770780",
-      "content": "Yeah, the fact that they have an additional effect with the unit means that the ",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "POSSES future and changes"
-    },
-    {
-      "id": "1411811415936991313",
-      "content": "I suggest adding a testing stage where you can test your units. For example if I",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Testing stage"
-    },
-    {
-      "id": "1411539087046742069",
-      "content": "We will check this . Thanks for your feedback！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Interacting with an ultra space with the goal to consult the card,  leads to a softlock"
-    },
-    {
-      "id": "1411613685331394570",
-      "content": "低頭恐怕不夠，鯊魚要半蹲才能把頭靠上去",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "一點拉郎"
+      "id": "1411731867614580977",
+      "channel_id": "1170692781216378960",
+      "content": "drama fomo in a gacha community...",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

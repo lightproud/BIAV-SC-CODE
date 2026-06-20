@@ -1,10 +1,25 @@
 {
   "date": "2025-03-28",
-  "messages": 26,
-  "unique_authors": 6,
-  "reactions_total": 724,
-  "attachments": 5,
+  "messages": 4325,
+  "unique_authors": 97,
+  "reactions_total": 1648,
+  "attachments": 154,
   "channel_activity": {
+    "🔸한국어-채팅방": 158,
+    "🔸русский-канал": 22,
+    "🔸phòng-chat-tiếng-việt": 11,
+    "🔸canal-español": 10,
+    "🔸canal-português": 26,
+    "🔸ruang-obrolan-indonesia": 68,
+    "🔸ห้องสนทนาภาษาไทย": 22,
+    "🔸traphase": 70,
+    "🔸lore-chat": 7,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸綜合討論": 196,
+    "🔸morimens-game-chat": 3692,
+    "🔸剧情交流": 3,
+    "🔸相位对弈": 8,
+    "🔸日本語チャンネル": 5,
     "Need help with team comp/builds": 1,
     "NOTICE FOR ALL NEW PLAYERS": 1,
     "【日本語訳】フィードバック": 2,
@@ -17,87 +32,199 @@
     "✅「已回答」小騎士維度影像": 2,
     "✅「Answered」Does the OST Won't update to Netease Music Anymore?": 2,
     "请问羊妈估计几月份复刻啊": 1,
-    "是雷婭": 3,
-    "🔸礼包码┊gift-codes": 1
+    "是雷婭": 3
   },
   "hourly_activity": {
-    "22": 1,
-    "16": 1,
-    "18": 2,
-    "9": 3,
-    "10": 4,
-    "3": 6,
-    "4": 3,
-    "6": 2,
-    "7": 2,
-    "2": 2
+    "0": 471,
+    "1": 334,
+    "2": 40,
+    "3": 401,
+    "4": 398,
+    "5": 448,
+    "6": 39,
+    "8": 228,
+    "9": 198,
+    "10": 82,
+    "11": 63,
+    "14": 84,
+    "15": 193,
+    "7": 330,
+    "12": 352,
+    "18": 47,
+    "22": 23,
+    "13": 232,
+    "17": 45,
+    "21": 43,
+    "16": 89,
+    "19": 94,
+    "20": 48,
+    "23": 43
   },
   "message_types": {
-    "0": 4
+    "0": 347,
+    "19": 44,
+    "20": 4
   },
   "top_reacted_messages": [
     {
       "id": "1355109729847742465",
+      "channel_id": "1355094251775459399",
       "content": "**🎁DC 16000守密人達成禮 / DC16000 Keepers Achievement Gift**\n\n《忘卻前夜Morimens》DC全球頻道達到16",
       "author": "morimensstaff01",
-      "reactions": 713,
+      "reactions": 715,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
-      "id": "1355121517779877928",
-      "content": "✅前瞻：V2.1.1 相位对弈联动",
-      "author": "game.producer.light",
+      "id": "1354983280612741140",
+      "channel_id": "1170692781216378960",
+      "content": "||we both know that as a shark man, theres two of them||",
+      "author": "itsmemiki",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355058150515933295",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/Maruma_Gozu/status/1903749923151261924",
+      "author": "ughhhhard",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355195851898884389",
+      "channel_id": "1300659495550062592",
+      "content": "기프트코드 공유드려요",
+      "author": "jovial_avocado_39107",
+      "reactions": 4,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1355110074250428489",
+      "channel_id": "1131839817982947429",
+      "content": "DC16000KEEPERS",
+      "author": "watermelomz",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355169187294871612",
+      "channel_id": "1300659662311526512",
+      "content": "esa murphy que salga ya",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1355201872922804387",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354969457893707917",
+      "channel_id": "1170692781216378960",
+      "content": "god i will pump yanderedev code into AI if it means job security",
+      "author": "itsmemiki",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354969785414320308",
+      "channel_id": "1170692781216378960",
+      "content": "Wait stop, I want to change job to professional prompt engineer and have grammar",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354970374911164588",
+      "channel_id": "1170692781216378960",
+      "content": "Yes, because even a lobotomized buffon can accomplish the task of being a bootli",
+      "author": "inana_istar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354979934560457055",
+      "channel_id": "1170692781216378960",
+      "content": "Emo Yesu~\nHither thy symptoms. Prepare for the supposition.",
+      "author": "inana_istar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355032493270630612",
+      "channel_id": "1170692781216378960",
+      "content": "By far, the easiest and most safe job ever. Cause of the lobbying.",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355050529574752329",
+      "channel_id": "1170692781216378960",
+      "content": "i wonder if we get to ring that pendulum thing in her crotch",
+      "author": "itsmemiki",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355119976075231383",
+      "channel_id": "1180850818509971466",
+      "content": "混過一段時間無限制第七",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1355118108787998730",
+      "channel_id": "1300659802455674972",
+      "content": "แพนดินไหวปลอดภัยกันนะครับทุกท่าน",
+      "author": "satachan",
       "reactions": 2,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1355039839061278950",
-      "content": "Title of awake list keep broke on Korean setting",
-      "author": "legion_schindler",
+      "id": "1354969197700055173",
+      "channel_id": "1170692781216378960",
+      "content": "to be honest, and i say this in a neutral way, flares just wants attention",
+      "author": "reya.li",
       "reactions": 2,
-      "channel": "✅「Answered」Korean Unicode Error"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1355040593495064758",
-      "content": "Thanks for posting. We will look into it👍",
-      "author": "cometovilla",
+      "id": "1354970063417114624",
+      "channel_id": "1170692781216378960",
+      "content": "I've never changed my opinion, its your fault for misinterpreting it. Most jobs ",
+      "author": "flares117",
       "reactions": 2,
-      "channel": "✅「Answered」Korean Unicode Error"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1355109011447611486",
-      "content": "守密人你好：\n       彌薩格大學校務處將於3月28日17:30進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.1.1.7 在線維護公告"
+      "id": "1354971019546202204",
+      "channel_id": "1170692781216378960",
+      "content": "didnt know we had shakespeare in chat today",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1355070925653147749",
-      "content": "Thanks for the feedback, goya has conveyed it~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Korean Unicode Error"
+      "id": "1354971346475679814",
+      "channel_id": "1170692781216378960",
+      "content": "you...?",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1355020680839823483",
-      "content": "Hi, we will continue to upload new OST~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Does the OST Won't update to Netease Music Anymore?"
-    },
-    {
-      "id": "1355011407208255631",
-      "content": "天惹🤩画得这么牛 😍 😍 😍",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "是雷婭"
-    },
-    {
-      "id": "1355130108150808678",
-      "content": "嬤嬤",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "是雷婭"
+      "id": "1354972793317626017",
+      "channel_id": "1170692781216378960",
+      "content": "ya can we just get someone to assassinate rfk jr so he doesnt get me killed by s",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

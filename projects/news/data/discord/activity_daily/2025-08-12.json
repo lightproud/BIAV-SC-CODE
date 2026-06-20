@@ -1,10 +1,29 @@
 {
   "date": "2025-08-12",
-  "messages": 178,
-  "unique_authors": 59,
-  "reactions_total": 284,
-  "attachments": 10,
+  "messages": 14141,
+  "unique_authors": 228,
+  "reactions_total": 1638,
+  "attachments": 610,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸한국어-채팅방": 63,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 48,
+    "🔸русский-канал": 269,
+    "🔸phòng-chat-tiếng-việt": 225,
+    "🔸canal-español": 640,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 278,
+    "🔸ห้องสนทนาภาษาไทย": 87,
+    "🔸traphase": 588,
+    "🔸lore-chat": 825,
+    "🔸lets-count": 7,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 1,
+    "🔸general-chat": 104,
+    "🔸綜合討論": 876,
+    "🔸阵容构建": 17,
+    "🔸morimens-game-chat": 9906,
     "[CH8 Spoiler] What Actually Happened to Dexter...": 5,
     "clementine": 1,
     "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra": 83,
@@ -24,26 +43,34 @@
     "一个大头的画": 2
   },
   "hourly_activity": {
-    "14": 10,
-    "15": 5,
-    "18": 1,
-    "20": 1,
-    "6": 4,
-    "7": 22,
-    "8": 17,
-    "9": 39,
-    "10": 9,
-    "11": 31,
-    "13": 16,
-    "16": 6,
-    "17": 5,
-    "22": 1,
-    "4": 6,
-    "1": 5
+    "0": 465,
+    "2": 641,
+    "3": 393,
+    "4": 280,
+    "7": 1130,
+    "8": 1132,
+    "12": 577,
+    "13": 557,
+    "14": 721,
+    "16": 786,
+    "17": 301,
+    "18": 551,
+    "6": 572,
+    "9": 633,
+    "10": 597,
+    "11": 668,
+    "15": 850,
+    "19": 308,
+    "20": 544,
+    "21": 627,
+    "1": 411,
+    "5": 318,
+    "22": 586,
+    "23": 493
   },
   "message_types": {
-    "0": 122,
-    "19": 20
+    "0": 2498,
+    "19": 666
   },
   "top_reacted_messages": [
     {
@@ -89,6 +116,38 @@
       "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
     },
     {
+      "id": "1404730912117227693",
+      "channel_id": "1170692781216378960",
+      "content": "Who made this picture? Step forward! LOL",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1404791282689376437",
+      "channel_id": "1131839817982947429",
+      "content": "兄弟們 我決定下版本把崩鐵刪除了\n因為這款遊戲只有玩家對玩家的線下pvp\n多樣性不如忘卻前夜\n忘卻前夜的線下pvp分為玩家對玩家 玩家對社管 玩家組團對戰米酒副",
+      "author": "kong760",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1404649883062767677",
+      "channel_id": "1170692781216378960",
+      "content": "holy, first 5pull",
+      "author": "strolousfozar",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1404654179489939630",
+      "channel_id": "1131839817982947429",
+      "content": "今天吃饼<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1404792548492447744",
       "content": "Personal I think they can juggle body horror and conventional attractive just fi",
       "author": "red_rest",
@@ -124,6 +183,22 @@
       "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
     },
     {
+      "id": "1404747426543439893",
+      "channel_id": "1170692781216378960",
+      "content": "I'd rather she come with a new burn mechanic though 🔥",
+      "author": "phonytail",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1404861254937346250",
+      "channel_id": "1170692781216378960",
+      "content": "im not that old",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1404791925944487937",
       "content": "I've recently seen some comments that some people would want to pull for more 'a",
       "author": "gillamaru",
@@ -138,53 +213,12 @@
       "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
     },
     {
-      "id": "1404730308271538276",
-      "content": "我们不要再画这么亮了好吗，我们回头去看看红花你汀之类的大面积固有色的画法怎么样<:takenotes:1357186646294138890> 这个截个上半身完",
-      "author": "ruhebaoyangsiwa_97871",
+      "id": "1404843047682048052",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "kevsalvador",
       "reactions": 6,
-      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
-    },
-    {
-      "id": "1404753847104049223",
-      "content": "Karen selling fire resistance potions",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
-    },
-    {
-      "id": "1404790536858107904",
-      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=926&tnum=1",
-      "author": "taoi002",
-      "reactions": 6,
-      "channel": "《37個鑰令全解析｜融災實用Top10推薦》"
-    },
-    {
-      "id": "1404763132508766280",
-      "content": "这个戈雅怎么这么坏啊（bushi）",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
-    },
-    {
-      "id": "1404739582519541782",
-      "content": "猫你最好出的不是混沌肚饿",
-      "author": "wk123hl9298",
-      "reactions": 3,
-      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
-    },
-    {
-      "id": "1404757249792020652",
-      "content": "Bro she looks... Fire <:cute1:1356053053568192717>",
-      "author": "zekiei",
-      "reactions": 3,
-      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
-    },
-    {
-      "id": "1404747464426262588",
-      "content": "多出點這種生草環節吧，孩子愛看",
-      "author": "oct3000",
-      "reactions": 3,
-      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
+      "channel": "🔸general-chat"
     }
   ]
 }

@@ -1,10 +1,34 @@
 {
   "date": "2025-11-30",
-  "messages": 265,
-  "unique_authors": 34,
-  "reactions_total": 492,
-  "attachments": 57,
+  "messages": 17039,
+  "unique_authors": 380,
+  "reactions_total": 2256,
+  "attachments": 997,
   "channel_activity": {
+    "🔸general-chat": 210,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🐱light’s-nest": 2,
+    "🔸game-question": 1539,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 107,
+    "🔸morimens-game-chat": 9262,
+    "🔸剧情交流": 25,
+    "🔸晒卡分享": 5,
+    "🔸交友频道": 12,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 138,
+    "🔸русский-канал": 354,
+    "🔸phòng-chat-tiếng-việt": 349,
+    "🔸canal-español": 222,
+    "🔸canal-português": 216,
+    "🔸ruang-obrolan-indonesia": 868,
+    "🔸ห้องสนทนาภาษาไทย": 498,
+    "🔸traphase": 79,
+    "🔸lore-chat": 441,
+    "🔸lets-count": 29,
+    "🔸team-building": 712,
+    "🔸綜合討論": 1684,
+    "🔸阵容构建": 7,
     "morimens pixel art": 1,
     "sanga x pickman wip": 1,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 5,
@@ -38,45 +62,49 @@
     "蓋個圖樓": 1,
     "图鲁": 3,
     "自製喚醒體：異度·索瓦爾格": 14,
-    "🐱light’s-nest": 1,
     "1423337172655935600": 3,
     "1241345906826153984": 1,
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "13": 8,
-    "4": 14,
-    "6": 33,
-    "2": 7,
-    "3": 7,
-    "5": 11,
-    "7": 78,
-    "10": 8,
-    "14": 20,
-    "19": 8,
-    "12": 10,
-    "15": 7,
-    "22": 3,
-    "23": 4,
-    "0": 12,
-    "8": 11,
-    "9": 7,
-    "11": 6,
-    "16": 3,
-    "17": 2,
-    "20": 4,
-    "1": 2
+    "0": 493,
+    "1": 711,
+    "2": 702,
+    "3": 1041,
+    "4": 765,
+    "5": 467,
+    "6": 501,
+    "7": 1034,
+    "9": 456,
+    "10": 690,
+    "11": 816,
+    "12": 688,
+    "13": 784,
+    "14": 1613,
+    "15": 1189,
+    "16": 798,
+    "17": 508,
+    "18": 497,
+    "20": 439,
+    "21": 328,
+    "22": 504,
+    "23": 446,
+    "19": 683,
+    "8": 886
   },
   "message_types": {
-    "0": 46,
-    "19": 15
+    "0": 1412,
+    "19": 450,
+    "23": 1,
+    "20": 8
   },
   "top_reacted_messages": [
     {
       "id": "1444542608708735137",
+      "channel_id": "1426837316533747823",
       "content": "Pourquoi je vis pourquoi je meurs, \n为何而生  为何而逝，\nPourquoi je ris pourquoi je pleu",
       "author": "game.producer.light",
-      "reactions": 128,
+      "reactions": 133,
       "channel": "🐱light’s-nest"
     },
     {
@@ -115,11 +143,43 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1444751277371293829",
+      "channel_id": "1326453763355185215",
+      "content": "MY SON <:takenotes:1357186646294138890> <:takenotes:1357186646294138890> <:taken",
+      "author": "mythicmoonwort",
+      "reactions": 15,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1444560696238149763",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1444686189402787870",
       "content": "(base by @ anibase_busan on twit bcs my wrists got debuffed)",
       "author": "casual_gh0st",
       "reactions": 14,
       "channel": "sanga x pickman wip"
+    },
+    {
+      "id": "1444761831880003654",
+      "channel_id": "1170692781216378960",
+      "content": "🤷‍♀️ i mean sure it is a perfect event for an unmarried 30 year old man living i",
+      "author": "bagels5899",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444638470390939700",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "cameliia._.",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1444632081752657980",
@@ -150,6 +210,22 @@
       "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
+      "id": "1444660970197618698",
+      "channel_id": "1170692781216378960",
+      "content": "Out of context screenshot",
+      "author": "enternameunavailable",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1444699915388325978",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1444559068038697060",
       "content": "I wish devs would reconsider this event. At its current state it seems like it's",
       "author": "binkureru",
@@ -169,48 +245,6 @@
       "author": "1234789aa",
       "reactions": 9,
       "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444715837368832070",
-      "content": "uid:100425926     是杜勒赛因和皮克曼印象画的。",
-      "author": "dittoqwq",
-      "reactions": 8,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444656766922260661",
-      "content": "繼續搞這種操作 能不能撐到三周年還不好說",
-      "author": "quackdayo",
-      "reactions": 8,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444702821248274532",
-      "content": "修复了玩家太多的bug🤣",
-      "author": "phenomena_298",
-      "reactions": 8,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444506008704516107",
-      "content": "",
-      "author": "timee_ky",
-      "reactions": 8,
-      "channel": "纯血神国..."
-    },
-    {
-      "id": "1444645627144175747",
-      "content": "卖完角色就削吗？有点意思",
-      "author": "jiushijiuxingjiang",
-      "reactions": 7,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444479726969163906",
-      "content": "版主本身發了一串表達了對於其他人的看法皆為理解不足\n這種完全否定他人看法的言論已經不是討論範疇了",
-      "author": "wild_pansy",
-      "reactions": 7,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
     }
   ]
 }

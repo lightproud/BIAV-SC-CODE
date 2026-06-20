@@ -1,10 +1,27 @@
 {
   "date": "2025-04-09",
-  "messages": 83,
-  "unique_authors": 11,
-  "reactions_total": 98,
-  "attachments": 15,
+  "messages": 6642,
+  "unique_authors": 123,
+  "reactions_total": 509,
+  "attachments": 264,
   "channel_activity": {
+    "🔸morimens-game-chat": 3957,
+    "🔸剧情交流": 2,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 143,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 302,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 16,
+    "🔸canal-português": 63,
+    "🔸ruang-obrolan-indonesia": 413,
+    "🔸ห้องสนทนาภาษาไทย": 372,
+    "🔸traphase": 310,
+    "🔸lore-chat": 11,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 951,
     "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 32,
     "How To Create a Team + Other Information": 1,
     "✅校猫碎碎念#近况分享": 16,
@@ -19,31 +36,44 @@
     "1357184174485671966": 13
   },
   "hourly_activity": {
-    "10": 3,
-    "11": 11,
-    "12": 14,
-    "13": 8,
-    "18": 1,
-    "23": 1,
-    "3": 5,
-    "1": 1,
-    "2": 1,
-    "4": 3,
-    "5": 2,
-    "7": 3,
-    "9": 11,
-    "15": 1,
-    "20": 2,
-    "8": 5,
-    "6": 1,
-    "21": 6,
-    "22": 4
+    "0": 73,
+    "1": 477,
+    "2": 160,
+    "3": 169,
+    "4": 280,
+    "5": 220,
+    "6": 93,
+    "7": 188,
+    "8": 312,
+    "9": 155,
+    "10": 384,
+    "11": 385,
+    "12": 575,
+    "13": 312,
+    "14": 524,
+    "15": 362,
+    "16": 248,
+    "17": 157,
+    "18": 53,
+    "19": 194,
+    "20": 342,
+    "21": 212,
+    "22": 620,
+    "23": 147
   },
   "message_types": {
-    "0": 29,
-    "19": 4
+    "0": 4295,
+    "19": 1313
   },
   "top_reacted_messages": [
+    {
+      "id": "1359563443648073858",
+      "channel_id": "1170692781216378960",
+      "content": "bro who is even reacting to that",
+      "author": "omegamart",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1359520102457938131",
       "content": "",
@@ -94,6 +124,30 @@
       "channel": "✅校猫碎碎念#近况分享"
     },
     {
+      "id": "1359516402116989229",
+      "channel_id": "1131839817982947429",
+      "content": "你这个b卡墨",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359556631758766422",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359564646779977901",
+      "channel_id": "1170692781216378960",
+      "content": "and yes ive actually been hit with slippers before",
+      "author": "omegamart",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1359589704537997352",
       "content": "",
       "author": "ed2800",
@@ -108,32 +162,60 @@
       "channel": "✅校猫碎碎念#近况分享"
     },
     {
-      "id": "1359484718961131651",
-      "content": "醫生原來也這麼抽象，搞心理學的都不正常",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+      "id": "1359549715062067250",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1359393667810590931",
-      "content": "噴我吧🥵",
+      "id": "1359480313130258653",
+      "channel_id": "1131839817982947429",
+      "content": "兩個帳號都白金框 大概那樣的錢",
       "author": "Deleted User",
-      "reactions": 2,
-      "channel": "✅校猫碎碎念#近况分享"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1359453233243881584",
-      "content": "说实话就是得闹，会哭的孩子才有奶吃，对制作组孝可不会收获校猫の慈悲，再孝下去他能做到摆烂都算烧高香了✋🥲🤚",
-      "author": "mzmz07033",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
+      "id": "1359488378864930876",
+      "channel_id": "1131839817982947429",
+      "content": "把人救死，扶人受傷",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1359451638267379815",
-      "content": "好噠~感謝答復，校工目前已經找到原因啦，會修復這個問題🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」星辰篇2-6的敵人跑到畫面外了"
+      "id": "1359676195733639171",
+      "channel_id": "1131839817982947429",
+      "content": "你打的太快了，應該說現在的角色都讓人打的太快",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359486671548317890",
+      "channel_id": "1131839817982947429",
+      "content": "好啦 其實有更多人在等鯊魚倒模",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359491251451330621",
+      "channel_id": "1131839817982947429",
+      "content": "那這裡的男性除了我都要被關了，太可憐了",
+      "author": "arr5721",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359547733458817144",
+      "channel_id": "1131839817982947429",
+      "content": "完美一場",
+      "author": "arthasiv",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

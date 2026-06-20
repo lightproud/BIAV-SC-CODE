@@ -1,10 +1,22 @@
 {
   "date": "2025-01-29",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 2266,
+  "unique_authors": 139,
+  "reactions_total": 115,
+  "attachments": 98,
   "channel_activity": {
+    "🔸traphase": 168,
+    "🔸lore-chat": 102,
+    "🔸綜合討論": 331,
+    "🔸阵容构建": 48,
+    "🔸morimens-game-chat": 1411,
+    "🔸剧情交流": 1,
+    "🔸한국어-채팅방": 15,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 29,
+    "🔸phòng-chat-tiếng-việt": 11,
+    "🔸canal-español": 16,
+    "🔸canal-português": 122,
     "morimens story recap channel": 2,
     "《忘卻前夜》周邊企劃說明": 1,
     "English Page pls !!": 3,
@@ -12,14 +24,195 @@
     "aomi's morimens fan content corner (english ver.) 🎨": 1
   },
   "hourly_activity": {
-    "10": 3,
-    "0": 2,
-    "5": 2,
-    "23": 1,
-    "2": 1
+    "0": 132,
+    "1": 71,
+    "2": 101,
+    "3": 79,
+    "4": 44,
+    "5": 100,
+    "6": 28,
+    "7": 161,
+    "8": 116,
+    "22": 8,
+    "9": 101,
+    "10": 98,
+    "11": 167,
+    "12": 102,
+    "13": 174,
+    "14": 76,
+    "16": 143,
+    "17": 220,
+    "19": 75,
+    "20": 26,
+    "21": 12,
+    "15": 85,
+    "18": 94,
+    "23": 53
   },
   "message_types": {
-    "0": 2
+    "19": 49,
+    "0": 221
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1333986986167500820",
+      "channel_id": "1131839817982947429",
+      "content": "好，好耶...",
+      "author": ".moon_leaf",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334097849612238868",
+      "channel_id": "1131839817982947429",
+      "content": "這是不是其實有機會1t啊",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334182874777129084",
+      "channel_id": "1131839817982947429",
+      "content": "能组10队的也不需要作业",
+      "author": "galagalaguo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334000089613598791",
+      "channel_id": "1131839817982947429",
+      "content": "如果....",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334139610162397279",
+      "channel_id": "1131839817982947429",
+      "content": "新年快樂㊗️",
+      "author": "hamnett",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334215426875592814",
+      "channel_id": "1131839817982947429",
+      "content": "真強啊Aaa\nAaa就是超維之神\n左踩阿花右扁cra",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334133300394197074",
+      "channel_id": "1326453763355185215",
+      "content": "Side note, as a proof that spoilers aren't always bad: I know enough about Tulu ",
+      "author": "oddeyesight",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334133302830956577",
+      "channel_id": "1326453763355185215",
+      "content": "SoreL as per usual\nI'm trynna get chapter 7 done today tbh",
+      "author": "roto_rooster",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334004712479129660",
+      "channel_id": "1131839817982947429",
+      "content": "对于牢忘的平衡能力我持悲观态度<:cry:1243502872021438475>",
+      "author": "yang015148",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334069049440735272",
+      "channel_id": "1131839817982947429",
+      "content": "星辰篇商店没有诅咒造物了",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334104181191086131",
+      "channel_id": "1131839817982947429",
+      "content": "剩我打不了1t了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334199689444069476",
+      "channel_id": "1131839817982947429",
+      "content": "我用飯店wifi也不能",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334202918341050490",
+      "channel_id": "1131839817982947429",
+      "content": "剛剛失敗五次是三小",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334179822179586110",
+      "channel_id": "1131839874132090890",
+      "content": "百萬蒙寵之眼可以給血希用嗎？",
+      "author": "tostacat",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1334126242252722237",
+      "channel_id": "1170692781216378960",
+      "content": "you just need to get 2 barrier card like a skilled player",
+      "author": "good.th",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1334212643690381342",
+      "channel_id": "1170692781216378960",
+      "content": "Faint when 99% deathres doesn’t proc",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1333993865501212703",
+      "channel_id": "1326453691527594035",
+      "content": "and I can't think of a way to improve it because the core of Ogier Steadfast is ",
+      "author": "mengluo",
+      "reactions": 1,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1334101710884569130",
+      "channel_id": "1326453763355185215",
+      "content": "And its definitely said that they hate all the lessons",
+      "author": "insigible",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334121154432073768",
+      "channel_id": "1326453763355185215",
+      "content": "at least no one needed to nurse keeper like an actual infant",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334153863330136124",
+      "channel_id": "1326453763355185215",
+      "content": "curses, means I aint doin it enough",
+      "author": "al_leyway",
+      "reactions": 1,
+      "channel": "🔸lore-chat"
+    }
+  ]
 }

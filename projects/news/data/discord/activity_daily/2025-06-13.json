@@ -1,10 +1,26 @@
 {
   "date": "2025-06-13",
-  "messages": 28,
-  "unique_authors": 6,
-  "reactions_total": 17,
-  "attachments": 3,
+  "messages": 7430,
+  "unique_authors": 191,
+  "reactions_total": 672,
+  "attachments": 357,
   "channel_activity": {
+    "🔸綜合討論": 941,
+    "🔸morimens-game-chat": 5427,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 21,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 270,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 239,
+    "🔸canal-português": 36,
+    "🔸ruang-obrolan-indonesia": 145,
+    "🔸ห้องสนทนาภาษาไทย": 225,
+    "🔸traphase": 30,
+    "🔸lore-chat": 52,
+    "🔸lets-count": 2,
     "求配隊": 12,
     "忘卻前夜OST：卡斯托爾EP·於暴風中": 2,
     "✅「已回答」熔朵的超限爆發 有時語音會沒聲音": 2,
@@ -17,24 +33,52 @@
     "我们5771正在进军小说界": 4
   },
   "hourly_activity": {
-    "8": 1,
-    "9": 8,
-    "10": 3,
-    "2": 1,
-    "14": 3,
-    "4": 1,
-    "18": 2,
-    "16": 1,
-    "7": 1,
-    "11": 1,
-    "12": 2,
-    "13": 4
+    "0": 163,
+    "1": 209,
+    "2": 458,
+    "3": 278,
+    "4": 170,
+    "5": 78,
+    "6": 273,
+    "7": 423,
+    "9": 243,
+    "10": 295,
+    "11": 343,
+    "12": 425,
+    "13": 418,
+    "14": 696,
+    "15": 452,
+    "16": 260,
+    "17": 259,
+    "18": 586,
+    "20": 160,
+    "21": 292,
+    "8": 391,
+    "19": 398,
+    "22": 55,
+    "23": 105
   },
   "message_types": {
-    "0": 9,
-    "19": 3
+    "0": 5969,
+    "19": 1433
   },
   "top_reacted_messages": [
+    {
+      "id": "1383125422518304848",
+      "channel_id": "1170692781216378960",
+      "content": "does gdoll event contains mc being gdoll dog",
+      "author": "apsgsd",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383101844959793305",
+      "channel_id": "1170692781216378960",
+      "content": "Tbh I'm going to do it ye",
+      "author": "hurloup",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1383050515109118083",
       "content": "下面是一图流\n\n也可以前往b站观看解说版视频（大约20+分钟，自行选择，想要五位数播放量捏）\n\n【【忘却前夜】新手支线开启顺序推荐及钥令作用详解（1.5周年版）",
@@ -43,18 +87,140 @@
       "channel": "新手钥令（支线）开启顺序推荐及使用推荐"
     },
     {
-      "id": "1382992323750789150",
-      "content": "Since the game is rated 16+ is there a possibility for death animations when def",
-      "author": "mrs.doodoo",
-      "reactions": 3,
-      "channel": "In game death animation"
+      "id": "1383105857709015141",
+      "channel_id": "1170692781216378960",
+      "content": "Ok thanks chat now I go read spreadsheet lol",
+      "author": "remnant0803",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1383088175748087808",
-      "content": "ok! 我已到那個頻道發文",
-      "author": "insomnia07763",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：卡斯托爾EP·於暴風中"
+      "id": "1382908456171999285",
+      "channel_id": "1131839817982947429",
+      "content": "剛做的一張",
+      "author": "cwz.io",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383104046532919387",
+      "channel_id": "1170692781216378960",
+      "content": "Holy heck the newbie haven’t been converted to flares spreadsheet cult, what sor",
+      "author": "red_rest",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383102458154455160",
+      "channel_id": "1170692781216378960",
+      "content": "let’s talk about fluffy Murphy instead",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383102908878295181",
+      "channel_id": "1170692781216378960",
+      "content": "what about this fluffy murphy",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383103652356685914",
+      "channel_id": "1170692781216378960",
+      "content": "My condolences little one u will be snap up like a fish",
+      "author": "red_rest",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383105560773267487",
+      "channel_id": "1170692781216378960",
+      "content": "I love doing this....",
+      "author": "hurloup",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383106102102589570",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953>",
+      "author": "flares117",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383090838946713684",
+      "channel_id": "1170692781216378960",
+      "content": "OH \nhello dupe\nKaleido mental break down moment",
+      "author": "sexysneakystoat1625",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383097077852274718",
+      "channel_id": "1170692781216378960",
+      "content": "So are poison comps but the ceiling is worth the incestmwnt",
+      "author": "it3mus3r",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383102757254467606",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383104627020402759",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1382923199985225803",
+      "channel_id": "1131839817982947429",
+      "content": "佬，輸光...",
+      "author": "huangyu0876",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1383059685002838108",
+      "channel_id": "1131839817982947429",
+      "content": "群山效果沒寫是從抽牌堆抽牌\n所以其實如果抽牌堆沒有指定喚醒体的牌是會從棄牌堆拉的\n能略過還沒刷新的抽牌堆直接從棄牌堆拉牌有時候還挺有用的\n沒拉牌上來只有一種可能",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1382976036349677578",
+      "channel_id": "1170692781216378960",
+      "content": "Ppl calling AAA games expensive meanwhile gacha is a blackhole",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383022088826257501",
+      "channel_id": "1170692781216378960",
+      "content": "Work > Don't want to work anymore > Do two raids > Get back to work",
+      "author": "good.th",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1383088210959405137",
+      "channel_id": "1170692781216378960",
+      "content": "160 members away from getting 20k discord members codes <:takenotes:135718664629",
+      "author": "moyashi0672",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

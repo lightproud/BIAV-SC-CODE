@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "purpose": "银芯功能目录的人工中文用途补注。本文件是七层功能目录中唯一手维护的部分。",
+    "how_to": "按 category -> id -> 中文用途说明 填写。id 与扫描器产出的 id 一致（工作流用文件名、脚本用文件名、MCP 用函数名、命令/技能/子项目用其名）。补注会被 build_capability_registry.py 合并进 registry 与 index。留空的条目自动回退到代码内 docstring/description。",
+    "categories": [
+      "workflows",
+      "scripts_top",
+      "scripts_news",
+      "scripts_wiki",
+      "mcp_tools",
+      "commands",
+      "skills",
+      "projects"
+    ]
+  },
+  "scripts_top": {
+    "extract_art.py": "从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。",
+    "session_inject.py": "[退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。",
+    "session_watch.py": "[退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。",
+    "session_distiller.py": "[退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。",
+    "session_reflexion.py": "[退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。"
+  },
+  "scripts_wiki": {
+    "wiki_sources.py": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。",
+    "fetch_cards.py": "抓取卡牌数据。",
+    "fetch_skills.py": "抓取技能数据。",
+    "fetch_portraits.py": "抓取立绘数据。",
+    "fetch_stats.py": "抓取数值数据。",
+    "fetch_stages.py": "抓取关卡数据。",
+    "fetch_wheels.py": "抓取命轮数据。",
+    "fetch_lore.py": "抓取世界观/剧情文本。",
+    "generate_pages.py": "由抓取的 JSON 生成 VitePress 角色页。",
+    "generate_rss.py": "生成 wiki 更新 RSS。",
+    "validate_data.py": "校验 wiki 数据库全部 JSON。",
+    "check_version.py": "检测 Morimens 客户端版本更新。",
+    "extract_client_data.py": "从客户端解包提取结构化游戏数据。",
+    "decrypt_and_extract.py": "客户端解密 + 解包流水线（经子进程/手动调用）。",
+    "build_drop_index.py": "构建掉落物索引。",
+    "build_banner_character_index.py": "构建卡池角色索引。",
+    "build_notion_voice_enrichment.py": "[一次性·孤儿] 从 Notion 富化语音数据，无活入口。"
+  },
+  "workflows": {
+    "backfill-gap.yml": "手动回填指定时间段的数据缺口。",
+    "backfill-media.yml": "定时回填并归档媒体文件（同人图等）。",
+    "backfill-news.yml": "定时回填历史社区新闻。",
+    "check-version.yml": "定时检测 Morimens 客户端版本更新。",
+    "claude.yml": "Claude Code GitHub 协作入口（@claude 触发）。",
+    "cleanup-stale-branches.yml": "定时清理过期分支。",
+    "collect-comments.yml": "定时采集视频评论。",
+    "collect-fanart.yml": "定时采集同人图。",
+    "deploy-site.yml": "push 触发部署 site 静态站。",
+    "discord-archive-jp.yml": "定时归档日服 Discord 数据。",
+    "discord-archive-volunteer.yml": "定时归档志愿者 Discord 数据。",
+    "discord-archive.yml": "定时归档主 Discord 数据。",
+    "discord-discover-guilds.yml": "定时发现新的 Discord 服务器。",
+    "discord-history-backfill.yml": "定时回填 Discord 历史消息。",
+    "extract-game-data.yml": "解包提取客户端游戏数据（wiki 数据源）。",
+    "fetch-wiki-data.yml": "定时抓取 wiki 数据。",
+    "recover-fanart.yml": "恢复丢失的同人图。",
+    "test-collectors.yml": "运行采集器单元测试。",
+    "test.yml": "运行全量 pytest 单元测试。",
+    "update-news.yml": "每小时采集社区新闻并更新输出层。",
+    "validate-data.yml": "校验 wiki JSON 数据（push/PR 触发）。",
+    "build-capability-registry.yml": "功能源变动时自动重生成银芯功能目录。"
+  },
+  "projects": {
+    "news": "使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。",
+    "wiki": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。",
+    "site": "使命#3 对外门户：静态站 public/ + 设计令牌 design/。",
+    "game": "衍生游戏，退出主线，守密人个人兴趣，不主线派发。"
+  },
+  "skills": {
+    "anysearch": "实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。"
+  },
+  "commands": {
+    "biav-report": "产出银芯社区情报深度报告（角色推荐 / bug 修复优先级等）。",
+    "daily-news": "运行 news 采集器并校验输出，非空才提交。",
+    "sync-memory": "核对各子项目实际文件状态，同步共享记忆文件。",
+    "validate-data": "校验 wiki 数据库全部 JSON 数据文件。"
+  }
+}

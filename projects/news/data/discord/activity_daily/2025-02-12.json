@@ -1,10 +1,25 @@
 {
   "date": "2025-02-12",
-  "messages": 82,
-  "unique_authors": 19,
-  "reactions_total": 20,
-  "attachments": 13,
+  "messages": 3868,
+  "unique_authors": 137,
+  "reactions_total": 255,
+  "attachments": 186,
   "channel_activity": {
+    "🔸綜合討論": 386,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 2513,
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 41,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 75,
+    "🔸русский-канал": 142,
+    "🔸canal-español": 16,
+    "🔸canal-português": 424,
+    "🔸ruang-obrolan-indonesia": 5,
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "🔸traphase": 135,
+    "🔸lore-chat": 30,
     "Tier list as of 2.0": 1,
     "GDoll preview rough TL": 1,
     "✅前瞻：V2.1 无形者的礼券&请柬": 2,
@@ -32,25 +47,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "4": 3,
-    "11": 4,
-    "14": 5,
-    "2": 18,
-    "16": 15,
-    "19": 2,
-    "23": 1,
-    "5": 1,
-    "7": 8,
-    "12": 3,
-    "13": 5,
-    "15": 4,
-    "9": 3,
-    "3": 9,
-    "10": 1
+    "1": 112,
+    "2": 168,
+    "3": 128,
+    "4": 25,
+    "5": 133,
+    "6": 90,
+    "7": 175,
+    "8": 148,
+    "9": 164,
+    "10": 217,
+    "11": 131,
+    "12": 514,
+    "13": 281,
+    "14": 88,
+    "15": 134,
+    "16": 259,
+    "18": 109,
+    "0": 50,
+    "17": 345,
+    "19": 123,
+    "20": 33,
+    "21": 134,
+    "22": 105,
+    "23": 202
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 2945,
+    "19": 841
   },
   "top_reacted_messages": [
     {
@@ -61,6 +85,14 @@
       "channel": "貓咪 幻夢的初衷"
     },
     {
+      "id": "1339222003688800326",
+      "channel_id": "1131839817982947429",
+      "content": "一堆佬言佬語",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1339239646663807068",
       "content": "<@633215996508766229> 給個登入天數的獎勵吧。500天只有20銀芯真的太摳了",
       "author": "shchng.",
@@ -68,46 +100,140 @@
       "channel": "✅前瞻：V2.1 无形者的礼券&请柬"
     },
     {
-      "id": "1339194485254656000",
-      "content": "https://discord.com/channels/1131791637933199470/1215696847981781012/12156968479",
-      "author": "elkmilu",
+      "id": "1339131068896378930",
+      "channel_id": "1131839817982947429",
+      "content": "最勤奋的半个月",
+      "author": "two_of_us",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339296188150579351",
+      "channel_id": "1131839817982947429",
+      "content": "打不了36000只好打24000",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339192397598429274",
+      "channel_id": "1180850818509971466",
+      "content": "这局好险，对面天胡。\n我后手，对面第一回合詹金3费预备\n第二回合对面詹金开大，手里留了5张詹金大招的牌防我洞悉\n第三回合塔薇4费强化詹金艾瑞卡1费嘲讽\n第四回合",
+      "author": "cutchiken",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1339103546242629645",
+      "channel_id": "1131839817982947429",
+      "content": "(繼續掛回+36羊媽",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339133108473036861",
+      "channel_id": "1131839817982947429",
+      "content": "关卡塞剧情真就你游的底层代码吗",
+      "author": "two_of_us",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339221136034238488",
+      "channel_id": "1131839817982947429",
+      "content": "輸光…",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339255034231259206",
+      "channel_id": "1131839817982947429",
+      "content": "超海無大師",
+      "author": "jackpot_7",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339229162245980160",
+      "channel_id": "1170692781216378960",
+      "content": "Old units update when?\nDev: got it, another buff to tulu",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1339260395025731664",
+      "channel_id": "1170692781216378960",
+      "content": "I made a lot of bad decisions though using silver (not prime) for pure cores to ",
+      "author": "versailles",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1339073058291322910",
+      "channel_id": "1131839817982947429",
+      "content": "死！！！",
+      "author": "jidu1418",
       "reactions": 2,
-      "channel": "貓咪 幻夢的初衷"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339226067222921297",
-      "content": "肖貓：過去軟弱的我已經死了",
-      "author": "glacy_9918",
+      "id": "1339077190343589979",
+      "channel_id": "1131839817982947429",
+      "content": "宝 多用",
+      "author": "sslion2799",
       "reactions": 2,
-      "channel": "貓咪 幻夢的初衷"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339135863371862027",
-      "content": "戈雅戈雅，根據玩家的描述，感覺應該是類似遇到那種galgame需要轉換作業系統地區/語言去調整源碼才能遊玩的問題，有可能是遊戲的程式碼有出現不支援部分地區的功能",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "💭「Processing」Stuck in \"Checking for resource updates\""
+      "id": "1339127066875920457",
+      "channel_id": "1131839817982947429",
+      "content": "等下\n該不會是什麼原機率0.5%提高100%變1%的文字遊戲吧",
+      "author": "cwz.io",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339226155626139679",
-      "content": "法洛斯一算力牌伤害错误，艾尔瓦无视两层死斗叠117盾",
-      "author": "zw0413",
-      "reactions": 1,
-      "channel": "相位对弈bug"
+      "id": "1339165951752671286",
+      "channel_id": "1131839817982947429",
+      "content": "再衍化的問題是sp朵的狂氣上限會提升，密契給的收益就跟不上，大技給隊友的回狂也沒加成",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339075627483136031",
-      "content": "通曉的bug好像是只有第一次會減費",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "💭「Processing」这是什么新bug吗哪来的迟缓？"
+      "id": "1339166106472153099",
+      "channel_id": "1131839817982947429",
+      "content": "有机强到我开一个坍缩能回90狂",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1339064131822813258",
-      "content": "Goya has received your report! This issue will be solved in a week🥹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Ryker ?"
+      "id": "1339184139030499328",
+      "channel_id": "1131839817982947429",
+      "content": "可以把你跟阿狗跟好多人踩下去耶",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339187585720778762",
+      "channel_id": "1131839817982947429",
+      "content": "MOB這種壞狗當然是想公審就公審",
+      "author": "cwz.io",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1339188548636643401",
+      "channel_id": "1131839817982947429",
+      "content": "以后忘却前夜也有公会战 到时候可以直接开撕",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,35 @@
 {
   "date": "2025-12-10",
-  "messages": 399,
-  "unique_authors": 62,
-  "reactions_total": 437,
-  "attachments": 66,
+  "messages": 17198,
+  "unique_authors": 311,
+  "reactions_total": 2593,
+  "attachments": 970,
   "channel_activity": {
+    "🔸lets-count": 22,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 750,
+    "🔸general-chat": 424,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
+    "🔸game-question": 1314,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 51,
+    "🔸morimens-game-chat": 8931,
+    "🔸剧情交流": 45,
+    "🔸课间休息闲聊": 7,
+    "🔸交友频道": 167,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 6,
+    "🔸deutscher-chatraum": 27,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 406,
+    "🔸phòng-chat-tiếng-việt": 166,
+    "🔸canal-español": 198,
+    "🔸canal-português": 1219,
+    "🔸ruang-obrolan-indonesia": 222,
+    "🔸ห้องสนทนาภาษาไทย": 259,
+    "🔸traphase": 37,
+    "🔸lore-chat": 1037,
+    "🔸綜合討論": 1474,
     "Pollux emote doodle": 1,
     "Last connection: Doll": 2,
     "Pollux Emote doodle!": 1,
@@ -50,33 +75,36 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "21": 3,
-    "18": 4,
-    "22": 1,
-    "19": 7,
-    "16": 6,
-    "5": 8,
-    "8": 74,
-    "9": 35,
-    "10": 34,
-    "7": 25,
-    "12": 8,
-    "13": 3,
-    "17": 102,
-    "14": 69,
-    "15": 4,
-    "1": 4,
-    "4": 4,
-    "11": 2,
-    "20": 3,
-    "2": 1,
-    "6": 1,
-    "23": 1
+    "2": 636,
+    "3": 447,
+    "4": 467,
+    "8": 1228,
+    "10": 1110,
+    "12": 748,
+    "13": 718,
+    "14": 761,
+    "16": 876,
+    "19": 646,
+    "20": 666,
+    "22": 453,
+    "23": 575,
+    "0": 405,
+    "1": 376,
+    "5": 583,
+    "6": 543,
+    "7": 741,
+    "9": 792,
+    "11": 959,
+    "15": 1168,
+    "17": 963,
+    "18": 860,
+    "21": 477
   },
   "message_types": {
-    "0": 249,
-    "4": 1,
-    "19": 54
+    "0": 2050,
+    "19": 530,
+    "23": 1,
+    "20": 9
   },
   "top_reacted_messages": [
     {
@@ -150,11 +178,43 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448255773820977275",
+      "channel_id": "1170692781216378960",
+      "content": "Time to spend 900 stamina pots",
+      "author": "monchi3524",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448378138500534344",
       "content": "Caecus on his fourth crying emote <:Pity:1400771620989308998> <:alone:1356053021",
       "author": "etheus",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1448463654243799192",
+      "channel_id": "1170692781216378960",
+      "content": "400 finally",
+      "author": "angbak",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448150763141468323",
+      "channel_id": "1131839817982947429",
+      "content": "再也不打了🙄",
+      "author": "water_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448264331442524181",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得他應該是密契刷崩潰了由愛轉恨",
+      "author": "ena04564",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1448323862197440613",
@@ -171,6 +231,14 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448260853743878174",
+      "channel_id": "1131839817982947429",
+      "content": "只能說你遊本身不想讓密契太容易100%吧\n除非真對某角色有愛想要特化的",
+      "author": "heikwok",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1448223025064444056",
       "content": "English",
       "author": "morimensstaff01",
@@ -182,41 +250,6 @@
       "content": "我來了，+12跨越疼痛",
       "author": "ernest_heart",
       "reactions": 11,
-      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1448243975277252669",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 9,
-      "channel": ""
-    },
-    {
-      "id": "1448313946544279693",
-      "content": "上班的摸鱼，太忙了不知道这周有没有双休<:dead:1356082627509092372>",
-      "author": "lunakknd",
-      "reactions": 8,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1448247063497408665",
-      "content": "<:IMG_20251113_181453:1448240235757568133> <:IMG_20251113_181453:144824023575756",
-      "author": "ice_storys",
-      "reactions": 7,
-      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1448224115944194089",
-      "content": "圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯",
-      "author": "void_1546.",
-      "reactions": 6,
-      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1448226609139286027",
-      "content": "",
-      "author": "_venush",
-      "reactions": 5,
       "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
     }
   ]

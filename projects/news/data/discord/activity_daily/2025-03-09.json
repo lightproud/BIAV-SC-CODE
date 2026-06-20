@@ -1,10 +1,23 @@
 {
   "date": "2025-03-09",
-  "messages": 84,
-  "unique_authors": 9,
-  "reactions_total": 16,
-  "attachments": 3,
+  "messages": 4275,
+  "unique_authors": 103,
+  "reactions_total": 191,
+  "attachments": 297,
   "channel_activity": {
+    "🔸русский-канал": 3,
+    "🔸canal-español": 68,
+    "🔸canal-português": 48,
+    "🔸ruang-obrolan-indonesia": 692,
+    "🔸ห้องสนทนาภาษาไทย": 611,
+    "🔸traphase": 55,
+    "🔸lore-chat": 2,
+    "🔸綜合討論": 387,
+    "🔸阵容构建": 228,
+    "🔸morimens-game-chat": 1999,
+    "🔸相位对弈": 22,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 70,
     "Tier list for Standard and Limited separated 2.1": 1,
     "V2.1.1.0 停服維護公告": 1,
     "✅「已回答」账号找不到了": 1,
@@ -12,15 +25,34 @@
     "相位对弈命轮能不能改改": 1
   },
   "hourly_activity": {
-    "9": 1,
-    "5": 1,
-    "7": 2,
-    "11": 17,
-    "12": 4,
-    "15": 59
+    "19": 47,
+    "23": 88,
+    "4": 68,
+    "6": 215,
+    "7": 198,
+    "14": 452,
+    "16": 267,
+    "18": 218,
+    "20": 76,
+    "21": 65,
+    "22": 29,
+    "0": 151,
+    "1": 102,
+    "2": 80,
+    "3": 56,
+    "5": 111,
+    "8": 196,
+    "9": 85,
+    "10": 147,
+    "11": 143,
+    "12": 362,
+    "13": 246,
+    "17": 311,
+    "15": 562
   },
   "message_types": {
-    "0": 1
+    "0": 1120,
+    "19": 359
   },
   "top_reacted_messages": [
     {
@@ -31,6 +63,14 @@
       "channel": "V2.1.1.0 停服維護公告"
     },
     {
+      "id": "1348273700012560507",
+      "channel_id": "1131839874132090890",
+      "content": "一群狗",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1348199686984700134",
       "content": "空虚能不能改成以前版本:不能获得狂气？要不就改成打他一次扣一次狂气，目的就是不让他开大，那咋还是能得狂气？图二要是打完第一个目标，第二个目标成血盾最高的，也来1",
       "author": "luhongran",
@@ -38,32 +78,140 @@
       "channel": "相位对弈命轮能不能改改"
     },
     {
-      "id": "1348258767879405660",
-      "content": "入藥 可以更容易製造翅膀 打傷害",
-      "author": "cuanbingtao",
+      "id": "1348317753332863038",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348136710134829176",
+      "channel_id": "1300659718653476925",
+      "content": "consegui maximizar todo o povo",
+      "author": "santicoutocms",
+      "reactions": 3,
+      "channel": "🔸canal-português"
+    },
+    {
+      "id": "1348306212260937808",
+      "channel_id": "1300659802455674972",
+      "content": "ไม่ได้ใส่อะไรเลยครับ มาตัวเปล่าๆ",
+      "author": "c2reayus",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348310839148417045",
+      "channel_id": "1300659802455674972",
+      "content": "มาถึงบอสแล้ว",
+      "author": "c2reayus",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348152957635657729",
+      "channel_id": "1131839817982947429",
+      "content": "什麼意思<:__:1239909731125035058> <:__:1239909731125035058> \n你是說你想把圖魯搞到懷孕嗎",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348153659439059047",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯的技能：瘋狂榨取，會使守密人的產出量大幅提升，但圖魯常常無法承受守密人的全部",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348164909166497802",
+      "channel_id": "1131839817982947429",
+      "content": "到現在靈塑適性才1隻滿等<:flop:1243504846062223360>",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348275483199930439",
+      "channel_id": "1131839874132090890",
+      "content": "~~所以还是血海弥好玩，180%强效令人安心~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1348328846990114877",
+      "channel_id": "1170692781216378960",
+      "content": "one of the world's biggest religions center around a figure who is arguably the ",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348219295431266336",
+      "channel_id": "1300659753197764688",
+      "content": "Mainkan transcendal entity sekarang",
+      "author": "rosemry",
       "reactions": 2,
-      "channel": "这是我的配置"
+      "channel": "🔸ruang-obrolan-indonesia"
     },
     {
-      "id": "1348259979672424499",
-      "content": "喜欢这个角色",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348403254609842196",
+      "channel_id": "1300659753197764688",
+      "content": "udah ni, tinggal ngumpulin PC nya",
+      "author": "katsu02852",
+      "reactions": 2,
+      "channel": "🔸ruang-obrolan-indonesia"
     },
     {
-      "id": "1348313220586274887",
-      "content": "困难",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348276060503937044",
+      "channel_id": "1300659802455674972",
+      "content": "เหตุผลแปลกๆแต่ผมเข้าใจ",
+      "author": "shalashaskca",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1348314706598826044",
-      "content": "还有这一说吗？我以为联络者是只要出非指令卡就加盾和力量的",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348304496471572490",
+      "channel_id": "1300659802455674972",
+      "content": "ก้อปวาง",
+      "author": "2ndselna",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348306611453689867",
+      "channel_id": "1300659802455674972",
+      "content": "ปัญหาคือมันไม่สุ่มมาให้",
+      "author": "littleyoukai",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1348152519830011916",
+      "channel_id": "1131839817982947429",
+      "content": "剩我抽不到圖魯了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348153306798882849",
+      "channel_id": "1131839817982947429",
+      "content": "什麼東西溢出",
+      "author": "tofu0834",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348182874578485259",
+      "channel_id": "1131839817982947429",
+      "content": "崩鐵的角色",
+      "author": "cwz.io",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

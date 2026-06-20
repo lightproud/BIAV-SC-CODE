@@ -1,10 +1,27 @@
 {
   "date": "2025-07-27",
-  "messages": 94,
-  "unique_authors": 10,
-  "reactions_total": 80,
-  "attachments": 12,
+  "messages": 17779,
+  "unique_authors": 313,
+  "reactions_total": 1563,
+  "attachments": 713,
   "channel_activity": {
+    "🔸lore-chat": 73,
+    "🔸lets-count": 14,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸morimens-game-chat": 12722,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸русский-канал": 1183,
+    "🔸phòng-chat-tiếng-việt": 18,
+    "🔸canal-español": 371,
+    "🔸canal-português": 1347,
+    "🔸ruang-obrolan-indonesia": 485,
+    "🔸ห้องสนทนาภาษาไทย": 260,
+    "🔸traphase": 128,
+    "🔸綜合討論": 1061,
     "niko's silly meme arts": 1,
     "Doresain Fanart": 2,
     "Pretty boys..": 1,
@@ -25,32 +42,34 @@
     "不允許深海界域到現在還沒有一張濕衣服圖": 4
   },
   "hourly_activity": {
-    "11": 18,
-    "17": 5,
-    "16": 1,
-    "12": 2,
-    "18": 8,
-    "23": 5,
-    "10": 3,
-    "0": 6,
-    "1": 2,
-    "3": 2,
-    "4": 4,
-    "7": 4,
-    "14": 1,
-    "8": 5,
-    "19": 3,
-    "20": 3,
-    "2": 2,
-    "5": 2,
-    "6": 5,
-    "9": 5,
-    "13": 1,
-    "15": 7
+    "0": 562,
+    "1": 517,
+    "2": 755,
+    "3": 594,
+    "6": 872,
+    "7": 640,
+    "9": 615,
+    "10": 835,
+    "11": 765,
+    "12": 446,
+    "13": 452,
+    "15": 786,
+    "16": 1183,
+    "4": 565,
+    "8": 548,
+    "14": 611,
+    "17": 929,
+    "22": 721,
+    "23": 989,
+    "5": 975,
+    "18": 957,
+    "19": 881,
+    "20": 942,
+    "21": 639
   },
   "message_types": {
-    "19": 4,
-    "0": 12
+    "19": 16,
+    "0": 73
   },
   "top_reacted_messages": [
     {
@@ -68,11 +87,35 @@
       "channel": "Doll and Alistair"
     },
     {
+      "id": "1399054529667792939",
+      "channel_id": "1170692781216378960",
+      "content": "*the three people in question:*",
+      "author": "lloyds_descendant",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399053955425894502",
+      "channel_id": "1170692781216378960",
+      "content": "Isn't Flares a god though? At least that's what I see here. He has a Bible and h",
+      "author": "_praxeum",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1399097548404293722",
       "content": "因為這樣那樣的原因先蓋一個本樓\n之後如題相關的東西都會丟上來\n可能會想做一系列的拍立得企劃\n但是會傾向二創私服自搭 能看到各角色比較不一樣的一面（當然成本也是考",
       "author": "kong760",
       "reactions": 11,
       "channel": "堆樓-忘卻cos相關（真人注意）"
+    },
+    {
+      "id": "1398832501484421182",
+      "channel_id": "1170692781216378960",
+      "content": "I'm a cosmic entity",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1398835241736601722",
@@ -89,88 +132,100 @@
       "channel": "V2.3.0.2 在线维护公告"
     },
     {
-      "id": "1399099034286817482",
-      "content": "下期角色預告-血肉聖祝之宴 • 晚禱\n出演-薩爾瓦多/索蕾爾/希洛/杜勒賽因",
-      "author": "kong760",
-      "reactions": 3,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
+      "id": "1398854857657548800",
+      "channel_id": "1170692781216378960",
+      "content": "guys is my account bricked? I wasted a lot of pulls on Caro",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1398822298416316427",
-      "content": "埋骨地原先會先增幅25%死亡抵抗後，才由時空扭曲轉換成生命，改版後埋骨地優先級變成時空扭曲生效後才增幅25%死亡抵抗",
+      "id": "1398984772210130986",
+      "channel_id": "1170692781216378960",
+      "content": "Too busy kissing doresain",
+      "author": "letsa11lovelain",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399153515464495196",
+      "channel_id": "1170692781216378960",
+      "content": "Huh.",
+      "author": "dispotato",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398849843459526686",
+      "channel_id": "1170692781216378960",
+      "content": "yeah if you pull ultra it's all one shot kills.\n\nBetter to play 16 rounds of she",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1398918892679729302",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "taechyon",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399054186712137909",
+      "channel_id": "1170692781216378960",
+      "content": "<:wish:1356084702468899117> <:wish:1356084702468899117> <:wish:13560847024688991",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399070089503969440",
+      "channel_id": "1170692781216378960",
+      "content": "Im goinng to bite you",
+      "author": "runningaway_fs",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1399101916641890316",
+      "channel_id": "1170692781216378960",
+      "content": "Like wdym you be talking about how stupid women are when you can't even do 357+6",
       "author": "Deleted User",
-      "reactions": 2,
-      "channel": "V2.3.0.2 在线维护公告"
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399105787011403877",
-      "content": "哇塞真的收米人欸",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
+      "id": "1398894892247421049",
+      "channel_id": "1131839817982947429",
+      "content": "怕 😰 為啥突然給兩張 今天不出門了",
+      "author": "taayoui",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1398992301384269894",
-      "content": "没错我就是为了这个醋包的饺子",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1398823495676330024",
+      "channel_id": "1170692781216378960",
+      "content": "hello cool people",
+      "author": "seiazen",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1398997839614447717",
-      "content": "Oh, I love this man sm...\nGreen as tree✨️",
-      "author": "capunggaje",
-      "reactions": 1,
-      "channel": "niko's silly meme arts"
+      "id": "1399045007121322084",
+      "channel_id": "1170692781216378960",
+      "content": "I did grow up. And I developed an actual sense of taste",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1399097266782076979",
-      "content": "https://discord.com/channels/1131791637933199470/1357183866183618741",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "What to do early game with rolls? Pure core."
-    },
-    {
-      "id": "1398835880835289271",
-      "content": "And yeah, as said above, the team needs to keep a high standard and has to be he",
-      "author": "baguettesuffering",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398877113196613632",
-      "content": "不是啊，星辰篇開始後很長一段時間埋骨都是進場後+25%啊",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1398879195668676608",
-      "content": "缺：\n他靈塑是寫每條觸腕攻擊時提高臨時觸傷\n優：\n回合結束因為有臨觸啥的觸腕通常會更多一點",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3.0.2 在线维护公告"
-    },
-    {
-      "id": "1399097821541568655",
-      "content": "明信片款",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
-    },
-    {
-      "id": "1399098093164695653",
-      "content": "普版A款",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "堆樓-忘卻cos相關（真人注意）"
-    },
-    {
-      "id": "1398940964680241154",
-      "content": "~~溫柯爾的神秘妙妙工具~~",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+      "id": "1398976086024523910",
+      "channel_id": "1131839817982947429",
+      "content": "命轮名字就叫狂气回充？",
+      "author": "123zhang0036",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

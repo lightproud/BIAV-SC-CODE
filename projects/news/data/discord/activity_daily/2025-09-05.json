@@ -1,10 +1,29 @@
 {
   "date": "2025-09-05",
-  "messages": 375,
-  "unique_authors": 48,
-  "reactions_total": 262,
-  "attachments": 62,
+  "messages": 18622,
+  "unique_authors": 261,
+  "reactions_total": 2024,
+  "attachments": 785,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 122,
+    "🔸canal-español": 910,
+    "🔸canal-português": 818,
+    "🔸ruang-obrolan-indonesia": 390,
+    "🔸ห้องสนทนาภาษาไทย": 756,
+    "🔸traphase": 61,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 6,
+    "🔸general-chat": 151,
+    "🔸邀请码互助┊swap-invitation-codes": 28,
+    "🔸morimens-game-chat": 12451,
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 6,
+    "🔸日本語チャンネル": 12,
+    "🔸한국어-채팅방": 95,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 93,
+    "🔸русский-канал": 663,
+    "🔸綜合討論": 1662,
     "uvhash fan art submission": 2,
     "D-dive 45K Aequor/Caro Guide": 7,
     "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 60,
@@ -42,36 +61,44 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "2": 8,
-    "7": 24,
-    "11": 50,
-    "12": 28,
-    "13": 8,
-    "15": 17,
-    "17": 19,
-    "10": 27,
-    "6": 51,
-    "8": 9,
-    "1": 5,
-    "9": 37,
-    "21": 12,
-    "22": 1,
-    "14": 12,
-    "18": 7,
-    "19": 5,
-    "20": 17,
-    "16": 13,
-    "0": 9,
-    "5": 1,
-    "23": 1,
-    "4": 9,
-    "3": 5
+    "5": 731,
+    "6": 721,
+    "7": 1054,
+    "9": 667,
+    "10": 848,
+    "11": 1626,
+    "13": 1161,
+    "14": 848,
+    "15": 798,
+    "16": 661,
+    "17": 695,
+    "0": 315,
+    "1": 432,
+    "2": 599,
+    "3": 795,
+    "4": 1264,
+    "8": 871,
+    "12": 1760,
+    "18": 518,
+    "19": 589,
+    "20": 383,
+    "22": 224,
+    "23": 666,
+    "21": 396
   },
   "message_types": {
-    "0": 206,
-    "19": 39
+    "0": 2587,
+    "19": 676
   },
   "top_reacted_messages": [
+    {
+      "id": "1413569027535671307",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1413568947625922590 @everyone",
+      "author": "game.producer.light",
+      "reactions": 50,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1413512439110172844",
       "content": "",
@@ -122,6 +149,54 @@
       "channel": "小QQ系列-四小強+混沌界域上半"
     },
     {
+      "id": "1413490070228435056",
+      "channel_id": "1131839817982947429",
+      "content": "不是不抽是沒錢！",
+      "author": "undecember_news",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413442123805495316",
+      "channel_id": "1170692781216378960",
+      "content": "Doresain is pregnant with Pickmans embryo",
+      "author": "averageshark",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413417426141577276",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1413417240229056552",
+      "author": "undecember_news",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1413443310881738825",
+      "channel_id": "1326453763355185215",
+      "content": "was trying to find the N fanart it reminded me of and while I couldn't find the ",
+      "author": "insigible",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1413394235834499134",
+      "channel_id": "1170692781216378960",
+      "content": "Should I buy this?",
+      "author": ".lxyr.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1413491701238202479",
+      "channel_id": "1131839817982947429",
+      "content": "所以你應該把器官都賣光光來課金",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1413470721912475718",
       "content": "",
       "author": "pinguimally3689",
@@ -136,81 +211,36 @@
       "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
     },
     {
-      "id": "1413486916308832356",
-      "content": "守密人你好：\n       弥萨格大学预计于9月8日08:00~12:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，补给",
-      "author": "morimensstaff02",
-      "reactions": 7,
-      "channel": "V2.3.2.0 停服维护公告"
+      "id": "1413396557478367364",
+      "channel_id": "1170692781216378960",
+      "content": "Best str gain, best mechanic (Ultra), amazing healing, insane keyflare, and her ",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413524337968943175",
-      "content": "日后会有一些类似pvp设计师对谈或采访之类的活动吗？对弈的平衡性调整已经是一种无法理解的情况了，或许至少可以让大家了解调整的原因及思路",
-      "author": "deadlykilling777",
-      "reactions": 6,
-      "channel": "V2.3.2.0 停服维护公告"
+      "id": "1413502154945069139",
+      "channel_id": "1170692781216378960",
+      "content": "PSA to all. Must pull char is CLEM!!!!!",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413548256629096449",
-      "content": "You need 100% sigil to gain 100 each battle.",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
+      "id": "1413384206645727293",
+      "channel_id": "1170692781216378960",
+      "content": "Flares eats out monchi when",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1413410878988226601",
-      "content": "<@1131790839291596841> Hello , for Ryker   Enhancement . Did you guys test it wi",
-      "author": "aegisx",
-      "reactions": 5,
-      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1413415887167557673",
-      "content": "(I don’t mind knowing his artist and his concepts actually)",
-      "author": "_venush",
-      "reactions": 5,
-      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
-    },
-    {
-      "id": "1413502996939280407",
-      "content": "would the obtained relics take up a relic slot, and will they show up even if i ",
-      "author": "gisstar",
-      "reactions": 5,
-      "channel": "Questions about Pickman's 2 cost"
-    },
-    {
-      "id": "1413507868669509744",
-      "content": "https://discord.com/channels/1131791637933199470/1313054288976678932",
-      "author": "_cwz_",
-      "reactions": 4,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1413412768178114601",
-      "content": "maybe with a more MtG style of text would be clearer, there's a reason MtG has a",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1413414050423111822",
-      "content": "they'll reveal everything, his lore, his concept art, the artist behind it, befo",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
-    },
-    {
-      "id": "1413313840178925768",
-      "content": "如题，搓一把医生\n\n———观前须知———\n\n>依旧是星辰篇||神国降临||if线\n>包含对角色和星辰篇第二章剧情的极端个人理解\n>包含对心理咨询关系和心理理论的",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "[克莱门汀x女守密人]二重决断"
-    },
-    {
-      "id": "1413494329770639421",
-      "content": "<@633215996508766229> 創構造物能用來當成深潛8造物分數的最後一個造物嗎",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
+      "id": "1413407682987163720",
+      "channel_id": "1170692781216378960",
+      "content": "<@153999495347044352> Here, I made your next video's thumbnail for you. Free of ",
+      "author": "sophiechoice",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

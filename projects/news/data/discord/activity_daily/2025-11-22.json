@@ -1,10 +1,39 @@
 {
   "date": "2025-11-22",
-  "messages": 201,
-  "unique_authors": 75,
-  "reactions_total": 320,
-  "attachments": 23,
+  "messages": 21156,
+  "unique_authors": 445,
+  "reactions_total": 2326,
+  "attachments": 1032,
   "channel_activity": {
+    "🔸general-chat": 220,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🐱light’s-nest": 6,
+    "🔸game-question": 2485,
+    "🔸忘却前夜┊morimens-tv": 5,
+    "🔸机器人命令┊bot-commands": 124,
+    "🔸morimens-game-chat": 8747,
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 101,
+    "🔸课间休息闲聊": 23,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 2063,
+    "🔸phòng-chat-tiếng-việt": 226,
+    "🔸canal-español": 469,
+    "🔸canal-português": 368,
+    "🔸ruang-obrolan-indonesia": 942,
+    "🔸ห้องสนทนาภาษาไทย": 841,
+    "🔸traphase": 196,
+    "🔸lore-chat": 176,
+    "🔸lets-count": 27,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸team-building": 1487,
+    "🔸綜合討論": 2348,
+    "🔸阵容构建": 33,
     "Someone whose name starts with A which idk how to spell": 10,
     "wip keeper": 4,
     "Kathigu-Ra: Ardor Blossom Star": 1,
@@ -40,46 +69,55 @@
     "誕妄．墨菲機制與搭配探討": 2,
     "N的究極羞辱": 7,
     "杜勒X皮的正史（肥腸確定": 7,
-    "🐱light’s-nest": 3,
     "1441904635123208233": 1
   },
   "hourly_activity": {
-    "7": 9,
-    "10": 7,
-    "14": 10,
-    "16": 13,
-    "19": 6,
-    "11": 13,
-    "12": 15,
-    "13": 14,
-    "15": 13,
-    "17": 6,
-    "18": 8,
-    "20": 7,
-    "21": 2,
-    "22": 2,
-    "23": 3,
-    "4": 6,
-    "0": 21,
-    "1": 15,
-    "3": 2,
-    "8": 10,
-    "5": 6,
-    "2": 9,
-    "9": 2,
-    "6": 2
+    "0": 941,
+    "1": 1002,
+    "2": 952,
+    "3": 908,
+    "4": 1009,
+    "7": 845,
+    "8": 505,
+    "9": 463,
+    "10": 1159,
+    "11": 1046,
+    "12": 1009,
+    "13": 1026,
+    "14": 1097,
+    "15": 1162,
+    "16": 1847,
+    "17": 1180,
+    "18": 624,
+    "19": 611,
+    "20": 395,
+    "21": 627,
+    "22": 605,
+    "23": 583,
+    "6": 998,
+    "5": 562
   },
   "message_types": {
-    "0": 97,
-    "19": 28
+    "19": 694,
+    "0": 2146,
+    "20": 6
   },
   "top_reacted_messages": [
     {
       "id": "1441697358722236478",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 161,
+      "reactions": 194,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1441677659951333416",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1441670566472978433\n@everyone",
+      "author": "game.producer.light",
+      "reactions": 82,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1441904635123208233",
@@ -90,6 +128,7 @@
     },
     {
       "id": "1441699005733277717",
+      "channel_id": "1426837316533747823",
       "content": "It's hard to express how deeply her work has moved us. Her gentle colors have br",
       "author": "game.producer.light",
       "reactions": 24,
@@ -103,6 +142,46 @@
       "channel": "✅「Answered」This game needs more marketing"
     },
     {
+      "id": "1441677863555174503",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone like and sub to the video",
+      "author": "crowlov1",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441773496429707315",
+      "channel_id": "1173463482503536711",
+      "content": "ㄐㄐ",
+      "author": "_buqi",
+      "reactions": 12,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1441706810825375754",
+      "channel_id": "1170692781216378960",
+      "content": "Saw this post on twitter and-.  1, 1, 1, PLEASE, please, PLEASE",
+      "author": "snowyarcher",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441692744367214773",
+      "channel_id": "1435483703114596503",
+      "content": "A summary of every Ultra Realm awakener. This is meant to be a description of wh",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1441926731245031526",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1441589125559091201",
       "content": "典藏馆的事件那，要不给打过的老登直接解锁了，要不就加个指引啊，根本不清楚打哪关才能解锁<:dead:1356082627509092372>",
       "author": "zhi0202__77913",
@@ -110,109 +189,76 @@
       "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
     },
     {
-      "id": "1441712474763296920",
-      "content": "對於遍地都是的簡轉繁錯字已經看到無奈了，從非常影響沉浸體驗到「反正忘卻前夜沒錢不計較了」，從看到就出戲到看到已麻木，請問這個校稿志工的位置該去哪裡、怎麼應徵呢？",
-      "author": "amstelredam",
+      "id": "1441835417937776814",
+      "channel_id": "1170692781216378960",
+      "content": "how ramona... (i got cyrene and hyacine early pity)",
+      "author": "deleted_user_594e7f97b6e",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441679089898492017",
+      "channel_id": "1170692781216378960",
+      "content": "Guys I think im trash at this game. My dtide is still 335 and ive played for lik",
+      "author": ".shabo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1441635034313261077",
+      "channel_id": "1174983699935277147",
+      "content": "40抽\n前面歪一隻艾",
+      "author": "akkom730",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1441801290085830669",
+      "channel_id": "1435483703114596503",
+      "content": "Edit with new V2.4 PV :3\n\nhttps://vm.tiktok.com/ZMATrBRpu/",
+      "author": "parovayabulochka",
       "reactions": 6,
-      "channel": "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？"
+      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
-      "id": "1441699616423677962",
-      "content": "This guy's name starts with A, he looked pretty, I saw his pic it was a sticker.",
-      "author": "yvaine_yve_43407",
-      "reactions": 5,
-      "channel": "Someone whose name starts with A which idk how to spell"
-    },
-    {
-      "id": "1441738656057397300",
-      "content": "就跟其他角色開大一樣 招式就是要把台詞喊出來 這樣比較帥",
-      "author": "lingcheng.0",
-      "reactions": 5,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1441844361032630413",
+      "id": "1441635165007904868",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "axe_proficient",
-      "reactions": 5,
-      "channel": "N的究極羞辱"
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441810703236206602",
-      "content": "在遙遠的彌撒格學院內，一處任何探測儀器也找不到的地下室內，就是N的所在之處。\n\n“守密人，你這是要做什麼！”\n\n此刻的N像是隻燒鵝一樣，被繩子捆綁在半空中。\n\n",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "N的究極羞辱"
+      "id": "1441825313209450556",
+      "channel_id": "1170692781216378960",
+      "content": "I need funds for OE Pollux",
+      "author": "joker_0108",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441826104192012451",
-      "content": "||~~改成暴雷~~||",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "N的究極羞辱"
+      "id": "1441841710157009090",
+      "channel_id": "1170692781216378960",
+      "content": "so.... this kath character... seems pretty strong huh...",
+      "author": "lavache.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441828628915818618",
-      "content": "https://tenor.com/view/morimens-picmix-murphy-murphy-morimens-morimens-murphy-gi",
-      "author": "chiedgaf",
-      "reactions": 3,
-      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
+      "id": "1441938920412549202",
+      "channel_id": "1170692781216378960",
+      "content": "For now, time to finish arc 1 story <:A_pinch:1432980538536493057>",
+      "author": "lyriearia",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1441857962942533693",
-      "content": "繁衍狂熱配音也配收咪人就好了😭但是可惜也沒多少喚醒體有語音<:A_pinch:1432980538536493057>",
-      "author": "shostakovich524",
-      "reactions": 3,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1441712335852015708",
-      "content": "創死神🤩",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441857618674188388",
-      "content": "沒錯！對！這麼好聽怎麼能不多講點話！🥺",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1441780036913987626",
-      "content": "The channel also doesn't come up when searching for \"morimens official\"",
-      "author": "cm_richio",
-      "reactions": 1,
-      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
-    },
-    {
-      "id": "1441593626663587903",
-      "content": "因為我現在的關打痛苦榨取怪就沒了 有必要時還是會開大",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441601871256223825",
-      "content": "另外一個想帶啥都行",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441635799220228238",
-      "content": "都是看當天想玩誰",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "配队求助"
-    },
-    {
-      "id": "1441650907082260511",
-      "content": "抽深海的常駐，其實是想撈撈看墨菲來的...（之前常駐就剩墨菲了），然後沒成功...🫠",
-      "author": "wobuzai2830",
-      "reactions": 1,
-      "channel": "輪換抽卡"
+      "id": "1441678278250201119",
+      "channel_id": "1174983699935277147",
+      "content": "明年的6/29上",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     }
   ]
 }

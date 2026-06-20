@@ -1,10 +1,35 @@
 {
   "date": "2025-11-13",
-  "messages": 133,
-  "unique_authors": 19,
-  "reactions_total": 76,
-  "attachments": 20,
+  "messages": 20319,
+  "unique_authors": 226,
+  "reactions_total": 3155,
+  "attachments": 704,
   "channel_activity": {
+    "🔸general-chat": 4660,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸game-question": 697,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 216,
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 1,
+    "🔸交友频道": 4,
+    "🔸한국어-채팅방": 442,
+    "🔸deutscher-chatraum": 16,
+    "🔸chaîne-française": 30,
+    "🔸русский-канал": 814,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 361,
+    "🔸canal-português": 203,
+    "🔸ruang-obrolan-indonesia": 480,
+    "🔸ห้องสนทนาภาษาไทย": 457,
+    "🔸traphase": 128,
+    "🔸lore-chat": 492,
+    "🔸lets-count": 67,
+    "🔸频道建议┊server-suggestions": 7,
+    "🔸team-building": 469,
+    "🔸綜合討論": 1256,
+    "🔸阵容构建": 24,
+    "🔸morimens-game-chat": 9335,
     "Collection of Morimens fanart and doodles": 3,
     "Tulu gif I got from Twitter": 4,
     "Oc": 1,
@@ -37,31 +62,79 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "11": 8,
-    "4": 3,
-    "6": 9,
-    "0": 1,
-    "19": 14,
-    "23": 4,
-    "8": 22,
-    "14": 2,
-    "7": 1,
-    "9": 16,
-    "12": 25,
-    "3": 9,
-    "5": 1,
-    "18": 2,
-    "2": 5,
-    "17": 4,
-    "21": 5,
-    "20": 1,
-    "15": 1
+    "13": 1158,
+    "14": 1501,
+    "15": 1258,
+    "16": 849,
+    "17": 683,
+    "18": 564,
+    "19": 865,
+    "20": 712,
+    "21": 596,
+    "22": 309,
+    "23": 813,
+    "5": 351,
+    "7": 431,
+    "8": 701,
+    "9": 1294,
+    "10": 1638,
+    "0": 892,
+    "1": 566,
+    "2": 339,
+    "3": 690,
+    "4": 456,
+    "11": 1582,
+    "12": 1537,
+    "6": 534
   },
   "message_types": {
-    "0": 46,
-    "19": 35
+    "0": 2528,
+    "19": 1137,
+    "23": 2,
+    "20": 47,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1438472902105104475",
+      "channel_id": "1170692781216378960",
+      "content": "translated the kit image last night then combat designers started fighting over ",
+      "author": "morimens_15",
+      "reactions": 33,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438469532300738570",
+      "channel_id": "1170692781216378960",
+      "content": "New 24 skin",
+      "author": "vinsette",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438508958125133864",
+      "channel_id": "1170692781216378960",
+      "content": "<@964125234871545886> if you want tldr\nGMurphy\n- Change Aequor into Japanese Aeq",
+      "author": "_venush",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438615533082775564",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "bongosjam",
+      "reactions": 13,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438468437071364177",
+      "channel_id": "1170692781216378960",
+      "content": "I'm back after reading everything. At some point I stopped screaming and instead",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1438576695664840836",
       "content": "I'm having trouble relating with the newer players due to my massive hp bar from",
@@ -77,130 +150,107 @@
       "channel": "誕妄．墨菲機制與搭配探討"
     },
     {
+      "id": "1438516459474259978",
+      "channel_id": "1170692781216378960",
+      "content": "GUYS GUYS. they gave 24 a dress. OMG she is cute. She is the cutest. She deserve",
+      "author": "angy_24_s",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438540029499674634",
+      "channel_id": "1170692781216378960",
+      "content": "It's kinda funny that they released 3 covs that want multi-realms but GMurphy is",
+      "author": "vinsette",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438508567647748137",
+      "channel_id": "1131839874132090890",
+      "content": "我 是卡厄斯难民",
+      "author": "perfectblue233",
+      "reactions": 10,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1438543033518788719",
+      "channel_id": "1170692781216378960",
+      "content": "I CALLED IT. THEY WILL MAKE AEQOUR CLEM AND FLARES WILL LOVE IT",
+      "author": "thpdom",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438614124392218776",
+      "channel_id": "1400750050208125010",
+      "content": "thats literally the one thing ive claimed the most i think",
+      "author": "bongosjam",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438614355519213630",
+      "channel_id": "1400750050208125010",
+      "content": "is this thing on 🗣️  🎙️",
+      "author": "bongosjam",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1438581333344653342",
+      "channel_id": "1174983699935277147",
+      "content": "紀念一下普通章節ap",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1438466476829966438",
+      "channel_id": "1170692781216378960",
+      "content": "🫃 omg I'm late",
+      "author": "iibenigml1588",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438491236410331197",
+      "channel_id": "1170692781216378960",
+      "content": "I ain't hearing shit from someone with \"i love NTR\" as a handle",
+      "author": "faltracos",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438491796601704529",
+      "channel_id": "1170692781216378960",
+      "content": "\"gmurphy is mid\" \"~~flares~~ (insert youtuber here) lied to me\" \"should've saved",
+      "author": "alistiel",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438511234239696908",
+      "channel_id": "1170692781216378960",
+      "content": "nerf: mpreg debuff reduced to normal pregnancy",
+      "author": "stunninghorse",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1438512021242122354",
+      "channel_id": "1170692781216378960",
+      "content": "anyways guys im actually from 2026 and apparently morimens isnt in eos but the n",
+      "author": "stunninghorse",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1438327785604120830",
       "content": "Oc for the game<:Cheerup:1400771555939844149>",
       "author": "wisewwivard_10391",
       "reactions": 9,
       "channel": "Oc"
-    },
-    {
-      "id": "1438484737697251341",
-      "content": "",
-      "author": "sweet_25367",
-      "reactions": 8,
-      "channel": ""
-    },
-    {
-      "id": "1438511360127275280",
-      "content": "不然變成尖塔的選路線也好\n没選擇固定流程我是覺得簡化得過了頭而且也想不到好處",
-      "author": "partycatss.",
-      "reactions": 6,
-      "channel": "✅「已回答」还能见到星辰篇的地图吗"
-    },
-    {
-      "id": "1438359796876316714",
-      "content": "There are some questions that will have answers soon, and Goya cannot disclose m",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Answered」2nd anniversary suggestion"
-    },
-    {
-      "id": "1438463304010825759",
-      "content": "",
-      "author": "flim_of_life_burst",
-      "reactions": 4,
-      "channel": "觀鳥雙子個人劇情有感"
-    },
-    {
-      "id": "1438464293149347921",
-      "content": "24新皮这边什么时候上？☝️",
-      "author": "phenomena_298",
-      "reactions": 3,
-      "channel": "✅「已回答」24日服的新皮肤，这边上吗？"
-    },
-    {
-      "id": "1438365886561124382",
-      "content": "I will convey this suggestion to the production team🌹",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "💭「Processing」Final Dmg/Def/Aliemus Total  Suggestion"
-    },
-    {
-      "id": "1438504158499049582",
-      "content": "所以只是懶（我不信超限醫生+鳥兄弟打不過）",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 2,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438410755186888796",
-      "content": "Need a bed in background",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "Tulu gif I got from Twitter"
-    },
-    {
-      "id": "1438435994700484710",
-      "content": "入坑一個多月有塔維+9\n跟血希、醫生、鳥哥3啟\n強度黨 🛐",
-      "author": "meow51103",
-      "reactions": 1,
-      "channel": "不算新的新人求助"
-    },
-    {
-      "id": "1438448781308858439",
-      "content": "普通腳色如果到時啟靈開差不多了\n可以改抽普池命倫 巨輪之刃",
-      "author": "meow51103",
-      "reactions": 1,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438449919743492127",
-      "content": "+12之後你就可以放兩張SSR卡給主C了哦",
-      "author": "meow51103",
-      "reactions": 1,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438452592538550273",
-      "content": "拉蒙娜的3費卡",
-      "author": "meow51103",
-      "reactions": 1,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438453119120838726",
-      "content": "周年活動 \n深海篇腳色會進入普池 到時候可以看運氣\n撈其他輔助角",
-      "author": "meow51103",
-      "reactions": 1,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438505033493647461",
-      "content": "補藥啊",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "想问问配队&建议"
-    },
-    {
-      "id": "1438366890102755339",
-      "content": "感谢建议，戈雅去问问",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」还能见到星辰篇的地图吗"
-    },
-    {
-      "id": "1438613929700884674",
-      "content": "sometime some files are left behind",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」My game died"
-    },
-    {
-      "id": "1438641396130254950",
-      "content": "this is a good idea, though honestly changing the keeper level max hp formula to",
-      "author": "reya.li",
-      "reactions": 1,
-      "channel": "The ability to freely reduce your MAX HP modifier"
     }
   ]
 }

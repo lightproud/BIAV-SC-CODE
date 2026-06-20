@@ -1,10 +1,36 @@
 {
   "date": "2025-11-06",
-  "messages": 110,
-  "unique_authors": 27,
-  "reactions_total": 896,
-  "attachments": 28,
+  "messages": 16553,
+  "unique_authors": 232,
+  "reactions_total": 3745,
+  "attachments": 611,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 319,
+    "🔸游戏问题": 7,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 13,
+    "🔸课间休息闲聊": 6,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 57,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 50,
+    "🔸русский-канал": 528,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 767,
+    "🔸canal-português": 421,
+    "🔸ruang-obrolan-indonesia": 149,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 73,
+    "🔸lore-chat": 213,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸lets-count": 66,
+    "🔸频道建议┊server-suggestions": 17,
+    "🔸team-building": 568,
+    "🔸general-chat": 6244,
+    "🔸綜合討論": 841,
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 6023,
     "Collection of Morimens fanart and doodles": 2,
     "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1": 1,
     "Bagel's Okayge guide for Anniversary": 21,
@@ -26,44 +52,86 @@
     "是不是bug": 1,
     "相位對弈環境攻略": 1,
     "组队推荐": 1,
-    "🔸服务器公告┊server-announcement": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "8": 6,
-    "21": 3,
-    "2": 8,
-    "3": 18,
-    "16": 3,
-    "17": 9,
-    "5": 10,
-    "1": 4,
-    "4": 5,
-    "12": 2,
-    "13": 3,
-    "14": 6,
-    "10": 6,
-    "11": 8,
-    "18": 6,
-    "6": 4,
-    "7": 1,
-    "15": 2,
-    "22": 1,
-    "20": 1,
-    "0": 3,
-    "23": 1
+    "0": 1324,
+    "3": 715,
+    "8": 634,
+    "9": 926,
+    "10": 794,
+    "12": 411,
+    "13": 666,
+    "14": 932,
+    "15": 906,
+    "16": 784,
+    "17": 441,
+    "18": 415,
+    "1": 891,
+    "2": 447,
+    "4": 911,
+    "5": 725,
+    "6": 679,
+    "7": 391,
+    "11": 414,
+    "19": 538,
+    "20": 856,
+    "21": 432,
+    "23": 634,
+    "22": 687
   },
   "message_types": {
-    "0": 68,
-    "19": 13
+    "0": 256,
+    "19": 85
   },
   "top_reacted_messages": [
     {
       "id": "1435783846925828136",
+      "channel_id": "1354754985119846581",
       "content": "🔊 ***As a reminder, please select your \"language\" role. The language channels an",
       "author": "cometovilla",
-      "reactions": 856,
+      "reactions": 864,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1436107829588267200",
+      "channel_id": "1170692781216378960",
+      "content": "Gentlemen <:Sendflowers:1400771545370067118> \nIt's with pleasure that I can anno",
+      "author": "legendaryredz",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435955503367979141",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": ".craystal",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1436095945442988062",
+      "channel_id": "1300659662311526512",
+      "content": "🇧 🇴 🇲 🅱️ 🇦 💣 💥",
+      "author": "ancientbp",
+      "reactions": 14,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1436125416518844488",
+      "channel_id": "1170692781216378960",
+      "content": "Aurita mentioned",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435987027635081258",
+      "channel_id": "1131839817982947429",
+      "content": "耶~~~",
+      "author": "jidu1418",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1435840861488283735",
@@ -73,81 +141,107 @@
       "channel": "✅「Answered」Card Art for Awakener Skills/Rouse"
     },
     {
+      "id": "1435786593570000937",
+      "channel_id": "1400750050208125010",
+      "content": "Im already the best person",
+      "author": "spooky_penguin_",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1436033158339498014",
+      "channel_id": "1131839817982947429",
+      "content": "其實我也是一種羊媽對吧",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1436110109653864509",
+      "channel_id": "1131839817982947429",
+      "content": "拿下",
+      "author": "human10062",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1435954351830073415",
+      "channel_id": "1170692781216378960",
+      "content": "hiiii",
+      "author": "bagels5899",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435955175385858068",
+      "channel_id": "1170692781216378960",
+      "content": "Why I thought for a sec the praying imoji was a nose",
+      "author": "meow4joscarl",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435955628446191688",
+      "channel_id": "1170692781216378960",
+      "content": "Do u guys think Ramona is jewish",
+      "author": "meow4joscarl",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435792006742806670",
+      "channel_id": "1400750050208125010",
+      "content": "It’s all over the screen",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1435927441716809799",
+      "channel_id": "1170692781216378960",
+      "content": "More thighs is never a bad thing…",
+      "author": "pleasegodendme",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435899377561636906",
+      "channel_id": "1400750050208125010",
+      "content": "67",
+      "author": "syruponstrawberrycake",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1435847717145411749",
+      "channel_id": "1131839817982947429",
+      "content": "<:realm_aequor:1435780325354504242> 是重刑犯無期徒刑的象徵",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1435909629618946160",
+      "channel_id": "1170692781216378960",
+      "content": "ive once accidentally killed myself at a shop node",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1435954900797227018",
+      "channel_id": "1170692781216378960",
+      "content": "Israel gpt 🇮🇱  please 🙏 generate at morimens character 🧍‍♀️ that us idf soldiers",
+      "author": ".craystal",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1435787478433923163",
       "content": "After communicating with the community, the team discussed the matter again.",
       "author": "game.producer.light",
       "reactions": 7,
       "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
-    },
-    {
-      "id": "1435943084981747762",
-      "content": "入坑一個多月了\n感覺也是該準備挑戰融災更高分\n目前主線推完困難看這禮拜推不推的完忘卻\n有點在角色上的不知道怎麼分配資源\n把身上能擠出來的石頭都ALLIN塔薇後 ",
-      "author": "dog_0630",
-      "reactions": 5,
-      "channel": "不算新的新人求助"
-    },
-    {
-      "id": "1435907919286898770",
-      "content": "<:grin:1400771716665446471>",
-      "author": "le_fishmael",
-      "reactions": 4,
-      "channel": "Collection of Morimens fanart and doodles"
-    },
-    {
-      "id": "1435962810390806590",
-      "content": "雖然也許是華而不實的小東西，不過生涯成就的項目裡有一系列中毒成就，希望同為共通被動傷害的反擊也可以有一些成就可以拿🥺以及出血跟觸傷也想要🥺真的好想要可愛小玩意兒",
-      "author": "amstelredam",
-      "reactions": 4,
-      "channel": "✅「已回答」關於生涯成就"
-    },
-    {
-      "id": "1435860103713788077",
-      "content": "他們目前能想到的方式就是，你越抽不到想要的角色，對他們越有利。但他們沒想到的是，越抽不到想要的角色，退坑的人越多",
-      "author": "taoi002",
-      "reactions": 3,
-      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
-    },
-    {
-      "id": "1435858141572239511",
-      "content": "pull ultra standard. Ultra good. Best value. \n\nThanks for coming to my talk. See",
-      "author": "frowningquokka",
-      "reactions": 2,
-      "channel": "Guide for noobs"
-    },
-    {
-      "id": "1435912240493629510",
-      "content": "還不能確定你未來的方向",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "剛入坑新手求"
-    },
-    {
-      "id": "1436013973836136590",
-      "content": "<@1435983614595567656> event coming next update",
-      "author": "detectivedango",
-      "reactions": 1,
-      "channel": "choosing free awakener"
-    },
-    {
-      "id": "1436093898484220016",
-      "content": "if you like blue, then corpo would fit in well. castor and tawil are also some o",
-      "author": "sorqaqtani",
-      "reactions": 1,
-      "channel": "What would you try to pull for next during the Anniversary?"
-    },
-    {
-      "id": "1435933039111835708",
-      "content": "check out my tawil playlist on my channel",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "Tawil help"
-    },
-    {
-      "id": "1435885031599116398",
-      "content": "抽个羊妈呗，血肉就能随便玩了",
-      "author": "tululike",
-      "reactions": 1,
-      "channel": "组队推荐"
     }
   ]
 }

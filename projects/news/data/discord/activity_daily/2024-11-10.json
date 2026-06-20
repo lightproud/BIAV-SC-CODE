@@ -1,10 +1,21 @@
 {
   "date": "2024-11-10",
-  "messages": 38,
-  "unique_authors": 10,
-  "reactions_total": 95,
-  "attachments": 23,
+  "messages": 3504,
+  "unique_authors": 134,
+  "reactions_total": 367,
+  "attachments": 233,
   "channel_activity": {
+    "🔸綜合討論": 911,
+    "🔸阵容构建": 23,
+    "🔸morimens-game-chat": 1999,
+    "🔸剧情交流": 91,
+    "🔸相位对弈": 36,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 47,
+    "🔸phòng-chat-tiếng-việt": 76,
+    "🔸canal-español": 241,
+    "🔸canal-português": 1,
+    "🔸ruang-obrolan-indonesia": 36,
     "Stats and realm mechanics (and some tips)": 7,
     "GPT translation synonyms": 5,
     "请问周年庆有什么活动爆料么？": 1,
@@ -20,22 +31,34 @@
     "復仇、復仇。": 1
   },
   "hourly_activity": {
-    "16": 15,
-    "17": 4,
-    "15": 1,
-    "5": 2,
-    "8": 1,
-    "9": 8,
-    "3": 1,
-    "4": 1,
-    "12": 1,
-    "7": 1,
-    "0": 1,
-    "14": 1,
-    "22": 1
+    "2": 86,
+    "5": 241,
+    "6": 81,
+    "7": 76,
+    "8": 133,
+    "9": 193,
+    "10": 83,
+    "11": 178,
+    "12": 75,
+    "13": 116,
+    "14": 484,
+    "15": 396,
+    "16": 251,
+    "17": 201,
+    "18": 47,
+    "19": 36,
+    "20": 167,
+    "23": 20,
+    "0": 50,
+    "1": 59,
+    "3": 175,
+    "4": 106,
+    "21": 115,
+    "22": 135
   },
   "message_types": {
-    "0": 12
+    "0": 2826,
+    "19": 640
   },
   "top_reacted_messages": [
     {
@@ -81,11 +104,99 @@
       "channel": "建設一下我產品"
     },
     {
+      "id": "1305202011548942337",
+      "channel_id": "1131839817982947429",
+      "content": "不要讓他們玩＞想親口說只給你玩",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1305116176204169277",
+      "channel_id": "1173463482503536711",
+      "content": "眾裡尋神千百度\n驀然回首，圖魯就在學校教務處",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1305301822512037890",
       "content": "好想嗑……CP\n好想吃……刀子\n\n[相位對弈部分](https://discord.com/channels/1131791637933199470/13053",
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "原創喚醒體投稿：烈牙．戈利亞（含相位對弈模式）"
+    },
+    {
+      "id": "1305125984093081680",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1305115717791907920",
+      "channel_id": "1173463482503536711",
+      "content": "~~眾裡尋父千百處~~\n~~暮然回首，他爹就在魚人扎堆處~~",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1305117829011472384",
+      "channel_id": "1173463482503536711",
+      "content": "~~先天邪教頭子聖體~~",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1305045476097396748",
+      "channel_id": "1131839817982947429",
+      "content": "~~他可能沒想到掉san是掉在打關卡~~",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1305128917438304359",
+      "channel_id": "1131839817982947429",
+      "content": "應該要直接開放踹喚醒體房間的門",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1305179981487538186",
+      "channel_id": "1131839817982947429",
+      "content": "~~只有一張立繪沒有任何差分，最省錢的角色~~",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1305200674623066123",
+      "channel_id": "1131839817982947429",
+      "content": "~~但我也想玩你的尾巴~~",
+      "author": "lemoncandy25",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304974276587421706",
+      "channel_id": "1170692781216378960",
+      "content": "Its these little things that I like",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1305115255810035808",
+      "channel_id": "1173463482503536711",
+      "content": "~~玩家只要看劇情就好，官方洗白可就麻煩了~~",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1305046385506390088",
@@ -95,25 +206,12 @@
       "channel": "復仇、復仇。"
     },
     {
-      "id": "1305014950485426267",
-      "content": "那兩個字是打炮嗎？",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "據說主美走了？"
-    },
-    {
-      "id": "1305021388503122033",
-      "content": "我不清楚，我不知道，别问我。（狗头）",
-      "author": "fengtengjayden9754",
-      "reactions": 1,
-      "channel": "據說主美走了？"
-    },
-    {
-      "id": "1304959333184045229",
-      "content": "~~指的是把人變成魚人是吧~~",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "為什麼希洛這麼好看"
+      "id": "1305059735094951948",
+      "channel_id": "1131839817982947429",
+      "content": "相信貓的強度膨脹",
+      "author": "yizilven",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-01-08",
-  "messages": 99,
-  "unique_authors": 28,
-  "reactions_total": 124,
-  "attachments": 31,
+  "messages": 4865,
+  "unique_authors": 154,
+  "reactions_total": 349,
+  "attachments": 281,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "🔸traphase": 261,
+    "🔸lore-chat": 134,
+    "🔸綜合討論": 585,
+    "🔸阵容构建": 98,
+    "🔸morimens-game-chat": 3198,
+    "🔸剧情交流": 22,
+    "🔸相位对弈": 5,
+    "🔸한국어-채팅방": 64,
+    "🔸русский-канал": 196,
+    "🔸phòng-chat-tiếng-việt": 25,
+    "🔸canal-español": 68,
+    "🔸canal-português": 101,
+    "🔸ruang-obrolan-indonesia": 6,
     "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)": 2,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 14,
     "✅前瞻：V2.0 双界域混编": 2,
@@ -26,27 +40,34 @@
     "24": 2
   },
   "hourly_activity": {
-    "5": 11,
-    "6": 10,
-    "7": 15,
-    "8": 2,
-    "10": 12,
-    "20": 2,
-    "0": 3,
-    "16": 1,
-    "18": 1,
-    "1": 1,
-    "11": 3,
-    "12": 7,
-    "13": 4,
-    "14": 6,
-    "4": 8,
-    "3": 2,
-    "2": 10,
-    "19": 1
+    "11": 217,
+    "13": 103,
+    "22": 186,
+    "7": 404,
+    "8": 388,
+    "9": 225,
+    "10": 182,
+    "12": 93,
+    "14": 232,
+    "15": 286,
+    "16": 229,
+    "18": 138,
+    "19": 94,
+    "23": 174,
+    "17": 214,
+    "2": 271,
+    "3": 257,
+    "4": 101,
+    "5": 332,
+    "6": 217,
+    "0": 94,
+    "1": 181,
+    "20": 10,
+    "21": 237
   },
   "message_types": {
-    "19": 2
+    "0": 339,
+    "19": 59
   },
   "top_reacted_messages": [
     {
@@ -92,11 +113,59 @@
       "channel": "忘却前夜毁了我的手机屏幕"
     },
     {
+      "id": "1326480750979186779",
+      "channel_id": "1131839817982947429",
+      "content": "# 一定是卡墨的錯",
+      "author": "yusi4172",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326565218901426240",
+      "channel_id": "1131839817982947429",
+      "content": "要不是要上班我还得通宵挂",
+      "author": "whshhsa",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1326554225328652371",
       "content": "可不可以在通訊器那邊增加一個重新選擇選項的功能？\n\n主要是好奇如果選另一個選項角色們會回什麼訊息\n（如果是守密人不論選那個選項，角色回應的訊息都相同的話請當我沒",
       "author": "youluo0436",
       "reactions": 6,
       "channel": "通訊器回顧"
+    },
+    {
+      "id": "1326569012452397138",
+      "channel_id": "1326453691527594035",
+      "content": "no need to wait. I can already tell you, it's all jenkins <:stoppage:12369385213",
+      "author": "gugali",
+      "reactions": 5,
+      "channel": "🔸traphase"
+    },
+    {
+      "id": "1326393316857745451",
+      "channel_id": "1131839817982947429",
+      "content": "又我",
+      "author": "whshhsa",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326436284817997877",
+      "channel_id": "1131839817982947429",
+      "content": "勾巴打个速通还要花200修手机",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1326480827345010698",
+      "channel_id": "1131839817982947429",
+      "content": "# 一定是柠檬佬的错",
+      "author": "whshhsa",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1326397130583179354",
@@ -106,88 +175,52 @@
       "channel": "有考慮把序章影片放入典藏館嗎？"
     },
     {
-      "id": "1326469046757101568",
-      "content": "再不出文字公告 我就要做视频锐评2.1改动了<:cry:1239910167668326480>",
-      "author": "galagalaguo",
-      "reactions": 3,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
+      "id": "1326474914781466670",
+      "channel_id": "1131839817982947429",
+      "content": "兩億 不疊了 好累",
+      "author": "lemoncandy25",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326554220970774539",
-      "content": "可不可以在通訊器那邊增加一個重新選擇選項的功能？\n\n主要是好奇如果選另一個選項角色們會回什麼訊息\n（如果是守密人不論選那個選項，角色回應的訊息都相同的話請當我沒",
-      "author": "youluo0436",
-      "reactions": 3,
-      "channel": "通訊器回顧"
+      "id": "1326481221248876584",
+      "channel_id": "1131839817982947429",
+      "content": "~~反擊大賽是你提的~~",
+      "author": "lemoncandy25",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326410856938082334",
-      "content": "大佬是不是其他角色都抽了+12<:stoppage:1236938521365839872>",
-      "author": "sense25.",
-      "reactions": 3,
-      "channel": "弥撒格第一届~~算力大赛!"
+      "id": "1326511906172698624",
+      "channel_id": "1131839817982947429",
+      "content": "~~答案是把腦缸組美術買下來叫他們給我畫~~",
+      "author": "07_li",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1326457406850338847",
-      "content": "混編可以實現我的蘿莉隊啦呀啊啊啊啊呀❤️",
-      "author": "ljfe_",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
+      "id": "1326370437881532476",
+      "channel_id": "1131839874132090890",
+      "content": "過山車的血量",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1326531380414386206",
-      "content": "<@1302298693369856000> 廷达罗斯太子（太好了是sp牢索我们超维有救了）",
-      "author": "saranosol",
-      "reactions": 2,
-      "channel": "本源喚醒體：異度·索瓦爾格"
+      "id": "1326400795046051871",
+      "channel_id": "1131839874132090890",
+      "content": "给个预备1真不过分吧",
+      "author": "art1_2_3",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1326445623192453153",
-      "content": "還是和以前一樣吧",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1326443378237505588",
-      "content": "24属性效果呢？可以同时触发两个派别的效果吗？",
-      "author": "qwebnmcv",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.0 双界域混编"
-    },
-    {
-      "id": "1326491148424052776",
-      "content": "Hi, by Hameln's special card, do you mean \"Recurring Melody\"? If yes, then this ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug?"
-    },
-    {
-      "id": "1326496045181435965",
-      "content": "And if by special card, you mean \"Chora Symphony\", this card also only works on ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug?"
-    },
-    {
-      "id": "1326380422656954459",
-      "content": "You lose 50% of your damage but all protection effects on you are increased by 5",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "✅「Answered」[Bug / Wrong Translation?] Death Proclamation - End"
-    },
-    {
-      "id": "1326383159377530891",
-      "content": "Hello, based on your screenshot,  it is the Death Proclamation take effects so y",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」[Bug / Wrong Translation?] Death Proclamation - End"
-    },
-    {
-      "id": "1326565792128696350",
-      "content": "剛出草圖的時候就預告過了\n是的💅我索偷偷變成了廷達羅斯太子嚇死所有人",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "本源喚醒體：異度·索瓦爾格"
+      "id": "1326614110862970900",
+      "channel_id": "1300659580446969918",
+      "content": "Легендарный ру-гпт",
+      "author": "twilightsparkle163163",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
     }
   ]
 }

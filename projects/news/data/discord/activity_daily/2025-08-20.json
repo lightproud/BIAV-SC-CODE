@@ -1,10 +1,31 @@
 {
   "date": "2025-08-20",
-  "messages": 87,
-  "unique_authors": 22,
-  "reactions_total": 255,
-  "attachments": 23,
+  "messages": 15700,
+  "unique_authors": 682,
+  "reactions_total": 1884,
+  "attachments": 653,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸日本語チャンネル": 281,
+    "🔸한국어-채팅방": 33,
+    "🔸deutscher-chatraum": 14,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 560,
+    "🔸phòng-chat-tiếng-việt": 246,
+    "🔸canal-español": 654,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 324,
+    "🔸ห้องสนทนาภาษาไทย": 39,
+    "🔸traphase": 345,
+    "🔸lore-chat": 16,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 22,
+    "🔸general-chat": 798,
+    "🔸邀请码互助┊swap-invitation-codes": 775,
+    "🔸綜合討論": 852,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 10549,
     "happy bday tulu": 1,
     "[Submission] \"...Point thy path to the Divine Realm!\"": 1,
     "Kath - RA Art Submission by Flares.": 2,
@@ -41,31 +62,35 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "15": 5,
-    "14": 7,
-    "21": 2,
-    "11": 5,
-    "0": 3,
-    "6": 7,
-    "16": 1,
-    "18": 1,
-    "17": 3,
-    "3": 10,
-    "20": 6,
-    "13": 2,
-    "19": 2,
-    "2": 7,
-    "9": 1,
-    "10": 3,
-    "5": 2,
-    "7": 12,
-    "1": 1,
-    "4": 6,
-    "8": 1
+    "9": 511,
+    "2": 1049,
+    "3": 758,
+    "4": 424,
+    "5": 1010,
+    "6": 630,
+    "7": 549,
+    "8": 417,
+    "10": 666,
+    "11": 449,
+    "12": 417,
+    "13": 494,
+    "14": 772,
+    "15": 979,
+    "17": 585,
+    "18": 625,
+    "19": 848,
+    "20": 765,
+    "21": 745,
+    "22": 671,
+    "23": 1008,
+    "16": 377,
+    "0": 288,
+    "1": 663
   },
   "message_types": {
-    "0": 37,
-    "19": 2
+    "0": 3476,
+    "19": 730,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -90,6 +115,14 @@
       "channel": "Cryptcur's Gallery"
     },
     {
+      "id": "1407551677464051746",
+      "channel_id": "1300659436804640788",
+      "content": "Hi, everyone can share invitation codes on this channel👉 👉 👉 https://discord.com",
+      "author": "morimensstaff01",
+      "reactions": 38,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1407633896090112053",
       "content": "<@1298268532017991702>💐",
       "author": "morimensstaff01",
@@ -104,11 +137,75 @@
       "channel": "Detailed Damage Formula Graphic"
     },
     {
+      "id": "1407553135722889257",
+      "channel_id": "1405837769212821554",
+      "content": "Please share the invitation code here, not on the Japanese chat channel😸 @everyo",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
+      "id": "1407557358808338562",
+      "channel_id": "1131839817982947429",
+      "content": "<:question2:1356053130336272414>",
+      "author": "zhaoxing233",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1407631448219058266",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1407552840175456366",
+      "channel_id": "1300659436804640788",
+      "content": "https://tenor.com/view/reading-sign-cant-stop-me-no-one-can-stop-me-gif-13921932",
+      "author": "sins_snowlake",
+      "reactions": 12,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1407528507634094101",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407612588983975958",
+      "channel_id": "1170692781216378960",
+      "content": "his wheel you say",
+      "author": ".dang",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407552548776185877",
+      "channel_id": "1300659436804640788",
+      "content": "<@484399449255182336><@585393986118615051><@276035414123610112><@276035414123610",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1407821632311132230",
+      "channel_id": "1300659603993923644",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 10,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1407557028825530491",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kevsalvador",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1407567661625512026",
@@ -118,95 +215,36 @@
       "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
-      "id": "1407693621163069594",
+      "id": "1407554004191412285",
+      "channel_id": "1300659436804640788",
+      "content": "We have created a channel specifically for sharing invitation codes 👉 https://di",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1407821750896689333",
+      "channel_id": "1300659662311526512",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies:\n\nHVGX-HLDX",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1407791982436286484",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "cryptcur",
+      "author": "kozupii.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407553308939256071",
+      "channel_id": "1405837769212821554",
+      "content": "is there a reason to mass share them?",
+      "author": "camillionaire_.",
       "reactions": 7,
-      "channel": "Cryptcur's Gallery"
-    },
-    {
-      "id": "1407775575581397083",
-      "content": "我只是覺得很好笑",
-      "author": "ice_storys",
-      "reactions": 5,
-      "channel": "希爾拉"
-    },
-    {
-      "id": "1407730790355435683",
-      "content": "I fixed it!!",
-      "author": "rohaluss",
-      "reactions": 4,
-      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
-    },
-    {
-      "id": "1407526114733199441",
-      "content": "No I won't add a corpo column, tentacle burst is incalculabe.",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "Detailed Damage Formula Graphic"
-    },
-    {
-      "id": "1407685768243183717",
-      "content": "<:Emoji_AJE_M_04:1400771555939844149> 嗨大家好，V2.3.0 攻略征集获奖名单公布！\n感谢大家的精彩创作~奖励将在本周内发",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "🎯V2.3.0版本攻略征集开启！V2.3.0 Fan Collection Is Open!"
-    },
-    {
-      "id": "1407637319392956426",
-      "content": "赞美戈雅<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1407725846835499130",
-      "content": "Yes because pity carries over. But tbh corpo in the next rerun is better, of the",
-      "author": "iibenigml1588",
-      "reactions": 1,
-      "channel": "Just starting, quick question on pulls"
-    },
-    {
-      "id": "1407551836155809902",
-      "content": "",
-      "author": "kezrin",
-      "reactions": 1,
-      "channel": "clarifications on mechanics"
-    },
-    {
-      "id": "1407552002417754124",
-      "content": "'stage' means the whole dungeon, right? I initially thought it meant each battle",
-      "author": "kezrin",
-      "reactions": 1,
-      "channel": "clarifications on mechanics"
-    },
-    {
-      "id": "1407552806335938601",
-      "content": "after the turn ends, they'll revert back to the original cards right? lmao",
-      "author": "kezrin",
-      "reactions": 1,
-      "channel": "clarifications on mechanics"
-    },
-    {
-      "id": "1407729715627687976",
-      "content": "this increases the amount of poison the wielder inflicts? or does it actually in",
-      "author": "kezrin",
-      "reactions": 1,
-      "channel": "clarifications on mechanics"
-    },
-    {
-      "id": "1407616913538023529",
-      "content": "守密人请放心，游戏内繁体语言的翻译体验我们也非常重视，此前收到一些繁体翻译的反馈，我们也第一时间积极地进行了处理，未来我们会想办法优化繁体的翻译工具<:pray",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」最近的簡體中文變多了"
-    },
-    {
-      "id": "1407618443024269463",
-      "content": "Thank you for your help<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Posse visual glitch"
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     }
   ]
 }

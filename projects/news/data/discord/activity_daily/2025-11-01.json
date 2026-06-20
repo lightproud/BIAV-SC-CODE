@@ -1,10 +1,34 @@
 {
   "date": "2025-11-01",
-  "messages": 89,
-  "unique_authors": 21,
-  "reactions_total": 424,
-  "attachments": 41,
+  "messages": 15734,
+  "unique_authors": 183,
+  "reactions_total": 2735,
+  "attachments": 798,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🐱light’s-nest": 4,
+    "🔸game-question": 267,
+    "🔸晒卡分享": 18,
+    "🔸相位对弈": 43,
+    "🔸课间休息闲聊": 7,
+    "🔸交友频道": 2,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 213,
+    "🔸русский-канал": 201,
+    "🔸phòng-chat-tiếng-việt": 4,
+    "🔸canal-español": 1259,
+    "🔸canal-português": 150,
+    "🔸ruang-obrolan-indonesia": 124,
+    "🔸ห้องสนทนาภาษาไทย": 13,
+    "🔸traphase": 271,
+    "🔸lore-chat": 141,
+    "🔸lets-count": 45,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 342,
+    "🔸general-chat": 6963,
+    "🔸綜合討論": 1086,
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 4464,
     "pollux doodle": 1,
     "\"For you, Pale Flame, I am not afraid to face the pyre once more.\"": 1,
     "🥀💜": 1,
@@ -31,42 +55,45 @@
     "游戏声音没了": 2,
     "相位對弈環境攻略": 2,
     "树上滴鸟儿成双对": 2,
-    "开个帖子堆一下摸鱼，大概率是两只鸟相关": 6,
-    "🐱light’s-nest": 2
+    "开个帖子堆一下摸鱼，大概率是两只鸟相关": 6
   },
   "hourly_activity": {
-    "18": 14,
-    "12": 7,
-    "8": 1,
-    "5": 1,
-    "6": 2,
-    "0": 1,
-    "10": 4,
-    "17": 5,
-    "20": 1,
-    "11": 16,
-    "15": 3,
-    "21": 1,
-    "9": 4,
-    "14": 12,
-    "3": 2,
-    "1": 1,
-    "2": 7,
-    "19": 1,
-    "23": 4,
-    "13": 2
+    "2": 608,
+    "3": 437,
+    "5": 696,
+    "7": 893,
+    "9": 357,
+    "11": 672,
+    "12": 1044,
+    "13": 1052,
+    "14": 1064,
+    "15": 679,
+    "16": 659,
+    "18": 318,
+    "20": 681,
+    "22": 884,
+    "1": 607,
+    "4": 591,
+    "8": 435,
+    "10": 336,
+    "17": 580,
+    "23": 530,
+    "0": 824,
+    "6": 745,
+    "19": 409,
+    "21": 633
   },
   "message_types": {
-    "0": 48,
-    "4": 1,
-    "19": 5
+    "0": 197,
+    "19": 93
   },
   "top_reacted_messages": [
     {
       "id": "1434163798368845974",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 210,
+      "reactions": 212,
       "channel": "🐱light’s-nest"
     },
     {
@@ -119,67 +146,100 @@
       "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
     },
     {
-      "id": "1434252459039002665",
+      "id": "1434300880462811347",
+      "channel_id": "1170692781216378960",
+      "content": "GCaecus > GLotan",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434311989584466042",
+      "channel_id": "1170692781216378960",
+      "content": "❌ <:angry1:1356053023272599668> ❌",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434220341030289639",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "yuuuuuuu__0103",
-      "reactions": 5,
-      "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
-    },
-    {
-      "id": "1434002043927793856",
-      "content": "这个月换完以后还多出55个碎片，算上融灾的产出，还是会一直溢出。",
-      "author": "lurenjiao",
-      "reactions": 4,
-      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
-    },
-    {
-      "id": "1434256656195387524",
-      "content": "大廳的音樂一直重覆同一首有點受不了，現在都直接把背景音樂靜音在玩，覺得好聽的音樂不少卻只能在特定的過場聽到很可惜，不知道能不能新增更換大廳音樂的功能<:flop",
-      "author": "roze_1201",
-      "reactions": 3,
-      "channel": "✅「已回答」大廳背景音樂"
-    },
-    {
-      "id": "1434328801285898442",
-      "content": "图鲁快醒醒",
-      "author": "human10062",
-      "reactions": 3,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
-    },
-    {
-      "id": "1434068811639951441",
-      "content": "Smash",
-      "author": "idotly",
-      "reactions": 2,
-      "channel": "leigh"
-    },
-    {
-      "id": "1434121555041845408",
-      "content": "As her banner is coming for the 2nd anniversary, this simple guide will help you",
-      "author": "rrzex_35227",
-      "reactions": 1,
-      "channel": "Video Guide to Rates, Banner Types & Characters for Beginners"
-    },
-    {
-      "id": "1434147931753021581",
-      "content": "「石頭」一章王就有吧？",
       "author": "akkom730",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1434156669088305276",
-      "content": "結果在試玩的地方是寫重新洗牌..lol",
-      "author": "rurumi4279",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
+      "id": "1434281177711247423",
+      "channel_id": "1355630588094320661",
+      "content": "1148",
+      "author": "themomonger",
+      "reactions": 8,
+      "channel": "🔸lets-count"
     },
     {
-      "id": "1434241055762546840",
-      "content": "非常见鬼的描述, 弃掉症状和状态卡, “将其他手牌洗入抽牌堆” 圣心应该进抽牌堆了吧",
-      "author": "human10062",
-      "reactions": 1,
-      "channel": "什麼是\"狀態卡\"?"
+      "id": "1434012669178019862",
+      "channel_id": "1131839817982947429",
+      "content": "把疼痛三启了",
+      "author": "carme.0588",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1434005793010745466",
+      "channel_id": "1170692781216378960",
+      "content": "<:like:1400771686965444648>",
+      "author": "bumcchi",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1434272957881909258",
+      "channel_id": "1170692781216378960",
+      "content": "here my contribution 😄",
+      "author": "monchi3524",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433991121947590782",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "ludwig_101",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434088567956570152",
+      "channel_id": "1400750050208125010",
+      "content": "Maths",
+      "author": "lotan_045",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434101524107104397",
+      "channel_id": "1400750050208125010",
+      "content": "<a:6_chewing:1223150612380778586>",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434280435382227039",
+      "channel_id": "1400750050208125010",
+      "content": "SUPER MONKEY ATTACK",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1434013580197368028",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     }
   ]
 }

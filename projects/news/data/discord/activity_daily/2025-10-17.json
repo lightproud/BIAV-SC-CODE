@@ -1,10 +1,30 @@
 {
   "date": "2025-10-17",
-  "messages": 300,
-  "unique_authors": 62,
-  "reactions_total": 377,
-  "attachments": 51,
+  "messages": 15216,
+  "unique_authors": 268,
+  "reactions_total": 3091,
+  "attachments": 618,
   "channel_activity": {
+    "🔸morimens-game-chat": 12016,
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 22,
+    "🔸相位对弈": 17,
+    "🔸课间休息闲聊": 19,
+    "🔸한국어-채팅방": 22,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 32,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 251,
+    "🔸canal-português": 45,
+    "🔸ruang-obrolan-indonesia": 128,
+    "🔸ห้องสนทนาภาษาไทย": 49,
+    "🔸traphase": 117,
+    "🔸lore-chat": 131,
+    "🔸lets-count": 11,
+    "🔸team-building": 13,
+    "🔸general-chat": 370,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸綜合討論": 1636,
     "Тулу фанарт": 1,
     "Мудрость мышек - Jenkin": 2,
     "Video Guide to Rates, Banner Types & Characters for Beginners": 1,
@@ -33,31 +53,37 @@
     "相位對弈環境攻略": 8
   },
   "hourly_activity": {
-    "17": 4,
-    "18": 7,
-    "10": 15,
-    "6": 2,
-    "11": 11,
-    "12": 14,
-    "13": 33,
-    "9": 10,
-    "15": 39,
-    "14": 116,
-    "8": 25,
-    "19": 2,
-    "20": 4,
-    "21": 5,
-    "23": 3,
-    "3": 1,
-    "4": 5,
-    "7": 2,
-    "1": 1,
-    "5": 1
+    "0": 382,
+    "1": 200,
+    "2": 357,
+    "3": 227,
+    "4": 415,
+    "5": 650,
+    "6": 786,
+    "7": 894,
+    "8": 735,
+    "9": 551,
+    "10": 535,
+    "11": 375,
+    "12": 1187,
+    "13": 921,
+    "14": 1276,
+    "15": 1132,
+    "16": 820,
+    "17": 737,
+    "18": 537,
+    "19": 467,
+    "20": 825,
+    "21": 494,
+    "22": 369,
+    "23": 344
   },
   "message_types": {
-    "19": 41,
-    "0": 159,
-    "4": 1
+    "0": 8693,
+    "19": 4574,
+    "20": 7,
+    "23": 5,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -66,6 +92,22 @@
       "author": "morimensstaff01",
       "reactions": 66,
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428824182090629231",
+      "channel_id": "1170692781216378960",
+      "content": "noice",
+      "author": "_komaz",
+      "reactions": 58,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1428886133583908934",
+      "channel_id": "1170692781216378960",
+      "content": "Yall gonna play czn?",
+      "author": "r3tr0maniac_",
+      "reactions": 33,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1428808707059224660",
@@ -80,6 +122,14 @@
       "author": "ass191044",
       "reactions": 26,
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428783511912845412",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> she is still really beautiful despite the nerf of her fore",
+      "author": "moyashi0672",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1428668699690143785",
@@ -101,6 +151,22 @@
       "author": "closetom",
       "reactions": 17,
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428781052083703959",
+      "channel_id": "1131839817982947429",
+      "content": "當忘卻前夜宣布關服，他們紛紛刪除手機裡的忘卻前夜的時候，我卻拼命往裡面充錢，甚至向銀行借錢貸款，他們都罵我是神經病，是貓孝子，但我不在意，因為只有我知道，在忘卻",
+      "author": "undecember_news",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1428808366129545339",
+      "channel_id": "1170692781216378960",
+      "content": "Going to tell all new players to save for clem rerun.",
+      "author": "kinbote.",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1428694323976998982",
@@ -131,74 +197,44 @@
       "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
     },
     {
-      "id": "1428686248012152975",
-      "content": "https://www.youtube.com/watch?v=dXrrB37gpco\n\nFeel free to @ me with any question",
-      "author": "reya.li",
+      "id": "1428734524464038049",
+      "channel_id": "1174983699935277147",
+      "content": "希望夠抽",
+      "author": "quackdayo",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1428643078893211660",
+      "channel_id": "1170692781216378960",
+      "content": "<@1240533505713111084> best team is pretty subjective too. Honestly pick a good ",
+      "author": "hitsu4",
       "reactions": 10,
-      "channel": "Video Guide to Rates, Banner Types & Characters for Beginners"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1428665484320051270",
-      "content": "i am craving a matcha takoyaki 🤤",
-      "author": "jormiejormungandr",
-      "reactions": 9,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1428646728466301041",
+      "channel_id": "1170692781216378960",
+      "content": "Moony, to clarify, you’re doresain paramour right",
+      "author": "kezrin",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1428666098051579996",
-      "content": "random surprise flavor~",
-      "author": "dahongtsa",
-      "reactions": 9,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+      "id": "1428790206483398727",
+      "channel_id": "1170692781216378960",
+      "content": "was arisu the abuser?",
+      "author": "lavache.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1428739515064778833",
-      "content": "here you go",
-      "author": "chiedgaf",
-      "reactions": 9,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1428666176812093520",
-      "content": "",
-      "author": "closetom",
-      "reactions": 8,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1428698520730468362",
-      "content": "there's definitely something wrong with this one",
-      "author": "reya.li",
-      "reactions": 8,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1428760931105640632",
-      "content": "the right one is so much better",
-      "author": "_venush",
-      "reactions": 7,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1428763315416334347",
-      "content": "the old one is more better than the new one<:dead:1356082627509092372>",
-      "author": "ahong0727",
-      "reactions": 7,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
-    },
-    {
-      "id": "1428720227255849031",
-      "content": "鼠鼠你可以吃糖",
-      "author": "panth3936",
-      "reactions": 7,
-      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
-    },
-    {
-      "id": "1428763543775482077",
-      "content": "Sorry but ...\nI kinda like the left one <:drool:1356053063139463248>",
-      "author": "legendaryredz",
-      "reactions": 6,
-      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+      "id": "1428794771895484499",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/forehead-funny-girl-girl-funny-big-forehead-gif-886242160",
+      "author": "phi_squared",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

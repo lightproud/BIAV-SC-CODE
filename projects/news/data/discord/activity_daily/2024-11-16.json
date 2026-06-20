@@ -1,10 +1,22 @@
 {
   "date": "2024-11-16",
-  "messages": 65,
-  "unique_authors": 10,
-  "reactions_total": 12,
-  "attachments": 8,
+  "messages": 5444,
+  "unique_authors": 148,
+  "reactions_total": 235,
+  "attachments": 228,
   "channel_activity": {
+    "🔸綜合討論": 1566,
+    "🔸阵容构建": 17,
+    "🔸morimens-game-chat": 3506,
+    "🔸相位对弈": 25,
+    "🔸日本語チャンネル": 3,
+    "🔸chaîne-française": 49,
+    "🔸русский-канал": 114,
+    "🔸phòng-chat-tiếng-việt": 56,
+    "🔸canal-español": 22,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 11,
+    "🔸ห้องสนทนาภาษาไทย": 3,
     "Relic Tierlist": 3,
     "V1.7.1.0 停服維護公告": 2,
     "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 6,
@@ -18,22 +30,60 @@
     "喬治（R18，有碼": 6
   },
   "hourly_activity": {
-    "12": 6,
-    "16": 2,
-    "18": 2,
-    "13": 3,
-    "15": 9,
-    "2": 22,
-    "10": 7,
-    "11": 5,
-    "5": 3,
-    "1": 4,
-    "4": 2
+    "0": 330,
+    "1": 251,
+    "2": 122,
+    "3": 216,
+    "4": 209,
+    "5": 114,
+    "6": 316,
+    "7": 171,
+    "8": 235,
+    "9": 274,
+    "10": 344,
+    "11": 283,
+    "12": 436,
+    "13": 262,
+    "14": 546,
+    "15": 470,
+    "16": 234,
+    "17": 300,
+    "18": 72,
+    "19": 68,
+    "20": 8,
+    "21": 5,
+    "22": 51,
+    "23": 127
   },
   "message_types": {
-    "0": 3
+    "19": 1072,
+    "0": 4307
   },
   "top_reacted_messages": [
+    {
+      "id": "1307364208039690312",
+      "channel_id": "1131839817982947429",
+      "content": "對於無課的+4都是夢了",
+      "author": "kevin.yienwenst",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307277934687682641",
+      "channel_id": "1131839817982947429",
+      "content": "不過這種克系遊戲猜劇情也是蠻好玩的拉，只是我的重點從來只放在莉莉很可愛，跟拉蒙的腿很好舔這兩個而已",
+      "author": "huangyu0876",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307360573473689701",
+      "channel_id": "1131839817982947429",
+      "content": "畢竟\n你遊對外的賣點\n又不是卡牌模式\n應該是劇情美術吧\n如果想看劇情沉浸美術\n結果一直被關卡擋\n很容易消磨熱情",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1307317449485455391",
       "content": "Make your own tier list for relics, and place your explanations on some relics h",
@@ -42,25 +92,132 @@
       "channel": "Relic Tierlist"
     },
     {
-      "id": "1307335675674361896",
-      "content": "坐等加強",
-      "author": "kevin.yienwenst",
-      "reactions": 3,
-      "channel": "請願加強圖魯和深海新角"
+      "id": "1307233878074851370",
+      "channel_id": "1131839817982947429",
+      "content": "~~首先扔掉旺達~~",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307324726619672606",
-      "content": "是的朋友金鱼展还在追我\n（又付了一次门票钱）",
-      "author": "nancyjofla",
-      "reactions": 3,
-      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+      "id": "1307329748703121440",
+      "channel_id": "1131839817982947429",
+      "content": "就算復活賽打贏了，產能也需要重新調整，所以很難。",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307285975990538240",
-      "content": "",
-      "author": "saw5524",
-      "reactions": 1,
-      "channel": "this card lags on pc(doest play), only way hotkey"
+      "id": "1307358949514940530",
+      "channel_id": "1131839817982947429",
+      "content": "忘却：要不退吧 （看一眼其他游戏\n              好吧 你还是很好玩的",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307363246189183067",
+      "channel_id": "1131839817982947429",
+      "content": "而且新手有機率不知道15隻是完全體",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307364481445138533",
+      "channel_id": "1131839817982947429",
+      "content": "~~因為日常體驗對新手都一樣艱難~~",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307366395712897126",
+      "channel_id": "1131839817982947429",
+      "content": "反正我就是\n提出可以改善的部分\n如果貓有在看\n可以記一下\n撐過去之後\n能改善盡量改善\n不要再把新人嚇跑了",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307213783441342476",
+      "channel_id": "1131839817982947429",
+      "content": "-# ⊗ 該用戶已被cra爆炒",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307234127036153868",
+      "channel_id": "1131839817982947429",
+      "content": "釣魚佬\n~~專釣年輕好騙小男生~~",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307255870383456276",
+      "channel_id": "1131839817982947429",
+      "content": "羅傑斯還沒死過 我們得先讓他死一下<:127_MyStick:1284468181875953684>",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307328347151269888",
+      "channel_id": "1131839817982947429",
+      "content": "如果有机会的话……会有男性角色的。而且应该会有一些人喜欢。就看有没有机会了。",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307329852545695784",
+      "channel_id": "1131839817982947429",
+      "content": "目前沒有可以說明的消息。",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307359939769012275",
+      "channel_id": "1131839817982947429",
+      "content": "所以有些被拉入坑的\n沒多久就跑路\n這一套玩法\n就是很看玩家個人風格\n但\n~~這樣是賺不到錢的~~",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307362566166806639",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得以手游來說，這遊戲主線確實難度做的太高了，最硬核的那檔，而手游客群以輕度玩家為主，這勢必會勸退不少新手",
+      "author": "kamiya246",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307365872649769040",
+      "channel_id": "1131839817982947429",
+      "content": "融災這種鎖船玩法是還好啦，大不了前幾期都跳過，但主線有劇情的戰力要求這麼高就真的挺勸退人的了",
+      "author": "kamiya246",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307385823741739110",
+      "channel_id": "1131839874132090890",
+      "content": "24跟米粒都能上毒跟增加觸手，觸手記得轉換成防禦型態抗壓",
+      "author": "ekko9950",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1307341414887329792",
+      "channel_id": "1170692781216378960",
+      "content": "my fav gambling",
+      "author": "skykirisame",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

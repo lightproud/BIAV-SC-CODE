@@ -1,10 +1,33 @@
 {
   "date": "2025-12-15",
-  "messages": 174,
-  "unique_authors": 29,
-  "reactions_total": 110,
-  "attachments": 19,
+  "messages": 15535,
+  "unique_authors": 322,
+  "reactions_total": 1777,
+  "attachments": 917,
   "channel_activity": {
+    "🔸lets-count": 15,
+    "🔸team-building": 999,
+    "🔸general-chat": 121,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 1615,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 22,
+    "🔸机器人命令┊bot-commands": 41,
+    "🔸morimens-game-chat": 8158,
+    "🔸剧情交流": 49,
+    "🔸晒卡分享": 21,
+    "🔸相位对弈": 2,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 5,
+    "🔸русский-канал": 218,
+    "🔸phòng-chat-tiếng-việt": 183,
+    "🔸canal-español": 411,
+    "🔸canal-português": 117,
+    "🔸ruang-obrolan-indonesia": 478,
+    "🔸ห้องสนทนาภาษาไทย": 430,
+    "🔸traphase": 254,
+    "🔸lore-chat": 571,
+    "🔸綜合討論": 1634,
     "pollux sketch! (lf references i cannot find any)": 3,
     "Liz : Hollow Dance of Destruction": 1,
     "新手求助": 5,
@@ -42,36 +65,38 @@
     "💭「Processing」Doll Boss STR bug": 1,
     "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）": 40,
     "蓋個圖樓": 3,
-    "我也丟一下之前畫的 圖樓": 1,
-    "🔸忘却前夜┊morimens-tv": 1
+    "我也丟一下之前畫的 圖樓": 1
   },
   "hourly_activity": {
-    "10": 1,
-    "12": 5,
-    "15": 23,
-    "5": 8,
-    "18": 3,
-    "13": 4,
-    "14": 7,
-    "20": 5,
-    "23": 1,
-    "1": 2,
-    "3": 10,
-    "7": 21,
-    "9": 15,
-    "2": 8,
-    "6": 13,
-    "4": 7,
-    "8": 32,
-    "11": 2,
-    "16": 1,
-    "17": 1,
-    "19": 2,
-    "0": 3
+    "1": 992,
+    "4": 748,
+    "5": 682,
+    "6": 801,
+    "9": 814,
+    "13": 852,
+    "14": 670,
+    "15": 659,
+    "16": 732,
+    "20": 648,
+    "22": 288,
+    "0": 612,
+    "2": 833,
+    "3": 768,
+    "7": 556,
+    "8": 844,
+    "10": 802,
+    "11": 715,
+    "12": 705,
+    "17": 582,
+    "18": 200,
+    "19": 245,
+    "23": 515,
+    "21": 272
   },
   "message_types": {
-    "0": 7,
-    "19": 3
+    "0": 2125,
+    "19": 699,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -89,6 +114,126 @@
       "channel": "Liz : Hollow Dance of Destruction"
     },
     {
+      "id": "1450139901801529536",
+      "channel_id": "1131839817982947429",
+      "content": "莉莉贏麻了\nt1打個100k就能擺爛到遊戲結束",
+      "author": "water_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449958550976860312",
+      "channel_id": "1131839817982947429",
+      "content": "她可能又出生了一次吧",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449949517964247090",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1449960898952302652",
+      "channel_id": "1131839817982947429",
+      "content": "好虧喔\n吐了",
+      "author": "xiaosama666",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450041655427072001",
+      "channel_id": "1131839817982947429",
+      "content": "他在好與爛之間選擇了好爛",
+      "author": "quackdayo",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450047563423154282",
+      "channel_id": "1131839817982947429",
+      "content": "花一百多罐體力打蛋墨的我像小丑<:Meow:1400771520757891123>",
+      "author": "ai_renren",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450225259411144744",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449980499928813699",
+      "channel_id": "1174983699935277147",
+      "content": "不好 浪費一個母版了",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1450013519834775736",
+      "channel_id": "1131839817982947429",
+      "content": "各位\n被H4-10全方面克制的尤烏也過了",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450039373885214750",
+      "channel_id": "1131839817982947429",
+      "content": "我吐了 抽矮子三啟花了我170抽",
+      "author": "quackdayo",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1449936973879050354",
+      "channel_id": "1170692781216378960",
+      "content": "I want Pollux to stay in my apartment and make scrambled eggs every morning for ",
+      "author": "seynee_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1449937853453959178",
+      "channel_id": "1170692781216378960",
+      "content": "flares is a smart boy, invested in bitcoin at the tender age of.... 5?",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450079095248392285",
+      "channel_id": "1326453763355185215",
+      "content": "~~although i find it weird that the teenagers are not given the same level of wr",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1450057457136308275",
+      "channel_id": "1131839817982947429",
+      "content": "15抽從2啟變到3啟<:Cheerup:1400771555939844149>",
+      "author": "luckyinitial",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450058065377234964",
+      "channel_id": "1131839817982947429",
+      "content": "30抽不虧",
+      "author": "luckyinitial",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1450155051862458551",
       "content": "Everytime I log in this notification always pops up even though there's nothing ",
       "author": "mythicmoonwort",
@@ -96,123 +241,20 @@
       "channel": "💭「Processing」Recurring Notification from event"
     },
     {
-      "id": "1450123342521696417",
-      "content": "**Online Maintenance Announcement**\n\nDear Keeper,\n    The Mythag University Admi",
-      "author": "morimensstaff02",
+      "id": "1449991691183460467",
+      "channel_id": "1170692781216378960",
+      "content": "<:thumbsup:1356086340298473574>",
+      "author": "moyashi0672",
       "reactions": 6,
-      "channel": "线上问题修复公告"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1449953299129303260",
-      "content": "从我个人而言，买128是为了每日三倍，现在缩减一半，那不就是我花一样的钱少拿一半东西，没有任何说法吗?",
-      "author": "hhhh098962",
-      "reactions": 5,
-      "channel": "✅「已回答」关于手册奖励"
-    },
-    {
-      "id": "1450015948462493726",
-      "content": "妄想了神王圖魯～！",
-      "author": "souri.10244",
-      "reactions": 4,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1450052605018378241",
-      "content": "Well maybe in the future, they can let us know which characters will be designed",
-      "author": "hitsu4",
-      "reactions": 3,
-      "channel": "✅「Answered」Doresain targeting issue"
-    },
-    {
-      "id": "1450061340361359443",
-      "content": "鉛筆稿",
-      "author": "tanchen0811",
-      "reactions": 3,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1450138527399678113",
-      "content": "Is there any way we can get the discount somehow still, I already bought the adv",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "线上问题修复公告"
-    },
-    {
-      "id": "1450054328181329961",
-      "content": "能期待一手吗？",
-      "author": "2300011747",
-      "reactions": 2,
-      "channel": "请联动《新月同行》"
-    },
-    {
-      "id": "1450141641628450988",
-      "content": "這個屏障這麼閃亮是不是哪裡不對勁\n昨天打第七章還沒有，今天突然就這麼光芒萬丈了",
-      "author": "ixchel._.99",
-      "reactions": 2,
-      "channel": "💭「处理中」眼睛好痛"
-    },
-    {
-      "id": "1450123275635261460",
-      "content": "守密人你好：\n       弥萨格大学校务处已经于12月15日19:30进行校内设施修复，本次更新无需下载补丁，已经生效。对于更新可能给大家带来的不便，我们会准",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "线上问题修复公告"
-    },
-    {
-      "id": "1450056553062465558",
-      "content": "昨天看修掉了<:A_pinch:1432980538536493057>",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "✅「已解决」良性bug"
-    },
-    {
-      "id": "1450055139112124537",
-      "content": "Could you check your dms when possible?",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Auritas ability text missing info?"
-    },
-    {
-      "id": "1450056928674713723",
-      "content": "Hello, there is indeed an issue here. The designer will optimize the description",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Auritas ability text missing info?"
-    },
-    {
-      "id": "1450054613918023753",
-      "content": "哈喽，会在今天热更",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」時靈擺沒生效"
-    },
-    {
-      "id": "1450053347469037651",
-      "content": "<@1437487264023318668>No problem, I will relay it to them🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1450023772097871986",
-      "content": "Sorry, currently we do not support recharging in the Philippines. You can make p",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Error code 7004104"
-    },
-    {
-      "id": "1450009743824257094",
-      "content": "No, I don't have poison wheels",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Possible Myriam 2 cost bug"
-    },
-    {
-      "id": "1449967727883059272",
-      "content": "Hi, this issue is expected to be fixed today",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」W3A5 (Doll) Battle doesn't end even when the boss is dead"
+      "id": "1450053909266829414",
+      "channel_id": "1170692781216378960",
+      "content": "glowing pandia",
+      "author": "itsmemiki",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

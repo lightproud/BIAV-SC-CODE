@@ -1,10 +1,35 @@
 {
   "date": "2025-10-30",
-  "messages": 167,
-  "unique_authors": 15,
-  "reactions_total": 1135,
-  "attachments": 29,
+  "messages": 18660,
+  "unique_authors": 311,
+  "reactions_total": 4830,
+  "attachments": 814,
   "channel_activity": {
+    "🔸morimens-game-chat": 8913,
+    "🔸相位对弈": 18,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 21,
+    "🔸русский-канал": 725,
+    "🔸phòng-chat-tiếng-việt": 4,
+    "🔸canal-español": 62,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 115,
+    "🔸ห้องสนทนาภาษาไทย": 224,
+    "🔸traphase": 72,
+    "🔸lore-chat": 77,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 49,
+    "🔸频道建议┊server-suggestions": 71,
+    "🔸team-building": 229,
+    "🔸general-chat": 7017,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🐱light’s-nest": 4,
+    "🔸game-question": 15,
+    "🔸綜合討論": 818,
+    "🔸阵容构建": 3,
     "Ogier": 2,
     "Тулу фанарт": 1,
     "Happy Halloween 🎃": 3,
@@ -19,43 +44,53 @@
     "✅「Answered」About new Ryker buff": 1,
     "✅「Answered」Tentacle Overflow Mechanic clarification": 1,
     "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？": 3,
-    "🔸服务器公告┊server-announcement": 1,
-    "🔸礼包码┊gift-codes": 1,
-    "🐱light’s-nest": 2,
     "1432654338982940783": 10
   },
   "hourly_activity": {
-    "7": 2,
-    "15": 106,
-    "19": 5,
-    "20": 1,
-    "6": 3,
-    "12": 4,
-    "16": 6,
-    "17": 4,
-    "18": 4,
-    "13": 4,
-    "14": 16,
-    "22": 3,
-    "5": 3,
-    "8": 2,
-    "21": 1,
-    "10": 3
+    "0": 732,
+    "1": 215,
+    "2": 465,
+    "3": 362,
+    "4": 279,
+    "5": 558,
+    "6": 737,
+    "7": 597,
+    "8": 781,
+    "9": 789,
+    "10": 937,
+    "11": 467,
+    "12": 1088,
+    "13": 716,
+    "14": 840,
+    "15": 1397,
+    "16": 1637,
+    "17": 1369,
+    "18": 968,
+    "19": 981,
+    "20": 743,
+    "21": 424,
+    "22": 833,
+    "23": 745
   },
   "message_types": {
-    "0": 93,
-    "19": 44
+    "0": 11725,
+    "19": 5934,
+    "46": 1,
+    "23": 4,
+    "20": 8
   },
   "top_reacted_messages": [
     {
       "id": "1433441135216562196",
+      "channel_id": "1355094251775459399",
       "content": "🎁DC 29000守密人达成礼 / DC29000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
       "author": "morimensstaff02",
-      "reactions": 605,
+      "reactions": 618,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
       "id": "1433472586955755550",
+      "channel_id": "1354754985119846581",
       "content": "Hi everyone. A few things that I wanted to bring up:\n\n大家好。有几件事我想提一下：\n\n1. To ensu",
       "author": "cometovilla",
       "reactions": 319,
@@ -63,10 +98,43 @@
     },
     {
       "id": "1433514801220292701",
+      "channel_id": "1426837316533747823",
       "content": "我想我们都知道画师的名字，大家万圣节快乐！🎃",
       "author": "game.producer.light",
-      "reactions": 140,
+      "reactions": 142,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1433439827939954698",
+      "channel_id": "1170692781216378960",
+      "content": "Females can get pregnant",
+      "author": "flares117",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433490056043298926",
+      "channel_id": "1170692781216378960",
+      "content": "CAN WE HAVE OTHER TOPICS?",
+      "author": "arisuu0604",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433434476394053667",
+      "channel_id": "1170692781216378960",
+      "content": "Everyone loves Arisu.",
+      "author": "hitsu4",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433477821547679845",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1433533966006358087",
@@ -76,6 +144,22 @@
       "channel": "Happy Halloween 🎃"
     },
     {
+      "id": "1433377823388860556",
+      "channel_id": "1170692781216378960",
+      "content": "nah",
+      "author": "sexysneakystoat1625",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433378062673903758",
+      "channel_id": "1170692781216378960",
+      "content": "Remove the b NOW",
+      "author": "spooky_penguin_",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1433347849718071306",
       "content": "Who loves Erica?! I do!!",
       "author": "attano124.",
@@ -83,109 +167,76 @@
       "channel": "Erica my pookie"
     },
     {
-      "id": "1433426782308274257",
-      "content": "I used to upload this on Tumblr and I just discover this channel\nSo I will uploa",
-      "author": "noeyebunny.nobunsu",
+      "id": "1433454982253908080",
+      "channel_id": "1300659662311526512",
+      "content": "pon más barreras porfa",
+      "author": "rimachan__",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1433490430519017493",
+      "channel_id": "1170692781216378960",
+      "content": "I just wish the \"moderation team\" is actually active and not only come when ping",
+      "author": "good.th",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433549824656932884",
+      "channel_id": "1170692781216378960",
+      "content": "Guys can we perhaps go a day WITHOUT bullying me?",
+      "author": "frosthief",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433475235000221827",
+      "channel_id": "1170692781216378960",
+      "content": "there's been a ping? this channel's eos'd? <:stone:1356053165874741490>",
+      "author": "lavache.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433490649721733191",
+      "channel_id": "1170692781216378960",
+      "content": "this server is gonna get so booring without arisu saying some weird ass shit",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433542080470188104",
+      "channel_id": "1170692781216378960",
+      "content": "I hate this new emot",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1433394873133826089",
+      "channel_id": "1170692781216378960",
+      "content": "You also said agis doesn't have a right to say no!",
+      "author": "spooky_penguin_",
       "reactions": 9,
-      "channel": "Lovecraft and other reference I found in Morimens"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433372335142080633",
-      "content": "或者北洋政府",
-      "author": "ernest_heart",
+      "id": "1433500432415850639",
+      "channel_id": "1170692781216378960",
+      "content": "good beginner team?",
+      "author": "will2286",
       "reactions": 9,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1433501852842070089",
-      "content": "联动归龙潮吧，已经宣布停服了",
-      "author": "fushengyihua",
-      "reactions": 5,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433478774095089837",
-      "content": "also ||we actually know that BIAV has a Tsathoggua draft, still unsure if we wil",
-      "author": "_venush",
-      "reactions": 4,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433473399312613569",
+      "id": "1433530252533170186",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "aegisx",
-      "reactions": 3,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1433517744682172530",
-      "content": "N is everywhere",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 2,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433475378046963762",
-      "content": "剛開始看到希洛就把常駐抽全灌在血肉池（當時覺得希洛算蠻好看的）然後大概就是按原神的邏輯配隊 連猩紅熔爐 胚胎吞噬都不知道",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 2,
-      "channel": "回坑玩家配队求助"
-    },
-    {
-      "id": "1433351255958491226",
-      "content": "o hey my bestie commd you recently",
-      "author": "zuraznable",
-      "reactions": 1,
-      "channel": "Ogier"
-    },
-    {
-      "id": "1433545228501123234",
-      "content": "I love your chibi artstyle <:happy:1356053849894420683>",
-      "author": "bagels5899",
-      "reactions": 1,
-      "channel": "Happy Halloween 🎃"
-    },
-    {
-      "id": "1433480682918908059",
-      "content": "This game gives me a lot of inspiration for my own creation, I'm so excited",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433480854658879518",
-      "content": "But I guess I missed that event Orz",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433481445485183037",
-      "content": "This screenshot is not mine, but my friend shows it to me.\nAnd I was like \"WILBU",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433482313332686999",
-      "content": "Or else I would be \"Roger, tell me about my son!!! \"",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": "Lovecraft and other reference I found in Morimens"
-    },
-    {
-      "id": "1433467093663350935",
-      "content": "在第八章，8-11",
-      "author": "1458675044",
-      "reactions": 1,
-      "channel": "回坑玩家配队求助"
-    },
-    {
-      "id": "1433471167888363580",
-      "content": "複製神父二費",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "回坑玩家配队求助"
+      "author": "deseo0774",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

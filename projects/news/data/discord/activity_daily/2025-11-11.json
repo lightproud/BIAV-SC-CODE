@@ -1,10 +1,37 @@
 {
   "date": "2025-11-11",
-  "messages": 126,
-  "unique_authors": 25,
-  "reactions_total": 996,
-  "attachments": 63,
+  "messages": 17625,
+  "unique_authors": 196,
+  "reactions_total": 3572,
+  "attachments": 828,
   "channel_activity": {
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸game-question": 1599,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 359,
+    "🔸晒卡分享": 1,
+    "🔸欢乐梗图": 2,
+    "🔸课间休息闲聊": 5,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 86,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 380,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 231,
+    "🔸canal-português": 8,
+    "🔸ruang-obrolan-indonesia": 414,
+    "🔸ห้องสนทนาภาษาไทย": 70,
+    "🔸traphase": 277,
+    "🔸lore-chat": 902,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 48,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 395,
+    "🔸general-chat": 6517,
+    "🔸綜合討論": 365,
+    "🔸阵容构建": 31,
+    "🔸morimens-game-chat": 5774,
     "[Birthday wishes for Caecus /Bonus Segment]": 1,
     "King Caecus": 4,
     "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 3,
@@ -68,46 +95,47 @@
     "【1111凯刻斯生贺/12:00】": 1,
     "【1111凯刻斯生贺/11:00】": 1,
     "【1111凯刻斯生贺/10:00】": 1,
-    "🔸欢乐梗图": 1,
-    "🔸礼包码┊gift-codes": 1,
     "1437773972786774087": 1,
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "17": 2,
-    "23": 7,
-    "8": 4,
-    "9": 7,
-    "10": 7,
-    "18": 4,
-    "16": 4,
-    "15": 5,
-    "14": 6,
-    "13": 6,
-    "11": 3,
-    "6": 13,
-    "7": 14,
-    "4": 4,
-    "5": 4,
-    "3": 17,
-    "2": 5,
-    "12": 9,
-    "1": 2,
-    "21": 1,
-    "20": 1,
-    "22": 1
+    "1": 853,
+    "3": 786,
+    "5": 1062,
+    "6": 1092,
+    "7": 1274,
+    "8": 656,
+    "9": 246,
+    "11": 1002,
+    "15": 645,
+    "17": 796,
+    "18": 378,
+    "20": 834,
+    "21": 1054,
+    "22": 916,
+    "23": 632,
+    "0": 482,
+    "2": 807,
+    "4": 664,
+    "10": 475,
+    "12": 978,
+    "13": 306,
+    "14": 771,
+    "16": 427,
+    "19": 489
   },
   "message_types": {
-    "0": 55,
-    "19": 5,
-    "6": 1
+    "0": 1333,
+    "19": 606,
+    "20": 41
   },
   "top_reacted_messages": [
     {
       "id": "1437640364428103760",
+      "channel_id": "1355094251775459399",
       "content": "🎁 社区互动兑换码┊Community Activity Interactive Redemption Code：⁠https://discord.com/ch",
       "author": "morimensstaff01",
-      "reactions": 350,
+      "reactions": 357,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -123,6 +151,14 @@
       "author": "calmdreab",
       "reactions": 54,
       "channel": "[Birthday wishes for Caecus /Bonus Segment]"
+    },
+    {
+      "id": "1437731025156444271",
+      "channel_id": "1355630588094320661",
+      "content": "1216",
+      "author": "syruponstrawberrycake",
+      "reactions": 39,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1437778826234167338",
@@ -209,6 +245,14 @@
       "channel": "[Birthday wishes for Caecus /16：00]"
     },
     {
+      "id": "1437861443201667092",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sirtealot",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1437806107056803870",
       "content": "[Birthday wishes for Caecus /22：00] Hamshor Tang - Atom\n\nWe are all made of atom",
       "author": "calmdreab",
@@ -216,32 +260,19 @@
       "channel": "[Birthday wishes for Caecus /22：00]"
     },
     {
+      "id": "1437826825031123057",
+      "channel_id": "1170692781216378960",
+      "content": "That reminds me, to the unfortunate fellow that reads this message, you're breat",
+      "author": "solxeko",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1437751639598436463",
       "content": "实则根本不够。说多还的两块钱呢。没见收到52银芯啊。校猫你管管。",
       "author": "bluemangoo_",
       "reactions": 14,
       "channel": "kks要知道他还的钱被拿去约稿了"
-    },
-    {
-      "id": "1437699718682775633",
-      "content": "[Birthday wishes for Caecus /15：00]\n ATEEZ - WAVE\n\n지금 이 순간이 우리의 파도라면\nIf this ver",
-      "author": "calmdreab",
-      "reactions": 13,
-      "channel": "[Birthday wishes for Caecus /15：00]"
-    },
-    {
-      "id": "1437668614550327337",
-      "content": "[Birthday wishes for Caecus /13：00] KLP - Halberd Kiss\n\nThe halberd kisses the g",
-      "author": "calmdreab",
-      "reactions": 13,
-      "channel": "[Birthday wishes for Caecus /13：00]"
-    },
-    {
-      "id": "1437774181654855750",
-      "content": "【1111凯刻斯生贺/20:00】阿弗娄《应该》\n每条神经都浮肿，\n\n浸泡在最寂静的宇宙，\n\n等待爱回眸。\n\n——阿弗娄《应该》\n\nUID:100000287",
-      "author": "calmdreab",
-      "reactions": 13,
-      "channel": "【1111凯刻斯生贺/20:00】"
     }
   ]
 }

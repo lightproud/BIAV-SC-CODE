@@ -1,10 +1,26 @@
 {
   "date": "2025-08-13",
-  "messages": 174,
-  "unique_authors": 93,
-  "reactions_total": 154,
-  "attachments": 79,
+  "messages": 12121,
+  "unique_authors": 237,
+  "reactions_total": 1895,
+  "attachments": 624,
   "channel_activity": {
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 12,
+    "🔸русский-канал": 115,
+    "🔸phòng-chat-tiếng-việt": 18,
+    "🔸canal-español": 911,
+    "🔸canal-português": 88,
+    "🔸ruang-obrolan-indonesia": 65,
+    "🔸ห้องสนทนาภาษาไทย": 26,
+    "🔸traphase": 188,
+    "🔸lore-chat": 702,
+    "🔸lets-count": 11,
+    "🔸general-chat": 271,
+    "🔸綜合討論": 1234,
+    "🔸阵容构建": 12,
+    "🔸morimens-game-chat": 8291,
     "[CH8 Spoiler] What Actually Happened to Dexter...": 1,
     "The Case Study of Elias Breuer": 1,
     "Pretty boys..": 2,
@@ -27,33 +43,34 @@
     "已出貨阿狗很愛吃": 7
   },
   "hourly_activity": {
-    "20": 2,
-    "14": 15,
-    "4": 4,
-    "13": 8,
-    "17": 3,
-    "8": 46,
-    "9": 19,
-    "10": 10,
-    "11": 11,
-    "12": 11,
-    "16": 2,
-    "18": 3,
-    "21": 1,
-    "23": 10,
-    "1": 1,
-    "6": 1,
-    "7": 17,
-    "5": 1,
-    "22": 1,
-    "19": 4,
-    "2": 3,
-    "15": 1
+    "5": 338,
+    "17": 455,
+    "13": 680,
+    "1": 314,
+    "9": 983,
+    "10": 310,
+    "14": 607,
+    "0": 630,
+    "15": 660,
+    "16": 697,
+    "19": 449,
+    "20": 367,
+    "22": 579,
+    "23": 594,
+    "7": 301,
+    "8": 1100,
+    "2": 484,
+    "11": 467,
+    "12": 665,
+    "18": 210,
+    "3": 468,
+    "21": 183,
+    "6": 212,
+    "4": 368
   },
   "message_types": {
-    "0": 142,
-    "19": 10,
-    "6": 1
+    "0": 1857,
+    "19": 553
   },
   "top_reacted_messages": [
     {
@@ -78,11 +95,35 @@
       "channel": "The Case Study of Elias Breuer"
     },
     {
+      "id": "1405283309524881419",
+      "channel_id": "1170692781216378960",
+      "content": "THE THAIS POSE ON THE GROUND FROM THE OPENING CUTSCENE OF CHAPTER 7, TRUST.",
+      "author": "disgustedingucci",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1405182267361591389",
       "content": "Hello everyone! (˶ᵔ ᵕ ᵔ˶)\n     As some of you may already know, I am seeking col",
       "author": "disgustedingucci",
       "reactions": 17,
       "channel": "Searching for Members Interested in the Game’s Lore!"
+    },
+    {
+      "id": "1405238360141987901",
+      "channel_id": "1131839817982947429",
+      "content": "# Salutations.\n您好，\n我是法国人，非常喜欢您们的游戏。\n我真心希望能为您们负责法语翻译，提供流畅而准确的本地化，让更多法语玩家感受到游戏的魅力。",
+      "author": "lokilocstar",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1405144904648364123",
+      "channel_id": "1170692781216378960",
+      "content": "The day I will be judged for filling Thais's baby meter is the day I no longer l",
+      "author": "phonytail",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1405192285959880805",
@@ -92,109 +133,100 @@
       "channel": "已出貨阿狗很愛吃"
     },
     {
-      "id": "1405098504145338438",
-      "content": "快进到打n伤害翻倍999（）",
-      "author": "carme.0588",
+      "id": "1405154821920526437",
+      "channel_id": "1170692781216378960",
+      "content": "helot*",
+      "author": "ferr_._",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405275650255753366",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1405155005790687283/I",
+      "author": "disgustedingucci",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405144378464272464",
+      "channel_id": "1170692781216378960",
+      "content": "It is time to beat up the mentally ill I see",
+      "author": "phonytail",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405282940602023987",
+      "channel_id": "1170692781216378960",
+      "content": "I put an ocean background for Castor so he can finally achieve freedom and peace",
+      "author": "disgustedingucci",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405283222664904745",
+      "channel_id": "1170692781216378960",
+      "content": "Guys I think Corn might like male Awakers but I don't know yet.",
+      "author": "disgustedingucci",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405101673780744343",
+      "channel_id": "1131839817982947429",
+      "content": "技能饼饼还在烙<:please:1356053110375714817> 预计明天烙好",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1405214016091197500",
+      "channel_id": "1131839817982947429",
+      "content": "嘩，原來是穿著很少布料的原始人！（叮特克、艾爾瓦、阿格里帕、法洛思）\n\n低下的數值、原始人的機制、可惡的限定池占保底，已知他们是原始人中的极品了！\n\n“哇哇哇哇",
+      "author": "dog794",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1405146615911682068",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/morimensofcl/status/1947214834698998151?s=46",
+      "author": "disgustedingucci",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405157276465238119",
+      "channel_id": "1170692781216378960",
+      "content": "whatever, any morimens exposure is good at this point, people legit just dont kn",
+      "author": "lokao",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405190129353494589",
+      "channel_id": "1170692781216378960",
+      "content": "Also pov you looked at another awakener:",
+      "author": "phonytail",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405192429770113166",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "disgustedingucci",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1405108202231828491",
+      "channel_id": "1131839817982947429",
+      "content": "難道我們需要一直看小人移動嗎\n🤺🤺🤺🤺",
+      "author": "ena04564",
       "reactions": 7,
-      "channel": "V2.3.1 凯蒂古拉情报2：火焰将清算一切┊About Kathigu-Ra: Flames Will Consume All"
-    },
-    {
-      "id": "1405185233325658265",
-      "content": "ayo! i'd love to join in. would my already existing timeline spreadsheet be of a",
-      "author": "nikolazuli",
-      "reactions": 3,
-      "channel": "Searching for Members Interested in the Game’s Lore!"
-    },
-    {
-      "id": "1405112532678611044",
-      "content": "",
-      "author": "flares117",
-      "reactions": 3,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
-    },
-    {
-      "id": "1405128052706512981",
-      "content": "既然連銀芯都發了\n那什麼時候要發戈雅",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
-    },
-    {
-      "id": "1405135628521439242",
-      "content": "first try actually, genuinely, verifiably <:bow:1356053037159944473>",
-      "author": "reya.li",
-      "reactions": 2,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
-    },
-    {
-      "id": "1405136614195331182",
-      "content": "lucky",
-      "author": "nanmingyuan_02395",
-      "reactions": 2,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
-    },
-    {
-      "id": "1405095430550982741",
-      "content": "",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "V2.3.1 凯蒂古拉情报2：火焰将清算一切┊About Kathigu-Ra: Flames Will Consume All"
-    },
-    {
-      "id": "1405104102899322880",
-      "content": "N醬還是太愛拈花惹草~~撿小孩~~了",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "V2.3.1 凯蒂古拉情报2：火焰将清算一切┊About Kathigu-Ra: Flames Will Consume All"
-    },
-    {
-      "id": "1405104665934299137",
-      "content": "池是不進的\n鍋是一直增加的\n孩子是一直在孝的\n你媽媽",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "V2.3.1 凯蒂古拉情报2：火焰将清算一切┊About Kathigu-Ra: Flames Will Consume All"
-    },
-    {
-      "id": "1405108813467615243",
-      "content": "she's mad hot",
-      "author": "jormiejormungandr",
-      "reactions": 2,
-      "channel": "V2.3.1 凯蒂古拉情报2：火焰将清算一切┊About Kathigu-Ra: Flames Will Consume All"
-    },
-    {
-      "id": "1405193078146334720",
-      "content": "||姊夫是假■的代稱||",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "已出貨阿狗很愛吃"
-    },
-    {
-      "id": "1405199100000993370",
-      "content": "sure, id like to help too",
-      "author": "itsmemiki",
-      "reactions": 1,
-      "channel": "Searching for Members Interested in the Game’s Lore!"
-    },
-    {
-      "id": "1405291793129541794",
-      "content": "Ooh i'd be happy to help if you'd be willing to have me in <:Bow:136657411231895",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "Searching for Members Interested in the Game’s Lore!"
-    },
-    {
-      "id": "1405127566146408471",
-      "content": "傭兵團有實力<:Emoji_YWHX_M_12:1400771817659957258>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
-    },
-    {
-      "id": "1405127945110159410",
-      "content": "CPGN-KNSZ-YQCA",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\""
+      "channel": "🔸綜合討論"
     }
   ]
 }

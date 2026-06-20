@@ -1,10 +1,25 @@
 {
   "date": "2025-03-05",
-  "messages": 212,
-  "unique_authors": 32,
-  "reactions_total": 104,
-  "attachments": 26,
+  "messages": 4423,
+  "unique_authors": 116,
+  "reactions_total": 279,
+  "attachments": 216,
   "channel_activity": {
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 99,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-español": 23,
+    "🔸canal-português": 433,
+    "🔸ruang-obrolan-indonesia": 222,
+    "🔸ห้องสนทนาภาษาไทย": 392,
+    "🔸traphase": 175,
+    "🔸綜合討論": 967,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 1859,
+    "🔸相位对弈": 19,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 9,
     "fuckupatoo's morimens fanfics": 3,
     "Star Chapter 2.1 Tier List": 15,
     "Teams Comps": 3,
@@ -30,29 +45,34 @@
     "塗些主線角色": 1
   },
   "hourly_activity": {
-    "9": 38,
-    "10": 19,
-    "12": 13,
-    "14": 17,
-    "8": 4,
-    "18": 1,
-    "20": 2,
-    "11": 7,
-    "13": 33,
-    "15": 16,
-    "16": 8,
-    "17": 3,
-    "23": 3,
-    "1": 1,
-    "3": 12,
-    "4": 3,
-    "7": 28,
-    "2": 2,
-    "6": 2
+    "13": 291,
+    "2": 88,
+    "5": 89,
+    "7": 112,
+    "8": 74,
+    "10": 313,
+    "11": 201,
+    "14": 220,
+    "15": 276,
+    "17": 86,
+    "18": 167,
+    "19": 420,
+    "21": 201,
+    "22": 29,
+    "3": 81,
+    "20": 273,
+    "6": 142,
+    "9": 567,
+    "16": 226,
+    "23": 49,
+    "4": 131,
+    "12": 343,
+    "0": 7,
+    "1": 37
   },
   "message_types": {
-    "0": 18,
-    "19": 3
+    "0": 1138,
+    "19": 208
   },
   "top_reacted_messages": [
     {
@@ -77,6 +97,14 @@
       "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
     },
     {
+      "id": "1346923519841271868",
+      "channel_id": "1300659662311526512",
+      "content": "Una tirada tímida y me salió doble",
+      "author": "100779708",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1346789811725406319",
       "content": "但星辰篇（ry",
       "author": "ernest_heart",
@@ -84,11 +112,59 @@
       "channel": "💭「處理中」Boss關忘了放彩虹"
     },
     {
+      "id": "1346832583824117771",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1346820214431551551",
       "content": "沒新角色 那應該是關服有望了吧 日子終於有點盼頭了",
       "author": "mob1065",
       "reactions": 5,
       "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346724260860661802",
+      "channel_id": "1131839817982947429",
+      "content": "校貓測試員已上線",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346776773450399744",
+      "channel_id": "1131839817982947429",
+      "content": "好色\n# 卡墨一直插阿狗的嘴",
+      "author": "arr5721",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346797583376322672",
+      "channel_id": "1131839817982947429",
+      "content": "一直在想要不要棄100％追更高暴傷但我感覺會洗到發瘋",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346814303713361950",
+      "channel_id": "1131839817982947429",
+      "content": "pray",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346891483621490838",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1346817686059089963",
@@ -126,74 +202,28 @@
       "channel": "伺服器漏洞"
     },
     {
-      "id": "1346819644400472167",
-      "content": "神父加強：每有一層重創或者任意減療效果治療量翻倍",
-      "author": "_cwz_",
+      "id": "1346880786187554857",
+      "channel_id": "1300659802455674972",
+      "content": "ผมถึง5-10ละ",
+      "author": "14_day_",
       "reactions": 3,
-      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1346870325463486626",
-      "content": "~~可惡 當時吃13顆靈知的希冀都沒那麼高 可惡的終末~~<:Coffee:1240919421791375380>",
-      "author": "lemoncandy25",
-      "reactions": 3,
-      "channel": "弥撒格第一届暴击爆伤大赛!"
-    },
-    {
-      "id": "1346775924661813258",
-      "content": "> 大家好，这里是难忘今宵攻略组，本期给大家带来的是（星辰篇）第1章的关卡流程图。\n请注意【V2.1.0.2】停服维护公告，其中：\n\n【褪色遗骨】取代「联络点」",
-      "author": "menoctus",
-      "reactions": 3,
-      "channel": "◆第1章「重临雾都」关卡流程总览·星辰篇"
-    },
-    {
-      "id": "1346781312303894570",
-      "content": "you should!! i would love to read it",
-      "author": "fuckupa2",
-      "reactions": 2,
-      "channel": "fuckupatoo's morimens fanfics"
-    },
-    {
-      "id": "1346780600442556458",
-      "content": "每一點獻祭轉換成我方的一點力量",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1346801684017582140",
-      "content": "急急急 我要看怎麼個加強法",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1346831249003647086",
-      "content": "僅在星辰篇",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1346835598996013160",
-      "content": "我支持狂氣回充轉換爆傷爆率黑印精通跟死抗",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
-    },
-    {
-      "id": "1346900335674921011",
-      "content": "~~補個圖 當個第二名~~",
-      "author": "lemoncandy25",
-      "reactions": 2,
-      "channel": "弥撒格第一届暴击爆伤大赛!"
-    },
-    {
-      "id": "1346788274009542717",
+      "id": "1346749959369916487",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "elkmilu",
-      "reactions": 2,
-      "channel": "💭「處理中」Boss關忘了放彩虹"
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346823715505176607",
+      "channel_id": "1131839817982947429",
+      "content": "还是左右脑互搏了",
+      "author": "sadanshishen",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

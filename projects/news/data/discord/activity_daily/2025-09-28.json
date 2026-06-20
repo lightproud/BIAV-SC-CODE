@@ -1,10 +1,30 @@
 {
   "date": "2025-09-28",
-  "messages": 150,
-  "unique_authors": 19,
-  "reactions_total": 149,
-  "attachments": 20,
+  "messages": 10783,
+  "unique_authors": 161,
+  "reactions_total": 2133,
+  "attachments": 429,
   "channel_activity": {
+    "🔸русский-канал": 200,
+    "🔸phòng-chat-tiếng-việt": 16,
+    "🔸canal-español": 325,
+    "🔸canal-português": 121,
+    "🔸ruang-obrolan-indonesia": 213,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 21,
+    "🔸lore-chat": 7,
+    "🔸lets-count": 2,
+    "🔸team-building": 16,
+    "🔸general-chat": 254,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸morimens-game-chat": 8521,
+    "🔸晒卡分享": 56,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 143,
+    "🔸한국어-채팅방": 6,
+    "🔸chaîne-française": 35,
+    "🔸綜合討論": 641,
+    "🔸阵容构建": 4,
     "Tinct on a swing": 8,
     "24, Daffodil, Liz and Tulu Sketches!": 1,
     "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 2,
@@ -33,30 +53,34 @@
     "1420092491125755985": 5
   },
   "hourly_activity": {
-    "1": 4,
-    "2": 8,
-    "7": 9,
-    "11": 35,
-    "14": 4,
-    "16": 2,
-    "13": 10,
-    "20": 3,
-    "12": 3,
-    "6": 10,
-    "9": 16,
-    "5": 3,
-    "21": 9,
-    "22": 3,
-    "23": 2,
-    "17": 7,
-    "10": 9,
-    "3": 7,
-    "4": 6
+    "1": 190,
+    "4": 521,
+    "8": 221,
+    "9": 546,
+    "10": 529,
+    "12": 788,
+    "13": 861,
+    "14": 661,
+    "15": 832,
+    "16": 580,
+    "17": 229,
+    "18": 195,
+    "19": 373,
+    "23": 318,
+    "3": 619,
+    "7": 320,
+    "2": 554,
+    "5": 562,
+    "20": 427,
+    "0": 232,
+    "11": 440,
+    "22": 106,
+    "6": 350,
+    "21": 329
   },
   "message_types": {
-    "0": 32,
-    "19": 9,
-    "4": 1
+    "0": 976,
+    "19": 250
   },
   "top_reacted_messages": [
     {
@@ -74,116 +98,148 @@
       "channel": "24, Daffodil, Liz and Tulu Sketches!"
     },
     {
-      "id": "1421825092941385931",
-      "content": "从星辰篇上线开始星辰篇的规则包括唤醒体的星辰篇天赋都有一定的调整，确实极大地改善了星辰篇的游戏体验。但是现在星辰篇的游戏性上来说还是有缺陷，比如作为一个出牌游戏",
-      "author": "2300011747",
-      "reactions": 4,
-      "channel": "星辰篇规则还会继续优化吗？"
+      "id": "1421866863788560547",
+      "channel_id": "1170692781216378960",
+      "content": "<@364412673275723779> <@285755067213152257> <@1288446421573304364> i have provid",
+      "author": "reya.li",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421744650552606800",
-      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:cute1:",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「Answered」Add the ability to copy and paste teams"
+      "id": "1421871308874190858",
+      "channel_id": "1300659662311526512",
+      "content": "todos son multicuenas de 24",
+      "author": "ancientbp",
+      "reactions": 17,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1421832464392781856",
-      "content": "策畫策畫怎樣都好 拜託把算力調和砍了 <:dead:1356082627509092372>",
-      "author": "qqinfinity",
-      "reactions": 3,
-      "channel": "星辰篇规则还会继续优化吗？"
+      "id": "1421974613893840897",
+      "channel_id": "1170692781216378960",
+      "content": "Fpreg will become real",
+      "author": "spooky_penguin_",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421820323250307072",
-      "content": "的确如此(",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "✅「已解决」不同界域的24"
+      "id": "1421974579294769203",
+      "channel_id": "1170692781216378960",
+      "content": "Eating fetuses and abortion are banned",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421825524828733552",
-      "content": "還有你繼續裝",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "✅「已解决」不同界域的24"
+      "id": "1421974657900347392",
+      "channel_id": "1170692781216378960",
+      "content": "Mpreg is banned",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421694058081947841",
-      "content": "感谢反馈，戈雅去核对一下<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+      "id": "1421683208457687172",
+      "channel_id": "1300659662311526512",
+      "content": "Quién lo manda a sobrevivir",
+      "author": "duxadidus",
+      "reactions": 11,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1421690677254950944",
-      "content": "Such a perfect picture of an angel...<:like:1400771686965444648>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": "Tinct on a swing"
+      "id": "1421748905800106015",
+      "channel_id": "1131839817982947429",
+      "content": "过了\n塔薇+觉醒哈姆林+莱克钥令+女仆算力卡vs医生boss\n享受不一般的美味😋",
+      "author": "ling_an_",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1421825407841341460",
-      "content": "?",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "✅「已解决」不同界域的24"
+      "id": "1421914097007595560",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "ancientbp",
+      "reactions": 10,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1421698102884307055",
-      "content": "先來跪拜兩位大佬",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+      "id": "1421974095855353959",
+      "channel_id": "1170692781216378960",
+      "content": "Im gonna Charlie kirk you out of the world",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421712270890897448",
-      "content": "來認領一下親友<:pray:1356053116260454534> \n我也很好奇，蹲一下後續<:wish:1356084702468899117>",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+      "id": "1421875354246844458",
+      "channel_id": "1174983699935277147",
+      "content": "丟下一張角色全圖鑑",
+      "author": "vivian35._.",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421714013506764850",
-      "content": "嗨守密人，确实是因为她当时还未成为唤醒体的特殊设计<:pray:1356053116260454534> \n\n<@614083839131648021> <@8",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+      "id": "1421900307448729610",
+      "channel_id": "1170692781216378960",
+      "content": "I used AI ofcourse",
+      "author": "zodiustenebris",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421756739086319697",
-      "content": "~~廉價的渾沌界域~~",
-      "author": "insomnia07763",
-      "reactions": 1,
-      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+      "id": "1421950861583581396",
+      "channel_id": "1170692781216378960",
+      "content": "idk i think im racist",
+      "author": "jollysquire",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421744095961026684",
-      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:Cheeru",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Add ability to see all card levels"
+      "id": "1421880074743054458",
+      "channel_id": "1170692781216378960",
+      "content": "Wait... So the Login Scene changes with the story?",
+      "author": "le_fishmael",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421689539327688724",
-      "content": "Recharge is currently not supported in the Philippines. Please be patient and we",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Good day devs [problems with Apple Pay on iOS]"
+      "id": "1421974774237630545",
+      "channel_id": "1170692781216378960",
+      "content": "can we burn Spooky at the stake for herecy",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1422005277036642314",
+      "id": "1421745793781469234",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "breezeg9527",
-      "reactions": 1,
-      "channel": "無借角融災全4 400攻略血肉指環"
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1421852615611777104",
-      "content": "Normal mode with DR and revives is the most easy the game can get, if you're rea",
-      "author": "arctic59",
-      "reactions": 1,
-      "channel": ""
+      "id": "1421751126247870605",
+      "channel_id": "1174983699935277147",
+      "content": "單抽出奇蹟😭",
+      "author": "shostakovich524",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421677728809226271",
+      "channel_id": "1300659662311526512",
+      "content": "gracias papa dio",
+      "author": "ancientbp",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1421869624126865429",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens chat talking about morimens <:processing:1357185814567718963>",
+      "author": "_hyuuun",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

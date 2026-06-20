@@ -1,10 +1,34 @@
 {
   "date": "2025-12-17",
-  "messages": 127,
-  "unique_authors": 13,
-  "reactions_total": 77,
-  "attachments": 24,
+  "messages": 13460,
+  "unique_authors": 257,
+  "reactions_total": 1567,
+  "attachments": 647,
   "channel_activity": {
+    "🔸lets-count": 16,
+    "🔸team-building": 1018,
+    "🔸general-chat": 165,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 1274,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 2,
+    "🔸机器人命令┊bot-commands": 38,
+    "🔸morimens-game-chat": 7463,
+    "🔸剧情交流": 48,
+    "🔸晒卡分享": 20,
+    "🔸相位对弈": 4,
+    "🔸交友频道": 33,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 151,
+    "🔸русский-канал": 227,
+    "🔸phòng-chat-tiếng-việt": 304,
+    "🔸canal-español": 394,
+    "🔸canal-português": 58,
+    "🔸ruang-obrolan-indonesia": 171,
+    "🔸ห้องสนทนาภาษาไทย": 98,
+    "🔸traphase": 42,
+    "🔸lore-chat": 439,
+    "🔸綜合討論": 1333,
     "如果想打400（）": 30,
     "Team Guidance/Character Investment Suggestions": 1,
     "Team guidance - Dupe suggestions - General questions": 5,
@@ -24,34 +48,40 @@
     "蓋個圖樓": 1,
     "異端品鑑結尾（皮杜向有黃車描述": 34,
     "從克蘇魯神話看誕妄墨菲，神母與石榴的寓意": 2,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1234769700735418368": 1,
     "1445556242381672559": 17,
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "2": 36,
-    "3": 12,
-    "4": 12,
-    "15": 5,
-    "18": 2,
-    "16": 23,
-    "17": 6,
-    "13": 2,
-    "20": 3,
-    "23": 1,
-    "6": 3,
-    "7": 1,
-    "10": 3,
-    "22": 10,
-    "12": 1,
-    "14": 1,
-    "8": 2
+    "1": 453,
+    "2": 477,
+    "4": 403,
+    "7": 372,
+    "8": 669,
+    "9": 705,
+    "10": 654,
+    "14": 921,
+    "15": 956,
+    "16": 658,
+    "21": 384,
+    "23": 418,
+    "0": 380,
+    "3": 468,
+    "5": 228,
+    "6": 465,
+    "12": 409,
+    "13": 492,
+    "17": 1110,
+    "18": 1014,
+    "19": 509,
+    "20": 456,
+    "22": 393,
+    "11": 466
   },
   "message_types": {
-    "0": 30,
-    "19": 6
+    "0": 2003,
+    "19": 518,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -69,6 +99,126 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
+      "id": "1450807137302478868",
+      "channel_id": "1170692781216378960",
+      "content": "Are you constantly accused of being a whale in every game you touch? Do your fri",
+      "author": "hitsu4",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450862557245214845",
+      "channel_id": "1131839817982947429",
+      "content": "只要觸手在8條以內，凱刻斯超限的傷害比圖魯超限痛\n但圖魯超完什麼都沒有，凱刻斯超完會留100K反擊給你",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450878392407691356",
+      "channel_id": "1131839817982947429",
+      "content": "不 駁回\n再輪椅也沒有阿利斯泰爾輪椅",
+      "author": "souri.10244",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450766303970201610",
+      "channel_id": "1131839817982947429",
+      "content": "傻逼学校五天让我写十一份实训报告今天下午还他妈行政补课补你妈逼老子昨天失眠腹泻妈的真他妈的有病",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450771610444365884",
+      "channel_id": "1131839817982947429",
+      "content": "手機鍵盤選了一個fbi要來爆破的字🌿",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450882934088405124",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450902570993451180",
+      "channel_id": "1170692781216378960",
+      "content": "wanted to share that i was finally able to bead d-tide (wave 1-wave 4 on A3 and ",
+      "author": "yusz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450862740733165675",
+      "channel_id": "1131839817982947429",
+      "content": "这队血条太稳了",
+      "author": "sweet_25367",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450888424528674999",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450820620953587713",
+      "channel_id": "1170692781216378960",
+      "content": "2 more to go guys",
+      "author": "apsgsd",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450858976160780470",
+      "channel_id": "1173463482503536711",
+      "content": "有點害怕<:Feelguilty:1400771618174664775> 確定上弦月不是AI嗎\n丟了想法但好像沒互動",
+      "author": "tsubaki9884",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1450909434984271913",
+      "channel_id": "1326453763355185215",
+      "content": "I hope u dissolution so I can forget you",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1450763066877935676",
+      "channel_id": "1131839817982947429",
+      "content": "~~截圖存證~~",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450823506295259207",
+      "channel_id": "1131839817982947429",
+      "content": "普池出了",
+      "author": "quackdayo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450874385081700496",
+      "channel_id": "1131839817982947429",
+      "content": "佬還有救 佬要不要打這張",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1450885592656379925",
       "content": "太可惡了...不對。\n\n望著稍早食屍鬼們放置在古宅裡的幾副棺槨，皮克曼忍不住摀住自己的臉，在相異的指縫間透漏出的是不正常漲紅的臉色。\n\n與其說是可惡，不如說太討",
       "author": "ass191044",
@@ -76,123 +226,20 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
-      "id": "1450889378833367113",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
+      "id": "1450724635787132978",
+      "channel_id": "1170692781216378960",
+      "content": "(convinced another friend to play)",
+      "author": "dexetro",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1450885389589151754",
-      "content": "同時響起聲音後房間陷入一陣寂靜，杜勒賽因跟皮克曼直盯盯得看著彼此、大眼瞪小眼眨巴眨巴著。\n\n「...你說什麼？」\n\n優先開口打破這道寂靜的是杜勒賽因。\n\n「..",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450874125932560435",
-      "content": "here it is for those who haven't seen it",
-      "author": "exhibitionism",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1450887580865400912",
-      "content": "非常好擊劍，使我♂️🔞",
-      "author": "tsubaki9884",
-      "reactions": 3,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450828555897278474",
-      "content": "Murphy: Fauxborn and the Cthulhu Mythos\n\n從克蘇魯神話看誕妄墨菲，神母與石榴的寓意\n\nhttps://forum.gam",
-      "author": "taoi002",
-      "reactions": 3,
-      "channel": "從克蘇魯神話看誕妄墨菲，神母與石榴的寓意"
-    },
-    {
-      "id": "1450789912893722744",
-      "content": "https://harrisonjeong.artstation.com/projects/qAXY5e have you used this?",
-      "author": "exhibitionism",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1450674803781406770",
-      "content": "抽啥都要歪两次我真没招了<:takenotes:1357186646294138890>",
-      "author": "hhhh098962",
-      "reactions": 2,
-      "channel": "如果想打400（）"
-    },
-    {
-      "id": "1450675105675083806",
-      "content": "二十多个金就一个图鲁是限定",
-      "author": "hhhh098962",
-      "reactions": 2,
-      "channel": "如果想打400（）"
-    },
-    {
-      "id": "1450843048732004362",
-      "content": "Autoplay turning off after every stage is annoying and its strange that keeping ",
-      "author": "iwthahe",
-      "reactions": 2,
-      "channel": "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage."
-    },
-    {
-      "id": "1450892978921934918",
-      "content": "我只能爬",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450674493017034923",
-      "content": "任重道远啊<:dead:1356082627509092372>",
-      "author": "hhhh098962",
-      "reactions": 1,
-      "channel": "如果想打400（）"
-    },
-    {
-      "id": "1450913924047180012",
-      "content": "there's a slight mistranslation in the english which might be causing some confu",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "线上问题修复公告"
-    },
-    {
-      "id": "1450695916238409769",
-      "content": "感谢反馈，后续会优化上述内容使之统一🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」文字特效及描述不統一"
-    },
-    {
-      "id": "1450672481227505745",
-      "content": "我昨天早上9點買的高級紀行他標價還是1280，但是我還是買了，因為信件說24小時內會補還差額，可是到現在還沒收到差額的300",
-      "author": "kikyp21",
-      "reactions": 1,
-      "channel": "✅「已解决」關於高級紀行1280變成980"
-    },
-    {
-      "id": "1450648126225649838",
-      "content": "~~記得剪指甲~~",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1450889473377304587",
-      "content": "乾脆把這個當封面算了（不是",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450889611776626739",
-      "content": "我睡前會\n再讀一次\n原因我不說",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
+      "id": "1450764720641675368",
+      "channel_id": "1170692781216378960",
+      "content": "OH MY GAWD",
+      "author": "su_pp",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,39 @@
 {
   "date": "2026-01-22",
-  "messages": 305,
-  "unique_authors": 38,
-  "reactions_total": 183,
-  "attachments": 44,
+  "messages": 16154,
+  "unique_authors": 195,
+  "reactions_total": 1832,
+  "attachments": 697,
   "channel_activity": {
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 4,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 7,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 24,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 1253,
+    "🔸phòng-chat-tiếng-việt": 745,
+    "🔸canal-español": 306,
+    "🔸canal-português": 257,
+    "🔸ruang-obrolan-indonesia": 91,
+    "🔸ห้องสนทนาภาษาไทย": 73,
+    "🔸traphase": 100,
+    "🔸lore-chat": 457,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 440,
+    "🔸general-chat": 2961,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 315,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 39,
+    "🔸綜合討論": 1029,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 7700,
     "Murphy :3!": 4,
     "mouchette i drew during math class": 1,
     "Gpreg": 4,
@@ -27,8 +56,6 @@
     "Nymphaea": 2,
     "【自用】卡斯托尔×波吕克斯 稿件堆积": 3,
     "Awakener Kit Speculation: Francis": 1,
-    "🔸欢乐梗图": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 5,
     "1456123871383130243": 1,
     "1450001353064714320": 8,
@@ -37,32 +64,35 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "9": 10,
-    "10": 3,
-    "7": 2,
-    "0": 29,
-    "8": 5,
-    "12": 48,
-    "13": 1,
-    "3": 3,
-    "1": 21,
-    "2": 6,
-    "4": 10,
-    "5": 11,
-    "6": 11,
-    "11": 9,
-    "20": 2,
-    "14": 13,
-    "16": 5,
-    "15": 108,
-    "19": 2,
-    "21": 3,
-    "17": 1,
-    "23": 2
+    "5": 615,
+    "6": 271,
+    "21": 175,
+    "0": 843,
+    "2": 726,
+    "16": 649,
+    "7": 503,
+    "4": 611,
+    "1": 751,
+    "11": 870,
+    "3": 620,
+    "15": 855,
+    "18": 526,
+    "8": 1009,
+    "12": 923,
+    "9": 1070,
+    "10": 1294,
+    "13": 958,
+    "14": 1252,
+    "17": 529,
+    "19": 403,
+    "20": 189,
+    "22": 155,
+    "23": 357
   },
   "message_types": {
-    "19": 55,
-    "0": 183
+    "0": 5740,
+    "19": 1375,
+    "20": 4
   },
   "top_reacted_messages": [
     {
@@ -80,6 +110,14 @@
       "channel": "Nymphaea"
     },
     {
+      "id": "1463877149357248697",
+      "channel_id": "1170692781216378960",
+      "content": "Here are some of my drawings",
+      "author": "brainrot_in_a_vat",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463766035239800914",
       "content": "~~敢隨便亂摸就會被咬掉手~~",
       "author": "carrot_chicken",
@@ -92,6 +130,14 @@
       "author": "vistason",
       "reactions": 13,
       "channel": "【自用】卡斯托尔×波吕克斯 稿件堆积"
+    },
+    {
+      "id": "1463700927604195390",
+      "channel_id": "1385040039448412170",
+      "content": "Can we get a starboard channel?\nhttps://discord.com/discovery/applications/65539",
+      "author": "aurora3981",
+      "reactions": 12,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1463831865076224083",
@@ -108,6 +154,14 @@
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
+      "id": "1463766231889871054",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463865231922167910",
       "content": "玉兰香🌫️、玫瑰香🌫️、茉莉花香🌫️\n自徐来到弥萨格大学后，学校似乎兴起了“制香”潮流。\n\n💭守密人想制作什么味道的香包？\n制香跟练版教程来啦，守密人快来试试看",
       "author": "morimensstaff01",
@@ -122,6 +176,30 @@
       "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
+      "id": "1463726554902433853",
+      "channel_id": "1174983699935277147",
+      "content": "常駐終於不出垃圾了<:takenotes:1357186646294138890>",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1463757659025965066",
+      "channel_id": "1131839817982947429",
+      "content": "分享个双金",
+      "author": "asarikotone",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1463876524695355558",
+      "channel_id": "1170692781216378960",
+      "content": "I will draw myself as short haired Doll",
+      "author": "brainrot_in_a_vat",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1463865683975864370",
       "content": "First",
       "author": "._.aahh",
@@ -129,81 +207,44 @@
       "channel": "V2.4.2 ┊闻香识人The Poetry of Scent"
     },
     {
-      "id": "1463915224938578099",
-      "content": "抽卡記錄看了 沒有抽過他的卡池 看到技能那一頁感覺是bug",
-      "author": "v061875",
+      "id": "1463960661007798277",
+      "channel_id": "1400749543288475770",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "rascal_harmonize",
       "reactions": 6,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
+      "channel": "🔸team-building"
     },
     {
-      "id": "1463785315557838959",
-      "content": "您好!想詢問官方關於徐的立繪構圖與隔壁棚遊戲角色高度重合這點\n徐是位很有魅力的角色設計!但構圖的高度重合難免會讓人有所質疑，這件事情在別的社群中也有所討論\n因為",
-      "author": "lanl4n",
+      "id": "1463846048408670250",
+      "channel_id": "1131839817982947429",
+      "content": "反正+12這個活挺爛的",
+      "author": "navirecorbeau",
       "reactions": 6,
-      "channel": "想詢問關於徐的立繪設計"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1463932173882232832",
-      "content": "~~原來這就是我們敬愛的N先生進了卡池會發生的事嗎~~",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
+      "id": "1463698183711625236",
+      "channel_id": "1170692781216378960",
+      "content": "Best speed run limited character available after patch will be doresain. Nobody ",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1463800133161455771",
-      "content": "SHES SO CUTE I LOVE HER",
-      "author": "mimiruku",
-      "reactions": 4,
-      "channel": "mouchette i drew during math class"
+      "id": "1463876264246120512",
+      "channel_id": "1170692781216378960",
+      "content": "I will just remain the gooner as I always am",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1463913040780202107",
-      "content": "理性分析讨论哈",
-      "author": "liao_54332",
-      "reactions": 3,
-      "channel": "关于+12角色最终法则的分析"
-    },
-    {
-      "id": "1463741514692821105",
-      "content": "some very rushed coloring and shading <:Jointhefun1:1400771646293282918>",
-      "author": "h3ll0hu",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1463706291829739595",
-      "content": "不弱了\n痴醉常駐百分比減傷",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463710137121505299",
-      "content": "肿胀之女（指体质）",
-      "author": "rain_scarlet",
-      "reactions": 2,
-      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1463787089618407539",
-      "content": "支持也希望能放出設計圖⋯！想要遊戲能好好的，被罵也讓人很難過",
-      "author": "kaleido9441",
-      "reactions": 2,
-      "channel": "想詢問關於徐的立繪設計"
-    },
-    {
-      "id": "1463698053335748699",
-      "content": "Also yes I am a whale",
-      "author": "legendaryredz",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1463841172832387216",
-      "content": "THANK YOUUUUU",
-      "author": "celestial.noise",
-      "reactions": 1,
-      "channel": "Murphy :3!"
+      "id": "1463876282843664488",
+      "channel_id": "1170692781216378960",
+      "content": "<:FrogExhaust:1393236794140790814>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

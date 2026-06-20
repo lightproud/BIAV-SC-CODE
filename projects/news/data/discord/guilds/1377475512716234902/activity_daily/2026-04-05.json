@@ -1,34 +1,49 @@
 {
   "date": "2026-04-05",
-  "messages": 86,
+  "messages": 237,
   "unique_authors": 18,
-  "reactions_total": 14,
-  "attachments": 12,
+  "reactions_total": 51,
+  "attachments": 27,
   "channel_activity": {
+    "なんでも雑談": 151,
     "🔰初心者質問": 47,
     "誰でも質問": 20,
     "リリーさんの構成(毒パ)について": 12,
     "逆向鑑賞が生み出す遺物について、知っておこう": 7
   },
   "hourly_activity": {
+    "2": 2,
+    "3": 1,
+    "4": 3,
+    "6": 13,
+    "8": 4,
+    "10": 19,
+    "11": 60,
+    "12": 39,
+    "13": 4,
+    "15": 10,
+    "16": 10,
+    "17": 8,
+    "18": 43,
+    "23": 1,
     "5": 1,
-    "8": 2,
     "9": 15,
-    "10": 17,
-    "11": 21,
-    "12": 15,
     "14": 1,
-    "15": 5,
-    "16": 3,
-    "17": 1,
-    "7": 3,
-    "13": 2
+    "7": 3
   },
   "message_types": {
-    "0": 77,
-    "19": 9
+    "19": 19,
+    "0": 132
   },
   "top_reacted_messages": [
+    {
+      "id": "1490272834700840970",
+      "channel_id": "1377478664609857647",
+      "content": "初めて400いけた<:yatta:1390953053322219530>",
+      "author": "yuu_0o0",
+      "reactions": 23,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1490318157221724332",
       "channel_id": "1490318157221724332",
@@ -36,6 +51,30 @@
       "author": "96cat",
       "reactions": 4,
       "channel": "逆向鑑賞が生み出す遺物について、知っておこう"
+    },
+    {
+      "id": "1490200704936312883",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "ecstasyrb",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490330030578995241",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490326301356195840",
+      "channel_id": "1377478664609857647",
+      "content": "タイスと一生一緒リングか💍",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1490371216567959744",
@@ -52,6 +91,54 @@
       "author": "xudabusakua",
       "reactions": 2,
       "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1490294169392906242",
+      "channel_id": "1377478664609857647",
+      "content": "ポーズ似てる",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490320553721200691",
+      "channel_id": "1377478664609857647",
+      "content": "購入？",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490336862047436870",
+      "channel_id": "1377478664609857647",
+      "content": "呪われた遺物…",
+      "author": "ecstasyrb",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490399133234630817",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490417835732897832",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1490419734985048104",
+      "channel_id": "1377478664609857647",
+      "content": "ロロノア・ゾロ（タイムアウト神回避）",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1490285192311607356",

@@ -1,10 +1,23 @@
 {
   "date": "2025-05-16",
-  "messages": 58,
-  "unique_authors": 8,
-  "reactions_total": 73,
-  "attachments": 22,
+  "messages": 6819,
+  "unique_authors": 155,
+  "reactions_total": 409,
+  "attachments": 313,
   "channel_activity": {
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 4944,
+    "🔸相位对弈": 19,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 138,
+    "🔸deutscher-chatraum": 1,
+    "🔸canal-español": 25,
+    "🔸canal-português": 36,
+    "🔸ruang-obrolan-indonesia": 580,
+    "🔸ห้องสนทนาภาษาไทย": 35,
+    "🔸traphase": 412,
+    "🔸lets-count": 3,
+    "🔸綜合討論": 555,
     "GTulu Theory (with fanart) (this will age poorly, will it?)": 13,
     "N": 1,
     "24": 2,
@@ -23,24 +36,35 @@
     "Petition to rename Wheel Unseen to Concealed Truth": 1
   },
   "hourly_activity": {
-    "11": 3,
-    "12": 10,
-    "9": 7,
-    "20": 1,
-    "22": 1,
-    "16": 2,
-    "17": 4,
-    "14": 1,
-    "19": 1,
-    "10": 20,
-    "13": 1,
-    "3": 2,
-    "8": 4,
-    "2": 1
+    "5": 254,
+    "9": 264,
+    "10": 228,
+    "0": 290,
+    "1": 547,
+    "2": 338,
+    "3": 356,
+    "4": 441,
+    "6": 112,
+    "7": 134,
+    "8": 464,
+    "11": 296,
+    "12": 346,
+    "13": 583,
+    "14": 494,
+    "15": 340,
+    "16": 375,
+    "17": 109,
+    "18": 75,
+    "19": 185,
+    "20": 56,
+    "21": 240,
+    "22": 88,
+    "23": 204
   },
   "message_types": {
-    "0": 19,
-    "4": 3
+    "0": 4709,
+    "19": 1496,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -49,6 +73,14 @@
       "author": "argo.4467",
       "reactions": 25,
       "channel": "24"
+    },
+    {
+      "id": "1373008948227211285",
+      "channel_id": "1170692781216378960",
+      "content": "I just saw this video today, and the main content truly moved me to tears. All t",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1372875996495351889",
@@ -65,6 +97,14 @@
       "channel": "Haku Morimens Sketch Log"
     },
     {
+      "id": "1372970111111008337",
+      "channel_id": "1131839817982947429",
+      "content": "忘卻玩到破房\n跑去寫歌",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1372905582574440518",
       "content": "Okay so there was a question in ID chatgroup asking me if GTulu will be a bishou",
       "author": "rohaluss",
@@ -72,11 +112,99 @@
       "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
     },
     {
+      "id": "1372881966252294205",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1372875454633214053",
       "content": "There are some strange cuts in the dialogue in the story and events, that weren'",
       "author": "vxvendetta",
       "reactions": 6,
       "channel": "✅「Answered」Strange cuts in the dialogue"
+    },
+    {
+      "id": "1372811758590365776",
+      "channel_id": "1170692781216378960",
+      "content": "Soon",
+      "author": "noire_2",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372854857437937694",
+      "channel_id": "1170692781216378960",
+      "content": "[HELLO...M...Y.....CHIL....D4EE....N]",
+      "author": "aldry_143u",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373075192112349224",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372733384651964437",
+      "channel_id": "1170692781216378960",
+      "content": "Just started playing Morimens yesterday and I got dragged into the abyss",
+      "author": "16bit.exe",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372853206421340251",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372854149447946320",
+      "channel_id": "1170692781216378960",
+      "content": "reya would know..",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372861856275894353",
+      "channel_id": "1170692781216378960",
+      "content": "damn this art style is so long to match to",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372908057981485116",
+      "channel_id": "1170692781216378960",
+      "content": "I feel some what aged <:GLOBALPASSIVE:1356363843491725434>",
+      "author": "melwyn7591",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1373059520724729988",
+      "channel_id": "1170692781216378960",
+      "content": "also a few days ago i could play fine but recently the game wont work on my phon",
+      "author": "pudding_ala_mode",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1372954197519106100",
+      "channel_id": "1131839817982947429",
+      "content": "這我都有買",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1372971188657192960",
@@ -91,34 +219,6 @@
       "author": "vxvendetta",
       "reactions": 3,
       "channel": "💭「Processing」Music overlap"
-    },
-    {
-      "id": "1372934831029358632",
-      "content": "Change it so all options in image are On by default. \n\nExalt confirmation: \nso n",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "Change the default settings of the game"
-    },
-    {
-      "id": "1372913169072390186",
-      "content": "Yes",
-      "author": "lowtownnivn",
-      "reactions": 1,
-      "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
-    },
-    {
-      "id": "1372875778789736478",
-      "content": "卑鄙的塔維黨",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "💭「處理中」通晓卡面UI bug"
-    },
-    {
-      "id": "1372849552809394196",
-      "content": "We will repair it~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Sanga's story bugs"
     }
   ]
 }

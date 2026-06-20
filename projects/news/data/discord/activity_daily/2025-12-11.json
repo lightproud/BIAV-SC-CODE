@@ -1,10 +1,36 @@
 {
   "date": "2025-12-11",
-  "messages": 135,
-  "unique_authors": 18,
-  "reactions_total": 276,
-  "attachments": 36,
+  "messages": 17330,
+  "unique_authors": 334,
+  "reactions_total": 2450,
+  "attachments": 1115,
   "channel_activity": {
+    "🔸lets-count": 17,
+    "🔸team-building": 751,
+    "🔸general-chat": 454,
+    "🔸邀请码互助┊swap-invitation-codes": 30,
+    "🔸game-question": 1446,
+    "🔸机器人命令┊bot-commands": 53,
+    "🔸morimens-game-chat": 8756,
+    "🔸剧情交流": 435,
+    "🔸晒卡分享": 16,
+    "🔸欢乐梗图": 12,
+    "🔸相位对弈": 3,
+    "🔸交友频道": 7,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 7,
+    "🔸deutscher-chatraum": 11,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 245,
+    "🔸phòng-chat-tiếng-việt": 286,
+    "🔸canal-español": 617,
+    "🔸canal-português": 136,
+    "🔸ruang-obrolan-indonesia": 924,
+    "🔸ห้องสนทนาภาษาไทย": 244,
+    "🔸traphase": 41,
+    "🔸lore-chat": 1014,
+    "🔸綜合討論": 1658,
+    "🔸阵容构建": 31,
     "Ramona!": 4,
     "G Doll Fan Splash Art": 1,
     "Morimens Awakeners Database": 1,
@@ -36,39 +62,43 @@
     "蓋個圖樓": 11,
     "我也丟一下之前畫的 圖樓": 5,
     "踏莎行（拉蒙娜生日贺词）": 1,
-    "🔸欢乐梗图": 6,
     "1296113810549112874": 1,
     "1305430084420898868": 2,
     "1399369127008796723": 1,
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "20": 4,
-    "21": 3,
-    "0": 2,
-    "5": 7,
-    "10": 14,
-    "7": 25,
-    "9": 12,
-    "8": 10,
-    "6": 2,
-    "18": 7,
-    "1": 3,
-    "16": 3,
-    "3": 7,
-    "13": 8,
-    "11": 9,
-    "12": 8,
-    "15": 1,
-    "14": 3,
-    "17": 1,
-    "2": 5,
-    "22": 1
+    "3": 553,
+    "5": 1226,
+    "6": 730,
+    "12": 859,
+    "13": 764,
+    "14": 1163,
+    "16": 666,
+    "19": 553,
+    "21": 470,
+    "23": 277,
+    "0": 762,
+    "2": 850,
+    "4": 854,
+    "8": 644,
+    "10": 720,
+    "11": 1135,
+    "15": 818,
+    "17": 813,
+    "18": 592,
+    "20": 402,
+    "22": 306,
+    "1": 602,
+    "9": 659,
+    "7": 912
   },
   "message_types": {
-    "0": 42,
-    "19": 7,
-    "6": 2
+    "0": 2160,
+    "19": 587,
+    "23": 2,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -121,11 +151,76 @@
       "channel": ""
     },
     {
+      "id": "1448608216023040167",
+      "channel_id": "1400750050208125010",
+      "content": "Friend drew this",
+      "author": "cumilousthe16",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1448688364189515908",
+      "channel_id": "1170692781216378960",
+      "content": "i am not an adult",
+      "author": "tnimreppep",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1448634139082231913",
+      "channel_id": "1180437373012672522",
       "content": "",
       "author": "ass191044",
       "reactions": 11,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1448499944867627140",
+      "channel_id": "1170692781216378960",
+      "content": "1. Say youre gonna improve raids \n2. Make them even worse\n3. Community gets mad\n",
+      "author": "kezrin",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1448736087273898106",
+      "channel_id": "1173463482503536711",
+      "content": "~~因為這邊一堆南桐0~~",
+      "author": "foxcatfurry",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1448467703886254140",
+      "channel_id": "1131839817982947429",
+      "content": "把校貓抓來當杯子給他用讓他好好發洩",
+      "author": "xingkongzhiyao_",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448654816543768757",
+      "channel_id": "1174983699935277147",
+      "content": "挖了点矿，星辰篇好难打，困难融朵打不过，共战也没怎么打……",
+      "author": "akalanden",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1448505567256776776",
+      "channel_id": "1131839817982947429",
+      "content": "怕你吃劇情吃吐了",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1448621351035207741",
+      "channel_id": "1173463482503536711",
+      "content": "用七國語言回報",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1448783841048395959",
@@ -142,74 +237,20 @@
       "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
-      "id": "1448658655724699792",
-      "content": "unc why would you report this 💔",
-      "author": "avalon_roland",
-      "reactions": 5,
-      "channel": "💭「Processing」Kath Posse Extra Fiamma bug"
+      "id": "1448685194037952544",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1448619750836928552",
-      "content": "~~希洛不是從溶蝕裡蹦出來的嗎~~",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1448586642565758987",
-      "content": "Русская версия постера🫶 \n—— сделана российской организацией 【Morimens Ru Info Ch",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1448808973619826688",
-      "content": "祝拉蒙娜生日快乐！\n\n奉上小词一首，这既是以拉蒙娜视角写的《踏莎行》，也是不久后的圣诞节贺文的先导预告，大体上是第一篇小故事的总结。这次的同人文将在12月20日",
-      "author": "150_ripe",
-      "reactions": 3,
-      "channel": "踏莎行（拉蒙娜生日贺词）"
-    },
-    {
-      "id": "1448783722743726333",
-      "content": "yeah that art is a mood",
-      "author": "hallowednebulae",
-      "reactions": 2,
-      "channel": "Ramona!"
-    },
-    {
-      "id": "1448586831674347662",
-      "content": "Русская версия постера <:bow:1356053037159944473> \n—— сделана российской организ",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!"
-    },
-    {
-      "id": "1448584120358801408",
-      "content": "~~當時小皮剛出來就是我第一個拿去當C用了~~\nhttps://youtu.be/9G4CHrAp5uU?si=kiEUytA-qiRYNDBC",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "抽卡咨詢"
-    },
-    {
-      "id": "1448628993040584735",
-      "content": "專屬鑰令怎麼沒本人CG😡 \n至少拿序章那張凑合一下吧，現在這光點是什麼意思\n看板娘欸，給點尊重",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "✅「已回答」拉蒙娜專屬鑰令"
-    },
-    {
-      "id": "1448634191221620736",
-      "content": "11/12 update:\n- Added Beyond The Skies Part 2 to the timeline\n- Added Celestial ",
-      "author": "nikolazuli",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1448581891346268302",
-      "content": "小皮自己可以當主C嗎",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "抽卡咨詢"
+      "id": "1448696080911827098",
+      "channel_id": "1170692781216378960",
+      "content": "||we realize ramona is tawil at prologue right?||",
+      "author": "kezrin",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

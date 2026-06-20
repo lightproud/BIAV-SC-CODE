@@ -1,10 +1,19 @@
 {
   "date": "2024-12-13",
-  "messages": 38,
-  "unique_authors": 12,
-  "reactions_total": 34,
-  "attachments": 10,
+  "messages": 3762,
+  "unique_authors": 133,
+  "reactions_total": 180,
+  "attachments": 208,
   "channel_activity": {
+    "🔸綜合討論": 192,
+    "🔸morimens-game-chat": 3050,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 10,
+    "🔸русский-канал": 4,
+    "🔸phòng-chat-tiếng-việt": 389,
+    "🔸canal-español": 32,
+    "🔸ruang-obrolan-indonesia": 42,
+    "🔸ห้องสนทนาภาษาไทย": 4,
     "🏆【已開獎】彌薩格週年頒獎典禮": 4,
     "會活下來嗎": 4,
     "这个相位对弈是不是要修改一下……": 2,
@@ -18,25 +27,34 @@
     "🔸【超越維度的祝福】認領專區": 9
   },
   "hourly_activity": {
-    "5": 6,
-    "15": 1,
-    "16": 4,
-    "4": 3,
-    "12": 2,
-    "13": 2,
-    "7": 2,
-    "8": 3,
-    "0": 2,
-    "3": 1,
-    "10": 2,
-    "20": 2,
-    "23": 2,
-    "9": 1,
-    "11": 3,
-    "14": 2
+    "0": 309,
+    "1": 239,
+    "2": 216,
+    "3": 223,
+    "4": 229,
+    "5": 91,
+    "6": 134,
+    "7": 102,
+    "8": 29,
+    "10": 112,
+    "12": 158,
+    "13": 177,
+    "14": 106,
+    "15": 34,
+    "17": 92,
+    "18": 187,
+    "20": 273,
+    "23": 111,
+    "9": 85,
+    "11": 274,
+    "16": 26,
+    "19": 348,
+    "21": 171,
+    "22": 36
   },
   "message_types": {
-    "0": 4
+    "0": 2906,
+    "19": 818
   },
   "top_reacted_messages": [
     {
@@ -54,11 +72,35 @@
       "channel": "應召喚前來相認"
     },
     {
+      "id": "1317120076889067520",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1317071266439495731",
       "content": "https://telegra.ph/%E5%B8%8C%E6%B4%9B-12-13-2\n\n文章在裡面\n因為DC只能2000字\n但是這東西有3742字（",
       "author": "ice_storys",
       "reactions": 6,
       "channel": "《希洛》"
+    },
+    {
+      "id": "1316941971578814584",
+      "channel_id": "1131839817982947429",
+      "content": "一排90%+令人愉悦",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316992329986478161",
+      "channel_id": "1131839817982947429",
+      "content": "all in萊克 結果萊克+7 潘神+12 ？？？？？",
+      "author": "ailiduo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1316997708464001145",
@@ -68,32 +110,108 @@
       "channel": "🏆【已開獎】彌薩格週年頒獎典禮"
     },
     {
-      "id": "1317101597972758661",
-      "content": "輪迴界域\n\n每個偶數回合開始時，在尚未打出卡片或使用狂氣爆發前，可以選擇一個喚醒體進行『輪迴』（需按左上角主動觸發）\n該喚醒體的狂氣爆發與卡片將被封印，直到下個",
-      "author": "ekko9950",
-      "reactions": 1,
-      "channel": "自創界域燒壞我腦袋的cpu了"
+      "id": "1316955266805141576",
+      "channel_id": "1131839817982947429",
+      "content": "或许会冲冲+12子宫",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1317271614156574790",
-      "content": "🥹",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "《希洛》"
+      "id": "1316970017203552329",
+      "channel_id": "1131839817982947429",
+      "content": "奧爾拉的情緒不是只有喜嗎",
+      "author": "yizilven",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1317120407832236033",
-      "content": "这是哪位宝宝呀！相信我你不比任何人差，坚持下去一定可以上岸的！！！！！",
-      "author": "adorable_panda_66412",
-      "reactions": 1,
-      "channel": "🔸【超越維度的祝福】認領專區"
+      "id": "1316925516934287430",
+      "channel_id": "1131839817982947429",
+      "content": "只要讓敵人來不及上流血就打死 就不會有被流血中毒觸發死抗的問題了<:wish:1236951537788649492>",
+      "author": "pray_unbeliever",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1317137471686836267",
-      "content": "好耶觸腕",
-      "author": "xuyu7162",
-      "reactions": 1,
-      "channel": "🔸【超越維度的祝福】認領專區"
+      "id": "1316954916681547806",
+      "channel_id": "1131839817982947429",
+      "content": "在這之前她們分別是2啟和+4",
+      "author": "gd_prawl",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316960907552751658",
+      "channel_id": "1131839817982947429",
+      "content": "密道出口不跳訊息也很棒",
+      "author": "gd_prawl",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316978251448451073",
+      "channel_id": "1131839817982947429",
+      "content": "終末效果-50%",
+      "author": "pray_unbeliever",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1317009210566901770",
+      "channel_id": "1131839817982947429",
+      "content": "超维空间五张脊刺",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1317215388961996915",
+      "channel_id": "1170692781216378960",
+      "content": "That's 1600$",
+      "author": "muffin5610",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1317219282911760446",
+      "channel_id": "1170692781216378960",
+      "content": "I made 2k a month (out of taxes because black) so no complains tho",
+      "author": "muffin5610",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1317234804324044850",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/toddler-fight-cute-siblings-smile-gif-15577887",
+      "author": "muffin5610",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1317267648769294427",
+      "channel_id": "1170692781216378960",
+      "content": "oh mama",
+      "author": "missfoxy.",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1317268324459090051",
+      "channel_id": "1170692781216378960",
+      "content": "throw even more green swords",
+      "author": "catgirlnyaa",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1316981095795003414",
+      "channel_id": "1300659603993923644",
+      "content": "Mà kh có cũng k sao",
+      "author": "wolfyy1",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
     }
   ]
 }

@@ -1,10 +1,33 @@
 {
   "date": "2025-09-22",
-  "messages": 117,
-  "unique_authors": 14,
-  "reactions_total": 64,
-  "attachments": 26,
+  "messages": 15950,
+  "unique_authors": 246,
+  "reactions_total": 3193,
+  "attachments": 748,
   "channel_activity": {
+    "🔸русский-канал": 760,
+    "🔸phòng-chat-tiếng-việt": 12,
+    "🔸canal-español": 306,
+    "🔸canal-português": 28,
+    "🔸ruang-obrolan-indonesia": 244,
+    "🔸ห้องสนทนาภาษาไทย": 134,
+    "🔸traphase": 133,
+    "🔸lore-chat": 4,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 42,
+    "🔸general-chat": 182,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸morimens-game-chat": 12213,
+    "🔸剧情交流": 47,
+    "🔸晒卡分享": 16,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 23,
+    "🔸deutscher-chatraum": 3,
+    "🔸綜合討論": 1637,
+    "🔸阵容构建": 33,
     "3D Render: Horla": 4,
     "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
     "Flares' Comprehensive Beginner Guide to Morimens": 1,
@@ -31,31 +54,52 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "3": 11,
-    "4": 25,
-    "8": 3,
-    "9": 6,
-    "18": 3,
-    "19": 5,
-    "20": 2,
-    "13": 11,
-    "15": 2,
-    "0": 3,
-    "6": 2,
-    "7": 13,
-    "14": 2,
-    "21": 8,
-    "12": 12,
-    "10": 1,
-    "1": 2,
-    "5": 1,
-    "11": 5
+    "1": 642,
+    "2": 816,
+    "3": 633,
+    "4": 672,
+    "5": 436,
+    "7": 622,
+    "8": 446,
+    "9": 527,
+    "10": 798,
+    "11": 953,
+    "12": 1040,
+    "13": 640,
+    "14": 780,
+    "15": 870,
+    "16": 521,
+    "17": 737,
+    "18": 725,
+    "19": 933,
+    "20": 479,
+    "21": 394,
+    "22": 690,
+    "23": 518,
+    "0": 374,
+    "6": 704
   },
   "message_types": {
-    "0": 16,
-    "19": 3
+    "0": 1384,
+    "19": 474
   },
   "top_reacted_messages": [
+    {
+      "id": "1419556665786892400",
+      "channel_id": "1170692781216378960",
+      "content": "Clem out?",
+      "author": "lotan_045",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419535108079358002",
+      "channel_id": "1170692781216378960",
+      "content": "do 🫃 not 🫃 sleep 🫃 on🫃  this 🫃 game🫃🫄  , i've 🫃 played 🫃 so🫃  many🫃 gacha 🫃 game",
+      "author": "moyashi0672",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1419533512825897000",
       "content": "A little practice to render a painterly style in blender. \nHonestly could use mo",
@@ -71,123 +115,131 @@
       "channel": ""
     },
     {
+      "id": "1419502375156191263",
+      "channel_id": "1170692781216378960",
+      "content": "what is that",
+      "author": "supernat1",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419497284306993293",
+      "channel_id": "1170692781216378960",
+      "content": "unbricked accounts be like",
+      "author": "tatloch",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419641446394236959",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/silly-cat-cat-silly-tongue-tongue-out-gif-108766873257211",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419476415421874287",
+      "channel_id": "1170692781216378960",
+      "content": "I’m chill aswell",
+      "author": "runningaway_fs",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419496751261417583",
+      "channel_id": "1170692781216378960",
+      "content": "garbage",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419600579252195379",
+      "channel_id": "1170692781216378960",
+      "content": "kath is trash",
+      "author": "jollysquire",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419636845783941160",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1419478292108541994",
+      "channel_id": "1170692781216378960",
+      "content": "WDYM ITS NOT SATURDAY",
+      "author": "runningaway_fs",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419590712088854731",
+      "channel_id": "1170692781216378960",
+      "content": "I could hear Clem speaking to me...she whispered to me to pull more...just a few",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419685443280306176",
+      "channel_id": "1170692781216378960",
+      "content": "# FORSEN ONLINE I AM SAVED",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419806198231994480",
+      "channel_id": "1170692781216378960",
+      "content": "Who has spooky muted?",
+      "author": "canker.thore",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419536395164323900",
+      "channel_id": "1170692781216378960",
+      "content": "there",
+      "author": "ancientbp",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419542812529262662",
+      "channel_id": "1170692781216378960",
+      "content": "People say clem mid,Is it true?<:processing:1357185814567718963>",
+      "author": "dorembo_mako8800",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419581375027089460",
+      "channel_id": "1170692781216378960",
+      "content": "Wow I just checked my character rates, 67 pulls per limited character",
+      "author": "supernat1",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419642649228476446",
+      "channel_id": "1170692781216378960",
+      "content": "Your talk about this game is so inappropriate that it's rated r99",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1419525884464992418",
       "content": "也算是一个小练习，试试看用blender来做出油画效果。但结果好像很一般.....<:takenotes:1357186646294138890>\n另外本来还想",
       "author": "xyakoto",
       "reactions": 9,
       "channel": "【3D渲染动画】奥尔拉"
-    },
-    {
-      "id": "1419684565114425535",
-      "content": "打融灾打的我痛苦面具出来了，之后的融灾能不能控制一下难度，至少350别太难吧<:cry1:1356053046374961212>",
-      "author": "2300011747",
-      "reactions": 6,
-      "channel": "✅「已回答」融灾能不能别调这么难"
-    },
-    {
-      "id": "1419628433260019722",
-      "content": "During the \"Detective Handbook\" event rerun, after doing \"Uninvited Guest\" level",
-      "author": "reynard_fuchs",
-      "reactions": 4,
-      "channel": "✅「Answered」[Bug] Loss of Chips of Victory"
-    },
-    {
-      "id": "1419619936032002048",
-      "content": "It feels like Aequor especially is suffering from the lack of Limiteds.\n\nHere's ",
-      "author": "zekiei",
-      "reactions": 3,
-      "channel": "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?"
-    },
-    {
-      "id": "1419665944355016868",
-      "content": "~~乾脆給他兩叫王姨（藝）吧~~",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "杜勒和皮克曼的车文来了"
-    },
-    {
-      "id": "1419520183885627522",
-      "content": "<@1339576837990514740> Fan art is usually a painting work, and for video works, ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1419767732911476846",
-      "content": "not really, you can activate it with no problem",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
-    },
-    {
-      "id": "1419768585475194992",
-      "content": "no reason, the only downside was a bug (auto-dismantle used to not count towards",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
-    },
-    {
-      "id": "1419698660672929812",
-      "content": "我覺得主要是那個死扛很噁心",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "✅「已回答」融灾能不能别调这么难"
-    },
-    {
-      "id": "1419586754976940043",
-      "content": "感谢建议，此前也收到类似的反馈，已针对性地解决了。我们也在思考更好的办法以期能避免类似问题的发生🙏 \n守密人提到的这些立绘和皮肤我们会先安排优化🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」角色立绘/缩略图画质优化"
-    },
-    {
-      "id": "1419580898478653491",
-      "content": "Around October, we will perform an upgrade and repair on the problematic file pa",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Launch the game via Steam and getting the \"Network busy\""
-    },
-    {
-      "id": "1419520558894153768",
-      "content": "<:pray:1356053116260454534> 近期会有消息~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」环娜皮肤是不是快出了"
-    },
-    {
-      "id": "1419526249612836921",
-      "content": "大佬好強",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "【3D渲染动画】奥尔拉"
-    },
-    {
-      "id": "1419547052773343303",
-      "content": "你說過你會",
-      "author": "sayo.0320",
-      "reactions": 1,
-      "channel": "【3D渲染动画】奥尔拉"
-    },
-    {
-      "id": "1419554131894472774",
-      "content": "創建文檔.jpg",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒和皮克曼的车文来了"
-    },
-    {
-      "id": "1419579963195261029",
-      "content": "~~（左顧右盼）（緊張流汗）（舔）~~",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1419597934210584737",
-      "content": "我吃",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

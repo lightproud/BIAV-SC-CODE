@@ -1,10 +1,25 @@
 {
   "date": "2025-04-26",
-  "messages": 29,
-  "unique_authors": 7,
-  "reactions_total": 26,
-  "attachments": 5,
+  "messages": 4736,
+  "unique_authors": 138,
+  "reactions_total": 250,
+  "attachments": 204,
   "channel_activity": {
+    "🔸阵容构建": 17,
+    "🔸morimens-game-chat": 3379,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 711,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 119,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 71,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 142,
+    "🔸ห้องสนทนาภาษาไทย": 33,
+    "🔸traphase": 10,
+    "🔸lore-chat": 5,
+    "🔸lets-count": 3,
+    "🔸綜合討論": 197,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "Goliath Fanart": 2,
     "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 4,
@@ -17,22 +32,44 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "5": 2,
-    "3": 1,
-    "9": 5,
-    "10": 12,
-    "19": 1,
-    "14": 1,
-    "20": 1,
-    "7": 1,
-    "18": 4,
-    "21": 1
+    "1": 76,
+    "2": 393,
+    "14": 249,
+    "15": 339,
+    "0": 307,
+    "3": 345,
+    "4": 410,
+    "5": 168,
+    "6": 64,
+    "7": 192,
+    "8": 333,
+    "9": 74,
+    "10": 48,
+    "11": 137,
+    "12": 249,
+    "13": 311,
+    "16": 237,
+    "17": 131,
+    "18": 212,
+    "19": 206,
+    "20": 159,
+    "21": 25,
+    "22": 47,
+    "23": 24
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 3546,
+    "19": 964
   },
   "top_reacted_messages": [
+    {
+      "id": "1365599894231842866",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1365807416687464448",
       "content": "90级了，来更新一下（",
@@ -48,6 +85,102 @@
       "channel": "血链希洛忘却篇星辰篇造物抓取二图流攻略"
     },
     {
+      "id": "1365597364949221377",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365570785137397771",
+      "channel_id": "1131839817982947429",
+      "content": "阿狗過了一個淫亂的忘卻人生",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365622251889627169",
+      "channel_id": "1131839817982947429",
+      "content": "我等等還要加班四小時",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365583809835307030",
+      "channel_id": "1131839817982947429",
+      "content": "嗚嗚嗚嗚嗚嗚我沒有歪成功+12😭",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365620759787081823",
+      "channel_id": "1131839817982947429",
+      "content": "~~牢貓 敢不敢出 出了我更萬字肉文直接讓守密死在床上~~",
+      "author": "fengliyaowo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365742006357201056",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "287405tjy_28066",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365549848899883019",
+      "channel_id": "1170692781216378960",
+      "content": "If I keep pretending, aurita will become futa, I learnt this from twitter",
+      "author": "satachan",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365570903185948714",
+      "channel_id": "1131839817982947429",
+      "content": "好了自選卡池改選圖魯把他補到+8",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365693253126717622",
+      "channel_id": "1131839817982947429",
+      "content": "||5771的純愛都是純做愛||",
+      "author": "fengliyaowo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365769304762486834",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1365735774795993159",
+      "channel_id": "1170692781216378960",
+      "content": "because regular stages are fucking awful",
+      "author": "omegamart",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365568422578229380",
+      "channel_id": "1131839817982947429",
+      "content": "XX",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1365554644696432681",
       "content": "Another companion image to go with it, Jenkins is still cuter though.",
       "author": "starfish3302",
@@ -55,25 +188,36 @@
       "channel": "Just a pixel image of Jenkin looking outside with Brown"
     },
     {
-      "id": "1365531449155129384",
-      "content": "Giving nips is a must in my house <:o7:1311002802331582647>",
-      "author": "meatyexplosions",
+      "id": "1365561365766344725",
+      "channel_id": "1170692781216378960",
+      "content": "Finally 15 affinity",
+      "author": "rozu",
       "reactions": 2,
-      "channel": "Goliath Fanart"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365765790984569035",
-      "content": "This guide goes over the starting topics of:\n\n1. Keeper Level\n2. Menophin how to",
-      "author": "climbkaly",
+      "id": "1365632450080014359",
+      "channel_id": "1170692781216378960",
+      "content": "i dont even have +12 caecus yet lol",
+      "author": "itsmemiki",
       "reactions": 2,
-      "channel": "Beginner Navigation Guide"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365640574396272700",
-      "content": "<:behave:1361909598067625984>",
-      "author": "huangziqiao_45693",
+      "id": "1365656914222125168",
+      "channel_id": "1170692781216378960",
+      "content": "died",
+      "author": "rain_scarlet",
       "reactions": 2,
-      "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365656937798172672",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/hispullinhhiskokout-asu-memek-bangsat-gif-24915856",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

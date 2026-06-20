@@ -1,10 +1,24 @@
 {
   "date": "2025-04-10",
-  "messages": 85,
-  "unique_authors": 10,
-  "reactions_total": 56,
-  "attachments": 11,
+  "messages": 5503,
+  "unique_authors": 112,
+  "reactions_total": 248,
+  "attachments": 239,
   "channel_activity": {
+    "🔸morimens-game-chat": 3294,
+    "🔸剧情交流": 12,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 665,
+    "🔸русский-канал": 302,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-português": 16,
+    "🔸ruang-obrolan-indonesia": 231,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 61,
+    "🔸lore-chat": 12,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 788,
     "Dive Bomb Goliath": 1,
     "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 9,
     "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 8,
@@ -22,24 +36,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "7": 13,
-    "9": 5,
-    "10": 7,
-    "12": 7,
-    "2": 13,
-    "3": 10,
-    "4": 4,
-    "5": 1,
-    "8": 3,
-    "13": 1,
-    "0": 4,
-    "15": 1,
-    "11": 1,
-    "6": 15
+    "0": 390,
+    "1": 180,
+    "2": 210,
+    "3": 372,
+    "4": 397,
+    "5": 455,
+    "6": 132,
+    "7": 320,
+    "8": 15,
+    "9": 127,
+    "10": 349,
+    "11": 190,
+    "12": 171,
+    "13": 297,
+    "14": 393,
+    "15": 245,
+    "16": 107,
+    "17": 120,
+    "18": 199,
+    "19": 149,
+    "20": 106,
+    "21": 47,
+    "22": 318,
+    "23": 214
   },
   "message_types": {
-    "0": 11,
-    "19": 7
+    "0": 3677,
+    "19": 953
   },
   "top_reacted_messages": [
     {
@@ -50,11 +74,27 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
+      "id": "1359795202428108841",
+      "channel_id": "1170692781216378960",
+      "content": "i mean like paid promote",
+      "author": "maegu",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1359786260469776395",
       "content": "<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13560531162604545",
       "author": "mount_fisherman",
       "reactions": 9,
       "channel": "Dive Bomb Goliath"
+    },
+    {
+      "id": "1359738443755946094",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": ".2.718281828",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1359828080541171834",
@@ -64,11 +104,59 @@
       "channel": "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide"
     },
     {
+      "id": "1359920286467883048",
+      "channel_id": "1170692781216378960",
+      "content": "Favorite Morimens Wallpaper ? \n:",
+      "author": "sexysneakystoat1625",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1359738724702752889",
       "content": "",
       "author": ".2.718281828",
       "reactions": 6,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359883077891133570",
+      "channel_id": "1300659580446969918",
+      "content": "Все, удалил морименс. Очень устал от однообразия в игре. Ивенты просто ужасны, т",
+      "author": "eagle4alan",
+      "reactions": 5,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1359757772635508837",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "c2reayus",
+      "reactions": 4,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1359750188901863556",
+      "channel_id": "1131839817982947429",
+      "content": "捧油👍",
+      "author": "undecember_news",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359807020147933296",
+      "channel_id": "1131839817982947429",
+      "content": "畢竟流的是血，不是水",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359891482760446003",
+      "channel_id": "1131839817982947429",
+      "content": "下個月就可以+12小水母跟艾繼斯了",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1359722779431276544",
@@ -85,67 +173,51 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
+      "id": "1359905025371013203",
+      "channel_id": "1170692781216378960",
+      "content": "Isn’t it called Horla?",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359943568982016294",
+      "channel_id": "1300659802455674972",
+      "content": "karin กะ winkle ครับเลือกสักตัวสองตัวนี้ไปได้หลายทีม",
+      "author": "jamalibnsulaiman",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1359753472987103312",
+      "channel_id": "1131839817982947429",
+      "content": "8抽出0命！爽",
+      "author": "kevin.yienwenst",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359758812742942823",
+      "channel_id": "1131839817982947429",
+      "content": "前面拿鼠鼠隨便秒都沒看效果",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359844119949738074",
+      "channel_id": "1131839817982947429",
+      "content": "<:wish:1356084702468899117>",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1359796322169000088",
       "content": "這裡都出現過遊戲角色跟策劃替身的色圖了",
       "author": "yizilven",
       "reactions": 3,
       "channel": "有关于同人文创作的一些问题"
-    },
-    {
-      "id": "1359762757515481189",
-      "content": "<@443365370271891456>可以的~",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
-    },
-    {
-      "id": "1359687212937248849",
-      "content": "<:processing:1357185814567718963> woc，有草🐱的\n我期待的就是安安稳稳，出新内容，有问题慢慢修也不指望一下能修完美，只要不突",
-      "author": "junakaru4ever",
-      "reactions": 2,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1359797258622865568",
-      "content": "嗯嗯对的，所以说忘却前夜x别的什么什么游戏 这种同人是可以发的😭 太好了太好了太好了\n我回去研究研究discord怎么发那种连续文\n太感谢了！",
-      "author": "libery9150",
-      "reactions": 2,
-      "channel": "有关于同人文创作的一些问题"
-    },
-    {
-      "id": "1359690837939847290",
-      "content": "但這個可以在設定調整\n只是好幾次更新前改成預設沒確認鍵，調整後就有了",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1359694012801613845",
-      "content": "設定好像能調整",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1359796206343028798",
-      "content": "你要拿去賣的話才會出事",
-      "author": "yizilven",
-      "reactions": 1,
-      "channel": "有关于同人文创作的一些问题"
-    },
-    {
-      "id": "1359797309432660079",
-      "content": "加油",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "有关于同人文创作的一些问题"
-    },
-    {
-      "id": "1359864555332960297",
-      "content": "但你說的對醫生如果出在黑夫人時期其實很優秀",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "克莱门汀..."
     }
   ]
 }

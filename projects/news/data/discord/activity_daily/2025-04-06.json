@@ -1,10 +1,24 @@
 {
   "date": "2025-04-06",
-  "messages": 97,
-  "unique_authors": 18,
-  "reactions_total": 73,
-  "attachments": 13,
+  "messages": 5416,
+  "unique_authors": 114,
+  "reactions_total": 284,
+  "attachments": 143,
   "channel_activity": {
+    "🔸morimens-game-chat": 3782,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 47,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 49,
+    "🔸русский-канал": 38,
+    "🔸canal-español": 49,
+    "🔸canal-português": 20,
+    "🔸ruang-obrolan-indonesia": 274,
+    "🔸ห้องสนทนาภาษาไทย": 50,
+    "🔸traphase": 112,
+    "🔸lore-chat": 13,
+    "🔸lets-count": 2,
+    "🔸綜合討論": 880,
     "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 1,
     "📜克萊門汀┊喚醒體&命輪介紹": 17,
     "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy": 1,
@@ -23,27 +37,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "22": 1,
-    "8": 7,
-    "9": 7,
-    "12": 28,
-    "23": 1,
-    "7": 3,
-    "1": 1,
-    "13": 5,
-    "14": 13,
-    "15": 19,
-    "16": 3,
-    "2": 2,
-    "3": 2,
-    "21": 2,
-    "6": 1,
-    "10": 1,
-    "5": 1
+    "0": 61,
+    "1": 88,
+    "2": 321,
+    "3": 431,
+    "4": 185,
+    "5": 107,
+    "6": 46,
+    "7": 93,
+    "8": 98,
+    "9": 118,
+    "10": 106,
+    "11": 337,
+    "12": 988,
+    "13": 266,
+    "14": 282,
+    "15": 559,
+    "16": 361,
+    "17": 147,
+    "18": 63,
+    "19": 186,
+    "20": 111,
+    "21": 166,
+    "22": 78,
+    "23": 218
   },
   "message_types": {
-    "0": 11,
-    "19": 8
+    "0": 3425,
+    "19": 1014
   },
   "top_reacted_messages": [
     {
@@ -52,6 +73,14 @@
       "author": "blue_yogurt_chan",
       "reactions": 29,
       "channel": "《把你的名字刻在幻影號上》—諾締拉"
+    },
+    {
+      "id": "1358417415238582353",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you. I did make some mistakes in community communication and management in",
+      "author": "game.producer.light",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1358449803842814154",
@@ -75,6 +104,78 @@
       "channel": "唤醒体DIY，命运•哈姆林"
     },
     {
+      "id": "1358472611566326031",
+      "channel_id": "1131839817982947429",
+      "content": "你快要得孝子獎了",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358455377594814485",
+      "channel_id": "1131839817982947429",
+      "content": "克萊門教了",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358464424578383943",
+      "channel_id": "1131839817982947429",
+      "content": "整个星辰篇第一章困难我6翼用的不超过10张",
+      "author": "bailuoxiao",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358470818446839858",
+      "channel_id": "1131839817982947429",
+      "content": "克萊門汀原型？",
+      "author": "miyabyakuya",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358419652820336650",
+      "channel_id": "1131839817982947429",
+      "content": "2.0的特色就是每隻都在腦控守密",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358461113246945390",
+      "channel_id": "1131839817982947429",
+      "content": "Ena還是趕緊找包養吧",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358461786491322581",
+      "channel_id": "1131839817982947429",
+      "content": "剩我融災全勤了",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358461951650304111",
+      "channel_id": "1131839817982947429",
+      "content": "對，我現在天天玩復刻活動碾壓怪物很高興",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358466921577578618",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "bailuoxiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1358465639932628992",
       "content": "i love her unique symptom and her playing around with sacrifices, this has a str",
       "author": "itsmemiki",
@@ -89,74 +190,36 @@
       "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
     },
     {
-      "id": "1358368226261729442",
-      "content": "忘卻一是倫蒂尼恩失蹤案，二是幫助鼠鼠找姐姐，三四則是調查地獄犬等等，中心劇情很明確\n星辰一是什麼，我們在幹什麼，打B-68是為了什麼，各章節劇情中心過於薄弱了導",
-      "author": "akalanden",
+      "id": "1358338458158104788",
+      "channel_id": "1170692781216378960",
+      "content": "I'll make the worst team work",
+      "author": "reonbd",
       "reactions": 2,
-      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358454118024351854",
-      "content": "<:pray:1356053116260454534>",
-      "author": "akalanden",
+      "id": "1358400683606540389",
+      "channel_id": "1170692781216378960",
+      "content": "Ramona maid or teacher could be up their",
+      "author": "lotan_045",
       "reactions": 2,
-      "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358428615762640937",
-      "content": "Bro, just to clarify, my English isn't great and this translation was done with ",
-      "author": "xuanyan.",
-      "reactions": 1,
-      "channel": "V2.2.0.0 停服維護公告"
+      "id": "1358401630113890335",
+      "channel_id": "1170692781216378960",
+      "content": "the 10th my turn collab be like",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358414470128599090",
-      "content": "是的，我也認同，但官方現在根本不鳥，你看我們過了多久才得到策劃回應我們的機會？",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358415176159854713",
-      "content": "<@633215996508766229> 我的動態鯊魚壁紙跟主僕糧呢😭",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358415384289742928",
-      "content": "相信的力量还在发力\n相信!",
-      "author": "molove0286",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358419697523228824",
-      "content": "像汀克特這個效果描述誤導挺嚴重的，在星辰篇的環境\n~~雖然本來也沒多少出場機會~~",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358465374009426136",
-      "content": "~~這裡是男同前夜，出鯊魚皮膚肯定能賣~~",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358465925895946240",
-      "content": "這裡不是麻辣前夜嗎",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#近况分享"
-    },
-    {
-      "id": "1358381030138052731",
-      "content": "我覺得你筆下的希萊活起來了，她不是虛無縹緲的庇佑者，她是鮮活的人，有自己的想法",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "「   」的故事（上）"
+      "id": "1358402891697750158",
+      "channel_id": "1170692781216378960",
+      "content": "FNAF",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

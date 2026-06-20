@@ -1,10 +1,22 @@
 {
   "date": "2024-12-01",
-  "messages": 121,
-  "unique_authors": 22,
-  "reactions_total": 98,
-  "attachments": 58,
+  "messages": 7290,
+  "unique_authors": 210,
+  "reactions_total": 417,
+  "attachments": 434,
   "channel_activity": {
+    "🔸綜合討論": 924,
+    "🔸阵容构建": 20,
+    "🔸morimens-game-chat": 5110,
+    "🔸剧情交流": 31,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 118,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 32,
+    "🔸phòng-chat-tiếng-việt": 618,
+    "🔸canal-español": 263,
+    "🔸canal-português": 36,
+    "🔸ห้องสนทนาภาษาไทย": 6,
     "Reruns priority guide (for newcomers and general)": 5,
     "GPT translation synonyms": 2,
     "🌌【已開獎】超越維度的祝福": 8,
@@ -29,30 +41,35 @@
     "【梗图】堆点我P过的梗图": 1
   },
   "hourly_activity": {
-    "0": 4,
-    "13": 8,
-    "21": 2,
-    "4": 2,
-    "7": 5,
-    "9": 27,
-    "15": 3,
-    "16": 5,
-    "19": 3,
-    "12": 8,
-    "18": 2,
-    "2": 1,
-    "8": 5,
-    "10": 15,
-    "11": 3,
-    "14": 5,
-    "17": 10,
-    "5": 6,
-    "20": 1,
-    "23": 2,
-    "3": 4
+    "0": 69,
+    "1": 280,
+    "2": 566,
+    "3": 266,
+    "4": 521,
+    "5": 190,
+    "6": 197,
+    "7": 315,
+    "8": 474,
+    "9": 253,
+    "10": 350,
+    "11": 393,
+    "12": 271,
+    "13": 262,
+    "14": 493,
+    "15": 544,
+    "16": 268,
+    "17": 400,
+    "18": 177,
+    "20": 137,
+    "22": 317,
+    "19": 178,
+    "21": 131,
+    "23": 238
   },
   "message_types": {
-    "0": 7
+    "0": 5878,
+    "19": 1290,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -105,60 +122,108 @@
       "channel": "加点互相关注打新本！"
     },
     {
-      "id": "1312731471122792448",
-      "content": "<:Coffee:1240919421791375380> 就不用理他了你們越理他越高興",
-      "author": "arr5721",
-      "reactions": 4,
-      "channel": "加点互相关注打新本！"
+      "id": "1312793883821736019",
+      "channel_id": "1131839817982947429",
+      "content": "我之前打遊戲還打到長針眼",
+      "author": "ekko9950",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312928566643527753",
-      "content": "所以我認為校貓不是想擋玩家福利\n怕是有心人士透過這次活動代練刷抽數材料賺錢",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "活動強迫助戰"
+      "id": "1312820842551578684",
+      "channel_id": "1131839817982947429",
+      "content": "主美幹的",
+      "author": "gd_prawl",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312653010589192193",
-      "content": "~~米粒毒队的基本要求是米粒要有+12~~",
-      "author": "be_queitplease",
-      "reactions": 2,
-      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+      "id": "1312840938279665684",
+      "channel_id": "1131839817982947429",
+      "content": "拉蒙娜就是他同事的桃莉羊",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312886414819463270",
-      "content": "dream guiding dreamlead and dream inducer is all = dream guide",
-      "author": "cceles",
-      "reactions": 1,
-      "channel": "GPT translation synonyms"
+      "id": "1312825354515386399",
+      "channel_id": "1173463482503536711",
+      "content": "争宠罢了（）",
+      "author": "sadisticgirl.",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
     },
     {
-      "id": "1312601919084171294",
-      "content": "已完成，請再嘗試。",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "「決勝：原初之影」黑屏問題處理貼"
+      "id": "1312629356673372242",
+      "channel_id": "1131839817982947429",
+      "content": "~~我尋思討伐戰如果沒打完是不是該有戰敗線劇情~~",
+      "author": ".moon_leaf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312703458922725377",
-      "content": "可以想像情況\n\n格拉基：（戳戳夏蓋\n\n夏蓋（眾多）：哎呀老爺不要啦，人家還有老公，他會生氣氣啦。（看向睡死的阿薩托斯。\n\n格拉基：沒關係啦，他睡死了（繼續戳戳\n",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "旺达相关原型考据"
+      "id": "1312764791131213865",
+      "channel_id": "1131839817982947429",
+      "content": "说不定到时候突然冒出无数的学长帮你打完眼球",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312835309498536057",
-      "content": "美女\n不過\n有點難落地\n類似阿爾比諾那種重要npc立繪",
+      "id": "1312795866960101386",
+      "channel_id": "1131839817982947429",
+      "content": "關音樂 換聽其他歌恢復一下san值",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312825618571984956",
+      "channel_id": "1131839817982947429",
+      "content": "我個人覺得媽衣服的絕妙之處在於\n明明是~~裹屍布~~ 看起來卻像新娘禮服",
       "author": "kong760",
-      "reactions": 1,
-      "channel": "[克蘇魯神話元素] 溫柯爾裡面的人"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312655730288885875",
-      "content": "好！等会加你！",
-      "author": "tristlanto",
-      "reactions": 1,
-      "channel": "加点互相关注打新本！"
+      "id": "1312741591588540477",
+      "channel_id": "1131839874132090890",
+      "content": "血肉反 第三目光用 8回合6分鐘\n隊伍主要撐強效為主 \n鑰令 唯一的種子有就開 直接印機車三費\n羊媽開狂複製機車三費+回狂(沒胎也可以直接複製)，拍2費產胎+回",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1312756629699170435",
+      "channel_id": "1131839817982947429",
+      "content": "今天已经完全刷不动了（）十遍没到身心俱疲",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312838327669493781",
+      "channel_id": "1131839817982947429",
+      "content": "N的權柄其實是領養",
+      "author": "gd_prawl",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312839090734895185",
+      "channel_id": "1131839817982947429",
+      "content": "有頭有尾有反轉有伏筆",
+      "author": "gd_prawl",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312845297688252469",
+      "channel_id": "1131839817982947429",
+      "content": "主要这个画风剧情，都戳我xp，玩过辣么多手游，没咋碰到这么对味的",
+      "author": "zerathree",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-03-22",
-  "messages": 38,
-  "unique_authors": 9,
-  "reactions_total": 14,
-  "attachments": 4,
+  "messages": 4489,
+  "unique_authors": 87,
+  "reactions_total": 139,
+  "attachments": 142,
   "channel_activity": {
+    "🔸한국어-채팅방": 371,
+    "🔸русский-канал": 51,
+    "🔸phòng-chat-tiếng-việt": 9,
+    "🔸canal-español": 13,
+    "🔸canal-português": 4,
+    "🔸ruang-obrolan-indonesia": 137,
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "🔸traphase": 230,
+    "🔸lore-chat": 19,
+    "🔸綜合討論": 215,
+    "🔸阵容构建": 72,
+    "🔸morimens-game-chat": 3270,
+    "🔸剧情交流": 25,
+    "🔸相位对弈": 32,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
     "Is this a good team?": 14,
     "การรวบรวมคำติชมการแปลภาษาไทย": 1,
@@ -18,25 +32,52 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "4": 6,
-    "6": 1,
-    "0": 1,
-    "1": 2,
-    "13": 3,
-    "14": 11,
-    "15": 3,
-    "16": 2,
-    "18": 1,
-    "23": 1,
-    "11": 5,
-    "12": 1,
-    "8": 1
+    "4": 342,
+    "8": 114,
+    "9": 48,
+    "11": 109,
+    "12": 149,
+    "13": 161,
+    "10": 47,
+    "14": 701,
+    "15": 213,
+    "16": 290,
+    "19": 24,
+    "0": 268,
+    "2": 228,
+    "3": 158,
+    "18": 99,
+    "21": 150,
+    "23": 239,
+    "1": 73,
+    "5": 68,
+    "7": 16,
+    "17": 480,
+    "20": 115,
+    "22": 343,
+    "6": 54
   },
   "message_types": {
-    "0": 14,
-    "19": 4
+    "0": 695,
+    "19": 81
   },
   "top_reacted_messages": [
+    {
+      "id": "1352814224979525764",
+      "channel_id": "1131839874132090890",
+      "content": "# 阿狗和AAA已经私定终身了",
+      "author": "ling_an_",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1353046184247164981",
+      "channel_id": "1170692781216378960",
+      "content": "so they do the same as well",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1352892501974978682",
       "content": "Clementine will save ultra poison.",
@@ -59,11 +100,124 @@
       "channel": "不会再有了"
     },
     {
-      "id": "1352862020076179486",
-      "content": "现在的：垃圾场直接随便塞",
-      "author": "molove0286",
+      "id": "1352858731813011508",
+      "channel_id": "1131839817982947429",
+      "content": "鯊魚在上||kai在下||",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352861436237578240",
+      "channel_id": "1131839817982947429",
+      "content": "他們拿我的圖魯來證明海國能用🤡 🤡",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353038064209104936",
+      "channel_id": "1131839817982947429",
+      "content": "好完美",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352837590319108136",
+      "channel_id": "1170692781216378960",
+      "content": "bro you werent ganna read anyways",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353046408806010990",
+      "channel_id": "1170692781216378960",
+      "content": "I don't know... it's really hard to be better than \"you're so weak for an awaken",
+      "author": "applepieeater123",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1352988316462747648",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "arthasiv",
       "reactions": 2,
-      "channel": "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？"
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1353008349787979806",
+      "channel_id": "1300659580446969918",
+      "content": "Никому не нужный факт, но я сейчас читаю Сны в ведьмином доме Лавкрафта, и там ф",
+      "author": "irrational_obelisk",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1352799912709849210",
+      "channel_id": "1300659662311526512",
+      "content": "esta es tremenda waifu, por que de noche deliciosas es una discoteca :´v",
+      "author": "princeoftheocean",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1352824834614362240",
+      "channel_id": "1300659662311526512",
+      "content": "ya me vi el cap, por que apenas lei el reglon era spoiler. Me salio una lagrimit",
+      "author": "princeoftheocean",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1352857093635313714",
+      "channel_id": "1326453763355185215",
+      "content": "the true reason why keeper cant drink with sorel",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1352805725499428926",
+      "channel_id": "1131839817982947429",
+      "content": "剛才上了一輛公車，裡面都是人，座位也被坐滿了，唯獨沒有人敢碰的博愛座。\n我直接坐了上去，結果前面的阿婆指責我，說：「現在年輕人就是不懂事！這種位置就是該禮讓不方",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352835817780809819",
+      "channel_id": "1170692781216378960",
+      "content": "yes EXACTLY i loved it a lot and the art style is so pretty and the vibe is all ",
+      "author": "daegudollz",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353044765645606993",
+      "channel_id": "1170692781216378960",
+      "content": "i mean i would find it pretty wild if you did manage to make morimens woke consi",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353045623464661012",
+      "channel_id": "1170692781216378960",
+      "content": "kind of feels like episode 28 million of people making something up to get upset",
+      "author": "lystia",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353047473400315904",
+      "channel_id": "1170692781216378960",
+      "content": "I'm highly considering making an Excel spreadsheet like the one the Path to Nowh",
+      "author": "sheepybeeby",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

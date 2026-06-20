@@ -1,10 +1,26 @@
 {
   "date": "2025-04-12",
-  "messages": 42,
-  "unique_authors": 10,
-  "reactions_total": 611,
-  "attachments": 16,
+  "messages": 5337,
+  "unique_authors": 136,
+  "reactions_total": 1391,
+  "attachments": 198,
   "channel_activity": {
+    "🔸阵容构建": 12,
+    "🔸morimens-game-chat": 4231,
+    "🔸剧情交流": 15,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 50,
+    "🔸русский-канал": 40,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 6,
+    "🔸canal-português": 1,
+    "🔸ruang-obrolan-indonesia": 190,
+    "🔸ห้องสนทนาภาษาไทย": 30,
+    "🔸traphase": 15,
+    "🔸lore-chat": 119,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸綜合討論": 573,
     "aomi’s morimens dump": 5,
     "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 5,
     "✅校猫碎碎念#近况分享": 4,
@@ -14,33 +30,54 @@
     "下周更新典藏館該上新星辰篇一二章壁紙了": 2,
     "Changing the conditions for claiming prizes in Trapashe": 6,
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 3,
-    "🔸礼包码┊gift-codes": 1,
     "1296113810549112874": 8
   },
   "hourly_activity": {
-    "3": 1,
-    "9": 3,
-    "10": 12,
-    "7": 4,
-    "12": 1,
-    "13": 7,
-    "8": 2,
-    "11": 1,
-    "14": 2,
-    "2": 1,
-    "6": 8
+    "13": 263,
+    "0": 259,
+    "1": 401,
+    "2": 258,
+    "3": 296,
+    "4": 487,
+    "5": 134,
+    "6": 127,
+    "7": 268,
+    "8": 361,
+    "9": 181,
+    "10": 328,
+    "11": 285,
+    "12": 359,
+    "14": 297,
+    "15": 110,
+    "16": 128,
+    "17": 115,
+    "18": 182,
+    "19": 77,
+    "20": 130,
+    "21": 35,
+    "22": 79,
+    "23": 177
   },
   "message_types": {
-    "0": 7,
-    "19": 3
+    "0": 3599,
+    "19": 1123
   },
   "top_reacted_messages": [
     {
       "id": "1360512904339918959",
+      "channel_id": "1355094251775459399",
       "content": "💖 **【開服500天紀念】**\n親愛的守密人：\n\n今天，我們迎來了開服500天紀念日。 500個日夜守望，是您每一次登入時與融蝕對峙的勇氣，讓這段本應黯淡無光",
       "author": "morimensstaff01",
-      "reactions": 580,
+      "reactions": 581,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1360568768119570543",
+      "channel_id": "1131839817982947429",
+      "content": "我是個只玩了50小時的新手",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1360612803039465542",
@@ -50,11 +87,35 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
+      "id": "1360457898899279983",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360513552724787330",
+      "channel_id": "1131839817982947429",
+      "content": "MYTHAG500DAYS",
+      "author": "jackpot_7",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1360501065346191553",
       "content": "不是，是我机关算尽一手策划绞尽脑汁强求来的",
       "author": "yingmai_",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1360513251644805291",
+      "channel_id": "1131839817982947429",
+      "content": "500天送500銀芯\n不應該送500抽嗎",
+      "author": "kuritani_yuu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1360612914008035612",
@@ -64,60 +125,100 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
-      "id": "1360552386308997292",
-      "content": "my inventory has 3 standard selector (Prtotype Vision), **3 bottles** of enlight",
-      "author": "malfresr",
+      "id": "1360507873599422637",
+      "channel_id": "1170692781216378960",
+      "content": "hello, new here.",
+      "author": "clone155",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360568620337463357",
+      "channel_id": "1131839817982947429",
+      "content": "我是個只玩了455天的新手",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360570757662375956",
+      "channel_id": "1131839817982947429",
+      "content": "你",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1360441724857745499",
+      "channel_id": "1170692781216378960",
+      "content": "Finally",
+      "author": "basscarrier",
       "reactions": 2,
-      "channel": "✅「Answered」Origin of Time Rewind/Reversion Bug?"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360600729538269255",
-      "content": "UID: 100081371\n手機: Galaxy A35 \n作業軟體: 安卓14\n嘗試方法:\n更換三次網路 不行\n從google play重載遊戲 不行\n由電",
-      "author": "fong_gar",
+      "id": "1360505397571752029",
+      "channel_id": "1170692781216378960",
+      "content": "They're buffing Clem for pve soon fwiw. Sensible buffs but idk how far they take",
+      "author": "per_curiam",
       "reactions": 2,
-      "channel": "✅「已回答」手機遊玩卡在 正在檢查資源更新 沒有進度"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360619498444423415",
-      "content": "視奸泥👁👁️👁️👁️👁️👁️",
-      "author": "navirecorbeau",
+      "id": "1360528710784258091",
+      "channel_id": "1170692781216378960",
+      "content": "https://docs.google.com/spreadsheets/d/1cC7FOebdy_J2hONmVT1QUSk6SxIRTuVoI4XADVlq",
+      "author": "flares117",
       "reactions": 2,
-      "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360462854830161930",
-      "content": "💋 😍",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
+      "id": "1360566226451173426",
+      "channel_id": "1170692781216378960",
+      "content": "I make it my life's blood to protect lovely ppl!!!",
+      "author": "daegudollz",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360546330417823887",
-      "content": "cant wait to see what comes of this",
-      "author": "al_leyway",
-      "reactions": 1,
-      "channel": "aomi’s morimens dump"
+      "id": "1360614040791158824",
+      "channel_id": "1170692781216378960",
+      "content": "screwed again",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360518860083691590",
+      "id": "1360619286334542125",
+      "channel_id": "1170692781216378960",
+      "content": "hello",
+      "author": "xolkathar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360629630192845002",
+      "channel_id": "1170692781216378960",
+      "content": "i love the theme when the ||hordes of clementine show up to chase keeper and wil",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360679648928731217",
+      "channel_id": "1170692781216378960",
+      "content": "almost done",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360694262815129771",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "yiwen_94018_52861",
-      "reactions": 1,
-      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
-    },
-    {
-      "id": "1360565714645291159",
-      "content": "it turns out it can be like that, thank you for the information, it is very help",
-      "author": "clover5758",
-      "reactions": 1,
-      "channel": "Changing the conditions for claiming prizes in Trapashe"
-    },
-    {
-      "id": "1360499978837164114",
-      "content": "守密人，晚上是吹陆风",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

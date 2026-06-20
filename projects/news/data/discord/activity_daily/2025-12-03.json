@@ -1,10 +1,39 @@
 {
   "date": "2025-12-03",
-  "messages": 176,
-  "unique_authors": 29,
-  "reactions_total": 243,
-  "attachments": 41,
+  "messages": 17297,
+  "unique_authors": 288,
+  "reactions_total": 2675,
+  "attachments": 917,
   "channel_activity": {
+    "🔸lets-count": 38,
+    "🔸频道建议┊server-suggestions": 10,
+    "🔸team-building": 358,
+    "🔸general-chat": 330,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 1459,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 45,
+    "🔸机器人命令┊bot-commands": 50,
+    "🔸剧情交流": 143,
+    "🔸晒卡分享": 66,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 2,
+    "🔸交友频道": 9,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 7,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 498,
+    "🔸phòng-chat-tiếng-việt": 131,
+    "🔸canal-español": 479,
+    "🔸canal-português": 70,
+    "🔸ruang-obrolan-indonesia": 381,
+    "🔸ห้องสนทนาภาษาไทย": 353,
+    "🔸traphase": 101,
+    "🔸lore-chat": 467,
+    "🔸綜合討論": 1808,
+    "🔸阵容构建": 16,
+    "🔸morimens-game-chat": 10271,
     "Stolen memes of the day": 2,
     "morimens pixel art": 1,
     "Some doodles": 2,
@@ -54,30 +83,35 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "6": 26,
-    "14": 7,
-    "8": 22,
-    "12": 6,
-    "22": 4,
-    "10": 3,
-    "11": 10,
-    "15": 5,
-    "9": 3,
-    "3": 28,
-    "13": 15,
-    "7": 12,
-    "16": 3,
-    "4": 17,
-    "17": 1,
-    "5": 7,
-    "18": 1,
-    "19": 2,
-    "0": 2,
-    "2": 2
+    "0": 685,
+    "3": 663,
+    "5": 773,
+    "6": 707,
+    "8": 762,
+    "9": 422,
+    "11": 834,
+    "12": 970,
+    "13": 1301,
+    "14": 1093,
+    "15": 1196,
+    "16": 803,
+    "17": 520,
+    "18": 394,
+    "19": 372,
+    "20": 655,
+    "21": 443,
+    "22": 427,
+    "23": 501,
+    "1": 560,
+    "2": 719,
+    "4": 938,
+    "7": 827,
+    "10": 732
   },
   "message_types": {
-    "0": 27,
-    "19": 2
+    "0": 1647,
+    "19": 651,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -116,6 +150,22 @@
       "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
     },
     {
+      "id": "1445582608191979522",
+      "channel_id": "1173463482503536711",
+      "content": "热血沸腾的组合技",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1445638723135078492",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1342353635568254986/1368806355661623386/2",
+      "author": "universe.dark",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1445689269652819998",
       "content": "~~什麽時候能統計自己的過去一年的數據比較想看這個~~",
       "author": "navirecorbeau",
@@ -123,102 +173,100 @@
       "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
     },
     {
-      "id": "1445697467915178114",
-      "content": "~~記得是這個~~\nhttps://www.bilibili.com/video/BV1wQ4tziEVU/?share_source=copy_web&vd_",
-      "author": "water_heart",
-      "reactions": 7,
-      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
-    },
-    {
-      "id": "1445700494512361554",
-      "content": "It's important to maintain good will with your  customers. Bug or not, there are",
-      "author": "soramaru",
-      "reactions": 7,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1445902154022916116",
-      "content": "Make an early Phase in Mission Report dedicated to forcing players to utilize re",
-      "author": "kezrin",
-      "reactions": 7,
-      "channel": "Quasi Realm Tutorial"
-    },
-    {
-      "id": "1445757011378835549",
-      "content": "<:shy:1356053151349997829>",
-      "author": "l0tusg4rd3n",
-      "reactions": 6,
-      "channel": "Some doodles"
-    },
-    {
-      "id": "1445906099063488623",
-      "content": "Made this in like 2 hours with a crappy 0.5mm lead mechanical pencil that kept r",
-      "author": "nothing_of_wisdom",
-      "reactions": 6,
-      "channel": "Tulu Pencil Art"
-    },
-    {
-      "id": "1445696388775149588",
-      "content": "好像是有个佬整活凹深潜低分（",
+      "id": "1445730408250609715",
+      "channel_id": "1131839817982947429",
+      "content": "有个问题  \n这种情况下眼珠子要刷什么  \n不是我的号（",
       "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1445666110354620476",
-      "content": "bruh credit the og creators if ur gonna do this stuff",
-      "author": "zuraznable",
-      "reactions": 5,
-      "channel": "Stolen memes of the day"
+      "id": "1445792267045572781",
+      "channel_id": "1131839817982947429",
+      "content": "过啦！！！！！！！！",
+      "author": "jidu1418",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1445641235288031362",
-      "content": "Using some of the information I gathered I made this sheet to quickly show costs",
-      "author": "jollysquire",
-      "reactions": 5,
-      "channel": ""
+      "id": "1445773544746127471",
+      "channel_id": "1170692781216378960",
+      "content": "I have a very serious question: Do playing Ultra realm make you smarter in real ",
+      "author": "wawafura",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1445793367173628111",
-      "content": "這夢很美好",
-      "author": "akkom730",
-      "reactions": 4,
-      "channel": "为什么我1100＋抽常驻池了，只出过一个限定"
+      "id": "1445584668916191344",
+      "channel_id": "1173463482503536711",
+      "content": "哥哥直搗弟弟的黃龍",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸剧情交流"
     },
     {
-      "id": "1445602234929778809",
-      "content": "即將刷新出三名醫生廚出現☝️ 🤓",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "蓋個圖樓"
+      "id": "1445733196489555989",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1445697429570850846",
-      "content": "Some more doodles <:sign:1356085886793678848> <:cry1:1356053046374961212>",
-      "author": "l0tusg4rd3n",
-      "reactions": 2,
-      "channel": "Some doodles"
+      "id": "1445731532894371941",
+      "channel_id": "1326453763355185215",
+      "content": "ramona: \"huh why am i out of breath and exhausted every time gramona leaves... m",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1445759937966903307",
-      "content": "<:point:1356053112292511815>",
-      "author": "wolfierce",
-      "reactions": 2,
-      "channel": "Please let us trade up with Dreamshard"
+      "id": "1445769848754798682",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "baguettesuffering",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1445732005961797652",
-      "content": "推特轉推了",
-      "author": "undecember_news",
-      "reactions": 2,
-      "channel": "蓋個圖樓"
+      "id": "1445687314486657075",
+      "channel_id": "1131839817982947429",
+      "content": "這群只有我是萌新，其他人都是大佬",
+      "author": "universe.dark",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1445691069185527944",
-      "content": "什么大佬，输光...",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+      "id": "1445773093556457555",
+      "channel_id": "1131839817982947429",
+      "content": "唉，還是道中凹個紅茶\n先喝紅茶，然後用暴食\n最後吃血沼\n這樣應該現在就可以破萬",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1445614039261646990",
+      "channel_id": "1170692781216378960",
+      "content": "I want a more feminine voice for Flares 😄",
+      "author": ".skydream",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445648961728806997",
+      "channel_id": "1170692781216378960",
+      "content": "Why was I pregged emoted",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445765299482656889",
+      "channel_id": "1170692781216378960",
+      "content": "thais dosent care who shes with",
+      "author": "isntthisdbz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,24 @@
 {
   "date": "2025-07-03",
-  "messages": 95,
-  "unique_authors": 28,
-  "reactions_total": 114,
-  "attachments": 2,
+  "messages": 12368,
+  "unique_authors": 302,
+  "reactions_total": 1741,
+  "attachments": 481,
   "channel_activity": {
+    "🔸lets-count": 1,
+    "🔸剧情交流": 3,
+    "🔸한국어-채팅방": 11,
+    "🔸deutscher-chatraum": 2,
+    "🔸русский-канал": 121,
+    "🔸phòng-chat-tiếng-việt": 45,
+    "🔸canal-español": 773,
+    "🔸canal-português": 318,
+    "🔸ruang-obrolan-indonesia": 400,
+    "🔸ห้องสนทนาภาษาไทย": 10,
+    "🔸traphase": 613,
+    "🔸lore-chat": 16,
+    "🔸綜合討論": 416,
+    "🔸morimens-game-chat": 9544,
     "V2.2.3.1 在線維護公告": 1,
     "禁止「解包」和「传播解包信息」行为的声明": 21,
     "✅校猫碎碎念#序章配音决定": 1,
@@ -23,34 +37,73 @@
     "1390375103707218041": 48
   },
   "hourly_activity": {
-    "18": 24,
-    "9": 11,
-    "10": 1,
-    "12": 3,
-    "13": 3,
-    "14": 1,
-    "16": 9,
-    "8": 1,
-    "2": 5,
-    "1": 3,
-    "7": 1,
-    "17": 29,
-    "20": 1,
-    "22": 2,
-    "23": 1
+    "1": 552,
+    "17": 1009,
+    "18": 786,
+    "12": 362,
+    "19": 569,
+    "13": 500,
+    "0": 553,
+    "2": 740,
+    "3": 564,
+    "6": 727,
+    "7": 393,
+    "8": 138,
+    "14": 631,
+    "15": 262,
+    "21": 362,
+    "4": 852,
+    "5": 817,
+    "10": 258,
+    "16": 467,
+    "20": 312,
+    "23": 589,
+    "11": 443,
+    "9": 239,
+    "22": 243
   },
   "message_types": {
-    "0": 15,
-    "19": 7,
-    "4": 6
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1390375800267608175",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1390375103707218041 @everyone S",
+      "author": "game.producer.light",
+      "reactions": 165,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390383734812966922",
+      "channel_id": "1170692781216378960",
+      "content": "We have also newly recorded the voiceover for the final section of the Epilogue ",
+      "author": "game.producer.light",
+      "reactions": 35,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390381187314221056",
+      "channel_id": "1170692781216378960",
+      "content": "We will add voice acting to the Reproduction Carnival content starting with Dore",
+      "author": "game.producer.light",
+      "reactions": 32,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1390380905067184269",
       "content": "我们会在杜勒赛因开始，为繁衍狂欢内容增加配音。过往的则需要等待机会才有可能。",
       "author": "game.producer.light",
       "reactions": 20,
       "channel": ""
+    },
+    {
+      "id": "1390414233442844722",
+      "channel_id": "1170692781216378960",
+      "content": "caecus already entered the promo code on that",
+      "author": "reya.li",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1390365944076832849",
@@ -60,11 +113,35 @@
       "channel": "禁止「解包」和「传播解包信息」行为的声明"
     },
     {
+      "id": "1390373659369275411",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dragonshiny7",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390398159607300188",
+      "channel_id": "1131839817982947429",
+      "content": "我就知道校貓是愛我的",
+      "author": "ernest_heart",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1390398453284339836",
       "content": "I don’t mind the delay at all, but please consider rerunning a banner in the mea",
       "author": "mac2492",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1390415466534535268",
+      "channel_id": "1170692781216378960",
+      "content": "the server actually has a little... too much emojis. i thought this game is surv",
+      "author": "twicez0",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1390384187776700599",
@@ -74,6 +151,46 @@
       "channel": ""
     },
     {
+      "id": "1390301170190258186",
+      "channel_id": "1170692781216378960",
+      "content": "By tamilala (UID:740471787661426719) \nTranslated Caption: \nCrow bro after spendi",
+      "author": "ev_6185",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390378970511573236",
+      "channel_id": "1170692781216378960",
+      "content": "only silver",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390379875357036574",
+      "channel_id": "1170692781216378960",
+      "content": "Too much joy detected, need to shut it down.\nDid you know your opponent was a bo",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390375994350768139",
+      "channel_id": "1170692781216378960",
+      "content": "ok ill say it... we dont care abt that guy💔",
+      "author": "dose1694",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1390389989614813347",
+      "channel_id": "1170692781216378960",
+      "content": "Wait, Tulu is male?",
+      "author": "allyera.emano.hemafuri",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1390270220412915763",
       "content": "follow-up follow-up : can we get a public API pretty please ?\n# <:please:1356053",
       "author": "__goz__",
@@ -81,109 +198,28 @@
       "channel": "禁止「解包」和「传播解包信息」行为的声明"
     },
     {
-      "id": "1390378933110833295",
-      "content": "That would solve a lot of issues, rather than extending content that is, well, r",
-      "author": "silencio3507",
-      "reactions": 7,
-      "channel": ""
+      "id": "1390159777811664980",
+      "channel_id": "1170692781216378960",
+      "content": "I need caecus' fishussy writhin on it and he's trying to tell himself that this ",
+      "author": "yonagoda",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390400720351789240",
-      "content": "I nominate Flares from Morimens discord to voice act for dorsein",
-      "author": "aslechi",
-      "reactions": 7,
-      "channel": ""
+      "id": "1390208789851930675",
+      "channel_id": "1170692781216378960",
+      "content": "I beat chapter 1 boss first time 😀",
+      "author": "northstarpng",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1390381979303940187",
-      "content": "繁衍配音<:processing:1357185814567718963> \n我逐渐原谅一切（",
-      "author": "flarinsidia",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1390456407819554816",
-      "content": "此外，可以理解并认同对内容精益求精、不愿意端上不够令人满意内容的态度，玩家也很愿意为这样的高质量内容等待。\n但是否后续可以做到质量和时间上更好的平衡？例如先上线",
-      "author": "nowimfaceless",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1390315695987757098",
-      "content": "Sorry, we don’t have one at the moment.",
+      "id": "1390376607511875686",
+      "channel_id": "1170692781216378960",
+      "content": "should be",
       "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "禁止「解包」和「传播解包信息」行为的声明"
-    },
-    {
-      "id": "1390400401274048604",
-      "content": "為什麼圖魯會被彌利亞姆給追捧？\n血肉的胚胎竟然是羊媽的後代？\n超維兩新角竟然為校貓做過⋯⋯\n\n\n\n\n免責聲明\n純個人主觀觀點\n沒有任何引戰\n沒有惡意攻擊角色\n若",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "忘卻野史"
-    },
-    {
-      "id": "1390378772309606450",
-      "content": "没必要那么咄咄逼人吧",
-      "author": "slymate_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1390382232643965018",
-      "content": "沒有18+我不能原諒",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1390385237950857226",
-      "content": "What do you mean? <:question1:1356085150869622965>",
-      "author": "beenax.",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1390158144650350674",
-      "content": "Thank you keeper! We will look into this issue!",
-      "author": "morimens_15",
-      "reactions": 1,
-      "channel": "💭「Processing」Follow button says 'Following' before user is followed"
-    },
-    {
-      "id": "1390147677970497618",
-      "content": "正常了",
-      "author": "aaaa_00098",
-      "reactions": 1,
-      "channel": "✅「已回答」?"
-    },
-    {
-      "id": "1390379450054737931",
-      "content": "I'm also a new player. I would like to get some of the older characters without ",
-      "author": "silencio3507",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1390392506620842134",
-      "content": "要请子安武人",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1390396800351076504",
-      "content": "who put the sound on anyways ???",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1390397754835996733",
-      "content": "??? EVERYONE???",
-      "author": "maximus__111",
-      "reactions": 1,
-      "channel": ""
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

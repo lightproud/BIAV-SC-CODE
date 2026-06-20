@@ -1,10 +1,35 @@
 {
   "date": "2025-11-14",
-  "messages": 85,
-  "unique_authors": 15,
-  "reactions_total": 1038,
-  "attachments": 31,
+  "messages": 19154,
+  "unique_authors": 213,
+  "reactions_total": 4431,
+  "attachments": 759,
   "channel_activity": {
+    "🔸general-chat": 8149,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 1639,
+    "🔸机器人命令┊bot-commands": 130,
+    "🔸晒卡分享": 5,
+    "🔸课间休息闲聊": 3,
+    "🔸交友频道": 6,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 79,
+    "🔸русский-канал": 547,
+    "🔸phòng-chat-tiếng-việt": 23,
+    "🔸canal-español": 92,
+    "🔸canal-português": 182,
+    "🔸ruang-obrolan-indonesia": 101,
+    "🔸ห้องสนทนาภาษาไทย": 186,
+    "🔸traphase": 163,
+    "🔸lore-chat": 19,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 92,
+    "🔸频道建议┊server-suggestions": 91,
+    "🔸team-building": 575,
+    "🔸綜合討論": 857,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 6087,
     "What do i wanna play": 1,
     "Gmurphy Art": 1,
     "Liz painting": 1,
@@ -27,39 +52,56 @@
     "✅「已回答」24日服的新皮肤，这边上吗？": 3,
     "給異格也P了一版仿官海報（）": 1,
     "希萊斯特同人文-海之聖女（下）": 1,
-    "堆一下忘却相关的图": 1,
-    "🔸礼包码┊gift-codes": 1
+    "堆一下忘却相关的图": 1
   },
   "hourly_activity": {
-    "3": 28,
-    "5": 4,
-    "19": 1,
-    "18": 2,
-    "0": 1,
-    "12": 2,
-    "13": 1,
-    "15": 3,
-    "16": 3,
-    "7": 6,
-    "8": 10,
-    "2": 3,
-    "9": 3,
-    "6": 14,
-    "11": 2,
-    "20": 1,
-    "4": 1
+    "0": 911,
+    "1": 385,
+    "2": 378,
+    "3": 541,
+    "4": 925,
+    "5": 1072,
+    "6": 1653,
+    "7": 860,
+    "8": 599,
+    "9": 683,
+    "10": 1000,
+    "11": 505,
+    "12": 690,
+    "13": 659,
+    "14": 927,
+    "15": 786,
+    "16": 684,
+    "17": 1155,
+    "18": 1144,
+    "19": 915,
+    "20": 1039,
+    "21": 766,
+    "22": 676,
+    "23": 201
   },
   "message_types": {
-    "0": 29,
-    "19": 11
+    "0": 6599,
+    "19": 3311,
+    "23": 4,
+    "20": 21
   },
   "top_reacted_messages": [
     {
       "id": "1438783520590790747",
+      "channel_id": "1355094251775459399",
       "content": "🎁**DC 30000守密人达成礼 / DC30000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可在游戏邮箱",
       "author": "morimensstaff01",
-      "reactions": 953,
+      "reactions": 964,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1439018352751149139",
+      "channel_id": "1385040039448412170",
+      "content": "For example:",
+      "author": "Deleted User",
+      "reactions": 33,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1438954086916427957",
@@ -69,11 +111,27 @@
       "channel": "Rat be upon ye"
     },
     {
+      "id": "1438960111736455218",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1438763401181397062",
       "content": "",
       "author": "flares117",
       "reactions": 16,
       "channel": "Gmurphy Art"
+    },
+    {
+      "id": "1438797958836523048",
+      "channel_id": "1170692781216378960",
+      "content": "Took 30 pulls for last copy. Hit soft pity, see my luck is average",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1438734530700640447",
@@ -83,95 +141,108 @@
       "channel": "堆一下忘却相关的图"
     },
     {
-      "id": "1438975601267445810",
-      "content": "",
-      "author": "happyskull",
-      "reactions": 8,
-      "channel": "Liz painting"
+      "id": "1438804122198605864",
+      "channel_id": "1170692781216378960",
+      "content": "they call me 007\n0 silver prime\n0 silver\n7 Cassiah",
+      "author": "arisuu0604",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438800071977078814",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：逆转回合EP·万象旅店的回响 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
-      "author": "morimensstaff01",
-      "reactions": 8,
-      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
+      "id": "1438879306750103714",
+      "channel_id": "1170692781216378960",
+      "content": "Glasses are really versatile. First, you can have glasses-wearing girls take the",
+      "author": "hitsu4",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438737473558806698",
-      "content": "",
-      "author": "weeaboogod",
-      "reactions": 6,
-      "channel": "What do i wanna play"
-    },
-    {
-      "id": "1438993825828831462",
-      "content": "",
-      "author": "flim_of_life_burst",
-      "reactions": 3,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1438923287320068127",
-      "content": "神他媽暗影詩章，增幅完然後開門是吧",
-      "author": "lin022.",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1438927284118749185",
-      "content": "",
+      "id": "1438725886533701793",
+      "channel_id": "1181152750319456266",
+      "content": "記錄一下\n這牢也是坐了一年了",
       "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+      "reactions": 12,
+      "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1438954682251870389",
-      "content": "At the start i didn't realize that she don't upgrade the Tentacle stances but co",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+      "id": "1438801799346782330",
+      "channel_id": "1170692781216378960",
+      "content": "6 copies of murphyfrom standard Aequor and 2 from kaleido <:pray:135605311626045",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438801266569515131",
-      "content": "<:shocked:1400771713498746901> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
+      "id": "1438982715020939444",
+      "channel_id": "1170692781216378960",
+      "content": "Please laugh",
+      "author": ".craystal",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438807686190989352",
-      "content": "这个不能作为借口啊，这事关游戏体验很重要的。你要产能真的那么不足干脆新剧情新角色都不做了，你觉得这样合适吗？走格子是游戏很关键的特色我觉得不太能省这里。",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "✅「已回答」还能见到星辰篇的地图吗"
+      "id": "1438901382714232945",
+      "channel_id": "1300659580446969918",
+      "content": "Но я не буду наряжаться в петуха сорян)",
+      "author": "twilightsparkle163163",
+      "reactions": 9,
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1438776388281831506",
-      "content": "アドバイスに感謝して、私はこの問題をフィードバックします🙏 \n（上記の返信はAIによって翻訳されますのでご了承ください）",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」cancer battlepass"
+      "id": "1438867613215100998",
+      "channel_id": "1300659802455674972",
+      "content": "ขออนุญาต ฝากงานครับ😭😭😭\nhttps://x.com/peemaster3000/status/1989308024725406153?t=",
+      "author": "90angels",
+      "reactions": 9,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1438732097173852180",
-      "content": "如題，戰鬥跟大廳的音樂莫名消失了，用了兩個裝置都一樣，有看過音量調整介面都開到最大聲，我的裝置都是安卓系統，不知道有沒有人跟我一樣有被靜音的問題（上上週還是正常",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "💭「处理中」背景音訊出問題"
+      "id": "1438791770996478057",
+      "channel_id": "1355630588094320661",
+      "content": "1678",
+      "author": "syruponstrawberrycake",
+      "reactions": 9,
+      "channel": "🔸lets-count"
     },
     {
-      "id": "1438810378233708617",
-      "content": "辛苦力🫂",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」背景音訊出問題"
+      "id": "1438796837677961216",
+      "channel_id": "1170692781216378960",
+      "content": "20 pulls 3 pollux wheel <:gogogo:1356053074560422118>",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1438751064722505892",
-      "content": "突然想起來這篇 我還是覺得你寫的很好",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "希萊斯特同人文-海之聖女（下）"
+      "id": "1438766048433274932",
+      "channel_id": "1433513650299076780",
+      "content": "not very morimens question",
+      "author": "mistakendoge",
+      "reactions": 8,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1439024344171806881",
+      "channel_id": "1355630588094320661",
+      "content": "1\n7\n# SIX.\n# SEVEN.",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1438968535656173729",
+      "channel_id": "1385040039448412170",
+      "content": "Profanity filters do not stop arguments, they just add to overall annoyance from",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1439018292969734255",
+      "channel_id": "1385040039448412170",
+      "content": "Morimens itself isn't family friendly, so i don't understand the reasoning behin",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
     }
   ]
 }

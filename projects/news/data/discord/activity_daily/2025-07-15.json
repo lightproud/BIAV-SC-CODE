@@ -1,10 +1,25 @@
 {
   "date": "2025-07-15",
-  "messages": 68,
-  "unique_authors": 26,
-  "reactions_total": 172,
-  "attachments": 10,
+  "messages": 13130,
+  "unique_authors": 209,
+  "reactions_total": 1575,
+  "attachments": 379,
   "channel_activity": {
+    "🔸lets-count": 3,
+    "🔸morimens-game-chat": 11005,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 1,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 3,
+    "🔸phòng-chat-tiếng-việt": 14,
+    "🔸canal-español": 440,
+    "🔸canal-português": 177,
+    "🔸ruang-obrolan-indonesia": 230,
+    "🔸ห้องสนทนาภาษาไทย": 163,
+    "🔸traphase": 207,
+    "🔸lore-chat": 198,
+    "🔸綜合討論": 604,
     "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain": 30,
     "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure": 10,
     "幫我姊求個配隊": 1,
@@ -20,28 +35,33 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "6": 6,
-    "7": 11,
-    "8": 1,
-    "9": 5,
-    "10": 12,
-    "15": 4,
-    "16": 1,
-    "18": 2,
-    "19": 4,
-    "12": 3,
-    "1": 1,
-    "14": 1,
-    "23": 3,
-    "2": 7,
-    "13": 1,
-    "4": 3,
-    "3": 2,
-    "5": 1
+    "1": 191,
+    "13": 569,
+    "0": 241,
+    "2": 329,
+    "3": 345,
+    "4": 566,
+    "5": 676,
+    "6": 731,
+    "7": 585,
+    "8": 881,
+    "9": 811,
+    "10": 910,
+    "11": 509,
+    "12": 259,
+    "14": 407,
+    "15": 314,
+    "16": 567,
+    "17": 733,
+    "18": 584,
+    "19": 863,
+    "20": 540,
+    "21": 597,
+    "22": 604,
+    "23": 318
   },
   "message_types": {
-    "0": 39,
-    "19": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -73,11 +93,67 @@
       "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
     },
     {
+      "id": "1394774173913579590",
+      "channel_id": "1170692781216378960",
+      "content": "tulu what does this mean. tulu",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394576741661409382",
+      "channel_id": "1170692781216378960",
+      "content": "omg offical morimens twitter account reply to me ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+      "author": "endri7234",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1394575098593280011",
       "content": "“■■，是我们学会的第一件事。请■我■■吧，我亲爱的客人。\n不必害怕，感受我的■■，■■你的■■与■■。”\n\n“啊……我的■■，我的爱侣……”",
       "author": "ernest_heart",
       "reactions": 9,
       "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1394522770360238091",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "toastymellos",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394578134027997194",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394628533648752721",
+      "channel_id": "1170692781216378960",
+      "content": "I wanna taste castor nuggets...",
+      "author": "kevsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394681924198600856",
+      "channel_id": "1170692781216378960",
+      "content": "A quick sketch of Corpo since she is the coolest character in Morimens",
+      "author": "cooked_chicken99",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1394572815486685215",
+      "channel_id": "1326453763355185215",
+      "content": "\"Tis the feast's siren call to the connoisseur/Tis the king's dark summons unto ",
+      "author": "itsmemiki",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1394582533366091857",
@@ -87,67 +163,60 @@
       "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
     },
     {
-      "id": "1394768483832827914",
-      "content": "next on the biav kink list: hard vore lmfao",
-      "author": "yonagoda",
+      "id": "1394575869409759232",
+      "channel_id": "1170692781216378960",
+      "content": "You can say he gave himself bottom surgery",
+      "author": "deification.",
       "reactions": 6,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394621603404451962",
-      "content": "Im ready for the full course meal chef 🍽️",
-      "author": "meatyexplosions",
+      "id": "1394593464670224415",
+      "channel_id": "1170692781216378960",
+      "content": "> *\"Do you, too, crave the taste of my flesh, dear Keeper?\"*\n\nSAY LESS <:pray:13",
+      "author": "jormiejormungandr",
       "reactions": 6,
-      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394607716919410708",
-      "content": "And all in a bloody paragraph I was made a thousand time more willing to open my",
-      "author": "red_rest",
-      "reactions": 5,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "id": "1394594979862675586",
+      "channel_id": "1170692781216378960",
+      "content": "when thais bounces her tits creating a shockwave breaking the sound barrier and ",
+      "author": "sooneruzuki",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394828315683983441",
-      "content": "This usually isnt't a problem for anyone invested enough to realize having +12 m",
-      "author": "lumato",
-      "reactions": 5,
-      "channel": "Suggestion: rework automatic locking of wheels before maxed"
+      "id": "1394597129539944630",
+      "channel_id": "1170692781216378960",
+      "content": "A good date is sleeping together with all your clothes on for 17 hours",
+      "author": "vinsette",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394576388484501524",
-      "content": "",
-      "author": "iTranslator",
-      "reactions": 4,
-      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+      "id": "1394599038346727426",
+      "channel_id": "1170692781216378960",
+      "content": "Reproduction frenzy should unlock ass loading screens for everyone",
+      "author": "kevsalvador",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394587010525696152",
-      "content": "Eating their own body as the finest delicacy? that's Banica Conchita coded and I",
-      "author": "zekiei",
-      "reactions": 4,
-      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+      "id": "1394599146123694100",
+      "channel_id": "1170692781216378960",
+      "content": "Asshole please extra pubes",
+      "author": "whirli_bri",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1394763354991628401",
-      "content": "偶然發現的BUG<:flop2:1356053072924774421>\n使用鑰令的獵食後就無法再獲得體質卡的選項\n而且並非是當回合而是後續回合也都無法獲得選項",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
-    },
-    {
-      "id": "1394823047294357566",
-      "content": "使用極夜薇光後沒有選擇三大刻印的指令卡加入手牌的階段",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "✅「已回答」吃飽了拿不了體質卡了"
-    },
-    {
-      "id": "1394500530205626469",
-      "content": "It's about time the game and the manga had a crossover!\n\n之前沒注意，後面不小心看到覺得還真有幾分神似\n",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": "在忘卻前夜裡找到了〈鏈鋸人〉真紀真 I found Makima from 《Chainsaw Man》 on Morimens!"
+      "id": "1394696085364277248",
+      "channel_id": "1131839817982947429",
+      "content": "剩我是真的打不過了",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,30 @@
 {
   "date": "2025-09-08",
-  "messages": 193,
-  "unique_authors": 34,
-  "reactions_total": 245,
-  "attachments": 68,
+  "messages": 18942,
+  "unique_authors": 374,
+  "reactions_total": 4012,
+  "attachments": 863,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 826,
+    "🔸canal-português": 505,
+    "🔸ruang-obrolan-indonesia": 736,
+    "🔸ห้องสนทนาภาษาไทย": 282,
+    "🔸traphase": 181,
+    "🔸lore-chat": 108,
+    "🔸lets-count": 8,
+    "🔸team-building": 3,
+    "🔸general-chat": 25,
+    "🔸邀请码互助┊swap-invitation-codes": 36,
+    "🔸morimens-game-chat": 12898,
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 9,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 30,
+    "🔸deutscher-chatraum": 23,
+    "🔸русский-канал": 1023,
+    "🔸綜合討論": 2025,
     "pickman": 1,
     "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 24,
     "📸壁纸分享: 皮克曼┊Wallpaper Sharing: Pickman": 3,
@@ -50,33 +70,44 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "2": 7,
-    "5": 12,
-    "8": 10,
-    "9": 11,
-    "10": 4,
-    "12": 9,
-    "14": 6,
-    "15": 16,
-    "6": 31,
-    "13": 4,
-    "3": 15,
-    "4": 25,
-    "16": 12,
-    "17": 2,
-    "11": 9,
-    "7": 11,
-    "18": 3,
-    "20": 4,
-    "23": 1,
-    "22": 1
+    "0": 905,
+    "2": 832,
+    "4": 1092,
+    "5": 986,
+    "6": 989,
+    "11": 852,
+    "14": 942,
+    "1": 994,
+    "3": 990,
+    "7": 1104,
+    "12": 727,
+    "15": 877,
+    "16": 621,
+    "17": 737,
+    "18": 455,
+    "19": 611,
+    "20": 522,
+    "21": 643,
+    "22": 443,
+    "23": 317,
+    "9": 985,
+    "10": 883,
+    "13": 700,
+    "8": 735
   },
   "message_types": {
-    "0": 44,
-    "19": 6,
-    "4": 3
+    "19": 698,
+    "0": 2032
   },
   "top_reacted_messages": [
+    {
+      "id": "1414464978437541948",
+      "channel_id": "1170692781216378960",
+      "content": "I can say with confidence that B.I.A.V. Studio has a long task list and is also ",
+      "author": "game.producer.light",
+      "reactions": 412,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1414440005836734558",
       "content": "goodluck with pulls (uid - 100859200)",
@@ -92,11 +123,75 @@
       "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
     },
     {
+      "id": "1414592410750681199",
+      "channel_id": "1170692781216378960",
+      "content": "wtf im not a whale",
+      "author": "malfunction5497",
+      "reactions": 38,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414447381054750770",
+      "channel_id": "1170692781216378960",
+      "content": "hi guys!\n\nsorry, i was hospitalized for 3 days last week, and you may notice som",
+      "author": "morimens_15",
+      "reactions": 36,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414465112747802675",
+      "channel_id": "1170692781216378960",
+      "content": "please add exploration back in arc 2 astral reign <:takenotes:135718664629413889",
+      "author": "anphans371",
+      "reactions": 24,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414465356797313148",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "ghislanditerrorstone",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414585155770908733",
+      "channel_id": "1170692781216378960",
+      "content": "I not a boy, stop using that emoji on me",
+      "author": "spooky_penguin_",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1414528271323762851",
       "content": "✦为大家奉上皮克曼的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦Here are pho",
       "author": "morimensstaff01",
       "reactions": 19,
       "channel": "📸壁纸分享: 皮克曼┊Wallpaper Sharing: Pickman"
+    },
+    {
+      "id": "1414673902386417694",
+      "channel_id": "1170692781216378960",
+      "content": "chicken butt!",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414672133635969064",
+      "channel_id": "1170692781216378960",
+      "content": "do not sleep on this game, i've played so many gacha games but this one is by fa",
+      "author": "moyashi0672",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1414506610793119824",
+      "channel_id": "1170692781216378960",
+      "content": "do 👌😧 not sleep 😴🛌 on 🔛🎶 this 💦 game, i've 🤤 played 🕹 so 💯 many gacha games 👏 bu",
+      "author": "iibenigml1588",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1414528421383508030",
@@ -120,102 +215,44 @@
       "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
     },
     {
-      "id": "1414534772880965733",
-      "content": "不过话说感觉他技能花里胡哨的但是没什么用，很符合他艺术生的人设（bushi）",
-      "author": "nekoiiii.",
-      "reactions": 8,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
+      "id": "1414584821786607698",
+      "channel_id": "1170692781216378960",
+      "content": "Hi newbies!! 👋 \nDo any of you have a unused code!🥺 🥺 🥺",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1414541854070018119",
-      "content": "加強杜勒賽因",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
+      "id": "1414591516768210995",
+      "channel_id": "1170692781216378960",
+      "content": "Whens the anniv?",
+      "author": "groupslug",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1414568618766762024",
-      "content": "我覺得這有違血肉界域的特色",
-      "author": "ahuahuahua",
-      "reactions": 7,
-      "channel": "為什麼血肉角色越穿越多"
-    },
-    {
-      "id": "1414485470334812180",
-      "content": "Doesn't seem to be broken even if the cost reduction remains",
-      "author": "rain_scarlet",
-      "reactions": 6,
-      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1414653571147894834",
+      "id": "1414464914164154399",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1414653607437140143",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+      "id": "1414465345523290224",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>❓❓",
+      "author": "sirtealot",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1414444646607618049",
-      "content": "还有一张约得最满意的双人图",
-      "author": "s64987866",
-      "reactions": 5,
-      "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
-    },
-    {
-      "id": "1414474944053776435",
-      "content": "This is just an example, I’m not sure if there're more, but I feel like untransl",
-      "author": "darkerkuro",
-      "reactions": 4,
-      "channel": "💭「Processing」Some cards or UI aren’t translated in TH ver."
-    },
-    {
-      "id": "1414653516559155384",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 3,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1414555908234809386",
-      "content": "求改善皮克曼2算力卡【绘影摹形】的说明，只留【下回合开始】\n刚开始读说明时挺困惑的<:processing:1357185814567718963>",
-      "author": "vaerre",
-      "reactions": 3,
-      "channel": "✅「已回答」皮克曼【绘影摹形】说明"
-    },
-    {
-      "id": "1414444179064492093",
-      "content": "早期约的单人图",
-      "author": "s64987866",
-      "reactions": 3,
-      "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
-    },
-    {
-      "id": "1414590170551812147",
-      "content": "我畫完了:D 一樣給守咪蓋被子 🛌\n原本想全部上色的但有點懶 塗了頭髮眼睛然後細化了一點點\n羽毛有夠難畫下次不畫了嗚嗚\n\n等一下來私或是先來戳我也可以",
-      "author": "muggypeasant",
-      "reactions": 3,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1414635742612815932",
-      "content": "无辜，惊人魔术真的很惊人（算力丢进去,啥都没有<:Bleed:1400771547710361640> ，算力消失术）",
-      "author": "cs001092",
-      "reactions": 2,
-      "channel": "💭「处理中」相位bug"
-    },
-    {
-      "id": "1414499812782641152",
-      "content": "Hi, this issue has been fixed🌹",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Covenant graphic bug in team builder"
+      "id": "1414446721588527176",
+      "channel_id": "1170692781216378960",
+      "content": "He paints u like one of his french boys",
+      "author": "kevsalvador",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

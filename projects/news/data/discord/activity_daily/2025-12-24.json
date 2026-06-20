@@ -1,10 +1,37 @@
 {
   "date": "2025-12-24",
-  "messages": 297,
-  "unique_authors": 28,
-  "reactions_total": 438,
-  "attachments": 27,
+  "messages": 16611,
+  "unique_authors": 292,
+  "reactions_total": 2430,
+  "attachments": 931,
   "channel_activity": {
+    "🔸lore-chat": 624,
+    "🔸lets-count": 21,
+    "🔸team-building": 292,
+    "🔸general-chat": 435,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🐱light’s-nest": 6,
+    "🔸game-question": 623,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 35,
+    "🔸morimens-game-chat": 8406,
+    "🔸剧情交流": 110,
+    "🔸晒卡分享": 15,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1057,
+    "🔸phòng-chat-tiếng-việt": 1554,
+    "🔸canal-español": 453,
+    "🔸canal-português": 234,
+    "🔸ruang-obrolan-indonesia": 873,
+    "🔸ห้องสนทนาภาษาไทย": 214,
+    "🔸traphase": 16,
+    "🔸綜合討論": 1321,
+    "🔸阵容构建": 2,
     "Morimens inspired": 8,
     "Uvash and Leigh": 33,
     "Senior William doodles": 2,
@@ -49,45 +76,49 @@
     "💭「处理中」莱克的繁衍狂热字打错了": 1,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 3,
     "银霜节日历（圣诞节贺文）": 1,
-    "🐱light’s-nest": 3,
     "1451125609068757074": 2,
     "1442647324575928441": 2,
     "1305430084420898868": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "9": 24,
-    "12": 7,
-    "14": 14,
-    "5": 1,
-    "8": 42,
-    "10": 22,
-    "1": 3,
-    "15": 60,
-    "16": 15,
-    "22": 2,
-    "23": 2,
-    "11": 5,
-    "0": 2,
-    "4": 8,
-    "13": 19,
-    "17": 22,
-    "6": 5,
-    "7": 36,
-    "2": 1,
-    "19": 4,
-    "3": 3
+    "8": 1047,
+    "9": 720,
+    "10": 603,
+    "11": 1049,
+    "12": 1368,
+    "13": 1238,
+    "14": 1084,
+    "15": 1715,
+    "16": 919,
+    "1": 508,
+    "2": 688,
+    "4": 269,
+    "7": 701,
+    "19": 560,
+    "20": 535,
+    "0": 170,
+    "3": 414,
+    "5": 385,
+    "17": 837,
+    "18": 569,
+    "6": 422,
+    "23": 239,
+    "22": 167,
+    "21": 404
   },
   "message_types": {
-    "0": 125,
-    "19": 44
+    "19": 361,
+    "0": 1378,
+    "20": 8
   },
   "top_reacted_messages": [
     {
       "id": "1453417577639444510",
+      "channel_id": "1426837316533747823",
       "content": "Things have been pretty hectic for us lately, and everyone’s been running around",
       "author": "game.producer.light",
-      "reactions": 183,
+      "reactions": 186,
       "channel": "🐱light’s-nest"
     },
     {
@@ -99,9 +130,10 @@
     },
     {
       "id": "1453416161315262718",
+      "channel_id": "1426837316533747823",
       "content": "",
       "author": "game.producer.light",
-      "reactions": 54,
+      "reactions": 57,
       "channel": "🐱light’s-nest"
     },
     {
@@ -112,11 +144,115 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
+      "id": "1453201863070449837",
+      "channel_id": "1170692781216378960",
+      "content": "Im gonna wawa yyou in a minute here",
+      "author": "brainrot_in_a_vat",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453205910108373156",
+      "channel_id": "1170692781216378960",
+      "content": "I shouldn't have done that",
+      "author": "wawafura",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453367293634412594",
+      "channel_id": "1170692781216378960",
+      "content": "Omg douchette 🙏",
+      "author": "sugarspawn",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1453252540819832987",
       "content": "Reproduction Frenzy ?",
       "author": "shiio4870",
       "reactions": 11,
       "channel": "Uvash and Leigh"
+    },
+    {
+      "id": "1453202149277438002",
+      "channel_id": "1170692781216378960",
+      "content": "his gonna wawa you, after being emptied by lily",
+      "author": "rain_scarlet",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453372032380178443",
+      "channel_id": "1170692781216378960",
+      "content": "if it was glotans kit i would be mad cause its worse than base lotan",
+      "author": "chinkeeyong",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453417862281826354",
+      "channel_id": "1300659662311526512",
+      "content": "Falso",
+      "author": "ancientbp",
+      "reactions": 8,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1453204111754530989",
+      "channel_id": "1131839874132090890",
+      "content": "奇奇怪怪的略低配400",
+      "author": "qoob",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1453369266853380231",
+      "channel_id": "1131839874132090890",
+      "content": "不好意思打扰大家，我是蘿坦，我中了出血、麻痺、遲緩、纏繞、石化、眩晕，中毒，重創，死鬥，延遲破綻，易傷，虛弱，行動封鎖，狂氣封鎖，空虛，強效降低，嘲諷，破綻😭😭",
+      "author": "nahida._90",
+      "reactions": 8,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1453368913915285701",
+      "channel_id": "1170692781216378960",
+      "content": "Your two important points about Mouchette—her design philosophy and understandin",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453373246496968941",
+      "channel_id": "1170692781216378960",
+      "content": "mouchette stats in relation to every other chaos awakener",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453403178224849137",
+      "channel_id": "1170692781216378960",
+      "content": "does ogier dr proc eat dr?",
+      "author": "khykken",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453433380707238083",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1453430808919543879",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1453434408915828767",
+      "channel_id": "1170692781216378960",
+      "content": "and I did another cursed run in your honor",
+      "author": "dracozion",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1453433210099859539",
@@ -126,102 +262,12 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
-      "id": "1453440638874943670",
-      "content": "迟早会有的！",
-      "author": "game.producer.light",
+      "id": "1453205701672435872",
+      "channel_id": "1170692781216378960",
+      "content": "m",
+      "author": "hitsu4",
       "reactions": 6,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453435074321190973",
-      "content": "Thank you for the team this is pretty new in the gacha space and i hope your rev",
-      "author": "pinguimally3689",
-      "reactions": 5,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453352846324928654",
-      "content": "端上来了，来吃",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
-    },
-    {
-      "id": "1453224617110933525",
-      "content": "只是因為用的隊伍不是什麼很容易翻車的東西才沒出大事",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
-    },
-    {
-      "id": "1453416133515284622",
-      "content": "最近这段时间事务比较多，大家都忙得团团转，但也正因为如此，我们对未来的方向有了更多清晰的规划，会为大家尽全力把这些愿景一一点亮。\n转眼之间，看到了 rrkk00",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🐱light’s-nest"
-    },
-    {
-      "id": "1453432988271382771",
-      "content": "聖誕節快樂💖\n可惡，要是這篇晚點出就好了(",
-      "author": "shostakovich524",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1453433101345882185",
-      "content": "因为涉及不同的代理商、多家公司授权，情况会比较复杂，但我们会非常希望也会尽力让全地区内容保持统一。",
-      "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453434233895784560",
-      "content": "That is a nice approach, thank you for the clarifications",
-      "author": "vxvendetta97",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453435563695804697",
-      "content": "也就是你们把人家看板娘永久拐过来了",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453466223869165691",
-      "content": "關於蘿坦桀驁之刃覺醒與未覺醒之間的bug，我比較習慣起手覺醒所以沒怎麼注意到，但據說這個bug已經存在很長時間\n\n長痛不如短痛，蘿坦目前強度屬於偏低的那一批角色",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug"
-    },
-    {
-      "id": "1453402029702779024",
-      "content": "How do you deal damage in this game.\n\nYou're an another specimen who I need repl",
-      "author": "thpdom",
-      "reactions": 2,
-      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1453329788050866196",
-      "content": "Kk, tnx, mostly to be fair to the community and limit animosity",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1453297215023087689",
-      "content": "这个正常是要收录的，不收录是bug",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」什麼樣的造物會被收藏？"
-    },
-    {
-      "id": "1453299660197330975",
-      "content": "已经安排添加了，感谢守密人的反馈，会尽快更新<:proud:1400771683664658433>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」什麼樣的造物會被收藏？"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

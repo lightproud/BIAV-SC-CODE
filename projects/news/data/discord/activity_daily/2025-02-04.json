@@ -1,10 +1,23 @@
 {
   "date": "2025-02-04",
-  "messages": 93,
-  "unique_authors": 19,
-  "reactions_total": 73,
-  "attachments": 11,
+  "messages": 3312,
+  "unique_authors": 128,
+  "reactions_total": 295,
+  "attachments": 230,
   "channel_activity": {
+    "🔸綜合討論": 239,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 2524,
+    "🔸剧情交流": 8,
+    "🔸相位对弈": 5,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 27,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 126,
+    "🔸phòng-chat-tiếng-việt": 3,
+    "🔸canal-español": 81,
+    "🔸canal-português": 175,
+    "🔸lore-chat": 15,
     "New player. Team an character questions": 3,
     "English Page pls !!": 1,
     "✅「已回答」81>5>81": 7,
@@ -18,23 +31,34 @@
     "1271491376881598494": 5
   },
   "hourly_activity": {
-    "5": 2,
-    "20": 2,
-    "0": 6,
-    "10": 2,
-    "11": 3,
-    "13": 34,
-    "14": 25,
-    "7": 3,
-    "12": 8,
-    "16": 2,
-    "9": 1,
-    "6": 2,
-    "8": 2,
-    "22": 1
+    "0": 38,
+    "1": 75,
+    "2": 142,
+    "4": 156,
+    "5": 507,
+    "6": 160,
+    "7": 135,
+    "8": 40,
+    "9": 73,
+    "10": 116,
+    "11": 75,
+    "12": 50,
+    "13": 68,
+    "14": 176,
+    "15": 104,
+    "17": 87,
+    "18": 164,
+    "20": 256,
+    "23": 137,
+    "3": 99,
+    "16": 362,
+    "19": 113,
+    "21": 121,
+    "22": 58
   },
   "message_types": {
-    "0": 3
+    "0": 2527,
+    "19": 692
   },
   "top_reacted_messages": [
     {
@@ -45,6 +69,22 @@
       "channel": "新春-羊妈 [為喚醒體換新裝]"
     },
     {
+      "id": "1336196924709273692",
+      "channel_id": "1173463482503536711",
+      "content": "意識，送到別的大腦而已",
+      "author": "andy1123",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1336139989922222182",
+      "channel_id": "1131839874132090890",
+      "content": "選擇困難症發作了",
+      "author": "cwz.io",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1336338543424966686",
       "content": "",
       "author": "0.0._.0_0.",
@@ -52,11 +92,91 @@
       "channel": ""
     },
     {
+      "id": "1336283122152771584",
+      "channel_id": "1131839817982947429",
+      "content": "我跟你拼了",
+      "author": "chkevo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336332052735459328",
+      "channel_id": "1131839817982947429",
+      "content": "不是本來就狗",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1336268987058749440",
       "content": "我覺得最離譜的事情是\n不手動換命輪哪怕把腳色全部撤下來再換新的上去還是會幫我塞命輪和密契<:stoppage:1236938521365839872>",
       "author": "pray_unbeliever",
       "reactions": 5,
       "channel": "感觉这个命轮不会脱下来是负优化"
+    },
+    {
+      "id": "1336132540833992704",
+      "channel_id": "1131839817982947429",
+      "content": "這隊伍真的好怪喔",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336216196735041536",
+      "channel_id": "1131839817982947429",
+      "content": "240万的希洛",
+      "author": "xili0434",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336243606079541351",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336316951835836427",
+      "channel_id": "1131839817982947429",
+      "content": "我知道几个我都偷着乐",
+      "author": "galagalaguo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336331917703778345",
+      "channel_id": "1131839817982947429",
+      "content": "阿我的400勒",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336333565260202046",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "nemu_s_t_a_r",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1336375126983311502",
+      "channel_id": "1170692781216378960",
+      "content": "who tf ask? - Miryam nicely said",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1336436662607024182",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil through everything",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1336331226058850315",
@@ -92,76 +212,6 @@
       "author": "ena04564",
       "reactions": 4,
       "channel": ""
-    },
-    {
-      "id": "1336460900315562046",
-      "content": "更新：Rutsah    100408607 15启尤乌哈希+15叠心脏+15叠藏品 95%纯爆伤36室",
-      "author": "rutsah_avhril",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1336324757263613964",
-      "content": "融灾需要5队，主线1队，娱乐3队，强度队要2队，针对boss的队又得要几队",
-      "author": "luoqixikiss",
-      "reactions": 3,
-      "channel": "感觉这个命轮不会脱下来是负优化"
-    },
-    {
-      "id": "1336328504383639666",
-      "content": "其实有好多怪的意图都能顶石化，比如莉莉的转状态，UW的小发雷霆，米粒的五层孕育/觉醒/被石化是看最后上哪个",
-      "author": "qaq00555",
-      "reactions": 3,
-      "channel": "你遊癲婆卡規則Bug"
-    },
-    {
-      "id": "1336281300448841728",
-      "content": "",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "✅「已回答」81>5>81"
-    },
-    {
-      "id": "1336291087832190996",
-      "content": "~~喚醒體全部換下來後，退出組隊介面，再進去，這樣就不會幫你自動選好命輪跟密契了~~（相當無用的技巧。）😅",
-      "author": "yi.ming",
-      "reactions": 2,
-      "channel": "感觉这个命轮不会脱下来是负优化"
-    },
-    {
-      "id": "1336321403456323660",
-      "content": "不会差太多，但是看着我的栗子带心脏巨人，要是不对齐甚至会带哺育极夜，还是太难绷了。",
-      "author": "muliupan",
-      "reactions": 2,
-      "channel": "感觉这个命轮不会脱下来是负优化"
-    },
-    {
-      "id": "1336329818895155270",
-      "content": "答辩代码✗\n游戏特色✓\n<:failed:1239909628477964379>",
-      "author": "qaq00555",
-      "reactions": 2,
-      "channel": "你遊癲婆卡規則Bug"
-    },
-    {
-      "id": "1336241525826523188",
-      "content": "本來就是要在編隊中吧（\n如果命輪像古老版本的時候綁在角色介面\n你會要在打不同模式時每次換個隊伍都要一直去角色介面脫脫穿穿才是真的麻煩\n現在命輪綁在編隊中才是比較",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "感觉这个命轮不会脱下来是负优化"
-    },
-    {
-      "id": "1336330375542210571",
-      "content": "但他身上有寫效果🤔",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "你遊癲婆卡規則Bug"
-    },
-    {
-      "id": "1336341258440015882",
-      "content": "這個是該額外說明",
-      "author": "pray_unbeliever",
-      "reactions": 1,
-      "channel": "你遊癲婆卡規則Bug"
     }
   ]
 }

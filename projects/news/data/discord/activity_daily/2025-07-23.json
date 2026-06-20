@@ -1,10 +1,28 @@
 {
   "date": "2025-07-23",
-  "messages": 118,
-  "unique_authors": 25,
-  "reactions_total": 474,
-  "attachments": 43,
+  "messages": 14943,
+  "unique_authors": 375,
+  "reactions_total": 2951,
+  "attachments": 837,
   "channel_activity": {
+    "🔸lore-chat": 386,
+    "🔸lets-count": 15,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸morimens-game-chat": 11071,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 6,
+    "🔸한국어-채팅방": 3,
+    "🔸chaîne-française": 12,
+    "🔸русский-канал": 81,
+    "🔸phòng-chat-tiếng-việt": 153,
+    "🔸canal-español": 1074,
+    "🔸canal-português": 257,
+    "🔸ruang-obrolan-indonesia": 712,
+    "🔸ห้องสนทนาภาษาไทย": 577,
+    "🔸traphase": 169,
+    "🔸綜合討論": 297,
+    "🔸阵容构建": 8,
     "Thais Warm up": 1,
     "Silly Ryamonya art": 1,
     "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 2,
@@ -37,29 +55,34 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "13": 1,
-    "8": 25,
-    "17": 9,
-    "19": 4,
-    "4": 8,
-    "5": 13,
-    "11": 2,
-    "14": 4,
-    "16": 1,
-    "7": 12,
-    "9": 5,
-    "18": 6,
-    "23": 2,
-    "3": 8,
-    "6": 8,
-    "15": 2,
-    "10": 1,
-    "0": 3,
-    "2": 4
+    "15": 1300,
+    "16": 718,
+    "17": 550,
+    "18": 758,
+    "23": 471,
+    "3": 471,
+    "4": 1003,
+    "7": 621,
+    "13": 637,
+    "14": 875,
+    "21": 562,
+    "22": 612,
+    "0": 317,
+    "1": 300,
+    "2": 505,
+    "5": 661,
+    "6": 668,
+    "8": 306,
+    "9": 493,
+    "10": 718,
+    "11": 542,
+    "12": 538,
+    "19": 821,
+    "20": 496
   },
   "message_types": {
-    "0": 10,
-    "19": 3
+    "0": 121,
+    "19": 27
   },
   "top_reacted_messages": [
     {
@@ -70,11 +93,51 @@
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
+      "id": "1397635922798972998",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1397635407516008541\n@everyone <",
+      "author": "game.producer.light",
+      "reactions": 161,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397503351905583154",
       "content": "",
       "author": "maya014632",
       "reactions": 23,
       "channel": "Silly Ryamonya art"
+    },
+    {
+      "id": "1397636576778915850",
+      "channel_id": "1170692781216378960",
+      "content": "if they fix the translation, new players wouldn't get turned off when they start",
+      "author": "rambles_3057",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397641137988178021",
+      "channel_id": "1170692781216378960",
+      "content": "she's so cute ♡⁺‧",
+      "author": "aquatinct",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397637001066450946",
+      "channel_id": "1170692781216378960",
+      "content": "Of course, we are very grateful for and truly welcome volunteers! We’re currentl",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397695745699872808",
+      "channel_id": "1170692781216378960",
+      "content": "maybe i should just make a spreadsheet filled with misinformation i don't even m",
+      "author": "reya.li",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1397433385500151888",
@@ -91,11 +154,43 @@
       "channel": "发一下做的海报和小说封面————"
     },
     {
+      "id": "1397636735185326200",
+      "channel_id": "1170692781216378960",
+      "content": "Pretty sure they mean that old story translations will be prioritized over new s",
+      "author": "mac2492",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397712360894107782",
+      "channel_id": "1170692781216378960",
+      "content": "anyways this is why i love rat <3",
+      "author": "fishhazardthewizard",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1397640109440106546",
       "content": "Most new content will be released with gpt translation, while human translation ",
       "author": "game.producer.light",
       "reactions": 12,
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397611359461572730",
+      "channel_id": "1170692781216378960",
+      "content": "Flares is also a gay twink I can confirm. That's why he simps Caecus",
+      "author": "vinsette",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1397635972048617547",
+      "channel_id": "1170692781216378960",
+      "content": "Light it's 2am",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1397729003363897507",
@@ -105,102 +200,44 @@
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
-      "id": "1397448679853523045",
-      "content": "~~必須吐槽的是有時候明明點了跳過劇情卻還是會在打完首領後跳出劇情~~",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "剧情重复"
+      "id": "1397688061885812907",
+      "channel_id": "1170692781216378960",
+      "content": "😔",
+      "author": "runningaway_fs",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1397448547716042793",
-      "content": "這個沒什麼人在乎的角落默默地被上了強度\n原本的絲滑感消失了莫名其妙會斷觸滑不動\n用電腦版滑鼠滾輪也會失效滑不動<:flop2:13560530729247744",
-      "author": "wild_pansy",
-      "reactions": 6,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
+      "id": "1397587512825741344",
+      "channel_id": "1170692781216378960",
+      "content": "i will literally stab you",
+      "author": "meioh",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1397464397353582592",
-      "content": "自己画爽了，我觉得自己画的很色，然后我也想拿奖。谢谢。 uid：100425926 \n求夸夸。\n（虽然但是应该是这样发布的吧）",
-      "author": "dittoqwq",
-      "reactions": 4,
-      "channel": "画一个杜勒"
+      "id": "1397622299762364476",
+      "channel_id": "1170692781216378960",
+      "content": "My dad tried to drown me, thats why Blue is good",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1397619603890241578",
-      "content": "杜需加強 不夠力",
-      "author": "arthasiv",
-      "reactions": 3,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+      "id": "1397689999608254604",
+      "channel_id": "1170692781216378960",
+      "content": "FIRST PITY. WON THE ODDS. LESSGO",
+      "author": "kyoubaachan",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1397494931173412907",
-      "content": "Thank you, we will make decisions more carefully in the future❤️",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "Server dissatisfaction"
-    },
-    {
-      "id": "1397486604918063134",
-      "content": "感觉5771虽然有很多肉鸽元素，但是却没有真正意义上肉鸽玩法。\n造物，地图事件等并没有给人核心的肉鸽体验，关卡地图也是线性地图，没有随机的感觉，不足以成为核心玩",
-      "author": "nekoiiii.",
-      "reactions": 3,
-      "channel": "能不能出一个真正的想随时赌一把的那种的肉鸽玩法"
-    },
-    {
-      "id": "1397640262846517339",
-      "content": "Good decision, would have hated to hear if content was slowed down due to this.",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
-    },
-    {
-      "id": "1397494833739726859",
-      "content": "UID: 101025255",
-      "author": "xsky1993_83142",
-      "reactions": 2,
-      "channel": "✅「Answered」I bought a pack and it’s gone now"
-    },
-    {
-      "id": "1397519169699713167",
-      "content": "Hi, I have same issue with the same pack, my id is 100568318",
-      "author": "intoxic123",
-      "reactions": 2,
-      "channel": "✅「Answered」I bought a pack and it’s gone now"
-    },
-    {
-      "id": "1397482909425733684",
-      "content": "戈雅已反馈🙏",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
-    },
-    {
-      "id": "1397496488937914378",
-      "content": "哈喽，确实存在问题，已经安排修复啦，下次更新会放出🥰",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
-    },
-    {
-      "id": "1397492187226439712",
-      "content": "Understood, the original intention is to avoid unnecessary conflicts caused by i",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "Server dissatisfaction"
-    },
-    {
-      "id": "1397414873566150726",
-      "content": "<@1131790839291596841> 我壓力大嗎？",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "💭「处理中」???"
-    },
-    {
-      "id": "1397451722728935515",
-      "content": "Awesome my favorite artifact",
-      "author": "aslechi",
-      "reactions": 1,
-      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+      "id": "1397594817239974050",
+      "channel_id": "1170692781216378960",
+      "content": "Will is not gonna mpreg with me",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,32 @@
 {
   "date": "2025-08-19",
-  "messages": 121,
-  "unique_authors": 28,
-  "reactions_total": 281,
-  "attachments": 48,
+  "messages": 17920,
+  "unique_authors": 361,
+  "reactions_total": 2275,
+  "attachments": 781,
   "channel_activity": {
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 18,
+    "🔸한국어-채팅방": 40,
+    "🔸deutscher-chatraum": 6,
+    "🔸chaîne-française": 151,
+    "🔸русский-канал": 82,
+    "🔸phòng-chat-tiếng-việt": 139,
+    "🔸canal-español": 467,
+    "🔸canal-português": 76,
+    "🔸ruang-obrolan-indonesia": 1147,
+    "🔸ห้องสนทนาภาษาไทย": 62,
+    "🔸traphase": 492,
+    "🔸lore-chat": 30,
+    "🔸lets-count": 5,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 94,
+    "🔸general-chat": 860,
+    "🔸邀请码互助┊swap-invitation-codes": 484,
+    "🔸綜合討論": 1417,
+    "🔸阵容构建": 50,
+    "🔸morimens-game-chat": 12176,
     "Doresain (first try)": 2,
     "mii - Gallery": 1,
     "[Submission] \"...Point thy path to the Divine Realm!\"": 9,
@@ -61,31 +83,35 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "10": 6,
-    "11": 4,
-    "21": 9,
-    "14": 11,
-    "15": 4,
-    "16": 5,
-    "7": 5,
-    "3": 7,
-    "9": 3,
-    "2": 10,
-    "4": 7,
-    "18": 2,
-    "22": 3,
-    "6": 5,
-    "12": 6,
-    "13": 6,
-    "19": 2,
-    "20": 1,
-    "8": 23,
-    "17": 1,
-    "5": 1
+    "13": 924,
+    "9": 730,
+    "3": 850,
+    "5": 916,
+    "7": 890,
+    "8": 924,
+    "11": 796,
+    "14": 726,
+    "15": 931,
+    "16": 807,
+    "17": 739,
+    "12": 975,
+    "2": 526,
+    "18": 748,
+    "19": 447,
+    "20": 761,
+    "22": 609,
+    "0": 769,
+    "4": 735,
+    "10": 924,
+    "23": 205,
+    "1": 555,
+    "6": 789,
+    "21": 644
   },
   "message_types": {
-    "0": 44,
-    "19": 9
+    "0": 3171,
+    "6": 1,
+    "19": 984
   },
   "top_reacted_messages": [
     {
@@ -117,11 +143,35 @@
       "channel": "Doresain (first try)"
     },
     {
+      "id": "1407479503139377243",
+      "channel_id": "1170692781216378960",
+      "content": "That’s better",
+      "author": "lethal_roses",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1407324301966704681",
       "content": "Sandwich (keeper flavor)",
       "author": "pebooner",
       "reactions": 20,
       "channel": "Doresain (first try)"
+    },
+    {
+      "id": "1407219106381566004",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lewyntapes",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407454223070662737",
+      "channel_id": "1170692781216378960",
+      "content": "But the title of the rouse is wild",
+      "author": "moyashi0672",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1407403813106614473",
@@ -131,102 +181,92 @@
       "channel": "OUR LORD'S BIRTHDAY"
     },
     {
-      "id": "1407433261533364254",
-      "content": "Hi all,\n\nThe \"Retain\" property is missing on the rouse card of Kathigu-Ra. This ",
-      "author": "coeusul",
+      "id": "1407378222009552916",
+      "channel_id": "1170692781216378960",
+      "content": "Should I be sad I got a dupe",
+      "author": "penprince",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407475861430603928",
+      "channel_id": "1170692781216378960",
+      "content": "not again...",
+      "author": "alfa1a",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407476150275539046",
+      "channel_id": "1170692781216378960",
+      "content": "Average day in the ~~english~~ Mpreg section of the Morimens ~~official~~ ERP se",
+      "author": "frosthief",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407217418555887656",
+      "channel_id": "1170692781216378960",
+      "content": "Do they get mpreg in hell",
+      "author": "kevsalvador",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407476033103593553",
+      "channel_id": "1170692781216378960",
+      "content": "♿",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407455120131751956",
+      "channel_id": "1170692781216378960",
+      "content": "holy shit its the sardines the goliath brand lemuria sardines were based on",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407389447581864090",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/isommmm_/status/1957692129029107928 OOOOOO",
+      "author": "lichkin",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407474162645340161",
+      "channel_id": "1170692781216378960",
+      "content": "<:dead:1356082627509092372>",
+      "author": "supernat1",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407234872912773253",
+      "channel_id": "1170692781216378960",
+      "content": "btw should i use my castor or rat as support?",
+      "author": "fishhazardthewizard",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407474016079315146",
+      "channel_id": "1170692781216378960",
+      "content": "the humble Kathigu Ra:",
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1407479289707892738",
+      "channel_id": "1170692781216378960",
+      "content": "But I have all the other blue already",
+      "author": "lethal_roses",
       "reactions": 8,
-      "channel": "💭「Processing」\"Retain\" property missing on Kathigu-Ra's rouse card."
-    },
-    {
-      "id": "1407266734351843378",
-      "content": "📅 **活动时间：**\n2025/8/18 00:00~2025/9/7 23:59 (UTC+8)\n\n📌**重要信息：**\nUGC创作征集分为两个投稿方向，守",
-      "author": "morimensstaff01",
-      "reactions": 7,
-      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1407373877000142889",
-      "content": "Congrats on the official Japanese release.\n\nHowever, from what I can gather, the",
-      "author": "xyakoto",
-      "reactions": 6,
-      "channel": "✅「Answered」Concerns about dev resources with the Japanese release."
-    },
-    {
-      "id": "1407267050463821894",
-      "content": "✨ English",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
-    },
-    {
-      "id": "1407304150802235493",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 5,
-      "channel": "2.3表情包"
-    },
-    {
-      "id": "1407353715060379769",
-      "content": "守密人你好：\n       弥萨格大学校务处将于8月19日 21:30 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我",
-      "author": "morimensstaff02",
-      "reactions": 4,
-      "channel": "V2.3.1.2 在线维护公告"
-    },
-    {
-      "id": "1407481842852036751",
-      "content": "he is beautiful 😭💚 happy birthday tulu! i'll make sure to lock miryam away so yo",
-      "author": "jormiejormungandr",
-      "reactions": 3,
-      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
-    },
-    {
-      "id": "1407490572117217342",
-      "content": "Hello, I was wondering if I was reading it wrong, but banners say you receive gn",
-      "author": "wolfierce",
-      "reactions": 3,
-      "channel": "✅「Answered」Gnosis fragments drop from awakenings"
-    },
-    {
-      "id": "1407353790180364390",
-      "content": "**V2.3.1.2 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": "V2.3.1.2 在线维护公告"
-    },
-    {
-      "id": "1407360254253072415",
-      "content": "莉莉大人坠机了",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "V2.3.1.2 在线维护公告"
-    },
-    {
-      "id": "1407352797091069962",
-      "content": "First i want to say Congratulations on releasing the game in JP.\n\nNow onto the r",
-      "author": "neolusso",
-      "reactions": 2,
-      "channel": "✅「Answered」Separation of GLB and JP"
-    },
-    {
-      "id": "1407325699924164669",
-      "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第14期（第41期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首领\n",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览41期·星辰篇✦"
-    },
-    {
-      "id": "1407372361396916396",
-      "content": "Bro's 8ft tall (the tentacle counts!!)\n\nAlso uploaded on all of my main art blog",
-      "author": "rohaluss",
-      "reactions": 1,
-      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
-    },
-    {
-      "id": "1407374466593591441",
-      "content": "I forgot to draw his right sock strap",
-      "author": "rohaluss",
-      "reactions": 1,
-      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

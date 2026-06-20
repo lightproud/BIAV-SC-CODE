@@ -3,574 +3,970 @@
     "1131791637933199472": {
       "last_message_id": "1180093020075470929",
       "name": "活動訊息",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1301697213235200000",
+      "last_historical_month": "2024-10",
+      "empty_months": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1131796304050262126": {
       "last_message_id": "1181130841838059581",
       "name": "官方佈告（已停止使用）",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1301697213235200000",
+      "last_historical_month": "2024-10",
+      "empty_months": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1131837874078232597": {
       "last_message_id": "1442250555585069130",
       "name": "🔸新生守则┊rules",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1301697213235200000",
+      "last_historical_month": "2024-10",
+      "empty_months": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1131838787706699807": {
       "last_message_id": "1180498264764723251",
       "name": "禮包兌換碼",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1301697213235200000",
+      "last_historical_month": "2024-10",
+      "empty_months": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1131839817982947429": {
-      "last_message_id": "1516542560313806898",
+      "last_message_id": "1516894332265697481",
       "name": "🔸綜合討論",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1290624844400037940",
+      "last_historical_month": "2024-10"
     },
     "1131839874132090890": {
-      "last_message_id": "1516486576514011377",
+      "last_message_id": "1516866651507654767",
       "name": "🔸阵容构建",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-06"
+      ]
     },
     "1131840077237067837": {
       "last_message_id": "1181146262330953778",
       "name": "遊戲問題及bug回報",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1131840478267064320": {
       "last_message_id": "1180017414138761266",
       "name": "繪圖",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1132942133632974990": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1166623241293545492": {
       "last_message_id": "1181061966446465054",
       "name": "discord社群建議",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1168734000827863070": {
       "last_message_id": "1180848099678224424",
       "name": "校貓問答（已停止使用）",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1456074443980800000",
+      "last_historical_month": "2026-01",
+      "forbidden": true
     },
     "1170692781216378960": {
-      "last_message_id": "1506493102804832316",
+      "last_message_id": "1506673911046078524",
       "name": "🔸morimens-game-chat",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1170913498579095634": {
       "last_message_id": "1181137487360446524",
       "name": "影片",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1173463482503536711": {
-      "last_message_id": "1516509154729005136",
+      "last_message_id": "1516618506584461403",
       "name": "🔸剧情交流",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1174182796424650843": {
       "last_message_id": "1180830553851842602",
       "name": "攻略投遞專區（已停止使用）",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1174983699935277147": {
-      "last_message_id": "1516498636513476648",
+      "last_message_id": "1516744740228300962",
       "name": "🔸晒卡分享",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1177574564440588308": {
       "last_message_id": "1197514386294722591",
       "name": "彌薩格大學茶話會",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1179386963871150211": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1179745906283773952": {
       "last_message_id": "1179763775033847838",
       "name": "入學典禮",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1179761516032032819": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1180437373012672522": {
-      "last_message_id": "1516462290969432157",
+      "last_message_id": "1516700020127301673",
       "name": "🔸欢乐梗图",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-06",
+        "2025-08"
+      ]
     },
     "1180850818509971466": {
-      "last_message_id": "1516491012397207572",
+      "last_message_id": "1516771518627975258",
       "name": "🔸相位对弈",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1181152750319456266": {
-      "last_message_id": "1516488998632030381",
+      "last_message_id": "1516856500985921788",
       "name": "🔸课间休息闲聊",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1187304008356999169": {
       "last_message_id": "1188862427736047737",
       "name": "達芙黛爾應援活動",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1456074443980800000",
+      "last_historical_month": "2026-01",
+      "forbidden": true
     },
     "1190246670332600401": {
       "last_message_id": "1190256854555693106",
       "name": "滿月慶典",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1194554310680391700": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1194835209242296410": {
       "last_message_id": "1516367935319310368",
       "name": "🔸交友频道",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-07",
+        "2025-08",
+        "2025-09"
+      ]
     },
     "1205101971514728458": {
       "last_message_id": "1205123115886321745",
       "name": "春節活動",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1210870902959378474": {
       "last_message_id": "1210886160386097182",
       "name": "元宵節活動",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1214493117508755506": {
       "last_message_id": "1215595524036755456",
       "name": "百日慶典",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1230475904166133801": {
       "last_message_id": "1230493557651931196",
       "name": "「迎新×銀芯√」活動",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1300659436804640788": {
-      "last_message_id": "1516494326962716792",
+      "last_message_id": "1516831131234730106",
       "name": "🔸日本語チャンネル",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659495550062592": {
-      "last_message_id": "1516468047240630303",
+      "last_message_id": "1516862888302870549",
       "name": "🔸한국어-채팅방",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659525812097026": {
-      "last_message_id": "1516543430765842492",
+      "last_message_id": "1516785168310861825",
       "name": "🔸deutscher-chatraum",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659552701648960": {
-      "last_message_id": "1516543289724239952",
+      "last_message_id": "1516889355489116160",
       "name": "🔸chaîne-française",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659580446969918": {
-      "last_message_id": "1516543809826193431",
+      "last_message_id": "1516896800500486386",
       "name": "🔸русский-канал",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659603993923644": {
-      "last_message_id": "1516519031266480229",
+      "last_message_id": "1516885926155128863",
       "name": "🔸phòng-chat-tiếng-việt",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659662311526512": {
-      "last_message_id": "1516543831833579550",
+      "last_message_id": "1516880631240593469",
       "name": "🔸canal-español",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659718653476925": {
-      "last_message_id": "1516536872904556687",
+      "last_message_id": "1516886940438368432",
       "name": "🔸canal-português",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659753197764688": {
-      "last_message_id": "1516527996784087150",
+      "last_message_id": "1516883085075939529",
       "name": "🔸ruang-obrolan-indonesia",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1300659802455674972": {
-      "last_message_id": "1516504843286745149",
+      "last_message_id": "1516870325579550922",
       "name": "🔸ห้องสนทนาภาษาไทย",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1316744385118998529": {
       "last_message_id": "1318585444371529739",
       "name": "🔸【超越維度的祝福】認領專區",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1456074443980800000",
+      "last_historical_month": "2026-01",
+      "forbidden": true
     },
     "1324573371349860352": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1326453691527594035": {
-      "last_message_id": "1516524432263479517",
+      "last_message_id": "1516885393889431552",
       "name": "🔸traphase",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1326453763355185215": {
-      "last_message_id": "1516543918198489238",
+      "last_message_id": "1516894944944455830",
       "name": "🔸lore-chat",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1351755074040496228": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1354754985119846581": {
       "last_message_id": "1514138499211853864",
       "name": "🔸服务器公告┊server-announcement",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2026-01"
+      ]
     },
     "1355094251775459399": {
       "last_message_id": "1515906089151893505",
       "name": "🔸礼包码┊gift-codes",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1355609481886826536": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355609693073969392": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610161842098469": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610239050711232": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610353370665375": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610435084353717": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610586876084336": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355610715175780562": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355617858767294666": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355617966070300762": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355618342781845584": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355619870569529467": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622323029413989": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622592005931170": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355622856225980637": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355623188708458767": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355623778956083442": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624136247869751": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624407896428674": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624604118417528": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355624803603578980": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625161717711029": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625604199743689": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355625824161759382": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626220661772508": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626481367126026": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626663576211527": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355626833931927754": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627119216033792": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627327370821703": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355627760974037163": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628090243551331": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628273207345322": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628524014272582": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628675319468304": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355628872988758116": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629411281666150": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629622540111872": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629796507254794": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355629973964198158": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355630588094320661": {
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02",
-      "last_message_id": "1516500341636731022",
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "last_message_id": "1516888658479677460",
       "name": "🔸lets-count"
     },
     "1355631357312635111": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355631663366803586": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355631764130889778": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355632527263404032": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1355632743764987945": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1356008444615983256": {
       "last_message_id": "1512620430702285010",
       "name": "🌎┊select-language",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1356020305448931560": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1356538084828647546": {
       "last_message_id": "1356540792138764348",
       "name": "🔸翻译器教程┊translator-tutorial",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1385040039448412170": {
       "last_message_id": "1516453608277676034",
       "name": "🔸频道建议┊server-suggestions",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1400749543288475770": {
-      "last_message_id": "1516539868766015568",
+      "last_message_id": "1516895891137499206",
       "name": "🔸team-building",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1400750050208125010": {
-      "last_message_id": "1516102023504855110",
+      "last_message_id": "1516462406388289718",
       "name": "🔸general-chat",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1405837769212821554": {
-      "last_message_id": "1516509715142676652",
+      "last_message_id": "1516845021566075021",
       "name": "🔸邀请码互助┊swap-invitation-codes",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1407293732310614109": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1426837316533747823": {
       "last_message_id": "1515035975590478039",
       "name": "🐱light’s-nest",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2026-01"
+      ]
     },
     "1433513650299076780": {
-      "last_message_id": "1515235883522064478",
+      "last_message_id": "1515438392492556348",
       "name": "🔸game-question",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1435483703114596503": {
       "last_message_id": "1515818323735220266",
       "name": "🔸忘却前夜┊morimens-tv",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1435487123250872371": {
       "last_message_id": "1515991026517413968",
       "name": "🔸游戏问题",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1435488403960631357": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1436097679653601340": {
       "last_message_id": "1492242595160654044",
       "name": "🔸两周年纪念反馈┊2yr-anniv-feedback",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1456074443980800000",
+      "last_historical_month": "2026-01",
+      "forbidden": true
     },
     "1436576905401991329": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1436766905628098632": {
       "last_message_id": "1436788306263146648",
       "name": "🔸游戏常见问题解答┊game-faq",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
+      "empty_months": [
+        "2025-12",
+        "2026-01"
+      ]
     },
     "1436913827571695898": {
-      "last_message_id": "1516541428505907200",
+      "last_message_id": "1516890663172702419",
       "name": "🔸机器人命令┊bot-commands",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1437760064470646844": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1440338135434268783": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1440851755603722270": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1453650039493754981": {
       "last_historical_message_id": "1467308467814400000",
-      "last_historical_month": "2026-02"
+      "last_historical_month": "2026-02",
+      "forbidden": true
     },
     "1469428901682872536": {
       "last_historical_message_id": "1467308467814400000",
@@ -593,8 +989,8 @@
       "last_historical_month": "2026-02"
     },
     "1481134325033472060": {
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "1481951682421330063": {
       "last_historical_message_id": "1477455328051200000",
@@ -623,8 +1019,8 @@
     "1486019364682465372": {
       "last_message_id": "1515349967643082853",
       "name": "🔸erica-playground",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "thread:1487420216257417276": {
       "last_message_id": "1487420216257417276"
@@ -771,7 +1167,7 @@
       "last_message_id": "1516047394670776342"
     },
     "thread:1384533675789783141": {
-      "last_message_id": "1516487234726002829"
+      "last_message_id": "1516866141149204661"
     },
     "thread:1380127964162687037": {
       "last_message_id": "1380129927038500884"
@@ -933,7 +1329,7 @@
       "last_message_id": "1483748410111823914"
     },
     "thread:1483744488198242407": {
-      "last_message_id": "1516207890745135174"
+      "last_message_id": "1516887063025287280"
     },
     "thread:1483461060185817318": {
       "last_message_id": "1499478800000483338"
@@ -1743,7 +2139,7 @@
       "last_message_id": "1514213149296037919"
     },
     "thread:1475263387553501427": {
-      "last_message_id": "1513708458862710794"
+      "last_message_id": "1516787343581904987"
     },
     "thread:1473787301178904847": {
       "last_message_id": "1481407066378866748"
@@ -1806,7 +2202,7 @@
       "last_message_id": "1511395257328205854"
     },
     "thread:1350058928020656178": {
-      "last_message_id": "1516367550563225650"
+      "last_message_id": "1516884069252862094"
     },
     "thread:1350058287688712253": {
       "last_message_id": "1406944964117790732"
@@ -8001,7 +8397,7 @@
       "last_message_id": "1471778887988940881"
     },
     "thread:1471087522972041258": {
-      "last_message_id": "1471778208071287028"
+      "last_message_id": "1516869230669336686"
     },
     "thread:1471047854410961012": {
       "last_message_id": "1471776257753481328"
@@ -28997,8 +29393,8 @@
       "last_message_id": "1493804722027630662"
     },
     "1491277200651980831": {
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "thread:1491243328258314351": {
       "last_message_id": "1491279237599199294"
@@ -30081,7 +30477,7 @@
       "last_message_id": "1497861268307054644"
     },
     "thread:1497031596434260119": {
-      "last_message_id": "1516329994278666271"
+      "last_message_id": "1516749653352386571"
     },
     "thread:1497023046496813097": {
       "last_message_id": "1502515812152377365"
@@ -30376,7 +30772,7 @@
       "last_message_id": "1515955252275187733"
     },
     "thread:1499394745078648972": {
-      "last_message_id": "1513896406962802851"
+      "last_message_id": "1516884312275030148"
     },
     "thread:1499363055912620227": {
       "last_message_id": "1499515583769743470"
@@ -30589,7 +30985,7 @@
       "last_message_id": "1503636184910397580"
     },
     "thread:1500991756257464412": {
-      "last_message_id": "1516504001250852984"
+      "last_message_id": "1516706023292014602"
     },
     "thread:1500961894352293978": {
       "last_message_id": "1501794162096209971"
@@ -30930,7 +31326,7 @@
       "last_message_id": "1509511769276813354"
     },
     "thread:1504798331593818263": {
-      "last_message_id": "1516126671332442152"
+      "last_message_id": "1516749683425415238"
     },
     "thread:1504692042796761191": {
       "last_message_id": "1504882317611503767"
@@ -31014,7 +31410,7 @@
       "last_message_id": "1504940436001656932"
     },
     "thread:1505167541818101862": {
-      "last_message_id": "1516462238972645517"
+      "last_message_id": "1516899227903590483"
     },
     "thread:1505242117943988275": {
       "last_message_id": "1505756049334992896"
@@ -31558,8 +31954,8 @@
     "1508175196928999584": {
       "last_message_id": "1508192815434305536",
       "name": "🚫auto-ban-channel",
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "thread:1508125880222875698": {
       "last_message_id": "1509801130379444304"
@@ -31812,8 +32208,8 @@
       "last_historical_month": "2026-02"
     },
     "1509389887080632330": {
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02",
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11",
       "last_message_id": "1516478305031684209",
       "name": "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives"
     },
@@ -31863,7 +32259,7 @@
       "last_message_id": "1516487129947963452"
     },
     "thread:1509396840330825758": {
-      "last_message_id": "1516004831582617652"
+      "last_message_id": "1516829522064965755"
     },
     "thread:1509505206088634438": {
       "last_message_id": "1510325882605142186"
@@ -31900,7 +32296,7 @@
       "last_message_id": "1509865665157398648"
     },
     "thread:1509916555075649657": {
-      "last_message_id": "1512319776440193035"
+      "last_message_id": "1516651599051624643"
     },
     "thread:1509822192819507270": {
       "last_message_id": "1510481345351123066"
@@ -32197,7 +32593,7 @@
       "last_message_id": "1511991450806648863"
     },
     "thread:1511306258836226198": {
-      "last_message_id": "1516207786604626101"
+      "last_message_id": "1516887179882795028"
     },
     "thread:1511298662532251773": {
       "last_message_id": "1511988531902550086"
@@ -32371,10 +32767,10 @@
       "last_message_id": "1512551378151538788"
     },
     "thread:1512453677846237335": {
-      "last_message_id": "1515773968827682968"
+      "last_message_id": "1516876280312762408"
     },
     "thread:1512434843009421474": {
-      "last_message_id": "1516451784762069124"
+      "last_message_id": "1516888632282054847"
     },
     "thread:1512413529255444631": {
       "last_message_id": "1513804884921810974"
@@ -32518,7 +32914,7 @@
       "last_message_id": "1513381288084508722"
     },
     "thread:1513164161503461506": {
-      "last_message_id": "1513371327824658482"
+      "last_message_id": "1516712642083819621"
     },
     "thread:1513093998141771776": {
       "last_message_id": "1513378690610761809"
@@ -32599,7 +32995,7 @@
       "last_message_id": "1513402861688586280"
     },
     "thread:1513356911184056432": {
-      "last_message_id": "1516226791851692214"
+      "last_message_id": "1516693252454092832"
     },
     "thread:1513316184311992360": {
       "last_message_id": "1513316184311992360"
@@ -32648,7 +33044,7 @@
       "last_message_id": "1513907599446249663"
     },
     "thread:1513779621441835048": {
-      "last_message_id": "1516207829294252062"
+      "last_message_id": "1516887140808785951"
     },
     "thread:1513760393271443487": {
       "last_message_id": "1514482399260708955"
@@ -32675,7 +33071,7 @@
       "last_message_id": "1513954722820788356"
     },
     "thread:1513948986963394692": {
-      "last_message_id": "1516417981679407214"
+      "last_message_id": "1516784030287265892"
     },
     "thread:1513844052649443532": {
       "last_message_id": "1514095189420015766"
@@ -32705,7 +33101,7 @@
       "last_message_id": "1515378359658348574"
     },
     "thread:1514224590145192116": {
-      "last_message_id": "1516207922210668788"
+      "last_message_id": "1516887021694484530"
     },
     "thread:1514221654975320144": {
       "last_message_id": "1516507622759600229"
@@ -32714,13 +33110,13 @@
       "last_message_id": "1514217262041661601"
     },
     "thread:1514217261358121011": {
-      "last_message_id": "1516328368356720661"
+      "last_message_id": "1516800798099636405"
     },
     "thread:1514199224949018684": {
       "last_message_id": "1514199224949018684"
     },
     "thread:1514186220799000608": {
-      "last_message_id": "1516276294650695830"
+      "last_message_id": "1516887117643649044"
     },
     "thread:1514163071000776754": {
       "last_message_id": "1514179186611327036"
@@ -32814,13 +33210,13 @@
       "last_message_id": "1514598111807410317"
     },
     "thread:1514562194841276456": {
-      "last_message_id": "1514562194841276456"
+      "last_message_id": "1516689921287655505"
     },
     "thread:1514556735954878474": {
       "last_message_id": "1514641442293944350"
     },
     "thread:1514501960416366642": {
-      "last_message_id": "1515010114829160731"
+      "last_message_id": "1516698010342522932"
     },
     "thread:1514490847847256114": {
       "last_message_id": "1514854809507856535"
@@ -32896,7 +33292,7 @@
       "last_message_id": "1515274570951823382"
     },
     "thread:1514799451795886153": {
-      "last_message_id": "1515865696788287489"
+      "last_message_id": "1516749714425512007"
     },
     "thread:1515020092323270818": {
       "last_message_id": "1516305163063787712"
@@ -32985,10 +33381,10 @@
       "last_message_id": "1515681830462820474"
     },
     "thread:1515636048724623472": {
-      "last_message_id": "1515636048724623472"
+      "last_message_id": "1516690753546358854"
     },
     "thread:1515634790076907610": {
-      "last_message_id": "1516486229414252778"
+      "last_message_id": "1516700567920185474"
     },
     "thread:1515598941129806005": {
       "last_message_id": "1515604791319855154"
@@ -33021,10 +33417,10 @@
       "last_message_id": "1515697930118365185"
     },
     "thread:1515930830118064198": {
-      "last_message_id": "1516491583862735000"
+      "last_message_id": "1516704796214825102"
     },
     "thread:1516041934819557548": {
-      "last_message_id": "1516041934819557548"
+      "last_message_id": "1516835872547541043"
     },
     "thread:1516023518960160878": {
       "last_message_id": "1516360733955199026"
@@ -33033,13 +33429,13 @@
       "last_message_id": "1516261886478254090"
     },
     "thread:1515951990327476347": {
-      "last_message_id": "1515993461889699942"
+      "last_message_id": "1516688721703862322"
     },
     "thread:1515929396576391258": {
-      "last_message_id": "1515963048295268352"
+      "last_message_id": "1516687229135749172"
     },
     "thread:1515901482233495583": {
-      "last_message_id": "1516066799609712700"
+      "last_message_id": "1516690225571561564"
     },
     "thread:1516031770347311124": {
       "last_message_id": "1516031825980555304"
@@ -33084,7 +33480,7 @@
       "last_message_id": "1516290187209211985"
     },
     "thread:1515956301501563010": {
-      "last_message_id": "1516317112568774737"
+      "last_message_id": "1516680048420065410"
     },
     "thread:1515917168074817656": {
       "last_message_id": "1516155487370870956"
@@ -33102,20 +33498,20 @@
       "last_message_id": "1515818339681701938"
     },
     "1516410824481181859": {
-      "last_historical_message_id": "1477455328051200000",
-      "last_historical_month": "2026-02"
+      "last_historical_message_id": "1312568849203200000",
+      "last_historical_month": "2024-11"
     },
     "thread:1516498025093009518": {
-      "last_message_id": "1516498025093009518"
+      "last_message_id": "1516678248635961414"
     },
     "thread:1516336280982786171": {
-      "last_message_id": "1516336280982786171"
+      "last_message_id": "1516714254852685955"
     },
     "thread:1516307551468130304": {
-      "last_message_id": "1516361927054331955"
+      "last_message_id": "1516699818863362200"
     },
     "thread:1516279108298870986": {
-      "last_message_id": "1516459865487179898"
+      "last_message_id": "1516685274493620444"
     },
     "thread:1516500644222210222": {
       "last_message_id": "1516500644222210222"
@@ -33127,7 +33523,7 @@
       "last_message_id": "1516459954670670055"
     },
     "thread:1516440406487728231": {
-      "last_message_id": "1516486890587553933"
+      "last_message_id": "1516797532657942569"
     },
     "thread:1516392766752690206": {
       "last_message_id": "1516431148824399942"
@@ -33149,10 +33545,65 @@
     },
     "thread:1516423077960093778": {
       "last_message_id": "1516543249333092452"
+    },
+    "thread:1516779049110999040": {
+      "last_message_id": "1516826683011891281"
+    },
+    "thread:1516741356767412244": {
+      "last_message_id": "1516741356767412244"
+    },
+    "thread:1516741145311445122": {
+      "last_message_id": "1516741145311445122"
+    },
+    "thread:1516564426176598086": {
+      "last_message_id": "1516564426176598086"
+    },
+    "thread:1516553353235136682": {
+      "last_message_id": "1516554158390378607"
+    },
+    "thread:1516811759095123978": {
+      "last_message_id": "1516811759095123978"
+    },
+    "thread:1516801369661640834": {
+      "last_message_id": "1516801369661640834"
+    },
+    "thread:1516750361262555136": {
+      "last_message_id": "1516814079157600406"
+    },
+    "thread:1516694141415850065": {
+      "last_message_id": "1516694141415850065"
+    },
+    "thread:1516603138918973512": {
+      "last_message_id": "1516662806680834111"
+    },
+    "thread:1516880261097328872": {
+      "last_message_id": "1516880261097328872"
+    },
+    "thread:1516851678882697276": {
+      "last_message_id": "1516878978986545162"
+    },
+    "thread:1516767644207022150": {
+      "last_message_id": "1516864074523082894"
+    },
+    "thread:1516890657619312680": {
+      "last_message_id": "1516890657619312680"
+    },
+    "thread:1516889705126432808": {
+      "last_message_id": "1516895109881401514"
+    },
+    "thread:1516702545618276392": {
+      "last_message_id": "1516899176514846801"
+    },
+    "thread:1516683671459856434": {
+      "last_message_id": "1516683671459856434"
+    },
+    "1517169987100475514": {
+      "last_historical_message_id": "1422734760345600000",
+      "last_historical_month": "2025-09"
     }
   },
-  "historical_month": "2026-02",
-  "last_run": "2026-06-17T16:47:26.867931+00:00",
+  "historical_month": "2024-10",
+  "last_run": "2026-06-20T09:19:27.931588+00:00",
   "forum_starter_backfill": {
     "completed": [
       "thread:1171395702887305216",
@@ -43572,7 +44023,24 @@
       "thread:1516459954670670055",
       "thread:1516484672949846036",
       "thread:1516498025093009518",
-      "thread:1516500644222210222"
+      "thread:1516500644222210222",
+      "thread:1516553353235136682",
+      "thread:1516564426176598086",
+      "thread:1516603138918973512",
+      "thread:1516683671459856434",
+      "thread:1516694141415850065",
+      "thread:1516702545618276392",
+      "thread:1516741145311445122",
+      "thread:1516741356767412244",
+      "thread:1516750361262555136",
+      "thread:1516767644207022150",
+      "thread:1516779049110999040",
+      "thread:1516801369661640834",
+      "thread:1516811759095123978",
+      "thread:1516851678882697276",
+      "thread:1516880261097328872",
+      "thread:1516889705126432808",
+      "thread:1516890657619312680"
     ],
     "skipped_no_starter": [
       "thread:1180598720513982555",
@@ -44021,6 +44489,6 @@
       "thread:1516004265900900522"
     ],
     "started_at": "2026-05-05T19:16:58.489537+00:00",
-    "last_run_at": "2026-06-16T20:51:37.053682+00:00"
+    "last_run_at": "2026-06-17T20:18:51.920928+00:00"
   }
 }

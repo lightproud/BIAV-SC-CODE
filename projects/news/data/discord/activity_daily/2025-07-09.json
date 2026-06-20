@@ -1,10 +1,23 @@
 {
   "date": "2025-07-09",
-  "messages": 61,
-  "unique_authors": 10,
-  "reactions_total": 84,
-  "attachments": 8,
+  "messages": 10468,
+  "unique_authors": 205,
+  "reactions_total": 1752,
+  "attachments": 660,
   "channel_activity": {
+    "🔸lets-count": 1,
+    "🔸morimens-game-chat": 9075,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 3,
+    "🔸русский-канал": 310,
+    "🔸phòng-chat-tiếng-việt": 49,
+    "🔸canal-español": 195,
+    "🔸canal-português": 82,
+    "🔸ruang-obrolan-indonesia": 57,
+    "🔸ห้องสนทนาภาษาไทย": 8,
+    "🔸traphase": 428,
+    "🔸lore-chat": 24,
+    "🔸綜合討論": 170,
     "V2.2.3.2 在线维护公告": 23,
     "Feedback/general review on latest morimens merchandise": 1,
     "✅「Answered」Holy Banner Bug": 2,
@@ -17,23 +30,33 @@
     "1390375103707218041": 4
   },
   "hourly_activity": {
-    "9": 5,
-    "10": 9,
-    "11": 13,
-    "16": 3,
-    "22": 1,
-    "3": 4,
-    "17": 6,
-    "13": 1,
-    "15": 8,
-    "12": 1,
-    "19": 8,
-    "14": 1,
-    "0": 1
+    "5": 220,
+    "18": 453,
+    "19": 472,
+    "20": 394,
+    "21": 709,
+    "22": 268,
+    "23": 450,
+    "12": 427,
+    "13": 354,
+    "14": 517,
+    "16": 411,
+    "10": 503,
+    "15": 568,
+    "1": 194,
+    "2": 530,
+    "3": 673,
+    "6": 355,
+    "8": 485,
+    "17": 476,
+    "4": 418,
+    "7": 583,
+    "9": 325,
+    "11": 577,
+    "0": 106
   },
   "message_types": {
-    "0": 18,
-    "19": 5
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -42,6 +65,30 @@
       "author": "game.producer.light",
       "reactions": 24,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392590194741481682",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1390409299829719291 When answer",
+      "author": "game.producer.light",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392493546749296786",
+      "channel_id": "1131839817982947429",
+      "content": "我來炫耀約稿了",
+      "author": "undecember_news",
+      "reactions": 23,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392585542360629299",
+      "channel_id": "1170692781216378960",
+      "content": "This HAS to be illegal",
+      "author": "dianethedeadly",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1392583088617296139",
@@ -58,67 +105,116 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
-      "id": "1392511026049712168",
-      "content": "Can we get server tags? Would help promote game and discord server to other serv",
-      "author": "risend",
-      "reactions": 5,
-      "channel": "Server tags"
+      "id": "1392487057284272189",
+      "channel_id": "1131839817982947429",
+      "content": "他媽的臭婊子這是你逼我的",
+      "author": "ahuahuahua",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1392446993699180584",
-      "content": "Lemme explain how this thing has happened:\nI exit from the Traphase after i won ",
-      "author": "ameumaru31",
-      "reactions": 2,
-      "channel": "✅「Answered」Holy Banner Bug"
+      "id": "1392536565573746698",
+      "channel_id": "1131839817982947429",
+      "content": "“本手、妙手、俗手”是围棋的三个术语。\n 本手是指合乎棋理的正规下法；\n 妙手是指出人意料的精妙下法；\n 俗手是指貌似合理，但从全局看通常会受损的下法。\n但即便",
+      "author": "ice_storys",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1392552628332003368",
-      "content": "1) When selecting a difficulty, the game defaults to Madness if it was cleared b",
-      "author": "mac2492",
-      "reactions": 2,
-      "channel": "Minor Event UI Quality of Life Suggestions"
+      "id": "1392479165286187079",
+      "channel_id": "1170692781216378960",
+      "content": "one guy among this would've been nice just saying but i really cant complain. Ov",
+      "author": ".startraveler_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392503496414068906",
-      "content": "現版本拉蒙娜2費卡：攻勢推演的英文翻譯是Assault Thesis\n將其翻譯改為Offensive Deduction是否會更好？",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "翻譯建議"
+      "id": "1392583541493203064",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1390409299829719291/13925823255",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392558845816995990",
-      "content": "why ru playing morimens inside the black pool <:takenotes:1357186646294138890>",
-      "author": "venustoglasskin",
-      "reactions": 1,
-      "channel": "✅「Answered」Holy Banner Bug"
-    },
-    {
-      "id": "1392525146497093742",
-      "content": "AI “art” really did it damage huh. Now people with no knowledge of art are sayin",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392534494904451182",
-      "content": "really dig Thais pearls too XD",
-      "author": "_venush",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392558128486289481",
+      "id": "1392403530542743645",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "venustoglasskin",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
+      "author": "annaxxe_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392444903165792276",
-      "content": "謝謝你們願意吃😭",
-      "author": "unmasked0406",
-      "reactions": 1,
-      "channel": "《他們的女兒》"
+      "id": "1392457143462137886",
+      "channel_id": "1170692781216378960",
+      "content": "Lmao looks like I’ve been spreading misinformation to the newbie that main write",
+      "author": "red_rest",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392353638571053099",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392355163464925356",
+      "channel_id": "1170692781216378960",
+      "content": "The image resolution drops with each post",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392355663220441109",
+      "channel_id": "1170692781216378960",
+      "content": "oh my",
+      "author": "_venush",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392503519940186203",
+      "channel_id": "1170692781216378960",
+      "content": "Tomorrow <:takenotes:1357186646294138890>",
+      "author": "moyashi0672",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392326378732388404",
+      "channel_id": "1170692781216378960",
+      "content": "lets goo",
+      "author": "yonagoda",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392360622460502017",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "kong760",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392412337742548992",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1392339888745087078",
+      "channel_id": "1170692781216378960",
+      "content": "The doresain va saw the chat and decided to back out immediately",
+      "author": "whirli_bri",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

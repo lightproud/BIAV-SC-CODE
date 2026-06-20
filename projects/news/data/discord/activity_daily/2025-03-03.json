@@ -1,10 +1,24 @@
 {
   "date": "2025-03-03",
-  "messages": 105,
-  "unique_authors": 15,
-  "reactions_total": 106,
-  "attachments": 8,
+  "messages": 4273,
+  "unique_authors": 125,
+  "reactions_total": 239,
+  "attachments": 186,
   "channel_activity": {
+    "🔸русский-канал": 5,
+    "🔸canal-español": 30,
+    "🔸canal-português": 1,
+    "🔸ruang-obrolan-indonesia": 226,
+    "🔸ห้องสนทนาภาษาไทย": 16,
+    "🔸traphase": 92,
+    "🔸lore-chat": 56,
+    "🔸綜合討論": 2085,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 1635,
+    "🔸剧情交流": 13,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 3,
     "fuckupatoo's morimens fanfics": 1,
     "💟獻上愛的圖騰——來自小花腦的信函": 2,
     "🎁DC15000守密人達成禮": 2,
@@ -23,21 +37,34 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "23": 1,
-    "2": 7,
-    "5": 1,
-    "3": 5,
-    "13": 11,
-    "14": 55,
-    "15": 15,
-    "9": 1,
-    "10": 5,
-    "8": 2,
-    "16": 1,
-    "1": 1
+    "2": 47,
+    "5": 323,
+    "7": 250,
+    "8": 319,
+    "9": 183,
+    "0": 181,
+    "1": 230,
+    "3": 95,
+    "4": 97,
+    "6": 190,
+    "13": 806,
+    "14": 258,
+    "18": 117,
+    "19": 15,
+    "10": 276,
+    "11": 95,
+    "12": 265,
+    "15": 238,
+    "16": 89,
+    "20": 36,
+    "23": 17,
+    "17": 58,
+    "22": 31,
+    "21": 57
   },
   "message_types": {
-    "0": 1
+    "19": 97,
+    "0": 329
   },
   "top_reacted_messages": [
     {
@@ -83,6 +110,14 @@
       "channel": "一般隊伍玩不了遊戲的BUG"
     },
     {
+      "id": "1345973501038694452",
+      "channel_id": "1173463482503536711",
+      "content": "跟神圖魯打到一半莎拉機械降神",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1346124153333354596",
       "content": "**傻逼星辰篇**",
       "author": "akalanden",
@@ -95,6 +130,54 @@
       "author": "13020059251_89639",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1345957335218126929",
+      "channel_id": "1131839817982947429",
+      "content": "20抽4SSR",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345994918161551391",
+      "channel_id": "1173463482503536711",
+      "content": "<:Coffee:1240919421791375380>",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1345982086296895563",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "kafka0u0.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346065407345168415",
+      "channel_id": "1131839817982947429",
+      "content": "低概率刷新",
+      "author": "kuritani_yuu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346155117879103569",
+      "channel_id": "1131839874132090890",
+      "content": "這關圖還特別噁\n幾乎每個事件前都有幻象擋著<:Coffee:1240919421791375380>",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1345914186932293722",
+      "channel_id": "1170692781216378960",
+      "content": "As long as they have it planned I think thats what matters. Downloading it now",
+      "author": "theurgic",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1346128641897271377",
@@ -118,67 +201,20 @@
       "channel": ""
     },
     {
-      "id": "1346129155464495134",
-      "content": "然後困難生存也是問題，扣300死抗然後對面被降幾百力還是打近千傷的，這些要調整好",
-      "author": "heikwok",
+      "id": "1345983664923611229",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "Deleted User",
       "reactions": 3,
-      "channel": "一般隊伍玩不了遊戲的BUG"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1346127244313100308",
-      "content": "除非他不是人",
-      "author": "guguahaizixiangbiyexiangfeng1815",
+      "id": "1345983462091391068",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "_venush",
       "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1345959519808651381",
-      "content": "~~DC能有15000守密人在座的各位都有责任~~",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🎁DC15000守密人達成禮"
-    },
-    {
-      "id": "1346136910128746581",
-      "content": "至少相比忘卻篇的遊戲體驗方面屬於負增長",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "一般隊伍玩不了遊戲的BUG"
-    },
-    {
-      "id": "1346120233152417904",
-      "content": "課太少的下場",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "为什么星辰篇困难10回合三星"
-    },
-    {
-      "id": "1346029721552687157",
-      "content": "更新下我的24",
-      "author": "be_queitplease",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1345953224351285310",
-      "content": "~~DC能有15000守密人在座的各位都有责任~~",
-      "author": "inklk1104",
-      "reactions": 1,
-      "channel": "🎁DC15000守密人達成禮"
-    },
-    {
-      "id": "1346140703696355338",
-      "content": "~~大佬好猛我連1-1都還沒打~~<:cry:1239910167668326480>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "一般隊伍玩不了遊戲的BUG"
-    },
-    {
-      "id": "1346124662031126578",
-      "content": "總共有三個波次，在第三個波次開始前跳出商店和萊克選造物的畫面。但是萊克造物還沒選就進關卡了。",
-      "author": "xiangan3069",
-      "reactions": 1,
-      "channel": "💭「處理中」新主線第一場戰鬥bug"
+      "channel": "🔸lore-chat"
     }
   ]
 }

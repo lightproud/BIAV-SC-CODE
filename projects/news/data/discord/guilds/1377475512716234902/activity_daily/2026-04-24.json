@@ -1,10 +1,11 @@
 {
   "date": "2026-04-24",
-  "messages": 34,
-  "unique_authors": 7,
-  "reactions_total": 44,
-  "attachments": 4,
+  "messages": 115,
+  "unique_authors": 10,
+  "reactions_total": 76,
+  "attachments": 8,
   "channel_activity": {
+    "なんでも雑談": 81,
     "🔰初心者質問": 4,
     "誰でも質問": 27,
     "今日の〜シリーズver1.0": 1,
@@ -12,20 +13,21 @@
     "【新覚醒体予告】血ノ鎖・ヘロット": 1
   },
   "hourly_activity": {
-    "14": 7,
-    "5": 4,
+    "5": 13,
+    "10": 43,
+    "11": 7,
+    "12": 2,
+    "13": 29,
+    "14": 8,
+    "16": 5,
     "8": 1,
     "9": 1,
-    "10": 3,
-    "13": 7,
-    "16": 4,
     "17": 5,
-    "12": 1,
     "19": 1
   },
   "message_types": {
-    "0": 27,
-    "19": 7
+    "0": 71,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -37,12 +39,156 @@
       "channel": "【新覚醒体予告】血ノ鎖・ヘロット"
     },
     {
+      "id": "1497219445741981786",
+      "channel_id": "1377478664609857647",
+      "content": "お疲れ様でした\n仙台旅行、0日目ー",
+      "author": "ecstasyrb",
+      "reactions": 7,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497101669492592660",
+      "channel_id": "1377478664609857647",
+      "content": "後遂に来た",
+      "author": "ugen_22zi",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1497321726806331445",
       "channel_id": "1443565232130756660",
       "content": "上に上げる用",
       "author": "nara_mera",
       "reactions": 5,
       "channel": "対人戦に詳しく解説「初心者〜上級者まで」"
+    },
+    {
+      "id": "1497181030312837150",
+      "channel_id": "1377478664609857647",
+      "content": "ちなみにルールくそでーす",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497181861879746580",
+      "channel_id": "1377478664609857647",
+      "content": "ドノツラだけどな",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497183789284196352",
+      "channel_id": "1377478664609857647",
+      "content": "あれ運営が勝手に言ってるだけだから",
+      "author": "kuroneko4253",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497226888165327040",
+      "channel_id": "1377478664609857647",
+      "content": "真貌は総称",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497179020968591411",
+      "channel_id": "1377478664609857647",
+      "content": "キャスターに拘束されたセイバーみたい",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497179577053872148",
+      "channel_id": "1377478664609857647",
+      "content": "-# ~~||パイセンの仇…||~~",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497181793575506081",
+      "channel_id": "1377478664609857647",
+      "content": "どいつもこいつも面は良いんだよなぁ",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497182663155515422",
+      "channel_id": "1377478664609857647",
+      "content": "パイセン…",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497182750082469888",
+      "channel_id": "1377478664609857647",
+      "content": "ちへろってビジュが…いいな…",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497182873458053120",
+      "channel_id": "1377478664609857647",
+      "content": "血ヘロ解剖したらパイセンのシルバーコア出てきたりしない？",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497183486203662437",
+      "channel_id": "1377478664609857647",
+      "content": "パイセン実は覚醒体になれる可能性をくれ！！(",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497198603733827796",
+      "channel_id": "1377478664609857647",
+      "content": "オルラは透明人間よ",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497199589609050244",
+      "channel_id": "1377478664609857647",
+      "content": "今日もパワー教の活動してるけど、どのカードもパワーが漲っている",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497224726357999797",
+      "channel_id": "1377478664609857647",
+      "content": "個人的にはタヴィの方がキャラとして好き(",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497224906981769338",
+      "channel_id": "1377478664609857647",
+      "content": "血ﾍﾛは個人で完結しない気がする。ﾀゔｨだとなんにでも合わせられそうなので余裕ない方は後者の方が良い気はしますね。賢い！",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1497227248099397769",
+      "channel_id": "1377478664609857647",
+      "content": "# 全図鑑(ヒソヒソ\n（？）",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     }
   ]
 }

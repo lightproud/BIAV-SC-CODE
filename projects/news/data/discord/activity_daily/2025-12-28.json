@@ -1,10 +1,36 @@
 {
   "date": "2025-12-28",
-  "messages": 80,
-  "unique_authors": 18,
-  "reactions_total": 259,
-  "attachments": 23,
+  "messages": 13845,
+  "unique_authors": 255,
+  "reactions_total": 1636,
+  "attachments": 660,
   "channel_activity": {
+    "🔸lore-chat": 399,
+    "🔸lets-count": 25,
+    "🔸team-building": 529,
+    "🔸general-chat": 197,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 875,
+    "🔸忘却前夜┊morimens-tv": 10,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 32,
+    "🔸morimens-game-chat": 6661,
+    "🔸剧情交流": 47,
+    "🔸晒卡分享": 26,
+    "🔸相位对弈": 70,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 21,
+    "🔸한국어-채팅방": 1,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 970,
+    "🔸phòng-chat-tiếng-việt": 1043,
+    "🔸canal-español": 628,
+    "🔸canal-português": 453,
+    "🔸ruang-obrolan-indonesia": 421,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 210,
+    "🔸綜合討論": 1108,
+    "🔸阵容构建": 3,
     "🌼 Pollux 🌼": 1,
     "Octopus Octopus We Like You Club joining benefit": 2,
     "Three Mismatched Lamps & Hairclips [Nautila & Alva Fanfic]": 3,
@@ -29,35 +55,37 @@
     "Happy New Year from GMurphy and Tulu!❄️": 2,
     "嗨又是我我又畫了哈姆林": 2,
     "some GMurphy doodles": 1,
-    "🔸忘却前夜┊morimens-tv": 5,
     "1445334381404094475": 11
   },
   "hourly_activity": {
-    "13": 12,
-    "15": 11,
-    "16": 4,
-    "9": 5,
-    "5": 5,
-    "2": 5,
-    "8": 2,
-    "12": 8,
-    "17": 3,
-    "19": 2,
-    "20": 1,
-    "23": 2,
-    "22": 2,
-    "6": 3,
-    "14": 5,
-    "3": 3,
-    "10": 1,
-    "11": 3,
-    "21": 2,
-    "18": 1
+    "0": 331,
+    "1": 202,
+    "2": 325,
+    "3": 400,
+    "4": 436,
+    "5": 517,
+    "6": 562,
+    "7": 618,
+    "8": 762,
+    "9": 364,
+    "10": 340,
+    "11": 757,
+    "13": 746,
+    "14": 726,
+    "15": 778,
+    "16": 640,
+    "17": 1075,
+    "18": 329,
+    "19": 404,
+    "23": 602,
+    "20": 645,
+    "21": 821,
+    "22": 665,
+    "12": 800
   },
   "message_types": {
-    "0": 22,
-    "4": 1,
-    "19": 1
+    "0": 1683,
+    "19": 388
   },
   "top_reacted_messages": [
     {
@@ -66,6 +94,14 @@
       "author": "ernest_heart",
       "reactions": 48,
       "channel": "Octopus Octopus We Like You Club joining benefit"
+    },
+    {
+      "id": "1454849657724211271",
+      "channel_id": "1170692781216378960",
+      "content": "Not whale level yet",
+      "author": "rain_scarlet",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1454842417571172392",
@@ -89,18 +125,27 @@
       "channel": "此乃造谣24的笔记本内容（嗯）"
     },
     {
+      "id": "1454907112466546860",
+      "channel_id": "1435483703114596503",
+      "content": "https://youtu.be/txI9d9P1nxE\nI'm very excited for Mouchette's upcoming release a",
+      "author": "reya.li",
+      "reactions": 19,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454866142463262720",
+      "channel_id": "1131839817982947429",
+      "content": "看成serve for your head為你的頭服務",
+      "author": "ernest_heart",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1454859975292747856",
       "content": "「為這肌肉戰慄吧……它為了斬下你的頭顱而時刻準備著。」\n\n※繪師：Izen",
       "author": "ernest_heart",
       "reactions": 19,
       "channel": "章魚章魚我們喜歡你社入社福利"
-    },
-    {
-      "id": "1454907112466546860",
-      "content": "https://youtu.be/txI9d9P1nxE\nI'm very excited for Mouchette's upcoming release a",
-      "author": "reya.li",
-      "reactions": 19,
-      "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
       "id": "1454832153614356480",
@@ -125,6 +170,7 @@
     },
     {
       "id": "1454955322547376234",
+      "channel_id": "1435483703114596503",
       "content": "https://youtu.be/p8HnJyTOpHk\nI decided to improve my 5 turn clear on this... Tur",
       "author": "zier.0",
       "reactions": 12,
@@ -138,6 +184,38 @@
       "channel": "墨菲"
     },
     {
+      "id": "1454640104965406780",
+      "channel_id": "1300659662311526512",
+      "content": "Mientras voy a perder otra partida, les presento a Mary.",
+      "author": "sayokolefay",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1454921626528518185",
+      "channel_id": "1170692781216378960",
+      "content": "good night",
+      "author": "omni_colon",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1454837345290551348",
+      "channel_id": "1174983699935277147",
+      "content": "😭",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1454754450118803620",
+      "channel_id": "1181152750319456266",
+      "content": "",
+      "author": "queen_bee66",
+      "reactions": 9,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
       "id": "1454858209348026368",
       "content": "uid: 101119523",
       "author": "anna3248",
@@ -145,60 +223,20 @@
       "channel": "Happy New Year from GMurphy and Tulu!❄️"
     },
     {
-      "id": "1454958754310389953",
-      "content": "A 2 minute overview of Helot: Catena.\nhttps://youtube.com/shorts/j76EGD_9VNc?si=",
-      "author": "nechromicon",
-      "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1454692136535724162",
+      "channel_id": "1174983699935277147",
+      "content": "常駐撈了兩張<:please:1356053110375714817>",
+      "author": "queen_bee66",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1454825513334870129",
-      "content": "二次嘗試杜勒睡衣設計~~太複雜失敗只能當私服~~",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1454866938529321143",
-      "content": "tell you a joke, when I switched the game to English to see the English dialogue",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "Octopus Octopus We Like You Club joining benefit"
-    },
-    {
-      "id": "1454834076388163594",
-      "content": "101165253",
-      "author": "chiedgaf",
-      "reactions": 3,
-      "channel": "some GMurphy doodles"
-    },
-    {
-      "id": "1454715007609864377",
-      "content": "3) 24- unfinished (revised it, old art)",
-      "author": "kaira._.22",
-      "reactions": 2,
-      "channel": "Just any art"
-    },
-    {
-      "id": "1454662875766460528",
-      "content": "如題這為啥會出現在喚醒體身上，而且效果有問題",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "💭「处理中」相位算力上限"
-    },
-    {
-      "id": "1454678692465868841",
-      "content": "很影響觀感了",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」回放會跳出選項的bug"
-    },
-    {
-      "id": "1454773531526303744",
-      "content": "https://youtu.be/C-sJKZMhykI?si=B8FNsewBvNZvNlFs",
-      "author": "oatstemp",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1454892464966992036",
+      "channel_id": "1300659662311526512",
+      "content": "Me acabo de sacar el e2 de Thais",
+      "author": "rusheer.l",
+      "reactions": 8,
+      "channel": "🔸canal-español"
     }
   ]
 }

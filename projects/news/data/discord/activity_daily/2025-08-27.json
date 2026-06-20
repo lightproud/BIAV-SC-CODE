@@ -1,10 +1,29 @@
 {
   "date": "2025-08-27",
-  "messages": 58,
-  "unique_authors": 13,
-  "reactions_total": 191,
-  "attachments": 19,
+  "messages": 15028,
+  "unique_authors": 350,
+  "reactions_total": 2322,
+  "attachments": 702,
   "channel_activity": {
+    "🔸morimens-game-chat": 11697,
+    "🔸剧情交流": 26,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 7,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 356,
+    "🔸phòng-chat-tiếng-việt": 35,
+    "🔸canal-español": 1436,
+    "🔸canal-português": 17,
+    "🔸ruang-obrolan-indonesia": 109,
+    "🔸ห้องสนทนาภาษาไทย": 72,
+    "🔸traphase": 249,
+    "🔸lore-chat": 60,
+    "🔸lets-count": 8,
+    "🔸team-building": 7,
+    "🔸general-chat": 35,
+    "🔸邀请码互助┊swap-invitation-codes": 115,
+    "🔸綜合討論": 726,
+    "🔸阵容构建": 3,
     "goliath doodle": 5,
     "Ogier": 1,
     "Get 'em! Brown!": 2,
@@ -32,30 +51,34 @@
     "因為要求要四界域，所以...": 1
   },
   "hourly_activity": {
-    "17": 1,
-    "20": 2,
-    "21": 6,
-    "23": 1,
-    "9": 7,
-    "15": 1,
-    "11": 1,
-    "10": 5,
-    "5": 5,
-    "1": 1,
-    "14": 1,
-    "16": 3,
-    "22": 1,
-    "6": 3,
-    "2": 3,
-    "8": 1,
-    "3": 2,
-    "4": 11,
-    "7": 3
+    "0": 596,
+    "1": 457,
+    "2": 591,
+    "3": 629,
+    "4": 666,
+    "5": 489,
+    "6": 617,
+    "7": 800,
+    "8": 691,
+    "9": 348,
+    "10": 408,
+    "11": 533,
+    "12": 464,
+    "13": 446,
+    "14": 806,
+    "15": 993,
+    "16": 663,
+    "17": 883,
+    "18": 708,
+    "19": 600,
+    "20": 496,
+    "21": 591,
+    "22": 761,
+    "23": 792
   },
   "message_types": {
-    "0": 16,
-    "19": 2,
-    "4": 1
+    "19": 4729,
+    "0": 9512
   },
   "top_reacted_messages": [
     {
@@ -66,11 +89,27 @@
       "channel": "goliath doodle"
     },
     {
+      "id": "1410306197088768020",
+      "channel_id": "1300659662311526512",
+      "content": "Me volví pecesito",
+      "author": "vaimaaz",
+      "reactions": 32,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1410195499150999635",
       "content": "Time taken 9:12\nAlso sir come home pls",
       "author": "sunstopshining",
       "reactions": 28,
       "channel": "Hameln fanart"
+    },
+    {
+      "id": "1410226840869666987",
+      "channel_id": "1170692781216378960",
+      "content": "what does this even mean",
+      "author": "Deleted User",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410278172964032632",
@@ -80,11 +119,59 @@
       "channel": "Tawil Eat Clementine Wings (Dumb Request)"
     },
     {
+      "id": "1410177319712325692",
+      "channel_id": "1170692781216378960",
+      "content": "Pretty sure girls don’t exist",
+      "author": "lewyntapes",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410250135002153032",
+      "channel_id": "1170692781216378960",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "arisuu0604",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410316399385251953",
+      "channel_id": "1170692781216378960",
+      "content": "<@463913728103153664>",
+      "author": "twilightsparkle163163",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1410376936420675613",
       "content": "",
       "author": "yannic2112",
       "reactions": 16,
       "channel": "Get 'em! Brown!"
+    },
+    {
+      "id": "1410263276813684757",
+      "channel_id": "1170692781216378960",
+      "content": "<@1158864374291775529> <@523084324724146193> <@780305695392137258> <:Emoji_XLST_",
+      "author": "mount_fisherman",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410224170347925626",
+      "channel_id": "1170692781216378960",
+      "content": "You don't have to, I believe in you <:Emoji_AJE_M_04:1400771555939844149>",
+      "author": "sirtealot",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410406176117624903",
+      "channel_id": "1170692781216378960",
+      "content": "astra stop putting mpreg on my msgs",
+      "author": "spooky_penguin_",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1410133953637126277",
@@ -94,88 +181,60 @@
       "channel": "因為要求要四界域，所以..."
     },
     {
-      "id": "1410195579203485716",
+      "id": "1410225609279537223",
+      "channel_id": "1170692781216378960",
+      "content": "im more popular and better but ok",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410360388792619029",
+      "channel_id": "1170692781216378960",
+      "content": "What did I mean by this",
+      "author": "phonytail",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410362001108111542",
+      "channel_id": "1170692781216378960",
+      "content": "yo how many of those stupud eyes do i have to kill in chapter 9",
+      "author": "67tittylover67",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410307412421775522",
+      "channel_id": "1300659662311526512",
+      "content": "De las quince copias, tres serán mensuales",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1410315753005256872",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sunstopshining",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1410411802134581328",
+      "channel_id": "1170692781216378960",
+      "content": "LNRMW6N3EM",
+      "author": "spooky_penguin_",
       "reactions": 8,
-      "channel": "Hameln fanart"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1410154123193749526",
-      "content": "There \"neutral\" sprites are normal but as soon as there expression changes, they",
-      "author": "omni_colon",
+      "id": "1410411811865624607",
+      "channel_id": "1170692781216378960",
+      "content": "LNRMW6N3EM",
+      "author": "spooky_penguin_",
       "reactions": 8,
-      "channel": "💭「Processing」A bug where all the characters in my game are floating heads."
-    },
-    {
-      "id": "1410116801182044170",
-      "content": "希望可以把之前的兩個免費 (通過事件獲取) 的造物加回來！\n\n感覺除了少數喚醒體的幻夢深潛地圖 (如24和莉莉) 資源比較多，其他喚醒體的地圖都有點資源緊缺。尤",
-      "author": "cameliia._.",
-      "reactions": 5,
-      "channel": "✅「已回答」幻夢深潛體驗優化建議"
-    },
-    {
-      "id": "1410202635293687848",
-      "content": "戈雅会去反馈一下<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「已回答」幻夢深潛體驗優化建議"
-    },
-    {
-      "id": "1410364909316870235",
-      "content": "https://tenor.com/view/jungkook-gif-26685084",
-      "author": "mount_fisherman",
-      "reactions": 2,
-      "channel": "goliath doodle"
-    },
-    {
-      "id": "1410215040807862302",
-      "content": "101159253",
-      "author": "omni_colon",
-      "reactions": 2,
-      "channel": "💭「Processing」A bug where all the characters in my game are floating heads."
-    },
-    {
-      "id": "1410107337842098280",
-      "content": "不是一個人，原型是羅馬皇帝卡利古拉",
-      "author": "navirecorbeau",
-      "reactions": 2,
-      "channel": "✅「已回答」血肉狂宴命輪故事"
-    },
-    {
-      "id": "1410198843118846054",
-      "content": "戈雅会去反馈一下<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅ 「已回答」克珀珊特天赋加強"
-    },
-    {
-      "id": "1410305746729570395",
-      "content": "Using Steam client.\n\nFirst image without translation is what I get when click So",
-      "author": "_pdt",
-      "reactions": 2,
-      "channel": "💭「Processing」Hameln's Soulforge Aptitude in Talent page seems broken."
-    },
-    {
-      "id": "1410378738385813677",
-      "content": "Reference pic",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "Get 'em! Brown!"
-    },
-    {
-      "id": "1410140872388902922",
-      "content": "Kathi and stain by themselves lol",
-      "author": "snovarra",
-      "reactions": 1,
-      "channel": "What dtide teams can I make"
-    },
-    {
-      "id": "1410119619875831829",
-      "content": "我都不敢帶入藥",
-      "author": "insomnia07763",
-      "reactions": 1,
-      "channel": "✅「已回答」幻夢深潛體驗優化建議"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

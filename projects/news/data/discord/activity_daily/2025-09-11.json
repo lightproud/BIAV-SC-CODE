@@ -1,10 +1,30 @@
 {
   "date": "2025-09-11",
-  "messages": 44,
-  "unique_authors": 8,
-  "reactions_total": 9,
-  "attachments": 6,
+  "messages": 10031,
+  "unique_authors": 206,
+  "reactions_total": 1295,
+  "attachments": 492,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 613,
+    "🔸canal-português": 28,
+    "🔸ruang-obrolan-indonesia": 445,
+    "🔸ห้องสนทนาภาษาไทย": 117,
+    "🔸traphase": 109,
+    "🔸lore-chat": 43,
+    "🔸lets-count": 6,
+    "🔸team-building": 1,
+    "🔸general-chat": 7,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸morimens-game-chat": 6763,
+    "🔸剧情交流": 31,
+    "🔸晒卡分享": 7,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 461,
+    "🔸綜合討論": 1309,
+    "🔸阵容构建": 2,
     "Flares' Awakener Review : Ryker": 1,
     "Need help with team building and game in general": 1,
     "Team Building Help": 8,
@@ -21,75 +41,195 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "8": 3,
-    "23": 1,
-    "10": 6,
-    "18": 3,
-    "19": 4,
-    "1": 3,
-    "16": 3,
-    "5": 5,
-    "13": 1,
-    "14": 2,
-    "2": 4,
-    "3": 5,
-    "7": 2,
-    "17": 1,
-    "6": 1
+    "10": 497,
+    "11": 313,
+    "15": 575,
+    "19": 171,
+    "0": 386,
+    "1": 516,
+    "2": 444,
+    "3": 430,
+    "4": 552,
+    "5": 242,
+    "6": 433,
+    "7": 558,
+    "12": 327,
+    "13": 433,
+    "14": 394,
+    "16": 794,
+    "17": 497,
+    "18": 480,
+    "22": 347,
+    "23": 411,
+    "21": 167,
+    "8": 559,
+    "9": 418,
+    "20": 87
   },
   "message_types": {
-    "0": 15,
-    "19": 9
+    "0": 1046,
+    "19": 346
   },
   "top_reacted_messages": [
     {
-      "id": "1415569147659685958",
-      "content": "該畫面顯示了守密人的算力足夠打出追憶迴旋曲但追憶迴旋曲依舊維持紅框特效",
+      "id": "1415836069584306176",
+      "channel_id": "1170692781216378960",
+      "content": "why pull more when you can pull better",
+      "author": "khykken",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415709749533741089",
+      "channel_id": "1170692781216378960",
+      "content": "\"I am Lucia, the leader of Gray Raven. Nice to meet you, commander\"\n\nJP might ha",
+      "author": "keiji_thiscord",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415728805435150559",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "water_heart",
-      "reactions": 2,
-      "channel": "💭「处理中」追憶迴旋曲的特效問題"
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415751396288102552",
-      "content": "私👀",
-      "author": "_cwz_",
-      "reactions": 2,
-      "channel": "我喜歡卡斯托爾"
+      "id": "1415774923753914470",
+      "channel_id": "1174983699935277147",
+      "content": "普抽",
+      "author": "cs001092",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1415646885791662182",
-      "content": "caecus-tawil (use the prototype from sediment shop to get E1) - ham - corpo\\naut",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "Budget Pickman Team"
+      "id": "1415596757685108856",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415647545652150405",
-      "content": "Thank you!",
-      "author": "jezune",
-      "reactions": 1,
-      "channel": "Budget Pickman Team"
+      "id": "1415648871299813376",
+      "channel_id": "1131839817982947429",
+      "content": "6界域72000",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1415698629187993680",
-      "content": "這次活動偷偷沒有了癲狂喔",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "主線癲狂難度"
+      "id": "1415813950691475476",
+      "channel_id": "1170692781216378960",
+      "content": "Does the game hate me fr",
+      "author": "xxxgirlkisserxxx",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415604522998300672",
-      "content": "this worked, thanks, I kept uninstalling and reinstalling, restarting my pc even",
-      "author": "kame.ria",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
+      "id": "1415834948803362948",
+      "channel_id": "1170692781216378960",
+      "content": "the distinction wouldnt matter - the average gacha gamer would be too in a rage ",
+      "author": "khykken",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1415606595433533491",
-      "content": "It seems that the folder is a common problem, the team can probably investigate ",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
+      "id": "1415836680396472330",
+      "channel_id": "1170692781216378960",
+      "content": "҉ 𝙙𝙤 ҉ 🫃 ҉ 𝙣𝙤𝙩 ҉ 🫃 ҉ 𝙨𝙡𝙚𝙚𝙥 ҉ 🫃 ҉ 𝙤𝙣🫃  ҉ 𝙩𝙝𝙞𝙨 ҉ 🫃 ҉ 𝙜𝙖𝙢𝙚🫃🤰 ҉ 🫄  ҉ , ҉ 𝙞'𝙫𝙚 ҉ 🫃 ҉ ",
+      "author": "dddhunter",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415837922229358654",
+      "channel_id": "1170692781216378960",
+      "content": "thnaks a lot for all the info guys <:point:1356053112292511815>",
+      "author": "thinmo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415840249791123456",
+      "channel_id": "1170692781216378960",
+      "content": "u can try Karen, Miryam, Nautila, 24 - just make sure the 24 is +12 lvl 90 with ",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1415504226775470170",
+      "channel_id": "1131839817982947429",
+      "content": "那我去普池抽個藏品給你看就好了",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415519847302828176",
+      "channel_id": "1131839817982947429",
+      "content": "100333221",
+      "author": "lemoncandy25",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415567583809114123",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415651477925396501",
+      "channel_id": "1131839817982947429",
+      "content": "耶～(。∀ ﾟ)法洛絲抽到第三隻了",
+      "author": "wqin.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1415764281680465992",
+      "channel_id": "1300659662311526512",
+      "content": "ahora si, lechuga como un fresco",
+      "author": "neroku69",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1415764332238864624",
+      "channel_id": "1300659662311526512",
+      "content": "que se cuentan?",
+      "author": "neroku69",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1415766014859411567",
+      "channel_id": "1300659662311526512",
+      "content": "buh, pareces mas vieja que los viejos",
+      "author": "neroku69",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1415766178982527048",
+      "channel_id": "1300659662311526512",
+      "content": "el que usa bandera arcoiris es gae",
+      "author": "neroku69",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1415766187089985599",
+      "channel_id": "1300659662311526512",
+      "content": "ah",
+      "author": "neroku69",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     }
   ]
 }

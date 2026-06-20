@@ -1,10 +1,32 @@
 {
   "date": "2025-09-13",
-  "messages": 73,
-  "unique_authors": 17,
-  "reactions_total": 896,
-  "attachments": 22,
+  "messages": 12602,
+  "unique_authors": 237,
+  "reactions_total": 3430,
+  "attachments": 616,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 382,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 1260,
+    "🔸ห้องสนทนาภาษาไทย": 30,
+    "🔸traphase": 102,
+    "🔸lore-chat": 55,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 5,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸general-chat": 39,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸morimens-game-chat": 8500,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 755,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 255,
+    "🔸綜合討論": 1086,
+    "🔸阵容构建": 3,
     "Kath - RA Art Submission by Flares.": 2,
     "☄️": 7,
     "Tawil fan art": 5,
@@ -23,41 +45,45 @@
     "✅「已回答」代发——关于邮箱换绑": 3,
     "✅「已回答」達芙黛爾的標籤出現在「福利」的好幾個地方": 4,
     "邀請碼互助/Invitation code help each other": 1,
-    "同人创作……": 2,
-    "🔸礼包码┊gift-codes": 1
+    "同人创作……": 2
   },
   "hourly_activity": {
-    "9": 2,
-    "12": 5,
-    "15": 8,
-    "16": 7,
-    "18": 3,
-    "19": 3,
-    "14": 9,
-    "11": 5,
-    "4": 2,
-    "13": 6,
-    "1": 5,
-    "2": 2,
-    "3": 6,
-    "17": 1,
-    "20": 1,
-    "22": 4,
-    "23": 1,
-    "8": 1,
-    "21": 1,
-    "0": 1
+    "13": 703,
+    "0": 456,
+    "1": 477,
+    "2": 382,
+    "3": 734,
+    "4": 772,
+    "5": 681,
+    "6": 436,
+    "7": 608,
+    "8": 691,
+    "9": 1035,
+    "11": 561,
+    "12": 623,
+    "14": 472,
+    "15": 469,
+    "16": 397,
+    "17": 230,
+    "18": 280,
+    "19": 399,
+    "20": 372,
+    "21": 247,
+    "22": 266,
+    "23": 319,
+    "10": 992
   },
   "message_types": {
-    "0": 39,
-    "19": 18
+    "0": 1303,
+    "19": 603
   },
   "top_reacted_messages": [
     {
       "id": "1416271869958557848",
+      "channel_id": "1355094251775459399",
       "content": "**🎁DC 27000守密人达成礼 / DC27000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
       "author": "morimensstaff01",
-      "reactions": 792,
+      "reactions": 799,
       "channel": "🔸礼包码┊gift-codes"
     },
     {
@@ -68,11 +94,43 @@
       "channel": "Tawil fan art"
     },
     {
+      "id": "1416447088916697339",
+      "channel_id": "1300659662311526512",
+      "content": "Falso ya salgan de mi cabeza",
+      "author": "Deleted User",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416467206287655013",
+      "channel_id": "1300659662311526512",
+      "content": "Estoy laborando ahorita  no puedo hacerle caso a mis delirios",
+      "author": "Deleted User",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416396759025979402",
       "content": "UID: 101086498",
       "author": "zharysche",
       "reactions": 27,
       "channel": "☄️"
+    },
+    {
+      "id": "1416477086981292114",
+      "channel_id": "1300659662311526512",
+      "content": "Me exploto dc",
+      "author": "ancientbp",
+      "reactions": 26,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1416366122235723879",
+      "channel_id": "1174983699935277147",
+      "content": "請大家友好討論發言哦！以下守密人因為違反社區管理規則，已經採取對應的處罰措施:\n\n<@456226577798135808> ——在曬卡頻道攻擊正常曬卡貼文、攻",
+      "author": "morimensstaff02",
+      "reactions": 23,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1416388364495622184",
@@ -82,6 +140,22 @@
       "channel": "CaeJun Seafood Boil - Art Submission - Shiv"
     },
     {
+      "id": "1416368164828217445",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 18,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416491906191458374",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "jhonny365",
+      "reactions": 17,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1416219709925359667",
       "content": "小皮，其实是摸鱼混一下……👉👈\n\nuid100559282\n\n\n\n\n\n＃V2.3同人征集\n（其实我也不知为何我要再打一个这个）",
       "author": "xuyu0447_77124",
@@ -89,60 +163,76 @@
       "channel": "同人创作……"
     },
     {
-      "id": "1416399808750424179",
-      "content": "配水母",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416522875535360122",
+      "channel_id": "1300659662311526512",
+      "content": "ala",
+      "author": "ancientbp",
+      "reactions": 16,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1416411596107808909",
-      "content": "Can't read full level achievement",
+      "id": "1416241232526446713",
+      "channel_id": "1170692781216378960",
+      "content": "You get to in all waves except for 3",
       "author": "aurora3981",
-      "reactions": 2,
-      "channel": "💭「Processing」Level achievement text cutoff"
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416506028270551160",
-      "content": "Yup",
-      "author": "zharysche",
-      "reactions": 1,
-      "channel": "☄️"
+      "id": "1416572072892698746",
+      "channel_id": "1170692781216378960",
+      "content": "hello everyone",
+      "author": "arisuu0604",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416385104334422066",
-      "content": "只有这几个而已",
-      "author": "alatin.",
-      "reactions": 1,
-      "channel": "刚入坑，这个配队可以吗？"
+      "id": "1416355111952973854",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1416564139282792489",
-      "content": "Gotcha, thanks for the help!",
-      "author": "naviking",
-      "reactions": 1,
-      "channel": "Evaluation of my initial teams"
+      "id": "1416441158241882135",
+      "channel_id": "1170692781216378960",
+      "content": "the worst realm is the one you dislike 😤",
+      "author": "khykken",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416278517980725319",
-      "content": "Joined because the art looked really nice, but super confused on teams. I've don",
-      "author": "sairaphis",
-      "reactions": 1,
-      "channel": "New Player Team Building Help"
+      "id": "1416555011084779571",
+      "channel_id": "1170692781216378960",
+      "content": "it was downhill the moment you downloaded the game",
+      "author": "khykken",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1416378968655007867",
-      "content": "Get a Corposant, she do well even in one dupe.\nKeep pulling in chaos for nautilu",
-      "author": "mount_fisherman",
-      "reactions": 1,
-      "channel": "New Player Team Building Help"
+      "id": "1416346303272583208",
+      "channel_id": "1174983699935277147",
+      "content": "祝我成年",
+      "author": "dog794",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1416403272494874725",
-      "content": "~~誰都可以是福袋~~",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」達芙黛爾的標籤出現在「福利」的好幾個地方"
+      "id": "1416551402603282525",
+      "channel_id": "1174983699935277147",
+      "content": "如果是給其他的就更好了神王已經三疊了<:pray:1400771650064089112>",
+      "author": "wild_pansy",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1416367883407065199",
+      "channel_id": "1131839817982947429",
+      "content": "阿遙不只喜歡輸出高的 自己罵人輸出也很高",
+      "author": "undecember_news",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,25 @@
 {
   "date": "2025-07-10",
-  "messages": 106,
-  "unique_authors": 13,
-  "reactions_total": 58,
-  "attachments": 10,
+  "messages": 10733,
+  "unique_authors": 218,
+  "reactions_total": 950,
+  "attachments": 593,
   "channel_activity": {
+    "🔸lets-count": 3,
+    "🔸morimens-game-chat": 9096,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 8,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 134,
+    "🔸phòng-chat-tiếng-việt": 125,
+    "🔸canal-español": 422,
+    "🔸canal-português": 214,
+    "🔸ruang-obrolan-indonesia": 118,
+    "🔸ห้องสนทนาภาษาไทย": 21,
+    "🔸traphase": 75,
+    "🔸lore-chat": 85,
+    "🔸綜合討論": 314,
+    "🔸阵容构建": 8,
     "My Caecus art": 1,
     "*Translated & Credited* cn Fan Art Reposts": 8,
     "Upcoming Cash Shop Update/Spender Update + Spreadsheet update + Doresain delay": 1,
@@ -21,31 +36,97 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 4,
-    "18": 8,
-    "9": 2,
-    "2": 36,
-    "11": 6,
-    "21": 1,
-    "16": 1,
-    "17": 1,
-    "20": 1,
-    "6": 9,
-    "5": 27,
-    "1": 9,
-    "7": 1
+    "11": 165,
+    "14": 465,
+    "23": 346,
+    "0": 316,
+    "1": 328,
+    "2": 617,
+    "3": 555,
+    "4": 354,
+    "5": 597,
+    "6": 624,
+    "7": 313,
+    "8": 320,
+    "9": 368,
+    "10": 393,
+    "12": 627,
+    "13": 420,
+    "15": 288,
+    "16": 282,
+    "17": 456,
+    "18": 510,
+    "19": 855,
+    "20": 909,
+    "21": 455,
+    "22": 170
   },
   "message_types": {
-    "19": 1,
-    "0": 9
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1392661705573797990",
+      "channel_id": "1170692781216378960",
+      "content": "@here Hi everyone,\nI made the Morimens Mod for Slay the Spire, welcome to play!\n",
+      "author": "cwz.io",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1392695032699551896",
       "content": "I found “reference images” is rather vague words. How are those reference images",
       "author": "tete_ttnhana",
       "reactions": 14,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392697467467862026",
+      "channel_id": "1170692781216378960",
+      "content": "This mod has been officially released",
+      "author": "muliupan",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392809449898377246",
+      "channel_id": "1300659495550062592",
+      "content": "잠깐 행사부스 홍보 좀 하겠습니다\n7월 코믹월드, 디페스타에 모리멘스 굿즈 냅니다! 다른 애니랑 같이 섞여있어요",
+      "author": "jayone_j1",
+      "reactions": 7,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1392706759390527498",
+      "channel_id": "1170692781216378960",
+      "content": "Finally, the chat is normal again",
+      "author": "dragonshiny7",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392938840133468322",
+      "channel_id": "1170692781216378960",
+      "content": "YIPPIE",
+      "author": "disgustedingucci",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392950574659666000",
+      "channel_id": "1170692781216378960",
+      "content": "Wooo first double ssr",
+      "author": ".shwqa",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392956976626929787",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "toastymellos",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1392685117771612210",
@@ -62,6 +143,22 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
+      "id": "1392963782698860705",
+      "channel_id": "1170692781216378960",
+      "content": "Horla boosted my Castor exalt shield to 270+",
+      "author": "vinsette",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1392781712613838899",
+      "channel_id": "1131839817982947429",
+      "content": "深海37801怎麼突然變多",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1392835192787566722",
       "content": "the questions in themselves are not exactly rude and it's valid most of the time",
       "author": "zier.0",
@@ -69,116 +166,60 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
-      "id": "1392695916200202372",
-      "content": "let's stop here please\n\nif it feels vague to you still, please just understand t",
-      "author": "zier.0",
+      "id": "1392662237826650132",
+      "channel_id": "1170692781216378960",
+      "content": "I translated it to English yesterday so every Slay the Spire player can play",
+      "author": "cwz.io",
       "reactions": 4,
-      "channel": "❌Is the art Ai generated?"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392922720756437184",
-      "content": "This not a bug because the skin just change the cards picture, during the game t",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": "✅「Answered」bug with skin"
+      "id": "1392691879522336819",
+      "channel_id": "1170692781216378960",
+      "content": "Flares your UI is ass",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392699293311439069",
-      "content": "i think you have a point when you say that 'ai is just a tool, in the end it's s",
-      "author": "applepieeater123",
-      "reactions": 3,
-      "channel": "❌Is the art Ai generated?"
+      "id": "1392693060550524999",
+      "channel_id": "1170692781216378960",
+      "content": "File a complaint to flare and he'll forget it after 7 business days",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392823194104369244",
-      "content": "https://vt.tiktok.com/ZSBHgAS6U/",
-      "author": "j.i9star.",
-      "reactions": 2,
-      "channel": "Morimens edit"
+      "id": "1392704879247626372",
+      "channel_id": "1170692781216378960",
+      "content": "leave some chicken for us!",
+      "author": "jormiejormungandr",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392749283945742499",
-      "content": "哈喽，戈利亚的部分确实存在少量逻辑问题，校工后续会优化~\n\n莉兹的部分是正常的🌹",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」典藏館文字邏輯bug"
+      "id": "1392705691713802272",
+      "channel_id": "1170692781216378960",
+      "content": "Someone born in 2006 is an adult now",
+      "author": "vinsette",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392696650975150120",
-      "content": "they will only accept answer that feed into their lies at this rate, so just blo",
-      "author": "skyfallterminus",
-      "reactions": 2,
-      "channel": "❌Is the art Ai generated?"
+      "id": "1392709047475638412",
+      "channel_id": "1170692781216378960",
+      "content": "I hate her ass so much",
+      "author": "vinsette",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1392734741723090986",
-      "content": "You... expect way too much on people. The silent majority of people who don't ev",
-      "author": "thpdom",
-      "reactions": 2,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392940852145553610",
+      "id": "1392712489778679941",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "ev_6185",
-      "reactions": 1,
-      "channel": "*Translated & Credited* cn Fan Art Reposts"
-    },
-    {
-      "id": "1392694532679929926",
-      "content": "Goya has already conveyed it to the art department~Thank you again🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Feedback/general review on latest morimens merchandise"
-    },
-    {
-      "id": "1392694053136502967",
-      "content": "I remember that guy saying the game is going to EOS recently to new players",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392694418930405446",
-      "content": "i don't think it's an absurd question, since as op said, it's a question that's ",
-      "author": "zier.0",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392695498783330325",
-      "content": "I can't be bothered anymore, they gonna believe what they want to believe and I ",
-      "author": "nightjar0928",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392695829503938680",
-      "content": "Yep, something something. Reading comprehension is a dying skill",
-      "author": "nightjar0928",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392697036511510610",
-      "content": "the downside of Morimens gaining tractions, we start getting fake fans like them",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392754557175595080",
-      "content": "So uh im vietnamese here i really dont care about this :-:, like if this is AI g",
-      "author": "nick_colas",
-      "reactions": 1,
-      "channel": "❌Is the art Ai generated?"
-    },
-    {
-      "id": "1392688555238752400",
-      "content": "喔喔超好看，謝謝老師",
-      "author": "xuyu7162",
-      "reactions": 1,
-      "channel": "《他們的女兒》"
+      "author": "amirganj",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,27 @@
 {
   "date": "2025-05-08",
-  "messages": 119,
-  "unique_authors": 25,
-  "reactions_total": 148,
-  "attachments": 16,
+  "messages": 8522,
+  "unique_authors": 203,
+  "reactions_total": 663,
+  "attachments": 370,
   "channel_activity": {
+    "🔸morimens-game-chat": 5924,
+    "🔸剧情交流": 92,
+    "🔸晒卡分享": 12,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 322,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 245,
+    "🔸русский-канал": 101,
+    "🔸phòng-chat-tiếng-việt": 10,
+    "🔸canal-español": 243,
+    "🔸canal-português": 105,
+    "🔸ruang-obrolan-indonesia": 276,
+    "🔸ห้องสนทนาภาษาไทย": 44,
+    "🔸traphase": 18,
+    "🔸lore-chat": 21,
+    "🔸綜合討論": 982,
     "Goliath": 1,
     "study of morimens art style :))": 3,
     "Ogier sketch": 2,
@@ -26,27 +43,34 @@
     "1271491376881598494": 6
   },
   "hourly_activity": {
-    "2": 5,
-    "18": 2,
-    "19": 1,
-    "0": 2,
-    "21": 2,
-    "3": 2,
-    "16": 56,
-    "8": 6,
-    "1": 3,
-    "5": 6,
-    "6": 6,
-    "7": 2,
-    "9": 2,
-    "10": 4,
-    "13": 3,
-    "17": 14,
-    "11": 1,
-    "4": 2
+    "0": 140,
+    "1": 268,
+    "2": 521,
+    "3": 507,
+    "4": 291,
+    "5": 279,
+    "6": 336,
+    "7": 146,
+    "8": 111,
+    "9": 169,
+    "10": 225,
+    "11": 176,
+    "12": 372,
+    "13": 439,
+    "14": 477,
+    "15": 240,
+    "16": 497,
+    "17": 721,
+    "18": 320,
+    "19": 178,
+    "20": 564,
+    "21": 547,
+    "22": 490,
+    "23": 508
   },
   "message_types": {
-    "0": 12
+    "0": 5818,
+    "19": 1603
   },
   "top_reacted_messages": [
     {
@@ -55,6 +79,22 @@
       "author": "argo.4467",
       "reactions": 71,
       "channel": "study of morimens art style :))"
+    },
+    {
+      "id": "1370076732094152785",
+      "channel_id": "1131839817982947429",
+      "content": "bruh i cant read that",
+      "author": "abysalol",
+      "reactions": 55,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370076635717570693",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1370075486235000932 @everyone",
+      "author": "game.producer.light",
+      "reactions": 53,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1370085394888265899",
@@ -85,95 +125,108 @@
       "channel": "Karen"
     },
     {
-      "id": "1369921483928764436",
-      "content": "和气生财，和气生财。👀\n（要骂骂猫就好了",
+      "id": "1370077787091632179",
+      "channel_id": "1170692781216378960",
+      "content": "Our apologies! We'll send out the official English version tomorrow.",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370079148936134727",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "madlax",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1370077151201726494",
+      "channel_id": "1170692781216378960",
+      "content": "Welcome to the second part of the 1.5th anniversary update preview!\n\nThis time w",
+      "author": "omegamart",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369954317976473620",
+      "channel_id": "1131839817982947429",
+      "content": "好想喝鯊奶",
+      "author": "fengliyaowo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370118211244392580",
+      "channel_id": "1170692781216378960",
+      "content": "There's an artbook 😭 i want a copy",
+      "author": "kevsalvador",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369967066056228894",
+      "channel_id": "1131839817982947429",
+      "content": "計劃有變",
       "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "V2.2.1.3 在線維護公告"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370078683569717319",
-      "content": "我甚至每天买荒原狼和有机换印章<:takenotes:1357186646294138890>",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
-    },
-    {
-      "id": "1369951164711440464",
-      "content": "目前隨著角色增多，需求不同的密契，以及不同的屬性，配套的密契也越來越多。\n可不可以考慮按照密契约類型排序方便玩家選擇？",
-      "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "有沒有考慮出個命輪排序功能"
-    },
-    {
-      "id": "1369912455492276294",
-      "content": "輸出向 / 詩籤→隕日→巨人之刃（跨越疼痛→堅鋼意志） 「懲戒雷霆 刻印小丑」\n\n輔助拐 / 隱祕的誕生\n\n生存向 / 靈魂誕生→珊瑚女之死→跨越疼痛→吞噬搖籃",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1369866809833947156",
-      "content": "🔥 🔥",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "Goliath"
-    },
-    {
-      "id": "1370113118771875941",
-      "content": "wala pong social media other than discord 🥀",
-      "author": "argo.4467",
-      "reactions": 1,
-      "channel": "study of morimens art style :))"
-    },
-    {
-      "id": "1370078103552131224",
-      "content": "谢谢",
-      "author": "gyx_2829",
-      "reactions": 1,
-      "channel": "有塔薇佬的腿可以抱吗"
-    },
-    {
-      "id": "1369915217785524294",
-      "content": "我還沒提副作用你倒立刻貼上去，技術上這叫做打稻草人\n我也沒哭這幾個弱你就一路走到說血希垃圾，這個是滑坡\n顯然都不是抬槓的好策略吧？\n他們同期的其他角色做決策時幾",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1369931199505764424",
-      "content": "建議出四個深海+100觸傷的鑰令還有四海密契拉一下四海",
-      "author": "jackpot_7",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1369971074439184444",
-      "content": "它提供了6%的觸傷🤡 🤡",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
-    },
-    {
-      "id": "1370078152612778147",
-      "content": "夭壽那全勤可以補破萬支欸",
+      "id": "1369977926195351552",
+      "channel_id": "1131839817982947429",
+      "content": "現在講克根本分不出來是克萊門汀還是克珀珊特（",
       "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1370080304219422816",
-      "content": "~~分窝一点抽~~<:please:1356053110375714817>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "id": "1370094222954336377",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1370090730688614511",
-      "content": "B站有人录了，哦还有一个小bug，就是卡出来之后如果在剧情，这段剧情就会被掐掉了。比如说我战斗完之后看剧情，卡了再进，剧情直接跳过了。",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～系统优化篇"
+      "id": "1370155833282793622",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369879435112743022",
+      "channel_id": "1131839817982947429",
+      "content": "下班有時間再說",
+      "author": "fengliyaowo",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1370077425790222376",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "yusi4172",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1369843524551311502",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1369868473676726412",
+      "channel_id": "1170692781216378960",
+      "content": "People on the internet became so paranoid to the point of debating if good art i",
+      "author": "doktor.sex",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

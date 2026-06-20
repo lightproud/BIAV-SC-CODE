@@ -1,10 +1,33 @@
 {
   "date": "2025-08-24",
-  "messages": 57,
-  "unique_authors": 14,
-  "reactions_total": 83,
-  "attachments": 17,
+  "messages": 14291,
+  "unique_authors": 552,
+  "reactions_total": 1880,
+  "attachments": 640,
   "channel_activity": {
+    "🔸morimens-game-chat": 10035,
+    "🔸剧情交流": 9,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 50,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 4,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 923,
+    "🔸phòng-chat-tiếng-việt": 28,
+    "🔸canal-español": 539,
+    "🔸canal-português": 273,
+    "🔸ruang-obrolan-indonesia": 407,
+    "🔸ห้องสนทนาภาษาไทย": 21,
+    "🔸traphase": 89,
+    "🔸lore-chat": 104,
+    "🔸lets-count": 8,
+    "🔸频道建议┊server-suggestions": 5,
+    "🔸team-building": 38,
+    "🔸general-chat": 672,
+    "🔸邀请码互助┊swap-invitation-codes": 455,
+    "🔸綜合討論": 557,
+    "🔸阵容构建": 2,
     "My fan art submission uid 101084291": 2,
     "Ryker fanart repost": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 4,
@@ -27,32 +50,34 @@
     "1408838316153114716": 1
   },
   "hourly_activity": {
-    "22": 4,
-    "9": 2,
-    "1": 2,
-    "5": 2,
-    "19": 1,
-    "20": 1,
-    "13": 2,
-    "12": 5,
-    "8": 4,
-    "7": 1,
-    "16": 6,
-    "4": 2,
-    "18": 1,
-    "3": 4,
-    "6": 2,
-    "17": 2,
-    "21": 5,
-    "10": 2,
-    "14": 1,
-    "15": 1,
-    "11": 1,
-    "0": 6
+    "0": 577,
+    "1": 450,
+    "2": 685,
+    "3": 468,
+    "4": 356,
+    "5": 630,
+    "6": 568,
+    "7": 410,
+    "8": 493,
+    "9": 483,
+    "10": 816,
+    "11": 949,
+    "12": 712,
+    "13": 719,
+    "14": 588,
+    "15": 633,
+    "16": 715,
+    "17": 448,
+    "18": 522,
+    "19": 962,
+    "20": 603,
+    "21": 394,
+    "22": 544,
+    "23": 566
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "0": 9609,
+    "19": 4066
   },
   "top_reacted_messages": [
     {
@@ -63,11 +88,123 @@
       "channel": "Ryker fanart repost"
     },
     {
+      "id": "1409256886926049392",
+      "channel_id": "1405837769212821554",
+      "content": "Bruh i thought we got a code😒💔",
+      "author": "fallbeyond",
+      "reactions": 27,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
       "id": "1409300217739608146",
       "content": "W.I.P\n<:takenotes:1357186646294138890>",
       "author": "eyadx23",
       "reactions": 24,
       "channel": "My fan art submission uid 101084291"
+    },
+    {
+      "id": "1409257376808439818",
+      "channel_id": "1405837769212821554",
+      "content": "Im going to draw you pregnant",
+      "author": "paladin_in_red",
+      "reactions": 20,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
+      "id": "1409136423948390410",
+      "channel_id": "1131839817982947429",
+      "content": "宿敵就是要素對方的迪",
+      "author": "ernest_heart",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1409257073497342012",
+      "channel_id": "1405837769212821554",
+      "content": "Goliath, Mpreg him",
+      "author": "sylverius",
+      "reactions": 15,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
+      "id": "1409059912364986398",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/morimens-miryam-aequor-card-game-disbelief-gif-6650516673",
+      "author": "null.pointer_exception",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409257475902935111",
+      "channel_id": "1405837769212821554",
+      "content": "mods, mpreg that guy with d-slime",
+      "author": "startofu_fish",
+      "reactions": 13,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
+      "id": "1409218325191458876",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone -------->TOMMOROW, ALL WELCOME BIS DPS CORPOOOOOOOOOOOOOOOOOOOOOOOOOOO",
+      "author": "ackadio",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409147498026504212",
+      "channel_id": "1170692781216378960",
+      "content": "More than just the BP LOL, whaled a bit more than expected but so far it's a ver",
+      "author": "angbak",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409282889945845911",
+      "channel_id": "1170692781216378960",
+      "content": "<@1288446421573304364>\nOk, i test it a lot and i have some interesting informati",
+      "author": "vxvendetta",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409210094859587585",
+      "channel_id": "1170692781216378960",
+      "content": "Someone with a cringe take? Mpreg emoji. Someone with a based take? Mpreg emoji.",
+      "author": "sophiechoice",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409321081004626112",
+      "channel_id": "1405837769212821554",
+      "content": "<:goodjob2:1356053078738206840>",
+      "author": "mobiosity",
+      "reactions": 10,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
+    },
+    {
+      "id": "1409096359356792943",
+      "channel_id": "1170692781216378960",
+      "content": "why the hello kitty gun",
+      "author": "null.pointer_exception",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409101551666200596",
+      "channel_id": "1170692781216378960",
+      "content": "Mpreg Hamel still a thing?",
+      "author": "lowtownnivn",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1409141949121953823",
+      "channel_id": "1170692781216378960",
+      "content": "G tulu prayge",
+      "author": "faltracos",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1408969158619566200",
@@ -77,74 +214,28 @@
       "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
     },
     {
-      "id": "1409039733090156605",
-      "content": "聽說之後會開始陸續加入語音，想問問某些角色的劇情內容會不會有所變化，有些角色的劇情真的太短了有點難過<:takenotes:135718664629413889",
-      "author": "lanl4n",
-      "reactions": 3,
-      "channel": "✅「已回答」關於繁衍狂熱的劇情"
+      "id": "1409118654817108018",
+      "channel_id": "1170692781216378960",
+      "content": "So GMurphy will still be shorty",
+      "author": "allyera.emano.hemafuri",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409038135068983316",
-      "content": "如題，能提升很多人中期命輪多了，要疊位卻找不到東西在哪裡的狀況",
-      "author": "oct3000",
-      "reactions": 3,
-      "channel": "✅「已回答」希望加入日服同款同名命輪自動疊位"
+      "id": "1409256574878482512",
+      "channel_id": "1170692781216378960",
+      "content": "## Ppl be like oh no AI gonna replace me, bitch you're already AI",
+      "author": "itsjeffitsjeffitsjeff",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1409203648193630278",
-      "content": "感謝黃金熊、瑪爾、吶吶～是納西妲噢～協助提供資料與來源\n\n認識陣容\n\n本期為截止至2025年8月24號前已知的常見陣容介紹\n\n\n常見陣容（排名不分先後）\n\n麻痹",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "相位對弈—認識隊伍"
-    },
-    {
-      "id": "1409293515610914937",
-      "content": "but yeah probably just post things in the thread, I've been going through that t",
-      "author": "arkaether",
-      "reactions": 2,
-      "channel": "💭「Processing」Missing updated text and errors"
-    },
-    {
-      "id": "1409099471962378353",
-      "content": "https://vxtwitter.com/H135M7/status/1957363939815375027?t=i6ZXJPpRmpmr-7XdODhI2Q",
-      "author": "nazhigezihk",
-      "reactions": 2,
-      "channel": "萊克同人轉載"
-    },
-    {
-      "id": "1409071754550313013",
-      "content": "赶紧把商城兑换奖励这个端上来可以吗，我不想天天打那个破相位对弈了",
-      "author": "nekoiiii.",
-      "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1409233238118895739",
-      "content": "I tested this ingame and Lasting Loathe is indeed treated as a strike, so I'll a",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "💭「Processing」Missing updated text and errors"
-    },
-    {
-      "id": "1409104931797078068",
-      "content": "好色",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "萊克同人轉載"
-    },
-    {
-      "id": "1408983659150573688",
-      "content": "好美丽的饭……\n好赤（嚼嚼嚼）",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
-    },
-    {
-      "id": "1409011587590918318",
-      "content": "老蘇（嚼嚼嚼）這麼好赤的飯（嚼嚼嚼）怎麼現在才上（嚼嚼嚼）",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+      "id": "1409257920079855636",
+      "channel_id": "1405837769212821554",
+      "content": "Take this and leave me be 😭😭😭",
+      "author": "chilltaco",
+      "reactions": 7,
+      "channel": "🔸邀请码互助┊swap-invitation-codes"
     }
   ]
 }

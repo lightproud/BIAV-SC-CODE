@@ -1,10 +1,28 @@
 {
   "date": "2025-09-27",
-  "messages": 72,
-  "unique_authors": 11,
-  "reactions_total": 150,
-  "attachments": 55,
+  "messages": 9499,
+  "unique_authors": 172,
+  "reactions_total": 1650,
+  "attachments": 483,
   "channel_activity": {
+    "🔸русский-канал": 219,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 111,
+    "🔸canal-português": 31,
+    "🔸ruang-obrolan-indonesia": 22,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 32,
+    "🔸lore-chat": 8,
+    "🔸lets-count": 8,
+    "🔸team-building": 120,
+    "🔸general-chat": 170,
+    "🔸邀请码互助┊swap-invitation-codes": 22,
+    "🔸morimens-game-chat": 8005,
+    "🔸晒卡分享": 8,
+    "🔸欢乐梗图": 4,
+    "🔸한국어-채팅방": 36,
+    "🔸綜合討論": 509,
+    "🔸阵容构建": 24,
     "Mythag`s Cat want to share cool art with you": 3,
     "Queens !": 2,
     "🎨🖌️": 1,
@@ -20,22 +38,34 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
-    "10": 23,
-    "11": 6,
-    "0": 1,
-    "4": 2,
-    "6": 1,
-    "8": 26,
-    "1": 2,
-    "3": 1,
-    "5": 3,
-    "9": 3,
-    "14": 2,
-    "12": 2
+    "6": 444,
+    "9": 354,
+    "10": 466,
+    "12": 229,
+    "13": 360,
+    "14": 523,
+    "15": 357,
+    "16": 460,
+    "17": 506,
+    "18": 158,
+    "19": 432,
+    "20": 442,
+    "21": 348,
+    "22": 208,
+    "1": 237,
+    "0": 275,
+    "3": 787,
+    "4": 723,
+    "7": 286,
+    "11": 462,
+    "23": 330,
+    "8": 342,
+    "2": 466,
+    "5": 304
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "19": 133,
+    "0": 708
   },
   "top_reacted_messages": [
     {
@@ -67,6 +97,22 @@
       "channel": "忘却前夜OST：畸变丰穰之种"
     },
     {
+      "id": "1421360015717040302",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "duxadidus",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1421301879501226096",
+      "channel_id": "1170692781216378960",
+      "content": "Paying discord for nitro to be able to share feet emote",
+      "author": "moyashi0672",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1421303622536527933",
       "content": "can we get the update for ddive and traphase leaderboard based rewards? moving i",
       "author": "lumato",
@@ -74,39 +120,108 @@
       "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
-      "id": "1421452403105861743",
-      "content": "補發杜勒考官的戰績",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": ""
+      "id": "1421644038028791889",
+      "channel_id": "1170692781216378960",
+      "content": "I am an amateur voice actress, although would like to be hirede one-day <:cry3:1",
+      "author": "inana_istar",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421439785771335761",
+      "id": "1421644186670596118",
+      "channel_id": "1170692781216378960",
+      "content": "Or just record “Mpreg” and we’d know",
+      "author": "fischperch",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421644657980477550",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "忘却前夜OST：畸变丰穰之种"
+      "author": "inana_istar",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421383436022710282",
-      "content": "it's a sign my friend<:wink:1400771743630491749>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": "🎨🖌️"
+      "id": "1421441509818896477",
+      "channel_id": "1170692781216378960",
+      "content": "Well... Could have used ||penis|| as starting word for wordle <:dead:13560826275",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421439063092891679",
-      "content": "<:snicker:1400771784982397049> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：畸变丰穰之种"
+      "id": "1421473975963226213",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1392146051590525010/9",
+      "author": "amirganj",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1421511153502130339",
-      "content": "<:cry3:1356082134447558748>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "小皮小皮"
+      "id": "1421337413434867885",
+      "channel_id": "1174983699935277147",
+      "content": "第一次上大师，必须炫耀一下",
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421440903863734324",
+      "channel_id": "1174983699935277147",
+      "content": "普池",
+      "author": "txt101225.",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421432611137388605",
+      "channel_id": "1170692781216378960",
+      "content": "Why are u agreeing and celebrating!!!! <@1359156800108105941>",
+      "author": "red_rest",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421505857237024818",
+      "channel_id": "1170692781216378960",
+      "content": "gramona skin is real",
+      "author": "gisstar",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421587190571339999",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bongosjam",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421521821420752916",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1421450430512103467",
+      "channel_id": "1170692781216378960",
+      "content": "can i be Flares’s cheerleader?",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1421480181385793607",
+      "channel_id": "1170692781216378960",
+      "content": "Hello guys",
+      "author": "speardroid",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

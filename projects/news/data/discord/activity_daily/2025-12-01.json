@@ -1,10 +1,35 @@
 {
   "date": "2025-12-01",
-  "messages": 532,
-  "unique_authors": 52,
-  "reactions_total": 367,
-  "attachments": 52,
+  "messages": 24670,
+  "unique_authors": 454,
+  "reactions_total": 4691,
+  "attachments": 1151,
   "channel_activity": {
+    "🔸lets-count": 32,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 961,
+    "🔸general-chat": 666,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 1816,
+    "🔸机器人命令┊bot-commands": 120,
+    "🔸剧情交流": 624,
+    "🔸晒卡分享": 18,
+    "🔸课间休息闲聊": 3,
+    "🔸交友频道": 20,
+    "🔸한국어-채팅방": 31,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 729,
+    "🔸phòng-chat-tiếng-việt": 107,
+    "🔸canal-español": 506,
+    "🔸canal-português": 179,
+    "🔸ruang-obrolan-indonesia": 1145,
+    "🔸ห้องสนทนาภาษาไทย": 481,
+    "🔸traphase": 71,
+    "🔸lore-chat": 552,
+    "🔸綜合討論": 2836,
+    "🔸阵容构建": 14,
+    "🔸morimens-game-chat": 13200,
     "Stolen memes of the day": 1,
     "Goliath Doodle": 3,
     "William painting": 1,
@@ -77,42 +102,61 @@
     "1441326394817908736": 15
   },
   "hourly_activity": {
-    "14": 18,
-    "19": 8,
-    "21": 82,
-    "17": 38,
-    "3": 31,
-    "13": 20,
-    "23": 2,
-    "12": 38,
-    "0": 4,
-    "4": 7,
-    "6": 21,
-    "15": 32,
-    "16": 132,
-    "10": 7,
-    "8": 14,
-    "18": 8,
-    "20": 14,
-    "9": 14,
-    "7": 20,
-    "22": 7,
-    "2": 9,
-    "5": 3,
-    "1": 3
+    "0": 721,
+    "1": 893,
+    "2": 966,
+    "4": 647,
+    "5": 772,
+    "9": 1470,
+    "10": 946,
+    "11": 1378,
+    "13": 1278,
+    "15": 1690,
+    "16": 1805,
+    "19": 500,
+    "20": 851,
+    "22": 420,
+    "23": 359,
+    "3": 1584,
+    "6": 1014,
+    "7": 679,
+    "8": 1309,
+    "12": 1643,
+    "14": 1068,
+    "17": 1148,
+    "18": 770,
+    "21": 759
   },
   "message_types": {
-    "0": 48,
-    "19": 8,
-    "4": 1
+    "0": 2673,
+    "19": 934,
+    "23": 1,
+    "6": 1,
+    "20": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1445073372114583643",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone We’re very sorry that once again we weren’t able to find a Raid event ",
+      "author": "game.producer.light",
+      "reactions": 735,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1444972986187911228",
       "content": "Tulu",
       "author": "calcduc",
       "reactions": 40,
       "channel": "Mini-rimens"
+    },
+    {
+      "id": "1445073470370222250",
+      "channel_id": "1170692781216378960",
+      "content": "game design is hard Light don't take it personally",
+      "author": "paperprince",
+      "reactions": 39,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1445022854046548010",
@@ -122,11 +166,51 @@
       "channel": "✅「Answered」Unfair Raid Event"
     },
     {
+      "id": "1445073735706214492",
+      "channel_id": "1170692781216378960",
+      "content": "Give us 200 limited pulls as compensation!!!!",
+      "author": "spooky_penguin_",
+      "reactions": 34,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1444981780976238733",
       "content": "UID: 101171815\n\n\"If I can free this world from its suffering, I shall be content",
       "author": "sofiaebby",
       "reactions": 31,
       "channel": ""
+    },
+    {
+      "id": "1445073796779212910",
+      "channel_id": "1170692781216378960",
+      "content": "Guys this game is ass",
+      "author": "releighmaince",
+      "reactions": 29,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445074005164822691",
+      "channel_id": "1170692781216378960",
+      "content": "At the very least, if you allow players to participate in the raid after it's cl",
+      "author": "naviking",
+      "reactions": 28,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445074522582810735",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445074994601394212",
+      "channel_id": "1170692781216378960",
+      "content": "give everyone the today's 17 times rewards as compensation",
+      "author": "wolfierce",
+      "reactions": 19,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1445154383858761881",
@@ -136,6 +220,22 @@
       "channel": "Raid Problems and Solutions (The feedbacks have been shared with Light )"
     },
     {
+      "id": "1445074099226284083",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445074618737229835",
+      "channel_id": "1170692781216378960",
+      "content": "What if instead of making it solo rewards, make it like typical raid boss, \nwher",
+      "author": "applepatapon",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1445066492180828382",
       "content": "New player here 🙇‍♀️\nNice to meet you!\n\nUID: 101274471",
       "author": "yukisetsura",
@@ -143,11 +243,35 @@
       "channel": "Goliath Doodle"
     },
     {
+      "id": "1445074589251141896",
+      "channel_id": "1170692781216378960",
+      "content": "\"Unfortunately, the current number of players and the speed at which they partic",
+      "author": "wmdrayal",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445085417757081763",
+      "channel_id": "1170692781216378960",
+      "content": "Thats actually how ch4 starts",
+      "author": "cornonthemacabre_",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1444887433417199698",
       "content": "這件事沒有炎上的原因不是問題不夠嚴重而是你遊的資深玩家越來越少了",
       "author": "shchng.",
       "reactions": 17,
       "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1445073840693706844",
+      "channel_id": "1131839817982947429",
+      "content": "沒有2.5週年了",
+      "author": "ernest_heart",
+      "reactions": 16,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1445102330700632156",
@@ -161,90 +285,6 @@
       "content": "No fix for the raid boss?",
       "author": "sanna7424",
       "reactions": 16,
-      "channel": "V2.4.0.8 在线维护公告"
-    },
-    {
-      "id": "1444993068146102312",
-      "content": "感谢大家的设计🥰 \n恭喜下面10位设计师获得1000银钥的奖励，奖励会在本周五前发到大家邮箱~\n\nThank you all for your design😊 ",
-      "author": "morimensstaff01",
-      "reactions": 13,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444936148521717902",
-      "content": "why did i even bother giving feedback about the raid when it's going to fall on ",
-      "author": "jormiejormungandr",
-      "reactions": 10,
-      "channel": "V2.4.0.7 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1444890325662437406",
-      "content": "Also not entirely sure if the change makes sense to be called a bug, like consid",
-      "author": "detectivedango",
-      "reactions": 9,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1445063807998103727",
-      "content": "就移除掉上限  改成素材  設點什麼全服的次數獎勵  討伐獎勵    愛刷的就刷素材  不愛刷地等著領階段獎勵不好嗎",
-      "author": "shaw_51",
-      "reactions": 7,
-      "channel": "多来点大眼"
-    },
-    {
-      "id": "1444967746054914190",
-      "content": "图鲁，但是章鱼烧。也是四月前画的了，因为是很小一部分我还在想要不要发出来？",
-      "author": "lunakknd",
-      "reactions": 7,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1445065305314300016",
-      "content": "",
-      "author": "._.aahh",
-      "reactions": 6,
-      "channel": "Stolen memes of the day"
-    },
-    {
-      "id": "1445024109892210860",
-      "content": "I don't get why it's limited if theyre already limiting the max number of attemp",
-      "author": "qijiu",
-      "reactions": 6,
-      "channel": "✅「Answered」Unfair Raid Event"
-    },
-    {
-      "id": "1445025497162715136",
-      "content": "<@633215996508766229> it was 4am here in Italy when the maintenance finished and",
-      "author": "sanna7424",
-      "reactions": 6,
-      "channel": "✅「Answered」Unfair Raid Event"
-    },
-    {
-      "id": "1444968740595830996",
-      "content": "摸的学生图鲁？因为也是一小部分所以我也在琢磨要不要发。边上的角色是其他游戏的触手娘，只是因为属性相似我画到了一起，因其和游戏无关所以我尽量截掉了。（从我的头像就",
-      "author": "lunakknd",
-      "reactions": 6,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1444842357013872772",
-      "content": "\"beautifully\" drawn ensemble using only my finger and android photos pen",
-      "author": "reya.li",
-      "reactions": 5,
-      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
-    },
-    {
-      "id": "1444889452119068853",
-      "content": "||下一個被踢的就是我🤡 🤡 ||",
-      "author": "shchng.",
-      "reactions": 5,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1445026206507597935",
-      "content": "守密人你好：\n       弥萨格大学校务处将于12月1日20:15(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
-      "author": "morimensstaff02",
-      "reactions": 5,
       "channel": "V2.4.0.8 在线维护公告"
     }
   ]

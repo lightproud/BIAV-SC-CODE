@@ -1,10 +1,29 @@
 {
   "date": "2025-09-20",
-  "messages": 29,
-  "unique_authors": 5,
-  "reactions_total": 43,
-  "attachments": 8,
+  "messages": 11616,
+  "unique_authors": 256,
+  "reactions_total": 2797,
+  "attachments": 419,
   "channel_activity": {
+    "🔸русский-канал": 36,
+    "🔸phòng-chat-tiếng-việt": 5,
+    "🔸canal-español": 180,
+    "🔸canal-português": 22,
+    "🔸ruang-obrolan-indonesia": 302,
+    "🔸ห้องสนทนาภาษาไทย": 66,
+    "🔸traphase": 119,
+    "🔸lore-chat": 92,
+    "🔸lets-count": 5,
+    "🔸team-building": 58,
+    "🔸general-chat": 585,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸morimens-game-chat": 8867,
+    "🔸剧情交流": 28,
+    "🔸晒卡分享": 19,
+    "🔸相位对弈": 19,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 3,
+    "🔸綜合討論": 1171,
     "Thais Warm up": 1,
     "Pls help explain how to play my team in depth": 1,
     "Worth buying Doll shards?": 1,
@@ -18,22 +37,52 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "2": 3,
-    "12": 1,
-    "20": 1,
-    "6": 1,
-    "23": 2,
-    "8": 2,
-    "10": 9,
-    "5": 2,
-    "14": 6,
-    "15": 1,
-    "16": 1
+    "5": 459,
+    "7": 618,
+    "9": 446,
+    "13": 559,
+    "17": 737,
+    "21": 523,
+    "22": 672,
+    "11": 198,
+    "0": 547,
+    "1": 478,
+    "2": 320,
+    "3": 879,
+    "4": 640,
+    "6": 700,
+    "10": 288,
+    "12": 188,
+    "15": 393,
+    "16": 486,
+    "18": 603,
+    "19": 314,
+    "23": 187,
+    "14": 368,
+    "8": 676,
+    "20": 337
   },
   "message_types": {
-    "0": 3
+    "0": 1151,
+    "19": 327
   },
   "top_reacted_messages": [
+    {
+      "id": "1418835480526721024",
+      "channel_id": "1170692781216378960",
+      "content": "A Keeper told me some time ago that she made a Silver Key herself! In my view, t",
+      "author": "game.producer.light",
+      "reactions": 1050,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419065171493519370",
+      "channel_id": "1170692781216378960",
+      "content": "I'M NOT BALD!",
+      "author": "frosthief",
+      "reactions": 35,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1418904737213841408",
       "content": "",
@@ -42,46 +91,140 @@
       "channel": "詹金"
     },
     {
-      "id": "1418838897483579492",
-      "content": "不好意思我活過來了，為了證明我活著我放一下給我放置很久的哈姆林",
-      "author": "Deleted User",
-      "reactions": 5,
-      "channel": "我們偉大的音樂家（哈姆林樓？）"
+      "id": "1418840650488742013",
+      "channel_id": "1170692781216378960",
+      "content": "@ everyone",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418964590590693428",
-      "content": "不是我喜欢的结局直接重开",
-      "author": "yingmai_",
-      "reactions": 5,
-      "channel": ""
+      "id": "1418835608159387779",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418968063994499206",
+      "id": "1418923516593569903",
+      "channel_id": "1170692781216378960",
+      "content": "🫃",
+      "author": "templarkz",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418835809787973653",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "yingmai_",
-      "reactions": 5,
-      "channel": ""
+      "author": "lordofnappieskingofsnackies",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418853848847749181",
-      "content": "如题，部分角色立绘和幻衣放大后分辨率较差，后续是否会引入优化或是独立资源包？\n目前的重灾区是杜勒塞因幻衣勿忘我\n卡斯托尔和环行拉蒙娜这类立绘本身精度高/拥有动态",
-      "author": "rutsah_avhril",
-      "reactions": 4,
-      "channel": "✅「已回答」角色立绘/缩略图画质优化"
+      "id": "1419094383646605473",
+      "channel_id": "1170692781216378960",
+      "content": "Clench harder....",
+      "author": "hitsu4",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418793371887079565",
-      "content": "<:pray:1400771650064089112>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+      "id": "1418872290439073913",
+      "channel_id": "1170692781216378960",
+      "content": "Being mpreg cost me my legs",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1418872460924813343",
-      "content": "the issue isn't that it's just Steam client, but SteamOS is based on a another O",
-      "author": "wolfierce",
-      "reactions": 1,
-      "channel": "✅「Answered」We need steamOS compatibility"
+      "id": "1418893160041414666",
+      "channel_id": "1170692781216378960",
+      "content": "i am enamored with this woman",
+      "author": "the_art_of_foley",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418912178664247408",
+      "channel_id": "1170692781216378960",
+      "content": "Hallo",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418915264300585033",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1418835599275593779",
+      "channel_id": "1170692781216378960",
+      "content": "I was at work and i saw morimes spire mode release date on my work order and the",
+      "author": "aslechi",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418835816146272347",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/everyone-ping-discord-useless-gif-18197332",
+      "author": "blecnes",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418919151539327046",
+      "channel_id": "1173463482503536711",
+      "content": "既然说到珊了，搬一下英区的考据过来（）\nhttps://sites.google.com/view/unofficial-morimensgenesis/aeq",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1418760095256412271",
+      "channel_id": "1170692781216378960",
+      "content": "nom.",
+      "author": "runningaway_fs",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418836053552402503",
+      "channel_id": "1170692781216378960",
+      "content": "Give Etsy link",
+      "author": "versailles",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418847714665304164",
+      "channel_id": "1170692781216378960",
+      "content": "wheelchairmens",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1418889225612558489",
+      "channel_id": "1170692781216378960",
+      "content": "Yes, I get that now.",
+      "author": "hitsu4",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1419089069807374407",
+      "channel_id": "1170692781216378960",
+      "content": "whoever ❌ 'd my message thinks love exclusively speaks english",
+      "author": "bongosjam",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

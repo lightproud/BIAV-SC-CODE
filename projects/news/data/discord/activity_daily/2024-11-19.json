@@ -1,10 +1,23 @@
 {
   "date": "2024-11-19",
-  "messages": 53,
-  "unique_authors": 21,
-  "reactions_total": 47,
-  "attachments": 15,
+  "messages": 4976,
+  "unique_authors": 194,
+  "reactions_total": 238,
+  "attachments": 286,
   "channel_activity": {
+    "🔸綜合討論": 1027,
+    "🔸阵容构建": 17,
+    "🔸morimens-game-chat": 3116,
+    "🔸剧情交流": 68,
+    "🔸相位对弈": 23,
+    "🔸한국어-채팅방": 166,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 25,
+    "🔸phòng-chat-tiếng-việt": 319,
+    "🔸canal-español": 96,
+    "🔸canal-português": 23,
+    "🔸ruang-obrolan-indonesia": 38,
+    "🔸ห้องสนทนาภาษาไทย": 3,
     "V1.7.1.0 停服維護公告": 1,
     "V1.7.1.1 在線維護公告": 2,
     "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 1,
@@ -23,25 +36,34 @@
     "跑不掉 不跑了（原地躺下": 4
   },
   "hourly_activity": {
-    "17": 8,
-    "12": 2,
-    "13": 2,
-    "1": 2,
-    "2": 1,
-    "15": 4,
-    "16": 8,
-    "22": 6,
-    "4": 6,
-    "20": 3,
-    "18": 2,
-    "6": 1,
-    "3": 1,
-    "10": 2,
-    "7": 5
+    "0": 97,
+    "1": 106,
+    "2": 170,
+    "3": 284,
+    "4": 146,
+    "5": 269,
+    "6": 342,
+    "7": 143,
+    "8": 208,
+    "9": 355,
+    "10": 177,
+    "11": 253,
+    "12": 406,
+    "13": 240,
+    "14": 435,
+    "15": 537,
+    "16": 295,
+    "17": 274,
+    "18": 57,
+    "19": 54,
+    "20": 22,
+    "23": 71,
+    "21": 7,
+    "22": 28
   },
   "message_types": {
-    "19": 1,
-    "0": 3
+    "19": 797,
+    "0": 4126
   },
   "top_reacted_messages": [
     {
@@ -52,11 +74,83 @@
       "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
+      "id": "1308309632145690624",
+      "channel_id": "1131839874132090890",
+      "content": "想整理一篇精華，讓新手玩家可以用簡單的常駐角打黑潮，有人要一起分享嗎",
+      "author": "ekko9950",
+      "reactions": 17,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1308467924109103174",
+      "channel_id": "1131839817982947429",
+      "content": "这游戏挺好玩的啊，比阴阳师好玩",
+      "author": "socra0791",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308451847241072741",
+      "channel_id": "1131839817982947429",
+      "content": "忘却打高倍率深潜只会觉得死抗是你游最伟大的发明（）",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308449601149206578",
+      "channel_id": "1131839874132090890",
+      "content": "幾天後開始慢慢整理自己的心得，這幾天太忙了",
+      "author": "ekko9950",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1308416198731497492",
       "content": "Thai language ( GPT beta ) \nOld version is much better. \nNew version after Tawil",
       "author": "reireal",
       "reactions": 5,
       "channel": "New Thai language ( GPT beta ) so bad"
+    },
+    {
+      "id": "1308267736346005646",
+      "channel_id": "1131839817982947429",
+      "content": "主要怕，投资方放弃了，然后多充去养新游，刚入坑1个月氪了6k左右",
+      "author": "honkai_akivili",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308444357438996605",
+      "channel_id": "1131839817982947429",
+      "content": "我的红花只能去打一些简单的可可爱爱的关卡",
+      "author": "yulingjie2003",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308463403496374314",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇對王使用了回答塔薇×10次",
+      "author": "kevin.yienwenst",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308221857874575450",
+      "channel_id": "1173463482503536711",
+      "content": "現在那邊除了唱衰你遊沒啥別的風向了（）",
+      "author": "yusi4172",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1308424753622548502",
+      "channel_id": "1173463482503536711",
+      "content": "結果媽媽也是他",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1308289337963712623",
@@ -66,39 +160,68 @@
       "channel": "FB無法登入"
     },
     {
-      "id": "1308238501581422682",
-      "content": "忘卻不是好遊戲，什麼才是好遊戲啊😭 至少是個有潛力的IP\n好好經營也是很棒的<:wish:1236951537788649492>",
-      "author": "35sui",
+      "id": "1308319648877641729",
+      "channel_id": "1131839817982947429",
+      "content": "新手24吧，想要塔薇也有登录送的本体",
+      "author": "lunar77_.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308422915955490826",
+      "channel_id": "1131839817982947429",
+      "content": "有夢最美，曦光相隨",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308284679438204940",
+      "channel_id": "1131839817982947429",
+      "content": "最好2啟",
+      "author": "gd_prawl",
       "reactions": 2,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308421730095861842",
-      "content": "校貓最好是把遊戲繼續做下去我們才能看到戈利亞進學校",
-      "author": "unmasked0406",
+      "id": "1308454761606942811",
+      "channel_id": "1131839817982947429",
+      "content": "唯一认知就是每天打满50张然后下播",
+      "author": "qiamo0664",
       "reactions": 2,
-      "channel": "跑不掉 不跑了（原地躺下"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308491003899936768",
-      "content": "~~請願本源朵爾實裝上線~~",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "請願本源朵爾進典藏館以及實裝上線"
+      "id": "1308467004138717344",
+      "channel_id": "1131839817982947429",
+      "content": "可能会出个男角",
+      "author": "qiamo0664",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308281272128503828",
-      "content": "🤔",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "探員老bug"
+      "id": "1308473055068160120",
+      "channel_id": "1131839817982947429",
+      "content": "谁一开始对这游戏评价不高的（）",
+      "author": "qiamo0664",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308466889030369412",
-      "content": "我们确实在调整尝试统一化翻译名词，所以发生了变化。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "更新後英文翻譯文本出現問題"
+      "id": "1308479002243104910",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308263179230515281",
+      "channel_id": "1170692781216378960",
+      "content": "https://discordapp.com/channels/1131791637933199470/1180845276823564288",
+      "author": "linireo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

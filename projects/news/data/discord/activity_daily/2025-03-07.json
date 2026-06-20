@@ -1,10 +1,23 @@
 {
   "date": "2025-03-07",
-  "messages": 112,
-  "unique_authors": 22,
-  "reactions_total": 33,
-  "attachments": 5,
+  "messages": 4330,
+  "unique_authors": 117,
+  "reactions_total": 173,
+  "attachments": 181,
   "channel_activity": {
+    "🔸русский-канал": 4,
+    "🔸canal-español": 16,
+    "🔸canal-português": 128,
+    "🔸ruang-obrolan-indonesia": 244,
+    "🔸ห้องสนทนาภาษาไทย": 365,
+    "🔸traphase": 227,
+    "🔸lore-chat": 52,
+    "🔸綜合討論": 492,
+    "🔸阵容构建": 46,
+    "🔸morimens-game-chat": 2612,
+    "🔸相位对弈": 7,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 24,
     "fuckupatoo's morimens fanfics": 1,
     "Star Chapter 2.1 Tier List": 8,
     "V2.1.1.0 停服維護公告": 86,
@@ -17,23 +30,34 @@
     "女守X鯊（OOC警告）": 1
   },
   "hourly_activity": {
-    "2": 12,
-    "7": 12,
-    "9": 3,
-    "4": 15,
-    "5": 21,
-    "6": 33,
-    "8": 1,
-    "10": 3,
-    "11": 3,
-    "13": 4,
-    "16": 2,
-    "3": 2,
-    "15": 1
+    "19": 76,
+    "3": 335,
+    "6": 270,
+    "22": 57,
+    "23": 10,
+    "2": 158,
+    "8": 214,
+    "10": 220,
+    "11": 115,
+    "12": 94,
+    "13": 390,
+    "14": 243,
+    "15": 99,
+    "16": 162,
+    "17": 92,
+    "18": 254,
+    "20": 117,
+    "21": 152,
+    "0": 115,
+    "1": 99,
+    "5": 427,
+    "7": 252,
+    "9": 175,
+    "4": 204
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "0": 822,
+    "19": 214
   },
   "top_reacted_messages": [
     {
@@ -51,53 +75,148 @@
       "channel": "V2.1.1.0 停服維護公告"
     },
     {
-      "id": "1347566379431100486",
-      "content": "只有前面两个大段位才有这个票，为啥不能普及一下……",
-      "author": "luhongran",
+      "id": "1347570224932589679",
+      "channel_id": "1131839817982947429",
+      "content": "男摸穢管",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347539993022693461",
+      "channel_id": "1131839874132090890",
+      "content": "什麼叫忘卻篇還活著\n忘卻篇大殺四方好吧",
+      "author": "cwz.io",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1347522635700899850",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有血肉玩家評價這個",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347550311014989916",
+      "channel_id": "1131839817982947429",
+      "content": "回合結束時把小孩沖進馬桶",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347468176954232852",
+      "channel_id": "1131839817982947429",
+      "content": "抬走下一位",
+      "author": "kafka0u0.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347545384565739573",
+      "channel_id": "1131839817982947429",
+      "content": "我小小萌新",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347443768059494512",
+      "channel_id": "1131839874132090890",
+      "content": "然後全投超維肯定是留溫吧",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1347574082287308921",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah nobody needs a buff in arc 1 cuz I'm done with it",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347456280205201420",
+      "channel_id": "1300659662311526512",
+      "content": "Ajustes Despertados:\n○ Murphy-Adaptabilidad Espiritual: Cada vez que gana Sacrif",
+      "author": "Deleted User",
       "reactions": 2,
-      "channel": "以前的表情+头像获取方式不能再多点么？"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1347424233516568577",
-      "content": "<:stoppage:1236938521365839872>",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "V2.1.1.0 停服維護公告"
+      "id": "1347447366114086983",
+      "channel_id": "1300659802455674972",
+      "content": ".",
+      "author": "snowpdl",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1347446002101256253",
-      "content": "除非他们开放活动期间全池可用❓",
-      "author": "cs001092",
-      "reactions": 1,
-      "channel": "V2.1.1.0 停服維護公告"
+      "id": "1347493548286672988",
+      "channel_id": "1300659802455674972",
+      "content": "คุณคิดว่าเราเป้นโอลด์ก็อดเหรอ",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1347449354385887235",
-      "content": "他的意思是假設原本100獻祭\n獲得100獻祭之後變200\n同時會獲得200×6%的觸力",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": "V2.1.1.0 停服維護公告"
+      "id": "1347513659613646868",
+      "channel_id": "1300659802455674972",
+      "content": "สวัสดีคนที่ 5",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1347450043879133186",
-      "content": "~~這也太猛了吧~~",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "V2.1.1.0 停服維護公告"
+      "id": "1347514619098300517",
+      "channel_id": "1300659802455674972",
+      "content": "เรียกนางว่าฮาฟฟู่",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1347395130914508841",
-      "content": "",
-      "author": "legion_schindler",
-      "reactions": 1,
-      "channel": "✅「Answered」I can't check favorite List."
+      "id": "1347460331827499018",
+      "channel_id": "1131839817982947429",
+      "content": "星辰的鼠鼠都好打很多",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1347399780149497867",
-      "content": "Question received~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」I can't check favorite List."
+      "id": "1347478729718235136",
+      "channel_id": "1131839817982947429",
+      "content": "絕了",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347515545121062933",
+      "channel_id": "1131839817982947429",
+      "content": "等等這哪個公司的啊",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347568134449659954",
+      "channel_id": "1131839817982947429",
+      "content": "||~~你會破的只有黃體~~||",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347482876580728883",
+      "channel_id": "1170692781216378960",
+      "content": "I sent that 3 minutes ago and now it loads. 😭",
+      "author": "frogatall1_the_realone_40544",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

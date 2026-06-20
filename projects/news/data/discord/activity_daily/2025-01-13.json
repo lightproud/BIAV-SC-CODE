@@ -1,10 +1,25 @@
 {
   "date": "2025-01-13",
-  "messages": 197,
-  "unique_authors": 52,
-  "reactions_total": 89,
-  "attachments": 43,
+  "messages": 7610,
+  "unique_authors": 248,
+  "reactions_total": 669,
+  "attachments": 462,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 16,
+    "🔸traphase": 160,
+    "🔸lore-chat": 128,
+    "🔸綜合討論": 849,
+    "🔸阵容构建": 61,
+    "🔸morimens-game-chat": 4827,
+    "🔸剧情交流": 139,
+    "🔸相位对弈": 17,
+    "🔸日本語チャンネル": 15,
+    "🔸한국어-채팅방": 551,
+    "🔸русский-канал": 72,
+    "🔸phòng-chat-tiếng-việt": 52,
+    "🔸canal-español": 257,
+    "🔸canal-português": 190,
+    "🔸ruang-obrolan-indonesia": 79,
     "V2.0.0.1 在線維護公告": 12,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 2,
     "客户端整包更新提醒": 11,
@@ -48,31 +63,34 @@
     "帮我想想画什么": 1
   },
   "hourly_activity": {
-    "13": 21,
-    "14": 25,
-    "18": 7,
-    "17": 4,
-    "2": 5,
-    "6": 15,
-    "7": 19,
-    "12": 13,
-    "0": 1,
-    "9": 4,
-    "5": 11,
-    "15": 18,
-    "16": 8,
-    "22": 1,
-    "23": 2,
-    "4": 18,
-    "11": 4,
-    "8": 3,
-    "3": 17,
-    "1": 1
+    "0": 154,
+    "1": 331,
+    "2": 395,
+    "3": 716,
+    "6": 350,
+    "7": 446,
+    "8": 314,
+    "12": 304,
+    "13": 386,
+    "16": 326,
+    "4": 445,
+    "5": 632,
+    "9": 374,
+    "14": 181,
+    "15": 338,
+    "18": 212,
+    "19": 121,
+    "20": 263,
+    "21": 87,
+    "22": 76,
+    "23": 48,
+    "10": 305,
+    "11": 425,
+    "17": 381
   },
   "message_types": {
-    "0": 25,
-    "19": 5,
-    "20": 1
+    "0": 270,
+    "19": 34
   },
   "top_reacted_messages": [
     {
@@ -90,6 +108,14 @@
       "channel": "客户端整包更新提醒"
     },
     {
+      "id": "1328205653516357694",
+      "channel_id": "1170692781216378960",
+      "content": "welp <:stoppage:1236938521365839872>",
+      "author": "aleph2410",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1328353107989495880",
       "content": "方便你回去撿成就",
       "author": "kong760",
@@ -104,116 +130,124 @@
       "channel": "世界在此湮滅"
     },
     {
-      "id": "1328409778157785191",
-      "content": "界域混编开放后原本就不够的编队位置更不够了……能不能多做一点编队空位啊感觉20个都不够我用的……",
-      "author": "phantom_ye",
-      "reactions": 4,
-      "channel": "可否开放更多编队？"
+      "id": "1328395510746185789",
+      "channel_id": "1300659802455674972",
+      "content": "ฝากผลงานแปลไทยด้วยครับ พึ่งแปลมาจาก eng(GPT) อีกที่หนึ่ง  ตั้งใจจะแปลจนจบ Final ",
+      "author": "c2reayus",
+      "reactions": 5,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
-      "id": "1328357338695860345",
-      "content": "● 修復了某些情況下超維***職業***回合不能正常結束的問題。",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "V2.0.0.1 在線維護公告"
-    },
-    {
-      "id": "1328377427432570881",
-      "content": "真的就是亮亮按按",
-      "author": "ice_storys",
-      "reactions": 3,
-      "channel": "为什么要降低7-8章的级别要求啊，刚好打到这里"
-    },
-    {
-      "id": "1328393182181855242",
-      "content": "PC，有時候開狂氣會導致遊戲無反應，雖然之前也有，但更新後更頻繁了，光今天就3次",
-      "author": "renlei6061",
-      "reactions": 3,
-      "channel": "遊戲無反應"
-    },
-    {
-      "id": "1328203461560504321",
-      "content": "這是BUG嗎？可以改回來嗎？~~有被醜到~~",
-      "author": "ice_storys",
-      "reactions": 3,
-      "channel": "登入畫面怎麼變成新細明體了"
-    },
-    {
-      "id": "1328240766257991720",
-      "content": "今日更新，官方PC會跳轉下載連結，請勿輕信來路不明的連結，點下去電腦會當機，請去正版官方網站自行下載。",
+      "id": "1328253454677966848",
+      "channel_id": "1131839817982947429",
+      "content": "32G感覺是上個世紀的了",
       "author": "mob1065",
-      "reactions": 2,
-      "channel": "✅「已回答」請勿輕信官方PC跳轉連結"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1328346132903890975",
-      "content": "如題，上一回合是在超維回合擊殺小怪，然後下一回合(下一個小怪的第一回合)減半效果還在\n狂氣護盾那些都減半了",
-      "author": "_cwz_",
-      "reactions": 2,
-      "channel": "（已解決）超維回合的下一回合減半效果還在"
-    },
-    {
-      "id": "1328381394988044320",
-      "content": "又在造謠我",
-      "author": "xingkongzhiyao1",
-      "reactions": 2,
-      "channel": "为什么要降低7-8章的级别要求啊，刚好打到这里"
-    },
-    {
-      "id": "1328381613188321431",
-      "content": "到底是哪个神仙设计的，能不能改成只能复活自己家的四个，你复活我上回合死过装了复活+30盾的干啥，一复活直接死了，有毛病么？",
-      "author": "luhongran",
-      "reactions": 2,
-      "channel": "关于塔薇复活相位对弈技能"
-    },
-    {
-      "id": "1328187708874690642",
-      "content": "來～跟我寫，「湮滅」",
-      "author": "iamnotbunny",
-      "reactions": 1,
-      "channel": "V2.0.0.0 停服維護公告"
-    },
-    {
-      "id": "1328366815088345129",
-      "content": "血肉我只知道1.血希帶羊媽倆混沌輔亮亮按按（不用帶奶或盾因為她自己衍生四費可以回血）\n2.希洛鯊魚隊如圖所示\n其他你問 <@113117168566036893",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "为什么要降低7-8章的级别要求啊，刚好打到这里"
-    },
-    {
-      "id": "1328505369131225191",
-      "content": "好的謝謝你！",
-      "author": "2041880926",
-      "reactions": 1,
-      "channel": "为什么要降低7-8章的级别要求啊，刚好打到这里"
-    },
-    {
-      "id": "1328426875432996977",
-      "content": "<:cry:1239910167668326480> 我用了好幾年的文書機都能跑所以真的不清楚原因",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "遊戲無反應"
-    },
-    {
-      "id": "1328273387826581614",
-      "content": "不好意思我蠢",
-      "author": "xiaomojun6609",
-      "reactions": 1,
-      "channel": "对不起我蠢,我的停服维修补偿什哪里？"
-    },
-    {
-      "id": "1328222402945089567",
-      "content": "降力是这样降？",
+      "id": "1328264252037009418",
+      "channel_id": "1131839817982947429",
+      "content": "# 快 逃",
       "author": "whshhsa",
-      "reactions": 1,
-      "channel": "孩子，你是要毁了旺达吗"
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1328221257988050964",
-      "content": "直接更新就好不用刪舊的（剛PC更新完的人",
-      "author": "mein_1",
-      "reactions": 1,
-      "channel": "更新"
+      "id": "1328273097870151790",
+      "channel_id": "1131839817982947429",
+      "content": "這個冷卻時間…是認真的嗎",
+      "author": "toweldewulf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328308444783972436",
+      "channel_id": "1173463482503536711",
+      "content": "我很後悔當時去嘗試配音9-13劇情，感覺自己像傻子🥴",
+      "author": "magushermes",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1328513151368695891",
+      "channel_id": "1173463482503536711",
+      "content": "好可愛<:mokoLove:1090651372036309032>",
+      "author": "talkxtalk",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1328285018862387211",
+      "channel_id": "1131839817982947429",
+      "content": "之前深潜的代理凭证一周也是两张吗",
+      "author": "art1_2_3",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328297027095756851",
+      "channel_id": "1131839817982947429",
+      "content": "超豆腐有没有",
+      "author": "whshhsa",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1328198388126318634",
+      "channel_id": "1170692781216378960",
+      "content": "this is pain",
+      "author": "blackest_rose",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328200272564191294",
+      "channel_id": "1170692781216378960",
+      "content": "my Miryam just did 20k strike with Helot",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328203756524802068",
+      "channel_id": "1170692781216378960",
+      "content": "<:sleep:1238448786540462130>",
+      "author": "aleph2410",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328237954312966247",
+      "channel_id": "1170692781216378960",
+      "content": "Ham is an honorary lesbian <:rose1:1234798154000633949>",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328257158437015603",
+      "channel_id": "1170692781216378960",
+      "content": "Reading!? In my cardgame?",
+      "author": "good.th",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328324324607787008",
+      "channel_id": "1170692781216378960",
+      "content": "No",
+      "author": "jinrouwu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1328220016453091410",
+      "channel_id": "1173463482503536711",
+      "content": "<@586549218672508948> \nV我50 3.0 堂堂上線",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
     }
   ]
 }
