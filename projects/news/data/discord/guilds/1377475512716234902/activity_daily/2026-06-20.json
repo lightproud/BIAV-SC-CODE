@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-20",
+  "messages": 24,
+  "unique_authors": 9,
+  "reactions_total": 1,
+  "attachments": 3,
+  "channel_activity": {
+    "なんでも雑談": 2,
+    "🔰初心者質問": 14,
+    "諸々の備忘録": 2,
+    "つぶやき": 5,
+    "招待コード共有会": 1
+  },
+  "hourly_activity": {
+    "0": 5,
+    "2": 6,
+    "3": 5,
+    "4": 7,
+    "1": 1
+  },
+  "message_types": {
+    "0": 24
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1517686078012784710",
+      "channel_id": "1391701560496623688",
+      "content": "可能！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}
