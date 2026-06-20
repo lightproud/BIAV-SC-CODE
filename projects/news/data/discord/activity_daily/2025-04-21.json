@@ -1,10 +1,22 @@
 {
   "date": "2025-04-21",
-  "messages": 1108,
-  "unique_authors": 39,
-  "reactions_total": 223,
-  "attachments": 58,
+  "messages": 9493,
+  "unique_authors": 153,
+  "reactions_total": 455,
+  "attachments": 412,
   "channel_activity": {
+    "🔸morimens-game-chat": 6360,
+    "🔸相位对弈": 9,
+    "🔸한국어-채팅방": 915,
+    "🔸chaîne-française": 2,
+    "🔸phòng-chat-tiếng-việt": 20,
+    "🔸canal-español": 62,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 700,
+    "🔸ห้องสนทนาภาษาไทย": 176,
+    "🔸traphase": 131,
+    "🔸lore-chat": 2,
+    "🔸lets-count": 1,
     "🔸綜合討論": 1055,
     "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j": 1,
     "Flares' Comprehensive Guide V3 (D-Tide/Arc 2 HM/Tier List/24 update)": 1,
@@ -21,32 +33,34 @@
     "跟我朋友零元購了一個稿，成效甚好": 1
   },
   "hourly_activity": {
-    "0": 3,
-    "1": 17,
-    "2": 20,
-    "3": 13,
-    "4": 28,
-    "5": 54,
-    "6": 66,
-    "7": 59,
-    "8": 160,
-    "9": 92,
-    "10": 20,
-    "11": 160,
-    "12": 141,
-    "13": 140,
-    "14": 23,
-    "15": 5,
-    "16": 6,
-    "19": 5,
-    "20": 13,
-    "21": 4,
-    "22": 6,
-    "23": 73
+    "0": 119,
+    "1": 462,
+    "2": 457,
+    "3": 574,
+    "4": 856,
+    "5": 409,
+    "6": 403,
+    "7": 293,
+    "8": 365,
+    "9": 164,
+    "10": 268,
+    "11": 515,
+    "12": 474,
+    "13": 443,
+    "14": 320,
+    "15": 288,
+    "16": 544,
+    "17": 557,
+    "18": 455,
+    "19": 369,
+    "20": 320,
+    "21": 414,
+    "22": 331,
+    "23": 93
   },
   "message_types": {
-    "0": 873,
-    "19": 182
+    "0": 6450,
+    "19": 1935
   },
   "top_reacted_messages": [
     {
@@ -55,6 +69,14 @@
       "author": "rohaluss",
       "reactions": 9,
       "channel": "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j"
+    },
+    {
+      "id": "1363743656342720675",
+      "channel_id": "1170692781216378960",
+      "content": "i think she loves me",
+      "author": "pleaseineedabf",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1363868565387874455",
@@ -71,6 +93,22 @@
       "author": "ernest_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363718020551151709",
+      "channel_id": "1170692781216378960",
+      "content": "whos gonna tell him that penguins have been regularly shown to display homosexua",
+      "author": "omegamart",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1363720299505258707",
+      "channel_id": "1170692781216378960",
+      "content": "The aslechi effect",
+      "author": "aslechi",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1363858651814694975",
@@ -111,6 +149,14 @@
       "author": "shchng.",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1363749484416340059",
+      "channel_id": "1300659802455674972",
+      "content": "อัลติน้องใน trial chaos มันบัคคคคคคคคคคคคคค",
+      "author": "2ndselna",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1363748634000363550",
@@ -173,38 +219,6 @@
       "channel_id": "1131839817982947429",
       "content": "少年，你太年輕了。你以為這個Dc上真的有那麼多人回覆你的留言？其實都是我一個人回的，不然我再換個ID發同樣的話給你看。",
       "author": "ena04564",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1363868201401712650",
-      "channel_id": "1131839817982947429",
-      "content": "進進出出5771的<:cute1:1356053053568192717>",
-      "author": "fengliyaowo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1363870890156363826",
-      "channel_id": "1131839817982947429",
-      "content": "嘿\n龜0球",
-      "author": "foxcatfurry",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1363874500894130267",
-      "channel_id": "1131839817982947429",
-      "content": "~~夢裡應該會有靈感~~",
-      "author": "fengliyaowo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1363874509953695897",
-      "channel_id": "1131839817982947429",
-      "content": "就\n本子那種\n常有的描寫（",
-      "author": "foxcatfurry",
       "reactions": 3,
       "channel": "🔸綜合討論"
     }

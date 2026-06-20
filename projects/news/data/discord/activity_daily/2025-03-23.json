@@ -1,10 +1,15 @@
 {
   "date": "2025-03-23",
-  "messages": 87,
-  "unique_authors": 14,
-  "reactions_total": 33,
-  "attachments": 18,
+  "messages": 3458,
+  "unique_authors": 94,
+  "reactions_total": 107,
+  "attachments": 125,
   "channel_activity": {
+    "🔸綜合討論": 1317,
+    "🔸morimens-game-chat": 2044,
+    "🔸剧情交流": 2,
+    "🔸相位对弈": 7,
+    "🔸日本語チャンネル": 1,
     "New Player Mechanics and Progression Guide": 1,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 17,
     "Kinda confused help me for the team": 5,
@@ -22,26 +27,33 @@
     "where i post stuff": 1
   },
   "hourly_activity": {
-    "4": 6,
-    "7": 20,
-    "9": 10,
-    "5": 4,
-    "11": 7,
-    "8": 8,
-    "12": 5,
-    "1": 1,
-    "10": 5,
-    "6": 1,
-    "15": 4,
-    "3": 1,
-    "13": 12,
-    "14": 1,
-    "16": 1,
-    "22": 1
+    "3": 56,
+    "4": 31,
+    "5": 162,
+    "6": 27,
+    "7": 40,
+    "8": 33,
+    "9": 59,
+    "11": 178,
+    "12": 822,
+    "13": 248,
+    "14": 89,
+    "15": 46,
+    "18": 228,
+    "21": 374,
+    "22": 216,
+    "23": 125,
+    "1": 27,
+    "2": 43,
+    "10": 53,
+    "16": 44,
+    "17": 446,
+    "19": 29,
+    "20": 82
   },
   "message_types": {
-    "0": 19,
-    "19": 10
+    "0": 2601,
+    "19": 770
   },
   "top_reacted_messages": [
     {
@@ -52,39 +64,156 @@
       "channel": "四小強星辰篇通關記錄分享"
     },
     {
-      "id": "1353287490752217099",
-      "content": "你怎麼覺得毒跟出血能獨善其身",
-      "author": "huangyu0876",
-      "reactions": 1,
-      "channel": "关于加固机制设计问题"
+      "id": "1353217860758929519",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "_buqi",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353287656007663616",
-      "content": "你怎麼覺得校貓會覺得加固太噁心",
-      "author": "huangyu0876",
-      "reactions": 1,
-      "channel": "关于加固机制设计问题"
+      "id": "1353347064938889347",
+      "channel_id": "1131839817982947429",
+      "content": "通关了",
+      "author": "playstone5",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353288599726067853",
-      "content": "那是骂过的都已经被移除社区了",
-      "author": "molove0286",
-      "reactions": 1,
-      "channel": "关于加固机制设计问题"
+      "id": "1353344293586341989",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼把黑子放出來了",
+      "author": "caakssi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353389447227379723",
-      "content": "U need to change to scene CG",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅「Answered」I cant change my visitor in domitory"
+      "id": "1353334614004989962",
+      "channel_id": "1131839817982947429",
+      "content": "经大家投票，第二届nc杯的赛制定为以输为赢，详细规则为:参赛选手随机配队进行对战，使用瑞士轮赛制进行对战，每输一场积1分，积分最高的选手获胜，但比赛过程中不能浪",
+      "author": "tianfang5580",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353397739110793328",
-      "content": "It work thank you so much<:Heartbeat:1236951458176565389>",
-      "author": "cant_be_alone_cant_be_together",
+      "id": "1353341664705646673",
+      "channel_id": "1131839817982947429",
+      "content": "于麗的狗真你媽逆天東西",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353353666899480668",
+      "channel_id": "1131839817982947429",
+      "content": "小明劍魔\n阿花倒模",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353359666087858280",
+      "channel_id": "1131839817982947429",
+      "content": "幽默融朵。池子期間被砍",
+      "author": "celestial_badger_94230",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353331931529613312",
+      "channel_id": "1131839817982947429",
+      "content": "我打中文是有點慢啊",
+      "author": "irut9513",
       "reactions": 1,
-      "channel": "✅「Answered」I cant change my visitor in domitory"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353332248602218557",
+      "channel_id": "1131839817982947429",
+      "content": "~~也許校貓反而不會封這種的~~",
+      "author": "chilledren_fans",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353333164013125643",
+      "channel_id": "1131839817982947429",
+      "content": "~~原神有原型視界能用嗎~~",
+      "author": "chilledren_fans",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353333499846721646",
+      "channel_id": "1131839817982947429",
+      "content": "直接3小時",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353337035137744947",
+      "channel_id": "1131839817982947429",
+      "content": "5771我还没销号",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353337772982931569",
+      "channel_id": "1131839817982947429",
+      "content": "我已经7000了阿",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353340164386066474",
+      "channel_id": "1131839817982947429",
+      "content": "落地我以為在打深潛72000",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353340581438558238",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有一種可能配置到位都打不死",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353340624568451124",
+      "channel_id": "1131839817982947429",
+      "content": "打傷害前記得上易傷在我們忘卻前夜玩家中已經是很有操作得了",
+      "author": "cra0261_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353341112789635224",
+      "channel_id": "1131839817982947429",
+      "content": "血鍊跟塔薇以外基本死光",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353342684709912631",
+      "channel_id": "1131839817982947429",
+      "content": "从忘却篇追过来了",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353343663455080469",
+      "channel_id": "1131839817982947429",
+      "content": "等一下吧看我多會拖（",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

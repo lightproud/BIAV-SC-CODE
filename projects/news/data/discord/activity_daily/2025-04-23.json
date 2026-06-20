@@ -1,10 +1,20 @@
 {
   "date": "2025-04-23",
-  "messages": 310,
-  "unique_authors": 22,
-  "reactions_total": 112,
-  "attachments": 11,
+  "messages": 5194,
+  "unique_authors": 98,
+  "reactions_total": 189,
+  "attachments": 220,
   "channel_activity": {
+    "🔸morimens-game-chat": 3909,
+    "🔸한국어-채팅방": 547,
+    "🔸deutscher-chatraum": 2,
+    "🔸chaîne-française": 113,
+    "🔸canal-español": 149,
+    "🔸canal-português": 31,
+    "🔸ruang-obrolan-indonesia": 53,
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸traphase": 74,
+    "🔸lets-count": 1,
     "🔸綜合討論": 273,
     "Tawil and Merlin on Traphase": 2,
     "Clem": 2,
@@ -20,32 +30,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "1": 4,
-    "2": 28,
-    "3": 30,
-    "4": 2,
-    "5": 13,
-    "6": 2,
-    "7": 8,
-    "8": 16,
-    "9": 54,
-    "10": 22,
-    "11": 14,
-    "12": 15,
-    "13": 45,
-    "14": 30,
-    "15": 6,
-    "16": 2,
-    "18": 4,
-    "19": 2,
-    "22": 5,
-    "23": 4,
-    "17": 2,
-    "20": 2
+    "0": 290,
+    "1": 115,
+    "2": 138,
+    "3": 309,
+    "4": 485,
+    "5": 216,
+    "6": 81,
+    "7": 41,
+    "8": 86,
+    "9": 103,
+    "10": 82,
+    "11": 504,
+    "12": 180,
+    "13": 282,
+    "14": 314,
+    "15": 365,
+    "16": 365,
+    "17": 152,
+    "18": 293,
+    "19": 241,
+    "20": 231,
+    "21": 188,
+    "22": 79,
+    "23": 54
   },
   "message_types": {
-    "19": 42,
-    "0": 231
+    "0": 3922,
+    "19": 962
   },
   "top_reacted_messages": [
     {
@@ -76,6 +88,14 @@
       "author": "undeterredhomo",
       "reactions": 6,
       "channel": "Clem"
+    },
+    {
+      "id": "1364620074840756236",
+      "channel_id": "1170692781216378960",
+      "content": "Ye",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1364527286946238475",
@@ -150,6 +170,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1364646502659788912",
+      "channel_id": "1170692781216378960",
+      "content": "Fuck it, when I get home I'm doing the vid char tier and explanation",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1364530926276579350",
       "channel_id": "1131839817982947429",
       "content": "在腸胃裡",
@@ -187,22 +215,6 @@
       "content": "~~大聲宣揚自己大猛1和不論什麼都可以好色的大騷0在說什麼呢~~",
       "author": "foxcatfurry",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1364556670520397895",
-      "channel_id": "1131839817982947429",
-      "content": "~~新文我預計大概沒肉欸~~",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1364575831481122846",
-      "channel_id": "1131839817982947429",
-      "content": "不像我\n不止不进\n还不起哄<:pray:1356053116260454534>",
-      "author": "ling_an_",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

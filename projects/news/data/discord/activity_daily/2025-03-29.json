@@ -1,10 +1,15 @@
 {
   "date": "2025-03-29",
-  "messages": 15,
-  "unique_authors": 5,
-  "reactions_total": 115,
-  "attachments": 2,
+  "messages": 3089,
+  "unique_authors": 86,
+  "reactions_total": 148,
+  "attachments": 151,
   "channel_activity": {
+    "🔸綜合討論": 137,
+    "🔸morimens-game-chat": 2847,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 86,
+    "🔸日本語チャンネル": 3,
     "Need help with team comp/builds": 1,
     "Flares' Beginner Cash Shop Guide": 1,
     "【日本語訳】フィードバック": 1,
@@ -17,20 +22,34 @@
     "*千面幻象*达芙黛尔单人向": 3
   },
   "hourly_activity": {
-    "11": 1,
-    "3": 2,
-    "15": 1,
-    "18": 1,
-    "13": 2,
-    "4": 2,
-    "14": 1,
-    "19": 1,
-    "20": 1,
-    "7": 1,
-    "17": 2
+    "1": 201,
+    "2": 105,
+    "4": 252,
+    "6": 60,
+    "7": 83,
+    "9": 60,
+    "10": 100,
+    "11": 63,
+    "12": 100,
+    "13": 241,
+    "16": 54,
+    "17": 228,
+    "23": 102,
+    "0": 102,
+    "3": 105,
+    "5": 153,
+    "8": 68,
+    "14": 73,
+    "15": 104,
+    "18": 89,
+    "19": 21,
+    "20": 143,
+    "21": 328,
+    "22": 254
   },
   "message_types": {
-    "0": 3
+    "19": 647,
+    "0": 2427
   },
   "top_reacted_messages": [
     {
@@ -62,6 +81,46 @@
       "channel": "Flares' Beginner Cash Shop Guide"
     },
     {
+      "id": "1355445671578173601",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355431234011926662",
+      "channel_id": "1131839817982947429",
+      "content": "~~可是我這個月溢出欸~~<:angry:1236950506803560509>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355501024940658864",
+      "channel_id": "1131839817982947429",
+      "content": "垃圾遊戲",
+      "author": "night0140",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355584648817938626",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry:1239910167668326480> 我只有5000初",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355408117520793771",
+      "channel_id": "1170692781216378960",
+      "content": "kiperina",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1355398774813626542",
       "content": "Korean Translation get worse after resources update. After the update, some text",
       "author": "legion_schindler",
@@ -69,18 +128,84 @@
       "channel": "💭「Processing」Korean Translation get worse after resources update."
     },
     {
-      "id": "1355540044559155263",
-      "content": "其實我想請問一下這一張OST有沒有封面\n因為其他的都有哇<:stoppage:1236938521365839872>",
-      "author": "ichikaguya._52033",
+      "id": "1355365650406834237",
+      "channel_id": "1131839817982947429",
+      "content": "珠子本来就不够用吧",
+      "author": "287405tjy_28066",
       "reactions": 1,
-      "channel": "忘卻前夜OSTⅡ：傳承求索之途"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1355541038881570906",
-      "content": "I'm creating this post to find out why the game is no longer available in the Fr",
-      "author": ".benaz",
+      "id": "1355507662137200802",
+      "channel_id": "1131839817982947429",
+      "content": "把你的XP改造成强度",
+      "author": "akalanden",
       "reactions": 1,
-      "channel": "✅「Answered」Why is the game no longer available in the French Apple Store?"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355378582825992263",
+      "channel_id": "1170692781216378960",
+      "content": "... So extra steps?",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355407924582809880",
+      "channel_id": "1170692781216378960",
+      "content": "impromptu need sustain i think",
+      "author": "actuallyjeff",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355457850754728026",
+      "channel_id": "1170692781216378960",
+      "content": "I say as gale loads caro aqua",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355497025424064605",
+      "channel_id": "1170692781216378960",
+      "content": "we don’t know much",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355499027424088235",
+      "channel_id": "1170692781216378960",
+      "content": "cant go wrong with either ramona or ogier",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355529629628108941",
+      "channel_id": "1170692781216378960",
+      "content": "Account level 35",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355533312814350427",
+      "channel_id": "1170692781216378960",
+      "content": "just dumping all defense cards and then ults",
+      "author": "quirk15",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355647616364581076",
+      "channel_id": "1170692781216378960",
+      "content": "Characters like ryker would be good for a salv dps team as he has good stats, is",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

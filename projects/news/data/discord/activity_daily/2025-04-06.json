@@ -1,10 +1,23 @@
 {
   "date": "2025-04-06",
-  "messages": 977,
-  "unique_authors": 31,
-  "reactions_total": 173,
-  "attachments": 27,
+  "messages": 5416,
+  "unique_authors": 114,
+  "reactions_total": 284,
+  "attachments": 143,
   "channel_activity": {
+    "🔸morimens-game-chat": 3782,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 47,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 49,
+    "🔸русский-канал": 38,
+    "🔸canal-español": 49,
+    "🔸canal-português": 20,
+    "🔸ruang-obrolan-indonesia": 274,
+    "🔸ห้องสนทนาภาษาไทย": 50,
+    "🔸traphase": 112,
+    "🔸lore-chat": 13,
+    "🔸lets-count": 2,
     "🔸綜合討論": 880,
     "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 1,
     "📜克萊門汀┊喚醒體&命輪介紹": 17,
@@ -24,33 +37,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "3": 4,
-    "4": 2,
-    "5": 2,
-    "6": 6,
-    "7": 5,
-    "8": 15,
-    "9": 15,
-    "10": 17,
-    "11": 9,
-    "12": 183,
-    "13": 59,
-    "14": 88,
-    "15": 377,
-    "16": 147,
-    "17": 33,
-    "18": 1,
-    "19": 1,
-    "23": 6,
-    "22": 1,
-    "1": 1,
-    "2": 2,
-    "21": 2
+    "0": 61,
+    "1": 88,
+    "2": 321,
+    "3": 431,
+    "4": 185,
+    "5": 107,
+    "6": 46,
+    "7": 93,
+    "8": 98,
+    "9": 118,
+    "10": 106,
+    "11": 337,
+    "12": 988,
+    "13": 266,
+    "14": 282,
+    "15": 559,
+    "16": 361,
+    "17": 147,
+    "18": 63,
+    "19": 186,
+    "20": 111,
+    "21": 166,
+    "22": 78,
+    "23": 218
   },
   "message_types": {
-    "19": 184,
-    "0": 696
+    "0": 3425,
+    "19": 1014
   },
   "top_reacted_messages": [
     {
@@ -59,6 +73,14 @@
       "author": "blue_yogurt_chan",
       "reactions": 29,
       "channel": "《把你的名字刻在幻影號上》—諾締拉"
+    },
+    {
+      "id": "1358417415238582353",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you. I did make some mistakes in community communication and management in",
+      "author": "game.producer.light",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1358449803842814154",
@@ -168,44 +190,36 @@
       "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
     },
     {
-      "id": "1358416057026744403",
-      "channel_id": "1131839817982947429",
-      "content": "軟了",
-      "author": "ahuahuahua",
+      "id": "1358338458158104788",
+      "channel_id": "1170692781216378960",
+      "content": "I'll make the worst team work",
+      "author": "reonbd",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358417004788322555",
-      "channel_id": "1131839817982947429",
-      "content": "🤡 给别的地区上线做测试的。",
-      "author": "randomplayer852",
+      "id": "1358400683606540389",
+      "channel_id": "1170692781216378960",
+      "content": "Ramona maid or teacher could be up their",
+      "author": "lotan_045",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358418961905221693",
-      "channel_id": "1131839817982947429",
-      "content": "看成一年一次4p",
-      "author": "Deleted User",
+      "id": "1358401630113890335",
+      "channel_id": "1170692781216378960",
+      "content": "the 10th my turn collab be like",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1358423358907224175",
-      "channel_id": "1131839817982947429",
-      "content": "應該把焦點聚焦於他的巨人之刃",
-      "author": "ernest_heart",
+      "id": "1358402891697750158",
+      "channel_id": "1170692781216378960",
+      "content": "FNAF",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358425804639572150",
-      "channel_id": "1131839817982947429",
-      "content": "~~哭哦 說的汀克特描述需要調整好像被英區誤解了~~",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

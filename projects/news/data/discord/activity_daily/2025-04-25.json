@@ -1,10 +1,24 @@
 {
   "date": "2025-04-25",
-  "messages": 1327,
-  "unique_authors": 38,
-  "reactions_total": 228,
-  "attachments": 34,
+  "messages": 7616,
+  "unique_authors": 140,
+  "reactions_total": 468,
+  "attachments": 279,
   "channel_activity": {
+    "🔸morimens-game-chat": 5118,
+    "🔸相位对弈": 21,
+    "🔸课间休息闲聊": 18,
+    "🔸한국어-채팅방": 390,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 18,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 111,
+    "🔸canal-português": 34,
+    "🔸ruang-obrolan-indonesia": 303,
+    "🔸ห้องสนทนาภาษาไทย": 152,
+    "🔸traphase": 96,
+    "🔸lore-chat": 21,
+    "🔸lets-count": 1,
     "🔸綜合討論": 1101,
     "brown attack!": 4,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
@@ -27,31 +41,35 @@
     "跟我朋友零元購了一個稿，成效甚好": 4
   },
   "hourly_activity": {
-    "0": 27,
-    "1": 10,
-    "2": 11,
-    "3": 11,
-    "4": 17,
-    "5": 9,
-    "6": 6,
-    "7": 8,
-    "8": 82,
-    "9": 59,
-    "10": 96,
-    "11": 201,
-    "12": 146,
-    "13": 110,
-    "14": 45,
-    "15": 446,
-    "16": 31,
-    "21": 8,
-    "23": 1,
-    "18": 1,
-    "19": 2
+    "0": 81,
+    "1": 141,
+    "2": 183,
+    "3": 280,
+    "4": 239,
+    "5": 158,
+    "6": 10,
+    "7": 106,
+    "8": 143,
+    "9": 177,
+    "10": 450,
+    "11": 866,
+    "12": 712,
+    "13": 975,
+    "14": 459,
+    "15": 735,
+    "16": 399,
+    "17": 205,
+    "18": 230,
+    "19": 199,
+    "20": 307,
+    "21": 251,
+    "22": 122,
+    "23": 188
   },
   "message_types": {
-    "0": 913,
-    "19": 188
+    "19": 1508,
+    "0": 4780,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -98,6 +116,14 @@
       "channel": "Ultra Greed"
     },
     {
+      "id": "1365280080229564486",
+      "channel_id": "1170692781216378960",
+      "content": "My thoughts",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1365127142932742245",
       "channel_id": "1131839817982947429",
       "content": "他們訛傳「中文區每個人都在看野貓的攻略，所以每個攻略佬都有融災全深海350的紀錄」",
@@ -114,6 +140,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1365308597294076017",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1365278131065196554",
       "content": "~~讓她本體摳我~~",
       "author": "ena04564",
@@ -126,6 +160,22 @@
       "author": "287405tjy_28066",
       "reactions": 5,
       "channel": "一人血书戈雅出碎碎念"
+    },
+    {
+      "id": "1365428521215721502",
+      "channel_id": "1170692781216378960",
+      "content": "man I'm glad I discovered this game randomly while searching stuff to play to fo",
+      "author": "van_ehre",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365431604415037450",
+      "channel_id": "1181152750319456266",
+      "content": "完工<:pray:1356053116260454534>",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": "🔸课间休息闲聊"
     },
     {
       "id": "1365131364101521418",
@@ -173,37 +223,6 @@
       "content": "||小心他们全听把卢大王的也给听走了||",
       "author": "flarinsidia",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365359971121889411",
-      "content": "棄牌生效改為詞綴 “餘波”，想起卡牌的不嚴謹敘述，以下是整理出的增傷敘述\n建議統一改成 “ 造成(？\\*力量+100)傷害 ” / “ 造成(？%\\*觸腕傷害+",
-      "author": "elkmilu",
-      "reactions": 4,
-      "channel": "✅「已回答」Bug—技能敘述—增傷"
-    },
-    {
-      "id": "1365127222897279077",
-      "channel_id": "1131839817982947429",
-      "content": "所以你知道了，沒有全深海350你甚至不配寫攻略",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365190936107286580",
-      "channel_id": "1131839817982947429",
-      "content": "群色除我",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365219580003483689",
-      "channel_id": "1131839817982947429",
-      "content": "~~鯊魚身上的紋路四捨五入就是淫紋~~",
-      "author": "fengliyaowo",
-      "reactions": 3,
       "channel": "🔸綜合討論"
     }
   ]

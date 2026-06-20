@@ -1,10 +1,24 @@
 {
   "date": "2025-04-24",
-  "messages": 503,
-  "unique_authors": 30,
-  "reactions_total": 82,
-  "attachments": 7,
+  "messages": 5462,
+  "unique_authors": 135,
+  "reactions_total": 241,
+  "attachments": 176,
   "channel_activity": {
+    "🔸morimens-game-chat": 4343,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 170,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 5,
+    "🔸phòng-chat-tiếng-việt": 16,
+    "🔸canal-español": 6,
+    "🔸canal-português": 49,
+    "🔸ruang-obrolan-indonesia": 279,
+    "🔸ห้องสนทนาภาษาไทย": 18,
+    "🔸traphase": 63,
+    "🔸lets-count": 2,
     "🔸綜合討論": 380,
     "brown attack!": 2,
     "Tawil and Merlin on Traphase": 2,
@@ -20,34 +34,34 @@
     "一點點鯊守私設文...吧? （清水.jpg）": 2
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 24,
-    "2": 22,
-    "3": 4,
-    "4": 9,
-    "5": 10,
-    "6": 23,
-    "7": 21,
-    "8": 51,
-    "9": 28,
-    "10": 14,
-    "11": 31,
-    "12": 21,
-    "13": 24,
-    "14": 85,
-    "15": 13,
-    "16": 26,
-    "17": 55,
-    "18": 2,
-    "19": 11,
-    "20": 3,
-    "21": 8,
-    "22": 7,
-    "23": 9
+    "0": 69,
+    "1": 175,
+    "2": 162,
+    "3": 202,
+    "4": 103,
+    "5": 84,
+    "6": 57,
+    "7": 146,
+    "8": 180,
+    "9": 323,
+    "10": 323,
+    "11": 217,
+    "12": 350,
+    "13": 294,
+    "14": 437,
+    "15": 219,
+    "16": 425,
+    "17": 447,
+    "18": 161,
+    "19": 145,
+    "20": 90,
+    "21": 214,
+    "22": 242,
+    "23": 397
   },
   "message_types": {
-    "0": 337,
-    "19": 43
+    "0": 3807,
+    "19": 1152
   },
   "top_reacted_messages": [
     {
@@ -56,6 +70,22 @@
       "author": "rishe",
       "reactions": 21,
       "channel": "brown attack!"
+    },
+    {
+      "id": "1364869105177329674",
+      "channel_id": "1170692781216378960",
+      "content": "I already enjoyed Ahab in Limbus",
+      "author": "al_leyway",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365080232712867930",
+      "channel_id": "1170692781216378960",
+      "content": "🪱 vs 🐛 palce yer bets",
+      "author": "khykken",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1364894549813497888",
@@ -72,6 +102,30 @@
       "author": "fengliyaowo",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1364902002206834689",
+      "channel_id": "1170692781216378960",
+      "content": "her mother maybe",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365089359983939638",
+      "channel_id": "1170692781216378960",
+      "content": "An ultra character with a card that replaces all symptoms in your hand with a di",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1365111597474775040",
+      "channel_id": "1170692781216378960",
+      "content": "Pa Pa Ya <:point:1356053112292511815>",
+      "author": "ughhhhard",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1364872394769960971",
@@ -113,95 +167,60 @@
       "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
     },
     {
-      "id": "1364897405870407761",
-      "channel_id": "1131839817982947429",
-      "content": "把野貓性轉然後出角",
-      "author": "shchng.",
+      "id": "1364914828682199040",
+      "channel_id": "1170692781216378960",
+      "content": "hey",
+      "author": "muliupan",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364962152468971582",
-      "channel_id": "1131839817982947429",
-      "content": "其實新角就是1.5週年角的機率（",
-      "author": "foxcatfurry",
+      "id": "1364935583041982475",
+      "channel_id": "1170692781216378960",
+      "content": "Not exactly, some time the developers give some info, in the last ones they say ",
+      "author": "vxvendetta",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365011282956386434",
-      "channel_id": "1131839817982947429",
-      "content": "紫紫的界域怎么你了，~~每回合白给的一牌一算两百银钥能量多好~~",
-      "author": "zaitielushang",
+      "id": "1364971151750598676",
+      "channel_id": "1170692781216378960",
+      "content": "Tbf, nobody is really \"unfixable\". It is hard to define what a normal mental sta",
+      "author": "thesecondcomingofdrenwee",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364967846899355829",
-      "content": "卖卡无所谓，别除了卖卡什么内容没有就行",
-      "author": "flarinsidia",
+      "id": "1364974044348158066",
+      "channel_id": "1170692781216378960",
+      "content": "Mind u he's been nerfed maybe a couple times so at least they did something but ",
+      "author": "daegudollz",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364968484672503818",
-      "content": "通篇賣女角卡\n@game.producer.light \n你最近是不是在回歸旅行的初衷",
-      "author": "kong760",
+      "id": "1365013746279387227",
+      "channel_id": "1170692781216378960",
+      "content": "Nvm then have fun with the game",
+      "author": "noire_2",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364974078779461642",
-      "content": "你可以去玩吊五\n我可以去玩陰陽師\n這樣你可以擁有哈斯塔本尊\n我可以擁有禍神血肉盛宴跟月球章魚惡神\n眾所周知克蘇魯正宗在網易\n我們都有美好的未來",
-      "author": "kong760",
+      "id": "1365015777966559323",
+      "channel_id": "1170692781216378960",
+      "content": "i avoided him not my type",
+      "author": "apsgsd",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1364992319752900699",
-      "content": "差評",
-      "author": "ernest_heart",
+      "id": "1365059105697304648",
+      "channel_id": "1170692781216378960",
+      "content": "furrys are willing to spend big money",
+      "author": "monchi3524",
       "reactions": 2,
-      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
-    },
-    {
-      "id": "1365072629383434352",
-      "content": "Here is a guide to Wheels in the game",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "Wheel Guide - In Depth"
-    },
-    {
-      "id": "1364833269266386944",
-      "channel_id": "1131839817982947429",
-      "content": "对哦 诗人是不是从来没复刻过啊",
-      "author": "ling_an_",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1364853537363984457",
-      "channel_id": "1131839817982947429",
-      "content": "他不复刻我一样的整阿口牙",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1364875316950208592",
-      "channel_id": "1131839817982947429",
-      "content": "我需要立繪",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1364875330875162665",
-      "channel_id": "1131839817982947429",
-      "content": "神國沒有可發展性",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,18 @@
 {
   "date": "2025-03-08",
-  "messages": 24,
-  "unique_authors": 7,
-  "reactions_total": 15,
-  "attachments": 4,
+  "messages": 3410,
+  "unique_authors": 104,
+  "reactions_total": 176,
+  "attachments": 133,
   "channel_activity": {
+    "🔸綜合討論": 519,
+    "🔸阵容构建": 64,
+    "🔸morimens-game-chat": 2753,
+    "🔸剧情交流": 6,
+    "🔸相位对弈": 28,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 10,
     "Star Chapter 2.1 Tier List": 7,
     "Tier list for Standard and Limited separated 2.1": 4,
     "Where can i see a prologue again?": 1,
@@ -14,18 +22,34 @@
     "新手第三天自己研发的毒队。": 2
   },
   "hourly_activity": {
-    "6": 7,
-    "13": 3,
-    "14": 3,
-    "1": 2,
-    "3": 3,
-    "4": 4,
-    "10": 1,
-    "18": 1
+    "1": 46,
+    "2": 108,
+    "3": 180,
+    "4": 248,
+    "5": 167,
+    "6": 301,
+    "7": 33,
+    "8": 48,
+    "9": 48,
+    "10": 173,
+    "11": 487,
+    "12": 45,
+    "13": 54,
+    "14": 273,
+    "15": 594,
+    "19": 85,
+    "20": 92,
+    "21": 37,
+    "0": 56,
+    "16": 8,
+    "17": 184,
+    "18": 29,
+    "22": 51,
+    "23": 63
   },
   "message_types": {
-    "19": 1,
-    "0": 10
+    "0": 2619,
+    "19": 767
   },
   "top_reacted_messages": [
     {
@@ -43,6 +67,22 @@
       "channel": "新手第三天自己研发的毒队。"
     },
     {
+      "id": "1347790075798356060",
+      "channel_id": "1131839817982947429",
+      "content": "那Aaa想成為我的唯一嗎<:wish:1236951537788649492>",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347764606675714090",
+      "channel_id": "1181152750319456266",
+      "content": "",
+      "author": "kuritani_yuu",
+      "reactions": 4,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
       "id": "1347737869078233150",
       "content": "我2启福袋1叠藏品，从开活动开始，每天的体力全投这活动上，到快关活动了，我竟然还没做完成就?\n策划真不想给奖励可以不用假模假式的开活动的",
       "author": "sadanshishen",
@@ -50,11 +90,124 @@
       "channel": "这活动奖励缩水也缩的太厉害了吧"
     },
     {
-      "id": "1347772164333637682",
-      "content": "就是刷不满，主要这活动前一周和熔朵重叠了所以花了一部分体力在熔朵活动，我们没抽大福袋的不嗑药连命轮都拿不完<:cry:1239910167668326480>",
-      "author": "nowimfaceless",
-      "reactions": 1,
-      "channel": "这活动奖励缩水也缩的太厉害了吧"
+      "id": "1347790295424696450",
+      "channel_id": "1131839817982947429",
+      "content": "Aaa想要跟所有人口口",
+      "author": "yusi4172",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347926142769696900",
+      "channel_id": "1131839817982947429",
+      "content": "我怎麼感覺....通訊比尾王還難打",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347880930689286206",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1347947649076166737",
+      "channel_id": "1170692781216378960",
+      "content": "they uploading a lot of morimens ost in youtube",
+      "author": "itsmemiki",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347948252128874497",
+      "channel_id": "1170692781216378960",
+      "content": "im so limbus pilled i thought you said carmilla lol",
+      "author": "itsmemiki",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347978505601683537",
+      "channel_id": "1180850818509971466",
+      "content": "",
+      "author": "nahida._90",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1347789794729525330",
+      "channel_id": "1131839817982947429",
+      "content": "他會平均的毀滅每一個按他問號的人的",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347790330946392166",
+      "channel_id": "1131839817982947429",
+      "content": "Aaa想要跟所有人口口",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347830535539523626",
+      "channel_id": "1131839817982947429",
+      "content": "我只會玩24專蘿坦星爆氣流斬",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347892730830782626",
+      "channel_id": "1131839817982947429",
+      "content": "除非端出H劇情",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347898349231145040",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇甚至是133333",
+      "author": "scholar_2",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347898490407227444",
+      "channel_id": "1131839817982947429",
+      "content": "把攒的灵核用了之后金券根本顶不住",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347945723425062954",
+      "channel_id": "1131839817982947429",
+      "content": "也許我會再打看看 看能不能5回合Ko",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347880857767120997",
+      "channel_id": "1131839874132090890",
+      "content": "如果沒特別喜歡等下一隻沒差，但是記得石頭別拿去抽普池",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1347771056722673696",
+      "channel_id": "1170692781216378960",
+      "content": "My agrippa looking monstorous right now",
+      "author": "aslechi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

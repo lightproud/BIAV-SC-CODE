@@ -1,10 +1,16 @@
 {
   "date": "2025-03-14",
-  "messages": 85,
-  "unique_authors": 13,
-  "reactions_total": 68,
-  "attachments": 19,
+  "messages": 2651,
+  "unique_authors": 155,
+  "reactions_total": 555,
+  "attachments": 160,
   "channel_activity": {
+    "🔸綜合討論": 468,
+    "🔸阵容构建": 138,
+    "🔸morimens-game-chat": 1651,
+    "🔸相位对弈": 43,
+    "🔸日本語チャンネル": 14,
+    "🔸한국어-채팅방": 252,
     "Tier list as of 2.0": 1,
     "How can I make a good team": 3,
     "Traduction en Français - Collecte de Traduction en Français - Collecte de Retour": 1,
@@ -32,35 +38,84 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "7": 1,
-    "12": 15,
-    "22": 11,
-    "10": 11,
-    "13": 10,
-    "19": 3,
-    "15": 10,
-    "14": 2,
-    "11": 4,
-    "3": 4,
-    "6": 4,
-    "8": 6,
-    "16": 1,
-    "4": 1,
-    "9": 1
+    "1": 45,
+    "2": 74,
+    "3": 230,
+    "4": 144,
+    "5": 53,
+    "7": 107,
+    "8": 38,
+    "9": 17,
+    "10": 28,
+    "11": 228,
+    "12": 159,
+    "13": 438,
+    "14": 339,
+    "15": 308,
+    "16": 136,
+    "17": 41,
+    "18": 59,
+    "19": 75,
+    "22": 12,
+    "0": 60,
+    "6": 35,
+    "20": 14,
+    "21": 4,
+    "23": 7
   },
   "message_types": {
-    "20": 1,
-    "0": 35,
-    "19": 3
+    "0": 2010,
+    "19": 552,
+    "6": 3,
+    "23": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1350096899998224476",
+      "channel_id": "1170692781216378960",
+      "content": "@everyone Hi everyone! Sorry for pin you. We recently optimized the latest versi",
+      "author": "game.producer.light",
+      "reactions": 247,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350097940760363008",
+      "channel_id": "1170692781216378960",
+      "content": "We apologize, but please temper your expectations—this update primarily attempte",
+      "author": "game.producer.light",
+      "reactions": 41,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350098984529825873",
+      "channel_id": "1170692781216378960",
+      "content": "As the game producer, I was originally drawn to join the team by our artists' in",
+      "author": "game.producer.light",
+      "reactions": 31,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1350058287688712253",
       "content": "Hello,  Keeper!\nThere are currently 11 languages in the game for the  Keeper to ",
       "author": "morimensstaff01",
       "reactions": 19,
       "channel": ""
+    },
+    {
+      "id": "1350097280396427395",
+      "channel_id": "1170692781216378960",
+      "content": "I was kinda shocked when I saw \"Screwed again\" on Tulu's card",
+      "author": "kiri_ire",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350098005684125747",
+      "channel_id": "1170692781216378960",
+      "content": "Who is your artist for the game? I'm a huge fan of their style. And thank you fo",
+      "author": "funiphenol",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1350060973083590666",
@@ -70,11 +125,43 @@
       "channel": ""
     },
     {
+      "id": "1350044105291464714",
+      "channel_id": "1131839817982947429",
+      "content": "~~不敢打星辰篇只好來打個H9-11速殺~~",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350113788824780812",
+      "channel_id": "1131839874132090890",
+      "content": "出獄！",
+      "author": "akkom730",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1349987955908804729",
       "content": "建議已收到~我們計劃在未來陸續安排上🥳",
       "author": "morimensstaff01",
       "reactions": 6,
       "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+    },
+    {
+      "id": "1349981764751458305",
+      "channel_id": "1131839874132090890",
+      "content": "剩我不齊又啟靈低了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1350101279002722407",
+      "channel_id": "1170692781216378960",
+      "content": "You rn",
+      "author": "omnipotentkun",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1350059802323058728",
@@ -84,116 +171,60 @@
       "channel": "Português Tradução - Coleta de Feedback"
     },
     {
-      "id": "1350121269672280219",
-      "content": "お世話になってます！いつも楽しませていただいてます\n日本語訳については多くあるんですが😅 💦\n特にキャラクターの名前が統一されていない事が気になります\n\n例えば",
-      "author": "murphy.p",
+      "id": "1350100167990181990",
+      "channel_id": "1131839817982947429",
+      "content": "原本心情好好的 今天睡不好了",
+      "author": "mob1065",
       "reactions": 3,
-      "channel": "【日本語訳】フィードバック"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1350060160739184690",
-      "content": "Пожалуйста, игроки, использующие русский язык, оставляйте свои мысли о переводе ",
+      "id": "1349940796849258567",
+      "channel_id": "1131839874132090890",
+      "content": "我2啟…",
+      "author": "akkom730",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1349981430163443763",
+      "channel_id": "1131839874132090890",
+      "content": "難的是啟靈高",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1350099266915536937",
+      "channel_id": "1170692781216378960",
+      "content": "Code that gives 10000 silver pls",
+      "author": "omnipotentkun",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350104608978243615",
+      "channel_id": "1170692781216378960",
+      "content": "It isnt much of a surprise I am not exactly high ranking",
+      "author": "mentallystuntedsavant",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350106341955600386",
+      "channel_id": "1170692781216378960",
+      "content": "I do not worry since my luck never fails",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350062910755442810",
+      "channel_id": "1300659495550062592",
+      "content": "🥰 이 게시물 아래에서 【게임 텍스트 번역 현지화】에 대한 의견과 질문을 공유해 주시는 것을 환영합니다!\n\n🔥https://discord.com",
       "author": "morimensstaff01",
       "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1350059696945500171",
-      "content": "Por favor, los jugadores que usan español, dejen sus opiniones sobre la traducci",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1350058596288692334",
-      "content": "【遊戲文本多語言本地化意見收集&未來優化計劃】\n\n守密人，你好！\n目前遊戲內總共有11種語言供守密人選擇，但受限於團隊規模和資源，我們只好使用AI翻譯。\n🌹 針",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1350097494893264908",
-      "content": "I made A character name correction Sheet. \n\nhttps://docs.google.com/spreadsheets",
-      "author": "legion_schindler",
-      "reactions": 2,
-      "channel": "한국어 번역 피드백 컬렉션"
-    },
-    {
-      "id": "1350089366881435739",
-      "content": "ภาษาไทยในเกมแปลได้ค่อนข้างแย่ \nหลายครั้งเปลี่ยนชื่อ NPC เหมือนไม่รู้ว่าจะอ่านชื่",
-      "author": "littleyoukai",
-      "reactions": 2,
-      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
-    },
-    {
-      "id": "1350059045054316644",
-      "content": "日本語話者の皆様は、この投稿のコメント欄に、ゲーム内の日本語翻訳に関するご意見を寄せていただけますでしょうか？\nバグ、翻訳エラー、わかりにくい表現、提案など、何",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "【日本語訳】フィードバック"
-    },
-    {
-      "id": "1349952846593785969",
-      "content": "能不能直接在 yt 放撥放清單",
-      "author": "sleepingcat103",
-      "reactions": 2,
-      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
-    },
-    {
-      "id": "1349960307082133584",
-      "content": "这卡这里了",
-      "author": "molove0286",
-      "reactions": 2,
-      "channel": "✅「已回答」卡牌错位"
-    },
-    {
-      "id": "1350102008106975322",
-      "content": "Дженкинс в сюжете называют \"он\", хотя должно быть \"она\"",
-      "author": "xeno_for_world",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1350103224882823188",
-      "content": "🇷🇺 \nСделать возможность редактировать перевод, и рекомендовать его другим. Прямо",
-      "author": "shadowwave",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1350190693787762710",
-      "content": "",
-      "author": "karsh_1",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1350102797282050170",
-      "content": "คนไทย = Thai people",
-      "author": "littleyoukai",
-      "reactions": 1,
-      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
-    },
-    {
-      "id": "1350086287612444793",
-      "content": "Mungkin itu saja yang bisa saya sampaikan, terima kasih.",
-      "author": "rosemry",
-      "reactions": 1,
-      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
-    },
-    {
-      "id": "1350091491271381113",
-      "content": "Terima kasih banyak! 🥹 ❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
-    },
-    {
-      "id": "1350101119266721882",
-      "content": "дайте нейросетке больше времени подумать над переводом, перевод станет более точ",
-      "author": "liawein",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔸한국어-채팅방"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-03-04",
-  "messages": 109,
-  "unique_authors": 35,
-  "reactions_total": 173,
-  "attachments": 11,
+  "messages": 3540,
+  "unique_authors": 102,
+  "reactions_total": 628,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 1722,
+    "🔸morimens-game-chat": 1690,
+    "🔸剧情交流": 19,
     "fuckupatoo's morimens fanfics": 8,
     "i made morimens lore archive in case someone want to read the story": 3,
     "Star Chapter 2.1 Tier List": 2,
@@ -27,29 +30,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 3,
-    "10": 4,
-    "12": 7,
-    "7": 8,
-    "5": 31,
-    "1": 3,
-    "13": 9,
-    "14": 6,
-    "15": 4,
-    "16": 3,
-    "17": 3,
-    "11": 2,
-    "2": 4,
-    "3": 7,
-    "23": 1,
-    "4": 5,
-    "8": 5,
-    "6": 2,
-    "18": 2
+    "0": 12,
+    "1": 77,
+    "2": 42,
+    "3": 46,
+    "4": 84,
+    "5": 170,
+    "6": 71,
+    "7": 287,
+    "8": 102,
+    "9": 95,
+    "10": 63,
+    "11": 331,
+    "12": 304,
+    "13": 488,
+    "14": 211,
+    "15": 127,
+    "16": 304,
+    "17": 218,
+    "18": 76,
+    "19": 63,
+    "20": 180,
+    "21": 98,
+    "22": 46,
+    "23": 45
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 2776,
+    "19": 655
   },
   "top_reacted_messages": [
     {
@@ -74,6 +82,22 @@
       "channel": "👨"
     },
     {
+      "id": "1346447699938906143",
+      "channel_id": "1131839817982947429",
+      "content": "<@633215996508766229> \n不管這篇文章是不是你鎖的\nhttps://discord.com/channels/113179163793319",
+      "author": "pray_unbeliever",
+      "reactions": 18,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346450380178853889",
+      "channel_id": "1131839817982947429",
+      "content": "九點之後就開始退群組砍忘卻了",
+      "author": "pray_unbeliever",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1346536789170589768",
       "content": "以鯊魚的繁殖狂熱改寫。\n疊甲\n本文僅代表本人個人對於鯊的喜愛，文中有OOC的部分請見諒，低質文請別舉報。\n\n正文：\n\n夜深人靜，守密人正躺在床上沉睡，房間裡只有",
       "author": "void_1546.",
@@ -86,6 +110,62 @@
       "author": "maegu",
       "reactions": 10,
       "channel": "i made morimens lore archive in case someone want to read the story"
+    },
+    {
+      "id": "1346468503959633950",
+      "channel_id": "1131839817982947429",
+      "content": "mob一直都是貓咪的小情人",
+      "author": "nemu_s_t_a_r",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346491165406662739",
+      "channel_id": "1131839817982947429",
+      "content": "针对的不是忘却，但超好笑",
+      "author": "flarinsidia",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346442686504239196",
+      "channel_id": "1131839817982947429",
+      "content": "我有這樣的隊伍 但課金卻換不來更輕鬆遊戲體驗 那不是吃屎是什麼",
+      "author": "pray_unbeliever",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346448903569932320",
+      "channel_id": "1131839817982947429",
+      "content": "如果沒人要我的帳號，我就只能送卡墨了<:rose1:1234798154000633949>",
+      "author": "pray_unbeliever",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346463322387644447",
+      "channel_id": "1131839817982947429",
+      "content": "畢竟我是良民",
+      "author": "mob1065",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346296006157013053",
+      "channel_id": "1131839817982947429",
+      "content": "至少丟了10萬台幣在忘卻了",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1346395141128060999",
+      "channel_id": "1131839817982947429",
+      "content": "棱彩透镜害人不浅（）",
+      "author": "flarinsidia",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1346375434702684200",
@@ -102,95 +182,36 @@
       "channel": ""
     },
     {
-      "id": "1346384059101876234",
-      "content": "如题\n原本队伍有1k3血（150%左右强效），可以看到被融蚀之芯打到1k2血的时候毒量上限是36k，1k1血的时候毒量上限变为35k\n~~毒队已经很难很难打了每",
-      "author": "flarinsidia",
+      "id": "1346388526526107692",
+      "channel_id": "1131839817982947429",
+      "content": "~~我方舟帳號是繼承別人的 然後那個人比我還課 方舟全圖鑑部分限定都滿潛 \n我接手她帳號快一年 她留下來的至純源石還有兩萬多~~",
+      "author": "pray_unbeliever",
       "reactions": 5,
-      "channel": "✅「已回答」棱彩透镜毒量上限依然根据当回合生命值实时结算"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1346505045549781105",
-      "content": "~~但是這新公關並沒有比校貓好~~",
-      "author": "_cwz_",
-      "reactions": 4,
-      "channel": "為什麼只會鎖文ban人但不會回應我們呢"
+      "id": "1346436834678276126",
+      "channel_id": "1131839817982947429",
+      "content": "現在是誰整天都在好色",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1346348063614177330",
-      "content": "天賦素材量最奇葩，原本還要卡資源20隻7級才能升10級，我就想問這素材到底是打算星辰篇完結都沒法有滿等的嗎",
-      "author": "arr5721",
-      "reactions": 4,
-      "channel": "請官方叫我不要玩忘卻前夜"
+      "id": "1346448621742198884",
+      "channel_id": "1131839817982947429",
+      "content": "# 我有忘卻週邊我要遊戲做什麼",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1346423534460866692",
-      "content": "猫认为大家都赤的很开心了\n融灾两天就有10个满分了🤓👆 没毛病啊我们星辰篇，还有提升空间",
-      "author": "nidie0256_61327",
-      "reactions": 4,
-      "channel": "請官方叫我不要玩忘卻前夜"
-    },
-    {
-      "id": "1346376038187274290",
-      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第2期（第29期）「融灾禁区」地图，以及时灵摆和对应效果与怪物首领。\n请注意V2.1.0.2 停服维护",
-      "author": "menoctus",
-      "reactions": 4,
-      "channel": "关卡地图「融灾禁区」总览29期·星辰篇"
-    },
-    {
-      "id": "1346294049027657740",
-      "content": "麻烦把一些加强直接放在本体，比如这次的🌰，本体加强的部分几乎无关痛痒忘却篇依旧查无此人但是新被动又给的不少，可是这部分在忘却篇又不生效，新被动的材料获取也不是很",
-      "author": "ruhebaoyangsiwa_97871",
-      "reactions": 3,
-      "channel": "✅前瞻：V2.1.1 相位对弈联动"
-    },
-    {
-      "id": "1346407287962599445",
-      "content": "你好守密人，神父實際血量轉爐子並未吃到減治療效果，即沒有吃2次減治療😊 。\n是該處【掉血描述顯示問題】導致了誤會，校工已經在著手修改此處有問題的描述了~",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「已回答」神父无底重创吃两次的问题"
-    },
-    {
-      "id": "1346443987937923082",
-      "content": "就跟標題一樣為什麼你們只會鎖文ban人開慢速但不會回應我們呢？",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "為什麼只會鎖文ban人但不會回應我們呢"
-    },
-    {
-      "id": "1346351092249923656",
-      "content": "我覺得校貓已經盤算好跳到下一個遊戲項目組當策劃了🫠",
-      "author": "ena04564",
-      "reactions": 3,
-      "channel": "請官方叫我不要玩忘卻前夜"
-    },
-    {
-      "id": "1346495784253915146",
-      "content": "As the title suggests, I think Lily should be added to new Chaos Banner (like th",
-      "author": "tete_ttnhana",
-      "reactions": 2,
-      "channel": "Should Lily be added to new Chaos Banner as she was added to permanent banner?"
-    },
-    {
-      "id": "1346422916170121226",
-      "content": "<@735137568307282011>",
-      "author": "zier.0",
-      "reactions": 1,
-      "channel": "fuckupatoo's morimens fanfics"
-    },
-    {
-      "id": "1346295249915482265",
-      "content": "神父2费触发无底之后血量转炉子会吃一次，使用炉子回血会再吃一次，也就是吃两次无底的减治疗<:Coffee:1240919421791375380>",
-      "author": "ruhebaoyangsiwa_97871",
-      "reactions": 1,
-      "channel": "✅「已回答」神父无底重创吃两次的问题"
-    },
-    {
-      "id": "1346335542106787931",
-      "content": "還有你之後就看不到勸新玩家退坑的玩家了，他們之後都會被校貓踢掉🤡",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "請官方叫我不要玩忘卻前夜"
+      "id": "1346457421731594280",
+      "channel_id": "1131839817982947429",
+      "content": "大部分手遊劇情都不值得看",
+      "author": "nemu_s_t_a_r",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

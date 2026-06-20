@@ -1,10 +1,24 @@
 {
   "date": "2025-04-14",
-  "messages": 1443,
-  "unique_authors": 32,
-  "reactions_total": 219,
-  "attachments": 98,
+  "messages": 9168,
+  "unique_authors": 137,
+  "reactions_total": 386,
+  "attachments": 434,
   "channel_activity": {
+    "🔸阵容构建": 15,
+    "🔸morimens-game-chat": 6022,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 2,
+    "🔸交友频道": 12,
+    "🔸한국어-채팅방": 661,
+    "🔸русский-канал": 178,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 21,
+    "🔸canal-português": 21,
+    "🔸ruang-obrolan-indonesia": 688,
+    "🔸ห้องสนทนาภาษาไทย": 11,
+    "🔸traphase": 4,
+    "🔸lore-chat": 79,
     "🔸綜合討論": 1296,
     "aomi’s morimens dump": 1,
     "Clementine": 1,
@@ -42,34 +56,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 209,
-    "1": 35,
-    "2": 19,
-    "3": 39,
-    "4": 57,
-    "5": 64,
-    "6": 36,
-    "7": 82,
-    "8": 103,
-    "9": 70,
-    "10": 56,
-    "11": 182,
-    "12": 229,
-    "13": 43,
-    "14": 36,
-    "15": 77,
-    "16": 13,
-    "17": 10,
-    "18": 38,
-    "19": 25,
-    "20": 4,
-    "21": 1,
-    "23": 10,
-    "22": 5
+    "7": 329,
+    "8": 265,
+    "9": 351,
+    "0": 589,
+    "1": 201,
+    "2": 233,
+    "3": 221,
+    "4": 339,
+    "5": 539,
+    "6": 601,
+    "10": 363,
+    "11": 471,
+    "12": 539,
+    "13": 864,
+    "14": 933,
+    "15": 470,
+    "16": 288,
+    "17": 327,
+    "18": 141,
+    "19": 72,
+    "20": 68,
+    "21": 446,
+    "22": 129,
+    "23": 389
   },
   "message_types": {
-    "0": 1126,
-    "19": 170
+    "0": 5970,
+    "19": 1755
   },
   "top_reacted_messages": [
     {
@@ -108,6 +122,22 @@
       "author": "muliupan",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361337382065930493",
+      "channel_id": "1170692781216378960",
+      "content": "i would not rewind sanga",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361301124086239434",
+      "channel_id": "1300659802455674972",
+      "content": "ทุกคน ผมทำสำเร็จแล้วครับ Tulu ตัวแรกของไอดี 😭",
+      "author": "iamninja",
+      "reactions": 5,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1361133284922359838",
@@ -172,59 +202,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1361134763548737810",
-      "channel_id": "1131839817982947429",
-      "content": "抽到了",
-      "author": "haiselittlebat",
+      "id": "1361337963597791323",
+      "channel_id": "1170692781216378960",
+      "content": "We need to do an Awaker fantasy draft",
+      "author": "flares117",
       "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1361134883631661267",
-      "channel_id": "1131839817982947429",
-      "content": "瘋狂預兆是資源很閒的時候開的",
-      "author": "ena04564",
+      "id": "1361338960286187691",
+      "channel_id": "1170692781216378960",
+      "content": "Yup",
+      "author": "quirk15",
       "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1361135743254134936",
-      "channel_id": "1131839817982947429",
-      "content": "資源存了一年以上\n不推薦新手\n新手還是把目標設定大c\n塔薇 血鏈希洛",
-      "author": "Deleted User",
+      "id": "1361339148954370129",
+      "channel_id": "1170692781216378960",
+      "content": "I will beat it out of u",
+      "author": "noire_2",
       "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1361203277739462867",
-      "channel_id": "1131839817982947429",
+      "id": "1361286905622429756",
+      "channel_id": "1174983699935277147",
       "content": "",
-      "author": "xuanxue007",
+      "author": "aaaa_00098",
       "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸晒卡分享"
     },
     {
-      "id": "1361279414242902046",
-      "channel_id": "1131839817982947429",
-      "content": "对不起，拉蒙娜，我已经有灵芝，用不到你😭",
-      "author": "sense25.",
+      "id": "1361194912862834779",
+      "channel_id": "1326453763355185215",
+      "content": "",
+      "author": "_venush",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361249765882331258",
-      "content": "2-2和2-14的事件一模一样，这不太对",
-      "author": "silverstream_s",
-      "reactions": 3,
-      "channel": "✅「已回答」星辰篇2章克莱门汀事件重复"
-    },
-    {
-      "id": "1361132718632472687",
-      "channel_id": "1131839817982947429",
-      "content": "反正其他有助戰",
-      "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸lore-chat"
     }
   ]
 }

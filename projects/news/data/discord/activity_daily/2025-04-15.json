@@ -1,10 +1,23 @@
 {
   "date": "2025-04-15",
-  "messages": 2174,
-  "unique_authors": 41,
-  "reactions_total": 343,
-  "attachments": 73,
+  "messages": 9048,
+  "unique_authors": 116,
+  "reactions_total": 577,
+  "attachments": 222,
   "channel_activity": {
+    "🔸morimens-game-chat": 6482,
+    "🔸相位对弈": 5,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 101,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 36,
+    "🔸canal-español": 11,
+    "🔸canal-português": 41,
+    "🔸ruang-obrolan-indonesia": 143,
+    "🔸ห้องสนทนาภาษาไทย": 12,
+    "🔸traphase": 28,
+    "🔸lore-chat": 6,
+    "🔸lets-count": 1,
     "🔸綜合討論": 2120,
     "忘卻前夜OST：深港幽靈之船": 1,
     "之前听说星辰篇要遏制数值膨胀": 14,
@@ -17,33 +30,35 @@
     "不会再有了": 2
   },
   "hourly_activity": {
-    "0": 28,
-    "1": 50,
-    "2": 17,
-    "4": 4,
-    "5": 21,
-    "6": 66,
-    "7": 126,
-    "8": 38,
-    "9": 125,
-    "10": 159,
-    "11": 142,
-    "12": 377,
-    "13": 345,
-    "14": 125,
-    "15": 215,
-    "16": 69,
-    "17": 19,
-    "18": 13,
-    "19": 214,
-    "21": 13,
-    "22": 1,
-    "23": 3,
-    "3": 4
+    "0": 229,
+    "1": 109,
+    "2": 168,
+    "3": 332,
+    "4": 378,
+    "5": 217,
+    "6": 329,
+    "7": 222,
+    "8": 70,
+    "9": 188,
+    "10": 285,
+    "11": 874,
+    "12": 1003,
+    "13": 676,
+    "14": 542,
+    "15": 630,
+    "16": 622,
+    "17": 278,
+    "18": 304,
+    "19": 582,
+    "20": 110,
+    "21": 286,
+    "22": 295,
+    "23": 319
   },
   "message_types": {
-    "0": 1752,
-    "19": 368
+    "19": 1866,
+    "0": 5007,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -53,6 +68,14 @@
       "author": "sense25.",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1361669002367209503",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "khykken",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1361530716315320450",
@@ -86,6 +109,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1361774907595428002",
+      "channel_id": "1170692781216378960",
+      "content": "you shouldn't take your own experience as being widely applicable because you've",
+      "author": "applepieeater123",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1361603436637982883",
       "channel_id": "1131839817982947429",
       "content": "罵貓沒啥問題，但開除貓並沒法解決問題",
@@ -107,6 +138,46 @@
       "author": "luhongran",
       "reactions": 5,
       "channel": "双语字幕"
+    },
+    {
+      "id": "1361628189557919754",
+      "channel_id": "1170692781216378960",
+      "content": "It's telling you not to use these things",
+      "author": "linireo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361732610514223337",
+      "channel_id": "1170692781216378960",
+      "content": "WHAT 1/12 CHANCE??\n\nSo me getting DAFFO was a miracle??",
+      "author": "cindertinct",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361751891175800853",
+      "channel_id": "1170692781216378960",
+      "content": "\"Lets take ibuprofen together, keeper.\"",
+      "author": "annaxxe_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361753825249333429",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "meow4joscarl",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361785960555221035",
+      "channel_id": "1170692781216378960",
+      "content": "i dont think normal mode should be harder than alert 3 dtide",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1361604660586086421",
@@ -145,62 +216,6 @@
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "287405tjy_28066",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361687214609793257",
-      "channel_id": "1131839817982947429",
-      "content": "<:sleep2:1356085993626665200>",
-      "author": "zhaoxing233",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361688957586378953",
-      "channel_id": "1131839817982947429",
-      "content": "才10幾單",
-      "author": "Deleted User",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361692754115166500",
-      "channel_id": "1131839817982947429",
-      "content": "你是襠部玩家",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361693442521956373",
-      "channel_id": "1131839817982947429",
-      "content": "~~鯊魚那ㄐㄐ感覺比我人還大~~",
-      "author": "fengliyaowo",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361706876588392620",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arthasiv",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361714576701260027",
-      "channel_id": "1131839817982947429",
-      "content": "上期的（",
-      "author": "bailuoxiao",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361790294915547399",
-      "channel_id": "1131839817982947429",
-      "content": "汀c打融灾3难度都要凹…输光",
-      "author": "flarinsidia",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

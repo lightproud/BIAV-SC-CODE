@@ -1,10 +1,23 @@
 {
   "date": "2025-04-10",
-  "messages": 873,
-  "unique_authors": 39,
-  "reactions_total": 107,
-  "attachments": 50,
+  "messages": 5503,
+  "unique_authors": 112,
+  "reactions_total": 248,
+  "attachments": 239,
   "channel_activity": {
+    "🔸morimens-game-chat": 3294,
+    "🔸剧情交流": 12,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 665,
+    "🔸русский-канал": 302,
+    "🔸phòng-chat-tiếng-việt": 1,
+    "🔸canal-português": 16,
+    "🔸ruang-obrolan-indonesia": 231,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 61,
+    "🔸lore-chat": 12,
+    "🔸lets-count": 2,
     "🔸綜合討論": 788,
     "Dive Bomb Goliath": 1,
     "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 9,
@@ -23,31 +36,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 11,
-    "1": 3,
-    "2": 19,
-    "3": 27,
-    "4": 10,
-    "5": 127,
-    "6": 61,
-    "7": 59,
-    "8": 8,
-    "9": 70,
-    "10": 188,
-    "11": 12,
-    "12": 66,
-    "13": 55,
-    "14": 45,
-    "15": 70,
-    "16": 29,
-    "17": 7,
-    "18": 2,
-    "19": 3,
-    "23": 1
+    "0": 390,
+    "1": 180,
+    "2": 210,
+    "3": 372,
+    "4": 397,
+    "5": 455,
+    "6": 132,
+    "7": 320,
+    "8": 15,
+    "9": 127,
+    "10": 349,
+    "11": 190,
+    "12": 171,
+    "13": 297,
+    "14": 393,
+    "15": 245,
+    "16": 107,
+    "17": 120,
+    "18": 199,
+    "19": 149,
+    "20": 106,
+    "21": 47,
+    "22": 318,
+    "23": 214
   },
   "message_types": {
-    "0": 679,
-    "19": 109
+    "0": 3677,
+    "19": 953
   },
   "top_reacted_messages": [
     {
@@ -56,6 +72,14 @@
       "author": "maegu",
       "reactions": 12,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359795202428108841",
+      "channel_id": "1170692781216378960",
+      "content": "i mean like paid promote",
+      "author": "maegu",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1359786260469776395",
@@ -80,11 +104,35 @@
       "channel": "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide"
     },
     {
+      "id": "1359920286467883048",
+      "channel_id": "1170692781216378960",
+      "content": "Favorite Morimens Wallpaper ? \n:",
+      "author": "sexysneakystoat1625",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1359738724702752889",
       "content": "",
       "author": ".2.718281828",
       "reactions": 6,
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359883077891133570",
+      "channel_id": "1300659580446969918",
+      "content": "Все, удалил морименс. Очень устал от однообразия в игре. Ивенты просто ужасны, т",
+      "author": "eagle4alan",
+      "reactions": 5,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1359757772635508837",
+      "channel_id": "1300659802455674972",
+      "content": "",
+      "author": "c2reayus",
+      "reactions": 4,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     },
     {
       "id": "1359750188901863556",
@@ -125,6 +173,22 @@
       "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
+      "id": "1359905025371013203",
+      "channel_id": "1170692781216378960",
+      "content": "Isn’t it called Horla?",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359943568982016294",
+      "channel_id": "1300659802455674972",
+      "content": "karin กะ winkle ครับเลือกสักตัวสองตัวนี้ไปได้หลายทีม",
+      "author": "jamalibnsulaiman",
+      "reactions": 3,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
       "id": "1359753472987103312",
       "channel_id": "1131839817982947429",
       "content": "8抽出0命！爽",
@@ -154,54 +218,6 @@
       "author": "yizilven",
       "reactions": 3,
       "channel": "有关于同人文创作的一些问题"
-    },
-    {
-      "id": "1359714424063131878",
-      "channel_id": "1131839817982947429",
-      "content": "醫生真好，天天給我傳訊息",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359758067993940122",
-      "channel_id": "1131839817982947429",
-      "content": "你妈",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359786975170789437",
-      "channel_id": "1131839817982947429",
-      "content": "缸中之腦偶遇人彘戰神，流血效果恐怖如斯，拼盡全力玩法戰勝",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359838643912446113",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359841545322238002",
-      "channel_id": "1131839817982947429",
-      "content": "那3000k也不是不能打",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359848610837168221",
-      "channel_id": "1131839817982947429",
-      "content": "连PC版都没有，画质就不用期待了",
-      "author": "sense25.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }

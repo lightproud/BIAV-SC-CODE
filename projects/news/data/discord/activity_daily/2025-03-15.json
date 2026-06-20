@@ -1,10 +1,15 @@
 {
   "date": "2025-03-15",
-  "messages": 27,
-  "unique_authors": 8,
-  "reactions_total": 15,
-  "attachments": 6,
+  "messages": 2619,
+  "unique_authors": 91,
+  "reactions_total": 107,
+  "attachments": 149,
   "channel_activity": {
+    "🔸綜合討論": 135,
+    "🔸morimens-game-chat": 2311,
+    "🔸相位对弈": 69,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 73,
     "How can I make a good team": 8,
     "Morimens loading screen lore compilation": 4,
     "【日本語訳】フィードバック": 4,
@@ -16,20 +21,34 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "12": 1,
-    "13": 4,
-    "14": 5,
-    "15": 1,
-    "11": 10,
-    "8": 1,
-    "20": 2,
-    "9": 1,
-    "23": 1,
-    "21": 1
+    "3": 312,
+    "4": 171,
+    "6": 84,
+    "7": 70,
+    "8": 62,
+    "9": 9,
+    "10": 32,
+    "11": 180,
+    "12": 372,
+    "13": 435,
+    "14": 140,
+    "15": 265,
+    "17": 23,
+    "18": 18,
+    "20": 19,
+    "21": 3,
+    "0": 19,
+    "1": 10,
+    "2": 168,
+    "5": 28,
+    "16": 130,
+    "19": 18,
+    "22": 37,
+    "23": 14
   },
   "message_types": {
-    "19": 5,
-    "0": 11
+    "0": 1810,
+    "19": 782
   },
   "top_reacted_messages": [
     {
@@ -40,6 +59,118 @@
       "channel": "✅「Answered」Add crafting for Shattered Remnant of Dreams"
     },
     {
+      "id": "1350422501666066533",
+      "channel_id": "1131839817982947429",
+      "content": "快去當受",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350468498194694255",
+      "channel_id": "1131839817982947429",
+      "content": "还好我有了",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350466479396753428",
+      "channel_id": "1170692781216378960",
+      "content": "https://media.discordapp.net/attachments/694412819860553848/1184004232903401502/",
+      "author": "brainrot_in_a_vat",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350323313163112489",
+      "channel_id": "1131839817982947429",
+      "content": "輸光…",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350456899564474430",
+      "channel_id": "1131839817982947429",
+      "content": "校貓應該向我支付遊玩這款遊戲的費用\n||~~或者一套包含收米人手提箱、各種亞克力角色立繪、命輪立牌、各種典藏館美圖以及全套設定集的周邊~~||",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350517811809751060",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350431682083160065",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah like how arc 2 chapter 1 had gdoll ||sleep with the keeper||",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350518998948909076",
+      "channel_id": "1170692781216378960",
+      "content": "Hello am new! The art is fantastic.",
+      "author": "wisewwivard_10391",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350390353236332616",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350303200422662214",
+      "channel_id": "1170692781216378960",
+      "content": "⚠️",
+      "author": "aslechi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350431789973245996",
+      "channel_id": "1170692781216378960",
+      "content": "Arc 2 becoming so lewd than thais? crazy",
+      "author": "undeterredhomo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350455253115469894",
+      "channel_id": "1170692781216378960",
+      "content": "MS paint",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350463926092959774",
+      "channel_id": "1170692781216378960",
+      "content": "I can get Tulu from this right?",
+      "author": "caseoh_25",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1350482757377196062",
+      "channel_id": "1170692781216378960",
+      "content": "Other game could never",
+      "author": "re_rena12",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1350390115297529947",
       "content": "「守秘者」も「シークレットキーパー」「秘密保持者」のほか「守密人」（中国語と同じ）があります。ラモンナ(Ramona)がボイスで言うのは「守秘者」です。",
       "author": "x013318908",
@@ -47,18 +178,36 @@
       "channel": "【日本語訳】フィードバック"
     },
     {
-      "id": "1350428931836084236",
-      "content": "itd be really funny if all the EN optimisations have drastically changed the tex",
-      "author": "itsmemiki",
+      "id": "1350389668608475168",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
       "reactions": 1,
-      "channel": "Morimens loading screen lore compilation"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1350581729760645224",
-      "content": "При усилении реликвии описание полностью не помещается",
-      "author": "karsh_1",
+      "id": "1350389970346704956",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
       "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350391650081308692",
+      "channel_id": "1131839817982947429",
+      "content": "那個怪物血量還在100初，沒有什麼加固鎖血的美好世界🥵",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1350429153563770941",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

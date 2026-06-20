@@ -1,10 +1,22 @@
 {
   "date": "2025-04-04",
-  "messages": 725,
-  "unique_authors": 28,
-  "reactions_total": 121,
-  "attachments": 50,
+  "messages": 5872,
+  "unique_authors": 104,
+  "reactions_total": 198,
+  "attachments": 264,
   "channel_activity": {
+    "🔸morimens-game-chat": 3688,
+    "🔸相位对弈": 8,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 617,
+    "🔸русский-канал": 287,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 10,
+    "🔸canal-português": 31,
+    "🔸ruang-obrolan-indonesia": 280,
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "🔸traphase": 219,
+    "🔸lets-count": 1,
     "🔸綜合討論": 659,
     "Today's this man's birthdays": 2,
     "New Player Mechanics and Progression Guide": 1,
@@ -25,31 +37,34 @@
     "「   」的故事（上）": 4
   },
   "hourly_activity": {
-    "0": 3,
-    "1": 1,
-    "2": 6,
-    "4": 7,
-    "5": 13,
-    "6": 26,
-    "7": 34,
-    "8": 131,
-    "9": 124,
-    "10": 33,
-    "11": 39,
-    "12": 26,
-    "13": 13,
-    "14": 19,
-    "15": 36,
-    "17": 50,
-    "18": 145,
-    "19": 10,
-    "23": 5,
-    "16": 3,
-    "20": 1
+    "0": 58,
+    "1": 78,
+    "2": 92,
+    "3": 213,
+    "4": 652,
+    "5": 150,
+    "6": 109,
+    "7": 100,
+    "8": 212,
+    "9": 331,
+    "10": 274,
+    "11": 170,
+    "12": 242,
+    "13": 566,
+    "14": 568,
+    "15": 186,
+    "16": 190,
+    "17": 204,
+    "18": 566,
+    "19": 456,
+    "20": 207,
+    "21": 49,
+    "22": 162,
+    "23": 37
   },
   "message_types": {
-    "0": 553,
-    "19": 106
+    "19": 1190,
+    "0": 3957
   },
   "top_reacted_messages": [
     {
@@ -128,6 +143,14 @@
       "channel": "关于时间原点"
     },
     {
+      "id": "1357662895802024117",
+      "channel_id": "1300659580446969918",
+      "content": "Извините меня",
+      "author": "ed3nk23per",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1357688254320611329",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -150,56 +173,52 @@
       "channel": "退游倒计时"
     },
     {
+      "id": "1357507985743806636",
+      "channel_id": "1170692781216378960",
+      "content": "Alright I took a brake then I did it ( after leveling my character to 30)",
+      "author": "mio5344",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357663051477680179",
+      "channel_id": "1170692781216378960",
+      "content": "when gtulu releases, tulu and gtulu should enter an arms race",
+      "author": "itsmemiki",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357710978871201984",
+      "channel_id": "1170692781216378960",
+      "content": "Absolute Cinema",
+      "author": "tsukineesan",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357779384118935573",
+      "channel_id": "1170692781216378960",
+      "content": "It's the only card you can play 14 of under the right circumstances",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1357547427447570556",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
       "id": "1357628330748153856",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "arthasiv",
       "reactions": 2,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1357649870713782427",
-      "channel_id": "1131839817982947429",
-      "content": "~~`塔維在這個隊伍是負責抓強者為尊跟螺湮逆流的~~",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1357668898937245808",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "randomplayer852",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1357664591672381532",
-      "content": "Very happy to see old and standard characters getting some love to make them mor",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "V2.2.0.0 停服維護公告"
-    },
-    {
-      "id": "1357700513872740483",
-      "content": "",
-      "author": "madlax",
-      "reactions": 2,
-      "channel": "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP"
-    },
-    {
-      "id": "1357642466060271678",
-      "content": "再削成蠢銀嚕",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "退游倒计时"
-    },
-    {
-      "id": "1357744039461392757",
-      "content": "`你的臉瞬間燒了起來。張口結舌，額頭抵住彎起的膝蓋，你發出無意義的呻吟；她則一味輕笑，透著惡作劇般的愉悅。\n\n「怎麼了？」\n\n「太丟臉了……」你悶聲說道，手指用",
-      "author": "sam511011",
-      "reactions": 2,
-      "channel": "「   」的故事（上）"
     }
   ]
 }

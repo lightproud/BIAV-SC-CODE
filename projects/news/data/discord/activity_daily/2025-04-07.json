@@ -1,10 +1,27 @@
 {
   "date": "2025-04-07",
-  "messages": 1939,
-  "unique_authors": 52,
-  "reactions_total": 221,
-  "attachments": 122,
+  "messages": 13127,
+  "unique_authors": 219,
+  "reactions_total": 506,
+  "attachments": 614,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 7898,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 26,
+    "🔸课间休息闲聊": 1,
+    "🔸日本語チャンネル": 14,
+    "🔸한국어-채팅방": 766,
+    "🔸chaîne-française": 12,
+    "🔸русский-канал": 361,
+    "🔸canal-español": 167,
+    "🔸canal-português": 178,
+    "🔸ruang-obrolan-indonesia": 743,
+    "🔸ห้องสนทนาภาษาไทย": 629,
+    "🔸traphase": 303,
+    "🔸lore-chat": 82,
+    "🔸lets-count": 1,
     "🔸綜合討論": 1834,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 1,
     "【日本語訳】フィードバック": 2,
@@ -36,33 +53,35 @@
     "1271491376881598494": 3
   },
   "hourly_activity": {
-    "0": 7,
-    "1": 3,
-    "2": 15,
-    "3": 53,
-    "4": 164,
-    "5": 194,
-    "6": 62,
-    "7": 240,
-    "8": 147,
-    "9": 157,
-    "10": 288,
-    "11": 147,
-    "12": 51,
-    "13": 112,
-    "14": 221,
-    "15": 4,
-    "16": 10,
-    "17": 48,
-    "18": 10,
-    "21": 3,
-    "22": 1,
-    "19": 2
+    "6": 289,
+    "0": 413,
+    "1": 356,
+    "2": 610,
+    "3": 974,
+    "4": 1290,
+    "5": 613,
+    "7": 527,
+    "8": 495,
+    "9": 578,
+    "10": 769,
+    "11": 851,
+    "12": 722,
+    "13": 736,
+    "14": 1016,
+    "15": 373,
+    "16": 185,
+    "17": 523,
+    "18": 316,
+    "19": 177,
+    "20": 267,
+    "21": 219,
+    "22": 254,
+    "23": 574
   },
   "message_types": {
-    "0": 1596,
-    "19": 237,
-    "46": 1
+    "0": 8461,
+    "19": 2726,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -111,12 +130,92 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1358782235888849087",
+      "channel_id": "1170692781216378960",
+      "content": "Baddie",
+      "author": "ryugaminehibiki",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358784157127544862",
+      "channel_id": "1170692781216378960",
+      "content": "or just make her trauma and fixation last for 3 turns",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1358662392879251599",
       "channel_id": "1131839817982947429",
       "content": "剩我有90等萊克了",
       "author": "ahuahuahua",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1358788343973806230",
+      "channel_id": "1170692781216378960",
+      "content": "It's only fair this is what we get after gdoll gradual suicidet thru intermitten",
+      "author": "vaish6421",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358669758438047794",
+      "channel_id": "1326453763355185215",
+      "content": "<@346078721981022208> the content is being served",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1358669301728542740",
+      "channel_id": "1170692781216378960",
+      "content": "is she worth investing?",
+      "author": "9.zer0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358742379686789201",
+      "channel_id": "1170692781216378960",
+      "content": "designers were too busy planning the next pandia nerf",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358785071393280082",
+      "channel_id": "1170692781216378960",
+      "content": "Meltdown • Venush\nnext banner guys let's go",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358656599689789501",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "two_of_us",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1358760819281756411",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1358796712717848597",
+      "channel_id": "1300659580446969918",
+      "content": "проходимцем",
+      "author": "ed3nk23per",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
     },
     {
       "id": "1358748526418333777",
@@ -140,83 +239,6 @@
       "content": "我都80+12了",
       "author": "heikwok",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358778677747253331",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "bailuoxiao",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358802302865244250",
-      "channel_id": "1131839817982947429",
-      "content": "我也有好友助战挂汀的，90级+12专属命轮",
-      "author": "bailuoxiao",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358801774974079086",
-      "content": "Happy to see the change to the ultra roud to help mixing whit ultra, but hopping",
-      "author": "vxvendetta",
-      "reactions": 3,
-      "channel": "V2.2.0.1 在線維護公告"
-    },
-    {
-      "id": "1358653655263215746",
-      "content": "在把开局狂气到100的角色变成虫族的时候会出现这个弹窗，意义不明",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "💭「處理中」第二章天赋bug"
-    },
-    {
-      "id": "1358886526070685998",
-      "content": "`察覺對方話語間的疲憊，希萊斯特追問，對方便帶她至船長室，拿出兩張地圖詳加說明。\n\n「這是過去傳說中沒有融蝕的航海圖，而這是去年最新版的世界地圖。發現了嗎？已經",
-      "author": "sam511011",
-      "reactions": 3,
-      "channel": "「   」的故事（上）"
-    },
-    {
-      "id": "1358629681355554949",
-      "channel_id": "1131839817982947429",
-      "content": "因為本體跟阿狗一樣都是0",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358630095635615774",
-      "channel_id": "1131839817982947429",
-      "content": "今天也是繁衍狂熱的一天",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358664861986586705",
-      "channel_id": "1131839817982947429",
-      "content": "【【忘却前夜】哈姆林c H1-10-哔哩哔哩】 https://b23.tv/wp4FyRL",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358665021290446928",
-      "channel_id": "1131839817982947429",
-      "content": "医生比哈姆林还不能c啊",
-      "author": "kepler0519",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1358674255553761300",
-      "channel_id": "1131839817982947429",
-      "content": "喜提慢速",
-      "author": "287405tjy_28066",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

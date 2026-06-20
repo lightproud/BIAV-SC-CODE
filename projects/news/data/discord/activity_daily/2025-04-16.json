@@ -1,10 +1,22 @@
 {
   "date": "2025-04-16",
-  "messages": 981,
-  "unique_authors": 28,
-  "reactions_total": 177,
-  "attachments": 45,
+  "messages": 6899,
+  "unique_authors": 113,
+  "reactions_total": 360,
+  "attachments": 253,
   "channel_activity": {
+    "🔸morimens-game-chat": 5550,
+    "🔸한국어-채팅방": 24,
+    "🔸deutscher-chatraum": 2,
+    "🔸русский-канал": 13,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 19,
+    "🔸canal-português": 21,
+    "🔸ruang-obrolan-indonesia": 113,
+    "🔸ห้องสนทนาภาษาไทย": 144,
+    "🔸traphase": 14,
+    "🔸lore-chat": 14,
+    "🔸lets-count": 2,
     "🔸綜合討論": 908,
     "V2.2.0.3 在線維護公告": 3,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
@@ -32,41 +44,58 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "0": 15,
-    "1": 8,
-    "2": 86,
-    "3": 206,
-    "4": 20,
-    "5": 33,
-    "6": 23,
-    "7": 107,
-    "8": 32,
-    "9": 17,
-    "10": 8,
-    "11": 51,
-    "12": 45,
-    "13": 39,
-    "14": 78,
-    "15": 37,
-    "16": 103,
-    "17": 22,
-    "18": 20,
-    "19": 12,
-    "20": 17,
-    "22": 2
+    "0": 520,
+    "1": 180,
+    "2": 407,
+    "3": 445,
+    "4": 537,
+    "5": 267,
+    "6": 142,
+    "7": 152,
+    "8": 116,
+    "9": 93,
+    "10": 72,
+    "11": 146,
+    "12": 293,
+    "13": 344,
+    "14": 395,
+    "15": 267,
+    "16": 397,
+    "17": 284,
+    "18": 562,
+    "19": 408,
+    "20": 214,
+    "21": 278,
+    "22": 185,
+    "23": 195
   },
   "message_types": {
-    "0": 795,
-    "19": 112,
-    "46": 1
+    "0": 4202,
+    "19": 1716
   },
   "top_reacted_messages": [
+    {
+      "id": "1361970693121511434",
+      "channel_id": "1170692781216378960",
+      "content": "wha..",
+      "author": "renofon3331",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1362121746722848869",
       "content": "最近没什么人算这个东西，所以自己私下算了一下。\n(4/17日修正了金卷的数字，计算的时候多算了一个0，结论的材料掉落倍数下调为2.0)\n\n首先贴结论:\n在克莱门",
       "author": "randomplayer852",
       "reactions": 11,
       "channel": "计算一下克莱门汀这次活动里，材料的刷取价值"
+    },
+    {
+      "id": "1361970878329393306",
+      "channel_id": "1170692781216378960",
+      "content": "Semen what a nice name",
+      "author": "ughhhhard",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1362004878083227818",
@@ -109,6 +138,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1362153937314250832",
+      "channel_id": "1170692781216378960",
+      "content": "that excel is getting patch notes",
+      "author": "flares117",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1361971454907912296",
       "channel_id": "1131839817982947429",
       "content": "99%都凹不过的路过🤡",
@@ -141,6 +178,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1361911255610294394",
+      "channel_id": "1170692781216378960",
+      "content": "Aurora my life was so horrible before i got miryam",
+      "author": "aslechi",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362154244005822566",
+      "channel_id": "1170692781216378960",
+      "content": "and ppl just know ♿ means tulu",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1362156117622390944",
       "channel_id": "1131839817982947429",
       "content": "是因为这关怪不强吗",
@@ -149,74 +202,34 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1362084476364259359",
+      "channel_id": "1170692781216378960",
+      "content": "o yay the people i can tolerate are here now",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362152542879879450",
+      "channel_id": "1170692781216378960",
+      "content": "Hii",
+      "author": "serene7640",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362156675812823193",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "daegudollz",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1361883362222014524",
       "channel_id": "1131839817982947429",
       "content": "~~再等我的po文~~",
       "author": "fengliyaowo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361905648907845743",
-      "channel_id": "1131839817982947429",
-      "content": "不行，除非我給米粒+12演算+12人偶，然後再帶個入藥甚麼的",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361906415291207812",
-      "channel_id": "1131839817982947429",
-      "content": "又是男同又会玩",
-      "author": "287405tjy_28066",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361908804177887377",
-      "channel_id": "1131839817982947429",
-      "content": "肯定是男同（？？？？",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361939082783228056",
-      "channel_id": "1131839817982947429",
-      "content": "H2-12的道中真的有難到",
-      "author": "huangyu0876",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361962588094599179",
-      "channel_id": "1131839817982947429",
-      "content": "鯊門桿菌",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362002787986313377",
-      "channel_id": "1131839817982947429",
-      "content": "<@1101784402754801755>",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362052628489437344",
-      "channel_id": "1131839817982947429",
-      "content": "三维越高的角色升级给的数值越多（",
-      "author": "bailuoxiao",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362101623861809324",
-      "channel_id": "1131839817982947429",
-      "content": "~~「水群依赖性综合症」~~",
-      "author": "akalanden",
       "reactions": 3,
       "channel": "🔸綜合討論"
     }

@@ -1,10 +1,15 @@
 {
   "date": "2025-03-24",
-  "messages": 89,
-  "unique_authors": 10,
-  "reactions_total": 42,
-  "attachments": 27,
+  "messages": 3811,
+  "unique_authors": 125,
+  "reactions_total": 154,
+  "attachments": 195,
   "channel_activity": {
+    "🔸綜合討論": 403,
+    "🔸morimens-game-chat": 3299,
+    "🔸剧情交流": 13,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 6,
     "Kinda confused help me for the team": 3,
     "Any tips?": 4,
     "Is Salvador a must have?": 2,
@@ -28,28 +33,34 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "12": 2,
-    "23": 2,
-    "19": 1,
-    "20": 3,
-    "21": 1,
-    "9": 3,
-    "6": 25,
-    "8": 11,
-    "3": 14,
-    "5": 4,
-    "15": 4,
-    "16": 2,
-    "22": 1,
-    "10": 4,
-    "11": 1,
-    "2": 9,
-    "1": 1,
-    "13": 1
+    "0": 121,
+    "1": 148,
+    "2": 398,
+    "3": 429,
+    "4": 462,
+    "5": 290,
+    "6": 183,
+    "7": 18,
+    "8": 36,
+    "9": 39,
+    "10": 76,
+    "11": 13,
+    "12": 36,
+    "13": 175,
+    "14": 174,
+    "15": 268,
+    "16": 195,
+    "17": 144,
+    "18": 94,
+    "19": 72,
+    "21": 166,
+    "22": 152,
+    "23": 78,
+    "20": 44
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 2883,
+    "19": 839
   },
   "top_reacted_messages": [
     {
@@ -74,11 +85,59 @@
       "channel": "key–per fanart🗝"
     },
     {
+      "id": "1353742548203737132",
+      "channel_id": "1131839817982947429",
+      "content": "兩個大漢越打越滋潤",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353747619121332256",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1353750091990700154",
       "content": "磨磨蹭蹭画了好多天因为不会画你朵的超模身材修修改改最终草图是满足了一下癖好（喂\n感觉此疯子的气质实在是很香\n再也不画大图辣累得要命\nuid:100022124",
       "author": "cjsyds9784",
       "reactions": 5,
       "channel": "手咪人的噩梦"
+    },
+    {
+      "id": "1353577351996243978",
+      "channel_id": "1131839817982947429",
+      "content": "罵完記得課金",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353578479169572966",
+      "channel_id": "1170692781216378960",
+      "content": "Counter argument, this is very noticeable",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353588009844474007",
+      "channel_id": "1170692781216378960",
+      "content": "she does serve cunt thats true",
+      "author": "omegamart",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353584105962340391",
+      "channel_id": "1173463482503536711",
+      "content": "||~~克莱门汀：哦哦！我想要更多的、更加深入地了解你。\n…让我剥开你的皮肉、挑出你的神经、斩断你的椎骨、剖析你的大脑……\n…就让我探视一下，那油嘴滑舌身体中流",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1353578675097964584",
@@ -88,32 +147,76 @@
       "channel": "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？"
     },
     {
-      "id": "1353705427975536730",
-      "content": "Yes absolutely one copy is enough.",
-      "author": "jamalibnsulaiman",
-      "reactions": 1,
-      "channel": "Is Salvador a must have?"
+      "id": "1353557151624466562",
+      "channel_id": "1131839817982947429",
+      "content": "要等墨菲池子过了吗",
+      "author": "lami_55392",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353674418924294215",
-      "content": "Oke check",
-      "author": "actuallyjeff",
-      "reactions": 1,
-      "channel": "✅「Answered」I can't login my account"
+      "id": "1353680076994117674",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353610516223754251",
-      "content": "不是说星辰篇uw超限爆发不计入十张吗？",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "✅「已回答」uw"
+      "id": "1353706726175543357",
+      "channel_id": "1131839817982947429",
+      "content": "所有角色一律建議+4",
+      "author": "kevin.yienwenst",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1353569834364960989",
-      "content": "<:cry:1239910167668326480>",
-      "author": "arr5721",
+      "id": "1353592360763920384",
+      "channel_id": "1170692781216378960",
+      "content": "Steadfast sanga, aching fin caecus",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353670888129822755",
+      "channel_id": "1170692781216378960",
+      "content": "huh 😀",
+      "author": "someone_2151",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353779129031594074",
+      "channel_id": "1170692781216378960",
+      "content": "Whatever you want to play. \n\nDon't worry too much about the characters. Find the",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353781680019734578",
+      "channel_id": "1170692781216378960",
+      "content": "i get all your advise , thank to all",
+      "author": "tu_senpaii.",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353591651750383678",
+      "channel_id": "1173463482503536711",
+      "content": "催眠一次一次在夢中誘導，把對方精神蠶食鯨吞，只留下空蕩的外殼\n然後夢醒以為是惡夢一場，這時候眼前再次出現的畫面是，自身空蕩蕩軀殼",
+      "author": "andy1123",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1353579595084861460",
+      "channel_id": "1131839817982947429",
+      "content": "这是体验过的品鉴",
+      "author": "Deleted User",
       "reactions": 1,
-      "channel": "💭「處理中」還我奧爾拉主C夢"
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,29 +1,140 @@
 {
   "date": "2025-03-02",
-  "messages": 12,
-  "unique_authors": 8,
-  "reactions_total": 4,
-  "attachments": 2,
+  "messages": 2003,
+  "unique_authors": 117,
+  "reactions_total": 120,
+  "attachments": 91,
   "channel_activity": {
+    "🔸綜合討論": 213,
+    "🔸阵容构建": 13,
+    "🔸morimens-game-chat": 1709,
+    "🔸剧情交流": 2,
+    "🔸相位对弈": 33,
+    "🔸한국어-채팅방": 21,
     "New Player Mechanics and Progression Guide": 2,
     "话说平时剧情里的那个乱码是可以打出来的吗？": 2,
     "怎麼把宿舍背景換回最開始的那個可以看到喚醒體的了啊": 7,
     "命輪似乎未生效": 1
   },
   "hourly_activity": {
-    "3": 2,
-    "7": 1,
-    "13": 1,
-    "14": 1,
-    "11": 3,
-    "12": 2,
-    "15": 1,
-    "16": 1
+    "0": 22,
+    "1": 14,
+    "2": 42,
+    "3": 134,
+    "4": 53,
+    "5": 26,
+    "6": 25,
+    "7": 83,
+    "8": 158,
+    "9": 274,
+    "10": 44,
+    "12": 67,
+    "13": 381,
+    "14": 359,
+    "15": 17,
+    "16": 33,
+    "17": 76,
+    "21": 8,
+    "20": 43,
+    "11": 65,
+    "18": 11,
+    "19": 41,
+    "22": 17,
+    "23": 10
   },
   "message_types": {
-    "0": 2
+    "0": 1520,
+    "19": 471
   },
   "top_reacted_messages": [
+    {
+      "id": "1345793557881163786",
+      "channel_id": "1131839817982947429",
+      "content": "挖到了 <:wish:1236951537788649492>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345682212951162882",
+      "channel_id": "1131839817982947429",
+      "content": "海毒满血满分，熔朵神力（）",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345733336596742267",
+      "channel_id": "1131839817982947429",
+      "content": "太好了 我不是狗",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345749308581871617",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345754138079658036",
+      "channel_id": "1170692781216378960",
+      "content": "but caecus in her team is just a glorified vulnerable orison",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345759971584770129",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hanuki6",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345692580997758996",
+      "channel_id": "1131839817982947429",
+      "content": "我介紹一下卡墨\n他深愛著校貓，校貓也深愛著他，但校貓還沒發現她對卡墨的喜歡，把心動的感覺誤認為厭惡，等他發現他對卡墨的喜歡後就是追妻火葬場的劇情",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345771799052423282",
+      "channel_id": "1131839817982947429",
+      "content": "无牌可删血满的，然后点进去是体系不搭的造物<:stoppage:1236938521365839872>",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345788404578910248",
+      "channel_id": "1131839817982947429",
+      "content": "測試服的旺達可是非常神奇的反轉毒",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345764415550652428",
+      "channel_id": "1170692781216378960",
+      "content": "thats like 1/3 of the playerbase <:KEKW:629740073977380882>",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345697605598052374",
+      "channel_id": "1180850818509971466",
+      "content": "死貓、珊瑚女：*#&$&#",
+      "author": "nahida._90",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
     {
       "id": "1345659218849566731",
       "content": "All new applicants are required to have Karen at least level 80 <:dishes:1239911",
@@ -32,11 +143,68 @@
       "channel": "New Player Mechanics and Progression Guide"
     },
     {
-      "id": "1345733891834515518",
-      "content": "背景要設\"場景CG\"，才會出現角色",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": "怎麼把宿舍背景換回最開始的那個可以看到喚醒體的了啊"
+      "id": "1345582745971200001",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345607780668805261",
+      "channel_id": "1131839817982947429",
+      "content": "他怕你餓",
+      "author": "pray_unbeliever",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345600226018459709",
+      "channel_id": "1170692781216378960",
+      "content": "💳",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345601198279098379",
+      "channel_id": "1170692781216378960",
+      "content": "Bro thinks she can find daffodil",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345669903176302712",
+      "channel_id": "1170692781216378960",
+      "content": "<:proud:1236937676637339718> <:wish:1236951537788649492>",
+      "author": "yoku241",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345758324402163784",
+      "channel_id": "1170692781216378960",
+      "content": "Fucking lily healing and shielding so much that I only passed phase 1 after like",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345762714219319356",
+      "channel_id": "1170692781216378960",
+      "content": "Lini highkey i started playing Gramona because of you and not going to lie hitti",
+      "author": "aslechi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345763622273417246",
+      "channel_id": "1170692781216378960",
+      "content": "I'll check m*le story after doing all the female",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

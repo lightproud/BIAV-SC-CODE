@@ -1,10 +1,25 @@
 {
   "date": "2025-04-08",
-  "messages": 884,
-  "unique_authors": 41,
-  "reactions_total": 82,
-  "attachments": 45,
+  "messages": 9903,
+  "unique_authors": 152,
+  "reactions_total": 292,
+  "attachments": 315,
   "channel_activity": {
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 6721,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 589,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 348,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 79,
+    "🔸canal-português": 34,
+    "🔸ruang-obrolan-indonesia": 991,
+    "🔸ห้องสนทนาภาษาไทย": 113,
+    "🔸traphase": 120,
+    "🔸lore-chat": 5,
     "🔸綜合討論": 843,
     "Flares' Submission to the Fanart Contest. 24 with Jenkins and Brown": 2,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 1,
@@ -24,40 +39,58 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 29,
-    "2": 10,
-    "3": 17,
-    "4": 15,
-    "5": 29,
-    "6": 57,
-    "7": 23,
-    "8": 65,
-    "9": 20,
-    "10": 16,
-    "11": 57,
-    "12": 59,
-    "13": 194,
-    "14": 187,
-    "15": 39,
-    "16": 52,
-    "17": 5,
-    "20": 2,
-    "22": 2,
-    "23": 4,
-    "18": 1
+    "6": 396,
+    "0": 582,
+    "1": 472,
+    "2": 239,
+    "3": 320,
+    "4": 771,
+    "5": 716,
+    "7": 208,
+    "8": 230,
+    "9": 467,
+    "10": 480,
+    "11": 671,
+    "12": 719,
+    "13": 592,
+    "14": 825,
+    "15": 443,
+    "16": 313,
+    "17": 200,
+    "18": 311,
+    "19": 283,
+    "20": 181,
+    "21": 50,
+    "22": 126,
+    "23": 308
   },
   "message_types": {
-    "0": 692,
-    "19": 151
+    "19": 2324,
+    "0": 6695
   },
   "top_reacted_messages": [
+    {
+      "id": "1359210055349702817",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "kingggg98",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1359083858217402470",
       "content": "Here is a very intricate image of 24 with her hands trying to strangle her with ",
       "author": "flares117",
       "reactions": 15,
       "channel": "Flares' Submission to the Fanart Contest. 24 with Jenkins and Brown"
+    },
+    {
+      "id": "1359168750150095019",
+      "channel_id": "1170692781216378960",
+      "content": "<@768826248389853234> <@984787164875329586> <@735137568307282011> <@364412673275",
+      "author": "_venush",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1359079305518256128",
@@ -73,6 +106,70 @@
       "author": "zhaoxing233",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1359155328016584716",
+      "channel_id": "1300659580446969918",
+      "content": "Аааа оно листается",
+      "author": "ed3nk23per",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1359025788279848990",
+      "channel_id": "1170692781216378960",
+      "content": "have you considered making clem not ultra",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359107707587530865",
+      "channel_id": "1170692781216378960",
+      "content": "guys I already won the art competition",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359150041658560592",
+      "channel_id": "1170692781216378960",
+      "content": "I FUCKING HATE HER WHAT DO YOU MEANNNN",
+      "author": "annaxxe_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359163476974501928",
+      "channel_id": "1170692781216378960",
+      "content": "Max as in +12? No",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359164770783068362",
+      "channel_id": "1170692781216378960",
+      "content": "Have fun spamming his exalt",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1359207333531746395",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1356548092450832385",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1358981663094214706",
+      "channel_id": "1326453763355185215",
+      "content": "i had junior william for 1 stage, and i'm ready to lie my life before him",
+      "author": "null.pointer_exception",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1359164034372468837",
@@ -91,123 +188,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1359049673507082430",
-      "channel_id": "1131839817982947429",
-      "content": "只是我們沒撿到而已，不代表真的沒銀芯析出",
-      "author": "yizilven",
+      "id": "1359006302491250709",
+      "channel_id": "1170692781216378960",
+      "content": "half the pulls in this server are done on a simp basis",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1359175344732639262",
-      "channel_id": "1131839817982947429",
-      "content": "路線還是比較好",
-      "author": "ena04564",
+      "id": "1359023921176776704",
+      "channel_id": "1170692781216378960",
+      "content": "another stab to my heart Lini",
+      "author": "_venush",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1359175908283383950",
-      "channel_id": "1131839817982947429",
-      "content": "👁️",
-      "author": "akalanden",
+      "id": "1359069673563623516",
+      "channel_id": "1170692781216378960",
+      "content": "```I need her to be so obsessed with revenge it becomes her only driving motive ",
+      "author": "al_leyway",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1359178127036645376",
-      "channel_id": "1131839817982947429",
-      "content": "塔薇 熔朵 超不超限  两个角色",
-      "author": "galagalaguo",
+      "id": "1359130818475458744",
+      "channel_id": "1170692781216378960",
+      "content": "At this rate he'll win 1st place",
+      "author": "aurora3981",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1359178344247066724",
-      "channel_id": "1131839817982947429",
-      "content": "塔薇没专武就没循环 根本堆不起来银钥",
-      "author": "galagalaguo",
+      "id": "1359150784947949639",
+      "channel_id": "1170692781216378960",
+      "content": "feck ciel, im gonna get to you first",
+      "author": "annaxxe_",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359180633997316250",
-      "channel_id": "1131839817982947429",
-      "content": "我們的醫生沒有料也很色，畢竟有多少角色是完全鏤空的呢",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359191920089370644",
-      "channel_id": "1131839817982947429",
-      "content": "全是英文  好好笑",
-      "author": "mob1065",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359210099616256222",
-      "channel_id": "1131839817982947429",
-      "content": "下隻會是蛇嗎",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359257682560815337",
-      "channel_id": "1131839817982947429",
-      "content": "豆腐總下",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359081696783499397",
-      "content": "🎁獎勵新增“限定頭像框”與無門檻參與獎，歡迎各位守密人一起來創作遊戲攻略！\n\n**🎯【投稿時間】**\n2025年4月7日00:00-2025年5月4日23:59",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
-    },
-    {
-      "id": "1358985229301186600",
-      "channel_id": "1131839817982947429",
-      "content": "官方說之後可能會改",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359008574704980038",
-      "channel_id": "1131839817982947429",
-      "content": "<#1174179624096378930>",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359010003851280405",
-      "channel_id": "1131839817982947429",
-      "content": "~~這樣一堆頻道會塞滿你的眼睛~~",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359011976000311447",
-      "channel_id": "1131839817982947429",
-      "content": "~~这次更新后最大收获就是知道要怎样隐藏频道了~~",
-      "author": "ling_an_",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1359014845147779203",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,22 @@
 {
   "date": "2025-04-02",
-  "messages": 895,
-  "unique_authors": 26,
-  "reactions_total": 163,
-  "attachments": 52,
+  "messages": 6556,
+  "unique_authors": 113,
+  "reactions_total": 258,
+  "attachments": 242,
   "channel_activity": {
+    "🔸morimens-game-chat": 4832,
+    "🔸相位对弈": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 132,
+    "🔸русский-канал": 195,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 71,
+    "🔸canal-português": 8,
+    "🔸ruang-obrolan-indonesia": 335,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸traphase": 16,
+    "🔸lore-chat": 1,
     "🔸綜合討論": 766,
     "An Overview of Various Aequor Teams in the Stellar Chapter (use GPT trans)": 12,
     "Which team should I use?": 1,
@@ -27,32 +39,36 @@
     "塔薇杯賽制同款表格開源！": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 1,
-    "2": 8,
-    "3": 12,
-    "5": 7,
-    "6": 55,
-    "7": 45,
-    "8": 12,
-    "9": 13,
-    "10": 18,
-    "11": 88,
-    "12": 110,
-    "13": 8,
-    "14": 5,
-    "15": 23,
-    "16": 224,
-    "17": 226,
-    "18": 8,
-    "19": 4,
-    "20": 11,
-    "22": 13,
-    "23": 2
+    "0": 23,
+    "1": 286,
+    "2": 303,
+    "3": 226,
+    "4": 102,
+    "5": 93,
+    "6": 268,
+    "7": 374,
+    "8": 136,
+    "9": 98,
+    "10": 84,
+    "11": 175,
+    "12": 735,
+    "13": 305,
+    "14": 387,
+    "15": 245,
+    "16": 349,
+    "17": 429,
+    "18": 304,
+    "19": 290,
+    "20": 470,
+    "21": 265,
+    "22": 334,
+    "23": 275
   },
   "message_types": {
-    "19": 83,
-    "0": 683
+    "0": 4411,
+    "19": 1248,
+    "20": 1,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -84,6 +100,14 @@
       "channel": "蹈海者不過是一群精神生活在忘卻篇的愚民｜星辰篇各式深海隊伍概覽"
     },
     {
+      "id": "1356932809045839932",
+      "channel_id": "1300659436804640788",
+      "content": "ボスと初期レリックが良かったので初めての72000点チャレンジ成功<:proud1:1356053120651755641>",
+      "author": "eyu17",
+      "reactions": 7,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1356956625679810751",
       "content": "",
       "author": "morimensstaff01",
@@ -103,6 +127,14 @@
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": "🏆相位對弈•玩家賽事頒獎！Traphase•Player Tournament Awards！"
+    },
+    {
+      "id": "1356994321345413282",
+      "channel_id": "1170692781216378960",
+      "content": "Gonna try clem here when she comes out",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1356860943275004076",
@@ -128,78 +160,68 @@
       "channel": "Speedrun Team for Early Game"
     },
     {
-      "id": "1356957745701585147",
-      "channel_id": "1131839817982947429",
-      "content": "<@699270788578148442> 忽然發現基傷鯊魚在星辰篇玩的起來",
-      "author": "ernest_heart",
+      "id": "1356823243914481694",
+      "channel_id": "1170692781216378960",
+      "content": "this is still 100 times better then aisha",
+      "author": "noire_2",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356965706830315601",
-      "channel_id": "1131839817982947429",
-      "content": "而且我無氪欸",
-      "author": "ahuahuahua",
+      "id": "1356892823235854367",
+      "channel_id": "1170692781216378960",
+      "content": "Nah nymphea was playable day 1",
+      "author": ".galeroar",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1357026883317006376",
-      "channel_id": "1131839817982947429",
-      "content": "我覺得這沒啥問題啊，不是說不喜歡賣卡，是希望有賣女王劍外的打法",
-      "author": "arr5721",
+      "id": "1356897401310543983",
+      "channel_id": "1170692781216378960",
+      "content": "<:anastuteobservationishallmeticul:1356530226791714886>",
+      "author": "undeterredhomo",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1357042695301759106",
-      "channel_id": "1131839817982947429",
-      "content": "卡墨虱子多了不痒",
-      "author": "287405tjy_28066",
+      "id": "1356962619906457732",
+      "channel_id": "1170692781216378960",
+      "content": "Wait hold up clem e3 is broken if I'm reading this correctly. Reduce damage deal",
+      "author": "aurora3981",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1357116282721402960",
-      "content": "## Aequor Shield-Slam Team\n- Alternate Characters:\n Alva can replace Caecus or M",
-      "author": "ernest_heart",
+      "id": "1357040625454944560",
+      "channel_id": "1170692781216378960",
+      "content": "Pog. My luck on the chaos banners been insane",
+      "author": "quirk15",
       "reactions": 2,
-      "channel": "An Overview of Various Aequor Teams in the Stellar Chapter (use GPT trans)"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356950506890723328",
-      "content": "<:sleep2:1356085993626665200> （是這樣對吧",
-      "author": "ena04564",
+      "id": "1357068634857410641",
+      "channel_id": "1170692781216378960",
+      "content": "I feel like Ghelot fucks all bosses",
+      "author": "lotan_045",
       "reactions": 2,
-      "channel": "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356998747065679942",
-      "content": "...but remember, that's a secret.",
-      "author": "_avienna",
+      "id": "1357112843530670090",
+      "channel_id": "1170692781216378960",
+      "content": "its actually impressive",
+      "author": "omegamart",
       "reactions": 2,
-      "channel": "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1356907783479496775",
-      "content": "and i pull the circle wheel that u equip on Tulu so i already got all copied now",
-      "author": "zweihander_2h",
+      "id": "1357028596924940389",
+      "channel_id": "1300659802455674972",
+      "content": "เห็นไม่มีใครตอบเลย เราพึ่งเปิดดิส ขออนุญาตตอบ\nทีมที่มองว่าทำได้ และการโฟกัส\nทีมพ",
+      "author": "2ndselna",
       "reactions": 2,
-      "channel": "Speedrun Team for Early Game"
-    },
-    {
-      "id": "1356918151119638683",
-      "content": "The game isn't frozen since the blue effect still happens upon clicking the scre",
-      "author": "black_stock",
-      "reactions": 2,
-      "channel": "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen."
-    },
-    {
-      "id": "1356926110558064650",
-      "content": "The steam version is of April 2, 2025 so its not an old version. So I guess its ",
-      "author": "black_stock",
-      "reactions": 2,
-      "channel": "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen."
+      "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]
 }

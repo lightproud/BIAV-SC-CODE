@@ -1,10 +1,21 @@
 {
   "date": "2025-04-01",
-  "messages": 172,
-  "unique_authors": 25,
-  "reactions_total": 256,
-  "attachments": 42,
+  "messages": 3288,
+  "unique_authors": 89,
+  "reactions_total": 735,
+  "attachments": 204,
   "channel_activity": {
+    "🔸morimens-game-chat": 2702,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 79,
+    "🔸русский-канал": 231,
+    "🔸canal-português": 9,
+    "🔸ruang-obrolan-indonesia": 40,
+    "🔸ห้องสนทนาภาษาไทย": 10,
+    "🔸traphase": 21,
+    "🔸lore-chat": 19,
+    "🔸翻译器教程┊translator-tutorial": 6,
     "🔸綜合討論": 107,
     "Speedrun Team for Early Game": 1,
     "How To Create a Team + Other Information": 3,
@@ -22,39 +33,53 @@
     "关卡地图「融灾禁区」总览31期·星辰篇": 1,
     "不会再有了": 1,
     "环行莉奥诺拉和守密人拉蒙娜": 1,
-    "🔸翻译器教程┊translator-tutorial": 3,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "1": 9,
-    "3": 14,
-    "4": 16,
-    "5": 6,
-    "6": 20,
-    "7": 1,
-    "9": 4,
-    "10": 13,
-    "11": 6,
-    "12": 21,
-    "13": 11,
-    "14": 13,
-    "15": 4,
-    "16": 4,
-    "17": 2,
-    "18": 5,
-    "2": 6,
-    "8": 17
+    "0": 133,
+    "1": 99,
+    "2": 356,
+    "3": 275,
+    "4": 116,
+    "5": 84,
+    "6": 42,
+    "7": 74,
+    "8": 57,
+    "9": 43,
+    "10": 44,
+    "11": 50,
+    "12": 120,
+    "13": 133,
+    "14": 122,
+    "15": 91,
+    "16": 239,
+    "17": 282,
+    "18": 200,
+    "19": 272,
+    "20": 164,
+    "21": 260,
+    "22": 14,
+    "23": 18
   },
   "message_types": {
-    "0": 89,
-    "19": 18
+    "0": 2589,
+    "19": 527
   },
   "top_reacted_messages": [
     {
       "id": "1356540792138764348",
+      "channel_id": "1356538084828647546",
       "content": "2️⃣ **如何把自己的文案翻譯成其他國家的語言？**\n\n► 在*文本框輸入“/translate”*，在選項內選擇最上方的*“/translate   [te",
       "author": "morimensstaff01",
-      "reactions": 183,
+      "reactions": 391,
+      "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356540062585589810",
+      "channel_id": "1356538084828647546",
+      "content": "1️⃣  **如何翻譯別人發出的文字內容？**\n\n**► PC端：**滑鼠選取你需要翻譯的文本，然後點擊滑鼠右鍵，點擊【應用程式】→【Translate Tex",
+      "author": "morimensstaff01",
+      "reactions": 17,
       "channel": "🔸翻译器教程┊translator-tutorial"
     },
     {
@@ -63,6 +88,14 @@
       "author": "morimensstaff01",
       "reactions": 16,
       "channel": "忘卻前夜OST：深港幽靈之船"
+    },
+    {
+      "id": "1356539643155189790",
+      "channel_id": "1356538084828647546",
+      "content": "🔥 **【翻譯器】教程┊【Translator】Tutorial** 🔥 \n\n各位守密人，為了方便大家的日常交流，我們在頻道引入了【翻譯器】功能！\n\n► 大家可",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "🔸翻译器教程┊translator-tutorial"
     },
     {
       "id": "1356486735764258856",
@@ -86,6 +119,14 @@
       "channel": ""
     },
     {
+      "id": "1356479639975104633",
+      "channel_id": "1170692781216378960",
+      "content": "<@346078721981022208> I'm doing my last investigation unlock (24) and look your ",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1356541685664059413",
       "content": "感觉已经过去很久了……之前说要做的有pv、背景、ui和地图。造物和背景差不多了，ui随缘放送。\n接下来准备动工地图和pv。其实每次pv出来就有第一时间研究，不过",
       "author": "silverstream_s",
@@ -100,11 +141,28 @@
       "channel": "关卡地图「融灾禁区」总览31期·星辰篇"
     },
     {
-      "id": "1356539643155189790",
-      "content": "🔥 **【翻譯器】教程┊【Translator】Tutorial** 🔥 \n\n各位守密人，為了方便大家的日常交流，我們在頻道引入了【翻譯器】功能！\n\n► 大家可",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "🔸翻译器教程┊translator-tutorial"
+      "id": "1356435124878835772",
+      "channel_id": "1170692781216378960",
+      "content": "3 months left",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1356473292957028392",
+      "channel_id": "1174983699935277147",
+      "content": "就快把全部都換滿了<:nervous:1356053104398827640>",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1356618837931589743",
+      "channel_id": "1300659718653476925",
+      "content": "Boa noite\nAcabei de engravidar três homens\nFeliz primeiro de abril",
+      "author": "bathoryp",
+      "reactions": 3,
+      "channel": "🔸canal-português"
     },
     {
       "id": "1356668465607475350",
@@ -122,11 +180,36 @@
       "channel": "今年的哈斯塔呢"
     },
     {
-      "id": "1356540062585589810",
-      "content": "1️⃣  **如何翻譯別人發出的文字內容？**\n\n**► PC端：**滑鼠選取你需要翻譯的文本，然後點擊滑鼠右鍵，點擊【應用程式】→【Translate Tex",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "🔸翻译器教程┊translator-tutorial"
+      "id": "1356478472146649199",
+      "channel_id": "1170692781216378960",
+      "content": "We need more events like it, power fantasy",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1356675282999705660",
+      "channel_id": "1170692781216378960",
+      "content": "Reply to this comment with your favourite awaker",
+      "author": "yinnismm",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1356597970912546857",
+      "channel_id": "1300659718653476925",
+      "content": "Acabei de balear três pessoas na praça",
+      "author": "killrama",
+      "reactions": 2,
+      "channel": "🔸canal-português"
+    },
+    {
+      "id": "1356726613730918410",
+      "channel_id": "1300659718653476925",
+      "content": "Boa noite\nAcabei de botar fogo em 3 prédios",
+      "author": "santicoutocms",
+      "reactions": 2,
+      "channel": "🔸canal-português"
     },
     {
       "id": "1356625500839350332",
@@ -135,64 +218,6 @@
       "author": "tianfang5580",
       "reactions": 2,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1356454078774902845",
-      "content": "Can be used for d tide, story progression and dive.",
-      "author": ".galeroar",
-      "reactions": 2,
-      "channel": "Team for newer players (only standard, shop or free units and wheels)"
-    },
-    {
-      "id": "1356478158777483364",
-      "content": "В видео вы узнаете о том, как работают синергии в разных царствах (фракциях), а ",
-      "author": "closetom",
-      "reactions": 2,
-      "channel": "Полезные рекомендации начинающим игрокам, все о синергиях царств"
-    },
-    {
-      "id": "1356542108189855965",
-      "content": "▼\n羊妈pv(只有一句)：\n\nMOTHER OF ALL\n万千子嗣之母\n\nWith the envoy, the Mother Tree be once mor",
-      "author": "silverstream_s",
-      "reactions": 2,
-      "channel": "游戏美术资源上的文字"
-    },
-    {
-      "id": "1356562680181166091",
-      "channel_id": "1131839817982947429",
-      "content": "<#1174179624096378930>",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1356633905272455228",
-      "channel_id": "1131839817982947429",
-      "content": "腦殘，賽制是真的挺奇葩的",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1356619150268698728",
-      "content": "好久不見<:hello:1356053084790460437> 感謝潤色～",
-      "author": "silverstream_s",
-      "reactions": 1,
-      "channel": "游戏美术资源上的文字"
-    },
-    {
-      "id": "1356549216293621781",
-      "content": "**07.尊榮神母-Divine Mother-**\n\n上天已賜下尊貴的神母，用以接我們到祂的國。\n讚美「吾主」！\nGod has given us the n",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘卻前夜OST：深港幽靈之船"
-    },
-    {
-      "id": "1356515547646529548",
-      "content": "The main interface lobby is designed in this way to better adapt to different re",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Main Illust go transparent"
     }
   ]
 }

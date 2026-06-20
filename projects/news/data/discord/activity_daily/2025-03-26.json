@@ -1,10 +1,14 @@
 {
   "date": "2025-03-26",
-  "messages": 52,
-  "unique_authors": 9,
-  "reactions_total": 4,
-  "attachments": 4,
+  "messages": 3448,
+  "unique_authors": 93,
+  "reactions_total": 75,
+  "attachments": 159,
   "channel_activity": {
+    "🔸綜合討論": 211,
+    "🔸morimens-game-chat": 3166,
+    "🔸相位对弈": 14,
+    "🔸课间休息闲聊": 5,
     "Português Tradução - Coleta de Feedback": 1,
     "การรวบรวมคำติชมการแปลภาษาไทย": 1,
     "【日本語訳】フィードバック": 3,
@@ -22,23 +26,100 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "10": 3,
-    "9": 3,
-    "2": 5,
-    "12": 6,
-    "13": 23,
-    "14": 4,
-    "6": 4,
-    "5": 1,
-    "4": 1,
-    "11": 1,
-    "19": 1
+    "2": 88,
+    "3": 184,
+    "4": 116,
+    "5": 125,
+    "6": 176,
+    "7": 56,
+    "8": 27,
+    "9": 40,
+    "10": 70,
+    "11": 75,
+    "12": 74,
+    "13": 216,
+    "14": 195,
+    "15": 256,
+    "16": 398,
+    "17": 172,
+    "18": 74,
+    "23": 134,
+    "0": 15,
+    "1": 127,
+    "19": 18,
+    "20": 320,
+    "21": 301,
+    "22": 191
   },
   "message_types": {
-    "19": 1,
-    "0": 5
+    "19": 727,
+    "0": 2669
   },
   "top_reacted_messages": [
+    {
+      "id": "1354566683351846963",
+      "channel_id": "1170692781216378960",
+      "content": "Hello!",
+      "author": "melanheart",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354496526306639972",
+      "channel_id": "1131839817982947429",
+      "content": "||我说我||",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354303721986592769",
+      "channel_id": "1131839817982947429",
+      "content": "你在小看誰? 難5阿花也用腳打給你看!",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354315487592317043",
+      "channel_id": "1131839817982947429",
+      "content": "||他已經很鬆了還需要放鬆嗎||",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354508674185564392",
+      "channel_id": "1131839817982947429",
+      "content": "那顆自選是一直更新哦?",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354447806370283651",
+      "channel_id": "1170692781216378960",
+      "content": "the nerfs only make pandia hornier",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354567352989126666",
+      "channel_id": "1170692781216378960",
+      "content": "Got all of these today from grinding",
+      "author": "melanheart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354600479014781088",
+      "channel_id": "1170692781216378960",
+      "content": "I love looking at things from a design standpoint, and just admiring small detai",
+      "author": "melanheart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1354345427327127642",
       "content": "艾比尼克都退坑好久了",
@@ -47,18 +128,92 @@
       "channel": "沒有喚醒體技能搶先看了嗎"
     },
     {
-      "id": "1354383609061965845",
-      "content": "<@247436324942905345><@334271675786854413>ขอบคุณสำหรับข้อเสนอแนะ Goya ได้ส่งต่อแ",
-      "author": "morimensstaff01",
+      "id": "1354303200416763994",
+      "channel_id": "1131839817982947429",
+      "content": "我打II級（",
+      "author": "ahuahuahua",
       "reactions": 1,
-      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1354380883557089280",
-      "content": "<@443365370271891456>Terima kasih atas cadangan anda~❤️",
-      "author": "morimensstaff01",
+      "id": "1354412707171799060",
+      "channel_id": "1131839817982947429",
+      "content": "這什麼東西😂血條突破天際了",
+      "author": "taayoui",
       "reactions": 1,
-      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354435832555110491",
+      "channel_id": "1131839817982947429",
+      "content": "沒讓你打輸噴橡果已經很好了（X",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354463024722739210",
+      "channel_id": "1131839817982947429",
+      "content": "福袋胡起来比血希好打多了",
+      "author": "galagalaguo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354477819270533192",
+      "channel_id": "1131839817982947429",
+      "content": "目前星辰只有融災 和劇情",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354281100725456957",
+      "channel_id": "1170692781216378960",
+      "content": "short answer, all of those R wheels combined, lets you practically buy out the w",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354297780226756629",
+      "channel_id": "1170692781216378960",
+      "content": "~~have you heard of our lady sorel~~",
+      "author": "khykken",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354298148306157588",
+      "channel_id": "1170692781216378960",
+      "content": "according to AI, yes",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354301248324767908",
+      "channel_id": "1170692781216378960",
+      "content": "Clementine restarted <:cry:1243502872021438475>",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354305465840042064",
+      "channel_id": "1170692781216378960",
+      "content": "so is calling Caesus blobfish considered as racist to him ? 😂",
+      "author": "nayuki33",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354305585738420346",
+      "channel_id": "1170692781216378960",
+      "content": "what if were simply descendants of lemuria",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

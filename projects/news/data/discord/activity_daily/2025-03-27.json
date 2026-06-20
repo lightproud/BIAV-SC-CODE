@@ -1,10 +1,13 @@
 {
   "date": "2025-03-27",
-  "messages": 35,
-  "unique_authors": 5,
-  "reactions_total": 400,
-  "attachments": 8,
+  "messages": 2660,
+  "unique_authors": 100,
+  "reactions_total": 497,
+  "attachments": 130,
   "channel_activity": {
+    "🔸綜合討論": 541,
+    "🔸morimens-game-chat": 2029,
+    "🔸相位对弈": 55,
     "✅「已回答」bug": 5,
     "✅「Answered」Add crafting for Shattered Remnant of Dreams": 1,
     "✅「已回答」4-4精英": 6,
@@ -22,21 +25,35 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "3": 4,
-    "6": 2,
-    "11": 8,
-    "15": 7,
-    "16": 1,
-    "10": 7,
-    "17": 1,
-    "2": 1,
-    "18": 1,
-    "9": 3
+    "0": 254,
+    "1": 121,
+    "2": 55,
+    "3": 25,
+    "4": 34,
+    "5": 7,
+    "6": 18,
+    "8": 18,
+    "9": 133,
+    "10": 168,
+    "11": 238,
+    "12": 31,
+    "13": 201,
+    "14": 273,
+    "15": 366,
+    "16": 284,
+    "17": 28,
+    "18": 53,
+    "7": 35,
+    "19": 58,
+    "20": 13,
+    "21": 19,
+    "22": 23,
+    "23": 205
   },
   "message_types": {
-    "4": 5,
-    "0": 11,
-    "19": 5
+    "0": 2034,
+    "19": 590,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -82,18 +99,116 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
-      "id": "1354761931331862550",
-      "content": "太感謝了@用手機的時候真的很痛苦",
-      "author": "huangziqiao_45693",
-      "reactions": 1,
-      "channel": "不会再有了"
+      "id": "1354767651649622037",
+      "channel_id": "1131839817982947429",
+      "content": "戈雅是這裡的天使",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1354757520249323581",
-      "content": "(jojo! 我不當人了！",
-      "author": "kirboexists",
+      "id": "1354651023079248105",
+      "channel_id": "1131839817982947429",
+      "content": "拼盡7次死抗無法戰勝",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354752286773219338",
+      "channel_id": "1131839817982947429",
+      "content": "但你可以相信生物學",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354761945328255016",
+      "channel_id": "1131839817982947429",
+      "content": "快了快了！🥹",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354785577697935460",
+      "channel_id": "1131839817982947429",
+      "content": "這個男同又在造謠了",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354615468526407910",
+      "channel_id": "1170692781216378960",
+      "content": "god hm is soo draining",
+      "author": "noire_2",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354647348055248938",
+      "channel_id": "1170692781216378960",
+      "content": "so it has finally begun",
+      "author": "noire_2",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354777717136162971",
+      "channel_id": "1170692781216378960",
+      "content": "For next ssr you are guaranteed banner char",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354934122975465655",
+      "channel_id": "1170692781216378960",
+      "content": "someone please kill this fucking bitch",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354936588118917367",
+      "channel_id": "1170692781216378960",
+      "content": "<@735137568307282011> you wanna say that again",
+      "author": "omegamart",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1354656292752326707",
+      "channel_id": "1131839817982947429",
+      "content": "不用收回",
+      "author": "huangyu0876",
       "reactions": 1,
-      "channel": ""
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354696281829801994",
+      "channel_id": "1131839817982947429",
+      "content": "萊克下方是血希的",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354761168992079952",
+      "channel_id": "1131839817982947429",
+      "content": "這下知道資金拿去買什麼東西了",
+      "author": "yizilven",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354761252160667660",
+      "channel_id": "1131839817982947429",
+      "content": "報告！夠用啦，我們充了高級會員🔥",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

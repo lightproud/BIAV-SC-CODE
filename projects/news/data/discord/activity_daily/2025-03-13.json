@@ -1,10 +1,16 @@
 {
   "date": "2025-03-13",
-  "messages": 70,
-  "unique_authors": 12,
-  "reactions_total": 16,
-  "attachments": 15,
+  "messages": 3366,
+  "unique_authors": 111,
+  "reactions_total": 206,
+  "attachments": 161,
   "channel_activity": {
+    "🔸綜合討論": 268,
+    "🔸阵容构建": 45,
+    "🔸morimens-game-chat": 2916,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 26,
+    "🔸한국어-채팅방": 38,
     "Team Comps": 1,
     "How can I make a good team": 1,
     "Genesis Garden Pick": 1,
@@ -25,23 +31,34 @@
     "墨菲豬，羊喵和拉蒙拿豬": 1
   },
   "hourly_activity": {
-    "2": 9,
-    "12": 2,
-    "10": 2,
-    "6": 9,
-    "13": 4,
-    "7": 5,
-    "8": 4,
-    "3": 8,
-    "15": 6,
-    "0": 4,
-    "9": 6,
-    "16": 3,
-    "4": 6,
-    "5": 2
+    "1": 455,
+    "2": 616,
+    "3": 233,
+    "4": 219,
+    "5": 365,
+    "6": 48,
+    "7": 64,
+    "8": 55,
+    "9": 71,
+    "10": 117,
+    "11": 59,
+    "12": 31,
+    "13": 140,
+    "14": 59,
+    "15": 105,
+    "16": 67,
+    "17": 44,
+    "18": 87,
+    "19": 76,
+    "20": 194,
+    "22": 63,
+    "0": 44,
+    "21": 132,
+    "23": 22
   },
   "message_types": {
-    "0": 5
+    "0": 2573,
+    "19": 723
   },
   "top_reacted_messages": [
     {
@@ -52,46 +69,156 @@
       "channel": "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦"
     },
     {
-      "id": "1349735573828669502",
-      "content": "In general, for the standard banner is good to start whit aqueor, the tentacle o",
-      "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "Newbie help"
+      "id": "1349618194448650290",
+      "channel_id": "1131839817982947429",
+      "content": "||mob||",
+      "author": "arr5721",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1349691647985713162",
-      "content": "I think what he means is if u have a character that have  been edified to +2 and",
-      "author": "unmaskingbellows",
-      "reactions": 1,
-      "channel": "Genesis Garden Pick"
+      "id": "1349753874550100149",
+      "channel_id": "1131839874132090890",
+      "content": "但是我是萌新所以不太準",
+      "author": "huangyu0876",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1349653506725773332",
-      "content": "<:rose1:1234798154000633949> 以上就是本次OST的全部曲目啦~\nThe above are all the tracks of th",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦"
+      "id": "1349585650017505291",
+      "channel_id": "1170692781216378960",
+      "content": "As a ultr main, i wish I can pull biggie damage",
+      "author": "brainrot_in_a_vat",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1349763771232550932",
-      "content": "The text is overlapping",
-      "author": "lol120_1",
-      "reactions": 1,
-      "channel": "✅「Answered」Million loving gaze description"
+      "id": "1349673303165501490",
+      "channel_id": "1131839817982947429",
+      "content": "||哭了我就1不起來||",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1349731969738608720",
-      "content": "其實我真的挺想問問官方人員的 \n\npray的那封句句血淚的勸諫書被你們給禁言了\n\n而這個叫啥大王的小屁孩 天天發一堆無腦抱怨的廢文洗版 你們卻跟沒看到一樣  \n",
-      "author": "lazuritefox",
-      "reactions": 1,
-      "channel": "相位对弈中故意拖延时间的有什么办法么"
+      "id": "1349728310506160169",
+      "channel_id": "1131839817982947429",
+      "content": "||~~哪種插~~||",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1349562770798149713",
-      "content": "",
+      "id": "1349598017602457710",
+      "channel_id": "1131839817982947429",
+      "content": "现在不是卡墨",
       "author": "Deleted User",
-      "reactions": 1,
-      "channel": "關於星辰篇劇情走格子探索地圖要素"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349618736075640903",
+      "channel_id": "1131839817982947429",
+      "content": "<@870225701855436801>",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349689275062419526",
+      "channel_id": "1131839817982947429",
+      "content": "好",
+      "author": "cwz.io",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349770813871493225",
+      "channel_id": "1131839817982947429",
+      "content": "||讓我看看你的幽門||",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349550370132590713",
+      "channel_id": "1170692781216378960",
+      "content": "it's hard to have fun with a game that punishes you for not playing it",
+      "author": "blackest_rose",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1349551609834639510",
+      "channel_id": "1170692781216378960",
+      "content": "So many story that will thrive if it's not on gacha",
+      "author": "re_rena12",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1349554003377127498",
+      "channel_id": "1170692781216378960",
+      "content": "If I may please i would offer you these brownies because sweets are nice and all",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1349622920464306176",
+      "channel_id": "1131839817982947429",
+      "content": "阿里巴巴财年是每年4月1日 希望项目组的人能找到新的好工作吧😋",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349669157456580680",
+      "channel_id": "1131839817982947429",
+      "content": "爛砲兵",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1349722391458218034",
+      "channel_id": "1131839874132090890",
+      "content": "超維的話找個奧爾拉的大佬加好友應該就夠了",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1349735553779892376",
+      "channel_id": "1131839874132090890",
+      "content": "||深潛那壞掉的不準吧||",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1349741438962892923",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1349549282604089435",
+      "channel_id": "1170692781216378960",
+      "content": "literal gamebreaking bug and we got like 3 pulls for it",
+      "author": "sheepybeeby",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1349559629964775436",
+      "channel_id": "1170692781216378960",
+      "content": "thats what the under the counter shotgun is for",
+      "author": "al_leyway",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

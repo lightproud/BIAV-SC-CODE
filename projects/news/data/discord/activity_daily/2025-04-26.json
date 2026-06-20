@@ -1,10 +1,24 @@
 {
   "date": "2025-04-26",
-  "messages": 226,
-  "unique_authors": 27,
-  "reactions_total": 100,
-  "attachments": 11,
+  "messages": 4736,
+  "unique_authors": 138,
+  "reactions_total": 250,
+  "attachments": 204,
   "channel_activity": {
+    "🔸阵容构建": 17,
+    "🔸morimens-game-chat": 3379,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 711,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 119,
+    "🔸phòng-chat-tiếng-việt": 7,
+    "🔸canal-español": 71,
+    "🔸canal-português": 7,
+    "🔸ruang-obrolan-indonesia": 142,
+    "🔸ห้องสนทนาภาษาไทย": 33,
+    "🔸traphase": 10,
+    "🔸lore-chat": 5,
+    "🔸lets-count": 3,
     "🔸綜合討論": 197,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
     "Goliath Fanart": 2,
@@ -18,32 +32,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 5,
-    "2": 26,
-    "3": 8,
-    "4": 18,
-    "5": 13,
-    "6": 40,
-    "7": 9,
-    "8": 17,
-    "9": 23,
-    "10": 17,
-    "11": 2,
-    "13": 9,
-    "14": 6,
-    "15": 5,
-    "16": 2,
-    "17": 8,
-    "18": 5,
-    "19": 3,
-    "21": 2,
-    "23": 5,
-    "20": 1
+    "1": 76,
+    "2": 393,
+    "14": 249,
+    "15": 339,
+    "0": 307,
+    "3": 345,
+    "4": 410,
+    "5": 168,
+    "6": 64,
+    "7": 192,
+    "8": 333,
+    "9": 74,
+    "10": 48,
+    "11": 137,
+    "12": 249,
+    "13": 311,
+    "16": 237,
+    "17": 131,
+    "18": 212,
+    "19": 206,
+    "20": 159,
+    "21": 25,
+    "22": 47,
+    "23": 24
   },
   "message_types": {
-    "0": 181,
-    "19": 16
+    "0": 3546,
+    "19": 964
   },
   "top_reacted_messages": [
     {
@@ -67,6 +83,14 @@
       "author": "muliupan",
       "reactions": 8,
       "channel": "血链希洛忘却篇星辰篇造物抓取二图流攻略"
+    },
+    {
+      "id": "1365597364949221377",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1365570785137397771",
@@ -109,6 +133,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1365549848899883019",
+      "channel_id": "1170692781216378960",
+      "content": "If I keep pretending, aurita will become futa, I learnt this from twitter",
+      "author": "satachan",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1365570903185948714",
       "channel_id": "1131839817982947429",
       "content": "好了自選卡池改選圖魯把他補到+8",
@@ -133,6 +165,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1365735774795993159",
+      "channel_id": "1170692781216378960",
+      "content": "because regular stages are fucking awful",
+      "author": "omegamart",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1365568422578229380",
       "channel_id": "1131839817982947429",
       "content": "XX",
@@ -148,60 +188,36 @@
       "channel": "Just a pixel image of Jenkin looking outside with Brown"
     },
     {
-      "id": "1365567789615677481",
-      "channel_id": "1131839817982947429",
-      "content": "什麼時候出r18繁衍狂熱2.0",
-      "author": "ahuahuahua",
+      "id": "1365561365766344725",
+      "channel_id": "1170692781216378960",
+      "content": "Finally 15 affinity",
+      "author": "rozu",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365569732295655535",
-      "channel_id": "1131839817982947429",
-      "content": "你過了一個成功的忘卻人生",
-      "author": "shchng.",
+      "id": "1365632450080014359",
+      "channel_id": "1170692781216378960",
+      "content": "i dont even have +12 caecus yet lol",
+      "author": "itsmemiki",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365571710006333460",
-      "channel_id": "1131839817982947429",
-      "content": "<:processing:1357185814567718963>",
-      "author": "fengliyaowo",
+      "id": "1365656914222125168",
+      "channel_id": "1170692781216378960",
+      "content": "died",
+      "author": "rain_scarlet",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1365572972999610398",
-      "channel_id": "1131839817982947429",
-      "content": "有什麼糟糕的東西一閃而過",
-      "author": "fengliyaowo",
+      "id": "1365656937798172672",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/hispullinhhiskokout-asu-memek-bangsat-gif-24915856",
+      "author": ".galeroar",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365575006242869288",
-      "channel_id": "1131839817982947429",
-      "content": "||~~可以放進兩隻浣熊~~||",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365637437573042186",
-      "channel_id": "1131839817982947429",
-      "content": "剩我連大福都沒有了",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1365685835386585158",
-      "channel_id": "1131839817982947429",
-      "content": "下班",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

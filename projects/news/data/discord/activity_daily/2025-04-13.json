@@ -1,10 +1,25 @@
 {
   "date": "2025-04-13",
-  "messages": 391,
-  "unique_authors": 25,
-  "reactions_total": 55,
-  "attachments": 19,
+  "messages": 7798,
+  "unique_authors": 135,
+  "reactions_total": 454,
+  "attachments": 297,
   "channel_activity": {
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 6245,
+    "🔸剧情交流": 4,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 169,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 241,
+    "🔸phòng-chat-tiếng-việt": 53,
+    "🔸canal-español": 8,
+    "🔸canal-português": 156,
+    "🔸ruang-obrolan-indonesia": 338,
+    "🔸ห้องสนทนาภาษาไทย": 24,
+    "🔸traphase": 161,
+    "🔸lore-chat": 2,
     "🔸綜合討論": 371,
     "aomi’s morimens dump": 2,
     "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 7,
@@ -15,30 +30,34 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "2": 2,
-    "4": 21,
-    "5": 9,
-    "6": 23,
-    "7": 10,
-    "8": 7,
-    "9": 43,
-    "10": 50,
-    "11": 50,
-    "12": 74,
-    "13": 8,
-    "14": 11,
-    "15": 16,
-    "16": 1,
-    "17": 27,
-    "18": 4,
-    "20": 1,
-    "22": 3,
-    "23": 30,
-    "3": 1
+    "15": 161,
+    "16": 85,
+    "0": 237,
+    "1": 532,
+    "2": 439,
+    "3": 502,
+    "4": 274,
+    "5": 257,
+    "6": 183,
+    "7": 208,
+    "8": 367,
+    "9": 273,
+    "10": 382,
+    "11": 642,
+    "12": 282,
+    "13": 140,
+    "14": 346,
+    "17": 435,
+    "18": 927,
+    "19": 146,
+    "20": 151,
+    "21": 188,
+    "22": 255,
+    "23": 386
   },
   "message_types": {
-    "0": 325,
-    "19": 46
+    "0": 5622,
+    "19": 1785
   },
   "top_reacted_messages": [
     {
@@ -50,6 +69,94 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1360911779030630481",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/thats-it-yes-thats-it-that-right-there-omg-that-thats-wha",
+      "author": "malfunction5497",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361046689753993317",
+      "channel_id": "1170692781216378960",
+      "content": "I have tagged you in story discussion channel",
+      "author": "_venush",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360975709463511121",
+      "channel_id": "1170692781216378960",
+      "content": "all hail king tulu",
+      "author": "craux.",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361013010071552130",
+      "channel_id": "1170692781216378960",
+      "content": "Seamen's all over the place",
+      "author": "sexysneakystoat1625",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361036567098953860",
+      "channel_id": "1170692781216378960",
+      "content": "Through tainted glass in the lime tinted grasses in this desolate planet surges ",
+      "author": "cindertinct",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361040732378628146",
+      "channel_id": "1170692781216378960",
+      "content": "GET THIS HIMBO OUT OF MY SCREEEEEEEEEEN",
+      "author": "clozapine",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361046334056169542",
+      "channel_id": "1326453763355185215",
+      "content": "<@1359156800108105941>",
+      "author": "_venush",
+      "reactions": 11,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1361035009720320111",
+      "channel_id": "1170692781216378960",
+      "content": "Goliath is dope",
+      "author": "neonin.",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361047811696627843",
+      "channel_id": "1170692781216378960",
+      "content": "the urge to write Clementine watch Ham make out with Keeper while her being tied",
+      "author": "_venush",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1360975423940595802",
+      "channel_id": "1170692781216378960",
+      "content": "Me printing out Tulu and building a shrine for him, praying before pulling every",
+      "author": "thesecondcomingofdrenwee",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1361031028931825714",
+      "channel_id": "1170692781216378960",
+      "content": "Hrmmm would like to read my BL book 😞",
+      "author": "cindertinct",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1361045434080038984",
       "content": "100377735……",
       "author": "287405tjy_28066",
@@ -57,139 +164,60 @@
       "channel": ""
     },
     {
-      "id": "1360828070268764241",
-      "channel_id": "1131839817982947429",
-      "content": "<:sleep2:1356085993626665200>",
-      "author": "zhaoxing233",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1361035389300637902",
+      "channel_id": "1170692781216378960",
+      "content": "I would gladly say the same unto you",
+      "author": "neonin.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360838227249987697",
-      "channel_id": "1131839817982947429",
-      "content": "推荐，好玩<:shy:1356053151349997829>",
-      "author": "zhaoxing233",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1361032173699994103",
+      "channel_id": "1170692781216378960",
+      "content": "Oh! I have an Idea in mind it's a BL that revolves around Cinderella heheh",
+      "author": "cindertinct",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360928811587338381",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": ".2.718281828",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1361033192424870078",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360956029533163650",
-      "channel_id": "1131839817982947429",
-      "content": "🤓",
-      "author": "bailuoxiao",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1361041369740607640",
+      "channel_id": "1170692781216378960",
+      "content": "coz I wanna lick those abs",
+      "author": "neonin.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360876933629612132",
-      "channel_id": "1131839817982947429",
-      "content": "🛐 我又回來了",
-      "author": "fengliyaowo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1361045176864473238",
+      "channel_id": "1170692781216378960",
+      "content": "my baby",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360888067887595601",
-      "channel_id": "1131839817982947429",
-      "content": "因為我一直看著你",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1361053300060979392",
+      "channel_id": "1170692781216378960",
+      "content": "ARACHNE IS PRETTY",
+      "author": "cindertinct",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1360937639800344657",
-      "channel_id": "1131839817982947429",
-      "content": "||那就色色到底吧🥵 ||",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1361071865895850224",
-      "channel_id": "1131839817982947429",
-      "content": "這次總算有打玩融災了",
-      "author": "tofu0834",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360899213927514314",
-      "content": "🥹",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
-    },
-    {
-      "id": "1360805002318315620",
-      "channel_id": "1131839817982947429",
-      "content": "今天才500天 我沒有全勤<:cry2:1356068126894194758>",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360866917694570538",
-      "channel_id": "1131839817982947429",
-      "content": "也许该玩旺达磨练技术",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360879060976275539",
-      "channel_id": "1131839817982947429",
-      "content": "普通闭眼打",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360913083458916462",
-      "channel_id": "1131839817982947429",
-      "content": "校貓 我要一個奶子比鯊魚還大的",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360915942842040322",
-      "channel_id": "1131839817982947429",
-      "content": "夫人現在是不是沒在砍頭",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360917989914050600",
-      "channel_id": "1131839817982947429",
-      "content": "等塔薇血希打不动了就解除回合限制",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360938809813893311",
-      "channel_id": "1131839817982947429",
-      "content": "想當年騙我入坑的就是鯊魚那張偉大的臉",
-      "author": "fengliyaowo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1360955239741784146",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1360912230090276936",
+      "channel_id": "1170692781216378960",
+      "content": "Does this game have autoplay btw?",
+      "author": "ravenxzd",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

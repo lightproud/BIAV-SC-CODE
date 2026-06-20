@@ -1,10 +1,14 @@
 {
   "date": "2025-03-30",
-  "messages": 17,
-  "unique_authors": 8,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 2761,
+  "unique_authors": 80,
+  "reactions_total": 43,
+  "attachments": 106,
   "channel_activity": {
+    "🔸綜合討論": 155,
+    "🔸morimens-game-chat": 2587,
+    "🔸剧情交流": 1,
+    "🔸日本語チャンネル": 1,
     "Kinda confused help me for the team": 1,
     "Need help with team comp/builds": 1,
     "NOTICE FOR ALL NEW PLAYERS": 8,
@@ -17,28 +21,194 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "1": 2,
-    "8": 3,
-    "9": 3,
-    "10": 2,
-    "11": 1,
-    "15": 1,
-    "2": 2,
-    "4": 1,
-    "21": 1,
-    "6": 1
+    "2": 202,
+    "3": 185,
+    "4": 201,
+    "5": 63,
+    "6": 57,
+    "7": 113,
+    "8": 22,
+    "9": 58,
+    "10": 12,
+    "11": 55,
+    "12": 121,
+    "14": 111,
+    "17": 40,
+    "18": 63,
+    "0": 357,
+    "1": 131,
+    "13": 178,
+    "15": 53,
+    "16": 39,
+    "19": 139,
+    "20": 379,
+    "21": 72,
+    "22": 76,
+    "23": 34
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 2253,
+    "19": 491
   },
   "top_reacted_messages": [
+    {
+      "id": "1355755591397675028",
+      "channel_id": "1131839817982947429",
+      "content": "你沒幫神父潤滑",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355949563751567470",
+      "channel_id": "1170692781216378960",
+      "content": "Hi all! I want to share the English Morimens wiki that we are working on https:/",
+      "author": "indigo_anil",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355815622487048333",
+      "channel_id": "1300659436804640788",
+      "content": "タッチアームダメージは触手ダメージという意味なんでしょうか？",
+      "author": "applepieeater123",
+      "reactions": 3,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1355829834550345789",
+      "channel_id": "1131839817982947429",
+      "content": "可以一隊 拿出牌積分\n還蠻快的",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355971030803288275",
+      "channel_id": "1131839817982947429",
+      "content": "有沒有性與淫",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355768181720879206",
+      "channel_id": "1170692781216378960",
+      "content": "After all the buffs you red tentacle into goliath exalt to turn it all into stre",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355916574313156658",
+      "channel_id": "1170692781216378960",
+      "content": "you fish to shattered halberd and spam it",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1355798415002566767",
       "content": "~~之前摸的猜杜勒賽因全身~~",
       "author": "navirecorbeau",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1355909141029195806",
+      "channel_id": "1131839817982947429",
+      "content": "不然來疊青石彌利\n出血翻倍 牌面12k 出血直接變成3、400k\nhttps://discord.com/channels/113179163793319947",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1355698776429428927",
+      "channel_id": "1170692781216378960",
+      "content": "Tulu does nothing and just sits there",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355700138684846180",
+      "channel_id": "1170692781216378960",
+      "content": "sanga",
+      "author": "omegamart",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355738290006786049",
+      "channel_id": "1170692781216378960",
+      "content": "Look man give me some credit I don't got tawil or hamlne to carry me",
+      "author": "noire_2",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355760022440640553",
+      "channel_id": "1170692781216378960",
+      "content": "Lowest priority",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355761763236319255",
+      "channel_id": "1170692781216378960",
+      "content": "When you're building your 5 teams and pizzas, you should be poor af",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355767360904237268",
+      "channel_id": "1170692781216378960",
+      "content": "Yes, you should try breed Murphy 0 cost",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355796960669597826",
+      "channel_id": "1170692781216378960",
+      "content": "Im gonna read all the ultra char kits<:rose1:1234798154000633949>  wish me luckk",
+      "author": "fulcrum_nagant",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355802811362840748",
+      "channel_id": "1170692781216378960",
+      "content": "thais (limited) leigh (non limited)",
+      "author": "maegu",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355834499920822433",
+      "channel_id": "1170692781216378960",
+      "content": "Rewinding time instead of her signature and another skey stat wheel of your choo",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355837773482954772",
+      "channel_id": "1170692781216378960",
+      "content": "Replace sanga with goliath, use rat posse",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1355838142300819569",
+      "channel_id": "1170692781216378960",
+      "content": "yes",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

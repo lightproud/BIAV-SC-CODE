@@ -1,10 +1,16 @@
 {
   "date": "2025-03-09",
-  "messages": 84,
-  "unique_authors": 9,
-  "reactions_total": 16,
-  "attachments": 3,
+  "messages": 2796,
+  "unique_authors": 103,
+  "reactions_total": 137,
+  "attachments": 163,
   "channel_activity": {
+    "🔸綜合討論": 387,
+    "🔸阵容构建": 228,
+    "🔸morimens-game-chat": 1999,
+    "🔸相位对弈": 22,
+    "🔸日本語チャンネル": 6,
+    "🔸한국어-채팅방": 70,
     "Tier list for Standard and Limited separated 2.1": 1,
     "V2.1.1.0 停服維護公告": 1,
     "✅「已回答」账号找不到了": 1,
@@ -12,15 +18,34 @@
     "相位对弈命轮能不能改改": 1
   },
   "hourly_activity": {
-    "9": 1,
-    "5": 1,
-    "7": 2,
-    "11": 17,
-    "12": 4,
-    "15": 59
+    "0": 142,
+    "1": 101,
+    "2": 21,
+    "3": 45,
+    "4": 54,
+    "5": 76,
+    "6": 113,
+    "7": 111,
+    "8": 48,
+    "9": 55,
+    "10": 76,
+    "12": 286,
+    "13": 38,
+    "14": 120,
+    "15": 478,
+    "16": 239,
+    "17": 300,
+    "23": 80,
+    "11": 121,
+    "18": 172,
+    "19": 25,
+    "20": 60,
+    "21": 27,
+    "22": 8
   },
   "message_types": {
-    "0": 1
+    "0": 2145,
+    "19": 567
   },
   "top_reacted_messages": [
     {
@@ -31,6 +56,14 @@
       "channel": "V2.1.1.0 停服維護公告"
     },
     {
+      "id": "1348273700012560507",
+      "channel_id": "1131839874132090890",
+      "content": "一群狗",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1348199686984700134",
       "content": "空虚能不能改成以前版本:不能获得狂气？要不就改成打他一次扣一次狂气，目的就是不让他开大，那咋还是能得狂气？图二要是打完第一个目标，第二个目标成血盾最高的，也来1",
       "author": "luhongran",
@@ -38,32 +71,140 @@
       "channel": "相位对弈命轮能不能改改"
     },
     {
-      "id": "1348258767879405660",
-      "content": "入藥 可以更容易製造翅膀 打傷害",
-      "author": "cuanbingtao",
+      "id": "1348317753332863038",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348152957635657729",
+      "channel_id": "1131839817982947429",
+      "content": "什麼意思<:__:1239909731125035058> <:__:1239909731125035058> \n你是說你想把圖魯搞到懷孕嗎",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348153659439059047",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯的技能：瘋狂榨取，會使守密人的產出量大幅提升，但圖魯常常無法承受守密人的全部",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348164909166497802",
+      "channel_id": "1131839817982947429",
+      "content": "到現在靈塑適性才1隻滿等<:flop:1243504846062223360>",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348275483199930439",
+      "channel_id": "1131839874132090890",
+      "content": "~~所以还是血海弥好玩，180%强效令人安心~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1348328846990114877",
+      "channel_id": "1170692781216378960",
+      "content": "one of the world's biggest religions center around a figure who is arguably the ",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348152519830011916",
+      "channel_id": "1131839817982947429",
+      "content": "剩我抽不到圖魯了",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "这是我的配置"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1348259979672424499",
-      "content": "喜欢这个角色",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348153306798882849",
+      "channel_id": "1131839817982947429",
+      "content": "什麼東西溢出",
+      "author": "tofu0834",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1348313220586274887",
-      "content": "困难",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348182874578485259",
+      "channel_id": "1131839817982947429",
+      "content": "崩鐵的角色",
+      "author": "cwz.io",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1348314706598826044",
-      "content": "还有这一说吗？我以为联络者是只要出非指令卡就加盾和力量的",
-      "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "这是我的配置"
+      "id": "1348310395017760790",
+      "channel_id": "1131839817982947429",
+      "content": "~~我已经是全跳党了，一想到以后要额外按十五次往上就很麻~~",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348273280708247664",
+      "channel_id": "1131839874132090890",
+      "content": "~~珊瑚女之死真的不考慮一下嘛~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1348092378308939799",
+      "channel_id": "1170692781216378960",
+      "content": "Does this game have reruns?",
+      "author": "pelu_2024",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348273862185320488",
+      "channel_id": "1170692781216378960",
+      "content": "Hello I'm new to the game",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348310405046603808",
+      "channel_id": "1170692781216378960",
+      "content": "If I speak, I'm in big trouble",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348311809798705172",
+      "channel_id": "1170692781216378960",
+      "content": "#ChangeItBack",
+      "author": "potassium1234",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348316853298139300",
+      "channel_id": "1170692781216378960",
+      "content": "winkle just becomes racist",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1348317642754228316",
+      "channel_id": "1170692781216378960",
+      "content": "https://www.tiktok.com/t/ZT2XHWYqD/",
+      "author": "potassium1234",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

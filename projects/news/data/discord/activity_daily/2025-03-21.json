@@ -1,10 +1,15 @@
 {
   "date": "2025-03-21",
-  "messages": 55,
-  "unique_authors": 9,
-  "reactions_total": 19,
-  "attachments": 16,
+  "messages": 3002,
+  "unique_authors": 89,
+  "reactions_total": 110,
+  "attachments": 111,
   "channel_activity": {
+    "🔸綜合討論": 316,
+    "🔸阵容构建": 25,
+    "🔸morimens-game-chat": 2572,
+    "🔸剧情交流": 25,
+    "🔸한국어-채팅방": 9,
     "Need help with team comps I'm new": 1,
     "【日本語訳】フィードバック": 7,
     "V2.1.1.6 在線維護公告": 2,
@@ -20,23 +25,34 @@
     "参加活动……": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "5": 1,
-    "6": 1,
-    "15": 1,
-    "18": 4,
-    "9": 2,
-    "2": 5,
-    "16": 7,
-    "12": 27,
-    "11": 2,
-    "3": 1,
-    "4": 2,
-    "13": 1
+    "0": 59,
+    "1": 58,
+    "2": 177,
+    "3": 129,
+    "4": 107,
+    "5": 33,
+    "6": 111,
+    "7": 88,
+    "8": 34,
+    "9": 52,
+    "10": 135,
+    "11": 16,
+    "12": 34,
+    "13": 58,
+    "14": 44,
+    "15": 315,
+    "16": 331,
+    "19": 85,
+    "22": 164,
+    "17": 361,
+    "18": 141,
+    "20": 122,
+    "21": 113,
+    "23": 235
   },
   "message_types": {
-    "19": 2,
-    "0": 6
+    "0": 2340,
+    "19": 607
   },
   "top_reacted_messages": [
     {
@@ -61,6 +77,22 @@
       "channel": "💭「處理中」還我奧爾拉主C夢"
     },
     {
+      "id": "1352714370534346886",
+      "channel_id": "1131839874132090890",
+      "content": "# 阿狗跟aaa之間有不為人知的秘密跟關係",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1352676745584709722",
+      "channel_id": "1170692781216378960",
+      "content": "Gated behind +4<:rose1:1234798154000633949>",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1352677718143012945",
       "content": "<@&1166257943742787615> 已经两次更新了，ui回调也没有，回应也没有吗？\n推pvp归推pvp，弄个pvp剧情把原作剧情格子挤到莫名其妙的地",
       "author": "flarinsidia",
@@ -68,11 +100,116 @@
       "channel": "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？"
     },
     {
-      "id": "1352684757984481290",
-      "content": "如图我今天退出的时候还在7000也是直接切屏退出，为什么晚上登入直接重新开始？这是在？",
-      "author": "molove0286",
+      "id": "1352546112673677415",
+      "channel_id": "1131839817982947429",
+      "content": "打得很躁",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352560265568452648",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜·雷娅】我寻着血的香气找到此处-哔哩哔哩】 https://b23.tv/Xuo1qFZ",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352577238918365194",
+      "channel_id": "1131839817982947429",
+      "content": "開始推翻譯之後，一直在維護\n\n~~是不是可以靠多點翻譯錯誤拿銀芯~~",
+      "author": "kuritani_yuu",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352584627822399509",
+      "channel_id": "1131839817982947429",
+      "content": "我現在一個打防就有20臨時觸力跟20臨時力量",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352592647851737088",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352732994426769409",
+      "channel_id": "1170692781216378960",
+      "content": "money comes and goes but the shame of feeling like you wasted money will stay wi",
+      "author": "applepieeater123",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1352733090300035123",
+      "channel_id": "1170692781216378960",
+      "content": "I love you",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1352495340074307646",
+      "channel_id": "1131839817982947429",
+      "content": "每回合出的第一張牌進到腦缸",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」为什么回合自动刷新回第一回合"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352496148409225236",
+      "channel_id": "1131839817982947429",
+      "content": "你環拉複製的話也不能塞這樣",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352516604486877185",
+      "channel_id": "1131839817982947429",
+      "content": "七鰓鰻紅茶 好喝",
+      "author": "ruko9999",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352518376307560468",
+      "channel_id": "1131839817982947429",
+      "content": "午安",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352518897412210741",
+      "channel_id": "1131839817982947429",
+      "content": "原來不是打招呼<:sleep:1238448786540462130>",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352486673216176209",
+      "channel_id": "1131839874132090890",
+      "content": "群友的包容性真高",
+      "author": "yizilven",
+      "reactions": 1,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1352471443362807898",
+      "channel_id": "1170692781216378960",
+      "content": "Ty! Both of these work 🥹🥹",
+      "author": "paperhanji",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

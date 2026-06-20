@@ -1,10 +1,17 @@
 {
   "date": "2025-03-19",
-  "messages": 184,
-  "unique_authors": 17,
-  "reactions_total": 146,
-  "attachments": 23,
+  "messages": 3197,
+  "unique_authors": 119,
+  "reactions_total": 231,
+  "attachments": 149,
   "channel_activity": {
+    "🔸綜合討論": 252,
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 2454,
+    "🔸剧情交流": 91,
+    "🔸相位对弈": 53,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 158,
     "Need help with d tide team": 4,
     "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
     "Tier list as of 2.0": 1,
@@ -35,29 +42,34 @@
     "1350059696945500171": 1
   },
   "hourly_activity": {
-    "19": 1,
-    "20": 3,
-    "23": 2,
-    "5": 13,
-    "10": 51,
-    "17": 1,
-    "11": 11,
-    "6": 6,
-    "8": 27,
-    "7": 3,
-    "14": 17,
-    "13": 6,
-    "15": 6,
-    "2": 4,
-    "3": 3,
-    "9": 19,
-    "12": 7,
-    "16": 3,
-    "22": 1
+    "0": 24,
+    "1": 72,
+    "2": 35,
+    "3": 42,
+    "6": 56,
+    "7": 77,
+    "9": 61,
+    "10": 130,
+    "11": 45,
+    "12": 63,
+    "13": 479,
+    "15": 375,
+    "16": 161,
+    "17": 168,
+    "18": 172,
+    "20": 17,
+    "21": 15,
+    "22": 165,
+    "23": 367,
+    "19": 37,
+    "4": 17,
+    "5": 64,
+    "8": 176,
+    "14": 379
   },
   "message_types": {
-    "0": 16,
-    "19": 1
+    "19": 552,
+    "0": 2461
   },
   "top_reacted_messages": [
     {
@@ -96,6 +108,14 @@
       "channel": "新版本御四家0成本开荒教学"
     },
     {
+      "id": "1351990035301535936",
+      "channel_id": "1131839817982947429",
+      "content": "我只能說\n不打活動的贏一半\n不玩忘卻的贏全部（）",
+      "author": "yusi4172",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1351868773673472122",
       "content": "这是风趣幽默",
       "author": "muliupan",
@@ -124,6 +144,38 @@
       "channel": "新版本御四家0成本开荒教学"
     },
     {
+      "id": "1351745338758922420",
+      "channel_id": "1131839817982947429",
+      "content": "銀河行星現在是熱心**雲玩家**||是來視姦你們的||",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351965748440076289",
+      "channel_id": "1131839817982947429",
+      "content": "我恨pvp",
+      "author": "shchng.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351947560352481310",
+      "channel_id": "1131839817982947429",
+      "content": "地狱绘图",
+      "author": "kafka0u0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1352066994555326638",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "omnipotentkun",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1351868287969136743",
       "content": "🍟",
       "author": "aaaa_00098",
@@ -136,6 +188,14 @@
       "author": "muliupan",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1351941085584166922",
+      "channel_id": "1131839817982947429",
+      "content": "然後人就跑光了\n蒸蚌",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1351932524032426034",
@@ -152,53 +212,12 @@
       "channel": "新版本御四家0成本开荒教学"
     },
     {
-      "id": "1351956695118778442",
-      "content": "從以前到現在 想要「教育」玩家怎麼玩遊戲的遊戲廠商\n從來沒一個有好下場的\n\n這種直接強行摀嘴  解決不了問題 解決玩家的方法 除了讓玩家更討厭你們官方之外 沒有",
-      "author": "lazuritefox",
+      "id": "1352053708514398290",
+      "channel_id": "1170692781216378960",
+      "content": "goliath wont do damage even if you give spoonfeed him every realistically attain",
+      "author": "applepieeater123",
       "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1351932431879372862",
-      "content": "我这个更离谱",
-      "author": "287405tjy_28066",
-      "reactions": 2,
-      "channel": "✅「已回答」更新完後各種數值顯示出問題"
-    },
-    {
-      "id": "1351751168359141447",
-      "content": "loyalty!",
-      "author": "sense25.",
-      "reactions": 2,
-      "channel": "致敬爱的校猫大人"
-    },
-    {
-      "id": "1351927924621578240",
-      "content": "分是上去了",
-      "author": "nahida._90",
-      "reactions": 2,
-      "channel": "【万字详解】百眼骑士点杀攻略：终极马速指南！"
-    },
-    {
-      "id": "1351933535853740083",
-      "content": "儘管爬分中風\n一回殺還是蠻有魅力的",
-      "author": "Deleted User",
-      "reactions": 2,
-      "channel": "【万字详解】百眼骑士点杀攻略：终极马速指南！"
-    },
-    {
-      "id": "1351940944533913673",
-      "content": "多打多改，找到自己喜欢的组合上分就快了。我现在用的其实也不是攻略里那套，只是我觉得那个不适合做攻略就没拿出来写。上个赛季赛季中我是上过第一大概一天的，我个人觉得",
-      "author": "dakeng1234",
-      "reactions": 2,
-      "channel": "【万字详解】百眼骑士点杀攻略：终极马速指南！"
-    },
-    {
-      "id": "1351787219463180373",
-      "content": "放一點自製吧,也許還會繼續更新",
-      "author": "akalanden",
-      "reactions": 2,
-      "channel": "不会再有了"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

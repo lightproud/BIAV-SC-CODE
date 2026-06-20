@@ -1,10 +1,15 @@
 {
   "date": "2025-03-11",
-  "messages": 87,
-  "unique_authors": 17,
-  "reactions_total": 49,
-  "attachments": 16,
+  "messages": 2805,
+  "unique_authors": 113,
+  "reactions_total": 154,
+  "attachments": 133,
   "channel_activity": {
+    "🔸綜合討論": 217,
+    "🔸阵容构建": 13,
+    "🔸morimens-game-chat": 2431,
+    "🔸相位对弈": 47,
+    "🔸한국어-채팅방": 10,
     "Star Chapter 2.1 Tier List": 10,
     "Genesis Garden Pick": 2,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 11,
@@ -28,27 +33,34 @@
     "做了忘却前夜产品连线表格老师们请用！": 3
   },
   "hourly_activity": {
-    "0": 6,
-    "12": 7,
-    "23": 4,
-    "14": 13,
-    "3": 11,
-    "6": 6,
-    "7": 2,
-    "9": 7,
-    "11": 3,
-    "13": 4,
-    "15": 2,
-    "5": 4,
-    "10": 7,
-    "2": 2,
-    "8": 4,
-    "17": 1,
-    "1": 4
+    "0": 153,
+    "4": 79,
+    "5": 178,
+    "6": 352,
+    "7": 217,
+    "8": 71,
+    "9": 58,
+    "10": 36,
+    "11": 35,
+    "12": 184,
+    "13": 91,
+    "14": 78,
+    "15": 85,
+    "16": 51,
+    "17": 41,
+    "18": 197,
+    "20": 12,
+    "23": 165,
+    "1": 239,
+    "2": 85,
+    "3": 126,
+    "19": 22,
+    "21": 139,
+    "22": 111
   },
   "message_types": {
-    "0": 10,
-    "19": 2
+    "0": 2179,
+    "19": 539
   },
   "top_reacted_messages": [
     {
@@ -71,6 +83,38 @@
       "author": "tianfang5580",
       "reactions": 8,
       "channel": "PVP刷牌队攻略"
+    },
+    {
+      "id": "1348873272304996433",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry:1239910167668326480>",
+      "author": "arr5721",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348883561003876382",
+      "channel_id": "1131839817982947429",
+      "content": "<:cry:1239910167668326480>",
+      "author": "tofu0834",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348904583648378910",
+      "channel_id": "1180850818509971466",
+      "content": "屠貓大會",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1348915342096732193",
+      "channel_id": "1131839817982947429",
+      "content": "粉粉的高科技的很贴原设了",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1348952255877091378",
@@ -101,53 +145,76 @@
       "channel": "扔一点最近的"
     },
     {
-      "id": "1348956222916919356",
-      "content": "thank you for your responses!!",
-      "author": "applepieeater123",
-      "reactions": 1,
-      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
+      "id": "1348925307494862911",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "tamukenqi",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1348957365340340234",
-      "content": "雖然我已經很久沒打相位了\n但我之前玩的時候也是常常會拖到倒計時結束的那種人\n不是想拖而是單純腦袋轉的比較慢\n我認為這並沒有錯<:shy:123991133833",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "相位对弈中故意拖延时间的有什么办法么"
+      "id": "1349003265970278422",
+      "channel_id": "1131839874132090890",
+      "content": "其實我隊伍真正的核心成員是靈芝",
+      "author": "shuen1207",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1348900306070536212",
-      "content": "收到反饋🌹 ，已踢踢校工~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」試訓模式 命輪裝不了"
+      "id": "1348881025371209779",
+      "channel_id": "1170692781216378960",
+      "content": "play 10 cards to do what gelot can do int 4",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1348854477251280976",
-      "content": "Hello, we have received your question and are already checking and adjusting it~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Script Error"
+      "id": "1349049150238359573",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1348961934057410571",
-      "content": "主播主播，你這套隊伍強度雖然~~（不高）~~很高，但造價||~~（草，真幾把貴）~~||有點昂貴，有沒有更便宜更好用的隊伍\n~~沒有隕日怎麼辦~~",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
+      "id": "1349062976262373457",
+      "channel_id": "1170692781216378960",
+      "content": "The hell am i being pointed at for",
+      "author": "sheepybeeby",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1348965909204570142",
-      "content": "那就腐朽/米粒sr凑合着带，也可以玩（）\n刚出的大福袋sr主属性强效加基伤看着也挺配的\n~~贵嘛，玩深海毒默认白嫖其他人的+12米粒，其实自带一只+4熔朵/灯塔",
-      "author": "flarinsidia",
+      "id": "1348816373677162589",
+      "channel_id": "1131839817982947429",
+      "content": "第一波固定没精英的吧",
+      "author": "sense25.",
       "reactions": 1,
-      "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1348968155263008818",
-      "content": "~~也可以試試抓彌利融朵以外的換鯊魚去速通道中順便拐力量~~",
+      "id": "1348890185206857828",
+      "channel_id": "1131839817982947429",
+      "content": "貓的狂氣是對一個單位造成最大生命50%的傷害，自身回100狂",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348943166333784104",
+      "channel_id": "1131839817982947429",
+      "content": "可能是因為你帶了圖魯",
       "author": "ernest_heart",
       "reactions": 1,
-      "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1348997573033201665",
+      "channel_id": "1131839817982947429",
+      "content": "難怪神國會覆滅",
+      "author": "tofu0834",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

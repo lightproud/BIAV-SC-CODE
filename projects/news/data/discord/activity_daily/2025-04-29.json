@@ -1,10 +1,25 @@
 {
   "date": "2025-04-29",
-  "messages": 803,
-  "unique_authors": 37,
-  "reactions_total": 283,
-  "attachments": 49,
+  "messages": 6940,
+  "unique_authors": 161,
+  "reactions_total": 422,
+  "attachments": 239,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 5044,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 212,
+    "🔸русский-канал": 21,
+    "🔸phòng-chat-tiếng-việt": 2,
+    "🔸canal-español": 122,
+    "🔸canal-português": 541,
+    "🔸ruang-obrolan-indonesia": 46,
+    "🔸ห้องสนทนาภาษาไทย": 119,
+    "🔸traphase": 18,
+    "🔸lore-chat": 4,
+    "🔸lets-count": 1,
     "🔸綜合討論": 727,
     "Tulu is adorable": 4,
     "Just a pixel image of Jenkin looking outside with Brown": 1,
@@ -29,33 +44,34 @@
     "1350059696945500171": 13
   },
   "hourly_activity": {
-    "0": 23,
-    "1": 105,
-    "2": 23,
-    "3": 9,
-    "4": 15,
-    "5": 11,
-    "6": 6,
-    "7": 41,
-    "8": 43,
-    "9": 139,
-    "10": 61,
-    "11": 125,
-    "12": 81,
-    "13": 10,
-    "14": 23,
-    "15": 8,
-    "16": 9,
-    "17": 5,
-    "18": 45,
-    "20": 4,
-    "23": 3,
-    "21": 1,
-    "22": 13
+    "12": 295,
+    "0": 272,
+    "1": 245,
+    "2": 366,
+    "3": 271,
+    "4": 127,
+    "5": 117,
+    "6": 103,
+    "7": 139,
+    "8": 150,
+    "9": 164,
+    "10": 293,
+    "11": 250,
+    "13": 222,
+    "14": 341,
+    "15": 256,
+    "16": 471,
+    "17": 362,
+    "18": 250,
+    "19": 192,
+    "20": 366,
+    "21": 384,
+    "22": 675,
+    "23": 629
   },
   "message_types": {
-    "0": 656,
-    "19": 71
+    "0": 4760,
+    "19": 1377
   },
   "top_reacted_messages": [
     {
@@ -78,6 +94,14 @@
       "author": "morimensstaff02",
       "reactions": 17,
       "channel": "English Localization Fixes & What's Next"
+    },
+    {
+      "id": "1366835147571466330",
+      "channel_id": "1300659495550062592",
+      "content": "",
+      "author": "9029.",
+      "reactions": 14,
+      "channel": "🔸한국어-채팅방"
     },
     {
       "id": "1366749169829806140",
@@ -122,6 +146,14 @@
       "author": "morimensstaff01",
       "reactions": 6,
       "channel": "忘卻前夜OST：迷幻蟲巢之夢"
+    },
+    {
+      "id": "1366695808128253992",
+      "channel_id": "1180850818509971466",
+      "content": "麻痺真的好醜 手掌樣<:flop1:1356083604236800030>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1366723303829536899",
@@ -184,28 +216,12 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
-      "id": "1366601077146914867",
-      "channel_id": "1131839817982947429",
-      "content": "哇甚至三角虐戀",
-      "author": "kong760",
+      "id": "1366749763134820402",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1366749080042209330",
+      "author": "morimensstaff02",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1366692077903020092",
-      "channel_id": "1131839817982947429",
-      "content": "每天打一波就好了。打太多傷身體。",
-      "author": "randomplayer852",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1366724784339161220",
-      "channel_id": "1131839817982947429",
-      "content": "好玩 愛玩",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

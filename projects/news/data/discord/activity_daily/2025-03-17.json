@@ -1,10 +1,15 @@
 {
   "date": "2025-03-17",
-  "messages": 163,
-  "unique_authors": 27,
-  "reactions_total": 25,
-  "attachments": 18,
+  "messages": 2273,
+  "unique_authors": 93,
+  "reactions_total": 121,
+  "attachments": 122,
   "channel_activity": {
+    "🔸綜合討論": 482,
+    "🔸阵容构建": 31,
+    "🔸morimens-game-chat": 1568,
+    "🔸相位对弈": 8,
+    "🔸한국어-채팅방": 21,
     "Tier list as of 2.0": 1,
     "Star Chapter 2.1 Tier List": 1,
     "Team Comps": 1,
@@ -31,37 +36,82 @@
     "1350059696945500171": 1
   },
   "hourly_activity": {
-    "16": 15,
-    "17": 12,
-    "5": 2,
-    "3": 5,
-    "6": 20,
-    "8": 36,
-    "23": 4,
-    "2": 10,
-    "7": 17,
-    "13": 6,
-    "14": 10,
-    "11": 5,
-    "9": 1,
-    "10": 5,
-    "4": 2,
-    "15": 4,
-    "0": 2,
-    "1": 5,
-    "20": 2
+    "0": 36,
+    "1": 32,
+    "2": 16,
+    "3": 24,
+    "4": 89,
+    "5": 91,
+    "6": 198,
+    "7": 117,
+    "8": 96,
+    "9": 106,
+    "10": 48,
+    "11": 36,
+    "12": 92,
+    "13": 126,
+    "14": 214,
+    "15": 181,
+    "16": 148,
+    "17": 27,
+    "22": 75,
+    "23": 265,
+    "18": 11,
+    "19": 215,
+    "20": 23,
+    "21": 7
   },
   "message_types": {
-    "0": 5,
-    "19": 8
+    "0": 1686,
+    "19": 424
   },
   "top_reacted_messages": [
+    {
+      "id": "1351151619508539452",
+      "channel_id": "1131839817982947429",
+      "content": "感覺比上一期簡單一點",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351196028249964584",
+      "channel_id": "1131839817982947429",
+      "content": "~~完了你用中文問問題人家不會理你喔~~",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1351006791231606856",
       "content": "諾斯越高是連結喚醒體失控機率越大\n在這條件下 高諾斯還能保持正常的喚醒體通常代表喚醒體自身能力越強\n喚醒體就像是電器  諾斯指數就有點像是電功率（X\n至於所謂的",
       "author": "ruko9999",
       "reactions": 5,
       "channel": "純討論，為什麼熔朵的體重少了0.1磅"
+    },
+    {
+      "id": "1351214113560203265",
+      "channel_id": "1131839817982947429",
+      "content": "我一直都是毒的忠诚用户",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351219766546792549",
+      "channel_id": "1131839817982947429",
+      "content": "我鯊拉靈塑還能大幅提升隊伍血量",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351188235493048384",
+      "channel_id": "1170692781216378960",
+      "content": "just use the 1-2 realms you like and the characters you like",
+      "author": "sterminiophoenix",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1351181003925885028",
@@ -71,95 +121,108 @@
       "channel": "💭「處理中」应该是生效次数变蓝，不是2.5%"
     },
     {
-      "id": "1351092086207680532",
-      "content": "这周应该可以搞定辣！",
-      "author": "morimensstaff01",
+      "id": "1351067290870743133",
+      "channel_id": "1131839817982947429",
+      "content": "不設上限王怎麼活！",
+      "author": "huangyu0876",
       "reactions": 2,
-      "channel": "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351198492130803762",
-      "content": "I don't think they seem to accept the proposal.They are very satisfied with thei",
+      "id": "1351081428355383297",
+      "channel_id": "1131839817982947429",
+      "content": "加入深海24 只拉攻擊\n基本每場 開怒濤1t就能收<:wish:1236951537788649492>",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1351194911080452156",
+      "channel_id": "1131839817982947429",
+      "content": "😅",
       "author": "akalanden",
       "reactions": 2,
-      "channel": "✅「Answered」Add crafting for Shattered Remnant of Dreams"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351050526082465832",
-      "content": "如題，為啥現在回合結束觸手打死敵人還是會觸發流血中毒",
-      "author": "arr5721",
+      "id": "1351200731121717318",
+      "channel_id": "1131839817982947429",
+      "content": "豆腐也Buff了\n我家附近豆腐漲到30塊",
+      "author": "Deleted User",
       "reactions": 2,
-      "channel": "💭「處理中」深海回合結束"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351103443632263188",
-      "content": "不知道欸 我只記得神父挺慌的\n那時候他說真的不能再用能力\n已經嚴重透支前主教了\n算是正式承認自己是不受紀錄的喚醒體",
-      "author": "ruko9999",
+      "id": "1351210319724281867",
+      "channel_id": "1131839817982947429",
+      "content": "又是一個躺平的350",
+      "author": "shchng.",
       "reactions": 2,
-      "channel": "純討論，為什麼熔朵的體重少了0.1磅"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351082549744767019",
-      "content": "Thank you again!<:cry:1243502872021438475> ❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "한국어 번역 피드백 컬렉션"
+      "id": "1351213277467906098",
+      "channel_id": "1131839817982947429",
+      "content": "我會有一兩個打5其他打更低",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351106665998581780",
-      "content": "Si tiene alguna pregunta sobre la traducción, no dude en publicarla aquí. Goya r",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Português Tradução - Coleta de Feedback"
+      "id": "1351224125657452616",
+      "channel_id": "1131839817982947429",
+      "content": "換珊更好了",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1351105889494372424",
-      "content": "<@334271675786854413>ขอขอบคุณสำหรับคำติชมของคุณ โกย่าได้บันทึกไว้ทีละอันแล้ว🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
+      "id": "1351090622353772578",
+      "channel_id": "1131839874132090890",
+      "content": "我+11，12想用抽的",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1351184554542628975",
-      "content": "V2.1.1.3 Online Maintenance Notice\n \nDear Keeper,\n    The Mythag University Admi",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.1.1.3 在線維護公告"
+      "id": "1351093283539128382",
+      "channel_id": "1131839874132090890",
+      "content": "普池多抽就會有一些沒在用但啟數雞巴高的，回溯掉就能很快提高啟數",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1351159641786159154",
-      "content": "",
-      "author": "faye7414",
-      "reactions": 1,
-      "channel": "✅「已回答」Steam 第一次下载后，选完语言出现的，steam 修了之后还是一样"
+      "id": "1351085129690255434",
+      "channel_id": "1170692781216378960",
+      "content": "go for OE only on units you dont use",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1351104457844330577",
-      "content": "不做处理警告",
-      "author": "relmx",
-      "reactions": 1,
-      "channel": "致敬爱的校猫大人"
+      "id": "1351087111356420168",
+      "channel_id": "1170692781216378960",
+      "content": "2 pandias",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1351078137642881079",
-      "content": "然後能幫忙按薯條來高亮嗎🥺",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "💭「處理中」深海回合結束"
+      "id": "1351093601089749034",
+      "channel_id": "1170692781216378960",
+      "content": "I feel like we're not on the same page. Slight alterations and keeping the same ",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1351238452951121991",
-      "content": "I didn`t received awards on 14 season traphase. <:cry:1239910167668326480>",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "✅「Answered」Не получил награды за 14 Сезон в Фазовой ловушке."
-    },
-    {
-      "id": "1351106222329172049",
-      "content": "<@967217658577698857>Gracias por los comentarios recibidos~🫶",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "id": "1351188234272768072",
+      "channel_id": "1170692781216378960",
+      "content": "Find a charcter you like first",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

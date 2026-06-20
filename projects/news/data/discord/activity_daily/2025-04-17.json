@@ -1,10 +1,21 @@
 {
   "date": "2025-04-17",
-  "messages": 747,
-  "unique_authors": 30,
-  "reactions_total": 2542,
-  "attachments": 37,
+  "messages": 4525,
+  "unique_authors": 101,
+  "reactions_total": 2652,
+  "attachments": 171,
   "channel_activity": {
+    "🔸morimens-game-chat": 3173,
+    "🔸相位对弈": 9,
+    "🔸课间休息闲聊": 5,
+    "🔸한국어-채팅방": 44,
+    "🔸canal-español": 8,
+    "🔸canal-português": 6,
+    "🔸ruang-obrolan-indonesia": 433,
+    "🔸ห้องสนทนาภาษาไทย": 57,
+    "🔸traphase": 15,
+    "🔸lore-chat": 27,
+    "🔸lets-count": 1,
     "🔸新生守则┊rules": 2,
     "🔸綜合討論": 734,
     "ALL HAIL SQUID KING TULU": 2,
@@ -14,33 +25,36 @@
     "💭「處理中」相位对弈红夫人开大不消耗算力自动上命轮": 2
   },
   "hourly_activity": {
-    "11": 22,
-    "0": 3,
-    "3": 9,
-    "4": 26,
-    "5": 39,
-    "6": 75,
-    "7": 86,
-    "8": 18,
-    "9": 66,
-    "10": 21,
-    "12": 179,
-    "13": 96,
-    "14": 11,
-    "15": 24,
-    "16": 35,
-    "17": 17,
-    "18": 8,
-    "19": 1,
-    "20": 1,
-    "21": 1,
-    "22": 6,
-    "23": 1,
-    "2": 2
+    "0": 222,
+    "1": 270,
+    "2": 166,
+    "3": 107,
+    "4": 263,
+    "5": 180,
+    "6": 177,
+    "7": 135,
+    "8": 120,
+    "9": 224,
+    "10": 93,
+    "11": 137,
+    "12": 379,
+    "13": 439,
+    "14": 358,
+    "15": 251,
+    "16": 332,
+    "17": 101,
+    "18": 44,
+    "19": 273,
+    "20": 143,
+    "21": 20,
+    "22": 14,
+    "23": 77
   },
   "message_types": {
-    "0": 633,
-    "19": 102
+    "0": 2765,
+    "19": 1011,
+    "6": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -59,12 +73,68 @@
       "channel": "ALL HAIL SQUID KING TULU"
     },
     {
+      "id": "1362413195293098004",
+      "channel_id": "1170692781216378960",
+      "content": "You got his hopes up for 24",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362446504459112600",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/bottom-gif-26319652",
+      "author": "omegamart",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362425988348379417",
+      "channel_id": "1170692781216378960",
+      "content": "and i didnt have heal cards yippee so i instantly die to bleed",
+      "author": "omegamart",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362431388003074208",
+      "channel_id": "1170692781216378960",
+      "content": "you know, you could keep it until you get another",
+      "author": "sexysneakystoat1625",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1362400140748652714",
       "channel_id": "1131839817982947429",
       "content": "小知識：抽15+15期望值大概要1155抽",
       "author": "ahuahuahua",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1362414599659589673",
+      "channel_id": "1170692781216378960",
+      "content": "why does it sound so dirty with you name ?",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362415005269491882",
+      "channel_id": "1170692781216378960",
+      "content": "I hate biology this shit is mad inconvenient",
+      "author": "daegudollz",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1362421899921064017",
+      "channel_id": "1170692781216378960",
+      "content": "<:cry2:1356068126894194758>",
+      "author": "noire_2",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1362324281916260412",
@@ -83,123 +153,68 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1362402143406919780",
-      "channel_id": "1131839817982947429",
-      "content": "買不平等是因為人生過得太順遂嗎",
-      "author": "fengliyaowo",
+      "id": "1362245672111177748",
+      "channel_id": "1170692781216378960",
+      "content": "When morimens goes down my body goes into a state of shock and my hands begin sh",
+      "author": "aslechi",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362402612913111221",
-      "channel_id": "1131839817982947429",
-      "content": "脫光...",
-      "author": "arr5721",
+      "id": "1362402974760177846",
+      "channel_id": "1170692781216378960",
+      "content": "Thanks for answering my question",
+      "author": "theonlywan0814",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362423424344920285",
-      "channel_id": "1131839817982947429",
-      "content": "沒打通星辰篇普通模式肯定打不過旺達的困難模式",
-      "author": "shchng.",
+      "id": "1362418894119112866",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtube.com/playlist?list=RD1IRG7IqixwA&playnext=1&si=PV-xVO7OWP0SmA7k",
+      "author": "flares117",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362557874768711842",
-      "channel_id": "1131839817982947429",
-      "content": "隨處被鯊魚用",
-      "author": "ernest_heart",
+      "id": "1362419541568782586",
+      "channel_id": "1170692781216378960",
+      "content": "Hello Tulu nation",
+      "author": "rohaluss",
       "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362464621402918952",
-      "content": "如视频所示，仍然是塔薇自带的减一费而不是零费",
-      "author": "287405tjy_28066",
+      "id": "1362419712222302510",
+      "channel_id": "1170692781216378960",
+      "content": "MWAH ily. ꉂ(ˊᗜˋ*)♡",
+      "author": "daegudollz",
       "reactions": 2,
-      "channel": "✅「已回答」钥令未成功触发"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362267174386794658",
-      "channel_id": "1131839817982947429",
-      "content": "？？？？？我在普池裡歪出了跨越疼痛？？？？",
-      "author": ".2.718281828",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1362419839792058540",
+      "channel_id": "1170692781216378960",
+      "content": "time to try this version of mawate i chapter 2",
+      "author": "madlax",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362267295422091416",
-      "channel_id": "1131839817982947429",
-      "content": "我還沒中過任意一個",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1362419898176897145",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/-zHm77FkW3U?si=bR-OEtkpwBgLgIjw an oldie",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1362276110364180612",
-      "channel_id": "1131839817982947429",
-      "content": "我是歪到薔薇之名",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362283610639564933",
-      "channel_id": "1131839817982947429",
-      "content": "之前就有歪到过(",
-      "author": "aprohectus",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362283650078474342",
-      "channel_id": "1131839817982947429",
-      "content": "圖魯莉莉都進普池了",
-      "author": "yuanshuang_",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362283982326075544",
-      "channel_id": "1131839817982947429",
-      "content": "讲道理這种卡不是大小保底去抽出来的话就非常赚(",
-      "author": "aprohectus",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362322064840593529",
-      "channel_id": "1131839817982947429",
-      "content": "星辰篇这个觉醒事件好坑…赛到队伍一觉位然后觉醒卡沉底<:flop2:1356053072924774421>",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362331788449546370",
-      "channel_id": "1131839817982947429",
-      "content": "鯊凱父母、鯊凱24都要三甚至四覺",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362356696114266122",
-      "channel_id": "1131839817982947429",
-      "content": "我拿的是給易傷的",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1362399016687505589",
-      "channel_id": "1131839817982947429",
-      "content": "新角色到底是指非sp还是未出场呢（",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "id": "1362420048744157335",
+      "channel_id": "1170692781216378960",
+      "content": "We just gotta pray the devs release official art soon *wipe tears*",
+      "author": "mount_fisherman",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
