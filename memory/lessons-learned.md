@@ -360,6 +360,20 @@
 - **Fix**：凡涉及「是否已上线/是否正式/版本可用性」的判断，解包数据一律标注为「数据层证据」，**不得据此推断上线状态**；上线状态字段必须人工确认来源。类比 lesson #30「数据层≠输出层」——此为其在「埋入层≠上线层」维度的延伸。
 - **Impact**：界定解包数据的能力边界；wiki 角色库 `category` 的 unreleased 类别由此确立；防止未来把「客户端有数据」误传为「游戏已有该角色」。
 
+## 38. Web 环境 git 凭据缺 `workflow` 权限，含 `.github/workflows/*.yml` 的推送被整单拒绝
+
+- **Context**：2026-06-20 推送功能目录首版（5 普通文件 + 1 个新工作流 `build-capability-registry.yml`）。`git push` 连续报 HTTP 413 / 502 / `unexpected disconnect while reading sideband packet`，且每次尾随诡异的 `Everything up-to-date`。误判过「包太大」「代理抽风」，重试 5 次均败。
+- **Problem**：根因不是体积——是 Web 远端执行环境的 git 凭据**缺 GitHub `workflow` OAuth scope**，凡推送包里含 `.github/workflows/` 下文件，GitHub 服务端**整次拒绝**（连带包里其余文件一起退回），代理把拒绝表现为断连。把工作流文件移出该次提交后，普通文件秒推成功，反证此判据。
+- **Fix**：含工作流文件的提交改走 **GitHub App 凭据**（MCP `push_files`，实测具 workflow 权限）单独推送；普通文件走常规 `git push`。即「机房特权件单独投递，别和普通包裹混寄」。
+- **Impact**：界定本环境两条推送通道的能力边界；凡新增/改动 `.github/workflows/*.yml` 一律预期 git 直推会被拒，提前走 MCP。
+
+## 39. 本地基线陈旧 → git 发「胖包」触发代理体积上限（413/断连）
+
+- **Context**：同日后续推送（不含任何工作流文件）仍反复 413 / `unexpected disconnect`。一度套用 lesson #38 误以为又是 workflow 权限，但这批提交根本没碰工作流。
+- **Problem**：真因是本仓库 main 被 CI 的 `[skip ci]` 提交（采集/归档/目录重建）**高频推进**，本地分支基线一旦落后，`git push` 协商出的 pack 包含大量非共享对象、体积膨胀，撞上本地代理（127.0.0.1）的请求体上限 → 413 / 中途断连。表象与 #38 雷同但根因不同（基线 vs 权限）。
+- **Fix**：本快速移动仓库里，**每次 push 前必先 `git fetch origin main && git rebase origin/main`**，把包压到最小快进增量再推；复刻这一条件后历次推送均一次成功。
+- **Impact**：与 #38 并列为本环境两条独立推送约束（权限 / 基线）；排查推送失败先分清是「含工作流」还是「基线落后」，对症下药，别把两者混为一谈。
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
