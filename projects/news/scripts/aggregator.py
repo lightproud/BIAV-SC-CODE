@@ -257,4 +257,21 @@ def run():
 
 if __name__ == '__main__':
     run()
+    # ARCH-01 统一入口（goal 2026-06-20「合并所有采集器功能到 AC」）：全球平台采集 +
+    # 最终合并 / 全量层（news-raw）亦在本入口完成，collect_global 降为被调库，不再单独
+    # 作为 workflow 步骤（否则会与本链路重复采集）。run() 已把 AC 项写入 news.json；
+    # collect_global.main() 读其为 existing、并入 GC 平台项、产出最终 news.json + news-raw.json。
+    try:
+        import collect_global
+        collect_global.main()
+    except SystemExit as exc:
+        # collect_global.main() 在全球采集器全空时 sys.exit(1)（lesson #2 空数据保护）。
+        # AC 输出已落盘保全，沿用非阻断语义（workflow continue-on-error + 哨兵兜底）。
+        if exc.code:
+            logger.warning(
+                f'global collectors signaled empty/failure (exit {exc.code}); '
+                'AC output preserved, pipeline continues'
+            )
+    except Exception as exc:
+        logger.error(f'global collectors phase failed: {exc}; AC output preserved')
     sys.exit(0)
