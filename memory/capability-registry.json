@@ -9,15 +9,15 @@
       "workflows": 22,
       "scripts_top": 12,
       "scripts_news": 25,
-      "scripts_wiki": 16,
+      "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 1,
       "projects": 4,
-      "total": 88
+      "total": 79
     },
     "reachability": {
-      "live": 53,
+      "live": 44,
       "test-only": 0,
       "orphaned": 0
     }
@@ -663,94 +663,6 @@
       "note_zh": "从客户端解包提取结构化游戏数据。"
     },
     {
-      "id": "fetch_cards.py",
-      "path": "projects/wiki/scripts/fetch_cards.py",
-      "summary": "Fetch and enrich card data for all characters from Fandom wiki.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取卡牌数据。"
-    },
-    {
-      "id": "fetch_lore.py",
-      "path": "projects/wiki/scripts/fetch_lore.py",
-      "summary": "Fetch detailed story/lore data from wiki sources and update lore.json.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取世界观/剧情文本。"
-    },
-    {
-      "id": "fetch_portraits.py",
-      "path": "projects/wiki/scripts/fetch_portraits.py",
-      "summary": "Fetch character portrait images from wiki sources.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取立绘数据。"
-    },
-    {
-      "id": "fetch_skills.py",
-      "path": "projects/wiki/scripts/fetch_skills.py",
-      "summary": "Fetch character skill data from Fandom MediaWiki API and update characters.json.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取技能数据。"
-    },
-    {
-      "id": "fetch_stages.py",
-      "path": "projects/wiki/scripts/fetch_stages.py",
-      "summary": "Fetch and enrich stage/level data with drop tables and recommended levels.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取关卡数据。"
-    },
-    {
-      "id": "fetch_stats.py",
-      "path": "projects/wiki/scripts/fetch_stats.py",
-      "summary": "Fetch character base stats (HP/ATK/DEF) from Fandom wiki sources.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取数值数据。"
-    },
-    {
-      "id": "fetch_wheels.py",
-      "path": "projects/wiki/scripts/fetch_wheels.py",
-      "summary": "Fetch Wheel of Destiny effect data from Fandom MediaWiki API.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "抓取命轮数据。"
-    },
-    {
-      "id": "generate_pages.py",
-      "path": "projects/wiki/scripts/generate_pages.py",
-      "summary": "Auto-generate VitePress character detail pages from characters.json + equipment.json.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live",
-      "note_zh": "由抓取的 JSON 生成 VitePress 角色页。"
-    },
-    {
       "id": "generate_rss.py",
       "path": "projects/wiki/scripts/generate_rss.py",
       "summary": "generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.",
@@ -758,8 +670,7 @@
         "cli",
         "workflow"
       ],
-      "status": "live",
-      "note_zh": "生成 wiki 更新 RSS。"
+      "status": "live"
     },
     {
       "id": "validate_data.py",
@@ -771,16 +682,6 @@
       ],
       "status": "live",
       "note_zh": "校验 wiki 数据库全部 JSON。"
-    },
-    {
-      "id": "wiki_sources.py",
-      "path": "projects/wiki/scripts/wiki_sources.py",
-      "summary": "Shared Fandom / Bilibili wiki source constants for the fetch_*.py scripts.",
-      "planes": [
-        "import"
-      ],
-      "status": "live",
-      "note_zh": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。"
     }
   ],
   "mcp_tools": [
