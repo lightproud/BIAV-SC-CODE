@@ -1,27 +1,46 @@
 {
   "date": "2023-10-29",
-  "messages": 15,
-  "unique_authors": 4,
-  "reactions_total": 7,
-  "attachments": 3,
+  "messages": 151,
+  "unique_authors": 21,
+  "reactions_total": 16,
+  "attachments": 7,
   "channel_activity": {
-    "discord社群建議": 15
+    "🔸綜合討論": 121,
+    "discord社群建議": 30
   },
   "hourly_activity": {
-    "11": 11,
-    "13": 4
+    "0": 3,
+    "2": 1,
+    "3": 2,
+    "4": 1,
+    "7": 1,
+    "11": 77,
+    "12": 30,
+    "13": 27,
+    "15": 2,
+    "17": 6,
+    "23": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 4
+    "0": 105,
+    "19": 31
   },
   "top_reacted_messages": [
     {
       "id": "1168185985260077137",
+      "channel_id": "1166623241293545492",
       "content": "抱歉！！戈雅來遲了！我已經將這名成員進行踢出處罰了！也感謝各位守密人的監督～\n如果後續還有類似的情況也麻煩跟戈雅說噢～",
       "author": "morimensstaff01",
       "reactions": 7,
       "channel": "discord社群建議"
+    },
+    {
+      "id": "1168030055641911296",
+      "channel_id": "1131839817982947429",
+      "content": "11月30是港澳台新馬地區同時上線哦~",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

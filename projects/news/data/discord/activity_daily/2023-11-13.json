@@ -1,27 +1,58 @@
 {
   "date": "2023-11-13",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 3,
-  "attachments": 3,
+  "messages": 228,
+  "unique_authors": 24,
+  "reactions_total": 6,
+  "attachments": 10,
   "channel_activity": {
-    "「雷婭」的小愛好": 2,
-    "官方佈告（已停止使用）": 1
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 208,
+    "🔸morimens-game-chat": 16,
+    "「雷婭」的小愛好": 2
   },
   "hourly_activity": {
-    "13": 2,
-    "12": 1
+    "12": 6,
+    "0": 4,
+    "1": 3,
+    "2": 10,
+    "3": 26,
+    "4": 47,
+    "5": 5,
+    "6": 22,
+    "7": 21,
+    "9": 1,
+    "10": 18,
+    "11": 7,
+    "13": 42,
+    "14": 2,
+    "17": 1,
+    "18": 2,
+    "22": 7,
+    "23": 1,
+    "15": 1,
+    "16": 1,
+    "21": 1
   },
   "message_types": {
-    "0": 2
+    "0": 200,
+    "19": 25
   },
   "top_reacted_messages": [
     {
       "id": "1173606568030380072",
+      "channel_id": "1131796304050262126",
       "content": "若詢問學生們彌薩格的生活小TIPS，\n「遠離雷婭」必然是不會漏過的一條\n羸弱的少女熱衷於激怒他人，請注意，千萬不要上當\n此女的一切行為都指向同一目的：使人傷害她",
       "author": "morimensstaff02",
       "reactions": 2,
       "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1173664193065537611",
+      "channel_id": "1170692781216378960",
+      "content": "Thanks for your support. This is one of the features of our game. We also hope t",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1173611664445292615",

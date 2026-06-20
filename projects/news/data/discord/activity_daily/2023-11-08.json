@@ -1,21 +1,106 @@
 {
   "date": "2023-11-08",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 0,
-  "attachments": 3,
+  "messages": 255,
+  "unique_authors": 26,
+  "reactions_total": 17,
+  "attachments": 9,
   "channel_activity": {
-    "來一起跟「尤烏哈希」演小劇場吧~": 1,
-    "官方佈告（已停止使用）": 1,
-    "discord社群建議": 3
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 224,
+    "discord社群建議": 6,
+    "🔸morimens-game-chat": 22,
+    "來一起跟「尤烏哈希」演小劇場吧~": 1
   },
   "hourly_activity": {
-    "2": 1,
-    "12": 1,
-    "13": 3
+    "12": 13,
+    "0": 4,
+    "1": 6,
+    "2": 5,
+    "3": 3,
+    "4": 20,
+    "6": 3,
+    "7": 5,
+    "8": 22,
+    "9": 2,
+    "10": 7,
+    "11": 20,
+    "13": 120,
+    "14": 1,
+    "15": 4,
+    "16": 14,
+    "22": 2,
+    "23": 1,
+    "5": 1,
+    "21": 2
   },
   "message_types": {
-    "0": 1
+    "0": 216,
+    "19": 34
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1171686872708296724",
+      "channel_id": "1170692781216378960",
+      "content": "I will try to translate the cards and gameplay of this game into English, althou",
+      "author": "rainbowteemo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1171849199021740152",
+      "channel_id": "1170692781216378960",
+      "content": "I will use Google Docs.",
+      "author": "rainbowteemo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1171777260743827526",
+      "channel_id": "1131839817982947429",
+      "content": "要不在你的頭像旁邊加一副刀叉XD",
+      "author": "alpha0909_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171802825400004629",
+      "channel_id": "1131839817982947429",
+      "content": "那只能自己抓大腦來吃了🫠",
+      "author": "lunacy_li",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171805028940533841",
+      "channel_id": "1131839817982947429",
+      "content": "好吧，還有其他答題可以玩嗎",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171805437214085120",
+      "channel_id": "1131839817982947429",
+      "content": "麥當勞薯條",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171805781293809675",
+      "channel_id": "1131839817982947429",
+      "content": "用米爾的錢買的食物",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171808139780292640",
+      "channel_id": "1131839817982947429",
+      "content": "你一直都是我的首選",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
 }

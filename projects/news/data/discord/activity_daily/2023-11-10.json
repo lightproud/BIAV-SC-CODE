@@ -1,28 +1,88 @@
 {
   "date": "2023-11-10",
-  "messages": 4,
-  "unique_authors": 3,
-  "reactions_total": 425,
-  "attachments": 2,
+  "messages": 170,
+  "unique_authors": 20,
+  "reactions_total": 864,
+  "attachments": 11,
   "channel_activity": {
-    "官方佈告（已停止使用）": 3,
-    "禮包兌換碼": 1
+    "官方佈告（已停止使用）": 6,
+    "禮包兌換碼": 2,
+    "🔸綜合討論": 153,
+    "🔸morimens-game-chat": 9
   },
   "hourly_activity": {
-    "6": 1,
-    "7": 1,
-    "12": 2
+    "6": 11,
+    "7": 9,
+    "12": 14,
+    "0": 9,
+    "1": 2,
+    "2": 6,
+    "3": 25,
+    "4": 25,
+    "5": 26,
+    "8": 21,
+    "13": 9,
+    "14": 3,
+    "15": 5,
+    "16": 1,
+    "17": 1,
+    "18": 1,
+    "22": 1,
+    "11": 1
   },
   "message_types": {
-    "0": 4
+    "0": 142,
+    "19": 23,
+    "6": 1
   },
   "top_reacted_messages": [
     {
       "id": "1172511390435647669",
+      "channel_id": "1131838787706699807",
       "content": "禮包兌換碼:「HVGX-HLDX-QKKN」\n有效時間：長期有效\n（此頻道第一條訊息，讓米爾來發！）\n遊戲正式上線後，登入遊戲「設置>賬戶>兌換碼>前往兌換>輸",
       "author": "alpha0909_",
       "reactions": 425,
       "channel": "禮包兌換碼"
+    },
+    {
+      "id": "1172411480390508544",
+      "channel_id": "1170692781216378960",
+      "content": "If you have any suggestions, feel free to let me know.\n(I'm not very good at for",
+      "author": "rainbowteemo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1172590714882891846",
+      "channel_id": "1131839817982947429",
+      "content": "這遊戲的兌換碼是我迄今看過最直球的",
+      "author": "snowmaiii",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1172330290086158477",
+      "channel_id": "1170692781216378960",
+      "content": "<:bozo:1128357998947995761>",
+      "author": "newnamepending._",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1172447932222537738",
+      "channel_id": "1131839817982947429",
+      "content": "缺心眼",
+      "author": "lunacy_li",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1172451057452974110",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝，氛圍沒了",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

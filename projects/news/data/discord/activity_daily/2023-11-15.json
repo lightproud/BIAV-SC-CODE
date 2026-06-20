@@ -1,21 +1,46 @@
 {
   "date": "2023-11-15",
-  "messages": 4,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 118,
+  "unique_authors": 16,
+  "reactions_total": 1,
+  "attachments": 4,
   "channel_activity": {
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 109,
+    "🔸morimens-game-chat": 4,
     "關於「融蝕」的小知識~": 1,
-    "「刻印」介紹": 2,
-    "官方佈告（已停止使用）": 1
+    "「刻印」介紹": 2
   },
   "hourly_activity": {
-    "12": 2,
-    "2": 2
+    "12": 16,
+    "0": 3,
+    "1": 1,
+    "2": 6,
+    "3": 6,
+    "4": 7,
+    "6": 7,
+    "7": 3,
+    "8": 1,
+    "9": 2,
+    "10": 6,
+    "11": 33,
+    "13": 19,
+    "14": 2,
+    "15": 4,
+    "16": 2
   },
   "message_types": {
-    "0": 2,
-    "4": 1
+    "0": 90,
+    "19": 24
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1174317404118077570",
+      "channel_id": "1131839817982947429",
+      "content": "了解",
+      "author": "jackpot_7",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
 }

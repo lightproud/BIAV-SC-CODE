@@ -1,88 +1,200 @@
 {
   "date": "2023-11-05",
-  "messages": 27,
-  "unique_authors": 5,
-  "reactions_total": 42,
-  "attachments": 53,
+  "messages": 485,
+  "unique_authors": 39,
+  "reactions_total": 212,
+  "attachments": 125,
   "channel_activity": {
-    "官方佈告（已停止使用）": 3,
-    "繪圖": 18,
-    "discord社群建議": 6
+    "官方佈告（已停止使用）": 6,
+    "🔸綜合討論": 353,
+    "繪圖": 36,
+    "discord社群建議": 12,
+    "🔸morimens-game-chat": 78
   },
   "hourly_activity": {
-    "9": 2,
-    "13": 1,
-    "4": 7,
-    "5": 11,
-    "10": 6
+    "9": 19,
+    "13": 31,
+    "0": 10,
+    "1": 13,
+    "2": 35,
+    "3": 81,
+    "4": 40,
+    "5": 23,
+    "7": 4,
+    "10": 62,
+    "11": 15,
+    "12": 24,
+    "14": 69,
+    "15": 22,
+    "16": 32,
+    "18": 1,
+    "22": 4
   },
   "message_types": {
-    "0": 25,
-    "19": 2
+    "0": 352,
+    "19": 104,
+    "6": 2
   },
   "top_reacted_messages": [
     {
       "id": "1170710487021916280",
+      "channel_id": "1131796304050262126",
       "content": "快來和奧瑞塔一起成為夥伴吧！",
       "author": "alpha0909_",
       "reactions": 28,
       "channel": "官方佈告（已停止使用）"
     },
     {
+      "id": "1170697577340092456",
+      "channel_id": "1170692781216378960",
+      "content": "...first message. n i c e",
+      "author": "gillnite",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170716252856139776",
+      "channel_id": "1170692781216378960",
+      "content": "We, from the My Turn community, have been waiting for a long time to either have",
+      "author": "Deleted User",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170701671630905344",
+      "channel_id": "1170692781216378960",
+      "content": "meow⋯！",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170744247641702480",
+      "channel_id": "1170692781216378960",
+      "content": "We are looking for suitable resources and opportunities for an English version! ",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170697818793578548",
+      "channel_id": "1170692781216378960",
+      "content": "We are so glad to tell you that we have a new channel!!!",
+      "author": "alpha0909_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170752240445833256",
+      "channel_id": "1170692781216378960",
+      "content": "Patient guys. Don't rush them, we're lucky that a dev can be this transparent.",
+      "author": "tsukineesan",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170853558728536074",
+      "channel_id": "1170692781216378960",
+      "content": "Thank you forever 📢🙏🏻",
+      "author": "kadu1985",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170724264257790063",
+      "channel_id": "1170692781216378960",
+      "content": "To this day i still have My Turn on my phone 👍",
+      "author": "kor_rok",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170727805378629762",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170541908133691402",
+      "channel_id": "1131839817982947429",
+      "content": "可以去看釘選內容",
+      "author": "jackpot_7",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1170597256760672296",
+      "channel_id": "1131840478267064320",
       "content": "——————\n作者：NIORP",
       "author": "game.producer.light",
       "reactions": 4,
       "channel": "繪圖"
     },
     {
+      "id": "1170734258730565672",
+      "channel_id": "1170692781216378960",
+      "content": "We look forward to a guild and chat system in a future update as well.",
+      "author": "kadu1985",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170699049956032593",
+      "channel_id": "1170692781216378960",
+      "content": "Hi～",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170702289435103282",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> ❤️",
+      "author": "kadu1985",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170710286337064990",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170727855118876754",
+      "channel_id": "1170692781216378960",
+      "content": "PVPmode （developing）",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170735160124252161",
+      "channel_id": "1170692781216378960",
+      "content": "【absorb\n3 Immortal majesty\n20 Gnosis Awakening\nAfter Gnosis Awakening is played,",
+      "author": "tsukineesan",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170673913626365972",
+      "channel_id": "1131839817982947429",
+      "content": "We will relase in 11/30 at Hong Kong,Taiwan,Macau,Singapore,Malaysia and other r",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1170581837500923904",
+      "channel_id": "1131840478267064320",
       "content": "作者：無病息災",
       "author": "game.producer.light",
       "reactions": 2,
       "channel": "繪圖"
-    },
-    {
-      "id": "1170602382086914068",
-      "content": "接下來是「白俏」的合集！",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "繪圖"
-    },
-    {
-      "id": "1170602410033561630",
-      "content": "",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "繪圖"
-    },
-    {
-      "id": "1170588290961899580",
-      "content": "——————\n作者：愛蹲雙開門冰箱的大哥哥",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "繪圖"
-    },
-    {
-      "id": "1170588995663695952",
-      "content": "這張好美😍",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": "繪圖"
-    },
-    {
-      "id": "1170674605581672470",
-      "content": "We are looking forward the day that our game will release all around the world～ ",
-      "author": "alpha0909_",
-      "reactions": 1,
-      "channel": "discord社群建議"
-    },
-    {
-      "id": "1170676549947752459",
-      "content": "As this is an area of ​​suggestions, I ask that in the near future the channel g",
-      "author": "kadu1985",
-      "reactions": 1,
-      "channel": "discord社群建議"
     }
   ]
 }
