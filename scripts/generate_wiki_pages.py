@@ -726,62 +726,103 @@ def generate_ui_gallery():
     print(f'UI resources gallery: {total} images')
 
 
+CATEGORY_SECTIONS = [
+    ('playable', '可玩唤醒体', '可获取、可编入队伍的正式唤醒体。'),
+    ('unreleased', '未上线唤醒体', '客户端已埋入数据但游戏内尚未正式上线（含废弃卡池角色）。'),
+    ('easter_egg', '彩蛋 / NPC', '非战斗角色或特殊彩蛋单位。'),
+]
+UNLOCK_LABEL = {
+    'acquire_character': '获取角色后解锁', 'main_story': '主线剧情解锁',
+    'mind_dive': '意识潜游解锁', 'special_record': '特遣纪录解锁',
+    'event_stage': '活动关卡解锁', 'clear_stage': '通关关卡解锁',
+    'other': '其他', 'unknown': '未知',
+}
+
+
 def generate_characters():
-    """Generate character encyclopedia from characters.json."""
+    """Generate character encyclopedia from characters.json, grouped by the
+    守密人-confirmed category (playable / unreleased / easter_egg). Story
+    unlock / gossip cross-refs come from character_index.json when present."""
     with open(f'{PROCESSED_DIR}/characters.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
+    cidx = {}
+    try:
+        with open(f'{PROCESSED_DIR}/character_index.json', 'r', encoding='utf-8') as f:
+            for c in json.load(f)['characters']:
+                cidx[c['id']] = c
+    except (FileNotFoundError, KeyError):
+        pass
+
     meta = data['_meta']
     chars = data['characters']
+    by_cat = {}
+    for ch in chars:
+        by_cat.setdefault(ch.get('category', 'playable'), []).append(ch)
+
     lines = []
     lines.append('# 唤醒体图鉴')
     lines.append('')
-    lines.append(f'> 数据来源：AwakerConfig.lua（运行时内存提取） | 共 {meta["total_characters"]} 位唤醒体')
+    summary = '、'.join(f'{label} {len(by_cat.get(key, []))}'
+                        for key, label, _ in CATEGORY_SECTIONS if by_cat.get(key))
+    lines.append(f'> 数据来源：AwakerConfig.lua（运行时内存提取） | 共 {meta["total_characters"]} 位唤醒体（{summary}）')
+    lines.append('>')
+    lines.append('> 分类经守密人逐一确认；「未上线」表示客户端已有数据但游戏内尚未正式开放。')
     lines.append('')
 
-    for ch in chars:
-        lines.append(f'## {ch["name"]}')
+    for key, label, desc in CATEGORY_SECTIONS:
+        group = by_cat.get(key, [])
+        if not group:
+            continue
+        lines.append(f'## {label}（{len(group)}）')
+        lines.append('')
+        lines.append(f'> {desc}')
         lines.append('')
 
-        lines.append('<div style="display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0;">')
-
-        lines.append('<div style="flex: 1 1 320px;">')
-        lines.append('')
-        lines.append(f'| 属性 | 信息 |')
-        lines.append(f'|------|------|')
-        lines.append(f'| 称号 | {ch["title"]} |')
-        lines.append(f'| 性别 | {ch["gender"]} |')
-        lines.append(f'| 生日 | {ch["birthday"]} |')
-        lines.append(f'| 身高 | {ch["height"]} |')
-        lines.append(f'| 体重 | {ch["weight"]} |')
-        lines.append(f'| GI 值 | {ch["gi"]} |')
-        lines.append(f'| 声优 | {ch["voice_actor"]} |')
-        lines.append(f'| 画师 | {ch["painter"]} |')
-        lines.append(f'| 战斗特征 | {ch["characteristic"]} |')
-        lines.append('')
-        lines.append('</div>')
-
-        lines.append('</div>')
-        lines.append('')
-
-        if ch['introduction']:
-            lines.append(f'> {ch["introduction"]}')
+        for ch in group:
+            lines.append(f'### {ch["name"]}')
             lines.append('')
 
-        if ch['gameplay_intro']:
-            lines.append(f'**战斗机制：** {ch["gameplay_intro"]}')
+            lines.append('<div style="display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0;">')
+            lines.append('<div style="flex: 1 1 320px;">')
+            lines.append('')
+            lines.append(f'| 属性 | 信息 |')
+            lines.append(f'|------|------|')
+            lines.append(f'| 称号 | {ch["title"]} |')
+            lines.append(f'| 性别 | {ch["gender"]} |')
+            lines.append(f'| 生日 | {ch["birthday"]} |')
+            lines.append(f'| 身高 | {ch["height"]} |')
+            lines.append(f'| 体重 | {ch["weight"]} |')
+            lines.append(f'| GI 值 | {ch["gi"]} |')
+            lines.append(f'| 声优 | {ch["voice_actor"]} |')
+            lines.append(f'| 画师 | {ch["painter"]} |')
+            lines.append(f'| 战斗特征 | {ch["characteristic"]} |')
+            ci = cidx.get(ch['id'], {})
+            if ci.get('story_unlock_type'):
+                lines.append(f'| 故事解锁 | {UNLOCK_LABEL.get(ci["story_unlock_type"], ci["story_unlock_type"])} |')
+            if ci.get('gossip_about_count'):
+                lines.append(f'| 被提及（闲话） | {ci["gossip_about_count"]} 条 |')
+            lines.append('')
+            lines.append('</div>')
+            lines.append('</div>')
             lines.append('')
 
-        if ch['summon_slogan']:
-            lines.append(f'*「{ch["summon_slogan"]}」*')
-            lines.append('')
+            if ch.get('introduction'):
+                lines.append(f'> {ch["introduction"]}')
+                lines.append('')
+            if ch.get('gameplay_intro'):
+                lines.append(f'**战斗机制：** {ch["gameplay_intro"]}')
+                lines.append('')
+            if ch.get('summon_slogan'):
+                lines.append(f'*「{ch["summon_slogan"]}」*')
+                lines.append('')
 
-        lines.append('---')
-        lines.append('')
+            lines.append('---')
+            lines.append('')
 
     with open(f'{DOCS_DIR}/characters.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'Characters page: {len(chars)} character profiles')
+    print(f'Characters page: {len(chars)} profiles in {len([k for k,_,_ in CATEGORY_SECTIONS if by_cat.get(k)])} categories')
 
 
 def generate_summon():
@@ -1313,6 +1354,78 @@ def generate_update_notices():
     print(f'Update notices page: {len(notices)} entries ({len(full_notes)} full notes, {len(maintenance)} maintenance, {len(bug_fixes)} fixes)')
 
 
+def generate_story():
+    """Generate the chapter-organized story timeline page from the story/
+    structured layer (story_units / index / lore_entries / stages_by_unit)."""
+    import html as _html
+    sd = f'{PROCESSED_DIR}/story'
+    try:
+        idx = json.load(open(f'{sd}/index.json', encoding='utf-8'))['index']
+        lore = {e['id']: e for e in json.load(open(f'{sd}/lore_entries.json', encoding='utf-8'))['entries']}
+        sbu = json.load(open(f'{sd}/stages_by_unit.json', encoding='utf-8'))['by_unit']
+    except FileNotFoundError:
+        print('Story layer not found; skipping story page')
+        return
+
+    def esc(t):
+        return _html.escape(t or '', quote=False)
+
+    tl = {'prologue': '序章', 'main_chapter': '主线', 'mind_dive': '意识潜游'}
+    L = ['# 剧情时间线', '']
+    L.append('> 按**剧情单元**（序章 → 调查行动主线 → 意识潜游）组织的故事浏览页。')
+    L.append('> 数据来源：CollectionHall.lua（收藏馆词条，正文逐字）+ StageGroup.lua（关卡组）。')
+    L.append('>')
+    L.append('> 全量收藏馆词条见[收藏馆百科](/collection-hall)；本页仅含可挂到剧情章节的词条。')
+    L.append('')
+    L.append('## 章节概览')
+    L.append('')
+    L.append('| 单元 | 类型 | 词条 | 关卡组 | 关联角色 |')
+    L.append('|------|------|------|--------|---------|')
+    for u in idx:
+        if not u['lore_count'] and not u['stage_group_count']:
+            continue
+        chars = '、'.join(esc(c) for c in u['characters']) if u['characters'] else '—'
+        L.append(f"| {esc(u['unit'])} | {tl.get(u['type'], u['type'])} | {u['lore_count']} | {u['stage_group_count']} | {chars} |")
+    L.append('')
+    L.append('---')
+    L.append('')
+    for u in idx:
+        if not u['lore_ids'] and not u['stage_group_ids']:
+            continue
+        L.append(f"## {esc(u['unit'])}")
+        L.append('')
+        sub = tl.get(u['type'], u['type'])
+        if u['type'] == 'main_chapter' and u['chapter_no'] is not None:
+            sub += f" · 第 {u['chapter_no']} 章"
+        L.append(f'*{sub}*')
+        L.append('')
+        if u['characters']:
+            L.append(f"**关联角色**：{'、'.join(esc(c) for c in u['characters'])}")
+            L.append('')
+        if u['stage_group_ids']:
+            grps = sbu.get(u['unit'], [])
+            L.append('**关卡组**：' + '、'.join(esc(g['name']) for g in grps))
+            L.append('')
+        if u['lore_ids']:
+            L.append('### 收藏馆词条')
+            L.append('')
+            for lid in u['lore_ids']:
+                e = lore.get(lid, {})
+                L.append(f"#### {esc(e.get('title', ''))}")
+                L.append('')
+                d = e.get('desc', '')
+                L.append(esc(d) if d else '*（无正文）*')
+                L.append('')
+                if e.get('lock_tip'):
+                    L.append(f"<small>解锁：{esc(e['lock_tip'])}</small>")
+                    L.append('')
+        L.append('---')
+        L.append('')
+    with open(f'{DOCS_DIR}/story.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(L))
+    print(f'Story page: {len([u for u in idx if u["lore_ids"] or u["stage_group_ids"]])} story units')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
@@ -1323,6 +1436,7 @@ if __name__ == '__main__':
     generate_icons_gallery()
     generate_ui_gallery()
     generate_characters()
+    generate_story()
     generate_summon()
     generate_stages()
     generate_audio_index()
