@@ -139,15 +139,19 @@
       "stage_group_count": 3
     },
     {
-      "unit": "调查行动第9章",
+      "unit": "调查行动第9章「长梦尽时」",
       "type": "main_chapter",
       "chapter_no": 9,
-      "short_name": "第9章",
+      "short_name": "长梦尽时",
       "lore_count": 33,
       "first_lore_id": 70283,
       "order": 9,
-      "stage_group_ids": [],
-      "stage_group_count": 0
+      "stage_group_ids": [
+        67785,
+        67786,
+        67787
+      ],
+      "stage_group_count": 3
     },
     {
       "unit": "调查行动星辰篇第1章「重临雾都」",

@@ -44,6 +44,11 @@ def chapter_title_maps(entries):
     return main, star
 
 
+# 社区证实但解包 lock_tip 中无标题的章节标题（来源:autoresearch 2026-06-21,
+# B站全剧情合集 + 官方 V2.4.0.3 维护公告;非解包提取,标注以区分)
+COMMUNITY_TITLES_MAIN = {9: '长梦尽时'}
+
+
 def make_parser(main_titles, star_titles, mind_dive_re):
     def unit_of(lt):
         if not lt:
@@ -64,7 +69,7 @@ def make_parser(main_titles, star_titles, mind_dive_re):
                 if star:
                     t = star_titles.get(n)
                     return f'调查行动星辰篇第{n}章「{t}」' if t else f'调查行动星辰篇第{n}章'
-                t = main_titles.get(n)
+                t = main_titles.get(n) or COMMUNITY_TITLES_MAIN.get(n)
                 return f'调查行动第{n}章「{t}」' if t else f'调查行动第{n}章'
             return None  # 泛化「可于调查行动中解锁」无法定位
         return None
