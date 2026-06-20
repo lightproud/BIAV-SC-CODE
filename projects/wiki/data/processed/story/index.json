@@ -379,11 +379,11 @@
       ]
     },
     {
-      "unit": "调查行动第9章",
+      "unit": "调查行动第9章「长梦尽时」",
       "type": "main_chapter",
       "order": 9,
       "chapter_no": 9,
-      "short_name": "第9章",
+      "short_name": "长梦尽时",
       "lore_ids": [
         70283,
         70884,
@@ -420,8 +420,12 @@
         121418
       ],
       "lore_count": 33,
-      "stage_group_ids": [],
-      "stage_group_count": 0,
+      "stage_group_ids": [
+        67785,
+        67786,
+        67787
+      ],
+      "stage_group_count": 3,
       "characters": []
     },
     {
