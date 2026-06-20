@@ -1,10 +1,13 @@
 {
   "date": "2024-04-05",
-  "messages": 2230,
+  "messages": 2237,
   "unique_authors": 57,
-  "reactions_total": 95,
+  "reactions_total": 100,
   "attachments": 120,
   "channel_activity": {
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 5,
+    "🔸课间休息闲聊": 1,
     "🔸綜合討論": 2039,
     "✅茶會：關於遊戲樂趣平衡性理念": 1,
     "✅「已回答」关于月卡续时问题。": 4,
@@ -28,13 +31,13 @@
     "斜阳牌表情包": 1
   },
   "hourly_activity": {
-    "0": 120,
+    "6": 45,
+    "0": 121,
     "1": 15,
     "2": 14,
     "3": 11,
     "4": 36,
     "5": 25,
-    "6": 39,
     "7": 27,
     "8": 68,
     "9": 182,
@@ -52,8 +55,8 @@
     "22": 11
   },
   "message_types": {
-    "0": 1723,
-    "19": 316
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -123,6 +126,22 @@
       "channel": "「已回答」每30抽保底SSR的問題"
     },
     {
+      "id": "1225695946843750512",
+      "channel_id": "1170692781216378960",
+      "content": "Took me 40",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1225696287702384690",
+      "channel_id": "1170692781216378960",
+      "content": "I can stack 200+ strength no problem",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1225777561473253526",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -170,6 +189,14 @@
       "channel": "「已回答」每30抽保底SSR的問題"
     },
     {
+      "id": "1225696248883839087",
+      "channel_id": "1170692781216378960",
+      "content": "And the debuff on ult helps my double DPS team a lot",
+      "author": ".galeroar",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1225624930545176596",
       "channel_id": "1131839817982947429",
       "content": "故意的，绝对是故意的",
@@ -182,30 +209,6 @@
       "channel_id": "1131839817982947429",
       "content": "我剛剛點到這邊 中間還沒辦法解鎖",
       "author": "chennnn328",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1225750821732352011",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "yuanjiekongcan",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1225755580665434142",
-      "channel_id": "1131839817982947429",
-      "content": "法外之地",
-      "author": "ruko9999",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1225764193886666853",
-      "channel_id": "1131839817982947429",
-      "content": "雖然才癲一而已",
-      "author": "Deleted User",
       "reactions": 1,
       "channel": "🔸綜合討論"
     }

@@ -1,10 +1,14 @@
 {
   "date": "2024-02-17",
-  "messages": 185,
-  "unique_authors": 17,
-  "reactions_total": 65,
-  "attachments": 11,
+  "messages": 925,
+  "unique_authors": 42,
+  "reactions_total": 152,
+  "attachments": 77,
   "channel_activity": {
+    "🔸綜合討論": 692,
+    "🔸阵容构建": 10,
+    "🔸morimens-game-chat": 31,
+    "🔸相位对弈": 7,
     "【🎉新年壁紙】初七迎人日，萬事皆可期！": 15,
     "【全新章節即將開放——倒錯的群星】": 1,
     "【🎉新年壁紙】初六開門市，啟步肇昌隆": 1,
@@ -26,29 +30,33 @@
     "莉莉-q版头像": 16
   },
   "hourly_activity": {
-    "4": 5,
-    "5": 6,
-    "14": 3,
-    "15": 3,
-    "16": 9,
-    "23": 1,
-    "13": 3,
-    "18": 3,
-    "21": 1,
-    "11": 14,
-    "12": 4,
-    "1": 4,
-    "2": 4,
-    "0": 2,
-    "19": 1,
-    "9": 93,
-    "10": 13,
-    "8": 12,
-    "3": 2,
-    "7": 2
+    "0": 47,
+    "1": 114,
+    "2": 85,
+    "3": 48,
+    "4": 103,
+    "5": 13,
+    "6": 35,
+    "7": 12,
+    "8": 41,
+    "9": 115,
+    "10": 26,
+    "11": 41,
+    "12": 71,
+    "13": 22,
+    "14": 4,
+    "15": 18,
+    "16": 61,
+    "17": 35,
+    "18": 16,
+    "19": 7,
+    "20": 5,
+    "21": 4,
+    "23": 2
   },
   "message_types": {
-    "0": 20
+    "0": 618,
+    "19": 122
   },
   "top_reacted_messages": [
     {
@@ -59,11 +67,27 @@
       "channel": "莉莉-q版头像"
     },
     {
+      "id": "1208551520384057386",
+      "channel_id": "1170692781216378960",
+      "content": "Holy moly, what luck! \nI'll take it.",
+      "author": "turboseer",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1208431156190515200",
       "content": "小做一个方便查阅",
       "author": "scholar_2",
       "reactions": 13,
       "channel": "角色升级所需技能材料表"
+    },
+    {
+      "id": "1208356480726736947",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "biaobiao0703",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1208234426669072444",
@@ -73,123 +97,124 @@
       "channel": "困難融災第二期滿分（另附索雷爾命輪的新想法）"
     },
     {
-      "id": "1208375598540660786",
-      "content": "",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "💭「處理中」可以讓我換嗎"
+      "id": "1208275791352299520",
+      "channel_id": "1131839817982947429",
+      "content": "😡  就知道用，也不知道出幅画感谢一下",
+      "author": "metam0n",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208276062434492498",
-      "content": "😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，",
-      "author": "bashibashibash",
-      "reactions": 1,
-      "channel": "【🎉新年壁紙】初七迎人日，萬事皆可期！"
-    },
-    {
-      "id": "1208276071024295936",
-      "content": "😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，快端上来😡我的墨菲技能组呢，",
-      "author": "bashibashibash",
-      "reactions": 1,
-      "channel": "【🎉新年壁紙】初七迎人日，萬事皆可期！"
-    },
-    {
-      "id": "1208223400355561482",
-      "content": "相同的排序只會有相同的結果",
-      "author": "xuan4185",
-      "reactions": 1,
-      "channel": "✅「已回答」关于死亡抵抗的触发"
-    },
-    {
-      "id": "1208496364770697318",
-      "content": "你说的对，这是一个有米氏三件套的同时1.1版本就让你练五队的游戏",
-      "author": "sett233",
-      "reactions": 1,
-      "channel": "✅「已回答」制作组能别再出这样的问卷了吗"
-    },
-    {
-      "id": "1208369306379755550",
-      "content": "买号干嘛我喜欢自己玩自己抽",
-      "author": "nightcharm_0117",
-      "reactions": 1,
-      "channel": "我应该用哪个命轮"
-    },
-    {
-      "id": "1208445088116506644",
-      "content": "蹲！",
-      "author": "lindongxieyang",
-      "reactions": 1,
-      "channel": "珊 - q版头像"
-    },
-    {
-      "id": "1208482488582934580",
-      "content": "好可爱，求个原图🥹",
-      "author": "tassolsaran",
-      "reactions": 1,
-      "channel": "珊 - q版头像"
-    },
-    {
-      "id": "1208321440609206272",
-      "content": "好萌一口炫了🥺",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
-    },
-    {
-      "id": "1208326503796842546",
-      "content": "发了啊哈哈哈",
-      "author": "bashibashibash",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
-    },
-    {
-      "id": "1208328059275452436",
-      "content": "整碗端走",
+      "id": "1208406128388481034",
+      "channel_id": "1131839817982947429",
+      "content": "(每日宣傳貓頭鷹頭像1/1)",
       "author": "momoshiocha",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208337094079156285",
-      "content": "茶茶想要的伊贝～",
+      "id": "1208465363889557604",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "eleegeant",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1208431634840424448",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "scholar_2",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208204408282943568",
+      "channel_id": "1131839817982947429",
+      "content": "說實在 欲海是真有用的",
+      "author": "xuan4185",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208213724725383248",
+      "channel_id": "1131839817982947429",
+      "content": "幻梦用灵芝是不是会扣分",
       "author": "bashibashibash",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208337142749724732",
-      "content": "是免费头像啊😂",
+      "id": "1208220683461722164",
+      "channel_id": "1131839817982947429",
+      "content": "今天不宜上學",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208266133904429087",
+      "channel_id": "1131839817982947429",
+      "content": "日月輪盤在超維回合結束會作用嗎",
+      "author": "xuan4185",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208291353419845699",
+      "channel_id": "1131839817982947429",
+      "content": "http://live.bilibili.com/31745047",
+      "author": "metam0n",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208291998826762280",
+      "channel_id": "1131839817982947429",
+      "content": "我一天不画完莉莉我一天都不走！",
       "author": "bashibashibash",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208345934308835348",
-      "content": "求个原图🥹",
-      "author": "461417722",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "id": "1208293796446609438",
+      "channel_id": "1131839817982947429",
+      "content": "大家起床的時候茶茶還在睡覺",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208362620554453003",
-      "content": "好可愛",
-      "author": "under_brightly_light",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "id": "1208293850242621450",
+      "channel_id": "1131839817982947429",
+      "content": "咪嗚(逃跑",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208444952959385740",
-      "content": "蹲！",
-      "author": "lindongxieyang",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "id": "1208324592586850315",
+      "channel_id": "1131839817982947429",
+      "content": "我有可愛的莉莉頭像(炫耀",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1208482618618679336",
-      "content": "妈咪求原图",
-      "author": "tassolsaran",
-      "reactions": 1,
-      "channel": "莉莉-q版头像"
+      "id": "1208324878051319859",
+      "channel_id": "1131839817982947429",
+      "content": "趕快關注 <@976093271807905792> 換取可愛頭像(比比",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1208464952416014421",
+      "channel_id": "1170692781216378960",
+      "content": "I recovered my old account thanks to you <@543093645947961348> ✨🥺✨",
+      "author": "eleegeant",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

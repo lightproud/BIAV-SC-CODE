@@ -1,10 +1,11 @@
 {
   "date": "2023-12-13",
-  "messages": 217,
-  "unique_authors": 37,
-  "reactions_total": 53,
-  "attachments": 33,
+  "messages": 2240,
+  "unique_authors": 71,
+  "reactions_total": 140,
+  "attachments": 152,
   "channel_activity": {
+    "🔸綜合討論": 2023,
     "✅「已回答」入群专属5抽码怎么看?": 7,
     "✅「已回答」王關黑屏": 5,
     "✅「已回答」艾瑞卡的機械武裝究竟怎樣才會變形呀？": 2,
@@ -47,29 +48,33 @@
     "萊克寶貝什麼時候出？": 3
   },
   "hourly_activity": {
-    "3": 8,
-    "4": 10,
-    "7": 47,
-    "6": 26,
-    "16": 2,
-    "17": 5,
-    "14": 5,
-    "0": 7,
-    "1": 1,
-    "8": 25,
-    "9": 15,
-    "12": 7,
-    "13": 25,
-    "5": 12,
-    "11": 10,
-    "2": 5,
-    "10": 3,
-    "18": 4
+    "0": 14,
+    "1": 19,
+    "2": 79,
+    "3": 37,
+    "4": 29,
+    "5": 218,
+    "6": 92,
+    "7": 109,
+    "8": 55,
+    "9": 213,
+    "10": 190,
+    "11": 96,
+    "12": 82,
+    "13": 230,
+    "14": 330,
+    "15": 304,
+    "16": 95,
+    "17": 8,
+    "18": 9,
+    "19": 1,
+    "20": 23,
+    "21": 3,
+    "22": 4
   },
   "message_types": {
-    "0": 142,
-    "19": 21,
-    "4": 19
+    "0": 1583,
+    "19": 440
   },
   "top_reacted_messages": [
     {
@@ -78,6 +83,14 @@
       "author": "rafanetold_",
       "reactions": 15,
       "channel": "邊角資訊彙整（持續更新）"
+    },
+    {
+      "id": "1184503970954227753",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1184389600827932682",
@@ -94,11 +107,115 @@
       "channel": "圖魯"
     },
     {
+      "id": "1184512258886336512",
+      "channel_id": "1131839817982947429",
+      "content": "建议加入卡池，抽到玩家手上给玩家打苦工",
+      "author": "normal521",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184343657957044334",
+      "channel_id": "1131839817982947429",
+      "content": "👀🧠",
+      "author": "scarlet_t07",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184370448104960050",
+      "channel_id": "1131839817982947429",
+      "content": "因為大家都很喜歡吃薯條~",
+      "author": "alpha0909__",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184405382450401340",
+      "channel_id": "1131839817982947429",
+      "content": "他的小裙子好騷",
+      "author": "woliekailiao.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184407413802151957",
+      "channel_id": "1131839817982947429",
+      "content": "我要給你個大問號！",
+      "author": "alpha0909__",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184427816507424768",
+      "channel_id": "1131839817982947429",
+      "content": "pvp投放大量機器人，請",
+      "author": "from_far_side",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184430377184526406",
+      "channel_id": "1131839817982947429",
+      "content": "官方：誰讓你30等推第四章然後抱怨難度的\n我：蛤 什麼是密契",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1184413785537138688",
       "content": "Boss打我300 我反她751傷害+300毒😏快樂\n\n凱有三啟時歡迎善加利用\n反擊一直疊一直疊\n防禦一直疊一直疊\n都不知道誰是boss\n\n核心人物 凱（粉毛）",
       "author": "meow51103",
       "reactions": 3,
       "channel": "你粉毛三啟？那來看看這個隊伍👉深海盾反"
+    },
+    {
+      "id": "1184364275326799903",
+      "channel_id": "1131839817982947429",
+      "content": "我是抽一隻就可以去打6了",
+      "author": "twocubic_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184406464652128307",
+      "channel_id": "1131839817982947429",
+      "content": "是的這個是旗袍！",
+      "author": "alpha0909__",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184424412104097804",
+      "channel_id": "1131839817982947429",
+      "content": "這是我的目標",
+      "author": "shimu_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184426945539219477",
+      "channel_id": "1131839817982947429",
+      "content": "🥹",
+      "author": "redsheep_0_99795",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184427135901900810",
+      "channel_id": "1131839817982947429",
+      "content": "不是不限量，双重否定表肯定，所以限量",
+      "author": "cpeax_34497",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1184515175475318814",
+      "channel_id": "1131839817982947429",
+      "content": "😉\n蹭戈雅被窩😊",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1184341653285253242",
@@ -113,104 +230,6 @@
       "author": "drsticky.",
       "reactions": 2,
       "channel": "✅「已回答」角色档案中体重异常"
-    },
-    {
-      "id": "1184344091962650694",
-      "content": "整理的相關攻略文都會存放在谷歌表單（圖片不清晰可以看錶單）：https://docs.google.com/spreadsheets/d/1ahF_ULcWsj",
-      "author": "wutaa1",
-      "reactions": 2,
-      "channel": "技能連招tips-適用新手"
-    },
-    {
-      "id": "1184428675471507556",
-      "content": "第五\n體力恢復好慢 不夠用\n主角等級一直卡著\n每天可以買前三次體力\n50 100 100 150⋯⋯\nCP質都很高",
-      "author": "meow51103",
-      "reactions": 2,
-      "channel": "那些新手期我踩過的坑"
-    },
-    {
-      "id": "1184398886375276584",
-      "content": "感謝幫忙解答的！🌼",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」入群专属5抽码怎么看?"
-    },
-    {
-      "id": "1184386865940418600",
-      "content": "hello~昨晚更新之後，這個黑屏無法看動畫的問題應該修復的比較好啦~最近可以再看看應該都不會出現這種情況了哦~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」進入大學及喚醒黑屏"
-    },
-    {
-      "id": "1184286373931397150",
-      "content": "萝坦是鲸鱼，所以是25ton，很合理🤣",
-      "author": "walker747",
-      "reactions": 1,
-      "channel": "✅「已回答」角色档案中体重异常"
-    },
-    {
-      "id": "1184478397032841257",
-      "content": "蘿坦是和背後的鯨魚一起稱重的",
-      "author": "kura0595",
-      "reactions": 1,
-      "channel": "✅「已回答」角色档案中体重异常"
-    },
-    {
-      "id": "1184472226976776273",
-      "content": "看下這個時間來得及麼~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」請問tap tap活動截稿時間？"
-    },
-    {
-      "id": "1184481683823661197",
-      "content": "~~身為懶人 我直接複製之前的文~~\n我現在遇到另一個更大的問題(",
-      "author": "muyren",
-      "reactions": 1,
-      "channel": "✅「已回答」請問tap tap活動截稿時間？"
-    },
-    {
-      "id": "1184482410763665519",
-      "content": "看到你發佈的貼文啦，我跟進一下哦 ~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」請問tap tap活動截稿時間？"
-    },
-    {
-      "id": "1184483231328915576",
-      "content": "嗯嗯如果這次趕不上，也可以期待一下後面再舉辦的其他活動的🫂",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」請問tap tap活動截稿時間？"
-    },
-    {
-      "id": "1184486702002229308",
-      "content": "我們校工這邊也在考慮籌備活動的，不過最後活動公佈還是以實際官方佈告通知為準哦~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」請問tap tap活動截稿時間？"
-    },
-    {
-      "id": "1184356863362482246",
-      "content": "我希望缩短为６０ｓ",
-      "author": "walker747",
-      "reactions": 1,
-      "channel": "✅「已回答」能否缩短pvp匹配时间上限？"
-    },
-    {
-      "id": "1184357100210626620",
-      "content": "不然30秒吧",
-      "author": "xill42",
-      "reactions": 1,
-      "channel": "✅「已回答」能否缩短pvp匹配时间上限？"
-    },
-    {
-      "id": "1184342730185379882",
-      "content": "整理的相關攻略文都會存放在谷歌表單（圖片不清晰可以看錶單）：https://docs.google.com/spreadsheets/d/1ahF_ULcWsj",
-      "author": "wutaa1",
-      "reactions": 1,
-      "channel": "圖魯編隊攻略"
     }
   ]
 }
