@@ -23,9 +23,10 @@
 
 | 文件 | 内容 | 条目数 |
 |------|------|--------|
-| [`story_units.json`](./story_units.json) | 剧情单元脊柱（类型 / 章号 / 顺序 / 各单元 lore 数）| 26 单元 |
+| [`story_units.json`](./story_units.json) | 剧情单元脊柱（类型 / 章号 / 顺序 / 各单元 lore 数 / **关卡组 id**）| 26 单元 |
 | [`lore_entries.json`](./lore_entries.json) | 全量 lore 结构化记录（**找回正文** + 章节关联 + 分类）| 1026 条（798 含正文）|
 | [`lore_by_unit.json`](./lore_by_unit.json) | 剧情单元 → 该单元解锁的 lore id 列表（导航索引）| 覆盖 184 条 |
+| [`stages_by_unit.json`](./stages_by_unit.json) | 剧情单元 → 关卡组（StageGroup）映射 | 58 组 / 24 单元 |
 
 ### `lore_entries.json` 字段
 
@@ -69,9 +70,13 @@
         ▼                                         ▼
   world_lore.json (title/lock_tip)  ──►  story/lore_entries.json（合并 + 找回正文）
                                               │
-                                              ├─► story/story_units.json（章节脊柱）
+                                              ├─► story/story_units.json（章节脊柱 + 关卡组）
                                               └─► story/lore_by_unit.json（导航索引）
+
+  StageGroup.lua / stages.json  ────────►  story/stages_by_unit.json（章节 → 关卡组）
 ```
+
+> **关卡关联边界**：`Stage.lua` 与 `StageGroup.lua` 解包数据间**无外键**，单个关卡无法归组，故关卡仅关联到**关卡组**层级（按组名归一化后精确匹配章节短名，已规避「一步之遥」类子串歧义）。序章与「一步之遥：似雨之泪」无匹配关卡组（24/26 单元有关卡组）。
 
 ---
 
