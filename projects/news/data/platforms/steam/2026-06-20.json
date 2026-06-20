@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T10:28:56.463663+00:00",
+  "archived_at": "2026-06-20T12:26:03.577584+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "title": "[正面] good game, pretty art",
@@ -308,6 +308,50 @@
         "playtime_forever": 1842,
         "votes_up": 0,
         "timestamp_created": 1781940362
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] honestly one of the best gacha games ive ever play...",
+      "summary": "honestly one of the best gacha games ive ever played, the fact that this game almost eos'd a year in and is now thriving at its 2.5 anni is so wonderful to me.\r\nthe fact that regardless of its earlier decline people continued to support the game and allowed it to make improvements like fully human translations for the english and korean dubs is also something i really appreciate since ai translations are not only less effective but also like boo ai lame.\r\nmorimens also has some of the best character designs out of any gacha ive touched, the lovecraftian visuals and more mature story and character themes make the story actually pretty interesting aswell\r\n10/10 would recommend <3",
+      "source": "steam_review",
+      "time": "2026-06-20T10:58:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199068786014/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199068786014",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2244,
+        "votes_up": 0,
+        "timestamp_created": 1781953122
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 长草期巨长，节奏比游戏内容还多",
+      "summary": "长草期巨长，节奏比游戏内容还多",
+      "source": "steam_review",
+      "time": "2026-06-20T10:53:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198151482573/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198151482573",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 34489,
+        "votes_up": 0,
+        "timestamp_created": 1781952780
       },
       "lang": "",
       "platform_region": "global"

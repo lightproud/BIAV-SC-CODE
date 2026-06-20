@@ -13656,6 +13656,34 @@
       "title": "【忘却前夜】終章目前！！アプデ前に８章までを語りたい！【特別ゲスト：いとうつくし】",
       "time": "2026-06-20T08:22:55Z",
       "downloaded_at": "2026-06-20T10:28:56.364081+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg": {
+      "filename": "bilibili_500a4beac086aa99.jpg",
+      "source": "bilibili",
+      "title": "第一次 425达成",
+      "time": "2026-06-20T04:26:58+00:00",
+      "downloaded_at": "2026-06-20T12:25:58.217578+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/0480c312b1af5930277feaeedecf063990945daa.jpg": {
+      "filename": "bilibili_983174b882c1a050.jpg",
+      "source": "bilibili",
+      "title": "【沙耶之歌】沙耶印象派捏人（附One Last Kiss MMD）",
+      "time": "2026-06-20T11:34:57+00:00",
+      "downloaded_at": "2026-06-20T12:26:02.279171+00:00"
+    },
+    "https://i.ytimg.com/vi/GMF6IxaCRjk/hqdefault.jpg": {
+      "filename": "youtube_153bfa4fd6f860e9.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】4章ラスト読むなどするだけ",
+      "time": "2026-06-20T11:43:28Z",
+      "downloaded_at": "2026-06-20T12:26:02.715583+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/06/20/19/44/02/146239088_p0_custom1200.jpg": {
+      "filename": "pixiv_9f2169c449f5ef01.jpg",
+      "source": "pixiv",
+      "title": "최상의 미미",
+      "time": "2026-06-20T19:44:02+09:00",
+      "downloaded_at": "2026-06-20T12:26:03.481173+00:00"
     }
   },
   "failed": {
@@ -19918,6 +19946,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-20T10:28:52.065677+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-20T12:25:58.518029+00:00"
     }
   },
   "archived": []
