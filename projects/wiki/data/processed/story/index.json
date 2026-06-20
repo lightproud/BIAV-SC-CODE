@@ -1,0 +1,643 @@
+{
+  "_meta": {
+    "purpose": "故事主索引:每个剧情单元一站式聚合 lore / 关卡组 / 登场角色",
+    "cross_ref": "lore_ids->lore_entries.json, stage_group_ids->stages_by_unit.json, characters->characters.json",
+    "note": "characters 仅含小传解锁文案明确指向该单元者(14/55 角色有此线索),非该单元全部出场角色",
+    "total_units": 26,
+    "generated": "2026-06-17"
+  },
+  "index": [
+    {
+      "unit": "序章",
+      "type": "prologue",
+      "order": 0,
+      "chapter_no": 0,
+      "short_name": "序章",
+      "lore_ids": [
+        48616,
+        48624,
+        48635,
+        48636,
+        51374,
+        57617,
+        57621
+      ],
+      "lore_count": 7,
+      "stage_group_ids": [],
+      "stage_group_count": 0,
+      "characters": [
+        "塔薇"
+      ]
+    },
+    {
+      "unit": "调查行动第1章「东区秘事」",
+      "type": "main_chapter",
+      "order": 1,
+      "chapter_no": 1,
+      "short_name": "东区秘事",
+      "lore_ids": [
+        48609,
+        48622,
+        48941,
+        51389,
+        51391,
+        51393,
+        51395,
+        51397,
+        51398,
+        51400,
+        51401,
+        51402,
+        51403,
+        51406,
+        51408,
+        51422,
+        51425,
+        51427,
+        51431,
+        51436,
+        51437,
+        51441,
+        51450,
+        51454,
+        57624,
+        57633,
+        57718
+      ],
+      "lore_count": 27,
+      "stage_group_ids": [
+        15896,
+        15917,
+        15927
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "克莱门汀"
+      ]
+    },
+    {
+      "unit": "调查行动第2章「以蜡像之名」",
+      "type": "main_chapter",
+      "order": 2,
+      "chapter_no": 2,
+      "short_name": "以蜡像之名",
+      "lore_ids": [
+        48619,
+        51386,
+        51387,
+        51390,
+        51421,
+        51424,
+        51438,
+        51439,
+        57647,
+        57648,
+        57653,
+        57719,
+        65509,
+        118629
+      ],
+      "lore_count": 14,
+      "stage_group_ids": [
+        15895,
+        15901,
+        15918
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "詹金"
+      ]
+    },
+    {
+      "unit": "调查行动第3章「谨防恶犬」",
+      "type": "main_chapter",
+      "order": 3,
+      "chapter_no": 3,
+      "short_name": "谨防恶犬",
+      "lore_ids": [
+        49764,
+        51420,
+        51426,
+        51428,
+        51430,
+        51451,
+        51453,
+        118559,
+        118612,
+        120464
+      ],
+      "lore_count": 10,
+      "stage_group_ids": [
+        15906,
+        15913,
+        15922
+      ],
+      "stage_group_count": 3,
+      "characters": []
+    },
+    {
+      "unit": "调查行动第4章「于无声处」",
+      "type": "main_chapter",
+      "order": 4,
+      "chapter_no": 4,
+      "short_name": "于无声处",
+      "lore_ids": [
+        49759,
+        51394,
+        51407,
+        51419,
+        57625,
+        57646,
+        118563,
+        118574,
+        118622,
+        120463,
+        120465,
+        120466
+      ],
+      "lore_count": 12,
+      "stage_group_ids": [
+        15882,
+        15921,
+        15925
+      ],
+      "stage_group_count": 3,
+      "characters": []
+    },
+    {
+      "unit": "调查行动第5章「风暴之眼」",
+      "type": "main_chapter",
+      "order": 5,
+      "chapter_no": 5,
+      "short_name": "风暴之眼",
+      "lore_ids": [
+        49758,
+        51388,
+        51405,
+        51411,
+        51418,
+        118565,
+        118613
+      ],
+      "lore_count": 7,
+      "stage_group_ids": [
+        15905,
+        15907,
+        15919
+      ],
+      "stage_group_count": 3,
+      "characters": []
+    },
+    {
+      "unit": "调查行动第6章「倒错的群星」",
+      "type": "main_chapter",
+      "order": 6,
+      "chapter_no": 6,
+      "short_name": "倒错的群星",
+      "lore_ids": [
+        51404,
+        51417,
+        51429,
+        57626,
+        118558,
+        118568,
+        118572,
+        118621
+      ],
+      "lore_count": 8,
+      "stage_group_ids": [
+        15890,
+        15920,
+        15946
+      ],
+      "stage_group_count": 3,
+      "characters": []
+    },
+    {
+      "unit": "调查行动第7章「欲河」",
+      "type": "main_chapter",
+      "order": 7,
+      "chapter_no": 7,
+      "short_name": "欲河",
+      "lore_ids": [
+        51019,
+        51396,
+        51399,
+        51410,
+        51415,
+        51416,
+        57599,
+        118592
+      ],
+      "lore_count": 8,
+      "stage_group_ids": [
+        48868,
+        48869,
+        48870
+      ],
+      "stage_group_count": 3,
+      "characters": []
+    },
+    {
+      "unit": "调查行动第8章「终末交响曲」",
+      "type": "main_chapter",
+      "order": 8,
+      "chapter_no": 8,
+      "short_name": "终末交响曲",
+      "lore_ids": [
+        51409,
+        51414,
+        62184
+      ],
+      "lore_count": 3,
+      "stage_group_ids": [
+        58900,
+        58904,
+        58906
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "哈姆林"
+      ]
+    },
+    {
+      "unit": "意识潜游「一步之遥：似雨之泪」",
+      "type": "mind_dive",
+      "order": 9,
+      "chapter_no": null,
+      "short_name": "一步之遥：似雨之泪",
+      "lore_ids": [
+        48625
+      ],
+      "lore_count": 1,
+      "stage_group_ids": [],
+      "stage_group_count": 0,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「燃烧的群宴」",
+      "type": "mind_dive",
+      "order": 10,
+      "chapter_no": null,
+      "short_name": "燃烧的群宴",
+      "lore_ids": [
+        57604,
+        100461,
+        100462,
+        100463,
+        100464,
+        100465,
+        118617
+      ],
+      "lore_count": 7,
+      "stage_group_ids": [
+        36625,
+        36626,
+        36627
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "旺达"
+      ]
+    },
+    {
+      "unit": "意识潜游「不朽极昼」",
+      "type": "mind_dive",
+      "order": 11,
+      "chapter_no": null,
+      "short_name": "不朽极昼",
+      "lore_ids": [
+        57606,
+        98502,
+        100458,
+        100459,
+        100460,
+        100466
+      ],
+      "lore_count": 6,
+      "stage_group_ids": [
+        95184
+      ],
+      "stage_group_count": 1,
+      "characters": [
+        "凯蒂古拉"
+      ]
+    },
+    {
+      "unit": "意识潜游「一步之遥」",
+      "type": "mind_dive",
+      "order": 12,
+      "chapter_no": null,
+      "short_name": "一步之遥",
+      "lore_ids": [
+        57613,
+        71056,
+        71088,
+        71089,
+        71090,
+        71091,
+        71092,
+        71093
+      ],
+      "lore_count": 8,
+      "stage_group_ids": [
+        24552,
+        24553,
+        24554
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "环行·拉蒙娜"
+      ]
+    },
+    {
+      "unit": "意识潜游「巨人的陨落」",
+      "type": "mind_dive",
+      "order": 13,
+      "chapter_no": null,
+      "short_name": "巨人的陨落",
+      "lore_ids": [
+        57628,
+        57634,
+        98642,
+        98644,
+        98649,
+        98657
+      ],
+      "lore_count": 6,
+      "stage_group_ids": [
+        43515,
+        43516,
+        43517
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "戈利亚"
+      ]
+    },
+    {
+      "unit": "意识潜游「骑士的愿望」",
+      "type": "mind_dive",
+      "order": 14,
+      "chapter_no": null,
+      "short_name": "骑士的愿望",
+      "lore_ids": [
+        57630,
+        89353,
+        89362,
+        89363,
+        89390
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        20449,
+        20452,
+        20454
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "奥吉尔"
+      ]
+    },
+    {
+      "unit": "意识潜游「血与沙」",
+      "type": "mind_dive",
+      "order": 15,
+      "chapter_no": null,
+      "short_name": "血与沙",
+      "lore_ids": [
+        57638,
+        89968,
+        89971,
+        89976,
+        89977
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        15888,
+        15923,
+        15960
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "尤乌哈希"
+      ]
+    },
+    {
+      "unit": "意识潜游「苍白后裔」",
+      "type": "mind_dive",
+      "order": 16,
+      "chapter_no": null,
+      "short_name": "苍白后裔",
+      "lore_ids": [
+        57640,
+        89354,
+        89356,
+        89410,
+        89414,
+        89416,
+        89418
+      ],
+      "lore_count": 7,
+      "stage_group_ids": [
+        20446,
+        20450,
+        20453
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "阿格里帕"
+      ]
+    },
+    {
+      "unit": "意识潜游「如歌的雕琢」",
+      "type": "mind_dive",
+      "order": 17,
+      "chapter_no": null,
+      "short_name": "如歌的雕琢",
+      "lore_ids": [
+        57642,
+        95441,
+        95446,
+        95449,
+        95451
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        20222,
+        20223,
+        20224
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "珊"
+      ]
+    },
+    {
+      "unit": "意识潜游「扭曲核心」",
+      "type": "mind_dive",
+      "order": 18,
+      "chapter_no": null,
+      "short_name": "扭曲核心",
+      "lore_ids": [
+        57716,
+        89345,
+        89350,
+        89358,
+        89417
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        20447,
+        20448,
+        20451
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "艾瑞卡"
+      ]
+    },
+    {
+      "unit": "意识潜游「诸事如常」",
+      "type": "mind_dive",
+      "order": 19,
+      "chapter_no": null,
+      "short_name": "诸事如常",
+      "lore_ids": [
+        59454,
+        95439,
+        95442,
+        95452,
+        95454
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        35544,
+        35545,
+        35546
+      ],
+      "stage_group_count": 3,
+      "characters": [
+        "奥瑞塔"
+      ]
+    },
+    {
+      "unit": "意识潜游「最后的引航」",
+      "type": "mind_dive",
+      "order": 20,
+      "chapter_no": null,
+      "short_name": "最后的引航",
+      "lore_ids": [
+        84328,
+        89969,
+        89972,
+        89974,
+        89975
+      ],
+      "lore_count": 5,
+      "stage_group_ids": [
+        81262
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「畸世绘」",
+      "type": "mind_dive",
+      "order": 21,
+      "chapter_no": null,
+      "short_name": "畸世绘",
+      "lore_ids": [
+        97208,
+        117961,
+        117963,
+        117993,
+        117998,
+        118000,
+        118005
+      ],
+      "lore_count": 7,
+      "stage_group_ids": [
+        96834
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「天边之外·下」",
+      "type": "mind_dive",
+      "order": 22,
+      "chapter_no": null,
+      "short_name": "天边之外·下",
+      "lore_ids": [
+        117621
+      ],
+      "lore_count": 1,
+      "stage_group_ids": [
+        99734
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「加冕之日」",
+      "type": "mind_dive",
+      "order": 23,
+      "chapter_no": null,
+      "short_name": "加冕之日",
+      "lore_ids": [
+        121383,
+        121388,
+        121399,
+        121404
+      ],
+      "lore_count": 4,
+      "stage_group_ids": [
+        71850
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「扇下夜谈」",
+      "type": "mind_dive",
+      "order": 24,
+      "chapter_no": null,
+      "short_name": "扇下夜谈",
+      "lore_ids": [
+        126906,
+        131664,
+        131665,
+        131666,
+        131667,
+        131668,
+        131669,
+        131670,
+        131671,
+        131672
+      ],
+      "lore_count": 10,
+      "stage_group_ids": [
+        125338
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    },
+    {
+      "unit": "意识潜游「沉溺」",
+      "type": "mind_dive",
+      "order": 25,
+      "chapter_no": null,
+      "short_name": "沉溺",
+      "lore_ids": [
+        131663
+      ],
+      "lore_count": 1,
+      "stage_group_ids": [
+        130895
+      ],
+      "stage_group_count": 1,
+      "characters": []
+    }
+  ]
+}

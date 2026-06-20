@@ -27,6 +27,9 @@
 | [`lore_entries.json`](./lore_entries.json) | 全量 lore 结构化记录（**找回正文** + 章节关联 + 分类）| 1026 条（798 含正文）|
 | [`lore_by_unit.json`](./lore_by_unit.json) | 剧情单元 → 该单元解锁的 lore id 列表（导航索引）| 覆盖 184 条 |
 | [`stages_by_unit.json`](./stages_by_unit.json) | 剧情单元 → 关卡组（StageGroup）映射 | 58 组 / 24 单元 |
+| [`character_story_links.json`](./character_story_links.json) | 角色 → 故事链路（小传解锁条件 + 类型 + 所属单元）| 55 角色 |
+| [`index.json`](./index.json) | **故事主索引**：每单元聚合 lore / 关卡组 / 登场角色 | 26 单元 |
+| [`STORY_TIMELINE.md`](./STORY_TIMELINE.md) | 人类可读剧情时间线浏览页（由 index 自动生成）| 26 单元 |
 
 ### `lore_entries.json` 字段
 
