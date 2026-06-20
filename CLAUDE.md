@@ -170,6 +170,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 - 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{platform}/`（平台目录持续增加，以 `ls` 为准）
 - Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
+- Releases 全量档案索引（移出 git 的大资产 + 月归档）：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
 
 ### §5.3 项目档案
 
