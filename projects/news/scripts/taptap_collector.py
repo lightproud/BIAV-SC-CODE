@@ -526,6 +526,69 @@ async def _extract_reviews_dom(page) -> list[dict]:
     return items
 
 
+# ─── 增量过滤（纯逻辑，可独立测试）─────────────────────────────
+
+def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
+    """把一条 raw 条目转为 aggregator 兼容字典；早于 cutoff 返回 None。
+
+    从原 collect() 内部闭包提升为模块级纯函数，便于单测（对外行为不变）。
+    """
+    try:
+        created = datetime.fromisoformat(raw["created"])
+    except Exception:
+        created = datetime.now(timezone.utc)
+    if created < cutoff:
+        return None
+
+    like_count = raw.get("like_count", 0)
+    comment_count = raw.get("comment_count", 0)
+    engagement = like_count + comment_count
+
+    return {
+        "title": raw.get("title", ""),
+        "summary": raw.get("summary", ""),
+        "source": source,
+        "platform_region": "cn",
+        "lang": "zh",
+        "time": raw["created"],
+        "url": raw.get("url", ""),
+        "engagement": engagement,
+        "is_hot": like_count > 50,
+        "author": raw.get("author", ""),
+        "tags": [],
+        "content_type": "text",
+        "media_url": "",
+    }
+
+
+def _filter_incremental(
+    raw_items: list[dict],
+    source: str,
+    cutoff: datetime,
+    last_id: str,
+    backfill: bool,
+) -> tuple[list[dict], str]:
+    """增量过滤一批 raw 条目，返回 (转换后条目列表, 本次最新 item_id)。
+
+    - 非回溯模式遇到 last_id 即短路停止（已处理到上次位置）。
+    - 回溯模式不短路，仅靠 cutoff 控深度。
+    - new_last_id 取第一条带 id 的条目；若已有 last_id 则沿用。
+    从原 collect() 内联循环提升为模块级纯函数（对外行为不变）。
+    """
+    new_last_id = last_id
+    items: list[dict] = []
+    for raw in raw_items:
+        item_id = raw.get("item_id", "")
+        if not backfill and item_id and item_id == last_id:
+            break
+        if item_id and not new_last_id:
+            new_last_id = item_id
+        item = _raw_to_item(raw, source, cutoff)
+        if item:
+            items.append(item)
+    return items, new_last_id
+
+
 # ─── 主入口 ───────────────────────────────────────────────────
 
 async def collect(
@@ -593,58 +656,12 @@ async def collect(
     last_post_id = taptap_state.get("last_post_id", "")
     last_review_id = taptap_state.get("last_review_id", "")
 
-    new_last_post_id = last_post_id
-    new_last_review_id = last_review_id
-
-    def _to_item(raw: dict, source: str) -> dict | None:
-        try:
-            created = datetime.fromisoformat(raw["created"])
-        except Exception:
-            created = datetime.now(timezone.utc)
-        if created < cutoff:
-            return None
-
-        like_count = raw.get("like_count", 0)
-        comment_count = raw.get("comment_count", 0)
-        engagement = like_count + comment_count
-
-        return {
-            "title": raw.get("title", ""),
-            "summary": raw.get("summary", ""),
-            "source": source,
-            "platform_region": "cn",
-            "lang": "zh",
-            "time": raw["created"],
-            "url": raw.get("url", ""),
-            "engagement": engagement,
-            "is_hot": like_count > 50,
-            "author": raw.get("author", ""),
-            "tags": [],
-            "content_type": "text",
-            "media_url": "",
-        }
-
-    topic_items: list[dict] = []
-    for raw in topic_raw:
-        item_id = raw.get("item_id", "")
-        if not backfill and item_id and item_id == last_post_id:
-            break  # 增量模式：已处理到上次位置（回溯模式不短路，靠 cutoff 控深度）
-        if item_id and not new_last_post_id:
-            new_last_post_id = item_id  # 记录本次最新ID（第一条）
-        item = _to_item(raw, "taptap_post")
-        if item:
-            topic_items.append(item)
-
-    review_items: list[dict] = []
-    for raw in review_raw:
-        item_id = raw.get("item_id", "")
-        if not backfill and item_id and item_id == last_review_id:
-            break
-        if item_id and not new_last_review_id:
-            new_last_review_id = item_id
-        item = _to_item(raw, "taptap_review")
-        if item:
-            review_items.append(item)
+    topic_items, new_last_post_id = _filter_incremental(
+        topic_raw, "taptap_post", cutoff, last_post_id, backfill
+    )
+    review_items, new_last_review_id = _filter_incremental(
+        review_raw, "taptap_review", cutoff, last_review_id, backfill
+    )
 
     # ── 持久化状态 ────────────────────────────────────────────
     taptap_state.update({

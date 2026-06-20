@@ -39,4 +39,9 @@ jobs:
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
       - name: Run tests
-        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=10
+        # Coverage gate raised from 10 to 35. Measured TOTAL coverage on
+        # 2026-06-19 was 38% (coverage run over the same three source roots);
+        # 35 leaves a small margin below the real figure to absorb run-to-run
+        # jitter while preventing regression. Measurement scope is pinned in
+        # .coveragerc so local and CI use the same source/omit rules.
+        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=35

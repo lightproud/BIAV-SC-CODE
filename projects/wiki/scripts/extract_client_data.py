@@ -81,6 +81,75 @@ ASSET_PATTERNS = [
 ]
 
 
+def decode_script(script, stats: dict | None = None) -> str | None:
+    """Decode a TextAsset m_Script to text.
+
+    Returns the decoded string, or None if it is undecodable binary.
+    When ``stats`` is provided, a binary-skip increments ``binary_skipped``.
+    """
+    if isinstance(script, bytes):
+        for enc in ("utf-8", "utf-8-sig"):
+            try:
+                return script.decode(enc)
+            except UnicodeDecodeError:
+                continue
+        if stats is not None:
+            stats["binary_skipped"] = stats.get("binary_skipped", 0) + 1
+        return None
+    return script
+
+
+def classify_text_extension(text: str, validate_json: bool = True) -> str:
+    """Pick a file extension for an extracted TextAsset body.
+
+    Mirrors the heuristics used by both extractors: JSON/Lua/TSV/CSV/TXT.
+    When ``validate_json`` is True, content that *looks* like JSON but does
+    not parse falls back to ``.txt``.
+    """
+    stripped = text.strip()
+    if stripped.startswith(("{", "[")):
+        if validate_json:
+            try:
+                json.loads(text)
+            except json.JSONDecodeError:
+                return ".txt"
+        return ".json"
+    if stripped.startswith("--") or "function " in stripped[:200] or "local " in stripped[:200]:
+        return ".lua"
+    first_line = stripped.split("\n")[0]
+    if "\t" in first_line:
+        return ".tsv"
+    if "," in first_line and stripped.count("\n") > 1:
+        return ".csv"
+    return ".txt"
+
+
+def classify_json_file(name: str, data) -> str:
+    """Classify an extracted JSON file into a wiki schema bucket.
+
+    Returns one of: characters / skills / equipment / stages / localization /
+    unmapped. Name-based rules take priority, then content-based fallbacks.
+    """
+    name = name.lower()
+    if any(kw in name for kw in ("character", "hero", "awakener", "unit", "role")):
+        return "characters"
+    if any(kw in name for kw in ("skill", "ability", "card")):
+        return "skills"
+    if any(kw in name for kw in ("equip", "weapon", "wheel", "covenant", "relic")):
+        return "equipment"
+    if any(kw in name for kw in ("stage", "map", "dungeon", "level", "quest")):
+        return "stages"
+    if any(kw in name for kw in ("locale", "lang", "text", "string", "i18n")):
+        return "localization"
+    if isinstance(data, list) and data and isinstance(data[0], dict):
+        keys = set(data[0].keys())
+        if keys & {"hp", "atk", "def", "attack", "defense", "HP", "ATK"}:
+            return "characters"
+        if keys & {"cost", "effect", "skillName", "skill_name"}:
+            return "skills"
+    return "unmapped"
+
+
 def find_asset_files(game_data_dir: Path) -> tuple[list[Path], list[Path]]:
     """Find all files to process.
 
@@ -169,38 +238,15 @@ def extract_text_assets(env, output_dir: Path, stats: dict) -> None:
                 name = data.m_Name
                 script = data.m_Script
 
-                if isinstance(script, bytes):
-                    try:
-                        text = script.decode("utf-8")
-                    except UnicodeDecodeError:
-                        try:
-                            text = script.decode("utf-8-sig")
-                        except UnicodeDecodeError:
-                            stats["binary_skipped"] += 1
-                            continue
-                else:
-                    text = script
+                text = decode_script(script, stats)
+                if text is None:
+                    continue
 
                 if not text or len(text.strip()) < 2:
                     continue
 
                 # Determine extension
-                stripped = text.strip()
-                if stripped.startswith(("{", "[")):
-                    ext = ".json"
-                    # Validate JSON
-                    try:
-                        json.loads(text)
-                    except json.JSONDecodeError:
-                        ext = ".txt"
-                elif stripped.startswith("--") or "function " in stripped[:200] or "local " in stripped[:200]:
-                    ext = ".lua"
-                elif "\t" in stripped.split("\n")[0]:
-                    ext = ".tsv"
-                elif "," in stripped.split("\n")[0] and stripped.count("\n") > 1:
-                    ext = ".csv"
-                else:
-                    ext = ".txt"
+                ext = classify_text_extension(text)
 
                 out_file = output_dir / "text" / f"{name}{ext}"
                 out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -456,37 +502,15 @@ def map_to_wiki_schema(output_dir: Path) -> dict:
         except (json.JSONDecodeError, UnicodeDecodeError):
             continue
 
-        name = json_file.stem.lower()
+        bucket = classify_json_file(json_file.stem, data)
 
-        # Classify by filename and content
-        if any(kw in name for kw in ("character", "hero", "awakener", "unit", "role")):
-            results["characters"].append({"file": json_file.name, "data": data})
-            results["mapped"] += 1
-        elif any(kw in name for kw in ("skill", "ability", "card")):
-            results["skills"].append({"file": json_file.name, "data": data})
-            results["mapped"] += 1
-        elif any(kw in name for kw in ("equip", "weapon", "wheel", "covenant", "relic")):
-            results["equipment"].append({"file": json_file.name, "data": data})
-            results["mapped"] += 1
-        elif any(kw in name for kw in ("stage", "map", "dungeon", "level", "quest")):
-            results["stages"].append({"file": json_file.name, "data": data})
-            results["mapped"] += 1
-        elif any(kw in name for kw in ("locale", "lang", "text", "string", "i18n")):
+        if bucket == "localization":
             results["localization"][json_file.name] = data
             results["mapped"] += 1
+        elif bucket != "unmapped":
+            results[bucket].append({"file": json_file.name, "data": data})
+            results["mapped"] += 1
         else:
-            # Try to classify by content
-            if isinstance(data, list) and data and isinstance(data[0], dict):
-                keys = set(data[0].keys())
-                if keys & {"hp", "atk", "def", "attack", "defense", "HP", "ATK"}:
-                    results["characters"].append({"file": json_file.name, "data": data})
-                    results["mapped"] += 1
-                    continue
-                elif keys & {"cost", "effect", "skillName", "skill_name"}:
-                    results["skills"].append({"file": json_file.name, "data": data})
-                    results["mapped"] += 1
-                    continue
-
             results["unmapped_files"].append({
                 "file": json_file.name,
                 "type": type(data).__name__,

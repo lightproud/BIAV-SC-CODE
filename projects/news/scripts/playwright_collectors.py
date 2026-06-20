@@ -39,6 +39,161 @@ def _parse_relative_time(text: str) -> tuple[str, bool]:
     return news_common.parse_relative_time(text)
 
 
+# ── 纯解析函数（从各 fetch_* 抽出，对 DOM 元素接口做映射，便于单测） ──────────
+# 这些函数只依赖被传入对象的 query_selector / inner_text / get_attribute 接口，
+# 不触碰网络或浏览器，保持原 fetch_* 内联逻辑的行为不变。
+
+def _parse_weibo_article(article) -> Dict:
+    """从一个 Weibo article 元素解析出 item dict；不合格返回 None。"""
+    text_el = article.query_selector('.weibo-text, .content, p')
+    if not text_el:
+        return None
+    text = text_el.inner_text().strip()
+    if len(text) < 10:
+        return None
+
+    time_el = article.query_selector('time, [class*="time"], [class*="date"]')
+    time_text = ''
+    if time_el:
+        time_text = time_el.get_attribute('datetime') or time_el.inner_text().strip()
+    parsed_time, time_approx = _parse_relative_time(time_text)
+
+    link_el = article.query_selector('a[href*="status"]')
+    href = ''
+    if link_el:
+        href = link_el.get_attribute('href') or ''
+        if href and not href.startswith('http'):
+            href = f'https://m.weibo.cn{href}'
+
+    item = {
+        'title': text[:80],
+        'summary': text[:500],
+        'source': 'weibo',
+        'time': parsed_time,
+        'url': href,
+        'engagement': 0,
+        'is_hot': False,
+        'author': '',
+        'tags': ['weibo'],
+    }
+    if time_approx:
+        item['time_is_approximate'] = True
+    return item
+
+
+def _parse_taptap_card(card) -> Dict:
+    """从一个 TapTap card 元素解析出 item dict；无有效 /app/ 链接返回 None。"""
+    title_el = card.query_selector('.app-name, .title, h3')
+    title = title_el.inner_text().strip() if title_el else ''
+
+    link_el = card.query_selector('a[href*="/app/"]')
+    href = link_el.get_attribute('href') if link_el else ''
+
+    if href and '/app/' in href:
+        if not href.startswith('http'):
+            href = f'https://www.taptap.cn{href}'
+        return {
+            'title': f'[TapTap] {title or "忘却前夜"}',
+            'summary': '',
+            'source': 'taptap',
+            'time': datetime.now(timezone.utc).isoformat(),
+            'time_is_approximate': True,
+            'url': href,
+            'engagement': 0,
+            'is_hot': False,
+            'author': '',
+            'tags': ['taptap'],
+        }
+    return None
+
+
+def _parse_arca_row(row, mode: str) -> Dict:
+    """从一个 Arca.live .vrow 元素解析出 item dict；无标题返回 None。"""
+    title_el = row.query_selector('.title')
+    time_el = row.query_selector('.col-time')
+    link_el = row.query_selector('a.vrow-top')
+    if not title_el:
+        return None
+
+    title = title_el.inner_text().strip()
+    href = link_el.get_attribute('href') if link_el else ''
+    time_text = time_el.inner_text().strip() if time_el else ''
+
+    if not title:
+        return None
+    if href and not href.startswith('http'):
+        href = f'https://arca.live{href}'
+
+    parsed_time, time_approx = _parse_relative_time(time_text)
+    item = {
+        'title': title[:100],
+        'summary': '',
+        'source': 'arca_live',
+        'time': parsed_time,
+        'url': href,
+        'engagement': 0,
+        'is_hot': (mode == 'best'),
+        'author': '',
+        'tags': ['arca_live'],
+        'lang': 'ko',
+        'platform_region': 'kr',
+    }
+    if time_approx:
+        item['time_is_approximate'] = True
+    return item
+
+
+def _parse_ruliweb_link(link) -> Dict:
+    """从一个 Ruliweb a.subject_link 元素解析出 item dict；无标题返回 None。"""
+    title = link.inner_text().strip()
+    href = link.get_attribute('href') or ''
+    if not title:
+        return None
+    if not href.startswith('http'):
+        href = f'https://bbs.ruliweb.com{href}'
+    return {
+        'title': title[:100],
+        'summary': '',
+        'source': 'ruliweb',
+        'time': datetime.now(timezone.utc).isoformat(),
+        'time_is_approximate': True,
+        'url': href,
+        'engagement': 0,
+        'is_hot': False,
+        'author': '',
+        'tags': ['ruliweb'],
+        'lang': 'ko',
+        'platform_region': 'kr',
+    }
+
+
+def _parse_bahamut_row(row) -> Dict:
+    """从一个 Bahamut 搜索结果行元素解析出 item dict；无标题返回 None。"""
+    title_el = row.query_selector('.b-list__main__title, a[href*="C.php"]')
+    if not title_el:
+        return None
+    title = title_el.inner_text().strip()
+    href = title_el.get_attribute('href') or ''
+    if not title:
+        return None
+    if href and not href.startswith('http'):
+        href = f'https://forum.gamer.com.tw/{href}'
+    return {
+        'title': title[:100],
+        'summary': '',
+        'source': 'bahamut',
+        'time': datetime.now(timezone.utc).isoformat(),
+        'time_is_approximate': True,
+        'url': href,
+        'engagement': 0,
+        'is_hot': False,
+        'author': '',
+        'tags': ['bahamut'],
+        'lang': 'zh',
+        'platform_region': 'tw',
+    }
+
+
 def fetch_weibo_playwright() -> List[Dict]:
     """
     Fetch Weibo search results using mobile version.
@@ -65,44 +220,9 @@ def fetch_weibo_playwright() -> List[Dict]:
             
             for article in articles[:20]:
                 try:
-                    # 内容
-                    text_el = article.query_selector('.weibo-text, .content, p')
-                    if not text_el:
-                        continue
-                    
-                    text = text_el.inner_text().strip()
-                    if len(text) < 10:
-                        continue
-                    
-                    # 时间
-                    time_el = article.query_selector('time, [class*="time"], [class*="date"]')
-                    time_text = ''
-                    if time_el:
-                        time_text = time_el.get_attribute('datetime') or time_el.inner_text().strip()
-                    parsed_time, time_approx = _parse_relative_time(time_text)
-
-                    # 链接
-                    link_el = article.query_selector('a[href*="status"]')
-                    href = ''
-                    if link_el:
-                        href = link_el.get_attribute('href') or ''
-                        if href and not href.startswith('http'):
-                            href = f'https://m.weibo.cn{href}'
-
-                    item = {
-                        'title': text[:80],
-                        'summary': text[:500],
-                        'source': 'weibo',
-                        'time': parsed_time,
-                        'url': href,
-                        'engagement': 0,
-                        'is_hot': False,
-                        'author': '',
-                        'tags': ['weibo'],
-                    }
-                    if time_approx:
-                        item['time_is_approximate'] = True
-                    items.append(item)
+                    item = _parse_weibo_article(article)
+                    if item is not None:
+                        items.append(item)
                 except Exception:
                     continue
             
@@ -141,28 +261,9 @@ def fetch_taptap_playwright() -> List[Dict]:
             
             for card in cards[:10]:
                 try:
-                    title_el = card.query_selector('.app-name, .title, h3')
-                    title = title_el.inner_text().strip() if title_el else ''
-                    
-                    link_el = card.query_selector('a[href*="/app/"]')
-                    href = link_el.get_attribute('href') if link_el else ''
-                    
-                    if href and '/app/' in href:
-                        if not href.startswith('http'):
-                            href = f'https://www.taptap.cn{href}'
-
-                        items.append({
-                            'title': f'[TapTap] {title or "忘却前夜"}',
-                            'summary': '',
-                            'source': 'taptap',
-                            'time': datetime.now(timezone.utc).isoformat(),
-                            'time_is_approximate': True,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': False,
-                            'author': '',
-                            'tags': ['taptap'],
-                        })
+                    item = _parse_taptap_card(card)
+                    if item is not None:
+                        items.append(item)
                 except Exception:
                     continue
             
@@ -206,38 +307,9 @@ def fetch_arca_live_playwright() -> List[Dict]:
 
                     rows = page.query_selector_all('.vrow:not(.notice)')
                     for row in rows[:30]:
-                        title_el = row.query_selector('.title')
-                        time_el = row.query_selector('.col-time')
-                        link_el = row.query_selector('a.vrow-top')
-                        if not title_el:
-                            continue
-
-                        title = title_el.inner_text().strip()
-                        href = link_el.get_attribute('href') if link_el else ''
-                        time_text = time_el.inner_text().strip() if time_el else ''
-
-                        if not title:
-                            continue
-                        if href and not href.startswith('http'):
-                            href = f'https://arca.live{href}'
-
-                        parsed_time, time_approx = _parse_relative_time(time_text)
-                        item = {
-                            'title': title[:100],
-                            'summary': '',
-                            'source': 'arca_live',
-                            'time': parsed_time,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': (mode == 'best'),
-                            'author': '',
-                            'tags': ['arca_live'],
-                            'lang': 'ko',
-                            'platform_region': 'kr',
-                        }
-                        if time_approx:
-                            item['time_is_approximate'] = True
-                        items.append(item)
+                        item = _parse_arca_row(row, mode)
+                        if item is not None:
+                            items.append(item)
                     logger.info(f'Arca.live PW mode={mode or "latest"}: {len(items)} total')
                 except Exception as e:
                     logger.warning(f'Arca.live PW mode={mode or "latest"} failed: {e}')
@@ -275,27 +347,9 @@ def fetch_ruliweb_playwright() -> List[Dict]:
 
                     links = page.query_selector_all('a.subject_link')
                     for link in links:
-                        title = link.inner_text().strip()
-                        href = link.get_attribute('href') or ''
-                        if not title:
-                            continue
-                        if not href.startswith('http'):
-                            href = f'https://bbs.ruliweb.com{href}'
-
-                        items.append({
-                            'title': title[:100],
-                            'summary': '',
-                            'source': 'ruliweb',
-                            'time': datetime.now(timezone.utc).isoformat(),
-                            'time_is_approximate': True,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': False,
-                            'author': '',
-                            'tags': ['ruliweb'],
-                            'lang': 'ko',
-                            'platform_region': 'kr',
-                        })
+                        item = _parse_ruliweb_link(link)
+                        if item is not None:
+                            items.append(item)
                     logger.info(f'Ruliweb PW "{keyword}": {len(items)} total')
                 except Exception as e:
                     logger.warning(f'Ruliweb PW "{keyword}" failed: {e}')
@@ -335,30 +389,9 @@ def fetch_bahamut_playwright() -> List[Dict]:
 
                     rows = page.query_selector_all('.b-list__row, .FM-blist3A')
                     for row in rows[:20]:
-                        title_el = row.query_selector('.b-list__main__title, a[href*="C.php"]')
-                        if not title_el:
-                            continue
-                        title = title_el.inner_text().strip()
-                        href = title_el.get_attribute('href') or ''
-                        if not title:
-                            continue
-                        if href and not href.startswith('http'):
-                            href = f'https://forum.gamer.com.tw/{href}'
-
-                        items.append({
-                            'title': title[:100],
-                            'summary': '',
-                            'source': 'bahamut',
-                            'time': datetime.now(timezone.utc).isoformat(),
-                            'time_is_approximate': True,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': False,
-                            'author': '',
-                            'tags': ['bahamut'],
-                            'lang': 'zh',
-                            'platform_region': 'tw',
-                        })
+                        item = _parse_bahamut_row(row)
+                        if item is not None:
+                            items.append(item)
                     logger.info(f'Bahamut PW "{keyword}": {len(items)} total')
                 except Exception as e:
                     logger.warning(f'Bahamut PW "{keyword}" failed: {e}')
