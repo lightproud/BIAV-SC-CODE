@@ -1,10 +1,11 @@
 {
   "date": "2025-01-30",
-  "messages": 2321,
+  "messages": 2370,
   "unique_authors": 122,
-  "reactions_total": 133,
-  "attachments": 124,
+  "reactions_total": 139,
+  "attachments": 127,
   "channel_activity": {
+    "🔸lore-chat": 49,
     "🔸綜合討論": 350,
     "🔸morimens-game-chat": 1498,
     "🔸晒卡分享": 4,
@@ -21,34 +22,34 @@
     "Phantasmal Dive bug ?": 4
   },
   "hourly_activity": {
+    "6": 113,
+    "7": 120,
+    "10": 160,
+    "11": 123,
+    "12": 163,
+    "13": 71,
+    "14": 94,
+    "15": 83,
+    "16": 107,
+    "17": 94,
+    "18": 20,
+    "20": 15,
     "0": 112,
     "1": 28,
     "2": 58,
     "3": 69,
     "4": 106,
     "5": 150,
-    "6": 103,
-    "7": 114,
     "8": 291,
     "9": 270,
-    "10": 158,
-    "11": 122,
-    "14": 80,
-    "15": 81,
-    "16": 103,
-    "17": 91,
-    "18": 17,
     "19": 13,
-    "20": 13,
     "21": 53,
     "22": 26,
-    "23": 31,
-    "12": 162,
-    "13": 70
+    "23": 31
   },
   "message_types": {
-    "0": 1826,
-    "19": 483
+    "0": 36,
+    "19": 13
   },
   "top_reacted_messages": [
     {
@@ -114,6 +115,14 @@
       "author": "adnine_",
       "reactions": 3,
       "channel": "🔸canal-português"
+    },
+    {
+      "id": "1334529375651237939",
+      "channel_id": "1326453763355185215",
+      "content": "Wanna see how each \"soul\" takes form",
+      "author": "lucchi018",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1334380694993895425",
@@ -196,20 +205,12 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1334382042338562129",
-      "channel_id": "1131839817982947429",
-      "content": "你說的對 畢竟是麒麟",
-      "author": "pray_unbeliever",
+      "id": "1334411181242187849",
+      "channel_id": "1326453763355185215",
+      "content": "Oh, yeah, that makes sense now\nThank you!",
+      "author": "oddeyesight",
       "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1334383662719963146",
-      "channel_id": "1131839817982947429",
-      "content": "塔薇真是太会辅助了，伤害都顺便帮忙打了",
-      "author": "chkevo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸lore-chat"
     }
   ]
 }

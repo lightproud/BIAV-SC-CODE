@@ -1,10 +1,21 @@
 {
   "date": "2024-11-06",
-  "messages": 46,
-  "unique_authors": 14,
-  "reactions_total": 30,
-  "attachments": 10,
+  "messages": 3879,
+  "unique_authors": 139,
+  "reactions_total": 344,
+  "attachments": 215,
   "channel_activity": {
+    "🔸綜合討論": 719,
+    "🔸阵容构建": 11,
+    "🔸morimens-game-chat": 2419,
+    "🔸相位对弈": 22,
+    "🔸한국어-채팅방": 6,
+    "🔸chaîne-française": 27,
+    "🔸русский-канал": 142,
+    "🔸phòng-chat-tiếng-việt": 149,
+    "🔸canal-español": 321,
+    "🔸ruang-obrolan-indonesia": 4,
+    "🔸ห้องสนทนาภาษาไทย": 13,
     "V1.6.5.2 在線維護公告": 3,
     "V1.6.5.0 停服維護公告": 2,
     "蹈海野貓雜技團（釘選有目錄）": 1,
@@ -26,21 +37,34 @@
     "做了一個共鳴，整點活幹？": 3
   },
   "hourly_activity": {
-    "12": 8,
-    "15": 17,
-    "14": 1,
-    "6": 4,
-    "0": 2,
-    "11": 2,
-    "7": 4,
-    "9": 2,
-    "5": 1,
-    "2": 1,
-    "8": 4
+    "2": 175,
+    "3": 266,
+    "4": 226,
+    "5": 394,
+    "6": 116,
+    "7": 135,
+    "8": 177,
+    "9": 499,
+    "10": 149,
+    "11": 68,
+    "12": 139,
+    "13": 311,
+    "14": 155,
+    "15": 145,
+    "16": 164,
+    "17": 120,
+    "20": 29,
+    "23": 51,
+    "0": 169,
+    "1": 174,
+    "18": 78,
+    "19": 124,
+    "21": 12,
+    "22": 3
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 2990,
+    "19": 843
   },
   "top_reacted_messages": [
     {
@@ -51,6 +75,46 @@
       "channel": "提笔着墨"
     },
     {
+      "id": "1303656179611996172",
+      "channel_id": "1131839817982947429",
+      "content": "🦈：守秘人当务之急是来一把热血沸腾的牌局",
+      "author": "qiamo0664",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303654359359291424",
+      "channel_id": "1131839817982947429",
+      "content": "忘却前夜真好玩",
+      "author": "qiamo0664",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303654577652105216",
+      "channel_id": "1131839817982947429",
+      "content": "然後叫希洛付錢",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303674081727746060",
+      "channel_id": "1131839817982947429",
+      "content": "I am find thank you",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303693863621492797",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1303702401945174070",
       "content": "活動時間：11月4日 09:00 - 11月18日 09:00\n\n深海的倒影上，王的夢境消散，神的國也已腐朽。\n她從舊日的幻夢中走來，走入未來崩塌的廢墟。\n她詢",
       "author": "menoctus",
@@ -58,39 +122,108 @@
       "channel": "《忘卻前夜》限定喚醒體「彌利亞姆」復刻宣導PV"
     },
     {
-      "id": "1303605099305635860",
-      "content": "Currently the game is unplayable on the steam deck no matter what proton version",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "Game is currently unplayable in steam deck no matter what proton version"
+      "id": "1303631243153248286",
+      "channel_id": "1131839817982947429",
+      "content": "一周打7-5有點硬",
+      "author": "ekko9950",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1303696715890823274",
-      "content": "<@139343733714845697>",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "Game is currently unplayable in steam deck no matter what proton version"
+      "id": "1303622101718012015",
+      "channel_id": "1131839817982947429",
+      "content": "油汙可惜在立繪，我總覺得他應該得保持裸體",
+      "author": ".moon_leaf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1303700090170507336",
-      "content": "● 修復了第八章激活共鳴「鑰冢儀式」後，觸發 3 次以上死亡抵抗無法再次獲得「極夜微光」的問題。",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "每次死抵不是会回手极夜微光吗"
+      "id": "1303864754271551582",
+      "channel_id": "1300659662311526512",
+      "content": "No me quejo, desde luego, pero cuáles son las probabilidades de que me haya sali",
+      "author": "oceanodestrellas",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1303658891476992012",
-      "content": "是的",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "周年庆是否像半周年一样能刷印章"
+      "id": "1303641352944357469",
+      "channel_id": "1131839817982947429",
+      "content": "还在用朵尔小骑士拉蒙娜",
+      "author": "lusisferre",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1303596653282066472",
-      "content": "你周年課多一點就有機會",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": "除了塔薇，還有要出新角嗎?"
+      "id": "1303642076164001822",
+      "channel_id": "1131839817982947429",
+      "content": "你只是越级打，被等级差压在地上摩擦<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303650989257134140",
+      "channel_id": "1131839817982947429",
+      "content": "我半年前从无期迷途跑路 前段时间准备回坑被亲友劝住了 让我来玩忘却前夜 玩了一个星期被圣婴吊起来抽",
+      "author": "lusisferre",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303660375945773110",
+      "channel_id": "1131839817982947429",
+      "content": "~~圖辱~~",
+      "author": "lemoncandy25",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303550357862879334",
+      "channel_id": "1131839817982947429",
+      "content": "~~卡池現在是壞的，我抽不到SSR~~",
+      "author": ".moon_leaf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303605947855540265",
+      "channel_id": "1131839817982947429",
+      "content": "半年後不知道",
+      "author": ".moon_leaf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303651525050105966",
+      "channel_id": "1131839817982947429",
+      "content": "有点像赛博电椅我没开玩笑 每天准时坐上来玩几个小时然后人麻了",
+      "author": "lusisferre",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303653357587660800",
+      "channel_id": "1131839817982947429",
+      "content": "所以完全不会碎",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303655047212699678",
+      "channel_id": "1131839817982947429",
+      "content": "國服上不了線",
+      "author": "0.0w0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303658945734512662",
+      "channel_id": "1131839817982947429",
+      "content": "什麼?  有人公然買賣PY?",
+      "author": ".moon_leaf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

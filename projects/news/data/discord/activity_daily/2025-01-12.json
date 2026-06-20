@@ -1,10 +1,13 @@
 {
   "date": "2025-01-12",
-  "messages": 3326,
+  "messages": 3458,
   "unique_authors": 130,
-  "reactions_total": 194,
-  "attachments": 164,
+  "reactions_total": 206,
+  "attachments": 176,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 13,
+    "🔸traphase": 57,
+    "🔸lore-chat": 62,
     "🔸綜合討論": 169,
     "🔸阵容构建": 63,
     "🔸morimens-game-chat": 2625,
@@ -28,35 +31,34 @@
     "好餓哦，雜食來吃飯了": 9
   },
   "hourly_activity": {
-    "1": 119,
-    "2": 20,
-    "3": 45,
-    "4": 63,
+    "1": 124,
+    "6": 135,
+    "7": 81,
+    "17": 142,
+    "2": 25,
+    "3": 47,
+    "4": 66,
+    "8": 161,
+    "9": 187,
+    "10": 217,
+    "11": 142,
+    "13": 139,
+    "14": 454,
+    "15": 167,
+    "12": 151,
+    "19": 45,
     "5": 213,
-    "6": 133,
-    "7": 73,
-    "8": 156,
-    "9": 178,
-    "10": 181,
-    "11": 140,
-    "12": 149,
-    "13": 129,
-    "14": 452,
-    "15": 143,
     "16": 257,
-    "17": 127,
     "18": 221,
     "21": 76,
     "23": 140,
     "0": 84,
-    "19": 43,
     "20": 66,
     "22": 118
   },
   "message_types": {
-    "19": 592,
-    "0": 2691,
-    "18": 4
+    "0": 104,
+    "19": 28
   },
   "top_reacted_messages": [
     {
@@ -116,6 +118,14 @@
       "author": "ena04564",
       "reactions": 5,
       "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327945811077627977",
+      "channel_id": "1326453763355185215",
+      "content": "from letter #617 of Lovecraft\n617 is our MC’s silverkey codename too btw",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1327862039271440444",
@@ -201,14 +211,6 @@
       "channel_id": "1170692781216378960",
       "content": "Remove MEMus and put Nautila(no joke)",
       "author": "twilightsparkle163163",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1327941787855360031",
-      "channel_id": "1170692781216378960",
-      "content": "Your acc is exactly 30 days older than mine",
-      "author": "aurora3981",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }

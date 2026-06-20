@@ -1,10 +1,25 @@
 {
   "date": "2024-12-02",
-  "messages": 110,
-  "unique_authors": 13,
-  "reactions_total": 112,
-  "attachments": 51,
+  "messages": 6603,
+  "unique_authors": 185,
+  "reactions_total": 336,
+  "attachments": 359,
   "channel_activity": {
+    "🔸綜合討論": 1211,
+    "🔸阵容构建": 40,
+    "🔸morimens-game-chat": 4351,
+    "🔸剧情交流": 37,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 27,
+    "🔸한국어-채팅방": 55,
+    "🔸chaîne-française": 27,
+    "🔸русский-канал": 20,
+    "🔸phòng-chat-tiếng-việt": 431,
+    "🔸canal-español": 242,
+    "🔸canal-português": 20,
+    "🔸ห้องสนทนาภาษาไทย": 25,
     "Reruns priority guide (for newcomers and general)": 2,
     "GPT translation synonyms": 3,
     "🌌【已開獎】超越維度的祝福": 4,
@@ -28,30 +43,34 @@
     "堆堆莱克相关": 14
   },
   "hourly_activity": {
-    "12": 1,
-    "20": 1,
-    "2": 6,
-    "1": 1,
-    "4": 4,
-    "5": 19,
-    "14": 21,
-    "15": 12,
-    "16": 3,
-    "17": 1,
-    "23": 1,
-    "19": 1,
-    "6": 20,
-    "7": 5,
-    "3": 2,
-    "13": 2,
-    "18": 1,
-    "8": 4,
-    "9": 4,
-    "10": 1
+    "0": 248,
+    "1": 289,
+    "2": 206,
+    "3": 462,
+    "4": 427,
+    "5": 401,
+    "6": 359,
+    "7": 298,
+    "8": 308,
+    "9": 253,
+    "10": 197,
+    "11": 203,
+    "12": 268,
+    "13": 305,
+    "14": 421,
+    "15": 487,
+    "16": 204,
+    "17": 285,
+    "18": 114,
+    "19": 200,
+    "20": 101,
+    "22": 318,
+    "23": 145,
+    "21": 104
   },
   "message_types": {
-    "0": 3,
-    "19": 2
+    "0": 5693,
+    "19": 800
   },
   "top_reacted_messages": [
     {
@@ -90,6 +109,14 @@
       "channel": "原初之影__第三關陣容推薦"
     },
     {
+      "id": "1313031528728498198",
+      "channel_id": "1131839817982947429",
+      "content": "這個<:cry:1239910167668326480>",
+      "author": "_buqi",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1313181345807077397",
       "content": "我完成了第二關放棄思考打法，降低精神壓力\nhttps://youtu.be/9SLXhp-9Ips\n不開狂氣，不開銀鑰，解放大腦，手牌看一下丟就好\n戈利亞 主要",
       "author": "andy1123",
@@ -104,6 +131,30 @@
       "channel": "自創：刻印流·混沌喚醒體"
     },
     {
+      "id": "1312980030955065407",
+      "channel_id": "1131839817982947429",
+      "content": "也就是说我刷了快66只吗",
+      "author": "sadanshishen",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313127542454095912",
+      "channel_id": "1131839817982947429",
+      "content": "打一颗石头要一小时",
+      "author": "zerathree",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313068214292578324",
+      "channel_id": "1173463482503536711",
+      "content": "蜘蛛：我要奴隸！\n守咪人：醒醒！羅馬已經亡了！",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1313156858265075772",
       "content": "借樓發第二關 純記錄 又是頂配反擊輪椅 不過換奧拉拉了 \n\nhttps://youtu.be/RN0IWF4zeEA?si=wPw0y3gwIpQhn7Tx",
       "author": "sod212",
@@ -111,74 +162,68 @@
       "channel": "原初之影__第三關陣容推薦"
     },
     {
-      "id": "1313087853982646344",
-      "content": "等一下我拉到我媽的資助了有錢做了<:stoppage:1236938521365839872>",
-      "author": "flim_of_life_burst",
+      "id": "1313009878347808829",
+      "channel_id": "1131839817982947429",
+      "content": "本週教材，但現實原因~~只有先放線稿~~https://discord.com/channels/1131791637933199470/13006831576",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313044788416872461",
+      "channel_id": "1131839817982947429",
+      "content": "然後利用王多段傷害去累積綠炎  大概第四回合第五回合的時候狂氣充滿都all給莉茲 讓他開超爆發 留一張狂想詩篇 爆發前丟",
+      "author": "nightfishplayer",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313045532649984011",
+      "channel_id": "1131839817982947429",
+      "content": "給你們參考一下 這套好處是大部分普抽都有",
+      "author": "nightfishplayer",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313220604748365875",
+      "channel_id": "1131839817982947429",
+      "content": "是不是乾瞪眼比賽，誰先眨眼誰就死了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1313042411462856705",
+      "channel_id": "1131839817982947429",
+      "content": "我自己打起來利茲隊還不錯 只要扛的住 靠毒的",
+      "author": "nightfishplayer",
       "reactions": 3,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1313167508819148881",
-      "content": "change network … vpn",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "Steam Issue"
+      "id": "1313043817275981914",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "nightfishplayer",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1313078311529873409",
-      "content": "你是懂怎麼翻譯的",
-      "author": "ice_storys",
-      "reactions": 2,
-      "channel": "自創：刻印流·混沌喚醒體"
+      "id": "1313044959544348772",
+      "channel_id": "1131839817982947429",
+      "content": "基本上這樣就能打一管血 因為莉茲超爆發的關係 下回合綠炎會自動變三街 所以在打一次 大概第7~9回合能收掉",
+      "author": "nightfishplayer",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1313155118350336030",
-      "content": "噢噢好耶！",
-      "author": "flim_of_life_burst",
-      "reactions": 2,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
-    },
-    {
-      "id": "1313070419489849386",
-      "content": "幫你翻譯：我要人權輔助",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "自創：刻印流·混沌喚醒體"
-    },
-    {
-      "id": "1313040597933756479",
-      "content": "訂製週邊一般都偏貴的樣子\n尤其要開模的物品\n我之前問訂製紙盒的費用也很嚇人",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
-    },
-    {
-      "id": "1313152549133484154",
-      "content": "熱愛是需要支持的",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
-    },
-    {
-      "id": "1313154948472766475",
-      "content": "沒關係的想要的話送給你好了（",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
-    },
-    {
-      "id": "1313164495564050544",
-      "content": "感覺這個可以x",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
-    },
-    {
-      "id": "1313165740538597509",
-      "content": "填完了",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "胸针：提灯教会ver. 索瓦尔格/Solvarg of Temple Light Church"
+      "id": "1313065115683389490",
+      "channel_id": "1131839817982947429",
+      "content": "大不了拿塔薇跟他爆了",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

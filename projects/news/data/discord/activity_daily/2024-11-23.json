@@ -1,10 +1,24 @@
 {
   "date": "2024-11-23",
-  "messages": 16,
-  "unique_authors": 4,
-  "reactions_total": 16,
-  "attachments": 0,
+  "messages": 3689,
+  "unique_authors": 154,
+  "reactions_total": 257,
+  "attachments": 292,
   "channel_activity": {
+    "🔸綜合討論": 457,
+    "🔸阵容构建": 4,
+    "🔸morimens-game-chat": 2006,
+    "🔸剧情交流": 27,
+    "🔸相位对弈": 43,
+    "🔸课间休息闲聊": 2,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 24,
+    "🔸chaîne-française": 86,
+    "🔸русский-канал": 18,
+    "🔸phòng-chat-tiếng-việt": 549,
+    "🔸canal-español": 120,
+    "🔸canal-português": 155,
+    "🔸ห้องสนทนาภาษาไทย": 179,
     "Overexalt list": 1,
     "請願本源朵爾進典藏館以及實裝上線": 10,
     "塔薇...": 3,
@@ -12,26 +26,106 @@
     "歡愉脊髓劍": 1
   },
   "hourly_activity": {
-    "16": 1,
-    "0": 3,
-    "1": 1,
-    "7": 3,
-    "9": 4,
-    "2": 1,
-    "5": 1,
-    "11": 1,
-    "3": 1
+    "0": 203,
+    "1": 157,
+    "2": 131,
+    "3": 254,
+    "4": 267,
+    "5": 54,
+    "6": 87,
+    "7": 40,
+    "8": 87,
+    "9": 88,
+    "10": 112,
+    "11": 121,
+    "12": 185,
+    "13": 280,
+    "14": 407,
+    "15": 247,
+    "16": 87,
+    "17": 59,
+    "18": 78,
+    "19": 159,
+    "20": 228,
+    "23": 152,
+    "21": 153,
+    "22": 53
   },
   "message_types": {
-    "0": 1
+    "0": 3106,
+    "19": 567
   },
   "top_reacted_messages": [
+    {
+      "id": "1309917476381003776",
+      "channel_id": "1131839817982947429",
+      "content": "過12點了\n今天我生日\n祝我自己生日快樂🥂🎂",
+      "author": "kong760",
+      "reactions": 39,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309879051292246068",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309929159639699567",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "0.0w0",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309943408772776039",
+      "channel_id": "1131839817982947429",
+      "content": "刷到起飛了🥹",
+      "author": "taayoui",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309862300769062952",
+      "channel_id": "1173463482503536711",
+      "content": "不過是專門談情趣玩具的",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
     {
       "id": "1309845246191865908",
       "content": "原本還覺得六翼滿開的傷害很刮痧，但我反應過來時對方已經被塔薇張開的翅膀扇沒了",
       "author": "ena04564",
       "reactions": 5,
       "channel": "塔薇..."
+    },
+    {
+      "id": "1309754774752858163",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "qiamo0664",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309799360586055753",
+      "channel_id": "1131839817982947429",
+      "content": "他没二阶段，大文明，数值也不高",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309817009835347979",
+      "channel_id": "1173463482503536711",
+      "content": "躲避球",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1309809356237443113",
@@ -41,25 +135,84 @@
       "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
-      "id": "1309714542703677481",
-      "content": "休息日体验了下塔薇，辅助能力很有创造性，类似于百闻牌的书翁开包，可以自主选key牌打出神奇操作(超维一人兼饰鼠鼠魔术师两角)，开大后的双次触发效果也十分强力。\n",
-      "author": "timee_ky",
+      "id": "1309881429869592618",
+      "channel_id": "1131839817982947429",
+      "content": "~~太多滿出來了~~",
+      "author": "nazhigezihk",
       "reactions": 3,
-      "channel": "塔薇..."
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1309758333095510027",
-      "content": "容灾环境里有趣的是增长银钥上限对于塔薇的满开来说似乎不算坏事，充能速度极快有利于多次满开这样。",
-      "author": "timee_ky",
+      "id": "1309888590960132197",
+      "channel_id": "1131839817982947429",
+      "content": "你如果想要玩的舒服 去moom的yt頻道看 他都是用那幾個腳色在打",
+      "author": "pray_unbeliever",
       "reactions": 3,
-      "channel": "塔薇..."
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1309921613919289475",
-      "content": "Tawil - Tawil's damage, shield and heal temporarily increased by 35%. change to ",
-      "author": "annaxxe_",
-      "reactions": 1,
-      "channel": "Overexalt list"
+      "id": "1309908743772962839",
+      "channel_id": "1170692781216378960",
+      "content": "yes",
+      "author": "spacebond.in",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1309945634702491679",
+      "channel_id": "1170692781216378960",
+      "content": "i think there is a bug on yours, it doesnt say Sold out",
+      "author": "madlax",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1309697355339010110",
+      "channel_id": "1173463482503536711",
+      "content": "老婆我愛你",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1309752763449737247",
+      "channel_id": "1180850818509971466",
+      "content": "而且打内战的话还可能被对面回溯掉你回溯活过来的角色<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1309814972280209489",
+      "channel_id": "1180850818509971466",
+      "content": "~~所以我說那個無光之境有考慮出黑潮嗎~~",
+      "author": "ekko9950",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1309984589367738400",
+      "channel_id": "1180850818509971466",
+      "content": "",
+      "author": "ekko9950",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1309899202113048627",
+      "channel_id": "1300659603993923644",
+      "content": "",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1309930958727807068",
+      "channel_id": "1300659603993923644",
+      "content": "",
+      "author": "wolfyy1",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
     }
   ]
 }

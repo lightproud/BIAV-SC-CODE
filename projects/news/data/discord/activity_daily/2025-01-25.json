@@ -1,10 +1,13 @@
 {
   "date": "2025-01-25",
-  "messages": 3174,
+  "messages": 3282,
   "unique_authors": 130,
-  "reactions_total": 185,
-  "attachments": 123,
+  "reactions_total": 192,
+  "attachments": 128,
   "channel_activity": {
+    "🔸ruang-obrolan-indonesia": 23,
+    "🔸traphase": 61,
+    "🔸lore-chat": 24,
     "🔸綜合討論": 295,
     "🔸morimens-game-chat": 2406,
     "🔸剧情交流": 3,
@@ -29,25 +32,25 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "0": 51,
+    "5": 181,
+    "6": 140,
+    "10": 249,
+    "11": 132,
+    "12": 168,
+    "16": 66,
+    "18": 182,
+    "0": 53,
+    "2": 337,
+    "9": 82,
+    "13": 186,
+    "14": 227,
     "1": 100,
-    "2": 335,
     "3": 314,
     "4": 222,
-    "5": 180,
-    "6": 136,
     "7": 187,
     "8": 62,
-    "9": 80,
-    "10": 242,
-    "11": 75,
-    "12": 160,
-    "13": 180,
-    "14": 216,
     "15": 239,
-    "16": 65,
     "17": 33,
-    "18": 175,
     "19": 18,
     "20": 11,
     "21": 48,
@@ -55,9 +58,8 @@
     "23": 15
   },
   "message_types": {
-    "19": 622,
-    "0": 2497,
-    "20": 2
+    "0": 89,
+    "19": 19
   },
   "top_reacted_messages": [
     {
@@ -82,6 +84,14 @@
       "author": "akalanden",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1332778596439429252",
+      "channel_id": "1326453763355185215",
+      "content": "https://www.youtube.com/@MorimensLoreArchive\nim done compiling all the main stor",
+      "author": "maegu",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1332704591610908712",
@@ -206,14 +216,6 @@
       "channel_id": "1170692781216378960",
       "content": "woo",
       "author": "flocke999",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1332640830590287926",
-      "channel_id": "1170692781216378960",
-      "content": "Aurita and tulu's defenseless anus",
-      "author": "satachan",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }

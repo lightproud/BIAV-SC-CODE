@@ -1,10 +1,14 @@
 {
   "date": "2025-01-22",
-  "messages": 5027,
+  "messages": 5394,
   "unique_authors": 105,
-  "reactions_total": 391,
-  "attachments": 191,
+  "reactions_total": 470,
+  "attachments": 205,
   "channel_activity": {
+    "🔸ruang-obrolan-indonesia": 64,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 9,
+    "🔸lore-chat": 293,
     "🔸綜合討論": 287,
     "🔸morimens-game-chat": 3963,
     "🔸한국어-채팅방": 119,
@@ -33,34 +37,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "2": 195,
+    "5": 566,
+    "7": 392,
+    "8": 695,
+    "9": 170,
+    "10": 346,
+    "11": 185,
+    "13": 76,
+    "19": 55,
+    "3": 153,
+    "17": 146,
+    "18": 343,
+    "20": 76,
+    "23": 37,
+    "14": 145,
+    "15": 178,
+    "16": 75,
     "0": 148,
     "1": 221,
-    "2": 193,
-    "3": 151,
     "4": 355,
-    "5": 565,
     "6": 450,
-    "7": 363,
-    "8": 688,
-    "9": 151,
-    "10": 257,
-    "11": 116,
     "12": 294,
-    "13": 37,
-    "14": 63,
-    "15": 162,
-    "16": 74,
-    "17": 145,
-    "18": 342,
-    "19": 50,
-    "20": 73,
     "21": 51,
-    "22": 42,
-    "23": 36
+    "22": 42
   },
   "message_types": {
-    "0": 3827,
-    "19": 1039
+    "19": 92,
+    "0": 275
   },
   "top_reacted_messages": [
     {
@@ -136,6 +140,22 @@
       "channel": "約稿展示 請大家吃飯"
     },
     {
+      "id": "1331571923272073267",
+      "channel_id": "1326453763355185215",
+      "content": "the trinity is based on this\nLovecraft jokingly make a genealogy for the gods",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1331644259819982888",
+      "channel_id": "1326453763355185215",
+      "content": "While under the influence of the hallucinogenic perfume of an alien blossom, one",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1331598504539324416",
       "channel_id": "1131839817982947429",
       "content": "玄學的旺達82了吧",
@@ -165,52 +185,36 @@
       "channel": "【守密人×小蛋糕】纱麻"
     },
     {
-      "id": "1331631798811230302",
-      "channel_id": "1131839817982947429",
-      "content": "打完融災三關5級了",
-      "author": "pray_unbeliever",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1331515968773689404",
-      "channel_id": "1170692781216378960",
-      "content": "📞 <:sleep:1238448786540462130>",
-      "author": "cornonthemacabre_",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1331565323488591894",
-      "channel_id": "1170692781216378960",
-      "content": "I mean sometimes slowing it down is better then blowing your load early",
-      "author": ".galeroar",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1331585244477915166",
-      "channel_id": "1170692781216378960",
-      "content": "<:proud2:1236950158500040764>",
+      "id": "1331520960477532232",
+      "channel_id": "1326453763355185215",
+      "content": "Ryker obviously has Sherlock Holmes element \nHe calls you his Watson and he’s a ",
       "author": "_venush",
       "reactions": 3,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1331596932921032786",
-      "channel_id": "1170692781216378960",
-      "content": "i dont see her on there <:KEKW:629740073977380882>",
-      "author": "cornonthemacabre_",
+      "id": "1331570854844305428",
+      "channel_id": "1326453763355185215",
+      "content": "In Ramona case, her references are from the Dunwich Horror.\nher pale appearance ",
+      "author": "_venush",
       "reactions": 3,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1331598552484413492",
-      "channel_id": "1170692781216378960",
-      "content": "Question: is Pandia viable to play? I think she's cute",
-      "author": "oddeyesight",
+      "id": "1331574099767726202",
+      "channel_id": "1326453763355185215",
+      "content": "L, rebellious daugther becoming caro",
+      "author": ".galeroar",
       "reactions": 3,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1331574721782874123",
+      "channel_id": "1326453763355185215",
+      "content": "Aigis name came from Aegis - the shield of Athena with Medusa head on that",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
     }
   ]
 }

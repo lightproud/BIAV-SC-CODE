@@ -1,10 +1,24 @@
 {
   "date": "2024-11-29",
-  "messages": 36,
-  "unique_authors": 14,
-  "reactions_total": 40,
-  "attachments": 11,
+  "messages": 7513,
+  "unique_authors": 230,
+  "reactions_total": 413,
+  "attachments": 396,
   "channel_activity": {
+    "🔸綜合討論": 347,
+    "🔸阵容构建": 8,
+    "🔸morimens-game-chat": 5846,
+    "🔸剧情交流": 19,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 14,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 52,
+    "🔸chaîne-française": 75,
+    "🔸русский-канал": 410,
+    "🔸phòng-chat-tiếng-việt": 144,
+    "🔸canal-español": 391,
+    "🔸canal-português": 138,
+    "🔸ห้องสนทนาภาษาไทย": 27,
     "V1.7.2.0 停服維護公告": 2,
     "爱意终于普罗维登斯的春天——游戏内部分neta简要整理": 8,
     "电脑端在牌比较多的时候拖动出牌会变更打出其他牌": 3,
@@ -18,30 +32,34 @@
     "原創喚醒體投稿：負日．阿比夏（含相位對弈模式）": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "2": 1,
-    "18": 8,
-    "8": 1,
-    "9": 2,
-    "16": 2,
-    "17": 2,
-    "19": 1,
-    "21": 1,
-    "23": 1,
-    "12": 1,
-    "4": 3,
-    "10": 1,
-    "3": 2,
-    "5": 1,
-    "7": 2,
-    "11": 1,
-    "14": 2,
-    "15": 1,
-    "22": 2
+    "0": 169,
+    "1": 50,
+    "2": 77,
+    "3": 566,
+    "4": 182,
+    "5": 224,
+    "6": 614,
+    "7": 426,
+    "8": 165,
+    "9": 448,
+    "10": 296,
+    "11": 86,
+    "12": 117,
+    "13": 291,
+    "14": 214,
+    "15": 204,
+    "16": 567,
+    "17": 650,
+    "18": 388,
+    "19": 363,
+    "20": 57,
+    "22": 636,
+    "23": 320,
+    "21": 403
   },
   "message_types": {
-    "19": 2,
-    "0": 8
+    "0": 5761,
+    "19": 1716
   },
   "top_reacted_messages": [
     {
@@ -50,6 +68,86 @@
       "author": "flarinsidia",
       "reactions": 21,
       "channel": "爱意终于普罗维登斯的春天——游戏内部分neta简要整理"
+    },
+    {
+      "id": "1312104587863392348",
+      "channel_id": "1170692781216378960",
+      "content": "May the silver key guide us.",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1312088602242453626",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "cwz.io",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312016500936278076",
+      "channel_id": "1131839874132090890",
+      "content": "~~因為大佬會融蝕~~",
+      "author": "pray_unbeliever",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1312093916727611524",
+      "channel_id": "1131839817982947429",
+      "content": "可是明天起床戰爭耶（",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1311952142466023485",
+      "channel_id": "1131839817982947429",
+      "content": "法洛思玩家天选时刻",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312012015740387369",
+      "channel_id": "1131839874132090890",
+      "content": "~~有大佬的角色借為什麼還要自己抽？~~",
+      "author": "harowolf",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1311977618706534460",
+      "channel_id": "1173463482503536711",
+      "content": "你看看收米人敢不敢對瘋女人說神國亡了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1312075468328927242",
+      "channel_id": "1131839817982947429",
+      "content": "上帝為你開了一扇門，就會為你開一扇門",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1312143430910218342",
+      "channel_id": "1131839874132090890",
+      "content": "爬了一下 所以目前混沌塔薇就跟24定位差不多主C嗎？",
+      "author": "._.debby",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1312004128976932864",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "linireo",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1312105849258377477",
@@ -66,46 +164,60 @@
       "channel": "Aomi 的忘郤前夜 Morimens作品角"
     },
     {
-      "id": "1312094014966599731",
-      "content": "刚刚发了100抽，完咯！",
-      "author": "chkevo",
+      "id": "1311977010737713172",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得你該錄製影片",
+      "author": "pray_unbeliever",
       "reactions": 3,
-      "channel": "30号到底还有没有周年庆活"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1311909306345590894",
-      "content": "希望能推出每個月可在商店兌換一次的半回溯道具\n\n半回溯是只把啟靈3以上的角色變回啟靈3，多餘的碎片轉化為同介域的原質樂園，其他資源不回溯\n\n畢竟常駐角色沒有心願",
-      "author": "ekko9950",
+      "id": "1312109256509751412",
+      "channel_id": "1131839817982947429",
+      "content": "100抽两只塔薇ヾ(❀╹◡╹)ﾉﾞ❀~",
+      "author": "shimizusakukoi",
       "reactions": 3,
-      "channel": "請願推出月兌換的半回溯道具"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312177026173767812",
-      "content": "這只是一個拙劣的模仿而已。\n「這只是一個拙劣的模仿而已。」\n\n當他為了追隨首領的腳步，最終成為了另一個首領時，卻忘了他的首領曾說過：「只有愚蠢之人，才會將性命託",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": "原創喚醒體投稿：負日．阿比夏（含相位對弈模式）"
+      "id": "1312118124228902932",
+      "channel_id": "1131839817982947429",
+      "content": "還好啦 7金3塔維",
+      "author": "toweldewulf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1312126658869858446",
-      "content": "奧恩也是一篇早期克蘇魯短篇小說裡，吊到怪魚然後被怪魚吊走的船長名字<:nekook:1200338299559104512>",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "爱意终于普罗维登斯的春天——游戏内部分neta简要整理"
+      "id": "1311921531580059729",
+      "channel_id": "1170692781216378960",
+      "content": "Man is funding this game himself",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1312105657587204098",
-      "content": "校貓，我只是想解一下牌癮，怎麼突然給我發100抽了好恐怖😭",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "30号到底还有没有周年庆活"
+      "id": "1312191625765715978",
+      "channel_id": "1170692781216378960",
+      "content": "I love how the game rewards the player for clearing chapters, very nice",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1312140656751415356",
-      "content": "校貓：我們別的沒有 偷偷來的深夜福利最多\n~~好色喔~~",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "30号到底还有没有周年庆活"
+      "id": "1312197918383538360",
+      "channel_id": "1170692781216378960",
+      "content": "100% the thing that can cause the most problems is how you phrase your sentences",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1312156898086227988",
+      "channel_id": "1300659662311526512",
+      "content": "wenas",
+      "author": "xrucorox",
+      "reactions": 3,
+      "channel": "🔸canal-español"
     }
   ]
 }

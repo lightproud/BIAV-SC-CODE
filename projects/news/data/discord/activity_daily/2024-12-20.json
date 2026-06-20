@@ -1,10 +1,21 @@
 {
   "date": "2024-12-20",
-  "messages": 30,
-  "unique_authors": 6,
-  "reactions_total": 40,
-  "attachments": 11,
+  "messages": 2144,
+  "unique_authors": 106,
+  "reactions_total": 135,
+  "attachments": 127,
   "channel_activity": {
+    "🔸綜合討論": 82,
+    "🔸阵容构建": 47,
+    "🔸morimens-game-chat": 1460,
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 177,
+    "🔸русский-канал": 39,
+    "🔸phòng-chat-tiếng-việt": 18,
+    "🔸canal-español": 56,
+    "🔸canal-português": 221,
+    "🔸ห้องสนทนาภาษาไทย": 6,
     "Wheel List": 2,
     "Morimens loading screen lore compilation": 1,
     "官方周邊建議征集": 8,
@@ -17,24 +28,52 @@
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
-    "14": 3,
-    "15": 7,
-    "21": 1,
-    "1": 1,
-    "4": 5,
-    "6": 2,
-    "11": 2,
-    "0": 1,
-    "16": 3,
-    "19": 1,
-    "10": 2,
-    "9": 1,
-    "22": 1
+    "0": 206,
+    "1": 184,
+    "3": 65,
+    "4": 129,
+    "5": 73,
+    "6": 43,
+    "8": 54,
+    "10": 23,
+    "14": 52,
+    "15": 111,
+    "16": 183,
+    "7": 26,
+    "11": 139,
+    "12": 20,
+    "13": 24,
+    "2": 69,
+    "9": 72,
+    "17": 149,
+    "18": 181,
+    "19": 27,
+    "20": 33,
+    "21": 119,
+    "22": 65,
+    "23": 97
   },
   "message_types": {
-    "0": 3
+    "19": 339,
+    "0": 1775
   },
   "top_reacted_messages": [
+    {
+      "id": "1319589263272181781",
+      "channel_id": "1131839817982947429",
+      "content": "我忘了看1-14的劇情",
+      "author": "920429asd",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319514659195322468",
+      "channel_id": "1131839817982947429",
+      "content": "我的算力大赛都没人参加",
+      "author": "qiamo0664",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1319794331539865691",
       "content": "大清早的剪了個弱智東西出來hhh\n《索瓦爾格自我否定半分鐘》",
@@ -64,18 +103,116 @@
       "channel": "官方周邊建議征集"
     },
     {
-      "id": "1319687598431539327",
-      "content": "<@&1166257943742787615>",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "Ping很大在马来西亚"
+      "id": "1319608133525442583",
+      "channel_id": "1300659580446969918",
+      "content": "Вот реальный дмг кстати а не ваша аурита.И это даже не оверэкзальт(а там разницы",
+      "author": "twilightsparkle163163",
+      "reactions": 6,
+      "channel": "🔸русский-канал"
     },
     {
-      "id": "1319709702539448400",
-      "content": "雖然整體有病 ~~但我還是想要杯子~~",
-      "author": "falst_over_",
+      "id": "1319670088332476537",
+      "channel_id": "1131839817982947429",
+      "content": "可以拿来开银趴",
+      "author": "qiamo0664",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319537362203840543",
+      "channel_id": "1131839817982947429",
+      "content": "已經有人刷過1.5k精通了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319672001471844373",
+      "channel_id": "1131839817982947429",
+      "content": "繁衍最好現在全部開一開",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319524469554942033",
+      "channel_id": "1131839817982947429",
+      "content": "但是算力到一定程度後珈倫歡宴開狂就不會補血了",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319586579848761445",
+      "channel_id": "1131839817982947429",
+      "content": "Huhhhhh",
+      "author": "yukine7473",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319705461452177439",
+      "channel_id": "1131839817982947429",
+      "content": "你的眼睛業障重",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319648122233950219",
+      "channel_id": "1131839874132090890",
+      "content": "宁妃缺群攻又是力量体系必带莱克 宁妃缺生存 带塔薇",
+      "author": "guanzheu1959_53862",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1319659772039004161",
+      "channel_id": "1131839874132090890",
+      "content": "如果只是要打血攻一倍就羊媽，寧，萊克，拉蒙／哈姆",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1319467101471248444",
+      "channel_id": "1170692781216378960",
+      "content": "I am quite sure most of the people who have been here for long can tell you I do",
+      "author": "linireo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1319736267977654333",
+      "channel_id": "1180850818509971466",
+      "content": "這是我自製十三年桌遊的經驗<:sleep:1238448786540462130>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1319737960534642688",
+      "channel_id": "1180850818509971466",
+      "content": "我不清楚",
+      "author": "3421830265_65667",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1319694572791533672",
+      "channel_id": "1131839817982947429",
+      "content": "撒旦退出之後我都沒辦法跟他講話了",
+      "author": "mob1065",
       "reactions": 1,
-      "channel": "彌薩格校貓 你到底想干嘛？"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1319457676748525649",
+      "channel_id": "1170692781216378960",
+      "content": "Ok thanks for the help",
+      "author": "toastowo",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

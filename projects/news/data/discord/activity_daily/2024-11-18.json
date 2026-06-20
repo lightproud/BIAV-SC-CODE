@@ -1,10 +1,24 @@
 {
   "date": "2024-11-18",
-  "messages": 98,
-  "unique_authors": 29,
-  "reactions_total": 96,
-  "attachments": 32,
+  "messages": 11951,
+  "unique_authors": 286,
+  "reactions_total": 914,
+  "attachments": 520,
   "channel_activity": {
+    "🔸綜合討論": 3388,
+    "🔸阵容构建": 52,
+    "🔸morimens-game-chat": 7003,
+    "🔸剧情交流": 474,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 8,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 9,
+    "🔸chaîne-française": 29,
+    "🔸русский-канал": 116,
+    "🔸phòng-chat-tiếng-việt": 231,
+    "🔸canal-español": 493,
+    "🔸ruang-obrolan-indonesia": 34,
+    "🔸ห้องสนทนาภาษาไทย": 6,
     "Relic Tierlist": 1,
     "🎁露比帶著禮包兌換碼來啦~": 3,
     "V1.7.1.0 停服維護公告": 5,
@@ -31,26 +45,34 @@
     "跑不掉 不跑了（原地躺下": 8
   },
   "hourly_activity": {
-    "1": 1,
-    "13": 6,
-    "5": 5,
-    "17": 3,
-    "19": 1,
-    "7": 6,
-    "10": 16,
-    "6": 3,
-    "15": 2,
-    "4": 25,
-    "16": 1,
-    "11": 4,
-    "12": 3,
-    "3": 17,
-    "9": 1,
-    "8": 3,
-    "2": 1
+    "0": 542,
+    "1": 643,
+    "2": 641,
+    "3": 672,
+    "4": 975,
+    "5": 727,
+    "6": 589,
+    "7": 434,
+    "8": 363,
+    "9": 607,
+    "10": 354,
+    "11": 429,
+    "12": 515,
+    "13": 521,
+    "14": 1006,
+    "15": 735,
+    "16": 211,
+    "17": 334,
+    "23": 189,
+    "18": 285,
+    "19": 158,
+    "20": 280,
+    "21": 396,
+    "22": 345
   },
   "message_types": {
-    "0": 1
+    "0": 9346,
+    "19": 2507
   },
   "top_reacted_messages": [
     {
@@ -61,123 +83,156 @@
       "channel": "塔薇..."
     },
     {
-      "id": "1307955544975212614",
-      "content": "希洛我婆\n支持希洛篡位拉蒙娜成為你遊全新看板娘",
-      "author": "ice_storys",
-      "reactions": 5,
-      "channel": "打不過本源朵爾，只好來畫畫"
+      "id": "1308003179316908033",
+      "channel_id": "1131839817982947429",
+      "content": "但预算已经超支了，没办法。",
+      "author": "game.producer.light",
+      "reactions": 21,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307903892410994698",
-      "content": "~~脖子豈是如此不便之物~~",
-      "author": "yolo_mode",
-      "reactions": 4,
-      "channel": "跑不掉 不跑了（原地躺下"
+      "id": "1308057343866699826",
+      "channel_id": "1131839817982947429",
+      "content": "應該會長期擺這個。有興趣加加",
+      "author": "capricorn5042",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307913709972357130",
-      "content": "歪掉了",
+      "id": "1307920508188102666",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "aprohectus",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307926393685803058",
+      "channel_id": "1131839817982947429",
+      "content": "要不要这么逆天",
+      "author": "qiamo0664",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308003956080906280",
+      "channel_id": "1131839817982947429",
+      "content": "故意不作说明。",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307872957066121249",
+      "channel_id": "1170692781216378960",
+      "content": "“Better to tell the true then lie ”That‘s also what I think. We are doing our ut",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1307936802996228198",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "taayoui",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308002292083200024",
+      "channel_id": "1131839817982947429",
+      "content": "下个月不可能。就算复活赛打赢了也要重组团队重新铺开新计划。",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308002851657613312",
+      "channel_id": "1131839817982947429",
+      "content": "如果复活赛打赢。",
+      "author": "game.producer.light",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307905175004119132",
+      "channel_id": "1131839817982947429",
+      "content": "真的送了",
+      "author": "kevin.yienwenst",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307929050056228884",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "qiamo0664",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1307918658600701972",
+      "channel_id": "1131839817982947429",
+      "content": "10抽<:wish:1236951537788649492>",
+      "author": "kevin.yienwenst",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308012287319343154",
+      "channel_id": "1131839817982947429",
+      "content": "我知道，繁衍狂熱漫畫化",
       "author": "ernest_heart",
-      "reactions": 3,
-      "channel": "逼死強迫症"
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307903235629121586",
-      "content": "戈利亞的脖子：（危）",
-      "author": "yolo_mode",
-      "reactions": 3,
-      "channel": "跑不掉 不跑了（原地躺下"
+      "id": "1308012371188645930",
+      "channel_id": "1131839817982947429",
+      "content": "貓老師 繼續支持你們 加油一定要撐過去 後面在衝看看+12命輪",
+      "author": "taayoui",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308014657990037526",
-      "content": "get 我们会尝试修正这个问题",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "萊克 攤牌時刻-衍生卡語音錯誤"
+      "id": "1308032911274020947",
+      "channel_id": "1131839817982947429",
+      "content": "強在玩起來不會膩 連我都不知道這回合要打什麼牌",
+      "author": "ailiduo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1307915629923274894",
-      "content": "省略了一點東西\n準確來講是想看他被揍飛之後在地上吐血的狼狽樣子（好",
-      "author": "yolo_mode",
-      "reactions": 2,
-      "channel": "跑不掉 不跑了（原地躺下"
+      "id": "1308074375257264200",
+      "channel_id": "1131839817982947429",
+      "content": "英文頻還有人在慶幸抽了圖魯",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308066590331240540",
-      "content": "",
-      "author": "ekko9950",
-      "reactions": 1,
-      "channel": "🎁露比帶著禮包兌換碼來啦~"
+      "id": "1308078349498978325",
+      "channel_id": "1131839817982947429",
+      "content": "什麼？小騎士終於變成7米壯漢來病嬌守密人了嗎？",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308119992004382801",
-      "content": "還有異種，現在在維修中",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V1.7.1.0 停服維護公告"
+      "id": "1307869084045676606",
+      "channel_id": "1170692781216378960",
+      "content": "Talking about the game helps more than just spending if you want to help, they n",
+      "author": "pinguimally3689",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1308015948456001548",
-      "content": "Thank you for your support of the game! You are free to use the official materia",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "About official materials usage"
-    },
-    {
-      "id": "1307962781391388745",
-      "content": "塔维变的鼠群冲击，在下一关变成詹金的了，伤害还强制为一，那变的意义在哪",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "这么搞就没意思了"
-    },
-    {
-      "id": "1307926924760186880",
-      "content": "",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "这是什么bug"
-    },
-    {
-      "id": "1307929646519681085",
-      "content": "打出衍生的牌会变成原来的牌进牌库",
-      "author": "sadanshishen",
-      "reactions": 1,
-      "channel": "这是什么bug"
-    },
-    {
-      "id": "1308056540204367912",
-      "content": "",
-      "author": ".galeroar",
-      "reactions": 1,
-      "channel": "2次"
-    },
-    {
-      "id": "1308062091223240777",
-      "content": "剛剛有被這個2次戳到笑點，不過有隱形捲軸可以拉，好像是往下滑一下就可以看到全文",
-      "author": "menta_y_menta",
-      "reactions": 1,
-      "channel": "2次"
-    },
-    {
-      "id": "1308040745961394207",
-      "content": "墨菲主線那套便服其實也很好看，立繪可以直接拿來用",
-      "author": "kamiya246",
-      "reactions": 1,
-      "channel": "其实出不了新角色的话可以卖皮肤啊"
-    },
-    {
-      "id": "1307921351134281739",
-      "content": "前一個是抽獎型的不太想刷吧，但上上次我記得有真的無限印章🤔",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "为什么一周年的活动不如半年年？"
-    },
-    {
-      "id": "1307924971670081557",
-      "content": "半周年的时候是多了一个最后一关，每次扫荡直接掉落印章，比那种抽奖的池子效率高非常非常多",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "为什么一周年的活动不如半年年？"
+      "id": "1307874772713213972",
+      "channel_id": "1170692781216378960",
+      "content": "Ain't anything about death of the game but sometimes we have to remember that th",
+      "author": "izukami",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,23 @@
 {
   "date": "2024-11-25",
-  "messages": 37,
-  "unique_authors": 10,
-  "reactions_total": 49,
-  "attachments": 15,
+  "messages": 2983,
+  "unique_authors": 145,
+  "reactions_total": 212,
+  "attachments": 196,
   "channel_activity": {
+    "🔸綜合討論": 231,
+    "🔸阵容构建": 70,
+    "🔸morimens-game-chat": 1880,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 6,
+    "🔸한국어-채팅방": 83,
+    "🔸chaîne-française": 94,
+    "🔸русский-канал": 53,
+    "🔸phòng-chat-tiếng-việt": 350,
+    "🔸canal-español": 16,
+    "🔸canal-português": 25,
+    "🔸ruang-obrolan-indonesia": 26,
+    "🔸ห้องสนทนาภาษาไทย": 91,
     "命輪保底是不是出了什麼問題": 3,
     "🪲": 2,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
@@ -16,19 +29,34 @@
     "就是嘗試打了篇同人（趕工中（有人告訴我怎麼刪掉會很感謝的": 5
   },
   "hourly_activity": {
-    "14": 8,
-    "4": 2,
-    "13": 2,
-    "3": 6,
-    "15": 1,
-    "16": 4,
-    "0": 1,
-    "6": 1,
-    "8": 11,
-    "9": 1
+    "1": 128,
+    "2": 121,
+    "3": 152,
+    "4": 42,
+    "5": 77,
+    "6": 366,
+    "7": 40,
+    "8": 144,
+    "9": 109,
+    "10": 331,
+    "11": 232,
+    "12": 16,
+    "13": 76,
+    "14": 382,
+    "16": 37,
+    "18": 94,
+    "20": 150,
+    "0": 28,
+    "15": 161,
+    "17": 40,
+    "19": 66,
+    "21": 38,
+    "22": 119,
+    "23": 34
   },
   "message_types": {
-    "0": 5
+    "0": 2367,
+    "19": 579
   },
   "top_reacted_messages": [
     {
@@ -39,6 +67,14 @@
       "channel": "而且非常的不礼貌知道吗"
     },
     {
+      "id": "1310643853065453659",
+      "channel_id": "1131839817982947429",
+      "content": "我獻祭群友的陽壽讓我明天出雙金🙏",
+      "author": "cwz.io",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1310596313162973214",
       "content": "谁家好人半年前的东西今天才发啊！",
       "author": "yingmai_",
@@ -46,11 +82,35 @@
       "channel": "Wow! the cat is very cute！"
     },
     {
+      "id": "1310544099241365564",
+      "channel_id": "1173463482503536711",
+      "content": "~~有沒有可能銀芯被24貓給吃了~~",
+      "author": "foxcatfurry",
+      "reactions": 9,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1310396127975178364",
       "content": "個人覺得還行，沒很明顯，應該算全年齡向\n然後…對，我玩女咪！女咪棒棒！\n\n以下正文\n\n||粗重的呼吸聲在耳旁不斷響起，守密人躺在柔軟的床鋪上，身體還尚未從剛才的",
       "author": "ice_storys",
       "reactions": 8,
       "channel": "霸道戈戈愛上小守咪（第三集）"
+    },
+    {
+      "id": "1310469220546510888",
+      "channel_id": "1131839817982947429",
+      "content": "5771想要陪新手做任务只有两种办法\n一种是叫他开直播或者是看他玩，然后~~帮~~教他打牌\n~~另一种是直接拿他的号来玩~~",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310600867551907851",
+      "channel_id": "1131839817982947429",
+      "content": "当然是迦仑",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1310600551150649425",
@@ -67,32 +127,92 @@
       "channel": "超絕校貓畫像"
     },
     {
-      "id": "1310456146708140132",
-      "content": "手牌滿了，但是沒滿\n還有這期融災第五波的刷新也佔據一個選項這點先不說，最後一個發現的回合居然有兩個選項都是刷新是什麼幻術，肯定是🪲",
-      "author": "ernest_heart",
+      "id": "1310536335160774717",
+      "channel_id": "1131839817982947429",
+      "content": "叫校貓把這隻角色刪掉",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310602097263378482",
+      "channel_id": "1131839817982947429",
+      "content": "终于给我找到机会用这个梗了<:proud:1239910976200114186>",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310602956483199036",
+      "channel_id": "1131839817982947429",
+      "content": "~~如果不是有生命滿條強迫症 我寧可玩五場深潛~~",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310540032649728070",
+      "channel_id": "1131839874132090890",
+      "content": "如果真的普通抽全丟巨刃，10天就能+12",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1310541034513629184",
+      "channel_id": "1131839874132090890",
+      "content": "44444(X)",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1310614257385214014",
+      "channel_id": "1173463482503536711",
+      "content": "~~銀芯被貓24吃了（造謠~~",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1310468742958026814",
+      "channel_id": "1174983699935277147",
+      "content": "Lucky thing after math class <:Coffee:1240919421791375380>",
+      "author": "nwc.kzscr",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1310572758694101053",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "otonos",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1310412348795654246",
+      "channel_id": "1300659662311526512",
+      "content": "Whooo consegui a 24 y me quedan como 15k gemas!",
+      "author": ".maelh",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1310466673865785374",
+      "channel_id": "1300659662311526512",
+      "content": "Morimens según el archivo.",
+      "author": "ezpymo",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1310447205483544657",
+      "channel_id": "1131839817982947429",
+      "content": "9-1真的",
+      "author": "arr5721",
       "reactions": 2,
-      "channel": "🪲"
-    },
-    {
-      "id": "1310520020182241341",
-      "content": "這只是低端操作",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "霸道戈戈愛上小守咪（第三集）"
-    },
-    {
-      "id": "1310523535336407061",
-      "content": "咱們戈利亞怎麼變成這種樣子了",
-      "author": "linlin9961314",
-      "reactions": 1,
-      "channel": "霸道戈戈愛上小守咪（第三集）"
-    },
-    {
-      "id": "1310522240692912130",
-      "content": "還有血鏈版本的",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "超絕校貓畫像"
+      "channel": "🔸綜合討論"
     }
   ]
 }

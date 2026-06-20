@@ -1,10 +1,11 @@
 {
   "date": "2025-01-07",
-  "messages": 6435,
+  "messages": 6441,
   "unique_authors": 169,
   "reactions_total": 649,
-  "attachments": 208,
+  "attachments": 209,
   "channel_activity": {
+    "🔸ห้องสนทนาภาษาไทย": 6,
     "🔸綜合討論": 592,
     "🔸阵容构建": 28,
     "🔸morimens-game-chat": 5154,
@@ -33,12 +34,12 @@
     "宝宝们": 4
   },
   "hourly_activity": {
+    "5": 155,
+    "6": 38,
     "1": 88,
     "2": 117,
     "3": 90,
     "4": 194,
-    "5": 153,
-    "6": 34,
     "7": 38,
     "8": 58,
     "9": 191,
@@ -59,8 +60,8 @@
     "21": 90
   },
   "message_types": {
-    "0": 4603,
-    "19": 1632
+    "0": 3,
+    "19": 3
   },
   "top_reacted_messages": [
     {

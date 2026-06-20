@@ -1,10 +1,22 @@
 {
   "date": "2024-11-13",
-  "messages": 63,
-  "unique_authors": 10,
-  "reactions_total": 76,
-  "attachments": 7,
+  "messages": 3387,
+  "unique_authors": 128,
+  "reactions_total": 223,
+  "attachments": 135,
   "channel_activity": {
+    "🔸綜合討論": 573,
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 2320,
+    "🔸剧情交流": 129,
+    "🔸相位对弈": 3,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 19,
+    "🔸русский-канал": 80,
+    "🔸phòng-chat-tiếng-việt": 106,
+    "🔸canal-español": 85,
+    "🔸canal-português": 4,
+    "🔸ruang-obrolan-indonesia": 1,
     "Posse List": 1,
     "Tawii Translation": 4,
     "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 44,
@@ -15,20 +27,34 @@
     "我們約定過的，拉蒙娜。": 4
   },
   "hourly_activity": {
-    "7": 1,
-    "15": 5,
-    "23": 1,
-    "10": 40,
-    "11": 4,
-    "13": 3,
-    "18": 1,
-    "5": 3,
-    "12": 1,
-    "16": 4
+    "1": 106,
+    "2": 48,
+    "4": 16,
+    "6": 53,
+    "7": 123,
+    "8": 54,
+    "9": 43,
+    "10": 451,
+    "11": 379,
+    "12": 279,
+    "13": 268,
+    "14": 386,
+    "15": 221,
+    "16": 77,
+    "17": 29,
+    "18": 115,
+    "19": 41,
+    "23": 138,
+    "0": 267,
+    "3": 48,
+    "5": 37,
+    "20": 109,
+    "21": 60,
+    "22": 39
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "19": 532,
+    "0": 2792
   },
   "top_reacted_messages": [
     {
@@ -60,11 +86,27 @@
       "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
     },
     {
+      "id": "1306116529452220446",
+      "channel_id": "1131839817982947429",
+      "content": "帶充電寶跟力量輔讓鯊魚一直超✅（限）",
+      "author": "arr5721",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1306200568447893534",
       "content": "看看週年慶流水和steam推廣成果看看",
       "author": "gd_prawl",
       "reactions": 6,
       "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
+    },
+    {
+      "id": "1306208753644732426",
+      "channel_id": "1131839817982947429",
+      "content": "說不定r18再出發會爆紅😏",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1306131998846222378",
@@ -74,46 +116,100 @@
       "channel": "死亡已經迫近，消亡已經開始"
     },
     {
-      "id": "1306201402149965905",
-      "content": "英文區應該因為時差沒什麼討論",
-      "author": "gd_prawl",
-      "reactions": 2,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
+      "id": "1306090755571580998",
+      "channel_id": "1173463482503536711",
+      "content": "我在想是不是原本想把以葛蘭放在跟班的位置負責背叛，後來發現這樣不夠||男同||刀所以換了個更香的無臉人",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
     },
     {
-      "id": "1306202034134843442",
-      "content": "還在糾結苦咒縛打擊給24能多上一點毒",
+      "id": "1306355542700327063",
+      "channel_id": "1300659662311526512",
+      "content": "holaaaa",
+      "author": "axelccc",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1306209021514088498",
+      "channel_id": "1131839817982947429",
+      "content": "什麼?正經遊戲不做居然做R18？！\n（看了一眼羊媽PV）\n\n〔〔拿走我的錢，現在！〕〕",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306209288007581716",
+      "channel_id": "1131839817982947429",
+      "content": "審核：我也愛看",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306210476115496980",
+      "channel_id": "1131839817982947429",
+      "content": "我不確定\n他這意思要我入他嗎?",
+      "author": ".moon_leaf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306222079099801660",
+      "channel_id": "1131839817982947429",
+      "content": "當務之急是跟你||探究世界的真相||",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306225749933428837",
+      "channel_id": "1131839817982947429",
+      "content": "我巨刃已经满了<:wish:1236951537788649492>",
+      "author": "sense25.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306228744729530400",
+      "channel_id": "1131839817982947429",
+      "content": "~~周年能活的話能不能來個繁衍狂熱2.0和皮膚~~",
+      "author": "yiwu2015",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306229001806811188",
+      "channel_id": "1131839817982947429",
+      "content": "皮膚感覺約稿費用會很危",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306072098317271061",
+      "channel_id": "1131839817982947429",
+      "content": "可能校貓怕上班電腦點進去剛好路過的主管看到了無碼...",
+      "author": "pray_unbeliever",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306164339295912007",
+      "channel_id": "1131839817982947429",
+      "content": "https://youtu.be/fVVvrtcR3hs?si=Upx1u8pLBfUDySWq",
       "author": "ernest_heart",
       "reactions": 2,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1306201213490040864",
-      "content": "中文区哀鸿遍野<:Coffee:1240919421791375380>",
-      "author": "cs001092",
-      "reactions": 1,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
-    },
-    {
-      "id": "1306201509892984903",
-      "content": "他們總是在討論米粒深海隊\n應該要等實機出來",
-      "author": "gd_prawl",
-      "reactions": 1,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
-    },
-    {
-      "id": "1306202096592490507",
-      "content": "超好笑這裡根本災難區😂😂",
-      "author": "taayoui",
-      "reactions": 1,
-      "channel": "⏳穿越窮極之門，世界的終極奧秘將對你敞開。"
-    },
-    {
-      "id": "1306294540709265429",
-      "content": "上飛機之前剪一下。！",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "我們約定過的，拉蒙娜。"
+      "id": "1306208108984668251",
+      "channel_id": "1131839817982947429",
+      "content": "要死不活的，不如早點解脫，課一點當成單機玩也值得了",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

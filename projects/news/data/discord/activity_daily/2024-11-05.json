@@ -1,10 +1,22 @@
 {
   "date": "2024-11-05",
-  "messages": 65,
-  "unique_authors": 20,
-  "reactions_total": 45,
-  "attachments": 8,
+  "messages": 2670,
+  "unique_authors": 133,
+  "reactions_total": 227,
+  "attachments": 159,
   "channel_activity": {
+    "🔸綜合討論": 210,
+    "🔸阵容构建": 54,
+    "🔸morimens-game-chat": 1362,
+    "🔸剧情交流": 31,
+    "🔸相位对弈": 15,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 107,
+    "🔸русский-канал": 87,
+    "🔸phòng-chat-tiếng-việt": 52,
+    "🔸canal-español": 672,
+    "🔸canal-português": 1,
+    "🔸ห้องสนทนาภาษาไทย": 11,
     "V1.6.5.1 在線維護公告": 7,
     "蹈海野貓雜技團（釘選有目錄）": 2,
     "是否考慮為同調率增加功能": 10,
@@ -24,26 +36,34 @@
     "画一半被可爱到了，遂": 2
   },
   "hourly_activity": {
-    "4": 6,
-    "5": 9,
-    "6": 3,
-    "11": 3,
-    "7": 7,
-    "8": 1,
-    "9": 1,
-    "13": 5,
-    "15": 6,
-    "14": 7,
-    "16": 3,
-    "3": 6,
-    "19": 1,
-    "23": 1,
-    "2": 2,
-    "12": 3,
-    "1": 1
+    "0": 78,
+    "1": 72,
+    "2": 75,
+    "4": 168,
+    "6": 19,
+    "7": 91,
+    "8": 45,
+    "10": 45,
+    "11": 95,
+    "12": 96,
+    "13": 131,
+    "14": 183,
+    "15": 100,
+    "17": 252,
+    "18": 277,
+    "19": 132,
+    "9": 99,
+    "16": 185,
+    "3": 198,
+    "5": 44,
+    "20": 88,
+    "21": 31,
+    "22": 19,
+    "23": 147
   },
   "message_types": {
-    "0": 9
+    "0": 2093,
+    "19": 512
   },
   "top_reacted_messages": [
     {
@@ -54,11 +74,35 @@
       "channel": "打印机施工完成"
     },
     {
+      "id": "1303348272949100627",
+      "channel_id": "1173463482503536711",
+      "content": "已經迫不及待看到N對萊克的調情互動語音跟繁衍狂熱了",
+      "author": "yizilven",
+      "reactions": 14,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1303186293718777971",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/wuthering-waves-the-shorekeeper-sorekeeper-ikuyo-dgosu-gi",
+      "author": "skykirisame",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1303372169849339985",
       "content": "忘卻除了塔薇，未來還有可能要出新角嗎?",
       "author": "moyan0454",
       "reactions": 9,
       "channel": "除了塔薇，還有要出新角嗎?"
+    },
+    {
+      "id": "1303441104653385738",
+      "channel_id": "1173463482503536711",
+      "content": "其實這兩張的n醬沒有怪物建模那麼高大\n~~有點澀澀的🥵~~",
+      "author": "kong760",
+      "reactions": 8,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1303256503175876648",
@@ -68,6 +112,38 @@
       "channel": "画一半被可爱到了，遂"
     },
     {
+      "id": "1303365487740321843",
+      "channel_id": "1131839817982947429",
+      "content": "🤡",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303271774066311190",
+      "channel_id": "1173463482503536711",
+      "content": "爵士(被勒死型態)",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1303293070086897665",
+      "channel_id": "1173463482503536711",
+      "content": "把養父也給睡了?(我再說甚麼)",
+      "author": "andy1123",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1303334465115787276",
+      "channel_id": "1173463482503536711",
+      "content": "3大質體之二的塔薇羊媽都進池了，讓過的最好的N也過來不過分吧",
+      "author": "yizilven",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1303393668169859205",
       "content": "這是好事吧，我記得沒有造物跟命鑰針對 “ 打出增益 ”，但 “ 打出症狀 ” 倒滿多的",
       "author": "r3pk1r0nca",
@@ -75,25 +151,76 @@
       "channel": "为什么神国幻影是症状卡"
     },
     {
-      "id": "1303390219180970076",
-      "content": "彌利特色吧\n有帶通信、記憶症候能吃到紅利\n\n但打寧妃時 請在她覺醒後3覺，會有一張被寧妃轉成中毒<:cry:1239910167668326480>",
-      "author": "_buqi",
-      "reactions": 3,
-      "channel": "为什么神国幻影是症状卡"
+      "id": "1303187098852917318",
+      "channel_id": "1131839817982947429",
+      "content": "你是豆妈",
+      "author": "qiamo0664",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1303320906109554708",
+      "id": "1303209326701182986",
+      "channel_id": "1170692781216378960",
+      "content": "*Secret Keeper's throat starts to swell up and prevent them from breathing*",
+      "author": "marciethevillain",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1303218139449790505",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "tanlangjingyue",
-      "reactions": 2,
-      "channel": "V1.6.5.1 在線維護公告"
+      "author": "yaoshidoppa",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1303256173557972995",
-      "content": "~~讓校工們看看這絕妙的想法~~",
+      "id": "1303395058703138826",
+      "channel_id": "1170692781216378960",
+      "content": "feel very sorry for this",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1303286588322873364",
+      "channel_id": "1173463482503536711",
+      "content": "~~學長要是真的復活又能撈一波錢~~",
       "author": "ice_storys",
-      "reactions": 1,
-      "channel": "是否考慮為同調率增加功能"
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1303302439004274728",
+      "channel_id": "1180850818509971466",
+      "content": "尤其毒队，她毒卡都打完了，你直接装上开狂净化，对面都可能直接投了<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1303443263125979216",
+      "channel_id": "1300659662311526512",
+      "content": "Yo con mis humildes 4m",
+      "author": "yaoshidoppa",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1303308060827324487",
+      "channel_id": "1131839817982947429",
+      "content": "~~畢竟早期沒這功能，後面某次更新才加，而且沒教學~~",
+      "author": ".moon_leaf",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1303309940844138510",
+      "channel_id": "1131839817982947429",
+      "content": "混沌的特性只有銀鑰開兩次跟充狂氣",
+      "author": "andy1123",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,23 @@
 {
   "date": "2024-11-21",
-  "messages": 95,
-  "unique_authors": 12,
-  "reactions_total": 82,
-  "attachments": 24,
+  "messages": 3209,
+  "unique_authors": 165,
+  "reactions_total": 281,
+  "attachments": 206,
   "channel_activity": {
+    "🔸綜合討論": 481,
+    "🔸morimens-game-chat": 1929,
+    "🔸剧情交流": 121,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 20,
+    "🔸한국어-채팅방": 24,
+    "🔸chaîne-française": 180,
+    "🔸русский-канал": 182,
+    "🔸phòng-chat-tiếng-việt": 62,
+    "🔸canal-español": 85,
+    "🔸canal-português": 12,
+    "🔸ruang-obrolan-indonesia": 15,
+    "🔸ห้องสนทนาภาษาไทย": 2,
     "Chapter 9": 23,
     "🎁露比帶著禮包兌換碼來啦~": 1,
     "V1.7.1.2 在線維護公告": 2,
@@ -21,27 +34,34 @@
     "群山的呼唤": 2
   },
   "hourly_activity": {
-    "3": 18,
-    "5": 6,
-    "13": 11,
-    "14": 16,
-    "2": 1,
-    "11": 4,
-    "12": 10,
-    "15": 2,
-    "16": 5,
-    "17": 13,
-    "18": 2,
-    "20": 1,
-    "9": 1,
-    "10": 1,
-    "1": 1,
-    "0": 1,
-    "7": 2
+    "0": 29,
+    "1": 95,
+    "2": 179,
+    "3": 199,
+    "4": 143,
+    "5": 77,
+    "6": 185,
+    "7": 129,
+    "8": 116,
+    "9": 91,
+    "10": 53,
+    "11": 155,
+    "12": 117,
+    "13": 225,
+    "14": 76,
+    "15": 243,
+    "16": 365,
+    "17": 206,
+    "18": 67,
+    "23": 118,
+    "19": 64,
+    "20": 87,
+    "21": 163,
+    "22": 27
   },
   "message_types": {
-    "0": 19,
-    "19": 4
+    "19": 614,
+    "0": 2500
   },
   "top_reacted_messages": [
     {
@@ -66,11 +86,99 @@
       "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
+      "id": "1308953600776470570",
+      "channel_id": "1131839817982947429",
+      "content": "请问被骗的人是谁呢？我想跟他互关。🤔",
+      "author": "fengtengjayden9754",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308997189036670976",
+      "channel_id": "1131839817982947429",
+      "content": "然後突然被砸醒\n回神才發現自己回到過去的時間線了，立刻帶著前世經歷光速下黑池找塔薇速通",
+      "author": "gd_prawl",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309087148682510397",
+      "channel_id": "1131839817982947429",
+      "content": "黑潮提狂門檻等塔薇充好一管歡愉已經幫三個人滿狂了",
+      "author": "kong760",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309170367474044980",
+      "channel_id": "1173463482503536711",
+      "content": "~~懂了 成神後因為放不下所以流淚 靈魂誕生就是這樣來的~~",
+      "author": "lemoncandy25",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1309147626691756123",
       "content": "守密人你好：\n       彌薩格大學校務處將於11月21日21:30(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶",
       "author": "morimensstaff02",
       "reactions": 6,
       "channel": "V1.7.1.2 在線維護公告"
+    },
+    {
+      "id": "1309157538687615008",
+      "channel_id": "1131839817982947429",
+      "content": "理想中的塔薇：星酒印的乱七八糟辅助卡\n现实的塔薇：星酒四翼/六翼，鲨！",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1308965428823064616",
+      "channel_id": "1180850818509971466",
+      "content": "你又沒給他什麼好處\n憑什麼要他讓",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1309070407424282674",
+      "channel_id": "1180850818509971466",
+      "content": "為啥不是先想想自已怎麼輸的",
+      "author": "ekko9950",
+      "reactions": 5,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1308996429137711126",
+      "channel_id": "1131839817982947429",
+      "content": "創造一個沒有自己的世界陷入沉睡\n||然後被不知道為啥恢復記憶的拉蒙娜用朵爾的作業砸醒||",
+      "author": "pray_unbeliever",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309156847529496656",
+      "channel_id": "1131839817982947429",
+      "content": "自古混輔限皆是C",
+      "author": "jackpot_7",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1309248098404667402",
+      "channel_id": "1173463482503536711",
+      "content": "||一定是那女守密人，她把大哥打至跪地。可能是迫大哥跟她回去做🌟😠🌰呀！||",
+      "author": "07_li",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1309064223875272704",
+      "channel_id": "1180850818509971466",
+      "content": "沒想過能看到這種驚天發言",
+      "author": ".moon_leaf",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1309155308907528254",
@@ -80,67 +188,36 @@
       "channel": "【梗图】堆点我P过的梗图"
     },
     {
-      "id": "1309206204777496636",
-      "content": "我们正在处理 非常抱歉！",
-      "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "戰鬥失敗的退出有問題"
-    },
-    {
-      "id": "1309162111628214342",
-      "content": "不是梗图单纯是我填完表没地发了(附原表)，希望我明天一觉醒了还在频道里<:cry:1239910167668326480>",
-      "author": "yingmai_",
-      "reactions": 3,
-      "channel": "【梗图】堆点我P过的梗图"
-    },
-    {
-      "id": "1308992154093228092",
-      "content": "Then create Mythag together",
+      "id": "1308993500729315399",
+      "channel_id": "1131839817982947429",
+      "content": "那9-3落地戰打N",
       "author": "gd_prawl",
-      "reactions": 2,
-      "channel": "Chapter 9"
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308997774683148360",
-      "content": "HVGX-HLDX-QKKN\nQKBQ-SSDG-JZYU\nDC5000\nSILVERKEY\nCATSGIFT",
-      "author": ".2.718281828",
-      "reactions": 2,
-      "channel": "🎁露比帶著禮包兌換碼來啦~"
+      "id": "1309022605315149824",
+      "channel_id": "1131839817982947429",
+      "content": "這是什麼遊戲內外同步的4D體驗嗎<:flop:1236937860922343466>",
+      "author": ".weiyu",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1309156409299963985",
-      "content": "卡在戰鬥畫面無法點選，重登進去兩次長這樣",
-      "author": "kong760",
-      "reactions": 2,
-      "channel": "戰鬥失敗的退出有問題"
+      "id": "1309038435641589800",
+      "channel_id": "1131839817982947429",
+      "content": "可以不选的吗?",
+      "author": "aprohectus",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1308999944035897425",
-      "content": "Reasonable",
-      "author": "gd_prawl",
-      "reactions": 1,
-      "channel": "Chapter 9"
-    },
-    {
-      "id": "1309140272256516158",
-      "content": "但錢全被血希用光了",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "請願本源朵爾進典藏館以及實裝上線"
-    },
-    {
-      "id": "1309184904113815675",
-      "content": "重登還重載了還是這樣\n有什麼說法嗎\n是在活動希洛那關戰鬥退出後變這樣的",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "戰鬥失敗的退出有問題"
-    },
-    {
-      "id": "1308946805047689227",
-      "content": "我们会研究一下这个问题 感谢",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "塔薇的「通曉萬物之理」沒有觸發減費效果"
+      "id": "1309069796335161384",
+      "channel_id": "1131839817982947429",
+      "content": "~~可以祈禱客服手抖把普抽打成100普抽~~",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

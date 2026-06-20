@@ -1,10 +1,12 @@
 {
   "date": "2025-01-29",
-  "messages": 1996,
+  "messages": 2266,
   "unique_authors": 139,
-  "reactions_total": 106,
-  "attachments": 95,
+  "reactions_total": 115,
+  "attachments": 98,
   "channel_activity": {
+    "🔸traphase": 168,
+    "🔸lore-chat": 102,
     "🔸綜合討論": 331,
     "🔸阵容构建": 48,
     "🔸morimens-game-chat": 1411,
@@ -22,34 +24,34 @@
     "aomi's morimens fan content corner (english ver.) 🎨": 1
   },
   "hourly_activity": {
-    "0": 35,
-    "1": 42,
-    "2": 78,
-    "3": 71,
-    "4": 40,
-    "5": 97,
-    "6": 26,
-    "7": 160,
-    "8": 114,
-    "9": 99,
-    "10": 90,
-    "11": 147,
-    "12": 80,
-    "13": 143,
-    "14": 74,
+    "0": 132,
+    "1": 71,
+    "2": 101,
+    "3": 79,
+    "4": 44,
+    "5": 100,
+    "6": 28,
+    "7": 161,
+    "8": 116,
+    "22": 8,
+    "9": 101,
+    "10": 98,
+    "11": 167,
+    "12": 102,
+    "13": 174,
+    "14": 76,
+    "16": 143,
+    "17": 220,
+    "19": 75,
+    "20": 26,
+    "21": 12,
     "15": 85,
-    "16": 138,
-    "17": 219,
     "18": 94,
-    "19": 73,
-    "23": 53,
-    "20": 22,
-    "21": 10,
-    "22": 6
+    "23": 53
   },
   "message_types": {
-    "0": 1569,
-    "19": 418
+    "19": 49,
+    "0": 221
   },
   "top_reacted_messages": [
     {
@@ -99,6 +101,22 @@
       "author": "nemu_s_t_a_r",
       "reactions": 3,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1334133300394197074",
+      "channel_id": "1326453763355185215",
+      "content": "Side note, as a proof that spoilers aren't always bad: I know enough about Tulu ",
+      "author": "oddeyesight",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1334133302830956577",
+      "channel_id": "1326453763355185215",
+      "content": "SoreL as per usual\nI'm trynna get chapter 7 done today tbh",
+      "author": "roto_rooster",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1334004712479129660",
@@ -165,52 +183,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1333959143605665853",
-      "channel_id": "1131839817982947429",
-      "content": "愿您蛇年快乐",
-      "author": "fengtengjayden9754",
+      "id": "1333993865501212703",
+      "channel_id": "1326453691527594035",
+      "content": "and I can't think of a way to improve it because the core of Ogier Steadfast is ",
+      "author": "mengluo",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸traphase"
     },
     {
-      "id": "1333959769890750594",
-      "channel_id": "1131839817982947429",
-      "content": "我的汉语还是这么生硬（",
-      "author": "fengtengjayden9754",
+      "id": "1334101710884569130",
+      "channel_id": "1326453763355185215",
+      "content": "And its definitely said that they hate all the lessons",
+      "author": "insigible",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1333974226545279008",
-      "channel_id": "1131839817982947429",
-      "content": "开玩笑的啦<:cute:1239911255121068082> 也祝你新年快乐,新的一年华文能多多进步<:rose1:1234798154000633949>",
-      "author": "yang015148",
+      "id": "1334121154432073768",
+      "channel_id": "1326453763355185215",
+      "content": "at least no one needed to nurse keeper like an actual infant",
+      "author": "itsmemiki",
       "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸lore-chat"
     },
     {
-      "id": "1333974731438952542",
-      "channel_id": "1131839817982947429",
-      "content": "就算过新年大家也要努力爆校猫银芯喔<:wish:1236951537788649492>",
-      "author": "yang015148",
+      "id": "1334153863330136124",
+      "channel_id": "1326453763355185215",
+      "content": "curses, means I aint doin it enough",
+      "author": "al_leyway",
       "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1333985531088080976",
-      "channel_id": "1131839817982947429",
-      "content": "邮箱发了10抽，估计是没有兑换码了",
-      "author": "sense25.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1334058637378850826",
-      "channel_id": "1131839817982947429",
-      "content": "血希還好，畢竟血希單張的輸出很高，而且血希沒開超限的話能輸出的牌也不多，她可以繼續當她的超模大C\n慘的是塔薇跟尤烏，前者不必多說，後者這遊戲光是回合抽牌五張，以",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
+      "channel": "🔸lore-chat"
     }
   ]
 }
