@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-19T22:07:52.004857+00:00",
+  "archived_at": "2026-06-20T00:02:10.644098+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] good game, pretty art",
@@ -44,6 +44,50 @@
         "playtime_forever": 13,
         "votes_up": 0,
         "timestamp_created": 1781900838
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] pog",
+      "summary": "pog",
+      "source": "steam_review",
+      "time": "2026-06-19T21:59:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198915767922/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198915767922",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4470,
+        "votes_up": 0,
+        "timestamp_created": 1781906387
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] soo fun and vv beginner friendly imo :p",
+      "summary": "soo fun and vv beginner friendly imo :p",
+      "source": "steam_review",
+      "time": "2026-06-19T21:02:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199842226166/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199842226166",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 859,
+        "votes_up": 0,
+        "timestamp_created": 1781902957
       },
       "lang": "",
       "platform_region": "global"
