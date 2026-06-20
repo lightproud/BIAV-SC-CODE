@@ -42,10 +42,7 @@ from aggregator_collectors import (
     fetch_taptap, fetch_youtube,
 )
 import news_common  # 哨兵文件摘要脱敏（H3）
-
-
-# Core sources whose failure must surface a non-zero exit (§4.2 R1：任一核心源失败即整次失败)。
-CORE_SOURCES = {'reddit', 'bilibili', 'taptap'}
+from sources import R1_HARD_FAIL_SOURCES  # §4.2 R1 硬失败源（单一真相源，sources.py）
 
 # H9: 失败哨兵文件。aggregator 直接 SystemExit(1) 会让 update-news.yml 跳过后续
 # collect_global/split/archive/commit 步骤，成功源数据随 runner 销毁丢失。改为：
@@ -142,7 +139,7 @@ def run():
                         except Exception as pw_e:
                             logger.warning(f'{name} Playwright fallback failed: {pw_e}')
             # §4.2 R1: 核心源崩溃且未被 fallback 救回 → 记为整次失败
-            if source_id in CORE_SOURCES and not recovered:
+            if source_id in R1_HARD_FAIL_SOURCES and not recovered:
                 core_failures.append((source_id, str(e)))
 
     # Additional Playwright-only sources (no API equivalent)
@@ -218,9 +215,7 @@ def run():
                 'summary': '暂无最新动态。',
                 'news': [],
             }
-            OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-            with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-                json.dump(output, f, ensure_ascii=False, indent=2)
+            news_common.dump_json_atomic(OUTPUT_PATH, output)
         # Signal failure so CI surfaces the empty run (lesson #2). Existing data
         # is preserved above; the sentinel file lets the workflow alert at the
         # end without skipping the remaining collection/archive steps (H9).
@@ -237,9 +232,7 @@ def run():
         'news': unique_news,
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+    news_common.dump_json_atomic(OUTPUT_PATH, output)
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
 
