@@ -118,13 +118,14 @@ class TestFailureAggregation(unittest.TestCase):
         names mapped through NAME_TO_SOURCE_ID.
         """
         # Map display name → global_collectors attribute used by the fetcher list.
+        # ARCH-01 收敛（decisions.md 2026-06-20）：reddit/bilibili/discord 已移出 GC 编排
+        # （归 AC / archiver），故不在此映射；youtube 为 GC 保留的核心源。
         attr_by_name = {
-            "Bilibili": "fetch_bilibili", "Reddit": "fetch_reddit",
             "TapTap": "fetch_taptap", "Weibo": "fetch_weibo",
             "App Store": "fetch_appstore_reviews", "Pixiv": "fetch_pixiv",
             "Note.com": "fetch_note_com", "Ruliweb": "fetch_ruliweb",
             "StopGame": "fetch_stopgame", "搜狗微信": "fetch_weixin",
-            "YouTube": "fetch_youtube", "Discord API": "fetch_discord",
+            "YouTube": "fetch_youtube",
             "Bahamut": "fetch_bahamut",
             "Arca.live": "fetch_arca_live", "Google Play": "fetch_google_play",
             "Twitter": "fetch_twitter",
@@ -138,18 +139,18 @@ class TestFailureAggregation(unittest.TestCase):
         self.addCleanup(lambda: [p.stop() for p in patches])
 
     def test_core_failure_recorded(self):
-        # A core source (bilibili) raising must land in core_failures.
+        # A core source (youtube, GC 保留的核心源) raising must land in core_failures.
         def boom():
-            raise RuntimeError("bilibili down")
+            raise RuntimeError("youtube down")
 
         self._patch_fetchers({
-            "Bilibili": boom,
-            "Reddit": lambda: [_item("r", "https://r/1")],
+            "YouTube": boom,
+            "Twitter": lambda: [_item("t", "https://t/1")],
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
         sources = {s for s, _ in core_failures}
-        self.assertIn("bilibili", sources)
-        self.assertTrue(any("bilibili down" in err for _, err in core_failures))
+        self.assertIn("youtube", sources)
+        self.assertTrue(any("youtube down" in err for _, err in core_failures))
 
     def test_core_failure_propagates_nonzero_exit(self):
         # main() must exit non-zero when a core source fails (§4.2 R1),
@@ -178,7 +179,7 @@ class TestFailureAggregation(unittest.TestCase):
 
         self._patch_fetchers({
             "Zhihu": boom,
-            "Reddit": lambda: [_item("r", "https://r/1")],
+            "Twitter": lambda: [_item("t", "https://t/1")],
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
@@ -189,8 +190,8 @@ class TestFailureAggregation(unittest.TestCase):
         # 部分核心源（如 taptap）本就低频长期 0，硬失败会让管线永久非零退出。
         # 仅「抛异常」的核心源才进 core_failures（见 test_core_failure_recorded）。
         self._patch_fetchers({
-            "Reddit": lambda: [_item("r", "https://r/1")],
-            # Bilibili / TapTap 等核心源默认返回 []（空）→ 只告警，不入 core_failures
+            "Twitter": lambda: [_item("t", "https://t/1")],
+            # TapTap / YouTube 等核心源默认返回 []（空）→ 只告警，不入 core_failures
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
@@ -199,13 +200,13 @@ class TestFailureAggregation(unittest.TestCase):
     def test_merge_order_deterministic(self):
         # Concurrent collection must merge in a stable, engagement-sorted order
         # regardless of which thread finishes first.
-        def reddit():
+        def twitter():
             return [{"title": "low", "url": "https://x/low", "engagement": 5}]
 
         def weibo():
             return [{"title": "high", "url": "https://x/high", "engagement": 50}]
 
-        self._patch_fetchers({"Reddit": reddit, "Weibo": weibo})
+        self._patch_fetchers({"Twitter": twitter, "Weibo": weibo})
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
         merged = collect_global.merge_and_dedup([], items, apply_recency_filter=False)
