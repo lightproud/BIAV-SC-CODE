@@ -3,8 +3,8 @@
     "purpose": "剧情单元 -> 关卡组",
     "matching": "组名归一化后精确等于单元短名",
     "limitation": "Stage/StageGroup 无外键,仅到关卡组层级",
-    "matched_groups": 66,
-    "covered_units": 28,
+    "matched_groups": 69,
+    "covered_units": 29,
     "generated": "2026-06-21"
   },
   "by_unit": {
@@ -295,6 +295,23 @@
         "group_id": 58906,
         "name": "终末交响曲",
         "type": "调查困难"
+      }
+    ],
+    "调查行动第9章「长梦尽时」": [
+      {
+        "group_id": 67785,
+        "name": "长梦尽时",
+        "type": "调查困难"
+      },
+      {
+        "group_id": 67786,
+        "name": "长梦尽时",
+        "type": "调查"
+      },
+      {
+        "group_id": 67787,
+        "name": "长梦尽时",
+        "type": "调查癫狂"
       }
     ],
     "调查行动星辰篇第2章「蜕变」": [
