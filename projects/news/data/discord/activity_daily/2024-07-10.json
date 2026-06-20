@@ -1,10 +1,14 @@
 {
   "date": "2024-07-10",
-  "messages": 82,
-  "unique_authors": 20,
-  "reactions_total": 81,
-  "attachments": 37,
+  "messages": 1734,
+  "unique_authors": 53,
+  "reactions_total": 182,
+  "attachments": 76,
   "channel_activity": {
+    "🔸綜合討論": 1557,
+    "🔸morimens-game-chat": 22,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 72,
     "🎁🎁禮包兌換碼更新樓🎁🎁": 2,
     "🎊《忘卻前夜》Steam加入願望清單有好康，預約解鎖全服福利🎊": 9,
     "🎁Steam上架FB分享禮": 2,
@@ -22,29 +26,33 @@
     "乖孫＆乖孫女": 9
   },
   "hourly_activity": {
-    "2": 6,
-    "3": 6,
-    "1": 2,
-    "5": 1,
-    "11": 1,
-    "14": 7,
-    "15": 2,
-    "21": 3,
-    "4": 6,
-    "6": 4,
-    "9": 9,
-    "10": 2,
-    "7": 1,
-    "19": 18,
-    "20": 4,
-    "22": 3,
-    "12": 4,
-    "16": 1,
-    "13": 2
+    "0": 52,
+    "1": 13,
+    "2": 17,
+    "3": 11,
+    "4": 12,
+    "5": 21,
+    "6": 30,
+    "7": 78,
+    "8": 31,
+    "9": 20,
+    "10": 238,
+    "11": 239,
+    "12": 362,
+    "13": 435,
+    "14": 35,
+    "15": 37,
+    "16": 25,
+    "18": 3,
+    "19": 19,
+    "20": 10,
+    "22": 21,
+    "17": 2,
+    "21": 23
   },
   "message_types": {
-    "0": 30,
-    "19": 4
+    "0": 1353,
+    "19": 299
   },
   "top_reacted_messages": [
     {
@@ -76,6 +84,62 @@
       "channel": "🎁Steam上架FB分享禮"
     },
     {
+      "id": "1260601239691989012",
+      "channel_id": "1131839817982947429",
+      "content": "0",
+      "author": "cra0261_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260514616698601515",
+      "channel_id": "1131839817982947429",
+      "content": "我從開服就預見這天了",
+      "author": "devis0212",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260596191234887723",
+      "channel_id": "1131839817982947429",
+      "content": "cra大神怎麼可以跟我這種凡人相提並論",
+      "author": "whimsical_starfish_19845",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260578542563885151",
+      "channel_id": "1131839817982947429",
+      "content": "先抽旺达.jpg",
+      "author": "jiujiyuzhouguairen",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260596232099729490",
+      "channel_id": "1131839817982947429",
+      "content": "cra大神怎麼可以跟我這種凡人相提並論",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260440078984155148",
+      "channel_id": "1131839817982947429",
+      "content": "這個頻道怎麼了",
+      "author": "yi000607",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260596259299790848",
+      "channel_id": "1131839817982947429",
+      "content": "cra大神怎麼可以跟我這種凡人相提並論",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1260606022977060904",
       "content": "本来我是只打350摆烂的，看到这期过375的人数挺多的也跟着打了一遍，感觉难度确实不大。\n按从后往前的顺序打的，第五波宁妃强度最高，我用了我最熟练的御四家，融灾",
       "author": "squire5771",
@@ -83,25 +147,68 @@
       "channel": "融灾375攻略"
     },
     {
-      "id": "1260447233317404736",
-      "content": "歡迎打臉",
-      "author": "yi000607",
-      "reactions": 1,
-      "channel": "🌻7月15日，奧爾拉的詩篇……待你補完。"
+      "id": "1260552662148055090",
+      "channel_id": "1131839817982947429",
+      "content": "那就是低（失言",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1260607173122330675",
-      "content": "发帖的时候卡了",
-      "author": "squire5771",
-      "reactions": 1,
-      "channel": "融灾375攻略"
+      "id": "1260580021903425597",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "limilute793_01047",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1260683585862631558",
-      "content": "太可愛了老師好會畫好吃的飯<:heart:1239910691218001961>",
-      "author": "xu6_",
-      "reactions": 1,
-      "channel": "乖孫＆乖孫女"
+      "id": "1260580026529742952",
+      "channel_id": "1131839817982947429",
+      "content": "https://tenor.com/view/cat-died-funny-animals-fat-gif-13843647",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260581531890483210",
+      "channel_id": "1131839817982947429",
+      "content": "感覺會被扣死。",
+      "author": "limilute793_01047",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260585629570306140",
+      "channel_id": "1131839817982947429",
+      "content": "玩單機的都看不起手遊",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260587722842701834",
+      "channel_id": "1131839817982947429",
+      "content": "😡 不打8回合就夠了",
+      "author": "scholar_2",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260588278122414131",
+      "channel_id": "1131839817982947429",
+      "content": "0吧",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1260600489523941436",
+      "channel_id": "1131839817982947429",
+      "content": "該成立cra大神教了吧",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

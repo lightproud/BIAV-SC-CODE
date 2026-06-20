@@ -1,10 +1,11 @@
 {
   "date": "2024-04-14",
-  "messages": 241,
-  "unique_authors": 24,
-  "reactions_total": 74,
-  "attachments": 55,
+  "messages": 1102,
+  "unique_authors": 29,
+  "reactions_total": 80,
+  "attachments": 82,
   "channel_activity": {
+    "🔸綜合討論": 861,
     "拉蒙娜立繪": 1,
     "✅前瞻：混沌界域、戈利亞、達芙黛爾加強計畫": 89,
     "✅「已回答」無法消除紅點點": 6,
@@ -29,18 +30,19 @@
     "原創喚醒體投稿：「戀人」關雎": 1
   },
   "hourly_activity": {
+    "0": 14,
+    "1": 115,
+    "2": 22,
+    "3": 217,
+    "4": 330,
+    "5": 205,
     "9": 5,
-    "3": 12,
-    "4": 20,
-    "5": 6,
     "6": 5,
     "12": 11,
     "14": 32,
     "16": 50,
     "17": 3,
-    "1": 2,
     "13": 29,
-    "0": 2,
     "7": 2,
     "11": 20,
     "8": 2,
@@ -51,8 +53,8 @@
     "19": 1
   },
   "message_types": {
-    "0": 83,
-    "19": 7
+    "0": 755,
+    "19": 106
   },
   "top_reacted_messages": [
     {
@@ -119,6 +121,46 @@
       "channel": "最棒的融災350攻略"
     },
     {
+      "id": "1228932135566708787",
+      "channel_id": "1131839817982947429",
+      "content": "看起來削弱更賺",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1228891828812644483",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "danwangmofei",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1228921820858810468",
+      "channel_id": "1131839817982947429",
+      "content": "收米人放假一天夠拉蒙娜沖三管",
+      "author": "hananichiya",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1228929850903887985",
+      "channel_id": "1131839817982947429",
+      "content": "boss：哈哈我有三階",
+      "author": "yaowanpaihuiwenzhen",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1228941750022832218",
+      "channel_id": "1131839817982947429",
+      "content": "~~我現在是0~~",
+      "author": "lazyinstitute",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1228930661977428038",
       "content": "現在是已經下修過的難度了",
       "author": "arr5721",
@@ -159,13 +201,6 @@
       "author": "yang_42",
       "reactions": 1,
       "channel": "忘却前夜1.3版本简易入坑指南ver1.1"
-    },
-    {
-      "id": "1229070807679111181",
-      "content": "我怎麼第一波跟第二波照片順序放反了",
-      "author": "xuan4185",
-      "reactions": 1,
-      "channel": "最棒的融災350攻略"
     }
   ]
 }
