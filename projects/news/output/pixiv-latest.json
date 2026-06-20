@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-06-20T00:02:10.269206+00:00",
+  "collected_at": "2026-06-20T03:32:29.692609+00:00",
   "source": "pixiv",
-  "item_count": 32,
+  "item_count": 33,
   "items": [
     {
       "source": "pixiv",
@@ -233,13 +233,15 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-20T00:01:19.646349+00:00",
+      "time": "2026-06-01T21:01:36+09:00",
       "lang": "",
-      "title": "",
+      "title": "風に乗る",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
+      "url": "https://www.pixiv.net/artworks/145486249",
+      "author": "ソラミミ",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/01/36/145486249_p0_square1200.jpg",
+      "content_type": "image"
     },
     {
       "source": "pixiv",
@@ -372,6 +374,16 @@
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/25/09/22/38/145189333_p0_square1200.jpg",
       "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-20T03:31:40.646353+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
     },
     {
       "source": "pixiv",
