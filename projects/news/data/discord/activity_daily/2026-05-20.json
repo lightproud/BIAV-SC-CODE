@@ -1,10 +1,11 @@
 {
   "date": "2026-05-20",
-  "messages": 31945,
+  "messages": 31966,
   "unique_authors": 535,
-  "reactions_total": 2944,
+  "reactions_total": 2957,
   "attachments": 1817,
   "channel_activity": {
+    "🔸lets-count": 21,
     "🔸morimens-game-chat": 11639,
     "🔸綜合討論": 4168,
     "🔸한국어-채팅방": 451,
@@ -115,34 +116,34 @@
     "1506653153750155354": 1
   },
   "hourly_activity": {
-    "15": 1761,
+    "0": 1252,
+    "3": 1313,
+    "4": 1031,
+    "5": 1229,
+    "10": 1445,
+    "11": 1027,
+    "12": 1399,
+    "13": 1442,
+    "14": 1482,
+    "15": 1762,
+    "18": 1453,
+    "19": 1971,
+    "22": 545,
+    "23": 848,
     "16": 1304,
     "17": 1324,
-    "18": 1452,
-    "19": 1970,
     "20": 1129,
     "21": 736,
-    "22": 544,
-    "23": 846,
-    "3": 1312,
-    "4": 1030,
-    "5": 1228,
     "6": 1958,
     "7": 1535,
     "8": 1668,
     "9": 1314,
-    "10": 1443,
-    "11": 1026,
-    "12": 1396,
-    "13": 1440,
-    "14": 1479,
-    "0": 1251,
     "1": 1590,
     "2": 1209
   },
   "message_types": {
-    "0": 3172,
-    "19": 2420
+    "0": 20,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -152,6 +153,14 @@
       "author": "lykire_",
       "reactions": 14,
       "channel": "Arachne sketch"
+    },
+    {
+      "id": "1506736157978005544",
+      "channel_id": "1355630588094320661",
+      "content": "5209 (going back)",
+      "author": "reaver2421",
+      "reactions": 13,
+      "channel": "🔸lets-count"
     },
     {
       "id": "1506534173727526942",
@@ -294,14 +303,6 @@
       "channel_id": "1170692781216378960",
       "content": "man fuck this game",
       "author": "tek2yuhdome",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1506723897666703431",
-      "channel_id": "1170692781216378960",
-      "content": "i want him carnally but i feel like when i put a baby in him dust clluds will bl",
-      "author": "mitsukinanoka__",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
     }
