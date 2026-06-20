@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "purpose": "CollectionHall 全量 lore 结构化记录:合并 world_lore(title/lock_tip)+ 原始 collection_story.txt(desc 正文,逐字未改)+ 剧情单元解析 + 角色小传标记",
-    "source_raw": "extracted/categorized/collection_story.txt (desc), extracted/lua_tables/CollectionHall.lua",
-    "source_derived": "world_lore.json (title/lock_tip/category), story_character_map.json (character_bio)",
-    "note": "desc 与 lock_tip 为原始文本逐字拷贝,含 <Title:>/<Bold:> 等游戏内标记,未做任何改写",
+    "purpose": "CollectionHall 全量 lore:world_lore(title/lock_tip)+ collection_story.txt(desc 逐字)+ 剧情单元解析 + 角色小传标记",
+    "source_raw": "extracted/categorized/collection_story.txt, extracted/lua_tables/CollectionHall.lua",
+    "note": "desc/lock_tip 为原始文本逐字;解析器覆盖 序章/主线第N章/星辰篇第N章/意识潜游,含关卡号(N-M)与困难格式",
     "total": 1026,
     "with_description": 798,
-    "generated": "2026-06-17"
+    "mapped_to_unit": 402,
+    "generated": "2026-06-21"
   },
   "entries": [
     {
@@ -698,7 +698,7 @@
       "title": "倒错的群星",
       "desc": "",
       "lock_tip": "通关调查行动6-1解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -716,7 +716,7 @@
       "title": "万千子嗣之母",
       "desc": "",
       "lock_tip": "通关调查行动7-0解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -1427,7 +1427,7 @@
       "title": "自星世界",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第4章「乐园」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -1580,7 +1580,7 @@
       "title": "宴前仪礼",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第3章「餍飨」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -1616,7 +1616,7 @@
       "title": "尚未流失的意识",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第1章「重临雾都」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -1625,7 +1625,7 @@
       "title": "生命的蜕变",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第2章「蜕变」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -1688,7 +1688,7 @@
       "title": "褪色遗骨",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第1章「重临雾都」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -3812,7 +3812,7 @@
       "title": "A小调：终末交响曲",
       "desc": "",
       "lock_tip": "通关调查行动8-1解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -3875,7 +3875,7 @@
       "title": "来自遗忘  <▼>",
       "desc": "",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": false
     },
@@ -4019,7 +4019,7 @@
       "title": "A.F.185—187",
       "desc": "<Title:A.F.185>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4028,7 +4028,7 @@
       "title": "A.F.75—92",
       "desc": "<Title:A.F.75>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4037,7 +4037,7 @@
       "title": "A.F.306—314",
       "desc": "<Title:A.F.306>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4046,7 +4046,7 @@
       "title": "A.F.263—305",
       "desc": "<Title:A.F.263>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4055,7 +4055,7 @@
       "title": "B.F.？？？—A.F.0",
       "desc": "<Title:B.F.？？？>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4064,7 +4064,7 @@
       "title": "A.F.55—72",
       "desc": "<Title:A.F.55>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4073,7 +4073,7 @@
       "title": "A.F.30—53",
       "desc": "<Title:A.F.30>",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4082,7 +4082,7 @@
       "title": "A.F.315",
       "desc": "经过为期一年的预科学习与训练，@3正式继任守密人，开始带领唤醒体与其他校内力量进行融蚀相关事件调查。",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "concepts",
       "has_description": true
     },
@@ -4181,7 +4181,7 @@
       "title": "黑潮吞侵之境",
       "desc": "黏稠的黑水侵蚀现实认知，时间之潮滚滚而逝，故事流淌之处，记忆与存在化作虚无。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4190,7 +4190,7 @@
       "title": "远旅勘察之行",
       "desc": "隐秘与真理星罗棋布，呼唤弥萨格学子一步一个脚印的勘探。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4199,7 +4199,7 @@
       "title": "狭路相逢",
       "desc": "狭路相逢勇者胜。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4208,7 +4208,7 @@
       "title": "街头冲突",
       "desc": "身为弥萨格百年一遇的守密人，你的任务可不是在街头替东区的孩子们进行学前教育。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "locations",
       "has_description": true
     },
@@ -4217,7 +4217,7 @@
       "title": "雾夜囹圄之旅",
       "desc": "被困在浓雾中的，又何止弥萨格的调查员。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4226,7 +4226,7 @@
       "title": "癫欲疾走",
       "desc": "陷入冲突，陷入癫狂。让躁动的灵魂，倾泻狂热的悲啸吧。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4235,7 +4235,7 @@
       "title": "强压威胁",
       "desc": "迫近、迫近、迫近。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4244,7 +4244,7 @@
       "title": "狂暴袭击",
       "desc": "这是宣泄，是解放，是凶暴的战吼，是癫狂的困兽。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "creatures",
       "has_description": true
     },
@@ -4253,7 +4253,7 @@
       "title": "坚韧斗志",
       "desc": "在逆境中多坚持一分钟吧，下一秒就是你的胜局。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4262,7 +4262,7 @@
       "title": "雾夜之战",
       "desc": "伦蒂尼恩的雾气深沉浓稠，终年不散。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4280,7 +4280,7 @@
       "title": "恐怖蜡像之馆",
       "desc": "蜡像馆的规则有三条，第一，不可触碰蜡像；第二，不可揭开蜡像的盖布；第三，不可将血滴到蜡像馆里。千万，千万不要违反它们哦。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "locations",
       "has_description": true
     },
@@ -4289,7 +4289,7 @@
       "title": "幻夜永劫",
       "desc": "在梦幻的夜里，来自万古的存在苏醒，祂的呼吸流溢，些微鼻息足以撼动大地。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4298,7 +4298,7 @@
       "title": "幽深暗室",
       "desc": "当四周逐渐阴沉暗淡，理性悄然隐没了光线，希望的火烛摇曳欲熄，我在孤独中徘徊茫然。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4307,7 +4307,7 @@
       "title": "暗影伏击",
       "desc": "暗影中潜藏之物，闪烁着幽绿的眼。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4316,7 +4316,7 @@
       "title": "冷静忖度",
       "desc": "保持冷静，保持警惕，保持思考。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4325,7 +4325,7 @@
       "title": "蒸汽空间",
       "desc": "钢铁是工业的骨骼，蒸汽是科技的呼吸。永不枯竭的蒸汽，在时代的肺叶里燃烧。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4334,7 +4334,7 @@
       "title": "钢铁躁动",
       "desc": "在本当万籁俱寂的夜晚，聆听钢铁的咆哮。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4343,7 +4343,7 @@
       "title": "星河浩夜",
       "desc": "星河流淌，浩夜无垠。瀚海回音，幻流奔涌。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "locations",
       "has_description": true
     },
@@ -4352,7 +4352,7 @@
       "title": "恶兆预感",
       "desc": "死兆星已在你的头顶闪耀。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4361,7 +4361,7 @@
       "title": "献身之志",
       "desc": "在启程之前，学子们已在钥冢中葬下遥远的未来。清澈的觉悟，迎向死亡的浪潮。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4370,7 +4370,7 @@
       "title": "人偶之舞",
       "desc": "人偶和人偶手牵手。他们一起跳舞，他们是好朋友。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4379,7 +4379,7 @@
       "title": "雾中的月亮",
       "desc": "她很喜欢推开钟楼的天窗，和伙伴们一起仰望温柔明亮的月亮。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4388,7 +4388,7 @@
       "title": "老查理与他的虎斑猫",
       "desc": "老查理有一只他很爱很爱的虎斑猫。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4397,7 +4397,7 @@
       "title": "天真的逃亡",
       "desc": "逃得出手术台，逃得出济贫院吗？逃得出浓雾，又逃得出贫困的东区吗？孩子们无路可逃。",
       "lock_tip": "完成调查行动·困难1-8解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4406,7 +4406,7 @@
       "title": "雾气重重",
       "desc": "雾越来越浓了。啊，让人窒息的雾。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4415,7 +4415,7 @@
       "title": "艾继丝的心事",
       "desc": "自那之后，她的眼睛只能注视天空，她的心事只能对月亮说。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4424,7 +4424,7 @@
       "title": "起雾时刻",
       "desc": "济贫院午夜，突如其来的浓雾之中，窥伺者们睁开猩红的眼睛。",
       "lock_tip": "完成调查行动1-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4433,7 +4433,7 @@
       "title": "飘落的糖纸",
       "desc": "纸片上画着金色的蝴蝶，皱褶的边缘被人用心压平叠好，甚至还带有糖果的甜香。",
       "lock_tip": "完成调查行动·困难1-8解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4442,7 +4442,7 @@
       "title": "钟楼飞鸟",
       "desc": "臃肿古怪的飞鸟撑开钟楼的屋顶，在飞向遥不可及的太阳之前坠落于地。",
       "lock_tip": "完成调查行动·困难1-8解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第1章「东区秘事」",
       "category": "creatures",
       "has_description": true
     },
@@ -4451,7 +4451,7 @@
       "title": "扭曲融解",
       "desc": "它们狂舞，它们高歌，它们渴食血肉，它们已经复活。",
       "lock_tip": "完成调查行动·困难2-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4460,7 +4460,7 @@
       "title": "鼠鼠的勇气",
       "desc": "大大的决心装进小小的身体。向前奔跑吧，带着她的自由与希望。",
       "lock_tip": "完成调查行动·困难2-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4469,7 +4469,7 @@
       "title": "蜡像馆之夜",
       "desc": "它们皮肤细腻，它们眼珠灵活，它们笑容灿烂。欢迎，欢迎新朋友。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "locations",
       "has_description": true
     },
@@ -4478,7 +4478,7 @@
       "title": "凝固的面容",
       "desc": "蜡像偶尔的移位属于馆内正常现象，如果听到脚步声，请及时回头；如果感到有人已贴在你的背后，请千万别回头。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4487,7 +4487,7 @@
       "title": "甜蜜游戏",
       "desc": "烛火哔啵，皮鞭噼啪，欢迎加入潘狄娅的派对，请跟上游戏的鼓点，迎接甜蜜的奖励。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4496,7 +4496,7 @@
       "title": "塑像师",
       "desc": "别动呀，让我给你画上最美的笑容。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4505,7 +4505,7 @@
       "title": "浇筑之时",
       "desc": "展台空荡荡，它们等待着你。",
       "lock_tip": "完成调查行动·困难2-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4514,7 +4514,7 @@
       "title": "情景扮演",
       "desc": "他们曾是佣人、平民，甚至贵族。过去他们素不相识，现在他们手挽着手，共同扮演幸福的喜剧。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4523,7 +4523,7 @@
       "title": "24小姐",
       "desc": "从蜡像中爬出一位美丽的小姐、一位恐惧的小姐、一位怯懦的小姐、一位疯狂的小姐。别误会，她们都是同一位小姐。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4541,7 +4541,7 @@
       "title": "疾速进攻",
       "desc": "祂的突袭疾如猛火，祂的锋刃锐不可当。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4640,7 +4640,7 @@
       "title": "决弈时刻",
       "desc": "布局于指令流转之间，制胜于瞬息决弈之内。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4649,7 +4649,7 @@
       "title": "相位磁流",
       "desc": "自外而来的磁流，干扰当前相位的思绪。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4658,7 +4658,7 @@
       "title": "偷闲一刻",
       "desc": "货源充沛，期待您的选购。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4667,7 +4667,7 @@
       "title": "深蚀恐惧",
       "desc": "无底的黑渊撕开利口，在一眼的凝望间，将求索者的理智骤然吞下。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4676,7 +4676,7 @@
       "title": "无光虚影",
       "desc": "这里是垂直线构筑的无光世界，执着的探索者以精密仪器推开纯黑的池水，窥视门扉之内的虚影。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4685,7 +4685,7 @@
       "title": "坍塌幻梦",
       "desc": "太古的梦境因到访者的战意，颤抖、战栗、坍塌。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4694,7 +4694,7 @@
       "title": "潜入深梦",
       "desc": "梦是现实的载体，祂的长梦是弥萨格窥知世界秘辛的通道。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4703,7 +4703,7 @@
       "title": "墟烬烟尘",
       "desc": "弥萨格调查员的探照灯照不穿融蚀之墟的烟尘，但勘探与搜集之路不会就此中止。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "concepts",
       "has_description": true
     },
@@ -4712,7 +4712,7 @@
       "title": "求索之途",
       "desc": "人类的点滴抗争，在精密的螺纹仪和平稳燃烧的酒精灯间流转。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4730,7 +4730,7 @@
       "title": "新星冉升",
       "desc": "在无明晨空苏醒的新星，庆贺着得来不易的胜局。",
       "lock_tip": "完成调查行动2-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第2章「以蜡像之名」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -4874,7 +4874,7 @@
       "title": "星辰正位之刻",
       "desc": "",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": false
     },
@@ -4928,7 +4928,7 @@
       "title": "缸中之梦",
       "desc": "",
       "lock_tip": "通关调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": false
     },
@@ -4964,7 +4964,7 @@
       "title": "拥抱本我",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -4973,7 +4973,7 @@
       "title": "窥视灵魂之旅",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇2-1解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -5036,7 +5036,7 @@
       "title": "默哀",
       "desc": "我们脱下礼帽，向那些故去的、英勇的、伟大的以及渺小的，我们的朋友，致以最深切的哀伤与敬意。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5045,7 +5045,7 @@
       "title": "诡光帷幕",
       "desc": "耐心，谨慎，切莫让五彩斑斓的光迷了眼。",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5063,7 +5063,7 @@
       "title": "悲鸣黑胶",
       "desc": "黑胶唱片撕扯着黏稠的喉咙，引亢不甘的悲鸣。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5081,7 +5081,7 @@
       "title": "撕裂维度而来",
       "desc": "束缚怪物的枷锁已被破坏，无法杀死，无法逃离的猎手，来了。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "concepts",
       "has_description": true
     },
@@ -5099,7 +5099,7 @@
       "title": "永恒王土",
       "desc": "美丽！富饶！理想之乡利莫里亚！",
       "lock_tip": "完成调查行动·困难5-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5108,7 +5108,7 @@
       "title": "被抛弃者",
       "desc": "抛弃与背叛是高位者的家常便饭，不要将后背露给他们，防止变成最后的光与热。",
       "lock_tip": "完成调查行动·困难3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5126,7 +5126,7 @@
       "title": "亿万虫鸣",
       "desc": "你听到某人在你耳边不断轻柔地絮语，唇齿间的呢喃沙沙作响。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "creatures",
       "has_description": true
     },
@@ -5135,7 +5135,7 @@
       "title": "再见霏霏",
       "desc": "人生中的关键时刻，似乎总是有如丝细雨相伴。",
       "lock_tip": "完成调查行动·困难 星辰篇1-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5162,7 +5162,7 @@
       "title": "哎嘿~",
       "desc": "当不知道如何回答时，只要卖萌就好了，哎嘿~",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5180,7 +5180,7 @@
       "title": "悲怆的绽放",
       "desc": "深渊中绽放的洁白之花，牢牢挡在众人身前。",
       "lock_tip": "完成调查行动·困难4-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "concepts",
       "has_description": true
     },
@@ -5198,7 +5198,7 @@
       "title": "雪中的少女",
       "desc": "少女身着单衣走在雪地上，渴望一个温暖的怀抱。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5207,7 +5207,7 @@
       "title": "“好客”的居民",
       "desc": "居民们热情洋溢，与来宾打成一片。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5216,7 +5216,7 @@
       "title": "尊荣神母",
       "desc": "上天已赐下尊贵的神母，用以接我们去祂的国。",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5243,7 +5243,7 @@
       "title": "深港幽灵之船",
       "desc": "一艘远航的行船，要将众人带向何方？",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "locations",
       "has_description": true
     },
@@ -5252,7 +5252,7 @@
       "title": "无家可归的孩子",
       "desc": "救救我……无论是谁都好……救救我……",
       "lock_tip": "完成调查行动·困难3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5270,7 +5270,7 @@
       "title": "痛苦回忆",
       "desc": "潮水涌起，尖啸回荡，痛苦的回忆涌上心头，将女孩的精神撕碎。眼角流下的黑色泪水，是她发出的无声呼救。",
       "lock_tip": "完成调查行动·困难3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5279,7 +5279,7 @@
       "title": "未落的雪",
       "desc": "无论她如何落笔，都只能在日记上留下黑色的残缺。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5288,7 +5288,7 @@
       "title": "远航",
       "desc": "月光于夜空中倾泻，海浪低吟着永恒的细语，斑驳的巨轮缓缓向前。",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5297,7 +5297,7 @@
       "title": "黏性墓碑",
       "desc": "那是一座座活着的墓碑，每颗卵鞘上都刻着他们的墓志铭。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5306,7 +5306,7 @@
       "title": "水仙小屋",
       "desc": "淡雅的清香，琳琅的商品，可又有几人，能支付水仙夫人开出的价格？",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5315,7 +5315,7 @@
       "title": "别担心，有我在",
       "desc": "温暖的双手轻抚女孩头顶，安抚了那颗不安的心。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5324,7 +5324,7 @@
       "title": "因果的怪物",
       "desc": "时间在嘶吼，时间在咆哮，时间在追逐三度沦为猎物之人。不要尝试逃跑，因为结果早已注定。",
       "lock_tip": "完成调查行动·困难4-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "creatures",
       "has_description": true
     },
@@ -5342,7 +5342,7 @@
       "title": "对立的正义",
       "desc": "当立场和意志发生碰撞，人类往往只会坚信自己的准则。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5351,7 +5351,7 @@
       "title": "不期的重逢",
       "desc": "相见来的过早，真相来的太迟，被残酷现实撕碎的心灵，正在幼小的双手中渐渐愈合。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5360,7 +5360,7 @@
       "title": "渊海淑女",
       "desc": "作为淑女，当然要时时刻刻保持优雅！",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5369,7 +5369,7 @@
       "title": "雪夜小镇",
       "desc": "温暖的炉火欢迎着每一位来宾。但请注意，夜有恶犬，不要出门。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "locations",
       "has_description": true
     },
@@ -5378,7 +5378,7 @@
       "title": "永恒囚笼",
       "desc": "在这扇连时间都能囚禁的大门背后，是一位母亲为了守护自己心爱的女儿，所做的最后抉择。",
       "lock_tip": "完成调查行动·困难4-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5387,7 +5387,7 @@
       "title": "扭曲疯人之院",
       "desc": "追猎，奔逃，凝固的母爱，跨越生死的相拥。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5405,7 +5405,7 @@
       "title": "午后童话",
       "desc": "那时，母亲翻动着书页，为孩子讲述童话故事。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5414,7 +5414,7 @@
       "title": "灰烬臆想",
       "desc": "该如何欺骗自己，才能于熄灭的余烬中幻想生命仍在延续。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5423,7 +5423,7 @@
       "title": "熔毁终末赞歌",
       "desc": "高唱吧，高唱吧！",
       "lock_tip": "完成调查行动·困难 星辰篇1-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5432,7 +5432,7 @@
       "title": "癫狂执念",
       "desc": "血肉翻飞，利刃狂舞，怪物用无法理解的言语高声歌唱。狂暴的大脑中只剩一个念头——抓住她，不惜一切代价，抓住她。",
       "lock_tip": "完成调查行动·困难3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "creatures",
       "has_description": true
     },
@@ -5468,7 +5468,7 @@
       "title": "执妄审判",
       "desc": "你向我许诺过，你们向我许诺过。",
       "lock_tip": "完成调查行动·困难5-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5486,7 +5486,7 @@
       "title": "崩毁变奏",
       "desc": "崩毁的音符在舞蹈，坍塌的现实在喧嚣。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5495,7 +5495,7 @@
       "title": "覆海决意",
       "desc": "渊海的淑女决心贯彻自己的意志，赴向遥不可及的自由。",
       "lock_tip": "完成调查行动·困难5-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5504,7 +5504,7 @@
       "title": "血肉同源",
       "desc": "我要将你带回去，带回去见“主人”，只有这样……",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5513,7 +5513,7 @@
       "title": "集群意志",
       "desc": "你与之战斗的，是无数个同心同体的灵魂。他们抗拒你、他们邀请你，放下无谓的自我吧，让你无知的大脑，一同加入永不孤独的集体。",
       "lock_tip": "完成调查行动·困难 星辰篇2-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5531,7 +5531,7 @@
       "title": "我心所向",
       "desc": "抓住我的手吧，接过记忆中那朵永不褪色的花。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5540,7 +5540,7 @@
       "title": "脑髓制造",
       "desc": "这里生产的并非普通工业品。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5549,7 +5549,7 @@
       "title": "黑日图腾",
       "desc": "远空的黑色末日犹如天穹的孔洞。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5558,7 +5558,7 @@
       "title": "窒息烟尘",
       "desc": "灰雾笼罩着黑色的太阳，粉尘填满口鼻。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5567,7 +5567,7 @@
       "title": "颅腔共振",
       "desc": "打开你的颅腔，与万千脑缸共振吧。",
       "lock_tip": "完成调查行动·困难 星辰篇1-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5576,7 +5576,7 @@
       "title": "雪落噬影之镇",
       "desc": "冬日，女巫，孩子们，一场永不停歇的雪。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "locations",
       "has_description": true
     },
@@ -5585,7 +5585,7 @@
       "title": "极地祭坛",
       "desc": "诡异的密语在空气中回荡，黑色的粘液将祭品吞噬，旧日的存在期待着神明的归来。",
       "lock_tip": "完成调查行动4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第4章「于无声处」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5603,7 +5603,7 @@
       "title": "急刹车",
       "desc": "列车骤然停下，双子追寻血脉气息而来。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5612,7 +5612,7 @@
       "title": "亿万祷言",
       "desc": "王啊，我已遵循预言等待了万年，可未来为何依旧遥不可及？",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5621,7 +5621,7 @@
       "title": "渎神誓言",
       "desc": "卑贱的小偷盗取了王的力量，妄图阻碍伟大的仪式。",
       "lock_tip": "完成调查行动·困难5-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5630,7 +5630,7 @@
       "title": "我将行至",
       "desc": "在那浓郁不可见日的迷雾中，我将独身踏向未知的前路。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5639,7 +5639,7 @@
       "title": "复苏黑日之世",
       "desc": "孩子们都曾听过：不要用肉眼直视太阳。",
       "lock_tip": "完成调查行动 星辰篇1-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5648,7 +5648,7 @@
       "title": "迷幻虫巢之梦",
       "desc": "欢迎来到克莱门汀医生的私人神经疗养院，请跟随医生的指引，释放你心灵所有的痛苦，走向最终的痊愈。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "creatures",
       "has_description": true
     },
@@ -5666,7 +5666,7 @@
       "title": "破蛹",
       "desc": "你于深渊中沉没,从你的口袋里,飞出她最后的留言。于是你在无尽的黑暗里,得见一刹的光明。",
       "lock_tip": "完成调查行动·困难 星辰篇2-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "concepts",
       "has_description": true
     },
@@ -5675,7 +5675,7 @@
       "title": "不变的抉择",
       "desc": "曾在你身前的，如今在你身后。",
       "lock_tip": "完成调查行动·困难 星辰篇2-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5684,7 +5684,7 @@
       "title": "隧道奇遇记",
       "desc": "地下铁中遭到攻击虽然不幸，但作为满足女孩好奇心的余兴节目，却是刚刚好。",
       "lock_tip": "完成调查行动3-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第3章「谨防恶犬」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5702,7 +5702,7 @@
       "title": "心灵密林",
       "desc": "不必言语，当你来到这里，便会获得最真诚的帮助。",
       "lock_tip": "完成调查行动 星辰篇2-18解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第2章「蜕变」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5738,7 +5738,7 @@
       "title": "幻海潮涌",
       "desc": "幻光的海潮在天体的牵引下编织成帷幕，蹈海的诡物踏浪而来。",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -5747,7 +5747,7 @@
       "title": "眠于深渊之王",
       "desc": "王至高无上，王威权无边，王遥坐于辉煌之上，孤独的俯视他的国。",
       "lock_tip": "完成调查行动5-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第5章「风暴之眼」",
       "category": "concepts",
       "has_description": true
     },
@@ -6125,7 +6125,7 @@
       "title": "最初的晚餐",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -6152,7 +6152,7 @@
       "title": "王邸的夜宴",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇3-1解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -6215,7 +6215,7 @@
       "title": "满月祭礼",
       "desc": "亵渎者掀起幽蓝的海啸，单薄的王者孤身迎向千米巨浪。",
       "lock_tip": "完成调查行动·困难 星辰篇3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6224,7 +6224,7 @@
       "title": "餐桌的主人",
       "desc": "烹饪死者，是一项庄严的艺术。",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6233,7 +6233,7 @@
       "title": "神明降诞",
       "desc": "孩子哭闹、尖啼、蛮不讲理。",
       "lock_tip": "完成调查行动·困难6-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6242,7 +6242,7 @@
       "title": "死神的垂眸",
       "desc": "他收殓每一份死亡时，并不是无情地挥舞着镰刀。",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6251,7 +6251,7 @@
       "title": "血色契约",
       "desc": "血肉腥甜的滋味与肌腱断裂的口感是他最熟悉、也最刻骨铭心的记忆。",
       "lock_tip": "完成调查行动·困难 星辰篇3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6260,7 +6260,7 @@
       "title": "冷月光",
       "desc": "月光下的祭祀刀闪烁着诱人的光亮。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6278,7 +6278,7 @@
       "title": "第一餐",
       "desc": "咔嚓、咔嚓。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6296,7 +6296,7 @@
       "title": "白鸟之乡",
       "desc": "转身离开的那一刻，埃尔顿仿佛又变成了那个刚刚出海的少年，蓝天与一望无际的大海连接在一起，世界大得足够装下所有抱负与美梦。",
       "lock_tip": "完成调查行动·困难6-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "creatures",
       "has_description": true
     },
@@ -6305,7 +6305,7 @@
       "title": "安息舞曲",
       "desc": "时间已至，银月高悬。",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6314,7 +6314,7 @@
       "title": "纯白神女",
       "desc": "神迹若有形状，应如她合十的双手。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6323,7 +6323,7 @@
       "title": "食尸鬼之歌",
       "desc": "欢庆吧，我的朋友♪",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6341,7 +6341,7 @@
       "title": "偿还",
       "desc": "他记得她。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6350,7 +6350,7 @@
       "title": "勿忘我的送别",
       "desc": "别离与死亡，都是世间无法逃离的常态。",
       "lock_tip": "完成调查行动·困难 星辰篇3-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6359,7 +6359,7 @@
       "title": "万灵之怒",
       "desc": "「以你们的朋友、王、这片安眠之地主人的名义，我邀请你们——苏醒吧！回到你们眷恋的故土！将这些打扰我们亲人安宁之人，永远驱逐出去！」",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6368,7 +6368,7 @@
       "title": "神明诞生之日",
       "desc": "她与祂，不可共存，于是一柄匕首刺入两颗心脏，那是她向神明奉上的报偿。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6377,7 +6377,7 @@
       "title": "探戈外交",
       "desc": "你从没想到，与一位王者的对谈是由一场共舞开始。",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6386,7 +6386,7 @@
       "title": "骸骨长眠之所",
       "desc": "你见过最可怖而亵渎的啖食，却是他们生命中最温柔的重逢。",
       "lock_tip": "完成调查行动 星辰篇3-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6395,7 +6395,7 @@
       "title": "倒错的星辰",
       "desc": "星星只是如常运转在它的轨道，而尘埃中的生命已因此几经沉沦。",
       "lock_tip": "完成调查行动6-15解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第6章「倒错的群星」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6800,7 +6800,7 @@
       "title": "在棺椁中重逢",
       "desc": "她游离于记忆和过往之外，她穿过死和生的淤泥，静默地与你重逢。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6854,7 +6854,7 @@
       "title": "繁衍，繁衍！",
       "desc": "引吭吧，起舞吧，当蜜和乳在火光旁交融。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6863,7 +6863,7 @@
       "title": "命运将至",
       "desc": "战胜我们，杀死我们。然后，拯救我们。",
       "lock_tip": "完成调查行动·困难8-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6881,7 +6881,7 @@
       "title": "百年见证",
       "desc": "女王的肉身被融蚀侵袭，亚兰的子民在黄沙中流亡。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "concepts",
       "has_description": true
     },
@@ -6890,7 +6890,7 @@
       "title": "抗神权柄",
       "desc": "那不可名状，无法反抗，痴愚盲目的存在。",
       "lock_tip": "完成调查行动·困难8-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6899,7 +6899,7 @@
       "title": "恢弘律令",
       "desc": "噤声，前行。序曲早已奏响。",
       "lock_tip": "完成调查行动8-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6935,7 +6935,7 @@
       "title": "畸变丰穰之种",
       "desc": "旧日的女王，被遗忘的女王，她依然在无边孤寂中等待。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6989,7 +6989,7 @@
       "title": "情热时分",
       "desc": "蜜酿已经斟满，贵客已经到场，请为勒姆瓦希带来新的种子，请尽情欢享浸透欲望的热情！",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -6998,7 +6998,7 @@
       "title": "归向海",
       "desc": "时间、生息、虚无、命运。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7007,7 +7007,7 @@
       "title": "银沙海之舞",
       "desc": "她在沙中踏出黑色涟漪，她牵引你、捉住你，把种种从荒芜中托寄给你。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7025,7 +7025,7 @@
       "title": "命运前奏之曲",
       "desc": "噩兆与乐音交织降临，他亦敌亦友，他扑朔迷离。",
       "lock_tip": "完成调查行动8-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7034,7 +7034,7 @@
       "title": "踏对节拍",
       "desc": "捕捉每一个音符，落在正确的节奏上。",
       "lock_tip": "完成调查行动8-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7061,7 +7061,7 @@
       "title": "指挥家的谜语",
       "desc": "你既不擅长音乐，也不喜欢解谜。",
       "lock_tip": "完成调查行动8-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7124,7 +7124,7 @@
       "title": "丰穰的末路",
       "desc": "亚兰的子民行遍了大漠，他们生于此，他们长于此，他们注定要繁荣于此处，注定要消亡于此处。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7133,7 +7133,7 @@
       "title": "还于圣河",
       "desc": "好孩子，乖宝贝，圣河会安抚你夭折的啼哭，圣河会托抱你流逝的魂灵。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "locations",
       "has_description": true
     },
@@ -7178,7 +7178,7 @@
       "title": "母亲",
       "desc": "祂们拥抱着血脉、手足、爱人、挚友，他们献出自我，消融进一场黑甜的复生。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7187,7 +7187,7 @@
       "title": "坠往黄沙",
       "desc": "炽烈的太阳快要死去了，风裹挟砂砾将它熄灭。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7205,7 +7205,7 @@
       "title": "风暴之壁",
       "desc": "溯源之途，以生命垒砌，向它咆哮，抵御不可违背的伟力。将血脉还于亚兰，将丰穰还于亚兰！",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7250,7 +7250,7 @@
       "title": "先驱者的丧钟",
       "desc": "近了，那死的神灵，终的吐息，传奇但未为众知的过往，凝窒而轻描淡写的别离。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7259,7 +7259,7 @@
       "title": "无声神谕",
       "desc": "自她口中降下的，是神谕抑或王旨，是天恩抑或私心。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7268,7 +7268,7 @@
       "title": "为已逝者",
       "desc": "我已遗忘祂的身形，我已遗忘祂的名姓。",
       "lock_tip": "完成调查行动·困难7-12解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7286,7 +7286,7 @@
       "title": "她愿引颈",
       "desc": "无人铭记她的过往，无人知晓她的耳语。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7295,7 +7295,7 @@
       "title": "眼",
       "desc": "请闭眼，让吻落在指间。",
       "lock_tip": "完成调查行动7-19解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第7章「欲河」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7304,7 +7304,7 @@
       "title": "薄暮",
       "desc": "人总是容易在黄昏时陷入恍惚与沉默，因为所剩无几的太阳，因为尚未被消耗殆尽的好时光。",
       "lock_tip": "完成调查行动8-14解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第8章「终末交响曲」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7448,7 +7448,7 @@
       "title": "<OrangeQuality:维度影像>",
       "desc": "有时候你窥视镜中，看见的却是来自回忆的影子。",
       "lock_tip": "可于调查行动星辰篇第1章「重临雾都」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第1章「重临雾都」",
       "category": "concepts",
       "has_description": true
     },
@@ -7538,7 +7538,7 @@
       "title": "密语",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第4章「乐园」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -7646,7 +7646,7 @@
       "title": "不协和音",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第4章「乐园」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -7673,7 +7673,7 @@
       "title": "思维的疮",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第3章「餍飨」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第3章「餍飨」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -7799,7 +7799,7 @@
       "title": "向创世神扬帆",
       "desc": "她们围绕着你，她们敬慕着你，她们陪伴着你。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7817,7 +7817,7 @@
       "title": "原初宿命之战",
       "desc": "荒诞与混沌的梦境伊始之初，祂就注定会面对祂的宿命。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "concepts",
       "has_description": true
     },
@@ -7826,7 +7826,7 @@
       "title": "无目之瞳",
       "desc": "得到、失去、斩断、牺牲。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7853,7 +7853,7 @@
       "title": "敌人，友人",
       "desc": "一个完整的传奇不能缺少化敌为友。",
       "lock_tip": "完成调查行动·困难9-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7862,7 +7862,7 @@
       "title": "K-0617",
       "desc": "从今往后，你将以守密人的称号，与万万千千的弥萨格师生同在。",
       "lock_tip": "完成调查行动·困难9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7871,7 +7871,7 @@
       "title": "常世颂",
       "desc": "我们或许是亘古中的转瞬，狂流中的砂砾。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7916,7 +7916,7 @@
       "title": "来自遗忘@2",
       "desc": "呼唤我的名字，在被遗忘的黎明之前。",
       "lock_tip": "完成调查行动·困难9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7943,7 +7943,7 @@
       "title": "创世痴愚之主",
       "desc": "脱离主，直面主，忤逆主。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7952,7 +7952,7 @@
       "title": "存在主义",
       "desc": "一切都不再有意义，因此你得以站在这里。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7961,7 +7961,7 @@
       "title": "通向祂们的小径",
       "desc": "通向祂们的小径，远离祂们的小径。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7970,7 +7970,7 @@
       "title": "唯一的终局",
       "desc": "祂们的可能性线条，分离、收束、崩散。",
       "lock_tip": "完成调查行动·困难9-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -7997,7 +7997,7 @@
       "title": "终焉凝注",
       "desc": "主看向你，你刺破了主的眼睛。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8006,7 +8006,7 @@
       "title": "多重性战歌",
       "desc": "战士、复仇者、奴隶、主人、商人。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8015,7 +8015,7 @@
       "title": "为平日赴死之人",
       "desc": "你知道，你没有在为什么伟大的事情作战。",
       "lock_tip": "完成调查行动·困难9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8024,7 +8024,7 @@
       "title": "社群行为解构",
       "desc": "动物，所有的高等动物，都难以避免地被社群行为所控。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8042,7 +8042,7 @@
       "title": "一位至珍者之死",
       "desc": "祂们以重逢的预期告别。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8051,7 +8051,7 @@
       "title": "剧幕中场",
       "desc": "休息一下，喘口气吧。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8069,7 +8069,7 @@
       "title": "疯狂赋格",
       "desc": "疯狂，毁灭的前奏，这是有序世界的底层逻辑。",
       "lock_tip": "完成调查行动9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8078,7 +8078,7 @@
       "title": "齑粉",
       "desc": "世界上最不讲道理的是什么？",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8087,7 +8087,7 @@
       "title": "成为神",
       "desc": "作为那枚独一无二的碎片，成为神很简单。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8096,7 +8096,7 @@
       "title": "虚构集",
       "desc": "在漫长的人类文明中，我们构筑了许多东西。",
       "lock_tip": "完成调查行动9-13解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8105,7 +8105,7 @@
       "title": "决心落跑的英雄",
       "desc": "弥萨格有史以来最怯懦的守密人，死在了巨大的幸福之中。",
       "lock_tip": "完成调查行动·困难9-11解锁",
-      "story_unit": null,
+      "story_unit": "调查行动第9章",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8114,7 +8114,7 @@
       "title": "永世虚妄巡礼",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇4-0解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -8123,7 +8123,7 @@
       "title": "神诞七日",
       "desc": "",
       "lock_tip": "通关调查行动星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
@@ -8150,7 +8150,7 @@
       "title": "第二面",
       "desc": "你与许多存在都有见第二面的可能性，哪怕那是一个不应存在的婴孩，或诞生自错误的神灵。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8159,7 +8159,7 @@
       "title": "她与他与祂之死",
       "desc": "哦……原来还有更坏的结局。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8168,7 +8168,7 @@
       "title": "雪松",
       "desc": "你要怎么描述一位在太耀眼时离别的同行者？",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8177,7 +8177,7 @@
       "title": "坠下",
       "desc": "在旅途的尽头，你知道有谁在等待你。",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8186,7 +8186,7 @@
       "title": "甜蜜乐园",
       "desc": "孩童并不属于母亲，祂已打定主意，所有人都要留在这里。",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8195,7 +8195,7 @@
       "title": "假脐带",
       "desc": "你没来得及救她，这个她没有逃出来。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8204,7 +8204,7 @@
       "title": "「3.14159@4」",
       "desc": "3.14159@2，3.141592@3，3.14159265@4……",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8213,7 +8213,7 @@
       "title": "某一个结局",
       "desc": "你又来晚了一些，别停留，再快，再快一点。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8222,7 +8222,7 @@
       "title": "在他女儿黑暗的子宫中",
       "desc": "拥抱我吧，我的宝贝，我的……父亲，我的命运。",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8231,7 +8231,7 @@
       "title": "在黎明时告别",
       "desc": "天空将要亮了，让我们作别昨日。",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8240,7 +8240,7 @@
       "title": "面团盾牌",
       "desc": "她与现实之间，她与虚妄之间，竖起了一面小小的盾牌。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8249,7 +8249,7 @@
       "title": "叙谎者和弦",
       "desc": "这个世界一如往常，孩子依赖母亲，孩子也对母亲说谎。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8258,7 +8258,7 @@
       "title": "腐神明",
       "desc": "神诞生的第七日。",
       "lock_tip": "完成调查行动·困难 星辰篇4-10解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8267,7 +8267,7 @@
       "title": "黑月光",
       "desc": "睡吧，睡吧，海的婴孩，让漆黑的月光照在你沉暗的襁褓上，让千年亿年的沉梦就此沦入永恒虚妄。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8276,7 +8276,7 @@
       "title": "秘密流亡",
       "desc": "逃跑吧，两条鱼跃入了水面。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8285,7 +8285,7 @@
       "title": "虚妄倒错之孕",
       "desc": "父亲诞下女儿，女儿孕育父亲。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8294,7 +8294,7 @@
       "title": "回到原点",
       "desc": "什么比死亡和疼痛更可怕？",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8303,7 +8303,7 @@
       "title": "家",
       "desc": "她和她有她和她的虔诚，他和他有他和他的反叛和忠心。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8312,7 +8312,7 @@
       "title": "海国",
       "desc": "让我们呼唤那由海中上浮的神国的名字——利莫里亚，利莫里亚。",
       "lock_tip": "完成调查行动 星辰篇4-16解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": true
     },
@@ -8411,7 +8411,7 @@
       "title": "墨菲的幻影",
       "desc": "",
       "lock_tip": "可于调查行动星辰篇第4章「乐园」中解锁",
-      "story_unit": null,
+      "story_unit": "调查行动星辰篇第4章「乐园」",
       "category": "uncategorized",
       "has_description": false
     },
