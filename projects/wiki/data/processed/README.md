@@ -45,12 +45,6 @@
 | [`panel_text.json`](./panel_text.json) | UI 面板文案 |
 | [`update_notices.json`](./update_notices.json) | 更新公告全文 |
 
-## 待清理（历史遗留）
-
-| 文件 | 说明 |
-|------|------|
-| `notion_voice_enrichment.json` / `NOTION_ENRICHMENT.md` | 早期向 Notion 灌数据的本地副本；Notion 侧数据已删，这两份去留待守密人裁定 |
-
 ---
 
 > 数据血缘原则：`extracted/`（原始，只读）→ `processed/*.json`（派生）。本层不修改原始正文；故事域逐字正文见 `story/lore_entries.json`。
