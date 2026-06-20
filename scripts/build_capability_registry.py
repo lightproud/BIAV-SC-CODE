@@ -51,6 +51,7 @@ _EMOJI_RE = re.compile(
 )
 _PY_REF_RE = re.compile(r"\b([A-Za-z0-9_]+)\.py\b")
 _IMPORT_RE = re.compile(r"^[ \t]*(?:from|import)[ \t]+([A-Za-z_][\w]*)", re.MULTILINE)
+_CLI_RE = re.compile(r"__name__\s*==\s*['\"]__main__['\"]")
 
 
 def strip_emoji(s: str) -> str:
@@ -175,6 +176,10 @@ def analyze_orchestration() -> tuple[dict[str, dict], dict[str, str]]:
     paths, texts = index_scripts()
     known = set(paths)
     roots = collect_roots(known)
+    # CLI 手动平面：带 `if __name__ == "__main__"` 的脚本本身是手动编排入口（守密人/子进程直跑）
+    for base, text in texts.items():
+        if _CLI_RE.search(text):
+            roots.setdefault(base, set()).add("cli")
     graph = build_import_graph(texts, known)
     reachable = reachable_from(set(roots), graph)
     tests = test_refs(known)
@@ -332,7 +337,7 @@ def build() -> dict:
             "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
             "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
             "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
-            "reachability_method": "从活编排入口（工作流/MCP/命令/钩子）沿 Python 模块级 import 图做传递闭包；status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
+            "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
         },
         "workflows": scan_workflows(),
         "scripts_top": scan_python_dir("scripts", orch),
@@ -408,6 +413,7 @@ def render_markdown(registry: dict) -> str:
         "| 定时/事件（工作流）| cron + push | 否（静态调度）|",
         "| AI 动态（MCP 工具）| 艾瑞卡运行时自选 | 是 |",
         "| 人工（slash 命令 / 技能）| 守密人下达 | 半动态 |",
+        "| CLI 手动（带 __main__ 的脚本）| 守密人/子进程直跑 | 手动 |",
         "| 会话钩子 | 钩子自动 | 已退役（settings.json 无钩子）|",
         "",
         "可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，"
