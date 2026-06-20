@@ -129,6 +129,11 @@ appstore/pixiv/google_play/bahamut/weixin/note_com/ruliweb/stopgame 保留。
 **god module 不拆**（关联裁定）：拆分会让 `test_aggregator_collectors` 100+ 处 mock（`ac.requests` 60 +
 `ac.` 内部 helper 49）失效，须重写上百处打桩、回归风险落在活的使命#1 管线，收益仅文件变短，不值得。
 
+**统一采集入口（2026-06-20 守密人 goal「合并所有采集器功能到 AC」）**：`aggregator.py` 成为唯一采集入口——
+先采 AC 平台，再内部调 `collect_global.main()` 采全球平台并产出最终 `news.json` + `news-raw.json`。
+`update-news.yml` 原独立的「Run global collectors」步并入 aggregator 步（env 取两步并集），删除单独步以免重复采集。
+`global_collectors.py` / `collect_global.py` 保留为被调库（函数与单测不动，避免 #4 的 mock 破坏），仅不再单独作为 workflow 步骤。
+
 ---
 
 ## 决策历史归档
