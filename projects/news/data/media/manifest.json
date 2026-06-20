@@ -13600,6 +13600,62 @@
       "title": "《忘卻前夜 Morimens》×《沙耶之歌》聯動 「被遺忘的愛之種」Part6",
       "time": "2026-06-20T03:36:28Z",
       "downloaded_at": "2026-06-20T07:44:40.949878+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/4e5ca69640ff90db3247d1693b356ca05131ef45.jpg": {
+      "filename": "bilibili_411be85a7e46684e.jpg",
+      "source": "bilibili",
+      "title": "沙雪耶老师",
+      "time": "2026-06-20T09:00:01+00:00",
+      "downloaded_at": "2026-06-20T10:28:51.765117+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/a460ad18249013629a4ade06feef5f030b391117.jpg": {
+      "filename": "bilibili_92542d4744692efb.jpg",
+      "source": "bilibili",
+      "title": "原来是周年版本啊，不知道的还以为抢钱来的呢",
+      "time": "2026-06-20T08:55:52+00:00",
+      "downloaded_at": "2026-06-20T10:28:53.579543+00:00"
+    },
+    "https://i.ytimg.com/vi/DeCMMRxbsDM/hqdefault_live.jpg": {
+      "filename": "youtube_c58335bab9f5c8ee.jpg",
+      "source": "youtube",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 오늘만 특별히 무료 융재 상담",
+      "time": "2026-06-20T08:06:27Z",
+      "downloaded_at": "2026-06-20T10:28:54.550259+00:00"
+    },
+    "https://i.ytimg.com/vi/0tnnRhVuOn0/hqdefault.jpg": {
+      "filename": "youtube_947e5496923f69f6.jpg",
+      "source": "youtube",
+      "title": "Not Letting Jenkin Go This Time! | Morimens: Ark 2",
+      "time": "2026-06-20T08:00:51Z",
+      "downloaded_at": "2026-06-20T10:28:54.906328+00:00"
+    },
+    "https://i.ytimg.com/vi/YNNXJfzcJsY/hqdefault.jpg": {
+      "filename": "youtube_1685fb73bb9f280b.jpg",
+      "source": "youtube",
+      "title": "Morimens(чутка зайдем в сюжетоньку)",
+      "time": "2026-06-20T08:53:43Z",
+      "downloaded_at": "2026-06-20T10:28:55.281276+00:00"
+    },
+    "https://i.ytimg.com/vi/CZ4ershiGU0/hqdefault.jpg": {
+      "filename": "youtube_e49cc5e216154105.jpg",
+      "source": "youtube",
+      "title": "Most satisfying thing I&#39;ve done in Morimens so far",
+      "time": "2026-06-20T09:38:07Z",
+      "downloaded_at": "2026-06-20T10:28:55.637375+00:00"
+    },
+    "https://i.ytimg.com/vi/yXgDmOZjFNU/hqdefault.jpg": {
+      "filename": "youtube_e4f4cf6ff0d77978.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens 無聊開個小號來玩一下~002",
+      "time": "2026-06-20T10:00:07Z",
+      "downloaded_at": "2026-06-20T10:28:55.990915+00:00"
+    },
+    "https://i.ytimg.com/vi/Av82JS6XTI8/hqdefault_live.jpg": {
+      "filename": "youtube_7ed50b373d089030.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】終章目前！！アプデ前に８章までを語りたい！【特別ゲスト：いとうつくし】",
+      "time": "2026-06-20T08:22:55Z",
+      "downloaded_at": "2026-06-20T10:28:56.364081+00:00"
     }
   },
   "failed": {
@@ -19857,6 +19913,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-06-20T07:44:36.781694+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/a460ad18249013629a4ade06feef5f030b391117.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-06-20T10:28:52.065677+00:00"
     }
   },
   "archived": []
