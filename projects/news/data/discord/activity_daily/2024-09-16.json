@@ -1,10 +1,15 @@
 {
   "date": "2024-09-16",
-  "messages": 56,
-  "unique_authors": 21,
-  "reactions_total": 45,
-  "attachments": 6,
+  "messages": 2557,
+  "unique_authors": 91,
+  "reactions_total": 135,
+  "attachments": 136,
   "channel_activity": {
+    "🔸綜合討論": 588,
+    "🔸阵容构建": 10,
+    "🔸morimens-game-chat": 1408,
+    "🔸剧情交流": 489,
+    "🔸相位对弈": 6,
     "靈知深化很容易誤觸": 12,
     "助戰命輪顯示錯誤": 1,
     "关于这次活动图": 1,
@@ -19,23 +24,33 @@
     "忘却喵（？）夜": 3
   },
   "hourly_activity": {
-    "0": 2,
-    "1": 3,
-    "2": 12,
-    "3": 4,
-    "6": 5,
-    "8": 10,
-    "10": 1,
-    "14": 2,
-    "7": 3,
-    "9": 2,
-    "11": 4,
-    "12": 4,
-    "5": 4
+    "0": 6,
+    "1": 40,
+    "2": 123,
+    "3": 75,
+    "4": 62,
+    "5": 249,
+    "6": 52,
+    "7": 25,
+    "8": 24,
+    "9": 30,
+    "10": 45,
+    "11": 145,
+    "12": 210,
+    "13": 241,
+    "14": 156,
+    "15": 467,
+    "16": 313,
+    "17": 87,
+    "18": 79,
+    "19": 70,
+    "20": 38,
+    "21": 2,
+    "23": 18
   },
   "message_types": {
-    "19": 7,
-    "0": 32
+    "0": 2018,
+    "19": 483
   },
   "top_reacted_messages": [
     {
@@ -53,6 +68,14 @@
       "channel": "关于这次活动图"
     },
     {
+      "id": "1285069676140826637",
+      "channel_id": "1173463482503536711",
+      "content": "正確的",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1285148738410647582",
       "content": "最恐怖的是毒素跟尖刺刻印還沒出現",
       "author": "ernest_heart",
@@ -65,6 +88,102 @@
       "author": "olivia_1101011",
       "reactions": 6,
       "channel": "忘却喵（？）夜"
+    },
+    {
+      "id": "1285205425507139707",
+      "channel_id": "1131839817982947429",
+      "content": "鯊魚可以放進我裡面嗎",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285229542302285875",
+      "channel_id": "1131839817982947429",
+      "content": "旺達：",
+      "author": "arr5721",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285119584361250907",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "aprohectus",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285250678561833010",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/980424917994582057/1282780085820326095/im",
+      "author": "adepht",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1285110117028597792",
+      "channel_id": "1131839817982947429",
+      "content": "..................哈福德和头骨在一起的话症状会因为被弃掉而导致虚无没做事",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285178267514568736",
+      "channel_id": "1131839817982947429",
+      "content": "脫光...",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285277581188272229",
+      "channel_id": "1173463482503536711",
+      "content": "收米人當場生一個欲之代行者出來",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1285149238564753409",
+      "channel_id": "1131839817982947429",
+      "content": "所以明天最後一關估計是哈姆林當王，然後送你毒素跟尖刺",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285239913519779861",
+      "channel_id": "1131839817982947429",
+      "content": "菲因特用偷的 旺達只能降",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285262202110087200",
+      "channel_id": "1131839817982947429",
+      "content": "不相信粉魚神的人都會被制裁",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1285249849398394921",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1209344427705770034/1272684018709692567/i",
+      "author": "adepht",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1285273178947457140",
+      "channel_id": "1173463482503536711",
+      "content": "而且他們和學院本來就有點過節吧在很前面的時候\n我印象中學院跟審查會關係本來就沒有很好",
+      "author": "yusi4172",
+      "reactions": 2,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1285147769182359553",
@@ -81,39 +200,12 @@
       "channel": "忘却喵（？）夜"
     },
     {
-      "id": "1285185346472120352",
-      "content": "先用四小強打贏母樹才能深化（",
-      "author": "hananichiya",
-      "reactions": 1,
-      "channel": "靈知深化很容易誤觸"
-    },
-    {
-      "id": "1285176720449863741",
-      "content": "全70還要吃靈芝才能過 儲值都儲倒對面",
-      "author": "vancelu",
-      "reactions": 1,
-      "channel": "新boss"
-    },
-    {
-      "id": "1285198154865704983",
-      "content": "融災這次有圖魯感覺比較煩",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "新boss"
-    },
-    {
-      "id": "1285128042477391942",
-      "content": "本期的哈姆林攻略和第八期攻略活动还没来(敲碗等待中..)",
-      "author": "timee_ky",
-      "reactions": 1,
-      "channel": "哈姆林的攻略活动不见了"
-    },
-    {
-      "id": "1285065290467770388",
-      "content": "跑路了",
+      "id": "1285065268044759122",
+      "channel_id": "1131839817982947429",
+      "content": "",
       "author": "sadanshishen",
       "reactions": 1,
-      "channel": "超维哈姆林主c思路"
+      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,15 @@
 {
   "date": "2024-08-22",
-  "messages": 39,
-  "unique_authors": 11,
-  "reactions_total": 41,
-  "attachments": 9,
+  "messages": 1045,
+  "unique_authors": 64,
+  "reactions_total": 125,
+  "attachments": 46,
   "channel_activity": {
+    "🔸綜合討論": 761,
+    "🔸阵容构建": 102,
+    "🔸morimens-game-chat": 130,
+    "🔸相位对弈": 12,
+    "🔸课间休息闲聊": 1,
     "💭「處理中」ios優化": 2,
     "10000的兌換碼？你準備好了嗎，校貓": 6,
     "神奇的達芙戴爾與她的無數個技能": 4,
@@ -18,25 +23,45 @@
     "1193859503096070234": 5
   },
   "hourly_activity": {
-    "8": 9,
-    "9": 8,
-    "10": 2,
-    "11": 3,
-    "13": 2,
-    "12": 2,
-    "0": 2,
-    "15": 1,
-    "2": 1,
-    "3": 4,
-    "19": 1,
-    "4": 1,
-    "7": 3
+    "2": 17,
+    "3": 9,
+    "4": 36,
+    "5": 75,
+    "6": 127,
+    "7": 121,
+    "8": 90,
+    "9": 65,
+    "10": 58,
+    "11": 61,
+    "12": 23,
+    "13": 36,
+    "14": 24,
+    "15": 57,
+    "16": 177,
+    "17": 29,
+    "20": 9,
+    "22": 16,
+    "23": 4,
+    "21": 1,
+    "0": 3,
+    "1": 5,
+    "18": 1,
+    "19": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 18
+    "0": 871,
+    "19": 133,
+    "23": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1276119748672880780",
+      "channel_id": "1131839817982947429",
+      "content": "https://youtu.be/sCPO0kahQ6o?si=VUkwBij7rKR8YyV8",
+      "author": "qiyuan48",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1276172118438183028",
       "content": "萬了萬了！",
@@ -52,11 +77,27 @@
       "channel": "存一些之前画过的同人"
     },
     {
+      "id": "1276167896724148359",
+      "channel_id": "1131839817982947429",
+      "content": "10000人要發10000銀芯吧",
+      "author": "0.0w0",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1276094452880113679",
       "content": "如圖，達芙戴爾大加強",
       "author": "thesongoftheeternity",
       "reactions": 6,
       "channel": "神奇的達芙戴爾與她的無數個技能"
+    },
+    {
+      "id": "1276169241430851746",
+      "channel_id": "1131839817982947429",
+      "content": "有些只是忘了退群",
+      "author": "10253426",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1276139749354110990",
@@ -66,6 +107,46 @@
       "channel": "10000的兌換碼？你準備好了嗎，校貓"
     },
     {
+      "id": "1276116430043086878",
+      "channel_id": "1131839817982947429",
+      "content": "也才知道血肉有腥紅熔爐可以回血ouo",
+      "author": "four_leaves_clover",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1276213130157887599",
+      "channel_id": "1131839817982947429",
+      "content": "還不是有人在每天2T",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1276103692520525857",
+      "channel_id": "1131839874132090890",
+      "content": "我是獸控",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1276191052788797460",
+      "channel_id": "1131839817982947429",
+      "content": "四捨五入我也在玩菲",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1276214072139841680",
+      "channel_id": "1131839817982947429",
+      "content": "這遊戲怎麼還有人無氪",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1276089383971328051",
       "content": "奈亚太多分身了找不动💥",
       "author": "yang_42",
@@ -73,53 +154,60 @@
       "channel": ""
     },
     {
-      "id": "1276115536375451703",
-      "content": "轉內的是米爾",
-      "author": "ernest_heart",
+      "id": "1276068553187000364",
+      "channel_id": "1131839817982947429",
+      "content": "可惜菲茵特差一點成為百萬大C了",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "戈雅下崗了嗎，露比是新來的？"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1276115585067126785",
-      "content": "露比只是潛水",
-      "author": "ernest_heart",
+      "id": "1276104222408179787",
+      "channel_id": "1131839817982947429",
+      "content": "但基本上超維常駐角可以不用抽",
+      "author": "ahuahuahua",
       "reactions": 2,
-      "channel": "戈雅下崗了嗎，露比是新來的？"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1276159626068627488",
-      "content": "<@1131790839291596841> 🥹",
-      "author": "sylvestre.01",
+      "id": "1276112908794990674",
+      "channel_id": "1131839817982947429",
+      "content": "等等 原來觸腕能變更模式??",
+      "author": "jasonfoxcute",
       "reactions": 2,
-      "channel": "戈雅下崗了嗎，露比是新來的？"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1275969554585223241",
-      "content": "+12諾帝拉，真香",
-      "author": "z1473",
-      "reactions": 1,
-      "channel": "燉雞深潛4*3w"
+      "id": "1276219060392169533",
+      "channel_id": "1131839817982947429",
+      "content": "強度黨是這樣的",
+      "author": "0.0w0",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1275973011899551755",
-      "content": "钥令开两次就差不多够了，有极夜充<:cash:1239911416631394354>",
-      "author": "sylvestre.01",
-      "reactions": 1,
-      "channel": "燉雞深潛4*3w"
+      "id": "1276105087873318914",
+      "channel_id": "1131839874132090890",
+      "content": "你们好",
+      "author": "yanmuya",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1276197101210046596",
-      "content": "機器人🤖下載個催眠app很正常吧",
-      "author": "jester_romut",
-      "reactions": 1,
-      "channel": "大家好 這裏是艾瑞卡傻大頭"
+      "id": "1276123018275459146",
+      "channel_id": "1131839874132090890",
+      "content": "🤔反正現在的角色都上修好幾次了\n確定好自己想要玩的隊伍\n好好練好4隻 沒道理過不了主線",
+      "author": "ruko9999",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1276022870853685391",
-      "content": "請叫我通靈王!(偽",
-      "author": "aaaa_00098",
-      "reactions": 1,
-      "channel": "自創喚醒體相關：過去的影像"
+      "id": "1275990088920338453",
+      "channel_id": "1170692781216378960",
+      "content": "The only reset for core is Primodial Sedimen",
+      "author": "flinwander",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

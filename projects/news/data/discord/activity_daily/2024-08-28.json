@@ -1,10 +1,14 @@
 {
   "date": "2024-08-28",
-  "messages": 57,
-  "unique_authors": 13,
-  "reactions_total": 33,
-  "attachments": 5,
+  "messages": 2856,
+  "unique_authors": 89,
+  "reactions_total": 210,
+  "attachments": 123,
   "channel_activity": {
+    "🔸綜合討論": 1223,
+    "🔸阵容构建": 107,
+    "🔸morimens-game-chat": 1461,
+    "🔸相位对弈": 8,
     "🎁DC10000守密人達成禮": 1,
     "✅「已回答」賬號丟失？！": 1,
     "如何推出新玩法来盘活这个游戏？": 5,
@@ -17,22 +21,35 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "10": 1,
-    "4": 1,
-    "9": 3,
-    "16": 1,
-    "21": 11,
-    "3": 7,
-    "2": 5,
-    "7": 9,
-    "8": 4,
-    "12": 3,
-    "15": 8,
-    "20": 3,
-    "0": 1
+    "0": 23,
+    "1": 24,
+    "2": 20,
+    "3": 68,
+    "4": 134,
+    "5": 75,
+    "6": 335,
+    "7": 113,
+    "8": 112,
+    "9": 52,
+    "10": 78,
+    "11": 141,
+    "12": 171,
+    "13": 470,
+    "14": 343,
+    "15": 378,
+    "16": 86,
+    "17": 114,
+    "18": 31,
+    "20": 48,
+    "23": 8,
+    "22": 1,
+    "19": 6,
+    "21": 25
   },
   "message_types": {
-    "0": 1
+    "0": 2377,
+    "19": 421,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -50,25 +67,148 @@
       "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
     },
     {
-      "id": "1278266136806293525",
-      "content": "忘卻很可惜啊 以為發現了一個好作品\n\n開了個好頭 但後續被策畫各種逆天的操作 遊戲內容的虎頭蛇尾 系統的匱乏 細節的混亂  定位方向的不明確 優化一坨 等問題把",
+      "id": "1278303938025881682",
+      "channel_id": "1131839817982947429",
+      "content": "然後端出這個",
+      "author": "hananichiya",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278321197242908693",
+      "channel_id": "1131839874132090890",
+      "content": "假裝感覺有在打炮",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1278410080349458473",
+      "channel_id": "1131839817982947429",
+      "content": "2启了",
+      "author": "aprohectus",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278274968966397952",
+      "channel_id": "1131839874132090890",
+      "content": "你這是在歧視我們最平衡的忘卻前夜嗎",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1278242130376130604",
+      "channel_id": "1170692781216378960",
+      "content": "I used my Monthly's on him. only for me to not even use him.",
+      "author": "turboseer",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1278340010348773476",
+      "channel_id": "1170692781216378960",
+      "content": "hahahha\nIkr, I play his 2 card or ultimate then I see 1 or 2. and i'm like \"bruh",
+      "author": "turboseer",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1278347683337080956",
+      "channel_id": "1170692781216378960",
+      "content": "someone is expecting to face million hp normal boss on chapter 5",
+      "author": "flynnize",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1278256631422914612",
+      "channel_id": "1131839817982947429",
+      "content": "所以疊黑印 = 自選造物",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278279330962608179",
+      "channel_id": "1131839817982947429",
+      "content": "我沒主宰該不會又要去坐牢了吧",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278301758724112475",
+      "channel_id": "1131839817982947429",
+      "content": "大學關門 感謝大家支持",
+      "author": "nemu_s_t_a_r",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278310300382400602",
+      "channel_id": "1131839817982947429",
+      "content": "靠北回錯",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278368192498241537",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "falst_over_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278368332113772644",
+      "channel_id": "1131839817982947429",
+      "content": "莉莉那兩顆小膿包🥵",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278368948739637248",
+      "channel_id": "1131839817982947429",
+      "content": "阿花上來\n換你動",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1278319259591639112",
+      "channel_id": "1131839874132090890",
+      "content": "群佬除我",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1278198698974908458",
+      "channel_id": "1131839817982947429",
+      "content": "🤮",
       "author": "whimsical_starfish_19845",
       "reactions": 2,
-      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1278212200804253716",
-      "content": "解決了",
-      "author": "doggg0064_67428",
-      "reactions": 1,
-      "channel": "✅「已回答」賬號丟失？！"
+      "id": "1278243289346211902",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1278252992600215552",
-      "content": "媽呀老大我愛你❤️❤️❤️",
-      "author": "rhaen_0625",
-      "reactions": 1,
-      "channel": "自創喚醒體相關：时至今日，你還在徒勞地嘗試麽？"
+      "id": "1278277775785984000",
+      "channel_id": "1131839817982947429",
+      "content": "菲因特根本不能算血肉（暴論）",
+      "author": "z21342225",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

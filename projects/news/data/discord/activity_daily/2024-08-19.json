@@ -1,10 +1,15 @@
 {
   "date": "2024-08-19",
-  "messages": 51,
-  "unique_authors": 10,
-  "reactions_total": 31,
-  "attachments": 6,
+  "messages": 1756,
+  "unique_authors": 93,
+  "reactions_total": 100,
+  "attachments": 79,
   "channel_activity": {
+    "🔸綜合討論": 997,
+    "🔸morimens-game-chat": 569,
+    "🔸剧情交流": 9,
+    "🔸相位对弈": 129,
+    "🔸课间休息闲聊": 1,
     "✏『彌薩格大學』第六期攻略募集活動開始啦！": 2,
     "🖌 彌薩格大學同人二創活動五期開始進行啦！": 1,
     "✅「已回答」斷關續連能不能續在當前回合數": 2,
@@ -25,20 +30,33 @@
     "溺血": 1
   },
   "hourly_activity": {
-    "7": 11,
-    "8": 13,
-    "19": 1,
-    "5": 6,
-    "6": 3,
-    "10": 2,
-    "13": 8,
-    "9": 1,
-    "23": 4,
-    "14": 1,
-    "2": 1
+    "0": 25,
+    "1": 36,
+    "2": 4,
+    "3": 57,
+    "4": 22,
+    "5": 21,
+    "6": 79,
+    "7": 54,
+    "8": 143,
+    "9": 204,
+    "10": 83,
+    "11": 304,
+    "12": 239,
+    "13": 126,
+    "14": 99,
+    "15": 67,
+    "16": 16,
+    "17": 17,
+    "18": 98,
+    "19": 17,
+    "21": 7,
+    "22": 22,
+    "23": 16
   },
   "message_types": {
-    "0": 3
+    "19": 267,
+    "0": 1438
   },
   "top_reacted_messages": [
     {
@@ -63,32 +81,140 @@
       "channel": "關卡地圖「融災禁區」總覽ⅩⅤ"
     },
     {
-      "id": "1275009232755757158",
-      "content": "感謝守密人的反饋，經露比確認，在守密人離開戰鬥時間較長時，會導致戰鬥記錄清空，重連時就會從0回合開始了<:flop:1236937860922343466> 。",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "✅「已回答」斷關續連能不能續在當前回合數"
+      "id": "1275207072551665825",
+      "channel_id": "1170692781216378960",
+      "content": "I want to know that too, Its hard to find official art of the game 🥹 and Also Fa",
+      "author": "haripax",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1274995610025590847",
-      "content": "露比收到！會立馬反饋給校工進行排查優化的😭 非常感謝守密人的支持和理解呀。",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "💭「處理中」ios優化"
+      "id": "1275104905077592154",
+      "channel_id": "1131839817982947429",
+      "content": "最近有兌換碼嗎",
+      "author": "laoyueshoufaxinyangzhe",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1274996425188446248",
-      "content": "",
-      "author": "falst_over_",
-      "reactions": 1,
-      "channel": "💭「處理中」ios優化"
+      "id": "1275007045220962366",
+      "channel_id": "1131839817982947429",
+      "content": "還好我萊克都沒有傷害",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1275234541803667468",
-      "content": "要想辦法拿鏡像和酒",
-      "author": "yi000607",
+      "id": "1275057859264118939",
+      "channel_id": "1131839817982947429",
+      "content": "有 我 100140309",
+      "author": "rondo057",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275059604933578772",
+      "channel_id": "1131839817982947429",
+      "content": "哇 這隻萊克之前有兩隻其他，應該算大保<:stoppage:1236938521365839872>",
+      "author": "otonos",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275041882615058516",
+      "channel_id": "1170692781216378960",
+      "content": "Dupes are more important overall",
+      "author": "theoyabat",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1274975977667039243",
+      "channel_id": "1131839817982947429",
+      "content": "法洛斯",
+      "author": "tt1036",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275006077661872182",
+      "channel_id": "1131839817982947429",
+      "content": "那不抽比較好",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275007225210867752",
+      "channel_id": "1131839817982947429",
+      "content": "超限一發打30k我怎麼控傷",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275054721958281280",
+      "channel_id": "1131839817982947429",
+      "content": "我試了一星期 我可以很負責任的告訴你 ~~拉狗組合是不需要防禦的~~",
+      "author": "rondo057",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275070959061307402",
+      "channel_id": "1131839817982947429",
+      "content": "女王劍超痛的😡",
+      "author": "whimsical_starfish_19845",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275104744398127135",
+      "channel_id": "1180850818509971466",
+      "content": "所以命運是那個命運輪盤賭<:stoppage:1236938521365839872>",
+      "author": "ariate",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1275002510310117417",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "0.0w0",
       "reactions": 1,
-      "channel": "莱克攻略"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275002613141864521",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275002795103359028",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "xinyue.57",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275005730113585185",
+      "channel_id": "1131839817982947429",
+      "content": "明白謝謝大佬🙏🏻",
+      "author": "yukient002",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1275006126462599237",
+      "channel_id": "1131839817982947429",
+      "content": "剛剛去出cos了",
+      "author": "jester_romut",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

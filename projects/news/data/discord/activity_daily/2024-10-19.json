@@ -1,10 +1,17 @@
 {
   "date": "2024-10-19",
-  "messages": 61,
-  "unique_authors": 24,
-  "reactions_total": 38,
-  "attachments": 3,
+  "messages": 1731,
+  "unique_authors": 99,
+  "reactions_total": 125,
+  "attachments": 100,
   "channel_activity": {
+    "🔸綜合討論": 587,
+    "🔸阵容构建": 30,
+    "🔸morimens-game-chat": 1005,
+    "🔸剧情交流": 4,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 39,
+    "🔸课间休息闲聊": 2,
     "沒別的意思 就是覺得深海國家打不動了": 9,
     "点角色界面也会卡住": 4,
     "能不能把希洛的形态切换动画加回来呀？": 3,
@@ -15,25 +22,34 @@
     "以下開放留言講缺點": 5
   },
   "hourly_activity": {
-    "1": 1,
-    "7": 2,
-    "14": 4,
-    "15": 18,
-    "17": 1,
-    "10": 7,
-    "11": 1,
-    "12": 1,
-    "9": 6,
-    "3": 1,
-    "4": 5,
-    "5": 3,
-    "6": 4,
-    "8": 6,
-    "16": 1
+    "0": 21,
+    "2": 60,
+    "3": 13,
+    "4": 71,
+    "5": 21,
+    "6": 27,
+    "7": 35,
+    "8": 107,
+    "9": 25,
+    "10": 83,
+    "11": 316,
+    "12": 178,
+    "13": 48,
+    "14": 74,
+    "15": 350,
+    "16": 156,
+    "17": 35,
+    "18": 22,
+    "21": 16,
+    "22": 24,
+    "19": 8,
+    "20": 12,
+    "1": 18,
+    "23": 11
   },
   "message_types": {
-    "0": 50,
-    "19": 5
+    "0": 1384,
+    "19": 286
   },
   "top_reacted_messages": [
     {
@@ -42,6 +58,22 @@
       "author": "nazhigezihk",
       "reactions": 9,
       "channel": "主線第6章畫面bug"
+    },
+    {
+      "id": "1297097878694526997",
+      "channel_id": "1131839817982947429",
+      "content": "【【忘却前夜】【幻梦深潜】血链希洛1t72000-哔哩哔哩】 https://b23.tv/8XladdL",
+      "author": "tranquil_monkey_73179",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297054469997199401",
+      "channel_id": "1131839817982947429",
+      "content": "奧吉爾",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1297136288478138462",
@@ -72,6 +104,54 @@
       "channel": "第19期融灾禁区（241014-241028）攻略、配队思路、打法建议"
     },
     {
+      "id": "1297103419173244939",
+      "channel_id": "1131839817982947429",
+      "content": "換成場景CG",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297055136342085672",
+      "channel_id": "1131839817982947429",
+      "content": "是我",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297056232212922451",
+      "channel_id": "1131839817982947429",
+      "content": "~~沒空間一定是因為沒+12~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297117670864322621",
+      "channel_id": "1131839817982947429",
+      "content": "只要时机合适，我就对校猫用这表情包",
+      "author": "fengtengjayden9754",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297169645475860521",
+      "channel_id": "1131839817982947429",
+      "content": "？~~干我是找到什么东西~~",
+      "author": "ling_an_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297173611353997414",
+      "channel_id": "1131839817982947429",
+      "content": "当初一只6+1海哥爽砍一整个枫丹（）芙和龙王都没抽\n~~玩游戏xp是囤囤鼠是这样的~~",
+      "author": "lyaistra",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1297108549138386976",
       "content": "但記得考慮清楚<:wish:1236951537788649492>",
       "author": "wild_pansy",
@@ -79,25 +159,52 @@
       "channel": "手滑选错了怎么办"
     },
     {
-      "id": "1297143346615029823",
-      "content": "有点幽默了",
-      "author": "ioshift_24740",
+      "id": "1297118141033222154",
+      "channel_id": "1131839817982947429",
+      "content": "校猫校猫罪大滔天，弄得百姓怨声载道（狗头",
+      "author": "fengtengjayden9754",
       "reactions": 2,
-      "channel": "点角色界面也会卡住"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1297179730335764543",
-      "content": "拉蒙娜/環形拉蒙娜的切換界面\n薩爾瓦多的名字\n血鏈希洛的啟靈\n<:cry:1239910167668326480>",
-      "author": "_buqi",
+      "id": "1297168267697197077",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xinyue.57",
       "reactions": 2,
-      "channel": "点角色界面也会卡住"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1297053406682288129",
-      "content": "每個輔助都想要它啊",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "手滑选错了怎么办"
+      "id": "1297171389937225749",
+      "channel_id": "1131839817982947429",
+      "content": "🧐有空下个看看",
+      "author": "tranquil_monkey_73179",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297171446405136437",
+      "channel_id": "1131839817982947429",
+      "content": "这几天我要肝原神地图",
+      "author": "tranquil_monkey_73179",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297172379751153708",
+      "channel_id": "1131839817982947429",
+      "content": "原神当图鉴党代价太高了",
+      "author": "tranquil_monkey_73179",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1297009400401231893",
+      "channel_id": "1170692781216378960",
+      "content": "They should have buffed her yellow ult",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

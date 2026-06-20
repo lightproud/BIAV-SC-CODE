@@ -7,19 +7,19 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子）沿 Python 模块级 import 图做传递闭包；status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 22,
-      "scripts_top": 36,
+      "scripts_top": 14,
       "scripts_news": 25,
-      "scripts_wiki": 17,
-      "mcp_tools": 16,
+      "scripts_wiki": 16,
+      "mcp_tools": 4,
       "commands": 4,
       "skills": 1,
       "projects": 4,
-      "total": 125
+      "total": 90
     },
     "reachability": {
-      "live": 63,
+      "live": 44,
       "test-only": 9,
-      "orphaned": 6
+      "orphaned": 2
     }
   },
   "workflows": [
@@ -245,10 +245,8 @@
       "id": "boot_snapshot.py",
       "path": "scripts/boot_snapshot.py",
       "summary": "boot_snapshot.py — 银芯启动快照生成器",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
+      "planes": [],
+      "status": "orphaned"
     },
     {
       "id": "build_capability_registry.py",
@@ -266,105 +264,8 @@
       "planes": [
         "mcp"
       ],
-      "status": "live"
-    },
-    {
-      "id": "context_manager.py",
-      "path": "scripts/context_manager.py",
-      "summary": "context_manager.py — Virtual Context Manager (MemGPT-style)",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream.py",
-      "path": "scripts/dream.py",
-      "summary": "dream.py — 4-Phase AutoDream Memory Consolidation System",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_ai.py",
-      "path": "scripts/dream_ai.py",
-      "summary": "AI-powered consolidation + sleep-time precompute cache.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_archive.py",
-      "path": "scripts/dream_archive.py",
-      "summary": "Archive integrity scan — detect broken path references in repo docs.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_config.py",
-      "path": "scripts/dream_config.py",
-      "summary": "Shared configuration constants for the dream.py memory-consolidation system.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_health.py",
-      "path": "scripts/dream_health.py",
-      "summary": "Memory hygiene checks — staleness, broken refs, duplicate decisions, etc.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_io.py",
-      "path": "scripts/dream_io.py",
-      "summary": "Dream persistence — journal, insights and access-log read/write.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_rem.py",
-      "path": "scripts/dream_rem.py",
-      "summary": "REM phase — weekly deep reflection: cross-session pattern analysis,",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "dream_sentinel.py",
-      "path": "scripts/dream_sentinel.py",
-      "summary": "Sentinel layer — proactive anomaly detection over news data sources.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "extract_art.py",
-      "path": "scripts/extract_art.py",
-      "summary": "Batch extract art assets from Morimens encrypted AssetBundles.",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。"
-    },
-    {
-      "id": "fact_store.py",
-      "path": "scripts/fact_store.py",
-      "summary": "fact_store.py — AI-driven Fact Storage with Semantic Deduplication",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
+      "status": "live",
+      "note_zh": "艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。"
     },
     {
       "id": "generate_wiki_pages.py",
@@ -379,19 +280,8 @@
       "id": "io_utils.py",
       "path": "scripts/io_utils.py",
       "summary": "io_utils.py — shared atomic file write helper.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "knowledge_graph.py",
-      "path": "scripts/knowledge_graph.py",
-      "summary": "knowledge_graph.py — Knowledge Graph Builder & Query Engine",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
+      "planes": [],
+      "status": "orphaned"
     },
     {
       "id": "lua_parse.py",
@@ -409,34 +299,8 @@
       "planes": [
         "mcp"
       ],
-      "status": "live"
-    },
-    {
-      "id": "memory_search.py",
-      "path": "scripts/memory_search.py",
-      "summary": "memory_search.py — Semantic Memory Search with TF-IDF Vectors + Reranker",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "memory_writeback.py",
-      "path": "scripts/memory_writeback.py",
-      "summary": "memory_writeback.py — Long-term Memory Write-back Loop",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "memrl.py",
-      "path": "scripts/memrl.py",
-      "summary": "memrl.py — MemRL-lite: Memory Utility Tracking & Adaptive Reranking",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
+      "status": "live",
+      "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
     },
     {
       "id": "parse_awaker_config.py",
@@ -484,15 +348,6 @@
       "status": "test-only"
     },
     {
-      "id": "reflexion.py",
-      "path": "scripts/reflexion.py",
-      "summary": "reflexion.py — Reflexion: Automatic Failure Learning",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
-    },
-    {
       "id": "report_render.py",
       "path": "scripts/report_render.py",
       "summary": "银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。",
@@ -502,63 +357,14 @@
       "status": "live"
     },
     {
-      "id": "session_briefing.py",
-      "path": "scripts/session_briefing.py",
-      "summary": "session_briefing.py — Smart Session Briefing Generator",
-      "planes": [
-        "mcp"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "session_distiller.py",
-      "path": "scripts/session_distiller.py",
-      "summary": "session_distiller.py — Claude Code SessionEnd transcript distiller (v0.4 md+meta).",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "[退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。"
-    },
-    {
-      "id": "session_inject.py",
-      "path": "scripts/session_inject.py",
-      "summary": "session_inject.py —— UserPromptSubmit hook：每次用户输入前注入历史会话上下文。",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "[退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。"
-    },
-    {
-      "id": "session_reflexion.py",
-      "path": "scripts/session_reflexion.py",
-      "summary": "session_reflexion.py — Session-end reflexion hook",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "[退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。"
-    },
-    {
-      "id": "session_watch.py",
-      "path": "scripts/session_watch.py",
-      "summary": "session_watch.py —— PostToolUse hook：实时追加会话工具调用事件到 progress.jsonl。",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "[退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。"
-    },
-    {
       "id": "silver_memory_tools.py",
       "path": "scripts/silver_memory_tools.py",
       "summary": "silver_memory_tools.py —— 银芯记忆增强工具集",
       "planes": [
         "mcp"
       ],
-      "status": "live"
-    },
-    {
-      "id": "text_utils.py",
-      "path": "scripts/text_utils.py",
-      "summary": "Shared text tokenization for the memory system.",
-      "planes": [
-        "import"
-      ],
-      "status": "live"
+      "status": "live",
+      "note_zh": "记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。"
     }
   ],
   "scripts_news": [
@@ -811,14 +617,6 @@
       "note_zh": "构建掉落物索引。"
     },
     {
-      "id": "build_notion_voice_enrichment.py",
-      "path": "projects/wiki/scripts/build_notion_voice_enrichment.py",
-      "summary": "Build per-character voice-line enrichment for the Notion character database.",
-      "planes": [],
-      "status": "orphaned",
-      "note_zh": "[一次性·孤儿] 从 Notion 富化语音数据，无活入口。"
-    },
-    {
       "id": "check_version.py",
       "path": "projects/wiki/scripts/check_version.py",
       "summary": "check_version.py - Automated version update tracker for Morimens wiki.",
@@ -961,69 +759,9 @@
   ],
   "mcp_tools": [
     {
-      "id": "memory_search",
-      "module": "scripts/mcp_server.py",
-      "summary": "搜索银芯知识库，返回最相关的知识块。"
-    },
-    {
-      "id": "graph_query",
-      "module": "scripts/mcp_server.py",
-      "summary": "查询知识图谱中的实体及其关联。"
-    },
-    {
-      "id": "graph_related_files",
-      "module": "scripts/mcp_server.py",
-      "summary": "查找与实体相关的文件，按图谱距离排序。"
-    },
-    {
-      "id": "memory_utility",
-      "module": "scripts/mcp_server.py",
-      "summary": "查看记忆文件效用排名。"
-    },
-    {
-      "id": "check_cache",
-      "module": "scripts/mcp_server.py",
-      "summary": "查询 Sleep-Time Compute 预计算缓存。"
-    },
-    {
-      "id": "recommend_context",
-      "module": "scripts/mcp_server.py",
-      "summary": "根据当前话题推荐应加载的知识文件（虚拟上下文管理）。"
-    },
-    {
-      "id": "rebuild_indexes",
-      "module": "scripts/mcp_server.py",
-      "summary": "重建所有索引（向量索引 + 知识图谱 + 效用分数）。"
-    },
-    {
-      "id": "store_facts",
-      "module": "scripts/mcp_server.py",
-      "summary": "存储本次对话中发现的重要知识事实。"
-    },
-    {
-      "id": "memory_writeback",
-      "module": "scripts/mcp_server.py",
-      "summary": "将当前会话产生的新知识写回知识库。"
-    },
-    {
-      "id": "session_briefing",
-      "module": "scripts/mcp_server.py",
-      "summary": "新会话启动时调用，获取智能 briefing。"
-    },
-    {
       "id": "character_persona",
       "module": "scripts/mcp_server.py",
       "summary": "激活角色人格模式，让AI以游戏角色的语气进行对话。"
-    },
-    {
-      "id": "recall_session",
-      "module": "scripts/mcp_server.py",
-      "summary": "在历史 session digest 中语义搜索相关 session（TF-IDF + 4 维重排）。"
-    },
-    {
-      "id": "current_continuity",
-      "module": "scripts/mcp_server.py",
-      "summary": "读取 session 连续性链（上次 session 快照 + topics_hint）。"
     },
     {
       "id": "record_decision",
@@ -1036,9 +774,9 @@
       "summary": "追加教训条目到 memory/lessons-learned.md 末尾。"
     },
     {
-      "id": "session_progress",
+      "id": "current_continuity",
       "module": "scripts/mcp_server.py",
-      "summary": "读取指定 session 的 progress.jsonl 增量事件列表（由 session_watch hook 记录）。"
+      "summary": "读取 session 连续性链（上次 session 快照 + topics_hint）。"
     }
   ],
   "commands": [

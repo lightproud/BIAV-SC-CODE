@@ -1,10 +1,22 @@
 {
   "date": "2024-10-30",
-  "messages": 68,
-  "unique_authors": 14,
-  "reactions_total": 125,
-  "attachments": 16,
+  "messages": 2231,
+  "unique_authors": 120,
+  "reactions_total": 373,
+  "attachments": 116,
   "channel_activity": {
+    "🔸綜合討論": 655,
+    "🔸morimens-game-chat": 859,
+    "🔸剧情交流": 1,
+    "🔸相位对弈": 63,
+    "🔸日本語チャンネル": 6,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 455,
+    "🔸phòng-chat-tiếng-việt": 53,
+    "🔸canal-español": 58,
+    "🔸canal-português": 1,
+    "🔸ruang-obrolan-indonesia": 7,
     "蹈海野貓雜技團（釘選有目錄）": 2,
     "沒別的意思 就是覺得深海國家打不動了": 1,
     "哈基米 我也想長大一下": 6,
@@ -22,26 +34,35 @@
     "1181998821291606097": 2
   },
   "hourly_activity": {
-    "15": 23,
-    "2": 5,
-    "1": 2,
-    "4": 3,
-    "23": 2,
-    "13": 5,
-    "0": 1,
-    "12": 6,
-    "14": 1,
-    "7": 2,
-    "19": 1,
-    "6": 1,
-    "8": 1,
-    "9": 9,
-    "11": 1,
-    "16": 4,
-    "10": 1
+    "0": 85,
+    "1": 59,
+    "2": 34,
+    "3": 67,
+    "4": 36,
+    "6": 37,
+    "7": 19,
+    "8": 67,
+    "9": 41,
+    "10": 76,
+    "11": 302,
+    "12": 144,
+    "13": 193,
+    "14": 174,
+    "15": 222,
+    "16": 64,
+    "17": 105,
+    "18": 49,
+    "23": 20,
+    "5": 36,
+    "19": 343,
+    "20": 53,
+    "22": 2,
+    "21": 3
   },
   "message_types": {
-    "0": 2
+    "0": 1855,
+    "19": 307,
+    "18": 1
   },
   "top_reacted_messages": [
     {
@@ -73,6 +94,14 @@
       "channel": "死亡已經迫近，消亡已經開始"
     },
     {
+      "id": "1301070541943214140",
+      "channel_id": "1131839817982947429",
+      "content": "海必贏<:play:1238448692441251910>",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1301041058498740304",
       "content": "希望活久一點",
       "author": "ice_storys",
@@ -85,6 +114,22 @@
       "author": "ioshift_24740",
       "reactions": 9,
       "channel": "血链·希洛的抽取建议"
+    },
+    {
+      "id": "1301095789841616906",
+      "channel_id": "1131839817982947429",
+      "content": "擠🤏",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1301106852406497302",
+      "channel_id": "1131839817982947429",
+      "content": "塔微可以跨界域進行組隊。每一個界域提供不同增益，增益可以疊加。\n血肉：攻击力提升45%；\n深海：生命值上限提升45%；\n超維：暴击伤害提升60%；\n混沌：每回合",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1301123317822128189",
@@ -101,11 +146,43 @@
       "channel": "聖誕節出世"
     },
     {
+      "id": "1301035930991333477",
+      "channel_id": "1131839817982947429",
+      "content": "这是校猫p的发在QQ群的",
+      "author": "sense25.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1301123935642976256",
+      "channel_id": "1300659436804640788",
+      "content": "日本の配信者はやっていないですね。でも、著名なイラストレーターさんがジェンキン（詹金）のイラスト描いてました。https://x.com/niiiitoooon",
+      "author": "x013318908",
+      "reactions": 6,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1301161895822098533",
       "content": "Some text is not visible in Japanese.\n1.Assignment(課題)、2.Elite battle(精鋭戦)、3.Fin",
       "author": "x013318908",
       "reactions": 6,
       "channel": "Some text is not visible in Japanese"
+    },
+    {
+      "id": "1301090748695056416",
+      "channel_id": "1131839817982947429",
+      "content": "是不是該擠下去了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1301147198305603644",
+      "channel_id": "1131839817982947429",
+      "content": "阿花每天的任務就是重置融災打個375 四界域72000 拚1t這樣",
+      "author": "jackpot_7",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1301151027516670032",
@@ -115,11 +192,28 @@
       "channel": "死亡已經迫近，消亡已經開始"
     },
     {
-      "id": "1301196301119000576",
-      "content": "thanks！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "Some text is not visible in Japanese"
+      "id": "1301138821626204211",
+      "channel_id": "1131839817982947429",
+      "content": "然後就跑了",
+      "author": "xinyue.57",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1301141630199402546",
+      "channel_id": "1131839817982947429",
+      "content": "一天玩十几款游戏没时间看社区",
+      "author": "you_zuo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1301144036605820983",
+      "channel_id": "1131839817982947429",
+      "content": "圖魯原版10層睡，你開狂氣會扣、銀鑰也扣，扣10次直接全鎖然後一堆觸手揍你",
+      "author": ".moon_leaf",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

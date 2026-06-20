@@ -1,10 +1,15 @@
 {
   "date": "2024-08-31",
-  "messages": 36,
-  "unique_authors": 8,
-  "reactions_total": 18,
-  "attachments": 5,
+  "messages": 1760,
+  "unique_authors": 83,
+  "reactions_total": 149,
+  "attachments": 86,
   "channel_activity": {
+    "🔸綜合討論": 781,
+    "🔸阵容构建": 241,
+    "🔸morimens-game-chat": 673,
+    "🔸剧情交流": 9,
+    "🔸相位对弈": 20,
     "阅读剧情时发现的一些文本错误": 1,
     "一鍵領取": 1,
     "莉莉的特遣「故事的魔法」": 1,
@@ -16,17 +21,33 @@
     "相位基本型推介／PVP typical team suggestion": 1
   },
   "hourly_activity": {
-    "13": 1,
-    "10": 8,
-    "5": 7,
-    "6": 9,
-    "9": 1,
-    "7": 1,
-    "4": 4,
-    "12": 5
+    "0": 4,
+    "2": 11,
+    "3": 370,
+    "4": 48,
+    "5": 41,
+    "6": 106,
+    "7": 120,
+    "8": 41,
+    "9": 28,
+    "10": 82,
+    "11": 31,
+    "12": 54,
+    "13": 47,
+    "14": 76,
+    "15": 90,
+    "16": 241,
+    "17": 80,
+    "18": 211,
+    "1": 39,
+    "23": 5,
+    "19": 29,
+    "20": 3,
+    "22": 3
   },
   "message_types": {
-    "0": 1
+    "19": 234,
+    "0": 1490
   },
   "top_reacted_messages": [
     {
@@ -37,6 +58,94 @@
       "channel": "一鍵領取"
     },
     {
+      "id": "1279449480860663910",
+      "channel_id": "1131839817982947429",
+      "content": "什麼H同人展",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279418957807489095",
+      "channel_id": "1131839817982947429",
+      "content": "身嬌體柔易推倒",
+      "author": "huangyu0876",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279486498495795354",
+      "channel_id": "1131839817982947429",
+      "content": "大家好，我是換月提醒小幫手。商店的每月兌換想換得記得煥光喔",
+      "author": "tofu0834",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279354231366615154",
+      "channel_id": "1131839817982947429",
+      "content": "群佬草我",
+      "author": "cra0261_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279366271196074067",
+      "channel_id": "1131839817982947429",
+      "content": "如果我操你，那就是操你全家",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279418658484912159",
+      "channel_id": "1131839817982947429",
+      "content": "莉莉真好打",
+      "author": "andy1123",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279460111600975913",
+      "channel_id": "1131839817982947429",
+      "content": "剩下阿花要面對水深火熱的融災了",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279474678171308163",
+      "channel_id": "1131839817982947429",
+      "content": "盾擊水母",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279506747299729471",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279507353284251649",
+      "channel_id": "1131839817982947429",
+      "content": "奧懶叫",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279341486890160139",
+      "channel_id": "1170692781216378960",
+      "content": "another one fell for the Ryker's honey trap",
+      "author": "flynnize",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1279392255031119914",
       "content": "我同意素材關不能太難\n但事實上最重要的道具主要產出在災區\n而災區對新手極度不友好\n主線的等級道具還是後來補的\n原本沒降低的難度也不是完全打不過或是極度凹\n就算無",
       "author": "hananichiya",
@@ -44,32 +153,60 @@
       "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
     },
     {
-      "id": "1279390649782898708",
-      "content": "原本的災區就是要搞這個\n結果嘿\n綁等級上限道具",
-      "author": "hananichiya",
+      "id": "1279468409909940294",
+      "channel_id": "1131839817982947429",
+      "content": "艾深4的时候诺还没抽出来<:flop:1236937860922343466>",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279282166538309775",
+      "channel_id": "1131839817982947429",
+      "content": "Mon~~~key brother~~ monkey brother",
+      "author": "falst_over_",
       "reactions": 2,
-      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279320920351182912",
-      "content": "新玩家玩肉鸽，老玩家玩数值🤣",
-      "author": "luoqixikiss",
-      "reactions": 1,
-      "channel": "如何推出新玩法来盘活这个游戏？"
+      "id": "1279465144266522664",
+      "channel_id": "1131839817982947429",
+      "content": "~~升等全靠命輪~~",
+      "author": "corn_pop_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279345046264741960",
-      "content": "iPad 8 ，看我的超大臉拉蒙娜<:finger:1234798285466632212> <@1168738854837166162>",
-      "author": "sakuyayan",
-      "reactions": 1,
-      "channel": "ipad自设定背景图比例失真"
+      "id": "1279474198225621095",
+      "channel_id": "1131839817982947429",
+      "content": "水母好像是修bug之後寄",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279301286553976913",
-      "content": "对面塞牌越多你越发卡手啊",
-      "author": "zkc23333",
-      "reactions": 1,
-      "channel": "受祝头骨能不能优化啊"
+      "id": "1279476550433112145",
+      "channel_id": "1131839817982947429",
+      "content": "忍耐1万+",
+      "author": "cs001092",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279476995473805374",
+      "channel_id": "1131839817982947429",
+      "content": "# 我破防了",
+      "author": "xinyue.57",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1279478554392006749",
+      "channel_id": "1131839817982947429",
+      "content": "50萬那不是正常玩就有",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

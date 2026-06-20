@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-20T07:44:32.675394+00:00",
+  "collected_at": "2026-06-20T12:25:56.979944+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 20,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:43:14+00:00",
+      "lang": "english",
+      "title": "[正面] I have no idea what I am doing and not sure I am f...",
+      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
+      "author": "76561198035846757",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "timestamp_created": 1781926994,
+      "playtime_forever": 1736
+    },
     {
       "source": "steam",
       "time": "2026-06-19T15:53:39+00:00",
@@ -17,6 +32,96 @@
       "review": "W Ultra Realm my goat",
       "timestamp_created": 1781884419,
       "playtime_forever": 2583
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T10:58:42+00:00",
+      "lang": "english",
+      "title": "[正面] honestly one of the best gacha games ive ever play...",
+      "summary": "honestly one of the best gacha games ive ever played, the fact that this game almost eos'd a year in and is now thriving at its 2.5 anni is so wonderful to me.\r\nthe fact that regardless of its earlier decline people continued to support the game and allowed it to make improvements like fully human translations for the english and korean dubs is also something i really appreciate since ai translations are not only less effective but also like boo ai lame.\r\nmorimens also has some of the best character designs out of any gacha ive touched, the lovecraftian visuals and more mature story and character themes make the story actually pretty interesting aswell\r\n10/10 would recommend <3",
+      "url": "https://steamcommunity.com/profiles/76561199068786014/recommended/3052450",
+      "author": "76561199068786014",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "honestly one of the best gacha games ive ever played, the fact that this game almost eos'd a year in and is now thriving at its 2.5 anni is so wonderful to me.\r\nthe fact that regardless of its earlier decline people continued to support the game and allowed it to make improvements like fully human translations for the english and korean dubs is also something i really appreciate since ai translations are not only less effective but also like boo ai lame.\r\nmorimens also has some of the best character designs out of any gacha ive touched, the lovecraftian visuals and more mature story and character themes make the story actually pretty interesting aswell\r\n10/10 would recommend <3",
+      "timestamp_created": 1781953122,
+      "playtime_forever": 2244
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T10:53:00+00:00",
+      "lang": "schinese",
+      "title": "[负面] 长草期巨长，节奏比游戏内容还多",
+      "summary": "长草期巨长，节奏比游戏内容还多",
+      "url": "https://steamcommunity.com/profiles/76561198151482573/recommended/3052450",
+      "author": "76561198151482573",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "长草期巨长，节奏比游戏内容还多",
+      "timestamp_created": 1781952780,
+      "playtime_forever": 34489
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T08:14:57+00:00",
+      "lang": "schinese",
+      "title": "[负面] 以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "summary": "以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "url": "https://steamcommunity.com/profiles/76561198859254261/recommended/3052450",
+      "author": "76561198859254261",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "以为是杀戮尖塔二次元换皮，结果还要自己氪",
+      "timestamp_created": 1781943297,
+      "playtime_forever": 57
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T08:05:25+00:00",
+      "lang": "english",
+      "title": "[正面] Peak",
+      "summary": "Peak",
+      "url": "https://steamcommunity.com/profiles/76561198404468946/recommended/3052450",
+      "author": "76561198404468946",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Peak",
+      "timestamp_created": 1781942725,
+      "playtime_forever": 704
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T07:50:26+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "url": "https://steamcommunity.com/profiles/76561199755262590/recommended/3052450",
+      "author": "76561199755262590",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好看",
+      "timestamp_created": 1781941826,
+      "playtime_forever": 9835
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T07:26:02+00:00",
+      "lang": "schinese",
+      "title": "[正面] 哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底...",
+      "summary": "哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底的可以玩了",
+      "url": "https://steamcommunity.com/profiles/76561199732581586/recommended/3052450",
+      "author": "76561199732581586",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "哇up爆率是不是有点太高了感觉可以再低一点，60抽下去我怎么连up角色一根头发都没看见，喜欢吃满保底的可以玩了",
+      "timestamp_created": 1781940362,
+      "playtime_forever": 1875
     },
     {
       "source": "steam",
@@ -46,7 +151,7 @@
       "voted_up": true,
       "review": "다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
       "timestamp_created": 1781930191,
-      "playtime_forever": 7452
+      "playtime_forever": 7552
     },
     {
       "source": "steam",
@@ -65,21 +170,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-20T03:43:14+00:00",
-      "lang": "english",
-      "title": "[正面] I have no idea what I am doing and not sure I am f...",
-      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
-      "author": "76561198035846757",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "timestamp_created": 1781926994,
-      "playtime_forever": 1736
-    },
-    {
-      "source": "steam",
       "time": "2026-06-20T03:15:00+00:00",
       "lang": "english",
       "title": "[正面] Hammy gives me stuff I like Hammy",
@@ -91,7 +181,7 @@
       "voted_up": true,
       "review": "Hammy gives me stuff I like Hammy",
       "timestamp_created": 1781925300,
-      "playtime_forever": 5750
+      "playtime_forever": 5770
     },
     {
       "source": "steam",
@@ -181,7 +271,7 @@
       "voted_up": true,
       "review": "一款综合了明日方舟、星铁和杀戮尖塔的游戏，还是非常有感觉的！",
       "timestamp_created": 1781877751,
-      "playtime_forever": 1687
+      "playtime_forever": 1793
     },
     {
       "source": "steam",
@@ -212,51 +302,6 @@
       "review": "At first I was skeptical about this game.\nI entered with expectation it was another cashgrab gacha game.\n\nI was wrong, the game was much better than what I initially expect. Although the bad side of gacha exist (like Fomo schemes, 2 types monthly subscription, etc), it is not something that the game really focus on.\nMost of the gaming experience can be enjoyed even without being dolphin or whales, the fomo on characters is not as bad as in other gacha game.\n\nCombat Gameplay & Team building:\nThe meat of the game, you can spend lots of time just thinking of the team setups.\nGame is not exactly easy and each turn you keep thinking how to do the best with what you have. \nThe shiny new units are definitely strong, but it's not exactly straightforward, and even with shiny newer units bad team setups won't win you the game.\n\nIronically, there are not many team building guides (although, their Discord is cooperative when asked for help), and this is surprisingly beneficial for the game. As players like me will often decide to go blind when tackling the stages instead of looking at guides, and crafting our own team, which is fun.\n\nStory:\nIt is good, and definitely not whatever-written.\nWhile it is not an award winning story, it is definitely an enjoyment to read (Many other gacha games, even the mainstream one, I just skip their awful story).\n\nDaily routine load:\nIf you're on the phase of just playing for the daily reward.\nIt is very Light (about 5~10 min), if you don't want to play daily, it is fine skipping some of the daily rewards.\nThe weekly is more important. However, daily gives you currency that unlocks side stories or past events, so newer players might want many of those from dailies.\n\nOthers:\nThere are many of the dev touch that made me appreciate the game, underappreciated little stuff that people easily missed, things that even if the devs did not do it it will still be ok, yet they still do it.\nThese are usually the case if the some members of the devs are passionate of their own game, something that devs that only interested in $ will never do.\n\nWeakness:\nThe 16 dupes is actually glaring issue for those that don't know much about this game.\n\nText describing skills and effects could be better, more concise and readable.\n\nSometimes, the power level goes far out of control, not in a good way, because most of it come from unnecessary complexities from certain character kits. So the teambuilding ceiling is (uncontrolled) awfully high, the difference between the bottom and top team is simply insane.\n\nIf you are completely F2P, the stamina may feel very strict and stingy, especially at beginning. Since the need to build 5 complete team (20 character) will be exhausting lots of resources.",
       "timestamp_created": 1781872235,
       "playtime_forever": 5690
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T11:17:09+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561198790628867/recommended/3052450",
-      "author": "76561198790628867",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1781867829,
-      "playtime_forever": 3114
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T10:39:44+00:00",
-      "lang": "english",
-      "title": "[正面] this game have saya.",
-      "summary": "this game have saya.",
-      "url": "https://steamcommunity.com/profiles/76561199165731065/recommended/3052450",
-      "author": "76561199165731065",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "this game have saya.",
-      "timestamp_created": 1781865584,
-      "playtime_forever": 235
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T08:52:56+00:00",
-      "lang": "schinese",
-      "title": "[正面] 豪丸",
-      "summary": "豪丸",
-      "url": "https://steamcommunity.com/profiles/76561198847924171/recommended/3052450",
-      "author": "76561198847924171",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "豪丸",
-      "timestamp_created": 1781859176,
-      "playtime_forever": 1154
     }
   ]
 }

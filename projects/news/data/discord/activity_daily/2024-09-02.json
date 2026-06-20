@@ -1,10 +1,15 @@
 {
   "date": "2024-09-02",
-  "messages": 37,
-  "unique_authors": 14,
-  "reactions_total": 64,
-  "attachments": 11,
+  "messages": 1523,
+  "unique_authors": 71,
+  "reactions_total": 216,
+  "attachments": 56,
   "channel_activity": {
+    "🔸綜合討論": 1171,
+    "🔸阵容构建": 60,
+    "🔸morimens-game-chat": 234,
+    "🔸相位对弈": 20,
+    "🔸课间休息闲聊": 1,
     "🎊《忘卻前夜》今日已正式登陸Steam並開放下載啦！🎊": 2,
     "融災——離譜": 11,
     "從steam版開始玩的玩家要怎麼連回手機版遊玩": 4,
@@ -22,27 +27,33 @@
     "更一波宝宝们的傻大头": 2
   },
   "hourly_activity": {
-    "6": 2,
-    "7": 2,
-    "11": 1,
-    "12": 4,
-    "13": 1,
-    "14": 1,
-    "15": 3,
-    "19": 1,
-    "22": 2,
-    "23": 2,
-    "1": 3,
-    "3": 10,
-    "8": 1,
-    "9": 1,
-    "2": 1,
-    "10": 1,
-    "17": 1
+    "0": 4,
+    "1": 23,
+    "2": 40,
+    "3": 99,
+    "4": 31,
+    "5": 23,
+    "6": 25,
+    "7": 53,
+    "8": 44,
+    "9": 33,
+    "10": 58,
+    "11": 208,
+    "12": 153,
+    "13": 442,
+    "14": 91,
+    "15": 47,
+    "16": 53,
+    "19": 3,
+    "20": 5,
+    "17": 12,
+    "18": 71,
+    "22": 3,
+    "23": 2
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "19": 280,
+    "0": 1206
   },
   "top_reacted_messages": [
     {
@@ -60,6 +71,46 @@
       "channel": "關卡地圖「融災禁區」總覽ⅩⅥ"
     },
     {
+      "id": "1280174676177457284",
+      "channel_id": "1131839817982947429",
+      "content": "笑死這遊戲是這樣子玩的嗎",
+      "author": "ahuahuahua",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280185456822059039",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280031692379394161",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "yi000607",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280167316260257925",
+      "channel_id": "1131839817982947429",
+      "content": "這麼安靜好像我是變態一樣",
+      "author": "hananichiya",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280064401533308999",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "xiao_en_",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1280065911180492811",
       "content": "布什戈門，這tm什麼東西<:stoppage:1236938521365839872>",
       "author": "sylvestre.01",
@@ -72,6 +123,38 @@
       "author": "ernest_heart",
       "reactions": 5,
       "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    },
+    {
+      "id": "1280025722114801675",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "momoshiocha",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280066067246485557",
+      "channel_id": "1131839817982947429",
+      "content": "~~畢竟大部分玩家都早跑路了~~",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280181823309086762",
+      "channel_id": "1131839817982947429",
+      "content": "沒運氣當什麼賭狗\n只能當獨狗",
+      "author": "10253426",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1280205637246128198",
+      "channel_id": "1131839817982947429",
+      "content": "那我是無(?",
+      "author": "jasonfoxcute",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1280096329477128274",
@@ -88,39 +171,44 @@
       "channel": "莱克攻略(共3期)"
     },
     {
-      "id": "1280084166825742336",
-      "content": "來點後續新喚醒體衛星和游戲發展方向，好無聊",
-      "author": "navirecorbeau",
+      "id": "1279998213553913908",
+      "channel_id": "1131839817982947429",
+      "content": "好扯大佬們都在虐災區了剩我一個快要跑路",
+      "author": "ahuahuahua",
       "reactions": 3,
-      "channel": "該畫餅了"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279999954240278568",
-      "content": "後續將計劃加入更多典藏館圖片可設置為宿舍背景哦，請守密人耐心稍等<:rose2:1234798244887003176>",
-      "author": "lubi_17667",
+      "id": "1280134147376943125",
+      "channel_id": "1131839817982947429",
+      "content": "我融災1-4跟5-4都用混沌打",
+      "author": "ahuahuahua",
       "reactions": 3,
-      "channel": "✅「已回答」有些CG圖沒有在典藏館，無法放背景"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279978339586539642",
-      "content": "❤️",
-      "author": "hailananxie7110",
+      "id": "1280169751414575104",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "harowolf",
       "reactions": 3,
-      "channel": "更一波宝宝们的傻大头"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1280003413865926719",
-      "content": "Hi，keeper~It‘s OK to play Morimens on an emulator.\nPlease rest assured, this wil",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "✅「已回答」（我正在使用谷歌翻譯 google translate）使用虚拟机会给我带来麻烦吗？"
+      "id": "1280172376188784779",
+      "channel_id": "1131839817982947429",
+      "content": "<:stoppage:1236938521365839872>",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1279997074451992597",
-      "content": "感謝守密人的反饋，露比這就回報給負責校工確認~",
-      "author": "lubi_17667",
-      "reactions": 1,
-      "channel": "莉莉的特遣「故事的魔法」"
+      "id": "1280203941690478703",
+      "channel_id": "1131839817982947429",
+      "content": "無課玩家是一款最新型喚醒體",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

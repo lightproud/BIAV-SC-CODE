@@ -1,10 +1,14 @@
 {
   "date": "2024-09-05",
-  "messages": 54,
-  "unique_authors": 10,
-  "reactions_total": 61,
-  "attachments": 12,
+  "messages": 3611,
+  "unique_authors": 86,
+  "reactions_total": 212,
+  "attachments": 114,
   "channel_activity": {
+    "🔸綜合討論": 2402,
+    "🔸阵容构建": 19,
+    "🔸morimens-game-chat": 1135,
+    "🔸相位对弈": 1,
     "🎼樂杖所指之處，萬物於此鳴響。": 9,
     "无法登陆，一直显示不在当前发行区😢😢😢": 1,
     "看到一個亮點": 1,
@@ -18,22 +22,34 @@
     "【自制vrm mmd】《故事的魔法》拍摄花絮放送中！": 3
   },
   "hourly_activity": {
-    "0": 4,
-    "2": 10,
-    "7": 12,
-    "9": 2,
-    "11": 1,
-    "5": 1,
-    "10": 13,
-    "3": 6,
-    "6": 2,
-    "12": 1,
-    "14": 1,
-    "8": 1
+    "0": 21,
+    "1": 73,
+    "2": 63,
+    "3": 46,
+    "4": 42,
+    "5": 18,
+    "6": 28,
+    "7": 29,
+    "8": 23,
+    "9": 148,
+    "10": 199,
+    "11": 157,
+    "12": 523,
+    "13": 393,
+    "14": 809,
+    "15": 367,
+    "16": 348,
+    "17": 242,
+    "20": 1,
+    "21": 1,
+    "22": 69,
+    "23": 3,
+    "18": 5,
+    "19": 3
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "19": 520,
+    "0": 3037
   },
   "top_reacted_messages": [
     {
@@ -58,6 +74,38 @@
       "channel": "同人自創喚醒體"
     },
     {
+      "id": "1281184073791832095",
+      "channel_id": "1131839817982947429",
+      "content": "一堆佬言佬語",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281309251188559956",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281310265480188028",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281262611849019514",
+      "channel_id": "1170692781216378960",
+      "content": "Anyways, back to work irl, see ya.👋",
+      "author": "chaoticproto",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1281196428819169323",
       "content": "一部小說\"直視古神一整年\"，直接看100章，裡面提到的東西，感覺非常適合作為更新點，不管是用於卡牌，造物，都非常適合，有興趣可以參考看看。",
       "author": "hailananxie7110",
@@ -70,6 +118,22 @@
       "author": "sallyfishdestine",
       "reactions": 5,
       "channel": "PM3：35"
+    },
+    {
+      "id": "1281224082620420117",
+      "channel_id": "1131839817982947429",
+      "content": "<@870225701855436801>",
+      "author": "tt1036",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281233946109018175",
+      "channel_id": "1170692781216378960",
+      "content": "I just played last week, still new to this game",
+      "author": "flinwander",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1281077040136589313",
@@ -86,6 +150,22 @@
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
     },
     {
+      "id": "1281289228336234496",
+      "channel_id": "1131839817982947429",
+      "content": "话说猫娘専武带上是不是能当奶妈（",
+      "author": "aprohectus",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281308036274589758",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sadanshishen",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1281041249519927409",
       "content": "你遊至少也撐了快要一年",
       "author": "yi000607",
@@ -100,25 +180,28 @@
       "channel": "无法登陆，一直显示不在当前发行区😢😢😢"
     },
     {
-      "id": "1281219133052031037",
-      "content": "😡",
-      "author": "nemu_s_t_a_r",
+      "id": "1281082358912520274",
+      "channel_id": "1131839817982947429",
+      "content": "超維真的好狂...",
+      "author": "hailananxie7110",
       "reactions": 2,
-      "channel": "🎼樂杖所指之處，萬物於此鳴響。"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1281144603822657548",
-      "content": "想多了 現在基本上骰四個角色進去都能滿分 毫無參考價值的",
-      "author": "whimsical_starfish_19845",
+      "id": "1281167992121724949",
+      "channel_id": "1131839817982947429",
+      "content": "淘汰吧",
+      "author": "tt1036",
       "reactions": 2,
-      "channel": "看看，现在这配队是个啥情况"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1281230352265904242",
-      "content": "超甲",
-      "author": "ahong_0727",
-      "reactions": 1,
-      "channel": "同人自創喚醒體"
+      "id": "1281172069081419817",
+      "channel_id": "1131839817982947429",
+      "content": "~~寧廚都放專武~~",
+      "author": "xinyue.57",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

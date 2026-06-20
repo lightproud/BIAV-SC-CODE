@@ -1,10 +1,14 @@
 {
   "date": "2024-08-06",
-  "messages": 104,
-  "unique_authors": 10,
-  "reactions_total": 3,
-  "attachments": 8,
+  "messages": 3954,
+  "unique_authors": 90,
+  "reactions_total": 186,
+  "attachments": 159,
   "channel_activity": {
+    "🔸綜合討論": 3004,
+    "🔸阵容构建": 47,
+    "🔸morimens-game-chat": 785,
+    "🔸相位对弈": 14,
     "📮特報！優雅、迷人又毛茸茸的那位大人驚現彌薩格！": 8,
     "🎥《忘卻前夜》丨概念PV——「靈魂的牧人」": 1,
     "💭「處理中」太大了... 太大了... 會很擠": 1,
@@ -22,46 +26,195 @@
     "拉蒙娜，過來給你搭檔踩踩背": 2
   },
   "hourly_activity": {
-    "4": 3,
-    "8": 3,
-    "10": 1,
-    "12": 1,
-    "15": 11,
-    "3": 11,
-    "22": 1,
-    "13": 39,
-    "14": 4,
-    "1": 1,
-    "6": 2,
-    "17": 11,
-    "2": 10,
-    "16": 4,
-    "5": 2
+    "0": 68,
+    "1": 15,
+    "3": 117,
+    "4": 276,
+    "5": 269,
+    "6": 449,
+    "7": 66,
+    "8": 21,
+    "9": 185,
+    "10": 407,
+    "11": 151,
+    "12": 285,
+    "13": 419,
+    "14": 212,
+    "15": 212,
+    "16": 173,
+    "17": 152,
+    "18": 294,
+    "19": 71,
+    "21": 7,
+    "23": 13,
+    "2": 25,
+    "20": 49,
+    "22": 18
   },
   "message_types": {
-    "0": 9
+    "19": 710,
+    "0": 3140
   },
   "top_reacted_messages": [
     {
-      "id": "1270510658286391337",
-      "content": "大部分人（如阿格里帕）的天賦只寫自身擁有的某某屬性會提供加成，但其實也包刮命輪跟密契。\n第一批天賦的角色就有寫明是自身、命輪跟密契，我想這是用語迭代，但是同時存",
+      "id": "1270299212415893616",
+      "channel_id": "1131839817982947429",
+      "content": "~~每一下都比斷頸痛~~",
+      "author": "cra0261_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270272862158061568",
+      "channel_id": "1170692781216378960",
+      "content": "🐳  im disapper now",
+      "author": "metam0n",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1270270670332362846",
+      "channel_id": "1131839817982947429",
+      "content": "好久沒開遊戲了\n我要看到阿紅哭成北七妝都糊掉求我回去",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270270794630565888",
+      "channel_id": "1131839817982947429",
+      "content": "~~沒錯就是我~~",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270378316846596177",
+      "channel_id": "1131839817982947429",
+      "content": "布朗基本必賣 沒用的東西",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270394874067292293",
+      "channel_id": "1131839817982947429",
+      "content": "三費貫穿刻上高級回聲（X）",
+      "author": "lion0504",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270418849690419251",
+      "channel_id": "1131839817982947429",
+      "content": "四捨五入直連",
+      "author": "alan_turing",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270429289296298108",
+      "channel_id": "1131839817982947429",
+      "content": "每次造成傷害反擊自己（",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270232221319696394",
+      "channel_id": "1131839817982947429",
+      "content": "我一輪都打20張牌吧",
+      "author": "whimsical_starfish_19845",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270260730234408980",
+      "channel_id": "1131839817982947429",
+      "content": "「願淫藥指引前路」",
+      "author": "falst_over_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270276508946268272",
+      "channel_id": "1131839817982947429",
+      "content": "請cra上身😈",
+      "author": "qiyuan48",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270285741607489590",
+      "channel_id": "1131839817982947429",
+      "content": "究極小水管",
+      "author": "qiyuan48",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270296566141554834",
+      "channel_id": "1131839817982947429",
+      "content": "運氣不好",
+      "author": "qiyuan48",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270319936283349014",
+      "channel_id": "1131839817982947429",
+      "content": "我們就會看到下個限定是血鏈希洛了",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270320813928747089",
+      "channel_id": "1131839817982947429",
+      "content": "~~還是誰先去校貓日誌發一篇~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270322788342698064",
+      "channel_id": "1131839817982947429",
+      "content": "深海打融災跟超維就是在不一樣的起跑線阿",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270326663372341290",
+      "channel_id": "1131839817982947429",
+      "content": "~~那我阿姨五十場怎麼說~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1270333915961360435",
+      "channel_id": "1131839817982947429",
+      "content": "寄",
       "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "💭「處理中」天賦用詞不統一"
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1270389903322120272",
-      "content": "你好，uid：100421888",
-      "author": "ely_ann.",
-      "reactions": 1,
-      "channel": "💭「處理中」卡顿闪退后再也进不了游戏"
+      "id": "1270340110629732394",
+      "channel_id": "1131839817982947429",
+      "content": "~~誰要先來~~",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1270222227727450155",
-      "content": "感謝守密人的反饋，戈雅已經收到，這裡會回報給工程師大大康康的唷",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」序章劇情過場bug"
+      "id": "1270342272013045813",
+      "channel_id": "1131839817982947429",
+      "content": "有群友想看借他號打一局",
+      "author": "qiyuan48",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
