@@ -37,6 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 # 核心源 + 需 secret 的源元数据统一取自 sources.py（单一真相源，杜绝硬编码漂移）。
 # 核心源失败（含静默吐 0）须以非零退出暴露（§4.2 R1：任一核心源失败即整次失败）。
 from sources import CORE_SOURCES, AUTH_GATED
+import news_common  # 原子写单一真源（dump_json_atomic）
 
 
 # ── Source mapping: collector source names → aggregator source names ──
@@ -376,19 +377,16 @@ def main():
         'news': merged,
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+    news_common.dump_json_atomic(OUTPUT_PATH, output)
 
     # 全量归档源：未经时窗过滤的合并集，供 archive_platforms 落档（真·全量层）。
     # news.json 仍是滚动窗口快照（保持有界），raw 只多保留被时窗砍掉的新鲜条目。
     raw_merged = merge_and_dedup(existing, global_items, apply_recency_filter=False)
-    with open(RAW_OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump({
-            'updated_at': output['updated_at'],
-            'source': 'news-raw',
-            'news': raw_merged,
-        }, f, ensure_ascii=False, indent=2)
+    news_common.dump_json_atomic(RAW_OUTPUT_PATH, {
+        'updated_at': output['updated_at'],
+        'source': 'news-raw',
+        'news': raw_merged,
+    })
     logger.info(f'全量层写入: {len(raw_merged)} items → {RAW_OUTPUT_PATH.name}')
 
     # Stats

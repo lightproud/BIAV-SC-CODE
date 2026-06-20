@@ -94,7 +94,7 @@ def _archive_items(source: str, items: list[dict]):
                 'item_count': len(merged),
                 'items': merged,
             }
-            out_path.write_text(json.dumps(out_data, ensure_ascii=False, indent=2), encoding='utf-8')
+            news_common.dump_json_atomic(out_path, out_data)
             logger.info(f'  {source}/{date_str}: +{len(new_items)} items (total {len(merged)})')
 
 

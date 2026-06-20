@@ -71,6 +71,11 @@ CORE_SOURCES = [
     'steam', 'official', 'youtube', 'discord',
 ]
 
+# §4.2 R1 硬失败源：本次运行中崩溃且未被 fallback 救回即令整次失败（aggregator.py 据此）。
+# 严格子集，区别于 CORE_SOURCES（长期健康门控）：这三个是「单次跑必须有的命脉源」，
+# 不含 youtube/discord 等可因 AUTH_GATED 缺 cookie 而预期降级的源。
+R1_HARD_FAIL_SOURCES = {'reddit', 'bilibili', 'taptap'}
+
 # 需登录态 cookie / API key 才能采集的源 → 所需环境变量名（单一真相源）。
 # 未配置对应 secret 时：该源 0 产出属预期降级（标注「待配」，不计采集故障）；
 # 已配置 secret 仍 0 产出：才视为真故障。collect_global 据此区分「待配 cookie」与「核心源静默失败」。
