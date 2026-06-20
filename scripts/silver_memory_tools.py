@@ -2,24 +2,24 @@
 
 银芯记忆增强工具集 —— 面向黑池记忆（需求 4）的银芯自建实现。对标 claude-mem 能力但保持 MIT。
 
-本模块为纯 Python 函数库，不携带 MCP 装饰器。艾瑞卡主控台稍后会将其中函数
-注册到 scripts/mcp_server.py，供 Claude Code / claw 调用。
+本模块为纯 Python 函数库，不携带 MCP 装饰器，函数由 scripts/mcp_server.py 注册。
 
-导出函数（5 个）：
-    recall_session(query, k)        —— 语义搜索 memory/session-digests/ 内相关 session
+导出函数（3 个）：
     current_continuity()            —— 读取 memory/session-continuity.json 连续性链
     record_decision(summary, scope) —— 追加一行到 memory/decisions.md 当前有效决策表格
     record_lesson(summary, context) —— 追加一条到 memory/lessons-learned.md 末尾
-    session_progress(session_id)    —— 读取 session 的 progress.jsonl 增量事件流
 
-依赖：仅 Python 标准库 + 同目录下的 memory_search.py（间接调用，不修改）。
+历史：recall_session / session_progress 随自动记忆子系统于 2026-06-20 退役删除
+（守密人裁定，见 memory/decisions.md），其依赖的 memory_search / session-digests /
+progress.jsonl 已一并移除。
+
+依赖：仅 Python 标准库。
 """
 
 from __future__ import annotations
 
 import json
 import re
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -36,97 +36,9 @@ CONTINUITY_FILE = MEMORY_DIR / "session-continuity.json"
 DECISIONS_FILE = MEMORY_DIR / "decisions.md"
 LESSONS_FILE = MEMORY_DIR / "lessons-learned.md"
 
-# 保证 memory_search 可导入（不修改其源码）
-if str(SCRIPTS_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS_DIR))
-
 
 # ============================================================
-# 工具 1：recall_session —— session 语义搜索
-# ============================================================
-
-def recall_session(query: str, k: int = 5) -> dict:
-    """档案回溯 —— 在 memory/session-digests/ 内语义搜索相关 session。
-
-    艾瑞卡调用 scripts/memory_search.py 的 search() 接口对全量知识库检索，
-    再过滤出 digest 命中项（文件路径含 'session-digests/' 且以 .md 结尾）。
-
-    Args:
-        query: 自然语言查询（支持中英文）
-        k:     返回的 session 命中数上限，默认 5
-
-    Returns:
-        {
-          "matches": [
-            {
-              "session_id": "<短 ID，从文件名后 8 位解析>",
-              "digest_path": "<绝对路径或 repo 相对路径>",
-              "score": <float, 重排序后的最终分>,
-              "excerpt": "<digest 预览片段 ≤ 400 字>"
-            },
-            ...
-          ],
-          "query": "<原查询>",
-          "total": <int>
-        }
-    """
-    result: dict[str, Any] = {"query": query, "matches": [], "total": 0}
-    if not query or not query.strip():
-        return result
-
-    try:
-        from memory_search import search  # 延迟导入，避免模块级失败
-    except Exception as exc:
-        result["error"] = f"memory_search 导入失败: {exc}"
-        return result
-
-    # 多取一些候选再过滤，防止 digest 命中不足 k 条
-    try:
-        raw = search(query, top_k=max(k * 4, 20))
-    except Exception as exc:
-        result["error"] = f"search() 调用异常: {exc}"
-        return result
-
-    matches: list[dict[str, Any]] = []
-    for item in raw or []:
-        fp = item.get("file", "")
-        if not fp:
-            continue
-        # 只保留 session-digests 下的 Markdown digest
-        if "session-digests" not in fp.replace("\\", "/"):
-            continue
-        if not fp.endswith(".md"):
-            continue
-
-        sid = _parse_session_id_from_digest(Path(fp).name)
-        score = float(item.get("final_score", item.get("score", 0.0)) or 0.0)
-        excerpt = (item.get("preview") or "")[:400]
-
-        matches.append({
-            "session_id": sid,
-            "digest_path": fp,
-            "score": round(score, 4),
-            "excerpt": excerpt,
-        })
-        if len(matches) >= k:
-            break
-
-    result["matches"] = matches
-    result["total"] = len(matches)
-    return result
-
-
-def _parse_session_id_from_digest(filename: str) -> str:
-    """从 digest 文件名 `YYYYMMDD-HHMMSS-<sid8>.md` 解析短 session ID。"""
-    stem = filename[:-3] if filename.endswith(".md") else filename
-    parts = stem.split("-")
-    if len(parts) >= 3:
-        return parts[-1]
-    return stem
-
-
-# ============================================================
-# 工具 2：current_continuity —— 会话连续性链
+# 工具 1：current_continuity —— 会话连续性链
 # ============================================================
 
 def current_continuity() -> dict:
@@ -188,7 +100,7 @@ def current_continuity() -> dict:
 
 
 # ============================================================
-# 工具 3：record_decision —— 追加决策到 decisions.md
+# 工具 2：record_decision —— 追加决策到 decisions.md
 # ============================================================
 
 def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
@@ -273,7 +185,7 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
 
 
 # ============================================================
-# 工具 4：record_lesson —— 追加教训到 lessons-learned.md
+# 工具 3：record_lesson —— 追加教训到 lessons-learned.md
 # ============================================================
 
 _LESSON_HEADING_RE = re.compile(r"^##\s+(\d+)\.\s+")
@@ -380,82 +292,6 @@ def record_lesson(summary: str, context: str = "") -> dict:
         "file": str(LESSONS_FILE),
         "line_added": title_line,
     }
-
-
-# ============================================================
-# 工具 5：session_progress —— 读取 progress.jsonl
-# ============================================================
-
-def session_progress(session_id: str) -> dict:
-    """档案追溯 —— 读取 memory/session-digests/{sid}.progress.jsonl 事件流。
-
-    progress.jsonl 由 scripts/session_watch.py PostToolUse hook 每次工具调用后
-    追加一行。本函数全量读取并按时间序返回。
-
-    Args:
-        session_id: 会话 ID（短或全 ID 均可，按文件名前缀匹配）
-
-    Returns:
-        {
-          "session_id": "<传入值>",
-          "file": "<定位到的 progress 文件绝对路径，未找到则空>",
-          "events": [ {ts, tool, summary, input_snippet, output_snippet}, ... ],
-          "total": <int>,
-          "exists": <bool>
-        }
-    """
-    result: dict[str, Any] = {
-        "session_id": session_id,
-        "file": "",
-        "events": [],
-        "total": 0,
-        "exists": False,
-    }
-    if not session_id:
-        result["error"] = "session_id 不能为空"
-        return result
-
-    if not DIGESTS_DIR.exists():
-        result["error"] = f"目录不存在: {DIGESTS_DIR}"
-        return result
-
-    # 优先精确匹配 {sid}.progress.jsonl，否则按前缀扫描
-    exact = DIGESTS_DIR / f"{session_id}.progress.jsonl"
-    target: Path | None = None
-    if exact.exists():
-        target = exact
-    else:
-        try:
-            candidates = sorted(DIGESTS_DIR.glob(f"*{session_id}*.progress.jsonl"))
-            if candidates:
-                target = candidates[-1]
-        except Exception:
-            target = None
-
-    if target is None or not target.exists():
-        return result
-
-    result["file"] = str(target)
-    result["exists"] = True
-
-    events: list[dict[str, Any]] = []
-    try:
-        with target.open("r", encoding="utf-8") as f:
-            for raw in f:
-                raw = raw.strip()
-                if not raw:
-                    continue
-                try:
-                    events.append(json.loads(raw))
-                except json.JSONDecodeError:
-                    continue
-    except Exception as exc:
-        result["error"] = f"读取 progress 文件失败: {exc}"
-        return result
-
-    result["events"] = events
-    result["total"] = len(events)
-    return result
 
 
 # ============================================================
