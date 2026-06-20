@@ -4,18 +4,18 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-20
-- 功能总数：**125**
-- 脚本可达性：活 63 / 仅测试 9 / 孤儿 6
+- 功能总数：**90**
+- 脚本可达性：活 44 / 仅测试 9 / 孤儿 2
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 22 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 14 |
 | news 采集器脚本 | 25 |
-| wiki 数据脚本 | 17 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 16 |
+| wiki 数据脚本 | 16 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 1 |
 | 子项目 | 4 |
@@ -33,14 +33,10 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-### 孤儿脚本（6）— 无活编排入口可达，建议隔离待裁
+### 孤儿脚本（2）— 无活编排入口可达，建议隔离待裁
 
-- `projects/wiki/scripts/build_notion_voice_enrichment.py` — [一次性·孤儿] 从 Notion 富化语音数据，无活入口。
-- `scripts/extract_art.py` — 从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。
-- `scripts/session_distiller.py` — [退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。
-- `scripts/session_inject.py` — [退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。
-- `scripts/session_reflexion.py` — [退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。
-- `scripts/session_watch.py` — [退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。
+- `scripts/boot_snapshot.py` — boot_snapshot.py — 银芯启动快照生成器
+- `scripts/io_utils.py` — io_utils.py — shared atomic file write helper.
 
 ### 仅测试可达脚本（9）
 
@@ -101,52 +97,22 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（14）
 
-- **`boot_snapshot.py`** _[活:import]_ — boot_snapshot.py — 银芯启动快照生成器  
+- **`boot_snapshot.py`** _[孤儿:—]_ — boot_snapshot.py — 银芯启动快照生成器  
   `scripts/boot_snapshot.py`
 - **`build_capability_registry.py`** _[活:workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
-- **`character_persona.py`** _[活:mcp]_ — character_persona.py — Character Persona Prompt Generator  
+- **`character_persona.py`** _[活:mcp]_ — 艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。  
   `scripts/character_persona.py`
-- **`context_manager.py`** _[活:mcp]_ — context_manager.py — Virtual Context Manager (MemGPT-style)  
-  `scripts/context_manager.py`
-- **`dream.py`** _[活:mcp]_ — dream.py — 4-Phase AutoDream Memory Consolidation System  
-  `scripts/dream.py`
-- **`dream_ai.py`** _[活:import]_ — AI-powered consolidation + sleep-time precompute cache.  
-  `scripts/dream_ai.py`
-- **`dream_archive.py`** _[活:import]_ — Archive integrity scan — detect broken path references in repo docs.  
-  `scripts/dream_archive.py`
-- **`dream_config.py`** _[活:import]_ — Shared configuration constants for the dream.py memory-consolidation system.  
-  `scripts/dream_config.py`
-- **`dream_health.py`** _[活:import]_ — Memory hygiene checks — staleness, broken refs, duplicate decisions, etc.  
-  `scripts/dream_health.py`
-- **`dream_io.py`** _[活:import]_ — Dream persistence — journal, insights and access-log read/write.  
-  `scripts/dream_io.py`
-- **`dream_rem.py`** _[活:import]_ — REM phase — weekly deep reflection: cross-session pattern analysis,  
-  `scripts/dream_rem.py`
-- **`dream_sentinel.py`** _[活:import]_ — Sentinel layer — proactive anomaly detection over news data sources.  
-  `scripts/dream_sentinel.py`
-- **`extract_art.py`** _[孤儿:—]_ — 从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。  
-  `scripts/extract_art.py`
-- **`fact_store.py`** _[活:mcp]_ — fact_store.py — AI-driven Fact Storage with Semantic Deduplication  
-  `scripts/fact_store.py`
 - **`generate_wiki_pages.py`** _[活:workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
-- **`io_utils.py`** _[活:import]_ — io_utils.py — shared atomic file write helper.  
+- **`io_utils.py`** _[孤儿:—]_ — io_utils.py — shared atomic file write helper.  
   `scripts/io_utils.py`
-- **`knowledge_graph.py`** _[活:mcp]_ — knowledge_graph.py — Knowledge Graph Builder & Query Engine  
-  `scripts/knowledge_graph.py`
 - **`lua_parse.py`** _[仅测试:test]_ — Shared parser for runtime-extracted Lua table dumps.  
   `scripts/lua_parse.py`
-- **`mcp_server.py`** _[活:mcp]_ — mcp_server.py — BIAV-SC Memory MCP Server  
+- **`mcp_server.py`** _[活:mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
-- **`memory_search.py`** _[活:mcp]_ — memory_search.py — Semantic Memory Search with TF-IDF Vectors + Reranker  
-  `scripts/memory_search.py`
-- **`memory_writeback.py`** _[活:mcp]_ — memory_writeback.py — Long-term Memory Write-back Loop  
-  `scripts/memory_writeback.py`
-- **`memrl.py`** _[活:mcp]_ — memrl.py — MemRL-lite: Memory Utility Tracking & Adaptive Reranking  
-  `scripts/memrl.py`
 - **`parse_awaker_config.py`** _[仅测试:test]_ — Parse AwakerConfig.lua into structured character profiles JSON.  
   `scripts/parse_awaker_config.py`
 - **`parse_cg_gallery.py`** _[仅测试:test]_ — Parse art_assets manifest.json to extract CG gallery data grouped by chapter.  
@@ -157,24 +123,10 @@
   `scripts/parse_item_stories.py`
 - **`parse_voice_lines.py`** _[仅测试:test]_ — Parse Voice.lua into structured JSON for wiki voice lines page.  
   `scripts/parse_voice_lines.py`
-- **`reflexion.py`** _[活:import]_ — reflexion.py — Reflexion: Automatic Failure Learning  
-  `scripts/reflexion.py`
 - **`report_render.py`** _[活:command]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
   `scripts/report_render.py`
-- **`session_briefing.py`** _[活:mcp]_ — session_briefing.py — Smart Session Briefing Generator  
-  `scripts/session_briefing.py`
-- **`session_distiller.py`** _[孤儿:—]_ — [退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。  
-  `scripts/session_distiller.py`
-- **`session_inject.py`** _[孤儿:—]_ — [退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。  
-  `scripts/session_inject.py`
-- **`session_reflexion.py`** _[孤儿:—]_ — [退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。  
-  `scripts/session_reflexion.py`
-- **`session_watch.py`** _[孤儿:—]_ — [退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。  
-  `scripts/session_watch.py`
-- **`silver_memory_tools.py`** _[活:mcp]_ — silver_memory_tools.py —— 银芯记忆增强工具集  
+- **`silver_memory_tools.py`** _[活:mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
-- **`text_utils.py`** _[活:import]_ — Shared text tokenization for the memory system.  
-  `scripts/text_utils.py`
 
 ## news 采集器脚本（25）
 
@@ -229,14 +181,12 @@
 - **`taptap_collector.py`** _[活:import]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
-## wiki 数据脚本（17）
+## wiki 数据脚本（16）
 
 - **`build_banner_character_index.py`** _[仅测试:test]_ — 构建卡池角色索引。  
   `projects/wiki/scripts/build_banner_character_index.py`
 - **`build_drop_index.py`** _[仅测试:test]_ — 构建掉落物索引。  
   `projects/wiki/scripts/build_drop_index.py`
-- **`build_notion_voice_enrichment.py`** _[孤儿:—]_ — [一次性·孤儿] 从 Notion 富化语音数据，无活入口。  
-  `projects/wiki/scripts/build_notion_voice_enrichment.py`
 - **`check_version.py`** _[活:workflow]_ — 检测 Morimens 客户端版本更新。  
   `projects/wiki/scripts/check_version.py`
 - **`decrypt_and_extract.py`** _[仅测试:test]_ — 客户端解密 + 解包流水线（经子进程/手动调用）。  
@@ -266,39 +216,15 @@
 - **`wiki_sources.py`** _[活:import]_ — wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。  
   `projects/wiki/scripts/wiki_sources.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（16）
+## MCP 知识层工具（编排入口·AI 动态平面）（4）
 
-- **`memory_search`** — 搜索银芯知识库，返回最相关的知识块。  
-  `scripts/mcp_server.py`
-- **`graph_query`** — 查询知识图谱中的实体及其关联。  
-  `scripts/mcp_server.py`
-- **`graph_related_files`** — 查找与实体相关的文件，按图谱距离排序。  
-  `scripts/mcp_server.py`
-- **`memory_utility`** — 查看记忆文件效用排名。  
-  `scripts/mcp_server.py`
-- **`check_cache`** — 查询 Sleep-Time Compute 预计算缓存。  
-  `scripts/mcp_server.py`
-- **`recommend_context`** — 根据当前话题推荐应加载的知识文件（虚拟上下文管理）。  
-  `scripts/mcp_server.py`
-- **`rebuild_indexes`** — 重建所有索引（向量索引 + 知识图谱 + 效用分数）。  
-  `scripts/mcp_server.py`
-- **`store_facts`** — 存储本次对话中发现的重要知识事实。  
-  `scripts/mcp_server.py`
-- **`memory_writeback`** — 将当前会话产生的新知识写回知识库。  
-  `scripts/mcp_server.py`
-- **`session_briefing`** — 新会话启动时调用，获取智能 briefing。  
-  `scripts/mcp_server.py`
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
-  `scripts/mcp_server.py`
-- **`recall_session`** — 在历史 session digest 中语义搜索相关 session（TF-IDF + 4 维重排）。  
-  `scripts/mcp_server.py`
-- **`current_continuity`** — 读取 session 连续性链（上次 session 快照 + topics_hint）。  
   `scripts/mcp_server.py`
 - **`record_decision`** — 追加决策条目到 memory/decisions.md 的当前有效决策表格末尾。  
   `scripts/mcp_server.py`
 - **`record_lesson`** — 追加教训条目到 memory/lessons-learned.md 末尾。  
   `scripts/mcp_server.py`
-- **`session_progress`** — 读取指定 session 的 progress.jsonl 增量事件列表（由 session_watch hook 记录）。  
+- **`current_continuity`** — 读取 session 连续性链（上次 session 快照 + topics_hint）。  
   `scripts/mcp_server.py`
 
 ## Slash 命令（编排入口·人工平面）（4）

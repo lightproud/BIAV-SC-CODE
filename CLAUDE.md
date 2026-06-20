@@ -54,9 +54,11 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 3. **记忆层**（使命#3 底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
    人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
-   2026-06-14 退役（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
-4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端工具化访问知识层，
-   守密人经会话派发任务。
+   2026-06-14 退役、2026-06-20 整套子系统（TF-IDF 检索 / 知识图谱 / MemRL / 事实库 /
+   做梦 / 会话召回）连代码带数据一并删除（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
+4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 4 工具
+   （`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
+   平台原生记忆互补）；守密人经会话派发任务。
 
 四条主线的「手动怎么跑哪条命令」见 §7。
 
@@ -180,10 +182,10 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/lessons-learned.md` | 踩坑记录（持续追加编号，条数以文件最新为准）|
 | `memory/contribution-protocol.md` | 贡献协议 v1.0 |
 | `memory/style-guide.md` | 视觉规范 |
-| `memory/capability-index.md` | 银芯全功能目录（七层 109 项，CI 自动生成；人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|
+| `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|
 | `assets/data/VERSION.md` | 事实圣经版本 |
 
-跨档案检索：`python scripts/memory_search.py "<关键词>"`。
+跨档案检索：`rg "<关键词>" memory/ assets/`（语义检索子系统 2026-06-20 已退役，改用 ripgrep）。
 
 ---
 
@@ -202,9 +204,9 @@ brain-in-a-vat/
 │   └── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（5 个高频 hub，优先读这里再下钻）
-│   ├── archive/ dreams/ research/ strategy/
+│   ├── archive/ research/ strategy/
 │   └── *.md / *.json              # 见 §5.3
-├── scripts/                       # 顶层 Python 工具层（记忆 / 会话 / 做梦 / 解包）
+├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
 ├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
 ├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
@@ -227,20 +229,20 @@ brain-in-a-vat/
 | wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
-| 跨档案检索 | `python scripts/memory_search.py "<关键词>"` |
+| 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
 | 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
 
 ### §7.2 CI 自动化
 
-`.github/workflows/` 按职能分组：采集（新闻 / Discord / 评论 / 同人图）、做梦、
+`.github/workflows/` 按职能分组：采集（新闻 / Discord / 评论 / 同人图）、
 数据（抓取 / 解包 / 校验 / 版本检测）、测试、部署运维。精确清单以
 `ls .github/workflows/` 为准；机器提交带 `[skip ci]` 防触发循环。日报定时已停用，
 报告改在会话内生成（详见 `memory/project-status.md`）。
 
 ### §7.3 脚本层
 
-`scripts/` 按命名约定分类（记忆-会话 / 做梦 `dream_*` / 解包-解析 / 运营），
-`projects/news/scripts/` 为采集器层；精确清单以 `ls` 为准。
+`scripts/` 按命名约定分类（人格 `character_persona` / 记忆写入 `silver_memory_tools` /
+解包-解析 `parse_*` / 运营），`projects/news/scripts/` 为采集器层；精确清单以 `ls` 为准。
 
 ### §7.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
 
