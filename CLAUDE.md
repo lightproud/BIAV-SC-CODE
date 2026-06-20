@@ -180,6 +180,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/lessons-learned.md` | 踩坑记录（持续追加编号，条数以文件最新为准）|
 | `memory/contribution-protocol.md` | 贡献协议 v1.0 |
 | `memory/style-guide.md` | 视觉规范 |
+| `memory/capability-index.md` | 银芯全功能目录（七层 109 项，CI 自动生成；人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|
 | `assets/data/VERSION.md` | 事实圣经版本 |
 
 跨档案检索：`python scripts/memory_search.py "<关键词>"`。
