@@ -6,11 +6,38 @@
       "workflows",
       "scripts_top",
       "scripts_news",
+      "scripts_wiki",
       "mcp_tools",
       "commands",
       "skills",
       "projects"
     ]
+  },
+  "scripts_top": {
+    "extract_art.py": "从加密 AssetBundle 批量解包美术资源（手动运行，无定时入口）。",
+    "session_inject.py": "[退役钩子·孤儿] 原 UserPromptSubmit 钩子，会话注入历史上下文，2026-06-14 退役。",
+    "session_watch.py": "[退役钩子·孤儿] 原 PostToolUse 钩子，记录工具调用到 progress.jsonl，2026-06-14 退役。",
+    "session_distiller.py": "[退役钩子·孤儿] 原 SessionEnd 钩子，会话蒸馏，2026-06-14 退役。",
+    "session_reflexion.py": "[退役钩子·孤儿] 原会话末 reflexion 钩子，2026-06-14 退役。"
+  },
+  "scripts_wiki": {
+    "wiki_sources.py": "wiki 数据源单一真相源（角色/卡牌/技能等抓取配置）。",
+    "fetch_cards.py": "抓取卡牌数据。",
+    "fetch_skills.py": "抓取技能数据。",
+    "fetch_portraits.py": "抓取立绘数据。",
+    "fetch_stats.py": "抓取数值数据。",
+    "fetch_stages.py": "抓取关卡数据。",
+    "fetch_wheels.py": "抓取命轮数据。",
+    "fetch_lore.py": "抓取世界观/剧情文本。",
+    "generate_pages.py": "由抓取的 JSON 生成 VitePress 角色页。",
+    "generate_rss.py": "生成 wiki 更新 RSS。",
+    "validate_data.py": "校验 wiki 数据库全部 JSON。",
+    "check_version.py": "检测 Morimens 客户端版本更新。",
+    "extract_client_data.py": "从客户端解包提取结构化游戏数据。",
+    "decrypt_and_extract.py": "客户端解密 + 解包流水线（经子进程/手动调用）。",
+    "build_drop_index.py": "构建掉落物索引。",
+    "build_banner_character_index.py": "构建卡池角色索引。",
+    "build_notion_voice_enrichment.py": "[一次性·孤儿] 从 Notion 富化语音数据，无活入口。"
   },
   "workflows": {
     "backfill-gap.yml": "手动回填指定时间段的数据缺口。",
