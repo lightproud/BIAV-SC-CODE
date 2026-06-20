@@ -39,9 +39,8 @@ projects/news/data/media/*.mp4
 projects/news/data/media/*.webm
 projects/news/data/media/*.tar.gz
 
-# auto-generated search index. vectors.json.gz IS committed (small after
-# layer-B retirement, ~9MB) so fresh clones have instant cross-archive
-# search; rebuild with: python scripts/memory_search.py --build
+# 语义检索子系统 2026-06-20 退役（memory_search.py 等已删，见 decisions.md）。
+# 索引产物不再生成；保留忽略规则防误提交残留。vectors.json.gz 同批补清。
 assets/data/vectors.json
 assets/data/semantic-index.json
 assets/data/knowledge-graph.json
