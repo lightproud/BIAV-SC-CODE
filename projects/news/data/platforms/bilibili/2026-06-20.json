@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T18:07:30.552368+00:00",
+  "archived_at": "2026-06-20T20:13:37.881202+00:00",
   "source": "bilibili",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "title": "沙雪耶老师",
@@ -175,6 +175,29 @@
       "platform_region": "cn",
       "media_url": "//i2.hdslb.com/bfs/archive/75b9726f638f3baf27bbec31d85145ae5ff6d08c.jpg",
       "content_type": "video"
+    },
+    {
+      "title": "对沙耶之歌剧情感到震惊的荒牧（语气超可爱）",
+      "summary": "推特",
+      "source": "bilibili",
+      "time": "2026-06-20T14:28:08+00:00",
+      "url": "https://www.bilibili.com/video/BV17KjH6iEXY",
+      "engagement": 118,
+      "is_hot": false,
+      "author": "BabyIwishyouhell",
+      "tags": [
+        "明星综合"
+      ],
+      "metadata": {
+        "play": 118,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/4716667a32c8af7aaa7d81b86d8c2223f05484fa.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
     },
     {
       "title": "今天玩忘却篇居然突然加了一个打到100回合直接结算。以后应该没办法这样叠伤害了吧。",
