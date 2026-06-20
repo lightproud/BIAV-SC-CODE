@@ -79,13 +79,21 @@ class TestParseDropTable(unittest.TestCase):
         self.assertEqual(drops[0]["item"], "Gemstone")
         self.assertEqual(drops[0]["rate"], "5%")
 
-    def test_bullet_list_emits_an_entry_per_line(self):
-        # The bullet regex's optional rate group leaves group 1 minimal, so it
-        # captures the leading token rather than the full item name. We assert
-        # the documented (lossy) current behavior: one entry per bullet line.
+    def test_bullet_list_captures_full_multiword_names(self):
+        # Multi-word item names must be captured whole (regression: the old
+        # bullet regex collapsed "Magic Dust" to "M").
         text = "* Magic Dust\n* Plain Item"
         drops = fetch_stages.parse_drop_table(text)
-        self.assertEqual(len(drops), 2)
+        names = {d["item"] for d in drops}
+        self.assertEqual(names, {"Magic Dust", "Plain Item"})
+
+    def test_bullet_list_extracts_rate_suffix(self):
+        # Both "(30%)" and "- 30%" rate suffixes are peeled off the name.
+        text = "* Magic Dust (30%)\n* Plain Item - 5%"
+        drops = fetch_stages.parse_drop_table(text)
+        items = {d["item"]: d.get("rate") for d in drops}
+        self.assertEqual(items.get("Magic Dust"), "30%")
+        self.assertEqual(items.get("Plain Item"), "5%")
 
     def test_inline_mentions_split(self):
         text = "掉落：金币、木材、宝石"

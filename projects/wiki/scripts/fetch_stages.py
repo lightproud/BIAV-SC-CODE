@@ -185,16 +185,25 @@ def parse_drop_table(text: str) -> list[dict]:
                 drops.append(entry)
 
     # Pattern 3: bulleted lists like  * Item Name (30%)  or  * Item Name - 30%
-    bullet_pat = re.compile(
-        r"^\*\s*\[?\[?([^\]\|\n]+?)\]?\]?\s*(?:[\(（]\s*([\d.]+%)\s*[\)）]|[-–—]\s*([\d.]+%))?",
-        re.MULTILINE,
+    # Two-step parse: grab the whole bullet line, then peel off an optional
+    # trailing rate. A single greedy regex with an optional rate group would
+    # collapse the non-greedy name capture to its first token, so the name and
+    # the rate are extracted separately to keep multi-word item names intact.
+    bullet_pat = re.compile(r"^\*\s*(.+?)\s*$", re.MULTILINE)
+    rate_suffix_pat = re.compile(
+        r"\s*(?:[\(（]\s*([\d.]+%)\s*[\)）]|[-–—]\s*([\d.]+%))\s*$"
     )
     for m in bullet_pat.finditer(text):
-        item_name = m.group(1).strip().strip("[]'")
+        body = m.group(1).strip()
+        rate = ""
+        rate_m = rate_suffix_pat.search(body)
+        if rate_m:
+            rate = (rate_m.group(1) or rate_m.group(2) or "").strip()
+            body = body[: rate_m.start()].strip()
+        item_name = body.strip("[]").strip().strip("[]'")
         # Skip overly long strings (likely not item names)
         if len(item_name) > 40 or not item_name:
             continue
-        rate = (m.group(2) or m.group(3) or "").strip()
         if item_name not in seen:
             seen.add(item_name)
             entry = {"item": item_name}

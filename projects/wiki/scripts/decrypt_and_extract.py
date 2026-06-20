@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 Decrypt and extract Morimens encrypted AssetBundles.
 
 Uses UnityPy's brute_force_key with global-metadata.dat to find the
