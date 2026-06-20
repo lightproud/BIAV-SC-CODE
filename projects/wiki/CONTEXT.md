@@ -2,6 +2,14 @@
 
 > 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）
 
+> **2026-06-20 架构订正（守密人「wiki 用新数据」裁定）**：外部合成数据旧链已整条退役删除——
+> `fetch_skills/cards/stats/stages/wheels/lore/portraits.py`（抓 Fandom/Bilibili 合成数据写 `data/db/`）、
+> `generate_pages.py`（读已清空的 `db/`）、`wiki_sources.py`、`fetch-wiki-data.yml` 工作流及其 9 个测试，
+> 全部删除。**wiki 数据唯一血缘改为新链**：`data/extracted/`（一手客户端解包）→ `parse_*`（顶层 scripts/）
+> → `data/processed/` → `generate_wiki_pages.py` → `deploy-site.yml` 部署。
+> 本档案下文凡涉及 `data/db/` 自举 / `generate_pages.py` / 批 1-3 角色 stub 的描述均为**退役旧链的历史记录**，
+> 不再生效；W2 重建以 `data/extracted/` 为唯一数据源（禁合成占位），进度权威见 `memory/project-status.md`。
+
 ## 负责会话
 Code-wiki
 
