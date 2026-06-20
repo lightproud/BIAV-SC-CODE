@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-20T12:25:56.979944+00:00",
+  "collected_at": "2026-06-20T15:02:26.134453+00:00",
   "source": "steam_discussion",
   "item_count": 3,
   "items": [
@@ -15,16 +15,6 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-19T14:45:22+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Ошибка соединения",
-      "summary": "Пытаюсь авторизоваться при входе в игру, но выдаёт ошибку, мол небезопасное соединение. Код ошибки -1. Кто-нибудь знает что с этим делать?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/571540929904822897/",
-      "author": "Gamws",
-      "engagement": 2
-    },
-    {
-      "source": "steam_discussion",
       "time": "2026-06-20T11:35:48+00:00",
       "lang": "en",
       "title": "[Steam论坛] Вечная проверка обновления ресурса",
@@ -32,6 +22,16 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824625063858/",
       "author": "yeban",
       "engagement": 1
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-20T13:53:25+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] linux login ?",
+      "summary": "como posso fazer o login no linux ?",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
+      "author": "manotroll",
+      "engagement": 0
     }
   ]
 }
