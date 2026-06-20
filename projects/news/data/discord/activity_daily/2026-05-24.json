@@ -1,10 +1,11 @@
 {
   "date": "2026-05-24",
-  "messages": 21135,
+  "messages": 33062,
   "unique_authors": 538,
-  "reactions_total": 1788,
-  "attachments": 1065,
+  "reactions_total": 3387,
+  "attachments": 1661,
   "channel_activity": {
+    "🔸morimens-game-chat": 11927,
     "🔸lets-count": 15,
     "🔸綜合討論": 2729,
     "🔸русский-канал": 1387,
@@ -85,33 +86,35 @@
     "1508081926068502670": 1
   },
   "hourly_activity": {
-    "3": 650,
-    "4": 1356,
-    "7": 766,
-    "9": 742,
-    "11": 671,
-    "15": 1550,
-    "16": 943,
-    "17": 819,
-    "18": 920,
-    "19": 1104,
-    "21": 544,
-    "22": 165,
-    "20": 1322,
-    "23": 237,
-    "0": 344,
-    "1": 1030,
-    "2": 647,
-    "5": 858,
-    "6": 863,
-    "8": 1157,
-    "10": 1521,
-    "12": 663,
-    "13": 833,
-    "14": 1430
+    "0": 774,
+    "1": 1588,
+    "2": 1131,
+    "3": 978,
+    "4": 1698,
+    "5": 1167,
+    "6": 1381,
+    "7": 1862,
+    "8": 1859,
+    "9": 1097,
+    "10": 2093,
+    "11": 1031,
+    "12": 1152,
+    "13": 1505,
+    "14": 1730,
+    "15": 2108,
+    "16": 1579,
+    "17": 1516,
+    "18": 1821,
+    "19": 1507,
+    "20": 1558,
+    "21": 901,
+    "22": 408,
+    "23": 618
   },
   "message_types": {
-    "0": 15
+    "0": 7033,
+    "19": 4893,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -131,6 +134,22 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1508160838186303653",
+      "channel_id": "1170692781216378960",
+      "content": "U actually should pull in 2 days‼️",
+      "author": "bleck11",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507997403494748250",
+      "channel_id": "1170692781216378960",
+      "content": "I'm celebrating my kid's bday",
+      "author": "angbak",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1508102429747707914",
       "channel_id": "1508102429747707914",
       "content": "",
@@ -145,6 +164,22 @@
       "author": "cel3_",
       "reactions": 15,
       "channel": "Leigh ( ˘ ³˘)♥"
+    },
+    {
+      "id": "1508164726272823436",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lightproud",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1508180197600661765",
+      "channel_id": "1170692781216378960",
+      "content": "1st time 425 dtide as a f2p, max lv 70, no OE limit carry (except for whale borr",
+      "author": "komugi0506",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1508098151381209248",
@@ -171,12 +206,28 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1508052028600090685",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "isaybye_byebye",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1508214102399389828",
       "channel_id": "1300659662311526512",
       "content": "",
       "author": "sayo.0320",
       "reactions": 9,
       "channel": "🔸canal-español"
+    },
+    {
+      "id": "1507997964575047680",
+      "channel_id": "1170692781216378960",
+      "content": "i think that moderation is needed\n\nIf i was a new player and my first impression",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1508248192926351401",
@@ -203,76 +254,28 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1507943312156528700",
-      "channel_id": "1131839817982947429",
-      "content": "如果我沒辦法弄到+12我會退坑",
-      "author": "yi000607",
+      "id": "1508016378936950794",
+      "channel_id": "1170692781216378960",
+      "content": "I was a mod entered whit Ang, i'm mostly work on supervision and work in the bac",
+      "author": "vxvendetta97",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1507968623065563236",
-      "channel_id": "1507968623065563236",
-      "content": "Have you ever seen a ranking reward map where resources are given out based on r",
-      "author": "aaabbbababaab.",
+      "id": "1508142966638772244",
+      "channel_id": "1170692781216378960",
+      "content": "This is insulting to Boothill because he's a cinnamon roll in comparison to \"||s",
+      "author": "vinsette",
       "reactions": 7,
-      "channel": "Have you ever seen a ranking reward map where resources are given out based on rankings?"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1508121883185250334",
-      "channel_id": "1508121883185250334",
-      "content": "",
-      "author": "wisewwivard_10391",
+      "id": "1508178614057828564",
+      "channel_id": "1170692781216378960",
+      "content": "I'm good. Clearly",
+      "author": "kurotamavii",
       "reactions": 7,
-      "channel": "Wip"
-    },
-    {
-      "id": "1507957200583131277",
-      "channel_id": "1131839817982947429",
-      "content": "什麼時候再出個淫蕩的福瑞",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507985612118949888",
-      "channel_id": "1131839817982947429",
-      "content": "Pickman finger me",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507996699606515762",
-      "channel_id": "1131839817982947429",
-      "content": "好的 给你发赛博香菜。🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿",
-      "author": "encyoverride",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1508213131032137849",
-      "channel_id": "1400749543288475770",
-      "content": "this is a dupe heavy game",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1508228530289508483",
-      "channel_id": "1505262542552043600",
-      "content": "I’m really heartbroken now… Light announced that he will not react to who cursed",
-      "author": "amstelredam",
-      "reactions": 5,
-      "channel": "請管管各種詞條和劇情文本越走越遠的現象"
-    },
-    {
-      "id": "1508193767604224110",
-      "channel_id": "1400749543288475770",
-      "content": "https://tenor.com/view/helot-morimens-wake-up-gif-17921898520291234069",
-      "author": "bagels5899",
-      "reactions": 4,
-      "channel": "🔸team-building"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

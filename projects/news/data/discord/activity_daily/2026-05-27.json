@@ -1,10 +1,11 @@
 {
   "date": "2026-05-27",
-  "messages": 22154,
+  "messages": 31866,
   "unique_authors": 787,
-  "reactions_total": 2006,
-  "attachments": 1293,
+  "reactions_total": 3336,
+  "attachments": 1764,
   "channel_activity": {
+    "🔸morimens-game-chat": 9712,
     "🔸general-chat": 5789,
     "🔸綜合討論": 2632,
     "🔸한국어-채팅방": 940,
@@ -77,34 +78,34 @@
     "What should I spend my rolls on?": 4
   },
   "hourly_activity": {
-    "18": 853,
-    "19": 753,
-    "20": 940,
-    "21": 1087,
-    "22": 681,
-    "23": 590,
-    "0": 1181,
-    "1": 1370,
-    "2": 882,
-    "3": 600,
-    "4": 499,
-    "5": 319,
-    "6": 1065,
-    "7": 1251,
-    "8": 1477,
-    "9": 918,
-    "10": 621,
-    "11": 1022,
-    "12": 991,
-    "13": 1377,
-    "14": 1204,
-    "15": 1149,
-    "16": 702,
-    "17": 622
+    "0": 1788,
+    "1": 1801,
+    "2": 1176,
+    "3": 1102,
+    "4": 1150,
+    "5": 727,
+    "6": 1390,
+    "7": 1447,
+    "8": 1653,
+    "9": 1262,
+    "10": 1104,
+    "11": 1499,
+    "12": 1636,
+    "13": 1794,
+    "14": 1707,
+    "15": 1613,
+    "16": 1066,
+    "17": 1219,
+    "18": 1300,
+    "19": 1027,
+    "20": 1338,
+    "21": 1274,
+    "22": 943,
+    "23": 850
   },
   "message_types": {
-    "0": 796,
-    "19": 343
+    "19": 3789,
+    "0": 5923
   },
   "top_reacted_messages": [
     {
@@ -124,12 +125,36 @@
       "channel": "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!"
     },
     {
+      "id": "1509258513988194334",
+      "channel_id": "1170692781216378960",
+      "content": "From the moment I understood the weakness of other Realms, it disgusted me. I cr",
+      "author": "dreadful_grey_wolf",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509105535759421510",
       "channel_id": "1509105535759421510",
       "content": "I spent several days drawing, cutting art and rigging in Live2D, the most I spen",
       "author": "in_di_go_6849",
       "reactions": 25,
       "channel": "Hameln Live2D Animation"
+    },
+    {
+      "id": "1509235757301108949",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509179476389658795",
+      "channel_id": "1170692781216378960",
+      "content": "angbak hates his role??",
+      "author": "not_blueberry",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1509146119609913436",
@@ -148,6 +173,30 @@
       "channel": "✅「Answered」课题奖励暗改是否又是你猫小巧思的一环"
     },
     {
+      "id": "1509217485013127168",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509007212805230733",
+      "channel_id": "1170692781216378960",
+      "content": "Hey <@767916775001292820> <@1140842836888129567> <@1035169514620452934>",
+      "author": "pachimaru",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509178659590635771",
+      "channel_id": "1170692781216378960",
+      "content": "<@296679098703544321> can i talk to u",
+      "author": "not_blueberry",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509009250813349999",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -164,108 +213,60 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1509093472903368794",
-      "channel_id": "1131839817982947429",
-      "content": "我10个礼包没领",
-      "author": "carme.0588",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "id": "1509164427239358515",
+      "channel_id": "1170692781216378960",
+      "content": "i can't believe MODS are enforcing RULES in this server........",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1509142333772533871",
-      "channel_id": "1131839817982947429",
+      "id": "1509165077960462458",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/i/status/2059563765889413153",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509170834445701260",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "aa667_667",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "author": "jmjmjm6667",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1509177039960277042",
-      "channel_id": "1131839817982947429",
-      "content": "謝謝老大 讚嘆老大 老大你是我的神 老大沒有你我怎麼活",
-      "author": "sayo.0320",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509187306081357876",
-      "channel_id": "1131839817982947429",
+      "id": "1509235166927654912",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "sayo.0320",
+      "author": "jmjmjm6667",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509247125240811631",
+      "channel_id": "1170692781216378960",
+      "content": "As an Arachnophobe--I have no straight words for Arachne",
+      "author": "sungodpharmos",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509164137136263338",
+      "channel_id": "1170692781216378960",
+      "content": "yo guys now that I’m a 400 GOD all my takes are factual",
+      "author": "bagels5899",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1509188619217403954",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "huangyu0876",
+      "id": "1509169851489452162",
+      "channel_id": "1170692781216378960",
+      "content": "is my game cooked or is the boss supposed to be like this ?",
+      "author": "glitzy_x",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509229257811820555",
-      "channel_id": "1300659662311526512",
-      "content": "Q tal la vida, el mundo, las estrellas??",
-      "author": "rusheer.l",
-      "reactions": 7,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1509089636402860193",
-      "channel_id": "1509005902953451590",
-      "content": "已經選溢出命輪的會補償嗎",
-      "author": "yi000607",
-      "reactions": 7,
-      "channel": "✅「Answered」课题奖励暗改是否又是你猫小巧思的一环"
-    },
-    {
-      "id": "1509032407200956467",
-      "channel_id": "1131839817982947429",
-      "content": "我說杜勒小皮疊力不怎麼樣🙄 💅",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509142958035832974",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509166327632498689",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509181545510863009",
-      "channel_id": "1131839817982947429",
-      "content": "<@1495441292904235131> <@985933785340186704>  <@727340747669635132> <@5991711494",
-      "author": "sayo.0320",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509287407697133598",
-      "channel_id": "1326453763355185215",
-      "content": "||keeper: this wasnt what i thought of when i wanted a vacation||",
-      "author": "dolchemana",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1509282820869193880",
-      "channel_id": "1400750050208125010",
-      "content": "Not gonna lie, I only joined this server because the game is insanely niche, oth",
-      "author": "xiii_c",
-      "reactions": 4,
-      "channel": "🔸general-chat"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2026-05-23",
-  "messages": 19700,
+  "messages": 31283,
   "unique_authors": 550,
-  "reactions_total": 2023,
-  "attachments": 1145,
+  "reactions_total": 3442,
+  "attachments": 1736,
   "channel_activity": {
+    "🔸morimens-game-chat": 11583,
     "🔸lets-count": 18,
     "🔸綜合討論": 2636,
     "🔸欢乐梗图": 6,
@@ -65,34 +66,36 @@
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
-    "0": 822,
-    "1": 728,
-    "2": 501,
-    "3": 437,
-    "6": 702,
-    "7": 1396,
-    "8": 891,
-    "12": 1285,
-    "14": 1057,
-    "15": 997,
-    "18": 779,
-    "19": 573,
-    "23": 398,
-    "20": 806,
-    "21": 520,
-    "22": 285,
-    "4": 672,
-    "5": 685,
-    "9": 1103,
-    "10": 1157,
-    "11": 1065,
-    "13": 1388,
-    "16": 530,
-    "17": 923
+    "0": 1262,
+    "1": 1181,
+    "2": 958,
+    "3": 1150,
+    "4": 1382,
+    "5": 1162,
+    "6": 1269,
+    "7": 1875,
+    "8": 1385,
+    "9": 1644,
+    "10": 1533,
+    "11": 1595,
+    "12": 1860,
+    "13": 2058,
+    "14": 1534,
+    "15": 1822,
+    "16": 978,
+    "17": 1281,
+    "18": 1274,
+    "19": 872,
+    "20": 1008,
+    "21": 803,
+    "22": 627,
+    "23": 770
   },
   "message_types": {
-    "0": 17,
-    "19": 1
+    "19": 4606,
+    "0": 6975,
+    "20": 1,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -192,6 +195,14 @@
       "channel": "Before the Saya no Uta Collaboration Begins"
     },
     {
+      "id": "1507774974088319097",
+      "channel_id": "1170692781216378960",
+      "content": "Karen attack!!",
+      "author": "sirtealot",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1507624473094914049",
       "channel_id": "1507598592670437537",
       "content": "I appreciate the concern, truly. But I’d gently say this: every investment we ma",
@@ -216,6 +227,14 @@
       "channel": "Before the Saya no Uta Collaboration Begins"
     },
     {
+      "id": "1507783253665251489",
+      "channel_id": "1170692781216378960",
+      "content": "Finally!! +12 maxed everything on him🎉 🎉 👊 👊",
+      "author": "iv_dog",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1507599167629824092",
       "channel_id": "1507598592670437537",
       "content": "Not to undermine the singer choice but isn't Emi expensive?\n\nLike I just don't w",
@@ -232,28 +251,12 @@
       "channel": "Before the Saya no Uta Collaboration Begins"
     },
     {
-      "id": "1507655475024498798",
-      "channel_id": "1507598592670437537",
-      "content": "I do feel like with preparing for arc 3 around the corner, and with it possibly ",
-      "author": "thpdom",
+      "id": "1507737603561226443",
+      "channel_id": "1170692781216378960",
+      "content": "For the record, this is one of the VERY FIRST drawing I did",
+      "author": "brainrot_in_a_vat",
       "reactions": 9,
-      "channel": "Before the Saya no Uta Collaboration Begins"
-    },
-    {
-      "id": "1507660302987169814",
-      "channel_id": "1131839817982947429",
-      "content": "我時常因為不夠變態而感到與水友格格不入...",
-      "author": "gensono0609",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507828789197930536",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "mylsy",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

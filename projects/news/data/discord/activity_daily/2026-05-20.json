@@ -1,11 +1,11 @@
 {
   "date": "2026-05-20",
-  "messages": 26353,
+  "messages": 31945,
   "unique_authors": 535,
-  "reactions_total": 2420,
-  "attachments": 1561,
+  "reactions_total": 2944,
+  "attachments": 1817,
   "channel_activity": {
-    "🔸morimens-game-chat": 6047,
+    "🔸morimens-game-chat": 11639,
     "🔸綜合討論": 4168,
     "🔸한국어-채팅방": 451,
     "🔸deutscher-chatraum": 2,
@@ -115,6 +115,15 @@
     "1506653153750155354": 1
   },
   "hourly_activity": {
+    "15": 1761,
+    "16": 1304,
+    "17": 1324,
+    "18": 1452,
+    "19": 1970,
+    "20": 1129,
+    "21": 736,
+    "22": 544,
+    "23": 846,
     "3": 1312,
     "4": 1030,
     "5": 1228,
@@ -127,23 +136,13 @@
     "12": 1396,
     "13": 1440,
     "14": 1479,
-    "15": 1354,
     "0": 1251,
     "1": 1590,
-    "2": 1209,
-    "16": 580,
-    "17": 550,
-    "18": 364,
-    "19": 1003,
-    "20": 463,
-    "21": 240,
-    "22": 286,
-    "23": 634
+    "2": 1209
   },
   "message_types": {
-    "0": 3076,
-    "19": 1918,
-    "20": 6
+    "0": 3172,
+    "19": 2420
   },
   "top_reacted_messages": [
     {
@@ -209,6 +208,14 @@
       "author": "17m_rft28",
       "reactions": 10,
       "channel": "Aurita"
+    },
+    {
+      "id": "1506696916220641381",
+      "channel_id": "1170692781216378960",
+      "content": "yes please mommy",
+      "author": "bru0001",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1506671416009953320",
@@ -283,28 +290,20 @@
       "channel": "V2.5.1.0 停服维护公告"
     },
     {
-      "id": "1506603531732254813",
-      "channel_id": "1131839817982947429",
-      "content": "https://tenor.com/view/monkey-meditating-monk-monkey-monkey-monk-wiki4u-gif-8481",
-      "author": "._.aahh",
+      "id": "1506700181352218674",
+      "channel_id": "1170692781216378960",
+      "content": "man fuck this game",
+      "author": "tek2yuhdome",
       "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1506606669579423824",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "vgvfvffcc",
+      "id": "1506723897666703431",
+      "channel_id": "1170692781216378960",
+      "content": "i want him carnally but i feel like when i put a baby in him dust clluds will bl",
+      "author": "mitsukinanoka__",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1506632220050329601",
-      "channel_id": "1131839817982947429",
-      "content": "<:Brown_think:1459080117308620996>",
-      "author": "nemu_s_t_a_r",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
