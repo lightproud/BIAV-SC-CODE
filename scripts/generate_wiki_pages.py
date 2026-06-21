@@ -1636,6 +1636,22 @@ def generate_story():
     except FileNotFoundError:
         print('Story layer not found; skipping story page')
         return
+    # 角色名 → 详情页 id（用于「关联角色」交叉链接到 /zh/awakeners/{id}）
+    name2id = {}
+    try:
+        ci = json.load(open(f'{PROCESSED_DIR}/character_index.json', encoding='utf-8'))
+        for c in (ci if isinstance(ci, list) else ci.get('characters', ci.values())):
+            # 仅 playable 角色有详情页（generate_characters 只为 playable 出页），
+            # 非 playable 链接会 404，故不收
+            if isinstance(c, dict) and c.get('name') and c.get('category') == 'playable':
+                name2id[c['name']] = c['id']
+    except (FileNotFoundError, KeyError, AttributeError):
+        pass
+
+    def link_char(name):
+        cid = name2id.get(name)
+        return f'[{esc(name)}](/zh/awakeners/{cid})' if cid else esc(name)
+
     # 关卡组引言：group_id → desc（取自 stages.json groups）
     gdesc = {}
     try:
@@ -1660,6 +1676,8 @@ def generate_story():
              '其剧情**梗概**（社区考据，非原文）见 [剧情考据](/lore-research)。')
     L.append(':::')
     L.append('')
+    # 稳定锚点：中文标题自动 slug 不可靠，显式分配 chapter-N 供概览表跳转
+    anchor_of = {u['unit']: f'chapter-{i}' for i, u in enumerate(idx)}
     L.append('## 章节概览')
     L.append('')
     L.append('| 单元 | 类型 | 词条 | 关卡组 | 关联角色 |')
@@ -1667,15 +1685,15 @@ def generate_story():
     for u in idx:
         if not u['lore_count'] and not u['stage_group_count']:
             continue
-        chars = '、'.join(esc(c) for c in u['characters']) if u['characters'] else '—'
-        L.append(f"| {esc(u['unit'])} | {tl.get(u['type'], u['type'])} | {u['lore_count']} | {u['stage_group_count']} | {chars} |")
+        chars = '、'.join(link_char(c) for c in u['characters']) if u['characters'] else '—'
+        L.append(f"| [{esc(u['unit'])}](#{anchor_of[u['unit']]}) | {tl.get(u['type'], u['type'])} | {u['lore_count']} | {u['stage_group_count']} | {chars} |")
     L.append('')
     L.append('---')
     L.append('')
     for u in idx:
         if not u['lore_ids'] and not u['stage_group_ids']:
             continue
-        L.append(f"## {esc(u['unit'])}")
+        L.append(f"## {esc(u['unit'])} {{#{anchor_of[u['unit']]}}}")
         L.append('')
         sub = tl.get(u['type'], u['type'])
         if u['type'] == 'main_chapter' and u['chapter_no'] is not None:
@@ -1683,7 +1701,7 @@ def generate_story():
         L.append(f'*{sub}*')
         L.append('')
         if u['characters']:
-            L.append(f"**关联角色**：{'、'.join(esc(c) for c in u['characters'])}")
+            L.append(f"**关联角色**：{'、'.join(link_char(c) for c in u['characters'])}")
             L.append('')
 
         # —— 关卡引言（关卡组 name + desc，去重）——
