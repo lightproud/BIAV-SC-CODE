@@ -324,3 +324,29 @@ class TestOutputIsSubsetOfArchive:
         emitted_urls = {it["url"] for it in reddit["items"]}
         assert emitted_urls == {"u-fresh"}
         assert "u-stale" not in emitted_urls
+
+    def test_every_output_file_stamps_data_layer_output(self, tmp_path, monkeypatch):
+        """Every split_output product must self-declare data_layer == "output".
+
+        Closes the gap surfaced by the prior data-discipline pass: the output
+        layer's "I am a sample" identity used to be convention-only, with NO
+        machine-readable marker in the payload. Now each per-source file AND the
+        merged all-latest.json carries a data_layer stamp, so a consumer can
+        programmatically refuse to treat a sample as the full archive (lesson
+        #30). Discipline moves from "humans must remember" to "code enforces".
+        """
+        items = [
+            {"source": "reddit", "time": self._recent(1), "title": "a", "url": "u-a"},
+            {"source": "youtube", "time": self._recent(2), "title": "b", "url": "u-b"},
+        ]
+        _, payloads = self._run_split(tmp_path, monkeypatch, items)
+        assert payloads, "split produced no output files"
+        for source, payload in payloads.items():
+            assert payload.get("data_layer") == "output", (
+                f"{source}-latest.json is missing the data_layer:output stamp "
+                f"(got {payload.get('data_layer')!r}) — output identity unguarded")
+            # An output-layer file must NEVER claim to be the full archive.
+            assert payload["data_layer"] != "full_archive", (
+                f"{source} output file masquerades as full_archive")
+        # the merged file is covered too (it is the most tempting to mis-read).
+        assert payloads["all"]["data_layer"] == "output"
