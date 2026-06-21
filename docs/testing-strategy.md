@@ -35,33 +35,42 @@
 行覆盖率会骗人——一行被执行≠它的结果被断言。变异测试故意改源码（翻操作符、换常量、
 删语句），好的测试必须让这些「变异体」变红；**存活的变异体 = 断言盲点**。
 
-- 配置：`setup.cfg [mutmut]`，刻意只锁**自包含核心纯模块**（无兄弟导入、确定性、零网络），
-  存活体能明确归因为测试缺口而非环境噪声。当前锁定两个：
+- 配置：`setup.cfg [mutmut]`，刻意只锁**逻辑密集、常量表噪声低**的核心模块，存活体能明确
+  归因为测试缺口（或已登记等价体），而非数据表 churn。当前锁定三个：
   - `scripts/silver_tokenizer.py`（两条分析主线共用的分词地基：领域词典 FMM）
   - `scripts/lua_parse.py`（花括号深度扫描 + 字符串状态机 + `\"`/`\n` 还原）
+  - `scripts/parse_voice_lines.py`（id 间隙分组 + `·` 分类切分；基于 lua_parse）
 - 跑法：本地 `mutmut run && mutmut results`；CI 手动触发 `mutation-test.yml`。
 - 每个被测模块配**包路径导入**的专用孪生档（`tests/test_mut_*.py`，如 `scripts.silver_tokenizer`），
   让 mutmut 运行时记录的 key 与按文件路径推导的 key 对齐（兄弟单测用裸模块名导入，mutmut 对不上）。
-- **为何不纳入 `data_quality` / `split_output`**：mutmut 的 `only_mutate` 是**文件粒度**（无法只锁单个
-  函数），这两个模块还含 class / 文件 IO / 兄弟导入，整文件变异会从未孪生的部分喷出噪声。其纯逻辑
-  （engagement 加权和、热门阈值、recency 窗口）改由常规强测试 `test_data_quality_math.py` /
-  `test_split_output_logic.py` 用精确数值断言守护——行覆盖 100% 也兜不住的算术/比较盲点。
+- **刻意不纳入变异、改用常规强测试守护的模块**（两类噪声源）：
+  - `data_quality` / `split_output`：含 class / 文件 IO / 兄弟导入，mutmut 的 `only_mutate` 是文件粒度
+    无法只锁单函数 → 整文件变异喷噪声。由 `test_data_quality_math.py` / `test_split_output_logic.py`
+    精确数值断言守护。
+  - `parse_cg_gallery` / `parse_collection_hall` / `parse_item_stories`：含大段**常量表**（章节名字典、
+    关键词列表），其字符串变异要穷举断言每个常量才能杀——那是钉数据不是钉逻辑。由
+    `test_parse_*_logic.py` 守护。
 
 ### 战果
 
 **silver_tokenizer（64 变异体）**：初版 5 存活，揪出 2 个 100% 行覆盖都没抓到的**真盲点**
 （词典命中落在非零偏移时 `i += len(hit)` 的推进；2 字词典词作前缀必须整词吃掉），补测试后存活 5→3。
 
-**lua_parse（扩面新增）**：初版 9 存活，揪出 2 类**真盲点**——
-(1) 字符串内「转义引号紧跟 `}`」时的状态机处理（错误的反斜杠分支会截断当前块或吞掉下一块）；
+**lua_parse**：初版 9 存活，揪出 2 类**真盲点**——(1) 字符串内「转义引号紧跟 `}`」的状态机处理；
 (2) 未闭合块的 body 边界切片（`content[start+1:]` 的 ±1）。补两条精准测试后存活 9→5。
+
+**parse_voice_lines**：7 存活，经判定**全为等价体**（见下表的通用类）——非等价变异体首跑即 100% 杀光，
+是干净的优质靶。`parse_cg_gallery` 转常规测试时另补了 2 条真盲点（缺 `files`/`path` 键的默认值处理）。
 
 ### 已登记的等价变异体（survivor 白名单）
 
-以下存活体经人工判定为**等价变异体**（改了源码但行为无可观测差异，不可杀），triage 视为可接受：
+以下存活体经人工判定为**等价变异体**（改了源码但行为无可观测差异，不可杀），triage 视为可接受。
+当前 gate 共 15 个存活，全部落在此表内：
 
 | 模块 | 变异 | 为何等价 |
 |------|------|---------|
+| 通用（任何读文件模块） | `open(p,'r',encoding='utf-8')` → `encoding=None`/`'UTF-8'`/省略 mode | ASCII/UTF-8 测试输入下读取结果一致 |
+| 通用（`if key not in d: continue` 之后） | `d.get(key, '')` → 默认值改 `None`/`'XXXX'`/省略 | 前置守卫保证 key 必在，默认值不可达 |
 | silver_tokenizer | `hit = None` → `hit = ""` | 二者皆假值，`if hit:` 行为一致 |
 | silver_tokenizer | `while i < n` → `while i <= n` | i==n 时切片空、内层空转、随即越界退出 |
 | silver_tokenizer | `min(maxlen, n - i)` → `n + i` | Python 切片对越界长度自动截断，产出一致 |
