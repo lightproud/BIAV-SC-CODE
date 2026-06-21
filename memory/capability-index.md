@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**96**
+- 功能总数：**97**
 - 脚本可达性：活 53 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 27 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 28 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 20 |
 | news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（27）
+## CI 自动化工作流（编排入口·定时/事件平面）（28）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -80,6 +80,8 @@
   `.github/workflows/fanart-archive.yml`
 - **`Migrate Unpacked Text to Git`** _[manual]_ —   
   `.github/workflows/migrate-unpacked-to-git.yml`
+- **`Mutation Test (manual)`** _[manual]_ —   
+  `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
