@@ -25,6 +25,11 @@ def sandbox(tmp_path, monkeypatch):
     # No playwright, no quality tracker by default
     monkeypatch.setattr(aggregator, "_get_playwright_collectors", lambda: None)
     monkeypatch.setattr(aggregator, "_get_quality_tracker", lambda: None)
+    # run() calls `from collection_state import mark_collection_done` on success;
+    # redirect the state file to tmp so no test writes the real
+    # projects/news/data/collection_state.json.
+    import collection_state
+    monkeypatch.setattr(collection_state, "STATE_PATH", tmp_path / "collection_state.json")
     # validate_all_news passthrough (avoid sanitizer side effects)
     monkeypatch.setattr(aggregator, "validate_all_news", lambda items: items)
     monkeypatch.setattr(aggregator, "generate_summary", lambda items: "summary")
