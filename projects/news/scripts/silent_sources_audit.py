@@ -34,8 +34,8 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARCHIVE_SOURCES
 
-ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
-DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'activity_daily'
+ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
+DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord' / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 
 # 已注册采集源 —— 来自 sources.py 单一真相源（含 discord）

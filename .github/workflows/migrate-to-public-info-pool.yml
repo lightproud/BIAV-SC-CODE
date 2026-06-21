@@ -1,0 +1,121 @@
+name: Migrate to Public-Info-Pool
+
+# 「一次到位」社区数据存放重构（守密人 2026-06-21 裁定，方案见
+# memory/strategy/repo-slimming-plan.md §8 + decisions.md 两条 2026-06-21 决策）。
+#
+# 把全部 text 归入 git 的 BPT 4R 树，二进制移出 git（留 Releases）：
+#   discord 全量(从 community-data release 回填) → Record/Community/discord/
+#   16 平台摊平                                  → Record/Community/<platform>/
+#   解包 text                                     → Reference/Game-Unpacked/
+#   fanart / media (二进制)                       → git rm（本体留 community-assets release）
+#
+# 为何走 workflow：决策 2026-06-20——云容器无 Release 写权限、大推 413；迁移在
+# GitHub 基建上提交。**手动触发**，且**提交到触发它的分支**（非直推 main），
+# 守密人审阅生成的 commit 后再合并。git 历史不改写（fanart 历史 blob 留存，
+# 历史压缩守密人未来另议）。
+#
+# 前置：本工作流假设代码侧路径引用已改为新路径（同 PR 内），故数据搬迁与
+# 代码引用在同一次合并落地，main 不出现「代码指新路径、数据在旧路径」的破窗。
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: '输入 MIGRATE 确认执行这次不可逆重构'
+        required: true
+        default: ''
+
+concurrency:
+  group: migrate-pip-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: ${{ github.event.inputs.confirm == 'MIGRATE' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Restore full discord history from community-data release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/restore_release_data.py \
+            --tag community-data --pattern 'discord-archive-*.tar.gz' \
+            --dest projects/news/data/discord
+
+      - name: Reorganize into Public-Info-Pool (text → git 4R tree)
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p Public-Info-Pool/Record/Community Public-Info-Pool/Reference
+
+          # 1) discord 全量 → Record/Community/discord/（含回填的老月份，git add 新增）
+          mkdir -p Public-Info-Pool/Record/Community/discord
+          # 先把旧跟踪的 discord 用 git mv 保留历史，再把回填的新文件一起纳入
+          if git ls-files --error-unmatch projects/news/data/discord >/dev/null 2>&1; then
+            git mv -k projects/news/data/discord/* Public-Info-Pool/Record/Community/discord/ 2>/dev/null || true
+          fi
+          # 回填带进来的未跟踪文件（老月份）直接移动
+          if [ -d projects/news/data/discord ]; then
+            cp -rn projects/news/data/discord/. Public-Info-Pool/Record/Community/discord/ 2>/dev/null || true
+            rm -rf projects/news/data/discord
+          fi
+
+          # 2) 16 平台摊平 → Record/Community/<platform>/
+          if [ -d projects/news/data/platforms ]; then
+            for p in projects/news/data/platforms/*/; do
+              name=$(basename "$p")
+              git mv "$p" "Public-Info-Pool/Record/Community/$name" 2>/dev/null || \
+                { mkdir -p "Public-Info-Pool/Record/Community/$name"; cp -rn "$p". "Public-Info-Pool/Record/Community/$name/"; rm -rf "$p"; }
+            done
+            rmdir projects/news/data/platforms 2>/dev/null || true
+          fi
+
+          # 3) 解包 text → Reference/Game-Unpacked/
+          python scripts/migrate_unpacked_to_git.py --dest Public-Info-Pool/Reference/Game-Unpacked
+
+          # 4) fanart / media 二进制移出 git（本体留 community-assets release；不改历史）
+          git rm -r --quiet projects/news/data/fanart projects/news/data/media 2>/dev/null || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Write directory index.md stubs (BPT 4R, raw data免 frontmatter)
+        run: |
+          cat > Public-Info-Pool/Record/Community/index.md <<'EOF'
+          # Record / Community — 社区采集时序归档
+
+          BPT 4R 本体 `Record` 层（发生过的时序事）。各源平级摊平：`discord/` 与各社区平台目录。
+          全量档案层，语义不可与输出展示层互换（CLAUDE.md §4.1）。原始时序数据免逐文件 frontmatter。
+          EOF
+          cat > Public-Info-Pool/Reference/index.md <<'EOF'
+          # Reference — 资料库
+
+          BPT 4R 本体 `Reference` 层（资料体）。`Game-Unpacked/` = 客户端解包 text（脚本/配置/文本）。
+          二进制解包资产留 Releases「解包」桶。
+          EOF
+          git add Public-Info-Pool/Record/Community/index.md Public-Info-Pool/Reference/index.md
+
+      - name: Commit & push to the triggering branch
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "nothing to migrate"
+          else
+            git commit -m "chore: migrate community/unpacked text into Public-Info-Pool, evict binary [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin "${GITHUB_REF_NAME}" && \
+                git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+              echo "push attempt $i failed, retry in ${i}s"; sleep $i
+            done
+            exit 1
+          fi

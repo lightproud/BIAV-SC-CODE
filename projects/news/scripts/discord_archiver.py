@@ -33,7 +33,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent
-DISCORD_DATA_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
+DISCORD_DATA_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 # 弥萨格大学官方服务器（Global）。其数据沿用 data/discord/ 根目录（向后兼容）；
