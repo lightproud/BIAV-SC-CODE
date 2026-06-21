@@ -193,14 +193,17 @@ def build_sources() -> int:
     for name, info in sorted(platforms.items()):
         total = info.get("total_items", 0)
         level = info.get("level", "unknown")
-        # full-archive layer location (本体原地，仅指针)
-        if name == "discord":
-            archive = "/projects/news/data/discord/"
+        # full-archive layer location (本体原地，仅指针)。双布局感知：迁移后
+        # 在 Public-Info-Pool/Record/Community，迁移前回落旧 projects/news/data。
+        new_rel = f"Public-Info-Pool/Record/Community/{name}"
+        old_rel = "projects/news/data/discord" if name == "discord" \
+            else f"projects/news/data/platforms/{name}"
+        if (REPO / new_rel).exists():
+            archive = "/" + new_rel + "/"
+        elif (REPO / old_rel).exists():
+            archive = "/" + old_rel + "/"
         else:
-            archive = f"/projects/news/data/platforms/{name}/"
-        # 放指针不放本体：指针必须落到实存本体。source-health 注册但档案目录
-        # 尚未落盘的平台（典型：全量 0 条、未实际采集）跳过，避免指针落空。
-        if not (REPO / archive.lstrip("/")).exists():
+            # 放指针不放本体：两布局均无此源档案 → 跳过，避免指针落空。
             continue
         output = f"/projects/news/output/{name}-latest.json"
 

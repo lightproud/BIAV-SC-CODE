@@ -130,14 +130,14 @@ class TestRefreshDiscord(unittest.TestCase):
 class TestCollectUrls(unittest.TestCase):
     def _setup(self, d):
         root = Path(d)
-        # platform json with media_url
-        pdir = root / "platforms" / "pixiv"
+        # 摊平布局（2026-06-21）：各平台直接在 Community 根下，与 discord 同级
+        pdir = root / "pixiv"
         pdir.mkdir(parents=True)
         (pdir / "2026-04-14.json").write_text(
             json.dumps({"items": [{"media_url": "https://p/img.jpg"}, {"no": "media"}]}),
             encoding="utf-8")
         # platform json as bare list
-        bdir = root / "platforms" / "bilibili"
+        bdir = root / "bilibili"
         bdir.mkdir(parents=True)
         (bdir / "2026-04-14.json").write_text(
             json.dumps([{"media_url": "https://b/img.jpg"}]), encoding="utf-8")
@@ -155,7 +155,7 @@ class TestCollectUrls(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             self._setup(d)
-            with mock.patch.object(bm, "ROOT", d):
+            with mock.patch.object(bm, "SRC", d):
                 urls = bm.collect_urls(include_discord=True)
         found = {u for u, _, _ in urls}
         self.assertIn("https://p/img.jpg", found)
@@ -166,7 +166,7 @@ class TestCollectUrls(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             self._setup(d)
-            with mock.patch.object(bm, "ROOT", d):
+            with mock.patch.object(bm, "SRC", d):
                 urls = bm.collect_urls(include_discord=False)
         self.assertNotIn("https://d/a.png", {u for u, _, _ in urls})
 
@@ -190,7 +190,7 @@ class TestUploadRelease(unittest.TestCase):
             result.stdout = "done"
             result.stderr = ""
             with mock.patch.object(bm, "FILES", str(fdir)), \
-                    mock.patch.object(bm, "ROOT", d), \
+                    mock.patch.object(bm, "SRC", d), \
                     mock.patch.object(bm.subprocess, "run", return_value=result) as run:
                 bm.upload_release()
             self.assertTrue(run.called)

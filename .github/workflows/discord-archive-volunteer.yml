@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/data/discord/guilds/
+          git add Public-Info-Pool/Record/Community/discord/guilds/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

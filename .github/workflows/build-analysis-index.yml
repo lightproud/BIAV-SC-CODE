@@ -26,15 +26,8 @@ jobs:
           python-version: '3.11'
       - name: Rebuild story index
         run: python scripts/build_story_index.py
-      - name: Restore full discord archive from Releases (build-time, ephemeral)
-        # 全量历史存 community-data release（决策 178/179/199），构建期临时还原，
-        # 不进 git（提交步骤只 add 索引产物）。CI 有 GITHUB_TOKEN，走 release API。
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python scripts/restore_release_data.py \
-            --tag community-data --pattern 'discord-archive-*.tar.gz' \
-            --dest projects/news/data/discord
+      # 2026-06-21 de-tier 后 discord 全量永驻 git（Record/Community/discord），
+      # 无需再从 Release 构建期还原；build_community_index 直接读 git 全量。
       - name: Rebuild community index (full archive)
         run: python scripts/build_community_index.py
       - name: Commit if changed

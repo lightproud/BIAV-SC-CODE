@@ -14,7 +14,8 @@
 """
 import os, json, re, time, argparse, hashlib, urllib.request, urllib.error
 
-ROOT = "projects/news/data"
+# discord 数据迁至 Public-Info-Pool/Record/Community（2026-06-21）；ROOT 仅用于读 discord
+ROOT = "Public-Info-Pool/Record/Community"
 FANART_CH = ["同人创作", "art-and-memes", "官方素材", "official-materials",
              "fanart", "创作", "二创", "绘"]
 HEADERS = {"User-Agent": "Mozilla/5.0 (silver-core fanart collector)"}

@@ -31,8 +31,9 @@ class RegistryInvariants(unittest.TestCase):
         # 不漂移的策略
         self.assertEqual(cfg["cutoff_days"], 60)
         self.assertEqual(cfg["group_by"], "month_from_stem")
-        self.assertEqual(cfg["after_archive"], "git_rm")
-        self.assertEqual(cfg["base_dir"], "projects/news/data/discord")
+        # 2026-06-21 de-tier：discord 全量永驻 git，归档不再驱逐（keep）
+        self.assertEqual(cfg["after_archive"], "keep")
+        self.assertEqual(cfg["base_dir"], "Public-Info-Pool/Record/Community/discord")
 
     def test_fanart_entry_rolling_release(self):
         cfg = ae.load_registry()["fanart"]
