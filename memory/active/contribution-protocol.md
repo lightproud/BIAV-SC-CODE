@@ -74,7 +74,7 @@
 
 - `memory/contribution-protocol.md` — 完整正文（Issue 模板 / PR 流程 / 多语言贡献 / 数据贡献分类；Issue 流程权威出处）
 - `.github/workflows/claude.yml` — Issue 自动响应与作者校验实现
-- `BIAV-SC.md` — Issue 规则部分（外部 AI 接入入口；2026-06-09 实测该文件已不在仓库，引用待守密人处置）
+- `CLAUDE.md` §0 + §3 接入方能力盘点 — AI 接入银芯统一入口（**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**；守密人 2026-06-21 定案）
 
 ### 配套基础设施
 

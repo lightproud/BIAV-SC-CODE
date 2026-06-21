@@ -1,11 +1,11 @@
 # 直推 main 政策（active hub）
 
-> 注：与 CLAUDE.md §8.6 现行口径存在冲突（本卡：直推 main；§8.6：本会话按派发要求在指定 feature 分支开发），待守密人裁定。
+> 注：与 CLAUDE.md §7.6 现行口径存在冲突（本卡：直推 main；§7.6：本会话按派发要求在指定 feature 分支开发），待守密人裁定。
 >
 > 主题入口卡 / Code-memory batch 1 落档 2026-05-03
 > 决策版本号：v1.1（2026-06-03 补网页/远端环境等效执行条款）
 > 上游决策：`memory/decisions.md` 2026-03-29 + 2026-04-26 双条目
-> 工程规则：`CLAUDE.md` §8.6 分支与提交（2026-06-09 修正：原引「§1」对应旧版结构，现行 §1 为项目本质）
+> 工程规则：`CLAUDE.md` §7.6 分支与提交（2026-06-09 修正：原引「§1」对应旧版结构，现行 §1 为项目本质）
 
 ---
 
@@ -26,7 +26,7 @@
 | 决策版本 | v1.0（2026-04-26 PR #141 合并落地）|
 | 适用范围 | 所有 AI 会话所有 commit 类型（业务代码 / 文档 / 索引 / hub / brief） |
 | 例外清单 | 仅 dependabot 自动 PR（按 batch 升级模式人工合并）|
-| 配套基础设施 | `.claude/hooks/session-start-sync.sh` 每次会话启动 fetch + sync 本地 main 至 origin/main，防 Cloudflare HTTP 413 推送堵塞（lesson #28）|
+| 配套基础设施（2026-06-14 更替）| 原 `.claude/hooks/session-start-sync.sh`（会话启动 sync）已随全部会话钩子退役删除；413 防护改由 **git 层** `.githooks/pre-push` 承担（push 前对齐 origin/main，需 `git config core.hooksPath .githooks` 启用，见 CLAUDE.md §7.4）|
 | 失步重新同步 | `git fetch origin main` + `git pull --rebase origin main`，必要时 `git stash -u` 暂存本地未跟踪 |
 | 推送失败重试 | 指数退避 4 次（2s / 4s / 8s / 16s），仍失败检查 Cloudflare 413 |
 | 禁用项 | `git rebase -i` / `git add -i`（Claude Code 沙盒不支持）/ `git push --force` 至 main / `--no-verify` |
@@ -35,7 +35,7 @@
 
 ### 配套教训
 
-- **lesson #28**：本地 main 与 origin/main 反复失步触发 Cloudflare HTTP 413 推送堵塞；SessionStart hook 自动同步预防
+- **lesson #28**：本地 main 与 origin/main 反复失步触发 Cloudflare HTTP 413 推送堵塞；现由 git 层 `.githooks/pre-push` 预防（原 SessionStart hook 解法 2026-06-14 退役，见 lesson #34/#39）
 - **lesson #29**：决策档案与执行档案脱节，规则改了 `decisions.md` 必须同步 `CLAUDE.md` / `claude.yml`
 - **lesson #32（最高优先级）**：事实采信纪律（R1 / R2 / R3）覆盖所有报告 / 审计 / 周报场景
 
@@ -54,13 +54,13 @@
 ### 决策与规则源头
 
 - `memory/decisions.md` — 完整决策日志（2026-03-29 / 2026-04-26 直推 main 双条目）
-- `CLAUDE.md` §8.6 分支与提交 — 现行 Git 工作流条款（已无直推 main 条文，默认政策指回本卡；与本卡冲突待守密人裁定）
-- `BIAV-SC.md` §0 / §其他 — 任何 AI 接入银芯的入口
+- `CLAUDE.md` §7.6 分支与提交 — 现行 Git 工作流条款（已无直推 main 条文，默认政策指回本卡；与本卡冲突待守密人裁定）
+- `CLAUDE.md` §0 / §2 — 任何 AI 接入银芯的统一入口（**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**）
 
 ### 工程基础设施
 
-- `.claude/hooks/session-start-sync.sh` — SessionStart 自动同步 hook
-- `.claude/settings.json` — hook 注册位置
+- `.githooks/pre-push` — push 前对齐 origin/main 防 413（2026-06-20 重新引入的 **git 钩子**；原 `.claude/hooks/session-start-sync.sh` 会话钩子 2026-06-14 已退役删除）
+- `.claude/settings.json` — 现仅留 `$schema`，**无任何自定义会话钩子**（2026-06-14 全部退役，见 CLAUDE.md §7.4）
 - `.github/workflows/claude.yml` — Claude Code GitHub Actions 已移除 auto-merge feature 分支步骤（2026-04-26）
 
 ### 相关教训

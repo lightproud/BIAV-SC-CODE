@@ -35,10 +35,10 @@
 
 | 类别 | 文件 | 用途 |
 |---|---|---|
-| 社区情报 | `projects/news/output/daily-latest.md` | 黑池消费的每日动态 |
-| 平台数据 | `projects/news/output/{steam,bilibili,discord}-latest.json` | 黑池消费的平台原始数据 |
+| 社区情报 | 日报改 Claude Code 会话内生成（原 `daily-latest.md` 定时产物已停用，见 project-status）| 黑池消费的每日动态 |
+| 平台数据 | `projects/news/output/{steam,bilibili,discord,...}-latest.json` | 黑池消费的平台原始数据（平台清单持续增加，以 `ls projects/news/output/` 为准）|
 | 全平台合并 | `projects/news/output/all-latest.json` | 黑池消费的合并视图 |
-| 角色数据库 | `projects/wiki/data/db/characters.json` | 黑池消费的事实圣经 |
+| 角色数据库 | `projects/wiki/data/extracted/categorized/character_data.txt` | 黑池消费的事实圣经（**原 `data/db/characters.json` 结构化层 2026-06-15 清空，W2 以一手解包字段重建**）|
 | 游戏世界观 | `memory/morimens-context.md` | 黑池消费的领域知识 |
 | 设计决策 | `assets/data/design-decisions.json` | 黑池消费的产品哲学 |
 | 卡牌系统 | `assets/data/card-system.json` | 黑池消费的机制结构化 |
@@ -84,11 +84,11 @@
 - `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
 - `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
 - `README.md`「子项目与会话角色」表 — 角色职责现行出处（2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律；现行表中已无 Code-BPT 行）
-- `BIAV-SC.md` 会话角色章节
+- `CLAUDE.md` §0 开场 + §2 艾瑞卡人格 — 会话角色入口（**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**）
 
 ### 黑池如果是会话方读取本仓库
 
-- `BIAV-SC.md` 末尾「黑池数据同步接口」章节 — 如果你是黑池会话读银芯，按该章节执行，不向银芯写入任何内容
+- `CLAUDE.md` §1.1 双系统架构 + 本 hub — 如果你是黑池会话读银芯，遵守「单向输出、黑池任何形式都不进银芯」（守密人 2026-04-26 裁定），不向银芯写入任何内容（**原 `BIAV-SC.md` 末尾「黑池数据同步接口」章节随该文件退役，接口口径收归此处**）
 
 ---
 
