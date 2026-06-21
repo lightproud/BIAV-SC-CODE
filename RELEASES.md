@@ -3,9 +3,10 @@
 > 用途：让人与 AI 定位 GitHub Releases 中的档案。银芯采集/瘦身把大二进制与全量历史
 > 移出 git、存入 Releases（决策 178/179/199），本索引是仓内的「藏宝图」。
 >
-> **四分类整理（2026-06-21）**：原 37 个零散 release 归并为四类——**解包数据 / 解包资产 /
-> 社区归档数据 / 社区归档资产**。社区归档数据由归档引擎滚动写入单个 `community-data`
-> release（不再每月一 tag）。解包资产桶暂留四个 `*-v1/v2` tag，待后续合并。
+> **四分类整理（2026-06-21 完成）**：原 37 个零散 release 归并为**四个** release——
+> **解包数据 `unpacked-data` / 解包资产 `unpacked-assets` / 社区归档数据 `community-data` /
+> 社区归档资产 `community-assets`**。两个社区桶由归档引擎滚动写入（不再每周期一 tag）：
+> discord 文本 → `community-data`，fanart 同人图 → `community-assets`。
 >
 > **维护约束**：云容器（含艾瑞卡会话）**无 Releases 直接写权限**（gh/hub 不存在，mcp__github__
 > 仅 list/get 只读）。增删改 Release 经 GitHub Actions workflow（`consolidate-releases.yml` /
@@ -15,21 +16,20 @@
 
 | 我要找…… | 去哪个 tag | 具体资产 |
 |----------|-----------|----------|
-| 角色立绘 / 头像 / mini | `art-assets-v2` | `morimens-portraits-full.tar.gz` |
-| CG 插画（各章动/静态）| `art-assets-v2` | `morimens-cg-full.tar.gz` |
-| 场景背景 | `art-assets-v2` | `morimens-scenes.tar.gz` |
-| 技能 / UI 特效贴图 | `art-assets-v2` | `morimens-effects.tar.gz` |
-| UI 资源 / 图标 | `art-assets-v2` | `morimens-uiresources.tar.gz` / `morimens-icons-full.tar.gz` |
-| 战斗单位图（bunit/munit）| `art-assets-v2` | `morimens-units.tar.gz` |
-| 语音 / BGM / 音效（可直接听）| `audio-assets-v1` | 2,325 OGG |
-| 音频重转码的原始源 | `audio-raw-v1` | Wwise bnk + wem |
-| 过场 / CG / 战斗特效视频 | `video-assets-v1` | 201 视频 |
+| 角色立绘 / 头像 / mini | `unpacked-assets` | `morimens-portraits-full.tar.gz` |
+| CG 插画（各章动/静态）| `unpacked-assets` | `morimens-cg-full.tar.gz` |
+| 场景背景 | `unpacked-assets` | `morimens-scenes.tar.gz` |
+| 技能 / UI 特效贴图 | `unpacked-assets` | `morimens-effects.tar.gz` |
+| UI 资源 / 图标 | `unpacked-assets` | `morimens-uiresources.tar.gz` / `morimens-icons-full.tar.gz` |
+| 战斗单位图（bunit/munit）| `unpacked-assets` | `morimens-units.tar.gz` |
+| 语音 / BGM / 音效（可直接听）| `unpacked-assets` | `morimens-audio-ogg-part1/part2.tar.gz`（2,325 OGG）|
+| 音频重转码的原始源 | `unpacked-assets` | `morimens-audio-raw-bnk/wem.tar.gz` + `SoundbanksInfo.xml` |
+| 过场 / CG / 战斗特效视频 | `unpacked-assets` | `morimens-video.tar.gz`（201 视频在内）|
 | 游戏脚本 / 数值配置 / 文本 / SDK | `unpacked-data` | `morimens-gamescript/config/text-data/sdk-scripts.tar.gz` |
 | Lua 字节码（逆向源）| `unpacked-data` | `morimens-lua-bytecode.tar.gz` |
 | 某月 Discord 历史全量 | `community-data` | `discord-archive-{YYYY-MM}.tar.gz`（30 月，单 release 内）|
-| 回填的社区媒体 | `community-assets` | 媒体资产 |
-
-> 找图取 `art-assets-v2`（完整集 18,795 图）。旧版 `art-assets-v1`（5,218 图子集）已于 2026-06-21 删除。
+| 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
+| 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
 
 ## 二、四分类总览
 
@@ -43,37 +43,49 @@
 | `morimens-sdk-scripts.tar.gz` | ejoysdk/foundation/launcher 等 | SDK 逆向 |
 | `morimens-lua-bytecode.tar.gz` | 1,592 luac（Frida 运行时解密）| Lua 字节码逆向源 |
 
-### 2.2 解包资产（暂留四 tag，待合并 unpacked-assets）
+### 2.2 解包资产（unpacked-assets，合并自 art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1）
 
-| Tag | 体量 | 内容 | 典型用途 |
-|-----|------|------|----------|
-| `art-assets-v2` | 5.1G | 18,795 图（立绘/CG/场景/特效/UI/图标/单位，完整集）| wiki 配图 / 角色头像 / 场景背景 / 特效素材 |
-| `audio-assets-v1` | 1.9G | 2,325 OGG（Wwise 转码）| 语音/BGM/音效试听、广播剧素材 |
-| `audio-raw-v1` | 1.9G | Wwise 原始（156 bnk + 3,302 wem）| 音频逆向 / 重新转码的源头 |
-| `video-assets-v1` | 975M | 201 视频（过场/CG/战斗特效）| 过场动画 / CG 视频取用 |
+单个 release，**15 个资产、约 10.7 GB**：
 
-> 待办：四者 ~10G 合并入单 `unpacked-assets` release（守密人定「随后」做；单文件仍 ≤ 2 GiB，合并 = 同一 release 多分卷）。
+| 资产 | 体量 | 内容 |
+|------|------|------|
+| `morimens-portraits-full.tar.gz` | 1.2G | 4,485 角色立绘（full/middle/head/mini）|
+| `morimens-cg-full.tar.gz` | 735M | 404 CG 插画 |
+| `morimens-scenes.tar.gz` | 1.0G | 953 场景资产 |
+| `morimens-effects.tar.gz` | 353M | 6,091 特效贴图 |
+| `morimens-uiresources.tar.gz` | 1.4G | 3,029 UI 资源 |
+| `morimens-icons-full.tar.gz` | 368M | 2,690 图标 |
+| `morimens-units.tar.gz` | 184M | 432 战斗单位 |
+| `morimens-misc.tar.gz` | 121M | 711 杂项 |
+| `morimens-audio-ogg-part1/part2.tar.gz` | 2.0G | 2,325 OGG（Wwise 转码可直接听）|
+| `morimens-audio-raw-bnk/wem.tar.gz` | 2.1G | Wwise 原始 156 bnk + 3,302 wem |
+| `SoundbanksInfo.xml` / `wwise_id_mapping.csv` | 3M | 音频 ID 映射元数据 |
+| `morimens-video.tar.gz` | 1.0G | 201 视频（过场/CG/战斗特效）|
 
 ### 2.3 社区归档数据（community-data，§4.1 全量保全）
 
 - 单个滚动 release `community-data`：**30 个月** `discord-archive-{YYYY-MM}.tar.gz`（2023-11 ~ 2026-04），共 ~6.6 MB。
-- 由归档引擎 `archive_engine.py`（配置 `archive_sources.json` 的 discord 条目，`release_tag: community-data`）**每月自动追加一个资产**（`gh release upload --clobber`，只替换当月不动其它月），取代旧「每月一 tag」。
+- 由归档引擎 `archive_engine.py`（`archive_sources.json` 的 discord 条目，`release_tag: community-data`）**每月自动追加一个资产**（`gh release upload --clobber`，只替换当月不动其它月），取代旧「每月一 tag」。
 - github-actions[bot] 经 `discord-archive.yml` 触发。
 
 ### 2.4 社区归档资产（community-assets）
 
-- 单个 release `community-assets`（合并自原 `media-archive-v1`）：回填社区媒体，索引 `media/backfill_manifest.json`。
+- 单个滚动 release `community-assets`，含两类：
+  - **回填社区媒体**（合并自原 `media-archive-v1`，索引 `media/backfill_manifest.json`）。
+  - **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：由归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶，60 天 cutoff + git_rm）**每月自动追加**。
 
 ## 三、四分类整理历程（2026-06-21）
 
-- **迁移**：`unpacked-data` ← game-data-v1 + lua-bytecode-v1；`community-data` ← 30 个 discord-archive-* 月 tag；`community-assets` ← media-archive-v1。经 `consolidate-releases.yml`（下载→上传→校验资产数→删源 tag）。
-- **引擎改造**：discord 归档切换为滚动单 release 模式（见 §2.3），未来月份自动并入 `community-data`，不再散落新 tag。
-- **完整性核对**：`community-data` 实测 30 资产（2023-11 → 2026-04 连续无断档）✓；旧 30 个月 tag 与 game-data-v1/lua-bytecode-v1/media-archive-v1 已删（404 核实）。
+- **迁移**（经 `consolidate-releases.yml`：下载→上传→校验资产数→删源 tag）：
+  - `unpacked-data` ← game-data-v1 + lua-bytecode-v1
+  - `unpacked-assets` ← art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1（单源逐个并入，避开 ~10G 一次性下载逼近 runner 磁盘上限）
+  - `community-data` ← 30 个 discord-archive-* 月 tag
+  - `community-assets` ← media-archive-v1
+- **引擎改造**：discord / fanart 归档切换为滚动单 release 模式，未来周期自动并入对应桶，不再散落新 tag。
+- **完整性核对**：`community-data` 实测 30 资产（2023-11 → 2026-04 连续无断档）✓；`unpacked-assets` 实测 15 资产、约 10.7 GB ✓；所有旧源 tag + 悬空 tag `art-assets-v1` 均已删（404 核实）。
 
 ## 四、治理待办
 
-- **解包资产合并**：art-assets-v2 / audio-assets-v1 / audio-raw-v1 / video-assets-v1（~10G）合并入单 `unpacked-assets`（守密人定「随后」；旧下载链会失效）。
-- **art-assets-v1 残留 git tag**：release 已于 2026-06-21 删除，残留 git tag（指向 commit `3c4ae7d`）待清。
 - **已知缺口（非 release 本身）**：归档标记成功但 git 主数据仍在（见 `memory/strategy/repo-slimming-plan.md` §4），待诊断。
 
 ## 五、如何取用
