@@ -1,0 +1,52 @@
+name: Edit Release Metadata
+
+# 改 GitHub Release 的标题 / 说明（云容器无 release 写权限，须经此 workflow）。
+# 与 delete-release.yml / consolidate-releases.yml 同属 release 管理工具族。
+#
+# 安全设计：
+#   - 仅 workflow_dispatch 手动触发
+#   - 只改元数据（--title / --notes），绝不碰资产，零数据风险
+#   - 改后回读核验标题已更新
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要改的 release tag（如 unpacked-assets）'
+        required: true
+      title:
+        description: '新标题'
+        required: true
+      notes:
+        description: '新说明（可选，留空则不改 body）'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  edit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Edit release title (+ notes if given)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          if [ -n "${{ github.event.inputs.notes }}" ]; then
+            gh release edit "${{ github.event.inputs.tag }}" \
+              --repo "${{ github.repository }}" \
+              --title "${{ github.event.inputs.title }}" \
+              --notes "${{ github.event.inputs.notes }}"
+          else
+            gh release edit "${{ github.event.inputs.tag }}" \
+              --repo "${{ github.repository }}" \
+              --title "${{ github.event.inputs.title }}"
+          fi
+          echo "=== 核验 ==="
+          gh release view "${{ github.event.inputs.tag }}" \
+            --repo "${{ github.repository }}" --json tagName,name \
+            --jq '"tag=\(.tagName)  title=\(.name)"'
