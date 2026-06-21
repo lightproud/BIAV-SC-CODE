@@ -57,7 +57,6 @@
 
 - `memory/strategic-plan-2026.md` — 战略规划全文 v2.0 章节
 - `memory/decisions.md` — 2026-04-26「银芯重新定位 v2.0」条目（覆盖 2026-04-19 转向部分条款）
-- `memory/console-handover-2026-04-26.md` — opus4.6 → opus4.7 主控台交接手册
 
 ### 子项目对接
 
@@ -73,10 +72,9 @@
 
 ### 角色体系（v2.0 后扩张）
 
-- `README.md`「子项目与会话角色」表（含 7 角色完整列表；2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律）
+- `README.md`「子项目与模块」表（2026-06 修正：多会话 Code-* 角色已退役，现为单一艾瑞卡会话，子项目前缀仅作话题标签）
 - `CLAUDE.md` §0 开场 + §2 艾瑞卡人格（AI 接入银芯统一入口；**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**）
-- `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
-- `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
+- 原 Code-memory / Code-strategy 角色定义 brief 随多会话架构 2026-06 退役删除（角色模型见 `memory/active/policy-direct-push-main.md`）
 
 ### 历史背景
 

@@ -81,9 +81,8 @@
 
 ### 角色与派发
 
-- `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
-- `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
-- `README.md`「子项目与会话角色」表 — 角色职责现行出处（2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律；现行表中已无 Code-BPT 行）
+- 原 Code-memory / Code-strategy 角色定义 brief 随多会话架构 2026-06 退役删除；现为单一艾瑞卡会话
+- `README.md`「子项目与模块」表 — 角色职责现行出处（2026-06 修正：多会话 Code-* 退役，子项目前缀仅作话题标签；现行表已无 Code-BPT 行）
 - `CLAUDE.md` §0 开场 + §2 艾瑞卡人格 — 会话角色入口（**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**）
 
 ### 黑池如果是会话方读取本仓库
