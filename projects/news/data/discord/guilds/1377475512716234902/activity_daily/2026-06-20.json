@@ -1,12 +1,12 @@
 {
   "date": "2026-06-20",
-  "messages": 589,
+  "messages": 595,
   "unique_authors": 19,
-  "reactions_total": 76,
+  "reactions_total": 78,
   "attachments": 48,
   "channel_activity": {
+    "なんでも雑談": 451,
     "🔰初心者質問": 125,
-    "なんでも雑談": 445,
     "描いたもの": 3,
     "招待コード共有会": 2,
     "戦闘記録お焚き上げ場": 2,
@@ -15,6 +15,7 @@
     "つぶやき": 8
   },
   "hourly_activity": {
+    "23": 6,
     "21": 1,
     "19": 1,
     "20": 1,
@@ -39,7 +40,7 @@
     "1": 1
   },
   "message_types": {
-    "0": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -64,6 +65,14 @@
       "content": "なーーーが",
       "author": "ugen_22zi",
       "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518029403580534934",
+      "channel_id": "1377478664609857647",
+      "content": "https://x.com/i/status/2068188538894700889",
+      "author": "ecstasyrb",
+      "reactions": 2,
       "channel": "なんでも雑談"
     },
     {
@@ -191,14 +200,6 @@
       "channel_id": "1377478664609857647",
       "content": "ところでサンガーさんの繁栄をみたんですけども",
       "author": "blootrain13",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1517892504266211519",
-      "channel_id": "1377478664609857647",
-      "content": "解放でダメージじゃないからなぁ",
-      "author": "chabo.chabo",
       "reactions": 1,
       "channel": "なんでも雑談"
     }
