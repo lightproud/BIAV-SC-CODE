@@ -74,7 +74,7 @@
 ### 角色体系（v2.0 后扩张）
 
 - `README.md`「子项目与会话角色」表（含 7 角色完整列表；2026-06-09 修正：原引「CLAUDE.md §4 子项目维护职责表」对应旧版结构，现行 §4 为数据纪律）
-- `BIAV-SC.md` 会话角色章节（外部 AI 接入入口）
+- `CLAUDE.md` §0 开场 + §2 艾瑞卡人格（AI 接入银芯统一入口；**原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md**）
 - `memory/dispatch-brief-code-memory-bootstrap.md` — Code-memory 角色定义
 - `memory/dispatch-brief-code-strategy-bootstrap.md` — Code-strategy 角色定义
 
@@ -85,9 +85,9 @@
 
 ### 关键数据资产
 
-- `assets/data/morimens-context.md` — 游戏世界观（v2.0 三新使命 #2 知识底座的事实源）
+- `memory/morimens-context.md` — 游戏世界观（v2.0 三新使命 #2 知识底座的事实源；路径修正：原误标 `assets/data/`）
 - `assets/data/card-system.json` — 卡牌系统结构化（Code-memory 2026-04-26 落档）
-- `projects/wiki/data/db/characters.json` — 24/72 角色基线（M1 前推完整化）
+- `projects/wiki/data/extracted/categorized/character_data.txt` — 72 角色基线一手解包字段（**原 `data/db/characters.json` 结构化层 2026-06-15 守密人裁定清空，W2 以解包字段重建**，见 project-status）
 
 ---
 
