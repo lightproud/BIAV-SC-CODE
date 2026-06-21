@@ -48,7 +48,7 @@
 
 ## 四、治理待办（需守密人手动 / workflow —— 云容器无 release 写权限）
 
-- **清重复旧版**：删 `art-assets-v1`（943M，被 v2 取代）。**2026-06-21 核实仍在线**（API 返回完整元数据，非 404；todo.md B 节「已删」系 flaky 环境假回执，见 lesson #41），删除待守密人手动执行。排查其他被取代版本：暂未发现第二例（audio/video/game-data/lua 均为 v1 单版）。
+- **清重复旧版**：删 `art-assets-v1`（943M，被 v2 取代）。**2026-06-21 核实仍在线**（API 返回完整元数据，非 404；todo.md B 节「已删」系 flaky 环境假回执，见 lesson #41）。逐类核实 v2 为 v1 完整超集（立绘 478→4,485 / CG 38→404 / 单位 317→432 / 图标 169→2,690 / UI 700→3,029），删 v1 不丢任何资产。**删除方式**：跑 `Delete Release` workflow（`.github/workflows/delete-release.yml`，Actions 页面 → Run，tag 填 `art-assets-v1` + confirm 重复一遍即执行，免手机手动），删后把上方表中 `art-assets-v1` 行移除。排查其他被取代版本：暂未发现第二例（audio/video/game-data/lua 均为 v1 单版）。
 - **命名版本规整**：现状两套约定——大资产 `{类}-v{N}`、月归档 `discord-archive-{YYYY-MM}`，各自内部一致，无须强行统一；若引入新资产沿用 `{类}-v{N}` 即可。
 - **已知缺口（非 release 本身）**：归档标记成功但 git 主数据仍在（见 `memory/strategy/repo-slimming-plan.md` §4），待诊断。
 
