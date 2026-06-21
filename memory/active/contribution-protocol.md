@@ -28,17 +28,16 @@
 | **未标注执行模式** | 默认「直接执行」 |
 | **跨会话通信** | Issue 不是跨会话通信手段——任务要点必须写进对应 `projects/*/CONTEXT.md` |
 
-### Issue 标题前缀（按角色分发）
+### Issue 标题前缀（按子项目分发）
 
 ```
 [Code-site]      站点维护与部署
 [Code-news]      社区聚合与日报
 [Code-wiki]      Wiki + 数据集
-[Code-memory]    9 模块记忆系统 + assets/data/ 索引
-[Code-strategy]  长期调研 / 评估 / 选项分析
-[Code-BPT]       BPT 开发指导
-[主控台]         战略 / 规划 / 协调 / 接口 四合一中枢
 ```
+
+> 跨切面会话角色（主控台 / Code-memory / Code-strategy / Code-BPT）已于 2026-06 随记忆子系统
+> 与多会话架构退役（见 `decisions.md`）；现为守密人 ↔ 单一艾瑞卡会话直接协作，子项目前缀仅作话题标签。
 
 ### PR 流程（仅外部社区贡献）
 
@@ -102,7 +101,7 @@
 
 ```
 1. 确认 author 是否 lightproud → 否则忽略
-2. 确认标题前缀 → 路由到正确角色（Code-* 之一或主控台）
+2. 确认标题前缀 → 对应子项目（Code-site / Code-news / Code-wiki）
 3. 查重 → 同子项目已有 ≥3 open Issue 则追评论而非新建
 4. 标注「直接执行」or「先讨论再决定」 → 未标注默认前者
 5. 任务要点写入对应 projects/*/CONTEXT.md → 跨会话通信
