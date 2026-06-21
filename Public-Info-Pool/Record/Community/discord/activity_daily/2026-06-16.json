@@ -1,10 +1,11 @@
 {
   "date": "2026-06-16",
-  "messages": 9879,
+  "messages": 14089,
   "unique_authors": 412,
-  "reactions_total": 1144,
-  "attachments": 728,
+  "reactions_total": 1279,
+  "attachments": 906,
   "channel_activity": {
+    "🔸general-chat": 6837,
     "🔸綜合討論": 1904,
     "🔸课间休息闲聊": 53,
     "🔸deutscher-chatraum": 5,
@@ -16,7 +17,6 @@
     "🔸lore-chat": 305,
     "🔸lets-count": 13,
     "🔸team-building": 1045,
-    "🔸general-chat": 2627,
     "🔸邀请码互助┊swap-invitation-codes": 23,
     "🔸机器人命令┊bot-commands": 62,
     "一张仿官方画风的沙耶立绘！": 1,
@@ -83,10 +83,15 @@
     "Just started playing and I think I'm done pulling for now. Best team I can make for story?": 32
   },
   "hourly_activity": {
-    "20": 197,
-    "21": 51,
-    "22": 51,
-    "23": 180,
+    "15": 1066,
+    "16": 915,
+    "17": 755,
+    "18": 1039,
+    "19": 575,
+    "20": 696,
+    "21": 797,
+    "22": 526,
+    "23": 337,
     "0": 143,
     "1": 208,
     "2": 236,
@@ -101,18 +106,12 @@
     "11": 659,
     "12": 474,
     "13": 806,
-    "14": 963,
-    "15": 598,
-    "16": 466,
-    "17": 253,
-    "18": 509,
-    "19": 191
+    "14": 963
   },
   "message_types": {
-    "0": 2045,
-    "19": 907,
-    "20": 9,
-    "23": 1
+    "0": 2909,
+    "19": 1296,
+    "20": 5
   },
   "top_reacted_messages": [
     {
