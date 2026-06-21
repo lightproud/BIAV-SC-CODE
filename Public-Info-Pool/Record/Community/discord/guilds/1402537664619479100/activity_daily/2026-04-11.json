@@ -1,0 +1,19 @@
+{
+  "date": "2026-04-11",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 0,
+  "attachments": 2,
+  "channel_activity": {
+    "project-coordination": 1,
+    "coordination-uploads": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": []
+}

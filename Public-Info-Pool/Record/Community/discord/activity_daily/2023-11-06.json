@@ -1,0 +1,108 @@
+{
+  "date": "2023-11-06",
+  "messages": 267,
+  "unique_authors": 30,
+  "reactions_total": 19,
+  "attachments": 7,
+  "channel_activity": {
+    "🔸綜合討論": 242,
+    "繪圖": 14,
+    "🔸morimens-game-chat": 11
+  },
+  "hourly_activity": {
+    "2": 21,
+    "3": 12,
+    "4": 8,
+    "5": 13,
+    "6": 25,
+    "7": 14,
+    "8": 10,
+    "9": 17,
+    "10": 5,
+    "11": 11,
+    "12": 18,
+    "13": 5,
+    "14": 82,
+    "15": 13,
+    "23": 5,
+    "16": 8
+  },
+  "message_types": {
+    "0": 193,
+    "19": 67
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1171086735380328599",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1170926659608776814",
+      "channel_id": "1170692781216378960",
+      "content": "finally, eng chat",
+      "author": "aki140",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170952174155612211",
+      "channel_id": "1170692781216378960",
+      "content": "In addition, when you view the webpage on a PC, Google Play will erroneously red",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1171028516561760347",
+      "channel_id": "1170692781216378960",
+      "content": "Slowly it will go further, certainly in a future update, this beloved team is co",
+      "author": "kadu1985",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170908172324704366",
+      "channel_id": "1170692781216378960",
+      "content": "We appreciate it！We will share with my friends!",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170952252245151764",
+      "channel_id": "1170692781216378960",
+      "content": "When the game is about to be released, we will also add an official APK download",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1170997339348029533",
+      "channel_id": "1131839817982947429",
+      "content": "可以，甚至可以挖我的大腦，反正我有個候補大腦XD",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171087854517096571",
+      "channel_id": "1131839817982947429",
+      "content": "搞點克系圖w",
+      "author": "nana01241112",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1171102553258340492",
+      "channel_id": "1131839817982947429",
+      "content": "鮮嫩多汁ㄉ肉塊雲",
+      "author": "lunacy_li",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

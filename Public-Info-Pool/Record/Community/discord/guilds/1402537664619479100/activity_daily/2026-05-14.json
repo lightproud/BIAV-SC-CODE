@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-14",
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "general-discussion": 9
+  },
+  "hourly_activity": {
+    "6": 1,
+    "7": 3,
+    "10": 3,
+    "12": 1,
+    "20": 1
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1504385148311834724",
+      "channel_id": "1402941858606219294",
+      "content": "Realm name comes after.\nPropagation: Caro",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1504467487444439243",
+      "channel_id": "1402941858606219294",
+      "content": "ID Terms for \"Saya\" is done!\nContributors:\nTranslator : <@899814369926471750> <@",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1504588085797847082",
+      "channel_id": "1402941858606219294",
+      "content": "FR terms for Saya are done <:celeste_ok:1408324285147254855> \nTranslators & proo",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

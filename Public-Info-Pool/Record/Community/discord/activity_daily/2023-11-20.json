@@ -1,0 +1,134 @@
+{
+  "date": "2023-11-20",
+  "messages": 569,
+  "unique_authors": 26,
+  "reactions_total": 378,
+  "attachments": 13,
+  "channel_activity": {
+    "活動訊息": 6,
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 549,
+    "遊戲問題及bug回報": 9,
+    "喚醒體關鍵詞連線遊戲~": 3
+  },
+  "hourly_activity": {
+    "11": 56,
+    "1": 2,
+    "2": 1,
+    "3": 7,
+    "4": 2,
+    "5": 2,
+    "6": 3,
+    "7": 9,
+    "8": 8,
+    "9": 3,
+    "10": 8,
+    "12": 281,
+    "13": 175,
+    "14": 5,
+    "15": 1,
+    "17": 6
+  },
+  "message_types": {
+    "0": 380,
+    "19": 182
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1176128829748682792",
+      "channel_id": "1131791637933199472",
+      "content": "大家可以快來看看呀~",
+      "author": "alpha0909_",
+      "reactions": 182,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1176135229317058641",
+      "channel_id": "1131839817982947429",
+      "content": "銀芯就是妳各位管理員的薪水",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176135240712998973",
+      "channel_id": "1131839817982947429",
+      "content": "<:emoji_492:764880923987804200>",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176152098849706034",
+      "channel_id": "1131839817982947429",
+      "content": "11/30",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176129486195007569",
+      "channel_id": "1131839817982947429",
+      "content": "剛好我也想問說<:4634sagiribox:1048087271997448252>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176138235739635764",
+      "channel_id": "1131839817982947429",
+      "content": "好評寫什麼呢？\n好評：看你媽呢 去看差評",
+      "author": "thegodfather_1314",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176139082565423134",
+      "channel_id": "1131839817982947429",
+      "content": "好評二號：\n唯一一款會手把手教我怎麼充值的遊戲 很推",
+      "author": "thegodfather_1314",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176144134466175007",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得我會被特意對待 專門米爾的守密人<:8401anyashocked:1048087123640733706>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176147561313210488",
+      "channel_id": "1131839817982947429",
+      "content": "基本上，我是半個中醫學生（？）\n會抱著醫宗金鑒或者黃帝內經啃的那種",
+      "author": "haruka0628",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176148246360502342",
+      "channel_id": "1131839817982947429",
+      "content": "然後嘴巴也很不舒服 想吃一個腦袋",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176155978685743235",
+      "channel_id": "1131839817982947429",
+      "content": "被你們發現了~",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1176156095216099359",
+      "channel_id": "1131839817982947429",
+      "content": "😥",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

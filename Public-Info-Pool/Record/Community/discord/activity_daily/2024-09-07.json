@@ -1,0 +1,216 @@
+{
+  "date": "2024-09-07",
+  "messages": 2469,
+  "unique_authors": 80,
+  "reactions_total": 208,
+  "attachments": 114,
+  "channel_activity": {
+    "🔸綜合討論": 1099,
+    "🔸阵容构建": 180,
+    "🔸morimens-game-chat": 1140,
+    "🔸相位对弈": 5,
+    "V1.6 PV「A小調：終末交響曲」┊A Minor: Final Symphony": 1,
+    "V1.6.1.0 停服維護公告": 5,
+    "📜哈姆林喚醒體&命輪介紹": 1,
+    "📜《忘卻前夜 Morimens》V1.6.1即將開放！精彩資訊一網打盡！": 1,
+    "體力上限": 4,
+    "无法登陆，一直显示不在当前发行区😢😢😢": 10,
+    "所以sp希洛去哪里了？": 4,
+    "关于新pv的音乐……": 2,
+    "加強朵兒": 3,
+    "登陆问题": 1,
+    "3界域1t颠五": 5,
+    "（已封存）【蚰蜒的vrm影像馆】": 2,
+    "莱克吧唧": 2,
+    "温柯尔": 1,
+    "以防你不知道今天是外星天才少女温柯尔的生日": 3
+  },
+  "hourly_activity": {
+    "0": 21,
+    "1": 52,
+    "2": 227,
+    "3": 170,
+    "4": 325,
+    "7": 21,
+    "8": 114,
+    "9": 117,
+    "10": 60,
+    "11": 147,
+    "12": 29,
+    "13": 47,
+    "14": 45,
+    "15": 196,
+    "16": 58,
+    "17": 212,
+    "18": 109,
+    "19": 114,
+    "20": 64,
+    "23": 22,
+    "5": 65,
+    "6": 195,
+    "21": 51,
+    "22": 8
+  },
+  "message_types": {
+    "19": 355,
+    "0": 2069
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1281914037470236783",
+      "content": "自印的，感觉好看，遂发之",
+      "author": "you_zuo",
+      "reactions": 21,
+      "channel": "莱克吧唧"
+    },
+    {
+      "id": "1281917045285457992",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 18,
+      "channel": "温柯尔"
+    },
+    {
+      "id": "1281843805758427189",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 13,
+      "channel": "以防你不知道今天是外星天才少女温柯尔的生日"
+    },
+    {
+      "id": "1281840284136767539",
+      "channel_id": "1131839817982947429",
+      "content": "群佬除我",
+      "author": "ahuahuahua",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281996008792002662",
+      "channel_id": "1131839817982947429",
+      "content": "~~等到什麼時候才會有萊克泳裝555~~",
+      "author": "nazhigezihk",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281998272013271082",
+      "content": "“因为感觉水土不服所以擅自从弥大离校回家了，结果今天门口有唤醒体来堵门，校友们怎么办啊，在线等，有点急。”",
+      "author": "nancyjofla",
+      "reactions": 5,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1281894902887612469",
+      "channel_id": "1131839817982947429",
+      "content": "要all in嗎",
+      "author": "capricorn5042",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281974888042856584",
+      "channel_id": "1131839817982947429",
+      "content": "一堆佬言佬語",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281859115030937692",
+      "channel_id": "1131839874132090890",
+      "content": "这就是潘神吗",
+      "author": "luoqixikiss",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1281787997620011110",
+      "channel_id": "1131839817982947429",
+      "content": "完了\n我一定被黑",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1282004327753584691",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1282063495378112585",
+      "channel_id": "1131839817982947429",
+      "content": "還有拗成狗的部分",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281866698437165110",
+      "channel_id": "1131839874132090890",
+      "content": "~~助戰強度限制角色強度~~",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1281835776832831560",
+      "channel_id": "1170692781216378960",
+      "content": "HOW TF DID YOU MISS A CRIT ON 96%",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1281896057369792574",
+      "channel_id": "1131839817982947429",
+      "content": "狠狠D抽差無情",
+      "author": "tt1036",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281899395662741536",
+      "channel_id": "1131839817982947429",
+      "content": "3啟了<:cash:1236950389413380149>",
+      "author": "nemu_s_t_a_r",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281933774031949905",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281937214158405632",
+      "channel_id": "1131839817982947429",
+      "content": "黑血肉就容易了\n你隨便抓一隻出來丟去混沌就是混沌角色",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281962552628351077",
+      "channel_id": "1131839817982947429",
+      "content": "~~畢竟cra入股了 又有一批資金了~~",
+      "author": "nemu_s_t_a_r",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1281971016226050211",
+      "channel_id": "1131839817982947429",
+      "content": "今天夠胡的話好像可以試試神父2t<:stoppage:1236938521365839872>",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

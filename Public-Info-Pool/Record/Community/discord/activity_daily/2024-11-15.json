@@ -1,0 +1,220 @@
+{
+  "date": "2024-11-15",
+  "messages": 3626,
+  "unique_authors": 143,
+  "reactions_total": 202,
+  "attachments": 150,
+  "channel_activity": {
+    "🔸綜合討論": 389,
+    "🔸morimens-game-chat": 2519,
+    "🔸相位对弈": 31,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 2,
+    "🔸chaîne-française": 104,
+    "🔸русский-канал": 263,
+    "🔸phòng-chat-tiếng-việt": 87,
+    "🔸canal-español": 57,
+    "🔸canal-português": 3,
+    "🔸ruang-obrolan-indonesia": 5,
+    "🔸ห้องสนทนาภาษาไทย": 28,
+    "Overexalt list": 5,
+    "V1.7.1.0 停服維護公告": 17,
+    "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 2,
+    "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 22,
+    "📜塔薇喚醒體&命輪介紹": 15,
+    "請願加強圖魯和深海新角": 13,
+    "塔薇真的不能用活动那个图来做立绘吗？": 16,
+    "Tulu wheel missing text": 2,
+    "好友功能建議": 1,
+    "问问校猫": 3,
+    "死亡已經迫近，消亡已經開始": 3,
+    "超絕羅傑斯和喬治畫像": 9,
+    "喬治（R18，有碼": 2,
+    "喬治（粗製濫造中）": 2,
+    "羅傑斯畫像第二彈": 7,
+    "二創喚醒體-威廉學長(鑰令販賣機）": 3,
+    "喬治色圖（R18，有碼無防爆雷": 12,
+    "喬治色圖（未滿18慎入，有碼）": 2
+  },
+  "hourly_activity": {
+    "0": 108,
+    "4": 146,
+    "5": 52,
+    "6": 145,
+    "7": 83,
+    "8": 101,
+    "9": 91,
+    "10": 242,
+    "11": 69,
+    "12": 336,
+    "13": 361,
+    "14": 184,
+    "15": 133,
+    "16": 104,
+    "17": 126,
+    "18": 11,
+    "19": 31,
+    "20": 179,
+    "21": 156,
+    "1": 55,
+    "2": 281,
+    "3": 464,
+    "22": 75,
+    "23": 93
+  },
+  "message_types": {
+    "0": 2883,
+    "19": 607
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1306791727444660234",
+      "content": "现在那个立绘有点像方方块块的薄片机器人，活动那个图更鲜活也更好看...",
+      "author": "lurenjiao",
+      "reactions": 21,
+      "channel": "塔薇真的不能用活动那个图来做立绘吗？"
+    },
+    {
+      "id": "1306883101644947506",
+      "content": "随着进一步测试，塔薇的超限爆发在正式更新时有调整，敬请注意。\n\n调整前：塔薇本回合造成的伤害、护盾、生命回复提高 25%。改为从 10 张当前界域的指令卡中发现",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "📜塔薇喚醒體&命輪介紹"
+    },
+    {
+      "id": "1306885104563523594",
+      "content": "~~省流：立即額外發動一次鼠鼠的智慧~~",
+      "author": "ernest_heart",
+      "reactions": 13,
+      "channel": "📜塔薇喚醒體&命輪介紹"
+    },
+    {
+      "id": "1306937125849006150",
+      "content": "我覺得我簡直是繪畫界的天才\n不過寥寥幾筆就成功勾勒出出了羅傑斯和喬治的神韻",
+      "author": "ice_storys",
+      "reactions": 12,
+      "channel": "超絕羅傑斯和喬治畫像"
+    },
+    {
+      "id": "1306782268655800360",
+      "content": "~~校貓真愛~~",
+      "author": "shchng.",
+      "reactions": 8,
+      "channel": "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1306932566137245747",
+      "channel_id": "1131839817982947429",
+      "content": "14天速通全角+12",
+      "author": "gd_prawl",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306922490253279232",
+      "content": "Overexalt effects for all awakers (except Tawil). \nWill update Tawil overexalt l",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "Overexalt list"
+    },
+    {
+      "id": "1306888730010845254",
+      "content": "你们还有新唤醒体的立绘备货吗？ 再不济刀几个npc也是勉强能用",
+      "author": "moyan0454",
+      "reactions": 6,
+      "channel": "问问校猫"
+    },
+    {
+      "id": "1307027104772390982",
+      "channel_id": "1131839817982947429",
+      "content": "那就过几天再打呗，反正每天都有",
+      "author": "shimizusakukoi",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306894451272323093",
+      "content": "所以肉身出擊有代價 變成門了\n而環拉才是bug \n環拉：那我練那麼久的一擊劍是…？\n這下真的變環娜\n\n好啦 別太較真XD，只是希望在這麼低迷的時候給貓們一點鼓勵",
+      "author": "xiaoxiaogao.",
+      "reactions": 5,
+      "channel": "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1307021827306160299",
+      "content": "你問我為什麼要畫這麼邪門的東西？\n天知道\n而且手機有夠難畫\n我要等之後換成手繪再畫一次",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "喬治（粗製濫造中）"
+    },
+    {
+      "id": "1306958605446021190",
+      "channel_id": "1131839817982947429",
+      "content": "發展得好的話能活，不盡人意就感謝各位守密人為彌薩格的付出，我們將在…",
+      "author": "gd_prawl",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1307042029028638771",
+      "content": "（精神狀態美好\n畫完後自己都覺得自己到底畫了什麼\n太™邪門了\n\n想看去p站看，叫天輪，就是我，我怕在這會出事\n\n\nhttps://www.pixiv.net/a",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "喬治（R18，有碼"
+    },
+    {
+      "id": "1306974298015137842",
+      "content": "別問他的右手怎麼了\n問就是~~我不會畫~~被潘弄斷掉了",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "羅傑斯畫像第二彈"
+    },
+    {
+      "id": "1306932574295294044",
+      "channel_id": "1131839817982947429",
+      "content": "雖然旺達+4真的很強但我還是補到3就收了吧",
+      "author": "kevin.yienwenst",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306829882449330239",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": ".nymphchan",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1306832098287550535",
+      "channel_id": "1170692781216378960",
+      "content": "I’ll let them know once the game’s situation stabilizes",
+      "author": "gd_prawl",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1306845371485388892",
+      "channel_id": "1131839817982947429",
+      "content": "沒有羊媽怎麼玩血肉？\n答：直接不玩血肉",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306929942990295042",
+      "channel_id": "1131839817982947429",
+      "content": "😆",
+      "author": "harowolf",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1306931729704943708",
+      "channel_id": "1131839817982947429",
+      "content": "極夜+12玩家就無感了",
+      "author": "kevin.yienwenst",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "date": "2025-03-01",
+  "messages": 4433,
+  "unique_authors": 118,
+  "reactions_total": 196,
+  "attachments": 264,
+  "channel_activity": {
+    "🔸русский-канал": 79,
+    "🔸canal-español": 230,
+    "🔸canal-português": 1,
+    "🔸ruang-obrolan-indonesia": 684,
+    "🔸ห้องสนทนาภาษาไทย": 439,
+    "🔸traphase": 77,
+    "🔸lore-chat": 9,
+    "🔸綜合討論": 1027,
+    "🔸阵容构建": 71,
+    "🔸morimens-game-chat": 1416,
+    "🔸晒卡分享": 4,
+    "🔸相位对弈": 172,
+    "🔸한국어-채팅방": 167,
+    "Posse List": 23,
+    "Star Chapter 2.1 Tier List": 5,
+    "Can anyone please tell me who are the characters that pair well with the red doll?": 3,
+    "💟獻上愛的圖騰——來自小花腦的信函": 4,
+    "忘卻前夜劇情合集": 1,
+    "命輪似乎未生效": 2,
+    "欢宴被暗削了?": 7,
+    "Está bonito, pero me gustaría que tuviese una traducción al español oficial.": 6,
+    "繁衍狂熱，但是鯊貓": 2,
+    "吱吱吱…守密人（大概…）速写练习": 3,
+    "不会再有了": 1
+  },
+  "hourly_activity": {
+    "4": 348,
+    "11": 145,
+    "12": 206,
+    "13": 203,
+    "14": 158,
+    "1": 115,
+    "2": 300,
+    "3": 285,
+    "5": 433,
+    "15": 373,
+    "19": 20,
+    "21": 28,
+    "22": 65,
+    "23": 38,
+    "0": 78,
+    "6": 459,
+    "7": 242,
+    "8": 64,
+    "9": 173,
+    "10": 214,
+    "16": 244,
+    "17": 131,
+    "18": 89,
+    "20": 22
+  },
+  "message_types": {
+    "0": 1192,
+    "19": 327
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1345251347301404756",
+      "content": "",
+      "author": "zerathree",
+      "reactions": 13,
+      "channel": "吱吱吱…守密人（大概…）速写练习"
+    },
+    {
+      "id": "1345241531535331358",
+      "channel_id": "1174983699935277147",
+      "content": "我看見的是夢想<:proud:1236937676637339718>",
+      "author": "wild_pansy",
+      "reactions": 5,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1345322384445538417",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "elkmilu",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345334095512862841",
+      "channel_id": "1131839874132090890",
+      "content": "光明的未來在前方等著你",
+      "author": "yusi4172",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1345245775398961295",
+      "channel_id": "1131839817982947429",
+      "content": "更優越的就是沒玩這遊戲的",
+      "author": "mob1065",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345254676894846986",
+      "channel_id": "1131839817982947429",
+      "content": "看你寫什麼語言 還有東西",
+      "author": "mob1065",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345393606059491348",
+      "channel_id": "1131839817982947429",
+      "content": "再吵就500金券",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345329227754635285",
+      "channel_id": "1131839874132090890",
+      "content": "",
+      "author": "yusi4172",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1345329448509247560",
+      "channel_id": "1131839874132090890",
+      "content": "滿垃圾（）",
+      "author": "yusi4172",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1345213635689189377",
+      "channel_id": "1170692781216378960",
+      "content": "EVERYBODY, LEND ME YOUR ENERGY!",
+      "author": "aslechi",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1345241719704260661",
+      "channel_id": "1174983699935277147",
+      "content": "以及我沒什麼玩的血肉<:angry:1236950506803560509>",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1345254071589802085",
+      "channel_id": "1300659662311526512",
+      "content": "ya esta completa 👩🏻‍🦼",
+      "author": "nebbercracker12.",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1345225412661346324",
+      "channel_id": "1131839817982947429",
+      "content": "塔維還是能輾過",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345241667652948058",
+      "channel_id": "1131839817982947429",
+      "content": "我又不是什麼壞人",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345241906027958322",
+      "channel_id": "1131839817982947429",
+      "content": "還是改版前的圖魯",
+      "author": "mob1065",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345242179173486652",
+      "channel_id": "1131839817982947429",
+      "content": "又黑",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345254722570817536",
+      "channel_id": "1131839817982947429",
+      "content": "據說一星期壽命的朵爾",
+      "author": "cra0261_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345305052386037884",
+      "channel_id": "1131839817982947429",
+      "content": "坐牢前夜",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345323428428910623",
+      "channel_id": "1131839817982947429",
+      "content": "也不算連動吧 算把骨灰當調味料",
+      "author": "elkmilu",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1345325895337902081",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "scholar_2",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

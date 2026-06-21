@@ -1,0 +1,27 @@
+{
+  "date": "2025-11-19",
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 10,
+  "attachments": 3,
+  "channel_activity": {
+    "general-discussion": 9
+  },
+  "hourly_activity": {
+    "3": 8,
+    "11": 1
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440665187614068736",
+      "channel_id": "1402941858606219294",
+      "content": "Hi Keepers!\nThe exclusive volunteer avatars have been sent out via in-game mail ",
+      "author": "morimens_15",
+      "reactions": 10,
+      "channel": "general-discussion"
+    }
+  ]
+}

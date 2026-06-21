@@ -1,0 +1,226 @@
+{
+  "date": "2025-08-02",
+  "messages": 13142,
+  "unique_authors": 200,
+  "reactions_total": 1533,
+  "attachments": 672,
+  "channel_activity": {
+    "🔸剧情交流": 6,
+    "🔸课间休息闲聊": 4,
+    "🔸한국어-채팅방": 59,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 78,
+    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸canal-español": 106,
+    "🔸canal-português": 449,
+    "🔸ruang-obrolan-indonesia": 406,
+    "🔸ห้องสนทนาภาษาไทย": 192,
+    "🔸traphase": 270,
+    "🔸lore-chat": 49,
+    "🔸lets-count": 10,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 134,
+    "🔸general-chat": 4676,
+    "🔸綜合討論": 466,
+    "🔸morimens-game-chat": 6169,
+    "Pierot: Ultra Boy": 7,
+    "professor doll says school is cool!": 1,
+    "buy magic hat they said": 1,
+    "(moved to #gameplay-guide)": 2,
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 3,
+    "💭「Processing」Helot: Catena - inconsistent interactions with ultra space - Crimson Shackles": 3,
+    "💭「Processing」Bug if parasite enemy attempts to infect you while having death resistance": 5,
+    "Doresain still needs buff.": 3,
+    "相位對弈試訓問題": 1,
+    "通讯设备+首领战无效": 2
+  },
+  "hourly_activity": {
+    "16": 909,
+    "18": 354,
+    "19": 207,
+    "14": 640,
+    "15": 799,
+    "1": 1048,
+    "6": 368,
+    "7": 193,
+    "8": 268,
+    "13": 561,
+    "11": 667,
+    "12": 906,
+    "21": 467,
+    "5": 366,
+    "10": 649,
+    "17": 548,
+    "0": 774,
+    "2": 955,
+    "9": 158,
+    "20": 261,
+    "22": 347,
+    "23": 362,
+    "3": 765,
+    "4": 570
+  },
+  "message_types": {
+    "0": 5020,
+    "19": 1459
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1401197401946980442",
+      "content": "101079565 \nmost broken cursed relic they said",
+      "author": "farr8506",
+      "reactions": 39,
+      "channel": "buy magic hat they said"
+    },
+    {
+      "id": "1401120371809456219",
+      "content": "and she's also saying you're slow (affectionate)",
+      "author": "wraithdust",
+      "reactions": 22,
+      "channel": "professor doll says school is cool!"
+    },
+    {
+      "id": "1401202588686352385",
+      "channel_id": "1385040039448412170",
+      "content": "Not sure if this is the place for general server suggestions but would be nice i",
+      "author": "krait223",
+      "reactions": 11,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1401241889067372615",
+      "channel_id": "1170692781216378960",
+      "content": "here's what I buy",
+      "author": "climbkaly",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401263395860250728",
+      "channel_id": "1170692781216378960",
+      "content": "amazing",
+      "author": "krait223",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401224384827490436",
+      "channel_id": "1170692781216378960",
+      "content": "Have a lovely day friends remember I love you all",
+      "author": "the_black_butterfly",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401181134259355781",
+      "content": "校貓你說新的設計要像日服那樣，久久才能開一次狂氣爆發，讓狂氣爆發更有意義，但杜勒蠻失敗的，他需要付出的代價太多，不管是高配輔助還有血線的掌握",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "Doresain still needs buff."
+    },
+    {
+      "id": "1401153375298388009",
+      "channel_id": "1400750050208125010",
+      "content": "Seamen was right",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401207162528596080",
+      "channel_id": "1400750050208125010",
+      "content": "wait seamen got a great idea",
+      "author": "arisuu0604",
+      "reactions": 7,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401178044722319402",
+      "channel_id": "1170692781216378960",
+      "content": "Source: Came to me in a dream",
+      "author": "krait223",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401034076428701787",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401214574845497564",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401228716125982851",
+      "channel_id": "1131839817982947429",
+      "content": "<:Emoji_YWHX_M_12:1400771817659957258>",
+      "author": "ling_an_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1401007515012956312",
+      "channel_id": "1170692781216378960",
+      "content": "tulu is meta everywhere",
+      "author": "lewyntapes",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401071508909981778",
+      "channel_id": "1170692781216378960",
+      "content": "where my whale status <:angry3:1356053026863058994>",
+      "author": "aleph2410",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401232532397359295",
+      "channel_id": "1170692781216378960",
+      "content": "gonna try getting cae e3",
+      "author": "noobwannabe",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1401033579986817105",
+      "channel_id": "1400750050208125010",
+      "content": "Gimme",
+      "author": "lloyds_descendant",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401215597928513587",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "lloyds_descendant",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401248935829569669",
+      "channel_id": "1400750050208125010",
+      "content": "this is shit",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1401288500221051103",
+      "channel_id": "1170692781216378960",
+      "content": "guys, i did my second D-tide ever and got 300 points! this may not mean much, bu",
+      "author": ".shabo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "date": "2024-11-08",
+  "messages": 4236,
+  "unique_authors": 123,
+  "reactions_total": 232,
+  "attachments": 274,
+  "channel_activity": {
+    "🔸綜合討論": 66,
+    "🔸morimens-game-chat": 3700,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 12,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 75,
+    "🔸phòng-chat-tiếng-việt": 168,
+    "🔸canal-español": 175,
+    "🔸ruang-obrolan-indonesia": 4,
+    "GPT translation synonyms": 4,
+    "蹈海野貓雜技團（釘選有目錄）": 1,
+    "御四家除朵尔和两个希洛档案中部分语音缺失": 8,
+    "第八章羊媽召喚的艾繼絲機制": 4,
+    "為什麼希洛這麼好看": 8,
+    "自創喚醒體相關：您的仙女座之唇，将是我们幽会的契机。": 1
+  },
+  "hourly_activity": {
+    "0": 472,
+    "2": 329,
+    "3": 163,
+    "4": 431,
+    "5": 349,
+    "6": 173,
+    "7": 79,
+    "8": 115,
+    "9": 75,
+    "12": 166,
+    "13": 88,
+    "14": 75,
+    "15": 183,
+    "16": 384,
+    "20": 102,
+    "1": 135,
+    "10": 33,
+    "11": 113,
+    "17": 290,
+    "18": 54,
+    "19": 137,
+    "21": 65,
+    "22": 177,
+    "23": 48
+  },
+  "message_types": {
+    "0": 3397,
+    "19": 813
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1304421189472747571",
+      "channel_id": "1131839817982947429",
+      "content": "養了35回合\n乞丐小孩哥終於神功大成\n一拳712",
+      "author": "ice_storys",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304268020780109874",
+      "content": "Hi,keeper!May I get this list in text?\nI think this would help us with GPT trans",
+      "author": "morimensstaff02",
+      "reactions": 7,
+      "channel": "GPT translation synonyms"
+    },
+    {
+      "id": "1304270743856611328",
+      "content": "Here you go, hope this help <:rose1:1234798154000633949>",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "GPT translation synonyms"
+    },
+    {
+      "id": "1304487172581097514",
+      "channel_id": "1131839817982947429",
+      "content": "這個雙子就是菜啦",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304543072264388678",
+      "channel_id": "1131839817982947429",
+      "content": "已經是可以半裸拿捏的程度了",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1304491900362952725",
+      "channel_id": "1170692781216378960",
+      "content": "“I’m Hastur, pay money to me”",
+      "author": "flim_of_life_burst",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304493609013477386",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304517233581756459",
+      "content": "一直都是如此，這應該就是機制了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "第八章羊媽召喚的艾繼絲機制"
+    },
+    {
+      "id": "1304300529232515072",
+      "channel_id": "1170692781216378960",
+      "content": "I think that's intentional, since if people got healing higher than shielding pe",
+      "author": "notjustthewind",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304259913924743351",
+      "channel_id": "1300659662311526512",
+      "content": "Quiobole. Soy nuevo aquí. Jugando un juego Chino, traducido al inglés, por una i",
+      "author": "shogun6",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1304429953483276290",
+      "content": "Unique = Team Unique (wheel effects - only one effect of a wheel of the same nam",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "GPT translation synonyms"
+    },
+    {
+      "id": "1304277797438488576",
+      "channel_id": "1170692781216378960",
+      "content": "the 30 turns strats",
+      "author": "skykirisame",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304299366533824522",
+      "channel_id": "1170692781216378960",
+      "content": "you upgrade for poison, I upgrade cause i want to see miyram crt funny number",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304312319693819956",
+      "channel_id": "1170692781216378960",
+      "content": "Me seeing someone use 24, Pandia, Nymph Ramona team",
+      "author": "linireo",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304433257135345664",
+      "channel_id": "1170692781216378960",
+      "content": "i get that one next",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304485303980916777",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304492895457247293",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens Uvhash is cool af, I really enjoyed his little side-story dream thing",
+      "author": "marciethevillain",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304503890397368384",
+      "channel_id": "1170692781216378960",
+      "content": "Im going to cry in my bed",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304504089211703306",
+      "channel_id": "1170692781216378960",
+      "content": "its so powerful it can make nymph go pretty boy mode <:bow:1243504932460433498>",
+      "author": "reya.li",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1304505714240389120",
+      "channel_id": "1170692781216378960",
+      "content": "Awwww no problem! Good Night!!",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

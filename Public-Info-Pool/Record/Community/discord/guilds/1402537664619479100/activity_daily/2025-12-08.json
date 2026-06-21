@@ -1,0 +1,97 @@
+{
+  "date": "2025-12-08",
+  "messages": 48,
+  "unique_authors": 5,
+  "reactions_total": 15,
+  "attachments": 16,
+  "channel_activity": {
+    "general-discussion": 47,
+    "project-coordination": 1
+  },
+  "hourly_activity": {
+    "1": 2,
+    "2": 10,
+    "3": 9,
+    "4": 9,
+    "5": 13,
+    "8": 5
+  },
+  "message_types": {
+    "19": 22,
+    "0": 26
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1447419029663776848",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is the entirety of Everburning Vex",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447420773986996224",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is ALL of See you in Neverland. (Starting from the Prologue)\n(On an un",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447425029007605830",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is ALL of Ghastly Canvas",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447426321989767290",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is ALL of See You, Neverland",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447431603021287496",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is all of Beyond the Skies: Part II",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447435783643336815",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, this is all of Astral Reign Chapter 4.",
+      "author": "wisteriavine11",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447408881482596402",
+      "channel_id": "1402941858606219294",
+      "content": "have exams, not now",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447414928679112745",
+      "channel_id": "1402941858606219294",
+      "content": "I'll check!",
+      "author": "wisteriavine11",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1447508512006737982",
+      "channel_id": "1402941858606219294",
+      "content": "its worng",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

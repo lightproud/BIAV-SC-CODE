@@ -1,0 +1,28 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -3896992517431586016
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 435047505222707820
+  },
+  "m_Name": "",
+  "nodeList": [
+    {
+      "key": "Panel_Loading_Text_C_Repair",
+      "text": "Repair",
+      "textCompRemark": "",
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": -4657962516012340547
+      },
+      "compName": "Text_C_Repair",
+      "resSrc": "Assets/ArtRes/GameUpdate/Res/Panel_Loading.prefab",
+      "panelRemark": ""
+    }
+  ],
+  "extraNodeList": [],
+  "panelRemark": ""
+}

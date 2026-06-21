@@ -1,0 +1,221 @@
+{
+  "date": "2024-10-24",
+  "messages": 1151,
+  "unique_authors": 86,
+  "reactions_total": 173,
+  "attachments": 59,
+  "channel_activity": {
+    "🔸綜合討論": 425,
+    "🔸morimens-game-chat": 570,
+    "🔸剧情交流": 6,
+    "🔸相位对弈": 56,
+    "🔸课间休息闲聊": 2,
+    "Steam賬號數據問題說明": 1,
+    "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 49,
+    "是否考慮為同調率增加功能": 3,
+    "ios手机怎么能玩上？人在加拿大": 10,
+    "離開前的感謝": 2,
+    "I have no sound in the steam version. any know how fix?": 1,
+    "能不能下修守密人等級限制或主線boss血量": 2,
+    "大福袋回调之后不开个复刻池子吗": 2,
+    "奥尔拉命轮": 1,
+    "暴食与今天造物之间的bug": 5,
+    "Steam acc lost after new update": 1,
+    "棄掉手牌不是掉往棄牌堆嗎": 3,
+    "血链·希洛的抽取建议": 1,
+    "忘卻困難版大挑戰！": 4,
+    "记录一下SP希洛开荒情况": 1,
+    "混沌唤醒体·塔薇": 2,
+    "苦海……": 2,
+    "像素命輪": 1,
+    "嘿嘿": 1
+  },
+  "hourly_activity": {
+    "0": 85,
+    "1": 52,
+    "2": 28,
+    "3": 70,
+    "4": 9,
+    "5": 33,
+    "6": 53,
+    "7": 14,
+    "8": 50,
+    "9": 79,
+    "10": 28,
+    "11": 30,
+    "12": 132,
+    "13": 112,
+    "15": 98,
+    "16": 49,
+    "23": 14,
+    "14": 35,
+    "17": 25,
+    "18": 16,
+    "19": 97,
+    "20": 29,
+    "21": 3,
+    "22": 10
+  },
+  "message_types": {
+    "0": 923,
+    "19": 136
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1298830411115401269",
+      "content": "美丽的花……美丽的毒。",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 24,
+      "channel": "苦海……"
+    },
+    {
+      "id": "1298952155524239360",
+      "channel_id": "1170692781216378960",
+      "content": "Not really too sure but wouldn't be suprised since chaos revolves alot around yo",
+      "author": "aslechi",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1298971503085490258",
+      "channel_id": "1131839817982947429",
+      "content": "校猫 对不起 我再也不喷你了\n可以换回宝宝融灾吗<:cry:1239910167668326480> <:cry:1239910167668326480> <:",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298982033913286696",
+      "channel_id": "1131839817982947429",
+      "content": "~~太簡單了根本沒有難度~~",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298988175535898664",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1299047458495791195",
+      "channel_id": "1131839817982947429",
+      "content": "不想發射祖先的遠程不是一個好遠程",
+      "author": ".moon_leaf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1299014144258998323",
+      "content": "加强图鲁！",
+      "author": "fengtengjayden9754",
+      "reactions": 5,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1298902644575699054",
+      "channel_id": "1131839817982947429",
+      "content": "下次十連10金",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1299004748946477067",
+      "content": "我看韓漫網站就這樣，超好笑",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1298990675899191337",
+      "channel_id": "1131839817982947429",
+      "content": "24小時不休息",
+      "author": "xinyue.57",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298991397398908980",
+      "channel_id": "1131839817982947429",
+      "content": "https://cdn.discordapp.com/attachments/1033594190011056128/1275245311350145064/I",
+      "author": "jasonfoxcute",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1299025496285253653",
+      "channel_id": "1131839817982947429",
+      "content": "。我們已經修正了道中敵人無限凝視給予症狀配合造物能無限制增加最大血量的錯誤",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1299154064348807250",
+      "channel_id": "1131839817982947429",
+      "content": "雙大疊反，技能卡打傷害",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298811358070181918",
+      "channel_id": "1170692781216378960",
+      "content": "ignore her",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1298824527362658305",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1298820737259536384",
+      "channel_id": "1173463482503536711",
+      "content": "~~讓羊媽幫忙打牌過關~~",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1299054776172154921",
+      "content": "~~然後玩家得到了課係遊玩體驗~~",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1298923148439191582",
+      "channel_id": "1131839817982947429",
+      "content": "嘎啦嘎啦在嘎啦嘎啦",
+      "author": "tofu0834",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298982450814390325",
+      "channel_id": "1131839817982947429",
+      "content": "幹 我真的以為自己看錯",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1298990345014739035",
+      "channel_id": "1131839817982947429",
+      "content": "我打不過",
+      "author": "xinyue.57",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

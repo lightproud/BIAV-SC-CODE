@@ -1,0 +1,157 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 8228362589040761022
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 244372400442434382
+  },
+  "m_Name": "",
+  "m_Navigation": {
+    "m_Mode": 3,
+    "m_WrapAround": 0,
+    "m_SelectOnUp": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_SelectOnDown": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_SelectOnLeft": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_SelectOnRight": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "m_Transition": 1,
+  "m_Colors": {
+    "m_NormalColor": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "m_HighlightedColor": {
+      "r": 0.9607843160629272,
+      "g": 0.9607843160629272,
+      "b": 0.9607843160629272,
+      "a": 1.0
+    },
+    "m_PressedColor": {
+      "r": 0.7843137383460999,
+      "g": 0.7843137383460999,
+      "b": 0.7843137383460999,
+      "a": 1.0
+    },
+    "m_SelectedColor": {
+      "r": 0.9607843160629272,
+      "g": 0.9607843160629272,
+      "b": 0.9607843160629272,
+      "a": 1.0
+    },
+    "m_DisabledColor": {
+      "r": 0.7843137383460999,
+      "g": 0.7843137383460999,
+      "b": 0.7843137383460999,
+      "a": 0.501960813999176
+    },
+    "m_ColorMultiplier": 1.0,
+    "m_FadeDuration": 0.10000000149011612
+  },
+  "m_SpriteState": {
+    "m_HighlightedSprite": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_PressedSprite": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_SelectedSprite": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_DisabledSprite": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "m_AnimationTriggers": {
+    "m_NormalTrigger": "Normal",
+    "m_HighlightedTrigger": "Highlighted",
+    "m_PressedTrigger": "Pressed",
+    "m_SelectedTrigger": "Selected",
+    "m_DisabledTrigger": "Disabled"
+  },
+  "m_Interactable": 1,
+  "m_TargetGraphic": {
+    "m_FileID": 0,
+    "m_PathID": 7448639412309639344
+  },
+  "m_OnClick": {
+    "m_PersistentCalls": {
+      "m_Calls": []
+    }
+  },
+  "_btnType": 0,
+  "_btnState": 0,
+  "m_DefaultGroup": {
+    "m_FileID": 0,
+    "m_PathID": -821928420234822612
+  },
+  "m_UnclickableGroup": {
+    "m_FileID": 0,
+    "m_PathID": -353947819752372035
+  },
+  "m_NormalGroup": {
+    "m_FileID": 0,
+    "m_PathID": -821928420234822612
+  },
+  "m_HighGroup": {
+    "m_FileID": 0,
+    "m_PathID": 3787874304900990530
+  },
+  "m_ButtonTextComp": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_DefaultTextColor": {
+    "r": 0.8745098114013672,
+    "g": 0.9333333373069763,
+    "b": 0.9686274528503418,
+    "a": 1.0
+  },
+  "m_UnclickableTextColor": {
+    "r": 0.5803921818733215,
+    "g": 0.5803921818733215,
+    "b": 0.5803921818733215,
+    "a": 1.0
+  },
+  "m_NormalTextColor": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "m_HighTextColor": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "RedDotObj": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_chosenShowGameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_isChosen": 0
+}

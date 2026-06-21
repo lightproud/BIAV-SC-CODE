@@ -1,0 +1,251 @@
+{
+  "date": "2025-12-16",
+  "messages": 12271,
+  "unique_authors": 265,
+  "reactions_total": 2609,
+  "attachments": 714,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 19,
+    "🔸team-building": 740,
+    "🔸general-chat": 724,
+    "🔸邀请码互助┊swap-invitation-codes": 20,
+    "🔸game-question": 1056,
+    "🔸忘却前夜┊morimens-tv": 8,
+    "🔸机器人命令┊bot-commands": 38,
+    "🔸morimens-game-chat": 5950,
+    "🔸剧情交流": 73,
+    "🔸晒卡分享": 40,
+    "🔸交友频道": 35,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 21,
+    "🔸русский-канал": 164,
+    "🔸phòng-chat-tiếng-việt": 249,
+    "🔸canal-español": 581,
+    "🔸canal-português": 87,
+    "🔸ruang-obrolan-indonesia": 148,
+    "🔸ห้องสนทนาภาษาไทย": 199,
+    "🔸traphase": 131,
+    "🔸lore-chat": 429,
+    "🔸綜合討論": 1442,
+    "Pencil art": 1,
+    "Liz : Hollow Dance of Destruction": 2,
+    "chibi murphy": 1,
+    "求配队": 1,
+    "求隊": 15,
+    "线上问题修复公告": 1,
+    "Who Ryker's Designer pls come talk ?": 4,
+    "✅「Answered」Battlepass Timer bug": 1,
+    "✅「Answered」Purchasing Silver Prime": 1,
+    "✅「Answered」Ham Exalt Text is wrongly string-interpolated": 2,
+    "✅「已回答」活动道具每关能调成一样的吗": 1,
+    "✅「已回答」造物收藏問題": 6,
+    "✅「已回答」文字特效及描述不統一": 1,
+    "✅「已回答」关于手册奖励": 2,
+    "Accidentally spent silver prime on Menophin": 2,
+    "💭「Processing」It looks like I received the mail twice": 1,
+    "✅「已回答」无形者的礼券里的头像和表情什么时候上新？": 3,
+    "✅「Answered」Unable to set nickname in Korean": 4,
+    "💭「Processing」Recurring Notification from event": 6,
+    "✅「已回答」没有收到维护补偿的50银芯": 3,
+    "💭「处理中」眼睛好痛": 2,
+    "💭「Processing」Can't receive qookka SMS verification code in UK and possibly US": 3,
+    "💭「处理中」皮克曼吞噬开大后再开拉蒙娜大招并打出非拉蒙娜大招抓出来的牌会使拉蒙娜抓出来的零费卡恢复算力消耗": 2,
+    "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion": 6,
+    "✅「已回答」这些呆呆的头像有没有高清大头版": 3,
+    "求助，我是被版本淘汰了？": 1,
+    "Spelling error in Silver Frost Archives": 2,
+    "蓋個圖樓": 10,
+    "我也丟一下之前畫的 圖樓": 3,
+    "一點仿官": 3
+  },
+  "hourly_activity": {
+    "8": 339,
+    "0": 664,
+    "1": 364,
+    "2": 653,
+    "3": 773,
+    "4": 729,
+    "5": 681,
+    "9": 444,
+    "10": 403,
+    "11": 311,
+    "12": 323,
+    "14": 588,
+    "21": 525,
+    "23": 371,
+    "6": 363,
+    "7": 239,
+    "13": 862,
+    "15": 769,
+    "16": 548,
+    "17": 355,
+    "18": 539,
+    "19": 455,
+    "20": 390,
+    "22": 583
+  },
+  "message_types": {
+    "0": 2003,
+    "19": 591,
+    "23": 1,
+    "20": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1450401385752559678",
+      "channel_id": "1355094251775459399",
+      "content": "🎁**DC 33000守密人达成礼 / DC33000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑",
+      "author": "morimensstaff01",
+      "reactions": 628,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1450561823303663758",
+      "channel_id": "1300659662311526512",
+      "content": "y que el regalo tenga una bomba",
+      "author": "nebbercracker12.",
+      "reactions": 13,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1450536606179131562",
+      "content": "守咪人如果也有繁衍狂熱都不敢想會有多刺激",
+      "author": "souri.10244",
+      "reactions": 13,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450438850206892093",
+      "channel_id": "1131839817982947429",
+      "content": "好耶 过了",
+      "author": "ling_an_",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450545374312796210",
+      "content": "~~支持守咪草翻所有人~~",
+      "author": "ena04564",
+      "reactions": 8,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450519839260147910",
+      "content": "一般建議守咪人打不過對面的時候就打這張",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1450634005937389649",
+      "channel_id": "1170692781216378960",
+      "content": "\"Wow I cant wait to try to beat chapter 7, better log in and get go- OH MY GOD\"",
+      "author": "caster5928",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450341538650390620",
+      "channel_id": "1131839817982947429",
+      "content": "既然主線打完了，要不去試試超過我的獻祭數量",
+      "author": "luckyinitial",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450486107316682866",
+      "content": "cake :3",
+      "author": "lornitho_o",
+      "reactions": 7,
+      "channel": "chibi murphy"
+    },
+    {
+      "id": "1450366314534277151",
+      "content": "家產",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450471055884816509",
+      "channel_id": "1170692781216378960",
+      "content": "🧱 <@523084324724146193>",
+      "author": "iibenigml1588",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450323298901561478",
+      "channel_id": "1131839817982947429",
+      "content": "守密如果能活得過戈利亞這關~~那其他繁衍狂熱應該都沒太大問題吧~~",
+      "author": "ass191044",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450337624937201704",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "elv_juan.carlos",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450342953427009729",
+      "channel_id": "1131839817982947429",
+      "content": "謝邀\n落地100k輸出",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450381890837282897",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450419859358879836",
+      "channel_id": "1131839817982947429",
+      "content": "因為忘了",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1450279972097884244",
+      "channel_id": "1170692781216378960",
+      "content": "When you're 3 damage off killing, blame damage amp",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450346312317931754",
+      "channel_id": "1170692781216378960",
+      "content": "monchi saw my gameplay and he think the nerf IS NEEDED",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450495702298787911",
+      "channel_id": "1170692781216378960",
+      "content": "only 3 more levels <:takenotes:1357186646294138890>",
+      "author": "not_blueberry",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1450541893036412928",
+      "channel_id": "1170692781216378960",
+      "content": "KEEP THE LOLI IN THE BACK AND PROTECT THE PARTY WITH YORU HUGE BOSOMS, FAROS",
+      "author": "brainrot_in_a_vat",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

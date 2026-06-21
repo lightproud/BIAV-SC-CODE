@@ -1,0 +1,88 @@
+{
+  "date": "2026-04-29",
+  "messages": 83,
+  "unique_authors": 13,
+  "reactions_total": 8,
+  "attachments": 14,
+  "channel_activity": {
+    "なんでも雑談": 73,
+    "🔰初心者質問": 9,
+    "今日の〜シリーズver1.0": 1
+  },
+  "hourly_activity": {
+    "5": 2,
+    "6": 7,
+    "7": 9,
+    "9": 1,
+    "10": 22,
+    "11": 2,
+    "13": 15,
+    "14": 2,
+    "15": 12,
+    "18": 4,
+    "16": 4,
+    "17": 3
+  },
+  "message_types": {
+    "0": 63,
+    "19": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1499099794143051828",
+      "channel_id": "1391701560496623688",
+      "content": "大体キーチャ盛っとけばおけです！",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1498943495090475091",
+      "channel_id": "1377478664609857647",
+      "content": "無課金2週間で深奥の達人まで来れた！\nタイスはやっぱチートキャラ",
+      "author": "chabo.chabo",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1498988077211713637",
+      "channel_id": "1377478664609857647",
+      "content": "拝啓\n○○様\nここから一文しか読めないってまじ？",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1498992937428848670",
+      "channel_id": "1377478664609857647",
+      "content": "イスとハムの差よ",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1499062589827580035",
+      "channel_id": "1377478664609857647",
+      "content": "多分ライカーも覚醒させてからダイスの獲得〜とかだったらゲロ弱かったと思います。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1499064674375700632",
+      "channel_id": "1377478664609857647",
+      "content": "反省はするけど失敗した方は修正しないスタンス。\n\n失敗したつもりはないけど、失敗したってことでいいです！（by.ｽﾋﾟｷ）",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1498940095997415454",
+      "channel_id": "1459507965366112370",
+      "content": "今日の触手",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "今日の〜シリーズver1.0"
+    }
+  ]
+}

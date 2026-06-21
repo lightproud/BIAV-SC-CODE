@@ -1,0 +1,198 @@
+{
+  "date": "2026-02-07",
+  "messages": 991,
+  "unique_authors": 31,
+  "reactions_total": 162,
+  "attachments": 33,
+  "channel_activity": {
+    "なんでも雑談": 843,
+    "🔰初心者質問": 73,
+    "誰でも質問": 73,
+    "日本版最新スト（イベスト含む）までネタバレOK板": 2
+  },
+  "hourly_activity": {
+    "2": 4,
+    "5": 5,
+    "6": 191,
+    "7": 31,
+    "8": 100,
+    "9": 46,
+    "11": 119,
+    "12": 244,
+    "13": 64,
+    "14": 59,
+    "15": 32,
+    "16": 68,
+    "18": 1,
+    "19": 17,
+    "20": 2,
+    "3": 5,
+    "4": 3
+  },
+  "message_types": {
+    "0": 942,
+    "19": 47
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1469674404219977770",
+      "channel_id": "1377478664609857647",
+      "content": "||エロ本見たい||",
+      "author": "foxcatfurry",
+      "reactions": 7,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469708996016607348",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "inokeshinn",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469586164510883884",
+      "channel_id": "1377478664609857647",
+      "content": "あれ課題限定だよ",
+      "author": "yasaizujusu",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469586297495752757",
+      "channel_id": "1377478664609857647",
+      "content": "（上位買えば）無料",
+      "author": "lynne2830",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469674203824259123",
+      "channel_id": "1377478664609857647",
+      "content": "雄っぱい",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469678044104097823",
+      "channel_id": "1377478664609857647",
+      "content": "サルバドルはアンパンマンだから",
+      "author": "anmianmakura.",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469667441050255361",
+      "channel_id": "1377478664609857647",
+      "content": "っじゃ私はカエクス君を身代わりに逃げるので…アバヨ魚！",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469667767949987862",
+      "channel_id": "1377478664609857647",
+      "content": "それゴリラが抱擁してるように見えて何かと思った",
+      "author": "lynne2830",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469673992188330004",
+      "channel_id": "1377478664609857647",
+      "content": "ゴリラテは力が弱い(語弊マシマシ)",
+      "author": "kuroneko4253",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469679164402696446",
+      "channel_id": "1377478664609857647",
+      "content": "サルバドル産のハム！？",
+      "author": "kuroneko4253",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469704995967467633",
+      "channel_id": "1377478664609857647",
+      "content": "ん…まま…ぱぱ…子守唄歌ってぇ…",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469706725509562431",
+      "channel_id": "1377478664609857647",
+      "content": "<:wow:1356053147029864518>",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469783145380446372",
+      "channel_id": "1377478664609857647",
+      "content": "ひげさんがかち割ってた気がする",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469582584756437032",
+      "channel_id": "1377478664609857647",
+      "content": "ワンダに期待しちゃだめ",
+      "author": "iihige",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469582683456929865",
+      "channel_id": "1377478664609857647",
+      "content": "ワンダ独自のたのしさがある",
+      "author": "iihige",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469582885609672798",
+      "channel_id": "1377478664609857647",
+      "content": "ここじゃボロカスに言われてるけど、何やかんやワンダさんは編成に入れてる",
+      "author": "namenemue3",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469583533948276799",
+      "channel_id": "1377478664609857647",
+      "content": "ぼくもワンダはつかいたおしてる",
+      "author": "iihige",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469584581517774858",
+      "channel_id": "1377478664609857647",
+      "content": "ナーフしなくていいから、全かいいきつよくして",
+      "author": "8106ne",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469611562724495534",
+      "channel_id": "1377478664609857647",
+      "content": "イベアムオーダーが最強すぎるから",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1469662460565786644",
+      "channel_id": "1377478664609857647",
+      "content": "蝋燭は燃え尽きる前が一番輝くのよ",
+      "author": "lynne2830",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    }
+  ]
+}

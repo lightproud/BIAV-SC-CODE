@@ -1,0 +1,235 @@
+{
+  "date": "2026-01-20",
+  "messages": 16585,
+  "unique_authors": 216,
+  "reactions_total": 4324,
+  "attachments": 669,
+  "channel_activity": {
+    "🔸剧情交流": 296,
+    "🔸晒卡分享": 10,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 4,
+    "🔸deutscher-chatraum": 49,
+    "🔸русский-канал": 462,
+    "🔸phòng-chat-tiếng-việt": 861,
+    "🔸canal-español": 268,
+    "🔸canal-português": 148,
+    "🔸ruang-obrolan-indonesia": 465,
+    "🔸ห้องสนทนาภาษาไทย": 93,
+    "🔸traphase": 119,
+    "🔸lore-chat": 91,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸lets-count": 21,
+    "🔸team-building": 331,
+    "🔸general-chat": 1484,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 772,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 38,
+    "🔸綜合討論": 712,
+    "🔸阵容构建": 50,
+    "🔸morimens-game-chat": 10133,
+    "Gpreg": 10,
+    "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 67,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 2,
+    "V2.4.2 深宅旧梦┊V2.4.2 Dream in Secluded Manor": 5,
+    "Who should I choose for the character selector?": 5,
+    "Taste test || Doresain & Sylvester": 3,
+    "Art dump thread": 1,
+    "✅「已回答」错字": 2,
+    "Goliath bleed damage description": 2,
+    "Cannot log in on PC client": 1,
+    "💭「处理中」透明人在打透明怪": 6,
+    "需要官方高清海报": 1,
+    "Keychain": 1,
+    "💭「处理中」觸腕標示不會改變": 3,
+    "💭「Processing」Arc 1 3-12 Elite bug": 6,
+    "✅「已回答」我想要一个设计上的解释": 4,
+    "✅「Answered」Google sign-in issues": 2,
+    "✅「Answered」refund request": 2,
+    "圖樓": 1,
+    "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的": 11,
+    "味觉测试 || 杜勒赛因x西维斯特": 10,
+    "徐，她真好看": 2,
+    "1448648649486635128": 3,
+    "1241345906826153984": 3,
+    "1463188507659993200": 1,
+    "1450001353064714320": 2,
+    "1234769700735418368": 2
+  },
+  "hourly_activity": {
+    "0": 282,
+    "4": 1004,
+    "9": 594,
+    "10": 866,
+    "11": 772,
+    "13": 1147,
+    "12": 991,
+    "15": 846,
+    "5": 393,
+    "14": 829,
+    "21": 419,
+    "22": 478,
+    "1": 498,
+    "16": 751,
+    "18": 557,
+    "20": 309,
+    "3": 932,
+    "6": 616,
+    "7": 833,
+    "8": 611,
+    "17": 698,
+    "19": 647,
+    "23": 709,
+    "2": 803
+  },
+  "message_types": {
+    "0": 4251,
+    "19": 1273,
+    "20": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1463140559978893510",
+      "channel_id": "1355094251775459399",
+      "content": "🎁DC 35000守密人达成礼 / DC35000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
+      "author": "morimensstaff01",
+      "reactions": 611,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1463103016579371059",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 90,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463125230447886472",
+      "content": "？",
+      "author": "game.producer.light",
+      "reactions": 64,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463105931075387447",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 51,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463104595646611548",
+      "content": "\"Keeper, I know not which nation this flag belongs to.\"",
+      "author": "reya.li",
+      "reactions": 47,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463109950690820166",
+      "content": "Sylvester wish granted...?<:rizz1:1356085398379692165><:Dore_proud:1459076042722",
+      "author": "that_one_chippy",
+      "reactions": 47,
+      "channel": "Taste test || Doresain & Sylvester"
+    },
+    {
+      "id": "1463126876867530814",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 43,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463090348518670450",
+      "content": "When does she release?",
+      "author": "gabbichota",
+      "reactions": 33,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1463161236450447380",
+      "content": "<:gmpreg:1457017409821999125> Enjoy, use, edit it as you like. Nod need to credi",
+      "author": "mount_fisherman",
+      "reactions": 31,
+      "channel": "Gpreg"
+    },
+    {
+      "id": "1463102490554925066",
+      "content": "清晓对镜洗梳妆，眉间花钿颜色消。\n“哎~眉间花钿黯淡…守密人可愿为妾身重绘花钿？”\n“食物、玩具、指鹿为马的权力？妾身自会为你奉上这些世间最好的回礼。”\n\n🎑 ",
+      "author": "morimensstaff01",
+      "reactions": 28,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463106772230340724",
+      "content": "",
+      "author": "2ndselna",
+      "reactions": 28,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463134903372742821",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 26,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463152563145674808",
+      "content": "需要彎腰下來看人的身高差還是太權威了",
+      "author": "yolo_mode",
+      "reactions": 25,
+      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
+    },
+    {
+      "id": "1463105047431872585",
+      "content": "We're gonna get negative 200 silver by the end of this <:takenotes:1357186646294",
+      "author": "aurora3981",
+      "reactions": 24,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463109529309806708",
+      "content": "",
+      "author": "ereshkigal6777",
+      "reactions": 23,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463132100294217850",
+      "content": "",
+      "author": "ka_0414",
+      "reactions": 20,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463125180619423764",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 17,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463118526221910057",
+      "content": "<:agree:1400771815076528258>",
+      "author": "sisinasti",
+      "reactions": 16,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463110339641086048",
+      "content": "Окей, мой вариант",
+      "author": "closetom",
+      "reactions": 15,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463134354455658591",
+      "content": "~~我有点害怕被打，先藏一下<:Feelguilty:1400771618174664775> ~~",
+      "author": "ka_0414",
+      "reactions": 15,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    }
+  ]
+}

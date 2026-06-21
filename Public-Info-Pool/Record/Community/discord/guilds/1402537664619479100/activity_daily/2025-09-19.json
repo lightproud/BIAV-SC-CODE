@@ -1,0 +1,191 @@
+{
+  "date": "2025-09-19",
+  "messages": 430,
+  "unique_authors": 7,
+  "reactions_total": 47,
+  "attachments": 25,
+  "channel_activity": {
+    "english-english": 75,
+    "general-discussion": 311,
+    "announcements": 1,
+    "\"Dimensional Image\"?": 39,
+    "TH Contribution": 1,
+    "喚醒體銀芯通訊重翻紀錄 (Awakener Text Retranslation Log)": 3
+  },
+  "hourly_activity": {
+    "4": 70,
+    "5": 222,
+    "6": 37,
+    "7": 35,
+    "8": 24,
+    "0": 1,
+    "2": 17,
+    "3": 24
+  },
+  "message_types": {
+    "0": 342,
+    "19": 44
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418446292689879081",
+      "channel_id": "1407641395891535883",
+      "content": "Hi guys,\n\nWe have recently been notified of a potential NDA breach, where the Go",
+      "author": "morimens_15",
+      "reactions": 19,
+      "channel": "announcements"
+    },
+    {
+      "id": "1418515787815059516",
+      "channel_id": "1402941858606219294",
+      "content": "this is pretty ok in my book",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418466255416856607",
+      "channel_id": "1402941858606219294",
+      "content": "count me as a strong vote in favor of shortening Temporary to Temp.",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418438299868991489",
+      "channel_id": "1418425109122908342",
+      "content": "On the other hand it's great we're catching awkward phrases in like Stage Names ",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "\"Dimensional Image\"?"
+    },
+    {
+      "id": "1418461058196176937",
+      "channel_id": "1402538040253087766",
+      "content": "cause it's completely translated wrong",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1418466055654871134",
+      "channel_id": "1402538040253087766",
+      "content": "I’m translating all the texts anyways",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1418474873621315594",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418474978931642368",
+      "channel_id": "1402941858606219294",
+      "content": "boy was I excited to use it as a poor baby new player who got his first copy of ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418477258754228284",
+      "channel_id": "1402941858606219294",
+      "content": "also yeah I know team unique is gone but I didn't remove it because it'd be weir",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418479207322877985",
+      "channel_id": "1402941858606219294",
+      "content": "and in the case of things like Prepare, we would invert that logic:\n> If retaine",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418479990755823627",
+      "channel_id": "1402941858606219294",
+      "content": "sick.\n> Whenever this card is retained or discarded, its Arithmetica Cost reduce",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418502734969311323",
+      "channel_id": "1402941858606219294",
+      "content": "If you don’t mind I’m gonna start a contribution log to keep track of the awaken",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418502789549789236",
+      "channel_id": "1402941858606219294",
+      "content": "<#1408291767207591976>",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418507353350996060",
+      "channel_id": "1402941858606219294",
+      "content": "> there's literally only one effect in the entire game that affixes Void but not",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418469442827976786",
+      "channel_id": "1402941858606219294",
+      "content": "....also stealing, as an action, inherently requires the taking to be done befor",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418470651873988660",
+      "channel_id": "1402941858606219294",
+      "content": "https://cdn.discordapp.com/attachments/427857154733768714/1410249902050775151/Um",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418473194188181544",
+      "channel_id": "1402941858606219294",
+      "content": "I have returned with evidence because I don't tell people they're wrong without ",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418473238685679658",
+      "channel_id": "1402941858606219294",
+      "content": "I do like the extremely direct and personally targeted \"actually fuck you horla ",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418473491250020493",
+      "channel_id": "1402941858606219294",
+      "content": "I also enjoy the extremely direct and personally targeted \"actually you know wha",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1418474296187158528",
+      "channel_id": "1402941858606219294",
+      "content": "what was it like before?",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

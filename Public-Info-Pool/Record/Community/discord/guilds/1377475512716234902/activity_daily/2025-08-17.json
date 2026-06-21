@@ -1,0 +1,63 @@
+{
+  "date": "2025-08-17",
+  "messages": 46,
+  "unique_authors": 21,
+  "reactions_total": 448,
+  "attachments": 7,
+  "channel_activity": {
+    "なんでも雑談": 35,
+    "誰でも質問": 10,
+    "🎁ギフトコード": 1
+  },
+  "hourly_activity": {
+    "1": 1,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 3,
+    "14": 13,
+    "15": 7,
+    "21": 1,
+    "23": 12,
+    "22": 2,
+    "8": 1
+  },
+  "message_types": {
+    "0": 41,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1406554266654474350",
+      "channel_id": "1400058365501116458",
+      "content": "😺公式Discordサーバー開設キャンペーン😺\ncode: BOKYAKUDISCORD\nギフト内容\n・シルバーコア1000個\n・ヘブンズコア10個\n有効期限:",
+      "author": "mythag_navigator",
+      "reactions": 435,
+      "channel": "🎁ギフトコード"
+    },
+    {
+      "id": "1406645909550272741",
+      "channel_id": "1377478664609857647",
+      "content": "皆さんこんばんはー！！( * . .)\"",
+      "author": "saa_1206",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1406484749668843530",
+      "channel_id": "1400058619726266462",
+      "content": "ちゃんとボイスがあるので安心してください！！\n結構ボイス多くて楽しめます",
+      "author": "sharkomega.",
+      "reactions": 6,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1406782829899157674",
+      "channel_id": "1377478664609857647",
+      "content": "そうなんですね！ありがとうございます!!!",
+      "author": "zru7q",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
+}

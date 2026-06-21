@@ -1,0 +1,26 @@
+{
+  "date": "2026-01-25",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "2025 December & 2026 January Contribution Log: V2.4.X Updates": 1
+  },
+  "hourly_activity": {
+    "19": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1465061283572486390",
+      "channel_id": "1464157747032494110",
+      "content": "<@1384428399061106739> hello!\nCould you please add:\n\nRU\nTheRiddleOfCards — Trans",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "2025 December & 2026 January Contribution Log: V2.4.X Updates"
+    }
+  ]
+}

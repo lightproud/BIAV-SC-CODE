@@ -1,0 +1,80 @@
+{
+  "date": "2025-11-25",
+  "messages": 57,
+  "unique_authors": 6,
+  "reactions_total": 11,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 57
+  },
+  "hourly_activity": {
+    "1": 4,
+    "2": 2,
+    "9": 45,
+    "10": 1,
+    "11": 1,
+    "0": 4
+  },
+  "message_types": {
+    "0": 45,
+    "19": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442816927213817906",
+      "channel_id": "1402941858606219294",
+      "content": "and i want new sheet because got gmurphy kit in kr is kinda unreadable",
+      "author": "nero_aliapoh",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442811377591910492",
+      "channel_id": "1402941858606219294",
+      "content": "Thing is, though, when they slim down the original chinese text...\nThe machine t",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442842697336623235",
+      "channel_id": "1402941858606219294",
+      "content": "Ok!\nI will try to do that to the best of my ability;\nWill come back to update yo",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442810233050239078",
+      "channel_id": "1402941858606219294",
+      "content": "And I have a good news",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442810531537883146",
+      "channel_id": "1402941858606219294",
+      "content": "freshly fixed!!! sorry",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442813438563975208",
+      "channel_id": "1402941858606219294",
+      "content": "subject to change",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1442817088849711134",
+      "channel_id": "1402941858606219294",
+      "content": "the terms are different by each card <:aurita_dizzy:1408324284702654556>",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-12",
+  "messages": 534,
+  "unique_authors": 23,
+  "reactions_total": 207,
+  "attachments": 38,
+  "channel_activity": {
+    "🔰初心者質問": 112,
+    "誰でも質問": 35,
+    "思い出し用（好きに書き込んで）": 7,
+    "なんでも雑談": 380
+  },
+  "hourly_activity": {
+    "16": 14,
+    "13": 76,
+    "14": 203,
+    "15": 127,
+    "23": 1,
+    "0": 2,
+    "3": 1,
+    "6": 2,
+    "7": 7,
+    "8": 18,
+    "9": 31,
+    "11": 7,
+    "12": 44,
+    "20": 1
+  },
+  "message_types": {
+    "19": 74,
+    "0": 459,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1503758980449701918",
+      "channel_id": "1503758980449701918",
+      "content": "初心者向けアドバイス置き場\n個人的恒常tier？オススメ\nファイント、カーシア、シレスト\n以上\nhttps://discord.com/channels/137",
+      "author": "ugen_22zi",
+      "reactions": 7,
+      "channel": "思い出し用（好きに書き込んで）"
+    },
+    {
+      "id": "1503685908170281011",
+      "channel_id": "1377478664609857647",
+      "content": "やっぱり対人勢は怖い人ばっかりなんだ！ｱｰｳ!",
+      "author": "kuroneko4253",
+      "reactions": 7,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503685944329506826",
+      "channel_id": "1377478664609857647",
+      "content": "いいから絵をください",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503787495186239612",
+      "channel_id": "1377478664609857647",
+      "content": "今から寝るし食らってもええかの精神でした",
+      "author": "_regen02b",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503682092687556638",
+      "channel_id": "1377478664609857647",
+      "content": "なんなら||主食が人肉||ですね笑",
+      "author": "anonymous.409",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503694882303381554",
+      "channel_id": "1377478664609857647",
+      "content": "ファイント確保しました！",
+      "author": "nimingtokumei",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503775055006662718",
+      "channel_id": "1391701560496623688",
+      "content": "とりあえず弱いの承知で深海パ作りますかね",
+      "author": "nimingtokumei",
+      "reactions": 3,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1503668718071189584",
+      "channel_id": "1377478664609857647",
+      "content": "ほぼ1強じゃんまた",
+      "author": "ugen_22zi",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503670724269838336",
+      "channel_id": "1377478664609857647",
+      "content": "てかこの沙耶美しいな………",
+      "author": "youri1123",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503680233214316614",
+      "channel_id": "1377478664609857647",
+      "content": "混沌狂魔増えすぎだろ問題",
+      "author": "kuroneko4253",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503683890978750544",
+      "channel_id": "1377478664609857647",
+      "content": "ヒソヒソ",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503731363415593073",
+      "channel_id": "1377478664609857647",
+      "content": "むしろバランス崩壊しすぎてキレます",
+      "author": "zzzorz",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503736040936964116",
+      "channel_id": "1377478664609857647",
+      "content": "まだ始めて3日目の初心者なので色々聞くと思いますが、よろしくお願いします",
+      "author": "u25552",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503761392866689075",
+      "channel_id": "1377478664609857647",
+      "content": "プラス違い",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503773060011003935",
+      "channel_id": "1377478664609857647",
+      "content": "俺のSan値も低かったわ",
+      "author": "ugen_22zi",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503784152741314561",
+      "channel_id": "1377478664609857647",
+      "content": "許さん許さんぞ、アノニマス",
+      "author": "ugen_22zi",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1503761176113315992",
+      "channel_id": "1391701560496623688",
+      "content": "静海のターン短縮して♡",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1503761556091961404",
+      "channel_id": "1391701560496623688",
+      "content": "2ターンに1回のshield300位くれ",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1503774702697709647",
+      "channel_id": "1391701560496623688",
+      "content": "刺突は強い",
+      "author": "ugen_22zi",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1503802569049247845",
+      "channel_id": "1391701560496623688",
+      "content": "",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    }
+  ]
+}

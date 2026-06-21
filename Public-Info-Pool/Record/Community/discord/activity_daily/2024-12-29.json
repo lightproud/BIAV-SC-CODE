@@ -1,0 +1,219 @@
+{
+  "date": "2024-12-29",
+  "messages": 4556,
+  "unique_authors": 149,
+  "reactions_total": 177,
+  "attachments": 218,
+  "channel_activity": {
+    "🔸綜合討論": 281,
+    "🔸阵容构建": 31,
+    "🔸morimens-game-chat": 3807,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 136,
+    "🔸русский-канал": 87,
+    "🔸phòng-chat-tiếng-việt": 48,
+    "🔸canal-español": 77,
+    "🔸canal-português": 30,
+    "🔸ruang-obrolan-indonesia": 9,
+    "🔸ห้องสนทนาภาษาไทย": 12,
+    "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)": 4,
+    "V1.7.4.0 在線維護公告": 18,
+    "選完後能換主角性別嗎?": 3,
+    "刷新bug": 2,
+    "新活动呢？": 1,
+    "既然复活赛打赢了，下周的活动和卡池，还有新一期的战令什么时候有预览或者爆料？": 1,
+    "如果下周啥事也没有": 1,
+    "主線關卡「蚍蜉」戰鬥bug": 1,
+    "win11打不開黑屏(已解決)": 1,
+    "12/29更新新版，教新手如何用剩餘的角色組出融災隊伍": 1,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "約稿展示 請大家吃飯": 3
+  },
+  "hourly_activity": {
+    "1": 93,
+    "3": 276,
+    "4": 594,
+    "5": 389,
+    "6": 140,
+    "7": 40,
+    "8": 10,
+    "9": 98,
+    "10": 46,
+    "11": 60,
+    "12": 103,
+    "13": 241,
+    "14": 498,
+    "15": 136,
+    "16": 96,
+    "17": 281,
+    "18": 195,
+    "19": 97,
+    "20": 147,
+    "21": 98,
+    "22": 211,
+    "23": 364,
+    "0": 69,
+    "2": 274
+  },
+  "message_types": {
+    "0": 3617,
+    "19": 902
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1322826854394101773",
+      "content": "何不发一个“下周啥事也没有”的官方公告",
+      "author": "muliupan",
+      "reactions": 14,
+      "channel": "如果下周啥事也没有"
+    },
+    {
+      "id": "1322907292487909459",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 9,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1322865359426162718",
+      "channel_id": "1131839817982947429",
+      "content": "誰是壞狗狗",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1323053327344468049",
+      "channel_id": "1131839817982947429",
+      "content": "兩小時打完收工",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1322926804587122819",
+      "content": "Can be used for d tide, story progression and dive.",
+      "author": ".galeroar",
+      "reactions": 5,
+      "channel": "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)"
+    },
+    {
+      "id": "1322912589323309086",
+      "channel_id": "1170692781216378960",
+      "content": "Account ruined, kill yourself",
+      "author": ".galeroar",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1323077398098477221",
+      "channel_id": "1170692781216378960",
+      "content": "Seen a good chunk of videos on youtube now for this game in the past few days",
+      "author": "linireo",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322959509924085833",
+      "content": "切掉ㄐㄐ",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "選完後能換主角性別嗎?"
+    },
+    {
+      "id": "1322941162327117967",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=596&tnum=2",
+      "author": "ekko9950",
+      "reactions": 3,
+      "channel": "12/29更新新版，教新手如何用剩餘的角色組出融災隊伍"
+    },
+    {
+      "id": "1322791031523250282",
+      "channel_id": "1131839817982947429",
+      "content": "~~等出圖魯進普池，普池垃圾+1(誤~~",
+      "author": "kevin.yienwenst",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1322972558622199842",
+      "channel_id": "1131839817982947429",
+      "content": "我又勝利。",
+      "author": "lemoncandy25",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1322786420414353428",
+      "channel_id": "1170692781216378960",
+      "content": "big respect to zzz for not chasing open world",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322797552005021726",
+      "channel_id": "1170692781216378960",
+      "content": "Song of The Bound takes on a *whole* new meaning with this one",
+      "author": "al_leyway",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322799509624983562",
+      "channel_id": "1170692781216378960",
+      "content": "the colors are just faction of polycules",
+      "author": "khykken",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322865748569489432",
+      "channel_id": "1170692781216378960",
+      "content": "Events are the best place to burn stamina",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322891693451640894",
+      "channel_id": "1170692781216378960",
+      "content": "and new awaker",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322910958087307308",
+      "channel_id": "1170692781216378960",
+      "content": "this guy probably met his worst nightmare",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322949528046801027",
+      "channel_id": "1170692781216378960",
+      "content": "<@807468556274368542> still no news? <:flop:1243504846062223360>",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1322957341213331577",
+      "channel_id": "1300659580446969918",
+      "content": "Я тоже ступил на скользкий путь...",
+      "author": "karsh_1",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1322791280610381934",
+      "channel_id": "1131839817982947429",
+      "content": "如果能等來圖魯加強就好了",
+      "author": "kevin.yienwenst",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

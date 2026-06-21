@@ -1,0 +1,222 @@
+{
+  "date": "2025-03-06",
+  "messages": 3276,
+  "unique_authors": 104,
+  "reactions_total": 123,
+  "attachments": 161,
+  "channel_activity": {
+    "🔸русский-канал": 134,
+    "🔸phòng-chat-tiếng-việt": 4,
+    "🔸canal-español": 12,
+    "🔸canal-português": 387,
+    "🔸ruang-obrolan-indonesia": 378,
+    "🔸ห้องสนทนาภาษาไทย": 267,
+    "🔸traphase": 114,
+    "🔸綜合討論": 499,
+    "🔸morimens-game-chat": 1337,
+    "🔸相位对弈": 40,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 20,
+    "Star Chapter 2.1 Tier List": 23,
+    "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！": 20,
+    "我不知道有什麼用但我決定幫Pray立一個碑": 1,
+    "✅「Answered」Ryker relic bug": 7,
+    "萊克選造物有BUG": 3,
+    "💭「處理中」青石王座bug": 2,
+    "💭「處理中」孩子们其实奥尔拉已经死了": 19,
+    "弥撒格第一届暴击爆伤大赛!": 1,
+    "✅「已回答」不會刷新的手套": 4,
+    "✅「已回答」神父无底重创吃两次的问题": 1,
+    "伺服器漏洞": 1,
+    "女守X鯊（OOC警告）": 1
+  },
+  "hourly_activity": {
+    "0": 50,
+    "5": 172,
+    "6": 143,
+    "7": 205,
+    "11": 218,
+    "12": 80,
+    "13": 173,
+    "14": 104,
+    "15": 128,
+    "16": 102,
+    "17": 324,
+    "21": 85,
+    "22": 124,
+    "1": 35,
+    "2": 123,
+    "19": 94,
+    "3": 81,
+    "18": 207,
+    "20": 62,
+    "4": 182,
+    "9": 118,
+    "8": 59,
+    "10": 357,
+    "23": 50
+  },
+  "message_types": {
+    "0": 1011,
+    "19": 285
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1347143394337751101",
+      "channel_id": "1131839817982947429",
+      "content": "红花黑子说话😡",
+      "author": "scholar_2",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347315385866784860",
+      "channel_id": "1300659580446969918",
+      "content": "<@246693447979892737> Лучше зайди в топ по экспе и там надобавляй китяр китайски",
+      "author": "somethingno1fan",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1347148060823916545",
+      "channel_id": "1131839817982947429",
+      "content": "我号卖出去了",
+      "author": "a9527b",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347160753265967145",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347190033253269525",
+      "channel_id": "1180850818509971466",
+      "content": "佬🛐",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1347175274994733147",
+      "channel_id": "1300659580446969918",
+      "content": "👍",
+      "author": "6____6",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1347087004009107456",
+      "content": "就很神奇突然發現沒刷新也不是顯示問題",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "✅「已回答」不會刷新的手套"
+    },
+    {
+      "id": "1347236435337416786",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "hanabi.82",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1347071221652656169",
+      "channel_id": "1131839817982947429",
+      "content": "~~結果我抽完血希還在用蘿坦~~",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347091245658538075",
+      "channel_id": "1131839817982947429",
+      "content": "For example Like this",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347151122162516010",
+      "channel_id": "1131839817982947429",
+      "content": "~~珈倫不是都帶阿庫特子宮嗎~~",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347165194475802727",
+      "channel_id": "1131839817982947429",
+      "content": "永遠是我的力量，而且還能堆疊",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347165923592765440",
+      "channel_id": "1131839817982947429",
+      "content": "往缸子塞應選（X\n用一張應選變出兩張應選（O",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347168185459146815",
+      "channel_id": "1131839817982947429",
+      "content": "那15%還被當場補的盾吃掉七八成",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347217077190135808",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1347028616835502140",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "lumography",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347028939507236915",
+      "channel_id": "1170692781216378960",
+      "content": "Is this one any good?",
+      "author": "frogatall1_the_realone_40544",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1347025944874848276",
+      "channel_id": "1300659495550062592",
+      "content": "역시 금구를 안정적으로 돌려면 심해가 좋아요... 벌써 엄청 강해진 기분이 듬.",
+      "author": "banadil",
+      "reactions": 2,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1347225188760293376",
+      "content": "** 怪物數值全幾把跟腳填的一樣，你測過主線嗎你 **\n** 還是說你們全幾把用塔薇或者血希測的新主線？？ **\n||** ~~夾帶私貨：加強奧吉爾，穿刺之槍肘",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1347232616017035316",
+      "content": "只要跟萊克效果重疊，不管是事件還是遺骨刪卡都會被跳過",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "萊克選造物有BUG"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "date": "2023-11-25",
+  "messages": 265,
+  "unique_authors": 27,
+  "reactions_total": 13,
+  "attachments": 29,
+  "channel_activity": {
+    "🔸綜合討論": 241,
+    "🔸morimens-game-chat": 23,
+    "雕砌藝術家「珊」": 1
+  },
+  "hourly_activity": {
+    "0": 64,
+    "1": 22,
+    "2": 4,
+    "3": 4,
+    "4": 20,
+    "5": 9,
+    "6": 5,
+    "7": 2,
+    "8": 2,
+    "9": 2,
+    "10": 60,
+    "11": 18,
+    "12": 11,
+    "13": 6,
+    "14": 5,
+    "15": 2,
+    "16": 1,
+    "17": 24,
+    "23": 4
+  },
+  "message_types": {
+    "0": 163,
+    "19": 101
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1177946874276216993",
+      "channel_id": "1131839817982947429",
+      "content": "《逍遥游》里面有写，“萝坦有鱼，其名为鲲。鲲之大，一锅炖不下。”",
+      "author": "metam0n",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177834540346122270",
+      "channel_id": "1131839817982947429",
+      "content": "床是最棒的\n它不會問東問西\n它不會指責你\n它充滿包容\n它充滿溫暖\n它會默默地承受著你",
+      "author": "lai532143",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177838652458541066",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177774199360737390",
+      "channel_id": "1131839817982947429",
+      "content": "😳 （蹭蹭",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177778537076371476",
+      "channel_id": "1131839817982947429",
+      "content": "🤣🤣🤣",
+      "author": "zhangyahui",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177834025382064148",
+      "channel_id": "1131839817982947429",
+      "content": "辛苦啦！",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177835130723766384",
+      "channel_id": "1131839817982947429",
+      "content": "從手機裡翻到的圖片",
+      "author": "lai532143",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177978866380324886",
+      "channel_id": "1131839817982947429",
+      "content": "不醜不醜！蘿坦那個是鯨魚啦～",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177979282224595145",
+      "channel_id": "1170692781216378960",
+      "content": "looking forward to seeing u at11/30",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

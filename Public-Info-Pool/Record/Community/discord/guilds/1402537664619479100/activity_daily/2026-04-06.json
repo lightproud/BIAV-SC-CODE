@@ -1,0 +1,46 @@
+{
+  "date": "2026-04-06",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 7
+  },
+  "hourly_activity": {
+    "0": 1,
+    "13": 2,
+    "16": 1,
+    "20": 3
+  },
+  "message_types": {
+    "19": 2,
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1490709456508424265",
+      "channel_id": "1402941858606219294",
+      "content": "<:casiah_cute:1408324282895040572>",
+      "author": "nero_aliapoh",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1490750332505030798",
+      "channel_id": "1402941858606219294",
+      "content": "Hello! Munzeria and I had a quick question about the Invite Event. We were surpr",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1490806374521770014",
+      "channel_id": "1402941858606219294",
+      "content": "since it's the original text i'm not sure anyone can explain why it's phrased th",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

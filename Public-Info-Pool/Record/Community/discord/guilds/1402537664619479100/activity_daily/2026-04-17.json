@@ -1,0 +1,45 @@
+{
+  "date": "2026-04-17",
+  "messages": 22,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 3,
+  "channel_activity": {
+    "general-discussion": 22
+  },
+  "hourly_activity": {
+    "10": 2,
+    "11": 1,
+    "14": 19
+  },
+  "message_types": {
+    "0": 17,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1494652083901694082",
+      "channel_id": "1402941858606219294",
+      "content": "hi guys, i imported the terms from you and this is how it's looking in game rn (",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1494653638809747526",
+      "channel_id": "1402941858606219294",
+      "content": "It looks great, thanks!\nAlso the term we didn't get has a passable GPT translati",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1494654399404970145",
+      "channel_id": "1402941858606219294",
+      "content": "thank you so much!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

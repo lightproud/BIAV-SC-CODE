@@ -1,0 +1,95 @@
+{
+  "date": "2026-01-28",
+  "messages": 83,
+  "unique_authors": 15,
+  "reactions_total": 15,
+  "attachments": 3,
+  "channel_activity": {
+    "なんでも雑談": 76,
+    "🔰初心者質問": 2,
+    "誰でも質問": 3,
+    "全覚醒体描きます！": 2
+  },
+  "hourly_activity": {
+    "4": 1,
+    "6": 20,
+    "8": 8,
+    "9": 8,
+    "10": 9,
+    "11": 10,
+    "12": 9,
+    "15": 9,
+    "16": 7,
+    "22": 2
+  },
+  "message_types": {
+    "0": 77,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466091292038533366",
+      "channel_id": "1459443394148433960",
+      "content": "",
+      "author": "mitutya_33500",
+      "reactions": 4,
+      "channel": "全覚醒体描きます！"
+    },
+    {
+      "id": "1466091913160687877",
+      "channel_id": "1377478664609857647",
+      "content": "なんとなく話の感じを聞いてしまったせいで救いようが無いんだな…と分かってしまい読む気が起きない",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1465986437424873555",
+      "channel_id": "1377478664609857647",
+      "content": "https://x.com/bokyakuzenya/status/2016420983608115670?s=46&t=lNPUXATWOa06yWyUusV",
+      "author": "namenemue3",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1466029735640305799",
+      "channel_id": "1377478664609857647",
+      "content": "返しを売る時代",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1466031554538246345",
+      "channel_id": "1377478664609857647",
+      "content": "<:flop2:1356053072924774421>",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1466091157816610847",
+      "channel_id": "1377478664609857647",
+      "content": "ミリアムのストーリー読めてないし融災もやる気がない、誰か俺を殺して",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1466100385927266444",
+      "channel_id": "1377478664609857647",
+      "content": "前半はよくある感じだけど最後の追加分（本体）はちゃんと面白かったよ",
+      "author": "lynne2830",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1466014499457994794",
+      "channel_id": "1400058619726266462",
+      "content": "ありがとうございます",
+      "author": "sunquanrenge",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    }
+  ]
+}

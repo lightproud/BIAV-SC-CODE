@@ -1,0 +1,245 @@
+{
+  "date": "2026-01-27",
+  "messages": 13950,
+  "unique_authors": 214,
+  "reactions_total": 1835,
+  "attachments": 680,
+  "channel_activity": {
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 5,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 333,
+    "🔸phòng-chat-tiếng-việt": 74,
+    "🔸canal-español": 503,
+    "🔸canal-português": 239,
+    "🔸ruang-obrolan-indonesia": 310,
+    "🔸ห้องสนทนาภาษาไทย": 234,
+    "🔸traphase": 254,
+    "🔸lore-chat": 114,
+    "🔸lets-count": 9,
+    "🔸team-building": 566,
+    "🔸general-chat": 1690,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 500,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 52,
+    "🔸綜合討論": 1920,
+    "🔸morimens-game-chat": 6978,
+    "pickman i drew during science class": 2,
+    "✅「Resolved」Resonance Reset": 3,
+    "徐设计的什么逼玩意？恶心玩家": 11,
+    "✅「Answered」Feedback V2.4.2 - traphase": 5,
+    "卡牌介紹缺失bug": 1,
+    "没人冲+12最终法则吗": 13,
+    "Uvhash boss is bugged in phantasmal dive": 3,
+    "特遣紀錄 bug": 1,
+    "Regarding Absolute axiom (+12) on limited characters": 11,
+    "There are multiple sections that haven’t been translated.": 2,
+    "Is this a bug or is it not translated yet?": 4,
+    "新命輪故事用字問題": 2,
+    "You can get more than 2 SSR in 5 pulls if you are NOT using 5 Awakenings-Option?": 3,
+    "不是if線就是死後幻覺才有可能": 1,
+    "【同人绘画】忘却前夜×P5R，怎会做这样的梦？": 3,
+    "1440735573206761734": 29,
+    "1234769700735418368": 16,
+    "1464565649803186217": 3,
+    "1464228375316136072": 6,
+    "1465688753648701524": 5
+  },
+  "hourly_activity": {
+    "17": 794,
+    "11": 651,
+    "2": 656,
+    "8": 794,
+    "13": 410,
+    "10": 566,
+    "1": 473,
+    "9": 682,
+    "15": 730,
+    "16": 279,
+    "0": 295,
+    "3": 681,
+    "4": 601,
+    "6": 674,
+    "5": 340,
+    "7": 822,
+    "12": 953,
+    "14": 945,
+    "18": 729,
+    "19": 279,
+    "20": 558,
+    "21": 521,
+    "23": 332,
+    "22": 185
+  },
+  "message_types": {
+    "19": 1129,
+    "0": 3793,
+    "23": 2,
+    "20": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1465727842963816611",
+      "content": "Not the most accurate because i didn't have a reference, mostly drew this for my",
+      "author": "glitzy_x",
+      "reactions": 18,
+      "channel": "pickman i drew during science class"
+    },
+    {
+      "id": "1465657420800983093",
+      "channel_id": "1300659436804640788",
+      "content": "皆さん、こんにちは。現在、翻訳変換ツールに不具合が発生しており、全力で修正にあたっています。翻訳データがゲーム内に正しく反映されない状況です。現在、新バージョン",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1465660102135644273",
+      "channel_id": "1170692781216378960",
+      "content": "The newbies poison comp",
+      "author": "rain_scarlet",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465657524219940907",
+      "channel_id": "1300659552701648960",
+      "content": "Salut les Keepers ! Notre outil de traduction est en panne et nous faisons de no",
+      "author": "morimens_15",
+      "reactions": 10,
+      "channel": "🔸chaîne-française"
+    },
+    {
+      "id": "1465656651012112509",
+      "channel_id": "1326453763355185215",
+      "content": "Hi Keepers,\n\nOur translation exe thing is broken and we're trying our best to fi",
+      "author": "morimens_15",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1465658282268954780",
+      "channel_id": "1170692781216378960",
+      "content": "Hi Keepers,\n\nOur translation exe thing is broken and we're trying our best to fi",
+      "author": "morimens_15",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465657453034209465",
+      "channel_id": "1300659495550062592",
+      "content": "키퍼 여러분, 안녕하세요. 현재 번역 실행 도구에 오류가 발생하여 수정에 최선을 다하고 있습니다. 번역된 내용이 게임 내에 제대로 반영되지 않고",
+      "author": "morimens_15",
+      "reactions": 9,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1465657742805958923",
+      "channel_id": "1300659662311526512",
+      "content": "¡Hola, Keepers! Nuestra herramienta de traducción se ha estropeado y estamos hac",
+      "author": "morimens_15",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1465688753648701524",
+      "content": "Hello there, discord rain here, back at it again for another beginner comp. Not ",
+      "author": "rain_scarlet",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1465669784510402561",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "taayoui",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1465692072811036860",
+      "channel_id": "1326453763355185215",
+      "content": "oh wait clem technically counts as a dimensional alien too",
+      "author": "nikolazuli",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1465693929717370946",
+      "channel_id": "1326453763355185215",
+      "content": "...is moimi muted or just shy?",
+      "author": "nikolazuli",
+      "reactions": 8,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1465660679888572478",
+      "channel_id": "1170692781216378960",
+      "content": "The ghost of recommending Nymphaea is back",
+      "author": "sirtealot",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465690629756424284",
+      "channel_id": "1170692781216378960",
+      "content": "I drink alcohol and coffee",
+      "author": "brainrot_in_a_vat",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465657555056463923",
+      "channel_id": "1300659580446969918",
+      "content": "Привет, Хранители! Наш инструмент для импорта перевода сломался, и мы делаем всё",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1465693006383415297",
+      "channel_id": "1326453763355185215",
+      "content": "down with the bourgeois class (women who spend 16 hours a day in the lab)",
+      "author": "insigible",
+      "reactions": 7,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1465711179304534111",
+      "channel_id": "1400749543288475770",
+      "content": "yea but when it comes to shield generation cuz some extra quests during some cha",
+      "author": "halloweenwitch2293",
+      "reactions": 7,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1465636351549374549",
+      "channel_id": "1131839817982947429",
+      "content": "佬...都會打H4-10...",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1465596468336263178",
+      "channel_id": "1170692781216378960",
+      "content": "even tho he has a rare good point",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1465685493713993789",
+      "channel_id": "1170692781216378960",
+      "content": "I think they can't type for whatever reason",
+      "author": "sirtealot",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

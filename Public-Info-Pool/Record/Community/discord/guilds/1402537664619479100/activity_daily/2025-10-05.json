@@ -1,0 +1,32 @@
+{
+  "date": "2025-10-05",
+  "messages": 24,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 22,
+    "project-coordination": 2
+  },
+  "hourly_activity": {
+    "5": 19,
+    "6": 2,
+    "22": 1,
+    "15": 1,
+    "21": 1
+  },
+  "message_types": {
+    "0": 22,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1424272748976410654",
+      "channel_id": "1402941858606219294",
+      "content": "google search for that exact phrase returns only morimens stuff",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "date": "2026-03-08",
+  "messages": 109,
+  "unique_authors": 12,
+  "reactions_total": 40,
+  "attachments": 7,
+  "channel_activity": {
+    "なんでも雑談": 96,
+    "誰でも質問": 10,
+    "描きたい時に描いてます": 3
+  },
+  "hourly_activity": {
+    "0": 2,
+    "1": 2,
+    "3": 3,
+    "6": 1,
+    "7": 21,
+    "8": 35,
+    "9": 1,
+    "10": 4,
+    "11": 15,
+    "12": 13,
+    "13": 3,
+    "14": 1,
+    "15": 8
+  },
+  "message_types": {
+    "0": 87,
+    "19": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1480173681538896085",
+      "channel_id": "1377478664609857647",
+      "content": "交流会で合流する子たちに手作りのキーホルダーを",
+      "author": "uru_neo",
+      "reactions": 9,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480107311958855732",
+      "channel_id": "1479041796121165915",
+      "content": "たまには",
+      "author": "uru_neo",
+      "reactions": 5,
+      "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1480087653008412703",
+      "channel_id": "1377478664609857647",
+      "content": "攻撃防御でもダイス振ってもバチ当たらんでしょとは思った",
+      "author": "ecstasyrb",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480148550510710837",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "ugen_22zi",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480219501134876743",
+      "channel_id": "1479041796121165915",
+      "content": "ゆるんゆるん",
+      "author": "uru_neo",
+      "reactions": 3,
+      "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1480112169592029240",
+      "channel_id": "1377478664609857647",
+      "content": "界域知識上げるためだけのpt",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480118780934885426",
+      "channel_id": "1377478664609857647",
+      "content": "今作主人公（メタモン）とポケモンによる交配機能があるらしい…！（大嘘）",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480145335060926689",
+      "channel_id": "1377478664609857647",
+      "content": "ベトコンラーメン",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480159388827389972",
+      "channel_id": "1377478664609857647",
+      "content": "# 月曜日が始Monday",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480018047547740160",
+      "channel_id": "1377478664609857647",
+      "content": "24と触腕が吹き飛ばしました",
+      "author": "ecstasyrb",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480110801812586616",
+      "channel_id": "1377478664609857647",
+      "content": "あ、全然そんなことないので大丈夫ですよ",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480110951536787517",
+      "channel_id": "1377478664609857647",
+      "content": "永続チップは一時的なチップの半分(3凸)なので、16の半分で8で見積もってますねー",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480111509727350794",
+      "channel_id": "1377478664609857647",
+      "content": "ワンワンワン構成割とPvE強いんだよなw",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480120804187443263",
+      "channel_id": "1377478664609857647",
+      "content": "4vAS0 とか呼ばれてたかもしれない。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480121345131020318",
+      "channel_id": "1377478664609857647",
+      "content": "青色だったら改造すぎる。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480122888794144780",
+      "channel_id": "1377478664609857647",
+      "content": "昔､色違い6vメタモン流れてきたことがあったんですが､\n多分改造産だったんだろうなぁー(遠い目)",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1480181085982953522",
+      "channel_id": "1377478664609857647",
+      "content": "銀のたこの導きがあらんことを",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
+}

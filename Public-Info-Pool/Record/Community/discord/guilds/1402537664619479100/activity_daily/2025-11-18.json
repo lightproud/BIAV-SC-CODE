@@ -1,0 +1,67 @@
+{
+  "date": "2025-11-18",
+  "messages": 49,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "general-discussion": 46,
+    "Some of WoD names were replaced by machine translations in TH": 1,
+    "Deleting previous, already compiled csv files": 2
+  },
+  "hourly_activity": {
+    "3": 16,
+    "4": 5,
+    "8": 6,
+    "9": 18,
+    "13": 1,
+    "14": 2,
+    "5": 1
+  },
+  "message_types": {
+    "19": 10,
+    "0": 36
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440179665510600776",
+      "channel_id": "1402941858606219294",
+      "content": "They created individual in-game descriptions for certain cards that called for n",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1440179788605296681",
+      "channel_id": "1402941858606219294",
+      "content": "<:karen_nervous:1408324291237511259> i stayed late to fix these yesterday evenin",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1440190439113101403",
+      "channel_id": "1402941858606219294",
+      "content": "sure!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1440265680157933689",
+      "channel_id": "1402941858606219294",
+      "content": "||Yummy Vanilla||",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1440183384864460800",
+      "channel_id": "1437270403587248229",
+      "content": "-deleting previous files:\n\ndeleting files you previously uploaded to GitHub won'",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "Deleting previous, already compiled csv files"
+    }
+  ]
+}

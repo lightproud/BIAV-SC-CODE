@@ -1,0 +1,219 @@
+{
+  "date": "2024-12-10",
+  "messages": 3473,
+  "unique_authors": 144,
+  "reactions_total": 276,
+  "attachments": 220,
+  "channel_activity": {
+    "🔸綜合討論": 566,
+    "🔸阵容构建": 34,
+    "🔸morimens-game-chat": 2622,
+    "🔸剧情交流": 13,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 2,
+    "🔸한국어-채팅방": 5,
+    "🔸русский-канал": 38,
+    "🔸phòng-chat-tiếng-việt": 83,
+    "🔸canal-español": 64,
+    "🔸canal-português": 3,
+    "🔸ruang-obrolan-indonesia": 16,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "腳本及外掛處理規則": 9,
+    "🌌【已開獎】超越維度的祝福": 2,
+    "遊戲大廳能否可以自行更改遊戲的BGM?": 1,
+    "原初之影 瘋狂之視 釋放鑰令不會抽牌": 3,
+    "請問限定角活動的sr命輪會復刻或是投入商店嗎？": 2,
+    "如果活下來，可以出按照調查排行一鍵穿戴命輪或密契的功能嗎？": 1,
+    "有人知道蘿坦是對應克蘇魯的哪一隻嗎": 1,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "我們偉大的音樂家（哈姆林樓？）": 1,
+    "Ryker": 3
+  },
+  "hourly_activity": {
+    "0": 76,
+    "1": 159,
+    "2": 324,
+    "3": 52,
+    "4": 21,
+    "5": 73,
+    "6": 159,
+    "7": 119,
+    "8": 347,
+    "9": 202,
+    "10": 103,
+    "11": 74,
+    "12": 232,
+    "13": 274,
+    "14": 175,
+    "15": 465,
+    "16": 102,
+    "17": 34,
+    "18": 124,
+    "23": 29,
+    "19": 95,
+    "20": 35,
+    "21": 65,
+    "22": 134
+  },
+  "message_types": {
+    "0": 2786,
+    "19": 663
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1316061480575172659",
+      "content": "守密人：\n        近期校務處觀察到部分守密人存在使用外掛、腳本等第三方工具實現自動戰鬥，以獲取收益。\n        為保證全體守密人遊戲環境的公平公正",
+      "author": "morimensstaff02",
+      "reactions": 36,
+      "channel": "腳本及外掛處理規則"
+    },
+    {
+      "id": "1315861298369527909",
+      "content": "Doodle a while ago",
+      "author": "myceliumycete",
+      "reactions": 18,
+      "channel": "Ryker"
+    },
+    {
+      "id": "1316191520143052880",
+      "content": "懶惰使我不會遭受懷疑",
+      "author": "ice_storys",
+      "reactions": 13,
+      "channel": "腳本及外掛處理規則"
+    },
+    {
+      "id": "1316062025977303060",
+      "content": "額外",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1315961708384354364",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ting8409",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316045600633917531",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "aprohectus",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315988959092019201",
+      "channel_id": "1170692781216378960",
+      "content": "Getting there",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1316030232523702353",
+      "channel_id": "1173463482503536711",
+      "content": "不是每個人都有本源",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1316036332799135794",
+      "channel_id": "1173463482503536711",
+      "content": "这下氪金也没有了",
+      "author": "qiamo0664",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1316043013167779861",
+      "channel_id": "1300659662311526512",
+      "content": "de orgullo puedo  decir que tengo todos los pj",
+      "author": "yaoshidoppa",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1316064286447108137",
+      "channel_id": "1131839874132090890",
+      "content": "每隻角色都是ssr<:Heartbeat:1236951458176565389>",
+      "author": "ailiduo",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1315887475973165057",
+      "channel_id": "1131839817982947429",
+      "content": "羊妈爱我，125抽3只<:cry:1239910167668326480>",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316043816209223680",
+      "channel_id": "1131839817982947429",
+      "content": "在我床上",
+      "author": "mob1065",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315887002612400228",
+      "content": "第二十三期融災禁區\n\n感覺回到了深潛27000時代，但是終末黑潮比較噁心，所以實際上略難於當時",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    },
+    {
+      "id": "1315884071603142687",
+      "channel_id": "1131839817982947429",
+      "content": "突然想起來要打融災",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1315987252953747487",
+      "channel_id": "1131839817982947429",
+      "content": "我唯一能想到的就是当神父的回血包",
+      "author": "xuanxue007",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316003300113387541",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "pray_unbeliever",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316039451729985546",
+      "channel_id": "1131839817982947429",
+      "content": "比如發情",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316073361360814162",
+      "channel_id": "1131839817982947429",
+      "content": "我还以为我前几天只是说着",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1316037596627079208",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

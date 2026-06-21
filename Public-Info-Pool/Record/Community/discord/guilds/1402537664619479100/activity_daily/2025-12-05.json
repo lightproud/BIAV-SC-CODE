@@ -1,0 +1,38 @@
+{
+  "date": "2025-12-05",
+  "messages": 9,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 2,
+  "channel_activity": {
+    "general-discussion": 7,
+    "project-coordination": 2
+  },
+  "hourly_activity": {
+    "4": 6,
+    "5": 1,
+    "22": 2
+  },
+  "message_types": {
+    "0": 8,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1446351214609436844",
+      "channel_id": "1402941858606219294",
+      "content": "Translating Frenzy feels like I'm writing smut.. .-.",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1446625262870728847",
+      "channel_id": "1416615133479960647",
+      "content": "@everyone \nI'm beginning the process of revamping the coordination repo with the",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}

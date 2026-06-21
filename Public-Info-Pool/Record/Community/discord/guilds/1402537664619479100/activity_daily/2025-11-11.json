@@ -1,0 +1,160 @@
+{
+  "date": "2025-11-11",
+  "messages": 86,
+  "unique_authors": 6,
+  "reactions_total": 28,
+  "attachments": 6,
+  "channel_activity": {
+    "english-english": 1,
+    "general-discussion": 85
+  },
+  "hourly_activity": {
+    "7": 23,
+    "6": 49,
+    "12": 4,
+    "13": 8,
+    "20": 2
+  },
+  "message_types": {
+    "19": 23,
+    "0": 63
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1437687563581259879",
+      "channel_id": "1402941858606219294",
+      "content": "Ahh and another thing...\n\nWe are planning to change the place name 阿库特 from **Ac",
+      "author": "morimens_15",
+      "reactions": 5,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437689845219721216",
+      "channel_id": "1402941858606219294",
+      "content": "right now out of like 150k lines of text, 100k lines have been retranslated by h",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437689055826411541",
+      "channel_id": "1402941858606219294",
+      "content": "we will start accepting a second batch of volunteers maybe next month (anni patc",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437692418337017856",
+      "channel_id": "1402941858606219294",
+      "content": "like this one",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437790322271846460",
+      "channel_id": "1402941858606219294",
+      "content": "可以是可以。但一般来说单个唤醒体我们不会写单人获得力量、疯狂这些。都会写成通俗易懂的语言。我思考了一下，除非单个的唤醒体状态能够和CZN一样清晰展示，否则不适合",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437689138353541141",
+      "channel_id": "1402941858606219294",
+      "content": "Mia is our second inhouse translator, she now focuses on doing LQA testing in ga",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437709480379945000",
+      "channel_id": "1402538040253087766",
+      "content": "hey, not to overstep my role/position but while I do agree that the left is much",
+      "author": ".dredge.",
+      "reactions": 1,
+      "channel": "english-english"
+    },
+    {
+      "id": "1437689344671355001",
+      "channel_id": "1402941858606219294",
+      "content": "retranslated loading screen because we saw a post saying those translations cont",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437689559734554687",
+      "channel_id": "1402941858606219294",
+      "content": "lol that reminds me of the Lovecraft's Cat Event incident (dw I fixed it)",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437690078016049213",
+      "channel_id": "1402941858606219294",
+      "content": "I'm working on Ramona, Ogier, Lotan and Doll kits right now because I'm also con",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437691111069057024",
+      "channel_id": "1402941858606219294",
+      "content": "sounds good! I believe I added everything from my repo to the pull request at BI",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437691505497215106",
+      "channel_id": "1402941858606219294",
+      "content": "Yeah the \"skills\" sheet and \"languageconfig\" sheet are a mess they throw a bit o",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437710794342269008",
+      "channel_id": "1402941858606219294",
+      "content": "I feel like the status shouldn't be used in the text unless you actually get a b",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437782452834930849",
+      "channel_id": "1402941858606219294",
+      "content": "yes we're just done with that",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437688708957605959",
+      "channel_id": "1402941858606219294",
+      "content": "welcome!!",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437688909701058650",
+      "channel_id": "1402941858606219294",
+      "content": "ooh omg insigible yay!!!!!!!!",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1437688923655503973",
+      "channel_id": "1402941858606219294",
+      "content": "Yes, we have retranslated the loading screen lines it will be live on anni patch",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}

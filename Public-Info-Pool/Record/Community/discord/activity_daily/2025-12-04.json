@@ -1,0 +1,256 @@
+{
+  "date": "2025-12-04",
+  "messages": 11010,
+  "unique_authors": 281,
+  "reactions_total": 1386,
+  "attachments": 707,
+  "channel_activity": {
+    "🔸lets-count": 31,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 681,
+    "🔸general-chat": 396,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 887,
+    "🔸忘却前夜┊morimens-tv": 3,
+    "🔸机器人命令┊bot-commands": 36,
+    "🔸剧情交流": 4,
+    "🔸晒卡分享": 73,
+    "🔸相位对弈": 1,
+    "🔸交友频道": 10,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 43,
+    "🔸deutscher-chatraum": 8,
+    "🔸русский-канал": 264,
+    "🔸phòng-chat-tiếng-việt": 6,
+    "🔸canal-español": 333,
+    "🔸canal-português": 91,
+    "🔸ruang-obrolan-indonesia": 181,
+    "🔸ห้องสนทนาภาษาไทย": 91,
+    "🔸traphase": 58,
+    "🔸lore-chat": 352,
+    "🔸綜合討論": 982,
+    "🔸阵容构建": 38,
+    "🔸morimens-game-chat": 6320,
+    "Some doodles": 1,
+    "I found a keeper in the snow": 2,
+    "Morimens things": 11,
+    "Tulu Pencil Art": 1,
+    "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!": 2,
+    "弥萨格留言墙┊Mythag Message Wall": 1,
+    "求神国推图输出手法以及星辰篇推图阵容相关建议": 3,
+    "新人求助": 5,
+    "萌新該怎麼玩忘卻": 14,
+    "Teambuilding for D-tide and arc  2 clear": 2,
+    "D-Tide Team Suggestions": 1,
+    "Need help making D-Tide team": 8,
+    "What should I prioritize?": 1,
+    "V2.4.0.10 在线维护公告": 5,
+    "关于【献祭】的bug修复": 3,
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 4,
+    "Feedback/Suggestion from a new player": 1,
+    "✅「Answered」Please make final boss ch4 astral reign story skippable": 2,
+    "💭「Processing」Bleed Bug": 1,
+    "✅「Answered」Bonus Damage and Fortress": 2,
+    "💭「Processing」Crashing Issue": 1,
+    "💭「处理中」闪退情况出现": 1,
+    "✅「已回答」錯字": 1,
+    "💭「处理中」更新问题": 4,
+    "所以降生儀式不吃固傷算bug還是正設": 1,
+    "原本超驗存在每週產出的調查徽章和技能材料現在可以去哪裡補？": 9,
+    "✅「已回答」我抽獎時怎麼卡BUG了": 1,
+    "✦关卡地图「幻梦深潜」总览 V2.4.0.7版本✦": 2,
+    "蓋個圖樓": 6,
+    "我也丟一下之前畫的 圖樓": 3,
+    "1446091938456539279": 4,
+    "1417419008898109492": 1,
+    "1446286446599078021": 2,
+    "1446222569702166743": 1,
+    "1445641235288031362": 1,
+    "1441326394817908736": 2
+  },
+  "hourly_activity": {
+    "0": 430,
+    "1": 227,
+    "3": 638,
+    "4": 510,
+    "5": 238,
+    "6": 209,
+    "7": 422,
+    "8": 373,
+    "9": 482,
+    "12": 641,
+    "13": 540,
+    "17": 618,
+    "19": 482,
+    "20": 431,
+    "21": 246,
+    "23": 267,
+    "2": 582,
+    "10": 716,
+    "11": 373,
+    "14": 490,
+    "15": 685,
+    "16": 719,
+    "18": 382,
+    "22": 309
+  },
+  "message_types": {
+    "0": 1432,
+    "19": 603,
+    "20": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1446222569702166743",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1446259143714537634",
+      "channel_id": "1170692781216378960",
+      "content": "Is this good guys? 🤔",
+      "author": "canker.thore",
+      "reactions": 17,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446049310415388784",
+      "content": "丟媽咪",
+      "author": "souri.10244",
+      "reactions": 16,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1446286446599078021",
+      "content": "",
+      "author": "exhibitionism",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1446056669766225982",
+      "channel_id": "1131839874132090890",
+      "content": "~~我這邊有一套不怕脆弱虛弱以及易傷的隊伍可以推薦~~",
+      "author": "wild_pansy",
+      "reactions": 14,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1446097312269996144",
+      "content": "畫了各界域的推",
+      "author": "tanchen0811",
+      "reactions": 13,
+      "channel": "我也丟一下之前畫的 圖樓"
+    },
+    {
+      "id": "1445997577261551629",
+      "channel_id": "1435483703114596503",
+      "content": "My content is mostly about art more than gaming stuff\nSo GMurphy Speedpaint is h",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 12,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1445977562370277376",
+      "channel_id": "1170692781216378960",
+      "content": "500 Aurita",
+      "author": "wawafura",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1445997481744666634",
+      "channel_id": "1170692781216378960",
+      "content": "pulling kath e3 and castor e3 opened my eyes a lot",
+      "author": "arisuu0604",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446122764741115955",
+      "channel_id": "1170692781216378960",
+      "content": "Noted",
+      "author": "aurora3981",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1446192476665942179",
+      "channel_id": "1174983699935277147",
+      "content": "呀，又来双金了。",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1446053893719982112",
+      "content": "<:W_falldown:1400771812542906389>",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "I found a keeper in the snow"
+    },
+    {
+      "id": "1446180833189822614",
+      "content": "When i play H4-10 and want to retry battle to play more optimize (without the ne",
+      "author": "melwyn7591",
+      "reactions": 8,
+      "channel": "✅「Answered」Please make final boss ch4 astral reign story skippable"
+    },
+    {
+      "id": "1446091938456539279",
+      "content": "Currently when editing a covenant set, the covenants show as unfiltered, which m",
+      "author": "thigh_god.",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1446039194710573106",
+      "content": "November contributions list is here!\nWe sincerely thank the below <@&13015898041",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1445949958334447788",
+      "channel_id": "1355630588094320661",
+      "content": "2581 (You will never know what I will do next..)",
+      "author": "megadumb_aru",
+      "reactions": 7,
+      "channel": "🔸lets-count"
+    },
+    {
+      "id": "1446126096465789008",
+      "channel_id": "1173463482503536711",
+      "content": "本以為要死了開始匆忙趕稿結果不小心死而復生所以~~開始亂了~~",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1446081973692006512",
+      "channel_id": "1131839817982947429",
+      "content": "因為耶穌手上有兩個孔子",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1446108948292960296",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1446278376112394300",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sakura8901",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

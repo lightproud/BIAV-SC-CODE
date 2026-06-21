@@ -1,0 +1,220 @@
+{
+  "date": "2024-10-05",
+  "messages": 3958,
+  "unique_authors": 118,
+  "reactions_total": 276,
+  "attachments": 127,
+  "channel_activity": {
+    "🔸綜合討論": 2279,
+    "🔸阵容构建": 85,
+    "🔸morimens-game-chat": 1217,
+    "🔸相位对弈": 294,
+    "📜血鏈 · 希洛喚醒體&命輪介紹": 2,
+    "據說主美走了？": 1,
+    "我们环娜也想要新的专武": 2,
+    "我沒有看到登入窗口": 1,
+    "程式員扣錢😡": 5,
+    "主線難度": 11,
+    "血肉沒羊媽，超維沒詩人是不是融災打不了第二層之後？？": 16,
+    "想問一下這個配隊打7-18是可行的嗎": 9,
+    "回溯 bug 反馈": 5,
+    "出血机制相关问题反馈": 7,
+    "水母+哈姆林": 11,
+    "如鸢上线了忘却前夜不送点啥嘛": 1,
+    "命輪溢出的補償機制": 3,
+    "新手前期養成推主線攻略--莉茲隊(上)": 2,
+    "Posse List": 2,
+    "高维之茧无限定SSR375分击破": 1,
+    "關卡地圖「融災禁區」總覽ⅩⅧ": 1,
+    "我們會在海洋深處腐爛": 1,
+    "[莉莉弗朗西斯]说一百遍喜欢我就留下": 1,
+    "🌕🎼": 1
+  },
+  "hourly_activity": {
+    "1": 43,
+    "2": 56,
+    "3": 46,
+    "4": 49,
+    "5": 131,
+    "6": 89,
+    "7": 298,
+    "8": 210,
+    "9": 300,
+    "10": 280,
+    "11": 276,
+    "12": 151,
+    "13": 269,
+    "14": 326,
+    "15": 249,
+    "16": 458,
+    "17": 28,
+    "18": 103,
+    "19": 133,
+    "0": 15,
+    "20": 102,
+    "21": 78,
+    "22": 239,
+    "23": 29
+  },
+  "message_types": {
+    "0": 3190,
+    "19": 685
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1292105509834592318",
+      "channel_id": "1170692781216378960",
+      "content": "Hello, Morimens English chat! Today I— WHOOPS! (drops this on the floor)",
+      "author": "blastertism",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1292115903194071112",
+      "content": "Uid:100439362",
+      "author": "yingmai_",
+      "reactions": 16,
+      "channel": "[莉莉弗朗西斯]说一百遍喜欢我就留下"
+    },
+    {
+      "id": "1292109177744916590",
+      "content": "uid:100333221",
+      "author": "lemoncandy25",
+      "reactions": 16,
+      "channel": "🌕🎼"
+    },
+    {
+      "id": "1292136580881977374",
+      "content": "菲因特:我不叫死抗女！",
+      "author": "tranquil_monkey_73179",
+      "reactions": 6,
+      "channel": "血肉沒羊媽，超維沒詩人是不是融災打不了第二層之後？？"
+    },
+    {
+      "id": "1292177505695826003",
+      "channel_id": "1131839817982947429",
+      "content": "佬",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292099867149078656",
+      "channel_id": "1131839874132090890",
+      "content": "https://tenor.com/view/li-gor-lkyk-gif-25542628",
+      "author": "cra0261_",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1292029800831123487",
+      "channel_id": "1131839817982947429",
+      "content": "難道忘卻前夜要壯大了嗎",
+      "author": "whimsical_starfish_19845",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292090233457737761",
+      "channel_id": "1131839817982947429",
+      "content": "床寶",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292182256940613745",
+      "channel_id": "1131839817982947429",
+      "content": "【我必须立刻反击-哔哩哔哩】 https://b23.tv/NnzcAhl",
+      "author": "jiujiyuzhouguairen",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292187681316540458",
+      "channel_id": "1131839817982947429",
+      "content": "很好的攻略，哪里领一只3启旺达？🥲",
+      "author": "luoqixikiss",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292064506339393577",
+      "content": "外置的R命倫曹位(",
+      "author": "hananichiya",
+      "reactions": 4,
+      "channel": "主線難度"
+    },
+    {
+      "id": "1292131278535266325",
+      "content": "可以，但是极其痛苦。所以就算像我这种啥都有的也不就打两个满分，剩下的打最低等级收菜。",
+      "author": "luoqixikiss",
+      "reactions": 4,
+      "channel": "血肉沒羊媽，超維沒詩人是不是融災打不了第二層之後？？"
+    },
+    {
+      "id": "1291952419386953759",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292021120190513154",
+      "channel_id": "1131839817982947429",
+      "content": "還有圖魯",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292030317137231894",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292034220633489549",
+      "channel_id": "1131839817982947429",
+      "content": "只要能不倒\n你管它多怪",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292053700755456153",
+      "channel_id": "1131839817982947429",
+      "content": "cra決定用紅打滿分證明自己是對的",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292120190187995249",
+      "channel_id": "1131839817982947429",
+      "content": "你好，法洛思並不存在，可以請你糾正你的說法嗎",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292131180346474496",
+      "channel_id": "1131839817982947429",
+      "content": "這樣他就沒法玩下水道了",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1292132979963068467",
+      "channel_id": "1131839817982947429",
+      "content": "~~我是覺得滿傷害更簡單啦~~",
+      "author": "cra0261_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

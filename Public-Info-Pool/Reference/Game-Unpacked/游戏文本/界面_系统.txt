@@ -1,0 +1,2148 @@
+编辑器下是否使用AB加载资源。启动前设置好，中途修改无效
+编辑器下是否使用AB加载Lua。启动前设置好，中途修改无效
+加载时是否需要传后缀。启动前设置好，中途修改无效
+是否自动回收预制件，开启后无需手动UnLoadAsset（调用了也不起效。外部不要缓存预制件，因为自动回收后缓存会失效)。启动前设置好，中途修改无效.
+修复功能将删除所有已下载的游戏资源，点选确认后将重新下载。
+确认是否清除资源？
+○ 修复「霜之语」和「霜之怒」提示语错误的问题。
+● 修复了「设置」中部分选项开关未正确生效的问题。
+·邮件到达上限时，系统会自动删除最早的邮件。
+● 優化了限時紀行活動「葬骸紀行」界面的任務展示，現在默認展示 4 行有余，提示守密人可以繼續滑動查看。
+is_oversea game，支付初始化接口未返回支付预下单的域名，所以海外游戏读取global-config里的支付域名来兜底
+当前是新品牌altplus的游戏，直接走新H5收银台的支付流程，不再读取灰度下发参数。[不区分端的OS系统]
+支付初始化接口已经返回了支付预下单的域名，直接用就好，不再读取global-config的配置, gps_server_domain =
+LanguageConfig_Socialize_CancelAttention_CN|助战取消按钮
+● 修复了调查行动「忘却前夜」篇和「星辰正位之刻」篇，在部分语言设置时各处描述不一致的问题。
+● 修复了语言设置为「English(GPT beta)」时，命轮「无法完成的演算」的描述异常的问题。
+● 修復了「無光之境」解鎖後仍然提示「未解鎖」無法進入關卡的問題。
+至此，人们开始系统性培养拥有足够精神力的调查员，以更好地抵抗愈演愈烈的融蚀危机。
+彌薩格大學校務處將於12月11日21:45(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 當喚醒尚未完成時，不能再進行下一次喚醒，此時點擊「喚醒」按鈕會有提示「上一次喚醒尚未完成，請稍候」。希望能減少守密人在網絡狀態較差時多次點擊喚醒導致損失的情況。
+● 現在對方喚醒體和己方墓碑在滿狂氣時不再高亮提示你可以點擊。
+彌薩格大學校務處將於12月12日21:40(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 選擇「血肉 」「超維」界域時的提示修改為「該界域暫未開放相位對弈」，使其與實際相符。
+子弹打入躯体溅起血肉，她随意抹了一把脸，回头想要确认年轻人的安全，却发现对方已经不知何时离开了。
+·每个唤醒体同时只能承接一个派遣任务。若在任务途中取消派遣，可以快速释放占用的唤醒体，但将无法获得该任务的奖励。
+·在「融灾禁区」中可以使用 1 次助战，助战唤醒体与命轮不会受到限制法则的影响；重置带有助战唤醒体的挑战队伍时，也会返回 1 次助战次数。
+ejoysdk_config没有设置server_domain，开始从meta_config读取
+ejoysdk_config没有设置publish_area，开始从meta_config读取
+常量@序章关卡屏蔽设置按钮
+常量@时装源液购买确认界面货币栏
+常量@任务类型关卡目标提示
+常量@助战列表刷新提示条件
+常量@活动结束后的关卡提示
+您正在注销账号，请注意注销期间无法进入游戏。如您需要取消注销流程，请联系客服或在app端重新激活。
+·精准匹配：开启设置会寻找更势均力敌的对手，但这会延长匹配到对手的等待时间。关闭设置会会缩短匹配到对手的等待时间，但对手相对不那么势均力敌。
+·模拟对手：开启设置将允许匹配时看情况分配模拟对手，这会缩短匹配到对手的等待时间。关闭设置将仅允许匹配时分配真人对手，这会延长匹配到对手的等待时间。
+· 每场对局中系统会随机选取一个造物，在对战中生效。
+设置@灵啡肽回满
+设置@分辨率
+设置@画面设置
+设置@狂气爆发使用确认
+设置@图像质量
+设置@委派已完成
+设置@用户中心
+设置@抗锯齿
+设置@用户协议
+设置@PC快捷键@界域能力
+设置@陀螺仪
+设置@PC快捷键@抽牌堆
+设置@PC快捷键@回合结束
+设置@PC快捷键@上一张牌
+设置@PC快捷键@下一张牌
+设置@PC快捷键@确认出牌
+设置@显示快捷键
+设置@PC快捷键@钥令
+设置@红蓝偏移
+设置@游戏文字
+设置@登录奖励
+设置@战斗动态背景
+设置@目标帧率
+设置@窗口未聚焦音效
+设置@实时光
+设置@退出游戏
+设置@场景特效
+设置@渲染精度
+设置@特效质量
+设置@裁剪边缘模糊
+「弥萨格唤醒体管理处提示：不要给莉莉喂太多东西吃！！就算是守密人也不准再投喂她了！」
+Item_117844_Desc|弥萨格定期进行的月球距离测量，用于确认黑池内银芯的稳定性。
+● 修復了生日設置確認提示中日期描述錯誤的問題。
+获得密会资金和人力等方面的帮助后，华德的研究更进一步，确认了融蚀的特点、融蚀与异变体之间的关系，并初步总结了融蚀侵蚀的不同阶段特征。
+不过看在那些诚意十足的报酬的份上，朵尔还是贴心地完成了售后服务：那颗保持了活性的大脑被放入脑缸，而后被装载了恰好匹配其性能的装置系统。
+此外，我们注意到，部分守密人可能通过非官方渠道（如第三方代充）进行充值。在此，我们郑重提示：代充行为存在账号被盗、财产损失等严重风险，官方无法对非官方渠道造成的任何损失提供保障。请守密人通过官方渠道进行充值，以保障您的账号及财产安全！
+LanguageConfig_RepairTipsContent_CN|修复功能将删除所有已下载的游戏资源，点选确认后将重新下载。
+·助战唤醒体需满足当前编队的界域限制，不符合条件的助战唤醒体无法上场，守密人可以返回调整编队后再进行上场。
+● 優化了「助戰」介面中查看喚醒體的交互，取消了「放大鏡」按鈕、改為點擊「喚醒體立繪」查看詳情。
+● 新增了「戰鬥介面」中「詞綴說明」與「啟靈」有關的圖示標識與部分「衍生卡說明」提示。
+● 優化了「密契」的轉錄完成度提示資訊，在「校友會」、「守密人檔案」、「助戰」、「密契方案」介面中密契部分現在均會顯示轉錄完成度。
+● 優化了「相位對弈」的命輪裝備提示，現在裝備命輪會有一個視覺效果。
+● 部分守密人會出現大廳「典藏館」入口「新」提示無法移除的問題。
+彌薩格大學校務處將於1月5日2:55(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+·可以在战斗中使用「时序逆行」返回经历过的回合。
+常量@新提示移除时间
+提示语不是tooltips类型:
+设置语音频道的模式
+音频@设置界面状态
+音频@战斗结束返回探索
+● 修復了「探索」中在進行事件迅速選擇時可能會提示事件不存在的問題。
+● 修復了「調查行動」中關卡成就紅點提示可能無法消除的問題。
+● 修復了「商店」中月相觀測的「新」與「推薦」提示同時出現重疊的問題。
+常量@匹配系统循环间隔
+设置@Bloom
+·确认唤醒结果后【银辉初耀】卡池将会关闭。
+PanelText_UI_Collection_Panel_SetMainBg_Text_C_HideAwaker_Content|设置此图为宿舍背景后，来客立绘将隐藏
+● 优化了启灵回溯时，「唤醒体」还在派遣中的提示。
+·「朵尔」「奥吉尔」「萝坦」将会返回「调查徽章」× 2500。
+·「拉蒙娜」「环行·拉蒙娜」将会返回「残片·拉蒙娜」。
+·「艾继丝」「奥瑞塔」「艾瑞卡」将会返回「融蚀之珠」× 8000。
+·拒绝对战：若遇到不想与其对战的守密人创建者也可拒绝与其对战，拒绝过多会出现拉黑提示，可通过拉黑操作阻止其加入你的对战，直至解除拉黑。
+LanguageConfig_setUp_CN|设置
+设置奖励延迟超过5秒
+确认对<WeaponEffect_Num:{s1}>进行黑池归还吗？
+支付失败时，苹果返回的渠道订单号有值，此时进行一次票据上传, trans_id =
+SKErrorPaymentCancelled和SKErrorStoreProductNotAvailable 两种错误不用弹窗提示给用户
+ejoysdk 打印 acquire_base 返回参数, response status:
+没有设置player_info，使用 user_info 的 server_id:
+强更域名未设置，使用默认的域名，domain =
+·不同关卡解锁重现的条件不同，在未解锁时守密人可以查看重现弹窗中的解锁方式提示。
+LanguageConfig_Task_Dispatch_Callback_CancelBtn_CN|取消
+LanguageConfig_Task_Dispatch_Callback_ConfirmBtn_CN|确认
+LanguageConfig_StoreEnchantmentConfirm_CN|确认
+LanguageConfig_ActivationResonance_Tips_CN|共鸣点亮提示
+LanguageConfig_Formation_RenameTeam_Back_Btn_CN|取消
+LanguageConfig_Formation_RenameTeam_Sure_Btn_CN|确认
+Setup_18443_SetupTitle|狂气爆发和钥令使用确认
+LanguageConfig_Mail_BackpackFull_Title_CN|系统奖励补发
+Item_68850_Desc|「系统故障，阿巴阿巴……」
+取消进入客服公众号，中断支付
+type 不是 airline，直接返回
+设置当前游戏文字语言成功
+指引组件@唤醒体升级成功返回
+指引组件@唤醒体返回按钮
+LoginConfirm 登陆确认, %d, %s
+设置@PC快捷键@选择手牌6
+设置@PC快捷键@狂气爆发4
+Setup_54468_SetupTitle|画面设置
+设置@PC快捷键@狂气爆发3
+设置@PC快捷键@界域能力2
+Setup_54690_SetupTitle|取消与设置
+Setup_94404_SetupTitle|确认出牌
+设置@PC快捷键@多语言短key
+设置@PC快捷键@狂气爆发2
+设置@PC快捷键@选择手牌1
+设置@PC快捷键@取消与设置
+设置@PC快捷键@狂气爆发1
+设置@PC快捷键@选择手牌3
+设置@PC快捷键@选择手牌4
+设置@PC快捷键@选择手牌2
+设置@PC快捷键@选择手牌5
+设置@PC快捷键@选择手牌17
+设置@PC快捷键@选择手牌11
+设置@PC快捷键@选择手牌10
+设置@PC快捷键@选择手牌12
+设置@PC快捷键@选择手牌18
+设置@PC快捷键@选择手牌14
+设置@PC快捷键@选择手牌19
+设置@PC快捷键@选择手牌15
+设置@PC快捷键@选择手牌20
+设置@PC快捷键@选择手牌7
+设置@PC快捷键@选择手牌13
+设置@PC快捷键@选择手牌8
+设置@PC快捷键@选择手牌16
+设置@PC快捷键@选择手牌9
+LanguageConfig_Server_Stop_Desc_CN|服务器连接中断，稍后将返回登录页面。
+LanguageConfig_ExchangePlanSaveTips_CN|已保存「千面印章」不足时的置换设置
+LanguageConfig_MultiSelectBox_BuyConfirmText_CN|是否确认购买以下物品？
+● 「沉澱兌換」中鑰令「不平等交換」確認兌換提示資訊增加該鑰令的效果描述，方便守密人進行購買決策。
+确认KM.Z
+● 修復了從「喚醒體-命輪」進入「疊位」介面，返回時未回到之前選定命輪的錯誤。
+● 修復了「跳過劇情」確認提示中「今日不再提示」勾選框白圖的錯誤。
+● 修復了個別情況下商店中有錯誤的「新」提示的問題。
+● 修復了「異夢視界」和「典藏館」中，部分「新」提示無法被正確消除的問題。
+● 優化了「源液不足」的提示文本。
+● 修复了「异梦视界」和「典藏馆」中，部分「新」提示无法被正确消除的问题。
+● 优化了「源液不足」的提示文本。
+触发风控挑战，设置H5挑战完成的执行函数---
+LanguageConfig_CanceledText_CN|已取消
+LanguageConfig_TextCancelBan_CN|取消拉黑
+LanguageConfig_ComsumeSet_CN|置换设置
+{"tn":"1775499154000000093","lv":"error","e":"apm_span","ti":1775499154000,"m":"{\"attributes\":{\"pos_z\":0,\"scene\":\"TestScene\",\"Z1_test_label\":\"65559\",\"pos_y\":0,\"pos_x\":0},\"timeUnixNano\":\"1775499154000000093\",\"name\":\"apm_span\",\"body\":{\"name\":\"init_config\",\"spanId\":\"891405b12ca1cdea\",\"endTimeUnixNano\":\"1775499154717000000\",\"startTimeUnixNano\":\"1775499152615000000\",\"attributes\":{\"status\":200,\"headers.access-control-allow-headers\":\"DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Caller,Accept,Referer,Origin,uber-trace-id,retrievalToken\",\"headers.content-length\":\"173\",\"headers.access-control-allow-methods\":\"GET, POST, OPTIONS, PUT, DELETE\",\"headers.access-control-allow-credentials\":\"true\",\"headers.alt-svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"headers.via\":\"1.1 google\",\"body\":\"{\\\"state\\\":{\\\"code\\\":2000000,\\\"msg\\\":\\\"操作成功\\\",\\\"desc\\\":\\\"没有设置描述\\\",\\\"subCode\\\":2000000},\\\"id\\\":\\\"1775499152750\\\",\\\"data\\\":{\\\"configCheckTime\\\":1774428468285,\\\"clientConfig\\\":{}}}\",\"headers.date\":\"Mon, 06 Apr 2026 18:12:34 GMT\"},\"traceId\":\"70e68a3e4412480b891405b12ca1cdea\"}}"}
+T{"tn":"1775499154000000093","lv":"error","e":"apm_span","ti":1775499154000,"m":"{\"attributes\":{\"pos_z\":0,\"scene\":\"TestScene\",\"Z1_test_label\":\"65559\",\"pos_y\":0,\"pos_x\":0},\"timeUnixNano\":\"1775499154000000093\",\"name\":\"apm_span\",\"body\":{\"name\":\"init_config\",\"spanId\":\"891405b12ca1cdea\",\"endTimeUnixNano\":\"1775499154717000000\",\"startTimeUnixNano\":\"1775499152615000000\",\"attributes\":{\"status\":200,\"headers.access-control-allow-headers\":\"DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Caller,Accept,Referer,Origin,uber-trace-id,retrievalToken\",\"headers.content-length\":\"173\",\"headers.access-control-allow-methods\":\"GET, POST, OPTIONS, PUT, DELETE\",\"headers.access-control-allow-credentials\":\"true\",\"headers.alt-svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"headers.via\":\"1.1 google\",\"body\":\"{\\\"state\\\":{\\\"code\\\":2000000,\\\"msg\\\":\\\"操作成功\\\",\\\"desc\\\":\\\"没有设置描述\\\",\\\"subCode\\\":2000000},\\\"id\\\":\\\"1775499152750\\\",\\\"data\\\":{\\\"configCheckTime\\\":1774428468285,\\\"clientConfig\\\":{}}}\",\"headers.date\":\"Mon, 06 Apr 2026 18:12:34 GMT\"},\"traceId\":\"70e68a3e4412480b891405b12ca1cdea\"}}"}
+TipsType_20074_Desc|确认分解{s1}，获得{s2}吗？
+TipsType_20202_Desc|当前方案应用于{s1}，是否确认删除方案【{s2}】？
+TipsType_10641_Desc|切换语言后需重启客户端才能生效，是否确认？
+TipsType_100001_Desc|切换分辨率后需重启客户端才能生效，是否确认？
+TipsType_20352_Desc|即将与对方绑定，绑定后无法解绑，确认要继续绑定吗？
+TipsType_10621_Desc|是否确认使用<WeaponEffect_Num:{s1}>作为你的名字？
+TipsType_20169_Desc|是否确认选择唤醒体<OrangeQuality:「{s1}」>以及推荐命轮<OrangeQuality:「{s2}」>，作为本期活动的定向UP。
+TipsType_10741_Desc|当前队伍平均等级{s1}和守密人调查等级{s2}均低于推荐等级，调查会遇到非常大的挑战，是否确认？
+TipsType_20051_Desc|当前叠位将超过命轮的叠位等级上限，叠位后将根据溢出等级返还相应数量的命轮，是否确认？
+TipsType_20071_Desc|受守密人调查等级限制，唤醒体等级将提升至{s1}级，缺少的升级物资不会返还，是否确认提升？
+确认对<WeaponEffect_Num:{s1}>进行叠位回溯吗？
+LanguageConfig_Service_Not_Errcode_CN|功能提示：未找到提示代码
+LanguageConfig_RedemptionTips_10607_CN|系统繁忙，请稍后重试。
+LanguageConfig_risk_error_msg_requestLimit_CN|系统繁忙，请稍后再试。
+LanguageConfig_SocialSystemCancelCommonUseBattleHelp_CN|取消常用助战
+● 優化了在關注人數達到上限時繼續關注的提示文本，使其描述更加準確。
+● 修復了「戰鬥」中被擊敗後需要等一小段時間才會彈應急靈知體提示問題。
+● 修復了「校友會」關注人數達上限後的提示錯誤。
+● 修復了「選擇助戰」介面返回至「編隊」介面時，會出現畫面殘留的問題。
+● 修復了「隊伍配置」介面無法上場的提示文字未居中的問題。
+等等，让我们先确认一下，惹上麻烦的是哪一个「梅森」？
+LanguageConfig_SocialSystemSetBirthday_CN|设置生日
+LanguageConfig_SocialSystemSetRemarks_CN|设置备注
+LanguageConfig_SocialSystemCancelFollow_CN|取消关注
+LanguageConfig_PvpMatchCanceling_CN|正在取消…
+LanguageConfig_FriendGameNull_CN|邀请已取消
+LanguageConfig_PvPMoreGameBeCancelTips_CN|对方已取消
+LanguageConfig_CancelSelectAllAwaker_CN|全部取消
+LanguageConfig_CancelAutoBattle_CN|自动战斗已取消
+Apus.初始化设置天燕SDK
+type 不是 qr_login，直接返回
+支付的异常上报接口返回了, body=
+设置付费聊天消息已收，结果:
+登录请求GM数据返回: data:%s,errcode:%s
+LanguageConfig_ReplenishEnergy_Comfirm1_CN|确认
+========== 请求取消研究失败 ==========
+常量@转录出不小于指定档位的属性时需二次确认
+用户取消支付
+LanguageConfig_Battle_Win_Return_CN|返回指令卡选择
+支付初始化有返回cashier_url，直接使用
+LanguageConfig_Ticket_Revert_Btn_Return_CN|取消
+LanguageConfig_Shop_Confirm_Revert_Str_Title_CN|确认重置
+LanguageConfig_Shop_Remove_Btn_Select_CN|取消选中
+LanguageConfig_Shop_Confirm_Buy_Str_Title_CN|购买确认
+本次是支付取消，需要关闭当前订单
+LanguageConfig_Shop_Confirm_Buy_Btn_Back_CN|取消
+LanguageConfig_Task_Dispatch_SelectConfirm_CN|确认派遣
+支付初始化接口未返回收银台地址，需要读取global-config配置的收银台URL
+之前已经调用official_should_use_ejoypay读取过值了，直接返回旧的值就好
+此操作不可回退，请谨慎确认
+TipsType_20227_Desc|重置后，当前调查队伍的唤醒体、钥令和命轮都可以重新上场，并且额外挑战队伍将替代当前调查队伍，但该关卡额外通关获得的特训值也会扣除（不影响奖励状态），是否确认重置？
+TipsType_20213_Desc|<WeaponEffect_Num:{s1}>已在编队中触发超限因果，任意回溯将会导致超限因果失效，并且将会从编队中自动卸下，确认选择<WeaponEffect_Num:{s1}>开启回溯吗？
+设置当前游戏文字语言
+CommonID_System_Desc|系统
+CommonID_Tips_Desc|提示
+找不到提示id:
+PC编辑器上，特殊设置断线重连的无心跳时长，避免影响调试
+监听到返回游戏
+LanguageConfig_SocialSystemLeaveNoteName_CN|为【{s1}】备注名称，取消关注将清除备注
+修復了部分郵件點擊時，可能會錯誤地提示【郵件不存在】的問題。
+LanguageConfig_AlchemyDecomposeTrinketConfirmTIps_CN|本次分解物资包含<Blue:已叠位的密契>，物资价值较高，确认分解请在输入框中输入<Blue:正确答案>，点击确定后将进行分解。
+[PreLogin] PreLogin 开始设置开发期缓存账号
+音频@通用控件-特殊一级按钮（确认）
+音频@通用窗口-确认弹窗（小）-弹出
+音频@通用窗口-确认弹窗（中）-弹出
+音频@通用窗口-确认弹窗（中）-关闭
+音频@通用窗口-确认弹窗（小）-关闭
+音频@通用窗口-确认弹窗（大）-弹出
+音频@通用窗口-确认弹窗（大）-关闭
+音频@通用控件-特殊一级按钮（取消）
+========== 设置助战唤醒体失败 ==========
+========== 设置展示唤醒体失败 ==========
+========== 设置助战唤醒体成功 ==========
+========== 设置展示唤醒体成功 ==========
+英文语言设置异常问题说明
+LanguageConfig_ExchangeConfirm_CN|确认置换
+LanguageConfig_SettingPanelTitle_CN|设置
+副本协议:%s 返回data:%s errCode:%s
+协议:%s 返回data:%s errCode:%s
+LanguageConfig_Event_Shop_BuyBtn_Y_CN|确认
+LanguageConfig_Event_Shop_BuyBtn_N_CN|取消
+LanguageConfig_Buy_Jewel_Btn_Sure_CN|返回
+LanguageConfig_Server_Stop_Confirm_CN|确认
+LanguageConfig_StoreBuyConfirm_CN|确认
+LanguageConfig_StoreBuyCancel_CN|取消
+LanguageConfig_StoreEnchantmentCancel_CN|取消
+LanguageConfig_StoreSellCardCancel_CN|取消
+LanguageConfig_Event_ItemUseConfirm_CN|确认
+LanguageConfig_UniversalCancelButton_CN|取消
+LanguageConfig_UniversalAlertTitle_CN|提示
+LanguageConfig_BPChooseConfirmBtn_CN|确认
+LanguageConfig_Event_ItemUseCancel_CN|取消
+有登录态返回，缓存登录信息
+已经设置了player_info，server_id:
+ejoysdk 打印 login_with_token 返回参数
+支付成功，等待苹果服务器返回
+支付成功，等待游戏服务器返回
+强更可以使用设置的域名，domain =
+音频@唤醒体狂气充满提示音效
+音频@战斗-造物升级提示音效
+音频@战斗-大招释放确认
+音频@战斗-超限大招释放确认
+音频@通用控件-一级按钮（取消）
+音频@通用控件-三级按钮（取消）
+音频@通用控件-二级按钮（取消）
+音频@通用控件-收藏按钮（取消）
+音频@通用控件-二级按钮（确认）
+音频@通用控件-三级按钮（确认）
+音频@探索-设置窗口-收回
+音频@通用控件-一级按钮（确认）
+音频@通用控件-收藏按钮（确认）
+音频@探索-设置窗口-弹出
+音频@通用窗口-提示弹条
+音频@通用控件-确认框（勾选）
+音频@等级提升白条弹窗-二级提示
+音频@等级提升白条弹窗-一级提示
+音频@设置界面-关闭按钮（点击）
+音频@设置界面-下拉菜单（展开）
+音频@设置界面-下拉菜单（关闭）
+音频@设置界面-开启按钮（点击）
+音频@战斗UI取消拖出手牌音效
+音频@战斗UI弃牌堆返回音效
+音频@战斗UI抽牌堆返回音效
+[ReconnectMgr]返回重连结果：
+解锁后可设置为宿舍背景。
+功能@PVP系统
+确认对<WeaponEffect_Num:{s1}>进行养成回溯吗？
+<color=#ADC0CB>*可在「设置」中设定SR/R级命轮自动分解</color>
+TipsType_RailWaySaveAndExitInBattleTips_Desc|是否确认退出挑战?
+TipsType_20226_Desc|重置后，额外挑战队伍的唤醒体、钥令和命轮都可以重新上场，但该关卡额外通关获得的特训值也会扣除（不影响奖励状态），是否确认重置？
+<Blue:当前仍有「普通物品」>，是否确认？
+若支付已完成，请耐心等待系统发放奖励。
+Voice_6047_AwakerVoiceContent|我看起来一直很忙？是的，助手们偶尔能分担一些工作，但在某些研究上，我无可取代。 你想帮上忙？那就偶尔来确认一下，我是否还活着吧。
+TipsType_20056_Desc|挑战成功后，当前编队的四名唤醒体将无法出战{s1}的其他关卡，是否确认挑战？
+TipsType_20073_Desc|确认分解{s1}，获得{s2}吗？
+TipsType_20039_Desc|确认后本次调查将会失败，无法获得后续调查奖励，是否确认结束调查？
+TipsType_20114_Desc|确认选择<WeaponEffect_Num:{s1}>开启回溯吗？
+TipsType_10740_Desc|当前调查等级{s1}低于推荐等级{s2}，调查可能会遇到较大的挑战，是否确认？
+TipsType_20206_Desc|当前命轮已在编队{s1}中使用，分解后将会在编队中卸下该命轮，是否确认？
+TipsType_10618_Desc|当前队伍平均等级{s1}低于推荐等级{s2}，调查可能会遇到较大的挑战，是否确认？
+TipsType_20203_Desc|队伍中相同的命轮效果无法重复生效，{s1}已在当前队伍装备，是否确认装备？
+TipsType_20095_Desc|当前转录出的副属性中存在较好的属性，继续转录将不会保存，是否确认？
+·可在战斗中返回经历过的回合。
+·可返回至战斗的前 25 回合中的任意一个回合。
+TipsType_20128_Desc|{s1}已通关，需要进行重置才可以进行挑战，是否确认重置？
+任务@关卡目标提示V1.0支线达芙黛尔4_1
+任务@关卡目标提示V1.0支线达芙黛尔5_1
+任务@关卡目标提示V1.0支线达芙黛尔6_1
+Task_19750_Desc|设置陷阱，执行「狩猎」
+任务@关卡目标提示V1.0支线达芙黛尔7_1
+Task_73880_Desc|跟随熔毁·朵尔确认“答案”
+Task_19740_Desc|设置陷阱，执行「狩猎」
+任务@关卡目标提示V1.0支线达芙黛尔1_1
+任务@关卡目标提示V1.0支线达芙黛尔2_1
+任务@关卡目标提示V1.0支线达芙黛尔3_1
+任务@关卡目标提示小型支线戈利亚1_1
+任务@关卡目标提示大型支线索蕾尔6_2
+任务@关卡目标提示大型支线索蕾尔8_1
+任务@关卡目标提示大型支线「24」1_1
+任务@关卡目标提示大型支线索蕾尔2_2
+任务@关卡目标提示大型支线索蕾尔3_1
+任务@关卡目标提示大型支线本源希洛1_1
+任务@关卡目标提示小型支线萨尔瓦多1_1
+任务@关卡目标提示大型支线索蕾尔4_1
+任务@关卡目标提示大型支线索蕾尔1_1
+任务@关卡目标提示大型支线索蕾尔5_1
+任务@关卡目标提示大型支线索蕾尔5_2
+任务@关卡目标提示大型支线「24」2_1
+任务@关卡目标提示小型支线艾瑞卡1_1
+任务@关卡目标提示大型支线索蕾尔6_1
+任务@关卡目标提示小型支线阿格里帕1_1
+任务@关卡目标提示小型支线本源拉蒙娜1_2
+任务@关卡目标提示小型支线奥瑞塔1_1
+任务@关卡目标提示小型支线阿格里帕2_1
+任务@关卡目标提示大型支线索蕾尔2_1
+任务@关卡目标提示大型支线索蕾尔7_1
+任务@关卡目标提示小型支线尤乌哈希1_1
+任务@关卡目标提示小型支线尤乌哈希1_2
+任务@关卡目标提示V1.0支线达芙黛尔8_1
+任务@关卡目标提示大型支线奥尔拉1_1
+任务@关卡目标提示大型支线索蕾尔9_1
+任务@关卡目标提示小型支线奥吉尔1_1
+任务@关卡目标提示小型支线尤乌哈希2_1
+任务@关卡目标提示小型支线艾瑞卡1_2
+任务@关卡目标提示小型支线本源拉蒙娜1_1
+任务@成就系统220
+任务@成就系统229
+任务@成就系统224
+任务@成就系统419
+任务@成就系统225
+任务@成就系统416
+任务@成就系统207
+任务@成就系统209
+任务@成就系统388
+任务@成就系统227
+任务@成就系统221
+任务@成就系统222
+任务@成就系统226
+任务@成就系统418
+任务@成就系统215
+任务@成就系统240
+任务@成就系统395
+任务@成就系统217
+任务@成就系统390
+任务@成就系统219
+任务@成就系统210
+任务@成就系统425
+任务@成就系统415
+任务@成就系统389
+任务@成就系统213
+任务@成就系统239
+任务@成就系统241
+任务@成就系统405
+任务@成就系统387
+任务@成就系统406
+任务@成就系统407
+任务@成就系统393
+任务@成就系统394
+任务@成就系统423
+任务@成就系统417
+任务@成就系统424
+任务@成就系统218
+任务@成就系统230
+任务@成就系统250
+任务@成就系统208
+任务@成就系统251
+任务@成就系统252
+任务@成就系统242
+任务@成就系统408
+任务@成就系统391
+任务@成就系统228
+任务@成就系统214
+任务@成就系统236
+任务@成就系统235
+任务@成就系统392
+任务@成就系统216
+任务@成就系统237
+任务@成就系统260
+任务@成就系统352
+任务@成就系统359
+任务@成就系统432
+任务@成就系统290
+任务@成就系统261
+任务@成就系统271
+任务@成就系统428
+任务@成就系统361
+任务@成就系统253
+任务@成就系统358
+任务@成就系统354
+任务@成就系统412
+任务@成就系统360
+任务@成就系统351
+任务@成就系统355
+任务@成就系统411
+任务@成就系统289
+任务@成就系统426
+任务@成就系统357
+任务@成就系统265
+任务@成就系统431
+任务@成就系统288
+任务@成就系统286
+任务@成就系统429
+任务@成就系统427
+任务@成就系统262
+任务@成就系统430
+任务@成就系统287
+任务@关卡目标提示1_4_1
+任务@关卡目标提示1_2_1
+任务@关卡目标提示1_7_1
+任务@关卡目标提示1_7_2
+任务@关卡目标提示1_8_2
+任务@关卡目标提示2_2_1
+任务@关卡目标提示1_1_1
+任务@关卡目标提示1_5_2
+任务@关卡目标提示0_1_1
+任务@关卡目标提示1_8_1
+任务@关卡目标提示2_6_1
+任务@关卡目标提示2_6_2
+任务@关卡目标提示1_1_2
+任务@关卡目标提示2_1_1
+任务@关卡目标提示2_3_1
+任务@关卡目标提示2_7_1
+任务@关卡目标提示2_8_1
+任务@关卡目标提示2_5_1
+任务@关卡目标提示1_3_1
+任务@关卡目标提示1_5_1
+任务@关卡目标提示1_6_1
+任务@关卡目标提示2_4_1
+任务@关卡目标提示4_8_1
+任务@关卡目标提示2_10_1
+任务@关卡目标提示4_1_1
+任务@关卡目标提示3_1_1
+任务@关卡目标提示4_4_1
+任务@关卡目标提示3_7_1
+任务@关卡目标提示4_6_1
+任务@关卡目标提示3_5_1
+任务@关卡目标提示3_3_1
+任务@关卡目标提示2_11_1
+任务@关卡目标提示3_2_1
+任务@关卡目标提示3_6_1
+任务@关卡目标提示3_9_1
+任务@关卡目标提示4_1_2
+任务@关卡目标提示4_2_1
+任务@关卡目标提示2_12_1
+任务@关卡目标提示4_3_1
+任务@关卡目标提示4_5_1
+任务@关卡目标提示3_4_2
+任务@关卡目标提示4_7_1
+任务@关卡目标提示4_9_1
+任务@关卡目标提示2_9_1
+任务@关卡目标提示3_10_1
+任务@关卡目标提示4_2_2
+任务@关卡目标提示4_10_1
+任务@关卡目标提示3_4_1
+任务@关卡目标提示5_6_1
+任务@关卡目标提示6_2_1
+任务@关卡目标提示6_3_1
+任务@关卡目标提示6_4_1
+任务@关卡目标提示5_4_1
+任务@关卡目标提示5_2_1
+任务@关卡目标提示6_7_1
+任务@关卡目标提示6_8_1
+任务@关卡目标提示5_8_1
+任务@关卡目标提示6_9_1
+任务@关卡目标提示4_12_1
+任务@关卡目标提示5_7_1
+任务@关卡目标提示4_11_1
+任务@关卡目标提示6_10_1
+任务@关卡目标提示6_5_1
+任务@关卡目标提示6_6_1
+任务@关卡目标提示7_1_1
+任务@关卡目标提示5_9_2
+任务@关卡目标提示5_5_1
+任务@关卡目标提示5_3_1
+任务@关卡目标提示5_1_1
+任务@关卡目标提示5_9_1
+任务@关卡目标提示5_10_1
+任务@关卡目标提示6_1_1
+任务@关卡目标提示7_9_1
+任务@关卡目标提示7_2_1
+任务@关卡目标提示7_8_1
+任务@关卡目标提示8_6
+任务@关卡目标提示8_8
+任务@关卡目标提示7_4_1
+任务@关卡目标提示7_7_1
+任务@关卡目标提示9_1
+任务@关卡目标提示9_2
+任务@关卡目标提示S_1_1
+任务@关卡目标提示8_1
+任务@关卡目标提示7_12_1
+任务@关卡目标提示7_10_1
+任务@关卡目标提示7_11_1
+任务@关卡目标提示8_7
+任务@关卡目标提示8_9
+任务@关卡目标提示9_3
+任务@关卡目标提示9_4
+任务@关卡目标提示S_1_2
+任务@关卡目标提示7_5_1
+任务@关卡目标提示8_2
+任务@关卡目标提示7_6_1
+任务@关卡目标提示S_1_3
+任务@关卡目标提示8_5
+任务@关卡目标提示S_1_4
+任务@关卡目标提示8_10
+任务@关卡目标提示7_3_1
+任务@关卡目标提示8_3
+任务@关卡目标提示8_4
+任务@关卡目标提示S_3_1
+任务@关卡目标提示S_2_5
+任务@关卡目标提示S_1_6
+任务@关卡目标提示S_2_8
+任务@关卡目标提示S_1_9
+任务@关卡目标提示S_2_12
+任务@关卡目标提示S_2_4
+任务@关卡目标提示S_2_11
+任务@关卡目标提示S_2_2
+任务@关卡目标提示S_3_3
+任务@关卡目标提示S_3_2
+任务@关卡目标提示S_3_4
+任务@关卡目标提示S_3_5
+任务@关卡目标提示S_1_7
+任务@关卡目标提示S_3_6
+任务@关卡目标提示S_2_3
+任务@关卡目标提示S_2_6
+任务@关卡目标提示S_3_7
+任务@关卡目标提示S_1_8
+任务@关卡目标提示S_3_8
+任务@关卡目标提示S_3_9
+任务@关卡目标提示S_3_10
+任务@关卡目标提示S_4_1
+任务@关卡目标提示S_1_10
+任务@关卡目标提示S_2_7
+任务@关卡目标提示S_2_9
+任务@关卡目标提示S_2_10
+任务@关卡目标提示S_2_1
+任务@关卡目标提示S_1_5
+任务@关卡目标提示S_4_6
+任务@关卡目标提示S_5_4
+任务@关卡目标提示S_4_9
+任务@关卡目标提示S_4_10
+任务@关卡目标提示S_5_7
+任务@关卡目标提示S_5_2
+任务@关卡目标提示S_4_7
+任务@关卡目标提示S_4_8
+任务@关卡目标提示S_5_1
+任务@关卡目标提示S_5_9
+任务@关卡目标提示S_5_10
+任务@关卡目标提示S_4_3
+任务@关卡目标提示S_4_5
+任务@关卡目标提示S_5_6
+任务@关卡目标提示S_5_8
+任务@关卡目标提示S_4_4
+任务@关卡目标提示S_5_5
+任务@关卡目标提示S_5_3
+任务@关卡目标提示S_5_11
+任务@关卡目标提示S_4_2
+任务@成就系统400
+任务@成就系统403
+任务@成就系统404
+任务@成就系统232
+任务@成就系统401
+任务@成就系统402
+任务@成就系统231
+任务@成就系统27
+任务@成就系统34
+任务@成就系统25
+任务@成就系统29
+任务@成就系统399
+任务@成就系统37
+任务@成就系统36
+任务@成就系统39
+任务@成就系统40
+任务@成就系统254
+任务@成就系统257
+任务@成就系统258
+任务@成就系统41
+任务@成就系统38
+任务@成就系统42
+任务@成就系统422
+任务@成就系统35
+任务@成就系统256
+任务@成就系统233
+任务@成就系统43
+任务@成就系统26
+任务@成就系统28
+任务@成就系统255
+任务@成就系统51
+任务@成就系统50
+任务@成就系统44
+任务@成就系统1
+任务@成就系统3
+任务@成就系统46
+任务@成就系统49
+任务@成就系统6
+任务@成就系统10
+任务@成就系统7
+任务@成就系统273
+任务@成就系统414
+任务@成就系统11
+任务@成就系统52
+任务@成就系统45
+任务@成就系统413
+任务@成就系统2
+任务@成就系统15
+任务@成就系统4
+任务@成就系统8
+任务@成就系统9
+任务@成就系统12
+任务@成就系统47
+任务@成就系统275
+任务@成就系统16
+任务@成就系统48
+任务@成就系统13
+任务@成就系统17
+任务@成就系统281
+任务@成就系统18
+任务@成就系统5
+任务@成就系统277
+任务@成就系统14
+任务@成就系统279
+任务@成就系统66
+任务@成就系统24
+任务@成就系统67
+任务@成就系统59
+任务@成就系统69
+任务@成就系统70
+任务@成就系统197
+任务@成就系统23
+任务@成就系统21
+任务@成就系统200
+任务@成就系统199
+任务@成就系统204
+任务@成就系统22
+任务@成就系统57
+任务@成就系统203
+任务@成就系统205
+任务@成就系统61
+任务@成就系统68
+任务@成就系统365
+任务@成就系统366
+任务@成就系统19
+任务@成就系统65
+任务@成就系统198
+任务@成就系统58
+任务@成就系统60
+任务@成就系统20
+任务@成就系统62
+任务@成就系统63
+任务@成就系统64
+任务@成就系统54
+任务@成就系统367
+任务@成就系统368
+任务@成就系统136
+任务@成就系统137
+任务@成就系统138
+任务@成就系统55
+任务@成就系统53
+任务@成就系统56
+任务@成就系统362
+任务@成就系统195
+任务@成就系统201
+任务@成就系统363
+任务@成就系统196
+任务@成就系统185
+任务@成就系统364
+任务@成就系统373
+任务@成就系统298
+任务@成就系统299
+任务@成就系统300
+任务@成就系统296
+任务@成就系统301
+任务@成就系统302
+任务@成就系统374
+任务@成就系统293
+任务@成就系统372
+任务@成就系统304
+任务@成就系统369
+任务@成就系统188
+任务@成就系统206
+任务@成就系统189
+任务@成就系统139
+任务@成就系统186
+任务@成就系统375
+任务@成就系统305
+任务@成就系统294
+任务@成就系统202
+任务@成就系统187
+任务@成就系统295
+任务@成就系统303
+任务@成就系统297
+任务@成就系统292
+任务@成就系统94
+任务@成就系统71
+任务@成就系统307
+任务@成就系统311
+任务@成就系统315
+任务@成就系统377
+任务@成就系统茉夏支线
+任务@成就系统91
+任务@成就系统380
+任务@成就系统82
+任务@成就系统310
+任务@成就系统308
+任务@成就系统92
+任务@成就系统95
+任务@成就系统306
+任务@成就系统312
+任务@成就系统309
+任务@成就系统316
+任务@成就系统73
+任务@成就系统371
+任务@成就系统370
+任务@成就系统317
+任务@成就系统74
+任务@成就系统83
+任务@成就系统86
+任务@成就系统89
+任务@成就系统378
+任务@成就系统75
+任务@成就系统84
+任务@成就系统87
+任务@成就系统88
+任务@成就系统85
+任务@成就系统90
+任务@成就系统72
+任务@成就系统376
+任务@成就系统314
+任务@成就系统379
+任务@成就系统93
+任务@成就系统128
+任务@成就系统129
+任务@成就系统131
+任务@成就系统132
+任务@成就系统105
+任务@成就系统107
+任务@成就系统109
+任务@成就系统96
+任务@成就系统99
+任务@成就系统100
+任务@成就系统133
+任务@成就系统135
+任务@成就系统112
+任务@成就系统101
+任务@成就系统97
+任务@成就系统113
+任务@成就系统130
+任务@成就系统102
+任务@成就系统103
+任务@成就系统110
+任务@成就系统104
+任务@成就系统115
+任务@成就系统118
+任务@成就系统114
+任务@成就系统124
+任务@成就系统125
+任务@成就系统134
+任务@成就系统140
+任务@成就系统119
+任务@成就系统98
+任务@成就系统126
+任务@成就系统106
+任务@成就系统111
+任务@成就系统108
+任务@成就系统117
+任务@成就系统120
+任务@成就系统116
+任务@成就系统121
+任务@成就系统122
+任务@成就系统123
+任务@成就系统127
+任务@成就系统154
+任务@成就系统142
+任务@成就系统148
+任务@成就系统141
+任务@成就系统321
+任务@成就系统147
+任务@成就系统156
+任务@成就系统157
+任务@成就系统323
+任务@成就系统151
+任务@成就系统159
+任务@成就系统382
+任务@成就系统149
+任务@成就系统155
+任务@成就系统381
+任务@成就系统145
+任务@成就系统143
+任务@成就系统160
+任务@成就系统284
+任务@成就系统161
+任务@成就系统322
+任务@成就系统326
+任务@成就系统384
+任务@成就系统158
+任务@成就系统383
+任务@成就系统162
+任务@成就系统146
+任务@成就系统385
+任务@成就系统150
+任务@成就系统152
+任务@成就系统325
+任务@成就系统144
+任务@成就系统153
+任务@成就系统319
+任务@成就系统320
+任务@成就系统345
+任务@成就系统168
+任务@成就系统167
+任务@成就系统177
+任务@成就系统349
+任务@成就系统190
+任务@成就系统173
+任务@成就系统350
+任务@成就系统165
+任务@成就系统181
+任务@成就系统175
+任务@成就系统191
+任务@成就系统174
+任务@成就系统163
+任务@成就系统183
+任务@成就系统347
+任务@成就系统192
+任务@成就系统170
+任务@成就系统193
+任务@成就系统180
+任务@成就系统176
+任务@成就系统171
+任务@成就系统166
+任务@成就系统172
+任务@成就系统182
+任务@成就系统344
+任务@成就系统184
+任务@成就系统194
+任务@成就系统164
+任务@成就系统169
+任务@成就系统346
+任务@成就系统348
+任务@关卡目标提示1_1_1示例
+任务@关卡目标提示1_2_1示例
+任务@关卡目标提示1_1_2示例
+Task_10964_Name|目标提示最多8字
+任务@关卡目标提示3_6_1弃
+Task_80233_Desc|确认「拉蒙娜」
+任务@关卡目标提示3_4_1弃
+任务@关卡目标提示大型支线莉莉2_2
+任务@关卡目标提示大型支线莉莉6_1
+任务@关卡目标提示大型支线莉莉3_1
+任务@关卡目标提示大型支线莉莉7_1
+任务@关卡目标提示大型支线莉莉1_1
+任务@关卡目标提示小型支线珊1_1
+任务@关卡目标提示小型支线珊2_1
+任务@关卡目标提示小型支线旺达1_1
+任务@关卡目标提示大型支线莉莉4_1
+任务@关卡目标提示大型支线莉莉2_1
+任务@关卡目标提示大型支线莉莉5_1
+任务@关卡目标提示湖中之城
+任务@关卡目标提示小型支线莉兹1_1
+任务@关卡目标提示奥尔拉活动5
+任务@关卡目标提示奥尔拉活动1
+任务@关卡目标提示奥尔拉活动4
+任务@关卡目标提示奥尔拉活动2
+任务@关卡目标提示奥尔拉活动3
+任务@关卡目标提示小型支线旺达2_1
+任务@关卡目标提示小型支线旺达1_2
+任务@关卡目标提示小型支线莱克1_1
+任务@成就系统波吕克斯支线
+任务@成就系统夏日活动上支线困难
+任务@成就系统夏日活动支线困难
+任务@成就系统逆转回合支线
+任务@成就系统夏日活动支线
+任务@成就系统茉夏支线困难
+任务@成就系统夏日活动上支线
+没有设置描述
+TipsType_10641_RightBtnDesc|确认
+TipsType_10740_Title|调查确认
+TipsType_10799_LeftBtnDesc|取消
+TipsType_10611_Title|下载确认
+TipsType_10741_Title|调查确认
+TipsType_10607_Title|挑战提示
+TipsType_10741_LeftBtnDesc|取消
+TipsType_10633_Title|分解确认
+TipsType_10618_RightBtnDesc|确认
+TipsType_10742_Title|调查确认
+TipsType_10631_Title|温馨提示
+TipsType_10631_RightBtnDesc|确认
+TipsType_10621_RightBtnDesc|确认
+TipsType_10633_RightBtnDesc|确认
+TipsType_10621_Title|镌刻确认
+TipsType_10607_RightBtnDesc|确认
+TipsType_10611_LeftBtnDesc|取消
+TipsType_10611_RightBtnDesc|确认
+TipsType_10742_LeftBtnDesc|取消
+TipsType_10607_LeftBtnDesc|取消
+TipsType_10740_LeftBtnDesc|取消
+TipsType_10741_RightBtnDesc|确认
+TipsType_10799_Title|调查确认
+TipsType_10621_LeftBtnDesc|取消
+TipsType_10626_RightBtnDesc|确认
+TipsType_10635_LeftBtnDesc|取消
+TipsType_10635_RightBtnDesc|确认
+TipsType_10633_LeftBtnDesc|取消
+TipsType_10742_RightBtnDesc|确认
+TipsType_10640_LeftBtnDesc|取消
+TipsType_10740_RightBtnDesc|确认
+TipsType_10640_RightBtnDesc|确认
+TipsType_10641_Title|切换语言确认
+TipsType_10618_Title|调查确认
+TipsType_10799_RightBtnDesc|确认
+TipsType_10641_LeftBtnDesc|取消
+TipsType_20095_Title|转录确认
+TipsType_20090_Title|清理提示
+TipsType_20093_LeftBtnDesc|取消
+TipsType_20093_RightBtnDesc|确认
+TipsType_20095_LeftBtnDesc|取消
+TipsType_20095_RightBtnDesc|确认
+TipsType_20099_RightBtnDesc|确认
+TipsType_20092_RightBtnDesc|确认
+TipsType_20090_LeftBtnDesc|取消
+TipsType_10813_LeftBtnDesc|取消
+TipsType_10813_RightBtnDesc|确认
+TipsType_20096_Title|升级确认
+TipsType_20100_RightBtnDesc|确认
+TipsType_20092_Title|卸下确认
+TipsType_20096_LeftBtnDesc|取消
+TipsType_20091_Title|清理提示
+TipsType_20094_Title|替换确认
+TipsType_20096_RightBtnDesc|确认
+TipsType_20102_RightBtnDesc|确认
+TipsType_20099_LeftBtnDesc|取消
+TipsType_20102_LeftBtnDesc|取消
+TipsType_20103_LeftBtnDesc|取消
+TipsType_20094_RightBtnDesc|确认
+TipsType_20094_LeftBtnDesc|取消
+TipsType_20092_LeftBtnDesc|取消
+TipsType_20091_LeftBtnDesc|取消
+TipsType_20093_Title|升级确认
+TipsType_20100_Title|更新提示
+TipsType_20102_Title|取消关注
+TipsType_20103_RightBtnDesc|确认
+========== 取消匹配成功 ==========
+========== 取消匹配失败 ==========
+TipsType_20003_RightBtnDesc|确认
+TipsType_20002_Desc|不带勾选二次确认
+TipsType_20002_LeftBtnDesc|取消
+TipsType_20004_RightBtnDesc|确认
+TipsType_20005_LeftBtnDesc|取消
+TipsType_20004_Title|断线提示
+TipsType_20010_LeftBtnDesc|取消
+TipsType_20011_LeftBtnDesc|确认离开
+TipsType_20014_RightBtnDesc|确认
+TipsType_30001_Desc|侧边提示无图标
+TipsType_20007_RightBtnDesc|确认
+TipsType_20008_LeftBtnDesc|取消
+TipsType_20009_Title|确认刷新
+TipsType_20010_RightBtnDesc|确认
+TipsType_20001_Desc|带勾选二次确认
+TipsType_20012_RightBtnDesc|确认
+TipsType_20013_LeftBtnDesc|返回
+TipsType_20005_RightBtnDesc|确认
+TipsType_20003_Title|断线提示
+TipsType_20008_RightBtnDesc|确认
+TipsType_20009_LeftBtnDesc|取消
+TipsType_20006_RightBtnDesc|确认
+TipsType_20009_RightBtnDesc|确认
+TipsType_20040_LeftBtnDesc|取消
+TipsType_20040_RightBtnDesc|确认
+TipsType_20041_Title|加速确认
+TipsType_20029_RightBtnDesc|确认
+TipsType_20039_LeftBtnDesc|取消
+TipsType_20041_LeftBtnDesc|取消
+TipsType_20019_LeftBtnDesc|取消
+TipsType_20033_LeftBtnDesc|取消
+TipsType_20041_RightBtnDesc|确认
+TipsType_20033_RightBtnDesc|确认
+TipsType_20042_LeftBtnDesc|取消
+TipsType_20042_RightBtnDesc|确认
+TipsType_20043_LeftBtnDesc|取消
+TipsType_20022_LeftBtnDesc|取消
+TipsType_20034_RightBtnDesc|确认
+TipsType_20032_LeftBtnDesc|取消
+TipsType_20018_RightBtnDesc|确认
+TipsType_20037_LeftBtnDesc|取消
+TipsType_20016_RightBtnDesc|确认
+TipsType_20037_Title|强化确认
+TipsType_20026_RightBtnDesc|确认
+TipsType_20023_RightBtnDesc|确认
+TipsType_20038_RightBtnDesc|确认
+TipsType_20023_LeftBtnDesc|取消
+TipsType_20024_RightBtnDesc|确认
+TipsType_20026_Desc|是否确认充能？
+TipsType_20029_LeftBtnDesc|取消
+TipsType_20021_RightBtnDesc|确认
+TipsType_20015_LeftBtnDesc|取消
+TipsType_20020_RightBtnDesc|确认
+TipsType_20027_LeftBtnDesc|取消
+TipsType_20022_RightBtnDesc|确认
+TipsType_20027_RightBtnDesc|确认
+TipsType_20030_RightBtnDesc|确认
+TipsType_20031_LeftBtnDesc|取消
+TipsType_20015_RightBtnDesc|确认
+TipsType_20032_RightBtnDesc|确认
+TipsType_20034_LeftBtnDesc|取消
+TipsType_20026_LeftBtnDesc|取消
+TipsType_20035_LeftBtnDesc|取消
+TipsType_20035_RightBtnDesc|确认
+TipsType_20017_RightBtnDesc|确认
+TipsType_20031_RightBtnDesc|确认
+TipsType_20036_Title|挑战确认
+TipsType_20036_RightBtnDesc|确认
+TipsType_20030_LeftBtnDesc|取消
+TipsType_20036_LeftBtnDesc|取消
+TipsType_20028_RightBtnDesc|确认
+TipsType_20037_RightBtnDesc|确认
+TipsType_20028_LeftBtnDesc|取消
+TipsType_20031_Desc|是否确认退出战斗？
+TipsType_20038_LeftBtnDesc|取消
+TipsType_20039_RightBtnDesc|确认
+TipsType_20053_LeftBtnDesc|取消
+TipsType_20057_Title|编队确认
+TipsType_20058_Title|重置确认
+TipsType_20044_LeftBtnDesc|取消
+TipsType_20048_LeftBtnDesc|取消
+TipsType_20054_LeftBtnDesc|取消
+TipsType_20058_LeftBtnDesc|取消
+TipsType_20047_RightBtnDesc|确认
+TipsType_20062_RightBtnDesc|确认
+TipsType_20045_LeftBtnDesc|取消
+TipsType_20045_RightBtnDesc|确认
+TipsType_20061_LeftBtnDesc|取消
+TipsType_20063_Desc|确认删除？
+TipsType_20058_RightBtnDesc|确认
+TipsType_20053_RightBtnDesc|确认
+TipsType_20055_LeftBtnDesc|取消
+TipsType_20054_Title|挑战确认
+TipsType_20044_RightBtnDesc|确认
+TipsType_20049_RightBtnDesc|确认
+TipsType_20050_RightBtnDesc|确认
+TipsType_20050_LeftBtnDesc|取消
+TipsType_20046_LeftBtnDesc|取消
+TipsType_20057_RightBtnDesc|确认
+TipsType_20047_LeftBtnDesc|取消
+TipsType_20049_Title|更换提示
+TipsType_20051_LeftBtnDesc|取消
+TipsType_20046_Title|加速确认
+TipsType_20047_Title|购买确认
+TipsType_20055_RightBtnDesc|确认
+TipsType_20056_RightBtnDesc|确认
+TipsType_20048_Title|购买确认
+TipsType_20046_RightBtnDesc|确认
+TipsType_20060_Title|确认选择
+TipsType_20060_LeftBtnDesc|取消
+TipsType_20062_LeftBtnDesc|取消
+TipsType_20050_Title|叠位提示
+TipsType_20051_RightBtnDesc|确认
+TipsType_20049_LeftBtnDesc|取消
+TipsType_20055_Title|重置确认
+TipsType_20060_RightBtnDesc|确认
+TipsType_20052_LeftBtnDesc|取消
+TipsType_20061_RightBtnDesc|确认
+TipsType_20063_LeftBtnDesc|取消
+TipsType_20063_RightBtnDesc|确认
+TipsType_20044_Title|研究确认
+TipsType_20064_LeftBtnDesc|取消
+TipsType_20064_RightBtnDesc|确认
+TipsType_20045_Title|研究取消
+TipsType_20051_Title|叠位提示
+TipsType_20054_RightBtnDesc|确认
+TipsType_20057_LeftBtnDesc|取消
+TipsType_20056_Title|挑战确认
+TipsType_20043_RightBtnDesc|确认
+TipsType_20048_RightBtnDesc|确认
+TipsType_20052_RightBtnDesc|确认
+TipsType_20056_LeftBtnDesc|取消
+TipsType_20075_RightBtnDesc|确认
+TipsType_20069_RightBtnDesc|确认
+TipsType_20070_LeftBtnDesc|取消
+TipsType_20072_RightBtnDesc|确认
+TipsType_20074_RightBtnDesc|确认
+TipsType_20070_Title|增幅确认
+TipsType_20076_LeftBtnDesc|取消
+TipsType_20065_LeftBtnDesc|取消
+TipsType_20066_RightBtnDesc|确认
+TipsType_20067_Title|重印确认
+TipsType_20067_RightBtnDesc|确认
+TipsType_20067_LeftBtnDesc|取消
+TipsType_20073_RightBtnDesc|确认
+TipsType_20076_RightBtnDesc|确认
+TipsType_20073_Title|分解确认
+TipsType_20071_Title|增幅确认
+TipsType_20074_LeftBtnDesc|取消
+TipsType_20079_LeftBtnDesc|取消
+TipsType_20082_LeftBtnDesc|取消
+TipsType_20066_LeftBtnDesc|取消
+TipsType_20084_RightBtnDesc|确认
+TipsType_20081_RightBtnDesc|确认
+TipsType_20080_RightBtnDesc|确认
+TipsType_20085_RightBtnDesc|确认
+TipsType_20065_Title|合成确认
+TipsType_20075_Title|研究确认
+TipsType_20074_Title|分解确认
+TipsType_20069_LeftBtnDesc|取消
+TipsType_20079_Title|复活确认
+TipsType_20080_Title|复活确认
+TipsType_20081_Title|登录错误提示
+TipsType_20083_LeftBtnDesc|取消
+TipsType_20079_RightBtnDesc|确认
+TipsType_20070_RightBtnDesc|确认
+TipsType_20072_LeftBtnDesc|取消
+TipsType_20077_Title|研究确认
+TipsType_20077_LeftBtnDesc|取消
+TipsType_20083_RightBtnDesc|确认
+TipsType_20076_Title|研究确认
+TipsType_20065_RightBtnDesc|确认
+TipsType_20071_RightBtnDesc|确认
+TipsType_20082_RightBtnDesc|确认
+TipsType_20073_LeftBtnDesc|取消
+TipsType_20066_Title|分解确认
+TipsType_20075_LeftBtnDesc|取消
+TipsType_20077_RightBtnDesc|确认
+TipsType_20078_LeftBtnDesc|取消
+TipsType_20084_Title|调查确认
+TipsType_20071_LeftBtnDesc|取消
+TipsType_20078_RightBtnDesc|确认
+TipsType_20085_Desc|确认退出游戏
+TipsType_20085_LeftBtnDesc|取消
+TipsType_20086_Title|断线提示
+TipsType_20108_LeftBtnDesc|取消
+TipsType_20086_RightBtnDesc|确认
+TipsType_20088_RightBtnDesc|确认
+TipsType_20097_LeftBtnDesc|取消
+TipsType_20106_LeftBtnDesc|取消
+TipsType_20087_LeftBtnDesc|取消
+TipsType_20111_Title|调查确认
+TipsType_20089_RightBtnDesc|确认
+TipsType_20107_LeftBtnDesc|取消
+TipsType_20107_RightBtnDesc|确认
+TipsType_20088_LeftBtnDesc|取消
+TipsType_20109_RightBtnDesc|确认
+TipsType_20109_LeftBtnDesc|取消
+TipsType_20087_RightBtnDesc|确认
+TipsType_20087_Title|开启确认
+TipsType_20106_Title|购买确认
+TipsType_20097_Title|确认选择
+TipsType_20105_Title|调查确认
+TipsType_20108_RightBtnDesc|确认
+TipsType_20112_Title|调查确认
+TipsType_20089_LeftBtnDesc|取消
+TipsType_20107_Title|选择确认
+TipsType_10558_RightBtnDesc|确认
+TipsType_10558_LeftBtnDesc|取消
+TipsType_20045_BottomDesc|取消研究不保留已研究进度
+TipsType_20013_Desc|队伍尚有空缺，是否确认启程？
+TipsType_20066_Desc|确认分解<Blue:{s1}，获得{s2}>吗？
+TipsType_20060_BottomDesc|确认后将无法重新唤醒
+TipsType_10745_Desc|生日日期有误，无法设置
+TipsType_10813_Desc|是否确认删除方案【{s1}】？
+TipsType_BestExperienceTips_ChapterS4_Title|调查确认
+TipsType_PVP_PasswordBattle_QuitTips_LeftBtnDesc|取消
+TipsType_SubBestExperienceTips_ChapterS2_Title|调查确认
+TipsType_SubBestExperienceTips_Chapter3_Title|调查确认
+TipsType_PVP_PasswordBattle_QuitTips_Title|退出确认
+TipsType_BestExperienceTips_Chapter7_Title|调查确认
+TipsType_BestExperienceTips_ChapterS2_Title|调查确认
+TipsType_OppositeSideCancelMatchTips_Desc|对方取消了匹配
+TipsType_CancelCollectAwakerTips_Desc|已取消收藏
+TipsType_PvpCollectionCommentDeleteTips_Title|删除确认
+TipsType_PvpCollectionCommentDeleteTips_LeftBtnDesc|取消
+TipsType_BestExperienceTips_Chapter8_Title|调查确认
+TipsType_PvpCollectionCommentDeleteTips_RightBtnDesc|确认
+TipsType_PVETeamShareCodeSaveTips_Title|保存确认
+TipsType_PVETeamShareCodeSaveTips_LeftBtnDesc|取消
+TipsType_WaitOppositeSideAccept_LeftBtnDesc|取消
+TipsType_BestExperienceTips_Chapter3_Title|调查确认
+TipsType_SubBestExperienceTips_Chapter5_Title|调查确认
+TipsType_BestExperienceTips_ChapterS3_Title|调查确认
+TipsType_RailWaySaveAndExitInBattleTips_RightBtnDesc|确认
+TipsType_DoubleExBPBuyConfirm_Title|购买确认
+TipsType_PVPSurrenderConfirm_RightBtnDesc|确认
+TipsType_PVETeamShareCodeSaveTips_RightBtnDesc|确认
+TipsType_DoubleExBPBuyConfirm_LeftBtnDesc|取消
+TipsType_RailWayContinueSaveStage_LeftBtnDesc|取消
+TipsType_RailWaySaveAndExitInBattleTips_LeftBtnDesc|取消
+TipsType_RailWaySaveAndExitTips_LeftBtnDesc|取消
+TipsType_RailWaySaveAndExitTips_RightBtnDesc|确认
+TipsType_RailWayContinueSaveStage_RightBtnDesc|确认
+TipsType_20124_Desc|重置后，当前调查队伍的唤醒体、命轮和钥令都可以重新上场，但通过该关卡获得的特训值也会扣除（不影响奖励状态），是否确认重置？
+TipsType_20007_Desc|失去同步，稍后将返回登录界面。
+TipsType_20045_Desc|是否取消{s1}的研究？(将返还全额研究许可)
+TipsType_20006_Desc|失去同步，稍后将返回登录界面。
+TipsType_10399_Desc|小循环系统验证在第四章关卡开启
+TipsType_10640_Desc|确认卸下该唤醒体的所有密契吗？
+TipsType_20092_Desc|是否确认卸下当前唤醒体装备的所有命轮？
+TipsType_10270_Desc|服务器连接中断，稍后将返回登录页面。
+TipsType_LimitAwakerEnlightenmentOverflowTips_LeftBtnDesc|取消
+TipsType_LimitAwakerEnlightenmentOverflowTips_Title|确认选择
+TipsType_BestExperienceTips_TwoAnniversarySubStage_Title|调查确认
+TipsType_10914_Desc|是否确认选择<TipsHighlightText:{s1}>？
+TipsType_20259_Desc|已保存「千面印章」不足时的置换设置
+TipsType_10910_Desc|是否确认唤醒<TipsHighlightText:{s1}>？
+TipsType_20029_Desc|关闭此界面将跳过本次事件（造物不会被移除），是否确认？
+TipsType_20054_Desc|当前挑战奖励已全部领取，继续挑战将不会获得奖励，是否确认？
+TipsType_20049_Desc|<Blue:「{s1}」> 已被 <Blue:「{s2}」> 所装备，是否确认更换？
+TipsType_10558_Desc|即将获得系统剪切板中的内容并进行<Positive:【粘贴】>，
+TipsType_20070_Desc|是否确认使用{s1}？
+TipsType_20096_Desc|密契升级后将会溢出等级上限，溢出后将返还转录素材，是否确认？
+TipsType_20204_Desc|当前密契已在{s1}中使用，分解后将会从该方案中移除，是否确认？
+TipsType_20358_Desc|有未确认的取消关注，离开将不保存任何操作，是否离开？
+TipsType_20151_Desc|重置后，「特殊物品」的剩余数量将重置至上限，是否确认？
+TipsType_20207_Desc|当前方案尚未保存，退出后将清空本次编辑，是否确认退出？
+TipsType_300001_Desc|「银辉初耀」只有一次免费唤醒的机会，确认要使用吗？
+TipsType_20110_Desc|确认选择{s1}月{s2}日作为你的生日吗?
+确认后将无法修改。
+TipsType_20158_Desc|当前关卡已过期，完成挑战后将不会获得奖励，是否确认退出？
+TipsType_20094_Desc|原副属性中存在较好的属性，替换后将不会保存，是否确认替换？
+TipsType_20205_Desc|当前密契已在编队{s1}中使用，分解后将会卸下该密契，是否确认？
+TipsType_20058_Desc|当前关卡已挑战成功，若希望重新挑战需先重置当前关卡进度为0颗星，唤醒体出战记录同步清除，是否确认重置？
+TipsType_10909_Desc|{s1}已唤醒，继续领取将转为<TipsHighlightText:「残片·{s2}」× 1>和<TipsHighlightText:「根源沉淀」× 50>，是否确认唤醒？
+TipsType_10271_Desc|确认
+TipsType_100012_Title|提示
+TipsType_10640_Title|提示
+TipsType_20099_Title|提示
+TipsType_100020_Title|提示
+TipsType_100016_Title|提示
+TipsType_10626_Title|提示
+TipsType_100017_Title|提示
+【Steam设置-游戏中-在游戏中启用Steam界面】
+TipsType_20055_Desc|重置后，当前关卡进度将会重置为0颗星，唤醒体出战记录同步清除，是否确认重置？
+申请后将直接完成每日试训，是否确认？
+确认对<WeaponEffect_Num:{s1}>进行启灵回溯吗？
+TipsType_20123_Desc|完成挑战后，队伍中的唤醒体、命轮和钥令将无法在其他融灾禁区中上场，是否确认？
+TipsType_PVETeamShareCodeSaveTips_Desc|是否确认保存该编队码对应的队伍配置？
+{"state":{"code":2000000,"msg":"操作成功","desc":"没有设置描述","subCode":2000000},"id":"1775499154589","data":{"isNeedUpdate":0}}
+TipsType_20124_LeftBtnDesc|取消
+TipsType_20124_RightBtnDesc|确认
+TipsType_20124_Title|重置确认
+TipsType_20205_Title|删除确认
+TipsType_20200_RightBtnDesc|确认
+TipsType_20128_Title|重置确认
+TipsType_20128_LeftBtnDesc|取消
+TipsType_20123_Title|挑战确认
+TipsType_20128_RightBtnDesc|确认
+TipsType_20202_Title|删除确认
+TipsType_20110_LeftBtnDesc|取消
+TipsType_20119_RightBtnDesc|确认
+TipsType_20200_LeftBtnDesc|取消
+TipsType_20119_LeftBtnDesc|取消
+TipsType_20114_RightBtnDesc|确认
+TipsType_20201_Title|替换确认
+TipsType_20121_RightBtnDesc|确认
+TipsType_20199_Title|领取确认
+TipsType_20207_Title|保存确认
+TipsType_20203_Title|装备确认
+TipsType_20204_Title|删除确认
+TipsType_20205_RightBtnDesc|确认
+TipsType_20110_Title|生日确认
+TipsType_20202_RightBtnDesc|确认
+TipsType_20200_Title|代理确认
+TipsType_20203_RightBtnDesc|确认
+TipsType_20201_RightBtnDesc|确认
+TipsType_20204_RightBtnDesc|确认
+TipsType_20206_LeftBtnDesc|取消
+TipsType_20199_LeftBtnDesc|取消
+TipsType_20116_LeftBtnDesc|取消
+TipsType_20202_LeftBtnDesc|取消
+TipsType_20206_RightBtnDesc|确认
+TipsType_20110_RightBtnDesc|确认
+TipsType_20117_LeftBtnDesc|取消
+TipsType_20206_Title|删除确认
+TipsType_20113_RightBtnDesc|确认
+TipsType_20113_LeftBtnDesc|取消
+TipsType_20117_RightBtnDesc|确认
+TipsType_20113_Title|一键阅读确认
+TipsType_20118_LeftBtnDesc|取消
+TipsType_20203_LeftBtnDesc|取消
+TipsType_20122_LeftBtnDesc|取消
+TipsType_20207_LeftBtnDesc|取消
+TipsType_20121_LeftBtnDesc|取消
+TipsType_20204_LeftBtnDesc|取消
+TipsType_20201_LeftBtnDesc|取消
+TipsType_20207_RightBtnDesc|确认
+TipsType_20205_LeftBtnDesc|取消
+TipsType_20118_RightBtnDesc|确认
+TipsType_20114_LeftBtnDesc|取消
+TipsType_20199_RightBtnDesc|确认
+TipsType_20122_RightBtnDesc|确认
+TipsType_20123_LeftBtnDesc|取消
+TipsType_20123_RightBtnDesc|确认
+TipsType_20138_Title|解锁确认
+TipsType_20133_LeftBtnDesc|取消
+TipsType_20138_LeftBtnDesc|取消
+TipsType_20134_Title|调查确认
+TipsType_20139_RightBtnDesc|确认
+TipsType_20140_LeftBtnDesc|取消
+TipsType_20138_RightBtnDesc|确认
+TipsType_20141_RightBtnDesc|确认
+TipsType_20142_RightBtnDesc|确认
+TipsType_20139_LeftBtnDesc|取消
+TipsType_20153_LeftBtnDesc|取消
+TipsType_20152_LeftBtnDesc|取消
+TipsType_20153_RightBtnDesc|确认
+TipsType_20154_Title|重置确认
+TipsType_20140_Title|领取确认
+TipsType_20132_LeftBtnDesc|取消
+TipsType_20139_Title|解锁确认
+TipsType_20130_Title|调查确认
+TipsType_20152_RightBtnDesc|确认
+TipsType_20151_Title|重置确认
+TipsType_20140_RightBtnDesc|确认
+TipsType_20137_Title|解锁确认
+TipsType_20154_LeftBtnDesc|取消
+TipsType_20155_RightBtnDesc|确认
+TipsType_20151_LeftBtnDesc|取消
+TipsType_20155_Title|叠位确认
+TipsType_20142_LeftBtnDesc|取消
+TipsType_20145_LeftBtnDesc|取消
+TipsType_20151_RightBtnDesc|确认
+TipsType_20153_Title|重置确认
+TipsType_20142_Title|调查确认
+TipsType_20129_Title|调查确认
+TipsType_20137_RightBtnDesc|确认
+TipsType_20137_LeftBtnDesc|取消
+TipsType_20131_Title|调查确认
+TipsType_20133_RightBtnDesc|确认
+TipsType_20141_LeftBtnDesc|取消
+TipsType_20152_Title|激活确认
+TipsType_20154_RightBtnDesc|确认
+TipsType_20155_LeftBtnDesc|取消
+TipsType_20157_LeftBtnDesc|取消
+TipsType_20160_Title|补偿提示
+TipsType_300001_RightBtnDesc|确认
+TipsType_300002_RightBtnDesc|确认
+TipsType_20157_RightBtnDesc|确认
+TipsType_100002_RightBtnDesc|取消
+TipsType_100012_LeftBtnDesc|确认
+TipsType_300002_Title|唤醒确认
+TipsType_100016_Desc|对方已取消友谊赛
+TipsType_100017_LeftBtnDesc|确认
+TipsType_100018_LeftBtnDesc|取消
+TipsType_20158_Title|退出确认
+TipsType_10909_LeftBtnDesc|取消
+TipsType_20158_LeftBtnDesc|取消
+TipsType_300002_LeftBtnDesc|取消
+TipsType_100016_LeftBtnDesc|确认
+TipsType_100018_RightBtnDesc|确认
+TipsType_10909_RightBtnDesc|确认
+TipsType_10910_LeftBtnDesc|取消
+TipsType_20156_RightBtnDesc|确认
+TipsType_10910_RightBtnDesc|确认
+TipsType_100020_RightBtnDesc|确认
+TipsType_10914_LeftBtnDesc|取消
+TipsType_100020_LeftBtnDesc|取消
+TipsType_10909_Title|唤醒确认
+TipsType_10916_Title|解锁确认
+TipsType_10916_LeftBtnDesc|取消
+TipsType_10916_RightBtnDesc|确认
+TipsType_100001_LeftBtnDesc|取消
+TipsType_10919_LeftBtnDesc|取消
+TipsType_10908_RightBtnDesc|确认
+TipsType_10919_RightBtnDesc|确认
+TipsType_20156_LeftBtnDesc|取消
+TipsType_20159_Title|转换提示
+TipsType_20158_RightBtnDesc|确认
+TipsType_100001_RightBtnDesc|确认
+TipsType_20156_Title|解锁确认
+TipsType_100011_Desc|你已取消友谊赛
+TipsType_10910_Title|唤醒确认
+TipsType_20157_Title|解锁确认
+TipsType_100001_Title|切换分辨率确认
+TipsType_300001_Title|唤醒确认
+TipsType_10908_Title|唤醒确认
+TipsType_300001_LeftBtnDesc|取消
+TipsType_20160_RightBtnDesc|确认
+TipsType_10908_LeftBtnDesc|取消
+TipsType_10914_Title|任选确认
+TipsType_10914_RightBtnDesc|确认
+TipsType_10920_RightBtnDesc|确认
+TipsType_20162_RightBtnDesc|确认
+TipsType_20188_RightBtnDesc|确认
+TipsType_20192_LeftBtnDesc|取消
+TipsType_20161_Title|转换提示
+TipsType_20163_RightBtnDesc|确认
+TipsType_20400_RightBtnDesc|确认
+TipsType_10920_LeftBtnDesc|取消
+TipsType_20187_LeftBtnDesc|确认
+TipsType_31004_Title|复活确认
+TipsType_20400_LeftBtnDesc|取消
+TipsType_20214_LeftBtnDesc|取消
+TipsType_31003_Title|复活确认
+TipsType_20220_LeftBtnDesc|取消
+TipsType_20189_RightBtnDesc|确认
+TipsType_20186_LeftBtnDesc|取消
+TipsType_20214_RightBtnDesc|确认
+TipsType_20169_Title|确认选择
+TipsType_20185_LeftBtnDesc|取消
+TipsType_20169_RightBtnDesc|确认
+TipsType_20190_Title|转换提示
+TipsType_20165_LeftBtnDesc|取消
+TipsType_31003_RightBtnDesc|确认
+TipsType_31004_RightBtnDesc|确认
+TipsType_31000_LeftBtnDesc|取消
+TipsType_20163_LeftBtnDesc|取消
+TipsType_20213_RightBtnDesc|确认
+TipsType_20215_LeftBtnDesc|取消
+TipsType_20213_LeftBtnDesc|取消
+TipsType_20185_RightBtnDesc|确认
+TipsType_20216_Title|购买确认
+TipsType_20215_RightBtnDesc|确认
+TipsType_20162_LeftBtnDesc|取消
+TipsType_20188_LeftBtnDesc|取消
+TipsType_20164_LeftBtnDesc|取消
+TipsType_20189_LeftBtnDesc|取消
+TipsType_31000_RightBtnDesc|确认
+TipsType_20186_RightBtnDesc|确认
+TipsType_31003_LeftBtnDesc|取消
+TipsType_20169_LeftBtnDesc|取消
+TipsType_20210_Title|调查确认
+TipsType_20216_LeftBtnDesc|取消
+TipsType_20164_RightBtnDesc|确认
+TipsType_20165_RightBtnDesc|确认
+TipsType_20229_Title|购买确认
+TipsType_20356_RightBtnDesc|确认
+TipsType_20241_Title|购买确认
+TipsType_20229_RightBtnDesc|确认
+TipsType_20232_Title|调查确认
+TipsType_20233_RightBtnDesc|确认
+TipsType_20352_RightBtnDesc|确认
+TipsType_20224_LeftBtnDesc|取消
+TipsType_20229_LeftBtnDesc|取消
+TipsType_20221_LeftBtnDesc|确认
+TipsType_20230_Title|调查确认
+TipsType_20241_LeftBtnDesc|取消
+TipsType_20226_RightBtnDesc|确认
+TipsType_20223_RightBtnDesc|确认
+TipsType_20352_Title|邀请确认
+TipsType_20356_Title|调查确认
+TipsType_20351_RightBtnDesc|确认
+TipsType_20226_Title|重置确认
+TipsType_20227_LeftBtnDesc|取消
+TipsType_20241_RightBtnDesc|确认
+TipsType_20233_Title|补全确认
+TipsType_20226_LeftBtnDesc|取消
+TipsType_20238_Title|调查确认
+TipsType_20356_LeftBtnDesc|取消
+TipsType_20239_Title|调查确认
+TipsType_20236_Title|调查确认
+TipsType_20250_Title|调查确认
+TipsType_20251_Title|调查确认
+TipsType_20231_Title|调查确认
+TipsType_20233_LeftBtnDesc|取消
+TipsType_20222_RightBtnDesc|确认
+TipsType_20351_LeftBtnDesc|取消
+TipsType_20227_RightBtnDesc|确认
+TipsType_20223_LeftBtnDesc|取消
+TipsType_20352_LeftBtnDesc|取消
+TipsType_20237_Title|调查确认
+TipsType_20222_LeftBtnDesc|取消
+TipsType_20227_Title|重置确认
+TipsType_20225_LeftBtnDesc|取消
+TipsType_20225_RightBtnDesc|确认
+TipsType_20235_Title|调查确认
+TipsType_DiskSpaceNotEnough_RightBtnDesc|确认
+TipsType_PVPSurrenderConfirm_Title|投降确认
+TipsType_FollowBackConfirm_RightBtnDesc|确认
+TipsType_PVPSurrenderConfirm_LeftBtnDesc|取消
+TipsType_20357_Title|取消关注
+TipsType_20357_RightBtnDesc|确认
+TipsType_20358_LeftBtnDesc|取消
+TipsType_20240_RightBtnDesc|确认
+TipsType_20358_Title|退出确认
+TipsType_MainResetBG_RightBtnDesc|确认
+TipsType_InCharging_Title|温馨提示
+TipsType_InCharging_RightBtnDesc|确认
+TipsType_20252_Title|调查确认
+TipsType_FollowBackConfirm_LeftBtnDesc|取消
+TipsType_20357_LeftBtnDesc|取消
+TipsType_FollowBackConfirm_Title|回关确认
+TipsType_PVEReplayMaxRounds_Title|结束确认
+TipsType_20358_RightBtnDesc|确认
+TipsType_DiskSpaceNotEnough_LeftBtnDesc|取消
+TipsType_MainResetBG_LeftBtnDesc|取消
+TipsType_PVEReplayMaxRounds_RightBtnDesc|确认
+TipsType_20240_Title|温馨提示
+TipsType_WaitOthersEnter_LeftBtnDesc|取消
+TipsType_RailWaySaveAndExitTips_Desc|是否确认退出挑战?
+”，如果添加失败请跳转到设置启用“桌面快捷方式”权限。
+PanelText_UI_Setting_Popup_ChooseLang_Text_C_Tip_Content|后续可在「设置-语言」中重新选择
+========== 取消再来一局成功 ==========
+========== 取消再来一局失败 ==========
+========== 设置玩家状态失败 ==========
+========== 取消拉黑失败 ==========
+========== 设置头像失败 ==========
+========== 设置玩家状态成功 ==========
+========== 设置生日成功 ==========
+========== 设置生日失败 ==========
+========== 取消备注失败 ==========
+========== 取消备注成功 ==========
+========== 设置常用助战失败 ==========
+========== 设置简介失败 ==========
+========== 设置头像成功 ==========
+========== 取消拉黑成功 ==========
+========== 设置头像框成功 ==========
+========== 设置常用助战成功 ==========
+========== 设置头像框失败 ==========
+========== 设置简介成功 ==========
+Voice_6354_AwakerVoiceContent|哇！别靠近我！先、先证明你不是黑暗的走狗！对，走狗，只要脱掉衣服让我看看你身上有没有那种恶心的黑色黏液，我就能确认你是不是恶魔……
+● 在狀態抵消時增加了抵消飄字，以提示抵消的發生。
+Voice_67297_AwakerVoiceContent|你想要确认什么吗？可惜，这具躯体的感官与心智受到太多限制和约束，若你我在深渊中相会，我便能带你领略更多……
+Voice_84199_AwakerVoiceContent|灯塔系统能够极大减轻领航的压力，而她的灯光尤其明亮，我很乐意与法洛思一起出航。
+PanelText_UI_Social_Item_Data_Left_Text_C_Privacy_Content|守密人已设置调查状况为隐私
+PanelText_UI_Social_Item_Data_Overview_Left_Text_C_Privacy_Content|守密人已设置调查状况为隐私
+PanelText_UI_Setting_Popup_Main_Text_C_Title_Content|设置
+PanelText_UI_Other_Physical_Tips_Text_Name_Content|取消
+PanelText_UI_Other_Physical_Tips_Text_C_Name_Content|取消
+PanelText_UI_Social_Panel_Data_Text_C_Privacy_Content|守密人已设置调查状况为隐私
+PanelText_UI_Event_Activity_RewardResult_Text_C_Close_Content|点击空白处返回
+PanelText_UI_Awaker_Popup_Trinket_Conversion_Text_C_Exchange_Content|置换设置
+PanelText_UI_Login_Text_C_Set_Content|设置
+● 對命輪疊位完成返回後，仍然選中此前疊位命輪，便於守密人繼續進行疊位。
+● 在編隊完成進入調查時，如果隊伍中有重複命輪，會出現調查確認提示，提醒守密人調整命輪。
+● 選擇助戰頁面優化：增加了無可助戰喚醒體時的文本提示，且滑動條在不需要時將不顯示。
+● 「點讚記錄」為空時，增加了相應文本提示。
+● 修復了戰鬥結束返回對弈大廳時播放了錯誤音樂的問題。
+● 優化了助戰頁面無可助戰喚醒體時的文本提示，使其更加準確。
+● 修復了隊伍平均等級未計算助戰喚醒體等級的問題，使其不會錯誤地彈出等級不足調查確認提示。
+● 修復了教程提示彈出時會使螢幕點擊無效的錯誤。
+● 修復了在冶煉室和物資介面需要點擊兩次返回按鈕才能返回的問題。
+● 優化了更新補丁檢測機制，使守密人能更及時準確地收到更新提示。
+● 修復了觸發應急靈知體時，關閉提示視窗緩慢的問題。
+● 無論因為什麼原因，怪物免疫傷害時都擁有了視覺提示效果。
+● 新增打出「胚胎」後，狂氣恢復的提示音效。
+{"attributes":{"pos_z":0,"scene":"TestScene","Z1_test_label":"65559","pos_y":0,"pos_x":0},"timeUnixNano":"1775499154000000093","name":"apm_span","body":{"name":"init_config","spanId":"891405b12ca1cdea","endTimeUnixNano":"1775499154717000000","startTimeUnixNano":"1775499152615000000","attributes":{"status":200,"headers.access-control-allow-headers":"DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Caller,Accept,Referer,Origin,uber-trace-id,retrievalToken","headers.content-length":"173","headers.access-control-allow-methods":"GET, POST, OPTIONS, PUT, DELETE","headers.access-control-allow-credentials":"true","headers.alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","headers.via":"1.1 google","body":"{\"state\":{\"code\":2000000,\"msg\":\"操作成功\",\"desc\":\"没有设置描述\",\"subCode\":2000000},\"id\":\"1775499152750\",\"data\":{\"configCheckTime\":1774428468285,\"clientConfig\":{}}}","headers.date":"Mon, 06 Apr 2026 18:12:34 GMT"},"traceId":"70e68a3e4412480b891405b12ca1cdea"}}
+[l][p]#{"attributes":{"pos_z":0,"scene":"TestScene","Z1_test_label":"65559","pos_y":0,"pos_x":0},"timeUnixNano":"1775499154000000093","name":"apm_span","body":{"name":"init_config","spanId":"891405b12ca1cdea","endTimeUnixNano":"1775499154717000000","startTimeUnixNano":"1775499152615000000","attributes":{"status":200,"headers.access-control-allow-headers":"DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Caller,Accept,Referer,Origin,uber-trace-id,retrievalToken","headers.content-length":"173","headers.access-control-allow-methods":"GET, POST, OPTIONS, PUT, DELETE","headers.access-control-allow-credentials":"true","headers.alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","headers.via":"1.1 google","body":"{\"state\":{\"code\":2000000,\"msg\":\"操作成功\",\"desc\":\"没有设置描述\",\"subCode\":2000000},\"id\":\"1775499152750\",\"data\":{\"configCheckTime\":1774428468285,\"clientConfig\":{}}}","headers.date":"Mon, 06 Apr 2026 18:12:34 GMT"},"traceId":"70e68a3e4412480b891405b12ca1cdea"}}
+save_to_file:{"attributes":{"pos_z":0,"scene":"TestScene","Z1_test_label":"65559","pos_y":0,"pos_x":0},"timeUnixNano":"1775499154000000093","name":"apm_span","body":{"name":"init_config","spanId":"891405b12ca1cdea","endTimeUnixNano":"1775499154717000000","startTimeUnixNano":"1775499152615000000","attributes":{"status":200,"headers.access-control-allow-headers":"DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Caller,Accept,Referer,Origin,uber-trace-id,retrievalToken","headers.content-length":"173","headers.access-control-allow-methods":"GET, POST, OPTIONS, PUT, DELETE","headers.access-control-allow-credentials":"true","headers.alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","headers.via":"1.1 google","body":"{\"state\":{\"code\":2000000,\"msg\":\"操作成功\",\"desc\":\"没有设置描述\",\"subCode\":2000000},\"id\":\"1775499152750\",\"data\":{\"configCheckTime\":1774428468285,\"clientConfig\":{}}}","headers.date":"Mon, 06 Apr 2026 18:12:34 GMT"},"traceId":"70e68a3e4412480b891405b12ca1cdea"}}
+彌薩格大學校務處將於12月15日23:00(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修复了玩法活动「沉渊之祀·复刻」在设置语言「简体中文」时，有部分文字显示错误的情况。
+守密人你好：\n       彌薩格大學校務處將於7月29日22:15(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！ \n \n【補給物資】\n維護補償：銀芯*50\n \n【領取條件】\n領取時間截至2024年8月12日23:59。請記得及時前往郵箱領取補給物資哦。   \n\n【更新內容】\n● 修復了喚醒體「艾繼絲」超限爆發描述錯誤，應該為「本回合所有喚醒體造成的傷害提高 25%」。\n● 修復了喚醒體「艾繼絲」啟靈「糖果甜香」描述遺漏，最終傷害提高上限應為 500%。\n● 修復了喚醒體「菲茵特」超限爆發戰鬥內描述數值錯誤，應為40%-80%（隨星之搖籃等級提升而增加）。\n● 修復了喚醒體「戈利亞」在未啟動人格深化 4 時，狂氣爆發釋放無效的問題。\n● 修復了「選擇助戰」列表錯誤地顯示為全部選中狀態的問題。\n● 修復了「選擇助戰」介面中，助戰校友頭像邊緣超出外框的錯誤問題。\n● 修復了「達人榜：守密人等級」個別守密人資料錯誤的問題。\n● 修復了「無光之境」解鎖後仍然提示「未解鎖」無法進入關卡的問題。\n● 修復了「相位對弈」再來一局時，一方勝利兩次後，「再來一局」按鈕沒有呈現灰色的問題。
+PanelText_UI_Common_Popup_Tip_01_Text_C_Screening_Content|今日不再提示
+PanelText_UI_Common_Popup_Tip_3_Text_C_Screening_Content|今日不再提示
+PanelText_UI_Guide_ChangeName_Text_C_Return_Content|返回选择性别
+PanelText_UI_Dungeous_Popup_Swept_Tip_Text_C_Title_Content|重现确认
+PanelText_UI_Keeper_Skill_Panel_Text_C_Name_2_Content|取消
+PanelText_UI_Common_Popup_Tip_6_Text_NameConfirm_Content|确认
+PanelText_UI_Common_Popup_Tip_6_Text_NameCancel_Content|取消
+PanelText_UI_Main_Helicopter_Tips_Text_Name_2_Content|取消
+PanelText_Panel_Gm_PVP_Text_C_Confirm_Content|确认
+PanelText_Panel_Gm_PVP_Text_C_Canel_Content|取消
+PanelText_UI_Battle_Popup_Furnace_Text_C_Name_2_Content|确认
+PanelText_UI_Other_Physical_Tips_Text_C_Name_1_Content|取消
+PanelText_UI_Battle_Popup_Furnace_Text_C_Name_1_Content|取消
+PanelText_Panel_Gm_Battle_Art_Entry_Text_C_Canel_Content|取消
+PanelText_Panel_Gm_Battle_Dbg_Entry_Text_C_Canel_Content|取消
+PanelText_Popup_Gm_Effect_Text_Confirm_Content|确认
+PanelText_UI_Login_Text_C_Setting_Content|设置
+PanelText_UI_Social_Popup_Match_Text_Name_Content|取消
+PanelText_UI_Battle_Panel_Dbg_Text_C_Setting_Content|设置
+PanelText_UI_Battle_Tip_Backtrack_Text_C_Cancel_Content|取消
+PanelText_UI_Pvp_Popup_ImportTeam_Text_C_Cancel_Content|取消
+PanelText_UI_Events_Item_Summer2_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_KathiguRa_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Alchemy_Popup_ResolveMaterials_Sift2_Text_Confirm_Content|确认
+PanelText_UI_Dungeous_Popup_Swept_Tip2_Text_Title_Content|重现确认
+PanelText_UI_Social_Panel_Data_Text_C_Not_Content|未设置助战唤醒体
+PanelText_UI_Social_Item_Data_Right_Text_C_Not_Content|未设置助战唤醒体
+PanelText_UI_Social_Item_Data_Overview_Left_Text_C_Notset_Content|未设置
+PanelText_UI_Awaker_Item_Origin_Tip_Text_C_Name_1_Content|取消
+PanelText_UI_Awaker_Item_Origin_Tip_Text_C_Title_Content|解锁本源确认
+PanelText_UI_Awaker_Item_Weapon_Refining_Text_C_Blackpool_Content|返回预览
+PanelText_UI_Awaker_Item_Weapon_Refining_Text_C_Overlay_Content|返回预览
+PanelText_Panel_Gm_Battle_Art_Entry_Text_C_Confirm_Content|确认
+PanelText_UI_Awaker_Popup_Backtrace_Tip_Text_C_Name_2_Content|确认
+PanelText_UI_Events_Item_Lake_City_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Miriam_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Sorel_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Recharge_OnekeyPurchase_Text_C_Title_Content|购买确认
+PanelText_UI_Events_Item_Murphy_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Ryker_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Social_Panel_Main_Item_Text_C_Unblock_Content|取消拉黑
+PanelText_UI_Social_Item_FriendlyInvite_Text_C_Cancel_Content|已取消
+PanelText_UI_Collection_Panel_SetMainBg_Text_C_Cancel_Content|取消
+PanelText_UI_Events_Item_Wanda_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Hamline_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_OriHelot_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_WorldBoss_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Tawil_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Social_Popup_SwitchGender_Text_Cancel_Name_Content|取消
+PanelText_UI_Events_Item_OriDoll_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Tulu_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Dbgcopy_Panel_RelicPreview_Text_Name_Content|返回
+PanelText_UI_Events_Item_Daffodil_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Clementine_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Battle_Popup_RebirthTip_Text_Title_Content|复活确认
+PanelText_UI_Battle_Popup_RebirthTip_Text_Cancel_Name_Content|取消
+PanelText_UI_Events_Item_StElmosFire_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Suummoon_Popup_AwakerWeapon_Text_C_Confirm_Content|确认选择
+PanelText_UI_Events_Item_OceanBoss_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Rome_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Castor_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Doresain_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Events_Item_Summer1_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Awaker_Popup_Exchange_Tip_Text_Title_Content|补全提示
+PanelText_UI_Events_Item_Pickman_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Awaker_Popup_Trinket_Upgrade_Text_C_Exchange_Content|置换设置
+PanelText_UI_Pvp_Popup_PasswordReady_Text_C_Cancel_Content|取消
+PanelText_UI_Pvp_Popup_PasswordCode_Text_C_Cancel_Content|取消
+PanelText_UI_Social_Panel_Main_Item_Text_Unfollow_Content|取消关注
+PanelText_UI_Pvp_Popup_PasswordMatch_Text_C_Cancel_Content|取消
+PanelText_UI_Awaker_Popup_Exchange_Tip_Text_Cancel_Name_Content|取消
+PanelText_UI_Events_Item_Pollux_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Common_Popup_Tip_3_Text_Screening_Content|今日不再提示
+PanelText_UI_Events_Item_OriMurphy_Text_C_LockTips_Content|关卡解锁提示
+PanelText_UI_Recharge_Popup_OptionGift_Text_C_Title_Content|确认购买
+PanelText_UI_Recharge_Popup_OptionGift_Text_C_Cancel_Content|取消
+存在同时更新资源，等待返回
+存在同时释放资源，等待返回
+释放资源释放完成，返回中
+。  \n \n【更新內容】\n一、問題修復\n● 修復了在部分地區夏令時切換時，某些情況下可能出現的以下問題：\n○ 每日首次登入時，活動介紹資訊未能正常彈出。\n○ 「常訓任務」介面顯示錯誤，無法領取獎勵。\n○ 劇情中勾選「今日不再提示」後，選擇跳過劇情不生效。\n\n二、已知問題\n以下問題我們已記錄在案，將在後續更新中修復：\n● 在「疾馳的歡愉專列」中「保存並退出」後，本次退出前已完成戰鬥的出牌數未能正確計入「常訓任務-每日試訓」的任務進度。"},"order":9470,"_version":"69cf78630000000000000000","_val_client_modes":null,"_uuid":"69cf602a96f5bb27a6011099","_type":"Normal","_tags_info":[{"tags":null,"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9470,"_mtime":"1775204451","_ctime":"1775198250","_badge_config":{"is_open":true,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"V2.4.3.7 在線維護公告","subTitle":"V2.4.3.7 在線維護公告","page":"GameNotice","important":false,"content":"守密人你好：\n       彌薩格大學校務處將於4月4日19:00(UTC+8) 進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！ \n  \n【補給物資】\n在線維護補償：銀芯×50\n語言設置異常補償：銀芯×500\n  \n【領取條件】\n領取時
+關於異常訂單的處理及賬號安全風險提示公告
+守密人你好：\n       彌薩格大學校務處將於1月5日2:55(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】  \n維護補償：銀芯*50  \n\n【領取條件】  \n領取時間截至2024年2月4日23:59。請記得及時前往郵箱領取補給物資哦。\n\n【更新內容】\n\n【信箱】\n修復了部分守密人未正確收到「版本體驗調研問卷V1.0下」郵件的問題。在1月5日5:00~1月11日5:00期間，所有達到10級的守密人登入即可收到該調研問卷。（不會對已經收到該問卷的守密人重複發放。）
+彌薩格大學校務處將於12月5日21:15(UTC+8)進行校內設施修復，更新完成後您將得到提示，即可重新進入遊戲。對於更新可能帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了守密人等級提升時「關卡造物和刻印強度已提升」提示有時候沒有出現的問題。
+● 「研習自選」獎勵的「原質樂園」「輪轉之書」現在選擇後會有二次確認，減少守密人誤選的可能性；如果領取獎勵時未選擇，在進入「物資」後也新增了紅點提示，使其不容易被守密人忽略。
+● 開始調查時，隊伍平均等級或調查等級不足的「調查確認」提示增加「今日不再提示」選項，勾選之後今日調查將不再觸發此提示。
+● 優化了編輯隊伍介面在無對應篩選結果時的介面展示，並增加了操作提示。
+彌薩格大學校務處將於12月6日22:15(UTC+8)進行校內設施修復，更新完成後您將得到提示，即可重新進入遊戲。對於更新可能帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了喚醒體升級時溢出經驗返還和升級提示重疊的問題。
+● 修復了某些機型快速點選返回鍵會出現報錯的問題。
+● 修復了打開命輪分解、密契分解或商店界面時，快速關閉界面或返回可能會導致的錯誤。
+● 優化了刻印選擇界面，刻印詳情提示顯示的位置，現在不容易遮擋對應選項了。
+● 優化了事件觸發時「顯示事件」「隱藏事件」的提示效果，使其更容易被注意到。
+彌薩格大學校務處將於12月28日21:30(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+彌薩格大學校務處將於12月7日20:15(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 優化了兌換碼無法兌換的提示資訊,讓守密人可以更清楚地知道原因。
+● 修復了點擊月相觀測每日獎勵提示介面邊緣時，無法正常關閉該介面的問題。
+● 新增了移動網路下載資料時的確認提示，守密人可以選擇是否下載。
+● 新增手牌數量的顯示，且點擊後會出現提示資訊。
+● 手牌數量增加了點擊後的提示資訊。
+彌薩格大學校務處將於12月8日19:15(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 優化了大部分的提示視窗，現在除了少數視窗（如派遣報告、復活確認、融痕商店、關卡事件等）外，點擊空白區域都可以關閉視窗。
+● 優化了通用提示視窗的標題，使其顯示更加清晰。
+● 優化了戰鬥中手牌數量的顯示，現在會根據目前的手牌數量顯示不同的顏色提示。
+● 調整了銀鑰能量增加的提示數字顯示的位置，使其不會被戰鬥倍速按鈕遮擋。
+● 狂氣爆發可使用時，新增了提示動畫特效，使守密人更容易關注到。
+● 已知問題：對方喚醒體狂氣爆發可用時也會錯誤地顯示提示效果，我們會儘快修復此問題。
+● 已知問題：目前不死的極樂鳥 的死亡抵抗在結算時會有表現延遲並且顯示錯誤的「重生」提示，後續會修復。
+彌薩格大學校務處將於1月2日20:30(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+彌薩格大學校務處將於1月4日21:45(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修复了「疾驰的欢愉专列」中「专列轨迹」界面在部分语言设置下，左侧页签文字过于拥挤的问题。
+● 修复了「疾驰的欢愉列车」中选择造物后 「确认」按钮状态显示错误的问题。
+● 修复了英语语言设置下，玩法活动「疾驰的欢愉专列」中部分唤醒体敌人名称拼写、符号格式错误的问题。
+● 修复了英语语言设置下，玩法活动「疾驰的欢愉专列」中部分「褪色遗骨」事件选项错误显示为机器翻译的问题。
+● 修复了使用 PC 游玩时，在登录界面「设置」中修改分辨率不能生效的问题。
+● 修复了在「幻梦深潜」挑战过程中将游戏切换到后台运行一段时间后，返回继续完成挑战时，深潜分数会错误的按 0 分结算和记录的问题。对于已经发生异常的深潜分数，很抱歉我们目前无法使之恢复正常。
+● 修復了在「幻夢深潛」挑戰過程中將遊戲切換到後臺運行一段時間後，返回繼續完成挑戰時，深潛分數會錯誤的按 0 分結算和記錄的問題。對於已經發生異常的深潛分數，很抱歉我們目前無法使之恢復正常。
+● 修復了「混沌」界域隊伍在融災黑潮的「銀鑰震盪」影響下，鑰令能量未達到實際需求值就錯誤的提示可釋放的問題。
+● 修正了活動「窺覷神國的陰影」中推薦等級提示異常的問題。
+● 優化了啟靈回溯時，「喚醒體」還在派遣中的提示。
+● 修正了活动「窥觑神国的阴影」中推荐等级提示异常的问题。
+系统拒绝应用申请此权限。如需使用功能，请前往系统设置内手动打开此权限。
+您已拒绝相机权限。如需使用功能，请前往系统设置内手动打开此权限。
+consultationcommunity ofthe nationalit should beparticipants align="leftthe greatestselection ofsupernaturaldependent onis mentionedallowing thewas inventedaccompanyinghis personalavailable atstudy of theon the otherexecution ofHuman Rightsterms of theassociationsresearch andsucceeded bydefeated theand from thebut they arecommander ofstate of theyears of agethe study of<ul class="splace in thewhere he was<li class="fthere are nowhich becamehe publishedexpressed into which thecommissionerfont-weight:territory ofextensions">Roman Empireequal to theIn contrast,however, andis typicallyand his wife(also called><ul class="effectively evolved intoseem to havewhich is thethere was noan excellentall of thesedescribed byIn practice,broadcastingcharged withreflected insubjected tomilitary andto the pointeconomicallysetTargetingare actuallyvictory over();</script>continuouslyrequired forevolutionaryan effectivenorth of the, which was front of theor otherwisesome form ofhad not beengenerated byinformation.permitted toincludes thedevelopment,entered intothe previousconsistentlyare known asthe field ofthis type ofgiven to thethe title ofcontains theinstances ofin the northdue to theirare designedcorporationswas that theone of thesemore popularsucceeded insupport fromin differentdominated bydesigned forownership ofand possiblystandardizedresponseTextwas intendedreceived theassumed thatareas of theprimarily inthe basis ofin the senseaccounts fordestroyed byat least twowas declaredcould not beSecretary ofappear to bemargin-top:1/^\s+|\s+$/ge){throw e};the start oftwo separatelanguage andwho had beenoperation ofdeath of thereal numbers	<link rel="provided thethe story ofcompetitionsenglish (UK)english (US)МонголСрпскисрпскисрпскоلعربية正體中文简体中文繁体中文有限公司人民政府阿里巴巴社会主义操作系统政策法规informaciónherramientaselectrónicodescripciónclasificadosconocimientopublicaciónrelacionadasinformáticarelacionadosdepartamentotrabajadoresdirectamenteayuntamientomercadoLibrecontáctenoshabitacionescumplimientorestaurantesdisposiciónconsecuenciaelectrónicaaplicacionesdesconectadoinstalaciónrealizaciónutilizaciónenciclopediaenfermedadesinstrumentosexperienciasinstituciónparticularessubcategoriaтолькоРоссииработыбольшепростоможетедругихслучаесейчасвсегдаРоссияМоскведругиегородавопросданныхдолжныименноМосквырублейМосквастраныничегоработедолженуслугитеперьОднакопотомуработуапрелявообщеодногосвоегостатьидругойфорумехорошопротивссылкакаждыйвластигруппывместеработасказалпервыйделатьденьгипериодбизнесосновемоменткупитьдолжнарамкахначалоРаботаТолькосовсемвторойначаласписокслужбысистемпечатиновогопомощисайтовпочемупомощьдолжноссылкибыстроданныемногиепроектСейчасмоделитакогоонлайнгородеверсиястранефильмыуровняразныхискатьнеделюянваряменьшемногихданнойзначитнельзяфорумаТеперьмесяцазащитыЛучшиеनहींकरनेअपनेकियाकरेंअन्यक्यागाइडबारेकिसीदियापहलेसिंहभारतअपनीवालेसेवाकरतेमेरेहोनेसकतेबहुतसाइटहोगाजानेमिनटकरताकरनाउनकेयहाँसबसेभाषाआपकेलियेशुरूइसकेघंटेमेरीसकतामेरालेकरअधिकअपनासमाजमुझेकारणहोताकड़ीयहांहोटलशब्दलियाजीवनजाताकैसेआपकावालीदेनेपूरीपानीउसकेहोगीबैठकआपकीवर्षगांवआपकोजिलाजानासहमतहमेंउनकीयाहूदर्जसूचीपसंदसवालहोनाहोतीजैसेवापसजनतानेताजारीघायलजिलेनीचेजांचपत्रगूगलजातेबाहरआपनेवाहनइसकासुबहरहनेइससेसहितबड़ेघटनातलाशपांचश्रीबड़ीहोतेसाईटशायदसकतीजातीवालाहजारपटनारखनेसड़कमिलाउसकीकेवललगताखानाअर्थजहांदेखापहलीनियमबिनाबैंककहींकहनादेताहमलेकाफीजबकितुरतमांगवहींरोज़मिलीआरोपसेनायादवलेनेखाताकरीबउनकाजवाबपूराबड़ासौदाशेयरकियेकहांअकसरबनाएवहांस्थलमिलेलेखकविषयक्रंसमूहथानाتستطيعمشاركةبواسطةالصفحةمواضيعالخاصةالمزيدالعامةالكاتبالردودبرنامجالدولةالعالمالموقعالعربيالسريعالجوالالذهابالحياةالحقوقالكريمالعراقمحفوظةالثانيمشاهدةالمرأةالقرآنالشبابالحوارالجديدالأسرةالعلوممجموعةالرحمنالنقاطفلسطينالكويتالدنيابركاتهالرياضتحياتيبتوقيتالأولىالبريدالكلامالرابطالشخصيسياراتالثالثالصلاةالحديثالزوارالخليجالجميعالعامهالجمالالساعةمشاهدهالرئيسالدخولالفنيةالكتابالدوريالدروساستغرقتصاميمالبناتالعظيمentertainmentunderstanding = function().jpg" width="configuration.png" width="<body class="Math.random()contemporary United Statescircumstances.appendChild(organizations<span class=""><img src="/distinguishedthousands of communicationclear"></div>investigationfavicon.ico" margin-right:based on the Massachusettstable border=internationalalso known aspronunciationbackground:#fpadding-left:For example, miscellaneous&lt;/math&gt;psychologicalin particularearch" type="form method="as opposed toSupreme Courtoccasionally Additionally,North Americapx;backgroundopportunitiesEntertainment.toLowerCase(manufacturingprofessional combined withFor instance,consisting of" maxlength="return false;consciousnessMediterraneanextraordinaryassassinationsubsequently button type="the number ofthe original comprehensiverefers to the</ul>
+今日不再提示
+● 修复了「战斗」中的威胁提示会在怪物回合随着自身状态变化从而导致不准确的问题。
+● 修復了某些情況下「商店」入口有無法移除的「新」提示的問題。
+● 优化了语言设置为英语时的以下文本表述问题：
+● 修复了语言设置为「English(GptTest)」时，特遣纪录「狩猎愉快！：悲剧秀」中部分台词文本显示为简体中文的问题。
+【幻衣系统上架：银枢幻衣】
+【新增解锁提示】
+● 以下内容在解锁时新增解锁提示
+【引导提示强化】
+● 强化了功能解锁时的提示效果，现在会有额外的解锁界面动态效果和简单的文本提示。
+● 补充和更新了部分功能解锁时的弹出提示。首次进入功能界面时，将弹出「？」的提示信息，并为部分界面补充「？」和信息说明。
+● 角色活动唤醒、角色玩法活动等新活动上线期间，守密人首次登录进入首页时将弹出提示。
+● 修复了「窥觑神国的阴影：异动海潮」中等级修正提示存在错误文本的问题
+● 修复了「设置-系统」内「战斗」文本丢失的问题
+● 修复了设置为中文以外的其他语言时，拉蒙娜启灵"莫比乌斯囚徒"中部分字符缺失的问题（已替换为当前字体支持的字符）。
+● 修复了设置为英语时，收藏馆中同时出现两个留声机的问题。
+● 修复了设置为中文以外的其他语言时，PVP模式下部分命轮标签颜色显示异常的问题。类似问题将持续进行修正。
+● 修复了当游戏语言设置为英语时的以下本地化问题：
+● 修复了「商店：幻衣订购」中幻衣购买时，因缺少二次确认提示，容易误触购买的问题。
+● 修复了在编队界面进入角色界面后跳转素材时出现副本错误提示的问题。
+● 「设置」中新增了「战斗动态背景」图像选项，对背景摇晃敏感的守密人可以尝试关闭该选项。
+● 「设置」中新增选牌方向、选牌确认、以及特殊界面选项确认的快捷键功能。
+● 「简约幻衣绘形券」过期后，会在守密人首次打开「物资」界面时自动弹出回收转换提示。
+● 修复了部分语言设置下，「卡牌」描述文字边缘不清晰的问题。
+○ 守密人初次体验「相位对弈」时，匹配到系统预设对手的场次提升。
+○ 低于 1500 积分的守密人在对战失败后，下一场将更容易匹配到系统预设对手。
+○ 低于 1500 积分的守密人，每日第一场对战都将匹配到系统预设对手。
+● 修复了在序章中可以唤出的设置菜单的问题。
+● 修复了一些在输入邀请码后可能出现活动过期提示的问题，这个问题在 8 月 21 日已通过服务器更新修复，现进行补充说明。
+● 「活动」界面中进入玩法时，若「骑士的愿望」尚未通关，弹出的提示说明增加了关卡类型说明。
+● 修复了「星辰篇」战斗界面篇章提示下方内战斗波次信息没有正确显示的问题。
+● 修复了奥尔拉活动「在春天凋零以前」界面中提示窗口有时候没有正确关闭的问题。
+● 修复了「商店」界面在某些情况下购买物品没有正确显示获得提示的问题。
+● 修复了「相位对弈」结算界面中点赞图标在部分语言设置下错误转行的问题。
+● 优化了敌人「杜勒赛因」的战斗中台词与机制提示。
+● 修复了「命轮」中在没有同名命轮的情况用「快速放入」对SR命轮叠位时提示文本不正确的问题。
+● 修复了「设置」界面中调整音量大小可能保存失败，导致重启游戏后音量被还原的问题。
+● 修复了「登录」界面进入游戏的触发资源下载提示框时，选择取消资源下载会导致卡死的问题。
+● 修复了「档案馆」在英语语言设置下部分文本内容格式错误的问题。
+● 修复了「唤醒」入口界面中的推荐提示没有正确消失的问题。
+● 优化了「守密人档案」数据更新时查看「守密人档案」的提示，使其更容易理解。
+● 修复了PC 游玩时，音频设置「游戏界面非当前窗口时，静音/持续播放」设置失效且可能音效播放错误的问题。
+● 移除了「喚醒」開啟時「界域研習」常駐角色喚醒的「新」提示，減少干擾。
+● 修復了啟靈 Lv11 且可進行啟靈時，缺少紅點提示的錯誤。
+● 修復了從跳轉的介面返回時，沒有正確的切換音樂的問題。
+● 修復了在關卡中離開過久後返回，探索進度顯示異常的問題。
+彌薩格大學校務處將於12月18日20:40(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了「鞘內補給」剩餘領取天數超過 180 天時，再次購買時的提示語錯誤。
+我們臨時增加了「喚醒擁有短暫間隔的限制」來避免這個問題再次發生，如果您在喚醒時遇到了「用戶端傳入資料錯誤」的提示，請忽略這個提示，並請不要在短時間內頻繁的點選按鈕。我們會在下週發布版本更新來徹底修復這個問題。非常抱歉給您帶來不便，若您在遊戲過程中仍遇到異常，請透過客服中心回報，感謝您的體諒與支持。\n\n【補給物資】 \n維護補償：銀芯*50 \n\n【領取條件】\n領取時間截止1月2日23:59。請及時領取補給物資。"},"order":9991,"_version":"668df7640000000000000000","_val_client_modes":null,"_uuid":"656c39fd221b0bb39df1d6fc","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9991,"_mtime":"1720579940","_ctime":"1701591549","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"t
+● 修复了游戏文字设置为English(GPT beta)时，「调查探索」中个别诅咒造物预览的名字异常的问题。
+● 修复了调查行动「溯梦」模式下跳过后返回「调查行动」界面会导致调查进度显示异常的问题。
+● 优化了游戏文字设置为部分语言时，唤醒体「卡牌」文本的排版效果。
+● 修复了游戏文字设置为部分语言（如日语）时，补丁更新弹框界面文字超出的问题。
+● 修复了游戏文字设置为部分语言（如德语）时，部分关卡初始造物获得界面显示越界的问题。
+● 修复了游戏文字设置为「简体中文」以外的其他语言时，唤醒体「塔薇」释放狂气爆发后选牌界面中的「确认」按钮文字错误地显示为简体中文的问题。
+● 修复了选择好友唤醒体助战时，可能提示「该玩家不存在」的问题。
+● 更新了「教程」中的部分系统效果图，让图文教程描述更为准确。
+弥萨格大学校务处将于1月13日08:00~12:00进行校内设施修复。本次维护完成后旧版本客户端将不再可用，守密人需要前往官网或应用商店安装最新版本的包体才可以继续登入。（目前商店和官网的包体已经更新至维护后可以继续使用的最新版本，守密人可以选择提前进行更新，或在维护开始后通过旧版本客户端的提示引导进行更新。）祝大家调查顺利！
+● 为适应游戏系统的变化，评分规则有所变更。
+● 往期角色活动背景动画已加入典藏馆，守密人可以前往「典藏馆」活动页签，将心仪的背景动画设置为宿舍背景。
+● 分解：设置中新增唤醒时多余的SR级命轮自动分解功能。
+● 修复了PC版本中，游戏在非当前窗口时音画不同步的问题，并设置增加静音或继续播放的选项。
+● 修复了「设置-系统」中「狂气爆发和钥令使用确认」为开启状态时，释放钥令没有弹出确认提示的问题。
+● 「设置-按键」中新增了界域混编时第二个界域能力释放的快捷键，默认为Q键。守密人可以根据自己的操作习惯进行调整。
+● 修复了星辰篇关卡探索中「灰烬遗迹」选择「感应」时，缺少确认选择弹窗的问题。
+● 今后关卡将固定为「忘却篇」，取消原轮换计划。敌人的强度将对应进行调整。
+● 今后关卡将固定为「星辰篇」，取消原轮换计划。
+● 修复了「维度影像·图鲁」生成临时触腕的效果未能正确生效的问题，同时修复了某些情况下图鲁「狂气爆发」确认按钮显示错误的问题。
+● 修复了某些情况下「典藏馆」中血链·希洛开屏动画设置为背景显示黑屏的问题。
+● 修复了玩法活动探索关卡关闭后可能有新字提示无法取消的问题。
+● 「回溯」中「养成回溯」的返回启灵养成效果现在独立拆分为「启灵回溯」，并且「养成回溯」和「启灵回溯」可以同时使用！
+● 修复了领取月卡失败后，无法弹出奖励提示窗的问题。
+● 修复了拉蒙娜在派遣中时，「环形拉蒙娜」养成回溯提示【用户端传入资料错误】的问题。
+守密人你好：\n       彌薩格大學校務處將於2月15日17:00(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】  \n維護補償：銀芯*50\n\n【領取條件】   \n領取時間截至2024年2月29日23:59。請記得及時前往郵箱領取補給物資哦。  \n\n【更新內容】\n修復了部分郵件點擊時，可能會錯誤地提示【郵件不存在】的問題。
+● 新增了「追隨者」增加時「校友會」入口的紅點提示，使守密人更容易關注到。
+● 新增了載入介面提示資訊，希望能讓守密人更加瞭解這個危機四伏的世界。
+● 修復了在「編隊」的命輪選擇介面長按命輪，或密契編輯介面長按密契，會一直彈出提示的問題。
+● 修復「靈魂的牧人」活動中成就獎勵全部領取後活動頁和福利入口仍有紅點提示的問題。
+● 修復「靈魂的牧人」活動中有成就獎勵未領取時活動頁和福利入口未顯示紅點提示的問題。
+● 修復「幕間演習」退出介面時，任務報酬右側「獎勵額外+50%」藍色文字提示略微延遲的問題。
+● 優化「探索」中「最終戰」節點的提示效果，使其更容易與其他如「精英」節點等區分。
+● 調查行動每一章的最終關卡增加了高難預警提示。
+● 修復「靈魂的牧人」活動共鳴可能出現紅點提示異常的問題。
+● 修復「密契轉錄」中的屬性替換完成提示音效在彈出「替換確認」視窗時就提前播放的問題。
+● 修復了從「課題紀錄」介面返回主介面時，不會切換背景音樂的問題。
+● 修複了從「課題記錄」返回主介面仍保留原背景音樂的問題。
+● 延長了「戰鬥」中部分怪物的提示語持續時間，以便守密人能更加清晰地瞭解怪物的機制。
+● 優化了「玩法活動」和「特遣紀錄」的共鳴紅點顯示規則。現在活動結束後，若共鳴粒子不足，大廳中將不再有對應的紅點提示，減少對守密人的困擾。
+彌薩格大學校務處將於12月1日22：45(UTC+8)進行校內設施修復，更新完成後您將會收到請您重新登入遊戲的提示。對於更新帶給大家的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+●  修復了「幻夢深潛」有累計獎勵可領取時沒有紅點提示的錯誤。
+● 修復了部分提示視窗彈出動畫未顯示及音效不同步的問題。
+●  修復了部分提示介面音效重複觸發的問題。
+●  調整了序章戰鬥教學中有指令卡、狂氣爆發或鑰令可使用時點擊回合結束的提示，讓守密人知道這是戰鬥教學的特殊設定，避免造成誤解。
+●  修復了「腺體分裂」增加突襲可觸發時不會顯示卡牌黃邊提示的問題，但還沒完全修好偶爾還是會不顯示。
+● 其他大量卡牌的数值或效果也发生了变化，详略，具体调整请在更新后前往游戏中确认。
+● 修复了「相位对弈」结算时，命轮名称在部分语言设置情况下有时显示不完全的问题。
+● 修复了 PC 版「设置-按键」中多次更改按键设置时按键可能错乱的问题。
+● 唤醒体「卡斯托尔」的衍生指令卡「黑羽」、唤醒体「血链·希洛」的指令卡「鲜血链条」现在初始计数会和即将打出次数匹配，显示为「1/3」而非「0/3」，且在第三次打出触发额外效果时会产生发光提示。
+● PC 中的「设置」新增了「查看文本标识」热键设置，启用后能更加便于翻译志愿者展开工作。
+● 密契 6 件套效果描述文本中「队伍唯一」现在修改为词缀，点击将弹出对应的效果说明提示。
+● 当编队中有重复的密契 6 件套效果时，密契图标上方将有「！」标识提示。
+● 此时开始调查弹出的「调查确认」提示中「队伍唯一」文字变为高亮蓝色作为强调显示。
+● 「异梦视界：天边之外·上」的最佳体验提示由通关「调查行动-忘却篇第七章」调整为通关「调查行动-忘却篇终章」。
+● 英文语言中，以下唤醒体的语音台词得到了人工翻译：「索蕾尔」，「血链·希洛」，「尤乌哈希」，「雷娅」,「24」，「达芙戴尔」。唤醒体「图鲁」在英语设置下的自称翻译得到了重新调整。
+● 修复了「编队」中设置的阵容有时候会意外清空的问题。
+● 修复了「命轮」回溯中「叠位」可用时缺少红点提示的问题。
+● 修复了部分语言设置下，「融灾禁区」界面中按钮文本错误换行与通关队伍文本错误重叠的问题。
+● 修复了部分语言设置下，唤醒体「环行·拉蒙娜」解锁时界面文本无法完整浏览的问题。
+○ 为「提灯教会」敌人补充了「卡斯托尔」的克制提示。
+● 宿舍音乐设置
+○ 现在可以将喜欢的音乐设置为宿舍的背景音乐。
+○ 现在支持将宿舍的背景与音乐恢复成默认设置。
+○ 增加了统一免费获得按钮文字颜色、点击未解锁关卡时提示解锁条件、调查开始时的标题提示不再显示装饰文本等界面细节。
+○ 匹配偏好设置：匹配时现在能选择要参与的模式、偏好匹配精准还是快速、是否匹配模拟对手。还能同时匹配「预组模式」与「轮选模式」。
+● 卡顿问题优化：优化了部分服务端登录、战斗时、红点提示较多时的卡顿问题。
+● 修复了「调查行动」中星级奖励提示红点没有正确显示的问题。
+● 修复了「启灵」中提升到解锁超限爆发的启灵等级时信息提示不准确的问题。
+● 修复了PC游玩时若缺少必要的文件导致游戏无法运行时缺少提示的问题。
+● 修复了PC下载补丁时磁盘空间已满却没有提示的问题。
+● 修复了「设置」中帧率设置有时失效的问题。
+○ 修复了「调查」确认界面中在简中语言之外标题没有翻译的问题。
+○ 修复了部分语言设置下，「活动弹窗提示」右侧的文本最后一行未显示完全的问题。
+○ 修复了「探索」中部分语言设置下查看造物时、在星辰篇升级造物时信息展示不完整的问题。
+○ 修复了「典藏馆」的「音乐」界面在解锁曲目时，部分语言设置下出现语法错误的问题。
+○ 修复了「超验存在」挑战页面、「调查行动-忘却篇-第八章」与「调查行动-忘却篇-第九章」组队界面提示文本格式错乱的问题。
+● 「相位对弈」中与模拟对手战斗后的结算界面增加了「再来一局」按钮表现和提示信息。
+● 修复了「相位对弈」中「轮选」模式在选牌和调整阵容阶段，在9:00每日刷新时会错误地返回到游戏主界面的问题。
+● 修复了唤醒活动「与群星相会」中，唤醒次数提示没有优先于源液提示的问题。
+● 修复了「唤醒体」界面中点击「取消收藏」后出现部分唤醒体顺序不正确的问题。
+● 修复了「点赞记录」界面中底部不正确的提示文字。
+● 修复了「宿舍」切换自定义背景弹窗中，部分语言设置下的「默认音画」文字偏长、会出现按钮重叠的问题。
+● 修复了其他语言设置下，融灾禁区的排行榜上有未翻译的中文字样的问题。
+● 主界面中「常训任务」现在会优先展示可领取奖励任务的进度；当没有已完成任务时优先，展示「每日试训」的进度，当完成后再「每日试训」后再展示「每周试炼」的进度；全部完成后提示所有任务已完成。
+● 「手册」中「生涯成就」未完成的内容现在会在右侧显示相应提示。
+● 修复了「自动战斗」开启后，打开「设置」的任意选项时，未停止自动战斗的问题。
+● 修复了「异梦视界」中「再见永无乡」、「再见，永无乡」困难模式在未通关普通模式时就可以进入的问题。现在未解锁时将锁定，点击时有解锁提示。
+● 修复了调查失败时「如何变强」提示中的解锁信息文本错误：「融蚀之墟」应该为「调查行动」1-2 解锁，「禁忌纂录」应该为「调查等级」25 级解锁。
+● 修复了「试玩」活动中红点提示无法正确消除、且完成后会错误出现新提示的问题。
+● 「聚灵演练」中完成试玩关卡后，现在会返回到对应的唤醒体页签，方便领取相关试玩奖励。
+● 修复了「密契升级」和「密契转录」的「置换设置」中，会错误展示尚未开放的密契残片的问题。
+● 修复了「幻梦深潜」调查完成界面中总评分达到当日新高也会错误地提示「新高！」的问题。修复后仅在总评分达到本周新高才会提示。
+● 修复了「设置」中画质分级规则对特效表现不生效的问题。
+● 修复了设备在「存储空间」不足时，下载资源时的文字会错误提示为融灾禁区重置挑战的问题。
+● 修复了当安卓端系统语言设置为「土耳其语」时，游戏中选择英语时仍然会错误显示为中文的问题。
+● 英语语言设置下，优化了主界面、弥萨格商店、幻梦深潜、融灾禁区的部分界面文本表述，提升可读性。
+● 英语语言设置下，修复了「档案馆」中杜勒赛因广播剧、波吕克斯广播剧部分字幕匹配问题。
+● 英语语言设置下，修复了「相位对弈」中唤醒体「莉莉」「报偿打击」等6处格式、数值词缀标注错误问题。
+● 日语语言设置下，修复了部分幻梦深潜成就称号错误显示为英语的问题。
+● 修复了英语语言设置下，「迎灾特训」任务所需的融灾禁区点数错误标注了两次的问题。
+● 修复了特定语言设置下，相位对弈结算界面的命轮名会异常超出文字框的问题。
+● 「战斗」中选择卡牌时若已选择了足够的卡牌，不会弹出词缀说明，避免挡住提示信息。
+● 修复了活动「神诞的祭礼」主界面部分语言设置下「亵祷狂欢」领取信息的长文本效果，使信息展示更完整、点击相应更灵敏。
+● 修复了「唤醒体」界面中「灵知深化」有时会错误拥有红点提示的问题。
+● 修复了「调查行动」中，「关卡详情」的「隐藏」按钮信息在部分语言设置下显示不完整的问题。
+● 修复了使用 PC 游玩时，在「相位对弈」匹配中时敲击空格键会错误弹出「客户端传入数据错误」提示的问题。
+● 修复了「环行·拉蒙娜」幻衣的新提示未能在「拉蒙娜」唤醒体详情界面中展示的问题。
+● 修复了「唤醒体」中获得新幻衣后提示样式不正确的问题。
+● 修复了「校友会」新增关注者界面中，「刚才关注您」的提示消息机器翻译错误的问题。
+● 「繁衍狂欢」完成后，现在会停留在当前界面，而不是返回大厅界面。
+● 修复了「战斗」中的威胁提示数值在获得护盾后立即结束回合时没有正确更新的问题。
+● 修复了「繁衍狂热」重新登录后可能会出现新提示异常的问题。
+● 「战斗」中卡牌描述滚动文本效果现在在滚动到底部后会停留片刻再返回到顶部。
+● 「弥萨格商店」中「银霜祈愿箱」、「冬渡礼物盒」可以在购买确认界面查看「冬渡节的礼券」、「姜饼派对的请柬」可获得的头像和表情的预览。
+● 「相位对弈」中投降时现在增加了确认环节，避免误操作。
+● 修复了部分语言设置下，部分界面会错误显示中文的问题。
+● 修复了部分语言设置下，「探索」中选择刻印卡牌时，刻印名称文字显示不全的问题。
+● 修复了部分语言设置下，「战斗」中的「成就」界面文本描述文字与图标重叠的问题。
+● 修复了部分语言设置下，「战斗」中狂气爆发效果描述文字重叠、间距异常的问题。
+● 修复了部分语言设置下，「抽卡分享」获得银芯提示会和「唤醒5次」按钮重叠的问题。
+● 修复了部分语言设置下，「功能解锁」介绍弹窗文本显示超框的问题。
+● 修复了部分语言设置下，「编队」中选择装备命轮时命轮效果文本显示不全的问题。
+● 修复了部分语言设置下，「唤醒」的规则说明界面卡池标题过小的问题。
+● 修复了部分语言设置下，唤醒活动「久远的呼唤」命轮名称文字和唤醒规则说明文字会错误重叠的问题。
+● 修复了部分语言设置下，「调查行动」星辰篇第二章关卡事件中的提示「请选择一个唤醒体」未被正确翻译的问题。
+● 修复了「个人资料」中从自己的点赞列表查看其他守密人的资料后再返回时，自己助战唤醒体命轮显示为空的问题。
+● 修复了英语语言设置下，唤醒体「拉蒙娜」的指令卡「攻势推演」描述异常的问题。
+在英语语言设置下：
+○ 敌人「爆燃之主」的开场提示语现在会额外对弃牌效果机制进行说明。
+○ 星辰篇造物「金色梦乡」的发光提示规则调整为可生效时发光，生效次数达到上限时发光提示消失。
+● 「典藏馆」、「异梦视界」解锁时提示的文本描述现在更加统一。
+● 「设置」中「观看开场动画」按钮已移除，如需查看动画预览请移步「典藏馆」查看 PV「银芯」。
+● 「登录」中下载完整资源时，现在能够看到进度展示，并提示如何开启后台下载和获得下载进度推送。
+○ 修复了星辰篇遭遇「灰烬遗迹」中强化造物确认界面按钮位置未正确对齐的问题。
+● 修复了「调查行动」中完成困难关卡后，未能正确返回至困难关卡篇章界面的问题。
+● 修复了「多维链接」中「银与血的洗礼」的困难关卡新提示标记未正常显示至篇章选择界面的问题。
+● 修复了「繁衍狂热」中完成某唤醒体的篇章后，返回篇章选择时可能会出现该唤醒体的头像短暂错误显示未空白的问题。
+● 修复了「幕间演习」中点击未达到解锁等级关卡的「重现」按钮弹出的提示信息不正确的问题，修复后将正确提示调查等级所需条件。
+● 修复了「派遣」中「派遣中…」提示文本字体不正确的问题。
+● 修复了「唤醒体」中状态界面在「灵知深化」未解锁时可能会错误出现红点提示的问题。
+● 修复了「典藏馆」中个别事件解锁提示与实际不符的问题。
+● 修复了「典藏馆」中留声机专辑「石化艺术」曲目解锁提示错误的问题。
+● 修复了「守密人档案」中查看其他守密人的档案后，无法再正确切换唤醒体展示设置的问题。
+● 修复了「守密人档案」中关闭头像设置界面时，部分文字没有及时消失的问题。
+● 修复了「教程」中关于相位对弈、融灾禁区、幻梦深潜等系统的相关图像与实际不符的问题。
+● 修复了使用 PC 游玩时，「战斗」中唤醒体使用超限爆发确认界面的确认按钮位置可能错误的问题。
+● 修复了部分时区设置下，「每周试炼」和课题「每周任务」倒计时显示不正确的问题。
+○ 修复了部分语言设置下，「无形者的请柬」在所有头像或对战表情都已获得时的提示文本没有按正确语言设置展示的问题。
+○ 修复了部分语言设置下，「密契」的筛选界面文本可能重叠的问题。
+○ 修复了部分语言设置下，「物资」的页签分类文本未正确显示的问题。
+● 修复了「相位对弈」中「再来一局」的等待提示存在一处错别字的问题。
+● 修复了英语、俄语、韩语语言设置下，部分文本错误显示为中文的问题。德语、法语、西班牙语、葡萄牙语、越南语、泰语、印尼语言设置下，可能仍然存在错误显示为中文的文本，我们将在未来的更新中尽快修复。
+● 部分修正了西班牙语、德语、法语、葡萄牙语、日语、越南语、印度尼西亚语、泰语设置下，游戏内文字会显示为中文的问题。
+● 「典藏馆」的新提示标记不再向上一层界面展示。
+● 修复了简体中文语言设置下「记忆归档」的动画中标题文字错误显示为繁体中文的问题。
+● 修复了「唤醒体试玩」中星辰篇·限定关卡的奖励提示红点未能正确在主界面中展示的问题。
+● 修复了「课题」中有可领取「额外奖励」时，图标上方出现错误灰色图案、且缺乏可领取边框特效提示的问题。
+● 修复了「公告」界面关闭时，列表下方的可滑动提示出现短时间残留显示的问题。
+● 修复了「唤醒体」语音「新」提示点击后仍无法移除的问题。
+● 修复了在部分语言设置下，「调查数据」的标题「卡牌统计」会出现错误换行导致文本重叠的问题。
+● 修复了在部分语言设置下，在探索中查看「造物」详细信息时，造物名称显示丢失的问题。
+● 修复了在简体中文等语言设置下，敌人「猎颅魔女」的增益卡「千面幻象·虚」描述中，逗号错误的显示为半角逗号","的问题。
+● 修复了部分语言设置下「相位对弈」无法通过通过复制代码回放录像的问题。
+● 英语语言设置下，修复了「相位对弈」中命轮「被缚的歌谣」中数值未正确显示的问题。
+● 修复了俄语、韩语语言设置下，少量文本显示为中文的问题。我们将持续修复其他语种的翻译缺失问题。
+● 修复了繁体中文语言设置下，部分文本显示错误的问题。
+● 首次使用 PC 和移动设备登录后，可在「设置-账户」中领取专属奖励。
+● 登录「用户中心」的过程中再次点击「进入游戏」时，将提示：「用户中心」登录中，请稍后。
+● 「唤醒」界面右下角说明文本的自适应规则有所调整，在部分语言设置下不再与界面中间区域的命轮名称等文本发生重叠。
+● 「设置-声音」中「游戏界面非当前窗口」选项名称调整为「后台播放」，位置调整至「音量」选项下，「主音量」分类名称调整为「整体控制」。
+● 修复了在唤醒体狂气爆发可释放时，点击界域量表区域查看界域状态可能会错误地触发狂气爆发释放确认窗口的问题。
+● 修复了在回合结束时，触发的中毒效果结算完毕后，威胁提示数值显示错误的问题。
+● 修复了活动「多重疗愈·复刻」中，左侧页签的「新」提示无法移除的问题。
+● 修复了使用 PC 游玩时，在「设置-声音」中后台播放选择「静音」时不生效的问题。
+● 修复了「唤醒」中「详情」按钮的「新」提示字体使用错误的问题。
+● 修复了「回合结束」按钮提示特效丢失的问题。
+● 修复了造物「快乐唱片」、「弥萨格徽章」以及钥令「残忍的致意」、「特殊治疗」在抽牌时缺少文字提示的问题。
+● 修复了在部分语言设置下，「唤醒」界面与说明文本未正确翻译的问题。
+● 修复了在部分语言设置下，「活动」中的任务描述文本显示不完整的问题。
+● 修复了在部分语言设置下，每日首次登录时，活动简介界面的标题文本显示超出界面的问题。
+● 修复了游玩设备语言为土耳其语时，在英语语言设置下，游戏文本可能会错误显示为简体中文的问题。
+● 修复了唤醒体「莫斯」的狂气超过100但不满足狂气爆发释放条件时，点击唤醒体头像会错误地弹出狂气爆发释放确认窗口的问题。
+● 修复了在英语语言设置下，命轮「坠入虚无的人偶」和造物「催眠灵摆」的「空虚」状态翻译错误的问题。
+● 在韩语语言设置下，「教学」、「功能解锁」介绍弹窗和游玩引导的文本现已由人工译者提供翻译。
+● 修复了在繁体中文语言设置下，部分唤醒体的「超限爆发」描述存在多余文本的问题。
+关于异常订单的处理及账号安全风险提示公告
+彌薩格大學校務處將於12月15日21:20(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修正了某些情況下完成最初兩個派遣任務後介面中出現的提示文字錯誤。
+● 對部分網路延遲情況，如喚醒體升格時的網路延遲導致的升格任務狀態錯誤，新增了相關提示，使守密人有明確感知。
+彌薩格大學校務處將於12月20日22:00(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了「調查行動」的關卡成就和星級評分、「無光之境」的星級評分紅點提示消失的問題。
+彌薩格大學校務處將於12月25日21:10(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了「精選禮盒-每周制劑禮盒」的確定兌換提示中圖標底部顏色的錯誤。
+此外，我們注意到，部分守密人可能通過非官方渠道（如第三方代充）進行充值。在此，我們鄭重提示：代充行為存在賬號被盜、財產損失等嚴重風險，官方無法對非官方渠道造成的任何損失提供保障。請守密人通過官方渠道進行充值，以保障您的賬號及財產安全！
+守密人你好：\n       彌薩格大學校務處將於1月17日20:00(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】  \n維護補償：銀芯*50\n\n【領取條件】   \n領取時間截至2024年2月1日23:59。請記得及時前往郵箱領取補給物資哦。 \n\n【更新內容】\n一、綜合\n【助戰】\n● 現在您可以使用任意等級的互相關注守密人的助戰喚醒體了，它們不再受到等級限制！\n● 提高助戰介面中助戰喚醒體的數量，並且互相關注的會更靠前顯示，便於守密人查詢使用。\n● 提高了陌生守密人的助戰喚醒體的等級下限要求，使其更能滿足守密人的助戰需求。\n● 降低了助戰介面刷新按鈕的冷卻時間，減少守密人的等待。\n● 選擇助戰頁面優化：增加了無可助戰喚醒體時的文本提示，且滑動條在不需要時將不顯示。\n\n【幻夢深潛】\n● 修復了特別評分項「再抽再抽」在超維回合中未能正確統計抽牌數量的問題。\n● 修復了特殊情況下，評分項「戰鬥勝利」和「戰鬥回合數」會額外統計1場戰鬥的問題。\n\n【守密人檔案】\n● 「點讚記錄」為空時，增加了相應文本提示。\n\n【手冊】\n● 修復了某些情況下手冊解鎖時「行動報告」頁面顯示異常，無法關閉的問題。\n\n【冶煉室】\n● 修復了在冶煉室點擊設備返還鍵後，介面顯示異常的問題。\n\n【設置】\n● 圖像設置中的「陀螺儀」增加說明，便於守密人理解該設置項的用途。\n\n【相位對弈（beta）】\n● 修復了「收藏」介面標題顯示錯誤的問題。\n● 修復了戰鬥結算未播放結算音樂的錯誤。\n● 修復了戰鬥結束返回對弈大廳時播放了錯誤音樂的問題。\n\n二、調查\n【通用】\n● 修復了關卡成就「抽卡！」在超維回合中未能正確統計抽牌數量的問題。\n\n【特遣記錄】\n● 修復了索蕾爾篇章「薔薇禮贊」中，朵爾的部分閉眼表情未能正確展示的問題。\n\n【事件】\n● 修復了某些情況下事件視窗異常無法關閉的問題。\n\n三、戰鬥\n【通用】\n● 修復了擊殺怪物戰鬥勝利時立即重開戰鬥，遊戲黑屏的問題。\n\n【造物】\n● 修復了「行道之骸」的傷害翻倍效果對觸腕傷害不會生效的問題。\n\n【怪物】\n● 在怪物「猩紅」的「血之狂暴」效果中補充了切換意圖時會解除石化的說明。\n\n【相位對弈（beta）】\n● 修復了某些情況下在對方回合時，「戰鬥結束」按鈕仍然顯示的錯誤。
+● 现在新品上架时有了「新」提示。
+● 「登录」界面现在新增了「设置」入口，方便守密人进行「图像」和「语言」等的设置。
+● 修复了Steam端桌面快捷方式图标清晰度不足的问题。（如已经安装了较早版本，可以通过Steam启动界面的「设置-管理-浏览本地文件」找到安装目录中的启动程序，选中并发送到桌面快捷方式，即可解决问题。）
+● 优化了「典藏馆」中「组织势力」和「PV」未解锁条目的提示，现在会提示具体的解锁条件。
+● 优化了「调查」界面，目前「繁衍狂欢」在未解锁情况下也可以预览入口和解锁条件提示。
+● 修复了语言设置为「English(GptTest)」时，在有预设唤醒体的关卡中命轮和密契生效异常的问题。
+● 修复了第八章地图长按「羁押点」、「审查会探员」节点时提示缺失正式文本的问题。
+● 「调查行动」第八章新增了关卡目标提示。
+● 修复了「相位对弈」中「收藏」界面的右侧信息在语言设置为「English(GptTest)」时文本显示不正确的问题。
+守密人你好：\n       弥萨格大学校务处将于10月21日21:50(UTC+8)进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会准备一份补给物资以示歉意。祝大家调查顺利！ \n  \n【补给物资】\n维护补偿：银芯*50\n  \n【领取条件】\n领取时间截至2024年11月4日23:59。请记得及时前往邮箱领取补给物资哦。 \n \n【细节优化和问题修复】\n● 「超验存在」中「黑池之潮Ⅰ」不再要求调查等级达到65级才能挑战。\n● 修复了游戏文字设置为「English(GPT)」等语言时，玩法活动「雪山消融之时」中「山峦巨口」的「全部交换」按钮文本显示错误的问题。\n● 修复了超维空间满时进入下一场战斗，「额外回合」按钮未显示的问题。\n● 修复了状态卡「珊瑚赘生」描述多了一个句号的问题。\n● 修复了「相位对弈：收藏」中错误的出现唤醒体「塔薇」的问题。\n● 修复了「相位对弈」中「慈悲的哺育」描述不完整的问题。
+● 修复了游戏文字设置为「English(GPT)」等语言时，玩法活动「雪山消融之时」中「山峦巨口」的「全部交换」按钮文本显示错误的问题。
+● 修复了游戏文字设置为「简体中文」「繁体中文」时，部分界面字体显示效果不正确的问题，例如部分字体过于纤细、文字未显示完整等。
+● 修复了游戏文字设置为「简体中文」以外的其他语言时，「战斗」中出牌拖拽响应区域过小的问题。
+● 优化了游戏文字设置为部分语言时，「调查探索」中节点名称重叠的问题。
+● 优化了「▲▲奏者」和 「N」意图中的算力提示，由 3+ 调整为 ≥3，使其更加易于理解。
+彌薩格大學校務處將於12月29日17:10(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+○ 修復「霜之語」和「霜之怒」提示語錯誤的問題。
+● 修复了在网络状况不佳的情况下，登录时可能会卡在更新内容检测的问题，现在超时后会提示守密人稍后重试。
+● 修复了在简体中文以外的语言设置下，玩法活动「燃烧的群宴」及「相位逆转」界面中，部分文本溢出导致显示不全的问题。
+● 修复了在简体中文以外的语言设置下，战斗中护盾、中毒等部分状态变化时，数值与状态名称之间缺少空格的问题。
+● 修復了在網絡狀況不佳的情況下，登錄時可能會卡在更新內容檢測的問題，現在超時後會提示守密人稍後重試。
+● 修复了戈利亚「狂气爆发」确认按钮未被翻译的问题。
+{"state":{"code":2000000,"msg":"操作成功","desc":"没有设置描述","subCode":2000000},"id":"1775499152750","data":{"configCheckTime":1774428468285,"clientConfig":{}}}
+EVT_STEAM_PAY_NOTIFY 返回数据空
+● 修复了「战斗」中血肉界域能力「猩红熔炉」在使用确认时回复数值未正确显示的问题。
+● 修复了在网络延迟较高时，可能会频繁出现网络连接提示的问题。
+彌薩格大學校務處將於12月27日16:30(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了「兌換碼」不能正確兌換，總是錯誤的提示存在非法字符的問題。
+● 修復了在網絡延遲較高時，可能會頻繁出現網絡連接提示的問題。
+● 「回溯」中「養成回溯」的返回啟靈養成效果現在獨立拆分為「啟靈回溯」，並且「養成回溯」和「啟靈回溯」可以同時使用！
+● 修復了領取月卡失敗後，無法彈出獎勵提示窗的問題。
+【新增解鎖提示】
+● 以下內容在解鎖時新增解鎖提示
+【引導提示強化】
+● 強化了功能解鎖時的提示效果，現在會有額外的解鎖界面動態效果和簡單的文本提示。
+● 補充和更新了部分功能解鎖時的彈出提示。首次進入功能界面時，將彈出「？」的提示信息，並為部分界面補充「？」和信息說明。
+● 「調查行動」首次失敗或主動退出時，增加提示彈窗，指引守密人通過幕間演習獲得各種素材讓喚醒體變得更強。
+● 角色活動喚醒、角色玩法活動等新活動上線期間，守密人首次登錄進入首頁時將彈出提示。
+● 修復了「窺覷神國的陰影：異動海潮」中等級修正提示存在錯誤文本的問題
+● 修復了「商店：幻衣訂購」中幻衣購買時，因缺少二次確認提示，容易誤觸購買的問題。
+● 修復了在編隊界面進入角色界面後跳轉素材時出現副本錯誤提示的問題。
+● 「簡約幻衣繪形券」過期後，會在守密人首次打開「物資」界面時自動彈出回收轉換提示。
+● 修復了一些在輸入邀請碼後可能出現活動過期提示的問題，這個問題在 8 月 21 日已通過服務器更新修復，現進行補充說明。
+● 「活動」界面中進入玩法時，若「騎士的願望」尚未通關，彈出的提示說明增加了關卡類型說明。
+● 修復了「星辰篇」戰鬥界面篇章提示下方內戰鬥波次信息沒有正確顯示的問題。
+● 修復了奧爾拉活動「在春天雕零以前」界面中提示窗口有時候沒有正確關閉的問題。
+● 修復了「商店」界面在某些情況下購買物品沒有正確顯示獲得提示的問題。
+● 優化了敵人「杜勒賽因」的戰鬥中臺詞與機製提示。
+● 「意識潛游」各篇章解鎖條件下調為通關「調查行動忘卻篇1-2」，通關「騎士的願望」僅僅作其他篇章的「最佳劇情體驗提示」中的前置內容。
+● 「最佳劇情體驗提示」界面中，增加了跳轉至前置劇情的按鈕。
+● 喚醒體「卡斯托爾」的衍生指令卡「黑羽」、喚醒體「血鏈·希洛」的指令卡「鮮血鏈條」現在初始計數會和即將打出次數匹配，顯示為「1/3」而非「0/3」，且在第三次打出觸發額外效果時會產生發光提示。
+● 密契 6 件套效果描述文本中「隊伍唯一」現在修改為詞綴，點擊將彈出對應的效果說明提示。
+● 當編隊中有重複的密契 6 件套效果時，密契圖標上方將有「！」標識提示。
+● 此時開始調查彈出的「調查確認」提示中「隊伍唯一」文字變為高亮藍色作為強調顯示。
+● 「異夢視界：天邊之外·上」的最佳體驗提示由通關「調查行動-忘卻篇第七章」調整為通關「調查行動-忘卻篇終章」。
+● 修復了「命輪」回溯中「疊位」可用時缺少紅點提示的問題。
+○ 為「提燈教會」敵人補充了「卡斯托爾」的克製提示。
+○ 通過各種方式兌換「人格深化已滿」的喚醒體或「疊位已滿」的命輪時，兌換物品會位於末尾位置，並且出現相關文字提示。
+○ 增加了統一免費獲得按鈕文字顏色、點擊未解鎖關卡時提示解鎖條件、調查開始時的標題提示不再顯示裝飾文本等界面細節。
+● 卡頓問題優化：優化了部分服務端登錄、戰鬥時、紅點提示較多時的卡頓問題。
+● 修復了「調查行動」中星級獎勵提示紅點沒有正確顯示的問題。
+● 修復了「啟靈」中提升到解鎖超限爆發的啟靈等級時信息提示不準確的問題。
+● 修復了PC遊玩時若缺少必要的文件導致遊戲無法運行時缺少提示的問題。
+● 修復了PC下載補丁時磁盤空間已滿卻沒有提示的問題。
+○ 修復了部分語言設置下，「活動彈窗提示」右側的文本最後一行未顯示完全的問題。
+○ 修復了「超驗存在」挑戰頁面、「調查行動-忘卻篇-第八章」與「調查行動-忘卻篇-第九章」組隊界面提示文本格式錯亂的問題。
+● 修復了「命輪」中在沒有同名命輪的情況用「快速放入」對SR命輪疊位時提示文本不正確的問題。
+● 修復了「登錄」界面進入遊戲的觸發資源下載提示框時，選擇取消資源下載會導致卡死的問題。
+● 修復了「喚醒」入口界面中的推薦提示沒有正確消失的問題。
+● 修復了活動「晨星的指引」中拉蒙娜信件提示可獲取的物品獎勵可能導致誤會的問題。
+● 優化了「守密人檔案」數據更新時查看「守密人檔案」的提示，使其更容易理解。
+● 「相位對弈」中與模擬對手戰鬥後的結算界面增加了「再來一局」按鈕表現和提示信息。
+● 修復了「相位對弈」中「輪選」模式在選牌和調整陣容階段，在9:00每日刷新時會錯誤地返回到遊戲主界面的問題。
+● 修復了喚醒活動「與群星相會」中，喚醒次數提示沒有優先於源液提示的問題。
+● 修復了「喚醒體」界面中點擊「取消收藏」後出現部分喚醒體順序不正確的問題。
+● 修復了「點贊記錄」界面中底部不正確的提示文字。
+● 主界面中「常訓任務」現在會優先展示可領取獎勵任務的進度；當沒有已完成任務時優先，展示「每日試訓」的進度，當完成後再「每日試訓」後再展示「每周試煉」的進度；全部完成後提示所有任務已完成。
+● 「手冊」中「生涯成就」未完成的內容現在會在右側顯示相應提示。
+● 修復了「異夢視界」中「再見永無鄉」、「再見，永無鄉」困難模式在未通關普通模式時就可以進入的問題。現在未解鎖時將鎖定，點擊時有解鎖提示。
+● 修復了調查失敗時「如何變強」提示中的解鎖信息文本錯誤：「融蝕之墟」應該為「調查行動」1-2 解鎖，「禁忌纂錄」應該為「調查等級」25 級解鎖。
+● 修復了「試玩」活動中紅點提示無法正確消除、且完成後會錯誤出現新提示的問題。
+● 「調查行動」第八章新增了關卡目標提示。
+● 修復了調查行動「溯夢」模式下跳過後返回「調查行動」介面會導致調查進度出現顯示異常的問題。
+● 修復了在劇情關卡中退出後重新登入客戶端，跳過劇情會直接返回到登入界面的問題。
+● 優化了「▲▲奏者」和 「N」意圖中的算力提示，由 3+ 調整為 ≥3，使其更加易於理解。
+彌薩格大學校務處將於1月13日08:00~12:00進行校內設施修復。本次維護完成後舊版本客戶端將不再可用，守密人需要前往官網或應用商店安裝最新版本的包體才可以繼續登入。（目前商店和官網的包體已經更新至維護後可以繼續使用的最新版本，守密人可以選擇提前進行更新，或在維護開始後通過舊版本客戶端的提示引導進行更新。）祝大家調查順利！
+● 修復了「設置-系統」中「狂氣爆發和鑰令使用確認」為開啟狀態時，釋放鑰令沒有彈出確認提示的問題。
+● 今後關卡將固定為「忘卻篇」，取消原輪換計劃。敵人的強度將對應進行調整。
+● 今後關卡將固定為「星辰篇」，取消原輪換計劃。
+● 修復了玩法活動探索關卡關閉後可能有新字提示無法取消的問題。
+● 修復了拉蒙娜在派遣中時，「環形拉蒙娜」養成回溯提示【用戶端傳入資料錯誤】的問題。
+● 修復了從其他介面返回大廳時未正常切換音樂的問題。
+● 「界域研習」常駐角色喚醒中「指定界域」按鈕增加了紅點和文字提示，使守密人更容易關注到可以指定界域。
+● 修復了網路波動時多次點擊領取同調率獎勵會出現異常提示的問題。
+● 源液不足時「核心課題」價格現在可以正確地顯示紅字以提示數量不足。
+● 在特殊編隊、融災禁區中轉為使用自己的預設編隊，對於其中無效的選擇將會進行提示。
+● 優化了對守密人校友「點讚」的提示，去除原有的橫幅提示、改為區域光效提示，避免遮擋導致誤操作。
+● 角色定位：原先的界域機制已取消，與之代替的是角色定位，所有的喚醒體被分配到了五個不同的角色定位，在同一個隊伍中，不可出現角色定位相同的角色。
+● 修復更新介面中提示文字有缺失的問題。
+● 優化了查看其他守密人通關陣容信息的界面文字提示：現在數據尚未傳輸完畢時，會提示「數據傳輸中」而不是「暫無數據」。
+● 修復了「忘卻篇」調查行動 「4-11」首領戰中反復出現提示語的問題。
+● 優化了喚醒體的「靈知深化」操作：現在增加了確認提示，避免誤操作造成損失。
+● 修復了「特遣紀錄」共鳴粒子不足時仍然有紅點提示的問題。
+● 优化了唤醒体的「灵知深化」操作：现在增加了确认提示，避免误操作造成损失。
+● 修复了「特遣纪录」共鸣粒子不足时仍然有红点提示的问题。
+● 修复了「忘却篇」调查行动 「4-11」首领战中反复出现提示语的问题。
+●  派遣：現在領取獎勵和再次派遣時增加了提示反饋。
+● 由於劇情調整，「異夢視界：褻瀆」新增的關卡「新王」不會提示「新」字樣，但首次通關後仍可正常領取通關獎勵，請各位守密人留意。
+● 修復了「柯蕾特的花房」物資全部交換完後的提示文本錯誤。
+● 現在新品上架時有了「新」提示。
+● 優化了「典藏館」中「組織勢力」和「PV」未解鎖條目的提示，現在會提示具體的解鎖條件。
+● 優化了「調查」界面，目前「繁衍狂歡」在未解鎖情况下也可以預覽入口和解鎖條件提示。
+● 修復了「彌薩格商店：精選禮盒」的「新」提示無法移除的問題。
+● 修復了第八章地圖長按「羈押點」、「審查會探員」節點時提示缺失正式文本的問題。
+彌薩格大學校務處將於12月14日21:20(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 守密人調查等級升至 15 級時，增加了第二命輪的解鎖提示，讓更多的守密人注意到可以給喚醒體裝備第二命輪。
+● 優化了「獲得物資」提示的標題，使文字不會太擁擠。
+彌薩格大學校務處將於12月19日20:45(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！
+● 修復了重新開始戰鬥載入時，點擊螢幕會錯誤地出現「請觸摸發光區域進行移動」提示的問題。
+● 修復了大廳「典藏館」入口「新」提示無法移除的問題。
+语言设置异常补偿：银芯×500
+● 修复了V2.4.3.6版本更新后，新安装客户端或进行过客户端修复的守密人，语言设置为「英语」，实际游戏内语言仍显示为中文的问题
+守密人你好：\n       弥萨格大学校务处将于4月4日19:00(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会准备一份补给物资以示歉意。祝大家调查顺利！ \n  \n【补给物资】\n在线维护补偿：银芯×50\n语言设置异常补偿：银芯×500\n  \n【领取条件】\n领取时间截至2026年4月18日23:59。请记得及时前往邮箱领取补给物资哦。  \n \n【更新内容】\n● 修复了V2.4.3.6版本更新后，新安装客户端或进行过客户端修复的守密人，语言设置为「英语」，实际游戏内语言仍显示为中文的问题
+● 修复了其他语言设置中，「神国·深海」的怒涛、静海触腕效果说明错误显示为中文的问题。
+{"time":1775299686,"salt":"","message":"ok","hash":"32fc7190937afac67d574873011abde2","code":0,"args":{},"anns":[{"value":{"title":"彌薩格大學安全提醒","subTitle":"彌薩格大學安全提醒","page":"GameNotice","important":false,"content":"守密人：\n\n    為了您的帳號安全，請勿在非官方提供之平台下載遊戲、註冊帳號及儲值，並切勿告知他人自己的遊戲帳號和密碼。也請勿透過非官方管道進行儲值，若因非正規儲值管道而引起的交易糾紛，有可能導致您的帳號受到封鎖。請小心勿上當受騙，以避免造成不必要的損失！\n\n    同時，彌大嚴禁使用非官方提供之程式進行遊戲。一經發現，我們將對此類帳號依遊戲管理規則進行處罰。\n\n    若有任何疑問或建議，請通過客服中心向校工反饋。"},"order":9999,"_version":"668df7440000000000000000","_val_client_modes":null,"_uuid":"656072a4aa0f999146c8d0c4","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9999,"_mtime":"1720579908","_ctime":"1700819620","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"彌薩格大學入學寄語","subTitle":"彌薩格大學入學寄語","page":"GameNotice","important":false,"content":"守密人：\n\n    彌薩格大學將於11月30日10:00正式開放，歡迎各位的加入。\n    在這裡與我們一起，連結遊走在瘋狂邊緣的喚醒體，對抗這場隱密而浩大的災厄。\n⠓，但可以正常關閉不影響體驗，我們後續會儘快修復這個問題，抱歉！"},"order":9987,"_version":"668df7700000000000000000","_val_client_modes":null,"_uuid":"656f1ea9e523103d7f0c2873","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9987,"_mtime":"1720579952","_ctime":"1701781161","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"V1.0.11 在線維護公告","subTitle":"V1.0.11 在線維護公告","page":"GameNotice","important":false,"content":"尊敬的守密人您好： \n    我們發現完成劇情關卡回到大廳介面時會出現黑屏情況，目前已修復該問題。但同時，今日維護公告中的“修復了網路狀況較差時，進入關卡會閃現關卡清單介面的問題”會再次出現，校工將盡快進行修復，非常抱歉給您帶來不便，若您在遊戲過程中仍遇到異常，請透過客服中心回報，感謝您的體諒與支持。\n\n【補給物資】\n異常修復補償：銀芯*50\n\n【領取條件】\n領取時間截止1月4日23:59。請及時領取補給物資。"},"order":9986,"_version":"668df7750000000000000000","_val_client_modes":null,"_uuid":"656f4741dd2983f81c572897","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9986,"_mtime":"1720579957","_ctime":"1701791553","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"V1.0.12 在線維護公告","subTitle":"V1.0.12 在線維護公告","page":"GameNotice","important":false,"content":"尊敬的守密人您好： \n    彌薩格大學校務處將於12月6日22:15(UTC+8)進行校內設施修復，更新完成後您將得到提示，即可重新進入遊戲。對於更新可能帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】\n維護補償：銀芯*50\n\n【領取條件】\n領取時間截至2024年1月5日23:59。請及時領取補給物資。\n\n【更新內容】\n一、系統\n——製作人·校貓：很高興看到許多守密人在參與「幻夢深潛」與「相位對弈（beta）」並樂在其中！\n    但是對於「相位對弈（beta）」，校貓感到很抱歉，這一玩法目前還處在非常不完整並缺少教學的狀態，這會導致體驗還遠沒有達到理想狀態。與此同時我們卻附加了比「幻夢深潛」高許多的守密
+提示restore
+現的提示文^#Xb
+守密人，\n    由于一些技术异常原因，导致目前4月3日 16：30后安装客户端，或进行过客户端修复的守密人，语言设置为「英语」，实际游戏内语言仍显示为中文的问题，校工正在针对此问题进行紧急修复中，预计将于今日内修复完毕，请守密人耐心等待！非常抱歉此问题带来的不便，我们将在问题修复完成后，发放「银芯」×500的补给物资以表歉意！
+由于一些技术异常原因，导致目前4月3日 16：30后安装客户端，或进行过客户端修复的守密人，语言设置为「英语」，实际游戏内语言仍显示为中文的问题，校工正在针对此问题进行紧急修复中，预计将于今日内修复完毕，请守密人耐心等待！非常抱歉此问题带来的不便，我们将在问题修复完成后，发放「银芯」×500的补给物资以表歉意！
+● 修复了部分语言设置下，共鸣滚动条文本显示不完全的问题。
+● 修复了「弥萨格商店：精选礼盒」的「新」提示无法移除的问题。
+● 新增了「相位對弈（beta）」戰鬥開始時「先手」和「後手」的動態提示。
+● 「編隊」中喚醒體未裝備密契時增加了明顯的提示，提醒守密人為喚醒體裝備密契。
+● 修復了從密契編輯介面跳轉並分解了已裝備或保存到方案的密契後，返回密契編輯介面後顯示異常的問題。
+● 修復了與敵人「大魔術師霍迪妮」戰鬥時，提示資訊顯示亂碼的問題。
+● 修復了「命輪」疊位成功提示文字顯示錯亂的問題。
+● 修正了「調查行動」中「迷霧結節」節點錯誤地顯示了「最終戰」節點提示效果的問題。
+● 優化了「密契詳情」介面中，轉錄的新副屬性至最高值時，提示光效略微偏移的問題。
+● 優化了「獲得物資」界面物資較多時的展示，現在超出兩行時會提示「滑動可查看更多獎勵」。
+● 修復了「冶煉室」分解密契時點擊已選中的使用中的密契會重復提示確認彈窗的問題。
+前往系统授权
+已取消扫码。
+是否确认退出游戏？
+● 修復了「戰鬥」中的威脅提示會在怪物回合隨著自身狀態變化從而導致不準確的問題。
+維護公告","subTitle":"V1.0.26 在線維護公告","page":"GameNotice","important":false,"content":"守密人你好：\n   彌薩格大學校務處將於12月28日21:30(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n——彌薩格校貓·Light：很抱歉今日因為技術原因導致部分守密人無法參與幻夢深潛排行，我們已經緊急修復了這個問題！V1.0 版本迎來後半部分最後兩週，預計我們後續也將主要以修復問題為主。\n
+。\n    ○「奧瑞塔」：進行了重新測量，但測量時包括了觸肢長度。\n\n【編隊】\n● 在編隊完成進入調查時，如果隊伍中有重複命輪，會出現調查確認提示，提醒守密人調整命輪。\n\n【教學】\n● 新增「一鍵已讀」功能，方便守密人快捷領取教學獎勵。\n● 部分較重要的教學將會在觸發時在螢幕側邊彈出，讓守密人可以及時獲取教學內容。\n\n【福利】\n● 活動剩餘時間小於24小時時，剩餘時間顯示具體到分鐘，使結束時間更準確。\n\n【調查】\n● 完成「調查行動」「特遣紀錄」「意
+iOS灵犀登录接口返回数据 ===
+我们在刚刚修复了个别情况下，使用助战进行调查时会返回到登入界面的问题。
+我們在剛剛修復了個別情況下，使用助戰進行調查時會返回到登入界面的問題。
+守密人：\n        我们在刚刚修复了个别情况下，使用助战进行调查时会返回到登入界面的问题。\n        本次更新无需下载补丁，现已生效。
+○ 修復了造物Divine Oracle描述、部分敵方喚醒體覺醒提示中Rouse錯誤措辭為Awaken的問題
+○ 劇情中勾選「今日不再提示」後，選擇跳過劇情不生效。
+● 「聚靈演練」中完成試玩關卡後，現在會返回到對應的喚醒體頁簽，方便領取相關試玩獎勵。
+● 修復了「幻夢深潛」調查完成界面中總評分達到當日新高也會錯誤地提示「新高！」的問題。修復後僅在總評分達到本週新高才會提示。
+● 修復了設備在「存儲空間」不足時，下載資源時的文字會錯誤提示為融災禁區重置挑戰的問題。
+● 「戰鬥」中選擇卡牌時若已選擇了足夠的卡牌，不會彈出詞綴說明，避免擋住提示信息。
+● 修復了「喚醒體」界面中「靈知深化」有時會錯誤擁有紅點提示的問題。
+● 修復了使用 PC 遊玩時，在「相位對弈」匹配中時敲擊空格鍵會錯誤彈出「客戶端傳入數據錯誤」提示的問題。
+● 「繁衍狂歡」完成後，現在會停留在當前界面，而不是返回大廳界面。
+● 修復了「戰鬥」中的威脅提示數值在獲得護盾後立即結束回合時沒有正確更新的問題。
+● 修復了「繁衍狂熱」重新登錄後可能會出現新提示異常的問題。
+● 「戰鬥」中卡牌描述滾動文本效果現在在滾動到底部後會停留片刻再返回到頂部。
+● 敵人「聖子·黑羽」覺醒後釋放「穿行永夜」時的提示語現在更加明確。
+● 「彌薩格商店」的「兌換商店」詳情說明提示中將 4 個兌換子頁簽的說明整合為一體。
+● 修復了部分語言設置下，「抽卡分享」獲得銀芯提示會和「喚醒5次」按鈕重疊的問題。
+● 修復了部分語言設置下，「調查行動」星辰篇第二章關卡事件中的提示「請選擇一個喚醒體」未被正確翻譯的問題。
+● 修復了「個人資料」中從自己的點贊列表查看其他守密人的資料後再返回時，自己助戰喚醒體命輪顯示為空的問題。
+○ 敵人「爆燃之主」的開場提示語現在會額外對棄牌效果機製進行說明。
+○ 星辰篇造物「金色夢鄉」的發光提示規則調整為可生效時發光，生效次數達到上限時發光提示消失。
+● 「典藏館」、「異夢視界」解鎖時提示的文本描述現在更加統一。
+● 「登錄」中下載完整資源時，現在能夠看到進度展示，並提示如何開啟後臺下載和獲得下載進度推送。
+● 修復了「編隊」中跳轉升級喚醒體的天賦並返回後，天賦等級沒有正確更新的問題。
+● 修復了「調查行動」中完成困難關卡後，未能正確返回至困難關卡篇章界面的問題。
+● 修復了「多維鏈接」中「銀與血的洗禮」的困難關卡新提示標記未正常顯示至篇章選擇界面的問題。
+● 修復了「繁衍狂熱」中完成某喚醒體的篇章後，返回篇章選擇時可能會出現該喚醒體的頭像短暫錯誤顯示未空白的問題。
+● 修復了「幕間演習」中點擊未達到解鎖等級關卡的「重現」按鈕彈出的提示信息不正確的問題，修復後將正確提示調查等級所需條件。
+● 修復了「派遣」中「派遣中…」提示文本字體不正確的問題。
+● 修復了「喚醒體」中狀態界面在「靈知深化」未解鎖時可能會錯誤出現紅點提示的問題。
+● 修復了「典藏館」中個別事件解鎖提示與實際不符的問題。
+● 修復了「典藏館」中留聲機專輯「石化藝術」曲目解鎖提示錯誤的問題。
+○ 修復了部分語言設置下，「無形者的請柬」在所有頭像或對戰表情都已獲得時的提示文本沒有按正確語言設置展示的問題。
+● 修復了「相位對弈」中「再來一局」的等待提示存在一處錯別字的問題。
+● 「典藏館」的新提示標記不再向上一層界面展示。
+● 修復了「喚醒體試玩」中星辰篇·限定關卡的獎勵提示紅點未能正確在主界面中展示的問題。
+● 修復了「課題」中有可領取「額外獎勵」時，圖標上方出現錯誤灰色圖案、且缺乏可領取邊框特效提示的問題。
+● 修復了「公告」界面關閉時，列表下方的可滑動提示出現短時間殘留顯示的問題。
+● 修復了「喚醒體」語音「新」提示點擊後仍無法移除的問題。
+● 登錄「用戶中心」的過程中再次點擊「進入遊戲」時，將提示：「用戶中心」登錄中，請稍後。
+● 修復了在回合結束時，觸發的中毒效果結算完畢後，威脅提示數值顯示錯誤的問題。
+● 修復了活動「多重療癒·復刻」中，左側頁簽的「新」提示無法移除的問題。
+● 修復了「喚醒」中「詳情」按鈕的「新」提示字體使用錯誤的問題。
+● 修復了「回合結束」按鈕提示特效丟失的問題。
+● 修復了造物「快樂唱片」、「彌薩格徽章」以及鑰令「殘忍的致意」、「特殊治療」在抽牌時缺少文字提示的問題。
+● 修復了喚醒體「泰旖絲」狂氣爆發「豐穰之儀」吞噬「聖潔之子」後的獲得狂氣提示錯誤地只展示了一次的問題。
+● 优化了限时纪行活动「葬骸纪行」界面的任务展示，现在默认展示 4 行有余，提示守密人可以继续滑动查看。
+● 修复了「物资-命轮分解」分解确认界面文本重叠的问题。
+n● 修復了「選擇助戰」介面某些情況下助戰資訊過時的問題。\n● 修復了「選擇助戰」介面返回至「編隊」介面時，會出現畫面殘留的問題。\n● 修復了「調查」介面中中右下方圓形頭像邊緣清晰度不足的問題。\n● 修復了「喚醒體」介面某些情況下點擊「命
+阶课题」后，1-50级每级增加奖励：银芯*50。\n● 对当期课题纪录此前已领取的高阶课题等级奖励，更新后可每级追加领取 银芯*50。\n● 对解锁了本期以前的高阶课题的守密人，我们将根据每一期领取高阶课题等级奖励的等级进行追加补偿：每一级补偿 50 银芯，每一期最多补偿 50 级。补偿将在更新后 24 小时内发放。\n \n四、细节优化和问题修复\n● 修复了「超维」界域队伍携带造物「阿方索之器」时进入战斗可能出现「回合结束」按钮文字丢失的问题。\n● 修复了「生涯成就」中「深潜者Ⅰ-Ⅳ」的成就计数在某些情况下未能正确增加的问题。\n● 优化了「超值限时礼包」的界面效果。\n● 修复了「相位对弈」中「收藏」界面的右侧信息在语言设置为「English(GptTest)」时文本显示不正确的问题。 \n● 优化了「相位对弈」中詹金「鼠群之王」的状态图标，使其更符合直觉感受。"},"order":9828,"_version":"6784c42c0000000000000000","_val_client_modes":null,"_uuid":"67123907b193232dc6a2d4b4","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9828,"_mtime":"1736754220","_ctime":"1729247495","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"V1.6.4.1 在线维护公告","subTitle":"V1.6.4.1 在线维护公告","page":"GameNotice","important":false,"content":"守密人你好：\n       弥萨格大学校务处将于10月21日21:50(UTC+8)进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会准备一份补给物资以示歉意。祝大家调查顺利！ \n  \n【补给物资】\n维护补偿：银芯*50\n  \n【领取条件】\n领取时间截至2024年11月4Kمs3.
+。请记得及时前往邮箱领取补给物资哦。 \n \n【细节优化和问题修复】\n● 「超验存在」中「黑池之潮Ⅰ」不再要求调查等级达到65级才能挑战。\n● 修复了游戏文字设置为「English(GPT)」等语言时，玩法活动「雪山消融之时」中「山峦巨口」的「全部交换」按钮文本显示错误的问题。\n● 修复了超维空间满时进入下一场战斗，「额外回合」按钮未显示的问题。\n● 修复了状态卡「珊瑚赘生」描述多了一个句号的问题。\n● 修复了「相位对弈：收藏」中错误的出现唤醒体「塔薇」的问题。\n● 修复了「相位对弈」中「慈悲的哺育」描述不完整的问题。"},"order":9827,"_version":"6784c4310000000000000000","_val_client_modes":null,"_uuid":"6716462357ebc61db23dd7ba","_type":"Normal","_tags_info":[{"tags":[],"name":"DEFAULT"}],"_tags":null,"_render_type":0,"_order_field_value":9827,"_mtime":"1736754225","_ctime":"1729512995","_badge_config":{"is_open":false,"is_force_popup":false},"_ann_type":0,"_ann_param":""},{"value":{"title":"相位对弈异常问题公告","subTitle":"相位对弈异常问题公告","page":"GameNotice","important":false,"content":"守密人，\n    在V1.6.4.1更新后至10/22 00：30(UTC+8)期间，出现游玩相位对弈过程中可能导致客户端卡死的问题，我们目前已经针对该问题进完成了紧急修复，当前仍在观察中。\n    对此问题给守密人带来的不便，我们准备了一份补给物资以表歉意，若您在游戏过程中仍遇到该问题，欢迎通过社群或客服通道进行反馈。\n\n【补给物资】\n异常问题补偿：银芯*200\n \n【领取条件】\n领取时间截至2024年11月4日23:59。请记得及时前往邮箱领取补给物资哦。"},"order":9826,"_version":"6784c4370000000000000000","_val_client_modes":null,"_uuid":"671684aa17e21
+设置中新增唤醒时多余的SR级命轮自动分解功能。\n● 编队：更换角色时，将保留上一位角色佩戴的命轮与密契。\n● 语言：首次进入游戏时，会出现所有「语言」选项窗口、便于玩家选择合适的语言环境。后续仍可在登录界面或部分界面进行调整。\n \n五、相位对弈\n——设计师·米酒：本次平衡性调整中我们希望能够实现 3 个目标。① 让每张卡牌出场机会更加均衡，② 让部分情况下的游
+守密人你好：\n       彌薩格大學校務處將於12月27日16:30(UTC+8)進行校內設施修復，更新完成後您將得到提示，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】 \n維護補償：銀芯*50 \n\n【領取條件】 \n領取時間截至2024年1月26日23:59。請記得及時前往郵箱領取補給物資哦。\n\n【更新內容】\n● 修復了繁體中文語言設置時，「幻夢深潛」每日排行獎勵郵件文字顯示錯誤的問題。\n● 修復了V1.0.24更新後大部分守密人未能收到「幻夢深潛」昨日排行獎勵郵件的問題。\n● 修復了V1.0.24更新前已解鎖「調查行動」第五章的守密人在第五章未通關關卡調查時，未達成成就在探索地圖內不顯示的問題。\n● 修復了V1.0.24更新前最新通關進度為 5-1 至 5-4 的守密人，更新後未清空「無望之心」的問題。\n\n● 由於技術原因，仍然存在以下問題，我們將在今天稍晚進行處理。由此給相關的守密人帶來的不便，我們再次深表歉意。\n    ○個別守密人仍然未能正常收到「幻夢深潛」昨日的排行獎勵郵件，我們將在稍後進行補發。\n    ○個別守密人此前尚未清空「無望之心」，我們將在稍後重新執行一次以下操作：啟動進度和「物資」中的「無望之心」將清空，並根據守密人的通關記錄，按最新首次通關獎勵的「無望之心」直接發放到「物資」中，守密人將需要重新啟動第五章共鳴。
+守密人你好：\n       彌薩格大學校務處將於4月24日17:00(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！ \n \n【補給物資】\n維護補償：銀芯*50\n \n【領取條件】\n領取時間截至2024年5月9日23:59。請記得及時前往郵箱領取補給物資哦。   \n\n【更新內容】\n一、版本延期調整\n【喚醒活動】\n● 角色活動喚醒「代行神願」、命輪活動喚醒「萬物之初」延後 2 天到 4 月 27 日 09:00 結束。\n● 角色活動喚醒復刻「正位之刻」、命輪活動喚醒復刻「暗海迷聲」延後 2 天到 4 月 27 日 09:00 結束。\n● 試玩活動「仁愛主教」、「沉睡之主」延後 2 天到 4 月 27 日 09:00 結束。\n\n【活動】\n● 「巨人的隕落」活動延後 2 天到 4 月 27 日 09:00 結束。\n● 「靈魂的牧人」活動中「聖堂義賣現場」延後 2 天到 4 月 27 日 09:00 關閉。\n● 「煉金美學」活動延後 2 天到 4 月 27 日 09:00 結束。\n● 「學園禮贈」活動延後 2 天到 5 月 18 日 09:00 結束。\n\n【融災禁區】\n● 本期融災禁區延後 2 天到 4 月 27 日 09:00 結束。\n\n【課題紀錄】\n● 本期課題紀錄延後 2 天到 5 月 18 日 09:00 結束。\n\n【商店】\n● 精選禮盒「擬態爆發之夜」延後 2 天到 4 月 27 日 09:00 下架。\n\n二、細節優化\n【戰鬥】\n● 新增相位對弈（beta）中，喚醒體釋放狂氣爆發時的音效。\n● 新增打出「胚胎」後，狂氣恢復的提示音效。
+守密人你好：\n       彌薩格大學校務處將於5月28日04:40(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！ \n \n【補給物資】\n維護補償：銀芯*50\n \n【領取條件】\n領取時間截至2024年6月11日23:59。請記得及時前往郵箱領取補給物資哦。   \n\n【細節優化】\n● 調整了怪物「孳乳·努比亞幼崽」的「胎動」意圖：總傷害不變的情況下攻擊次數減半。\n● 調整了怪物「孳乳·努比亞幼崽」的「血之棘」意圖：總傷害大約降低 12%，攻擊次數減半。\n● 優化了「戰鬥」中怪物意圖中造成傷害的描述：增加了傷害次數描述，並在各種情況下均會顯示當前攻擊次數。\n● 優化了「融災黑潮」的描述，為其添加對應的詞綴顏色，點擊可顯示詞綴說明。\n● 調整了「融災黑潮」的名稱，根據效果分為「海魘」和「繁育」兩種，便於守密人識別。\n● 優化了調查結束「調查資料」界面中造物的展示，現在可以直接展示所有造物。\n● 優化了「獲得物資」界面物資較多時的展示，現在超出兩行時會提示「滑動可查看更多獎勵」。\n● 優化了「派遣」和幕間演習「融蝕之墟」、「超驗存在」列表的圖標，現在解鎖前後展示不一樣的圖標，更容易區分。\n● 優化了玩法活動「欲海翻波」界面中的音效，使其與「泰旖絲」動態更為契合。\n● 優化了「相位對弈」結算積分滾動動畫效果。\n● 調整了「典藏館」中「洪積禁典」的插圖展示效果，並且更新了與描述更為契合的插圖。\n● 調整了「融災黑潮·繁育」棱彩抗性，中毒和反擊下降效果由由 66% 調整為 50%。\n\n【問題修復】\n● 修復了怪物「空想利刃」釋放「心眼利刃」受到反擊傷害時，下回合意圖會錯誤切換為「利刃」的問題。\n● 修復了部分分辨率下怪物血條可能超出屏幕的問題。\n● 修復了「調查行動」3-7 等關卡的關卡成就中探索度可能會超過100%的問題。\n● 修復了「調查行動」第 7 章共鳴「二重分娩」部分情況下未正確生效的問題。\n● 修復了喚醒體「泰旖絲」檔案中「關於塔薇」語音缺失的問題。\n● 修復了「冶煉室」單次密契分解較多時會卡頓過久的問題。\n● 修復了「冶煉室」分解密契時點擊已選中的使用中的密契會重復提示確認彈窗的問題。\n● 修復了「相位對弈」快速編隊界面未解鎖鑰令的卡面顯示錯誤的問題。\n● 修復了「典藏館」中「影像」查看CG全屏大圖時，iPad等部分設備可能出現上下區域被切割的問題。\n● 修復了「典藏館」中「影像」CG較多時，拖動卡頓的問題。
+守密人你好：\n       弥萨格大学校务处将于6月7日11:30进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会准备一份补给物资以示歉意。祝大家调查顺利！ \n  \n【补给物资】\n在线维护补偿：银芯*50\n  \n【领取条件】\n领取时间截至2025年6月21日23:59。请记得及时前往邮箱领取补给物资哦。  \n \n【更新内容】\n● 修复了活动「窥觑神国的阴影」中等级修正未正常显示的问题。\n● 修正了活动「窥觑神国的阴影」中推荐等级提示异常的问题。\n● 修正了活动「窥觑神国的阴影」进入时卡顿的问题。
+洛開屏動畫設置為背景顯示黑屏的問題。\n● 修復了部分SR命輪邊框效果不正確的問題。\n● 修復了某些情況下紀行中迎災紀行可能不顯示的問題。\n● 修復了玩法活動探索關卡關閉後可能有新字提示無法取消的問題。\n● 修復了個別命輪英文翻譯格式與結果不準確的問題。\n● 修復了在第一回合使用「過往回聲」時，血量錯誤扣至1的問題。"},"order":9778,"_version":"67e146bb0000000000000000","_val_client_modes":null,"_uuid":"67b717db4a667a2924d94eb2","_type":"Normal","_tags_info":[{"tags":[],"name
+○ 补偿规则：对于本次更新前在相应唤醒中进行了唤醒的守密人，将按每次唤醒补偿「银芯」×1 的规则以邮件形式补发；由于数据处理量较大，补偿将在完成相关确认工作后尽快发放。
+● 修复了唤醒体「泰旖丝」狂气爆发「丰穰之仪」吞噬「圣洁之子」后的获得狂气提示错误地只展示了一次的问题。
+● 修复了在日语语言设置下，唤醒体「徐」、「莫丝」、「茉夏」的名字在部分界面显示错误的问题。
+方顯示總傷害預估。\n\n五、綜合\n【一般】\n● 縮小了大廳中「幕間演習」的按鈕，為新的「編隊」按鈕騰出位置。\n● 新增了「追隨者」增加時「校友會」入口的紅點提示，使守密人更容易關注到。\n● 新增了載入介面提示資訊，希望能讓守密人更加瞭解這個危機四伏的世界。\n\n【編隊】\n●
+容】\n一、怪物調整\n● 動態難度：下調了守密人等級30及以上動態難度關卡怪物的強度。\n\n二、介面調整\n● 「編隊」中喚醒體未裝備密契時增加了明顯的提示，提醒守密人為喚醒體裝備密契。\n● 移除了「共鳴」的效果描述中關於初始共鳴點效果的多餘說明。\n\n三、問題修復\n● 命輪「傷痛
+示錯誤的問題。\n● 修復了在幻夢深潛排行榜介面查看喚醒體詳情後，挑戰編隊資訊顯示異常的問題。\n● 修復了從密契編輯介面跳轉並分解了已裝備或保存到方案的密契後，返回密契編輯介面後顯示異常的問題。\n● 修復了維護後首次登入喚醒體面板額外計算了原穿戴命輪屬性的問題。\n● 修
+方也會額外獲得力量的問題。\n● 修復了與敵人「大魔術師霍迪妮」戰鬥時，提示資訊顯示亂碼的問題。\n● 修復了與敵人「N」戰鬥時，在被石化情況下「N」在回合開始時意圖會轉變為「黑色召喚」，並使石化無效的問題。\n● 修復了「命輪」疊位成功提示文字顯示錯亂的問題。\n● 修復了「
+守密人你好：\n       彌薩格大學校務處將於1月11日14:00(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準備一份補給物資以示歉意。祝大家調查順利！\n\n【補給物資】  \n維護補償：銀芯*50\n\n【領取條件】   \n領取時間截至2024年1月25日23:59。請記得及時前往郵箱領取補給物資哦。  \n\n【更新內容】\n一、系統\n【通用】\n● 修復了獲得物品彈窗未正常彈出的問題。\n● 修復了從手機後臺切回主介面時有機率導致所有系統入口遺失的問題。\n\n【福利】\n● 修復了「靈知迸發」活動頁面的描述錯誤：「今日剩餘雙倍獎勵次數」應該為「今日獎勵額外+50%」。\n\n【守密人檔案】\n● 修復了生日設置確認提示中日期描述錯誤的問題。\n● 修復了無法正常展示不同界域喚醒體的問題。\n\n【校友會】\n● 修復了新增追隨者介面中關注時間錯誤顯示為“7天前”的問題。\n\n【喚醒】\n● 修復了喚醒結果展示介面中點擊喚醒體導致卡死的問題。\n● 修復了喚醒介面在特殊情況下關閉按鈕遺失的問題。\n\n【相位對弈（beta）】  \n● 修復了相位對弈介面無法正常關閉的問題。\n\n二、戰鬥\n【通用】\n● 修復了戰鬥中手牌和回合結束按鈕有機率異常消失的問題。\n● 修復了戰鬥開始和使用狂氣爆發時有機率導致卡死的問題。

@@ -1,0 +1,244 @@
+{
+  "date": "2025-09-17",
+  "messages": 11204,
+  "unique_authors": 184,
+  "reactions_total": 1649,
+  "attachments": 394,
+  "channel_activity": {
+    "🔸русский-канал": 178,
+    "🔸phòng-chat-tiếng-việt": 34,
+    "🔸canal-español": 472,
+    "🔸canal-português": 11,
+    "🔸ruang-obrolan-indonesia": 240,
+    "🔸ห้องสนทนาภาษาไทย": 96,
+    "🔸traphase": 42,
+    "🔸lore-chat": 9,
+    "🔸lets-count": 3,
+    "🔸频道建议┊server-suggestions": 8,
+    "🔸general-chat": 36,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸morimens-game-chat": 8646,
+    "🔸剧情交流": 18,
+    "🔸晒卡分享": 95,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 3,
+    "🔸日本語チャンネル": 1,
+    "🔸deutscher-chatraum": 6,
+    "🔸綜合討論": 1202,
+    "🔸阵容构建": 9,
+    "Murphy 🍰": 2,
+    "Kaly Tier Lists - Sept 2025": 3,
+    "Morimens: Game Mechanics and Terms": 1,
+    "刚入坑，这个配队可以吗？": 1,
+    "What should i aim for": 4,
+    "what teams can i build or characters to summon for future teams?": 2,
+    "I can't Dismantle low rank WOD cause they're lock": 12,
+    "Team Building, Selectors and Pulling Plan": 5,
+    "Its safe to start WoD jail?": 1,
+    "New player? What WoD to pull in standard banner": 1,
+    "忘却前夜OST：皮克曼EP·疯画奇旅": 7,
+    "✅「Answered」About new Ryker buff": 4,
+    "✅「Answered」Issue with Thai UI vowel positioning.": 3,
+    "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?": 1,
+    "✅「已回答」關於克珀珊特覺醒卡的調整建議": 2,
+    "✅「Answered」Is there a possibility of Helot: Catena banner rerun?": 2,
+    "✅「Answered」Thais Traphase blighten on enemy halves guidance mark healing to allies": 1,
+    "✅「已回答」缠绕机制能改下吗？": 5,
+    "✅「已回答」不好意思，我的幻夢深潛已經三天沒有領到獎勵了，這正常嗎?": 6,
+    "✅「Answered」Phantasmal Dive rewards are bugged": 3,
+    "✅「Answered」Summer event background locked": 2,
+    "邀請碼互助/Invitation code help each other": 2,
+    "阿拉克涅，技能與命輪介紹": 5,
+    "杜勒杜勒我们喜欢你😭": 1,
+    "1296113810549112874": 4,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "15": 644,
+    "16": 595,
+    "17": 565,
+    "18": 374,
+    "20": 427,
+    "21": 405,
+    "4": 538,
+    "5": 539,
+    "8": 136,
+    "9": 362,
+    "10": 467,
+    "12": 568,
+    "13": 643,
+    "14": 587,
+    "0": 125,
+    "1": 533,
+    "2": 478,
+    "3": 362,
+    "7": 457,
+    "19": 533,
+    "22": 228,
+    "23": 399,
+    "6": 631,
+    "11": 608
+  },
+  "message_types": {
+    "0": 747,
+    "19": 298
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417979392931397752",
+      "channel_id": "1170692781216378960",
+      "content": "Where are my fellow story skippers <:cry3:1356082134447558748>",
+      "author": "moyashi0672",
+      "reactions": 40,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417950052516626596",
+      "channel_id": "1300659662311526512",
+      "content": "1% probabilidades 99% de fe(de 53% a 7% dr)",
+      "author": "amagawa.mary",
+      "reactions": 28,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418023422524657695",
+      "channel_id": "1170692781216378960",
+      "content": "hi everyone",
+      "author": "arisuu0604",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417687338171109508",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "ancientbp",
+      "reactions": 18,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418001662081105920",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 17,
+      "channel": "Murphy 🍰"
+    },
+    {
+      "id": "1417985519853502465",
+      "channel_id": "1300659662311526512",
+      "content": "bloquear usuario",
+      "author": "blecnes",
+      "reactions": 15,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1417793440351256680",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "tofu0834",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417749216842743899",
+      "content": "Often new players are asking for a Tier List.  I'm not really a fan of a large g",
+      "author": "climbkaly",
+      "reactions": 14,
+      "channel": "Kaly Tier Lists - Sept 2025"
+    },
+    {
+      "id": "1417935199429464084",
+      "channel_id": "1300659662311526512",
+      "content": "Maldito vicio",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1418010417166291168",
+      "channel_id": "1300659662311526512",
+      "content": "bomba",
+      "author": "ancientbp",
+      "reactions": 10,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1417964098850656367",
+      "channel_id": "1170692781216378960",
+      "content": "Only shard u shouldnt use is Horla because she nerfs ur hand at E2",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417761650869538896",
+      "content": "挺满意的一张，应该吧。至少我用了不同风格来作画。只要不细看就很好看啦（有点废话\n\n幸好我一直没发出来（我应该没发这张吧），这次有10000，不得不发了。\n\n发量",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "杜勒杜勒我们喜欢你😭"
+    },
+    {
+      "id": "1417994340177022981",
+      "content": "This is a resource from the Mythag University server containing a **PowerPoint t",
+      "author": "vxvendetta",
+      "reactions": 8,
+      "channel": "Morimens: Game Mechanics and Terms"
+    },
+    {
+      "id": "1417824058011291689",
+      "channel_id": "1170692781216378960",
+      "content": "I'm not falling for y'all mindgames im only into mpreg",
+      "author": "sugarspawn",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417964663001448611",
+      "channel_id": "1170692781216378960",
+      "content": "<@633215996508766229> can we get a selector in archive  for game boot up screen ",
+      "author": "poodaloom",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417797069376065537",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "2041880926",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417842507760537692",
+      "channel_id": "1174983699935277147",
+      "content": "嘻嘻\n2800\n很乾淨的數字",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1417774285392445562",
+      "channel_id": "1131839817982947429",
+      "content": "然后迟点po融灾400🫠",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1417847158803005531",
+      "channel_id": "1170692781216378960",
+      "content": "Just got this for a dollar<:pray:1356053116260454534>",
+      "author": "elia041104",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1417851473810690099",
+      "channel_id": "1170692781216378960",
+      "content": "can we bully lub",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

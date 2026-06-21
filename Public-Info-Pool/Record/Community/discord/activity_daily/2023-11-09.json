@@ -1,0 +1,68 @@
+{
+  "date": "2023-11-09",
+  "messages": 191,
+  "unique_authors": 14,
+  "reactions_total": 9,
+  "attachments": 12,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 8,
+    "🔸綜合討論": 174,
+    "🔸morimens-game-chat": 7,
+    "「艾瑞卡」有什麼行為習慣呢？": 1,
+    "「超維界域」介紹": 1
+  },
+  "hourly_activity": {
+    "11": 4,
+    "13": 75,
+    "0": 6,
+    "1": 3,
+    "2": 7,
+    "3": 25,
+    "6": 9,
+    "7": 1,
+    "8": 11,
+    "12": 21,
+    "14": 19,
+    "15": 3,
+    "16": 1,
+    "23": 6
+  },
+  "message_types": {
+    "0": 162,
+    "19": 23
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1172173326039388290",
+      "channel_id": "1131796304050262126",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1172175070383313008",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1172084813855989820",
+      "channel_id": "1170692781216378960",
+      "content": "Sorry, but you can download the game by the Appstore of available region",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1172085819683655800",
+      "channel_id": "1170692781216378960",
+      "content": "ty for the information",
+      "author": "maegu",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

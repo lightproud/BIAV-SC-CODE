@@ -1,0 +1,84 @@
+{
+  "date": "2025-09-11",
+  "messages": 24,
+  "unique_authors": 6,
+  "reactions_total": 14,
+  "attachments": 13,
+  "channel_activity": {
+    "english-english": 11,
+    "Basic Terms": 1,
+    "A helpful thing I do in Excel": 7,
+    "TH Contribution": 1,
+    "2025 September Contribution Log: V2.3.2 Update": 4
+  },
+  "hourly_activity": {
+    "5": 12,
+    "11": 4,
+    "12": 2,
+    "13": 4,
+    "10": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1415664837052076133",
+      "channel_id": "1402538040253087766",
+      "content": "We will update the English translation of the entire Arc 1 main story on our 2nd",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "english-english"
+    },
+    {
+      "id": "1415669020627177504",
+      "channel_id": "1402538040253087766",
+      "content": "Also: I’ve started working with the operations team to prepare more rewards for ",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "english-english"
+    },
+    {
+      "id": "1415576509124710400",
+      "channel_id": "1415576509124710400",
+      "content": "No clue where else to post this, but I want to be helpful, so I'd like to share ",
+      "author": "omnichromia",
+      "reactions": 3,
+      "channel": "A helpful thing I do in Excel"
+    },
+    {
+      "id": "1415647961777442887",
+      "channel_id": "1415647961777442887",
+      "content": "Hi all,\n\nI was just wondering if there are terms such as Aliemus or Gnosis that ",
+      "author": "teje.",
+      "reactions": 1,
+      "channel": "Basic Terms"
+    },
+    {
+      "id": "1415662009608962059",
+      "channel_id": "1414912367690514522",
+      "content": "Got it!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1415686494798086154",
+      "channel_id": "1414912367690514522",
+      "content": "Sorry! I will update it tomorrow when i go back to work.",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    },
+    {
+      "id": "1415697241322164286",
+      "channel_id": "1414912367690514522",
+      "content": "I think <@183782216353054720> is twice in the list, 1x mentioned as Mercy in DE ",
+      "author": "strandiel",
+      "reactions": 1,
+      "channel": "2025 September Contribution Log: V2.3.2 Update"
+    }
+  ]
+}

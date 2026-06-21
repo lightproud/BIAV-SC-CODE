@@ -1,0 +1,20 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -5472347823561970921
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -9146855338325272168
+  },
+  "m_Name": "",
+  "SourceComp": 0,
+  "EventName": "UI_CM_BTN_LV3_ENTER",
+  "UnclickableStateEventName": "",
+  "NormalStateEventName": "",
+  "HighStateEventName": "",
+  "ToggleOnEventName": "UI_CM_BTN_LV3_CANCEL",
+  "ToggleOffEventName": "UI_CM_BTN_LV3_ENTER",
+  "CanPlayAudio": 1
+}

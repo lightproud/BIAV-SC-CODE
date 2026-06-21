@@ -1,0 +1,227 @@
+{
+  "date": "2024-12-24",
+  "messages": 8595,
+  "unique_authors": 282,
+  "reactions_total": 1062,
+  "attachments": 331,
+  "channel_activity": {
+    "🔸綜合討論": 1850,
+    "🔸阵容构建": 36,
+    "🔸morimens-game-chat": 5749,
+    "🔸剧情交流": 12,
+    "🔸相位对弈": 3,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 84,
+    "🔸русский-канал": 112,
+    "🔸phòng-chat-tiếng-việt": 211,
+    "🔸canal-español": 354,
+    "🔸canal-português": 45,
+    "🔸ruang-obrolan-indonesia": 9,
+    "🔸ห้องสนทนาภาษาไทย": 3,
+    "Morimens loading screen lore compilation": 5,
+    "Can someone recap a story about tawil for me about how she turned to a monster at very beginning?": 1,
+    "官方周邊建議征集": 3,
+    "🏆【已開獎】彌薩格週年頒獎典禮": 10,
+    "✅重生与致歉": 85,
+    "English Page pls !!": 1,
+    "H9-11 小bug？": 1,
+    "希望未来开发能把皮肤提上日程": 1,
+    "寻人启事": 3,
+    "Ping很大在马来西亚": 1,
+    "彌薩格校貓 你到底想干嘛？": 1,
+    "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2": 2,
+    "羊妈摔倒": 1,
+    "自創界域燒壞我腦袋的cpu了": 6,
+    "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3": 1,
+    "Aomi 的忘郤前夜 Morimens作品角": 2
+  },
+  "hourly_activity": {
+    "1": 854,
+    "2": 1015,
+    "3": 1001,
+    "4": 728,
+    "5": 784,
+    "6": 901,
+    "7": 190,
+    "8": 213,
+    "9": 210,
+    "10": 457,
+    "11": 128,
+    "12": 138,
+    "13": 489,
+    "14": 305,
+    "15": 480,
+    "16": 255,
+    "17": 57,
+    "19": 46,
+    "23": 24,
+    "18": 148,
+    "0": 47,
+    "20": 67,
+    "21": 37,
+    "22": 21
+  },
+  "message_types": {
+    "19": 2434,
+    "0": 6037
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1321048199217287239",
+      "content": "我覺得界域精通是這遊很有趣的特色但是我幾乎感受不到他的存在",
+      "author": "shchng.",
+      "reactions": 20,
+      "channel": "✅重生与致歉"
+    },
+    {
+      "id": "1320921412747264073",
+      "channel_id": "1131839817982947429",
+      "content": "https://discord.com/channels/1131791637933199470/1320918940179759175 @everyone",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320922115406565486",
+      "channel_id": "1131839817982947429",
+      "content": "校猫死了啦，都是你们害的！这下我缺的乐子和补偿谁来补？",
+      "author": "youyou0749",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320935691651387413",
+      "channel_id": "1131839817982947429",
+      "content": "6",
+      "author": "asdfgvczr",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320945381819027516",
+      "channel_id": "1131839817982947429",
+      "content": "就算你錯過了抽忘卻前夜週邊、讓一群人後悔慢入坑沒領到的+12SRR免費命輪、免費塔薇 你還是能玩下去 因為你肯玩 不肯玩什麼都沒有",
+      "author": "pray_unbeliever",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320924876864880710",
+      "channel_id": "1300659436804640788",
+      "content": "猫さんから忘却前夜(Morimens) 2.0のお知らせ\n\n【原文】\nhttps://discord.com/channels/1131791637933199",
+      "author": "x013318908",
+      "reactions": 11,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1320944836853108767",
+      "channel_id": "1131839817982947429",
+      "content": "我是覺得比起刻意掐免費送塔薇時間去公布這個消息\n~~我更相信校貓是想在平安夜這天發好消息~~",
+      "author": "pray_unbeliever",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1321004277447131219",
+      "channel_id": "1131839817982947429",
+      "content": "新运营第一天工作日报:\n1.清空discord黑名单",
+      "author": "galagalaguo",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320945149907439729",
+      "channel_id": "1170692781216378960",
+      "content": "the duality of Sanga/Horla",
+      "author": "al_leyway",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1320954108479537193",
+      "channel_id": "1131839817982947429",
+      "content": "奧吉爾單通",
+      "author": "asdfgvczr",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1321005597730017310",
+      "channel_id": "1131839817982947429",
+      "content": "我们至今还不知道陌闫到底是谁",
+      "author": "qiamo0664",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1321072911959724032",
+      "content": "~~我覺得深海比較大問題還是觸手沒存在感~~",
+      "author": "cra0261_",
+      "reactions": 8,
+      "channel": "✅重生与致歉"
+    },
+    {
+      "id": "1320921600517869579",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1321002580666613770",
+      "content": "# 支持出以太異術！",
+      "author": "_cwz_",
+      "reactions": 7,
+      "channel": "✅重生与致歉"
+    },
+    {
+      "id": "1320944460594417685",
+      "channel_id": "1131839817982947429",
+      "content": "之前看起來滿臉死相，根本不想回來，週年慶看起來更像告別式",
+      "author": "nightmorals",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320967953826447370",
+      "channel_id": "1131839817982947429",
+      "content": "各位大佬好我今天剛來",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320968019865763872",
+      "channel_id": "1131839817982947429",
+      "content": "想請問新手玩這個遊戲有什麼要注意的嗎",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1320980854650175569",
+      "channel_id": "1131839817982947429",
+      "content": "||看來是還不知道阿花本性的小朋友||",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1321143740978565130",
+      "channel_id": "1131839817982947429",
+      "content": "聖嬰",
+      "author": "lemoncandy25",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1321113961424228453",
+      "channel_id": "1173463482503536711",
+      "content": "~~對應的其實是校貓代替手咪人沉睡了~~",
+      "author": "ekko9950",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    }
+  ]
+}

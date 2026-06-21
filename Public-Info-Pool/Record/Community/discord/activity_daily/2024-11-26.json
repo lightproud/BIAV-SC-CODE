@@ -1,0 +1,217 @@
+{
+  "date": "2024-11-26",
+  "messages": 5875,
+  "unique_authors": 196,
+  "reactions_total": 304,
+  "attachments": 330,
+  "channel_activity": {
+    "🔸綜合討論": 284,
+    "🔸阵容构建": 217,
+    "🔸morimens-game-chat": 4193,
+    "🔸剧情交流": 40,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 104,
+    "🔸한국어-채팅방": 87,
+    "🔸chaîne-française": 150,
+    "🔸русский-канал": 58,
+    "🔸phòng-chat-tiếng-việt": 354,
+    "🔸canal-español": 162,
+    "🔸canal-português": 122,
+    "🔸ruang-obrolan-indonesia": 23,
+    "🔸ห้องสนทนาภาษาไทย": 28,
+    "V1.7.1.3 在線維護公告": 7,
+    "30号到底还有没有周年庆活": 1,
+    "希望加強一下艾爾瓦": 22,
+    "連續抽到一樣的造物": 2,
+    "+12极夜与破晓还会再送吗": 7,
+    "命輪保底是不是出了什麼問題": 1,
+    "校友會增設最近助戰好友，好嗎": 1,
+    "關卡地圖「融災禁區」總覽22期": 2,
+    "限時活動「萬象門扉」造物總結": 2,
+    "更一波宝宝们的傻大头": 4,
+    "約稿展示 請大家吃飯": 1
+  },
+  "hourly_activity": {
+    "1": 372,
+    "2": 146,
+    "3": 259,
+    "4": 361,
+    "5": 87,
+    "6": 181,
+    "7": 228,
+    "8": 161,
+    "9": 384,
+    "10": 160,
+    "11": 181,
+    "12": 264,
+    "13": 137,
+    "14": 409,
+    "15": 469,
+    "17": 371,
+    "18": 225,
+    "19": 307,
+    "16": 433,
+    "0": 81,
+    "20": 268,
+    "21": 62,
+    "22": 49,
+    "23": 280
+  },
+  "message_types": {
+    "0": 4745,
+    "19": 1080
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1310851774332010496",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 17,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310855742722412554",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 13,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1311012309413531831",
+      "channel_id": "1131839874132090890",
+      "content": "不過我們確實自那以後改變了一些思路 也在找平衡點",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1310981960012664924",
+      "content": "30号到底还有没有周年庆活",
+      "author": "xia1997s",
+      "reactions": 8,
+      "channel": "30号到底还有没有周年庆活"
+    },
+    {
+      "id": "1310909847893573733",
+      "content": "艾爾瓦0費，視為「防禦」",
+      "author": "_cwz_",
+      "reactions": 6,
+      "channel": "希望加強一下艾爾瓦"
+    },
+    {
+      "id": "1310928605794144307",
+      "content": "盾击一生之敌:9-1",
+      "author": "qiamo0664",
+      "reactions": 6,
+      "channel": "希望加強一下艾爾瓦"
+    },
+    {
+      "id": "1310939903709675560",
+      "content": "> 大家好，這裡是難忘今宵攻略組，本期為大家帶來的是限時活動“萬象門扉”的造物匯總，以及時靈擺和對應效果與怪物首領。\n\n落地戰，關卡提供的創造物為範圍內隨機。\n",
+      "author": "menoctus",
+      "reactions": 6,
+      "channel": "限時活動「萬象門扉」造物總結"
+    },
+    {
+      "id": "1310809753781403649",
+      "channel_id": "1131839817982947429",
+      "content": "苦於見不到守密人的潘狄婭、雷婭、溫柯爾光速抱狗趕到現場",
+      "author": ".weiyu",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310905944485531692",
+      "content": "这个语气听起来像是快要打赢了",
+      "author": "rock1234_47882",
+      "reactions": 5,
+      "channel": "更一波宝宝们的傻大头"
+    },
+    {
+      "id": "1310778971293745172",
+      "channel_id": "1170692781216378960",
+      "content": "and lost to uvash ;--;",
+      "author": "null.pointer_exception",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1310924243181244438",
+      "content": "可以考慮把大招丟完症狀卡之後的抽牌改成把艾爾瓦的隨機指令卡加入手中",
+      "author": "ekko9950",
+      "reactions": 4,
+      "channel": "希望加強一下艾爾瓦"
+    },
+    {
+      "id": "1310933330778263552",
+      "content": "希望戒備可以跟力量疊的一樣快",
+      "author": "hyder9133",
+      "reactions": 4,
+      "channel": "希望加強一下艾爾瓦"
+    },
+    {
+      "id": "1310992940528828446",
+      "channel_id": "1131839817982947429",
+      "content": "900血打12倍攻击？",
+      "author": "qiamo0664",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310833843313311795",
+      "channel_id": "1131839874132090890",
+      "content": "加入我無敵的粉色河豚教(",
+      "author": "lemoncandy25",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1310773905023041567",
+      "channel_id": "1170692781216378960",
+      "content": "Let's go! I got Thais and still got 17 000 Silver to spare!\n\nIt's my first ever ",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1310865902262026273",
+      "channel_id": "1170692781216378960",
+      "content": "so tawil to E2 and 1 copy of her sig is enough?",
+      "author": ".korotsu",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1310963523802890334",
+      "content": "~~一加就是1000~~",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": "希望加強一下艾爾瓦"
+    },
+    {
+      "id": "1310810208074993715",
+      "channel_id": "1131839817982947429",
+      "content": "樓上曝露了自己是月計人",
+      "author": ".weiyu",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310955609046257759",
+      "channel_id": "1131839817982947429",
+      "content": "這遊戲小數點是直接進位的 中了那零點幾的機率(",
+      "author": "lemoncandy25",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1310782076328349727",
+      "channel_id": "1131839874132090890",
+      "content": "我的羊媽二啟用了好幾個月都不會不方便",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    }
+  ]
+}

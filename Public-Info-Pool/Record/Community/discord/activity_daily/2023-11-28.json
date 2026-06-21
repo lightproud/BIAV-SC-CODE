@@ -1,0 +1,131 @@
+{
+  "date": "2023-11-28",
+  "messages": 391,
+  "unique_authors": 48,
+  "reactions_total": 31,
+  "attachments": 25,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 339,
+    "🔸morimens-game-chat": 42,
+    "彌薩格大學茶話會": 6,
+    "看看你會截屏到哪個喚醒體！": 2
+  },
+  "hourly_activity": {
+    "13": 6,
+    "0": 11,
+    "1": 35,
+    "2": 54,
+    "3": 3,
+    "4": 25,
+    "5": 3,
+    "6": 76,
+    "7": 3,
+    "8": 11,
+    "9": 29,
+    "10": 7,
+    "11": 56,
+    "12": 24,
+    "14": 11,
+    "15": 7,
+    "16": 15,
+    "17": 3,
+    "22": 3,
+    "23": 6,
+    "19": 3
+  },
+  "message_types": {
+    "0": 302,
+    "19": 86
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1178898248300240946",
+      "channel_id": "1177574564440588308",
+      "content": "除了角色池以外啊，會有武器池嗎？如果有的話會有小保底和大保底嗎？分別多少抽？",
+      "author": "miaomiaomiao8594",
+      "reactions": 9,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1178860255971655751",
+      "channel_id": "1177574564440588308",
+      "content": "1.遊戲中有掃蕩嗎？",
+      "author": "zhangyahui",
+      "reactions": 8,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1179143384837914765",
+      "channel_id": "1170692781216378960",
+      "content": "Miss you all guys！",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1178888955429666846",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "momoshiocha",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178919518807019642",
+      "channel_id": "1131839817982947429",
+      "content": "晚安",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178947239603863572",
+      "channel_id": "1131839817982947429",
+      "content": "可憐巴巴",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178887549570252820",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178887666054479912",
+      "channel_id": "1131839817982947429",
+      "content": "我覺得很完美w",
+      "author": "lai532143",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178947800856268861",
+      "channel_id": "1131839817982947429",
+      "content": "乖~",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1178873102097195038",
+      "channel_id": "1170692781216378960",
+      "content": "3 days left",
+      "author": "merlincute",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1178882004746506342",
+      "channel_id": "1170692781216378960",
+      "content": "QKBQ SSDG JZYU",
+      "author": "lai532143",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

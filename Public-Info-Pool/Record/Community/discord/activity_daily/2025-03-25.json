@@ -1,0 +1,225 @@
+{
+  "date": "2025-03-25",
+  "messages": 2779,
+  "unique_authors": 116,
+  "reactions_total": 125,
+  "attachments": 142,
+  "channel_activity": {
+    "🔸한국어-채팅방": 49,
+    "🔸русский-канал": 118,
+    "🔸phòng-chat-tiếng-việt": 27,
+    "🔸canal-español": 10,
+    "🔸ruang-obrolan-indonesia": 225,
+    "🔸ห้องสนทนาภาษาไทย": 10,
+    "🔸traphase": 92,
+    "🔸lore-chat": 22,
+    "🔸綜合討論": 538,
+    "🔸morimens-game-chat": 1626,
+    "🔸剧情交流": 2,
+    "🔸相位对弈": 36,
+    "Kinda confused help me for the team": 1,
+    "Help deciding the next pulling plan": 3,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia": 1,
+    "✅「已回答」返校報到（好像是這個）的那個藍色領取按鈕，有紅點的時候點了領取之後不會變成灰色再點也點不動": 2,
+    "沒有喚醒體技能搶先看了嗎": 1,
+    "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？": 1,
+    "忘却前夜的周年庆在啥时候": 4,
+    "相位对弈命轮属性": 1,
+    "四小強星辰篇通關記錄分享": 5,
+    "存档 顺便参加一下活动": 1,
+    "手咪人的噩梦": 1,
+    "1350060160739184690": 2
+  },
+  "hourly_activity": {
+    "3": 172,
+    "4": 177,
+    "5": 217,
+    "6": 76,
+    "8": 37,
+    "9": 74,
+    "11": 269,
+    "12": 133,
+    "13": 73,
+    "14": 212,
+    "10": 179,
+    "17": 102,
+    "18": 13,
+    "19": 76,
+    "21": 64,
+    "15": 129,
+    "16": 104,
+    "0": 62,
+    "1": 68,
+    "2": 102,
+    "7": 257,
+    "20": 39,
+    "22": 44,
+    "23": 100
+  },
+  "message_types": {
+    "0": 443,
+    "20": 3,
+    "19": 107
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1354049458530160680",
+      "channel_id": "1131839817982947429",
+      "content": "【1】不是N【2】超维男不止一个",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353928650981904494",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353953428145176618",
+      "channel_id": "1131839817982947429",
+      "content": "除非只打難3，那個隨便打",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354050339824734238",
+      "channel_id": "1131839817982947429",
+      "content": "<@1156423870379741244>",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354075059299418202",
+      "channel_id": "1131839817982947429",
+      "content": "再打問號我要發作了",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354075467942199408",
+      "channel_id": "1131839817982947429",
+      "content": "这样的的角色还有9个",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354096348588281876",
+      "channel_id": "1131839817982947429",
+      "content": "你說得對但你還沒見識過福袋最速最強傳奇",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353925304493543424",
+      "channel_id": "1300659753197764688",
+      "content": "ooo, oke",
+      "author": "novalzzz",
+      "reactions": 2,
+      "channel": "🔸ruang-obrolan-indonesia"
+    },
+    {
+      "id": "1353995559257509909",
+      "channel_id": "1300659802455674972",
+      "content": "อันนี้มีเหตุผล55",
+      "author": "14_day_",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1353917457928294453",
+      "channel_id": "1131839817982947429",
+      "content": "融災改成能吃靈芝是不是就能減少抱怨了",
+      "author": "night0140",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353967844190322739",
+      "channel_id": "1131839817982947429",
+      "content": "答案是别玩",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354045231359856721",
+      "channel_id": "1131839817982947429",
+      "content": "<:1nekouwu:1207140996912119808>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1354060929255477288",
+      "channel_id": "1131839817982947429",
+      "content": "我是菜狗",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1353961897183154176",
+      "channel_id": "1170692781216378960",
+      "content": "After Murphy",
+      "author": "iibenigml1588",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353969075008700497",
+      "channel_id": "1170692781216378960",
+      "content": "Clementine will have new exalt at +8 and +12",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1353996327620579368",
+      "channel_id": "1180850818509971466",
+      "content": "喔靠哈哈哈哈   抱歉抱歉那確實我小丑了 弄錯他意思  ORZ \n我之前一直想著這玩意怎麼會越解越多",
+      "author": "lazuritefox",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1354020783315222558",
+      "content": "这个人偶命轮要是跟苍白一样就好了，每砍一刀，就少狂气",
+      "author": "luhongran",
+      "reactions": 2,
+      "channel": "相位对弈命轮属性"
+    },
+    {
+      "id": "1354123507193217024",
+      "content": "星辰篇史上浓墨重彩的一笔🥵",
+      "author": "nidie0256_61327",
+      "reactions": 2,
+      "channel": "四小強星辰篇通關記錄分享"
+    },
+    {
+      "id": "1353970465974259733",
+      "channel_id": "1300659580446969918",
+      "content": "бля, а дед крутой",
+      "author": "sakamoto8727",
+      "reactions": 1,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1354055041702428734",
+      "channel_id": "1300659580446969918",
+      "content": "Читать потом будем.Я пока на авто хуярю.Надо аккаунтов наделать до послезавтра.А",
+      "author": "somethingno1fan",
+      "reactions": 1,
+      "channel": "🔸русский-канал"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2025-11-01",
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 12,
+  "attachments": 0,
+  "channel_activity": {
+    "project-coordination": 7
+  },
+  "hourly_activity": {
+    "4": 4,
+    "9": 2,
+    "18": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1434032357022760961",
+      "channel_id": "1416615133479960647",
+      "content": "Hey @everyone! I just had an idea on how to potentially make things easier in th",
+      "author": "omnichromia",
+      "reactions": 10,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1434032799815565432",
+      "channel_id": "1416615133479960647",
+      "content": "I will lean towards efficiency",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "project-coordination"
+    },
+    {
+      "id": "1434253674716332122",
+      "channel_id": "1416615133479960647",
+      "content": "I thought I implemented everything that went through BIAVGit but I guess not <:a",
+      "author": "omnichromia",
+      "reactions": 1,
+      "channel": "project-coordination"
+    }
+  ]
+}
