@@ -8,6 +8,8 @@ on:
       - 'projects/news/scripts/**'
       - 'tests/**'
       - 'CLAUDE.md'
+      - 'memory/decisions.md'
+      - 'memory/decisions-archive.md'
       - '.github/workflows/test.yml'
   pull_request:
     paths:
@@ -15,6 +17,8 @@ on:
       - 'projects/news/scripts/**'
       - 'tests/**'
       - 'CLAUDE.md'
+      - 'memory/decisions.md'
+      - 'memory/decisions-archive.md'
   workflow_dispatch:
 
 concurrency:
