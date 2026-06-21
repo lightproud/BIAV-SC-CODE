@@ -40,7 +40,7 @@ export default defineConfig({
       {
         text: '世界观',
         items: [
-          { text: '剧情时间线', link: '/story' },
+          { text: '剧情正文读本', link: '/story' },
           { text: '剧情考据', link: '/lore-research' },
           { text: 'CG 画廊', link: '/cg-gallery' },
           { text: '道具故事', link: '/item-stories' },
@@ -88,7 +88,7 @@ export default defineConfig({
         {
           text: '世界观',
           items: [
-            { text: '剧情时间线', link: '/story' },
+            { text: '剧情正文读本', link: '/story' },
             { text: '剧情考据', link: '/lore-research' },
             { text: 'CG 画廊', link: '/cg-gallery' },
             { text: '道具故事', link: '/item-stories' },

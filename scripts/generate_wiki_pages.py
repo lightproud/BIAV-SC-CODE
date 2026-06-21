@@ -72,6 +72,42 @@ def _realm_badge(realm):
     return f'<span class="realm-badge realm-{realm}">{REALM_LABEL[realm]}</span>'
 
 
+def _clean_lore_markup(text):
+    """把收藏馆富文本标记解析为可读 markdown/HTML。
+
+    游戏内标记为内容内嵌、无闭合的 `<Type:内容>` 形态：
+    Title/Bold→加粗;OrangeQuality/RedQuality/WhiteQuality→品质色文本;
+    其余未知标记保留内容、剥壳;残留 `<▼>` 等杂记号清掉。"""
+    import re
+    if not text:
+        return ''
+
+    def repl(m):
+        typ, content = m.group(1).lower(), m.group(2)
+        if typ in ('title', 'bold'):
+            return f'**{content}**'
+        if typ == 'orangequality':
+            return f'<span class="rarity-ssr">{content}</span>'
+        if typ == 'redquality':
+            return f'<span style="color:#ec7063">{content}</span>'
+        if typ == 'whitequality':
+            return content
+        return content
+
+    text = re.sub(r'<([A-Za-z]+):([^>]*)>', repl, text)
+    text = re.sub(r'<[^>]{0,16}>', '', text)  # 清掉 <▼> 等无内容杂标记
+    return text.strip()
+
+
+def _clean_title(t):
+    """标题用清洗：解析标记，去掉 ** 加粗记号与品质色 span（标题已由上下文强调，
+    且 ** 与内联 HTML 相邻会破坏 markdown 加粗解析）。"""
+    import re
+    s = _clean_lore_markup(t)
+    s = re.sub(r'</?span[^>]*>', '', s)
+    return s.replace('**', '').strip()
+
+
 def _awakener_card(ch, p):
     """渲染图鉴/列表页的角色卡 <a>。title 与 name 重复时不重复显示。"""
     realm = p['realm'] if p else None
@@ -1585,8 +1621,11 @@ def generate_update_notices():
 
 
 def generate_story():
-    """Generate the chapter-organized story timeline page from the story/
-    structured layer (story_units / index / lore_entries / stages_by_unit)."""
+    """Generate the chapter-organized story reader from the story/ structured
+    layer (index / lore_entries / stages_by_unit) joined with stage group 引言。
+
+    收藏馆富文本标记经 _clean_lore_markup 解析为可读排版；按章节铺
+    关卡引言 + 剧情正文（长篇原文）+ 词条速览（短词条折叠）。"""
     import html as _html
     sd = f'{PROCESSED_DIR}/story'
     try:
@@ -1596,16 +1635,29 @@ def generate_story():
     except FileNotFoundError:
         print('Story layer not found; skipping story page')
         return
+    # 关卡组引言：group_id → desc（取自 stages.json groups）
+    gdesc = {}
+    try:
+        for g in json.load(open(f'{PROCESSED_DIR}/stages.json', encoding='utf-8'))['groups']:
+            gdesc[g['id']] = g.get('desc', '')
+    except (FileNotFoundError, KeyError):
+        pass
 
     def esc(t):
         return _html.escape(t or '', quote=False)
 
+    PROSE_MIN = 30  # 正文长度阈值：≥ 视作叙事正文，< 归词条速览
+
     tl = {'prologue': '序章', 'main_chapter': '主线', 'star_chapter': '星辰篇', 'mind_dive': '意识潜游'}
-    L = ['# 剧情时间线', '']
-    L.append('> 按**剧情单元**（序章 → 调查行动主线 → 意识潜游）组织的故事浏览页。')
-    L.append('> 数据来源：CollectionHall.lua（收藏馆词条，正文逐字）+ StageGroup.lua（关卡组）。')
+    L = ['# 剧情正文读本', '']
+    L.append('> 按**剧情单元**（序章 → 调查行动主线 → 星辰篇 → 意识潜游）组织的逐章故事读本。')
+    L.append('> 数据来源：CollectionHall.lua（收藏馆词条正文，逐字）+ StageGroup.lua（关卡组引言）——**均为客户端解包一手原文**。')
     L.append('>')
-    L.append('> 全量收藏馆词条见[收藏馆百科](/collection-hall)；本页仅含可挂到剧情章节的词条。')
+    L.append('::: warning 正文范围说明')
+    L.append('本页是游戏内**可解包的叙事正文**：收藏馆/秘典词条 + 关卡组引言 + 道具叙事。'
+             '游戏主线**逐句对白脚本**存于客户端字节码常量表，字符串扫描未捕获，属解包缺口；'
+             '其剧情**梗概**（社区考据，非原文）见 [剧情考据](/lore-research)。')
+    L.append(':::')
     L.append('')
     L.append('## 章节概览')
     L.append('')
@@ -1632,23 +1684,60 @@ def generate_story():
         if u['characters']:
             L.append(f"**关联角色**：{'、'.join(esc(c) for c in u['characters'])}")
             L.append('')
+
+        # —— 关卡引言（关卡组 name + desc，去重）——
         if u['stage_group_ids']:
             grps = sbu.get(u['unit'], [])
-            L.append('**关卡组**：' + '、'.join(esc(g['name']) for g in grps))
-            L.append('')
-        if u['lore_ids']:
-            L.append('### 收藏馆词条')
-            L.append('')
-            for lid in u['lore_ids']:
-                e = lore.get(lid, {})
-                L.append(f"#### {esc(e.get('title', ''))}")
+            seen = set()
+            rows = []
+            for g in grps:
+                d = _clean_lore_markup(gdesc.get(g['group_id'], ''))
+                key = (g['name'], d)
+                if key in seen:
+                    continue
+                seen.add(key)
+                rows.append((g['name'], g.get('type', ''), d))
+            if rows:
+                L.append('### 关卡引言')
                 L.append('')
-                d = e.get('desc', '')
-                L.append(esc(d) if d else '*（无正文）*')
+                for name, gtype, d in rows:
+                    tag = f'（{esc(gtype)}）' if gtype else ''
+                    L.append(f'- **{esc(name)}**{tag}' + (f'　{d}' if d else ''))
+                L.append('')
+
+        # —— 拆分：叙事正文 vs 词条速览 ——
+        prose, briefs = [], []
+        for lid in u['lore_ids']:
+            e = lore.get(lid, {})
+            d = _clean_lore_markup(e.get('desc', ''))
+            (prose if len(d) >= PROSE_MIN else briefs).append((e, d))
+
+        if prose:
+            L.append('### 剧情正文')
+            L.append('')
+            for e, d in prose:
+                L.append(f"#### {_clean_title(e.get('title', ''))}")
+                L.append('')
+                # 正文按整段保留（原文以空格分句），渲染为引用块
+                L.append(f'> {d}')
                 L.append('')
                 if e.get('lock_tip'):
                     L.append(f"<small>解锁：{esc(e['lock_tip'])}</small>")
                     L.append('')
+
+        if briefs:
+            L.append('### 词条速览')
+            L.append('')
+            L.append('<details><summary>展开短词条 / 标题项</summary>')
+            L.append('')
+            for e, d in briefs:
+                title = _clean_title(e.get('title', '')) or '（无题）'
+                tip = f"<small>（{esc(e['lock_tip'])}）</small>" if e.get('lock_tip') else ''
+                L.append(f'- **{title}**' + (f'：{d}' if d else '') + (f' {tip}' if tip else ''))
+            L.append('')
+            L.append('</details>')
+            L.append('')
+
         L.append('---')
         L.append('')
     with open(f'{DOCS_DIR}/story.md', 'w', encoding='utf-8') as f:
