@@ -19,8 +19,11 @@ This is a *producer* (reproducible build artifact). 本体各自原地不动；�
 """
 from __future__ import annotations
 
+import argparse
 import json
+import re
 import shutil
+import tarfile
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -433,15 +436,25 @@ https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
 ## 重新生成
 
 ```bash
-python3 scripts/build_okf_bundle.py
+python3 scripts/build_okf_bundle.py            # 仅重建 bundle
+python3 scripts/build_okf_bundle.py --tarball okf-bundle.tar.gz  # 顺带导出单向输出物
 ```
 
 生成物，重跑覆盖。本体各自原地不动。
 
-## 消费（白嫖 Google 参考实现）
+## 消费：自包含可视化器
 
-OKF 随规范放出一个**零后端单文件静态 HTML 可视化器**，可把本 bundle 渲染成
-交互式关系图。取用方式见上方规范仓库 `okf/` 目录。
+`okf/visualizer.html` 是一个**零后端、零安装、数据不离开页面**的单文件静态
+关系图（对齐 OKF 消费端参考实现精神，自写零依赖力导向图）。双击直接在浏览器
+打开即可：节点按 `type` 上色，角色按画师 / CV 聚类成簇，拖动 / 缩放 / 悬停看详情。
+图数据另存 `okf/graph.json` 供其他消费端（搜索 / agent）取用。
+
+## 银芯 → 黑池单向线格式
+
+OKF 的「格式即契约，两端工具独立可换」正是银芯→黑池**单向输出**的理想载体：
+黑池**无需银芯任何 SDK / 账号**即可消费本 bundle 的策展知识（concept + 指针）。
+`--tarball` 产出 `.tar.gz` 即单向输出物（信息只出不回，黑池→银芯始终关闭）。
+注意：仅**策展知识层**走此线，原始时序数据本体仍只放指针、不进 bundle。
 
 ## 一致性
 
@@ -451,7 +464,203 @@ OKF 随规范放出一个**零后端单文件静态 HTML 可视化器**，可把
     write_plain(BUNDLE / "README.md", readme)
 
 
+# ---------------------------------------------------------------------------
+# Consumer: self-contained graph + static HTML visualizer
+# (OKF consumer reference: zero-backend single file, data never leaves the page)
+# ---------------------------------------------------------------------------
+
+RESERVED = {"index.md", "log.md"}
+_FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
+_LINK_RE = re.compile(r"\]\((/[A-Za-z0-9_./-]+\.md)\)")
+
+
+def _read_frontmatter(text: str) -> dict:
+    m = _FM_RE.match(text)
+    fields: dict = {}
+    if not m:
+        return fields
+    for line in m.group(1).splitlines():
+        if not line.strip() or line.startswith(" ") or ":" not in line:
+            continue
+        key, _, val = line.partition(":")
+        key, val = key.strip(), val.strip()
+        if val.startswith("[") and val.endswith("]"):
+            fields[key] = [v.strip().strip('"') for v in val[1:-1].split(",") if v.strip()]
+        else:
+            fields[key] = val.strip('"')
+    return fields
+
+
+def build_graph() -> dict:
+    """Scan the bundle into a {nodes, edges} graph for the visualizer."""
+    nodes, edges = [], []
+    id_set = set()
+    bodies: dict[str, str] = {}
+    fm_by_id: dict[str, dict] = {}
+
+    for f in sorted(BUNDLE.rglob("*.md")):
+        if f.name in RESERVED:
+            continue
+        rel = "/" + str(f.relative_to(BUNDLE))
+        text = f.read_text(encoding="utf-8")
+        fm = _read_frontmatter(text)
+        fm_by_id[rel] = fm
+        bodies[rel] = text
+        id_set.add(rel)
+        nodes.append({
+            "id": rel,
+            "type": fm.get("type", "unknown"),
+            "title": fm.get("title", f.stem),
+            "tags": fm.get("tags", []) if isinstance(fm.get("tags"), list) else [],
+        })
+
+    # explicit markdown-link edges (graph richness, if any)
+    seen = set()
+    for src, text in bodies.items():
+        for tgt in _LINK_RE.findall(text):
+            if tgt in id_set and tgt != src and (src, tgt) not in seen:
+                seen.add((src, tgt))
+                edges.append({"source": src, "target": tgt, "rel": "link"})
+
+    # tag-cluster star edges (画师 / CV) — keeps角色 grouped without edge blow-up
+    groups: dict[str, list[str]] = {}
+    for n in nodes:
+        for t in n["tags"]:
+            if t.startswith("画师:") or t.startswith("CV:"):
+                groups.setdefault(t, []).append(n["id"])
+    for tag, members in groups.items():
+        if len(members) < 2:
+            continue
+        rep = members[0]
+        for m in members[1:]:
+            edges.append({"source": rep, "target": m, "rel": tag})
+
+    return {
+        "generated": TODAY,
+        "stats": {"nodes": len(nodes), "edges": len(edges)},
+        "nodes": nodes,
+        "edges": edges,
+    }
+
+
+def build_visualizer(graph: dict) -> None:
+    """Emit a single self-contained HTML force-graph (no backend, no install)."""
+    (BUNDLE / "graph.json").write_text(
+        json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8")
+    data = json.dumps(graph, ensure_ascii=False)
+    html = _VISUALIZER_HTML.replace("__GRAPH_DATA__", data)
+    (BUNDLE / "visualizer.html").write_text(html, encoding="utf-8")
+
+
+_VISUALIZER_HTML = r"""<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>银芯 OKF Bundle — 关系图</title>
+<style>
+  html,body{margin:0;height:100%;background:#0c0e14;color:#cdd6f4;font-family:system-ui,sans-serif}
+  #hud{position:fixed;top:10px;left:10px;z-index:10;font-size:13px;line-height:1.6;
+       background:rgba(20,22,30,.85);padding:10px 12px;border:1px solid #2a2f40;border-radius:8px;max-width:260px}
+  #hud b{color:#a6e3a1}
+  .legend span{display:inline-block;margin:2px 6px 2px 0}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
+  #tip{position:fixed;pointer-events:none;z-index:20;background:#181b26;border:1px solid #45475a;
+       padding:6px 9px;border-radius:6px;font-size:12px;display:none;max-width:280px}
+  canvas{display:block}
+</style>
+</head>
+<body>
+<div id="hud">
+  <div><b>银芯 OKF Bundle</b> 关系图</div>
+  <div id="meta"></div>
+  <div class="legend" id="legend"></div>
+  <div style="margin-top:6px;color:#7f849c">拖动节点 / 滚轮缩放 / 悬停看详情</div>
+</div>
+<div id="tip"></div>
+<canvas id="c"></canvas>
+<script>
+const G = __GRAPH_DATA__;
+const palette = ["#89b4fa","#a6e3a1","#f9e2af","#f38ba8","#cba6f7","#94e2d5","#fab387","#f5c2e7"];
+const types = [...new Set(G.nodes.map(n=>n.type))];
+const colorOf = t => palette[types.indexOf(t) % palette.length];
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+let W,H; function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;} resize(); addEventListener('resize',resize);
+document.getElementById('meta').textContent = `${G.stats.nodes} 概念 / ${G.stats.edges} 关系 · ${G.generated}`;
+document.getElementById('legend').innerHTML = types.map(t=>`<span><i class="dot" style="background:${colorOf(t)}"></i>${t}</span>`).join('');
+
+const idx = new Map(G.nodes.map((n,i)=>[n.id,i]));
+const N = G.nodes.map((n,i)=>({...n, x:W/2+Math.cos(i)*200+Math.random()*40, y:H/2+Math.sin(i)*200+Math.random()*40, vx:0, vy:0}));
+const E = G.edges.map(e=>({s:idx.get(e.source), t:idx.get(e.target), rel:e.rel})).filter(e=>e.s!=null&&e.t!=null);
+const deg = N.map(()=>0); E.forEach(e=>{deg[e.s]++;deg[e.t]++;});
+
+let cam={x:0,y:0,k:1}, drag=null, pan=null;
+function sim(){
+  for(const n of N){n.vx*=0.85;n.vy*=0.85;}
+  for(let i=0;i<N.length;i++)for(let j=i+1;j<N.length;j++){
+    let dx=N[i].x-N[j].x, dy=N[i].y-N[j].y, d2=dx*dx+dy*dy+0.01, d=Math.sqrt(d2);
+    let f=1400/d2; if(d<1){d=1;} let fx=dx/d*f, fy=dy/d*f;
+    N[i].vx+=fx;N[i].vy+=fy;N[j].vx-=fx;N[j].vy-=fy;
+  }
+  for(const e of E){
+    let a=N[e.s],b=N[e.t],dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy)+0.01;
+    let f=(d-90)*0.02,fx=dx/d*f,fy=dy/d*f;
+    a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;
+  }
+  for(const n of N){let dx=W/2-n.x,dy=H/2-n.y;n.vx+=dx*0.0008;n.vy+=dy*0.0008;
+    if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}}
+}
+function draw(){
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
+  ctx.setTransform(cam.k,0,0,cam.k,cam.x,cam.y);
+  ctx.strokeStyle="rgba(120,130,160,.18)";ctx.lineWidth=1/cam.k;
+  for(const e of E){ctx.beginPath();ctx.moveTo(N[e.s].x,N[e.s].y);ctx.lineTo(N[e.t].x,N[e.t].y);ctx.stroke();}
+  for(let i=0;i<N.length;i++){const n=N[i],r=4+Math.min(deg[i],8)*0.9;
+    ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fillStyle=colorOf(n.type);ctx.fill();}
+}
+function loop(){sim();draw();requestAnimationFrame(loop);} loop();
+
+function screenToWorld(mx,my){return {x:(mx-cam.x)/cam.k, y:(my-cam.y)/cam.k};}
+function pick(mx,my){const p=screenToWorld(mx,my);let best=null,bd=1e9;
+  for(let i=0;i<N.length;i++){let dx=N[i].x-p.x,dy=N[i].y-p.y,d=dx*dx+dy*dy;
+    if(d<bd){bd=d;best=i;}} return bd< (14/cam.k)**2 ? best:null;}
+const tip=document.getElementById('tip');
+cv.addEventListener('mousedown',e=>{const i=pick(e.clientX,e.clientY);
+  if(i!=null){drag={node:N[i]};}else{pan={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};}});
+addEventListener('mousemove',e=>{
+  if(drag){const p=screenToWorld(e.clientX,e.clientY);drag.node.x=p.x;drag.node.y=p.y;drag.node.vx=0;drag.node.vy=0;}
+  else if(pan){cam.x=pan.cx+(e.clientX-pan.x);cam.y=pan.cy+(e.clientY-pan.y);}
+  const i=pick(e.clientX,e.clientY);
+  if(i!=null){const n=N[i];tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY+12)+'px';
+    tip.innerHTML=`<b>${n.title}</b><br><span style="color:#7f849c">${n.type}</span><br>${(n.tags||[]).join(' · ')}<br><span style="color:#585b70">${n.id}</span>`;}
+  else tip.style.display='none';});
+addEventListener('mouseup',()=>{drag=null;pan=null;});
+cv.addEventListener('wheel',e=>{e.preventDefault();const s=e.deltaY<0?1.1:0.9;
+  const wx=(e.clientX-cam.x)/cam.k,wy=(e.clientY-cam.y)/cam.k;cam.k*=s;
+  cam.x=e.clientX-wx*cam.k;cam.y=e.clientY-wy*cam.k;},{passive:false});
+</script>
+</body>
+</html>
+"""
+
+
+# ---------------------------------------------------------------------------
+# 银芯 → 黑池 single-direction wire format: pack the bundle as a tarball
+# (信息单向输出；黑池不回流。云容器无 Releases 写权限，故落普通文件路径)
+# ---------------------------------------------------------------------------
+
+def export_tarball(dest: Path) -> Path:
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(dest, "w:gz") as tar:
+        tar.add(BUNDLE, arcname="okf")
+    return dest
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser(description="Build 银芯 OKF v0.1 bundle.")
+    ap.add_argument("--tarball", metavar="PATH",
+                    help="额外打包 bundle 为 .tar.gz（银芯→黑池单向输出物）")
+    args = ap.parse_args()
+
     if BUNDLE.exists():
         shutil.rmtree(BUNDLE)
     BUNDLE.mkdir(parents=True)
@@ -462,11 +671,19 @@ def main() -> None:
         "story": build_story(),
     }
     build_root(counts)
+    graph = build_graph()
+    build_visualizer(graph)
     total = sum(counts.values())
     print(f"OKF bundle built at {BUNDLE.relative_to(REPO)}/")
     for k, v in counts.items():
         print(f"  {k}: {v} concepts")
     print(f"  total: {total} concepts")
+    print(f"  graph: {graph['stats']['nodes']} nodes / {graph['stats']['edges']} edges")
+    print(f"  visualizer: okf/visualizer.html (self-contained)")
+    if args.tarball:
+        out = export_tarball(Path(args.tarball))
+        size = out.stat().st_size
+        print(f"  tarball: {out} ({size} bytes) — 银芯→黑池单向输出物")
 
 
 if __name__ == "__main__":
