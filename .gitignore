@@ -28,6 +28,10 @@ morimens_extract.zip
 _frida_hook_v2.py
 _run_hook_v2.bat
 
+# Public-Info-Pool/Rough: C类即兴草稿/过程废料，默认不进 git（要留的人工晋升进 Resource/）
+Public-Info-Pool/Rough/*
+!Public-Info-Pool/Rough/.gitkeep
+
 # media cache (downloaded images/covers, archived to GitHub Releases)
 projects/news/data/media/*.jpg
 projects/news/data/media/*.jpeg

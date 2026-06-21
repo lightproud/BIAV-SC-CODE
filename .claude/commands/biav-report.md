@@ -13,8 +13,8 @@ Produce a silver-core community intelligence report (deep analysis / role recomm
 
 3. 甄别归纳：标信度 A（硬事实可复算）/ B（多源归纳）/ C（推断需标注）；每条结论锚定可查证据（平台+日期+原文片段），禁止无源外推。
 
-4. 写结构化 markdown 到 `deliverables/{YYYY-MM}/`。frontmatter（渲染器自动读取拼封面）：title / subtitle / basis / author / generated。正文 `# H1` → `## 章节`（成目录项）→ `### 子条目`，章节间用独占一行 `◇ ◇ ◇` 分隔；标准条目用加粗 label（重现步骤 / 实际结果 / 预期结果 / 来源 / 状态）。视觉规范见 `memory/style-guide.md`。
+4. 落点用脚本算路径（强约定，勿手编）：`python scripts/deliverable_path.py path --type <类型> --topic <主题> --date YYYYMMDD [--rev N] --ext md`，落到 `Public-Info-Pool/Resource/{类型}/{主题}-{YYYYMMDD}[-rN].md`。类型走开放注册表 `Public-Info-Pool/types.json`（新类型先 `register`）。frontmatter（渲染器自动读取拼封面）：title / subtitle / basis / author / generated。正文 `# H1` → `## 章节`（成目录项）→ `### 子条目`，章节间用独占一行 `◇ ◇ ◇` 分隔；标准条目用加粗 label（重现步骤 / 实际结果 / 预期结果 / 来源 / 状态）。视觉规范见 `memory/style-guide.md`。
 
-5. 渲染：`pip install weasyprint markdown`（ephemeral 容器每次会话可能需重装），然后 `python scripts/report_render.py deliverables/{YYYY-MM}/<报告>.md`（默认从 frontmatter 出封面，`--title/--subtitle/--meta` 可覆盖）。渲染后用 pymupdf(fitz) 抽 1-2 页核验封面与正文渲染正常。
+5. 渲染：`pip install weasyprint markdown`（ephemeral 容器每次会话可能需重装），然后 `python scripts/report_render.py Public-Info-Pool/Resource/{类型}/<报告>.md`（默认从 frontmatter 出封面，`--title/--subtitle/--meta` 可覆盖）。渲染后用 pymupdf(fitz) 抽 1-2 页核验封面与正文渲染正常。
 
 6. 交付：提交三件套（md+html+pdf，commit 用英文附 session 链接）→ `git push -u origin <分支>` → 建草稿 PR（若无）→ 向守密人汇报附 blob/PR/commit 超链接（§2.2 第5条）并用 SendUserFile 直送 PDF。
