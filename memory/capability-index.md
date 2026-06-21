@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**84**
-- 脚本可达性：活 46 / 仅测试 0 / 孤儿 0
+- 功能总数：**85**
+- 脚本可达性：活 47 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -13,7 +13,7 @@
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 22 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 14 |
-| news 采集器脚本 | 25 |
+| news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -112,7 +112,7 @@
 - **`silver_memory_tools.py`** _[活:cli+mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
 
-## news 采集器脚本（25）
+## news 采集器脚本（26）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -120,8 +120,10 @@
   `projects/news/scripts/aggregator_base.py`
 - **`aggregator_collectors.py`** _[活:import]_ — Per-platform news collectors (Reddit, Bilibili, NGA, TapTap, Steam,  
   `projects/news/scripts/aggregator_collectors.py`
-- **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除  
+- **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）  
   `projects/news/scripts/archive_discord.py`
+- **`archive_engine.py`** _[活:cli]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
+  `projects/news/scripts/archive_engine.py`
 - **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/  
   `projects/news/scripts/archive_platforms.py`
 - **`backfill_forum_starters.py`** _[活:cli+workflow]_ — backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息  
