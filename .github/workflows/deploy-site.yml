@@ -120,13 +120,6 @@ jobs:
           else
             echo "WARNING: dist/wiki/index.html missing"
           fi
-          for locale in en ja; do
-            if [ -d "dist/wiki/$locale" ]; then
-              echo "OK: dist/wiki/$locale/ exists ($(find dist/wiki/$locale -type f | wc -l) files)"
-            else
-              echo "WARNING: dist/wiki/$locale/ missing"
-            fi
-          done
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
@@ -142,8 +135,8 @@ jobs:
           echo "Waiting 30s for GitHub Pages to propagate..."
           sleep 30
           BASE="https://lightproud.github.io/brain-in-a-vat"
-          # zh content is at /wiki/ root (via VitePress rewrites), not /wiki/zh/
-          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/"; do
+          # wiki is zh-only (single locale at /wiki/ root); no en/ja locales configured
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/news/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"
