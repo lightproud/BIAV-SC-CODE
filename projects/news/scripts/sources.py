@@ -43,6 +43,8 @@ KNOWN_SOURCES = [
     'weixin',
     # 官方 X 账号时间线（syndication 接口，无 key；仅官方号，无关键词搜索）
     'twitter',
+    # TapTap 评论流（taptap_collector 衍生 source，与 taptap 论坛帖分桶归档；走主线 news.json）
+    'taptap_review',
 ]
 
 # 原始源名 → 规范源名
@@ -60,7 +62,7 @@ SPARSE_SOURCES = {
     'pixiv',
     'stopgame',
     'note_com', 'ruliweb', 'arca_live', 'bahamut',
-    'taptap',
+    'taptap', 'taptap_review',
     'discord',
     'twitter',  # 官方号公告，发布不频繁，用 30 天宽窗
 }
@@ -91,6 +93,13 @@ ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 BACKFILL_PLATFORMS = [
     'bilibili', 'appstore', 'steam_review', 'arca_live',
     'pixiv', 'ruliweb', 'weixin', 'taptap',
+]
+
+# 独立归档源：由专用采集器直接写 data/platforms/，不经主线 news.json
+# （故不进 KNOWN_SOURCES——否则 split_output 会按 news.json 切出空 latest 文件）。
+# 活跃采集中，需纳入静默源审计的正常分级（见 silent_sources_audit.ALL_REGISTERED_SOURCES）。
+INDEPENDENT_ARCHIVE_SOURCES = [
+    'youtube_comments',  # collect_video_comments.py 直写 platforms/youtube_comments/
 ]
 
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。
