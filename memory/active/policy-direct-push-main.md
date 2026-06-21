@@ -13,7 +13,7 @@
 
 > 「**所有会话直接推 main**，不用 feature 分支。冲突时 `git pull --rebase origin main` 重试。」（旧版 `CLAUDE.md` §1，2026-04-26 落地；现行 CLAUDE.md 已无此条文，政策源头见 `memory/decisions.md` 2026-03-29 + 2026-04-26 条目）
 
-**一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（主控台 / Code-site / Code-news / Code-wiki / Code-memory / Code-strategy / Code-BPT）的所有 commit 直接推送到 `origin/main`**，不创建 feature 分支、不走 PR / merge 流程，冲突时 `git pull --rebase` 后重推。
+**一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（现为守密人 ↔ 单一艾瑞卡会话；原主控台 / Code-* 多会话角色已于 2026-06 退役）的所有 commit 直接推送到 `origin/main`**，不创建 feature 分支、不走 PR / merge 流程，冲突时 `git pull --rebase` 后重推。
 
 理由：项目无人工程序员，全 AI 协作，分支 + 合并流程徒增 round-trip。直推 main 让多会话并行不阻塞。
 
