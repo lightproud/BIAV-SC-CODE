@@ -212,6 +212,30 @@ class RollingUpload(unittest.TestCase):
         verbs = [c[:3] for c in calls]
         self.assertIn(["gh", "release", "create"], verbs)
         self.assertIn(["gh", "release", "upload"], verbs)
+        self.assertNotIn(["gh", "release", "delete"], verbs)
+
+
+class GitRm(unittest.TestCase):
+    def test_git_rm_called_per_file(self):
+        files = [Path("/repo/a.jsonl"), Path("/repo/b.jsonl")]
+        with mock.patch.object(ae.subprocess, "run") as run:
+            run.return_value = mock.Mock(returncode=0)
+            removed = ae.git_rm_files(files)
+        self.assertEqual(removed, 2)
+        self.assertEqual(run.call_count, 2)
+        # 确实调用的是 git rm -f
+        first = run.call_args_list[0].args[0]
+        self.assertEqual(first[:3], ["git", "rm", "-f"])
+
+    def test_git_rm_untracked_falls_back_to_unlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "x.jsonl"
+            f.write_text("x")
+            err = ae.subprocess.CalledProcessError(1, "git")
+            with mock.patch.object(ae.subprocess, "run", side_effect=err):
+                removed = ae.git_rm_files([f])
+            self.assertEqual(removed, 1)
+            self.assertFalse(f.exists())  # 已 unlink
 
 
 class DryRun(unittest.TestCase):
