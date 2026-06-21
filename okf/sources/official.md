@@ -2,7 +2,7 @@
 type: "dataset"
 title: "official 社区数据源"
 description: "official 平台采集档案，全量 331 条，健康度 degraded。"
-resource: "/projects/news/data/platforms/official/"
+resource: "/Public-Info-Pool/Record/Community/official/"
 tags: ["data_layer:full_archive", "platform:official", "health:degraded"]
 timestamp: "2026-06-21T13:06:38.663607+00:00"
 ---
@@ -14,7 +14,7 @@ timestamp: "2026-06-21T13:06:38.663607+00:00"
 | 项 | 值 |
 |------|------|
 | 平台 | official |
-| 全量档案层（本体） | `projects/news/data/platforms/official/` |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/official/` |
 | 输出展示层（抽样） | `projects/news/output/official-latest.json` |
 | 全量条数 | 331 |
 | 采集健康度 | degraded |

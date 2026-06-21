@@ -117,3 +117,32 @@ CLAUDE.md §4 的「全量档案层 vs 输出展示层不可互换」是**语义
 
 > 小学生比喻：以前样品柜上没贴「样品」标签全靠管理员记性，现在每个样品瓶都印死了「样品」二字——
 > 谁再想把它当总库存，瓶身就先拦住他。
+
+## 5. 合并门：main 分支保护（2026-06-21 起）
+
+四层护栏只在「测试真被跑且红了能拦住合并」时才有意义。2026-06-21 守密人在 GitHub
+设置侧对 **main** 启用了分支保护规则集（ruleset），把「CI 绿才能合」从约定升级为机器强制：
+
+- **Require status checks to pass** → 必需检查 `test`（`.github/workflows/test.yml`，GitHub Actions）
+- **Require branches to be up to date before merging** ← 根治「陈旧分支带过时绿章合并」：
+  PR 必须先对齐最新 main 重跑 CI 才能合
+- **Block force pushes**；**Do not allow bypassing**（连合并机器人也须验票，无后门）
+
+> 触发它的连环事件（均为 #333「数据迁入 Public-Info-Pool」迁移后未同步的连锁）：
+> (1) PR #333 基于旧 main、合并前未对齐最新代码重跑 CI，把 #335 新增的 `build_community_index`
+> 测试撞红 11 个仍合进主线；(2) 同源迁移后 OKF bundle 未重生成，`okf/sources/*.md` 15 个指针
+> 仍指向迁走的旧路径，再红 15 个。两批共 26 个红测试在主线长期未被拦截。
+> 小学生比喻：施工队改了管网却没人对着新图复检——闸门此前根本没装，旧合格证一路放行。
+
+### 配套：必需检查必须在每个 PR 上都上报（否则反被卡死）
+
+必需检查若被 `paths` 过滤门控，碰到不触及那些路径的 PR（如纯文档 PR）会永不上报、PR 永久卡在
+「等待状态」。故 `test.yml` 的 `pull_request` 触发**刻意去掉 paths 过滤**，对每个到 main 的 PR
+都跑（suite ~5s，代价可忽略）。`mutation-test.yml` 是手动 `workflow_dispatch`，**绝不可**设为必需。
+
+### 对合并流程的影响（与 CLAUDE.md §7.6 调和）
+
+main 受保护后，合并从「本地验证完→立即 squash」变为「推 PR → 等 `test` 转绿（几分钟）→ 合并」。
+仍是「CI 绿即合、无需人工评审」，只是多等一次 CI——**不再是字面的「不停留等待」**。§7.6「默认立即
+合并、不停留等待」应理解为补一条注脚：**main 受保护后，合并须等 required check 转绿**（§7.6 属决策
+档、仅守密人可改；此处先在文档层留痕，防文档与实际再次脱节——正是这类脱节酿成上述 26 个红测试）。

@@ -12,13 +12,12 @@ on:
       - 'memory/decisions-archive.md'
       - '.github/workflows/test.yml'
   pull_request:
-    paths:
-      - 'scripts/**'
-      - 'projects/news/scripts/**'
-      - 'tests/**'
-      - 'CLAUDE.md'
-      - 'memory/decisions.md'
-      - 'memory/decisions-archive.md'
+    # NO paths filter on purpose: `test` is a REQUIRED status check on main
+    # (branch ruleset, 2026-06-21). A required check gated behind a paths filter
+    # never reports on PRs that don't touch those paths (e.g. docs-only PRs),
+    # leaving the PR deadlocked forever on "Expected — waiting for status".
+    # Running on every PR to main guarantees the required check always reports.
+    # The suite is ~5s so the cost is negligible.
   workflow_dispatch:
 
 concurrency:
