@@ -1,7 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { buildTeamDecisionsSidebar } from './sidebars/team-decisions.auto.mts'
-
-const teamDecisionsSidebar = buildTeamDecisionsSidebar()
 
 export default defineConfig({
   title: '忘却前夜 Wiki',
@@ -61,12 +58,10 @@ export default defineConfig({
         items: [
           { text: '面板文本', link: '/panel-text' },
           { text: '更新公告', link: '/update-notices' },
-          { text: '团队决策', link: '/zh/team-decisions/' },
         ]
       },
     ],
     sidebar: {
-      '/zh/team-decisions/': [teamDecisionsSidebar],
       '/': [
         {
           text: '角色',
@@ -111,7 +106,6 @@ export default defineConfig({
             { text: '更新公告', link: '/update-notices' },
           ]
         },
-        teamDecisionsSidebar,
       ],
     },
     outline: { label: '本页目录' },
