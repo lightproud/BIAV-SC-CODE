@@ -32,14 +32,14 @@ from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES
+from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARCHIVE_SOURCES
 
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 
 # 已注册采集源 —— 来自 sources.py 单一真相源（含 discord）
-ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES)
+ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
 
 # 与 data_quality.SilentPlatformTracker 保持一致
 DEGRADED_THRESHOLD = 7
