@@ -114,7 +114,10 @@ def synth_data(tmp_path, monkeypatch):
     (cdir / "c.jsonl").write_text(
         json.dumps({"text": "nice video", "published": "2026-06-03", "likes": 5}) + "\n",
         encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    # 合成旧布局（platforms/ + discord/）；走 _sources 的 legacy 分支：
+    # 把 COMMUNITY_NEW 指向不存在路径，DATA_OLD 指向合成 data。
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     return data
 
 
@@ -137,10 +140,10 @@ def test_iter_records_discord_reactions_len(synth_data):
 
 
 def test_iter_records_max_files_limits(synth_data):
-    # max_files=1 stops after first platform json file group
+    # max_files 现按「源数」限流（重构后 _sources 逐源产出）；=1 → 仅一个源
     recs = list(bci.iter_records(max_files=1))
-    # discord/comments loops short-circuit too
-    assert all(r[0] == "bilibili" for r in recs)
+    assert recs, "expected records from one source"
+    assert len({r[0] for r in recs}) == 1
 
 
 # --- build (aggregation arithmetic) -----------------------------------------
@@ -178,7 +181,8 @@ def test_build_empty_when_no_data(tmp_path, monkeypatch):
     empty = tmp_path / "empty"
     (empty / "platforms").mkdir(parents=True)
     (empty / "discord").mkdir(parents=True)
-    monkeypatch.setattr(bci, "DATA", empty)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", empty / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", empty)
     idx = bci.build()
     assert idx["_meta"]["total_records"] == 0
     assert idx["platforms"] == {}
@@ -193,7 +197,8 @@ def test_build_records_without_day_skipped(tmp_path, monkeypatch):
     (pdir / "f.json").write_text(json.dumps({
         "items": [{"title": "no date here", "engagement": 1}],
     }), encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     idx = bci.build()
     # the dateless record is dropped
     assert idx["_meta"]["total_records"] == 0

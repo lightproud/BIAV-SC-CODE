@@ -130,7 +130,7 @@ def test_main_invokes_migrate_with_default_dest(tmp_path, monkeypatch):
     monkeypatch.setattr(mug, "migrate", fake_migrate)
     monkeypatch.setattr(sys, "argv", ["migrate_unpacked_to_git.py"])
     mug.main()
-    assert captured["dest"] == Path("Public-Info-Pool/game-unpacked-data")
+    assert captured["dest"] == Path("Public-Info-Pool/Reference/Game-Unpacked")
 
 
 def test_main_invokes_migrate_with_custom_dest(monkeypatch):

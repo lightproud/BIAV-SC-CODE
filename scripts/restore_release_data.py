@@ -14,7 +14,7 @@ tarfile）。公开 repo 的 release 资产可匿名下载；私有 repo 在 CI 
     # 还原 community-data 里的 discord 月归档到 discord 数据目录
     python3 scripts/restore_release_data.py \\
         --tag community-data --pattern 'discord-archive-*.tar.gz' \\
-        --dest projects/news/data/discord
+        --dest Public-Info-Pool/Record/Community/discord
 """
 from __future__ import annotations
 

@@ -61,6 +61,11 @@ extracted_lua/plaintext_from_memory/
 projects/news/data/media/files/
 projects/news/data/media/*.tar
 
+# 2026-06-21：二进制移出 git（text→git / 二进制→Releases 总纲）。fanart 同人图
+# 走 community-assets「社区二创」release；采集落以下 staging 但不入 git。
+projects/news/data/fanart/
+projects/news/data/media/
+
 # transient coverage data files from parallel test agents
 .cov_agent*
 .coverage

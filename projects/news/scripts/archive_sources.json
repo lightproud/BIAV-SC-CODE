@@ -1,15 +1,15 @@
 {
   "discord": {
-    "base_dir": "projects/news/data/discord",
+    "base_dir": "Public-Info-Pool/Record/Community/discord",
     "glob": "channels/*/*.jsonl",
     "group_by": "month_from_stem",
     "cutoff_days": 60,
     "release_tag": "community-data",
     "release_title": "Community Archive Data",
-    "release_notes": "社区归档数据滚动 release：每月一个 discord-archive-YYYY-MM.tar.gz 资产，由 archive_engine.py 自动追加（替代旧「每月一 tag」）。",
+    "release_notes": "（2026-06-21 de-tier）discord 全量 text 永驻 git；本 release 冻结为历史备份/黑池交接物。after_archive=keep 起归档不再驱逐 git。",
     "asset_template": "discord-archive-{group}.tar.gz",
-    "after_archive": "git_rm",
-    "clean_empty_dirs": true
+    "after_archive": "keep",
+    "clean_empty_dirs": false
   },
   "fanart": {
     "base_dir": "projects/news/data/fanart",

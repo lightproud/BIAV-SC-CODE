@@ -48,7 +48,8 @@ from sources import ARCHIVE_PLATFORMS, normalize_source
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
-ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
+# 平台摊平到 BPT 4R Record/Community 下，与 discord 同级（2026-06-21 迁移）
+ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 
 # 全量层数据源：优先读 news-raw.json（collect_global 写的未过滤合并集），
 # 回退 news.json。两者都绕开 split 的展示层时窗过滤；raw 进一步绕开 collect_global
