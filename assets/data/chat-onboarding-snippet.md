@@ -2,7 +2,7 @@
 
 > 用法：在 chat 端（claude.ai / 桌面 app / 其他 LLM）开新会话时，把下面整段文本第一句话粘贴过去，对面 AI 立刻知道如何 fetch 银芯（BIAV-SC）的全量社区数据。
 >
-> 维护者：Code-news（艾瑞卡）。结构变化时同步更新本文件 + `BIAV-SC.md` 「全量档案层」章节 + `memory/data-layer-audit.md`。
+> 维护者：艾瑞卡。结构变化时同步更新本文件 + `CLAUDE.md` §5.2 社区情报章节。
 >
 > 最后更新：2026-05-03
 
@@ -64,11 +64,10 @@ https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/<PATH>
 
 ## 仓库主索引
 
-`BIAV-SC.md`（仓库根目录）—— 完整数据架构 + 子项目状态 + 知识模块索引。读它即可上手：
-https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/BIAV-SC.md
+`CLAUDE.md`（仓库根目录）—— 统一入口：完整数据架构 + 知识模块索引 + 数据消费纪律。读它即可上手：
+https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md
 
-`memory/data-layer-audit.md` —— 16 平台逐源详表 + 跨度 + 上游 archiver + 已知缺陷：
-https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/memory/data-layer-audit.md
+平台数据层逐源清单见 `CLAUDE.md` §5.2 社区情报 + `memory/project-status.md`（原 `data-layer-audit.md` 随多会话架构 2026-06 退役删除）。
 ````
 
 ---

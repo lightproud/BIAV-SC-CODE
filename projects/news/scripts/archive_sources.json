@@ -4,10 +4,23 @@
     "glob": "channels/*/*.jsonl",
     "group_by": "month_from_stem",
     "cutoff_days": 60,
-    "tag_template": "discord-archive-{group}",
-    "title_template": "Discord Archive {group}",
-    "notes_template": "Discord message archive for {group}.\n{filename}: {size_kb} KB compressed.",
+    "release_tag": "community-data",
+    "release_title": "Community Archive Data",
+    "release_notes": "社区归档数据滚动 release：每月一个 discord-archive-YYYY-MM.tar.gz 资产，由 archive_engine.py 自动追加（替代旧「每月一 tag」）。",
+    "asset_template": "discord-archive-{group}.tar.gz",
     "after_archive": "git_rm",
     "clean_empty_dirs": true
+  },
+  "fanart": {
+    "base_dir": "projects/news/data/fanart",
+    "glob": "20*/*",
+    "group_by": "month_from_parent_dir",
+    "cutoff_days": 60,
+    "release_tag": "community-assets",
+    "release_title": "Community Archive Assets",
+    "release_notes": "社区归档资产滚动 release：每月一个 fanart-archive-YYYY-MM.tar.gz 资产（同人图原图 + 当日 gallery_manifest），由 archive_engine.py 自动追加。缩略图 thumbs/ 留 git 作轻量预览。",
+    "asset_template": "fanart-archive-{group}.tar.gz",
+    "after_archive": "git_rm",
+    "clean_empty_dirs": false
   }
 }

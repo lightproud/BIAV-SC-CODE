@@ -10,8 +10,8 @@
 |状态      |已发布,持续演化   |
 
 > 落档于银芯：2026-05-06 by 主控台（艾瑞卡 opus4.7），守密人 5-6 裁定法则归属银芯。
-> BIAV-SC.md 新 §6 内部协作章节将引用本文件。
-> retrofit 既有银芯档案的字段标注是工程议题，已派 Code-memory（见 `memory/dispatch-brief-code-memory-info-classification-retrofit.md`）。
+> 入口收归 CLAUDE.md（原 BIAV-SC.md 已退役）。
+> retrofit 既有银芯档案字段标注的工程议题 brief 随多会话架构 2026-06 退役删除（试点未全量推开）。
 
 -----
 

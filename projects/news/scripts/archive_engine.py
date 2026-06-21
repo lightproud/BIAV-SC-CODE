@@ -19,10 +19,16 @@
 统一索引: projects/news/data/releases-index.json（自动生成，治「Release 好难认」）
 
 来源配置字段: base_dir(来源根目录) / glob(文件匹配) / group_by(分桶:
-month_from_stem 按文件名 YYYY-MM-DD 取 YYYY-MM | single) / group_label(single 桶名) /
-cutoff_days(仅归档早于 N 天; null=不限龄) / tag_template/title_template/notes_template
-(Release 模板, 占位 {group}/{filename}/{size_kb}/{files}) / after_archive(git_rm|keep) /
+month_from_stem 按文件名 YYYY-MM-DD 取 YYYY-MM | month_from_parent_dir 按父目录名
+YYYY-MM-DD 取 YYYY-MM（日期在目录名，如 fanart）| single) / group_label(single 桶名) /
+cutoff_days(仅归档早于 N 天; null=不限龄) / after_archive(git_rm|keep) /
 clean_empty_dirs(归档后清理空目录)。
+上传两选一：
+  - 滚动单 release（推荐）: release_tag(固定 Release 标签) + asset_template(每桶资产文件名,
+    占位 {group}) + release_title/release_notes(Release 级文案)。所有桶归入同一 release，
+    每桶一资产，--clobber 仅替换本桶不动其它桶。
+  - 旧版每桶一 tag（向后兼容）: tag_template/title_template/notes_template
+    (占位 {group}/{filename}/{size_kb}/{files})。
 """
 
 import argparse
@@ -56,6 +62,8 @@ def group_of(path: Path, group_by: str, group_label: str) -> str:
     """文件归属哪个桶。"""
     if group_by == 'month_from_stem':
         return path.stem[:7]  # YYYY-MM-DD -> YYYY-MM
+    if group_by == 'month_from_parent_dir':
+        return path.parent.name[:7]  # 父目录 YYYY-MM-DD -> YYYY-MM（日期在目录名，如 fanart）
     if group_by == 'single':
         return group_label
     raise ValueError(f'unknown group_by: {group_by}')
@@ -67,6 +75,8 @@ def is_eligible(path: Path, group_by: str, cutoff_date: str | None) -> bool:
         return True
     if group_by == 'month_from_stem':
         return path.stem < cutoff_date  # 与原 archive_discord 逐字节等价
+    if group_by == 'month_from_parent_dir':
+        return path.parent.name < cutoff_date  # 父目录 YYYY-MM-DD 逐字节比较
     # 无日期语义的来源不应配 cutoff_days；保守判为可归档
     return True
 
@@ -82,6 +92,8 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
     if force_groups:
         wanted = set(force_groups)
         for f in base_dir.glob(cfg['glob']):
+            if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
+                continue
             g = group_of(f, group_by, group_label)
             if g in wanted:
                 groups[g].append(f)
@@ -93,6 +105,8 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
             cutoff_date = cutoff.strftime('%Y-%m-%d')
             logger.info(f'Cutoff date: {cutoff_date} ({cutoff_days} days ago)')
         for f in base_dir.glob(cfg['glob']):
+            if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
+                continue
             if is_eligible(f, group_by, cutoff_date):
                 groups[group_of(f, group_by, group_label)].append(f)
     return dict(sorted(groups.items()))
@@ -100,10 +114,16 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
 
 # ---------- 打包 / 上传 / 删除 ----------
 
+def asset_name_of(cfg: dict, group: str) -> str:
+    """归档资产文件名。滚动模式用 asset_template；旧模式沿用 {tag}.tar.gz（向后兼容）。"""
+    if cfg.get('asset_template'):
+        return cfg['asset_template'].format(group=group)
+    return f"{cfg['tag_template'].format(group=group)}.tar.gz"
+
+
 def create_tarball(cfg: dict, base_dir: Path, group: str, files: list[Path]) -> tuple[Path, int]:
     """打 tar.gz；arcname 相对 base_dir（与原 archive_discord 等价）。"""
-    tag = cfg['tag_template'].format(group=group)
-    archive_path = base_dir / f'{tag}.tar.gz'
+    archive_path = base_dir / asset_name_of(cfg, group)
     with tarfile.open(archive_path, 'w:gz') as tar:
         for f in sorted(files):
             tar.add(f, arcname=str(f.relative_to(base_dir)))
@@ -113,12 +133,49 @@ def create_tarball(cfg: dict, base_dir: Path, group: str, files: list[Path]) -> 
 
 
 def upload_to_release(cfg: dict, archive_path: Path, group: str, file_count: int) -> bool:
-    """经 gh CLI 上传到 GitHub Releases。幂等：先删同名 release/tag。"""
+    """经 gh CLI 上传到 GitHub Releases。
+
+    两种模式：
+    - 滚动单 release（配 release_tag）：所有桶归入同一个 release，每桶一资产文件；
+      上传用 `--clobber` 仅替换本桶资产，不动同 release 内其它桶（修「每月一 tag」散乱）。
+    - 旧版每桶一 tag（配 tag_template）：幂等先删同名 release/tag 再 create（向后兼容）。
+    """
     repo = os.environ.get('GITHUB_REPOSITORY', '')
     if not repo:
         logger.error('GITHUB_REPOSITORY not set, cannot upload')
         return False
 
+    release_tag = cfg.get('release_tag')
+    if release_tag:
+        # 滚动模式：确保 release 存在，再以 --clobber 追加/替换本桶单资产。
+        exists = subprocess.run(
+            ['gh', 'release', 'view', release_tag, '--repo', repo],
+            cwd=REPO_ROOT, capture_output=True,
+        ).returncode == 0
+        if not exists:
+            title = cfg.get('release_title', release_tag)
+            notes = cfg.get(
+                'release_notes',
+                'Rolling archive release. Each asset is one bucket; auto-managed by archive_engine.py.',
+            )
+            created = subprocess.run([
+                'gh', 'release', 'create', release_tag,
+                '--title', title, '--notes', notes, '--repo', repo,
+            ], cwd=REPO_ROOT, capture_output=True, text=True)
+            if created.returncode != 0:
+                logger.error(f'Release create failed: {created.stderr}')
+                return False
+        uploaded = subprocess.run([
+            'gh', 'release', 'upload', release_tag, str(archive_path),
+            '--clobber', '--repo', repo,
+        ], cwd=REPO_ROOT, capture_output=True, text=True)
+        if uploaded.returncode == 0:
+            logger.info(f'Uploaded asset {archive_path.name} to rolling release {release_tag}')
+            return True
+        logger.error(f'Asset upload failed: {uploaded.stderr}')
+        return False
+
+    # 旧版每桶一 tag（向后兼容）
     tag = cfg['tag_template'].format(group=group)
     size_kb = archive_path.stat().st_size // 1024
     title = cfg['title_template'].format(group=group)
@@ -195,10 +252,14 @@ def rebuild_releases_index(registry: dict):
         log = load_log(base_dir / 'archive-log.json')
         for entry in log:
             group = entry.get('group') or entry.get('month', '')
+            default_tag = cfg.get('release_tag') or (
+                cfg['tag_template'].format(group=group) if cfg.get('tag_template') else group
+            )
             index.append({
                 'source': entry.get('source', source_id),
                 'group': group,
-                'tag': entry.get('tag', cfg['tag_template'].format(group=group)),
+                'tag': entry.get('tag') or default_tag,
+                'asset': entry.get('asset'),
                 'files': entry.get('files'),
                 'archive_size_bytes': entry.get('archive_size_bytes'),
                 'uploaded_to_releases': entry.get('uploaded_to_releases'),
@@ -256,7 +317,8 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
         log.append({
             'source': source_id,
             'group': group,
-            'tag': cfg['tag_template'].format(group=group),
+            'tag': cfg.get('release_tag') or cfg['tag_template'].format(group=group),
+            'asset': archive_path.name,
             'files': len(files),
             'archive_size_bytes': archive_size,
             'uploaded_to_releases': uploaded,
