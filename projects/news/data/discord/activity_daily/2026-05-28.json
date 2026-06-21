@@ -1,10 +1,11 @@
 {
   "date": "2026-05-28",
-  "messages": 30517,
+  "messages": 30809,
   "unique_authors": 810,
-  "reactions_total": 3652,
-  "attachments": 1653,
+  "reactions_total": 3672,
+  "attachments": 1930,
   "channel_activity": {
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 411,
     "🔸morimens-game-chat": 9573,
     "🔸general-chat": 4076,
     "🔸綜合討論": 4351,
@@ -24,7 +25,6 @@
     "🔸邀请码互助┊swap-invitation-codes": 55,
     "🔸game-question": 4634,
     "🔸机器人命令┊bot-commands": 145,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 119,
     "會考慮重製劇情或者其他形式的重製劇情嗎？": 2,
     "V2.5.1.0 停服维护公告": 29,
     "【English Translation】Opinions Collection": 6,
@@ -109,18 +109,18 @@
     "1509576611425419405": 2
   },
   "hourly_activity": {
+    "3": 1601,
+    "4": 1258,
+    "5": 1237,
+    "6": 1898,
+    "7": 1294,
+    "8": 1305,
+    "9": 1098,
+    "10": 1395,
+    "11": 1077,
     "0": 1133,
     "1": 1107,
     "2": 1363,
-    "3": 1526,
-    "4": 1209,
-    "5": 1201,
-    "6": 1865,
-    "7": 1269,
-    "8": 1281,
-    "9": 1068,
-    "10": 1379,
-    "11": 1073,
     "12": 1657,
     "13": 1261,
     "14": 1310,
@@ -135,9 +135,7 @@
     "23": 925
   },
   "message_types": {
-    "0": 6136,
-    "19": 3436,
-    "6": 1
+    "0": 292
   },
   "top_reacted_messages": [
     {
@@ -261,6 +259,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1509391628689866813",
+      "channel_id": "1509389887080632330",
+      "content": "大家可以参与了吗？\nIs everyone free to participate now?",
+      "author": "morimensstaff06",
+      "reactions": 7,
+      "channel": "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives"
+    },
+    {
       "id": "1509527245746737194",
       "channel_id": "1170692781216378960",
       "content": "Now ppl can check the stats and see pickman dealt more damage than doresain",
@@ -291,14 +297,6 @@
       "author": "ahuahuahua",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509390089174782002",
-      "channel_id": "1170692781216378960",
-      "content": "I DID IT",
-      "author": "emodrome",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
