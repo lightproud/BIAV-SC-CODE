@@ -1,5 +1,7 @@
 # 测试覆盖率分析与改进提案
 
+> **⚠ 定格交付物（2026-06-10 快照）**：文中文件/脚本路径反映当时仓库状态；其中 `session_inject.py`、`test_wiki_sources.py` 等所属模块已于 2026-06 退役删除，相关引用按历史快照理解，不指向现行文件。
+>
 > 统计时间：2026-06-10 / 环境：Python 3.11.15, pytest + pytest-cov
 > 统计指令：`pytest tests/ --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts`
 > 口径说明：覆盖仓内全部三个 Python 脚本层（顶层 scripts / news 采集层 / wiki 数据层）；

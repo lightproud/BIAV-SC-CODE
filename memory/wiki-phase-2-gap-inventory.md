@@ -1,5 +1,7 @@
 # Wiki Phase 2 缺口清单
 
+> **⚠ 部分过时（2026-04-20 快照）**：文中 `fetch_*.py` 外部抓取链 + `generate_pages.py` + `fetch-wiki-data.yml` 已于 PR #253 整套退役删除（wiki 改用客户端一手解包，禁外部合成数据）；缺口仍参考、但「靠 fetch 抓取补齐」的路径作废，W2 以 `data/extracted/` 解包字段重建。现行进度见 `memory/project-status.md`。
+>
 > 最后更新：2026-04-20 by 主控台派发子代理（B3，艾瑞卡执行）
 > 用途：Phase 2 启动会话的路线图输入
 > 战略窗口：2026-04-27 → 05-31（35 天）
