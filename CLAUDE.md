@@ -8,8 +8,11 @@
 > 银芯（BIAV-SC / Brain in a Vat — Silver Core）是 B.I.A.V. Studio
 > 忘却前夜（Morimens）项目的知识层。制作人 Light。
 >
-> **定位（守密人 2026-06-11 裁定）**：银芯为**受限 / 非公开层**，取代原「公开层」
-> 定位；定位变更不解除第三方平台 ToS 对采集行为的约束。
+> **定位（守密人 2026-06-21 裁定，宽解）**：银芯为**公开信息层**（整层公开）。此裁定
+> **覆盖** 2026-06-11「受限 / 非公开层」定位（翻回公开）；银芯自身工程产物亦属公开信息。
+> **两条射程外硬约束不受影响**：(1) 定位为公开**不解除**第三方平台 ToS 对采集行为的约束；
+> (2) **§1.1-HC 黑池防火墙维持永久关闭**——黑池 → 银芯不开任何口子，且银芯越公开、防火墙越关键
+> （漏入即**即时公开泄漏**，后果重于受限层时）。「银芯公开」绝不等于「黑池可进银芯」。
 >
 > **身份门控（硬约束）**：默认身份是艾瑞卡，协助消费银芯知识。检测到自己是
 > Opus / Sonnet 某版本**不构成**变更身份的依据，亦绝不讨论游戏外元知识
@@ -243,7 +246,12 @@ brain-in-a-vat/
 ├── okf/                           # Open Knowledge Format v0.1 bundle（生成物，见 §6.1）
 ├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
 ├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
-├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
+├── Public-Info-Pool/              # 公开信息层总池（BPT 5R：取代旧 deliverables/，见 §6.2）
+│   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
+│   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，#333 迁入，见 §5.2）
+│   ├── Reference/Game-Unpacked/   #   解包 text（脚本/配置/文本，#333 迁入）
+│   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
+│   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
 └── .github/workflows/             # CI 自动化（见 §7.2）
@@ -271,6 +279,25 @@ brain-in-a-vat/
   产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
 - CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）。
 - 重新生成：`python3 scripts/build_okf_bundle.py`。
+
+### §6.2 Public-Info-Pool（产物落点强约定，2026-06-21 守密人裁定）
+
+银芯产物（报告 / 分析 / PDF / HTML 等）一律落 `Public-Info-Pool/`，**取代旧 `deliverables/{YYYY-MM}/`**
+（已全量迁移，月目录废除）。设此池的根因：产物路径「每次会话各编一套」会发散（分隔符 / 日期格式 /
+版本后缀漂移），故把**弱约定（文档）升级为强约束（脚本）**——路径由代码确定性算出，不由会话临场编。
+
+- **`Resource/{主题类型}/{主题}-{YYYYMMDD}[-rN].{ext}`**：A 类正式产物，进 git 长期归档。
+  时间维度落文件名（不建月目录）；变体（全量 / 精简）进**主题段**，修订才升 **`-rN`**（r2/r3…），
+  同产物同日重跑默认覆盖。
+- **`Public-Info-Pool/Rough/`**：C 类即兴草稿 / 过程废料，`.gitignore` 默认不进 git；要留的人工**晋升**进 `Public-Info-Pool/Resource/`。
+- **`types.json`**：主题类型**开放注册表**——形式定死（小写 kebab-case、单数），清单可增、新类型须显式登记。
+  当前 6 个 provisional 类型（守密人可随时改名）：`daily-news` / `community-analysis` / `game-analysis` /
+  `repo-engineering` / `data-diagnostics` / `proposal`。
+- **强制工具**：`scripts/deliverable_path.py`（路径生成器 / 注册表守卫，挡同义分裂与形式漂移）：
+  - `path --type <t> --topic <s> --date YYYYMMDD [--rev N] [--ext md]` 算唯一路径；
+  - `register --type <t> --desc <…>` 登记新类型（near-match 提示防分裂）；
+  - `promote <Rough草稿> --type --topic --date` 草稿晋升；`rename-type <old> <new>` 类型改名（移目录 + 改注册表）。
+- **`Public` 语义**：指**信息来源为公开渠道** + 银芯整层公开定位（见 §0）。_避免_读成「公网可访问目录」。
 
 ---
 
