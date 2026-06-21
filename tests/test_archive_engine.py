@@ -34,6 +34,19 @@ class RegistryInvariants(unittest.TestCase):
         self.assertEqual(cfg["after_archive"], "git_rm")
         self.assertEqual(cfg["base_dir"], "projects/news/data/discord")
 
+    def test_fanart_entry_rolling_release(self):
+        cfg = ae.load_registry()["fanart"]
+        # 守密人 2026-06-21 裁定：60 天 cutoff + git_rm 删原图
+        self.assertEqual(cfg["base_dir"], "projects/news/data/fanart")
+        self.assertEqual(cfg["glob"], "20*/*")
+        self.assertEqual(cfg["group_by"], "month_from_parent_dir")
+        self.assertEqual(cfg["cutoff_days"], 60)
+        self.assertEqual(cfg["after_archive"], "git_rm")
+        # 图片资产归「社区归档资产」滚动 release（与 discord 文本数据的 community-data 分开）
+        self.assertEqual(cfg["release_tag"], "community-assets")
+        self.assertEqual(cfg["asset_template"], "fanart-archive-{group}.tar.gz")
+        self.assertEqual(ae.asset_name_of(cfg, "2026-05"), "fanart-archive-2026-05.tar.gz")
+
 
 class GroupingAndCutoff(unittest.TestCase):
     def test_group_of_month_from_stem(self):
