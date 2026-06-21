@@ -32,9 +32,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Downloading art assets from art-assets-v2 Release..."
+          echo "Downloading art assets from unpacked-assets Release..."
+          # 资产 Release 已由 consolidate-releases.yml(2026-06-21)合并：
+          # 旧 art-assets-v2 / audio-assets-v1 / video-assets-v1 → 统一 unpacked-assets
           cd projects/wiki/docs/public
-          gh release download art-assets-v2 \
+          gh release download unpacked-assets \
             -p "morimens-cg-full.tar.gz" \
             -p "morimens-icons-full.tar.gz" \
             -p "morimens-units.tar.gz" \
@@ -48,10 +50,9 @@ jobs:
           tar xzf morimens-uiresources.tar.gz && rm morimens-uiresources.tar.gz
           [ -d portrait ] && mv portrait portrait-card
           echo "Downloading audio/video assets..."
-          gh release download audio-assets-v1 \
+          gh release download unpacked-assets \
             -p "morimens-audio-ogg-part1.tar.gz" \
-            -p "morimens-audio-ogg-part2.tar.gz"
-          gh release download video-assets-v1 \
+            -p "morimens-audio-ogg-part2.tar.gz" \
             -p "morimens-video.tar.gz"
           echo "Extracting audio/video tarballs..."
           mkdir -p audio video
