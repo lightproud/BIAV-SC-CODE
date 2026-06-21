@@ -84,14 +84,17 @@ CLAUDE.md §4 的「全量档案层 vs 输出展示层不可互换」是**语义
 - `build_community_index` 自报 `_meta.data_layer == "full_archive"`；
 - `split_output` 产出对输入是**严格子集/抽样**（count ≤ 档案、每条 url 可溯源），直接编码 lesson #30 护栏。
 
-### ⚠ 已知未设防缺口（守密人留意）
+### ✓ 已闭合缺口：split_output 输出层戳记（2026-06-21）
 
-数据纪律测试过程中发现一处**约定靠人记、代码不设防**的地带：
+数据纪律测试曾发现一处**约定靠人记、代码不设防**的地带——现已设防：
 
-> **`split_output` 的输出文件 payload 不携带任何 `data_layer` 戳记**。输出层「我是抽样」这一
-> 身份在产物里没有机器可读标记，纯靠约定——正是 lesson #30 当年踩坑的同类未设防地带。
-> 子集关系目前只能靠结构（count、url 溯源）间接断言。
+> 此前 **`split_output` 的输出文件 payload 不携带任何 `data_layer` 戳记**，输出层「我是抽样」
+> 这一身份在产物里没有机器可读标记，纯靠约定（lesson #30 同类未设防地带）。
 
-建议（未实施，待守密人裁定）：在 `split_output.write_source_file` 的 payload 补一个
-`data_layer: "output"` 字段，让输出文件像 `community_index` 那样自带机器可读戳记，把这条
-纪律从「约定」升级为「代码设防」。
+**处置（已落盘）**：`split_output.py` 新增模块常量 `DATA_LAYER = 'output'`，每个 `{source}-latest.json`
+与合并的 `all-latest.json` payload 现都带 `data_layer: "output"` 字段。消费端可程序化拒绝把抽样
+当全量。`tests/test_data_discipline.py::test_every_output_file_stamps_data_layer_output` 守护此不变量。
+该纪律从「人记」升级为「代码设防」，与 `community_index` 的 `_meta.data_layer=full_archive` 对称。
+
+> 小学生比喻：以前样品柜上没贴「样品」标签全靠管理员记性，现在每个样品瓶都印死了「样品」二字——
+> 谁再想把它当总库存，瓶身就先拦住他。
