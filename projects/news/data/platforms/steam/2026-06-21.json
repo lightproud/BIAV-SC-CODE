@@ -1,8 +1,8 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-21T02:39:13.488107+00:00",
+  "archived_at": "2026-06-21T07:27:27.585093+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] 好看",
@@ -88,6 +88,28 @@
         "playtime_forever": 5961,
         "votes_up": 0,
         "timestamp_created": 1781978970
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] ура сая",
+      "summary": "ура сая",
+      "source": "steam_review",
+      "time": "2026-06-21T03:23:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199839125815/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199839125815",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 466,
+        "votes_up": 0,
+        "timestamp_created": 1782012239
       },
       "lang": "",
       "platform_region": "global"

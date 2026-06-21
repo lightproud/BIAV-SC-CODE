@@ -1,9 +1,101 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-21T02:39:13.478774+00:00",
+  "archived_at": "2026-06-21T07:27:27.580354+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 6,
   "items": [
+    {
+      "title": "[忘却前夜]六月又一兑换码，截至7月4号，五百银芯和五个无垢",
+      "summary": "-\n  └ 渔歌伴晚舟 (7赞): ZNPZ-ENYN-YCVH\n  └ LostSound (0赞): [秦国小卖部_喜欢]\n  └ 煙花拾穗 (0赞): [星空列车与白的旅行表情包_给心心]",
+      "source": "bilibili",
+      "time": "2026-06-21T04:16:59+00:00",
+      "url": "https://www.bilibili.com/video/BV1cQjx6HEfa",
+      "engagement": 1038,
+      "is_hot": true,
+      "author": "渔歌伴晚舟",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 1022,
+        "comment_count": 16,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/dc8a1715943b858013140d786c9cd4cfd3a2f546.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "6.8-6.21融灾425留档",
+      "summary": "-\n  └ _-Hannn-_ (1赞): 质量好高[打call]",
+      "source": "bilibili",
+      "time": "2026-06-20T16:33:26+00:00",
+      "url": "https://www.bilibili.com/video/BV1MajW64ERH",
+      "engagement": 129,
+      "is_hot": false,
+      "author": "Abs-K-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 128,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/1906ff52fcd2f0d6848dead96fae9865cc145edc.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "soya",
+      "summary": "soya\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ _RKこ_ (0赞): 好看[打call]\n  └ 碎原迹 (0赞): 可爱捏",
+      "source": "bilibili",
+      "time": "2026-06-21T04:41:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1SVj46KEdk",
+      "engagement": 61,
+      "is_hot": false,
+      "author": "睦茗睦茗",
+      "tags": [
+        "音游"
+      ],
+      "metadata": {
+        "play": 56,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/62ba2ad5f2ec3a7fa3395df565fdbc1c2dc96434.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【绘画过程|微g向】为什么要在美少女照片上画肉块。忧郁沙耶消肿牛福头像来了啊啊啊",
+      "summary": "背景音乐是kikuo的《去天国吧》。为什么这个苹果有点发紫呢？这是沙耶自己加的葡萄汁，沙耶是不会拿大家的生命开玩笑的（）\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 中二病蚌埠住了 (0赞): [支持]",
+      "source": "bilibili",
+      "time": "2026-06-21T03:26:28+00:00",
+      "url": "https://www.bilibili.com/video/BV1fej46QEZH",
+      "engagement": 52,
+      "is_hot": false,
+      "author": "AAA苹果大主教",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 50,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/0b8a35b078349b5c87b083cffb7caff85fe150bb.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "第四届N厨杯-第十四日录播（蘸豆蠢享）",
       "summary": "第十四日直播录播\n有观众提议做个只有打牌的版本，试做一下，反响好的话后续继续做。",
