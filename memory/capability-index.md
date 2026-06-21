@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**94**
-- 脚本可达性：活 52 / 仅测试 0 / 孤儿 0
+- 功能总数：**96**
+- 脚本可达性：活 53 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 26 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 19 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 27 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 20 |
 | news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（26）
+## CI 自动化工作流（编排入口·定时/事件平面）（27）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -78,6 +78,8 @@
   `.github/workflows/extract-game-data.yml`
 - **`Fanart Archive`** _[schedule/manual]_ —   
   `.github/workflows/fanart-archive.yml`
+- **`Migrate Unpacked Text to Git`** _[manual]_ —   
+  `.github/workflows/migrate-unpacked-to-git.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
@@ -89,7 +91,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（19）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（20）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -111,6 +113,8 @@
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
+- **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
+  `scripts/migrate_unpacked_to_git.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
   `scripts/parse_awaker_config.py`
 - **`parse_cg_gallery.py`** _[活:cli]_ — [CLI 手动] 解析 CG 画廊清单为分章 JSON。  
