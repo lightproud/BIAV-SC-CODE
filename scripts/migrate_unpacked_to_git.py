@@ -93,8 +93,8 @@ def migrate(dest: Path) -> tuple[int, int]:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Migrate text portion of unpacked-data release into git.")
-    ap.add_argument("--dest", type=Path, default=Path("Public-Info-Pool/game-unpacked-data"),
-                    help="目标目录（repo-relative；默认 Public-Info-Pool/game-unpacked-data）")
+    ap.add_argument("--dest", type=Path, default=Path("Public-Info-Pool/Reference/Game-Unpacked"),
+                    help="目标目录（repo-relative；默认 Public-Info-Pool/Reference/Game-Unpacked，BPT 4R Reference 层）")
     args = ap.parse_args()
     migrate(args.dest)
 
