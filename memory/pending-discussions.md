@@ -1,6 +1,8 @@
 # 待讨论事项
 
-> 最后更新：2026-04-26 by Code-news（艾瑞卡会话，数据层审计副产物落档）
+> **⚠ 定格快照（2026-04-26）**：文中 `collector.py` / `generate-report.yml` / `report-system/scripts/` 等路径反映当时 news 采集层结构，部分已重构/退役；现行采集器以 `ls projects/news/scripts/` 为准。
+>
+> 最后更新：2026-04-26 by 艾瑞卡会话（数据层审计副产物落档）
 >
 > 跨会话的待决策事项追踪。已决策的条目移入 decisions.md，已落地的条目删除。
 > 所有会话启动时应阅读本文件。
