@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-20T23:09:04.823770+00:00",
+  "archived_at": "2026-06-21T02:39:13.476301+00:00",
   "source": "bilibili",
-  "item_count": 23,
+  "item_count": 25,
   "items": [
     {
       "title": "沙雪耶老师",
@@ -137,6 +137,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "【绘画过程🎨】沙耶之歌",
+      "summary": "也是成功不知道选什么音乐了😱\n  └ 威叔号被封 (1赞): 可爱\n  └ 哈基沙大玉 (1赞): 可爱捏\n  └ wujieleji611 (0赞): 我天呢堡堡",
+      "source": "bilibili",
+      "time": "2026-06-20T12:40:53+00:00",
+      "url": "https://www.bilibili.com/video/BV1Uujp6pEfR",
+      "engagement": 168,
+      "is_hot": false,
+      "author": "ユー力リ茶_",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 163,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/4ecc9eeacb075a97c7bf34ec38f1f262f95bc537.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "第一次 425达成",
       "summary": "嘻嘻\n  └ 静寂夏至 (2赞): 是大佬喵[星星眼]\n  └ 菲比又干了 (1赞): ？！强强\n  └ 傲娇神母勾引养胃主祭 (1赞): 吓哭了",
       "source": "bilibili",
@@ -218,6 +241,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/b3cb43b70ee8d178c466539b2e5f79e1b52e02ae.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "绘画过程存档",
+      "summary": "-\n  └ wujieleji611 (1赞): 我们此生无法相互理解\n  └ 我們此生無法互相理解 (1赞): 以上为均有照片参考的上色练习\n  └ 哈基沙大玉 (0赞): [Ave Mujica_我有话说]",
+      "source": "bilibili",
+      "time": "2026-06-20T09:23:51+00:00",
+      "url": "https://www.bilibili.com/video/BV13ojJ69EDS",
+      "engagement": 111,
+      "is_hot": false,
+      "author": "我們此生無法互相理解",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 106,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d171d4d2754250a7f64cfb219f74124c678ab79e.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
