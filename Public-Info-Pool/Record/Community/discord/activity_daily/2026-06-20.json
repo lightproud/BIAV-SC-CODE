@@ -1,10 +1,11 @@
 {
   "date": "2026-06-20",
-  "messages": 5406,
+  "messages": 7287,
   "unique_authors": 341,
-  "reactions_total": 2012,
-  "attachments": 316,
+  "reactions_total": 2612,
+  "attachments": 403,
   "channel_activity": {
+    "🔸綜合討論": 1881,
     "🔸阵容构建": 58,
     "🔸剧情交流": 47,
     "🔸晒卡分享": 6,
@@ -84,37 +85,35 @@
     "1517964594348425296": 3
   },
   "hourly_activity": {
-    "0": 68,
-    "3": 221,
-    "9": 104,
-    "10": 60,
-    "13": 747,
-    "14": 739,
-    "15": 368,
-    "16": 214,
-    "17": 128,
-    "18": 97,
+    "0": 95,
+    "1": 91,
+    "2": 388,
+    "3": 263,
+    "4": 572,
+    "5": 524,
+    "6": 470,
+    "7": 348,
+    "8": 371,
+    "9": 380,
+    "10": 124,
+    "11": 219,
+    "12": 445,
+    "13": 848,
+    "14": 815,
+    "15": 537,
+    "16": 233,
+    "17": 157,
+    "18": 104,
+    "21": 69,
+    "22": 56,
     "23": 65,
-    "2": 337,
-    "4": 195,
     "19": 80,
-    "7": 333,
-    "6": 307,
-    "8": 249,
-    "11": 189,
-    "12": 410,
-    "5": 307,
-    "20": 33,
-    "22": 36,
-    "21": 54,
-    "1": 65
+    "20": 33
   },
   "message_types": {
-    "19": 1138,
-    "0": 4239,
-    "20": 26,
-    "4": 2,
-    "21": 1
+    "19": 594,
+    "0": 1285,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -166,12 +165,60 @@
       "channel": "William posting"
     },
     {
+      "id": "1517890733808418846",
+      "channel_id": "1131839817982947429",
+      "content": "<:Pandia_kiss:1356053035780014150>",
+      "author": "shchng.",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517891453752184933",
+      "channel_id": "1131839817982947429",
+      "content": "滾去曬卡區😡",
+      "author": "shchng.",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1517798655082496010",
       "channel_id": "1194835209242296410",
       "content": "101925094",
       "author": "diaolingban_11059",
       "reactions": 10,
       "channel": "🔸交友频道"
+    },
+    {
+      "id": "1517715858108186634",
+      "channel_id": "1131839817982947429",
+      "content": "哇新命轮",
+      "author": "catlan_33586",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517796485134024804",
+      "channel_id": "1131839817982947429",
+      "content": "https://x.com/Ddomal2_art/status/2067563473878569018?s=20",
+      "author": "._.aahh",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517911604526841989",
+      "channel_id": "1131839817982947429",
+      "content": "||下个版本决定我要不要跑路||",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517916171624648798",
+      "channel_id": "1131839817982947429",
+      "content": "好循環",
+      "author": "nemu_s_t_a_r",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1517716645781438614",
@@ -190,6 +237,30 @@
       "channel": "Day 13 of doodling N til Morimens makes him playable"
     },
     {
+      "id": "1517743990936436767",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "encyoverride",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517852397353832559",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1517889713057431605",
+      "channel_id": "1131839817982947429",
+      "content": "群佬除我\n剩我是玩深海的萌新",
+      "author": "corposant_1003",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1518034407070371942",
       "channel_id": "1513948986963394692",
       "content": "gosssh he's so cute in sticker form",
@@ -198,84 +269,12 @@
       "channel": "Day 13 of doodling N til Morimens makes him playable"
     },
     {
-      "id": "1517810629036212265",
-      "channel_id": "1300659603993923644",
-      "content": "mik cx có khung whale",
-      "author": "hoangziet.",
-      "reactions": 6,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1517911594242408528",
-      "channel_id": "1300659662311526512",
-      "content": "<:Clem_absolute_peak:1513280497546170509>",
-      "author": "tipsy.17",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1517947799755554846",
-      "channel_id": "1300659662311526512",
-      "content": "es increible como todos los equipos que arma son una porquria",
-      "author": "tipsy.17",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1517904770407596102",
-      "channel_id": "1326453763355185215",
-      "content": "I NEED HIM",
-      "author": "nightmarekingrimmu",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1517874062595068036",
-      "channel_id": "1517874062595068036",
-      "content": "想不到放什么标题，小红书发的点图所以画的，结果留言太多我疑似画不完（后面慢慢在留言区补发）",
-      "author": "9ix_eternity",
-      "reactions": 6,
-      "channel": "请输入文本"
-    },
-    {
-      "id": "1517862693992792164",
-      "channel_id": "1517862693992792164",
-      "content": "還有五章劇情捏他。\n\nUID:100336921",
-      "author": "foxcatfurry",
-      "reactions": 6,
-      "channel": "今天繼續大眼女守水仙"
-    },
-    {
-      "id": "1517888990265741403",
-      "channel_id": "1517888990265741403",
-      "content": "如题，在寻找尤乌哈希高清立绘时发现右边眉毛那里因为选区移动错位了，于是看了一下手上的谷子 除了新出的秘银日冕徽章其他的也都是使用了这个错版立绘（。😡 草台班子！",
-      "author": "resazur1n",
-      "reactions": 6,
-      "channel": "官方周边柄图bug"
-    },
-    {
-      "id": "1517755127707078769",
-      "channel_id": "1326453763355185215",
-      "content": "any good lore tuber?",
-      "author": "pate_forever",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1517791732094337024",
-      "channel_id": "1326453763355185215",
-      "content": "<:Fkeeper_rizz:1356053138133614753>: pollux, can i ask a favor?\n<:Pollux_cute:14",
-      "author": "nikolazuli",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1517893507702853734",
-      "channel_id": "1326453763355185215",
-      "content": "Kim Ji-hoon aka CEO and owner of PM",
-      "author": "theviy",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
+      "id": "1517835842490466324",
+      "channel_id": "1131839817982947429",
+      "content": "✌️ 😋 ✌️",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     }
   ]
 }

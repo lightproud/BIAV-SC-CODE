@@ -1,10 +1,11 @@
 {
   "date": "2026-06-15",
-  "messages": 18142,
+  "messages": 19012,
   "unique_authors": 486,
-  "reactions_total": 2656,
-  "attachments": 1058,
+  "reactions_total": 2698,
+  "attachments": 1125,
   "channel_activity": {
+    "🔸game-question": 870,
     "🔸general-chat": 4677,
     "🔸綜合討論": 3738,
     "🔸阵容构建": 218,
@@ -93,6 +94,10 @@
     "LF Help for Optimal Team Building for D-Tide with my current team": 3
   },
   "hourly_activity": {
+    "0": 800,
+    "1": 839,
+    "2": 1165,
+    "3": 772,
     "15": 1629,
     "16": 1157,
     "17": 1063,
@@ -102,10 +107,6 @@
     "21": 681,
     "22": 362,
     "23": 246,
-    "0": 676,
-    "1": 437,
-    "2": 928,
-    "3": 665,
     "4": 730,
     "5": 903,
     "6": 296,
@@ -119,8 +120,9 @@
     "14": 914
   },
   "message_types": {
-    "0": 1597,
-    "19": 776
+    "0": 554,
+    "19": 313,
+    "20": 3
   },
   "top_reacted_messages": [
     {
