@@ -1804,6 +1804,50 @@ def generate_story():
     print(f'Story page: {len([u for u in idx if u["lore_ids"] or u["stage_group_ids"]])} story units')
 
 
+def generate_feature_unlock():
+    """Generate 功能解锁条件 page from feature_unlock.json（此前未上架的解包数据）。"""
+    try:
+        data = json.load(open(f'{PROCESSED_DIR}/feature_unlock.json', encoding='utf-8'))
+    except FileNotFoundError:
+        print('feature_unlock.json not found; skipping feature unlock page')
+        return
+    # 软空格 \xa0 归一为普通空格，便于阅读
+    def norm(t):
+        return (t or '').replace('\xa0', ' ').strip()
+
+    seen = set()
+    rows = []
+    for f in data['features']:
+        name = norm(f.get('feature_name', '')).replace('|', '/')
+        lock = norm(f.get('lock_tip', '')).replace('|', '/')
+        if not name or not lock:
+            continue
+        desc = norm(f.get('unlock_desc', '')).replace('|', '/')
+        key = (name, lock, desc)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append((name, lock, desc))
+
+    L = ['# 功能解锁条件', '']
+    L.append(f'> 数据来源：FeatureUnlock.lua（运行时内存提取） | 共 {data["_meta"]["total_features"]} 项功能，'
+             f'其中 {len(rows)} 项有明确解锁条件（已去重）。')
+    L.append('')
+    L.append('::: info 说明')
+    L.append('本页汇总各系统功能的解锁前置条件，便于规划养成顺序。仅列有名称且有解锁条件的项；'
+             '部分功能默认开放或条件为空，未在此列。')
+    L.append(':::')
+    L.append('')
+    L.append('| 功能 | 解锁条件 | 解锁后 |')
+    L.append('|------|---------|--------|')
+    for name, lock, desc in rows:
+        L.append(f'| {name} | {lock} | {desc or "—"} |')
+    L.append('')
+    with open(f'{DOCS_DIR}/feature-unlock.md', 'w', encoding='utf-8') as fh:
+        fh.write('\n'.join(L))
+    print(f'Feature unlock page: {len(rows)} unique features with conditions')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
@@ -1821,4 +1865,5 @@ if __name__ == '__main__':
     generate_video_index()
     generate_panel_text()
     generate_update_notices()
+    generate_feature_unlock()
     print('All wiki pages generated.')
