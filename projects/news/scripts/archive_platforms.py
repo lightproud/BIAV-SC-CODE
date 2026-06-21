@@ -92,9 +92,23 @@ def item_date_utc8(item: dict, fallback: str) -> str:
         return fallback
 
 
-def load_existing_archive(platform: str, date_str: str) -> dict:
+def archive_path(platform: str, region: str | None, subtype: str | None, date_str: str) -> Path:
+    """归档落点：``<平台>[/<区服>][/<类型>]/YYYY-MM-DD.json``。
+
+    甲方案（2026-06-21 命名规范）：item 带 ``region`` / ``archive_subtype`` 字段才分层，
+    缺省则省略该层、回落旧扁平 ``<平台>/YYYY-MM-DD.json``——现有不带字段的源零破坏。
+    """
+    parts = [platform]
+    if region:
+        parts.append(region)
+    if subtype:
+        parts.append(subtype)
+    return ARCHIVE_DIR.joinpath(*parts) / f'{date_str}.json'
+
+
+def load_existing_archive(platform: str, region: str | None, subtype: str | None, date_str: str) -> dict:
     """Load existing archive file if it exists."""
-    path = ARCHIVE_DIR / platform / f'{date_str}.json'
+    path = archive_path(platform, region, subtype, date_str)
     if not path.exists():
         return {}
     with open(path, encoding='utf-8') as f:
@@ -123,15 +137,16 @@ def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]
     return merged
 
 
-def write_archive(platform: str, date_str: str, new_items: list[dict]) -> int:
-    """Merge new_items into the (platform, date) archive file. Returns final count."""
-    existing = load_existing_archive(platform, date_str)
+def write_archive(platform: str, region: str | None, subtype: str | None,
+                  date_str: str, new_items: list[dict]) -> int:
+    """Merge new_items into the (platform, region, subtype, date) archive. Returns final count."""
+    existing = load_existing_archive(platform, region, subtype, date_str)
     merged = merge_items(existing.get('items', []), new_items)
     if not merged:
         return 0
 
-    platform_dir = ARCHIVE_DIR / platform
-    platform_dir.mkdir(parents=True, exist_ok=True)
+    path = archive_path(platform, region, subtype, date_str)
+    path.parent.mkdir(parents=True, exist_ok=True)
 
     archive_data = {
         'date': date_str,
@@ -140,7 +155,11 @@ def write_archive(platform: str, date_str: str, new_items: list[dict]) -> int:
         'item_count': len(merged),
         'items': merged,
     }
-    with open(platform_dir / f'{date_str}.json', 'w', encoding='utf-8') as f:
+    if region:
+        archive_data['region'] = region
+    if subtype:
+        archive_data['content_subtype'] = subtype
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(archive_data, f, ensure_ascii=False, indent=2)
     return len(merged)
 
@@ -154,19 +173,21 @@ def archive_all(target_date: str | None, fallback_date: str) -> dict[str, int]:
 
     target_date 非空时只归档该日；为空时归档 news.json 内出现的全部日期。
     """
-    groups: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    groups: dict[tuple[str, str | None, str | None, str], list[dict]] = defaultdict(list)
     for raw in load_news():
         src = normalize_source(raw.get('source', 'unknown'))
         if src == 'discord':  # 独立归档器处理
             continue
+        region = raw.get('region') or None             # 甲方案：区服字段（global/jp…）
+        subtype = raw.get('archive_subtype') or None   # 甲方案：内容类型字段（review/news…）
         d = item_date_utc8(raw, fallback_date)
         if target_date and d != target_date:
             continue
-        groups[(src, d)].append(raw)
+        groups[(src, region, subtype, d)].append(raw)
 
     totals: dict[str, int] = defaultdict(int)
-    for (src, d), items in groups.items():
-        write_archive(src, d, items)
+    for (src, region, subtype, d), items in groups.items():
+        write_archive(src, region, subtype, d, items)
         totals[src] += len(items)
     return totals
 
@@ -183,15 +204,16 @@ def show_stats():
             print(f'  {platform:12s}  (无归档)')
             continue
 
-        files = sorted(platform_dir.glob('*.json'))
+        files = sorted(platform_dir.rglob('*.json'))  # rglob 兼容甲方案分层(区服/类型子目录)
         if not files:
             print(f'  {platform:12s}  (无归档)')
             continue
 
         file_count = len(files)
         item_count = 0
-        first_date = files[0].stem
-        last_date = files[-1].stem
+        dates = sorted(f.stem for f in files)
+        first_date = dates[0]
+        last_date = dates[-1]
 
         for f in files:
             try:
