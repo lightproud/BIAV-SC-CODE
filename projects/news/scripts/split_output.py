@@ -17,6 +17,7 @@ split_output.py — 按数据源分割 projects/news/output/news.json
   {
     "collected_at": "ISO 8601 时间戳",
     "source": "bilibili",
+    "data_layer": "output",
     "item_count": 5,
     "items": [
       {
@@ -46,6 +47,11 @@ from pathlib import Path
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent  # brain-in-a-vat/
 INPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
+
+# 数据层戳记（CLAUDE.md §4 数据纪律）：这些文件是输出/展示层——全量档案层的
+# 过滤抽样，绝不可当全量数据用（lesson #30）。此前该身份纯靠约定、产物无机器可读
+# 标记；现落标，让消费端能程序化判别，把纪律从「人记」升级为「代码设防」。
+DATA_LAYER = 'output'
 
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────
 # bilibili_articles / bilibili_dynamic 都归入 bilibili
@@ -143,6 +149,7 @@ def write_source_file(source: str, items: list[dict], collected_at: str) -> None
     payload = {
         'collected_at': collected_at,
         'source': source,
+        'data_layer': DATA_LAYER,
         'item_count': len(items),
         'items': items,
     }
@@ -199,6 +206,7 @@ def main() -> None:
         json.dump({
             'collected_at': collected_at,
             'source': 'all',
+            'data_layer': DATA_LAYER,
             'item_count': len(all_items),
             'items': all_items,
         }, f, ensure_ascii=False, indent=2)
