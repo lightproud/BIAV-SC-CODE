@@ -6,18 +6,18 @@
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 28,
-      "scripts_top": 20,
+      "workflows": 29,
+      "scripts_top": 21,
       "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 97
+      "total": 99
     },
     "reachability": {
-      "live": 53,
+      "live": 54,
       "test-only": 0,
       "orphaned": 0
     }
@@ -203,6 +203,14 @@
       "note_zh": "定时回填 Discord 历史消息。"
     },
     {
+      "id": "edit-release.yml",
+      "name": "Edit Release Metadata",
+      "path": ".github/workflows/edit-release.yml",
+      "triggers": [
+        "manual"
+      ]
+    },
+    {
       "id": "extract-game-data.yml",
       "name": "Extract Game Data from Client",
       "path": ".github/workflows/extract-game-data.yml",
@@ -355,6 +363,16 @@
       "summary": "check_decisions_consistency.py —— 决策档案一致性校验（把「祈祷同步」换成「机器盯同步」）",
       "planes": [
         "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "deliverable_path.py",
+      "path": "scripts/deliverable_path.py",
+      "summary": "deliverable_path.py — 银芯产物路径生成器 / 注册表守卫",
+      "planes": [
+        "cli",
+        "command"
       ],
       "status": "live"
     },
