@@ -247,5 +247,71 @@ class TestForbiddenChannelHandling(unittest.TestCase):
             self.assertEqual(called, [], "forbidden channel must not trigger any API call")
 
 
+class TestBackfillArchiveAwareness(unittest.TestCase):
+    """The hourly history backfill must not re-fetch months already moved to
+    Releases, and must not re-initialise its pointer forever once it has walked
+    back to guild creation — the cleanup/backfill hedge that churned 2.6GB back
+    into the working tree (diagnosis 2026-06-21)."""
+
+    def _make_archiver(self, tmpdir):
+        env = {
+            "DISCORD_BOT_TOKEN": "dummy",
+            "DISCORD_GUILD_ID": "999",
+            "DISCORD_DATA_ROOT": tmpdir,
+        }
+        with mock.patch.dict(os.environ, env, clear=False):
+            return DiscordArchiver()
+
+    def test_archived_months_reads_only_uploaded_entries(self):
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            log = [
+                {"month": "2024-01", "uploaded_to_releases": True},   # legacy key
+                {"month": "2024-02", "uploaded_to_releases": False},  # upload failed
+                {"group": "2024-03", "uploaded_to_releases": True},   # engine key
+                {"uploaded_to_releases": True},                       # no month/group
+            ]
+            (arch.data_dir / "archive-log.json").write_text(json.dumps(log))
+            # Reads both legacy 'month' and engine 'group'; skips failed + keyless.
+            self.assertEqual(arch._archived_months(), {"2024-01", "2024-03"})
+
+    def test_archived_months_empty_when_no_log(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            self.assertEqual(arch._archived_months(), set())
+
+    def test_init_does_not_reinit_after_complete(self):
+        # Once latched complete, pointer stays None — no perpetual re-fetch.
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            arch.state["history_backfill_complete"] = True
+            arch.state["historical_month"] = None
+            arch._init_historical_month()
+            self.assertIsNone(arch.state.get("historical_month"))
+
+    def test_init_sets_pointer_when_not_complete(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            arch.state["historical_month"] = None
+            arch._init_historical_month()
+            self.assertIsNotNone(arch.state.get("historical_month"))
+
+    def test_advance_latches_complete_at_guild_start(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            # prev month (2023-06) falls before guild start (2023-07) → complete
+            arch._advance_historical_month(2023, 7, 2023, 7)
+            self.assertIsNone(arch.state.get("historical_month"))
+            self.assertTrue(arch.state.get("history_backfill_complete"))
+
+    def test_advance_steps_back_one_month_otherwise(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = self._make_archiver(tmp)
+            arch._advance_historical_month(2024, 6, 2023, 7)
+            self.assertEqual(arch.state.get("historical_month"), "2024-05")
+            self.assertFalse(arch.state.get("history_backfill_complete"))
+
+
 if __name__ == "__main__":
     unittest.main()

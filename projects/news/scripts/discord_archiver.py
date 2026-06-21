@@ -151,6 +151,8 @@ class DiscordArchiver:
         self._pending_threads: list = []
         # Per-run cache of JSONL file → set of already-stored message IDs (dedup guard)
         self._file_ids_cache: dict = {}
+        # Per-run cache of months already uploaded to Releases (archive-aware backfill)
+        self._archived_months_cache: set | None = None
         self.daily_stats: dict = defaultdict(lambda: {
             'messages': 0,
             'reactions_total': 0,
@@ -496,12 +498,65 @@ class DiscordArchiver:
             return 2023, 1
 
     def _init_historical_month(self):
-        """Initialise historical_month to last month if not already set."""
+        """Initialise historical_month to last month if not already set.
+
+        Once the backfill has walked all the way back to guild creation, the
+        `history_backfill_complete` flag latches True and we do NOT re-init —
+        otherwise the pointer resets to last month every run and re-fetches the
+        entire history forever (perpetual-motion bug). Recent months stay fresh
+        via the incremental collector; historical backfill is a one-time gap-fill.
+        """
+        if self.state.get('history_backfill_complete'):
+            return
         if not self.state.get('historical_month'):
             now = datetime.now(timezone.utc)
             y, m = _prev_month(now.year, now.month)
             self.state['historical_month'] = _mstr(y, m)
             self._save_state()
+
+    def _archived_months(self) -> set:
+        """Months already uploaded to Releases (per archive-log.json).
+
+        The hourly history backfill must NOT re-fetch/rewrite these — doing so
+        un-does the monthly cleanup's git_rm and churns GBs back into the working
+        tree (the cleanup/backfill hedge). Cached per run.
+        """
+        if self._archived_months_cache is not None:
+            return self._archived_months_cache
+        months: set = set()
+        log_path = self.data_dir / 'archive-log.json'
+        try:
+            with open(log_path, encoding='utf-8') as f:
+                for entry in json.load(f):
+                    # Engine writes the month under 'group' (group_by=month_from_stem);
+                    # legacy archive_discord entries used 'month'. Read both.
+                    month = entry.get('group') or entry.get('month')
+                    if entry.get('uploaded_to_releases') and month:
+                        months.add(month)
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+        self._archived_months_cache = months
+        return months
+
+    def _advance_historical_month(
+        self, hist_y: int, hist_m: int,
+        guild_start_y: int, guild_start_m: int,
+    ):
+        """Step the historical pointer to the previous month, or latch complete.
+
+        When the previous month falls before guild creation, the backfill is
+        finished: pointer → None and `history_backfill_complete` → True so it
+        never re-initialises (see _init_historical_month).
+        """
+        prev_y, prev_m = _prev_month(hist_y, hist_m)
+        if (prev_y, prev_m) < (guild_start_y, guild_start_m):
+            logger.info('Historical backfill complete: reached guild creation date')
+            self.state['historical_month'] = None
+            self.state['history_backfill_complete'] = True
+        else:
+            self.state['historical_month'] = _mstr(prev_y, prev_m)
+            logger.info(f'Historical month done → {_mstr(prev_y, prev_m)}')
+        self._save_state()
 
     @staticmethod
     def _channel_created_month(channel_id) -> tuple[int, int]:
@@ -1023,6 +1078,14 @@ class DiscordArchiver:
 
             hist_y = int(hist_month_str[:4])
             hist_m = int(hist_month_str[5:7])
+
+            # Archive-aware: skip months already in Releases — re-fetching them
+            # would rewrite files the monthly cleanup git_rm'd (the hedge bug).
+            if hist_month_str in self._archived_months():
+                logger.info(f'Historical {hist_month_str} already in Releases — skip re-fetch')
+                self._advance_historical_month(hist_y, hist_m, guild_start_y, guild_start_m)
+                continue
+
             _, before_sf = _month_bounds(hist_y, hist_m)
             total_historical = 0
             skipped = 0
@@ -1047,15 +1110,7 @@ class DiscordArchiver:
             # Advance to previous month if all channels completed this one
             if self._all_channels_done_for_month(ch_ids, hist_month_str, before_sf):
                 months_completed += 1
-                prev_y, prev_m = _prev_month(hist_y, hist_m)
-                if (prev_y, prev_m) < (guild_start_y, guild_start_m):
-                    logger.info('Historical backfill complete: reached guild creation date')
-                    self.state['historical_month'] = None
-                else:
-                    new_month = _mstr(prev_y, prev_m)
-                    logger.info(f'Historical month complete → advancing to {new_month} (#{months_completed})')
-                    self.state['historical_month'] = new_month
-                self._save_state()
+                self._advance_historical_month(hist_y, hist_m, guild_start_y, guild_start_m)
             else:
                 break  # month not yet complete, continue next run
 
@@ -1107,6 +1162,14 @@ class DiscordArchiver:
 
             hist_y = int(hist_month_str[:4])
             hist_m = int(hist_month_str[5:7])
+
+            # Archive-aware: skip months already in Releases — re-fetching them
+            # would rewrite files the monthly cleanup git_rm'd (the hedge bug).
+            if hist_month_str in self._archived_months():
+                logger.info(f'Historical {hist_month_str} already in Releases — skip re-fetch')
+                self._advance_historical_month(hist_y, hist_m, guild_start_y, guild_start_m)
+                continue
+
             _, before_sf = _month_bounds(hist_y, hist_m)
             total_historical = 0
             skipped = 0
@@ -1129,15 +1192,7 @@ class DiscordArchiver:
 
             if self._all_channels_done_for_month(ch_ids, hist_month_str, before_sf):
                 months_completed += 1
-                prev_y, prev_m = _prev_month(hist_y, hist_m)
-                if (prev_y, prev_m) < (guild_start_y, guild_start_m):
-                    logger.info('Historical backfill complete: reached guild creation date')
-                    self.state['historical_month'] = None
-                else:
-                    new_month = _mstr(prev_y, prev_m)
-                    logger.info(f'Month done → {new_month} (#{months_completed})')
-                    self.state['historical_month'] = new_month
-                self._save_state()
+                self._advance_historical_month(hist_y, hist_m, guild_start_y, guild_start_m)
             else:
                 break
 
