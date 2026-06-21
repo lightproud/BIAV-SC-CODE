@@ -88,6 +88,21 @@ def test_sources_label_data_layer():
         )
 
 
+@pytest.mark.parametrize("path", _concept_files(), ids=lambda p: str(p.relative_to(REPO)))
+def test_resource_pointer_resolves(path: Path):
+    """放指针不放本体：每个 repo-relative ``resource`` 指针必须落到实存本体。
+
+    Guards the lesson surfaced 2026-06-21: source-health 注册但未落盘的平台
+    曾生成指向不存在目录的指针。Fragment (``#id``) 锚点只校验其宿主文件存在。
+    """
+    fields = _parse_frontmatter(path.read_text(encoding="utf-8"))
+    res = (fields or {}).get("resource", "").strip().strip('"')
+    if not res.startswith("/"):  # 仅校验仓内绝对指针；外部 URI / 空值跳过
+        return
+    target = REPO / res.lstrip("/").split("#", 1)[0]
+    assert target.exists(), f"{path} resource pointer dangles: {res}"
+
+
 def test_character_concepts_count():
     """Sanity: character layer is one-concept-per-file."""
     chars = [p for p in (BUNDLE / "characters").glob("*.md") if p.name not in RESERVED]
