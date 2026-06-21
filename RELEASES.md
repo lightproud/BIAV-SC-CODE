@@ -64,7 +64,7 @@
 
 ### 2.3 社区归档数据（community-data，§4.1 全量保全）
 
-- 单个滚动 release `community-data`：**30 个月** `discord-archive-{YYYY-MM}.tar.gz`（2023-11 ~ 2026-04），共 ~6.6 MB。
+- 单个滚动 release `community-data`：**30 个月** `discord-archive-{YYYY-MM}.tar.gz`（2023-11 ~ 2026-04），共 ~287 MB（2026-06-21 排空时由 force-month 重归档为含回填补全的更全版本，较初版 6.6 MB 大幅充实）。
 - 由归档引擎 `archive_engine.py`（`archive_sources.json` 的 discord 条目，`release_tag: community-data`）**每月自动追加一个资产**（`gh release upload --clobber`，只替换当月不动其它月），取代旧「每月一 tag」。
 - github-actions[bot] 经 `discord-archive.yml` 触发。
 
@@ -83,10 +83,11 @@
   - `community-assets` ← media-archive-v1
 - **引擎改造**：discord / fanart 归档切换为滚动单 release 模式，未来周期自动并入对应桶，不再散落新 tag。
 - **完整性核对**：`community-data` 实测 30 资产（2023-11 → 2026-04 连续无断档）✓；`unpacked-assets` 实测 15 资产、约 10.7 GB ✓；所有旧源 tag + 悬空 tag `art-assets-v1` 均已删（404 核实）。
+- **对冲缺口闭合（repo-slimming-plan §4）**：历史回填曾每小时把已归档月 jsonl 拉回 git（与月清理对冲，致 channels/ 3.3G 虚胖）。根因修复（`discord_archiver.py` 加「已归档月跳过」守卫）已在 main 生效；2026-06-21 force-month 一次性排空 30 个已归档月，channels/ 12,803→1,882 文件、3.3G→600M，仅留近月 2026-05/06（未够龄）。
 
 ## 四、治理待办
 
-- **已知缺口（非 release 本身）**：归档标记成功但 git 主数据仍在（见 `memory/strategy/repo-slimming-plan.md` §4），待诊断。
+- **（已闭合 2026-06-21）** 归档标记成功但 git 主数据仍在的对冲缺口——根因（历史回填无「已归档月跳过」）已修复 + 30 月存量已排空，详见 §三 末条与 `memory/strategy/repo-slimming-plan.md` §4。当前无未决治理项。
 
 ## 五、如何取用
 
