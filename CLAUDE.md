@@ -166,14 +166,14 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
 | `projects/wiki/data/processed/story/STORY_RESEARCH.md` | **剧情/世界观/神话原型深度研究综述**（autoresearch 5 轮，逐条带【已证实】/【推测】+来源）：忘却篇1-9章+星辰篇剧情、终章真相（守密人=至高意志碎片/缸中之脑兑现）、7 阵营、35+ 角色↔克苏鲁原型、意识潜游个人剧情、A.F.编年史、OST/广播剧/CV、制作秘辛。社区源（非解包），采信前看置信标签 |
 | `projects/wiki/data/processed/story/` | 解包故事**结构层**（机器可读）：`story_units`（剧情单元脊柱）/ `lore_entries`（1026 lore 含正文）/ `index`（章节↔lore↔关卡↔角色聚合）/ `README.md`；由 `scripts/build_story_layer.py` 可复现生成 |
-| `projects/wiki/data/processed/story/story_search_index.json` | 剧情**静态检索索引**（构建期生成，零 ML）：1026 lore 倒排表（词→lore，秒查「某剧情讲什么」）+ 单元画像 + 角色↔剧情链；服务「对剧情怎么看」类分析。重建：`python3 scripts/build_story_index.py`。CJK-bigram 词法分词，画像为粗粒度 |
+| `projects/wiki/data/processed/story/story_search_index.json` | 剧情**静态检索索引**（构建期生成，零 ML）：1026 lore 倒排表（词→lore，秒查「某剧情讲什么」）+ 单元画像 + 角色↔剧情链；服务「对剧情怎么看」类分析。重建：`python3 scripts/build_story_index.py`。分词用领域词典 FMM（`scripts/silver_tokenizer.py`，自举自角色/卡牌/剧情专名），画像仍为粗粒度 |
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
 - 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{platform}/`（平台目录持续增加，以 `ls` 为准）
 - Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
-- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；729 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词；服务「社区这一年有什么变化」类全量时序分析，填 ripgrep 的时序/聚合空白）。`_meta.data_layer=full_archive`，全文钻取仍回落 dated 原文件 ripgrep。重建：`python3 scripts/build_community_index.py`。CJK-bigram 词法分词（无 jieba 环境），top_terms 为粗粒度主题信号
+- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史存 community-data release，构建期由 `scripts/restore_release_data.py` 临时还原、不进 git**（守密人 2026-06-21 裁定；CI 步见 `build-analysis-index.yml`）。重建：先 restore 再 `python3 scripts/build_community_index.py`。分词用领域词典 FMM，top_terms 为粗粒度主题信号
 - Releases 全量档案索引（移出 git 的大资产 + 月归档）：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
 
 ### §5.3 项目档案

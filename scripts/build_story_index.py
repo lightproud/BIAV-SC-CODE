@@ -21,6 +21,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
@@ -30,10 +31,10 @@ STORY = REPO / "projects/wiki/data/processed/story"
 OUT = STORY / "story_search_index.json"
 TODAY = date.today().isoformat()
 
-# 复用社区索引器的确定性词法切分（CJK-bigram + latin word），避免分词逻辑漂移。
+# 复用共享分词器（领域词典 FMM），避免分词逻辑漂移。
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_community_index import tokenize  # noqa: E402
+from silver_tokenizer import tokenize  # noqa: E402
 
 
 def _load(name: str, key: str) -> list:
@@ -42,6 +43,15 @@ def _load(name: str, key: str) -> list:
         return []
     d = json.loads(p.read_text(encoding="utf-8"))
     return d.get(key, []) if isinstance(d, dict) else d
+
+
+# lore desc 含游戏富文本标记 <Title:物质维度> / <OrangeQuality:深渊通信>：
+# 标签名（Title/WhiteQuality…）是噪声，内含专名才是内容——剥标签留内容。
+_MARKUP = re.compile(r"<[A-Za-z]+:|>")
+
+
+def _clean(text: str) -> str:
+    return _MARKUP.sub(" ", text or "")
 
 
 def build() -> dict:
@@ -69,8 +79,8 @@ def build() -> dict:
         }
         # 倒排表收录 title+desc+lock_tip（可按解锁条件检索）；但单元画像只用
         # title+desc 内容词，剔除 lock_tip 的模板样板（「可于…中解锁」会污染画像）。
-        content_toks = tokenize(f"{title} {desc}")
-        all_toks = content_toks + tokenize(str(e.get("lock_tip", "")))
+        content_toks = tokenize(_clean(f"{title} {desc}"))
+        all_toks = content_toks + tokenize(_clean(str(e.get("lock_tip", ""))))
         for t in set(all_toks):      # 倒排：每 lore 对每词计一次
             inverted[t].add(lid)
         if unit:
@@ -98,7 +108,8 @@ def build() -> dict:
             "lore_with_desc": with_desc,
             "unit_count": len(units),
             "term_count": len(inverted),
-            "method": "deterministic lexical inverted index (CJK-bigram + latin word)",
+            "method": "deterministic lexical inverted index; tokenizer = domain-dict FMM "
+                      "(self-bootstrapped from characters/cards/story; bigram fallback)",
             "drilldown": "lore 正文权威在 lore_entries.json；本 index 持 id + 倒排表，"
                          "正文取用回落本体（放指针不放本体）。",
         },
