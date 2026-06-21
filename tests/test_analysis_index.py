@@ -87,3 +87,15 @@ def test_community_sentiment_method_labeled(community):
     """Sentiment must be labeled coarse/non-semantic (honesty guard)."""
     method = community["_meta"]["method"].lower()
     assert "lexic" in method or "coarse" in method, "method not labeled lexical/coarse"
+
+
+def test_community_coverage_present(community):
+    """采集覆盖信号必须在场（防 2026-02/03 缺口被误读为社区静默）。"""
+    for name, pdat in community["platforms"].items():
+        for ym, m in pdat["by_month"].items():
+            cov = m.get("coverage")
+            assert cov and {"active_days", "month_days", "ratio"} <= set(cov), \
+                f"{name} {ym} missing coverage signal"
+            assert 0 < cov["ratio"] <= 1.0, f"{name} {ym} coverage ratio out of range"
+    for ym, t in community["timeline"].items():
+        assert "vol_index" in t, f"timeline {ym} missing vol_index (volume anomaly signal)"
