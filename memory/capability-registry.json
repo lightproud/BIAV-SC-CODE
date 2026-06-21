@@ -1,23 +1,23 @@
 {
   "meta": {
-    "generated_at": "2026-06-20",
+    "generated_at": "2026-06-21",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 21,
-      "scripts_top": 13,
+      "scripts_top": 14,
       "scripts_news": 25,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 82
+      "total": 83
     },
     "reachability": {
-      "live": 45,
+      "live": 46,
       "test-only": 0,
       "orphaned": 0
     }
@@ -259,6 +259,15 @@
       ],
       "status": "live",
       "note_zh": "艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。"
+    },
+    {
+      "id": "check_decisions_consistency.py",
+      "path": "scripts/check_decisions_consistency.py",
+      "summary": "check_decisions_consistency.py —— 决策档案一致性校验（把「祈祷同步」换成「机器盯同步」）",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
     },
     {
       "id": "generate_wiki_pages.py",
