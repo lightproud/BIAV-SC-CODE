@@ -92,3 +92,24 @@ def test_character_concepts_count():
     """Sanity: character layer is one-concept-per-file."""
     chars = [p for p in (BUNDLE / "characters").glob("*.md") if p.name not in RESERVED]
     assert len(chars) >= 70, f"expected ~72 character concepts, got {len(chars)}"
+
+
+def test_visualizer_self_contained():
+    """Consumer: visualizer.html inlines its data (no backend, no placeholder)."""
+    html_path = BUNDLE / "visualizer.html"
+    assert html_path.exists(), "visualizer.html missing — run scripts/build_okf_bundle.py"
+    html = html_path.read_text(encoding="utf-8")
+    assert "__GRAPH_DATA__" not in html, "graph data placeholder not substituted"
+    assert "const G = " in html, "inlined graph data not found"
+
+
+def test_graph_integrity():
+    """graph.json edges reference existing nodes."""
+    import json
+
+    graph = json.loads((BUNDLE / "graph.json").read_text(encoding="utf-8"))
+    ids = {n["id"] for n in graph["nodes"]}
+    assert graph["nodes"], "graph has no nodes"
+    for e in graph["edges"]:
+        assert e["source"] in ids, f"edge source {e['source']} not a node"
+        assert e["target"] in ids, f"edge target {e['target']} not a node"

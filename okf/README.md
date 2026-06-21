@@ -32,15 +32,25 @@ https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
 ## 重新生成
 
 ```bash
-python3 scripts/build_okf_bundle.py
+python3 scripts/build_okf_bundle.py            # 仅重建 bundle
+python3 scripts/build_okf_bundle.py --tarball okf-bundle.tar.gz  # 顺带导出单向输出物
 ```
 
 生成物，重跑覆盖。本体各自原地不动。
 
-## 消费（白嫖 Google 参考实现）
+## 消费：自包含可视化器
 
-OKF 随规范放出一个**零后端单文件静态 HTML 可视化器**，可把本 bundle 渲染成
-交互式关系图。取用方式见上方规范仓库 `okf/` 目录。
+`okf/visualizer.html` 是一个**零后端、零安装、数据不离开页面**的单文件静态
+关系图（对齐 OKF 消费端参考实现精神，自写零依赖力导向图）。双击直接在浏览器
+打开即可：节点按 `type` 上色，角色按画师 / CV 聚类成簇，拖动 / 缩放 / 悬停看详情。
+图数据另存 `okf/graph.json` 供其他消费端（搜索 / agent）取用。
+
+## 银芯 → 黑池单向线格式
+
+OKF 的「格式即契约，两端工具独立可换」正是银芯→黑池**单向输出**的理想载体：
+黑池**无需银芯任何 SDK / 账号**即可消费本 bundle 的策展知识（concept + 指针）。
+`--tarball` 产出 `.tar.gz` 即单向输出物（信息只出不回，黑池→银芯始终关闭）。
+注意：仅**策展知识层**走此线，原始时序数据本体仍只放指针、不进 bundle。
 
 ## 一致性
 

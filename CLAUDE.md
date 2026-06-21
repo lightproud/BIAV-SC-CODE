@@ -232,10 +232,14 @@ brain-in-a-vat/
 - **定位**：银芯受限/非公开层，本 bundle 面向**内部消费**（艾瑞卡人格 / 银芯→黑池
   单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图），**不对外发布**——OKF 官方
   「跨组织互操作」主卖点对银芯打折。
-- **三条铁律**：(1) 一概念一文件（`characters/` 72 角色）；(2) **放指针不放本体**
-  （`sources/`/`memory/`/`story/` 仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md
-  「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`sources/` 指针用
-  `tags: data_layer:*` 标层，防 lesson #30）。
+- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色）；(2) **放指针不放本体**
+  （`okf/sources/` / `okf/memory/` / `okf/story/` 仅持 `resource` 指针，本体原地不动，呼应
+  RELEASES.md「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`okf/sources/`
+  指针用 `tags: data_layer:*` 标层，防 lesson #30）。
+- **消费**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
+  其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
+  产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
+- CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）。
 - 重新生成：`python3 scripts/build_okf_bundle.py`。
 
 ---
