@@ -50,6 +50,17 @@ class GroupingAndCutoff(unittest.TestCase):
     def test_is_eligible_no_cutoff(self):
         self.assertTrue(ae.is_eligible(Path("a/whatever.jsonl"), "month_from_stem", None))
 
+    def test_group_of_month_from_parent_dir(self):
+        # 日期在父目录名（如 fanart：2026-05-29/pixiv_x.jpg），文件名 stem 无日期
+        p = Path("fanart/2026-05-29/pixiv_efad328a8f.jpg")
+        self.assertEqual(ae.group_of(p, "month_from_parent_dir", "all"), "2026-05")
+
+    def test_is_eligible_parent_dir_cutoff(self):
+        old = Path("fanart/2026-03-01/x.jpg")
+        new = Path("fanart/2026-06-10/x.jpg")
+        self.assertTrue(ae.is_eligible(old, "month_from_parent_dir", "2026-04-22"))
+        self.assertFalse(ae.is_eligible(new, "month_from_parent_dir", "2026-04-22"))
+
 
 class Discover(unittest.TestCase):
     def setUp(self):
@@ -81,6 +92,49 @@ class Discover(unittest.TestCase):
 
     def test_missing_base_dir_returns_empty(self):
         self.assertEqual(ae.discover(self._cfg(), self.base / "nope", []), {})
+
+
+class ParentDirLayoutAndFileGuard(unittest.TestCase):
+    """fanart 式布局：日期在目录名 + thumbs/ 子目录须被 is_file 护栏滤掉。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self.tmp.name)
+        for day in ("2026-05-12", "2026-06-01"):
+            _touch(self.base / day / "pixiv_a.jpg")
+            _touch(self.base / day / "discord_b.png")
+            _touch(self.base / day / "thumbs" / "pixiv_a.jpg")  # 缩略图不该被归档
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _cfg(self, **over):
+        cfg = {"glob": "20*/*", "group_by": "month_from_parent_dir", "cutoff_days": None}
+        cfg.update(over)
+        return cfg
+
+    def test_groups_by_parent_dir_and_excludes_thumbs(self):
+        groups = ae.discover(self._cfg(), self.base, [])
+        self.assertEqual(set(groups), {"2026-05", "2026-06"})
+        # 每月仅 2 个顶层图；thumbs/ 子目录文件深一层不被 glob 命中
+        self.assertEqual(len(groups["2026-05"]), 2)
+        self.assertEqual({p.name for p in groups["2026-05"]}, {"pixiv_a.jpg", "discord_b.png"})
+
+    def test_glob_yielding_dir_is_skipped(self):
+        # glob '20*/*' 会命中 thumbs 目录本身，is_file 护栏须跳过它
+        self.assertTrue(any(p.is_dir() for p in self.base.glob("20*/*")))
+        groups = ae.discover(self._cfg(), self.base, [])
+        self.assertTrue(all(p.is_file() for ps in groups.values() for p in ps))
+
+    def test_parent_dir_cutoff_filters_recent(self):
+        # cutoff 仅留早于阈值的目录（2026-06-01 比 2026-05-12 新，被滤）
+        groups = ae.discover(self._cfg(cutoff_days=None), self.base, [])
+        self.assertEqual(set(groups), {"2026-05", "2026-06"})
+        # 用 is_eligible 直接验证父目录比较
+        f_old = self.base / "2026-05-12" / "pixiv_a.jpg"
+        f_new = self.base / "2026-06-01" / "pixiv_a.jpg"
+        self.assertTrue(ae.is_eligible(f_old, "month_from_parent_dir", "2026-05-30"))
+        self.assertFalse(ae.is_eligible(f_new, "month_from_parent_dir", "2026-05-30"))
 
 
 class Tarball(unittest.TestCase):

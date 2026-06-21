@@ -19,7 +19,8 @@
 统一索引: projects/news/data/releases-index.json（自动生成，治「Release 好难认」）
 
 来源配置字段: base_dir(来源根目录) / glob(文件匹配) / group_by(分桶:
-month_from_stem 按文件名 YYYY-MM-DD 取 YYYY-MM | single) / group_label(single 桶名) /
+month_from_stem 按文件名 YYYY-MM-DD 取 YYYY-MM | month_from_parent_dir 按父目录名
+YYYY-MM-DD 取 YYYY-MM（日期在目录名，如 fanart）| single) / group_label(single 桶名) /
 cutoff_days(仅归档早于 N 天; null=不限龄) / tag_template/title_template/notes_template
 (Release 模板, 占位 {group}/{filename}/{size_kb}/{files}) / after_archive(git_rm|keep) /
 clean_empty_dirs(归档后清理空目录)。
@@ -56,6 +57,8 @@ def group_of(path: Path, group_by: str, group_label: str) -> str:
     """文件归属哪个桶。"""
     if group_by == 'month_from_stem':
         return path.stem[:7]  # YYYY-MM-DD -> YYYY-MM
+    if group_by == 'month_from_parent_dir':
+        return path.parent.name[:7]  # 父目录 YYYY-MM-DD -> YYYY-MM（日期在目录名，如 fanart）
     if group_by == 'single':
         return group_label
     raise ValueError(f'unknown group_by: {group_by}')
@@ -67,6 +70,8 @@ def is_eligible(path: Path, group_by: str, cutoff_date: str | None) -> bool:
         return True
     if group_by == 'month_from_stem':
         return path.stem < cutoff_date  # 与原 archive_discord 逐字节等价
+    if group_by == 'month_from_parent_dir':
+        return path.parent.name < cutoff_date  # 父目录 YYYY-MM-DD 逐字节比较
     # 无日期语义的来源不应配 cutoff_days；保守判为可归档
     return True
 
@@ -82,6 +87,8 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
     if force_groups:
         wanted = set(force_groups)
         for f in base_dir.glob(cfg['glob']):
+            if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
+                continue
             g = group_of(f, group_by, group_label)
             if g in wanted:
                 groups[g].append(f)
@@ -93,6 +100,8 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
             cutoff_date = cutoff.strftime('%Y-%m-%d')
             logger.info(f'Cutoff date: {cutoff_date} ({cutoff_days} days ago)')
         for f in base_dir.glob(cfg['glob']):
+            if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
+                continue
             if is_eligible(f, group_by, cutoff_date):
                 groups[group_of(f, group_by, group_label)].append(f)
     return dict(sorted(groups.items()))
