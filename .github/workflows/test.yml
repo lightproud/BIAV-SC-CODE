@@ -43,9 +43,12 @@ jobs:
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
       - name: Run tests
-        # Coverage gate raised from 10 to 35. Measured TOTAL coverage on
-        # 2026-06-19 was 38% (coverage run over the same three source roots);
-        # 35 leaves a small margin below the real figure to absorb run-to-run
-        # jitter while preventing regression. Measurement scope is pinned in
-        # .coveragerc so local and CI use the same source/omit rules.
-        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=35
+        # Coverage gate raised 10 -> 35 -> 90. A dynamic-orchestration test
+        # sweep on 2026-06-21 lifted TOTAL coverage 43% -> ~94% (CI scope; the
+        # only sub-80% module is report_render.py, whose render() path needs
+        # the heavyweight weasyprint/markdown deps deliberately kept out of CI
+        # per CLAUDE.md's "render deps installed on demand" stance, so it caps
+        # ~56% here and ~98% locally). 90 sits below the ~94% CI figure with
+        # margin to absorb run-to-run jitter while preventing regression.
+        # Measurement scope is pinned in .coveragerc so local and CI match.
+        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=90
