@@ -78,8 +78,8 @@
   `.github/workflows/extract-game-data.yml`
 - **`Fanart Archive`** _[schedule/manual]_ —   
   `.github/workflows/fanart-archive.yml`
-- **`Migrate Unpacked Text to Git`** _[manual]_ —   
-  `.github/workflows/migrate-unpacked-to-git.yml`
+- **`Migrate to Public-Info-Pool`** _[manual]_ —   
+  `.github/workflows/migrate-to-public-info-pool.yml`
 - **`Mutation Test (manual)`** _[manual]_ —   
   `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  

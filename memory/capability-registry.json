@@ -222,9 +222,9 @@
       ]
     },
     {
-      "id": "migrate-unpacked-to-git.yml",
-      "name": "Migrate Unpacked Text to Git",
-      "path": ".github/workflows/migrate-unpacked-to-git.yml",
+      "id": "migrate-to-public-info-pool.yml",
+      "name": "Migrate to Public-Info-Pool",
+      "path": ".github/workflows/migrate-to-public-info-pool.yml",
       "triggers": [
         "manual"
       ]
