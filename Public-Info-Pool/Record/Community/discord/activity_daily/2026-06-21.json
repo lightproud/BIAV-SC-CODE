@@ -1,31 +1,46 @@
 {
   "date": "2026-06-21",
-  "messages": 3240,
+  "messages": 6405,
   "unique_authors": 237,
-  "reactions_total": 498,
-  "attachments": 202,
+  "reactions_total": 1218,
+  "attachments": 336,
   "channel_activity": {
+    "🔸綜合討論": 2385,
+    "🔸剧情交流": 3,
+    "🔸课间休息闲聊": 164,
+    "🔸한국어-채팅방": 24,
+    "🔸chaîne-française": 32,
+    "🔸русский-канал": 69,
+    "🔸phòng-chat-tiếng-việt": 810,
+    "🔸canal-español": 384,
+    "🔸canal-português": 23,
+    "🔸ruang-obrolan-indonesia": 546,
+    "🔸ห้องสนทนาภาษาไทย": 293,
+    "🔸traphase": 46,
+    "🔸lore-chat": 253,
+    "🔸lets-count": 29,
+    "🔸team-building": 447,
+    "🔸邀请码互助┊swap-invitation-codes": 26,
+    "🔸机器人命令┊bot-commands": 65,
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 5,
+    "之後計劃做同人谷的圖": 6,
+    "Tawil's c2 is getting a bug with pollux \"Sacred heart\"?": 1,
+    "suggestion for background music": 1,
+    "rework Sabotage mechanic": 2,
+    "Spellbound doesnt work. Why is Lily poison worse than prebuff?": 1,
+    "Please rework how Propagation Caro works for the future units": 7,
+    "Reality Verges": 1,
+    "V2.5.1.0 停服维护公告": 14,
+    "Day 14 of doodling N til Morimens makes him playable": 2,
+    "Poison with friends ch9->Actual content edition": 3,
+    "【English Translation】Opinions Collection": 1,
+    "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 1,
+    "求配队建议": 1,
+    "求隊伍跟目前強度排行😭": 1,
     "🔸阵容构建": 612,
-    "🔸剧情交流": 1,
     "🔸欢乐梗图": 5,
     "🔸相位对弈": 18,
-    "🔸课间休息闲聊": 163,
     "🔸交友频道": 5,
-    "🔸한국어-채팅방": 20,
-    "🔸chaîne-française": 24,
-    "🔸русский-канал": 61,
-    "🔸phòng-chat-tiếng-việt": 604,
-    "🔸canal-español": 366,
-    "🔸canal-português": 15,
-    "🔸ruang-obrolan-indonesia": 470,
-    "🔸ห้องสนทนาภาษาไทย": 186,
-    "🔸traphase": 41,
-    "🔸lore-chat": 233,
-    "🔸lets-count": 24,
-    "🔸team-building": 195,
-    "🔸邀请码互助┊swap-invitation-codes": 19,
-    "🔸机器人命令┊bot-commands": 46,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 1,
     "【敌方意图收录】雪山消融之时活动新增单位一览": 1,
     "【代投】欢迎沙耶来到咪哒": 2,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 8,
@@ -34,12 +49,9 @@
     "Permanent Repeatable Content for Long-Term Players": 16,
     "Can we increase Arcane Dominion runs?": 3,
     "PAID REWARDS NOT RECEIVED! Reality Verges from the Battlepass": 13,
-    "rework Sabotage mechanic": 1,
     "关于主页": 1,
     "密契图鉴加上套装效果": 1,
     "24 need rework": 2,
-    "Please rework how Propagation Caro works for the future units": 1,
-    "V2.5.1.0 停服维护公告": 10,
     "【考据】忘却前夜与罗马人": 3,
     "Ham": 1,
     "Saya✦Art": 3,
@@ -58,26 +70,32 @@
     "【Newcomer Help】Forum Introduction": 1
   },
   "hourly_activity": {
-    "0": 79,
-    "2": 145,
-    "4": 260,
-    "5": 220,
-    "6": 227,
-    "7": 226,
-    "8": 365,
-    "9": 149,
-    "11": 121,
-    "14": 62,
-    "12": 250,
-    "1": 167,
-    "10": 174,
-    "13": 489,
-    "3": 306
+    "0": 83,
+    "1": 191,
+    "2": 167,
+    "3": 414,
+    "4": 323,
+    "5": 271,
+    "6": 447,
+    "7": 437,
+    "8": 789,
+    "9": 669,
+    "10": 476,
+    "11": 199,
+    "12": 304,
+    "13": 584,
+    "14": 305,
+    "15": 210,
+    "16": 270,
+    "17": 113,
+    "18": 127,
+    "19": 26
   },
   "message_types": {
-    "0": 2510,
-    "19": 705,
-    "20": 25
+    "19": 921,
+    "0": 2235,
+    "20": 8,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -97,6 +115,70 @@
       "channel": "the stabbening:tm: 2: electric boogaloo"
     },
     {
+      "id": "1518174379773526036",
+      "channel_id": "1131839817982947429",
+      "content": "群裡只剩我是正常人了<:Doll_sigh:1468259900655145213>",
+      "author": "arr5721",
+      "reactions": 13,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518118876511207454",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518143242774773880",
+      "channel_id": "1131839817982947429",
+      "content": "我現在還要拉人陪我出5771的角色",
+      "author": "yusi4172",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518147737894522952",
+      "channel_id": "1131839817982947429",
+      "content": "我們其實是融毀·朵爾的狗（\n她是真的在喊我們小狗",
+      "author": "coleerouo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518192200956121138",
+      "channel_id": "1131839817982947429",
+      "content": "买毒....哦这个不可以",
+      "author": "ling_an_",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518194421777170504",
+      "channel_id": "1131839817982947429",
+      "content": "~~我也好想被亂湊cp……不小心跟校車綁定了好難過(？)……~~",
+      "author": "shostakovich524",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518196363064643624",
+      "channel_id": "1131839817982947429",
+      "content": "<:Brown_think:1459080117308620996>",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518291729130852556",
+      "channel_id": "1131839817982947429",
+      "content": "不要啊\n好\n我決定了\n以後我就這樣說話\n這樣就不會升級了\nXD\n反正編輯算同一句話\n\n沒關係\n反正我就這樣說\n你們懶得往上翻就算了\n我不介意\n\n反正平常我說話也",
+      "author": "cwz.io",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1518061198099218482",
       "channel_id": "1326453763355185215",
       "content": "<@767916775001292820> happy belated birds day",
@@ -105,140 +187,76 @@
       "channel": "🔸lore-chat"
     },
     {
-      "id": "1518115765713109012",
-      "channel_id": "1131839874132090890",
+      "id": "1518150600427048971",
+      "channel_id": "1131839817982947429",
+      "content": "依然神人愛女姐\n姐們愛女是在強制要求同人改字而不是去幫塔利班掌控地區的女性得到讀書權力",
+      "author": "coleerouo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518174569914171553",
+      "channel_id": "1131839817982947429",
+      "content": "https://tenor.com/view/marvel-lego-marvel-superheroes-cyclops-green-goblin-cyclo",
+      "author": "encyoverride",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1518176340396871742",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "a_wei3797",
+      "author": "cassidy_xue",
       "reactions": 6,
-      "channel": "🔸阵容构建"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518172902074089593",
-      "channel_id": "1131839874132090890",
-      "content": "小心被DC封號\n我有朋友說類似的話被判發表仇恨言論",
-      "author": "cwz.io",
-      "reactions": 6,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518184137125662801",
-      "channel_id": "1131839874132090890",
-      "content": "周日还要上课",
+      "id": "1518190794383822888",
+      "channel_id": "1131839817982947429",
+      "content": "这里的人看起来平均都比我小至少七八岁（）",
       "author": "gensono0609",
       "reactions": 6,
-      "channel": "🔸阵容构建"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518089153428852947",
-      "channel_id": "1300659662311526512",
-      "content": "Aequor god",
-      "author": "im_cycle.",
+      "id": "1518192300012994703",
+      "channel_id": "1131839817982947429",
+      "content": "-# 那個不是不用21就可以了",
+      "author": "0.0._.0_0.",
       "reactions": 6,
-      "channel": "🔸canal-español"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518154097377935370",
-      "channel_id": "1355630588094320661",
-      "content": "5809 what if i messed this up for everyone",
-      "author": "wasted_sanity",
+      "id": "1518193445213311118",
+      "channel_id": "1131839817982947429",
+      "content": "~~還是一律喊群友雜魚好了<:Brown_think:1459080117308620996> ~~",
+      "author": "shostakovich524",
       "reactions": 6,
-      "channel": "🔸lets-count"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518207001513951232",
-      "channel_id": "1518207001513951232",
-      "content": "I would like to recommend the character Eve Meitner from the game CounterSide th",
-      "author": "zettaizer0",
+      "id": "1518194596339781642",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "ernest_heart",
       "reactions": 6,
-      "channel": "New Collab Suggestion on a game destined for EOS"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518170728393080932",
-      "channel_id": "1131839874132090890",
-      "content": "但我昨天宵夜還有吃快400$鹽酥雞",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
+      "id": "1518195417525780600",
+      "channel_id": "1131839817982947429",
+      "content": "~~死老野~~",
+      "author": "kemomimi_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1518064196179202298",
-      "channel_id": "1326453763355185215",
-      "content": "i still can't believe the first ever art event i participated in was the one whe",
-      "author": "hallowednebulae",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1518064504376791192",
-      "channel_id": "1326453763355185215",
-      "content": "(this game actually was one of the things getting me through november last year,",
-      "author": "hallowednebulae",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1518115433348337825",
-      "channel_id": "1326453763355185215",
-      "content": "So question about Arc 2 ||is it basically us traveling to different dimensions o",
-      "author": "wonderofu6052",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1518141936370847754",
-      "channel_id": "1518141936370847754",
-      "content": "如题，一份修了很久终于写完的考据，内容关于阿格里帕和尤乌哈希，长图太大切分了一下放到楼里 顺便也附上pdf\n#v2.5同人征集# uid：100756090",
-      "author": "resazur1n",
-      "reactions": 5,
-      "channel": "【考据】忘却前夜与罗马人"
-    },
-    {
-      "id": "1518112419216494814",
-      "channel_id": "1131839874132090890",
-      "content": "我才剛30天，才推到5-11",
-      "author": "rw_hk",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518112819663605770",
-      "channel_id": "1131839874132090890",
-      "content": "把珊課到+36",
-      "author": "ahong0727",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518151082142990467",
-      "channel_id": "1131839874132090890",
-      "content": "因為我都拿來當手機跟電腦的中轉站",
-      "author": "cwz.io",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518164840701497394",
-      "channel_id": "1131839874132090890",
-      "content": "~~网站还没建立~~",
-      "author": "gensono0609",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518165830104387616",
-      "channel_id": "1131839874132090890",
-      "content": "有點像拉拉微直",
-      "author": "hon_ey0",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1518171521816727573",
-      "channel_id": "1131839874132090890",
-      "content": "軟體",
-      "author": "quackdayo",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
+      "id": "1518197064045957192",
+      "channel_id": "1131839817982947429",
+      "content": "高情商：跟貓分手\n低情商：卸載遊戲",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     }
   ]
 }
