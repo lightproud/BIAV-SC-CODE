@@ -1,32 +1,101 @@
 {
   "date": "2023-11-14",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 3,
-  "attachments": 1,
+  "messages": 133,
+  "unique_authors": 18,
+  "reactions_total": 18,
+  "attachments": 3,
   "channel_activity": {
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 121,
+    "🔸morimens-game-chat": 6,
     "騎士「奧吉爾」前來報到！": 2,
-    "「雷婭」的小愛好": 2,
-    "官方佈告（已停止使用）": 1
+    "「雷婭」的小愛好": 2
   },
   "hourly_activity": {
-    "10": 1,
-    "12": 1,
-    "4": 1,
-    "7": 1,
-    "11": 1
+    "11": 10,
+    "0": 5,
+    "1": 8,
+    "2": 8,
+    "4": 23,
+    "6": 3,
+    "7": 9,
+    "8": 4,
+    "10": 14,
+    "12": 7,
+    "13": 26,
+    "14": 10,
+    "15": 2,
+    "16": 3,
+    "17": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 97,
+    "19": 31
   },
   "top_reacted_messages": [
     {
       "id": "1173951383565774920",
+      "channel_id": "1131796304050262126",
       "content": "✦異變事件調查手記 第一期✦\n彌薩格的調查隊都是怎麼平息「融蝕」相關的異變事件的呢，\n今天小花腦在檔案室裡翻到了一份調查手記，一起來看看吧！\n——等等，好像越看",
       "author": "morimensstaff02",
       "reactions": 3,
       "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1173938914071949332",
+      "channel_id": "1131839817982947429",
+      "content": "三商?",
+      "author": "iexc",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1173780563098878143",
+      "channel_id": "1170692781216378960",
+      "content": "Code:「HVGX-HLDX-QKKN」",
+      "author": "jackpot_7",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1173972422328852551",
+      "channel_id": "1131839817982947429",
+      "content": "哈哈哈是正經的正面效果啦~",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1173883765576179722",
+      "channel_id": "1131839817982947429",
+      "content": "我們也可以使用郵箱預約~",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1173976444263727145",
+      "channel_id": "1131839817982947429",
+      "content": "~~這麽一看感覺米爾會選防禦的樣子~~",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1173816113524654211",
+      "channel_id": "1170692781216378960",
+      "content": "🤩 When Morimens release at November 30th~ We can use this code!!",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1174039131983192064",
+      "channel_id": "1170692781216378960",
+      "content": "Great work on morimens btw! Looking fantastic so far!",
+      "author": "vinnyviolets",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

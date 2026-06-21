@@ -1,10 +1,12 @@
 {
   "date": "2026-05-28",
-  "messages": 20944,
+  "messages": 30809,
   "unique_authors": 810,
-  "reactions_total": 2741,
-  "attachments": 1242,
+  "reactions_total": 3672,
+  "attachments": 1930,
   "channel_activity": {
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 411,
+    "🔸morimens-game-chat": 9573,
     "🔸general-chat": 4076,
     "🔸綜合討論": 4351,
     "🔸相位对弈": 30,
@@ -23,7 +25,6 @@
     "🔸邀请码互助┊swap-invitation-codes": 55,
     "🔸game-question": 4634,
     "🔸机器人命令┊bot-commands": 145,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 119,
     "會考慮重製劇情或者其他形式的重製劇情嗎？": 2,
     "V2.5.1.0 停服维护公告": 29,
     "【English Translation】Opinions Collection": 6,
@@ -108,35 +109,33 @@
     "1509576611425419405": 2
   },
   "hourly_activity": {
-    "21": 391,
-    "22": 390,
-    "23": 486,
-    "0": 760,
-    "1": 937,
-    "2": 817,
-    "3": 1048,
-    "4": 670,
-    "5": 814,
-    "6": 1327,
-    "7": 978,
-    "8": 871,
-    "9": 736,
-    "10": 958,
-    "11": 735,
-    "12": 1135,
-    "13": 783,
-    "14": 1142,
-    "15": 1300,
-    "16": 1064,
-    "17": 1145,
-    "18": 1251,
-    "19": 930,
-    "20": 276
+    "3": 1601,
+    "4": 1258,
+    "5": 1237,
+    "6": 1898,
+    "7": 1294,
+    "8": 1305,
+    "9": 1098,
+    "10": 1395,
+    "11": 1077,
+    "0": 1133,
+    "1": 1107,
+    "2": 1363,
+    "12": 1657,
+    "13": 1261,
+    "14": 1310,
+    "15": 1711,
+    "16": 1669,
+    "17": 1439,
+    "18": 1519,
+    "19": 1250,
+    "20": 911,
+    "21": 775,
+    "22": 616,
+    "23": 925
   },
   "message_types": {
-    "0": 127,
-    "19": 87,
-    "23": 1
+    "0": 292
   },
   "top_reacted_messages": [
     {
@@ -146,6 +145,14 @@
       "author": "morimensstaff06",
       "reactions": 684,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1509594772904476683",
+      "channel_id": "1170692781216378960",
+      "content": "I hope things go well for Morimens...",
+      "author": "laman001",
+      "reactions": 28,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1509389320237355089",
@@ -212,6 +219,22 @@
       "channel": "喵？->「你找我嗎？」| |员威廉"
     },
     {
+      "id": "1509379147128901735",
+      "channel_id": "1170692781216378960",
+      "content": "🥀",
+      "author": "sprawwa",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509525903279919205",
+      "channel_id": "1170692781216378960",
+      "content": "So this is possible...",
+      "author": "begonethot8290",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509440091066597518",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -236,6 +259,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1509391628689866813",
+      "channel_id": "1509389887080632330",
+      "content": "大家可以参与了吗？\nIs everyone free to participate now?",
+      "author": "morimensstaff06",
+      "reactions": 7,
+      "channel": "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives"
+    },
+    {
+      "id": "1509527245746737194",
+      "channel_id": "1170692781216378960",
+      "content": "Now ppl can check the stats and see pickman dealt more damage than doresain",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509434166322663444",
       "channel_id": "1131839817982947429",
       "content": "剩我一個連30000都課不起了",
@@ -258,46 +297,6 @@
       "author": "ahuahuahua",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509598295754805460",
-      "channel_id": "1400750050208125010",
-      "content": "Hmm... You might be onto something... 🛳️",
-      "author": "cerixxix",
-      "reactions": 6,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1509675281923965030",
-      "channel_id": "1433513650299076780",
-      "content": "these are must buys for everyone no exception right?",
-      "author": "crypthiccc",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1509668687521775616",
-      "channel_id": "1509668687521775616",
-      "content": "突然有個有關劇情問題想問，會考慮重製(知道現階段不太可能，未來也應該機會不大)或者以小說的形式去重新展開被壓縮的劇情嗎？\n\n目前的劇情還是很不錯，只是一些細節上",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "會考慮重製劇情或者其他形式的重製劇情嗎？"
-    },
-    {
-      "id": "1509536023816700065",
-      "channel_id": "1400750050208125010",
-      "content": "Things are well written in cheri's handbook\nFrom ch1 to ch5 it's pretty ez, you ",
-      "author": "theviy",
-      "reactions": 3,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1509590642517475438",
-      "channel_id": "1400750050208125010",
-      "content": "No",
-      "author": "rocketmacaron_",
-      "reactions": 3,
-      "channel": "🔸general-chat"
     }
   ]
 }

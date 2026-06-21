@@ -1,17 +1,45 @@
 {
   "date": "2023-11-19",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 93,
+  "unique_authors": 12,
+  "reactions_total": 4,
+  "attachments": 7,
   "channel_activity": {
-    "官方佈告（已停止使用）": 1
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 87,
+    "🔸morimens-game-chat": 4
   },
   "hourly_activity": {
-    "11": 1
+    "11": 42,
+    "1": 2,
+    "4": 7,
+    "7": 3,
+    "9": 1,
+    "10": 13,
+    "12": 15,
+    "13": 8,
+    "2": 2
   },
   "message_types": {
-    "0": 1
+    "0": 76,
+    "19": 16
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1175767759745990677",
+      "channel_id": "1170692781216378960",
+      "content": "can't wait for the game, it looks cool so far! great work for the dev team",
+      "author": "valterrbb",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1175768276257747014",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "lunacy_li",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
 }

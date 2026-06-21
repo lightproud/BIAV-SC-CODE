@@ -1,0 +1,44 @@
+{
+  "date": "2023-10-28",
+  "messages": 49,
+  "unique_authors": 9,
+  "reactions_total": 4,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸綜合討論": 44,
+    "遊戲問題及bug回報": 5
+  },
+  "hourly_activity": {
+    "1": 8,
+    "2": 4,
+    "3": 3,
+    "4": 3,
+    "7": 15,
+    "10": 6,
+    "11": 5,
+    "12": 3,
+    "15": 2
+  },
+  "message_types": {
+    "0": 39,
+    "19": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1167669847803564074",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "lunacy_li",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1167639061872246835",
+      "channel_id": "1131839817982947429",
+      "content": "不過只看圖的話看起來戰鬥是挺像的",
+      "author": "rainbowteemo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

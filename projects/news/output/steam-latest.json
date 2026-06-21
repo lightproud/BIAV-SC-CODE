@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-06-20T16:20:09.176753+00:00",
+  "collected_at": "2026-06-21T02:39:07.920695+00:00",
   "source": "steam",
   "item_count": 17,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-20T03:43:14+00:00",
+      "lang": "english",
+      "title": "[正面] I have no idea what I am doing and not sure I am f...",
+      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
+      "author": "76561198035846757",
+      "engagement": 2,
+      "language": "english",
+      "voted_up": true,
+      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
+      "timestamp_created": 1781926994,
+      "playtime_forever": 2426
+    },
     {
       "source": "steam",
       "time": "2026-06-20T13:53:54+00:00",
@@ -50,18 +65,63 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-20T03:43:14+00:00",
+      "time": "2026-06-20T19:19:13+00:00",
       "lang": "english",
-      "title": "[正面] I have no idea what I am doing and not sure I am f...",
-      "summary": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "url": "https://steamcommunity.com/profiles/76561198035846757/recommended/3052450",
-      "author": "76561198035846757",
-      "engagement": 1,
+      "title": "[正面] Best gacha ive played. Actually a good game.",
+      "summary": "Best gacha ive played. Actually a good game.",
+      "url": "https://steamcommunity.com/profiles/76561198091721800/recommended/3052450",
+      "author": "76561198091721800",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "I have no idea what I am doing and not sure I am following what is going on, but I can't stop playing",
-      "timestamp_created": 1781926994,
-      "playtime_forever": 1886
+      "review": "Best gacha ive played. Actually a good game.",
+      "timestamp_created": 1781983153,
+      "playtime_forever": 1480
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T19:06:41+00:00",
+      "lang": "english",
+      "title": "[正面] Absolutely incredible game, it truly shows the lov...",
+      "summary": "Absolutely incredible game, it truly shows the love the devs have for the game. It's amazing.",
+      "url": "https://steamcommunity.com/profiles/76561198157600274/recommended/3052450",
+      "author": "76561198157600274",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Absolutely incredible game, it truly shows the love the devs have for the game. It's amazing.",
+      "timestamp_created": 1781982401,
+      "playtime_forever": 2190
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T18:09:30+00:00",
+      "lang": "french",
+      "title": "[正面] J'ai adorée",
+      "summary": "J'ai adorée",
+      "url": "https://steamcommunity.com/profiles/76561199787002462/recommended/3052450",
+      "author": "76561199787002462",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "J'ai adorée",
+      "timestamp_created": 1781978970,
+      "playtime_forever": 6167
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-20T16:51:18+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好看",
+      "summary": "好看",
+      "url": "https://steamcommunity.com/profiles/76561198686513407/recommended/3052450",
+      "author": "76561198686513407",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好看",
+      "timestamp_created": 1781974278,
+      "playtime_forever": 309
     },
     {
       "source": "steam",
@@ -76,7 +136,7 @@
       "voted_up": true,
       "review": "honestly one of the best gacha games ive ever played, the fact that this game almost eos'd a year in and is now thriving at its 2.5 anni is so wonderful to me.\r\nthe fact that regardless of its earlier decline people continued to support the game and allowed it to make improvements like fully human translations for the english and korean dubs is also something i really appreciate since ai translations are not only less effective but also like boo ai lame.\r\nmorimens also has some of the best character designs out of any gacha ive touched, the lovecraftian visuals and more mature story and character themes make the story actually pretty interesting aswell\r\n10/10 would recommend <3",
       "timestamp_created": 1781953122,
-      "playtime_forever": 2484
+      "playtime_forever": 3035
     },
     {
       "source": "steam",
@@ -106,7 +166,7 @@
       "voted_up": true,
       "review": "Peak",
       "timestamp_created": 1781942725,
-      "playtime_forever": 704
+      "playtime_forever": 734
     },
     {
       "source": "steam",
@@ -151,7 +211,7 @@
       "voted_up": true,
       "review": "다른 이런 장르에 게임을 보고 이 게임이 혜자라는 것에 눈물을 느껴야 하는게 통탄스럽다",
       "timestamp_created": 1781930191,
-      "playtime_forever": 7552
+      "playtime_forever": 7603
     },
     {
       "source": "steam",
@@ -181,7 +241,7 @@
       "voted_up": true,
       "review": "Hammy gives me stuff I like Hammy",
       "timestamp_created": 1781925300,
-      "playtime_forever": 5873
+      "playtime_forever": 6003
     },
     {
       "source": "steam",
@@ -196,67 +256,7 @@
       "voted_up": true,
       "review": "this game deserves way more recognition. story is peak, character design is peak, and the card combat is actually fun. started for the Saya collab, but i will definitely be staying. if you're into lovecraftian style stuff & aesthetics like bloodborne, etc., then you will probably very much enjoy this game.",
       "timestamp_created": 1781924851,
-      "playtime_forever": 1240
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T21:59:47+00:00",
-      "lang": "english",
-      "title": "[正面] pog",
-      "summary": "pog",
-      "url": "https://steamcommunity.com/profiles/76561198915767922/recommended/3052450",
-      "author": "76561198915767922",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "pog",
-      "timestamp_created": 1781906387,
-      "playtime_forever": 4470
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T21:02:37+00:00",
-      "lang": "english",
-      "title": "[正面] soo fun and vv beginner friendly imo :p",
-      "summary": "soo fun and vv beginner friendly imo :p",
-      "url": "https://steamcommunity.com/profiles/76561199842226166/recommended/3052450",
-      "author": "76561199842226166",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "soo fun and vv beginner friendly imo :p",
-      "timestamp_created": 1781902957,
-      "playtime_forever": 1021
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T20:27:18+00:00",
-      "lang": "russian",
-      "title": "[负面] F2P и упрощённый Darkest Dungeon с азиатским виден...",
-      "summary": "F2P и упрощённый Darkest Dungeon с азиатским виденьем. Зачем это выпускать в Steam, если не в силах сделать даже английский текст без ИИ? Зачем играть в это, если можно сыграть в серию Darkest Dungeon? \n\nАх, да. Забыл упомянуть, есть существует такая игра как Darkest Dungeon. Хы-хы.\n\n10 страж \\ 10 страж\n[hr][/hr]\nЦелевая аудитория игры - мобильные игроки. Насколько целесообразно публиковать ф2п мобильный клон DD в стиме без пучка локализаций? Не знаю.\n[spoiler][i]Кто-то эту [strike]игру[/strike] продукт полюбит, но явно не я.[/i] На меня будто выплюнули пережёванный Darkest Dungeon с примесью анимешной версии Bloodborne. Оставил бы позитивную оценку, но не люблю играть в эмульсии других игр.[/spoiler]",
-      "url": "https://steamcommunity.com/profiles/76561199388710922/recommended/3052450",
-      "author": "76561199388710922",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "F2P и упрощённый Darkest Dungeon с азиатским виденьем. Зачем это выпускать в Steam, если не в силах сделать даже английский текст без ИИ? Зачем играть в это, если можно сыграть в серию Darkest Dungeon? \n\nАх, да. Забыл упомянуть, есть существует такая игра как Darkest Dungeon. Хы-хы.\n\n10 страж \\ 10 страж\n[hr][/hr]\nЦелевая аудитория игры - мобильные игроки. Насколько целесообразно публиковать ф2п мобильный клон DD в стиме без пучка локализаций? Не знаю.\n[spoiler][i]Кто-то эту [strike]игру[/strike] продукт полюбит, но явно не я.[/i] На меня будто выплюнули пережёванный Darkest Dungeon с примесью анимешной версии Bloodborne. Оставил бы позитивную оценку, но не люблю играть в эмульсии других игр.[/spoiler]",
-      "timestamp_created": 1781900838,
-      "playtime_forever": 13
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-19T18:08:05+00:00",
-      "lang": "english",
-      "title": "[正面] good game, pretty art",
-      "summary": "good game, pretty art",
-      "url": "https://steamcommunity.com/profiles/76561198871556652/recommended/3052450",
-      "author": "76561198871556652",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "good game, pretty art",
-      "timestamp_created": 1781892485,
-      "playtime_forever": 342
+      "playtime_forever": 1287
     }
   ]
 }

@@ -1,41 +1,204 @@
 {
   "date": "2023-11-23",
-  "messages": 15,
-  "unique_authors": 6,
-  "reactions_total": 2,
-  "attachments": 3,
+  "messages": 803,
+  "unique_authors": 41,
+  "reactions_total": 48,
+  "attachments": 51,
   "channel_activity": {
+    "活動訊息": 2,
+    "官方佈告（已停止使用）": 2,
+    "🔸綜合討論": 762,
+    "discord社群建議": 16,
+    "🔸morimens-game-chat": 6,
+    "🔸剧情交流": 10,
     "來一起跟「尤烏哈希」演小劇場吧~": 2,
     "雕砌藝術家「珊」": 1,
-    "關於「融蝕」的小知識~": 2,
-    "活動訊息": 1,
-    "官方佈告（已停止使用）": 1,
-    "discord社群建議": 8
+    "關於「融蝕」的小知識~": 2
   },
   "hourly_activity": {
-    "7": 2,
-    "16": 3,
-    "3": 2,
-    "11": 2,
-    "12": 6
+    "3": 43,
+    "0": 5,
+    "1": 26,
+    "2": 119,
+    "4": 24,
+    "5": 39,
+    "6": 133,
+    "7": 91,
+    "8": 43,
+    "9": 32,
+    "10": 23,
+    "11": 77,
+    "12": 97,
+    "13": 23,
+    "14": 4,
+    "15": 9,
+    "16": 12,
+    "23": 3
   },
   "message_types": {
-    "0": 5
+    "0": 548,
+    "19": 240
   },
   "top_reacted_messages": [
     {
-      "id": "1177213312157622314",
-      "content": "好哦好哦，我處理一下哦！",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "discord社群建議"
+      "id": "1177165208012201984",
+      "channel_id": "1170692781216378960",
+      "content": "The game goes live on <t:1701309600:F>",
+      "author": "rainbowteemo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1177226972972204072",
-      "content": "好的好的，馬上處理~感謝反饋！",
-      "author": "morimensstaff01",
+      "id": "1177105898053832725",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1131796304050262126/11770839266",
+      "author": "rainbowteemo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1177106667079475272",
+      "channel_id": "1131839817982947429",
+      "content": "技術上來說\n等晚上大概7點半米爾會來互動 那個才是",
+      "author": "rainbowteemo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177133785821741077",
+      "channel_id": "1131839817982947429",
+      "content": "~~或許等到別的服務器開服就成年了~~",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177143237601935371",
+      "channel_id": "1131839817982947429",
+      "content": "晚上七點半米爾貼的小活動才算",
+      "author": "rainbowteemo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177143912910049311",
+      "channel_id": "1131839817982947429",
+      "content": "沒關係呀~大家互相交流也會變得很厲害的！",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177144640961519616",
+      "channel_id": "1131839817982947429",
+      "content": "抄作业，从头1:1复刻",
+      "author": "metam0n",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177083757392568361",
+      "channel_id": "1131839817982947429",
+      "content": "<@1168397039999135905>，~~一隻抖M~~",
+      "author": "arr5721",
       "reactions": 1,
-      "channel": "discord社群建議"
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177131662279196773",
+      "channel_id": "1131839817982947429",
+      "content": "填表格就可以了，不難吧\n米爾已經把不必要的格數刪掉了",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177143603978571856",
+      "channel_id": "1131839817982947429",
+      "content": "畢竟也算是世界觀的討論！",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177145456657182811",
+      "channel_id": "1131839817982947429",
+      "content": "👀  应该会有人做吧，我自己是也可以录全称实况再传到油土鳖啦",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177147499237081128",
+      "channel_id": "1131839817982947429",
+      "content": "失智守密人(躺平.jpg",
+      "author": "momoshiocha",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177147516966408242",
+      "channel_id": "1131839817982947429",
+      "content": "👀  ||别人写的我都不看，||我自己的还没动笔写",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177148003828633610",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝大佬帶我們飛(供奉大腦",
+      "author": "momoshiocha",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177148403906531418",
+      "channel_id": "1131839817982947429",
+      "content": "诶我昵称后面的小草怎么没了，有效期只有1天吗",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177149784474255360",
+      "channel_id": "1131839817982947429",
+      "content": "應該就是領獎品要本人簽名的部分",
+      "author": "momoshiocha",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177151245253881976",
+      "channel_id": "1131839817982947429",
+      "content": "法務哥哥寫的文稿~為了保障適用性才這樣寫的！",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177151618324635700",
+      "channel_id": "1131839817982947429",
+      "content": "因為我是新人調查員",
+      "author": "master.666",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177154840812601415",
+      "channel_id": "1131839817982947429",
+      "content": "我也在等iOS的 時間可以下載<:4634sagiribox:1048087271997448252>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1177154875671461979",
+      "channel_id": "1131839817982947429",
+      "content": "因為我要課<:6203luminethink:1048087903483478106>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
     }
   ]
 }

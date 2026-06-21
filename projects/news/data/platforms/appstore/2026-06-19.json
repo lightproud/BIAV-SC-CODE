@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-20T16:20:13.705729+00:00",
+  "archived_at": "2026-06-21T02:39:13.481662+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "One of the best gacha games",
@@ -16,6 +16,19 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us"
+    },
+    {
+      "title": "Luv Luv Luv",
+      "summary": "I love this game so much! One of the game I didn’t quit and I love the art It is very unique 🎃",
+      "source": "appstore",
+      "time": "2026-06-19T11:25:07-07:00",
+      "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "Colenyun",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "ph"
     }
   ]
 }

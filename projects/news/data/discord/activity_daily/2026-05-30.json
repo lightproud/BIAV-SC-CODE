@@ -1,10 +1,11 @@
 {
   "date": "2026-05-30",
-  "messages": 35011,
+  "messages": 50179,
   "unique_authors": 929,
-  "reactions_total": 3641,
-  "attachments": 2400,
+  "reactions_total": 5597,
+  "attachments": 3438,
   "channel_activity": {
+    "🔸morimens-game-chat": 15168,
     "🔸general-chat": 5215,
     "🔸綜合討論": 5306,
     "🔸阵容构建": 182,
@@ -105,34 +106,34 @@
     "1510194814119968830": 1
   },
   "hourly_activity": {
-    "7": 2071,
-    "8": 1711,
-    "9": 1486,
-    "10": 1187,
-    "11": 1647,
-    "12": 1573,
-    "13": 2337,
-    "14": 2336,
-    "15": 950,
-    "16": 1265,
-    "17": 1058,
-    "18": 1082,
-    "19": 878,
-    "20": 555,
-    "21": 1033,
-    "22": 652,
-    "23": 414,
-    "0": 638,
-    "1": 1946,
-    "2": 1932,
-    "3": 1888,
-    "4": 2214,
-    "5": 2233,
-    "6": 1925
+    "0": 1134,
+    "1": 2895,
+    "2": 2823,
+    "3": 3085,
+    "4": 2969,
+    "5": 2805,
+    "6": 2430,
+    "7": 2861,
+    "8": 2611,
+    "9": 2287,
+    "10": 1737,
+    "11": 2073,
+    "12": 2108,
+    "13": 2893,
+    "14": 3024,
+    "15": 1642,
+    "16": 1735,
+    "17": 1622,
+    "18": 1458,
+    "19": 1286,
+    "20": 1011,
+    "21": 1395,
+    "22": 1258,
+    "23": 1037
   },
   "message_types": {
-    "0": 2744,
-    "19": 976
+    "0": 8659,
+    "19": 6509
   },
   "top_reacted_messages": [
     {
@@ -168,6 +169,54 @@
       "channel": "Saya no Uta : Team Guide"
     },
     {
+      "id": "1510339087570309321",
+      "channel_id": "1170692781216378960",
+      "content": "Dont fucking thumb me up explain how",
+      "author": "dexetro",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510095766172074085",
+      "channel_id": "1170692781216378960",
+      "content": "Lol",
+      "author": "kirarane",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510097795191673054",
+      "channel_id": "1170692781216378960",
+      "content": "This feels kinda brick",
+      "author": "kirarane",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510262253587529759",
+      "channel_id": "1170692781216378960",
+      "content": "dont pull kaleido guys",
+      "author": "d3mifiend",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510290067485098034",
+      "channel_id": "1170692781216378960",
+      "content": "unfortunately not yet :/",
+      "author": "l8989c",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510300178660458628",
+      "channel_id": "1170692781216378960",
+      "content": "Lotan x Morimens Collab.\nEvery Awakener becomes Lotan.",
+      "author": "makiyujipicsstache",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1510160855126380584",
       "channel_id": "1131839817982947429",
       "content": "被奧吉爾嚇哭了",
@@ -200,6 +249,38 @@
       "channel": "Maybe Dissolution is..."
     },
     {
+      "id": "1510099007756701856",
+      "channel_id": "1170692781216378960",
+      "content": "🥀",
+      "author": "sooneruzuki",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510099267279130756",
+      "channel_id": "1170692781216378960",
+      "content": "Morimens was truly kind today :D",
+      "author": "sungodpharmos",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510112939527377019",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "brice_be_nice",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510152764263501854",
+      "channel_id": "1170692781216378960",
+      "content": "love how you can still tell what the card is",
+      "author": "duskisnotdust",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1510094482933022801",
       "channel_id": "1131839817982947429",
       "content": "我扛不住了偏偏給我這命輪",
@@ -214,86 +295,6 @@
       "author": "sayo.0320",
       "reactions": 9,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510237250343145532",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510270726563827802",
-      "channel_id": "1131839817982947429",
-      "content": "||~~醫生理論上才能合法摸蘿莉~~||",
-      "author": "jjlin0103",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510283236410916864",
-      "channel_id": "1131839817982947429",
-      "content": "性病也是",
-      "author": "yi000607",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510308582699307039",
-      "channel_id": "1131839817982947429",
-      "content": "我用同一隊打五關 你就說算不算400",
-      "author": "yi000607",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510122869408010411",
-      "channel_id": "1174983699935277147",
-      "content": "190超限+1命輪",
-      "author": "tanchen0811",
-      "reactions": 9,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1510150918090391553",
-      "channel_id": "1174983699935277147",
-      "content": "贏了",
-      "author": "chenboakai",
-      "reactions": 9,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1510151955895418982",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "axe_proficient",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510168961994588281",
-      "channel_id": "1131839817982947429",
-      "content": "贏了",
-      "author": "heikwok",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510411319281451168",
-      "channel_id": "1241345906826153984",
-      "content": "久違吃一下現pa哥妹",
-      "author": "carrot_chicken",
-      "reactions": 7,
-      "channel": "打算開一個圖樓可能圖之後就丟這裡了"
-    },
-    {
-      "id": "1510313287680790548",
-      "channel_id": "1400750050208125010",
-      "content": "",
-      "author": "jmjmjm6667",
-      "reactions": 5,
-      "channel": "🔸general-chat"
     }
   ]
 }

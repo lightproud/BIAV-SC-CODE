@@ -1,32 +1,165 @@
 {
   "date": "2023-10-31",
-  "messages": 4,
-  "unique_authors": 4,
-  "reactions_total": 27,
-  "attachments": 3,
+  "messages": 472,
+  "unique_authors": 23,
+  "reactions_total": 83,
+  "attachments": 39,
   "channel_activity": {
-    "官方佈告（已停止使用）": 2,
-    "discord社群建議": 2
+    "官方佈告（已停止使用）": 4,
+    "🔸綜合討論": 457,
+    "遊戲問題及bug回報": 7,
+    "discord社群建議": 4
   },
   "hourly_activity": {
-    "10": 1,
-    "13": 1,
-    "2": 2
+    "10": 35,
+    "13": 2,
+    "0": 58,
+    "1": 121,
+    "2": 66,
+    "3": 9,
+    "4": 33,
+    "5": 7,
+    "6": 18,
+    "7": 6,
+    "8": 39,
+    "9": 12,
+    "11": 8,
+    "12": 19,
+    "14": 2,
+    "15": 20,
+    "16": 3,
+    "17": 2,
+    "18": 1,
+    "23": 11
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 372,
+    "19": 96
   },
   "top_reacted_messages": [
     {
       "id": "1168897863049293824",
+      "channel_id": "1131796304050262126",
       "content": "米爾悄咪咪地把朵爾的立繪放這裡了噢~",
       "author": "alpha0909_",
       "reactions": 26,
       "channel": "官方佈告（已停止使用）"
     },
     {
+      "id": "1168861039752912896",
+      "channel_id": "1131839817982947429",
+      "content": "米爾收到了一條新情報！ 快來猜猜看，今天預告的是彌薩格大學是最XX的喚醒體呀？ \nA：理智   B：瘋狂  C：自戀  D：懦弱    E：（你还有其他答案吗？",
+      "author": "alpha0909_",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168713107099627550",
+      "channel_id": "1131839817982947429",
+      "content": "整個九分鐘就是看他亂打\n然後抱怨為甚麼我亂打打不了傷害",
+      "author": "rainbowteemo",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168739595836456980",
+      "channel_id": "1131839817982947429",
+      "content": "有必要",
+      "author": "falst_over_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168863592867692595",
+      "channel_id": "1131839817982947429",
+      "content": "乖巧不等於懦弱",
+      "author": "jackpot_7",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168890500980412416",
+      "channel_id": "1131839817982947429",
+      "content": "謝謝戈雅，我會珍藏的<:emoji_20:1134396426391138315>",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168938621185839276",
+      "channel_id": "1131839817982947429",
+      "content": "代替米爾悄悄的給你塞滿一口袋糖🍭🍬🍫",
+      "author": "lubi_17667",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168831005025640479",
+      "channel_id": "1131839817982947429",
+      "content": "不是\n3隻基本上就是完整體",
+      "author": "rainbowteemo",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168844656004579379",
+      "channel_id": "1131839817982947429",
+      "content": "嗯嗯好哦，辛苦啦！",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168886706603298937",
+      "channel_id": "1131839817982947429",
+      "content": "萬聖節快樂！",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168886758201638973",
+      "channel_id": "1131839817982947429",
+      "content": "萬聖節快樂<:a_ca10:1113776892697391105>",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168886804846477312",
+      "channel_id": "1131839817982947429",
+      "content": "哇羨慕！",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168939244530712697",
+      "channel_id": "1131839817982947429",
+      "content": "我才沒，不管！反正你的就是大家的",
+      "author": "lubi_17667",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168939391499120740",
+      "channel_id": "1131839817982947429",
+      "content": "不搗蛋就給糖",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1168709920049336351",
+      "channel_id": "1131840077237067837",
+      "content": "這個預約給到陸服的google地區的樣子",
+      "author": "jackpot_7",
+      "reactions": 1,
+      "channel": "遊戲問題及bug回報"
+    },
+    {
       "id": "1168731590071951421",
+      "channel_id": "1166623241293545492",
       "content": "其實我覺得配隊區可以改成Forum我覺得各種層面上更好區分隊伍 也更易於解釋打法",
       "author": "falst_over_",
       "reactions": 1,

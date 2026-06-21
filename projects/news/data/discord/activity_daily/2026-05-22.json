@@ -1,11 +1,12 @@
 {
   "date": "2026-05-22",
-  "messages": 22952,
+  "messages": 33916,
   "unique_authors": 603,
-  "reactions_total": 1731,
-  "attachments": 1198,
+  "reactions_total": 3122,
+  "attachments": 1784,
   "channel_activity": {
-    "🔸lets-count": 7,
+    "🔸lets-count": 27,
+    "🔸morimens-game-chat": 10944,
     "🔸綜合討論": 4748,
     "🔸한국어-채팅방": 460,
     "🔸русский-канал": 527,
@@ -80,33 +81,33 @@
     "1507446354274943088": 1
   },
   "hourly_activity": {
-    "16": 1387,
-    "18": 1073,
-    "19": 365,
-    "20": 550,
-    "23": 1040,
-    "21": 418,
-    "22": 1252,
-    "0": 277,
-    "1": 381,
-    "2": 1051,
-    "3": 1708,
-    "4": 879,
-    "5": 620,
-    "6": 619,
-    "7": 750,
-    "8": 794,
-    "9": 1227,
-    "10": 730,
-    "11": 1241,
-    "12": 1044,
-    "13": 1140,
-    "14": 1275,
-    "15": 1203,
-    "17": 1928
+    "0": 583,
+    "1": 818,
+    "2": 1442,
+    "3": 2205,
+    "5": 1191,
+    "8": 1185,
+    "10": 1410,
+    "12": 1749,
+    "14": 1689,
+    "15": 1818,
+    "4": 1504,
+    "6": 895,
+    "7": 1055,
+    "9": 1645,
+    "11": 2024,
+    "13": 1862,
+    "16": 1825,
+    "17": 2451,
+    "18": 1329,
+    "19": 734,
+    "20": 1048,
+    "21": 691,
+    "22": 1465,
+    "23": 1298
   },
   "message_types": {
-    "0": 7
+    "0": 20
   },
   "top_reacted_messages": [
     {
@@ -116,6 +117,22 @@
       "author": "morimensstaff06",
       "reactions": 34,
       "channel": "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering"
+    },
+    {
+      "id": "1507367809728909392",
+      "channel_id": "1170692781216378960",
+      "content": "<@1164303137293729792> can I try muting you",
+      "author": "angbak",
+      "reactions": 22,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507385421447958619",
+      "channel_id": "1170692781216378960",
+      "content": "<@193043069275209728>",
+      "author": "jmjmjm6667",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1507183026759536651",
@@ -132,6 +149,14 @@
       "author": "encyoverride",
       "reactions": 15,
       "channel": "V2.5.1.0 停服维护公告"
+    },
+    {
+      "id": "1507410794910847006",
+      "channel_id": "1170692781216378960",
+      "content": "My birthday today~~~~\n\nHappy birthday to me~",
+      "author": "the_black_butterfly",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1507211397317136538",
@@ -158,6 +183,14 @@
       "channel": "🎬 忘却前夜×沙耶之歌 V2.5.1 概念PV「悠久漂泊之歌」┊Morimens × Saya no Uta V2.5.1 PV - Song of Perennial Wandering"
     },
     {
+      "id": "1507417095456166019",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1507313062510858261",
       "channel_id": "1131839817982947429",
       "content": "https://tenor.com/view/cats-plushies-watermelon-squish-cats-getting-squished-by-",
@@ -174,100 +207,68 @@
       "channel": "🔸晒卡分享"
     },
     {
-      "id": "1507261342623465472",
-      "channel_id": "1131839817982947429",
-      "content": "好像终于能还清债了",
-      "author": "ponponnyaru",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1507369243522498570",
+      "channel_id": "1170692781216378960",
+      "content": "<@296679098703544321>",
+      "author": "brainrot_in_a_vat",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1507304351075663923",
-      "channel_id": "1131839817982947429",
-      "content": "還說明年半周年也要聯動下一款",
-      "author": "taki002",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
+      "id": "1507369857111560252",
+      "channel_id": "1170692781216378960",
+      "content": "Me when I have to ban arisu cause im bored... 😔",
+      "author": "stormimi",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1507419728073723954",
-      "channel_id": "1131839817982947429",
+      "id": "1507406288215216349",
+      "channel_id": "1170692781216378960",
+      "content": "Atshu atshuku rare",
+      "author": "jmjmjm6667",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507335391508697209",
+      "channel_id": "1170692781216378960",
+      "content": "15k",
+      "author": "princess.goth",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507377709397970954",
+      "channel_id": "1170692781216378960",
       "content": "",
       "author": "jmjmjm6667",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507387192601743581",
+      "channel_id": "1170692781216378960",
+      "content": "can you draw pregnant goliath",
+      "author": "isaybyebye_bye",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507482344720957630",
+      "channel_id": "1170692781216378960",
+      "content": "only an hour, nnot bad",
+      "author": "brainrot_in_a_vat",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507364865906315387",
+      "channel_id": "1170692781216378960",
+      "content": "what this immediately reminded me of",
+      "author": "glitzy_x",
       "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507246643890618419",
-      "channel_id": "1174983699935277147",
-      "content": "新開刷邀請的小號 15抽出了這兩",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 8,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1507178402128330913",
-      "channel_id": "1194835209242296410",
-      "content": "100002485",
-      "author": "sayo.0320",
-      "reactions": 8,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1507230275166408804",
-      "channel_id": "1131839817982947429",
-      "content": "把地上的树叶吃了",
-      "author": "menkou0870",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507303534217920572",
-      "channel_id": "1131839817982947429",
-      "content": "可以問能不能把公告的慢速關掉嗎\n反正他們也沒在看",
-      "author": "water_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507312146936107151",
-      "channel_id": "1131839817982947429",
-      "content": "喔 有開",
-      "author": "nemu_s_t_a_r",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507340022599123094",
-      "channel_id": "1131839817982947429",
-      "content": "9再怎麼斂財也沒5771誇張吧",
-      "author": "yi000607",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507383326502158356",
-      "channel_id": "1131839817982947429",
-      "content": "以后出国服说不定能把身份信息大头照全家福调出来",
-      "author": "ponponnyaru",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507186660612247562",
-      "channel_id": "1300659662311526512",
-      "content": "​恭喜啊，现在你升级成“大氪长”了！",
-      "author": "salami_87",
-      "reactions": 7,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1507394275422507008",
-      "channel_id": "1400750050208125010",
-      "content": "",
-      "author": "jmjmjm6667",
-      "reactions": 7,
-      "channel": "🔸general-chat"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

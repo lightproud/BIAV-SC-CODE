@@ -1,10 +1,11 @@
 {
   "date": "2026-05-29",
-  "messages": 24147,
+  "messages": 34713,
   "unique_authors": 636,
-  "reactions_total": 2381,
-  "attachments": 1090,
+  "reactions_total": 3751,
+  "attachments": 1487,
   "channel_activity": {
+    "🔸morimens-game-chat": 10566,
     "🔸general-chat": 8290,
     "🔸綜合討論": 4618,
     "🔸晒卡分享": 69,
@@ -87,34 +88,35 @@
     "Help figuring out strats": 3
   },
   "hourly_activity": {
-    "16": 1755,
-    "17": 1155,
-    "18": 957,
-    "19": 952,
-    "20": 718,
-    "21": 670,
-    "22": 820,
-    "23": 641,
-    "0": 450,
-    "1": 820,
-    "2": 1604,
-    "3": 980,
-    "4": 612,
-    "5": 984,
-    "6": 1001,
-    "7": 438,
-    "8": 883,
-    "9": 593,
-    "10": 805,
-    "11": 546,
-    "12": 891,
-    "13": 1592,
-    "14": 1755,
-    "15": 2525
+    "0": 782,
+    "1": 1262,
+    "2": 1948,
+    "3": 1203,
+    "4": 888,
+    "5": 1557,
+    "6": 1748,
+    "7": 705,
+    "8": 1089,
+    "9": 803,
+    "10": 1131,
+    "11": 944,
+    "12": 1502,
+    "13": 2244,
+    "14": 2505,
+    "15": 3100,
+    "16": 2430,
+    "17": 1893,
+    "18": 1493,
+    "19": 1371,
+    "20": 1004,
+    "21": 927,
+    "22": 986,
+    "23": 1198
   },
   "message_types": {
-    "0": 1954,
-    "19": 1551
+    "0": 6468,
+    "19": 4097,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -142,12 +144,44 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1509981633225429013",
+      "channel_id": "1170692781216378960",
+      "content": "GRamona make a wish come true sketch",
+      "author": "jmjmjm6667",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509895140557324359",
+      "channel_id": "1170692781216378960",
+      "content": "10k use pollux",
+      "author": "zier.0",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510055214714060932",
+      "channel_id": "1170692781216378960",
+      "content": "but OE celeste, particularly with her dimension image has of course her great ut",
+      "author": "reya.li",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509754328926126300",
       "channel_id": "1131839817982947429",
       "content": "别让我抓到你们这群家伙明天氪198",
       "author": "lurenjiao",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1509918754337853521",
+      "channel_id": "1170692781216378960",
+      "content": "Did it deadass get flagged as for kids?",
+      "author": "wolfmaw",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1509783221099823104",
@@ -182,6 +216,38 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1509735053306101780",
+      "channel_id": "1170692781216378960",
+      "content": "Im left with 7k silver prime",
+      "author": "angbak",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509747080221032469",
+      "channel_id": "1170692781216378960",
+      "content": "300 pulls and two dupes for this <:smh:1356053161999335514>",
+      "author": "woricaer",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509929595879686194",
+      "channel_id": "1170692781216378960",
+      "content": "would this be enough for saya and her wod? <:ramona_tuff_:1441426630420467753>",
+      "author": "2ndselna",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1509931676527104011",
+      "channel_id": "1170692781216378960",
+      "content": "<@523084324724146193> you're way too famous <:takenotes:1357186646294138890> <:t",
+      "author": "moyashi0672",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1509755178184736788",
       "channel_id": "1131839817982947429",
       "content": "这sb产能，我能到明年年底全12不氪金",
@@ -211,70 +277,6 @@
       "content": "ถ้าอยากรู้รอดูรีวิวสดๆพรุ่งนี้ตอนตู้เข้าดูได้ที่ช่อง TheExtinctioner ไลฟ์รีวิวสม",
       "author": "c4ria",
       "reactions": 8,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1509944333107990610",
-      "channel_id": "1326453763355185215",
-      "content": "Out of these two let us debate, who will make Keeper become that one mummy image",
-      "author": "wise_2203",
-      "reactions": 8,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1509845597866168442",
-      "channel_id": "1509845597866168442",
-      "content": "Hi, I’d like to talk about something I find very worrying at least for me as it ",
-      "author": "nanami_carocontrolmeta",
-      "reactions": 8,
-      "channel": "Characters with 200 or more base aliemus"
-    },
-    {
-      "id": "1509946782707089618",
-      "channel_id": "1400750050208125010",
-      "content": "True",
-      "author": "601671_",
-      "reactions": 7,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1509815173463150633",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "._.aahh",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509865408188907634",
-      "channel_id": "1131839817982947429",
-      "content": "一觉醒来，全球忘却玩家水平下降1000倍，鲸鱼竟被称为t0输出！",
-      "author": "polkarain",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509870090206707864",
-      "channel_id": "1131839817982947429",
-      "content": "壓配置可以低到這樣",
-      "author": "theal8893",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509924268505567302",
-      "channel_id": "1131839817982947429",
-      "content": "Oh 想宣布明天 Saya, Horla, OE Uvhash, Leigh speedrun <:Ogier_Cheerup:1468259351889318",
-      "author": "angbak",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1509943993058721842",
-      "channel_id": "1300659802455674972",
-      "content": "โอเค ผมจะปิดคอมแล้วไปนอน",
-      "author": "ice3564",
-      "reactions": 7,
       "channel": "🔸ห้องสนทนาภาษาไทย"
     }
   ]

@@ -1,10 +1,11 @@
 {
   "date": "2026-05-25",
-  "messages": 22082,
+  "messages": 35356,
   "unique_authors": 552,
-  "reactions_total": 2346,
-  "attachments": 1198,
+  "reactions_total": 3859,
+  "attachments": 1871,
   "channel_activity": {
+    "🔸morimens-game-chat": 13274,
     "🔸lets-count": 23,
     "🔸general-chat": 9669,
     "🔸綜合討論": 2580,
@@ -100,36 +101,37 @@
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
-    "0": 517,
-    "1": 567,
-    "2": 954,
-    "4": 1695,
-    "8": 851,
-    "9": 886,
-    "10": 491,
-    "11": 553,
-    "12": 450,
-    "13": 382,
-    "14": 652,
-    "16": 1448,
-    "17": 1304,
-    "19": 889,
-    "18": 1096,
-    "20": 769,
-    "21": 710,
-    "22": 282,
-    "23": 478,
-    "5": 1232,
-    "6": 1517,
-    "7": 1295,
-    "15": 1297,
-    "3": 1767
+    "0": 1069,
+    "1": 1212,
+    "2": 1557,
+    "3": 2385,
+    "4": 2195,
+    "5": 1704,
+    "6": 2059,
+    "7": 1813,
+    "8": 1375,
+    "9": 1229,
+    "10": 1055,
+    "11": 1290,
+    "12": 1314,
+    "13": 1473,
+    "14": 1294,
+    "15": 1798,
+    "16": 1880,
+    "17": 1648,
+    "18": 1548,
+    "19": 1324,
+    "20": 1110,
+    "21": 1194,
+    "22": 889,
+    "23": 941
   },
   "message_types": {
-    "0": 1222,
-    "19": 1060,
-    "23": 1,
-    "20": 1
+    "0": 7928,
+    "19": 5341,
+    "6": 2,
+    "46": 1,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -149,12 +151,36 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1508596547741548564",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "ahmedamr30",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1508365053278027857",
       "channel_id": "1508365053278027857",
       "content": "Rkgk\n\nI don't know if Mythag accepts cat as keepers... but if they do, I'd love ",
       "author": "that_one_chippy",
       "reactions": 12,
       "channel": "Meow Meow, Meow? || \"Can a cat like me, be a keeper as well?\""
+    },
+    {
+      "id": "1508409182343270563",
+      "channel_id": "1170692781216378960",
+      "content": "Oxymerphy",
+      "author": "jmjmjm6667",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1508582595708063766",
+      "channel_id": "1170692781216378960",
+      "content": "I pulled another copy of gMurphy. Literally the only unit I didn't want.\n\nAnd I ",
+      "author": "climbkaly",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1508324113716875264",
@@ -205,6 +231,38 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1508317752979361943",
+      "channel_id": "1170692781216378960",
+      "content": "I turn the volume up",
+      "author": "bru0001",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1508358819749560320",
+      "channel_id": "1170692781216378960",
+      "content": "Pollux is such a good character, his kit is simple, you want to play his sacred ",
+      "author": "mitsukinanoka__",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1508535371414110362",
+      "channel_id": "1170692781216378960",
+      "content": "Traphase in nutshell",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1508615864298110986",
+      "channel_id": "1170692781216378960",
+      "content": "Whoops.. I went a little over",
+      "author": "ilovetomatoes_or_do_i",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1508579630901362708",
       "channel_id": "1300659662311526512",
       "content": "🏌️‍♂️",
@@ -235,62 +293,6 @@
       "author": "encyoverride",
       "reactions": 7,
       "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1508388775775043585",
-      "channel_id": "1174983699935277147",
-      "content": "開門，送深淵號令",
-      "author": "xianrenwurao",
-      "reactions": 7,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1508320274645254235",
-      "channel_id": "1326453763355185215",
-      "content": "🤐 i shouldn't have favorites;\nalso, i like all of them (honest reply)",
-      "author": "morimens_15",
-      "reactions": 7,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1508318103417655488",
-      "channel_id": "1131839817982947429",
-      "content": "# 所有人保持嘴角向下",
-      "author": "cameliia._.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1508326141356933230",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "_shimoyo",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1508338165621198969",
-      "channel_id": "1131839817982947429",
-      "content": "舊血肉天團",
-      "author": "wodebaobaoxiaodangaovi",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1508400420266049618",
-      "channel_id": "1131839817982947429",
-      "content": "~~怎么会有神国盾击这种听起来又弱又强的东西的~~",
-      "author": "gensono0609",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1508443584917930066",
-      "channel_id": "1131839817982947429",
-      "content": "最終法則雷亞全1<:cry3:1356082134447558748>",
-      "author": "wodebaobaoxiaodangaovi",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2026-05-31",
-  "messages": 29263,
+  "messages": 38855,
   "unique_authors": 668,
-  "reactions_total": 2209,
-  "attachments": 1611,
+  "reactions_total": 2978,
+  "attachments": 2067,
   "channel_activity": {
+    "🔸morimens-game-chat": 9592,
     "🔸general-chat": 9101,
     "🔸綜合討論": 3275,
     "🔸阵容构建": 505,
@@ -89,34 +90,35 @@
     "1510582590883495937": 1
   },
   "hourly_activity": {
-    "18": 671,
-    "19": 909,
-    "20": 766,
-    "21": 846,
-    "22": 1073,
-    "23": 1144,
-    "2": 1491,
-    "3": 1755,
-    "4": 1174,
-    "5": 991,
-    "6": 1215,
-    "7": 1644,
-    "8": 1584,
-    "9": 1659,
-    "10": 1188,
-    "11": 1311,
-    "12": 1184,
-    "13": 1315,
-    "14": 1527,
-    "15": 1669,
-    "16": 1381,
-    "17": 1099,
-    "0": 555,
-    "1": 1112
+    "0": 1058,
+    "1": 1593,
+    "2": 1982,
+    "3": 2163,
+    "4": 1949,
+    "5": 1536,
+    "6": 1841,
+    "7": 1838,
+    "8": 1895,
+    "9": 1984,
+    "10": 1441,
+    "11": 1472,
+    "12": 1617,
+    "13": 1679,
+    "14": 1774,
+    "15": 2021,
+    "16": 1847,
+    "17": 1272,
+    "18": 1027,
+    "19": 1613,
+    "20": 1069,
+    "21": 1277,
+    "22": 1432,
+    "23": 1475
   },
   "message_types": {
-    "19": 886,
-    "0": 1935
+    "0": 6142,
+    "19": 3449,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -126,6 +128,14 @@
       "author": "xs_xez.er",
       "reactions": 20,
       "channel": "Tinct! (I love her soooo much😭)"
+    },
+    {
+      "id": "1510451893652947086",
+      "channel_id": "1170692781216378960",
+      "content": "In traphase",
+      "author": "moyashi0672",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1510694090667200653",
@@ -160,6 +170,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1510754290795417821",
+      "channel_id": "1170692781216378960",
+      "content": "you've seen the fruits of the tree, now get ready for the trunk",
+      "author": "sparkling_moose_59074",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1510687223396303028",
       "channel_id": "1131839817982947429",
       "content": "慶祝300無垢系統實裝，應該廣發300無垢你說對不對🤓 ☝️",
@@ -190,6 +208,38 @@
       "author": "blinta",
       "reactions": 7,
       "channel": "🔸game-question"
+    },
+    {
+      "id": "1510457074482417666",
+      "channel_id": "1170692781216378960",
+      "content": "these saya fans are weak compared to me",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510537200289452213",
+      "channel_id": "1170692781216378960",
+      "content": "Maybe i should disable this",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510637294292303963",
+      "channel_id": "1170692781216378960",
+      "content": "holy shit",
+      "author": "il0vem4d4r4m1k3j1m4",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1510687145923186698",
+      "channel_id": "1170692781216378960",
+      "content": "casiah silly",
+      "author": "glitzy_x",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1510586363525857320",
@@ -229,54 +279,6 @@
       "content": "保底又連金什麼的<:Brown_think:1459080117308620996>",
       "author": "sui.yu.er.an",
       "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1510554442943037481",
-      "channel_id": "1300659802455674972",
-      "content": "คุนซาต้าจะทำ เราจะรอ\n\n# ตั้งตารอ",
-      "author": "xs_xez.er",
-      "reactions": 6,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1510560251269746840",
-      "channel_id": "1300659802455674972",
-      "content": "เปล่ากดตอบกลับกูนเด็กพันปี",
-      "author": "c4ria",
-      "reactions": 6,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1510561790503817247",
-      "channel_id": "1300659802455674972",
-      "content": "เคยโดนเพื่อนอันเฟรนด์แล้วบีแอล ฉันเมนหลัวชาแล้วชีมาเริ่มงอกยูเมะหลัวชา พอรู้ว่าฉ",
-      "author": "rosevelt_2",
-      "reactions": 6,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1510569018098974792",
-      "channel_id": "1300659802455674972",
-      "content": "ซื้อถนนไว้",
-      "author": "ice3564",
-      "reactions": 6,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1510506694088593429",
-      "channel_id": "1326453763355185215",
-      "content": "Pollux heart and Castor thumbs up xd",
-      "author": "quirk6009",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1510721995568971906",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "up771",
-      "reactions": 5,
       "channel": "🔸晒卡分享"
     }
   ]

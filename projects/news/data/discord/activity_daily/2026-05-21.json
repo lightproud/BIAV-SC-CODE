@@ -1,10 +1,12 @@
 {
   "date": "2026-05-21",
-  "messages": 19883,
+  "messages": 33928,
   "unique_authors": 563,
-  "reactions_total": 1434,
-  "attachments": 938,
+  "reactions_total": 2942,
+  "attachments": 1499,
   "channel_activity": {
+    "🔸lets-count": 21,
+    "🔸morimens-game-chat": 14024,
     "🔸綜合討論": 3680,
     "🔸阵容构建": 292,
     "🔸deutscher-chatraum": 48,
@@ -93,36 +95,43 @@
     "1506859620809838602": 1
   },
   "hourly_activity": {
-    "17": 913,
-    "18": 867,
-    "19": 577,
-    "20": 416,
-    "21": 429,
-    "22": 499,
-    "23": 221,
-    "0": 377,
-    "1": 643,
-    "2": 1090,
-    "3": 943,
-    "4": 966,
-    "5": 906,
-    "6": 474,
-    "7": 506,
-    "8": 601,
-    "9": 998,
-    "10": 679,
-    "11": 1184,
-    "12": 960,
-    "13": 1247,
-    "14": 1327,
-    "15": 1631,
-    "16": 1429
+    "0": 614,
+    "1": 1072,
+    "2": 1555,
+    "4": 1518,
+    "5": 1486,
+    "6": 1445,
+    "7": 1358,
+    "9": 1868,
+    "11": 1616,
+    "14": 1889,
+    "15": 2110,
+    "16": 1798,
+    "3": 1388,
+    "8": 1326,
+    "10": 1452,
+    "12": 1503,
+    "13": 1848,
+    "17": 1546,
+    "18": 1299,
+    "19": 1012,
+    "20": 1183,
+    "21": 957,
+    "22": 1293,
+    "23": 792
   },
   "message_types": {
-    "0": 1459,
-    "19": 479
+    "0": 21
   },
   "top_reacted_messages": [
+    {
+      "id": "1506970106909954048",
+      "channel_id": "1170692781216378960",
+      "content": "Fuck you mean whale look at my team bro",
+      "author": "wise_2203",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1506965734746488872",
       "channel_id": "1505167541818101862",
@@ -138,6 +147,22 @@
       "author": "ahuahuahua",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1506900975649034321",
+      "channel_id": "1170692781216378960",
+      "content": "I DID IT",
+      "author": "emodrome",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507012525315588230",
+      "channel_id": "1170692781216378960",
+      "content": "No spoilers, but, I just finished the first half of the story, I am officially d",
+      "author": "rrpokedex",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1506972025393250495",
@@ -172,6 +197,14 @@
       "channel": "V2.5.1.0 停服维护公告"
     },
     {
+      "id": "1507062346130915348",
+      "channel_id": "1170692781216378960",
+      "content": "STOP",
+      "author": "arandomflamev2",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1506985382166794311",
       "channel_id": "1131839817982947429",
       "content": "希望週年能回去steam玩<:Brown_think:1459080117308620996>",
@@ -194,6 +227,22 @@
       "author": "that_one_chippy",
       "reactions": 8,
       "channel": "Happy 520 Day! || Doresain x Sylvester"
+    },
+    {
+      "id": "1507018396259188748",
+      "channel_id": "1170692781216378960",
+      "content": "phew, done\n\nnow, onto others—the grind never stops",
+      "author": "miruruvein",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1507105093991006209",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "illfated2428",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1506949760551096430",
@@ -228,60 +277,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1506846027687137300",
-      "channel_id": "1131839817982947429",
-      "content": "🤔",
-      "author": "forg30215",
+      "id": "1506863051553374279",
+      "channel_id": "1170692781216378960",
+      "content": "WOOOO RANDOM PULL",
+      "author": "bladeruler42",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1506869691178553464",
-      "channel_id": "1131839817982947429",
-      "content": "請看這個",
-      "author": "xianrenwurao",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1506879203663155252",
-      "channel_id": "1131839817982947429",
-      "content": "许愿关服成真了？",
-      "author": "kemomimi_",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1506942601465430106",
-      "channel_id": "1131839817982947429",
-      "content": "校工還是沒回我關回放的有問必答",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1506968416072761375",
-      "channel_id": "1131839817982947429",
-      "content": "只有我在这里的人设是纯洁乖小孩",
-      "author": "yusi4172",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507076849740812518",
-      "channel_id": "1131839817982947429",
-      "content": "byd又凹了一晚上福袋",
-      "author": "ponponnyaru",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1507075691060134069",
-      "channel_id": "1131839817982947429",
-      "content": "今天一上線就看到這個，太驚悚ㄌ8",
-      "author": "satsukisenri",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

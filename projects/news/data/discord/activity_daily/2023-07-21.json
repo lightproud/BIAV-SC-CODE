@@ -1,14 +1,14 @@
 {
   "date": "2023-07-21",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 5319,
+  "reactions_total": 10723,
   "attachments": 0,
   "channel_activity": {
-    "🔸新生守则┊rules": 1
+    "🔸新生守则┊rules": 2
   },
   "hourly_activity": {
-    "7": 1
+    "7": 2
   },
   "message_types": {
     "0": 1
@@ -16,9 +16,10 @@
   "top_reacted_messages": [
     {
       "id": "1131848465517912145",
+      "channel_id": "1131837874078232597",
       "content": "守密人，歡迎你來到《忘卻前夜》，請閱讀校規，之後，你將正式成為彌薩格大學的調查員。開發者@Light已入駐本社群，期待與各位守密人多多交流\n\n📢  以下是官方D",
       "author": "morimensstaff01",
-      "reactions": 5319,
+      "reactions": 5404,
       "channel": "🔸新生守则┊rules"
     }
   ]
