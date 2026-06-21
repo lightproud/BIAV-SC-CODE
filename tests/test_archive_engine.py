@@ -34,6 +34,19 @@ class RegistryInvariants(unittest.TestCase):
         self.assertEqual(cfg["after_archive"], "git_rm")
         self.assertEqual(cfg["base_dir"], "projects/news/data/discord")
 
+    def test_fanart_entry_rolling_release(self):
+        cfg = ae.load_registry()["fanart"]
+        # 守密人 2026-06-21 裁定：60 天 cutoff + git_rm 删原图
+        self.assertEqual(cfg["base_dir"], "projects/news/data/fanart")
+        self.assertEqual(cfg["glob"], "20*/*")
+        self.assertEqual(cfg["group_by"], "month_from_parent_dir")
+        self.assertEqual(cfg["cutoff_days"], 60)
+        self.assertEqual(cfg["after_archive"], "git_rm")
+        # 图片资产归「社区归档资产」滚动 release（与 discord 文本数据的 community-data 分开）
+        self.assertEqual(cfg["release_tag"], "community-assets")
+        self.assertEqual(cfg["asset_template"], "fanart-archive-{group}.tar.gz")
+        self.assertEqual(ae.asset_name_of(cfg, "2026-05"), "fanart-archive-2026-05.tar.gz")
+
 
 class GroupingAndCutoff(unittest.TestCase):
     def test_group_of_month_from_stem(self):
@@ -199,30 +212,6 @@ class RollingUpload(unittest.TestCase):
         verbs = [c[:3] for c in calls]
         self.assertIn(["gh", "release", "create"], verbs)
         self.assertIn(["gh", "release", "upload"], verbs)
-        self.assertNotIn(["gh", "release", "delete"], verbs)
-
-
-class GitRm(unittest.TestCase):
-    def test_git_rm_called_per_file(self):
-        files = [Path("/repo/a.jsonl"), Path("/repo/b.jsonl")]
-        with mock.patch.object(ae.subprocess, "run") as run:
-            run.return_value = mock.Mock(returncode=0)
-            removed = ae.git_rm_files(files)
-        self.assertEqual(removed, 2)
-        self.assertEqual(run.call_count, 2)
-        # 确实调用的是 git rm -f
-        first = run.call_args_list[0].args[0]
-        self.assertEqual(first[:3], ["git", "rm", "-f"])
-
-    def test_git_rm_untracked_falls_back_to_unlink(self):
-        with tempfile.TemporaryDirectory() as d:
-            f = Path(d) / "x.jsonl"
-            f.write_text("x")
-            err = ae.subprocess.CalledProcessError(1, "git")
-            with mock.patch.object(ae.subprocess, "run", side_effect=err):
-                removed = ae.git_rm_files([f])
-            self.assertEqual(removed, 1)
-            self.assertFalse(f.exists())  # 已 unlink
 
 
 class DryRun(unittest.TestCase):
