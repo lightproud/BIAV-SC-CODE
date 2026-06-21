@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**87**
+- 功能总数：**88**
 - 脚本可达性：活 48 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 23 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 24 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 15 |
 | news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（23）
+## CI 自动化工作流（编排入口·定时/事件平面）（24）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -56,6 +56,8 @@
   `.github/workflows/collect-comments.yml`
 - **`Collect Fan Art`** _[schedule/manual]_ — 定时采集同人图。  
   `.github/workflows/collect-fanart.yml`
+- **`Consolidate Releases`** _[manual]_ —   
+  `.github/workflows/consolidate-releases.yml`
 - **`Delete Release`** _[manual]_ —   
   `.github/workflows/delete-release.yml`
 - **`Deploy Site`** _[push/manual]_ — push 触发部署 site 静态站。  
