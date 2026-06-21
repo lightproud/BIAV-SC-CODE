@@ -25,9 +25,15 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import calendar
+import statistics
+import sys
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from silver_tokenizer import tokenize  # noqa: E402  共享领域词典 FMM 分词
 
 REPO = Path(__file__).resolve().parent.parent
 DATA = REPO / "projects/news/data"
@@ -37,49 +43,6 @@ TODAY = date.today().isoformat()
 TOP_TERMS = 40          # 每 (平台×月) / 每月保留的高频词数
 PRUNE_EVERY = 500_000   # 处理多少条后裁剪一次计数器（限内存）
 PRUNE_KEEP = 8_000      # 裁剪时每个计数器保留的词数
-
-# --- 词法切分（确定性、词典无关、多语）---------------------------------------
-# 拉丁词（>=2 字符，非纯数字）+ CJK 双字（中日韩文本无空格，bigram 近似词）。
-_LATIN = re.compile(r"[a-z][a-z0-9']{1,}")
-_CJK = re.compile(r"[぀-ヿ㐀-鿿가-힣]")
-# 停用词词典（确定性、词典法去噪）。英文功能词在多语语料里量级巨大，不滤则
-# top_terms 全是 to/is/it/of；故收录标准英文停用词 + 中文高频虚词 + 平台噪声。
-_STOP = {
-    # --- English function words (standard stoplist) ---
-    "the", "a", "an", "and", "or", "but", "if", "of", "at", "by", "for", "with",
-    "about", "to", "from", "in", "on", "off", "out", "up", "down", "over", "under",
-    "is", "am", "are", "was", "were", "be", "been", "being", "do", "does", "did",
-    "have", "has", "had", "having", "can", "could", "will", "would", "shall",
-    "should", "may", "might", "must", "i", "me", "my", "we", "us", "our", "you",
-    "your", "he", "him", "his", "she", "her", "it", "its", "they", "them", "their",
-    "this", "that", "these", "those", "what", "which", "who", "whom", "whose",
-    "as", "so", "than", "too", "very", "just", "now", "then", "here", "there",
-    "all", "any", "both", "each", "few", "more", "most", "other", "some", "such",
-    "no", "nor", "not", "only", "own", "same", "also", "get", "got", "like",
-    "go", "going", "one", "two", "im", "its", "dont", "didnt", "cant", "ive",
-    "yeah", "ok", "okay", "lol", "oh", "well", "really", "much", "even", "still",
-    # --- platform / url noise ---
-    "https", "http", "com", "www", "amp", "gt", "lt", "nbsp", "html",
-    # --- Chinese high-frequency function words ---
-    "其实", "也是", "就是", "这个", "那个", "什么", "怎么", "可以", "没有", "我们",
-    "他们", "因为", "所以", "但是", "如果", "一个", "自己", "这样", "那样", "时候",
-    "现在", "已经", "还是", "应该", "感觉", "觉得", "知道", "这种", "或者", "不过",
-    "然后", "这么", "那么", "不是", "就是", "真的", "一下", "有点", "比较", "东西",
-}
-
-
-def tokenize(text: str) -> list[str]:
-    if not text:
-        return []
-    low = text.lower()
-    toks = [t for t in _LATIN.findall(low) if t not in _STOP and not t.isdigit()]
-    cjk = _CJK.findall(low)
-    for i in range(len(cjk) - 1):
-        bg = cjk[i] + cjk[i + 1]
-        if bg not in _STOP:
-            toks.append(bg)
-    return toks
-
 
 # --- 情感：种子词典极性（词法粗粒度，非语义；明确标注）------------------------
 _POS = {"good", "great", "love", "nice", "best", "amazing", "fun", "cool", "awesome",
@@ -108,13 +71,17 @@ def lang_of(text: str, declared: str = "") -> str:
     return "und"
 
 
-# --- 记录流：把异构原文件统一成 (platform, ym, text, lang, engagement) ----------
+# --- 记录流：把异构原文件统一成 (platform, day, text, lang, engagement) ----------
 
-def _ym(ts: str) -> str | None:
+def _ymd(ts: str) -> str | None:
+    """抽完整日期 YYYY-MM-DD（用于采集覆盖统计；月份取前 7 位即可）。"""
     if not ts or len(ts) < 7:
         return None
-    m = re.match(r"(\d{4})-(\d{2})", str(ts))
-    return f"{m.group(1)}-{m.group(2)}" if m else None
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", str(ts))
+    if m:
+        return m.group(0)
+    m = re.match(r"(\d{4})-(\d{2})", str(ts))    # 只到月：补 -01 占位
+    return f"{m.group(0)}-01" if m else None
 
 
 def iter_records(max_files: int | None = None):
@@ -135,11 +102,11 @@ def iter_records(max_files: int | None = None):
         for it in items:
             if not isinstance(it, dict):
                 continue
-            ym = _ym(it.get("time") or it.get("published") or d.get("date", ""))
+            day = _ymd(it.get("time") or it.get("published") or d.get("date", ""))
             text = " ".join(str(it.get(k, "")) for k in ("title", "summary", "content", "text"))
             eng = it.get("engagement", 0)
             eng = eng if isinstance(eng, (int, float)) else 0
-            yield platform, ym, text, lang_of(text, str(it.get("lang", ""))), eng
+            yield platform, day, text, lang_of(text, str(it.get("lang", ""))), eng
 
     # 2) discord/channels/**/*.jsonl —— {content,timestamp,author_name}
     for f in sorted((DATA / "discord").rglob("*.jsonl")):
@@ -156,11 +123,11 @@ def iter_records(max_files: int | None = None):
                         it = json.loads(line)
                     except Exception:
                         continue
-                    ym = _ym(it.get("timestamp", ""))
+                    day = _ymd(it.get("timestamp", ""))
                     text = str(it.get("content", ""))
                     reacts = it.get("reactions", "[]")
                     eng = len(reacts) if isinstance(reacts, list) else 0
-                    yield "discord", ym, text, lang_of(text), eng
+                    yield "discord", day, text, lang_of(text), eng
         except Exception:
             continue
 
@@ -180,11 +147,11 @@ def iter_records(max_files: int | None = None):
                         it = json.loads(line)
                     except Exception:
                         continue
-                    ym = _ym(it.get("published") or it.get("time", ""))
+                    day = _ymd(it.get("published") or it.get("time", ""))
                     text = str(it.get("text", ""))
                     likes = it.get("likes", 0)
                     eng = likes if isinstance(likes, (int, float)) else 0
-                    yield platform, ym, text, lang_of(text), eng
+                    yield platform, day, text, lang_of(text), eng
         except Exception:
             continue
 
@@ -199,6 +166,7 @@ def build(max_files: int | None = None) -> dict:
     senti: dict[tuple[str, str], list[int]] = defaultdict(lambda: [0, 0])
     terms: dict[tuple[str, str], Counter] = defaultdict(Counter)
     month_terms: dict[str, Counter] = defaultdict(Counter)
+    days: dict[tuple[str, str], set] = defaultdict(set)   # 采集覆盖：distinct 日期
     total = 0
 
     def prune():
@@ -211,13 +179,15 @@ def build(max_files: int | None = None) -> dict:
                 for k, _ in c.most_common()[PRUNE_KEEP:]:
                     del c[k]
 
-    for platform, ym, text, lang, eng in iter_records(max_files):
-        if not ym:
+    for platform, day, text, lang, eng in iter_records(max_files):
+        if not day:
             continue
+        ym = day[:7]
         key = (platform, ym)
         counts[key] += 1
         eng_sum[key] += eng
         langs[key][lang] += 1
+        days[key].add(day)
         toks = tokenize(text)
         p, n = polarity(toks)
         senti[key][0] += p
@@ -233,11 +203,18 @@ def build(max_files: int | None = None) -> dict:
     for (platform, ym), cnt in counts.items():
         pdat = platforms.setdefault(platform, {"total": 0, "by_month": {}})
         pdat["total"] += cnt
+        y, mo = int(ym[:4]), int(ym[5:7])
+        days_in_month = calendar.monthrange(y, mo)[1]
+        active = len(days[(platform, ym)])
         pdat["by_month"][ym] = {
             "count": cnt,
             "engagement": round(eng_sum[(platform, ym)], 1),
             "langs": dict(langs[(platform, ym)].most_common()),
             "sentiment": {"pos": senti[(platform, ym)][0], "neg": senti[(platform, ym)][1]},
+            # 采集覆盖：本月有数据的天数 / 当月总天数。低覆盖 = 采集缺口，
+            # 量级骤降未必是社区静默（防 2026-02/03 断崖误读）。
+            "coverage": {"active_days": active, "month_days": days_in_month,
+                         "ratio": round(active / days_in_month, 2)},
             "top_terms": terms[(platform, ym)].most_common(TOP_TERMS),
         }
     for pdat in platforms.values():
@@ -251,7 +228,16 @@ def build(max_files: int | None = None) -> dict:
         t = timeline.setdefault(ym, {"count": 0, "by_platform": {}})
         t["count"] += cnt
         t["by_platform"][platform] = cnt
-    timeline = {m: timeline[m] for m in sorted(timeline)}
+    # 量异常指数：本月总量 / 前 6 个月中位数。远离 1 = 该月量反常，
+    # 量级骤降应先怀疑采集异常而非「社区静默」（防 2026-02/03 断崖误读）。
+    # 注意：与 per-platform 的 coverage（按天，抓整天断档）互补——本指数抓
+    # 「天天有数据但单日量塌缩」那种 coverage 看不出的异常。
+    sorted_months = sorted(timeline)
+    for i, ym in enumerate(sorted_months):
+        prior = [timeline[m]["count"] for m in sorted_months[max(0, i - 6):i]]
+        med = statistics.median(prior) if prior else 0
+        timeline[ym]["vol_index"] = round(timeline[ym]["count"] / med, 2) if med else None
+    timeline = {m: timeline[m] for m in sorted_months}
 
     top_by_month = {m: month_terms[m].most_common(TOP_TERMS) for m in sorted(month_terms)}
 
@@ -262,10 +248,16 @@ def build(max_files: int | None = None) -> dict:
             "source_root": "projects/news/data/",
             "total_records": total,
             "platform_count": len(platforms),
-            "method": "deterministic lexical aggregate (CJK-bigram + latin word); "
+            "method": "deterministic lexical aggregate; tokenizer = domain-dict FMM "
+                      "(self-bootstrapped from characters/cards/story; bigram fallback); "
                       "sentiment = seed-lexicon polarity (coarse, NOT semantic/ML)",
+            "signals": "per-platform coverage = 当月有数据天数/总天数（抓整天断档）；"
+                       "timeline vol_index = 本月量/前6月中位数（抓单日量塌缩，"
+                       "如 2026-02/03 天天有数据但量崩 30 倍）。二者互补判采集异常。",
             "drilldown": "全文钻取回落到 by_month 指向的 dated 原文件 ripgrep；"
                          "本 index 是路标，非全文本体（放指针不放本体）。",
+            "data_note": "discord 全量历史构建期从 community-data release 还原"
+                         "（restore_release_data.py），不进 git；本体仍留 Releases。",
         },
         "platforms": dict(sorted(platforms.items())),
         "timeline": timeline,
