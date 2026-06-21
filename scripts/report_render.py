@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。
 
-用途：把 deliverables 下的报告 markdown 渲染成银芯标准视觉（封面 + 目录 +
+用途：把 Public-Info-Pool/Resource 下的报告 markdown 渲染成银芯标准视觉（封面 + 目录 +
 暗金主题 + Noto Serif/Sans CJK + 大字号手机适配）的 PDF 与 HTML。视觉规范见
 memory/style-guide.md（CLAUDE.md §6.12）；生产流程见 .claude/skills/biav-report。
 
@@ -10,7 +10,7 @@ memory/style-guide.md（CLAUDE.md §6.12）；生产流程见 .claude/skills/bia
     # 字体：Noto Serif CJK SC / Noto Sans CJK SC（缺失则 weasyprint 自动 fallback）
 
 用法：
-    python scripts/report_render.py deliverables/2026-05/foo.md
+    python scripts/report_render.py Public-Info-Pool/Resource/daily-news/foo.md
     # 默认从 markdown frontmatter 读取 title/subtitle/basis/author/generated 拼装封面
     python scripts/report_render.py foo.md --title "标题" --subtitle "副标题" --meta "封面落款<br>第二行"
 
