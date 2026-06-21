@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 26,
-      "scripts_top": 17,
+      "scripts_top": 19,
       "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 92
+      "total": 94
     },
     "reachability": {
-      "live": 50,
+      "live": 52,
       "test-only": 0,
       "orphaned": 0
     }
@@ -434,6 +434,16 @@
       "status": "live"
     },
     {
+      "id": "restore_release_data.py",
+      "path": "scripts/restore_release_data.py",
+      "summary": "构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "silver_memory_tools.py",
       "path": "scripts/silver_memory_tools.py",
       "summary": "silver_memory_tools.py —— 银芯记忆增强工具集",
@@ -443,6 +453,15 @@
       ],
       "status": "live",
       "note_zh": "记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。"
+    },
+    {
+      "id": "silver_tokenizer.py",
+      "path": "scripts/silver_tokenizer.py",
+      "summary": "银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
     }
   ],
   "scripts_news": [
