@@ -125,7 +125,7 @@
   `scripts/parse_item_stories.py`
 - **`parse_voice_lines.py`** _[活:cli]_ — [CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。  
   `scripts/parse_voice_lines.py`
-- **`report_render.py`** _[活:cli+command]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
+- **`report_render.py`** _[活:cli+command+workflow]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
   `scripts/report_render.py`
 - **`restore_release_data.py`** _[活:cli+workflow]_ — 构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。  
   `scripts/restore_release_data.py`
