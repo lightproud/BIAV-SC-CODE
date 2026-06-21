@@ -19,7 +19,7 @@
 python assets/data/validate.py
 ```
 
-AI 会话根据用户提问按需读取对应文件即可，无需全部加载。详见 `BIAV-SC.md` 知识模块索引。
+AI 会话根据用户提问按需读取对应文件即可，无需全部加载。详见 `CLAUDE.md` §5 知识模块索引（原 `BIAV-SC.md` 已退役，入口收归 CLAUDE.md）。
 
 ## 运营数据已迁移
 

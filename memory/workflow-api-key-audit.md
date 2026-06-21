@@ -1,5 +1,7 @@
 # Workflow API Key 使用清查
 
+> **⚠ 定格清查（2026-04-20 快照）**：文中部分 workflow（`dream.yml` / `fetch-wiki-data.yml` / `update-news-highfreq.yml` 等）已于 2026-06 退役删除，相关行按历史清查理解；现行 workflow 清单以 `ls .github/workflows/` 为准。
+>
 > 最后更新：2026-04-20 by 主控台派发子代理（B4）
 > 目的：评估 GitHub Secrets 中的凭据是否仍有使用点，为守密人决定"是否清理 GitHub Settings → Secrets"提供依据
 > 扫描范围：`.github/workflows/*.yml`（共 13 个文件）

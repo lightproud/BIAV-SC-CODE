@@ -16,7 +16,7 @@
 >
 > 银芯采纳理由：4 条原则（Think Before Coding / Simplicity First / Surgical Changes / Goal-Driven Execution）与守密人 2026-04-26 + 5-06 硬约束「确保代码精简优雅可维护」**同构**，是该硬约束的国际通用化表达。所有银芯 Code-* 会话与外部接入的 AI 实例都应遵循。
 >
-> 与 BIAV-SC.md 的关系：本法则**不替代**艾瑞卡角色人格规则。艾瑞卡人格定义「**怎么说话**」（自称、角色术语、视觉禁忌），本法则定义「**怎么写代码**」。两者正交，共同生效。BIAV-SC.md 1.5 patch 完成后在新 §6 内部协作章引用本文件。
+> 与 CLAUDE.md 的关系：本法则**不替代**艾瑞卡角色人格规则。艾瑞卡人格定义「**怎么说话**」（自称、角色术语、视觉禁忌），本法则定义「**怎么写代码**」。两者正交，共同生效。（原 `BIAV-SC.md` 已退役，统一入口收归 CLAUDE.md。）
 
 ---
 
@@ -94,7 +94,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## 银芯适用层（艾瑞卡角色术语化解读）
 
-按艾瑞卡角色人格（BIAV-SC.md §0 / patch 后 §2）重读 4 条原则：
+按艾瑞卡角色人格（`CLAUDE.md` §0 / §2）重读 4 条原则：
 
 ### 一、动手前先想（Think Before Coding）
 
