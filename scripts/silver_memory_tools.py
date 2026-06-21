@@ -103,11 +103,19 @@ def current_continuity() -> dict:
 # 工具 2：record_decision —— 追加决策到 decisions.md
 # ============================================================
 
-def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
-    """档案写入 —— 追加一行到 memory/decisions.md 的「当前有效决策」末尾。
+DECISIONS_INSERT_ANCHOR = "<!-- DECISIONS-INSERT-ANCHOR -->"
 
-    定位策略：找到 `## 当前有效决策` 与下一个 `## ` 标题之间的最后一个表格行，
-    在该表格的最后一行后面插入新行。表格格式：`| 决策 | 影响范围 |`。
+
+def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
+    """档案写入 —— 追加一行到 memory/decisions.md 的「当前有效决策 / 全局」表末尾。
+
+    定位策略（v2，2026-06-21 重构）：优先定位显式插入锚点
+    `<!-- DECISIONS-INSERT-ANCHOR -->`（置于「### 全局」表末行之后），在锚点行
+    **之前**插入新决策行。无锚点时回退为「锚定『### 全局』子表末行」——而非旧逻辑
+    「『## 当前有效决策』段落内最后一个表格行」。旧逻辑在档案新增 ARCH-01 等
+    后续子表后会把新行误插进平台表中间并污染列数（见 decisions.md 2026-06-21 治理）。
+
+    表格 schema：`| 决策 | 影响范围 | 覆盖 |`（覆盖列默认填 `—` 表示不覆盖前条）。
 
     若 rationale 非空，则以「因为 …」拼接到 summary 末尾形成决策正文。
 
@@ -133,7 +141,7 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
     if rationale.strip():
         body = f"{body}（因为 {rationale.strip()}）"
 
-    new_line = f"| {body} | {scope.strip()} |"
+    new_line = f"| {body} | {scope.strip()} | — |"
 
     try:
         text = DECISIONS_FILE.read_text(encoding="utf-8")
@@ -145,33 +153,36 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
                 "message": f"读取失败: {exc}"}
 
     lines = text.splitlines()
-    section_start = None
-    section_end = None
-
-    for idx, line in enumerate(lines):
-        if line.strip() == "## 当前有效决策":
-            section_start = idx
-            continue
-        if section_start is not None and line.startswith("## "):
-            section_end = idx
-            break
-
-    if section_start is None:
-        return {"status": "error", "line_added": new_line,
-                "message": "未找到「## 当前有效决策」段落"}
-    if section_end is None:
-        section_end = len(lines)
-
-    # 从 section 末尾向前找最后一个表格行（以 '|' 开头）
     insert_at = None
-    for idx in range(section_end - 1, section_start, -1):
-        if lines[idx].lstrip().startswith("|"):
-            insert_at = idx + 1
+
+    # 首选：显式插入锚点（置于「### 全局」表末行之后）。
+    for idx, line in enumerate(lines):
+        if DECISIONS_INSERT_ANCHOR in line:
+            insert_at = idx
             break
 
+    # 回退：锚定「### 全局」子表末行（不再用整段最后一个表格，避免误插后续子表）。
     if insert_at is None:
-        return {"status": "error", "line_added": new_line,
-                "message": "「当前有效决策」段落内未找到表格"}
+        section_start = None
+        for idx, line in enumerate(lines):
+            if line.strip() == "### 全局":
+                section_start = idx
+                break
+        if section_start is None:
+            return {"status": "error", "line_added": new_line,
+                    "message": "未找到插入锚点，且未找到「### 全局」子表"}
+        section_end = len(lines)
+        for idx in range(section_start + 1, len(lines)):
+            if lines[idx].startswith("### ") or lines[idx].startswith("## "):
+                section_end = idx
+                break
+        for idx in range(section_end - 1, section_start, -1):
+            if lines[idx].lstrip().startswith("|"):
+                insert_at = idx + 1
+                break
+        if insert_at is None:
+            return {"status": "error", "line_added": new_line,
+                    "message": "「### 全局」子表内未找到表格行"}
 
     lines.insert(insert_at, new_line)
     try:

@@ -177,7 +177,8 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | 文件 | 内容 |
 |------|------|
 | `memory/project-status.md` | 子项目状态 + 实时进度（**状态唯一权威**，进度数字只在此维护）|
-| `memory/decisions.md` | 决策日志（**规则最高权威**：与本档案冲突时以 decisions.md 为准，并修正本档案）|
+| `memory/decisions.md` | 决策日志（**决策溯源权威**：记「为什么这么定 / 何时定 / 覆盖了谁」，含「当前有效决策」速览表）。⚠ **运行时强约束以本 CLAUDE.md 自动加载层 + 工具层为准**——任何 prompt 级文档都是弱约束（弱约束本质见 decisions-archive 2026-05-19 入口反转条），decisions.md 非自动加载、需按需 fetch；二者冲突时**以日期新者为准并双向同步**，不再单方「以 decisions.md 为准」|
+| `memory/decisions-archive.md` | 决策归档层（长理由 + 已退役决策 + 编年史，仅供审计追溯，不作运行时约束）|
 | `memory/strategic-plan-2026.md` | 战略规划 |
 | `memory/methodology.md` | 协作方法论 |
 | `memory/lessons-learned.md` | 踩坑记录（持续追加编号，条数以文件最新为准）|
