@@ -63,3 +63,50 @@ fanart 有 `collect-fanart.yml` / `recover-fanart.yml` / `backfill-media.yml` + 
 - ~~**诊断**：对冲缺口~~ **2026-06-21 已闭合**（见 §4：断环守卫 + 30 月排空，channels/ 3.3G→600M）。
 - ~~**fanart 现状核实**~~ 已落地：fanart 归档进 `community-assets` 滚动 release（`archive_sources.json` fanart 条目，见 RELEASES.md §2.4）。
 - 所有「上传 / 删 git」执行走 workflow，非云容器手动。
+
+---
+
+## 8. 2026-06-21 方向反转：text 回归 git（`/grill 规划社区数据存放和目录`）
+
+> **重大转向**：§1–§7 的瘦身路线（把 discord 等推出 git → Releases）于同日 `/grill` 拷问会话被守密人反转。**新总纲：按性质分流——可检索 text 回归 git，二进制留 Releases。** 本节为新权威，§1–§7 降为历史记录。直接反转决策 86（discord 60 天分级）与 178/179/199 的 text 部分；§4 刚完成的 discord 排空（3.3G→600M）将被 de-tier 回填覆盖。
+
+**反转理由（拷问 Q1 对齐）**：text 进 Releases = 自废 grep/read/diff/AI 分析武功（本会话建社区索引被迫写 `restore_release_data.py` 下 301MB 即铁证）；二进制留 Releases 几乎零访问损失（本就按整件下载）。故 text 的访问便利是刚需。
+
+### 8.1 三方真相源（铁律）
+
+| 真相源 | 收纳 |
+|--------|------|
+| **git** | 全部 text：discord 全量 / platforms / 解包 text / 索引 |
+| **「解包」release** | 全部游戏二进制：立绘/CG/音视频/特效/UI + lua-bytecode + config binary |
+| **「社区二创」release** | 社区二进制：fanart + media |
+
+### 8.2 git 目录树（套 BPT v2.0 4R 本体 = 银芯↔黑池接口协议）
+
+```
+Public-Info-Pool/
+├── Root/        Resource/                 # 后置（社区索引归 Resource/projection/）
+├── Record/Community/{discord, bilibili, reddit, steam, …16+源摊平对齐} + index.md
+└── Reference/Game-Unpacked/ + index.md
+```
+
+原始时序数据（百万 jsonl）**免逐文件 frontmatter**：目录归位 + 每目录 `index.md` 概述即合规；frontmatter 留策展知识层（OKF/索引）。
+
+### 8.3 Release 收敛为 2
+
+- **「解包」** = `unpacked-assets` + `unpacked-data` 二进制残余合并（config 重打包剥 text）。
+- **「社区二创」** = `community-assets`（fanart/media）。
+- `community-data`（discord）**退役删除**（全量入 git）；`unpacked-data` text 入 git。
+
+### 8.4 discord de-tier（高风险执行件）
+
+转「全量永驻 git、退役月度 git_rm 瘦身」——拆 `discord_archiver.py` 月度清理 + §4 刚加的「已归档月跳过」防重拉守卫（前提消失）。fanart/media `git rm` 移出工作树（**不改历史**，历史压缩守密人未来另议）、采集链改直传 release。
+
+### 8.5 执行策略
+
+守密人裁定**一次到位**（单次原子迁移，非分阶段）。Release 写 + 大推走 CI workflow（容器无权限/推不动，决策 2026-06-20 不变），容器仅备工具、CI 跑、守密人盯头几班采集。
+
+> 比喻：上午刚把聊天记录从手边书架搬去异地仓库腾地方，下午发现「手边搜不到」才是真痛点，于是决定全搬回书架；代价是书架重些，但二进制海报仍留仓库不占地——书架只放能翻能搜的手稿。
+
+### 8.6 决策落档
+
+两条决策草案（数据本体总纲 + Release 收敛/discord de-tier）已拟，待守密人提交 `memory/decisions.md`（§3.1 仅守密人权限）。
