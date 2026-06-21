@@ -64,3 +64,8 @@ projects/news/data/media/*.tar
 # transient coverage data files from parallel test agents
 .cov_agent*
 .coverage
+
+# mutation testing (mutmut) working copy + cache — generated, never committed
+mutants/
+.mutmut-cache
+mutmut-stats.json

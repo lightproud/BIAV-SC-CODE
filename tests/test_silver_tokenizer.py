@@ -63,6 +63,17 @@ class TestSegCjkPure(unittest.TestCase):
         # 「很强」词典未覆盖 → bigram
         self.assertIn("很强", toks)
 
+    def test_dict_hit_at_nonzero_offset(self):
+        # 命中词落在 bigram 回落字之后：验证 `i += len(hit)` 在 i!=0 时正确推进
+        # （`i = len(hit)` 会发散/死循环）。变异测试 mutant_26 暴露的盲点。
+        self.assertEqual(_seg_cjk("意识前夜", frozenset({"前夜"}), 4),
+                         ["意识", "识前", "前夜"])
+
+    def test_two_char_dict_word_as_prefix(self):
+        # 2 字词典词作长串前缀必须整词吃掉（进 2），不得回落 overlapping bigram。
+        # 钉住内层 range 下界（`range(..., 1, -1)` 必须仍尝试 L=2）。mutant_17 盲点。
+        self.assertEqual(_seg_cjk("唤醒体", frozenset({"唤醒"}), 3), ["唤醒"])
+
 
 class TestTokenizeCjk(unittest.TestCase):
     def test_domain_term_kept_whole(self):
