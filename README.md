@@ -54,7 +54,7 @@ brain-in-a-vat/
 │   ├── wiki/                # 游戏数据集 + 多语言 Wiki 站点
 │   └── game/                # 衍生游戏（v2.0 退主线，备扩展位）
 ├── extracted_lua/           # 客户端解包 Lua 原文（wiki/角色数据源）
-└── deliverables/            # 已交付成品存档
+└── Public-Info-Pool/        # 公开信息层产物总池（Resource 正式产物 / Rough 草稿；取代旧 deliverables/）
 ```
 
 ## 子项目与模块

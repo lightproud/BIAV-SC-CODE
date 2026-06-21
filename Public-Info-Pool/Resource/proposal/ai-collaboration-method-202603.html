@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 多会话协作开发方法论</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            color: #1a1a2e;
+            line-height: 1.8;
+            font-size: 14px;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+        }
+
+        /* Cover */
+        .cover {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            page-break-after: always;
+        }
+
+        .cover h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .cover .subtitle {
+            font-size: 1.2rem;
+            color: #6c63ff;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .cover .tagline {
+            font-size: 1rem;
+            color: #555;
+            line-height: 2;
+        }
+
+        .cover .meta {
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Section headings */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #6c63ff;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #333;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6c63ff;
+            margin: 1rem 0 0.3rem;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: #f0eeff;
+            border-left: 4px solid #6c63ff;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #fff8e1;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f8fc;
+        }
+
+        /* Code */
+        code {
+            background: #f0eeff;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            color: #6c63ff;
+        }
+
+        pre {
+            background: #1a1a2e;
+            color: #e8e8f0;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* Diagram */
+        .diagram {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* Step cards */
+        .step {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin: 0.8rem 0;
+        }
+
+        .step-num {
+            display: inline-block;
+            background: #6c63ff;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Page break */
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12px;
+            }
+
+            .cover {
+                padding: 8rem 2rem 4rem;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            .step, .highlight-box, .warning-box, table {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        strong {
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+    <h1>AI 多会话协作开发方法论</h1>
+    <div class="subtitle">Multi-Session AI Collaboration Framework</div>
+    <div class="tagline">
+        用一个人的精力，驱动一个 AI 团队<br>
+        让每个 AI 会话各司其职，协同完成复杂项目
+    </div>
+    <div class="meta">
+        <p>2026 年 3 月</p>
+        <p>基于 Claude Code 多会话实践总结</p>
+    </div>
+</div>
+
+<!-- TOC -->
+<h2>目录</h2>
+<ol>
+    <li>背景与动机</li>
+    <li>核心思想</li>
+    <li>架构设计</li>
+    <li>关键机制</li>
+    <li>实践案例</li>
+    <li>操作指南</li>
+    <li>已知局限与优化方向</li>
+    <li>总结</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- 1. Background -->
+<h2>1. 背景与动机</h2>
+
+<h3>当前 AI 辅助开发的问题</h3>
+
+<p>大多数人使用 AI 写代码的方式是<strong>单对话模式</strong>：一个对话窗口处理所有事情。随着项目复杂度增长，这种方式会遇到三个瓶颈：</p>
+
+<table>
+    <tr>
+        <th>问题</th>
+        <th>表现</th>
+        <th>后果</th>
+    </tr>
+    <tr>
+        <td><strong>上下文溢出</strong></td>
+        <td>对话越来越长，AI 遗忘早期内容</td>
+        <td>重复解释需求，决策前后矛盾</td>
+    </tr>
+    <tr>
+        <td><strong>职责混乱</strong></td>
+        <td>前端、后端、部署全在一个对话里</td>
+        <td>频繁切换上下文，效率低下</td>
+    </tr>
+    <tr>
+        <td><strong>知识易失</strong></td>
+        <td>对话过期/存档后，上下文全部丢失</td>
+        <td>新对话需要从零开始，无法接手</td>
+    </tr>
+</table>
+
+<div class="highlight-box">
+    <p><strong>核心矛盾：</strong>项目需要持久、有组织的知识管理，但 AI 对话天然是临时性的、线性的。</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 2. Core Idea -->
+<h2>2. 核心思想</h2>
+
+<p>解决方案借鉴了软件工程中的<strong>微服务架构</strong>思想：</p>
+
+<div class="highlight-box">
+    <p><strong>把一个项目拆成多个子项目，每个子项目由一个独立的 AI 会话负责，再用一个"主控制台"会话统一协调。</strong></p>
+</div>
+
+<p>就像管理一个真实的开发团队：</p>
+
+<table>
+    <tr>
+        <th>传统团队</th>
+        <th>AI 多会话模式</th>
+    </tr>
+    <tr>
+        <td>项目经理</td>
+        <td>主控制台会话</td>
+    </tr>
+    <tr>
+        <td>前端开发</td>
+        <td>前端子项目会话</td>
+    </tr>
+    <tr>
+        <td>后端开发</td>
+        <td>后端子项目会话</td>
+    </tr>
+    <tr>
+        <td>项目文档</td>
+        <td>CLAUDE.md + CONTEXT.md 文件</td>
+    </tr>
+    <tr>
+        <td>站会/周会</td>
+        <td>主控制台读取并更新状态</td>
+    </tr>
+    <tr>
+        <td>新人入职文档</td>
+        <td>新会话指引（写在 CLAUDE.md 中）</td>
+    </tr>
+</table>
+
+<h3>三个核心原则</h3>
+
+<div class="step">
+    <p><span class="step-num">1</span><strong>职责隔离</strong> — 每个会话只负责一个明确的子项目，不越界</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">2</span><strong>状态持久化</strong> — 关键信息写入仓库文件，而非留在对话中</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">3</span><strong>可替换性</strong> — 任何会话过期后，新会话能通过文件快速接手</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 3. Architecture -->
+<h2>3. 架构设计</h2>
+
+<h3>整体架构图</h3>
+
+<div class="diagram">
+                    ┌─────────────────┐
+                    │    主控制台       │
+                    │  (总协调会话)     │
+                    └────────┬────────┘
+                             │
+                             │ 读写 CLAUDE.md
+                             │ (项目全局状态)
+                             │
+            ┌────────────────┼────────────────┐
+            │                │                │
+            ▼                ▼                ▼
+   ┌────────────┐   ┌────────────┐   ┌────────────┐
+   │  子项目 A   │   │  子项目 B   │   │  子项目 C   │
+   │ (独立会话)  │   │ (独立会话)  │   │ (独立会话)  │
+   └─────┬──────┘   └─────┬──────┘   └─────┬──────┘
+         │                │                │
+         ▼                ▼                ▼
+     CONTEXT.md       CONTEXT.md       CONTEXT.md
+    (局部上下文)      (局部上下文)      (局部上下文)
+</div>
+
+<h3>目录结构</h3>
+
+<pre><code>project/
+├── CLAUDE.md              # 全局协调文件（所有会话共读）
+├── README.md              # 项目对外说明
+├── sub-project-a/         # 子项目 A
+│   ├── CONTEXT.md         # A 的局部上下文
+│   └── ...                # A 的代码
+├── sub-project-b/         # 子项目 B
+│   ├── CONTEXT.md         # B 的局部上下文
+│   └── ...                # B 的代码
+└── sub-project-c/         # 子项目 C
+    ├── CONTEXT.md         # C 的局部上下文
+    └── ...                # C 的代码</code></pre>
+
+<h3>分支策略</h3>
+
+<p>每个子项目在独立的 Git 分支上开发，由主控制台决定合并：</p>
+
+<pre><code>claude/feature-a-xxxxx   ← 子项目 A 的工作分支
+claude/feature-b-xxxxx   ← 子项目 B 的工作分支
+claude/main-control-xxx  ← 主控制台的工作分支</code></pre>
+
+<div class="page-break"></div>
+
+<!-- 4. Key Mechanisms -->
+<h2>4. 关键机制</h2>
+
+<h3>4.1 CLAUDE.md — 全局协调中枢</h3>
+
+<p>这是整个架构的核心文件。Claude Code 在启动时会自动读取仓库根目录的 <code>CLAUDE.md</code>，因此它天然适合作为跨会话的信息中枢。</p>
+
+<p><code>CLAUDE.md</code> 应包含：</p>
+
+<table>
+    <tr>
+        <th>板块</th>
+        <th>内容</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>项目愿景</td>
+        <td>一句话说清楚项目要做什么</td>
+        <td>对齐所有会话的方向</td>
+    </tr>
+    <tr>
+        <td>目录结构</td>
+        <td>各子项目的目录和文件说明</td>
+        <td>新会话快速定位</td>
+    </tr>
+    <tr>
+        <td>子项目状态</td>
+        <td>每个子项目的当前进度和待办</td>
+        <td>状态同步</td>
+    </tr>
+    <tr>
+        <td>协作规范</td>
+        <td>分支命名、代码风格、提交规范</td>
+        <td>统一标准</td>
+    </tr>
+    <tr>
+        <td>新会话指引</td>
+        <td>新会话启动后该做什么</td>
+        <td>零成本接手</td>
+    </tr>
+    <tr>
+        <td>决策记录</td>
+        <td>重要的架构/技术决策及原因</td>
+        <td>知识持久化</td>
+    </tr>
+    <tr>
+        <td>变更日志</td>
+        <td>按时间记录重大变更</td>
+        <td>追踪演进</td>
+    </tr>
+</table>
+
+<h3>4.2 CONTEXT.md — 子项目局部上下文</h3>
+
+<p>每个子项目目录下放置一个 <code>CONTEXT.md</code>，记录该子项目特有的信息：</p>
+
+<ul>
+    <li>这个子项目负责什么</li>
+    <li>文件和模块说明</li>
+    <li>当前状态和待办事项</li>
+    <li>技术细节和注意事项</li>
+</ul>
+
+<div class="highlight-box">
+    <p><strong>信息分层原则：</strong>全局信息放 <code>CLAUDE.md</code>，局部信息放 <code>CONTEXT.md</code>。新会话先读全局，再读自己负责的局部。</p>
+</div>
+
+<h3>4.3 主控制台的职责</h3>
+
+<p>主控制台不写业务代码，它的职责是：</p>
+
+<ol>
+    <li><strong>项目规划</strong> — 决定做什么、怎么拆分子项目</li>
+    <li><strong>架构决策</strong> — 技术选型、目录结构、规范制定</li>
+    <li><strong>状态追踪</strong> — 更新 CLAUDE.md 中的子项目状态</li>
+    <li><strong>代码审查</strong> — 检查子项目的产出质量</li>
+    <li><strong>问题诊断</strong> — 当子项目遇到跨模块问题时介入</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- 5. Case Study -->
+<h2>5. 实践案例</h2>
+
+<h3>项目：忘却前夜 Morimens 情报平台</h3>
+
+<p>一个游戏社区情报收集与衍生内容开发项目，采用本方法论进行 AI 协作开发。</p>
+
+<h4>会话分工</h4>
+
+<table>
+    <tr>
+        <th>会话</th>
+        <th>角色</th>
+        <th>职责</th>
+        <th>目录</th>
+    </tr>
+    <tr>
+        <td>主控制台</td>
+        <td>总控制</td>
+        <td>项目规划、架构设计、协调各子项目</td>
+        <td>根目录</td>
+    </tr>
+    <tr>
+        <td>新闻收集器</td>
+        <td>子项目</td>
+        <td>多平台社区热点自动聚合</td>
+        <td><code>news/</code></td>
+    </tr>
+    <tr>
+        <td>官方数据库</td>
+        <td>子项目</td>
+        <td>游戏数据系统性整理</td>
+        <td><code>database/</code></td>
+    </tr>
+    <tr>
+        <td>衍生游戏</td>
+        <td>子项目</td>
+        <td>同人游戏开发（规划中）</td>
+        <td><code>game/</code></td>
+    </tr>
+</table>
+
+<h4>实际成果</h4>
+
+<ul>
+    <li><strong>新闻收集器</strong>：完整的前端页面 + Python 抓取脚本 + GitHub Actions 自动化，全程 AI 编写，零手写代码</li>
+    <li><strong>主控制台</strong>：完成项目架构重组、目录分离、协调文件体系建设</li>
+    <li><strong>技术栈</strong>：纯 HTML/CSS/JS + Python + GitHub Pages，零运维成本</li>
+</ul>
+
+<h4>协作流程示例</h4>
+
+<div class="diagram">
+1. 主控制台规划项目 → 写入 CLAUDE.md
+2. 创建"新闻收集器"会话 → 读取 CLAUDE.md → 在 news/ 下开发
+3. 新闻收集器完成功能 → 更新 CONTEXT.md → 提交到独立分支
+4. 主控制台审查代码 → 确认合并 → 更新 CLAUDE.md 状态
+5. 创建"官方数据库"会话 → 读取 CLAUDE.md → 在 database/ 下开发
+6. 循环...</div>
+
+<div class="page-break"></div>
+
+<!-- 6. How-to Guide -->
+<h2>6. 操作指南</h2>
+
+<h3>从零开始搭建</h3>
+
+<div class="step">
+    <p><span class="step-num">1</span><strong>创建仓库和主控制台</strong></p>
+    <p>创建一个 Git 仓库，打开第一个 Claude Code 对话作为主控制台。让它创建 <code>CLAUDE.md</code>，定义项目愿景和整体架构。</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">2</span><strong>规划子项目</strong></p>
+    <p>在主控制台中明确要拆分哪些子项目，创建对应目录，在每个目录下放置 <code>CONTEXT.md</code>。</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">3</span><strong>启动子项目会话</strong></p>
+    <p>为每个子项目新建一个 Claude Code 对话，关联到同一个仓库。子项目会话启动后会自动读取 <code>CLAUDE.md</code>，了解全局再开始工作。</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">4</span><strong>开发与同步</strong></p>
+    <p>各子项目在自己的分支和目录下独立开发。完成阶段性成果后更新 <code>CONTEXT.md</code>。主控制台定期检查并更新 <code>CLAUDE.md</code> 中的全局状态。</p>
+</div>
+
+<div class="step">
+    <p><span class="step-num">5</span><strong>会话替换</strong></p>
+    <p>当某个子项目会话过期或需要重启时，新建对话即可。新会话通过 <code>CLAUDE.md</code> + <code>CONTEXT.md</code> 快速了解项目状态，无缝接手。</p>
+</div>
+
+<h3>最佳实践</h3>
+
+<ul>
+    <li><strong>决策不留在对话里</strong> — 重要决策立即写入 CLAUDE.md 的决策记录</li>
+    <li><strong>一个会话一个职责</strong> — 不要让子项目会话处理跨模块的事</li>
+    <li><strong>主控制台不写业务代码</strong> — 只做规划、协调、审查</li>
+    <li><strong>及时更新状态</strong> — 每完成一个阶段就更新对应的 .md 文件</li>
+    <li><strong>分支隔离</strong> — 各子项目在独立分支开发，避免冲突</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- 7. Limitations -->
+<h2>7. 已知局限与优化方向</h2>
+
+<h3>当前局限</h3>
+
+<table>
+    <tr>
+        <th>局限</th>
+        <th>说明</th>
+        <th>可能的优化</th>
+    </tr>
+    <tr>
+        <td>无实时通信</td>
+        <td>会话之间只能通过文件异步同步</td>
+        <td>未来可能通过 MCP 或 API 实现会话间通信</td>
+    </tr>
+    <tr>
+        <td>人工调度</td>
+        <td>主控制台无法自动触发子项目会话</td>
+        <td>结合 CI/CD 实现自动化触发</td>
+    </tr>
+    <tr>
+        <td>会话不持久</td>
+        <td>对话过期后需要手动重建</td>
+        <td>通过完善的文件体系降低重建成本</td>
+    </tr>
+    <tr>
+        <td>状态同步延迟</td>
+        <td>需要手动 git pull 才能看到其他会话的更新</td>
+        <td>约定更频繁的提交和推送节奏</td>
+    </tr>
+</table>
+
+<h3>演进方向</h3>
+
+<ol>
+    <li><strong>自动化调度</strong> — 通过 GitHub Actions 或脚本自动触发 AI 会话执行任务</li>
+    <li><strong>状态看板</strong> — 自动从各 CONTEXT.md 生成项目状态仪表板</li>
+    <li><strong>模板化</strong> — 将这套方法论抽象为可复用的项目模板</li>
+    <li><strong>质量门禁</strong> — 子项目提交自动触发主控制台审查</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- 8. Summary -->
+<h2>8. 总结</h2>
+
+<div class="highlight-box">
+    <p><strong>一句话概括：</strong>用文件系统作为 AI 会话之间的"共享记忆"，用目录结构实现职责隔离，用主控制台会话代替项目经理，让一个人可以驱动一个 AI 开发团队。</p>
+</div>
+
+<h3>适用场景</h3>
+
+<ul>
+    <li>个人开发者想用 AI 完成中大型项目</li>
+    <li>项目涉及多个独立模块（前端 + 后端 + 数据 + 部署等）</li>
+    <li>项目周期较长，需要持久化知识和决策</li>
+    <li>需要频繁切换或重启 AI 对话</li>
+</ul>
+
+<h3>不适用场景</h3>
+
+<ul>
+    <li>简单的单文件脚本或小工具</li>
+    <li>一次性对话就能完成的任务</li>
+    <li>不使用 Git 的项目</li>
+</ul>
+
+<h3>关键收益</h3>
+
+<table>
+    <tr>
+        <th>收益</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>效率提升</td>
+        <td>每个会话专注一件事，上下文精准，减少重复解释</td>
+    </tr>
+    <tr>
+        <td>知识不丢失</td>
+        <td>决策和状态持久化到文件，不随对话消失</td>
+    </tr>
+    <tr>
+        <td>可扩展</td>
+        <td>需要新模块时，创建新目录 + 新会话即可</td>
+    </tr>
+    <tr>
+        <td>低门槛</td>
+        <td>不需要额外工具，Git + Claude Code 即可运行</td>
+    </tr>
+</table>
+
+<div class="footer">
+    <p>AI Multi-Session Collaboration Framework &mdash; 2026</p>
+    <p>基于 Claude Code 实践，持续迭代中</p>
+</div>
+
+</body>
+</html>
