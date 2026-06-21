@@ -1,0 +1,348 @@
+"""silent_sources_audit.py 纯逻辑单测：分级 / 沉默天数 / 审计 / 报告构建。
+
+ARCHIVE_DIR / DISCORD_ARCHIVE_DIR / HEALTH_PATH monkeypatch 到 tmp 目录，
+绝不触碰真实 data 树、绝不触网。
+"""
+
+import json
+import sys
+from pathlib import Path
+from unittest import mock
+
+import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
+
+import silent_sources_audit as ssa  # noqa: E402
+
+
+# ── compute_silent_days ─────────────────────────────────────────────────────
+
+def test_compute_silent_days_none_returns_sentinel():
+    assert ssa.compute_silent_days(None, "2026-06-01") == 9999
+
+
+def test_compute_silent_days_normal():
+    assert ssa.compute_silent_days("2026-05-25", "2026-06-01") == 7
+
+
+def test_compute_silent_days_future_clamped_to_zero():
+    assert ssa.compute_silent_days("2026-06-10", "2026-06-01") == 0
+
+
+def test_compute_silent_days_bad_input_sentinel():
+    assert ssa.compute_silent_days("garbage", "2026-06-01") == 9999
+
+
+# ── classify ────────────────────────────────────────────────────────────────
+
+def test_classify_never_when_zero_items():
+    assert ssa.classify(0, 0) == "never"
+    assert ssa.classify(100, 0) == "never"  # zero items dominates
+
+
+def test_classify_active():
+    assert ssa.classify(0, 5) == "active"
+    assert ssa.classify(6, 5) == "active"
+
+
+def test_classify_degraded():
+    assert ssa.classify(7, 5) == "degraded"
+    assert ssa.classify(29, 5) == "degraded"
+
+
+def test_classify_dormant():
+    assert ssa.classify(30, 5) == "dormant"
+    assert ssa.classify(9999, 5) == "dormant"
+
+
+# ── audit_source ────────────────────────────────────────────────────────────
+
+@pytest.fixture
+def dirs(tmp_path, monkeypatch):
+    adir = tmp_path / "platforms"
+    ddir = tmp_path / "discord"
+    adir.mkdir()
+    ddir.mkdir()
+    monkeypatch.setattr(ssa, "ARCHIVE_DIR", adir)
+    monkeypatch.setattr(ssa, "DISCORD_ARCHIVE_DIR", ddir)
+    monkeypatch.setattr(ssa, "HEALTH_PATH", tmp_path / "output" / "source-health.json")
+    monkeypatch.setattr(ssa, "_REPO_ROOT", tmp_path)
+    return tmp_path, adir, ddir
+
+
+def _write_platform_day(adir, source, date_str, item_count):
+    pdir = adir / source
+    pdir.mkdir(parents=True, exist_ok=True)
+    (pdir / f"{date_str}.json").write_text(
+        json.dumps({"item_count": item_count, "items": []}), encoding="utf-8"
+    )
+
+
+def test_platform_dir_routes_discord(dirs):
+    _, adir, ddir = dirs
+    assert ssa._platform_dir("discord") == ddir
+    assert ssa._platform_dir("reddit") == adir / "reddit"
+
+
+def test_audit_source_missing_dir(dirs):
+    res = ssa.audit_source("reddit")
+    assert res["days_archived"] == 0
+    assert res["total_items"] == 0
+    assert res["first_archive_date"] is None
+
+
+def test_audit_source_empty_dir(dirs):
+    _, adir, _ = dirs
+    (adir / "reddit").mkdir()
+    res = ssa.audit_source("reddit")
+    assert res["days_archived"] == 0
+
+
+def test_audit_source_sums_item_count(dirs):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-04-01", 3)
+    _write_platform_day(adir, "reddit", "2026-04-02", 5)
+    res = ssa.audit_source("reddit")
+    assert res["days_archived"] == 2
+    assert res["total_items"] == 8
+    assert res["first_archive_date"] == "2026-04-01"
+    assert res["last_archive_date"] == "2026-04-02"
+
+
+def test_audit_source_skips_corrupt_file(dirs):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-04-01", 3)
+    (adir / "reddit" / "2026-04-02.json").write_text("{not json", encoding="utf-8")
+    res = ssa.audit_source("reddit")
+    assert res["total_items"] == 3
+    assert res["days_archived"] == 2  # file count includes the bad one
+
+
+def test_audit_source_discord_counts_messages_list(dirs):
+    _, _, ddir = dirs
+    (ddir / "2026-04-01.json").write_text(
+        json.dumps({"messages": [{"a": 1}, {"b": 2}]}), encoding="utf-8"
+    )
+    res = ssa.audit_source("discord")
+    assert res["total_items"] == 2
+
+
+def test_audit_source_discord_counts_messages_int(dirs):
+    _, _, ddir = dirs
+    (ddir / "2026-04-01.json").write_text(
+        json.dumps({"messages": 7}), encoding="utf-8"
+    )
+    res = ssa.audit_source("discord")
+    assert res["total_items"] == 7
+
+
+# ── build_report ────────────────────────────────────────────────────────────
+
+def test_build_report_structure(dirs):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-04-01", 3)
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit", "bilibili"]):
+        report = ssa.build_report()
+    assert {e["source"] for e in report["entries"]} == {"reddit", "bilibili"}
+    assert report["window_start"] == "2026-04-01"
+    assert report["window_days"] >= 1
+    reddit = next(e for e in report["entries"] if e["source"] == "reddit")
+    assert reddit["level"] in ("active", "degraded", "dormant")
+
+
+def test_build_report_no_platform_dates_uses_today(dirs):
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]):
+        report = ssa.build_report()
+    # No archives -> window_start == today, window_days == 1
+    assert report["window_start"] == report["today"]
+    assert report["window_days"] == 1
+
+
+# ── scan_unregistered_dirs ──────────────────────────────────────────────────
+
+def test_scan_unregistered_dirs(dirs):
+    _, adir, _ = dirs
+    (adir / "reddit").mkdir()
+    (adir / "taptap_post").mkdir()
+    (adir / "loose.txt").write_text("x", encoding="utf-8")
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]):
+        found = ssa.scan_unregistered_dirs()
+    assert found == ["taptap_post"]
+
+
+def test_scan_unregistered_dirs_missing_archive(dirs, monkeypatch):
+    monkeypatch.setattr(ssa, "ARCHIVE_DIR", dirs[0] / "nope")
+    assert ssa.scan_unregistered_dirs() == []
+
+
+# ── core_source_alarms ──────────────────────────────────────────────────────
+
+def test_core_source_alarms_flags_never_and_dormant():
+    report = {"entries": [
+        {"source": "reddit", "level": "never"},
+        {"source": "bilibili", "level": "active"},
+        {"source": "steam", "level": "dormant"},
+        {"source": "weixin", "level": "never"},  # not a core source
+    ]}
+    with mock.patch.object(ssa, "CORE_SOURCES", ["reddit", "bilibili", "steam"]):
+        alarmed = ssa.core_source_alarms(report)
+    assert alarmed == ["reddit", "steam"]
+
+
+# ── write_health ────────────────────────────────────────────────────────────
+
+def _report_with(entries, window_days=10, today="2026-06-01", start="2026-05-22"):
+    return {
+        "today": today,
+        "window_start": start,
+        "window_days": window_days,
+        "entries": entries,
+    }
+
+
+def test_write_health_never_seeded_active(dirs):
+    report = _report_with([
+        {"source": "reddit", "level": "never", "silent_days": 9999,
+         "last_archive_date": None, "total_items": 0},
+    ])
+    ssa.write_health(report)
+    payload = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    plat = payload["platforms"]["reddit"]
+    assert plat["level"] == "active"
+    assert plat["consecutive_silent_days"] == 0
+    assert payload["seeded_from"] == "silent_sources_audit"
+
+
+def test_write_health_sentinel_silent_uses_window_days(dirs):
+    report = _report_with([
+        {"source": "reddit", "level": "dormant", "silent_days": 9999,
+         "last_archive_date": "2026-05-01", "total_items": 4},
+    ], window_days=12)
+    ssa.write_health(report)
+    payload = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    assert payload["platforms"]["reddit"]["consecutive_silent_days"] == 12
+
+
+def test_write_health_preserves_last_check_date(dirs):
+    ssa.HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
+    ssa.HEALTH_PATH.write_text(json.dumps({
+        "platforms": {"reddit": {"last_check_date": "2026-05-30"}}
+    }), encoding="utf-8")
+    report = _report_with([
+        {"source": "reddit", "level": "active", "silent_days": 2,
+         "last_archive_date": "2026-05-30", "total_items": 4},
+    ])
+    ssa.write_health(report)
+    payload = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    assert payload["platforms"]["reddit"]["last_check_date"] == "2026-05-30"
+    assert payload["platforms"]["reddit"]["consecutive_silent_days"] == 2
+
+
+def test_write_health_corrupt_existing_ignored(dirs):
+    ssa.HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
+    ssa.HEALTH_PATH.write_text("{bad json", encoding="utf-8")
+    report = _report_with([
+        {"source": "reddit", "level": "active", "silent_days": 1,
+         "last_archive_date": "2026-05-31", "total_items": 4},
+    ])
+    ssa.write_health(report)  # should not raise
+    payload = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    assert payload["platforms"]["reddit"]["last_check_date"] is None
+
+
+# ── print_* (smoke: ensure no crash on representative reports) ───────────────
+
+def test_print_report_smoke(capsys):
+    report = _report_with([
+        {"source": "reddit", "level": "active", "silent_days": 1,
+         "last_archive_date": "2026-05-31", "total_items": 4, "days_archived": 3},
+        {"source": "bilibili", "level": "degraded", "silent_days": 10,
+         "last_archive_date": "2026-05-20", "total_items": 2, "days_archived": 2},
+        {"source": "weibo", "level": "dormant", "silent_days": 40,
+         "last_archive_date": "2026-04-20", "total_items": 1, "days_archived": 1},
+        {"source": "pixiv", "level": "never", "silent_days": 9999,
+         "last_archive_date": None, "total_items": 0, "days_archived": 0},
+    ], window_days=5)
+    ssa.print_report(report)
+    out = capsys.readouterr().out
+    assert "沉默源审计" in out
+    assert "合计 4 源" in out
+
+
+def test_print_legacy_section_empty(capsys):
+    ssa.print_legacy_section([])
+    assert capsys.readouterr().out == ""
+
+
+def test_print_legacy_section_with_entries(dirs, capsys):
+    _, adir, _ = dirs
+    (adir / "taptap_post").mkdir()
+    with mock.patch.object(ssa, "LEGACY_SOURCES", ["taptap_post"]):
+        ssa.print_legacy_section(["taptap_post", "mystery_src"])
+    out = capsys.readouterr().out
+    assert "遗留源" in out
+    assert "已知遗留" in out
+    assert "未登记" in out
+
+
+def test_suggest_prune_all_healthy(capsys):
+    report = _report_with([
+        {"source": "reddit", "level": "active", "silent_days": 1,
+         "last_archive_date": "2026-05-31", "total_items": 4},
+    ])
+    ssa.suggest_prune(report)
+    assert "无需清理" in capsys.readouterr().out
+
+
+def test_suggest_prune_lists_all_buckets(capsys):
+    report = _report_with([
+        {"source": "pixiv", "level": "never", "silent_days": 9999,
+         "last_archive_date": None, "total_items": 0},
+        {"source": "weibo", "level": "dormant", "silent_days": 40,
+         "last_archive_date": "2026-04-20", "total_items": 1},
+        {"source": "bilibili", "level": "degraded", "silent_days": 10,
+         "last_archive_date": "2026-05-20", "total_items": 2},
+    ], window_days=5)
+    ssa.suggest_prune(report)
+    out = capsys.readouterr().out
+    assert "候选摘除" in out
+    assert "强制调查" in out
+    assert "轻度观察" in out
+
+
+# ── main ────────────────────────────────────────────────────────────────────
+
+def _run_main(argv):
+    with mock.patch.object(sys, "argv", ["silent_sources_audit.py"] + argv):
+        ssa.main()
+
+
+def test_main_plain_run(dirs, capsys):
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]):
+        _run_main([])
+    assert "沉默源审计" in capsys.readouterr().out
+
+
+def test_main_write_and_suggest(dirs, capsys):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-04-01", 3)
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]):
+        _run_main(["--write", "--suggest-prune"])
+    assert ssa.HEALTH_PATH.exists()
+
+
+def test_main_strict_exits_on_core_alarm(dirs):
+    # reddit registered + core, but no archive => 'never' => alarm
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]), \
+            mock.patch.object(ssa, "CORE_SOURCES", ["reddit"]):
+        with pytest.raises(SystemExit) as exc:
+            _run_main(["--strict"])
+    assert exc.value.code == 1
+
+
+def test_main_alarm_without_strict_no_exit(dirs, capsys):
+    with mock.patch.object(ssa, "ALL_REGISTERED_SOURCES", ["reddit"]), \
+            mock.patch.object(ssa, "CORE_SOURCES", ["reddit"]):
+        _run_main([])  # should not raise
+    assert "健康门控" in capsys.readouterr().out
