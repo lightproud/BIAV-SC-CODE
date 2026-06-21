@@ -1,20 +1,24 @@
 {
   "date": "2026-04-01",
-  "messages": 24605,
+  "messages": 26366,
   "unique_authors": 196,
-  "reactions_total": 2973,
-  "attachments": 1328,
+  "reactions_total": 3139,
+  "attachments": 1411,
   "channel_activity": {
+    "🔸剧情交流": 70,
+    "🔸课间休息闲聊": 14,
+    "🔸交友频道": 20,
+    "🔸日本語チャンネル": 12,
+    "🔸한국어-채팅방": 12,
+    "🔸deutscher-chatraum": 10,
+    "🔸chaîne-française": 16,
+    "🔸русский-канал": 248,
+    "🔸phòng-chat-tiếng-việt": 1650,
+    "🔸canal-español": 586,
+    "🔸canal-português": 884,
     "🔸綜合討論": 2411,
     "🔸阵容构建": 52,
     "🔸morimens-game-chat": 18232,
-    "🔸剧情交流": 35,
-    "🔸한국어-채팅방": 6,
-    "🔸chaîne-française": 8,
-    "🔸русский-канал": 124,
-    "🔸phòng-chat-tiếng-việt": 825,
-    "🔸canal-español": 293,
-    "🔸canal-português": 442,
     "🔸ห้องสนทนาภาษาไทย": 36,
     "🔸team-building": 131,
     "🔸general-chat": 598,
@@ -37,14 +41,10 @@
     "291天的萌新想問": 7,
     "🔸traphase": 3,
     "Miryam Revelate Devotion str/tentacle dmg gain": 1,
-    "🔸日本語チャンネル": 6,
-    "🔸课间休息闲聊": 7,
-    "🔸deutscher-chatraum": 5,
     "Non-morimens art (i hope this is allowed": 5,
     "Release My Lil'Sis !": 1,
     "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration": 33,
     "team building + pulls advice if you don't mind": 2,
-    "🔸交友频道": 10,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 2,
     "建个随笔楼": 1,
     "我的戰鬥結果怪怪的": 1,
@@ -52,35 +52,34 @@
     "William posting": 2
   },
   "hourly_activity": {
-    "0": 1025,
-    "1": 1545,
-    "2": 1318,
-    "3": 789,
-    "4": 633,
-    "5": 753,
-    "6": 1596,
-    "7": 2046,
-    "8": 979,
-    "9": 795,
-    "10": 538,
-    "11": 1022,
-    "12": 1117,
-    "13": 1253,
-    "14": 1516,
-    "15": 1528,
-    "16": 1146,
-    "17": 568,
-    "20": 597,
-    "21": 948,
-    "23": 984,
-    "18": 169,
-    "19": 822,
-    "22": 918
+    "2": 1471,
+    "4": 761,
+    "5": 767,
+    "6": 1658,
+    "7": 2059,
+    "8": 999,
+    "18": 261,
+    "20": 607,
+    "0": 1052,
+    "1": 1621,
+    "9": 817,
+    "10": 591,
+    "12": 1210,
+    "15": 1591,
+    "22": 935,
+    "13": 1339,
+    "16": 1360,
+    "19": 878,
+    "11": 1048,
+    "14": 1568,
+    "17": 955,
+    "23": 1003,
+    "3": 819,
+    "21": 996
   },
   "message_types": {
-    "0": 6824,
-    "19": 3479,
-    "20": 4
+    "0": 1258,
+    "19": 503
   },
   "top_reacted_messages": [
     {
@@ -122,6 +121,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1488793584667852891",
+      "channel_id": "1173463482503536711",
+      "content": "||拉布布||",
+      "author": "dog794",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1488704975369666774",
+      "channel_id": "1300659662311526512",
+      "content": "",
+      "author": "blecnes.",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1488883493365878834",
       "channel_id": "1170692781216378960",
       "content": "Maybe if I stopped holding myself back by playing Aequor\nI could ... always be c",
@@ -138,25 +153,19 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488793584667852891",
-      "content": "||拉布布||",
-      "author": "void_1546.",
-      "reactions": 7,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1488704975369666774",
-      "content": "",
-      "author": "blecnes.",
-      "reactions": 7,
-      "channel": "🔸canal-español"
-    },
-    {
       "id": "1488690556480786542",
       "content": "urgent april fools event fanart <:ramona_tuff_:1441426630420467753>",
       "author": "zzio_",
       "reactions": 7,
       "channel": "William posting"
+    },
+    {
+      "id": "1488794704546889829",
+      "channel_id": "1173463482503536711",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
     },
     {
       "id": "1488879631338569818",
@@ -227,14 +236,6 @@
       "channel_id": "1170692781216378960",
       "content": "<@212031841786527764> <@1164303137293729792> <@285755067213152257> <@11337412379",
       "author": "megidola.",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488976772300144823",
-      "channel_id": "1170692781216378960",
-      "content": "I got 10 more points than last time <:PeepoHype:818462952356708462>",
-      "author": "zapffuchino",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
