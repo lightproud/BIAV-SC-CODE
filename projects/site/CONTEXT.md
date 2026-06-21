@@ -29,7 +29,7 @@
 ## 职责范围
 
 Code-site 会话负责：
-- **主站导航页** (`site/index.html`)：项目入口，连接 Wiki / News / Game 三个子站
+- **主站导航页** (`projects/site/public/index.html`)：项目入口，连接 Wiki / News / Game 三个子站
 - **统一部署流水线** (`.github/workflows/deploy-site.yml`)：构建并发布整个 GitHub Pages 站点
 - **跨站视觉一致性**：确保各子站风格与 `memory/style-guide.md` 协调
 - **交互体验优化**：响应式布局、动画效果、用户体验
