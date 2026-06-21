@@ -1,6 +1,6 @@
 # 决策日志
 
-> 最后更新：2026-06-21 by /grill 治理会话（「祈祷优化」：拆分归档层 + 显式覆盖列 + 退役 27 条死决策/存疑条目 + 修 record_decision 插入锚点）
+> 最后更新：2026-06-21 by /grill 治理会话（「祈祷优化」：拆分归档层 + 显式覆盖列 + 退役 27 条死决策/存疑条目 + 修 record_decision 插入锚点）；同日授权补录 2026-06-15 wiki 结构化层清空裁定（B 漂移哨兵抓出台账缺录）
 >
 > **新会话只需要读「当前有效决策」。长理由 / 已退役决策 / 编年史 → `memory/decisions-archive.md`。**
 >
@@ -62,6 +62,7 @@
 | **Releases 治理 — 守密人 2026-06-20 裁定（/grill 会话）**：守密人四维度关注 release（全量保全可靠性 / 清重复旧版 / 命名版本规整 / 可检索性）。**能力边界**：云容器无 Releases 写权限（gh/hub 无 + mcp 仅 list/get 只读），增删改 release 须守密人手动或 workflow。**艾瑞卡落地（可检索性）**：建仓内 `RELEASES.md` 索引（41 release 全貌 + 取用方式），CLAUDE.md §5.2 加指针。**完整性核对（元数据层）**：archive-log 30 月（2023-11~2026-04）全 uploaded、连续无断档、与 30 个 discord-archive tag 一一对应 ✓。**待守密人手动**：删 `art-assets-v1`（943M，被 art-assets-v2 明确取代的冗余旧版）；命名现状两套约定各自自洽无须强统一。索引详见 `RELEASES.md` | 全局 / Releases 治理 | — |
 | **银芯 Public-Info-Pool 数据本体总纲 — 守密人 2026-06-21 裁定（/grill 规划社区数据存放和目录，授权艾瑞卡代写）**：采「按性质分流」为唯一总纲——可检索 text→git，二进制→Releases（text 进 Releases 自废 grep/diff/AI 分析；二进制零访问损失，本会话建社区索引被迫写 `restore_release_data.py` 下 301MB 即铁证）。git 内套 **BPT v2.0 4R 本体**（Root/Resource/Record/Reference）组织 `Public-Info-Pool/`：社区归档→`Record/Community/`（discord + 16 平台摊平对齐）、解包 text→`Reference/Game-Unpacked/`。BPT 4R 定性为**银芯↔黑池接口协议**（借结构模板 + 知识格式约定，非引入黑池数据，不破「黑池不进银芯」）。原始时序数据免逐文件 frontmatter，目录归位 + `index.md` 即合规。方案见 `memory/strategy/repo-slimming-plan.md` §8 | 全局 / 数据架构 | 反转决策 86（discord 60 天分级）+「大二进制移 Releases」的 text 部分 + 2026-06-20 仓库瘦身/Releases 治理路线 |
 | **Release 收敛为 2 + discord 全量 de-tier — 守密人 2026-06-21 裁定（/grill，授权艾瑞卡代写）**：Release 最终只留 **解包**（unpacked-assets + unpacked-data 二进制残余合并，config 重打包剥 text）+ **社区二创**（community-assets：fanart/media）；`community-data` 退役删除（discord 全量入 git）。discord 转「全量永驻 git、退役月度 git_rm 瘦身」，拆 `discord_archiver.py` 月度清理 + 防重拉对冲守卫（前提消失）。fanart/media `git rm` 出工作树（**不改 git 历史**，历史压缩守密人未来另议）、采集链改直传 release。执行**一次到位**、经 CI workflow（容器无 Release 写权限/大推 413，决策 2026-06-20 执行约束不变）。方案见 `memory/strategy/repo-slimming-plan.md` §8 | 全局 / 仓库瘦身 | 反转 2026-06-20 Releases 治理的分级路线 |
+| **wiki 结构化层整层清空 — 守密人 2026-06-15 裁定**（2026-06-21 守密人授权艾瑞卡补录，由 B 裁定日期哨兵 `tests/test_claude_md_dates.py` 抓出「CLAUDE.md/project-status 有载、决策台账缺录」的跨档漂移，lesson #29 同款脱节）：原 `projects/wiki/data/db/` 结构化层（`characters.json` 全 6 JSON + 24 个生成角色详情页）整层清空。理由：原 24/72 全为 partial/fixture 占位、game_version 全 None，长期误导引用。数据桥 `characters.ts` 改导出空数组（保留类型/组件脚手架），VitePress 构建验证通过（BUILD_OK）。W2 重建基线必须以 `projects/wiki/data/extracted/` 一手解包字段为唯一源，**禁用合成占位**。实时进度以 `memory/project-status.md` 为准 | 全局 / Wiki | 搁置 characters.json schema v1.0 锁定（characters.json 已删，待 W2 重建时重订） |
 <!-- DECISIONS-INSERT-ANCHOR -->
 
 ### 子项目
