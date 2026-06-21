@@ -447,7 +447,8 @@
       "summary": "银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。",
       "planes": [
         "cli",
-        "command"
+        "command",
+        "workflow"
       ],
       "status": "live"
     },
