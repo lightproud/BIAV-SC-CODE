@@ -6,7 +6,7 @@
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 24,
+      "workflows": 25,
       "scripts_top": 15,
       "scripts_news": 26,
       "scripts_wiki": 7,
@@ -14,7 +14,7 @@
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 88
+      "total": 89
     },
     "reachability": {
       "live": 48,
@@ -202,6 +202,15 @@
         "manual"
       ],
       "note_zh": "解包提取客户端游戏数据（wiki 数据源）。"
+    },
+    {
+      "id": "fanart-archive.yml",
+      "name": "Fanart Archive",
+      "path": ".github/workflows/fanart-archive.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     },
     {
       "id": "recover-fanart.yml",
@@ -452,7 +461,8 @@
       "path": "projects/news/scripts/archive_engine.py",
       "summary": "通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除",
       "planes": [
-        "cli"
+        "cli",
+        "workflow"
       ],
       "status": "live"
     },
