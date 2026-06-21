@@ -207,7 +207,7 @@ brain-in-a-vat/
 │   ├── site/   # 使命#3 对外门户：静态站（public/）+ 设计令牌（design/）
 │   └── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
-│   ├── active/                    # 主题入口卡（5 个高频 hub，优先读这里再下钻）
+│   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
 │   └── *.md / *.json              # 见 §5.3
 ├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
