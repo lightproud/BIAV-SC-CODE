@@ -59,6 +59,7 @@ export default defineConfig({
       {
         text: '更多',
         items: [
+          { text: '功能解锁条件', link: '/feature-unlock' },
           { text: '面板文本', link: '/panel-text' },
           { text: '更新公告', link: '/update-notices' },
         ]
@@ -108,6 +109,7 @@ export default defineConfig({
           text: '更多',
           collapsed: true,
           items: [
+            { text: '功能解锁条件', link: '/feature-unlock' },
             { text: '面板文本', link: '/panel-text' },
             { text: '更新公告', link: '/update-notices' },
           ]

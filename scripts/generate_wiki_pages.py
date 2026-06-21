@@ -95,7 +95,8 @@ def _clean_lore_markup(text):
         return content
 
     text = re.sub(r'<([A-Za-z]+):([^>]*)>', repl, text)
-    text = re.sub(r'<[^>]{0,16}>', '', text)  # 清掉 <▼> 等无内容杂标记
+    # 清掉 <▼> 等符号开头的杂标记；不碰生成的 <span>/</span>（字母或 / 开头）
+    text = re.sub(r'<[^A-Za-z/][^>]*>', '', text)
     return text.strip()
 
 
@@ -936,6 +937,17 @@ def generate_characters():
 
 def generate_awakener_pages(chars, by_cat, play, cidx):
     """每个可玩唤醒体一张详情页 docs/zh/awakeners/<id>.md，并重写列表页 index.md。"""
+    # 角色名 → [(章节名, 锚点)]：剧情读本 generate_story 的 chapter-N 反向映射，
+    # 供详情页「登场剧情」回链。锚点方案须与 generate_story 保持一致。
+    char_chapters = {}
+    try:
+        sidx = json.load(open(f'{PROCESSED_DIR}/story/index.json', encoding='utf-8'))['index']
+        for i, u in enumerate(sidx):
+            for name in u.get('characters', []):
+                char_chapters.setdefault(name, []).append((u['unit'], f'chapter-{i}'))
+    except (FileNotFoundError, KeyError):
+        pass
+
     out_dir = f'{DOCS_DIR}/zh/awakeners'
     os.makedirs(out_dir, exist_ok=True)
     # 清掉旧的烂尾样板页（pandia.md 依赖已清空的 db 数据层）
@@ -1008,6 +1020,10 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
         # 延伸入口
         D.append('## 延伸资料')
         D.append('')
+        chaps = char_chapters.get(ch['name'])
+        if chaps:
+            links = '、'.join(f'[{u}](/story#{a})' for u, a in chaps)
+            D.append(f'- 登场剧情：{links}')
         D.append(f'- [语音台词](/voice-lines)（搜索「{ch["name"]}」）')
         D.append('- [CG 画廊](/cg-gallery) · [角色立绘](/portraits)')
         D.append('- [战斗机制总览](/battle-system) · [玩法图鉴](/playstyle)')
@@ -1635,6 +1651,22 @@ def generate_story():
     except FileNotFoundError:
         print('Story layer not found; skipping story page')
         return
+    # 角色名 → 详情页 id（用于「关联角色」交叉链接到 /zh/awakeners/{id}）
+    name2id = {}
+    try:
+        ci = json.load(open(f'{PROCESSED_DIR}/character_index.json', encoding='utf-8'))
+        for c in (ci if isinstance(ci, list) else ci.get('characters', ci.values())):
+            # 仅 playable 角色有详情页（generate_characters 只为 playable 出页），
+            # 非 playable 链接会 404，故不收
+            if isinstance(c, dict) and c.get('name') and c.get('category') == 'playable':
+                name2id[c['name']] = c['id']
+    except (FileNotFoundError, KeyError, AttributeError):
+        pass
+
+    def link_char(name):
+        cid = name2id.get(name)
+        return f'[{esc(name)}](/zh/awakeners/{cid})' if cid else esc(name)
+
     # 关卡组引言：group_id → desc（取自 stages.json groups）
     gdesc = {}
     try:
@@ -1659,6 +1691,8 @@ def generate_story():
              '其剧情**梗概**（社区考据，非原文）见 [剧情考据](/lore-research)。')
     L.append(':::')
     L.append('')
+    # 稳定锚点：中文标题自动 slug 不可靠，显式分配 chapter-N 供概览表跳转
+    anchor_of = {u['unit']: f'chapter-{i}' for i, u in enumerate(idx)}
     L.append('## 章节概览')
     L.append('')
     L.append('| 单元 | 类型 | 词条 | 关卡组 | 关联角色 |')
@@ -1666,15 +1700,15 @@ def generate_story():
     for u in idx:
         if not u['lore_count'] and not u['stage_group_count']:
             continue
-        chars = '、'.join(esc(c) for c in u['characters']) if u['characters'] else '—'
-        L.append(f"| {esc(u['unit'])} | {tl.get(u['type'], u['type'])} | {u['lore_count']} | {u['stage_group_count']} | {chars} |")
+        chars = '、'.join(link_char(c) for c in u['characters']) if u['characters'] else '—'
+        L.append(f"| [{esc(u['unit'])}](#{anchor_of[u['unit']]}) | {tl.get(u['type'], u['type'])} | {u['lore_count']} | {u['stage_group_count']} | {chars} |")
     L.append('')
     L.append('---')
     L.append('')
     for u in idx:
         if not u['lore_ids'] and not u['stage_group_ids']:
             continue
-        L.append(f"## {esc(u['unit'])}")
+        L.append(f"## {esc(u['unit'])} {{#{anchor_of[u['unit']]}}}")
         L.append('')
         sub = tl.get(u['type'], u['type'])
         if u['type'] == 'main_chapter' and u['chapter_no'] is not None:
@@ -1682,7 +1716,7 @@ def generate_story():
         L.append(f'*{sub}*')
         L.append('')
         if u['characters']:
-            L.append(f"**关联角色**：{'、'.join(esc(c) for c in u['characters'])}")
+            L.append(f"**关联角色**：{'、'.join(link_char(c) for c in u['characters'])}")
             L.append('')
 
         # —— 关卡引言（关卡组 name + desc，去重）——
@@ -1740,9 +1774,78 @@ def generate_story():
 
         L.append('---')
         L.append('')
+
+    # —— 未编入章节的剧情正文（lock_tip 为空、解析器无法归章，但确有叙事正文）——
+    mapped = {lid for u in idx for lid in u['lore_ids']}
+    orphan = []
+    for e in lore.values():
+        if e['id'] in mapped:
+            continue
+        d = _clean_lore_markup(e.get('desc', ''))
+        if len(d) >= PROSE_MIN:
+            orphan.append((e, d))
+    orphan.sort(key=lambda x: -len(x[1]))  # 长篇优先
+    if orphan:
+        L.append('## 番外 · 未编入章节的剧情正文')
+        L.append('')
+        L.append(f'> 以下 {len(orphan)} 条收藏馆词条确有叙事正文，但客户端未标注解锁章节，'
+                 f'解析器无法挂入上方时间线；按正文长度排列，逐字保留。')
+        L.append('')
+        for e, d in orphan:
+            L.append(f"#### {_clean_title(e.get('title', ''))}")
+            L.append('')
+            L.append(f'> {d}')
+            L.append('')
+        L.append('---')
+        L.append('')
+
     with open(f'{DOCS_DIR}/story.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(L))
     print(f'Story page: {len([u for u in idx if u["lore_ids"] or u["stage_group_ids"]])} story units')
+
+
+def generate_feature_unlock():
+    """Generate 功能解锁条件 page from feature_unlock.json（此前未上架的解包数据）。"""
+    try:
+        data = json.load(open(f'{PROCESSED_DIR}/feature_unlock.json', encoding='utf-8'))
+    except FileNotFoundError:
+        print('feature_unlock.json not found; skipping feature unlock page')
+        return
+    # 软空格 \xa0 归一为普通空格，便于阅读
+    def norm(t):
+        return (t or '').replace('\xa0', ' ').strip()
+
+    seen = set()
+    rows = []
+    for f in data['features']:
+        name = norm(f.get('feature_name', '')).replace('|', '/')
+        lock = norm(f.get('lock_tip', '')).replace('|', '/')
+        if not name or not lock:
+            continue
+        desc = norm(f.get('unlock_desc', '')).replace('|', '/')
+        key = (name, lock, desc)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append((name, lock, desc))
+
+    L = ['# 功能解锁条件', '']
+    L.append(f'> 数据来源：FeatureUnlock.lua（运行时内存提取） | 共 {data["_meta"]["total_features"]} 项功能，'
+             f'其中 {len(rows)} 项有明确解锁条件（已去重）。')
+    L.append('')
+    L.append('::: info 说明')
+    L.append('本页汇总各系统功能的解锁前置条件，便于规划养成顺序。仅列有名称且有解锁条件的项；'
+             '部分功能默认开放或条件为空，未在此列。')
+    L.append(':::')
+    L.append('')
+    L.append('| 功能 | 解锁条件 | 解锁后 |')
+    L.append('|------|---------|--------|')
+    for name, lock, desc in rows:
+        L.append(f'| {name} | {lock} | {desc or "—"} |')
+    L.append('')
+    with open(f'{DOCS_DIR}/feature-unlock.md', 'w', encoding='utf-8') as fh:
+        fh.write('\n'.join(L))
+    print(f'Feature unlock page: {len(rows)} unique features with conditions')
 
 
 if __name__ == '__main__':
@@ -1762,4 +1865,5 @@ if __name__ == '__main__':
     generate_video_index()
     generate_panel_text()
     generate_update_notices()
+    generate_feature_unlock()
     print('All wiki pages generated.')

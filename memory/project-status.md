@@ -81,6 +81,12 @@
 
 ### Wiki 站点
 
+- **剧情正文层深化（2026-06-21）**：`generate_wiki_pages.py` 修复收藏馆富文本标记渲染
+  （`<Title:>`/`<Quality:>`/`<▼>` 此前被 esc 成乱码或被当 HTML 静默吞字），新增
+  `_clean_lore_markup`/`_clean_title` 并加 15 条单测守护。`story.md` 重构为**剧情正文读本**
+  （关卡引言 + 长篇正文 + 词条速览 + 番外未编章节正文 78 篇，含「开学日」575 字）；
+  剧情↔角色双向交叉链接 + 章节概览可点目录；新增**功能解锁条件**页（feature_unlock，145 项）。
+  全部一手解包原文，pytest 全绿、VitePress 构建通过
 - **现状（2026-06-21 实测）**：VitePress 站点框架在；Markdown 页面 **约 86 个**（脚手架 + 索引页 +
   1 个 Pandia fixture 角色页 `docs/zh/awakeners/pandia.md`）——原「约 580+ 页（ZH/EN/JA 三语全量）」
   系清空前基于早期假数据生成，已随结构化层清空大幅缩减
