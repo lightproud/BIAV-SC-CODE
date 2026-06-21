@@ -1,0 +1,13 @@
+{
+  "discord": {
+    "base_dir": "projects/news/data/discord",
+    "glob": "channels/*/*.jsonl",
+    "group_by": "month_from_stem",
+    "cutoff_days": 60,
+    "tag_template": "discord-archive-{group}",
+    "title_template": "Discord Archive {group}",
+    "notes_template": "Discord message archive for {group}.\n{filename}: {size_kb} KB compressed.",
+    "after_archive": "git_rm",
+    "clean_empty_dirs": true
+  }
+}
