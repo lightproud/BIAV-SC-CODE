@@ -3,16 +3,16 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-06-20
-- 功能总数：**82**
-- 脚本可达性：活 45 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-06-21
+- 功能总数：**83**
+- 脚本可达性：活 46 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 21 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 13 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 14 |
 | news 采集器脚本 | 25 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
@@ -79,7 +79,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（13）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（14）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -87,6 +87,8 @@
   `scripts/build_story_layer.py`
 - **`character_persona.py`** _[活:cli+mcp]_ — 艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。  
   `scripts/character_persona.py`
+- **`check_decisions_consistency.py`** _[活:cli]_ — check_decisions_consistency.py —— 决策档案一致性校验（把「祈祷同步」换成「机器盯同步」）  
+  `scripts/check_decisions_consistency.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
 - **`lua_parse.py`** _[活:import]_ — 解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。  
