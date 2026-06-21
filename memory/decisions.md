@@ -118,6 +118,29 @@ appstore/pixiv/google_play/bahamut/weixin/note_com/ruliweb/stopgame 保留。
 
 ---
 
+### 2026-06-21 采集编排器三层定性 + 声明式归档引擎（守密人裁定 A + 合并）
+
+**整体规划（三层定性）**：盘点 8 条采集工作流 + 18 脚本后定性，采集层非一锅，而是
+**职能三层、产出三个不同目标**：**T1 新闻流采集**（`aggregator.py` 单入口 → AC 平台 +
+内部调 `collect_global`，产 `news.json`，每时 :00）/ **T2 数据层归档**（`discord_archiver` /
+`collect_fanart` / `collect_video_comments` / `archive_platforms` / `archive_discord`，写
+`data/*`，各自错峰）/ **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
+**核心边界**：守密人 goal「合并采集器到 AC」精确落在 T1（已于 ARCH-01 完成）；**T2 归档器
+保持独立、绝不并入 AC**——产出目标不同（`data/*` 全量档 vs `news.json` 流快照）/ 节拍刻意
+错峰 / 存在上游→下游依赖（archiver 落档 → AC `fetch_discord_local` 读档入流）。核验证伪两处
+疑似不一致：youtube AC 函数系 ARCH-01 有意保留（非残留）；discord 三脚本（采集/补缺/冷归档）
+零冗余。
+
+**声明式归档引擎（A + 合并）**：把归档器从「每来源一台专用机」改为「通用引擎 + 来源注册表」。
+新增 `archive_engine.py`（≤300 行）读 `archive_sources.json` 干活；加新归档来源 = 注册表加一段
+配置，零新代码。收编原 `archive_discord.py`（改向后兼容垫片委派引擎，`discord-archive.yml` 零
+改动；标签 `discord-archive-YYYY-MM` 命名与 `git_rm` 删数据路径逐行等价，现存 20 个 Release 不
+孤儿）。智能化：自动生成 `releases-index.json`（治「Release 好难认」）+ Release 说明带 manifest +
+统一 archive-log + 幂等重跑 + `--dry-run` + 按来源独立 cutoff。`tests/test_archive_engine.py`
+12 测试锁安全不变量。
+
+---
+
 ## 决策历史归档
 
 编年审计日志（含 BPT 等已删子系统的追溯记录）与已退役决策全文，已迁出至
