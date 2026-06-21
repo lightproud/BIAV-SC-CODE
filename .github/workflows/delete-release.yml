@@ -55,24 +55,41 @@ jobs:
           TAG: ${{ github.event.inputs.tag }}
         run: |
           echo "===== Release to be deleted: $TAG ====="
-          if ! gh release view "$TAG"; then
-            echo "ERROR: release '$TAG' 不存在（可能已删）。无需操作。"
-            exit 1
+          if gh release view "$TAG"; then
+            echo "release_exists=true" >> "$GITHUB_ENV"
+          else
+            echo "release '$TAG' 不存在（可能已删）；若 cleanup_tag=true 将仅清理悬空 git tag。"
+            echo "release_exists=false" >> "$GITHUB_ENV"
           fi
 
-      - name: Delete release
+      - name: Delete release and/or dangling git tag
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ github.event.inputs.tag }}
           CLEANUP_TAG: ${{ github.event.inputs.cleanup_tag }}
         run: |
-          if [ "$CLEANUP_TAG" = "true" ]; then
-            echo "删除 release 并连带删除 git tag '$TAG'..."
-            gh release delete "$TAG" --yes --cleanup-tag
+          if [ "$release_exists" = "true" ]; then
+            if [ "$CLEANUP_TAG" = "true" ]; then
+              echo "删除 release 并连带删除 git tag '$TAG'..."
+              gh release delete "$TAG" --yes --cleanup-tag
+            else
+              echo "删除 release '$TAG'（保留 git tag）..."
+              gh release delete "$TAG" --yes
+            fi
           else
-            echo "删除 release '$TAG'（保留 git tag）..."
-            gh release delete "$TAG" --yes
+            if [ "$CLEANUP_TAG" = "true" ]; then
+              echo "无 release，直接删除悬空 git tag '$TAG'..."
+              if gh api -X DELETE "repos/$GH_REPO/git/refs/tags/$TAG"; then
+                echo "悬空 tag '$TAG' 已删除。"
+              else
+                echo "ERROR: 删除 git tag '$TAG' 失败（可能 tag 也不存在）。"
+                exit 1
+              fi
+            else
+              echo "ERROR: release '$TAG' 不存在且 cleanup_tag=false，无可删对象。"
+              exit 1
+            fi
           fi
 
       - name: Verify deletion (expect 404)
@@ -80,10 +97,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ github.event.inputs.tag }}
+          CLEANUP_TAG: ${{ github.event.inputs.cleanup_tag }}
         run: |
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "ERROR: release '$TAG' 删除后仍可访问，校验失败。"
             exit 1
           fi
-          echo "校验通过：release '$TAG' 已不存在（404）。"
+          if [ "$CLEANUP_TAG" = "true" ] && gh api "repos/$GH_REPO/git/refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "ERROR: git tag '$TAG' 删除后仍存在，校验失败。"
+            exit 1
+          fi
+          echo "校验通过：release '$TAG' 已不存在（404），git tag 亦已清理。"
           echo "提醒：删除后请把 RELEASES.md 中该行从藏宝图移除。"
