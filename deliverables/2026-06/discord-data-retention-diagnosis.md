@@ -55,7 +55,7 @@ ee8fb7c2 2026-06-20 16:08:47 +0000 chore: discord history backfill [skip ci]
 discord 归档配置：
 ```json
 { "group_by": "month_from_stem", "cutoff_days": 60,
-  "release_tag": "community-data", "after_archive": "git_rm" }
+  "tag_template": "discord-archive-{group}", "after_archive": "git_rm" }
 ```
 `is_eligible()` 按文件名日期 `stem < cutoff_date`（≈ 今天 -60 天）判够龄，
 够龄即传 Releases 并 `git_rm`。逻辑本身正确。
@@ -76,28 +76,29 @@ discord 归档配置：
 
 ---
 
-## 4. 修复建议（待守密人裁定，未实施）
+## 4. 修复方案（A + B 已实施，守密人 2026-06-21 裁定「推进」）
 
-按「最小改动 → 最稳」排序，三选一或组合：
-
-**建议 A：回填感知归档（单一事实源，推荐）**
-`_write_msg` 或月循环开头读 `archive-log.json`，跳过已
-`uploaded_to_releases` 的月份。改动小、直击对冲。
+**建议 A：回填感知归档（已落地）**
+新增 `_archived_months()` 读 `archive-log.json`，两处历史月循环开头跳过已
+`uploaded_to_releases` 的月份，不再 fetch/写盘。
 > 比喻：抄作业前先看储藏室清单，已收走的那几本就别抄了。
 
-**建议 B：终结回填永动机**
-给 `state` 加 `history_backfill_complete` 标志；指针触底置 `None` 后
-不再 `_init_historical_month` 重置。回填回归「一次性深挖」本意。
+**建议 B：终结回填永动机（已落地）**
+新增 `history_backfill_complete` 标志；指针触底（建服月）置 `None` 后
+`_init_historical_month` 不再重置。回填回归「一次性深挖」本意。两处循环
+共用新 helper `_advance_historical_month()` 防双写漂移。
 > 比喻：旧作业抄完一轮就收手，别每天重抄。
 
-**建议 C：写盘统一受 cutoff 约束**
-`_write_msg` 拒绝写入早于 `cutoff_days` 的文件，让回填与清理共用同一条
-年龄红线。最彻底，但会**永久放弃** 60 天前历史的工作树留存（仅存 Releases）。
-> 比喻：桌上只准放近两个月作业，更早的一律只进储藏室。
+**建议 C：写盘统一受 cutoff 约束（未采纳）**
+会**永久放弃** 60 天前历史的工作树留存（仅存 Releases），改变留存语义。
+A+B 已止住对冲且保留语义，C 暂不实施。
 
-**艾瑞卡评估**：A + B 组合最稳——A 立即止血（不再重写已归档月），
-B 根治永动机（回填不再无限重启）。C 改变留存语义，需守密人确认是否接受
-「60 天前历史不再进工作树、只在 Releases」。是否动手、动哪条，请守密人裁定。
+**存量清理**：现存 2.65 GB 由下次月度清理（`archive_engine` 按 cutoff
+重新打包 + `git_rm`）收掉；因 A 已止住回填重写，清理后不再被拉回。
+
+**验证**：`tests/test_discord_archiver.py` 新增 6 条用例（读账本 / 完成标志
+不重置 / 触底 latch / 逐月回退），`pytest` 该文件 + `test_archive_engine.py`
+共 42 项通过。
 
 ---
 
