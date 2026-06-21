@@ -189,6 +189,7 @@ def build_sources() -> int:
     out_dir = BUNDLE / "sources"
 
     count = 0
+    emitted: list[tuple[str, dict]] = []
     for name, info in sorted(platforms.items()):
         total = info.get("total_items", 0)
         level = info.get("level", "unknown")
@@ -197,6 +198,10 @@ def build_sources() -> int:
             archive = "/projects/news/data/discord/"
         else:
             archive = f"/projects/news/data/platforms/{name}/"
+        # 放指针不放本体：指针必须落到实存本体。source-health 注册但档案目录
+        # 尚未落盘的平台（典型：全量 0 条、未实际采集）跳过，避免指针落空。
+        if not (REPO / archive.lstrip("/")).exists():
+            continue
         output = f"/projects/news/output/{name}-latest.json"
 
         fields = {
@@ -229,14 +234,16 @@ def build_sources() -> int:
             "- 两层语义**不可互换**（CLAUDE.md §4.1，lesson #30）。",
         ]
         write_concept(out_dir / f"{name}.md", fields, "\n".join(body))
+        emitted.append((name, info))
         count += 1
 
     idx = [f"# 社区情报数据源 ({count})", "",
            f"源：`{SOURCE_HEALTH.relative_to(REPO)}`。每个平台一份**指针** concept；",
-           "本体（JSONL/JSON 时序档案）原地不动，concept 仅持 `resource` 指针。", "",
+           "本体（JSONL/JSON 时序档案）原地不动，concept 仅持 `resource` 指针。",
+           "注册表中尚无档案目录的平台（未落盘）不生成指针，避免指针落空。", "",
            "## 平台"]
     idx.append("")
-    for name, info in sorted(platforms.items()):
+    for name, info in emitted:
         idx.append(f"* [{name}](/sources/{name}.md) - 全量 {info.get('total_items', 0)} 条 / {info.get('level', '?')}")
     write_plain(out_dir / "index.md", "\n".join(idx))
     return count
