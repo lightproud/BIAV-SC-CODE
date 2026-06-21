@@ -96,14 +96,14 @@ class TestArchiveIO(unittest.TestCase):
     def test_load_existing_missing_returns_empty(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
-            self.assertEqual(ap.load_existing_archive("steam", "2026-01-01"), {})
+            self.assertEqual(ap.load_existing_archive("steam", None, None, "2026-01-01"), {})
 
     def test_write_then_load_roundtrip(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
-            n = ap.write_archive("steam", "2026-04-14", [{"url": "u1", "engagement": 3}])
+            n = ap.write_archive("steam", None, None, "2026-04-14", [{"url": "u1", "engagement": 3}])
             self.assertEqual(n, 1)
-            loaded = ap.load_existing_archive("steam", "2026-04-14")
+            loaded = ap.load_existing_archive("steam", None, None, "2026-04-14")
             self.assertEqual(loaded["item_count"], 1)
             self.assertEqual(loaded["source"], "steam")
             self.assertEqual(loaded["date"], "2026-04-14")
@@ -111,15 +111,60 @@ class TestArchiveIO(unittest.TestCase):
     def test_write_empty_returns_zero_no_file(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
-            self.assertEqual(ap.write_archive("steam", "2026-04-14", []), 0)
+            self.assertEqual(ap.write_archive("steam", None, None, "2026-04-14", []), 0)
             self.assertFalse((Path(d) / "steam").exists())
 
     def test_write_merges_existing(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
-            ap.write_archive("reddit", "2026-04-14", [{"url": "u1"}])
-            n = ap.write_archive("reddit", "2026-04-14", [{"url": "u2"}])
+            ap.write_archive("reddit", None, None, "2026-04-14", [{"url": "u1"}])
+            n = ap.write_archive("reddit", None, None, "2026-04-14", [{"url": "u2"}])
             self.assertEqual(n, 2)
+
+
+class TestArchivePathLayering(unittest.TestCase):
+    """甲方案（2026-06-21）：region/subtype 字段 → 子目录分层，无字段回落扁平。"""
+
+    def _patch_dir(self, d):
+        return mock.patch.object(ap, "ARCHIVE_DIR", Path(d))
+
+    def test_path_flat_fallback_no_fields(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
+            p = ap.archive_path("steam", None, None, "2026-01-01")
+            self.assertEqual(p, Path(d) / "steam" / "2026-01-01.json")
+
+    def test_path_layered_region_and_subtype(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
+            p = ap.archive_path("steam", "jp", "review", "2026-01-01")
+            self.assertEqual(p, Path(d) / "steam" / "jp" / "review" / "2026-01-01.json")
+
+    def test_path_subtype_only(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
+            p = ap.archive_path("youtube", None, "comments", "2026-01-01")
+            self.assertEqual(p, Path(d) / "youtube" / "comments" / "2026-01-01.json")
+
+    def test_write_layered_roundtrip_with_meta(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
+            n = ap.write_archive("steam", "jp", "review", "2026-04-14", [{"url": "u1"}])
+            self.assertEqual(n, 1)
+            self.assertTrue((Path(d) / "steam" / "jp" / "review" / "2026-04-14.json").exists())
+            loaded = ap.load_existing_archive("steam", "jp", "review", "2026-04-14")
+            self.assertEqual(loaded["region"], "jp")
+            self.assertEqual(loaded["content_subtype"], "review")
+
+    def test_flat_and_layered_dont_collide(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, self._patch_dir(d):
+            ap.write_archive("steam", None, None, "2026-04-14", [{"url": "flat"}])
+            ap.write_archive("steam", "jp", "review", "2026-04-14", [{"url": "jp"}])
+            flat = ap.load_existing_archive("steam", None, None, "2026-04-14")
+            jp = ap.load_existing_archive("steam", "jp", "review", "2026-04-14")
+            self.assertEqual(flat["items"][0]["url"], "flat")
+            self.assertEqual(jp["items"][0]["url"], "jp")
 
 
 class TestArchiveAll(unittest.TestCase):
@@ -153,6 +198,25 @@ class TestArchiveAll(unittest.TestCase):
     def test_empty_news_yields_empty_totals(self):
         with mock.patch.object(ap, "load_news", return_value=[]):
             self.assertEqual(dict(ap.archive_all(None, "2026-01-01")), {})
+
+    def test_buckets_by_region_and_subtype(self):
+        """甲方案：item 带 region/archive_subtype 字段 → 分桶到 平台/区服/类型/ 子目录。"""
+        import tempfile
+        news = [
+            {"source": "steam", "url": "g1", "time": "2026-04-13T20:00:00+00:00",
+             "region": "global", "archive_subtype": "review"},
+            {"source": "steam", "url": "j1", "time": "2026-04-13T20:00:00+00:00",
+             "region": "jp", "archive_subtype": "review"},
+            {"source": "steam", "url": "n1", "time": "2026-04-13T20:00:00+00:00",
+             "region": "global", "archive_subtype": "news"},
+        ]
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(ap, "ARCHIVE_DIR", Path(d)), \
+                mock.patch.object(ap, "load_news", return_value=news):
+            ap.archive_all(target_date=None, fallback_date="2026-01-01")
+            self.assertTrue((Path(d) / "steam" / "global" / "review" / "2026-04-14.json").exists())
+            self.assertTrue((Path(d) / "steam" / "jp" / "review" / "2026-04-14.json").exists())
+            self.assertTrue((Path(d) / "steam" / "global" / "news" / "2026-04-14.json").exists())
 
 
 class TestShowStatsAndMain(unittest.TestCase):
