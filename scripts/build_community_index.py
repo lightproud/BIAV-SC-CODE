@@ -36,7 +36,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from silver_tokenizer import tokenize  # noqa: E402  共享领域词典 FMM 分词
 
 REPO = Path(__file__).resolve().parent.parent
-DATA = REPO / "projects/news/data"
+# 社区源根：迁移后为 BPT 4R 的 Record/Community（各源摊平）；迁移前回落旧布局。
+COMMUNITY_NEW = REPO / "Public-Info-Pool/Record/Community"
+DATA_OLD = REPO / "projects/news/data"
 OUT = REPO / "projects/news/index/community_index.json"
 TODAY = date.today().isoformat()
 
@@ -84,35 +86,25 @@ def _ymd(ts: str) -> str | None:
     return f"{m.group(0)}-01" if m else None
 
 
-def iter_records(max_files: int | None = None):
-    seen = 0
-    # 1) platforms/*.json —— 已归一化 {items:[{time,lang,title,summary,engagement}]}
-    for f in sorted((DATA / "platforms").rglob("*.json")):
-        if max_files and seen >= max_files:
-            return
-        seen += 1
-        try:
-            d = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        platform = f.relative_to(DATA / "platforms").parts[0]
-        items = d.get("items", d) if isinstance(d, dict) else d
-        if not isinstance(items, list):
-            continue
-        for it in items:
-            if not isinstance(it, dict):
-                continue
-            day = _ymd(it.get("time") or it.get("published") or d.get("date", ""))
-            text = " ".join(str(it.get(k, "")) for k in ("title", "summary", "content", "text"))
-            eng = it.get("engagement", 0)
-            eng = eng if isinstance(eng, (int, float)) else 0
-            yield platform, day, text, lang_of(text, str(it.get("lang", ""))), eng
+def _sources():
+    """产出 (源名, 目录) 对。迁移后用 Record/Community 摊平布局；否则回落旧布局。"""
+    if COMMUNITY_NEW.exists() and any(COMMUNITY_NEW.iterdir()):
+        for d in sorted(COMMUNITY_NEW.iterdir()):
+            if d.is_dir():
+                yield d.name, d
+        return
+    if (DATA_OLD / "discord").exists():
+        yield "discord", DATA_OLD / "discord"
+    pl = DATA_OLD / "platforms"
+    if pl.exists():
+        for d in sorted(pl.iterdir()):
+            if d.is_dir():
+                yield d.name, d
 
-    # 2) discord/channels/**/*.jsonl —— {content,timestamp,author_name}
-    for f in sorted((DATA / "discord").rglob("*.jsonl")):
-        if max_files and seen >= max_files:
-            return
-        seen += 1
+
+def _emit_discord(d):
+    """discord：channels/ 与 guilds/ 下 *.jsonl，{content,timestamp,reactions}。"""
+    for f in sorted(d.rglob("*.jsonl")):
         try:
             with f.open(encoding="utf-8") as fh:
                 for line in fh:
@@ -123,20 +115,17 @@ def iter_records(max_files: int | None = None):
                         it = json.loads(line)
                     except Exception:
                         continue
-                    day = _ymd(it.get("timestamp", ""))
                     text = str(it.get("content", ""))
                     reacts = it.get("reactions", "[]")
                     eng = len(reacts) if isinstance(reacts, list) else 0
-                    yield "discord", day, text, lang_of(text), eng
+                    yield _ymd(it.get("timestamp", "")), text, lang_of(text), eng
         except Exception:
             continue
 
-    # 3) *_comments/*.jsonl（youtube_comments 等）—— {text,published,likes}
-    for f in sorted(DATA.glob("platforms/*_comments/*.jsonl")):
-        if max_files and seen >= max_files:
-            return
-        seen += 1
-        platform = f.relative_to(DATA / "platforms").parts[0]
+
+def _emit_comments(d):
+    """*_comments：*.jsonl，{text,published,likes}。"""
+    for f in sorted(d.glob("*.jsonl")):
         try:
             with f.open(encoding="utf-8") as fh:
                 for line in fh:
@@ -147,13 +136,49 @@ def iter_records(max_files: int | None = None):
                         it = json.loads(line)
                     except Exception:
                         continue
-                    day = _ymd(it.get("published") or it.get("time", ""))
                     text = str(it.get("text", ""))
                     likes = it.get("likes", 0)
                     eng = likes if isinstance(likes, (int, float)) else 0
-                    yield platform, day, text, lang_of(text), eng
+                    yield _ymd(it.get("published") or it.get("time", "")), text, lang_of(text), eng
         except Exception:
             continue
+
+
+def _emit_platform(d):
+    """平台：dated *.json，{items:[{time,lang,title,summary,engagement}]}。"""
+    for f in sorted(d.rglob("*.json")):
+        try:
+            doc = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        items = doc.get("items", doc) if isinstance(doc, dict) else doc
+        if not isinstance(items, list):
+            continue
+        ddate = doc.get("date", "") if isinstance(doc, dict) else ""
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            text = " ".join(str(it.get(k, "")) for k in ("title", "summary", "content", "text"))
+            eng = it.get("engagement", 0)
+            eng = eng if isinstance(eng, (int, float)) else 0
+            yield (_ymd(it.get("time") or it.get("published") or ddate),
+                   text, lang_of(text, str(it.get("lang", ""))), eng)
+
+
+def iter_records(max_files: int | None = None):
+    seen = 0
+    for name, d in _sources():
+        if max_files and seen >= max_files:
+            return
+        seen += 1
+        if name == "discord":
+            emitter = _emit_discord(d)
+        elif name.endswith("_comments"):
+            emitter = _emit_comments(d)
+        else:
+            emitter = _emit_platform(d)
+        for day, text, lang, eng in emitter:
+            yield name, day, text, lang, eng
 
 
 # --- 聚合 ---------------------------------------------------------------------
