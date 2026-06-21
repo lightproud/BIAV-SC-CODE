@@ -1,0 +1,47 @@
+name: Build Analysis Index
+
+# 重建静态分析索引（社区全量档案 + 剧情 lore）。社区数据由采集 CI 带 [skip ci]
+# 提交，push 触发器会被跳过，故走「周定时 + 手动」而非 path-push；全量构建耗时
+# 分钟级，不宜每次 push 触发。剧情索引轻量，顺带一起重建。
+on:
+  schedule:
+    - cron: '17 4 * * 1'   # 每周一 04:17 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: analysis-index-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Rebuild story index
+        run: python scripts/build_story_index.py
+      - name: Rebuild community index (full archive)
+        run: python scripts/build_community_index.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/index/ projects/wiki/data/processed/story/story_search_index.json
+          if git diff --staged --quiet; then
+            echo "analysis index already up to date"
+          else
+            git commit -m "chore: rebuild analysis index [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi
