@@ -86,6 +86,44 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - 已集成到 `update-news.yml` workflow，每次聚合后自动归档
 - 支持去重合并、指定日期归档、统计报表
 - 运行方式：`python scripts/archive_platforms.py [--date YYYY-MM-DD] [--stats]`
+- ⚠ 上述扁平 `data/platforms/{platform}/` 结构为**旧布局**，按下方《采集源命名与归档结构规范》迁移中。
+
+## 采集源命名与归档结构规范（2026-06-21 grilling 对齐，待实施）
+
+> 守密人 2026-06-21 拷问对齐定案。解决「来源名混乱、未含子类、区服拼名过细」三病。
+
+### 核心原则
+1. **数据根 = `Public-Info-Pool/Record/Community/`**，无 `platforms/` 中间层。
+2. **层级 = `平台 / 区服 / 类型 / YYYY-MM-DD.json`**；区服在上、类型在下；**维度按需展开**（无区服平台省区服层，单类型平台省类型层）。
+3. **source 标识 = 归档相对路径**：如 `steam/jp/review`、`taptap/cn/post`、`youtube/global/comments`、`discord/global`、`weibo`。
+4. **区服准则**：不同 appid / 独立运营 → **拆区服目录**；同 appid 多国 → 留 `platform_region` 字段、不拆。
+5. **父子衍生子类不拆 source**：视频↔评论是父子（评论依附视频），收编主源（YouTube），用类型层子目录区分。
+
+### 子类型词表
+`review`（带评分商店评价）/ `news`（官方公告）/ `discussion`（官方讨论区）/ `post`（社区/论坛帖）/ `strategy`（攻略）/ `video` / `comments`
+
+### 各平台结构
+| 平台 | 结构 | 备注 |
+|------|------|------|
+| steam | `steam/{global,jp}/{review,news,discussion}/` | global=3052450 / jp=4226130 |
+| appstore | `appstore/{global,jp}/` | global=6447354150 多国走字段 / jp=6743462069（AltPlus 独立 app） |
+| google_play | `google_play/{global,jp}/` | global=com.qookkagames.z1.gp.hk / **jp 包名待查** |
+| youtube | `youtube/{global,jp}/{video,comments}/` | 视频+评论合并收编 |
+| twitter (X) | `twitter/{global,jp}/` | global=@MorimensOfcl / jp=@bokyakuzenya；单类型 |
+| taptap | `taptap/cn/{review,post,strategy}/` | cn = 364992（预约）+ 374995（测试服）合并，`app_id` 字段区分 |
+| discord | `discord/{global,jp,volunteer}/<channel_id>/` | 三服务器；频道即最细层，无类型层 |
+| 单类型裸名 | `weibo/`、`bilibili/`、`reddit/`、`pixiv/`、`ruliweb/`、`stopgame/`、`weixin/`、`bahamut/`、`arca_live/`、`note_com/` | 直接日期文件 |
+
+### 日本版 = AltPlus Inc. 独立发行
+忘却前夜日本版在各平台为 AltPlus 单独运营的独立 app/账号，故一律拆 `jp/` 区服目录（非同 appid 多国）。
+
+### 实施待办（独立任务，非本次 grilling 范围）
+- 改 `sources.py`：source 标识改路径式 + 合并重复 taptap 评论栈（aggregator `fetch_taptap` 仅 4 条 → 弃；统一走 taptap_collector）。
+- 新增日本版/日服采集：steam jp(4226130)、appstore jp(6743462069)、youtube jp 频道、google_play jp 包名（**待查**）、discord jp 已接入。
+- taptap 评论采全（440 → 1163，API total）+ 新增 `post`/`strategy`（Playwright DOM）。
+- `discord_archiver` 统一三服务器到 `discord/<区服>/`（现全球服在 channels/ 根、其余在 guilds/，不一致）。
+- 历史归档目录迁移到新层级。
+- `official` 并入 `steam/global/news`；`youtube_comments` 并入 `youtube/*/comments`。
 
 ## 后续待做（非本周）
 - Reddit 子版块名需确认（r/Morimens 是否存在）
