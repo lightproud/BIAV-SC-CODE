@@ -1,8 +1,8 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-21T07:27:27.585093+00:00",
+  "archived_at": "2026-06-21T11:01:10.092897+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] 好看",
@@ -110,6 +110,28 @@
         "playtime_forever": 466,
         "votes_up": 0,
         "timestamp_created": 1782012239
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 反派总想把我身边的好孩子抢走，真该死啊。",
+      "summary": "反派总想把我身边的好孩子抢走，真该死啊。",
+      "source": "steam_review",
+      "time": "2026-06-21T09:49:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199527031163/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199527031163",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2118,
+        "votes_up": 0,
+        "timestamp_created": 1782035355
       },
       "lang": "",
       "platform_region": "global"
