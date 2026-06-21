@@ -185,9 +185,13 @@ class TestCommunityIndexDeclaresFullArchive:
             ]}),
             encoding="utf-8",
         )
-        monkeypatch.setattr(build_community_index, "DATA", data_root)
-        # iter_records also scans DATA/"discord"; the redirect above covers it
-        # (no discord dir present -> simply yields nothing).
+        # Post-#333 the data root split into COMMUNITY_NEW (Public-Info-Pool) +
+        # DATA_OLD (legacy projects/news/data). Point COMMUNITY_NEW at a missing
+        # path and DATA_OLD at the synthetic archive so build() reads the legacy
+        # platforms/ layer we seeded. (DATA_OLD/"discord" absent -> yields nothing.)
+        monkeypatch.setattr(build_community_index, "COMMUNITY_NEW",
+                            data_root / "__no_such_new__")
+        monkeypatch.setattr(build_community_index, "DATA_OLD", data_root)
         return build_community_index.build()
 
     def test_meta_stamps_full_archive(self, tmp_path, monkeypatch):

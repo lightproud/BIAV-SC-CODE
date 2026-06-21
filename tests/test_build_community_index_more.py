@@ -28,7 +28,8 @@ def test_platform_items_not_a_list_skipped(tmp_path, monkeypatch):
     (data / "discord").mkdir()
     (pdir / "f.json").write_text(json.dumps({"items": {"not": "a list"}}),
                                  encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     recs = list(bci.iter_records())
     assert recs == []
 
@@ -42,7 +43,8 @@ def test_platform_non_dict_item_skipped(tmp_path, monkeypatch):
     (pdir / "f.json").write_text(json.dumps({
         "items": ["i am a string", {"title": "ok", "time": "2026-06-01"}],
     }), encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     recs = list(bci.iter_records())
     # only the dict item survives
     assert len(recs) == 1
@@ -51,9 +53,11 @@ def test_platform_non_dict_item_skipped(tmp_path, monkeypatch):
 
 # ---------- iter_records: max_files short-circuits in later loops ----------
 
-def test_max_files_short_circuits_discord_loop(tmp_path, monkeypatch):
-    # One platform json consumes the budget; discord loop sees seen>=max_files
-    # at its top -> early return (114). No discord records emitted.
+def test_max_files_short_circuits_platform_loop(tmp_path, monkeypatch):
+    # max_files counts SOURCES. Post-#333 _sources() yields discord FIRST, then
+    # platforms. With max_files=1 the discord source consumes the budget; the
+    # later platform source sees seen>=max_files at the top -> early return.
+    # No platform (bili) records emitted.
     data = tmp_path / "data"
     pdir = data / "platforms" / "bili"
     pdir.mkdir(parents=True)
@@ -65,10 +69,11 @@ def test_max_files_short_circuits_discord_loop(tmp_path, monkeypatch):
     (ddir / "2026-06-01.jsonl").write_text(
         json.dumps({"content": "hi", "timestamp": "2026-06-01T00:00:00Z"}) + "\n",
         encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     recs = list(bci.iter_records(max_files=1))
-    assert all(r[0] == "bili" for r in recs)
-    assert not any(r[0] == "discord" for r in recs)
+    assert all(r[0] == "discord" for r in recs)
+    assert not any(r[0] == "bili" for r in recs)
 
 
 def test_max_files_short_circuits_comments_loop(tmp_path, monkeypatch):
@@ -85,7 +90,8 @@ def test_max_files_short_circuits_comments_loop(tmp_path, monkeypatch):
     (cdir / "c.jsonl").write_text(
         json.dumps({"text": "yo", "published": "2026-06-01", "likes": 1}) + "\n",
         encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     recs = list(bci.iter_records(max_files=1))
     assert not any(r[0] == "youtube_comments" for r in recs)
 
@@ -105,7 +111,8 @@ def test_comments_blank_and_bad_json_lines(tmp_path, monkeypatch):
         + json.dumps({"text": "good comment", "published": "2026-06-04", "likes": 2})
         + "\n",
         encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     recs = [r for r in bci.iter_records() if r[0] == "reddit_comments"]
     assert len(recs) == 1
     assert recs[0][4] == 2  # likes engagement
@@ -122,7 +129,8 @@ def test_discord_outer_exception_swallowed(tmp_path, monkeypatch):
     target = ddir / "2026-06-01.jsonl"
     target.write_text(json.dumps({"content": "x", "timestamp": "2026-06-01"}) + "\n",
                       encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
 
     real_open = Path.open
 
@@ -146,7 +154,8 @@ def test_comments_outer_exception_swallowed(tmp_path, monkeypatch):
     (cdir / "c.jsonl").write_text(
         json.dumps({"text": "x", "published": "2026-06-01", "likes": 0}) + "\n",
         encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
 
     real_open = Path.open
 
@@ -176,7 +185,8 @@ def test_build_triggers_prune(tmp_path, monkeypatch):
                       "time": "2026-06-01", "engagement": 1})
     (pdir / "f.json").write_text(json.dumps({"items": items}, ensure_ascii=False),
                                  encoding="utf-8")
-    monkeypatch.setattr(bci, "DATA", data)
+    monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
+    monkeypatch.setattr(bci, "DATA_OLD", data)
     monkeypatch.setattr(bci, "PRUNE_EVERY", 2)   # prune after every 2 records
     monkeypatch.setattr(bci, "PRUNE_KEEP", 1)    # keep only 1 term per counter
 
