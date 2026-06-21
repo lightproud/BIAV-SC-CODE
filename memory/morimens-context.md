@@ -9,7 +9,7 @@
 > - **加工数据**：`projects/wiki/data/processed/*.json`（cg_gallery / item_stories / voice_lines / world_lore）
 > - **制作人第一手陈述**：`assets/data/interview-2026-04.json`
 > - **设计决策**：`assets/data/design-decisions.json`
-> - `projects/wiki/data/db/` 基线已建立（characters.json 当前 24/72，Phase 2 补齐中，详见 `memory/wiki-phase-2-gap-inventory.md`）
+> - 结构化角色层（原 `projects/wiki/data/db/characters.json`）2026-06-15 守密人裁定**整层清空**（原 24/72 全为 partial/fixture 占位），W2 以一手解包字段重建，进度见 `memory/project-status.md` + `memory/wiki-phase-2-gap-inventory.md`
 
 ## 基本信息
 
@@ -125,7 +125,7 @@ Murphy: Fauxborn、Xu
 - **必抽角色**：24（全界域 S 级）、Murphy（深海 S 级）、Thais（血肉 S 级）
 
 > 完整角色数据原始源见 `projects/wiki/data/extracted/categorized/character_data.txt`（72 角色客户端解包）
-> 结构化归档文件 `projects/wiki/data/db/characters.json` 尚未建立，Phase 2 W1 自举中。
+> 结构化归档文件（原 `projects/wiki/data/db/characters.json`）2026-06-15 整层清空，W2 以解包字段重建中。
 
 ## 战斗系统
 
