@@ -164,6 +164,8 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `assets/data/card-system.json` | 卡牌系统术语（指令卡等，解包字面验证） |
 | `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色基线原始字段（客户端解包，自举数据源；原结构化角色数据层随 #221 退役、待 W2 重建，进度见 `memory/project-status.md`）|
 | `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
+| `projects/wiki/data/processed/story/STORY_RESEARCH.md` | **剧情/世界观/神话原型深度研究综述**（autoresearch 5 轮，逐条带【已证实】/【推测】+来源）：忘却篇1-9章+星辰篇剧情、终章真相（守密人=至高意志碎片/缸中之脑兑现）、7 阵营、35+ 角色↔克苏鲁原型、意识潜游个人剧情、A.F.编年史、OST/广播剧/CV、制作秘辛。社区源（非解包），采信前看置信标签 |
+| `projects/wiki/data/processed/story/` | 解包故事**结构层**（机器可读）：`story_units`（剧情单元脊柱）/ `lore_entries`（1026 lore 含正文）/ `index`（章节↔lore↔关卡↔角色聚合）/ `README.md`；由 `scripts/build_story_layer.py` 可复现生成 |
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
