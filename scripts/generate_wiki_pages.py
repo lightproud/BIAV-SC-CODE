@@ -1899,6 +1899,61 @@ def generate_feature_unlock():
     print(f'Feature unlock page: {len(rows)} unique features with conditions')
 
 
+def generate_potency():
+    """Generate 启灵效果词条 page from potency.json（此前休眠的一手解包数据）。
+
+    AwakerPotency.lua 运行时提取共 1035 条启灵节点，其中带效果描述的为信息密度高的
+    招牌/启灵效果。本解包未捕获「角色↔启灵」外键，故本页作为**不按角色归属**的
+    一手效果词条呈现（可搜索），不做合成关联（§4 数据纪律）。"""
+    import re
+    try:
+        data = json.load(open(f'{PROCESSED_DIR}/potency.json', encoding='utf-8'))
+    except FileNotFoundError:
+        print('potency.json not found; skipping potency page')
+        return
+
+    def norm(t):
+        t = (t or '').replace('\xa0', ' ')
+        # 富文本标记 <Tag:文本> → 文本；剩余裸标记剥除
+        t = re.sub(r'<[^:>]+:([^>]*)>', r'\1', t)
+        t = re.sub(r'<[^>]*>', '', t)
+        return t.replace('|', '/').strip()
+
+    seen = set()
+    rows = []
+    for p in data['potencies']:
+        name = norm(p.get('name', ''))
+        desc = norm(p.get('desc', ''))
+        if not name or not desc:
+            continue
+        key = (name, desc)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append((name, desc))
+    rows.sort(key=lambda r: r[0])
+
+    L = ['# 启灵效果词条', '']
+    L.append(f'> 数据来源：AwakerPotency.lua（运行时内存提取） | 共 {data["_meta"]["total_potencies"]} 条启灵节点，'
+             f'其中 {len(rows)} 条带效果描述（已去重）。')
+    L.append('')
+    L.append('::: info 说明')
+    L.append('启灵（Potency）是唤醒体的命轮/觉醒效果节点。本页为**一手解包效果词条**，'
+             '按效果名排序、支持站内搜索。本次解包未包含「角色↔启灵」关联字段，'
+             '故词条不按角色归属呈现；按角色的玩法循环见[玩法图鉴](/playstyle)（社区源）。'
+             '数值含 [ArgN] 参数位者为解包原文占位，随等级/版本浮动。')
+    L.append(':::')
+    L.append('')
+    L.append('| 启灵 | 效果 |')
+    L.append('|------|------|')
+    for name, desc in rows:
+        L.append(f'| {name} | {desc} |')
+    L.append('')
+    with open(f'{DOCS_DIR}/potency.md', 'w', encoding='utf-8') as fh:
+        fh.write('\n'.join(L))
+    print(f'Potency page: {len(rows)} unique potency effects with descriptions')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
@@ -1917,4 +1972,5 @@ if __name__ == '__main__':
     generate_panel_text()
     generate_update_notices()
     generate_feature_unlock()
+    generate_potency()
     print('All wiki pages generated.')

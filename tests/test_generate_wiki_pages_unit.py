@@ -660,3 +660,33 @@ def test_generate_feature_unlock(wiki_tmp):
     assert "| 有锁无后 | 条件 | — |" in out
     # dedup -> only one 唤 醒 row
     assert out.count("| 唤 醒 |") == 1
+
+
+# ---------------------------------------------------------------------------
+# potency
+# ---------------------------------------------------------------------------
+def test_generate_potency_missing(wiki_tmp):
+    gwp.generate_potency()
+    assert not (wiki_tmp["docs"] / "potency.md").exists()
+
+
+def test_generate_potency(wiki_tmp):
+    data = {
+        "_meta": {"total_potencies": 4},
+        "potencies": [
+            {"id": 1, "name": "反击之刃", "desc": "「施与受」造成 <Key:反击> 伤害"},
+            {"id": 2, "name": "反击之刃", "desc": "「施与受」造成 <Key:反击> 伤害"},  # dup
+            {"id": 3, "name": "人格深化", "desc": ""},  # no desc -> skipped
+            {"id": 4, "name": "甜蜜陷阱", "desc": "造成 [Arg1]% 反击\xa0伤害"},
+        ],
+    }
+    _wj(wiki_tmp["processed"] / "potency.json", data)
+    gwp.generate_potency()
+    out = _read(wiki_tmp["docs"], "potency.md")
+    assert "启灵效果词条" in out
+    assert "造成 反击 伤害" in out  # <Key:反击> markup stripped to inner text
+    assert "[Arg1]%" in out  # arg placeholder preserved
+    assert "反击\xa0伤害" not in out  # nbsp normalized
+    # empty-desc node skipped, dups collapsed -> one 反击之刃 row
+    assert out.count("| 反击之刃 |") == 1
+    assert "人格深化" not in out
