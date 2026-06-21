@@ -29,7 +29,7 @@
 | 类型 | 来源 | 当前政策定位 | 备注 |
 |------|------|------|------|
 | **C0 守密人 Light** | author=`lightproud` | 唯一 Issue 自动响应授权方 | 现行政策不变 |
-| **C1 AI 会话** | Claude Code 主控台 / Code-* | 直推 main，session-end-distill 归档 | 现行政策不变 |
+| **C1 AI 会话** | Claude Code 单一艾瑞卡会话（原主控台 / Code-* 多会话 2026-06 退役，子项目前缀仅作话题标签）| 直推 main（session-end-distill 钩子随全部会话钩子 2026-06-14 退役）| 现行政策不变 |
 | **C2 Studio 团队成员（内部）** | BIAV Studio 组织内（守密人之外） | **与 C3 等同**（守密人 Q2 裁决 a），靠人工审核 enforce 不带黑池数据 | 当前不抽象身份特权 |
 | **C3 社区贡献者（外部）** | 任意 GitHub 用户 | **fork + PR 通道开放**（守密人 Q1 裁决 a） | Issue 不触发自动响应 |
 | **C4 黑池侧 AI 会话** | 内网 SVN | **明确禁止**（黑池→银芯关闭） | `silver-blackpool-interface.md` §五 |
