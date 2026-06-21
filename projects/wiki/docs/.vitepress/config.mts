@@ -25,6 +25,8 @@ export default defineConfig({
         text: '角色',
         items: [
           { text: '唤醒体图鉴', link: '/characters' },
+          { text: '唤醒体列表', link: '/zh/awakeners/' },
+          { text: '玩法图鉴', link: '/playstyle' },
           { text: '语音台词', link: '/voice-lines' },
           { text: '角色立绘', link: '/portraits' },
         ]
@@ -32,6 +34,7 @@ export default defineConfig({
       {
         text: '系统',
         items: [
+          { text: '战斗机制', link: '/battle-system' },
           { text: '唤醒系统', link: '/summon' },
           { text: '关卡导航', link: '/stages' },
           { text: '收藏馆', link: '/collection-hall' },
@@ -72,6 +75,8 @@ export default defineConfig({
           text: '角色',
           items: [
             { text: '唤醒体图鉴', link: '/characters' },
+            { text: '唤醒体列表', link: '/zh/awakeners/' },
+            { text: '玩法图鉴', link: '/playstyle' },
             { text: '语音台词', link: '/voice-lines' },
             { text: '角色立绘', link: '/portraits' },
           ]
@@ -79,6 +84,7 @@ export default defineConfig({
         {
           text: '系统',
           items: [
+            { text: '战斗机制', link: '/battle-system' },
             { text: '唤醒系统', link: '/summon' },
             { text: '关卡导航', link: '/stages' },
             { text: '收藏馆', link: '/collection-hall' },

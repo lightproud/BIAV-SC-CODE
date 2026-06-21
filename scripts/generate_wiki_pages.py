@@ -15,6 +15,74 @@ import glob
 
 PROCESSED_DIR = 'projects/wiki/data/processed'
 DOCS_DIR = 'projects/wiki/docs'
+SITE_BASE = '/brain-in-a-vat/wiki/'
+
+# 界域：解包无 realm 字段，玩法层（character_skills.md）是唯一界域归属来源。
+REALM_KEYS = {'混沌': 'chaos', '深海': 'aequor', '血肉': 'caro', '超维': 'ultra'}
+REALM_LABEL = {'chaos': '混沌', 'aequor': '深海', 'caro': '血肉', 'ultra': '超维'}
+REALM_ORDER = ['chaos', 'aequor', 'caro', 'ultra']
+REALM_TAGLINE = {
+    'chaos': '可与任意界域混编 · 反击 / 打击 / 过牌',
+    'aequor': '触腕体系 · 深渊号令',
+    'caro': '日服译「狂魔」· 胚胎 / 中毒 / 卖血',
+    'ultra': '超维空间 · 额外回合 / 斩杀',
+}
+
+
+def load_playstyle():
+    """解析玩法层 character_skills.md → name → {realm, role, card}。
+
+    玩法卡为单行段落，形如 `**名字**（注） — 定位。正文……`。
+    name 归一化去掉「中文 / English」尾巴；realm 取自所在界域小节；
+    role 取破折号后到首个句号/括号的片段；card 保留整行正文供详情页渲染。"""
+    import re
+    path = f'{PROCESSED_DIR}/character_skills.md'
+    out = {}
+    if not os.path.exists(path):
+        return out
+    realm = None
+    with open(path, 'r', encoding='utf-8') as f:
+        for ln in f:
+            m = re.match(r'## (混沌|深海|血肉|超维)界域', ln)
+            if m:
+                realm = REALM_KEYS[m.group(1)]
+                continue
+            line = ln.rstrip('\n')
+            m = re.match(r'\*\*([^*]+)\*\*(.*)', line)
+            if not (m and realm):
+                continue
+            name = m.group(1).split(' / ')[0].split('（')[0].split('(')[0].strip()
+            rest = m.group(2)
+            # role = 破折号（— 或 -）后到首个分隔符的片段
+            role = ''
+            mm = re.search(r'[—-]\s*([^。；;，,（(]+)', rest)
+            if mm:
+                role = mm.group(1).strip()
+            out[name] = {'realm': realm, 'role': role, 'card': line}
+    return out
+
+
+def _slug(ch):
+    return str(ch['id'])
+
+
+def _realm_badge(realm):
+    if not realm:
+        return '<span class="realm-badge" style="opacity:.5">界域待考</span>'
+    return f'<span class="realm-badge realm-{realm}">{REALM_LABEL[realm]}</span>'
+
+
+def _awakener_card(ch, p):
+    """渲染图鉴/列表页的角色卡 <a>。title 与 name 重复时不重复显示。"""
+    realm = p['realm'] if p else None
+    accent = f' realm-accent-{realm}' if realm else ''
+    role = (p.get('role') if p else '') or ('玩法待补' if p is None else '—')
+    href = f'{SITE_BASE}zh/awakeners/{_slug(ch)}.html'
+    title = ch.get('title', '')
+    tcell = f'<span class="ac-title">{title}</span>' if title and title != ch['name'] else ''
+    return (f'<a class="awakener-card{accent}" href="{href}">'
+            f'<span class="ac-name">{ch["name"]}</span>'
+            f'<span class="ac-role">{role}</span>{tcell}</a>')
 
 
 def generate_voice_lines():
@@ -756,73 +824,218 @@ def generate_characters():
 
     meta = data['_meta']
     chars = data['characters']
+    play = load_playstyle()
     by_cat = {}
     for ch in chars:
         by_cat.setdefault(ch.get('category', 'playable'), []).append(ch)
 
-    lines = []
-    lines.append('# 唤醒体图鉴')
-    lines.append('')
+    playable = by_cat.get('playable', [])
+    L = []
+    L.append('# 唤醒体图鉴')
+    L.append('')
     summary = '、'.join(f'{label} {len(by_cat.get(key, []))}'
                         for key, label, _ in CATEGORY_SECTIONS if by_cat.get(key))
-    lines.append(f'> 数据来源：AwakerConfig.lua（运行时内存提取） | 共 {meta["total_characters"]} 位唤醒体（{summary}）')
-    lines.append('>')
-    lines.append('> 分类经守密人逐一确认；「未上线」表示客户端已有数据但游戏内尚未正式开放。')
-    lines.append('')
+    L.append(f'> 数据来源：AwakerConfig.lua（运行时内存提取） | 共 {meta["total_characters"]} 位唤醒体（{summary}）')
+    L.append('>')
+    L.append('> 分类经守密人逐一确认；「未上线」表示客户端已有数据但游戏内尚未正式开放。界域归属取自[玩法图鉴](/playstyle)（社区源，非解包）。')
+    L.append('')
+    L.append('点击任意可玩唤醒体进入其**详情页**（档案 + 界域定位 + 玩法 + 召唤台词 + 语音/CG 入口）。')
+    L.append('')
 
+    # —— 可玩：按界域分组成卡片网格 ——
+    L.append('## 可玩唤醒体（按界域）')
+    L.append('')
+    by_realm = {}
+    no_realm = []
+    for ch in playable:
+        p = play.get(ch['name'])
+        (by_realm.setdefault(p['realm'], []).append((ch, p)) if p else no_realm.append(ch))
+    for realm in REALM_ORDER:
+        grp = by_realm.get(realm, [])
+        if not grp:
+            continue
+        L.append(f'### {_realm_badge(realm)} {REALM_LABEL[realm]}界域（{len(grp)}）')
+        L.append('')
+        L.append(f'<p class="realm-tagline">{REALM_TAGLINE[realm]}</p>')
+        L.append('')
+        L.append('<div class="awakener-grid">')
+        for ch, p in sorted(grp, key=lambda x: x[0]['id']):
+            L.append(_awakener_card(ch, p))
+        L.append('</div>')
+        L.append('')
+    if no_realm:
+        L.append('### 界域待考（暂无玩法卡）')
+        L.append('')
+        L.append('<div class="awakener-grid">')
+        for ch in sorted(no_realm, key=lambda x: x['id']):
+            L.append(_awakener_card(ch, None))
+        L.append('</div>')
+        L.append('')
+
+    # —— 未上线 / 彩蛋：紧凑表（无详情页）——
     for key, label, desc in CATEGORY_SECTIONS:
+        if key == 'playable':
+            continue
         group = by_cat.get(key, [])
         if not group:
             continue
-        lines.append(f'## {label}（{len(group)}）')
-        lines.append('')
-        lines.append(f'> {desc}')
-        lines.append('')
-
-        for ch in group:
-            lines.append(f'### {ch["name"]}')
-            lines.append('')
-
-            lines.append('<div style="display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0;">')
-            lines.append('<div style="flex: 1 1 320px;">')
-            lines.append('')
-            lines.append(f'| 属性 | 信息 |')
-            lines.append(f'|------|------|')
-            lines.append(f'| 称号 | {ch["title"]} |')
-            lines.append(f'| 性别 | {ch["gender"]} |')
-            lines.append(f'| 生日 | {ch["birthday"]} |')
-            lines.append(f'| 身高 | {ch["height"]} |')
-            lines.append(f'| 体重 | {ch["weight"]} |')
-            lines.append(f'| GI 值 | {ch["gi"]} |')
-            lines.append(f'| 声优 | {ch["voice_actor"]} |')
-            lines.append(f'| 画师 | {ch["painter"]} |')
-            lines.append(f'| 战斗特征 | {ch["characteristic"]} |')
-            ci = cidx.get(ch['id'], {})
-            if ci.get('story_unlock_type'):
-                lines.append(f'| 故事解锁 | {UNLOCK_LABEL.get(ci["story_unlock_type"], ci["story_unlock_type"])} |')
-            if ci.get('gossip_about_count'):
-                lines.append(f'| 被提及（闲话） | {ci["gossip_about_count"]} 条 |')
-            lines.append('')
-            lines.append('</div>')
-            lines.append('</div>')
-            lines.append('')
-
-            if ch.get('introduction'):
-                lines.append(f'> {ch["introduction"]}')
-                lines.append('')
-            if ch.get('gameplay_intro'):
-                lines.append(f'**战斗机制：** {ch["gameplay_intro"]}')
-                lines.append('')
-            if ch.get('summon_slogan'):
-                lines.append(f'*「{ch["summon_slogan"]}」*')
-                lines.append('')
-
-            lines.append('---')
-            lines.append('')
+        L.append(f'## {label}（{len(group)}）')
+        L.append('')
+        L.append(f'> {desc}')
+        L.append('')
+        L.append('| 名称 | 称号 | 声优 | 画师 |')
+        L.append('|------|------|------|------|')
+        for ch in sorted(group, key=lambda x: x['id']):
+            L.append(f'| {ch["name"]} | {ch.get("title","")} | {ch.get("voice_actor","")} | {ch.get("painter","")} |')
+        L.append('')
 
     with open(f'{DOCS_DIR}/characters.md', 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines))
-    print(f'Characters page: {len(chars)} profiles in {len([k for k,_,_ in CATEGORY_SECTIONS if by_cat.get(k)])} categories')
+        f.write('\n'.join(L))
+    print(f'Characters page: {len(playable)} playable in {len(by_realm)} realms + '
+          f'{sum(len(by_cat.get(k,[])) for k in ("unreleased","easter_egg"))} non-playable')
+
+    generate_awakener_pages(chars, by_cat, play, cidx)
+    generate_playstyle(playable, play)
+
+
+def generate_awakener_pages(chars, by_cat, play, cidx):
+    """每个可玩唤醒体一张详情页 docs/zh/awakeners/<id>.md，并重写列表页 index.md。"""
+    out_dir = f'{DOCS_DIR}/zh/awakeners'
+    os.makedirs(out_dir, exist_ok=True)
+    # 清掉旧的烂尾样板页（pandia.md 依赖已清空的 db 数据层）
+    stale = f'{out_dir}/pandia.md'
+    if os.path.exists(stale):
+        os.remove(stale)
+
+    playable = by_cat.get('playable', [])
+    count = 0
+    for ch in playable:
+        p = play.get(ch['name'])
+        realm = p['realm'] if p else None
+        ci = cidx.get(ch['id'], {})
+        D = []
+        D.append('---')
+        D.append(f'title: {ch["name"]} - 唤醒体详情')
+        D.append('---')
+        D.append('')
+        D.append(f'# {ch["name"]}')
+        D.append('')
+        badges = _realm_badge(realm)
+        if p and p.get('role'):
+            badges += f' <span class="role-badge">{p["role"]}</span>'
+        D.append(f'<p class="awakener-badges">{badges}</p>')
+        D.append('')
+        if ch.get('title') and ch['title'] != ch['name']:
+            D.append(f'> {ch["title"]}')
+            D.append('')
+        # 档案表
+        D.append('## 档案')
+        D.append('')
+        D.append('| 属性 | 信息 |')
+        D.append('|------|------|')
+        for lab, key in [('称号', 'title'), ('性别', 'gender'), ('生日', 'birthday'),
+                         ('身高', 'height'), ('体重', 'weight'), ('GI 值', 'gi'),
+                         ('声优', 'voice_actor'), ('画师', 'painter'),
+                         ('战斗特征', 'characteristic')]:
+            v = ch.get(key)
+            if v:
+                D.append(f'| {lab} | {v} |')
+        if ci.get('story_unlock_type'):
+            D.append(f'| 故事解锁 | {UNLOCK_LABEL.get(ci["story_unlock_type"], ci["story_unlock_type"])} |')
+        if ci.get('gossip_about_count'):
+            D.append(f'| 被提及（闲话） | {ci["gossip_about_count"]} 条 |')
+        D.append('')
+        if ch.get('introduction'):
+            D.append('## 简介')
+            D.append('')
+            D.append(f'> {ch["introduction"]}')
+            D.append('')
+        # 玩法
+        D.append('## 界域与玩法')
+        D.append('')
+        if p:
+            D.append('::: tip 玩法定位（社区源，非解包，数值随版本浮动）')
+            D.append(p['card'])
+            D.append(':::')
+        else:
+            D.append('::: warning 玩法待补')
+            D.append(f'{ch["name"]} 的技能玩法卡尚未收录。技能数据为已知解包缺口，'
+                     '待社区源补全后并入[玩法图鉴](/playstyle)。')
+            D.append(':::')
+        D.append('')
+        if ch.get('gameplay_intro'):
+            D.append(f'**官方战斗机制描述：** {ch["gameplay_intro"]}')
+            D.append('')
+        if ch.get('summon_slogan'):
+            D.append(f'<p class="summon-slogan">「{ch["summon_slogan"]}」</p>')
+            D.append('')
+        # 延伸入口
+        D.append('## 延伸资料')
+        D.append('')
+        D.append(f'- [语音台词](/voice-lines)（搜索「{ch["name"]}」）')
+        D.append('- [CG 画廊](/cg-gallery) · [角色立绘](/portraits)')
+        D.append('- [战斗机制总览](/battle-system) · [玩法图鉴](/playstyle)')
+        D.append('')
+        D.append('[← 返回唤醒体图鉴](/characters)')
+        D.append('')
+        with open(f'{out_dir}/{_slug(ch)}.md', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(D))
+        count += 1
+
+    # 列表页（带界域分组网格）
+    by_realm = {}
+    no_realm = []
+    for ch in playable:
+        p = play.get(ch['name'])
+        (by_realm.setdefault(p['realm'], []).append((ch, p)) if p else no_realm.append(ch))
+    I = []
+    I.append('---')
+    I.append('title: 唤醒体列表')
+    I.append('---')
+    I.append('')
+    I.append('# 唤醒体列表')
+    I.append('')
+    I.append(f'> 共 {len(playable)} 位可玩唤醒体，按界域分组。点击进入详情页。')
+    I.append('')
+    for realm in REALM_ORDER:
+        grp = by_realm.get(realm, [])
+        if not grp:
+            continue
+        I.append(f'## {_realm_badge(realm)} {REALM_LABEL[realm]}（{len(grp)}）')
+        I.append('')
+        I.append('<div class="awakener-grid">')
+        for ch, p in sorted(grp, key=lambda x: x[0]['id']):
+            I.append(_awakener_card(ch, p))
+        I.append('</div>')
+        I.append('')
+    with open(f'{out_dir}/index.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(I))
+    print(f'Awakener detail pages: {count} pages + index')
+
+
+def generate_playstyle(playable, play):
+    """玩法图鉴 docs/playstyle.md：按界域罗列玩法卡（沿用 character_skills.md 正文）。"""
+    src = f'{PROCESSED_DIR}/character_skills.md'
+    if not os.path.exists(src):
+        return
+    with open(src, 'r', encoding='utf-8') as f:
+        body = f.read()
+    # 去掉原档一级标题（与本页标题重复），其余正文原样保留（含 [[toc]] 等）
+    parts = body.split('\n', 1)
+    rest = parts[1] if len(parts) > 1 else ''
+    legend = ['<p class="realm-legend">']
+    for realm in REALM_ORDER:
+        legend.append(f'{_realm_badge(realm)} {REALM_TAGLINE[realm]}<br>')
+    legend.append('</p>')
+    out = (
+        '---\ntitle: 玩法图鉴\n---\n\n'
+        '# 玩法图鉴\n\n'
+        + '\n'.join(legend) + '\n'
+        + rest
+    )
+    with open(f'{DOCS_DIR}/playstyle.md', 'w', encoding='utf-8') as f:
+        f.write(out)
+    print('Playstyle page generated.')
 
 
 def generate_summon():

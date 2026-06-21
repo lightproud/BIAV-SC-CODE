@@ -549,6 +549,96 @@
 .server-jp     { background: rgba(226, 201, 126, 0.12); color: var(--m-gold-light); }
 .server-tw     { background: rgba(155, 89, 182, 0.12); color: #bb8fce; }
 
+/* Role badge (定位) */
+.role-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--m-radius-md);
+  font-size: 0.85em;
+  font-weight: var(--m-fw-medium);
+  background: var(--m-bg-elevated);
+  color: var(--m-text-muted);
+  border: 1px solid var(--m-border-default);
+}
+.awakener-badges { margin: var(--m-sp-2) 0 var(--m-sp-4); }
+.awakener-badges .realm-badge { margin-right: var(--m-sp-2); }
+
+/* Realm tagline / legend */
+.realm-tagline {
+  color: var(--m-text-dim);
+  font-size: var(--m-fs-caption);
+  font-style: italic;
+  margin: calc(-1 * var(--m-sp-2)) 0 var(--m-sp-3);
+}
+.realm-legend {
+  line-height: 2;
+  color: var(--m-text-muted);
+  font-size: var(--m-fs-caption);
+  padding: var(--m-sp-4);
+  background: var(--m-bg-surface);
+  border: 1px solid var(--m-border-subtle);
+  border-radius: var(--m-radius-lg);
+}
+.realm-legend .realm-badge { margin-right: var(--m-sp-2); }
+
+/* Summon slogan */
+.summon-slogan {
+  font-family: var(--m-font-title);
+  font-style: italic;
+  color: var(--m-gold-light);
+  border-left: 2px solid var(--m-gold-dim);
+  padding-left: var(--m-sp-4);
+  margin: var(--m-sp-4) 0;
+}
+
+/* Awakener card grid (图鉴 / 列表页) */
+.awakener-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--m-sp-3);
+  margin: var(--m-sp-4) 0 var(--m-sp-8);
+}
+.awakener-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--m-sp-3) var(--m-sp-4);
+  background: var(--m-bg-card);
+  border: 1px solid var(--m-border-subtle);
+  border-left: 3px solid var(--m-border-default);
+  border-radius: var(--m-radius-lg);
+  text-decoration: none !important;
+  transition: all var(--m-dur-normal) var(--m-ease-default);
+}
+.awakener-card:hover {
+  border-color: var(--m-border-hover);
+  border-left-color: var(--m-gold-primary);
+  box-shadow: var(--m-shadow-glow);
+  transform: translateY(-2px);
+}
+.awakener-card .ac-name {
+  font-family: var(--m-font-title);
+  font-size: var(--m-fs-h3);
+  font-weight: var(--m-fw-semibold);
+  color: var(--m-text-primary) !important;
+}
+.awakener-card .ac-role {
+  font-size: var(--m-fs-small);
+  color: var(--m-gold-primary);
+  letter-spacing: var(--m-ls-caps);
+}
+.awakener-card .ac-title {
+  font-size: var(--m-fs-caption);
+  color: var(--m-text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.awakener-card.realm-accent-chaos  { border-left-color: var(--m-realm-chaos); }
+.awakener-card.realm-accent-aequor { border-left-color: var(--m-realm-aequor); }
+.awakener-card.realm-accent-caro   { border-left-color: var(--m-realm-caro); }
+.awakener-card.realm-accent-ultra  { border-left-color: var(--m-realm-ultra); }
+
 /* Giscus */
 .giscus, .giscus-frame { width: 100%; }
 
@@ -581,6 +671,10 @@
 
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .awakener-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   /* Ensure mobile nav gets glass effect */
