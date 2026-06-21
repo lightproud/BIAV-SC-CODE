@@ -1,6 +1,6 @@
 # 决策日志
 
-> 最后更新：2026-06-21 by /grill 治理会话（「祈祷优化」：拆分归档层 + 显式覆盖列 + 退役 16 条死决策 + 修 record_decision 插入锚点）
+> 最后更新：2026-06-21 by /grill 治理会话（「祈祷优化」：拆分归档层 + 显式覆盖列 + 退役 27 条死决策/存疑条目 + 修 record_decision 插入锚点）
 >
 > **新会话只需要读「当前有效决策」。长理由 / 已退役决策 / 编年史 → `memory/decisions-archive.md`。**
 >
@@ -47,19 +47,13 @@
 | 缸中之脑方向确认为方法论验证（交付物必须可用） | 全局 | — |
 | main 分支添加 Ruleset 保护规则（禁止删除） | 全局 | — |
 | 双系统架构：银芯（受限/非公开层）+ 黑池（内部层），数据隔离，架构共享 | 全局 | — |
-| **Phase B 4 答案锁死**（2026-04-14）：(1) 无账号用户识别 = 与 SVN 账号名一致，可支持外显名；(2) SVN 仓库 = 基于本地 SVN 工作副本；(3) 事实边界 = memory/decisions.md 全部入 wiki 不做审核筛选；(4) 能力共享粒度 = BIAV Studio 团队内 | 全局 / 黑池建设 | — |
-| **双系统亚哈格分**（2026-04-14）：银芯 = 孵化器 + 开源子项目 + 公开资料；黑池（内网 SVN）= 五大需求的数据与代码主体。解除"能力团队内共享"与"银芯公开层"的潜在矛盾——能力放黑池内网，银芯只保留接口声明与可公开能力。详见 memory/archive/bpt-strategic-shift-2026-04-19/blackpool-architecture.md 第零节 | 全局 / 双系统分工 | — |
 | 银芯事实圣经边界：仅收录公开可查阅信息 | 全局 | — |
 | 战略规划 2026：四阶段计划，详见 strategic-plan-2026.md | 全局 | Phase 划分部分被 v2.0（2026-04-26）取代 |
-| 黑池已上线（2026-04-03），内网 SVN + Qoder，全员使用，核心痛点：知识结构化传承 | 全局 | — |
 | 大二进制文件移至 GitHub Releases（不入 git） | 全局 | — |
-| 架构差距分析 + 8 项改进批量实施（JSON Schema、冒烟测试、Dependabot 等） | 全局 | — |
 | 品牌统一：银芯=BIAV-SC，黑池=BIAV-BP。CLAUDE.md 保留文件名（兼容自动加载），标题用 BIAV-SC | 全局 | — |
 | **战略转向 2026-04-19**（5 项裁定，覆盖此前所有 BPT 相关决策）：(1) 整体战略压缩至 3 个月内完成（2026-04-19 → 2026-07-19），Phase 1.5 架构整理 7 天 + Phase 2 内容权威 35 天 + Phase 3 方法论 30 天 + Phase 4 衍生创作 19 天；(2) BPT 四条线（bpt-web / bpt-desktop / bpt-next / graphify-ext）从银芯仓库**直接删除**，不迁仓库不归档，occ-local 一并清理；(3) Phase 2 验收标准降档为"日报稳定运行 14 天"，取消"真实热度事件"硬指标；(4) 银芯对 BPT 的指导协议采用**人工对话搬运**（守密人为搬运者+学习者），不做自动化；(5) 本战略评估会话（分支 claude/project-strategy-review-1AH5Z）升级为**长期战略锚点**，存续至 2026-07-19 战略达成。Phase 4 采用方案 A（仅可玩原型演示给守密人，社区测试推至战略窗口外） | 全局 / 战略 | Phase 2/3/4 划分 + Phase4 game 定位被 v2.0（4-26）覆盖；BPT 删除仍生效 |
 | **characters.json schema v1.0 锁定 2026-04-20**（守密人「全部采纳」裁决 6 项遗留问题）：(Q1) 重复 ID 保留两条独立记录 + `duplicate_bug` 互指，不合并；(Q2) 翻译来源 = 官方 > 社区，社区补位标 `translation_source: "community"`；(Q3) 立绘路径 `assets/images/portraits/{slug}/default.png` / `.../awaker.png` / `.../skins/{skin_id}.png`，键锁 `slug`；(Q4) 命轮 tier 放宽至 1–10，Phase 2 W3 UI 实装时按游戏内 node 收紧；(Q5) `gi_numeric` 字段 v1.0 不纳入，Phase 2 UI 需排序时再加；(Q6) 严格模式 + `status: stub` 下允许 `realm: null` / `role: null`（schema 用 `oneOf` 分支）。详见 `memory/wiki-characters-schema-v1.md` | 全局 / Wiki | — |
 | **银芯重新定位 v2.0 — 2026-04-26 重大战略转向**（守密人「使命达成」状态识别 + 7 条战略修正，覆盖 4-19 转向中的部分条款）：核心识别 — 银芯原三重身份（BPT 开发母仓 / 方法论验证场 / 黑池数据脱敏出口）目标**一个月内全部已达成**，进入「使命达成后存续依据待重新定义」状态。守密人裁定**银芯三新使命**：(1) **黑池公开信息入口**（GitHub 自动化采集层，黑池消费的"眼睛和耳朵"）；(2) **社区共建知识底座**（公开知识共享，未来全语言 Wiki 等社区/Studio 外部派生内容的基础）；(3) **Studio 团队 AI 协作训练场**（严格保密组织内成员基于公开 AI 信息制作相关项目和企划）。配套修正 7 条：(M1) **信息要全**（不是 stub 够用，wiki 仍要 72 角色完整）；(M2) **主控台 = 战略+规划+协调+接口 四合一中枢**（教学层未来锁定，当前不存在但保留思考过程可读性作未来素材，因守密人自己仍在摸索）；(M3) **黑池不倒灌银芯**（修正 BIAV-SC.md 旧表述「黑池→脱敏→银芯」，单向输出，黑池任何形式都不进银芯）；(M4) **game = 守密人个人兴趣（主）+ Studio 团队训练场 ⓐ / 社区共建衍生 ⓒ 未来扩展（备）**，不主线派发，主控台不分配资源；(M5) **银芯主线收缩到 site/news/wiki 三轴**；(M6) **Phase 大一统**：Phase 2 = 4-27 → 7-19 共 84 天为单一阶段「银芯三新使命建设期」，砍 Phase 3/4 边界，内部用里程碑替代；(M7) **Phase 2 验收升级**：原"日报稳定 14 天"扩展为"三新使命基础设施齐备 + 自动化跑稳 + 至少一种贡献流程跑顺"。本条覆盖 2026-04-19 转向决策中的 Phase 2/3/4 阶段划分与 Phase 4 衍生游戏主线定位。详见 `memory/strategic-plan-2026.md`、`memory/lessons-learned.md` #27、本会话 4-25 ~ 4-26 战略反思对话 | 全局 / 战略 | 覆盖 2026-04-19 转向的 Phase 划分与 Phase4 定位 |
-| **唤醒 Code-strategy 会话角色 2026-04-26**：守密人 4-26 指令「战略参谋很久没用了 我想唤醒他」。原 BIAV-SC 体系中「claude.ai 战略参谋」web 端会话沉寂，现迁移至 Claude Code 端并重命名 **Code-strategy = 长期战略智库**。与主控台的边界**按时间尺度切分**：主控台负责「当前 Phase 进行中」战术协调（派发 / 验收 / 决策档案 / 接口规范）；Code-strategy 负责「长尺度」战略观察（调研 / 评估 / 选项分析 / 长期监测 / 远期 roadmap）。**不平级**：主控台可向 Code-strategy 派调研；Code-strategy 不向主控台派工作（但可提议新议题）。**Code-strategy 不负责**：业务代码、子项目、决策档案（仍归主控台 + 守密人）、dispatch brief 起草（仍归主控台）、即时战术协调。**产出形态**：`memory/strategy/*.md`（长期战略文档）+ `memory/research/*.md`（一次性调研）。Issue 标题前缀 `[Code-strategy]`。CLAUDE.md 子项目速查表已加入。**主控台收缩**：唤醒后主控台必须主动让渡长尺度战略思考给 Code-strategy，避免重叠。详见 `memory/dispatch-brief-code-strategy-bootstrap.md` | 全局 / 主控台 | — |
-| **新增 Code-BPT 会话角色 2026-04-27**：守密人 4-27 指令「新起 Code-BPT 角色负责指导 BPT 开发」。背景——2026-04-19 转向第 4 项裁定银芯指导 BPT 走「人工对话搬运」协议，但**未指定指导端的会话角色**，事实上的指导工作落在主控台肩上，与主控台「战略+规划+协调+接口 四合一中枢」定位（4-26 v2.0 重新定位）产生职责重叠。新建 **Code-BPT = BPT 开发技术层指导者**，职责：(1) 产出「搬运包」（指导主题 / 背景 / 具体建议 / 引用档案 / 验收问题，规范见 `memory/bpt-guidance-protocol.md` §四）；(2) 接收守密人从 BPT 带回的反馈包并沉淀至 `memory/lessons-learned.md` 与 `memory/bpt-guidance-log.md`；(3) BPT 设计 / 架构 / 方法论 deep-dive 对话；(4) 战略级议题（Phase 边界 / 跨子项目影响 / 需写入 `decisions.md` 的架构决策）上呈主控台裁定。**不负责**：写代码到银芯仓库（BPT 4-19 已删除，绝不回流）/ 直接访问 BPT 仓库 / 自动化指导流程（守密人「学习者」身份是协议核心价值，自动化抽掉这个价值）/ 战略级裁定（归主控台）。**协议升级**：`memory/bpt-guidance-protocol.md` v0.1 → v0.2，角色表分裂为「战略层指导者（主控台）」+「技术层指导者（Code-BPT）」，信息流图同步更新。Issue 标题前缀 `[Code-BPT]`。CLAUDE.md §3/§4 + BIAV-SC.md issue 前缀 + 角色表 同步更新。**主控台让渡**：BPT 日常技术对话从主控台抽离，主控台仅保留战略对齐反馈通道 | 全局 / BPT 指导 | — |
 | **脑缸组信息分类法则 v1.0 落档 — 守密人 2026-05-06 采纳**：守密人 5-6 发布脑缸组级信息分类元法则 v1.0，落档于银芯：`memory/biav-info-classification.md`（守密人 Q1 裁定法则归属银芯 / 不内嵌 BIAV-SC.md，单独成档以避免膨胀）。**核心架构**：7 类主轴（IP / 游戏产品 / 周边产品 / 品牌建设 / 社区运营 / 组织 / AI）+ 3 性质标记（正典 / 记载 / 法则）+ 多字段轴（service_variant / stage / event_type / provenance / owner / lineage）。**核心原则 4 条**：主轴优先 标记其上 / 多轴正交 / 开放写入 异常捕捉 / 演化容忍。**派生视图替代「状态」**（如「当前线上版本」从正典 + 记载派生，不是独立性质）。**银芯特别约定**（守密人 Q3 裁定）：银芯所有 AI 会话角色 `owner` 字段统称「银芯」，不区分主控台 / Code-* 子角色。**retrofit** 既有银芯档案打元数据字段（守密人 Q2 裁定属工程议题）派给 Code-memory，brief 落档 `memory/dispatch-brief-code-memory-info-classification-retrofit.md`，先调研 + 试点，不做全量。**法则演化路径**：v1.0 是最小集，每接入新信息源回头迭代字段（§11 落地建议）。BIAV-SC.md 1.5 patch 完成后新 §6 内部协作章引用本法则。详见 `memory/biav-info-classification.md` | 全局 / 信息分类 | — |
 | **入口架构反转 — 守密人 2026-05-19 裁定**（覆盖 5-6 关于 CLAUDE.md / BIAV-SC.md 的全部裁定）：触发于守密人 5-19 关键洞察「BIAV-SC.md 必然是弱约束，这是 Claude 结构决定的」——LLM 注意力衰减 + 无硬执行机制 + 长文档稀释规则强度。**反转裁定**：(1) **CLAUDE.md 成为唯一 AI 入口**（Claude Code 平台自动加载 = 平台级强约束，比 BIAV-SC.md 弱约束有效），完整迁入艾瑞卡人格 / 项目本质 / 数据消费纪律 / 接入方能力盘点 / 知识模块索引 / 内部协作 + 工程操作 / 卡帕西原则引用 / 信息分类法则引用 + Light 维护速查附录；(2) **BIAV-SC.md 彻底废弃**（不保留指针，外部 AI 接入咒语改为直接读 CLAUDE.md raw URL —— Claude Code 自动加载 + 外部 raw URL 同源单一入口）；(3) **README.md 接入指引**改指向 CLAUDE.md。**废弃路径**：(a) decisions.md 同日收缩条目 + batch 1.5 patch brief 标 deprecated；(b) entry redesign batch 1 实施成果（BIAV-SC.md 350 行）作为内容来源逆向迁移到 CLAUDE.md，原文件 git rm；(c) 批量更新各 dispatch-brief / methodology / contribution-protocol 等引用 BIAV-SC.md 的地方 → CLAUDE.md。**接入咒语**改：「读 https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md 后以艾瑞卡身份协助我」。**多层约束分布表**（弱约束本质的实战应对）：工具层 enforce（硬）/ dispatch-brief 当下任务（强）/ 守密人即时纠正（强）/ session-digest 反向喂养（中）/ CLAUDE.md 自动加载（最强文档级，因为平台保证）。**实施派 Code-site**（新 brief：`memory/dispatch-brief-code-site-claude-md-unify.md`）。**回滚**：直推 main 政策下 git revert 即可。**新增 lesson #33 候选**：弱约束本质——任何 prompt 级 instructions 都是软约束，真正硬约束在工具层 / 平台层。详见本会话讨论 + 新 brief | 全局 / 入口架构 | 覆盖 2026-05-06 入口重设计（已移归档） |
 | **卡帕西编码 4 原则采纳 — 守密人 2026-05-10 采纳**（本条为守密人 2026-06-09 授权补录，依据 CLAUDE.md §6 与 `memory/karpathy-coding-principles.md`）：上游为 Andrej Karpathy 2026-01-26 LLM 编码行为观察，与守密人硬约束「精简优雅可维护」同构。四原则：(1) **Think Before Coding**——动手前明示假设、多解释全部列出、简化路径主动提、不明就停手（反 pattern：列 5 个等价选项让守密人挑）；(2) **Simplicity First**——只写解决问题的最小代码，不做投机性功能 / 单用途抽象 / 未要求的可配置性；(3) **Surgical Changes**——只动必须动的行，不顺手「改进」相邻代码，只清理自己制造的孤儿；(4) **Goal-Driven Execution**——任务转化为可验证目标，定义成功标准后自主循环至验证通过。落地位置：CLAUDE.md §6 全文（所有写代码会话必读硬约束）。2026-06-09 审查发现本条目缺录（决策日志与 CLAUDE.md §6 脱节，lesson #29 同款模式），经守密人授权补录 | 全局 / 工程纪律 | — |
@@ -92,11 +86,6 @@
 | Discord 数据分级存储架构（git 保留 60 天 JSONL + 月归档至 Releases） | news/discord |
 | Discord 归档系统 4 项技术决策（断点续传、月报容错、论坛增量、无成员 Intent） | news/discord |
 | 联动关键词确认：沙耶之歌 (Saya no Uta)，日报系统已配置监控 | news |
-| BPT 用 sql.js 替代 better-sqlite3（消除 Windows C++ 编译依赖） | bpt |
-| BPT 自带独立 MCP Server（同构复刻银芯 11 工具，零 git 依赖，多格式解析） | bpt |
-| BPT Server 变更检测用文件 mtime 扫描替代 git diff/log | bpt |
-| BPT 不依赖 brain-in-a-vat 仓库，独立部署于内网 SVN | bpt |
-| 银芯社区数据单向同步到 BPT（银芯 -> 脱敏 -> BPT），不反向 | bpt |
 | 双采集栈逐平台收敛（2026-06-20，详见下方专条） | news |
 | god module 不拆分（aggregator_collectors / global_collectors 保持现状，2026-06-20） | news |
 
