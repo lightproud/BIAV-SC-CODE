@@ -32,6 +32,7 @@ export default defineConfig({
         text: '系统',
         items: [
           { text: '战斗机制', link: '/battle-system' },
+          { text: '启灵效果词条', link: '/potency' },
           { text: '唤醒系统', link: '/summon' },
           { text: '关卡导航', link: '/stages' },
           { text: '收藏馆', link: '/collection-hall' },
@@ -81,6 +82,7 @@ export default defineConfig({
           text: '系统',
           items: [
             { text: '战斗机制', link: '/battle-system' },
+            { text: '启灵效果词条', link: '/potency' },
             { text: '唤醒系统', link: '/summon' },
             { text: '关卡导航', link: '/stages' },
             { text: '收藏馆', link: '/collection-hall' },
