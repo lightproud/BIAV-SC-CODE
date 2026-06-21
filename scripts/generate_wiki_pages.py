@@ -404,8 +404,8 @@ def generate_collection_hall():
     lines.append('')
 
     for entry in with_desc:
-        title = entry['title']
-        desc = entry['desc']
+        title = _clean_title(entry['title'])
+        desc = _clean_lore_markup(entry['desc'])
         lock = entry.get('lock_tip', '')
 
         lines.append(f'### {title}')
@@ -423,7 +423,7 @@ def generate_collection_hall():
 
     # List them compactly
     for entry in without_desc:
-        title = entry['title']
+        title = _clean_title(entry['title'])
         lock = entry.get('lock_tip', '')
         if lock:
             lines.append(f'- **{title}** — *{lock}*')
@@ -584,12 +584,12 @@ def generate_item_stories():
         lines.append('')
 
         for item in items:
-            lines.append(f'### {item["name"]}')
+            lines.append(f'### {_clean_title(item["name"])}')
             lines.append('')
             if item.get('desc'):
-                lines.append(f'*{item["desc"]}*')
+                lines.append(f'*{_clean_lore_markup(item["desc"])}*')
                 lines.append('')
-            lines.append(item['story'])
+            lines.append(_clean_lore_markup(item['story']))
             lines.append('')
 
     with open(f'{DOCS_DIR}/item-stories.md', 'w', encoding='utf-8') as f:
