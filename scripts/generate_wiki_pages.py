@@ -95,7 +95,8 @@ def _clean_lore_markup(text):
         return content
 
     text = re.sub(r'<([A-Za-z]+):([^>]*)>', repl, text)
-    text = re.sub(r'<[^>]{0,16}>', '', text)  # 清掉 <▼> 等无内容杂标记
+    # 清掉 <▼> 等符号开头的杂标记；不碰生成的 <span>/</span>（字母或 / 开头）
+    text = re.sub(r'<[^A-Za-z/][^>]*>', '', text)
     return text.strip()
 
 
@@ -1740,6 +1741,31 @@ def generate_story():
 
         L.append('---')
         L.append('')
+
+    # —— 未编入章节的剧情正文（lock_tip 为空、解析器无法归章，但确有叙事正文）——
+    mapped = {lid for u in idx for lid in u['lore_ids']}
+    orphan = []
+    for e in lore.values():
+        if e['id'] in mapped:
+            continue
+        d = _clean_lore_markup(e.get('desc', ''))
+        if len(d) >= PROSE_MIN:
+            orphan.append((e, d))
+    orphan.sort(key=lambda x: -len(x[1]))  # 长篇优先
+    if orphan:
+        L.append('## 番外 · 未编入章节的剧情正文')
+        L.append('')
+        L.append(f'> 以下 {len(orphan)} 条收藏馆词条确有叙事正文，但客户端未标注解锁章节，'
+                 f'解析器无法挂入上方时间线；按正文长度排列，逐字保留。')
+        L.append('')
+        for e, d in orphan:
+            L.append(f"#### {_clean_title(e.get('title', ''))}")
+            L.append('')
+            L.append(f'> {d}')
+            L.append('')
+        L.append('---')
+        L.append('')
+
     with open(f'{DOCS_DIR}/story.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(L))
     print(f'Story page: {len([u for u in idx if u["lore_ids"] or u["stage_group_ids"]])} story units')
