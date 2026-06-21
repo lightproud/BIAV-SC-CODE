@@ -30,8 +30,12 @@ features:
     details: 指令卡 + 灵知觉醒、算力、狂气与超限爆发、四界域体系、命轮——新手到进阶的系统说明。
     link: /battle-system
     linkText: 读机制
-  - title: 剧情与世界观
-    details: 忘却篇 + 星辰篇剧情时间线、终章真相、克苏鲁神话原型对照、深度考据综述（带置信标签与来源）。
+  - title: 剧情正文读本
+    details: 按 31 章铺开的逐章一手叙事正文——收藏馆 / 秘典词条 + 关卡组引言 + 番外正文，逐字解包，与角色图鉴双向互链。
+    link: /story
+    linkText: 读原文
+  - title: 剧情与世界观考据
+    details: 忘却篇 + 星辰篇剧情脉络、终章真相、克苏鲁神话原型对照、深度考据综述（社区源，带置信标签与来源）。
     link: /lore-research
     linkText: 入坑世界观
   - title: 收藏馆百科
