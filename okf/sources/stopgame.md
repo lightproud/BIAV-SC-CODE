@@ -4,7 +4,7 @@ title: "stopgame 社区数据源"
 description: "stopgame 平台采集档案，全量 63 条，健康度 active。"
 resource: "/projects/news/data/platforms/stopgame/"
 tags: ["data_layer:full_archive", "platform:stopgame", "health:active"]
-timestamp: "2026-06-21T02:39:13.959229+00:00"
+timestamp: "2026-06-21T07:27:27.985317+00:00"
 ---
 
 # 数据层指针

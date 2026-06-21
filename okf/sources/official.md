@@ -4,7 +4,7 @@ title: "official 社区数据源"
 description: "official 平台采集档案，全量 331 条，健康度 degraded。"
 resource: "/projects/news/data/platforms/official/"
 tags: ["data_layer:full_archive", "platform:official", "health:degraded"]
-timestamp: "2026-06-21T02:39:13.959229+00:00"
+timestamp: "2026-06-21T07:27:27.985317+00:00"
 ---
 
 # 数据层指针

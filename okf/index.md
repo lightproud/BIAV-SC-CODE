@@ -6,7 +6,7 @@
 ## 章节
 
 * [角色 characters](/characters/index.md) - 72 个唤醒体 concept（一概念一文件）
-* [数据源 sources](/sources/index.md) - 19 个社区平台**指针** concept
+* [数据源 sources](/sources/index.md) - 15 个社区平台**指针** concept
 * [记忆 memory](/memory/index.md) - 10 份记忆层**指针** concept
 * [剧情 story](/story/index.md) - 5 份剧情结构层**指针** concept
 
