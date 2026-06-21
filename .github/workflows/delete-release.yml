@@ -46,7 +46,7 @@ jobs:
           fi
           echo "确认通过：将删除 release '$TAG'。"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Show release metadata before deletion (audit trail)
         env:

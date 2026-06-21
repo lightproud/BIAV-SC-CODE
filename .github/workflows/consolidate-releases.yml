@@ -50,7 +50,7 @@ jobs:
           fi
           echo "确认通过：合并到 '$T'。"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Download all assets from source releases
         env:
