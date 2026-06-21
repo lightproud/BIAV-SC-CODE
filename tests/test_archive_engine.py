@@ -16,19 +16,23 @@ def _touch(p: Path, content: str = "{}\n"):
 
 
 class RegistryInvariants(unittest.TestCase):
-    """锁住向后兼容：Discord 标签/cutoff/删数据策略不得漂移。"""
+    """锁住 Discord 滚动单 release 设计 + 不漂移的 cutoff/删数据策略。"""
 
-    def test_discord_entry_backward_compatible(self):
+    def test_discord_entry_rolling_release(self):
         cfg = ae.load_registry()["discord"]
-        # 标签必须仍是 discord-archive-YYYY-MM，否则现存 20 个 Release 成孤儿
-        self.assertEqual(cfg["tag_template"], "discord-archive-{group}")
-        self.assertEqual(cfg["title_template"], "Discord Archive {group}")
+        # 滚动单 release：所有月份归入固定标签 community-data
+        self.assertEqual(cfg["release_tag"], "community-data")
+        self.assertEqual(cfg["release_title"], "Community Archive Data")
+        # 资产文件名仍按月，向后兼容旧 discord-archive-YYYY-MM.tar.gz（迁移来的资产同名）
+        self.assertEqual(cfg["asset_template"], "discord-archive-{group}.tar.gz")
+        self.assertEqual(
+            ae.asset_name_of(cfg, "2026-01"), "discord-archive-2026-01.tar.gz"
+        )
+        # 不漂移的策略
         self.assertEqual(cfg["cutoff_days"], 60)
         self.assertEqual(cfg["group_by"], "month_from_stem")
         self.assertEqual(cfg["after_archive"], "git_rm")
         self.assertEqual(cfg["base_dir"], "projects/news/data/discord")
-        # 标签实际渲染等价于原 archive_discord
-        self.assertEqual(cfg["tag_template"].format(group="2026-01"), "discord-archive-2026-01")
 
 
 class GroupingAndCutoff(unittest.TestCase):
@@ -151,6 +155,51 @@ class Tarball(unittest.TestCase):
             # tar 内路径相对 base_dir（与原 archive_discord 一致）
             with tarfile.open(path, "r:gz") as tar:
                 self.assertEqual(tar.getnames(), ["channels/xx/2026-01-01.jsonl"])
+
+
+class RollingUpload(unittest.TestCase):
+    """滚动单 release：不得删整个 release，只 --clobber 替换本桶资产。"""
+
+    def _run_upload(self, view_returncode):
+        cfg = {
+            "release_tag": "community-data",
+            "release_title": "Community Archive Data",
+            "asset_template": "discord-archive-{group}.tar.gz",
+        }
+        calls = []
+
+        def fake_run(cmd, *a, **k):
+            calls.append(cmd)
+            if cmd[:3] == ["gh", "release", "view"]:
+                return mock.Mock(returncode=view_returncode)
+            return mock.Mock(returncode=0, stderr="", stdout="")
+
+        with tempfile.TemporaryDirectory() as d:
+            archive = Path(d) / "discord-archive-2026-05.tar.gz"
+            archive.write_text("x")
+            with mock.patch.dict(ae.os.environ, {"GITHUB_REPOSITORY": "o/r"}), \
+                 mock.patch.object(ae.subprocess, "run", side_effect=fake_run):
+                ok = ae.upload_to_release(cfg, archive, "2026-05", 3)
+        return ok, calls
+
+    def test_existing_release_clobbers_asset_no_delete(self):
+        ok, calls = self._run_upload(view_returncode=0)  # release 已存在
+        self.assertTrue(ok)
+        verbs = [c[:3] for c in calls]
+        self.assertIn(["gh", "release", "view"], verbs)
+        self.assertIn(["gh", "release", "upload"], verbs)
+        # 关键：绝不删整个 release（否则会连带删掉其它月份资产）
+        self.assertNotIn(["gh", "release", "delete"], verbs)
+        upload_cmd = next(c for c in calls if c[:3] == ["gh", "release", "upload"])
+        self.assertIn("--clobber", upload_cmd)
+
+    def test_missing_release_is_created_then_uploaded(self):
+        ok, calls = self._run_upload(view_returncode=1)  # release 不存在
+        self.assertTrue(ok)
+        verbs = [c[:3] for c in calls]
+        self.assertIn(["gh", "release", "create"], verbs)
+        self.assertIn(["gh", "release", "upload"], verbs)
+        self.assertNotIn(["gh", "release", "delete"], verbs)
 
 
 class GitRm(unittest.TestCase):
