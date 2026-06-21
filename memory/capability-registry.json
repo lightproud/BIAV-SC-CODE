@@ -6,18 +6,18 @@
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 25,
-      "scripts_top": 15,
+      "workflows": 26,
+      "scripts_top": 17,
       "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 89
+      "total": 92
     },
     "reachability": {
-      "live": 48,
+      "live": 50,
       "test-only": 0,
       "orphaned": 0
     }
@@ -51,6 +51,15 @@
         "manual"
       ],
       "note_zh": "定时回填历史社区新闻。"
+    },
+    {
+      "id": "build-analysis-index.yml",
+      "name": "Build Analysis Index",
+      "path": ".github/workflows/build-analysis-index.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     },
     {
       "id": "build-capability-registry.yml",
@@ -275,9 +284,29 @@
       "status": "live"
     },
     {
+      "id": "build_community_index.py",
+      "path": "scripts/build_community_index.py",
+      "summary": "Build a static community-discussion analysis index over the FULL archive.",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "build_okf_bundle.py",
       "path": "scripts/build_okf_bundle.py",
       "summary": "Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "build_story_index.py",
+      "path": "scripts/build_story_index.py",
+      "summary": "Build a static story/lore search index over the unpacked story layer.",
       "planes": [
         "cli",
         "workflow"

@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**89**
-- 脚本可达性：活 48 / 仅测试 0 / 孤儿 0
+- 功能总数：**92**
+- 脚本可达性：活 50 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 25 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 15 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 26 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 17 |
 | news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（25）
+## CI 自动化工作流（编排入口·定时/事件平面）（26）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -42,6 +42,8 @@
   `.github/workflows/backfill-media.yml`
 - **`Backfill Historical News`** _[schedule/manual]_ — 定时回填历史社区新闻。  
   `.github/workflows/backfill-news.yml`
+- **`Build Analysis Index`** _[schedule/manual]_ —   
+  `.github/workflows/build-analysis-index.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
   `.github/workflows/build-capability-registry.yml`
 - **`Build OKF Bundle`** _[push/manual]_ —   
@@ -87,12 +89,16 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（15）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（17）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
+- **`build_community_index.py`** _[活:cli+workflow]_ — Build a static community-discussion analysis index over the FULL archive.  
+  `scripts/build_community_index.py`
 - **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
   `scripts/build_okf_bundle.py`
+- **`build_story_index.py`** _[活:cli+workflow]_ — Build a static story/lore search index over the unpacked story layer.  
+  `scripts/build_story_index.py`
 - **`build_story_layer.py`** _[活:cli]_ — Build the story/ structured layer from raw + processed sources.  
   `scripts/build_story_layer.py`
 - **`character_persona.py`** _[活:cli+mcp]_ — 艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。  
