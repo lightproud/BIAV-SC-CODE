@@ -11,7 +11,7 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   2. Discord 过期 URL 经 refresh-urls 批量刷新（需 DISCORD_BOT_TOKEN，bot 须能访问该频道）；
   3. 按源带正确 Referer 下载到 media/files/（gitignore，不进 git）；
   4. 写 media/backfill_manifest.json（进 git 的文本清单）；
-  5. --upload：打包 media/files/ 传 GitHub Releases（tag=media-archive-v1，需 GH_TOKEN）。
+  5. --upload：打包 media/files/ 传 GitHub Releases（tag=community-assets「社区二创」，需 GH_TOKEN）。
 
 清单已 ok 的跳过（可续跑）；--budget 秒级预算，超时优雅退出。
 
@@ -35,7 +35,7 @@ FILES = f"{ROOT}/media/files"
 MANIFEST = f"{ROOT}/media/backfill_manifest.json"
 UA = "Mozilla/5.0 (silver-core media backfill)"
 REFERER = {"pixiv": "https://www.pixiv.net/", "bilibili": "https://www.bilibili.com/"}
-RELEASE_TAG = "media-archive-v1"
+RELEASE_TAG = "community-assets"  # 2026-06-21 收敛：media 并入「社区二创」桶
 REFRESH_API = "https://discord.com/api/v10/attachments/refresh-urls"
 REFRESH_BATCH = 50
 
@@ -140,9 +140,10 @@ def upload_release():
         print("无可上传文件"); return
     tar = f"{ROOT}/media/media-files.tar"
     subprocess.run(["tar", "-cf", tar, "-C", FILES, "."], check=True)
-    subprocess.run(["gh", "release", "delete", RELEASE_TAG, "--yes", "--cleanup-tag"], capture_output=True)
-    r = subprocess.run(["gh", "release", "create", RELEASE_TAG, tar, "--title", "Media Archive v1",
-                        "--notes", f"Backfilled community media ({len(files)} files). Index: media/backfill_manifest.json"],
+    # 2026-06-21 收敛：media 二进制并入「社区二创」community-assets（与 fanart 同桶），
+    # 不再单独建 media-archive-v1。往现有 release 追加资产（--clobber 覆盖同名），
+    # 绝不 delete release（会连 fanart 一起删）。
+    r = subprocess.run(["gh", "release", "upload", RELEASE_TAG, tar, "--clobber"],
                        capture_output=True, text=True)
     print(r.stdout or r.stderr)
 
