@@ -108,6 +108,31 @@ LEGACY_SOURCES = [
     'taptap_post',
 ]
 
+# ─── 区服 app 标识：单一真相源（2026-06-21 命名规范 grilling 定案） ──────────
+# 忘却前夜日本版 = AltPlus Inc. 独立发行，各平台为独立 app/账号 → 按规范拆 jp/ 区服。
+# 准则：不同 appid / 独立运营才拆区服目录；同 appid 多国仍走 platform_region 字段、不拆。
+#   global = 国际版（LingXi / qookkagames 系）；jp = 日本版（AltPlus）。
+# 归档结构：<平台>/<区服>/<类型>/YYYY-MM-DD.json（区服上、类型下，详见 projects/news/CONTEXT.md）。
+REGION_APPS = {
+    'steam':       {'global': '3052450',                  'jp': '4226130'},
+    'appstore':    {'global': '6447354150',               'jp': '6743462069'},
+    'google_play': {'global': 'com.qookkagames.z1.gp.hk', 'jp': 'jp.co.altplus.boukyakuzenya'},
+    'twitter':     {'global': 'MorimensOfcl',             'jp': 'bokyakuzenya'},
+    # YouTube 存 handle；YouTube Data API 采集前需 channels.list?forHandle 转 channelId。
+    # jp handle 待精确（频道名「忘却前夜【日本版公式】」，需 API 确认 @handle）。
+    'youtube':     {'global': '@morimensofficial',        'jp': None},
+}
+
+# TapTap 国服双 appid → 合并归档至 taptap/cn/，条目内 app_id 字段区分预约 vs 测试服。
+TAPTAP_CN_APPS = {'reserve': '364992', 'cbt': '374995'}
+
+# Discord 三服务器 → 区服（global/jp/volunteer）。归档至 discord/<区服>/<channel_id>/。
+DISCORD_GUILDS = {
+    'global':    '1131791637933199470',  # Morimens 官方全球服
+    'jp':        '1377475512716234902',  # 【公式】忘却前夜サーバー（日本官方）
+    'volunteer': '1402537664619479100',  # Morimens Volunteer Translators
+}
+
 
 def normalize_source(raw: str) -> str:
     """原始源名归一化为规范源名。"""
