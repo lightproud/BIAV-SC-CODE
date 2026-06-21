@@ -764,13 +764,16 @@ def fetch_appstore_reviews():
             review_url = f"https://apps.apple.com/{country}/app/id{appstore_id}?see-all=reviews"
             for entry in entries:
                 rating = int(entry.get("im:rating", {}).get("label", "0"))
+                # RSS entry id 是评论唯一标识。不追加锚点时同 country 数十条评论共用 review_url，
+                # 致 dedup_key（URL 优先）碰撞、每 country 仅存活 1 条。fragment 使每条 key 唯一。
+                entry_id = entry.get("id", {}).get("label", "")
                 items.append(_make_item(
                     title=entry.get("title", {}).get("label", ""),
                     summary=entry.get("content", {}).get("label", ""),
                     source="appstore",
                     platform_region=country,
                     time_str=entry.get("updated", {}).get("label", ""),
-                    url=review_url,
+                    url=f"{review_url}#as-{entry_id}" if entry_id else review_url,
                     engagement=rating,
                     is_hot=False,
                     author=entry.get("author", {}).get("name", {}).get("label", ""),
@@ -893,7 +896,10 @@ def fetch_google_play():
                     source="google_play",
                     platform_region=region,
                     time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
-                    url=f"https://play.google.com/store/apps/details?id={gp_package}&hl={lang_code}",
+                    # URL 追加 reviewId 锚点：评论页 URL 仅含 id+hl，同语言数十条评论会共用同一
+                    # URL，致 dedup_key（URL 优先）碰撞、每语言仅存活 1 条（丢失 ~98% 评论）。
+                    # fragment 使每条 key 唯一，不影响链接访问，跨轮次去重仍按恒定 reviewId 生效。
+                    url=f"https://play.google.com/store/apps/details?id={gp_package}&hl={lang_code}#gp-{review.get('reviewId', '')}",
                     engagement=review.get("thumbsUpCount", 0),
                     is_hot=False,
                     author=review.get("userName", ""),
