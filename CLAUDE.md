@@ -66,11 +66,12 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 
 1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
    **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每时 :00）；
-   **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活，
-   discord / fanart 等滚动归档进 Releases 两桶 community-data/-assets，加新来源 = 注册表加一段配置、零新代码；
+   **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
+   2026-06-21 de-tier 后 discord **全量永驻 git**`Public-Info-Pool/Record/Community/`（`after_archive: keep`，不再驱逐）；
+   fanart 等二进制仍滚动归档进 Releases「社区二创」；加新来源 = 注册表加一段配置、零新代码；
    T2 **绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
    **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
-   总数据流：原始数据 → 全量档案层 (`projects/news/data/`) → 过滤选样进输出展示层
+   总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
 2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `projects/wiki/data/extracted/`
    原始字段 → 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
@@ -157,7 +158,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §4.1 数据层 vs 输出层
 
-社区数据存在**全量档案层**（`projects/news/data/`，真实数据）vs **输出展示层**
+社区数据存在**全量档案层**（社区 text `Public-Info-Pool/Record/Community/`，真实全量数据）vs **输出展示层**
 （`projects/news/output/`，过滤选样），两者语义不可互换。
 
 - **长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯** → **必须用全量档案层**
@@ -196,11 +197,12 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- 全量档案：`projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` + `projects/news/data/platforms/{platform}/`（平台目录持续增加，以 `ls` 为准）
-- Discord 每日纯统计：`projects/news/data/discord/activity_daily/{date}.json`
+- 全量档案（2026-06-21 迁入 BPT 4R `Public-Info-Pool/`，text 全量永驻 git）：`Public-Info-Pool/Record/Community/discord/channels/{id_suffix}/{date}.jsonl` + `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）
+- Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/activity_daily/{date}.json`
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
-- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史存 community-data release，构建期由 `scripts/restore_release_data.py` 临时还原、不进 git**（守密人 2026-06-21 裁定；CI 步见 `build-analysis-index.yml`）。重建：先 restore 再 `python3 scripts/build_community_index.py`。分词用领域词典 FMM，top_terms 为粗粒度主题信号
-- Releases 全量档案索引（移出 git 的大资产 + 月归档）：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
+- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现永驻 git `Public-Info-Pool/Record/Community/discord`**（2026-06-21 de-tier，退役月度 git_rm 瘦身），直接读、无需还原。重建：`python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
+- 解包 text（脚本/配置/文本，非二进制）：`Public-Info-Pool/Reference/Game-Unpacked/`；二进制解包资产（立绘/音视频/lua-bytecode/config binary）留 Releases「解包」桶
+- Releases（仅二进制本体，text 已全迁 git）：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
 
 ### §5.3 项目档案
 
