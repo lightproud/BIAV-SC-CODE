@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 22,
-      "scripts_top": 14,
+      "scripts_top": 15,
       "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 85
+      "total": 86
     },
     "reachability": {
-      "live": 47,
+      "live": 48,
       "test-only": 0,
       "orphaned": 0
     }
@@ -245,6 +245,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "build_okf_bundle.py",
+      "path": "scripts/build_okf_bundle.py",
+      "summary": "Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
