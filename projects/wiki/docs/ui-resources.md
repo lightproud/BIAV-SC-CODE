@@ -1,3 +1,8 @@
 # UI 资源画廊
 
-> 数据来源：art-assets-v1 Release（UnityPy 解包）
+> 卡面立绘 + UI 大图（解包一手）
+
+::: info 媒体未内嵌（指向 Release）
+为符合 GitHub Pages 1GB 站点上限，本站只上线文本与轻量资源。UI 资源体量较大，未内嵌。
+完整原始资产（解包一手，tar.gz 打包）见 [GitHub Release `unpacked-assets`](https://github.com/lightproud/brain-in-a-vat/releases/tag/unpacked-assets)。
+:::

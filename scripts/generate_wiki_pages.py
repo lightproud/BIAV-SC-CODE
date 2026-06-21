@@ -438,6 +438,26 @@ def generate_collection_hall():
     print(f'Collection hall page: {len(lines)} lines')
 
 
+ASSET_RELEASE_TAG = 'unpacked-assets'
+
+
+def _release_pointer_lines(title, desc, hint):
+    """资产未内嵌时的占位页：解释 1GB 上限并指向 Release 下载。
+
+    站点为符合 GitHub Pages 1GB 上限走「文本 + 轻量资源」策略，GB 级重媒体
+    （CG / 立绘 / UI / 音视频）不内嵌，改由本页指向解包一手 Release。"""
+    rel = f'https://github.com/lightproud/brain-in-a-vat/releases/tag/{ASSET_RELEASE_TAG}'
+    return [
+        f'# {title}', '',
+        f'> {desc}', '',
+        '::: info 媒体未内嵌（指向 Release）',
+        f'为符合 GitHub Pages 1GB 站点上限，本站只上线文本与轻量资源。{hint}',
+        f'完整原始资产（解包一手，tar.gz 打包）见 '
+        f'[GitHub Release `{ASSET_RELEASE_TAG}`]({rel})。',
+        ':::', '',
+    ]
+
+
 def generate_cg_gallery():
     """Generate CG gallery page with iOS Photos-style dense grid + lightbox."""
     with open(f'{PROCESSED_DIR}/cg_gallery.json', 'r', encoding='utf-8') as f:
@@ -453,6 +473,16 @@ def generate_cg_gallery():
         for fn in files:
             if fn.endswith('.png'):
                 available.add(os.path.relpath(os.path.join(root, fn), public_dir))
+
+    if not available:
+        lines = _release_pointer_lines(
+            'CG 画廊',
+            'CG 插图 + 场景背景（解包一手）',
+            '404 张 CG 与场景背景体量较大，未内嵌。')
+        with open(f'{DOCS_DIR}/cg-gallery.md', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(lines))
+        print('CG gallery: assets absent → release pointer page')
+        return
 
     meta = data['_meta']
     lines = []
@@ -604,6 +634,10 @@ def _gallery_from_dir(public_subdir, title, desc, sections_config):
     sections_config: list of (subdir_name, section_title) or None for flat.
     """
     public_dir = os.path.join(DOCS_DIR, 'public', public_subdir)
+    # 资产未内嵌（slim 部署）→ 指向 Release，避免崩溃 / 空页 / 坏图
+    if not os.path.isdir(public_dir):
+        return _release_pointer_lines(title, desc, '该画廊图像未内嵌。'), 0
+
     lines = []
     lines.append(f'# {title}')
     lines.append('')
@@ -682,7 +716,7 @@ def generate_portraits_gallery():
     lines, total = _gallery_from_dir(
         'portraits',
         '角色立绘画廊',
-        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 478 张角色立绘，7 种规格',
+        f'数据来源：unpacked-assets Release（UnityPy 解包） | 478 张角色立绘，7 种规格',
         sections,
     )
     with open(f'{DOCS_DIR}/portraits.md', 'w', encoding='utf-8') as f:
@@ -700,7 +734,7 @@ def generate_bunit_gallery():
     lines, total = _gallery_from_dir(
         'bunit',
         '战斗单位画廊',
-        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 317 张战斗单位贴图',
+        f'数据来源：unpacked-assets Release（UnityPy 解包） | 317 张战斗单位贴图',
         sections,
     )
     with open(f'{DOCS_DIR}/battle-units.md', 'w', encoding='utf-8') as f:
@@ -712,6 +746,14 @@ def generate_icons_gallery():
     """Generate icons gallery."""
     # Scan subdirs dynamically
     icon_dir = os.path.join(DOCS_DIR, 'public', 'icon')
+    if not os.path.isdir(icon_dir):
+        lines = _release_pointer_lines(
+            '图标画廊', '职业 / 命轮 / 材料 / 遗物等图标（解包一手）',
+            '图标资源未内嵌。')
+        with open(f'{DOCS_DIR}/icons.md', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(lines))
+        print('Icons gallery: assets absent → release pointer page')
+        return
     section_labels = {
         'career': '职业图标',
         'copytitle': '副本标题',
@@ -737,7 +779,7 @@ def generate_icons_gallery():
     lines, total = _gallery_from_dir(
         'icon',
         '图标画廊',
-        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 169 个图标',
+        f'数据来源：unpacked-assets Release（UnityPy 解包） | 169 个图标',
         sections,
     )
     with open(f'{DOCS_DIR}/icons.md', 'w', encoding='utf-8') as f:
@@ -748,6 +790,15 @@ def generate_icons_gallery():
 def generate_ui_gallery():
     """Generate UI resources gallery."""
     ui_dir = os.path.join(DOCS_DIR, 'public', 'uiresources', 'uibigimages')
+    card_dir_top = os.path.join(DOCS_DIR, 'public', 'portrait-card', 'card')
+    if not os.path.isdir(ui_dir) and not os.path.isdir(card_dir_top):
+        lines = _release_pointer_lines(
+            'UI 资源画廊', '卡面立绘 + UI 大图（解包一手）',
+            'UI 资源体量较大，未内嵌。')
+        with open(f'{DOCS_DIR}/ui-resources.md', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(lines))
+        print('UI gallery: assets absent → release pointer page')
+        return
     section_labels = {
         'ui_alchemy': '炼金',
         'ui_awaker': '唤醒体',
@@ -775,7 +826,7 @@ def generate_ui_gallery():
     lines = []
     lines.append('# UI 资源画廊')
     lines.append('')
-    lines.append('> 数据来源：art-assets-v1 Release（UnityPy 解包）')
+    lines.append('> 数据来源：unpacked-assets Release（UnityPy 解包）')
     lines.append('')
 
     total = 0
@@ -1276,7 +1327,7 @@ def generate_audio_index():
     if ogg_files:
         lines.append(f'> 共 {len(ogg_files)} 条音轨 | 在线播放')
         lines.append('')
-        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/audio-assets-v1)。\n:::')
+        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/unpacked-assets)。\n:::')
         lines.append('')
         for ogg in ogg_files:
             rel = os.path.relpath(ogg, f'{DOCS_DIR}/public')
@@ -1288,14 +1339,14 @@ def generate_audio_index():
     else:
         lines.append('> 数据来源：Wwise 音频银行解包 + 格式转换 | 共 2,325 条 OGG 音轨')
         lines.append('')
-        lines.append(f'全部音轨发布于 [GitHub Releases `audio-assets-v1`]({RELEASE_URL}/audio-assets-v1)，分为两个压缩包：')
+        lines.append(f'全部音轨发布于 [GitHub Releases `unpacked-assets`]({RELEASE_URL}/unpacked-assets)，分为两个压缩包：')
         lines.append('')
         lines.append('| 文件 | 内容 |')
         lines.append('|------|------|')
         lines.append('| `morimens-audio-ogg-part1.tar.gz` | 1,132 条音轨 + 61 条 bnk 派生音频 |')
         lines.append('| `morimens-audio-ogg-part2.tar.gz` | 1,132 条音轨 |')
         lines.append('')
-        lines.append(f'原始 Wwise 文件见 [GitHub Releases `audio-raw-v1`]({RELEASE_URL}/audio-raw-v1)。')
+        lines.append(f'原始 Wwise 文件见 [GitHub Releases `unpacked-assets`]({RELEASE_URL}/unpacked-assets)。')
         lines.append('')
 
     with open(f'{DOCS_DIR}/audio.md', 'w', encoding='utf-8') as f:
@@ -1337,7 +1388,7 @@ def generate_video_index():
     if mp4_files:
         lines.append(f'> 共 {len(mp4_files)} 个视频 | 在线播放')
         lines.append('')
-        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/video-assets-v1)。\n:::')
+        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/unpacked-assets)。\n:::')
         lines.append('')
 
         cats = {}
@@ -1361,7 +1412,7 @@ def generate_video_index():
     else:
         lines.append('> 共 201 个 MP4 文件（975 MB）')
         lines.append('')
-        lines.append(f'全部视频发布于 [GitHub Releases `video-assets-v1`]({RELEASE_URL}/video-assets-v1)。')
+        lines.append(f'全部视频发布于 [GitHub Releases `unpacked-assets`]({RELEASE_URL}/unpacked-assets)。')
         lines.append('')
         lines.append('| 分类 | 内容 |')
         lines.append('|------|------|')

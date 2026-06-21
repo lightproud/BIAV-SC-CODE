@@ -2,7 +2,7 @@
 
 > 共 201 个 MP4 文件（975 MB）
 
-全部视频发布于 [GitHub Releases `video-assets-v1`](https://github.com/lightproud/brain-in-a-vat/releases/tag/video-assets-v1)。
+全部视频发布于 [GitHub Releases `unpacked-assets`](https://github.com/lightproud/brain-in-a-vat/releases/tag/unpacked-assets)。
 
 | 分类 | 内容 |
 |------|------|

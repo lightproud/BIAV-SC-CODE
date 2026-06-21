@@ -28,43 +28,25 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Download art assets from Release
+      - name: Download lightweight art assets from Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Downloading art assets from unpacked-assets Release..."
-          # 资产 Release 已由 consolidate-releases.yml(2026-06-21)合并：
-          # 旧 art-assets-v2 / audio-assets-v1 / video-assets-v1 → 统一 unpacked-assets
+          # SLIM 部署（守密人 2026-06-21 裁定）：GitHub Pages 站点硬上限 1GB，
+          # 全量美术/音视频解压约 8-10GB 远超限，致 gh-pages 推送 500 断连、全站 404。
+          # 策略：只内嵌轻量资产（icon + units），GB 级重媒体（cg/portraits/
+          # uiresources/audio/video）不下载；对应画廊页由 generate_wiki_pages.py
+          # 自动降级为指向 unpacked-assets Release 的占位页。
+          echo "Downloading lightweight assets (icon + units) from unpacked-assets..."
           cd projects/wiki/docs/public
           gh release download unpacked-assets \
-            -p "morimens-cg-full.tar.gz" \
             -p "morimens-icons-full.tar.gz" \
-            -p "morimens-units.tar.gz" \
-            -p "morimens-portraits-full.tar.gz" \
-            -p "morimens-uiresources.tar.gz"
-          echo "Extracting art tarballs..."
-          tar xzf morimens-cg-full.tar.gz && rm morimens-cg-full.tar.gz
+            -p "morimens-units.tar.gz"
+          echo "Extracting..."
           tar xzf morimens-icons-full.tar.gz && rm morimens-icons-full.tar.gz
           tar xzf morimens-units.tar.gz && rm morimens-units.tar.gz
-          tar xzf morimens-portraits-full.tar.gz && rm morimens-portraits-full.tar.gz
-          tar xzf morimens-uiresources.tar.gz && rm morimens-uiresources.tar.gz
-          [ -d portrait ] && mv portrait portrait-card
-          echo "Downloading audio/video assets..."
-          gh release download unpacked-assets \
-            -p "morimens-audio-ogg-part1.tar.gz" \
-            -p "morimens-audio-ogg-part2.tar.gz" \
-            -p "morimens-video.tar.gz"
-          echo "Extracting audio/video tarballs..."
-          mkdir -p audio video
-          tar xzf morimens-audio-ogg-part1.tar.gz && rm morimens-audio-ogg-part1.tar.gz
-          tar xzf morimens-audio-ogg-part2.tar.gz && rm morimens-audio-ogg-part2.tar.gz
-          tar xzf morimens-video.tar.gz && rm morimens-video.tar.gz
-          # Move files to expected directories if tarballs extract differently
-          # (adjust based on actual tarball structure)
-          find . -maxdepth 2 -name "*.ogg" -not -path "./audio/*" -exec mv {} audio/ \; 2>/dev/null || true
-          find . -maxdepth 2 -name "*.mp4" -not -path "./video/*" -exec mv {} video/ \; 2>/dev/null || true
-          echo "Asset directories:"
-          for d in cg icon bunit munit portraits uiresources scenebg portrait-card audio video; do
+          echo "Asset directories (slim set):"
+          for d in icon bunit munit; do
             if [ -d "$d" ]; then
               count=$(find "$d" -type f | wc -l)
               size=$(du -sh "$d" | cut -f1)
