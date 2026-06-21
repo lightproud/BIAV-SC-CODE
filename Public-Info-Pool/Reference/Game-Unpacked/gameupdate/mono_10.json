@@ -1,0 +1,86 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -4663846106520369222
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2868387566427267105
+  },
+  "m_Name": "",
+  "Layer": 1,
+  "OpenMode": 0,
+  "panelType": 1,
+  "HideSelectLayer": [],
+  "CloseSelectLayer": [],
+  "CloseMainCamera": 0,
+  "PauseWorldLogic": 0,
+  "uiNodeList": [
+    {
+      "name": "Group_Sel",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": 6252511145756664973
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Text_Lang",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": -6777850069628762015
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Btn_Click",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": 1489615004094890450
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    }
+  ],
+  "AnimClipInfo": [],
+  "langResList": [
+    {
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": -6777850069628762015
+      },
+      "langArr": [
+        "CN##FZXBSK##Assets/ArtRes/UI/UI_Font/SourceFont/FZXBSK.TTF",
+        "TW##FZXBSK##Assets/ArtRes/LangRes/TW/UI/UI_Font/SourceFont/FZXBSK_TW.TTF"
+      ],
+      "compType": "Text"
+    }
+  ],
+  "openAnim": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "closeAnim": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "animController": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "isAutoPlayAnim": 0,
+  "needCloseMask": 0,
+  "openEvent": "",
+  "audioEventList": [],
+  "stopEvent": "",
+  "UIFrameType": 0,
+  "UIFrameName": "UIFrame",
+  "UIFramePath": "Lua/GameScript/UI/",
+  "UIFrameCreateModel": 0
+}

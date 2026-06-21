@@ -1,0 +1,62 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 8721126071851934850
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5494437952592502911
+  },
+  "m_Name": "",
+  "showCondition": 1,
+  "scrollBarHoldTime": 0.8500000238418579,
+  "fitScrollBarSize": 1,
+  "scrollBar": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "forceCanvasSelf": 0,
+  "forceAnchorPoint": 0,
+  "useAnchorPosition": 0,
+  "verticalFillOrder": 0,
+  "cellSpacing": {
+    "x": -15.0,
+    "y": 20.0
+  },
+  "cellOffset": {
+    "x": 188.0,
+    "y": -36.0
+  },
+  "contentSizeAdjustment": {
+    "x": 0.0,
+    "y": 20.0
+  },
+  "viewSizeOffset": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "alignedOnStopMoving": 0,
+  "isAlignCenter": 0,
+  "isMoveStepMore": 0,
+  "disableDragIfFits": 0,
+  "needAdjustSize": 0,
+  "contentDragable": 0,
+  "contentRespondClick": 0,
+  "positionedActived": 1,
+  "restrictBounds": 0,
+  "isPageMode": 0,
+  "thresholdPage": 0.05000000074505806,
+  "vThreshold": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "useInstancedQueue": 0,
+  "fadeInAnimType": 0,
+  "fadeInAnimName": "",
+  "fadeInInterval": 0.0,
+  "fadeInIntervalArr": [],
+  "gridWidth": 376.0,
+  "gridHeight": 72.0,
+  "numRowsOrCols": 4
+}

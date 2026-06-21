@@ -1,0 +1,23 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 5213539069298108634
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8403522322527376091
+  },
+  "m_Name": "",
+  "animationInfoList": [
+    {
+      "clip": {
+        "m_FileID": 0,
+        "m_PathID": 1008383457321241293
+      },
+      "soundEventId": ""
+    }
+  ],
+  "playedTime": 0.0,
+  "unTriggeredAnimEvents": []
+}

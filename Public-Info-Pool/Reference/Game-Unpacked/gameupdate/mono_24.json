@@ -1,0 +1,159 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -2446610176601047194
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2868387566427267105
+  },
+  "m_Name": "",
+  "Layer": 1,
+  "OpenMode": 0,
+  "panelType": 1,
+  "HideSelectLayer": [],
+  "CloseSelectLayer": [],
+  "CloseMainCamera": 0,
+  "PauseWorldLogic": 0,
+  "uiNodeList": [
+    {
+      "name": "ScrollView_Lang",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": 8721126071851934850
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "UI_Setting_Item_ChooseLang",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": 4462812809619312927
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Btn_Confirm",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": -5472347823561970921
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Text_Title",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": -1874571337347954218
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Text_Tip",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": 3810526433847100399
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Text_Name",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": -7270769027528498037
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    },
+    {
+      "name": "Btn_Close",
+      "obj": {
+        "m_FileID": 0,
+        "m_PathID": -3401573689784341064
+      },
+      "isActive": 1,
+      "objRepeat": 0,
+      "isExportSimple": 1
+    }
+  ],
+  "AnimClipInfo": [],
+  "langResList": [
+    {
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": -1874571337347954218
+      },
+      "langArr": [
+        "CN##FZXBSK##Assets/ArtRes/UI/UI_Font/SourceFont/FZXBSK.TTF",
+        "TW##FZXBSK##Assets/ArtRes/LangRes/TW/UI/UI_Font/SourceFont/FZXBSK_TW.TTF"
+      ],
+      "compType": "Text"
+    },
+    {
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": 3810526433847100399
+      },
+      "langArr": [
+        "CN##FZBWKSK##Assets/ArtRes/UI/UI_Font/SourceFont/FZBWKSK.TTF",
+        "TW##FZBWKSK##Assets/ArtRes/LangRes/TW/UI/UI_Font/SourceFont/FZBWKSK_TW.TTF"
+      ],
+      "compType": "Text"
+    },
+    {
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": -7270769027528498037
+      },
+      "langArr": [
+        "CN##FZXBSK##Assets/ArtRes/UI/UI_Font/SourceFont/FZXBSK.TTF",
+        "TW##FZXBSK##Assets/ArtRes/LangRes/TW/UI/UI_Font/SourceFont/FZXBSK_TW.TTF"
+      ],
+      "compType": "Text"
+    },
+    {
+      "gameObject": {
+        "m_FileID": 0,
+        "m_PathID": -1396142342482588359
+      },
+      "langArr": [
+        "CN##FZXBSK##Assets/ArtRes/UI/UI_Font/SourceFont/FZXBSK.TTF",
+        "TW##FZXBSK##Assets/ArtRes/LangRes/TW/UI/UI_Font/SourceFont/FZXBSK_TW.TTF"
+      ],
+      "compType": "Text"
+    }
+  ],
+  "openAnim": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "closeAnim": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "animController": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "isAutoPlayAnim": 0,
+  "needCloseMask": 0,
+  "openEvent": "",
+  "audioEventList": [],
+  "stopEvent": "",
+  "UIFrameType": 0,
+  "UIFrameName": "UIFrame",
+  "UIFramePath": "Lua/GameScript/UI/",
+  "UIFrameCreateModel": 0
+}
