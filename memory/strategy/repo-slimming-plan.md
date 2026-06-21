@@ -37,13 +37,17 @@
 
 落实决策 179 的代码**早已写好并跑过**。初版方案「决策 179/199 从未写脚本」论断作废。
 
-## 4. 真实缺口（待诊断，非本次范围）
+## 4. 真实缺口（2026-06-21 已闭合）
 
-归档日志标记 2023-11~2026-04 已上传并应删 git，但 `channels/` 里这些月的 jsonl **仍在**（2023-12 至 2025-07+，每月百余文件，构成 3.1G）。
+归档日志标记 2023-11~2026-04 已上传并应删 git，但 `channels/` 里这些月的 jsonl **仍在**（每月百余文件，构成 3.3G）。
 
-疑似真因：`discord-history-backfill.yml` 历史回填把月清理删掉的老数据**又拉回 git**，与月清理形成对冲循环；或 `archive_discord.py` 删除步未生效。**需 diagnosing 确认**，守密人 2026-06-20 暂未派此诊断。
+**诊断结论（2026-06-21）**：真因 = `discord-history-backfill.yml`（每小时跑 `discord_archiver.py --history-only`）逐月回拉已归档月写回 git，与月清理（一月一次）形成对冲循环。git-log 铁证：样本 `channels/.../2024-01-18.jsonl` 仅由 `discord history backfill` 提交添加。`archive_discord.py` 删除步本身正常（workflow 有 commit+push）。
 
-> 比喻：一个人往外搬旧报纸，另一个人又从仓库搬回来，门口永远堆着。
+**修复**：
+1. **断环（根因）**：`discord_archiver.py` 历史回填两处循环加「已归档月跳过」守卫——`_archived_months()` 读 `archive-log.json`（`uploaded_to_releases` 为真的月，兼容 `month`/`group` 双 schema），命中即 `_advance_historical_month` 跳过、零 API 零写入。已在 main 生效（守密人/并行会话独立实现，本会话另写同款后按 lesson #35 弃用、采用 main 版）。
+2. **排空存量**：2026-06-21 经 `discord-archive.yml` force-month 对 30 个已归档月重归档（--clobber 把 `community-data` 更新为含回填补全的更全版本 6.6MB→287MB）+ git_rm + push。channels/ **12,803→1,882 文件、3.3G→600M**，仅留近月 2026-05/06（未够 60 天龄）。守卫已生效，回填不再填回。
+
+> 比喻：以前一个人往外搬旧报纸、另一个每小时从仓库搬回来；现在给搬回来那人立了规矩「已入库的别再搬」，并把门口堆积的旧报纸一次清走。
 
 ## 5. fanart 现状（待核）
 
@@ -56,6 +60,6 @@ fanart 有 `collect-fanart.yml` / `recover-fanart.yml` / `backfill-media.yml` + 
 
 ## 7. 后续（守密人择期）
 
-- **诊断**：归档标记成功但 git 数据仍在的对冲缺口（读 `archive_discord.py` 删除逻辑 + `discord-history-backfill.yml` 回填范围）。
-- **fanart 现状核实**后再定是否需补月归档。
+- ~~**诊断**：对冲缺口~~ **2026-06-21 已闭合**（见 §4：断环守卫 + 30 月排空，channels/ 3.3G→600M）。
+- ~~**fanart 现状核实**~~ 已落地：fanart 归档进 `community-assets` 滚动 release（`archive_sources.json` fanart 条目，见 RELEASES.md §2.4）。
 - 所有「上传 / 删 git」执行走 workflow，非云容器手动。
