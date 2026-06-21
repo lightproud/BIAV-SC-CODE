@@ -1,8 +1,8 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-21T11:01:10.092897+00:00",
+  "archived_at": "2026-06-21T13:06:38.161906+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] 好看",
@@ -132,6 +132,50 @@
         "playtime_forever": 2118,
         "votes_up": 0,
         "timestamp_created": 1782035355
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] reverse 1999 vibe with more dark & goth, though......",
+      "summary": "reverse 1999 vibe with more dark & goth, though...\r\n- limited to only 2 realms in a team\r\n- overcomplicated yet limited card playing\r\n- missing translation",
+      "source": "steam_review",
+      "time": "2026-06-21T11:09:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198054008254/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198054008254",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 198,
+        "votes_up": 0,
+        "timestamp_created": 1782040198
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 嚎玩",
+      "summary": "嚎玩",
+      "source": "steam_review",
+      "time": "2026-06-21T10:15:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199516827423/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199516827423",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1959,
+        "votes_up": 0,
+        "timestamp_created": 1782036945
       },
       "lang": "",
       "platform_region": "global"
