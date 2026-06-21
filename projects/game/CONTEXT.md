@@ -37,7 +37,7 @@
 - [ ] 后续：更多唤醒体 / 武器进化树 / 真实立绘接入 / 音效
 
 ## 依赖
-- `projects/wiki/data/db/characters.json` — 角色数据（已建立，当前 24/72 角色，Phase 2 补齐中。Phase 4 启动前应已齐 72）
+- 角色数据 — 现行源 `projects/wiki/data/extracted/categorized/character_data.txt`（一手解包，72 角色）。**原 `projects/wiki/data/db/characters.json` 结构化层 2026-06-15 已清空，W2 重建中**，Phase 4 启动前应已齐 72
 - `projects/game/config/game-config.json` — 游戏配置（本项目产出，待创建）
 - `assets/images/` — 图片素材
 
