@@ -39,16 +39,25 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          pip install pytest pytest-cov
+          # jsonschema is pulled in explicitly (not via the heavyweight wiki
+          # requirements, which also drag UnityPy/Pillow) so the REAL schema-
+          # validation integration tests (tests/test_integration_jsonschema.py)
+          # actually run in CI instead of importorskip-ing past the branch.
+          pip install pytest pytest-cov jsonschema
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
       - name: Run tests
-        # Coverage gate raised 10 -> 35 -> 90. A dynamic-orchestration test
-        # sweep on 2026-06-21 lifted TOTAL coverage 43% -> ~94% (CI scope; the
-        # only sub-80% module is report_render.py, whose render() path needs
-        # the heavyweight weasyprint/markdown deps deliberately kept out of CI
-        # per CLAUDE.md's "render deps installed on demand" stance, so it caps
-        # ~56% here and ~98% locally). 90 sits below the ~94% CI figure with
-        # margin to absorb run-to-run jitter while preventing regression.
-        # Measurement scope is pinned in .coveragerc so local and CI match.
-        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=90
+        # Coverage gate history: 10 -> 35 -> 90 -> 85. A dynamic-orchestration
+        # test sweep on 2026-06-21 lifted TOTAL coverage 43% -> ~94% (CI scope).
+        # The gate was then deliberately RELAXED 90 -> 85: network-bound news
+        # collectors are inherently hard to unit-test, and a 90 floor would
+        # pressure future collector additions into over-mocked filler tests that
+        # game the metric instead of verifying behaviour. 85 locks in the sweep's
+        # gains while leaving the collector layer room to breathe; 90+ stays the
+        # aspirational target, not a hard CI floor. Test-quality (not just line
+        # reach) is independently guarded by mutation testing — see
+        # .github/workflows/mutation-test.yml and docs/testing-strategy.md.
+        # report_render.py's render() path needs weasyprint/markdown (kept out of
+        # CI per CLAUDE.md's "render deps on demand" stance) so it caps ~56% here
+        # and ~98% locally. Measurement scope is pinned in .coveragerc.
+        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=85
