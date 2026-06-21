@@ -2,7 +2,7 @@
 type: "dataset"
 title: "pixiv 社区数据源"
 description: "pixiv 平台采集档案，全量 513 条，健康度 active。"
-resource: "/projects/news/data/platforms/pixiv/"
+resource: "/Public-Info-Pool/Record/Community/pixiv/"
 tags: ["data_layer:full_archive", "platform:pixiv", "health:active"]
 timestamp: "2026-06-21T13:06:38.663607+00:00"
 ---
@@ -14,7 +14,7 @@ timestamp: "2026-06-21T13:06:38.663607+00:00"
 | 项 | 值 |
 |------|------|
 | 平台 | pixiv |
-| 全量档案层（本体） | `projects/news/data/platforms/pixiv/` |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/pixiv/` |
 | 输出展示层（抽样） | `projects/news/output/pixiv-latest.json` |
 | 全量条数 | 513 |
 | 采集健康度 | active |

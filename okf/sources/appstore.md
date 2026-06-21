@@ -2,7 +2,7 @@
 type: "dataset"
 title: "appstore 社区数据源"
 description: "appstore 平台采集档案，全量 439 条，健康度 active。"
-resource: "/projects/news/data/platforms/appstore/"
+resource: "/Public-Info-Pool/Record/Community/appstore/"
 tags: ["data_layer:full_archive", "platform:appstore", "health:active"]
 timestamp: "2026-06-21T13:06:38.663607+00:00"
 ---
@@ -14,7 +14,7 @@ timestamp: "2026-06-21T13:06:38.663607+00:00"
 | 项 | 值 |
 |------|------|
 | 平台 | appstore |
-| 全量档案层（本体） | `projects/news/data/platforms/appstore/` |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/appstore/` |
 | 输出展示层（抽样） | `projects/news/output/appstore-latest.json` |
 | 全量条数 | 439 |
 | 采集健康度 | active |

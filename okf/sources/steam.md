@@ -2,7 +2,7 @@
 type: "dataset"
 title: "steam 社区数据源"
 description: "steam 平台采集档案，全量 4966 条，健康度 active。"
-resource: "/projects/news/data/platforms/steam/"
+resource: "/Public-Info-Pool/Record/Community/steam/"
 tags: ["data_layer:full_archive", "platform:steam", "health:active"]
 timestamp: "2026-06-21T13:06:38.663607+00:00"
 ---
@@ -14,7 +14,7 @@ timestamp: "2026-06-21T13:06:38.663607+00:00"
 | 项 | 值 |
 |------|------|
 | 平台 | steam |
-| 全量档案层（本体） | `projects/news/data/platforms/steam/` |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/steam/` |
 | 输出展示层（抽样） | `projects/news/output/steam-latest.json` |
 | 全量条数 | 4966 |
 | 采集健康度 | active |

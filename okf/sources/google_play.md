@@ -2,7 +2,7 @@
 type: "dataset"
 title: "google_play 社区数据源"
 description: "google_play 平台采集档案，全量 491 条，健康度 degraded。"
-resource: "/projects/news/data/platforms/google_play/"
+resource: "/Public-Info-Pool/Record/Community/google_play/"
 tags: ["data_layer:full_archive", "platform:google_play", "health:degraded"]
 timestamp: "2026-06-21T13:06:38.663607+00:00"
 ---
@@ -14,7 +14,7 @@ timestamp: "2026-06-21T13:06:38.663607+00:00"
 | 项 | 值 |
 |------|------|
 | 平台 | google_play |
-| 全量档案层（本体） | `projects/news/data/platforms/google_play/` |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/google_play/` |
 | 输出展示层（抽样） | `projects/news/output/google_play-latest.json` |
 | 全量条数 | 491 |
 | 采集健康度 | degraded |
