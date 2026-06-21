@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>忘却前夜 Morimens — B.I.A.V. Studio</title>
-<meta name="description" content="忘却前夜 (Morimens) — 洛夫克拉夫特式肉鸽卡牌构建游戏。在认知的边界之外，遗忘是最后的慈悲。">
+<meta name="description" content="忘却前夜 (Morimens) — 洛夫克拉夫特式肉鸽卡牌构建游戏。在认知的边界之外，遗忘是最后的慈悲。社区 Wiki、剧情档案与多平台情报由银芯知识层维护。">
 <meta name="author" content="B.I.A.V. Studio">
 <meta name="theme-color" content="#c5a356">
 <link rel="canonical" href="https://lightproud.github.io/brain-in-a-vat/">
@@ -15,8 +15,6 @@
 <meta property="og:url" content="https://lightproud.github.io/brain-in-a-vat/">
 <meta property="og:site_name" content="B.I.A.V. Studio">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:locale:alternate" content="en_US">
-<meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +39,7 @@
   .nav-links{display:flex;gap:28px}
   .nav-links a{font-size:13px;color:var(--txt-d);font-weight:500;letter-spacing:0.02em;transition:color 0.3s}
   .nav-links a:hover,.nav-links a.active{color:var(--gold)}
-  .nav-lang{position:relative;font-size:12px}
-  .nav-lang summary{list-style:none;color:var(--txt-d);border:1px solid var(--border);border-radius:2px;padding:4px 10px;cursor:pointer;transition:border-color 0.3s;user-select:none}
-  .nav-lang summary::-webkit-details-marker{display:none}
-  .nav-lang[open] summary,.nav-lang summary:hover{border-color:rgba(197,163,86,0.2);color:var(--gold)}
-  .nav-lang-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:120px;background:rgba(10,11,16,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:2px;padding:4px 0;list-style:none}
-  .nav-lang-menu a{display:block;padding:6px 14px;font-size:12px;color:var(--txt-d);transition:color 0.3s,background 0.3s}
-  .nav-lang-menu a:hover,.nav-lang-menu a[aria-current="page"]{color:var(--gold);background:rgba(197,163,86,0.06)}
+  .nav-tag{font-size:11px;color:var(--txt-d);border:1px solid var(--border);border-radius:2px;padding:4px 10px;letter-spacing:0.04em}
 
   /* ── HERO ── */
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px 60px;overflow:hidden}
@@ -58,8 +50,8 @@
   .hero-title{font-family:var(--serif);font-weight:700;font-size:42px;color:var(--txt);letter-spacing:0.5em;padding-left:0.5em;animation:fadeUp 1.2s ease-out both}
   .hero-sub{font-family:var(--serif);font-weight:400;font-size:16px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px;animation:fadeUp 1.2s 0.15s ease-out both}
   .hero-div{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);margin:24px auto;animation:fadeUp 1.2s 0.3s ease-out both}
-  .hero-tagline{font-size:14px;color:var(--txt-d);max-width:420px;line-height:1.8;margin:0 auto 32px;animation:fadeUp 1.2s 0.45s ease-out both}
-  .hero-cta{display:flex;gap:16px;justify-content:center;animation:fadeUp 1.2s 0.6s ease-out both}
+  .hero-tagline{font-size:14px;color:var(--txt-d);max-width:440px;line-height:1.8;margin:0 auto 32px;animation:fadeUp 1.2s 0.45s ease-out both}
+  .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1.2s 0.6s ease-out both}
   .btn-p{display:inline-flex;align-items:center;padding:10px 28px;background:var(--gold);color:var(--bg);font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:0.06em;border-radius:2px;border:none;cursor:pointer;transition:all 0.3s}
   .btn-p:hover{background:var(--gold-l);box-shadow:0 0 20px rgba(197,163,86,0.25)}
   .btn-g{display:inline-flex;align-items:center;padding:10px 28px;background:transparent;color:var(--txt-m);font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:0.06em;border-radius:2px;border:1px solid rgba(197,163,86,0.2);cursor:pointer;transition:all 0.3s}
@@ -91,7 +83,7 @@
   .world-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:0 40px;text-align:center}
   .world-inner .sec-title{margin-bottom:20px}
   .world-quote{font-family:var(--serif);font-size:18px;color:var(--txt-m);font-style:italic;max-width:600px;margin:0 auto;line-height:1.7}
-  .realm-row{display:flex;justify-content:center;gap:24px;margin-top:40px}
+  .realm-row{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap}
   .realm-chip{padding:8px 20px;border-radius:4px;font-size:13px;font-weight:600;font-family:var(--sans)}
   .r-chaos{background:rgba(197,163,86,0.12);color:var(--gold-l)}
   .r-aequor{background:rgba(58,107,107,0.12);color:#5dade2}
@@ -105,6 +97,7 @@
   .mission-num{font-family:var(--serif);font-weight:700;font-size:32px;color:var(--gold-d);letter-spacing:0.04em;margin-bottom:12px;line-height:1}
   .mission-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold-l);margin-bottom:8px}
   .mission-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
+  .mission-meta{font-size:11px;color:var(--txt-d);letter-spacing:0.04em;margin-top:12px}
 
   /* ── COMMUNITY ── */
   .comm-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
@@ -133,7 +126,6 @@
     .mission-grid{grid-template-columns:1fr}
     .world-strip{padding:60px 0}
     .world-inner{padding:0 20px}
-    .realm-row{flex-wrap:wrap}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -152,18 +144,12 @@
     <a class="active" href="#">首页</a>
     <a href="wiki/">Wiki</a>
     <a href="wiki/zh/awakeners/">唤醒体</a>
-    <a href="wiki/zh/guides/">攻略</a>
+    <a href="wiki/story">剧情</a>
+    <a href="news/">情报</a>
     <a href="biav/">BIAV</a>
     <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub</a>
   </div>
-  <details class="nav-lang">
-    <summary aria-label="切换语言 / Switch language">简体中文</summary>
-    <ul class="nav-lang-menu" role="menu">
-      <li role="none"><a role="menuitem" href="./" aria-current="page">简体中文</a></li>
-      <li role="none"><a role="menuitem" href="wiki/en/">English</a></li>
-      <li role="none"><a role="menuitem" href="wiki/ja/">日本語</a></li>
-    </ul>
-  </details>
+  <div class="nav-tag">简体中文</div>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -178,7 +164,7 @@
     <div class="hero-tagline">在认知的边界之外，遗忘是最后的慈悲。<br>洛夫克拉夫特式肉鸽卡牌构建游戏。</div>
     <div class="hero-cta">
       <a class="btn-p" href="wiki/">进入 Wiki</a>
-      <a class="btn-g" href="wiki/zh/guides/beginner">新手指南</a>
+      <a class="btn-g" href="wiki/story">剧情档案</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -186,30 +172,6 @@
     <small>Scroll</small>
   </div>
 </div>
-
-<!-- ═══ MISSION ═══ -->
-<section>
-  <div class="sec-label reveal">Mission</div>
-  <div class="sec-title reveal">银芯三新使命</div>
-  <div class="sec-desc reveal">缸中之脑（B.I.A.V. Silver Core）自 2026-04 重新定位，由方法论验证场转为承载三条新使命的公开协议层。</div>
-  <div class="mission-grid">
-    <a class="mission-card reveal" href="news/">
-      <div class="mission-num" aria-hidden="true">壹</div>
-      <div class="mission-name">黑池公开信息入口</div>
-      <div class="mission-desc">为内部消费层提供多平台社区情报的统一视野。news 子项目维护，每日两次自动聚合。</div>
-    </a>
-    <a class="mission-card reveal" href="wiki/">
-      <div class="mission-num" aria-hidden="true">贰</div>
-      <div class="mission-name">社区共建知识底座</div>
-      <div class="mission-desc">让外部社区与 Studio 派生内容拥有可贡献的事实底座。wiki 子项目维护，目标 72 角色三语完整。</div>
-    </a>
-    <a class="mission-card reveal" href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">
-      <div class="mission-num" aria-hidden="true">叁</div>
-      <div class="mission-name">Studio 团队 AI 协作训练场</div>
-      <div class="mission-desc">基于公开 AI 信息的协作方法论沉淀场。当前以仓库形式开放思考过程，供 Studio 内成员衍生项目。</div>
-    </a>
-  </div>
-</section>
 
 <!-- ═══ FEATURES ═══ -->
 <section>
@@ -220,7 +182,7 @@
     <div class="feat-card reveal">
       <div class="feat-icon" aria-hidden="true">◈</div>
       <div class="feat-name">卡牌构筑</div>
-      <div class="feat-desc">从初始牌组出发，在每一次选择中打磨策略。指令牌、灵体牌、疯狂牌——三种牌型交织出无穷组合。</div>
+      <div class="feat-desc">从初始牌组出发，在每一次选择中打磨策略。指令牌、灵体牌、疯狂牌——多种牌型交织出无穷组合。</div>
     </div>
     <div class="feat-card reveal">
       <div class="feat-icon" aria-hidden="true">◯</div>
@@ -240,7 +202,7 @@
   <div class="world-fog"></div>
   <div class="world-inner">
     <div class="sec-label reveal">World</div>
-    <div class="sec-title reveal">四大界域</div>
+    <div class="sec-title reveal">界域与阵营</div>
     <div class="world-quote reveal">「每一个界域都是一种认知的极限。<br>跨越它，或被它吞噬。」</div>
     <div class="realm-row reveal">
       <span class="realm-chip r-chaos">混沌 Chaos</span>
@@ -250,6 +212,33 @@
     </div>
   </div>
 </div>
+
+<!-- ═══ MISSION ═══ -->
+<section>
+  <div class="sec-label reveal">Mission</div>
+  <div class="sec-title reveal">银芯三新使命</div>
+  <div class="sec-desc reveal">本站由银芯（B.I.A.V. Silver Core）知识层驱动。银芯是 Studio 的 AI 协作知识层，自 2026-04 起承载三条使命，为社区提供可追溯的事实底座。</div>
+  <div class="mission-grid">
+    <a class="mission-card reveal" href="news/">
+      <div class="mission-num" aria-hidden="true">壹</div>
+      <div class="mission-name">多平台社区情报入口</div>
+      <div class="mission-desc">汇聚 Bilibili / Discord / Reddit / NGA / TapTap / Steam 等平台的社区动态，整理为统一视野。</div>
+      <div class="mission-meta">news 子项目 · 每小时自动聚合</div>
+    </a>
+    <a class="mission-card reveal" href="wiki/">
+      <div class="mission-num" aria-hidden="true">贰</div>
+      <div class="mission-name">社区共建知识底座</div>
+      <div class="mission-desc">以客户端一手解包数据重建可信底座。剧情正文与 lore 档案已开放，角色基线正在重建中。</div>
+      <div class="mission-meta">wiki 子项目 · 解包数据驱动</div>
+    </a>
+    <a class="mission-card reveal" href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">
+      <div class="mission-num" aria-hidden="true">叁</div>
+      <div class="mission-name">Studio AI 协作沉淀场</div>
+      <div class="mission-desc">以仓库形式承载决策、踩坑与协议档案，让 AI 协作的方法论可被复用与衍生。</div>
+      <div class="mission-meta">全局 · 决策与记忆档案</div>
+    </a>
+  </div>
+</section>
 
 <!-- ═══ COMMUNITY ═══ -->
 <section>

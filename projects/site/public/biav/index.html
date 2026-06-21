@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>缸中之脑 / Brain in a Vat — B.I.A.V. Studio</title>
-<meta name="description" content="缸中之脑（Brain in a Vat / B.I.A.V.）— B.I.A.V. Studio 的 AI 协作元项目。从笛卡尔思想实验到银芯系统，承载三新使命的公开协议层。">
+<meta name="description" content="缸中之脑（Brain in a Vat / B.I.A.V.）— B.I.A.V. Studio 的 AI 协作元项目。从笛卡尔思想实验到银芯系统，承载三新使命的知识层与记忆基底。">
 <meta name="author" content="B.I.A.V. Studio">
 <meta name="theme-color" content="#c5a356">
 <link rel="canonical" href="https://lightproud.github.io/brain-in-a-vat/biav/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0b10'/%3E%3Ctext x='32' y='46' font-family='Noto Serif SC,serif' font-weight='700' font-size='44' fill='%23c5a356' text-anchor='middle'%3E夜%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="缸中之脑 / Brain in a Vat">
-<meta property="og:description" content="B.I.A.V. Studio 的 AI 协作元项目 — 承载三新使命的公开协议层。">
+<meta property="og:description" content="B.I.A.V. Studio 的 AI 协作元项目 — 承载三新使命的知识层与记忆基底。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lightproud.github.io/brain-in-a-vat/biav/">
 <meta property="og:site_name" content="B.I.A.V. Studio">
@@ -54,6 +54,7 @@
   .sec-body p{margin-bottom:14px}
   .sec-body strong{color:var(--gold-l);font-weight:600}
   .sec-body em{color:var(--txt);font-style:normal;font-family:var(--serif)}
+  .code{font-family:'JetBrains Mono','SF Mono',monospace;font-size:13px;color:var(--gold);background:rgba(197,163,86,0.06);padding:1px 6px;border-radius:2px}
 
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
   .card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:24px}
@@ -105,7 +106,7 @@
   <h1 class="hero-title">缸中之脑 / Brain in a Vat</h1>
   <div class="hero-sub">B.I.A.V. — Silver Core</div>
   <div class="hero-div"></div>
-  <div class="hero-tagline">B.I.A.V. Studio 的 AI 协作元项目。<br>不是游戏，不是百科，而是承载游戏与百科的协议层与记忆基底。</div>
+  <div class="hero-tagline">B.I.A.V. Studio 的 AI 协作元项目。<br>不是游戏，不是百科，而是承载游戏与百科的知识层与记忆基底。</div>
 </div>
 
 <div class="deco">◇ ◇ ◇</div>
@@ -116,7 +117,7 @@
   <div class="sec-body">
     <p><strong>Brain in a Vat</strong> 出自笛卡尔与普特南的同名哲学思想实验：一个脱离躯体、被维持在营养液中的大脑，能否区分"真实经验"与"被注入的经验"？</p>
     <p>Studio 选择此名作为身份锚点，并非声称给出答案，而是接受其前提：<em>制作者所感知的世界，本身可能就是被构建的</em>。这个不确定性是创作《忘却前夜》克苏鲁式认知恐惧叙事的精神基底——所有"已知"都可能被更高阶的存在证伪。</p>
-    <p>在工程层面，本仓库 <code style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold);background:rgba(197,163,86,0.06);padding:1px 6px;border-radius:2px">brain-in-a-vat</code> 就是这个思想实验的具象——一个由 AI 协作维护、自动情报循环、知识图谱驱动的"脱体大脑"，承载 Studio 的记忆与协议。</p>
+    <p>在工程层面，本仓库 <span class="code">brain-in-a-vat</span> 就是这个思想实验的具象——一个由 AI 协作维护、自动情报循环驱动的"脱体大脑"，承载 Studio 的记忆、决策与协议。</p>
   </div>
 </section>
 
@@ -124,9 +125,9 @@
   <div class="sec-label">Silver Core</div>
   <div class="sec-title">银芯系统</div>
   <div class="sec-body">
-    <p><strong>银芯（Silver Core / BIAV-SC）</strong>是 BIAV 项目的内部系统名，由九个记忆模块构成：TF-IDF 语义搜索、知识图谱、MemRL 效用评分、Sleep-Time Compute 预计算缓存、哨兵异常检测、MCP Server、上下文管理、Reflexion 失败学习、选择性记忆膨胀检测。</p>
-    <p>九模块协同实现"组织级记忆宫殿"——AI 会话不再是孤立的一次性对话，而是接续上一轮记忆继续推进的循环。每一轮对话产出的事实、决策、踩坑教训，都会被自动写入图谱、索引、复用，让下一轮会话从已有沉淀起步。</p>
-    <p>这是 Studio 在 AI 协作时代的方法论尝试：<em>让记忆成为基础设施，让协议优先于工具</em>。</p>
+    <p><strong>银芯（Silver Core / BIAV-SC）</strong>是 BIAV 项目的知识层系统名，定位为 Studio 的<em>受限 / 非公开层</em>：负责采集、整理外部社区与解包信息，单向输出至内部层（黑池），是 Studio 对外的"眼睛和耳朵"。</p>
+    <p>银芯的记忆不再依赖自建检索栈，而是收回到三条互补支柱：<strong>CLAUDE.md</strong>（每会话自动加载的统一入口与协议）、<strong>memory/*.md</strong>（人工策展的决策 / 踩坑 / 状态 / 方法论档案），以及 Claude 平台原生的上下文管理。每一轮协作产出的事实与决策被写入策展档案，让下一轮会话从已有沉淀起步。</p>
+    <p>会话之外，MCP 服务 <span class="code">biav-sc-memory</span> 提供四件协作工具：<span class="code">character_persona</span>（人格激活）、<span class="code">record_decision</span>（决策落档）、<span class="code">record_lesson</span>（教训沉淀）、<span class="code">current_continuity</span>（连续性读取）。这是 Studio 在 AI 协作时代的方法论尝试：<em>让记忆成为基础设施，让协议优先于工具</em>。</p>
   </div>
 </section>
 
@@ -134,24 +135,24 @@
   <div class="sec-label">Mission</div>
   <div class="sec-title">三新使命</div>
   <div class="sec-body">
-    <p>2026-04 银芯重新定位后，BIAV 项目承载三条公开使命：</p>
+    <p>2026-04 银芯重新定位后，BIAV 项目承载三条使命：</p>
     <div class="grid-3">
       <div class="card">
         <div class="card-num">壹</div>
-        <div class="card-name">黑池公开信息入口</div>
-        <div class="card-desc">为内部消费层提供多平台社区情报的统一视野。每日两次自动聚合 Bilibili / Discord / Reddit / NGA / TapTap / Steam 等平台。</div>
+        <div class="card-name">多平台社区情报入口</div>
+        <div class="card-desc">为内部消费层提供多平台社区情报的统一视野。每小时自动聚合 Bilibili / Discord / Reddit / NGA / TapTap / Steam 等平台。</div>
         <div class="card-meta">主载体 — news 子项目</div>
       </div>
       <div class="card">
         <div class="card-num">贰</div>
         <div class="card-name">社区共建知识底座</div>
-        <div class="card-desc">让外部社区与 Studio 派生内容拥有可贡献的事实底座。目标 72 角色三语完整资料 + 客户端解包数据 + 制作者一手陈述。</div>
+        <div class="card-desc">以客户端一手解包数据重建可信底座。剧情正文与 lore 档案已开放；角色基线正在以解包字段重建中（禁用合成占位）。</div>
         <div class="card-meta">主载体 — wiki 子项目</div>
       </div>
       <div class="card">
         <div class="card-num">叁</div>
         <div class="card-name">Studio 团队 AI 协作训练场</div>
-        <div class="card-desc">基于公开 AI 信息的协作方法论沉淀场。当前以仓库形式开放思考过程，供 Studio 内成员衍生项目与企划。</div>
+        <div class="card-desc">AI 协作方法论的沉淀场。以仓库形式开放决策、踩坑与协议档案，供 Studio 内成员衍生项目与企划。</div>
         <div class="card-meta">备扩展位 — 全局 / 未来 game</div>
       </div>
     </div>
@@ -165,10 +166,10 @@
     <table class="struct">
       <tr><th>子项目</th><th>路径</th><th>职责</th></tr>
       <tr><td>site</td><td><code>projects/site/</code></td><td>对外门户、部署流水线、跨站视觉一致性</td></tr>
-      <tr><td>news</td><td><code>projects/news/</code></td><td>多平台社区情报聚合、Discord 归档、日报生成</td></tr>
-      <tr><td>wiki</td><td><code>projects/wiki/</code></td><td>72 角色资料库、技能命轮、三语 i18n、VitePress 构建</td></tr>
-      <tr><td>memory</td><td><code>memory/ + scripts/</code></td><td>九模块记忆系统、决策档案、做梦循环、教训沉淀</td></tr>
-      <tr><td>事实圣经</td><td><code>assets/data/</code></td><td>72 角色权威事实 + 设计决策 + 制作者采访 + 校验脚本</td></tr>
+      <tr><td>news</td><td><code>projects/news/</code></td><td>多平台社区情报聚合、Discord 归档、报告生成</td></tr>
+      <tr><td>wiki</td><td><code>projects/wiki/</code></td><td>客户端解包数据、剧情正文与 lore 档案、角色基线重建、VitePress 构建</td></tr>
+      <tr><td>memory</td><td><code>memory/*.md</code></td><td>人工策展记忆层：决策档案、踩坑教训、状态权威、方法论</td></tr>
+      <tr><td>事实圣经</td><td><code>assets/data/</code></td><td>角色卡 / 设计决策 / 制作者采访 / 叙事结构 + 校验脚本</td></tr>
     </table>
   </div>
 </section>
