@@ -1014,7 +1014,9 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
 
 
 def generate_playstyle(playable, play):
-    """玩法图鉴 docs/playstyle.md：按界域罗列玩法卡（沿用 character_skills.md 正文）。"""
+    """玩法图鉴 docs/playstyle.md：按界域罗列玩法卡（沿用 character_skills.md 正文），
+    并把每张卡开头的角色名链到其详情页。"""
+    import re
     src = f'{PROCESSED_DIR}/character_skills.md'
     if not os.path.exists(src):
         return
@@ -1023,6 +1025,21 @@ def generate_playstyle(playable, play):
     # 去掉原档一级标题（与本页标题重复），其余正文原样保留（含 [[toc]] 等）
     parts = body.split('\n', 1)
     rest = parts[1] if len(parts) > 1 else ''
+
+    # 角色名 → 详情页 id（仅可玩角色有详情页）
+    name2id = {ch['name']: ch['id'] for ch in playable}
+
+    def _link_name(m):
+        bold = m.group(1)
+        norm = bold.split(' / ')[0].split('（')[0].split('(')[0].strip()
+        cid = name2id.get(norm)
+        if cid is None:
+            return m.group(0)
+        return f'**[{bold}](/zh/awakeners/{cid})**'
+
+    # 仅替换每行行首的 **角色名**（卡片头），不动行内强调
+    rest = re.sub(r'(?m)^\*\*([^*]+)\*\*', _link_name, rest)
+
     legend = ['<p class="realm-legend">']
     for realm in REALM_ORDER:
         legend.append(f'{_realm_badge(realm)} {REALM_TAGLINE[realm]}<br>')
