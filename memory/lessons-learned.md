@@ -268,7 +268,7 @@
   1. BIAV-SC.md §知识模块索引拆分为「全量档案层 / 输出展示层」两段，明确语义（4-26 完成）
   2. 新增「数据消费纪律」硬约束：长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯 → 必须用全量档案层；日报展示 / 快查 / 热度榜 → 用输出层即可（4-26 完成）
   3. §双系统架构补一句：Discord archiver 全量归档 + platforms 多源数据是三新使命#1「黑池公开信息入口」核心交付（4-26 完成）
-  4. 派 Code-news 系统审计所有源（10+ 平台），产出 `memory/data-layer-audit.md`，主控台据此 W2 完善 BIAV-SC.md 索引
+  4. 派 Code-news 系统审计所有源（10+ 平台），产出数据层审计（档随多会话架构 2026-06 退役清理删除），据此 W2 完善索引
   5. 后续派 Code-memory 实现 helper（如 `scripts/discord_query.py`）暴露常用查询接口，降低误用风险
   6. 前置防御：未来新建数据源 archiver 时，必须同步在 BIAV-SC.md 知识模块索引「全量档案层」登记，**不允许只暴露 output/ 不暴露 data/**
 - **Impact**：所有未来接入银芯的 AI 的社区分析准确性、三新使命#1「黑池公开信息入口」的可信度、Phase 2 M2「贡献流程跑通」依赖的真实社区情报基础
@@ -310,7 +310,7 @@
 
 ## 33. distill hook 软失败 git 推送的取舍
 
-- **Context**：2026-04-26 起守密人多次收到 `~/.claude/stop-hook-git-check.sh` 报警 untracked digest，根因 Claude Code 平台无感切换底层 session（同会话内 session_id 多次切换），每次切换 SessionEnd hook 触发 `session_distiller.py` 写盘新 digest 但**故意不做 git 操作**（设计取舍，避免沉默推送失败），导致 untracked 文件累积在工作树。Code-strategy `memory/research/proposal-distill-autocommit-2026-04.md` 评估 5 个备选方案后推荐方案 A（在 wrapper shell 末尾追加软失败 commit + push 块），主控台审定 + 守密人接受 + 派 Code-memory 实施。
+- **Context**：2026-04-26 起守密人多次收到 `~/.claude/stop-hook-git-check.sh` 报警 untracked digest，根因 Claude Code 平台无感切换底层 session（同会话内 session_id 多次切换），每次切换 SessionEnd hook 触发 `session_distiller.py` 写盘新 digest 但**故意不做 git 操作**（设计取舍，避免沉默推送失败），导致 untracked 文件累积在工作树。Code-strategy 评估 5 个备选方案后推荐方案 A（在 wrapper shell 末尾追加软失败 commit + push 块），主控台审定 + 守密人接受 + 派 Code-memory 实施（该提案档与 distill 钩子均随 2026-06 退役删除）。
 - **Problem**：原设计取舍为「不在 hook 里做 git push 避免沉默失败」，但代价是长会话期 untracked 累积 + stop-hook 反复报警 + 守密人会话体验下降。完全省略 git 操作让 SessionEnd 与 SessionStart 之间出现「写盘但不归档」的脱节窗口。
 - **Fix**：在 `scripts/session-end-distill.sh` 末尾 distiller 调用之后追加 +13 行 shell 块（实施 2026-05-06 commit），核心逻辑：
   1. 用 `git ls-files --others --exclude-standard -- memory/session-digests` 直接检查 untracked（**不用 brief 参考实现的 `git diff --quiet`** —— 它不感知 untracked，会把 untracked-only 场景误判为「干净」跳过整块，是 brief 给的参考实现的隐性 bug）
