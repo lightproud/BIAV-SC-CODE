@@ -8,16 +8,16 @@
     "counts": {
       "workflows": 22,
       "scripts_top": 14,
-      "scripts_news": 25,
+      "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 84
+      "total": 85
     },
     "reachability": {
-      "live": 46,
+      "live": 47,
       "test-only": 0,
       "orphaned": 0
     }
@@ -413,10 +413,19 @@
     {
       "id": "archive_discord.py",
       "path": "projects/news/scripts/archive_discord.py",
-      "summary": "Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除",
+      "summary": "Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）",
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "archive_engine.py",
+      "path": "projects/news/scripts/archive_engine.py",
+      "summary": "通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
