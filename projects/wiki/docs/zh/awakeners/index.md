@@ -6,7 +6,7 @@ title: 唤醒体列表
 
 > 共 58 位可玩唤醒体，按界域分组。点击进入详情页。
 
-## <span class="realm-badge realm-chaos">混沌</span> 混沌（16）
+## <span class="realm-badge realm-chaos">混沌</span> 混沌（17）
 
 <div class="awakener-grid">
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15560.html"><span class="ac-name">潘狄娅</span><span class="ac-role">攻击</span></a>
@@ -19,6 +19,7 @@ title: 唤醒体列表
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15581.html"><span class="ac-name">莉莉</span><span class="ac-role">防御</span></a>
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15585.html"><span class="ac-name">奥吉尔</span><span class="ac-role">防御坦克</span></a>
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15595.html"><span class="ac-name">拉蒙娜</span><span class="ac-role">支援</span></a>
+<a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15601.html"><span class="ac-name">「24」</span><span class="ac-role">主C / 全能万金油</span></a>
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15602.html"><span class="ac-name">熔毁·朵尔</span><span class="ac-role">辅助·增伤+剧毒</span></a>
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/15604.html"><span class="ac-name">莱克</span><span class="ac-role">辅助+过牌引擎</span></a>
 <a class="awakener-card realm-accent-chaos" href="/brain-in-a-vat/wiki/zh/awakeners/54116.html"><span class="ac-name">塔薇</span><span class="ac-role">辅助</span></a>
@@ -41,11 +42,11 @@ title: 唤醒体列表
 <a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/15589.html"><span class="ac-name">诞妄·墨菲</span><span class="ac-role">主C</span></a>
 <a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/15592.html"><span class="ac-name">珊</span><span class="ac-role">防御</span></a>
 <a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/15594.html"><span class="ac-name">凯刻斯</span><span class="ac-role">防御</span></a>
-<a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/77922.html"><span class="ac-name">克珀珊特</span><span class="ac-role">防御·通用辅助</span></a>
+<a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/77922.html"><span class="ac-name">克珀珊特</span><span class="ac-role">防御型</span></a>
 <a class="awakener-card realm-accent-aequor" href="/brain-in-a-vat/wiki/zh/awakeners/130901.html"><span class="ac-name">莫丝</span><span class="ac-role">功能辅助·装填轰炸</span></a>
 </div>
 
-## <span class="realm-badge realm-caro">血肉</span> 血肉（10）
+## <span class="realm-badge realm-caro">血肉</span> 血肉（13）
 
 <div class="awakener-grid">
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15567.html"><span class="ac-name">血链·希洛</span><span class="ac-role">输出主C</span></a>
@@ -55,6 +56,9 @@ title: 唤醒体列表
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15591.html"><span class="ac-name">艾继丝</span><span class="ac-role">辅助·控制</span></a>
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15596.html"><span class="ac-name">泰旖丝</span><span class="ac-role">辅助核心</span></a>
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15597.html"><span class="ac-name">雷娅</span><span class="ac-role">辅助</span></a>
+<a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15598.html"><span class="ac-name">尤乌哈希</span><span class="ac-role">输出主C</span></a>
+<a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15599.html"><span class="ac-name">萨尔瓦多</span><span class="ac-role">防御型辅助 / 成长坦C</span></a>
+<a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/15600.html"><span class="ac-name">阿格里帕</span><span class="ac-role">防御型盾毒辅助</span></a>
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/95786.html"><span class="ac-name">杜勒赛因</span><span class="ac-role">输出</span></a>
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/125346.html"><span class="ac-name">徐</span><span class="ac-role">辅助</span></a>
 <a class="awakener-card realm-accent-caro" href="/brain-in-a-vat/wiki/zh/awakeners/130226.html"><span class="ac-name">沙耶</span><span class="ac-role">辅助</span></a>
