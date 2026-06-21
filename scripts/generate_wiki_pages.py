@@ -937,6 +937,17 @@ def generate_characters():
 
 def generate_awakener_pages(chars, by_cat, play, cidx):
     """每个可玩唤醒体一张详情页 docs/zh/awakeners/<id>.md，并重写列表页 index.md。"""
+    # 角色名 → [(章节名, 锚点)]：剧情读本 generate_story 的 chapter-N 反向映射，
+    # 供详情页「登场剧情」回链。锚点方案须与 generate_story 保持一致。
+    char_chapters = {}
+    try:
+        sidx = json.load(open(f'{PROCESSED_DIR}/story/index.json', encoding='utf-8'))['index']
+        for i, u in enumerate(sidx):
+            for name in u.get('characters', []):
+                char_chapters.setdefault(name, []).append((u['unit'], f'chapter-{i}'))
+    except (FileNotFoundError, KeyError):
+        pass
+
     out_dir = f'{DOCS_DIR}/zh/awakeners'
     os.makedirs(out_dir, exist_ok=True)
     # 清掉旧的烂尾样板页（pandia.md 依赖已清空的 db 数据层）
@@ -1009,6 +1020,10 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
         # 延伸入口
         D.append('## 延伸资料')
         D.append('')
+        chaps = char_chapters.get(ch['name'])
+        if chaps:
+            links = '、'.join(f'[{u}](/story#{a})' for u, a in chaps)
+            D.append(f'- 登场剧情：{links}')
         D.append(f'- [语音台词](/voice-lines)（搜索「{ch["name"]}」）')
         D.append('- [CG 画廊](/cg-gallery) · [角色立绘](/portraits)')
         D.append('- [战斗机制总览](/battle-system) · [玩法图鉴](/playstyle)')
