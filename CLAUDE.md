@@ -210,6 +210,7 @@ brain-in-a-vat/
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
 │   └── *.md / *.json              # 见 §5.3
+├── okf/                           # Open Knowledge Format v0.1 bundle（生成物，见 §6.1）
 ├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
 ├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
 ├── deliverables/{YYYY-MM}/        # 对守密人的交付物归档（报告 / PDF / HTML，按月）
@@ -220,6 +221,26 @@ brain-in-a-vat/
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
 动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发。
+
+### §6.1 OKF Bundle（`okf/`）
+
+`okf/` 是银芯知识层的 **Open Knowledge Format v0.1** 捆绑包（Google Cloud 2026-06-12
+开放规范：知识 = 一目录带 YAML frontmatter 的 markdown，每文件一 concept，唯一必填
+`type`，`index.md`/`log.md` 保留名）。**生成物**，由 `scripts/build_okf_bundle.py`
+从现有权威源可复现生成，重跑覆盖；一致性由 `tests/test_okf_bundle.py` 守护。
+
+- **定位**：银芯受限/非公开层，本 bundle 面向**内部消费**（艾瑞卡人格 / 银芯→黑池
+  单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图），**不对外发布**——OKF 官方
+  「跨组织互操作」主卖点对银芯打折。
+- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色）；(2) **放指针不放本体**
+  （`okf/sources/` / `okf/memory/` / `okf/story/` 仅持 `resource` 指针，本体原地不动，呼应
+  RELEASES.md「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`okf/sources/`
+  指针用 `tags: data_layer:*` 标层，防 lesson #30）。
+- **消费**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
+  其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
+  产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
+- CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）。
+- 重新生成：`python3 scripts/build_okf_bundle.py`。
 
 ---
 

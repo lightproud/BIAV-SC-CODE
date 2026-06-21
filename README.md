@@ -40,12 +40,13 @@
 brain-in-a-vat/
 ├── README.md                # 本文件（人 + AI 共用入口）
 ├── CLAUDE.md                # AI 统一入口（Claude Code 自动加载 + 外部 raw URL fetch 同源；含艾瑞卡人格 / 卡帕西编码 4 原则 / 数据消费纪律 / 知识索引 / Light 维护速查）
-├── memory/                  # 结构化记忆（决策、状态、方法论、视觉规范、dispatch brief）
-│   ├── strategy/            # 长期战略文档（Code-strategy 主战场）
+├── memory/                  # 结构化记忆（决策、状态、方法论、视觉规范、active hub）
+│   ├── active/             # 主题入口卡（高频 hub，优先读）
+│   ├── strategy/            # 长期战略文档
 │   └── research/            # 一次性调研产物
 ├── assets/                  # 共享资产（事实圣经、图片、模板）
-│   └── data/                # 事实圣经（领域知识结构化存储）+ 索引（vectors / graph）
-├── scripts/                 # 顶层 Python 工具层（记忆 / 会话 / 做梦 / 解包；Code-memory 主战场）
+│   └── data/                # 事实圣经（领域知识结构化存储）
+├── scripts/                 # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
 ├── tests/                   # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
 ├── projects/                # 子项目工作区
 │   ├── site/                # 主站导航页 + 设计系统
@@ -56,17 +57,18 @@ brain-in-a-vat/
 └── deliverables/            # 已交付成品存档
 ```
 
-## 子项目与会话角色
+## 子项目与模块
 
-| 子项目 / 角色 | 目录 | 维护会话 | 状态 |
-|---|---|---|---|
-| 主站 + 设计系统 | `projects/site/` | Code-site | 已上线，M1 对外门户优化中 |
-| 社区新闻聚合 + 全量归档 | `projects/news/` | Code-news | 10+ 源运行中，全量回溯至 2026-02 |
-| 游戏数据集 + Wiki | `projects/wiki/` | Code-wiki | 72 角色基线自举中（24/72 完成） |
-| 衍生游戏 | `projects/game/` | Code-game（v2.0 退主线） | 备扩展位 |
-| 银芯记忆基础设施 | `scripts/` + `assets/data/` 索引 | Code-memory | 9 模块 + RAG 链条维护 |
-| 长期战略智库 | `memory/strategy/` + `memory/research/` | Code-strategy | 长尺度调研 / 评估 / 选项分析 |
-| 战略锚点 + 协调中枢 | `memory/` 根 + 各 dispatch brief | 主控台（艾瑞卡） | 战略+规划+协调+接口 四合一中枢 |
+> 多会话 Code-* 角色（主控台 + 各子项目会话）已于 **2026-06 退役**，现为守密人 ↔ **单一艾瑞卡会话**直接协作，子项目前缀仅作话题标签（见 `memory/active/contribution-protocol.md`）。
+
+| 子项目 / 模块 | 目录 | 状态 |
+|---|---|---|
+| 主站 + 设计系统 | `projects/site/` | 已上线，M1 对外门户优化中 |
+| 社区新闻聚合 + 全量归档 | `projects/news/` | 10+ 源运行中，全量回溯至 2026-02 |
+| 游戏数据集 + Wiki | `projects/wiki/` | 结构化层 2026-06-15 清空，W2 以一手解包字段重建基线 |
+| 衍生游戏 | `projects/game/` | v2.0 退主线，备扩展位 |
+| 银芯记忆 | `memory/*.md` 人工策展 + MCP `biav-sc-memory` 4 工具 | 自造记忆栈（9 模块/做梦）2026-06 退役，定位收归平台原生上下文 |
+| 长期战略智库 | `memory/strategy/` + `memory/research/` | 长尺度调研 / 评估 / 选项分析 |
 
 ## 快速开始
 
@@ -78,9 +80,11 @@ python projects/news/scripts/aggregator.py
 # 本地预览 Wiki
 cd projects/wiki && npm install && npm run dev
 
-# 银芯记忆系统查询
-python scripts/memory_search.py "查询内容"
-python scripts/session_briefing.py
+# 跨档案检索记忆层（语义检索子系统 2026-06 退役，改用 ripgrep）
+rg "<关键词>" memory/ assets/
+
+# 运行验证程序（全量单测）
+pytest tests/ -v
 ```
 
 ## 技术栈
@@ -88,19 +92,19 @@ python scripts/session_briefing.py
 - **Wiki**：VitePress + Markdown（EN/JA/ZH 三语言）
 - **新闻聚合**：Python 3.11+ / 纯 HTML 前端
 - **事实圣经**：结构化 JSON + Python 校验脚本
-- **银芯记忆系统**：TF-IDF + 知识图谱 + MCP Server
-- **自动化**：GitHub Actions（社区抓取 + 每日报告 + 做梦三层 + Issue 驱动）
-- **协作**：Claude Code 多会话架构（主控台 + 6 子项目角色 + 战略智库）
+- **银芯记忆**：CLAUDE.md（每会话自动加载）+ `memory/*.md` 人工策展 + MCP `biav-sc-memory` 4 工具；会话连续性承 Claude 平台原生上下文（自造 TF-IDF/知识图谱/做梦栈 2026-06 退役）
+- **自动化**：GitHub Actions（社区抓取 + Issue 驱动 + 部署；精确清单以 `ls .github/workflows/` 为准）
+- **协作**：Claude Code 单一艾瑞卡会话 + 平台原生记忆（原多会话架构 2026-06 退役）
 
 ## AI 协作方法论
 
-本项目采用「**多会话职责隔离 + 中枢协调**」模式：
+本项目现采用「**守密人 ↔ 单一艾瑞卡会话**」直接协作（原「多会话职责隔离 + 中枢协调」模式 2026-06 退役）：
 
-- **主控台**：长期战略锚点（艾瑞卡），战略+规划+协调+接口 四合一中枢
-- **Code-* 子项目会话**：site / news / wiki / memory / strategy 按子项目分工
-- **共享外脑**：本仓库连接所有会话，通过 `memory/decisions.md` + dispatch brief 协调
+- **统一身份**：艾瑞卡承接战略+规划+协调+接口，子项目前缀（news / wiki / site …）仅作话题标签
+- **记忆层**：CLAUDE.md 自动加载 + `memory/*.md` 人工策展档案 + 平台原生上下文管理
+- **决策溯源**：`memory/decisions.md`（溯源权威）+ `memory/active/` 主题入口卡
 
-详见 [`memory/methodology.md`](memory/methodology.md) 与 33 条踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)。
+详见 [`memory/methodology.md`](memory/methodology.md) 与踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)（持续追加，条数以文件最新为准）。
 
 ## 参与贡献
 

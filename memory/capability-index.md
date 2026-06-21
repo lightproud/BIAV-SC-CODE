@@ -4,16 +4,16 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-06-21
-- 功能总数：**84**
-- 脚本可达性：活 46 / 仅测试 0 / 孤儿 0
+- 功能总数：**87**
+- 脚本可达性：活 48 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 22 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 14 |
-| news 采集器脚本 | 25 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 23 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 15 |
+| news 采集器脚本 | 26 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（22）
+## CI 自动化工作流（编排入口·定时/事件平面）（23）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -44,6 +44,8 @@
   `.github/workflows/backfill-news.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
   `.github/workflows/build-capability-registry.yml`
+- **`Build OKF Bundle`** _[push/manual]_ —   
+  `.github/workflows/build-okf-bundle.yml`
 - **`Check Morimens Version Updates`** _[schedule/manual]_ — 定时检测 Morimens 客户端版本更新。  
   `.github/workflows/check-version.yml`
 - **`Claude Code`** — Claude Code GitHub 协作入口（@claude 触发）。  
@@ -81,10 +83,12 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（14）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（15）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
+- **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
+  `scripts/build_okf_bundle.py`
 - **`build_story_layer.py`** _[活:cli]_ — Build the story/ structured layer from raw + processed sources.  
   `scripts/build_story_layer.py`
 - **`character_persona.py`** _[活:cli+mcp]_ — 艾瑞卡角色人格 prompt 生成器，MCP character_persona 后端。  
@@ -112,7 +116,7 @@
 - **`silver_memory_tools.py`** _[活:cli+mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
 
-## news 采集器脚本（25）
+## news 采集器脚本（26）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -120,8 +124,10 @@
   `projects/news/scripts/aggregator_base.py`
 - **`aggregator_collectors.py`** _[活:import]_ — Per-platform news collectors (Reddit, Bilibili, NGA, TapTap, Steam,  
   `projects/news/scripts/aggregator_collectors.py`
-- **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除  
+- **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）  
   `projects/news/scripts/archive_discord.py`
+- **`archive_engine.py`** _[活:cli]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
+  `projects/news/scripts/archive_engine.py`
 - **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/  
   `projects/news/scripts/archive_platforms.py`
 - **`backfill_forum_starters.py`** _[活:cli+workflow]_ — backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息  

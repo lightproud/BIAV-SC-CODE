@@ -37,7 +37,7 @@
 - [ ] Reddit 子版块名确认（r/Morimens 是否存在）
 - [ ] Twitter / NGA / TapTap 配置密钥（如 Phase 2 优先级允许）
 - [ ] 周报/月报机制（日报之上叠加趋势分析）
-- [ ] 黑池接口规范文档对齐（参考 `memory/silver-blackpool-interface.md`）
+- [ ] 黑池接口规范文档对齐（参考 `memory/active/silver-blackpool-interface.md`）
 
 ### M3 稳定化（6-11 → 7-10，30 天）
 - [ ] 自动化连续 30 天稳定运行验证

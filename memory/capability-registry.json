@@ -6,18 +6,18 @@
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 22,
-      "scripts_top": 14,
-      "scripts_news": 25,
+      "workflows": 23,
+      "scripts_top": 15,
+      "scripts_news": 26,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 84
+      "total": 87
     },
     "reachability": {
-      "live": 46,
+      "live": 48,
       "test-only": 0,
       "orphaned": 0
     }
@@ -61,6 +61,15 @@
         "manual"
       ],
       "note_zh": "功能源变动时自动重生成银芯功能目录。"
+    },
+    {
+      "id": "build-okf-bundle.yml",
+      "name": "Build OKF Bundle",
+      "path": ".github/workflows/build-okf-bundle.yml",
+      "triggers": [
+        "push",
+        "manual"
+      ]
     },
     {
       "id": "check-version.yml",
@@ -249,6 +258,16 @@
       "status": "live"
     },
     {
+      "id": "build_okf_bundle.py",
+      "path": "scripts/build_okf_bundle.py",
+      "summary": "Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "build_story_layer.py",
       "path": "scripts/build_story_layer.py",
       "summary": "Build the story/ structured layer from raw + processed sources.",
@@ -413,10 +432,19 @@
     {
       "id": "archive_discord.py",
       "path": "projects/news/scripts/archive_discord.py",
-      "summary": "Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除",
+      "summary": "Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）",
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "archive_engine.py",
+      "path": "projects/news/scripts/archive_engine.py",
+      "summary": "通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },

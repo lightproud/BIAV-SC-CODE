@@ -63,63 +63,36 @@
 ## Wiki 数据集 + 站点
 
 ### 游戏数据集（原 database）
-- **当前状态**（2026-04-20 B3 调研修正）：
-  - **`projects/wiki/data/db/characters.json` 基线尚未建立**（git 历史中无此文件），Phase 2 首要任务是自举基线
-  - 角色真实总数为 **72 角色**（含皮肤/联动/彩蛋），不是 63。来源：`projects/wiki/data/extracted/categorized/character_data.txt`（客户端逆向提取）
-  - 数据覆盖度**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
-  - 72/72 角色有元数据（EN/JA 描述、获取方式翻译完成），结构化卡牌/技能数据待 Phase 2 从 Fandom 抓取补充
-  - 47 个立绘 PNG 已下载到 `assets/images/portraits/`（蛇形命名，约 65% 覆盖，对 72 角色仍缺约 25 个）
-  - 命轮数据：29 条 Name（TrinketSuitEffect.lua），**全部缺 Effect/Condition 字段**，待 Phase 2 从 AwakerPotency.lua 或 Fandom 提取
-  - 命轮与密契装备体系
-  - 四大界域体系（Chaos、Aequor、Caro、Ultra）
-  - 版本线 v1.0→v2.5（含 3 个联动记录）
-  - 世界观设定（8 组织、12 关键角色、主线剧情详细摘要）
-  - 卡牌数据库 cards.json
-  - 关卡掉落表 stages.json
-  - 多语言术语翻译 translations.json（zh/en/ja）
-  - 角色语音框架 voice_lines.json（10 角色，待补充实际台词）
-  - content_database.json 技能数据已整合到 characters.json
-- **已删除**：tier 评级字段（非项目关注点）
-- **自动化抓取（外部合成数据旧链，2026-06 PR #253 整套退役删除）**：原 11 个外部抓取/生成脚本
-  （`fetch_portraits/skills/cards/stats/stages/wheels/lore/voice_lines/steam_assets.py`、
-  `extract_game_data.py`、`generate_pages.py`）+ `fetch-wiki-data.yml` workflow 已随
-  「退役外部合成数据旧链、wiki 改用客户端解包数据」一并删除。理由：Fandom/GameKee 等外部源
-  为合成/二手数据，与 W2「以 `data/extracted/` 一手解包字段为唯一数据源」纪律冲突。
-  - 现存留 `projects/wiki/scripts/`：解包链 `decrypt_and_extract.py` / `extract_client_data.py`、
-    索引构建 `build_banner_character_index.py` / `build_drop_index.py`、`generate_rss.py`、
-    `check_version.py`、`validate_data.py`（精确清单以 `ls projects/wiki/scripts/` 为准）
+
+> **重大状态变更（2026-06）**：原 `data/db/` 结构化层（characters.json 全 6 JSON + 派生页）
+> 已于 **2026-06-15 守密人裁定整层清空**（原 24/72 全为 partial/fixture 占位、长期误导）；
+> 外部合成数据抓取链（fetch_* 等）已于 **PR #253 整套退役删除**。本节下方凡涉及
+> `data/db/` 旧内容 / 24-72 自举进度 / Fandom 抓取的描述均为**清空前历史记录**，现行以本框为准。
+
+- **现行数据源（唯一）**：`projects/wiki/data/extracted/categorized/character_data.txt`
+  （客户端一手解包字段）；角色真实总数 **72**（含皮肤/联动/彩蛋）
+- **W2 任务**：以解包字段重建可信 `characters` 基线（**禁用合成占位**），再接回数据桥与生成页；
+  真实缺口见 `memory/wiki-phase-2-gap-inventory.md`，进度以本档「子项目状态」为准
+- **现存解包/索引脚本**（`projects/wiki/scripts/`）：`decrypt_and_extract.py` / `extract_client_data.py` /
+  `build_banner_character_index.py` / `build_drop_index.py` / `generate_rss.py` / `check_version.py` /
+  `validate_data.py`（精确清单以 `ls` 为准）
+- **已退役（PR #253）**：11 个外部抓取/生成脚本（`fetch_portraits/skills/cards/stats/stages/wheels/lore/voice_lines/steam_assets.py`、
+  `extract_game_data.py`、`generate_pages.py`）+ `fetch-wiki-data.yml` workflow，理由：外部源为合成/二手数据，与「一手解包为唯一源」纪律冲突
 
 ### Wiki 站点
-- **已完成**：
-  - VitePress 站点框架、三语言结构（ZH/EN/JA）
-  - 模板页面脚手架（数量随 Phase 2 基线自举后重新生成）
-  - 约 580+ 页 Markdown 内容（ZH 193 + EN 198 + JA 197 页，基于早期假数据生成，Phase 2 需重跑 generate_pages.py）
-  - 内容完成度：**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
-  - 加权总完成度原声称 83%，B3 调研（2026-04-20）揭露：characters.json 从未存在，该数据不可信
-  - Phase 2 达到 90% 需要：先自举 characters.json（72 角色最小骨架）→ 再触发 fetch-wiki-data workflow 抓取技能/命轮/立绘
-  - 11 个 Vue 交互组件（全部已注册到 theme）：
-    - CharacterGrid（角色筛选/排序）— 已嵌入唤醒体索引页
-    - CharacterCompare（角色对比）
-    - WheelList（命轮筛选列表）— 已嵌入命轮索引页
-    - GachaSimulator（抽卡模拟器）
-    - TeamBuilder（队伍搭配器）
-    - DamageCalculator（伤害计算器）
-    - FarmingPlanner（素材规划器）
-    - StaminaTracker（体力追踪器）
-    - UpdateTimeline（版本时间线）— 已嵌入更新记录页
-    - ChangelogFeed（最近变更）— 已嵌入更新记录页
-    - VoiceLines（语音台词展示）
-  - SEO 优化：Schema.org JSON-LD、OG 社交分享图、sitemap、robots.txt
-  - RSS/Atom 订阅源
-  - 贡献指南 contributing.md
-- **技术栈**：VitePress 1.6.4 + Vue 3.5.13
-- **部署**：由 Code-site 统一管理（deploy-site.yml），wiki 位于 /wiki/ 子路径
-- **已修复问题**（2026-03-30）：
-  - `cleanUrls: false` — GitHub Pages 不支持无扩展名 URL 重写
-  - 立绘路径用 `:src` 动态绑定避免 Vite import 错误
-  - YAML frontmatter 含冒号自动引号转义
-  - VoiceLines 组件已注册到 theme
-  - deploy-site.yml smoke test 适配 zh root locale 路径
+
+- **现状（2026-06-21 实测）**：VitePress 站点框架在；Markdown 页面 **约 86 个**（脚手架 + 索引页 +
+  1 个 Pandia fixture 角色页 `docs/zh/awakeners/pandia.md`）——原「约 580+ 页（ZH/EN/JA 三语全量）」
+  系清空前基于早期假数据生成，已随结构化层清空大幅缩减
+- **数据桥**：`docs/.vitepress/theme/data/characters.ts` 现导出空数组（保留类型/组件脚手架，
+  W2 重建基线后接回），VitePress 构建已验证通过（BUILD_OK）
+- **Vue 组件（约 12 个，2026-06 重建集，角色数据展示向）**：CharacterGrid / CharacterInfobox /
+  CharacterSheet / SkillTable / TrinketRecommendationCard / AscensionMaterialBlock / BondRewardList /
+  StatGrowthChart / AffinityTags / PortraitGallery / VoiceLineList / FixtureBadge（精确以
+  `ls docs/.vitepress/theme/components/` 为准）。**原列的 GachaSimulator/TeamBuilder/DamageCalculator
+  等计算器/模拟器组件已不在当前组件集**
+- **技术栈**：VitePress 1.6.4 + Vue 3.5.13；**部署**：Code-site 统一管理（`deploy-site.yml`），wiki 在 `/wiki/` 子路径
+- 详细开发上下文与 milestone 见 `projects/wiki/CONTEXT.md`
 
 ## Game 衍生游戏
 
