@@ -51,14 +51,14 @@ layout: page
 | 030 | [**occ-local 降级为研究归档**（2026-04-14）：守密人原话\"occ 这件事就忘了吧，我们现在基于 claw-codes\"](./030-occ-local-downgrade-to-archive.md) | 2026-04-14 |
 | 031 | [**Phase B 4 答案锁死**（2026-04-14）：(1) 无账号用户识别 = 与 SVN 账号名一致](./031-phase-b-four-answers.md) | 2026-04-14 |
 | 032 | [**双系统亚哈格分**（2026-04-14）：银芯 = 孵化器 + 开源子项目 + 公开资料；黑池（内网 SVN）= 五大需求的数据与代码主体](./032-dual-system-yahag-split.md) | 2026-04-14 |
-| 033 | [**黑池记忆走银芯自建+母版迁移**（2026-04-14）：守密人原话\"完善银芯自建，使其拥有 claude-mem 的能力，然后作为母版迁移到黑池\"](./033-blackpool-memory-via-silver.md) | 2026-04-14 |
+| 033 | [**黑池记忆走银芯自建+母版迁移**（2026-04-14）：守密人原话\"完善银芯自建，使其拥有 claude-mem 的能力，然后作为母版迁移到黑池\"](./033-blackpool-memory-via-silver.md) ⚠ 已退役(2026-06) | 2026-04-14 |
 | 034 | [**外部工具方针锁定**（2026-04-14）：graphify（MIT）Phase A vendor 到 projects/graphify-ext/ 作黑池索引工具原型；claude-mem（AGPL-3.0）完全不引入](./034-external-tools-policy.md) | 2026-04-14 |
 | 035 | [银芯事实圣经边界：仅收录公开可查阅信息](./035-silver-fact-bible-scope.md) | 2026-04-14 |
 | 036 | [战略规划 2026：四阶段计划](./036-strategic-plan-2026.md) | 2026-04-14 |
 | 037 | [黑池已上线（2026-04-03）](./037-blackpool-online.md) | 2026-04-14 |
 | 038 | [大二进制文件移至 GitHub Releases（不入 git）](./038-large-binary-to-releases.md) | 2026-04-14 |
 | 039 | [架构差距分析 + 8 项改进批量实施（JSON Schema、冒烟测试、Dependabot 等）](./039-architecture-gap-improvements.md) | 2026-04-14 |
-| 040 | [做梦 Agent 三层架构：浅睡(3h,Actions)→深睡(每天,Claude)→REM(每周,Claude)](./040-dreaming-agent-three-layer.md) | 2026-04-14 |
+| 040 | [做梦 Agent 三层架构：浅睡(3h,Actions)→深睡(每天,Claude)→REM(每周,Claude)](./040-dreaming-agent-three-layer.md) ⚠ 已退役(2026-06) | 2026-04-14 |
 | 041 | [品牌统一：银芯=BIAV-SC，黑池=BIAV-BP](./041-brand-unified-biav-sc-bp.md) | 2026-04-14 |
 
 ## 子项目决策
