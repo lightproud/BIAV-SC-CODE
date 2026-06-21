@@ -1,18 +1,33 @@
 # Releases 索引
 
-> 用途：让人与 AI 定位 GitHub Releases 中的档案。银芯采集/瘦身把大二进制与全量历史
-> 移出 git、存入 Releases（决策 178/179/199），本索引是仓内的「藏宝图」。
+> 用途：让人与 AI 定位 GitHub Releases 中的档案。本索引是仓内的「藏宝图」。
 >
-> **四分类整理（2026-06-21 完成）**：原 37 个零散 release 归并为**四个** release——
-> **解包数据 `unpacked-data` / 解包资产 `unpacked-assets` / 社区归档数据 `community-data` /
-> 社区归档资产 `community-assets`**。两个社区桶由归档引擎滚动写入（不再每周期一 tag）：
-> discord 文本 → `community-data`，fanart 同人图 → `community-assets`。
+> **2026-06-21 数据本体重构（决策见 `memory/decisions.md` 2 条 2026-06-21 裁定）**：
+> 总纲「**可检索 text → git，二进制 → Releases**」。**全部社区/解包 text 已迁回 git**
+> （discord 全量 729 万 + 16 平台 → `Public-Info-Pool/Record/Community/`；解包 text →
+> `Public-Info-Pool/Reference/Game-Unpacked/`），**不再在 Release**。Release 收敛为
+> **两个**，**只放二进制**：
+> - **「解包」`unpacked-assets`** —— 游戏内部二进制（立绘/CG/音视频/特效/UI/units + lua-bytecode + config binary）
+> - **「社区二创」`community-assets`** —— 社区产出二进制（fanart 同人图 + 回填媒体）
+>
+> 已退役删除：`community-data`（discord 文本，已永驻 git）、`unpacked-data`（已并入解包桶）、
+> `media-archive-v1`（已并入社区二创）。
 >
 > **维护约束**：云容器（含艾瑞卡会话）**无 Releases 直接写权限**（gh/hub 不存在，mcp__github__
 > 仅 list/get 只读）。增删改 Release 经 GitHub Actions workflow（`consolidate-releases.yml` /
 > `delete-release.yml`，会话可触发）或守密人手动；本索引（普通文件）由会话维护。最后核对：2026-06-21。
 
-## 一、快速定位（我要找 X → 哪个 tag）
+## 一、快速定位（我要找 X → 去哪）
+
+### 文本类（已在 git，不在 Release，直接读/grep）
+
+| 我要找…… | 位置（git） |
+|----------|------------|
+| 某频道/月 Discord 历史全量 | `Public-Info-Pool/Record/Community/discord/channels/{id}/{date}.jsonl` |
+| 各社区平台采集档案（bilibili/reddit/steam…）| `Public-Info-Pool/Record/Community/{platform}/{date}.json` |
+| 游戏脚本 / 配置文本 / 文本 dump / SDK 脚本 | `Public-Info-Pool/Reference/Game-Unpacked/`（gamescript/config 文本/text-data/sdk-scripts）|
+
+### 二进制类（在 Release，按需下载整件）
 
 | 我要找…… | 去哪个 tag | 具体资产 |
 |----------|-----------|----------|
@@ -25,27 +40,16 @@
 | 语音 / BGM / 音效（可直接听）| `unpacked-assets` | `morimens-audio-ogg-part1/part2.tar.gz`（2,325 OGG）|
 | 音频重转码的原始源 | `unpacked-assets` | `morimens-audio-raw-bnk/wem.tar.gz` + `SoundbanksInfo.xml` |
 | 过场 / CG / 战斗特效视频 | `unpacked-assets` | `morimens-video.tar.gz`（201 视频在内）|
-| 游戏脚本 / 数值配置 / 文本 / SDK | `unpacked-data` | `morimens-gamescript/config/text-data/sdk-scripts.tar.gz` |
-| Lua 字节码（逆向源）| `unpacked-data` | `morimens-lua-bytecode.tar.gz` |
-| 某月 Discord 历史全量 | `community-data` | `discord-archive-{YYYY-MM}.tar.gz`（30 月，单 release 内）|
+| Lua 字节码（逆向源）| `unpacked-assets` | `morimens-lua-bytecode.tar.gz` |
+| config 二进制/debug | `unpacked-assets` | `morimens-config.tar.gz`（含 binary/debug；文本部分另在 git）|
 | 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
 | 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
 
-## 二、四分类总览
+## 二、两个 Release 总览
 
-### 2.1 解包数据（unpacked-data，合并自 game-data-v1 + lua-bytecode-v1）
+### 2.1 「解包」`unpacked-assets` —— 游戏内部二进制
 
-| 资产 | 内容 | 典型用途 |
-|------|------|----------|
-| `morimens-gamescript.tar.gz` | 2,295 游戏逻辑脚本 | 解包脚本溯源 |
-| `morimens-config.tar.gz` | 149 配置表 + binary/debug | 数值配置 |
-| `morimens-text-data.tar.gz` | 文本/本地化/数据 dump | 文本溯源 |
-| `morimens-sdk-scripts.tar.gz` | ejoysdk/foundation/launcher 等 | SDK 逆向 |
-| `morimens-lua-bytecode.tar.gz` | 1,592 luac（Frida 运行时解密）| Lua 字节码逆向源 |
-
-### 2.2 解包资产（unpacked-assets，合并自 art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1）
-
-单个 release，**15 个资产、约 10.7 GB**：
+合并自 art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1 + （2026-06-21）原 `unpacked-data`。约 10.9 GB：
 
 | 资产 | 体量 | 内容 |
 |------|------|------|
@@ -61,36 +65,38 @@
 | `morimens-audio-raw-bnk/wem.tar.gz` | 2.1G | Wwise 原始 156 bnk + 3,302 wem |
 | `SoundbanksInfo.xml` / `wwise_id_mapping.csv` | 3M | 音频 ID 映射元数据 |
 | `morimens-video.tar.gz` | 1.0G | 201 视频（过场/CG/战斗特效）|
+| `morimens-lua-bytecode.tar.gz` | 38M | 1,592 luac（Frida 运行时解密）|
+| `morimens-config.tar.gz` | 55M | 149 配置表 + binary/debug |
+| `morimens-gamescript/sdk-scripts/text-data.tar.gz` | ~60M | （文本，权威已在 git；此处为合并残留冗余，待重打包剥离）|
 
-### 2.3 社区归档数据（community-data，§4.1 全量保全）
+> 注：gamescript/sdk-scripts/text-data 是文本，权威副本已在 git `Reference/Game-Unpacked/`；
+> 它们仍留在本 release 是 2026-06-21 整体合并的无害冗余，未来可重打包 config 为纯 binary 时一并清。
 
-- 单个滚动 release `community-data`：**30 个月** `discord-archive-{YYYY-MM}.tar.gz`（2023-11 ~ 2026-04），共 ~287 MB（2026-06-21 排空时由 force-month 重归档为含回填补全的更全版本，较初版 6.6 MB 大幅充实）。
-- 由归档引擎 `archive_engine.py`（`archive_sources.json` 的 discord 条目，`release_tag: community-data`）**每月自动追加一个资产**（`gh release upload --clobber`，只替换当月不动其它月），取代旧「每月一 tag」。
-- github-actions[bot] 经 `discord-archive.yml` 触发。
+### 2.2 「社区二创」`community-assets` —— 社区产出二进制
 
-### 2.4 社区归档资产（community-assets）
+合并自原 `media-archive-v1`，含两类：
+- **回填社区媒体**（索引 `media/backfill_manifest.json`）；`backfill_media.py --upload` 以 `gh release upload --clobber` 追加。
+- **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶，60 天 cutoff + git_rm）每月自动追加。
 
-- 单个滚动 release `community-assets`，含两类：
-  - **回填社区媒体**（合并自原 `media-archive-v1`，索引 `media/backfill_manifest.json`）。
-  - **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：由归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶，60 天 cutoff + git_rm）**每月自动追加**。
+## 三、整理历程
 
-## 三、四分类整理历程（2026-06-21）
+### 3.1 四分类整理（2026-06-21 早）
 
-- **迁移**（经 `consolidate-releases.yml`：下载→上传→校验资产数→删源 tag）：
-  - `unpacked-data` ← game-data-v1 + lua-bytecode-v1
-  - `unpacked-assets` ← art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1（单源逐个并入，避开 ~10G 一次性下载逼近 runner 磁盘上限）
-  - `community-data` ← 30 个 discord-archive-* 月 tag
-  - `community-assets` ← media-archive-v1
-- **引擎改造**：discord / fanart 归档切换为滚动单 release 模式，未来周期自动并入对应桶，不再散落新 tag。
-- **完整性核对**：`community-data` 实测 30 资产（2023-11 → 2026-04 连续无断档）✓；`unpacked-assets` 实测 15 资产、约 10.7 GB ✓；所有旧源 tag + 悬空 tag `art-assets-v1` 均已删（404 核实）。
-- **对冲缺口闭合（repo-slimming-plan §4）**：历史回填曾每小时把已归档月 jsonl 拉回 git（与月清理对冲，致 channels/ 3.3G 虚胖）。根因修复（`discord_archiver.py` 加「已归档月跳过」守卫）已在 main 生效；2026-06-21 force-month 一次性排空 30 个已归档月，channels/ 12,803→1,882 文件、3.3G→600M，仅留近月 2026-05/06（未够龄）。
+原 37 个零散 release 经 `consolidate-releases.yml` 归并为四个（unpacked-data / unpacked-assets / community-data / community-assets），并把 discord/fanart 归档切换为滚动单 release 模式。
 
-## 四、治理待办
+### 3.2 数据本体重构 → 2 release（2026-06-21）
 
-- **（已闭合 2026-06-21）** 归档标记成功但 git 主数据仍在的对冲缺口——根因（历史回填无「已归档月跳过」）已修复 + 30 月存量已排空，详见 §三 末条与 `memory/strategy/repo-slimming-plan.md` §4。当前无未决治理项。
+守密人 `/grill 规划社区数据存放和目录` 裁定「text→git / 二进制→Releases」总纲后执行「一次到位」迁移：
 
-## 五、如何取用
+- **text 迁回 git**：discord 全量（729 万 / 17,377 文件，2023-07~2026-06）+ 16 平台 → `Public-Info-Pool/Record/Community/`（BPT 4R）；解包 text → `Public-Info-Pool/Reference/Game-Unpacked/`。
+- **discord de-tier**：`archive_sources.json` discord `after_archive: git_rm → keep`，退役月度 git_rm 瘦身，全量永驻 git。
+- **二进制移出 git**：fanart/media `git rm`（不改历史），`.gitignore` 排除，归档直传 release。
+- **Release 收敛为 2**：`unpacked-data` 并入 `unpacked-assets`；`media-archive-v1` 并入 `community-assets`；`community-data` 退役删除（discord 已入 git）。
+- **验证**：迁移 workflow + 采集终验（discord-archive 增量写新路径 + 提交）均 GREEN；全量 1651 测试通过。
+- **代价（待守密人择期）**：git 体积 1.1G→1.6G（全量 text 进库；历史未改写）；config 含文本冗余留待重打包。详见 `memory/strategy/repo-slimming-plan.md` §8。
 
-- 网页：`https://github.com/lightproud/brain-in-a-vat/releases`
-- CLI（守密人本地有 gh）：`gh release download <tag> -p '<asset>'`（如 `gh release download community-data -p 'discord-archive-2026-04.tar.gz'`）
-- 受限层提示：银芯为受限/非公开层（CLAUDE.md §0），下载可能需认证凭据。
+## 四、如何取用
+
+- 网页：`https://github.com/lightproud/brain-in-a-vat/releases`（公开 repo，匿名可下）
+- CLI（守密人本地有 gh）：`gh release download <tag> -p '<asset>'`（如 `gh release download unpacked-assets -p 'morimens-portraits-full.tar.gz'`）
+- 文本类不在 release：直接 git 读 `Public-Info-Pool/`（clone 即在手，可 grep/diff）。
