@@ -110,3 +110,72 @@ Public-Info-Pool/
 ### 8.6 决策落档
 
 两条决策草案（数据本体总纲 + Release 收敛/discord de-tier）已拟，待守密人提交 `memory/decisions.md`（§3.1 仅守密人权限）。
+
+---
+
+## 9. 历史压缩 runbook（守密人本地执行；艾瑞卡只出方案不动历史）
+
+> **前提警告**：本操作**改写 git 全历史**，反转决策 2026-06-20「不改写 git 历史」。
+> 反转理由需守密人重新裁定 + 记一笔。**云容器执行不了**（强推受保护 main 被 Ruleset 挡、
+> 改全 SHA 废所有 clone），故下列步骤**全部在守密人本地机执行**。
+>
+> **诚实预期**：本操作瘦的是 `.git`（清掉历史里已移出的废二进制），**不会让 CI checkout 变快**
+> ——checkout 慢源于当前树大（729 万 discord text 常驻，是想要的），与历史无关。
+
+### 9.1 剥离清单（2026-06-21 核验：以下路径在【当前工作树】均 0 跟踪文件，剥离不丢现存数据）
+
+| 路径 | 性质 | 现存数据是否受影响 |
+|------|------|------|
+| `assets/data/vectors.json.gz` | 语义检索退役孤儿 | 否（已不在树）|
+| `deliverables/` | 旧废目录 | 否 |
+| `projects/news/data/fanart/` | 已移出的同人图二进制（reclaim 大头）| 否（本体在 community-assets release）|
+| `projects/news/data/media/` | 已移出的回填媒体 + churn manifest | 否（本体在 community-assets release）|
+| `projects/news/data/discord/` | 迁移前旧路径 discord（对冲 churn）| **否**——现存全量已在 `Public-Info-Pool/Record/Community/discord/`（17,516 文件，同 blob 经 git mv 仍被新路径引用）|
+| `projects/news/data/platforms/` | 迁移前旧路径平台 | 否——现存在 `Public-Info-Pool/Record/Community/<platform>/` |
+
+### 9.2 执行步骤（守密人本地）
+
+```bash
+# 0) 装工具 + 全量备份（铁律：先备份，重写不可逆）
+pip install git-filter-repo
+git clone --mirror https://github.com/lightproud/brain-in-a-vat.git biav-backup.git  # 异地备份
+
+# 1) 在一份全新 clone 上操作（filter-repo 要求 fresh clone）
+git clone https://github.com/lightproud/brain-in-a-vat.git biav-rewrite && cd biav-rewrite
+
+# 2) 剥离（--invert-paths = 删这些路径的全部历史；其余不动）
+git filter-repo --invert-paths \
+  --path assets/data/vectors.json.gz \
+  --path deliverables/ \
+  --path projects/news/data/fanart/ \
+  --path projects/news/data/media/ \
+  --path projects/news/data/discord/ \
+  --path projects/news/data/platforms/
+
+# 3) 核验：当前树文件数不变、.git 显著变小、现存数据(新路径)完好
+git ls-files | wc -l          # 与重写前对比应一致（旧路径本就不在树）
+du -sh .git                   # 应从 ~1.6G 显著下降
+git ls-files Public-Info-Pool/Record/Community/discord | wc -l   # 应仍 ~17,516
+
+# 4) 临时解 main Ruleset 保护（GitHub repo Settings → Rules），强推，立即恢复保护
+git remote add origin https://github.com/lightproud/brain-in-a-vat.git
+git push --force origin main
+
+# 5) 善后：所有 clone 方（含云容器环境、本地其它 clone）必须【重新 clone】，旧 clone 作废
+#    采集 workflow 下一轮自动跑 fresh checkout，确认首轮正常不断料
+```
+
+### 9.3 风险核对表（执行前逐项确认）
+
+- [ ] 已 `git clone --mirror` 异地备份（可回滚的唯一保险）
+- [ ] 已重新裁定并记录「反转 2026-06-20 不改写历史」决策
+- [ ] 确认无未合并的开放 PR（强推后全失效）
+- [ ] 临时解保护 → 强推 → **立即恢复** main Ruleset 保护
+- [ ] 推后核验：`Public-Info-Pool/` 全量数据完好、采集 workflow 首轮 GREEN
+- [ ] 通知所有 clone 方重新 clone（旧 SHA 全废）
+
+### 9.4 更省事的替代（若只想缓解，不想动历史）
+
+历史压缩治不了「CI/clone 慢」（当前树大）。若真痛点是 CI 慢，更安全的是让重型 CI job 用
+`actions/checkout` 的 `sparse-checkout` 只拉所需子树（不触历史、零 clone 破坏）——这是另案，
+可单独评估。
