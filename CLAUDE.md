@@ -46,11 +46,19 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 
 银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
 
-1. **采集闭环**（使命#1）：GitHub Actions 定时采集器从各社区平台抓原始数据 →
-   落「全量档案层」(`projects/news/data/`) → 过滤选样进「输出展示层」
+1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
+   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每时 :00）；
+   **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活，
+   discord / fanart 等滚动归档进 Releases 两桶 community-data/-assets，加新来源 = 注册表加一段配置、零新代码；
+   T2 **绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
+   **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
+   总数据流：原始数据 → 全量档案层 (`projects/news/data/`) → 过滤选样进输出展示层
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
 2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `projects/wiki/data/extracted/`
-   原始字段 → 脚本 / 人工补齐 `characters.json`（72 角色基线）→ VitePress 构建社区 Wiki 站点。
+   原始字段 → 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
+   **当前状态**：原结构化层（`characters.json` 全 6 JSON + 派生角色页）2026-06-15 守密人裁定整层清空
+   （占位数据长期误导引用），数据桥现导出空数组、站点构建通过；W2 以一手解包字段重建可信基线中
+   （**禁用合成占位**，进度见 `memory/project-status.md`）。
 3. **记忆层**（使命#3 底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
    人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
