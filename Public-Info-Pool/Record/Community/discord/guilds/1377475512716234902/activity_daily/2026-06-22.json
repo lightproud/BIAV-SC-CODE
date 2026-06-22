@@ -1,37 +1,191 @@
 {
   "date": "2026-06-22",
-  "messages": 6,
-  "unique_authors": 6,
-  "reactions_total": 2,
-  "attachments": 1,
+  "messages": 757,
+  "unique_authors": 27,
+  "reactions_total": 167,
+  "attachments": 32,
   "channel_activity": {
-    "なんでも雑談": 2,
-    "🔰初心者質問": 3,
-    "誰でも質問": 1
+    "なんでも雑談": 601,
+    "🔰初心者質問": 92,
+    "誰でも質問": 4,
+    "誰でもOKグロ版野次馬スレ": 59,
+    "【新覚醒体予告】門の鍵 タヴィ": 1
   },
   "hourly_activity": {
+    "2": 12,
+    "3": 22,
+    "4": 88,
+    "5": 23,
+    "6": 15,
+    "7": 261,
+    "8": 330,
     "1": 5,
     "0": 1
   },
   "message_types": {
-    "0": 6
+    "0": 671,
+    "19": 80
   },
   "top_reacted_messages": [
     {
-      "id": "1518424623706800208",
+      "id": "1518522529361428623",
       "channel_id": "1377478664609857647",
-      "content": "各使い手の思想が出そうだなそれ…",
-      "author": "yasaizujusu",
-      "reactions": 1,
+      "content": "そんな事より最終バフ配りすぎて超次元から1つの個性が消えた話でもします？？",
+      "author": "xudabusakua",
+      "reactions": 5,
       "channel": "なんでも雑談"
     },
     {
-      "id": "1518410884341436496",
-      "channel_id": "1391701560496623688",
-      "content": "私も2週間前に始めた初心者ですが､こちらの編成でステ実績全達で一昨日1発クリアいけました〜🙌🏻！サルおぢの全体攻撃とヘロットのクリ頼りですがシレストもめっちゃ回",
-      "author": "ciocux",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
+      "id": "1518481430819377302",
+      "channel_id": "1377478664609857647",
+      "content": "私はとうとう資料館を埋める作業を始めました",
+      "author": "megane0965_78083",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518481839096856677",
+      "channel_id": "1377478664609857647",
+      "content": "資料館の事件の残りが幻夢のやつだけど幻夢やりたくなさ過ぎる",
+      "author": "yamaiame_ql4",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518512619026387095",
+      "channel_id": "1377478664609857647",
+      "content": "極限解放でベッドシーンに移行するみたいな。",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518517663910072361",
+      "channel_id": "1377478664609857647",
+      "content": "狂魔一強やめてね！✊",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518519234789900399",
+      "channel_id": "1377478664609857647",
+      "content": "シンプルにアタッカーが少ない。",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518520023079977111",
+      "channel_id": "1377478664609857647",
+      "content": "こちら3凸ライカー、雑魚戦処理完璧だしたまにボスこいつだけで倒せる模様",
+      "author": "yamaiame_ql4",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518523050704769076",
+      "channel_id": "1377478664609857647",
+      "content": "11点の女さんの方が好き。",
+      "author": "xudabusakua",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518524213797851250",
+      "channel_id": "1377478664609857647",
+      "content": "声優チラ見してて初めて知ったけどオルラとパンディアって声優同じなんだ…",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518524363870310471",
+      "channel_id": "1377478664609857647",
+      "content": "あとオレッタとソレール",
+      "author": "yamaiame_ql4",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518524484712398909",
+      "channel_id": "1377478664609857647",
+      "content": "カレンとアルバも同じィ゙⁉️",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518528784876175391",
+      "channel_id": "1377478664609857647",
+      "content": "なんか大陸も新キャラ発表来てて草",
+      "author": "yasaizujusu",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518530852970172466",
+      "channel_id": "1377478664609857647",
+      "content": "???「もういないじゃない」",
+      "author": "anonymous.409",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518534483081695393",
+      "channel_id": "1377478664609857647",
+      "content": "お前そっちでもそんな扱いなんか…………",
+      "author": "sub0044_36832",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518479710131060909",
+      "channel_id": "1427166318645350450",
+      "content": "||次の次はspろt||",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "誰でもOKグロ版野次馬スレ"
+    },
+    {
+      "id": "1518460013541331134",
+      "channel_id": "1377478664609857647",
+      "content": "8章何とか復活5回切ってクリア……(:3_ヽ)_\n👁",
+      "author": "sinano_",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518511777107804210",
+      "channel_id": "1377478664609857647",
+      "content": "聖純の子を生成して味方の狂気付与をし、解放で確定クリで全体4回攻撃した後に指定した札を-2コストした上で2枚複製してもいいんだよ🫶🏻️︎",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518515634474975283",
+      "channel_id": "1377478664609857647",
+      "content": "いやなんか、大陸って弱いキャラ全然居ないし強いスキルばっかじゃないっすか\nそれのおかげで成り立ってる感じ",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518516611450011738",
+      "channel_id": "1377478664609857647",
+      "content": "<:Casiah_wink:1356053053568192717>",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518520779212460163",
+      "channel_id": "1377478664609857647",
+      "content": "一方その頃オルラは3凸で120回復していましたとさ",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     }
   ]
 }
