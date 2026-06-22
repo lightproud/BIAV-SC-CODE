@@ -3,17 +3,17 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-06-21
-- 功能总数：**99**
-- 脚本可达性：活 54 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-06-22
+- 功能总数：**102**
+- 脚本可达性：活 57 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 29 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 21 |
-| news 采集器脚本 | 26 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 23 |
+| news 采集器脚本 | 27 |
 | wiki 数据脚本 | 7 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -95,7 +95,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（21）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（23）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -111,6 +111,8 @@
   `scripts/character_persona.py`
 - **`check_decisions_consistency.py`** _[活:cli]_ — check_decisions_consistency.py —— 决策档案一致性校验（把「祈祷同步」换成「机器盯同步」）  
   `scripts/check_decisions_consistency.py`
+- **`compact_discord_archive.py`** _[活:cli]_ — Discord 存量归档批量紧凑化（S2）—— 把已落盘的 721 万条记录一次性压成紧凑 schema。  
+  `scripts/compact_discord_archive.py`
 - **`deliverable_path.py`** _[活:cli+command]_ — deliverable_path.py — 银芯产物路径生成器 / 注册表守卫  
   `scripts/deliverable_path.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
@@ -119,6 +121,8 @@
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
+- **`measure_discord_compaction.py`** _[活:cli]_ — Discord 记录精简方案 — 只读测量器（不写任何数据，零风险）  
+  `scripts/measure_discord_compaction.py`
 - **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
   `scripts/migrate_unpacked_to_git.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
@@ -140,7 +144,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（26）
+## news 采集器脚本（27）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -174,6 +178,8 @@
   `projects/news/scripts/data_quality.py`
 - **`discord_archiver.py`** _[活:cli+workflow]_ — Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重  
   `projects/news/scripts/discord_archiver.py`
+- **`discord_compact.py`** _[活:import]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
+  `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  
   `projects/news/scripts/discord_list_guilds.py`
 - **`download_media.py`** _[活:cli+workflow]_ — download_media.py — 全平台媒体资源下载器  

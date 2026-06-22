@@ -1,23 +1,23 @@
 {
   "meta": {
-    "generated_at": "2026-06-21",
+    "generated_at": "2026-06-22",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 29,
-      "scripts_top": 21,
-      "scripts_news": 26,
+      "scripts_top": 23,
+      "scripts_news": 27,
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 99
+      "total": 102
     },
     "reachability": {
-      "live": 54,
+      "live": 57,
       "test-only": 0,
       "orphaned": 0
     }
@@ -367,6 +367,15 @@
       "status": "live"
     },
     {
+      "id": "compact_discord_archive.py",
+      "path": "scripts/compact_discord_archive.py",
+      "summary": "Discord 存量归档批量紧凑化（S2）—— 把已落盘的 721 万条记录一次性压成紧凑 schema。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "deliverable_path.py",
       "path": "scripts/deliverable_path.py",
       "summary": "deliverable_path.py — 银芯产物路径生成器 / 注册表守卫",
@@ -406,6 +415,15 @@
       ],
       "status": "live",
       "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
+    },
+    {
+      "id": "measure_discord_compaction.py",
+      "path": "scripts/measure_discord_compaction.py",
+      "summary": "Discord 记录精简方案 — 只读测量器（不写任何数据，零风险）",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
     },
     {
       "id": "migrate_unpacked_to_git.py",
@@ -663,6 +681,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_compact.py",
+      "path": "projects/news/scripts/discord_compact.py",
+      "summary": "Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },
