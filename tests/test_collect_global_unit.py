@@ -44,6 +44,18 @@ class TestConvertItem(unittest.TestCase):
         out = cg.convert_item({"source": "x", "metadata": "notadict"})
         self.assertNotIn("metadata", out)
 
+    def test_region_subtype_passthrough(self):
+        # 甲方案：采集器标的 region/archive_subtype 必须透传给 archive 端分桶
+        out = cg.convert_item({"source": "steam", "region": "jp", "archive_subtype": "review"})
+        self.assertEqual(out["region"], "jp")
+        self.assertEqual(out["archive_subtype"], "review")
+
+    def test_region_subtype_absent_not_added(self):
+        # 缺省不落字段 → archive_platforms 回落扁平，不带字段的源零破坏
+        out = cg.convert_item({"source": "steam"})
+        self.assertNotIn("region", out)
+        self.assertNotIn("archive_subtype", out)
+
 
 # ── _is_recent / build_summary / load_existing_news ──────────────────────────
 

@@ -21,6 +21,7 @@ from aggregator_base import (
 )
 import news_common  # 脱敏 + 时间归一单一真源（H3/H4；aggregator_base 已设 sys.path）
 from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
+from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）
 
 
 def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10) -> list[dict]:
@@ -635,15 +636,21 @@ def fetch_taptap():
 
 
 def fetch_steam_reviews():
-    """Fetch recent Steam reviews for Morimens (App ID: 3052450).
+    """Fetch Steam reviews across all configured regions（甲方案：双 appid global/jp，归档子类 review）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_reviews_one(str(app_id), region))
+    return items
+
+
+def _fetch_steam_reviews_one(app_id, region):
+    """Fetch recent Steam reviews for one (app_id, region).
 
     使用 cursor=* 分页一直翻到时间窗口外为止。Steam 按 recent 排序，
     一旦看到早于 cutoff 的 review 就可以停。
     """
     import subprocess as _sp
     from urllib.parse import quote
-
-    app_id = 3052450
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
     cursor = '*'
@@ -696,6 +703,8 @@ def fetch_steam_reviews():
                     'title': title,
                     'summary': review_text,
                     'source': 'steam_review',
+                    'region': region,             # 甲方案：global/jp 区服
+                    'archive_subtype': 'review',  # 归档 steam/<区服>/review
                     'time': created.isoformat(),
                     'url': review_url,
                     'engagement': votes_up,
@@ -731,12 +740,19 @@ def fetch_steam_reviews():
 
 
 def fetch_steam_news():
-    """Fetch official Steam news/announcements for Morimens (App ID: 3052450).
+    """Fetch Steam official news across all configured regions（甲方案：双 appid，归档子类 news）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_news_one(str(app_id), region))
+    return items
+
+
+def _fetch_steam_news_one(app_id, region):
+    """Fetch official Steam news/announcements for one (app_id, region).
 
     官方公告本身频率较低，通用 HOURS_LOOKBACK（24h）会经常过滤掉全部内容。
     使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
     """
-    app_id = 3052450
     # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
     url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
     official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
@@ -761,6 +777,8 @@ def fetch_steam_news():
                 'title': f'[Steam{feed_label}] {strip_html_tags(n.get("title", ""))}',
                 'summary': strip_html_tags(n.get('contents', '')),
                 'source': 'official',
+                'region': region,            # 甲方案：global/jp 区服
+                'archive_subtype': 'news',   # 归档 steam/<区服>/news（official 折叠到 steam）
                 'time': created.isoformat(),
                 'url': n.get('url', ''),
                 'engagement': 0,
@@ -777,7 +795,15 @@ def fetch_steam_news():
 
 
 def fetch_steam_discussions(max_pages: int = 3):
-    """Fetch recent Steam Community discussions for Morimens (App ID: 3052450).
+    """Fetch Steam discussions across all configured regions（甲方案：双 appid，归档子类 discussion）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_discussions_one(str(app_id), region, max_pages=max_pages))
+    return items
+
+
+def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
+    """Fetch recent Steam Community discussions for one (app_id, region).
 
     Steam has no public API for discussions, so we scrape the HTML listing page
     (默认按最后回复时间倒序，15 帖/页，?fp=N 翻页)。2026-06 实测 DOM：
@@ -788,7 +814,6 @@ def fetch_steam_discussions(max_pages: int = 3):
     import html as _html
     import re as _re
 
-    app_id = 3052450
     base_url = f'https://steamcommunity.com/app/{app_id}/discussions/0/'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -848,6 +873,8 @@ def fetch_steam_discussions(max_pages: int = 3):
                     'title': f'[Steam论坛] {title}',
                     'summary': summary,
                     'source': 'steam_discussion',
+                    'region': region,                # 甲方案：global/jp 区服
+                    'archive_subtype': 'discussion', # 归档 steam/<区服>/discussion
                     'time': time_str,
                     'url': m_url.group(1),
                     'engagement': replies,

@@ -32,6 +32,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 采集层共享工具（HTTP/HTML-strip/item 单一真源，ARCH-01/02）
+from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）
 
 logging.basicConfig(
     level=logging.INFO,
@@ -303,8 +304,14 @@ def fetch_bilibili():
     return items
 
 
-# 官方 X 账号（英文 / 日文官方运营号）。可用 TWITTER_HANDLES 环境变量覆盖（逗号分隔）。
-TWITTER_OFFICIAL_HANDLES = ["MorimensOfcl", "bokyakuzenya"]
+# 官方 X 账号 → 区服：单一真相源取自 sources.REGION_APPS['twitter']
+# （global = @MorimensOfcl / jp = @bokyakuzenya，AltPlus 日本版独立账号）。
+# 日服账号独立运营 → 拆 jp/ 区服目录（甲方案 region 字段驱动 archive 分桶，不走 platform_region）。
+_TWITTER_REGION_BY_HANDLE = {
+    h.lower(): region for region, h in REGION_APPS.get("twitter", {}).items() if h
+}
+# 默认采集清单从单一真相源派生；可用 TWITTER_HANDLES 环境变量覆盖（逗号分隔）。
+TWITTER_OFFICIAL_HANDLES = [h for h in REGION_APPS.get("twitter", {}).values() if h]
 
 
 def _parse_twitter_time(created_at):
@@ -354,6 +361,8 @@ def fetch_twitter():
     for idx, handle in enumerate(handles):
         if idx > 0:
             time.sleep(1.0)  # 限速：账号间隔 1s
+        # 区服：按 handle 查单一真相源；未登记的自定义 handle → None（archive 回落扁平）
+        region = _TWITTER_REGION_BY_HANDLE.get(handle.lower().lstrip("@"))
         try:
             resp = _get(
                 f"https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}",
@@ -398,7 +407,7 @@ def fetch_twitter():
                     title=text[:100],
                     summary=text,
                     source="twitter",
-                    platform_region="global",
+                    platform_region=region or "global",
                     time_str=iso,
                     url=f"https://x.com/{screen}/status/{tid}" if tid else f"https://x.com/{screen}",
                     engagement=likes + rts * 3 + replies * 2,
@@ -407,6 +416,7 @@ def fetch_twitter():
                     lang=user.get("lang", "") or "",
                     content_type="image" if media_url else "text",
                     media_url=media_url,
+                    region=region,  # 甲方案：global/jp 驱动 archive 分桶；None 则回落扁平
                 ))
                 handle_added += 1
 
@@ -418,7 +428,7 @@ def fetch_twitter():
     return items
 # NOTE: divergent from aggregator_collectors.fetch_youtube — see audit ARCH-01 (behavior differs, not merged).
 def fetch_youtube():
-    """从 YouTube Data API v3 搜索相关视频。"""
+    """YouTube 视频：社区关键词流（global）+ 日本官方频道（jp）（甲方案双源，归档子类 video）。"""
     api_key = os.environ.get("YOUTUBE_API_KEY")
     if not api_key:
         logger.info("YouTube: YOUTUBE_API_KEY not set, skipping")
@@ -426,64 +436,78 @@ def fetch_youtube():
 
     items = []
     published_after = CUTOFF.strftime("%Y-%m-%dT%H:%M:%SZ")
-
+    # global：社区关键词搜索（多频道社区视频流）
     for keyword in ["Morimens", "忘却前夜"]:
-        try:
-            data = _get(
-                "https://www.googleapis.com/youtube/v3/search",
+        items.extend(_fetch_youtube_videos(api_key, published_after, {"q": keyword}, "global"))
+    # jp：日本官方频道（channelId，AltPlus 独立运营）→ 拆 jp 区服
+    jp_channel = REGION_APPS.get("youtube", {}).get("jp")
+    if jp_channel:
+        items.extend(_fetch_youtube_videos(api_key, published_after, {"channelId": jp_channel}, "jp"))
+    return items
+
+
+def _fetch_youtube_videos(api_key, published_after, query_params, region):
+    """单次 search.list（按 q 关键词或 channelId）+ statistics，标 region + archive_subtype=video。"""
+    items = []
+    label = query_params.get("q") or query_params.get("channelId") or "?"
+    try:
+        data = _get(
+            "https://www.googleapis.com/youtube/v3/search",
+            params={
+                "part": "snippet",
+                "type": "video",
+                "order": "date",
+                "publishedAfter": published_after,
+                "maxResults": 15,
+                "key": api_key,
+                **query_params,
+            },
+        ).json()
+
+        video_ids = [item["id"]["videoId"] for item in data.get("items", []) if item.get("id", {}).get("videoId")]
+
+        # 获取视频统计数据
+        stats = {}
+        if video_ids:
+            stats_data = _get(
+                "https://www.googleapis.com/youtube/v3/videos",
                 params={
-                    "part": "snippet",
-                    "q": keyword,
-                    "type": "video",
-                    "order": "date",
-                    "publishedAfter": published_after,
-                    "maxResults": 15,
+                    "part": "statistics",
+                    "id": ",".join(video_ids),
                     "key": api_key,
                 },
             ).json()
+            for v in stats_data.get("items", []):
+                s = v.get("statistics", {})
+                stats[v["id"]] = int(s.get("viewCount", 0)) + int(s.get("likeCount", 0))
 
-            video_ids = [item["id"]["videoId"] for item in data.get("items", []) if item.get("id", {}).get("videoId")]
+        for item in data.get("items", []):
+            vid = item.get("id", {}).get("videoId")
+            if not vid:
+                continue
+            snippet = item.get("snippet", {})
+            engagement = stats.get(vid, 0)
+            items.append(_make_item(
+                title=snippet.get("title", ""),
+                summary=snippet.get("description", ""),
+                source="youtube",
+                platform_region="global",
+                time_str=snippet.get("publishedAt", ""),
+                url=f"https://www.youtube.com/watch?v={vid}",
+                engagement=engagement,
+                is_hot=engagement > 5000,
+                author=snippet.get("channelTitle", ""),
+                lang="",
+                content_type="video",
+                media_url=snippet.get("thumbnails", {}).get("high", {}).get("url", ""),
+                region=region,            # 甲方案：global 社区流 / jp 官方频道
+                archive_subtype="video",  # 归档 youtube/<区服>/video
+            ))
 
-            # 获取视频统计数据
-            stats = {}
-            if video_ids:
-                stats_data = _get(
-                    "https://www.googleapis.com/youtube/v3/videos",
-                    params={
-                        "part": "statistics",
-                        "id": ",".join(video_ids),
-                        "key": api_key,
-                    },
-                ).json()
-                for v in stats_data.get("items", []):
-                    s = v.get("statistics", {})
-                    stats[v["id"]] = int(s.get("viewCount", 0)) + int(s.get("likeCount", 0))
-
-            for item in data.get("items", []):
-                vid = item.get("id", {}).get("videoId")
-                if not vid:
-                    continue
-                snippet = item.get("snippet", {})
-                engagement = stats.get(vid, 0)
-                items.append(_make_item(
-                    title=snippet.get("title", ""),
-                    summary=snippet.get("description", ""),
-                    source="youtube",
-                    platform_region="global",
-                    time_str=snippet.get("publishedAt", ""),
-                    url=f"https://www.youtube.com/watch?v={vid}",
-                    engagement=engagement,
-                    is_hot=engagement > 5000,
-                    author=snippet.get("channelTitle", ""),
-                    lang="",
-                    content_type="video",
-                    media_url=snippet.get("thumbnails", {}).get("high", {}).get("url", ""),
-                ))
-
-            logger.info(f'YouTube "{keyword}": {len(items)} videos')
-        except Exception as e:
-            # H3: 异常文本含完整请求 URL（key=<API key>），脱敏后再进公开日志
-            logger.warning(f'YouTube "{keyword}" failed: {news_common.redact_secrets(e)}')
+        logger.info(f'YouTube [{region}] {label}: {len(items)} videos')
+    except Exception as e:
+        # H3: 异常文本含完整请求 URL（key=<API key>），脱敏后再进公开日志
+        logger.warning(f'YouTube [{region}] {label} failed: {news_common.redact_secrets(e)}')
 
     return items
 
@@ -724,38 +748,54 @@ def fetch_discord():
             logger.warning(f"Discord channel {channel_id} failed: {e}")
 
     return items
+# App Store 评论覆盖地区（global app 多国走 platform_region 字段；甲方案 region 另标区服 global/jp）。
+_APPSTORE_COUNTRIES = [
+    # 中文圈
+    "cn", "tw", "hk",
+    # 英语圈
+    "us", "gb", "ca", "au", "nz", "ie", "sg",
+    # 日韩
+    "jp", "kr",
+    # 东南亚
+    "my", "ph", "th", "id", "vn",
+    # 欧洲（非英）
+    "de", "fr", "es", "it", "ru",
+    # 拉美
+    "br", "mx",
+]
+_APPSTORE_LANG_MAP = {
+    "cn": "zh", "tw": "zh", "hk": "zh",
+    "us": "en", "gb": "en", "ca": "en", "au": "en", "nz": "en", "ie": "en", "sg": "en",
+    "jp": "ja", "kr": "ko",
+    "my": "ms", "ph": "en", "th": "th", "id": "id", "vn": "vi",
+    "de": "de", "fr": "fr", "es": "es", "it": "it", "ru": "ru",
+    "br": "pt", "mx": "es",
+}
+
+
 def fetch_appstore_reviews():
-    """从 App Store 获取近期评论趋势——覆盖 Morimens 主要发行地区。"""
+    """从 App Store 获取近期评论——global 多国 + jp 独立 app（甲方案双 appid，区服 global/jp）。"""
+    # 兼容旧 APPSTORE_APP_ID kill-switch：显式空串 = 整体禁用，回落空
+    if os.environ.get("APPSTORE_APP_ID", "x") == "":
+        return []
+    apps = dict(REGION_APPS.get("appstore", {"global": "6447354150"}))
+    ov = os.environ.get("APPSTORE_APP_ID")  # 非空则覆盖 global appid（测试/灰度 hook）
+    if ov:
+        apps["global"] = ov
     items = []
-    appstore_id = os.environ.get("APPSTORE_APP_ID", "6447354150")
-    if not appstore_id:
-        return items
+    for region, appstore_id in apps.items():
+        if not appstore_id:
+            continue
+        # global app 覆盖全 24 区；jp 独立 app（AltPlus）仅日本商店有评价
+        countries = _APPSTORE_COUNTRIES if region == "global" else ["jp"]
+        items.extend(_fetch_appstore_reviews_one(str(appstore_id), region, countries))
+    return items
 
-    # 主要中文圈 + 英语圈 + 日韩 + 东南亚 + 欧洲 + 拉美 + 大洋洲（共 24 区）
-    COUNTRIES = [
-        # 中文圈
-        "cn", "tw", "hk",
-        # 英语圈
-        "us", "gb", "ca", "au", "nz", "ie", "sg",
-        # 日韩
-        "jp", "kr",
-        # 东南亚
-        "my", "ph", "th", "id", "vn",
-        # 欧洲（非英）
-        "de", "fr", "es", "it", "ru",
-        # 拉美
-        "br", "mx",
-    ]
-    LANG_MAP = {
-        "cn": "zh", "tw": "zh", "hk": "zh",
-        "us": "en", "gb": "en", "ca": "en", "au": "en", "nz": "en", "ie": "en", "sg": "en",
-        "jp": "ja", "kr": "ko",
-        "my": "ms", "ph": "en", "th": "th", "id": "id", "vn": "vi",
-        "de": "de", "fr": "fr", "es": "es", "it": "it", "ru": "ru",
-        "br": "pt", "mx": "es",
-    }
 
-    for country in COUNTRIES:
+def _fetch_appstore_reviews_one(appstore_id, region, countries):
+    """抓取单个 (appstore_id, region) 的多国评论。"""
+    items = []
+    for country in countries:
         try:
             data = _get(
                 f"https://itunes.apple.com/{country}/rss/customerreviews/id={appstore_id}/sortBy=mostRecent/json",
@@ -777,7 +817,8 @@ def fetch_appstore_reviews():
                     engagement=rating,
                     is_hot=False,
                     author=entry.get("author", {}).get("name", {}).get("label", ""),
-                    lang=LANG_MAP.get(country, ""),
+                    lang=_APPSTORE_LANG_MAP.get(country, ""),
+                    region=region,  # 甲方案：global（多国）/ jp（AltPlus 独立 app）→ appstore/<区服>/
                 ))
             logger.info(f"App Store ({country}): {len(entries)} reviews")
         except Exception as e:
@@ -847,37 +888,52 @@ def fetch_pixiv():
 # ─── 第三波新增数据源 ─────────────────────────────────────
 
 
-def fetch_google_play():
-    """从 Google Play Store 获取忘却前夜评论——覆盖主要发行地区（使用 google-play-scraper 库）。"""
-    gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "com.qookkagames.z1.gp.hk")
-    items = []
+# (lang_code, country_code, region_label) — Google Play 同时按 lang+country 隔离评论
+_GP_LOCALES = [
+    # 中文圈
+    ("zh_CN", "cn", "cn"), ("zh_TW", "tw", "tw"), ("zh_HK", "hk", "hk"),
+    # 英语圈
+    ("en", "us", "us"), ("en", "gb", "gb"), ("en", "ca", "ca"),
+    ("en", "au", "au"), ("en", "sg", "sg"), ("en", "ph", "ph"),
+    # 日韩
+    ("ja", "jp", "jp"), ("ko", "kr", "kr"),
+    # 东南亚
+    ("th", "th", "th"), ("id", "id", "id"), ("vi", "vn", "vn"),
+    ("ms", "my", "my"),
+    # 欧洲（非英）
+    ("de", "de", "de"), ("fr", "fr", "fr"), ("es", "es", "es"),
+    ("it", "it", "it"), ("ru", "ru", "ru"),
+    # 拉美
+    ("pt", "br", "br"), ("es", "mx", "mx"),
+]
 
+
+def fetch_google_play():
+    """从 Google Play 获取评论——global 多国 + jp 独立包（甲方案双包，区服 global/jp）。"""
     try:
-        from google_play_scraper import reviews as gp_reviews, Sort as GPSort
+        from google_play_scraper import reviews as gp_reviews, Sort as GPSort  # noqa: F401
     except ImportError:
         logger.warning("Google Play: google-play-scraper not installed, skipping")
-        return items
+        return []
+    packages = dict(REGION_APPS.get("google_play", {"global": "com.qookkagames.z1.gp.hk"}))
+    ov = os.environ.get("GOOGLE_PLAY_PACKAGE")  # 非空覆盖 global 包名（测试/灰度 hook）
+    if ov:
+        packages["global"] = ov
+    items = []
+    for arch_region, gp_package in packages.items():
+        if not gp_package:
+            continue
+        # global 包覆盖全 locale；jp 独立包（AltPlus）仅日本 locale
+        locales = _GP_LOCALES if arch_region == "global" else [("ja", "jp", "jp")]
+        items.extend(_fetch_google_play_one(gp_package, arch_region, locales))
+    return items
 
-    # (lang_code, country_code, region_label) — Google Play 同时按 lang+country 隔离评论
-    LOCALES = [
-        # 中文圈
-        ("zh_CN", "cn", "cn"), ("zh_TW", "tw", "tw"), ("zh_HK", "hk", "hk"),
-        # 英语圈
-        ("en", "us", "us"), ("en", "gb", "gb"), ("en", "ca", "ca"),
-        ("en", "au", "au"), ("en", "sg", "sg"), ("en", "ph", "ph"),
-        # 日韩
-        ("ja", "jp", "jp"), ("ko", "kr", "kr"),
-        # 东南亚
-        ("th", "th", "th"), ("id", "id", "id"), ("vi", "vn", "vn"),
-        ("ms", "my", "my"),
-        # 欧洲（非英）
-        ("de", "de", "de"), ("fr", "fr", "fr"), ("es", "es", "es"),
-        ("it", "it", "it"), ("ru", "ru", "ru"),
-        # 拉美
-        ("pt", "br", "br"), ("es", "mx", "mx"),
-    ]
 
-    for lang_code, country, region in LOCALES:
+def _fetch_google_play_one(gp_package, arch_region, locales):
+    """抓取单个 (gp_package, arch_region) 的多 locale 评论。"""
+    from google_play_scraper import reviews as gp_reviews, Sort as GPSort
+    items = []
+    for lang_code, country, region in locales:
         try:
             result, _ = gp_reviews(
                 gp_package,
@@ -895,6 +951,7 @@ def fetch_google_play():
                     summary=text,
                     source="google_play",
                     platform_region=region,
+                    region=arch_region,  # 甲方案：global（多 locale）/ jp（AltPlus 独立包）→ google_play/<区服>/
                     time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
                     # URL 追加 reviewId 锚点：评论页 URL 仅含 id+hl，同语言数十条评论会共用同一
                     # URL，致 dedup_key（URL 优先）碰撞、每语言仅存活 1 条（丢失 ~98% 评论）。

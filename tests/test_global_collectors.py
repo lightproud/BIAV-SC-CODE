@@ -49,6 +49,24 @@ class TestStripHelpers(unittest.TestCase):
         self.assertEqual(item["source"], "reddit")
         self.assertEqual(item["engagement"], 5)
 
+    def test_make_item_no_layering_fields_by_default(self):
+        # 甲方案：不传 region/archive_subtype 时不落字段（不带字段的源零破坏）
+        item = gc._make_item(
+            title="t", summary="s", source="reddit", platform_region="global",
+            time_str=RECENT, url="https://x",
+        )
+        self.assertNotIn("region", item)
+        self.assertNotIn("archive_subtype", item)
+
+    def test_make_item_layering_fields_written(self):
+        # 甲方案：显式标注则写入，供 archive_platforms 分桶 <平台>/<区服>/<类型>/
+        item = gc._make_item(
+            title="t", summary="s", source="steam", platform_region="jp",
+            time_str=RECENT, url="https://x", region="jp", archive_subtype="review",
+        )
+        self.assertEqual(item["region"], "jp")
+        self.assertEqual(item["archive_subtype"], "review")
+
 
 class TestParseTwitterTime(unittest.TestCase):
     def test_valid(self):
@@ -258,13 +276,13 @@ class TestFetchTwitter(unittest.TestCase):
     def tearDown(self):
         self._patch.stop()
 
-    def _html(self):
+    def _html(self, screen="MorimensOfcl"):
         import json
         payload = {"props": {"pageProps": {"timeline": {"entries": [
             {"full_text": "Official news drop", "id_str": "999",
              "created_at": "Fri Jun 19 10:00:00 +0000 2026",
              "favorite_count": 600, "retweet_count": 10, "reply_count": 5,
-             "user": {"screen_name": "MorimensOfcl", "lang": "en"},
+             "user": {"screen_name": screen, "lang": "en"},
              "entities": {"media": [{"media_url_https": "https://img.jpg"}]}},
         ]}}}}
         inner = json.dumps(payload)
@@ -282,6 +300,28 @@ class TestFetchTwitter(unittest.TestCase):
         self.assertTrue(it["is_hot"])
         self.assertEqual(it["content_type"], "image")
         self.assertEqual(it["media_url"], "https://img.jpg")
+        self.assertEqual(it["region"], "global")          # 甲方案：@MorimensOfcl → global 区服
+        self.assertEqual(it["platform_region"], "global")
+
+    def test_jp_handle_region(self):
+        # 日服官方账号 @bokyakuzenya（AltPlus）→ 拆 jp 区服，修正旧硬编码 global bug
+        with mock.patch.dict(gc.os.environ, {"TWITTER_HANDLES": "bokyakuzenya"}), \
+                mock.patch.object(gc, "_get", return_value=FakeResp(text=self._html("bokyakuzenya"))):
+            items = gc.fetch_twitter()
+        self.assertEqual(len(items), 1)
+        it = items[0]
+        self.assertEqual(it["region"], "jp")
+        self.assertEqual(it["platform_region"], "jp")
+        self.assertEqual(it["url"], "https://x.com/bokyakuzenya/status/999")
+
+    def test_unknown_handle_no_region(self):
+        # 未登记的自定义 handle：不落 region 字段 → archive 回落扁平 twitter/
+        with mock.patch.dict(gc.os.environ, {"TWITTER_HANDLES": "somefan"}), \
+                mock.patch.object(gc, "_get", return_value=FakeResp(text=self._html("somefan"))):
+            items = gc.fetch_twitter()
+        self.assertEqual(len(items), 1)
+        self.assertNotIn("region", items[0])
+        self.assertEqual(items[0]["platform_region"], "global")  # 回落默认
 
     def test_no_next_data_skipped(self):
         with mock.patch.dict(gc.os.environ, {"TWITTER_HANDLES": "MorimensOfcl"}), \
@@ -309,12 +349,15 @@ class TestFetchYoutube(unittest.TestCase):
         with mock.patch.dict(gc.os.environ, {"YOUTUBE_API_KEY": "k"}), \
                 mock.patch.object(gc, "_get", side_effect=fake_get):
             items = gc.fetch_youtube()
-        # 2 个关键词
-        self.assertEqual(len(items), 2)
+        # 甲方案双源：2 关键词（global 社区流）+ 1 日本官方频道（jp）= 3
+        self.assertEqual(len(items), 3)
         it = items[0]
         self.assertEqual(it["engagement"], 6200)
         self.assertTrue(it["is_hot"])
         self.assertEqual(it["content_type"], "video")
+        self.assertEqual(it["region"], "global")                  # 关键词社区流 → global 区服
+        self.assertEqual(it["archive_subtype"], "video")          # 归档 youtube/<区服>/video
+        self.assertTrue(any(i["region"] == "jp" for i in items))  # 日本官方频道 → jp 区服
 
 
 class TestFetchWeibo(unittest.TestCase):
@@ -408,11 +451,13 @@ class TestFetchAppstoreReviews(unittest.TestCase):
         with mock.patch.dict(gc.os.environ, {}, clear=True), \
                 mock.patch.object(gc, "_get", return_value=resp):
             items = gc.fetch_appstore_reviews()
-        # 24 个地区，每个 1 条
-        self.assertEqual(len(items), 24)
+        # 甲方案双 appid：global app 24 区 + jp 独立 app（仅日本店）1 条 = 25
+        self.assertEqual(len(items), 25)
         it = items[0]
         self.assertEqual(it["source"], "appstore")
         self.assertEqual(it["engagement"], 5)
+        self.assertEqual(it["region"], "global")                  # global app 评论标 global 区服
+        self.assertTrue(any(i["region"] == "jp" for i in items))  # jp 独立 app（AltPlus）评论标 jp
 
     def test_empty_id_returns_empty(self):
         with mock.patch.dict(gc.os.environ, {"APPSTORE_APP_ID": ""}, clear=True):

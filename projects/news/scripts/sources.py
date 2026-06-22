@@ -118,9 +118,9 @@ REGION_APPS = {
     'appstore':    {'global': '6447354150',               'jp': '6743462069'},
     'google_play': {'global': 'com.qookkagames.z1.gp.hk', 'jp': 'jp.co.altplus.boukyakuzenya'},
     'twitter':     {'global': 'MorimensOfcl',             'jp': 'bokyakuzenya'},
-    # YouTube 存 handle；YouTube Data API 采集前需 channels.list?forHandle 转 channelId。
-    # jp handle 待精确（频道名「忘却前夜【日本版公式】」，需 API 确认 @handle）。
-    'youtube':     {'global': '@morimensofficial',        'jp': None},
+    # YouTube：global 存 @handle（采集前需 channels.list?forHandle 转 channelId）；
+    # jp 已解析为 channelId（频道「忘却前夜【日本版公式】」，2026-06-22 网络检索 + 频道页标题核验）。
+    'youtube':     {'global': '@morimensofficial',        'jp': 'UCF6iFnr28T4KjmVvPakmU3g'},
 }
 
 # TapTap 国服双 appid → 合并归档至 taptap/cn/，条目内 app_id 字段区分预约 vs 测试服。
@@ -137,3 +137,20 @@ DISCORD_GUILDS = {
 def normalize_source(raw: str) -> str:
     """原始源名归一化为规范源名。"""
     return SOURCE_ALIASES.get(raw, raw)
+
+
+# 归档平台折叠（甲方案 2026-06-21 命名规范）：steam 家族三子类（评价/公告/讨论）共享
+# 归档 platform 段 'steam'，由 item 的 archive_subtype 区分 review/news/discussion，
+# 落 steam/<区服>/<类型>/。仅作用于**数据归档层**（archive_platforms）——**不动**
+# split_output 的 *-latest.json 文件名（输出层与数据层分离，§4.1；保护黑池/前端消费契约）。
+# steam_review 经 SOURCE_ALIASES 已归一为 steam；official=Steam 官方公告（决策项⑦ → steam/global/news）。
+ARCHIVE_PLATFORM_FOLD = {
+    'official':         'steam',  # Steam 官方公告 → steam/<区服>/news
+    'steam_discussion': 'steam',  # Steam 社区讨论 → steam/<区服>/discussion
+}
+
+
+def archive_platform(raw: str) -> str:
+    """归档 platform 段：先 normalize_source，再按 steam 家族折叠（仅归档层用）。"""
+    s = normalize_source(raw)
+    return ARCHIVE_PLATFORM_FOLD.get(s, s)

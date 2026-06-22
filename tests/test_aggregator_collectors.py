@@ -693,6 +693,8 @@ class TestFetchSteamReviews(unittest.TestCase):
         self.assertTrue(item["is_hot"])  # votes_up 15 > 10
         self.assertEqual(item["language"], "schinese")
         self.assertIn("/recommended/3052450", item["url"])
+        self.assertEqual(item["region"], "global")          # 甲方案：首个 appid = global 区服
+        self.assertEqual(item["archive_subtype"], "review")
 
     def test_negative_short_review_no_ellipsis(self):
         review = {"timestamp_created": _recent_ts(), "voted_up": False,
@@ -730,8 +732,24 @@ class TestFetchSteamReviews(unittest.TestCase):
         body = json.dumps({"reviews": [review], "cursor": "*"})  # same as initial cursor
         with mock.patch("subprocess.run", return_value=self._result(stdout=body)), \
                 mock.patch.object(ac.time, "sleep"):
-            out = ac.fetch_steam_reviews()
+            out = ac._fetch_steam_reviews_one("3052450", "global")  # 单区服 helper：避免双 appid 翻倍
         self.assertEqual(len(out), 1)  # one page then stops (cursor unchanged)
+
+    def test_loops_both_regions(self):
+        # 甲方案：wrapper 循环 REGION_APPS['steam'] 双 appid，逐区服打 region 标后聚合
+        calls = []
+
+        def fake_one(app_id, region):
+            calls.append((app_id, region))
+            return [{"source": "steam_review", "region": region, "archive_subtype": "review"}]
+
+        with mock.patch.object(ac, "_fetch_steam_reviews_one", side_effect=fake_one):
+            out = ac.fetch_steam_reviews()
+        regions = {r for _, r in calls}
+        self.assertIn("global", regions)   # 国际版 appid 3052450
+        self.assertIn("jp", regions)        # 日本版 appid 4226130（AltPlus）
+        self.assertEqual(len(out), len(calls))
+        self.assertEqual({it["region"] for it in out}, regions)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -750,13 +768,15 @@ class TestFetchSteamNews(unittest.TestCase):
         }
         resp = FakeResponse(json_data={"appnews": {"newsitems": [news]}})
         with mock.patch.object(ac.requests, "get", return_value=resp):
-            out = ac.fetch_steam_news()
+            out = ac._fetch_steam_news_one("3052450", "global")  # 单区服 helper：避免双 appid 翻倍
         self.assertEqual(len(out), 1)
         item = out[0]
         self.assertEqual(item["title"], "[Steam公告] Patch 1.0")
         self.assertEqual(item["summary"], "notes")
         self.assertEqual(item["source"], "official")
         self.assertTrue(item["is_hot"])
+        self.assertEqual(item["region"], "global")
+        self.assertEqual(item["archive_subtype"], "news")  # official 折叠归档到 steam/<区服>/news
 
     def test_feed_type_labels(self):
         for ft, label in [(0, "公告"), (1, "新闻"), (9, "资讯")]:
@@ -825,6 +845,8 @@ class TestFetchSteamDiscussions(unittest.TestCase):
         self.assertEqual(item["source"], "steam_discussion")
         self.assertEqual(item["author"], "poster")
         self.assertIn("preview body", item["summary"])
+        self.assertEqual(item["region"], "global")
+        self.assertEqual(item["archive_subtype"], "discussion")
 
     def test_reply_count_with_commas(self):
         page = self._page([self._block(replies="1,234")])
