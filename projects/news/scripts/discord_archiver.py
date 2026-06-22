@@ -22,12 +22,16 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 import tarfile
 import time
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
 from collections import defaultdict
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from discord_compact import compact_record  # noqa: E402  紧凑 schema 单一权威定义
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -227,8 +231,10 @@ class DiscordArchiver:
         msg_id = slim.get('id', '')
         if not msg_id or msg_id in ids:
             return False  # already stored — dedup guard
+        # 写盘紧凑 schema（缺字段=默认值契约，见 discord_compact）；内存 slim 保持完整
+        # 供线程队列等内部逻辑读 has_thread/thread_id。
         with open(file_path, 'a', encoding='utf-8') as f:
-            f.write(json.dumps(slim, ensure_ascii=False) + '\n')
+            f.write(json.dumps(compact_record(slim), ensure_ascii=False) + '\n')
         ids.add(msg_id)
         return True
 
