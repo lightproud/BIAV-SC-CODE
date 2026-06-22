@@ -156,6 +156,22 @@ class TestValidateNewsItem(unittest.TestCase):
         self.assertTrue(ok)
         self.assertEqual(cleaned["lang"], "ja")
 
+    def test_region_and_subtype_preserved(self):
+        # 甲方案：AC 栈 item 的 region/archive_subtype 须过白名单存活，供 archive 分桶
+        ok, cleaned = aggregator_base.validate_news_item(
+            _valid_item(region="jp", archive_subtype="review")
+        )
+        self.assertTrue(ok)
+        self.assertEqual(cleaned["region"], "jp")
+        self.assertEqual(cleaned["archive_subtype"], "review")
+
+    def test_region_subtype_absent_not_added(self):
+        # 缺省不落字段 → archive_platforms 回落扁平，不带字段的源零破坏
+        ok, cleaned = aggregator_base.validate_news_item(_valid_item())
+        self.assertTrue(ok)
+        self.assertNotIn("region", cleaned)
+        self.assertNotIn("archive_subtype", cleaned)
+
 
 class TestValidateAllNews(unittest.TestCase):
     def test_filters_invalid_keeps_valid(self):

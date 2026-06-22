@@ -395,11 +395,17 @@ def sign_wbi_params(params, mixin_key):
 
 def make_item(title, summary, source, platform_region, time_str, url,
               engagement=0, is_hot=False, author="", tags=None, lang="",
-              content_type="text", media_url="", time_is_approximate=False):
+              content_type="text", media_url="", time_is_approximate=False,
+              region=None, archive_subtype=None):
     """创建标准化信息条目（与 global_collectors._make_item 等价的单一真源）。
 
     aggregator 栈通过 aggregator_base.validate_news_item 走另一套 item 形状与校验路径，
     字段集不同，故不在此收敛。
+
+    region / archive_subtype 为甲方案归档分层字段（2026-06-21 采集源命名规范）：采集器
+    显式标注时才写入，缺省不落字段 → archive_platforms 回落旧扁平布局，不带字段的源零破坏。
+    region = 区服（global/jp/cn/volunteer…）；archive_subtype = 内容子类（review/news/
+    discussion/post/strategy/video/comments）。归档落点 <平台>[/<区服>][/<类型>]/日期.json。
     """
     item = {
         "title": strip_html(title or "").strip(),
@@ -418,6 +424,10 @@ def make_item(title, summary, source, platform_region, time_str, url,
     }
     if time_is_approximate:
         item["time_is_approximate"] = True
+    if region:
+        item["region"] = region
+    if archive_subtype:
+        item["archive_subtype"] = archive_subtype
     return item
 
 

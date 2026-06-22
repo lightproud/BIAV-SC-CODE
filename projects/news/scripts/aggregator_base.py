@@ -220,6 +220,12 @@ def validate_news_item(item):
         cleaned['content_type'] = item.get('content_type', 'image')
     if item.get('lang'):
         cleaned['lang'] = str(item['lang'])
+    # 甲方案归档分层字段（2026-06-21 采集源命名规范）：AC 栈 item 经此白名单重建，
+    # 须显式放行 region/archive_subtype，否则 archive_platforms 分桶失据（缺省不落，回落扁平）。
+    if item.get('region'):
+        cleaned['region'] = str(item['region'])
+    if item.get('archive_subtype'):
+        cleaned['archive_subtype'] = str(item['archive_subtype'])
 
     # Title must not be empty after sanitization
     if not cleaned['title']:

@@ -183,6 +183,27 @@ class TestArchiveAll(unittest.TestCase):
         self.assertEqual(totals.get("reddit"), 1)
         self.assertNotIn("discord", totals)
 
+    def test_official_folds_to_steam_with_subtype(self):
+        # 甲方案决策项⑦：official 官方公告归档折叠到 steam/<区服>/news（输出层 official-latest 不动）
+        import tempfile
+        news = [
+            {"source": "official", "url": "n1", "time": "2026-04-13T20:00:00+00:00",
+             "region": "jp", "archive_subtype": "news"},
+            {"source": "steam_discussion", "url": "g1", "time": "2026-04-13T20:00:00+00:00",
+             "region": "global", "archive_subtype": "discussion"},
+        ]
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(ap, "ARCHIVE_DIR", Path(d)), \
+                mock.patch.object(ap, "load_news", return_value=news):
+            totals = ap.archive_all(target_date=None, fallback_date="2026-01-01")
+            # 两个 steam 家族源都折叠到 steam 平台段，不再各自成桶
+            self.assertEqual(totals.get("steam"), 2)
+            self.assertNotIn("official", totals)
+            self.assertNotIn("steam_discussion", totals)
+            # 落点按 region/subtype 分层（断言须在 tempdir 清理前，即 with 块内）
+            self.assertTrue((Path(d) / "steam" / "jp" / "news" / "2026-04-14.json").exists())
+            self.assertTrue((Path(d) / "steam" / "global" / "discussion" / "2026-04-14.json").exists())
+
     def test_target_date_filters(self):
         import tempfile
         news = [

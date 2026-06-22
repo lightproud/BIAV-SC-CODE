@@ -85,6 +85,12 @@ def convert_item(item: dict) -> dict:
     # Preserve metadata (comments, play counts, reactions, etc.)
     if item.get('metadata') and isinstance(item['metadata'], dict):
         converted['metadata'] = item['metadata']
+    # 甲方案归档分层字段（2026-06-21 采集源命名规范）：采集器标了才透传，
+    # archive_platforms 据此分桶 <平台>/<区服>/<类型>/；缺省不落字段 → 回落扁平。
+    if item.get('region'):
+        converted['region'] = item['region']
+    if item.get('archive_subtype'):
+        converted['archive_subtype'] = item['archive_subtype']
     return converted
 
 

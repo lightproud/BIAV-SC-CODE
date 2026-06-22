@@ -243,8 +243,8 @@ class TestFetchYoutubeExtra(unittest.TestCase):
         with mock.patch.dict(gc.os.environ, {"YOUTUBE_API_KEY": "k"}), \
                 mock.patch.object(gc, "_get", side_effect=fake_get):
             items = gc.fetch_youtube()
-        # 2 关键词，每个 1 条有效
-        self.assertEqual(len(items), 2)
+        # 甲方案双源：2 关键词（global）+ 1 日本频道（jp），各 1 条有效（无 videoId 的跳过）= 3
+        self.assertEqual(len(items), 3)
 
 
 # ─── weibo extra branches ──────────────────────────────────

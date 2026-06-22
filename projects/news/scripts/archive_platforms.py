@@ -44,7 +44,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sources import ARCHIVE_PLATFORMS, normalize_source
+from sources import ARCHIVE_PLATFORMS, normalize_source, archive_platform
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
@@ -175,7 +175,7 @@ def archive_all(target_date: str | None, fallback_date: str) -> dict[str, int]:
     """
     groups: dict[tuple[str, str | None, str | None, str], list[dict]] = defaultdict(list)
     for raw in load_news():
-        src = normalize_source(raw.get('source', 'unknown'))
+        src = archive_platform(raw.get('source', 'unknown'))  # 甲方案：steam 家族折叠到 steam/ 归档
         if src == 'discord':  # 独立归档器处理
             continue
         region = raw.get('region') or None             # 甲方案：区服字段（global/jp…）
