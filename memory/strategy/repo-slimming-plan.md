@@ -179,3 +179,20 @@ git push --force origin main
 历史压缩治不了「CI/clone 慢」（当前树大）。若真痛点是 CI 慢，更安全的是让重型 CI job 用
 `actions/checkout` 的 `sparse-checkout` 只拉所需子树（不触历史、零 clone 破坏）——这是另案，
 可单独评估。
+
+## 10. Discord 记录紧凑 schema（2026-06-22 已执行，省当前树 41%）
+
+决策见 `memory/decisions.md` 同日条目。这是 §8 迁移（text→git）后的**当前树**体积优化，
+与 §9 历史压缩正交、互补：§10 缩小当前树，§9 缩小 .git 历史。
+
+- **依据**：全量 721 万条实测 91.8% 字节是元数据 + 重复 JSON key，content 正文仅 8.2%；
+  7 个字段近 100% 恒为默认值（测量器 `scripts/measure_discord_compaction.py` 出账）。
+- **方案（变体 A）**：紧凑 schema「缺字段=默认值」契约，删恒定/空值字段，恒留
+  id/channel_id/author_id/author_name/content/timestamp，非空才留可选容器；**保留 channel_id**
+  （不取变体 B 多省 250MB，换 grep 自足、不寄生 channel_index.json）。
+- **落地**：`projects/news/scripts/discord_compact.py`（单一权威：`compact_record`/`expand_record`）；
+  归档器写盘点前向紧凑；存量一次性 `scripts/compact_discord_archive.py`（幂等/原子写/dry-run）
+  重写 16,023 文件。
+- **效果**：discord 工作树 3.4G→2.0G（-1381.5MB / 41.2%）。
+- **验证**：60 文件 16,122 条同源 A/B（vs git HEAD）索引输入逐条无损；全量 pytest 绿。
+- **遗留**：.git 实际瘦身仍待 §9 历史压缩（紧凑前的胖 blob 仍在历史里）；config release 文本冗余另议。
