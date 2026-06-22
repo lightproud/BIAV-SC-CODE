@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-22T20:34:24.505223+00:00",
+  "collected_at": "2026-06-22T22:32:58.974791+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -122,7 +122,7 @@
       "voted_up": true,
       "review": "i was skeptical at first, with how rough around the edges the game felt after playing for only 3 hours back in mid-2025.\nnow that ive returned nearly a year later (thanks Saya), it feels so much nicer to navigate and experience, especially with the better english support.\nwhenever i hop on now, id have to hold myself back from playing for so much as the game is just that good but i wanted to take it slow. makes me want to just get slay the spire or something.\nMurphy is best girl.",
       "timestamp_created": 1782092834,
-      "playtime_forever": 2787
+      "playtime_forever": 2803
     },
     {
       "source": "steam",
@@ -167,22 +167,7 @@
       "voted_up": true,
       "review": "Solid game. Good value for time. Right balance between complexity and simplicity.",
       "timestamp_created": 1782089931,
-      "playtime_forever": 2236
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-21T21:21:54+00:00",
-      "lang": "english",
-      "title": "[正面] really enjoy this game!! the art direction is grea...",
-      "summary": "really enjoy this game!! the art direction is great and really enjoy the slay the spire combat!!",
-      "url": "https://steamcommunity.com/profiles/76561198282708732/recommended/3052450",
-      "author": "76561198282708732",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "really enjoy this game!! the art direction is great and really enjoy the slay the spire combat!!",
-      "timestamp_created": 1782076914,
-      "playtime_forever": 168
+      "playtime_forever": 2332
     }
   ]
 }

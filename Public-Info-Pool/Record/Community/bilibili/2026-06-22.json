@@ -1,8 +1,8 @@
 {
   "date": "2026-06-22",
-  "archived_at": "2026-06-22T20:35:25.283338+00:00",
+  "archived_at": "2026-06-22T22:33:52.694824+00:00",
   "source": "bilibili",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "title": "【忘却前夜】6.22-7.6容灾全流程攻略",
@@ -460,6 +460,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/ff8f504da819dd4f739e8398c12d27c5102775cf.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "神国诞墨一回合启动击杀融灾4-5",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-22T11:12:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1sV7K6zEzh",
+      "engagement": 102,
+      "is_hot": false,
+      "author": "汉娜大小姐desuwa",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 102,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/a3d7ab2a9752784e7bf48bb40f4ffd126b699542.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

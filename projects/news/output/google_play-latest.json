@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-22T20:34:24.505223+00:00",
+  "collected_at": "2026-06-22T22:32:58.974791+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 161,
+  "item_count": 160,
   "items": [
     {
       "source": "google_play",
@@ -123,6 +123,16 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-187708f8-80b9-4c4c-be8b-f284e6ead7d4",
       "author": "雪ん子（雪瑠）",
       "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-20T12:26:39",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Basically… A game made with love. The st",
+      "summary": "Basically… A game made with love. The story is amazing. The characters are amazing. the ART STYLE IS PEAK! The f2p friendlies is above the roof. like 250 FREE PULLS!? So that we could pull for her? what do you mean? I thought it was a moment for you to be greedy? \"You want this amazing character who is also our first collab character? here take our wallet. no need to play urself.\" This is what you guys are basically saying. You know when you love something soo much that you give it to everyone.❤",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-365980de-5119-4438-aae3-727b5fbd5903",
+      "author": "Arif Hussain",
+      "engagement": 1
     },
     {
       "source": "google_play",
@@ -372,16 +382,6 @@
       "summary": "i love this game style and how much this game f2p i love it so much",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2a4d90b9-c550-456f-ab87-2fe0ea0774b7",
       "author": "Emiya Tsuki",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-20T12:26:39",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Basically… A game made with love. The st",
-      "summary": "Basically… A game made with love. The story is amazing. The characters are amazing. the ART STYLE IS PEAK! The f2p friendlies is above the roof. like 250 FREE PULLS!? So that we could pull for her? what do you mean? I thought it was a moment for you to be greedy? \"You want this amazing character who is also our first collab character? here take our wallet. no need to play urself.\" This is what you guys are basically saying. You know when you love something soo much that you give it to everyone.❤",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-365980de-5119-4438-aae3-727b5fbd5903",
-      "author": "Arif Hussain",
       "engagement": 0
     },
     {
@@ -1602,16 +1602,6 @@
       "summary": "超高難易度slay the spire！ 育成システムは原神とかに近いです",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-de2be2d5-902e-483c-8863-11929c6500af",
       "author": "ほよほよ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-23T21:07:12",
-      "lang": "ja",
-      "title": "[Google Play 中评] ★3 カード内容をもう少しシンプルに。",
-      "summary": "カード内容をもう少しシンプルに。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-4b774bd7-7cb5-4269-9a36-a8de1c7ace0b",
-      "author": "竹村周平",
       "engagement": 0
     }
   ]
