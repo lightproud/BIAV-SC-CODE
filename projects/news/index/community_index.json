@@ -3,7 +3,7 @@
   "generated": "2026-06-22",
   "data_layer": "full_archive",
   "source_root": "projects/news/data/",
-  "total_records": 7373466,
+  "total_records": 7374226,
   "platform_count": 17,
   "method": "deterministic lexical aggregate; tokenizer = domain-dict FMM (self-bootstrapped from characters/cards/story; bigram fallback); sentiment = seed-lexicon polarity (coarse, NOT semantic/ML)",
   "signals": "per-platform coverage = 当月有数据天数/总天数（抓整天断档）；timeline vol_index = 本月量/前6月中位数（抓单日量塌缩，如 2026-02/03 天天有数据但量崩 30 倍）。二者互补判采集异常。",
@@ -6553,7 +6553,7 @@
    "last_month": "2026-06"
   },
   "discord": {
-   "total": 7345595,
+   "total": 7346355,
    "by_month": {
     "2023-07": {
      "count": 1,
@@ -12546,13 +12546,13 @@
      ]
     },
     "2026-06": {
-     "count": 473737,
-     "engagement": 32547.0,
+     "count": 474497,
+     "engagement": 32682.0,
      "langs": {
-      "en": 315687,
-      "zh": 71494,
-      "und": 66352,
-      "ja": 13101,
+      "en": 315723,
+      "zh": 71505,
+      "und": 66376,
+      "ja": 13790,
       "ko": 7103
      },
      "sentiment": {
@@ -12560,9 +12560,9 @@
       "neg": 3474
      },
      "coverage": {
-      "active_days": 21,
+      "active_days": 22,
       "month_days": 30,
-      "ratio": 0.7
+      "ratio": 0.73
      },
      "top_terms": [
       [
@@ -12587,7 +12587,7 @@
       ],
       [
        "ng",
-       7734
+       7735
       ],
       [
        "helot",
@@ -12667,7 +12667,7 @@
       ],
       [
        "gif",
-       3751
+       3753
       ],
       [
        "banner",
@@ -12703,27 +12703,27 @@
       ],
       [
        "cry",
-       3403
+       3405
+      ],
+      [
+       "です",
+       3388
       ],
       [
        "when",
        3326
       ],
       [
-       "です",
-       3317
-      ],
-      [
        "dps",
        3270
       ],
       [
-       "know",
-       3185
+       "って",
+       3237
       ],
       [
-       "pollux",
-       3153
+       "know",
+       3185
       ]
      ]
     }
@@ -34239,11 +34239,11 @@
    "vol_index": 1.93
   },
   "2026-06": {
-   "count": 478859,
+   "count": 479619,
    "by_platform": {
     "appstore": 15,
     "bilibili": 264,
-    "discord": 473737,
+    "discord": 474497,
     "google_play": 1,
     "official": 1,
     "pixiv": 45,
@@ -34259,7 +34259,7 @@
     "youtube": 623,
     "youtube_comments": 643
    },
-   "vol_index": 1.02
+   "vol_index": 1.03
   }
  },
  "top_terms_by_month": {
@@ -43092,7 +43092,7 @@
    ],
    [
     "ng",
-    7824
+    7825
    ],
    [
     "helot",
@@ -43192,7 +43192,7 @@
    ],
    [
     "gif",
-    3751
+    3753
    ],
    [
     "morimens",
@@ -43219,16 +43219,16 @@
     3507
    ],
    [
+    "です",
+    3429
+   ],
+   [
     "know",
     3418
    ],
    [
     "cry",
-    3414
-   ],
-   [
-    "new",
-    3412
+    3416
    ]
   ]
  }
