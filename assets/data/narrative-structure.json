@@ -2,9 +2,9 @@
   "_meta": {
     "description": "忘却前夜叙事结构数据库 — 事实圣经核心文件",
     "sources": ["2026-04 制作人采访 (Light + 霁月)", "游戏内公开剧情"],
-    "last_updated": "2026-04-01",
-    "updated_by": "战略中心（Code）",
-    "confidence": "high — 直接来自制作人和主文案的一手陈述"
+    "last_updated": "2026-06-22",
+    "updated_by": "战略中心（Code）；2026-06-22 艾瑞卡会话专有名词解包勘误（守密人裁定）",
+    "confidence": "high — 直接来自制作人和主文案的一手陈述；专有名词层 2026-06-22 经客户端解包字面核验勘误（持光者教会→提灯教会、航海者→蹈海者、星芒篇→星辰篇、Arc of Oblivion→Faded Legacy 等，详见 memory/lessons-learned.md）"
   },
 
   "overall_plan": {
@@ -15,7 +15,8 @@
 
   "arc1": {
     "title_zh": "忘却篇",
-    "title_en": "Arc of Oblivion",
+    "title_en": "Faded Legacy",
+    "title_en_note": "游戏内模式名 + 海外社区通用。旧档案「Arc of Oblivion」为讹误，2026-06-22 解包勘误",
     "planned_chapters": 10,
     "actual_chapters": 8,
     "status": "completed",
@@ -49,7 +50,7 @@
         "note": "被跳过以加速收束"
       },
       {
-        "description": "持光者教会深入展开",
+        "description": "提灯教会深入展开",
         "original_position": "后续篇章",
         "status": "partially_deferred"
       },
@@ -74,9 +75,11 @@
   },
 
   "arc2": {
-    "title_zh": "星芒篇",
-    "title_en": "Astral Reign / When the Stars Are Right",
-    "subtitle_zh": "星辰正位之刻",
+    "title_zh": "星辰篇",
+    "full_title_zh": "星辰正位之刻",
+    "title_en": "Astral Reign",
+    "full_title_en": "Stars Came Right",
+    "naming_note": "篇名简称：星辰篇 / Astral Reign（游戏内模式名 + 海外社区通用）；正式全名：星辰正位之刻 / Stars Came Right（官方 App Store 英文文案）。旧档案「星芒篇」「When the Stars Are Right」均为讹误，2026-06-22 解包 + 制作人裁定勘误。「星辰正位之刻」同时是图鲁狂气爆发技能名（同名呼应，非误植）。",
     "planned_chapters": 7,
     "status": "in_progress",
     "current_progress": "序章-第四章已发布",
