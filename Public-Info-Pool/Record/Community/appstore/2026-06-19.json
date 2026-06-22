@@ -1,8 +1,8 @@
 {
   "date": "2026-06-19",
-  "archived_at": "2026-06-21T13:06:38.157081+00:00",
+  "archived_at": "2026-06-22T12:44:54.718301+00:00",
   "source": "appstore",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "One of the best gacha games",
@@ -29,6 +29,19 @@
       "tags": [],
       "lang": "en",
       "platform_region": "ph"
+    },
+    {
+      "title": "One of the best gacha games",
+      "summary": "Amazing gameplay, dev team, combat system, story, music and everything else. This is one of the most unique and bold gacha games i have ever seen and its amazing. Must play",
+      "source": "appstore",
+      "time": "2026-06-19T04:33:54-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14200928298",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "Huzi_loupe",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }

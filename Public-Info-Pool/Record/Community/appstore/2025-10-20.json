@@ -1,8 +1,8 @@
 {
   "date": "2025-10-20",
-  "archived_at": "2026-04-26T03:27:11.116587+00:00",
+  "archived_at": "2026-06-22T12:44:54.732514+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Wow game",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "Wow game",
+      "summary": "Game very good",
+      "source": "appstore",
+      "time": "2025-10-19T19:07:30-07:00",
+      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews#as-13289162390",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "光英。",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "sg"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-28",
-  "archived_at": "2026-05-28T14:30:49.175968+00:00",
+  "archived_at": "2026-06-22T12:44:54.836527+00:00",
   "source": "google_play",
-  "item_count": 13,
+  "item_count": 16,
   "items": [
     {
       "source": "google_play",
@@ -133,6 +133,45 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it",
       "author": "Aleksandr",
       "engagement": 0
+    },
+    {
+      "title": "[Google Play 好评] ★5 best mobile gacha I have played this yea",
+      "summary": "best mobile gacha I have played this year . the lovecraftian style and story r very good . the dark elements feel very fresh",
+      "source": "google_play",
+      "time": "2026-05-28T03:46:35",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-fe28959f-ce97-4d3b-96df-05c24f677991",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Stereo V5",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Carrément ! Graphismes et mécaniques de",
+      "summary": "Carrément ! Graphismes et mécaniques de jeu géniaux. Je ne me suis pas ennuyé.",
+      "source": "google_play",
+      "time": "2026-05-28T02:38:40",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-6a594ad3-e15a-4abf-ac61-6cdfe29a52f8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Nathasha Agres",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
+    },
+    {
+      "title": "[Google Play 好评] ★5 bgs sih tapi deskripsi skillnya banyak b",
+      "summary": "bgs sih tapi deskripsi skillnya banyak bgt mls baca dan ngingetnya😭😭",
+      "source": "google_play",
+      "time": "2026-05-28T11:28:30",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-8713bb35-b32f-4a8a-b068-4a1b12c2d1c2",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ne",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id"
     }
   ]
 }

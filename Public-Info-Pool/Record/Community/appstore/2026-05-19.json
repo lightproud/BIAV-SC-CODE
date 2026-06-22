@@ -1,8 +1,8 @@
 {
   "date": "2026-05-19",
-  "archived_at": "2026-05-19T13:51:56.924968+00:00",
+  "archived_at": "2026-06-22T12:44:54.733889+00:00",
   "source": "appstore",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "appstore",
@@ -53,6 +53,19 @@
       "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews",
       "author": "SeñorTamago",
       "engagement": 5
+    },
+    {
+      "title": "한국어 지원됩니다",
+      "summary": "너무 재밌어요",
+      "source": "appstore",
+      "time": "2026-05-19T06:26:01-07:00",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14082011947",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "슈비리두비룹바",
+      "tags": [],
+      "lang": "ko",
+      "platform_region": "kr"
     },
     {
       "source": "appstore",

@@ -1,8 +1,8 @@
 {
   "date": "2025-11-29",
-  "archived_at": "2026-04-26T03:27:03.552884+00:00",
+  "archived_at": "2026-06-22T12:44:54.724604+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Amazing Game!",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "Amazing Game!",
+      "summary": "Probably the best combat system of all gacha games.  Every turn feels meaningful, even against the trash mobs.  The boss fights are great and the end of chapter boss fights are unreal.  So many times I have been staring at my screen in a boss fight, thinking I have no chance to survive.  But then I start using everything my team has to survive and just barely pull out a win.  It’s so satisfying when you beat a boss fight in Morimens!",
+      "source": "appstore",
+      "time": "2025-11-29T11:02:24-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13455789023",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "CmdrEnfuego",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }

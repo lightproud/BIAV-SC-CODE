@@ -1,47 +1,38 @@
 {
-  "collected_at": "2026-06-21T13:06:33.839775+00:00",
+  "collected_at": "2026-06-22T12:43:57.038709+00:00",
   "source": "steam_discussion",
-  "item_count": 4,
+  "data_layer": "output",
+  "item_count": 3,
   "items": [
     {
       "source": "steam_discussion",
-      "time": "2026-06-21T09:18:39+00:00",
+      "time": "2026-06-22T03:13:55+00:00",
       "lang": "en",
       "title": "[Steam论坛] Invitation Code",
       "summary": "1D1EGZ10U1",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/603039786130771940/",
       "author": "Znye",
-      "engagement": 195
+      "engagement": 196
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-21T09:19:03+00:00",
+      "time": "2026-06-22T03:14:11+00:00",
       "lang": "en",
       "title": "[Steam论坛] New invite code! 300 silver.",
       "summary": "Code: TEAHFONZM5\nEnter it in the new Mythag Invite / Bind Invitation tab on the left.",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
       "author": "mengluo123",
-      "engagement": 151
+      "engagement": 152
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-21T06:23:04+00:00",
+      "time": "2026-06-22T11:14:06+00:00",
       "lang": "en",
       "title": "[Steam论坛] ick",
       "summary": "install for saya -> \"gpt translations\" -> uninstall",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/565910803680599883/",
       "author": "lightyagaminumberonefan",
-      "engagement": 27
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-20T13:53:25+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] linux login ?",
-      "summary": "como posso fazer o login no linux ?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
-      "author": "manotroll",
-      "engagement": 0
+      "engagement": 28
     }
   ]
 }

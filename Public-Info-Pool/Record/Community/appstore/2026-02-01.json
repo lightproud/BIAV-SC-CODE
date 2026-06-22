@@ -1,8 +1,8 @@
 {
   "date": "2026-02-01",
-  "archived_at": "2026-04-26T03:27:03.543282+00:00",
+  "archived_at": "2026-06-22T12:44:54.723212+00:00",
   "source": "appstore",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "A Wonderful Game",
@@ -33,6 +33,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "My duty",
+      "summary": "It’s my duty to advertise this game",
+      "source": "appstore",
+      "time": "2026-02-01T08:42:33-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13701499645",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "ghikjkho",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }

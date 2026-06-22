@@ -1,8 +1,8 @@
 {
   "date": "2026-05-23",
-  "archived_at": "2026-06-01T15:26:41.621454+00:00",
+  "archived_at": "2026-06-22T12:44:54.771175+00:00",
   "source": "google_play",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "google_play",
@@ -63,6 +63,19 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru",
       "author": "ХУГГИ ВУГГИ",
       "engagement": 1
+    },
+    {
+      "title": "[Google Play 好评] ★5 Just discovered this hidden gem a few da",
+      "summary": "Just discovered this hidden gem a few days ago and having a blast! The characters, story, soundtrack and gameplay are superb. Hope this game will grow more in the future and has many years to come.",
+      "source": "google_play",
+      "time": "2026-05-23T06:45:43",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=de#gp-f6674d69-0ede-4062-8437-ab7cf3a2bbc3",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "klangflucht",
+      "tags": [],
+      "lang": "de",
+      "platform_region": "de"
     },
     {
       "source": "google_play",

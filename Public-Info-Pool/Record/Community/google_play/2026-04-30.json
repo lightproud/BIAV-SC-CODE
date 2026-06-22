@@ -1,8 +1,8 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T15:02:41.861378+00:00",
+  "archived_at": "2026-06-22T12:44:54.752642+00:00",
   "source": "google_play",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "google_play",
@@ -63,6 +63,19 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
       "author": "アキラソリザワ",
       "engagement": 3
+    },
+    {
+      "title": "[Google Play 好评] ★4 game nya bagus, cerita menarik walau ada",
+      "summary": "game nya bagus, cerita menarik walau ada beberapa kesalahan dalam translate nya, mungkin bisa tambahkan rekomendasi build/team gitu jadi gak bingung",
+      "source": "google_play",
+      "time": "2026-04-30T15:02:57",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-0f4b04f6-e062-448c-8e63-51f6433569a8",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "Anya Hanae",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id"
     },
     {
       "source": "google_play",

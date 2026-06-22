@@ -1,8 +1,8 @@
 {
   "date": "2026-06-09",
-  "archived_at": "2026-06-21T13:06:38.159889+00:00",
+  "archived_at": "2026-06-22T12:44:54.739778+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Lingua italiana disponibile",
@@ -10,6 +10,19 @@
       "source": "appstore",
       "time": "2026-06-09T06:19:29-07:00",
       "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "elllmazzzri",
+      "tags": [],
+      "lang": "it",
+      "platform_region": "it"
+    },
+    {
+      "title": "Lingua italiana disponibile",
+      "summary": "Meraviglioso strategico e storia seria",
+      "source": "appstore",
+      "time": "2026-06-09T06:19:29-07:00",
+      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14162173646",
       "engagement": 5,
       "is_hot": false,
       "author": "elllmazzzri",

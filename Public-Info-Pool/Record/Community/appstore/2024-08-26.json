@@ -1,8 +1,8 @@
 {
   "date": "2024-08-26",
-  "archived_at": "2026-04-26T03:27:07.463510+00:00",
+  "archived_at": "2026-06-22T12:44:54.715892+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "好玩😆",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "好玩😆",
+      "summary": "二游里比较吸引我的游戏，删了又下回来了，就是总是闪退",
+      "source": "appstore",
+      "time": "2024-08-26T02:36:49-07:00",
+      "url": "https://apps.apple.com/hk/app/id6447354150?see-all=reviews#as-11654201988",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "好为什么不知道",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "hk"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-02-15",
-  "archived_at": "2026-04-26T03:27:03.542227+00:00",
+  "archived_at": "2026-06-22T12:44:54.763905+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Took my money, then told me my age does not meet requirements. I am only 45 years old",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "Took my money, then told me my age does not meet requirements. I am only 45 years old",
+      "summary": "Played the game for a few days, spent a little money. The game crashed every 10 minutes or so, but was fun enough to keep playing. Today when I logged in, it told me my age does not meet requirements. No option to report or any methods to fix the issue. Game is too buggy to trust. Just don’t spend, or you might regret it.",
+      "source": "appstore",
+      "time": "2026-02-15T11:13:15-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13752909032",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Soysaucio",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }

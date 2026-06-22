@@ -1,8 +1,8 @@
 {
   "date": "2024-07-12",
-  "archived_at": "2026-04-26T03:27:07.467559+00:00",
+  "archived_at": "2026-06-22T12:44:54.716458+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "很好玩",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "很好玩",
+      "summary": "但是闪退太频繁了，只有战斗时候闪退，一次战斗闪退四五次都有的，每次都要退出后台重进，我现在还在玩，完全是热爱啊",
+      "source": "appstore",
+      "time": "2024-07-12T05:41:02-07:00",
+      "url": "https://apps.apple.com/hk/app/id6447354150?see-all=reviews#as-11484394702",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "忘却前夜什么时候不闪退！",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "hk"
     }
   ]
 }

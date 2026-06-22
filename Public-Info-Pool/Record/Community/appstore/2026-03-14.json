@@ -1,8 +1,8 @@
 {
   "date": "2026-03-14",
-  "archived_at": "2026-04-26T03:27:03.533613+00:00",
+  "archived_at": "2026-06-22T12:44:54.763225+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Bug",
@@ -18,6 +18,19 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "Bug",
+      "summary": "I’m really upset I can’t get into my account it says something about age well over 18 I login using my Apple account that has my correct birthdate but it doesn’t let me what the heck is this.",
+      "source": "appstore",
+      "time": "2026-03-13T22:41:43-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13846101169",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "RogueSithPlayer",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
     }
   ]
 }

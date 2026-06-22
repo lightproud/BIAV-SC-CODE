@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-06-21T13:06:38.160134+00:00",
+  "archived_at": "2026-06-22T12:44:54.740226+00:00",
   "source": "appstore",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "appstore",
@@ -43,6 +43,19 @@
       "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
       "author": "4Cheeze",
       "engagement": 5
+    },
+    {
+      "title": "tudo que CZN queria ser",
+      "summary": "devs generosos, collabs permanentes (SAYA por exemplo), recursos e personagens faceis de buildar e comunidade receptiva pra novos jogadores",
+      "source": "appstore",
+      "time": "2026-05-26T10:56:07-07:00",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews#as-14108983384",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "viniciusbadtz",
+      "tags": [],
+      "lang": "pt",
+      "platform_region": "br"
     },
     {
       "source": "appstore",
