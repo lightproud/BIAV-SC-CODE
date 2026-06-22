@@ -1,10 +1,11 @@
 {
   "date": "2026-06-16",
-  "messages": 14089,
+  "messages": 15019,
   "unique_authors": 412,
-  "reactions_total": 1279,
-  "attachments": 906,
+  "reactions_total": 1347,
+  "attachments": 944,
   "channel_activity": {
+    "🔸game-question": 930,
     "🔸general-chat": 6837,
     "🔸綜合討論": 1904,
     "🔸课间休息闲聊": 53,
@@ -83,6 +84,11 @@
     "Just started playing and I think I'm done pulling for now. Best team I can make for story?": 32
   },
   "hourly_activity": {
+    "0": 462,
+    "1": 346,
+    "2": 540,
+    "3": 408,
+    "4": 550,
     "15": 1066,
     "16": 915,
     "17": 755,
@@ -92,11 +98,6 @@
     "21": 797,
     "22": 526,
     "23": 337,
-    "0": 143,
-    "1": 208,
-    "2": 236,
-    "3": 295,
-    "4": 494,
     "5": 442,
     "6": 544,
     "7": 441,
@@ -109,8 +110,8 @@
     "14": 963
   },
   "message_types": {
-    "0": 2909,
-    "19": 1296,
+    "0": 607,
+    "19": 318,
     "20": 5
   },
   "top_reacted_messages": [
