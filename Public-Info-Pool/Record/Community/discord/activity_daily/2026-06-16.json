@@ -1,11 +1,11 @@
 {
   "date": "2026-06-16",
-  "messages": 15019,
+  "messages": 19631,
   "unique_authors": 412,
-  "reactions_total": 1347,
-  "attachments": 944,
+  "reactions_total": 1798,
+  "attachments": 1160,
   "channel_activity": {
-    "🔸game-question": 930,
+    "🔸game-question": 5542,
     "🔸general-chat": 6837,
     "🔸綜合討論": 1904,
     "🔸课间休息闲聊": 53,
@@ -84,35 +84,35 @@
     "Just started playing and I think I'm done pulling for now. Best team I can make for story?": 32
   },
   "hourly_activity": {
+    "4": 727,
+    "5": 753,
+    "6": 830,
+    "7": 828,
+    "8": 440,
+    "9": 770,
+    "10": 881,
+    "11": 929,
+    "12": 722,
+    "13": 1275,
+    "14": 1144,
+    "15": 1426,
+    "16": 1187,
+    "17": 1010,
+    "18": 1170,
+    "19": 590,
+    "20": 989,
+    "21": 1204,
+    "22": 597,
+    "23": 403,
     "0": 462,
     "1": 346,
     "2": 540,
-    "3": 408,
-    "4": 550,
-    "15": 1066,
-    "16": 915,
-    "17": 755,
-    "18": 1039,
-    "19": 575,
-    "20": 696,
-    "21": 797,
-    "22": 526,
-    "23": 337,
-    "5": 442,
-    "6": 544,
-    "7": 441,
-    "8": 382,
-    "9": 590,
-    "10": 706,
-    "11": 659,
-    "12": 474,
-    "13": 806,
-    "14": 963
+    "3": 408
   },
   "message_types": {
-    "0": 607,
-    "19": 318,
-    "20": 5
+    "0": 2937,
+    "19": 1651,
+    "20": 24
   },
   "top_reacted_messages": [
     {
@@ -212,6 +212,14 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1516419875038298143",
+      "channel_id": "1433513650299076780",
+      "content": "WAIT IS THIS THAIS WOD",
+      "author": "fokkorev",
+      "reactions": 8,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1516391593941401631",
       "channel_id": "1131839817982947429",
       "content": "之前是用這套\n我就打了三次\n12t 11t 10t",
@@ -236,6 +244,14 @@
       "channel": "Xu"
     },
     {
+      "id": "1516434967930998916",
+      "channel_id": "1433513650299076780",
+      "content": "Uhm should I hold the monthly dupe character thingy? Proto thingy?",
+      "author": "diapurrr",
+      "reactions": 7,
+      "channel": "🔸game-question"
+    },
+    {
       "id": "1516300419620540537",
       "channel_id": "1131839817982947429",
       "content": "7 天 370 <:Ogier_cheer:1468259351889318049>",
@@ -258,22 +274,6 @@
       "author": "sorhavn",
       "reactions": 7,
       "channel": "Vortice"
-    },
-    {
-      "id": "1516308281520554034",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cassidy_xue",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1516500050342051932",
-      "channel_id": "1131839817982947429",
-      "content": "全部被校貓吸走了",
-      "author": "coleerouo",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }
