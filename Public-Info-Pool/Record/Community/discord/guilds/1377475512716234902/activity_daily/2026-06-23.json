@@ -1,0 +1,35 @@
+{
+  "date": "2026-06-23",
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "なんでも雑談": 10
+  },
+  "hourly_activity": {
+    "0": 6,
+    "1": 4
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1518771827801850010",
+      "channel_id": "1377478664609857647",
+      "content": "まぁ新規タヴィ知らんしな…",
+      "author": "shin7869",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1518784794333282385",
+      "channel_id": "1377478664609857647",
+      "content": "性能もっと盛ってほしかった",
+      "author": "evuansu0726",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    }
+  ]
+}
