@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-23T04:56:06.791408+00:00",
+  "collected_at": "2026-06-23T08:25:16.883303+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 160,
@@ -66,6 +66,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-05-29T11:09:50",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 El juego es muy bueno, me atrapó su atmó",
+      "summary": "El juego es muy bueno, me atrapó su atmósfera y personajes, en cuanto a optimización creo que le falta mejorar un poco ya que a veces hay un rendimiento inconsistente, otra cosa, de las collab que menos esperaba en un gacha era The song of saya, y mira que me sorprendió bastante, actualmente tengo el Hype por las nubes, y en lo personal creo que le queda muy bien a morimens la colaboración, en fin excelente juego.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-878d2ada-a78a-4f18-bf59-d47338fcee03",
+      "author": "Manuel García velazquez",
+      "engagement": 3
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-02T05:20:55",
       "lang": "en",
       "title": "[Google Play 好评] ★4 Started two weeks ago and I really love",
@@ -92,16 +102,6 @@
       "summary": "game peak vcl",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-7af51e74-deda-483a-9528-20a797e3b5f2",
       "author": "Bảo",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-29T11:09:50",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 El juego es muy bueno, me atrapó su atmó",
-      "summary": "El juego es muy bueno, me atrapó su atmósfera y personajes, en cuanto a optimización creo que le falta mejorar un poco ya que a veces hay un rendimiento inconsistente, otra cosa, de las collab que menos esperaba en un gacha era The song of saya, y mira que me sorprendió bastante, actualmente tengo el Hype por las nubes, y en lo personal creo que le queda muy bien a morimens la colaboración, en fin excelente juego.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-878d2ada-a78a-4f18-bf59-d47338fcee03",
-      "author": "Manuel García velazquez",
       "engagement": 2
     },
     {

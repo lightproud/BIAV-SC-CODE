@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-23T04:57:05.287822+00:00",
+  "archived_at": "2026-06-23T08:25:57.991898+00:00",
   "source": "bilibili",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "title": "沙耶之歌 虚渊玄 全一卷 有声小说 科幻 猎奇 黑暗 恋爱",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/7e013d9e83f18cb9c2172a7c6a719ed4885b6828.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】恐怖降临，塔潘1T 3-5",
+      "summary": "└ 金发女人丨型 (0赞): 11\n  └ 簌簌睡大觉 (0赞): 老大发个配装或者结算的界面呗\n  └ 星咏ようむ (0赞): 强…强",
+      "source": "bilibili",
+      "time": "2026-06-23T08:10:28+00:00",
+      "url": "https://www.bilibili.com/video/BV1HCjy6zEYk",
+      "engagement": 127,
+      "is_hot": true,
+      "author": "金发女人丨型",
+      "tags": [
+        "172"
+      ],
+      "metadata": {
+        "play": 118,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "http://i2.hdslb.com/bfs/archive/94395016fc2a2c8d133b17fc7b0278a2e576998f.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

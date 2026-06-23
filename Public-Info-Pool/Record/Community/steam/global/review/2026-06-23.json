@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-23T04:57:05.378825+00:00",
+  "archived_at": "2026-06-23T08:25:58.065141+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] <3",
@@ -94,6 +94,30 @@
         "playtime_forever": 4766,
         "votes_up": 0,
         "timestamp_created": 1782183827
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Love every detail. Beautiful art, wonderful story,...",
+      "summary": "Love every detail. Beautiful art, wonderful story, enjoyable combat, tons of epic free stuff.",
+      "source": "steam_review",
+      "time": "2026-06-23T04:46:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198033110662/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198033110662",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 639,
+        "votes_up": 0,
+        "timestamp_created": 1782189993
       },
       "region": "global",
       "archive_subtype": "review",

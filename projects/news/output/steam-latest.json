@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-23T04:56:06.791408+00:00",
+  "collected_at": "2026-06-23T08:25:16.883303+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,21 @@
       "review": "Игра классная. Единственное, что огорчает - перевод на русский. Там женские персонажи часто говорят о себе в мужском лице, есть проблемы с падежами и тд. А, ну и еще есть лорные моменты, о которых часто говорят персонажи, и они в предложениях смотрятся иногда прям инородно из-за корявого перевода.\n\nЕсли читать, понимая, что перевод по большей части машинный, то в голове можно перестраивать предложения и понимать, что вообще имеется в виду.",
       "timestamp_created": 1782120175,
       "playtime_forever": 832
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-23T04:46:33+00:00",
+      "lang": "english",
+      "title": "[正面] Love every detail. Beautiful art, wonderful story,...",
+      "summary": "Love every detail. Beautiful art, wonderful story, enjoyable combat, tons of epic free stuff.",
+      "url": "https://steamcommunity.com/profiles/76561198033110662/recommended/3052450",
+      "author": "76561198033110662",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Love every detail. Beautiful art, wonderful story, enjoyable combat, tons of epic free stuff.",
+      "timestamp_created": 1782189993,
+      "playtime_forever": 639
     },
     {
       "source": "steam",
@@ -62,7 +77,7 @@
       "voted_up": true,
       "review": "Join our cause as we continue our dire effort to beat up children",
       "timestamp_created": 1782163210,
-      "playtime_forever": 3684
+      "playtime_forever": 3821
     },
     {
       "source": "steam",
@@ -77,7 +92,7 @@
       "voted_up": true,
       "review": "<3",
       "timestamp_created": 1782157196,
-      "playtime_forever": 988
+      "playtime_forever": 1048
     },
     {
       "source": "steam",

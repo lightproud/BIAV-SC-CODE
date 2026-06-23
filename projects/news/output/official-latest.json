@@ -1,9 +1,19 @@
 {
-  "collected_at": "2026-06-23T04:56:06.791408+00:00",
+  "collected_at": "2026-06-23T08:25:16.883303+00:00",
   "source": "official",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
+    {
+      "source": "official",
+      "time": "2026-06-23T08:00:55+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] V2.5.2 What the Abyss Keeps",
+      "summary": "The abyss came for him before catastrophe could. He was never going to have another choice.The ancient hunting whistle rang out down the coastline. He had nowhere left to run—and only then, he could at last keep them all. Every last one. Forever.Never again will anything slip beyond his control.Never again will anyone be torn from his side.",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1835871199314869",
+      "author": "lqx02483534",
+      "engagement": 0
+    },
     {
       "source": "official",
       "time": "2026-06-22T08:07:21+00:00",
