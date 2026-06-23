@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-22T22:33:52.696814+00:00",
+  "archived_at": "2026-06-23T00:05:50.483174+00:00",
   "source": "youtube",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "title": "[Vert] Eepy Morimens and Vampire Crawlers Gampleya",
@@ -102,6 +102,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/5KRuF9ELsjQ/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Directo relax Morimens | Armando la tier list definitiva de Husbandos y Waifus",
+      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "source": "youtube",
+      "time": "2026-06-22T23:22:01Z",
+      "url": "https://www.youtube.com/watch?v=l5aXYpow4vM",
+      "engagement": 15,
+      "is_hot": false,
+      "author": "OcteKG",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/l5aXYpow4vM/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

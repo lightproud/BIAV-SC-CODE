@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-22T22:33:52.781126+00:00",
+  "archived_at": "2026-06-23T00:05:50.571276+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] <3",
@@ -22,6 +22,54 @@
         "playtime_forever": 988,
         "votes_up": 0,
         "timestamp_created": 1782157196
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] je n'ai pas lu le bouquin d'o{u ce trouve être tir...",
+      "summary": "je n'ai pas lu le bouquin d'o{u ce trouve être tiré le jeux, mais selon mes recherche : le jeux s'en inspire vraiment bien... en tout cas moi, j'ai pas mal accroché ! le style graph est dark mais propre a voir.\nle gameplay sort un peut de l'ordinaire avec pas mal d'options ! .... pour une sorte de CCG.. dont je raffole pas forcément : ça a été une belle surprise ! .\n\nOuverture & Proposition de collaboration :\n\nPassionné de 36 ans avec un bagage de 25 ans de gaming intensif, je dispose actuellement de 100 % de mon temps libre pour m'investir. Je recherche activement à mettre mes compétences au service de studios en tant que Game Design Consultant ou Bêta-testeur. Mon objectif n'est pas d'obtenir une place officielle immédiatement, mais de faire mes preuves sur le terrain par la pertinence de mes analyses.\n\nJ'ai l'habitude de m'impliquer profondément dans les phases de développement. À titre d'exemple, j'ai activement contribué à enrichir l'univers de Timberborn en concevant et documentant des mécaniques précises (concepts des tubes de transport, des tyroliennes, de la salle de danse, ou encore la logique de proximité du travail des castors). Ces propositions structurées ont directement été intégrées au jeu final.\n\nMa vie entière est dédiée aux jeux vidéo. J'ai exploré tous les genres, mais mes grandes spécialités restent le RPG sous toutes ses formes (tactique au tour par tour, MMO, action) et les city-builders. Ma force réside dans l'analyse de la profondeur des systèmes, la création de builds uniques et les mécaniques de personnalisation (qu'il s'agisse de magie ou de modulations de gameplay/conduite).\n\nSi vous cherchez un profil ultra-engagé, rigoureux et expert pour pousser vos prochains playtests ou équilibrages dans leurs retranchements, je serais ravi d'échanger avec vous !\n\nContact : [Tweekdeltaw@protonmail.com]\n\nDiscord : Tweekdeltaw",
+      "source": "steam_review",
+      "time": "2026-06-22T21:58:09+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198396127454/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198396127454",
+      "tags": [
+        "french"
+      ],
+      "language": "french",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 45,
+        "votes_up": 0,
+        "timestamp_created": 1782165489
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Join our cause as we continue our dire effort to b...",
+      "summary": "Join our cause as we continue our dire effort to beat up children",
+      "source": "steam_review",
+      "time": "2026-06-22T21:20:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199233807590/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199233807590",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3639,
+        "votes_up": 0,
+        "timestamp_created": 1782163210
       },
       "region": "global",
       "archive_subtype": "review",
