@@ -1,9 +1,24 @@
 {
-  "collected_at": "2026-06-23T16:26:40.518443+00:00",
+  "collected_at": "2026-06-23T19:09:09.677572+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-23T18:24:11+00:00",
+      "lang": "russian",
+      "title": "[正面] Норм",
+      "summary": "Норм",
+      "url": "https://steamcommunity.com/profiles/76561199134274910/recommended/3052450",
+      "author": "76561199134274910",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Норм",
+      "timestamp_created": 1782239051,
+      "playtime_forever": 60
+    },
     {
       "source": "steam",
       "time": "2026-06-23T14:05:53+00:00",
@@ -122,7 +137,7 @@
       "voted_up": true,
       "review": "Join our cause as we continue our dire effort to beat up children",
       "timestamp_created": 1782163210,
-      "playtime_forever": 3821
+      "playtime_forever": 3942
     },
     {
       "source": "steam",
@@ -137,7 +152,7 @@
       "voted_up": true,
       "review": "<3",
       "timestamp_created": 1782157196,
-      "playtime_forever": 1552
+      "playtime_forever": 1700
     }
   ]
 }
