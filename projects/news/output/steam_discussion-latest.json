@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-23T08:25:16.883303+00:00",
+  "collected_at": "2026-06-23T11:54:10.731257+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
     {
       "source": "steam_discussion",
@@ -13,16 +13,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
       "author": "mengluo123",
       "engagement": 153
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-22T11:14:06+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] ick",
-      "summary": "install for saya -> \"gpt translations\" -> uninstall",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/565910803680599883/",
-      "author": "lightyagaminumberonefan",
-      "engagement": 28
     },
     {
       "source": "steam_discussion",

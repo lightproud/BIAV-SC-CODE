@@ -1,8 +1,8 @@
 {
   "date": "2026-06-22",
-  "archived_at": "2026-06-23T04:57:05.286258+00:00",
+  "archived_at": "2026-06-23T11:55:02.872252+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 27,
   "items": [
     {
       "title": "【忘却前夜】6.22-7.6容灾全流程攻略",
@@ -299,6 +299,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/7ad6bbc008011bee819a71d722641dc4e2678765.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "轮回敢死队再添一员",
+      "summary": "-\n  └ 夜无叶苍白 (4赞): 环娜太痛苦了，明明可以拯救一切，却唯独救不出属于自己的守密人[大哭]\n  └ 无人陪我书半生 (2赞): 本来是被鸟弟吸引入坑的 但入坑时他卡池已经过了[笑哭]挺好有盼头了",
+      "source": "bilibili",
+      "time": "2026-06-22T12:16:41+00:00",
+      "url": "https://www.bilibili.com/video/BV12a7N6qELs",
+      "engagement": 204,
+      "is_hot": false,
+      "author": "无人陪我书半生",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 202,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/eac5e7f7935488ec648c03d7ff3f89a818c66cb4.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
