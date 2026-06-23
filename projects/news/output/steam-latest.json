@@ -1,9 +1,24 @@
 {
-  "collected_at": "2026-06-23T11:54:10.731257+00:00",
+  "collected_at": "2026-06-23T16:26:40.518443+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-23T14:05:53+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩爱玩，剧情美术夯，玩法大杯中下",
+      "summary": "好玩爱玩，剧情美术夯，玩法大杯中下",
+      "url": "https://steamcommunity.com/profiles/76561198026670322/recommended/3052450",
+      "author": "76561198026670322",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩爱玩，剧情美术夯，玩法大杯中下",
+      "timestamp_created": 1782223553,
+      "playtime_forever": 2360
+    },
     {
       "source": "steam",
       "time": "2026-06-23T10:35:39+00:00",
@@ -122,52 +137,7 @@
       "voted_up": true,
       "review": "<3",
       "timestamp_created": 1782157196,
-      "playtime_forever": 1228
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-22T15:57:39+00:00",
-      "lang": "schinese",
-      "title": "[负面] 垃圾游戏，一直进不去，开了加速器也没用",
-      "summary": "垃圾游戏，一直进不去，开了加速器也没用",
-      "url": "https://steamcommunity.com/profiles/76561198980647855/recommended/3052450",
-      "author": "76561198980647855",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "垃圾游戏，一直进不去，开了加速器也没用",
-      "timestamp_created": 1782143859,
-      "playtime_forever": 14
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-22T14:08:26+00:00",
-      "lang": "french",
-      "title": "[正面] Réticent dans un premier temps à cause de la tradu...",
-      "summary": "Réticent dans un premier temps à cause de la traduction, j'ai voulu laisser tomber, car il y a beaucoup de choses dans les menus, et cela n'aide pas.\r\nJ'ai aussi eu peur de passer à coté des mécaniques du jeu.\r\nMais finalement.. la pâte graphique et l'ambiance qui se dégagent immédiatement du jeu, m'ont poussé à persévérer.\r\nOn assimile finalement rapidement les mécaniques, et l'on comprends relativement bien l'histoire.\r\nEt quelle histoire !\r\nJe me laisse totalement embarquer, c'est riche, sombre et beau à la fois.\r\nCela ferai un excellent manga !\r\nles dessins sont magnifique, les musiques aussi.\r\nLe tout forme un style vraiment unique, et ce jeu est une vrai pépite.\r\nEssayez le...",
-      "url": "https://steamcommunity.com/profiles/76561198052408027/recommended/3052450",
-      "author": "76561198052408027",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": true,
-      "review": "Réticent dans un premier temps à cause de la traduction, j'ai voulu laisser tomber, car il y a beaucoup de choses dans les menus, et cela n'aide pas.\r\nJ'ai aussi eu peur de passer à coté des mécaniques du jeu.\r\nMais finalement.. la pâte graphique et l'ambiance qui se dégagent immédiatement du jeu, m'ont poussé à persévérer.\r\nOn assimile finalement rapidement les mécaniques, et l'on comprends relativement bien l'histoire.\r\nEt quelle histoire !\r\nJe me laisse totalement embarquer, c'est riche, sombre et beau à la fois.\r\nCela ferai un excellent manga !\r\nles dessins sont magnifique, les musiques aussi.\r\nLe tout forme un style vraiment unique, et ce jeu est une vrai pépite.\r\nEssayez le...",
-      "timestamp_created": 1782137306,
-      "playtime_forever": 889
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-22T12:48:00+00:00",
-      "lang": "koreana",
-      "title": "[正面] 코즈믹 호러와 크툴루를 좋아한다면 한 번쯤 해볼 만한 게임입니다. 남캐여캐 모두 개성 있게...",
-      "summary": "코즈믹 호러와 크툴루를 좋아한다면 한 번쯤 해볼 만한 게임입니다. 남캐여캐 모두 개성 있게 잘 디자인되어 있고 스토리도 매력적입니다. 밸런스도 잘 잡혀 있는 편이라 특정 캐릭터에만 의존하지 않고 다양한 캐릭터를 골고루 활용할 수 있었습니다.\n\n단점으로 지적되던 챗지피티 번역도 손번역으로 점차 개선되고 있어 만족스럽습니다. 평소에도 보상을 넉넉하게 주는 편인데 2.5주년이라 보상이 더 푸짐하고 콜라보 캐릭터 명함도 무료로 지급합니다.\n\n원래 턴제 게임은 몇 번 하다가 금방 그만두는 편인데 이 게임은 슬레이 더 스파이어식 플레이 방식을 차용해서 덱을 짜고 전투를 굴리는 재미가 상당합니다.\n\nPC와 모바일 모두 지원해서 언제든 가볍게 즐길 수 있는 점도 좋았습니다.",
-      "url": "https://steamcommunity.com/profiles/76561198999474902/recommended/3052450",
-      "author": "76561198999474902",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "코즈믹 호러와 크툴루를 좋아한다면 한 번쯤 해볼 만한 게임입니다. 남캐여캐 모두 개성 있게 잘 디자인되어 있고 스토리도 매력적입니다. 밸런스도 잘 잡혀 있는 편이라 특정 캐릭터에만 의존하지 않고 다양한 캐릭터를 골고루 활용할 수 있었습니다.\n\n단점으로 지적되던 챗지피티 번역도 손번역으로 점차 개선되고 있어 만족스럽습니다. 평소에도 보상을 넉넉하게 주는 편인데 2.5주년이라 보상이 더 푸짐하고 콜라보 캐릭터 명함도 무료로 지급합니다.\n\n원래 턴제 게임은 몇 번 하다가 금방 그만두는 편인데 이 게임은 슬레이 더 스파이어식 플레이 방식을 차용해서 덱을 짜고 전투를 굴리는 재미가 상당합니다.\n\nPC와 모바일 모두 지원해서 언제든 가볍게 즐길 수 있는 점도 좋았습니다.",
-      "timestamp_created": 1782132480,
-      "playtime_forever": 230
+      "playtime_forever": 1552
     }
   ]
 }
