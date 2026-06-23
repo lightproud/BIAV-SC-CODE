@@ -1,11 +1,11 @@
 {
   "date": "2026-06-23",
-  "messages": 706,
+  "messages": 714,
   "unique_authors": 25,
-  "reactions_total": 174,
+  "reactions_total": 175,
   "attachments": 27,
   "channel_activity": {
-    "なんでも雑談": 632,
+    "なんでも雑談": 640,
     "🔰初心者質問": 48,
     "ニムフィーアの毒パ研究日誌": 1,
     "誰でもOKグロ版野次馬スレ": 12,
@@ -14,6 +14,8 @@
     "招待コード共有会": 1
   },
   "hourly_activity": {
+    "21": 5,
+    "22": 3,
     "17": 3,
     "18": 16,
     "19": 1,
@@ -36,8 +38,8 @@
     "1": 4
   },
   "message_types": {
-    "0": 19,
-    "19": 1
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
     {
