@@ -1,10 +1,11 @@
 {
   "date": "2026-06-21",
-  "messages": 6832,
+  "messages": 8249,
   "unique_authors": 237,
-  "reactions_total": 1272,
-  "attachments": 373,
+  "reactions_total": 1314,
+  "attachments": 397,
   "channel_activity": {
+    "🔸general-chat": 1417,
     "🔸綜合討論": 2533,
     "🔸欢乐梗图": 6,
     "🔸chaîne-française": 49,
@@ -71,18 +72,18 @@
     "【Newcomer Help】Forum Introduction": 1
   },
   "hourly_activity": {
+    "0": 413,
+    "1": 310,
+    "2": 328,
+    "3": 719,
+    "4": 356,
+    "5": 314,
+    "6": 873,
     "19": 89,
     "20": 185,
     "23": 135,
     "21": 25,
     "22": 19,
-    "0": 83,
-    "1": 191,
-    "2": 167,
-    "3": 414,
-    "4": 323,
-    "5": 271,
-    "6": 447,
     "7": 437,
     "8": 789,
     "9": 669,
@@ -97,8 +98,9 @@
     "18": 127
   },
   "message_types": {
-    "0": 329,
-    "19": 98
+    "0": 1075,
+    "19": 339,
+    "20": 3
   },
   "top_reacted_messages": [
     {
