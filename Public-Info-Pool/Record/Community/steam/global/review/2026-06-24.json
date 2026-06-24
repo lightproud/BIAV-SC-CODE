@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T10:19:52.368211+00:00",
+  "archived_at": "2026-06-24T13:17:56.270540+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] Норм",
@@ -166,6 +166,30 @@
         "playtime_forever": 419,
         "votes_up": 0,
         "timestamp_created": 1782294991
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 太好玩了，这个游戏抽卡资源丰富、角色升级也比较容易，没有那么多的道具，而且可以自动堆叠，虽然人物没什...",
+      "summary": "太好玩了，这个游戏抽卡资源丰富、角色升级也比较容易，没有那么多的道具，而且可以自动堆叠，虽然人物没什么动态的动作，剧情也没有语音，但是我不是剧情党，而且可以跳过，我最喜欢的是这个战斗，很上瘾，卡牌技能就是没有用很晦涩难懂的术语，我觉得挺明晰的，敌人受到攻击的效果也很好，反正我玩的就这几个方面，我觉得挺好的。比我之前玩的那些同类型游戏我觉得是比较舒服的",
+      "source": "steam_review",
+      "time": "2026-06-24T12:03:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199688248012/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199688248012",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 310,
+        "votes_up": 0,
+        "timestamp_created": 1782302597
       },
       "region": "global",
       "archive_subtype": "review",
