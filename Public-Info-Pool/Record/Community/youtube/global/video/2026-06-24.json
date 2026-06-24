@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-23T23:06:25.255326+00:00",
+  "archived_at": "2026-06-24T02:40:55.506735+00:00",
   "source": "youtube",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "title": "忘却前夜　これを見たら融災をやれ",
@@ -68,6 +68,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/XEDop0DeRsA/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens Day 2 of Pushing Ultra F2P",
+      "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
+      "source": "youtube",
+      "time": "2026-06-23T23:36:03Z",
+      "url": "https://www.youtube.com/watch?v=mkJa9WE-bDw",
+      "engagement": 12,
+      "is_hot": false,
+      "author": "FluffeyPanda's World",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/mkJa9WE-bDw/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-23T23:06:25.347360+00:00",
+  "archived_at": "2026-06-24T02:40:55.591140+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] Норм",
@@ -22,6 +22,54 @@
         "playtime_forever": 60,
         "votes_up": 0,
         "timestamp_created": 1782239051
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] cant play, keeps crashing",
+      "summary": "cant play, keeps crashing",
+      "source": "steam_review",
+      "time": "2026-06-24T01:25:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199139375831/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199139375831",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 2027,
+        "votes_up": 0,
+        "timestamp_created": 1782264335
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] jogaço da poha",
+      "summary": "jogaço da poha",
+      "source": "steam_review",
+      "time": "2026-06-23T22:55:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198122448347/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198122448347",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": null,
+        "votes_up": 0,
+        "timestamp_created": 1782255317
       },
       "region": "global",
       "archive_subtype": "review",

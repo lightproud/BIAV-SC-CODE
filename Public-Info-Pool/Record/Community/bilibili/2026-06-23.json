@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-23T23:06:25.253979+00:00",
+  "archived_at": "2026-06-24T02:40:55.505354+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 30,
   "items": [
     {
       "title": "沙耶之歌 虚渊玄 全一卷 有声小说 科幻 猎奇 黑暗 恋爱",
@@ -143,6 +143,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "沙船 1-5",
+      "summary": "└ 静寂夏至 (2赞): 我了水船\n  └ 莲凛祢凛绪鞠亚鞠奈 (1赞): 才知道静海可以用水母被动起盾[笑哭]\n  └ 黑白-看客 (1赞): [惊讶]",
+      "source": "bilibili",
+      "time": "2026-06-23T10:06:37+00:00",
+      "url": "https://www.bilibili.com/video/BV1joj26BENY",
+      "engagement": 138,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 130,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/43430ec8a909210407091fa128a7fcd6135f3f2b.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "【忘却前夜】恐怖降临，塔潘1T 3-5",
       "summary": "└ 金发女人丨型 (0赞): 11\n  └ 簌簌睡大觉 (0赞): 老大发个配装或者结算的界面呗\n  └ 星咏ようむ (0赞): 强…强",
       "source": "bilibili",
@@ -184,6 +207,52 @@
         "danmaku": 1
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/5c57c15e8d351121c75f2aba2f4374bd3575c9bd.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】融灾1-5徐轻松拿下4000k血粪怪",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-23T13:15:40+00:00",
+      "url": "https://www.bilibili.com/video/BV1qcjS6CEys",
+      "engagement": 124,
+      "is_hot": false,
+      "author": "苍崎橙子灬",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 124,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/3b942ac0b7ca344451b663b5457c28ffa5294b88.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "双鸟 2-5",
+      "summary": "1234567\n  └ 上好佳薯片丶 (1赞): 老大好强喵[打call]\n  └ iq2233 (1赞): 强强",
+      "source": "bilibili",
+      "time": "2026-06-23T11:44:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1Wrj26UE2r",
+      "engagement": 118,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 115,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/80ca93c7faaec9b39184e37f086f6c2cefe49a6b.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
