@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T20:33:37.837987+00:00",
+  "archived_at": "2026-06-24T22:14:11.052156+00:00",
   "source": "youtube",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "【忘却前夜】OST：継承されし探求の道丨探求の道",
@@ -22,6 +22,23 @@
       "archive_subtype": "video"
     },
     {
+      "title": "【忘却前夜】OST：継承されし探求の道丨深き夢への潜行",
+      "summary": "忘却前夜Original Sound Track『継承されし探求の道』 「深き夢への潜行」 夢は現実を映す器であり、かの存在の長い夢はミサゴ ...",
+      "source": "youtube",
+      "time": "2026-06-24T08:00:06Z",
+      "url": "https://www.youtube.com/watch?v=I5lECv_SQbg",
+      "engagement": 55,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/I5lECv_SQbg/hqdefault.jpg",
+      "content_type": "video",
+      "region": "jp",
+      "archive_subtype": "video"
+    },
+    {
       "title": "【忘却前夜】OST：継承されし探求の道丨束の間の休息",
       "summary": "忘却前夜Original Sound Track『継承されし探求の道』 「束の間の休息」 商品は豊富に取り揃えております。 ぜひお買い求め ...",
       "source": "youtube",
@@ -34,6 +51,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/MLhK449GjWc/hqdefault.jpg",
+      "content_type": "video",
+      "region": "jp",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "【忘却前夜】OST：継承されし探求の道丨新星は昇る",
+      "summary": "忘却前夜Original Sound Track『継承されし探求の道』 「新星は昇る」 夜明け間近の空に生まれた新たな星が、苦難の末に掴んだ ...",
+      "source": "youtube",
+      "time": "2026-06-24T08:00:32Z",
+      "url": "https://www.youtube.com/watch?v=fst1j44M4Nk",
+      "engagement": 43,
+      "is_hot": false,
+      "author": "忘却前夜【日本版公式】",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/fst1j44M4Nk/hqdefault.jpg",
       "content_type": "video",
       "region": "jp",
       "archive_subtype": "video"
