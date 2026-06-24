@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T16:15:21.055398+00:00",
+  "archived_at": "2026-06-24T18:32:59.063957+00:00",
   "source": "bilibili",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "title": "【忘却前夜】我去，金人小卖部开门了嗷",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/b2c4cbff3359fa9cdc8c78703f6edd2f670a58e4.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "在沙滩上站半个小时，你就能得到……",
+      "summary": "可是沙耶真的很可爱啊！\n  └ 孤心沙龙_海薇玛夫人 (2赞): 可是沙耶真的很可爱啊\n  └ 尘岷 (1赞): [局长的教育手册静态表情包_爱你]\n  └ Nautilus114 (0赞): 不要哭了沙耶",
+      "source": "bilibili",
+      "time": "2026-06-24T13:54:48+00:00",
+      "url": "https://www.bilibili.com/video/BV1wsjo63EWW",
+      "engagement": 381,
+      "is_hot": true,
+      "author": "孤心沙龙_海薇玛夫人",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 375,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/3d2ef2af5001f01c088c10bbe320c6cf408d59cc.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -184,6 +207,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/9bd811af3c374c62c1b66e0b53c32f88f39a7db6.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】下载安装｜剧情党必藏，闪退黑屏根治方案，多端存档互通教程（亝另一另七并哉袄娃纳艾忛） (1)",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-24T13:32:25+00:00",
+      "url": "https://www.bilibili.com/video/BV12ojo6EE1Q",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "梦绘漫途",
+      "tags": [
+        "动漫杂谈"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d2257b005a01b740c2ae911372c6a77390c21cbf.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

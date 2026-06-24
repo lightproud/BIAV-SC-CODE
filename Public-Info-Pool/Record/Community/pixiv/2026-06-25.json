@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-24T16:15:21.154934+00:00",
+  "archived_at": "2026-06-24T18:32:59.149985+00:00",
   "source": "pixiv",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "無題",
@@ -43,6 +43,25 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/25/00/11/51/146415569_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "阿拉克涅",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-25T02:35:55+09:00",
+      "url": "https://www.pixiv.net/artworks/146419917",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "wjcjskwqp",
+      "tags": [
+        "morimens",
+        "忘卻前夜",
+        "阿拉克涅"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/25/02/35/55/146419917_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
