@@ -1,9 +1,55 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T02:40:55.506373+00:00",
+  "archived_at": "2026-06-24T10:19:52.307624+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
+    {
+      "title": "忘却前夜（四）——通用buff，debuff和卡牌效果",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n  └ 抱着狗狗不敢说话 (0赞): 大佬大佬易伤和那个加固。还有船长，他打人不是有一个触手额外伤害吗？这些都是怎么算的呀百分比乘法吗？",
+      "source": "bilibili",
+      "time": "2026-06-23T18:05:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1nZjD6WE53",
+      "engagement": 113,
+      "is_hot": false,
+      "author": "一沈奚",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 110,
+        "comment_count": 3,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/bb7610d9eda34cf862ee56f2c77507da8ae77836.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[相位对弈]迷思潘的上限究竟在哪里",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-24T09:16:05+00:00",
+      "url": "https://www.bilibili.com/video/BV1YJjd6REH9",
+      "engagement": 21,
+      "is_hot": false,
+      "author": "无生持",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 21,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/f735ece202b34af723cf4c3f615938dbfa9c5449.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "名为沙耶的谎言。",
       "summary": "-\n  └ 十御九肆 (1赞): 猫猫摸摸",

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T06:43:55.851342+00:00",
+  "archived_at": "2026-06-24T10:19:52.368211+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[正面] Норм",
@@ -142,6 +142,30 @@
         "playtime_forever": 8469,
         "votes_up": 0,
         "timestamp_created": 1782270504
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 在策划不发疯时还不错，福利很好，全图鉴轻松，但想要爽玩必抽高命",
+      "summary": "在策划不发疯时还不错，福利很好，全图鉴轻松，但想要爽玩必抽高命",
+      "source": "steam_review",
+      "time": "2026-06-24T09:56:31+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198766583949/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198766583949",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 419,
+        "votes_up": 0,
+        "timestamp_created": 1782294991
       },
       "region": "global",
       "archive_subtype": "review",

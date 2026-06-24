@@ -1,24 +1,276 @@
 {
-  "collected_at": "2026-06-24T06:43:14.930781+00:00",
+  "collected_at": "2026-06-24T10:18:57.115101+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 1,
+  "item_count": 15,
   "items": [
     {
       "source": "bilibili",
-      "time": "2026-06-23T08:10:28+00:00",
+      "time": "2026-06-23T11:05:14+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】恐怖降临，塔潘1T 3-5",
-      "summary": "└ 皮喵九 (1赞): 我了 塔潘启动\n  └ 想睡觉的雨酱 (0赞): 吓哭了\n  └ 独角兽の欧尼酱 (0赞): 离谱",
-      "url": "https://www.bilibili.com/video/BV1HCjy6zEYk",
-      "author": "金发女人丨型",
-      "engagement": 1216,
-      "media_url": "http://i2.hdslb.com/bfs/archive/94395016fc2a2c8d133b17fc7b0278a2e576998f.jpg",
+      "title": "忘却前夜，6.22融灾，建议拼好队",
+      "summary": "玩不了，又要回到拼好队了吗。\n  └ 青灯不弈 (5赞): 羊皮杜打了三次一图没打过陷入沉思，想用自己的自爆茉夏打三图结果死扛不太好爆还得去反击，只有四图用神国和血希肘过去了……自我怀疑中\n  └ Yoroha_NULL (2赞): 每次看到大佬的练度，都是眼前一黑，太强了\n  └ 刚混B站的小萌新 (1赞): 375之人不吃压力😋",
+      "url": "https://www.bilibili.com/video/BV1nSj26VEiv",
+      "author": "断裂免罪符",
+      "engagement": 1201,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b647ade2abcd51019f907df0f028d7dc2a22780a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1201,
+        "play": 1174,
+        "comment_count": 27,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T13:47:23+00:00",
+      "lang": "zh",
+      "title": "［相位］明 修 栈 道，暗 度 陈 仓",
+      "summary": "-\n  └ ileevo (6赞): 这下没信息差了[doge]\n  └ 不知今世为何 (2赞): 第一把对面鸟弟最后出牌有问题应该是能杀的[笑哭][笑哭][笑哭]\n  └ 這裡沒有東西 (2赞): 這下好了，沒有信息差了[doge]",
+      "url": "https://www.bilibili.com/video/BV1DVjS6vEWq",
+      "author": "莱星Ligh",
+      "engagement": 764,
+      "media_url": "https://i1.hdslb.com/bfs/archive/251720db65d0ec8870f022d52894a7064f9ba3d3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 748,
+        "comment_count": 16,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T18:19:10+00:00",
+      "lang": "zh",
+      "title": "名为沙耶的谎言。",
+      "summary": "-\n  └ 爱在哈基前 (3赞): 沙耶和素晴日联动吗[doge]\n  └ 远_梦 (2赞): wow ，沙耶和素[打call]\n  └ 十御九肆 (2赞): 猫猫摸摸",
+      "url": "https://www.bilibili.com/video/BV1WQjD6tEtP",
+      "author": "京不惊喜意不意外",
+      "engagement": 573,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9bd811af3c374c62c1b66e0b53c32f88f39a7db6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 558,
         "comment_count": 15,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T11:08:01+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】墨菲抽卡视频",
+      "summary": "└ 丰川祥子-忍界大战 (0赞): 池子根本没有墨菲[Electronic_哭惹]",
+      "url": "https://www.bilibili.com/video/BV1nSj26VEVE",
+      "author": "SherbetWhite",
+      "engagement": 361,
+      "media_url": "https://i1.hdslb.com/bfs/archive/deb321eda15514f4a51314b4d374ef81f76b980f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 358,
+        "comment_count": 3,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T15:07:34+00:00",
+      "lang": "zh",
+      "title": "神国2t5-5…",
+      "summary": "-\n  └ 半醒的鱼yyy (1赞): 我了鼠神\n  └ 唬隌洳鄞 (1赞): 我要看1t\n  └ 流星雨りゅうせいう (1赞): 蜀王别吓我",
+      "url": "https://www.bilibili.com/video/BV16VjU62EzL",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 323,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9496b21f5bff0f614c7b1ca8147e9d4c7ebb4e4e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 301,
+        "comment_count": 22,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T12:20:04+00:00",
+      "lang": "zh",
+      "title": "忘卻前夜 Morimens 融灾6.22-7.6 超低配400 拼好队",
+      "summary": "除了淡墨超限，没有超过3启的限定\n\n前4p拼好队第一第二关过程痛苦各种操作失误，后3关乱杀，淡墨和末夏还是太超模了\n  └ party (0赞): 1p  1-4 3启皮 2启杜 痛苦蠕动\n\n2p  1-4 1启鸟哥鸟弟 2启阿拉克涅 激情互秒\n\n3p  2-4 2启莫斯 无压力慢打\n\n4p  2-4 3启地瓜 无压力慢打\n\n5p  3-5 借12莫夏乱杀\n\n6p  4-5  超限淡墨乱杀\n\n7p  5-5 3启莫夏沙耶乱杀",
+      "url": "https://www.bilibili.com/video/BV1RWj26cEcv",
+      "author": "party",
+      "engagement": 312,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f1b7527e58d7be8dde5bed1cbf15094f8dc322bd.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 311,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T14:51:00+00:00",
+      "lang": "zh",
+      "title": "🩸",
+      "summary": "AI绘画新手\n画点自己喜欢的东西✨\n想到啥画啥🐾\n更新随缘\n\n\n\n\n免责声明:本账号发布的图片及视频内容，均为个人使用AI绘图工具创作的同人作品与原创二次创作内容，主要用于学习交流、兴趣分享与作品展示。\n作品主要围绕宝可梦与洛克王国等相关角色进行AI辅助创作，相关角色版权及设定归原版权方所有，本账号内容仅作为同人创作与风格化演绎展示，不代表官方立场。\n欢迎同好交流与讨论，支持友好互动。如作品存在侵权或不当内容，请联系本人处理，将第一时间修改或删除。\n  └ 纯白初遇 (3赞): [原神_嗯]\n  └ Nautilus114 (2赞): 深夜来访\n  └ Mamehinata_ (1赞): 原图",
+      "url": "https://www.bilibili.com/video/BV11yjU6sE5o",
+      "author": "Mamehinata_",
+      "engagement": 295,
+      "media_url": "https://i1.hdslb.com/bfs/archive/82a639cb294cf2ff9b7ad322331bcebc2c2d7600.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 290,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T13:15:40+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】融灾1-5徐轻松拿下4000k血粪怪",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1qcjS6CEys",
+      "author": "苍崎橙子灬",
+      "engagement": 235,
+      "media_url": "https://i2.hdslb.com/bfs/archive/3b942ac0b7ca344451b663b5457c28ffa5294b88.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 235,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T13:38:45+00:00",
+      "lang": "zh",
+      "title": "萌新第一次吃融灾400",
+      "summary": "这一期的水温个人感觉是降下来了，主包平时一直混350低保这次没凹多久就打到400了，也跟大家说一下思路和配队（主包配置不算低，如果大家要参考可以打较低的难度试试）\n\n第三波落地没什么好说的 神国大运差不多只要淡墨超限就能一波秒掉 米粒应选之人注意给队友充上狂气就好\n\n第二波主包用了鸟兄弟＋alkn 因为主包这两个练度还是挺高的 打起来没有什么压力，护盾基本上能永续，别忘记打艾瑞卡0费就行\n\n第四波用了超限茉夏 三叠专武＋星天双持 打起来也不会太难 注意留胎给艾继丝石化一波就好\n\n第五波可以直接借一个高配茉\n  └ Momooooooooo- (0赞): 配置图[给心心]",
+      "url": "https://www.bilibili.com/video/BV13gjS6qEqk",
+      "author": "Momooooooooo-",
+      "engagement": 211,
+      "media_url": "https://i0.hdslb.com/bfs/archive/30d16287113cb152e3370722f8292fdf30945d59.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 210,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T12:02:57+00:00",
+      "lang": "zh",
+      "title": "融灾400拼好队",
+      "summary": "└ 静寂夏至 (2赞): 佬考完试回来看你了[doge]\n  └ iq2233 (1赞): 如果五-五没有超雄落地的话，神国还是给三比较好[doge]\n  └ 今晚会出太阳 (1赞): 3-5的问题是等级高的血太厚了爆不出死扛[doge]我反而没凹就过了",
+      "url": "https://www.bilibili.com/video/BV1cKj26CE82",
+      "author": "寂榕",
+      "engagement": 188,
+      "media_url": "https://i2.hdslb.com/bfs/archive/5c57c15e8d351121c75f2aba2f4374bd3575c9bd.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 181,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T14:04:17+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】融灾425全记录（6.22-7.5）",
+      "summary": "└ 静寂夏至 (2赞): 佬",
+      "url": "https://www.bilibili.com/video/BV14zjU6ZEnR",
+      "author": "ぽんとねい",
+      "engagement": 143,
+      "media_url": "https://i1.hdslb.com/bfs/archive/628a26dac041f448c8b009b54532eb2b708f2ac3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 141,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T11:44:16+00:00",
+      "lang": "zh",
+      "title": "双鸟 2-5",
+      "summary": "1234567\n  └ 上好佳薯片丶 (1赞): 老大好强喵[打call]\n  └ iq2233 (1赞): 强强",
+      "url": "https://www.bilibili.com/video/BV1Wrj26UE2r",
+      "author": "寂榕",
+      "engagement": 134,
+      "media_url": "https://i0.hdslb.com/bfs/archive/80ca93c7faaec9b39184e37f086f6c2cefe49a6b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 131,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T15:25:51+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 总回合2t 融灾5-5皮克曼",
+      "summary": "背景音乐：SQUAR - &quot;I Luv U&quot;\n  └ 伊莎玛拉-大群来了 (1赞): 大佬别吓我\n  └ _andZZ (0赞): 每天上号点赞的时候都看看大佬在当什么乞丐[doge]",
+      "url": "https://www.bilibili.com/video/BV1kujU6EEBN",
+      "author": "夢遊遊遊遊",
+      "engagement": 125,
+      "media_url": "https://i1.hdslb.com/bfs/archive/95034cd8355f0eafc077d71d6da0c0136579f008.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 122,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-23T18:05:42+00:00",
+      "lang": "zh",
+      "title": "忘却前夜（四）——通用buff，debuff和卡牌效果",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n  └ 抱着狗狗不敢说话 (0赞): 大佬大佬易伤和那个加固。还有船长，他打人不是有一个触手额外伤害吗？这些都是怎么算的呀百分比乘法吗？",
+      "url": "https://www.bilibili.com/video/BV1nZjD6WE53",
+      "author": "一沈奚",
+      "engagement": 113,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bb7610d9eda34cf862ee56f2c77507da8ae77836.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 110,
+        "comment_count": 3,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-24T09:16:05+00:00",
+      "lang": "zh",
+      "title": "[相位对弈]迷思潘的上限究竟在哪里",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1YJjd6REH9",
+      "author": "无生持",
+      "engagement": 21,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f735ece202b34af723cf4c3f615938dbfa9c5449.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 21,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }

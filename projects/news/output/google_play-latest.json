@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-24T06:43:14.930781+00:00",
+  "collected_at": "2026-06-24T10:18:57.115101+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 156,
+  "item_count": 157,
   "items": [
     {
       "source": "google_play",
@@ -571,7 +571,7 @@
       "title": "[Google Play 好评] ★5 best game and community ever",
       "summary": "best game and community ever",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-793ada62-5d5e-4770-8862-942a22cceb90",
-      "author": "horden 04",
+      "author": "Gon Gon",
       "engagement": 0
     },
     {
@@ -1342,6 +1342,16 @@
       "summary": "É um jogo divertido e bastante envolvente. Adendo: a tradução em português ainda está no alpha. Não atrapalha muito, mas é bom saber adiantado~",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt#gp-11ba095b-8fff-4019-a63a-7fc5d75ed31f",
       "author": "Nelli",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-23T09:39:12",
+      "lang": "ja",
+      "title": "[Google Play 中评] ★3 沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのです",
+      "summary": "沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのですが、目当てのコラボキャラがあまりにも手に入らないので萎えました。 配布条件は期限内に満たせるか見通しが立たず、ガチャは渋い上にすり抜けが多いために時間の無駄のように思わされました。 他にも魅力的なキャラや手頃な課金プランはありましたが、自分は目当てのキャラが手に入ってからがスタートという感覚なので続ける理由にはなりませんでした。 面白くはあったので続けるか悩みましたが、自分には合わなかったということで。",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a3557c44-c23b-45da-8b59-f48b0ad4f2c9",
+      "author": "aki kim",
       "engagement": 0
     },
     {
