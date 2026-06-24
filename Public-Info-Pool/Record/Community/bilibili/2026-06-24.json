@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T18:32:59.063957+00:00",
+  "archived_at": "2026-06-24T20:33:37.835511+00:00",
   "source": "bilibili",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "title": "【忘却前夜】我去，金人小卖部开门了嗷",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/bb7610d9eda34cf862ee56f2c77507da8ae77836.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】大78狼10t剿滅水仙妹 H5-11",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-24T07:18:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1mhjd67EEp",
+      "engagement": 101,
+      "is_hot": false,
+      "author": "Lilia_AllAlong",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 101,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/df6338318bc37feb1e881c7d5cb53d6304b024bb.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

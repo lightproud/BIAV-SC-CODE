@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-24T18:32:59.147172+00:00",
+  "archived_at": "2026-06-24T20:33:37.908919+00:00",
   "source": "reddit",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "What teams to make?",
@@ -19,6 +19,22 @@
       },
       "media_url": "https://preview.redd.it/d1m7x55u999h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=569020734462100d1912433c816e33806185f7e5",
       "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "How to log out of Steam account ?",
+      "summary": "I started on PC using google account. Its like a temporary ones I use so as to not plague main mail. I liked the game and want to start on my main mail id. How do I logout from this account on steam ? I really dont see any option anywhere  &#32; submitted by &#32;  /u/IndianGuyInNutShell   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-24T19:10:21+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1uemu8q/how_to_log_out_of_steam_account/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/IndianGuyInNutShell",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
       "lang": "en",
       "platform_region": "global"
     }

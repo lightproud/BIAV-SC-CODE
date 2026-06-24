@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-24T18:32:03.373583+00:00",
+  "collected_at": "2026-06-24T20:32:42.341175+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 18,
   "items": [
     {
       "source": "reddit",
@@ -101,6 +101,19 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/qdsqqjw0v69h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7cd0d6e529c4bc3ed8c7a9cece371083eedb39ee",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-06-24T19:10:21+00:00",
+      "lang": "en",
+      "title": "How to log out of Steam account ?",
+      "summary": "I started on PC using google account. Its like a temporary ones I use so as to not plague main mail. I liked the game and want to start on my main mail id. How do I logout from this account on steam ? I really dont see any option anywhere  &#32; submitted by &#32;  /u/IndianGuyInNutShell   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1uemu8q/how_to_log_out_of_steam_account/",
+      "author": "/u/IndianGuyInNutShell",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -244,36 +257,6 @@
       "author": "/u/Rare_Ad_1969",
       "engagement": 0,
       "media_url": "https://preview.redd.it/p8u1g63p459h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a9826ce9e6633e1ebc7de76affbf746e0ad8ca4d",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-23T18:39:57+00:00",
-      "lang": "en",
-      "title": "are these banners a common occurence?",
-      "summary": "https://preview.redd.it/pfa4svkbu29h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=e8936f72235f8c1b089d2fbea39525cf6098b79d im new to the game and currently broke with only 5 days left on this, but it seems like something i&#39;d be willing to spend money on. is this a rare event, or do these happen every once in a while?   &#32; submitted by &#32;  /u/Consistent_Strike198   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1udplt6/are_these_banners_a_common_occurence/",
-      "author": "/u/Consistent_Strike198",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/pfa4svkbu29h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=8feddd248cf7c74ae7f52c6ea65a8fc847267a6b",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-06-23T18:51:10+00:00",
-      "lang": "en",
-      "title": "Im New! I need some advice team comps",
-      "summary": "Im looking forward to invest in just one team for now that would get me by the end game. I dont really understand much yet about their abilities but am willing to learn. I heard I got some good characters but I cant pick since all of them seem really good.   &#32; submitted by &#32;  /u/ilythyia   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1udpwx3/im_new_i_need_some_advice_team_comps/",
-      "author": "/u/ilythyia",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/hfq6agr0w29h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=75ed553f1dd20ceba64153d1f7747614a58e2fab",
       "content_type": "image",
       "metadata": {
         "via": "rss"

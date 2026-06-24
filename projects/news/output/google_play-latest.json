@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-24T18:32:03.373583+00:00",
+  "collected_at": "2026-06-24T20:32:42.341175+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 157,
+  "item_count": 156,
   "items": [
     {
       "source": "google_play",
@@ -23,16 +23,6 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-46217986-5c13-4399-8eac-0eb5b304757e",
       "author": "Reed",
       "engagement": 11
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-25T19:48:24",
-      "lang": "ru",
-      "title": "[Google Play 好评] ★5 игра определенно заслуживает внимания. х",
-      "summary": "игра определенно заслуживает внимания. хороший геймплей и визуал. Дизайны персонажей интересные, как и неплохой сюжет, да и загрузка осталась медленной, но хотя бы стала быстрее.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5429c1b0-78aa-4e00-946f-6bb52cf3d76e",
-      "author": "ЧАЁКoff ский",
-      "engagement": 9
     },
     {
       "source": "google_play",

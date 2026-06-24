@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-24T18:32:59.147270+00:00",
+  "archived_at": "2026-06-24T20:33:37.909286+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] i LOVE this game so much its so perfect. It has am...",
@@ -94,6 +94,30 @@
         "playtime_forever": 9153,
         "votes_up": 0,
         "timestamp_created": 1782317829
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Not a huge fan of these type of games but this one...",
+      "summary": "Not a huge fan of these type of games but this one was quite enjoyable, mostly because of the actual gameplay.. the writing was definitely lackluster at times.",
+      "source": "steam_review",
+      "time": "2026-06-24T19:03:06+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198271831237/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198271831237",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6571,
+        "votes_up": 0,
+        "timestamp_created": 1782327786
       },
       "region": "global",
       "archive_subtype": "review",
