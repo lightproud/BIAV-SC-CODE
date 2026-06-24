@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T02:40:55.591140+00:00",
+  "archived_at": "2026-06-24T06:43:55.851342+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Норм",
@@ -70,6 +70,78 @@
         "playtime_forever": null,
         "votes_up": 0,
         "timestamp_created": 1782255317
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 总体评价：★★★★☆\n卡牌类玩法中规中距（类似杀戮尖塔），故事情节虽然说比较新颖但是稍微有点意义不明...",
+      "summary": "总体评价：★★★★☆\n卡牌类玩法中规中距（类似杀戮尖塔），故事情节虽然说比较新颖但是稍微有点意义不明了，美工做得很好很对我胃口（画风有点像1999）。\n抽卡还算良心了（爆率比原高50倍），微氪能玩。前期强度平衡做的不错，不会遇到十分难打的关卡，基本可以说是无脑。后期来说可能会相对肝一些。",
+      "source": "steam_review",
+      "time": "2026-06-24T05:55:03+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199101823831/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199101823831",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 856,
+        "votes_up": 0,
+        "timestamp_created": 1782280503
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] is gatcha but is not trying to getcha.",
+      "summary": "is gatcha but is not trying to getcha.",
+      "source": "steam_review",
+      "time": "2026-06-24T05:40:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198177279015/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198177279015",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5377,
+        "votes_up": 0,
+        "timestamp_created": 1782279653
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Morimens is a Cthulhu/Lovecraftian-style gacha gam...",
+      "summary": "Morimens is a Cthulhu/Lovecraftian-style gacha game with attractive waifus and cool husbandos. The story is actually one of its stronger points — it can genuinely make you feel sympathy for the characters at times.\n\nGraphics: 7/10  \nStory: 8/10  \nGacha System: 7/10  \nGameplay Mechanics: 5/10  \nEndgame: 5/10  \nDuplication System: 2/10  \nPvP: 3/10\n\n\nMain Issues\n\nThe endgame suffers heavily from HP inflation. Most content cannot be auto’d. While endgame gear is relatively easy to obtain, the “Wheel” system loses almost all value once you reach 3 duplicates on a character.Value packs are only decent sometimes, and the game is not whale-friendly in a satisfying way.The biggest problem, however, is the extremely restrictive team-building system. You can only use two different character types in a team at once. This feels completely anti-fun. The developers should seriously remove or greatly loosen this restriction. Letting players mix and match characters freely would make the game much more enjoyable and encourage people to pull for and use their favorite units. Right now it just feels limiting for no good reason.On top of that, you can’t even use the same Wheel on multiple characters in the same team. Combined with the heavy HP inflation on bosses, fights often feel like ants trying to kill an elephant. You can technically deal millions of damage, but your team always feels extremely squishy. You’re forced to rely on attack reduction, shields, and survival mechanics instead of feeling powerful. It doesn’t give you that satisfying “strong MC” feeling at all — everything is just a constant struggle to stay alive. Death resistance exists, but it only feels necessary because the game makes your team so fragile in the first place. Most players would rather just do big damage and feel strong.Overall, the gameplay currently feels like a cheap, watered-down version of Epic Seven (basically “Temu Epic Seven”). In Epic Seven, a single well-built meta unit can often solo difficult bosses thanks to self-sustain, healing, and strong defensive skills. Here, you’re forced to bring a full team of four, and the restrictions make it feel much less fun and expressive.The game has a roguelike tag, so I was hoping for more dungeon exploration and interactive elements. I really hope the developers expand on the roguelike side in the future, because right now it feels underutilized.\n\nsummary:  I do not recommend Morimens in its current state. Even if the game survives and doesn’t reach EOS, the core issues (especially the team restrictions and unsatisfying endgame feel) haven’t been properly addressed. The game has potential, but the current design choices actively work against player enjoyment.",
+      "source": "steam_review",
+      "time": "2026-06-24T03:08:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198149565943/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198149565943",
+      "tags": [
+        "thai"
+      ],
+      "language": "thai",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 8469,
+        "votes_up": 0,
+        "timestamp_created": 1782270504
       },
       "region": "global",
       "archive_subtype": "review",
