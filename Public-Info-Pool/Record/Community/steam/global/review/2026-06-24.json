@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-24T13:17:56.270540+00:00",
+  "archived_at": "2026-06-24T16:15:21.150156+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] Норм",
@@ -190,6 +190,30 @@
         "playtime_forever": 310,
         "votes_up": 0,
         "timestamp_created": 1782302597
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] è fatto molto bene",
+      "summary": "è fatto molto bene",
+      "source": "steam_review",
+      "time": "2026-06-24T15:05:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199819830910/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199819830910",
+      "tags": [
+        "italian"
+      ],
+      "language": "italian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 912,
+        "votes_up": 0,
+        "timestamp_created": 1782313500
       },
       "region": "global",
       "archive_subtype": "review",
