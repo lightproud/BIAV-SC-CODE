@@ -1,18 +1,131 @@
 {
   "date": "2026-06-24",
-  "messages": 4,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 43,
+  "unique_authors": 16,
+  "reactions_total": 18,
+  "attachments": 1,
   "channel_activity": {
-    "なんでも雑談": 4
+    "なんでも雑談": 37,
+    "🔰初心者質問": 1,
+    "誰でも質問": 4,
+    "招待コード共有会": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "1": 3
+    "1": 14,
+    "2": 4,
+    "3": 9,
+    "4": 8,
+    "5": 7,
+    "0": 1
   },
   "message_types": {
-    "0": 4
+    "0": 34,
+    "19": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1519159705329471598",
+      "channel_id": "1377478664609857647",
+      "content": "このゲーム、キャラとストーリーと戦闘は面白いのに不便なところが多すぎて..",
+      "author": "meruson6406",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519184226308587570",
+      "channel_id": "1377478664609857647",
+      "content": "オルラが弱いと言われていた恐ろしい時代でした",
+      "author": "zzzorz",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519201539519021067",
+      "channel_id": "1377478664609857647",
+      "content": "沙耶コラボから始めたけど、ギリギリで間に合った",
+      "author": "jun_yutsuki",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519158720549093639",
+      "channel_id": "1377478664609857647",
+      "content": "いや　告知あったと思うよ\nじゃないと気づかないし",
+      "author": "chabo.chabo",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519158833333801142",
+      "channel_id": "1377478664609857647",
+      "content": "このゲームのお知らせ、バカみたいにスクロールさせるからね…",
+      "author": "namenemue3",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519159138364690482",
+      "channel_id": "1377478664609857647",
+      "content": "みづらかったですねえ",
+      "author": "meruson6406",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519159407035027476",
+      "channel_id": "1377478664609857647",
+      "content": "一人やってなくてもほかの人が多分やってますよ",
+      "author": "meruson6406",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519181948851847328",
+      "channel_id": "1377478664609857647",
+      "content": "多分リセットじゃなくて新規追加です",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519188633515593809",
+      "channel_id": "1377478664609857647",
+      "content": "追加でしたか…！\nありがとうございます。\n皆様お騒がせしました！",
+      "author": "megane0965_78083",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519189333582675989",
+      "channel_id": "1377478664609857647",
+      "content": "深奥の仕様が変更になった頃懐かしいな",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519201709690195968",
+      "channel_id": "1377478664609857647",
+      "content": "その調子で8章行きましょ(",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519201793047920672",
+      "channel_id": "1377478664609857647",
+      "content": "4章ではまだ余裕あったので行けるところまで行ってみます",
+      "author": "jun_yutsuki",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519215153479024740",
+      "channel_id": "1400058619726266462",
+      "content": "私は下記方法で数時間で10キャラくらいを0から10まで上げました\n\n・ボス直行の融災3を周回\n・1番簡単なレベル\n・同調率を上げる札を装備\n・初ターンで行動力な",
+      "author": "megane0965_78083",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    }
+  ]
 }
