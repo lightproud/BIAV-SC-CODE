@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-25T21:27:45.304163+00:00",
+  "collected_at": "2026-06-25T23:13:47.814285+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 151,
+  "item_count": 152,
   "items": [
     {
       "source": "google_play",
@@ -1232,6 +1232,16 @@
       "summary": "Gioco molto bello, consigliato da un mio amico e devo dire che sembra molto interessante. Continuerò.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-1e7af763-e971-4f9f-8bee-1787aa01dd03",
       "author": "Mariano De Gennaro",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-24T21:38:58",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 absolute cinema",
+      "summary": "absolute cinema",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-00a74bc0-96d8-4bc2-ad53-d3590a747ddf",
+      "author": "merc",
       "engagement": 0
     },
     {
