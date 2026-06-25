@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T14:13:12.405917+00:00",
+  "archived_at": "2026-06-25T19:52:48.010015+00:00",
   "source": "reddit",
-  "item_count": 16,
+  "item_count": 19,
   "items": [
     {
       "title": "What teams to make?",
@@ -281,6 +281,56 @@
       },
       "media_url": "https://preview.redd.it/3upqo6gjjd9h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=c8d4c0ba0a8d7d2ed7c1e99d33947362caf91bf9",
       "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Pontos' Kit Explanation & Theorycrafting",
+      "summary": "Hello all, while I was in the middle of writing a comment to explain how Pontos works, I realised that he was too complex a character, and decided to make it into a post as a guide instead! Our Lord of the Great Abyss has easily the most complicated kit in the game so far, but I&#39;ll try to explain based on what I understand so that everyone can as well. Pontos is a DPS/Support mix, much like GMurphy, but in his own unique way. His playstyle revolves around filling the deck with his derived cards, upgrading them, and finally spamming them. Kinda reminiscent of Tawil, in a sense. He is also an exploration-based character similar to Pollux or Clem&#39;s E2, meaning he gets permanently stronger the more exploration stages he goes through. Pontos&#39; 2-cost, when used for the first time, generates 3 Gaunts (1-cost) into your hand and gives you a decent amount of shield. These Gaunts perform different things: one does DMG based on Tentacle STR to the lowest HP enemy and grants temporary Crit DMG, one is an AOE STR-down + Tentacle STR scaler, and one generates Insight (+1 Arith, draw 1 card) while regenerating Aliemus for the whole team. After the first usage in battle, this card draws 3 existing Gaunt cards instead. This card has retain and prepare. Now we get into the meaty and contrived part of his kit. The Gaunts generated via Pontos&#39; 2-cost are not permanent, meaning they will disappear after the battle ends. His Exalt however, when scoring a kill, generates a permanent Gaunt (P-Gaunts henceforth). These P-Gaunts are functionally the same, but remains in the deck after the battle. This is how you can get 4+ Gaunts in the deck and trigger Pontos&#39; 2-cost&#39;s effect as well as his Exalt&#39;s. To think of it simply, you get 3 Gaunts every battle from his 2-cost, plus the P-Gaunts you accumulate from past battles. Now, all of these Gaunts are nothing special on their own, but they can be upgraded into Conjoined Gaunts (Gaunts+ henceforth). Gaunts+ trigger tw",
+      "source": "reddit",
+      "time": "2026-06-25T14:12:31+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1ufb7fm/pontos_kit_explanation_theorycrafting/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Luc1f3rBattles2",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Luckiest pull ever?",
+      "summary": "It&#39;s not an SSR but I think this is the first time this has happened to me. This honestly kind of gave me a more pleasant surprise than getting an early SSR, what are the odds?  &#32; submitted by &#32;  /u/Blake_Chase   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-25T14:50:24+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1ufc85g/luckiest_pull_ever/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Blake_Chase",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/vg43yj14zf9h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84de8bbe84c98488941627a73274bdf00318e17d",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Give some game advice?",
+      "summary": "Basically, my old account went poof. Vanished. Gone. Nuked. Anyway, I want to play again, but I have no good knowledge about Morimens because I just balled it the first time and did whatever (and probably ended up having the worst builds and teams). Back to the point, can you kindly please give some advice? I dislike watching YouTube and prefer reading guides and tips from experienced players, especially things I should keep in mind while playing. Additionally, the last time I played Morimen was a year ago, so I don&#39;t remember things anymore, and I don&#39;t want to brick my account again...  &#32; submitted by &#32;  /u/Subject-Heart8159   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-06-25T14:36:13+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1ufbu28/give_some_game_advice/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Subject-Heart8159",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
       "lang": "en",
       "platform_region": "global"
     }

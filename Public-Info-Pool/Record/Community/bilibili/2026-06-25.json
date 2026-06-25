@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T17:10:22.595108+00:00",
+  "archived_at": "2026-06-25T19:52:47.927209+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "title": "[忘却前夜]新晦瞑深海 庞托斯，角色机制非常有意思，核心囚魇化作三种卡牌效果，建议三启（强度不会低，希望别像莫丝一样打我的脸）",
@@ -253,6 +253,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/fe2a0815b17f43a77fc811944e53a4e873b1275f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 小艾打熔朵 癫狂列车",
+      "summary": "得找机会补一张安息之吻\n感觉好多C都需要\n没人挂这种助战只能自己搓了（悲\n\n背景音乐：\nlove solfege - &quot;聖餐唱曲およびレチタティーヴォ (feat. 綾野えいり)&quot;\n平原綾香 - &quot;lone star&quot;",
+      "source": "bilibili",
+      "time": "2026-06-25T05:21:26+00:00",
+      "url": "https://www.bilibili.com/video/BV1177b6NEhC",
+      "engagement": 118,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 118,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/a04621ca47541bca404109877dab444b901fbc9f.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

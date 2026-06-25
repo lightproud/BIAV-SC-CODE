@@ -1,18 +1,7 @@
 {
-  "collected_at": "2026-06-25T17:09:26.674661+00:00",
+  "collected_at": "2026-06-25T19:51:52.032715+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 1,
-  "items": [
-    {
-      "source": "taptap",
-      "time": "2026-06-24T19:20:32+00:00",
-      "lang": "zh",
-      "title": "[TapTap 好评] 感觉国内应该过不了审吧",
-      "summary": "感觉国内应该过不了审吧",
-      "url": "https://www.taptap.cn/moment/819047042046233738",
-      "author": "Smooth Criminal",
-      "engagement": 0
-    }
-  ]
+  "item_count": 0,
+  "items": []
 }
