@@ -1,17 +1,88 @@
 {
   "date": "2026-06-25",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 18,
+  "unique_authors": 8,
+  "reactions_total": 19,
+  "attachments": 2,
   "channel_activity": {
+    "general-discussion": 17,
     "project-coordination": 1
   },
   "hourly_activity": {
+    "8": 7,
+    "9": 6,
+    "10": 2,
+    "11": 2,
     "6": 1
   },
   "message_types": {
-    "46": 1
+    "0": 11,
+    "19": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1519624798257545296",
+      "channel_id": "1402941858606219294",
+      "content": "@everyone \n\nHello!\n\nBringing the important terms for Pontos, the upcoming hot da",
+      "author": "ace_asteria_lan",
+      "reactions": 7,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519628394344747120",
+      "channel_id": "1402941858606219294",
+      "content": "I'll collect the terms on Friday 12:00 GMT +8 (which is like ~24 hours from now)",
+      "author": "ace_asteria_lan",
+      "reactions": 5,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519640532727631965",
+      "channel_id": "1402941858606219294",
+      "content": "",
+      "author": "ace_asteria_lan",
+      "reactions": 2,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519624962166489128",
+      "channel_id": "1402941858606219294",
+      "content": "I'm so sorry, my main got banned again",
+      "author": "ace_asteria_lan",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519625039014531142",
+      "channel_id": "1402941858606219294",
+      "content": "God will punish Discord for its sins",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519625893104980030",
+      "channel_id": "1402941858606219294",
+      "content": "Temporary welcome back",
+      "author": "cha.ryko",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519627896954818582",
+      "channel_id": "1402941858606219294",
+      "content": "Will do in 30 mins",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1519640708598988841",
+      "channel_id": "1402941858606219294",
+      "content": "I added a \"contributor\" row;\nplease write your names in the contributor row so w",
+      "author": "ace_asteria_lan",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
 }

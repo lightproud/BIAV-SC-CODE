@@ -110,7 +110,7 @@
       "name": "korean-한국어"
     },
     "1402941858606219294": {
-      "last_message_id": "1518544465659428915",
+      "last_message_id": "1519659323284918312",
       "name": "general-discussion",
       "cold_started": true,
       "last_historical_message_id": "1411863124377600000",
@@ -471,6 +471,6 @@
     }
   },
   "historical_month": null,
-  "last_run": "2026-06-25T08:32:34.393683+00:00",
+  "last_run": "2026-06-25T11:51:02.802326+00:00",
   "history_backfill_complete": true
 }
