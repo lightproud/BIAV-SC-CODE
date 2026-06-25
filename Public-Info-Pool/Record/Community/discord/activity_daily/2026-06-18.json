@@ -1,11 +1,11 @@
 {
   "date": "2026-06-18",
-  "messages": 14505,
+  "messages": 14909,
   "unique_authors": 395,
-  "reactions_total": 1913,
-  "attachments": 633,
+  "reactions_total": 1939,
+  "attachments": 650,
   "channel_activity": {
-    "🔸game-question": 2620,
+    "🔸game-question": 3024,
     "🔸general-chat": 5022,
     "🔸綜合討論": 2245,
     "🔸阵容构建": 93,
@@ -90,6 +90,13 @@
     "Need help for end Chpt 8 Story. Do I need to swap or reinvest in new members?": 17
   },
   "hourly_activity": {
+    "17": 1213,
+    "18": 212,
+    "19": 244,
+    "20": 262,
+    "21": 490,
+    "22": 102,
+    "23": 173,
     "0": 128,
     "1": 248,
     "2": 328,
@@ -106,19 +113,12 @@
     "13": 1145,
     "14": 1689,
     "15": 1114,
-    "16": 1605,
-    "17": 1141,
-    "18": 119,
-    "19": 222,
-    "20": 188,
-    "21": 396,
-    "22": 85,
-    "23": 141
+    "16": 1605
   },
   "message_types": {
-    "0": 1697,
-    "19": 912,
-    "20": 11
+    "0": 293,
+    "19": 108,
+    "20": 3
   },
   "top_reacted_messages": [
     {
