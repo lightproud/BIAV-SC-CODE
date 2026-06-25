@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-25",
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "なんでも雑談": 3,
+    "🔰初心者質問": 1,
+    "誰でも質問": 5,
+    "描きたい時に描いてます": 1,
+    "対人戦に詳しく解説「初心者〜上級者まで」": 1
+  },
+  "hourly_activity": {
+    "0": 2,
+    "3": 5,
+    "4": 3,
+    "2": 1
+  },
+  "message_types": {
+    "0": 11
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1519542857210265630",
+      "channel_id": "1377478664609857647",
+      "content": "絵が上手く描けなぁい",
+      "author": "uru_neo",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1519534462394830848",
+      "channel_id": "1443565232130756660",
+      "content": "とりま971でベテランまでいけました！金券ウマウマ\nありがとうございました( ﾉ;_ _)ﾉ",
+      "author": "evuansu0726",
+      "reactions": 1,
+      "channel": "対人戦に詳しく解説「初心者〜上級者まで」"
+    }
+  ]
+}
