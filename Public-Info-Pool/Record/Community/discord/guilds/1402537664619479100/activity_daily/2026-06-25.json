@@ -1,14 +1,16 @@
 {
   "date": "2026-06-25",
-  "messages": 18,
+  "messages": 20,
   "unique_authors": 8,
   "reactions_total": 19,
-  "attachments": 2,
+  "attachments": 3,
   "channel_activity": {
-    "general-discussion": 17,
+    "general-discussion": 19,
     "project-coordination": 1
   },
   "hourly_activity": {
+    "13": 1,
+    "14": 1,
     "8": 7,
     "9": 6,
     "10": 2,
@@ -16,8 +18,7 @@
     "6": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 6
+    "0": 2
   },
   "top_reacted_messages": [
     {
