@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-25T08:28:34.448046+00:00",
+  "archived_at": "2026-06-25T11:38:20.208593+00:00",
   "source": "bilibili",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "title": "【忘却前夜】我去，金人小卖部开门了嗷",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/3b8d8bd1c33bb0d4c82783039f9cd7324a36d4b3.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "6.22前的第一次融灾400留念（这次融灾的怪好阴间啊，深海戒指达不到400了）之1-4",
+      "summary": "这个分p别折磨我了，一个个上传我还要不要用手机了",
+      "source": "bilibili",
+      "time": "2026-06-24T13:14:04+00:00",
+      "url": "https://www.bilibili.com/video/BV1a1jo6dEjA",
+      "engagement": 162,
+      "is_hot": false,
+      "author": "临溺渾",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 162,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/d9db4a62e704ba0b55a5348b5821d85f93691542.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

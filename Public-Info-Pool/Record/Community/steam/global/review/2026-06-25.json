@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T08:28:34.531024+00:00",
+  "archived_at": "2026-06-25T11:38:20.233512+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] i LOVE this game so much its so perfect. It has am...",
@@ -214,6 +214,54 @@
         "playtime_forever": 4497,
         "votes_up": 0,
         "timestamp_created": 1782364840
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I absolutely recommend this. If you are a fan of d...",
+      "summary": "I absolutely recommend this. If you are a fan of deckbuilders, you will enjoy this game. Several of the characters have unique mechanics in so far as other deckbuilders are concerned, and the execution is solid. I encourage you to try this game.",
+      "source": "steam_review",
+      "time": "2026-06-25T10:38:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198004146278/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198004146278",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4638,
+        "votes_up": 0,
+        "timestamp_created": 1782383930
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 被画风吸引入坑的，玩的有点迷茫....新手教程太少了",
+      "summary": "被画风吸引入坑的，玩的有点迷茫....新手教程太少了",
+      "source": "steam_review",
+      "time": "2026-06-25T10:08:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198738317068/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198738317068",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 38,
+        "votes_up": 0,
+        "timestamp_created": 1782382134
       },
       "region": "global",
       "archive_subtype": "review",
