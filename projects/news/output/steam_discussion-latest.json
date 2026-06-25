@@ -1,19 +1,9 @@
 {
-  "collected_at": "2026-06-25T00:05:10.749658+00:00",
+  "collected_at": "2026-06-25T05:01:31.853132+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-24T03:31:44+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Проблемы со входом в игру",
-      "summary": "Уже достаточно продолжительное время не могу зайти в игру со стима. Просто висит на экране с лифтом и все. Может кто может помочь?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/594037660641029034/",
-      "author": "выходное пособие",
-      "engagement": 28
-    },
     {
       "source": "steam_discussion",
       "time": "2026-06-24T16:04:10+00:00",

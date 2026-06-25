@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T00:06:03.441613+00:00",
+  "archived_at": "2026-06-25T05:02:29.046983+00:00",
   "source": "youtube",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "Morimens Endgame BUT every time I LOSE I eat Carolina Reaper",
@@ -17,6 +17,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/ZqAoNpwGFb0/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "I&#39;m Basically the Villain | Morimens",
+      "summary": "What's next, babies? Game: Morimens __Follow me on Social Media!__ Bluesky: https://bsky.app/profile/adagiovt.vtubers.social ...",
+      "source": "youtube",
+      "time": "2026-06-25T01:00:36Z",
+      "url": "https://www.youtube.com/watch?v=Yt-g_4y7ED0",
+      "engagement": 307,
+      "is_hot": false,
+      "author": "AdagioVT",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Yt-g_4y7ED0/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
@@ -119,6 +136,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/GgNaYV20koQ/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Come Chill with Mongil Daily + Trying out Morimens (Deck Building)",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-25T04:41:58Z",
+      "url": "https://www.youtube.com/watch?v=IF9VQ_-rSUA",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "Coffee : Loki",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/IF9VQ_-rSUA/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

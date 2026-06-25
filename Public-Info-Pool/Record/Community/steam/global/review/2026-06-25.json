@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T00:06:03.523525+00:00",
+  "archived_at": "2026-06-25T05:02:29.124549+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[正面] i LOVE this game so much its so perfect. It has am...",
@@ -142,6 +142,30 @@
         "playtime_forever": 672,
         "votes_up": 0,
         "timestamp_created": 1782340379
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] I don't know if it was a timing thing or not, but...",
+      "summary": "I don't know if it was a timing thing or not, but the lack of English voice acting just...really turned me off to this. Honestly I was skipping through the main story to try and get to the event to get the collab character. But when I got to the point that would let me do it apparently had to wait for their mission to be released still even though their event was already active. So I just stopped playing until it was available but by the time I came back and I asked myself if this was really a game I would be getting invested in. And the answer I came back with was no.\r\n\r\nThe story looks interesting. Its not a bad game. But the lack of English VAs just gives me no reason to bother with it. There are so many games that have no voice acting at all, and the struggle there is dealing with the reading. So if I'm going to be trying to play something that requires reading, it wouldn't be this game. Sorry.\r\n\r\nI hope this game continues to do well, though. I enjoyed everything else about the game. It gets a thumbs down though because I think games released to global markets should put the effort and money into having voice actors for the global market.",
+      "source": "steam_review",
+      "time": "2026-06-24T22:40:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199178654374/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199178654374",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 854,
+        "votes_up": 0,
+        "timestamp_created": 1782340811
       },
       "region": "global",
       "archive_subtype": "review",
