@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-24T22:14:11.050255+00:00",
+  "archived_at": "2026-06-25T00:06:03.441613+00:00",
   "source": "youtube",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "Morimens Endgame BUT every time I LOSE I eat Carolina Reaper",
@@ -51,6 +51,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/iTY2X8khIQ4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Directo relax Morimens | Súbanse al tren con ALVA la &quot;mejor DPS&quot;",
+      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "source": "youtube",
+      "time": "2026-06-24T23:21:41Z",
+      "url": "https://www.youtube.com/watch?v=ynFhSAQ55ag",
+      "engagement": 16,
+      "is_hot": false,
+      "author": "OcteKG",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/ynFhSAQ55ag/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

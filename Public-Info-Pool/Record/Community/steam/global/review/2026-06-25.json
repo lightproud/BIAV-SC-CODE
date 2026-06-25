@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-24T22:14:11.144488+00:00",
+  "archived_at": "2026-06-25T00:06:03.523525+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] i LOVE this game so much its so perfect. It has am...",
@@ -118,6 +118,30 @@
         "playtime_forever": 6571,
         "votes_up": 0,
         "timestamp_created": 1782327786
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] If you are interest in Lovecraftian Mythos then th...",
+      "summary": "If you are interest in Lovecraftian Mythos then this game is a no brainer. Just play it",
+      "source": "steam_review",
+      "time": "2026-06-24T22:32:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198453865727/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198453865727",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 672,
+        "votes_up": 0,
+        "timestamp_created": 1782340379
       },
       "region": "global",
       "archive_subtype": "review",
