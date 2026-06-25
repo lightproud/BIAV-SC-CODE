@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-25T14:12:32.243893+00:00",
+  "collected_at": "2026-06-25T17:09:26.674661+00:00",
   "source": "pixiv",
   "data_layer": "output",
-  "item_count": 33,
+  "item_count": 34,
   "items": [
     {
       "source": "pixiv",
@@ -242,6 +242,18 @@
       "author": "ソラミミ",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/36/44/145488029_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-26T00:58:15+09:00",
+      "lang": "",
+      "title": "图鲁",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/146455608",
+      "author": "wjcjskwqp",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/26/00/58/15/146455608_p0_square1200.jpg",
       "content_type": "image"
     },
     {

@@ -1,0 +1,44 @@
+{
+  "date": "2026-06-26",
+  "archived_at": "2026-06-25T17:10:22.673037+00:00",
+  "source": "youtube",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "Not Seasonal (Stream 18) MORIMENS",
+      "summary": "In which that apparently doesn't count.",
+      "source": "youtube",
+      "time": "2026-06-25T16:00:09Z",
+      "url": "https://www.youtube.com/watch?v=rkmqV8XsHBk",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "GhotiVT",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/rkmqV8XsHBk/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Man soll NIE nach dem Äußeren urteilen…und jetzt weiß ich warum 😨 - Morimens Let&#39;s Play Mission 1-2",
+      "summary": "Was zunächst harmlos wirkt, entwickelt sich zu einer spannenden und mysteriösen Situation. Neue Begegnungen ...",
+      "source": "youtube",
+      "time": "2026-06-25T16:00:10Z",
+      "url": "https://www.youtube.com/watch?v=__y54r6woro",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Sebastian Jenett",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/__y54r6woro/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "video"
+}

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T14:13:12.388731+00:00",
+  "archived_at": "2026-06-25T17:10:22.668718+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 13,
   "items": [
     {
       "title": "[正面] i LOVE this game so much its so perfect. It has am...",
@@ -262,6 +262,54 @@
         "playtime_forever": 38,
         "votes_up": 0,
         "timestamp_created": 1782382134
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "source": "steam_review",
+      "time": "2026-06-25T15:12:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199797567261/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199797567261",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1047,
+        "votes_up": 0,
+        "timestamp_created": 1782400365
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Great game",
+      "summary": "Great game",
+      "source": "steam_review",
+      "time": "2026-06-25T14:10:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198808332371/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198808332371",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7094,
+        "votes_up": 0,
+        "timestamp_created": 1782396640
       },
       "region": "global",
       "archive_subtype": "review",
