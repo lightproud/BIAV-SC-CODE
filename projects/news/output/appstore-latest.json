@@ -1,7 +1,58 @@
 {
-  "collected_at": "2026-06-25T11:37:29.645549+00:00",
+  "collected_at": "2026-06-25T14:12:32.243893+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 5,
+  "items": [
+    {
+      "source": "appstore",
+      "time": "2026-06-04T02:36:30-07:00",
+      "lang": "ko",
+      "title": "Any Plans for a macOS Version?",
+      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14142279045",
+      "author": "Nihil___",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-01T07:21:38-07:00",
+      "lang": "ko",
+      "title": "한국의 서버를 관심가져주세요",
+      "summary": "훌륭한 게임 나는 편지의 번역을 원하다",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14131393729",
+      "author": "앰쿠나마타타",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-06T02:29:15-07:00",
+      "lang": "fr",
+      "title": "Incroyable 🥰",
+      "summary": "Jeu très intéressant avec une histoire prometteuse. Les personnages sont attachants et la D.A un peu horrifique rajoute une belle ambiance ! Le jeu est plutôt généreux et le gameplay très original (j’ai jamais joué à un jeu gacha comme celui-ci) Le seul petit bémol est la traduction un peu bancale, mais au moins il y en a une 😅 Bref, j’adore ce jeu et je compte y jouer pendant un long moment encore 💕",
+      "url": "https://apps.apple.com/fr/app/id6447354150?see-all=reviews#as-14150023566",
+      "author": "cri❤️❤️❤️",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-09T06:19:29-07:00",
+      "lang": "it",
+      "title": "Lingua italiana disponibile",
+      "summary": "Meraviglioso strategico e storia seria",
+      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14162173646",
+      "author": "elllmazzzri",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-05-26T10:56:07-07:00",
+      "lang": "pt",
+      "title": "tudo que CZN queria ser",
+      "summary": "devs generosos, collabs permanentes (SAYA por exemplo), recursos e personagens faceis de buildar e comunidade receptiva pra novos jogadores",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews#as-14108983384",
+      "author": "viniciusbadtz",
+      "engagement": 5
+    }
+  ]
 }

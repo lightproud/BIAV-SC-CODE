@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-25T11:37:29.645549+00:00",
+  "collected_at": "2026-06-25T14:12:32.243893+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -17,7 +17,7 @@
       "voted_up": true,
       "review": "давно хотела в неё поиграть и вроде как нет к ней претензии, кроме того, как сюжет начинается так, что не понимаешь что вообще происходит из-за ключевых слов, что ты впервые слышишь в понимание этого мира, гачка очень красивая цепляющая практически всеми персонажами, я рада, что в моих глазах она не упала когда думала, что если игра бесплатная, значит и донат будет душный, что оказался нет и вы можете выбить себе практически любого персонажа, если попотеть +5 персонажей за ээ пару дней это ваще имба советую рекомендую глаза радутся до сих пор",
       "timestamp_created": 1782322182,
-      "playtime_forever": 1546
+      "playtime_forever": 1606
     },
     {
       "source": "steam",
@@ -32,7 +32,7 @@
       "voted_up": true,
       "review": "I absolutely recommend this. If you are a fan of deckbuilders, you will enjoy this game. Several of the characters have unique mechanics in so far as other deckbuilders are concerned, and the execution is solid. I encourage you to try this game.",
       "timestamp_created": 1782383930,
-      "playtime_forever": 4638
+      "playtime_forever": 4640
     },
     {
       "source": "steam",
@@ -183,21 +183,6 @@
       "review": "è fatto molto bene",
       "timestamp_created": 1782313500,
       "playtime_forever": 912
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-24T12:03:17+00:00",
-      "lang": "schinese",
-      "title": "[正面] 太好玩了，这个游戏抽卡资源丰富、角色升级也比较容易，没有那么多的道具，而且可以自动堆叠，虽然人物没什...",
-      "summary": "太好玩了，这个游戏抽卡资源丰富、角色升级也比较容易，没有那么多的道具，而且可以自动堆叠，虽然人物没什么动态的动作，剧情也没有语音，但是我不是剧情党，而且可以跳过，我最喜欢的是这个战斗，很上瘾，卡牌技能就是没有用很晦涩难懂的术语，我觉得挺明晰的，敌人受到攻击的效果也很好，反正我玩的就这几个方面，我觉得挺好的。比我之前玩的那些同类型游戏我觉得是比较舒服的",
-      "url": "https://steamcommunity.com/profiles/76561199688248012/recommended/3052450",
-      "author": "76561199688248012",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "太好玩了，这个游戏抽卡资源丰富、角色升级也比较容易，没有那么多的道具，而且可以自动堆叠，虽然人物没什么动态的动作，剧情也没有语音，但是我不是剧情党，而且可以跳过，我最喜欢的是这个战斗，很上瘾，卡牌技能就是没有用很晦涩难懂的术语，我觉得挺明晰的，敌人受到攻击的效果也很好，反正我玩的就这几个方面，我觉得挺好的。比我之前玩的那些同类型游戏我觉得是比较舒服的",
-      "timestamp_created": 1782302597,
-      "playtime_forever": 550
     }
   ]
 }

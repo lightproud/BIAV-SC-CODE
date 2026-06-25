@@ -1,9 +1,19 @@
 {
-  "collected_at": "2026-06-25T11:37:29.645549+00:00",
+  "collected_at": "2026-06-25T14:12:32.243893+00:00",
   "source": "official",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "official",
+      "time": "2026-06-25T12:32:37+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] V2.5.2 Pontos✦Awakener & Wheel of Destiny Introduction",
+      "summary": "",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165549148",
+      "author": "lqx02483534",
+      "engagement": 0
+    },
     {
       "source": "official",
       "time": "2026-06-23T08:00:55+00:00",
