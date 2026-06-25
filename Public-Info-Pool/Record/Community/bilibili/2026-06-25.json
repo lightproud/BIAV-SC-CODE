@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-25T05:02:29.045799+00:00",
+  "archived_at": "2026-06-25T08:28:34.447374+00:00",
   "source": "bilibili",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "title": "【忘却前夜】常驻抽使用推荐",
@@ -69,6 +69,52 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/ded51d511d377625cd0437fe2a9292a64733d677.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "说出你最讨厌的galgame，我来给你夸",
+      "summary": "群号：432695593\n  └ 神代剑w (2赞): 如果你还有哪些讨厌的gal需要我夸，可进群或在评论区跟我讲\n  └ 矢来矢来羽 (1赞): Hello 是我 苍麟sk大王[星空列车与白的旅行表情包_星星眼]\n  └ 神代剑w (1赞): 才发现bgm声音太大了…",
+      "source": "bilibili",
+      "time": "2026-06-25T04:58:31+00:00",
+      "url": "https://www.bilibili.com/video/BV1Vf7t6EE7N",
+      "engagement": 115,
+      "is_hot": false,
+      "author": "神代剑w",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 100,
+        "comment_count": 15,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/38fd5202f3cfdb9069ec08de919b8f51db536999.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜开荒（五）——属性解析，命轮密契与伤害计算",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n关于惩戒雷霆：船长的对深海伤害提高应该和加固是加算\n【直播回放，水船打困难母树帷幕-哔哩哔哩】 \n直播回放，水船打困难母树帷幕\n详情可以看这个视频的1.03.00开始。船长的伤害，在吃了70加固之后，大概只掉了1/4左右，若有错误，烦请评论区指正。",
+      "source": "bilibili",
+      "time": "2026-06-24T20:37:54+00:00",
+      "url": "https://www.bilibili.com/video/BV1Yj7x6uE7k",
+      "engagement": 103,
+      "is_hot": false,
+      "author": "一沈奚",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 103,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/5ddc22e99f15d8d7ae21764b949884596adca4c9.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
