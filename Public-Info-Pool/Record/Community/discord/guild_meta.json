@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-06-25T20:06:51.372458+00:00",
+  "updated_at": "2026-06-26T19:55:37.408333+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1289,14 +1289,6 @@
       "parent_id": "1440851754311749733",
       "position": 143,
       "topic": "ModMail Channel 1512094969018581042 1515789992277049424 (Please do not change this)"
-    },
-    {
-      "id": "1519393221107650881",
-      "name": "virtualangelmiu",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 144,
-      "topic": "ModMail Channel 440325093504188448 1519393029360717874 (Please do not change this)"
     }
   ]
 }
