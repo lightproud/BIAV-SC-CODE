@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T18:29:48.469962+00:00",
+  "updated_at": "2026-06-26T20:33:27.603342+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -12,7 +12,7 @@
       "last_success_date": "2026-06-27",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2315,
+      "total_items": 2318,
       "errors": []
     },
     "steam": {
@@ -33,10 +33,10 @@
     },
     "discord": {
       "level": "active",
-      "last_success_date": "2026-06-25",
+      "last_success_date": "2026-06-26",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 2,
-      "total_items": 7791010,
+      "consecutive_silent_days": 1,
+      "total_items": 7808562,
       "errors": []
     },
     "youtube": {
@@ -52,7 +52,7 @@
       "last_success_date": "2026-06-27",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3261,
+      "total_items": 3262,
       "errors": []
     },
     "official": {
@@ -76,7 +76,7 @@
       "last_success_date": "2026-06-27",
       "last_check_date": "2026-06-26",
       "consecutive_silent_days": 0,
-      "total_items": 7982,
+      "total_items": 7997,
       "errors": []
     },
     "bahamut": {
@@ -116,7 +116,7 @@
       "last_success_date": "2026-06-27",
       "last_check_date": "2026-06-26",
       "consecutive_silent_days": 0,
-      "total_items": 527,
+      "total_items": 528,
       "errors": []
     },
     "note_com": {
@@ -148,7 +148,7 @@
       "last_success_date": "2026-06-18",
       "last_check_date": "2026-06-26",
       "consecutive_silent_days": 9,
-      "total_items": 4658,
+      "total_items": 4678,
       "errors": []
     },
     "twitter": {

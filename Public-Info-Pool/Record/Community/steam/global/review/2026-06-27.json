@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-27",
+  "archived_at": "2026-06-26T20:33:27.102474+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] 我有牌瘾",
+      "summary": "我有牌瘾",
+      "source": "steam_review",
+      "time": "2026-06-26T17:35:38+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199471287787/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199471287787",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 8338,
+        "votes_up": 0,
+        "timestamp_created": 1782495338
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

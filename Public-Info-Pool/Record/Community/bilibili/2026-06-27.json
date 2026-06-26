@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-26T18:29:47.850860+00:00",
+  "archived_at": "2026-06-26T20:33:27.006770+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -23,6 +23,29 @@
         "danmaku": 5
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/1d7a54fac056e6bab0e133ef7806119597f3f849.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】7.13-8.10三相池抽取建议",
+      "summary": "别看了，这里还是什么都没有喵\n  └ Patchouliiiiii (1赞): 最后这个鸟弟是必须得三启才能启用吗？顺带，船长只有个本体，有必要补到三启吗？（萌新）\n  └ 亚拉酷泥 (0赞): 鸟哥只有灵启推荐抽超限鸟弟吗\n  └ 夜行性孩子 (0赞): 血链已经不推荐新人抽了）",
+      "source": "bilibili",
+      "time": "2026-06-26T18:31:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1317767EtL",
+      "engagement": 218,
+      "is_hot": false,
+      "author": "花岚天音Amane",
+      "tags": [
+        "桌游棋牌"
+      ],
+      "metadata": {
+        "play": 208,
+        "comment_count": 10,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/37ff9f31e1ab89dc195b52882deece0a59c1e2d0.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -92,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/4a7355dc6922f148fdb2ee9ce8ca5f55c18e9c1c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第二十一话 命运抉择",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：达芙黛尔 旺达 阿拉克涅 图鲁 墨菲 希莱斯特 奥瑞塔 卡茜亚 菲茵特】AI配音稍微有点问题 我稍微剪了下 下次就是第二季的最后一话了",
+      "source": "bilibili",
+      "time": "2026-06-26T20:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1wp776AEX7",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "比较瓜皮",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/7d232f50d91fba44225d479306374e147a139a4c.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
