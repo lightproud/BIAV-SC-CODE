@@ -1,9 +1,21 @@
 {
-  "collected_at": "2026-06-26T13:08:42.484024+00:00",
+  "collected_at": "2026-06-26T16:12:47.030243+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 33,
   "items": [
+    {
+      "source": "pixiv",
+      "time": "2026-06-26T23:43:03+09:00",
+      "lang": "",
+      "title": "散った花は二度と還らない旅へ",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/146491498",
+      "author": "東雲かい",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/06/26/23/43/03/146491498_p0_custom1200.jpg",
+      "content_type": "image"
+    },
     {
       "source": "pixiv",
       "time": "2026-06-26T06:28:04+09:00",
@@ -234,14 +246,14 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-01T21:42:24+09:00",
+      "time": "2026-06-26T22:23:25+09:00",
       "lang": "",
-      "title": "沙耶",
+      "title": "Ryker fanart",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/145488306",
-      "author": "ソラミミ",
+      "url": "https://www.pixiv.net/artworks/146487749",
+      "author": "Latteko",
       "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/01/21/42/24/145488306_p0_square1200.jpg",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/26/22/23/25/146487749_p0_square1200.jpg",
       "content_type": "image"
     },
     {
@@ -386,18 +398,6 @@
       "author": "るなしば",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-05-31T19:41:43+09:00",
-      "lang": "",
-      "title": "Untitled",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145439663",
-      "author": "bla",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/31/19/41/43/145439663_p0_square1200.jpg",
       "content_type": "image"
     }
   ]

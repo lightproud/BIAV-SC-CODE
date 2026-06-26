@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-26T13:09:42.642176+00:00",
+  "archived_at": "2026-06-26T16:13:40.393512+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 absolute cinema",
@@ -30,6 +30,20 @@
       "tags": [],
       "lang": "pt",
       "platform_region": "br",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 Love the generosity, but the longer you",
+      "summary": "Love the generosity, but the longer you play the more you realized they aren't giving out all of those pulls for fun. The endgames demand bunch of teams, the normal mode is too hard, team building is very confusing, and for a game to give characters like candy, they sure don't give enough beginner materials to upgrade them",
+      "source": "google_play",
+      "time": "2026-06-25T14:23:36",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-9d34d226-c65b-49cc-86c3-4052eb8a396d",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Remsly Carpina",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

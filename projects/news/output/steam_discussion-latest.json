@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-26T13:08:42.484024+00:00",
+  "collected_at": "2026-06-26T16:12:47.030243+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "source": "steam_discussion",
@@ -23,6 +23,16 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624941024/",
       "author": "Keres",
       "engagement": 5
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-26T16:09:38+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] ouverture universell &quot;seasonal mission&quot;?",
+      "summary": "it tells me that i have to complete a seasonal mission, but what does that mean exactly? it directs me to taboo quests, would it mean that i have to complete ALL the missions of one of those game modes?",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793658843897064/",
+      "author": "Chains of Others",
+      "engagement": 0
     }
   ]
 }

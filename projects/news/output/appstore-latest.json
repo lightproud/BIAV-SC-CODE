@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-26T13:08:42.484024+00:00",
+  "collected_at": "2026-06-26T16:12:47.030243+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 18,
+  "item_count": 28,
   "items": [
     {
       "source": "appstore",
@@ -46,6 +46,16 @@
     },
     {
       "source": "appstore",
+      "time": "2026-06-05T00:36:40-07:00",
+      "lang": "en",
+      "title": "What a pleasant surprise:)",
+      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
+      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14145829170",
+      "author": "hsantos18",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
       "time": "2026-06-02T16:19:24-07:00",
       "lang": "en",
       "title": "Criminally underrated",
@@ -72,6 +82,76 @@
       "summary": "Can’t believe this slipped under my radar, a great game with an unexpected but loved collab.\n\nSpecifically about the that I like is the story, as its unique to me with interesting details largely unseen from other stories I’ve consumed; the art style really gets my attention as it’s got some really cool backgrounds during the story telling and gameplay, and…. Yeah that’s my main likes about this game, there are other cool things to see, but it’s best seen yourself.\n\nRandom, but the games so good it’s got me up at 12am 2 days before an exam… with near to no study 💔 hope the grind for the collab character actually pays off 🤞🥹 oh and my user is Sira",
       "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14131679739",
       "author": "Coruzeist",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-04T02:36:30-07:00",
+      "lang": "ko",
+      "title": "Any Plans for a macOS Version?",
+      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14142279045",
+      "author": "Nihil___",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-01T07:21:38-07:00",
+      "lang": "ko",
+      "title": "한국의 서버를 관심가져주세요",
+      "summary": "훌륭한 게임 나는 편지의 번역을 원하다",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14131393729",
+      "author": "앰쿠나마타타",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:18:16-07:00",
+      "lang": "th",
+      "title": "Hidden Gem Game!!!?",
+      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153734950",
+      "author": "BoBoss375",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:11:59-07:00",
+      "lang": "th",
+      "title": "Best Game Ever",
+      "summary": "Nice story and design, super recommended for everyone and thank you for giving me such a fantastic experience.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153720246",
+      "author": "Fookfik_TH",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-03T14:18:28-07:00",
+      "lang": "th",
+      "title": "PEAK",
+      "summary": "This game is absolutely GEM! If you’re a turn-based game lover, you won’t regret any second spending on it. The art style is remarkably beautiful, game play is addictive, and most importantly, I think it’s F2P friendly. Worth playing.\n\nCons: Please keep on working on a translation. Especially Thai, it’s too confusing to understand.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14140571214",
+      "author": "CinematicScenarios",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-06T02:29:15-07:00",
+      "lang": "fr",
+      "title": "Incroyable 🥰",
+      "summary": "Jeu très intéressant avec une histoire prometteuse. Les personnages sont attachants et la D.A un peu horrifique rajoute une belle ambiance ! Le jeu est plutôt généreux et le gameplay très original (j’ai jamais joué à un jeu gacha comme celui-ci) Le seul petit bémol est la traduction un peu bancale, mais au moins il y en a une 😅 Bref, j’adore ce jeu et je compte y jouer pendant un long moment encore 💕",
+      "url": "https://apps.apple.com/fr/app/id6447354150?see-all=reviews#as-14150023566",
+      "author": "cri❤️❤️❤️",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-09T06:19:29-07:00",
+      "lang": "it",
+      "title": "Lingua italiana disponibile",
+      "summary": "Meraviglioso strategico e storia seria",
+      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14162173646",
+      "author": "elllmazzzri",
       "engagement": 5
     },
     {
@@ -173,6 +253,26 @@
       "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
       "author": "navirebu",
       "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-05T03:05:58-07:00",
+      "lang": "id",
+      "title": "Nice character design!",
+      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
+      "author": "Milesiya",
+      "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-05-29T01:35:11-07:00",
+      "lang": "id",
+      "title": "Keeps on crashing",
+      "summary": "The game keeps on crashing during battle",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14118655974",
+      "author": "Cecuyyy",
+      "engagement": 3
     },
     {
       "source": "appstore",
