@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-26T02:44:03.735127+00:00",
+  "collected_at": "2026-06-26T06:50:30.576558+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -122,22 +122,7 @@
       "voted_up": true,
       "review": "Tawil! \r\nVortice! Hooray!\r\nPretty neat Lovecraftian Gacha game.\r\nI'm not crying, you are.",
       "timestamp_created": 1782371550,
-      "playtime_forever": 2840
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-25T05:20:40+00:00",
-      "lang": "english",
-      "title": "[正面] pretty ig, tho if you wanna do funny numbers you n...",
-      "summary": "pretty ig, tho if you wanna do funny numbers you need lots of copies of the character and you can lose multiple times in a row....but they give a free copy in the shop every month for free so its still ight",
-      "url": "https://steamcommunity.com/profiles/76561199387269239/recommended/3052450",
-      "author": "76561199387269239",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "pretty ig, tho if you wanna do funny numbers you need lots of copies of the character and you can lose multiple times in a row....but they give a free copy in the shop every month for free so its still ight",
-      "timestamp_created": 1782364840,
-      "playtime_forever": 4497
+      "playtime_forever": 2930
     }
   ]
 }
