@@ -1,9 +1,54 @@
 {
-  "collected_at": "2026-06-26T06:50:30.576558+00:00",
+  "collected_at": "2026-06-26T10:20:09.630322+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-26T09:42:58+00:00",
+      "lang": "schinese",
+      "title": "[正面] 是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
+      "summary": "是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
+      "url": "https://steamcommunity.com/profiles/76561199504237912/recommended/3052450",
+      "author": "76561199504237912",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
+      "timestamp_created": 1782466978,
+      "playtime_forever": 441
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-26T09:06:19+00:00",
+      "lang": "koreana",
+      "title": "[正面] 한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
+      "summary": "한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
+      "url": "https://steamcommunity.com/profiles/76561198823304948/recommended/3052450",
+      "author": "76561198823304948",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
+      "timestamp_created": 1782464779,
+      "playtime_forever": 3282
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-26T06:58:59+00:00",
+      "lang": "english",
+      "title": "[正面] Lovecraftian AWOOGA",
+      "summary": "Lovecraftian AWOOGA",
+      "url": "https://steamcommunity.com/profiles/76561199541220257/recommended/3052450",
+      "author": "76561199541220257",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Lovecraftian AWOOGA",
+      "timestamp_created": 1782457139,
+      "playtime_forever": 591
+    },
     {
       "source": "steam",
       "time": "2026-06-26T02:13:41+00:00",
@@ -92,37 +137,7 @@
       "voted_up": true,
       "review": "I absolutely recommend this. If you are a fan of deckbuilders, you will enjoy this game. Several of the characters have unique mechanics in so far as other deckbuilders are concerned, and the execution is solid. I encourage you to try this game.",
       "timestamp_created": 1782383930,
-      "playtime_forever": 4641
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-25T10:08:54+00:00",
-      "lang": "schinese",
-      "title": "[正面] 被画风吸引入坑的，玩的有点迷茫....新手教程太少了",
-      "summary": "被画风吸引入坑的，玩的有点迷茫....新手教程太少了",
-      "url": "https://steamcommunity.com/profiles/76561198738317068/recommended/3052450",
-      "author": "76561198738317068",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "被画风吸引入坑的，玩的有点迷茫....新手教程太少了",
-      "timestamp_created": 1782382134,
-      "playtime_forever": 38
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-25T07:12:30+00:00",
-      "lang": "english",
-      "title": "[正面] Tawil! \r\nVortice! Hooray!\r\nPretty neat Lovecraftia...",
-      "summary": "Tawil! \r\nVortice! Hooray!\r\nPretty neat Lovecraftian Gacha game.\r\nI'm not crying, you are.",
-      "url": "https://steamcommunity.com/profiles/76561198875214421/recommended/3052450",
-      "author": "76561198875214421",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Tawil! \r\nVortice! Hooray!\r\nPretty neat Lovecraftian Gacha game.\r\nI'm not crying, you are.",
-      "timestamp_created": 1782371550,
-      "playtime_forever": 2930
+      "playtime_forever": 4709
     }
   ]
 }

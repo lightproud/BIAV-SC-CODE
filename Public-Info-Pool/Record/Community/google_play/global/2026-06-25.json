@@ -1,8 +1,8 @@
 {
   "date": "2026-06-25",
-  "archived_at": "2026-06-26T06:51:19.076957+00:00",
+  "archived_at": "2026-06-26T10:20:50.551342+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 absolute cinema",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "ru",
       "platform_region": "ru",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Eu amei 10/10, os personagens e a histór",
+      "summary": "Eu amei 10/10, os personagens e a história te predem muito, mas o que me fez ficar foi à tradução (mesmo não sendo perfeita, eu pontuaria que tem 98% de precisão).",
+      "source": "google_play",
+      "time": "2026-06-25T07:19:38",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt#gp-fb94c239-92f1-47bd-89e5-c3a299c5789d",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Aline",
+      "tags": [],
+      "lang": "pt",
+      "platform_region": "br",
       "region": "global"
     }
   ],

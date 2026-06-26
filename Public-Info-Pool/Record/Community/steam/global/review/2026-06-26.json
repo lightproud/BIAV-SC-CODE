@@ -1,8 +1,8 @@
 {
   "date": "2026-06-26",
-  "archived_at": "2026-06-26T06:51:18.989708+00:00",
+  "archived_at": "2026-06-26T10:20:50.460366+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] kinda like limbus but card game",
@@ -70,6 +70,78 @@
         "playtime_forever": 994,
         "votes_up": 0,
         "timestamp_created": 1782430683
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
+      "summary": "是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
+      "source": "steam_review",
+      "time": "2026-06-26T09:42:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199504237912/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199504237912",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 441,
+        "votes_up": 0,
+        "timestamp_created": 1782466978
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
+      "summary": "한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
+      "source": "steam_review",
+      "time": "2026-06-26T09:06:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198823304948/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198823304948",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3282,
+        "votes_up": 0,
+        "timestamp_created": 1782464779
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Lovecraftian AWOOGA",
+      "summary": "Lovecraftian AWOOGA",
+      "source": "steam_review",
+      "time": "2026-06-26T06:58:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199541220257/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199541220257",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 591,
+        "votes_up": 0,
+        "timestamp_created": 1782457139
       },
       "region": "global",
       "archive_subtype": "review",
