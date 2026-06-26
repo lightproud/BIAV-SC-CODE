@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-26T20:33:27.102474+00:00",
+  "archived_at": "2026-06-26T22:09:58.662516+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -22,6 +22,78 @@
         "playtime_forever": 8338,
         "votes_up": 0,
         "timestamp_created": 1782495338
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] The gacha system is actually very generous, the ga...",
+      "summary": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
+      "source": "steam_review",
+      "time": "2026-06-26T21:19:13+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199554918204/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199554918204",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 217,
+        "votes_up": 0,
+        "timestamp_created": 1782508753
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Absolutely love it!",
+      "summary": "Absolutely love it!",
+      "source": "steam_review",
+      "time": "2026-06-26T20:07:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199416971133/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199416971133",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 9014,
+        "votes_up": 0,
+        "timestamp_created": 1782504454
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] CAN'T EVEN GET IT TO RUN.  Hangs while loading ini...",
+      "summary": "CAN'T EVEN GET IT TO RUN.  Hangs while loading initial data.  Have to force quit and restart to fix.  Then click the \"Enter Mythag\" button at the bottom, and it hangs on the login.  Have to force quit and restart to fix.  Then have to click \"Enter Mythag\" a second time to actually enter the game, and it hangs trying to start the game.  Unfortunately, this is NOT fixed with a force quit and restart.  Whenever I used the \"Fix\" feature, that just simply restarted the whole hanging sequence all over, again.\n\nSo, I'm literally UNABLE to play the game.  And it's a shame, because I was really interested in this game for the artwork.  However, if the game is so poorly coded that it is just unable to run, that's not a frustration I'm willing to fight through.",
+      "source": "steam_review",
+      "time": "2026-06-26T19:51:21+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198004767457/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198004767457",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 37,
+        "votes_up": 0,
+        "timestamp_created": 1782503481
       },
       "region": "global",
       "archive_subtype": "review",

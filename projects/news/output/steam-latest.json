@@ -1,9 +1,54 @@
 {
-  "collected_at": "2026-06-26T20:32:24.352833+00:00",
+  "collected_at": "2026-06-26T22:08:55.878697+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-26T21:19:13+00:00",
+      "lang": "english",
+      "title": "[正面] The gacha system is actually very generous, the ga...",
+      "summary": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
+      "url": "https://steamcommunity.com/profiles/76561199554918204/recommended/3052450",
+      "author": "76561199554918204",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
+      "timestamp_created": 1782508753,
+      "playtime_forever": 217
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-26T20:07:34+00:00",
+      "lang": "english",
+      "title": "[正面] Absolutely love it!",
+      "summary": "Absolutely love it!",
+      "url": "https://steamcommunity.com/profiles/76561199416971133/recommended/3052450",
+      "author": "76561199416971133",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Absolutely love it!",
+      "timestamp_created": 1782504454,
+      "playtime_forever": 9014
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-26T19:51:21+00:00",
+      "lang": "english",
+      "title": "[负面] CAN'T EVEN GET IT TO RUN.  Hangs while loading ini...",
+      "summary": "CAN'T EVEN GET IT TO RUN.  Hangs while loading initial data.  Have to force quit and restart to fix.  Then click the \"Enter Mythag\" button at the bottom, and it hangs on the login.  Have to force quit and restart to fix.  Then have to click \"Enter Mythag\" a second time to actually enter the game, and it hangs trying to start the game.  Unfortunately, this is NOT fixed with a force quit and restart.  Whenever I used the \"Fix\" feature, that just simply restarted the whole hanging sequence all over, again.\n\nSo, I'm literally UNABLE to play the game.  And it's a shame, because I was really interested in this game for the artwork.  However, if the game is so poorly coded that it is just unable to run, that's not a frustration I'm willing to fight through.",
+      "url": "https://steamcommunity.com/profiles/76561198004767457/recommended/3052450",
+      "author": "76561198004767457",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "CAN'T EVEN GET IT TO RUN.  Hangs while loading initial data.  Have to force quit and restart to fix.  Then click the \"Enter Mythag\" button at the bottom, and it hangs on the login.  Have to force quit and restart to fix.  Then have to click \"Enter Mythag\" a second time to actually enter the game, and it hangs trying to start the game.  Unfortunately, this is NOT fixed with a force quit and restart.  Whenever I used the \"Fix\" feature, that just simply restarted the whole hanging sequence all over, again.\n\nSo, I'm literally UNABLE to play the game.  And it's a shame, because I was really interested in this game for the artwork.  However, if the game is so poorly coded that it is just unable to run, that's not a frustration I'm willing to fight through.",
+      "timestamp_created": 1782503481,
+      "playtime_forever": 37
+    },
     {
       "source": "steam",
       "time": "2026-06-26T17:35:38+00:00",
@@ -122,7 +167,7 @@
       "voted_up": true,
       "review": "I LOVE EATING BABIES!!!!!!!!!!!!!",
       "timestamp_created": 1782430885,
-      "playtime_forever": 245
+      "playtime_forever": 252
     },
     {
       "source": "steam",
