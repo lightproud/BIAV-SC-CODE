@@ -1,9 +1,39 @@
 {
-  "collected_at": "2026-06-26T10:20:09.630322+00:00",
+  "collected_at": "2026-06-26T13:08:42.484024+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-26T11:20:37+00:00",
+      "lang": "koreana",
+      "title": "[正面] 갓겜",
+      "summary": "갓겜",
+      "url": "https://steamcommunity.com/profiles/76561198081645864/recommended/3052450",
+      "author": "76561198081645864",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "갓겜",
+      "timestamp_created": 1782472837,
+      "playtime_forever": 5107
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-26T10:56:23+00:00",
+      "lang": "english",
+      "title": "[正面] A beautifully drawn game with fun turn based gamep...",
+      "summary": "A beautifully drawn game with fun turn based gameplay and generous devs\r\nI hope this game finds the popularity it needs to stay afloat for longer since its a live service",
+      "url": "https://steamcommunity.com/profiles/76561199566098042/recommended/3052450",
+      "author": "76561199566098042",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "A beautifully drawn game with fun turn based gameplay and generous devs\r\nI hope this game finds the popularity it needs to stay afloat for longer since its a live service",
+      "timestamp_created": 1782471383,
+      "playtime_forever": 3348
+    },
     {
       "source": "steam",
       "time": "2026-06-26T09:42:58+00:00",
@@ -62,7 +92,7 @@
       "voted_up": true,
       "review": "kinda like limbus but card game",
       "timestamp_created": 1782440021,
-      "playtime_forever": 120
+      "playtime_forever": 132
     },
     {
       "source": "steam",
@@ -122,22 +152,7 @@
       "voted_up": true,
       "review": "Great game",
       "timestamp_created": 1782396640,
-      "playtime_forever": 7183
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-25T10:38:50+00:00",
-      "lang": "english",
-      "title": "[正面] I absolutely recommend this. If you are a fan of d...",
-      "summary": "I absolutely recommend this. If you are a fan of deckbuilders, you will enjoy this game. Several of the characters have unique mechanics in so far as other deckbuilders are concerned, and the execution is solid. I encourage you to try this game.",
-      "url": "https://steamcommunity.com/profiles/76561198004146278/recommended/3052450",
-      "author": "76561198004146278",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I absolutely recommend this. If you are a fan of deckbuilders, you will enjoy this game. Several of the characters have unique mechanics in so far as other deckbuilders are concerned, and the execution is solid. I encourage you to try this game.",
-      "timestamp_created": 1782383930,
-      "playtime_forever": 4709
+      "playtime_forever": 7273
     }
   ]
 }

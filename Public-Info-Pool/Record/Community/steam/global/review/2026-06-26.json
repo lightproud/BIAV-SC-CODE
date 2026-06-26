@@ -1,8 +1,8 @@
 {
   "date": "2026-06-26",
-  "archived_at": "2026-06-26T10:20:50.460366+00:00",
+  "archived_at": "2026-06-26T13:09:42.569457+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] kinda like limbus but card game",
@@ -142,6 +142,54 @@
         "playtime_forever": 591,
         "votes_up": 0,
         "timestamp_created": 1782457139
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 갓겜",
+      "summary": "갓겜",
+      "source": "steam_review",
+      "time": "2026-06-26T11:20:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198081645864/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198081645864",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5107,
+        "votes_up": 0,
+        "timestamp_created": 1782472837
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] A beautifully drawn game with fun turn based gamep...",
+      "summary": "A beautifully drawn game with fun turn based gameplay and generous devs\r\nI hope this game finds the popularity it needs to stay afloat for longer since its a live service",
+      "source": "steam_review",
+      "time": "2026-06-26T10:56:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199566098042/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199566098042",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3348,
+        "votes_up": 0,
+        "timestamp_created": 1782471383
       },
       "region": "global",
       "archive_subtype": "review",

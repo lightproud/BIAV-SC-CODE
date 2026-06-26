@@ -1,9 +1,29 @@
 {
-  "collected_at": "2026-06-26T10:20:09.630322+00:00",
+  "collected_at": "2026-06-26T13:08:42.484024+00:00",
   "source": "official",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
+    {
+      "source": "official",
+      "time": "2026-06-26T12:55:18+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] 📜 V2.5.2 Version Outlook",
+      "summary": "",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165553820",
+      "author": "lqx02483534",
+      "engagement": 0
+    },
+    {
+      "source": "official",
+      "time": "2026-06-26T12:51:50+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] 🎧 V2.5.2 Radio Drama - Addiction",
+      "summary": "\"The fouler the suffering, the more it becomes a reward to filthy little things like you.\"\"Your wretched savior is not coming... Kneel. Offer yourself to the ocean.\"✦ Pontos VA: Junichi Suwabe",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165553804",
+      "author": "Mythag Staff",
+      "engagement": 0
+    },
     {
       "source": "official",
       "time": "2026-06-25T12:32:37+00:00",

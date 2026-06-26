@@ -1,61 +1,367 @@
 {
-  "collected_at": "2026-06-26T10:20:09.630322+00:00",
+  "collected_at": "2026-06-26T13:08:42.484024+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 20,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T15:09:03+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]新晦瞑深海 庞托斯，角色机制非常有意思，核心囚魇化作三种卡牌效果，建议三启（强度不会低，希望别像莫丝一样打我的脸）",
+      "summary": "-\n  └ 卡组大发明家 (72赞): 好像莫斯以后就没有100狂的大招了[笑哭]\n  └ 四凶之首饕餮是也 (5赞): 新的老头，太好啦，又有老头吃了，5771对我还是太好了[星星眼]\n  └ 何为故是 (6赞): 后面会不会直接快进到二百狂了，现在狂气上限已经没有100的了[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1RM7v6vEXL",
+      "author": "渔歌伴晚舟",
+      "engagement": 5576,
+      "media_url": "https://i1.hdslb.com/bfs/archive/05a4f3770d4d166de08747080d3094137fff5e1e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 5500,
+        "comment_count": 76,
+        "comments_fetched": 3,
+        "danmaku": 14
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-06-25T13:42:17+00:00",
       "lang": "zh",
       "title": "【忘却前夜】新角色庞托斯吐槽+鼠王1T弗兰",
-      "summary": "└ 千泷明月丶 (17赞): 这角色看着挺神秘的，低配当体质挂件，对比神父和徐虽然没虚弱易伤啥的，但是起码人家自带神海，混血神海也有50+强效和一个3回合大盾了，其实能接受，大招觉醒的囚魇那些就当没看见，如果囚魇本身0费那2费给三张到手上加点小盾还是挺舒服的（囚魇要费另说）\n\n大招那个永久囚魇就只能是高配才考虑，因为要k头，低配伤害很难k，高配超限大90级来说，超限大也随便200+触伤了，实际神海红触还能加，可能300+，很夸张的数值了，但是降力这个词条吧，他就不适合高配，本质如果够高配1t2t就杀了，就根本不需要降力，降力就是为了挨打少扣血，但是高配正常连挨打这个环节都很少...\n\n这么一想可能中配蹲坑队是最合理的，道中挨打塞永久囚魇+进化，命轮也给的回合结束回狂，其实就是战线拉越长越赚，但是首先只有150狂的大招杀才给囚魇，x那个杀还不给，而囚魇本身不带过牌，塞多了势必卡手，这样势必得带充狂辅助+过牌辅助，还得补虚弱易伤，有点太忙\n\n配队低配是挂件随便配，高配带三个挂件也是随便配，中配可能的队友大概有船长/墨菲+莱克/女仆+羊皮+魔术师/医生/温（按界域排的）  不是很建议跟莫斯，一方面这俩天赋一样的，带一起自动少个天赋，另一方面莫斯容易k头，而且大概率抢专钥，而且算力会很缺\n  └ 恭喜哑鸭 (12赞): 5771做图忘记写生成牌的费用了，刚更新了图的生成牌全部是1费\n  └ Aeriff_ (6赞): 衍生牌全是一费，拉完了",
+      "summary": "└ 千泷明月丶 (18赞): 这角色看着挺神秘的，低配当体质挂件，对比神父和徐虽然没虚弱易伤啥的，但是起码人家自带神海，混血神海也有50+强效和一个3回合大盾了，其实能接受，大招觉醒的囚魇那些就当没看见，如果囚魇本身0费那2费给三张到手上加点小盾还是挺舒服的（囚魇要费另说）\n\n大招那个永久囚魇就只能是高配才考虑，因为要k头，低配伤害很难k，高配超限大90级来说，超限大也随便200+触伤了，实际神海红触还能加，可能300+，很夸张的数值了，但是降力这个词条吧，他就不适合高配，本质如果够高配1t2t就杀了，就根本不需要降力，降力就是为了挨打少扣血，但是高配正常连挨打这个环节都很少...\n\n这么一想可能中配蹲坑队是最合理的，道中挨打塞永久囚魇+进化，命轮也给的回合结束回狂，其实就是战线拉越长越赚，但是首先只有150狂的大招杀才给囚魇，x那个杀还不给，而囚魇本身不带过牌，塞多了势必卡手，这样势必得带充狂辅助+过牌辅助，还得补虚弱易伤，有点太忙\n\n配队低配是挂件随便配，高配带三个挂件也是随便配，中配可能的队友大概有船长/墨菲+莱克/女仆+羊皮+魔术师/医生/温（按界域排的）  不是很建议跟莫斯，一方面这俩天赋一样的，带一起自动少个天赋，另一方面莫斯容易k头，而且大概率抢专钥，而且算力会很缺\n  └ Aeriff_ (9赞): 衍生牌全是一费，拉完了\n  └ 恭喜哑鸭 (13赞): 5771做图忘记写生成牌的费用了，刚更新了图的生成牌全部是1费",
       "url": "https://www.bilibili.com/video/BV1Zo7a6NEqG",
       "author": "金发女人丨型",
-      "engagement": 4928,
-      "media_url": "http://i2.hdslb.com/bfs/archive/62eb73cc0823c30b287fc0a470f24b728c4cd011.jpg",
+      "engagement": 5176,
+      "media_url": "https://i2.hdslb.com/bfs/archive/62eb73cc0823c30b287fc0a470f24b728c4cd011.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 4872,
-        "comment_count": 56,
+        "play": 5119,
+        "comment_count": 57,
         "comments_fetched": 3,
-        "danmaku": 183
+        "danmaku": 187
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-06-25T12:08:27+00:00",
+      "time": "2026-06-26T12:10:43+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】教你本期如何用菲旺逃课1-5弗兰",
-      "summary": "└ 苍穹余烬 (4赞): 老大，练度不够得揍飞了😭\n  └ 龙牙而秋水 (0赞): 有没有大佬帮忙看看什么队能打一二三间的n4[给心心]诞墨打第五间，助战打第四间了\n  └ 落虹九月 (0赞): 第一喵……能否求一个3-5的实战教程喵",
-      "url": "https://www.bilibili.com/video/BV1Pp7Y6EEfm",
-      "author": "金发女人丨型",
-      "engagement": 1120,
-      "media_url": "http://i1.hdslb.com/bfs/archive/dd9d0f8b1f6e5bd5edb3216df1dc220764b15033.jpg",
+      "title": "忘却前夜丨广播剧《瘾》（CV：诹访部顺一）",
+      "summary": "「越是污秽的痛苦，越是会成为你们这些脏东西的奖励。」\n「你们卑劣的救主不会来了......跪下，将自己献给海洋。」\n✦ 庞托斯CV：诹访部顺一\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦ 官方玩家交流群\n⑭群：205243114\n⑦群：700587004\n  └ 罗罗布的大萝卜 (14赞): 你说谁的cv？！\n  └ ororori (3赞): 刚点进来没仔细看，一看这图我的妈呀\n  └ 至人间爱不移 (11赞): 给诹少跪下了",
+      "url": "https://www.bilibili.com/video/BV1r97V6sEmw",
+      "author": "忘却前夜Morimens",
+      "engagement": 2070,
+      "media_url": "https://i1.hdslb.com/bfs/archive/caf783fdeb1abe42d254f111933c37912fcd6d0d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1116,
-        "comment_count": 4,
+        "play": 2043,
+        "comment_count": 27,
         "comments_fetched": 3,
-        "danmaku": 18
+        "danmaku": 2
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-06-25T12:34:10+00:00",
+      "time": "2026-06-26T04:24:31+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】3-5凯墨逃课思路",
-      "summary": "-\n  └ 安宁是归宿 (0赞): 莫非一定要加12吗？臣妾做不到啊\n  └ 青青子衿-隐 (0赞): 支持[打call][打call][打call]",
-      "url": "https://www.bilibili.com/video/BV14J7Y6nESF",
-      "author": "金发女人丨型",
-      "engagement": 886,
-      "media_url": "http://i1.hdslb.com/bfs/archive/9fd40368c674a19490c556e73efd7a057a81a3e8.jpg",
+      "title": "闪屏➕肉块预警！！！",
+      "summary": "闪屏➕肉块预警！！！\n  └ 板蓝根炒西瓜皮 (25赞): 举报了，视频大部分内容都是血腥的肉块在蠕动，不过最后有个美少女挺好看的\n  └ 非地球生命 (1赞): 不是最后头谁给我认知滤网关了[灵魂出窍]\n  └ jm汉化 (1赞): 不一直都是可爱的up吗你们怎么了？",
+      "url": "https://www.bilibili.com/video/BV1247q6cEyj",
+      "author": "呆桃yyds111",
+      "engagement": 1548,
+      "media_url": "https://i2.hdslb.com/bfs/archive/d5bc7520bdd89b2c5a7703e2ab12d9f768f18ed5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 882,
-        "comment_count": 4,
+        "play": 1534,
+        "comment_count": 14,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T06:02:49+00:00",
+      "lang": "zh",
+      "title": "【忘却淋夜】2w字全角色强度解析·下，弥萨格全女半年展示女性力量中",
+      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\n对号入座前请仔细阅读文案\nBGM太多了，大部分都是葉月的，两首kaoling的，还有海猫的op、mitosenoriko的\n  └ 美树沙爽哥 (7赞): 来支持了[打call]\n  └ 百年孤鱼- (5赞): 我不敢懂你的意思\n  └ 秋吉特 (5赞): 吃到美的了，我们需要更多鲨鲨[星星眼]",
+      "url": "https://www.bilibili.com/video/BV11x7G6REGd",
+      "author": "花葉月",
+      "engagement": 827,
+      "media_url": "https://i0.hdslb.com/bfs/archive/aaef234f21302563404e675a20243ef51e5030a1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 793,
+        "comment_count": 34,
+        "comments_fetched": 3,
+        "danmaku": 7
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T16:03:56+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】法则温柯尔：150基础狂气角色落地2回合双大",
+      "summary": "123\n  └ 耳背的梨子 (1赞): 老大送我超限阿拉克涅🥺\n  └ 皮喵九 (0赞): 这个好 为了新老头提前的准备[星星眼]\n  └ 上好佳薯片丶 (0赞): 温神[打call]",
+      "url": "https://www.bilibili.com/video/BV1yU7e67EKC",
+      "author": "朝星-",
+      "engagement": 691,
+      "media_url": "https://i1.hdslb.com/bfs/archive/33613e800efcb14b98b4dcff585f2e0a7809d902.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 686,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T14:43:54+00:00",
+      "lang": "zh",
+      "title": "［忘却前夜］虫族女王轻松连战融灾五张图n5",
+      "summary": "下期更长视频\n  └ iq2233 (1赞): 第一喵[香奈美·追寻那道光 应援装扮_打call]\n  └ 半醒的鱼yyy (0赞): 我了打榜\n  └ RatedRubyRue (0赞): 看到你了小伙伴",
+      "url": "https://www.bilibili.com/video/BV1hb7a6sENh",
+      "author": "梦依流苏_myls",
+      "engagement": 512,
+      "media_url": "https://i2.hdslb.com/bfs/archive/099876254a2739e26026f98f3a1f10e1d197c3fb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 503,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T12:12:18+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]6月最晚兑换码，五百个银芯外加五个无垢",
+      "summary": "-\n  └ 渔歌伴晚舟 (9赞): ZXAR-YPXE-TLWJ\n  └ 赤瞳的狐狸 (1赞): [打call][打call][打call]\n  └ 枫糖爱燃燃 (0赞): 101011203\n主播加个友",
+      "url": "https://www.bilibili.com/video/BV1C97V6sEvu",
+      "author": "渔歌伴晚舟",
+      "engagement": 489,
+      "media_url": "https://i2.hdslb.com/bfs/archive/45b57be5a63c3e8b4ba07974ca1db12898d9a1e8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 477,
+        "comment_count": 12,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T01:06:43+00:00",
+      "lang": "zh",
+      "title": "【深海戒指】40分钟425，康复训练，病好准备38",
+      "summary": "-\n  └ 真不会练的李 (1赞): 在古代，没有感冒的氨鼠有多恐怖……😱😱😱\n在现代，没有感冒的氨鼠也很恐怖……😱😱😱\n  └ 真不会练的李 (1赞): 鞍座佬别吓我[以闪亮之名_爱你哦]\n  └ -Love7_ (1赞): 在古代，没有感冒的氨鼠有多恐怖……😱😱😱\n在现代，没有感冒的氨鼠也很恐怖……😱😱😱",
+      "url": "https://www.bilibili.com/video/BV1VB7B6kEVC",
+      "author": "路过的耄耋",
+      "engagement": 348,
+      "media_url": "https://i1.hdslb.com/bfs/archive/1aab0a736871c7764ea62a663d1c130856a1445f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 325,
+        "comment_count": 23,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T05:08:00+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】星辰篇 主线2-16初见 克莱门汀大战克莱门汀",
+      "summary": "烧光牌库打小循环就是爽！\n这第二章的boss感觉还是不错的（就是长得有点像艾尔登皮蛋），不能无脑莽打太快，得装糖和小怪玩五个回合。\n克莱门汀居然能在克莱门汀的章节里carry，属于是明日方舟背道而驰了。\n不过似乎从星辰篇开始没有道中走格子环节了？感觉有点可惜，我还挺喜欢走格子的（感觉制作组在降本增效\n  └ _未_闻_花_名_ (1赞): 其实在自己章节carry是很正常的，比如第三章杜勒杀怪爆一张自己的永夜，然后小怪有很多是死扛怪基本上就可以打一张永夜打掉一条命就继续打下一张永夜[笑哭]\n  └ 弩箭陷阱 (0赞): 星辰篇天赋没点吧，医生打上去都没有流血，而且血量太低了",
+      "url": "https://www.bilibili.com/video/BV1Pu7V6xEhs",
+      "author": "千年之剑",
+      "engagement": 227,
+      "media_url": "https://i2.hdslb.com/bfs/archive/5ed3284a95ce0ed8ab971c7c29fdcda14ee7c6ec.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 222,
+        "comment_count": 5,
         "comments_fetched": 2,
-        "danmaku": 28
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T15:57:09+00:00",
+      "lang": "zh",
+      "title": "忘却前夜开荒（六）——战斗规划",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。",
+      "url": "https://www.bilibili.com/video/BV1tH7v6oEmX",
+      "author": "一沈奚",
+      "engagement": 172,
+      "media_url": "https://i0.hdslb.com/bfs/archive/ccc88247d8a4354085bc642e471a35a6326575fc.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 172,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T13:52:46+00:00",
+      "lang": "zh",
+      "title": "全军出击融灾400个人记录6.22",
+      "summary": "我的操作糖糖的，但死扛弥补了这一点。\n按通关顺序发的。\n不建议抄我操作，因为我虽然玩了三个月，但其中有两个月在一周五次的梦幻深潜版本，所有游戏理解都是这段时间补的。\n配队是到处扒拉别人的，非常感谢大佬们发记录啊。\n\n说到梦幻深潜，以前一周打五次分五天打，好累啊。塔薇版本玩的，借的别人的满配塔薇，银钥没缺过，启灵没愁过，现在才知道自己吃多好，但是太累了。后面回坑就是杜勒赛因，可恶的管家把我打得当场卸载（对就是这个一图的最终boss）。\n\n\n这次就能把徐拉到80了，过几天刷新就能3启3叠，开心了。\n\n第一次玩",
+      "url": "https://www.bilibili.com/video/BV1Gx7a64Ee3",
+      "author": "今晚会出太阳",
+      "engagement": 158,
+      "media_url": "https://i2.hdslb.com/bfs/archive/6277ebee88fa355e4acb34784043281a7134ec2f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 158,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T09:34:26+00:00",
+      "lang": "zh",
+      "title": "深渊之主降临，聆听古海的低语——庞托斯",
+      "summary": "-\n  └ bili_3546381700565939 (0赞): 我的老公爸爸主人爹\n  └ 不死川玄彌 (0赞): 问问封面图是哪个角色[保佑]",
+      "url": "https://www.bilibili.com/video/BV1sa756bERa",
+      "author": "氪了么Krypton",
+      "engagement": 147,
+      "media_url": "https://i2.hdslb.com/bfs/archive/367461b18d916e546a893d5bd1f7ac7a738675d7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 142,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T03:47:22+00:00",
+      "lang": "zh",
+      "title": "融灾425(6.22-7.6）",
+      "summary": "燃尽\n  └ 静寂夏至 (2赞): 老大好厉害[星星眼]\n  └ 詹金可爱 (1赞): 我的天呐，这也太强了吧\n  └ iq2233 (1赞): 恭喜喵",
+      "url": "https://www.bilibili.com/video/BV1937q63EbQ",
+      "author": "寂榕",
+      "engagement": 143,
+      "media_url": "https://i2.hdslb.com/bfs/archive/c83c1e8db9dd0251ecd48e3d4b1fb4290b8ab0e4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 134,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T05:24:51+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】uw 1t融灾2-5",
+      "summary": "挺好玩的配队）55大概是打不了 落地就被疯狂猫肘晕了\n  └ 當詩箋落下句尾 (0赞): 大……佬…….\n  └ 跳段木偶舞 (0赞): 给尤乌带琥珀+巨人拿个专造配皮克曼阿拉克涅羊妈5-5应该能打，前几期那个5-5要双倍流血的羊妈可以1t，皮克曼应该会更好打\n  └ 夜阑阑阑阑 (0赞): 大佬……",
+      "url": "https://www.bilibili.com/video/BV1MA7V68EuG",
+      "author": "CyaneuS_ky",
+      "engagement": 116,
+      "media_url": "https://i2.hdslb.com/bfs/archive/4c25522b5b5c814c4ebb33f5a38abe520b07a3a7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 108,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T15:09:23+00:00",
+      "lang": "zh",
+      "title": "La-i……",
+      "summary": "无比完美的立牌。\n夜光状态下就像是在散发孢子，需要晒太阳（吸光）的特点也和沙耶必须在爱的沐浴下才能繁殖很像。（朋友语。\n总之完全原作。（点头。）\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 纯白初遇 (0赞): [原神_嗯]",
+      "url": "https://www.bilibili.com/video/BV15M7v6iEJ3",
+      "author": "蘑菇蘑菇蘑菇熊",
+      "engagement": 103,
+      "media_url": "https://i1.hdslb.com/bfs/archive/8c3b7945f07b5ca65da4d81204dbd1d5efc94e64.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 101,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T09:45:28+00:00",
+      "lang": "zh",
+      "title": "[短画]沙耶|所以，为我注入爱意吧，舍弃让你烦恼的一切，我爱你",
+      "summary": "摸只沙耶，似乎动作看的太低，看着像催眠？其实是看肚子啦。\n设计角色找资料时发现，虽然我在尽量尝试更多不同风格的角色，但设计时总对异种白幼瘦的元素有明显青睐。原来是你，这下走上不归途了。\n感觉都挺久之前了，印象里是因为爱的战士之名前去观摩。\n满屏的血肉和突袭的瑟瑟cg震撼当时幼小的心灵，不过那时正是接受度高的时候吧，或者说就是因为这个接受度才变高吧。感觉和缸中脑一样，一下子什么都能释怀了。\n（注意剧透）\n一直以来记忆里也只剩下了两人隔门离别与沙耶开花的结局，只有他们俩苦命鸳鸯。\n但现在回头看才发现，好基友和\n  └ 纯白初遇 (1赞): [原神_嗯]\n  └ 耕司青海瑶 (0赞): [喜欢][喜欢][喜欢][喜欢]好美",
+      "url": "https://www.bilibili.com/video/BV1im756EEib",
+      "author": "哑乀喃",
+      "engagement": 46,
+      "media_url": "https://i2.hdslb.com/bfs/archive/a37818705681ef5a8159eeb3c2355e09ba130714.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 44,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T12:01:00+00:00",
+      "lang": "zh",
+      "title": "第二十话 歧路危行",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：达芙黛尔 汀克特 希洛 守密人 拉蒙娜 埃尔顿 莱克】最近AI在维护 可能稍微角色描述稍微有一点问题 不过这个衣服的达芙黛尔也很好看\n  └ 某不知名老法师 (0赞): 船长啊，你星辰篇寄的好惨啊[大哭]",
+      "url": "https://www.bilibili.com/video/BV1FR7u6uExp",
+      "author": "比较瓜皮",
+      "engagement": 25,
+      "media_url": "https://i0.hdslb.com/bfs/archive/761b7baf561401d3c94c63f89b201515340dce82.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 21,
+        "comment_count": 4,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-26T12:00:00+00:00",
+      "lang": "zh",
+      "title": "第十九话 巷间死斗",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：希洛 萝坦 宁菲亚 阿拉克涅】角色实力参考官方剧情 角色出招参考游戏技能 希洛其实摔不动萝坦的 原因后面几话后说明 萝坦虽然是sr 是官方限制的锅 萝坦本身就是混沌巨兽  宁菲亚做这个事情的原因要到第三季才会揭露 人话就是要等明年 不过希洛那个破链一击的短矛和长剑对波很帅 其实本来还有几个人要上场的 结果AI闹了个乌龙 你们绝对想不到是啥乌龙doge",
+      "url": "https://www.bilibili.com/video/BV1bdjf6oE5W",
+      "author": "比较瓜皮",
+      "engagement": 10,
+      "media_url": "https://i2.hdslb.com/bfs/archive/7f61f583ff4b88b72b21e1f5b81d65f79c4ec00e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 10,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-06-25T15:54:52+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】主线7-18 火种初见通关记录",
+      "summary": "太难打了，感谢@异色眼波衣龙  大佬的指点，总算过了orz\n另：试试封面能否存活。",
+      "url": "https://www.bilibili.com/video/BV1xW7v6xEZf",
+      "author": "SherbetWhite",
+      "engagement": 9,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9ee23708e1932ac45e5b667399390467b6841a2a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 9,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
       }
     }
   ]
