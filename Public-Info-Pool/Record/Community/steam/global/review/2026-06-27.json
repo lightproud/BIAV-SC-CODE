@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T00:02:38.223181+00:00",
+  "archived_at": "2026-06-27T03:42:42.502138+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -142,6 +142,54 @@
         "playtime_forever": 1368,
         "votes_up": 0,
         "timestamp_created": 1782511655
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] saya NB",
+      "summary": "saya NB",
+      "source": "steam_review",
+      "time": "2026-06-27T00:41:13+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199849683951/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199849683951",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 474,
+        "votes_up": 0,
+        "timestamp_created": 1782520873
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] it's probably the most fun gacha i've played, but...",
+      "summary": "it's probably the most fun gacha i've played, but it is still a gacha so know what you are getting into (the game is very generous though!) Plays like slay the spire in combat but not in deck building, great lovecraft/weird fiction themes with fun designs and hard combat without needing premium characters. Collabing with older lovecraft games is the cherry on top.",
+      "source": "steam_review",
+      "time": "2026-06-27T00:32:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198163532735/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198163532735",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 18880,
+        "votes_up": 0,
+        "timestamp_created": 1782520370
       },
       "region": "global",
       "archive_subtype": "review",

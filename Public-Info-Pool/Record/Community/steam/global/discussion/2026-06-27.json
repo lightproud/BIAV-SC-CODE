@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T00:02:38.225620+00:00",
+  "archived_at": "2026-06-27T03:42:42.505110+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Steam论坛] ouverture universell &quot;seasonal mission&quot;?",
@@ -13,6 +13,23 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Chains of Others",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Invitation code :)",
+      "summary": "HKG334J7EI",
+      "source": "steam_discussion",
+      "time": "2026-06-27T02:37:34+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793658843942622/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Dyrnwyn",
       "tags": [
         "steam_forum"
       ],

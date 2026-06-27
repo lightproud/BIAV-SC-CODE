@@ -1,9 +1,39 @@
 {
-  "collected_at": "2026-06-27T00:01:44.399777+00:00",
+  "collected_at": "2026-06-27T03:41:44.581700+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-27T00:41:13+00:00",
+      "lang": "schinese",
+      "title": "[正面] saya NB",
+      "summary": "saya NB",
+      "url": "https://steamcommunity.com/profiles/76561199849683951/recommended/3052450",
+      "author": "76561199849683951",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "saya NB",
+      "timestamp_created": 1782520873,
+      "playtime_forever": 474
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T00:32:50+00:00",
+      "lang": "english",
+      "title": "[正面] it's probably the most fun gacha i've played, but...",
+      "summary": "it's probably the most fun gacha i've played, but it is still a gacha so know what you are getting into (the game is very generous though!) Plays like slay the spire in combat but not in deck building, great lovecraft/weird fiction themes with fun designs and hard combat without needing premium characters. Collabing with older lovecraft games is the cherry on top.",
+      "url": "https://steamcommunity.com/profiles/76561198163532735/recommended/3052450",
+      "author": "76561198163532735",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "it's probably the most fun gacha i've played, but it is still a gacha so know what you are getting into (the game is very generous though!) Plays like slay the spire in combat but not in deck building, great lovecraft/weird fiction themes with fun designs and hard combat without needing premium characters. Collabing with older lovecraft games is the cherry on top.",
+      "timestamp_created": 1782520370,
+      "playtime_forever": 18880
+    },
     {
       "source": "steam",
       "time": "2026-06-26T22:52:12+00:00",
@@ -17,7 +47,7 @@
       "voted_up": true,
       "review": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
       "timestamp_created": 1782514332,
-      "playtime_forever": 559
+      "playtime_forever": 719
     },
     {
       "source": "steam",
@@ -62,7 +92,7 @@
       "voted_up": true,
       "review": "Absolutely love it!",
       "timestamp_created": 1782504454,
-      "playtime_forever": 9014
+      "playtime_forever": 9028
     },
     {
       "source": "steam",
@@ -168,21 +198,6 @@
       "review": "Lovecraftian AWOOGA",
       "timestamp_created": 1782457139,
       "playtime_forever": 656
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T02:13:41+00:00",
-      "lang": "english",
-      "title": "[正面] kinda like limbus but card game",
-      "summary": "kinda like limbus but card game",
-      "url": "https://steamcommunity.com/profiles/76561198745646072/recommended/3052450",
-      "author": "76561198745646072",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "kinda like limbus but card game",
-      "timestamp_created": 1782440021,
-      "playtime_forever": 147
     }
   ]
 }
