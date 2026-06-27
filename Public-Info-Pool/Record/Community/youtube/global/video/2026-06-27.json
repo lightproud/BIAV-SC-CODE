@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T03:42:42.398884+00:00",
+  "archived_at": "2026-06-27T06:51:57.252335+00:00",
   "source": "youtube",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "title": "[Morimens] 2.5.2 Patch Notes Overview : Reupload with Audio Fixed. Worst Wheel and Posse ever?!!",
@@ -204,6 +204,40 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/_vm44dWRupc/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Playing Morimens a bit before going out!",
+      "summary": "This is streamed live on Twitch, 23rd June 2026 You can find me here: https://www.twitch.tv/im_rexio.",
+      "source": "youtube",
+      "time": "2026-06-27T05:00:29Z",
+      "url": "https://www.youtube.com/watch?v=0GN9LcXn-SQ",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Rexio",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/0GN9LcXn-SQ/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "『忘却前夜』召喚は動画の最後！　前半は対人戦です！『ゲーム実況』",
+      "summary": "中身詐欺なサムネですいません笑 召喚は動画の最後にあるおまけ編で、本編は変わりなく対人戦です！ｗ シーズン変わる前の、 ...",
+      "source": "youtube",
+      "time": "2026-06-27T04:10:59Z",
+      "url": "https://www.youtube.com/watch?v=xQj6ay0wRQg",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "薄めの『ゆゆ』",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/xQj6ay0wRQg/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

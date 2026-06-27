@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T03:42:42.397416+00:00",
+  "archived_at": "2026-06-27T06:51:57.250829+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -74,6 +74,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "沙耶很狂：一分钟榨干乌贼娘",
+      "summary": "清新风味，触手系百合物语\n  └ 女团天天 (3赞): 我今天才发现，原来你的头像就是沙耶[尴尬]",
+      "source": "bilibili",
+      "time": "2026-06-27T03:50:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1GZ756rE1j",
+      "engagement": 94,
+      "is_hot": false,
+      "author": "耶树SayaTree",
+      "tags": [
+        "MAD·AMV"
+      ],
+      "metadata": {
+        "play": 92,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/65242a524bb2791591c40094999bc3b2e7d348a1.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "恐怖预警！！",
       "summary": "恐怖预警！！可能会引起不适！！\n  └ 哪撸嚯堕 (0赞): 晚安\n  └ Nautilus114 (0赞): 早上好",
       "source": "bilibili",
@@ -115,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/4a7355dc6922f148fdb2ee9ce8ca5f55c18e9c1c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "是沙耶之歌！！是因为联动爱上游戏的感觉吗！",
+      "summary": "是沙耶之歌！！是因为联动爱上游戏的感觉吗！\n  └ 結城明日な (0赞): 爱看，UP加油！",
+      "source": "bilibili",
+      "time": "2026-06-27T05:00:29+00:00",
+      "url": "https://www.bilibili.com/video/BV1qo7n6iEy6",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "shiro的油条大人",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/384e6bddeec452f14c247928d632c7b0605ce59d.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T03:42:42.502138+00:00",
+  "archived_at": "2026-06-27T06:51:57.303972+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 11,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -190,6 +190,78 @@
         "playtime_forever": 18880,
         "votes_up": 0,
         "timestamp_created": 1782520370
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] i really like this game",
+      "summary": "i really like this game",
+      "source": "steam_review",
+      "time": "2026-06-27T04:37:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199363983730/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199363983730",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2593,
+        "votes_up": 0,
+        "timestamp_created": 1782535049
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲...",
+      "summary": "因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲个月卡，希望你能熬过这个冬天。 [/spoiler]",
+      "source": "steam_review",
+      "time": "2026-06-27T03:25:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198014538593/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198014538593",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4342,
+        "votes_up": 0,
+        "timestamp_created": 1782530733
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 卡等级太难受了，这个游戏让我这个都爱慕（）都打吐了，想吃屎的可以来了（这坨屎其实越吃越上头）",
+      "summary": "卡等级太难受了，这个游戏让我这个都爱慕（）都打吐了，想吃屎的可以来了（这坨屎其实越吃越上头）",
+      "source": "steam_review",
+      "time": "2026-06-27T03:25:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199838026312/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199838026312",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2279,
+        "votes_up": 0,
+        "timestamp_created": 1782530732
       },
       "region": "global",
       "archive_subtype": "review",

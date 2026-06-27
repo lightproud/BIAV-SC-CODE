@@ -1,9 +1,54 @@
 {
-  "collected_at": "2026-06-27T03:41:44.581700+00:00",
+  "collected_at": "2026-06-27T06:50:57.390846+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 16,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-27T04:37:29+00:00",
+      "lang": "english",
+      "title": "[正面] i really like this game",
+      "summary": "i really like this game",
+      "url": "https://steamcommunity.com/profiles/76561199363983730/recommended/3052450",
+      "author": "76561199363983730",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i really like this game",
+      "timestamp_created": 1782535049,
+      "playtime_forever": 2593
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T03:25:33+00:00",
+      "lang": "schinese",
+      "title": "[正面] 因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲...",
+      "summary": "因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲个月卡，希望你能熬过这个冬天。 [/spoiler]",
+      "url": "https://steamcommunity.com/profiles/76561198014538593/recommended/3052450",
+      "author": "76561198014538593",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲个月卡，希望你能熬过这个冬天。 [/spoiler]",
+      "timestamp_created": 1782530733,
+      "playtime_forever": 4342
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T03:25:32+00:00",
+      "lang": "schinese",
+      "title": "[正面] 卡等级太难受了，这个游戏让我这个都爱慕（）都打吐了，想吃屎的可以来了（这坨屎其实越吃越上头）",
+      "summary": "卡等级太难受了，这个游戏让我这个都爱慕（）都打吐了，想吃屎的可以来了（这坨屎其实越吃越上头）",
+      "url": "https://steamcommunity.com/profiles/76561199838026312/recommended/3052450",
+      "author": "76561199838026312",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "卡等级太难受了，这个游戏让我这个都爱慕（）都打吐了，想吃屎的可以来了（这坨屎其实越吃越上头）",
+      "timestamp_created": 1782530732,
+      "playtime_forever": 2279
+    },
     {
       "source": "steam",
       "time": "2026-06-27T00:41:13+00:00",
@@ -17,7 +62,7 @@
       "voted_up": true,
       "review": "saya NB",
       "timestamp_created": 1782520873,
-      "playtime_forever": 474
+      "playtime_forever": 514
     },
     {
       "source": "steam",
@@ -122,7 +167,7 @@
       "voted_up": true,
       "review": "我有牌瘾",
       "timestamp_created": 1782495338,
-      "playtime_forever": 8338
+      "playtime_forever": 8343
     },
     {
       "source": "steam",
@@ -197,7 +242,7 @@
       "voted_up": true,
       "review": "Lovecraftian AWOOGA",
       "timestamp_created": 1782457139,
-      "playtime_forever": 656
+      "playtime_forever": 702
     }
   ]
 }

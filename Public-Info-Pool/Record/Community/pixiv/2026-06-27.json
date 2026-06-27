@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T03:42:42.507184+00:00",
+  "archived_at": "2026-06-27T06:51:57.311766+00:00",
   "source": "pixiv",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "散った花は二度と還らない旅へ",
@@ -56,6 +56,27 @@
       "tags": [],
       "lang": "",
       "platform_region": "global"
+    },
+    {
+      "title": "Corposant",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-06-27T14:22:00+09:00",
+      "url": "https://www.pixiv.net/artworks/146513603",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "foreign gentle",
+      "tags": [
+        "克珀珊特",
+        "忘却前夜",
+        "少女",
+        "Morimens",
+        "制服"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/27/14/22/00/146513603_p0_square1200.jpg",
+      "content_type": "image"
     }
   ]
 }

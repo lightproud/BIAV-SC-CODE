@@ -1,8 +1,8 @@
 {
   "date": "2026-06-26",
-  "archived_at": "2026-06-27T03:42:42.396504+00:00",
+  "archived_at": "2026-06-27T06:51:57.249935+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "title": "忘却前夜丨广播剧《瘾》（CV：诹访部顺一）",
@@ -184,6 +184,29 @@
         "danmaku": 1
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/a87a51409e300f254ad1838cf828b21767fae82d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】福袋24核爆 1t500万",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-26T14:27:10+00:00",
+      "url": "https://www.bilibili.com/video/BV13n7j61EnM",
+      "engagement": 184,
+      "is_hot": false,
+      "author": "ぽんとねい",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 184,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/4a4a8e8a430f599e0b04565787127d4f1295fdbe.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

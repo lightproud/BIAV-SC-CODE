@@ -1,9 +1,21 @@
 {
-  "collected_at": "2026-06-27T03:41:44.581700+00:00",
+  "collected_at": "2026-06-27T06:50:57.390846+00:00",
   "source": "pixiv",
   "data_layer": "output",
-  "item_count": 33,
+  "item_count": 32,
   "items": [
+    {
+      "source": "pixiv",
+      "time": "2026-06-27T14:22:00+09:00",
+      "lang": "",
+      "title": "Corposant",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/146513603",
+      "author": "foreign gentle",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/27/14/22/00/146513603_p0_square1200.jpg",
+      "content_type": "image"
+    },
     {
       "source": "pixiv",
       "time": "2026-06-26T23:43:03+09:00",
@@ -234,18 +246,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-02T18:31:17+09:00",
-      "lang": "",
-      "title": "夜風に舞う",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145518913",
-      "author": "ソラミミ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/18/31/17/145518913_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-26T22:23:25+09:00",
       "lang": "",
       "title": "Ryker fanart",
@@ -386,18 +386,6 @@
       "author": "Yai",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/12/09/47/15/145902739_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-02T00:00:15+09:00",
-      "lang": "",
-      "title": "Pollux",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145495325",
-      "author": "るなしば",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/00/00/15/145495325_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
