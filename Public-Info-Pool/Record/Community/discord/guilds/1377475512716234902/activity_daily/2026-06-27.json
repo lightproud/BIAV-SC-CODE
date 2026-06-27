@@ -1,27 +1,187 @@
 {
   "date": "2026-06-27",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 215,
+  "unique_authors": 21,
+  "reactions_total": 34,
+  "attachments": 13,
   "channel_activity": {
-    "なんでも雑談": 5
+    "なんでも雑談": 154,
+    "🔰初心者質問": 43,
+    "誰でも質問": 10,
+    "つぶやき": 8
   },
   "hourly_activity": {
-    "0": 4,
-    "1": 1
+    "1": 29,
+    "2": 61,
+    "3": 83,
+    "4": 12,
+    "5": 26,
+    "0": 4
   },
   "message_types": {
-    "0": 5
+    "0": 186,
+    "19": 24
   },
   "top_reacted_messages": [
     {
-      "id": "1520231442838323411",
+      "id": "1520273103308062773",
       "channel_id": "1377478664609857647",
-      "content": "あと症状カード使っても乱数変化しませんでした👍",
+      "content": "あ、そういえば\n見つけてるかもしれんけどタヴィのイベント新遺物っぽいのあるよ",
+      "author": "96cat",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520300626729369723",
+      "channel_id": "1377478664609857647",
+      "content": "タヴィもレーアを見習って､半裸になってほしいところですね",
+      "author": "anonymous.409",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520265097753395231",
+      "channel_id": "1458760640351965361",
+      "content": "こういうのって利用規約とかで明確に禁止されてるわけではないこと多いだろうし、やったところでペナルティとかあるわけでもないと思うけど\nこれ最初にやろうと思った人ど",
+      "author": "suzuri9701",
+      "reactions": 3,
+      "channel": "つぶやき"
+    },
+    {
+      "id": "1520250813337833603",
+      "channel_id": "1377478664609857647",
+      "content": "そのtier表は完全にエアプやね\nハムリンはSSSよ(笑)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520262721642434712",
+      "channel_id": "1377478664609857647",
+      "content": "ダヴィ餅の効果で微増(笑)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520256120306798802",
+      "channel_id": "1391701560496623688",
+      "content": "真面目に超実践的な話をすると、自分の好きなキャラを頑張って育ててそのキャラが活かせる編成を考えるのが１番良いです\nストーリー進めたりするだけなら特定キャラいない",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1520245750184022038",
+      "channel_id": "1377478664609857647",
+      "content": "3凸餅の話だと思ってや",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520247574769045675",
+      "channel_id": "1377478664609857647",
+      "content": "個人的には餅が優秀なのでギリA+だと思います｡\n融災だと雑に使いやすいので優秀だけど､普段使いはしないって印象ですね｡",
       "author": "anonymous.409",
       "reactions": 1,
       "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520248228619227226",
+      "channel_id": "1377478664609857647",
+      "content": "個人的は24一個上でも良いと思う",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520250326244921515",
+      "channel_id": "1377478664609857647",
+      "content": "ライムさんのやる気が出たらやります(なげやり)",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520262683339784402",
+      "channel_id": "1377478664609857647",
+      "content": "個人的だけど",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520270062664028331",
+      "channel_id": "1377478664609857647",
+      "content": "でもタヴィが正統派な支援として登場してくれて嬉しいよあたしゃ。",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520279369057046558",
+      "channel_id": "1377478664609857647",
+      "content": "まだ次の形態を残してるから大丈夫w",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520279539245121627",
+      "channel_id": "1377478664609857647",
+      "content": "攻撃札切れないのが毎度地味に辛い",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520301907233738874",
+      "channel_id": "1377478664609857647",
+      "content": "完凸タヴィ借りてる時に普段ステータス低いキャラのスキル取るとバカみたいな数値出て顎外れる",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520248260927950919",
+      "channel_id": "1391701560496623688",
+      "content": "ありがとうございます！！！",
+      "author": "shion_ouka",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1520252507283128471",
+      "channel_id": "1391701560496623688",
+      "content": "何度もすみません！\n補足させていただきますと、私はニムリリ毒パとかの固定毒パーティで高難度をやっつけることしか興味ないので、知識と思想が大分偏ってます！\n\n全般",
+      "author": "megane0965_78083",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1520258275621208235",
+      "channel_id": "1391701560496623688",
+      "content": "分かりました！がんばります！",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1520259866801733752",
+      "channel_id": "1391701560496623688",
+      "content": "分かりました！",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1520260206527774772",
+      "channel_id": "1391701560496623688",
+      "content": "サルバ完凸の90だったのでタイス好きになります！",
+      "author": "ugen_22zi",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
     }
   ]
 }
