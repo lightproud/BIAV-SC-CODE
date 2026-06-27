@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-26T22:08:55.878697+00:00",
+  "collected_at": "2026-06-27T00:01:44.399777+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
     {
       "source": "steam_discussion",
@@ -13,16 +13,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
       "author": "manotroll",
       "engagement": 7
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-25T22:16:18+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Stuck in Logging into the User Center",
-      "summary": "As the title suggest, I wanted to play on PC, I've tried this a bit before on my old phone and wanted to start fresh with a new account on Steam but I'm just stuck here at the front page and it just keeps saying stuck in logging into the user center, it loads a bit and then just disappears, I just keep spamming Enter Mythag to no avail.\n\nIs this a bug or what? My internet is pretty high, I run about 700-900mpbs so I highly doubt it's my internet....",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624941024/",
-      "author": "Keres",
-      "engagement": 5
     },
     {
       "source": "steam_discussion",

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-26T22:09:58.662516+00:00",
+  "archived_at": "2026-06-27T00:02:38.223181+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -94,6 +94,54 @@
         "playtime_forever": 37,
         "votes_up": 0,
         "timestamp_created": 1782503481
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Genuinely the single best gacha game I've ever pla...",
+      "summary": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
+      "source": "steam_review",
+      "time": "2026-06-26T22:52:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198236490742/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198236490742",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 559,
+        "votes_up": 0,
+        "timestamp_created": 1782514332
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Best Gacha I've ever played",
+      "summary": "Best Gacha I've ever played",
+      "source": "steam_review",
+      "time": "2026-06-26T22:07:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198049428896/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198049428896",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1368,
+        "votes_up": 0,
+        "timestamp_created": 1782511655
       },
       "region": "global",
       "archive_subtype": "review",
