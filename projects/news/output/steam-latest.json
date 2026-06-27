@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-27T19:11:14.538336+00:00",
+  "collected_at": "2026-06-27T20:56:15.024480+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 14,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,21 @@
       "review": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
       "timestamp_created": 1782514332,
       "playtime_forever": 719
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T19:29:38+00:00",
+      "lang": "english",
+      "title": "[正面] i have come to see saya from (saya no uta) and i w...",
+      "summary": "i have come to see saya from (saya no uta) and i will re come to play the game and... get saya for sure that's a good game for now what i see is really good",
+      "url": "https://steamcommunity.com/profiles/76561199468381464/recommended/3052450",
+      "author": "76561199468381464",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i have come to see saya from (saya no uta) and i will re come to play the game and... get saya for sure that's a good game for now what i see is really good",
+      "timestamp_created": 1782588578,
+      "playtime_forever": 65
     },
     {
       "source": "steam",
@@ -62,7 +77,7 @@
       "voted_up": true,
       "review": "턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착할것같긴한데 챗지피티번역+유저번역이라기엔 얼마없는 소수인원... 이렇게가다가 갑자기 섭종하지않을까 불안한게임",
       "timestamp_created": 1782562369,
-      "playtime_forever": 342
+      "playtime_forever": 386
     },
     {
       "source": "steam",
@@ -183,36 +198,6 @@
       "review": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
       "timestamp_created": 1782508753,
       "playtime_forever": 484
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T20:07:34+00:00",
-      "lang": "english",
-      "title": "[正面] Absolutely love it!",
-      "summary": "Absolutely love it!",
-      "url": "https://steamcommunity.com/profiles/76561199416971133/recommended/3052450",
-      "author": "76561199416971133",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Absolutely love it!",
-      "timestamp_created": 1782504454,
-      "playtime_forever": 9028
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T19:51:21+00:00",
-      "lang": "english",
-      "title": "[负面] CAN'T EVEN GET IT TO RUN.  Hangs while loading ini...",
-      "summary": "CAN'T EVEN GET IT TO RUN.  Hangs while loading initial data.  Have to force quit and restart to fix.  Then click the \"Enter Mythag\" button at the bottom, and it hangs on the login.  Have to force quit and restart to fix.  Then have to click \"Enter Mythag\" a second time to actually enter the game, and it hangs trying to start the game.  Unfortunately, this is NOT fixed with a force quit and restart.  Whenever I used the \"Fix\" feature, that just simply restarted the whole hanging sequence all over, again.\n\nSo, I'm literally UNABLE to play the game.  And it's a shame, because I was really interested in this game for the artwork.  However, if the game is so poorly coded that it is just unable to run, that's not a frustration I'm willing to fight through.",
-      "url": "https://steamcommunity.com/profiles/76561198004767457/recommended/3052450",
-      "author": "76561198004767457",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "CAN'T EVEN GET IT TO RUN.  Hangs while loading initial data.  Have to force quit and restart to fix.  Then click the \"Enter Mythag\" button at the bottom, and it hangs on the login.  Have to force quit and restart to fix.  Then have to click \"Enter Mythag\" a second time to actually enter the game, and it hangs trying to start the game.  Unfortunately, this is NOT fixed with a force quit and restart.  Whenever I used the \"Fix\" feature, that just simply restarted the whole hanging sequence all over, again.\n\nSo, I'm literally UNABLE to play the game.  And it's a shame, because I was really interested in this game for the artwork.  However, if the game is so poorly coded that it is just unable to run, that's not a frustration I'm willing to fight through.",
-      "timestamp_created": 1782503481,
-      "playtime_forever": 37
     }
   ]
 }
