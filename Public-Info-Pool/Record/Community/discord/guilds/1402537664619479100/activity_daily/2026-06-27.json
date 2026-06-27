@@ -1,15 +1,17 @@
 {
   "date": "2026-06-27",
-  "messages": 39,
+  "messages": 50,
   "unique_authors": 6,
-  "reactions_total": 11,
+  "reactions_total": 16,
   "attachments": 2,
   "channel_activity": {
-    "general-discussion": 32,
-    "2026 May - June Contribution Log: V2.5.2 Updates": 5,
+    "general-discussion": 40,
+    "2026 May - June Contribution Log: V2.5.2 Updates": 8,
     "announcements": 2
   },
   "hourly_activity": {
+    "9": 7,
+    "10": 4,
     "5": 24,
     "6": 3,
     "7": 1,
@@ -17,8 +19,8 @@
     "4": 8
   },
   "message_types": {
-    "0": 21,
-    "19": 7
+    "19": 6,
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -36,6 +38,46 @@
       "author": "omnichromia",
       "reactions": 2,
       "channel": "general-discussion"
+    },
+    {
+      "id": "1520354217984921680",
+      "channel_id": "1402941858606219294",
+      "content": "Thank you! So upon looking at the key terms without context we actually localize",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1520365550172246096",
+      "channel_id": "1402941858606219294",
+      "content": "like we technically need a Project Manager on our end",
+      "author": "ace_asteria_lan",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1520368406598123581",
+      "channel_id": "1402941858606219294",
+      "content": "Thank you so much for being patient with us!!",
+      "author": "ace_asteria_lan",
+      "reactions": 1,
+      "channel": "general-discussion"
+    },
+    {
+      "id": "1520354573422821388",
+      "channel_id": "1520284206175883284",
+      "content": "RU Arachne: Haps, Riddle\n\nRU Saya: Ansu, Chie, Haps, Riddle",
+      "author": "theriddleofcards",
+      "reactions": 1,
+      "channel": "2026 May - June Contribution Log: V2.5.2 Updates"
+    },
+    {
+      "id": "1520372323432005662",
+      "channel_id": "1520284206175883284",
+      "content": "FR Saya: Lislium, Jun\n(I didn't work on Arachne's terms so I'm not sure who did ",
+      "author": "lislium",
+      "reactions": 1,
+      "channel": "2026 May - June Contribution Log: V2.5.2 Updates"
     },
     {
       "id": "1520299019220422836",
