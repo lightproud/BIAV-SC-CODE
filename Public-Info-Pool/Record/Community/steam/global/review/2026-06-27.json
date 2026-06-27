@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T09:28:38.766267+00:00",
+  "archived_at": "2026-06-27T11:27:14.530914+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -262,6 +262,30 @@
         "playtime_forever": 2279,
         "votes_up": 0,
         "timestamp_created": 1782530732
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] hidden gem",
+      "summary": "hidden gem",
+      "source": "steam_review",
+      "time": "2026-06-27T10:05:49+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198834312166/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198834312166",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 245,
+        "votes_up": 0,
+        "timestamp_created": 1782554749
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-26",
-  "archived_at": "2026-06-27T09:28:38.822199+00:00",
+  "archived_at": "2026-06-27T11:27:14.621735+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 The most generous gacha I've played.",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 спасибо дорогие разрабы за эту шикарную",
+      "summary": "спасибо дорогие разрабы за эту шикарную игру, я счастлива",
+      "source": "google_play",
+      "time": "2026-06-26T10:49:52",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-3662e104-eff6-4322-9489-a0cc984ae653",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Karai",
+      "tags": [],
+      "lang": "ru",
+      "platform_region": "ru",
       "region": "global"
     }
   ],

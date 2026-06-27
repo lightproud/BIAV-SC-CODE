@@ -1,9 +1,19 @@
 {
-  "collected_at": "2026-06-27T09:27:48.457954+00:00",
+  "collected_at": "2026-06-27T11:26:22.278251+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-27T09:47:45+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] My invite code",
+      "summary": "MFU7SLH70V\n\nThanks and have fun :)",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962198807/",
+      "author": "Xaybas",
+      "engagement": 0
+    },
     {
       "source": "steam_discussion",
       "time": "2026-06-27T02:37:34+00:00",

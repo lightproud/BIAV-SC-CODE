@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T09:28:38.723206+00:00",
+  "archived_at": "2026-06-27T11:27:14.495681+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 13,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -143,6 +143,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "【忘却前夜】羊皮珊1t容灾5-5",
+      "summary": "把墨菲优化了，打单t盾会溢出，长线请坚持选择我们的小蛋糕\n  └ 路过的耄耋 (1赞): 黑鸡大佬又在玩极限[笑哭]\n  └ 璃っ亓 (0赞): 其实突然想打1t也是因为某个UW厨打了1t[doge]",
+      "source": "bilibili",
+      "time": "2026-06-27T06:39:49+00:00",
+      "url": "https://www.bilibili.com/video/BV12d7J67EiH",
+      "engagement": 104,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 100,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d838fd4f1d4e449fbbe493417262de8dc75925e9.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "沙耶很狂：一分钟榨干乌贼娘",
       "summary": "清新风味，触手系百合物语\n  └ 女团天天 (3赞): 我今天才发现，原来你的头像就是沙耶[尴尬]",
       "source": "bilibili",
@@ -207,6 +230,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/4a7355dc6922f148fdb2ee9ce8ca5f55c18e9c1c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "哇，那么深的沟",
+      "summary": "无不良引导",
+      "source": "bilibili",
+      "time": "2026-06-27T10:36:03+00:00",
+      "url": "https://www.bilibili.com/video/BV1D97H64EDU",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "CyaneuS_ky",
+      "tags": [
+        "同人·手书"
+      ],
+      "metadata": {
+        "play": 6,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/e9427a3e4d3ca4f09f6c47f7e02b76eed4b22ba8.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

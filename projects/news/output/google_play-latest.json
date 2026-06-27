@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-27T09:27:48.457954+00:00",
+  "collected_at": "2026-06-27T11:26:22.278251+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 155,
@@ -1236,6 +1236,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-06-26T10:49:52",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 спасибо дорогие разрабы за эту шикарную",
+      "summary": "спасибо дорогие разрабы за эту шикарную игру, я счастлива",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-3662e104-eff6-4322-9489-a0cc984ae653",
+      "author": "Karai",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-24T21:38:58",
       "lang": "ru",
       "title": "[Google Play 好评] ★5 absolute cinema",
@@ -1542,16 +1552,6 @@
       "summary": "最高",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-49947be8-14a4-4807-9ee5-ef2e454e5d63",
       "author": "arai",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-28T11:22:59",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 もっと人気出ていい",
-      "summary": "もっと人気出ていい",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-4b14622c-26a5-476c-9ac4-76be197f4768",
-      "author": "アニ",
       "engagement": 0
     }
   ]
