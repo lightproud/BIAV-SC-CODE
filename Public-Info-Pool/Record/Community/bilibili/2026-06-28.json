@@ -1,9 +1,32 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-27T17:05:32.023910+00:00",
+  "archived_at": "2026-06-27T19:12:02.618567+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
+    {
+      "title": "第四届N厨杯-第十七日录播",
+      "summary": "第十七日直播录播",
+      "source": "bilibili",
+      "time": "2026-06-27T17:21:48+00:00",
+      "url": "https://www.bilibili.com/video/BV12KTP6gEBK",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "【忘却前夜】晦夜引灯抽卡视频",
       "summary": "省流：125抽出了6金，菲茵特，奥尔拉，羊妈，血希，詹金，塔薇。",
