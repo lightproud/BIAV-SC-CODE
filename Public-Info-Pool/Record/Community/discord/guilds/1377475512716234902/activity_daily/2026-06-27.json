@@ -1,23 +1,25 @@
 {
   "date": "2026-06-27",
-  "messages": 972,
+  "messages": 1009,
   "unique_authors": 21,
-  "reactions_total": 235,
-  "attachments": 86,
+  "reactions_total": 251,
+  "attachments": 89,
   "channel_activity": {
-    "なんでも雑談": 807,
+    "なんでも雑談": 825,
+    "対戦募集": 4,
+    "誰でも質問": 76,
     "🔰初心者質問": 66,
-    "誰でも質問": 61,
     "今日の〜シリーズver1.0": 2,
     "招待コード共有会": 2,
     "つぶやき": 33,
     "ニムフィーアの毒パ研究日誌": 1
   },
   "hourly_activity": {
+    "15": 53,
+    "16": 4,
     "12": 79,
     "13": 144,
     "14": 125,
-    "15": 20,
     "10": 10,
     "11": 37,
     "8": 37,
@@ -32,8 +34,8 @@
     "0": 4
   },
   "message_types": {
-    "0": 247,
-    "19": 52
+    "0": 34,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -42,6 +44,14 @@
       "content": "タイスさんの繁殖やりました\nこれ||セックス||ですか？",
       "author": "nononome.",
       "reactions": 12,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1520448602827395303",
+      "channel_id": "1400058619726266462",
+      "content": "",
+      "author": "zzzorz",
+      "reactions": 8,
       "channel": "誰でも質問"
     },
     {
@@ -58,6 +68,14 @@
       "content": "",
       "author": "0w04250",
       "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520453158692847847",
+      "channel_id": "1377478664609857647",
+      "content": "性能盛り盛りで楽しそうだったので！\nみなさんありがとうございました🥳🤲🏻🩶",
+      "author": "ciocux",
+      "reactions": 4,
       "channel": "なんでも雑談"
     },
     {
@@ -179,22 +197,6 @@
       "author": "suzuri9701",
       "reactions": 3,
       "channel": "つぶやき"
-    },
-    {
-      "id": "1520423191158456381",
-      "channel_id": "1377478664609857647",
-      "content": "バグかも",
-      "author": "zzzorz",
-      "reactions": 2,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1520423739286749254",
-      "channel_id": "1377478664609857647",
-      "content": "調べたらプリセットもドラフトもレベル100報酬でした…",
-      "author": "blootrain13",
-      "reactions": 2,
-      "channel": "なんでも雑談"
     }
   ]
 }
