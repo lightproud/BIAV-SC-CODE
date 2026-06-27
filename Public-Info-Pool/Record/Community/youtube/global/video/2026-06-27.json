@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T06:51:57.252335+00:00",
+  "archived_at": "2026-06-27T09:28:38.724242+00:00",
   "source": "youtube",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "title": "[Morimens] 2.5.2 Patch Notes Overview : Reupload with Audio Fixed. Worst Wheel and Posse ever?!!",
@@ -238,6 +238,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/xQj6ay0wRQg/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens • Chapter 3 Stage 1 Playthrough",
+      "summary": "We are diving deeper into the eerie world of Morimens! In this video, I'm tackling Chapter 3, Stage 1. Things are getting way more ...",
+      "source": "youtube",
+      "time": "2026-06-27T07:50:05Z",
+      "url": "https://www.youtube.com/watch?v=XuMgnX7pPFA",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "KarmandarkK",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/XuMgnX7pPFA/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

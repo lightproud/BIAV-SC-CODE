@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T06:51:57.250829+00:00",
+  "archived_at": "2026-06-27T09:28:38.723206+00:00",
   "source": "bilibili",
-  "item_count": 8,
+  "item_count": 11,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -23,6 +23,75 @@
         "danmaku": 5
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/1d7a54fac056e6bab0e133ef7806119597f3f849.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]7月到8月的一个版本前瞻，命轮：梦游仙境，三相池更新，血希 鸟弟 船长，建议优先抽鸟弟，福利活动",
+      "summary": "-\n  └ 64646199467 (4赞): 神图还有好久，感觉可以先给鸟弟弄个+12过度一下\n  └ 70cm四方の窓辺 (1赞): 我喜欢你[Cat2_CatAMail]\n  └ 五笔的眼泪 (0赞): [打call][打call][打call]",
+      "source": "bilibili",
+      "time": "2026-06-27T08:43:23+00:00",
+      "url": "https://www.bilibili.com/video/BV1H97p6jEMP",
+      "engagement": 461,
+      "is_hot": false,
+      "author": "渔歌伴晚舟",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 454,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/ef1f8a7e9e6b758416c6c0449c86d7bdb0a30414.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "天素罗の唄",
+      "summary": "AI烂活\n  └ 陈超星 (7赞): [Mygo表情包_探头][Mygo表情包_让我看看]为什么正常走廊的尽头会出现一坨血肉[Mygo表情包_不会吧？]\n  └ 高祖还乡 (5赞): 不是天素罗的东西变成了天素罗，那么没变成天素罗的岂不是…\n  └ 喜欢玩GB的B站B友 (2赞): @高祖还乡 @陈超星 @e-bot @泽惠c新时代剪辑 \n沙耶?",
+      "source": "bilibili",
+      "time": "2026-06-27T00:35:25+00:00",
+      "url": "https://www.bilibili.com/video/BV1AH7J6rEhy",
+      "engagement": 365,
+      "is_hot": false,
+      "author": "他亚索E直可以的",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 358,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/3cbe5ed7f90cb0ab52ebc067df0204c852a918ce.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位］神秘bug之不平等交换，二费三幻影，幻影队直接起飞",
+      "summary": "-\n  └ 时の咲夜 (2赞): 气笑了还嘚靠bug才能玩幻影队\n  └ 一般杂鱼 (3赞): [doge]被我看到了\n  └ old苏归 (3赞): 晚点杂鱼就来猛猛修bug了[doge]",
+      "source": "bilibili",
+      "time": "2026-06-27T07:30:33+00:00",
+      "url": "https://www.bilibili.com/video/BV16u7n6BEQT",
+      "engagement": 258,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 251,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/a53be55633cae0d429432464b2285975d48805e5.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

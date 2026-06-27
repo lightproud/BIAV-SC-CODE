@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-27T06:50:57.390846+00:00",
+  "collected_at": "2026-06-27T09:27:48.457954+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 16,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -62,7 +62,7 @@
       "voted_up": true,
       "review": "saya NB",
       "timestamp_created": 1782520873,
-      "playtime_forever": 514
+      "playtime_forever": 664
     },
     {
       "source": "steam",
@@ -122,7 +122,7 @@
       "voted_up": true,
       "review": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
       "timestamp_created": 1782508753,
-      "playtime_forever": 257
+      "playtime_forever": 390
     },
     {
       "source": "steam",
@@ -167,7 +167,7 @@
       "voted_up": true,
       "review": "我有牌瘾",
       "timestamp_created": 1782495338,
-      "playtime_forever": 8343
+      "playtime_forever": 8352
     },
     {
       "source": "steam",
@@ -182,7 +182,7 @@
       "voted_up": true,
       "review": "갓겜",
       "timestamp_created": 1782472837,
-      "playtime_forever": 5123
+      "playtime_forever": 5127
     },
     {
       "source": "steam",
@@ -213,36 +213,6 @@
       "review": "是值得一玩的roguelike卡牌佳作  人物立绘做很精良 剧情很棒 好玩！",
       "timestamp_created": 1782466978,
       "playtime_forever": 441
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T09:06:19+00:00",
-      "lang": "koreana",
-      "title": "[正面] 한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
-      "summary": "한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
-      "url": "https://steamcommunity.com/profiles/76561198823304948/recommended/3052450",
-      "author": "76561198823304948",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "한국 국내 서버 출시 안 하는 것 빼고 완벽한 게임\n+ GPT 번역 개판임",
-      "timestamp_created": 1782464779,
-      "playtime_forever": 3282
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T06:58:59+00:00",
-      "lang": "english",
-      "title": "[正面] Lovecraftian AWOOGA",
-      "summary": "Lovecraftian AWOOGA",
-      "url": "https://steamcommunity.com/profiles/76561199541220257/recommended/3052450",
-      "author": "76561199541220257",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Lovecraftian AWOOGA",
-      "timestamp_created": 1782457139,
-      "playtime_forever": 702
     }
   ]
 }
