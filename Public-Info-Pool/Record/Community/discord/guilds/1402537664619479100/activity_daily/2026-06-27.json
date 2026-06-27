@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-27",
+  "messages": 11,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "general-discussion": 5,
+    "announcements": 2,
+    "2026 May - June Contribution Log: V2.5.2 Updates": 4
+  },
+  "hourly_activity": {
+    "3": 3,
+    "4": 8
+  },
+  "message_types": {
+    "0": 10,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1520274638452691017",
+      "channel_id": "1402941858606219294",
+      "content": "<:celeste_pray:1408324281624170566> **Why This Matters (and Why We Need Your Hel",
+      "author": "ace_asteria_lan",
+      "reactions": 1,
+      "channel": "general-discussion"
+    }
+  ]
+}
