@@ -1,15 +1,16 @@
 {
   "date": "2026-06-27",
-  "messages": 51,
+  "messages": 53,
   "unique_authors": 6,
   "reactions_total": 16,
   "attachments": 2,
   "channel_activity": {
+    "general-discussion": 42,
     "2026 May - June Contribution Log: V2.5.2 Updates": 9,
-    "general-discussion": 40,
     "announcements": 2
   },
   "hourly_activity": {
+    "14": 2,
     "10": 5,
     "9": 7,
     "5": 24,
@@ -19,7 +20,8 @@
     "4": 8
   },
   "message_types": {
-    "19": 1
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
     {
