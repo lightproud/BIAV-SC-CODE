@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-27T20:56:15.024480+00:00",
+  "collected_at": "2026-06-27T22:00:24.507987+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,51 @@
       "review": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
       "timestamp_created": 1782514332,
       "playtime_forever": 719
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T21:05:46+00:00",
+      "lang": "russian",
+      "title": "[正面] бурмалда",
+      "summary": "бурмалда",
+      "url": "https://steamcommunity.com/profiles/76561199518825387/recommended/3052450",
+      "author": "76561199518825387",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "бурмалда",
+      "timestamp_created": 1782594346,
+      "playtime_forever": 492
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T20:25:42+00:00",
+      "lang": "vietnamese",
+      "title": "[正面] Hay.",
+      "summary": "Hay.",
+      "url": "https://steamcommunity.com/profiles/76561199503910746/recommended/3052450",
+      "author": "76561199503910746",
+      "engagement": 0,
+      "language": "vietnamese",
+      "voted_up": true,
+      "review": "Hay.",
+      "timestamp_created": 1782591942,
+      "playtime_forever": 330
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T20:17:23+00:00",
+      "lang": "english",
+      "title": "[正面] ruined my life",
+      "summary": "ruined my life",
+      "url": "https://steamcommunity.com/profiles/76561199013498632/recommended/3052450",
+      "author": "76561199013498632",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "ruined my life",
+      "timestamp_created": 1782591443,
+      "playtime_forever": 2014
     },
     {
       "source": "steam",
@@ -183,21 +228,6 @@
       "review": "Best Gacha I've ever played",
       "timestamp_created": 1782511655,
       "playtime_forever": 1368
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T21:19:13+00:00",
-      "lang": "english",
-      "title": "[正面] The gacha system is actually very generous, the ga...",
-      "summary": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
-      "url": "https://steamcommunity.com/profiles/76561199554918204/recommended/3052450",
-      "author": "76561199554918204",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "The gacha system is actually very generous, the gameplay is turn based but it does it very well. Every piece of art in the game is rendered nicely, and the characters are appealing to both men and women. Only played for 3 hours and Im hella into this game!",
-      "timestamp_created": 1782508753,
-      "playtime_forever": 484
     }
   ]
 }

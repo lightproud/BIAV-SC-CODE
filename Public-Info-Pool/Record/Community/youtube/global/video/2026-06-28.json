@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-27T20:57:02.955065+00:00",
+  "archived_at": "2026-06-27T22:01:09.779154+00:00",
   "source": "youtube",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "en el universo de morimens es imposible sobrevivir sabiendo que hay fuerzas cósmicas detras",
@@ -51,6 +51,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/lksqM1nfDUg/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "忘却前夜　タヴィの編成考える　2回目",
+      "summary": "今週配布あるけど我慢できずに3凸する可能性大.",
+      "source": "youtube",
+      "time": "2026-06-27T21:55:20Z",
+      "url": "https://www.youtube.com/watch?v=dIJ2CUAYBho",
+      "engagement": 63,
+      "is_hot": false,
+      "author": "たこに名前を入力",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/dIJ2CUAYBho/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

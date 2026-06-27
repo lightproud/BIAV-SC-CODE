@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-27T20:57:03.046149+00:00",
+  "archived_at": "2026-06-27T22:01:09.872296+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] gem alert (ignore the pain and suffering ahead)",
@@ -46,6 +46,78 @@
         "playtime_forever": 65,
         "votes_up": 0,
         "timestamp_created": 1782588578
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] бурмалда",
+      "summary": "бурмалда",
+      "source": "steam_review",
+      "time": "2026-06-27T21:05:46+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199518825387/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199518825387",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 492,
+        "votes_up": 0,
+        "timestamp_created": 1782594346
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Hay.",
+      "summary": "Hay.",
+      "source": "steam_review",
+      "time": "2026-06-27T20:25:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199503910746/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199503910746",
+      "tags": [
+        "vietnamese"
+      ],
+      "language": "vietnamese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 330,
+        "votes_up": 0,
+        "timestamp_created": 1782591942
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] ruined my life",
+      "summary": "ruined my life",
+      "source": "steam_review",
+      "time": "2026-06-27T20:17:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199013498632/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199013498632",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2014,
+        "votes_up": 0,
+        "timestamp_created": 1782591443
       },
       "region": "global",
       "archive_subtype": "review",
