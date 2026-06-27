@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-27T11:26:22.278251+00:00",
+  "collected_at": "2026-06-27T13:20:52.274521+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 32,
@@ -162,16 +162,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-27T11:25:34.712197+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-06T17:04:22+09:00",
       "lang": "",
       "title": "ジェンキン",
@@ -240,6 +230,18 @@
       "author": "ソラミミ",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/09/19/145520323_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-02T19:03:48+09:00",
+      "lang": "",
+      "title": "佇む",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145520152",
+      "author": "ソラミミ",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/19/03/48/145520152_p0_square1200.jpg",
       "content_type": "image"
     },
     {
