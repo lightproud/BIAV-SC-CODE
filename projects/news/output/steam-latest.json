@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-27T15:13:41.671558+00:00",
+  "collected_at": "2026-06-27T17:04:41.496081+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 14,
@@ -32,7 +32,7 @@
       "voted_up": true,
       "review": "特别好玩",
       "timestamp_created": 1782565962,
-      "playtime_forever": 962
+      "playtime_forever": 973
     },
     {
       "source": "steam",
@@ -122,7 +122,7 @@
       "voted_up": true,
       "review": "saya NB",
       "timestamp_created": 1782520873,
-      "playtime_forever": 1024
+      "playtime_forever": 1085
     },
     {
       "source": "steam",
@@ -212,7 +212,7 @@
       "voted_up": true,
       "review": "我有牌瘾",
       "timestamp_created": 1782495338,
-      "playtime_forever": 8448
+      "playtime_forever": 8467
     }
   ]
 }
