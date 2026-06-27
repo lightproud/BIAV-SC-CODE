@@ -1,24 +1,9 @@
 {
-  "collected_at": "2026-06-27T22:00:24.507987+00:00",
+  "collected_at": "2026-06-27T23:05:28.690055+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 15,
+  "item_count": 13,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-06-26T22:52:12+00:00",
-      "lang": "english",
-      "title": "[正面] Genuinely the single best gacha game I've ever pla...",
-      "summary": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
-      "url": "https://steamcommunity.com/profiles/76561198236490742/recommended/3052450",
-      "author": "76561198236490742",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": true,
-      "review": "Genuinely the single best gacha game I've ever played. The writing is miles above near everything in the Gacha genre, and while the protagonist is a tad bland, as standard for gacha, the overall meaning of the story is clear. The sense of dread is clear and the approach of the end. \r\n\r\nThe game is generous, the characters are amazing, the gameplay is extremely fun, and I would even rate it above Mihoyo products in all except the polish that comes with a large scale company backing. \r\nWill be a long time player and hope the game sticks around for years to come, to fully realize it's potential.",
-      "timestamp_created": 1782514332,
-      "playtime_forever": 719
-    },
     {
       "source": "steam",
       "time": "2026-06-27T21:05:46+00:00",
@@ -47,7 +32,7 @@
       "voted_up": true,
       "review": "Hay.",
       "timestamp_created": 1782591942,
-      "playtime_forever": 330
+      "playtime_forever": 359
     },
     {
       "source": "steam",
@@ -62,7 +47,7 @@
       "voted_up": true,
       "review": "ruined my life",
       "timestamp_created": 1782591443,
-      "playtime_forever": 2014
+      "playtime_forever": 2074
     },
     {
       "source": "steam",
@@ -213,21 +198,6 @@
       "review": "it's probably the most fun gacha i've played, but it is still a gacha so know what you are getting into (the game is very generous though!) Plays like slay the spire in combat but not in deck building, great lovecraft/weird fiction themes with fun designs and hard combat without needing premium characters. Collabing with older lovecraft games is the cherry on top.",
       "timestamp_created": 1782520370,
       "playtime_forever": 18880
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-26T22:07:35+00:00",
-      "lang": "english",
-      "title": "[正面] Best Gacha I've ever played",
-      "summary": "Best Gacha I've ever played",
-      "url": "https://steamcommunity.com/profiles/76561198049428896/recommended/3052450",
-      "author": "76561198049428896",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Best Gacha I've ever played",
-      "timestamp_created": 1782511655,
-      "playtime_forever": 1368
     }
   ]
 }
