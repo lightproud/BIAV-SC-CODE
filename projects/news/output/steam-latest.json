@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-27T13:20:52.274521+00:00",
+  "collected_at": "2026-06-27T15:13:41.671558+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -21,6 +21,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-06-27T13:12:42+00:00",
+      "lang": "schinese",
+      "title": "[正面] 特别好玩",
+      "summary": "特别好玩",
+      "url": "https://steamcommunity.com/profiles/76561199829461678/recommended/3052450",
+      "author": "76561199829461678",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "特别好玩",
+      "timestamp_created": 1782565962,
+      "playtime_forever": 962
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-27T12:12:49+00:00",
+      "lang": "koreana",
+      "title": "[正面] 턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착...",
+      "summary": "턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착할것같긴한데 챗지피티번역+유저번역이라기엔 얼마없는 소수인원... 이렇게가다가 갑자기 섭종하지않을까 불안한게임",
+      "url": "https://steamcommunity.com/profiles/76561199200565895/recommended/3052450",
+      "author": "76561199200565895",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착할것같긴한데 챗지피티번역+유저번역이라기엔 얼마없는 소수인원... 이렇게가다가 갑자기 섭종하지않을까 불안한게임",
+      "timestamp_created": 1782562369,
+      "playtime_forever": 326
+    },
+    {
+      "source": "steam",
       "time": "2026-06-27T10:05:49+00:00",
       "lang": "english",
       "title": "[正面] hidden gem",
@@ -32,7 +62,7 @@
       "voted_up": true,
       "review": "hidden gem",
       "timestamp_created": 1782554749,
-      "playtime_forever": 330
+      "playtime_forever": 385
     },
     {
       "source": "steam",
@@ -62,7 +92,7 @@
       "voted_up": true,
       "review": "因为沙耶联动才知道这个游戏，相见恨晚！\n这才是我想玩的二次元卡牌游戏！\n[spoiler]  给你冲个月卡，希望你能熬过这个冬天。 [/spoiler]",
       "timestamp_created": 1782530733,
-      "playtime_forever": 4342
+      "playtime_forever": 4358
     },
     {
       "source": "steam",
@@ -92,7 +122,7 @@
       "voted_up": true,
       "review": "saya NB",
       "timestamp_created": 1782520873,
-      "playtime_forever": 874
+      "playtime_forever": 1024
     },
     {
       "source": "steam",
@@ -182,7 +212,7 @@
       "voted_up": true,
       "review": "我有牌瘾",
       "timestamp_created": 1782495338,
-      "playtime_forever": 8352
+      "playtime_forever": 8448
     }
   ]
 }

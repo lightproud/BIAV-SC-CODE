@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T13:21:45.100254+00:00",
+  "archived_at": "2026-06-27T15:14:33.541086+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "title": "[正面] 我有牌瘾",
@@ -286,6 +286,54 @@
         "playtime_forever": 245,
         "votes_up": 0,
         "timestamp_created": 1782554749
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 特别好玩",
+      "summary": "特别好玩",
+      "source": "steam_review",
+      "time": "2026-06-27T13:12:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199829461678/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199829461678",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 962,
+        "votes_up": 0,
+        "timestamp_created": 1782565962
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착...",
+      "summary": "턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착할것같긴한데 챗지피티번역+유저번역이라기엔 얼마없는 소수인원... 이렇게가다가 갑자기 섭종하지않을까 불안한게임",
+      "source": "steam_review",
+      "time": "2026-06-27T12:12:49+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199200565895/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199200565895",
+      "tags": [
+        "koreana"
+      ],
+      "language": "koreana",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 326,
+        "votes_up": 0,
+        "timestamp_created": 1782562369
       },
       "region": "global",
       "archive_subtype": "review",

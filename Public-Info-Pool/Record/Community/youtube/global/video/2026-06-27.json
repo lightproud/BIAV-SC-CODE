@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-27T13:21:45.030776+00:00",
+  "archived_at": "2026-06-27T15:14:33.464782+00:00",
   "source": "youtube",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "title": "[Morimens] 2.5.2 Patch Notes Overview : Reupload with Audio Fixed. Worst Wheel and Posse ever?!!",
@@ -408,6 +408,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/N-GI0XIz-TE/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "A Probably Lengthy LIVE Analysis of Pontos in Morimens (+ Train Gameplay after)",
+      "summary": "Since I might not have time to knock up a proper edited video before Big Man Pontos is available on their banner, we'll do it live!",
+      "source": "youtube",
+      "time": "2026-06-27T15:08:00Z",
+      "url": "https://www.youtube.com/watch?v=Dntleg4O2rE",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Rose Guardian Reya",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Dntleg4O2rE/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
