@@ -1,11 +1,11 @@
 {
   "date": "2026-06-27",
-  "messages": 1117,
+  "messages": 1118,
   "unique_authors": 21,
   "reactions_total": 261,
   "attachments": 95,
   "channel_activity": {
-    "なんでも雑談": 922,
+    "なんでも雑談": 923,
     "🔰初心者質問": 69,
     "ほぼラフ": 1,
     "招待コード共有会": 3,
@@ -16,6 +16,7 @@
     "ニムフィーアの毒パ研究日誌": 1
   },
   "hourly_activity": {
+    "21": 1,
     "18": 46,
     "19": 40,
     "20": 4,
@@ -39,8 +40,7 @@
     "0": 4
   },
   "message_types": {
-    "0": 54,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
