@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T20:58:25.841490+00:00",
+  "updated_at": "2026-06-28T22:00:52.224333+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -12,7 +12,7 @@
       "last_success_date": "2026-06-29",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2356,
+      "total_items": 2358,
       "errors": []
     },
     "steam": {
@@ -76,7 +76,7 @@
       "last_success_date": "2026-06-29",
       "last_check_date": "2026-06-28",
       "consecutive_silent_days": 0,
-      "total_items": 8315,
+      "total_items": 8328,
       "errors": []
     },
     "bahamut": {
@@ -148,7 +148,7 @@
       "last_success_date": "2026-06-18",
       "last_check_date": "2026-06-28",
       "consecutive_silent_days": 11,
-      "total_items": 5116,
+      "total_items": 5136,
       "errors": []
     },
     "twitter": {

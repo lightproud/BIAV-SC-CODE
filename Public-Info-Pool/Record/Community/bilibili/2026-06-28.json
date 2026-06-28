@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T20:58:25.201568+00:00",
+  "archived_at": "2026-06-28T22:00:51.595776+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/73c2f8714abd9a9e7dcbe3af582d52404f340001.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "癫狂列车 但是60级神国打大虫子 忘却前夜",
+      "summary": "强强强强大神国\n有点像是乱打\n别问 问就是展示容错\n\n打到一半发现比想象中的还强\n怎么会这样 变得好无聊了\n\n背景音乐：Sakuzyo - &quot;Piano History&quot;\n  └ 唬隌洳鄞 (1赞): 忘却前夜是个无聊的游戏...",
+      "source": "bilibili",
+      "time": "2026-06-28T13:17:05+00:00",
+      "url": "https://www.bilibili.com/video/BV1tLTg6tEMK",
+      "engagement": 103,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 101,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/490d2a7fe8301be20f05e6d1adf3db6a47cbaf58.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

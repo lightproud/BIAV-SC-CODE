@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-28T20:57:37.588192+00:00",
+  "collected_at": "2026-06-28T22:00:00.928701+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 5,
@@ -66,18 +66,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-06-27T21:05:46+00:00",
-      "lang": "russian",
-      "title": "[正面] бурмалда",
-      "summary": "бурмалда",
-      "url": "https://steamcommunity.com/profiles/76561199518825387/recommended/3052450",
-      "author": "76561199518825387",
+      "time": "2026-06-28T19:28:50+00:00",
+      "lang": "japanese",
+      "title": "[正面] ふつくしい",
+      "summary": "ふつくしい",
+      "url": "https://steamcommunity.com/profiles/76561199491050835/recommended/4226130",
+      "author": "76561199491050835",
       "engagement": 0,
-      "language": "russian",
+      "language": "japanese",
       "voted_up": true,
-      "review": "бурмалда",
-      "timestamp_created": 1782594346,
-      "playtime_forever": 492
+      "review": "ふつくしい",
+      "timestamp_created": 1782674930,
+      "playtime_forever": 1859
     }
   ]
 }
