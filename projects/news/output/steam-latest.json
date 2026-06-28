@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-28T17:04:19.025353+00:00",
+  "collected_at": "2026-06-28T19:10:14.906808+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 8,
@@ -17,7 +17,22 @@
       "voted_up": true,
       "review": "Игра просто прекрасная\r\nСюжет, персонажи, мир, арты, озвучка, быстрая система накоплений... Эта гача невероятно радует по сравнению со всеми, что были до этого. Да, перевод неидеален, но большое спасибо, что он есть, и что можно понять, что происходит",
       "timestamp_created": 1782627525,
-      "playtime_forever": 1441
+      "playtime_forever": 1468
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-28T17:18:41+00:00",
+      "lang": "russian",
+      "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
+      "summary": "настолько ахуенные арты и персонажи что у меня аж по ляшкам потекло",
+      "url": "https://steamcommunity.com/profiles/76561198685604408/recommended/3052450",
+      "author": "76561198685604408",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "настолько ахуенные арты и персонажи что у меня аж по ляшкам потекло",
+      "timestamp_created": 1782667121,
+      "playtime_forever": 102
     },
     {
       "source": "steam",
@@ -32,7 +47,7 @@
       "voted_up": true,
       "review": "Caro go nomnom...",
       "timestamp_created": 1782624002,
-      "playtime_forever": 1580
+      "playtime_forever": 1616
     },
     {
       "source": "steam",
@@ -77,7 +92,7 @@
       "voted_up": true,
       "review": "Hay.",
       "timestamp_created": 1782591942,
-      "playtime_forever": 616
+      "playtime_forever": 766
     },
     {
       "source": "steam",
@@ -92,7 +107,7 @@
       "voted_up": true,
       "review": "ruined my life",
       "timestamp_created": 1782591443,
-      "playtime_forever": 2286
+      "playtime_forever": 2323
     },
     {
       "source": "steam",
@@ -108,21 +123,6 @@
       "review": "i have come to see saya from (saya no uta) and i will re come to play the game and... get saya for sure that's a good game for now what i see is really good",
       "timestamp_created": 1782588578,
       "playtime_forever": 198
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-27T17:22:52+00:00",
-      "lang": "english",
-      "title": "[正面] gem alert (ignore the pain and suffering ahead)",
-      "summary": "gem alert (ignore the pain and suffering ahead)",
-      "url": "https://steamcommunity.com/profiles/76561198362583455/recommended/3052450",
-      "author": "76561198362583455",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "gem alert (ignore the pain and suffering ahead)",
-      "timestamp_created": 1782580972,
-      "playtime_forever": 17145
     }
   ]
 }

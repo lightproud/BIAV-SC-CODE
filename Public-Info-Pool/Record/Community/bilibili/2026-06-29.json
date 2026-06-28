@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-28T17:05:10.608453+00:00",
+  "archived_at": "2026-06-28T19:11:06.621304+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "🎧 忘却前夜┊V2.5.2 广播剧《瘾》",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/7d6665eb88d04ace369552ab037d382c4ca88124.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "粉毛saya..吗",
+      "summary": "参考:BV1JpwCz5ErW",
+      "source": "bilibili",
+      "time": "2026-06-28T18:46:52+00:00",
+      "url": "https://www.bilibili.com/video/BV1DhT36KEyo",
+      "engagement": 14,
+      "is_hot": false,
+      "author": "-咪啪酱-",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 14,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/dfff6e93c442022ce5b31008657d2f6b4350af43.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

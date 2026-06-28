@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-29",
+  "archived_at": "2026-06-28T19:11:06.703907+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
+      "summary": "настолько ахуенные арты и персонажи что у меня аж по ляшкам потекло",
+      "source": "steam_review",
+      "time": "2026-06-28T17:18:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198685604408/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198685604408",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 102,
+        "votes_up": 0,
+        "timestamp_created": 1782667121
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
