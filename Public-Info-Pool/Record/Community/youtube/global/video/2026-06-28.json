@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T07:01:11.243459+00:00",
+  "archived_at": "2026-06-28T10:00:20.413206+00:00",
   "source": "youtube",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "title": "en el universo de morimens es imposible sobrevivir sabiendo que hay fuerzas cósmicas detras",
@@ -238,6 +238,40 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/VGrM9cFMQS4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "【忘却前夜】通常調査「9-1」「9-2」",
+      "summary": "忘却前夜 プレイヤー調査Lv74 よければお使いください。 招待コード：GCWESC27JR.",
+      "source": "youtube",
+      "time": "2026-06-28T08:54:28Z",
+      "url": "https://www.youtube.com/watch?v=y8H1fOIVF1A",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "霏憂【ひゅう】",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/y8H1fOIVF1A/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "【忘却前夜】山札リフレッシュ検証",
+      "summary": "忘却前夜 ・カードが山札リフレッシュで捨て札から山札に戻れるのは、1ターンに1度だけっぽい？ ・タイスの狂気解放で増やし ...",
+      "source": "youtube",
+      "time": "2026-06-28T07:23:21Z",
+      "url": "https://www.youtube.com/watch?v=pPydDj7tbE8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "霏憂【ひゅう】",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/pPydDj7tbE8/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

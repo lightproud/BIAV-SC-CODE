@@ -1,9 +1,39 @@
 {
-  "collected_at": "2026-06-28T07:00:26.217821+00:00",
+  "collected_at": "2026-06-28T09:59:35.570755+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-28T06:18:45+00:00",
+      "lang": "russian",
+      "title": "[正面] Игра просто прекрасная\r\nСюжет, персонажи, мир, арт...",
+      "summary": "Игра просто прекрасная\r\nСюжет, персонажи, мир, арты, озвучка, быстрая система накоплений... Эта гача невероятно радует по сравнению со всеми, что были до этого. Да, перевод неидеален, но большое спасибо, что он есть, и что можно понять, что происходит",
+      "url": "https://steamcommunity.com/profiles/76561198441127196/recommended/3052450",
+      "author": "76561198441127196",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Игра просто прекрасная\r\nСюжет, персонажи, мир, арты, озвучка, быстрая система накоплений... Эта гача невероятно радует по сравнению со всеми, что были до этого. Да, перевод неидеален, но большое спасибо, что он есть, и что можно понять, что происходит",
+      "timestamp_created": 1782627525,
+      "playtime_forever": 1398
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-28T05:20:02+00:00",
+      "lang": "english",
+      "title": "[正面] Caro go nomnom...",
+      "summary": "Caro go nomnom...",
+      "url": "https://steamcommunity.com/profiles/76561198384340648/recommended/3052450",
+      "author": "76561198384340648",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Caro go nomnom...",
+      "timestamp_created": 1782624002,
+      "playtime_forever": 1290
+    },
     {
       "source": "steam",
       "time": "2026-06-28T02:56:35+00:00",
@@ -47,7 +77,7 @@
       "voted_up": true,
       "review": "Hay.",
       "timestamp_created": 1782591942,
-      "playtime_forever": 389
+      "playtime_forever": 525
     },
     {
       "source": "steam",
@@ -62,7 +92,7 @@
       "voted_up": true,
       "review": "ruined my life",
       "timestamp_created": 1782591443,
-      "playtime_forever": 2208
+      "playtime_forever": 2286
     },
     {
       "source": "steam",
@@ -92,7 +122,7 @@
       "voted_up": true,
       "review": "gem alert (ignore the pain and suffering ahead)",
       "timestamp_created": 1782580972,
-      "playtime_forever": 17146
+      "playtime_forever": 17145
     },
     {
       "source": "steam",

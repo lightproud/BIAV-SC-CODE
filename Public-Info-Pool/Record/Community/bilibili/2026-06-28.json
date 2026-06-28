@@ -1,9 +1,55 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T07:01:11.245032+00:00",
+  "archived_at": "2026-06-28T10:00:20.413893+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 7,
   "items": [
+    {
+      "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
+      "summary": "如果说能给怪诞神作的游戏做一个排行榜，那这款发布于13年前的galgame一定会\n\t名列前茅，一边是作品披着18嘎的外壳，在原产地日本也只是地下流通的男性向小众而\n\t一边享誉来自世界各地玩家的好评如潮，其中女性玩家竟然也占很大的比重.与此同时，这部作品使用了独特的元叙事(meta-fiction)手法，以及少有的水彩画风做游戏，这理念放在那个年头非常超前，就连他们的制作人都认为,这是一部带有实验性质的游戏,甚至担心游戏的轮回与暴力情节会冒犯到玩家,还提前\n限制了游戏的出货量。但事实上正是这种冒犯，让玩家给\n  └ 万物评测轻尘说 (2赞): 很棒的视频，感谢您的制作！\n  └ 茜揪链動 (4赞): 美雪的和白色相簿2的冬马和纱是一个cv，当初玩的时候总感觉要给雪菜来一棒子彻底终结胃疼比赛[笑哭]\n  └ shiki_Mikiy (3赞): 十二神器一些作品还是有含金量的 十二魔器就是纯猎奇了",
+      "source": "bilibili",
+      "time": "2026-06-28T08:37:41+00:00",
+      "url": "https://www.bilibili.com/video/BV1eqTM6vEL3",
+      "engagement": 1090,
+      "is_hot": true,
+      "author": "爱心卡库拉怪兽",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 1073,
+        "comment_count": 17,
+        "comments_fetched": 3,
+        "danmaku": 4
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/088a044b8e3506a5eff4985ecc84a3cf6aeccf19.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "金坷垃之歌，由氮磷钾组成的少女",
+      "summary": "-\n  └ 他在水中沚 (5赞): 比原版猎奇\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_啊？]",
+      "source": "bilibili",
+      "time": "2026-06-28T07:29:11+00:00",
+      "url": "https://www.bilibili.com/video/BV1wwTu6EEhs",
+      "engagement": 701,
+      "is_hot": true,
+      "author": "动漫从业者厷",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 697,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/de180f09edacaec093cfde2c18fa0e4b1b28e818.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "［相位］淡墨希洛，先手第三回合劝退对手",
       "summary": "有淡墨希洛不需要攒很高伤害，随便挂50层献祭对面就吃不消了，而且不提前击杀对面手牌卡住也不好展开。图鲁艾继丝双控针对萝坦/单c，安眠或者职责这两4费命轮需要提前上一个，另一个可以爆发回合再装",
@@ -23,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/9167052f1bf3b59cf6c387167b720950cd0bd60c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位］底层机制修改，大量命轮钥令重做2.5.2版本相位对弈平衡性调整一览",
+      "summary": "-\n  └ 炸药一桶 (1赞): 这个pvp改的真是莫名其妙\n  └ 一般杂鱼 (1赞): [微笑]\n高情商：大放异彩\n  └ 无生持 (0赞): 神了",
+      "source": "bilibili",
+      "time": "2026-06-28T09:36:32+00:00",
+      "url": "https://www.bilibili.com/video/BV1FWTM6LEqQ",
+      "engagement": 94,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 91,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/c087833326b1c0834ab4f42081743fa88d1eb2ec.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

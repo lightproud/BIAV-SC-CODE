@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T07:01:11.348102+00:00",
+  "archived_at": "2026-06-28T10:00:20.486714+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] gem alert (ignore the pain and suffering ahead)",
@@ -142,6 +142,54 @@
         "playtime_forever": 278,
         "votes_up": 0,
         "timestamp_created": 1782615395
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Игра просто прекрасная\r\nСюжет, персонажи, мир, арт...",
+      "summary": "Игра просто прекрасная\r\nСюжет, персонажи, мир, арты, озвучка, быстрая система накоплений... Эта гача невероятно радует по сравнению со всеми, что были до этого. Да, перевод неидеален, но большое спасибо, что он есть, и что можно понять, что происходит",
+      "source": "steam_review",
+      "time": "2026-06-28T06:18:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198441127196/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198441127196",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1398,
+        "votes_up": 0,
+        "timestamp_created": 1782627525
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Caro go nomnom...",
+      "summary": "Caro go nomnom...",
+      "source": "steam_review",
+      "time": "2026-06-28T05:20:02+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198384340648/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198384340648",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1290,
+        "votes_up": 0,
+        "timestamp_created": 1782624002
       },
       "region": "global",
       "archive_subtype": "review",
