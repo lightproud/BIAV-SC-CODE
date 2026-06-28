@@ -1,37 +1,45 @@
 {
   "date": "2026-06-27",
-  "messages": 5193,
+  "messages": 6073,
   "unique_authors": 377,
-  "reactions_total": 948,
-  "attachments": 342,
+  "reactions_total": 1037,
+  "attachments": 399,
   "channel_activity": {
+    "🔸綜合討論": 1022,
+    "🔸阵容构建": 25,
+    "🔸相位对弈": 10,
+    "🔸deutscher-chatraum": 17,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 392,
+    "🔸canal-español": 608,
+    "🔸canal-português": 82,
+    "🔸ruang-obrolan-indonesia": 294,
+    "🔸ห้องสนทนาภาษาไทย": 306,
+    "🔸traphase": 74,
+    "🔸lore-chat": 252,
+    "🔸lets-count": 19,
+    "🔸team-building": 1257,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸机器人命令┊bot-commands": 77,
+    "24 need rework": 1,
+    "Reality Verges": 1,
+    "Faint “doodle”": 1,
+    "Leigh Fanart based on Voiceline": 9,
+    "Drew saya an": 1,
+    "【English Translation】Opinions Collection": 2,
+    "📜 V2.5.2 版本前瞻┊Version Outlook┊버전 미리보기": 6,
+    "V2.5.2 狂欢之行┊A Night of Revelry┊광란의 행진": 67,
     "🔸新生守则┊rules": 1,
-    "🔸綜合討論": 1007,
-    "🔸阵容构建": 23,
     "🔸晒卡分享": 4,
     "🔸欢乐梗图": 2,
-    "🔸相位对弈": 9,
     "🔸课间休息闲聊": 63,
     "🔸日本語チャンネル": 1,
     "🔸한국어-채팅방": 536,
-    "🔸deutscher-chatraum": 5,
-    "🔸chaîne-française": 2,
-    "🔸русский-канал": 235,
     "🔸phòng-chat-tiếng-việt": 787,
-    "🔸canal-español": 361,
-    "🔸canal-português": 13,
-    "🔸ruang-obrolan-indonesia": 289,
-    "🔸ห้องสนทนาภาษาไทย": 295,
-    "🔸traphase": 64,
-    "🔸lore-chat": 248,
     "🔸服务器公告┊server-announcement": 1,
-    "🔸lets-count": 18,
     "🔸频道建议┊server-suggestions": 4,
-    "🔸team-building": 950,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸游戏问题": 2,
-    "🔸机器人命令┊bot-commands": 65,
     "心是无底的深渊": 1,
     "Ryker": 1,
     "关于典藏馆的事件缺失": 2,
@@ -58,9 +66,7 @@
     "Day 20 of doodling N til Morimens makes him playable": 2,
     "D-Zone 375 (Low Investment) Showcase June Blue Ring": 1,
     "morimens team generator!!": 17,
-    "📜 V2.5.2 版本前瞻┊Version Outlook┊버전 미리보기": 3,
     "🎧 V2.5.2 广播剧《瘾》┊Radio Drama - Addiction┊오디오 드라마 『중독』": 1,
-    "V2.5.2 狂欢之行┊A Night of Revelry┊광란의 행진": 63,
     "V2.5.2 沉渊┊What the Abyss Keeps┊심연": 1,
     "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 2,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
@@ -75,6 +81,11 @@
     "1520505472015270079": 1
   },
   "hourly_activity": {
+    "19": 236,
+    "20": 79,
+    "22": 282,
+    "23": 165,
+    "21": 218,
     "6": 190,
     "0": 160,
     "1": 75,
@@ -93,16 +104,12 @@
     "15": 522,
     "16": 220,
     "17": 356,
-    "18": 245,
-    "19": 100
+    "18": 245
   },
   "message_types": {
-    "0": 4128,
-    "19": 1031,
-    "20": 28,
-    "4": 1,
-    "6": 3,
-    "21": 2
+    "0": 622,
+    "19": 252,
+    "20": 6
   },
   "top_reacted_messages": [
     {
@@ -122,12 +129,28 @@
       "channel": "Our Gratitude Journal: Volunteer Translators Contribution Log"
     },
     {
+      "id": "1520541325190103130",
+      "channel_id": "1520541325190103130",
+      "content": "Please give it some support!! It's my fist time doing morimens FA... \nhttps://x.",
+      "author": "asteri_antherae",
+      "reactions": 18,
+      "channel": "Leigh Fanart based on Voiceline"
+    },
+    {
       "id": "1520441214573478009",
       "channel_id": "1519960627508940810",
       "content": "「这些给我最喜欢的小朋友。随时欢迎你再来。」\n\n◇ 兑换码：`GECW-XUCS-UTCC`\n◇ 礼包内容：银芯×200\n◇ 有效期至<t:1783785540",
       "author": "morimensstaff06",
       "reactions": 18,
       "channel": "V2.5.2 狂欢之行┊A Night of Revelry┊광란의 행진"
+    },
+    {
+      "id": "1520545148532949002",
+      "channel_id": "1520049805739429898",
+      "content": "People buy that bundle because of the affordable +12 wheel and the extra perks i",
+      "author": "rerollassnggas",
+      "reactions": 16,
+      "channel": "📜 V2.5.2 版本前瞻┊Version Outlook┊버전 미리보기"
     },
     {
       "id": "1520409863807565907",
@@ -248,22 +271,6 @@
       "author": "cassidy_xue",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1520402215322386512",
-      "channel_id": "1131839874132090890",
-      "content": "佬们求配队qaq进了沙耶的副本感觉根本打不明白了",
-      "author": "beatsonrepeat",
-      "reactions": 6,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1520443022548926677",
-      "channel_id": "1300659603993923644",
-      "content": "2 con nữ vai kề vai thì s",
-      "author": "anicillia",
-      "reactions": 6,
-      "channel": "🔸phòng-chat-tiếng-việt"
     }
   ]
 }

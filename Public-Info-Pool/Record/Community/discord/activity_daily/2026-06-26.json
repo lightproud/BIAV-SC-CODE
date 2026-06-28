@@ -1,10 +1,11 @@
 {
   "date": "2026-06-26",
-  "messages": 7542,
+  "messages": 7601,
   "unique_authors": 471,
-  "reactions_total": 1440,
-  "attachments": 515,
+  "reactions_total": 1443,
+  "attachments": 521,
   "channel_activity": {
+    "🔸game-question": 59,
     "🔸綜合討論": 1518,
     "🔸交友频道": 7,
     "🔸deutscher-chatraum": 55,
@@ -91,12 +92,12 @@
     "1520133122816081981": 1
   },
   "hourly_activity": {
+    "0": 173,
     "20": 135,
     "21": 116,
     "22": 66,
     "23": 107,
     "19": 311,
-    "0": 114,
     "1": 153,
     "2": 155,
     "3": 239,
@@ -117,9 +118,8 @@
     "18": 160
   },
   "message_types": {
-    "0": 340,
-    "19": 106,
-    "20": 1
+    "19": 16,
+    "0": 43
   },
   "top_reacted_messages": [
     {
