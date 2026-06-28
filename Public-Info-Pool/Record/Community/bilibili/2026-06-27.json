@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-28T02:50:20.669764+00:00",
+  "archived_at": "2026-06-28T07:01:11.244248+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/b6db123cc6e67eb5db955d422edec52c1e5c2843.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "What if all of this is unreal？",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-27T15:48:24+00:00",
+      "url": "https://www.bilibili.com/video/BV1aG7W6PEpY",
+      "engagement": 148,
+      "is_hot": false,
+      "author": "Kayiiga",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 148,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 10
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/4d4cf7cecba8c39c287a785450575d384b2aadfb.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

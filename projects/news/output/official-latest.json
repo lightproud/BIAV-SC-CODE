@@ -1,9 +1,19 @@
 {
-  "collected_at": "2026-06-28T02:49:29.955733+00:00",
+  "collected_at": "2026-06-28T07:00:26.217821+00:00",
   "source": "official",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "official",
+      "time": "2026-06-28T05:47:05+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] V2.5.2.0 Maintenance Announcement",
+      "summary": "Dear Keeper,Mythag University is scheduled to conduct campus facility maintenance from 08:00 to 12:00 on June 28(UTC+8).You can enter the game once the maintenance is complete. As an apology for any inconvenience caused by the update, we will provide a supply package. Wishing everyone a successful investigation! \\Server Maintenance Compensation: Silver×200, Ethereal Core×5 \\The collection period ends on July 13, 2026 at 09:00. Please remember to check your mailbox in time to collect the supplies...",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165557679",
+      "author": "Mythag Staff",
+      "engagement": 0
+    },
     {
       "source": "official",
       "time": "2026-06-26T12:55:18+00:00",

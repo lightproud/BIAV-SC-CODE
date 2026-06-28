@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T02:50:20.753686+00:00",
+  "archived_at": "2026-06-28T07:01:11.348102+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] gem alert (ignore the pain and suffering ahead)",
@@ -118,6 +118,30 @@
         "playtime_forever": 2014,
         "votes_up": 0,
         "timestamp_created": 1782591443
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 画风很好，剧情也很好",
+      "summary": "画风很好，剧情也很好",
+      "source": "steam_review",
+      "time": "2026-06-28T02:56:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198725243336/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198725243336",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 278,
+        "votes_up": 0,
+        "timestamp_created": 1782615395
       },
       "region": "global",
       "archive_subtype": "review",
