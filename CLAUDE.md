@@ -245,7 +245,8 @@ brain-in-a-vat/
 │   └── *.md / *.json              # 见 §5.3
 ├── okf/                           # Open Knowledge Format v0.1 bundle（生成物，见 §6.1）
 ├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
-├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
+├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本；覆盖率门控见 §7.2）
+├── docs/                          # 工程文档（testing-strategy.md 分层测试策略，见 §7.1/§7.2）
 ├── Public-Info-Pool/              # 公开信息层总池（BPT 5R：取代旧 deliverables/，见 §6.2）
 │   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
 │   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，#333 迁入，见 §5.2）
@@ -253,7 +254,7 @@ brain-in-a-vat/
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
 ├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
-├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
+├── .claude/                       # slash 命令 / 技能 / settings.json（当前无会话钩子，见 §7.4）
 └── .github/workflows/             # CI 自动化（见 §7.2）
 ```
 
@@ -308,6 +309,7 @@ brain-in-a-vat/
 | 场景 | 命令 |
 |------|------|
 | 运行验证程序（全量单测）| `pytest tests/ -v` |
+| 覆盖率本地核验 | `pytest tests/ --cov --cov-fail-under=85`（CI 同闸；分层测试策略见 `docs/testing-strategy.md`）|
 | wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
@@ -320,6 +322,13 @@ brain-in-a-vat/
 数据（抓取 / 解包 / 校验 / 版本检测）、测试、部署运维。精确清单以
 `ls .github/workflows/` 为准；机器提交带 `[skip ci]` 防触发循环。日报定时已停用，
 报告改在会话内生成（详见 `memory/project-status.md`）。
+
+**测试层四道护栏**（运行参照 `docs/testing-strategy.md`）：(1) 行覆盖率门控
+（`test.yml` 跑 `--cov-fail-under=85`，实测约 97%，门控刻意留余量防采集器凑数测试）；
+(2) 变异测试（`mutation-test.yml` + `setup.cfg`，手动触发，验断言是否真钉住行为）；
+(3) 真集成测试（`tests/test_integration_*.py`，真依赖 / 真路径）；(4) 数据纪律测试
+（`tests/test_data_discipline.py`，防全量层 vs 输出层混用，见 §4.1）。CLAUDE.md 自身受
+`tests/test_claude_md*.py` 三哨兵守护（路径存在性 / 裁定日期跨档对账 / 核心脚本反向漂移）。
 
 ### §7.3 脚本层
 
