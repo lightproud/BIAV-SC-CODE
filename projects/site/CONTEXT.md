@@ -65,7 +65,7 @@ https://lightproud.github.io/brain-in-a-vat/
 ├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
 ├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /brain-in-a-vat/wiki/）
 ├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
-└── /docs/    ← deliverables/2026-03/缸中之脑计划.{html,pdf}（如存在）
+└── /docs/    ← Public-Info-Pool/Resource/proposal/biav-project-plan-202603.{html,pdf}（如存在；deliverables/ 已 2026-06-21 迁此）
 ```
 
 > design/ 通过 `deploy-site.yml:92` 的 `cp -r projects/site/design dist/design` 部署到外网，
@@ -90,9 +90,9 @@ environment 部署记录会阻止新 workflow 部署（详见 `memory/lessons-le
 
 ### 触发条件
 
-push to main 且路径匹配（2026-06-09 实测 `deploy-site.yml` paths）：`projects/site/**`、
+push to main 且路径匹配（`deploy-site.yml` paths）：`projects/site/**`、
 `projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/news/index.html`、
-`deliverables/**`、`.github/workflows/deploy-site.yml`。
+`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、`.github/workflows/deploy-site.yml`。
 也支持 `workflow_dispatch` 手动触发。旧 `site/**` 路径已不在触发列表（与下文 2026-04-20 B1a 清理记述一致）。
 
 ## 文件位置说明

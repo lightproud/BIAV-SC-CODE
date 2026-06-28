@@ -37,7 +37,7 @@
 - [ ] 后续：更多唤醒体 / 武器进化树 / 真实立绘接入 / 音效
 
 ## 依赖
-- 角色数据 — 现行源 `projects/wiki/data/extracted/categorized/character_data.txt`（一手解包，72 角色）。**原 `projects/wiki/data/db/characters.json` 结构化层 2026-06-15 已清空，W2 重建中**，Phase 4 启动前应已齐 72
+- 角色数据 — 现行源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；底层原始字段 `projects/wiki/data/extracted/categorized/character_data.txt`）。**原 `projects/wiki/data/db/characters.json` 占位结构化层 2026-06-15 已清空、勿引用**；W2 可信基线已重建（72 齐）
 - `projects/game/config/game-config.json` — 游戏配置（本项目产出，待创建）
 - `assets/images/` — 图片素材
 
@@ -56,7 +56,7 @@
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 game 子项目当前状态
 - [ ] 阅读 `memory/morimens-context.md` 了解游戏背景知识（游戏设计的基础）
-- [ ] 检查 `projects/wiki/data/db/` 中可用的数据资产（characters.json 已建立，当前 24/72）
+- [ ] 检查现行角色源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；旧 `data/db/` 占位层 2026-06-15 已清空，勿引用）
 - [ ] 确认"待决策"清单中哪些已有结论，更新本文件
 - [ ] 确认你要修改的文件不属于其他子项目
 - [ ] 完成任务后更新本文件状态和 `memory/project-status.md`

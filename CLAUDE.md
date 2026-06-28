@@ -26,7 +26,7 @@
 
 | 系统 | 定位 | 数据流 |
 |------|------|------|
-| **银芯（BIAV-SC）受限层** | 本仓库 / GitHub / AI 协作运营 | → 黑池（信息单向输出）|
+| **银芯（BIAV-SC）公开信息层** | 本仓库 / GitHub / AI 协作运营 | → 黑池（信息单向输出）|
 | **黑池（BIAV-BP）内部层** | 内网 SVN + Qoder / Studio 商业数据 | 银芯 → 黑池单向。**黑池任何形式都不进银芯**（守密人 2026-04-26 裁定，硬约束全文见 §1.1-HC）|
 
 银芯是黑池的「眼睛和耳朵」：采集 + 整理外部信息往黑池送，黑池吃完不吐回。
@@ -78,9 +78,10 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
 2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `projects/wiki/data/extracted/`
    原始字段 → 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
-   **当前状态**：原结构化层（`characters.json` 全 6 JSON + 派生角色页）2026-06-15 守密人裁定整层清空
-   （占位数据长期误导引用），数据桥现导出空数组、站点构建通过；W2 以一手解包字段重建可信基线中
-   （**禁用合成占位**，进度见 `memory/project-status.md`）。
+   **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
+   （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
+   **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
+   **W2 收尾**：运行时数据桥 characters.ts 仍导出空数组、待接回 processed/ 基线（进度见 `memory/project-status.md`）。
 3. **记忆层**（使命#3 底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
    人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
@@ -192,7 +193,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 |
 | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 |
 | `assets/data/card-system.json` | 卡牌系统术语（指令卡等，解包字面验证） |
-| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色基线原始字段（客户端解包，自举数据源；原结构化角色数据层随 #221 退役、待 W2 重建，进度见 `memory/project-status.md`）|
+| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色基线原始字段（客户端解包，自举数据源；旧 data/db/ 占位结构化层 2026-06-15 清空，W2 可信基线已重建于 `projects/wiki/data/processed/characters.json`（72 真实角色），58 真实角色页已生成，仅余数据桥接回；进度见 `memory/project-status.md`）|
 | `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
 | `projects/wiki/data/processed/story/STORY_RESEARCH.md` | **剧情/世界观/神话原型深度研究综述**（autoresearch 5 轮，逐条带【已证实】/【推测】+来源）：忘却篇1-9章+星辰篇剧情、终章真相（守密人=至高意志碎片/缸中之脑兑现）、7 阵营、35+ 角色↔克苏鲁原型、意识潜游个人剧情、A.F.编年史、OST/广播剧/CV、制作秘辛。社区源（非解包），采信前看置信标签 |
 | `projects/wiki/data/processed/story/` | 解包故事**结构层**（机器可读）：`story_units`（剧情单元脊柱）/ `lore_entries`（1026 lore 含正文）/ `index`（章节↔lore↔关卡↔角色聚合）/ `README.md`；由 `scripts/build_story_layer.py` 可复现生成 |
@@ -267,9 +268,10 @@ brain-in-a-vat/
 `type`，`index.md`/`log.md` 保留名）。**生成物**，由 `scripts/build_okf_bundle.py`
 从现有权威源可复现生成，重跑覆盖；一致性由 `tests/test_okf_bundle.py` 守护。
 
-- **定位**：银芯受限/非公开层，本 bundle 面向**内部消费**（艾瑞卡人格 / 银芯→黑池
-  单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图），**不对外发布**——OKF 官方
-  「跨组织互操作」主卖点对银芯打折。
+- **定位**：银芯为**公开信息层**（整层公开，见 §0；本 bundle 作为工程产物亦属公开信息）。
+  「整层公开」（信息定位）与「本 bundle 主要面向**内部消费**」（产物用途取舍）是正交两维：
+  本 bundle 主供艾瑞卡人格 / 银芯→黑池单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图，
+  **非以对外跨组织互操作为目标**——OKF 官方「跨组织互操作」主卖点对银芯打折。
 - **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色）；(2) **放指针不放本体**
   （`okf/sources/` / `okf/memory/` / `okf/story/` 仅持 `resource` 指针，本体原地不动，呼应
   RELEASES.md「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`okf/sources/`

@@ -4,7 +4,7 @@
 >
 > 维护者：艾瑞卡。结构变化时同步更新本文件 + `CLAUDE.md` §5.2 社区情报章节。
 >
-> 最后更新：2026-05-03
+> 最后更新：2026-06-28（全量档案层根迁至 `Public-Info-Pool/Record/Community/`，2026-06-21 BPT 4R de-tier）
 
 ---
 
@@ -17,7 +17,7 @@
 
 数据有两层，**绝不互换**：
 
-- **全量档案层**（真实数据）：`projects/news/data/`
+- **全量档案层**（真实数据）：`Public-Info-Pool/Record/Community/`（2026-06-21 迁入 BPT 4R，text 全量永驻 git）
   - 长窗口分析、抽样率计算、情感长尾、历史回溯 → **必须用这一层**
 - **输出展示层**（过滤选样）：`projects/news/output/`
   - 仅快查 / 热度榜，是 24h 或 30 天窗口 + 热度阈值过滤后的样本
@@ -33,19 +33,19 @@ https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/<PATH>
 ## 全量档案层目录（16 平台 + Discord）
 
 **Discord**（最大资产，264 MB / 1946 jsonl / 468 频道目录，回溯 2026-02）：
-- `projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` — 全量消息（按 channel ID 后 8 位哈希分桶）
-- `projects/news/data/discord/activity_daily/{date}.json` — 每日纯统计（913 文件，回溯 **2023-07-21**）
-- `projects/news/data/discord/channel_index.json` — 146 个频道索引
-- `projects/news/data/discord/guild_meta.json` — 163 个频道元数据
+- `Public-Info-Pool/Record/Community/discord/channels/{id_suffix}/{date}.jsonl` — 全量消息（按 channel ID 后 8 位哈希分桶）
+- `Public-Info-Pool/Record/Community/discord/activity_daily/{date}.json` — 每日纯统计（913 文件，回溯 **2023-07-21**）
+- `Public-Info-Pool/Record/Community/discord/channel_index.json` — 146 个频道索引
+- `Public-Info-Pool/Record/Community/discord/guild_meta.json` — 163 个频道元数据
 
 **16 平台**（按规模降序）：
-- `projects/news/data/platforms/steam_review/{date}.json` — 619 文件 / 3.2 MB / 2024-08 → 当日
-- `projects/news/data/platforms/appstore/{date}.json` — 166 文件 / 2023-11 → 当日（24 国评论）
-- `projects/news/data/platforms/pixiv/{date}.json` — 129 文件 / 2023-12 → 当日
-- `projects/news/data/platforms/weixin/{date}.json` — 93 文件 / 2016-02 → 当日
-- `projects/news/data/platforms/bilibili/{date}.json` — 2026-03 → 当日
-- `projects/news/data/platforms/steam/{date}.json` — Steam 公告
-- `projects/news/data/platforms/google_play/{date}.json` — 22 locale 评论
+- `Public-Info-Pool/Record/Community/steam_review/{date}.json` — 619 文件 / 3.2 MB / 2024-08 → 当日
+- `Public-Info-Pool/Record/Community/appstore/{date}.json` — 166 文件 / 2023-11 → 当日（24 国评论）
+- `Public-Info-Pool/Record/Community/pixiv/{date}.json` — 129 文件 / 2023-12 → 当日
+- `Public-Info-Pool/Record/Community/weixin/{date}.json` — 93 文件 / 2016-02 → 当日
+- `Public-Info-Pool/Record/Community/bilibili/{date}.json` — 2026-03 → 当日
+- `Public-Info-Pool/Record/Community/steam/{date}.json` — Steam 公告
+- `Public-Info-Pool/Record/Community/google_play/{date}.json` — 22 locale 评论
 - 还有：`reddit / youtube / weibo / official / telegram / stopgame / ruliweb` 等
 
 每个 `{date}.json` 结构：`{date, archived_at, source, item_count, items: [...]}`
@@ -57,9 +57,9 @@ https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/<PATH>
 
 ## 高频用法示例
 
-1. **"近 7 天 weibo 全量"** → fetch `data/platforms/weibo/2026-04-{27,28,29,30}.json` + `data/platforms/weibo/2026-05-{01,02,03}.json`
-2. **"Discord 某频道 5-1 消息"** → 先 fetch `discord/channel_index.json` 找该频道的 `dir`（id 后 8 位）→ fetch `discord/channels/{dir}/2026-05-01.jsonl`
-3. **"Steam 评论 2024 全年"** → 列出 `data/platforms/steam_review/2024-*.json`，逐文件 fetch
+1. **"近 7 天 weibo 全量"** → fetch `Public-Info-Pool/Record/Community/weibo/2026-04-{27,28,29,30}.json` + `Public-Info-Pool/Record/Community/weibo/2026-05-{01,02,03}.json`
+2. **"Discord 某频道 5-1 消息"** → 先 fetch `Public-Info-Pool/Record/Community/discord/channel_index.json` 找该频道的 `dir`（id 后 8 位）→ fetch `Public-Info-Pool/Record/Community/discord/channels/{dir}/2026-05-01.jsonl`（紧凑 schema：缺字段=默认值，读取用 `.get(默认)`）
+3. **"Steam 评论 2024 全年"** → 列出 `Public-Info-Pool/Record/Community/steam_review/2024-*.json`（平台目录名以 `ls Public-Info-Pool/Record/Community/` 为准），逐文件 fetch
 4. **"今日热点快查"** → 直接 fetch `output/all-latest.json`（不需要全量层）
 
 ## 仓库主索引

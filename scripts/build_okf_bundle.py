@@ -6,8 +6,8 @@ markdown files with YAML frontmatter. Each non-reserved ``.md`` file is one
 *concept* whose only required frontmatter field is ``type``; ``index.md`` and
 ``log.md`` are reserved. Spec: https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
 
-银芯定位说明（受限/非公开层）：本 bundle 面向**内部消费**——艾瑞卡人格、
-银芯→黑池单向接口、白嫖 OKF 静态可视化器，而非对外互操作。三条铁律落地于此：
+银芯定位说明（公开信息层，整层公开）：本 bundle 作为工程产物亦属公开信息，主供**内部消费**——
+艾瑞卡人格、银芯→黑池单向接口、白嫖 OKF 静态可视化器，非以对外互操作为目标。三条铁律落地于此：
 1. 一概念一文件（characters 层）；
 2. **放指针不放本体**（sources/memory/story 层：``resource`` 指向仓内权威源，
    本体原地不动，呼应 RELEASES.md 「藏宝图」与 CLAUDE.md「只指针不复刻」）；
@@ -361,7 +361,7 @@ def build_root(counts: dict) -> None:
         "# 银芯 OKF Bundle",
         "",
         "银芯（BIAV-SC）知识层的 Open Knowledge Format (v0.1) 捆绑包。",
-        "受限/非公开层，面向内部消费（艾瑞卡人格 / 银芯→黑池单向接口 / OKF 可视化器）。",
+        "公开信息层（整层公开）；本 bundle 主供内部消费（艾瑞卡人格 / 银芯→黑池单向接口 / OKF 可视化器）。",
         "",
         "## 章节",
         "",
@@ -414,7 +414,7 @@ def build_root(counts: dict) -> None:
     readme_fm = frontmatter({
         "type": "documentation",
         "title": "银芯 OKF Bundle README",
-        "description": "本 bundle 的说明、银芯受限层定位、三条落地铁律与重生成方式。",
+        "description": "本 bundle 的说明、银芯公开层定位、三条落地铁律与重生成方式。",
         "tags": ["meta", "documentation"],
         "timestamp": TODAY,
     })
@@ -430,9 +430,9 @@ https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
 
 ## 银芯定位（重要）
 
-银芯是**受限/非公开层**。OKF 官方主卖点「跨组织互操作」对银芯打折——
-本 bundle 面向**内部**：艾瑞卡人格消费、银芯→黑池单向接口的线格式候选、
-白嫖 OKF 静态可视化器看角色关系图。**不对外发布**。
+银芯为**公开信息层**（整层公开，守密人 2026-06-21 裁定；本 bundle 作为工程产物亦属公开信息）。
+OKF 官方主卖点「跨组织互操作」对银芯打折——本 bundle 主供**内部消费**：艾瑞卡人格消费、
+银芯→黑池单向接口的线格式候选、白嫖 OKF 静态可视化器看角色关系图，**非以对外互操作为目标**。
 
 ## 三条落地铁律
 

@@ -4,7 +4,7 @@ title: "contribution-protocol.md"
 description: "贡献协议 v1.0"
 resource: "/memory/contribution-protocol.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-06-21"
+timestamp: "2026-06-28"
 ---
 
 # 记忆层指针

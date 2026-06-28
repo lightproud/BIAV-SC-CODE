@@ -102,7 +102,7 @@ Agent 按需追踪线索，不自动入库，不计入覆盖率统计。
    `KNOWN_SOURCES` / `CORE_SOURCES` / `SPARSE_SOURCES` / `BACKFILL_PLATFORMS` 之一或多个。
    源名归一化走 `SOURCE_ALIASES`。
 2. **双路径登记（CLAUDE.md §4.1 硬约束）**：同时确认并记录该源的
-   - 全量档案层路径：`data/platforms/{source}/YYYY-MM-DD.json`（Discord 走独立 `data/discord/`）
+   - 全量档案层路径：`Public-Info-Pool/Record/Community/{source}/YYYY-MM-DD.json`（Discord 走 `Public-Info-Pool/Record/Community/discord/`；2026-06-21 BPT 4R 迁移，原 `data/platforms/`·`data/discord/` 根已废）
    - 输出展示层路径：`output/{source}-latest.json`
    两层语义不可互换，缺任一层不得上线。
 3. **接入健康门控**：核心源纳入 `CORE_SOURCES`，由 `silent_sources_audit.py` 监控；
@@ -159,7 +159,7 @@ Agent 按需追踪线索，不自动入库，不计入覆盖率统计。
 
 | 优先级 | 任务 | 接入规格（实证）| 验证标准 |
 |--------|------|----------------|---------|
-| **P0-1** | 核实韩区 `arca_live`（已实装）实际产出，修正抽样失真 | requests + 浏览器 UA（非默认 UA，否则 403）抓 `arca.live/b/forgettingeve?p=N`，解析 `a.vrow.column`；**剔除** `notice-*`/`filtered` 置顶行；时间用 `.col-time` 内 `<time datetime>` ISO8601；间隔 ≥2s，cloudscraper 兜底 challenge。**无需 Playwright/登录** | data/platforms/arca_live/ 有连续日产出且不含置顶噪声 |
+| **P0-1** | 核实韩区 `arca_live`（已实装）实际产出，修正抽样失真 | requests + 浏览器 UA（非默认 UA，否则 403）抓 `arca.live/b/forgettingeve?p=N`，解析 `a.vrow.column`；**剔除** `notice-*`/`filtered` 置顶行；时间用 `.col-time` 内 `<time datetime>` ISO8601；间隔 ≥2s，cloudscraper 兜底 challenge。**无需 Playwright/登录** | Public-Info-Pool/Record/Community/arca_live/ 有连续日产出且不含置顶噪声 |
 | **P1-1** | 巴哈姆特（已实装搜索模式）升级为板内直采 | 配 `BAHAMUT_BSN=78829`；requests + 浏览器 UA 抓 `B.php?bsn=78829&page=N`，解析 `.b-list__row`；**剔除** `.b-list__row--sticky`；时间 `.b-list__time__edittime` 为繁中文本需自写解析器。**无需 Playwright/登录** | bahamut 产出来自 78829 板、含 GP/回复数、置顶已剔 |
 | **P1-2** | 新增 `dtf`（俄语真缺口）| DTF 官方 API `https://api.dtf.ru/v1.6`：`GET /layout/hashtag/morimens` 探测，无果退站内搜索；**必带** 规范 `User-Agent`，限速 **≤3 req/s**；字段映射 Entry/Comment 模型。按 §3 登记 sources.py + 双路径 | dtf 首次产出非空（或确认 DTF 无 Morimens 内容后移入 §2.3）|
 | **P1-3** | StopGame（已实装 HTML）补 RSS 提升稳定性 | 补 `rss.stopgame.ru/rss_news.xml`·`rss_review.xml`·`rss_preview.xml` + 关键词 `Morimens`/`Морименс` 过滤；评分/评测仍爬词条页 | RSS 路径产出非空 |

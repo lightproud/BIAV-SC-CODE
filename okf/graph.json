@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-21",
+  "generated": "2026-06-28",
   "stats": {
-    "nodes": 102,
+    "nodes": 104,
     "edges": 104
   },
   "nodes": [
@@ -839,7 +839,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:active"
+        "health:degraded"
       ]
     },
     {
@@ -919,7 +919,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:steam",
-        "health:active"
+        "health:degraded"
       ]
     },
     {
@@ -929,7 +929,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:steam_discussion",
-        "health:active"
+        "health:degraded"
       ]
     },
     {
@@ -953,6 +953,16 @@
       ]
     },
     {
+      "id": "/sources/taptap_review.md",
+      "type": "dataset",
+      "title": "taptap_review 社区数据源",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:taptap_review",
+        "health:degraded"
+      ]
+    },
+    {
       "id": "/sources/weibo.md",
       "type": "dataset",
       "title": "weibo 社区数据源",
@@ -969,7 +979,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:active"
+        "health:degraded"
       ]
     },
     {
@@ -979,6 +989,16 @@
       "tags": [
         "data_layer:full_archive",
         "platform:youtube",
+        "health:degraded"
+      ]
+    },
+    {
+      "id": "/sources/youtube_comments.md",
+      "type": "dataset",
+      "title": "youtube_comments 社区数据源",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:youtube_comments",
         "health:active"
       ]
     },

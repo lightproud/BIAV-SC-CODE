@@ -1,7 +1,7 @@
 # 环行记（Ring Chronicle）— 设计文档
 
 > 忘却前夜（Morimens）衍生同人玩法 · 吸血鬼幸存者（Vampire Survivors-like）
-> 受限层项目 · 仅引用公开可查阅信息 · B.I.A.V. Studio 银芯知识层
+> 公开信息层项目 · 仅引用公开可查阅信息 · B.I.A.V. Studio 银芯知识层
 > 最后更新：2026-06-03
 
 ---

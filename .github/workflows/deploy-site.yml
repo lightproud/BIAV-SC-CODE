@@ -10,7 +10,7 @@ on:
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
       - 'projects/news/index.html'
-      - 'deliverables/**'
+      - 'Public-Info-Pool/Resource/proposal/**'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
 
@@ -82,8 +82,8 @@ jobs:
           mkdir -p dist/news/data
           [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
           mkdir -p dist/docs
-          [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" dist/docs/brain-in-a-vat-project.html
-          [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" dist/docs/brain-in-a-vat-project.pdf
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" dist/docs/brain-in-a-vat-project.html
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" dist/docs/brain-in-a-vat-project.pdf
           touch dist/.nojekyll
 
       - name: Verify build output

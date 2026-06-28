@@ -1,8 +1,8 @@
 # 新闻采集系统架构
 
-> 最后更新：2026-04-11 by Code-主控台
+> 最后更新：2026-06-28 by 艾瑞卡会话（同步 2026-06-20「统一采集入口」裁定：collect_global 并入 aggregator 单入口；report-system/ 子目录 2026-04-11 已下线，采集器迁至 `projects/news/scripts/`。上次 2026-04-11 by Code-主控台）
 >
-> 本文档说明两套采集系统的分工和使用方式。
+> 本文档说明采集系统的分工和使用方式。生产管线与扩展采集现由 `aggregator.py` 单入口统一调度（2026-06-20 起）。
 
 ## 系统概览
 
@@ -11,9 +11,9 @@
 | 系统 | 入口 | 数据源数 | 运行方式 | 用途 |
 |------|------|----------|----------|------|
 | **生产管线** | `scripts/aggregator.py` | 10 核心 + TapTap/NGA/微博/小红书 Playwright fallback | GitHub Actions 自动（每小时） | 日报、实时监控 |
-| **扩展采集** | `scripts/collect_global.py` → `report-system/scripts/collector.py` | 29 | GitHub Actions 自动（紧跟主管线） | 覆盖全球社区、同人、商店 |
+| **扩展采集** | `scripts/collect_global.py`（内部调 `scripts/global_collectors.py`；2026-06-20 起由 `aggregator.py` 单入口内部调用，不再独立 workflow 步）| 29 | GitHub Actions 自动（aggregator 内置） | 覆盖全球社区、同人、商店 |
 
-两套系统都由 `.github/workflows/update-news.yml` 每小时触发：先跑 `aggregator.py`，再跑 `collect_global.py`，然后 `split_output.py` → `generate_daily.py` → `archive_platforms.py`。本地复现扩展采集需手动 `python projects/news/scripts/collect_global.py`，且多数平台需 API Key 或 Playwright runtime。
+由 `.github/workflows/update-news.yml` 每小时触发：`aggregator.py` 为**唯一采集入口**——先采 AC 平台，内部调 `collect_global.main()` 采全球平台并产出 `news.json` + `news-raw.json`（2026-06-20 起原独立的「Run global collectors」步已并入 aggregator 步以免重复采集），随后 `split_output.py` → `generate_daily.py` → `archive_platforms.py`。本地复现扩展采集仍可手动 `python projects/news/scripts/collect_global.py`，且多数平台需 API Key 或 Playwright runtime。
 
 ## 生产管线（aggregator.py）
 
@@ -51,10 +51,10 @@ python scripts/collect.py --production
 
 - **频率**: 每小时（`cron: '0 * * * *'`）
 - **Workflow**: `.github/workflows/update-news.yml`
-- **执行链**: `aggregator.py` → `collect_global.py` → `split_output.py` → `generate_daily.py` → `download_media.py` → `archive_platforms.py`
+- **执行链**: `aggregator.py`（单入口，内部调 `collect_global.main()`）→ `split_output.py` → `generate_daily.py` → `download_media.py` → `archive_platforms.py`（2026-06-20 起 collect_global 不再为独立 workflow 步）
 - **输出**: `projects/news/output/news.json` + 各平台独立文件
 
-## 扩展采集（collector.py）
+## 扩展采集（collect_global.py / global_collectors.py）
 
 ### 数据源
 
@@ -71,9 +71,8 @@ python scripts/collect.py --production
 ### 运行方式
 
 ```bash
-# 本地运行
-cd projects/news/report-system
-python scripts/collector.py
+# 本地运行（report-system/ 子目录 2026-04-11 已下线，采集器迁至 projects/news/scripts/）
+python projects/news/scripts/collect_global.py
 
 # 统一入口
 python scripts/collect.py --extended

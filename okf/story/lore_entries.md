@@ -4,7 +4,7 @@ title: "lore_entries.json"
 description: "1026 条 lore 含正文（解包结构层）"
 resource: "/projects/wiki/data/processed/story/lore_entries.json"
 tags: ["story", "pointer", "data_layer:full_archive"]
-timestamp: "2026-06-21"
+timestamp: "2026-06-28"
 ---
 
 # 剧情结构层指针
