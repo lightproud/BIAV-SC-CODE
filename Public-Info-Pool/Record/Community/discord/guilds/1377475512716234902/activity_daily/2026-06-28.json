@@ -1,19 +1,24 @@
 {
   "date": "2026-06-28",
-  "messages": 84,
+  "messages": 97,
   "unique_authors": 17,
-  "reactions_total": 37,
-  "attachments": 9,
+  "reactions_total": 40,
+  "attachments": 10,
   "channel_activity": {
-    "なんでも雑談": 47,
+    "なんでも雑談": 50,
+    "誰でも質問": 6,
+    "誰でもOKグロ版野次馬スレ": 4,
+    "対人関係のあれこれ": 1,
     "🔰初心者質問": 24,
-    "誰でも質問": 1,
     "つぶやき": 9,
     "招待コード共有会": 1,
     "描きたい時に描いてます": 1,
     "ニムフィーアの毒パ研究日誌": 1
   },
   "hourly_activity": {
+    "10": 4,
+    "11": 8,
+    "12": 1,
     "6": 29,
     "7": 5,
     "8": 2,
@@ -25,7 +30,7 @@
     "0": 13
   },
   "message_types": {
-    "0": 20
+    "0": 13
   },
   "top_reacted_messages": [
     {
@@ -43,6 +48,14 @@
       "author": "suzuri9701",
       "reactions": 3,
       "channel": "つぶやき"
+    },
+    {
+      "id": "1520738774643114078",
+      "channel_id": "1377478664609857647",
+      "content": "新章の追加ストーリー、これまでのこと思い出して何かしみじみしたな",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1520687920355479552",
@@ -67,6 +80,14 @@
       "author": "uru_neo",
       "reactions": 2,
       "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1520755482191462460",
+      "channel_id": "1400058619726266462",
+      "content": "リリーかナウティラ入れるだけで結構変わるかと思いますよ〜\nまた致命ダメを食らう前に決着したいなら短期火力出すために、カーシアに時計をつけて空間に入れた火力カード",
+      "author": "shisu1a_kanui",
+      "reactions": 1,
+      "channel": "誰でも質問"
     },
     {
       "id": "1520682616037048404",
@@ -171,22 +192,6 @@
       "author": "foxcatfurry",
       "reactions": 1,
       "channel": "なんでも雑談"
-    },
-    {
-      "id": "1520584442140164136",
-      "channel_id": "1391701560496623688",
-      "content": "325ならいけると思います",
-      "author": "sugoitsubasanohaetaop",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
-    },
-    {
-      "id": "1520589523682070588",
-      "channel_id": "1391701560496623688",
-      "content": "325目標なら多分救援サルバ入ればⅡ級くらい余裕だと思うので(´・ω・｀)b",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
     }
   ]
 }
