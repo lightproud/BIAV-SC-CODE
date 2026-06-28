@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T10:00:20.413206+00:00",
+  "archived_at": "2026-06-28T11:49:31.861794+00:00",
   "source": "youtube",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "title": "en el universo de morimens es imposible sobrevivir sabiendo que hay fuerzas cósmicas detras",
@@ -141,6 +141,23 @@
       "archive_subtype": "video"
     },
     {
+      "title": "[Morimens] Going over Sorel and Saya Comp + Rambling at the end about Saya",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-06-28T10:33:01Z",
+      "url": "https://www.youtube.com/watch?v=QOa2Yv9USEc",
+      "engagement": 12,
+      "is_hot": false,
+      "author": "Zyocuh",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/QOa2Yv9USEc/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
       "title": "Morimens Day 5 of Pushing Ultraish F2P",
       "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
       "source": "youtube",
@@ -153,6 +170,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/YHmyy7-iScg/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 3:Alert V! 融災3-5 Boss戰的部分",
+      "summary": "忘卻前夜#morimens 6月22日到7月6日的融災更新. Regional D-Effect Zone Update (June 22 – July 6). 3-5 需要隊伍能維持一定的盾 ...",
+      "source": "youtube",
+      "time": "2026-06-28T10:00:34Z",
+      "url": "https://www.youtube.com/watch?v=IF2cUBx_qCM",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Noir",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/IF2cUBx_qCM/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

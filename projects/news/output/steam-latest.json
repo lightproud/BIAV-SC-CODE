@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-28T09:59:35.570755+00:00",
+  "collected_at": "2026-06-28T11:48:43.073226+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -32,7 +32,7 @@
       "voted_up": true,
       "review": "Caro go nomnom...",
       "timestamp_created": 1782624002,
-      "playtime_forever": 1290
+      "playtime_forever": 1350
     },
     {
       "source": "steam",
@@ -153,21 +153,6 @@
       "review": "턴제겜인데 지루함이 덜하고 빌드업쌓는 재미가 있음, 세계관설정이 매우 취향저격이라 쭉 정착할것같긴한데 챗지피티번역+유저번역이라기엔 얼마없는 소수인원... 이렇게가다가 갑자기 섭종하지않을까 불안한게임",
       "timestamp_created": 1782562369,
       "playtime_forever": 386
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-27T10:05:49+00:00",
-      "lang": "english",
-      "title": "[正面] hidden gem",
-      "summary": "hidden gem",
-      "url": "https://steamcommunity.com/profiles/76561198834312166/recommended/3052450",
-      "author": "76561198834312166",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "hidden gem",
-      "timestamp_created": 1782554749,
-      "playtime_forever": 483
     }
   ]
 }
