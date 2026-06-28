@@ -1,23 +1,24 @@
 {
   "date": "2026-06-28",
-  "messages": 132,
+  "messages": 147,
   "unique_authors": 17,
-  "reactions_total": 44,
-  "attachments": 21,
+  "reactions_total": 48,
+  "attachments": 26,
   "channel_activity": {
-    "なんでも雑談": 67,
+    "なんでも雑談": 79,
+    "つぶやき": 11,
+    "誰でもOKグロ版野次馬スレ": 6,
     "🔰初心者質問": 30,
     "誰でも質問": 12,
     "ニムフィーアの毒パ研究日誌": 6,
-    "誰でもOKグロ版野次馬スレ": 5,
     "対人関係のあれこれ": 1,
-    "つぶやき": 9,
     "招待コード共有会": 1,
     "描きたい時に描いてます": 1
   },
   "hourly_activity": {
+    "14": 18,
+    "15": 5,
     "13": 16,
-    "14": 8,
     "12": 12,
     "10": 4,
     "11": 8,
@@ -32,8 +33,8 @@
     "0": 13
   },
   "message_types": {
-    "0": 33,
-    "19": 2
+    "0": 14,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -59,6 +60,14 @@
       "author": "suzuri9701",
       "reactions": 3,
       "channel": "つぶやき"
+    },
+    {
+      "id": "1520800411668447383",
+      "channel_id": "1377478664609857647",
+      "content": "なかなか良い反撃だった",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1520738774643114078",
@@ -91,6 +100,22 @@
       "author": "uru_neo",
       "reactions": 2,
       "channel": "描きたい時に描いてます"
+    },
+    {
+      "id": "1520799541610283028",
+      "channel_id": "1377478664609857647",
+      "content": "私の編成はいつの間にか５人編成可能になっていたみたいだ(笑)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1520810845137801257",
+      "channel_id": "1377478664609857647",
+      "content": "甘いインクでボスを削り倒したら守秘者ちゃんがすごいゴリラになりました",
+      "author": "_yayoi",
+      "reactions": 1,
+      "channel": "なんでも雑談"
     },
     {
       "id": "1520755482191462460",
@@ -169,30 +194,6 @@
       "channel_id": "1377478664609857647",
       "content": "めでたい🎉",
       "author": "namenemue3",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1520670608126644275",
-      "channel_id": "1377478664609857647",
-      "content": "敵の並びなんかすごいからみんな見て欲しい。",
-      "author": "xudabusakua",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1520677991754108990",
-      "channel_id": "1377478664609857647",
-      "content": "9-2、なんかテキストに違和感ある部分あったけど、2章のジェンキンのときみたいな感じの感覚するストーリー神回だった",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1520680518696308766",
-      "channel_id": "1377478664609857647",
-      "content": "全員ゆうさい出るよ(にこにこ",
-      "author": "foxcatfurry",
       "reactions": 1,
       "channel": "なんでも雑談"
     }
