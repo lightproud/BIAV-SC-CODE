@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-28T19:11:06.621304+00:00",
+  "archived_at": "2026-06-28T20:58:25.203218+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "🎧 忘却前夜┊V2.5.2 广播剧《瘾》",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/dfff6e93c442022ce5b31008657d2f6b4350af43.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "豆包生成的沙耶",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-28T19:39:23+00:00",
+      "url": "https://www.bilibili.com/video/BV1FGT36JEvM",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "幻声无龄",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/c827c6c3fe0b99f5747f68b8a8863c0f6f87df47.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

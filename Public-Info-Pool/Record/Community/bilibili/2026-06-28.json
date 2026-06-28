@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T19:11:06.619792+00:00",
+  "archived_at": "2026-06-28T20:58:25.201568+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/913b41824b78010c9277db8f4c6098948a55c90f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶，你听着",
+      "summary": "-\n  └ 耕司青海瑶 (1赞): [笑哭]\n  └ 黑兔梅酒轮椅王世一冷 (1赞): 根正苗红\n  └ Nautilus114 (0赞): 何意味",
+      "source": "bilibili",
+      "time": "2026-06-28T14:30:26+00:00",
+      "url": "https://www.bilibili.com/video/BV1B9Tu6kELJ",
+      "engagement": 105,
+      "is_hot": false,
+      "author": "厷此方",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 102,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/73c2f8714abd9a9e7dcbe3af582d52404f340001.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

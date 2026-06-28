@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-28T19:10:14.906808+00:00",
+  "collected_at": "2026-06-28T20:57:37.588192+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -78,51 +78,6 @@
       "review": "бурмалда",
       "timestamp_created": 1782594346,
       "playtime_forever": 492
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-27T20:25:42+00:00",
-      "lang": "vietnamese",
-      "title": "[正面] Hay.",
-      "summary": "Hay.",
-      "url": "https://steamcommunity.com/profiles/76561199503910746/recommended/3052450",
-      "author": "76561199503910746",
-      "engagement": 0,
-      "language": "vietnamese",
-      "voted_up": true,
-      "review": "Hay.",
-      "timestamp_created": 1782591942,
-      "playtime_forever": 766
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-27T20:17:23+00:00",
-      "lang": "english",
-      "title": "[正面] ruined my life",
-      "summary": "ruined my life",
-      "url": "https://steamcommunity.com/profiles/76561199013498632/recommended/3052450",
-      "author": "76561199013498632",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "ruined my life",
-      "timestamp_created": 1782591443,
-      "playtime_forever": 2323
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-27T19:29:38+00:00",
-      "lang": "english",
-      "title": "[正面] i have come to see saya from (saya no uta) and i w...",
-      "summary": "i have come to see saya from (saya no uta) and i will re come to play the game and... get saya for sure that's a good game for now what i see is really good",
-      "url": "https://steamcommunity.com/profiles/76561199468381464/recommended/3052450",
-      "author": "76561199468381464",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "i have come to see saya from (saya no uta) and i will re come to play the game and... get saya for sure that's a good game for now what i see is really good",
-      "timestamp_created": 1782588578,
-      "playtime_forever": 198
     }
   ]
 }
