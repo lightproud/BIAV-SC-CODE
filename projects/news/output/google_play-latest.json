@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-28T11:48:43.073226+00:00",
+  "collected_at": "2026-06-28T13:24:50.815615+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 150,
@@ -182,16 +182,6 @@
       "summary": "Game feels slow and boring. I tried but not for me.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1bb9e679-4735-4c62-8e51-546b34396b16",
       "author": "3Swords Zoro",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-29T21:19:46",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 if I had to describe Morimens in one wor",
-      "summary": "if I had to describe Morimens in one word, it'd be \"disappointing\". I'd recommend people to just play CZN instead.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-4ef05151-578a-419b-a6db-5a116ed52674",
-      "author": "Juako Queca (Juako)",
       "engagement": 1
     },
     {
@@ -392,6 +382,16 @@
       "summary": "自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色，ai像個智商三歲的幼兒，總是超維前放。 聖心黑羽循環不會就算了，神母放大前ai又不會調怒濤，本質垃圾",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK#gp-82429977-31ce-40dd-93ec-c74503167260",
       "author": "fung tsan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-27T11:56:19",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Peak game. Please never shut down the ga",
+      "summary": "Peak game. Please never shut down the game 🙏",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5601a767-d6ad-46d6-ba03-37fc26efbf8f",
+      "author": "Bratu Andrei",
       "engagement": 0
     },
     {
@@ -1306,6 +1306,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-06-27T12:26:53",
+      "lang": "ja",
+      "title": "[Google Play 好评] ★5 クトゥルフ好きには堪らないゲーム",
+      "summary": "クトゥルフ好きには堪らないゲーム",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a1dd91a4-e4f1-4553-8a56-cefdf7f92a86",
+      "author": "林佑依佳",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-26T08:40:59",
       "lang": "ja",
       "title": "[Google Play 好评] ★5 まだ、遊び方は慣れていませんが 絵柄やコラボシナリオキャラ設定などには楽しめてい",
@@ -1492,16 +1502,6 @@
       "summary": "とても難しいけど面白い",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-ab7c93fa-5289-4bd0-bd78-055fc06b8152",
       "author": "アルベルトファルシオン",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-29T13:01:08",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 マジで面白い！",
-      "summary": "マジで面白い！",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-3cc65d55-8e79-4195-aae3-5e298977c1c8",
-      "author": "山田くん",
       "engagement": 0
     }
   ]

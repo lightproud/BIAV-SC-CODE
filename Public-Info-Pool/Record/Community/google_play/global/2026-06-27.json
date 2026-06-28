@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-28T11:49:32.003540+00:00",
+  "archived_at": "2026-06-28T13:25:32.873817+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 counter is fun",
@@ -27,6 +27,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "danny",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Peak game. Please never shut down the ga",
+      "summary": "Peak game. Please never shut down the game 🙏",
+      "source": "google_play",
+      "time": "2026-06-27T11:56:19",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5601a767-d6ad-46d6-ba03-37fc26efbf8f",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Bratu Andrei",
       "tags": [],
       "lang": "en",
       "platform_region": "us",

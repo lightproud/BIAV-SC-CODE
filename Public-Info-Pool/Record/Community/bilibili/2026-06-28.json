@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T11:49:31.862459+00:00",
+  "archived_at": "2026-06-28T13:25:32.750106+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 12,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -166,6 +166,52 @@
       "platform_region": "cn"
     },
     {
+      "title": "史上最热门视觉小说 Top 15【中字】",
+      "summary": "https://www.youtube.com/watch?v=nFMCQQkbsqU\n视觉小说一直被低估了。它本来就是小众中的小众，受到的关注远不如其他动漫娱乐形式。但视觉小说里偏偏常有一些情感冲击最强、野心最大、也最令人难忘的故事。\n\n今天就来盘点 VNDB 上按读者和粉丝数排名的 Top 15 最热门视觉小说。",
+      "source": "bilibili",
+      "time": "2026-06-28T13:04:14+00:00",
+      "url": "https://www.bilibili.com/video/BV1nxTg6DERY",
+      "engagement": 36,
+      "is_hot": false,
+      "author": "StuG_III",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 36,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/fd072d6b8f02ad7d74dc913bad9faadb669fd894.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第二十一话 雨雾弥漫",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：萝坦 莱克 宁菲亚 卡茜亚  菲茵特 汀克特 克莱门汀 莉兹 】除了配音有点小毛病 其他没问题",
+      "source": "bilibili",
+      "time": "2026-06-28T12:01:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1weTA6AEho",
+      "engagement": 20,
+      "is_hot": false,
+      "author": "比较瓜皮",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 20,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/166d7a6a6181360960fcd125fcb4e3c76cd775d2.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "第四届N厨杯-第十七日录播",
       "summary": "第十七日直播录播",
       "source": "bilibili",
@@ -207,6 +253,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/0f8bdfe3902bf63d1a9027e4cf58548dbbba3d71.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第二十话 命运抉择",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：达芙黛尔 旺达 阿拉克涅 图鲁 墨菲 希莱斯特 奥瑞塔 卡茜亚 菲茵特】其实这个才是原版 主要是图鲁前后配音不一致 我不想放这一段 但是这一段是精髓 AI告诉我奥瑞塔设定上是海洋精灵 所以有尖耳 平时尖耳藏在头发下 我才接受了这段 我重做了三次 结果一次比一次差 我那个AI我真是服了",
+      "source": "bilibili",
+      "time": "2026-06-28T12:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BV12PTP6rECD",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "比较瓜皮",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/23dce073b0a1fd89fe204e2c94fcbe18d9fd4ce5.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
