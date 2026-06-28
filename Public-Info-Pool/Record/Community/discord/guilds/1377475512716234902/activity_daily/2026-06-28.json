@@ -1,12 +1,12 @@
 {
   "date": "2026-06-28",
-  "messages": 175,
+  "messages": 179,
   "unique_authors": 17,
   "reactions_total": 51,
   "attachments": 30,
   "channel_activity": {
-    "なんでも雑談": 102,
-    "つぶやき": 14,
+    "なんでも雑談": 103,
+    "つぶやき": 17,
     "🔰初心者質問": 31,
     "ほぼラフ": 1,
     "誰でもOKグロ版野次馬スレ": 6,
@@ -17,6 +17,7 @@
     "描きたい時に描いてます": 1
   },
   "hourly_activity": {
+    "23": 4,
     "20": 1,
     "19": 3,
     "17": 23,
@@ -38,7 +39,7 @@
     "0": 13
   },
   "message_types": {
-    "19": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {
