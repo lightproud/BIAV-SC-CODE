@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T13:25:32.749444+00:00",
+  "archived_at": "2026-06-28T15:16:52.958818+00:00",
   "source": "youtube",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "title": "en el universo de morimens es imposible sobrevivir sabiendo que hay fuerzas cósmicas detras",
@@ -119,6 +119,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/-Jpo5hJzALc/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)심해 신캐 당신의 생각은?",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "source": "youtube",
+      "time": "2026-06-28T13:31:48Z",
+      "url": "https://www.youtube.com/watch?v=PSD7TOi2NGk",
+      "engagement": 32,
+      "is_hot": false,
+      "author": "박현(Muyeong)",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/PSD7TOi2NGk/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
