@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-28T22:00:51.698673+00:00",
+  "archived_at": "2026-06-28T23:04:30.404690+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
@@ -22,6 +22,30 @@
         "playtime_forever": 102,
         "votes_up": 0,
         "timestamp_created": 1782667121
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Fantastic game! Highly recommend, after all there...",
+      "summary": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
+      "source": "steam_review",
+      "time": "2026-06-28T21:16:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198227835552/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198227835552",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2410,
+        "votes_up": 0,
+        "timestamp_created": 1782681386
       },
       "region": "global",
       "archive_subtype": "review",

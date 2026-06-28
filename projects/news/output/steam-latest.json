@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-28T22:00:00.928701+00:00",
+  "collected_at": "2026-06-28T23:03:33.922365+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,21 @@
       "review": "Игра просто прекрасная\r\nСюжет, персонажи, мир, арты, озвучка, быстрая система накоплений... Эта гача невероятно радует по сравнению со всеми, что были до этого. Да, перевод неидеален, но большое спасибо, что он есть, и что можно понять, что происходит",
       "timestamp_created": 1782627525,
       "playtime_forever": 1468
+    },
+    {
+      "source": "steam",
+      "time": "2026-06-28T21:16:26+00:00",
+      "lang": "english",
+      "title": "[正面] Fantastic game! Highly recommend, after all there...",
+      "summary": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
+      "url": "https://steamcommunity.com/profiles/76561198227835552/recommended/3052450",
+      "author": "76561198227835552",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
+      "timestamp_created": 1782681386,
+      "playtime_forever": 2410
     },
     {
       "source": "steam",
