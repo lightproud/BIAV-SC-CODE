@@ -1,6 +1,6 @@
 {
   "guild_id": "1402537664619479100",
-  "updated_at": "2026-06-28T08:29:13.856416+00:00",
+  "updated_at": "2026-06-28T11:16:56.614130+00:00",
   "channels": [
     {
       "id": "1402537664619479101",
@@ -87,7 +87,7 @@
       "name": "french-français",
       "type": 0,
       "parent_id": "1408409956767760486",
-      "position": 25,
+      "position": 24,
       "topic": null
     },
     {
@@ -175,7 +175,7 @@
       "name": "FR",
       "type": 4,
       "parent_id": null,
-      "position": 3,
+      "position": 2,
       "topic": ""
     },
     {
