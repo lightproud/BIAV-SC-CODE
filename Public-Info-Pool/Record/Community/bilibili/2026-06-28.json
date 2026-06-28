@@ -1,9 +1,32 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-27T23:06:13.367080+00:00",
+  "archived_at": "2026-06-28T02:50:20.670461+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
+    {
+      "title": "肉。",
+      "summary": "省流肉块\n  └ 夏霞_Scusa (0赞): www再多拍点！[米塔 第二弹_帽子崇拜][米塔 第二弹_帽子崇拜]",
+      "source": "bilibili",
+      "time": "2026-06-28T00:10:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1PUTP6rE1G",
+      "engagement": 51,
+      "is_hot": false,
+      "author": "呆桃yyds111",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 49,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/1dafcce94ffc366e703b5c410f4f3af2ac6475ae.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "第四届N厨杯-第十七日录播",
       "summary": "第十七日直播录播",
