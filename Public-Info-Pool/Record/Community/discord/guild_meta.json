@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-06-28T19:27:18.199920+00:00",
+  "updated_at": "2026-06-29T20:04:22.391795+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -471,7 +471,7 @@
       "name": "🔸story-discussion",
       "type": 15,
       "parent_id": "1433512102714413146",
-      "position": 30,
+      "position": 31,
       "topic": null
     },
     {
@@ -487,15 +487,15 @@
       "name": "🔸pvp-tournament",
       "type": 0,
       "parent_id": "1433512102714413146",
-      "position": 31,
+      "position": 32,
       "topic": null
     },
     {
       "id": "1326453691527594035",
       "name": "🔸traphase",
       "type": 0,
-      "parent_id": "1437857872011726879",
-      "position": 34,
+      "parent_id": "1433512102714413146",
+      "position": 29,
       "topic": "Here you can share your thoughts and views about Traphase!"
     },
     {
@@ -1039,7 +1039,7 @@
       "name": "🐱light’s-nest",
       "type": 0,
       "parent_id": "1433512102714413146",
-      "position": 29,
+      "position": 30,
       "topic": "This channel is mainly for casual personal shares from producer Light. It’s neither an official announcement nor a formal dev log."
     },
     {
@@ -1151,7 +1151,7 @@
       "name": "🔸机器人命令┊bot-commands",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 32,
+      "position": 33,
       "topic": null
     },
     {
@@ -1159,7 +1159,7 @@
       "name": "🔸flex",
       "type": 0,
       "parent_id": "1437857872011726879",
-      "position": 33,
+      "position": 34,
       "topic": "This is your dedicated spot to show off your achievements, lucky pulls, and some bragging rights.\n\nWhat you can \"flex\" here:\n🏆 Achievements & Milestones: Hit a new rank? Finally beat that tough level? Let us know!\n\n💎 Gacha Pulls: Did you finally snag that ultra-rare character/item? Share your luck (or commiserate over a bad pull)!\n\n⚔️ Highlights & Screenshots: Post your best gameplay moments.\n\n🎉 Event Progress: Show off how far you've gotten in the current event.\n\nA couple of quick rules for the channel:\n\nBe respectful: Celebrate others' wins and be kind when they share their losses.\n\nKeep it clean: Follow all general <#1131837874078232597> \n\nNo spamming: Use this channel for sharing content, not constant chatter (we have designated channels for this)."
     },
     {
@@ -1287,8 +1287,16 @@
       "name": "kagilocke",
       "type": 0,
       "parent_id": "1440851754311749733",
-      "position": 143,
+      "position": 12,
       "topic": "ModMail Channel 1512094969018581042 1515789992277049424 (Please do not change this)"
+    },
+    {
+      "id": "1521111760587718698",
+      "name": "sbpan",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 13,
+      "topic": "ModMail Channel 304652156286533642 1521111140166402208 (Please do not change this)"
     }
   ]
 }
