@@ -1,9 +1,32 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-29T16:39:32.966111+00:00",
+  "archived_at": "2026-06-29T19:04:49.655165+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 6,
   "items": [
+    {
+      "title": "【忘却前夜】梦游仙境试玩-徐珈莉",
+      "summary": "莉莉道中梦游感觉没什么用，睡醒了都打完了，就当1抽2算回50狂了\nboss战提升还不错，有一管忍耐和2报偿，强效也是重要属性，不过最好还是双持针筒提升报偿暴击率\n  └ 金发女人丨型 (0赞): 磨.......\n  └ 香水柠檬批发 (0赞): 马瓦德～马瓦德～",
+      "source": "bilibili",
+      "time": "2026-06-29T16:48:30+00:00",
+      "url": "https://www.bilibili.com/video/BV17WKX6FEr2",
+      "engagement": 143,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 140,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/1cd082db0e6f857b868f26f9c3876c8cffaf9903.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "【忘却前夜】0启庞托斯试玩-混沌三小只",
       "summary": "在不能高效使用余波的配队中，庞托斯需要佩戴入药，结合敌方行动轴管理牌算资源，操作难度会显著提升\n  └ 魔龙_D (0赞): 没有3启的余波减费是真的太卡了",
@@ -46,6 +69,75 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/0c91fdd2b079b01350e63b8c71b0191189062964.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[自存]数不清多少抽满命老头",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-29T16:44:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1qsKX6tEJj",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "电视迷DPtv",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 9,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/bf59b1f2ef37f35aff990fd635136cf7b0cf0188.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［忘却前夜］船卡水庞对策融灾禁区55",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-29T18:46:40+00:00",
+      "url": "https://www.bilibili.com/video/BV1PKKX6rEzA",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "梦依流苏_myls",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/97cd497c1ae9338402441d29e334aa21792c7d9e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】你说女王之剑免费了是吧",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-29T17:50:35+00:00",
+      "url": "https://www.bilibili.com/video/BV1UFKX6yECa",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "Ad-Forest",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/545db32c61daa4a67ce303b65d1a4baff962a0f2.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

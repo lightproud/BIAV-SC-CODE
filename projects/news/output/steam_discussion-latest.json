@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-29T16:38:24.366483+00:00",
+  "collected_at": "2026-06-29T19:03:49.073430+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
   "item_count": 5,
@@ -13,16 +13,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
       "author": "mengluo123",
       "engagement": 156
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-28T19:03:32+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] linux login ?",
-      "summary": "como posso fazer o login no linux ?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
-      "author": "manotroll",
-      "engagement": 12
     },
     {
       "source": "steam_discussion",
@@ -53,6 +43,16 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/573793658843897064/",
       "author": "Chains of Others",
       "engagement": 1
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-29T17:37:46+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Game keeps crashing",
+      "summary": "As soon as I start to do something the screen turns transparent white and the game crashes, help D:",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962417790/",
+      "author": "Chara",
+      "engagement": 0
     }
   ]
 }
