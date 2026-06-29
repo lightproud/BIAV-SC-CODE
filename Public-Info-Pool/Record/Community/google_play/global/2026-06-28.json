@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-29T07:29:33.257054+00:00",
+  "archived_at": "2026-06-29T12:27:57.727840+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Ini aku Edit, dan memang udah bisa maini",
@@ -30,6 +30,20 @@
       "tags": [],
       "lang": "es",
       "platform_region": "es",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 \"การผจญภัยแห่งดวงดาว!\"",
+      "summary": "\"การผจญภัยแห่งดวงดาว!\"",
+      "source": "google_play",
+      "time": "2026-06-28T09:02:40",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-32e549ce-efd3-47c1-8fc1-9fb2535d404f",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Shi Wouldgrave",
+      "tags": [],
+      "lang": "th",
+      "platform_region": "th",
       "region": "global"
     }
   ],
