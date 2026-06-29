@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-29T02:51:02.512490+00:00",
+  "archived_at": "2026-06-29T07:29:33.115351+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 23,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -138,6 +138,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/913b41824b78010c9277db8f4c6098948a55c90f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘卻前夜】H9-11困难主线一启血希逃课",
+      "summary": "不上易伤，不做空间，展示容错\n  └ 风间丶瑾 (0赞): 这个主界面是哪里的，怪好看嘞",
+      "source": "bilibili",
+      "time": "2026-06-28T10:40:46+00:00",
+      "url": "https://www.bilibili.com/video/BV1XfTT6hEnR",
+      "engagement": 117,
+      "is_hot": false,
+      "author": "墨落北上",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 114,
+        "comment_count": 3,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/5a1caded828168c6fd7553db2933079fb5106923.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜：6.23~7.7融灾3-5 凯潘反击队",
+      "summary": "└ 谜之四面体 (1赞): 最后个位数死扛，boss要夸你是真命硬",
+      "source": "bilibili",
+      "time": "2026-06-28T10:26:49+00:00",
+      "url": "https://www.bilibili.com/video/BV1CiTT6jEtM",
+      "engagement": 116,
+      "is_hot": false,
+      "author": "冰之苍斓",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 115,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/6ca06c3a555fde0efb9135f4ce7c9d2103e93f7e.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

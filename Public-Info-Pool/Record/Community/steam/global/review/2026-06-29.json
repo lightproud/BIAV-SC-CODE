@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-29T02:51:02.608004+00:00",
+  "archived_at": "2026-06-29T07:29:33.172248+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
@@ -70,6 +70,54 @@
         "playtime_forever": 3053,
         "votes_up": 0,
         "timestamp_created": 1782693724
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Great story, excellent strategy.",
+      "summary": "Great story, excellent strategy.",
+      "source": "steam_review",
+      "time": "2026-06-29T05:10:25+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198017212986/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198017212986",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6391,
+        "votes_up": 0,
+        "timestamp_created": 1782709825
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] a little problem with the storyline for ogier thou...",
+      "summary": "a little problem with the storyline for ogier though, game keeps crashing lol, otherwise GREAT GAME :D",
+      "source": "steam_review",
+      "time": "2026-06-29T04:15:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198810161328/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198810161328",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 498,
+        "votes_up": 0,
+        "timestamp_created": 1782706539
       },
       "region": "global",
       "archive_subtype": "review",
