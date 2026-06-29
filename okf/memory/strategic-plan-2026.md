@@ -4,7 +4,7 @@ title: "strategic-plan-2026.md"
 description: "2026 战略规划"
 resource: "/memory/strategic-plan-2026.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-06-28"
+timestamp: "2026-06-29"
 ---
 
 # 记忆层指针

@@ -71,7 +71,7 @@
 
 - `memory/bpt-guidance-protocol.md` — BPT 指导协议 v0.2（活协议，不归档）
 - `memory/decisions.md` — 2026-04-19 BPT 战略转向 + 2026-04-26 v2.0 M3 条款
-- `memory/active/mission-v2.0-three-pillars.md` — v2.0 三新使命，使命 #1 即「黑池信息入口」
+- `memory/active/mission-v2.0-three-pillars.md` — v2.0 使命（二核心；使命#3 2026-06-28 退役），使命 #1 即「黑池信息入口」
 
 ### 历史档案（仅作历史参考）
 

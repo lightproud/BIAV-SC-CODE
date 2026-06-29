@@ -4,7 +4,7 @@ title: "capability-index.md"
 description: "银芯全功能目录 + 动态编排可达性"
 resource: "/memory/capability-index.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-06-28"
+timestamp: "2026-06-29"
 ---
 
 # 记忆层指针

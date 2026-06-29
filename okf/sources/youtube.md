@@ -4,7 +4,7 @@ title: "youtube 社区数据源"
 description: "youtube 平台采集档案，全量 2240 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/youtube/"
 tags: ["data_layer:full_archive", "platform:youtube", "health:degraded"]
-timestamp: "2026-06-28T17:05:11.237795+00:00"
+timestamp: "2026-06-28T19:11:07.212637+00:00"
 ---
 
 # 数据层指针

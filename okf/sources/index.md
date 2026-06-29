@@ -7,7 +7,7 @@
 ## 平台
 
 * [appstore](/sources/appstore.md) - 全量 630 条 / degraded
-* [bilibili](/sources/bilibili.md) - 全量 2353 条 / active
+* [bilibili](/sources/bilibili.md) - 全量 2354 条 / active
 * [discord](/sources/discord.md) - 全量 7824202 条 / active
 * [google_play](/sources/google_play.md) - 全量 1118 条 / degraded
 * [official](/sources/official.md) - 全量 332 条 / degraded
@@ -19,7 +19,7 @@
 * [stopgame](/sources/stopgame.md) - 全量 71 条 / active
 * [taptap](/sources/taptap.md) - 全量 6 条 / active
 * [taptap_review](/sources/taptap_review.md) - 全量 440 条 / degraded
-* [weibo](/sources/weibo.md) - 全量 8285 条 / active
-* [weixin](/sources/weixin.md) - 全量 5076 条 / degraded
+* [weibo](/sources/weibo.md) - 全量 8300 条 / active
+* [weixin](/sources/weixin.md) - 全量 5096 条 / degraded
 * [youtube](/sources/youtube.md) - 全量 2240 条 / degraded
 * [youtube_comments](/sources/youtube_comments.md) - 全量 0 条 / active
