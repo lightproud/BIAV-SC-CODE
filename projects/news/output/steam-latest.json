@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-29T19:03:49.073430+00:00",
+  "collected_at": "2026-06-29T21:21:44.145573+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 15,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -32,7 +32,7 @@
       "voted_up": true,
       "review": "In the ocean of soulless and suit controlled gachas, there is one gem called Morimens. \r\nGreat story, great characters, amazing art direction, a unique theme in the space, and devs full of love and passion for their game. \r\nToday marks my 1 year anniversary of playing Morimens, I am very glad I decided to give this game a chance, and I can't recommend it enough. \r\nMay the Silver Key guide you onto Mythag grounds.",
       "timestamp_created": 1782746873,
-      "playtime_forever": 26478
+      "playtime_forever": 26492
     },
     {
       "source": "steam",
@@ -152,7 +152,7 @@
       "voted_up": true,
       "review": "이게 언라이트보다 더 재밌네",
       "timestamp_created": 1782716619,
-      "playtime_forever": 6027
+      "playtime_forever": 6080
     },
     {
       "source": "steam",
@@ -182,7 +182,7 @@
       "voted_up": true,
       "review": "a little problem with the storyline for ogier though, game keeps crashing lol, otherwise GREAT GAME :D",
       "timestamp_created": 1782706539,
-      "playtime_forever": 562
+      "playtime_forever": 682
     },
     {
       "source": "steam",
@@ -198,36 +198,6 @@
       "review": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
       "timestamp_created": 1782693724,
       "playtime_forever": 3104
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-28T21:16:26+00:00",
-      "lang": "english",
-      "title": "[正面] Fantastic game! Highly recommend, after all there...",
-      "summary": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
-      "url": "https://steamcommunity.com/profiles/76561198227835552/recommended/3052450",
-      "author": "76561198227835552",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
-      "timestamp_created": 1782681386,
-      "playtime_forever": 2530
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-28T19:28:50+00:00",
-      "lang": "japanese",
-      "title": "[正面] ふつくしい",
-      "summary": "ふつくしい",
-      "url": "https://steamcommunity.com/profiles/76561199491050835/recommended/4226130",
-      "author": "76561199491050835",
-      "engagement": 0,
-      "language": "japanese",
-      "voted_up": true,
-      "review": "ふつくしい",
-      "timestamp_created": 1782674930,
-      "playtime_forever": 2371
     }
   ]
 }
