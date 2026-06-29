@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-29T12:27:57.727840+00:00",
+  "archived_at": "2026-06-29T16:39:33.164221+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Ini aku Edit, dan memang udah bisa maini",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "th",
       "platform_region": "th",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 достойная ККИ. есть интересные механики.",
+      "summary": "достойная ККИ. есть интересные механики. дают нормально валюты для гачи. немного затянутые бои, но не критично. из минусов: вы без обкатки не узнаете насколько мусорный персонаж на самом деле в прогрессии.",
+      "source": "google_play",
+      "time": "2026-06-28T13:31:23",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-2eebdd4b-919c-4e03-ae0f-eb18be6fed9b",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "dl220 01",
+      "tags": [],
+      "lang": "ru",
+      "platform_region": "ru",
       "region": "global"
     }
   ],

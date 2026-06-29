@@ -1,9 +1,19 @@
 {
-  "collected_at": "2026-06-29T12:27:18.799412+00:00",
+  "collected_at": "2026-06-29T16:38:24.366483+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
   "item_count": 5,
   "items": [
+    {
+      "source": "steam_discussion",
+      "time": "2026-06-29T14:36:36+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] New invite code! 300 silver.",
+      "summary": "Code: TEAHFONZM5\nEnter it in the new Mythag Invite / Bind Invitation tab on the left.",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
+      "author": "mengluo123",
+      "engagement": 156
+    },
     {
       "source": "steam_discussion",
       "time": "2026-06-28T19:03:32+00:00",
@@ -16,13 +26,13 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-29T11:44:58+00:00",
+      "time": "2026-06-29T15:59:18+00:00",
       "lang": "en",
       "title": "[Steam论坛] Stuck in Logging into the User Center",
       "summary": "As the title suggest, I wanted to play on PC, I've tried this a bit before on my old phone and wanted to start fresh with a new account on Steam but I'm just stuck here at the front page and it just keeps saying stuck in logging into the user center, it loads a bit and then just disappears, I just keep spamming Enter Mythag to no avail.\n\nIs this a bug or what? My internet is pretty high, I run about 700-900mpbs so I highly doubt it's my internet....",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564785824624941024/",
       "author": "Keres",
-      "engagement": 6
+      "engagement": 7
     },
     {
       "source": "steam_discussion",
@@ -43,16 +53,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/573793658843897064/",
       "author": "Chains of Others",
       "engagement": 1
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-28T16:00:35+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] 怎么在手机中安装此游戏？",
-      "summary": "如何安装？",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962322779/",
-      "author": "石磊",
-      "engagement": 0
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-29T12:27:57.663443+00:00",
+  "archived_at": "2026-06-29T16:39:33.047698+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 15,
   "items": [
     {
       "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
@@ -262,6 +262,102 @@
         "playtime_forever": 5935,
         "votes_up": 0,
         "timestamp_created": 1782716619
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] In the ocean of soulless and suit controlled gacha...",
+      "summary": "In the ocean of soulless and suit controlled gachas, there is one gem called Morimens. \r\nGreat story, great characters, amazing art direction, a unique theme in the space, and devs full of love and passion for their game. \r\nToday marks my 1 year anniversary of playing Morimens, I am very glad I decided to give this game a chance, and I can't recommend it enough. \r\nMay the Silver Key guide you onto Mythag grounds.",
+      "source": "steam_review",
+      "time": "2026-06-29T15:27:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198092371862/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198092371862",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 26478,
+        "votes_up": 0,
+        "timestamp_created": 1782746873
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Morimens",
+      "summary": "Morimens",
+      "source": "steam_review",
+      "time": "2026-06-29T14:56:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199871079940/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199871079940",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 90,
+        "votes_up": 0,
+        "timestamp_created": 1782744961
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] generous and engaging",
+      "summary": "generous and engaging",
+      "source": "steam_review",
+      "time": "2026-06-29T12:45:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198129488562/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198129488562",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3201,
+        "votes_up": 0,
+        "timestamp_created": 1782737133
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] ITS PEAK (DORESAIN I LOVE U)",
+      "summary": "ITS PEAK (DORESAIN I LOVE U)",
+      "source": "steam_review",
+      "time": "2026-06-29T12:39:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199808556276/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199808556276",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 562,
+        "votes_up": 0,
+        "timestamp_created": 1782736752
       },
       "region": "global",
       "archive_subtype": "review",
