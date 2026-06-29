@@ -12,9 +12,9 @@
       "scripts_wiki": 7,
       "mcp_tools": 4,
       "commands": 4,
-      "skills": 5,
+      "skills": 4,
       "projects": 4,
-      "total": 103
+      "total": 102
     },
     "reachability": {
       "live": 57,
@@ -931,12 +931,6 @@
       "path": ".claude/skills/grill/SKILL.md",
       "name": "grill",
       "summary": "拷问对齐 + 落档。守密人手动召唤，对一个计划/设计展开关系式逼问，并把结晶出的术语与决策实时落档。"
-    },
-    {
-      "id": "grill-with-docs",
-      "path": ".claude/skills/grill-with-docs/SKILL.md",
-      "name": "grill-with-docs",
-      "summary": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go."
     },
     {
       "id": "grilling",
