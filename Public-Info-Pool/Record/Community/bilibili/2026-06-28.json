@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-28T23:04:30.302373+00:00",
+  "archived_at": "2026-06-29T02:51:02.512490+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 21,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/de180f09edacaec093cfde2c18fa0e4b1b28e818.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "唤醒永恒的爱",
+      "summary": "-\n  └ 耕司青海瑶 (1赞): 支持一下up[给心心]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_对的]",
+      "source": "bilibili",
+      "time": "2026-06-28T05:55:01+00:00",
+      "url": "https://www.bilibili.com/video/BV1hcTK6HEqf",
+      "engagement": 147,
+      "is_hot": false,
+      "author": "黑兔梅酒轮椅王世一冷",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 144,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/a83c20f1db22a282e216ff82bb2822ec2a9f9a4e.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -138,6 +161,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/73c2f8714abd9a9e7dcbe3af582d52404f340001.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "“珍爱这朵花儿的人有一个人就够了”",
+      "summary": "第一次改图，画的不怎么样\n  └ 耕司青海瑶 (4赞): [doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ 丢了魔杖的哑炮 (0赞): 头一回改图，画的不太好，勿喷[害羞]",
+      "source": "bilibili",
+      "time": "2026-06-28T12:56:18+00:00",
+      "url": "https://www.bilibili.com/video/BV1CHTg6WEHC",
+      "engagement": 105,
+      "is_hot": false,
+      "author": "丢了魔杖的哑炮",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 101,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/ede3bc0565b79f8566002d6fa15ddabf8a18963a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

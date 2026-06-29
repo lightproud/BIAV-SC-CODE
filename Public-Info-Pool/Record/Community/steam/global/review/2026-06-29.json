@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-28T23:04:30.404690+00:00",
+  "archived_at": "2026-06-29T02:51:02.608004+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] настолько ахуенные арты и персонажи что у меня аж...",
@@ -46,6 +46,30 @@
         "playtime_forever": 2410,
         "votes_up": 0,
         "timestamp_created": 1782681386
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Emotionally, I rarely or never get affected strong...",
+      "summary": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
+      "source": "steam_review",
+      "time": "2026-06-29T00:42:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198076790427/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198076790427",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3053,
+        "votes_up": 0,
+        "timestamp_created": 1782693724
       },
       "region": "global",
       "archive_subtype": "review",

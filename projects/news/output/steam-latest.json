@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-28T23:03:33.922365+00:00",
+  "collected_at": "2026-06-29T02:50:06.787641+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -21,6 +21,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-06-29T00:42:04+00:00",
+      "lang": "english",
+      "title": "[正面] Emotionally, I rarely or never get affected strong...",
+      "summary": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
+      "url": "https://steamcommunity.com/profiles/76561198076790427/recommended/3052450",
+      "author": "76561198076790427",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
+      "timestamp_created": 1782693724,
+      "playtime_forever": 3053
+    },
+    {
+      "source": "steam",
       "time": "2026-06-28T21:16:26+00:00",
       "lang": "english",
       "title": "[正面] Fantastic game! Highly recommend, after all there...",
@@ -32,7 +47,7 @@
       "voted_up": true,
       "review": "Fantastic game! Highly recommend, after all there is no reason not to try it. It has amazing art, Entertaining game play, and its FREE! What more could you ask for.",
       "timestamp_created": 1782681386,
-      "playtime_forever": 2410
+      "playtime_forever": 2412
     },
     {
       "source": "steam",

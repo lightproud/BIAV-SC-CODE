@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-28T23:04:30.303247+00:00",
+  "archived_at": "2026-06-29T02:51:02.513308+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "title": "🎧 忘却前夜┊V2.5.2 广播剧《瘾》",
@@ -23,6 +23,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/4b9f12b83e0f7c800aa94642d7c3c6134831675f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "一个沉浸式郁纪视角的沙耶",
+      "summary": "小天使们一键三连谢谢喵\n  └ 独钓寒江雪bai (1赞): [星星眼]\n  └ 银根 (1赞): 做得好好！！\n  └ 岫鹚 (0赞): [打call]",
+      "source": "bilibili",
+      "time": "2026-06-29T00:30:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1CyT364Ezz",
+      "engagement": 176,
+      "is_hot": false,
+      "author": "公主赴个宴",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 169,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/021956fcb2f41a562aca93991f6ae0da574e8e5f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】庞托斯 繁衍狂热 剧情",
+      "summary": "-\n  └ Git122 (1赞): 开门了？这么迅速\n  └ 山䔑 (0赞): 我了怎么这么快好感10",
+      "source": "bilibili",
+      "time": "2026-06-29T02:34:12+00:00",
+      "url": "https://www.bilibili.com/video/BV1FjTL6AEoe",
+      "engagement": 59,
+      "is_hot": false,
+      "author": "嘎啦嘎啦果",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 56,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/15614d44bf2beff45e901314b882af10e685286f.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
