@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-29T19:04:49.655165+00:00",
+  "archived_at": "2026-06-29T22:54:17.971737+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "【忘却前夜】梦游仙境试玩-徐珈莉",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/ad18290f66ef5ed97f096b5e2f708a2157a89113.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】卡茜亚暝海2t融灾禁区5-5",
+      "summary": "三启诞墨+三启庞托斯可以考虑玩温卡诞庞",
+      "source": "bilibili",
+      "time": "2026-06-29T19:02:17+00:00",
+      "url": "https://www.bilibili.com/video/BV1xQKR6mE32",
+      "engagement": 62,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 62,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/e4a168a62e22382ab0ee58717a85b67fb4854d22.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

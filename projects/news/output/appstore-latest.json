@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-29T21:21:44.145573+00:00",
+  "collected_at": "2026-06-29T22:53:22.971097+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "source": "appstore",
@@ -232,6 +232,16 @@
       "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
       "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
       "author": "navirebu",
+      "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-05T03:05:58-07:00",
+      "lang": "id",
+      "title": "Nice character design!",
+      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
+      "author": "Milesiya",
       "engagement": 4
     },
     {
