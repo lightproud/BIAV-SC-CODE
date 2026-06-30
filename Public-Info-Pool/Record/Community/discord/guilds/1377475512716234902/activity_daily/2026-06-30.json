@@ -1,11 +1,11 @@
 {
   "date": "2026-06-30",
-  "messages": 213,
+  "messages": 215,
   "unique_authors": 16,
   "reactions_total": 76,
   "attachments": 28,
   "channel_activity": {
-    "対人関係のあれこれ": 5,
+    "対人関係のあれこれ": 7,
     "なんでも雑談": 138,
     "🔰初心者質問": 24,
     "つぶやき": 10,
@@ -15,6 +15,7 @@
     "誰でもOKグロ版野次馬スレ": 12
   },
   "hourly_activity": {
+    "19": 2,
     "16": 1,
     "12": 21,
     "13": 25,
@@ -31,7 +32,7 @@
     "2": 12
   },
   "message_types": {
-    "0": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
