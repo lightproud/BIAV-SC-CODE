@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-29T22:54:18.131420+00:00",
+  "archived_at": "2026-06-30T00:01:21.478265+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Absolutely Emotional Roller coaster.. an",
@@ -30,6 +30,20 @@
       "tags": [],
       "lang": "pt",
       "platform_region": "br",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Игра очень крутая !! сюжет и персонажи ш",
+      "summary": "Игра очень крутая !! сюжет и персонажи шикарные , есть какой никакой русский перевод что радует, гача щедрая. 1. Было бы приятно если бы добавили более подробные гайды и рекомендации к отрядам 2. Так же на территории РФ сейчас совсем не получается задонатить( было бы прекрасно если бы появилась такая возможность через офф сайт или что-то еще а так всё шикарно 💗💗",
+      "source": "google_play",
+      "time": "2026-06-28T23:25:15",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-7fafba03-db48-4b2c-a774-3df4d4cb204e",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "何",
+      "tags": [],
+      "lang": "ru",
+      "platform_region": "ru",
       "region": "global"
     }
   ],

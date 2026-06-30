@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-29T22:54:17.970040+00:00",
+  "archived_at": "2026-06-30T00:01:21.301883+00:00",
   "source": "bilibili",
-  "item_count": 37,
+  "item_count": 38,
   "items": [
     {
       "title": "【忘却前夜】新角色庞托斯抽取建议",
@@ -575,6 +575,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/5bc7b58fb23ddfd700c5a40ebe11cd792783fc73.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 Morimens 3+3龐托斯 5-5",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-29T08:20:17+00:00",
+      "url": "https://www.bilibili.com/video/BV1snKS6eExH",
+      "engagement": 105,
+      "is_hot": false,
+      "author": "維娅的紅茶",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 105,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/093fe9423feff0e7a089e128ee06281a4f0f14dc.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
