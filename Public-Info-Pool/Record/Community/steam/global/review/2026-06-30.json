@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T03:33:24.830932+00:00",
+  "archived_at": "2026-06-30T07:48:17.526577+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] [h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conoc...",
@@ -22,6 +22,78 @@
         "playtime_forever": 3232,
         "votes_up": 4,
         "timestamp_created": 1782781638
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] First and only Gacha style game I’ve ever played....",
+      "summary": "First and only Gacha style game I’ve ever played. I just wanted to try out a game similar Slay the Spire and now I’ve spent $100+ with plans to drop another $100 before end of summer. I don’t even know what happened but don’t play this game. Sure it’s fun and all and you can play it F2P completely but something about this game just pulls the money out of my pocket.",
+      "source": "steam_review",
+      "time": "2026-06-30T04:49:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198007129669/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198007129669",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 896,
+        "votes_up": 0,
+        "timestamp_created": 1782794941
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好丸，我将从裤裆里掏出我的极品老古董--血链希洛，使用不稳定链条+恨意宣泄+鲜血链条*3，一回合自爆...",
+      "summary": "好丸，我将从裤裆里掏出我的极品老古董--血链希洛，使用不稳定链条+恨意宣泄+鲜血链条*3，一回合自爆半管血，打出高达五千的伤害给100多万血的boss狠狠地搓背，然后被反手四刀HP-1796，死亡抵抗清零并爆出应急灵体*1.",
+      "source": "steam_review",
+      "time": "2026-06-30T03:37:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199183061098/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199183061098",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6869,
+        "votes_up": 0,
+        "timestamp_created": 1782790672
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] This game has so much charm, as well as a very fun...",
+      "summary": "This game has so much charm, as well as a very fun gameplay loop.",
+      "source": "steam_review",
+      "time": "2026-06-30T03:18:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199100210654/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199100210654",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 739,
+        "votes_up": 0,
+        "timestamp_created": 1782789503
       },
       "region": "global",
       "archive_subtype": "review",
