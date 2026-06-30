@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-30T10:53:40.188771+00:00",
+  "collected_at": "2026-06-30T13:09:13.619096+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -18,21 +18,6 @@
       "review": "[h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conocía ni su madre hasta que llegó la collab de [b]Saya no Uta[/b], que es por la que lo descargué, y su historia en una palabra es [u]extraña[/u] pero única, con personajes grises y plotwist en todos los capítulos.\r\nY sí, si igual viniste por Saya, la historia es corta pero buena. \r\n https://www.youtube.com/watch?v=5csUC3QMF1M",
       "timestamp_created": 1782781638,
       "playtime_forever": 3265
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T11:24:39+00:00",
-      "lang": "english",
-      "title": "[负面] Game is stuck on an infinite loading screen before...",
-      "summary": "Game is stuck on an infinite loading screen before I can even play.  Came for Saya no Uta collab, got my time wasted.",
-      "url": "https://steamcommunity.com/profiles/76561198047112105/recommended/3052450",
-      "author": "76561198047112105",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": false,
-      "review": "Game is stuck on an infinite loading screen before I can even play.  Came for Saya no Uta collab, got my time wasted.",
-      "timestamp_created": 1782732279,
-      "playtime_forever": 7
     },
     {
       "source": "steam",
@@ -62,7 +47,7 @@
       "voted_up": true,
       "review": "Hay, hình đẹp",
       "timestamp_created": 1782807585,
-      "playtime_forever": 772
+      "playtime_forever": 892
     },
     {
       "source": "steam",
@@ -107,7 +92,7 @@
       "voted_up": true,
       "review": "This game has so much charm, as well as a very fun gameplay loop.",
       "timestamp_created": 1782789503,
-      "playtime_forever": 979
+      "playtime_forever": 1060
     },
     {
       "source": "steam",
@@ -122,7 +107,7 @@
       "voted_up": true,
       "review": "In the ocean of soulless and suit controlled gachas, there is one gem called Morimens. \r\nGreat story, great characters, amazing art direction, a unique theme in the space, and devs full of love and passion for their game. \r\nToday marks my 1 year anniversary of playing Morimens, I am very glad I decided to give this game a chance, and I can't recommend it enough. \r\nMay the Silver Key guide you onto Mythag grounds.",
       "timestamp_created": 1782746873,
-      "playtime_forever": 26492
+      "playtime_forever": 26500
     },
     {
       "source": "steam",
@@ -138,66 +123,6 @@
       "review": "Morimens",
       "timestamp_created": 1782744961,
       "playtime_forever": 120
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T12:45:33+00:00",
-      "lang": "english",
-      "title": "[正面] generous and engaging",
-      "summary": "generous and engaging",
-      "url": "https://steamcommunity.com/profiles/76561198129488562/recommended/3052450",
-      "author": "76561198129488562",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "generous and engaging",
-      "timestamp_created": 1782737133,
-      "playtime_forever": 3272
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T12:39:12+00:00",
-      "lang": "english",
-      "title": "[正面] ITS PEAK (DORESAIN I LOVE U)",
-      "summary": "ITS PEAK (DORESAIN I LOVE U)",
-      "url": "https://steamcommunity.com/profiles/76561199808556276/recommended/3052450",
-      "author": "76561199808556276",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "ITS PEAK (DORESAIN I LOVE U)",
-      "timestamp_created": 1782736752,
-      "playtime_forever": 562
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T11:32:05+00:00",
-      "lang": "english",
-      "title": "[负面] Disappointing. \nIf you are looking for a roguelite...",
-      "summary": "Disappointing. \nIf you are looking for a roguelite deck builder like Slay The Spire, Inscryption, Monster Train, etc - then look elsewhere. \nThere may be a good story/actual game mechanics somewhere in this game, but it is so far hidden under extremely thirsty gacha junk, that it isn't worth finding.",
-      "url": "https://steamcommunity.com/profiles/76561198046627734/recommended/3052450",
-      "author": "76561198046627734",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "Disappointing. \nIf you are looking for a roguelite deck builder like Slay The Spire, Inscryption, Monster Train, etc - then look elsewhere. \nThere may be a good story/actual game mechanics somewhere in this game, but it is so far hidden under extremely thirsty gacha junk, that it isn't worth finding.",
-      "timestamp_created": 1782732725,
-      "playtime_forever": 137
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T11:28:08+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199059487174/recommended/3052450",
-      "author": "76561199059487174",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1782732488,
-      "playtime_forever": 5344
     }
   ]
 }
