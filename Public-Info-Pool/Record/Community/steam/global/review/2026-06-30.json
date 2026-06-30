@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T07:48:17.526577+00:00",
+  "archived_at": "2026-06-30T10:54:35.794247+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] [h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conoc...",
@@ -94,6 +94,54 @@
         "playtime_forever": 739,
         "votes_up": 0,
         "timestamp_created": 1782789503
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
+      "summary": "二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
+      "source": "steam_review",
+      "time": "2026-06-30T09:28:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199468773815/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199468773815",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3026,
+        "votes_up": 0,
+        "timestamp_created": 1782811681
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Hay, hình đẹp",
+      "summary": "Hay, hình đẹp",
+      "source": "steam_review",
+      "time": "2026-06-30T08:19:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199863719596/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199863719596",
+      "tags": [
+        "vietnamese"
+      ],
+      "language": "vietnamese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 772,
+        "votes_up": 0,
+        "timestamp_created": 1782807585
       },
       "region": "global",
       "archive_subtype": "review",
