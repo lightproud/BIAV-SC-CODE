@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-30T00:01:21.478265+00:00",
+  "archived_at": "2026-06-30T03:33:24.955166+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Absolutely Emotional Roller coaster.. an",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "ru",
       "platform_region": "ru",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 I'd say, it's a chill game with lots of",
+      "summary": "I'd say, it's a chill game with lots of rewards. Keep it up with the updates! Love your game.",
+      "source": "google_play",
+      "time": "2026-06-29T02:03:16",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-8535f0cf-b0ea-45b1-bef2-912cd2831e50",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "allen jayme",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

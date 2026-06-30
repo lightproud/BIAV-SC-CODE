@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30T00:01:21.923852+00:00",
+  "updated_at": "2026-06-30T03:33:25.396249+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -12,7 +12,7 @@
       "last_success_date": "2026-06-30",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2402,
+      "total_items": 2406,
       "errors": []
     },
     "steam": {
@@ -52,7 +52,7 @@
       "last_success_date": "2026-06-30",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3323,
+      "total_items": 3328,
       "errors": []
     },
     "official": {
@@ -76,7 +76,7 @@
       "last_success_date": "2026-06-30",
       "last_check_date": "2026-06-30",
       "consecutive_silent_days": 0,
-      "total_items": 8460,
+      "total_items": 8474,
       "errors": []
     },
     "bahamut": {
@@ -116,7 +116,7 @@
       "last_success_date": "2026-06-30",
       "last_check_date": "2026-06-30",
       "consecutive_silent_days": 0,
-      "total_items": 534,
+      "total_items": 535,
       "errors": []
     },
     "note_com": {
@@ -148,7 +148,7 @@
       "last_success_date": "2026-06-18",
       "last_check_date": "2026-06-30",
       "consecutive_silent_days": 12,
-      "total_items": 5316,
+      "total_items": 5336,
       "errors": []
     },
     "twitter": {

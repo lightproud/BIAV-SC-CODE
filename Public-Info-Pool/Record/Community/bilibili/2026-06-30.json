@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T00:01:21.303575+00:00",
+  "archived_at": "2026-06-30T03:33:24.785369+00:00",
   "source": "bilibili",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "title": "【忘却前夜】梦游仙境试玩-徐珈莉",
@@ -120,6 +120,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "津久叶瑶与郁纪",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-30T03:02:04+00:00",
+      "url": "https://www.bilibili.com/video/BV1VLKd6wELV",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "耕司青海瑶",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 7,
+        "comment_count": 2,
+        "comments_fetched": 0,
+        "danmaku": 1
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/6eac38277a52c950d33ac0fd95c7219cfbe4f2c7.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "［忘却前夜］船卡水庞对策融灾禁区55",
       "summary": "",
       "source": "bilibili",
@@ -161,6 +184,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/545db32c61daa4a67ce303b65d1a4baff962a0f2.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "saye",
+      "summary": "saye\n  └ AzeroMoon (0赞): 刷了一天的肉块终于看到美少女了[星星眼]",
+      "source": "bilibili",
+      "time": "2026-06-30T03:13:49+00:00",
+      "url": "https://www.bilibili.com/video/BV13EKd6FEBa",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "呆桃yyds111",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2560670a008b06d95827b21a9412fd5bd1da2e28.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

@@ -1,9 +1,24 @@
 {
-  "collected_at": "2026-06-30T00:00:14.407075+00:00",
+  "collected_at": "2026-06-30T03:32:22.641799+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-06-30T01:07:18+00:00",
+      "lang": "latam",
+      "title": "[正面] [h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conoc...",
+      "summary": "[h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conocía ni su madre hasta que llegó la collab de [b]Saya no Uta[/b], que es por la que lo descargué, y su historia en una palabra es [u]extraña[/u] pero única, con personajes grises y plotwist en todos los capítulos.\r\nY sí, si igual viniste por Saya, la historia es corta pero buena. \r\n https://www.youtube.com/watch?v=5csUC3QMF1M",
+      "url": "https://steamcommunity.com/profiles/76561198974470717/recommended/3052450",
+      "author": "76561198974470717",
+      "engagement": 4,
+      "language": "latam",
+      "voted_up": true,
+      "review": "[h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conocía ni su madre hasta que llegó la collab de [b]Saya no Uta[/b], que es por la que lo descargué, y su historia en una palabra es [u]extraña[/u] pero única, con personajes grises y plotwist en todos los capítulos.\r\nY sí, si igual viniste por Saya, la historia es corta pero buena. \r\n https://www.youtube.com/watch?v=5csUC3QMF1M",
+      "timestamp_created": 1782781638,
+      "playtime_forever": 3232
+    },
     {
       "source": "steam",
       "time": "2026-06-29T11:24:39+00:00",
@@ -62,7 +77,7 @@
       "voted_up": true,
       "review": "generous and engaging",
       "timestamp_created": 1782737133,
-      "playtime_forever": 3201
+      "playtime_forever": 3231
     },
     {
       "source": "steam",
@@ -167,7 +182,7 @@
       "voted_up": true,
       "review": "Great story, excellent strategy.",
       "timestamp_created": 1782709825,
-      "playtime_forever": 6477
+      "playtime_forever": 6518
     },
     {
       "source": "steam",
@@ -182,22 +197,7 @@
       "voted_up": true,
       "review": "a little problem with the storyline for ogier though, game keeps crashing lol, otherwise GREAT GAME :D",
       "timestamp_created": 1782706539,
-      "playtime_forever": 862
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-29T00:42:04+00:00",
-      "lang": "english",
-      "title": "[正面] Emotionally, I rarely or never get affected strong...",
-      "summary": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
-      "url": "https://steamcommunity.com/profiles/76561198076790427/recommended/3052450",
-      "author": "76561198076790427",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Emotionally, I rarely or never get affected strongly. However, that was until I played Morimens. The emotional effect that the game have had on me so far feels odd, but strangely right. I have cried on every chapter so far, both because of hope and joy, but sadly of despair and sorrow as well. Simply, the emotional depth and influence that this game has is what I honestly enjoy and also despise the most.\n\nAs much as you have hurt me Morimens, you have simultaneously made me find something valuable and worthwhile to be devoted to. I know being devoted to a game sounds stupid, but that is just how much I love the nature of Morimens. The fact that this game has made me so emotionally attached to certain characters and its amazing worldbuilding is just wondrous. So, I can safely say that I have found a true \"safespace\" within Morimens, and I am glad that I have.\n\nThis means it is already above any other game I have played so far. It is simply staggering and breathtaking. 10/10",
-      "timestamp_created": 1782693724,
-      "playtime_forever": 3104
+      "playtime_forever": 945
     }
   ]
 }

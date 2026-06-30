@@ -1,9 +1,21 @@
 {
-  "collected_at": "2026-06-30T00:00:14.407075+00:00",
+  "collected_at": "2026-06-30T03:32:22.641799+00:00",
   "source": "pixiv",
   "data_layer": "output",
-  "item_count": 33,
+  "item_count": 32,
   "items": [
+    {
+      "source": "pixiv",
+      "time": "2026-06-30T11:24:31+09:00",
+      "lang": "",
+      "title": "無題",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/146638220",
+      "author": "どうどう",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/30/11/24/31/146638220_p0_square1200.jpg",
+      "content_type": "image"
+    },
     {
       "source": "pixiv",
       "time": "2026-06-29T18:51:17+09:00",
@@ -234,18 +246,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-02T23:59:34+09:00",
-      "lang": "",
-      "title": "変わり果てる世界の中で",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145533598",
-      "author": "ソラミミ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/02/23/59/34/145533598_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-26T22:23:25+09:00",
       "lang": "",
       "title": "Ryker fanart",
@@ -351,16 +351,6 @@
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/16/21/24/45/146087319_p0_square1200.jpg",
       "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-29T23:59:27.381777+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
     },
     {
       "source": "pixiv",
