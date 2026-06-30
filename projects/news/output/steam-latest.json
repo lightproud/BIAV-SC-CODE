@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-30T16:22:05.225565+00:00",
+  "collected_at": "2026-06-30T18:54:38.670928+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -36,6 +36,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-06-30T18:16:44+00:00",
+      "lang": "english",
+      "title": "[正面] I really loved the art work and the story is very...",
+      "summary": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
+      "url": "https://steamcommunity.com/profiles/76561198154687236/recommended/3052450",
+      "author": "76561198154687236",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
+      "timestamp_created": 1782843404,
+      "playtime_forever": 348
+    },
+    {
+      "source": "steam",
       "time": "2026-06-30T15:29:22+00:00",
       "lang": "english",
       "title": "[正面] Peak Autism",
@@ -47,7 +62,7 @@
       "voted_up": true,
       "review": "Peak Autism",
       "timestamp_created": 1782833362,
-      "playtime_forever": 6939
+      "playtime_forever": 6999
     },
     {
       "source": "steam",
@@ -152,7 +167,7 @@
       "voted_up": true,
       "review": "This game has so much charm, as well as a very fun gameplay loop.",
       "timestamp_created": 1782789503,
-      "playtime_forever": 1270
+      "playtime_forever": 1419
     }
   ]
 }

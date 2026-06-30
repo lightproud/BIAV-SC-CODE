@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-01",
+  "archived_at": "2026-06-30T18:55:23.799890+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] I really loved the art work and the story is very...",
+      "summary": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
+      "source": "steam_review",
+      "time": "2026-06-30T18:16:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198154687236/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198154687236",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 348,
+        "votes_up": 0,
+        "timestamp_created": 1782843404
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

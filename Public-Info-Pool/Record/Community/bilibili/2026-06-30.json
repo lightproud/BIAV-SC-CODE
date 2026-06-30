@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T16:23:07.993810+00:00",
+  "archived_at": "2026-06-30T18:55:23.702601+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "悲报：%player%代码已失效！",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/44ccb51933d3ee36a1bd14400f2f1d93877dee17.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 庞托斯单c 2t王关 融灾5-5",
+      "summary": "胖头鱼水船轻取皮克曼还有余力，这集可怕了...\n  └ 泪痕何留 (2赞): 配置如图\n想玩这队建议的练度：庞托斯+12（不然很难单c，需要水母练度或整体练度较高。），船长三启，水母超限，对收米人等其他练度需求不大（如果庞托斯练度足够高的前提下）。\n\n比较需要的命轮：手牌+2（这个很重要），哺育最佳。隐秘的诞生（16全体暴击率，保证触手暴击）\n\n在有深海戒指的情况下可以看到伤害溢出很多（水母后续开大起码还有60w+的伤害），所以愿意凹可以做到0启船长，3启水母便能玩此配队（比如说借个庞托斯），当然没有戒指还是参考上面的推荐配置。\n\n若庞托斯没有超限，不建议考虑庞托斯c，如果水船练度够高可以庞托斯辅助水船来使用（参考图3），在这种情况下需要船长配置尽量高补生存。辅助的话建议三启，不然能玩但是手感稀烂。\n  └ 林萤春雪 (0赞): 和医生墨菲比呢",
+      "source": "bilibili",
+      "time": "2026-06-30T09:44:19+00:00",
+      "url": "https://www.bilibili.com/video/BV17dTF6nEeE",
+      "engagement": 123,
+      "is_hot": false,
+      "author": "泪痕何留",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 120,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/23b7099247249467bca8d81d408853efb86044a4.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

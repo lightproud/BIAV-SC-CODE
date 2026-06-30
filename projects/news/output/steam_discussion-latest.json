@@ -1,18 +1,18 @@
 {
-  "collected_at": "2026-06-30T16:22:05.225565+00:00",
+  "collected_at": "2026-06-30T18:54:38.670928+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 5,
   "items": [
     {
       "source": "steam_discussion",
-      "time": "2026-06-30T14:52:36+00:00",
+      "time": "2026-06-30T18:08:00+00:00",
       "lang": "en",
       "title": "[Steam论坛] Invitation Code",
       "summary": "1D1EGZ10U1",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/603039786130771940/",
       "author": "Znye",
-      "engagement": 200
+      "engagement": 201
     },
     {
       "source": "steam_discussion",
@@ -52,16 +52,6 @@
       "summary": "This is a very comprehensive guide for new and returning players https://docs.google.com/document/d/1THjxR9hHs4NWHqSWHHa2dHAGuE_cRGelfzXdBfCnIlM/edit?tab=t.0#heading=h.kxd9lri5r74q.\nIt contains about everything you could need for a good start and links to other important resources (in the future, it could also be found on a dedicated site).\nFree to ask on Discord if in need of anything....",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962428676/",
       "author": "SUSKIWY",
-      "engagement": 0
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-29T17:37:46+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Game keeps crashing",
-      "summary": "As soon as I start to do something the screen turns transparent white and the game crashes, help D:",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962417790/",
-      "author": "Chara",
       "engagement": 0
     }
   ]
