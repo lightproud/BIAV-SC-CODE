@@ -1,9 +1,26 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-06-30T18:55:23.705192+00:00",
+  "archived_at": "2026-06-30T20:56:57.529773+00:00",
   "source": "youtube",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
+    {
+      "title": "[Morimens] Pontos  - &quot;Short&quot; more pickman exploit teams and some light coaching",
+      "summary": "Don't know how long.",
+      "source": "youtube",
+      "time": "2026-06-30T20:09:15Z",
+      "url": "https://www.youtube.com/watch?v=RO1eqt5ue6A",
+      "engagement": 608,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/RO1eqt5ue6A/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
     {
       "title": "¡MORIMENS ES INCREÍBLE! 😱 El Mejor Gacha RPG que Debes Jugar en 2026",
       "summary": "Morimens es uno de los gacha RPG más sorprendentes que he probado. En este video te cuento por qué creo que vale ...",
@@ -68,6 +85,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/NNLVluWIpqE/hqdefault_live.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens H2-12 without gnoses 01",
+      "summary": "Idea from https://www.youtube.com/watch?v=mZ7LmvQDmQ4.",
+      "source": "youtube",
+      "time": "2026-06-30T20:10:24Z",
+      "url": "https://www.youtube.com/watch?v=1NFXDB5drVE",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "Noir",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/1NFXDB5drVE/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

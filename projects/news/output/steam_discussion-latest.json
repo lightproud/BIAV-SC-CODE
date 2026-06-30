@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-30T18:54:38.670928+00:00",
+  "collected_at": "2026-06-30T20:56:05.874034+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam_discussion",
@@ -43,16 +43,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962322779/",
       "author": "石磊",
       "engagement": 1
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-29T20:05:22+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] New Player Handbook Guide",
-      "summary": "This is a very comprehensive guide for new and returning players https://docs.google.com/document/d/1THjxR9hHs4NWHqSWHHa2dHAGuE_cRGelfzXdBfCnIlM/edit?tab=t.0#heading=h.kxd9lri5r74q.\nIt contains about everything you could need for a good start and links to other important resources (in the future, it could also be found on a dedicated site).\nFree to ask on Discord if in need of anything....",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962428676/",
-      "author": "SUSKIWY",
-      "engagement": 0
     }
   ]
 }
