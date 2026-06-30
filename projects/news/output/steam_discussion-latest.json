@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-06-30T20:56:05.874034+00:00",
+  "collected_at": "2026-06-30T22:15:26.922970+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 3,
   "items": [
     {
       "source": "steam_discussion",
@@ -16,23 +16,13 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-06-29T21:08:59+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] New invite code! 300 silver.",
-      "summary": "Code: TEAHFONZM5\nEnter it in the new Mythag Invite / Bind Invitation tab on the left.",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
-      "author": "mengluo123",
-      "engagement": 157
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-30T12:18:04+00:00",
+      "time": "2026-06-30T21:18:19+00:00",
       "lang": "en",
       "title": "[Steam论坛] linux login ?",
       "summary": "como posso fazer o login no linux ?",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
       "author": "manotroll",
-      "engagement": 13
+      "engagement": 14
     },
     {
       "source": "steam_discussion",

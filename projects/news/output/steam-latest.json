@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-30T20:56:05.874034+00:00",
+  "collected_at": "2026-06-30T22:15:26.922970+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 11,
@@ -47,7 +47,7 @@
       "voted_up": true,
       "review": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
       "timestamp_created": 1782843404,
-      "playtime_forever": 408
+      "playtime_forever": 480
     },
     {
       "source": "steam",
@@ -62,7 +62,7 @@
       "voted_up": true,
       "review": "Peak Autism",
       "timestamp_created": 1782833362,
-      "playtime_forever": 7059
+      "playtime_forever": 7086
     },
     {
       "source": "steam",
@@ -167,7 +167,7 @@
       "voted_up": true,
       "review": "This game has so much charm, as well as a very fun gameplay loop.",
       "timestamp_created": 1782789503,
-      "playtime_forever": 1419
+      "playtime_forever": 1509
     }
   ]
 }
