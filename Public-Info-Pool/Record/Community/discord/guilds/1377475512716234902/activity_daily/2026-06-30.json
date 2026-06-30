@@ -1,22 +1,26 @@
 {
   "date": "2026-06-30",
-  "messages": 146,
+  "messages": 180,
   "unique_authors": 16,
-  "reactions_total": 49,
-  "attachments": 17,
+  "reactions_total": 66,
+  "attachments": 19,
   "channel_activity": {
-    "なんでも雑談": 97,
-    "🔰初心者質問": 18,
-    "誰でも質問": 12,
+    "なんでも雑談": 116,
+    "対戦募集": 10,
+    "🔰初心者質問": 19,
+    "誰でも質問": 13,
+    "描いたもの": 1,
+    "対人関係のあれこれ": 4,
     "誰でもOKグロ版野次馬スレ": 12,
-    "対人関係のあれこれ": 2,
     "つぶやき": 5
   },
   "hourly_activity": {
+    "10": 18,
+    "11": 7,
+    "12": 14,
     "6": 19,
     "8": 8,
     "9": 53,
-    "10": 5,
     "7": 5,
     "4": 37,
     "5": 2,
@@ -25,8 +29,7 @@
     "2": 12
   },
   "message_types": {
-    "0": 69,
-    "19": 9
+    "0": 34
   },
   "top_reacted_messages": [
     {
@@ -46,12 +49,52 @@
       "channel": "なんでも雑談"
     },
     {
+      "id": "1521465459973685388",
+      "channel_id": "1377478664609857647",
+      "content": "上に落ちる変態",
+      "author": "kuroneko4253",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
       "id": "1521450634455547934",
       "channel_id": "1377478664609857647",
       "content": "久し振りに使った",
       "author": "sugoitsubasanohaetaop",
       "reactions": 3,
       "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521480101336977478",
+      "channel_id": "1377478664609857647",
+      "content": "||~~どっちでも痴女スタイルなのは変わらんやろ！~~||",
+      "author": "0w04250",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521485650929651803",
+      "channel_id": "1377478664609857647",
+      "content": "タヴィの胸の穴に住民票を移さなきゃ！（使命感）",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521489149457338409",
+      "channel_id": "1377481792335908945",
+      "content": "親善送りますね",
+      "author": "maruiomotinokakera",
+      "reactions": 2,
+      "channel": "対戦募集"
+    },
+    {
+      "id": "1521484570887983175",
+      "channel_id": "1391701560496623688",
+      "content": "でも攻撃防御をスキルマにしておかないと“妖怪1足りない”で狂気解放が打てないなんて事が多々あるから怖いよね。",
+      "author": "xudabusakua",
+      "reactions": 2,
+      "channel": "🔰初心者質問"
     },
     {
       "id": "1521443095512744047",
@@ -110,84 +153,44 @@
       "channel": "誰でもOKグロ版野次馬スレ"
     },
     {
-      "id": "1521406859276320949",
+      "id": "1521461733284118581",
       "channel_id": "1377478664609857647",
-      "content": "重複バグきちゃ！",
-      "author": "xudabusakua",
+      "content": "https://vxtwitter.com/i/status/2071896525614223486",
+      "author": "sinano_",
       "reactions": 1,
       "channel": "なんでも雑談"
     },
     {
-      "id": "1521442268341604482",
+      "id": "1521474616277602404",
       "channel_id": "1377478664609857647",
-      "content": "7章は人によっては苦手かもって思ってるけど、忘却前夜のストーリー全体面白すぎるよね",
-      "author": "yamaiame_ql4",
+      "content": "A.ノーパンだから",
+      "author": "0w04250",
       "reactions": 1,
       "channel": "なんでも雑談"
     },
     {
-      "id": "1521443966652780586",
-      "channel_id": "1377478664609857647",
-      "content": "先行版があるから当然だけど、ヘブバンよりもストーリー更新が頻繁ってだけで評価高い()",
-      "author": "sugoitsubasanohaetaop",
+      "id": "1521487850892427376",
+      "channel_id": "1377481792335908945",
+      "content": "一人だけめちゃ楽しい編成できたので誰かやりませんか",
+      "author": "maruiomotinokakera",
       "reactions": 1,
-      "channel": "なんでも雑談"
+      "channel": "対戦募集"
     },
     {
-      "id": "1521445524304298055",
-      "channel_id": "1377478664609857647",
-      "content": "ぺちゃんナ",
-      "author": "meruson6406",
+      "id": "1521474090907467887",
+      "channel_id": "1510230929678008420",
+      "content": "",
+      "author": "tajimal_drawing",
       "reactions": 1,
-      "channel": "なんでも雑談"
+      "channel": "描いたもの"
     },
     {
-      "id": "1521445681611673610",
-      "channel_id": "1377478664609857647",
-      "content": "ラモンナは程々にあるだろ(過激派)",
-      "author": "yasaizujusu",
+      "id": "1521466567534317598",
+      "channel_id": "1419638694876418130",
+      "content": "||強化薔薇ヘロで全体80点ぐらい出せるって話します？(カス)||",
+      "author": "anonymous.409",
       "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521446789730009150",
-      "channel_id": "1377478664609857647",
-      "content": "明日ようやくノーパンタヴィ貰えるぞ〜",
-      "author": "neco9900",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521447261849260122",
-      "channel_id": "1377478664609857647",
-      "content": "ノーパンはさておき、イベントのタヴィの振り向き開眼姿可愛すぎませんか",
-      "author": "meruson6406",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521452081054089216",
-      "channel_id": "1377478664609857647",
-      "content": "確か霊核と純粋な霊核とかだった気がする。欠片？",
-      "author": "yamaiame_ql4",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521459036430536794",
-      "channel_id": "1377478664609857647",
-      "content": "こんなに強い遺物だけ集まることあるのかってくらい強い",
-      "author": "sugoitsubasanohaetaop",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521406583756554270",
-      "channel_id": "1391701560496623688",
-      "content": "はじめまして！\n沙耶の唄コラボをきっかけに忘却前夜を知り、プレイしてみてミリアム様推しになりました🐟️\n\nトゥルー様もお迎えしたいのですが、復刻ガチャが少し前に",
-      "author": "garambito",
-      "reactions": 1,
-      "channel": "🔰初心者質問"
+      "channel": "対人関係のあれこれ"
     }
   ]
 }
