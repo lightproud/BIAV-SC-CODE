@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T13:10:01.906737+00:00",
+  "archived_at": "2026-06-30T16:23:08.004739+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 10,
   "items": [
     {
       "title": "[正面] [h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conoc...",
@@ -22,6 +22,30 @@
         "playtime_forever": 3232,
         "votes_up": 4,
         "timestamp_created": 1782781638
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
+      "summary": "意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
+      "source": "steam_review",
+      "time": "2026-06-30T13:12:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198208125949/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198208125949",
+      "tags": [
+        "tchinese"
+      ],
+      "language": "tchinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 463,
+        "votes_up": 1,
+        "timestamp_created": 1782825160
       },
       "region": "global",
       "archive_subtype": "review",
@@ -142,6 +166,78 @@
         "playtime_forever": 772,
         "votes_up": 0,
         "timestamp_created": 1782807585
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Peak Autism",
+      "summary": "Peak Autism",
+      "source": "steam_review",
+      "time": "2026-06-30T15:29:22+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198068351450/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198068351450",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6939,
+        "votes_up": 0,
+        "timestamp_created": 1782833362
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I am enjoying the combat so far, the art style is...",
+      "summary": "I am enjoying the combat so far, the art style is beautiful.",
+      "source": "steam_review",
+      "time": "2026-06-30T14:47:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198096650043/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198096650043",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 297,
+        "votes_up": 0,
+        "timestamp_created": 1782830844
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Sotto al Pontos è il pg più divertente da giocare...",
+      "summary": "Sotto al Pontos è il pg più divertente da giocare in un qualsiasi gioco di carte. Morimens è il miglior gacha a turni.",
+      "source": "steam_review",
+      "time": "2026-06-30T14:46:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198078638704/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198078638704",
+      "tags": [
+        "italian"
+      ],
+      "language": "italian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5826,
+        "votes_up": 0,
+        "timestamp_created": 1782830811
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-06-30T13:10:01.893944+00:00",
+  "archived_at": "2026-06-30T16:23:07.993810+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "title": "悲报：%player%代码已失效！",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/c8ef53a1cbf6086f00cbbed5ebe1d918b63eeee1.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】庞托斯防杀队双卡庞艾，鸟蛛能打的老头能打，鸟蛛打不了的老头还是能打！",
+      "summary": "将鸟蛛队的阿格里帕替换为庞托斯，极大提高了上下限，攻防双端都得到了极大的加强，唯一欠缺的回血携带密契无垢启示录进行弥补。\n1-5和2-5完全没有任何压力，3-5和4-5不太符合老头打长线做任务的逻辑没有进行测试，55在相同配置的情况下鸟蛛完全打不了，庞托斯打起来略有压力但是最后也是成功逮捕皮克曼。\n目前测试下来 相同配置（等级和灵塑相差不大，命轮3ssr3sr，双限定+双常驻）情况下这套配队的表现相当不错\n  └ iq2233 (0赞): 深海鸟蛛王朝了\n  └ llddda (0赞): 老头启灵刚需吗\n  └ 雅尔洁德 (0赞): 强强强[星星眼]",
+      "source": "bilibili",
+      "time": "2026-06-30T14:09:36+00:00",
+      "url": "https://www.bilibili.com/video/BV1heTw6VEMD",
+      "engagement": 196,
+      "is_hot": false,
+      "author": "伤春客",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 190,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/73ad8334a2853dd248979758094b0b83b70a5e31.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -391,6 +414,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/2560670a008b06d95827b21a9412fd5bd1da2e28.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "抽一只深海老头",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-06-30T15:17:29+00:00",
+      "url": "https://www.bilibili.com/video/BV1WNTw6AEeQ",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "喵老狮",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/615f22e1557fd37d8b4e487cde8015777504d056.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
