@@ -1,23 +1,24 @@
 {
   "date": "2026-06-30",
-  "messages": 180,
+  "messages": 212,
   "unique_authors": 16,
-  "reactions_total": 66,
-  "attachments": 19,
+  "reactions_total": 76,
+  "attachments": 27,
   "channel_activity": {
-    "なんでも雑談": 116,
+    "なんでも雑談": 138,
+    "🔰初心者質問": 24,
+    "つぶやき": 10,
     "対戦募集": 10,
-    "🔰初心者質問": 19,
     "誰でも質問": 13,
     "描いたもの": 1,
     "対人関係のあれこれ": 4,
-    "誰でもOKグロ版野次馬スレ": 12,
-    "つぶやき": 5
+    "誰でもOKグロ版野次馬スレ": 12
   },
   "hourly_activity": {
+    "12": 21,
+    "13": 25,
     "10": 18,
     "11": 7,
-    "12": 14,
     "6": 19,
     "8": 8,
     "9": 53,
@@ -29,7 +30,8 @@
     "2": 12
   },
   "message_types": {
-    "0": 34
+    "0": 31,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -62,6 +64,38 @@
       "content": "久し振りに使った",
       "author": "sugoitsubasanohaetaop",
       "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521498325512093848",
+      "channel_id": "1377478664609857647",
+      "content": "クッソ煽られてる",
+      "author": "8106ne",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521498920117600388",
+      "channel_id": "1377478664609857647",
+      "content": "本日のチキバトル",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521500167138971819",
+      "channel_id": "1377478664609857647",
+      "content": "毎回ワンダのカード選択肢に入ってるけど、これもまじつよ",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521500512657215629",
+      "channel_id": "1377478664609857647",
+      "content": "楽しいおファロさん札ガチャ　完",
+      "author": "namenemue3",
+      "reactions": 2,
       "channel": "なんでも雑談"
     },
     {
@@ -153,44 +187,12 @@
       "channel": "誰でもOKグロ版野次馬スレ"
     },
     {
-      "id": "1521461733284118581",
+      "id": "1521502853104009306",
       "channel_id": "1377478664609857647",
-      "content": "https://vxtwitter.com/i/status/2071896525614223486",
-      "author": "sinano_",
+      "content": "タヴィって修正入ったの？\nそれともSNS用に編集してるの？",
+      "author": "ecstasyrb",
       "reactions": 1,
       "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521474616277602404",
-      "channel_id": "1377478664609857647",
-      "content": "A.ノーパンだから",
-      "author": "0w04250",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1521487850892427376",
-      "channel_id": "1377481792335908945",
-      "content": "一人だけめちゃ楽しい編成できたので誰かやりませんか",
-      "author": "maruiomotinokakera",
-      "reactions": 1,
-      "channel": "対戦募集"
-    },
-    {
-      "id": "1521474090907467887",
-      "channel_id": "1510230929678008420",
-      "content": "",
-      "author": "tajimal_drawing",
-      "reactions": 1,
-      "channel": "描いたもの"
-    },
-    {
-      "id": "1521466567534317598",
-      "channel_id": "1419638694876418130",
-      "content": "||強化薔薇ヘロで全体80点ぐらい出せるって話します？(カス)||",
-      "author": "anonymous.409",
-      "reactions": 1,
-      "channel": "対人関係のあれこれ"
     }
   ]
 }
