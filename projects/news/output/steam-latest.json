@@ -1,9 +1,24 @@
 {
-  "collected_at": "2026-07-01T19:46:15.211000+00:00",
+  "collected_at": "2026-07-01T21:24:02.782481+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-01T19:11:46+00:00",
+      "lang": "schinese",
+      "title": "[正面] 愿银钥指引前路！",
+      "summary": "愿银钥指引前路！",
+      "url": "https://steamcommunity.com/profiles/76561198099432414/recommended/3052450",
+      "author": "76561198099432414",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "愿银钥指引前路！",
+      "timestamp_created": 1782933106,
+      "playtime_forever": 6068
+    },
     {
       "source": "steam",
       "time": "2026-07-01T11:53:25+00:00",

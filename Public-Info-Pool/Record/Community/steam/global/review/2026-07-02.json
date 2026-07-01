@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-02",
+  "archived_at": "2026-07-01T21:24:49.634311+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] 愿银钥指引前路！",
+      "summary": "愿银钥指引前路！",
+      "source": "steam_review",
+      "time": "2026-07-01T19:11:46+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198099432414/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198099432414",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6068,
+        "votes_up": 0,
+        "timestamp_created": 1782933106
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

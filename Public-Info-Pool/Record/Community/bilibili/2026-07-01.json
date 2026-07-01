@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-01T19:47:08.292103+00:00",
+  "archived_at": "2026-07-01T21:24:49.540053+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "title": "【Marco音乐电台】歌剧演唱家点评Song of Memento【MarcoMeatball】",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/16fd6aae531a3afed0422cc427477f3477d9b33e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]不懂就问啊，这游戏是不是一年优化一次",
+      "summary": "能给我优化一下吗，虽然我感觉校猫更乐意出，越来越超模的角色赚钱\n  └ Sapphiric (2赞): 現在已經比以前改善很多了，以前連教學都沒有，全靠玩家到處摸摸，這裡點點[doge]\n以至於很多玩家玩深海不會切觸手型態，玩血肉不會喝熔爐，玩超維不會取靈感[doge][doge]\n關於bug的部分也是一直修一直有bug，但由於5771修得頻繁補償也頻繁，牢玩家和社區也就隨它了，雖然還是有很多吐槽就是了，例如：你們內部真的測試過了嗎？更別提大福袋上線橫掃就被削，後來跟不上強度又補回來的事[笑哭]牢玩家大多都已經平常心習慣了這草台班子了，有種縫縫補補，但還能活就行的心態🚬 雖然近期賺不少揮霍出來給我們看到了[doge]\n  └ 燃え落ちない翼 (1赞): 说个题外话，终于干到第三章了，这阵容还真没毛[Alice In Cradle 格拉提亚 表情包_真香][Alice In Cradle 格拉提亚 表情包_真香]之后就随缘玩了[Alice In Cradle 格拉提亚 表情包_Zzz][Alice In Cradle 格拉提亚 表情包_Zzz]\n  └ redtea (1赞): 我有裝切屏自動靜音[doge]",
+      "source": "bilibili",
+      "time": "2026-07-01T09:26:18+00:00",
+      "url": "https://www.bilibili.com/video/BV19STv63ET7",
+      "engagement": 306,
+      "is_hot": false,
+      "author": "TAZex影",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 300,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c01f0760bdce4770bfa3eeb587b3ee0746e1d831.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

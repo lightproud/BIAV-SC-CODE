@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-01T19:47:08.292807+00:00",
+  "archived_at": "2026-07-01T21:24:49.540845+00:00",
   "source": "youtube",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "Morimens \\\\ Прохождение д-зоны от 22.06.26",
@@ -34,6 +34,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/x1HRviyi7Vw/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Pontos Pulls! (I wanna be part of his world...) [Morimens] [VN/ENG]",
+      "summary": "[ T A G S ] #morimens #vtuber #fyp #xh [ R U L E S ] - Be respectful to others - No homophobic, sexist, or racism - NO AI! - Have fun ...",
+      "source": "youtube",
+      "time": "2026-07-01T20:47:56Z",
+      "url": "https://www.youtube.com/watch?v=Kz7mwm7iiOM",
+      "engagement": 13,
+      "is_hot": false,
+      "author": "Huey Hue",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Kz7mwm7iiOM/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
