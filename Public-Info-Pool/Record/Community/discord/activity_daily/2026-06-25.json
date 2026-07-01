@@ -1,11 +1,11 @@
 {
   "date": "2026-06-25",
-  "messages": 17590,
+  "messages": 17659,
   "unique_authors": 401,
   "reactions_total": 1444,
-  "attachments": 699,
+  "attachments": 701,
   "channel_activity": {
-    "🔸general-chat": 4599,
+    "🔸general-chat": 4668,
     "🔸game-question": 3753,
     "🔸綜合討論": 2347,
     "🔸日本語チャンネル": 26,
@@ -89,6 +89,7 @@
     "1519512676273885265": 1
   },
   "hourly_activity": {
+    "23": 453,
     "0": 611,
     "1": 405,
     "2": 555,
@@ -111,14 +112,11 @@
     "19": 751,
     "20": 116,
     "21": 279,
-    "22": 793,
-    "23": 384
+    "22": 793
   },
   "message_types": {
-    "0": 2792,
-    "19": 1804,
-    "23": 1,
-    "20": 2
+    "0": 63,
+    "19": 6
   },
   "top_reacted_messages": [
     {
