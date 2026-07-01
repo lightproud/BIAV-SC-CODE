@@ -1,19 +1,9 @@
 {
-  "collected_at": "2026-07-01T21:24:02.782481+00:00",
+  "collected_at": "2026-07-01T23:09:09.555010+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 1,
   "items": [
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-30T23:03:09+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] linux login ?",
-      "summary": "como posso fazer o login no linux ?",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
-      "author": "manotroll",
-      "engagement": 15
-    },
     {
       "source": "steam_discussion",
       "time": "2026-07-01T13:34:29+00:00",
