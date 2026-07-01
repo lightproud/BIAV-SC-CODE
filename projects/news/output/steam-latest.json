@@ -1,24 +1,9 @@
 {
-  "collected_at": "2026-07-01T00:04:19.338029+00:00",
+  "collected_at": "2026-07-01T05:20:52.189220+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 8,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-06-30T01:07:18+00:00",
-      "lang": "latam",
-      "title": "[正面] [h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conoc...",
-      "summary": "[h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conocía ni su madre hasta que llegó la collab de [b]Saya no Uta[/b], que es por la que lo descargué, y su historia en una palabra es [u]extraña[/u] pero única, con personajes grises y plotwist en todos los capítulos.\r\nY sí, si igual viniste por Saya, la historia es corta pero buena. \r\n https://www.youtube.com/watch?v=5csUC3QMF1M",
-      "url": "https://steamcommunity.com/profiles/76561198974470717/recommended/3052450",
-      "author": "76561198974470717",
-      "engagement": 7,
-      "language": "latam",
-      "voted_up": true,
-      "review": "[h3]Del EOS al Peak[/h3]\r\nMorimens que no lo conocía ni su madre hasta que llegó la collab de [b]Saya no Uta[/b], que es por la que lo descargué, y su historia en una palabra es [u]extraña[/u] pero única, con personajes grises y plotwist en todos los capítulos.\r\nY sí, si igual viniste por Saya, la historia es corta pero buena. \r\n https://www.youtube.com/watch?v=5csUC3QMF1M",
-      "timestamp_created": 1782781638,
-      "playtime_forever": 3265
-    },
     {
       "source": "steam",
       "time": "2026-06-30T13:12:40+00:00",
@@ -36,6 +21,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-07-01T02:34:27+00:00",
+      "lang": "russian",
+      "title": "[负面] ненавижу аниме",
+      "summary": "ненавижу аниме",
+      "url": "https://steamcommunity.com/profiles/76561199063569793/recommended/3052450",
+      "author": "76561199063569793",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": false,
+      "review": "ненавижу аниме",
+      "timestamp_created": 1782873267,
+      "playtime_forever": 53
+    },
+    {
+      "source": "steam",
       "time": "2026-06-30T18:16:44+00:00",
       "lang": "english",
       "title": "[正面] I really loved the art work and the story is very...",
@@ -47,7 +47,7 @@
       "voted_up": true,
       "review": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
       "timestamp_created": 1782843404,
-      "playtime_forever": 480
+      "playtime_forever": 620
     },
     {
       "source": "steam",
@@ -62,7 +62,7 @@
       "voted_up": true,
       "review": "Peak Autism",
       "timestamp_created": 1782833362,
-      "playtime_forever": 7086
+      "playtime_forever": 7123
     },
     {
       "source": "steam",
@@ -123,51 +123,6 @@
       "review": "Hay, hình đẹp",
       "timestamp_created": 1782807585,
       "playtime_forever": 1052
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T04:49:01+00:00",
-      "lang": "english",
-      "title": "[正面] First and only Gacha style game I’ve ever played....",
-      "summary": "First and only Gacha style game I’ve ever played. I just wanted to try out a game similar Slay the Spire and now I’ve spent $100+ with plans to drop another $100 before end of summer. I don’t even know what happened but don’t play this game. Sure it’s fun and all and you can play it F2P completely but something about this game just pulls the money out of my pocket.",
-      "url": "https://steamcommunity.com/profiles/76561198007129669/recommended/3052450",
-      "author": "76561198007129669",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "First and only Gacha style game I’ve ever played. I just wanted to try out a game similar Slay the Spire and now I’ve spent $100+ with plans to drop another $100 before end of summer. I don’t even know what happened but don’t play this game. Sure it’s fun and all and you can play it F2P completely but something about this game just pulls the money out of my pocket.",
-      "timestamp_created": 1782794941,
-      "playtime_forever": 896
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T03:37:52+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好丸，我将从裤裆里掏出我的极品老古董--血链希洛，使用不稳定链条+恨意宣泄+鲜血链条*3，一回合自爆...",
-      "summary": "好丸，我将从裤裆里掏出我的极品老古董--血链希洛，使用不稳定链条+恨意宣泄+鲜血链条*3，一回合自爆半管血，打出高达五千的伤害给100多万血的boss狠狠地搓背，然后被反手四刀HP-1796，死亡抵抗清零并爆出应急灵体*1.",
-      "url": "https://steamcommunity.com/profiles/76561199183061098/recommended/3052450",
-      "author": "76561199183061098",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好丸，我将从裤裆里掏出我的极品老古董--血链希洛，使用不稳定链条+恨意宣泄+鲜血链条*3，一回合自爆半管血，打出高达五千的伤害给100多万血的boss狠狠地搓背，然后被反手四刀HP-1796，死亡抵抗清零并爆出应急灵体*1.",
-      "timestamp_created": 1782790672,
-      "playtime_forever": 6896
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T03:18:23+00:00",
-      "lang": "english",
-      "title": "[正面] This game has so much charm, as well as a very fun...",
-      "summary": "This game has so much charm, as well as a very fun gameplay loop.",
-      "url": "https://steamcommunity.com/profiles/76561199100210654/recommended/3052450",
-      "author": "76561199100210654",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "This game has so much charm, as well as a very fun gameplay loop.",
-      "timestamp_created": 1782789503,
-      "playtime_forever": 1574
     }
   ]
 }

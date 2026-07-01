@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-07-01T00:05:07.062658+00:00",
+  "archived_at": "2026-07-01T05:21:38.530918+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 22,
   "items": [
     {
       "title": "悲报：%player%代码已失效！",
@@ -46,6 +46,52 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/73ad8334a2853dd248979758094b0b83b70a5e31.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 Morimens +12凱 0啟龐托斯 4-5",
+      "summary": "-\n  └ 站好这条街 (0赞): 狠狠学习[打call]",
+      "source": "bilibili",
+      "time": "2026-06-30T09:38:02+00:00",
+      "url": "https://www.bilibili.com/video/BV1JXTF6pEcw",
+      "engagement": 184,
+      "is_hot": false,
+      "author": "維娅的紅茶",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 183,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/a969750c316af613aff93c498c8ad2788287e565.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】H5-11 茧 庞托斯试玩第二弹",
+      "summary": "魇不吃狂热不吃调和不进蜘蛛空间但是被视为指令卡又不视为指令卡，5c章节卡能识别但是打出不占用，蜘蛛1大给魇加费所以是指令卡，但是沙耶洗不掉指令卡伤害加成吃不到那他又不是指令卡，你是指令卡吗，我觉得我是\n嗷不对我不是指令卡，嗷对的对的我是指令卡\n你们觉得呢",
+      "source": "bilibili",
+      "time": "2026-06-30T12:03:15+00:00",
+      "url": "https://www.bilibili.com/video/BV1oYKf6jEfh",
+      "engagement": 181,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 181,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/48a25c2c29b26abfd1ad9d645567064bc30d523d.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
