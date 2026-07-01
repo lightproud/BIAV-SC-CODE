@@ -1,21 +1,182 @@
 {
   "date": "2026-07-01",
-  "messages": 12,
-  "unique_authors": 5,
-  "reactions_total": 0,
-  "attachments": 7,
+  "messages": 81,
+  "unique_authors": 24,
+  "reactions_total": 24,
+  "attachments": 13,
   "channel_activity": {
-    "なんでも雑談": 2,
-    "誰でも質問": 7,
-    "ニムフィーアの毒パ研究日誌": 3
+    "なんでも雑談": 38,
+    "🔰初心者質問": 6,
+    "誰でも質問": 22,
+    "ニムフィーアの毒パ研究日誌": 4,
+    "つぶやき": 7,
+    "対人関係のあれこれ": 4
   },
   "hourly_activity": {
+    "3": 21,
+    "6": 39,
+    "4": 5,
+    "5": 3,
+    "2": 1,
     "0": 8,
     "1": 4
   },
   "message_types": {
-    "0": 10,
-    "19": 2
+    "0": 60,
+    "19": 9
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1521725086581784819",
+      "channel_id": "1377478664609857647",
+      "content": "https://x.com/i/status/2072132809033203784",
+      "author": "ecstasyrb",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521760675880501390",
+      "channel_id": "1377478664609857647",
+      "content": "えぇ………",
+      "author": "yasaizujusu",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521763513595461632",
+      "channel_id": "1377478664609857647",
+      "content": "くさ",
+      "author": "sub0044_36832",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521725761277530203",
+      "channel_id": "1377478664609857647",
+      "content": "知らないでごわす",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521759396059676762",
+      "channel_id": "1377478664609857647",
+      "content": "こちらが忘却前屋さんの\n知識の神子　ノーパントッピングです👍",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521760165068804149",
+      "channel_id": "1377478664609857647",
+      "content": "今日でタヴィ3凸や",
+      "author": "shin7869",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521763755120394301",
+      "channel_id": "1377478664609857647",
+      "content": "タヴィ1凸結構強いかもですね｡\n前より安定感が上がった気がします👍",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521767539728842772",
+      "channel_id": "1377478664609857647",
+      "content": "便利ではありそう",
+      "author": "yasaizujusu",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521771308621234297",
+      "channel_id": "1377478664609857647",
+      "content": "いやっ！いやっ！",
+      "author": "xudabusakua",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521772015655325736",
+      "channel_id": "1377478664609857647",
+      "content": "札ガチャまた天井でした…\nこれで8連天井です｡\n確率的には､コインを10枚投げて全て表が出る確率より低いそうです🤔",
+      "author": "anonymous.409",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1521727762350477402",
+      "channel_id": "1391701560496623688",
+      "content": "ルミナスコアとシルバーコアは基本温存でヨシですが、根源の澱というガシャ引いた時にもらえるアイテム500個で所持済キャラを1凸できるので恒常も引くのはヨシです",
+      "author": "0w04250",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1521752443099021353",
+      "channel_id": "1391701560496623688",
+      "content": "ヘブンズコアすぐに貯まるから使っちゃって良し",
+      "author": "yamaiame_ql4",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1521752978808111227",
+      "channel_id": "1391701560496623688",
+      "content": "ヘブンズ・コアー！",
+      "author": "kuroneko4253",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1521756504661819463",
+      "channel_id": "1391701560496623688",
+      "content": "-# どあ…",
+      "author": "mu0240_87003",
+      "reactions": 1,
+      "channel": "🔰初心者質問"
+    },
+    {
+      "id": "1521723903796314243",
+      "channel_id": "1400058619726266462",
+      "content": "ソレールの札は餅が推奨、サブ札には私的な休息が理想ですが無理そうならダメ強かクリダメの札を！",
+      "author": "0w04250",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1521725709272223904",
+      "channel_id": "1400058619726266462",
+      "content": "これやな",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1521727028141752471",
+      "channel_id": "1400058619726266462",
+      "content": "私はこれのタイスキーverを推します",
+      "author": "zzzorz",
+      "reactions": 1,
+      "channel": "誰でも質問"
+    },
+    {
+      "id": "1521766650188271696",
+      "channel_id": "1458760640351965361",
+      "content": "完全コレクション用だけど今月でドール先生の餅も完凸できたのでハッピー😁(使いどころは、特にない)",
+      "author": "suzuri9701",
+      "reactions": 1,
+      "channel": "つぶやき"
+    },
+    {
+      "id": "1521770894857474190",
+      "channel_id": "1458760640351965361",
+      "content": "オジールの札ってこれ魂の誕生じゃなくてマーフィー餅とかでもワンチャン…ありか",
+      "author": "suzuri9701",
+      "reactions": 1,
+      "channel": "つぶやき"
+    }
+  ]
 }
