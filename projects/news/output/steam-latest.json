@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-06-30T22:15:26.922970+00:00",
+  "collected_at": "2026-07-01T00:04:19.338029+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 11,
@@ -107,7 +107,7 @@
       "voted_up": true,
       "review": "二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
       "timestamp_created": 1782811681,
-      "playtime_forever": 3026
+      "playtime_forever": 3051
     },
     {
       "source": "steam",
@@ -167,7 +167,7 @@
       "voted_up": true,
       "review": "This game has so much charm, as well as a very fun gameplay loop.",
       "timestamp_created": 1782789503,
-      "playtime_forever": 1509
+      "playtime_forever": 1574
     }
   ]
 }
