@@ -1,11 +1,11 @@
 {
   "date": "2026-07-01",
-  "messages": 545,
+  "messages": 546,
   "unique_authors": 24,
-  "reactions_total": 193,
-  "attachments": 54,
+  "reactions_total": 195,
+  "attachments": 55,
   "channel_activity": {
-    "なんでも雑談": 384,
+    "なんでも雑談": 385,
     "誰でも質問": 61,
     "諸々の備忘録": 10,
     "つぶやき": 32,
@@ -17,6 +17,7 @@
     "ニムフィーアの毒パ研究日誌": 4
   },
   "hourly_activity": {
+    "17": 1,
     "13": 60,
     "14": 28,
     "15": 4,
@@ -36,8 +37,7 @@
     "1": 4
   },
   "message_types": {
-    "0": 43,
-    "19": 5
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -193,9 +193,9 @@
       "channel": "なんでも雑談"
     },
     {
-      "id": "1521833535038558299",
+      "id": "1521931150472253562",
       "channel_id": "1377478664609857647",
-      "content": "使ってみた感想、現状超次元以外ではあんまりいらない",
+      "content": "( ´∀｀)b",
       "author": "sugoitsubasanohaetaop",
       "reactions": 2,
       "channel": "なんでも雑談"
