@@ -1,9 +1,32 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-01T05:21:38.531500+00:00",
+  "archived_at": "2026-07-01T09:37:16.198615+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 7,
   "items": [
+    {
+      "title": "[忘却前夜]用1分钟2T告诉你旺达最甜美的配队为何是它",
+      "summary": "-\n  └ 护林犬 (3赞): 这是最强最强的旺达副核心配队，只有深海旺达能同时拥有一回合这么超过的永久反击和这么顶级的生存啊啊啊。\n里面的挂机角色是kks而不是旺达，kks不需要练度只负责带一些暴击。旺旺随便出牌跃迁就能获得高额狂气，锁链还能跃迁无痛回狂降力，深海旺达真厉害呀！\n  └ bili_55227775639 (1赞): @烟已归 所以老登你玩老头是为了旺达吗？\n  └ splendid_scenery (1赞): @半醒的鱼yyy",
+      "source": "bilibili",
+      "time": "2026-07-01T07:15:53+00:00",
+      "url": "https://www.bilibili.com/video/BV1CsTY6SEup",
+      "engagement": 252,
+      "is_hot": true,
+      "author": "护林犬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 236,
+        "comment_count": 16,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/bceda838d969e6af9deaf8a6b798d49941668071.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "防止你没见过忘却前夜的回归剧情",
       "summary": "-\n  └ 燃え落ちない翼 (2赞): 很好奇一个点，如果我这个星辰的号很久不打，他会不会也给我来这种剧情，问题我早都已经再见，弥萨格了，他在搞这一出是何意味[Alice In Cradle 格拉提亚 表情包_大可不必][Alice In Cradle 格拉提亚 表情包_大可不必]\n  └ 爱玩的厨神 (1赞): [呲牙]",
@@ -28,6 +51,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "【saya】你的消息太难等了 所以我会一直等",
+      "summary": "-\n  └ 姓洛de (1赞): [打call]\n  └ 耕司青海瑶 (0赞): [doge]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "source": "bilibili",
+      "time": "2026-06-30T16:35:14+00:00",
+      "url": "https://www.bilibili.com/video/BV1D3Tc6uErg",
+      "engagement": 136,
+      "is_hot": false,
+      "author": "桃豆豆_",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 133,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/0443bff71b110dadd42904fa79e802a1b349dcc0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "【忘却前夜】顶配沙拉奥汀随手1t皮牢曼",
       "summary": "有人恶意刷伤害\n  └ 玖玖_子 (1赞): ？！强强？！\n  └ 丰川祥子-忍界大战 (1赞): 医生…厨子\n  └ 伤春客 (1赞): 医生领域大鱼[脱单doge]",
       "source": "bilibili",
@@ -46,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/92de8e0f53b0e0eddd5b26de24704c9886c358ac.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜开荒（七）——基础配队逻辑",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n  └ 陈-仲甫 (0赞): 不赖\n  └ 雏黑 (0赞): 大佬，局内删牌有什么思路吗？塔的删打防思路感觉在这没那么适用",
+      "source": "bilibili",
+      "time": "2026-06-30T19:22:11+00:00",
+      "url": "https://www.bilibili.com/video/BV1cyT86gEfz",
+      "engagement": 116,
+      "is_hot": false,
+      "author": "一沈奚",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 114,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/6472ae0d07f5575a1852802a8a06b4aa62c2694e.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

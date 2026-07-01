@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-07-01T05:20:52.189220+00:00",
+  "collected_at": "2026-07-01T09:36:30.550143+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,21 @@
       "review": "意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
       "timestamp_created": 1782825160,
       "playtime_forever": 463
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-01T04:55:00+00:00",
+      "lang": "koreana",
+      "title": "[负面] 나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
+      "summary": "나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
+      "url": "https://steamcommunity.com/profiles/76561199732277003/recommended/3052450",
+      "author": "76561199732277003",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": false,
+      "review": "나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
+      "timestamp_created": 1782881700,
+      "playtime_forever": 477
     },
     {
       "source": "steam",
@@ -62,7 +77,7 @@
       "voted_up": true,
       "review": "Peak Autism",
       "timestamp_created": 1782833362,
-      "playtime_forever": 7123
+      "playtime_forever": 7237
     },
     {
       "source": "steam",
@@ -93,36 +108,6 @@
       "review": "Sotto al Pontos è il pg più divertente da giocare in un qualsiasi gioco di carte. Morimens è il miglior gacha a turni.",
       "timestamp_created": 1782830811,
       "playtime_forever": 5826
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T09:28:01+00:00",
-      "lang": "schinese",
-      "title": "[正面] 二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
-      "summary": "二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
-      "url": "https://steamcommunity.com/profiles/76561199468773815/recommended/3052450",
-      "author": "76561199468773815",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "二游类塔初见小作文强如怪物，拼尽全力，无法战胜（ 血肉真区吧）",
-      "timestamp_created": 1782811681,
-      "playtime_forever": 3051
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T08:19:45+00:00",
-      "lang": "vietnamese",
-      "title": "[正面] Hay, hình đẹp",
-      "summary": "Hay, hình đẹp",
-      "url": "https://steamcommunity.com/profiles/76561199863719596/recommended/3052450",
-      "author": "76561199863719596",
-      "engagement": 0,
-      "language": "vietnamese",
-      "voted_up": true,
-      "review": "Hay, hình đẹp",
-      "timestamp_created": 1782807585,
-      "playtime_forever": 1052
     }
   ]
 }

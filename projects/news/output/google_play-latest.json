@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-07-01T05:20:52.189220+00:00",
+  "collected_at": "2026-07-01T09:36:30.550143+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 148,
@@ -56,6 +56,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-06-02T05:20:55",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 Started two weeks ago and I really love",
+      "summary": "Started two weeks ago and I really love the strategic depth this game has, very generous pulls, and story is absolutely phenomenal. Only touched endgame a bit and it is not messing around. Would give this 5 had story be voiced since with it, it would elevate the experience to another level",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-25cd64a0-f2e9-4ef4-a3ed-0ae55861340f",
+      "author": "Xiao Yu Lim",
+      "engagement": 4
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-29T23:38:26",
       "lang": "ja",
       "title": "[Google Play 好评] ★5 評価を修整。発熱などだいぶ軽くなりました。難易度は高いですが、ストーリーやキャラ",
@@ -63,16 +73,6 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-168038cf-b0f3-475c-b4bd-12177f378675",
       "author": "スタンバートアシュレイ",
       "engagement": 4
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-02T05:20:55",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 Started two weeks ago and I really love",
-      "summary": "Started two weeks ago and I really love the strategic depth this game has, very generous pulls, and story is absolutely phenomenal. Only touched endgame a bit and it is not messing around. Would give this 5 had story be voiced since with it, it would elevate the experience to another level",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-25cd64a0-f2e9-4ef4-a3ed-0ae55861340f",
-      "author": "Xiao Yu Lim",
-      "engagement": 3
     },
     {
       "source": "google_play",
@@ -212,6 +212,26 @@
       "summary": "saran dari saya pribadi lebih ramaikan iklan tentang game ini, keseluruhan sudah sangat bagus dan rapi, stabil, lancar, tidak ada masalah selama saya bermain hampir 1th. tidak ada komplain untuk game ini dan selamat! game anda sangat sempurna, tetapi ada masalah dasar yaitu kurangnya peminat. saya jarang menemukan iklan Morimens, terkadang saya mengupload potongan foto karakter dan banyak bertanya \"karakter dari mana ini\". jadi dasarnya sudah terlihat. bye bye~",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-e0fe08d9-aba1-4071-82f2-859c60e90943",
       "author": "DRE4M F2 (Fuukishima)",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-29T04:52:02",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 vengo a dejar mis 5 estrellas, repararon",
+      "summary": "vengo a dejar mis 5 estrellas, repararon el error de descarga infinita... muy buen juego 🫰🫰🫰",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-3051af15-1ac1-4e35-9700-55c375c9afcc",
+      "author": "Aronk",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-28T07:14:42",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 sinceramente es muy interesante y aunque",
+      "summary": "sinceramente es muy interesante y aunque mi celular apenas aguante este juego tengo planeado dedicarle al menos 6 meses y lo eliminare porque es muy fastidioso que se cierre el juego justo cuando el celular empieza con su sobrecalentamiento. 🗣️🔥🔥🔥",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-619cfbcc-951f-4699-84be-a35beef2e1ac",
+      "author": "HOLA, NADIE",
       "engagement": 1
     },
     {
@@ -1042,26 +1062,6 @@
       "summary": "incroyable",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-c3bca509-d292-442b-a8be-b9dfb3a137cf",
       "author": "martial bambara",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-29T04:52:02",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 vengo a dejar mis 5 estrellas, repararon",
-      "summary": "vengo a dejar mis 5 estrellas, repararon el error de descarga infinita... muy buen juego 🫰🫰🫰",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-3051af15-1ac1-4e35-9700-55c375c9afcc",
-      "author": "Aronk",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-28T07:14:42",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 sinceramente es muy interesante y aunque",
-      "summary": "sinceramente es muy interesante y aunque mi celular apenas aguante este juego tengo planeado dedicarle al menos 6 meses y lo eliminare porque es muy fastidioso que se cierre el juego justo cuando el celular empieza con su sobrecalentamiento. 🗣️🔥🔥🔥",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-619cfbcc-951f-4699-84be-a35beef2e1ac",
-      "author": "HOLA, NADIE",
       "engagement": 0
     },
     {

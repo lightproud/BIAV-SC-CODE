@@ -1,7 +1,88 @@
 {
-  "collected_at": "2026-07-01T05:20:52.189220+00:00",
+  "collected_at": "2026-07-01T09:36:30.550143+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 8,
+  "items": [
+    {
+      "source": "appstore",
+      "time": "2026-06-05T00:36:40-07:00",
+      "lang": "en",
+      "title": "What a pleasant surprise:)",
+      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
+      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14145829170",
+      "author": "hsantos18",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-16T02:49:31-07:00",
+      "lang": "en",
+      "title": "Amazing game",
+      "summary": "One of the best gacha games out there. The devs are incredibly talented and generous.",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14188874283",
+      "author": "Temiiiiiiii88",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-01T08:43:46-07:00",
+      "lang": "en",
+      "title": "Love this game",
+      "summary": "Can’t believe this slipped under my radar, a great game with an unexpected but loved collab.\n\nSpecifically about the that I like is the story, as its unique to me with interesting details largely unseen from other stories I’ve consumed; the art style really gets my attention as it’s got some really cool backgrounds during the story telling and gameplay, and…. Yeah that’s my main likes about this game, there are other cool things to see, but it’s best seen yourself.\n\nRandom, but the games so good it’s got me up at 12am 2 days before an exam… with near to no study 💔 hope the grind for the collab character actually pays off 🤞🥹 oh and my user is Sira",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14131679739",
+      "author": "Coruzeist",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:18:16-07:00",
+      "lang": "th",
+      "title": "Hidden Gem Game!!!?",
+      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153734950",
+      "author": "BoBoss375",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:11:59-07:00",
+      "lang": "th",
+      "title": "Best Game Ever",
+      "summary": "Nice story and design, super recommended for everyone and thank you for giving me such a fantastic experience.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153720246",
+      "author": "Fookfik_TH",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-03T14:18:28-07:00",
+      "lang": "th",
+      "title": "PEAK",
+      "summary": "This game is absolutely GEM! If you’re a turn-based game lover, you won’t regret any second spending on it. The art style is remarkably beautiful, game play is addictive, and most importantly, I think it’s F2P friendly. Worth playing.\n\nCons: Please keep on working on a translation. Especially Thai, it’s too confusing to understand.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14140571214",
+      "author": "CinematicScenarios",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:01:16-07:00",
+      "lang": "en",
+      "title": "not bad",
+      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
+      "author": "navirebu",
+      "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-05T03:05:58-07:00",
+      "lang": "id",
+      "title": "Nice character design!",
+      "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
+      "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
+      "author": "Milesiya",
+      "engagement": 4
+    }
+  ]
 }
