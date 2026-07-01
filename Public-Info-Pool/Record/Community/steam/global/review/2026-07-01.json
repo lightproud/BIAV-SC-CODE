@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-01T09:37:16.272741+00:00",
+  "archived_at": "2026-07-01T12:32:35.350324+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] I really loved the art work and the story is very...",
@@ -70,6 +70,54 @@
         "playtime_forever": 477,
         "votes_up": 0,
         "timestamp_created": 1782881700
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 特别好玩，打起来特爽，有没有人一起玩？",
+      "summary": "特别好玩，打起来特爽，有没有人一起玩？",
+      "source": "steam_review",
+      "time": "2026-07-01T11:53:25+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198708119792/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198708119792",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1526,
+        "votes_up": 0,
+        "timestamp_created": 1782906805
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 剧情美工神\r\n喜欢克苏鲁的话一定不要错过）",
+      "summary": "剧情美工神\r\n喜欢克苏鲁的话一定不要错过）",
+      "source": "steam_review",
+      "time": "2026-07-01T11:12:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198948181764/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198948181764",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4357,
+        "votes_up": 0,
+        "timestamp_created": 1782904360
       },
       "region": "global",
       "archive_subtype": "review",

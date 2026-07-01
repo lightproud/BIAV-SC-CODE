@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-07-01T09:36:30.550143+00:00",
+  "collected_at": "2026-07-01T12:31:45.648952+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
     {
       "source": "steam_discussion",
@@ -23,16 +23,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
       "author": "manotroll",
       "engagement": 15
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-06-30T10:29:39+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] 怎么在手机中安装此游戏？",
-      "summary": "如何安装？",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/573793962962322779/",
-      "author": "石磊",
-      "engagement": 1
     }
   ]
 }

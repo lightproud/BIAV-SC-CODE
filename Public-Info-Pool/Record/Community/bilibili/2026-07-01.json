@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-01T09:37:16.198615+00:00",
+  "archived_at": "2026-07-01T12:32:35.253733+00:00",
   "source": "bilibili",
-  "item_count": 7,
+  "item_count": 12,
   "items": [
     {
       "title": "[忘却前夜]用1分钟2T告诉你旺达最甜美的配队为何是它",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/bceda838d969e6af9deaf8a6b798d49941668071.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位］什么叫环娜偷对面福袋的千面然后叠起来了？",
+      "summary": "-\n  └ 梦游惊奇 (1赞): [星星眼][星星眼][星星眼]\n  └ 东方云心 (0赞): [星绘·沐春灼华 应援装扮_铸币大头]\n  └ 殇雪璃尛 (0赞): 主播主播，玩环福袋千面一直沉怎么办[大哭]",
+      "source": "bilibili",
+      "time": "2026-07-01T10:37:37+00:00",
+      "url": "https://www.bilibili.com/video/BV1sWTv6FEfW",
+      "engagement": 245,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 241,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2a782cb6033ea0f8a64c82eee52ae04637134141.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -97,6 +120,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "搞完不搞完的都用不上，只要把至今手牌里的疾驰都激发出来，就算没有搞完我也足够强大！",
+      "summary": "我有两颗搞完！！！我的搞完没了！！我有两颗搞完！！！我的搞完没了！！我有两颗搞完！！！我的搞完没了！！我有两颗搞完！！！我的搞完没了！！\n\n\n搞完不搞完的都用不上，只要把至今手牌里的疾驰都激发出来，就算没有搞完我也足够强大！\n  └ 飞而由梦 (1赞): 台下观众欣喜若狂！你好勇敢！\n  └ 八级大狂风根一有我 (1赞): C103 亞修雷與莉緹雅的完美合作~絕讚的合作讓敵人慘叫連連",
+      "source": "bilibili",
+      "time": "2026-07-01T07:26:53+00:00",
+      "url": "https://www.bilibili.com/video/BV1sKTi68Emb",
+      "engagement": 119,
+      "is_hot": false,
+      "author": "人三影月",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 117,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/02052e7c8fe42f4502bdedb9cca6df3a99f1cc26.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "忘却前夜开荒（七）——基础配队逻辑",
       "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n  └ 陈-仲甫 (0赞): 不赖\n  └ 雏黑 (0赞): 大佬，局内删牌有什么思路吗？塔的删打防思路感觉在这没那么适用",
       "source": "bilibili",
@@ -161,6 +207,75 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/2e4207f945f9538023e726e33a1b1131d8c2b7e6.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "🔮粉丝投稿Rinny进入沙耶之歌世界观会如何",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-01T12:17:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1WG7V6WE1J",
+      "engagement": 15,
+      "is_hot": false,
+      "author": "御子神裕楽生",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 15,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/785cb06ad36c19d4685ea3356325c2ba462b1f71.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶之歌联动PV",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-01T10:53:13+00:00",
+      "url": "https://www.bilibili.com/video/BV1n9Te6SEn8",
+      "engagement": 10,
+      "is_hot": false,
+      "author": "温达米塔",
+      "tags": [
+        "配音"
+      ],
+      "metadata": {
+        "play": 10,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/5f288fe728393372d8805d3e72a83df49c142ec5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第二十二话 超维降世",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：杜勒赛因 尤乌哈希 图鲁 墨菲 旺达\n达芙黛尔 阿拉克涅 奥尔拉 艾瑞卡 卡斯托尔 波吕克斯 莉兹 克莱门汀 】AI居然给我配了个考哥CV 惊了！！我们第三季再见！",
+      "source": "bilibili",
+      "time": "2026-07-01T12:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1YtTe6qEbk",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "比较瓜皮",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 6,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/973e61c0283ae6d66274155da982c3ec33be8dfe.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

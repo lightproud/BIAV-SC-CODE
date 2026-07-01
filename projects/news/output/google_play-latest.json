@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-07-01T09:36:30.550143+00:00",
+  "collected_at": "2026-07-01T12:31:45.648952+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 148,
+  "item_count": 144,
   "items": [
     {
       "source": "google_play",
@@ -83,16 +83,6 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-187708f8-80b9-4c4c-be8b-f284e6ead7d4",
       "author": "雪ん子（雪瑠）",
       "engagement": 3
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-01T12:23:42",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 trying what find fun everything feel cho",
-      "summary": "trying what find fun everything feel chore like d-zone not fun just a mission chore sigh..",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1d91c372-79dd-4f94-a551-47a28889b075",
-      "author": "Sulawan Muhamad",
-      "engagement": 2
     },
     {
       "source": "google_play",
@@ -986,16 +976,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-01T09:54:46",
-      "lang": "id",
-      "title": "[Google Play 好评] ★5 peak game, dari desain karakternya, stor",
-      "summary": "peak game, dari desain karakternya, storynya, dan resourcenya yang gampang didapet🙂‍↔️",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-afb1d693-99e1-49d6-9be1-2e5cb1a91022",
-      "author": "Bintang Maulana Mundari",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-13T14:55:27",
       "lang": "vi",
       "title": "[Google Play 差评] ★2 làm ơn sửa cái quest 4-9 chơi mà stress",
@@ -1462,26 +1442,6 @@
       "summary": "最初は難しいですが（バトル難易度）ストーリーもキャラクターも世界観もバッチリに作られてる神ゲー、コラボイベント「沙耶の唄」（沙耶の唄の大ファン）目当てでプレイしましたが良かった！沙耶の唄イベントの最後のシナリオの意味は「リンクの弊害で沙耶の精神世界が変異し沙耶の姿消えたけどいつも近くに居るから呼んでくれればすぐに来るよend」と言う認識で良いのかな？",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-dcaf2b40-8e8e-41f9-8c25-3e4baff4ae4c",
       "author": "渡邉“ひでちん”英樹",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-01T11:14:28",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 暗くて陰鬱な雰囲気のあるゲームですが、それでも引き込まれるストーリーがあります。",
-      "summary": "暗くて陰鬱な雰囲気のあるゲームですが、それでも引き込まれるストーリーがあります。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-df63d156-8848-43ad-a48f-e60a3d40c019",
-      "author": "tt t",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-01T11:05:37",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 とても難しいけど面白い",
-      "summary": "とても難しいけど面白い",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-ab7c93fa-5289-4bd0-bd78-055fc06b8152",
-      "author": "アルベルトファルシオン",
       "engagement": 0
     }
   ]
