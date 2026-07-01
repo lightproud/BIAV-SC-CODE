@@ -1,24 +1,9 @@
 {
-  "collected_at": "2026-07-01T12:31:45.648952+00:00",
+  "collected_at": "2026-07-01T15:39:16.323748+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 5,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-06-30T13:12:40+00:00",
-      "lang": "tchinese",
-      "title": "[正面] 意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
-      "summary": "意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
-      "url": "https://steamcommunity.com/profiles/76561198208125949/recommended/3052450",
-      "author": "76561198208125949",
-      "engagement": 1,
-      "language": "tchinese",
-      "voted_up": true,
-      "review": "意外的蠻好玩，故事和畫風都不錯，特殊牌組也挺有意思",
-      "timestamp_created": 1782825160,
-      "playtime_forever": 507
-    },
     {
       "source": "steam",
       "time": "2026-07-01T11:53:25+00:00",
@@ -93,51 +78,6 @@
       "review": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
       "timestamp_created": 1782843404,
       "playtime_forever": 620
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T15:29:22+00:00",
-      "lang": "english",
-      "title": "[正面] Peak Autism",
-      "summary": "Peak Autism",
-      "url": "https://steamcommunity.com/profiles/76561198068351450/recommended/3052450",
-      "author": "76561198068351450",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Peak Autism",
-      "timestamp_created": 1782833362,
-      "playtime_forever": 7239
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T14:47:24+00:00",
-      "lang": "english",
-      "title": "[正面] I am enjoying the combat so far, the art style is...",
-      "summary": "I am enjoying the combat so far, the art style is beautiful.",
-      "url": "https://steamcommunity.com/profiles/76561198096650043/recommended/3052450",
-      "author": "76561198096650043",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I am enjoying the combat so far, the art style is beautiful.",
-      "timestamp_created": 1782830844,
-      "playtime_forever": 297
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T14:46:51+00:00",
-      "lang": "italian",
-      "title": "[正面] Sotto al Pontos è il pg più divertente da giocare...",
-      "summary": "Sotto al Pontos è il pg più divertente da giocare in un qualsiasi gioco di carte. Morimens è il miglior gacha a turni.",
-      "url": "https://steamcommunity.com/profiles/76561198078638704/recommended/3052450",
-      "author": "76561198078638704",
-      "engagement": 0,
-      "language": "italian",
-      "voted_up": true,
-      "review": "Sotto al Pontos è il pg più divertente da giocare in un qualsiasi gioco di carte. Morimens è il miglior gacha a turni.",
-      "timestamp_created": 1782830811,
-      "playtime_forever": 5854
     }
   ]
 }
