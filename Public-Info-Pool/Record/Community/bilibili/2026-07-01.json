@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-01T17:51:45.730276+00:00",
+  "archived_at": "2026-07-01T19:47:08.292103+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "【Marco音乐电台】歌剧演唱家点评Song of Memento【MarcoMeatball】",
@@ -276,6 +276,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/6472ae0d07f5575a1852802a8a06b4aa62c2694e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "癫狂列车 宙音汀天仙下凡输出占比90% 忘却前夜 打熔朵",
+      "summary": "恐怖阿汀...演唱会都开到列车上了...\n\n加强提升幅度真挺高的\n以前开一次只叠50%基伤拼尽全力都打不过2-1\n\n背景音乐：Gustav Mahler - Symphony No. 1 in D Major, &quot;Titan&quot;: I. Langsam. Schleppend\n  └ 额度了奶奶 (1赞): 大概开了多少次大，基础伤害叠了多少啊？",
+      "source": "bilibili",
+      "time": "2026-07-01T12:31:54+00:00",
+      "url": "https://www.bilibili.com/video/BV1JrTq6xEaq",
+      "engagement": 114,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 112,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/52ac942bbb0a9dbaaf171288b3c6b8c3dbf13fa4.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

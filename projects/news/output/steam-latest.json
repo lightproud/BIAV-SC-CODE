@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-07-01T17:50:54.625879+00:00",
+  "collected_at": "2026-07-01T19:46:15.211000+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -63,21 +63,6 @@
       "review": "ненавижу аниме",
       "timestamp_created": 1782873267,
       "playtime_forever": 53
-    },
-    {
-      "source": "steam",
-      "time": "2026-06-30T18:16:44+00:00",
-      "lang": "english",
-      "title": "[正面] I really loved the art work and the story is very...",
-      "summary": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
-      "url": "https://steamcommunity.com/profiles/76561198154687236/recommended/3052450",
-      "author": "76561198154687236",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I really loved the art work and the story is very interesting and the combat is simple yet tactical. Very similar to Chaos Zero Nightmare.",
-      "timestamp_created": 1782843404,
-      "playtime_forever": 620
     }
   ]
 }
