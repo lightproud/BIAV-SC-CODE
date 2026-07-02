@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-02T02:40:55.877295+00:00",
+  "archived_at": "2026-07-02T06:38:00.813280+00:00",
   "source": "youtube",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "title": "[Morimens] Pontos  - &quot;Short&quot; more comp testing, stripping pontos bare, then maybe pulling",
@@ -17,6 +17,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/co4a_ps7CyY/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "[Morimens] Pontos Alert 5 (Highest Difficulty) - Mostly Wheel less with only Standard Supports",
+      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "source": "youtube",
+      "time": "2026-07-02T03:20:58Z",
+      "url": "https://www.youtube.com/watch?v=DJCSFZRhLQA",
+      "engagement": 228,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/DJCSFZRhLQA/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
@@ -170,6 +187,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/z5u-dAuMNhE/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "沙耶の唄コラボに釣られて忘却前夜を始める初心者動画１２",
+      "summary": "高難易度三章最終ボス１ターンキル動画.",
+      "source": "youtube",
+      "time": "2026-07-02T03:47:56Z",
+      "url": "https://www.youtube.com/watch?v=Du5rl_VJszU",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "和音",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Du5rl_VJszU/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

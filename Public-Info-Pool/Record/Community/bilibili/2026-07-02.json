@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-02T02:40:55.877701+00:00",
+  "archived_at": "2026-07-02T06:38:00.812796+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 8,
   "items": [
     {
       "title": "一分钟教你怎么免费获得鼠鼠和图图头像！",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/91c6e7466b4d445543aac90583b2c7d5bfd688ca.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位］神秘dot队，雷霆大出血",
+      "summary": "-\n  └ 韵响 (4赞): 残忍的致意给三张和给随机两张完全不是一个概念。话说这样的话拉蒙娜是不是可以很轻易地让凯蒂古拉开出满伤害的一枪了\n  └ 红髮厨 (4赞): 可以看到这是我玩出血队最不破防的时候\n  └ iq2233 (3赞): 就是宁妃的毒不上手和总是暴毙[doge]",
+      "source": "bilibili",
+      "time": "2026-07-02T04:55:19+00:00",
+      "url": "https://www.bilibili.com/video/BV1YFTk6ZE76",
+      "engagement": 197,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 192,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/b728abee09b2a0c6c1aec1a35f1ff9247e6e4db5.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -115,6 +138,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/844f3ef0435a51da954600c46423667a7e9ea52f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "〖忘却前夜/takeme〗“当爱意生长出血肉。”",
+      "summary": "〖忘却前夜/takeme〗“当爱意生长出血肉。”",
+      "source": "bilibili",
+      "time": "2026-07-02T03:40:15+00:00",
+      "url": "https://www.bilibili.com/video/BV1knTk65Ekc",
+      "engagement": 31,
+      "is_hot": false,
+      "author": "萝塔娜蒙-德洛斯丽尔",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 31,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2009e1ca3891faea914bb3f1c5cf0913e5edb11c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "萌新第一次零氪425",
+      "summary": "感谢合理…打的…王册和莫斯\n  └ 跳段木偶舞 (1赞): 残月神别吓我😭\n  └ 幽缀 (1赞): 残月神别吓我😭",
+      "source": "bilibili",
+      "time": "2026-07-02T06:24:30+00:00",
+      "url": "https://www.bilibili.com/video/BV1KuT762EU1",
+      "engagement": 18,
+      "is_hot": false,
+      "author": "永恒残月",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 13,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/4ba96e69255dbd33e613f1fc0a42f1e2a24ba3e4.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

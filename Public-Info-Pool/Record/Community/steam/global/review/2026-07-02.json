@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-02T02:40:55.978933+00:00",
+  "archived_at": "2026-07-02T06:38:00.870356+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] 愿银钥指引前路！",
@@ -22,6 +22,30 @@
         "playtime_forever": 6068,
         "votes_up": 0,
         "timestamp_created": 1782933106
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] si lovecraft pudiera jugar esta joya se tocaria bi...",
+      "summary": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
+      "source": "steam_review",
+      "time": "2026-07-02T03:07:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199704943127/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199704943127",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 868,
+        "votes_up": 0,
+        "timestamp_created": 1782961621
       },
       "region": "global",
       "archive_subtype": "review",

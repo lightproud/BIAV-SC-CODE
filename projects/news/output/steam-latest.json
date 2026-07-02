@@ -1,9 +1,24 @@
 {
-  "collected_at": "2026-07-02T02:40:03.156674+00:00",
+  "collected_at": "2026-07-02T06:37:04.992386+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-02T03:07:01+00:00",
+      "lang": "spanish",
+      "title": "[正面] si lovecraft pudiera jugar esta joya se tocaria bi...",
+      "summary": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
+      "url": "https://steamcommunity.com/profiles/76561199704943127/recommended/3052450",
+      "author": "76561199704943127",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
+      "timestamp_created": 1782961621,
+      "playtime_forever": 868
+    },
     {
       "source": "steam",
       "time": "2026-07-01T19:11:46+00:00",
@@ -48,21 +63,6 @@
       "review": "剧情美工神\r\n喜欢克苏鲁的话一定不要错过）",
       "timestamp_created": 1782904360,
       "playtime_forever": 4357
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-01T04:55:00+00:00",
-      "lang": "koreana",
-      "title": "[负面] 나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
-      "summary": "나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
-      "url": "https://steamcommunity.com/profiles/76561199732277003/recommended/3052450",
-      "author": "76561199732277003",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": false,
-      "review": "나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
-      "timestamp_created": 1782881700,
-      "playtime_forever": 477
     }
   ]
 }

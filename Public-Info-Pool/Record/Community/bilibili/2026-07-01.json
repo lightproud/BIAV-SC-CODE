@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "archived_at": "2026-07-02T02:40:55.876493+00:00",
+  "archived_at": "2026-07-02T06:38:00.811910+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "title": "【Marco音乐电台】歌剧演唱家点评Song of Memento【MarcoMeatball】",
@@ -161,6 +161,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/cd639810e76482c3e9fb8f49f70b23ea7a1e22ca.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜开荒（完）——篇章机制与玩法介绍",
+      "summary": "个人观点，仅供参考，有任何问题可在评论区进行提问和讨论。\n  └ 燃え落ちない翼 (0赞): 大佬好强，问一下第三第四章有什么要注意的东西吗，感觉都能用阿拉克涅推平，应该都是逼我几个复活就算完结的关卡[Alice In Cradle 格拉提亚 表情包_生草][Alice In Cradle 格拉提亚 表情包_生草]\n  └ 夏目与鱼18版 (0赞): 萌新学到了[打call]",
+      "source": "bilibili",
+      "time": "2026-07-01T15:27:24+00:00",
+      "url": "https://www.bilibili.com/video/BV19hTi6VEqB",
+      "engagement": 147,
+      "is_hot": false,
+      "author": "一沈奚",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 141,
+        "comment_count": 6,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/3f0f1e8bce3c5a58370e31d763806bf3917869db.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
