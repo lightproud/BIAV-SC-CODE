@@ -70,6 +70,7 @@
 | **Discord 进一步瘦身止步 41% — 守密人 2026-06-22 裁定（「丢 timestamp 每次查时间还要从 id 还原 方便吗」一问点破）**：承上条紧凑 schema 后，auto-research 10 法择优（档案 `Public-Info-Pool/Resource/data-diagnostics/discord-compaction-further-savings-20260622.md`）。守密人裁定**到此为止，不丢 timestamp、不转 TSV**。核心识别——**信息无损 ≠ 使用无损**：今日 41% 删的是 `pinned`/`flags`/`embeds` 等恒默认、查询零价值的纯水分（零便利损失）；再往下省的 timestamp 是肉眼可读、grep/jq 可直接过滤的有用信息，丢了临时精确时间查须现解 snowflake，违「text 进 git 保 clone 即查便利」初衷。**41% 是「省体积」与「保便利」最优停点**。叠加硬事实：`.git` 在 §9 历史压缩前不缩，丢 timestamp 现省 355MB 连磁盘都落不了地。**唯一无便利代价的下一步 = 守密人本地 §9 历史压缩 + `git gc --aggressive`**（动 .git 2.1G、不碰字段）。#1 TSV/#2 丢 timestamp 归档为「已评估、因损便利/自描述不取」，除非未来体积压力远超便利诉求再翻案 | 全局 / 仓库瘦身 | 收束 2026-06-22 紧凑 schema 的「再往下省」议题（划定止点）|
 | **使命#3「Studio 团队 AI 协作训练场」退役 — 守密人 2026-06-28 裁定**：全仓 md 矛盾审计（C6）揭示使命#3「主对接子项目」映射长期不一致（CLAUDE.md §1.2 写 `site / 全局`，v2.0 决策 M4 + `strategic-plan-2026.md` + `mission-v2.0-three-pillars.md` 写 `game（备扩展位）/ 全局`）。守密人裁定**取消使命#3**（非在 site / game 间择一）。银芯使命由「三新使命」收敛为**二核心使命**：#1 **黑池信息入口**（news 核心）+ #2 **社区共建知识底座**（wiki 核心）。「AI 协作训练场」不再作为银芯正式使命与 Phase 2 验收项；game 仍为守密人个人兴趣（不主线派发、不分配资源）。同步更新 CLAUDE.md §1.2/§1.3/§1.4/§6、README、`strategic-plan-2026.md`、`mission-v2.0-three-pillars.md`、`project-status.md`、`projects/game/CONTEXT.md`、贡献协议。 | 全局 / 战略 | 覆盖 2026-04-26 v2.0「银芯三新使命」之使命#3 及 M4 ⓐ「Studio 团队训练场」未来扩展定位（保留 game 为个人兴趣）|
 | **measure_discord_compaction.py 退役删除 — 守密人 2026-07-02 裁定（「全部按你建议推行」，采纳覆盖率分析报告 P3 优先项）**：只读测量器历史使命已完成（2026-06-22 紧凑 schema 裁定的出账数字已固化于决策台账与 repo-slimming-plan），且其内嵌一份与 `discord_compact.py` 单一权威定义平行的精简规则副本，长期存在静默漂移风险、自身 0% 测试覆盖。裁定按报告建议退役删除（分析报告 `Public-Info-Pool/Resource/repo-engineering/test-coverage-analysis-20260702.md`）。历史文档中对该脚本的既往提及保留不改（史实记录） | 全局 / 仓库瘦身 | — |
+| **死代码清理 + ARCH-01「保留休眠」反转 — 守密人 2026-07-02 裁定（动态编排死代码审计，PR #373 已合并）**：全仓动态编排审计（6 并行猎手扇出 + 对抗式核验）叠加 ruff/AST 静态分析，两轮清理未使用代码。**第一轮·安全档**（无争议、直接删）：30 未用 import + 4 未用局部变量 + 8 死模块常量（`_CJK_CHAR`/`mcp_server.REPO`/`ROUGH`/`extract_client_data.DB_DIR`/`generate_rss.META_PATH`+`FEED_TITLE_ZH`/`aggregator_base.SEARCH_KEYWORDS`+`ALL_KEYWORDS`/`split_output.OFFICIAL_SOURCES`）+ `build_okf_bundle` 死循环/write-only 变量 + `build_story_layer.make_parser` 废弃参数。**第二轮·守密人裁定档**（覆盖既有「保留」决定）：(a) **ARCH-01 休眠 youtube 采集器删除**——`aggregator_collectors` 的 `fetch_youtube`/`_fetch_youtube_web_search`/`_parse_yt_relative_time` + 单测 + test-collectors.yml AC-stack 导入，**反转** 2026-06-20 ARCH-01「AC youtube 函数与单测保留」及 2026-06-21 三层定性「youtube AC 函数系有意保留（非残留）」两处裁定；youtube 权威实现仍独归 GC 栈（`global_collectors.fetch_youtube` 未动）；(b) **discord 月度归档路径删除**——`discord_archiver.run_monthly_archive` + `--archive-monthly` 参数/分支/docstring + 死 `tarfile`/`subprocess` import + `TestMonthlyArchive` 测试，收束 2026-06-21「discord 全量 de-tier、退役月度 git_rm 瘦身」的代码残留清理；(c) **`build_banner_character_index.py` 整文件删除**——完全依赖 2026-06-15 清空的角色层，如 W2 需卡池↔角色索引须从一手解包字段重建。**保留**：`sources.py` SSOT 常量 `TAPTAP_CN_APPS`/`DISCORD_GUILDS`（守密人裁定留）。验证：pytest 1926 passed / 7 skipped / 14 subtests；能力目录活脚本 57→56、孤儿仍 0。分析溯源 `Public-Info-Pool/Resource/repo-engineering/test-coverage-analysis-20260702.md` | 全局 / 工程纪律 | 反转 2026-06-20 ARCH-01「AC youtube 函数与单测保留」+ 2026-06-21 采集器三层定性「youtube AC 有意保留（非残留）」；收束 2026-06-21 discord de-tier 的月度归档代码残留 |
 <!-- DECISIONS-INSERT-ANCHOR -->
 
 ### 子项目
@@ -140,6 +141,10 @@ appstore/pixiv/google_play/bahamut/weixin/note_com/ruliweb/stopgame 保留。
 错峰 / 存在上游→下游依赖（archiver 落档 → AC `fetch_discord_local` 读档入流）。核验证伪两处
 疑似不一致：youtube AC 函数系 ARCH-01 有意保留（非残留）；discord 三脚本（采集/补缺/冷归档）
 零冗余。
+
+> **2026-07-02 反转**：上述「youtube AC 函数有意保留」已被守密人裁定推翻——`aggregator_collectors`
+> 的 `fetch_youtube` 及子树连同单测已随死代码清理删除（见当前有效决策表「死代码清理 + ARCH-01
+> 保留休眠反转」条）。youtube 权威实现仍独归 GC 栈。
 
 **声明式归档引擎（A + 合并）**：把归档器从「每来源一台专用机」改为「通用引擎 + 来源注册表」。
 新增 `archive_engine.py`（≤300 行）读 `archive_sources.json` 干活；加新归档来源 = 注册表加一段
