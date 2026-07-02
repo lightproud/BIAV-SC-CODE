@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-02T19:16:49.923272+00:00",
+  "collected_at": "2026-07-02T20:59:47.689618+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-02T03:07:01+00:00",
+      "lang": "spanish",
+      "title": "[正面] si lovecraft pudiera jugar esta joya se tocaria bi...",
+      "summary": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
+      "url": "https://steamcommunity.com/profiles/76561199704943127/recommended/3052450",
+      "author": "76561199704943127",
+      "engagement": 1,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
+      "timestamp_created": 1782961621,
+      "playtime_forever": 868
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-02T20:04:57+00:00",
+      "lang": "english",
+      "title": "[正面] Im will keep it short and sweet, This is my favori...",
+      "summary": "Im will keep it short and sweet, This is my favorite gacha game ive played so far. But there always seems to be a downside. The game keep crashing , whenever i do a story chapter ( the non combat stories) it crashes about 90% of the time. If it wasnt for this one big flaw this game would be absolutely perfect. But please fix these crashes, its extremely annoying. Aside from that id still recommend this game",
+      "url": "https://steamcommunity.com/profiles/76561198084240438/recommended/3052450",
+      "author": "76561198084240438",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Im will keep it short and sweet, This is my favorite gacha game ive played so far. But there always seems to be a downside. The game keep crashing , whenever i do a story chapter ( the non combat stories) it crashes about 90% of the time. If it wasnt for this one big flaw this game would be absolutely perfect. But please fix these crashes, its extremely annoying. Aside from that id still recommend this game",
+      "timestamp_created": 1783022697,
+      "playtime_forever": 675
+    },
     {
       "source": "steam",
       "time": "2026-07-02T17:45:00+00:00",
@@ -63,7 +93,7 @@
       "voted_up": true,
       "review": "The best designed card gatcha I've played so far, Story is great and battles are actually challenging.",
       "timestamp_created": 1783001370,
-      "playtime_forever": 675
+      "playtime_forever": 724
     },
     {
       "source": "steam",
@@ -78,7 +108,7 @@
       "voted_up": true,
       "review": "Came for Saya no Uta collab, stayed for the absolute treasure of a game. Everyone interested in anything Lovecraftian should try out this gem.",
       "timestamp_created": 1783000516,
-      "playtime_forever": 1277
+      "playtime_forever": 1286
     },
     {
       "source": "steam",
@@ -94,21 +124,6 @@
       "review": "血肉简直是区中之区啊哈哈，请问是拿脚填的数值是吗\r\n[spoiler] 希望策划下辈子注意点好吗，我几个大招过去血量真是一点没减少呢，这简直是让我在一堆血肉中看见沙耶一样不可思议 [/spoiler]",
       "timestamp_created": 1782977304,
       "playtime_forever": 2602
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T03:07:01+00:00",
-      "lang": "spanish",
-      "title": "[正面] si lovecraft pudiera jugar esta joya se tocaria bi...",
-      "summary": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
-      "url": "https://steamcommunity.com/profiles/76561199704943127/recommended/3052450",
-      "author": "76561199704943127",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
-      "timestamp_created": 1782961621,
-      "playtime_forever": 868
     }
   ]
 }

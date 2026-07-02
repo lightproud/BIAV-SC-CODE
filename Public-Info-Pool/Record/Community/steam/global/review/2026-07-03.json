@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-02T19:17:36.469087+00:00",
+  "archived_at": "2026-07-02T21:00:35.062827+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] The game is a bit longer to start compared to some...",
@@ -46,6 +46,30 @@
         "playtime_forever": 14354,
         "votes_up": 0,
         "timestamp_created": 1783011043
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Im will keep it short and sweet, This is my favori...",
+      "summary": "Im will keep it short and sweet, This is my favorite gacha game ive played so far. But there always seems to be a downside. The game keep crashing , whenever i do a story chapter ( the non combat stories) it crashes about 90% of the time. If it wasnt for this one big flaw this game would be absolutely perfect. But please fix these crashes, its extremely annoying. Aside from that id still recommend this game",
+      "source": "steam_review",
+      "time": "2026-07-02T20:04:57+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198084240438/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198084240438",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 675,
+        "votes_up": 0,
+        "timestamp_created": 1783022697
       },
       "region": "global",
       "archive_subtype": "review",
