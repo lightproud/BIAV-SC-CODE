@@ -62,7 +62,7 @@ def test_chapter_title_maps_star_takes_precedence():
 
 @pytest.fixture
 def parser():
-    return bsl.make_parser({3: "迷雾"}, {2: "群星"}, None)
+    return bsl.make_parser({3: "迷雾"}, {2: "群星"})
 
 
 def test_unit_of_none_and_empty(parser):

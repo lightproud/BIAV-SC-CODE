@@ -6,18 +6,14 @@ Extracted from aggregator.py; the per-platform collectors and the run()
 orchestrator import from here.
 """
 
-import hashlib
-import json
 import os
-import re
 import sys
 import time
 import logging
 import requests
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
-from uuid import uuid4
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 采集层共享 HTML-strip 单一真源（ARCH-02）
@@ -68,11 +64,9 @@ def _get_playwright_collectors():
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
-SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
-ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
 # Adaptive lookback: expands automatically if CI was down
 try:
     from collection_state import get_lookback_hours
@@ -269,7 +263,6 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
     # Use LLM for better summary
-    import subprocess as _sp
 
     titles_text = '\n'.join(f"- [{n['source']}] {n['title']}" for n in news_items[:20])
     prompt = f"""以下是忘却前夜(Morimens)游戏社区24小时内的热点话题列表，请用中文生成一段简洁的今日总结(100-150字)，

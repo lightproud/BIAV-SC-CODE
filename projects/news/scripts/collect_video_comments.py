@@ -72,7 +72,7 @@ def fetch_video_comments(key, vid, known_ids, max_pages):
             params["pageToken"] = token
         try:
             data = _get("commentThreads", params)
-        except urllib.error.HTTPError as e:
+        except urllib.error.HTTPError:
             return new_rows, True  # 评论关闭/不可用 → 视为已尽
         page += 1
         page_new = 0

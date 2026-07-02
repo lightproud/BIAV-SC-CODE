@@ -24,7 +24,7 @@ import json
 import re
 import shutil
 import tarfile
-from datetime import date, datetime, timezone
+from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -389,16 +389,7 @@ def build_root(counts: dict) -> None:
     prior = ""
     if log_path.exists():
         existing = log_path.read_text(encoding="utf-8")
-        # drop a same-day heading block to avoid dupes, keep older ones
-        blocks = [b for b in existing.split("\n## ") if b.strip()]
-        kept = []
-        for i, b in enumerate(blocks):
-            head = b if i == 0 else "## " + b
-            head = head.lstrip("# ").strip()
-            if head.startswith(TODAY):
-                continue
-            kept.append(b if b.startswith("## ") or i == 0 else "## " + b)
-        # simpler: just re-read non-today date sections
+        # keep all non-today date sections, dropping same-day heading blocks to avoid dupes
         prior_sections = []
         for sec in existing.split("\n## "):
             sec = sec.strip()
@@ -506,7 +497,6 @@ def build_graph() -> dict:
     nodes, edges = [], []
     id_set = set()
     bodies: dict[str, str] = {}
-    fm_by_id: dict[str, dict] = {}
 
     for f in sorted(BUNDLE.rglob("*.md")):
         if f.name in RESERVED:
@@ -514,7 +504,6 @@ def build_graph() -> dict:
         rel = "/" + str(f.relative_to(BUNDLE))
         text = f.read_text(encoding="utf-8")
         fm = _read_frontmatter(text)
-        fm_by_id[rel] = fm
         bodies[rel] = text
         id_set.add(rel)
         nodes.append({

@@ -4,15 +4,12 @@ YouTube, Discord). Extracted from aggregator.py; shared helpers/config come
 from aggregator_base.
 """
 
-import hashlib
 import json
 import os
 import re
 import time
 import requests
 from datetime import datetime, timezone, timedelta
-from pathlib import Path
-from urllib.parse import urlparse
 from uuid import uuid4
 
 from aggregator_base import (
@@ -1286,7 +1283,6 @@ def _read_discord_jsonl(date_str: str):
 
 def _build_reply_chains(messages: list[dict], target_ids: set[str], max_depth: int = 5):
     """Build reply chains for target messages. Returns {msg_id: [reply_msgs]}."""
-    by_id = {m['id']: m for m in messages}
     # Find direct replies to target messages
     replies_to: dict[str, list[dict]] = {}
     for msg in messages:

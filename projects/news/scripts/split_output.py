@@ -55,7 +55,7 @@ DATA_LAYER = 'output'
 
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────
 # bilibili_articles / bilibili_dynamic 都归入 bilibili
-from sources import KNOWN_SOURCES, SOURCE_ALIASES, SPARSE_SOURCES, normalize_source
+from sources import KNOWN_SOURCES, SPARSE_SOURCES, normalize_source
 
 
 # Adaptive: match the lookback window used by collectors
@@ -68,8 +68,6 @@ MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() 
 
 # 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
 OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
-# 旧名保留向后兼容
-OFFICIAL_SOURCES = SPARSE_SOURCES
 
 
 def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:

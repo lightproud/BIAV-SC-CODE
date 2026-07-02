@@ -49,7 +49,7 @@ def chapter_title_maps(entries):
 COMMUNITY_TITLES_MAIN = {9: '长梦尽时'}
 
 
-def make_parser(main_titles, star_titles, mind_dive_re):
+def make_parser(main_titles, star_titles):
     def unit_of(lt):
         if not lt:
             return None
@@ -102,7 +102,7 @@ def main():
     bio_ids = {x['id']: x['character'] for x in json.load(open(f'{PROCESSED}/story_character_map.json', encoding='utf-8'))['assigned']}
 
     main_titles, star_titles = chapter_title_maps(entries_raw.values())
-    unit_of = make_parser(main_titles, star_titles, None)
+    unit_of = make_parser(main_titles, star_titles)
 
     # 1. lore_entries
     lore = []

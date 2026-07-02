@@ -47,7 +47,6 @@ except ImportError:
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-DB_DIR = PROJECT_ROOT / "data" / "db"
 
 # File extensions that UnityPy can load (Unity asset formats)
 UNITY_EXTENSIONS = {

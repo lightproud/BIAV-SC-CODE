@@ -18,23 +18,12 @@
   4. 输出: projects/news/output/news.json
 """
 
-import hashlib
-import json
-import os
-import re
 import sys
-import time
-import requests
-from datetime import datetime, timezone, timedelta
-from pathlib import Path
-from urllib.parse import urlparse
-from uuid import uuid4
+from datetime import datetime, timezone
 
 from aggregator_base import (
-    BILIBILI_MORIMENS_CREATORS, COLLAB_KEYWORDS, HOURS_LOOKBACK,
-    MAX_ITEMS_PER_FETCHER, OUTPUT_PATH, REPO_ROOT, _get_playwright_collectors,
-    _get_quality_tracker, generate_summary, logger, strip_html_tags,
-    validate_all_news,
+    OUTPUT_PATH, _get_playwright_collectors,
+    _get_quality_tracker, generate_summary, logger, validate_all_news,
 )
 from aggregator_collectors import (
     fetch_bilibili, fetch_discord_local, fetch_reddit,

@@ -20,13 +20,11 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree, indent
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 VERSIONS_PATH = REPO_ROOT / "data" / "db" / "versions.json"
-META_PATH = REPO_ROOT / "data" / "db" / "meta.json"
 DATA_DIR = REPO_ROOT / "data" / "db"
 FEED_DIR = REPO_ROOT / "docs" / "public"
 
 SITE_URL = "https://lightproud.github.io/brain-in-a-vat/wiki"
 FEED_TITLE = "Morimens Wiki Updates"
-FEED_TITLE_ZH = "忘却前夜 Wiki 更新"
 FEED_DESCRIPTION = "Latest updates from the Morimens (忘却前夜) community wiki - game versions and data changes."
 
 
