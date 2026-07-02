@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-06-28 by 艾瑞卡会话（全仓 md 矛盾审计后同步：wiki W2 基线已重建/58 真实角色页投产、数据根迁 Public-Info-Pool/Record/Community/。上次 2026-06-21 /grill 治理会话清退记忆/做梦残留）
+> 最后更新：2026-07-02 by 艾瑞卡会话（全仓重审 + 档案漂移全面修复：news 数据源状态对齐 source-health 实测、NGA/小红书无采集器订正、对外站点使命段收敛为二核心。上次 2026-06-28 全仓 md 矛盾审计后同步）
 >
 > **本档案是子项目状态与实时进度的唯一权威**（CLAUDE.md §1.3 裁定）：
 > 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
@@ -39,7 +39,9 @@
 
 ### 实时聚合器
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
-- **阻塞**：Twitter/NGA/TapTap 需配置密钥
+- **阻塞**：Twitter/X 需付费 Token（未接入）；bahamut / arca_live / note_com 零产出待核
+- **运行隐患（2026-07-02 实测 source-health）**：7 源 degraded 静默 10-13 天
+  （steam / youtube / official / steam_discussion / appstore / google_play / taptap_review），待排查
 - **数据落盘位置**：
   - `projects/news/output/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
   - `projects/news/output/` — **Chat 会话统一读取入口**，按数据源分割的 JSON 文件
@@ -50,8 +52,8 @@
   - [x] Bilibili — 正常运行
   - [x] Reddit — 代码就绪
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
-  - [ ] NGA — 需 NGA_FORUM_ID
-  - [ ] TapTap — 需 TAPTAP_APP_ID
+  - [ ] NGA — 无采集器实现（2026-07-02 核实，原「需 NGA_FORUM_ID」描述作废；小红书同此）
+  - [x] TapTap — Playwright 采集运行中（source-health: active）
   - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；多 guild 分层归档（2026-06-21 迁 `Public-Info-Pool/Record/Community/discord/`）：Global（`discord/` 根）/ 志愿者（`discord/guilds/`）/ 日服（接入中，2026-06-17，`discord/guilds/`）
   - [x] YouTube — 代码就绪，需配置 API 密钥
 

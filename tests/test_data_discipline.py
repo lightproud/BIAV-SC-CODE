@@ -203,8 +203,30 @@ class TestCommunityIndexDeclaresFullArchive:
 
     def test_meta_source_root_is_archive_layer(self, tmp_path, monkeypatch):
         index = self._drive_build(tmp_path, monkeypatch)
-        # Provenance points at the archive layer dir, not output/.
-        assert index["_meta"]["source_root"] == "projects/news/data/"
+        # Provenance points at the archive layer actually read (2026-07-02:
+        # source_root is computed from the live root, no longer hardcoded).
+        # In this synthetic setup that is the DATA_OLD legacy tree; in prod
+        # it is Public-Info-Pool/Record/Community/. Never output/.
+        assert index["_meta"]["source_root"].rstrip("/").endswith("data")
+        assert "output" not in index["_meta"]["source_root"]
+
+    def test_meta_source_root_prefers_new_layout(self, tmp_path, monkeypatch):
+        """When the Public-Info-Pool root exists, provenance must name it."""
+        community = tmp_path / "Public-Info-Pool" / "Record" / "Community"
+        (community / "reddit").mkdir(parents=True)
+        (community / "reddit" / "2026-05.json").write_text(
+            json.dumps({"items": [
+                {"time": "2026-05-01T00:00:00Z", "title": "great game",
+                 "summary": "love it", "lang": "en", "engagement": 10},
+            ]}),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr(build_community_index, "COMMUNITY_NEW", community)
+        monkeypatch.setattr(build_community_index, "DATA_OLD",
+                            tmp_path / "__no_such_old__")
+        index = build_community_index.build()
+        assert index["_meta"]["source_root"].rstrip("/").endswith(
+            "Public-Info-Pool/Record/Community")
         assert "output" not in index["_meta"]["source_root"]
 
     def test_records_actually_aggregated_from_full_archive(self, tmp_path, monkeypatch):

@@ -1,6 +1,6 @@
 # Game 衍生游戏 — 会话上下文
 
-> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 game 重定位 — **退主线**）
+> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移修复：config/ 依赖描述对齐实际 6 个配置文件、output/ 状态订正。上次 2026-04-26 写入 v2.0 game 重定位 — **退主线**）
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
 
 ## v2.0 重新定位（2026-04-26 起）
@@ -38,7 +38,7 @@
 
 ## 依赖
 - 角色数据 — 现行源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；底层原始字段 `projects/wiki/data/extracted/categorized/character_data.txt`）。**原 `projects/wiki/data/db/characters.json` 占位结构化层 2026-06-15 已清空、勿引用**；W2 可信基线已重建（72 齐）
-- `projects/game/config/game-config.json` — 游戏配置（本项目产出，待创建）
+- `projects/game/config/` — 游戏配置（已建立，2026-06-03 MVP 随附）：`characters.json` / `enemies.json` / `upgrades.json` / `waves.json` / `weapons.json` + `config.js` 加载器（原设想的单文件 `game-config.json` 未采用）
 - `assets/images/` — 图片素材
 
 ## 验证清单
@@ -46,8 +46,8 @@
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/game/`
-- 游戏配置输出到：`projects/game/config/`
-- 中间产出放：`projects/game/output/`（待创建）
+- 游戏配置输出到：`projects/game/config/`（已建立）
+- 中间产出放：`projects/game/output/`（已建立，当前为空）
 
 ## 启动验证清单
 

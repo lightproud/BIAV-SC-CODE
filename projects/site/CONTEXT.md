@@ -1,6 +1,10 @@
 # Code-site 子项目上下文
 
-> 最后更新：2026-04-26 by 艾瑞卡（Code-site 维护会话，D-fix + D-mission + 自审清理 + D-biav 落地后状态同步）
+> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移修复：对外两页使命段由「三新使命」
+> 改「二核心使命」——使命#3 已于 2026-06-28 守密人裁定退役，主站与 biav 页此前仍
+> 展示三卡片，属对外漂移，已同步删卡并改 meta 文案。下文 4-26 的 D-* 记录为历史
+> 验收记录，其中「三新使命」措辞为当时事实，不再逐条改写）
+> 上次：2026-04-26 by 艾瑞卡（D-fix + D-mission + 自审清理 + D-biav 落地后状态同步）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -48,7 +52,7 @@ Code-site 会话负责：
   - 合规基线：emoji 全清（D-fix + 自审），nav 全部链接可达且无重复，community 仅保留 4 真实 URL（Discord 国际服 / NGA / Reddit / TapTap）
   - SEO/可访问性基线：favicon（inline SVG 宋体「夜」字）+ canonical + og:locale 三语 + twitter:card；语言切换为可访问 details/summary（替代旧 select onchange 反模式）
   - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入并以 `var(--m-*, fallback)` 模式映射；改 design-tokens.css 即全站生效（D-token-unify 已落地）
-- **biav 子页**：已上线（D-biav，`public/biav/index.html`），项目说明页面，含命名缘由 / 银芯系统 / 三新使命 / 仓库结构 / 入口协议五段
+- **biav 子页**：已上线（D-biav，`public/biav/index.html`），项目说明页面，含命名缘由 / 银芯系统 / 二核心使命（2026-07-02 由三新使命改） / 仓库结构 / 入口协议五段
 - **404 页**：色彩与字重已对齐主站，含返回主站/Wiki/News/仓库四入口
 - **部署流水线**：使用 `peaceiris/actions-gh-pages@v4` 推送到 gh-pages 分支
   - **2026-04-26 改造**：site 部署改为 `cp -r projects/site/public/. dist/` 递归，未来 `public/` 下任何子目录或新增文件自动部署，不需再追加 cp 行

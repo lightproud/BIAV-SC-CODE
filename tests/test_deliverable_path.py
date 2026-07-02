@@ -49,7 +49,8 @@ def sandbox(monkeypatch, tmp_path):
     resource.mkdir()
     monkeypatch.setattr(dp, "REGISTRY", registry)
     monkeypatch.setattr(dp, "RESOURCE", resource)
-    monkeypatch.setattr(dp, "ROUGH", tmp_path / "Rough")
+    # dp.ROUGH 常量已随死代码清理移除（PR #373）：promote 取显式 src 路径，
+    # 脚本不依赖 Rough 根常量，这里无需重定向。
     monkeypatch.setattr(dp, "REPO_ROOT", tmp_path)
     return tmp_path
 

@@ -1,5 +1,12 @@
 # 忘却前夜 Lua 字节码提取最终成果
 
+> **2026-06-21 数据本体迁移（守密人裁定「text→git / 二进制→Releases」）**：本目录下文
+> 描述的交付物本体已迁走——`.luac` 字节码（hook_capture / plaintext_from_memory / raw）
+> 在 GitHub Release `unpacked-assets` 的 `morimens-lua-bytecode.tar.gz`；解析后的 text
+> （gamescript / config 文本 / text-data / sdk-scripts）在
+> `Public-Info-Pool/Reference/Game-Unpacked/`。本目录现仅存本说明与
+> `lua_scripts_inventory.csv` 清单；下文「交付目录」为迁移前的历史记录。
+
 > 原定目标：从 `luascript_update.archive` 取出全部 639 份加密 Lua 5.4 字节码明文。
 > **最终达成：981 份明文（907 hook 捕获 + 74 内存补充），去掉 35 个运行时 Config 数据块后约 946 份脚本。**
 

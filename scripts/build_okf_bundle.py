@@ -278,6 +278,13 @@ STORY_POINTERS = [
 ]
 
 
+def _story_stem(fname: str) -> str:
+    """index.json 的 concept 落名须避让 OKF 保留名 index.md（层级索引），
+    否则会被 build_story 末尾写的层级索引覆盖（2026-07-02 修复：5 写 4 存）。"""
+    stem = fname.replace(".json", "").replace(".md", "")
+    return "story_index" if stem == "index" else stem
+
+
 def build_memory() -> int:
     out_dir = BUNDLE / "memory"
     count = 0
@@ -339,15 +346,14 @@ def build_story() -> int:
             f"- 本体路径：`{rel}`",
             f"- 用途：{desc}",
         ]
-        write_concept(out_dir / (fname.replace(".json", "").replace(".md", "") + ".md"), fields, "\n".join(body))
+        write_concept(out_dir / (_story_stem(fname) + ".md"), fields, "\n".join(body))
         count += 1
 
     idx = [f"# 剧情/世界观层指针 ({count})", "",
            f"源目录：`{STORY_DIR.relative_to(REPO)}`。指针 concept，本体原地。", "", "## 档案", ""]
     for fname, _typ, desc in STORY_POINTERS:
         if (STORY_DIR / fname).exists():
-            stem = fname.replace(".json", "").replace(".md", "")
-            idx.append(f"* [{fname}](/story/{stem}.md) - {desc}")
+            idx.append(f"* [{fname}](/story/{_story_stem(fname)}.md) - {desc}")
     write_plain(out_dir / "index.md", "\n".join(idx))
     return count
 

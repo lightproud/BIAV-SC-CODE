@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-02",
   "stats": {
-    "nodes": 104,
+    "nodes": 105,
     "edges": 104
   },
   "nodes": [
@@ -1026,6 +1026,16 @@
       "id": "/story/lore_entries.md",
       "type": "dataset",
       "title": "lore_entries.json",
+      "tags": [
+        "story",
+        "pointer",
+        "data_layer:full_archive"
+      ]
+    },
+    {
+      "id": "/story/story_index.md",
+      "type": "dataset",
+      "title": "index.json",
       "tags": [
         "story",
         "pointer",

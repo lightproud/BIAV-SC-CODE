@@ -134,13 +134,64 @@ class TestCrossReferences:
         assert vd.validate_cross_references(loaded) == []
 
 
+def _processed_baseline():
+    """Minimal valid processed characters.json fixture."""
+    return {
+        "_meta": {"source": "AwakerConfig.lua", "total_characters": 1,
+                  "generated": "2026-07-02"},
+        "characters": [{"id": 1, "name": "潘狄娅", "category": "playable",
+                        "playable_evidence": ["summon_slogan"]}],
+    }
+
+
+def _setup_processed(tmp_path, monkeypatch, schema_dir, baseline=None):
+    proc = tmp_path / "processed"
+    _write(proc / "characters.json", baseline or _processed_baseline())
+    _write(schema_dir / "characters.processed.schema.json", {"type": "object"})
+    monkeypatch.setattr(vd, "PROCESSED_DIR", proc)
+    return proc
+
+
+class TestProcessedConsistency:
+    def test_count_match_passes(self):
+        assert vd.validate_processed_consistency(
+            {"characters.json": _processed_baseline()}) == []
+
+    def test_count_mismatch_fails(self):
+        bad = _processed_baseline()
+        bad["_meta"]["total_characters"] = 99
+        errors = vd.validate_processed_consistency({"characters.json": bad})
+        assert any("total_characters" in e for e in errors)
+
+    def test_non_dict_shape_skipped(self):
+        assert vd.validate_processed_consistency({"characters.json": [{"id": 1}]}) == []
+
+
+class TestLoadProcessedBaseline:
+    def test_missing_baseline_fails(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(vd, "PROCESSED_DIR", tmp_path / "nowhere")
+        errors, loaded = vd.load_processed_baseline()
+        assert any("characters.json" in e for e in errors)
+        assert loaded == {}
+
+    def test_valid_baseline_loads(self, tmp_path, monkeypatch):
+        proc = tmp_path / "processed"
+        _write(proc / "characters.json", _processed_baseline())
+        monkeypatch.setattr(vd, "PROCESSED_DIR", proc)
+        errors, loaded = vd.load_processed_baseline()
+        assert errors == []
+        assert "characters.json" in loaded
+
+
 class TestMain:
-    def test_main_all_passed(self, tmp_path, monkeypatch):
+    def test_main_no_jsonschema_fails(self, tmp_path, monkeypatch):
         db = tmp_path / "db"
+        schema_dir = tmp_path / "schemas"
         _write(db / "characters.json", [{"id": "1"}])
+        _setup_processed(tmp_path, monkeypatch, schema_dir)
         monkeypatch.setattr(vd, "DB_DIR", db)
+        monkeypatch.setattr(vd, "SCHEMA_DIR", schema_dir)
         monkeypatch.setattr(vd, "HAS_JSONSCHEMA", False)
-        # Schema step will FAIL because HAS_JSONSCHEMA False -> ensure that path
         rc = vd.main()
         assert rc == 1  # jsonschema missing produces an error
 
@@ -151,14 +202,28 @@ class TestMain:
         schema_dir = tmp_path / "schemas"
         _write(db / "characters.json", [{"id": "1"}])
         _write(schema_dir / "characters.schema.json", {"type": "array"})
+        _setup_processed(tmp_path, monkeypatch, schema_dir)
         monkeypatch.setattr(vd, "DB_DIR", db)
         monkeypatch.setattr(vd, "SCHEMA_DIR", schema_dir)
         rc = vd.main()
         assert rc == 0
 
+    def test_main_db_absent_is_note_not_error(self, tmp_path, monkeypatch):
+        if not vd.HAS_JSONSCHEMA:
+            pytest.skip("jsonschema not installed")
+        schema_dir = tmp_path / "schemas"
+        _setup_processed(tmp_path, monkeypatch, schema_dir)
+        monkeypatch.setattr(vd, "DB_DIR", tmp_path / "db_missing")
+        monkeypatch.setattr(vd, "SCHEMA_DIR", schema_dir)
+        rc = vd.main()
+        assert rc == 0  # wiped db layer must not fail validation
+
     def test_main_failure(self, tmp_path, monkeypatch):
         db = tmp_path / "db"
+        schema_dir = tmp_path / "schemas"
         _write(db / "bad.json", None, raw="{broken")
+        _setup_processed(tmp_path, monkeypatch, schema_dir)
         monkeypatch.setattr(vd, "DB_DIR", db)
+        monkeypatch.setattr(vd, "SCHEMA_DIR", schema_dir)
         rc = vd.main()
         assert rc == 1

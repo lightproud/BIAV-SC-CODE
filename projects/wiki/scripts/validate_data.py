@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Validate all wiki JSON data files against schemas and cross-references.
 
+Current validation target (2026-07-02 realignment): the W2 trusted baseline
+projects/wiki/data/processed/characters.json (shape {_meta, characters[]},
+schema characters.processed.schema.json). The legacy data/db/ structured
+layer was wiped by keeper ruling 2026-06-15; its absence is expected (NOTE,
+not FAIL) and its schemas stay registered as SKIP until that layer is
+rebuilt.
+
 Usage:
     python projects/wiki/scripts/validate_data.py
 
@@ -16,6 +23,7 @@ from pathlib import Path
 # Resolve paths relative to this script's location
 SCRIPT_DIR = Path(__file__).resolve().parent
 DB_DIR = SCRIPT_DIR.parent / "data" / "db"
+PROCESSED_DIR = SCRIPT_DIR.parent / "data" / "processed"
 SCHEMA_DIR = SCRIPT_DIR.parent / "data" / "schemas"
 
 # Try to import jsonschema; fall back to basic validation if unavailable
@@ -25,7 +33,8 @@ try:
 except ImportError:
     HAS_JSONSCHEMA = False
 
-# Mapping of data files to their schema files
+# Mapping of legacy data/db/ files to their schema files (layer wiped
+# 2026-06-15; entries stay registered and SKIP until the layer is rebuilt)
 SCHEMA_MAP = {
     "meta.json": "meta.schema.json",
     "realms.json": "realms.schema.json",
@@ -34,6 +43,11 @@ SCHEMA_MAP = {
     "banners.json": "banners.schema.json",
     "stages.json": "stages.schema.json",
     "items.json": "items.schema.json",
+}
+
+# Mapping of current data/processed/ baseline files to their schema files
+PROCESSED_SCHEMA_MAP = {
+    "characters.json": "characters.processed.schema.json",
 }
 
 
@@ -73,7 +87,8 @@ def validate_json_syntax(db_dir: Path) -> tuple[list[str], dict[str, object]]:
     return errors, loaded
 
 
-def validate_schemas(loaded: dict[str, object]) -> list[str]:
+def validate_schemas(loaded: dict[str, object], schema_map: dict[str, str] | None = None,
+                     label: str = "") -> list[str]:
     """Validate data files against their JSON schemas.
 
     Missing data files are reported as SKIP, not FAIL, so registering a
@@ -82,6 +97,7 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
     but cannot be loaded are still hard FAILs.
     """
     errors = []
+    schema_map = SCHEMA_MAP if schema_map is None else schema_map
 
     if not HAS_JSONSCHEMA:
         print("  ERROR jsonschema not installed — schema validation cannot run.")
@@ -92,9 +108,9 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
         )
         return errors
 
-    for data_file, schema_file in SCHEMA_MAP.items():
+    for data_file, schema_file in schema_map.items():
         if data_file not in loaded:
-            print(f"  SKIP  {data_file}: file not present (schema {schema_file} stays registered)")
+            print(f"  SKIP  {label}{data_file}: file not present (schema {schema_file} stays registered)")
             continue
 
         schema_path = SCHEMA_DIR / schema_file
@@ -105,11 +121,44 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
 
         try:
             jsonschema.validate(instance=loaded[data_file], schema=schema)
-            print(f"  PASS  {data_file} matches {schema_file}")
+            print(f"  PASS  {label}{data_file} matches {schema_file}")
         except jsonschema.ValidationError as e:
             path_str = " -> ".join(str(p) for p in e.absolute_path) if e.absolute_path else "(root)"
-            errors.append(f"  FAIL  {data_file} schema: {path_str}: {e.message}")
+            errors.append(f"  FAIL  {label}{data_file} schema: {path_str}: {e.message}")
 
+    return errors
+
+
+def load_processed_baseline() -> tuple[list[str], dict[str, object]]:
+    """Load the current data/processed/ baseline files (missing = FAIL)."""
+    errors = []
+    loaded = {}
+    for fname in PROCESSED_SCHEMA_MAP:
+        data, err = load_json(PROCESSED_DIR / fname)
+        if err:
+            errors.append(f"  FAIL  processed/{fname}: {err}")
+        else:
+            loaded[fname] = data
+            print(f"  PASS  processed/{fname} (valid JSON)")
+    return errors, loaded
+
+
+def validate_processed_consistency(loaded: dict[str, object]) -> list[str]:
+    """Internal consistency of the processed baseline:
+    _meta.total_characters must equal len(characters)."""
+    errors = []
+    chars = loaded.get("characters.json")
+    if not isinstance(chars, dict):
+        return errors
+    declared = chars.get("_meta", {}).get("total_characters")
+    actual = len(chars.get("characters", []))
+    if declared != actual:
+        errors.append(
+            f"  FAIL  processed/characters.json: _meta.total_characters={declared}"
+            f" != len(characters)={actual}"
+        )
+    else:
+        print(f"  PASS  processed/characters.json: _meta.total_characters == {actual}")
     return errors
 
 
@@ -180,22 +229,36 @@ def main() -> int:
 
     all_errors: list[str] = []
 
-    # 1. JSON syntax validation
-    print("[1/3] JSON syntax check")
-    syntax_errors, loaded = validate_json_syntax(DB_DIR)
-    all_errors.extend(syntax_errors)
+    # 1. Legacy db layer (wiped 2026-06-15; absence is expected, not an error)
+    print("[1/4] Legacy data/db/ JSON syntax check")
+    db_loaded: dict[str, object] = {}
+    if DB_DIR.exists() and any(DB_DIR.glob("*.json")):
+        syntax_errors, db_loaded = validate_json_syntax(DB_DIR)
+        all_errors.extend(syntax_errors)
+    else:
+        print("  NOTE  data/db/ absent (structured layer wiped by keeper ruling"
+              " 2026-06-15); current baseline lives in data/processed/")
     print()
 
-    # 2. Schema validation
-    print("[2/3] Schema validation")
-    schema_errors = validate_schemas(loaded)
-    all_errors.extend(schema_errors)
+    # 2. Current processed baseline (missing = FAIL)
+    print("[2/4] Processed baseline load")
+    load_errors, processed_loaded = load_processed_baseline()
+    all_errors.extend(load_errors)
     print()
 
-    # 3. Cross-reference validation
-    print("[3/3] Cross-reference checks")
-    xref_errors = validate_cross_references(loaded)
-    all_errors.extend(xref_errors)
+    # 3. Schema validation (legacy map SKIPs; processed map validates)
+    print("[3/4] Schema validation")
+    all_errors.extend(validate_schemas(db_loaded))
+    all_errors.extend(validate_schemas(processed_loaded, PROCESSED_SCHEMA_MAP, label="processed/"))
+    all_errors.extend(validate_processed_consistency(processed_loaded))
+    print()
+
+    # 4. Cross-reference validation (processed shape normalized inside;
+    # if the db layer is ever rebuilt its characters.json takes precedence
+    # only when processed is absent)
+    print("[4/4] Cross-reference checks")
+    merged = {**db_loaded, **processed_loaded}
+    all_errors.extend(validate_cross_references(merged))
     print()
 
     # Summary
@@ -206,8 +269,11 @@ def main() -> int:
             print(err)
         return 1
     else:
-        total_files = len(list(DB_DIR.glob("*.json")))
-        schemas_checked = sum(1 for f in SCHEMA_MAP if f in loaded) if HAS_JSONSCHEMA else 0
+        total_files = len(db_loaded) + len(processed_loaded)
+        schemas_checked = 0
+        if HAS_JSONSCHEMA:
+            schemas_checked = (sum(1 for f in SCHEMA_MAP if f in db_loaded)
+                               + sum(1 for f in PROCESSED_SCHEMA_MAP if f in processed_loaded))
         print(f"ALL PASSED: {total_files} files checked, {schemas_checked} schemas validated")
         return 0
 
