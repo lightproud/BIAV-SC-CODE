@@ -7,19 +7,19 @@
 ## 平台
 
 * [appstore](/sources/appstore.md) - 全量 630 条 / degraded
-* [bilibili](/sources/bilibili.md) - 全量 2354 条 / active
-* [discord](/sources/discord.md) - 全量 7824202 条 / active
+* [bilibili](/sources/bilibili.md) - 全量 2442 条 / active
+* [discord](/sources/discord.md) - 全量 7894525 条 / active
 * [google_play](/sources/google_play.md) - 全量 1118 条 / degraded
 * [official](/sources/official.md) - 全量 332 条 / degraded
-* [pixiv](/sources/pixiv.md) - 全量 532 条 / active
-* [reddit](/sources/reddit.md) - 全量 3270 条 / active
-* [ruliweb](/sources/ruliweb.md) - 全量 381 条 / active
+* [pixiv](/sources/pixiv.md) - 全量 539 条 / active
+* [reddit](/sources/reddit.md) - 全量 3394 条 / active
+* [ruliweb](/sources/ruliweb.md) - 全量 381 条 / degraded
 * [steam](/sources/steam.md) - 全量 4977 条 / degraded
 * [steam_discussion](/sources/steam_discussion.md) - 全量 41 条 / degraded
-* [stopgame](/sources/stopgame.md) - 全量 71 条 / active
-* [taptap](/sources/taptap.md) - 全量 6 条 / active
+* [stopgame](/sources/stopgame.md) - 全量 74 条 / active
+* [taptap](/sources/taptap.md) - 全量 7 条 / active
 * [taptap_review](/sources/taptap_review.md) - 全量 440 条 / degraded
-* [weibo](/sources/weibo.md) - 全量 8300 条 / active
-* [weixin](/sources/weixin.md) - 全量 5096 条 / degraded
+* [weibo](/sources/weibo.md) - 全量 8661 条 / active
+* [weixin](/sources/weixin.md) - 全量 5656 条 / active
 * [youtube](/sources/youtube.md) - 全量 2240 条 / degraded
 * [youtube_comments](/sources/youtube_comments.md) - 全量 0 条 / active

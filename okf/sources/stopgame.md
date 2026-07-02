@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "stopgame 社区数据源"
-description: "stopgame 平台采集档案，全量 71 条，健康度 active。"
+description: "stopgame 平台采集档案，全量 74 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/stopgame/"
 tags: ["data_layer:full_archive", "platform:stopgame", "health:active"]
-timestamp: "2026-06-28T19:11:07.212637+00:00"
+timestamp: "2026-07-01T23:10:01.477737+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-06-28T19:11:07.212637+00:00"
 | 平台 | stopgame |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/stopgame/` |
 | 输出展示层（抽样） | `projects/news/output/stopgame-latest.json` |
-| 全量条数 | 71 |
+| 全量条数 | 74 |
 | 采集健康度 | active |
-| 最后成功 | 2026-06-29 |
+| 最后成功 | 2026-07-02 |
 
 # 数据纪律（硬约束）
 

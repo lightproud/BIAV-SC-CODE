@@ -3,7 +3,7 @@ type: "documentation"
 title: "银芯 OKF Bundle README"
 description: "本 bundle 的说明、银芯公开层定位、三条落地铁律与重生成方式。"
 tags: ["meta", "documentation"]
-timestamp: "2026-06-29"
+timestamp: "2026-07-02"
 ---
 
 # 银芯 OKF Bundle —— README
