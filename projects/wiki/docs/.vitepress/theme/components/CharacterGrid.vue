@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { characters, REALM_LABELS, ROLE_LABELS } from '../data/characters'
+import { withBase } from 'vitepress'
+import { characters, REALM_LABELS, ROLE_LABELS, STATUS_LABELS } from '../data/characters'
 import type { MorimensCharacter } from '../data/characters'
+
+function pageHref(c: MorimensCharacter): string | undefined {
+  // cleanUrls: false + 站点挂 /brain-in-a-vat/wiki/ 子路径 → 必须 withBase + .html
+  return c.has_page ? withBase(`/zh/awakeners/${c.slug}.html`) : undefined
+}
 
 const realmFilter = ref<string>('all')
 const roleFilter = ref<string>('all')
@@ -65,10 +71,10 @@ function reset() {
         </select>
       </label>
       <label>
-        状态：
+        类目：
         <select v-model="statusFilter">
           <option value="all">全部</option>
-          <option v-for="s in statuses" :key="s" :value="s">{{ s }}</option>
+          <option v-for="s in statuses" :key="s" :value="s">{{ STATUS_LABELS[s] || s }}</option>
         </select>
       </label>
       <button class="m-grid__reset" @click="reset">重置</button>
@@ -76,20 +82,21 @@ function reset() {
     </header>
     <ul class="m-grid__list">
       <li v-for="c in filtered" :key="c.id" :data-realm="c.realm || 'unknown'" class="m-grid__card">
-        <a :href="`/zh/awakeners/${c.slug}`" class="m-grid__link">
+        <component :is="c.has_page ? 'a' : 'div'" :href="pageHref(c)" class="m-grid__link">
           <div class="m-grid__portrait">
-            <img :src="c.portraits?.default || `/portraits/${c.slug}.png`" :alt="c.name_zh" loading="lazy" />
+            <img v-if="c.portraits?.default" :src="withBase(c.portraits.default)" :alt="c.name_zh" loading="lazy" />
+            <div v-else class="m-grid__portrait-fallback" aria-hidden="true">{{ c.name_zh.slice(0, 1) }}</div>
           </div>
           <div class="m-grid__meta">
             <strong>{{ c.name_zh }}</strong>
-            <span class="m-grid__name-en">{{ c.name_en || '—' }}</span>
+            <span v-if="c.title_zh && c.title_zh !== c.name_zh" class="m-grid__name-en">{{ c.title_zh }}</span>
             <span class="m-grid__chips">
               <span v-if="c.realm" class="m-grid__chip">{{ REALM_LABELS[c.realm] || c.realm }}</span>
               <span v-if="c.role" class="m-grid__chip">{{ ROLE_LABELS[c.role] || c.role }}</span>
-              <span v-if="c.status !== 'complete'" class="m-grid__chip m-grid__chip--status">{{ c.status }}</span>
+              <span v-if="c.status !== 'playable'" class="m-grid__chip m-grid__chip--status">{{ STATUS_LABELS[c.status] || c.status }}</span>
             </span>
           </div>
-        </a>
+        </component>
       </li>
     </ul>
     <p v-if="!filtered.length" class="m-grid__empty">没有匹配的唤醒体。</p>
@@ -184,6 +191,18 @@ function reset() {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.m-grid__portrait-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--m-font-title);
+  font-size: 48px;
+  color: var(--m-gold-primary);
+  opacity: 0.45;
+  user-select: none;
 }
 .m-grid__meta {
   padding: var(--m-sp-3);

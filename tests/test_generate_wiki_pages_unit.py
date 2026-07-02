@@ -690,3 +690,46 @@ def test_generate_potency(wiki_tmp):
     # empty-desc node skipped, dups collapsed -> one 反击之刃 row
     assert out.count("| 反击之刃 |") == 1
     assert "人格深化" not in out
+
+
+# ---------------------------------------------------------------------------
+# generate_runtime_data — W2 数据桥产物（2026-07-02 接回）
+# ---------------------------------------------------------------------------
+def test_generate_runtime_data_emits_bridge_json(wiki_tmp):
+    docs = wiki_tmp["docs"]
+    (docs / ".vitepress" / "theme" / "data").mkdir(parents=True)
+    chars = [
+        {"id": 15560, "name": "潘狄娅", "title": "潘狄娅", "category": "playable",
+         "gender": "女", "voice_actor": "cv", "painter": "p",
+         "introduction": "intro", "summon_slogan": "slogan"},
+        {"id": 99999, "name": "某未上线", "title": "某称号", "category": "unreleased"},
+    ]
+    play = {"潘狄娅": {"realm": "chaos", "role": "攻击", "card": "x"}}
+    gwp.generate_runtime_data(chars, play)
+    out = json.loads((docs / ".vitepress" / "theme" / "data" /
+                      "characters.runtime.json").read_text(encoding="utf-8"))
+    assert len(out) == 2
+    a, b = out
+    # id/slug 为字符串（characters.ts 接口约定），playable 有详情页
+    assert a["id"] == "15560" and a["slug"] == "15560"
+    assert a["realm"] == "chaos" and a["role"] == "攻击"
+    assert a["status"] == "playable" and a["has_page"] is True
+    # 无玩法卡的未上线角色：realm/role 为 None、无详情页
+    assert b["realm"] is None and b["role"] is None
+    assert b["status"] == "unreleased" and b["has_page"] is False
+    # 立绘位当前恒空（SLIM 部署无立绘资产），组件按 null 渲染占位符
+    assert a["portraits"] == {"default": None, "awaker": None, "skins": []}
+
+
+def test_generate_characters_page_mounts_grid(wiki_tmp):
+    """图鉴页须挂载 <CharacterGrid />（组件层入口，W2 接回的用户可见面）。"""
+    processed, docs = wiki_tmp["processed"], wiki_tmp["docs"]
+    (docs / ".vitepress" / "theme" / "data").mkdir(parents=True)
+    (docs / "zh").mkdir()
+    _wj(processed / "characters.json", {
+        "_meta": {"total_characters": 1, "source": "s", "generated": "g"},
+        "characters": [{"id": 1, "name": "n", "title": "t", "category": "playable"}],
+    })
+    gwp.generate_characters()
+    page = _read(docs, "characters.md")
+    assert "<CharacterGrid />" in page

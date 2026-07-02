@@ -39,11 +39,11 @@ data/extracted/                 客户端一手解包（lua_tables / categorized
 - **静态页已投产**：`generate_wiki_pages.py` 生成 58 个真实唤醒体详情页
   （`docs/zh/awakeners/{id}.md`）+ 图鉴 / 剧情正文 / 收藏馆 / 画廊等约 81 页，
   VitePress 构建通过。
-- **W2 唯一断点——运行时数据桥**：`docs/.vitepress/theme/data/characters.ts`
-  仍导出空数组（旧 db 链清空时置空），12 个 Vue 组件（CharacterGrid /
-  CharacterInfobox / SkillTable 等）暂渲染空内容。接回 processed 基线时注意：
-  接口假设「顶层数组 + `id: string`」，与现行「`{_meta, characters}` + `id: int`」
-  需适配。
+- **运行时数据桥已接回（2026-07-02）**：`generate_wiki_pages.py:generate_runtime_data()`
+  从 processed 基线 + 玩法层单点产出 `docs/.vitepress/theme/data/characters.runtime.json`
+  （72 条，id 已字符串化，含 realm/role/status/has_page），`characters.ts` 导入消费；
+  CharacterGrid 挂载 `docs/characters.md`「交互检索」段（withBase 链接 + 无立绘占位符 +
+  界域/类目/搜索筛选）。CharacterSheet 等详情向组件仍为脚手架，待字段缺口补全后启用。
 - **三语未恢复**：`config.mts` 仅 zh root locale，`docs/` 无 en/ja 子目录；
   清空前的「三语全量 ~580 页」为假数据史，恢复属后续任务。
 - **界域 / 职业来源**：解包无 realm 字段，玩法层 `data/processed/character_skills.md`
@@ -80,8 +80,7 @@ python3 projects/wiki/scripts/validate_data.py
 
 ## 本期任务（Phase 2 收尾，→ 07-19）
 
-- [ ] **W2 收尾（第一优先）**：`characters.ts` 数据桥接回 `data/processed/characters.json`
-  基线，恢复 12 个 Vue 组件渲染（形态 / id 类型适配见上）
+- [x] **W2 收尾**：数据桥接回 processed 基线 + CharacterGrid 上线图鉴页（2026-07-02 完成）
 - [ ] 真实字段缺口推进：skills / 命轮 Effect / 立绘映射 / 三语 name_en·name_ja，
   缺口清单见 `memory/wiki-phase-2-gap-inventory.md`（以一手解包补，禁合成）
 - [ ] 贡献流程：数据修正的 PR / Issue 路径跑通至少 1 轮（M3 遗留）
@@ -92,7 +91,7 @@ python3 projects/wiki/scripts/validate_data.py
 - [x] `data/processed/characters.json` 72 角色、无合成占位（2026-06-16 守密人裁定）
 - [x] 58 真实唤醒体详情页生成、VitePress 构建通过（BUILD_OK）
 - [x] `validate_data.py` 对 processed 基线校验通过（2026-07-02 对齐后）
-- [ ] `characters.ts` 数据桥接回后：Vue 组件渲染非空 + 构建通过
+- [x] `characters.ts` 数据桥接回后：CharacterGrid SSR 渲染 72 卡片 + 构建通过（2026-07-02）
 - [ ] 三语目录结构一致（恢复后）
 
 ## 给会话的指令

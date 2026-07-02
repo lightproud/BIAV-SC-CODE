@@ -338,3 +338,22 @@ class TestGetQualityTracker(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestValidSourcesRegistry(unittest.TestCase):
+    """VALID_SOURCES 必须从 sources.py 单一真相源派生（2026-07-02 修复：
+    私有硬编码白名单漏掉 taptap_review，采到的评论被整批丢弃）。"""
+
+    def test_superset_of_known_sources(self):
+        import sources
+        self.assertTrue(set(sources.KNOWN_SOURCES) <= aggregator_base.VALID_SOURCES)
+
+    def test_contains_raw_alias_names(self):
+        import sources
+        self.assertTrue(set(sources.SOURCE_ALIASES) <= aggregator_base.VALID_SOURCES)
+
+    def test_taptap_review_accepted(self):
+        ok, _ = aggregator_base.validate_news_item({
+            'title': 't', 'source': 'taptap_review',
+            'time': '2026-07-02T00:00:00Z', 'engagement': 1, 'url': 'https://x.co'})
+        self.assertTrue(ok)
