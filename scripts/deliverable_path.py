@@ -38,7 +38,6 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 POOL = REPO_ROOT / "Public-Info-Pool"
 RESOURCE = POOL / "Resource"
-ROUGH = POOL / "Rough"
 REGISTRY = POOL / "types.json"
 
 # 形式定死：全小写 kebab-case，仅 [a-z0-9-]，不以连字符起止

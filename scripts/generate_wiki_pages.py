@@ -591,7 +591,6 @@ def generate_item_stories():
         data = json.load(f)
 
     meta = data['_meta']
-    cats = meta['category_counts']
     lines = []
     lines.append('# 道具背景故事')
     lines.append('')

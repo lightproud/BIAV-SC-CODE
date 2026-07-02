@@ -112,7 +112,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
 
     # Read the raw file to get key_sig and data_sig from the error
     try:
-        env = UnityPy.load(str(sample_ab))
+        UnityPy.load(str(sample_ab))
         print("  File loaded without error — may not be encrypted?")
         return b""  # Not encrypted
     except Exception as e:

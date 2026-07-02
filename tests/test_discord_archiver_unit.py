@@ -1,6 +1,6 @@
 """Additional discord_archiver coverage — targets the uncovered branches the
 existing test_discord_archiver.py leaves: HTTP retry/backoff, slim/process,
-daily-stats save/merge, forum threads, monthly archive subprocess flow, the
+daily-stats save/merge, forum threads, the
 run()/run_history_only()/main() pipelines.
 
 All hermetic: no network, no real subprocess (gh/git mocked), tmp data root,
@@ -490,54 +490,6 @@ class TestSaveDailyStats(unittest.TestCase):
             self.assertGreaterEqual(data["messages"], 2)
 
 
-# ── monthly archive (subprocess + tarball) ───────────────────────────────────
-
-class TestMonthlyArchive(unittest.TestCase):
-    def test_no_files_returns_early(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            arch = _make_archiver(tmp)
-            with mock.patch.object(da.subprocess, "run") as run:
-                arch.run_monthly_archive()
-            run.assert_not_called()
-
-    def test_full_archive_flow(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            arch = _make_archiver(tmp)
-            now = datetime.now(timezone.utc)
-            from discord_archiver import _prev_month, _mstr
-            y, m = _prev_month(now.year, now.month)
-            month_str = _mstr(y, m)
-            ch = arch.data_dir / "channels" / "abcd1234"
-            ch.mkdir(parents=True, exist_ok=True)
-            (ch / f"{month_str}-05.jsonl").write_text(json.dumps(_msg(1)) + "\n")
-            with mock.patch.object(da.subprocess, "run", return_value=mock.Mock(returncode=0)) as run, \
-                    mock.patch.dict(os.environ, {"GITHUB_REPOSITORY": "o/r"}):
-                arch.run_monthly_archive()
-            # gh release create + git rm invoked
-            self.assertTrue(run.called)
-
-    def test_archive_upload_failure_raises(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            arch = _make_archiver(tmp)
-            now = datetime.now(timezone.utc)
-            from discord_archiver import _prev_month, _mstr
-            y, m = _prev_month(now.year, now.month)
-            month_str = _mstr(y, m)
-            ch = arch.data_dir / "channels" / "abcd1234"
-            ch.mkdir(parents=True, exist_ok=True)
-            (ch / f"{month_str}-05.jsonl").write_text("{}\n")
-
-            def fake_run(cmd, *a, **k):
-                if cmd[:3] == ["gh", "release", "create"]:
-                    raise da.subprocess.CalledProcessError(1, "gh")
-                return mock.Mock(returncode=0)
-
-            with mock.patch.object(da.subprocess, "run", side_effect=fake_run), \
-                    mock.patch.dict(os.environ, {"GITHUB_REPOSITORY": "o/r"}):
-                with self.assertRaises(da.subprocess.CalledProcessError):
-                    arch.run_monthly_archive()
-
-
 # ── run() / run_history_only() / main() pipelines ────────────────────────────
 
 class TestPipelines(unittest.TestCase):
@@ -590,16 +542,6 @@ class TestPipelines(unittest.TestCase):
                     mock.patch.object(DiscordArchiver, "run") as run:
                 da.main()
             run.assert_called_once()
-
-    def test_main_archive_monthly(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            with mock.patch.dict(os.environ, {
-                "DISCORD_BOT_TOKEN": "t", "DISCORD_GUILD_ID": "999", "DISCORD_DATA_ROOT": tmp,
-            }, clear=False), \
-                    mock.patch.object(sys, "argv", ["discord_archiver.py", "--archive-monthly"]), \
-                    mock.patch.object(DiscordArchiver, "run_monthly_archive") as rma:
-                da.main()
-            rma.assert_called_once()
 
     def test_main_history_only(self):
         with tempfile.TemporaryDirectory() as tmp:

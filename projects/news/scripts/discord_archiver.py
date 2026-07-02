@@ -15,15 +15,12 @@ Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重
 
 运行模式:
   python discord_archiver.py                         # 常规：今日增量 + 历史偿还一个月
-  python discord_archiver.py --archive-monthly       # 月度归档（每月 1 日由 workflow 触发）
 """
 
 import argparse
 import json
 import os
-import subprocess
 import sys
-import tarfile
 import time
 import logging
 from datetime import datetime, timezone
@@ -959,83 +956,6 @@ class DiscordArchiver:
 
         logger.info(f'Daily stats saved for {len(self.daily_stats)} day(s)')
 
-    # ── Monthly archive ───────────────────────────────────────────────────────
-
-    def run_monthly_archive(self):
-        """
-        Package last month's JSONL → GitHub Releases, generate monthly report,
-        then remove archived JSONL from git. Called on 1st of each month.
-        """
-        now = datetime.now(timezone.utc)
-        arch_year, arch_month = _prev_month(now.year, now.month)
-        month_str = _mstr(arch_year, arch_month)
-        logger.info(f'Starting monthly archive for {month_str}...')
-
-        # Collect all JSONL files for this month across all channels
-        channels_dir = self.data_dir / 'channels'
-        jsonl_files = []
-        if channels_dir.exists():
-            for ch_dir in sorted(channels_dir.iterdir()):
-                if ch_dir.is_dir():
-                    jsonl_files.extend(sorted(ch_dir.glob(f'{month_str}-*.jsonl')))
-
-        if not jsonl_files:
-            logger.info(f'No JSONL files found for {month_str}, nothing to archive')
-            return
-
-        # Release tag/artifact 按 guild 隔离：Global 沿用旧命名（向后兼容），
-        # 其余服务器加 guild 后缀，避免 release tag 互相覆盖。
-        guild_suffix = '' if self.guild_id == GLOBAL_GUILD_ID else f'-{self.guild_id}'
-
-        # Create tarball
-        archive_name = f'discord-archive-{month_str}{guild_suffix}.tar.gz'
-        archive_path = self.data_dir / archive_name
-        with tarfile.open(archive_path, 'w:gz') as tar:
-            for f in jsonl_files:
-                tar.add(f, arcname=str(f.relative_to(self.data_dir)))
-        size_kb = archive_path.stat().st_size // 1024
-        logger.info(f'Created {archive_name}: {len(jsonl_files)} files, {size_kb} KB')
-
-        # Upload to GitHub Releases
-        repo = os.environ.get('GITHUB_REPOSITORY', '')
-        tag = f'discord-archive-{month_str}{guild_suffix}'
-        try:
-            # Delete any existing release/tag first (idempotent re-runs)
-            subprocess.run(
-                ['gh', 'release', 'delete', tag, '--yes', '--cleanup-tag'],
-                cwd=_REPO_ROOT, capture_output=True,
-            )
-            subprocess.run([
-                'gh', 'release', 'create', tag,
-                str(archive_path),
-                '--title', f'Discord Archive {month_str}',
-                '--notes', (
-                    f'Full Discord message archive for {month_str}.\n'
-                    f'{len(jsonl_files)} daily JSONL files, {size_kb} KB compressed.'
-                ),
-                '--repo', repo,
-            ], cwd=_REPO_ROOT, check=True)
-            logger.info(f'Uploaded to GitHub Releases: {tag}')
-        except subprocess.CalledProcessError as e:
-            logger.error(f'GitHub Release upload failed: {e}')
-            raise
-        finally:
-            archive_path.unlink(missing_ok=True)
-
-        # Remove archived JSONL from git
-        removed = 0
-        for f in jsonl_files:
-            try:
-                subprocess.run(
-                    ['git', 'rm', '-f', str(f)],
-                    cwd=_REPO_ROOT, check=True, capture_output=True,
-                )
-                removed += 1
-            except subprocess.CalledProcessError:
-                f.unlink(missing_ok=True)
-                removed += 1
-        logger.info(f'Removed {removed} JSONL files from git for {month_str}')
-
     # ── Main pipeline ─────────────────────────────────────────────────────────
 
     def run(self):
@@ -1214,19 +1134,13 @@ class DiscordArchiver:
 def main():
     parser = argparse.ArgumentParser(description='Discord data archiver v2')
     parser.add_argument(
-        '--archive-monthly', action='store_true',
-        help='Run monthly archive: package → GitHub Releases, remove old JSONL'
-    )
-    parser.add_argument(
         '--history-only', action='store_true',
         help='Skip incremental, dedicate full runtime to historical backfill'
     )
     args = parser.parse_args()
 
     archiver = DiscordArchiver()
-    if args.archive_monthly:
-        archiver.run_monthly_archive()
-    elif args.history_only:
+    if args.history_only:
         archiver.run_history_only()
     else:
         archiver.run()

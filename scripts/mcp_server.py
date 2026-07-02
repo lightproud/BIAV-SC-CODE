@@ -27,8 +27,6 @@ from pathlib import Path
 SCRIPTS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 
-REPO = SCRIPTS_DIR.parent
-
 try:
     from mcp.server.fastmcp import FastMCP
 except ImportError:

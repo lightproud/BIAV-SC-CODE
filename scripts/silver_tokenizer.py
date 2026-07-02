@@ -20,7 +20,6 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 
 _LATIN = re.compile(r"[a-z][a-z0-9']{1,}")
-_CJK_CHAR = re.compile(r"[一-鿿぀-ヿ가-힣]")
 _CJK_RUN = re.compile(r"[一-鿿぀-ヿ가-힣]{2,}")
 _PURE_CJK = re.compile(r"^[一-鿿]{2,8}$")
 

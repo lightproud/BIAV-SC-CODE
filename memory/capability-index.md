@@ -14,7 +14,7 @@
 | CI 自动化工作流（编排入口·定时/事件平面） | 29 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 22 |
 | news 采集器脚本 | 27 |
-| wiki 数据脚本 | 7 |
+| wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
@@ -199,10 +199,8 @@
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
-## wiki 数据脚本（7）
+## wiki 数据脚本（6）
 
-- **`build_banner_character_index.py`** _[活:cli]_ — 构建卡池角色索引。  
-  `projects/wiki/scripts/build_banner_character_index.py`
 - **`build_drop_index.py`** _[活:cli]_ — 构建掉落物索引。  
   `projects/wiki/scripts/build_drop_index.py`
 - **`check_version.py`** _[活:cli+workflow]_ — 检测 Morimens 客户端版本更新。  

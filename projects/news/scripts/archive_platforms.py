@@ -44,7 +44,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sources import ARCHIVE_PLATFORMS, normalize_source, archive_platform
+from sources import ARCHIVE_PLATFORMS, archive_platform
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'

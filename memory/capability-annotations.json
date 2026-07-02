@@ -29,8 +29,7 @@
     "check_version.py": "检测 Morimens 客户端版本更新。",
     "extract_client_data.py": "从客户端解包提取结构化游戏数据。",
     "decrypt_and_extract.py": "客户端解密 + 解包流水线（经子进程/手动调用）。",
-    "build_drop_index.py": "构建掉落物索引。",
-    "build_banner_character_index.py": "构建卡池角色索引。"
+    "build_drop_index.py": "构建掉落物索引。"
   },
   "workflows": {
     "backfill-gap.yml": "手动回填指定时间段的数据缺口。",
