@@ -7,13 +7,15 @@
 且是 6 源假 degraded 一类事故的温床。本脚本把平级历史一次性迁入规范落点，
 落点由 archive_layout（布局单一真相源）解析，与现行写方完全一致。
 
-迁移范围（仅「新数据已走分层」的平台；taptap 系写方仍平铺、不在本次范围）：
+迁移范围：
   steam/*.json             -> steam/global/review/
   official/*.json          -> steam/global/news/      （目录清空后移除）
   steam_discussion/*.json  -> steam/global/discussion/（目录清空后移除）
   appstore/*.json          -> appstore/global/
   google_play/*.json       -> google_play/global/
   youtube/*.json           -> youtube/global/video/
+  taptap/*.json            -> taptap/cn/post/         （裁定⑧：taptap 区服=cn）
+  taptap_review/*.json     -> taptap/cn/review/       （目录清空后移除）
 
 区服正确性依据：历史文件全部来自 global 侧 app/频道（REGION_APPS 的 jp 侧
 2026-06-17 才接入、且自始即分层落盘，不存在平级 jp 历史）。
@@ -41,7 +43,8 @@ ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 
 # 待归位的源（顺序无关）；落点一律问 archive_layout，不在此重复布局知识
 MIGRATE_SOURCES = ['steam', 'official', 'steam_discussion',
-                   'appstore', 'google_play', 'youtube']
+                   'appstore', 'google_play', 'youtube',
+                   'taptap', 'taptap_review']
 
 
 def _item_key(item: dict) -> str:

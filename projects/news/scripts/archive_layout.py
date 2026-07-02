@@ -53,9 +53,14 @@ DEFAULT_REGION: dict[str, str] = {
     'appstore': 'global',
     'google_play': 'global',
     'youtube': 'global',
+    # taptap 区服 = cn（守密人 2026-06-21 裁定⑧：国服预约+测试服合并 taptap/cn/，
+    # 条目内 app_id 字段区分；非 global）
+    'taptap': 'cn',
 }
 DEFAULT_SUBTYPE: dict[str, str] = {
     'youtube': 'video',
+    # taptap 多子类显式（裁定⑤）：帖子 post / 评论 review（review 归 taptap_review 源）
+    'taptap': 'post',
 }
 
 
