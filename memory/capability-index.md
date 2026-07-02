@@ -211,7 +211,7 @@
   `projects/wiki/scripts/extract_client_data.py`
 - **`generate_rss.py`** _[活:cli+workflow]_ — generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.  
   `projects/wiki/scripts/generate_rss.py`
-- **`validate_data.py`** _[活:cli+workflow]_ — 校验 wiki 数据库全部 JSON。  
+- **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
 ## MCP 知识层工具（编排入口·AI 动态平面）（4）

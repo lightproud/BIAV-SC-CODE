@@ -839,6 +839,7 @@
       "summary": "Validate all wiki JSON data files against schemas and cross-references.",
       "planes": [
         "cli",
+        "command",
         "workflow"
       ],
       "status": "live",
@@ -889,7 +890,7 @@
     {
       "id": "validate-data",
       "path": ".claude/commands/validate-data.md",
-      "summary": "Validate all JSON data files in the wiki database",
+      "summary": "Validate the wiki data baseline (realigned 2026-07-02; the legacy",
       "note_zh": "校验 wiki 数据库全部 JSON 数据文件。"
     }
   ],
@@ -924,7 +925,7 @@
     {
       "id": "game",
       "path": "projects/game/",
-      "summary": "> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 game 重定位 — **退主线**）",
+      "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移修复：config/ 依赖描述对齐实际 6 个配置文件、output/ 状态订正。上次 2026-04-26 写入 v2.0 game 重定位 — **退主线**）",
       "note_zh": "衍生游戏，退出主线，守密人个人兴趣，不主线派发。"
     },
     {
@@ -936,13 +937,13 @@
     {
       "id": "site",
       "path": "projects/site/",
-      "summary": "> 最后更新：2026-04-26 by 艾瑞卡（Code-site 维护会话，D-fix + D-mission + 自审清理 + D-biav 落地后状态同步）",
+      "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移修复：对外两页使命段由「三新使命」",
       "note_zh": "对外门户：静态站 public/ + 设计令牌 design/。"
     },
     {
       "id": "wiki",
       "path": "projects/wiki/",
-      "summary": "> 最后更新：2026-06-09 by 主控台（艾瑞卡会话，状态核验刷新；实时进度权威在 `memory/project-status.md`）",
+      "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移全面修复：正文重写为现行新链状态。",
       "note_zh": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。"
     }
   ]
