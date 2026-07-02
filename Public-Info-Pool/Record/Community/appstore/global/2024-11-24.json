@@ -2,7 +2,7 @@
   "date": "2024-11-24",
   "archived_at": "2026-07-02T02:40:55.936769+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "iPad怎么用谷歌登陆呢？",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "iPad怎么用谷歌登陆呢？",
+      "summary": "怎么使用Goole登陆啊？",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2024-11-23T21:03:53-07:00",
+      "url": "",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "文火烧",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

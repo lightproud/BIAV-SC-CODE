@@ -2,7 +2,7 @@
   "date": "2025-01-15",
   "archived_at": "2026-07-02T02:40:55.891856+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "好玩",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "好玩",
+      "summary": "很有意思",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2025-01-14T22:11:04-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "wren0123",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

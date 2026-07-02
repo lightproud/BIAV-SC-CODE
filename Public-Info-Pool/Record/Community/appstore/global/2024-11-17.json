@@ -2,7 +2,7 @@
   "date": "2024-11-17",
   "archived_at": "2026-07-02T02:40:55.893527+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "网络太卡",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "网络太卡",
+      "summary": "你们的网络真的好卡可不可以优化一下！！！！！！！！",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2024-11-17T07:49:27-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "不研究永动机不改名",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

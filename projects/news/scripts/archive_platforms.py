@@ -44,7 +44,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sources import ARCHIVE_PLATFORMS, archive_platform
+from sources import ARCHIVE_PLATFORMS, normalize_source
+import archive_layout
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
@@ -95,15 +96,9 @@ def item_date_utc8(item: dict, fallback: str) -> str:
 def archive_path(platform: str, region: str | None, subtype: str | None, date_str: str) -> Path:
     """归档落点：``<平台>[/<区服>][/<类型>]/YYYY-MM-DD.json``。
 
-    甲方案（2026-06-21 命名规范）：item 带 ``region`` / ``archive_subtype`` 字段才分层，
-    缺省则省略该层、回落旧扁平 ``<平台>/YYYY-MM-DD.json``——现有不带字段的源零破坏。
-    """
-    parts = [platform]
-    if region:
-        parts.append(region)
-    if subtype:
-        parts.append(subtype)
-    return ARCHIVE_DIR.joinpath(*parts) / f'{date_str}.json'
+    路径构造逻辑收编进 archive_layout（布局单一真相源，2026-07-02 P0-1）；
+    本函数保留签名，仅拼接本模块的归档根。"""
+    return ARCHIVE_DIR / archive_layout.build_relpath(platform, region, subtype, date_str)
 
 
 def load_existing_archive(platform: str, region: str | None, subtype: str | None, date_str: str) -> dict:
@@ -175,11 +170,14 @@ def archive_all(target_date: str | None, fallback_date: str) -> dict[str, int]:
     """
     groups: dict[tuple[str, str | None, str | None, str], list[dict]] = defaultdict(list)
     for raw in load_news():
-        src = archive_platform(raw.get('source', 'unknown'))  # 甲方案：steam 家族折叠到 steam/ 归档
-        if src == 'discord':  # 独立归档器处理
+        norm = normalize_source(raw.get('source', 'unknown'))
+        if norm == 'discord':  # 独立归档器处理
             continue
-        region = raw.get('region') or None             # 甲方案：区服字段（global/jp…）
-        subtype = raw.get('archive_subtype') or None   # 甲方案：内容类型字段（review/news…）
+        # 落点解析走布局单一真相源：折叠（official→steam/news 等）须吃**折叠前**
+        # 源名才能给对默认类型；无 region 字段的分层平台补默认区服，防止回填/
+        # 缺字段条目在历史迁移后又长出平级文件（lesson #42）。
+        src, region, subtype = archive_layout.resolve_write_layout(
+            norm, raw.get('region') or None, raw.get('archive_subtype') or None)
         d = item_date_utc8(raw, fallback_date)
         if target_date and d != target_date:
             continue

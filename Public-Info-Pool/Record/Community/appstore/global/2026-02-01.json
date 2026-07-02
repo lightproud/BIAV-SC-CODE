@@ -2,7 +2,7 @@
   "date": "2026-02-01",
   "archived_at": "2026-07-02T02:40:55.900580+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "My duty",
@@ -17,6 +17,36 @@
       "lang": "en",
       "platform_region": "us",
       "region": "global"
+    },
+    {
+      "title": "A Wonderful Game",
+      "summary": "I started playing the game around the second anniversary, and I can’t recommend it enough. The story is engaging, and doesn’t feel stale, the gacha is very fair and being able to get a free duplicate of a character a month helps make the experience less stressful. I also appreciate how the dailies and weeklies aren’t too time consuming, it makes this game feel like a game instead of a job or chore. The combat is pretty tough but rewarding, and I’ve never felt like I “needed” a character to get through a problem.",
+      "source": "appstore",
+      "platform_region": "us",
+      "lang": "",
+      "time": "2026-02-01T12:45:53-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "J.Pal2004",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "My duty",
+      "summary": "It’s my duty to advertise this game",
+      "source": "appstore",
+      "platform_region": "us",
+      "lang": "",
+      "time": "2026-02-01T08:42:33-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "ghikjkho",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

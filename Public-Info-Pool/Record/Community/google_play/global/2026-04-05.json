@@ -2,7 +2,7 @@
   "date": "2026-04-05",
   "archived_at": "2026-06-30T03:33:24.848708+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 makasih mori, berkatmu aku bisa mulai me",
@@ -17,6 +17,16 @@
       "lang": "id",
       "platform_region": "id",
       "region": "global"
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-03T16:58:27",
+      "lang": "zh",
+      "title": "[Google Play 好评] ★5 玩了几下 卡卡的 但是剧情真的好看❤️",
+      "summary": "玩了几下 卡卡的 但是剧情真的好看❤️",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
+      "author": "Trevis Tan Weguan",
+      "engagement": 0
     }
   ],
   "region": "global"

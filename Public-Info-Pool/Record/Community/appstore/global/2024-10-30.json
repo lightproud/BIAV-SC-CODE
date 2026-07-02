@@ -2,7 +2,7 @@
   "date": "2024-10-30",
   "archived_at": "2026-07-02T02:40:55.893760+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "5星",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "5星",
+      "summary": "玩法 美術 劇情都很優秀的一款遊戲",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2024-10-29T21:26:26-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "play san",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

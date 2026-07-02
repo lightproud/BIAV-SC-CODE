@@ -2,7 +2,7 @@
   "date": "2024-04-16",
   "archived_at": "2026-07-02T02:40:55.929373+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "希望加入自動戰鬥",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "希望加入自動戰鬥",
+      "summary": "卡片戰鬥希望可以加入自動操作、每次打關都是手動太攰了 😪",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2024-04-15T18:44:26-07:00",
+      "url": "",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "fg wu",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

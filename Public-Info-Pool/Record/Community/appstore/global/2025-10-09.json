@@ -2,7 +2,7 @@
   "date": "2025-10-09",
   "archived_at": "2026-07-02T02:40:55.890398+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "這遊戲不值4.6分",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "這遊戲不值4.6分",
+      "summary": "他應該更高分，太好玩了，又好看又好玩，五星好評",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2025-10-09T08:30:01-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "LLL073",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

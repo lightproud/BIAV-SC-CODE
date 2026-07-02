@@ -2,7 +2,7 @@
   "date": "2025-04-17",
   "archived_at": "2026-07-02T02:40:55.914310+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "พัฒนาต่อไปครับ",
@@ -17,6 +17,21 @@
       "lang": "th",
       "platform_region": "th",
       "region": "global"
+    },
+    {
+      "title": "พัฒนาต่อไปครับ",
+      "summary": "สนุกดีครับมีภาษาไทยด้วยเเต่ยังไม่เเปลดีสักเท่าไหรตัวเกมเล่นยากอยู่คับเเต่รวมๆคือใช้ได้เลย",
+      "source": "appstore",
+      "platform_region": "th",
+      "lang": "",
+      "time": "2025-04-17T09:45:02-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "ชานมคุงง",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

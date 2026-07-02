@@ -2,7 +2,7 @@
   "date": "2026-04-11",
   "archived_at": "2026-07-02T06:38:00.962814+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Peak, dari segi apapun sudah bagus mungk",
@@ -31,6 +31,16 @@
       "lang": "it",
       "platform_region": "it",
       "region": "global"
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-09T07:33:17",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Great game, interesting and at times dif",
+      "summary": "Great game, interesting and at times difficult gameplay. Story is actually not bad and they really do lean into the horror and take it seriously. Character designs are interesting and unique. And it's very generous for a gacha game which is nice!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
+      "author": "Michael Peyton-Lebed",
+      "engagement": 0
     }
   ],
   "region": "global"

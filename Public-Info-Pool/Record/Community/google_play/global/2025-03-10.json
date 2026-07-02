@@ -2,7 +2,7 @@
   "date": "2025-03-10",
   "archived_at": "2026-07-02T06:38:00.838275+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 game nice, jalan cerita dia pun menarik",
@@ -17,6 +17,19 @@
       "lang": "ms",
       "platform_region": "my",
       "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 game nice, jalan cerita dia pun menarik",
+      "summary": "game nice, jalan cerita dia pun menarik untuk dia layan",
+      "source": "google_play",
+      "time": "2025-03-09T20:49:23",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ms",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "Kazuki Yuuki",
+      "tags": [],
+      "lang": "ms",
+      "platform_region": "my"
     }
   ],
   "region": "global"

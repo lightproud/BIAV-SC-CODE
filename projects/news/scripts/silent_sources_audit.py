@@ -26,7 +26,6 @@ silent_sources_audit.py — 沉默源审计（基于归档历史）
 
 import argparse
 import json
-import re
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -34,6 +33,7 @@ from pathlib import Path
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARCHIVE_SOURCES
+import archive_layout
 
 ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord' / 'activity_daily'
@@ -46,25 +46,9 @@ ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
 DEGRADED_THRESHOLD = 7
 DORMANT_THRESHOLD = 30
 
-# 归档文件名 = 日期（区服/类型分层后子目录里还有 state/manifest 类文件，须过滤）
-_DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
-
-# 区服/类型分层落点（甲方案 2026-06-21 命名规范，2026-06-22 起实施）。
-# steam 家族与 taptap 评论流折叠进宿主平台的类型子目录，审计须到新落点找信号，
-# 否则会把「搬了新家」误判成「沉默」（2026-07-02 修复：6 源假 degraded）。
-#   源 → (宿主平台, 类型子目录)；扫 <宿主>/<任意区服>/<类型>/*.json + 本源旧平级目录。
-FOLDED_SOURCE_LAYOUT = {
-    'steam':            ('steam', 'review'),      # steam_review 经 SOURCE_ALIASES 归一为 steam
-    'official':         ('steam', 'news'),
-    'steam_discussion': ('steam', 'discussion'),
-    'taptap_review':    ('taptap', 'review'),
-}
-
-# 宿主平台下被其他源认领的类型子目录（宿主自身默认递归扫描时须避开，防重复计数）
-_CLAIMED_SUBTYPES: dict[str, set[str]] = {}
-for _src, (_plat, _sub) in FOLDED_SOURCE_LAYOUT.items():
-    if _src != _plat:
-        _CLAIMED_SUBTYPES.setdefault(_plat, set()).add(_sub)
+# 布局知识（折叠映射 / 区服递归 / 日期文件过滤）收编进 archive_layout 单一真相源
+# （2026-07-02 P0-1）；本模块只管健康分级，遍历全部委派。
+_DATE_STEM = archive_layout.DATE_STEM
 
 
 def _platform_dir(source: str) -> Path:
@@ -72,27 +56,11 @@ def _platform_dir(source: str) -> Path:
 
 
 def _iter_archive_files(source: str):
-    """产出某源的全部归档日期文件——旧平级布局 + 区服/类型分层新布局。"""
+    """产出某源的全部归档日期文件——遍历逻辑在 archive_layout（布局单一真相源）。"""
     if source == 'discord':
         yield from DISCORD_ARCHIVE_DIR.glob('*.json')
         return
-    if source in FOLDED_SOURCE_LAYOUT:
-        legacy = ARCHIVE_DIR / source
-        if legacy.exists():
-            yield from legacy.glob('*.json')
-        platform, subtype = FOLDED_SOURCE_LAYOUT[source]
-        base = ARCHIVE_DIR / platform
-        if base.exists():
-            yield from base.glob(f'*/{subtype}/*.json')
-        return
-    pdir = ARCHIVE_DIR / source
-    if not pdir.exists():
-        return
-    claimed = _CLAIMED_SUBTYPES.get(source, set())
-    for f in pdir.rglob('*.json'):
-        if f.parent.name in claimed:
-            continue  # 该类型子目录归折叠源（如 taptap/*/review 归 taptap_review）
-        yield f
+    yield from archive_layout.iter_source_files(source, ARCHIVE_DIR)
 
 
 def audit_source(source: str) -> dict:

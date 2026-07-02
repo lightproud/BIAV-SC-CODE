@@ -26,9 +26,13 @@ import shutil
 import tarfile
 from datetime import date
 from pathlib import Path
+import sys
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
+
+sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
+import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
 
 CHARACTERS_SRC = REPO / "projects/wiki/data/processed/characters.json"
 SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
@@ -193,17 +197,23 @@ def build_sources() -> int:
     for name, info in sorted(platforms.items()):
         total = info.get("total_items", 0)
         level = info.get("level", "unknown")
-        # full-archive layer location (本体原地，仅指针)。双布局感知：迁移后
-        # 在 Public-Info-Pool/Record/Community，迁移前回落旧 projects/news/data。
-        new_rel = f"Public-Info-Pool/Record/Community/{name}"
+        # full-archive layer location (本体原地，仅指针)。布局感知走 archive_layout
+        # 单一真相源（2026-07-02 P0-1）：折叠源（official→steam/global/news 等）指向
+        # 分层落点；回落顺序 = 分层落点 → 平级源目录 → 迁移前旧根 → 跳过。
+        _plat, _region, _subtype = archive_layout.resolve_write_layout(name)
+        layered_rel = "Public-Info-Pool/Record/Community/" + "/".join(
+            p for p in (_plat, _region, _subtype) if p)
+        flat_rel = f"Public-Info-Pool/Record/Community/{name}"
         old_rel = "projects/news/data/discord" if name == "discord" \
             else f"projects/news/data/platforms/{name}"
-        if (REPO / new_rel).exists():
-            archive = "/" + new_rel + "/"
+        if (REPO / layered_rel).exists():
+            archive = "/" + layered_rel + "/"
+        elif (REPO / flat_rel).exists():
+            archive = "/" + flat_rel + "/"
         elif (REPO / old_rel).exists():
             archive = "/" + old_rel + "/"
         else:
-            # 放指针不放本体：两布局均无此源档案 → 跳过，避免指针落空。
+            # 放指针不放本体：各布局均无此源档案 → 跳过，避免指针落空。
             continue
         output = f"/projects/news/output/{name}-latest.json"
 

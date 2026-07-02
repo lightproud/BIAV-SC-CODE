@@ -2,7 +2,7 @@
   "date": "2024-11-22",
   "archived_at": "2026-07-02T02:40:55.910620+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "Nice game",
@@ -17,6 +17,21 @@
       "lang": "en",
       "platform_region": "sg",
       "region": "global"
+    },
+    {
+      "title": "Nice game",
+      "summary": "Game hay, combat đã tay. Chưa kể dù cày chay nhưng gacha ra đến đâu t vẫn dư sức đú đến đó. Des char ngon ngon ngon, e yêu Goliathhh 🫶🏻",
+      "source": "appstore",
+      "platform_region": "sg",
+      "lang": "",
+      "time": "2024-11-22T04:28:14-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "Naib là ai",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

@@ -2,7 +2,7 @@
   "date": "2026-06-07",
   "archived_at": "2026-07-02T02:40:55.897036+00:00",
   "source": "appstore",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "Good game",
@@ -59,6 +59,32 @@
       "lang": "en",
       "platform_region": "au",
       "region": "global"
+    },
+    {
+      "title": "Good game",
+      "summary": "In love with the gameplay, this game also has a very lovely artstyle and story. Can’t wait for full English translation!",
+      "source": "appstore",
+      "time": "2026-06-07T00:45:21-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "\\^3^/",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us"
+    },
+    {
+      "title": "Hidden Gem Game!!!?",
+      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
+      "source": "appstore",
+      "time": "2026-06-07T01:18:16-07:00",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "BoBoss375",
+      "tags": [],
+      "lang": "th",
+      "platform_region": "th"
     }
   ],
   "region": "global"

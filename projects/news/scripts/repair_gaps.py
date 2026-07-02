@@ -2,8 +2,13 @@
 """
 repair_gaps.py — Detect and report date gaps in platform archives.
 
-Scans data/platforms/{source}/YYYY-MM-DD.json for missing dates between
-the earliest and latest archive file for each platform.
+Scans the Public-Info-Pool/Record/Community archive (flat legacy files plus
+the region/type-layered layout, via the archive_layout SSOT) for missing
+dates between the earliest and latest archive file for each registered source.
+
+2026-07-02 修复：本工具此前仍扫已迁空的旧根 projects/news/data/platforms/——
+断档检测自 2026-06-21 数据根迁移起整体失明（天天报 No gaps 是因为在扫空屋）。
+现改为按注册源经 archive_layout 遍历新根。
 
 Writes a gap_report.json for monitoring instead of creating empty placeholder
 files (which inflate coverage metrics and mislead backfill scripts).
@@ -17,37 +22,43 @@ Usage:
 import json
 import argparse
 import logging
+import sys
 from datetime import datetime, date, timezone, timedelta
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sources import KNOWN_SOURCES, INDEPENDENT_ARCHIVE_SOURCES, LEGACY_SOURCES
+import archive_layout
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
+ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
+# 工作报告仍留 projects/news/data/（Record/ 是档案层，不放监控产物）
+REPORT_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'gap_report.json'
+
+# discord 有独立归档器与逐频道语义，不参与按日断档检测
+GAP_SOURCES = [s for s in (list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
+                           + list(LEGACY_SOURCES)) if s != 'discord']
 
 
 def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
-    """Scan all platform archives and return {source: [missing_date_str, ...]}."""
+    """Scan all registered source archives and return {source: [missing_date_str, ...]}."""
     gaps: dict[str, list[str]] = {}
 
-    for platform_dir in sorted(ARCHIVE_DIR.iterdir()):
-        if not platform_dir.is_dir():
-            continue
-
-        # Collect all YYYY-MM-DD.json dates
+    for source in GAP_SOURCES:
         dates: list[date] = []
-        for f in platform_dir.glob('????-??-??.json'):
+        for f in archive_layout.dated_files(source, ARCHIVE_DIR):
             try:
-                d = date.fromisoformat(f.stem)
-                dates.append(d)
+                dates.append(date.fromisoformat(f.stem))
             except ValueError:
                 continue
+        dates = sorted(set(dates))  # 分层后同日可有多区服文件，去重再判连续性
 
         if len(dates) < 2:
             continue
 
-        dates.sort()
         start = since if since and since > dates[0] else dates[0]
         end = dates[-1]
         date_set = set(dates)
@@ -60,14 +71,14 @@ def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
             current += timedelta(days=1)
 
         if missing:
-            gaps[platform_dir.name] = missing
+            gaps[source] = missing
 
     return gaps
 
 
 def write_gap_report(gaps: dict[str, list[str]]):
     """Write a JSON report of detected gaps for monitoring, without creating placeholder files."""
-    report_path = ARCHIVE_DIR.parent / 'gap_report.json'
+    report_path = REPORT_PATH
     report = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
         'total_gaps': sum(len(v) for v in gaps.values()),
