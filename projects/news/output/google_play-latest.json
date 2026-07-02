@@ -1,8 +1,9 @@
 {
-  "collected_at": "2026-07-02T06:37:04.992386+00:00",
+  "contract_version": 1,
+  "collected_at": "2026-07-02T19:16:49.923272+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 141,
+  "item_count": 138,
   "items": [
     {
       "source": "google_play",
@@ -32,16 +33,6 @@
       "summary": "another disaster pull session why do we need to lost twice and not just make 50/50 your ten pulls is expensive than main stream games but u have lower rate of getting banner characters. the game is good though outside of its very predatory gacha.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2e4926de-2b3f-4f29-b92c-01cf3606b69c",
       "author": "Vermy Balasuela",
-      "engagement": 5
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-14T14:35:26",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 レビュー更新します。課題タップして画面変わる直前、ホームに居る来客のキャラクター",
-      "summary": "レビュー更新します。課題タップして画面変わる直前、ホームに居る来客のキャラクターの後ろに四角い蛍光ピンクが出現します。これは何かのバグですか? キャラによってはコイツスキルどうゆう事や?ってやついるけど理解力ある人は大丈夫なんじゃなかろうか。ガチャの排出率はなかなか出ん時もあるくらい。ボスごとに止まって育成して突破して次の章みたいな感じ。 追記‐毒解除キャラ欲しい切実にちょっとでもいいから減らしたい",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a28b20be-0fe2-4911-924a-a9f3ab3c8bfb",
-      "author": "*もひ*",
       "engagement": 5
     },
     {
@@ -246,26 +237,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-02T17:49:17",
-      "lang": "ja",
-      "title": "[Google Play 差评] ★1 コラボ前しか手に入らないコラボアイコンがあったりして萎え",
-      "summary": "コラボ前しか手に入らないコラボアイコンがあったりして萎え",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-928d459e-a961-4045-b1e0-914c6883e775",
-      "author": "おっくうや",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-02T15:34:23",
-      "lang": "ja",
-      "title": "[Google Play 差评] ★1 リセマラもろくにできないお手本のようなダメなゲーム。普通コラボ目的で始めようとし",
-      "summary": "リセマラもろくにできないお手本のようなダメなゲーム。普通コラボ目的で始めようとした人なら、そのコラボキャラを最初に引いてやりたいでしょうに。新規取り込む気ないよね。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-06909e8c-63a0-4faf-86ef-90fe61fe5f4d",
-      "author": "amakasu 0715",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-18T17:20:37",
       "lang": "zh",
       "title": "[Google Play 好评] ★5 觉得还行",
@@ -342,6 +313,36 @@
       "summary": "自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色，ai像個智商三歲的幼兒，總是超維前放。 聖心黑羽循環不會就算了，神母放大前ai又不會調怒濤，本質垃圾",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK#gp-82429977-31ce-40dd-93ec-c74503167260",
       "author": "fung tsan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-01T16:38:19",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 the character design is nice. my issues",
+      "summary": "the character design is nice. my issues would be that some types of teams arent explained like its a bit difficult to understand how to build a team for like poison or counter properly without an guide from a third source. the other is the game constantly freezes when i complete a psyche deepdive which im forced to close and open the game again. the second one is more of an issue so fix this and ill add stars",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f9ca3c29-c2eb-48a1-b3c5-db8af9bce342",
+      "author": "AzizMain",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-01T16:19:17",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 this game is a gem",
+      "summary": "this game is a gem",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-c617cccb-bae8-41db-8a3e-602e482de7b5",
+      "author": "HaruTheFrog",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-01T15:50:38",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 this game is way too good, its totally d",
+      "summary": "this game is way too good, its totally different from all the usual gacha games! the story is actually different and unique and i really love it. gameplay: 8.9/10 characters: 10/10 voice acting: 10/10 story: 10/10 optimization pc: 10/10 optimization mobile: 7.5/10 overall a very good game.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-b3e4a24f-856e-48d0-8ea8-9c5022ce7c6b",
+      "author": "chibu squish",
       "engagement": 0
     },
     {
@@ -796,16 +797,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-02T14:20:45",
-      "lang": "th",
-      "title": "[Google Play 好评] ★5 เพิ่มภาษาไทยทีคนไทยแห่กันมาตึ้ม",
-      "summary": "เพิ่มภาษาไทยทีคนไทยแห่กันมาตึ้ม",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-21a3e14f-d656-4caa-9f5f-e3f8806f6097",
-      "author": "BBB BBB",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-30T19:30:16",
       "lang": "id",
       "title": "[Google Play 好评] ★5 great game,and the collabs?perfect,i lov",
@@ -1016,6 +1007,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-01T09:29:20",
+      "lang": "fr",
+      "title": "[Google Play 好评] ★5 peak game",
+      "summary": "peak game",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-3029aa0d-5b35-4d8e-bea3-124f6105ae6a",
+      "author": "Hamza",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-14T14:42:24",
       "lang": "fr",
       "title": "[Google Play 好评] ★5 Exceptionnel",
@@ -1082,36 +1083,6 @@
       "summary": "Muy buen juego, la vdd, se lo sugiero",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-fe89f6f2-994e-4cb9-84c1-b44f1d787c36",
       "author": "Daniel Miller",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-02T13:58:20",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 good game.",
-      "summary": "good game.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-095911b2-08d5-4d92-83ce-c56ab3c4e909",
-      "author": "Santiago Nahuel Berdun",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-02T13:27:17",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 lo probare por la colaboración con saya",
-      "summary": "lo probare por la colaboración con saya no UTA, pero que este traducido al español aunque no sea la más buena traducción, ya me compra, a pesar de tener pocos recursos quieren que el juego salga adelante y eso me gusta",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-4e689b37-3dc5-4dd1-aa56-512f25a6f98e",
-      "author": "Juan Esteban Julio Montiel",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-02T07:49:25",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 Que juegazo. Me gusta mucho el gameplay.",
-      "summary": "Que juegazo. Me gusta mucho el gameplay. es muy divertido. el diseño de personajes es precioso no hay uno que no me guste y la musica es bastante buena. Hay muchas recompensas y eventos. las colaboraciones tambien son muy buenas. La historia es lo que mas me gusto, el misterio, los mitos de Lovecraft y suspenso te atrapan. Definitivamente lo recomiendo.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-0a549dbd-721e-422f-bae8-c9397a2d6159",
-      "author": "Jose Luis",
       "engagement": 0
     },
     {

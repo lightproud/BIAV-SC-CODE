@@ -1,6 +1,6 @@
 {
   "date": "2026-04-20",
-  "archived_at": "2026-07-02T06:38:00.813782+00:00",
+  "archived_at": "2026-07-02T19:17:36.377056+00:00",
   "source": "google_play",
   "item_count": 22,
   "items": [
@@ -17,6 +17,19 @@
       "lang": "es",
       "platform_region": "es",
       "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 la verdad este juego lo tiene todo,es fá",
+      "summary": "la verdad este juego lo tiene todo,es fácil de entender si historia, es tenso en situaciones diversas,las batallas son buenísimas y muy sugestivas. para agregar tiene español, inglés e idiomas asiáticos y demás por lo que no tiene ninguna barrera lingüística. en resumen sin quejas luego de una semana de juego.pd:actualizo esto para decirle a los desarrolladores una sugerencia pasiva sin ánimos de quejarme, me gustaría que añadieran un sistema de citas con los personajes, muchas gracias por todo.",
+      "source": "google_play",
+      "time": "2026-04-20T02:42:39",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es",
+      "engagement": 18,
+      "is_hot": false,
+      "author": "Hiro",
+      "tags": [],
+      "lang": "es",
+      "platform_region": "es"
     },
     {
       "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
@@ -45,6 +58,32 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
+      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
+      "source": "google_play",
+      "time": "2026-04-20T04:52:27",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
+      "engagement": 11,
+      "is_hot": false,
+      "author": "Kimchi Lee",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "tw"
+    },
+    {
+      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
+      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
+      "source": "google_play",
+      "time": "2026-04-20T04:52:27",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
+      "engagement": 11,
+      "is_hot": false,
+      "author": "Kimchi Lee",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "hk"
     },
     {
       "title": "[Google Play 差评] ★1 캐릭터 돌파가 15돌까지 있고 최근 들어 인플레도 커짐. 최근 캐릭은 명",
@@ -269,45 +308,6 @@
       "lang": "pt",
       "platform_region": "br",
       "region": "global"
-    },
-    {
-      "title": "[Google Play 好评] ★5 la verdad este juego lo tiene todo,es fá",
-      "summary": "la verdad este juego lo tiene todo,es fácil de entender si historia, es tenso en situaciones diversas,las batallas son buenísimas y muy sugestivas. para agregar tiene español, inglés e idiomas asiáticos y demás por lo que no tiene ninguna barrera lingüística. en resumen sin quejas luego de una semana de juego.pd:actualizo esto para decirle a los desarrolladores una sugerencia pasiva sin ánimos de quejarme, me gustaría que añadieran un sistema de citas con los personajes, muchas gracias por todo.",
-      "source": "google_play",
-      "time": "2026-04-20T02:42:39",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es",
-      "engagement": 18,
-      "is_hot": false,
-      "author": "Hiro",
-      "tags": [],
-      "lang": "es",
-      "platform_region": "es"
-    },
-    {
-      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "source": "google_play",
-      "time": "2026-04-20T04:52:27",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
-      "engagement": 11,
-      "is_hot": false,
-      "author": "Kimchi Lee",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "tw"
-    },
-    {
-      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "source": "google_play",
-      "time": "2026-04-20T04:52:27",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
-      "engagement": 11,
-      "is_hot": false,
-      "author": "Kimchi Lee",
-      "tags": [],
-      "lang": "zh",
-      "platform_region": "hk"
     }
   ],
   "region": "global"

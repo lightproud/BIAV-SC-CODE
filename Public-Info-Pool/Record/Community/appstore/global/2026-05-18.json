@@ -1,6 +1,6 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-07-02T02:40:55.898156+00:00",
+  "archived_at": "2026-07-02T19:17:36.392316+00:00",
   "source": "appstore",
   "item_count": 10,
   "items": [
@@ -30,20 +30,6 @@
       "tags": [],
       "lang": "en",
       "platform_region": "ph",
-      "region": "global"
-    },
-    {
-      "title": "Below average event",
-      "summary": "500 bucks for event. The anniversary is for spenders 250 pull of 60 dollars. This events are pay heavy. I recommend choas zero nightmare for a different games. Morimens sucks and probably one of the worst gacha games out and no wonder and YouTubers help me make decision how bad it is. Just started playing to. I quit. I recommend people to quit also. Game probably not going to last long from this point. If you enjoy the game. Then play.",
-      "source": "appstore",
-      "time": "2026-05-18T07:25:04-07:00",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14078610241",
-      "engagement": 1,
-      "is_hot": false,
-      "author": "BlueHolyKnight",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "us",
       "region": "global"
     },
     {
@@ -115,6 +101,20 @@
       "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
       "author": "Chros T",
       "engagement": 3
+    },
+    {
+      "title": "Below average event",
+      "summary": "500 bucks for event. The anniversary is for spenders 250 pull of 60 dollars. This events are pay heavy. I recommend choas zero nightmare for a different games. Morimens sucks and probably one of the worst gacha games out and no wonder and YouTubers help me make decision how bad it is. Just started playing to. I quit. I recommend people to quit also. Game probably not going to last long from this point. If you enjoy the game. Then play.",
+      "source": "appstore",
+      "time": "2026-05-18T07:25:04-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14078610241",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "BlueHolyKnight",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
     }
   ],
   "region": "global"

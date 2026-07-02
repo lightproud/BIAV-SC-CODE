@@ -1,6 +1,6 @@
 {
   "date": "2026-04-20",
-  "archived_at": "2026-07-02T02:40:55.898648+00:00",
+  "archived_at": "2026-07-02T19:17:36.392998+00:00",
   "source": "appstore",
   "item_count": 9,
   "items": [
@@ -44,20 +44,6 @@
       "tags": [],
       "lang": "th",
       "platform_region": "th",
-      "region": "global"
-    },
-    {
-      "title": "Amazing!",
-      "summary": "Fun gameplay, great art and graphics, and very generous.",
-      "source": "appstore",
-      "time": "2026-04-19T18:07:07-07:00",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13976647724",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "NicknameIsAlreadyTaken :/",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "us",
       "region": "global"
     },
     {
@@ -117,6 +103,20 @@
       "tags": [],
       "lang": "th",
       "platform_region": "th"
+    },
+    {
+      "title": "Amazing!",
+      "summary": "Fun gameplay, great art and graphics, and very generous.",
+      "source": "appstore",
+      "time": "2026-04-19T18:07:07-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-13976647724",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "NicknameIsAlreadyTaken :/",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
     },
     {
       "title": "Amazing!",

@@ -1,6 +1,6 @@
 {
   "date": "2026-06-04",
-  "archived_at": "2026-07-02T02:40:55.911105+00:00",
+  "archived_at": "2026-07-02T19:17:36.406924+00:00",
   "source": "appstore",
   "item_count": 4,
   "items": [
@@ -16,20 +16,6 @@
       "tags": [],
       "lang": "ko",
       "platform_region": "kr",
-      "region": "global"
-    },
-    {
-      "title": "No sound?",
-      "summary": "I have sound when I initially open the game but after I download resources all sound goes away. I already tried the fix button and I get the same issue.",
-      "source": "appstore",
-      "time": "2026-06-04T12:30:42-07:00",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14144100562",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "Actic-Slash",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "us",
       "region": "global"
     },
     {
@@ -57,6 +43,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us"
+    },
+    {
+      "title": "No sound?",
+      "summary": "I have sound when I initially open the game but after I download resources all sound goes away. I already tried the fix button and I get the same issue.",
+      "source": "appstore",
+      "time": "2026-06-04T12:30:42-07:00",
+      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14144100562",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "Actic-Slash",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
     }
   ],
   "region": "global"

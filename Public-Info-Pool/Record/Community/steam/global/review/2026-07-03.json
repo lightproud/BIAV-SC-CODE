@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-03",
+  "archived_at": "2026-07-02T19:17:36.469087+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] The game is a bit longer to start compared to some...",
+      "summary": "The game is a bit longer to start compared to some other gachas, I found myself having to skip the wonderfull story at the begening just to access the newest/limited content. Otherwise great game overall, I recommand you give it a try if you like a good story, the chtullu lore and truly unique characters",
+      "source": "steam_review",
+      "time": "2026-07-02T17:45:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198136815372/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198136815372",
+      "tags": [
+        "french"
+      ],
+      "language": "french",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1935,
+        "votes_up": 0,
+        "timestamp_created": 1783014300
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
+      "summary": "美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
+      "source": "steam_review",
+      "time": "2026-07-02T16:50:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198386372712/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198386372712",
+      "tags": [
+        "tchinese"
+      ],
+      "language": "tchinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 14354,
+        "votes_up": 0,
+        "timestamp_created": 1783011043
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

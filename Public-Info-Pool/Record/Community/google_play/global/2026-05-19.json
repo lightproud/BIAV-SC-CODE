@@ -1,23 +1,9 @@
 {
   "date": "2026-05-19",
-  "archived_at": "2026-07-02T06:38:00.968882+00:00",
+  "archived_at": "2026-07-02T19:17:36.560937+00:00",
   "source": "google_play",
   "item_count": 13,
   "items": [
-    {
-      "title": "[Google Play 差评] ★1 \"half anniversary\" and you have to pay 2",
-      "summary": "\"half anniversary\" and you have to pay 200 dollars to get rewards, go back to eos dude",
-      "source": "google_play",
-      "time": "2026-05-18T20:29:23",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-35998949-e203-4f0d-8c3a-39e64092f429",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Giro Star",
-      "tags": [],
-      "lang": "es",
-      "platform_region": "es",
-      "region": "global"
-    },
     {
       "source": "google_play",
       "time": "2026-04-20T02:42:39",
@@ -107,6 +93,20 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru",
       "author": "ХУГГИ ВУГГИ",
       "engagement": 1
+    },
+    {
+      "title": "[Google Play 差评] ★1 \"half anniversary\" and you have to pay 2",
+      "summary": "\"half anniversary\" and you have to pay 200 dollars to get rewards, go back to eos dude",
+      "source": "google_play",
+      "time": "2026-05-18T20:29:23",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-35998949-e203-4f0d-8c3a-39e64092f429",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Giro Star",
+      "tags": [],
+      "lang": "es",
+      "platform_region": "es",
+      "region": "global"
     },
     {
       "source": "google_play",

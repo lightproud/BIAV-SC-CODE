@@ -1,6 +1,6 @@
 {
   "date": "2026-04-10",
-  "archived_at": "2026-07-02T06:38:00.863659+00:00",
+  "archived_at": "2026-07-02T19:17:36.463687+00:00",
   "source": "google_play",
   "item_count": 3,
   "items": [
@@ -19,6 +19,16 @@
       "region": "global"
     },
     {
+      "source": "google_play",
+      "time": "2026-04-08T05:56:32",
+      "lang": "en",
+      "title": "[Google Play 差评] ★2 QoL should be the games focus. After see",
+      "summary": "QoL should be the games focus. After seeing this constantly on steam I decided to try it out. 3 days in and I can't be bothered. 20 minutes on auto to clear a single stage, forced to use a system called \"engrave\" every time you clear a stage. Character progression is brickwalled due to stage progression. No one should have to spend an hour+ clearing a chapter with 12+ stages just to advance their roster 10 levels.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
+      "author": "Kevin S",
+      "engagement": 1
+    },
+    {
       "title": "[Google Play 好评] ★5 재밌습니다~꼭 해보세요!!",
       "summary": "재밌습니다~꼭 해보세요!!",
       "source": "google_play",
@@ -31,16 +41,6 @@
       "lang": "ko",
       "platform_region": "kr",
       "region": "global"
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-08T05:56:32",
-      "lang": "en",
-      "title": "[Google Play 差评] ★2 QoL should be the games focus. After see",
-      "summary": "QoL should be the games focus. After seeing this constantly on steam I decided to try it out. 3 days in and I can't be bothered. 20 minutes on auto to clear a single stage, forced to use a system called \"engrave\" every time you clear a stage. Character progression is brickwalled due to stage progression. No one should have to spend an hour+ clearing a chapter with 12+ stages just to advance their roster 10 levels.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
-      "author": "Kevin S",
-      "engagement": 1
     }
   ],
   "region": "global"

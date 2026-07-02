@@ -1,6 +1,6 @@
 {
   "date": "2026-06-07",
-  "archived_at": "2026-07-02T02:40:55.897036+00:00",
+  "archived_at": "2026-07-02T19:17:36.390943+00:00",
   "source": "appstore",
   "item_count": 6,
   "items": [
@@ -47,20 +47,6 @@
       "region": "global"
     },
     {
-      "title": "not bad",
-      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
-      "source": "appstore",
-      "time": "2026-06-07T01:01:16-07:00",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
-      "engagement": 4,
-      "is_hot": false,
-      "author": "navirebu",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "au",
-      "region": "global"
-    },
-    {
       "title": "Good game",
       "summary": "In love with the gameplay, this game also has a very lovely artstyle and story. Can’t wait for full English translation!",
       "source": "appstore",
@@ -85,6 +71,20 @@
       "tags": [],
       "lang": "th",
       "platform_region": "th"
+    },
+    {
+      "title": "not bad",
+      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
+      "source": "appstore",
+      "time": "2026-06-07T01:01:16-07:00",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "navirebu",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "au",
+      "region": "global"
     }
   ],
   "region": "global"

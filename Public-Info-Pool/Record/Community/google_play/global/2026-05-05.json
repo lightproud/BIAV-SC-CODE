@@ -1,23 +1,9 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-07-02T06:38:00.962173+00:00",
+  "archived_at": "2026-07-02T19:17:36.554428+00:00",
   "source": "google_play",
   "item_count": 15,
   "items": [
-    {
-      "title": "[Google Play 好评] ★5 An Honest Review? I wasn't even a \"game\"",
-      "summary": "An Honest Review? I wasn't even a \"game\" person, but this game is so easy to play, the mechanics are quite easy to understand. I am so grateful I found my comfort game in Morimens, keep up the good work, devs. Maybe some suggestions, uhh.. keep the performance stable, and yeah just that. The only thing I complain about is the connection, it just doesn't seem to work sometimes, too much work on the CPU, made the game seem \"laggy\". But overall? great!",
-      "source": "google_play",
-      "time": "2026-05-04T16:02:11",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-36e0386e-617c-4617-a001-c4707d377cbe",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Kim Dokja",
-      "tags": [],
-      "lang": "id",
-      "platform_region": "id",
-      "region": "global"
-    },
     {
       "source": "google_play",
       "time": "2026-04-20T02:42:39",
@@ -97,6 +83,20 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
       "author": "Mateus Ribeiro",
       "engagement": 1
+    },
+    {
+      "title": "[Google Play 好评] ★5 An Honest Review? I wasn't even a \"game\"",
+      "summary": "An Honest Review? I wasn't even a \"game\" person, but this game is so easy to play, the mechanics are quite easy to understand. I am so grateful I found my comfort game in Morimens, keep up the good work, devs. Maybe some suggestions, uhh.. keep the performance stable, and yeah just that. The only thing I complain about is the connection, it just doesn't seem to work sometimes, too much work on the CPU, made the game seem \"laggy\". But overall? great!",
+      "source": "google_play",
+      "time": "2026-05-04T16:02:11",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-36e0386e-617c-4617-a001-c4707d377cbe",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Kim Dokja",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
+      "region": "global"
     },
     {
       "source": "google_play",

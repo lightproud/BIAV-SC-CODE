@@ -1,9 +1,22 @@
 {
   "date": "2026-03-24",
-  "archived_at": "2026-07-02T06:38:00.845782+00:00",
+  "archived_at": "2026-07-02T19:17:36.442959+00:00",
   "source": "google_play",
   "item_count": 4,
   "items": [
+    {
+      "title": "[Google Play 好评] ★5 gamenya cukup menarik perhatian saya saa",
+      "summary": "gamenya cukup menarik perhatian saya saat pertama kali muncul di beranda play store. tapi pas saya coba mainin, ternyata... gelo, gamenya seru bgt tapi, satu saran saya. terjemahan beberapa cerita di awal itu masih kurang bagus, sehingga mungkin bagi beberapa orang akan kesulitan memahami ceritanya(termasuk saya sendiri). Mohon developer bagian terjemahan ceritanya tolong diperbaiki ya",
+      "source": "google_play",
+      "time": "2026-03-24T12:40:02",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id",
+      "engagement": 7,
+      "is_hot": false,
+      "author": "Levaa Machiavelli",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id"
+    },
     {
       "title": "[Google Play 好评] ★4 El apartado de la música como también lo",
       "summary": "El apartado de la música como también lo intuitivo que es el juego hace que la experiencia sea grandiosa. No obstante siento que hay cosas injustas o que podrían mejorar. Debido a que por turno tenemos un número de movimiento o acciones para jugar cartas, es totalmente injusto e innecesario que los enemigos o el mismo desafío, se meta con las cartas ya sea bloqueando, o descartandolas. Comprendo que otros juegos aplican ello pero en esos otros juegos tienes libertad de acciones por turno",
@@ -45,19 +58,6 @@
       "lang": "pt",
       "platform_region": "br",
       "region": "global"
-    },
-    {
-      "title": "[Google Play 好评] ★5 gamenya cukup menarik perhatian saya saa",
-      "summary": "gamenya cukup menarik perhatian saya saat pertama kali muncul di beranda play store. tapi pas saya coba mainin, ternyata... gelo, gamenya seru bgt tapi, satu saran saya. terjemahan beberapa cerita di awal itu masih kurang bagus, sehingga mungkin bagi beberapa orang akan kesulitan memahami ceritanya(termasuk saya sendiri). Mohon developer bagian terjemahan ceritanya tolong diperbaiki ya",
-      "source": "google_play",
-      "time": "2026-03-24T12:40:02",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id",
-      "engagement": 7,
-      "is_hot": false,
-      "author": "Levaa Machiavelli",
-      "tags": [],
-      "lang": "id",
-      "platform_region": "id"
     }
   ],
   "region": "global"

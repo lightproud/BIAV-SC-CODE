@@ -1,16 +1,17 @@
 {
-  "collected_at": "2026-07-02T06:37:04.992386+00:00",
+  "contract_version": 1,
+  "collected_at": "2026-07-02T19:16:49.923272+00:00",
   "source": "weixin",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "source": "weixin",
-      "time": "2026-06-30T11:53:48+00:00",
+      "time": "2026-07-02T17:42:38+00:00",
       "lang": "zh",
-      "title": "[微信] 忘却前夜*沙耶之歌丨表情包",
+      "title": "[微信] 《忘却前夜》韩语本地化志愿者招募",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-7XO35i9coD43dZjCwkxHfZ1mh88XRVZ1qXa8Fplpd9AkH44MqjOTDponjSiInozhD0duf_PHXIrGWCR0kDmayOcxy1_ecOBqwq_Y48Rq-UbAeVMSlaErpAUAJofsLeIMqJlGhSIA1NgAybt7dFXsHu5pffCXbHlTWDckvbGcvnMHAkL-EWhGLUVr7dVCNlE_tvkpeucG-UUjdUUvU5gvHy08OLTBhW0A..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=02C58F4A4C89ECF65A5F0CC15FDBF8795A05796F6A4606E1",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSx1P1LU2LiGDFXeWCzgv_mnTrqNATznQ_lqXa8Fplpd93L4Z3OpLl30zwLkdfbpvxIvGlBtfAklIgSwcyL_YidZCfJ6IiBfsqBCp4AqvDhVwKdf199FKlhA6Iz1yPIWHIrAA6nT-N07GJsh1DpGw-VIcc2_xt61-m9aFgpX_Uer3u-ZMNlAGyrKGNQ5O65gvUm4x67-wigDSzTL-W-ZO-aLuL0unUdKkuw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=06A9CC2E25D40D1FB2B4E71610134DA2B3C4314D6A46B8F3",
       "author": "",
       "engagement": 0
     },
@@ -20,7 +21,27 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌丨表情包",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-7XO35i9coD8vnicp55tQjZ1mh88XRVZ1qXa8Fplpd9AkH44MqjOTDponjSiInozhD0duf_PHXIrGWCR0kDmayOcxy1_ecOBqwq_Y48Rq-UbAeVMSlaErpAUAJofsLeINOUkgE_YUkLQAtFmsndV_oKbUUfaCG7mJg9jhKO0tlyvFOovFFdvx-Lzom0Xxtdx2jUVme93jrMwEuX8yEK6e3drgozfSg6bw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=02C59638F235514AE7E0B27DE1730537E7BCAA386A4606E3",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSx1P1LU2LiGDFXeWCzgv_mnTrqNATznQ_lqXa8Fplpd93L4Z3OpLl30zwLkdfbpvxIvGlBtfAklIgSwcyL_YidZCfJ6IiBfsqBPWsKbIzyKoI0Fdg6rHV6UDJTAX6xRj0Bj8384xVmP8RzlChowGC7RvYzDzAtI-lhFdwmEqviAnAIKkVLVekNt8Sh38UiYtnlqGdsN6NFmipo7nIbsln4Hs46dn8Efgxg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=06A9CC2E25D40D1FB2B4E71610134DA2B3C4314D6A46B8F3",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-07-02T17:42:38+00:00",
+      "lang": "zh",
+      "title": "[微信] 《忘却前夜》韩语本地化志愿者招募",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSx1P1LU2LiGDZMqK0Jowh-3TrqNATznQ_lqXa8Fplpd93L4Z3OpLl30zwLkdfbpvxIvGlBtfAklIgSwcyL_YidZCfJ6IiBfsqBCp4AqvDhVwKdf199FKlhA6Iz1yPIWHIgGqHG2rFFE_M7c8IDW1TSHJVsZuWWP8exy_wZpVRftiRoU6Ll6oWkzGqbgZQR0QBXZoqewA5Zvj3SAAxkPmuo0Cn9lOoZLP2Q..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=06A9D2BD36C71C0DA2A7F40402152E22A279283E6A46B8F4",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-06-30T11:53:48+00:00",
+      "lang": "zh",
+      "title": "[微信] 忘却前夜*沙耶之歌丨表情包",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSx1P1LU2LiGDZMqK0Jowh-3TrqNATznQ_lqXa8Fplpd93L4Z3OpLl30zwLkdfbpvxIvGlBtfAklIgSwcyL_YidZCfJ6IiBfsqBPWsKbIzyKoI0Fdg6rHV6UDJTAX6xRj0AeKPKuykuxgWDDYJk1WcdnH4S7XjRILUYqb5CvZAoSZEtkVK4bIIIi1Cct6J39CPgkns8K2Jr-ZvgGN9qzwrm56VKrzu_4XKA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=06A9D2BD36C71C0DA2A7F40402152E22A279283E6A46B8F4",
       "author": "",
       "engagement": 0
     }

@@ -1,6 +1,6 @@
 {
   "date": "2025-11-24",
-  "archived_at": "2026-07-02T02:40:55.902378+00:00",
+  "archived_at": "2026-07-02T19:17:36.398715+00:00",
   "source": "appstore",
   "item_count": 4,
   "items": [
@@ -19,20 +19,6 @@
       "region": "global"
     },
     {
-      "title": "GG",
-      "summary": "Download takes forever",
-      "source": "appstore",
-      "time": "2025-11-23T17:49:50-07:00",
-      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews#as-13433831459",
-      "engagement": 1,
-      "is_hot": false,
-      "author": "Sadjipppp",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "sg",
-      "region": "global"
-    },
-    {
       "title": "ITS JUST SO PEAK",
       "summary": "ITS JUST SO PEAK 😭😭😭😭😭",
       "source": "appstore",
@@ -46,6 +32,20 @@
       "tags": [],
       "content_type": "text",
       "media_url": ""
+    },
+    {
+      "title": "GG",
+      "summary": "Download takes forever",
+      "source": "appstore",
+      "time": "2025-11-23T17:49:50-07:00",
+      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews#as-13433831459",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Sadjipppp",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "sg",
+      "region": "global"
     },
     {
       "title": "GG",

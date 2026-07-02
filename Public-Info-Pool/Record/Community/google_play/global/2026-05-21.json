@@ -1,9 +1,19 @@
 {
   "date": "2026-05-21",
-  "archived_at": "2026-07-02T06:38:00.834523+00:00",
+  "archived_at": "2026-07-02T19:17:36.429332+00:00",
   "source": "google_play",
   "item_count": 15,
   "items": [
+    {
+      "source": "google_play",
+      "time": "2026-05-18T11:10:05",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Accidentally ate 4 babies because of a c",
+      "summary": "Accidentally ate 4 babies because of a cursed relic. 10/10",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en",
+      "author": "A.C.D.",
+      "engagement": 8
+    },
     {
       "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
       "summary": "Honnêtement un très bon jeu L'histoire est prenante et les designs parlent pour eux même. Probablement à jouer en anglais pour en profiter au maximum.",
@@ -17,30 +27,6 @@
       "lang": "fr",
       "platform_region": "fr",
       "region": "global"
-    },
-    {
-      "title": "[Google Play 好评] ★5 great game",
-      "summary": "great game",
-      "source": "google_play",
-      "time": "2026-05-20T20:54:44",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-37891b2d-e8be-4911-bdc8-60847d779890",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Jasper Hill",
-      "tags": [],
-      "lang": "fr",
-      "platform_region": "fr",
-      "region": "global"
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-18T11:10:05",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Accidentally ate 4 babies because of a c",
-      "summary": "Accidentally ate 4 babies because of a cursed relic. 10/10",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en",
-      "author": "A.C.D.",
-      "engagement": 8
     },
     {
       "source": "google_play",
@@ -114,6 +100,20 @@
       "tags": [],
       "lang": "fr",
       "platform_region": "fr"
+    },
+    {
+      "title": "[Google Play 好评] ★5 great game",
+      "summary": "great game",
+      "source": "google_play",
+      "time": "2026-05-20T20:54:44",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-37891b2d-e8be-4911-bdc8-60847d779890",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Jasper Hill",
+      "tags": [],
+      "lang": "fr",
+      "platform_region": "fr",
+      "region": "global"
     },
     {
       "source": "google_play",

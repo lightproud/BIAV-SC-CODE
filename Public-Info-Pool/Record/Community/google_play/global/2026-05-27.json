@@ -1,23 +1,9 @@
 {
   "date": "2026-05-27",
-  "archived_at": "2026-07-02T06:38:00.967505+00:00",
+  "archived_at": "2026-07-02T19:17:36.559210+00:00",
   "source": "google_play",
   "item_count": 14,
   "items": [
-    {
-      "title": "[Google Play 好评] ★5 PEAK, the story and the gameplay 10/10.",
-      "summary": "PEAK, the story and the gameplay 10/10. And I'm so exited for the SAYA no uta Collab.",
-      "source": "google_play",
-      "time": "2026-05-27T15:59:02",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-6ebd9ede-d9d0-4ca0-aec0-8178664da76f",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Vsh Sbvs",
-      "tags": [],
-      "lang": "fr",
-      "platform_region": "fr",
-      "region": "global"
-    },
     {
       "source": "google_play",
       "time": "2026-05-04T00:23:27",
@@ -87,6 +73,20 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru",
       "author": "Кира",
       "engagement": 1
+    },
+    {
+      "title": "[Google Play 好评] ★5 PEAK, the story and the gameplay 10/10.",
+      "summary": "PEAK, the story and the gameplay 10/10. And I'm so exited for the SAYA no uta Collab.",
+      "source": "google_play",
+      "time": "2026-05-27T15:59:02",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-6ebd9ede-d9d0-4ca0-aec0-8178664da76f",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Vsh Sbvs",
+      "tags": [],
+      "lang": "fr",
+      "platform_region": "fr",
+      "region": "global"
     },
     {
       "source": "google_play",
