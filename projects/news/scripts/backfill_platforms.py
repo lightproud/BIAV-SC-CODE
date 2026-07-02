@@ -40,6 +40,7 @@ ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 
 # Sibling scripts dir — global_collectors lives here
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
 
 # Max runtime per invocation (30 minutes, leaves buffer for workflow)
 MAX_RUNTIME_SECONDS = 1800
@@ -90,9 +91,11 @@ def _archive_items(source: str, items: list[dict]):
         by_date.setdefault(date_str, []).append(item)
 
     for date_str, date_items in by_date.items():
-        platform_dir = ARCHIVE_DIR / source
-        platform_dir.mkdir(parents=True, exist_ok=True)
-        path = platform_dir / f'{date_str}.json'
+        # 落点走布局单一真相源：分层平台（steam 家族/appstore/google_play/youtube）
+        # 回填也落区服/类型子目录，与主线写方一致，杜绝平级文件复活（lesson #42）
+        platform, region, subtype = archive_layout.resolve_write_layout(source)
+        path = ARCHIVE_DIR / archive_layout.build_relpath(platform, region, subtype, date_str)
+        path.parent.mkdir(parents=True, exist_ok=True)
 
         # Merge with existing
         existing_items = []

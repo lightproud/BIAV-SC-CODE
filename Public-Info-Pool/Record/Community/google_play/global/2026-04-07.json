@@ -2,7 +2,7 @@
   "date": "2026-04-07",
   "archived_at": "2026-07-01T17:51:45.776657+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 game nya bagus bgt sumpah, tp tetep aja",
@@ -17,6 +17,16 @@
       "lang": "id",
       "platform_region": "id",
       "region": "global"
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-05T17:19:56",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 게임성 너무 취향에 맞고 좋음 다만 서브 게임으로는 못할것같음. 아쉽게",
+      "summary": "게임성 너무 취향에 맞고 좋음 다만 서브 게임으로는 못할것같음. 아쉽게 접게되겠지만 시간에 여유가 많아진다면 반드시 해보고 싶은 장르임. 번역만 어떻게 해결되면 좋을 것 같음",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
+      "author": "솔미",
+      "engagement": 0
     }
   ],
   "region": "global"

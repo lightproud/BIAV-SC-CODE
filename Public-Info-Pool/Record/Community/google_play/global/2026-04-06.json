@@ -2,7 +2,7 @@
   "date": "2026-04-06",
   "archived_at": "2026-07-02T06:38:00.833312+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 게임성 너무 취향에 맞고 좋음 다만 서브 게임으로는 못할것같음. 아쉽게",
@@ -45,6 +45,16 @@
       "lang": "ko",
       "platform_region": "kr",
       "region": "global"
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-04T15:53:55",
+      "lang": "zh",
+      "title": "[Google Play 好评] ★5 nice",
+      "summary": "nice",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk",
+      "author": "占有欲",
+      "engagement": 0
     }
   ],
   "region": "global"

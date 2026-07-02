@@ -357,3 +357,29 @@ class TestValidSourcesRegistry(unittest.TestCase):
             'title': 't', 'source': 'taptap_review',
             'time': '2026-07-02T00:00:00Z', 'engagement': 1, 'url': 'https://x.co'})
         self.assertTrue(ok)
+
+
+class TestValidationDrops(unittest.TestCase):
+    """P0-3 静默丢弃一等指标：丢弃必须被按源计数并可落盘。"""
+
+    def setUp(self):
+        aggregator_base.VALIDATION_DROPS.clear()
+
+    def test_dropped_items_counted_by_source(self):
+        aggregator_base.validate_all_news([
+            {'title': 'a', 'source': 'ghost', 'time': '2026-07-02T00:00:00Z', 'engagement': 1},
+            {'title': 'b', 'source': 'ghost', 'time': '2026-07-02T00:00:00Z', 'engagement': 1},
+            {'title': 'c', 'source': 'reddit', 'time': '2026-07-02T00:00:00Z', 'engagement': 1},
+            'not-a-dict',
+        ])
+        self.assertEqual(aggregator_base.VALIDATION_DROPS.get('ghost'), 2)
+        self.assertEqual(aggregator_base.VALIDATION_DROPS.get('malformed'), 1)
+        self.assertNotIn('reddit', aggregator_base.VALIDATION_DROPS)
+
+    def test_write_validation_drops_zero_state(self):
+        import tempfile, json as j, os
+        with tempfile.TemporaryDirectory() as d:
+            p = os.path.join(d, 'drops.json')
+            payload = aggregator_base.write_validation_drops(p)
+            self.assertEqual(payload['total_dropped'], 0)
+            self.assertEqual(j.load(open(p))['by_source'], {})

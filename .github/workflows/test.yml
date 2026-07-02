@@ -12,12 +12,17 @@ on:
       - 'memory/decisions-archive.md'
       - '.github/workflows/test.yml'
   pull_request:
-    # NO paths filter on purpose: `test` is a REQUIRED status check on main
-    # (branch ruleset, 2026-06-21). A required check gated behind a paths filter
-    # never reports on PRs that don't touch those paths (e.g. docs-only PRs),
-    # leaving the PR deadlocked forever on "Expected — waiting for status".
-    # Running on every PR to main guarantees the required check always reports.
-    # The suite is ~5s so the cost is negligible.
+    # NO paths filter on purpose. History: `test` was a required status check
+    # (ruleset) until 2026-06-21, when the keeper removed it because full
+    # checkout of the 2.6G worktree was slow and a paths-filtered required
+    # check deadlocks docs-only PRs on "Expected — waiting for status".
+    # 2026-07-02: checkout is now SPARSE (~100MB, see the checkout step), the
+    # suite itself is ~5s, and no paths filter means the check always reports —
+    # both historical objections are gone. Re-enabling `test` as a required
+    # check (plus "require branches up to date", which is what actually
+    # prevents PR-A/PR-B independently-green collisions like #373/#374) is a
+    # repo-settings change awaiting keeper ruling — see
+    # Public-Info-Pool/Resource/proposal/silver-core-maintenance-cadence-20260702.md.
   workflow_dispatch:
 
 concurrency:
@@ -33,6 +38,17 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
+        with:
+          # SPARSE checkout（2026-07-02 P0-2）：排除 2.4G 重量档案层（社区全量
+          # 归档 + 解包 text），工作树 2.6G -> ~100MB。单测均为 tmp 目录封闭；
+          # 少数「真实档案存在性」断言（OKF 指针 / CLAUDE.md 路径三卫）在档案层
+          # 缺席时自动 skip（全量环境仍全程执法），已在 sparse 工作树实证
+          # 2020 passed / 22 skipped / 0 failed。
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'

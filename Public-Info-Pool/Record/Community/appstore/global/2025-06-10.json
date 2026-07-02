@@ -2,7 +2,7 @@
   "date": "2025-06-10",
   "archived_at": "2026-07-02T02:40:55.912721+00:00",
   "source": "appstore",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "An underrated gem!",
@@ -31,6 +31,21 @@
       "lang": "en",
       "platform_region": "sg",
       "region": "global"
+    },
+    {
+      "title": "beautiful game but lacking translation",
+      "summary": "please get actual translators, it's such a shame that it's a beautiful game but falls flat in written dialogue. very strange phrases and wring grammar sometimes:<",
+      "source": "appstore",
+      "platform_region": "sg",
+      "lang": "",
+      "time": "2025-06-09T18:44:35-07:00",
+      "url": "",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "Impish enjoyer",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

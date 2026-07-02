@@ -2,7 +2,7 @@
   "date": "2024-06-28",
   "archived_at": "2026-07-02T02:40:55.937271+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "老是闪退……",
@@ -17,6 +17,21 @@
       "lang": "zh",
       "platform_region": "hk",
       "region": "global"
+    },
+    {
+      "title": "老是闪退……",
+      "summary": "剧情不错，人物也可以",
+      "source": "appstore",
+      "platform_region": "hk",
+      "lang": "",
+      "time": "2024-06-28T01:36:53-07:00",
+      "url": "",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "睿恩👾",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ],
   "region": "global"

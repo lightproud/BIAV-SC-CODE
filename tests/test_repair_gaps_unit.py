@@ -31,6 +31,8 @@ def archive(tmp_path, monkeypatch):
     adir = tmp_path / "platforms"
     adir.mkdir()
     monkeypatch.setattr(repair_gaps, "ARCHIVE_DIR", adir)
+    # 报告路径 2026-07-02 起为独立常量（不再从 ARCHIVE_DIR 推导）——同步重定向
+    monkeypatch.setattr(repair_gaps, "REPORT_PATH", tmp_path / "gap_report.json")
     return adir
 
 
@@ -96,7 +98,7 @@ def test_write_gap_report_writes_sorted_payload(archive):
         "reddit": ["2026-04-02", "2026-04-03"],
         "bilibili": ["2026-05-01"],
     })
-    report_path = archive.parent / "gap_report.json"
+    report_path = repair_gaps.REPORT_PATH
     assert report_path.exists()
     payload = json.loads(report_path.read_text(encoding="utf-8"))
     assert payload["total_gaps"] == 3
@@ -109,7 +111,7 @@ def test_write_gap_report_writes_sorted_payload(archive):
 
 def test_write_gap_report_empty(archive):
     repair_gaps.write_gap_report({})
-    payload = json.loads((archive.parent / "gap_report.json").read_text(encoding="utf-8"))
+    payload = json.loads(repair_gaps.REPORT_PATH.read_text(encoding="utf-8"))
     assert payload["total_gaps"] == 0
     assert payload["platforms"] == {}
 
@@ -121,11 +123,13 @@ def _run_main(argv):
         repair_gaps.main()
 
 
-def test_main_no_gaps_logs_and_returns(archive):
+def test_main_no_gaps_refreshes_empty_report(archive):
+    # 2026-07-02 起零缺口也刷新报告：旧缺口落出窗口后必须被擦掉，
+    # 否则入库报告与工具日志自相矛盾（验证编队 minor）。
     _make_platform(archive, "reddit", ["2026-04-01", "2026-04-02"])
     with mock.patch.object(repair_gaps, "write_gap_report") as w:
         _run_main([])
-    w.assert_not_called()
+    w.assert_called_once_with({})
 
 
 def test_main_dry_run_does_not_write(archive):
@@ -136,9 +140,10 @@ def test_main_dry_run_does_not_write(archive):
 
 
 def test_main_writes_report_when_gaps(archive):
+    # 夹具日期在默认 60 天窗口之外 → 用 --full 全史模式（顺带覆盖该旗标）
     _make_platform(archive, "reddit", ["2026-04-01", "2026-04-03"])
-    _run_main([])
-    report_path = archive.parent / "gap_report.json"
+    _run_main(["--full"])
+    report_path = repair_gaps.REPORT_PATH
     assert report_path.exists()
     payload = json.loads(report_path.read_text(encoding="utf-8"))
     assert payload["total_gaps"] == 1

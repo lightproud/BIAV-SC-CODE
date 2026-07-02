@@ -140,6 +140,8 @@ def test_build_characters_writes_concepts_and_index(bundle):
 
 
 def test_build_sources_writes_pointers_with_data_layer(bundle):
+    if not (bok.REPO / "Public-Info-Pool" / "Record" / "Community").exists():
+        pytest.skip("archive layer absent (sparse checkout) — 指针落点无从核验")
     n = bok.build_sources()
     assert n >= 1
     for p in (bundle / "sources").glob("*.md"):
