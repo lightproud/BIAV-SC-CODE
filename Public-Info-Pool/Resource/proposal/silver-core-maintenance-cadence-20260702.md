@@ -59,6 +59,18 @@ Phase 2 结束后，银芯从「建设期项目」降档为「值班中的系统
 原则不变：text → git / 二进制 → Releases（2026-06-21 总纲）；触发线只决定「何时重议」，
 不预设结论。
 
+## 三点五、CI 硬门禁重启（待守密人裁定的 GitHub 设置项）
+
+2026-06-21 撤销 required `test` 检查的两条理由已双双消失：checkout 已 sparse 化
+（2.6G → 约 100MB，见 `test.yml` 2026-07-02 改造）、PR 触发无 paths filter 不会再卡
+"Expected"。建议守密人在 main Ruleset 重新勾选：
+
+1. **Require status checks：`test`** ——恢复机器门禁，自查自合的「自觉」还给机器；
+2. **Require branches to be up to date before merging**——这才是 #373/#374 类
+   「两个 PR 各自绿灯、合起来红」对冲的真正解药（required 检查本身防不了基底陈旧）。
+
+仓库侧改造已就绪，此项仅剩设置开关（会话无 Ruleset 写权限）。
+
 ## 四、零产出源处置建议（P2 收尾项）
 
 bahamut / arca_live / note_com / twitter 四源注册在案但从未产出。建议 07-19 前逐一裁定：

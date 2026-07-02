@@ -88,6 +88,12 @@ def test_sources_label_data_layer():
         )
 
 
+# CI 硬门禁走 sparse checkout（2026-07-02 P0-2）：重量档案层被排除时，
+# 指向其中的指针无法在 CI 校验存在性——跳过而非放水；全量环境仍全程执法。
+_SPARSE_EXCLUDED = ("Public-Info-Pool/Record/", "Public-Info-Pool/Reference/")
+_ARCHIVE_PRESENT = (REPO / "Public-Info-Pool" / "Record" / "Community").exists()
+
+
 @pytest.mark.parametrize("path", _concept_files(), ids=lambda p: str(p.relative_to(REPO)))
 def test_resource_pointer_resolves(path: Path):
     """放指针不放本体：每个 repo-relative ``resource`` 指针必须落到实存本体。
@@ -99,7 +105,10 @@ def test_resource_pointer_resolves(path: Path):
     res = (fields or {}).get("resource", "").strip().strip('"')
     if not res.startswith("/"):  # 仅校验仓内绝对指针；外部 URI / 空值跳过
         return
-    target = REPO / res.lstrip("/").split("#", 1)[0]
+    rel = res.lstrip("/").split("#", 1)[0]
+    if not _ARCHIVE_PRESENT and rel.startswith(_SPARSE_EXCLUDED):
+        pytest.skip("archive layer absent (sparse checkout) — pointer target excluded")
+    target = REPO / rel
     assert target.exists(), f"{path} resource pointer dangles: {res}"
 
 

@@ -27,7 +27,15 @@ class TestClaudeMdReferences(unittest.TestCase):
         self.assertGreaterEqual(len(paths), 15, "extraction regex likely broken")
 
     def test_referenced_paths_exist(self):
-        missing = sorted({p for p in referenced_paths() if not (ROOT / p).exists()})
+        # CI 硬门禁走 sparse checkout（2026-07-02 P0-2）排除重量档案层：
+        # 该层缺席时跳过指向其中的路径断言；全量环境仍全程执法。
+        sparse_excluded = ("Public-Info-Pool/Record", "Public-Info-Pool/Reference")
+        archive_present = (ROOT / "Public-Info-Pool" / "Record").exists()
+        missing = sorted({
+            p for p in referenced_paths()
+            if not (ROOT / p).exists()
+            and (archive_present or not p.startswith(sparse_excluded))
+        })
         self.assertEqual(missing, [], f"CLAUDE.md references nonexistent paths: {missing}")
 
 
