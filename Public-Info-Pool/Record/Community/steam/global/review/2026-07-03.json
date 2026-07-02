@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-02T21:00:35.062827+00:00",
+  "archived_at": "2026-07-02T22:08:30.557973+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] The game is a bit longer to start compared to some...",
@@ -70,6 +70,78 @@
         "playtime_forever": 675,
         "votes_up": 0,
         "timestamp_created": 1783022697
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Does not feel like a gatcha game. Roll for Kath my...",
+      "summary": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
+      "source": "steam_review",
+      "time": "2026-07-02T21:03:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198314644323/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198314644323",
+      "tags": [
+        "polish"
+      ],
+      "language": "polish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 17497,
+        "votes_up": 0,
+        "timestamp_created": 1783026213
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Бесплатный slay the spire с неплохим сюжетом и при...",
+      "summary": "Бесплатный slay the spire с неплохим сюжетом и приятным стилем. Декбилдинг тут наполовину заменён тимбилдингом: удачи найти 4 персонажей, которые хорошо сочетаются друг с другом, а не просто имеют крутые сами по себе карты.\r\nНа русский язык переводил ИИ! Играйте на английском. Но игруха явно стоит внимания, особенно если вам нравится механика пошагового карточного боя.",
+      "source": "steam_review",
+      "time": "2026-07-02T20:25:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199070657711/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199070657711",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 769,
+        "votes_up": 0,
+        "timestamp_created": 1783023956
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] This game is great if you've ever played chaos zer...",
+      "summary": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
+      "source": "steam_review",
+      "time": "2026-07-02T20:24:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199197418923/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199197418923",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 713,
+        "votes_up": 0,
+        "timestamp_created": 1783023841
       },
       "region": "global",
       "archive_subtype": "review",

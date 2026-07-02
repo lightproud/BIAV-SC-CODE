@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-02T20:59:47.689618+00:00",
+  "collected_at": "2026-07-02T22:07:38.310356+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -22,6 +22,51 @@
     },
     {
       "source": "steam",
+      "time": "2026-07-02T21:03:33+00:00",
+      "lang": "polish",
+      "title": "[正面] Does not feel like a gatcha game. Roll for Kath my...",
+      "summary": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
+      "url": "https://steamcommunity.com/profiles/76561198314644323/recommended/3052450",
+      "author": "76561198314644323",
+      "engagement": 0,
+      "language": "polish",
+      "voted_up": true,
+      "review": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
+      "timestamp_created": 1783026213,
+      "playtime_forever": 17497
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-02T20:25:56+00:00",
+      "lang": "russian",
+      "title": "[正面] Бесплатный slay the spire с неплохим сюжетом и при...",
+      "summary": "Бесплатный slay the spire с неплохим сюжетом и приятным стилем. Декбилдинг тут наполовину заменён тимбилдингом: удачи найти 4 персонажей, которые хорошо сочетаются друг с другом, а не просто имеют крутые сами по себе карты.\r\nНа русский язык переводил ИИ! Играйте на английском. Но игруха явно стоит внимания, особенно если вам нравится механика пошагового карточного боя.",
+      "url": "https://steamcommunity.com/profiles/76561199070657711/recommended/3052450",
+      "author": "76561199070657711",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Бесплатный slay the spire с неплохим сюжетом и приятным стилем. Декбилдинг тут наполовину заменён тимбилдингом: удачи найти 4 персонажей, которые хорошо сочетаются друг с другом, а не просто имеют крутые сами по себе карты.\r\nНа русский язык переводил ИИ! Играйте на английском. Но игруха явно стоит внимания, особенно если вам нравится механика пошагового карточного боя.",
+      "timestamp_created": 1783023956,
+      "playtime_forever": 769
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-02T20:24:01+00:00",
+      "lang": "english",
+      "title": "[正面] This game is great if you've ever played chaos zer...",
+      "summary": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
+      "url": "https://steamcommunity.com/profiles/76561199197418923/recommended/3052450",
+      "author": "76561199197418923",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
+      "timestamp_created": 1783023841,
+      "playtime_forever": 713
+    },
+    {
+      "source": "steam",
       "time": "2026-07-02T20:04:57+00:00",
       "lang": "english",
       "title": "[正面] Im will keep it short and sweet, This is my favori...",
@@ -33,7 +78,7 @@
       "voted_up": true,
       "review": "Im will keep it short and sweet, This is my favorite gacha game ive played so far. But there always seems to be a downside. The game keep crashing , whenever i do a story chapter ( the non combat stories) it crashes about 90% of the time. If it wasnt for this one big flaw this game would be absolutely perfect. But please fix these crashes, its extremely annoying. Aside from that id still recommend this game",
       "timestamp_created": 1783022697,
-      "playtime_forever": 675
+      "playtime_forever": 716
     },
     {
       "source": "steam",
