@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-02",
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "なんでも雑談": 1,
+    "誰でも質問": 1,
+    "つぶやき": 4
+  },
+  "hourly_activity": {
+    "0": 4,
+    "1": 2
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1522038050513748039",
+      "channel_id": "1458760640351965361",
+      "content": "わたしのバカみたいなプレイの話をするんですが、はじめて戦ったとき||最後にHP減らされたのに気付いてなくて、HP削る症状カードを躊躇いなく使って自分から死んだこ",
+      "author": "suzuri9701",
+      "reactions": 1,
+      "channel": "つぶやき"
+    }
+  ]
+}
