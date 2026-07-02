@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-02
-- 功能总数：**101**
-- 脚本可达性：活 56 / 仅测试 0 / 孤儿 0
+- 功能总数：**100**
+- 脚本可达性：活 55 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
