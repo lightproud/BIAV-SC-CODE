@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/lightproud/brain-in-a-vat/projects/news/schema/output-latest.schema.json",
+  "title": "Output layer contract — {source}-latest.json (v1)",
+  "description": "银芯→黑池输出展示层契约 v1（2026-07-02 P2-9 落档）。projects/news/output/{source}-latest.json 由 split_output.py 产出、黑池与前端消费。改动本契约必须升 contract_version 并知会消费方。已知口径差（刻意保留，勿归一）：输出层 source 保留原始名（如 steam 文件内 items 的 source='steam' 但 news.json 原始层可见 steam_review），数据归档层则按 sources.ARCHIVE_PLATFORM_FOLD 折叠——输出层与数据层分离是 CLAUDE.md §4.1 硬纪律。本层为过滤选样（data_layer='output'），长窗口分析必须走全量档案层。",
+  "type": "object",
+  "required": ["collected_at", "source", "data_layer", "item_count", "items"],
+  "properties": {
+    "contract_version": { "const": 1 },
+    "collected_at": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "data_layer": { "const": "output" },
+    "item_count": { "type": "integer", "minimum": 0 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "time", "title", "engagement"],
+        "properties": {
+          "source": { "type": "string" },
+          "time": { "type": "string" },
+          "lang": { "type": "string" },
+          "title": { "type": "string" },
+          "summary": { "type": "string" },
+          "url": { "type": "string" },
+          "author": { "type": "string" },
+          "engagement": { "type": "integer", "minimum": 0 },
+          "media_url": { "type": "string" },
+          "content_type": { "type": "string" },
+          "metadata": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

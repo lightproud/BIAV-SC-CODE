@@ -145,6 +145,9 @@ def extract_steam_item(raw: dict) -> dict:
 def write_source_file(source: str, items: list[dict], collected_at: str) -> None:
     path = OUTPUT_DIR / f'{source}-latest.json'
     payload = {
+        # 输出层契约 v1（schema/output-latest.schema.json，2026-07-02 P2-9）：
+        # 本文件是银芯→黑池的正式接口面，改包裹结构须升版本并知会消费方
+        'contract_version': 1,
         'collected_at': collected_at,
         'source': source,
         'data_layer': DATA_LAYER,
