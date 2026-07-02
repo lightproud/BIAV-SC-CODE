@@ -120,15 +120,17 @@ jobs:
       - name: Open health alert issue (deduplicated)
         # 健康门控标红时开 issue 报警，已有打开的同名 issue 则不重复开。
         # 解决「报警器只记本子不响铃」：沉默源不再静默。
+        # 2026-07-02 起 --strict 有两类判据（核心源沉默 / 校验丢弃超阈值），
+        # 标题与正文覆盖两者，具体原因看运行日志的 [健康门控] 行。
         if: steps.health_gate.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TITLE="[健康门控] 核心采集源零产出或长期沉默"
+          TITLE="[健康门控] 采集健康告警（核心源沉默 或 校验丢弃超阈值）"
           EXISTING=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq 'length')
           if [ "$EXISTING" = "0" ]; then
             gh issue create --title "$TITLE" \
-              --body "silent_sources_audit --strict 触发告警。运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}。详见 projects/news/output/source-health.json。"
+              --body "silent_sources_audit --strict 触发告警（核心源零产出/长期沉默，或单源单轮校验丢弃 >= 50 条——后者意味着采集在产出但被校验层扔掉，查 VALID_SOURCES/必填字段契约是否漂移）。具体原因见运行日志 [健康门控] 行。运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}。详见 projects/news/output/source-health.json 与 validation-drops.json。"
           else
             echo "Alert issue already open, skipping"
           fi

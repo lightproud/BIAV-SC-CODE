@@ -113,6 +113,10 @@ def main():
 
     if not gaps:
         logger.info('No gaps detected in any platform archive.')
+        # 零缺口也要刷新报告（2026-07-02 验证编队 minor）：否则历史报告里的旧缺口
+        # 落到检测窗口之外后永远没人擦，入库监控产物与工具日志自相矛盾。
+        if not args.dry_run:
+            write_gap_report({})
         return
 
     total_gaps = sum(len(v) for v in gaps.values())

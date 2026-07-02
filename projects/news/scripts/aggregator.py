@@ -265,7 +265,8 @@ if __name__ == '__main__':
         logger.error(f'global collectors phase failed: {exc}; AC output preserved')
     # P0-3（2026-07-02）：本次运行的校验丢弃计数落盘（零丢弃也写零值文件），
     # 由 silent_sources_audit --write 并入 source-health、--strict 参与告警门控。
-    # 放在全链路末尾：AC 与 collect_global 两侧的丢弃都已累计完毕。
+    # 覆盖范围 = AC 校验链路（validate_all_news）；GC 侧（collect_global）不走
+    # 该校验、其条目不计入本指标——如未来 GC 增设校验丢弃点须同样接入计数。
     try:
         from aggregator_base import write_validation_drops
         payload = write_validation_drops()

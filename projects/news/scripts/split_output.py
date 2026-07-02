@@ -201,10 +201,11 @@ def main() -> None:
             write_source_file(source, items, collected_at)
             all_items.extend(items)
 
-    # 写合并文件
+    # 写合并文件（契约字段与 write_source_file 同构，勿漂移）
     all_path = OUTPUT_DIR / 'all-latest.json'
     with open(all_path, 'w', encoding='utf-8') as f:
         json.dump({
+            'contract_version': 1,
             'collected_at': collected_at,
             'source': 'all',
             'data_layer': DATA_LAYER,

@@ -329,11 +329,24 @@ def core_source_alarms(report: dict) -> list[str]:
     return alarmed
 
 
+# drops 文件视为「本轮」的最大年龄：管线每小时跑、审计紧随 aggregator，
+# 超过 2 小时即判定为崩溃轮残留（aggregator 未走到 flush），按零值处理，
+# 防止旧计数被当作本轮重复告警（2026-07-02 验证编队 minor）。
+DROPS_MAX_AGE_HOURS = 2
+
+
 def load_validation_drops() -> dict:
-    """读 aggregator 落盘的本轮校验丢弃计数；文件缺失返回零值形态。"""
+    """读 aggregator 落盘的本轮校验丢弃计数；缺失或过期（崩溃轮残留）返回零值形态。"""
     if DROPS_PATH.exists():
         try:
-            return json.loads(DROPS_PATH.read_text(encoding='utf-8'))
+            payload = json.loads(DROPS_PATH.read_text(encoding='utf-8'))
+            gen = payload.get('generated_at')
+            if gen:
+                age = datetime.now(timezone.utc) - datetime.fromisoformat(gen)
+                if age > timedelta(hours=DROPS_MAX_AGE_HOURS):
+                    return {'generated_at': gen, 'total_dropped': 0, 'by_source': {},
+                            'stale_ignored': True}
+            return payload
         except Exception:
             pass
     return {'generated_at': None, 'total_dropped': 0, 'by_source': {}}

@@ -123,11 +123,13 @@ def _run_main(argv):
         repair_gaps.main()
 
 
-def test_main_no_gaps_logs_and_returns(archive):
+def test_main_no_gaps_refreshes_empty_report(archive):
+    # 2026-07-02 起零缺口也刷新报告：旧缺口落出窗口后必须被擦掉，
+    # 否则入库报告与工具日志自相矛盾（验证编队 minor）。
     _make_platform(archive, "reddit", ["2026-04-01", "2026-04-02"])
     with mock.patch.object(repair_gaps, "write_gap_report") as w:
         _run_main([])
-    w.assert_not_called()
+    w.assert_called_once_with({})
 
 
 def test_main_dry_run_does_not_write(archive):

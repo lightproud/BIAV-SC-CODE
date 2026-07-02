@@ -76,3 +76,22 @@ def test_real_all_latest_passes_contract():
         pytest.skip("all-latest.json absent")
     payload = json.loads(p.read_text(encoding="utf-8"))
     _validate(payload, legacy="contract_version" not in payload)
+
+
+def test_all_latest_writer_block_stamps_contract(tmp_path, monkeypatch):
+    """all-latest.json 的写出块也须盖 contract_version（验证编队 minor：
+    否则 legacy 豁免对它成为永久豁免，契约永远无法收紧）。"""
+    inp = tmp_path / "news.json"
+    inp.write_text(json.dumps({
+        "updated_at": "2026-07-02T00:00:00+00:00",
+        "news": [{"source": "bilibili", "time": "2026-07-02T00:00:00+00:00",
+                  "title": "t", "summary": "s", "url": "https://x.co",
+                  "author": "a", "engagement": 1}],
+    }), encoding="utf-8")
+    out = tmp_path / "out"
+    monkeypatch.setattr(split_output, "INPUT_PATH", inp)
+    monkeypatch.setattr(split_output, "OUTPUT_DIR", out)
+    split_output.main()
+    payload = json.loads((out / "all-latest.json").read_text(encoding="utf-8"))
+    assert payload["contract_version"] == 1
+    _validate(payload)

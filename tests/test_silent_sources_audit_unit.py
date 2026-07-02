@@ -405,9 +405,10 @@ def test_non_date_files_ignored(dirs):
 # ── P0-3 校验丢弃门控 ────────────────────────────────────────────────────────
 
 def test_drop_alarms_threshold(tmp_path, monkeypatch):
+    from datetime import datetime, timezone
     p = tmp_path / "validation-drops.json"
     p.write_text(json.dumps({
-        "generated_at": "2026-07-02T00:00:00Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_dropped": 113,
         "by_source": {"taptap_review": 108, "weibo": 5},
     }), encoding="utf-8")
@@ -426,10 +427,35 @@ def test_write_health_embeds_validation_drops(dirs, tmp_path, monkeypatch):
     _, adir, _ = dirs
     _write_platform_day(adir, "reddit", "2026-07-01", 3)
     p = tmp_path / "validation-drops.json"
-    p.write_text(json.dumps({"generated_at": "x", "total_dropped": 7,
+    from datetime import datetime, timezone
+    p.write_text(json.dumps({"generated_at": datetime.now(timezone.utc).isoformat(),
+                             "total_dropped": 7,
                              "by_source": {"ghost": 7}}), encoding="utf-8")
     monkeypatch.setattr(ssa, "DROPS_PATH", p)
     report = ssa.build_report()
     ssa.write_health(report)
     health = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
     assert health["validation_drops"]["by_source"] == {"ghost": 7}
+
+
+def test_stale_drops_file_ignored(tmp_path, monkeypatch):
+    """崩溃轮残留的旧 drops 文件不得被当作本轮重复告警（验证编队 minor）。"""
+    from datetime import datetime, timezone, timedelta
+    old = (datetime.now(timezone.utc) - timedelta(hours=5)).isoformat()
+    p = tmp_path / "validation-drops.json"
+    p.write_text(json.dumps({"generated_at": old, "total_dropped": 108,
+                             "by_source": {"taptap_review": 108}}), encoding="utf-8")
+    monkeypatch.setattr(ssa, "DROPS_PATH", p)
+    drops = ssa.load_validation_drops()
+    assert drops["total_dropped"] == 0 and drops.get("stale_ignored") is True
+    assert ssa.drop_alarms() == []
+
+
+def test_fresh_drops_file_honoured(tmp_path, monkeypatch):
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).isoformat()
+    p = tmp_path / "validation-drops.json"
+    p.write_text(json.dumps({"generated_at": now, "total_dropped": 108,
+                             "by_source": {"taptap_review": 108}}), encoding="utf-8")
+    monkeypatch.setattr(ssa, "DROPS_PATH", p)
+    assert ssa.drop_alarms() == ["taptap_review(108)"]
