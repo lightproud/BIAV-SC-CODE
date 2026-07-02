@@ -1,6 +1,15 @@
 # 项目状态一览
 
-> 最后更新：2026-07-02 by 艾瑞卡会话（第二轮：degraded 源排查修复——6 源系审计器不识区服分层的假警报已修、taptap_review 真因为 VALID_SOURCES 白名单漂移已修、youtube_comments 写旧读新错位已修并合并归档；wiki W2 数据桥接回完成、CharacterGrid 上线图鉴页。同日第一轮：全仓档案漂移修复）
+> 最后更新：2026-07-02 by 艾瑞卡会话（第三轮·体质改进批次，守密人授权动态编排执行：
+> ① `archive_layout.py` 归档布局单一真相源落地，写方读方全收编（含发现并修复
+> repair_gaps 仍扫已死旧根、backfill 写平级两颗雷）；② 平级历史 1,382+13 文件
+> 一次性归位区服/类型分层，逐源唯一键集合验证零丢失（taptap 系按裁定⑧落 cn）；
+> ③ CI 测试工作流 sparse checkout（2.6G→约 100MB），required 检查重启项进提案待裁定；
+> ④ 校验丢弃升格一等指标（validation-drops → source-health → --strict 门控）；
+> ⑤ 输出层契约 v1（output-latest.schema.json + contract_version 盖章）；
+> ⑥ 断档检测默认收敛近 60 天窗口；⑦ 命轮→角色归属判定为一手数据盲区、落档
+> gap-inventory 不合成；⑧ 维护态节拍表提案落 Resource/proposal/。
+> 同日前两轮：全仓档案漂移修复 / degraded 源排查 + wiki 数据桥接回）
 >
 > **本档案是子项目状态与实时进度的唯一权威**（CLAUDE.md §1.3 裁定）：
 > 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
