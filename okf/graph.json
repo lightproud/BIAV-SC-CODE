@@ -839,7 +839,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -869,7 +869,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:google_play",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -879,7 +879,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:official",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -919,7 +919,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:steam",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -929,7 +929,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:steam_discussion",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -989,7 +989,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:youtube",
-        "health:degraded"
+        "health:active"
       ]
     },
     {

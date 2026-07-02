@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "google_play 社区数据源"
-description: "google_play 平台采集档案，全量 1118 条，健康度 degraded。"
+description: "google_play 平台采集档案，全量 1826 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/google_play/"
-tags: ["data_layer:full_archive", "platform:google_play", "health:degraded"]
-timestamp: "2026-07-02T06:38:01.405300+00:00"
+tags: ["data_layer:full_archive", "platform:google_play", "health:active"]
+timestamp: "2026-07-02T09:34:01.636631+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-02T06:38:01.405300+00:00"
 | 平台 | google_play |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/google_play/` |
 | 输出展示层（抽样） | `projects/news/output/google_play-latest.json` |
-| 全量条数 | 1118 |
-| 采集健康度 | degraded |
-| 最后成功 | 2026-06-21 |
+| 全量条数 | 1826 |
+| 采集健康度 | active |
+| 最后成功 | 2026-07-01 |
 
 # 数据纪律（硬约束）
 
