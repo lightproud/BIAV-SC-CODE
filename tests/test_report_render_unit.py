@@ -120,6 +120,80 @@ def test_main_defaults_when_frontmatter_empty(tmp_path, monkeypatch):
     assert captured["meta"] == ""           # no basis/author/generated → empty
 
 
+# ---------- 纯函数层（P4 拆分产物：零依赖，CI 恒跑） ----------
+
+def test_slice_body_cuts_h1_starts_at_section_zero():
+    body = "# 大标题\n\n引言废话\n\n## §0 第一章\n正文\n"
+    assert rr.slice_body(body) == "## §0 第一章\n正文\n"
+
+
+def test_slice_body_falls_back_to_first_h2():
+    body = "# 大标题\n\n## 无编号章\n正文\n"
+    assert rr.slice_body(body) == "## 无编号章\n正文\n"
+
+
+def test_slice_body_no_h2_keeps_body():
+    body = "没有章节的正文\n"
+    assert rr.slice_body(body) == body
+
+
+def test_slice_body_replaces_divider_with_placeholder():
+    out = rr.slice_body("## §0 章\n上文\n\n◇ ◇ ◇\n\n下文\n")
+    assert "<DIVIDER>" in out
+    assert "◇ ◇ ◇" not in out
+
+
+def test_decorate_body_html_builds_anchored_toc():
+    html, toc = rr.decorate_body_html("<h2>§0 甲</h2><p>x</p><h2>§1 乙</h2>")
+    assert toc == [("sec0", "§0 甲"), ("sec1", "§1 乙")]
+    assert '<h2 class="section-title" id="sec0">§0 甲</h2>' in html
+    assert html.count('<hr class="section-rule">') == 2
+
+
+def test_decorate_body_html_divider_placeholder_to_ornament():
+    html, toc = rr.decorate_body_html("<p><DIVIDER></p>")
+    assert html == '<hr class="ornament">'
+    assert toc == []
+
+
+def test_decorate_body_html_no_h2_empty_toc():
+    html, toc = rr.decorate_body_html("<p>纯段落</p>")
+    assert toc == []
+    assert "section-rule" not in html
+
+
+def test_build_document_assembles_cover_toc_content():
+    doc = rr.build_document("<p>正文</p>", [("sec0", "§0 甲")],
+                            "主标题", "副标题", "落款<br>二行", "署名")
+    assert doc.startswith("<!DOCTYPE html>")
+    assert "<h1>主标题</h1>" in doc
+    assert '<div class="sub">副标题</div>' in doc
+    assert '<div class="meta">落款<br>二行</div>' in doc
+    assert '<div class="erica">署名</div>' in doc
+    assert '<div class="toc-item">§0 甲</div>' in doc
+    assert '<div class="content"><p>正文</p></div>' in doc
+
+
+def test_build_document_empty_toc_still_renders_toc_page():
+    doc = rr.build_document("<p>x</p>", [], "T", "", "", "N")
+    assert "目 录" in doc
+
+
+# ---------- build_html（仅需轻依赖 markdown） ----------
+
+def test_build_html_end_to_end_structure():
+    pytest.importorskip("markdown")
+    body_md = ("# 大标题\n\n## §0 第一章\n\n正文一\n\n◇ ◇ ◇\n\n"
+               "## §1 第二章\n\n正文二\n")
+    doc, n_toc = rr.build_html(body_md, "标题", "副", "落款", "署名")
+    assert n_toc == 2
+    assert "大标题" not in doc          # h1 被封面取代
+    assert 'id="sec0">§0 第一章' in doc
+    assert 'id="sec1">§1 第二章' in doc
+    assert '<hr class="ornament">' in doc
+    assert "<DIVIDER>" not in doc
+
+
 # ---------- render (heavy deps guarded) ----------
 
 def test_render_produces_html_and_toc(tmp_path):

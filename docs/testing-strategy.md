@@ -27,8 +27,25 @@
 - 85 锁住扫荡成果，又给采集层留呼吸空间。当前实测 97% 远在闸上；门控保持 85 作为防回落底线，
   90+ 是**长期目标**而非硬闸（即便已达 97%，仍不上调，以免逼出凑数测试——见上）。
 
-唯一显著低于 80 的模块是 `report_render.py`（`render()` 需 weasyprint/markdown 重依赖，
-按 CLAUDE.md「渲染依赖按需装」立场刻意排除出 CI，CI 内约 56%、本地约 98%）。
+唯一显著低于 80 的模块曾是 `report_render.py`——2026-07-02（P4）已拆分：纯字符串组装
+（`slice_body` / `decorate_body_html` / `build_document` / `build_html`）与 weasyprint PDF
+薄壳解耦，轻依赖 markdown 进 CI 显式安装，现 CI 内约 87%（仅 `render()` 写 PDF 薄壳按
+「渲染依赖按需装」立场留在 importorskip 后）。
+
+### 覆盖率量表两次校准（2026-07-02 覆盖率分析会话）
+
+- **分支覆盖开启**：`.coveragerc` `branch = True`（P6）。此前语句 94.8% vs 分支 89.4%，
+  5.4 个百分点差距全是「行跑到了、分支没拐过去」的死角（错误/降级分支正是行门盲区）。
+  门槛 85 不动——量表更诚实，闸门不收紧。
+- **subprocess 测量盲区消除**：`deliverable_path.py` 曾有 21 条测试却恒测 0%（全走
+  subprocess，coverage 不跨进程）。测试已改 import 直调 `main()`（P2），保留 3 条
+  subprocess 冒烟；同类新测试**默认同进程驱动**，subprocess 只用于验证脚本入口。
+- 同会话其余动作：`compact_discord_archive.py` 写盘主路径补测至 100%（P1，破坏性重写
+  全量档案的路径不再裸奔）；`measure_discord_compaction.py` 退役删除（P3，守密人裁定，
+  见 `memory/decisions.md`）；`discord_archiver.py` 错误分支钉「失败隔离」不变量至 95%
+  （P5，刻意不追 100%）；`.githooks/pre-push` 413 防线上 tmp 双仓行为测试
+  （P7，`tests/test_pre_push_hook.py`）。分析报告：
+  `Public-Info-Pool/Resource/repo-engineering/test-coverage-analysis-20260702.md`。
 
 ## 2. 变异测试：断言质量的体检
 
@@ -36,10 +53,12 @@
 删语句），好的测试必须让这些「变异体」变红；**存活的变异体 = 断言盲点**。
 
 - 配置：`setup.cfg [mutmut]`，刻意只锁**逻辑密集、常量表噪声低**的核心模块，存活体能明确
-  归因为测试缺口（或已登记等价体），而非数据表 churn。当前锁定三个：
+  归因为测试缺口（或已登记等价体），而非数据表 churn。当前锁定四个：
   - `scripts/silver_tokenizer.py`（两条分析主线共用的分词地基：领域词典 FMM）
   - `scripts/lua_parse.py`（花括号深度扫描 + 字符串状态机 + `\"`/`\n` 还原）
   - `scripts/parse_voice_lines.py`（id 间隙分组 + `·` 分类切分；基于 lua_parse）
+  - `projects/news/scripts/discord_compact.py`（紧凑 schema 压缩/还原对；`expand_record`
+    是「缺字段=默认值」契约的唯一还原器，732 万条社区档案压其默认值表上。P8，2026-07-02）
 - 跑法：本地 `mutmut run && mutmut results`；CI 手动触发 `mutation-test.yml`。
 - 每个被测模块配**包路径导入**的专用孪生档（`tests/test_mut_*.py`，如 `scripts.silver_tokenizer`），
   让 mutmut 运行时记录的 key 与按文件路径推导的 key 对齐（兄弟单测用裸模块名导入，mutmut 对不上）。
@@ -61,6 +80,10 @@
 
 **parse_voice_lines**：7 存活，经判定**全为等价体**（见下表的通用类）——非等价变异体首跑即 100% 杀光，
 是干净的优质靶。`parse_cg_gallery` 转常规测试时另补了 2 条真盲点（缺 `files`/`path` 键的默认值处理）。
+
+**discord_compact（2026-07-02 纳入）**：孪生档 `tests/test_mut_discord_compact.py` 对
+compact/expand 每个默认值判断做双向断言（留/删各一条）+ 全字段往返无损——**首跑变异体
+零存活**，干净靶；既有 15 存活体维持不变、全部仍在等价体白名单内。
 
 ### 已登记的等价变异体（survivor 白名单）
 

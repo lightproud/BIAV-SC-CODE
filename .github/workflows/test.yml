@@ -42,7 +42,13 @@ jobs:
           # requirements, which also drag UnityPy/Pillow) so the REAL schema-
           # validation integration tests (tests/test_integration_jsonschema.py)
           # actually run in CI instead of importorskip-ing past the branch.
-          pip install pytest pytest-cov jsonschema
+          # markdown likewise: report_render's build_html tests need it, and the
+          # scripts/requirements.txt install below is best-effort (`|| true`) —
+          # if weasyprint's native build fails there, markdown would silently
+          # vanish with it and the build_html branch would importorskip to fake
+          # green. weasyprint itself stays out per the render-deps-on-demand
+          # stance; only render()'s thin PDF shell is skipped without it.
+          pip install pytest pytest-cov jsonschema markdown
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
       - name: Run tests
@@ -56,7 +62,12 @@ jobs:
         # aspirational target, not a hard CI floor. Test-quality (not just line
         # reach) is independently guarded by mutation testing — see
         # .github/workflows/mutation-test.yml and docs/testing-strategy.md.
-        # report_render.py's render() path needs weasyprint/markdown (kept out of
-        # CI per CLAUDE.md's "render deps on demand" stance) so it caps ~56% here
-        # and ~98% locally. Measurement scope is pinned in .coveragerc.
+        # report_render.py is split (P4, 2026-07-02) into pure HTML assembly
+        # (tested with the light markdown dep, installed above) and a thin
+        # weasyprint PDF shell (kept out of CI per the render-deps-on-demand
+        # stance), so it now caps ~87% here instead of ~56%.
+        # Branch coverage is ON via .coveragerc `branch = True` (P6): statement
+        # coverage alone hid executed-but-never-forked error/degradation
+        # branches. The 85 floor is unchanged — the dial got honest, not
+        # tighter. Measurement scope is pinned in .coveragerc.
         run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=85
