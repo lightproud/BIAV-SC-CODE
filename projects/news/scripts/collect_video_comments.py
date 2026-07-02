@@ -4,13 +4,14 @@
 守密人要求：每天采集忘却前夜相关视频的**所有新评论**，并**归档旧评论**（不丢历史）。
 做法：维护一个去重累积库，每次运行增量补新 + 逐步回填旧。
 
-存储（projects/news/data/platforms/youtube_comments/）：
+存储（Public-Info-Pool/Record/Community/youtube_comments/，2026-07-02 对齐 BPT 4R
+数据根——此前仍写迁移前旧路径 projects/news/data/platforms/，导致权威档案 6-20 后断更）：
   comments.jsonl   累积库，一行一条评论，按 comment id 去重、只增不删
   state.json       每视频分页状态 {video_id: {title, channel, exhausted, next_page}}
   {date}.json      当次运行采到的评论快照（供当日报告引用「PV 视频评论」）
 
 候选视频来源：YouTube 搜索（Morimens/忘却前夜…）+ 复用已归档的 youtube 视频 ID
-（data/platforms/youtube/*.json）。每视频按 order=time 分页：
+（Record/Community/youtube/ 全布局递归，含区服/类型子目录）。每视频按 order=time 分页：
   - 增量：翻到整页都已在库即停（已追上最新）。
   - 回填：每视频每次最多翻 --max-pages 页，未尽则 state 标记 exhausted=false 下次续。
 
@@ -24,7 +25,8 @@ import os, json, glob, argparse, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone
 
 API = "https://www.googleapis.com/youtube/v3"
-DEST = "projects/news/data/platforms/youtube_comments"
+DEST = "Public-Info-Pool/Record/Community/youtube_comments"
+YT_ARCHIVE_GLOB = "Public-Info-Pool/Record/Community/youtube/**/*.json"
 SEARCH_Q = ["Morimens", "忘却前夜", "Morimens Saya no Uta", "忘却前夜 沙耶"]
 
 
@@ -48,8 +50,8 @@ def discover_videos(key):
                     vids[vid] = (sn.get("title", ""), sn.get("channelTitle", ""))
         except Exception as e:
             print(f"  search '{q}' 失败: {type(e).__name__}")
-    # 复用已归档 youtube 视频 URL 里的 video id
-    for fp in glob.glob("projects/news/data/platforms/youtube/*.json"):
+    # 复用已归档 youtube 视频 URL 里的 video id（递归覆盖区服/类型分层）
+    for fp in glob.glob(YT_ARCHIVE_GLOB, recursive=True):
         try:
             items = json.load(open(fp, encoding="utf-8"))
         except Exception:

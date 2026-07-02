@@ -87,8 +87,12 @@ BILIBILI_MORIMENS_CREATORS = {
     32726726: 'God7777',
 }
 
-# Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'taptap', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo'}
+# Valid source identifiers — 从 sources.py 单一真相源派生（含 SOURCE_ALIASES 的
+# 归一化前原始名，如 steam_review）。此前为私有硬编码白名单，2026-06-21 采集规范
+# 新增 taptap_review 分桶后未同步，导致采集到的评论在校验层被整批丢弃
+# （2026-07-02 修复：CI 实测单轮 108 条被 "unknown source" 拦截）。
+from sources import KNOWN_SOURCES as _KNOWN_SOURCES, SOURCE_ALIASES as _SOURCE_ALIASES
+VALID_SOURCES = set(_KNOWN_SOURCES) | set(_SOURCE_ALIASES)
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
