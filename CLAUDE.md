@@ -312,7 +312,9 @@ brain-in-a-vat/
 
 | 场景 | 命令 |
 |------|------|
-| 运行验证程序（全量单测）| `pytest tests/ -v` |
+| 运行验证程序（全量单测）| `pytest tests/ -v`（pytest 未随 requirements 收口，云容器缺则先 `pip install pytest`）|
+| 单文件 / 单用例 | `pytest tests/test_<模块>.py -v` / `pytest tests/ -k "<关键词>" -v` |
+| CLAUDE.md 对账三卫 | `pytest tests/test_claude_md*.py -v`（路径引用 / 覆盖 / 日期一致性；**改本档案后必跑**）|
 | wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
