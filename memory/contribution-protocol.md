@@ -130,7 +130,7 @@
 | M1 末 | Issue / PR 模板落档 ✅ | `.github/ISSUE_TEMPLATE/{bug,data-gap,config}.yml` + `.github/PULL_REQUEST_TEMPLATE.md`（Code-site 2026-04-26 实施） |
 | M2（5-11 → 6-10） | **双入口**：仓库根 `CONTRIBUTING.md` + 主站「贡献者入口」镜像页（守密人 Q5 裁决 b） | 派 Code-site 双轨实施 |
 | M3（6-11 → 7-10） | **至少 1 轮真实贡献跑通**（验收节点） | 1 个外部 PR 从提交到合并完整经历流程 |
-| M4（7-11 → 7-19） | 战略验收 | 三新使命#2 出口标准核验 |
+| M4（7-11 → 7-19） | 战略验收 | 使命#2 出口标准核验 |
 
 ---
 

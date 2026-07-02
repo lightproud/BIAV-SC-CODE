@@ -8,8 +8,8 @@
 **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
 
 - **新定位**：
-  - **当前**：守密人个人兴趣项目，与三新使命无关，**不是银芯主线**
-  - **未来扩展 ⓐ**：可能演化为 Studio 团队 AI 训练场（三新使命之 #3 的具体场景）
+  - **当前**：守密人个人兴趣项目，与银芯使命无关，**不是银芯主线**
+  - **未来扩展 ⓐ**：原设想演化为 Studio 团队 AI 训练场（原使命#3 的具体场景）——**使命#3 已于 2026-06-28 退役**，此扩展不再绑定正式使命
   - **未来扩展 ⓒ**：可能演化为社区共建衍生项目
 - **本子项目在 Phase 2（4-27 → 7-19，84 天）的状态**：**不主线派发，主控台不分配资源**
 - **派发关系**：守密人主导，主控台不派子代理处理 game。如果守密人想推进，自己开 Code-game 会话或者直接动手
@@ -37,7 +37,7 @@
 - [ ] 后续：更多唤醒体 / 武器进化树 / 真实立绘接入 / 音效
 
 ## 依赖
-- 角色数据 — 现行源 `projects/wiki/data/extracted/categorized/character_data.txt`（一手解包，72 角色）。**原 `projects/wiki/data/db/characters.json` 结构化层 2026-06-15 已清空，W2 重建中**，Phase 4 启动前应已齐 72
+- 角色数据 — 现行源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；底层原始字段 `projects/wiki/data/extracted/categorized/character_data.txt`）。**原 `projects/wiki/data/db/characters.json` 占位结构化层 2026-06-15 已清空、勿引用**；W2 可信基线已重建（72 齐）
 - `projects/game/config/game-config.json` — 游戏配置（本项目产出，待创建）
 - `assets/images/` — 图片素材
 
@@ -56,7 +56,7 @@
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 game 子项目当前状态
 - [ ] 阅读 `memory/morimens-context.md` 了解游戏背景知识（游戏设计的基础）
-- [ ] 检查 `projects/wiki/data/db/` 中可用的数据资产（characters.json 已建立，当前 24/72）
+- [ ] 检查现行角色源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；旧 `data/db/` 占位层 2026-06-15 已清空，勿引用）
 - [ ] 确认"待决策"清单中哪些已有结论，更新本文件
 - [ ] 确认你要修改的文件不属于其他子项目
 - [ ] 完成任务后更新本文件状态和 `memory/project-status.md`

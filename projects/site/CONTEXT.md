@@ -4,7 +4,7 @@
 
 ## v2.0 新使命定位（2026-04-26 起）
 
-**site = 银芯三新使命之 #2「社区共建知识底座」对外门户**
+**site = 银芯使命对外门户 / 三轴（site·news·wiki）发现入口**（非任一单一使命的载体；使命#2「社区共建知识底座」载体为 wiki，见 CLAUDE.md §1.2）
 
 - **新定位**：让外部社区/Studio 团队/守密人能找到银芯的入口（对外发现入口）
 - **本子项目在 Phase 2（4-27 → 7-19，84 天）的优先级**：核心主线 #3（site/news/wiki 三轴之一），但工作量低于 news/wiki
@@ -23,7 +23,7 @@
   - 贡献模板 ✅（本批次，2026-04-26）：按 `memory/contribution-protocol.md` § 6 M1 末任务落档 `.github/ISSUE_TEMPLATE/{bug,data-gap,config}.yml` + `.github/PULL_REQUEST_TEMPLATE.md`（Code-site 实施）
   - 待办：D-contribute（M2 5-11 起）— 仓库根 `CONTRIBUTING.md` 形式化 + 主站「贡献者入口」镜像页双轨实施
 - **M2（5-11 → 6-10）**：补对外说明文档（如 README 重写 / 主站 About 加深 / 贡献指南入口）
-- **M3（6-11 → 7-10）**：跨站视觉一致性最终校验 + 三新使命展示
+- **M3（6-11 → 7-10）**：跨站视觉一致性最终校验 + 使命展示（二核心；原使命#3 训练场 2026-06-28 退役）
 - **M4（7-11 → 7-19）**：验收：对外发现路径顺畅
 
 ## 职责范围
@@ -65,7 +65,7 @@ https://lightproud.github.io/brain-in-a-vat/
 ├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
 ├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /brain-in-a-vat/wiki/）
 ├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
-└── /docs/    ← deliverables/2026-03/缸中之脑计划.{html,pdf}（如存在）
+└── /docs/    ← Public-Info-Pool/Resource/proposal/biav-project-plan-202603.{html,pdf}（如存在；deliverables/ 已 2026-06-21 迁此）
 ```
 
 > design/ 通过 `deploy-site.yml:92` 的 `cp -r projects/site/design dist/design` 部署到外网，
@@ -90,9 +90,9 @@ environment 部署记录会阻止新 workflow 部署（详见 `memory/lessons-le
 
 ### 触发条件
 
-push to main 且路径匹配（2026-06-09 实测 `deploy-site.yml` paths）：`projects/site/**`、
+push to main 且路径匹配（`deploy-site.yml` paths）：`projects/site/**`、
 `projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/news/index.html`、
-`deliverables/**`、`.github/workflows/deploy-site.yml`。
+`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、`.github/workflows/deploy-site.yml`。
 也支持 `workflow_dispatch` 手动触发。旧 `site/**` 路径已不在触发列表（与下文 2026-04-20 B1a 清理记述一致）。
 
 ## 文件位置说明

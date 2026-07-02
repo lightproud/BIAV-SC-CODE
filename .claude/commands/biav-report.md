@@ -2,11 +2,11 @@ Produce a silver-core community intelligence report (deep analysis / role recomm
 
 全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、混合自称、功能性开头）。事实采信遵 §6.11（R1 并行任一失败=整次失败，扫描用单脚本；R2 SHA/行数/时序只引直接产出工具；R3 区分官方确认 vs 玩家报告、建议 vs 已落盘）。
 
-1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `projects/news/data/`，禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`。
+1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `Public-Info-Pool/Record/Community/`（2026-06-21 迁入，text 全量永驻 git），禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`。
 
 2. 单脚本提取（放 `/tmp/`，不并行多脚本）：
-   - Discord：`discord/channel_index.json` 映射 `{name→dir}`；消息在 `discord/channels/{dir}/{date}.jsonl` 逐行 JSON，字段 `content`/`author_id`/`author_bot`(过滤bot)/`timestamp`/`reactions[].count`。
-   - 平台：`platforms/{plat}/{date}.json`（17 目录：steam steam_review appstore google_play reddit official dcinside ruliweb gamerch telegram bilibili weibo weixin youtube pixiv stopgame miraheze_wiki），字段 `title`/`summary`/`lang`/`url`/`content_type`/`engagement`。
+   - Discord：`Public-Info-Pool/Record/Community/discord/channel_index.json` 映射 `{name→dir}`；消息在 `Public-Info-Pool/Record/Community/discord/channels/{id_suffix}/{date}.jsonl` 逐行 JSON，字段 `content`/`author_id`/`author_bot`(过滤bot)/`timestamp`/`reactions`。**紧凑 schema（缺字段=默认值，见 CLAUDE.md §5.2）：读取必用 `.get(默认)`**，需稳定全字段调 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
+   - 平台：`Public-Info-Pool/Record/Community/{plat}/{date}.json`（含区服子层时为 `{plat}/{region}/{type}/{date}.json`；平台清单以 `ls Public-Info-Pool/Record/Community/` 为准），字段 `title`/`summary`/`lang`/`url`/`content_type`/`engagement`。
    - 限定窗口、去重、保留原文+平台+日期+反应数 → `/tmp/extract/*.txt` 供人工甄别。
    - 故障/官方动态报告优先锚定 `🔸有問必答┊official-q-a` 与 `🔸遊戲公告┊game-announcement`（带状态标签：处理中/已解决/Resolved）。
    - 多语言关键词扫描覆盖中/英/韩/俄/西/葡/越/泰/印尼/法/德/日；命中后人工读原文剔噪声（error↔terror、broken↔角色超模）。

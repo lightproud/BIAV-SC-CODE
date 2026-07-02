@@ -1,9 +1,9 @@
 ---
 type: "documentation"
 title: "银芯 OKF Bundle README"
-description: "本 bundle 的说明、银芯受限层定位、三条落地铁律与重生成方式。"
+description: "本 bundle 的说明、银芯公开层定位、三条落地铁律与重生成方式。"
 tags: ["meta", "documentation"]
-timestamp: "2026-06-21"
+timestamp: "2026-06-29"
 ---
 
 # 银芯 OKF Bundle —— README
@@ -16,9 +16,9 @@ https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
 
 ## 银芯定位（重要）
 
-银芯是**受限/非公开层**。OKF 官方主卖点「跨组织互操作」对银芯打折——
-本 bundle 面向**内部**：艾瑞卡人格消费、银芯→黑池单向接口的线格式候选、
-白嫖 OKF 静态可视化器看角色关系图。**不对外发布**。
+银芯为**公开信息层**（整层公开，守密人 2026-06-21 裁定；本 bundle 作为工程产物亦属公开信息）。
+OKF 官方主卖点「跨组织互操作」对银芯打折——本 bundle 主供**内部消费**：艾瑞卡人格消费、
+银芯→黑池单向接口的线格式候选、白嫖 OKF 静态可视化器看角色关系图，**非以对外互操作为目标**。
 
 ## 三条落地铁律
 

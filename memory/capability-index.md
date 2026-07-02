@@ -257,7 +257,7 @@
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
-- **`site`** — 使命#3 对外门户：静态站 public/ + 设计令牌 design/。  
+- **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
 - **`wiki`** — 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。  
   `projects/wiki/`

@@ -1,11 +1,11 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-06-17 by 艾瑞卡会话（新增日服 Discord 归档接入：探测 + 分层 workflow；上次 2026-06-09 主控台状态核验。实时进度权威在 `memory/project-status.md`）
+> 最后更新：2026-06-28 by 艾瑞卡会话（数据根引用同步至 `Public-Info-Pool/Record/Community/`，2026-06-21 BPT 4R 迁移落地；区服/类型分层仍待实施。上次 2026-06-17 日服 Discord 归档接入。实时进度权威在 `memory/project-status.md`）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
-**news = 银芯三新使命之 #1「黑池信息入口」核心载体**
+**news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
 
 - **新定位**：GitHub 自动化采集层 / 黑池消费的"眼睛和耳朵" / **银芯→黑池单向输出**
 - **关键约束**：**黑池不倒灌银芯**（守密人 4-26 裁定）。news 输出格式与稳定性是黑池能否依赖银芯的关键
@@ -17,10 +17,10 @@
 ### 2026-06-09 状态核验（实测）
 - **采集自动化持续运行**：`update-news` 每小时；`output/*-latest.json` 当日仍在更新
 - **Discord → 聚合器桥接已落地**：aggregator 含 discord 通道，`output/discord-latest.json` 持续产出（M1 任务 1 完成）
-- **YouTube 已接通**：`output/youtube-latest.json` 持续更新，`data/platforms/youtube{,_comments}/` 在归档（M2 首项完成）
+- **YouTube 已接通**：`output/youtube-latest.json` 持续更新，`Public-Info-Pool/Record/Community/youtube{,_comments}/` 在归档（M2 首项完成）
 - **新增 workflow（2026-06-05）**：`collect-comments`（每日 02:00 UTC 视频评论归档）/ `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
 - **daily-report 定时已停用**：报告改在 Claude Code 会话内订阅生成（零 API 费），workflow 仅留手动触发备用——M1 任务 3 的「日报 workflow 验证」语境已失效
-- `data/platforms/` 已扩至 18 个平台目录
+- `Public-Info-Pool/Record/Community/` 已扩至 18 个平台目录（2026-06-21 迁移，原 `data/platforms/` 根废弃）
 - M1 任务 2（月度清理触发）/ 任务 4（黑池接口 schema 评估）状态未在本次复核范围，待 Code-news 确认
 
 ## Phase 2 任务（M1-M4，2026-04-27 → 07-19）
@@ -49,8 +49,8 @@
 
 ### 注意事项
 - update-news.yml 每小时运行一次（cron: '0 * * * *'）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 data/discord/ 根）
-- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 guilds/{id}/）
+- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/` 根）
+- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/guilds/{id}/`）
 - discord-archive-jp.yml 日服服务器归档（数据落 guilds/{id}/）：待填 JP_GUILD_ID 并启用 :45 错峰 cron，详见下「日服 Discord 接入」
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
@@ -63,13 +63,13 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 1. **发现 guild ID**：在 Actions 运行 `Discord Discover Guilds`（`discord-discover-guilds.yml`，
    仅手动触发）。脚本 `discord_list_guilds.py` 调 `/users/@me/guilds` 列出 bot 所在全部服务器，
    对照已登记清单（Global / 志愿者）高亮「未登记」者，快照写入
-   `projects/news/data/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。
+   `Public-Info-Pool/Record/Community/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。
 2. **启用归档**：把日服 ID 填入 `discord-archive-jp.yml` 的 `env.JP_GUILD_ID`，取消其
    `schedule` 区块注释（保留 `:45` 错峰，避开 Global 与志愿者）。在 ID 配置前，该 workflow
    经 Guard 步骤安全跳过——绝不因空 ID 回落到 Global guild。
 
 首跑会全量回溯日服建服至今的历史（归档器对新 guild 的 cold-start 行为），数据隔离落
-`data/discord/guilds/{JP_GUILD_ID}/`，与 Global / 志愿者互不污染。
+`Public-Info-Pool/Record/Community/discord/guilds/{JP_GUILD_ID}/`，与 Global / 志愿者互不污染。
 
 ## 已完成
 - [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
@@ -80,13 +80,13 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - [x] split_output.py Steam 数据标准化修复
 
 ## 多平台按日归档
-- **已完成**：`archive_platforms.py` — 将 *-latest.json 按日期存入 `data/platforms/{platform}/YYYY-MM-DD.json`
+- **已完成**：`archive_platforms.py` — 将 *-latest.json 按日期存入 `Public-Info-Pool/Record/Community/{platform}/YYYY-MM-DD.json`（2026-06-21 起，原 `data/platforms/` 根已废）
 - 覆盖平台：Steam / Bilibili / Official / Reddit / Twitter / YouTube / NGA / TapTap
 - Discord 已有独立归档器（`discord_archiver.py`），不重复
 - 已集成到 `update-news.yml` workflow，每次聚合后自动归档
 - 支持去重合并、指定日期归档、统计报表
 - 运行方式：`python scripts/archive_platforms.py [--date YYYY-MM-DD] [--stats]`
-- ⚠ 上述扁平 `data/platforms/{platform}/` 结构为**旧布局**，按下方《采集源命名与归档结构规范》迁移中。
+- ⚠ 数据**根**已于 2026-06-21 迁至 `Public-Info-Pool/Record/Community/`（`data/platforms/` 旧根废弃，脚本 `ARCHIVE_DIR` 已切）；但平台目录内的**区服/类型分层**（`{平台}/{区服}/{类型}/`，见下方《采集源命名与归档结构规范》）仍为扁平日期文件、**待实施**。
 
 ## 采集源命名与归档结构规范（2026-06-21 grilling 对齐，待实施）
 
@@ -137,7 +137,7 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - `projects/news/scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）
 - `projects/news/scripts/collect_global.py` — 全球采集桥接脚本，合并 aggregator 输出
 - `projects/news/scripts/backfill_platforms.py` — 多平台历史回溯采集
-- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线（split 拆分到 *-latest.json，archive 按日归档到 data/platforms/）
+- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线（split 拆分到 *-latest.json，archive 按日归档到 `Public-Info-Pool/Record/Community/`）
 - `requirements.txt` — Python 依赖
 - `.env.example` — 环境变量配置模板
 

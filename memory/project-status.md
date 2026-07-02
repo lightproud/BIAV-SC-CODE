@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-06-21 by /grill 治理会话（清退已删的记忆/做梦子系统残留状态）
+> 最后更新：2026-06-28 by 艾瑞卡会话（全仓 md 矛盾审计后同步：wiki W2 基线已重建/58 真实角色页投产、数据根迁 Public-Info-Pool/Record/Community/。上次 2026-06-21 /grill 治理会话清退记忆/做梦残留）
 >
 > **本档案是子项目状态与实时进度的唯一权威**（CLAUDE.md §1.3 裁定）：
 > 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
@@ -30,7 +30,7 @@
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
-| wiki（数据集 + Wiki 站点） | **结构化层已清空（6-15 守密人裁定）**：db/ + 派生角色页删除，站点构建通过 | Code-wiki | Phase 2 W2：以 `data/extracted/` 一手解包字段重建可信 characters 基线（禁用合成占位），再接回数据桥与生成页 |
+| wiki（数据集 + Wiki 站点） | **W2 基线已重建**：旧 `data/db/` 占位层 6-15 清空；新可信基线 `data/processed/characters.json`（72 真实角色，一手解包）已落地，`scripts/generate_wiki_pages.py` 据此生成 58 个真实唤醒体页，站点构建通过 | 艾瑞卡会话 | W2 收尾：运行时数据桥 `characters.ts` 仍为空数组、待接回 processed/ 基线；真实字段缺口见 `wiki-phase-2-gap-inventory.md` |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -52,7 +52,7 @@
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
   - [ ] NGA — 需 NGA_FORUM_ID
   - [ ] TapTap — 需 TAPTAP_APP_ID
-  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；多 guild 分层归档：Global（data/discord/ 根）/ 志愿者（guilds/）/ 日服（接入中，2026-06-17，guilds/）
+  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；多 guild 分层归档（2026-06-21 迁 `Public-Info-Pool/Record/Community/discord/`）：Global（`discord/` 根）/ 志愿者（`discord/guilds/`）/ 日服（接入中，2026-06-17，`discord/guilds/`）
   - [x] YouTube — 代码就绪，需配置 API 密钥
 
 ### 报告系统（新增，来自 new-session-7Plu3）
@@ -71,8 +71,11 @@
 
 - **现行数据源（唯一）**：`projects/wiki/data/extracted/categorized/character_data.txt`
   （客户端一手解包字段）；角色真实总数 **72**（含皮肤/联动/彩蛋）
-- **W2 任务**：以解包字段重建可信 `characters` 基线（**禁用合成占位**），再接回数据桥与生成页；
-  真实缺口见 `memory/wiki-phase-2-gap-inventory.md`，进度以本档「子项目状态」为准
+- **W2 进度**：可信 `characters` 基线**已重建**于 `projects/wiki/data/processed/characters.json`
+  （72 真实角色，一手解包，多维证据法分类 playable/unreleased/easter_egg，**无合成占位**）；
+  `scripts/generate_wiki_pages.py`（读 `data/processed/`）已据此生成 58 个真实唤醒体静态页。
+  **剩余收尾**：运行时数据桥 `characters.ts` 接回 processed/ 基线；真实字段缺口见
+  `memory/wiki-phase-2-gap-inventory.md`，进度以本档「子项目状态」为准
 - **现存解包/索引脚本**（`projects/wiki/scripts/`）：`decrypt_and_extract.py` / `extract_client_data.py` /
   `build_banner_character_index.py` / `build_drop_index.py` / `generate_rss.py` / `check_version.py` /
   `validate_data.py`（精确清单以 `ls` 为准）
@@ -87,11 +90,14 @@
   （关卡引言 + 长篇正文 + 词条速览 + 番外未编章节正文 78 篇，含「开学日」575 字）；
   剧情↔角色双向交叉链接 + 章节概览可点目录；新增**功能解锁条件**页（feature_unlock，145 项）。
   全部一手解包原文，pytest 全绿、VitePress 构建通过
-- **现状（2026-06-21 实测）**：VitePress 站点框架在；Markdown 页面 **约 86 个**（脚手架 + 索引页 +
-  1 个 Pandia fixture 角色页 `docs/zh/awakeners/pandia.md`）——原「约 580+ 页（ZH/EN/JA 三语全量）」
-  系清空前基于早期假数据生成，已随结构化层清空大幅缩减
-- **数据桥**：`docs/.vitepress/theme/data/characters.ts` 现导出空数组（保留类型/组件脚手架，
-  W2 重建基线后接回），VitePress 构建已验证通过（BUILD_OK）
+- **现状（2026-06-28 实测）**：VitePress 站点框架在；`docs/` 下 Markdown **约 81 页**，含
+  **58 个真实唤醒体角色页**（`docs/zh/awakeners/{角色ID}.md`，由 `scripts/generate_wiki_pages.py`
+  读 `data/processed/characters.json` 一手字段生成，如 `15560.md` 潘狄娅含界域/职业/档案表）
+  + 剧情正文/功能解锁/索引页。原「1 个 Pandia fixture 角色页」已被 58 真实页取代（`pandia.md` 已删）；
+  原「约 580+ 页（ZH/EN/JA 三语全量）」系清空前假数据，三语全量尚未恢复
+- **数据桥**：`docs/.vitepress/theme/data/characters.ts` **仍导出空数组**（保留类型/组件脚手架）——
+  基线已重建（processed/）、静态角色页已生成，惟运行时数据桥**接回 processed/ 仍 pending**（W2 收尾项），
+  故 Vue 组件（CharacterGrid 等）暂空、静态 MD 角色页正常；VitePress 构建已验证通过（BUILD_OK）
 - **Vue 组件（约 12 个，2026-06 重建集，角色数据展示向）**：CharacterGrid / CharacterInfobox /
   CharacterSheet / SkillTable / TrinketRecommendationCard / AscensionMaterialBlock / BondRewardList /
   StatGrowthChart / AffinityTags / PortraitGallery / VoiceLineList / FixtureBadge（精确以
@@ -107,7 +113,7 @@
 
 ## 当前阶段
 
-**Phase 2 银芯三新使命建设期**（2026-04-27 → 07-19，4-19/4-20 压缩时间表）。
+**Phase 2 银芯使命建设期**（2026-04-27 → 07-19，4-19/4-20 压缩时间表）。原「三新使命」之 #3「Studio 团队 AI 协作训练场」2026-06-28 退役，收敛为二核心使命（news / wiki）。
 
 Phase 0/1 已验收归档（2026-04-04）：Phase 0 止血完成、Stage 1 日报 14 天验证
 通过、记忆系统 9 模块 + 做梦 Agent 三层上线（**该两系统已于 2026-06-14/06-20 整套退役删除**，

@@ -90,7 +90,7 @@
 
 ### 相关战略
 
-- `memory/active/mission-v2.0-three-pillars.md` — v2.0 三新使命（M7 至少一种贡献流程跑顺验收点）
+- `memory/active/mission-v2.0-three-pillars.md` — v2.0 使命（二核心；使命#3 2026-06-28 退役。M7 至少一种贡献流程跑顺验收点）
 - `memory/strategic-plan-2026.md` — Phase 2 全文
 
 ---

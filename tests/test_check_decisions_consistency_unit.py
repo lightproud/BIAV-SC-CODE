@@ -39,7 +39,7 @@ def _good_decisions_text():
 
 
 def _good_claude_text():
-    return "银芯定位为受限 / 非公开层。"
+    return "银芯为公开信息层（整层公开）。"
 
 
 def _setup(monkeypatch, tmp_path, dtext=None, ctext=None,
@@ -118,11 +118,11 @@ def test_c4_claude_md_file_missing(monkeypatch, tmp_path):
     assert any(e.startswith("C4") and "不存在" in e for e in cdc.check())
 
 
-def test_c4_decisions_residual_public_layer(monkeypatch, tmp_path):
+def test_c4_decisions_residual_restricted_layer(monkeypatch, tmp_path):
     dtext = (f"{cdc.ANCHOR}\n{cdc.GLOBAL_TABLE_HEADER}\n"
-             "残留 银芯（公开层） 旧定位\n## 决策历史归档\n")
+             "残留 银芯（受限/非公开层） 旧定位\n## 决策历史归档\n")
     _setup(monkeypatch, tmp_path, dtext=dtext)
-    assert any("公开层" in e for e in cdc.check())
+    assert any("受限/非公开层" in e for e in cdc.check())
 
 
 # ---------- C5 ----------

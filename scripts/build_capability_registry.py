@@ -336,7 +336,7 @@ def build() -> dict:
             "generated_at": date.today().isoformat(),
             "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
             "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
-            "scope": "BIAV-SC 银芯受限层全功能盘点 + 动态编排可达性",
+            "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
             "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
         },
         "workflows": scan_workflows(),

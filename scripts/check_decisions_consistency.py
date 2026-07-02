@@ -12,7 +12,7 @@ PR 触碰 decisions*.md / CLAUDE.md 时自动校验，不一致即 fail。
   C1 record_decision 插入锚点存在且唯一（缺失会让写入回退甚至污染后续子表）
   C2 「当前有效决策 / 全局」表是 3 列 schema（与 record_decision 写入列数对齐）
   C3 归档层 decisions-archive.md 存在（拆分后的溯源去处）
-  C4 定位一致：CLAUDE.md 声明受限/非公开层，且 decisions.md 当前有效区不再残留「银芯（公开层）」定位
+  C4 定位一致：CLAUDE.md 声明公开信息层（2026-06-21 翻回公开），且 decisions.md 当前有效区不再残留「银芯（受限/非公开层）」旧定位
   C5 已删子系统路径（bpt-next / graphify-ext / occ-local）不出现在 decisions.md 当前有效区
 """
 
@@ -63,12 +63,12 @@ def check() -> list[str]:
     # C4 定位一致
     if CLAUDE_MD.exists():
         ctext = CLAUDE_MD.read_text(encoding="utf-8")
-        if "受限" not in ctext or "非公开" not in ctext:
-            errors.append("C4 CLAUDE.md 未声明『受限 / 非公开层』定位（2026-06-11 裁定）")
+        if "公开信息层" not in ctext:
+            errors.append("C4 CLAUDE.md 未声明『公开信息层』定位（2026-06-21 翻回公开，覆盖 2026-06-11 受限/非公开层）")
     else:
         errors.append(f"C4 CLAUDE.md 不存在: {CLAUDE_MD}")
-    if "银芯（公开层）" in active:
-        errors.append("C4 decisions.md 当前有效区仍残留『银芯（公开层）』旧定位，应同步为受限/非公开层")
+    if "银芯（受限/非公开层）" in active:
+        errors.append("C4 decisions.md 当前有效区仍残留『银芯（受限/非公开层）』旧定位，应同步为公开信息层（2026-06-21 翻回公开）")
 
     # C5 已删子系统路径不在当前有效区
     for p in DELETED_PATHS:

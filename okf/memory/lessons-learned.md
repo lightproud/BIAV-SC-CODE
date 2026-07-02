@@ -4,7 +4,7 @@ title: "lessons-learned.md"
 description: "踩坑记录（持续追加编号）"
 resource: "/memory/lessons-learned.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-06-21"
+timestamp: "2026-06-29"
 ---
 
 # 记忆层指针
