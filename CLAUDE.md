@@ -256,7 +256,7 @@ brain-in-a-vat/
 │   ├── Reference/Game-Unpacked/   #   解包 text（脚本/配置/文本，#333 迁入）
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
-├── extracted_lua/                 # 客户端解包 Lua 原文（wiki/角色数据源）
+├── extracted_lua/                 # 解包提取说明+清单（.luac 本体在 Release「解包」桶，text 在 Public-Info-Pool/Reference/）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
 └── .github/workflows/             # CI 自动化（见 §7.2）
 ```

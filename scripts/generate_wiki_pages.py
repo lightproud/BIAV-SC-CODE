@@ -2,12 +2,13 @@
 
 Source of truth: projects/wiki/data/processed/ (PROCESSED_DIR below).
 Driven by: .github/workflows/deploy-site.yml (step "Regenerate wiki pages
-with media assets"). Builds encyclopedia + voice-line + media-asset pages.
+with media assets"). Builds encyclopedia + voice-line + media-asset pages,
+plus the per-character detail pages (docs/zh/awakeners/{id}.md).
 
-Distinct from projects/wiki/scripts/generate_pages.py, which generates the
-per-character detail pages from data/db/ and is driven by fetch-wiki-data.yml.
-The two generators write different page sets from different sources; keep their
-source dirs (processed/ here vs db/ there) in sync to avoid drift (ARCH-05).
+Sole page generator since 2026-06-20: the legacy projects/wiki/scripts/
+generate_pages.py (data/db/-driven, fetch-wiki-data.yml) was retired and
+deleted together with the synthetic-data chain (PR #253); ARCH-05 dual-source
+sync is moot.
 """
 import json
 import os

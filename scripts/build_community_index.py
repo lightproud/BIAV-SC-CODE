@@ -13,8 +13,9 @@
   * 放指针不放本体：聚合产物小而可提交；全文钻取仍回落到 dated 原文件
     （本 index 的 by_month 即「该回哪些日期文件 ripgrep」的路标）。
 
-数据层纪律（§4.1 / lesson #30）：本 index 读**全量档案层** projects/news/data/，
-产物 _meta 显式标 data_layer:full_archive，绝不与输出层 168 条样本混用。
+数据层纪律（§4.1 / lesson #30）：本 index 读**全量档案层**——现行根
+Public-Info-Pool/Record/Community/（2026-06-21 BPT 4R 迁入；旧 projects/news/data/
+布局仅作回落），产物 _meta 显式标 data_layer:full_archive，绝不与输出层样本混用。
 
 用法：
     python3 scripts/build_community_index.py
@@ -84,6 +85,17 @@ def _ymd(ts: str) -> str | None:
         return m.group(0)
     m = re.match(r"(\d{4})-(\d{2})", str(ts))    # 只到月：补 -01 占位
     return f"{m.group(0)}-01" if m else None
+
+
+def _source_root_label() -> str:
+    """_meta.source_root：实际读取根（新布局优先，与 _sources 同判据）。"""
+    root = (COMMUNITY_NEW
+            if COMMUNITY_NEW.exists() and any(COMMUNITY_NEW.iterdir())
+            else DATA_OLD)
+    try:
+        return str(root.relative_to(REPO)) + "/"
+    except ValueError:  # 测试环境 monkeypatch 到 REPO 外的 tmp 目录
+        return str(root) + "/"
 
 
 def _sources():
@@ -270,7 +282,7 @@ def build(max_files: int | None = None) -> dict:
         "_meta": {
             "generated": TODAY,
             "data_layer": "full_archive",
-            "source_root": "projects/news/data/",
+            "source_root": _source_root_label(),
             "total_records": total,
             "platform_count": len(platforms),
             "method": "deterministic lexical aggregate; tokenizer = domain-dict FMM "
@@ -281,8 +293,9 @@ def build(max_files: int | None = None) -> dict:
                        "如 2026-02/03 天天有数据但量崩 30 倍）。二者互补判采集异常。",
             "drilldown": "全文钻取回落到 by_month 指向的 dated 原文件 ripgrep；"
                          "本 index 是路标，非全文本体（放指针不放本体）。",
-            "data_note": "discord 全量历史构建期从 community-data release 还原"
-                         "（restore_release_data.py），不进 git；本体仍留 Releases。",
+            "data_note": "discord 全量历史 2026-06-21 de-tier 后永驻 git"
+                         "（Record/Community/discord/），直接读取，无需从 Release 还原；"
+                         "community-data release 已退役删除。",
         },
         "platforms": dict(sorted(platforms.items())),
         "timeline": timeline,
