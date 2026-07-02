@@ -138,8 +138,9 @@ def test_main_dry_run_does_not_write(archive):
 
 
 def test_main_writes_report_when_gaps(archive):
+    # 夹具日期在默认 60 天窗口之外 → 用 --full 全史模式（顺带覆盖该旗标）
     _make_platform(archive, "reddit", ["2026-04-01", "2026-04-03"])
-    _run_main([])
+    _run_main(["--full"])
     report_path = repair_gaps.REPORT_PATH
     assert report_path.exists()
     payload = json.loads(report_path.read_text(encoding="utf-8"))

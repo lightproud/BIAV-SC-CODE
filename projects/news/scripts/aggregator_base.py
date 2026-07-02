@@ -233,7 +233,13 @@ def validate_news_item(item):
 
 
 def validate_all_news(items):
-    """Validate and clean a list of news items. Returns list of valid items."""
+    """Validate and clean a list of news items. Returns list of valid items.
+
+    被丢弃条目按源计数进 VALIDATION_DROPS（2026-07-02 P0-3「静默丢弃升格为
+    一等指标」）：此前丢弃只打 WARNING 进 CI 日志，taptap_review 曾单轮被
+    丢 108 条、连续 12 天无人察觉。计数经 write_validation_drops 落盘，由
+    silent_sources_audit 并入 source-health 并参与 --strict 告警门控。
+    """
     valid_items = []
     invalid_count = 0
 
@@ -243,12 +249,34 @@ def validate_all_news(items):
             valid_items.append(cleaned)
         else:
             invalid_count += 1
+            src = item.get('source', 'unknown') if isinstance(item, dict) else 'malformed'
+            VALIDATION_DROPS[src] = VALIDATION_DROPS.get(src, 0) + 1
 
     if invalid_count > 0:
         logger.warning(f'Validation: {invalid_count} invalid items filtered out of {len(items)} total')
 
     logger.info(f'Validation: {len(valid_items)} valid items out of {len(items)} total')
     return valid_items
+
+
+# 本次运行的校验丢弃计数（源 -> 条数）。跨源累计，run 结束由 aggregator 落盘。
+VALIDATION_DROPS: dict = {}
+VALIDATION_DROPS_PATH = (Path(__file__).resolve().parent.parent / 'output'
+                         / 'validation-drops.json')
+
+
+def write_validation_drops(path=None):
+    """把本次运行的校验丢弃计数写盘（无丢弃也写零值文件，供健康侧稳定消费）。"""
+    import json as _json
+    path = Path(path) if path else VALIDATION_DROPS_PATH
+    payload = {
+        'generated_at': datetime.now().astimezone().isoformat(),
+        'total_dropped': sum(VALIDATION_DROPS.values()),
+        'by_source': dict(sorted(VALIDATION_DROPS.items())),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(_json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    return payload
 
 def generate_summary(news_items):
     """

@@ -263,4 +263,14 @@ if __name__ == '__main__':
             )
     except Exception as exc:
         logger.error(f'global collectors phase failed: {exc}; AC output preserved')
+    # P0-3（2026-07-02）：本次运行的校验丢弃计数落盘（零丢弃也写零值文件），
+    # 由 silent_sources_audit --write 并入 source-health、--strict 参与告警门控。
+    # 放在全链路末尾：AC 与 collect_global 两侧的丢弃都已累计完毕。
+    try:
+        from aggregator_base import write_validation_drops
+        payload = write_validation_drops()
+        if payload['total_dropped']:
+            logger.warning(f"Validation drops this run: {payload['by_source']}")
+    except Exception as exc:
+        logger.error(f'failed to write validation-drops.json: {exc}')
     sys.exit(0)

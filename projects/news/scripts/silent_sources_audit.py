@@ -38,6 +38,11 @@ import archive_layout
 ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord' / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
+DROPS_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'validation-drops.json'
+
+# 单轮校验丢弃超过该值即告警（P0-3；taptap_review 事故单轮丢 108 条为定标参照，
+# 阈值取其一半——半个事故就该响铃，又高于正常脏数据零星过滤的噪声水平）
+DROPS_ALARM_THRESHOLD = 50
 
 # 已注册采集源 —— 来自 sources.py 单一真相源（含 discord）
 ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
@@ -239,6 +244,9 @@ def write_health(report: dict) -> None:
             'end': report['today'],
             'days': report['window_days'],
         },
+        # P0-3：静默丢弃是一等指标——校验层扔掉的数据必须出现在健康报表里，
+        # 不能只活在 CI 日志的 WARNING（taptap_review 曾因此静默 12 天）。
+        'validation_drops': load_validation_drops(),
         'platforms': platforms,
     }
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -321,6 +329,23 @@ def core_source_alarms(report: dict) -> list[str]:
     return alarmed
 
 
+def load_validation_drops() -> dict:
+    """读 aggregator 落盘的本轮校验丢弃计数；文件缺失返回零值形态。"""
+    if DROPS_PATH.exists():
+        try:
+            return json.loads(DROPS_PATH.read_text(encoding='utf-8'))
+        except Exception:
+            pass
+    return {'generated_at': None, 'total_dropped': 0, 'by_source': {}}
+
+
+def drop_alarms() -> list[str]:
+    """单轮丢弃超阈值的源清单（P0-3 门控判据）。"""
+    drops = load_validation_drops()
+    return [f'{src}({n})' for src, n in sorted(drops.get('by_source', {}).items())
+            if n >= DROPS_ALARM_THRESHOLD]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description='沉默源审计（基于归档历史）')
     parser.add_argument('--write', action='store_true',
@@ -343,8 +368,13 @@ def main() -> None:
     alarmed = core_source_alarms(report)
     if alarmed:
         print(f'[健康门控] 核心源零产出 / 长期沉默: {", ".join(alarmed)}')
-        if args.strict:
-            sys.exit(1)
+    dropped = drop_alarms()
+    if dropped:
+        print(f'[健康门控] 校验层单轮丢弃超阈值（≥{DROPS_ALARM_THRESHOLD} 条/源）: '
+              f'{", ".join(dropped)} —— 采集在产出但被校验扔掉，查 VALID_SOURCES/'
+              f'必填字段契约是否漂移')
+    if (alarmed or dropped) and args.strict:
+        sys.exit(1)
 
 
 if __name__ == '__main__':

@@ -400,3 +400,36 @@ def test_non_date_files_ignored(dirs):
     res = ssa.audit_source("youtube_comments")
     assert res["last_archive_date"] == "2026-06-20"
     assert res["total_items"] == 2  # 裸列表按长度计数
+
+
+# ── P0-3 校验丢弃门控 ────────────────────────────────────────────────────────
+
+def test_drop_alarms_threshold(tmp_path, monkeypatch):
+    p = tmp_path / "validation-drops.json"
+    p.write_text(json.dumps({
+        "generated_at": "2026-07-02T00:00:00Z",
+        "total_dropped": 113,
+        "by_source": {"taptap_review": 108, "weibo": 5},
+    }), encoding="utf-8")
+    monkeypatch.setattr(ssa, "DROPS_PATH", p)
+    alarms = ssa.drop_alarms()
+    assert alarms == ["taptap_review(108)"]  # 108 >= 50 响铃；5 条属正常噪声
+
+
+def test_drop_alarms_missing_file_silent(tmp_path, monkeypatch):
+    monkeypatch.setattr(ssa, "DROPS_PATH", tmp_path / "nowhere.json")
+    assert ssa.drop_alarms() == []
+    assert ssa.load_validation_drops()["total_dropped"] == 0
+
+
+def test_write_health_embeds_validation_drops(dirs, tmp_path, monkeypatch):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-07-01", 3)
+    p = tmp_path / "validation-drops.json"
+    p.write_text(json.dumps({"generated_at": "x", "total_dropped": 7,
+                             "by_source": {"ghost": 7}}), encoding="utf-8")
+    monkeypatch.setattr(ssa, "DROPS_PATH", p)
+    report = ssa.build_report()
+    ssa.write_health(report)
+    health = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    assert health["validation_drops"]["by_source"] == {"ghost": 7}

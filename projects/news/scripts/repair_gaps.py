@@ -90,13 +90,25 @@ def write_gap_report(gaps: dict[str, list[str]]):
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
+# 默认检测窗口：近 N 天。全史检测会把陈年缺口（如 weixin 一条 2016 年杂散日期
+# 撑出 3600+ 天"缺口"）灌满报告，淹没真正可操作的新鲜断档。
+DEFAULT_WINDOW_DAYS = 60
+
+
 def main():
     parser = argparse.ArgumentParser(description='Detect and repair date gaps in archives')
     parser.add_argument('--dry-run', action='store_true', help='Only detect, do not repair')
     parser.add_argument('--since', type=str, default=None, help='Only check from this date (YYYY-MM-DD)')
+    parser.add_argument('--full', action='store_true',
+                        help=f'检测全部历史（默认仅近 {DEFAULT_WINDOW_DAYS} 天窗口）')
     args = parser.parse_args()
 
-    since = date.fromisoformat(args.since) if args.since else None
+    if args.since:
+        since = date.fromisoformat(args.since)
+    elif args.full:
+        since = None
+    else:
+        since = date.today() - timedelta(days=DEFAULT_WINDOW_DAYS)
     gaps = detect_gaps(since=since)
 
     if not gaps:
