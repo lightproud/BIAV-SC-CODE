@@ -77,8 +77,8 @@
   **剩余收尾**：运行时数据桥 `characters.ts` 接回 processed/ 基线；真实字段缺口见
   `memory/wiki-phase-2-gap-inventory.md`，进度以本档「子项目状态」为准
 - **现存解包/索引脚本**（`projects/wiki/scripts/`）：`decrypt_and_extract.py` / `extract_client_data.py` /
-  `build_banner_character_index.py` / `build_drop_index.py` / `generate_rss.py` / `check_version.py` /
-  `validate_data.py`（精确清单以 `ls` 为准）
+  `build_drop_index.py` / `generate_rss.py` / `check_version.py` /
+  `validate_data.py`（精确清单以 `ls` 为准；`build_banner_character_index.py` 2026-07-02 随死代码清理退役）
 - **已退役（PR #253）**：11 个外部抓取/生成脚本（`fetch_portraits/skills/cards/stats/stages/wheels/lore/voice_lines/steam_assets.py`、
   `extract_game_data.py`、`generate_pages.py`）+ `fetch-wiki-data.yml` workflow，理由：外部源为合成/二手数据，与「一手解包为唯一源」纪律冲突
 

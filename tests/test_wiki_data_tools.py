@@ -9,7 +9,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "wi
 
 import validate_data
 import check_version
-import build_banner_character_index as bbci
 import build_drop_index
 import generate_rss
 
@@ -150,39 +149,6 @@ class TestCheckVersionHelpers(unittest.TestCase):
         self.assertTrue(stub["_auto_detected"])
         self.assertEqual(stub["_source"], "steam_news")
         self.assertEqual(len(stub["highlights"]), 2)
-
-
-class TestBannerCharacterIndex(unittest.TestCase):
-    CHARS = [
-        {"id": 1, "name_zh": "艾瑞卡", "slug": "erica", "name_en": "Erica Light"},
-        {"id": 2, "name_zh": "潘狄娅", "slug": "pandia"},
-    ]
-
-    def test_build_name_to_id_adds_normalized_alias(self):
-        index = bbci.build_name_to_id(self.CHARS)
-        self.assertEqual(index["艾瑞卡"], "1")
-        self.assertEqual(index["erica"], "1")
-        # Space-stripped normalized form is also registered
-        self.assertEqual(index["EricaLight"], "1")
-
-    def test_extract_terms_splits_on_separators(self):
-        banner = {"rate_up": "艾瑞卡/潘狄娅、其他"}
-        self.assertEqual(bbci.extract_terms(banner), ["艾瑞卡", "潘狄娅", "其他"])
-
-    def test_match_banner_exact_and_substring(self):
-        index = bbci.build_name_to_id(self.CHARS)
-        banner = {"rate_up": "艾瑞卡 「潘狄娅」登场"}
-        matched, unmatched = bbci.match_banner(banner, index)
-        self.assertEqual(matched, {"1", "2"})
-        self.assertEqual(unmatched, set())
-
-    def test_match_banner_collects_unmatched_terms(self):
-        index = bbci.build_name_to_id(self.CHARS)
-        banner = {"rate_up": "神秘角色 X"}
-        matched, unmatched = bbci.match_banner(banner, index)
-        self.assertEqual(matched, set())
-        # Single-char terms are dropped from the unmatched report
-        self.assertEqual(unmatched, {"神秘角色"})
 
 
 class TestBuildDropIndex(unittest.TestCase):

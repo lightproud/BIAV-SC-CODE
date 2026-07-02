@@ -52,7 +52,7 @@ Code-wiki
 - **空 stub 数据档**（`data/db/`）：trinkets.json / banners.json / stages.json / items.json 全部以最小必填形态通过 jsonschema 校验
 - **反向索引脚本**（`scripts/`）：
   - `build_drop_index.py` → 写入 `data/processed/drops_by_item.json`（当前 0 stage 扫描，db/stages.json 待 Phase 3 填）
-  - `build_banner_character_index.py` → 写入 `data/processed/banners_by_character.json`（已匹配 41/366 banner，6/24 角色）
+  - ~~`build_banner_character_index.py`~~ 已随死代码清理移除（守密人 2026-07-02 裁定：整脚本依赖 2026-06-15 清空的角色层；如 W2 需卡池↔角色索引，从一手解包字段重建）
 - **校验升级**：
   - CI 校验（`scripts/validate_data.py`）：注册 4 份新 schema，缺失文件改 SKIP（修复历史 CI 红：meta.json/realms.json 从未存在）
   - fact-bible 校验（`assets/data/validate.py`）：从 7 项扩至 13 项（schema 形态一致性 + 神器/卡池/掉落/skills 缺口基线）

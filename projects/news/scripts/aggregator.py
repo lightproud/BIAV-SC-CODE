@@ -31,8 +31,8 @@ from aggregator_collectors import (
     fetch_taptap,
 )
 # NOTE: ARCH-01 收敛（decisions.md 2026-06-20）：youtube 唯一权威实现归 GC 栈
-# （collect_global 的官方 googleapis API）。AC 不再调度 fetch_youtube；该函数与其
-# 单测保留在 aggregator_collectors，仅退出生产编排，避免与 GC 重复采集。
+# （collect_global 的官方 googleapis API）。原 AC fetch_youtube 抓取实现已随
+# 死代码清理移除（守密人 2026-07-02 裁定，覆盖原「保留休眠」决定）。
 import news_common  # 哨兵文件摘要脱敏（H3）
 from sources import R1_HARD_FAIL_SOURCES  # §4.2 R1 硬失败源（单一真相源，sources.py）
 

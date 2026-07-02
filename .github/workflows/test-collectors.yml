@@ -50,7 +50,7 @@ jobs:
           from aggregator import (
               fetch_reddit, fetch_bilibili,
               fetch_taptap, fetch_steam_reviews, fetch_steam_news,
-              fetch_steam_discussions, fetch_youtube,
+              fetch_steam_discussions,
               fetch_discord_local,
           )
           # Playwright collectors (fallback for API-limited platforms)
@@ -74,7 +74,6 @@ jobs:
               ('SteamReviews', fetch_steam_reviews),
               ('SteamNews', fetch_steam_news),
               ('SteamDiscussions', fetch_steam_discussions),
-              ('YouTube', fetch_youtube),
               ('DiscordLocal', fetch_discord_local),
           ] + pw_fetchers
 

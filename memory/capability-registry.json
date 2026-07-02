@@ -9,15 +9,15 @@
       "workflows": 29,
       "scripts_top": 23,
       "scripts_news": 27,
-      "scripts_wiki": 7,
+      "scripts_wiki": 6,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 102
+      "total": 101
     },
     "reachability": {
-      "live": 57,
+      "live": 56,
       "test-only": 0,
       "orphaned": 0
     }
@@ -790,16 +790,6 @@
     }
   ],
   "scripts_wiki": [
-    {
-      "id": "build_banner_character_index.py",
-      "path": "projects/wiki/scripts/build_banner_character_index.py",
-      "summary": "Build a banner <-> character cross-index for Morimens summon banners.",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "构建卡池角色索引。"
-    },
     {
       "id": "build_drop_index.py",
       "path": "projects/wiki/scripts/build_drop_index.py",
