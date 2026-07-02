@@ -1,7 +1,8 @@
 name: "💬 Collect Video Comments"
 
 # 独立采集忘却前夜相关 YouTube 视频（含官方 PV）的热门评论，归档到
-# projects/news/data/platforms/youtube_comments/{date}.json，供会话内报告引用。
+# Public-Info-Pool/Record/Community/youtube_comments/{date}.json，供会话内报告引用。
+# （2026-07-02 对齐 BPT 4R 数据根；此前写迁移前旧路径致权威档案断更）
 # 只用 YOUTUBE_API_KEY（Google，免费配额），不碰 Anthropic API、不花钱。
 
 on:
@@ -45,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/data/platforms/youtube_comments/
+          git add Public-Info-Pool/Record/Community/youtube_comments/
           if git diff --staged --quiet; then
             echo "No new comments to commit"
           else

@@ -26,6 +26,7 @@ silent_sources_audit.py — 沉默源审计（基于归档历史）
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -45,9 +46,53 @@ ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
 DEGRADED_THRESHOLD = 7
 DORMANT_THRESHOLD = 30
 
+# 归档文件名 = 日期（区服/类型分层后子目录里还有 state/manifest 类文件，须过滤）
+_DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+# 区服/类型分层落点（甲方案 2026-06-21 命名规范，2026-06-22 起实施）。
+# steam 家族与 taptap 评论流折叠进宿主平台的类型子目录，审计须到新落点找信号，
+# 否则会把「搬了新家」误判成「沉默」（2026-07-02 修复：6 源假 degraded）。
+#   源 → (宿主平台, 类型子目录)；扫 <宿主>/<任意区服>/<类型>/*.json + 本源旧平级目录。
+FOLDED_SOURCE_LAYOUT = {
+    'steam':            ('steam', 'review'),      # steam_review 经 SOURCE_ALIASES 归一为 steam
+    'official':         ('steam', 'news'),
+    'steam_discussion': ('steam', 'discussion'),
+    'taptap_review':    ('taptap', 'review'),
+}
+
+# 宿主平台下被其他源认领的类型子目录（宿主自身默认递归扫描时须避开，防重复计数）
+_CLAIMED_SUBTYPES: dict[str, set[str]] = {}
+for _src, (_plat, _sub) in FOLDED_SOURCE_LAYOUT.items():
+    if _src != _plat:
+        _CLAIMED_SUBTYPES.setdefault(_plat, set()).add(_sub)
+
 
 def _platform_dir(source: str) -> Path:
     return DISCORD_ARCHIVE_DIR if source == 'discord' else ARCHIVE_DIR / source
+
+
+def _iter_archive_files(source: str):
+    """产出某源的全部归档日期文件——旧平级布局 + 区服/类型分层新布局。"""
+    if source == 'discord':
+        yield from DISCORD_ARCHIVE_DIR.glob('*.json')
+        return
+    if source in FOLDED_SOURCE_LAYOUT:
+        legacy = ARCHIVE_DIR / source
+        if legacy.exists():
+            yield from legacy.glob('*.json')
+        platform, subtype = FOLDED_SOURCE_LAYOUT[source]
+        base = ARCHIVE_DIR / platform
+        if base.exists():
+            yield from base.glob(f'*/{subtype}/*.json')
+        return
+    pdir = ARCHIVE_DIR / source
+    if not pdir.exists():
+        return
+    claimed = _CLAIMED_SUBTYPES.get(source, set())
+    for f in pdir.rglob('*.json'):
+        if f.parent.name in claimed:
+            continue  # 该类型子目录归折叠源（如 taptap/*/review 归 taptap_review）
+        yield f
 
 
 def audit_source(source: str) -> dict:
@@ -56,7 +101,6 @@ def audit_source(source: str) -> dict:
     Discord 用独立归档格式：按日聚合 `messages` 计数，而非 news 条目。
     这里对 Discord 做特殊处理，把 messages 当作 total_items 用于活跃度判断。
     """
-    pdir = _platform_dir(source)
     result = {
         'source': source,
         'days_archived': 0,
@@ -64,10 +108,9 @@ def audit_source(source: str) -> dict:
         'last_archive_date': None,
         'first_archive_date': None,
     }
-    if not pdir.exists():
-        return result
-
-    files = sorted(pdir.glob('*.json'))
+    files = sorted((f for f in _iter_archive_files(source)
+                    if _DATE_STEM.match(f.stem)),
+                   key=lambda f: f.stem)
     if not files:
         return result
 
@@ -79,12 +122,16 @@ def audit_source(source: str) -> dict:
                 # discord_archiver 输出 {messages: [...], ...}，list 长度 = 当日消息数
                 msgs = data.get('messages', 0)
                 total += len(msgs) if isinstance(msgs, list) else (msgs or 0)
+            elif isinstance(data, list):
+                # youtube_comments 等日快照为裸列表（无 item_count 包装）
+                total += len(data)
             else:
                 total += data.get('item_count', 0)
         except Exception:
             continue
 
-    result['days_archived'] = len(files)
+    # 区服分层后同一日期可有多文件（global/jp），归档天数按去重日期计
+    result['days_archived'] = len({f.stem for f in files})
     result['total_items'] = total
     result['first_archive_date'] = files[0].stem
     result['last_archive_date'] = files[-1].stem

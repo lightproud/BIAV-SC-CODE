@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-07-02 by 艾瑞卡会话（全仓重审 + 档案漂移全面修复：news 数据源状态对齐 source-health 实测、NGA/小红书无采集器订正、对外站点使命段收敛为二核心。上次 2026-06-28 全仓 md 矛盾审计后同步）
+> 最后更新：2026-07-02 by 艾瑞卡会话（第二轮：degraded 源排查修复——6 源系审计器不识区服分层的假警报已修、taptap_review 真因为 VALID_SOURCES 白名单漂移已修、youtube_comments 写旧读新错位已修并合并归档；wiki W2 数据桥接回完成、CharacterGrid 上线图鉴页。同日第一轮：全仓档案漂移修复）
 >
 > **本档案是子项目状态与实时进度的唯一权威**（CLAUDE.md §1.3 裁定）：
 > 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
@@ -30,7 +30,7 @@
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
-| wiki（数据集 + Wiki 站点） | **W2 基线已重建**：旧 `data/db/` 占位层 6-15 清空；新可信基线 `data/processed/characters.json`（72 真实角色，一手解包）已落地，`scripts/generate_wiki_pages.py` 据此生成 58 个真实唤醒体页，站点构建通过 | 艾瑞卡会话 | W2 收尾：运行时数据桥 `characters.ts` 仍为空数组、待接回 processed/ 基线；真实字段缺口见 `wiki-phase-2-gap-inventory.md` |
+| wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程（M3）待跑通 |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -40,8 +40,18 @@
 ### 实时聚合器
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
 - **阻塞**：Twitter/X 需付费 Token（未接入）；bahamut / arca_live / note_com 零产出待核
-- **运行隐患（2026-07-02 实测 source-health）**：7 源 degraded 静默 10-13 天
-  （steam / youtube / official / steam_discussion / appstore / google_play / taptap_review），待排查
+  （Arca 实测 PW 选择器超时，`.vrow` 不可见——疑站点改版）
+- **2026-07-02 degraded 排查结论（已修复）**：
+  - steam / youtube / official / steam_discussion / appstore / google_play 六源为**假警报**——
+    数据自 06-22 起正常写入区服分层新路径（`steam/global/review/` 等），
+    `silent_sources_audit.py` 只扫平级旧布局误判沉默；审计器已改为识别折叠映射 + 递归区服目录
+  - **taptap_review 真沉默真因**：`aggregator_base.VALID_SOURCES` 私有硬编码白名单
+    未随 06-21 采集规范收录 `taptap_review`，采到的评论（CI 实测单轮 108 条）在校验层被整批丢弃；
+    白名单已改从 `sources.py` 单一真相源派生，下轮采集起恢复入流
+  - **youtube_comments 写旧读新**：`collect_video_comments.py` 迁移后仍写旧路径
+    `data/platforms/`，权威档案断更 10 天；已改写 `Record/Community/youtube_comments/`
+    并将两段历史按评论 id 并集合并（1,727 条唯一）
+  - ruliweb 沉默 7 天为边界情况（帖子内容日期偏旧致归档桶不新），非故障，观察即可
 - **数据落盘位置**：
   - `projects/news/output/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
   - `projects/news/output/` — **Chat 会话统一读取入口**，按数据源分割的 JSON 文件
@@ -76,7 +86,8 @@
 - **W2 进度**：可信 `characters` 基线**已重建**于 `projects/wiki/data/processed/characters.json`
   （72 真实角色，一手解包，多维证据法分类 playable/unreleased/easter_egg，**无合成占位**）；
   `scripts/generate_wiki_pages.py`（读 `data/processed/`）已据此生成 58 个真实唤醒体静态页。
-  **剩余收尾**：运行时数据桥 `characters.ts` 接回 processed/ 基线；真实字段缺口见
+  **剩余收尾已完成（2026-07-02）**：运行时数据桥已接回 processed/ 基线（经生成器产物
+  `characters.runtime.json`）；真实字段缺口见
   `memory/wiki-phase-2-gap-inventory.md`，进度以本档「子项目状态」为准
 - **现存解包/索引脚本**（`projects/wiki/scripts/`）：`decrypt_and_extract.py` / `extract_client_data.py` /
   `build_drop_index.py` / `generate_rss.py` / `check_version.py` /
@@ -97,9 +108,12 @@
   读 `data/processed/characters.json` 一手字段生成，如 `15560.md` 潘狄娅含界域/职业/档案表）
   + 剧情正文/功能解锁/索引页。原「1 个 Pandia fixture 角色页」已被 58 真实页取代（`pandia.md` 已删）；
   原「约 580+ 页（ZH/EN/JA 三语全量）」系清空前假数据，三语全量尚未恢复
-- **数据桥**：`docs/.vitepress/theme/data/characters.ts` **仍导出空数组**（保留类型/组件脚手架）——
-  基线已重建（processed/）、静态角色页已生成，惟运行时数据桥**接回 processed/ 仍 pending**（W2 收尾项），
-  故 Vue 组件（CharacterGrid 等）暂空、静态 MD 角色页正常；VitePress 构建已验证通过（BUILD_OK）
+- **数据桥（2026-07-02 已接回）**：`generate_wiki_pages.py:generate_runtime_data()` 从 processed
+  基线 + 玩法层单点产出 `docs/.vitepress/theme/data/characters.runtime.json`（72 条，含
+  realm/role/status/has_page），`characters.ts` 导入消费；CharacterGrid 挂载图鉴页
+  `characters.md`「交互检索」段（base 感知链接、无立绘占位符、界域/类目/搜索筛选），
+  SSR 实测 72 卡片 + 14 枚非可玩类目章；VitePress 构建通过（20.6s）。其余组件
+  （CharacterSheet 等详情向）仍为脚手架，待字段缺口补全后启用
 - **Vue 组件（约 12 个，2026-06 重建集，角色数据展示向）**：CharacterGrid / CharacterInfobox /
   CharacterSheet / SkillTable / TrinketRecommendationCard / AscensionMaterialBlock / BondRewardList /
   StatGrowthChart / AffinityTags / PortraitGallery / VoiceLineList / FixtureBadge（精确以

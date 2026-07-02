@@ -346,3 +346,57 @@ def test_main_alarm_without_strict_no_exit(dirs, capsys):
             mock.patch.object(ssa, "CORE_SOURCES", ["reddit"]):
         _run_main([])  # should not raise
     assert "健康门控" in capsys.readouterr().out
+
+
+# ── 区服/类型分层布局（2026-07-02 修复：6 源假 degraded）─────────────────────
+
+def _write_layered_day(adir, platform, region, subtype, date_str, item_count):
+    pdir = adir / platform / region / subtype
+    pdir.mkdir(parents=True, exist_ok=True)
+    (pdir / f"{date_str}.json").write_text(
+        json.dumps({"item_count": item_count, "items": []}), encoding="utf-8"
+    )
+
+
+def test_folded_source_reads_region_subtype(dirs):
+    """official 的信号在 steam/<区服>/news/，旧平级目录停更不得算沉默。"""
+    _, adir, _ = dirs
+    _write_platform_day(adir, "official", "2026-06-22", 2)      # 旧平级最后一天
+    _write_layered_day(adir, "steam", "global", "news", "2026-07-01", 4)
+    res = ssa.audit_source("official")
+    assert res["last_archive_date"] == "2026-07-01"
+    assert res["total_items"] == 6
+    assert res["days_archived"] == 2
+
+
+def test_host_platform_skips_claimed_subtypes(dirs):
+    """steam 自身只认 review + 旧平级，不吞 official 的 news 子目录。"""
+    _, adir, _ = dirs
+    _write_platform_day(adir, "steam", "2026-06-22", 2)
+    _write_layered_day(adir, "steam", "global", "review", "2026-07-01", 3)
+    _write_layered_day(adir, "steam", "global", "news", "2026-07-01", 5)
+    res = ssa.audit_source("steam")
+    assert res["total_items"] == 5  # 2 + 3，不含 news 的 5
+
+
+def test_regular_source_recurses_region_dirs(dirs):
+    """appstore 等未折叠源递归区服子目录；同日多区服按去重日期计天数。"""
+    _, adir, _ = dirs
+    _write_layered_day(adir, "appstore", "global", ".", "2026-07-01", 3)
+    _write_layered_day(adir, "appstore", "jp", ".", "2026-07-01", 1)
+    res = ssa.audit_source("appstore")
+    assert res["total_items"] == 4
+    assert res["days_archived"] == 1
+    assert res["last_archive_date"] == "2026-07-01"
+
+
+def test_non_date_files_ignored(dirs):
+    """state.json / manifest 类文件不得污染 last_archive_date。"""
+    _, adir, _ = dirs
+    pdir = adir / "youtube_comments"
+    pdir.mkdir(parents=True)
+    (pdir / "state.json").write_text("{}", encoding="utf-8")
+    (pdir / "2026-06-20.json").write_text(json.dumps([{"id": "a"}, {"id": "b"}]), encoding="utf-8")
+    res = ssa.audit_source("youtube_comments")
+    assert res["last_archive_date"] == "2026-06-20"
+    assert res["total_items"] == 2  # 裸列表按长度计数

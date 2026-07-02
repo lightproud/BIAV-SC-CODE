@@ -930,6 +930,14 @@ def generate_characters():
     L.append('点击任意可玩唤醒体进入其**详情页**（档案 + 界域定位 + 玩法 + 召唤台词 + 语音/CG 入口）。')
     L.append('')
 
+    # —— 交互检索（Vue 组件，数据桥 characters.runtime.json，W2 接回）——
+    L.append('## 交互检索')
+    L.append('')
+    L.append('全部 72 位唤醒体（含未上线 / 彩蛋）的搜索与筛选。下方另有静态界域分组，内容等价。')
+    L.append('')
+    L.append('<CharacterGrid />')
+    L.append('')
+
     # —— 可玩：按界域分组成卡片网格 ——
     L.append('## 可玩唤醒体（按界域）')
     L.append('')
@@ -982,8 +990,48 @@ def generate_characters():
     print(f'Characters page: {len(playable)} playable in {len(by_realm)} realms + '
           f'{sum(len(by_cat.get(k,[])) for k in ("unreleased","easter_egg"))} non-playable')
 
+    generate_runtime_data(chars, play)
     generate_awakener_pages(chars, by_cat, play, cidx)
     generate_playstyle(playable, play)
+
+
+def generate_runtime_data(chars, play):
+    """写运行时数据桥产物 docs/.vitepress/theme/data/characters.runtime.json。
+
+    W2 收尾（2026-07-02 接回）：Vue 组件层（CharacterGrid 等）经 characters.ts
+    消费此产物。与静态页同源同链（processed 基线 + 玩法层界域），由本生成器
+    单点产出，防止组件层与页面层数据漂移。全部 72 角色入桥；仅 playable 有
+    详情页（has_page），组件据此决定是否渲染链接。"""
+    out = []
+    for ch in sorted(chars, key=lambda x: x['id']):
+        p = play.get(ch['name'])
+        out.append({
+            'id': str(ch['id']),
+            'slug': str(ch['id']),
+            'name_zh': ch['name'],
+            'name_en': None,
+            'title_zh': ch.get('title', ''),
+            'realm': p['realm'] if p else None,
+            'role': (p.get('role') or None) if p else None,
+            'status': ch.get('category', 'playable'),
+            'has_page': ch.get('category') == 'playable',
+            'gender': ch.get('gender', ''),
+            'birthday': ch.get('birthday', ''),
+            'height': ch.get('height', ''),
+            'weight': ch.get('weight', ''),
+            'gi': ch.get('gi', ''),
+            'voice_actor': ch.get('voice_actor', ''),
+            'painter': ch.get('painter', ''),
+            'characteristic': ch.get('characteristic', ''),
+            'introduction': ch.get('introduction') or None,
+            'summon_slogan': ch.get('summon_slogan') or None,
+            'portraits': {'default': None, 'awaker': None, 'skins': []},
+        })
+    data_dir = f'{DOCS_DIR}/.vitepress/theme/data'
+    os.makedirs(data_dir, exist_ok=True)
+    with open(f'{data_dir}/characters.runtime.json', 'w', encoding='utf-8') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    print(f'Runtime data bridge: {len(out)} characters → characters.runtime.json')
 
 
 def generate_awakener_pages(chars, by_cat, play, cidx):

@@ -95,11 +95,11 @@ BACKFILL_PLATFORMS = [
     'pixiv', 'ruliweb', 'weixin', 'taptap',
 ]
 
-# 独立归档源：由专用采集器直接写 data/platforms/，不经主线 news.json
+# 独立归档源：由专用采集器直写 Public-Info-Pool/Record/Community/，不经主线 news.json
 # （故不进 KNOWN_SOURCES——否则 split_output 会按 news.json 切出空 latest 文件）。
 # 活跃采集中，需纳入静默源审计的正常分级（见 silent_sources_audit.ALL_REGISTERED_SOURCES）。
 INDEPENDENT_ARCHIVE_SOURCES = [
-    'youtube_comments',  # collect_video_comments.py 直写 platforms/youtube_comments/
+    'youtube_comments',  # collect_video_comments.py 直写 Record/Community/youtube_comments/
 ]
 
 # data/platforms/ 下仍有历史归档、但采集逻辑已移除的遗留源。
