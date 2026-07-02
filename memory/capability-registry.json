@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 29,
-      "scripts_top": 22,
-      "scripts_news": 27,
+      "scripts_top": 23,
+      "scripts_news": 28,
       "scripts_wiki": 6,
       "mcp_tools": 4,
       "commands": 4,
       "skills": 4,
       "projects": 4,
-      "total": 100
+      "total": 102
     },
     "reachability": {
-      "live": 55,
+      "live": 57,
       "test-only": 0,
       "orphaned": 0
     }
@@ -417,6 +417,15 @@
       "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
     },
     {
+      "id": "migrate_flat_archives_to_layout.py",
+      "path": "scripts/migrate_flat_archives_to_layout.py",
+      "summary": "migrate_flat_archives_to_layout.py — 平级历史归档一次性归位到区服/类型分层。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "migrate_unpacked_to_git.py",
       "path": "scripts/migrate_unpacked_to_git.py",
       "summary": "把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。",
@@ -565,6 +574,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "archive_layout.py",
+      "path": "projects/news/scripts/archive_layout.py",
+      "summary": "archive_layout.py — 归档布局单一真相源（SSOT）。",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },

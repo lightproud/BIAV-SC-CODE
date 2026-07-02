@@ -4,16 +4,16 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-02
-- 功能总数：**100**
-- 脚本可达性：活 55 / 仅测试 0 / 孤儿 0
+- 功能总数：**102**
+- 脚本可达性：活 57 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 29 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 22 |
-| news 采集器脚本 | 27 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 23 |
+| news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -95,7 +95,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（22）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（23）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -121,6 +121,8 @@
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
+- **`migrate_flat_archives_to_layout.py`** _[活:cli]_ — migrate_flat_archives_to_layout.py — 平级历史归档一次性归位到区服/类型分层。  
+  `scripts/migrate_flat_archives_to_layout.py`
 - **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
   `scripts/migrate_unpacked_to_git.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
@@ -142,7 +144,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（27）
+## news 采集器脚本（28）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -154,6 +156,8 @@
   `projects/news/scripts/archive_discord.py`
 - **`archive_engine.py`** _[活:cli+workflow]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
   `projects/news/scripts/archive_engine.py`
+- **`archive_layout.py`** _[活:import]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
+  `projects/news/scripts/archive_layout.py`
 - **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/  
   `projects/news/scripts/archive_platforms.py`
 - **`backfill_forum_starters.py`** _[活:cli+workflow]_ — backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息  
