@@ -3,7 +3,7 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-06-29
+- 生成日期：2026-07-02
 - 功能总数：**102**
 - 脚本可达性：活 57 / 仅测试 0 / 孤儿 0
 
@@ -178,7 +178,7 @@
   `projects/news/scripts/data_quality.py`
 - **`discord_archiver.py`** _[活:cli+workflow]_ — Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重  
   `projects/news/scripts/discord_archiver.py`
-- **`discord_compact.py`** _[活:import]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
+- **`discord_compact.py`** _[活:command]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
   `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  
   `projects/news/scripts/discord_list_guilds.py`
