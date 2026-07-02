@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-07-01T23:09:09.555010+00:00",
+  "collected_at": "2026-07-02T02:40:03.156674+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -63,21 +63,6 @@
       "review": "나머지는 괜찮은데 번역이 너무 씹창나서 하기 힘듦",
       "timestamp_created": 1782881700,
       "playtime_forever": 477
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-01T02:34:27+00:00",
-      "lang": "russian",
-      "title": "[负面] ненавижу аниме",
-      "summary": "ненавижу аниме",
-      "url": "https://steamcommunity.com/profiles/76561199063569793/recommended/3052450",
-      "author": "76561199063569793",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "ненавижу аниме",
-      "timestamp_created": 1782873267,
-      "playtime_forever": 53
     }
   ]
 }

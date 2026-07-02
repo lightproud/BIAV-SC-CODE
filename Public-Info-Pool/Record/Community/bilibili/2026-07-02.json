@@ -1,9 +1,55 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-01T23:10:00.832738+00:00",
+  "archived_at": "2026-07-02T02:40:55.877701+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 5,
   "items": [
+    {
+      "title": "一分钟教你怎么免费获得鼠鼠和图图头像！",
+      "summary": "-\n  └ iq2233 (1赞): [doge]",
+      "source": "bilibili",
+      "time": "2026-07-02T00:52:09+00:00",
+      "url": "https://www.bilibili.com/video/BV1q1Tz68EkQ",
+      "engagement": 198,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 197,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/91c6e7466b4d445543aac90583b2c7d5bfd688ca.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】庞托斯 2t 5-5",
+      "summary": "海を前にして、倒さない敵はいない!\n  └ yi36403 (0赞): 爱看，UP加油！\n  └ 抱着狗狗不敢说话 (0赞): 感觉 折腾了好久。。。如果有小水母船长 触伤应该很高",
+      "source": "bilibili",
+      "time": "2026-07-01T16:17:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1uqTi6uEEC",
+      "engagement": 150,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 148,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/fa05ec2788759b25246f259b72baefcb7e791248.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "【杀戮尖塔2】blacksouls2×沙耶之歌 我的机制在你之上",
       "summary": "打笑了\n  └ -finexy (0赞): bgm打架hhhh",
@@ -46,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/d1944947e6a00c1fe4ef7544a3b560c4bc1ce981.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "onp第一轮就有指数无限玩的",
+      "summary": "别逗你沙耶姐姐笑了\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_大手]",
+      "source": "bilibili",
+      "time": "2026-07-01T17:22:32+00:00",
+      "url": "https://www.bilibili.com/video/BV118Tz66E7v",
+      "engagement": 106,
+      "is_hot": false,
+      "author": "零咲星",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 105,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/844f3ef0435a51da954600c46423667a7e9ea52f.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
