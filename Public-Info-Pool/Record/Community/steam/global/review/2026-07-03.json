@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-03T03:34:39.803697+00:00",
+  "archived_at": "2026-07-03T06:58:40.688392+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "[正面] good story",
@@ -166,6 +166,30 @@
         "playtime_forever": 713,
         "votes_up": 0,
         "timestamp_created": 1783023841
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] great game!gran juego",
+      "summary": "great game!gran juego",
+      "source": "steam_review",
+      "time": "2026-07-03T04:19:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198198451458/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198198451458",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 317,
+        "votes_up": 0,
+        "timestamp_created": 1783052379
       },
       "region": "global",
       "archive_subtype": "review",
