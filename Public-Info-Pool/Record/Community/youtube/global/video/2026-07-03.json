@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-02T22:08:30.448757+00:00",
+  "archived_at": "2026-07-03T00:02:08.085750+00:00",
   "source": "youtube",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "title": "day 25 of doodling N til #Morimens makes him playable #fanart #speedpaint",
@@ -85,6 +85,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/PDU5MSmRhtw/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens Arc 2 Chapter 4",
+      "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
+      "source": "youtube",
+      "time": "2026-07-02T22:39:40Z",
+      "url": "https://www.youtube.com/watch?v=d4pNjOuGq60",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "FluffeyPanda's World",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/d4pNjOuGq60/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
