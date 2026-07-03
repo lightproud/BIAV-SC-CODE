@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T17:20:07.352087+00:00",
+  "collected_at": "2026-07-03T19:10:25.877040+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 18,
   "items": [
     {
       "source": "reddit",
@@ -37,14 +37,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-07-03T03:20:23+00:00",
+      "time": "2026-07-03T18:58:26+00:00",
       "lang": "en",
-      "title": "Morimens Diaries~",
-      "summary": "Morimens Diaries Day: 1 Uid: 102034119 This game is so pretty! Tips appreciated!! Squeak♡  &#32; submitted by &#32;  /u/Squeakmp4   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1um2z3g/morimens_diaries/",
-      "author": "/u/Squeakmp4",
+      "title": "So... this happened",
+      "summary": "Ok, so before Pontos was released i had 500 pulls, I used 400 to get him to OE after doing the tutorial because I really liked him. Today I was staring at the 100 pulls I had left and went F&#39; it, and pulled, in 100 pulls I managed to get him 6 more dupes (A Sanga and a Caecus too), then.. I said F&#39; it a second time and used 2 Horizons on him to +12. Now which covenant and team would be best with him? I&#39;ve been using with Aurita +12, Corpo e0 and Tawil e3.  &#32; submitted by &#32;  /u/N0-Birthday   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1ummz2q/so_this_happened/",
+      "author": "/u/N0-Birthday",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/2qyza9zknxah1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=4d3436dc3f26d7713ba1ec1eff794ce94a67ef72",
+      "media_url": "https://preview.redd.it/fgi4rq7ya2bh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a919b545bd891f794fe99931494df4e0ec119370",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -59,6 +59,21 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1umjsfn/gtulu_release_and_thais_rerun_when/",
       "author": "/u/Humble_House9690",
       "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-07-03T03:20:23+00:00",
+      "lang": "en",
+      "title": "Morimens Diaries~",
+      "summary": "Morimens Diaries Day: 1 Uid: 102034119 This game is so pretty! Tips appreciated!! Squeak♡  &#32; submitted by &#32;  /u/Squeakmp4   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1um2z3g/morimens_diaries/",
+      "author": "/u/Squeakmp4",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/2qyza9zknxah1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=4d3436dc3f26d7713ba1ec1eff794ce94a67ef72",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -108,19 +123,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-07-03T11:06:08+00:00",
-      "lang": "en",
-      "title": "Is there a reason why you'd leave a WoD slot empty?",
-      "summary": "I was looking at the D-Effect leaderboard to get ideas for teams, and I noticed a team (Mouchette, Doll, Alva, and Lotan) where Alva and Lotan only had one WoD each. I&#39;m pretty new to the game, and I was wondering if there was a mechanical reason for this?  &#32; submitted by &#32;  /u/Tazzamaraz   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1umbgtw/is_there_a_reason_why_youd_leave_a_wod_slot_empty/",
-      "author": "/u/Tazzamaraz",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-07-03T11:32:59+00:00",
       "lang": "en",
       "title": "This Kinda Works",
@@ -130,6 +132,19 @@
       "engagement": 0,
       "media_url": "https://external-preview.redd.it/YXl4cmEzc2czMGJoMfoiidtMiYCu0Oy_2_cPo2HdIDDk_H-S1YMyIuQNRDLg.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=99150137e278fb1660ee29a2ad8341ab06219419",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-07-03T11:06:08+00:00",
+      "lang": "en",
+      "title": "Is there a reason why you'd leave a WoD slot empty?",
+      "summary": "I was looking at the D-Effect leaderboard to get ideas for teams, and I noticed a team (Mouchette, Doll, Alva, and Lotan) where Alva and Lotan only had one WoD each. I&#39;m pretty new to the game, and I was wondering if there was a mechanical reason for this?  &#32; submitted by &#32;  /u/Tazzamaraz   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1umbgtw/is_there_a_reason_why_youd_leave_a_wod_slot_empty/",
+      "author": "/u/Tazzamaraz",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -222,21 +237,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-07-02T17:55:43+00:00",
-      "lang": "en",
-      "title": "Even in the low levels this game is super fun~",
-      "summary": "&#32; submitted by &#32;  /u/LazyMakara   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1ulpgn5/even_in_the_low_levels_this_game_is_super_fun/",
-      "author": "/u/LazyMakara",
-      "engagement": 0,
-      "media_url": "https://external-preview.redd.it/dzAzbGgxM3J1dWFoManzeIbcdLv18LU1xwkVpj4DgMYGej9nW4-79zIHy23V.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=aa780c6f44919a198117938a1ecc3c57b1e1dbf2",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-07-03T04:11:49+00:00",
       "lang": "en",
       "title": "Strike and Defense skills on characters",
@@ -259,19 +259,6 @@
       "engagement": 0,
       "media_url": "https://external-preview.redd.it/d3Z6Z29kaTU2emFoMcTZ50RdDgvSlQYBtENpKD8M3cdm0_xf6S47LHw62G_D.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=11d8b355bcf1326c0a946da7f9e85cc2fd685047",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-02T17:31:43+00:00",
-      "lang": "en",
-      "title": "Possibly the biggest abortion",
-      "summary": "Pontos here is the MVP of the fight  &#32; submitted by &#32;  /u/This_Confused_Guy   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1ulosui/possibly_the_biggest_abortion/",
-      "author": "/u/This_Confused_Guy",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T17:20:07.352087+00:00",
+  "collected_at": "2026-07-03T19:10:25.877040+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "source": "steam_discussion",
@@ -23,6 +23,16 @@
       "summary": "点完后就说让我检查第三方服务协议，什么意思呢。。。。",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/573794509062695827/",
       "author": "炭烧章鱼烧",
+      "engagement": 0
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-07-03T14:28:49+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Invite Code :D Help Me :)",
+      "summary": "EWX3B47ENF",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573794509062689626/",
+      "author": "Azokyen",
       "engagement": 0
     }
   ]

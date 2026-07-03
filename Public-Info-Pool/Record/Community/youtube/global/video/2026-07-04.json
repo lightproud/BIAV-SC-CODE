@@ -1,9 +1,26 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-03T17:21:13.996328+00:00",
+  "archived_at": "2026-07-03T19:11:24.213956+00:00",
   "source": "youtube",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
+    {
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)쓰고싶은 캐릭알려드립니다",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "source": "youtube",
+      "time": "2026-07-03T18:11:07Z",
+      "url": "https://www.youtube.com/watch?v=NzIgJUWjcOg",
+      "engagement": 75,
+      "is_hot": false,
+      "author": "박현(Muyeong)",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/NzIgJUWjcOg/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
     {
       "title": "【忘却前夜】終章　長い夢の終わり　９－１から【ローグライクで遊ぼうの会】",
       "summary": "忘却前夜 #忘却前夜Steam版 墓前に名前を刻んで始まった 守秘者の物語が終わりを迎えようとしている。 提供：株式会社オルト ...",
@@ -68,6 +85,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/ZFrxEv7_eNY/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Things Are Getting Dark Fast... | Morimens Part 3 (Stages 1-6, 1-7, 1-8)",
+      "summary": "Welcome back to Part 3 of my completely BLIND playthrough of Morimens! We are continuing the journey with zero research and ...",
+      "source": "youtube",
+      "time": "2026-07-03T19:00:16Z",
+      "url": "https://www.youtube.com/watch?v=qumosOB4kAw",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "JJ Gamings",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/qumosOB4kAw/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-03T17:21:13.995820+00:00",
+  "archived_at": "2026-07-03T19:11:24.213637+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -23,6 +23,29 @@
         "danmaku": 3
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/acf705a633d154c616e307bcaf03db0f4be955a5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【蓝清梦】凌晨的国服顶分局！传送大锤直接推到点有感觉吗~ 丨 Feat.梦醒 沙耶之歌 以及..一众阿三专精",
+      "summary": "-\n  └ 奶鸭子提不起劲 (1赞): @Odida1 @CH0C0LAt3_ 来学\n  └ 奶鸭子提不起劲 (1赞): 宝宝好厉害\n  └ 奶鸭子提不起劲 (0赞): @仅仅穿堂风啊 @阿三二师兄导师 来学",
+      "source": "bilibili",
+      "time": "2026-07-03T18:26:26+00:00",
+      "url": "https://www.bilibili.com/video/BV1NhTt63EYV",
+      "engagement": 50,
+      "is_hot": false,
+      "author": "陌上蓝清梦",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 45,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/eb37165057965555cf62fc3e7394b9160bab6671.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

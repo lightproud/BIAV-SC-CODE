@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T17:20:07.352087+00:00",
+  "collected_at": "2026-07-03T19:10:25.877040+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 12,
@@ -48,7 +48,22 @@
       "voted_up": true,
       "review": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
       "timestamp_created": 1783023841,
-      "playtime_forever": 930
+      "playtime_forever": 960
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-03T17:27:16+00:00",
+      "lang": "danish",
+      "title": "[正面] game is a visual novel gacha with card battling sy...",
+      "summary": "game is a visual novel gacha with card battling system. The story and characters are quite intriguing and very good. This is my first gacha, but based on what i've heard it's kinda F2P friendly compared to other games in the genre. But overall a good game",
+      "url": "https://steamcommunity.com/profiles/76561198033035584/recommended/3052450",
+      "author": "76561198033035584",
+      "engagement": 0,
+      "language": "danish",
+      "voted_up": true,
+      "review": "game is a visual novel gacha with card battling system. The story and characters are quite intriguing and very good. This is my first gacha, but based on what i've heard it's kinda F2P friendly compared to other games in the genre. But overall a good game",
+      "timestamp_created": 1783099636,
+      "playtime_forever": 2371
     },
     {
       "source": "steam",
@@ -153,7 +168,7 @@
       "voted_up": true,
       "review": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
       "timestamp_created": 1783026213,
-      "playtime_forever": 17512
+      "playtime_forever": 17535
     },
     {
       "source": "steam",
@@ -169,21 +184,6 @@
       "review": "Im will keep it short and sweet, This is my favorite gacha game ive played so far. But there always seems to be a downside. The game keep crashing , whenever i do a story chapter ( the non combat stories) it crashes about 90% of the time. If it wasnt for this one big flaw this game would be absolutely perfect. But please fix these crashes, its extremely annoying. Aside from that id still recommend this game",
       "timestamp_created": 1783022697,
       "playtime_forever": 746
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T17:45:00+00:00",
-      "lang": "french",
-      "title": "[正面] The game is a bit longer to start compared to some...",
-      "summary": "The game is a bit longer to start compared to some other gachas, I found myself having to skip the wonderfull story at the begening just to access the newest/limited content. Otherwise great game overall, I recommand you give it a try if you like a good story, the chtullu lore and truly unique characters",
-      "url": "https://steamcommunity.com/profiles/76561198136815372/recommended/3052450",
-      "author": "76561198136815372",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": true,
-      "review": "The game is a bit longer to start compared to some other gachas, I found myself having to skip the wonderfull story at the begening just to access the newest/limited content. Otherwise great game overall, I recommand you give it a try if you like a good story, the chtullu lore and truly unique characters",
-      "timestamp_created": 1783014300,
-      "playtime_forever": 1935
     }
   ]
 }
