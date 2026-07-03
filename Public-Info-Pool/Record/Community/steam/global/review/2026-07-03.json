@@ -1,9 +1,33 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-03T00:02:08.175447+00:00",
+  "archived_at": "2026-07-03T03:34:39.803697+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "title": "[正面] good story",
+      "summary": "good story",
+      "source": "steam_review",
+      "time": "2026-07-03T00:54:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198070538038/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198070538038",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1007,
+        "votes_up": 1,
+        "timestamp_created": 1783040092
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
     {
       "title": "[正面] The game is a bit longer to start compared to some...",
       "summary": "The game is a bit longer to start compared to some other gachas, I found myself having to skip the wonderfull story at the begening just to access the newest/limited content. Otherwise great game overall, I recommand you give it a try if you like a good story, the chtullu lore and truly unique characters",

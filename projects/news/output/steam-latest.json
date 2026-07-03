@@ -1,24 +1,24 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T00:01:25.853331+00:00",
+  "collected_at": "2026-07-03T03:33:53.700694+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 11,
   "items": [
     {
       "source": "steam",
-      "time": "2026-07-02T03:07:01+00:00",
-      "lang": "spanish",
-      "title": "[正面] si lovecraft pudiera jugar esta joya se tocaria bi...",
-      "summary": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
-      "url": "https://steamcommunity.com/profiles/76561199704943127/recommended/3052450",
-      "author": "76561199704943127",
+      "time": "2026-07-03T00:54:52+00:00",
+      "lang": "english",
+      "title": "[正面] good story",
+      "summary": "good story",
+      "url": "https://steamcommunity.com/profiles/76561198070538038/recommended/3052450",
+      "author": "76561198070538038",
       "engagement": 1,
-      "language": "spanish",
+      "language": "english",
       "voted_up": true,
-      "review": "si lovecraft pudiera jugar esta joya se tocaria bien rico y tan sabroso",
-      "timestamp_created": 1782961621,
-      "playtime_forever": 868
+      "review": "good story",
+      "timestamp_created": 1783040092,
+      "playtime_forever": 1007
     },
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
       "timestamp_created": 1783023841,
-      "playtime_forever": 833
+      "playtime_forever": 930
     },
     {
       "source": "steam",
