@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-03T06:58:40.688392+00:00",
+  "archived_at": "2026-07-03T09:57:07.861768+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "title": "[正面] good story",
@@ -190,6 +190,54 @@
         "playtime_forever": 317,
         "votes_up": 0,
         "timestamp_created": 1783052379
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] да",
+      "summary": "да",
+      "source": "steam_review",
+      "time": "2026-07-03T09:04:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199788630780/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199788630780",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 361,
+        "votes_up": 0,
+        "timestamp_created": 1783069441
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] an interesting plot, a diverse cast of characters,...",
+      "summary": "an interesting plot, a diverse cast of characters, a pleasant visual style, some kind of funny AI voice acting, and it's all for nothing. u can play",
+      "source": "steam_review",
+      "time": "2026-07-03T08:18:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199134307536/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199134307536",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 564,
+        "votes_up": 0,
+        "timestamp_created": 1783066687
       },
       "region": "global",
       "archive_subtype": "review",
