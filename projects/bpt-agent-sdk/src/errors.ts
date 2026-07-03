@@ -15,7 +15,7 @@ export class APIConnectionError extends Error {
   override name = 'APIConnectionError';
   constructor(
     message: string,
-    readonly cause?: unknown,
+    override readonly cause?: unknown,
   ) {
     super(message);
   }
