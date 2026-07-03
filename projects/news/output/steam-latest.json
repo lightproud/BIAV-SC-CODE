@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T20:58:41.512843+00:00",
+  "collected_at": "2026-07-03T22:05:00.020793+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -124,21 +124,6 @@
       "review": "great game!gran juego",
       "timestamp_created": 1783052379,
       "playtime_forever": 471
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T21:03:33+00:00",
-      "lang": "polish",
-      "title": "[正面] Does not feel like a gatcha game. Roll for Kath my...",
-      "summary": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
-      "url": "https://steamcommunity.com/profiles/76561198314644323/recommended/3052450",
-      "author": "76561198314644323",
-      "engagement": 0,
-      "language": "polish",
-      "voted_up": true,
-      "review": "Does not feel like a gatcha game. Roll for Kath my beloved btw",
-      "timestamp_created": 1783026213,
-      "playtime_forever": 17535
     }
   ]
 }

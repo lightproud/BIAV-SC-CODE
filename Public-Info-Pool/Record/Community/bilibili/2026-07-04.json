@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-03T20:59:22.499744+00:00",
+  "archived_at": "2026-07-03T22:05:55.317542+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -92,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/09c802c9cdcafd48318a50ecbb98ee5b49f17b6f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "一块生肉",
+      "summary": "沙耶之歌\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_对的]",
+      "source": "bilibili",
+      "time": "2026-07-03T19:46:08+00:00",
+      "url": "https://www.bilibili.com/video/BV1JZTo6LEwn",
+      "engagement": 34,
+      "is_hot": false,
+      "author": "Pingu_烊",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 33,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/e8042a4efa3312ff0efeb809031bb2dc7c7e271b.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
