@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T12:05:56.622988+00:00",
+  "collected_at": "2026-07-03T15:07:18.494340+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -154,51 +154,6 @@
       "review": "美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
       "timestamp_created": 1783011043,
       "playtime_forever": 14354
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T15:03:13+00:00",
-      "lang": "english",
-      "title": "[正面] its super fun, I have over 200 hours on mobile and...",
-      "summary": "its super fun, I have over 200 hours on mobile and have been playing for around 9+ months now. The multiplayer traphase mode reminds me of super auto pets and is super addictive/fun and has actually challenging team building where you can pull off crazy combos. Also i love my husband pickman. good game if you like twunks/twinks and DILFs and overall baddies/divas. it puts the slayyyy in slay the spire-likes.",
-      "url": "https://steamcommunity.com/profiles/76561199436639013/recommended/3052450",
-      "author": "76561199436639013",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "its super fun, I have over 200 hours on mobile and have been playing for around 9+ months now. The multiplayer traphase mode reminds me of super auto pets and is super addictive/fun and has actually challenging team building where you can pull off crazy combos. Also i love my husband pickman. good game if you like twunks/twinks and DILFs and overall baddies/divas. it puts the slayyyy in slay the spire-likes.",
-      "timestamp_created": 1783004593,
-      "playtime_forever": 682
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T14:09:30+00:00",
-      "lang": "english",
-      "title": "[正面] The best designed card gatcha I've played so far,...",
-      "summary": "The best designed card gatcha I've played so far, Story is great and battles are actually challenging.",
-      "url": "https://steamcommunity.com/profiles/76561197996822224/recommended/3052450",
-      "author": "76561197996822224",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "The best designed card gatcha I've played so far, Story is great and battles are actually challenging.",
-      "timestamp_created": 1783001370,
-      "playtime_forever": 724
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T13:55:16+00:00",
-      "lang": "english",
-      "title": "[正面] Came for Saya no Uta collab, stayed for the absolu...",
-      "summary": "Came for Saya no Uta collab, stayed for the absolute treasure of a game. Everyone interested in anything Lovecraftian should try out this gem.",
-      "url": "https://steamcommunity.com/profiles/76561197972247666/recommended/3052450",
-      "author": "76561197972247666",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Came for Saya no Uta collab, stayed for the absolute treasure of a game. Everyone interested in anything Lovecraftian should try out this gem.",
-      "timestamp_created": 1783000516,
-      "playtime_forever": 1286
     }
   ]
 }

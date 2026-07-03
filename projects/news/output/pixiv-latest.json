@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T12:05:56.622988+00:00",
+  "collected_at": "2026-07-03T15:07:18.494340+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 32,
@@ -379,15 +379,13 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-06-15T02:59:16+09:00",
+      "time": "2026-07-03T15:06:31.616007+00:00",
       "lang": "",
-      "title": "熔朵",
+      "title": "",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/146024746",
-      "author": "きよ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/15/02/59/16/146024746_p0_square1200.jpg",
-      "content_type": "image"
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
     }
   ]
 }
