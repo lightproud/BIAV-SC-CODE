@@ -40,7 +40,14 @@ src/
 | 安装 | `npm install`（子项目目录内） |
 | 类型检查 | `npm run typecheck` |
 | 构建 | `npm run build`（ESM + d.ts → dist/） |
-| 单测 | `npm test`（vitest，mock 传输层，零网络） |
+| 单测 | `npm test`（vitest，mock 传输层，零网络；含仿真器端到端集成测试） |
+| 真机 smoke | `ANTHROPIC_API_KEY=... node tests/integration/live-real-api.mjs`（需先 `npm run build`；打真 api.anthropic.com） |
+
+## 测试三层
+
+1. **单测**（`tests/*.test.ts`）：mock 传输层，纯逻辑，零网络（348 通过）。
+2. **仿真器端到端**（`tests/integration/emulator-e2e.test.ts`）：真 fetch/HTTP/SSE/agent 环/工具落盘/MCP/会话，只把模型换成本地 Messages-API 仿真器；**零密钥、进常规 `npm test`**。
+3. **真机 smoke**（`tests/integration/live-real-api.mjs`）：真 Claude 模型自己决定调工具；从 `ANTHROPIC_API_KEY` env 读密钥（**脚本不含密钥**），不进 `npm test`。CI 侧由 `.github/workflows/bpt-agent-sdk.yml` 的 `live-smoke` job 手动触发（`workflow_dispatch`），用 `secrets.ANTHROPIC_API_KEY` 注入——密钥值全程不入仓库。
 
 ## 当前状态
 

@@ -1,0 +1,91 @@
+name: BPT Agent SDK
+
+# Node/TypeScript CI for projects/bpt-agent-sdk (the repo-wide `test.yml` is
+# Python-only and never touches this package).
+#
+# - `unit` runs on every SDK change (keyless): typecheck + build + the full
+#   vitest suite, including the emulator-backed end-to-end integration test
+#   that drives the real SDK stack over real HTTP against a local Messages-API
+#   emulator. No secret, no external network, no API budget.
+# - `live-smoke` runs ONLY on manual dispatch: it exercises the real
+#   api.anthropic.com with the ANTHROPIC_API_KEY repository secret. The key
+#   value never enters the repo — it is injected into the runner at run time.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/bpt-agent-sdk/**'
+      - '.github/workflows/bpt-agent-sdk.yml'
+  pull_request:
+    paths:
+      - 'projects/bpt-agent-sdk/**'
+      - '.github/workflows/bpt-agent-sdk.yml'
+  workflow_dispatch:
+    inputs:
+      model:
+        description: 'Model id for the live real-API smoke test'
+        required: false
+        default: 'claude-haiku-4-5-20251001'
+
+concurrency:
+  group: bpt-agent-sdk-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: projects/bpt-agent-sdk
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Sparse checkout excludes the 2.4G archive/reference layers so the
+          # Node job only pulls the ~100MB of code it needs.
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Test (keyless, includes emulator e2e)
+        run: npm test
+
+  live-smoke:
+    # Real api.anthropic.com run. Manual only — spends API budget.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Live real-API smoke test
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/live-real-api.mjs "${{ github.event.inputs.model }}"
