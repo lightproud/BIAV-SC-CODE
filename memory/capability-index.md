@@ -3,22 +3,22 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-02
-- 功能总数：**102**
+- 生成日期：2026-07-03
+- 功能总数：**104**
 - 脚本可达性：活 57 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 29 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 30 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 23 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 4 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
-| 子项目 | 4 |
+| 子项目 | 5 |
 
 ## 动态编排与可达性
 
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（29）
+## CI 自动化工作流（编排入口·定时/事件平面）（30）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -42,6 +42,8 @@
   `.github/workflows/backfill-media.yml`
 - **`Backfill Historical News`** _[schedule/manual]_ — 定时回填历史社区新闻。  
   `.github/workflows/backfill-news.yml`
+- **`BPT Agent SDK`** _[push/pull_request/manual]_ —   
+  `.github/workflows/bpt-agent-sdk.yml`
 - **`Build Analysis Index`** _[schedule/manual]_ —   
   `.github/workflows/build-analysis-index.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
@@ -251,8 +253,10 @@
 - **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
   `.claude/skills/grilling/SKILL.md`
 
-## 子项目（4）
+## 子项目（5）
 
+- **`bpt-agent-sdk`** — BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面  
+  `projects/bpt-agent-sdk/`
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
