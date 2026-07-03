@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T15:07:18.494340+00:00",
+  "collected_at": "2026-07-03T17:20:07.352087+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "source": "appstore",
@@ -204,6 +204,16 @@
       "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
       "author": "Milesiya",
       "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-07-02T05:39:29-07:00",
+      "lang": "en",
+      "title": "Fun but flawed",
+      "summary": "The game itself is very fun, but there are a few infuriating issues- I crash at the end of non-combat story stages, plus the game always launches upside down, needing me to manually rotate my phone to get it back to my desired screen orientation",
+      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14253562676",
+      "author": "Guy1771",
+      "engagement": 2
     }
   ]
 }

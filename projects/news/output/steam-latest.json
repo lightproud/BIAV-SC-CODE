@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T15:07:18.494340+00:00",
+  "collected_at": "2026-07-03T17:20:07.352087+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -49,6 +49,51 @@
       "review": "This game is great if you've ever played chaos zero nightmare youll like this \r\ngreat charecter design and the story is pretty dark \r\nalot of free stuff",
       "timestamp_created": 1783023841,
       "playtime_forever": 930
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-03T15:24:20+00:00",
+      "lang": "turkish",
+      "title": "[正面] SANAT.\nOturur tüm gün Tinct'in sesini dinlerim.",
+      "summary": "SANAT.\nOturur tüm gün Tinct'in sesini dinlerim.",
+      "url": "https://steamcommunity.com/profiles/76561199591877222/recommended/3052450",
+      "author": "76561199591877222",
+      "engagement": 0,
+      "language": "turkish",
+      "voted_up": true,
+      "review": "SANAT.\nOturur tüm gün Tinct'in sesini dinlerim.",
+      "timestamp_created": 1783092260,
+      "playtime_forever": 177
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-03T14:40:14+00:00",
+      "lang": "schinese",
+      "title": "[正面] 不赖",
+      "summary": "不赖",
+      "url": "https://steamcommunity.com/profiles/76561199886368154/recommended/3052450",
+      "author": "76561199886368154",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "不赖",
+      "timestamp_created": 1783089614,
+      "playtime_forever": 2331
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-03T14:05:32+00:00",
+      "lang": "english",
+      "title": "[正面] One of the few good Gacha Games. Still a Gacha but...",
+      "summary": "One of the few good Gacha Games. Still a Gacha but good.",
+      "url": "https://steamcommunity.com/profiles/76561198008479810/recommended/3052450",
+      "author": "76561198008479810",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "One of the few good Gacha Games. Still a Gacha but good.",
+      "timestamp_created": 1783087532,
+      "playtime_forever": 6032
     },
     {
       "source": "steam",
@@ -139,21 +184,6 @@
       "review": "The game is a bit longer to start compared to some other gachas, I found myself having to skip the wonderfull story at the begening just to access the newest/limited content. Otherwise great game overall, I recommand you give it a try if you like a good story, the chtullu lore and truly unique characters",
       "timestamp_created": 1783014300,
       "playtime_forever": 1935
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-02T16:50:43+00:00",
-      "lang": "tchinese",
-      "title": "[正面] 美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
-      "summary": "美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
-      "url": "https://steamcommunity.com/profiles/76561198386372712/recommended/3052450",
-      "author": "76561198386372712",
-      "engagement": 0,
-      "language": "tchinese",
-      "voted_up": true,
-      "review": "美術及劇情都還不錯，自己動手構築卡牌思路通關也有所成就，難度體驗目前算合適",
-      "timestamp_created": 1783011043,
-      "playtime_forever": 14354
     }
   ]
 }

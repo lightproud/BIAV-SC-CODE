@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-03T15:08:13.235550+00:00",
+  "archived_at": "2026-07-03T17:21:14.074295+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 13,
   "items": [
     {
       "title": "[正面] good story",
@@ -238,6 +238,78 @@
         "playtime_forever": 564,
         "votes_up": 0,
         "timestamp_created": 1783066687
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] SANAT.\nOturur tüm gün Tinct'in sesini dinlerim.",
+      "summary": "SANAT.\nOturur tüm gün Tinct'in sesini dinlerim.",
+      "source": "steam_review",
+      "time": "2026-07-03T15:24:20+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199591877222/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199591877222",
+      "tags": [
+        "turkish"
+      ],
+      "language": "turkish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 177,
+        "votes_up": 0,
+        "timestamp_created": 1783092260
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 不赖",
+      "summary": "不赖",
+      "source": "steam_review",
+      "time": "2026-07-03T14:40:14+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199886368154/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199886368154",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2331,
+        "votes_up": 0,
+        "timestamp_created": 1783089614
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] One of the few good Gacha Games. Still a Gacha but...",
+      "summary": "One of the few good Gacha Games. Still a Gacha but good.",
+      "source": "steam_review",
+      "time": "2026-07-03T14:05:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198008479810/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198008479810",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6032,
+        "votes_up": 0,
+        "timestamp_created": 1783087532
       },
       "region": "global",
       "archive_subtype": "review",
