@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-03T09:57:07.795792+00:00",
+  "archived_at": "2026-07-03T12:06:37.915227+00:00",
   "source": "youtube",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "title": "day 25 of doodling N til #Morimens makes him playable #fanart #speedpaint",
@@ -141,6 +141,23 @@
       "archive_subtype": "video"
     },
     {
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 1:Alert V! 融災1-5 Boss戰的部分",
+      "summary": "忘卻前夜 #morimens 6月22日到7月6日的融災更新. Regional D-Effect Zone Update (June 22 – July 6). 1-5 這次我覺得不好打,所以 ...",
+      "source": "youtube",
+      "time": "2026-07-03T10:00:19Z",
+      "url": "https://www.youtube.com/watch?v=1Uhw6gRsYy4",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "Noir",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/1Uhw6gRsYy4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
       "title": "Long long LONG (Stream 20) MORIMENS",
       "summary": "In which the longest story the game has ever had begins.",
       "source": "youtube",
@@ -187,6 +204,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/xagS3CgpSI0/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens: Corposant, Saya, Aigis, Pontos discard deck",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-07-03T11:54:01Z",
+      "url": "https://www.youtube.com/watch?v=vb8JGAw2N8w",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Raihan Ryuichi (ReiZero)",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/vb8JGAw2N8w/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

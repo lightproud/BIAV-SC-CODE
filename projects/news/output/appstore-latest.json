@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T09:56:00.752569+00:00",
+  "collected_at": "2026-07-03T12:05:56.622988+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 14,
+  "item_count": 18,
   "items": [
     {
       "source": "appstore",
@@ -37,12 +37,32 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-16T02:49:31-07:00",
+      "time": "2026-06-05T00:36:40-07:00",
       "lang": "en",
-      "title": "Amazing game",
-      "summary": "One of the best gacha games out there. The devs are incredibly talented and generous.",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14188874283",
-      "author": "Temiiiiiiii88",
+      "title": "What a pleasant surprise:)",
+      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
+      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14145829170",
+      "author": "hsantos18",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-28T19:17:29-07:00",
+      "lang": "ko",
+      "title": "좋아! 좋아욤!",
+      "summary": "겜 재밌어욤!",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14239124258",
+      "author": "ㄱ다드",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-04T02:36:30-07:00",
+      "lang": "ko",
+      "title": "Any Plans for a macOS Version?",
+      "summary": "I’m really enjoying the game, and I was wondering if there are any plans for a macOS version in the future. I already know how to install and run it through workarounds, and that’s what I’m currently doing.\n\nI’ve noticed that some games developed exclusively for iPhone and iPad can still be installed and run on Macs, but it seems that this game isn’t available that way. Is there a particular reason for that?",
+      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14142279045",
+      "author": "Nihil___",
       "engagement": 5
     },
     {
@@ -73,6 +93,36 @@
       "summary": "This game is absolutely GEM! If you’re a turn-based game lover, you won’t regret any second spending on it. The art style is remarkably beautiful, game play is addictive, and most importantly, I think it’s F2P friendly. Worth playing.\n\nCons: Please keep on working on a translation. Especially Thai, it’s too confusing to understand.",
       "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14140571214",
       "author": "CinematicScenarios",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-07-01T11:21:49-07:00",
+      "lang": "de",
+      "title": "Beautiful game",
+      "summary": "One of the most beautiful and catching mobile games. I love the atmosphere, character design, world-building and creepy story. Even though it is a gatcha, it is very generous with its ingame currency and pull rates.",
+      "url": "https://apps.apple.com/de/app/id6447354150?see-all=reviews#as-14250546734",
+      "author": "Starshade78",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-06T02:29:15-07:00",
+      "lang": "fr",
+      "title": "Incroyable 🥰",
+      "summary": "Jeu très intéressant avec une histoire prometteuse. Les personnages sont attachants et la D.A un peu horrifique rajoute une belle ambiance ! Le jeu est plutôt généreux et le gameplay très original (j’ai jamais joué à un jeu gacha comme celui-ci) Le seul petit bémol est la traduction un peu bancale, mais au moins il y en a une 😅 Bref, j’adore ce jeu et je compte y jouer pendant un long moment encore 💕",
+      "url": "https://apps.apple.com/fr/app/id6447354150?see-all=reviews#as-14150023566",
+      "author": "cri❤️❤️❤️",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-09T06:19:29-07:00",
+      "lang": "it",
+      "title": "Lingua italiana disponibile",
+      "summary": "Meraviglioso strategico e storia seria",
+      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14162173646",
+      "author": "elllmazzzri",
       "engagement": 5
     },
     {
@@ -123,16 +173,6 @@
       "summary": "I have sound when I initially open the game but after I download resources all sound goes away. I already tried the fix button and I get the same issue.",
       "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14144100562",
       "author": "Actic-Slash",
-      "engagement": 4
-    },
-    {
-      "source": "appstore",
-      "time": "2026-06-07T01:01:16-07:00",
-      "lang": "en",
-      "title": "not bad",
-      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
-      "author": "navirebu",
       "engagement": 4
     },
     {

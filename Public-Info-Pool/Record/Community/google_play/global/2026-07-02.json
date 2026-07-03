@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-03T09:57:07.965168+00:00",
+  "archived_at": "2026-07-03T12:06:38.105570+00:00",
   "source": "google_play",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[Google Play 中评] ★3 the character design is nice. my issues",
@@ -72,6 +72,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 game nya seru, sebenarnya sistem gacha n",
+      "summary": "game nya seru, sebenarnya sistem gacha nya lumayan lah, tapi harga top up nya itu mahal banget. Sering ada karakter yang kalo mau nyepin itu harus bayar dan harga nya gak murah karena game nya tidak menerapkan regional pricing atau mata uangnya mengikuti dollar. after all semuanya bagus, dari design dan alurnya mantap. Saya ada saran untuk membuat gaya lain dari karakternya, jadi pose tampilan karakternya bisa berubah.",
+      "source": "google_play",
+      "time": "2026-07-02T10:51:38",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-fd926be4-9f62-4184-bbcd-6a745d5c40af",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Dian Rahmawati",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
       "region": "global"
     }
   ],
