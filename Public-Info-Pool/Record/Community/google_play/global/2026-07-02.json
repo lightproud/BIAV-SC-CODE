@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-03T06:58:40.792092+00:00",
+  "archived_at": "2026-07-03T09:57:07.965168+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Google Play 中评] ★3 the character design is nice. my issues",
@@ -58,6 +58,20 @@
       "tags": [],
       "lang": "pt",
       "platform_region": "br",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 I really love the gameplay and the chara",
+      "summary": "I really love the gameplay and the character designs",
+      "source": "google_play",
+      "time": "2026-07-02T08:43:54",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3df89bc9-b93c-493b-9fa6-9da7dd294ad0",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Shiver Thomas",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

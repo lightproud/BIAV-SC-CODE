@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-03T06:58:01.575705+00:00",
+  "collected_at": "2026-07-03T09:56:00.752569+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 138,
+  "item_count": 137,
   "items": [
     {
       "source": "google_play",
@@ -44,16 +44,6 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-168038cf-b0f3-475c-b4bd-12177f378675",
       "author": "スタンバートアシュレイ",
       "engagement": 4
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-03T09:39:25",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 コラボ目当てで始めましたが、世界観やストーリーがとても良く楽しませて頂いておりま",
-      "summary": "コラボ目当てで始めましたが、世界観やストーリーがとても良く楽しませて頂いております。 ひとつ要望があるとすれば、文字表示のUIや設定が改善されてくれないかなと思う程度でした。 文章が長いとタップスクロールのような形で表示され、シナリオを読む際のテンポが悪く感じうーん…となってしまいました。ムービー内でも同じ文章量で表示されるため、場面によっては速く切り替わってしまい読みきれないことがありました。シナリオが良いだけに少し残念…。 他ゲーム内のUIはレビュー内と同意見です。（任務関係が見つけにくい等） 進めていれば石の配布も充分にあり、最近では珍しいぐらいの無課金でも楽しめるゲームだなと思います。 また、先遣ユーザー様達の助言が手厚く、何かに迷った時気軽に助言を求められるのも良い点だなと感じます。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-187708f8-80b9-4c4c-be8b-f284e6ead7d4",
-      "author": "雪ん子（雪瑠）",
-      "engagement": 3
     },
     {
       "source": "google_play",
@@ -313,6 +303,16 @@
       "summary": "自動戰鬥ai純噁心人，阿拉克涅大招總在超維回合前放，一個核心機制在超維回合的角色，ai像個智商三歲的幼兒，總是超維前放。 聖心黑羽循環不會就算了，神母放大前ai又不會調怒濤，本質垃圾",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK#gp-82429977-31ce-40dd-93ec-c74503167260",
       "author": "fung tsan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-02T08:43:54",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I really love the gameplay and the chara",
+      "summary": "I really love the gameplay and the character designs",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3df89bc9-b93c-493b-9fa6-9da7dd294ad0",
+      "author": "Shiver Thomas",
       "engagement": 0
     },
     {
@@ -713,16 +713,6 @@
       "summary": "this game is soo underrated very interesting game and good meaningful lessons for us I'm not the of playing horror or dark games but this game is too good to not play I hope they create more games like this",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-34a15d48-7482-4eeb-8124-71fa89513c6b",
       "author": "Animewatcher",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-04T01:37:03",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Don't care what you say, this is one of",
-      "summary": "Don't care what you say, this is one of the only good gacha games left. Amazing story, good enough combat, very generous gacha... Genuinely ashamed I haven't played it earlier.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-9cb3e496-5804-453c-9608-3d0c75949419",
-      "author": "Murray Floyd",
       "engagement": 0
     },
     {
