@@ -100,14 +100,22 @@ export interface PermissionGate {
   /**
    * Full evaluation pipeline for one tool call. Order:
    *  1. hook deny -> deny
-   *  2. disallowedTools rule -> deny
-   *  3. hook allow -> allow (hook updatedInput wins)
-   *  4. allowedTools rule -> allow
+   *  2. disallowedTools rule (original input) -> deny
+   *  3. hook allow -> re-check disallowedTools against hook.updatedInput,
+   *     deny if it now matches else allow (hook updatedInput wins)
+   *  4. allowedTools rule -> allow, EXCEPT in plan mode a non-readOnly tool
+   *     does not qualify (falls through to the step-6 plan deny)
    *  5. mode bypassPermissions -> allow
    *  6. mode plan -> readOnly ? allow : deny
    *  7. mode acceptEdits && (readOnly || isFileEdit) -> allow
    *  8. mode default/dontAsk && readOnly -> allow
-   *  9. otherwise (or hook 'ask'): canUseTool if provided; else deny
+   *  9. otherwise (or hook 'ask'): canUseTool if provided (called with the
+   *     hook 'ask' updatedInput when present); on allow, re-check
+   *     disallowedTools against the effective input, deny if it now matches
+   *     (no session updates applied) else apply updates + allow; else deny.
+   *     dontAsk mode never prompts and denies here.
+   * A hook 'ask' skips the auto-allow outcomes of steps 3-8 (deny outcomes
+   * still apply) and forces the step-9 canUseTool path.
    * Every deny is recorded and retrievable via denials().
    */
   check(

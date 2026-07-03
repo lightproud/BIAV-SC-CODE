@@ -226,6 +226,33 @@ describe('Read tool', () => {
     expect(res.content).toBe([catLine(1, 'first'), catLine(2, 'second')].join('\n'));
     expect(String(res.content)).not.toContain('\r');
   });
+
+  // Regression (finding #11, P2): Read must refuse an oversized file instead of
+  // buffering it whole into memory (OOM). A text-looking file that slips past
+  // the 8KB binary sniff must be rejected by the byte-size guard.
+  it('rejects a file larger than the byte cap instead of OOMing', async () => {
+    const file = path.join(sandbox, 'huge.log');
+    // 51MB of ASCII 'a' (no NUL, so it passes the binary sniff) exceeds the
+    // 50MB Read cap.
+    await writeFile(file, Buffer.alloc(51 * 1024 * 1024, 0x61));
+
+    const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+
+    expect(res.isError).toBe(true);
+    const content = String(res.content);
+    expect(content).toMatch(/read cap/i);
+    expect(content).toMatch(/Grep/);
+  });
+
+  it('still reads a normal small file after the byte-cap guard', async () => {
+    const file = path.join(sandbox, 'normal.txt');
+    await writeFile(file, 'x\ny\n', 'utf8');
+
+    const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+
+    expect(res.isError).toBeFalsy();
+    expect(res.content).toBe([catLine(1, 'x'), catLine(2, 'y')].join('\n'));
+  });
 });
 
 // ---------------------------------------------------------------------------

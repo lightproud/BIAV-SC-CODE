@@ -364,12 +364,21 @@ describe('DefaultPermissionGate pipeline', () => {
     expect(res.updatedInput).toEqual({ command: 'ls' });
   });
 
-  it('step 4: allowedTools beats plan mode for a non-readOnly tool', async () => {
+  it('step 4: plan mode is NOT overridden by allowedTools for a non-readOnly tool', async () => {
+    // Corrected behavior (audit P0): in plan mode an allow rule must never
+    // auto-approve a write/non-readOnly tool; it falls through to the plan deny.
     const gate = makeGate({ mode: 'plan', allowedTools: ['Bash'] });
-    const res = asAllow(
+    const res = asDeny(
       await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })),
     );
-    expect(res.updatedInput).toEqual({ command: 'ls' });
+    expect(res.message).toMatch(/Bash/);
+  });
+
+  it('step 4: allowedTools still auto-approves a readOnly tool in plan mode', async () => {
+    const gate = makeGate({ mode: 'plan', allowedTools: ['Read'] });
+    asAllow(
+      await gate.check('Read', { file_path: '/x' }, checkOpts({ readOnly: true })),
+    );
   });
 
   it('step 5: bypassPermissions allows tools not listed anywhere', async () => {
@@ -785,6 +794,45 @@ describe('matcherMatches', () => {
     expect(matcherMatches('(', 'anything')).toBe(false);
     expect(matcherMatches('[', 'anything')).toBe(false);
   });
+
+  // #24: a nested-quantifier matcher against a long adversarial value would
+  // otherwise trigger catastrophic backtracking that freezes the event loop.
+  // The guard must fail closed (no-match) and return effectively instantly.
+  it('a nested-quantifier matcher + long adversarial value returns false quickly (#24)', () => {
+    const evil = 'a'.repeat(40) + 'b'; // ~4.5h of backtracking against (a+)+$ unguarded
+    const started = Date.now();
+    const res = matcherMatches('(a+)+$', evil);
+    const elapsed = Date.now() - started;
+    expect(res).toBe(false);
+    expect(elapsed).toBeLessThan(100);
+  });
+
+  it('flags several nested-quantifier shapes as no-match (#24)', () => {
+    const value = 'x'.repeat(30) + 'y';
+    expect(matcherMatches('(a*)+', value)).toBe(false);
+    expect(matcherMatches('(a+)*', value)).toBe(false);
+    expect(matcherMatches('(.*x)+', value)).toBe(false);
+    expect(matcherMatches('(a+){2,}', value)).toBe(false);
+  });
+
+  it('caps an over-long regex input value as no-match (#24)', () => {
+    expect(matcherMatches('x.*', 'x'.repeat(5000))).toBe(false);
+  });
+
+  it('emits a debug warning on a guard trip and never throws (#24)', () => {
+    const debug = vi.fn();
+    expect(() => matcherMatches('(a+)+$', 'a'.repeat(40) + 'b', debug)).not.toThrow();
+    expect(matcherMatches('(a+)+$', 'a'.repeat(40) + 'b', debug)).toBe(false);
+    expect(debug).toHaveBeenCalled();
+  });
+
+  it('ordinary (safe) regexes and safe quantified groups still evaluate normally (#24)', () => {
+    expect(matcherMatches('^mcp__', 'mcp__srv__tool')).toBe(true);
+    expect(matcherMatches('Edit.*', 'NotebookEdit')).toBe(true);
+    // (foo|bar)+ is linear (no inner quantifier) and must keep working
+    expect(matcherMatches('(foo|bar)+', 'foobarfoo')).toBe(true);
+    expect(matcherMatches('(foo|bar)+', 'baz')).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -889,15 +937,73 @@ describe('DefaultHookRunner', () => {
     expect(agg.decisionReason).toBe('blocked-it');
   });
 
-  it("decision 'approve' is neutral (no aggregated decision)", async () => {
+  // #15: legacy decision:'approve' must map to an allow (symmetric to
+  // 'block'->deny), so a hook migrated from @anthropic-ai/claude-agent-sdk
+  // that approves a tool with the old field keeps approving it. (Previously
+  // this test encoded the buggy behavior of 'approve' being dropped/neutral.)
+  it("legacy decision 'approve' aggregates as allow with its reason (#15)", async () => {
     const r = makeRunner({
       PreToolUse: [
         { matcher: '*', hooks: [async (): Promise<HookJSONOutput> => ({ decision: 'approve', reason: 'ok' })] },
       ],
     });
     const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5', 'Bash', freshSignal());
-    expect(agg.decision).toBeUndefined();
+    expect(agg.decision).toBe('allow');
+    expect(agg.decisionReason).toBe('ok');
     expect(agg.continue).toBe(true);
+  });
+
+  it("legacy 'approve' does NOT override an explicit permissionDecision:'deny' on the same output (#15 safety)", async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async (): Promise<HookJSONOutput> => ({
+              decision: 'approve',
+              reason: 'legacy-approve',
+              hookSpecificOutput: {
+                hookEventName: 'PreToolUse',
+                permissionDecision: 'deny',
+                permissionDecisionReason: 'explicit-deny',
+              },
+            }),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5b', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toBe('explicit-deny');
+  });
+
+  it("an unrecognized permissionDecision (e.g. migrated 'defer') aggregates as deny, never a silent allow (DEFER correction)", async () => {
+    const debug = vi.fn();
+    const r = makeRunner(
+      {
+        PreToolUse: [
+          {
+            matcher: '*',
+            hooks: [
+              async (): Promise<HookJSONOutput> => ({
+                hookSpecificOutput: {
+                  hookEventName: 'PreToolUse',
+                  // Runtime value outside the HookPermissionDecision union.
+                  permissionDecision: 'defer' as unknown as 'allow',
+                  permissionDecisionReason: 'deferring',
+                },
+              }),
+            ],
+          },
+        ],
+      },
+      debug,
+    );
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5c', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toBe('deferring');
+    const logged = debug.mock.calls.map((c) => String(c[0])).join('\n');
+    expect(logged).toContain('defer');
   });
 
   it('continue:false wins and the first-completed stopReason is kept', async () => {
@@ -916,6 +1022,44 @@ describe('DefaultHookRunner', () => {
     const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r6', 'Bash', freshSignal());
     expect(agg.continue).toBe(false);
     expect(agg.stopReason).toBe('early');
+  });
+
+  // #26: the first-completing continue:false output may have no stopReason;
+  // a later continue:false output's stopReason must not be discarded.
+  it('keeps the first NON-EMPTY stopReason among continue:false outputs (#26)', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            // completes first, carries no stopReason
+            async (): Promise<HookJSONOutput> => ({ continue: false }),
+            // completes later, carries the actionable reason
+            delayedHook({ continue: false, stopReason: 'budget guard tripped' }, 60),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r6b', 'Bash', freshSignal());
+    expect(agg.continue).toBe(false);
+    expect(agg.stopReason).toBe('budget guard tripped');
+  });
+
+  it('an empty-string stopReason is skipped in favor of a later non-empty one (#26)', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async (): Promise<HookJSONOutput> => ({ continue: false, stopReason: '' }),
+            delayedHook({ continue: false, stopReason: 'real reason' }, 60),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r6c', 'Bash', freshSignal());
+    expect(agg.continue).toBe(false);
+    expect(agg.stopReason).toBe('real reason');
   });
 
   it('collects systemMessages and additionalContext from all hooks', async () => {
@@ -957,6 +1101,71 @@ describe('DefaultHookRunner', () => {
     const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r8', 'Bash', freshSignal());
     expect(agg.decision).toBe('allow');
     expect(agg.updatedInput).toEqual({ second: true });
+  });
+
+  // #21: updatedInput is valid with allow AND ask (types.ts:466). A hook that
+  // rewrites the input and asks for confirmation must have its rewrite survive.
+  it('captures updatedInput from an ask output too (#21)', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async () =>
+              decisionOutput('ask', 'confirm redaction', {
+                updatedInput: { command: 'curl -H "Auth: ***" api' },
+              }),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r9a', 'Bash', freshSignal());
+    expect(agg.decision).toBe('ask');
+    expect(agg.updatedInput).toEqual({ command: 'curl -H "Auth: ***" api' });
+  });
+
+  it('last ask/allow output wins for updatedInput across a mixed set (#21)', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async () => decisionOutput('allow', undefined, { updatedInput: { step: 'allow-first' } }),
+            delayedHook(decisionOutput('ask', undefined, { updatedInput: { step: 'ask-last' } }), 60),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r9b', 'Bash', freshSignal());
+    // ask beats allow in the decision ordering; updatedInput is the last-completing one
+    expect(agg.decision).toBe('ask');
+    expect(agg.updatedInput).toEqual({ step: 'ask-last' });
+  });
+
+  // #25: a single output carrying both legacy decision:'block' and
+  // permissionDecision:'allow' must deny with the BLOCK reason, not the allow.
+  it("block overriding an allow records the deny reason, not the allow rationale (#25)", async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async (): Promise<HookJSONOutput> => ({
+              decision: 'block',
+              reason: 'policy violation',
+              hookSpecificOutput: {
+                hookEventName: 'PreToolUse',
+                permissionDecision: 'allow',
+                permissionDecisionReason: 'looks fine',
+              },
+            }),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r9c', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toBe('policy violation');
   });
 
   it('updatedInput from a non-allow output is ignored', async () => {

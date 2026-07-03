@@ -9,6 +9,8 @@
  */
 
 import { spawn, type ChildProcess } from 'node:child_process';
+import http from 'node:http';
+import type { AddressInfo } from 'node:net';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
@@ -16,6 +18,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { z } from 'zod';
 
 import { createSdkMcpServer, SdkMcpConnection, tool } from '../src/mcp/sdk-server.js';
+import { HttpMcpConnection } from '../src/mcp/http.js';
 import { DefaultMcpRegistry } from '../src/mcp/registry.js';
 import type { CallToolResult, SdkMcpToolDefinition } from '../src/types.js';
 
@@ -523,5 +526,217 @@ describe('HttpMcpConnection via DefaultMcpRegistry (http fixture)', () => {
     const result = await sseReg.call('mcp__legacy__anything', {}, liveSignal());
     expect(result.isError).toBe(true);
     await sseReg.closeAll();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Regression: sdk-server tool() input-side JSON Schema (findings #17, #20)
+// ---------------------------------------------------------------------------
+
+describe('mcp/sdk-server tool() input-side schema (regression #17/#20)', () => {
+  it('#20: a .default() field is NOT emitted in the schema required array', () => {
+    const def = tool(
+      'search',
+      'search with a defaulted limit',
+      { q: z.string(), limit: z.number().default(10) },
+      async (args) => ({ content: [{ type: 'text', text: String(args.limit) }] }),
+    );
+    const required = (def.inputJsonSchema.required ?? []) as string[];
+    expect(required).toContain('q');
+    // Before the io:'input' fix, output-side conversion listed 'limit' as
+    // required, contradicting the handler which applies the default.
+    expect(required).not.toContain('limit');
+    // The default annotation still survives in properties.
+    expect(def.inputJsonSchema.properties).toMatchObject({
+      limit: expect.objectContaining({ default: 10 }),
+    });
+  });
+
+  it('#17: a .transform() input field does not throw at tool-definition time', () => {
+    // Output-side conversion throws "Transforms cannot be represented in JSON
+    // Schema"; input-side emits the pre-transform type instead.
+    let def: ReturnType<typeof tool> | undefined;
+    expect(() => {
+      def = tool(
+        'parse_when',
+        'parse a date string',
+        { when: z.string().transform((s) => new Date(s)) },
+        async () => ({ content: [{ type: 'text', text: 'ok' }] }),
+      );
+    }).not.toThrow();
+    expect(def?.inputJsonSchema.properties).toMatchObject({
+      when: expect.objectContaining({ type: 'string' }),
+    });
+  });
+
+  it('#17: a z.date() input field does not throw and the handler still validates', async () => {
+    let def: ReturnType<typeof tool> | undefined;
+    expect(() => {
+      def = tool(
+        'at',
+        'takes a date',
+        { at: z.date() },
+        async () => ({ content: [{ type: 'text', text: 'ok' }] }),
+      );
+    }).not.toThrow();
+    // Handler-side zod validation is unaffected: a non-date is rejected.
+    const result = await callRaw(def as unknown as SdkMcpToolDefinition<never>, { at: 'nope' });
+    expect(result.isError).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Regression: HttpMcpConnection header casing + server-initiated requests
+// (findings #18, #19). Uses an inline node:http server per test.
+// ---------------------------------------------------------------------------
+
+/** Start an inline http server; returns its base URL and a stop() fn. */
+async function startServer(
+  handler: (req: http.IncomingMessage, res: http.ServerResponse, body: string) => void,
+): Promise<{ url: string; stop: () => Promise<void> }> {
+  const server = http.createServer((req, res) => {
+    let body = '';
+    req.setEncoding('utf8');
+    req.on('data', (c) => {
+      body += c;
+    });
+    req.on('end', () => handler(req, res, body));
+  });
+  await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', resolve));
+  const { port } = server.address() as AddressInfo;
+  return {
+    url: `http://127.0.0.1:${port}/mcp`,
+    stop: () =>
+      new Promise<void>((resolve) => {
+        server.close(() => resolve());
+      }),
+  };
+}
+
+describe('HttpMcpConnection header casing (regression #18)', () => {
+  it('a case-variant config Content-Type replaces the default, no comma-joined dup', async () => {
+    const seenContentTypes: string[] = [];
+    const srv = await startServer((req, res, body) => {
+      seenContentTypes.push(String(req.headers['content-type'] ?? ''));
+      const { id } = JSON.parse(body) as { id: number | string | null };
+      if (id === undefined || id === null) {
+        res.writeHead(202);
+        res.end();
+        return;
+      }
+      res.writeHead(200, { 'content-type': 'application/json' });
+      res.end(
+        JSON.stringify({
+          jsonrpc: '2.0',
+          id,
+          result: {
+            protocolVersion: '2025-06-18',
+            capabilities: {},
+            serverInfo: { name: 'hdr', version: '1.0.0' },
+          },
+        }),
+      );
+    });
+    try {
+      const conn = new HttpMcpConnection({
+        type: 'http',
+        url: srv.url,
+        // Natural casing differing only in case from the hardcoded lowercase
+        // 'content-type'; must REPLACE it, not produce a duplicate.
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+      await conn.connect();
+      await conn.close();
+    } finally {
+      await srv.stop();
+    }
+
+    expect(seenContentTypes.length).toBeGreaterThan(0);
+    for (const ct of seenContentTypes) {
+      // User override wins; exactly one value, never the malformed merge.
+      expect(ct).toBe('application/json; charset=utf-8');
+      expect(ct).not.toContain(',');
+    }
+  });
+});
+
+describe('HttpMcpConnection server-initiated request over SSE (regression #19)', () => {
+  it('answers a server request on the SSE stream with JSON-RPC -32601', async () => {
+    const replies: Array<{ id: unknown; error?: { code?: number } }> = [];
+    const srv = await startServer((req, res, body) => {
+      const msg = JSON.parse(body) as {
+        id: number | string | null;
+        method?: string;
+        error?: { code?: number };
+      };
+      const { id, method } = msg;
+
+      // The client's fire-and-forget reply to the server request: no method,
+      // carries the server's id + an error object. Record and ack it.
+      if (method === undefined && msg.error) {
+        replies.push({ id, error: msg.error });
+        res.writeHead(202);
+        res.end();
+        return;
+      }
+      if (id === undefined || id === null) {
+        res.writeHead(202);
+        res.end();
+        return;
+      }
+      if (method === 'initialize') {
+        res.writeHead(200, { 'content-type': 'application/json' });
+        res.end(
+          JSON.stringify({
+            jsonrpc: '2.0',
+            id,
+            result: {
+              protocolVersion: '2025-06-18',
+              capabilities: {},
+              serverInfo: { name: 'sse', version: '1.0.0' },
+            },
+          }),
+        );
+        return;
+      }
+      if (method === 'tools/call') {
+        // SSE stream: first a server-initiated request (method + id), then the
+        // actual tools/call response. The client must answer the former.
+        res.writeHead(200, { 'content-type': 'text/event-stream' });
+        res.write(
+          `data: ${JSON.stringify({ jsonrpc: '2.0', id: 'srv-ping-1', method: 'ping' })}\n\n`,
+        );
+        res.write(
+          `data: ${JSON.stringify({
+            jsonrpc: '2.0',
+            id,
+            result: { content: [{ type: 'text', text: 'pong' }] },
+          })}\n\n`,
+        );
+        res.end();
+        return;
+      }
+      res.writeHead(200, { 'content-type': 'application/json' });
+      res.end(JSON.stringify({ jsonrpc: '2.0', id, error: { code: -32601, message: 'nope' } }));
+    });
+
+    try {
+      const conn = new HttpMcpConnection({ type: 'http', url: srv.url });
+      await conn.connect();
+      const result = await conn.callTool('anything', {});
+      expect(textOf(result)).toBe('pong');
+
+      // Give the fire-and-forget reply POST a moment to land.
+      for (let i = 0; i < 40 && replies.length === 0; i++) {
+        await new Promise((r) => setTimeout(r, 25));
+      }
+      await conn.close();
+
+      expect(replies.length).toBeGreaterThan(0);
+      expect(replies[0]?.id).toBe('srv-ping-1');
+      expect(replies[0]?.error?.code).toBe(-32601);
+    } finally {
+      await srv.stop();
+    }
   });
 });

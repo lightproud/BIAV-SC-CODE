@@ -19,6 +19,13 @@ const DEFAULT_TIMEOUT_MS = 120_000;
 const MAX_TIMEOUT_MS = 600_000;
 const STREAM_CAP_CHARS = 30_000;
 const KILL_GRACE_MS = 2_000;
+/**
+ * After the direct shell exits, how long to let its stdout/stderr pipes flush
+ * before settling. Bounds the wait when a background descendant inherited the
+ * pipes and holds them open indefinitely (the 'close' event would otherwise
+ * never fire). The common case settles earlier, on 'close'.
+ */
+const FLUSH_GRACE_MS = 200;
 
 /** Accumulates stream output, keeping only the first STREAM_CAP_CHARS chars. */
 class CappedStream {
@@ -61,10 +68,15 @@ function runShell(
   timeoutMs: number,
 ): Promise<RunOutcome> {
   return new Promise((resolve) => {
+    // detached:true puts the shell in its own process group (pgid == pid) so
+    // termination can signal the WHOLE tree (shell + pipeline/background
+    // descendants), not just the direct shell. Without this, killing the
+    // shell orphans its children and leaves them running.
     const child = spawn(shell, ['-c', command], {
       cwd: ctx.cwd,
       env: ctx.env as NodeJS.ProcessEnv,
       stdio: ['ignore', 'pipe', 'pipe'],
+      detached: true,
     });
 
     const stdout = new CappedStream();
@@ -73,23 +85,34 @@ function runShell(
     let spawned = false;
     let timedOut = false;
     let aborted = false;
+    let exited = false;
+    let exitCode: number | null = null;
+    let exitSignal: NodeJS.Signals | null = null;
     let killTimer: NodeJS.Timeout | undefined;
+    let flushTimer: NodeJS.Timeout | undefined;
 
-    // SIGTERM first; escalate to SIGKILL after a 2s grace period.
-    const terminate = (): void => {
+    // Signal the shell's entire process group; fall back to the direct child
+    // when the pid is unknown. ESRCH (group already gone) is expected and
+    // swallowed.
+    const killGroup = (sig: NodeJS.Signals): void => {
+      const pid = child.pid;
       try {
-        child.kill('SIGTERM');
+        if (pid !== undefined) {
+          process.kill(-pid, sig);
+        } else {
+          child.kill(sig);
+        }
       } catch {
-        /* process may already be gone */
+        /* group/process already gone or cannot be signalled */
       }
+    };
+
+    // SIGTERM first; escalate to SIGKILL after a grace period. Both target the
+    // process group so no descendant survives.
+    const terminate = (): void => {
+      killGroup('SIGTERM');
       if (killTimer === undefined) {
-        killTimer = setTimeout(() => {
-          try {
-            child.kill('SIGKILL');
-          } catch {
-            /* ignore */
-          }
-        }, KILL_GRACE_MS);
+        killTimer = setTimeout(() => killGroup('SIGKILL'), KILL_GRACE_MS);
         killTimer.unref?.();
       }
     };
@@ -111,7 +134,23 @@ function runShell(
     const cleanup = (): void => {
       clearTimeout(timeoutTimer);
       if (killTimer !== undefined) clearTimeout(killTimer);
+      if (flushTimer !== undefined) clearTimeout(flushTimer);
       ctx.signal.removeEventListener('abort', onAbort);
+    };
+
+    const finish = (): void => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve({
+        kind: 'exit',
+        code: exitCode,
+        signal: exitSignal,
+        stdout: stdout.text(),
+        stderr: stderr.text(),
+        timedOut,
+        aborted,
+      });
     };
 
     child.stdout?.setEncoding('utf8');
@@ -146,19 +185,30 @@ function runShell(
       });
     });
 
+    // Settle on the DIRECT shell's 'exit', not 'close'. 'close' waits for every
+    // descendant that inherited the stdout/stderr pipes to exit, so a lingering
+    // background child (e.g. `echo ok; sleep 6 &`) would keep the promise
+    // pending forever - the P0 deadlock. After exit we give the pipes a short
+    // grace to flush, then settle regardless of any pipe-holding descendant.
+    child.on('exit', (code, signal) => {
+      if (settled || exited) return;
+      exited = true;
+      exitCode = code;
+      exitSignal = signal;
+      flushTimer = setTimeout(finish, FLUSH_GRACE_MS);
+      flushTimer.unref?.();
+    });
+
+    // The common case: all stdio closes shortly after exit (no lingering
+    // pipe-holder). Settle immediately instead of waiting out the flush grace.
     child.on('close', (code, signal) => {
       if (settled) return;
-      settled = true;
-      cleanup();
-      resolve({
-        kind: 'exit',
-        code,
-        signal,
-        stdout: stdout.text(),
-        stderr: stderr.text(),
-        timedOut,
-        aborted,
-      });
+      if (!exited) {
+        exited = true;
+        exitCode = code;
+        exitSignal = signal;
+      }
+      finish();
     });
   });
 }

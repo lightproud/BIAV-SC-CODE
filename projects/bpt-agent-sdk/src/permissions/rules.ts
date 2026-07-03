@@ -33,26 +33,54 @@ export function parseRule(raw: string): ParsedRule {
 }
 
 /**
+ * Split an MCP qualified tool name `mcp__{server}__{tool}` into its server and
+ * tool segments. The tool is the LAST `__`-delimited segment; the server is
+ * everything between `mcp__` and that final `__`. Returns undefined for names
+ * that are not `mcp__X__Y`-shaped (a non-empty server AND a non-empty tool are
+ * both required).
+ *
+ * Anchoring the tool as the final segment lets us match the server EXACTLY,
+ * even when the server name itself contains `__`. A naive split-on-first-`__`
+ * (the previous implementation) both over-allowed - a rule scoped to server
+ * `a` matched every tool of server `a__b` - and left servers whose name
+ * contains `__` untargetable.
+ */
+function splitMcpName(qualified: string): { server: string; tool: string } | undefined {
+  if (!qualified.startsWith('mcp__')) return undefined;
+  const rest = qualified.slice('mcp__'.length);
+  const sep = rest.lastIndexOf('__');
+  if (sep <= 0) return undefined; // need a non-empty server before the final '__'
+  const server = rest.slice(0, sep);
+  const tool = rest.slice(sep + 2);
+  if (server.length === 0 || tool.length === 0) return undefined;
+  return { server, tool };
+}
+
+/**
  * Match a tool-name pattern from allowedTools/disallowedTools entries.
  *
  * Supported forms:
  *   - exact name (`Bash`, `mcp__srv__tool`)
  *   - `mcp__server__*` -> any tool of that MCP server
  *   - `mcp__server`    -> shorthand for the same server-wide wildcard
+ *
+ * MCP wildcard forms match the tool's server segment EXACTLY (see
+ * splitMcpName): `mcp__a` / `mcp__a__*` match tools of server `a` only, never
+ * tools of a distinct server `a__b`, and a server whose name contains `__`
+ * (e.g. `a__b`) is reachable via `mcp__a__b` / `mcp__a__b__*`.
  */
 export function matchToolName(pattern: string, toolName: string): boolean {
   if (pattern === toolName) return true;
-  if (pattern.startsWith('mcp__')) {
-    if (pattern.endsWith('__*')) {
-      // 'mcp__srv__*' -> prefix 'mcp__srv__'
-      return toolName.startsWith(pattern.slice(0, -1));
-    }
-    if (!pattern.slice('mcp__'.length).includes('__')) {
-      // Bare server pattern 'mcp__srv' matches 'mcp__srv__anything'.
-      return toolName.startsWith(`${pattern}__`);
-    }
-  }
-  return false;
+  if (!pattern.startsWith('mcp__')) return false;
+
+  // Resolve the server this pattern scopes to (server-wide wildcard forms).
+  const patternServer = pattern.endsWith('__*')
+    ? pattern.slice('mcp__'.length, -'__*'.length) // 'mcp__server__*'
+    : pattern.slice('mcp__'.length); // bare 'mcp__server'
+  if (patternServer.length === 0 || patternServer.includes('*')) return false;
+
+  const parsed = splitMcpName(toolName);
+  return parsed !== undefined && parsed.server === patternServer;
 }
 
 /**

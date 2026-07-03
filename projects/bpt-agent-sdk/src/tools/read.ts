@@ -16,6 +16,15 @@ import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
 
+/**
+ * Hard byte cap. Read buffers the whole file before applying offset/limit, so
+ * without this guard a multi-GB text file (which slips past the 8KB binary
+ * sniff) materializes entirely in memory and OOMs the process even with the
+ * default 2000-line limit. Above the cap we refuse and steer the caller to a
+ * bounded tool (Grep) rather than crashing the run.
+ */
+const MAX_READ_BYTES = 50 * 1024 * 1024;
+
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
@@ -104,6 +113,13 @@ export const readTool: BuiltinTool = {
         if (st.isDirectory()) {
           return errorResult(
             `Read failed: "${abs}" is a directory, not a file. Use the Glob tool to list its contents.`,
+          );
+        }
+        if (st.size > MAX_READ_BYTES) {
+          return errorResult(
+            `Read failed: "${abs}" is ${st.size} bytes, larger than the ${MAX_READ_BYTES}-byte (${Math.floor(
+              MAX_READ_BYTES / (1024 * 1024),
+            )}MB) read cap. Reading it whole would exhaust memory. Use the Grep tool to search it, or split the file into smaller pieces.`,
           );
         }
       } catch (e) {

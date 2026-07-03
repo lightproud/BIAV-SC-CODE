@@ -1,7 +1,13 @@
 # BPT Agent SDK — Compatibility Matrix (v0.1)
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API as documented at
-code.claude.com/docs/en/agent-sdk/typescript (fetched 2026-07-03).
+Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.199) as
+documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
+
+For a full 146-row completion audit against the latest official surface
+(including 18 unmodeled subsystems and the v0.2/v0.3 roadmap), see
+`Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`.
+This file's tiers were reconciled against actual code after the 2026-07-03
+adversarial-review fix pass.
 
 Tiers:
 - **FULL** — implemented with documented semantics.
@@ -41,8 +47,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `abortController` | FULL | |
 | `additionalDirectories` | FULL | fs tools + additionalDirectories containment |
 | `agents` | ACCEPTED | subagents land in v0.2 |
-| `allowedTools` / `disallowedTools` | FULL | incl. `Tool(spec)` prefix rules and `mcp__srv__*` |
-| `canUseTool` | FULL | |
+| `allowedTools` / `disallowedTools` | PARTIAL | `Tool(spec)` prefix rules + `mcp__srv__*` (exact server match); bare-name `disallowedTools` removes the tool definition from the request; plan mode never auto-approves writes via an allow rule; rewritten inputs re-checked against deny rules. Deny-position `*`/`mcp__*` globs not yet supported |
+| `canUseTool` | PARTIAL | invoked on prompt-fallthrough; `updatedInput`/`updatedPermissions` honored (incl. hook-`ask` rewrite); `suggestions`/`requestId` not passed; `null` return treated as deny (not skip-response) |
 | `continue` | PARTIAL | resumes latest session from this SDK's store |
 | `cwd` | FULL | |
 | `env` | FULL | used for transport + Bash tool |
@@ -51,7 +57,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
 | `maxBudgetUsd` | FULL | based on estimated cost |
-| `maxThinkingTokens` / `thinking` | FULL | maps to Messages API `thinking` |
+| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own; fields are `budget_tokens`/`budget`, not the official `budgetTokens` |
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
@@ -65,15 +71,15 @@ SDK implements the agent loop directly against the public Messages API:
 | `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
-| `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `includeHookEvents`, `loadTimeoutMs`, `allowDangerouslySkipPermissions`, `title`, `resumeSessionAt` | ACCEPTED | warned + ignored in v0.1 (typed loosely via `Options` extension slot in v0.2 planning) |
+| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `includeHookEvents`, `loadTimeoutMs`, `allowDangerouslySkipPermissions`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored in v0.1 |
 
 ## Built-in tools
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files; images/PDF/notebooks not rendered |
+| Read | PARTIAL | text files; images/PDF/notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …) |
-| Bash | PARTIAL | no persistent shell state across calls; no sandboxing |
+| Bash | PARTIAL | no persistent shell state across calls; no sandboxing; runs in its own process group (timeout/abort reap the whole group; background/daemon children do not hang the tool) |
 | Glob | FULL | fast-glob, mtime-sorted |
 | Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat |
 | WebFetch / WebSearch / Task / TodoWrite / NotebookEdit / MultiEdit / KillShell / BashOutput | UNSUPPORTED | not registered in v0.1 |
@@ -82,30 +88,31 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Variant | Tier | Notes |
 |---|---|---|
-| `system/init` | FULL | apiKeySource, tools, mcp_servers, model, permissionMode |
+| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode present; official `claude_code_version`/`betas`/`skills`/`plugins` absent; `slash_commands` always `[]` |
 | `assistant` | FULL | full `APIAssistantMessage` |
-| `user` (echo + tool results) | FULL | |
+| `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages` |
-| `result` success / error_max_turns / error_during_execution | FULL | + `error_max_budget` (BPT extension) |
+| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` | PARTIAL | budget subtype uses the official name `error_max_budget_usd`; success arm omits official extras (ttft_ms, structured_output, …); error arm carries `errorMessage: string` rather than official `errors: string[]` |
 | `system/compact_boundary` | UNSUPPORTED | no auto-compaction in v0.1 |
 
 ## Hooks
 
 | Event | Tier | Notes |
 |---|---|---|
-| PreToolUse | FULL | allow/deny/ask + updatedInput; deny > ask > allow |
-| PostToolUse | FULL | additionalContext + updatedToolOutput |
+| PreToolUse | FULL | allow/deny/ask + updatedInput (ask rewrite survives to canUseTool); deny > ask > allow; input lacks `tool_use_id` field (carried in the 2nd callback arg) |
+| PostToolUse | FULL | additionalContext + updatedToolOutput + `continue:false`; input lacks `tool_use_id`/`duration_ms` fields |
 | PostToolUseFailure | FULL | |
-| PostToolBatch | FULL | |
-| UserPromptSubmit | FULL | additionalContext; block stops the turn |
-| MessageDisplay | FULL | |
+| PostToolBatch | PARTIAL | fires per batch; input is `{ tool_names }` not the official `{ tool_calls[] }`; `continue:false` honored |
+| UserPromptSubmit | PARTIAL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode |
+| MessageDisplay | PARTIAL | fires once per completed message (`message_text`), not per delta |
 | Stop | FULL | fired at natural end of a run |
 | SessionStart / SessionEnd | FULL | |
-| Notification | PARTIAL | fired for permission denials only in v0.1 |
+| Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
 | SubagentStart / SubagentStop | ACCEPTED | never fire (no subagents yet) |
 | PreCompact | ACCEPTED | never fires (no compaction yet) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
-| `defer` permission decision | UNSUPPORTED | treated as deny with warning |
+| `defer` permission decision | UNSUPPORTED | an unrecognized `permissionDecision` fails closed as deny with a debug warning |
+| legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
 | Matcher semantics | FULL | exact-set vs regex rules per docs |
 | `async: true` outputs | FULL | fire-and-forget |
 | Settings-file shell hooks | UNSUPPORTED | callback hooks only |

@@ -29,7 +29,19 @@ export function tool<S extends z.ZodRawShape>(
   handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
 ): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>> {
   const schema = z.object(inputSchema);
-  const raw = z.toJSONSchema(schema) as unknown as Record<string, unknown>;
+  // io: 'input' generates the INPUT-side JSON schema, which is what both the
+  // Messages API tools[].input_schema and MCP tools/list inputSchema describe.
+  // Without it zod v4 defaults to io: 'output', which (a) throws on input
+  // shapes containing .transform() and (b) wrongly lists .default() fields in
+  // `required` (the handler's safeParse accepts omission).
+  // unrepresentable: 'any' degrades truly unrepresentable leaf types (z.date(),
+  // z.bigint(), etc.) to a permissive {} in the advertised schema instead of
+  // throwing at tool-definition time (which would crash the app at startup).
+  // Handler-side zod validation still enforces the real type.
+  const raw = z.toJSONSchema(schema, {
+    io: 'input',
+    unrepresentable: 'any',
+  }) as unknown as Record<string, unknown>;
   const { $schema: _discard, ...inputJsonSchema } = raw;
   void _discard;
 

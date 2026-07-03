@@ -8,11 +8,15 @@
  * otherwise ignored; a callback can never crash the agent loop.
  *
  * Aggregation rules (across the outputs, in completion order):
- *   - permission decision: deny > ask > allow ('decision: "block"' counts
- *     as deny with its `reason`)
- *   - continue:false wins (first stopReason kept)
+ *   - permission decision: deny > ask > allow. The legacy `decision` field
+ *     maps onto this: 'block' -> deny (with its `reason`), 'approve' -> allow
+ *     (only when the same output carries no explicit permissionDecision). An
+ *     unrecognized permissionDecision value (e.g. a migrated 'defer') is
+ *     treated as a DENY, never a silent allow.
+ *   - continue:false wins; the FIRST non-empty stopReason is kept
  *   - systemMessage / additionalContext collected in completion order
- *   - updatedInput: from the LAST output carrying an 'allow' decision
+ *   - updatedInput: from the LAST output carrying an 'allow' OR 'ask' decision
+ *     (types.ts documents updatedInput as valid with allow and ask)
  *   - updatedToolOutput: last-wins
  *   - `void` / `{}` outputs are neutral; `async: true` outputs are detached
  *     (fire-and-forget) and treated as neutral
@@ -78,7 +82,7 @@ export class DefaultHookRunner implements HookRunner {
     // Collect every callback whose matcher pattern accepts the filter value.
     const tasks: Array<{ cb: HookCallback; timeoutMs: number }> = [];
     for (const matcher of this.hooks[event] ?? []) {
-      if (!matcherMatches(matcher.matcher, matchValue)) continue;
+      if (!matcherMatches(matcher.matcher, matchValue, this.debug)) continue;
       const seconds =
         typeof matcher.timeout === 'number' &&
         Number.isFinite(matcher.timeout) &&
@@ -153,9 +157,18 @@ export class DefaultHookRunner implements HookRunner {
     let sawAllow = false;
 
     for (const out of outputs) {
-      if (out.continue === false && agg.continue) {
+      // continue:false wins; keep the FIRST non-empty stopReason so an
+      // actionable reason from a later continue:false output is not lost to a
+      // fast, reason-less one (#26).
+      if (out.continue === false) {
         agg.continue = false;
-        if (out.stopReason !== undefined) agg.stopReason = out.stopReason;
+        if (
+          agg.stopReason === undefined &&
+          typeof out.stopReason === 'string' &&
+          out.stopReason.length > 0
+        ) {
+          agg.stopReason = out.stopReason;
+        }
       }
       if (typeof out.systemMessage === 'string' && out.systemMessage.length > 0) {
         agg.systemMessages.push(out.systemMessage);
@@ -163,13 +176,23 @@ export class DefaultHookRunner implements HookRunner {
 
       const hso = out.hookSpecificOutput;
 
-      // Per-output permission decision; the legacy 'block' field counts as a
-      // deny (and overrides any decision the same output also carried).
-      let decision = hso?.permissionDecision;
+      // Per-output permission decision. The newer hookSpecificOutput.
+      // permissionDecision is the primary signal; the legacy `decision` field
+      // maps onto it. Widened to `string` so an unrecognized runtime value
+      // (e.g. a migrated 'defer') can be caught below rather than silently
+      // ignored.
+      let decision: string | undefined = hso?.permissionDecision;
       let reason = hso?.permissionDecisionReason ?? out.reason;
       if (out.decision === 'block') {
+        // Legacy block -> deny; pair the recorded reason with the DENY source,
+        // not any allow rationale the same output also carried (#25).
         decision = 'deny';
-        reason = reason ?? out.reason;
+        reason = out.reason ?? hso?.permissionDecisionReason;
+      } else if (out.decision === 'approve' && decision === undefined) {
+        // Legacy approve -> allow, symmetric to block. Only when the output
+        // carries no explicit (more specific) permissionDecision (#15).
+        decision = 'allow';
+        reason = out.reason ?? reason;
       }
 
       if (decision === 'deny') {
@@ -187,8 +210,29 @@ export class DefaultHookRunner implements HookRunner {
           sawAllow = true;
           allowReason = reason;
         }
-        // updatedInput: last allow output wins.
-        if (hso?.updatedInput !== undefined) agg.updatedInput = hso.updatedInput;
+      } else if (decision !== undefined) {
+        // Unrecognized permissionDecision (e.g. a migrated/typo 'defer'):
+        // the documented v0.1 behavior is to treat it as a DENY, never a
+        // silent allow (fail closed).
+        this.debug(
+          `hooks: unrecognized permissionDecision "${decision}" treated as deny`,
+        );
+        if (!sawDeny) {
+          sawDeny = true;
+          denyReason =
+            reason ?? `unrecognized permissionDecision "${decision}" (treated as deny)`;
+        }
+      }
+
+      // updatedInput is valid with an 'allow' OR 'ask' decision (types.ts:466);
+      // the last such output wins. Capturing it under 'ask' too ensures a hook
+      // that rewrites the input and asks for confirmation has its rewrite
+      // survive the canUseTool round-trip (#21).
+      if (
+        (decision === 'allow' || decision === 'ask') &&
+        hso?.updatedInput !== undefined
+      ) {
+        agg.updatedInput = hso.updatedInput;
       }
 
       if (hso?.additionalContext !== undefined && hso.additionalContext.length > 0) {

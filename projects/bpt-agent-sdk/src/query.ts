@@ -12,7 +12,11 @@ import { AbortError, ConfigurationError, isAbortError } from './errors.js';
 import type {
   APIMessageParam,
   APIUserMessage,
+  CallToolResult,
+  ContentBlock,
+  McpServerStatus,
   ModelInfo,
+  ModelUsage,
   NonNullableUsage,
   Options,
   PermissionMode,
@@ -28,12 +32,15 @@ import type {
   BuiltinTool,
   EngineConfig,
   EngineDeps,
+  McpRegistry,
+  McpToolEntry,
   ToolContext,
 } from './internal/contracts.js';
 import { AnthropicTransport } from './transport/anthropic.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
 import { DefaultHookRunner } from './hooks/runner.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
+import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { buildSystemPrompt } from './engine/prompts.js';
 import { JsonlSessionStore } from './sessions/store.js';
@@ -58,6 +65,14 @@ const SUPPORTED_MODELS: readonly ModelInfo[] = [
  */
 const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'agents',
+  // Official @anthropic-ai/claude-agent-sdk Options fields this SDK accepts for
+  // migration compatibility but does not act on in v0.1 (audit v0.1.1): each
+  // present key must emit exactly one debug warning instead of being silently
+  // ignored.
+  'agent',
+  'settings',
+  'permissionPromptToolName',
+  'extraArgs',
   'settingSources',
   'effort',
   'outputFormat',
@@ -97,6 +112,62 @@ const zeroUsage = (): NonNullableUsage => ({
   cache_creation_input_tokens: 0,
   cache_read_input_tokens: 0,
 });
+
+/** Sum two usage records (session-wide accumulation across streaming turns). */
+function addUsageLocal(a: NonNullableUsage, b: NonNullableUsage): NonNullableUsage {
+  return {
+    input_tokens: a.input_tokens + b.input_tokens,
+    output_tokens: a.output_tokens + b.output_tokens,
+    cache_creation_input_tokens:
+      a.cache_creation_input_tokens + b.cache_creation_input_tokens,
+    cache_read_input_tokens: a.cache_read_input_tokens + b.cache_read_input_tokens,
+  };
+}
+
+/**
+ * McpRegistry decorator that hides tools matched by bare-name disallowedTools
+ * entries so the model never sees their definitions (audit v0.1.1 P0). A tool
+ * whose qualified name matches a bare disallowed pattern is dropped from
+ * allTools() (which feeds the request's tool list and the init message) and
+ * reported as absent by has() (so a hallucinated call yields "No such tool"
+ * rather than executing). Scoped `Tool(spec)` deny rules are NOT applied here;
+ * they remain call-time gate decisions.
+ */
+class ToolFilterMcpRegistry implements McpRegistry {
+  constructor(
+    private readonly inner: McpRegistry,
+    private readonly hidden: (qualifiedName: string) => boolean,
+  ) {}
+  connectAll(): Promise<void> {
+    return this.inner.connectAll();
+  }
+  statuses(): McpServerStatus[] {
+    return this.inner.statuses();
+  }
+  allTools(): McpToolEntry[] {
+    return this.inner.allTools().filter((t) => !this.hidden(t.qualifiedName));
+  }
+  has(qualifiedName: string): boolean {
+    if (this.hidden(qualifiedName)) return false;
+    return this.inner.has(qualifiedName);
+  }
+  call(
+    qualifiedName: string,
+    args: Record<string, unknown>,
+    signal: AbortSignal,
+  ): Promise<CallToolResult> {
+    return this.inner.call(qualifiedName, args, signal);
+  }
+  reconnect(serverName: string): Promise<void> {
+    return this.inner.reconnect(serverName);
+  }
+  setEnabled(serverName: string, enabled: boolean): void {
+    this.inner.setEnabled(serverName, enabled);
+  }
+  closeAll(): Promise<void> {
+    return this.inner.closeAll();
+  }
+}
 
 /** Plain text view of a user message (for hooks and session meta). */
 function promptTextOf(message: APIUserMessage): string {
@@ -271,11 +342,26 @@ export function query(args: {
     debug,
   });
   const hooks = new DefaultHookRunner({ hooks: options.hooks, debug });
-  const mcp = new DefaultMcpRegistry({
+
+  // Bare-name disallowedTools entries (no `Tool(spec)` specifier) REMOVE the
+  // tool definition from the model request entirely (audit v0.1.1 P0): the
+  // model must never see a fully-denied tool. Scoped `Tool(spec)` entries keep
+  // a specifier and stay call-time gate decisions, so they are excluded here.
+  const bareDisallowed: string[] = (options.disallowedTools ?? []).filter(
+    (raw) => parseRule(raw).specifier === undefined,
+  );
+  const isBareDisallowed = (toolName: string): boolean =>
+    bareDisallowed.some((pattern) => matchToolName(pattern, toolName));
+
+  const realMcp = new DefaultMcpRegistry({
     servers: options.mcpServers ?? {},
     env,
     debug,
   });
+  const mcp: McpRegistry =
+    bareDisallowed.length > 0
+      ? new ToolFilterMcpRegistry(realMcp, isBareDisallowed)
+      : realMcp;
 
   // Built-in tools, optionally filtered by the array form of options.tools
   // (the claude_code preset and undefined both mean "all built-ins").
@@ -290,6 +376,16 @@ export function query(args: {
     }
   } else {
     builtinTools = allBuiltins;
+  }
+  // Drop bare-name-disallowed built-ins so their definitions never reach the
+  // model (nor the system prompt tool list nor the init message).
+  for (const name of [...builtinTools.keys()]) {
+    if (isBareDisallowed(name)) {
+      builtinTools.delete(name);
+      debug(
+        `disallowedTools: built-in tool '${name}' removed from the model request (bare-name deny)`,
+      );
+    }
   }
 
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
@@ -347,24 +443,32 @@ export function query(args: {
     queue.close();
   }
 
-  // Wake any pending input read when the outer controller aborts. A
-  // pre-aborted controller never fires the event, so check up front.
-  if (outer.signal.aborted) {
-    queue.fail(new AbortError('The query was aborted'));
-  } else {
-    outer.signal.addEventListener(
-      'abort',
-      () => queue.fail(new AbortError('The query was aborted')),
-      { once: true },
-    );
-  }
-
   // --- Shared run state -------------------------------------------------------
   let turnController: AbortController | null = null;
+  let interruptRequested = false;
   let closed = false;
   let sessionEndFired = false;
   let resolvedSessionId = '';
   const initDeferred = createDeferred<SDKInitializationResult>();
+
+  // Wake any pending input read when the outer controller aborts, and settle a
+  // still-pending initializationResult() so awaiters never hang. A pre-aborted
+  // controller never fires the event, so check up front. The listener is a
+  // NAMED function removed on completion/close so reusing one AbortController
+  // across many queries does not leak a listener per query (finding #16).
+  const onOuterAbort = (): void => {
+    if (!initDeferred.settled) {
+      initDeferred.reject(
+        new AbortError('The query was aborted before initialization completed'),
+      );
+    }
+    queue.fail(new AbortError('The query was aborted'));
+  };
+  if (outer.signal.aborted) {
+    onOuterAbort();
+  } else {
+    outer.signal.addEventListener('abort', onOuterAbort);
+  }
 
   async function fireSessionEnd(reason: string): Promise<void> {
     if (sessionEndFired) return;
@@ -401,24 +505,57 @@ export function query(args: {
     });
   }
 
-  /** resume > sessionId > continue-latest > fresh randomUUID. */
+  /**
+   * Persist an assistant turn AT YIELD TIME (finding #34). The engine pushes
+   * the assistant to its in-memory history only after yielding it, so a
+   * consumer that breaks right after the assistant message would otherwise lose
+   * the answer from disk. Empty text blocks are dropped and an all-empty
+   * message is skipped, so the persisted transcript never carries a
+   * {role:'assistant',content:[]} turn the API would 400 on resume.
+   */
+  function persistAssistant(sessionId: string, content: ContentBlock[]): void {
+    if (!persist) return;
+    const filtered = content.filter((b) =>
+      b.type === 'text' ? b.text.length > 0 : true,
+    );
+    if (filtered.length === 0) return;
+    store.append(sessionId, {
+      type: 'assistant',
+      timestamp: new Date().toISOString(),
+      message: { role: 'assistant', content: filtered },
+    });
+  }
+
+  /**
+   * Session resolution:
+   *   - resume / continue-latest -> load and replay the prior transcript (the
+   *     explicit resume path). forkSession copies it under a fresh id.
+   *   - sessionId (without resume/continue) -> select/create THAT id but start
+   *     with EMPTY history: it labels a logically fresh session, it does not
+   *     auto-resume prior content (finding #38). resume stays the only resume.
+   *   - nothing -> a fresh randomUUID.
+   */
   async function resolveSession(): Promise<ResolvedSession> {
-    let source: string | undefined = options.resume ?? options.sessionId;
-    if (source === undefined && options.continue === true) {
-      source = (await store.latestSessionId()) ?? undefined;
+    // Explicit resume source: options.resume, or continue:true -> latest.
+    let resumeSource: string | undefined = options.resume;
+    if (resumeSource === undefined && options.continue === true) {
+      resumeSource = (await store.latestSessionId()) ?? undefined;
     }
-    if (source !== undefined) {
-      const stored = await store.load(source);
+
+    if (resumeSource !== undefined) {
+      const stored = await store.load(resumeSource);
       if (stored !== null) {
         if (options.forkSession === true) {
           // Copy the transcript under a new id; the original stays untouched.
+          // The fork's future turns run under the CURRENT query's cwd, so the
+          // fork meta records `cwd`, not the source session's cwd (finding #39).
           const newId = randomUUID();
           if (persist) {
             store.append(newId, {
               type: 'meta',
               sessionId: newId,
               createdAt: Date.now(),
-              cwd: stored.cwd ?? cwd,
+              cwd,
               firstPrompt: stored.firstPrompt,
             });
             for (const m of stored.messages) {
@@ -433,19 +570,38 @@ export function query(args: {
           };
         }
         return {
-          sessionId: source,
+          sessionId: resumeSource,
           history: [...stored.messages],
           resumed: true,
           needMeta: false,
         };
       }
-      if (options.resume !== undefined) {
-        debug(
-          `resume: no stored transcript for session ${source}; starting fresh under that id`,
-        );
+      // Resume target has no stored transcript.
+      if (options.forkSession === true) {
+        // Fork ALWAYS mints a fresh id; never write into the (missing) source
+        // id, which a later real session under that id would collide with
+        // (finding #39).
+        return { sessionId: randomUUID(), history: [], resumed: false, needMeta: true };
       }
-      return { sessionId: source, history: [], resumed: false, needMeta: true };
+      debug(
+        `resume: no stored transcript for session ${resumeSource}; starting fresh under that id`,
+      );
+      return { sessionId: resumeSource, history: [], resumed: false, needMeta: true };
     }
+
+    // A specific sessionId (no resume/continue) selects that id WITHOUT
+    // resuming prior content: fresh history, but reuse the existing meta line
+    // if a transcript already lives under that id (finding #38).
+    if (options.sessionId !== undefined) {
+      const existing = persist ? await store.load(options.sessionId) : null;
+      return {
+        sessionId: options.sessionId,
+        history: [],
+        resumed: false,
+        needMeta: existing === null,
+      };
+    }
+
     return { sessionId: randomUUID(), history: [], resumed: false, needMeta: true };
   }
 
@@ -454,23 +610,79 @@ export function query(args: {
     const startedAt = Date.now();
     let endReason = 'exit';
 
-    const blockedResult = (
+    // Session-wide accumulators (finding #33). In streaming-input mode the
+    // engine loop runs once per user turn with its own fresh per-turn counters;
+    // these carry the running totals across turns so maxBudgetUsd / maxTurns are
+    // enforced session-wide and every result message reports cumulative figures.
+    let sessionTurns = 0;
+    let sessionCost = 0;
+    let sessionUsage = zeroUsage();
+    const sessionModelUsage: Record<string, ModelUsage> = {};
+
+    const resultCommon = () => ({
+      duration_ms: Date.now() - startedAt,
+      duration_api_ms: 0,
+      num_turns: sessionTurns,
+      total_cost_usd: sessionCost,
+      usage: { ...sessionUsage },
+      modelUsage: Object.fromEntries(
+        Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
+      ),
+      permission_denials: gate.denials(),
+    });
+
+    const terminalResult = (
+      subtype: 'error_during_execution' | 'error_max_budget_usd' | 'error_max_turns',
       sessionId: string,
       errorMessage: string,
     ): SDKResultMessage => ({
       type: 'result',
-      subtype: 'error_during_execution',
+      subtype,
       uuid: randomUUID(),
       session_id: sessionId,
-      duration_ms: Date.now() - startedAt,
-      duration_api_ms: 0,
       is_error: true,
-      num_turns: 0,
-      total_cost_usd: 0,
-      usage: zeroUsage(),
-      modelUsage: {},
-      permission_denials: gate.denials(),
       errorMessage,
+      ...resultCommon(),
+    });
+
+    const blockedResult = (
+      sessionId: string,
+      errorMessage: string,
+    ): SDKResultMessage =>
+      terminalResult('error_during_execution', sessionId, errorMessage);
+
+    /** Fold one engine-turn result's totals into the session accumulators. */
+    const accumulateResult = (r: SDKResultMessage): void => {
+      sessionTurns += r.num_turns;
+      sessionCost += r.total_cost_usd;
+      sessionUsage = addUsageLocal(sessionUsage, r.usage);
+      for (const [modelId, mu] of Object.entries(r.modelUsage)) {
+        const prev = sessionModelUsage[modelId];
+        sessionModelUsage[modelId] =
+          prev === undefined
+            ? { ...mu }
+            : {
+                inputTokens: prev.inputTokens + mu.inputTokens,
+                outputTokens: prev.outputTokens + mu.outputTokens,
+                cacheReadInputTokens:
+                  prev.cacheReadInputTokens + mu.cacheReadInputTokens,
+                cacheCreationInputTokens:
+                  prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
+                webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
+                costUSD: prev.costUSD + mu.costUSD,
+              };
+      }
+    };
+
+    /** Rewrite an engine-turn result to report session-cumulative totals. */
+    const rewriteResult = (r: SDKResultMessage): SDKResultMessage => ({
+      ...r,
+      num_turns: sessionTurns,
+      total_cost_usd: sessionCost,
+      usage: { ...sessionUsage },
+      modelUsage: Object.fromEntries(
+        Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
+      ),
     });
 
     try {
@@ -562,8 +774,11 @@ export function query(args: {
         let message: APIUserMessage = incoming.message;
         const promptText = promptTextOf(message);
 
-        // UserPromptSubmit hooks: block ends the run; additionalContext is
-        // appended to the prompt (SessionStart context rides the first turn).
+        // UserPromptSubmit hooks. A block SKIPS this prompt: in streaming-input
+        // mode the session keeps accepting further inputs (finding #35); in
+        // string mode there is only one prompt, so a block ends the run.
+        // additionalContext is appended to the prompt (SessionStart context
+        // rides the first turn).
         const extraLines: string[] = sessionStartContext;
         sessionStartContext = [];
         if (hooks.hasHooks('UserPromptSubmit')) {
@@ -581,12 +796,18 @@ export function query(args: {
           );
           for (const m of agg.systemMessages) debug(`UserPromptSubmit hook: ${m}`);
           if (!agg.continue || agg.decision === 'deny') {
-            yield blockedResult(
-              sess.sessionId,
+            const reason =
               agg.stopReason ??
-                agg.decisionReason ??
-                'UserPromptSubmit hook blocked the prompt',
-            );
+              agg.decisionReason ??
+              'UserPromptSubmit hook blocked the prompt';
+            if (streamingMode) {
+              // Skip this prompt only; do not persist/echo it, keep going.
+              debug(`query: UserPromptSubmit blocked a prompt; skipping it (${reason})`);
+              // Preserve any first-turn SessionStart context for the next prompt.
+              sessionStartContext = extraLines;
+              continue;
+            }
+            yield blockedResult(sess.sessionId, reason);
             return;
           }
           extraLines.push(...agg.additionalContext);
@@ -616,8 +837,40 @@ export function query(args: {
         persistParam(sess.sessionId, userParam);
         yield echoed;
 
-        // 4. Delegate to the engine loop for this turn.
+        // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
+        //    with the REMAINING budget/turns so it also stops mid-turn once the
+        //    session cap is hit (finding #33).
+        if (options.maxBudgetUsd !== undefined) {
+          if (sessionCost >= options.maxBudgetUsd) {
+            yield terminalResult(
+              'error_max_budget_usd',
+              sess.sessionId,
+              `Estimated cost $${sessionCost.toFixed(6)} exceeded maxBudgetUsd ($${options.maxBudgetUsd})`,
+            );
+            return;
+          }
+          engineConfig.maxBudgetUsd = options.maxBudgetUsd - sessionCost;
+        }
+        if (options.maxTurns !== undefined) {
+          if (sessionTurns >= options.maxTurns) {
+            yield terminalResult(
+              'error_max_turns',
+              sess.sessionId,
+              `Reached maxTurns limit (${options.maxTurns})`,
+            );
+            return;
+          }
+          engineConfig.maxTurns = options.maxTurns - sessionTurns;
+        }
+
+        // Delegate to the engine loop for this turn.
         turnController = new AbortController();
+        // A cancel requested while no turn was active (interrupt() between turns
+        // or right after init) aborts THIS turn immediately (finding #36).
+        if (interruptRequested) {
+          interruptRequested = false;
+          turnController.abort(new AbortError('The turn was interrupted'));
+        }
         const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
         const toolContext: ToolContext = {
           cwd,
@@ -636,35 +889,70 @@ export function query(args: {
           debug,
         };
 
-        // The loop appends assistant/tool-result messages to `history`
-        // in place (it does not yield tool-result user messages), so
-        // persistence tracks the history tail rather than the yields.
-        let persistedCount = history.length;
-        const syncPersist = (): void => {
-          while (persistedCount < history.length) {
-            const entry = history[persistedCount];
-            persistedCount += 1;
-            if (entry !== undefined) persistParam(sess.sessionId, entry);
+        // The engine appends assistant + tool_result-user messages to `history`
+        // in place. It YIELDS assistant messages (persisted here at yield time,
+        // finding #34) but NOT the tool_result user turns, so we surface each
+        // appended user turn as an SDKUserMessage (finding #27) and persist it,
+        // in order, before the engine message that follows it.
+        let historyTail = history.length;
+        const flushToolResultUsers = function* (): Generator<SDKUserMessage> {
+          while (historyTail < history.length) {
+            const entry = history[historyTail];
+            historyTail += 1;
+            // Assistant entries are persisted at their own yield time; only the
+            // engine-appended tool_result user turns need surfacing here.
+            if (entry !== undefined && entry.role === 'user') {
+              persistParam(sess.sessionId, entry);
+              yield {
+                type: 'user',
+                uuid: randomUUID(),
+                session_id: sess.sessionId,
+                message: { role: 'user', content: entry.content },
+                parent_tool_use_id: null,
+              };
+            }
           }
         };
 
         try {
           for await (const msg of runAgentLoop(history, deps, engineConfig)) {
-            syncPersist();
-            yield msg;
+            yield* flushToolResultUsers();
+            if (msg.type === 'assistant') {
+              persistAssistant(sess.sessionId, msg.message.content);
+              yield msg;
+            } else if (msg.type === 'result') {
+              accumulateResult(msg);
+              yield rewriteResult(msg);
+            } else {
+              yield msg;
+            }
           }
-          syncPersist();
+          yield* flushToolResultUsers();
         } catch (err) {
-          syncPersist();
+          // Persist (but do not re-yield on error) any trailing tool_result
+          // user turn so the transcript stays durable across the failure.
+          while (historyTail < history.length) {
+            const entry = history[historyTail];
+            historyTail += 1;
+            if (entry !== undefined && entry.role === 'user') {
+              persistParam(sess.sessionId, entry);
+            }
+          }
           if (isAbortError(err)) {
             if (outer.signal.aborted) {
               throw err instanceof AbortError ? err : new AbortError();
             }
             // Turn-level interrupt(): streaming mode keeps accepting input;
-            // string mode ends the run.
+            // string mode ends the run WITH a terminal result so an awaiting
+            // consumer is not left hanging with no explanation (finding #36).
             debug('query: turn interrupted');
             if (!streamingMode) {
               endReason = 'interrupt';
+              yield terminalResult(
+                'error_during_execution',
+                sess.sessionId,
+                'The turn was interrupted',
+              );
               return;
             }
             continue;
@@ -683,6 +971,9 @@ export function query(args: {
       throw err;
     } finally {
       turnController = null;
+      // Remove the outer-abort listener so reusing one AbortController across
+      // many queries does not accumulate a listener per query (finding #16).
+      outer.signal.removeEventListener('abort', onOuterAbort);
       if (!initDeferred.settled) {
         initDeferred.reject(
           new AbortError('query ended before initialization completed'),
@@ -702,8 +993,25 @@ export function query(args: {
   // --- Query wrapper -------------------------------------------------------------
   const inner = run();
 
+  // Prime the generator eagerly so initialization (SessionStart hooks,
+  // mcp.connectAll, the init system message and initDeferred.resolve) runs at
+  // query() construction time, independent of whether the consumer ever starts
+  // iterating. Without this, initializationResult() would deadlock for a
+  // consumer that awaits it before its first next(), and close() before the
+  // first next() could never run the generator's finally (findings #14/#28).
+  // The buffered first result is handed back on the first next() call.
+  let primedFirst: Promise<IteratorResult<SDKMessage, void>> | null = inner.next();
+  // Attach a no-op catch so a rejection nobody has awaited yet never surfaces
+  // as an unhandledRejection; the real next() caller still observes it.
+  void primedFirst.catch(() => undefined);
+
   const q: Query = {
     next(...nextArgs: [] | [unknown]): Promise<IteratorResult<SDKMessage, void>> {
+      if (primedFirst !== null) {
+        const first = primedFirst;
+        primedFirst = null;
+        return first;
+      }
       return inner.next(...nextArgs);
     },
     return(value: void | PromiseLike<void>): Promise<IteratorResult<SDKMessage, void>> {
@@ -717,7 +1025,15 @@ export function query(args: {
     },
 
     async interrupt(): Promise<void> {
-      turnController?.abort(new AbortError('The turn was interrupted'));
+      // Abort the active turn if one is running; otherwise queue the cancel so
+      // the NEXT turn to start is aborted immediately, instead of being a
+      // silent no-op when interrupt() lands between turns or right after init
+      // (finding #36).
+      if (turnController !== null) {
+        turnController.abort(new AbortError('The turn was interrupted'));
+      } else {
+        interruptRequested = true;
+      }
     },
     async setPermissionMode(mode: PermissionMode): Promise<void> {
       gate.setMode(mode);
@@ -764,6 +1080,16 @@ export function query(args: {
       closed = true;
       const reason = new AbortError('The query was closed');
       turnController?.abort(reason);
+      // Settle a still-pending initializationResult() synchronously so an
+      // awaiter never hangs even if close() lands before the generator's
+      // finally runs (findings #14/#28).
+      if (!initDeferred.settled) {
+        initDeferred.reject(
+          new AbortError('The query was closed before initialization completed'),
+        );
+      }
+      // Remove the outer-abort listener up front (idempotent with the finally).
+      outer.signal.removeEventListener('abort', onOuterAbort);
       // Fire SessionEnd first (flag set synchronously) so the generator's
       // finally block does not race a different reason in.
       void fireSessionEnd('close');

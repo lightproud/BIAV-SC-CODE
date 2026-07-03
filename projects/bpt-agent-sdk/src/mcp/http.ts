@@ -252,13 +252,20 @@ export class HttpMcpConnection {
   }
 
   private buildHeaders(): Record<string, string> {
+    // Merge user headers with keys lowercased so a config header differing only
+    // in case from a protocol header REPLACES it rather than producing a
+    // duplicate case-variant key (which fetch's Headers would merge into one
+    // malformed comma-joined value). Protocol content-type/accept are applied
+    // first and remain overridable by an explicit user header of the same name.
     const headers: Record<string, string> = {
-      ...this.configHeaders,
       'content-type': 'application/json',
       accept: 'application/json, text/event-stream',
     };
-    if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
-    if (this.initialized) headers['MCP-Protocol-Version'] = this.protocolVersion;
+    for (const [k, v] of Object.entries(this.configHeaders)) {
+      headers[k.toLowerCase()] = v;
+    }
+    if (this.sessionId) headers['mcp-session-id'] = this.sessionId;
+    if (this.initialized) headers['mcp-protocol-version'] = this.protocolVersion;
     return headers;
   }
 
@@ -288,6 +295,29 @@ export class HttpMcpConnection {
       if (msg.id === id && msg.method === undefined && ('result' in msg || 'error' in msg)) {
         if (msg.error) throw rpcErrorToError(this.label, msg.error);
         return { hit: true, value: msg.result };
+      }
+      // Server-initiated request (method + id): this client implements no
+      // server-callable methods, so answer with JSON-RPC "method not found"
+      // via a fresh POST, mirroring stdio.ts. Leaving it unanswered would make
+      // the server wait forever (and time out the in-flight call). Pure
+      // notifications (no id) stay ignored.
+      if (typeof msg.method === 'string' && msg.id !== undefined && msg.id !== null) {
+        const replyId = msg.id;
+        void this.post(
+          {
+            jsonrpc: '2.0',
+            id: replyId,
+            error: { code: -32601, message: 'Method not found' },
+          },
+          null,
+        ).catch((err: unknown) => {
+          this.debug(
+            `[mcp:${this.label}] failed to answer server request '${msg.method as string}': ${
+              err instanceof Error ? err.message : String(err)
+            }`,
+          );
+        });
+        return undefined;
       }
       this.debug(
         `[mcp:${this.label}] ignoring SSE message${

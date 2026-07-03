@@ -15,6 +15,7 @@ import {
   utimes,
   writeFile,
 } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
 import * as os from 'node:os';
 import * as path from 'node:path';
 
@@ -67,6 +68,23 @@ function abortedSignal(): AbortSignal {
   const ac = new AbortController();
   ac.abort();
   return ac.signal;
+}
+
+const delay = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+/** Count running processes whose full command line matches `pattern`. */
+function pgrepCount(pattern: string): Promise<number> {
+  return new Promise((resolve) => {
+    execFile('pgrep', ['-f', pattern], (err, stdout) => {
+      if (err) {
+        // pgrep exits 1 when nothing matches (the wanted "all gone" case).
+        resolve(0);
+        return;
+      }
+      resolve(stdout.split('\n').filter((l) => l.trim().length > 0).length);
+    });
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -204,6 +222,60 @@ describe('Bash tool', () => {
     setTimeout(() => ac.abort(), 100);
     await expect(pending).rejects.toBeInstanceOf(AbortError);
     expect(Date.now() - started).toBeLessThan(3000);
+  });
+
+  // Regression (finding #12, P0): a command that backgrounds a process which
+  // inherits stdout/stderr must return when the DIRECT shell exits, not when
+  // the whole pipe tree drains. Resolving on 'close' would hang until the
+  // background child exits (or forever for a daemon).
+  it('returns promptly when the shell exits but a background child holds the pipes open', async () => {
+    const dir = await makeDir('bash-bg');
+    const started = Date.now();
+    // The shell backgrounds `sleep 8` (holding the stdout pipe) and exits at
+    // once. Old 'close'-based settling would block for ~8s.
+    const res = await bashTool.execute(
+      { command: 'echo started; sleep 8 &', timeout: 30_000 },
+      makeCtx(dir),
+    );
+    const elapsed = Date.now() - started;
+    expect(res.isError).toBeFalsy();
+    expect(text(res)).toContain('started');
+    // Must return near the shell's own exit, not near the background sleep's.
+    expect(elapsed).toBeLessThan(3000);
+  });
+
+  // Regression (finding #12, P0): even under a timeout, a background child that
+  // inherited the pipes must not keep the promise pending past the timeout.
+  it('honors the timeout even when a background child keeps the pipes open', async () => {
+    const dir = await makeDir('bash-bg-timeout');
+    const started = Date.now();
+    const res = await bashTool.execute(
+      { command: 'echo up; sleep 9 &', timeout: 500 },
+      makeCtx(dir),
+    );
+    const elapsed = Date.now() - started;
+    // Shell exits immediately (the & returns control), so this is a success,
+    // and it must settle in well under the background sleep's 9s.
+    expect(res.isError).toBeFalsy();
+    expect(elapsed).toBeLessThan(3000);
+  });
+
+  // Regression (finding #13, P1): grandchildren (pipeline members) must be
+  // killed as a process group on timeout, not orphaned to keep running.
+  it('kills orphaned grandchildren as a process group on timeout', async () => {
+    const dir = await makeDir('bash-grandkids');
+    // Distinctive long durations so any surviving orphan is unambiguous.
+    const cmd = 'sleep 8611 | sleep 8612';
+    // Sanity: nothing matching is running before we start.
+    expect(await pgrepCount('sleep 861')).toBe(0);
+
+    const res = await bashTool.execute({ command: cmd, timeout: 400 }, makeCtx(dir));
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('timed out');
+
+    // Give SIGTERM a beat to reap the group, then confirm no orphan survived.
+    await delay(400);
+    expect(await pgrepCount('sleep 861')).toBe(0);
   });
 });
 

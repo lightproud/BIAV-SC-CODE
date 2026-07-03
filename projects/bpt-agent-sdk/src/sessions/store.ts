@@ -25,6 +25,114 @@ import type { SessionStore, StoredSession } from '../internal/contracts.js';
 const JSONL_EXT = '.jsonl';
 const SUMMARY_MAX_CHARS = 100;
 
+/**
+ * Safe session-id charset: alphanumerics plus `._-` only, and never the
+ * traversal tokens `.`/`..` nor any string embedding `..`. Path separators
+ * are excluded by the charset, so a sanitized id can only ever name a file
+ * directly inside the sessions directory — never `../escape` or an absolute
+ * path. Ids are attacker-controlled (resume/sessionId flow straight from an
+ * embedder's request), so this is the single choke point that keeps
+ * transcript reads and writes inside the store.
+ */
+const SAFE_SESSION_ID = /^[A-Za-z0-9._-]+$/;
+
+export function isSafeSessionId(sessionId: string): boolean {
+  if (typeof sessionId !== 'string' || sessionId.length === 0) return false;
+  if (sessionId === '.' || sessionId === '..') return false;
+  if (sessionId.includes('..')) return false;
+  return SAFE_SESSION_ID.test(sessionId);
+}
+
+/** True when a persisted content block is a tool_use block. */
+function isToolUseBlock(b: unknown): b is { type: 'tool_use'; id: string } {
+  return (
+    typeof b === 'object' &&
+    b !== null &&
+    (b as { type?: unknown }).type === 'tool_use'
+  );
+}
+
+/** True when a persisted content block is a tool_result block. */
+function isToolResultBlock(
+  b: unknown,
+): b is { type: 'tool_result'; tool_use_id: string } {
+  return (
+    typeof b === 'object' &&
+    b !== null &&
+    (b as { type?: unknown }).type === 'tool_result'
+  );
+}
+
+/**
+ * Repair a reconstructed message list so it is always API-valid regardless of
+ * which lines a damaged transcript dropped. Two orphan classes make every
+ * resumed request 400 and are healed here:
+ *  - A user tool_result block whose tool_use_id has no match in the
+ *    immediately preceding assistant message (the tool_use line was lost, or
+ *    two writers interleaved). The orphan block is dropped; if that empties
+ *    the user message, the whole message is dropped.
+ *  - A trailing assistant message carrying tool_use blocks with no following
+ *    tool_result turn (the result line was lost). The whole message is dropped.
+ * Every repair is debug-logged.
+ */
+function repairPairing(
+  messages: APIMessageParam[],
+  debug: (msg: string) => void,
+  sessionId: string,
+): APIMessageParam[] {
+  const repaired: APIMessageParam[] = [];
+  for (let i = 0; i < messages.length; i += 1) {
+    const msg = messages[i];
+    if (msg === undefined) continue;
+    if (msg.role === 'user' && Array.isArray(msg.content)) {
+      const prev = messages[i - 1];
+      const allowed = new Set<string>();
+      if (prev !== undefined && prev.role === 'assistant' && Array.isArray(prev.content)) {
+        for (const b of prev.content) {
+          if (isToolUseBlock(b)) allowed.add(b.id);
+        }
+      }
+      let dropped = false;
+      const filtered = msg.content.filter((b) => {
+        if (isToolResultBlock(b) && !allowed.has(b.tool_use_id)) {
+          dropped = true;
+          return false;
+        }
+        return true;
+      });
+      if (dropped) {
+        debug(
+          `session store: dropped orphan tool_result block(s) in ${sessionId}${JSONL_EXT} (no matching preceding tool_use)`,
+        );
+      }
+      if (filtered.length === 0) {
+        debug(
+          `session store: dropped emptied user message in ${sessionId}${JSONL_EXT} after orphan tool_result removal`,
+        );
+        continue;
+      }
+      repaired.push({ role: 'user', content: filtered });
+      continue;
+    }
+    repaired.push(msg);
+  }
+
+  const last = repaired[repaired.length - 1];
+  if (
+    last !== undefined &&
+    last.role === 'assistant' &&
+    Array.isArray(last.content) &&
+    last.content.some(isToolUseBlock)
+  ) {
+    debug(
+      `session store: dropped trailing assistant tool_use in ${sessionId}${JSONL_EXT} (no following tool_result)`,
+    );
+    repaired.pop();
+  }
+
+  return repaired;
+}
+
 export type JsonlSessionStoreConfig = {
   /** Explicit directory override (options.sessionDir). */
   sessionDir?: string;
@@ -67,6 +175,12 @@ export class JsonlSessionStore implements SessionStore {
    * crash the agent run, so errors are debug-logged and swallowed.
    */
   append(sessionId: string, entry: Record<string, unknown>): void {
+    if (!isSafeSessionId(sessionId)) {
+      this.debug(
+        `session store: refusing append for unsafe session id ${JSON.stringify(sessionId)} (would escape the sessions directory)`,
+      );
+      return;
+    }
     try {
       mkdirSync(this.dir, { recursive: true });
       appendFileSync(this.filePath(sessionId), `${JSON.stringify(entry)}\n`, 'utf8');
@@ -78,6 +192,12 @@ export class JsonlSessionStore implements SessionStore {
   }
 
   async load(sessionId: string): Promise<StoredSession | null> {
+    if (!isSafeSessionId(sessionId)) {
+      this.debug(
+        `session store: refusing load for unsafe session id ${JSON.stringify(sessionId)} (would escape the sessions directory)`,
+      );
+      return null;
+    }
     const file = this.filePath(sessionId);
     let raw: string;
     try {
@@ -150,7 +270,7 @@ export class JsonlSessionStore implements SessionStore {
 
     return {
       sessionId,
-      messages,
+      messages: repairPairing(messages, this.debug, sessionId),
       createdAt: createdAt ?? lastModified,
       lastModified,
       firstPrompt,

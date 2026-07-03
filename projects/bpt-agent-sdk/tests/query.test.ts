@@ -6,7 +6,8 @@
  * sandboxes for sessionDir and cwd.
  */
 
-import { mkdtemp, readdir, rm } from 'node:fs/promises';
+import { getEventListeners } from 'node:events';
+import { mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -83,6 +84,18 @@ const delay = (ms: number): Promise<void> =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
 const BUILTIN_TOOL_NAMES = ['Read', 'Write', 'Edit', 'Bash', 'Glob', 'Grep'];
+
+/** A streaming-input user message with a plain string body. */
+const userMsg = (content: string): SDKUserMessage => ({
+  type: 'user',
+  session_id: '',
+  message: { role: 'user', content },
+  parent_tool_use_id: null,
+});
+
+function resultsOf(messages: SDKMessage[]): SDKResultMessage[] {
+  return messages.filter((m): m is SDKResultMessage => m.type === 'result');
+}
 
 describe('query() e2e - happy path', () => {
   it('emits init, user echo, assistant, success result in order with one session_id', async () => {
@@ -478,31 +491,36 @@ describe('query() e2e - compat options, budget, control surface', () => {
     ).toBe(true);
   });
 
-  it('microscopic maxBudgetUsd with a priced model yields error_max_budget', async () => {
-    stubFetch(
-      makeSSEFetch([textReplyEvents('pricey', { model: 'claude-opus-4-8' })]),
+  it('microscopic maxBudgetUsd with a priced model yields error_max_budget_usd before the next billable call', async () => {
+    // Post-#3 the budget is enforced only when about to CONTINUE the loop with
+    // another (billable) API call, so exercise a tool_use turn: turn 1 spends,
+    // the gate fires before turn 2, and the second script is never consumed.
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        toolUseReplyEvents('Bash', { command: 'echo hi' }, { model: 'claude-opus-4-8' }),
+        textReplyEvents('should not run', { model: 'claude-opus-4-8' }),
+      ]),
     );
     const q = query({
       prompt: 'expensive',
-      options: baseOptions({ maxBudgetUsd: 0.0000001 }),
+      options: baseOptions({
+        maxBudgetUsd: 0.0000001,
+        permissionMode: 'bypassPermissions',
+      }),
     });
     const messages = await collect(q);
 
-    expect(messages.map((m) => m.type)).toEqual([
-      'system',
-      'user',
-      'assistant',
-      'result',
-    ]);
     const result = lastResult(messages);
-    expect(result.subtype).toBe('error_max_budget');
+    expect(result.subtype).toBe('error_max_budget_usd');
     expect(result.is_error).toBe(true);
-    // 25 in * $15/MTok + 7 out * $75/MTok = $0.0009 (opus-4 family pricing).
-    expect(result.total_cost_usd).toBeCloseTo(0.0009, 9);
-    expect(result.modelUsage['claude-opus-4-8']!.costUSD).toBeCloseTo(0.0009, 9);
+    // opus-4 family: 25 in * $15/MTok + 11 out * $75/MTok = $0.0012.
+    expect(result.total_cost_usd).toBeCloseTo(0.0012, 9);
+    expect(result.modelUsage['claude-opus-4-8']!.costUSD).toBeCloseTo(0.0012, 9);
     if (result.subtype !== 'success') {
       expect(result.errorMessage).toContain('maxBudgetUsd');
     }
+    // Budget gate fired BEFORE the second (billable) API call.
+    expect(fetchStub.requests).toHaveLength(1);
   });
 
   it('supportedModels/supportedCommands/mcpServerStatus/accountInfo/initializationResult shapes', async () => {
@@ -533,7 +551,7 @@ describe('query() e2e - compat options, budget, control surface', () => {
 });
 
 describe('query() e2e - interrupt and close', () => {
-  it('interrupt() in string mode ends the run', async () => {
+  it('interrupt() in string mode emits a terminal result then ends the run (#36)', async () => {
     stubFetch(makeSSEFetch([[HANG_STREAM]]));
     const q = query({ prompt: 'interrupt me', options: baseOptions() });
 
@@ -547,8 +565,20 @@ describe('query() e2e - interrupt and close', () => {
     await delay(25);
     await q.interrupt();
 
+    // Post-fix, a string-mode interrupt surfaces a terminal result rather than
+    // silently ending, so a consumer awaiting a result is not left hanging.
     const res = await pending;
-    expect(res.done).toBe(true);
+    expect(res.done).toBe(false);
+    const result = res.value as SDKResultMessage;
+    expect(result.type).toBe('result');
+    expect(result.subtype).toBe('error_during_execution');
+    if (result.subtype !== 'success') {
+      expect(result.errorMessage).toContain('interrupted');
+    }
+
+    // The generator is finished afterwards.
+    const after = await q.next();
+    expect(after.done).toBe(true);
   });
 
   it('close() after the first message ends the generator promptly with no unhandled rejections', async () => {
@@ -601,5 +631,339 @@ describe('query() e2e - interrupt and close', () => {
     } finally {
       process.off('unhandledRejection', onRejection);
     }
+  });
+});
+
+describe('query() e2e - confirmed-finding regressions', () => {
+  it('initializationResult() settles even if the query is never iterated (#14/#28)', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('never iterated')]));
+    const q = query({ prompt: 'hi', options: baseOptions() });
+
+    // Awaiting init BEFORE the first next() previously deadlocked forever.
+    const init = await Promise.race([
+      q.initializationResult(),
+      delay(1500).then(() => {
+        throw new Error('initializationResult() timed out (deadlock)');
+      }),
+    ]);
+    expect(init.output_style).toBe('default');
+    expect(init.models.length).toBeGreaterThan(0);
+    q.close();
+  });
+
+  it('does not leak abort listeners when one AbortController is reused across queries (#16)', async () => {
+    const controller = new AbortController();
+    for (let i = 0; i < 5; i += 1) {
+      stubFetch(makeSSEFetch([textReplyEvents(`reply ${i}`)]));
+      const q = query({
+        prompt: `run ${i}`,
+        options: baseOptions({ abortController: controller }),
+      });
+      expect(lastResult(await collect(q)).subtype).toBe('success');
+    }
+    // Every completed query must have removed its own listener.
+    expect(getEventListeners(controller.signal, 'abort')).toHaveLength(0);
+  });
+
+  it('yields a tool_result user message on the SDK stream in order (#27)', async () => {
+    stubFetch(
+      makeSSEFetch([
+        toolUseReplyEvents('Bash', { command: 'echo hi' }),
+        textReplyEvents('done'),
+      ]),
+    );
+    const q = query({
+      prompt: 'run',
+      options: baseOptions({ permissionMode: 'bypassPermissions' }),
+    });
+    const messages = await collect(q);
+
+    // Full ordered stream: the tool_result user turn appears between the
+    // tool_use assistant and the final assistant answer.
+    expect(messages.map((m) => m.type)).toEqual([
+      'system',
+      'user',
+      'assistant',
+      'user',
+      'assistant',
+      'result',
+    ]);
+
+    const userMsgs = messages.filter(
+      (m): m is SDKUserMessage => m.type === 'user',
+    );
+    expect(userMsgs).toHaveLength(2); // echo + tool_result
+    const toolResultUser = userMsgs[1]!;
+    const blocks = toolResultUser.message.content as ToolResultBlockParam[];
+    expect(Array.isArray(blocks)).toBe(true);
+    expect(blocks[0]!.type).toBe('tool_result');
+    expect(blocks[0]!.tool_use_id).toBe('toolu_mock_1');
+    expect(toolResultUser.session_id).toBe(messages[0]!.session_id);
+  });
+
+  it('setModel between streaming turns applies to the next turn request (#29)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({ prompt: inputs(), options: baseOptions() });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setModel('claude-opus-4-8');
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    expect(fetchStub.requests[0]!.body.model).toBe('claude-sonnet-4-5');
+    expect(fetchStub.requests[1]!.body.model).toBe('claude-opus-4-8');
+  });
+
+  it('accumulates usage/cost/turns session-wide across streaming turns (#33)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        textReplyEvents('r1', { model: 'claude-opus-4-8' }),
+        textReplyEvents('r2', { model: 'claude-opus-4-8' }),
+      ]),
+    );
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      yield userMsg('second');
+    }
+    const q = query({ prompt: inputs(), options: baseOptions() });
+    const results = resultsOf(await collect(q));
+
+    expect(results).toHaveLength(2);
+    // First result = turn-1 totals; second = cumulative (turn1 + turn2).
+    expect(results[0]!.num_turns).toBe(1);
+    expect(results[1]!.num_turns).toBe(2);
+    expect(results[1]!.total_cost_usd).toBeCloseTo(
+      results[0]!.total_cost_usd * 2,
+      9,
+    );
+    expect(results[1]!.usage.input_tokens).toBe(
+      results[0]!.usage.input_tokens * 2,
+    );
+    expect(fetchStub.requests).toHaveLength(2);
+  });
+
+  it('enforces maxBudgetUsd session-wide across streaming turns (#33)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        textReplyEvents('r1', { model: 'claude-opus-4-8' }),
+        textReplyEvents('r2', { model: 'claude-opus-4-8' }),
+      ]),
+    );
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      yield userMsg('second');
+    }
+    // Turn 1 (~$0.0009) alone exceeds the cap, so turn 2 must be blocked
+    // before its (billable) API call by the session-wide budget.
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({ maxBudgetUsd: 0.0005 }),
+    });
+    const results = resultsOf(await collect(q));
+
+    expect(results[0]!.subtype).toBe('success');
+    expect(results[results.length - 1]!.subtype).toBe('error_max_budget_usd');
+    expect(fetchStub.requests).toHaveLength(1);
+  });
+
+  it('persists the final assistant answer even if the consumer breaks after it (#34)', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('the final answer')]));
+    const q = query({ prompt: 'question', options: baseOptions() });
+
+    let sid = '';
+    for await (const m of q) {
+      if (m.type === 'system') sid = m.session_id;
+      if (m.type === 'assistant') break; // stop before the result message
+    }
+
+    const contents = await readFile(join(sessionDir, `${sid}.jsonl`), 'utf8');
+    const lines = contents
+      .trim()
+      .split('\n')
+      .map((l) => JSON.parse(l) as { type: string });
+    expect(lines.some((l) => l.type === 'assistant')).toBe(true);
+    expect(contents).toContain('the final answer');
+  });
+
+  it('UserPromptSubmit block skips only the blocked prompt in streaming mode (#35)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('reply A'), textReplyEvents('reply C')]),
+    );
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('prompt A');
+      yield userMsg('prompt B'); // blocked
+      yield userMsg('prompt C');
+    }
+    let seen = 0;
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        hooks: {
+          UserPromptSubmit: [
+            {
+              hooks: [
+                async () => {
+                  seen += 1;
+                  return seen === 2
+                    ? { continue: false, stopReason: 'no B allowed' }
+                    : {};
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    });
+    const messages = await collect(q);
+
+    // Two turns ran (A and C); B was skipped rather than ending the session.
+    const results = resultsOf(messages);
+    expect(results).toHaveLength(2);
+    expect(results.every((r) => r.subtype === 'success')).toBe(true);
+    expect(fetchStub.requests).toHaveLength(2);
+    const echoes = messages
+      .filter((m): m is SDKUserMessage => m.type === 'user')
+      .map((m) => m.message.content);
+    expect(echoes).toEqual(['prompt A', 'prompt C']);
+  });
+
+  it('interrupt() right after init cancels the upcoming turn (#36)', async () => {
+    stubFetch(makeSSEFetch([[HANG_STREAM]]));
+    const q = query({ prompt: 'go', options: baseOptions() });
+
+    const first = await q.next();
+    expect((first.value as SDKMessage).type).toBe('system');
+    // No turn is active yet; the cancel must still take effect on the next one.
+    await q.interrupt();
+
+    const rest: SDKMessage[] = [];
+    for await (const m of q) rest.push(m);
+    const result = rest[rest.length - 1] as SDKResultMessage;
+    expect(result.type).toBe('result');
+    expect(result.subtype).toBe('error_during_execution');
+  });
+
+  it('options.sessionId labels a fresh session without auto-resuming prior content (#38)', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('first reply')]));
+    await collect(
+      query({ prompt: 'first', options: baseOptions({ sessionId: 'fixed-id' }) }),
+    );
+
+    const fetch2 = stubFetch(makeSSEFetch([textReplyEvents('second reply')]));
+    const q2 = query({
+      prompt: 'second',
+      options: baseOptions({ sessionId: 'fixed-id' }),
+    });
+    const messages = await collect(q2);
+
+    expect(messages[0]!.session_id).toBe('fixed-id');
+    // The second run must NOT prepend the first run's transcript.
+    expect(fetch2.requests[0]!.body.messages).toEqual([
+      { role: 'user', content: 'second' },
+    ]);
+  });
+
+  it('forkSession stamps the current cwd, not the source session cwd (#39)', async () => {
+    const cwdA = await mkdtemp(join(tmpdir(), 'bpt-query-cwdA-'));
+    try {
+      stubFetch(makeSSEFetch([textReplyEvents('base')]));
+      const first = await collect(
+        query({ prompt: 'base', options: baseOptions({ cwd: cwdA }) }),
+      );
+      const sid = first[0]!.session_id;
+
+      stubFetch(makeSSEFetch([textReplyEvents('forked')]));
+      const second = await collect(
+        query({
+          prompt: 'forked',
+          options: baseOptions({ resume: sid, forkSession: true }),
+        }),
+      );
+      const forkedId = second[0]!.session_id;
+      expect(forkedId).not.toBe(sid);
+
+      const info = await getSessionInfo(forkedId, { sessionDir });
+      // Fork's future turns run under the current query cwd, not cwdA.
+      expect(info!.cwd).toBe(cwd);
+    } finally {
+      await rm(cwdA, { recursive: true, force: true });
+    }
+  });
+
+  it('resume of a missing session with forkSession mints a fresh id (#39)', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('forked fresh')]));
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ resume: 'no-such-id', forkSession: true }),
+    });
+    const messages = await collect(q);
+
+    expect(messages[0]!.session_id).not.toBe('no-such-id');
+    // Nothing was ever written under the missing id.
+    expect(await readdir(sessionDir)).not.toContain('no-such-id.jsonl');
+  });
+
+  it('the v0.1.1 audit-added compat keys warn instead of being silently ignored', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const lines: string[] = [];
+    const options = baseOptions({ debug: true, stderr: (d) => lines.push(d) });
+    (options as Record<string, unknown>).settings = {};
+    (options as Record<string, unknown>).permissionPromptToolName = 'Ask';
+    (options as Record<string, unknown>).extraArgs = { foo: 'bar' };
+
+    await collect(query({ prompt: 'go', options }));
+    for (const key of ['settings', 'permissionPromptToolName', 'extraArgs']) {
+      expect(lines.some((l) => l.includes(`option '${key}'`))).toBe(true);
+    }
+  });
+
+  it('bare-name disallowedTools removes the tool definition from the request (audit P0)', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ disallowedTools: ['Bash'] }),
+    });
+    const messages = await collect(q);
+
+    const init = messages[0] as SDKSystemMessage;
+    expect(init.tools).not.toContain('Bash');
+    expect(init.tools).toContain('Read');
+    const toolNames = (
+      fetchStub.requests[0]!.body.tools as Array<{ name: string }>
+    ).map((t) => t.name);
+    expect(toolNames).not.toContain('Bash');
+    expect(toolNames).toContain('Read');
+  });
+
+  it('scoped disallowedTools keeps the tool definition (call-time gate only)', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ disallowedTools: ['Bash(sudo:*)'] }),
+    });
+    await collect(q);
+
+    const toolNames = (
+      fetchStub.requests[0]!.body.tools as Array<{ name: string }>
+    ).map((t) => t.name);
+    expect(toolNames).toContain('Bash');
   });
 });

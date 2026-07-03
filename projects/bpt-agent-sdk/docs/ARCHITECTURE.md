@@ -113,12 +113,19 @@ public Messages API documentation. No proprietary code was consulted.
      Fire `MessageDisplay` hooks with the concatenated text (non-blocking
      semantics: aggregate but only use systemMessages/debug).
   4. Track usage + cost per model (`modelUsage` keyed by response model id).
-     If `maxBudgetUsd` exceeded → yield result `error_max_budget`, return.
-  5. `stop_reason === 'tool_use'` → execute the tool_use blocks sequentially
-     in content order (see below), append assistant message + one user
-     message with all tool_result blocks to history, fire `PostToolBatch`
+     The `maxBudgetUsd` gate fires only when about to make another billable
+     call (in the `tool_use` continue path, step 5) → yield result
+     `error_max_budget_usd`; a naturally-ended answer that merely tips the
+     budget still yields `success` (it is already paid for).
+  5. `stop_reason === 'tool_use'` with ≥1 tool_use block → execute the blocks
+     sequentially in content order (see below), append assistant message + one
+     user message with all tool_result blocks to history, fire `PostToolBatch`
      hooks, increment turn counter; if `maxTurns` reached → result
-     `error_max_turns`; else next iteration.
+     `error_max_turns`; else next iteration. A `tool_use` stop with zero
+     tool_use blocks falls through to the natural-end success path (never push
+     an empty-content user turn). A permission deny carrying `interrupt` or a
+     `PostToolUse`/`PreToolUse` hook `continue:false` finishes the remaining
+     blocks' results then terminates with `error_during_execution`.
   6. Any other stop_reason → fire `Stop` hooks, yield result `success`
      (`result` = concatenated text blocks of the final assistant message),
      return.
@@ -213,9 +220,14 @@ Input field names are part of the compat surface (hooks read them):
   `{ mode, allowedTools, disallowedTools, canUseTool, debug }`. Session rule
   sets mutated by `applyUpdates` (only `destination:'session'` honored;
   others → debug warn). `dontAsk` differs from `default` only at step 9:
-  never calls `canUseTool`, denies directly. Deny messages must name the
-  tool and the deciding stage. All denials recorded (tool_name, tool_use_id,
-  tool_input).
+  never calls `canUseTool`, denies directly. In plan mode an `allowedTools`
+  match (step 4) does NOT auto-approve a non-readOnly tool — it falls through
+  to the step-6 plan deny (plan never auto-approves writes/edits). A
+  rewritten input (hook-allow `updatedInput` at step 3, or `canUseTool`
+  `updatedInput` at step 9) is re-checked against `disallowedTools` before the
+  allow returns, so a rewrite cannot smuggle a call past a deny rule. Deny
+  messages must name the tool and the deciding stage. All denials recorded
+  (tool_name, tool_use_id, tool_input).
 
 `hooks/matcher.ts`
 - `export function matcherMatches(matcher: string | undefined, value: string | undefined): boolean`

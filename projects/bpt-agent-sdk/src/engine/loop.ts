@@ -16,6 +16,7 @@ import type {
   ImageBlockParam,
   ModelUsage,
   NonNullableUsage,
+  RawMessageStreamEvent,
   SDKMessage,
   SDKResultMessage,
   TextBlockParam,
@@ -54,6 +55,63 @@ function concatText(content: ContentBlock[]): string {
     if (block.type === 'text') out += block.text;
   }
   return out;
+}
+
+/**
+ * Drop content blocks the Messages API rejects in a persisted history: empty
+ * text blocks. tool_use / thinking / redacted_thinking blocks are kept as-is.
+ * An assistant message whose blocks are all empty text would make the NEXT
+ * request (a follow-up turn or a resume) 400 with "content must not be empty".
+ */
+function nonEmptyContent(content: ContentBlock[]): ContentBlock[] {
+  return content.filter((b) => (b.type === 'text' ? b.text.length > 0 : true));
+}
+
+/** An error tool_result for a given tool_use id. */
+function mkToolError(toolUseId: string, message: string): ToolResultBlockParam {
+  return { type: 'tool_result', tool_use_id: toolUseId, content: message, is_error: true };
+}
+
+/**
+ * Outcome of one tool_use dispatch. `stop`, when set, means the whole run must
+ * terminate after the current batch finishes (a permission deny with
+ * interrupt:true, or a PostToolUse hook returning continue:false); the loop
+ * fills the remaining blocks with error results and yields a terminal result.
+ */
+type ToolExecOutcome = {
+  result: ToolResultBlockParam;
+  stop?: { reason: string };
+};
+
+/** Mutable holder for a stream attempt's usage-so-far (survives a throw). */
+type UsageSink = { usage?: NonNullableUsage };
+
+/**
+ * Fold the usage carried by one raw stream event into the sink. Lets the loop
+ * recover a FAILED attempt's partial usage (message_start input tokens, any
+ * message_delta output tokens) before a fallback retry, so budget/cost totals
+ * stay honest even though the attempt's accumulator output is discarded.
+ */
+function foldUsageEvent(sink: UsageSink, event: RawMessageStreamEvent): void {
+  if (event.type === 'message_start') {
+    sink.usage = normalizeUsage(event.message.usage);
+  } else if (event.type === 'message_delta') {
+    const base: NonNullableUsage = sink.usage ?? {
+      input_tokens: 0,
+      output_tokens: 0,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 0,
+    };
+    const du = event.usage;
+    sink.usage = {
+      ...base,
+      output_tokens: du.output_tokens ?? base.output_tokens,
+      input_tokens:
+        du.input_tokens !== undefined
+          ? Math.max(base.input_tokens, du.input_tokens)
+          : base.input_tokens,
+    };
+  }
 }
 
 /** Map an MCP CallToolResult into a builtin-style tool result payload. */
@@ -114,8 +172,10 @@ export async function* runAgentLoop(
     cache_read_input_tokens: 0,
   };
   const modelUsage: Record<string, ModelUsage> = {};
-  // Current model; permanently switched to fallbackModel after a fallback.
-  let model = config.model;
+  // Once a fallback retry fires the run stays on the fallback model; until then
+  // each turn re-reads config.model (a shared mutable object) so a live
+  // setModel() applies from the next assistant turn.
+  let fallbackModel: string | undefined;
 
   const baseHookFields = {
     session_id: config.sessionId,
@@ -138,7 +198,7 @@ export async function* runAgentLoop(
   });
 
   const errorResult = (
-    subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget',
+    subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget_usd',
     errorMessage: string,
   ): SDKResultMessage => ({
     type: 'result',
@@ -147,6 +207,42 @@ export async function* runAgentLoop(
     errorMessage,
     ...resultBase(),
   });
+
+  /** Fold one attempt's usage into the running totals + per-model ledger. */
+  const recordUsage = (responseModel: string, usage: NonNullableUsage): void => {
+    totalUsage = addUsage(totalUsage, usage);
+    const cost = estimateCostUsd(responseModel, usage);
+    totalCostUsd += cost;
+    const prev = modelUsage[responseModel];
+    modelUsage[responseModel] = {
+      inputTokens: (prev?.inputTokens ?? 0) + usage.input_tokens,
+      outputTokens: (prev?.outputTokens ?? 0) + usage.output_tokens,
+      cacheReadInputTokens:
+        (prev?.cacheReadInputTokens ?? 0) + usage.cache_read_input_tokens,
+      cacheCreationInputTokens:
+        (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
+      webSearchRequests: prev?.webSearchRequests ?? 0,
+      costUSD: (prev?.costUSD ?? 0) + cost,
+    };
+  };
+
+  /**
+   * Append the assistant turn to history, dropping empty text blocks first.
+   * An all-empty assistant message is skipped entirely: persisting a
+   * {role:'assistant',content:[]} turn would make the next request (a
+   * follow-up turn or a resume) 400 with "content must not be empty".
+   */
+  const pushAssistant = (content: ContentBlock[]): void => {
+    const filtered = nonEmptyContent(content);
+    if (filtered.length === 0) {
+      deps.debug(
+        'engine: assistant message has no non-empty content blocks; ' +
+          'skipping history push to keep the transcript API-valid',
+      );
+      return;
+    }
+    history.push({ role: 'assistant', content: filtered });
+  };
 
   /** Static per-request pieces (tool defs and thinking do not change mid-run). */
   const toolDefs: APIToolDefinition[] = [];
@@ -164,21 +260,35 @@ export async function* runAgentLoop(
       input_schema: entry.inputSchema,
     });
   }
-  const thinking: StreamRequest['thinking'] =
-    config.thinking?.type === 'enabled'
-      ? {
-          type: 'enabled',
-          budget_tokens:
-            config.thinking.budget_tokens ??
-            config.thinking.budget ??
-            config.maxThinkingTokens ??
-            DEFAULT_THINKING_BUDGET,
-        }
-      : undefined; // adaptive/disabled/unset -> omit the param entirely
+  const thinking: StreamRequest['thinking'] = ((): StreamRequest['thinking'] => {
+    if (config.thinking?.type !== 'enabled') {
+      return undefined; // adaptive/disabled/unset -> omit the param entirely
+    }
+    const requested =
+      config.thinking.budget_tokens ??
+      config.thinking.budget ??
+      config.maxThinkingTokens ??
+      DEFAULT_THINKING_BUDGET;
+    // The Messages API requires thinking.budget_tokens < max_tokens, otherwise
+    // it 400s the request. The default budget (10000) exceeds the default
+    // max_tokens (8192), so clamp the budget below max_tokens and warn.
+    const ceiling = config.maxOutputTokens - 1;
+    const budget_tokens = requested > ceiling ? ceiling : requested;
+    if (budget_tokens < requested) {
+      deps.debug(
+        `engine: thinking budget_tokens ${requested} >= max_tokens ` +
+          `${config.maxOutputTokens}; clamped to ${budget_tokens} to satisfy the API`,
+      );
+    }
+    return { type: 'enabled', budget_tokens };
+  })();
 
-  /** One streaming attempt; yields partial events, returns the final message. */
+  /** One streaming attempt; yields partial events, returns the final message.
+   *  `sink` (when given) captures usage seen so far so a FAILED attempt's
+   *  tokens can be folded into totals before a fallback retry. */
   async function* streamAttempt(
     useModel: string,
+    sink?: UsageSink,
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();
     const request: StreamRequest = {
@@ -193,6 +303,7 @@ export async function* runAgentLoop(
     const apiStart = Date.now();
     try {
       for await (const event of deps.transport.stream(request)) {
+        if (sink !== undefined) foldUsageEvent(sink, event);
         if (config.includePartialMessages) {
           yield {
             type: 'stream_event',
@@ -211,16 +322,22 @@ export async function* runAgentLoop(
   }
 
   /** Full pipeline for one tool_use block: hooks -> gate -> execute -> hooks. */
-  async function executeToolUse(block: ToolUseBlock): Promise<ToolResultBlockParam> {
+  async function executeToolUse(block: ToolUseBlock): Promise<ToolExecOutcome> {
     const toolName = block.name;
     let input = block.input;
 
-    const errorToolResult = (message: string): ToolResultBlockParam => ({
-      type: 'tool_result',
-      tool_use_id: block.id,
-      content: message,
-      is_error: true,
-    });
+    const errorToolResult = (message: string): ToolResultBlockParam =>
+      mkToolError(block.id, message);
+
+    // 0. Existence check FIRST. A hallucinated tool name is a "No such tool"
+    //    error, NOT a permission denial: running unknown names through the
+    //    hooks + gate would mislabel them as denials and pollute the denial
+    //    ledger (and could even prompt the user to authorize a nonexistent
+    //    tool). Only real tools reach the hook/permission pipeline below.
+    const builtin = deps.builtinTools.get(toolName);
+    if (builtin === undefined && !deps.mcp.has(toolName)) {
+      return { result: errorToolResult(`No such tool: ${toolName}`) };
+    }
 
     // 1. PreToolUse hooks. continue:false is conservatively a deny for this call.
     let pre: AggregatedHookResult | undefined;
@@ -239,14 +356,17 @@ export async function* runAgentLoop(
       );
       for (const m of pre.systemMessages) deps.debug(`PreToolUse hook: ${m}`);
       if (!pre.continue) {
-        return errorToolResult(
-          pre.stopReason ?? `PreToolUse hook stopped execution of ${toolName}`,
-        );
+        // PreToolUse continue:false is (per ARCHITECTURE) a deny-and-continue
+        // for THIS call only; it does not terminate the whole run.
+        return {
+          result: errorToolResult(
+            pre.stopReason ?? `PreToolUse hook stopped execution of ${toolName}`,
+          ),
+        };
       }
     }
 
     // 2. Permission gate (hook decision folded in; gate records denials).
-    const builtin = deps.builtinTools.get(toolName);
     const check = await deps.permissions.check(toolName, input, {
       toolUseID: block.id,
       signal,
@@ -264,11 +384,20 @@ export async function* runAgentLoop(
       decisionReason: pre?.decisionReason,
     });
     if (check.decision === 'deny') {
-      return errorToolResult(check.message);
+      // interrupt:true (e.g. canUseTool returned behavior:'deny', interrupt)
+      // means "deny AND stop the whole run", not just skip this call.
+      if (check.interrupt === true) {
+        return {
+          result: errorToolResult(check.message),
+          stop: { reason: check.message },
+        };
+      }
+      return { result: errorToolResult(check.message) };
     }
     input = check.updatedInput;
 
-    // 3. Execute: builtin -> MCP -> unknown.
+    // 3. Execute: builtin -> MCP. Existence was verified at step 0, so exactly
+    //    one branch runs; the final else is an unreachable safety net.
     let payload: ToolResultPayload;
     try {
       if (builtin !== undefined) {
@@ -276,7 +405,7 @@ export async function* runAgentLoop(
       } else if (deps.mcp.has(toolName)) {
         payload = mapMcpResult(await deps.mcp.call(toolName, input, signal));
       } else {
-        return errorToolResult(`No such tool: ${toolName}`);
+        return { result: errorToolResult(`No such tool: ${toolName}`) };
       }
     } catch (err) {
       if (isAbortError(err)) throw toAbortError(err);
@@ -296,13 +425,14 @@ export async function* runAgentLoop(
           signal,
         );
       }
-      return errorToolResult(`Tool ${toolName} failed: ${message}`);
+      return { result: errorToolResult(`Tool ${toolName} failed: ${message}`) };
     }
 
     // 4. PostToolUse hooks (fires for completed calls, including isError
     //    payloads such as a non-zero Bash exit; only thrown errors go to
     //    PostToolUseFailure above).
     let content = payload.content;
+    let stop: ToolExecOutcome['stop'];
     if (deps.hooks.hasHooks('PostToolUse')) {
       const post = await deps.hooks.run(
         'PostToolUse',
@@ -319,12 +449,31 @@ export async function* runAgentLoop(
       );
       for (const m of post.systemMessages) deps.debug(`PostToolUse hook: ${m}`);
       if (post.updatedToolOutput !== undefined) {
-        content =
-          typeof post.updatedToolOutput === 'string'
-            ? post.updatedToolOutput
-            : JSON.stringify(post.updatedToolOutput);
+        if (typeof post.updatedToolOutput === 'string') {
+          content = post.updatedToolOutput;
+        } else {
+          // A hook may hand back a non-serializable object (e.g. a circular
+          // internal state). Never let one hook's bad output crash the run:
+          // keep the original tool output and warn.
+          try {
+            content = JSON.stringify(post.updatedToolOutput);
+          } catch (err) {
+            const why = err instanceof Error ? err.message : String(err);
+            deps.debug(
+              `engine: PostToolUse updatedToolOutput is not JSON-serializable ` +
+                `(${why}); keeping the original tool output`,
+            );
+          }
+        }
       }
       content = appendContext(content, post.additionalContext);
+      // types.ts documents continue:false as "the agent stops after this hook".
+      if (post.continue === false) {
+        stop = {
+          reason:
+            post.stopReason ?? `PostToolUse hook stopped execution after ${toolName}`,
+        };
+      }
     }
 
     const result: ToolResultBlockParam = {
@@ -333,17 +482,22 @@ export async function* runAgentLoop(
       content,
     };
     if (payload.isError === true) result.is_error = true;
-    return result;
+    return { result, stop };
   }
 
   try {
     for (;;) {
       if (signal.aborted) throw new AbortError();
 
+      // Re-read the current model each turn so a mid-run setModel() takes
+      // effect, unless a fallback has permanently switched us.
+      let model = fallbackModel ?? config.model;
+
       // --- Stream one assistant turn (with one-shot fallback retry). -------
       let assistant: APIAssistantMessage;
+      const firstSink: UsageSink = {};
       try {
-        assistant = yield* streamAttempt(model);
+        assistant = yield* streamAttempt(model, firstSink);
       } catch (err) {
         if (isAbortError(err)) throw toAbortError(err);
         if (
@@ -355,7 +509,15 @@ export async function* runAgentLoop(
           deps.debug(
             `engine: model ${model} failed with status ${err.status}; retrying turn with fallback model ${config.fallbackModel}`,
           );
-          model = config.fallbackModel; // stays switched for the rest of the run
+          // The failed attempt already burned tokens (at least the prompt's
+          // input tokens reported on its message_start). Fold them into the
+          // running totals so budget/cost reporting is not understated.
+          if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+          fallbackModel = config.fallbackModel; // stays switched for the rest of the run
+          model = fallbackModel;
+          // The retry emits its OWN message_start; downstream consumers of
+          // includePartialMessages must treat a fresh message_start as
+          // superseding the discarded attempt's partial stream_events.
           assistant = yield* streamAttempt(model); // 2nd failure -> outer catch
         } else {
           throw err;
@@ -386,42 +548,50 @@ export async function* runAgentLoop(
       }
 
       // --- Usage/cost tracking per response model. --------------------------
-      const usage = normalizeUsage(assistant.usage);
-      totalUsage = addUsage(totalUsage, usage);
-      const cost = estimateCostUsd(assistant.model, usage);
-      totalCostUsd += cost;
-      const prev = modelUsage[assistant.model];
-      modelUsage[assistant.model] = {
-        inputTokens: (prev?.inputTokens ?? 0) + usage.input_tokens,
-        outputTokens: (prev?.outputTokens ?? 0) + usage.output_tokens,
-        cacheReadInputTokens:
-          (prev?.cacheReadInputTokens ?? 0) + usage.cache_read_input_tokens,
-        cacheCreationInputTokens:
-          (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
-        webSearchRequests: prev?.webSearchRequests ?? 0,
-        costUSD: (prev?.costUSD ?? 0) + cost,
-      };
+      recordUsage(assistant.model, normalizeUsage(assistant.usage));
 
-      if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-        yield errorResult(
-          'error_max_budget',
-          `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-        );
-        return;
-      }
+      // NOTE: the maxBudgetUsd check is intentionally NOT here. A turn that has
+      // just naturally ended (end_turn / stop_sequence / etc.) must still yield
+      // its completed answer as a success result even if its cost tipped the
+      // budget - the money is already spent and there is nothing further to
+      // bill. The budget is enforced below, ONLY when about to CONTINUE the
+      // loop with another (billable) API call.
 
       // --- Tool dispatch or natural end. -------------------------------------
-      if (assistant.stop_reason === 'tool_use') {
-        const toolUses = assistant.content.filter(
-          (b): b is ToolUseBlock => b.type === 'tool_use',
-        );
+      const toolUses =
+        assistant.stop_reason === 'tool_use'
+          ? assistant.content.filter((b): b is ToolUseBlock => b.type === 'tool_use')
+          : [];
+      // stop_reason tool_use but ZERO tool_use blocks (malformed / gateway-
+      // rewritten response): treat as a natural end rather than pushing an
+      // empty {role:'user',content:[]} turn that would poison the history.
+      if (toolUses.length > 0) {
         const results: ToolResultBlockParam[] = [];
+        let batchStop: ToolExecOutcome['stop'];
         for (const block of toolUses) {
+          if (batchStop !== undefined) {
+            // A prior block asked to stop the run: do not execute the rest,
+            // but every tool_use still needs a matching tool_result or the
+            // next API request would 400.
+            results.push(
+              mkToolError(block.id, `Not executed: ${batchStop.reason}`),
+            );
+            continue;
+          }
           // Sequential, in content order.
-          results.push(await executeToolUse(block));
+          const outcome = await executeToolUse(block);
+          results.push(outcome.result);
+          if (outcome.stop !== undefined) batchStop = outcome.stop;
         }
-        history.push({ role: 'assistant', content: assistant.content });
+        pushAssistant(assistant.content);
         history.push({ role: 'user', content: results });
+
+        // A permission interrupt or a PostToolUse continue:false terminates the
+        // run after the batch is completed and recorded.
+        if (batchStop !== undefined) {
+          yield errorResult('error_during_execution', batchStop.reason);
+          return;
+        }
 
         if (deps.hooks.hasHooks('PostToolBatch')) {
           const batch = await deps.hooks.run(
@@ -445,12 +615,21 @@ export async function* runAgentLoop(
           );
           return;
         }
+        // Budget gate: only fires when about to CONTINUE the loop with another
+        // billable API call (a completed answer above is never voided here).
+        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+          yield errorResult(
+            'error_max_budget_usd',
+            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+          );
+          return;
+        }
         continue;
       }
 
       // Natural end: keep history complete for follow-up turns in the same
       // session, fire Stop hooks, emit the success result.
-      history.push({ role: 'assistant', content: assistant.content });
+      pushAssistant(assistant.content);
       if (deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',

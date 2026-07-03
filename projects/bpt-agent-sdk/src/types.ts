@@ -725,7 +725,7 @@ export type SDKResultMessage =
     }
   | {
       type: 'result';
-      subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget';
+      subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget_usd';
       uuid: string;
       session_id: string;
       duration_ms: number;
@@ -808,7 +808,13 @@ export type SDKInitializationResult = {
 };
 
 export interface Query extends AsyncGenerator<SDKMessage, void> {
-  /** Interrupt the running turn (streaming-input mode). */
+  /**
+   * Interrupt the running turn. In streaming-input mode this aborts the
+   * active turn and the session accepts further input; in string mode it
+   * aborts the run and the generator yields a terminal
+   * `error_during_execution` result. Honored between turns via an
+   * interrupt-requested flag when no turn is currently active.
+   */
   interrupt(): Promise<void>;
   setPermissionMode(mode: PermissionMode): Promise<void>;
   setModel(model?: string): Promise<void>;
