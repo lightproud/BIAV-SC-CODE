@@ -15,7 +15,7 @@ API documentation. No proprietary code was consulted.
 npm install bpt-agent-sdk
 ```
 
-Requires Node.js `>= 18.17` (Node 20+ recommended). **ESM only** - this
+Requires Node.js `>= 20.3` (`AbortSignal.any`). **ESM only** - this
 package ships `"type": "module"` and cannot be `require()`d from CommonJS;
 use `import` (or dynamic `import()` from CJS).
 
