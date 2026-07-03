@@ -1,0 +1,1373 @@
+{
+ "_meta": {
+  "generated": "2026-07-03",
+  "method": "ultracode workflow: 10 doc readers over 30 official agent-sdk pages + changelog + npm 0.3.199, 918 inventory items, 1 synthesis agent auditing actual src",
+  "official_version_anchor": "@anthropic-ai/claude-agent-sdk 0.3.199",
+  "our_version": "bpt-agent-sdk 0.1.0",
+  "weighting": "FULL=1 PARTIAL=0.6 ACCEPTED=0.15 MISSING=0 over P0+P1 rows, N/A-BY-DESIGN excluded"
+ },
+ "summary": {
+  "full": 30,
+  "partial": 43,
+  "accepted": 24,
+  "missing": 41,
+  "naByDesign": 8,
+  "total": 146,
+  "weightedCompletionPct": 68.3
+ },
+ "matrix": [
+  {
+   "area": "functions",
+   "feature": "query() entry point (string + AsyncIterable prompt)",
+   "official": "query({prompt, options}): Query async generator; primary entry point",
+   "ourStatus": "FULL",
+   "gap": "Both prompt modes implemented; unified input queue; direct Messages API engine instead of CLI subprocess",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "functions",
+   "feature": "tool()",
+   "official": "tool(name, desc, zodShape, handler, extras?: {annotations: ToolAnnotations}); Zod 3 and 4",
+   "ourStatus": "PARTIAL",
+   "gap": "No 5th extras param — ToolAnnotations typed on SdkMcpToolDefinition but never attachable/populated; zod v4 only",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "functions",
+   "feature": "createSdkMcpServer()",
+   "official": "{name, version?, tools?} -> McpSdkServerConfigWithInstance in-process server",
+   "ourStatus": "FULL",
+   "gap": "In-process dispatch, zod-validated handlers, Map semantics for dup names",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "functions",
+   "feature": "startup() / WarmQuery",
+   "official": "Pre-warm CLI subprocess before prompt exists; AsyncDisposable handle",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "No subprocess spawn/init cost exists in direct-API design; first request is already cheap. A no-op shim could be added for type compat",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "functions",
+   "feature": "extractFromBunfs()",
+   "official": "Extract embedded native binary from bun-compiled executable",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "No bundled native binary; pure-JS package works inside bun compile directly",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "sessions",
+   "feature": "listSessions()",
+   "official": "({dir?, limit?, includeWorktrees?}) over ~/.claude store, sorted lastModified desc",
+   "ourStatus": "PARTIAL",
+   "gap": "Reads own JSONL store only; option bag is {sessionDir} not {dir, limit, includeWorktrees}; no worktree awareness",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "sessions",
+   "feature": "getSessionInfo()",
+   "official": "Returns SDKSessionInfo | undefined",
+   "ourStatus": "PARTIAL",
+   "gap": "Returns null instead of undefined; own store only; SDKSessionInfo lacks tag/gitBranch",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "sessions",
+   "feature": "getSessionMessages()",
+   "official": "(sessionId, {dir?, limit?, offset?}) -> SessionMessage[]",
+   "ourStatus": "MISSING",
+   "gap": "Not exported; transcript is readable via internal store.load() but no public message-level API",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "sessions",
+   "feature": "renameSession() / tagSession()",
+   "official": "Append custom-title/tag entries, latest wins",
+   "ourStatus": "MISSING",
+   "gap": "Absent; SDKSessionInfo.customTitle typed but nothing writes it",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "settings",
+   "feature": "resolveSettings() / ResolvedSettings",
+   "official": "Alpha: resolve effective settings with CLI merge engine, provenance, sources",
+   "ourStatus": "MISSING",
+   "gap": "No settings engine at all",
+   "effort": "L",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "sessions",
+   "feature": "deleteSession()/forkSession()/listSubagents()/getSubagentMessages() standalone fns",
+   "official": "Session-storage page: standalone functions accepting sessionStore option",
+   "ourStatus": "MISSING",
+   "gap": "None exported; fork exists only as query option",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "deployment",
+   "feature": "npm bundled native binary + platform packages + bun compile flow",
+   "official": "Optional-dep platform binaries; pathToClaudeCodeExecutable fallback",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "The removal of the binary is the product thesis; nothing to bundle",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "abortController",
+   "official": "AbortController for cancelling operations",
+   "ourStatus": "FULL",
+   "gap": "Outer signal wired through queue, transport, tools, hooks",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "additionalDirectories",
+   "official": "Extra directories Claude can access",
+   "ourStatus": "FULL",
+   "gap": "Enforced via resolveWithin containment in fs tools (no symlink-escape handling, documented)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "agent (main-thread agent name)",
+   "official": "Agent for main thread; must exist in agents or settings",
+   "ourStatus": "MISSING",
+   "gap": "Not typed, not in ACCEPTED warn list — silently ignored with no warning",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "agents (programmatic subagent definitions)",
+   "official": "Record<string, AgentDefinition>; drives Agent tool",
+   "ourStatus": "ACCEPTED",
+   "gap": "Typed subset (missing mcpServers/skills/initialPrompt/background/memory/effort/criticalSystemReminder fields); warned + ignored; no execution",
+   "effort": "XL",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "agentProgressSummaries / forwardSubagentText",
+   "official": "Subagent progress summaries; forward subagent text blocks",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; meaningless until subagents exist",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "allowDangerouslySkipPermissions",
+   "official": "Required gate for permissionMode bypassPermissions",
+   "ourStatus": "ACCEPTED",
+   "gap": "bypassPermissions works WITHOUT this flag — the official safety interlock is absent",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "allowedTools",
+   "official": "Auto-approve list; does not restrict availability; glob restrictions on MCP allow rules",
+   "ourStatus": "PARTIAL",
+   "gap": "Rule matching incl. Tool(spec) prefix + mcp__srv__* works, but rules evaluate BEFORE permission mode: in plan mode an allow rule auto-approves write tools (official: never); no settings-layer rules; no unanchored-glob rejection warning",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "disallowedTools",
+   "official": "Bare name removes tool from context; scoped rule denies matching calls in every mode; * / mcp__* globs in deny position",
+   "ourStatus": "PARTIAL",
+   "gap": "Scoped deny works in all modes incl. bypass; but bare name does NOT remove the tool definition from the model request (model still sees and attempts it); deny-position globs '*'/'mcp__*' unsupported",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "betas",
+   "official": "SdkBeta[] enable beta features",
+   "ourStatus": "FULL",
+   "gap": "string[] forwarded/merged into anthropic-beta header (looser type than SdkBeta[])",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "canUseTool",
+   "official": "(toolName, input, {signal, suggestions?, blockedPath?, decisionReason?, toolUseID, agentID?, requestId}) => PermissionResult | null; null = app sent control_response externally",
+   "ourStatus": "PARTIAL",
+   "gap": "Invoked only on prompt-fallthrough (correct), updatedInput/updatedPermissions honored; but suggestions and requestId never passed, and null return is treated as deny instead of skip-response semantics",
+   "effort": "M",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "continue",
+   "official": "Continue most recent conversation in cwd",
+   "ourStatus": "PARTIAL",
+   "gap": "Resumes latest session from own store, not scoped by cwd, cannot see Claude Code CLI sessions",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "cwd",
+   "official": "Working directory",
+   "ourStatus": "FULL",
+   "gap": "Wired to tools, containment, session meta",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "debug / debugFile",
+   "official": "Debug mode; debugFile implies debug",
+   "ourStatus": "PARTIAL",
+   "gap": "debug -> stderr callback works; debugFile accepted + ignored",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "effort",
+   "official": "'low'..'max' response effort",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no mapping to API effort/thinking",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "enableFileCheckpointing + Query.rewindFiles() + RewindFilesResult",
+   "official": "Track Write/Edit/NotebookEdit changes; rewind to user-message UUID with dryRun",
+   "ourStatus": "MISSING",
+   "gap": "Option warn-ignored; rewindFiles absent from Query type entirely; no checkpoint store",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "env",
+   "official": "Replaces subprocess environment when set",
+   "ourStatus": "FULL",
+   "gap": "Replace semantics preserved for transport + Bash tool env",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "executable / executableArgs / pathToClaudeCodeExecutable / spawnClaudeCodeProcess (+ SpawnedProcess/SpawnOptions)",
+   "official": "CLI runtime + custom process spawner",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "No subprocess exists; all four accepted + warn-ignored per COMPAT engine-difference section",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "extraArgs",
+   "official": "Extra CLI flags (e.g. replay-user-messages)",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "No CLI to pass flags to; note: user-message uuids are always populated here, so the replay-user-messages use case is moot. Not in ACCEPTED warn list (silent)",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "fallbackModel",
+   "official": "Fallback on failure; CLI chains up to 3 fallback models",
+   "ourStatus": "PARTIAL",
+   "gap": "Single fallback model, one retry per turn on 429/5xx/529, then permanently switched for the run",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "forkSession",
+   "official": "Fork resumed session to new ID, original untouched",
+   "ourStatus": "FULL",
+   "gap": "Transcript copied under new UUID in own store",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "hooks option (registration, matchers, timeout, parallel aggregate)",
+   "official": "Partial<Record<HookEvent, HookCallbackMatcher[]>>; parallel exec, most-restrictive wins, timeout seconds",
+   "ourStatus": "FULL",
+   "gap": "Parallel Promise.allSettled, deny>ask>allow aggregation, per-matcher timeout default 60s — matches docs (per-event coverage in separate rows)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "includeHookEvents",
+   "official": "Emit SDKHookStarted/Progress/Response messages",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no hook lifecycle messages exist in stream",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "includePartialMessages / stream_event",
+   "official": "Yield SDKPartialAssistantMessage wrapping BetaRawMessageStreamEvent; ttft_ms on message_start",
+   "ourStatus": "PARTIAL",
+   "gap": "Raw SSE events forwarded with uuid/session_id/parent_tool_use_id; ttft_ms field absent",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "loadTimeoutMs / sessionStoreFlush",
+   "official": "Alpha sessionStore knobs",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored (sessionStore itself absent)",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "managedSettings",
+   "official": "Policy-tier settings from embedding host, restrictive-only filter",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no policy tier",
+   "effort": "L",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "maxBudgetUsd",
+   "official": "Stop at estimated USD; result subtype error_max_budget_usd",
+   "ourStatus": "PARTIAL",
+   "gap": "Enforced against estimate, but emits subtype 'error_max_budget' — official consumers switching on 'error_max_budget_usd' miss it",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "maxThinkingTokens (deprecated)",
+   "official": "Max thinking tokens; superseded by thinking",
+   "ourStatus": "PARTIAL",
+   "gap": "Only used as budget fallback when thinking.type==='enabled'; set alone it never enables thinking",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "maxTurns",
+   "official": "Cap tool-use round trips; error_max_turns",
+   "ourStatus": "FULL",
+   "gap": "Enforced in engine loop with matching subtype",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "mcpServers",
+   "official": "stdio | sse | http | sdk config union",
+   "ourStatus": "PARTIAL",
+   "gap": "stdio/http/sdk connect + tools/call work; sse legacy transport throws NotImplementedError (status failed); no .mcp.json / plugin / connector sources",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "model",
+   "official": "Model alias or full name; default from CLI",
+   "ourStatus": "FULL",
+   "gap": "options.model > ANTHROPIC_MODEL env > claude-sonnet-4-5 default (default is dated vs official sonnet-5)",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "onElicitation",
+   "official": "MCP elicitation callback; unhandled -> auto-declined",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; server-initiated requests answered -32601 at protocol level, callback never reachable",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "outputFormat (structured outputs)",
+   "official": "{type:'json_schema', schema}; validate final output, retry loop, structured_output on result, error_max_structured_output_retries",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no schema validation, no structured_output field on result type",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "permissionMode",
+   "official": "default | acceptEdits | bypassPermissions | plan | dontAsk | auto",
+   "ourStatus": "PARTIAL",
+   "gap": "5 of 6 modes ('auto' absent from type); plan mode denies writes outright instead of routing them to canUseTool; acceptEdits lacks the cwd/additionalDirectories path-scope restriction",
+   "effort": "M",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "permissionPromptToolName",
+   "official": "MCP tool name for permission prompts",
+   "ourStatus": "MISSING",
+   "gap": "Not typed, not warn-listed, silently ignored",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "persistSession",
+   "official": "Default true; false disables disk persistence",
+   "ourStatus": "FULL",
+   "gap": "Gates all JSONL writes",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "planModeInstructions",
+   "official": "Replace plan-mode workflow body",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no plan-mode prompt scaffolding exists at all",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "plugins (SdkPluginConfig)",
+   "official": "Local plugins: skills/agents/hooks/MCP; skipMcpDiscovery",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no plugin loader",
+   "effort": "XL",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "promptSuggestions (+ SDKPromptSuggestionMessage)",
+   "official": "Predicted next prompt after each turn",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; message variant absent",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "resume / sessionId",
+   "official": "Resume by ID; pin session UUID",
+   "ourStatus": "FULL",
+   "gap": "Full within own store; unknown resume id starts fresh under that id (debug-logged). Cross-store interop tracked separately",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "resumeSessionAt",
+   "official": "Resume at specific message UUID",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "sandbox (SandboxSettings + network/filesystem configs + startup-failure semantics)",
+   "official": "Sandboxed Bash via bubblewrap/socat, domain allowlists, dangerouslyDisableSandbox fallback",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; Bash runs unsandboxed always",
+   "effort": "XL",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "sessionStore (interface, InMemorySessionStore, mirror retry/mirror_error, conformance suite)",
+   "official": "External transcript mirroring: append/load required, listSessions/delete/listSubkeys optional",
+   "ourStatus": "MISSING",
+   "gap": "Option warn-ignored; no adapter interface, no InMemorySessionStore export, no mirror_error message",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "settings (inline settings object / flag-settings layer)",
+   "official": "string | Settings populating flag-settings precedence layer",
+   "ourStatus": "MISSING",
+   "gap": "Not typed, not warn-listed, silently ignored",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "settingSources (user/project/local loading: CLAUDE.md, settings.json rules+hooks, .mcp.json, skills discovery, output styles, precedence)",
+   "official": "Omitted = all sources like CLI; [] disables; project loads CLAUDE.md/rules/skills/hooks",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + loads nothing; zero filesystem config in v0.1 (equivalent to a permanent settingSources: [])",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "skills option + Skill tool + SKILL.md lifecycle",
+   "official": "'all' | names; auto-adds Skill tool; context filter not sandbox",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; no Skill tool, no discovery",
+   "effort": "XL",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "stderr callback",
+   "official": "Subprocess stderr output",
+   "ourStatus": "PARTIAL",
+   "gap": "Receives this SDK's debug lines instead (no subprocess stderr exists)",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "strictMcpConfig",
+   "official": "Only option-passed servers; ignore .mcp.json/settings/plugins/connectors",
+   "ourStatus": "FULL",
+   "gap": "Trivially true — options servers are the only source that exists",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "systemPrompt",
+   "official": "string | {preset:'claude_code', append?, excludeDynamicSections?}; preset = actual Claude Code prompt",
+   "ourStatus": "PARTIAL",
+   "gap": "String + preset + append work, but preset maps to this SDK's own clean-room harness prompt (NOT Claude Code's); excludeDynamicSections absent from type and behavior",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "options",
+   "feature": "taskBudget",
+   "official": "Alpha API-side token budget",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "thinking (ThinkingConfig)",
+   "official": "{type:'adaptive'|'enabled'|'disabled'; budgetTokens?; display?}",
+   "ourStatus": "PARTIAL",
+   "gap": "enabled/disabled mapped to API; adaptive silently omitted (API default); fields named budget_tokens/budget instead of official budgetTokens (type-level break); display unsupported",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "options",
+   "feature": "title",
+   "official": "Display title for session",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; renameSession also absent",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "toolAliases",
+   "official": "Map built-in names to MCP implementations",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "options",
+   "feature": "toolConfig (askUserQuestion.previewFormat)",
+   "official": "Opt into AskUserQuestion previews",
+   "ourStatus": "ACCEPTED",
+   "gap": "Warned + ignored; AskUserQuestion tool itself absent",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "options",
+   "feature": "tools option",
+   "official": "string[] | {preset:'claude_code'} over ~30 built-ins",
+   "ourStatus": "PARTIAL",
+   "gap": "Array filters our 6 built-ins; unknown names debug-ignored; preset/undefined = all 6 (official preset = full Claude Code toolset)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "env-vars",
+   "feature": "Runtime env knobs (API_TIMEOUT_MS, CLAUDE_CODE_MAX_RETRIES, CLAUDE_CODE_RETRY_WATCHDOG, stream watchdog vars, CLAUDE_AGENT_SDK_CLIENT_APP)",
+   "official": "Env-var configured timeout/retry/watchdog behavior",
+   "ourStatus": "MISSING",
+   "gap": "None of these env vars are read; equivalent knobs only via BPT provider extension (timeoutMs/maxRetries); no stream-idle watchdog",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "query-methods",
+   "feature": "interrupt()",
+   "official": "Streaming-input mode only",
+   "ourStatus": "FULL",
+   "gap": "Aborts current turn; superset — also usable in string mode (ends run)",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "query-methods",
+   "feature": "setPermissionMode()",
+   "official": "Change mode mid-session (streaming)",
+   "ourStatus": "FULL",
+   "gap": "Effective immediately for subsequent tool calls",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "setModel()",
+   "official": "Change model (streaming)",
+   "ourStatus": "FULL",
+   "gap": "Takes effect next assistant turn; undefined restores initial",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "setMaxThinkingTokens()",
+   "official": "Deprecated; change thinking budget",
+   "ourStatus": "PARTIAL",
+   "gap": "Mutates config but only effective when thinking.type==='enabled', from next user turn",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "query-methods",
+   "feature": "applyFlagSettings()",
+   "official": "Runtime merge into flag-settings layer (model/permissions/hooks/agent...)",
+   "ourStatus": "MISSING",
+   "gap": "Absent from Query type; no settings layer to merge into",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "query-methods",
+   "feature": "initializationResult()",
+   "official": "SDKControlInitializeResponse {commands, agents, output_style(s), models, account, fast_mode_state?}",
+   "ourStatus": "PARTIAL",
+   "gap": "Own SDKInitializationResult shape without fast_mode_state; static/empty data (no CLI to introspect)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "reinitialize() + pending_permission_requests redelivery",
+   "official": "Re-send initialize after transport gap; redeliver pending canUseTool requests",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "In-process engine has no detachable transport; permission callbacks cannot be orphaned by disconnects",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "query-methods",
+   "feature": "supportedCommands()",
+   "official": "SlashCommand[] snapshot",
+   "ourStatus": "PARTIAL",
+   "gap": "Always []; SlashCommand type lacks argumentHint/aliases",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "query-methods",
+   "feature": "supportedModels()",
+   "official": "ModelInfo[] {value, resolvedModel?, displayName, description, supportsEffort...}",
+   "ourStatus": "PARTIAL",
+   "gap": "Static 4-entry list; ModelInfo shape is {id, displayName?} — official field is 'value', consumers reading .value/.description break",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "query-methods",
+   "feature": "supportedAgents()",
+   "official": "AgentInfo[] {name, description, model?}",
+   "ourStatus": "PARTIAL",
+   "gap": "Always []; AgentInfo lacks model field",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "query-methods",
+   "feature": "mcpServerStatus()",
+   "official": "McpServerStatus[] incl. config/scope/tools listing",
+   "ourStatus": "PARTIAL",
+   "gap": "name/status/serverInfo/error only; no config, scope, or per-server tools[] (BPT UI showing server tool lists must use another path)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "accountInfo()",
+   "official": "{email?, organization?, subscriptionType?, tokenSource?, apiKeySource?}",
+   "ourStatus": "PARTIAL",
+   "gap": "apiKeySource only; ApiKeySource enum deviates ('none' instead of 'oauth')",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "query-methods",
+   "feature": "reconnectMcpServer() / toggleMcpServer()",
+   "official": "Reconnect / enable-disable server by name",
+   "ourStatus": "PARTIAL",
+   "gap": "Registry implements reconnect()/setEnabled() but neither is surfaced on the Query interface",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "setMcpServers()",
+   "official": "Replace server set at runtime -> {added, removed, errors}",
+   "ourStatus": "MISSING",
+   "gap": "Absent from Query and registry; McpSetServersResult type absent",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "query-methods",
+   "feature": "streamInput()",
+   "official": "Push additional SDKUserMessage stream (streaming mode)",
+   "ourStatus": "FULL",
+   "gap": "Pumps into shared queue; throws in string mode / after close per docs spirit",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "query-methods",
+   "feature": "stopTask()",
+   "official": "Stop background task by ID (also teammates/agents v2.1.198)",
+   "ourStatus": "MISSING",
+   "gap": "No background task framework at all",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "query-methods",
+   "feature": "close()",
+   "official": "Terminate and clean up all resources",
+   "ourStatus": "FULL",
+   "gap": "Aborts turn + queue + outer signal, fires SessionEnd, closes MCP",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "subagents",
+   "feature": "Agent tool + AgentDefinition execution (foreground/background, nesting, resolvedModel, parent_tool_use_id wiring, resume)",
+   "official": "Full subagent runtime: Agent tool input schema, background-by-default (v2.1.198), 5-level nesting, context isolation",
+   "ourStatus": "MISSING",
+   "gap": "No Agent tool registered; agents option accepted-ignored; parent_tool_use_id always null in stream",
+   "effort": "XL",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "permissions",
+   "feature": "Permission evaluation order + ask rules",
+   "official": "Hooks -> deny rules -> ask rules -> mode -> allow rules -> canUseTool; ask rules force prompt even in bypass",
+   "ourStatus": "PARTIAL",
+   "gap": "Order deviates: allow rules evaluated before mode (step 4 vs official step 5); ask rules stored via applyUpdates but never consulted; bypass+ask-rule prompt path absent; plan-mode write->canUseTool routing absent (denied outright)",
+   "effort": "M",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "permissions",
+   "feature": "PermissionMode 'auto' (model classifier)",
+   "official": "Classifier approves/denies each call; TS-only",
+   "ourStatus": "MISSING",
+   "gap": "Absent from PermissionMode union entirely",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "permissions",
+   "feature": "PermissionUpdate destinations + persistence",
+   "official": "userSettings/projectSettings/localSettings/session/cliArg; localSettings writes .claude/settings.local.json",
+   "ourStatus": "PARTIAL",
+   "gap": "Only destination 'session' honored (others debug-warned); 'cliArg' missing from type; removeDirectories ignored; no settings-file persistence",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "permissions",
+   "feature": "CLAUDE_SDK_CAN_USE_TOOL_SHADOWED warning",
+   "official": "process warning when canUseTool unreachable",
+   "ourStatus": "MISSING",
+   "gap": "No shadowing detection",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "hooks",
+   "feature": "PreToolUse hook",
+   "official": "Input {tool_name, tool_input, tool_use_id}; allow/deny/ask/defer + updatedInput + additionalContext",
+   "ourStatus": "PARTIAL",
+   "gap": "allow/deny/ask + updatedInput work with correct precedence; input object lacks tool_use_id field (only 2nd callback arg); additionalContext for PreToolUse not injected into tool result; defer unsupported (separate row)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "hooks",
+   "feature": "PostToolUse hook",
+   "official": "Input {tool_name, tool_input, tool_response, tool_use_id, duration_ms?}; additionalContext + updatedToolOutput",
+   "ourStatus": "PARTIAL",
+   "gap": "additionalContext + updatedToolOutput both honored; input lacks tool_use_id and duration_ms fields; deprecated updatedMCPToolOutput alias absent",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "hooks",
+   "feature": "PostToolUseFailure hook",
+   "official": "Fires on tool execution failure with error string",
+   "ourStatus": "FULL",
+   "gap": "Fires on thrown tool errors (isError payloads correctly go to PostToolUse); is_interrupt/duration_ms optional fields absent",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "PostToolBatch hook",
+   "official": "Input {tool_calls: [{tool_name, tool_input, tool_use_id, tool_response?}]} once per batch",
+   "ourStatus": "PARTIAL",
+   "gap": "Fires once per batch but input is {tool_names: string[]} — no inputs/ids/responses",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "UserPromptSubmit hook",
+   "official": "Block prevents the prompt; session continues; additionalContext injected",
+   "ourStatus": "PARTIAL",
+   "gap": "additionalContext appended to prompt; but a block ENDS the entire query with error_during_execution — even in streaming mode where official semantics keep the session alive",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "hooks",
+   "feature": "MessageDisplay hook",
+   "official": "Input {turn_id, message_id, index, final, delta} per text delta/message",
+   "ourStatus": "PARTIAL",
+   "gap": "Fires once per completed assistant message with {message_text}; no delta/turn/message identifiers",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "Stop / SessionStart / SessionEnd hooks",
+   "official": "Stop at run end (ignores matchers); SessionStart source startup/resume/clear/compact; SessionEnd reason",
+   "ourStatus": "FULL",
+   "gap": "All three fire at documented points; SessionStart source limited to startup/resume (no clear/compact events exist); optional Stop fields (last_assistant_message, background_tasks) absent",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "hooks",
+   "feature": "Notification hook",
+   "official": "Fires on permission_prompt/idle_prompt/auth/elicitation notification types",
+   "ourStatus": "ACCEPTED",
+   "gap": "Type exists but NO code path fires it anywhere (COMPAT's 'fired for permission denials' claim is false)",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "SubagentStart / SubagentStop hooks",
+   "official": "Fire around subagent lifecycle with agent_id/transcript",
+   "ourStatus": "ACCEPTED",
+   "gap": "Typed, never fire (no subagents)",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "PreCompact hook",
+   "official": "Fires before compaction with trigger + custom_instructions",
+   "ourStatus": "ACCEPTED",
+   "gap": "Typed, never fires (no compaction)",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "PermissionRequest hook",
+   "official": "Fires when a permission dialog would display; can decide allow/deny",
+   "ourStatus": "ACCEPTED",
+   "gap": "Typed, never fires; decision-shaped hookSpecificOutput variant absent",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "Setup / TeammateIdle / TaskCompleted / ConfigChange / WorktreeCreate / WorktreeRemove events",
+   "official": "20-event HookEvent union",
+   "ourStatus": "MISSING",
+   "gap": "6 of 20 events absent from HookEvent type (ours has 14)",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "hooks",
+   "feature": "Matcher semantics (exact-set vs regex, | and , alternatives, * wildcard)",
+   "official": "Exact-string charset incl. hyphens; else unanchored regex; invalid regex safe",
+   "ourStatus": "FULL",
+   "gap": "Implements documented v2.1.195+ rules incl. hyphen exact-match",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "hooks",
+   "feature": "Async hook outputs ({async: true, asyncTimeout})",
+   "official": "Fire-and-forget, cannot block/modify",
+   "ourStatus": "FULL",
+   "gap": "Detached, neutral aggregate",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "hooks",
+   "feature": "BaseHookInput completeness (prompt_id, permission_mode, effort, transcript_path)",
+   "official": "Shared fields incl. prompt_id (v2.1.196+)",
+   "ourStatus": "PARTIAL",
+   "gap": "session_id/cwd present; transcript_path typed but never populated; prompt_id/permission_mode/effort absent",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "hooks",
+   "feature": "Settings-file shell hooks (command/http/mcp_tool/prompt/agent handlers)",
+   "official": "Filesystem hooks from settings.json run alongside callbacks",
+   "ourStatus": "MISSING",
+   "gap": "Callback hooks only; no settings loading",
+   "effort": "L",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "hooks",
+   "feature": "permissionDecision 'defer'",
+   "official": "Ends query for later resume; deferred_tool_use on result; priority deny > defer > ask > allow",
+   "ourStatus": "MISSING",
+   "gap": "Not in HookPermissionDecision type; runner silently ignores unknown decisions — a defer-returning hook contributes nothing and the call may still be ALLOWED by mode/rules (more permissive than official)",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "mcp",
+   "feature": "stdio transport",
+   "official": "{command, args?, env?}; JSON-RPC over stdio; 2025-06-18 handshake",
+   "ourStatus": "FULL",
+   "gap": "Spawn + initialize + tools/list pagination + tools/call + SIGTERM/SIGKILL close",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "mcp",
+   "feature": "HTTP (streamable) transport",
+   "official": "{type:'http', url, headers?}; SSE responses; Mcp-Session-Id",
+   "ourStatus": "FULL",
+   "gap": "POST JSON-RPC, JSON or SSE response bodies, session id echo",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "mcp",
+   "feature": "SSE legacy transport",
+   "official": "{type:'sse', url, headers?}",
+   "ourStatus": "MISSING",
+   "gap": "Constructor throws NotImplementedError; registry reports status failed",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "mcp",
+   "feature": "SDK in-process server dispatch",
+   "official": "type:'sdk' instance servers, mcp__{name}__{tool} naming, permission integration",
+   "ourStatus": "FULL",
+   "gap": "In-process Map dispatch, zod validation, isError on handler throw",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "mcp",
+   "feature": "claudeai-proxy connector transport",
+   "official": "{type:'claudeai-proxy'} in status union; claude.ai connectors",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "Connectors ride claude.ai subscription auth inside the CLI; direct API-key design has no such channel (official policy also bars third-party claude.ai login)",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "mcp",
+   "feature": "CallToolResult content coverage",
+   "official": "text | image | audio | resource | resource_link + structuredContent",
+   "ourStatus": "PARTIAL",
+   "gap": "text/image/resource mapped; audio and resource_link absent from type; structuredContent dropped",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "mcp",
+   "feature": "ToolAnnotations behavioral wiring (readOnlyHint -> parallel/auto-approve)",
+   "official": "readOnlyHint enables parallel exec and read-only concurrency for MCP tools",
+   "ourStatus": "MISSING",
+   "gap": "tool() cannot attach annotations; registry ignores server-reported annotations; MCP tools always treated readOnly:false in the gate",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "mcp",
+   "feature": "MCP tool search / deferred schema loading (ENABLE_TOOL_SEARCH)",
+   "official": "Definitions deferred, discovered on demand; auto:N thresholds",
+   "ourStatus": "MISSING",
+   "gap": "All tool schemas sent on every request",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "tools",
+   "feature": "Read tool",
+   "official": "Text + images + PDFs (pages) + notebooks; offset/limit",
+   "ourStatus": "PARTIAL",
+   "gap": "Text with cat -n framing, offset/limit, binary detection only; no image/PDF/notebook rendering, no pages param",
+   "effort": "M",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "tools",
+   "feature": "Write tool",
+   "official": "{file_path, content}; overwrite semantics",
+   "ourStatus": "FULL",
+   "gap": "mkdir -p, created-vs-overwritten reporting, containment enforced",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "tools",
+   "feature": "Edit tool",
+   "official": "{file_path, old_string, new_string, replace_all?}",
+   "ourStatus": "FULL",
+   "gap": "Uniqueness/ambiguity errors per docs, containment enforced",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "tools",
+   "feature": "Bash tool",
+   "official": "Persistent shell session, timeout, run_in_background, dangerouslyDisableSandbox, AST permission parsing",
+   "ourStatus": "PARTIAL",
+   "gap": "One-shot bash -c per call (no persistent state), timeout+kill; no run_in_background, no sandbox flag, no AST-based command rule matching (prefix-string specifiers only)",
+   "effort": "L",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "tools",
+   "feature": "Glob tool",
+   "official": "{pattern, path?} mtime-sorted",
+   "ourStatus": "FULL",
+   "gap": "fast-glob, mtime desc, 100-path cap with truncation note",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "tools",
+   "feature": "Grep tool",
+   "official": "ripgrep engine; output_mode, -i/-n/-A/-B/-C, type, glob, head_limit, offset, multiline",
+   "ourStatus": "PARTIAL",
+   "gap": "Pure-JS RegExp (perf caveat on large repos); no offset param; type map covers 10 languages; ripgrep flag -o absent",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "tools",
+   "feature": "WebFetch / WebSearch tools",
+   "official": "URL fetch + AI processing; domain-filtered search",
+   "ourStatus": "MISSING",
+   "gap": "Not registered; no server_tool_use accounting",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "tools",
+   "feature": "AskUserQuestion tool",
+   "official": "1-4 questions, 2-4 options, canUseTool interception, preview support",
+   "ourStatus": "MISSING",
+   "gap": "Absent — a chat UI cannot receive structured clarifying questions",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "tools",
+   "feature": "Task tools (TaskCreate/TaskGet/TaskUpdate/TaskList, TaskOutput, TaskStop) + TodoWrite + CLAUDE_CODE_ENABLE_TASKS",
+   "official": "Task tracking default since 0.3.142; TodoWrite legacy",
+   "ourStatus": "MISSING",
+   "gap": "No task/todo tools registered",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "tools",
+   "feature": "NotebookEdit tool",
+   "official": "Jupyter cell edits",
+   "ourStatus": "MISSING",
+   "gap": "Not registered",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "tools",
+   "feature": "Monitor tool",
+   "official": "Background event source (command lines / WebSocket frames)",
+   "ourStatus": "MISSING",
+   "gap": "Needs background task framework first",
+   "effort": "L",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "tools",
+   "feature": "Workflow tool",
+   "official": "Script-orchestrated multi-agent workflows (v0.3.149+)",
+   "ourStatus": "MISSING",
+   "gap": "Absent; depends on subagents + background tasks",
+   "effort": "XL",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "tools",
+   "feature": "ExitPlanMode tool",
+   "official": "{allowedPrompts?}; plan approval protocol",
+   "ourStatus": "MISSING",
+   "gap": "Plan mode exists as a permission filter only; no plan/exit protocol tool",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "tools",
+   "feature": "EnterWorktree tool",
+   "official": "Temporary git worktree isolation",
+   "ourStatus": "MISSING",
+   "gap": "Absent",
+   "effort": "M",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "tools",
+   "feature": "ListMcpResourcesTool / ReadMcpResourceTool",
+   "official": "MCP resource listing/reading tools",
+   "ourStatus": "MISSING",
+   "gap": "Registry speaks tools/* only; resources/* unimplemented",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "tools",
+   "feature": "ToolInputSchemas / ToolOutputSchemas type exports",
+   "official": "29-member input union + 23-member output union exported",
+   "ourStatus": "MISSING",
+   "gap": "No per-tool input/output type exports; consumers narrowing tool_use blocks by these types break",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "tools",
+   "feature": "Parallel read-only tool execution",
+   "official": "Read-only tools (incl. readOnlyHint MCP/custom) run concurrently; mutating tools sequential",
+   "ourStatus": "MISSING",
+   "gap": "All tool_use blocks execute strictly sequentially in content order",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "messages",
+   "feature": "system/init message",
+   "official": "apiKeySource, claude_code_version, tools, mcp_servers, model, permissionMode, slash_commands, output_style, skills, plugins, betas, agents",
+   "ourStatus": "PARTIAL",
+   "gap": "Core fields present; claude_code_version/betas/skills/plugins fields absent; slash_commands always []",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "messages",
+   "feature": "assistant / user echo / user replay messages",
+   "official": "SDKAssistantMessage wrapping API message; SDKUserMessage; SDKUserMessageReplay isReplay:true",
+   "ourStatus": "FULL",
+   "gap": "uuid/session_id/parent_tool_use_id populated; replay type exported",
+   "effort": "S",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "messages",
+   "feature": "SDKUserMessage extensions (shouldQuery, isSynthetic, tool_use_result, origin/SDKMessageOrigin)",
+   "official": "shouldQuery:false appends without triggering a turn; origin provenance",
+   "ourStatus": "MISSING",
+   "gap": "Fields absent from type; every queued user message triggers a turn",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "messages",
+   "feature": "result message (success + error arms)",
+   "official": "success: result, stop_reason, ttft_ms/ttft_stream_ms, api_error_status, structured_output, deferred_tool_use, terminal_reason, fast_mode_state, origin; errors: errors[] + error_max_budget_usd/error_max_structured_output_retries subtypes",
+   "ourStatus": "PARTIAL",
+   "gap": "Core fields (durations, usage, modelUsage, permission_denials, num_turns, total_cost_usd) correct; missing all listed extras; error arm has errorMessage:string instead of errors:string[]; budget subtype misnamed error_max_budget; error_max_structured_output_retries absent",
+   "effort": "M",
+   "bptPriority": "P0"
+  },
+  {
+   "area": "messages",
+   "feature": "Context compaction (auto + /compact + compact_boundary emission + PreCompact firing + CLAUDE.md compactor guidance)",
+   "official": "Summarize old history near context limit; emit compact_boundary",
+   "ourStatus": "MISSING",
+   "gap": "SDKCompactBoundaryMessage type exported but never emitted; no compaction engine — long BPT chat sessions will hit context limits and fail",
+   "effort": "L",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "messages",
+   "feature": "Observability/status message variants (status, tool_progress, task_started/progress/updated/notification, hook_started/progress/response, auth_status, rate_limit_event, files_persisted, local_command_output, commands_changed, tool_use_summary, informational, permission_denied, worker_shutting_down, plugin_install, mirror_error, prompt_suggestion, api_retry, memory_recall, elicitation_complete, session_state_changed, notification)",
+   "official": "33-variant SDKMessage union",
+   "ourStatus": "MISSING",
+   "gap": "Our union has 7 variants; 26 absent — notably SDKPermissionDeniedMessage and tool_progress that a desktop chat UI would surface",
+   "effort": "L",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "types",
+   "feature": "Usage / NonNullableUsage / ModelUsage field completeness",
+   "official": "Usage incl. cache_creation detail, server_tool_use, service_tier, speed, inference_geo, iterations; ModelUsage incl. contextWindow, maxOutputTokens",
+   "ourStatus": "PARTIAL",
+   "gap": "Token+cache fields only; server_tool_use/service_tier/speed/iterations absent; ModelUsage lacks contextWindow/maxOutputTokens; webSearchRequests always 0",
+   "effort": "S",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "sessions",
+   "feature": "Claude Code session-store interop (~/.claude/projects/<encoded-cwd>/*.jsonl, CLAUDE_CONFIG_DIR, cleanupPeriodDays)",
+   "official": "Shared on-disk transcript layout resumable by CLI and SDK",
+   "ourStatus": "MISSING",
+   "gap": "Own ~/.bpt-agent/sessions layout and schema; cannot read or resume existing Claude Code sessions; no cwd encoding, no cleanup sweep",
+   "effort": "M",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "sessions",
+   "feature": "Session metadata richness (summary generation, tag, gitBranch)",
+   "official": "summary = title/auto-summary/first prompt; tag; gitBranch",
+   "ourStatus": "PARTIAL",
+   "gap": "summary = firstPrompt only; no tag/gitBranch capture",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "context",
+   "feature": "Automatic prompt caching (cache_control breakpoints, excludeDynamicSections cache reuse)",
+   "official": "Stable prefixes automatically cached",
+   "ourStatus": "MISSING",
+   "gap": "Engine sends no cache_control blocks; every turn pays full input token cost — direct cost impact for a chat app",
+   "effort": "M",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "slash-commands",
+   "feature": "Slash command dispatch (/compact, /clear, custom .claude/commands, plugin/skill commands, $ARGUMENTS)",
+   "official": "Commands sent as prompt strings; listed in init slash_commands",
+   "ourStatus": "MISSING",
+   "gap": "slash_commands always []; command-looking prompts pass to the model verbatim",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "usage-cost",
+   "feature": "Cost tracking (total_cost_usd, per-model modelUsage/costUSD)",
+   "official": "Client-side estimate from bundled price table; per-model breakdown",
+   "ourStatus": "PARTIAL",
+   "gap": "Estimate from static 3-family table; unknown models cost $0; parallel same-id dedupe N/A (sequential)",
+   "effort": "S",
+   "bptPriority": "P1"
+  },
+  {
+   "area": "auth",
+   "feature": "Third-party providers (Bedrock / Vertex / Foundry / Claude Platform on AWS env switches)",
+   "official": "CLAUDE_CODE_USE_BEDROCK/VERTEX/FOUNDRY + creds",
+   "ourStatus": "MISSING",
+   "gap": "Direct Anthropic API only (apiKey/authToken/baseUrl); gateway routing via baseUrl is the sole workaround",
+   "effort": "L",
+   "bptPriority": "P2"
+  },
+  {
+   "area": "auth",
+   "feature": "claude.ai subscription login",
+   "official": "Prohibited for third parties without approval; CLI-only OAuth",
+   "ourStatus": "N/A-BY-DESIGN",
+   "gap": "API-key/bearer auth is the sanctioned third-party path; nothing to implement",
+   "effort": "S",
+   "bptPriority": "P3"
+  },
+  {
+   "area": "observability",
+   "feature": "OTel telemetry (CLAUDE_CODE_ENABLE_TELEMETRY, exporters, spans, trace-context propagation, sensitive-content opt-ins)",
+   "official": "CLI-embedded OTel instrumentation configured via env",
+   "ourStatus": "MISSING",
+   "gap": "No telemetry emission of any kind; would need first-party reimplementation in the engine",
+   "effort": "XL",
+   "bptPriority": "P3"
+  }
+ ],
+ "architectureDelta": [
+  "Context compaction: ARCHITECTURE.md has no compaction model at all (auto-compact near context limit, manual /compact, microcompaction, compact_boundary emission, PreCompact firing, CLAUDE.md compactor guidance) — the loop simply accumulates history until the API rejects it",
+  "Subagent runtime: no design for the Agent tool, AgentDefinition execution, background-by-default subagents (v2.1.198), 5-level nesting, context isolation, parent_tool_use_id threading, subagent transcript files, or agent resume",
+  "Background task framework: run_in_background Bash, Monitor (command/WebSocket event sources), TaskOutput/TaskStop, task_started/progress/updated/notification stream messages, stall watchdog — entirely absent from the module map",
+  "Tool search / deferred MCP schema loading (ENABLE_TOOL_SEARCH auto:N, MCPSearch) — architecture always ships every schema on every request and never discusses the context-cost tradeoff",
+  "File checkpointing: no checkpoint store, rewindFiles, RewindFilesResult, files_persisted event, or checkpoint-UUID (replay-user-messages) design",
+  "SessionStore external mirroring: dual-write architecture, append/load/listSubkeys/delete adapter contract, batched/eager flush, mirror_error retry semantics, InMemorySessionStore, conformance suite — ARCHITECTURE.md only knows its own local JSONL store",
+  "Structured outputs: outputFormat json_schema, final-output validation + retry loop, structured_output result field, error_max_structured_output_retries, model-fallback retraction — no engine hook exists for any of it",
+  "Settings engine: settingSources loading (CLAUDE.md, .claude/settings.json rules + shell hooks, .mcp.json, skills, output styles), local>project>user precedence, flag-settings layer, applyFlagSettings, resolveSettings, managed/server-managed policy tiers",
+  "Skills, plugins, slash commands, output styles: the entire filesystem-feature ecosystem (SKILL.md discovery, Skill tool, SdkPluginConfig loading, command dispatch, $ARGUMENTS) is out of scope of the module map",
+  "Sandboxing: SandboxSettings (bubblewrap/socat, network/filesystem allowlists), dangerouslyDisableSandbox permission fallback, sandbox startup-failure result semantics, and Bash AST permission parsing — our Bash design is plain spawn with prefix-string rules",
+  "Observability: the 33-variant SDKMessage stream (tool_progress, permission_denied, rate_limit_event, informational, hook lifecycle events, prompt_suggestion...) and the whole OTel surface (spans, TRACEPARENT propagation) are unmodeled — our stream has 7 variants",
+  "Automatic prompt caching strategy: no cache_control breakpoint placement or excludeDynamicSections-style cache-key hygiene; every turn resends full-cost input",
+  "WarmQuery/startup() pre-warm lifecycle and reinitialize()/pending_permission_requests control-protocol redelivery: correctly moot for in-process design, but the tradeoff is never stated in ARCHITECTURE.md",
+  "Permission extras: 'auto' classifier mode, ask rules as a first-class evaluation step, defer flow (deferred_tool_use + resume), CLAUDE_SDK_CAN_USE_TOOL_SHADOWED warning — the gate contract documents a 9-step order that deviates from the official 6-step order (allow rules before mode; plan-mode write routing)",
+  "Third-party providers and runtime env knobs: Bedrock/Vertex/Foundry switches, API_TIMEOUT_MS, CLAUDE_CODE_MAX_RETRIES, retry watchdog, stream idle watchdog — transport design covers only direct Anthropic API with its own provider config",
+  "V2 session API removal (createSession send/stream removed in TS SDK 0.3.142): migration surface our docs never mention; irrelevant to implement but COMPAT.md should note it to preempt swap-in questions",
+  "User-input surfaces: AskUserQuestion flow (canUseTool interception, answers/updatedInput protocol, toolConfig previews) and MCP elicitation (onElicitation) have no design treatment",
+  "Session interop: official on-disk layout (~/.claude/projects/<encoded-cwd>, CLAUDE_CONFIG_DIR, cleanupPeriodDays) vs our incompatible ~/.bpt-agent store — the interop decision is implicit, never argued"
+ ],
+ "compatMdCorrections": [
+  "canUseTool 'FULL' overstates: gate.ts never passes suggestions or requestId to the callback, and a null return is treated as deny — official semantics for null are 'app already sent the control_response externally; skip response', so should be PARTIAL",
+  "allowedTools/disallowedTools 'FULL' overstates: (1) bare-name disallowedTools does NOT remove the tool definition from the model request (loop.ts builds toolDefs from builtinTools unfiltered by deny rules; official removes it before evaluation); (2) allow rules evaluate before permission mode, so in plan mode an allow rule auto-approves write tools — official says file edits are NEVER auto-approved in plan; (3) '*'/'mcp__*' deny-position globs unsupported — should be PARTIAL",
+  "Hooks table 'Notification | PARTIAL | fired for permission denials only in v0.1' is factually wrong: no code path in src/ fires the Notification event at all (grep confirms only type definitions). Should be ACCEPTED (never fires)",
+  "Hooks table '`defer` | UNSUPPORTED | treated as deny with warning' is inaccurate: runner.ts has no defer branch; an unrecognized permissionDecision silently matches no aggregation case, so the call falls through and may still be ALLOWED by rules/mode — more permissive than documented, not a deny",
+  "PostToolBatch 'FULL' overstates: our input is { tool_names: string[] }, official is { tool_calls: [{ tool_name, tool_input, tool_use_id, tool_response? }] } — should be PARTIAL",
+  "MessageDisplay 'FULL' overstates: fires once per completed message with { message_text }; official fires per delta with { turn_id, message_id, index, final, delta } — should be PARTIAL",
+  "SDKMessage 'result ... FULL' overstates: success arm lacks api_error_status/ttft_ms/ttft_stream_ms/structured_output/deferred_tool_use/terminal_reason/fast_mode_state/origin; error arm uses errorMessage: string instead of official errors: string[] — should be PARTIAL",
+  "The budget result subtype 'error_max_budget (BPT extension)' is mislabeled: the official SDK has a real subtype 'error_max_budget_usd'; ours shadows it under a different name, so drop-in consumers switching on the official name silently miss budget stops. This is a naming bug, not an extension",
+  "system/init 'FULL' overstates: missing claude_code_version, betas, skills, plugins fields; slash_commands hardcoded [] — should be PARTIAL",
+  "tool() 'FULL' overstates: no 5th extras parameter, so ToolAnnotations can never be attached (the annotations field on SdkMcpToolDefinition is dead); docs also promise Zod 3 + 4, we support v4 only — should be PARTIAL",
+  "'maxThinkingTokens / thinking | FULL' overstates: maxThinkingTokens alone never enables thinking (used only as budget fallback when thinking.type==='enabled'), and ThinkingConfig uses budget_tokens/budget instead of the official camelCase budgetTokens (type-level break); display unsupported — should be PARTIAL",
+  "PreToolUse/PostToolUse 'FULL' should note input-shape gaps: hook input objects lack tool_use_id (official carries it in the input as well as the 2nd arg) and PostToolUse lacks duration_ms",
+  "UserPromptSubmit 'FULL — block stops the turn' understates: a block yields error_during_execution and ends the ENTIRE query, including in streaming-input mode where the official CLI keeps the session alive",
+  "mcpServerStatus() 'FULL' overstates: McpServerStatus lacks the official config/scope/tools fields (per-server tool listing unavailable) — should be PARTIAL",
+  "COMPAT.md omits four official Options fields entirely — agent, settings, permissionPromptToolName, extraArgs. None is typed nor in ACCEPTED_OPTION_KEYS, so passing them is silently ignored with NO debug warning, contradicting the stated ACCEPTED contract ('each present key emits exactly one debug warning')",
+  "supportedModels()/initializationResult() PARTIAL rows should add a type-break note: ModelInfo is { id, displayName? } while the official shape keys the model as 'value' (+ description, supportsEffort, etc.) — consumers reading .value get undefined",
+  "Minor type deviations worth listing: ApiKeySource has 'none' instead of official 'oauth'; PermissionUpdateDestination lacks 'cliArg'; SlashCommand lacks argumentHint/aliases; AgentInfo lacks model"
+ ]
+}
