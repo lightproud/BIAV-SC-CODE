@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**118**
-- 脚本可达性：活 65 / 仅测试 0 / 孤儿 0
+- 功能总数：**119**
+- 脚本可达性：活 66 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 31 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 31 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 32 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 9 |
@@ -99,7 +99,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（31）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（32）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -127,6 +127,8 @@
   `scripts/kb_ab.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
+- **`kb_golden_gen.py`** _[活:cli]_ — kb_golden_gen.py — 图驱动黄金集自动生成器（评判体系 #1 扩容）。  
+  `scripts/kb_golden_gen.py`
 - **`kb_navigator.py`** _[活:mcp]_ — kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。  
   `scripts/kb_navigator.py`
 - **`kb_qual.py`** _[活:cli]_ — kb_qual.py — 知识库质性能力 probe（评判体系 #4：测 grep 给不了知识的维度）。  
