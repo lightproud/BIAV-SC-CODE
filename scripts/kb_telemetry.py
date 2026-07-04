@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。
+
+守密人 2026-07-04「如何追踪评判知识库是否有效」→ 建议 #2：MCP 工具埋点。
+给运行时 `kb_*` 工具装「借阅记录」——每次调用追一条 JSONL，随时间攒出**需求侧现实**：
+哪些概念从没被导航到（死白盒重量·剪枝候选）、哪些查询总零命中（覆盖哨兵看不见的需求缺口）、
+哪些 kb_activate 总死在稀疏邻域。**借阅记录比藏书目录更诚实地说明图书馆有没有用。**
+
+设计取舍：
+- **只在 MCP 消费边界埋点**（`mcp_server.py` 调 `log_call`），不在 `kb_navigator` 库层——
+  故只记**真实消费**，不记测试/CLI 跑动。库层保持纯净、可测。
+- 日志落**gitignored** `Public-Info-Pool/Rough/kb_usage.jsonl`（瞬态过程数据，不进 git、不 churn）。
+  云容器易逝→记的是「近期使用」；要长期留由消费方自行持久化。
+- `log_call` **best-effort**：任何异常吞掉，绝不因埋点失败拖垮工具本身。
+
+用法：
+  python3 scripts/kb_telemetry.py            # 打印使用报告（调用分布 / 死概念 / 零命中查询）
+  python3 scripts/kb_telemetry.py --json      # 机读汇总
+"""
+from __future__ import annotations
+
+import argparse
+import json
+from collections import Counter
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+KB_USAGE_LOG = REPO / "Public-Info-Pool" / "Rough" / "kb_usage.jsonl"
+
+
+def log_call(tool: str, query: str, result_ids: list[str] | None = None,
+             log_path: Path | None = None) -> None:
+    """追一条使用记录（best-effort，绝不抛出）。只该由 MCP 消费边界调用。"""
+    try:
+        from datetime import datetime, timezone
+
+        ids = list(result_ids or [])
+        rec = {
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "tool": tool,
+            "query": (query or "")[:200],
+            "n": len(ids),
+            "top": ids[0] if ids else None,
+            "ids": ids[:10],
+        }
+        p = log_path or KB_USAGE_LOG
+        p.parent.mkdir(parents=True, exist_ok=True)
+        with p.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass  # 埋点绝不拖垮工具
+
+
+def _all_concept_ids() -> set[str]:
+    idx = REPO / "okf" / "kb_index.json"
+    if not idx.exists():
+        return set()
+    try:
+        return set(json.loads(idx.read_text(encoding="utf-8")).get("concepts", {}))
+    except (json.JSONDecodeError, OSError):
+        return set()
+
+
+def summarize(log_path: Path | None = None) -> dict:
+    """读使用 JSONL，产出需求侧使用报告。"""
+    p = log_path or KB_USAGE_LOG
+    calls = []
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                calls.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+
+    by_tool = Counter(c.get("tool", "?") for c in calls)
+    reach = Counter()
+    zero_hit = Counter()
+    for c in calls:
+        for cid in c.get("ids", []):
+            reach[cid] += 1
+        if c.get("n", 0) == 0 and c.get("tool") in ("kb_search", "kb_activate"):
+            zero_hit[c.get("query", "")] += 1
+
+    all_ids = _all_concept_ids()
+    reached = set(reach)
+    dead = sorted(all_ids - reached) if all_ids else []
+    return {
+        "total_calls": len(calls),
+        "by_tool": dict(by_tool.most_common()),
+        "distinct_concepts_reached": len(reached),
+        "total_concepts": len(all_ids),
+        "reach_ratio": round(len(reached) / len(all_ids), 4) if all_ids else None,
+        "top_reached": reach.most_common(15),
+        "zero_hit_queries": zero_hit.most_common(20),
+        "dead_concepts_count": len(dead),
+        "dead_concepts_sample": dead[:20],
+        "log_path": _display_path(p),
+    }
+
+
+def _display_path(p: Path) -> str:
+    try:
+        rel = str(p.relative_to(REPO))
+    except ValueError:
+        rel = str(p)
+    return rel if p.exists() else f"{rel}（尚无记录）"
+
+
+def _print_report(rep: dict) -> None:
+    print("KB 使用遥测报告（借阅记录）")
+    print(f"  总调用 = {rep['total_calls']}   触达概念 = {rep['distinct_concepts_reached']}"
+          f"/{rep['total_concepts']}"
+          + (f"（{rep['reach_ratio']:.0%}）" if rep['reach_ratio'] is not None else ""))
+    print(f"  按工具：{rep['by_tool'] or '（暂无记录）'}")
+    if rep["top_reached"]:
+        print("  最常触达：")
+        for cid, n in rep["top_reached"][:8]:
+            print(f"    {n:4d}  {cid}")
+    if rep["zero_hit_queries"]:
+        print(f"  零命中查询（需求缺口，{len(rep['zero_hit_queries'])}）：")
+        for q, n in rep["zero_hit_queries"][:8]:
+            print(f"    {n:4d}  {q!r}")
+    print(f"  死概念（从未被触达，{rep['dead_concepts_count']}/{rep['total_concepts']}）"
+          + ("——剪枝/改进候选" if rep['dead_concepts_count'] else ""))
+    print(f"  日志：{rep['log_path']}")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="知识库使用遥测报告")
+    ap.add_argument("--json", action="store_true", help="输出机读汇总")
+    args = ap.parse_args()
+    rep = summarize()
+    if args.json:
+        print(json.dumps(rep, ensure_ascii=False))
+    else:
+        _print_report(rep)
+
+
+if __name__ == "__main__":
+    main()
