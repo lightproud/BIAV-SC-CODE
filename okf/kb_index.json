@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 297,
+    "concepts": 298,
     "edges": 96,
-    "terms": 5052,
+    "terms": 5068,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 53,
+      "documentation": 54,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 34,
+      "resource": 35,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 166
+      "search": 167
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 34
+      "count": 35
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3076,6 +3076,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-methodology-knowledge-engineering-primer-20260704.md": {
+      "type": "documentation",
+      "title": "knowledge-engineering-primer-20260704",
+      "description": "「什么都接上了、但没有结构」不是黑池特有。银芯 2026 上半年踩过同型的坑：（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/methodology/knowledge-engineering-primer-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:methodology"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-proposal-ai-collaboration-method-202603.md": {
       "type": "documentation",
       "title": "ai-collaboration-method-202603",
@@ -5650,6 +5664,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -6627,6 +6642,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -6865,6 +6881,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -7132,6 +7149,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -7260,6 +7278,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -7431,6 +7450,7 @@
     "engineering": [
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -8063,6 +8083,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -8278,7 +8299,8 @@
     ],
     "knowledge": [
       "/README.md",
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
@@ -8459,6 +8481,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -8890,6 +8913,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -9002,7 +9026,8 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md"
     ],
     "methodology": [
-      "/memory/methodology.md"
+      "/memory/methodology.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "migration": [
       "/projects/bpt-sdk-doc-migration.md"
@@ -9463,6 +9488,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -9533,6 +9559,9 @@
     ],
     "prime": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "primer": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "principles": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -9742,6 +9771,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -10021,6 +10051,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -10682,6 +10713,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11271,11 +11303,17 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
+    "上了": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "上传": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
     "上你": [
       "/characters/15604.md"
+    ],
+    "上半": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "上复": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
@@ -11544,6 +11582,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11751,6 +11790,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11998,6 +12038,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12494,7 +12535,8 @@
       "/characters/15572.md"
     ],
     "么都": [
-      "/characters/15590.md"
+      "/characters/15590.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "义务": [
       "/characters/77922.md"
@@ -13017,6 +13059,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -13625,6 +13668,9 @@
     "但未": [
       "/story/story_research_todo.md"
     ],
+    "但没": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "但结": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -13828,6 +13874,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -14036,6 +14083,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -15617,6 +15665,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -16104,6 +16153,9 @@
     ],
     "升级": [
       "/characters/15562.md"
+    ],
+    "半年": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "华丽": [
       "/characters/15584.md"
@@ -17207,6 +17259,9 @@
     "同伙": [
       "/characters/130901.md"
     ],
+    "同型": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "同姿": [
       "/characters/15601.md"
     ],
@@ -18033,6 +18088,9 @@
     "型深": [
       "/story/STORY_RESEARCH.md"
     ],
+    "型的": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "域基": [
       "/characters/15589.md"
     ],
@@ -18435,6 +18493,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -19134,6 +19193,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -19653,6 +19713,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -20789,6 +20850,9 @@
     ],
     "年史": [
       "/memory/decisions-archive.md"
+    ],
+    "年踩": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "并不": [
       "/characters/15598.md"
@@ -23029,6 +23093,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -23319,6 +23384,9 @@
     "排表": [
       "/README.md"
     ],
+    "接上": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "接入": [
       "/assets/persona-erica-speech-canon.md"
     ],
@@ -23464,6 +23532,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -23727,6 +23796,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -24027,6 +24097,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -24257,6 +24328,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -25182,7 +25254,8 @@
       "/characters/15587.md"
     ],
     "是黑": [
-      "/projects/entry-claude-md.md"
+      "/projects/entry-claude-md.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "显式": [
       "/README.md"
@@ -25428,6 +25501,9 @@
       "/characters/15578.md",
       "/characters/15593.md"
     ],
+    "有结": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "有绽": [
       "/characters/15577.md"
     ],
@@ -25672,6 +25748,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26022,6 +26099,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26494,6 +26572,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26642,6 +26721,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27053,6 +27133,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27364,6 +27445,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27669,6 +27751,9 @@
     ],
     "池是": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
+    ],
+    "池特": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "池的": [
       "/projects/entry-claude-md.md"
@@ -28436,6 +28521,9 @@
     ],
     "特效": [
       "/characters/15586.md"
+    ],
+    "特有": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "特殊": [
       "/characters/130901.md"
@@ -29469,6 +29557,9 @@
     ],
     "的圣": [
       "/characters/77917.md"
+    ],
+    "的坑": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "的增": [
       "/characters/77926.md"
@@ -31177,6 +31268,7 @@
       "/assets/assets-narrative-structure.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/STORY_RESEARCH.md",
@@ -33368,6 +33460,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -33441,6 +33534,9 @@
     "踩坑": [
       "/memory/lessons-learned.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "踩过": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "蹈海": [
       "/characters/15589.md"
@@ -33713,6 +33809,9 @@
     "过任": [
       "/characters/15598.md"
     ],
+    "过同": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "过往": [
       "/characters/15568.md"
     ],
@@ -33937,6 +34036,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -34303,6 +34403,9 @@
     "都将": [
       "/characters/125346.md",
       "/characters/54117.md"
+    ],
+    "都接": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "都是": [
       "/characters/15603.md"
@@ -34800,6 +34903,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -34982,6 +35086,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -35069,7 +35174,8 @@
       "/projects/entry-claude-md.md",
       "/projects/project-news.md",
       "/projects/project-site.md",
-      "/projects/project-wiki.md"
+      "/projects/project-wiki.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "银钥": [
       "/characters/54116.md"
@@ -35922,7 +36028,8 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-news.md"
+      "/projects/project-news.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "黑法老": [
       "/characters/77927.md"
@@ -36473,6 +36580,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -36733,6 +36841,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -36852,6 +36961,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -36977,6 +37087,7 @@
     "engineering": [
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -37284,6 +37395,9 @@
       "/community/community-index.md",
       "/community/community-timeline.md"
     ],
+    "knowledge": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
     ],
@@ -37419,6 +37533,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -37673,7 +37788,8 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md"
     ],
     "methodology": [
-      "/memory/methodology.md"
+      "/memory/methodology.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "migration": [
       "/projects/bpt-sdk-doc-migration.md"
@@ -37956,6 +38072,9 @@
     ],
     "potency": [
       "/wiki-data/wiki-data-potency.md"
+    ],
+    "primer": [
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "processed": [
       "/extracted/extracted-art-assets.md",
@@ -38323,6 +38442,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
