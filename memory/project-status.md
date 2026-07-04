@@ -153,7 +153,11 @@
 - **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（本体 PR #380 @ `8bd4a54`；v0.3 收尾
   #384 观测流 / #387 Read 图像 / #388 类型面尾批 / #391 桶1 三项）。**v0.3 两待办 #16 + #17 +
   「桶1」（PDF document 块 / 重试流桥接 / 只读工具并行）均已收口。**
-  `pytest` 无涉、Node 侧 **`npx vitest run` 668 单测全绿（18 文件）**；`tsc` + `build` exit 0
+  **v0.4 观测臂生命周期真发射已落**（分支 `claude/bpt-agent-sdk-dev-h5ccmf`）：subagent 任务生命周期
+  task_started/progress/updated/notification + hook 生命周期 hook_started/hook_response
+  （`includeHookEvents` 门控）经共享观测队列在消息边界真发射；error 结果臂补官方 `errors: string[]`；
+  权限规则 `*` / `mcp__*` glob；COMPAT.md 陈旧行对账（会话三函数与 canUseTool suggestions 实为 v0.2 已落地）。
+  `pytest` 无涉、Node 侧 **`npx vitest run` 680 单测全绿（19 文件）**；`tsc` + `build` exit 0
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）

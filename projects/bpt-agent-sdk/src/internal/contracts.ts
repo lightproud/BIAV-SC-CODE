@@ -25,6 +25,7 @@ import type {
   PermissionMode,
   PermissionUpdate,
   RawMessageStreamEvent,
+  SDKMessage,
   SDKPermissionDenial,
   TextBlockParam,
   ThinkingConfigParam,
@@ -343,6 +344,12 @@ export type EngineDeps = {
   /** Root loop only: pull completed background-subagent results to append to
    *  the current tool_result user turn. Returns [] when none pending. */
   drainSubagentResults?: () => TextBlockParam[];
+  /** v0.4 observability drain: pull buffered task_* / hook_* lifecycle
+   *  messages (produced by the subagent runtime + hook runner, which cannot
+   *  yield) so the loop can surface them at message boundaries. The queue is
+   *  shared with the query layer, which drains it at its own yield points;
+   *  splice-style — each buffered message is returned exactly once. */
+  drainObservability?: () => SDKMessage[];
 };
 
 // ---------------------------------------------------------------------------

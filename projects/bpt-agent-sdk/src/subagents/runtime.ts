@@ -35,6 +35,11 @@ import type {
   McpServerStatus,
   ModelUsage,
   NonNullableUsage,
+  SDKMessage,
+  SDKTaskNotificationMessage,
+  SDKTaskProgressMessage,
+  SDKTaskStartedMessage,
+  SDKTaskUpdatedMessage,
   TextBlockParam,
 } from '../types.js';
 import type {
@@ -114,7 +119,26 @@ export type SubagentRuntimeOptions = {
   /** Resolved session id at spawn time (for hook input). */
   sessionId: () => string;
   debug: (msg: string) => void;
+  /** v0.4 task-lifecycle sink: task_started / task_progress / task_updated /
+   *  task_notification messages are pushed here (the runtime cannot yield);
+   *  the query layer drains them into the SDKMessage stream. */
+  emitObservability?: (msg: SDKMessage) => void;
 };
+
+/** task_updated.result carries a bounded preview, not the full child text
+ *  (the full text already crosses via the Agent tool_result). */
+const TASK_RESULT_PREVIEW_CHARS = 500;
+
+type TaskLifecycleMessage =
+  | SDKTaskStartedMessage
+  | SDKTaskProgressMessage
+  | SDKTaskUpdatedMessage
+  | SDKTaskNotificationMessage;
+
+/** Omit that distributes over a union (plain Omit collapses to common keys). */
+type DistributiveOmit<T, K extends PropertyKey> = T extends unknown
+  ? Omit<T, K>
+  : never;
 
 const zeroUsage = (): NonNullableUsage => ({
   input_tokens: 0,
@@ -204,8 +228,36 @@ export function createSubagentRuntime(
     outerSignal,
     sessionId,
     debug,
+    emitObservability,
   } = opts;
   const persist = opts.persist === true && store !== undefined;
+
+  // --- Task-lifecycle observability (v0.4) ----------------------------------
+  const emitTask = (
+    msg: DistributiveOmit<TaskLifecycleMessage, 'uuid' | 'session_id'>,
+  ): void => {
+    if (emitObservability === undefined) return;
+    emitObservability({
+      ...msg,
+      uuid: randomUUID(),
+      session_id: sessionId(),
+    } as TaskLifecycleMessage);
+  };
+  const resultPreview = (text: string): string =>
+    text.length > TASK_RESULT_PREVIEW_CHARS
+      ? `${text.slice(0, TASK_RESULT_PREVIEW_CHARS)}...`
+      : text;
+  /** Terminal task_updated for a finished (non-cancelled) child. */
+  const emitTaskFinished = (agentId: string, res: { text: string; isError: boolean }): void => {
+    emitTask({
+      type: 'task_updated',
+      task_id: agentId,
+      status: res.isError ? 'failed' : 'completed',
+      ...(res.isError
+        ? { error: resultPreview(res.text) }
+        : { result: resultPreview(res.text) }),
+    });
+  };
 
   // Bare-name (no `Tool(spec)` specifier) parent disallow patterns propagate to
   // child tool-set filtering, so a fully-denied parent tool never re-surfaces
@@ -420,9 +472,21 @@ export function createSubagentRuntime(
     let lastText = '';
     let sawError = false;
     let errMsg: string | undefined;
+    // task_progress: turn-budget share consumed. The child's maxTurns is always
+    // resolved by spawn() (agentDef -> parent -> DEFAULT), so the denominator
+    // is a real cap, not a guess; capped at 99 (100 is the terminal update's).
+    const turnCap = config.maxTurns ?? DEFAULT_SUBAGENT_MAX_TURNS;
+    let childTurns = 0;
 
     for await (const msg of runAgentLoop(history, deps, config)) {
       if (msg.type === 'assistant') {
+        childTurns += 1;
+        emitTask({
+          type: 'task_progress',
+          task_id: agentId,
+          progress: Math.min(99, Math.floor((childTurns / turnCap) * 100)),
+          status: `turn ${childTurns}/${turnCap}`,
+        });
         const t = concatText(msg.message.content);
         if (t.length > 0) lastText = t;
         if (persist && store !== undefined) {
@@ -492,6 +556,12 @@ export function createSubagentRuntime(
       const agentId = randomUUID();
       const childDepth = depth + 1;
 
+      emitTask({
+        type: 'task_started',
+        task_id: agentId,
+        task_name: params.description ?? resolved.type,
+        agent_id: agentId,
+      });
       await fireSubagentStart(agentId, params.subagentType, params.signal);
 
       // Background is a depth-0-only feature (keeps the drain wiring root-only).
@@ -583,11 +653,36 @@ export function createSubagentRuntime(
                 `[background subagent '${resolved.type}' (agentId: ${agentId}) ` +
                 `completed]\n${result.text}`,
             });
+            emitTaskFinished(agentId, result);
+            emitTask({
+              type: 'task_notification',
+              task_id: agentId,
+              event: result.isError ? 'failed' : 'completed',
+              message: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
+            });
           } catch (err) {
             debug(
               `background subagent ${agentId} failed: ` +
                 `${err instanceof Error ? err.message : String(err)}`,
             );
+            // An abort here is a stopTask()/query-close cancellation whose
+            // lifecycle events are emitted at the cancellation site; only a
+            // real failure is reported as failed.
+            if (!isAbortError(err)) {
+              const message = err instanceof Error ? err.message : String(err);
+              emitTask({
+                type: 'task_updated',
+                task_id: agentId,
+                status: 'failed',
+                error: resultPreview(message),
+              });
+              emitTask({
+                type: 'task_notification',
+                task_id: agentId,
+                event: 'failed',
+                message: `background subagent '${resolved.type}' failed: ${resultPreview(message)}`,
+              });
+            }
           } finally {
             backgroundTasks.delete(agentId);
             // Fresh signal: the stop hook must fire even after an outer abort.
@@ -616,6 +711,7 @@ export function createSubagentRuntime(
         childConfig,
         agentId,
       );
+      emitTaskFinished(agentId, result);
       await fireSubagentStop(agentId, resolved.type, params.signal);
       return {
         content: `${result.text}\n\nagentId: ${agentId}`,
@@ -641,6 +737,13 @@ export function createSubagentRuntime(
       }
       task.controller.abort();
       backgroundTasks.delete(taskId);
+      emitTask({ type: 'task_updated', task_id: taskId, status: 'cancelled' });
+      emitTask({
+        type: 'task_notification',
+        task_id: taskId,
+        event: 'stopped',
+        message: `background subagent "${taskId}" stopped via stopTask`,
+      });
       debug(`stopTask: aborted background subagent "${taskId}"`);
     },
     abortAll(): void {

@@ -63,6 +63,8 @@ function splitMcpName(qualified: string): { server: string; tool: string } | und
  *
  * Supported forms:
  *   - exact name (`Bash`, `mcp__srv__tool`)
+ *   - `*`              -> every tool (v0.4; official deny-position glob)
+ *   - `mcp__*`         -> every MCP tool of every server (v0.4)
  *   - `mcp__server__*` -> any tool of that MCP server
  *   - `mcp__server`    -> shorthand for the same server-wide wildcard
  *
@@ -73,7 +75,13 @@ function splitMcpName(qualified: string): { server: string; tool: string } | und
  */
 export function matchToolName(pattern: string, toolName: string): boolean {
   if (pattern === toolName) return true;
+  // Global glob: matches every tool. Primarily a deny-position form
+  // (disallowedTools: ['*']); matchToolName is shared, so it works in allow
+  // position too, mirroring the official rule surface.
+  if (pattern === '*') return true;
   if (!pattern.startsWith('mcp__')) return false;
+  // All-MCP glob: any tool that is mcp__X__Y-shaped, regardless of server.
+  if (pattern === 'mcp__*') return splitMcpName(toolName) !== undefined;
 
   // Resolve the server this pattern scopes to (server-wide wildcard forms).
   const patternServer = pattern.endsWith('__*')
