@@ -324,6 +324,12 @@ def overview() -> dict:
             "kb_search": "按词检索概念（返回排序摘要 + resource 指针，含 tier）",
             "kb_get": "取单个概念全档（元数据 + 正文 + 邻居 + tier）",
             "kb_neighbors": "顺关系图遍历某概念的邻居（骨架层最有效）",
-            "kb_overview": "本总览（分区 / 类型 / 两层结构）",
+            "kb_activate": "扩散激活联想召回（从种子沿关系图多跳带衰减）",
+            "kb_overview": "本总览（分区 / 类型 / 两层结构 / 模式路由）",
+        },
+        "routing": {
+            "note": "检索模式匹配问题类型（A/B 实测：KB 只在联想维度胜 grep，关键词维度打平）——别对关系题用关键词搜索，那等于退化成 grep、白瞎了 KB。",
+            "identity_or_keyword": "身份/关键词查（『X 是谁』『含某词』）→ kb_search / kb_get（此维度 grep 就够，用不用 KB 一样）",
+            "relational_or_design": "关系/探索/设计题（『X 与什么相关』『围绕 Y 探索』『顺这条线还连着什么』『谁跟这个共现』）→ **直接用 kb_activate / kb_neighbors**——KB 独占、grep 结构上到不了的联想维度",
         },
     }
