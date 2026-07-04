@@ -45,6 +45,9 @@ if (args.compare === true && positional.length === 2) {
 const ENGINE = args.engine === 'official' ? 'official' : 'bpt';
 const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20251001';
 const OUT = typeof args.out === 'string' ? args.out : `ab-report-${ENGINE}.json`;
+// --variant v1|v2: this SDK's harness-prompt variant (BPT experiment). Only
+// meaningful for --engine=bpt; ignored by the official engine.
+const VARIANT = args.variant === 'v2' ? 'v2' : args.variant === 'v1' ? 'v1' : undefined;
 // --repeat N: run each task N times and report the MEDIAN of the metrics
 // (denoises single-sample outliers, e.g. one slow/retried turn). Default 1.
 const REPEAT = Math.max(1, Number.parseInt(args.repeat, 10) || 1);
@@ -244,6 +247,8 @@ async function runTask(task) {
         allowDangerouslySkipPermissions: true,
         maxTurns: 8,
         persistSession: false,
+        // BPT harness-prompt variant (ignored by the official engine).
+        ...(VARIANT && ENGINE === 'bpt' ? { harnessPromptVariant: VARIANT } : {}),
         ...(task.options ?? {}),
       },
     });
@@ -345,6 +350,7 @@ for (const task of selected) {
 const report = {
   engine: ENGINE,
   model: MODEL,
+  variant: VARIANT,
   repeat: REPEAT,
   at: new Date().toISOString(),
   tasks: rows,
@@ -423,7 +429,9 @@ function compareReports(fileA, fileB) {
   const byId = (rep) => new Map(rep.tasks.map((t) => [t.id, t]));
   const mb = byId(b);
   const rn = a.repeat || b.repeat ? ` (median of ${a.repeat ?? 1}/${b.repeat ?? 1})` : '';
-  console.log(`A=${a.engine}(${a.model})  B=${b.engine}(${b.model})${rn}\n`);
+  const va = a.variant ? `/${a.variant}` : '';
+  const vb = b.variant ? `/${b.variant}` : '';
+  console.log(`A=${a.engine}${va}(${a.model})  B=${b.engine}${vb}(${b.model})${rn}\n`);
   console.log('| # | task | ok A/B | turns A/B | cost A/B | wall ms A/B | cacheHit A/B |');
   console.log('|---|------|--------|-----------|----------|-------------|--------------|');
   for (const ta of a.tasks) {

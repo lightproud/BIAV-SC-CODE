@@ -503,6 +503,7 @@ export function query(args: {
   const promptParts = buildSystemPromptParts(options.systemPrompt, {
     cwd,
     toolNames: [...builtinTools.keys()],
+    variant: options.harnessPromptVariant === 'v2' ? 'v2' : 'v1',
   });
   let systemPromptStable = promptParts.stable;
   if (outputFormat !== undefined) {
