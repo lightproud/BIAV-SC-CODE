@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-04T21:55:26.449779+00:00",
+  "archived_at": "2026-07-04T22:54:53.976305+00:00",
   "source": "youtube",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Morimens] Coaching/Content Creation Stream Happy Jul 4",
@@ -68,6 +68,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/8jZrzIHftt4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Yes, I got addicted to a gatcha game again... [ENG/GER]",
+      "summary": "Morimens.",
+      "source": "youtube",
+      "time": "2026-07-04T21:21:30Z",
+      "url": "https://www.youtube.com/watch?v=XeRguOnuSTo",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ookamino",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/XeRguOnuSTo/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

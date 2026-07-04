@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T21:54:42.476895+00:00",
+  "collected_at": "2026-07-04T22:54:14.091739+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "appstore",
@@ -73,6 +73,26 @@
       "summary": "겜 재밌어욤!",
       "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14239124258",
       "author": "ㄱ다드",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:18:16-07:00",
+      "lang": "th",
+      "title": "Hidden Gem Game!!!?",
+      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153734950",
+      "author": "BoBoss375",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:11:59-07:00",
+      "lang": "th",
+      "title": "Best Game Ever",
+      "summary": "Nice story and design, super recommended for everyone and thank you for giving me such a fantastic experience.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153720246",
+      "author": "Fookfik_TH",
       "engagement": 5
     },
     {
@@ -152,7 +172,7 @@
       "title": "Nice character design!",
       "summary": "Please optimize more for ipad!! I love this game very much but it keeps suddenly freeze or crashing….",
       "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
-      "author": "Milesiya",
+      "author": "Rzzbit",
       "engagement": 4
     },
     {

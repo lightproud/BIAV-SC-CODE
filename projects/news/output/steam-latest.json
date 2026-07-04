@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T21:54:42.476895+00:00",
+  "collected_at": "2026-07-04T22:54:14.091739+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -94,21 +94,6 @@
       "review": "great game, i really hope the community continues to grow",
       "timestamp_created": 1783137657,
       "playtime_forever": 4497
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-03T22:06:07+00:00",
-      "lang": "english",
-      "title": "[正面] A captivating story, complemented by a beautiful s...",
-      "summary": "A captivating story, complemented by a beautiful soundtrack and a dark, Lovecraftian atmosphere.",
-      "url": "https://steamcommunity.com/profiles/76561198405078181/recommended/3052450",
-      "author": "76561198405078181",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "A captivating story, complemented by a beautiful soundtrack and a dark, Lovecraftian atmosphere.",
-      "timestamp_created": 1783116367,
-      "playtime_forever": 7587
     }
   ]
 }
