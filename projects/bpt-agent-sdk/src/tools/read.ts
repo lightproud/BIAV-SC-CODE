@@ -38,15 +38,46 @@ function toDisplayLines(text: string): string[] {
   return lines.map((l) => (l.endsWith('\r') ? l.slice(0, -1) : l));
 }
 
+/**
+ * Sniff an image media type from MAGIC BYTES (content, not extension — a
+ * mislabeled `.txt` PNG is still an image). Returns undefined for non-images.
+ */
+function detectImageMediaType(buf: Buffer): string | undefined {
+  if (
+    buf.length >= 8 &&
+    buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47
+  ) {
+    return 'image/png';
+  }
+  if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) {
+    return 'image/jpeg';
+  }
+  if (
+    buf.length >= 6 &&
+    buf[0] === 0x47 && buf[1] === 0x49 && buf[2] === 0x46 && buf[3] === 0x38
+  ) {
+    return 'image/gif';
+  }
+  if (
+    buf.length >= 12 &&
+    buf[0] === 0x52 && buf[1] === 0x49 && buf[2] === 0x46 && buf[3] === 0x46 &&
+    buf[8] === 0x57 && buf[9] === 0x45 && buf[10] === 0x42 && buf[11] === 0x50
+  ) {
+    return 'image/webp';
+  }
+  return undefined;
+}
+
 export const readTool: BuiltinTool = {
   name: 'Read',
   description:
-    'Read a file from the local filesystem as UTF-8 text. Returns the ' +
-    'content in cat -n style (right-aligned line number, tab, line text), ' +
-    'starting at line 1. Reads up to 2000 lines by default; use offset ' +
-    '(1-based start line) and limit (max lines) to page through larger ' +
-    'files. Lines longer than 2000 characters are truncated. The path may ' +
-    'be absolute or relative to the session working directory.',
+    'Read a file from the local filesystem. Text files return in cat -n style ' +
+    '(right-aligned line number, tab, line text), starting at line 1; reads up ' +
+    'to 2000 lines by default, use offset (1-based start line) and limit (max ' +
+    'lines) to page through larger files, and lines over 2000 characters are ' +
+    'truncated. Image files (PNG/JPEG/GIF/WebP) are detected by content and ' +
+    'returned as an image block. The path may be absolute or relative to the ' +
+    'session working directory.',
   readOnly: true,
   inputSchema: {
     type: 'object',
@@ -130,6 +161,37 @@ export const readTool: BuiltinTool = {
       }
 
       const buf = await readFile(abs, { signal: ctx.signal });
+
+      // Image files are returned as an image content block (base64), sniffed by
+      // magic bytes so a mislabeled extension still renders. offset/limit do not
+      // apply to images and are ignored.
+      const imageMediaType = detectImageMediaType(buf);
+      if (imageMediaType !== undefined) {
+        ctx.debug(`Read: ${abs} as ${imageMediaType} (${buf.length} bytes)`);
+        return {
+          content: [
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: imageMediaType,
+                data: buf.toString('base64'),
+              },
+            },
+          ],
+        };
+      }
+
+      // PDF: detected but not rendered inline yet (document-block-in-tool_result
+      // support is a follow-up). Give a precise message, not the generic binary
+      // refusal below.
+      if (buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-') {
+        return errorResult(
+          `Read failed: "${abs}" is a PDF. Inline PDF reading is not yet supported; ` +
+            `extract its text or convert pages to images first.`,
+        );
+      }
+
       if (looksBinary(buf)) {
         return errorResult(
           `Read failed: "${abs}" appears to be a binary file and cannot be displayed as text.`,

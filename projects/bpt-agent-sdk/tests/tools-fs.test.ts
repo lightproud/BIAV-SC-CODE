@@ -257,6 +257,69 @@ describe('Read tool', () => {
     expect(res.isError).toBeFalsy();
     expect(res.content).toBe([catLine(1, 'x'), catLine(2, 'y')].join('\n'));
   });
+
+  // --- image support (task #17) ------------------------------------------
+
+  const IMAGE_CASES: Array<[string, string, Buffer]> = [
+    ['png', 'image/png', Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3])],
+    ['jpg', 'image/jpeg', Buffer.from([0xff, 0xd8, 0xff, 0xe0, 4, 5, 6])],
+    ['gif', 'image/gif', Buffer.from('GIF89a-payload', 'latin1')],
+    [
+      'webp',
+      'image/webp',
+      Buffer.concat([
+        Buffer.from('RIFF', 'latin1'),
+        Buffer.from([0, 0, 0, 0]),
+        Buffer.from('WEBP', 'latin1'),
+        Buffer.from([7, 8]),
+      ]),
+    ],
+  ];
+
+  for (const [ext, media, bytes] of IMAGE_CASES) {
+    it(`returns an image content block for a ${ext} file`, async () => {
+      const file = path.join(sandbox, `pic.${ext}`);
+      await writeFile(file, bytes);
+
+      const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+
+      expect(res.isError).toBeFalsy();
+      expect(Array.isArray(res.content)).toBe(true);
+      const blocks = res.content as Array<{
+        type: string;
+        source: { type: string; media_type: string; data: string };
+      }>;
+      expect(blocks).toHaveLength(1);
+      expect(blocks[0]!.type).toBe('image');
+      expect(blocks[0]!.source.type).toBe('base64');
+      expect(blocks[0]!.source.media_type).toBe(media);
+      expect(blocks[0]!.source.data).toBe(bytes.toString('base64'));
+    });
+  }
+
+  it('detects an image by content even under a mislabeled .txt extension', async () => {
+    const file = path.join(sandbox, 'actually-a-png.txt');
+    await writeFile(file, Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 9]));
+
+    const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+
+    expect(res.isError).toBeFalsy();
+    const blocks = res.content as Array<{ type: string; source: { media_type: string } }>;
+    expect(blocks[0]!.type).toBe('image');
+    expect(blocks[0]!.source.media_type).toBe('image/png');
+  });
+
+  it('gives a precise PDF message rather than the generic binary refusal', async () => {
+    const file = path.join(sandbox, 'doc.pdf');
+    await writeFile(file, Buffer.from('%PDF-1.7\n%binary\n', 'latin1'));
+
+    const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+
+    expect(res.isError).toBe(true);
+    const content = String(res.content);
+    expect(content).toMatch(/PDF/);
+    expect(content).not.toMatch(/appears to be a binary file/);
+  });
 });
 
 // ---------------------------------------------------------------------------
