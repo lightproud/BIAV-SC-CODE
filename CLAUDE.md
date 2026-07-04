@@ -90,10 +90,10 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
    2026-06-14 退役、2026-06-20 整套子系统（TF-IDF 检索 / 知识图谱 / MemRL / 事实库 /
    做梦 / 会话召回）连代码带数据一并删除（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
-4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 8 工具
+4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 9 工具
    （记忆四件：`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
-   平台原生记忆互补；知识库导航四件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview`，
-   见下条）；守密人经会话派发任务。
+   平台原生记忆互补；知识库导航五件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview` +
+   `kb_activate`（扩散激活联想召回，Pillar D），见下条）；守密人经会话派发任务。
 5. **知识库运行时导航**（动态编排，使命#2 底座之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
    把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
    + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle

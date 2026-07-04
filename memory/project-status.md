@@ -284,4 +284,7 @@ news-output(23)/unpacked(13)/extracted(4)/resource(34)/projects(17,含 CLAUDE.md
 干净高信号边，故 A 从「加边」诚实收束为「**显式声明两层结构**」——skeleton（characters/sources/community/
 news-output，连通 76%）vs search（参考层，有意孤立、kb_search 可达）。tier 落 kb_index/graph 节点 +
 kb_navigator overview 报告；绊线 `test_skeleton_is_actually_connected`（骨架连通≥60%）锁设计属性。
-**未落地**：D 扩散激活检索（在 skeleton 层展开，杀手级消费）、C 覆盖哨兵、E 减易变。
+**Pillar D 扩散激活检索已落地（2026-07-04「再 D」）**：`kb_activate`（MCP 第 9 工具）从种子沿骨架
+多跳带衰减扩散、按边类型加权（剪枝即加权），返回被点亮子图=联想召回。实证 `activate("discord")`
+跨层点亮全量镜头+输出抽样+分析索引（搜索连不到的结构）。MCP 工具 8→9。
+**未落地**：C 覆盖哨兵、E 减易变（北极星改造路线收尾）。

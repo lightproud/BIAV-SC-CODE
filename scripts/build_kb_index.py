@@ -156,6 +156,7 @@ def build_kb_index() -> dict:
     edges = _load_graph()
     for e in edges:
         s, t, rel = e.get("source"), e.get("target"), e.get("rel", "link")
+        rel_type = e.get("rel_type", "link")  # 供扩散激活按边类型加权（Pillar D）
         if s not in concepts or t not in concepts or s == t:
             continue
         for a, b in ((s, t), (t, s)):
@@ -163,7 +164,7 @@ def build_kb_index() -> dict:
             if key in seen_pairs:
                 continue
             seen_pairs.add(key)
-            neighbors[a].append([b, rel])
+            neighbors[a].append([b, rel, rel_type])
     for cid, adj in neighbors.items():
         concepts[cid]["degree"] = len(adj)
 
