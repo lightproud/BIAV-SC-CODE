@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-04T00:02:17.386590+00:00",
+  "archived_at": "2026-07-04T03:00:54.216161+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 差评] ★1 esse jogo é muito difícil. só isso",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "pt",
       "platform_region": "br",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 story nya angst",
+      "summary": "story nya angst",
+      "source": "google_play",
+      "time": "2026-07-03T02:31:54",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-665ceb31-7a13-45f0-a915-2bff927ca33d",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "reisya aulia",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
       "region": "global"
     }
   ],

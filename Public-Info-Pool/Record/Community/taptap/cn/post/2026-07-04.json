@@ -1,19 +1,25 @@
 {
-  "contract_version": 1,
-  "collected_at": "2026-07-04T03:00:20.599727+00:00",
+  "date": "2026-07-04",
+  "archived_at": "2026-07-04T03:00:54.120720+00:00",
   "source": "taptap",
-  "data_layer": "output",
   "item_count": 1,
   "items": [
     {
-      "source": "taptap",
-      "time": "2026-07-04T02:48:38+00:00",
-      "lang": "zh",
       "title": "[TapTap 好评] 为毛不公测啊，这个画风实在美味，玩外服还要谷歌账号，求求你公测吧",
       "summary": "为毛不公测啊，这个画风实在美味，玩外服还要谷歌账号，求求你公测吧",
+      "source": "taptap",
+      "time": "2026-07-04T02:48:38+00:00",
       "url": "https://www.taptap.cn/moment/822421299233030645",
+      "engagement": 0,
+      "is_hot": false,
       "author": "lll",
-      "engagement": 0
+      "tags": [
+        "好评"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
     }
-  ]
+  ],
+  "region": "cn",
+  "content_subtype": "post"
 }

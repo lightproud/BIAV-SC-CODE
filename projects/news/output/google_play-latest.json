@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T00:01:18.869108+00:00",
+  "collected_at": "2026-07-04T03:00:20.599727+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 138,
+  "item_count": 139,
   "items": [
     {
       "source": "google_play",
@@ -763,6 +763,16 @@
       "summary": "ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-b790cb16-d367-4426-b648-333e6f90f982",
       "author": "Thanabodi Ronkrathok",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-03T02:31:54",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 story nya angst",
+      "summary": "story nya angst",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-665ceb31-7a13-45f0-a915-2bff927ca33d",
+      "author": "reisya aulia",
       "engagement": 0
     },
     {

@@ -1,25 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T00:01:18.869108+00:00",
+  "collected_at": "2026-07-04T03:00:20.599727+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-07-03T00:54:52+00:00",
-      "lang": "english",
-      "title": "[正面] good story",
-      "summary": "good story",
-      "url": "https://steamcommunity.com/profiles/76561198070538038/recommended/3052450",
-      "author": "76561198070538038",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": true,
-      "review": "good story",
-      "timestamp_created": 1783040092,
-      "playtime_forever": 1007
-    },
     {
       "source": "steam",
       "time": "2026-07-03T22:06:07+00:00",
