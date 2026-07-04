@@ -212,6 +212,7 @@ async function runTask(task) {
     id: task.id,
     name: task.name,
     subtype: resultMsg?.subtype ?? 'no-result',
+    error: resultMsg?.errorMessage,
     passed: resultMsg?.subtype === 'success' && task.check(finalText, resultMsg) === true,
     turns: resultMsg?.num_turns ?? 0,
     costUsd: resultMsg?.total_cost_usd ?? 0,
@@ -236,6 +237,9 @@ for (const task of selected) {
     console.log(
       `${row.passed ? 'ok' : 'CHECK-FAILED'} turns=${row.turns} cost=$${row.costUsd.toFixed(4)}`,
     );
+    if (!row.passed && row.error !== undefined) {
+      console.log(`    error(${row.subtype}): ${row.error}`);
+    }
   } catch (err) {
     console.log(`ERROR ${err instanceof Error ? err.message : String(err)}`);
     rows.push({ id: task.id, name: task.name, subtype: 'harness-error', passed: false });

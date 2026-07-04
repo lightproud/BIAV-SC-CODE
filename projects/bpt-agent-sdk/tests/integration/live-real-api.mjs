@@ -110,6 +110,10 @@ try {
       if (m.subtype === 'success') {
         console.log(`[answer] ${m.result}`);
         ok = true;
+      } else if (m.errorMessage) {
+        // Diagnosis line: without this an API-side failure (401/billing/
+        // overloaded) is indistinguishable from an engine bug in the CI log.
+        console.log(`[error] ${m.errorMessage}${m.api_error_status !== undefined ? ` (HTTP ${m.api_error_status})` : ''}`);
       }
     }
   }
