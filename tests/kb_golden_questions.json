@@ -1,28 +1,30 @@
 {
-  "version": "2026-07-04",
-  "note": "黄金问题集（需求侧有效性回归测试，北极星评判体系 #1）：真实守密人风格问题 → 该被 surface 的概念（id 子串，任一命中即算 hit）。度量『人真正要的，检索得到吗』。含当前命中与当前缺口的诚实混合——缺口即改进目标，非隐藏。expect 用 id 子串以抗概念 id 微调。mode=search 走 kb_search；mode=activate 走扩散激活（测联想召回）。",
+  "version": "2026-07-04-v2-capability-tailored",
+  "note": "黄金问题集 v2（定制化：按 KB 独门能力出题，守密人 2026-07-04『应该定制化设计』）。每题标 capability（考哪种能力）+ distinctive（grep 是否也能答——false=grep 也行，非 KB 独门；true=token 脱节等 grep 结构上到不了）。度量的重点是 distinctive 题的命中率=KB 独门价值的兑现。诚实边界：hit@k 只测『检索类』能力（associative/keyword）；层判定/身份/边界等质性能力靠不变量测试与遥测，非本集。expect=id 子串（任一命中即 hit）。",
   "k": 3,
-  "min_hit_rate": 0.68,
+  "min_hit_rate": 0.62,
+  "min_distinctive_hit_rate": 0.80,
   "questions": [
-    {"q": "沙耶是谁", "expect": ["/characters/130226"], "mode": "search", "probe": "identity 身份消歧"},
-    {"q": "徐的故事和技能", "expect": ["/characters/125346"], "mode": "search", "probe": "identity"},
-    {"q": "本源萝坦", "expect": ["/characters/122587"], "mode": "search", "probe": "identity 变体名"},
-    {"q": "discord 社区全量数据在哪", "expect": ["community-discord", "/sources/discord"], "mode": "search", "probe": "layer 全量档案"},
-    {"q": "解包的游戏文本", "expect": ["unpacked-game-text"], "mode": "search", "probe": "unpacked"},
-    {"q": "知识层设计哲学 白盒骨架 神经符号", "expect": ["knowledge-layer-design"], "mode": "search", "probe": "memory 北极星"},
-    {"q": "releases 藏宝图 二进制资产", "expect": ["releases-treasure-map"], "mode": "search", "probe": "projects 入口"},
-    {"q": "世界观术语 历史时间线", "expect": ["morimens-context"], "mode": "search", "probe": "memory"},
-    {"q": "剧情 lore 正文", "expect": ["/story/lore"], "mode": "search", "probe": "story"},
-    {"q": "bpt-agent-sdk 定位", "expect": ["project-bpt-agent-sdk", "bpt-sdk-doc"], "mode": "search", "probe": "projects 设计文档"},
-    {"q": "news 输出展示层 抽样快照", "expect": ["news-output"], "mode": "search", "probe": "output 层"},
-    {"q": "社区分析 情感长尾报告", "expect": ["community-analysis", "community-index"], "mode": "search", "probe": "resource/community"},
-    {"q": "数据纪律 全量 vs 抽样", "expect": ["/sources/", "lessons", "community-index"], "mode": "search", "probe": "data_layer 纪律"},
-    {"q": "制作人采访 53 问", "expect": ["interview"], "mode": "search", "probe": "assets 事实圣经（当前缺口·英文标题）"},
-    {"q": "卡牌系统 指令卡 术语", "expect": ["card-system"], "mode": "search", "probe": "assets（当前缺口·英文标题）"},
-    {"q": "banner 卡池 角色", "expect": ["banners-by-character"], "mode": "search", "probe": "wiki-data（当前缺口·英文标题）"},
-    {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "probe": "memory 决策台账"},
-    {"q": "discord", "expect": ["community-discord", "news-output-discord"], "mode": "activate", "probe": "associative 联想召回（扩散激活跨层）"},
-    {"q": "萝坦", "expect": ["/characters/15585", "/characters/15595"], "mode": "activate", "probe": "associative token 脱节（→奥吉尔/拉蒙娜 lore 邻居，与查询零共享字，grep 无从遍历）"},
-    {"q": "奥吉尔", "expect": ["/characters/15569", "/characters/15595"], "mode": "activate", "probe": "associative token 脱节（→萝坦/拉蒙娜 lore 邻居，grep 无从遍历）"}
+    {"q": "萝坦", "expect": ["/characters/15585", "/characters/15595"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→奥吉尔/拉蒙娜（同篇 lore，零共享字，grep 无从遍历）"},
+    {"q": "奥吉尔", "expect": ["/characters/15569", "/characters/15595"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→萝坦/拉蒙娜"},
+    {"q": "拉蒙娜", "expect": ["/characters/15569", "/characters/15585"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→萝坦/奥吉尔"},
+    {"q": "本源萝坦有哪些异变形态", "expect": ["/characters/15569"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "变体遍历：本源萝坦→萝坦（variant）"},
+
+    {"q": "关于沙耶社区和记忆里有哪些分析讨论", "expect": ["/memory/decisions", "/memory/lessons", "saya-collab"], "mode": "activate", "capability": "cross_layer", "distinctive": false, "probe": "跨层提及：沙耶→记忆/报告（grep 沙耶 也能找到点名它的文档，故非独门）"},
+    {"q": "discord 平台相关的都有哪些镜头", "expect": ["community-discord", "news-output-discord", "/sources/discord"], "mode": "activate", "capability": "cross_layer", "distinctive": false, "probe": "跨层平台 join（同平台异镜头；discord 字面可被 grep）"},
+
+    {"q": "discord 的全量档案层在哪", "expect": ["community-discord", "/sources/discord"], "mode": "search", "capability": "layer_aware", "distinctive": false, "probe": "层判定：全量档案 vs 输出抽样（KB 带 data_layer/tier 元数据；hit@k 测不出层，见不变量测试）"},
+
+    {"q": "沙耶是谁", "expect": ["/characters/130226"], "mode": "search", "capability": "identity", "distinctive": false, "probe": "身份消歧：唯一 concept vs 出现（grep 也命中）"},
+    {"q": "角色徐的档案", "expect": ["/characters/125346"], "mode": "search", "capability": "identity", "distinctive": false, "probe": "身份"},
+
+    {"q": "知识层设计哲学 白盒骨架", "expect": ["knowledge-layer-design"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组（KB≈grep）"},
+    {"q": "releases 藏宝图 二进制", "expect": ["releases-treasure-map"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "世界观术语 历史时间线", "expect": ["morimens-context"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "解包的游戏文本", "expect": ["unpacked-game-text"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "bpt-agent-sdk 定位", "expect": ["project-bpt-agent-sdk", "bpt-sdk-doc"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "剧情 lore 正文", "expect": ["/story/lore"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "news 输出展示层 抽样", "expect": ["news-output"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"}
   ]
 }

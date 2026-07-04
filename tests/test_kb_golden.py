@@ -36,6 +36,25 @@ def test_demand_side_hit_rate_above_threshold():
     )
 
 
+def test_distinctive_capability_hit_rate():
+    """★ KB 独门能力（distinctive=true，grep 到不了）的命中率——这才是『KB 作用』的分数，
+    定制化黄金集的核心断言：KB 在自己独占的维度上必须硬。"""
+    rep = kb_eval.evaluate()
+    d = rep["distinctive"]
+    assert d["n"] >= 3, "distinctive 题过少，无法验证 KB 独门价值"
+    assert d["hit_rate"] >= rep["min_distinctive_hit_rate"], (
+        f"KB 独门价值退化：distinctive hit@{rep['k']}={d['hit_rate']:.2f} "
+        f"< 门槛 {rep['min_distinctive_hit_rate']:.2f}（{d['hits']}/{d['n']}）"
+    )
+
+
+def test_every_question_capability_tagged():
+    """定制化：每题必须标 capability（否则记分卡按能力分解退化）。"""
+    golden = kb_eval.load_golden()
+    untagged = [q["q"] for q in golden["questions"] if not q.get("capability")]
+    assert untagged == [], f"未标 capability 的题：{untagged}"
+
+
 def test_scorecard_shape():
     """评分器输出结构完整（供遥测/追踪消费）。"""
     rep = kb_eval.evaluate()

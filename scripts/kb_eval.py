@@ -45,8 +45,14 @@ def evaluate(golden: dict | None = None, k: int | None = None) -> dict:
     per = []
     hits = 0
     rr_sum = 0.0
+    from collections import defaultdict
+
+    by_cap: dict[str, dict] = defaultdict(lambda: {"n": 0, "hits": 0})
+    dist = {"n": 0, "hits": 0}  # distinctive=true 子集（KB 独门价值）
     for item in golden["questions"]:
         q, expect, mode = item["q"], item["expect"], item.get("mode", "search")
+        cap = item.get("capability", "?")
+        distinctive = bool(item.get("distinctive", False))
         ids = _result_ids(q, mode, k)
         rank = 0
         for i, rid in enumerate(ids, start=1):
@@ -56,29 +62,46 @@ def evaluate(golden: dict | None = None, k: int | None = None) -> dict:
         hit = rank > 0
         hits += int(hit)
         rr_sum += (1.0 / rank) if rank else 0.0
+        by_cap[cap]["n"] += 1
+        by_cap[cap]["hits"] += int(hit)
+        if distinctive:
+            dist["n"] += 1
+            dist["hits"] += int(hit)
         per.append({
-            "q": q, "mode": mode, "expect": expect, "hit": hit,
-            "rank": rank, "top": ids[0] if ids else None, "probe": item.get("probe", ""),
+            "q": q, "mode": mode, "expect": expect, "hit": hit, "rank": rank,
+            "capability": cap, "distinctive": distinctive,
+            "top": ids[0] if ids else None, "probe": item.get("probe", ""),
         })
     n = len(golden["questions"])
+    for c in by_cap.values():
+        c["hit_rate"] = round(c["hits"] / c["n"], 4) if c["n"] else 0.0
+    dist["hit_rate"] = round(dist["hits"] / dist["n"], 4) if dist["n"] else 0.0
     return {
         "n": n, "k": k, "hits": hits,
         "hit_rate": round(hits / n, 4) if n else 0.0,
         "mrr": round(rr_sum / n, 4) if n else 0.0,
         "min_hit_rate": golden.get("min_hit_rate", 0.0),
+        "by_capability": {c: dict(v) for c, v in sorted(by_cap.items())},
+        "distinctive": dist,
+        "min_distinctive_hit_rate": golden.get("min_distinctive_hit_rate", 0.0),
         "per_question": per,
     }
 
 
 def _print_scorecard(rep: dict) -> None:
-    print(f"KB 需求侧有效性记分卡（黄金问题集，hit@{rep['k']}）")
-    print(f"  hit_rate = {rep['hit_rate']:.2f}  ({rep['hits']}/{rep['n']})   MRR = {rep['mrr']:.3f}"
-          f"   门槛 = {rep['min_hit_rate']:.2f}")
+    print(f"KB 有效性记分卡（黄金集 v2 定制化，hit@{rep['k']}）")
+    print(f"  总 hit_rate = {rep['hit_rate']:.2f} ({rep['hits']}/{rep['n']})   MRR = {rep['mrr']:.3f}")
+    d = rep["distinctive"]
+    print(f"  ★ distinctive（KB 独门·grep 到不了）hit_rate = {d['hit_rate']:.2f} ({d['hits']}/{d['n']})"
+          f"   门槛 = {rep['min_distinctive_hit_rate']:.2f}  ← 这才是 KB 作用的分数")
+    print("  按能力：")
+    for cap, c in rep["by_capability"].items():
+        print(f"    {cap:14s} {c['hits']}/{c['n']}  ({c['hit_rate']:.2f})")
     print("  " + "-" * 66)
     for p in rep["per_question"]:
         mark = "OK " if p["hit"] else "MISS"
-        rank = f"@{p['rank']}" if p["rank"] else "  "
-        print(f"  [{mark}]{rank:>3} {p['q'][:24]:24s} -> {p['top'] or '（零命中）'}")
+        star = "★" if p["distinctive"] else " "
+        print(f"  [{mark}]{star} {p['capability']:12s} {p['q'][:22]:22s} -> {p['top'] or '（零命中）'}")
     misses = [p["q"] for p in rep["per_question"] if not p["hit"]]
     if misses:
         print("  " + "-" * 66)
