@@ -214,17 +214,38 @@ def test_build_graph_and_visualizer(bundle):
     html = (bundle / "visualizer.html").read_text(encoding="utf-8")
     assert "__GRAPH_DATA__" not in html
     assert (bundle / "graph.json").exists()
+    # click-through + typed-edge UX is present
+    assert "EDGE_STYLE" in html
+    assert "window.open" in html
+    assert "点击查看档案" in html
 
 
-def test_build_graph_tag_cluster_edges(bundle):
-    # construct two concepts sharing a 画师 tag -> a star edge
-    bok.write_concept(bundle / "characters" / "1.md",
-                      {"type": "character", "title": "A", "tags": ["画师:X"]}, "b")
-    bok.write_concept(bundle / "characters" / "2.md",
-                      {"type": "character", "title": "B", "tags": ["画师:X"]}, "b")
+def test_build_graph_typed_grounded_edges(bundle):
+    """Edges are typed & grounded (variant/lore/cv/link); the painter noise-star
+    (all 72 角色同画师，零区分度) is deliberately dropped."""
+    bok.build_characters()
     graph = bok.build_graph()
-    cluster_edges = [e for e in graph["edges"] if e["rel"] == "画师:X"]
-    assert len(cluster_edges) == 1
+    assert graph["edges"], "no edges derived from real character data"
+    rel_types = {e.get("rel_type") for e in graph["edges"]}
+    assert rel_types <= {"variant", "lore", "cv", "link"}
+    assert all(e.get("rel_type") for e in graph["edges"]), "every edge must carry a type"
+    assert not any((e.get("rel") or "").startswith("画师") for e in graph["edges"]), \
+        "painter edges must be dropped (single-painter noise star)"
+    variants = [e for e in graph["edges"] if e.get("rel_type") == "variant"]
+    assert variants, "no variant (base↔variant) edges derived"
+    for e in variants:
+        assert e["source"].startswith("/characters/")
+        assert e["target"].startswith("/characters/")
+
+
+def test_build_graph_node_deeplinks(bundle):
+    """Character nodes with a live wiki page carry a site-relative click-through url."""
+    bok.build_characters()
+    graph = bok.build_graph()
+    linked = [n for n in graph["nodes"]
+              if n["id"].startswith("/characters/") and n.get("url")]
+    assert linked, "no character deep-links (expected 58/72 with wiki pages)"
+    assert all(n["url"].startswith("wiki/zh/awakeners/") for n in linked)
 
 
 def test_build_graph_link_edges(bundle):

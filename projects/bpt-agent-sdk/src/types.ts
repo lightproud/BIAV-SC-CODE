@@ -721,6 +721,9 @@ export type Options = {
   fallbackModel?: string;
   forkSession?: boolean;
   hooks?: Partial<Record<HookEvent, HookCallbackMatcher[]>>;
+  /** v0.4: surface hook execution as hook_started / hook_response stream
+   *  messages (default false; hooks otherwise report via debug only). */
+  includeHookEvents?: boolean;
   includePartialMessages?: boolean;
   maxBudgetUsd?: number;
   maxThinkingTokens?: number;
@@ -907,6 +910,9 @@ export type SDKResultMessage =
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
       errorMessage?: string;
+      /** Official-surface parallel of errorMessage (the reference SDK reports
+       *  error text as a string[]); always [errorMessage] in this engine. */
+      errors?: string[];
       /** HTTP status when the run ended on an API error (e.g. 429, 529). */
       api_error_status?: number;
       /** Time to first token (ms); only present when a token actually arrived. */
@@ -960,11 +966,14 @@ export type SDKCompactBoundaryMessage = {
 // which stays a `system` subtype since `system/status` is its canonical form.
 // Every message carries our house `uuid`/`session_id` envelope.
 //
-// EMITTED by this engine today: SDKPermissionDeniedMessage (on a gate deny).
-// The rest are TYPED for union exhaustiveness but have no source event in a
-// headless engine with no plugins/skills/CC-host/background-task framework; see
-// docs/COMPAT.md for the emitted-vs-typed split. Field shapes the official
-// leaves undocumented are a self-consistent clean-room reconstruction.
+// EMITTED by this engine today: permission_denied (gate deny), rate_limit_event
+// / api_retry (transport retries, v0.3), task_started / task_progress /
+// task_updated / task_notification (subagent lifecycle, v0.4), hook_started /
+// hook_response (hook lifecycle behind includeHookEvents, v0.4). The rest are
+// TYPED for union exhaustiveness but have no source event in a headless engine
+// with no plugins/skills/CC-host/slash-command framework; see docs/COMPAT.md
+// for the emitted-vs-typed split. Field shapes the official leaves
+// undocumented are a self-consistent clean-room reconstruction.
 // ---------------------------------------------------------------------------
 
 /** A tool call the permission gate denied. EMITTED on every gate deny. */
@@ -1002,7 +1011,8 @@ export type SDKToolUseSummaryMessage = {
   result_summary: string;
 };
 
-/** A background task / subagent started. Typed; not emitted. */
+/** A background task / subagent started. EMITTED (v0.4) when the Agent tool
+ *  spawns a subagent (foreground or background); task_id is the agentId. */
 export type SDKTaskStartedMessage = {
   type: 'task_started';
   uuid: string;
@@ -1012,7 +1022,9 @@ export type SDKTaskStartedMessage = {
   agent_id?: string;
 };
 
-/** Progress from a background task / subagent. Typed; not emitted. */
+/** Progress from a background task / subagent. EMITTED (v0.4) once per child
+ *  assistant turn; `progress` is the share of the child's turn budget consumed
+ *  (0..99), `status` is a human-readable `turn N/M`. */
 export type SDKTaskProgressMessage = {
   type: 'task_progress';
   uuid: string;
@@ -1024,7 +1036,9 @@ export type SDKTaskProgressMessage = {
   blocked?: boolean;
 };
 
-/** Terminal update for a background task / subagent. Typed; not emitted. */
+/** Terminal update for a background task / subagent. EMITTED (v0.4) when a
+ *  subagent finishes (completed/failed) or is stopped via stopTask (cancelled);
+ *  `result` carries a bounded prefix of the child's final text. */
 export type SDKTaskUpdatedMessage = {
   type: 'task_updated';
   uuid: string;
@@ -1035,7 +1049,8 @@ export type SDKTaskUpdatedMessage = {
   error?: string;
 };
 
-/** Background-task lifecycle notification. Typed; not emitted. */
+/** Background-task lifecycle notification. EMITTED (v0.4) for BACKGROUND
+ *  subagents only (their terminal event otherwise has no stream anchor). */
 export type SDKTaskNotificationMessage = {
   type: 'task_notification';
   uuid: string;
@@ -1045,7 +1060,8 @@ export type SDKTaskNotificationMessage = {
   message?: string;
 };
 
-/** Hook execution began (gated by includeHookEvents). Typed; not emitted. */
+/** Hook execution began. EMITTED (v0.4) per hook callback invocation when
+ *  options.includeHookEvents is true; hook_id pairs it with its hook_response. */
 export type SDKHookStartedMessage = {
   type: 'hook_started';
   uuid: string;
@@ -1054,7 +1070,8 @@ export type SDKHookStartedMessage = {
   hook_event: HookEvent;
 };
 
-/** Hook execution progress (gated by includeHookEvents). Typed; not emitted. */
+/** Hook execution progress. Typed; not emitted (callbacks are opaque
+ *  promises — there is no honest mid-callback progress source). */
 export type SDKHookProgressMessage = {
   type: 'hook_progress';
   uuid: string;
@@ -1065,7 +1082,8 @@ export type SDKHookProgressMessage = {
   status?: string;
 };
 
-/** Hook execution finished (gated by includeHookEvents). Typed; not emitted. */
+/** Hook execution finished. EMITTED (v0.4) when options.includeHookEvents is
+ *  true; `result` is the callback output as JSON, `error` the failure/timeout. */
 export type SDKHookResponseMessage = {
   type: 'hook_response';
   uuid: string;
@@ -1106,8 +1124,8 @@ export type SDKCommandsChangedMessage = {
   available_commands: SlashCommand[];
 };
 
-/** A rate limit was hit and a retry scheduled. Typed; not emitted (the
- * transport retries internally and surfaces attempts via the debug callback). */
+/** A rate limit was hit and a retry scheduled. EMITTED (v0.3) via the
+ *  transport's per-request onRetry observer on each 429 retry. */
 export type SDKRateLimitEventMessage = {
   type: 'rate_limit_event';
   uuid: string;
@@ -1117,7 +1135,8 @@ export type SDKRateLimitEventMessage = {
   requests_remaining?: number;
 };
 
-/** An API call is being retried. Typed; not emitted (see rate_limit_event). */
+/** An API call is being retried. EMITTED (v0.3) via the transport's onRetry
+ *  observer on each non-429 (5xx/network) retry. */
 export type SDKApiRetryMessage = {
   type: 'api_retry';
   uuid: string;

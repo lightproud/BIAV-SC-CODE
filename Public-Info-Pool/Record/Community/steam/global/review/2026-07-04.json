@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T13:10:40.848370+00:00",
+  "archived_at": "2026-07-04T15:02:50.114035+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] game is a visual novel gacha with card battling sy...",
@@ -118,6 +118,30 @@
         "playtime_forever": 750,
         "votes_up": 0,
         "timestamp_created": 1783155096
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] nb",
+      "summary": "nb",
+      "source": "steam_review",
+      "time": "2026-07-04T12:37:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199873655467/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199873655467",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5187,
+        "votes_up": 0,
+        "timestamp_created": 1783168635
       },
       "region": "global",
       "archive_subtype": "review",

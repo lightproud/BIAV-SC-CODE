@@ -33,8 +33,12 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
   functions; Query methods (reconnect/toggle/setMcpServers/rewindFiles/stopTask).
 
 The full observability/status message arm was TYPED in v0.3 (task #16) so the
-SDKMessage union is exhaustive for drop-in consumers; `permission_denied` is
-emitted, the rest are typed-not-emitted (see the Observability arm table below).
+SDKMessage union is exhaustive for drop-in consumers. EMITTED as of v0.4:
+`permission_denied`, `rate_limit_event` / `api_retry` (v0.3), the subagent
+task lifecycle (`task_started` / `task_progress` / `task_updated` /
+`task_notification`) and the hook lifecycle (`hook_started` / `hook_response`,
+behind `includeHookEvents`); the rest are typed-not-emitted (see the
+Observability arm table below).
 
 Still deliberately out of scope (N/A-by-design): the CLI-coupled subsystems
 (CLI system prompt, settings engine, bubblewrap sandbox, Bedrock/Vertex/Foundry,
@@ -61,7 +65,8 @@ Tiers:
 | `createSdkMcpServer()` | FULL | in-process dispatch, no wire protocol |
 | `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only; option bag accepts `dir` (alias for `sessionDir`) + `limit`; `includeWorkspace` typed but not honored (no Claude Code store interop) (task #17) |
 | `startup()` / `WarmQuery` | UNSUPPORTED | no subprocess to pre-warm; direct API needs no warmup |
-| `getSessionMessages()` / `renameSession()` / `tagSession()` / `resolveSettings()` | UNSUPPORTED | v0.2 candidates |
+| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | PARTIAL | implemented in v0.2 over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop |
+| `resolveSettings()` | UNSUPPORTED | settings engine is CLI-coupled (N/A-by-design) |
 
 ## Engine difference (the point of this SDK)
 
@@ -94,8 +99,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `abortController` | FULL | |
 | `additionalDirectories` | FULL | fs tools + additionalDirectories containment |
 | `agents` | ACCEPTED | subagents land in v0.2 |
-| `allowedTools` / `disallowedTools` | PARTIAL | `Tool(spec)` prefix rules + `mcp__srv__*` (exact server match); bare-name `disallowedTools` removes the tool definition from the request; plan mode never auto-approves writes via an allow rule; rewritten inputs re-checked against deny rules. Deny-position `*`/`mcp__*` globs not yet supported |
-| `canUseTool` | PARTIAL | invoked on prompt-fallthrough; `updatedInput`/`updatedPermissions` honored (incl. hook-`ask` rewrite); `suggestions`/`requestId` not passed; `null` return treated as deny (not skip-response) |
+| `allowedTools` / `disallowedTools` | FULL | `Tool(spec)` prefix rules + `mcp__srv__*` (exact server match) + `*` / `mcp__*` globs (v0.4); bare-name `disallowedTools` removes the tool definition from the request; plan mode never auto-approves writes via an allow rule; rewritten inputs re-checked against deny rules |
+| `canUseTool` | FULL | invoked on prompt-fallthrough with `signal`/`suggestions`/`requestId`/`toolUseID`; `updatedInput`/`updatedPermissions` honored (incl. hook-`ask` rewrite); `null` return = skip (app resolves out of band) |
 | `continue` | PARTIAL | resumes latest session from this SDK's store |
 | `cwd` | FULL | |
 | `env` | FULL | used for transport + Bash tool |
@@ -118,8 +123,9 @@ SDK implements the agent loop directly against the public Messages API:
 | `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`) |
 | `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
+| `includeHookEvents` | FULL | v0.4: emits `hook_started` / `hook_response` pairs (per callback invocation, correlated by `hook_id`) into the stream |
 | `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
-| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `includeHookEvents`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
+| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
 
 ## Built-in tools
 
@@ -140,7 +146,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages` |
-| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries `errorMessage: string` rather than official `errors: string[]` |
+| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | FULL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4; always `[errorMessage]`) |
 | `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
 
@@ -163,8 +169,9 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 |---|---|---|
 | `permission_denied` | FULL (emitted) | yielded on every permission-gate deny, before the tool_result; mirrors the `result.permission_denials` ledger; `blocker:'canUseTool'` set on a canUseTool interrupt, else omitted |
 | `tool_progress`, `tool_use_summary` | TYPED | no mid-tool progress channel (tools are one-shot) |
-| `task_started` / `task_progress` / `task_updated` / `task_notification` | TYPED | subagents run detached; lifecycle not surfaced as stream events yet |
-| `hook_started` / `hook_progress` / `hook_response` | TYPED | would gate behind `includeHookEvents`; hooks currently report via debug only |
+| `task_started` / `task_progress` / `task_updated` / `task_notification` | FULL (emitted, v0.4) | Agent-tool subagent lifecycle: `task_started` at spawn (task_id = agentId, task_name = the Agent call's `description`), `task_progress` per child assistant turn (turn-budget share, `status: 'turn N/M'`), `task_updated` on completed/failed/cancelled (bounded result preview), `task_notification` for BACKGROUND children (completed/failed/stopped). Buffered by the runtime and drained into the stream at message boundaries (foreground events surface after their Agent tool group finishes — a pull-based generator cannot interleave mid-await) |
+| `hook_started` / `hook_response` | FULL (emitted, v0.4) | behind `options.includeHookEvents`: one pair per callback invocation, correlated by `hook_id`; `result` = bounded output JSON, `error` = failure/timeout text. Same message-boundary drain as task events |
+| `hook_progress` | TYPED | callbacks are opaque promises; no honest mid-callback progress source |
 | `rate_limit_event`, `api_retry` | FULL (emitted) | the transport's per-request `onRetry` observer bridges each 429/5xx/network retry into the stream: a `rate_limit_event` on 429 (with `retry_after_ms`), an `api_retry` otherwise (with `status`/`reason`), yielded just before the retried attempt's stream |
 | `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `informational`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host/slash-command framework |
 

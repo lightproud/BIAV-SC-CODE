@@ -122,13 +122,15 @@ def test_community_covers_archive_and_index():
 
 
 def test_cross_layer_platform_edges_exist():
-    """跨层可导航：community/news-output ↔ sources 平台 join 边已建。"""
+    """跨层可导航：community/news-output ↔ sources 平台 join 边已建（rel_type=cross）。"""
     import json
 
     graph = json.loads((BUNDLE / "graph.json").read_text(encoding="utf-8"))
-    rels = {e["rel"] for e in graph["edges"]}
-    assert "same_platform_lens" in rels, "缺 community↔sources 平台 join 边"
-    assert "aggregated_in" in rels, "缺 community 平台→索引 聚合边"
+    cross = [e for e in graph["edges"] if e.get("rel_type") == "cross"]
+    assert cross, "缺跨层 cross 边——新层沦为孤立节点"
+    rels = {e["rel"] for e in cross}
+    assert "同平台" in rels, "缺 community↔sources 平台 join 边"
+    assert "聚合于" in rels, "缺 community 平台→索引 聚合边"
 
 
 def test_no_blackpool_leak_in_pointers():

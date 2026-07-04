@@ -314,6 +314,9 @@ export async function* runAgentLoop(
     subtype,
     is_error: true,
     errorMessage,
+    // Official-surface parallel: the reference SDK reports error text as a
+    // string[]; this engine only ever has the one message.
+    errors: [errorMessage],
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...resultBase(),
   });
@@ -707,9 +710,19 @@ export async function* runAgentLoop(
     return { result, stop };
   }
 
+  // v0.4: surface buffered task_* / hook_* lifecycle messages (the subagent
+  // runtime and hook runner cannot yield) at the loop's message boundaries.
+  // The query layer drains the same queue at its own yield points, so events
+  // produced between engine turns are never stranded.
+  function* drainObs(): Generator<SDKMessage> {
+    if (deps.drainObservability === undefined) return;
+    for (const msg of deps.drainObservability()) yield msg;
+  }
+
   try {
     for (;;) {
       if (signal.aborted) throw new AbortError();
+      yield* drainObs();
 
       // --- Context compaction (only when a shared request view exists). -----
       if (deps.requestView !== undefined && config.compaction?.enabled !== false) {
@@ -932,6 +945,10 @@ export async function* runAgentLoop(
             }
           }
           ti += outcomes.length;
+          // Surface lifecycle events produced by the group just executed
+          // (foreground subagent task_*, hook_started/hook_response) before
+          // the next group runs.
+          yield* drainObs();
         }
         pushAssistant(assistant.content);
         const userTurn: APIMessageParam = { role: 'user', content: results };

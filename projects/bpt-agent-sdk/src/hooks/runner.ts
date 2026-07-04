@@ -23,12 +23,16 @@
  *     (fire-and-forget) and treated as neutral
  */
 
+import { randomUUID } from 'node:crypto';
+
 import type {
   HookCallback,
   HookEvent,
   HookInput,
   HookJSONOutput,
   Options,
+  SDKHookResponseMessage,
+  SDKHookStartedMessage,
 } from '../types.js';
 import { AbortError } from '../errors.js';
 import type { AggregatedHookResult, HookRunner } from '../internal/contracts.js';
@@ -36,13 +40,33 @@ import { matcherMatches } from './matcher.js';
 
 const DEFAULT_TIMEOUT_SECONDS = 60;
 
+/** hook_response.result carries a bounded JSON preview of the output. */
+const HOOK_RESULT_PREVIEW_CHARS = 500;
+
 export type HookRunnerConfig = {
   hooks: Options['hooks'];
   debug: (msg: string) => void;
+  /** v0.4: hook-lifecycle sink (options.includeHookEvents). When set, every
+   *  callback invocation emits a hook_started / hook_response pair (correlated
+   *  by hook_id) into the SDKMessage stream via the shared observability queue. */
+  onLifecycleEvent?: (msg: SDKHookStartedMessage | SDKHookResponseMessage) => void;
 };
 
 /** A promise that rejects when the signal aborts (used to bound callbacks
  *  that ignore their AbortSignal). Never resolves. */
+/** Bounded JSON preview of a hook output for hook_response.result. */
+function previewJson(value: unknown): string {
+  let text: string;
+  try {
+    text = JSON.stringify(value) ?? 'null';
+  } catch {
+    text = '[non-serializable hook output]';
+  }
+  return text.length > HOOK_RESULT_PREVIEW_CHARS
+    ? `${text.slice(0, HOOK_RESULT_PREVIEW_CHARS)}...`
+    : text;
+}
+
 function abortRejection(signal: AbortSignal): Promise<never> {
   return new Promise((_resolve, reject) => {
     if (signal.aborted) {
@@ -60,10 +84,14 @@ function abortRejection(signal: AbortSignal): Promise<never> {
 export class DefaultHookRunner implements HookRunner {
   private readonly hooks: NonNullable<Options['hooks']>;
   private readonly debug: (msg: string) => void;
+  private readonly onLifecycleEvent?: (
+    msg: SDKHookStartedMessage | SDKHookResponseMessage,
+  ) => void;
 
   constructor(cfg: HookRunnerConfig) {
     this.hooks = cfg.hooks ?? {};
     this.debug = cfg.debug;
+    this.onLifecycleEvent = cfg.onLifecycleEvent;
   }
 
   hasHooks(event: HookEvent): boolean {
@@ -121,6 +149,31 @@ export class DefaultHookRunner implements HookRunner {
     signal: AbortSignal,
   ): Promise<HookJSONOutput | undefined> {
     const combined = AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)]);
+    // v0.4 lifecycle emission (includeHookEvents): one started/response pair
+    // per callback invocation, correlated by a fresh hook_id. Every hook input
+    // carries session_id (baseHookFields), read defensively anyway.
+    const hookId = this.onLifecycleEvent !== undefined ? randomUUID() : '';
+    const sessionId =
+      typeof (input as { session_id?: unknown }).session_id === 'string'
+        ? (input as { session_id: string }).session_id
+        : '';
+    this.onLifecycleEvent?.({
+      type: 'hook_started',
+      uuid: randomUUID(),
+      session_id: sessionId,
+      hook_id: hookId,
+      hook_event: event,
+    });
+    const respond = (fields: { result?: string; error?: string }): void => {
+      this.onLifecycleEvent?.({
+        type: 'hook_response',
+        uuid: randomUUID(),
+        session_id: sessionId,
+        hook_id: hookId,
+        hook_event: event,
+        ...fields,
+      });
+    };
     try {
       // The race bounds callbacks that ignore their signal: when the combined
       // signal fires, the callback's eventual result is discarded (detached).
@@ -128,6 +181,7 @@ export class DefaultHookRunner implements HookRunner {
         (async () => cb(input, toolUseID, { signal: combined }))(),
         abortRejection(combined),
       ]);
+      respond(result ? { result: previewJson(result) } : {});
       if (!result) return undefined; // void (or any falsy) output -> neutral
       if (result.async === true) {
         // Fire-and-forget output: already settled, but by contract it
@@ -138,6 +192,7 @@ export class DefaultHookRunner implements HookRunner {
       return result;
     } catch (err) {
       const msg = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+      respond({ error: msg });
       this.debug(`hooks(${event}): callback failed or timed out, ignored (${msg})`);
       return undefined;
     }

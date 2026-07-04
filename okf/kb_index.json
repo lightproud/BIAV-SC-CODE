@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 294,
-    "edges": 160,
+    "edges": 96,
     "terms": 4997,
     "by_type": {
       "character": 72,
@@ -259,7 +259,7 @@
         "变体"
       ],
       "section": "characters",
-      "degree": 86
+      "degree": 2
     },
     "/characters/125346.md": {
       "type": "character",
@@ -272,7 +272,7 @@
         "CV:田中理惠"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/130226.md": {
       "type": "character",
@@ -285,7 +285,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/130375.md": {
       "type": "character",
@@ -298,7 +298,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/130384.md": {
       "type": "character",
@@ -311,7 +311,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/130901.md": {
       "type": "character",
@@ -324,7 +324,7 @@
         "CV:松元菜菜海"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15560.md": {
       "type": "character",
@@ -337,7 +337,7 @@
         "CV:橘由纪"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15561.md": {
       "type": "character",
@@ -351,7 +351,7 @@
         "变体"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15562.md": {
       "type": "character",
@@ -364,7 +364,7 @@
         "CV:青池优花"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15563.md": {
       "type": "character",
@@ -377,7 +377,7 @@
         "CV:宫园美海"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15564.md": {
       "type": "character",
@@ -390,7 +390,7 @@
         "CV:木下章嗣"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15565.md": {
       "type": "character",
@@ -403,7 +403,7 @@
         "CV:国実久留子"
       ],
       "section": "characters",
-      "degree": 4
+      "degree": 3
     },
     "/characters/15566.md": {
       "type": "character",
@@ -416,7 +416,7 @@
         "CV:藤崎桃子"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15567.md": {
       "type": "character",
@@ -444,7 +444,7 @@
         "变体"
       ],
       "section": "characters",
-      "degree": 6
+      "degree": 5
     },
     "/characters/15569.md": {
       "type": "character",
@@ -457,7 +457,7 @@
         "CV:宫园美海"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 4
     },
     "/characters/15570.md": {
       "type": "character",
@@ -470,7 +470,7 @@
         "CV:鱼谷佳代"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15571.md": {
       "type": "character",
@@ -483,7 +483,7 @@
         "CV:二宫雪乃"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15572.md": {
       "type": "character",
@@ -496,7 +496,7 @@
         "CV:七绪凛"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15573.md": {
       "type": "character",
@@ -509,7 +509,7 @@
         "CV:田村由加莉"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15574.md": {
       "type": "character",
@@ -522,7 +522,7 @@
         "CV:冈本美歌"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15575.md": {
       "type": "character",
@@ -535,7 +535,7 @@
         "CV:藤崎桃子"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15576.md": {
       "type": "character",
@@ -561,7 +561,7 @@
         "CV:伊藤纱月"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15578.md": {
       "type": "character",
@@ -574,7 +574,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 15
     },
     "/characters/15579.md": {
       "type": "character",
@@ -587,7 +587,7 @@
         "CV:七绪凛"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15580.md": {
       "type": "character",
@@ -600,7 +600,7 @@
         "CV:东海林亚祐"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15581.md": {
       "type": "character",
@@ -613,7 +613,7 @@
         "CV:盛惠里花"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15582.md": {
       "type": "character",
@@ -626,7 +626,7 @@
         "CV:北崎瞳"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15583.md": {
       "type": "character",
@@ -639,7 +639,7 @@
         "CV:橘由纪"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15584.md": {
       "type": "character",
@@ -652,7 +652,7 @@
         "CV:田村由加莉"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15585.md": {
       "type": "character",
@@ -665,7 +665,7 @@
         "CV:音羽里奏"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 4
     },
     "/characters/15586.md": {
       "type": "character",
@@ -678,7 +678,7 @@
         "CV:本多真梨子"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15587.md": {
       "type": "character",
@@ -704,7 +704,7 @@
         "CV:二宫雪乃"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15589.md": {
       "type": "character",
@@ -731,7 +731,7 @@
         "CV:小清水亚美"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15591.md": {
       "type": "character",
@@ -744,7 +744,7 @@
         "CV:山本彩乃"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15592.md": {
       "type": "character",
@@ -757,7 +757,7 @@
         "CV:音羽里奏"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15593.md": {
       "type": "character",
@@ -770,7 +770,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15594.md": {
       "type": "character",
@@ -783,7 +783,7 @@
         "CV:星乃圭吾"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15595.md": {
       "type": "character",
@@ -796,7 +796,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 3
     },
     "/characters/15596.md": {
       "type": "character",
@@ -809,7 +809,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15597.md": {
       "type": "character",
@@ -822,7 +822,7 @@
         "CV:小坂帆夏"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15598.md": {
       "type": "character",
@@ -835,7 +835,7 @@
         "CV:森田绘音"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15599.md": {
       "type": "character",
@@ -848,7 +848,7 @@
         "CV:楠大典"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15600.md": {
       "type": "character",
@@ -861,7 +861,7 @@
         "CV:石川明日菜"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15601.md": {
       "type": "character",
@@ -874,7 +874,7 @@
         "CV:伊藤纱月"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15602.md": {
       "type": "character",
@@ -888,7 +888,7 @@
         "变体"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15603.md": {
       "type": "character",
@@ -901,7 +901,7 @@
         "CV:三浦小季"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/15604.md": {
       "type": "character",
@@ -914,7 +914,7 @@
         "CV:高仲祐之"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/54116.md": {
       "type": "character",
@@ -927,7 +927,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/54117.md": {
       "type": "character",
@@ -940,7 +940,7 @@
         "CV:野宫一范"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/77911.md": {
       "type": "character",
@@ -953,7 +953,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77913.md": {
       "type": "character",
@@ -966,7 +966,7 @@
         "CV:鸟羽优好"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/77914.md": {
       "type": "character",
@@ -979,7 +979,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77917.md": {
       "type": "character",
@@ -992,7 +992,7 @@
         "CV:逢沢光明"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1005,7 +1005,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1018,7 +1018,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77922.md": {
       "type": "character",
@@ -1031,7 +1031,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77923.md": {
       "type": "character",
@@ -1044,7 +1044,7 @@
         "CV:加藤慎也"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/77924.md": {
       "type": "character",
@@ -1057,7 +1057,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77925.md": {
       "type": "character",
@@ -1070,7 +1070,7 @@
         "CV:国実久留子"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77926.md": {
       "type": "character",
@@ -1083,7 +1083,7 @@
         "CV:野田卓見"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/77927.md": {
       "type": "character",
@@ -1096,7 +1096,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77928.md": {
       "type": "character",
@@ -1109,7 +1109,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/78754.md": {
       "type": "character",
@@ -1123,7 +1123,7 @@
         "变体"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/78840.md": {
       "type": "character",
@@ -1136,7 +1136,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/78841.md": {
       "type": "character",
@@ -1149,7 +1149,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
-      "degree": 2
+      "degree": 1
     },
     "/characters/94450.md": {
       "type": "character",
@@ -1162,7 +1162,7 @@
         "CV:长谷川育美"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1189,7 +1189,7 @@
         "CV:子安武人"
       ],
       "section": "characters",
-      "degree": 1
+      "degree": 0
     },
     "/community/community-appstore.md": {
       "type": "dataset",
@@ -3071,7 +3071,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1213 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1214 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -3097,7 +3097,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 544 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 545 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3136,7 +3136,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5097 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5098 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3201,7 +3201,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 8908 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 8918 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3214,7 +3214,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6076 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6096 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3227,7 +3227,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2586 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2588 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3918,397 +3918,33 @@
   "neighbors": {
     "/characters/122587.md": [
       [
-        "/characters/125346.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/130226.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/130375.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/130384.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/130901.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15560.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15561.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15562.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15563.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15564.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15565.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15566.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15567.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15568.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15569.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15570.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15571.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15572.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15573.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15574.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15575.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15576.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15577.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15578.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15579.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15580.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15581.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15582.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15583.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15584.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15585.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15586.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15588.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15589.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15590.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15591.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15592.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15593.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15594.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15595.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15596.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15597.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15598.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15599.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15600.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15601.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15602.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15603.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/15604.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/54116.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/54117.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77911.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77913.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77914.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77917.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77918.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77921.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77922.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77923.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77924.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77925.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77926.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77927.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/77928.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/78754.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/78840.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/78841.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/94450.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/94451.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/95786.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/130226.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/130375.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/130384.md",
-        "CV:山田真瑠奈"
+        "变体"
       ],
       [
         "/characters/15578.md",
         "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/15593.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77911.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77914.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77918.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77921.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77922.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77924.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77927.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/77928.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/78754.md",
-        "CV:山田真瑠奈"
-      ],
-      [
-        "/characters/94451.md",
-        "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/125346.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/characters/130226.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/130375.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/130384.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
-    "/characters/130901.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/15560.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15583.md",
         "CV:橘由纪"
@@ -4316,41 +3952,17 @@
     ],
     "/characters/15561.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15574.md",
-        "CV:冈本美歌"
-      ]
-    ],
-    "/characters/15562.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "变体"
       ]
     ],
     "/characters/15563.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15569.md",
         "CV:宫园美海"
       ]
     ],
-    "/characters/15564.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/15565.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15567.md",
         "CV:国実久留子"
@@ -4366,18 +3978,14 @@
     ],
     "/characters/15566.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15575.md",
         "CV:藤崎桃子"
       ]
     ],
     "/characters/15567.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15587.md",
+        "变体"
       ],
       [
         "/characters/15565.md",
@@ -4386,12 +3994,8 @@
     ],
     "/characters/15568.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15595.md",
-        "CV:山本亚衣"
+        "变体"
       ],
       [
         "/characters/15596.md",
@@ -4413,7 +4017,15 @@
     "/characters/15569.md": [
       [
         "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "变体"
+      ],
+      [
+        "/characters/15585.md",
+        "同篇提及"
+      ],
+      [
+        "/characters/15595.md",
+        "同篇提及"
       ],
       [
         "/characters/15563.md",
@@ -4422,19 +4034,11 @@
     ],
     "/characters/15570.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15602.md",
-        "CV:鱼谷佳代"
+        "变体"
       ]
     ],
     "/characters/15571.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15588.md",
         "CV:二宫雪乃"
@@ -4442,19 +4046,11 @@
     ],
     "/characters/15572.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15579.md",
         "CV:七绪凛"
       ]
     ],
     "/characters/15573.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15584.md",
         "CV:田村由加莉"
@@ -4462,19 +4058,11 @@
     ],
     "/characters/15574.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15561.md",
-        "CV:冈本美歌"
+        "变体"
       ]
     ],
     "/characters/15575.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15566.md",
         "CV:藤崎桃子"
@@ -4482,15 +4070,11 @@
     ],
     "/characters/15576.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15589.md",
+        "变体"
       ]
     ],
     "/characters/15577.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15601.md",
         "CV:伊藤纱月"
@@ -4498,47 +4082,73 @@
     ],
     "/characters/15578.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15593.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77911.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77914.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77918.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77921.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77922.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77924.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77927.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/77928.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/78754.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/94451.md",
+        "CV:山田真瑠奈"
       ],
       [
         "/characters/122587.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/130226.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/130375.md",
+        "CV:山田真瑠奈"
+      ],
+      [
+        "/characters/130384.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/15579.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15572.md",
         "CV:七绪凛"
       ]
     ],
-    "/characters/15580.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15581.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15582.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/15583.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15560.md",
         "CV:橘由纪"
@@ -4546,34 +4156,32 @@
     ],
     "/characters/15584.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15573.md",
         "CV:田村由加莉"
       ]
     ],
     "/characters/15585.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/94451.md",
+        "变体"
+      ],
+      [
+        "/characters/15595.md",
+        "同篇提及"
+      ],
+      [
+        "/characters/15569.md",
+        "同篇提及"
       ],
       [
         "/characters/15592.md",
         "CV:音羽里奏"
       ]
     ],
-    "/characters/15586.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/15587.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15567.md",
+        "变体"
       ],
       [
         "/characters/15565.md",
@@ -4582,37 +4190,17 @@
     ],
     "/characters/15588.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15571.md",
         "CV:二宫雪乃"
       ]
     ],
     "/characters/15589.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15590.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15591.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15576.md",
+        "变体"
       ]
     ],
     "/characters/15592.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15585.md",
         "CV:音羽里奏"
@@ -4620,69 +4208,31 @@
     ],
     "/characters/15593.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/15594.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/characters/15595.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15568.md",
+        "变体"
       ],
       [
-        "/characters/15568.md",
-        "CV:山本亚衣"
+        "/characters/15585.md",
+        "同篇提及"
+      ],
+      [
+        "/characters/15569.md",
+        "同篇提及"
       ]
     ],
     "/characters/15596.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15568.md",
         "CV:山本亚衣"
       ]
     ],
-    "/characters/15597.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15598.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15599.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15600.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/15601.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15577.md",
         "CV:伊藤纱月"
@@ -4690,171 +4240,77 @@
     ],
     "/characters/15602.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15570.md",
-        "CV:鱼谷佳代"
-      ]
-    ],
-    "/characters/15603.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
-    "/characters/15604.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "变体"
       ]
     ],
     "/characters/54116.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15568.md",
         "CV:山本亚衣"
       ]
     ],
-    "/characters/54117.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/77911.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/77913.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/characters/77914.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/77917.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/characters/77918.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/77921.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/77922.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/77923.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/characters/77924.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/77925.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15565.md",
         "CV:国実久留子"
       ]
     ],
-    "/characters/77926.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/77927.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/77928.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/78754.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
       ]
     ],
     "/characters/78840.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
       [
         "/characters/15568.md",
         "CV:山本亚衣"
@@ -4862,598 +4318,582 @@
     ],
     "/characters/78841.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ],
-      [
         "/characters/15568.md",
         "CV:山本亚衣"
       ]
     ],
-    "/characters/94450.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
-      ]
-    ],
     "/characters/94451.md": [
       [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
+        "/characters/15585.md",
+        "变体"
       ],
       [
-        "/characters/122587.md",
+        "/characters/15578.md",
         "CV:山田真瑠奈"
-      ]
-    ],
-    "/characters/95786.md": [
-      [
-        "/characters/122587.md",
-        "画师:巴拉巴拉"
       ]
     ],
     "/community/community-appstore.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/appstore.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-bilibili.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/bilibili.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-discord.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/discord.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-google-play.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/google_play.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-index.md": [
       [
         "/community/community-appstore.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-bilibili.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-discord.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-google-play.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-official.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-pixiv.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-reddit.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-ruliweb.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-steam-discussion.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-steam.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-stopgame.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-taptap-review.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-taptap.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-weibo.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-weixin.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-youtube-comments.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/community/community-youtube.md",
-        "aggregated_in"
+        "聚合于"
       ]
     ],
     "/community/community-official.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/official.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-pixiv.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/pixiv.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-reddit.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/reddit.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-ruliweb.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/ruliweb.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-steam-discussion.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/steam_discussion.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-steam.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/steam.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-stopgame.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/stopgame.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-taptap-review.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/taptap_review.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-taptap.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/taptap.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-weibo.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/weibo.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-weixin.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/weixin.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-youtube-comments.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/youtube_comments.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/community/community-youtube.md": [
       [
         "/community/community-index.md",
-        "aggregated_in"
+        "聚合于"
       ],
       [
         "/sources/youtube.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ],
     "/news-output/news-output-appstore.md": [
       [
         "/sources/appstore.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-bilibili.md": [
       [
         "/sources/bilibili.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-discord.md": [
       [
         "/sources/discord.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-google-play.md": [
       [
         "/sources/google_play.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-official.md": [
       [
         "/sources/official.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-pixiv.md": [
       [
         "/sources/pixiv.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-reddit.md": [
       [
         "/sources/reddit.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-ruliweb.md": [
       [
         "/sources/ruliweb.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-steam-discussion.md": [
       [
         "/sources/steam_discussion.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-steam.md": [
       [
         "/sources/steam.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-stopgame.md": [
       [
         "/sources/stopgame.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-taptap-review.md": [
       [
         "/sources/taptap_review.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-taptap.md": [
       [
         "/sources/taptap.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-weibo.md": [
       [
         "/sources/weibo.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-weixin.md": [
       [
         "/sources/weixin.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/news-output/news-output-youtube.md": [
       [
         "/sources/youtube.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/projects/entry-claude-md.md": [
       [
         "/projects/entry-readme.md",
-        "dual_entry"
+        "双入口"
       ],
       [
         "/projects/project-bpt-agent-sdk.md",
-        "entry_to_context"
+        "入口→上下文"
       ],
       [
         "/projects/project-game.md",
-        "entry_to_context"
+        "入口→上下文"
       ],
       [
         "/projects/project-news.md",
-        "entry_to_context"
+        "入口→上下文"
       ],
       [
         "/projects/project-site.md",
-        "entry_to_context"
+        "入口→上下文"
       ],
       [
         "/projects/project-wiki.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/projects/entry-readme.md": [
       [
         "/projects/entry-claude-md.md",
-        "dual_entry"
+        "双入口"
       ]
     ],
     "/projects/project-bpt-agent-sdk.md": [
       [
         "/projects/entry-claude-md.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/projects/project-game.md": [
       [
         "/projects/entry-claude-md.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/projects/project-news.md": [
       [
         "/projects/entry-claude-md.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/projects/project-site.md": [
       [
         "/projects/entry-claude-md.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/projects/project-wiki.md": [
       [
         "/projects/entry-claude-md.md",
-        "entry_to_context"
+        "入口→上下文"
       ]
     ],
     "/sources/appstore.md": [
       [
         "/community/community-appstore.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-appstore.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/bilibili.md": [
       [
         "/community/community-bilibili.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-bilibili.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/discord.md": [
       [
         "/community/community-discord.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-discord.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/google_play.md": [
       [
         "/community/community-google-play.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-google-play.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/official.md": [
       [
         "/community/community-official.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-official.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/pixiv.md": [
       [
         "/community/community-pixiv.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-pixiv.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/reddit.md": [
       [
         "/community/community-reddit.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-reddit.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/ruliweb.md": [
       [
         "/community/community-ruliweb.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-ruliweb.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/steam.md": [
       [
         "/community/community-steam.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-steam.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/steam_discussion.md": [
       [
         "/community/community-steam-discussion.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-steam-discussion.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/stopgame.md": [
       [
         "/community/community-stopgame.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-stopgame.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/taptap.md": [
       [
         "/community/community-taptap.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-taptap.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/taptap_review.md": [
       [
         "/community/community-taptap-review.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-taptap-review.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/weibo.md": [
       [
         "/community/community-weibo.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-weibo.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/weixin.md": [
       [
         "/community/community-weixin.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-weixin.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/youtube.md": [
       [
         "/community/community-youtube.md",
-        "same_platform_lens"
+        "同平台"
       ],
       [
         "/news-output/news-output-youtube.md",
-        "samples_from"
+        "抽样自"
       ]
     ],
     "/sources/youtube_comments.md": [
       [
         "/community/community-youtube-comments.md",
-        "same_platform_lens"
+        "同平台"
       ]
     ]
   },
