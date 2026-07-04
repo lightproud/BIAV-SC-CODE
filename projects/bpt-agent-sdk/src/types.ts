@@ -786,6 +786,11 @@ export type Options = {
   enableFileCheckpointing?: boolean;
   /** Defer MCP tool schemas behind a ToolSearch tool. undefined -> auto. */
   toolSearch?: boolean;
+  /** BPT experiment: harness system-prompt variant for the `claude_code`
+   *  preset / default path. 'v1' (default) = the terse original; 'v2' = a
+   *  richer clean-room prompt (public prompt-engineering practice). A/B knob
+   *  for measuring quality/cost/cache before promoting a new default. */
+  harnessPromptVariant?: 'v1' | 'v2';
 };
 
 // ---------------------------------------------------------------------------

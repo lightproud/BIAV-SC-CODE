@@ -41,6 +41,11 @@ on:
         description: 'Repeat each benchmark task N times and report the median (denoises single-sample outliers)'
         required: false
         default: '3'
+      prompt_ab:
+        description: 'A/B this SDK''s harness prompt v1 vs v2 (cheap probe: cache/cost/turns; no official arm)'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -195,4 +200,45 @@ jobs:
         with:
           name: vs-official-report
           path: projects/bpt-agent-sdk/ab-report-*.json
+          if-no-files-found: ignore
+
+  prompt-ab:
+    # Cheap probe: A/B this SDK's OWN harness prompt v1 vs v2 (no official arm).
+    # Answers whether the richer v2 prompt crosses Haiku's cache floor and what
+    # it does to net cost / turns. Dispatch with prompt_ab=true. Default repeat
+    # is honored (1 = fastest signal). Both variants run back-to-back in one
+    # job so cache/network conditions are shared.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.prompt_ab == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Prompt A/B — v1 (current default)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v1 "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v1.json
+      - name: Prompt A/B — v2 (candidate)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v2 "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v2.json
+      - name: Compare v1 vs v2
+        run: node tests/integration/ab-benchmark.mjs --compare ab-report-v1.json ab-report-v2.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prompt-ab-report
+          path: projects/bpt-agent-sdk/ab-report-v*.json
           if-no-files-found: ignore

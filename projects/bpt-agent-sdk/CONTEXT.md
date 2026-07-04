@@ -115,6 +115,16 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 **稳定前缀**（工具表+静态开场白，逐字节稳定）+ **易变 cwd 尾块**，缓存断点落稳定块（`cacheSystemBoundary:'first'`
 新开关，默认 `'last'` 保持契约）、cwd 尾块骑在断点后不污染缓存前缀 → 同账号跨 query 复用「工具+静态系统」。
 仅缓存开时拆块（关时仍发单串保 drop-in）。693 单测全绿（+2）。真机命中率提升由 benchmark 复测确认。
+**复测结论（run #40）**：短任务缓存**仍 0%**——真因不是 cwd（那是正确卫生、已修）而是**精简前缀够不着 Haiku 2048 门槛**
+（逐任务写/读原始数：短任务写0读0、长任务写读俱全）。稳定前缀优化在 Haiku 短任务非绑定约束、未显效，但在 Sonnet（门槛 1024）
+/ 长会话仍有效、无害留门。**净成本本 SDK 仍便宜 ~24%**（$0.121 vs $0.158）、速度 2.55× 快、正确性 9/9 平——0% 是精简的影子非病。
+
+**v2 净室提示词 A/B（守密人 2026-07-04「学公开材料造自己提示词 + 顺便测缓存」裁定，探针进行中）**：
+写 `defaultHarnessStableV2`（公开 prompt-engineering 实践驱动：规划/先取上下文/并行只读/改后验证/接地诚实/收尾/安全，
+因更能干而变大非灌水，~489 vs v1 ~229 est tok）；开关 `options.harnessPromptVariant:'v1'|'v2'`（默认 v1、不动生产），
+`prompts.ts` variant 路由 + `query.ts` 接线。benchmark 加 `--variant`、workflow 加 `prompt_ab` job（v1 vs v2 背靠背、无官方臂、
+repeat=1 便宜探针 ~$0.08）。验收标准=**净值**：v2 须成本持平/更省 + 质量/轮数改善才提拔，否则退回 v1。699 单测全绿（+6）。
+硬红线不变：只学公开材料、绝不读泄漏官方提示词文本。
 
 进度以 `memory/project-status.md` 为唯一权威。
 
