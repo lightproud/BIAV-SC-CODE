@@ -127,9 +127,13 @@ async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<string 
   if (host === 'localhost' || host.endsWith('.localhost')) {
     return `blocked host "${hostname}" (localhost)`;
   }
-  const literalFamily = isIP(host);
+  // URL.hostname keeps the surrounding brackets on an IPv6 literal
+  // (e.g. "[2606:4700:4700::1111]"); strip them so isIP()/lookup() see the
+  // bare address and the IPv6 classifier is actually engaged.
+  const bare = host.startsWith('[') && host.endsWith(']') ? host.slice(1, -1) : host;
+  const literalFamily = isIP(bare);
   if (literalFamily !== 0) {
-    if (addressBlocked(host, literalFamily)) {
+    if (addressBlocked(bare, literalFamily)) {
       return `blocked IP literal "${hostname}" (private/loopback/link-local range)`;
     }
     return null;
@@ -137,7 +141,7 @@ async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<string 
   // Resolve and reject if ANY resolved address is in a blocked range.
   let records: Array<{ address: string; family: number }>;
   try {
-    records = await lookup(host, { all: true });
+    records = await lookup(bare, { all: true });
   } catch (e) {
     if (isAbortError(e)) throw e;
     return `could not resolve host "${hostname}": ${(e as Error).message}`;
@@ -175,6 +179,50 @@ function htmlToText(html: string): string {
   const withoutTags = withoutBlocks.replace(/<[^>]+>/g, ' ');
   const decoded = decodeEntities(withoutTags);
   return decoded.replace(/[ \t\r\f\v]+/g, ' ').replace(/\s*\n\s*/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+/**
+ * Read a response body into a Buffer with a hard byte cap, streaming chunks so
+ * an oversized payload is never fully buffered in memory. Aborts the read once
+ * `cap` bytes have accumulated. `overflow` is true when the source exceeded the
+ * cap (so the caller can mark the output truncated).
+ */
+async function readCappedBody(
+  response: Response,
+  cap: number,
+): Promise<{ buf: Buffer; overflow: boolean }> {
+  const body = response.body;
+  if (!body) {
+    // No readable stream (some fetch impls / mocks): fall back but still cap.
+    const full = Buffer.from(await response.arrayBuffer());
+    return { buf: full.subarray(0, cap), overflow: full.length > cap };
+  }
+  const reader = body.getReader();
+  const chunks: Buffer[] = [];
+  let total = 0;
+  let overflow = false;
+  try {
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value || value.byteLength === 0) continue;
+      const remaining = cap - total;
+      if (value.byteLength >= remaining) {
+        if (remaining > 0) chunks.push(Buffer.from(value.subarray(0, remaining)));
+        overflow = true;
+        break;
+      }
+      chunks.push(Buffer.from(value));
+      total += value.byteLength;
+    }
+  } finally {
+    try {
+      await reader.cancel();
+    } catch {
+      // Stream already closed / errored; nothing to release.
+    }
+  }
+  return { buf: Buffer.concat(chunks), overflow };
 }
 
 function isTextualContentType(contentType: string): boolean {
@@ -317,15 +365,26 @@ export const webFetchTool: BuiltinTool = {
         );
       }
 
-      const buf = Buffer.from(await response.arrayBuffer());
-      const capped = buf.subarray(0, MAX_BODY_BYTES);
-      const bodyText = capped.toString('utf8');
+      // Reject early on a declared Content-Length over the cap, before reading
+      // a single body byte (content-type is attacker-controlled, so the textual
+      // gate above is not a size guard).
+      const declaredLen = Number(response.headers.get('content-length'));
+      if (Number.isFinite(declaredLen) && declaredLen > MAX_BODY_BYTES) {
+        return errorResult(
+          `WebFetch failed: response body too large (Content-Length ${declaredLen} bytes exceeds ${MAX_BODY_BYTES}-byte cap).`,
+        );
+      }
+
+      // Stream with a running byte cap so a body that lies about (or omits) its
+      // length can never buffer more than MAX_BODY_BYTES into memory.
+      const { buf, overflow } = await readCappedBody(response, MAX_BODY_BYTES);
+      const bodyText = buf.toString('utf8');
 
       const isHtml =
         contentType.toLowerCase().includes('html') || /^\s*<(?:!doctype|html)\b/i.test(bodyText);
       let text = isHtml ? htmlToText(bodyText) : bodyText;
 
-      let truncated = buf.length > MAX_BODY_BYTES;
+      let truncated = overflow;
       if (text.length > MAX_OUTPUT_CHARS) {
         text = text.slice(0, MAX_OUTPUT_CHARS);
         truncated = true;

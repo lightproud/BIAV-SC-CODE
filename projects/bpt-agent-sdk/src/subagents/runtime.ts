@@ -56,6 +56,7 @@ import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
 import {
+  DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
   resolveAgentDefinition,
   resolveModelAlias,
@@ -514,7 +515,15 @@ export function createSubagentRuntime(
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
         systemPrompt: agentDef.prompt,
-        maxTurns: agentDef.maxTurns,
+        // Inherit a turn/cost ceiling so a delegated child cannot loop tool
+        // calls unbounded (hanging the parent when foreground) or spend past the
+        // parent's budget: maxTurns falls back agentDef -> parent -> a sane
+        // default; maxBudgetUsd propagates from the live parent EngineConfig.
+        maxTurns:
+          agentDef.maxTurns ??
+          engineConfig.maxTurns ??
+          DEFAULT_SUBAGENT_MAX_TURNS,
+        maxBudgetUsd: engineConfig.maxBudgetUsd,
         thinking: engineConfig.thinking,
         maxThinkingTokens: engineConfig.maxThinkingTokens,
         promptCaching: engineConfig.promptCaching,

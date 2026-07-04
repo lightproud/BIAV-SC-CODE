@@ -7,9 +7,13 @@
  * as such, in the same spirit as the estimate-only pricing table.
  *
  * Basis: Anthropic's public rule-of-thumb of ~4 characters per token for
- * English text. CJK / code / base64 drift from this; the compaction layer
- * absorbs the drift with a conservative trigger ratio and a reserved-output
- * margin (see engine/compaction.ts).
+ * English text. CJK scripts (Han / Hiragana / Katakana / Hangul) tokenize far
+ * denser — roughly ~1 token per codepoint — so a flat 4-chars/token badly
+ * undercounts Chinese/Japanese/Korean text (the primary workload of this
+ * project). The estimator is therefore language-aware: it charges CJK
+ * codepoints ~1 token each and other characters ~len/4. Remaining code /
+ * base64 drift is absorbed by the compaction layer's conservative trigger
+ * ratio and reserved-output margin (see engine/compaction.ts).
  */
 
 import type {
@@ -18,8 +22,27 @@ import type {
   ContentBlockParam,
 } from '../types.js';
 
-/** Rough characters-per-token for English text (Anthropic rule-of-thumb). */
+/** Rough characters-per-token for non-CJK (Latin/code) text. */
 const CHARS_PER_TOKEN = 4;
+
+/**
+ * Whether a Unicode codepoint belongs to a dense CJK script that tokenizes at
+ * roughly ~1 token per codepoint (rather than ~4 chars/token). Covers Han
+ * (incl. extensions + compatibility), Hiragana, Katakana, and Hangul.
+ */
+function isCjkCodePoint(cp: number): boolean {
+  return (
+    (cp >= 0x3040 && cp <= 0x30ff) || // Hiragana + Katakana
+    (cp >= 0x3400 && cp <= 0x4dbf) || // CJK Unified Ideographs Ext A
+    (cp >= 0x4e00 && cp <= 0x9fff) || // CJK Unified Ideographs
+    (cp >= 0xf900 && cp <= 0xfaff) || // CJK Compatibility Ideographs
+    (cp >= 0xff66 && cp <= 0xff9d) || // Halfwidth Katakana
+    (cp >= 0x1100 && cp <= 0x11ff) || // Hangul Jamo
+    (cp >= 0x3130 && cp <= 0x318f) || // Hangul Compatibility Jamo
+    (cp >= 0xac00 && cp <= 0xd7a3) || // Hangul Syllables
+    (cp >= 0x20000 && cp <= 0x3ffff) // CJK Unified Ideographs Ext B+ (astral)
+  );
+}
 /** Structural framing charged per content block (type tag, delimiters). */
 const PER_BLOCK_OVERHEAD_TOKENS = 3;
 /** Structural framing charged per message (role + message envelope). */
@@ -30,9 +53,25 @@ const PER_MESSAGE_OVERHEAD_TOKENS = 8;
  */
 const IMAGE_TOKENS = 1600;
 
-/** Estimate tokens for a raw text string (ceil of chars / 4). */
+/**
+ * Estimate tokens for a raw text string. Language-aware: CJK codepoints are
+ * charged ~1 token each; all other characters are charged ~len/4. Pure and
+ * allocation-free (single codepoint scan).
+ */
 export function estimateTextTokens(text: string): number {
-  return Math.ceil(text.length / CHARS_PER_TOKEN);
+  let cjk = 0;
+  let other = 0;
+  for (const ch of text) {
+    const cp = ch.codePointAt(0);
+    if (cp !== undefined && isCjkCodePoint(cp)) {
+      cjk += 1;
+    } else {
+      // Count UTF-16 code units for the non-CJK bucket (matches the historical
+      // string.length basis for Latin text).
+      other += ch.length;
+    }
+  }
+  return cjk + Math.ceil(other / CHARS_PER_TOKEN);
 }
 
 /** Estimate tokens for a message's content (string or block array). */

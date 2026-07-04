@@ -314,7 +314,20 @@ export class HttpMcpConnection {
         if (msg.method === 'elicitation/create' && this.elicitation) {
           void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
             .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
-            .catch(() => this.post({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }, null));
+            .catch(() =>
+              this.post({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }, null),
+            )
+            // The fallback decline POST can ITSELF reject (e.g. the connection
+            // is already closing -> post() throws AbortError). Without this
+            // terminal catch that second rejection is unhandled and can crash
+            // the process under a strict unhandledRejection policy.
+            .catch((err: unknown) => {
+              this.debug(
+                `[mcp:${this.label}] elicitation reply failed: ${
+                  err instanceof Error ? err.message : String(err)
+                }`,
+              );
+            });
           return undefined;
         }
         void this.post(

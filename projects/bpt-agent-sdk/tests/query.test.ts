@@ -19,7 +19,9 @@ import {
   query,
 } from '../src/index.js';
 import type {
+  APIMessageParam,
   Options,
+  PermissionCheckResult,
   Query,
   SDKAssistantMessage,
   SDKMessage,
@@ -27,14 +29,27 @@ import type {
   SDKResultMessage,
   SDKSystemMessage,
   SDKUserMessage,
+  TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlockParam,
 } from '../src/types.js';
+import type {
+  BuiltinTool,
+  EngineConfig,
+  EngineDeps,
+  HookRunner,
+  McpRegistry,
+  McpToolEntry,
+  PermissionGate,
+  ToolContext,
+} from '../src/internal/contracts.js';
+import { runAgentLoop } from '../src/engine/loop.js';
 import {
+  MockTransport,
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
-import { HANG_STREAM, makeSSEFetch } from './helpers/sse-fetch.js';
+import { HANG_STREAM, encodeSSEFrame, makeSSEFetch } from './helpers/sse-fetch.js';
 import type { SSEFetchStub } from './helpers/sse-fetch.js';
 
 let sessionDir: string;
@@ -965,5 +980,436 @@ describe('query() e2e - confirmed-finding regressions', () => {
       fetchStub.requests[0]!.body.tools as Array<{ name: string }>
     ).map((t) => t.name);
     expect(toolNames).toContain('Bash');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// v0.2 CONFIRMED-finding regressions (loop.ts / query.ts)
+// ---------------------------------------------------------------------------
+
+/** Minimal allow-everything permission gate for the engine-level harness. */
+function allowGate(): PermissionGate {
+  return {
+    async check(_toolName, input): Promise<PermissionCheckResult> {
+      return { decision: 'allow', updatedInput: input };
+    },
+    setMode(): void {},
+    getMode() {
+      return 'default';
+    },
+    applyUpdates(): void {},
+    denials() {
+      return [];
+    },
+  };
+}
+
+/** No-hooks hook runner for the engine-level harness. */
+function noHooks(): HookRunner {
+  return {
+    hasHooks(): boolean {
+      return false;
+    },
+    async run() {
+      return { continue: true, systemMessages: [], additionalContext: [] };
+    },
+  };
+}
+
+/** Empty MCP registry for the engine-level harness. */
+function emptyMcp(): McpRegistry {
+  return {
+    async connectAll(): Promise<void> {},
+    statuses() {
+      return [];
+    },
+    allTools() {
+      return [];
+    },
+    has() {
+      return false;
+    },
+    async call() {
+      return { content: [{ type: 'text', text: '' }], isError: false };
+    },
+    async reconnect(): Promise<void> {},
+    setEnabled(): void {},
+    async setServers() {
+      return { servers: [] };
+    },
+    async closeAll(): Promise<void> {},
+  };
+}
+
+describe('runAgentLoop - v0.2 confirmed-finding regressions (engine)', () => {
+  function engineToolContext(): ToolContext {
+    return {
+      cwd,
+      additionalDirectories: [],
+      env: {},
+      signal: new AbortController().signal,
+      debug: () => {},
+    };
+  }
+  function engineConfig(extra: Partial<EngineConfig> = {}): EngineConfig {
+    return {
+      model: 'claude-test-1',
+      maxOutputTokens: 8192,
+      systemPrompt: '',
+      includePartialMessages: false,
+      sessionId: 'sess-engine',
+      cwd,
+      ...extra,
+    };
+  }
+
+  it('drains a completed background subagent result at natural end (#4)', async () => {
+    const transport = new MockTransport([
+      textReplyEvents('first'),
+      textReplyEvents('second'),
+    ]);
+    const bgBlock: TextBlockParam = { type: 'text', text: 'BG_DONE' };
+    let drainCalls = 0;
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const requestView = { messages: [...history] };
+    const deps: EngineDeps = {
+      transport,
+      builtinTools: new Map(),
+      mcp: emptyMcp(),
+      permissions: allowGate(),
+      hooks: noHooks(),
+      toolContext: engineToolContext(),
+      debug: () => {},
+      requestView,
+      drainSubagentResults: () => {
+        drainCalls += 1;
+        return drainCalls === 1 ? [bgBlock] : [];
+      },
+    };
+
+    const msgs: SDKMessage[] = [];
+    for await (const m of runAgentLoop(history, deps, engineConfig())) msgs.push(m);
+
+    // Fix: turn-1 natural end drains the pending note, injects it as a user
+    // turn and continues, so a SECOND assistant turn runs. Pre-fix the note was
+    // dropped and the run ended after turn 1 (a single request, result 'first').
+    expect(transport.requests).toHaveLength(2);
+    const result = msgs.filter((m): m is SDKResultMessage => m.type === 'result').at(-1)!;
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('second');
+    // The drained note was surfaced as a user turn the model actually saw.
+    expect(
+      requestView.messages.some(
+        (m) =>
+          m.role === 'user' &&
+          Array.isArray(m.content) &&
+          m.content.some((b) => b.type === 'text' && b.text === 'BG_DONE'),
+      ),
+    ).toBe(true);
+  });
+
+  it('recomputes tool-def overhead per turn so mid-run tool growth trips compaction (#11)', async () => {
+    // An MCP registry whose tool set GROWS after a tool runs, mimicking a
+    // tool-search / lazy MCP load that surfaces a large schema mid-run.
+    class GrowingMcp implements McpRegistry {
+      loaded = false;
+      private readonly big: McpToolEntry = {
+        qualifiedName: 'mcp__x__big',
+        serverName: 'x',
+        toolName: 'big',
+        description: 'D'.repeat(6000),
+        inputSchema: { type: 'object', properties: {} },
+      };
+      async connectAll(): Promise<void> {}
+      statuses() {
+        return [];
+      }
+      allTools(): McpToolEntry[] {
+        return this.loaded ? [this.big] : [];
+      }
+      has(): boolean {
+        return false;
+      }
+      async call() {
+        return { content: [{ type: 'text' as const, text: '' }], isError: false };
+      }
+      async reconnect(): Promise<void> {}
+      setEnabled(): void {}
+      async setServers() {
+        return { servers: [] };
+      }
+      async closeAll(): Promise<void> {}
+    }
+    const mcp = new GrowingMcp();
+    const loadTool: BuiltinTool = {
+      name: 'Load',
+      description: 'load',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: false,
+      async execute() {
+        mcp.loaded = true; // schema becomes visible from the next turn on
+        return { content: 'loaded' };
+      },
+    };
+    const transport = new MockTransport([
+      toolUseReplyEvents('Load', {}),
+      textReplyEvents('done'),
+    ]);
+    const debugLines: string[] = [];
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const deps: EngineDeps = {
+      transport,
+      builtinTools: new Map([['Load', loadTool]]),
+      mcp,
+      permissions: allowGate(),
+      hooks: noHooks(),
+      toolContext: engineToolContext(),
+      debug: (m) => debugLines.push(m),
+      requestView: { messages: [...history] },
+    };
+    // Tight window so the freshly loaded ~1.5k-token schema (but NOT the empty
+    // turn-0 tool set) pushes the estimate over the auto-compaction trigger.
+    const config = engineConfig({
+      maxOutputTokens: 100,
+      compaction: {
+        enabled: true,
+        autoThresholdRatio: 0.85,
+        keepRatio: 0.3,
+        minRecentTurns: 2,
+        useApiSummary: false,
+        recognizeCommand: false,
+        contextWindowTokens: 1000,
+      },
+    });
+
+    for await (const _m of runAgentLoop(history, deps, config)) {
+      // drain
+    }
+
+    // Fix: turn-2's compaction check re-counts the loaded schema, fires the
+    // trigger, and performCompaction (with only one genuine user turn) logs
+    // 'nothing safe to fold'. Pre-fix the stale turn-0 overhead (0 tokens) never
+    // trips the trigger, so that log never appears.
+    expect(debugLines.some((l) => l.includes('nothing safe to fold'))).toBe(true);
+    expect(transport.requests).toHaveLength(2);
+  });
+});
+
+describe('query() e2e - v0.2 confirmed-finding regressions (query)', () => {
+  it('setMaxThinkingTokens mid-turn applies to the next sub-turn request (#12)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        toolUseReplyEvents('Bash', { command: 'echo hi' }),
+        textReplyEvents('done'),
+      ]),
+    );
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({
+        permissionMode: 'bypassPermissions',
+        thinking: { type: 'enabled' },
+        maxThinkingTokens: 5000,
+      }),
+    });
+    let firstAssistantSeen = false;
+    for await (const m of q) {
+      if (m.type === 'assistant' && !firstAssistantSeen) {
+        firstAssistantSeen = true;
+        // Mutate the live thinking budget between the two sub-turns of THIS run.
+        await q.setMaxThinkingTokens(2000);
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    // Fix: the thinking param is recomputed per turn, so sub-turn 2 carries the
+    // new budget. Pre-fix it was snapshotted once and both requests read 5000.
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 5000,
+    });
+    expect(fetchStub.requests[1]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 2000,
+    });
+  });
+
+  it('measures ttft from the delivered fallback attempt, not the discarded one (#13)', async () => {
+    const msgStart = (model: string): object => ({
+      type: 'message_start',
+      message: {
+        id: 'msg_x',
+        type: 'message',
+        role: 'assistant',
+        model,
+        content: [],
+        stop_reason: null,
+        stop_sequence: null,
+        usage: {
+          input_tokens: 25,
+          output_tokens: 0,
+          cache_creation_input_tokens: 0,
+          cache_read_input_tokens: 0,
+        },
+      },
+    });
+    let call = 0;
+    const fetchImpl = async (
+      _input: unknown,
+      _init?: RequestInit,
+    ): Promise<Response> => {
+      const idx = call;
+      call += 1;
+      if (idx === 0) {
+        // Attempt 1: emit content_block_start IMMEDIATELY (this is what latches
+        // ttft under the bug), then a mid-stream overloaded_error -> 529 -> the
+        // loop retries the turn on the fallback model.
+        const events: object[] = [
+          msgStart('claude-sonnet-4-5'),
+          { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } },
+          { type: 'error', error: { type: 'overloaded_error', message: 'overloaded' } },
+        ];
+        const stream = new ReadableStream<Uint8Array>({
+          start(c) {
+            for (const e of events) c.enqueue(encodeSSEFrame(e));
+            c.close();
+          },
+        });
+        return new Response(stream, {
+          status: 200,
+          headers: { 'content-type': 'text/event-stream' },
+        });
+      }
+      // Attempt 2 (fallback, delivered): a real ~80ms gap BEFORE the first
+      // content token, so ttft anchored to THIS attempt is measurably > 0.
+      const stream = new ReadableStream<Uint8Array>({
+        async start(c) {
+          c.enqueue(encodeSSEFrame(msgStart('claude-opus-4-8')));
+          await delay(80);
+          c.enqueue(
+            encodeSSEFrame({
+              type: 'content_block_start',
+              index: 0,
+              content_block: { type: 'text', text: '' },
+            }),
+          );
+          c.enqueue(
+            encodeSSEFrame({
+              type: 'content_block_delta',
+              index: 0,
+              delta: { type: 'text_delta', text: 'recovered' },
+            }),
+          );
+          c.enqueue(encodeSSEFrame({ type: 'content_block_stop', index: 0 }));
+          c.enqueue(
+            encodeSSEFrame({
+              type: 'message_delta',
+              delta: { stop_reason: 'end_turn', stop_sequence: null },
+              usage: { output_tokens: 5 },
+            }),
+          );
+          c.enqueue(encodeSSEFrame({ type: 'message_stop' }));
+          c.close();
+        },
+      });
+      return new Response(stream, {
+        status: 200,
+        headers: { 'content-type': 'text/event-stream' },
+      });
+    };
+    vi.stubGlobal('fetch', vi.fn(fetchImpl));
+
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ fallbackModel: 'claude-opus-4-8' }),
+    });
+    const messages = await collect(q);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('recovered');
+    // Fix: ttft reflects the fallback attempt's ~80ms time-to-first-token.
+    // Pre-fix it stayed anchored to the discarded first attempt (~0ms).
+    expect(result.ttft_stream_ms).toBeGreaterThan(40);
+  });
+
+  it('tears down a background subagent on NORMAL query completion (#14)', async () => {
+    let resolveStop!: () => void;
+    const stopFired = new Promise<void>((r) => {
+      resolveStop = r;
+    });
+
+    let parentCall = 0;
+    const fetchImpl = async (
+      _input: unknown,
+      init?: RequestInit,
+    ): Promise<Response> => {
+      const body = JSON.parse(String(init?.body)) as { system?: unknown };
+      const isChild = String(body.system ?? '').includes('WORKER_SYS_PROMPT');
+      if (isChild) {
+        // The child stream never yields and never closes: it hangs until its
+        // controller is aborted, which only happens if the parent tears it down.
+        const stream = new ReadableStream<Uint8Array>({ start() {} });
+        return new Response(stream, {
+          status: 200,
+          headers: { 'content-type': 'text/event-stream' },
+        });
+      }
+      const idx = parentCall;
+      parentCall += 1;
+      const events =
+        idx === 0
+          ? toolUseReplyEvents('Agent', {
+              subagent_type: 'worker',
+              prompt: 'do work',
+              description: 'bg',
+              run_in_background: true,
+            })
+          : textReplyEvents('parent done');
+      const stream = new ReadableStream<Uint8Array>({
+        start(c) {
+          for (const e of events) c.enqueue(encodeSSEFrame(e));
+          c.close();
+        },
+      });
+      return new Response(stream, {
+        status: 200,
+        headers: { 'content-type': 'text/event-stream' },
+      });
+    };
+    vi.stubGlobal('fetch', vi.fn(fetchImpl));
+
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({
+        permissionMode: 'bypassPermissions',
+        agents: { worker: { description: 'w', prompt: 'WORKER_SYS_PROMPT' } },
+        hooks: {
+          SubagentStop: [
+            {
+              hooks: [
+                async () => {
+                  resolveStop();
+                  return {};
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    });
+
+    // The parent finishes normally (natural end on turn 2); its generator's
+    // finally must abort the still-hanging background child so its SubagentStop
+    // fires. Pre-fix the child leaked and SubagentStop never ran.
+    const messages = await collect(q);
+    expect(lastResult(messages).subtype).toBe('success');
+
+    await Promise.race([
+      stopFired,
+      delay(2000).then(() => {
+        throw new Error(
+          'SubagentStop never fired: background child leaked past normal completion (#14)',
+        );
+      }),
+    ]);
   });
 });

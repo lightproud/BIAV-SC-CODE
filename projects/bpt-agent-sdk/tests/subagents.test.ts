@@ -453,6 +453,74 @@ describe('subagent runtime — foreground', () => {
   });
 });
 
+describe('subagent runtime — inherited turn/budget caps (finding #3)', () => {
+  it('propagates the parent maxBudgetUsd so a delegated child cannot overspend', async () => {
+    const readInputs: Array<Record<string, unknown>> = [];
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', readInputs, { readOnly: true })],
+    ]);
+    const h = makeRuntime({
+      // Child turn 1 calls Read (billable); if the budget cap were NOT inherited
+      // it would continue to turn 2 and finish successfully with "done".
+      scripts: [
+        toolUseReplyEvents('Read', { file_path: '/a' }, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: base,
+      // A tiny parent budget: the first turn's cost already exceeds it.
+      engineConfig: { maxBudgetUsd: 1e-9 },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    // Budget gate fired after turn 1 -> child terminated early, turn 2 never ran.
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxBudgetUsd');
+    expect(h.transport.requests).toHaveLength(1);
+  });
+
+  it('caps an unspecified agent at the default maxTurns so a looping child cannot hang the parent', async () => {
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', [], { readOnly: true })],
+    ]);
+    // Child loops: every turn calls Read again. Provide exactly the default cap
+    // (20) worth of tool_use turns. With the inherited default the loop stops at
+    // turn 20 with error_max_turns; without it, the loop would demand a 21st
+    // stream() call and MockTransport would throw.
+    const scripts = Array.from({ length: 20 }, () =>
+      toolUseReplyEvents('Read', { file_path: '/loop' }, { model: 'claude-sonnet-4-5' }),
+    );
+    const h = makeRuntime({
+      scripts,
+      baseBuiltins: base,
+      // Neither agentDef.maxTurns nor parent maxTurns set -> default applies.
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxTurns');
+    // Exactly the default number of stream() calls were made (no 21st).
+    expect(h.transport.requests).toHaveLength(20);
+  });
+
+  it('lets an explicit agentDef.maxTurns override the inherited default', async () => {
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', [], { readOnly: true })],
+    ]);
+    const scripts = Array.from({ length: 2 }, () =>
+      toolUseReplyEvents('Read', { file_path: '/loop' }, { model: 'claude-sonnet-4-5' }),
+    );
+    const h = makeRuntime({
+      scripts,
+      baseBuiltins: base,
+      agents: {
+        tight: { description: 't', prompt: 'loop', maxTurns: 2 },
+      },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'tight' }));
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxTurns');
+    expect(h.transport.requests).toHaveLength(2);
+  });
+});
+
 describe('subagent runtime — depth cap', () => {
   it('the makeSpawnFn guard rejects at MAX depth', async () => {
     const h = makeRuntime({ scripts: [] });

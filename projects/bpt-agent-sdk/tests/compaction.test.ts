@@ -214,6 +214,35 @@ describe('tokens.ts', () => {
     ];
     expect(estimateToolDefsTokens(defs)).toBe(Math.ceil(JSON.stringify(defs).length / 4));
   });
+
+  // --- Finding 1: language-aware CJK estimation -------------------------------
+  it('charges CJK codepoints ~1 token each (not chars/4)', () => {
+    // Han: 100 ideographs -> ~100 tokens, NOT ceil(100/4)=25.
+    expect(estimateTextTokens('中'.repeat(100))).toBe(100);
+    // Hiragana / Katakana / Hangul are equally dense.
+    expect(estimateTextTokens('ひらがな')).toBe(4);
+    expect(estimateTextTokens('カタカナ')).toBe(4);
+    expect(estimateTextTokens('한글')).toBe(2);
+  });
+
+  it('mixes CJK (1/codepoint) with Latin (len/4) additively', () => {
+    // 'abcd' -> ceil(4/4)=1 ; '中文' -> 2 CJK tokens -> total 3.
+    expect(estimateTextTokens('abcd中文')).toBe(3);
+    // 30 Han chars -> 30 tokens (regression: old ceil(30/4)=8).
+    expect(estimateTextTokens('字'.repeat(30))).toBe(30);
+  });
+
+  it('counts astral CJK Ext-B ideographs as 1 token (surrogate pair)', () => {
+    // U+20000 is a single ideograph encoded as a surrogate pair (length 2).
+    expect(estimateTextTokens('\u{20000}')).toBe(1);
+    expect(estimateTextTokens('\u{20000}\u{20001}')).toBe(2);
+  });
+
+  it('leaves pure-ASCII estimates unchanged (no regression)', () => {
+    expect(estimateTextTokens('abcd')).toBe(1);
+    expect(estimateTextTokens('a'.repeat(400))).toBe(100);
+    expect(estimateTextTokens('')).toBe(0);
+  });
 });
 
 // ===========================================================================
@@ -398,6 +427,24 @@ describe('partitionForCompaction', () => {
     const cfg = buildCompactionConfig({ minRecentTurns: 1 });
     expect(partitionForCompaction(msgs, 4000, cfg)).toBeNull();
   });
+
+  // --- Finding 2: don't fold a prefix that can't shrink (re-fold churn) -------
+  it('returns null when the chosen prefix is only the synthetic pair (no count reduction)', () => {
+    // bigHistory(3): genuine user turns at indices 0,2,4. With minRecentTurns=2
+    // and a generous keepRatio, the only viable cut keeps indices 2 & 4 in the
+    // suffix, leaving a 2-message prefix [user0, asst0]. Folding that into a
+    // length-2 synthetic pair reduces nothing -> must return null.
+    const msgs = bigHistory(3);
+    const cfg = buildCompactionConfig({ minRecentTurns: 2, keepRatio: 0.9 });
+    // budget 500: keepBudget=450 (fits the suffix), minFoldTokens=75 (< the
+    // prefix estimate), so ONLY the new length guard can reject this fold.
+    const part = partitionForCompaction(msgs, 500, cfg);
+    // Sanity: the prefix estimate really does clear minFoldTokens, proving the
+    // rejection comes from the length guard, not the ratio guard.
+    const prefixEst = estimateMessagesTokens(msgs.slice(0, 2));
+    expect(prefixEst).toBeGreaterThanOrEqual(Math.floor(500 * 0.15));
+    expect(part).toBeNull();
+  });
 });
 
 // ===========================================================================
@@ -475,6 +522,44 @@ describe('shouldAutoCompact', () => {
     expect(res).not.toBeNull();
     expect(res!.preTokens).toBe(estimateMessagesTokens(msgs) + 1000);
   });
+
+  // --- Finding 2: degenerate window must NOT always-fire ----------------------
+  it('returns null when window <= reservedOutputTokens (compaction impossible)', () => {
+    // window 8000 <= reserved 8192: old code clamped budget to 1, triggerAt=0,
+    // and ALWAYS fired. Must now return null (do not compact).
+    const msgs = bigHistory(4);
+    expect(shouldAutoCompact(msgs, 0, 8000, 8192, cfg)).toBeNull();
+    // exact-equality boundary is also impossible (no positive input budget).
+    expect(shouldAutoCompact(msgs, 0, 500, 500, cfg)).toBeNull();
+  });
+
+  // --- Finding 1: CJK conversation actually trips the trigger -----------------
+  it('a large Chinese conversation trips the trigger where chars/4 would not', () => {
+    const han = '观测者的意识在缸中沉浮'; // 11 Han chars
+    const msgs: APIMessageParam[] = [];
+    for (let i = 0; i < 20; i += 1) {
+      msgs.push(userMsg(han.repeat(20)));
+      msgs.push(asstText(han.repeat(20)));
+    }
+    const window = 8000;
+    const reserved = 500;
+    const triggerAt = Math.floor((window - reserved) * 0.85);
+    // Language-aware estimate exceeds the trigger -> compaction fires.
+    expect(estimateMessagesTokens(msgs)).toBeGreaterThanOrEqual(triggerAt);
+    expect(shouldAutoCompact(msgs, 0, window, reserved, cfg)).not.toBeNull();
+    // The old chars/4 estimate would have been ~4x smaller and stayed BELOW
+    // the trigger, i.e. it would never have compacted (the reported failure).
+    const charCount = msgs.reduce((n, m) => {
+      const text =
+        typeof m.content === 'string'
+          ? m.content
+          : (m.content as Array<{ type: string; text?: string }>)
+              .map((b) => b.text ?? '')
+              .join('');
+      return n + text.length;
+    }, 0);
+    expect(Math.ceil(charCount / 4)).toBeLessThan(triggerAt);
+  });
 });
 
 // ===========================================================================
@@ -513,6 +598,25 @@ describe('maybeAutoCompact', () => {
     const msgs = await collect(maybeAutoCompact(view, deps, config, 0, new AbortController().signal));
     expect(msgs).toHaveLength(0);
     expect(view.messages).toHaveLength(2);
+  });
+
+  // --- Finding 2: degenerate window skips with a debug warn (no churn) --------
+  it('skips (no fold, no boundary) with a debug warn when window <= maxOutputTokens', async () => {
+    const debugLines: string[] = [];
+    const deps = makeDeps({ debug: (m) => void debugLines.push(m) });
+    // window 8000 <= maxOutputTokens 8192: a 12-turn conversation that fits fine
+    // must NOT be folded (old code folded it on turn 1, then churned each turn).
+    const config = makeConfig(buildCompactionConfig({ contextWindowTokens: 8000 }), {
+      maxOutputTokens: 8192,
+    });
+    const view = { messages: bigHistory(12) };
+    const before = view.messages.length;
+    const msgs = await collect(
+      maybeAutoCompact(view, deps, config, 0, new AbortController().signal),
+    );
+    expect(msgs).toHaveLength(0);
+    expect(view.messages).toHaveLength(before);
+    expect(debugLines.some((l) => l.includes('compaction impossible'))).toBe(true);
   });
 
   it('fires PreCompact with the right trigger + custom_instructions', async () => {

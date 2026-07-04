@@ -15,7 +15,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { resolveWithin } from './fsutil.js';
+import { looksBinary, resolveWithin } from './fsutil.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -85,16 +85,40 @@ export const writeTool: BuiltinTool = {
 
       // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
       // restore it (create -> null). Best-effort; the recorder never throws.
+      //
+      // The checkpoint blob pipeline stores/restores pre-images as UTF-8, so a
+      // pre-image is only safe to record when it round-trips through UTF-8
+      // losslessly. Reading a binary / non-UTF-8 file as UTF-8 would replace
+      // invalid byte sequences with U+FFFD and rewind would then restore
+      // mojibake instead of the original bytes. In that case we record NOTHING
+      // (leaving the deliberately-written content in place on rewind) rather
+      // than corrupt the file. A read failure on an existing file is likewise
+      // NOT downgraded to preImage=null, since null would make rewind DELETE a
+      // file whose pre-image we never captured.
       if (ctx.recordFileChange !== undefined) {
-        let preImage: string | null = null;
-        if (existedBefore) {
+        if (!existedBefore) {
+          ctx.recordFileChange(abs, null);
+        } else {
+          let buf: Buffer | undefined;
           try {
-            preImage = await readFile(abs, 'utf8');
+            buf = await readFile(abs);
           } catch {
-            preImage = null;
+            buf = undefined; // read failed -> do NOT record (never delete on rewind)
+          }
+          if (buf !== undefined) {
+            const asText = buf.toString('utf8');
+            const roundTrips = Buffer.from(asText, 'utf8').equals(buf);
+            if (roundTrips && !looksBinary(buf)) {
+              ctx.recordFileChange(abs, asText);
+            } else {
+              // Non-UTF-8 / binary existing file: cannot capture losslessly
+              // through the UTF-8 blob pipeline; skip to avoid corrupting it.
+              ctx.debug(
+                `Write: skipping non-restorable checkpoint for binary/non-UTF-8 file ${abs}`,
+              );
+            }
           }
         }
-        ctx.recordFileChange(abs, preImage);
       }
 
       await mkdir(path.dirname(abs), { recursive: true });

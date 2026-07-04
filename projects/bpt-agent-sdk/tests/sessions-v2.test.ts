@@ -59,9 +59,24 @@ function tick(): Promise<void> {
 // ---------------------------------------------------------------------------
 
 describe('encodeProjectKey', () => {
-  it('replaces every non-alphanumeric with a dash', () => {
-    expect(encodeProjectKey('/home/user/my.proj')).toBe('-home-user-my-proj');
-    expect(encodeProjectKey('C:\\a b')).toBe('C--a-b');
+  it('keeps a readable dash-mapped prefix (previously the whole key)', () => {
+    // The old encoding was JUST the dash-mapped string; it is now the prefix,
+    // followed by a `-` and a short hash of the raw cwd.
+    expect(encodeProjectKey('/home/user/my.proj')).toMatch(/^-home-user-my-proj-[0-9a-f]{12}$/);
+    expect(encodeProjectKey('C:\\a b')).toMatch(/^C--a-b-[0-9a-f]{12}$/);
+  });
+
+  it('is deterministic for a given cwd', () => {
+    expect(encodeProjectKey('/srv/app-1')).toBe(encodeProjectKey('/srv/app-1'));
+  });
+
+  it('does NOT collide across cwds that dash-map to the same string (finding 10)', () => {
+    // All three collapse to "-srv-app-1" under the naive mapping; the hash
+    // suffix must keep them distinct so sessions cannot cross-contaminate.
+    const a = encodeProjectKey('/srv/app-1');
+    const b = encodeProjectKey('/srv/app_1');
+    const c = encodeProjectKey('/srv/app/1');
+    expect(new Set([a, b, c]).size).toBe(3);
   });
 });
 

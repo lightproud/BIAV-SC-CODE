@@ -20,11 +20,13 @@ import {
   resolveElicitation,
   parseElicitationParams,
 } from '../src/mcp/elicitation.js';
+import { HttpMcpConnection } from '../src/mcp/http.js';
 import type { ToolContext } from '../src/internal/contracts.js';
 import type {
   WebSearchResult,
   UserQuestionAnswer,
   ElicitationResult,
+  ElicitationHandler,
 } from '../src/types.js';
 import { AbortError } from '../src/errors.js';
 
@@ -225,6 +227,174 @@ describe('webFetchTool', () => {
     await expect(
       webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx),
     ).rejects.toBeInstanceOf(AbortError);
+  });
+
+  // -- finding 7: body-size cap (Content-Length pre-check + streaming cap) ----
+
+  it('rejects early on a Content-Length over the 5MB cap without reading the body', async () => {
+    let bodyRead = false;
+    // A hand-rolled body: reading only happens via getReader()/arrayBuffer(),
+    // so the flag flips only if WebFetch actually consumes the body.
+    const fakeBody = {
+      getReader() {
+        bodyRead = true;
+        return {
+          read: async () => ({ done: true, value: undefined }),
+          cancel: async () => undefined,
+        };
+      },
+    };
+    const fake = {
+      status: 200,
+      statusText: 'OK',
+      headers: new Headers({
+        'content-type': 'text/plain',
+        'content-length': String(6 * 1024 * 1024),
+      }),
+      body: fakeBody,
+      async arrayBuffer() {
+        bodyRead = true;
+        return new ArrayBuffer(0);
+      },
+    } as unknown as Response;
+    const ctx = makeCtx({ fetchImpl: fetchReturning(fake) });
+    const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
+    expect(r.isError).toBe(true);
+    expect(String(r.content)).toContain('too large');
+    expect(bodyRead).toBe(false);
+  });
+
+  it('stops reading a lying/oversized stream at the 5MB cap (memory bound)', async () => {
+    let pulled = 0;
+    const chunk = 256 * 1024;
+    const stream = new ReadableStream<Uint8Array>({
+      pull(controller) {
+        if (pulled >= 20 * 1024 * 1024) {
+          controller.close();
+          return;
+        }
+        controller.enqueue(new Uint8Array(chunk).fill(120)); // 'x'
+        pulled += chunk;
+      },
+    });
+    // No Content-Length header: the pre-check cannot help; the streaming cap must.
+    const resp = new Response(stream, { headers: { 'content-type': 'text/plain' } });
+    const ctx = makeCtx({ fetchImpl: fetchReturning(resp) });
+    const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
+    expect(r.isError).toBeUndefined();
+    expect(String(r.content)).toContain('[truncated]');
+    // The reader is cancelled at the cap; before the fix arrayBuffer() drained
+    // all 20MB into memory.
+    expect(pulled).toBeLessThanOrEqual(5 * 1024 * 1024 + chunk);
+  });
+
+  // -- finding 8: IPv6-literal hostnames (URL keeps the brackets) -------------
+
+  it('fetches a public IPv6 literal without a DNS lookup (bracket-stripped)', async () => {
+    const impl = vi.fn(
+      async () => new Response('ok', { headers: { 'content-type': 'text/plain' } }),
+    );
+    const ctx = makeCtx({ fetchImpl: impl as unknown as typeof fetch });
+    const r = await webFetchTool.execute(
+      { url: 'https://[2606:4700:4700::1111]/', prompt: 'x' },
+      ctx,
+    );
+    expect(r.isError).toBeUndefined();
+    expect(impl).toHaveBeenCalledTimes(1);
+    // A literal must never be resolved via DNS; before the fix isIP() rejected
+    // the bracketed form and the guard fell through to a lookup().
+    expect(mockLookup).not.toHaveBeenCalled();
+  });
+
+  it('blocks a private IPv6 literal via the classifier without resolving DNS', async () => {
+    const impl = vi.fn();
+    const ctx = makeCtx({ fetchImpl: impl as unknown as typeof fetch });
+    const r = await webFetchTool.execute({ url: 'https://[fc00::1]/', prompt: 'x' }, ctx);
+    expect(r.isError).toBe(true);
+    expect(impl).not.toHaveBeenCalled();
+    // Before the fix the bracketed literal fell through to lookup() (which the
+    // mock resolved to a PUBLIC address), so the private literal was NOT blocked.
+    expect(mockLookup).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// finding 15: elicitation reply fallback must not leak an unhandled rejection
+// ---------------------------------------------------------------------------
+
+describe('HttpMcpConnection elicitation reply teardown (finding 15)', () => {
+  it('does not emit an unhandled rejection when both reply posts fail on a closing connection', async () => {
+    const unhandled: unknown[] = [];
+    const onUnhandled = (reason: unknown): void => {
+      unhandled.push(reason);
+    };
+    process.on('unhandledRejection', onUnhandled);
+
+    let conn: HttpMcpConnection | undefined;
+    // Closing the connection while resolving the elicitation makes BOTH the
+    // result POST and the fallback decline POST reject with AbortError.
+    const handler: ElicitationHandler = async () => {
+      conn?.close();
+      return { action: 'accept', content: {} };
+    };
+
+    const fakeFetch = vi.fn(async (_url: string, init: { body?: string }) => {
+      const msg = JSON.parse(String(init.body)) as { id: unknown; method?: string };
+      if (msg.method === 'initialize') {
+        return new Response(
+          JSON.stringify({
+            jsonrpc: '2.0',
+            id: msg.id,
+            result: {
+              protocolVersion: '2025-06-18',
+              capabilities: {},
+              serverInfo: { name: 'x', version: '1' },
+            },
+          }),
+          { headers: { 'content-type': 'application/json' } },
+        );
+      }
+      if (msg.method === 'tools/call') {
+        const sse =
+          `data: ${JSON.stringify({
+            jsonrpc: '2.0',
+            id: 'elic-1',
+            method: 'elicitation/create',
+            params: { message: 'm', requestedSchema: { type: 'object' } },
+          })}\n\n` +
+          `data: ${JSON.stringify({
+            jsonrpc: '2.0',
+            id: msg.id,
+            result: { content: [{ type: 'text', text: 'pong' }] },
+          })}\n\n`;
+        return new Response(sse, { headers: { 'content-type': 'text/event-stream' } });
+      }
+      // notifications/initialized and any reply posts (which never reach here
+      // because close() short-circuits post()) get a bare 202.
+      return new Response(null, { status: 202 });
+    });
+
+    vi.stubGlobal('fetch', fakeFetch);
+    try {
+      conn = new HttpMcpConnection(
+        { type: 'http', url: 'https://mcp.example/' },
+        { elicitation: handler },
+      );
+      await conn.connect();
+      try {
+        await conn.callTool('t', {});
+      } catch {
+        // callTool may reject once the connection is torn down; not the point.
+      }
+      // Give the detached decline-post time to reject and surface (if unhandled).
+      for (let i = 0; i < 6; i++) {
+        await new Promise((r) => setTimeout(r, 10));
+      }
+      expect(unhandled).toEqual([]);
+    } finally {
+      vi.unstubAllGlobals();
+      process.off('unhandledRejection', onUnhandled);
+    }
   });
 });
 

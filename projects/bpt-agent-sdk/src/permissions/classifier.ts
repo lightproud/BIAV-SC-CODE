@@ -26,25 +26,24 @@ export type ToolClassifier = (
 ) => AutoDecision;
 
 /**
- * Tools that always route to a prompt under 'auto' even when a subclass forgot
- * to flag them isFileEdit (a shell can mutate anything).
- */
-const KNOWN_DESTRUCTIVE: ReadonlySet<string> = new Set(['Bash', 'Write', 'Edit']);
-
-/**
  * The default 'auto' classifier - a static heuristic, no model call:
  *   - a read-only tool             -> 'allow'
- *   - a file edit (Write/Edit) OR a known-destructive name (Bash/Write/Edit)
- *                                  -> 'prompt' (route to canUseTool)
- *   - anything else (unknown / MCP non-read-only tools)
- *                                  -> 'allow'
+ *   - ANY non-read-only tool       -> 'prompt' (route to canUseTool)
+ *
+ * The non-read-only branch is deliberately broad: it covers builtin mutators
+ * (Bash / Write / Edit), file edits, AND unknown / third-party MCP tools whose
+ * risk cannot be statically assessed (e.g. mcp__gmail__send, a delete/push/pay
+ * call). Auto-allowing those unattended would let 'auto' mode silently execute
+ * destructive third-party mutations with no canUseTool consultation, so an
+ * unknown non-read-only tool must PROMPT rather than allow. Broad auto-allow of
+ * MCP mutations, if ever wanted, must be opt-in per server via allow rules -
+ * never the default here.
  */
 export function defaultAutoClassifier(
-  toolName: string,
+  _toolName: string,
   _input: Record<string, unknown>,
   meta: { readOnly: boolean; isFileEdit: boolean },
 ): AutoDecision {
   if (meta.readOnly) return 'allow';
-  if (meta.isFileEdit || KNOWN_DESTRUCTIVE.has(toolName)) return 'prompt';
-  return 'allow';
+  return 'prompt';
 }

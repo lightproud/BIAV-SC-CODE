@@ -286,8 +286,12 @@ describe('defaultAutoClassifier', () => {
     { label: 'Write (isFileEdit)', name: 'Write', meta: { readOnly: false, isFileEdit: true }, want: 'prompt' },
     { label: 'Edit (isFileEdit)', name: 'Edit', meta: { readOnly: false, isFileEdit: true }, want: 'prompt' },
     { label: 'Bash (known-destructive by name)', name: 'Bash', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
-    { label: 'unknown non-readonly tool', name: 'mcp__srv__do', meta: { readOnly: false, isFileEdit: false }, want: 'allow' },
-    { label: 'AskUserQuestion (non-readonly, not destructive)', name: 'AskUserQuestion', meta: { readOnly: false, isFileEdit: false }, want: 'allow' },
+    // #6: an unknown / MCP mutation of unassessable risk must PROMPT, never
+    // auto-allow (previously these asserted 'allow' - the confirmed defect).
+    { label: 'unknown non-readonly tool', name: 'mcp__srv__do', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'destructive MCP mutation (gmail send)', name: 'mcp__gmail__send', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'destructive MCP mutation (github delete_file)', name: 'mcp__github__delete_file', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'read-only MCP tool still auto-allows', name: 'mcp__github__get_me', meta: { readOnly: true, isFileEdit: false }, want: 'allow' },
   ];
   for (const c of cases) {
     it(`classifies ${c.label} as ${c.want}`, () => {
@@ -304,11 +308,25 @@ describe('DefaultPermissionGate auto mode', () => {
     expect(canUse).not.toHaveBeenCalled();
   });
 
-  it('auto: an unknown non-readonly tool auto-allows', async () => {
-    const gate = makeGate({ mode: 'auto' });
+  // #6: an unknown non-readonly tool must NOT auto-execute in auto mode; it
+  // routes to canUseTool (and denies when no handler is present). This test
+  // previously asserted the buggy auto-allow behavior.
+  it('auto: an unknown non-readonly tool routes to canUseTool (allows via handler)', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'auto', canUseTool: canUse as CanUseTool });
     asAllow(
       await gate.check('mcp__srv__do', { arg: 1 }, checkOpts({ readOnly: false })),
     );
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('auto: an unknown non-readonly MCP mutation denies when no canUseTool handler exists (#6)', async () => {
+    const gate = makeGate({ mode: 'auto' });
+    const res = asDeny(
+      await gate.check('mcp__gmail__send', { to: 'x@y.z' }, checkOpts({ readOnly: false })),
+    );
+    expect(res.message).toContain('mcp__gmail__send');
+    expect(res.message).toContain('canUseTool');
   });
 
   it('auto: Write / Edit / Bash route to canUseTool', async () => {
@@ -396,6 +414,64 @@ describe('DefaultPermissionGate ask rules (v0.2)', () => {
     ]);
     const logged = debug.mock.calls.map((c) => String(c[0])).join('\n');
     expect(logged).not.toContain('not consulted');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// #5 - AskUserQuestion (requiresUserInteraction) must not be hard-denied in
+//      every mode when no canUseTool handler exists; it is answered by
+//      ctx.askUser at execute time, so a mode that would otherwise allow it
+//      must allow it (and the model can then reach the askUser handler).
+// ---------------------------------------------------------------------------
+
+describe('#5 AskUserQuestion permission without a canUseTool handler', () => {
+  // AskUserQuestion's real tool flag is readOnly:true; the earlier suite drives
+  // it with readOnly:false to isolate the interaction route. Cover both so the
+  // fix is not accidentally readOnly-dependent.
+  for (const readOnly of [true, false]) {
+    it(`bypassPermissions ALLOWS AskUserQuestion (no canUseTool, readOnly=${readOnly})`, async () => {
+      const gate = makeGate({ mode: 'bypassPermissions' });
+      asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly })));
+      expect(gate.denials()).toHaveLength(0);
+    });
+  }
+
+  it('default mode ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'default' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('acceptEdits ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'acceptEdits' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('auto mode ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'auto' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('WITH a canUseTool handler, AskUserQuestion still routes to it even in bypass', async () => {
+    // The interaction route is a veto point when a handler exists; preserved.
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('dontAsk still denies AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'dontAsk' });
+    const res = asDeny(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: false })));
+    expect(res.message).toContain('dontAsk');
+  });
+
+  it('a session ask rule still hard-routes (and denies with no canUseTool) regardless of the interaction fix', async () => {
+    const gate = makeGate({ mode: 'bypassPermissions' });
+    gate.applyUpdates([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'ask', destination: 'session' },
+    ]);
+    // No canUseTool: the ask rule route must still deny (not fall through to bypass allow).
+    asDeny(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
   });
 });
 

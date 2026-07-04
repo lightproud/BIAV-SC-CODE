@@ -317,7 +317,11 @@ export async function* runAgentLoop(
     }
     return defs;
   };
-  const thinking: StreamRequest['thinking'] = ((): StreamRequest['thinking'] => {
+  // Thinking is recomputed PER TURN (not snapshotted before the loop) so a
+  // mid-run setMaxThinkingTokens() — which mutates the shared config object —
+  // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
+  // of config.model below (finding #12).
+  const computeThinking = (): StreamRequest['thinking'] => {
     if (config.thinking?.type !== 'enabled') {
       return undefined; // adaptive/disabled/unset -> omit the param entirely
     }
@@ -339,13 +343,17 @@ export async function* runAgentLoop(
       );
     }
     return { type: 'enabled', budget_tokens };
-  })();
+  };
 
-  // Static per-request overhead (system prompt + tool schemas) folded into the
-  // compaction token estimate; both pieces are stable across the run.
-  const overheadTokens =
-    estimateToolDefsTokens(buildToolDefs()) +
-    Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+  // Per-request overhead folded into the compaction token estimate. The system
+  // prompt term is static, but the tool-schema term is NOT: tool-search / lazy
+  // MCP load rebuild buildToolDefs() each attempt (see its comment), so newly
+  // loaded schemas must be re-counted per turn or the compaction trigger
+  // under-counts the real request size (finding #11). Only the system-prompt
+  // term is hoisted; the tool-def term is recomputed each iteration.
+  const systemPromptTokens = Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+  const currentOverheadTokens = (): number =>
+    estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
 
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
@@ -362,7 +370,7 @@ export async function* runAgentLoop(
       system: config.systemPrompt,
       messages: reqMsgs,
       tools: toolDefs.length > 0 ? toolDefs : undefined,
-      thinking,
+      thinking: computeThinking(),
       signal,
     };
     // cache-control is the outermost request shaper; it never mutates `request`.
@@ -584,6 +592,9 @@ export async function* runAgentLoop(
       // --- Context compaction (only when a shared request view exists). -----
       if (deps.requestView !== undefined && config.compaction?.enabled !== false) {
         const cfg = config.compaction;
+        // Recompute the tool-def overhead THIS turn so mid-run tool growth
+        // (tool-search / lazy MCP load) is counted in the trigger (finding #11).
+        const overheadTokens = currentOverheadTokens();
         const onSummaryCall = (
           m: string,
           u: NonNullableUsage,
@@ -636,6 +647,15 @@ export async function* runAgentLoop(
       // --- Stream one assistant turn (with one-shot fallback retry). -------
       let assistant: APIAssistantMessage;
       const firstSink: UsageSink = {};
+      // ttft anchors as of BEFORE this turn's first attempt. If the attempt
+      // fails and we retry on the fallback model, the failed attempt's
+      // content_block_start may have already latched firstTokenAtMs /
+      // firstStreamStartMs; roll them back so ttft measures the attempt actually
+      // delivered, not the discarded one (finding #13). On turn 1 these are
+      // undefined so the fallback attempt latches fresh; on a later turn they
+      // hold the run's real (earlier) first token, which must be preserved.
+      const ttftTokenBefore = firstTokenAtMs;
+      const ttftStreamBefore = firstStreamStartMs;
       try {
         assistant = yield* streamAttempt(model, firstSink);
       } catch (err) {
@@ -655,6 +675,10 @@ export async function* runAgentLoop(
           if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
           fallbackModel = config.fallbackModel; // stays switched for the rest of the run
           model = fallbackModel;
+          // Discard any ttft the discarded attempt latched so the metric tracks
+          // the fallback attempt actually returned to the consumer (finding #13).
+          firstTokenAtMs = ttftTokenBefore;
+          firstStreamStartMs = ttftStreamBefore;
           // The retry emits its OWN message_start; downstream consumers of
           // includePartialMessages must treat a fresh message_start as
           // superseding the discarded attempt's partial stream_events.
@@ -850,6 +874,41 @@ export async function* runAgentLoop(
           continue;
         }
         structuredValue = outcome.value;
+      }
+
+      // Background-subagent drain at NATURAL END (finding #4). A background
+      // child that finished while this turn ran pushed its result note into the
+      // runtime buffer. The tool_use branch drains it onto its tool_result turn,
+      // but a natural-end turn has no such turn, so the note would be dropped and
+      // the whole subagent output silently vanish. Surface it as a follow-up
+      // user turn and CONTINUE the loop so the model can react to it, matching
+      // the tool_use path's semantics.
+      if (deps.drainSubagentResults !== undefined) {
+        const extra = deps.drainSubagentResults();
+        if (extra.length > 0) {
+          pushAssistant(assistant.content); // keep this turn's answer in history
+          const bgTurn: APIMessageParam = { role: 'user', content: extra };
+          history.push(bgTurn);
+          mirror(bgTurn);
+          // A follow-up assistant turn now becomes billable; honor the same caps
+          // as the tool-continue / structured-retry paths so surfacing a drained
+          // result cannot bust maxTurns / maxBudgetUsd.
+          if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
+            yield errorResult(
+              'error_max_turns',
+              `Reached maxTurns limit (${config.maxTurns})`,
+            );
+            return;
+          }
+          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+            yield errorResult(
+              'error_max_budget_usd',
+              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+            );
+            return;
+          }
+          continue;
+        }
       }
 
       // Natural end: keep history complete for follow-up turns in the same

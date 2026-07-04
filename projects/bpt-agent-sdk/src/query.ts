@@ -1155,6 +1155,15 @@ export function query(args: {
       // Remove the outer-abort listener so reusing one AbortController across
       // many queries does not accumulate a listener per query (finding #16).
       outer.signal.removeEventListener('abort', onOuterAbort);
+      // Abort any still-running background subagents on NORMAL completion too,
+      // not only in close() (finding #14). A run_in_background Agent spawned on
+      // the final turn would otherwise stay detached — chained off outerSignal,
+      // which a normal completion never aborts — and keep calling the API after
+      // the query ended (its childMcp calls then failing once closeAll() below
+      // tears down the shared registry). abortAll() aborts each child's own
+      // controller, so this cancels them without touching the caller's
+      // AbortController. Idempotent with close()'s own abortAll().
+      subagentRuntime.abortAll();
       if (!initDeferred.settled) {
         initDeferred.reject(
           new AbortError('query ended before initialization completed'),

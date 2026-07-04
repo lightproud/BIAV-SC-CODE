@@ -7,9 +7,13 @@
  *   2. Deny rules    - scoped disallowedTools + session deny rules match the
  *                      model input (or a hook-rewritten input) -> deny. Applies
  *                      even under bypassPermissions / auto.
- *   3. Ask rules     - hook 'ask', a session ask rule, or a
- *                      requiresUserInteraction tool routes to canUseTool
+ *   3. Ask rules     - hook 'ask' or a session ask rule routes to canUseTool
  *                      (step 6), skipping the mode + allow-rule auto-approvals.
+ *                      A requiresUserInteraction tool (AskUserQuestion) also
+ *                      routes there, but ONLY when a canUseTool handler exists
+ *                      (it is answered by ctx.askUser at execute time); absent
+ *                      a handler it falls through to the mode so bypass /
+ *                      acceptEdits / default-readOnly still allow it.
  *                      A hook 'allow' that no ask route caught allows here.
  *   4. Permission mode - bypass -> allow; acceptEdits -> allow read/edit;
  *                      plan -> allow read-only, ROUTE writes to canUseTool;
@@ -158,10 +162,18 @@ export class DefaultPermissionGate implements PermissionGate {
     }
 
     // ----- STEP 3: ask rules + hook-allow resolution -------------------------
+    // A requiresUserInteraction tool (e.g. AskUserQuestion) is answered by
+    // ctx.askUser at execute time, NOT by the permission gate: canUseTool is
+    // only an optional veto point for it. So force its interactive route ONLY
+    // when a canUseTool handler exists. With no handler, fall through to the
+    // mode step so a mode that would otherwise allow it (bypassPermissions /
+    // acceptEdits / default-readOnly / auto) does - instead of the blanket
+    // step-6 "no canUseTool" deny firing in EVERY mode (including bypass).
+    // hook-ask and session ask rules still hard-route regardless of canUseTool.
     let routeToPrompt =
       hookAsk ||
       this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput)) ||
-      requiresUserInteraction(toolName);
+      (requiresUserInteraction(toolName) && this.canUseTool !== undefined);
 
     if (hookAllow && !routeToPrompt) {
       // Hook allow is the documented escape hatch above the mode step; still

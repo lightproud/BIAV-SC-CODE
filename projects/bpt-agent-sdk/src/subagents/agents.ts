@@ -22,6 +22,15 @@ import type { AgentDefinition } from '../types.js';
  */
 export const MAX_SUBAGENT_DEPTH = 5;
 
+/**
+ * Fallback turn cap for a spawned subagent when neither the AgentDefinition nor
+ * the parent EngineConfig specifies one. Without a cap a delegated child loop
+ * (especially a foreground one that blocks the parent) could iterate tool calls
+ * indefinitely, hanging the parent and running with no cost/turn ceiling. A
+ * bounded default keeps every subagent terminating.
+ */
+export const DEFAULT_SUBAGENT_MAX_TURNS = 20;
+
 /** The reserved always-available subagent type. */
 export const GENERAL_PURPOSE_TYPE = 'general-purpose';
 

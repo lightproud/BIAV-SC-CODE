@@ -54,6 +54,12 @@ export type SummaryCallSink = (
 
 /** Fraction of the input budget below which folding is not worth it. */
 const MIN_FOLD_RATIO = 0.15;
+/**
+ * Message count of a synthetic fold (the user->assistant summary pair produced
+ * by foldDeterministic / foldViaApi). A prefix at or below this length cannot
+ * be folded into fewer messages, so folding it is pure churn.
+ */
+const SYNTHETIC_FOLD_LENGTH = 2;
 /** Hard cap (chars) on the deterministic recap body. */
 const RECAP_CHAR_CAP = 4000;
 /** Chars of message text kept per recap line. */
@@ -106,7 +112,13 @@ export function shouldAutoCompact(
   reservedOutputTokens: number,
   cfg: CompactionConfig,
 ): { preTokens: number } | null {
-  const effectiveInputBudget = Math.max(1, window - reservedOutputTokens);
+  // Degenerate config: the window cannot even hold the reserved output. There
+  // is no positive input budget to fold toward, so compaction is impossible.
+  // Returning null here prevents the old Math.max(1, …) clamp from yielding a
+  // budget of 1 and triggerAt=0 (always-fire churn). The maybeAutoCompact /
+  // performCompaction drivers emit a debug warning for this case.
+  if (window <= reservedOutputTokens) return null;
+  const effectiveInputBudget = window - reservedOutputTokens;
   const triggerAt = Math.floor(effectiveInputBudget * cfg.autoThresholdRatio);
   const preTokens = estimateMessagesTokens(messages) + overheadTokens;
   return preTokens >= triggerAt ? { preTokens } : null;
@@ -194,6 +206,12 @@ export function partitionForCompaction(
   const prefix = messages.slice(0, chosen);
   const suffix = messages.slice(chosen);
   if (prefix.length === 0) return null;
+  // Folding replaces the prefix with a synthetic length-2 pair. If the prefix
+  // is already <= that length (e.g. it IS just a prior synthetic pair), the
+  // fold would not reduce the message count — it only re-summarizes and emits a
+  // redundant boundary. Skip. This guard is robust even when minFoldTokens
+  // degenerates to 0 (unlike the ratio check below).
+  if (prefix.length <= SYNTHETIC_FOLD_LENGTH) return null;
   // Prefix too small to be worth folding: avoids re-folding an already-tiny
   // summarized prefix and stops per-iteration churn / boundary spam.
   if (estimateMessagesTokens(prefix) < minFoldTokens) return null;
@@ -288,6 +306,15 @@ export async function* maybeAutoCompact(
   const cfg = config.compaction;
   if (cfg === undefined) return;
   const window = windowFor(config, cfg);
+  if (window <= config.maxOutputTokens) {
+    // Compaction impossible (window cannot hold reserved output). Skip with a
+    // warning instead of always-firing on a degenerate budget of 1.
+    deps.debug(
+      `compaction: context window (${window}) <= maxOutputTokens ` +
+        `(${config.maxOutputTokens}); compaction impossible, skipping`,
+    );
+    return;
+  }
   const trig = shouldAutoCompact(
     view.messages,
     overheadTokens,
@@ -381,7 +408,19 @@ async function* performCompaction(
     }
   }
 
-  const budget = Math.max(1, windowFor(config, cfg) - config.maxOutputTokens);
+  const window = windowFor(config, cfg);
+  if (window <= config.maxOutputTokens) {
+    // Compaction impossible: the context window cannot even hold the reserved
+    // output, so there is no positive input budget to fold toward. Skip (do
+    // NOT compact) rather than clamp to a degenerate budget of 1 — that clamp
+    // caused triggerAt=0 / minFoldTokens=0 always-fold churn.
+    deps.debug(
+      `compaction: context window (${window}) <= maxOutputTokens ` +
+        `(${config.maxOutputTokens}); compaction impossible, skipping`,
+    );
+    return; // no boundary, no mutation.
+  }
+  const budget = window - config.maxOutputTokens;
   const part = partitionForCompaction(view.messages, budget, cfg);
   if (part === null) {
     deps.debug('compaction: nothing safe to fold');
