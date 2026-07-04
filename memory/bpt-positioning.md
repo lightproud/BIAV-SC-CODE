@@ -68,6 +68,8 @@ BPT 不是规划中的产品，是**有真实用户的在产工具**；一切引
   银芯仓库为主消费通道，对话搬运收窄为战略裁定 + 回流过滤）。
 - 引擎定位：`projects/bpt-agent-sdk/docs/POSITIONING.md`（2026-07-04 三处修订：
   主权叙事 / 参照系固定靶 / provider 升格）。
+- 元知识层方法论导读（治「知识结构混乱」的 A 类输出，面向黑池会话）：
+  `Public-Info-Pool/Resource/methodology/knowledge-engineering-primer-20260704.md`。
 - 方向纪律不变：银芯 → 黑池单向；黑池任何形式不进银芯（CLAUDE.md §1.1-HC）。
 
 ## 覆盖关系

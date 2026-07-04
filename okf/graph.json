@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 297,
+    "nodes": 298,
     "edges": 96
   },
   "nodes": [
@@ -2406,6 +2406,17 @@
         "data_layer:curated",
         "deliverable",
         "topic:game-analysis"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "type": "documentation",
+      "title": "knowledge-engineering-primer-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:methodology"
       ],
       "tier": "search"
     },
