@@ -164,6 +164,18 @@ function mapMcpResult(res: CallToolResult): ToolResultPayload {
         break;
     }
   }
+  // Surface a structuredContent payload as trailing JSON text so the model
+  // can read it (the API tool_result carries no structured channel).
+  if (res.structuredContent !== undefined) {
+    try {
+      parts.push({
+        type: 'text',
+        text: `[structuredContent] ${JSON.stringify(res.structuredContent)}`,
+      });
+    } catch {
+      // Non-serializable payload: skip rather than throw.
+    }
+  }
   return { content: parts.length > 0 ? parts : '', isError: res.isError === true };
 }
 

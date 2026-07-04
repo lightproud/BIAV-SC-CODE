@@ -616,6 +616,8 @@ export type CallToolResultContent =
 export type CallToolResult = {
   content: CallToolResultContent[];
   isError?: boolean;
+  /** Optional machine-readable payload (MCP structuredContent). */
+  structuredContent?: unknown;
 };
 
 export type ToolAnnotations = {

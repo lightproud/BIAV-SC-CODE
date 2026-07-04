@@ -165,6 +165,31 @@ describe('mcp/sdk-server tool()', () => {
     expect(defaulted.instance.tools.size).toBe(0);
   });
 
+  it('tool() attaches annotations from the 5th extras arg', () => {
+    const withAnn = tool(
+      'ro',
+      'read-only tool',
+      { q: z.string() },
+      async () => ({ content: [] }),
+      { annotations: { readOnlyHint: true, title: 'Reader' } },
+    );
+    expect(withAnn.annotations).toEqual({ readOnlyHint: true, title: 'Reader' });
+
+    const without = tool('plain', 'no annotations', {}, async () => ({ content: [] }));
+    expect(without.annotations).toBeUndefined();
+  });
+
+  it('callTool preserves a structuredContent payload on the result', async () => {
+    const def = tool('struct', 'returns structured data', {}, async () => ({
+      content: [{ type: 'text', text: 'see structured' }],
+      structuredContent: { ok: true, items: [1, 2, 3] },
+    }));
+    const cfg = createSdkMcpServer({ name: 'structsrv', tools: [def] });
+    const conn = new SdkMcpConnection(cfg.instance);
+    const result = await conn.callTool('struct', {});
+    expect(result.structuredContent).toEqual({ ok: true, items: [1, 2, 3] });
+  });
+
   it('duplicate tool names follow last-wins Map semantics', async () => {
     const first = tool('dup', 'first', {}, async () => ({
       content: [{ type: 'text', text: 'first' }],

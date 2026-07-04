@@ -409,13 +409,14 @@ function normalizeCallToolResult(raw: unknown): CallToolResult {
   if (!raw || typeof raw !== 'object') {
     return { content: [{ type: 'text', text: JSON.stringify(raw ?? null) }] };
   }
-  const obj = raw as { content?: unknown; isError?: unknown };
+  const obj = raw as { content?: unknown; isError?: unknown; structuredContent?: unknown };
   const content: CallToolResultContent[] = [];
   if (Array.isArray(obj.content)) {
     for (const item of obj.content) content.push(normalizeContentItem(item));
   }
   const result: CallToolResult = { content };
   if (obj.isError === true) result.isError = true;
+  if (obj.structuredContent !== undefined) result.structuredContent = obj.structuredContent;
   return result;
 }
 
