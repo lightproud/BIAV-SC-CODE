@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T09:19:35.563992+00:00",
+  "archived_at": "2026-07-04T11:24:01.437122+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -23,6 +23,29 @@
         "danmaku": 3
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/acf705a633d154c616e307bcaf03db0f4be955a5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "24",
+      "summary": "-\n  └ playfisher (2赞): 刷到的时候刚好24播放\n  └ 花岚天音Amane (0赞): 哦哦哦……！好美的梅森姐姐……🥰🥰🥰\n  └ 潘塔罗涅如此诱人 (0赞): 好美的24[以闪亮之名_爱你哦]",
+      "source": "bilibili",
+      "time": "2026-07-04T03:23:26+00:00",
+      "url": "https://www.bilibili.com/video/BV13RTZ6TEVy",
+      "engagement": 188,
+      "is_hot": false,
+      "author": "菜鸡玩意儿Newb",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 180,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/5ea386006eb466193eab98e10730c945b72c733d.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
