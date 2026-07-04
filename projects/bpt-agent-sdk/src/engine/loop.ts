@@ -355,6 +355,12 @@ export async function* runAgentLoop(
   const currentOverheadTokens = (): number =>
     estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
 
+  // Static per-request overhead (system prompt + tool schemas) folded into the
+  // compaction token estimate; both pieces are stable across the run.
+  const overheadTokens =
+    estimateToolDefsTokens(buildToolDefs()) +
+    Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
    *  tokens can be folded into totals before a fallback retry. */
