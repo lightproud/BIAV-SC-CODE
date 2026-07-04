@@ -19,6 +19,9 @@ import type {
   RawMessageStreamEvent,
   SDKMessage,
   SDKResultMessage,
+  SDKRunMetrics,
+  SDKToolMetrics,
+  SDKTurnMetrics,
   TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
@@ -196,6 +199,42 @@ export async function* runAgentLoop(
     cache_read_input_tokens: 0,
   };
   const modelUsage: Record<string, ModelUsage> = {};
+  // v0.3 budget instrumentation: per-turn + per-tool metrics.
+  const perTurn: SDKTurnMetrics[] = [];
+  const perTool = new Map<string, { calls: number; totalMs: number; errors: number }>();
+  const recordTool = (name: string, ms: number, isError: boolean): void => {
+    const e = perTool.get(name) ?? { calls: 0, totalMs: 0, errors: 0 };
+    e.calls += 1;
+    e.totalMs += ms;
+    if (isError) e.errors += 1;
+    perTool.set(name, e);
+  };
+  const buildMetrics = (): SDKRunMetrics => {
+    const cacheable =
+      totalUsage.input_tokens +
+      totalUsage.cache_read_input_tokens +
+      totalUsage.cache_creation_input_tokens;
+    const cacheHitRatio =
+      cacheable > 0 ? totalUsage.cache_read_input_tokens / cacheable : 0;
+    const perToolArr: SDKToolMetrics[] = [...perTool.entries()].map(
+      ([name, e]) => ({ name, calls: e.calls, totalMs: e.totalMs, errors: e.errors }),
+    );
+    const m: SDKRunMetrics = {
+      numTurns,
+      durationMs: Date.now() - startedAt,
+      durationApiMs,
+      usage: { ...totalUsage },
+      totalCostUsd,
+      cacheHitRatio,
+      perTurn: perTurn.map((t) => ({ ...t, usage: { ...t.usage } })),
+      perTool: perToolArr,
+      modelUsage: Object.fromEntries(
+        Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
+      ),
+    };
+    if (firstTokenAtMs !== undefined) m.ttftMs = firstTokenAtMs - startedAt;
+    return m;
+  };
   // Once a fallback retry fires the run stays on the fallback model; until then
   // each turn re-reads config.model (a shared mutable object) so a live
   // setModel() applies from the next assistant turn.
@@ -240,6 +279,7 @@ export async function* runAgentLoop(
       Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
     ),
     permission_denials: deps.permissions.denials(),
+    metrics: buildMetrics(),
     ...ttftFields(),
   });
 
@@ -528,9 +568,11 @@ export async function* runAgentLoop(
           signal,
         );
       }
+      recordTool(toolName, Date.now() - execStart, true);
       return { result: errorToolResult(`Tool ${toolName} failed: ${message}`) };
     }
     const durationMs = Date.now() - execStart;
+    recordTool(toolName, durationMs, payload.isError === true);
 
     // 4. PostToolUse hooks (fires for completed calls, including isError
     //    payloads such as a non-zero Bash exit; only thrown errors go to
@@ -653,6 +695,7 @@ export async function* runAgentLoop(
       // --- Stream one assistant turn (with one-shot fallback retry). -------
       let assistant: APIAssistantMessage;
       const firstSink: UsageSink = {};
+      const apiMsBefore = durationApiMs; // for this turn's isolated apiMs metric
       // ttft anchors as of BEFORE this turn's first attempt. If the attempt
       // fails and we retry on the fallback model, the failed attempt's
       // content_block_start may have already latched firstTokenAtMs /
@@ -732,6 +775,20 @@ export async function* runAgentLoop(
         assistant.stop_reason === 'tool_use'
           ? assistant.content.filter((b): b is ToolUseBlock => b.type === 'tool_use')
           : [];
+
+      // v0.3: record this turn's isolated metrics (usage/cost/apiMs/toolCalls).
+      {
+        const turnUsage = normalizeUsage(assistant.usage);
+        perTurn.push({
+          index: numTurns - 1,
+          model: assistant.model,
+          usage: turnUsage,
+          costUsd: estimateCostUsd(assistant.model, turnUsage),
+          apiMs: durationApiMs - apiMsBefore,
+          stopReason: assistant.stop_reason,
+          toolCalls: toolUses.length,
+        });
+      }
       // stop_reason tool_use but ZERO tool_use blocks (malformed / gateway-
       // rewritten response): treat as a natural end rather than pushing an
       // empty {role:'user',content:[]} turn that would poison the history.

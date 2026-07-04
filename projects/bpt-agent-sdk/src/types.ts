@@ -763,6 +763,43 @@ export type SDKPartialAssistantMessage = {
   parent_tool_use_id: string | null;
 };
 
+/** Per-assistant-turn metrics (v0.3 budget instrumentation). */
+export type SDKTurnMetrics = {
+  index: number;
+  model: string;
+  usage: NonNullableUsage;
+  costUsd: number;
+  apiMs: number;
+  stopReason: StopReason;
+  toolCalls: number;
+};
+
+/** Per-tool aggregate metrics across a run (v0.3). */
+export type SDKToolMetrics = {
+  name: string;
+  calls: number;
+  totalMs: number;
+  errors: number;
+};
+
+/**
+ * Per-run budget/efficiency metrics (v0.3). A superset of the flat result
+ * fields, packaged for logging + A/B comparison. `cacheHitRatio` is
+ * cache_read / (input + cache_read + cache_creation), 0 when no caching.
+ */
+export type SDKRunMetrics = {
+  numTurns: number;
+  durationMs: number;
+  durationApiMs: number;
+  ttftMs?: number;
+  usage: NonNullableUsage;
+  totalCostUsd: number;
+  cacheHitRatio: number;
+  perTurn: SDKTurnMetrics[];
+  perTool: SDKToolMetrics[];
+  modelUsage: Record<string, ModelUsage>;
+};
+
 export type SDKResultMessage =
   | {
       type: 'result';
@@ -786,6 +823,8 @@ export type SDKResultMessage =
       usage: NonNullableUsage;
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
+      /** v0.3 per-run budget/efficiency metrics. */
+      metrics?: SDKRunMetrics;
     }
   | {
       type: 'result';
@@ -808,6 +847,8 @@ export type SDKResultMessage =
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
+      /** v0.3 per-run budget/efficiency metrics. */
+      metrics?: SDKRunMetrics;
     };
 
 export type SDKSystemMessage = {
