@@ -1,6 +1,8 @@
 # 项目状态一览
 
-> 最后更新：2026-07-02 by 艾瑞卡会话（第三轮·体质改进批次，守密人授权动态编排执行：
+> 最后更新：2026-07-04 by 艾瑞卡会话（bpt-agent-sdk 交接锚点落档：新增「## 子项目状态」表行 +
+> 下方「## BPT Agent SDK」专节，令后续会话可发现该战线；事实核验 631 单测全绿、
+> #380 已合并 main @ 8bd4a54。前次 2026-07-02 by 艾瑞卡会话（第三轮·体质改进批次，守密人授权动态编排执行：
 > ① `archive_layout.py` 归档布局单一真相源落地，写方读方全收编（含发现并修复
 > repair_gaps 仍扫已死旧根、backfill 写平级两颗雷）；② 平级历史 1,382+13 文件
 > 一次性归位区服/类型分层，逐源唯一键集合验证零丢失（taptap 系按裁定⑧落 cn）；
@@ -41,8 +43,10 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程（M3）待跑通 |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
+| **bpt-agent-sdk**（Claude Agent SDK 干净重实现 · 银芯→黑池单向输出物） | **v0.2+v0.3 已合并 main（2026-07-04，PR #380 @ 8bd4a54）**：干净室 TypeScript 重实现，直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），631 单测全绿，对官方 SDK 0.3.199 约 89.5% 表面等价 | 艾瑞卡会话 | 观测消息流扩容（task #16）+ P1/P2 长尾（task #17）；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md`，定位见 `projects/bpt-agent-sdk/docs/POSITIONING.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
+> **例外辨析（勿混淆）**：上表 `bpt-agent-sdk` **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
 
 ## News 新闻聚合 + 报告系统
 
@@ -135,6 +139,39 @@
 
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
+
+## BPT Agent SDK（`projects/bpt-agent-sdk/`）
+
+> **一句话**：官方 `@anthropic-ai/claude-agent-sdk` 的**干净室重实现**，drop-in 兼容公开接口，
+> 但引擎**直驱 Anthropic Messages API**（fetch + SSE，**不打包 CLI 子进程**）。用途：让 BPT Desktop
+> （Electron）脱离被禁的 `claude.exe` 子进程引擎。**定位辨析见「## 子项目状态」表下方例外辨析**——
+> 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
+
+- **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（PR #380 squash @ `8bd4a54`），
+  `pytest` 无涉、Node 侧 **`npx vitest run` 631 单测全绿（17 文件）**；`tsc` typecheck 通过
+- **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
+  审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
+  + 同名 `-matrix-20260703.json`（146 行）
+- **两轴保真模型（关键认知，勿混淆两轴）**：
+  - **表面完整度（SURFACE）**：可收敛，约 90%+——接口、类型、消息变体、工具/MCP/hooks 面照抄公开契约即可补齐
+  - **行为保真度（BEHAVIORAL）**：**结构性封顶**——官方系统提示词是专有的，干净室纪律禁止复制，
+    故 agent 循环的「转数 / 决策」层永远无法逐比特对齐。追平只谈 SURFACE，BEHAVIORAL 天花板不可逾越
+- **v0.3 头号交付**：**per-run 预算/效率仪表**（`result.metrics` = `SDKRunMetrics`：perTurn / perTool /
+  cacheHitRatio / 模型用量 / 成本 / API 耗时）。回应守密人「整体效率低下会累积成巨大差别」之忧——
+  把「效率」从不可见变成每轮可量。A/B 演示 harness：`examples/ab-metrics.mjs`（缓存开/关对照表）
+- **默认配置决策**：**提示词缓存默认开**（`provider.promptCaching !== false`，v0.3 翻转，多轮对话省 input 账单）
+- **干净室纪律（硬约束，PR 安全声明 + 防火墙纪律双重要求）**：**绝不**复制官方专有代码 / 系统提示词。
+  接口面对照公开文档实现，引擎自研。这也是 BEHAVIORAL 天花板的根因
+- **定位/战略**：`docs/POSITIONING.md`（兼容表面 / 独立引擎 / 钉死基线 0.3.199 / 选择性追踪 +
+  四档效率齿轮；含可粘贴进 `decisions.md` 的决策条）
+- **文档索引**：`CONTEXT.md`（上下文）/ `docs/POSITIONING.md`（战略）/ `docs/COMPAT.md`（兼容面 + 毕业清单）/
+  `docs/ARCHITECTURE.md`（架构）/ `README.md`（总览）
+- **CI**：`.github/workflows/bpt-agent-sdk.yml`（Node 单测无钥常跑 + live-smoke 手动 dispatch 用 `secrets.ANTHROPIC_API_KEY`）
+- **待办（后续会话可接手）**：
+  - **task #16**：v0.3 可观测消息流扩容（`permission_denied` / `tool_progress` / `rate_limit_event` 等新消息变体）
+  - **task #17**：v0.3 P1/P2 长尾（`tool()` annotations / Read image+PDF / mcpServerStatus config·scope·tools / listSessions option 形状）
+- **沙箱**：按 BPT 高开放权限信任模型判定 **N/A-by-design**（云沙箱在 BPT 内部场景不适用，守密人 2026-07-03 认可）
 
 ## 当前阶段
 
