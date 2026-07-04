@@ -531,8 +531,37 @@ def _read_frontmatter(text: str) -> dict:
     return fields
 
 
+# Deployed-page deep-links (verified live 200 on GitHub Pages). The visualizer is
+# served at /kb/, so the JS prepends "../" to these site-root-relative paths.
+_WIKI_AWAKENERS = REPO / "projects/wiki/docs/zh/awakeners"
+
+
+def _node_url(rel: str) -> str | None:
+    """Site-root-relative deep-link for a node id, or None if it has no public page.
+
+    放指针不放本体的延伸：图节点只带跳转指针，本体仍在 wiki / news 原地渲染。
+    """
+    if rel.startswith("/characters/"):
+        cid = rel[len("/characters/"):].removesuffix(".md")
+        # 58/72 唤醒体有真实 wiki 页；无页的（未发布变体等）不给死链
+        return f"wiki/zh/awakeners/{cid}" if (_WIKI_AWAKENERS / f"{cid}.md").exists() else None
+    if rel.startswith("/story/"):
+        return "wiki/story"
+    if rel.startswith("/sources/"):
+        return "news/"
+    return None
+
+
 def build_graph() -> dict:
-    """Scan the bundle into a {nodes, edges} graph for the visualizer."""
+    """Scan the bundle into a {nodes, edges} graph for the visualizer.
+
+    Edges are typed and *grounded* — no fabricated relationships:
+      - ``variant``  本体↔异变/本源形态（角色名前缀干净推导，高信号）
+      - ``lore``     同篇 lore 正文共现的角色（叙事关联，高信号）
+      - ``cv``       同声优（弱信号，背景纹理）
+      - ``link``     bundle 内显式 markdown 链接
+    画师边被**刻意剔除**：全 72 角色同为「巴拉巴拉」，连成的是零区分度的噪声星。
+    """
     nodes, edges = [], []
     id_set = set()
     bodies: dict[str, str] = {}
@@ -545,33 +574,72 @@ def build_graph() -> dict:
         fm = _read_frontmatter(text)
         bodies[rel] = text
         id_set.add(rel)
-        nodes.append({
+        node = {
             "id": rel,
             "type": fm.get("type", "unknown"),
             "title": fm.get("title", f.stem),
             "tags": fm.get("tags", []) if isinstance(fm.get("tags"), list) else [],
-        })
+        }
+        url = _node_url(rel)
+        if url:
+            node["url"] = url
+        nodes.append(node)
+
+    # dedupe by unordered id-pair; higher-signal edge types win over lower.
+    pair_seen: set[frozenset] = set()
+
+    def add_edge(a: str, b: str, rel: str, rel_type: str) -> None:
+        if a not in id_set or b not in id_set or a == b:
+            return
+        key = frozenset((a, b))
+        if key in pair_seen:
+            return
+        pair_seen.add(key)
+        edges.append({"source": a, "target": b, "rel": rel, "rel_type": rel_type})
 
     # explicit markdown-link edges (graph richness, if any)
-    seen = set()
     for src, text in bodies.items():
         for tgt in _LINK_RE.findall(text):
-            if tgt in id_set and tgt != src and (src, tgt) not in seen:
-                seen.add((src, tgt))
-                edges.append({"source": src, "target": tgt, "rel": "link"})
+            add_edge(src, tgt, "link", "link")
 
-    # tag-cluster star edges (画师 / CV) — keeps角色 grouped without edge blow-up
-    groups: dict[str, list[str]] = {}
-    for n in nodes:
-        for t in n["tags"]:
-            if t.startswith("画师:") or t.startswith("CV:"):
-                groups.setdefault(t, []).append(n["id"])
-    for tag, members in groups.items():
+    cnode = lambda cid: f"/characters/{cid}.md"
+    cdata = json.loads(CHARACTERS_SRC.read_text(encoding="utf-8")).get("characters", [])
+    by_name = {c["name"]: c for c in cdata if c.get("name")}
+
+    # 1) variant edges — base ↔ variant/origin form (clean name-prefix derivation)
+    for c in cdata:
+        name = c.get("name", "")
+        base = None
+        if "·" in name:
+            base = name.split("·", 1)[1]
+        elif name.startswith("本源") and len(name) > 2:
+            base = name[2:]
+        if base and base in by_name and base != name:
+            add_edge(cnode(c["id"]), cnode(by_name[base]["id"]), "变体", "variant")
+
+    # 2) lore co-mention edges — two characters named in the same lore entry body
+    lore_path = STORY_DIR / "lore_entries.json"
+    if lore_path.exists():
+        lore = json.loads(lore_path.read_text(encoding="utf-8")).get("entries", [])
+        long_names = {n: c["id"] for n, c in by_name.items() if len(n) >= 2}
+        from itertools import combinations
+        for e in lore:
+            blob = f"{e.get('title', '')} {e.get('desc') or ''} {e.get('lock_tip') or ''}"
+            hit = sorted({n for n in long_names if n in blob})
+            for a, b in combinations(hit, 2):
+                add_edge(cnode(long_names[a]), cnode(long_names[b]), "同篇提及", "lore")
+
+    # 3) CV cluster edges (demoted, faint) — same voice actor, star from rep
+    cv_groups: dict[str, list[int]] = {}
+    for c in cdata:
+        if c.get("voice_actor"):
+            cv_groups.setdefault(c["voice_actor"], []).append(c["id"])
+    for cv, members in cv_groups.items():
         if len(members) < 2:
             continue
-        rep = members[0]
+        rep = cnode(members[0])
         for m in members[1:]:
-            edges.append({"source": rep, "target": m, "rel": tag})
+            add_edge(rep, cnode(m), f"CV:{cv}", "cv")
 
     return {
         "generated": TODAY,
@@ -594,9 +662,10 @@ _VISUALIZER_HTML = r"""<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>银芯 OKF Bundle — 关系图</title>
 <style>
-  html,body{margin:0;height:100%;background:#0c0e14;color:#cdd6f4;font-family:system-ui,sans-serif}
+  html,body{margin:0;height:100%;background:#0c0e14;color:#cdd6f4;font-family:system-ui,sans-serif;overflow:hidden}
   #hud{position:fixed;top:10px;left:10px;z-index:10;font-size:13px;line-height:1.6;
        background:rgba(20,22,30,.85);padding:10px 12px;border:1px solid #2a2f40;border-radius:8px;max-width:260px}
   #hud b{color:#a6e3a1}
@@ -604,7 +673,7 @@ _VISUALIZER_HTML = r"""<!DOCTYPE html>
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
   #tip{position:fixed;pointer-events:none;z-index:20;background:#181b26;border:1px solid #45475a;
        padding:6px 9px;border-radius:6px;font-size:12px;display:none;max-width:280px}
-  canvas{display:block}
+  canvas{display:block;touch-action:none}
 </style>
 </head>
 <body>
@@ -612,7 +681,8 @@ _VISUALIZER_HTML = r"""<!DOCTYPE html>
   <div><b>银芯 OKF Bundle</b> 关系图</div>
   <div id="meta"></div>
   <div class="legend" id="legend"></div>
-  <div style="margin-top:6px;color:#7f849c">拖动节点 / 滚轮缩放 / 悬停看详情</div>
+  <div class="legend" id="legendEdge" style="margin-top:4px"></div>
+  <div style="margin-top:6px;color:#7f849c">桌面：拖动 / 滚轮缩放 / 悬停看详情<br>手机：单指拖动平移 / 双指捏合缩放<br><b style="color:#f9e2af">点/轻触节点进档案</b>（角色→Wiki，剧情→剧情档案，社区→情报）</div>
 </div>
 <div id="tip"></div>
 <canvas id="c"></canvas>
@@ -622,13 +692,28 @@ const palette = ["#89b4fa","#a6e3a1","#f9e2af","#f38ba8","#cba6f7","#94e2d5","#f
 const types = [...new Set(G.nodes.map(n=>n.type))];
 const colorOf = t => palette[types.indexOf(t) % palette.length];
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
-let W,H; function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;} resize(); addEventListener('resize',resize);
+let W,H,dpr=1; function resize(){dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';} resize(); addEventListener('resize',resize);
 document.getElementById('meta').textContent = `${G.stats.nodes} 概念 / ${G.stats.edges} 关系 · ${G.generated}`;
 document.getElementById('legend').innerHTML = types.map(t=>`<span><i class="dot" style="background:${colorOf(t)}"></i>${t}</span>`).join('');
 
+// typed edges: high-signal (variant/lore/link) drawn bold on top, cv faint below
+const EDGE_STYLE = {
+  variant:{color:"rgba(249,226,175,0.62)", w:2.2, z:1, label:"变体"},
+  lore:   {color:"rgba(148,226,213,0.62)", w:2.0, z:1, label:"同篇提及"},
+  link:   {color:"rgba(137,180,250,0.38)", w:1.4, z:1, label:"链接"},
+  cv:     {color:"rgba(120,130,160,0.10)", w:1.0, z:0, label:"同声优"},
+};
+const es = t => EDGE_STYLE[t] || EDGE_STYLE.cv;
+{
+  const present = [...new Set(G.edges.map(e=>e.rel_type||'cv'))].sort((a,b)=>es(b).z-es(a).z);
+  document.getElementById('legendEdge').innerHTML = present.map(t=>`<span style="color:#9aa0b5"><i style="display:inline-block;width:14px;height:0;border-top:2px solid ${es(t).color.replace(/0\.\d+/,'0.9')};margin-right:4px;vertical-align:middle"></i>${es(t).label}</span>`).join('');
+}
+
 const idx = new Map(G.nodes.map((n,i)=>[n.id,i]));
 const N = G.nodes.map((n,i)=>({...n, x:W/2+Math.cos(i)*200+Math.random()*40, y:H/2+Math.sin(i)*200+Math.random()*40, vx:0, vy:0}));
-const E = G.edges.map(e=>({s:idx.get(e.source), t:idx.get(e.target), rel:e.rel})).filter(e=>e.s!=null&&e.t!=null);
+const E = G.edges.map(e=>({s:idx.get(e.source), t:idx.get(e.target), rel:e.rel, rt:e.rel_type||'cv'})).filter(e=>e.s!=null&&e.t!=null);
+E.sort((a,b)=>es(a.rt).z-es(b.rt).z);  // faint first, bold last (painted on top)
 const deg = N.map(()=>0); E.forEach(e=>{deg[e.s]++;deg[e.t]++;});
 
 let cam={x:0,y:0,k:1}, drag=null, pan=null;
@@ -648,33 +733,70 @@ function sim(){
     if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}}
 }
 function draw(){
-  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
-  ctx.setTransform(cam.k,0,0,cam.k,cam.x,cam.y);
-  ctx.strokeStyle="rgba(120,130,160,.18)";ctx.lineWidth=1/cam.k;
-  for(const e of E){ctx.beginPath();ctx.moveTo(N[e.s].x,N[e.s].y);ctx.lineTo(N[e.t].x,N[e.t].y);ctx.stroke();}
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.setTransform(cam.k*dpr,0,0,cam.k*dpr,cam.x*dpr,cam.y*dpr);
+  for(const e of E){const st=es(e.rt);ctx.strokeStyle=st.color;ctx.lineWidth=st.w/cam.k;
+    ctx.beginPath();ctx.moveTo(N[e.s].x,N[e.s].y);ctx.lineTo(N[e.t].x,N[e.t].y);ctx.stroke();}
+  const showLabel = cam.k>0.5;
   for(let i=0;i<N.length;i++){const n=N[i],r=4+Math.min(deg[i],8)*0.9;
-    ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fillStyle=colorOf(n.type);ctx.fill();}
+    ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fillStyle=colorOf(n.type);ctx.fill();
+    if(n.url){ctx.lineWidth=1.6/cam.k;ctx.strokeStyle="rgba(249,226,175,0.55)";ctx.stroke();}
+    if(showLabel||deg[i]>=3){ctx.fillStyle="rgba(205,214,244,0.82)";ctx.font=(11/cam.k).toFixed(2)+"px system-ui";
+      ctx.fillText(n.title, n.x+r+3/cam.k, n.y+4/cam.k);}
+  }
 }
 function loop(){sim();draw();requestAnimationFrame(loop);} loop();
 
 function screenToWorld(mx,my){return {x:(mx-cam.x)/cam.k, y:(my-cam.y)/cam.k};}
-function pick(mx,my){const p=screenToWorld(mx,my);let best=null,bd=1e9;
+function pick(mx,my,tol){const p=screenToWorld(mx,my);let best=null,bd=1e9;
   for(let i=0;i<N.length;i++){let dx=N[i].x-p.x,dy=N[i].y-p.y,d=dx*dx+dy*dy;
-    if(d<bd){bd=d;best=i;}} return bd< (14/cam.k)**2 ? best:null;}
+    if(d<bd){bd=d;best=i;}} return bd< ((tol||14)/cam.k)**2 ? best:null;}
 const tip=document.getElementById('tip');
-cv.addEventListener('mousedown',e=>{const i=pick(e.clientX,e.clientY);
+let down=null, moved=false;
+cv.addEventListener('mousedown',e=>{const i=pick(e.clientX,e.clientY);down={x:e.clientX,y:e.clientY,i};moved=false;
   if(i!=null){drag={node:N[i]};}else{pan={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};}});
 addEventListener('mousemove',e=>{
+  if(down && Math.abs(e.clientX-down.x)+Math.abs(e.clientY-down.y)>4) moved=true;
   if(drag){const p=screenToWorld(e.clientX,e.clientY);drag.node.x=p.x;drag.node.y=p.y;drag.node.vx=0;drag.node.vy=0;}
   else if(pan){cam.x=pan.cx+(e.clientX-pan.x);cam.y=pan.cy+(e.clientY-pan.y);}
   const i=pick(e.clientX,e.clientY);
+  cv.style.cursor = i==null ? 'default' : (N[i].url ? 'pointer' : 'grab');
   if(i!=null){const n=N[i];tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY+12)+'px';
-    tip.innerHTML=`<b>${n.title}</b><br><span style="color:#7f849c">${n.type}</span><br>${(n.tags||[]).join(' · ')}<br><span style="color:#585b70">${n.id}</span>`;}
+    tip.innerHTML=`<b>${n.title}</b><br><span style="color:#7f849c">${n.type}</span><br>${(n.tags||[]).join(' · ')}<br><span style="color:#585b70">${n.id}</span>`+(n.url?'<br><span style="color:#f9e2af">▸ 点击查看档案</span>':'');}
   else tip.style.display='none';});
-addEventListener('mouseup',()=>{drag=null;pan=null;});
+addEventListener('mouseup',()=>{
+  if(down && !moved && down.i!=null){const n=N[down.i]; if(n.url) window.open('../'+n.url,'_blank','noopener');}
+  drag=null;pan=null;down=null;});
 cv.addEventListener('wheel',e=>{e.preventDefault();const s=e.deltaY<0?1.1:0.9;
   const wx=(e.clientX-cam.x)/cam.k,wy=(e.clientY-cam.y)/cam.k;cam.k*=s;
   cam.x=e.clientX-wx*cam.k;cam.y=e.clientY-wy*cam.k;},{passive:false});
+
+// ---- touch (mobile): 1-finger drag/pan + tap-to-open, 2-finger pinch zoom ----
+function tpos(t){const r=cv.getBoundingClientRect();return {x:t.clientX-r.left,y:t.clientY-r.top};}
+let tNode=null,tPan=null,pinch=null,tStart=null,tMoved=false;
+cv.addEventListener('touchstart',e=>{e.preventDefault();
+  if(e.touches.length===1){const p=tpos(e.touches[0]),i=pick(p.x,p.y,22);tStart={x:p.x,y:p.y,i};tMoved=false;
+    if(i!=null){tNode=N[i];}else{tPan={x:p.x,y:p.y,cx:cam.x,cy:cam.y};}}
+  else if(e.touches.length===2){tNode=null;tPan=null;tStart=null;
+    const a=tpos(e.touches[0]),b=tpos(e.touches[1]);
+    pinch={d:Math.hypot(a.x-b.x,a.y-b.y)||1,mx:(a.x+b.x)/2,my:(a.y+b.y)/2};}
+},{passive:false});
+cv.addEventListener('touchmove',e=>{e.preventDefault();
+  if(pinch&&e.touches.length===2){const a=tpos(e.touches[0]),b=tpos(e.touches[1]);
+    const d=Math.hypot(a.x-b.x,a.y-b.y)||1,mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
+    const wx=(pinch.mx-cam.x)/cam.k,wy=(pinch.my-cam.y)/cam.k;   // world point under midpoint
+    cam.k=Math.max(0.15,Math.min(6,cam.k*(d/pinch.d)));
+    cam.x=mx-wx*cam.k;cam.y=my-wy*cam.k;                          // keep it under fingers + follow drift
+    pinch.d=d;pinch.mx=mx;pinch.my=my;}
+  else if(e.touches.length===1){const p=tpos(e.touches[0]);
+    if(tStart&&Math.abs(p.x-tStart.x)+Math.abs(p.y-tStart.y)>6)tMoved=true;
+    if(tNode){const w=screenToWorld(p.x,p.y);tNode.x=w.x;tNode.y=w.y;tNode.vx=0;tNode.vy=0;}
+    else if(tPan){cam.x=tPan.cx+(p.x-tPan.x);cam.y=tPan.cy+(p.y-tPan.y);}}
+},{passive:false});
+cv.addEventListener('touchend',e=>{
+  if(tStart&&!tMoved&&tStart.i!=null){const n=N[tStart.i];if(n.url)window.open('../'+n.url,'_blank','noopener');}
+  if(e.touches.length===0){tNode=null;tPan=null;pinch=null;tStart=null;}
+},{passive:false});
 </script>
 </body>
 </html>
