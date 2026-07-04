@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**114**
-- 脚本可达性：活 62 / 仅测试 0 / 孤儿 0
+- 功能总数：**115**
+- 脚本可达性：活 63 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 30 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 28 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 29 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 9 |
@@ -97,7 +97,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（28）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（29）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -121,6 +121,8 @@
   `scripts/deliverable_path.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
+- **`kb_ab.py`** _[活:cli]_ — kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。  
+  `scripts/kb_ab.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
 - **`kb_navigator.py`** _[活:mcp]_ — kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。  

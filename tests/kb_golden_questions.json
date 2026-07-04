@@ -21,6 +21,8 @@
     {"q": "卡牌系统 指令卡 术语", "expect": ["card-system"], "mode": "search", "probe": "assets（当前缺口·英文标题）"},
     {"q": "banner 卡池 角色", "expect": ["banners-by-character"], "mode": "search", "probe": "wiki-data（当前缺口·英文标题）"},
     {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "probe": "memory 决策台账"},
-    {"q": "discord", "expect": ["community-discord", "news-output-discord"], "mode": "activate", "probe": "associative 联想召回（扩散激活跨层）"}
+    {"q": "discord", "expect": ["community-discord", "news-output-discord"], "mode": "activate", "probe": "associative 联想召回（扩散激活跨层）"},
+    {"q": "萝坦", "expect": ["/characters/15585", "/characters/15595"], "mode": "activate", "probe": "associative token 脱节（→奥吉尔/拉蒙娜 lore 邻居，与查询零共享字，grep 无从遍历）"},
+    {"q": "奥吉尔", "expect": ["/characters/15569", "/characters/15595"], "mode": "activate", "probe": "associative token 脱节（→萝坦/拉蒙娜 lore 邻居，grep 无从遍历）"}
   ]
 }

@@ -345,6 +345,7 @@ brain-in-a-vat/
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
 | 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
 | 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志 kb_usage.jsonl 落 gitignored `Public-Info-Pool/Rough/`）|
+| 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题严格胜）|
 | 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
 
 ### §7.2 CI 自动化
