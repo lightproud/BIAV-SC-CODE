@@ -37,6 +37,7 @@ function opts(extra: Record<string, unknown> = {}) {
     env: { PATH: process.env.PATH, HOME: process.env.HOME },
     model: 'claude-sonnet-4-5',
     permissionMode: 'bypassPermissions' as const,
+    allowDangerouslySkipPermissions: true,
     ...extra,
   };
 }

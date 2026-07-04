@@ -726,6 +726,13 @@ export type Options = {
   mcpServers?: Record<string, McpServerConfig>;
   model?: string;
   permissionMode?: PermissionMode;
+  /**
+   * Safety interlock required to enter `permissionMode: 'bypassPermissions'`.
+   * Matches @anthropic-ai/claude-agent-sdk: bypassPermissions is refused unless
+   * this is explicitly `true`. Applies to the initial mode and to
+   * `setPermissionMode('bypassPermissions')` mid-session.
+   */
+  allowDangerouslySkipPermissions?: boolean;
   /** Persist the session transcript to disk (default true). */
   persistSession?: boolean;
   /** BPT extension: direct Messages API connection settings. */

@@ -106,7 +106,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
-| `permissionMode` | PARTIAL | `default`/`acceptEdits`/`bypassPermissions`/`plan`/`dontAsk`; `auto` (classifier) not offered |
+| `permissionMode` | PARTIAL | `default`/`acceptEdits`/`bypassPermissions`/`plan`/`dontAsk`; `auto` (classifier) not offered. `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
+| `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true` |
 | `persistSession` / `sessionId` / `resume` | FULL | JSONL store |
 | `provider` | FULL | **BPT extension** — direct-API connection settings |
 | `settingSources` | ACCEPTED | no filesystem settings in v0.1 |
@@ -116,7 +117,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
-| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `includeHookEvents`, `loadTimeoutMs`, `allowDangerouslySkipPermissions`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored in v0.1 |
+| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `includeHookEvents`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
 
 ## Built-in tools
 

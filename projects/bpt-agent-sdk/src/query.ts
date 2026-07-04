@@ -108,7 +108,6 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'agentProgressSummaries',
   'forwardSubagentText',
   'includeHookEvents',
-  'allowDangerouslySkipPermissions',
   'title',
   'resumeSessionAt',
   'debugFile',
@@ -338,7 +337,7 @@ export function query(args: {
   for (const key of ACCEPTED_OPTION_KEYS) {
     if ((options as Record<string, unknown>)[key] !== undefined) {
       debug(
-        `option '${key}' is accepted for compatibility but has no effect in v0.1 (see docs/COMPAT.md)`,
+        `option '${key}' is accepted for compatibility but has no effect in this SDK (see docs/COMPAT.md)`,
       );
     }
   }
@@ -378,6 +377,19 @@ export function query(args: {
     debug,
     betas: options.betas,
   });
+  // Safety interlock: bypassPermissions must be explicitly unlocked with
+  // allowDangerouslySkipPermissions (matches @anthropic-ai/claude-agent-sdk).
+  // Enforced for the initial mode here and for setPermissionMode() below.
+  const allowDangerousBypass = options.allowDangerouslySkipPermissions === true;
+  const assertBypassUnlocked = (mode: PermissionMode | undefined): void => {
+    if (mode === 'bypassPermissions' && !allowDangerousBypass) {
+      throw new ConfigurationError(
+        "permissionMode 'bypassPermissions' requires allowDangerouslySkipPermissions: true",
+      );
+    }
+  };
+  assertBypassUnlocked(options.permissionMode);
+
   const gate = new DefaultPermissionGate({
     mode: options.permissionMode,
     allowedTools: options.allowedTools,
@@ -1257,6 +1269,7 @@ export function query(args: {
       }
     },
     async setPermissionMode(mode: PermissionMode): Promise<void> {
+      assertBypassUnlocked(mode);
       gate.setMode(mode);
     },
     async setModel(model?: string): Promise<void> {

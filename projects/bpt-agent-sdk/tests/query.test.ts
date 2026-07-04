@@ -13,6 +13,7 @@ import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {
+  ConfigurationError,
   getSessionInfo,
   isAbortError,
   listSessions,
@@ -259,7 +260,10 @@ describe('query() e2e - tool roundtrip', () => {
     );
     const q = query({
       prompt: 'run echo',
-      options: baseOptions({ permissionMode: 'bypassPermissions' }),
+      options: baseOptions({
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
     });
     const messages = await collect(q);
 
@@ -541,7 +545,7 @@ describe('query() e2e - compat options, budget, control surface', () => {
     expect(
       lines
         .filter((l) => l.includes("option '"))
-        .every((l) => l.includes('no effect in v0.1')),
+        .every((l) => l.includes('no effect in this SDK')),
     ).toBe(true);
   });
 
@@ -560,6 +564,7 @@ describe('query() e2e - compat options, budget, control surface', () => {
       options: baseOptions({
         maxBudgetUsd: 0.0000001,
         permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
       }),
     });
     const messages = await collect(q);
@@ -728,7 +733,10 @@ describe('query() e2e - confirmed-finding regressions', () => {
     );
     const q = query({
       prompt: 'run',
-      options: baseOptions({ permissionMode: 'bypassPermissions' }),
+      options: baseOptions({
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
     });
     const messages = await collect(q);
 
@@ -1246,6 +1254,7 @@ describe('query() e2e - v0.2 confirmed-finding regressions (query)', () => {
       prompt: 'go',
       options: baseOptions({
         permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
         thinking: { type: 'enabled' },
         maxThinkingTokens: 5000,
       }),
@@ -1420,6 +1429,7 @@ describe('query() e2e - v0.2 confirmed-finding regressions (query)', () => {
       prompt: 'go',
       options: baseOptions({
         permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
         agents: { worker: { description: 'w', prompt: 'WORKER_SYS_PROMPT' } },
         hooks: {
           SubagentStop: [
@@ -1450,5 +1460,49 @@ describe('query() e2e - v0.2 confirmed-finding regressions (query)', () => {
         );
       }),
     ]);
+  });
+});
+
+describe('bypassPermissions safety interlock', () => {
+  it('query() throws ConfigurationError when bypass is set without the unlock flag', () => {
+    expect(() =>
+      query({
+        prompt: 'hi',
+        options: baseOptions({ permissionMode: 'bypassPermissions' }),
+      }),
+    ).toThrow(ConfigurationError);
+  });
+
+  it('query() constructs and runs when bypass is unlocked', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'hi',
+      options: baseOptions({
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
+    });
+    const messages = await collect(q);
+    expect((messages[0] as SDKSystemMessage).permissionMode).toBe('bypassPermissions');
+    expect(lastResult(messages).subtype).toBe('success');
+  });
+
+  it('setPermissionMode(bypass) rejects without the unlock flag', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({ prompt: 'hi', options: baseOptions() });
+    await expect(q.setPermissionMode('bypassPermissions')).rejects.toBeInstanceOf(
+      ConfigurationError,
+    );
+    await q.close();
+  });
+
+  it('setPermissionMode(bypass) resolves when the unlock flag is set', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'hi',
+      options: baseOptions({ allowDangerouslySkipPermissions: true }),
+    });
+    await expect(q.setPermissionMode('bypassPermissions')).resolves.toBeUndefined();
+    await q.close();
   });
 });
