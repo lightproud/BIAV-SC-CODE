@@ -35,6 +35,27 @@ const TYPE_GLOBS: Record<string, string[]> = {
   cpp: ['**/*.cpp', '**/*.cc', '**/*.cxx', '**/*.hpp', '**/*.hh', '**/*.hxx'],
   md: ['**/*.md', '**/*.markdown'],
   json: ['**/*.json'],
+  html: ['**/*.html', '**/*.htm'],
+  css: ['**/*.css', '**/*.scss', '**/*.sass', '**/*.less'],
+  sh: ['**/*.sh', '**/*.bash', '**/*.zsh'],
+  yaml: ['**/*.yaml', '**/*.yml'],
+  toml: ['**/*.toml'],
+  xml: ['**/*.xml'],
+  sql: ['**/*.sql'],
+  rb: ['**/*.rb'],
+  php: ['**/*.php'],
+  swift: ['**/*.swift'],
+  kotlin: ['**/*.kt', '**/*.kts'],
+  scala: ['**/*.scala', '**/*.sc'],
+  cs: ['**/*.cs'],
+  lua: ['**/*.lua'],
+  vue: ['**/*.vue'],
+  svelte: ['**/*.svelte'],
+  ex: ['**/*.ex', '**/*.exs'],
+  dart: ['**/*.dart'],
+  r: ['**/*.r', '**/*.R'],
+  proto: ['**/*.proto'],
+  tex: ['**/*.tex'],
 };
 
 function looksBinary(buf: Buffer): boolean {
@@ -229,6 +250,12 @@ export const grepTool: BuiltinTool = {
         description:
           'Lines of context before and after each match (content mode).',
       },
+      '-o': {
+        type: 'boolean',
+        description:
+          'Only-matching: in content mode, print each matched substring on its ' +
+          'own line instead of the whole line (context flags are ignored).',
+      },
       multiline: {
         type: 'boolean',
         description:
@@ -237,6 +264,12 @@ export const grepTool: BuiltinTool = {
       head_limit: {
         type: 'number',
         description: `Limit output to the first N lines/entries (default ${DEFAULT_HEAD_LIMIT}; 0 = unlimited).`,
+      },
+      offset: {
+        type: 'number',
+        description:
+          'Skip the first N lines/entries before applying head_limit ' +
+          '(pagination; equivalent to "| tail -n +N | head"). Default 0.',
       },
     },
     required: ['pattern'],
@@ -274,6 +307,7 @@ export const grepTool: BuiltinTool = {
     const caseInsensitive = input['-i'] === true;
     const showLineNumbers = input['-n'] !== false; // default true
     const multiline = input['multiline'] === true;
+    const onlyMatching = input['-o'] === true;
     const bothContext = asOptionalCount(input['-C']);
     const before = asOptionalCount(input['-B']) ?? bothContext ?? 0;
     const after = asOptionalCount(input['-A']) ?? bothContext ?? 0;
@@ -284,6 +318,10 @@ export const grepTool: BuiltinTool = {
         ? Math.max(0, Math.floor(rawLimit))
         : DEFAULT_HEAD_LIMIT;
     const limited = headLimit > 0;
+    // Skip the first `offset` entries before head_limit (pagination). When
+    // limited we must collect offset+headLimit rows before we can stop.
+    const offset = asOptionalCount(input['offset']) ?? 0;
+    const collectCap = limited ? offset + headLimit : Number.POSITIVE_INFINITY;
 
     // m always; i on -i; s only in multiline mode (dot matches newlines).
     let flags = 'm';
@@ -362,7 +400,7 @@ export const grepTool: BuiltinTool = {
 
     for (const file of files) {
       if (ctx.signal.aborted) throw new AbortError();
-      if (limited && out.length >= headLimit) break;
+      if (out.length >= collectCap) break;
 
       const scan = await scanFile(file, pattern, flags, multiline);
       if (scan === null || scan.matches.length === 0) continue;
@@ -378,6 +416,23 @@ export const grepTool: BuiltinTool = {
       }
 
       // content mode
+      if (onlyMatching) {
+        // Print each matched substring on its own line; context is ignored.
+        const re = new RegExp(pattern, flags.includes('g') ? flags : `${flags}g`);
+        for (const i of scan.matches) {
+          if (out.length >= collectCap) break;
+          const line = scan.lines[i] ?? '';
+          re.lastIndex = 0;
+          let m: RegExpExecArray | null;
+          while ((m = re.exec(line)) !== null) {
+            if (out.length >= collectCap) break;
+            const lineNo = showLineNumbers ? `${i + 1}:` : '';
+            out.push(`${file}:${lineNo}${clipLine(m[0])}`);
+            if (m[0].length === 0) re.lastIndex++; // avoid zero-length loop
+          }
+        }
+        continue;
+      }
       if (useContext && !firstContentFile) out.push('--');
       firstContentFile = false;
       const matchSet = new Set(scan.matches);
@@ -388,12 +443,12 @@ export const grepTool: BuiltinTool = {
         Math.max(scan.lines.length - 1, 0),
       );
       for (let h = 0; h < hunks.length; h++) {
-        if (limited && out.length >= headLimit) break;
+        if (out.length >= collectCap) break;
         const hunk = hunks[h];
         if (hunk === undefined) continue;
         if (useContext && h > 0) out.push('--');
         for (let i = hunk.start; i <= hunk.end; i++) {
-          if (limited && out.length >= headLimit) break;
+          if (out.length >= collectCap) break;
           const isMatch = matchSet.has(i);
           const sep = isMatch ? ':' : '-';
           const lineNo = showLineNumbers ? `${i + 1}${sep}` : '';
@@ -405,7 +460,12 @@ export const grepTool: BuiltinTool = {
     if (!anyMatch) {
       return { content: 'No matches found' };
     }
-    const capped = limited ? out.slice(0, headLimit) : out;
+    const capped = limited
+      ? out.slice(offset, offset + headLimit)
+      : out.slice(offset);
+    if (capped.length === 0) {
+      return { content: 'No matches found' };
+    }
     return { content: capped.join('\n') };
   },
 };
