@@ -51,10 +51,27 @@ if (!process.env.ANTHROPIC_API_KEY) {
   process.exit(2);
 }
 
-const sdk =
-  ENGINE === 'official'
-    ? await import('@anthropic-ai/claude-agent-sdk')
-    : await import('../../dist/index.js');
+// The official arm imports @anthropic-ai/claude-agent-sdk. It is NEVER a
+// dependency of this package (clean-room discipline); CI installs it with
+// `npm i --no-save` for the comparison run only. A missing package or a
+// CLI-startup failure is reported as a skip (exit 2), not a crash — "the
+// official engine could not start headless" is itself a finding (it is the
+// whole reason BPT needs this SDK).
+let sdk;
+if (ENGINE === 'official') {
+  try {
+    sdk = await import('@anthropic-ai/claude-agent-sdk');
+  } catch (err) {
+    console.log(
+      `ab-benchmark: could not load @anthropic-ai/claude-agent-sdk ` +
+        `(${err instanceof Error ? err.message : String(err)}); skipping the ` +
+        `official arm (exit 2). Install it with \`npm i --no-save\` for this run.`,
+    );
+    process.exit(2);
+  }
+} else {
+  sdk = await import('../../dist/index.js');
+}
 
 // --- Representative task set ---------------------------------------------------
 // Each task: fixture(dir) seeds files; prompt drives the model; check(text)

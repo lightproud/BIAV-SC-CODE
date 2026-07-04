@@ -93,6 +93,23 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 已在干净目录实测安装 + import 通过。③ **A/B 测量线**（POSITIONING §7 测量强制令）：
 `tests/integration/ab-benchmark.mjs` 七任务代表集（含中文两项），产 JSON 报告 + offender 排序；
 挂 `bpt-agent-sdk.yml` 的 `ab_benchmark` dispatch 输入，报告作 artifact 上传。**691 单测全绿**。
+首轮真 API 实测（haiku，7/7 全过，$0.076/18 轮）：工具耗时全毫秒级、缓存命中 0%（短会话摊不平缓存写入溢价，
+实证 POSITIONING §6「缓存复利只在多轮长对话显现」），offender 头部为 4 轮写改类（轮数是成本主乘数）。
+
+**官方裸对比（v0.5+，守密人 2026-07-04「先跑裸对比」裁定）**：`bpt-agent-sdk.yml` 加 `vs-official` job
+（`vs_official` dispatch 输入）——同模型同 7 任务、本 SDK vs 官方 `@anthropic-ai/claude-agent-sdk` 两引擎各跑，
+`--compare` 出并排表。只比**客观两轴**：响应速度（墙钟/API ms/TTFT）+ 输出正确性（同 `check()` 通过率）；
+**质量不评判**（该轴被专有系统提示词混淆，属 POSITIONING §2/§4 结构性天花板）。官方包用 `npm i --no-save` 仅本次装、
+**绝不进 package.json/lockfile、绝不成本包依赖**（净室纪律）；官方引擎当**纯黑箱**计时+判分，读其输入输出行为、
+绝不读其提示词文本。官方 SDK 靠 spawn Claude Code CLI，无头 CI 起不来则官方臂跳过（exit 2），
+「官方引擎无头起不来」本身即结论（正是 BPT 换引擎的动机）。
+
+**Backlog（守密人「先存下来」，2026-07-04）——黑箱行为观测法收窄能力层差**：质量/行为差里，
+「能力层」（agent 环转数/决策对不对）可干净室安全地逼近官方，方法是**黑箱行为克隆**（Compaq 逆向 IBM BIOS 金标准）：
+跑官方当黑箱、只观测其输入→输出行为（选哪个工具/怎么分步/答案排版），据此**独立撰写本 SDK 自己的提示词**去逼近
+同样行为，全程不读官方提示词文本 + 拿自造提示词做 A/B 迭代爬坡。「秘方层」（专有提示词本体）仍是不可触碰的结构性天花板。
+**硬红线**：泄漏/流传的官方提示词文本一律不并入本仓（净室=MIT 合法性地基，泄漏≠公开文档，见 POSITIONING §2）。
+
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选
