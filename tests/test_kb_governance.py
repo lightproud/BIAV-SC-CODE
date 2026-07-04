@@ -169,5 +169,45 @@ def test_committed_bundle_structure_matches_sources(tmp_path, monkeypatch):
     )
 
 
+# --- 绊线 7：两层结构（北极星 Pillar A，选项 1）显式且骨架真连通 ----------
+
+def _graph() -> dict:
+    import json
+    return json.loads((BUNDLE / "graph.json").read_text(encoding="utf-8"))
+
+
+def test_every_node_has_consistent_tier():
+    """每节点带 tier，且与 SKELETON_LAYERS 声明一致（tier 是白盒对自身形状的显式声明）。"""
+    import build_kb_index as bki
+    bad = []
+    for n in _graph()["nodes"]:
+        layer = n["id"].strip("/").split("/")[0]
+        expected = "skeleton" if layer in bki.SKELETON_LAYERS else "search"
+        if n.get("tier") != expected:
+            bad.append((n["id"], n.get("tier"), expected))
+    assert bad == [], f"tier 标注与 SKELETON_LAYERS 声明不一致：{bad[:5]}"
+
+
+def test_skeleton_is_actually_connected():
+    """骨架层必须**真的**是网络：连通率不得跌破 60%（否则骨架名不副实）。
+
+    参考层（search）孤立是**有意**的（选项 1：不强连大容器成员=噪声星），故不对其连通性设限——
+    本测试把「200/293 孤立」从『缺陷指标』锁成『骨架连通 + 参考层有意孤立』的设计属性。
+    """
+    import collections
+    g = _graph()
+    deg = collections.Counter()
+    for e in g["edges"]:
+        deg[e["source"]] += 1
+        deg[e["target"]] += 1
+    skel = [n for n in g["nodes"] if n.get("tier") == "skeleton"]
+    connected = sum(1 for n in skel if deg[n["id"]] > 0)
+    assert skel, "无骨架节点"
+    ratio = connected / len(skel)
+    assert ratio >= 0.60, (
+        f"骨架连通率 {ratio:.0%} < 60%——骨架名不副实（skeleton 应为真可遍历网络）"
+    )
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

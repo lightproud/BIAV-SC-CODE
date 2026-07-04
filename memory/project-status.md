@@ -280,5 +280,8 @@ news-output(23)/unpacked(13)/extracted(4)/resource(34)/projects(17,含 CLAUDE.md
 （no domain:misc / unpacked slug / memory·story 白名单⊆实况 / 层非空）+ **结构指纹 keystone**
 （`build_okf_bundle.structural_fingerprint`，排易变量的规范哈希；不变量：committed okf/ 结构须恒等于
 源重建，抓「改源忘重建」stale commit）。现状基线：约 200/293 概念度数=0（孤立指针群岛）。
-**未落地（待守密人定边策略后开工）**：A 连成真网络（孤立参考层 search-tier vs 补策展边的分叉待裁）、
-D 扩散激活检索（依赖 A）、C 覆盖哨兵、E 减易变。
+**Pillar A 已落地（2026-07-04，守密人边策略裁定「选 1」）**：实测证明选项 1（不造噪声星）下几无可加的
+干净高信号边，故 A 从「加边」诚实收束为「**显式声明两层结构**」——skeleton（characters/sources/community/
+news-output，连通 76%）vs search（参考层，有意孤立、kb_search 可达）。tier 落 kb_index/graph 节点 +
+kb_navigator overview 报告；绊线 `test_skeleton_is_actually_connected`（骨架连通≥60%）锁设计属性。
+**未落地**：D 扩散激活检索（在 skeleton 层展开，杀手级消费）、C 覆盖哨兵、E 减易变。

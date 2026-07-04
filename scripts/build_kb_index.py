@@ -34,6 +34,20 @@ BUNDLE = REPO / "okf"
 INDEX_PATH = BUNDLE / "kb_index.json"
 
 RESERVED = {"index.md", "log.md"}
+
+# ---------------------------------------------------------------------------
+# 两层结构（北极星 Pillar A，守密人 2026-07-04 边策略裁定「选 1」）：
+#   - skeleton：概念参与可遍历关系图（有真机器可 derive 的高信号边），扩散激活在此展开。
+#   - search：参考材料，靠 kb_search 命中即可达，不强连边（强连大容器成员=噪声星，思想反对）。
+# 分层是白盒对自身形状的**显式声明**——参考层的孤立是「有意 search-tier」，非「意外空洞」。
+# ---------------------------------------------------------------------------
+SKELETON_LAYERS = frozenset({"characters", "sources", "community", "news-output"})
+
+
+def tier_of(section: str) -> str:
+    return "skeleton" if section in SKELETON_LAYERS else "search"
+
+
 _FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 # strip a leading frontmatter block to leave the searchable body
 _BODY_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
@@ -123,6 +137,7 @@ def build_kb_index() -> dict:
             "resource": fm.get("resource", ""),
             "tags": tags,
             "section": section,
+            "tier": tier_of(section),  # skeleton（可遍历骨架）vs search（参考层）
             "degree": 0,  # filled after edges
         }
         by_type[ctype].append(cid)
@@ -175,6 +190,10 @@ def build_kb_index() -> dict:
             "terms": len(postings),
             "by_type": {k: len(v) for k, v in sorted(by_type.items())},
             "sections": {k: v["count"] for k, v in sorted(sections.items())},
+            "by_tier": {
+                "skeleton": sum(1 for c in concepts.values() if c["tier"] == "skeleton"),
+                "search": sum(1 for c in concepts.values() if c["tier"] == "search"),
+            },
         },
         "sections": dict(sorted(sections.items())),
         "concepts": dict(sorted(concepts.items())),
