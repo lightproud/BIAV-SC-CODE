@@ -395,7 +395,9 @@ describe('DefaultPermissionGate pipeline', () => {
     asAllow(await gate.check('Read', { file_path: '/x' }, checkOpts({ readOnly: true })));
   });
 
-  it('step 6: plan mode denies write tools with a message naming tool and stage', async () => {
+  it('step 6: plan mode denies write tools when no canUseTool handler is available', async () => {
+    // v0.2: plan mode routes writes to canUseTool instead of a hard deny; with
+    // no callback provided the step-6 fallback denies.
     const gate = makeGate({ mode: 'plan' });
     const res = asDeny(
       await gate.check(
@@ -405,7 +407,23 @@ describe('DefaultPermissionGate pipeline', () => {
       ),
     );
     expect(res.message).toContain('Write');
-    expect(res.message).toContain('plan');
+    expect(res.message).toContain('canUseTool');
+  });
+
+  it('step 6 (v0.2): plan mode ROUTES a write tool to canUseTool when a handler exists', async () => {
+    const canUse = vi.fn(
+      async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }),
+    );
+    const gate = makeGate({ mode: 'plan', canUseTool: canUse as CanUseTool });
+    const res = asAllow(
+      await gate.check(
+        'Write',
+        { file_path: '/x', content: 'y' },
+        checkOpts({ readOnly: false, isFileEdit: true }),
+      ),
+    );
+    expect(canUse).toHaveBeenCalledTimes(1);
+    expect(res.updatedInput).toEqual({ file_path: '/x', content: 'y' });
   });
 
   it('step 7: acceptEdits allows isFileEdit and readOnly tools but not Bash', async () => {
@@ -502,14 +520,12 @@ describe('DefaultPermissionGate step 9 (canUseTool)', () => {
     expect(res.interrupt).toBe(true);
   });
 
-  it('treats a null return from canUseTool as deny', async () => {
+  it('treats a null return from canUseTool as skip (app decides out of band), NOT a recorded denial', async () => {
     const canUse: CanUseTool = async () => null;
     const gate = makeGate({ mode: 'default', canUseTool: canUse });
-    const res = asDeny(
-      await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })),
-    );
-    expect(res.message).toContain('Bash');
-    expect(gate.denials()).toHaveLength(1);
+    const res = await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false }));
+    expect(res.decision).toBe('skip');
+    expect(gate.denials()).toHaveLength(0);
   });
 
   it('a throwing canUseTool becomes a deny, not an exception', async () => {
@@ -627,20 +643,18 @@ describe('DefaultPermissionGate hook ask routing', () => {
     expect(canUse).not.toHaveBeenCalled();
   });
 
-  it('hook ask does NOT lift the plan-mode deny for write tools', async () => {
+  it('v0.2: plan mode routes a write tool (with hook ask) to canUseTool, not a hard deny', async () => {
     const canUse = vi.fn(
       async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }),
     );
     const gate = makeGate({ mode: 'plan', canUseTool: canUse as CanUseTool });
-    const res = asDeny(
-      await gate.check(
-        'Write',
-        { file_path: '/x', content: 'y' },
-        checkOpts({ readOnly: false, isFileEdit: true, hook: { decision: 'ask' } }),
-      ),
+    const res = await gate.check(
+      'Write',
+      { file_path: '/x', content: 'y' },
+      checkOpts({ readOnly: false, isFileEdit: true, hook: { decision: 'ask' } }),
     );
-    expect(res.message).toContain('plan');
-    expect(canUse).not.toHaveBeenCalled();
+    expect(res.decision).toBe('allow');
+    expect(canUse).toHaveBeenCalledTimes(1);
   });
 
   it('hook ask with no canUseTool handler denies', async () => {
@@ -977,7 +991,41 @@ describe('DefaultHookRunner', () => {
     expect(agg.decisionReason).toBe('explicit-deny');
   });
 
-  it("an unrecognized permissionDecision (e.g. migrated 'defer') aggregates as deny, never a silent allow (DEFER correction)", async () => {
+  it("v0.2: a hook permissionDecision 'defer' aggregates as defer (below deny, above ask/allow)", async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async (): Promise<HookJSONOutput> => ({
+              hookSpecificOutput: {
+                hookEventName: 'PreToolUse',
+                permissionDecision: 'defer',
+                permissionDecisionReason: 'deferring',
+              },
+            }),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5c', 'Bash', freshSignal());
+    expect(agg.decision).toBe('defer');
+    expect(agg.decisionReason).toBe('deferring');
+  });
+
+  it('a co-occurring deny still wins over defer', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        { matcher: '*', hooks: [async (): Promise<HookJSONOutput> => ({ hookSpecificOutput: { hookEventName: 'PreToolUse', permissionDecision: 'defer' } })] },
+        { matcher: '*', hooks: [async (): Promise<HookJSONOutput> => ({ hookSpecificOutput: { hookEventName: 'PreToolUse', permissionDecision: 'deny', permissionDecisionReason: 'blocked' } })] },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5d', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toBe('blocked');
+  });
+
+  it('a truly unrecognized permissionDecision still fails closed as deny', async () => {
     const debug = vi.fn();
     const r = makeRunner(
       {
@@ -988,9 +1036,8 @@ describe('DefaultHookRunner', () => {
               async (): Promise<HookJSONOutput> => ({
                 hookSpecificOutput: {
                   hookEventName: 'PreToolUse',
-                  // Runtime value outside the HookPermissionDecision union.
-                  permissionDecision: 'defer' as unknown as 'allow',
-                  permissionDecisionReason: 'deferring',
+                  permissionDecision: 'frobnicate' as unknown as 'allow',
+                  permissionDecisionReason: 'weird',
                 },
               }),
             ],
@@ -999,11 +1046,10 @@ describe('DefaultHookRunner', () => {
       },
       debug,
     );
-    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5c', 'Bash', freshSignal());
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r5e', 'Bash', freshSignal());
     expect(agg.decision).toBe('deny');
-    expect(agg.decisionReason).toBe('deferring');
     const logged = debug.mock.calls.map((c) => String(c[0])).join('\n');
-    expect(logged).toContain('defer');
+    expect(logged).toContain('frobnicate');
   });
 
   it('continue:false wins and the first-completed stopReason is kept', async () => {

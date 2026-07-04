@@ -15,13 +15,18 @@ import type {
   HookInput,
   ImageBlockParam,
   JSONSchema,
+  McpServerConfig,
   McpServerStatus,
+  McpSetServersResult,
+  OutputFormatConfig,
   PermissionMode,
   PermissionUpdate,
   RawMessageStreamEvent,
   SDKPermissionDenial,
   TextBlockParam,
   ThinkingConfigParam,
+  UserQuestionHandler,
+  WebSearchHandler,
 } from '../types.js';
 
 // ---------------------------------------------------------------------------
@@ -66,7 +71,51 @@ export type ToolContext = {
   signal: AbortSignal;
   /** Debug logger (wired to options.stderr when debug is on). */
   debug: (msg: string) => void;
+  /** v0.2 subagent spawn callback (wired by the subagent runtime). */
+  spawnSubagent?: SpawnSubagentFn;
+  /** v0.2 WebSearch backend; undefined -> the tool returns a not-configured error. */
+  webSearch?: WebSearchHandler;
+  /** v0.2 AskUserQuestion handler; undefined -> the tool returns a not-configured error. */
+  askUser?: UserQuestionHandler;
+  /** v0.2 WebFetch escape hatch for localhost/private hosts (default false). */
+  allowPrivateWebFetch?: boolean;
+  /** Injectable fetch for tests; defaults to globalThis.fetch when undefined. */
+  fetchImpl?: typeof fetch;
+  /**
+   * File-checkpoint recorder. When enableFileCheckpointing is on, fs tools
+   * (Write/Edit) call this BEFORE mutating a file so the pre-image is captured.
+   * `preImage` is the current UTF-8 content, or null when the file does not
+   * yet exist. Synchronous + best-effort - implementations must never throw.
+   */
+  recordFileChange?: (absPath: string, preImage: string | null) => void;
 };
+
+// v0.2 subagent spawn contract (subagent runtime <-> Agent tool).
+export type SpawnSubagentParams = {
+  /** subagent_type from the Agent tool input; 'general-purpose' when generic. */
+  subagentType: string;
+  /** The Agent tool's `prompt` input - becomes the child's first user turn. */
+  prompt: string;
+  /** The Agent tool's `description` input (task label), if given. */
+  description?: string;
+  /** run_in_background input; AgentDefinition.background forces true. */
+  runInBackground?: boolean;
+  /** tool_use id of the spawning Agent call -> child config.parentToolUseId. */
+  toolUseId: string;
+  /** The calling tool's abort signal (foreground children chain off this). */
+  signal: AbortSignal;
+};
+
+export type SpawnSubagentResult = {
+  /** Final text returned to the parent as the Agent tool_result content. */
+  content: string;
+  isError: boolean;
+  agentId: string;
+  /** True when a background subagent was launched (content is an ack). */
+  background: boolean;
+};
+
+export type SpawnSubagentFn = (params: SpawnSubagentParams) => Promise<SpawnSubagentResult>;
 
 export interface BuiltinTool {
   name: string;
@@ -87,14 +136,18 @@ export interface BuiltinTool {
 // ---------------------------------------------------------------------------
 
 export type GateHookDecision = {
-  decision?: 'allow' | 'deny' | 'ask';
+  decision?: 'allow' | 'deny' | 'ask' | 'defer';
   reason?: string;
   updatedInput?: Record<string, unknown>;
 };
 
 export type PermissionCheckResult =
   | { decision: 'allow'; updatedInput: Record<string, unknown> }
-  | { decision: 'deny'; message: string; interrupt?: boolean };
+  | { decision: 'deny'; message: string; interrupt?: boolean }
+  /** canUseTool returned null (app responded externally); NOT recorded as a denial. */
+  | { decision: 'skip'; message: string }
+  /** hook/user deferred; ends the current turn (deferred_tool_use on the result). */
+  | { decision: 'defer'; message: string };
 
 export interface PermissionGate {
   /**
@@ -145,8 +198,8 @@ export type AggregatedHookResult = {
   continue: boolean;
   stopReason?: string;
   systemMessages: string[];
-  /** Aggregated permission decision: deny > ask > allow. */
-  decision?: 'allow' | 'deny' | 'ask';
+  /** Aggregated permission decision: deny > defer > ask > allow. */
+  decision?: 'allow' | 'deny' | 'ask' | 'defer';
   decisionReason?: string;
   /** Last allow-hook updatedInput wins. */
   updatedInput?: Record<string, unknown>;
@@ -197,12 +250,26 @@ export interface McpRegistry {
   ): Promise<CallToolResult>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
+  /** Replace the live server set at runtime; returns the new statuses. */
+  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult>;
   closeAll(): Promise<void>;
 }
 
 // ---------------------------------------------------------------------------
 // Engine (module B)
 // ---------------------------------------------------------------------------
+
+/** Resolved context-compaction tunables (defaults applied by query()). */
+export type CompactionConfig = {
+  enabled: boolean;
+  autoThresholdRatio: number;
+  keepRatio: number;
+  minRecentTurns: number;
+  useApiSummary: boolean;
+  recognizeCommand: boolean;
+  customInstructions?: string;
+  contextWindowTokens?: number;
+};
 
 export type EngineConfig = {
   model: string;
@@ -213,6 +280,17 @@ export type EngineConfig = {
   maxBudgetUsd?: number;
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
+  /** Context-compaction tunables; absent -> never compact. */
+  compaction?: CompactionConfig;
+  /** Structured-output schema; when set the engine validates + re-prompts. */
+  outputFormat?: OutputFormatConfig;
+  /** Bound on structured-output re-prompts (default 2). */
+  maxStructuredOutputRetries?: number;
+  /** Automatic prompt caching (cache_control breakpoints). */
+  promptCaching?: boolean;
+  /** tool_use id of the spawning Agent call; stamped on this loop's messages
+   *  so subagent messages thread. Root loop leaves it undefined -> null. */
+  parentToolUseId?: string | null;
   includePartialMessages: boolean;
   sessionId: string;
   cwd: string;
@@ -226,6 +304,14 @@ export type EngineDeps = {
   hooks: HookRunner;
   toolContext: ToolContext;
   debug: (msg: string) => void;
+  /** Shared, cross-turn request-message view. When present the engine streams
+   *  from this array (compactable) instead of `history`, mirrors its own
+   *  appended turns into it, and compaction splices it in place. `history`
+   *  stays full + append-only for persistence. Absent -> exact v0.1 behavior. */
+  requestView?: { messages: APIMessageParam[] };
+  /** Root loop only: pull completed background-subagent results to append to
+   *  the current tool_result user turn. Returns [] when none pending. */
+  drainSubagentResults?: () => TextBlockParam[];
 };
 
 // ---------------------------------------------------------------------------

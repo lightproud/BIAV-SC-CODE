@@ -10,19 +10,24 @@ import { randomUUID } from 'node:crypto';
 
 import { AbortError, ConfigurationError, isAbortError } from './errors.js';
 import type {
+  AgentInfo,
   APIMessageParam,
   APIUserMessage,
   CallToolResult,
   ContentBlock,
+  McpServerConfig,
   McpServerStatus,
+  McpSetServersResult,
   ModelInfo,
   ModelUsage,
   NonNullableUsage,
   Options,
   PermissionMode,
   Query,
+  RewindFilesResult,
   SDKInitializationResult,
   SDKMessage,
+  SDKMirrorErrorMessage,
   SDKResultMessage,
   SDKSystemMessage,
   SDKUserMessage,
@@ -43,11 +48,23 @@ import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { buildSystemPrompt } from './engine/prompts.js';
+import { buildCompactionConfig } from './engine/compaction.js';
+import {
+  buildStructuredOutputInstruction,
+  normalizeOutputFormat,
+} from './engine/structured-output.js';
 import { JsonlSessionStore } from './sessions/store.js';
+import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
+import { FileCheckpointStore } from './sessions/checkpoints.js';
+import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
 import { createBuiltinTools } from './tools/index.js';
+import { createSubagentRuntime } from './subagents/runtime.js';
+import { createAgentTool } from './subagents/agent-tool.js';
+import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
+const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
 const SUPPORTED_MODELS: readonly ModelInfo[] = [
@@ -64,34 +81,31 @@ const SUPPORTED_MODELS: readonly ModelInfo[] = [
  * pass reference-SDK-only fields through a widened object.
  */
 const ACCEPTED_OPTION_KEYS: readonly string[] = [
-  'agents',
   // Official @anthropic-ai/claude-agent-sdk Options fields this SDK accepts for
-  // migration compatibility but does not act on in v0.1 (audit v0.1.1): each
-  // present key must emit exactly one debug warning instead of being silently
-  // ignored.
+  // migration compatibility but does not act on (audit v0.1.1): each present
+  // key emits exactly one debug warning instead of being silently ignored.
+  // (v0.2 removed: agents, outputFormat, onElicitation, sessionStore,
+  //  enableFileCheckpointing, loadTimeoutMs -> now executed.)
   'agent',
   'settings',
   'permissionPromptToolName',
   'extraArgs',
+  // settingSources drives project .mcp.json loading in v0.2, but only takes
+  // effect when a .mcp.json is present; keep the compat diagnostic.
   'settingSources',
   'effort',
-  'outputFormat',
   'sandbox',
   'plugins',
   'skills',
   'toolAliases',
   'toolConfig',
-  'sessionStore',
   'managedSettings',
-  'enableFileCheckpointing',
   'taskBudget',
-  'onElicitation',
   'planModeInstructions',
   'promptSuggestions',
   'agentProgressSummaries',
   'forwardSubagentText',
   'includeHookEvents',
-  'loadTimeoutMs',
   'allowDangerouslySkipPermissions',
   'title',
   'resumeSessionAt',
@@ -163,6 +177,9 @@ class ToolFilterMcpRegistry implements McpRegistry {
   }
   setEnabled(serverName: string, enabled: boolean): void {
     this.inner.setEnabled(serverName, enabled);
+  }
+  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult> {
+    return this.inner.setServers(servers);
   }
   closeAll(): Promise<void> {
     return this.inner.closeAll();
@@ -323,11 +340,30 @@ export function query(args: {
   // --- Collaborators ---------------------------------------------------------
   const outer = options.abortController ?? new AbortController();
   const persist = options.persistSession !== false;
-  const store = new JsonlSessionStore({
+  if (options.sessionStore !== undefined && !persist) {
+    throw new ConfigurationError(
+      'sessionStore cannot be combined with persistSession:false',
+    );
+  }
+  if (options.sessionStore !== undefined && options.enableFileCheckpointing === true) {
+    throw new ConfigurationError(
+      'sessionStore cannot be combined with enableFileCheckpointing',
+    );
+  }
+  const localStore = new JsonlSessionStore({
     sessionDir: options.sessionDir,
     env,
     debug,
   });
+  const store =
+    options.sessionStore !== undefined
+      ? new MirroringSessionStore(localStore, options.sessionStore, {
+          projectKey: encodeProjectKey(cwd),
+          flush: options.sessionStoreFlush ?? 'batched',
+          loadTimeoutMs: options.loadTimeoutMs ?? 60000,
+          debug,
+        })
+      : localStore;
   const transport = new AnthropicTransport({
     provider: options.provider,
     env,
@@ -353,15 +389,31 @@ export function query(args: {
   const isBareDisallowed = (toolName: string): boolean =>
     bareDisallowed.some((pattern) => matchToolName(pattern, toolName));
 
+  // Merge project .mcp.json servers (when settingSources includes 'project')
+  // under the explicit options.mcpServers (which win on key collision).
+  const projectServers = loadProjectMcpServers(cwd, options.settingSources, debug);
+  const mergedServers: Record<string, McpServerConfig> = {
+    ...projectServers,
+    ...(options.mcpServers ?? {}),
+  };
   const realMcp = new DefaultMcpRegistry({
-    servers: options.mcpServers ?? {},
+    servers: mergedServers,
     env,
     debug,
+    elicitation: options.onElicitation,
   });
   const mcp: McpRegistry =
     bareDisallowed.length > 0
       ? new ToolFilterMcpRegistry(realMcp, isBareDisallowed)
       : realMcp;
+  // Tool-search: defer MCP tool schemas behind a ToolSearch builtin when
+  // servers are configured (auto-activates past the threshold, or forced by
+  // options.toolSearch). When null, mcpEff === mcp (exact v0.1 behavior).
+  const deferred =
+    options.toolSearch !== false && Object.keys(mergedServers).length > 0
+      ? new DeferredMcpRegistry(mcp, { debug })
+      : null;
+  const mcpEff: McpRegistry = deferred ?? mcp;
 
   // Built-in tools, optionally filtered by the array form of options.tools
   // (the claude_code preset and undefined both mean "all built-ins").
@@ -388,24 +440,71 @@ export function query(args: {
     }
   }
 
+  // Register the Agent (subagent) tool when not bare-disallowed and not filtered
+  // out by an array-form options.tools.
+  const agentDefs = options.agents ?? {};
+  const agentNames = [...Object.keys(agentDefs), 'general-purpose'];
+  const wantAgent =
+    !isBareDisallowed('Agent') &&
+    (!Array.isArray(options.tools) || options.tools.includes('Agent'));
+  if (wantAgent) builtinTools.set('Agent', createAgentTool(agentNames));
+
+  // Structured-output: normalize the schema option and append the instruction
+  // to the system prompt so the requirement survives tool turns.
+  const outputFormat = normalizeOutputFormat(options.outputFormat, debug);
+  let systemPromptText = buildSystemPrompt(options.systemPrompt, {
+    cwd,
+    toolNames: [...builtinTools.keys()],
+  });
+  if (outputFormat !== undefined) {
+    systemPromptText += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
+  }
+
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
   // mutate it live (takes effect from the next assistant turn).
   const engineConfig: EngineConfig = {
     model: initialModel,
     fallbackModel: options.fallbackModel,
     maxOutputTokens: options.provider?.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
-    systemPrompt: buildSystemPrompt(options.systemPrompt, {
-      cwd,
-      toolNames: [...builtinTools.keys()],
-    }),
+    systemPrompt: systemPromptText,
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
     thinking: options.thinking,
     maxThinkingTokens: options.maxThinkingTokens,
+    compaction: buildCompactionConfig(options.compaction),
+    outputFormat,
+    // Opt-in: prompt caching changes the on-wire request shape (cache_control
+    // breakpoints), so it is off unless the caller sets provider.promptCaching.
+    promptCaching: options.provider?.promptCaching === true,
     includePartialMessages: options.includePartialMessages === true,
     sessionId: '', // resolved when the run starts
     cwd,
   };
+
+  // Subagent runtime: hands out per-depth spawn closures + drains child results
+  // and usage. Children get the real (unfiltered) MCP registry and apply their
+  // own per-child tool filtering.
+  const subagentRuntime = createSubagentRuntime({
+    agents: agentDefs,
+    baseBuiltins: builtinTools,
+    mcp: realMcp,
+    transport,
+    hooks,
+    parentGate: gate,
+    canUseTool: options.canUseTool,
+    allowedTools: options.allowedTools,
+    disallowedTools: options.disallowedTools,
+    engineConfig,
+    store,
+    persist,
+    cwd,
+    env,
+    additionalDirectories: options.additionalDirectories ?? [],
+    fallbackModel: options.fallbackModel,
+    outerSignal: outer.signal,
+    sessionId: () => resolvedSessionId,
+    debug,
+  });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
   const streamingMode = typeof prompt !== 'string';
@@ -449,6 +548,7 @@ export function query(args: {
   let closed = false;
   let sessionEndFired = false;
   let resolvedSessionId = '';
+  let checkpointStore: FileCheckpointStore | null = null;
   const initDeferred = createDeferred<SDKInitializationResult>();
 
   // Wake any pending input read when the outer controller aborts, and settle a
@@ -674,6 +774,39 @@ export function query(args: {
       }
     };
 
+    /** Fold drained subagent usage/cost/modelUsage into the session totals. */
+    const foldSubagentUsage = (ledger: {
+      usage: NonNullableUsage;
+      cost: number;
+      modelUsage: Record<string, ModelUsage>;
+    }): void => {
+      sessionCost += ledger.cost;
+      sessionUsage = addUsageLocal(sessionUsage, ledger.usage);
+      for (const [modelId, mu] of Object.entries(ledger.modelUsage)) {
+        const prev = sessionModelUsage[modelId];
+        sessionModelUsage[modelId] =
+          prev === undefined
+            ? { ...mu }
+            : {
+                inputTokens: prev.inputTokens + mu.inputTokens,
+                outputTokens: prev.outputTokens + mu.outputTokens,
+                cacheReadInputTokens:
+                  prev.cacheReadInputTokens + mu.cacheReadInputTokens,
+                cacheCreationInputTokens:
+                  prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
+                webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
+                costUSD: prev.costUSD + mu.costUSD,
+              };
+      }
+    };
+
+    /** Drain any queued mirror-error system messages from the session store. */
+    const drainMirror = function* (): Generator<SDKMirrorErrorMessage> {
+      if (store instanceof MirroringSessionStore) {
+        for (const e of store.takePendingEvents()) yield e;
+      }
+    };
+
     /** Rewrite an engine-turn result to report session-cumulative totals. */
     const rewriteResult = (r: SDKResultMessage): SDKResultMessage => ({
       ...r,
@@ -691,6 +824,22 @@ export function query(args: {
       engineConfig.sessionId = sess.sessionId;
       const history = sess.history;
       let needMeta = sess.needMeta;
+
+      // File checkpointing: bind the disk-backed store to this session so
+      // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
+      if (options.enableFileCheckpointing === true) {
+        checkpointStore = new FileCheckpointStore({
+          sessionDir: options.sessionDir,
+          env,
+          debug,
+        });
+        checkpointStore.bind(sess.sessionId);
+      }
+
+      // Cross-turn request-message view: seeded from the (possibly resumed)
+      // history, kept in sync with the top-level user prompts below, mirrored
+      // by the engine for its own turns, and compacted in place by the engine.
+      const requestView = { messages: [...history] };
 
       // 1. SessionStart hooks (matchValue is the start source).
       const source: 'startup' | 'resume' = sess.resumed ? 'resume' : 'startup';
@@ -719,7 +868,15 @@ export function query(args: {
 
       // 2. Connect MCP servers, then emit the init system message.
       if (sessionStartBlocked === undefined) {
-        await mcp.connectAll();
+        await mcpEff.connectAll();
+      }
+      // Tool-search: decide activation now that tools are known; when active,
+      // register the ToolSearch builtin so the model can load deferred schemas.
+      if (deferred !== null) {
+        deferred.activateIfNeeded(options.toolSearch);
+        if (deferred.isActive()) {
+          builtinTools.set('ToolSearch', makeToolSearchTool(deferred));
+        }
       }
       const initMessage: SDKSystemMessage = {
         type: 'system',
@@ -730,25 +887,31 @@ export function query(args: {
         cwd,
         tools: [
           ...builtinTools.keys(),
-          ...mcp.allTools().map((t) => t.qualifiedName),
+          ...mcpEff.allTools().map((t) => t.qualifiedName),
         ],
-        mcp_servers: mcp
+        mcp_servers: mcpEff
           .statuses()
           .map((s) => ({ name: s.name, status: s.status })),
         model: engineConfig.model,
         permissionMode: gate.getMode(),
         slash_commands: [],
         output_style: 'default',
+        agents: wantAgent ? Object.keys(agentDefs) : [],
+        claude_code_version: CLAUDE_CODE_VERSION,
+        betas: options.betas ?? [],
+        skills: [],
+        plugins: [],
       };
       initDeferred.resolve({
         commands: [],
-        agents: [],
+        agents: Object.keys(agentDefs).map((name) => ({ name })),
         output_style: 'default',
         available_output_styles: ['default'],
         models: SUPPORTED_MODELS.map((m) => ({ ...m })),
         account: { apiKeySource: transport.apiKeySource() },
       });
       yield initMessage;
+      yield* drainMirror();
 
       if (sessionStartBlocked !== undefined) {
         yield blockedResult(sess.sessionId, sessionStartBlocked);
@@ -757,6 +920,7 @@ export function query(args: {
 
       // 3. Consume user turns until the input queue closes.
       for (;;) {
+        yield* drainMirror();
         let item: IteratorResult<SDKUserMessage, undefined>;
         try {
           item = await queue.next();
@@ -815,9 +979,10 @@ export function query(args: {
         message = appendContextLines(message, extraLines);
 
         // Echo the user message, then append to history + store.
+        const userUuid = incoming.uuid ?? randomUUID();
         const echoed: SDKUserMessage = {
           type: 'user',
-          uuid: incoming.uuid ?? randomUUID(),
+          uuid: userUuid,
           session_id: sess.sessionId,
           message,
           parent_tool_use_id: incoming.parent_tool_use_id ?? null,
@@ -834,6 +999,7 @@ export function query(args: {
         }
         const userParam: APIMessageParam = { role: 'user', content: message.content };
         history.push(userParam);
+        requestView.messages.push(userParam);
         persistParam(sess.sessionId, userParam);
         yield echoed;
 
@@ -864,6 +1030,7 @@ export function query(args: {
         }
 
         // Delegate to the engine loop for this turn.
+        checkpointStore?.beginTurn(userUuid);
         turnController = new AbortController();
         // A cancel requested while no turn was active (interrupt() between turns
         // or right after init) aborts THIS turn immediately (finding #36).
@@ -878,15 +1045,24 @@ export function query(args: {
           env,
           signal: turnSignal,
           debug,
+          spawnSubagent: subagentRuntime.makeSpawnFn(0),
+          webSearch: options.webSearch,
+          askUser: options.onUserQuestion,
+          allowPrivateWebFetch: options.allowPrivateWebFetch === true,
+          recordFileChange: checkpointStore
+            ? (abs, pre): void => checkpointStore!.record(abs, pre)
+            : undefined,
         };
         const deps: EngineDeps = {
           transport,
           builtinTools,
-          mcp,
+          mcp: mcpEff,
           permissions: gate,
           hooks,
           toolContext,
           debug,
+          requestView,
+          drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
         };
 
         // The engine appends assistant + tool_result-user messages to `history`
@@ -917,10 +1093,14 @@ export function query(args: {
         try {
           for await (const msg of runAgentLoop(history, deps, engineConfig)) {
             yield* flushToolResultUsers();
+            yield* drainMirror();
             if (msg.type === 'assistant') {
               persistAssistant(sess.sessionId, msg.message.content);
               yield msg;
             } else if (msg.type === 'result') {
+              // Fold any completed subagent usage into the session totals before
+              // the result is rewritten so subagent tokens/cost are reported.
+              foldSubagentUsage(subagentRuntime.drainUsageLedger());
               accumulateResult(msg);
               yield rewriteResult(msg);
             } else {
@@ -928,6 +1108,7 @@ export function query(args: {
             }
           }
           yield* flushToolResultUsers();
+          yield* drainMirror();
         } catch (err) {
           // Persist (but do not re-yield on error) any trailing tool_result
           // user turn so the transcript stays durable across the failure.
@@ -980,8 +1161,18 @@ export function query(args: {
         );
       }
       await fireSessionEnd(endReason);
+      // Flush any buffered external-store mirror writes (best-effort).
+      if (store instanceof MirroringSessionStore) {
+        try {
+          await store.flushAll();
+        } catch (err) {
+          debug(
+            `sessionStore flush failed: ${err instanceof Error ? err.message : String(err)}`,
+          );
+        }
+      }
       try {
-        await mcp.closeAll();
+        await mcpEff.closeAll();
       } catch (err) {
         debug(
           `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
@@ -1053,14 +1244,51 @@ export function query(args: {
     async supportedModels(): Promise<ModelInfo[]> {
       return SUPPORTED_MODELS.map((m) => ({ ...m }));
     },
-    async supportedAgents(): Promise<never[]> {
-      return [];
+    async supportedAgents(): Promise<AgentInfo[]> {
+      // Explicitly-configured agents only; the built-in general-purpose type
+      // stays spawnable via the Agent tool (whose description enumerates it).
+      return Object.keys(agentDefs).map((name) => ({ name }));
     },
     async mcpServerStatus() {
-      return mcp.statuses();
+      return mcpEff.statuses();
     },
     async accountInfo() {
       return { apiKeySource: transport.apiKeySource() };
+    },
+    async reconnectMcpServer(serverName: string): Promise<void> {
+      await mcpEff.reconnect(serverName);
+    },
+    async toggleMcpServer(serverName: string, enabled: boolean): Promise<void> {
+      mcpEff.setEnabled(serverName, enabled);
+      if (enabled) {
+        const st = mcpEff.statuses().find((s) => s.name === serverName);
+        if (st !== undefined && st.status !== 'connected') {
+          await mcpEff.reconnect(serverName);
+        }
+      }
+    },
+    async setMcpServers(
+      servers: Record<string, McpServerConfig>,
+    ): Promise<McpSetServersResult> {
+      return mcpEff.setServers(servers);
+    },
+    async rewindFiles(
+      userMessageId: string,
+      opts?: { dryRun?: boolean },
+    ): Promise<RewindFilesResult> {
+      if (options.enableFileCheckpointing !== true) {
+        throw new ConfigurationError(
+          'File rewinding is not enabled (set options.enableFileCheckpointing)',
+        );
+      }
+      await initDeferred.promise.catch(() => undefined);
+      if (checkpointStore === null) {
+        throw new ConfigurationError('File rewinding is not enabled');
+      }
+      return checkpointStore.rewind(userMessageId, { dryRun: opts?.dryRun === true });
+    },
+    async stopTask(taskId: string): Promise<void> {
+      subagentRuntime.stopTask(taskId);
     },
     async streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void> {
       if (!streamingMode) {
@@ -1095,8 +1323,9 @@ export function query(args: {
       void fireSessionEnd('close');
       queue.fail(reason);
       if (!outer.signal.aborted) outer.abort(reason);
+      subagentRuntime.abortAll();
       void inner.return(undefined).catch(() => undefined);
-      void mcp.closeAll().catch((err) => {
+      void mcpEff.closeAll().catch((err) => {
         debug(
           `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
         );

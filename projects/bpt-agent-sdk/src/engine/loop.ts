@@ -32,6 +32,17 @@ import type {
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
+import { estimateToolDefsTokens } from './tokens.js';
+import {
+  maybeAutoCompact,
+  runManualCompact,
+  detectManualCompact,
+} from './compaction.js';
+import {
+  DEFAULT_STRUCTURED_OUTPUT_RETRIES,
+  evaluateStructuredOutput,
+} from './structured-output.js';
+import { applyCacheControl } from './cache-control.js';
 
 const DEFAULT_THINKING_BUDGET = 10_000;
 
@@ -81,6 +92,7 @@ function mkToolError(toolUseId: string, message: string): ToolResultBlockParam {
 type ToolExecOutcome = {
   result: ToolResultBlockParam;
   stop?: { reason: string };
+  defer?: { tool_use_id: string; tool_name: string; tool_input: Record<string, unknown> };
 };
 
 /** Mutable holder for a stream attempt's usage-so-far (survives a throw). */
@@ -128,6 +140,15 @@ function mapMcpResult(res: CallToolResult): ToolResultPayload {
           source: { type: 'base64', media_type: part.mimeType, data: part.data },
         });
         break;
+      case 'audio':
+        parts.push({ type: 'text', text: `[audio ${part.mimeType}]` });
+        break;
+      case 'resource_link':
+        parts.push({
+          type: 'text',
+          text: part.name ? `[resource ${part.name}: ${part.uri}]` : `[resource ${part.uri}]`,
+        });
+        break;
       case 'resource':
         // Embedded resources are flattened to text (uri fallback).
         parts.push({ type: 'text', text: part.resource.text ?? part.resource.uri });
@@ -164,6 +185,9 @@ export async function* runAgentLoop(
 
   let durationApiMs = 0;
   let numTurns = 0;
+  let structuredRetries = 0;
+  let firstTokenAtMs: number | undefined; // wall-clock of the first content event
+  let firstStreamStartMs: number | undefined; // apiStart of the stream that produced it
   let totalCostUsd = 0;
   let totalUsage: NonNullableUsage = {
     input_tokens: 0,
@@ -177,10 +201,31 @@ export async function* runAgentLoop(
   // setModel() applies from the next assistant turn.
   let fallbackModel: string | undefined;
 
+  // Request-message view: when the query layer supplies a shared, cross-turn
+  // view we stream from it (compactable) and mirror our own appends into it;
+  // `history` stays full + append-only for persistence + the query layer's
+  // tool_result-user scan. Absent -> stream straight from `history` (v0.1).
+  const reqMsgs: APIMessageParam[] = deps.requestView?.messages ?? history;
+  const mirror = (turn: APIMessageParam): void => {
+    if (deps.requestView !== undefined) deps.requestView.messages.push(turn);
+  };
+
   const baseHookFields = {
     session_id: config.sessionId,
     cwd: config.cwd,
   } as const;
+
+  /** Time-to-first-token fields; empty when no content token ever arrived. */
+  const ttftFields = (): { ttft_ms?: number; ttft_stream_ms?: number } => {
+    if (firstTokenAtMs === undefined) return {};
+    const out: { ttft_ms?: number; ttft_stream_ms?: number } = {
+      ttft_ms: firstTokenAtMs - startedAt,
+    };
+    if (firstStreamStartMs !== undefined) {
+      out.ttft_stream_ms = firstTokenAtMs - firstStreamStartMs;
+    }
+    return out;
+  };
 
   /** Common fields shared by every result-message variant. */
   const resultBase = () => ({
@@ -195,10 +240,15 @@ export async function* runAgentLoop(
       Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
     ),
     permission_denials: deps.permissions.denials(),
+    ...ttftFields(),
   });
 
   const errorResult = (
-    subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget_usd',
+    subtype:
+      | 'error_max_turns'
+      | 'error_during_execution'
+      | 'error_max_budget_usd'
+      | 'error_max_structured_output_retries',
     errorMessage: string,
   ): SDKResultMessage => ({
     type: 'result',
@@ -241,30 +291,38 @@ export async function* runAgentLoop(
       );
       return;
     }
-    history.push({ role: 'assistant', content: filtered });
+    const turn: APIMessageParam = { role: 'assistant', content: filtered };
+    history.push(turn);
+    mirror(turn);
   };
 
-  /** Static per-request pieces (tool defs and thinking do not change mid-run). */
-  const toolDefs: APIToolDefinition[] = [];
+  /** Built-in tool defs are static; MCP tool defs are rebuilt each attempt so
+   *  tool-search "load on demand" surfaces newly-loaded schemas per turn. */
+  const builtinToolDefs: APIToolDefinition[] = [];
   for (const tool of deps.builtinTools.values()) {
-    toolDefs.push({
+    builtinToolDefs.push({
       name: tool.name,
       description: tool.description,
       input_schema: tool.inputSchema,
     });
   }
-  for (const entry of deps.mcp.allTools()) {
-    toolDefs.push({
-      name: entry.qualifiedName,
-      description: entry.description,
-      input_schema: entry.inputSchema,
-    });
-  }
+  const buildToolDefs = (): APIToolDefinition[] => {
+    const defs = [...builtinToolDefs];
+    for (const entry of deps.mcp.allTools()) {
+      defs.push({
+        name: entry.qualifiedName,
+        description: entry.description,
+        input_schema: entry.inputSchema,
+      });
+    }
+    return defs;
+  };
   const thinking: StreamRequest['thinking'] = ((): StreamRequest['thinking'] => {
     if (config.thinking?.type !== 'enabled') {
       return undefined; // adaptive/disabled/unset -> omit the param entirely
     }
     const requested =
+      config.thinking.budgetTokens ??
       config.thinking.budget_tokens ??
       config.thinking.budget ??
       config.maxThinkingTokens ??
@@ -283,6 +341,12 @@ export async function* runAgentLoop(
     return { type: 'enabled', budget_tokens };
   })();
 
+  // Static per-request overhead (system prompt + tool schemas) folded into the
+  // compaction token estimate; both pieces are stable across the run.
+  const overheadTokens =
+    estimateToolDefsTokens(buildToolDefs()) +
+    Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
    *  tokens can be folded into totals before a fallback retry. */
@@ -291,18 +355,28 @@ export async function* runAgentLoop(
     sink?: UsageSink,
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();
+    const toolDefs = buildToolDefs();
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
       system: config.systemPrompt,
-      messages: history,
+      messages: reqMsgs,
       tools: toolDefs.length > 0 ? toolDefs : undefined,
       thinking,
       signal,
     };
+    // cache-control is the outermost request shaper; it never mutates `request`.
+    const outgoing = applyCacheControl(request, {
+      enabled: config.promptCaching === true,
+      cacheMessages: true,
+    });
     const apiStart = Date.now();
     try {
-      for await (const event of deps.transport.stream(request)) {
+      for await (const event of deps.transport.stream(outgoing)) {
+        if (firstTokenAtMs === undefined && event.type === 'content_block_start') {
+          firstTokenAtMs = Date.now();
+          firstStreamStartMs = apiStart;
+        }
         if (sink !== undefined) foldUsageEvent(sink, event);
         if (config.includePartialMessages) {
           yield {
@@ -310,7 +384,7 @@ export async function* runAgentLoop(
             uuid: randomUUID(),
             session_id: config.sessionId,
             event,
-            parent_tool_use_id: null,
+            parent_tool_use_id: config.parentToolUseId ?? null,
           };
         }
         accumulator.feed(event);
@@ -349,6 +423,7 @@ export async function* runAgentLoop(
           hook_event_name: 'PreToolUse',
           tool_name: toolName,
           tool_input: input,
+          tool_use_id: block.id,
         },
         block.id,
         toolName,
@@ -394,10 +469,22 @@ export async function* runAgentLoop(
       }
       return { result: errorToolResult(check.message) };
     }
-    input = check.updatedInput;
+    if (check.decision === 'skip') {
+      // canUseTool returned null: the app is resolving this call out of band.
+      // Emit a placeholder tool_result so the API turn stays valid; record NO denial.
+      return { result: errorToolResult(check.message) };
+    }
+    if (check.decision === 'defer') {
+      return {
+        result: errorToolResult(check.message),
+        defer: { tool_use_id: block.id, tool_name: toolName, tool_input: input },
+      };
+    }
+    input = check.updatedInput; // union now narrows to {decision:'allow'; updatedInput}
 
     // 3. Execute: builtin -> MCP. Existence was verified at step 0, so exactly
     //    one branch runs; the final else is an unreachable safety net.
+    const execStart = Date.now();
     let payload: ToolResultPayload;
     try {
       if (builtin !== undefined) {
@@ -419,6 +506,8 @@ export async function* runAgentLoop(
             tool_name: toolName,
             tool_input: input,
             error: message,
+            tool_use_id: block.id,
+            duration_ms: Date.now() - execStart,
           },
           block.id,
           toolName,
@@ -427,6 +516,7 @@ export async function* runAgentLoop(
       }
       return { result: errorToolResult(`Tool ${toolName} failed: ${message}`) };
     }
+    const durationMs = Date.now() - execStart;
 
     // 4. PostToolUse hooks (fires for completed calls, including isError
     //    payloads such as a non-zero Bash exit; only thrown errors go to
@@ -442,6 +532,8 @@ export async function* runAgentLoop(
           tool_name: toolName,
           tool_input: input,
           tool_response: payload,
+          tool_use_id: block.id,
+          duration_ms: durationMs,
         },
         block.id,
         toolName,
@@ -489,6 +581,54 @@ export async function* runAgentLoop(
     for (;;) {
       if (signal.aborted) throw new AbortError();
 
+      // --- Context compaction (only when a shared request view exists). -----
+      if (deps.requestView !== undefined && config.compaction?.enabled !== false) {
+        const cfg = config.compaction;
+        const onSummaryCall = (
+          m: string,
+          u: NonNullableUsage,
+          apiMs: number,
+        ): void => {
+          recordUsage(m, u);
+          durationApiMs += apiMs;
+        };
+        if (cfg !== undefined) {
+          const manual = cfg.recognizeCommand
+            ? detectManualCompact(deps.requestView.messages, cfg)
+            : null;
+          if (manual !== null) {
+            yield* runManualCompact(
+              deps.requestView,
+              manual.customInstructions,
+              deps,
+              config,
+              overheadTokens,
+              signal,
+              onSummaryCall,
+            );
+            // Manual /compact consumes the turn (no model call): emit a success
+            // result so the query layer advances to the next input.
+            yield {
+              type: 'result',
+              subtype: 'success',
+              is_error: false,
+              result: '',
+              stop_reason: 'end_turn',
+              ...resultBase(),
+            };
+            return;
+          }
+          yield* maybeAutoCompact(
+            deps.requestView,
+            deps,
+            config,
+            overheadTokens,
+            signal,
+            onSummaryCall,
+          );
+        }
+      }
+
       // Re-read the current model each turn so a mid-run setModel() takes
       // effect, unless a fallback has permanently switched us.
       let model = fallbackModel ?? config.model;
@@ -532,7 +672,7 @@ export async function* runAgentLoop(
         uuid: randomUUID(),
         session_id: config.sessionId,
         message: assistant,
-        parent_tool_use_id: null,
+        parent_tool_use_id: config.parentToolUseId ?? null,
       };
       const text = concatText(assistant.content);
       if (deps.hooks.hasHooks('MessageDisplay')) {
@@ -568,13 +708,17 @@ export async function* runAgentLoop(
       if (toolUses.length > 0) {
         const results: ToolResultBlockParam[] = [];
         let batchStop: ToolExecOutcome['stop'];
+        let batchDefer: ToolExecOutcome['defer'];
         for (const block of toolUses) {
-          if (batchStop !== undefined) {
-            // A prior block asked to stop the run: do not execute the rest,
-            // but every tool_use still needs a matching tool_result or the
+          if (batchStop !== undefined || batchDefer !== undefined) {
+            // A prior block asked to stop/defer the run: do not execute the
+            // rest, but every tool_use still needs a matching tool_result or the
             // next API request would 400.
             results.push(
-              mkToolError(block.id, `Not executed: ${batchStop.reason}`),
+              mkToolError(
+                block.id,
+                `Not executed: ${batchStop?.reason ?? 'a prior tool call was deferred'}`,
+              ),
             );
             continue;
           }
@@ -582,9 +726,28 @@ export async function* runAgentLoop(
           const outcome = await executeToolUse(block);
           results.push(outcome.result);
           if (outcome.stop !== undefined) batchStop = outcome.stop;
+          if (outcome.defer !== undefined) batchDefer = outcome.defer;
         }
         pushAssistant(assistant.content);
-        history.push({ role: 'user', content: results });
+        const userTurn: APIMessageParam = { role: 'user', content: results };
+        history.push(userTurn);
+        mirror(userTurn);
+
+        // A deferred tool call ends this turn immediately (before the stop
+        // terminal check, PostToolBatch, subagent drain, or compaction): the
+        // query layer surfaces deferred_tool_use and awaits an external answer.
+        if (batchDefer !== undefined) {
+          yield {
+            type: 'result',
+            subtype: 'success',
+            is_error: false,
+            result: '',
+            stop_reason: assistant.stop_reason,
+            deferred_tool_use: batchDefer,
+            ...resultBase(),
+          };
+          return;
+        }
 
         // A permission interrupt or a PostToolUse continue:false terminates the
         // run after the batch is completed and recorded.
@@ -608,6 +771,23 @@ export async function* runAgentLoop(
           for (const m of batch.systemMessages) deps.debug(`PostToolBatch hook: ${m}`);
         }
 
+        // Append any completed background-subagent results as extra text blocks
+        // on the tool_result user turn pushed just above, so the model sees them
+        // on its next turn (background subagents run detached from this loop).
+        if (deps.drainSubagentResults !== undefined) {
+          const extra = deps.drainSubagentResults();
+          if (extra.length > 0) {
+            const lastTurn = history[history.length - 1];
+            if (
+              lastTurn !== undefined &&
+              lastTurn.role === 'user' &&
+              Array.isArray(lastTurn.content)
+            ) {
+              lastTurn.content.push(...extra);
+            }
+          }
+        }
+
         if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
           yield errorResult(
             'error_max_turns',
@@ -625,6 +805,51 @@ export async function* runAgentLoop(
           return;
         }
         continue;
+      }
+
+      // Structured-output gate: when a schema is required, validate the final
+      // text before ending. On mismatch, push the invalid answer into history,
+      // inject a corrective user turn, and continue the loop (bounded).
+      let structuredValue: unknown;
+      if (config.outputFormat !== undefined) {
+        const outcome = evaluateStructuredOutput(text, config.outputFormat.schema);
+        if (outcome.status === 'invalid') {
+          pushAssistant(assistant.content); // keep the invalid answer in history
+          const maxRetries =
+            config.maxStructuredOutputRetries ?? DEFAULT_STRUCTURED_OUTPUT_RETRIES;
+          if (structuredRetries >= maxRetries) {
+            yield errorResult(
+              'error_max_structured_output_retries',
+              `Could not produce output matching the JSON schema after ` +
+                `${maxRetries + 1} attempt(s): ${outcome.summary}`,
+            );
+            return;
+          }
+          structuredRetries += 1;
+          // A retry is another billable assistant turn: honor the same caps as
+          // the tool-continue path so structured retries cannot bust maxTurns/budget.
+          if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
+            yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
+            return;
+          }
+          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+            yield errorResult(
+              'error_max_budget_usd',
+              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+            );
+            return;
+          }
+          // Push the corrective turn to BOTH history (persistence + query scan)
+          // and the request view (what the engine actually re-streams).
+          const correctionTurn: APIMessageParam = {
+            role: 'user',
+            content: outcome.correction,
+          };
+          history.push(correctionTurn);
+          mirror(correctionTurn);
+          continue;
+        }
+        structuredValue = outcome.value;
       }
 
       // Natural end: keep history complete for follow-up turns in the same
@@ -646,6 +871,7 @@ export async function* runAgentLoop(
         is_error: false,
         result: text,
         stop_reason: assistant.stop_reason,
+        ...(config.outputFormat !== undefined ? { structured_output: structuredValue } : {}),
         ...resultBase(),
       };
       return;
