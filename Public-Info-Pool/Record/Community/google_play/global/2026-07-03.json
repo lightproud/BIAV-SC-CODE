@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-04T13:10:40.937656+00:00",
+  "archived_at": "2026-07-04T15:02:50.200962+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Google Play 差评] ★1 esse jogo é muito difícil. só isso",
@@ -55,6 +55,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Ethan B (Potatoooo)",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 One of the best games I've ever played!",
+      "summary": "One of the best games I've ever played! The gameplay offers a ton of content, with a variety of mechanics, game modes, and challenges that keep things fresh. It's also very F2P friendly. The art style and soundtrack are immaculate, and the story is genuinely PEAK. Overall, it's a game I can see myself playing for years and not get bored, just because I REALLY REALLY LIKE it.",
+      "source": "google_play",
+      "time": "2026-07-03T13:26:55",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-87d2f581-8a36-47c4-8b94-8b796e9f1aaf",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Alexander Joshua Santos",
       "tags": [],
       "lang": "en",
       "platform_region": "us",
