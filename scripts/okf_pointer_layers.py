@@ -93,6 +93,28 @@ def _human_size(n: int) -> str:
     return f"{f:.1f}GB"
 
 
+def _magnitude(n: int) -> str:
+    """粗粒度量级桶（北极星 Pillar E 减易变 / 锐化白-黑盒边界）：保留「大 vs 小」的导航信号，
+    杀掉精确活数字带来的每日 churn——精确值本就在指针指向的本体里，概念不复刻会变的数字。"""
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return "未知量级"
+    if n >= 10**7:
+        return "千万级"
+    if n >= 10**6:
+        return "百万级"
+    if n >= 10**5:
+        return "十万级"
+    if n >= 10**4:
+        return "万级"
+    if n >= 10**3:
+        return "千级"
+    if n >= 100:
+        return "百级"
+    return "几十条或更少"
+
+
 def _size_of(path: Path) -> str:
     try:
         if path.is_dir():
@@ -342,7 +364,7 @@ def build_community() -> tuple[list[dict], list[str]]:
     # (A) analysis-index concept
     entries.append({
         "id": "community-index", "type": "dataset", "title": "社区全量档案分析索引",
-        "description": (f"全量社区档案静态分析台账：{meta.get('total_records', '?')} 条 / "
+        "description": (f"全量社区档案静态分析台账：{_magnitude(meta.get('total_records', 0))} 条（精确值见指针本体）/ "
                         f"{meta.get('platform_count', '?')} 平台，词典法零 ML。{meta.get('data_note', '')[:80]}"),
         "resource": _rel(idx_path),
         "tags": ["data_layer:full_archive", "kind:analysis-index", "zero-ml"],
@@ -355,10 +377,10 @@ def build_community() -> tuple[list[dict], list[str]]:
             flags.append(f"community/{name}: 归档目录未落盘，指针跳过")
             continue
         by_month = info.get("by_month", {})
-        total = info.get("total") or info.get("total_records") or info.get("count", "?")
+        total = info.get("total") or info.get("total_records") or info.get("count", 0)
         entries.append({
             "id": f"community-{slug(name)}", "type": "dataset", "title": f"{name} 社区全量档案",
-            "description": (f"{name} 平台全量档案层（分析镜头）：约 {total} 条 / "
+            "description": (f"{name} 平台全量档案层（分析镜头）：{_magnitude(total)}条（精确值见指针本体）/ "
                             f"{len(by_month)} 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。"),
             "resource": res,
             "tags": ["data_layer:full_archive", f"platform:{name}", "lens:analysis"],

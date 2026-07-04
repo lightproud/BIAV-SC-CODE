@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 298,
     "edges": 96,
-    "terms": 5068,
+    "terms": 5083,
     "by_type": {
       "character": 72,
       "dataset": 109,
@@ -1283,7 +1283,7 @@
     "/community/community-appstore.md": {
       "type": "dataset",
       "title": "appstore 社区全量档案",
-      "description": "appstore 平台全量档案层（分析镜头）：约 874 条 / 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1297,7 +1297,7 @@
     "/community/community-bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区全量档案",
-      "description": "bilibili 平台全量档案层（分析镜头）：约 2449 条 / 7 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 7 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -1311,7 +1311,7 @@
     "/community/community-discord.md": {
       "type": "dataset",
       "title": "discord 社区全量档案",
-      "description": "discord 平台全量档案层（分析镜头）：约 7531947 条 / 35 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 35 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -1325,7 +1325,7 @@
     "/community/community-google-play.md": {
       "type": "dataset",
       "title": "google_play 社区全量档案",
-      "description": "google_play 平台全量档案层（分析镜头）：约 1826 条 / 31 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 31 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1339,7 +1339,7 @@
     "/community/community-index.md": {
       "type": "dataset",
       "title": "社区全量档案分析索引",
-      "description": "全量社区档案静态分析台账：7565639 条 / 17 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele",
+      "description": "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1353,7 +1353,7 @@
     "/community/community-official.md": {
       "type": "dataset",
       "title": "official 社区全量档案",
-      "description": "official 平台全量档案层（分析镜头）：约 332 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "official 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
       "tags": [
         "data_layer:full_archive",
@@ -1367,7 +1367,7 @@
     "/community/community-pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区全量档案",
-      "description": "pixiv 平台全量档案层（分析镜头）：约 539 条 / 30 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "pixiv 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 30 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -1381,7 +1381,7 @@
     "/community/community-reddit.md": {
       "type": "dataset",
       "title": "reddit 社区全量档案",
-      "description": "reddit 平台全量档案层（分析镜头）：约 3405 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -1395,7 +1395,7 @@
     "/community/community-ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区全量档案",
-      "description": "ruliweb 平台全量档案层（分析镜头）：约 381 条 / 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -1409,7 +1409,7 @@
     "/community/community-steam-discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区全量档案",
-      "description": "steam_discussion 平台全量档案层（分析镜头）：约 41 条 / 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "steam_discussion 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -1423,7 +1423,7 @@
     "/community/community-steam.md": {
       "type": "dataset",
       "title": "steam 社区全量档案",
-      "description": "steam 平台全量档案层（分析镜头）：约 5127 条 / 24 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 24 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -1437,7 +1437,7 @@
     "/community/community-stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区全量档案",
-      "description": "stopgame 平台全量档案层（分析镜头）：约 74 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "stopgame 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -1451,7 +1451,7 @@
     "/community/community-taptap-review.md": {
       "type": "dataset",
       "title": "taptap_review 社区全量档案",
-      "description": "taptap_review 平台全量档案层（分析镜头）：约 440 条 / 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap_review 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -1465,7 +1465,7 @@
     "/community/community-taptap.md": {
       "type": "dataset",
       "title": "taptap 社区全量档案",
-      "description": "taptap 平台全量档案层（分析镜头）：约 7 条 / 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -1493,7 +1493,7 @@
     "/community/community-weibo.md": {
       "type": "dataset",
       "title": "weibo 社区全量档案",
-      "description": "weibo 平台全量档案层（分析镜头）：约 8686 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weibo 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -1507,7 +1507,7 @@
     "/community/community-weixin.md": {
       "type": "dataset",
       "title": "weixin 社区全量档案",
-      "description": "weixin 平台全量档案层（分析镜头）：约 5696 条 / 56 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 56 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -1521,7 +1521,7 @@
     "/community/community-youtube-comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区全量档案",
-      "description": "youtube_comments 平台全量档案层（分析镜头）：约 1269 条 / 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -1535,7 +1535,7 @@
     "/community/community-youtube.md": {
       "type": "dataset",
       "title": "youtube 社区全量档案",
-      "description": "youtube 平台全量档案层（分析镜头）：约 2546 条 / 15 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 15 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -11260,6 +11260,10 @@
     "万物": [
       "/characters/77913.md"
     ],
+    "万级": [
+      "/community/community-discord.md",
+      "/community/community-index.md"
+    ],
     "万能": [
       "/characters/15590.md",
       "/characters/15603.md"
@@ -14494,6 +14498,26 @@
       "/README.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "值见": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-index.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-steam.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
+    ],
     "假阳": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
@@ -15072,6 +15096,11 @@
     ],
     "凝聚": [
       "/characters/15579.md"
+    ],
+    "几十": [
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
     ],
     "凯刻斯": [
       "/characters/15594.md"
@@ -16138,6 +16167,21 @@
     ],
     "十分": [
       "/characters/15571.md"
+    ],
+    "十条": [
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
+    ],
+    "千级": [
+      "/community/community-bilibili.md",
+      "/community/community-google-play.md",
+      "/community/community-reddit.md",
+      "/community/community-steam.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
     ],
     "千面": [
       "/characters/15590.md"
@@ -20183,6 +20227,11 @@
       "/characters/77922.md",
       "/characters/94450.md"
     ],
+    "少条": [
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
+    ],
     "尖刺": [
       "/characters/15565.md"
     ],
@@ -22371,7 +22420,10 @@
       "/characters/77925.md"
     ],
     "或更": [
-      "/characters/15572.md"
+      "/characters/15572.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
     ],
     "或植": [
       "/characters/77925.md"
@@ -25334,6 +25386,11 @@
     "更大": [
       "/characters/77922.md"
     ],
+    "更少": [
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
+    ],
     "更强": [
       "/characters/15598.md",
       "/characters/15604.md",
@@ -26199,6 +26256,11 @@
     ],
     "条强": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
+    ],
+    "条或": [
+      "/community/community-steam-discussion.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap.md"
     ],
     "条战": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -29419,6 +29481,17 @@
     "白盒": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
+    "百万": [
+      "/community/community-discord.md",
+      "/community/community-index.md"
+    ],
+    "百级": [
+      "/community/community-appstore.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-ruliweb.md",
+      "/community/community-taptap-review.md"
+    ],
     "的一": [
       "/characters/15577.md",
       "/characters/15592.md",
@@ -30442,6 +30515,26 @@
     "确保": [
       "/characters/15580.md"
     ],
+    "确值": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-index.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-steam.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
+    ],
     "确定": [
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -31012,6 +31105,26 @@
     "类缺": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "精确": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-index.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-steam.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
+    ],
     "精神": [
       "/README.md",
       "/characters/77925.md"
@@ -31124,6 +31237,22 @@
     ],
     "级存": [
       "/memory/memory-ext-discord-archiver-design.md"
+    ],
+    "级条": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam.md",
+      "/community/community-taptap-review.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
     ],
     "级顾": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -32439,6 +32568,26 @@
     ],
     "见字": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
+    ],
+    "见指": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-index.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-steam.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
     ],
     "见证": [
       "/characters/77926.md"
@@ -34990,6 +35139,26 @@
     ],
     "针对": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "针本": [
+      "/community/community-appstore.md",
+      "/community/community-bilibili.md",
+      "/community/community-discord.md",
+      "/community/community-google-play.md",
+      "/community/community-index.md",
+      "/community/community-official.md",
+      "/community/community-pixiv.md",
+      "/community/community-reddit.md",
+      "/community/community-ruliweb.md",
+      "/community/community-steam-discussion.md",
+      "/community/community-steam.md",
+      "/community/community-stopgame.md",
+      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md",
+      "/community/community-youtube-comments.md",
+      "/community/community-youtube.md"
     ],
     "针概": [
       "/assets/assets-archive-integrity.md",
