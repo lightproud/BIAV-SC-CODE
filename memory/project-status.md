@@ -175,7 +175,11 @@
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704.md`——
   绿区（MIT/Apache 可借码：assistant-ui / AI Elements / Goose / LibreChat 等）/ 黄区（Open WebUI 品牌条款、
   LobeChat 社区许可证）/ 红区（Cherry Studio AGPL 双许可、Chatbox GPLv3 只看不抄）三级红绿灯 +
-  净室边界（Claude Desktop 逆向产物零复制）
+  净室边界（Claude Desktop 逆向产物零复制）。**第二弹（同日）**：Claude Desktop 本体全结构黑箱观察规格
+  `Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-structure-20260704.md`（三标签 Chat/Cowork/Code
+  逐节结构；Code 标签为官方文档全文取证最高置信——会话/worktree 模型、权限五档、八 pane、diff 行评、
+  CI 状态条、computer use 三档 app 权限、快捷键全表；附证据分级与残余盲区）+ 配套单文件线框图
+  `claude-desktop-ui-wireframe-20260704.html`
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）
