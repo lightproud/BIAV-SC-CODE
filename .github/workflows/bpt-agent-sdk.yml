@@ -42,10 +42,20 @@ on:
         required: false
         default: '3'
       prompt_ab:
-        description: 'A/B this SDK''s harness prompt v1 vs v2 (cheap probe: cache/cost/turns; no official arm)'
+        description: 'A/B this SDK''s harness prompt v1 vs a candidate (cheap probe: cache/cost/turns/pass-rate; no official arm)'
         required: false
         type: boolean
         default: false
+      prompt_candidate:
+        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against'
+        required: false
+        type: choice
+        options: ['v2', 'v3']
+        default: 'v3'
+      prompt_tasks:
+        description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
+        required: false
+        default: '10,11'
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -203,14 +213,19 @@ jobs:
           if-no-files-found: ignore
 
   prompt-ab:
-    # Cheap probe: A/B this SDK's OWN harness prompt v1 vs v2 (no official arm).
-    # Answers whether the richer v2 prompt crosses Haiku's cache floor and what
-    # it does to net cost / turns. Dispatch with prompt_ab=true. Default repeat
-    # is honored (1 = fastest signal). Both variants run back-to-back in one
-    # job so cache/network conditions are shared.
+    # Cheap probe: A/B this SDK's OWN harness prompt v1 vs a candidate (default
+    # v3; no official arm). Answers whether the richer candidate prompt improves
+    # the pass-rate on the hard discriminating tasks (10/11, which verify the
+    # produced code by executing it) and what it costs in cache/cost/turns.
+    # Dispatch with prompt_ab=true; prompt_candidate picks v2 or v3, prompt_tasks
+    # scopes the task set. Both variants run back-to-back in one job so
+    # cache/network conditions are shared.
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.prompt_ab == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      CAND: ${{ github.event.inputs.prompt_candidate }}
+      TASKS_ARG: ${{ github.event.inputs.prompt_tasks != '' && format('--tasks={0}', github.event.inputs.prompt_tasks) || '' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -227,18 +242,24 @@ jobs:
       - name: Build
         run: npm run build
       - name: Prompt A/B — v1 (current default)
+        # A hard task failing is a real result (v1 may not verify), not a job
+        # failure — keep going so the candidate runs and the compare fires.
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v1 "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v1.json
-      - name: Prompt A/B — v2 (candidate)
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v1 $TASKS_ARG "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v1.json
+      - name: Prompt A/B — candidate ($CAND)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v2 "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v2.json
-      - name: Compare v1 vs v2
-        run: node tests/integration/ab-benchmark.mjs --compare ab-report-v1.json ab-report-v2.json
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--variant=$CAND" $TASKS_ARG "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-cand.json
+      - name: Compare v1 vs candidate
+        run: node tests/integration/ab-benchmark.mjs --compare ab-report-v1.json ab-report-cand.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: prompt-ab-report
-          path: projects/bpt-agent-sdk/ab-report-v*.json
+          path: |
+            projects/bpt-agent-sdk/ab-report-v1.json
+            projects/bpt-agent-sdk/ab-report-cand.json
           if-no-files-found: ignore

@@ -162,7 +162,14 @@
   子代理共享，query 结束清场）；② 换装就绪包 `docs/MIGRATION.md` + `examples/electron-host.mjs` +
   `npm pack` tarball 干净目录实测装通；③ A/B 七任务基准 `tests/integration/ab-benchmark.mjs`
   （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `bpt-agent-sdk.yml` `ab_benchmark`
-  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 691 单测全绿（20 文件）**；`tsc` + `build` exit 0
+  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 702 单测全绿（21 文件）**；`tsc` + `build` exit 0
+- **提示词线（2026-07-04）**：净室系统提示词三变体 v1/v2/v3（`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
+  v2 = v1 补真实行为纪律；v3 = v2 补公开最佳实践缺口四技法（改后自检 / 反硬编码 / 何时委派 / 收尾范例）。
+  A/B 基准加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码、反硬编码边界用例、清理前跑）。
+  测量纪律：v2 简单基准无可测收益 → 正确扣住没提拔；v1-vs-v3 真 API 探针待 dispatch（`prompt_ab` 可选 candidate=v3/tasks=10,11），
+  数字说话前不宣胜负。缓存 0% 已诊断为「前缀够不着 Haiku 2048 门槛、非 bug、不灌水」。组织级缓存红利设计留 host
+  （多层注入 proposal 档）、SDK 只承接 `segments` 分段 seam。整条线综述见
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）

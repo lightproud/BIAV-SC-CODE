@@ -1,11 +1,11 @@
 /**
- * Harness system-prompt construction: stable/volatile split + v1/v2 variant.
+ * Harness system-prompt construction: stable/volatile split + v1/v2/v3 variant.
  */
 
 import { describe, expect, it } from 'vitest';
 import { buildSystemPromptParts, buildSystemPrompt } from '../src/engine/prompts.js';
 
-const ctx = (variant?: 'v1' | 'v2') => ({
+const ctx = (variant?: 'v1' | 'v2' | 'v3') => ({
   cwd: '/tmp/run-xyz',
   toolNames: ['Read', 'Write', 'Bash'],
   variant,
@@ -52,9 +52,23 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v2).not.toContain('/tmp/run-xyz');
   });
 
-  it('append text lands in the stable segment for both variants', () => {
+  it('v3 adds the four flagged disciplines on top of v2 and is larger still', () => {
+    const v2 = buildSystemPromptParts(preset, ctx('v2')).stable;
+    const v3 = buildSystemPromptParts(preset, ctx('v3')).stable;
+    expect(v3).not.toBe(v2);
+    expect(v3.length).toBeGreaterThan(v2.length);
+    // the four techniques the public best-practices comparison flagged as missing
+    expect(v3).toContain('Delegation:'); // when-to-delegate guidance
+    expect(v3).toContain('verify your work against'); // verify-before-finishing
+    expect(v3).toContain('Do not hard-code'); // solve the general problem
+    expect(v3).toContain('for example:'); // one concrete style example
+    // still keeps the cwd out of the cached (stable) segment
+    expect(v3).not.toContain('/tmp/run-xyz');
+  });
+
+  it('append text lands in the stable segment for all variants', () => {
     const withAppend = { ...preset, append: 'EXTRA_INSTRUCTION' };
-    for (const v of ['v1', 'v2'] as const) {
+    for (const v of ['v1', 'v2', 'v3'] as const) {
       expect(buildSystemPromptParts(withAppend, ctx(v)).stable).toContain('EXTRA_INSTRUCTION');
     }
   });

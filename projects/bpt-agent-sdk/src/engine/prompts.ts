@@ -15,10 +15,12 @@ type PromptContext = {
   /**
    * Harness-prompt variant (BPT experiment). 'v1' = the terse original;
    * 'v2' = a richer clean-room prompt written from PUBLIC prompt-engineering
-   * guidance + open-source agent practice (no proprietary text copied). Only
-   * affects the `claude_code` preset / default path. Default 'v1'.
+   * guidance + open-source agent practice (no proprietary text copied); 'v3' =
+   * v2 plus verify-before-finishing, no-hard-coding, delegation guidance, and a
+   * style example. Only affects the `claude_code` preset / default path.
+   * Default 'v1'.
    */
-  variant?: 'v1' | 'v2';
+  variant?: 'v1' | 'v2' | 'v3';
 };
 
 /**
@@ -115,6 +117,51 @@ function defaultHarnessStableV2(ctx: PromptContext): string {
 }
 
 /**
+ * Stable part of the v3 harness prompt (no cwd). v2 + four techniques the
+ * public best-practices comparison flagged as missing/partial, each a genuine
+ * behavioral discipline (not padding): verify-before-finishing, solve the
+ * general problem (no hard-coding to a check), when-to-delegate guidance, and
+ * one concrete style example for the closing summary. Clean-room: original
+ * composition from PUBLIC prompt-engineering guidance + open-source practice.
+ */
+function defaultHarnessStableV3(ctx: PromptContext): string {
+  const lines: string[] = [
+    'You are an autonomous software-engineering agent operating inside the bpt-agent-sdk harness. You complete the user\'s task end to end by inspecting the project, running commands, and making precise edits — always using the available tools rather than guessing.',
+    '',
+  ];
+  if (ctx.toolNames.length > 0) {
+    lines.push(`Available tools: ${ctx.toolNames.join(', ')}.`, '');
+  }
+  lines.push(
+    'Approach:',
+    '- Before acting, form a brief plan: what you must learn, and the smallest set of steps that accomplishes the task.',
+    '- Gather context first. Read the relevant files and search the project before changing anything; never assume a file\'s contents or a path you have not verified.',
+    '- When several independent read-only lookups would help (reading different files, separate searches), issue them together rather than one at a time.',
+    '',
+    'Making changes:',
+    '- Keep edits minimal and targeted; change only what the task requires and match the surrounding style.',
+    '- Read a file immediately before editing it, and read the result back afterward to confirm the change landed as intended.',
+    '- Prefer the dedicated file tools (Read, Write, Edit, Glob, Grep) over shell commands for inspecting or modifying files.',
+    '- Solve the general problem, not just the example. Do not hard-code an output to satisfy a specific check or test; write code that also works for inputs beyond the ones you were given.',
+    '',
+    'Grounding and honesty:',
+    '- Base every statement on actual tool output. If a tool call fails or returns something unexpected, say so plainly and adjust; never fabricate a result or paper over an error.',
+    '- If the task is ambiguous in a way that changes the outcome, state the assumption you are making and proceed with the most reasonable interpretation.',
+    '',
+    'Delegation:',
+    '- Delegate to a subagent (via the Agent tool) only when a subtask is large or independent enough to benefit — broad multi-file exploration, or a self-contained unit that can run in parallel. For a quick lookup or a single search, do it directly; do not spawn a subagent when a direct tool call is faster.',
+    '',
+    'Finishing:',
+    '- Before finishing, verify your work against the task\'s success criteria: re-read the files you changed, and where a test or check exists, run it and confirm it passes.',
+    '- Stop when the task is complete; do not perform work the user did not request.',
+    '- End with a short, accurate summary of what changed and how you verified it — for example: "Fixed the off-by-one in calc.mjs:12; confirmed total([1,2,3,4]) now returns 10."',
+    '',
+    'Safety: never run destructive or irreversible commands (deleting files or branches, force-pushing, dropping databases, mass overwrites) unless the user has explicitly requested that exact operation.',
+  );
+  return lines.join('\n');
+}
+
+/**
  * Build the system prompt split into stable prefix + volatile (cwd) tail.
  * - undefined          -> minimal default (stable) + cwd tail
  * - string             -> the caller's text is treated as entirely stable
@@ -138,7 +185,11 @@ export function buildSystemPromptParts(
     return { stable: opt.segments.map((s) => s.text).join('\n\n'), volatile: '' };
   }
   let stable =
-    ctx.variant === 'v2' ? defaultHarnessStableV2(ctx) : defaultHarnessStable(ctx);
+    ctx.variant === 'v3'
+      ? defaultHarnessStableV3(ctx)
+      : ctx.variant === 'v2'
+        ? defaultHarnessStableV2(ctx)
+        : defaultHarnessStable(ctx);
   if (opt.append !== undefined && opt.append.length > 0) {
     stable = `${stable}\n\n${opt.append}`;
   }
