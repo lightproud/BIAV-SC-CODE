@@ -11,12 +11,14 @@ import process from 'node:process';
 import type { McpRegistry, McpToolEntry } from '../internal/contracts.js';
 import type {
   CallToolResult,
+  ElicitationHandler,
   JSONSchema,
   McpHttpServerConfig,
   McpSSEServerConfig,
   McpSdkServerConfigWithInstance,
   McpServerConfig,
   McpServerStatus,
+  McpSetServersResult,
   McpStdioServerConfig,
 } from '../types.js';
 import { AbortError, ConfigurationError, isAbortError } from '../errors.js';
@@ -57,6 +59,7 @@ export class DefaultMcpRegistry implements McpRegistry {
   private readonly entries: ServerEntry[];
   private readonly env: Record<string, string | undefined>;
   private readonly debug: (msg: string) => void;
+  private readonly elicitation?: ElicitationHandler;
 
   constructor(
     opts: {
@@ -64,10 +67,13 @@ export class DefaultMcpRegistry implements McpRegistry {
       /** Base env for stdio server spawns (config.env merges over it). */
       env?: Record<string, string | undefined>;
       debug?: (msg: string) => void;
+      /** Host handler answering server-initiated elicitation/create requests. */
+      elicitation?: ElicitationHandler;
     } = {},
   ) {
     this.env = opts.env ?? process.env;
     this.debug = opts.debug ?? (() => {});
+    this.elicitation = opts.elicitation;
     this.entries = Object.entries(opts.servers ?? {}).map(([name, config]) => ({
       name,
       config,
@@ -179,6 +185,25 @@ export class DefaultMcpRegistry implements McpRegistry {
     entry.enabled = enabled;
   }
 
+  /** Replace the live server set: tear down current connections, swap in the
+   *  new configs, connect them, and return the resulting statuses. */
+  async setServers(
+    servers: Record<string, McpServerConfig>,
+  ): Promise<McpSetServersResult> {
+    await this.closeAll();
+    const next: ServerEntry[] = Object.entries(servers).map(([name, config]) => ({
+      name,
+      config,
+      connection: null,
+      baseStatus: 'pending' as const,
+      tools: [],
+      enabled: true,
+    }));
+    this.entries.splice(0, this.entries.length, ...next);
+    await this.connectAll();
+    return { servers: this.statuses() };
+  }
+
   /** Close every connection (best-effort, parallel). */
   async closeAll(): Promise<void> {
     await Promise.all(
@@ -259,6 +284,7 @@ export class DefaultMcpRegistry implements McpRegistry {
           name,
           env: this.env,
           debug: this.debug,
+          elicitation: this.elicitation,
         });
       case 'http':
       case 'sse':
@@ -267,6 +293,7 @@ export class DefaultMcpRegistry implements McpRegistry {
         return new HttpMcpConnection(config as McpHttpServerConfig | McpSSEServerConfig, {
           name,
           debug: this.debug,
+          elicitation: this.elicitation,
         });
       case 'sdk':
         return new SdkMcpConnection((config as McpSdkServerConfigWithInstance).instance, {

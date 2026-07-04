@@ -7,7 +7,7 @@
  */
 
 import { Buffer } from 'node:buffer';
-import { mkdir, stat, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import * as path from 'node:path';
 import type {
   BuiltinTool,
@@ -81,6 +81,20 @@ export const writeTool: BuiltinTool = {
         if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
           throw e;
         }
+      }
+
+      // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
+      // restore it (create -> null). Best-effort; the recorder never throws.
+      if (ctx.recordFileChange !== undefined) {
+        let preImage: string | null = null;
+        if (existedBefore) {
+          try {
+            preImage = await readFile(abs, 'utf8');
+          } catch {
+            preImage = null;
+          }
+        }
+        ctx.recordFileChange(abs, preImage);
       }
 
       await mkdir(path.dirname(abs), { recursive: true });

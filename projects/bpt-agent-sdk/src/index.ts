@@ -10,6 +10,14 @@ export { query } from './query.js';
 export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {
+  getSessionMessages,
+  renameSession,
+  tagSession,
+  deleteSession,
+  forkSession,
+} from './sessions/session-functions.js';
+export { InMemorySessionStore, encodeProjectKey } from './sessions/store-adapter.js';
+export {
   AbortError,
   APIConnectionError,
   APIStatusError,

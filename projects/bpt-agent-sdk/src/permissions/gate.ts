@@ -1,24 +1,30 @@
 /**
  * DefaultPermissionGate - the full permission evaluation pipeline for one
- * tool call, in the EXACT order documented on the PermissionGate contract:
+ * tool call, in the EXACT official 6-step order:
  *
- *   1. hook deny                                   -> deny
- *   2. disallowedTools rule                        -> deny
- *   3. hook allow                                  -> allow (hook updatedInput wins)
- *   4. allowedTools rule                           -> allow
- *   5. mode bypassPermissions                      -> allow
- *   6. mode plan                                   -> readOnly ? allow : deny
- *   7. mode acceptEdits && (readOnly || isFileEdit)-> allow
- *   8. mode default/dontAsk && readOnly            -> allow
- *   9. otherwise (or hook 'ask'): canUseTool if provided; else deny
+ *   1. Hooks         - hook 'deny' -> deny; hook 'defer' -> defer (ends turn);
+ *                      hook 'allow'/'ask' are remembered for step 3.
+ *   2. Deny rules    - scoped disallowedTools + session deny rules match the
+ *                      model input (or a hook-rewritten input) -> deny. Applies
+ *                      even under bypassPermissions / auto.
+ *   3. Ask rules     - hook 'ask', a session ask rule, or a
+ *                      requiresUserInteraction tool routes to canUseTool
+ *                      (step 6), skipping the mode + allow-rule auto-approvals.
+ *                      A hook 'allow' that no ask route caught allows here.
+ *   4. Permission mode - bypass -> allow; acceptEdits -> allow read/edit;
+ *                      plan -> allow read-only, ROUTE writes to canUseTool;
+ *                      auto -> classifier(allow|deny|prompt);
+ *                      default/dontAsk -> allow read-only.
+ *   5. Allow rules   - allowedTools + session allow rules (AFTER mode) -> allow.
+ *   6. canUseTool    - dontAsk denies here; else the callback decides. A null
+ *                      return is a 'skip' (app decides out of band; NOT
+ *                      recorded). An allow may rewrite the input (re-checked
+ *                      against deny rules) and carry session updates.
  *
- * A hook 'ask' decision routes to step 9 by skipping the auto-ALLOW outcomes
- * of steps 3-8; deny outcomes (steps 1, 2 and the plan-mode deny of step 6)
- * still apply, so 'ask' can never widen permissions.
- *
- * `dontAsk` differs from `default` only at step 9: canUseTool is never
- * consulted, the call is denied directly. Every deny is recorded and
- * retrievable via denials().
+ * Steps 3-5 only produce auto-ALLOW outcomes; the deny outcomes of steps 1, 2
+ * and the auto-classifier still apply, so an ask route can never widen
+ * permissions. Every deny is recorded and retrievable via denials(); 'skip'
+ * and 'defer' are never recorded.
  */
 
 import type {
@@ -28,21 +34,32 @@ import type {
   PermissionUpdate,
   SDKPermissionDenial,
 } from '../types.js';
+import { randomUUID } from 'node:crypto';
 import { AbortError, isAbortError } from '../errors.js';
 import type {
   GateHookDecision,
   PermissionCheckResult,
   PermissionGate,
 } from '../internal/contracts.js';
-import { parseRule, ruleMatches, type ParsedRule } from './rules.js';
+import {
+  buildPermissionSuggestions,
+  parseRule,
+  requiresUserInteraction,
+  ruleMatches,
+  type ParsedRule,
+} from './rules.js';
+import { defaultAutoClassifier, type ToolClassifier } from './classifier.js';
 
 export type PermissionGateConfig = {
   mode?: PermissionMode;
-  /** Rule strings (`Tool` / `Tool(spec)`) that auto-allow at step 4. */
+  /** Rule strings (`Tool` / `Tool(spec)`) that auto-allow at step 5. */
   allowedTools?: string[];
   /** Rule strings (`Tool` / `Tool(spec)`) that deny at step 2. */
   disallowedTools?: string[];
   canUseTool?: CanUseTool;
+  /** Classifier consulted under permissionMode 'auto'. Defaults to the static
+   *  defaultAutoClassifier (no model call). */
+  classifier?: ToolClassifier;
   debug: (msg: string) => void;
 };
 
@@ -63,6 +80,7 @@ function sameRule(a: ParsedRule, b: ParsedRule): boolean {
 export class DefaultPermissionGate implements PermissionGate {
   private mode: PermissionMode;
   private readonly canUseTool: CanUseTool | undefined;
+  private readonly classifier: ToolClassifier;
   private readonly debug: (msg: string) => void;
 
   /** Rules provided at construction time (options.allowed/disallowedTools). */
@@ -72,7 +90,7 @@ export class DefaultPermissionGate implements PermissionGate {
   /** Session rule sets, mutated only by applyUpdates(destination:'session'). */
   private sessionAllowRules: ParsedRule[] = [];
   private sessionDenyRules: ParsedRule[] = [];
-  /** Stored for replace/remove round-trips; not consulted by the v0.1 pipeline. */
+  /** Session ask rules: consulted at step 3 (route to canUseTool). */
   private sessionAskRules: ParsedRule[] = [];
 
   /** Directories granted via addDirectories updates (session scope). */
@@ -83,6 +101,7 @@ export class DefaultPermissionGate implements PermissionGate {
   constructor(cfg: PermissionGateConfig) {
     this.mode = cfg.mode ?? 'default';
     this.canUseTool = cfg.canUseTool;
+    this.classifier = cfg.classifier ?? defaultAutoClassifier;
     this.debug = cfg.debug;
     this.baseAllowRules = (cfg.allowedTools ?? []).map(parseRule);
     this.baseDenyRules = (cfg.disallowedTools ?? []).map(parseRule);
@@ -103,77 +122,94 @@ export class DefaultPermissionGate implements PermissionGate {
     const { toolUseID, signal, readOnly, isFileEdit, hook } = opts;
     if (signal.aborted) throw new AbortError();
 
-    // Step 1: hook deny.
-    if (hook?.decision === 'deny') {
-      return this.deny(toolName, toolUseID, input, 'PreToolUse hook', hook.reason);
+    const hookDeny = hook?.decision === 'deny';
+    const hookDefer = hook?.decision === 'defer';
+    const hookAsk = hook?.decision === 'ask';
+    const hookAllow = hook?.decision === 'allow';
+    // A hook allow/ask may rewrite the input; that rewrite is what a deny rule
+    // must be re-checked against and what canUseTool ultimately approves.
+    const effectiveInput = (hookAllow || hookAsk) ? (hook?.updatedInput ?? input) : input;
+
+    // ----- STEP 1: hooks -----------------------------------------------------
+    if (hookDeny) {
+      return this.deny(toolName, toolUseID, input, 'PreToolUse hook', hook?.reason);
+    }
+    if (hookDefer) {
+      // Deferred for later approval; ends the current turn. Never recorded.
+      return {
+        decision: 'defer',
+        message:
+          `Tool "${toolName}" was deferred by a PreToolUse hook` +
+          (hook?.reason ? ` - ${hook.reason}` : ''),
+      };
     }
 
-    // Step 2: disallowedTools rule (against the model's original input).
+    // ----- STEP 2: deny rules ------------------------------------------------
+    // Match the model's original input; a hook rewrite must not smuggle a call
+    // past a deny rule, so the effective input is checked too (and the deny is
+    // recorded against the offending input).
     {
       const denied = this.disallowedDeny(toolName, toolUseID, input);
       if (denied) return denied;
+      if ((hookAllow || hookAsk) && effectiveInput !== input) {
+        const deniedEff = this.disallowedDeny(toolName, toolUseID, effectiveInput);
+        if (deniedEff) return deniedEff;
+      }
     }
 
-    // A hook 'ask' skips the auto-allow outcomes of steps 3-8 (deny outcomes
-    // still apply) and forces the step-9 canUseTool path.
-    const hookAsk = hook?.decision === 'ask';
+    // ----- STEP 3: ask rules + hook-allow resolution -------------------------
+    let routeToPrompt =
+      hookAsk ||
+      this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput)) ||
+      requiresUserInteraction(toolName);
 
-    // Step 3: hook allow (hook updatedInput wins). A hook that rewrites the
-    // input must not smuggle it past a deny rule, so the (possibly rewritten)
-    // effective input is re-checked against disallowedTools before allowing.
-    if (!hookAsk && hook?.decision === 'allow') {
-      const effectiveInput = hook.updatedInput ?? input;
-      const denied = this.disallowedDeny(toolName, toolUseID, effectiveInput);
-      if (denied) return denied;
+    if (hookAllow && !routeToPrompt) {
+      // Hook allow is the documented escape hatch above the mode step; still
+      // subject to the deny + ask rules already applied.
       return { decision: 'allow', updatedInput: effectiveInput };
     }
 
-    // Step 4: allowedTools rule. In plan mode an allow rule may only
-    // auto-approve read-only tools - plan mode must NEVER auto-approve a
-    // write/edit, so a non-readOnly tool skips this allow and falls through to
-    // the plan-mode deny at step 6, regardless of an allowedTools match.
+    // ----- STEP 4: permission mode (only when no hook-allow / ask route) ------
+    if (!hookAllow && !routeToPrompt) {
+      switch (this.mode) {
+        case 'bypassPermissions':
+          return { decision: 'allow', updatedInput: input };
+        case 'acceptEdits':
+          if (readOnly || isFileEdit) return { decision: 'allow', updatedInput: input };
+          break;
+        case 'plan':
+          if (readOnly) return { decision: 'allow', updatedInput: input };
+          // v0.2: plan ROUTES writes to canUseTool (never a hard deny).
+          routeToPrompt = true;
+          break;
+        case 'auto': {
+          const cls = this.classifier(toolName, input, { readOnly, isFileEdit });
+          if (cls === 'allow') return { decision: 'allow', updatedInput: input };
+          if (cls === 'deny') {
+            return this.deny(toolName, toolUseID, input, 'auto classifier');
+          }
+          routeToPrompt = true; // 'prompt'
+          break;
+        }
+        case 'default':
+        case 'dontAsk':
+          if (readOnly) return { decision: 'allow', updatedInput: input };
+          break;
+      }
+    }
+
+    // ----- STEP 5: allow rules (AFTER mode; only when no prompt route) --------
     if (
-      !hookAsk &&
-      !(this.mode === 'plan' && !readOnly) &&
+      !routeToPrompt &&
       this.anyRuleMatches(this.baseAllowRules, this.sessionAllowRules, toolName, input)
     ) {
       return { decision: 'allow', updatedInput: input };
     }
 
-    // Step 5: bypassPermissions mode allows everything.
-    if (!hookAsk && this.mode === 'bypassPermissions') {
-      return { decision: 'allow', updatedInput: input };
-    }
-
-    // Step 6: plan mode - read-only tools allowed, everything else denied.
-    if (this.mode === 'plan') {
-      if (!readOnly) {
-        return this.deny(
-          toolName,
-          toolUseID,
-          input,
-          'plan mode',
-          'only read-only tools are permitted in plan mode',
-        );
-      }
-      if (!hookAsk) {
-        return { decision: 'allow', updatedInput: input };
-      }
-      // readOnly under hook 'ask': fall through to step 9.
-    }
-
-    // Step 7: acceptEdits mode auto-approves read-only tools and file edits.
-    if (!hookAsk && this.mode === 'acceptEdits' && (readOnly || isFileEdit)) {
-      return { decision: 'allow', updatedInput: input };
-    }
-
-    // Step 8: default/dontAsk modes auto-approve read-only tools.
-    if (!hookAsk && (this.mode === 'default' || this.mode === 'dontAsk') && readOnly) {
-      return { decision: 'allow', updatedInput: input };
-    }
-
-    // Step 9: consult canUseTool - except under dontAsk, which never prompts.
+    // ----- STEP 6: canUseTool ------------------------------------------------
     if (this.mode === 'dontAsk') {
+      // dontAsk never prompts; ask-rule / requiresUserInteraction routes are
+      // denied here too.
       return this.deny(
         toolName,
         toolUseID,
@@ -192,10 +228,9 @@ export class DefaultPermissionGate implements PermissionGate {
       );
     }
 
-    // A hook 'ask' may rewrite the input; that rewrite is the base the user
-    // approves via canUseTool, and the fallback when canUseTool allows without
-    // its own updatedInput.
-    const baseInput = hookAsk ? (hook?.updatedInput ?? input) : input;
+    const baseInput = effectiveInput;
+    const suggestions = buildPermissionSuggestions(toolName, baseInput);
+    const requestId = randomUUID();
 
     let result: Awaited<ReturnType<CanUseTool>>;
     try {
@@ -203,6 +238,8 @@ export class DefaultPermissionGate implements PermissionGate {
         signal,
         toolUseID,
         decisionReason: opts.decisionReason ?? hook?.reason,
+        suggestions,
+        requestId,
       });
     } catch (err) {
       if (isAbortError(err) || signal.aborted) throw new AbortError();
@@ -212,26 +249,23 @@ export class DefaultPermissionGate implements PermissionGate {
     if (signal.aborted) throw new AbortError();
 
     if (result === null) {
-      // The callback declined to decide; the conservative outcome is deny.
-      return this.deny(
-        toolName,
-        toolUseID,
-        input,
-        'canUseTool callback',
-        'callback returned no decision',
-      );
+      // The app resolves this call out of band; emit a non-recorded skip.
+      return {
+        decision: 'skip',
+        message: 'permission decision was handled by the application (no local record)',
+      };
     }
     if (result.behavior === 'allow') {
-      // canUseTool may rewrite the input; re-check it against disallowedTools
-      // before allowing so a rewritten input cannot bypass a deny rule. Deny
-      // wins outright - a denied call applies no session permission updates.
-      const effectiveInput = result.updatedInput ?? baseInput;
-      const denied = this.disallowedDeny(toolName, toolUseID, effectiveInput);
+      // canUseTool may rewrite the input; re-check it against the deny rules
+      // before allowing. Deny wins outright - a denied call applies no session
+      // permission updates.
+      const eff = result.updatedInput ?? baseInput;
+      const denied = this.disallowedDeny(toolName, toolUseID, eff);
       if (denied) return denied;
       if (result.updatedPermissions && result.updatedPermissions.length > 0) {
         this.applyUpdates(result.updatedPermissions);
       }
-      return { decision: 'allow', updatedInput: effectiveInput };
+      return { decision: 'allow', updatedInput: eff };
     }
     return this.deny(
       toolName,
@@ -264,11 +298,6 @@ export class DefaultPermissionGate implements PermissionGate {
         case 'addRules': {
           const target = this.sessionRulesFor(update.behavior);
           for (const rule of update.rules) target.push(toParsedRule(rule));
-          if (update.behavior === 'ask') {
-            this.debug(
-              'permissions: "ask" rules are stored but not consulted by the v0.1 pipeline',
-            );
-          }
           break;
         }
         case 'replaceRules': {
@@ -315,10 +344,10 @@ export class DefaultPermissionGate implements PermissionGate {
   // -------------------------------------------------------------------------
 
   /**
-   * Step-2 disallowedTools check, reusable against a rewritten input. Returns a
-   * recorded deny result when the (base or session) deny rules match the given
-   * input, otherwise undefined. Called at step 2 with the model's original
-   * input and again at steps 3/9 against any hook- or callback-rewritten input.
+   * Step-2 deny check, reusable against a rewritten input. Returns a recorded
+   * deny result when the (base or session) deny rules match the given input,
+   * otherwise undefined. Called at step 2 with the model's original input and
+   * again at step 6 against any callback-rewritten input.
    */
   private disallowedDeny(
     toolName: string,

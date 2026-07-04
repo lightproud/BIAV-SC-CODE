@@ -8,11 +8,12 @@
  * otherwise ignored; a callback can never crash the agent loop.
  *
  * Aggregation rules (across the outputs, in completion order):
- *   - permission decision: deny > ask > allow. The legacy `decision` field
- *     maps onto this: 'block' -> deny (with its `reason`), 'approve' -> allow
- *     (only when the same output carries no explicit permissionDecision). An
- *     unrecognized permissionDecision value (e.g. a migrated 'defer') is
- *     treated as a DENY, never a silent allow.
+ *   - permission decision: deny > defer > ask > allow. The legacy `decision`
+ *     field maps onto this: 'block' -> deny (with its `reason`), 'approve' ->
+ *     allow (only when the same output carries no explicit permissionDecision).
+ *     'defer' (v0.2) ends the turn with a deferred_tool_use. Any OTHER
+ *     unrecognized permissionDecision value fails closed as a DENY, never a
+ *     silent allow.
  *   - continue:false wins; the FIRST non-empty stopReason is kept
  *   - systemMessage / additionalContext collected in completion order
  *   - updatedInput: from the LAST output carrying an 'allow' OR 'ask' decision
@@ -150,9 +151,11 @@ export class DefaultHookRunner implements HookRunner {
       additionalContext: [],
     };
     let denyReason: string | undefined;
+    let deferReason: string | undefined;
     let askReason: string | undefined;
     let allowReason: string | undefined;
     let sawDeny = false;
+    let sawDefer = false;
     let sawAsk = false;
     let sawAllow = false;
 
@@ -200,6 +203,14 @@ export class DefaultHookRunner implements HookRunner {
           sawDeny = true;
           denyReason = reason;
         }
+      } else if (decision === 'defer') {
+        // v0.2: a hook may defer a tool call for later approval. It ends the
+        // current turn (deferred_tool_use on the result). Priority sits below
+        // deny but above ask/allow so a co-occurring deny still wins.
+        if (!sawDefer) {
+          sawDefer = true;
+          deferReason = reason;
+        }
       } else if (decision === 'ask') {
         if (!sawAsk) {
           sawAsk = true;
@@ -211,9 +222,8 @@ export class DefaultHookRunner implements HookRunner {
           allowReason = reason;
         }
       } else if (decision !== undefined) {
-        // Unrecognized permissionDecision (e.g. a migrated/typo 'defer'):
-        // the documented v0.1 behavior is to treat it as a DENY, never a
-        // silent allow (fail closed).
+        // Any other unrecognized permissionDecision: fail closed as a DENY,
+        // never a silent allow.
         this.debug(
           `hooks: unrecognized permissionDecision "${decision}" treated as deny`,
         );
@@ -247,6 +257,9 @@ export class DefaultHookRunner implements HookRunner {
     if (sawDeny) {
       agg.decision = 'deny';
       if (denyReason !== undefined) agg.decisionReason = denyReason;
+    } else if (sawDefer) {
+      agg.decision = 'defer';
+      if (deferReason !== undefined) agg.decisionReason = deferReason;
     } else if (sawAsk) {
       agg.decision = 'ask';
       if (askReason !== undefined) agg.decisionReason = askReason;
