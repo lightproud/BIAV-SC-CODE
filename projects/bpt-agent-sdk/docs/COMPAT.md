@@ -1,13 +1,44 @@
-# BPT Agent SDK — Compatibility Matrix (v0.1)
+# BPT Agent SDK — Compatibility Matrix
 
 Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.199) as
 documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
-(including 18 unmodeled subsystems and the v0.2/v0.3 roadmap), see
+(including the unmodeled subsystems and the roadmap), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`.
-This file's tiers were reconciled against actual code after the 2026-07-03
-adversarial-review fix pass.
+
+## v0.2 status (what graduated from the v0.1 audit)
+
+v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
+(were MISSING/ACCEPTED in v0.1):
+
+- **Context compaction** — auto threshold + `/compact` + PreCompact hook +
+  `compact_boundary` emission (tokenizer-free, CJK-aware estimator).
+- **Structured outputs** — `outputFormat` json_schema, validate + re-prompt,
+  `structured_output` result, `error_max_structured_output_retries`.
+- **Subagent runtime** — Agent tool, `agents` executed, foreground + background
+  tasks (budget/turn-capped), depth cap, `parent_tool_use_id` threading, `stopTask`.
+- **Permissions v2** — official 6-step order, ask rules first-class,
+  `permissionMode: 'auto'` classifier (unknown non-readonly → prompt),
+  `canUseTool` full context + `null`=skip, `defer` end-to-end.
+- **Prompt caching** — `cache_control` breakpoints (opt-in via
+  `provider.promptCaching`), `ttft_ms`/`deferred_tool_use` result extras, init
+  fields, hook input `tool_use_id`/`duration_ms`, MCP audio/resource_link,
+  `.mcp.json` loading, `thinking.budgetTokens` alias.
+- **New builtin tools** — WebFetch (streamed + SSRF guard), WebSearch (host
+  callback), AskUserQuestion (host callback), TodoWrite; MCP elicitation.
+- **Sessions** — external `SessionStore` mirror; file checkpointing +
+  `rewindFiles`; tool search (deferred MCP schemas); standalone session
+  functions; Query methods (reconnect/toggle/setMcpServers/rewindFiles/stopTask).
+
+Still deliberately out of scope (N/A-by-design or v0.3): the CLI-coupled
+subsystems (CLI system prompt, settings engine, bubblewrap sandbox,
+Bedrock/Vertex/Foundry, OTel), the full 33-variant observability stream, and
+the WarmQuery/startup pre-warm lifecycle. See the audit for the rationale.
+
+The per-field tiers below were reconciled against actual code as of the v0.1
+adversarial-review pass; the v0.2 graduations above supersede the "MISSING/
+ACCEPTED" entries for the listed subsystems.
 
 Tiers:
 - **FULL** — implemented with documented semantics.
