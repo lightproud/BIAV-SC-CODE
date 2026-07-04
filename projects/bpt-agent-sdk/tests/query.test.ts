@@ -588,8 +588,9 @@ describe('query() e2e - compat options, budget, control surface', () => {
 
     const models = await q.supportedModels();
     expect(models.length).toBeGreaterThan(0);
-    expect(models.every((m) => typeof m.id === 'string')).toBe(true);
-    expect(models.some((m) => m.id === 'claude-sonnet-4-5')).toBe(true);
+    expect(models.every((m) => typeof m.value === 'string')).toBe(true);
+    expect(models.some((m) => m.value === 'claude-sonnet-4-5')).toBe(true);
+    expect(models.every((m) => typeof m.displayName === 'string')).toBe(true);
 
     expect(await q.supportedCommands()).toEqual([]);
     expect(await q.supportedAgents()).toEqual([]);

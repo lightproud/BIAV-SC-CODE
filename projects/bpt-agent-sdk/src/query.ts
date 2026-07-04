@@ -70,10 +70,10 @@ const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
 const SUPPORTED_MODELS: readonly ModelInfo[] = [
-  { id: 'claude-opus-4-8' },
-  { id: 'claude-sonnet-5' },
-  { id: 'claude-haiku-4-5' },
-  { id: 'claude-sonnet-4-5' },
+  { value: 'claude-opus-4-8', displayName: 'Claude Opus 4.8' },
+  { value: 'claude-sonnet-5', displayName: 'Claude Sonnet 5' },
+  { value: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
+  { value: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
 ];
 
 /**

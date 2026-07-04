@@ -1415,8 +1415,12 @@ export type SDKMirrorErrorMessage = {
 // ---------------------------------------------------------------------------
 
 export type ModelInfo = {
-  id: string;
+  /** Model id/alias (official field name; consumers read `.value`). */
+  value: string;
+  resolvedModel?: string;
   displayName?: string;
+  description?: string;
+  supportsEffort?: boolean;
 };
 
 export type SlashCommand = {
@@ -1431,6 +1435,13 @@ export type AgentInfo = {
 
 export type AccountInfo = {
   apiKeySource: ApiKeySource;
+  // Surface parity with the official SDK. Not populated by the direct-API
+  // engine (no CLI account introspection channel); typed so consumers that
+  // read these fields narrow correctly instead of hitting `never`.
+  email?: string;
+  organization?: string;
+  subscriptionType?: string;
+  tokenSource?: string;
 };
 
 export type SDKInitializationResult = {

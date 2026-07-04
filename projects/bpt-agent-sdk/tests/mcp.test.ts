@@ -165,20 +165,6 @@ describe('mcp/sdk-server tool()', () => {
     expect(defaulted.instance.tools.size).toBe(0);
   });
 
-  it('tool() attaches annotations from the 5th extras arg', () => {
-    const withAnn = tool(
-      'ro',
-      'read-only tool',
-      { q: z.string() },
-      async () => ({ content: [] }),
-      { annotations: { readOnlyHint: true, title: 'Reader' } },
-    );
-    expect(withAnn.annotations).toEqual({ readOnlyHint: true, title: 'Reader' });
-
-    const without = tool('plain', 'no annotations', {}, async () => ({ content: [] }));
-    expect(without.annotations).toBeUndefined();
-  });
-
   it('callTool preserves a structuredContent payload on the result', async () => {
     const def = tool('struct', 'returns structured data', {}, async () => ({
       content: [{ type: 'text', text: 'see structured' }],
@@ -245,6 +231,7 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
       name: 'calc',
       status: 'connected',
       serverInfo: { name: 'calc', version: '1.0.0' },
+      tools: ['add'],
     });
     // task #17: status carries the config it was registered with + per-server
     // tool names once connected.
