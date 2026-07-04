@@ -541,7 +541,12 @@ export function query(args: {
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...builtinTools.keys()],
-      variant: options.harnessPromptVariant === 'v2' ? 'v2' : 'v1',
+      variant:
+        options.harnessPromptVariant === 'v3'
+          ? 'v3'
+          : options.harnessPromptVariant === 'v2'
+            ? 'v2'
+            : 'v1',
     });
     systemPromptStable = promptParts.stable;
     if (outputFormat !== undefined) {

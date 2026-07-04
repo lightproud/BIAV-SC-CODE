@@ -47,7 +47,7 @@ const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20
 const OUT = typeof args.out === 'string' ? args.out : `ab-report-${ENGINE}.json`;
 // --variant v1|v2: this SDK's harness-prompt variant (BPT experiment). Only
 // meaningful for --engine=bpt; ignored by the official engine.
-const VARIANT = args.variant === 'v2' ? 'v2' : args.variant === 'v1' ? 'v1' : undefined;
+const VARIANT = ['v1', 'v2', 'v3'].includes(args.variant) ? args.variant : undefined;
 // --repeat N: run each task N times and report the MEDIAN of the metrics
 // (denoises single-sample outliers, e.g. one slow/retried turn). Default 1.
 const REPEAT = Math.max(1, Number.parseInt(args.repeat, 10) || 1);
@@ -222,6 +222,64 @@ const TASKS = [
       '把 c 改成 30；把 d 改成 40；然后读出文件，回复四个数的总和。',
     check: (text) => text.includes('100'),
   },
+  // --- Hard tasks (id >= 10): can actually FAIL, so they discriminate quality.
+  // These use `verify(dir)` (runs BEFORE cleanup) to exercise the produced code
+  // for real, instead of a loose text `check`. This is where a prompt
+  // improvement (verify-before-finishing, no-hard-coding) should show up.
+  {
+    id: 10,
+    name: 'hard: find & fix a real bug',
+    hard: true,
+    options: { maxTurns: 12 },
+    fixture(dir) {
+      // total() has a bug: starts the sum at 1 instead of 0.
+      fs.writeFileSync(
+        path.join(dir, 'calc.mjs'),
+        'export function total(xs) {\n  let sum = 1; // seed\n  for (const x of xs) sum += x;\n  return sum;\n}\n',
+      );
+    },
+    prompt:
+      'There is a bug in calc.mjs: total([1,2,3,4]) should return 10 but does not. ' +
+      'Find and fix the bug in calc.mjs so it returns the correct sum for any array of numbers.',
+    async verify(dir) {
+      try {
+        const m = await import(`file://${path.join(dir, 'calc.mjs')}?t=${Date.now()}`);
+        // correct AND general: not hard-coded to the example input
+        return (
+          m.total([1, 2, 3, 4]) === 10 &&
+          m.total([]) === 0 &&
+          m.total([5, 5]) === 10 &&
+          m.total([10]) === 10
+        );
+      } catch {
+        return false;
+      }
+    },
+  },
+  {
+    id: 11,
+    name: 'hard: general solution (no hard-coding)',
+    hard: true,
+    options: { maxTurns: 12 },
+    fixture() {},
+    prompt:
+      'Create prime.mjs exporting a function isPrime(n) that returns true if n is a prime ' +
+      'number and false otherwise. It must work for any non-negative integer. ' +
+      'For example isPrime(17) is true and isPrime(1) is false.',
+    async verify(dir) {
+      try {
+        const m = await import(`file://${path.join(dir, 'prime.mjs')}?t=${Date.now()}`);
+        const cases = [
+          [1, false], [2, true], [3, true], [4, false], [17, true],
+          [18, false], [19, true], [20, false], [0, false], [97, true],
+        ];
+        // A hard-coded `return n === 17` passes the example but fails here.
+        return cases.every(([n, want]) => m.isPrime(n) === want);
+      } catch {
+        return false;
+      }
+    },
+  },
 ];
 
 const selected =
@@ -237,6 +295,7 @@ async function runTask(task) {
   const started = Date.now();
   let resultMsg;
   let finalText = '';
+  let verifyOk;
   try {
     const q = sdk.query({
       prompt: task.prompt,
@@ -263,6 +322,15 @@ async function runTask(task) {
         resultMsg = msg;
       }
     }
+    // Hard tasks verify the PRODUCED code by executing it — must run BEFORE the
+    // cleanup below removes the fixture dir. A verify that throws counts as fail.
+    if (typeof task.verify === 'function') {
+      try {
+        verifyOk = (await task.verify(dir)) === true;
+      } catch {
+        verifyOk = false;
+      }
+    }
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -276,7 +344,15 @@ async function runTask(task) {
     name: task.name,
     subtype: resultMsg?.subtype ?? 'no-result',
     error: resultMsg?.errorMessage,
-    passed: resultMsg?.subtype === 'success' && task.check(finalText, resultMsg) === true,
+    // Hard tasks (id >= 10) judge by executing the produced code (verifyOk);
+    // the rest judge by the loose text `check`. A task with neither always fails.
+    passed:
+      resultMsg?.subtype === 'success' &&
+      (typeof task.verify === 'function'
+        ? verifyOk === true
+        : typeof task.check === 'function'
+          ? task.check(finalText, resultMsg) === true
+          : false),
     turns: resultMsg?.num_turns ?? 0,
     costUsd: resultMsg?.total_cost_usd ?? 0,
     inputTokens: usage.input_tokens ?? 0,
