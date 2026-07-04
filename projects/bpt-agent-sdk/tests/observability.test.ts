@@ -212,3 +212,76 @@ describe('v0.3 observability union completeness', () => {
     expect(names).toContain('system/status');
   });
 });
+
+/** A 200 SSE Response carrying the given raw stream events (then closed). */
+function sseResponse(events: readonly object[]): Response {
+  const stream = new ReadableStream<Uint8Array>({
+    start(controller) {
+      for (const e of events) {
+        const name = (e as { type?: string }).type ?? 'message';
+        controller.enqueue(
+          new TextEncoder().encode(`event: ${name}\ndata: ${JSON.stringify(e)}\n\n`),
+        );
+      }
+      controller.close();
+    },
+  });
+  return new Response(stream, {
+    status: 200,
+    headers: { 'content-type': 'text/event-stream' },
+  });
+}
+
+/** An error Response (retry-after: 0 so the transport backs off ~instantly). */
+function errorResponse(status: number, errorType: string): Response {
+  return new Response(
+    JSON.stringify({ type: 'error', error: { type: errorType, message: 'x' } }),
+    { status, headers: { 'content-type': 'application/json', 'retry-after': '0' } },
+  );
+}
+
+describe('v0.3 retry transport->stream bridge (task bucket-1)', () => {
+  it('emits rate_limit_event on a 429 retry, then completes', async () => {
+    let call = 0;
+    vi.stubGlobal('fetch', async () => {
+      call += 1;
+      return call === 1
+        ? errorResponse(429, 'rate_limit_error')
+        : sseResponse(textReplyEvents('ok'));
+    });
+    const messages = await collect(query({ prompt: 'hi', options: opts() }));
+
+    const rle = messages.filter((m) => m.type === 'rate_limit_event');
+    expect(rle.length).toBeGreaterThanOrEqual(1);
+    expect((rle[0] as { limit_type: string }).limit_type).toBe('api');
+    // The retry event precedes the assistant message + terminal result.
+    const idxRle = messages.findIndex((m) => m.type === 'rate_limit_event');
+    const idxAsst = messages.findIndex((m) => m.type === 'assistant');
+    expect(idxRle).toBeLessThan(idxAsst);
+    expect(messages[messages.length - 1]!.type).toBe('result');
+  });
+
+  it('emits api_retry (with status) on a 500 retry', async () => {
+    let call = 0;
+    vi.stubGlobal('fetch', async () => {
+      call += 1;
+      return call === 1
+        ? errorResponse(500, 'api_error')
+        : sseResponse(textReplyEvents('ok'));
+    });
+    const messages = await collect(query({ prompt: 'hi', options: opts() }));
+
+    const ar = messages.filter((m) => m.type === 'api_retry');
+    expect(ar.length).toBeGreaterThanOrEqual(1);
+    expect((ar[0] as { status?: number }).status).toBe(500);
+    expect(messages[messages.length - 1]!.type).toBe('result');
+  });
+
+  it('emits nothing extra when the first request succeeds', async () => {
+    vi.stubGlobal('fetch', async () => sseResponse(textReplyEvents('ok')));
+    const messages = await collect(query({ prompt: 'hi', options: opts() }));
+    expect(messages.some((m) => m.type === 'rate_limit_event' || m.type === 'api_retry')).toBe(
+      false,
+    );
+  });
+});

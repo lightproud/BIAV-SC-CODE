@@ -13,6 +13,7 @@ import type {
   APIToolDefinition,
   CallToolResult,
   ContentBlock,
+  DocumentBlockParam,
   ImageBlockParam,
   ModelUsage,
   NonNullableUsage,
@@ -31,6 +32,7 @@ import type {
   AggregatedHookResult,
   EngineConfig,
   EngineDeps,
+  RetryInfo,
   StreamRequest,
   ToolResultPayload,
 } from '../internal/contracts.js';
@@ -167,9 +169,9 @@ function mapMcpResult(res: CallToolResult): ToolResultPayload {
 
 /** Append hook additionalContext entries after existing tool_result content. */
 function appendContext(
-  content: string | Array<TextBlockParam | ImageBlockParam>,
+  content: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>,
   extra: string[],
-): string | Array<TextBlockParam | ImageBlockParam> {
+): string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam> {
   if (extra.length === 0) return content;
   if (typeof content === 'string') {
     return content.length > 0 ? `${content}\n${extra.join('\n')}` : extra.join('\n');
@@ -414,6 +416,31 @@ export async function* runAgentLoop(
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();
     const toolDefs = buildToolDefs();
+    // Retry observability: the transport calls onRetry (in the request phase,
+    // before any stream event) for each 429/5xx/network retry. We buffer a
+    // rate_limit_event (429) / api_retry (else) per retry and yield them at the
+    // top of the event loop, so they surface just before this attempt's stream.
+    const retryMessages: SDKMessage[] = [];
+    const onRetry = (info: RetryInfo): void => {
+      const base = { uuid: randomUUID(), session_id: config.sessionId };
+      if (info.status === 429) {
+        retryMessages.push({
+          type: 'rate_limit_event',
+          ...base,
+          retry_after_ms: info.retryAfterMs ?? 0,
+          limit_type: 'api',
+        });
+      } else {
+        retryMessages.push({
+          type: 'api_retry',
+          ...base,
+          attempt: info.attempt,
+          max_retries: info.maxRetries,
+          ...(info.status !== undefined ? { status: info.status } : {}),
+          ...(info.errorType !== undefined ? { reason: info.errorType } : {}),
+        });
+      }
+    };
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
@@ -422,6 +449,7 @@ export async function* runAgentLoop(
       tools: toolDefs.length > 0 ? toolDefs : undefined,
       thinking: computeThinking(),
       signal,
+      onRetry,
     };
     // cache-control is the outermost request shaper; it never mutates `request`.
     const outgoing = applyCacheControl(request, {
@@ -431,6 +459,9 @@ export async function* runAgentLoop(
     const apiStart = Date.now();
     try {
       for await (const event of deps.transport.stream(outgoing)) {
+        // Surface any retries that happened in the request phase (all buffered
+        // before the first event) ahead of this attempt's stream.
+        while (retryMessages.length > 0) yield retryMessages.shift()!;
         if (firstTokenAtMs === undefined && event.type === 'content_block_start') {
           firstTokenAtMs = Date.now();
           firstStreamStartMs = apiStart;
@@ -814,29 +845,69 @@ export async function* runAgentLoop(
         const results: ToolResultBlockParam[] = [];
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];
-        for (const block of toolUses) {
+        // Execute in content order, but run a maximal run of >= 2 consecutive
+        // read-only builtin tools CONCURRENTLY (they have no side effects and
+        // are order-independent). Non-read-only and lone read-only tools run
+        // sequentially, exactly as before. Results stay in tool_use order (the
+        // API pairs by id; history keeps them ordered). A stop/defer from any
+        // executed tool suppresses all LATER tools with a "Not executed"
+        // placeholder. MCP tools are treated as non-read-only (conservative);
+        // wiring their readOnlyHint annotation is a follow-up.
+        const isReadOnly = (b: ToolUseBlock): boolean =>
+          deps.builtinTools.get(b.name)?.readOnly === true;
+        let ti = 0;
+        while (ti < toolUses.length) {
           if (batchStop !== undefined || batchDefer !== undefined) {
-            // A prior block asked to stop/defer the run: do not execute the
-            // rest, but every tool_use still needs a matching tool_result or the
-            // next API request would 400.
+            // A prior block asked to stop/defer: every remaining tool_use still
+            // needs a matching tool_result or the next API request would 400.
             results.push(
               mkToolError(
-                block.id,
+                toolUses[ti]!.id,
                 `Not executed: ${batchStop?.reason ?? 'a prior tool call was deferred'}`,
               ),
             );
+            ti += 1;
             continue;
           }
-          // Sequential, in content order.
-          const outcome = await executeToolUse(block);
-          // Surface any observability messages (e.g. permission_denied) the call
-          // produced, before its tool_result is folded into the next turn.
-          if (outcome.observability !== undefined) {
-            for (const msg of outcome.observability) yield msg;
+          let groupEnd = ti;
+          while (groupEnd < toolUses.length && isReadOnly(toolUses[groupEnd]!)) groupEnd += 1;
+          const outcomes: ToolExecOutcome[] =
+            groupEnd - ti >= 2
+              ? await Promise.all(toolUses.slice(ti, groupEnd).map((b) => executeToolUse(b)))
+              : [await executeToolUse(toolUses[ti]!)];
+          // Process outcomes in tool_use order. Once one stops/defers the run,
+          // OVERRIDE the rest of this concurrent group with the skip marker so
+          // the observable contract matches sequential execution: the group
+          // already ran, but its members are read-only, so that was
+          // side-effect-free. Later GROUPS are skipped by the outer guard.
+          let stoppedInGroup = false;
+          for (let g = 0; g < outcomes.length; g += 1) {
+            if (stoppedInGroup) {
+              results.push(
+                mkToolError(
+                  toolUses[ti + g]!.id,
+                  `Not executed: ${batchStop?.reason ?? 'a prior tool call was deferred'}`,
+                ),
+              );
+              continue;
+            }
+            const outcome = outcomes[g]!;
+            // Surface observability (e.g. permission_denied) before the
+            // tool_result is folded into the next turn.
+            if (outcome.observability !== undefined) {
+              for (const msg of outcome.observability) yield msg;
+            }
+            results.push(outcome.result);
+            if (outcome.stop !== undefined) {
+              batchStop = outcome.stop;
+              stoppedInGroup = true;
+            }
+            if (outcome.defer !== undefined) {
+              batchDefer = outcome.defer;
+              stoppedInGroup = true;
+            }
           }
-          results.push(outcome.result);
-          if (outcome.stop !== undefined) batchStop = outcome.stop;
-          if (outcome.defer !== undefined) batchDefer = outcome.defer;
+          ti += outcomes.length;
         }
         pushAssistant(assistant.content);
         const userTurn: APIMessageParam = { role: 'user', content: results };

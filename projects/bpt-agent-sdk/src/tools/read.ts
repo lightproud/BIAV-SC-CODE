@@ -76,8 +76,9 @@ export const readTool: BuiltinTool = {
     'to 2000 lines by default, use offset (1-based start line) and limit (max ' +
     'lines) to page through larger files, and lines over 2000 characters are ' +
     'truncated. Image files (PNG/JPEG/GIF/WebP) are detected by content and ' +
-    'returned as an image block. The path may be absolute or relative to the ' +
-    'session working directory.',
+    'returned as an image block, and PDF files are returned as a document ' +
+    'block. The path may be absolute or relative to the session working ' +
+    'directory.',
   readOnly: true,
   inputSchema: {
     type: 'object',
@@ -182,14 +183,23 @@ export const readTool: BuiltinTool = {
         };
       }
 
-      // PDF: detected but not rendered inline yet (document-block-in-tool_result
-      // support is a follow-up). Give a precise message, not the generic binary
-      // refusal below.
+      // PDF: returned as a base64 document content block. The API's
+      // handle-tool-calls docs list `document` among the block types valid
+      // inside a tool_result. offset/limit do not apply and are ignored.
       if (buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-') {
-        return errorResult(
-          `Read failed: "${abs}" is a PDF. Inline PDF reading is not yet supported; ` +
-            `extract its text or convert pages to images first.`,
-        );
+        ctx.debug(`Read: ${abs} as application/pdf (${buf.length} bytes)`);
+        return {
+          content: [
+            {
+              type: 'document',
+              source: {
+                type: 'base64',
+                media_type: 'application/pdf',
+                data: buf.toString('base64'),
+              },
+            },
+          ],
+        };
       }
 
       if (looksBinary(buf)) {

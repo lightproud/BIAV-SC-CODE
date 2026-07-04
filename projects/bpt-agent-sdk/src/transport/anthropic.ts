@@ -19,7 +19,7 @@ import type {
   ProviderConfig,
   RawMessageStreamEvent,
 } from '../types.js';
-import type { StreamRequest, Transport } from '../internal/contracts.js';
+import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
 import { parseSSE } from './sse.js';
 
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
@@ -94,11 +94,12 @@ export class AnthropicTransport implements Transport {
           'ANTHROPIC_AUTH_TOKEN environment variable.',
       );
     }
-    const { signal: callerSignal, ...requestBody } = req;
+    const { signal: callerSignal, onRetry, ...requestBody } = req;
     if (callerSignal?.aborted) throw new AbortError();
 
     // JSON.stringify drops undefined-valued fields, satisfying "omit
-    // undefined fields" without manual pruning.
+    // undefined fields" without manual pruning. onRetry (a function) is
+    // destructured out above so it never reaches the body.
     const bodyJson = JSON.stringify({ ...requestBody, stream: true });
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
@@ -111,6 +112,7 @@ export class AnthropicTransport implements Transport {
       callerSignal,
       timeoutMs,
       maxRetries,
+      onRetry,
     );
 
     // ---- streaming phase: NEVER retried ------------------------------------
@@ -164,6 +166,7 @@ export class AnthropicTransport implements Transport {
     callerSignal: AbortSignal | undefined,
     timeoutMs: number,
     maxRetries: number,
+    onRetry?: (info: RetryInfo) => void,
   ): Promise<{ response: Response; signal: AbortSignal; timeoutSignal: AbortSignal }> {
     let attempt = 0;
     for (;;) {
@@ -194,6 +197,7 @@ export class AnthropicTransport implements Transport {
           this.debug(
             `transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
           );
+          onRetry?.({ attempt, maxRetries });
           await this.backoff(attempt, undefined, callerSignal);
           continue;
         }
@@ -215,6 +219,13 @@ export class AnthropicTransport implements Transport {
         this.debug(
           `transport: HTTP ${response.status} (${info.type}); retry ${attempt}/${maxRetries}`,
         );
+        onRetry?.({
+          attempt,
+          maxRetries,
+          status: response.status,
+          errorType: info.type,
+          ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
+        });
         await this.backoff(attempt, retryAfterMs, callerSignal);
         continue;
       }

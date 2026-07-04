@@ -75,6 +75,15 @@ SDK implements the agent loop directly against the public Messages API:
 - `total_cost_usd` is an **estimate** from a static price table.
 - No filesystem settings/CLAUDE.md/skills/plugins loading in v0.1
   (`settingSources` ACCEPTED, loads nothing).
+- **Parallel read-only tool execution** (bucket-1): within one assistant turn,
+  a maximal run of ≥2 consecutive **read-only builtin** tools (Read/Glob/Grep)
+  executes concurrently (`Promise.all`); non-read-only and lone tools stay
+  sequential. Results stay in tool_use order; a stop/defer from any tool
+  overrides the rest of its concurrent group with a "Not executed" marker, so
+  the observable contract matches sequential execution. Read-only builtins in
+  `default` mode already auto-approve via the gate; wiring an MCP tool's
+  `readOnlyHint` annotation into that path (auto-approve + parallel grouping)
+  is a follow-up (McpToolEntry does not yet carry annotations).
 
 ## Options fields
 
@@ -113,7 +122,7 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP, magic-byte sniffed → image block; task #17); PDF gives a precise "not yet inline" message (document-block-in-tool_result is a follow-up); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …) |
 | Bash | PARTIAL | no persistent shell state across calls; no sandboxing; runs in its own process group (timeout/abort reap the whole group; background/daemon children do not hang the tool) |
 | Glob | FULL | fast-glob, mtime-sorted |
@@ -153,7 +162,7 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | `tool_progress`, `tool_use_summary` | TYPED | no mid-tool progress channel (tools are one-shot) |
 | `task_started` / `task_progress` / `task_updated` / `task_notification` | TYPED | subagents run detached; lifecycle not surfaced as stream events yet |
 | `hook_started` / `hook_progress` / `hook_response` | TYPED | would gate behind `includeHookEvents`; hooks currently report via debug only |
-| `rate_limit_event`, `api_retry` | TYPED | the transport retries 429/5xx internally and surfaces attempts via the debug callback, not the stream (a follow-up can bridge transport→stream) |
+| `rate_limit_event`, `api_retry` | FULL (emitted) | the transport's per-request `onRetry` observer bridges each 429/5xx/network retry into the stream: a `rate_limit_event` on 429 (with `retry_after_ms`), an `api_retry` otherwise (with `status`/`reason`), yielded just before the retried attempt's stream |
 | `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `informational`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host/slash-command framework |
 
 ## Hooks
