@@ -32,6 +32,11 @@ on:
         required: false
         type: boolean
         default: false
+      vs_official:
+        description: 'Head-to-head vs @anthropic-ai/claude-agent-sdk (speed + correctness; installs the official pkg --no-save, never a repo dependency)'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -125,5 +130,65 @@ jobs:
         if: always()
         with:
           name: ab-report
+          path: projects/bpt-agent-sdk/ab-report-*.json
+          if-no-files-found: ignore
+
+  vs-official:
+    # Head-to-head bare comparison against the OFFICIAL @anthropic-ai/
+    # claude-agent-sdk: same model, same 7 tasks, both engines. Measures the
+    # two objectively-comparable axes — response speed (wall-clock / API ms /
+    # TTFT) and output correctness (same check() pass-rate). Quality is NOT
+    # judged here (that axis is confounded by the proprietary system prompt —
+    # see docs/POSITIONING.md §2/§4).
+    #
+    # Clean-room discipline: the official package is installed with
+    # `npm i --no-save` for this run ONLY. It never enters package.json /
+    # package-lock.json and is never a dependency of this SDK. The official
+    # engine is treated purely as a black box we time and check — we read its
+    # INPUT/OUTPUT behavior, never its prompt text.
+    #
+    # The official SDK spawns the Claude Code CLI as its engine. If it cannot
+    # start headless, the official arm skips (exit 2) and the job reports the
+    # BPT numbers plus "official engine could not start" — itself a finding.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.vs_official == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Install the official SDK (transient, --no-save, not a repo dep)
+        run: npm i --no-save @anthropic-ai/claude-agent-sdk @anthropic-ai/claude-code || echo "official install failed; the official arm will skip"
+      - name: Bare comparison — this SDK
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" --out=ab-report-bpt.json
+      - name: Bare comparison — official SDK (black box; may skip if CLI cannot start)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        continue-on-error: true
+        run: node tests/integration/ab-benchmark.mjs --engine=official "--model=${{ github.event.inputs.model }}" --out=ab-report-official.json
+      - name: Compare (skips gracefully if the official report is missing)
+        run: |
+          if [ -f ab-report-official.json ]; then
+            node tests/integration/ab-benchmark.mjs --compare ab-report-bpt.json ab-report-official.json
+          else
+            echo "No official report produced — the official engine did not run headless. BPT-only numbers are in ab-report-bpt.json."
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vs-official-report
           path: projects/bpt-agent-sdk/ab-report-*.json
           if-no-files-found: ignore
