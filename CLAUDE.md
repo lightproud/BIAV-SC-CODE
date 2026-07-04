@@ -238,11 +238,12 @@ brain-in-a-vat/
 ├── assets/                        # 事实圣经层（只读引用源）
 │   ├── data/                      # 角色卡 / 采访 / 叙事 / 设计决策 JSON（见 §5.1）
 │   └── images/                    # 立绘 / CG 等公开图像资产
-├── projects/                      # 四子项目（各有 CONTEXT.md，动手前先读）
+├── projects/                      # 子项目 + 工程产物（各有 CONTEXT.md，动手前先读）
 │   ├── news/   # 使命#1 黑池信息入口：采集器 + 全量档案 + 输出展示层
 │   ├── wiki/   # 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
-│   └── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
+│   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
+│   └── bpt-agent-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现，见 project-status「## BPT Agent SDK」
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
@@ -262,7 +263,9 @@ brain-in-a-vat/
 ```
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
-动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发。
+动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发；
+`projects/bpt-agent-sdk/` 为银芯→黑池单向输出的工程产物（**非使命线**，与 §1.1-HC 防火墙同向：
+银芯→黑池单向输出、黑池不回流），状态与两轴保真模型见 `memory/project-status.md`「## BPT Agent SDK」。
 
 ### §6.1 OKF Bundle（`okf/`）
 
