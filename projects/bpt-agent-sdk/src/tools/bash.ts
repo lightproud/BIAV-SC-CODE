@@ -220,13 +220,38 @@ function formatStreams(stdout: string, stderr: string): string {
   return parts.join('\n');
 }
 
+/**
+ * Wrap a foreground command with the persistent-state replay/capture prologue
+ * (v0.5). Before the command: restore the previous call's cwd and re-source
+ * its exported env. After it (EXIT trap, so `exit N` still persists): capture
+ * cwd + `export -p`. Functions/aliases/unexported vars do NOT persist — this
+ * is a state-file replay, not a long-lived shell process (docs/COMPAT.md).
+ * The state dir comes from mkdtemp, so single-quoting it is safe.
+ */
+function withPersistentState(command: string, stateDir: string): string {
+  return [
+    `__bpt_state='${stateDir}'`,
+    'if [ -f "$__bpt_state/cwd" ]; then cd -- "$(cat "$__bpt_state/cwd")" 2>/dev/null || true; fi',
+    'if [ -f "$__bpt_state/env" ]; then { . "$__bpt_state/env"; } 2>/dev/null || true; fi',
+    '__bpt_persist() {',
+    '  pwd > "$__bpt_state/cwd" 2>/dev/null || true',
+    '  export -p > "$__bpt_state/env" 2>/dev/null || true',
+    '}',
+    'trap __bpt_persist EXIT',
+    command,
+  ].join('\n');
+}
+
 export const bashTool: BuiltinTool = {
   name: 'Bash',
   description:
     'Execute a shell command with bash -c (sh fallback) in the working ' +
-    'directory. Returns captured stdout/stderr; non-zero exit codes are ' +
+    'directory. `cd` and exported variables persist across Bash calls. ' +
+    'Returns captured stdout/stderr; non-zero exit codes are ' +
     'reported as tool errors, not exceptions. Timeout in milliseconds ' +
-    `defaults to ${DEFAULT_TIMEOUT_MS} (max ${MAX_TIMEOUT_MS}).`,
+    `defaults to ${DEFAULT_TIMEOUT_MS} (max ${MAX_TIMEOUT_MS}). ` +
+    'Set run_in_background to true to launch the command detached and get ' +
+    'a shell id immediately; poll it with BashOutput and stop it with KillShell.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -242,6 +267,12 @@ export const bashTool: BuiltinTool = {
         type: 'string',
         description:
           'Short human-readable description of what the command does.',
+      },
+      run_in_background: {
+        type: 'boolean',
+        description:
+          'Run the command in the background and return a shell id ' +
+          'immediately (read output with BashOutput, stop with KillShell).',
       },
     },
     required: ['command'],
@@ -269,11 +300,46 @@ export const bashTool: BuiltinTool = {
         ? Math.min(rawTimeout, MAX_TIMEOUT_MS)
         : DEFAULT_TIMEOUT_MS;
 
-    let outcome = await runShell('bash', command, ctx, timeoutMs);
+    // Background launch (v0.5): detach via the ShellManager and ack with the
+    // shell id; the model polls with BashOutput / stops with KillShell.
+    // Background shells ignore `timeout` (they live until exit/kill/query end).
+    if (input['run_in_background'] === true) {
+      if (ctx.shells === undefined) {
+        return {
+          content:
+            'Bash: run_in_background is not available in this context ' +
+            '(no shell manager).',
+          isError: true,
+        };
+      }
+      let launched = ctx.shells.spawnBackground('bash', command, ctx);
+      if ('error' in launched) {
+        launched = ctx.shells.spawnBackground('sh', command, ctx);
+      }
+      if ('error' in launched) {
+        return {
+          content: `Bash: failed to launch background shell: ${launched.error}`,
+          isError: true,
+        };
+      }
+      return {
+        content:
+          `Command running in background with id: ${launched.id}\n` +
+          'Use BashOutput to read its output and KillShell to stop it.',
+      };
+    }
+
+    // Foreground: replay + persist cwd/env across calls when a state dir exists.
+    const effective =
+      ctx.shells !== undefined && ctx.shells.stateDir !== ''
+        ? withPersistentState(command, ctx.shells.stateDir)
+        : command;
+
+    let outcome = await runShell('bash', effective, ctx, timeoutMs);
     if (outcome.kind === 'spawn-error' && outcome.error.code === 'ENOENT') {
       if (ctx.signal.aborted) throw new AbortError();
       ctx.debug('Bash: bash not found, falling back to sh');
-      outcome = await runShell('sh', command, ctx, timeoutMs);
+      outcome = await runShell('sh', effective, ctx, timeoutMs);
     }
     if (outcome.kind === 'spawn-error') {
       // Spawn impossibility is the only legitimate throw for this tool.

@@ -114,6 +114,10 @@ export type ToolContext = {
    * yet exist. Synchronous + best-effort - implementations must never throw.
    */
   recordFileChange?: (absPath: string, preImage: string | null) => void;
+  /** v0.5 shell session state (background shells + persistent foreground
+   *  cwd/env). Wired per query; absent -> Bash is stateless and
+   *  BashOutput/KillShell report unavailability. */
+  shells?: ShellManager;
 };
 
 // v0.2 subagent spawn contract (subagent runtime <-> Agent tool).
@@ -155,6 +159,46 @@ export interface BuiltinTool {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload>;
+}
+
+// v0.5 shell-session contract (Bash / BashOutput / KillShell <-> ShellManager).
+
+export type BackgroundShellStatus = 'running' | 'completed' | 'failed' | 'killed';
+
+export type BackgroundShell = {
+  id: string;
+  command: string;
+  pid: number | undefined;
+  stdout: string;
+  stdoutTruncated: boolean;
+  stderr: string;
+  stderrTruncated: boolean;
+  /** Incremental-read cursors (BashOutput returns only new output). */
+  cursorOut: number;
+  cursorErr: number;
+  status: BackgroundShellStatus;
+  exitCode: number | null;
+  exitSignal: string | null;
+  kill: (sig: string) => void;
+};
+
+/** Per-query shell session state: background shells + the persistent
+ *  foreground cwd/env snapshot the Bash tool replays between calls. */
+export interface ShellManager {
+  /** Directory holding the persistent foreground cwd/env snapshot ('' when
+   *  no tmp dir was available — persistence then degrades to stateless). */
+  readonly stateDir: string;
+  /** Spawn a detached background shell; returns its bash id immediately. */
+  spawnBackground(
+    shell: string,
+    command: string,
+    ctx: Pick<ToolContext, 'cwd' | 'env'>,
+  ): { id: string } | { error: string };
+  get(id: string): BackgroundShell | undefined;
+  /** Kill one background shell (SIGTERM, then SIGKILL after a grace). */
+  kill(id: string): boolean;
+  /** Kill every background shell and remove the state dir (query close). */
+  dispose(): void;
 }
 
 // ---------------------------------------------------------------------------

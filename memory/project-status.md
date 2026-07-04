@@ -153,11 +153,16 @@
 - **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（本体 PR #380 @ `8bd4a54`；v0.3 收尾
   #384 观测流 / #387 Read 图像 / #388 类型面尾批 / #391 桶1 三项）。**v0.3 两待办 #16 + #17 +
   「桶1」（PDF document 块 / 重试流桥接 / 只读工具并行）均已收口。**
-  **v0.4 观测臂生命周期真发射已落**（分支 `claude/bpt-agent-sdk-dev-h5ccmf`）：subagent 任务生命周期
+  **v0.4 已合并 main（PR #397）**：观测臂生命周期真发射——subagent 任务生命周期
   task_started/progress/updated/notification + hook 生命周期 hook_started/hook_response
   （`includeHookEvents` 门控）经共享观测队列在消息边界真发射；error 结果臂补官方 `errors: string[]`；
   权限规则 `*` / `mcp__*` glob；COMPAT.md 陈旧行对账（会话三函数与 canUseTool suggestions 实为 v0.2 已落地）。
-  `pytest` 无涉、Node 侧 **`npx vitest run` 680 单测全绿（19 文件）**；`tsc` + `build` exit 0
+  **v0.5 三线并进（守密人 2026-07-04 裁定：换装就绪包为主线 + background Bash 一族 + A/B 测量收尾）**：
+  ① Bash `run_in_background` + BashOutput/KillShell + 前台 cwd/env 状态档持久（ShellManager 每 query 一个，
+  子代理共享，query 结束清场）；② 换装就绪包 `docs/MIGRATION.md` + `examples/electron-host.mjs` +
+  `npm pack` tarball 干净目录实测装通；③ A/B 七任务基准 `tests/integration/ab-benchmark.mjs`
+  （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `bpt-agent-sdk.yml` `ab_benchmark`
+  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 691 单测全绿（20 文件）**；`tsc` + `build` exit 0
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）

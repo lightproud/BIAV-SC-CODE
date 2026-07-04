@@ -60,6 +60,7 @@ import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapte
 import { FileCheckpointStore } from './sessions/checkpoints.js';
 import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
 import { createBuiltinTools } from './tools/index.js';
+import { createShellManager } from './tools/shells.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
 import { createAgentTool } from './subagents/agent-tool.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
@@ -407,6 +408,11 @@ export function query(args: {
   };
   const drainObservability = (): SDKMessage[] => obsQueue.splice(0, obsQueue.length);
 
+  // v0.5 shell session state: background shells (Bash run_in_background /
+  // BashOutput / KillShell) + the persistent foreground cwd/env snapshot.
+  // Shared with subagents (one shell session per query); disposed on exit.
+  const shells = createShellManager(debug);
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -548,6 +554,7 @@ export function query(args: {
     sessionId: () => resolvedSessionId,
     debug,
     emitObservability: emitObs,
+    shells,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -1110,6 +1117,7 @@ export function query(args: {
           recordFileChange: checkpointStore
             ? (abs, pre): void => checkpointStore!.record(abs, pre)
             : undefined,
+          shells,
         };
         const deps: EngineDeps = {
           transport,
@@ -1227,6 +1235,9 @@ export function query(args: {
       // controller, so this cancels them without touching the caller's
       // AbortController. Idempotent with close()'s own abortAll().
       subagentRuntime.abortAll();
+      // Kill background shells + drop the persistent cwd/env snapshot: shell
+      // sessions live and die with the query.
+      shells.dispose();
       if (!initDeferred.settled) {
         initDeferred.reject(
           new AbortError('query ended before initialization completed'),

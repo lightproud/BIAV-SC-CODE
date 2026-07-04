@@ -51,6 +51,7 @@ import type {
   McpToolEntry,
   PermissionGate,
   SessionStore,
+  ShellManager,
   SpawnSubagentFn,
   SpawnSubagentParams,
   SpawnSubagentResult,
@@ -123,6 +124,8 @@ export type SubagentRuntimeOptions = {
    *  task_notification messages are pushed here (the runtime cannot yield);
    *  the query layer drains them into the SDKMessage stream. */
   emitObservability?: (msg: SDKMessage) => void;
+  /** v0.5 query-wide shell session (shared with children's ToolContext). */
+  shells?: ShellManager;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -624,6 +627,9 @@ export function createSubagentRuntime(
         signal: childSignal,
         debug,
         spawnSubagent: makeSpawnFn(childDepth),
+        // One shell session per query: children see the same background
+        // shells and persistent cwd/env as the root loop.
+        shells: opts.shells,
       };
       const childDeps: EngineDeps = {
         transport,
