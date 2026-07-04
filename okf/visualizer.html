@@ -2,9 +2,10 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>银芯 OKF Bundle — 关系图</title>
 <style>
-  html,body{margin:0;height:100%;background:#0c0e14;color:#cdd6f4;font-family:system-ui,sans-serif}
+  html,body{margin:0;height:100%;background:#0c0e14;color:#cdd6f4;font-family:system-ui,sans-serif;overflow:hidden}
   #hud{position:fixed;top:10px;left:10px;z-index:10;font-size:13px;line-height:1.6;
        background:rgba(20,22,30,.85);padding:10px 12px;border:1px solid #2a2f40;border-radius:8px;max-width:260px}
   #hud b{color:#a6e3a1}
@@ -12,7 +13,7 @@
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
   #tip{position:fixed;pointer-events:none;z-index:20;background:#181b26;border:1px solid #45475a;
        padding:6px 9px;border-radius:6px;font-size:12px;display:none;max-width:280px}
-  canvas{display:block}
+  canvas{display:block;touch-action:none}
 </style>
 </head>
 <body>
@@ -21,7 +22,7 @@
   <div id="meta"></div>
   <div class="legend" id="legend"></div>
   <div class="legend" id="legendEdge" style="margin-top:4px"></div>
-  <div style="margin-top:6px;color:#7f849c">拖动 / 滚轮缩放 / 悬停看详情<br><b style="color:#f9e2af">点击节点进档案</b>（角色→Wiki，剧情→剧情档案，社区→情报）</div>
+  <div style="margin-top:6px;color:#7f849c">桌面：拖动 / 滚轮缩放 / 悬停看详情<br>手机：单指拖动平移 / 双指捏合缩放<br><b style="color:#f9e2af">点/轻触节点进档案</b>（角色→Wiki，剧情→剧情档案，社区→情报）</div>
 </div>
 <div id="tip"></div>
 <canvas id="c"></canvas>
@@ -31,7 +32,8 @@ const palette = ["#89b4fa","#a6e3a1","#f9e2af","#f38ba8","#cba6f7","#94e2d5","#f
 const types = [...new Set(G.nodes.map(n=>n.type))];
 const colorOf = t => palette[types.indexOf(t) % palette.length];
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
-let W,H; function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;} resize(); addEventListener('resize',resize);
+let W,H,dpr=1; function resize(){dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';} resize(); addEventListener('resize',resize);
 document.getElementById('meta').textContent = `${G.stats.nodes} 概念 / ${G.stats.edges} 关系 · ${G.generated}`;
 document.getElementById('legend').innerHTML = types.map(t=>`<span><i class="dot" style="background:${colorOf(t)}"></i>${t}</span>`).join('');
 
@@ -71,8 +73,8 @@ function sim(){
     if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}}
 }
 function draw(){
-  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
-  ctx.setTransform(cam.k,0,0,cam.k,cam.x,cam.y);
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.setTransform(cam.k*dpr,0,0,cam.k*dpr,cam.x*dpr,cam.y*dpr);
   for(const e of E){const st=es(e.rt);ctx.strokeStyle=st.color;ctx.lineWidth=st.w/cam.k;
     ctx.beginPath();ctx.moveTo(N[e.s].x,N[e.s].y);ctx.lineTo(N[e.t].x,N[e.t].y);ctx.stroke();}
   const showLabel = cam.k>0.5;
@@ -86,9 +88,9 @@ function draw(){
 function loop(){sim();draw();requestAnimationFrame(loop);} loop();
 
 function screenToWorld(mx,my){return {x:(mx-cam.x)/cam.k, y:(my-cam.y)/cam.k};}
-function pick(mx,my){const p=screenToWorld(mx,my);let best=null,bd=1e9;
+function pick(mx,my,tol){const p=screenToWorld(mx,my);let best=null,bd=1e9;
   for(let i=0;i<N.length;i++){let dx=N[i].x-p.x,dy=N[i].y-p.y,d=dx*dx+dy*dy;
-    if(d<bd){bd=d;best=i;}} return bd< (14/cam.k)**2 ? best:null;}
+    if(d<bd){bd=d;best=i;}} return bd< ((tol||14)/cam.k)**2 ? best:null;}
 const tip=document.getElementById('tip');
 let down=null, moved=false;
 cv.addEventListener('mousedown',e=>{const i=pick(e.clientX,e.clientY);down={x:e.clientX,y:e.clientY,i};moved=false;
@@ -108,6 +110,33 @@ addEventListener('mouseup',()=>{
 cv.addEventListener('wheel',e=>{e.preventDefault();const s=e.deltaY<0?1.1:0.9;
   const wx=(e.clientX-cam.x)/cam.k,wy=(e.clientY-cam.y)/cam.k;cam.k*=s;
   cam.x=e.clientX-wx*cam.k;cam.y=e.clientY-wy*cam.k;},{passive:false});
+
+// ---- touch (mobile): 1-finger drag/pan + tap-to-open, 2-finger pinch zoom ----
+function tpos(t){const r=cv.getBoundingClientRect();return {x:t.clientX-r.left,y:t.clientY-r.top};}
+let tNode=null,tPan=null,pinch=null,tStart=null,tMoved=false;
+cv.addEventListener('touchstart',e=>{e.preventDefault();
+  if(e.touches.length===1){const p=tpos(e.touches[0]),i=pick(p.x,p.y,22);tStart={x:p.x,y:p.y,i};tMoved=false;
+    if(i!=null){tNode=N[i];}else{tPan={x:p.x,y:p.y,cx:cam.x,cy:cam.y};}}
+  else if(e.touches.length===2){tNode=null;tPan=null;tStart=null;
+    const a=tpos(e.touches[0]),b=tpos(e.touches[1]);
+    pinch={d:Math.hypot(a.x-b.x,a.y-b.y)||1,mx:(a.x+b.x)/2,my:(a.y+b.y)/2};}
+},{passive:false});
+cv.addEventListener('touchmove',e=>{e.preventDefault();
+  if(pinch&&e.touches.length===2){const a=tpos(e.touches[0]),b=tpos(e.touches[1]);
+    const d=Math.hypot(a.x-b.x,a.y-b.y)||1,mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
+    const wx=(pinch.mx-cam.x)/cam.k,wy=(pinch.my-cam.y)/cam.k;   // world point under midpoint
+    cam.k=Math.max(0.15,Math.min(6,cam.k*(d/pinch.d)));
+    cam.x=mx-wx*cam.k;cam.y=my-wy*cam.k;                          // keep it under fingers + follow drift
+    pinch.d=d;pinch.mx=mx;pinch.my=my;}
+  else if(e.touches.length===1){const p=tpos(e.touches[0]);
+    if(tStart&&Math.abs(p.x-tStart.x)+Math.abs(p.y-tStart.y)>6)tMoved=true;
+    if(tNode){const w=screenToWorld(p.x,p.y);tNode.x=w.x;tNode.y=w.y;tNode.vx=0;tNode.vy=0;}
+    else if(tPan){cam.x=tPan.cx+(p.x-tPan.x);cam.y=tPan.cy+(p.y-tPan.y);}}
+},{passive:false});
+cv.addEventListener('touchend',e=>{
+  if(tStart&&!tMoved&&tStart.i!=null){const n=N[tStart.i];if(n.url)window.open('../'+n.url,'_blank','noopener');}
+  if(e.touches.length===0){tNode=null;tPan=null;pinch=null;tStart=null;}
+},{passive:false});
 </script>
 </body>
 </html>
