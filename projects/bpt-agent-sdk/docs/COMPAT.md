@@ -127,7 +127,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `settingSources` | ACCEPTED | no filesystem settings in v0.1 |
 | `stderr` | PARTIAL | receives debug log lines (no subprocess stderr exists) |
 | `strictMcpConfig` | FULL | trivially: only options servers are ever used |
-| `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`) |
+| `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`); **BPT extension** `{ type: 'segments', segments: [{text, cache?}] }` forwards caller-composed blocks verbatim with per-segment cache breakpoints (the generic seam for host prompt layering — up to 3 cached system segments; message-caching off in this path). The host owns which layers/order/trust; the engine only places the wire breakpoints |
 | `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `includeHookEvents` | FULL | v0.4: emits `hook_started` / `hook_response` pairs (per callback invocation, correlated by `hook_id`) into the stream |

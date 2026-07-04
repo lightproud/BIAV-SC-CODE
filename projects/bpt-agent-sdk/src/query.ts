@@ -500,14 +500,54 @@ export function query(args: {
   // to the STABLE system segment so the requirement survives tool turns and
   // stays inside the cached prefix (it is static, not per-run).
   const outputFormat = normalizeOutputFormat(options.outputFormat, debug);
-  const promptParts = buildSystemPromptParts(options.systemPrompt, {
-    cwd,
-    toolNames: [...builtinTools.keys()],
-    variant: options.harnessPromptVariant === 'v2' ? 'v2' : 'v1',
-  });
-  let systemPromptStable = promptParts.stable;
-  if (outputFormat !== undefined) {
-    systemPromptStable += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
+
+  // System prompt has two shapes:
+  //  - segments form (host-layered): the CALLER composed ordered blocks and
+  //    marked which to cache. We forward them verbatim (respecting their
+  //    breakpoints, adding none) — the generic seam for host prompt layering.
+  //  - string/preset/undefined: this SDK builds the [stable, cwd] split.
+  let systemBlocks: TextBlockParam[] | undefined;
+  let systemPromptStable = '';
+  let systemPromptVolatile = '';
+  const sp = options.systemPrompt;
+  if (sp !== null && typeof sp === 'object' && 'type' in sp && sp.type === 'segments') {
+    // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
+    let budget = 3;
+    systemBlocks = (Array.isArray(sp.segments) ? sp.segments : [])
+      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
+      .map((s) => {
+        const block: TextBlockParam = { type: 'text', text: s.text };
+        if (s.cache === true) {
+          if (budget > 0) {
+            block.cache_control = { type: 'ephemeral' };
+            budget -= 1;
+          } else {
+            debug(
+              'systemPrompt segments: cache-breakpoint budget (3) exhausted; ' +
+                'this segment is sent uncached (order segments most-shared first)',
+            );
+          }
+        }
+        return block;
+      });
+    // Structured-output requirement rides as a trailing (uncached) block.
+    if (outputFormat !== undefined && systemBlocks.length > 0) {
+      systemBlocks.push({
+        type: 'text',
+        text: buildStructuredOutputInstruction(outputFormat.schema),
+      });
+    }
+  } else {
+    const promptParts = buildSystemPromptParts(sp, {
+      cwd,
+      toolNames: [...builtinTools.keys()],
+      variant: options.harnessPromptVariant === 'v2' ? 'v2' : 'v1',
+    });
+    systemPromptStable = promptParts.stable;
+    if (outputFormat !== undefined) {
+      systemPromptStable += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
+    }
+    systemPromptVolatile = promptParts.volatile;
   }
 
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
@@ -519,9 +559,12 @@ export function query(args: {
     systemPrompt: systemPromptStable,
     // Volatile (cwd) tail rides after the cache breakpoint; absent -> the
     // stable prompt is sent as a single string (e.g. a user-string prompt).
-    ...(promptParts.volatile.length > 0
-      ? { systemPromptSuffix: promptParts.volatile }
+    ...(systemPromptVolatile.length > 0
+      ? { systemPromptSuffix: systemPromptVolatile }
       : {}),
+    // Caller-composed segments (host layering) take precedence over the
+    // string/preset path when present.
+    ...(systemBlocks !== undefined ? { systemBlocks } : {}),
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
     thinking: options.thinking,

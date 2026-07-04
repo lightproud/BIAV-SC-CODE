@@ -357,6 +357,11 @@ export type EngineConfig = {
    *  so it never invalidates the cached stable prefix. Absent -> systemPrompt
    *  is sent as a single string (original behavior). */
   systemPromptSuffix?: string;
+  /** Caller-composed system blocks (segments form). When set, these are sent
+   *  as the request `system` verbatim (their cache_control breakpoints are
+   *  respected, the engine adds none) and take precedence over systemPrompt/
+   *  systemPromptSuffix. The generic seam for host-layered prompts. */
+  systemBlocks?: TextBlockParam[];
   maxTurns?: number;
   maxBudgetUsd?: number;
   thinking?: ThinkingConfigParam;

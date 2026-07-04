@@ -414,10 +414,13 @@ export async function* runAgentLoop(
   // loaded schemas must be re-counted per turn or the compaction trigger
   // under-counts the real request size (finding #11). Only the system-prompt
   // term is hoisted; the tool-def term is recomputed each iteration.
-  // System-prompt term = stable prefix + volatile (cwd) tail; both are sent
-  // every request, so both count toward the compaction overhead estimate.
+  // System-prompt term = stable prefix + volatile (cwd) tail, OR the caller's
+  // segment blocks when present; all are sent every request, so all count
+  // toward the compaction overhead estimate.
   const systemCharLen =
-    (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
+    config.systemBlocks !== undefined
+      ? config.systemBlocks.reduce((n, b) => n + (b.text?.length ?? 0), 0)
+      : (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
   const systemPromptTokens = Math.ceil(systemCharLen / 4);
   const currentOverheadTokens = (): number =>
     estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
@@ -461,24 +464,29 @@ export async function* runAgentLoop(
         });
       }
     };
-    // Split the system prompt into a stable prefix + a volatile (cwd) tail ONLY
-    // when caching is on: the cache breakpoint then lands on the stable block
-    // and the cwd tail rides AFTER it, so it never invalidates the cached
-    // prefix (cross-query reuse of tools + stable system). With caching off
-    // there is no breakpoint to place, so send the flat single string exactly
-    // as before (keeps `system` a plain string for drop-in consumers).
+    // System prompt shapes:
+    //  - Caller segments (config.systemBlocks): forwarded VERBATIM; the caller
+    //    owns the blocks + their cache_control, so cache-control preserves them
+    //    (and message caching is off to stay within the 4-breakpoint budget).
+    //  - Otherwise, split into stable prefix + volatile (cwd) tail when caching
+    //    is on so the breakpoint lands on the stable block and the cwd tail
+    //    rides after it (cross-query reuse). Caching off -> flat single string.
     const cachingOn = config.promptCaching === true;
+    const callerBlocks = config.systemBlocks;
     const hasSuffix =
       config.systemPromptSuffix !== undefined && config.systemPromptSuffix.length > 0;
-    const splitSystem = cachingOn && hasSuffix;
-    const systemField: string | TextBlockParam[] = splitSystem
-      ? [
-          { type: 'text', text: config.systemPrompt },
-          { type: 'text', text: config.systemPromptSuffix! },
-        ]
-      : hasSuffix
-        ? `${config.systemPrompt}\n${config.systemPromptSuffix}`
-        : config.systemPrompt;
+    const splitSystem = cachingOn && hasSuffix && callerBlocks === undefined;
+    const systemField: string | TextBlockParam[] =
+      callerBlocks !== undefined
+        ? callerBlocks
+        : splitSystem
+          ? [
+              { type: 'text', text: config.systemPrompt },
+              { type: 'text', text: config.systemPromptSuffix! },
+            ]
+          : hasSuffix
+            ? `${config.systemPrompt}\n${config.systemPromptSuffix}`
+            : config.systemPrompt;
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
@@ -492,9 +500,11 @@ export async function* runAgentLoop(
     // cache-control is the outermost request shaper; it never mutates `request`.
     const outgoing = applyCacheControl(request, {
       enabled: cachingOn,
-      cacheMessages: true,
-      // With a [stable, cwd] split, cache the FIRST (stable) block.
-      cacheSystemBoundary: splitSystem ? 'first' : 'last',
+      // Caller-authored segments already carry their own breakpoints; don't add
+      // a message breakpoint too or the request could exceed the 4-cap.
+      cacheMessages: callerBlocks === undefined,
+      cacheSystemBoundary:
+        callerBlocks !== undefined ? 'preserve' : splitSystem ? 'first' : 'last',
     });
     const apiStart = Date.now();
     try {

@@ -132,6 +132,11 @@ export function buildSystemPromptParts(
   if (typeof opt === 'string') {
     return { stable: opt, volatile: '' };
   }
+  // Segments form is composed by the caller and handled upstream (query.ts);
+  // if it ever reaches here, flatten it defensively rather than throw.
+  if (opt.type === 'segments') {
+    return { stable: opt.segments.map((s) => s.text).join('\n\n'), volatile: '' };
+  }
   let stable =
     ctx.variant === 'v2' ? defaultHarnessStableV2(ctx) : defaultHarnessStable(ctx);
   if (opt.append !== undefined && opt.append.length > 0) {
