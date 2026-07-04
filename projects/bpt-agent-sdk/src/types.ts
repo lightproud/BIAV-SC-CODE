@@ -882,6 +882,316 @@ export type SDKCompactBoundaryMessage = {
   };
 };
 
+// ---------------------------------------------------------------------------
+// Observability / status message variants (v0.3 — task #16)
+//
+// Drop-in surface for the official SDKMessage union's observability arm. The
+// published docs/types NAME these discriminators but leave several PAYLOAD
+// shapes unspecified (the SDK's own issue #181 has SDKRateLimitEvent /
+// SDKPromptSuggestionMessage referenced-but-unexported), and are internally
+// inconsistent about top-level `type` vs `type:'system'+subtype`. We model the
+// observability arm with TOP-LEVEL `type` discriminators — the most likely
+// consumer pattern (e.g. `msg.type === 'permission_denied'`) — except `status`,
+// which stays a `system` subtype since `system/status` is its canonical form.
+// Every message carries our house `uuid`/`session_id` envelope.
+//
+// EMITTED by this engine today: SDKPermissionDeniedMessage (on a gate deny).
+// The rest are TYPED for union exhaustiveness but have no source event in a
+// headless engine with no plugins/skills/CC-host/background-task framework; see
+// docs/COMPAT.md for the emitted-vs-typed split. Field shapes the official
+// leaves undocumented are a self-consistent clean-room reconstruction.
+// ---------------------------------------------------------------------------
+
+/** A tool call the permission gate denied. EMITTED on every gate deny. */
+export type SDKPermissionDeniedMessage = {
+  type: 'permission_denied';
+  uuid: string;
+  session_id: string;
+  tool_name: string;
+  tool_use_id: string;
+  /** The gate's human-readable denial reason. */
+  reason: string;
+  /** Coarse source of the block, when derivable (else omitted). */
+  blocker?: 'rule' | 'mode' | 'hook' | 'canUseTool' | 'other';
+};
+
+/** Progress (0..100) from a long-running tool. Typed; not emitted. */
+export type SDKToolProgressMessage = {
+  type: 'tool_progress';
+  uuid: string;
+  session_id: string;
+  tool_use_id: string;
+  progress: number;
+  status?: string;
+  details?: Record<string, unknown>;
+};
+
+/** A compact summary of a completed tool call. Typed; not emitted. */
+export type SDKToolUseSummaryMessage = {
+  type: 'tool_use_summary';
+  uuid: string;
+  session_id: string;
+  tool_name: string;
+  tool_use_id: string;
+  input_summary: string;
+  result_summary: string;
+};
+
+/** A background task / subagent started. Typed; not emitted. */
+export type SDKTaskStartedMessage = {
+  type: 'task_started';
+  uuid: string;
+  session_id: string;
+  task_id: string;
+  task_name: string;
+  agent_id?: string;
+};
+
+/** Progress from a background task / subagent. Typed; not emitted. */
+export type SDKTaskProgressMessage = {
+  type: 'task_progress';
+  uuid: string;
+  session_id: string;
+  task_id: string;
+  progress: number;
+  status?: string;
+  summary?: string;
+  blocked?: boolean;
+};
+
+/** Terminal update for a background task / subagent. Typed; not emitted. */
+export type SDKTaskUpdatedMessage = {
+  type: 'task_updated';
+  uuid: string;
+  session_id: string;
+  task_id: string;
+  status: 'completed' | 'failed' | 'cancelled';
+  result?: string;
+  error?: string;
+};
+
+/** Background-task lifecycle notification. Typed; not emitted. */
+export type SDKTaskNotificationMessage = {
+  type: 'task_notification';
+  uuid: string;
+  session_id: string;
+  task_id: string;
+  event: 'completed' | 'failed' | 'stopped';
+  message?: string;
+};
+
+/** Hook execution began (gated by includeHookEvents). Typed; not emitted. */
+export type SDKHookStartedMessage = {
+  type: 'hook_started';
+  uuid: string;
+  session_id: string;
+  hook_id: string;
+  hook_event: HookEvent;
+};
+
+/** Hook execution progress (gated by includeHookEvents). Typed; not emitted. */
+export type SDKHookProgressMessage = {
+  type: 'hook_progress';
+  uuid: string;
+  session_id: string;
+  hook_id: string;
+  hook_event: HookEvent;
+  progress?: number;
+  status?: string;
+};
+
+/** Hook execution finished (gated by includeHookEvents). Typed; not emitted. */
+export type SDKHookResponseMessage = {
+  type: 'hook_response';
+  uuid: string;
+  session_id: string;
+  hook_id: string;
+  hook_event: HookEvent;
+  result?: string;
+  error?: string;
+};
+
+/** Files written / changed during a turn. Typed; not emitted. */
+export type SDKFilesPersistedMessage = {
+  type: 'files_persisted';
+  uuid: string;
+  session_id: string;
+  files: Array<{
+    path: string;
+    operation: 'created' | 'modified' | 'deleted';
+    size?: number;
+  }>;
+};
+
+/** Output of a local slash-command run. Typed; not emitted. */
+export type SDKLocalCommandOutputMessage = {
+  type: 'local_command_output';
+  uuid: string;
+  session_id: string;
+  command: string;
+  output: string;
+  exit_code?: number;
+};
+
+/** The available slash-command set changed. Typed; not emitted. */
+export type SDKCommandsChangedMessage = {
+  type: 'commands_changed';
+  uuid: string;
+  session_id: string;
+  available_commands: SlashCommand[];
+};
+
+/** A rate limit was hit and a retry scheduled. Typed; not emitted (the
+ * transport retries internally and surfaces attempts via the debug callback). */
+export type SDKRateLimitEventMessage = {
+  type: 'rate_limit_event';
+  uuid: string;
+  session_id: string;
+  retry_after_ms: number;
+  limit_type: 'api' | 'token' | 'requests';
+  requests_remaining?: number;
+};
+
+/** An API call is being retried. Typed; not emitted (see rate_limit_event). */
+export type SDKApiRetryMessage = {
+  type: 'api_retry';
+  uuid: string;
+  session_id: string;
+  attempt: number;
+  max_retries: number;
+  status?: number;
+  reason?: string;
+};
+
+/** Authentication status. Typed; not emitted. */
+export type SDKAuthStatusMessage = {
+  type: 'auth_status';
+  uuid: string;
+  session_id: string;
+  status: 'authenticated' | 'unauthenticated' | 'expired';
+  provider?: string;
+};
+
+/** A server-initiated elicitation resolved. Typed; not emitted. */
+export type SDKElicitationCompleteMessage = {
+  type: 'elicitation_complete';
+  uuid: string;
+  session_id: string;
+  elicitation_id: string;
+  result: 'accepted' | 'declined' | 'error';
+  value?: unknown;
+  error?: string;
+};
+
+/** A free-form informational log surfaced into the stream. Typed; not emitted. */
+export type SDKInformationalMessage = {
+  type: 'informational';
+  uuid: string;
+  session_id: string;
+  level: 'info' | 'warning' | 'debug';
+  message: string;
+  details?: Record<string, unknown>;
+};
+
+/** A user-facing notification. Typed; not emitted. */
+export type SDKNotificationMessage = {
+  type: 'notification';
+  uuid: string;
+  session_id: string;
+  level: 'info' | 'warning' | 'error';
+  title: string;
+  message: string;
+};
+
+/** A suggested next prompt (gated by promptSuggestions). Typed; not emitted. */
+export type SDKPromptSuggestionMessage = {
+  type: 'prompt_suggestion';
+  uuid: string;
+  session_id: string;
+  suggestion: string;
+  reasoning?: string;
+};
+
+/** A memory item recalled into context. Typed; not emitted. */
+export type SDKMemoryRecallMessage = {
+  type: 'memory_recall';
+  uuid: string;
+  session_id: string;
+  context: string;
+  source: 'user' | 'project' | 'local';
+  confidence?: number;
+};
+
+/** The worker is shutting down. Typed; not emitted. */
+export type SDKWorkerShuttingDownMessage = {
+  type: 'worker_shutting_down';
+  uuid: string;
+  session_id: string;
+  graceful: boolean;
+  reason?: string;
+};
+
+/** Plugin install lifecycle. Typed; not emitted. */
+export type SDKPluginInstallMessage = {
+  type: 'plugin_install';
+  uuid: string;
+  session_id: string;
+  plugin_name: string;
+  status: 'installing' | 'installed' | 'failed' | 'completed';
+  error?: string;
+};
+
+/** Session state transition. Typed; not emitted. */
+export type SDKSessionStateChangedMessage = {
+  type: 'session_state_changed';
+  uuid: string;
+  session_id: string;
+  state: 'active' | 'paused' | 'completed';
+  reason?: string;
+};
+
+/** A coarse engine status (canonical `system`/`status` form). Typed; not emitted. */
+export type SDKStatusMessage = {
+  type: 'system';
+  subtype: 'status';
+  uuid: string;
+  session_id: string;
+  status: string | null;
+  details?: Record<string, unknown>;
+};
+
+/**
+ * The observability / status arm of the SDKMessage union (task #16). Only
+ * SDKPermissionDeniedMessage is emitted today; the rest are typed for drop-in
+ * exhaustiveness (see docs/COMPAT.md).
+ */
+export type SDKObservabilityMessage =
+  | SDKPermissionDeniedMessage
+  | SDKToolProgressMessage
+  | SDKToolUseSummaryMessage
+  | SDKTaskStartedMessage
+  | SDKTaskProgressMessage
+  | SDKTaskUpdatedMessage
+  | SDKTaskNotificationMessage
+  | SDKHookStartedMessage
+  | SDKHookProgressMessage
+  | SDKHookResponseMessage
+  | SDKFilesPersistedMessage
+  | SDKLocalCommandOutputMessage
+  | SDKCommandsChangedMessage
+  | SDKRateLimitEventMessage
+  | SDKApiRetryMessage
+  | SDKAuthStatusMessage
+  | SDKElicitationCompleteMessage
+  | SDKInformationalMessage
+  | SDKNotificationMessage
+  | SDKPromptSuggestionMessage
+  | SDKMemoryRecallMessage
+  | SDKWorkerShuttingDownMessage
+  | SDKPluginInstallMessage
+  | SDKSessionStateChangedMessage
+  | SDKStatusMessage;
+
 export type SDKMessage =
   | SDKAssistantMessage
   | SDKUserMessage
@@ -890,7 +1200,8 @@ export type SDKMessage =
   | SDKSystemMessage
   | SDKCompactBoundaryMessage
   | SDKMirrorErrorMessage
-  | SDKPartialAssistantMessage;
+  | SDKPartialAssistantMessage
+  | SDKObservabilityMessage;
 
 // ---------------------------------------------------------------------------
 // v0.2 subsystem types
