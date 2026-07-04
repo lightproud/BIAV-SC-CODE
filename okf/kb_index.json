@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 294,
+    "concepts": 295,
     "edges": 96,
-    "terms": 4997,
+    "terms": 5003,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 52,
+      "documentation": 53,
       "knowledge-pointer": 41,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 45,
       "news-output": 23,
-      "projects": 17,
+      "projects": 18,
       "resource": 34,
       "sources": 17,
       "story": 11,
@@ -60,7 +60,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 17
+      "count": 18
     },
     "resource": {
       "index": "/resource/index.md",
@@ -2387,6 +2387,19 @@
       "title": "bpt-agent-sdk COMPAT",
       "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.199) as",
       "resource": "/projects/bpt-agent-sdk/docs/COMPAT.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "section": "projects",
+      "degree": 0
+    },
+    "/projects/bpt-sdk-doc-migration.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk MIGRATION",
+      "description": "Audience: the BPT Desktop (Electron) codebase currently importing the official",
+      "resource": "/projects/bpt-agent-sdk/docs/MIGRATION.md",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -5088,6 +5101,7 @@
       "/extracted/extracted-readme.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -5239,6 +5253,7 @@
       "/README.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -5454,6 +5469,9 @@
     ],
     "atom": [
       "/news-output/news-output-feed.md"
+    ],
+    "audience": [
+      "/projects/bpt-sdk-doc-migration.md"
     ],
     "audio": [
       "/projects/releases-treasure-map.md"
@@ -5703,6 +5721,7 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -5831,6 +5850,9 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+    ],
+    "codebase": [
+      "/projects/bpt-sdk-doc-migration.md"
     ],
     "coding": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -6049,6 +6071,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -6284,6 +6307,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -6362,6 +6386,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "currently": [
+      "/projects/bpt-sdk-doc-migration.md"
     ],
     "cv": [
       "/README.md",
@@ -6545,6 +6572,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -6734,12 +6762,14 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "desktop": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+      "/projects/bpt-sdk-doc-migration.md"
     ],
     "deterministic": [
       "/story/story_search_index.md"
@@ -6789,6 +6819,7 @@
     "doc": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
@@ -6796,6 +6827,7 @@
     "docs": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md"
     ],
@@ -6844,6 +6876,9 @@
     ],
     "ejoysdk": [
       "/unpacked/unpacked-ejoysdk-lua.md"
+    ],
+    "electron": [
+      "/projects/bpt-sdk-doc-migration.md"
     ],
     "encoding": [
       "/unpacked/unpacked-config.md",
@@ -7448,6 +7483,9 @@
     "images": [
       "/assets/assets-images.md"
     ],
+    "importing": [
+      "/projects/bpt-sdk-doc-migration.md"
+    ],
     "index": [
       "/README.md",
       "/community/community-index.md",
@@ -7854,6 +7892,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -8287,6 +8326,7 @@
       "/memory/style-guide.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -8427,6 +8467,9 @@
     "methodology": [
       "/memory/methodology.md"
     ],
+    "migration": [
+      "/projects/bpt-sdk-doc-migration.md"
+    ],
     "milestone": [
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -8563,6 +8606,7 @@
     "official": [
       "/community/community-official.md",
       "/news-output/news-output-official.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/sources/official.md"
     ],
     "okf": [
@@ -8992,6 +9036,7 @@
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -9036,6 +9081,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -9584,6 +9630,7 @@
       "/README.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -9888,6 +9935,7 @@
     "sub": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -10915,6 +10963,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -11119,6 +11168,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -11365,6 +11415,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -12367,6 +12418,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -13174,6 +13226,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -13379,6 +13432,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -14940,6 +14994,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -17735,6 +17790,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -18431,6 +18487,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -18945,6 +19002,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -22289,6 +22347,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -22723,6 +22782,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -22982,6 +23042,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -23279,6 +23340,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -23506,6 +23568,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -24913,6 +24976,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -25260,6 +25324,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -25725,6 +25790,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -26280,6 +26346,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -26588,6 +26655,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -32529,6 +32597,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -33097,6 +33166,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -33957,6 +34027,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -34138,6 +34209,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -35166,6 +35238,7 @@
     "agent": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -35416,6 +35489,7 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -35618,6 +35692,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -35875,6 +35950,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -36048,6 +36124,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
@@ -36086,6 +36163,7 @@
     "doc": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
@@ -36553,6 +36631,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -36840,6 +36919,9 @@
     "methodology": [
       "/memory/methodology.md"
     ],
+    "migration": [
+      "/projects/bpt-sdk-doc-migration.md"
+    ],
     "milestone": [
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -37126,6 +37208,7 @@
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -37286,6 +37369,7 @@
     "sdk": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -37398,6 +37482,7 @@
     "sub": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",

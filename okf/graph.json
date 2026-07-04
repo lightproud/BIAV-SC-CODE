@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 294,
+    "nodes": 295,
     "edges": 96
   },
   "nodes": [
@@ -1834,6 +1834,16 @@
       "id": "/projects/bpt-sdk-doc-compat.md",
       "type": "documentation",
       "title": "bpt-agent-sdk COMPAT",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ]
+    },
+    {
+      "id": "/projects/bpt-sdk-doc-migration.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk MIGRATION",
       "tags": [
         "data_layer:curated",
         "design-doc",
