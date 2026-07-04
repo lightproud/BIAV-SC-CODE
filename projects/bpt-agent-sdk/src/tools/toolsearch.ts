@@ -21,6 +21,8 @@ import type {
 } from '../internal/contracts.js';
 import type {
   JSONSchema,
+  McpResource,
+  McpResourceContent,
   McpServerConfig,
   McpServerStatus,
   McpSetServersResult,
@@ -65,6 +67,14 @@ export class DeferredMcpRegistry implements McpRegistry {
     signal: AbortSignal,
   ): Promise<CallToolResult> {
     return this.inner.call(qualifiedName, args, signal);
+  }
+
+  listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.listResources(server, signal);
+  }
+
+  readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
+    return this.inner.readResource(server, uri, signal);
   }
 
   reconnect(serverName: string): Promise<void> {

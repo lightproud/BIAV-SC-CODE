@@ -623,6 +623,76 @@ describe('Grep tool', () => {
     expect(text(res).split('\n')).toHaveLength(300);
   });
 
+  it('offset skips the first N entries before head_limit (pagination)', async () => {
+    const dir = await makeDir('grep-offset');
+    const body = Array.from(
+      { length: 10 },
+      (_, i) => `match line ${i + 1}`,
+    ).join('\n');
+    await writeFile(path.join(dir, 'many.txt'), `${body}\n`);
+    const file = path.join(dir, 'many.txt');
+    const res = await grepTool.execute(
+      {
+        pattern: 'match',
+        path: 'many.txt',
+        output_mode: 'content',
+        head_limit: 2,
+        offset: 3,
+      },
+      makeCtx(dir),
+    );
+    expect(text(res).split('\n')).toEqual([
+      `${file}:4:match line 4`,
+      `${file}:5:match line 5`,
+    ]);
+  });
+
+  it('offset past the last match yields no matches', async () => {
+    const dir = await makeDir('grep-offset-past');
+    await writeFile(path.join(dir, 'few.txt'), 'match a\nmatch b\n');
+    const res = await grepTool.execute(
+      {
+        pattern: 'match',
+        path: 'few.txt',
+        output_mode: 'content',
+        offset: 5,
+      },
+      makeCtx(dir),
+    );
+    expect(text(res)).toBe('No matches found');
+  });
+
+  it('-o prints only the matched substrings, one per match', async () => {
+    const dir = await makeDir('grep-only-matching');
+    const file = path.join(dir, 'o.txt');
+    await writeFile(file, 'foo=1 foo=2\nbar\nfoo=3\n');
+    const res = await grepTool.execute(
+      {
+        pattern: 'foo=\\d',
+        path: 'o.txt',
+        output_mode: 'content',
+        '-o': true,
+      },
+      makeCtx(dir),
+    );
+    expect(text(res).split('\n')).toEqual([
+      `${file}:1:foo=1`,
+      `${file}:1:foo=2`,
+      `${file}:3:foo=3`,
+    ]);
+  });
+
+  it('recognizes an extended file type (yaml)', async () => {
+    const dir = await makeDir('grep-yaml');
+    await writeFile(path.join(dir, 'conf.yaml'), 'target: 1\n');
+    await writeFile(path.join(dir, 'note.md'), 'target doc\n');
+    const res = await grepTool.execute(
+      { pattern: 'target', type: 'yaml' },
+      makeCtx(dir),
+    );
+    expect(text(res).split('\n')).toEqual([path.join(dir, 'conf.yaml')]);
+  });
+
   it('multiline mode matches patterns spanning lines', async () => {
     const dir = await makeDir('grep-multiline');
     const file = path.join(dir, 'multi.txt');

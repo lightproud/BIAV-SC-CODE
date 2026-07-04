@@ -19,6 +19,7 @@ import { z } from 'zod';
 
 import { createSdkMcpServer, SdkMcpConnection, tool } from '../src/mcp/sdk-server.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
+import { parseResourcesList, parseResourceContents } from '../src/mcp/stdio.js';
 import { DefaultMcpRegistry } from '../src/mcp/registry.js';
 import type { CallToolResult, SdkMcpToolDefinition } from '../src/types.js';
 
@@ -164,6 +165,17 @@ describe('mcp/sdk-server tool()', () => {
     expect(defaulted.instance.tools.size).toBe(0);
   });
 
+  it('callTool preserves a structuredContent payload on the result', async () => {
+    const def = tool('struct', 'returns structured data', {}, async () => ({
+      content: [{ type: 'text', text: 'see structured' }],
+      structuredContent: { ok: true, items: [1, 2, 3] },
+    }));
+    const cfg = createSdkMcpServer({ name: 'structsrv', tools: [def] });
+    const conn = new SdkMcpConnection(cfg.instance);
+    const result = await conn.callTool('struct', {});
+    expect(result.structuredContent).toEqual({ ok: true, items: [1, 2, 3] });
+  });
+
   it('duplicate tool names follow last-wins Map semantics', async () => {
     const first = tool('dup', 'first', {}, async () => ({
       content: [{ type: 'text', text: 'first' }],
@@ -219,6 +231,7 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
       name: 'calc',
       status: 'connected',
       serverInfo: { name: 'calc', version: '1.0.0' },
+      tools: ['add'],
     });
     // task #17: status carries the config it was registered with + per-server
     // tool names once connected.
@@ -760,5 +773,48 @@ describe('HttpMcpConnection server-initiated request over SSE (regression #19)',
     } finally {
       await srv.stop();
     }
+  });
+});
+
+describe('MCP resources wire parsing + registry aggregation', () => {
+  it('parseResourcesList picks well-formed resource descriptors', () => {
+    const parsed = parseResourcesList({
+      resources: [
+        { uri: 'file:///a', name: 'A', description: 'd', mimeType: 'text/plain' },
+        { uri: 'file:///b' },
+        { name: 'no-uri' }, // dropped: no uri
+        'garbage', // dropped
+      ],
+    });
+    expect(parsed).toEqual([
+      { uri: 'file:///a', name: 'A', description: 'd', mimeType: 'text/plain' },
+      { uri: 'file:///b' },
+    ]);
+    expect(parseResourcesList(null)).toEqual([]);
+    expect(parseResourcesList({})).toEqual([]);
+  });
+
+  it('parseResourceContents keeps text and blob variants', () => {
+    const parsed = parseResourceContents({
+      contents: [
+        { uri: 'file:///a', mimeType: 'text/plain', text: 'hi' },
+        { uri: 'file:///b', blob: 'YmFzZTY0' },
+        { mimeType: 'x' }, // dropped: no uri
+      ],
+    });
+    expect(parsed).toEqual([
+      { uri: 'file:///a', mimeType: 'text/plain', text: 'hi' },
+      { uri: 'file:///b', blob: 'YmFzZTY0' },
+    ]);
+  });
+
+  it('registry.listResources returns [] for an sdk server (tools-only)', async () => {
+    const t = tool('add', 'add', { a: z.number() }, async () => ({ content: [] }));
+    const cfg = createSdkMcpServer({ name: 'calc', tools: [t] });
+    const reg = new DefaultMcpRegistry({ servers: { calc: cfg }, debug: () => {} });
+    await reg.connectAll();
+    const list = await reg.listResources(undefined, new AbortController().signal);
+    expect(list).toEqual([]);
+    await reg.closeAll();
   });
 });

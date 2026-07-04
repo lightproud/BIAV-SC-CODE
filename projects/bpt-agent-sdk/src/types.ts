@@ -581,6 +581,24 @@ export type McpServerStatus = {
   scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
 
+/** One MCP resource descriptor (resources/list entry). */
+export type McpResource = {
+  uri: string;
+  name?: string;
+  description?: string;
+  mimeType?: string;
+  /** Owning server name (populated by the registry when aggregating). */
+  server?: string;
+};
+
+/** One MCP resource's contents (resources/read entry). */
+export type McpResourceContent = {
+  uri: string;
+  mimeType?: string;
+  text?: string;
+  blob?: string;
+};
+
 /** MCP tool result content (subset of the MCP CallToolResult schema). */
 export type CallToolResultContent =
   | { type: 'text'; text: string }
@@ -598,6 +616,8 @@ export type CallToolResultContent =
 export type CallToolResult = {
   content: CallToolResultContent[];
   isError?: boolean;
+  /** Optional machine-readable payload (MCP structuredContent). */
+  structuredContent?: unknown;
 };
 
 export type ToolAnnotations = {
@@ -708,6 +728,13 @@ export type Options = {
   mcpServers?: Record<string, McpServerConfig>;
   model?: string;
   permissionMode?: PermissionMode;
+  /**
+   * Safety interlock required to enter `permissionMode: 'bypassPermissions'`.
+   * Matches @anthropic-ai/claude-agent-sdk: bypassPermissions is refused unless
+   * this is explicitly `true`. Applies to the initial mode and to
+   * `setPermissionMode('bypassPermissions')` mid-session.
+   */
+  allowDangerouslySkipPermissions?: boolean;
   /** Persist the session transcript to disk (default true). */
   persistSession?: boolean;
   /** BPT extension: direct Messages API connection settings. */
@@ -857,6 +884,8 @@ export type SDKResultMessage =
       usage: NonNullableUsage;
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
+      /** HTTP status of the last API error observed during the run, if any. */
+      api_error_status?: number;
       /** v0.3 per-run budget/efficiency metrics. */
       metrics?: SDKRunMetrics;
     }
@@ -878,6 +907,8 @@ export type SDKResultMessage =
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
       errorMessage?: string;
+      /** HTTP status when the run ended on an API error (e.g. 429, 529). */
+      api_error_status?: number;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
@@ -1384,8 +1415,12 @@ export type SDKMirrorErrorMessage = {
 // ---------------------------------------------------------------------------
 
 export type ModelInfo = {
-  id: string;
+  /** Model id/alias (official field name; consumers read `.value`). */
+  value: string;
+  resolvedModel?: string;
   displayName?: string;
+  description?: string;
+  supportsEffort?: boolean;
 };
 
 export type SlashCommand = {
@@ -1400,6 +1435,13 @@ export type AgentInfo = {
 
 export type AccountInfo = {
   apiKeySource: ApiKeySource;
+  // Surface parity with the official SDK. Not populated by the direct-API
+  // engine (no CLI account introspection channel); typed so consumers that
+  // read these fields narrow correctly instead of hitting `never`.
+  email?: string;
+  organization?: string;
+  subscriptionType?: string;
+  tokenSource?: string;
 };
 
 export type SDKInitializationResult = {

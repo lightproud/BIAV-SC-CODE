@@ -10,6 +10,8 @@ import { z } from 'zod';
 import type {
   CallToolResult,
   JSONSchema,
+  McpResource,
+  McpResourceContent,
   McpSdkServerConfigWithInstance,
   SdkMcpServerInstance,
   SdkMcpToolDefinition,
@@ -154,6 +156,15 @@ export class SdkMcpConnection {
         isError: true,
       };
     }
+  }
+
+  /** In-process SDK servers expose tools only, no resources. */
+  async listResources(_signal?: AbortSignal): Promise<McpResource[]> {
+    return [];
+  }
+
+  async readResource(_uri: string, _signal?: AbortSignal): Promise<McpResourceContent[]> {
+    return [];
   }
 
   /** In-process: nothing to release. */

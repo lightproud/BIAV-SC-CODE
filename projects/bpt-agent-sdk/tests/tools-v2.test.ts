@@ -16,6 +16,7 @@ import { webFetchTool } from '../src/tools/webfetch.js';
 import { webSearchTool } from '../src/tools/websearch.js';
 import { askUserQuestionTool } from '../src/tools/askuserquestion.js';
 import { todoWriteTool } from '../src/tools/todo.js';
+import { listMcpResourcesTool, readMcpResourceTool } from '../src/tools/resources.js';
 import {
   resolveElicitation,
   parseElicitationParams,
@@ -726,5 +727,55 @@ describe('resolveElicitation', () => {
       requestedSchema: { type: 'object', properties: { a: {} } },
     });
     expect(seenSignal).toBe(signal);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// MCP resource tools
+// ---------------------------------------------------------------------------
+
+describe('ListMcpResourcesTool / ReadMcpResourceTool', () => {
+  it('lists resources via ctx.mcpResources', async () => {
+    const ctx = makeCtx({
+      mcpResources: {
+        list: async (server) => [
+          { uri: 'file:///a.txt', name: 'a', server: server ?? 'srv1' },
+        ],
+        read: async () => [],
+      },
+    });
+    const res = await listMcpResourcesTool.execute({ server: 'srv1' }, ctx);
+    expect(res.isError).toBeUndefined();
+    expect(JSON.parse(res.content as string)).toEqual([
+      { uri: 'file:///a.txt', name: 'a', server: 'srv1' },
+    ]);
+  });
+
+  it('reads one resource via ctx.mcpResources', async () => {
+    const ctx = makeCtx({
+      mcpResources: {
+        list: async () => [],
+        read: async (server, uri) => [{ uri, mimeType: 'text/plain', text: `from ${server}` }],
+      },
+    });
+    const res = await readMcpResourceTool.execute({ server: 'srv1', uri: 'file:///a.txt' }, ctx);
+    expect(JSON.parse(res.content as string)).toEqual([
+      { uri: 'file:///a.txt', mimeType: 'text/plain', text: 'from srv1' },
+    ]);
+  });
+
+  it('returns a not-configured error when no MCP registry is wired', async () => {
+    const list = await listMcpResourcesTool.execute({}, makeCtx());
+    expect(list.isError).toBe(true);
+    const read = await readMcpResourceTool.execute({ server: 's', uri: 'u' }, makeCtx());
+    expect(read.isError).toBe(true);
+  });
+
+  it('validates ReadMcpResourceTool required args', async () => {
+    const ctx = makeCtx({ mcpResources: { list: async () => [], read: async () => [] } });
+    const noServer = await readMcpResourceTool.execute({ uri: 'u' }, ctx);
+    expect(noServer.isError).toBe(true);
+    const noUri = await readMcpResourceTool.execute({ server: 's' }, ctx);
+    expect(noUri.isError).toBe(true);
   });
 });

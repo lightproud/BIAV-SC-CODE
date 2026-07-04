@@ -52,6 +52,7 @@ try {
       cwd: sandbox,
       persistSession: false,
       permissionMode: 'bypassPermissions',
+      allowDangerouslySkipPermissions: true,
       model,
       maxTurns: 12,
     },

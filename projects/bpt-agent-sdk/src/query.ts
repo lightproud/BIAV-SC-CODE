@@ -15,6 +15,8 @@ import type {
   APIUserMessage,
   CallToolResult,
   ContentBlock,
+  McpResource,
+  McpResourceContent,
   McpServerConfig,
   McpServerStatus,
   McpSetServersResult,
@@ -68,10 +70,10 @@ const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
 const SUPPORTED_MODELS: readonly ModelInfo[] = [
-  { id: 'claude-opus-4-8' },
-  { id: 'claude-sonnet-5' },
-  { id: 'claude-haiku-4-5' },
-  { id: 'claude-sonnet-4-5' },
+  { value: 'claude-opus-4-8', displayName: 'Claude Opus 4.8' },
+  { value: 'claude-sonnet-5', displayName: 'Claude Sonnet 5' },
+  { value: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
+  { value: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
 ];
 
 /**
@@ -106,7 +108,6 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'agentProgressSummaries',
   'forwardSubagentText',
   'includeHookEvents',
-  'allowDangerouslySkipPermissions',
   'title',
   'resumeSessionAt',
   'debugFile',
@@ -171,6 +172,12 @@ class ToolFilterMcpRegistry implements McpRegistry {
     signal: AbortSignal,
   ): Promise<CallToolResult> {
     return this.inner.call(qualifiedName, args, signal);
+  }
+  listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.listResources(server, signal);
+  }
+  readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
+    return this.inner.readResource(server, uri, signal);
   }
   reconnect(serverName: string): Promise<void> {
     return this.inner.reconnect(serverName);
@@ -330,7 +337,7 @@ export function query(args: {
   for (const key of ACCEPTED_OPTION_KEYS) {
     if ((options as Record<string, unknown>)[key] !== undefined) {
       debug(
-        `option '${key}' is accepted for compatibility but has no effect in v0.1 (see docs/COMPAT.md)`,
+        `option '${key}' is accepted for compatibility but has no effect in this SDK (see docs/COMPAT.md)`,
       );
     }
   }
@@ -370,6 +377,19 @@ export function query(args: {
     debug,
     betas: options.betas,
   });
+  // Safety interlock: bypassPermissions must be explicitly unlocked with
+  // allowDangerouslySkipPermissions (matches @anthropic-ai/claude-agent-sdk).
+  // Enforced for the initial mode here and for setPermissionMode() below.
+  const allowDangerousBypass = options.allowDangerouslySkipPermissions === true;
+  const assertBypassUnlocked = (mode: PermissionMode | undefined): void => {
+    if (mode === 'bypassPermissions' && !allowDangerousBypass) {
+      throw new ConfigurationError(
+        "permissionMode 'bypassPermissions' requires allowDangerouslySkipPermissions: true",
+      );
+    }
+  };
+  assertBypassUnlocked(options.permissionMode);
+
   const gate = new DefaultPermissionGate({
     mode: options.permissionMode,
     allowedTools: options.allowedTools,
@@ -428,6 +448,13 @@ export function query(args: {
     }
   } else {
     builtinTools = allBuiltins;
+  }
+  // The MCP resource tools are only advertised by default when MCP servers
+  // exist (they are no-ops otherwise). An explicit options.tools selection is
+  // honored verbatim.
+  if (!Array.isArray(options.tools) && Object.keys(mergedServers).length === 0) {
+    builtinTools.delete('ListMcpResourcesTool');
+    builtinTools.delete('ReadMcpResourceTool');
   }
   // Drop bare-name-disallowed built-ins so their definitions never reach the
   // model (nor the system prompt tool list nor the init message).
@@ -1050,6 +1077,10 @@ export function query(args: {
           spawnSubagent: subagentRuntime.makeSpawnFn(0),
           webSearch: options.webSearch,
           askUser: options.onUserQuestion,
+          mcpResources: {
+            list: (server, signal) => mcpEff.listResources(server, signal),
+            read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
+          },
           allowPrivateWebFetch: options.allowPrivateWebFetch === true,
           recordFileChange: checkpointStore
             ? (abs, pre): void => checkpointStore!.record(abs, pre)
@@ -1238,6 +1269,7 @@ export function query(args: {
       }
     },
     async setPermissionMode(mode: PermissionMode): Promise<void> {
+      assertBypassUnlocked(mode);
       gate.setMode(mode);
     },
     async setModel(model?: string): Promise<void> {

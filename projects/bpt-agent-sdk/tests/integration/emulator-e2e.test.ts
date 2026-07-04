@@ -126,6 +126,7 @@ describe('emulator end-to-end (real stack, scripted model)', () => {
         cwd: sandbox,
         sessionDir,
         permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
         mcpServers: { demo },
         allowedTools: ['mcp__demo__*'],
         model: 'claude-emulator-1',
@@ -194,6 +195,7 @@ describe('emulator end-to-end (real stack, scripted model)', () => {
         cwd: sandbox,
         persistSession: false,
         permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
         model: 'claude-emulator-1',
       },
     });
