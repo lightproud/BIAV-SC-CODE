@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T15:02:50.011325+00:00",
+  "archived_at": "2026-07-04T16:11:39.343861+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 15,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -258,6 +258,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "i wanna see the sunshine after the rain",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-04T15:04:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1JTMP6YE9o",
+      "engagement": 10,
+      "is_hot": false,
+      "author": "枕头hh",
+      "tags": [
+        "同人·手书"
+      ],
+      "metadata": {
+        "play": 10,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/780c1338787b3c083c9c08a6aa5e676e730ceb2d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "【忘却前夜】庞托斯入队水船6t融灾5-5。150狂不够冲？回转太差？不妨试试重逢心愿+有机形态+血希SR",
       "summary": "",
       "source": "bilibili",
@@ -276,6 +299,52 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/fb28d7170533f9e6924d2e10289d61929d6dd8e5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【杀戮尖塔2】我的无限小众又变态   沙耶MOD",
+      "summary": "恭喜你占领无人区\n\n在创意工坊发现沙耶mod后兴冲冲下载进行游玩，在一层boss达成伪无限，成功斩杀无限血阶段瀑布巨兽\n【反哺】（能力）打出”寄生“牌后抽1\n【你所挚爱的我】（攻击）（寄生）（永久进化）施加一层寄生，造成等同于本次施加寄生层数的伤害，你每在一回合内施加4（3）次寄生，将1张本牌放回手卡。打出这张卡时根据实际造成的寄生层数获得等量进化值：1.（70）额外施加目标当前寄生层数一半的寄生，向上取整。2.（740）额外施加等同于目标当前寄生层数的寄生。",
+      "source": "bilibili",
+      "time": "2026-07-04T13:59:41+00:00",
+      "url": "https://www.bilibili.com/video/BV1T8MP6mE5Z",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "人类的落日",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 6,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/9e0dadadeca69aba67da7996eb4e4b6cff5ceb6a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第四届N厨杯-第二十日录播",
+      "summary": "第二十日直播录播\n  └ 不知今世为何 (0赞): @何沐樱 @伊什卡尔_不要攻击我 @绘奇旅 @希宵是个社会废人 @惑星planetes @炽烈的卡芙卡",
+      "source": "bilibili",
+      "time": "2026-07-04T14:01:45+00:00",
+      "url": "https://www.bilibili.com/video/BV1GNMN69EMn",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

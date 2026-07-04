@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T15:02:50.114035+00:00",
+  "archived_at": "2026-07-04T16:11:39.442827+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[正面] game is a visual novel gacha with card battling sy...",
@@ -142,6 +142,30 @@
         "playtime_forever": 5187,
         "votes_up": 0,
         "timestamp_created": 1783168635
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] иислоп",
+      "summary": "иислоп",
+      "source": "steam_review",
+      "time": "2026-07-04T14:00:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199682164534/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199682164534",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 55,
+        "votes_up": 0,
+        "timestamp_created": 1783173629
       },
       "region": "global",
       "archive_subtype": "review",
