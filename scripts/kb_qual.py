@@ -22,10 +22,15 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 INDEX = REPO / "okf" / "kb_index.json"
+GRAPH = REPO / "okf" / "graph.json"
 
 
 def _concepts() -> dict:
     return json.loads(INDEX.read_text(encoding="utf-8")).get("concepts", {})
+
+
+def _graph() -> dict:
+    return json.loads(GRAPH.read_text(encoding="utf-8")) if GRAPH.exists() else {"edges": []}
 
 
 def probe_layer_disambiguation(concepts: dict | None = None) -> dict:
@@ -99,22 +104,53 @@ def probe_boundary_enumeration(concepts: dict | None = None) -> dict:
     }
 
 
+def probe_relation_typing(concepts: dict | None = None, graph: dict | None = None) -> dict:
+    """类型化关系：白盒图每条边带**关系类型**（variant/lore/cv/mention/cross）——KB 能答
+    『A 与 B 是什么关系』（本源萝坦↔萝坦=variant、萝坦↔奥吉尔=lore 同篇）。grep 结构上只能给
+    **共现**（两名出现在同一文本），给不了「这是哪种关系」——类型是白盒图独有、hit@k 测不出。"""
+    concepts = concepts or _concepts()
+    graph = graph or _graph()
+    from collections import Counter
+    typed = Counter()
+    exemplars: dict[str, dict] = {}
+    title = lambda cid: concepts.get(cid, {}).get("title", "") or cid
+    for e in graph.get("edges", []):
+        rt = e.get("rel_type")
+        if not rt:
+            continue
+        typed[rt] += 1
+        if rt not in exemplars:
+            exemplars[rt] = {"a": title(e.get("source", "")), "b": title(e.get("target", "")),
+                             "rel": e.get("rel", rt)}
+    return {
+        "typed_edges": int(sum(typed.values())),
+        "relation_types": dict(typed.most_common()),
+        "distinct_types": len(typed),
+        "exemplars": exemplars,
+        "kb_can_type_relations": len(typed) > 0,
+        "grep_can_type_relations": False,          # grep 只给共现，给不了关系类型
+        "meaning": "KB 答『本源萝坦与萝坦是 variant 关系』；grep 只能告诉你两名共现、给不了关系的类型",
+    }
+
+
 def evaluate(concepts: dict | None = None) -> dict:
     concepts = concepts or _concepts()
     layer = probe_layer_disambiguation(concepts)
     identity = probe_identity_canonical(concepts)
     boundary = probe_boundary_enumeration(concepts)
+    relation = probe_relation_typing(concepts)
     # 汇总：KB 在几个质性维度上交付了 grep 结构上给不了的知识
     dims = {
         "layer_disambiguation": layer["kb_can_disambiguate"] > 0,
         "identity_canonical": identity["kb_isolates_canonical"] > 0,
         "boundary_enumeration": boundary["kb_can_enumerate_bounded"],
+        "relation_typing": relation["kb_can_type_relations"],
     }
     return {
         "dimensions_kb_delivers": sum(dims.values()),
         "dimensions_total": len(dims),
-        "dimensions_grep_delivers": 0,             # 三维 grep 结构上均给不了
-        "layer": layer, "identity": identity, "boundary": boundary,
+        "dimensions_grep_delivers": 0,             # 四维 grep 结构上均给不了
+        "layer": layer, "identity": identity, "boundary": boundary, "relation": relation,
     }
 
 
@@ -134,6 +170,9 @@ def _print(rep: dict) -> None:
     b = rep["boundary"]
     print(f"  ③ 边界枚举：KB 可枚举有界（{b['characters_enumerable']} 角色 / "
           f"{b['full_archive_enumerable']} 全量概念）；grep 给不了完整集合")
+    r = rep["relation"]
+    print(f"  ④ 类型化关系：KB 对 {r['typed_edges']} 条边给出关系类型 "
+          f"{r['relation_types']}；grep 只给共现、给不了类型")
 
 
 def main() -> None:

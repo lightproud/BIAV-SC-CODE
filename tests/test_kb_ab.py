@@ -36,9 +36,22 @@ def test_kb_strictly_wins_on_associative():
     )
 
 
+def test_kb_wins_associative_even_vs_strongest_grep():
+    """反稻草人：即便把 grep 放到最强（整串短语+标题字段+TF），联想题上 KB 仍严格胜——
+    证明 KB 的优势是**结构**（顺边遍历），非拿弱基线凑出来的。"""
+    rep = kb_ab.ab_evaluate()
+    act = rep["by_mode"].get("activate")
+    assert act and act["n"] >= 2, "联想题样本过少"
+    assert act["kb"] > act["grep_strong"], (
+        f"联想题上 KB 未胜最强 grep（KB={act['kb']} ≤ strong={act['grep_strong']}）——"
+        "KB 的结构优势疑为弱基线假象，查 `python3 scripts/kb_ab.py`"
+    )
+
+
 def test_ab_shape():
     rep = kb_ab.ab_evaluate()
-    assert set(rep) >= {"kb_hit_rate", "grep_hit_rate", "delta", "verdicts", "by_mode"}
+    assert set(rep) >= {"kb_hit_rate", "grep_hit_rate", "grep_strong_hit_rate",
+                        "delta", "delta_strong", "verdicts", "by_mode"}
     assert sum(rep["verdicts"].values()) == rep["n"]
 
 

@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 301,
+    "concepts": 304,
     "edges": 312,
-    "terms": 5129,
+    "terms": 5157,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 57,
+      "documentation": 60,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 38,
+      "resource": 41,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 170
+      "search": 173
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 38
+      "count": 41
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3216,6 +3216,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md": {
+      "type": "documentation",
+      "title": "bpt-desktop-ui-reference-20260704",
+      "description": "1. **不建议逆向 Claude Desktop**（app.asar 解包只能学交互模式，代码 / 资产 / 提示词一概不可入 BPT——与 SDK 线净室纪律同源，见 §7）。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md": {
       "type": "documentation",
       "title": "bpt-sdk-prompt-cache-milestone-20260704",
@@ -3229,6 +3243,34 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md": {
+      "type": "documentation",
+      "title": "claude-desktop-ui-structure-20260704",
+      "description": "`bpt-desktop-ui-reference-20260704.md`（开源许可证红绿灯 + UI↔SDK 消息流对接表）（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-structure-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md": {
+      "type": "documentation",
+      "title": "claude-desktop-ui-wireframe-20260704",
+      "description": "repo-engineering 产物（html）（格式：html）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-wireframe-20260704.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": {
       "type": "documentation",
@@ -8044,7 +8086,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -8235,6 +8280,9 @@
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/projects/bpt-sdk-doc-compat.md"
     ],
+    "app": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "appstore": [
       "/community/community-appstore.md",
       "/news-output/news-output-appstore.md",
@@ -8353,6 +8401,9 @@
       "/extracted/extracted-art-assets.md",
       "/projects/releases-treasure-map.md",
       "/wiki-data/wiki-data-cg-gallery.md"
+    ],
+    "asar": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "assessment": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -8636,7 +8687,9 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "brain": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -8727,6 +8780,9 @@
       "/projects/entry-claude-md.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -9032,7 +9088,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -9274,7 +9333,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -9545,7 +9607,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -9677,7 +9742,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -9711,7 +9779,10 @@
     ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "deterministic": [
       "/story/story_search_index.md"
@@ -9846,7 +9917,10 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -10491,7 +10565,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -10893,7 +10970,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -11328,7 +11408,9 @@
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -11912,7 +11994,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -12207,7 +12292,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -12400,6 +12488,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
     ],
     "reference": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -12436,7 +12526,10 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -12491,7 +12584,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -12640,7 +12736,9 @@
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "search": [
       "/README.md",
@@ -12932,7 +13030,8 @@
       "/projects/doc-testing-strategy.md"
     ],
     "structure": [
-      "/assets/assets-narrative-structure.md"
+      "/assets/assets-narrative-structure.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "studio": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -13158,7 +13257,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -13204,6 +13306,11 @@
     ],
     "typescript": [
       "/projects/project-bpt-agent-sdk.md"
+    ],
+    "ui": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "unit": [
       "/story/lore_by_unit.md",
@@ -13478,6 +13585,9 @@
     "window": [
       "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
+    "wireframe": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+    ],
     "workflow": [
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
@@ -13643,7 +13753,8 @@
       "/characters/15572.md"
     ],
     "一概": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "一次": [
       "/characters/15593.md",
@@ -13854,6 +13965,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14037,7 +14149,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -14093,6 +14208,9 @@
     ],
     "不屈": [
       "/characters/77923.md"
+    ],
+    "不建": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "不放": [
       "/README.md",
@@ -14248,7 +14366,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -14499,7 +14620,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -15212,6 +15336,9 @@
     "互操": [
       "/README.md"
     ],
+    "互模": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "互相": [
       "/projects/doc-testing-strategy.md"
     ],
@@ -15260,6 +15387,9 @@
     "亡者": [
       "/characters/95786.md"
     ],
+    "交互": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "交流": [
       "/characters/77925.md"
     ],
@@ -15278,7 +15408,8 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "产生": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -15527,7 +15658,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -15751,6 +15885,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -16355,7 +16490,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -16567,7 +16705,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -17574,7 +17715,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "净室": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "凝结": [
       "/characters/15585.md",
@@ -18196,7 +18338,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -18498,6 +18643,9 @@
     ],
     "势灵": [
       "/characters/77926.md"
+    ],
+    "包只": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "包含": [
       "/README.md"
@@ -19365,7 +19513,8 @@
     ],
     "只能": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "只要": [
       "/characters/15565.md"
@@ -19451,6 +19600,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "可入": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "可制": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -19571,6 +19723,9 @@
     ],
     "可视": [
       "/README.md"
+    ],
+    "可证": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "可读": [
       "/extracted/extracted-art-assets.md",
@@ -19828,6 +19983,9 @@
     ],
     "同档": [
       "/memory/memory-ext-bpt-guidance-log.md"
+    ],
+    "同源": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "同界": [
       "/characters/15601.md"
@@ -21047,7 +21205,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -21756,7 +21917,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -22007,6 +22171,9 @@
     ],
     "学习": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
+    ],
+    "学交": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "学生": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -22281,7 +22448,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -22498,6 +22668,9 @@
     "宣誓": [
       "/characters/15586.md"
     ],
+    "室纪": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "宫一": [
       "/characters/54117.md"
     ],
@@ -22572,6 +22745,9 @@
       "/characters/15588.md",
       "/characters/15593.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "对接": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "对敌": [
       "/characters/15580.md",
@@ -23663,7 +23839,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "建议": [
-      "/assets/persona-erica-speech-canon.md"
+      "/assets/persona-erica-speech-canon.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "建设": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -23707,7 +23884,8 @@
       "/characters/130901.md"
     ],
     "开源": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "开的": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
@@ -23945,6 +24123,9 @@
     ],
     "律令": [
       "/characters/15586.md"
+    ],
+    "律同": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "得临": [
       "/characters/15572.md"
@@ -24541,6 +24722,9 @@
     ],
     "息往": [
       "/projects/entry-claude-md.md"
+    ],
+    "息流": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "息的": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -25688,7 +25872,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -25994,7 +26181,8 @@
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
     "接表": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "接读": [
       "/community/community-index.md"
@@ -26133,7 +26321,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -26232,7 +26423,8 @@
       "/characters/77917.md"
     ],
     "提示": [
-      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "提高": [
       "/characters/15575.md",
@@ -26403,7 +26595,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -26707,7 +26902,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -26941,7 +27139,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -28380,7 +28581,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -28734,7 +28938,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -29218,7 +29425,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -29371,7 +29581,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -29679,6 +29892,9 @@
     "楼层": [
       "/README.md"
     ],
+    "概不": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "概念": [
       "/README.md",
       "/assets/assets-archive-integrity.md",
@@ -29786,7 +30002,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -29859,6 +30078,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "模式": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "模板": [
       "/memory/memory-ext-active-contribution-protocol.md",
@@ -30101,7 +30323,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -30550,6 +30775,9 @@
     "流动": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "流对": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
+    ],
     "流派": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
@@ -30610,7 +30838,8 @@
       "/characters/15589.md"
     ],
     "消息": [
-      "/memory/memory-ext-discord-archiver-design.md"
+      "/memory/memory-ext-discord-archiver-design.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "消灭": [
       "/characters/15581.md"
@@ -30796,6 +31025,9 @@
     ],
     "源源": [
       "/characters/15573.md"
+    ],
+    "源许": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "溯源": [
       "/README.md",
@@ -33205,7 +33437,8 @@
       "/news-output/news-output-newsjs.md"
     ],
     "示词": [
-      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "礼服": [
       "/characters/15584.md"
@@ -33810,6 +34043,9 @@
     "红熔": [
       "/characters/15599.md"
     ],
+    "红绿": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
+    ],
     "约束": [
       "/projects/entry-claude-md.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
@@ -33877,6 +34113,7 @@
     ],
     "纪律": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -33914,6 +34151,9 @@
     ],
     "纽组": [
       "/story/story_layer_readme.md"
+    ],
+    "线净": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "线回": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -34162,6 +34402,9 @@
     "绽放": [
       "/characters/15577.md",
       "/characters/15580.md"
+    ],
+    "绿灯": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "绿炎": [
       "/characters/15562.md"
@@ -34496,6 +34739,9 @@
     ],
     "能好": [
       "/characters/15576.md"
+    ],
+    "能学": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "能性": [
       "/characters/54116.md"
@@ -35297,6 +35543,7 @@
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/story/lore_entries.md",
       "/story/story_units.md",
       "/unpacked/unpacked-config.md",
@@ -35457,6 +35704,9 @@
     "议记": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "议逆": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "记录": [
       "/memory/lessons-learned.md",
       "/memory/memory-ext-biav-info-classification.md",
@@ -35517,6 +35767,9 @@
     ],
     "许写": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "许可": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "论事": [
       "/memory/memory-ext-pending-discussions.md"
@@ -35645,6 +35898,9 @@
     "证确": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "证红": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
+    ],
     "评是": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -35682,6 +35938,9 @@
     "诊断": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md"
+    ],
+    "词一": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "词典": [
       "/README.md",
@@ -35939,7 +36198,8 @@
       "/README.md"
     ],
     "资产": [
-      "/assets/assets-images.md"
+      "/assets/assets-images.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "资料": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -36256,7 +36516,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -36838,7 +37101,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -36955,7 +37221,8 @@
       "/characters/77917.md"
     ],
     "逆向": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
     ],
     "逆境": [
       "/characters/94450.md"
@@ -37709,7 +37976,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -37915,7 +38185,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -39174,6 +39447,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "bug": [
@@ -39225,7 +39499,9 @@
     ],
     "claude": [
       "/memory/memory-ext-karpathy-coding-principles.md",
-      "/projects/entry-claude-md.md"
+      "/projects/entry-claude-md.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "cn": [
       "/unpacked/unpacked-text-cn.md"
@@ -39423,7 +39699,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -39687,7 +39966,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -39810,7 +40092,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -39835,7 +40120,10 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "desktop": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "diagnosis": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
@@ -39933,7 +40221,10 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -40390,7 +40681,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -41002,6 +41296,9 @@
       "/news-output/news-output-reddit.md",
       "/sources/reddit.md"
     ],
+    "reference": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md"
+    ],
     "registry": [
       "/memory/memory-ext-capability-registry.md",
       "/projects/news-archive-sources-registry.md",
@@ -41014,7 +41311,10 @@
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -41222,7 +41522,8 @@
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
     "structure": [
-      "/assets/assets-narrative-structure.md"
+      "/assets/assets-narrative-structure.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md"
     ],
     "style": [
       "/memory/style-guide.md"
@@ -41319,7 +41620,10 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -41338,6 +41642,11 @@
     ],
     "twitter": [
       "/news-output/news-output-twitter.md"
+    ],
+    "ui": [
+      "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "unit": [
       "/story/lore_by_unit.md",
@@ -41467,6 +41776,9 @@
     ],
     "window": [
       "/resource/resource-daily-news-morimens-window-20260602.md"
+    ],
+    "wireframe": [
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "workflow": [
       "/memory/memory-ext-workflow-api-key-audit.md"

@@ -101,6 +101,34 @@ def summarize(log_path: Path | None = None) -> dict:
     }
 
 
+def harvest_gaps(log_path: Path | None = None, min_count: int = 1) -> dict:
+    """把遥测里的**零命中查询**回流成 held-out 难题候选（闭合评判 #1↔#2）。
+
+    图驱动生成的黄金集（评判 #1）对 KB 是「送分题」（activate 顺边走必中），测的是覆盖与
+    grep-gap 稳不稳、非刁难 KB。**真·held-out 难题**只能来自需求侧现实——用户真的问了、KB 却
+    零命中的查询。本函数把这些查询抽成黄金题 stub（`expect` 待人工分诊填），供并入黄金集：
+    生成集管「够多够全」，遥测回流管「够难够真」，两条腿缺一不可。"""
+    rep = summarize(log_path)
+    seen: set[str] = set()
+    cands = []
+    for q, n in rep["zero_hit_queries"]:
+        q = (q or "").strip()
+        if not q or n < min_count or q in seen:
+            continue
+        seen.add(q)
+        cands.append({
+            "q": q, "expect": [], "mode": "search",
+            "capability": "held_out", "distinctive": True,
+            "source": "telemetry_zero_hit", "seen": n, "needs_triage": True,
+        })
+    return {
+        "candidates": cands,
+        "count": len(cands),
+        "note": ("真实需求缺口回流为 held-out 难题候选；expect 待人工分诊后并入黄金集。"
+                 "与生成集互补：生成管够多够全、遥测管够难够真。"),
+    }
+
+
 def _display_path(p: Path) -> str:
     try:
         rel = str(p.relative_to(REPO))
@@ -131,7 +159,19 @@ def _print_report(rep: dict) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description="知识库使用遥测报告")
     ap.add_argument("--json", action="store_true", help="输出机读汇总")
+    ap.add_argument("--harvest", action="store_true",
+                    help="把零命中查询回流成 held-out 难题候选（评判 #1↔#2 闭环）")
     args = ap.parse_args()
+    if args.harvest:
+        h = harvest_gaps()
+        if args.json:
+            print(json.dumps(h, ensure_ascii=False))
+        else:
+            print(f"零命中回流：{h['count']} 条 held-out 难题候选（expect 待分诊）")
+            for c in h["candidates"][:20]:
+                print(f"    ×{c['seen']:<3d} {c['q']!r}")
+            print(f"  {h['note']}")
+        return
     rep = summarize()
     if args.json:
         print(json.dumps(rep, ensure_ascii=False))
