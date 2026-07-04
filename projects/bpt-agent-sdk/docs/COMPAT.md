@@ -21,8 +21,9 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
 - **Permissions v2** — official 6-step order, ask rules first-class,
   `permissionMode: 'auto'` classifier (unknown non-readonly → prompt),
   `canUseTool` full context + `null`=skip, `defer` end-to-end.
-- **Prompt caching** — `cache_control` breakpoints (opt-in via
-  `provider.promptCaching`), `ttft_ms`/`deferred_tool_use` result extras, init
+- **Prompt caching** — `cache_control` breakpoints **on by default** (matches
+  the official SDK; disable via `provider.promptCaching: false`; capped at the
+  API's 4-breakpoint max), `ttft_ms`/`deferred_tool_use` result extras, init
   fields, hook input `tool_use_id`/`duration_ms`, MCP audio/resource_link,
   `.mcp.json` loading, `thinking.budgetTokens` alias.
 - **New builtin tools** — WebFetch (streamed + SSRF guard), WebSearch (host

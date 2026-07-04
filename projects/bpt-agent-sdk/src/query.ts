@@ -473,9 +473,11 @@ export function query(args: {
     maxThinkingTokens: options.maxThinkingTokens,
     compaction: buildCompactionConfig(options.compaction),
     outputFormat,
-    // Opt-in: prompt caching changes the on-wire request shape (cache_control
-    // breakpoints), so it is off unless the caller sets provider.promptCaching.
-    promptCaching: options.provider?.promptCaching === true,
+    // Prompt caching is ON by default (matches the official SDK and saves the
+    // static system+tools prefix on every turn of a multi-turn session). Set
+    // provider.promptCaching = false to disable (e.g. for very short sessions
+    // where the cache-write premium is not amortized).
+    promptCaching: options.provider?.promptCaching !== false,
     includePartialMessages: options.includePartialMessages === true,
     sessionId: '', // resolved when the run starts
     cwd,

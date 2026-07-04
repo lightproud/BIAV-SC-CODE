@@ -68,7 +68,10 @@ afterEach(async () => {
 
 function baseOptions(extra: Partial<Options> = {}): Options {
   return {
-    provider: { apiKey: 'test-key' },
+    // promptCaching:false keeps the on-wire request shape un-cached so these
+    // message-flow / persistence tests assert the plain string/array forms.
+    // The default-on behavior is covered by its own dedicated test below.
+    provider: { apiKey: 'test-key', promptCaching: false },
     sessionDir,
     cwd,
     // Hermetic env: no ANTHROPIC_* leakage; PATH kept so Bash can spawn.
@@ -176,6 +179,42 @@ describe('query() e2e - happy path', () => {
     const toolNames = (body.tools as Array<{ name: string }>).map((t) => t.name);
     expect(toolNames).toEqual(expect.arrayContaining(BUILTIN_TOOL_NAMES));
     expect(fetchStub.requests[0]!.headers['x-api-key']).toBe('test-key');
+  });
+
+  it('prompt caching is ON by default: system + tools carry cache_control breakpoints', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('cached')]));
+    // Default provider (no promptCaching field) -> caching on.
+    const q = query({
+      prompt: 'hi',
+      options: {
+        provider: { apiKey: 'test-key' },
+        sessionDir,
+        cwd,
+        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        model: 'claude-sonnet-4-5',
+      },
+    });
+    await collect(q);
+    const body = fetchStub.requests[0]!.body;
+    // system is now an array of blocks with a cache_control breakpoint.
+    expect(Array.isArray(body.system)).toBe(true);
+    const sysBlocks = body.system as Array<{ cache_control?: unknown }>;
+    expect(sysBlocks.some((b) => b.cache_control !== undefined)).toBe(true);
+    // the tools array carries a breakpoint on its last entry.
+    const tools = body.tools as Array<{ cache_control?: unknown }>;
+    expect(tools.some((t) => t.cache_control !== undefined)).toBe(true);
+    // never more than the Messages API max of 4 cache breakpoints.
+    const countBreakpoints = (arr: Array<{ cache_control?: unknown }>) =>
+      arr.filter((x) => x.cache_control !== undefined).length;
+    const total =
+      countBreakpoints(sysBlocks) +
+      countBreakpoints(tools) +
+      countBreakpoints(
+        (body.messages as Array<{ content?: unknown }>).flatMap((m) =>
+          Array.isArray(m.content) ? (m.content as Array<{ cache_control?: unknown }>) : [],
+        ),
+      );
+    expect(total).toBeLessThanOrEqual(4);
   });
 
   it('includePartialMessages yields stream_event messages for each raw event', async () => {
