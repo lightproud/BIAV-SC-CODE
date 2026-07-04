@@ -367,11 +367,13 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 - **合并默认规则**（守密人 2026-06-11 裁定）：feature 分支任务完成且全量验证通过后，
   守密人下达「合并」即默认合并 main，PR 无需停留等待逐项确认；遇合并冲突按
   「自动生成状态档案取最新、人工档案先报告再处置」原则解决。
-- **自查自合 — 必需 CI「test」检查已撤（守密人 2026-06-21 裁定）**：main Ruleset 不再要求
-  `test` 状态检查通过才可合并。改为**自查自合**：合并前**自己跑 `pytest tests/`**（改了代码/测试/
-  数据的 PR 必跑、贴结果），全绿才 squash 合并；纯文档/纯注释改动可免跑直接合。**绝不**把
-  「没有 CI 拦」当成「免验证」——验证责任从 CI 平台移交给会话本身。（背景：迁移后 repo 变大，
-  CI checkout 慢且 required check 常卡 "expected"，故撤检查、责任内移。）
+- **CI 硬门禁已重启（守密人 2026-07-02 裁定，覆盖 2026-06-21「自查自合/撤检查」）**：
+  main Ruleset 要求 required check `test` 通过 + **分支基底最新**（Require branches to be
+  up to date）方可合并。前提已备：test 工作流 sparse checkout（约 100MB / 全量单测约 5 秒）、
+  PR 触发无 paths filter（检查必报告）。会话侧流程：改了代码/测试/数据仍**先本地跑
+  `pytest tests/` 贴结果**（机器门禁是兜底不是替代）；建 PR 后等 `test` 绿（或用 auto-merge）
+  再 squash 合并；基底落后时先 rebase/update branch。up-to-date 强制项防「两 PR 各自绿、
+  合起来红」对冲（#373/#374 实案）。
 - **直接合并 main + PR 订阅可选（守密人 2026-06-14 裁定、2026-06-21 修订）**：
   Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
   PR 订阅由**退订不再强制**：若会话被环境自动订阅（出现 `<github-webhook-activity>` 提示）

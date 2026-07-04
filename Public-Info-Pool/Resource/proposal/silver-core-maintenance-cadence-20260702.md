@@ -59,7 +59,7 @@ Phase 2 结束后，银芯从「建设期项目」降档为「值班中的系统
 原则不变：text → git / 二进制 → Releases（2026-06-21 总纲）；触发线只决定「何时重议」，
 不预设结论。
 
-## 三点五、CI 硬门禁重启（待守密人裁定的 GitHub 设置项）
+## 三点五、CI 硬门禁重启（**已采纳**：守密人 2026-07-02 完成 Ruleset 设置，决策已入 `memory/decisions.md`）
 
 2026-06-21 撤销 required `test` 检查的两条理由已双双消失：checkout 已 sparse 化
 （2.6G → 约 100MB，见 `test.yml` 2026-07-02 改造）、PR 触发无 paths filter 不会再卡
