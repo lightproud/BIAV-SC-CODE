@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**115**
-- 脚本可达性：活 63 / 仅测试 0 / 孤儿 0
+- 功能总数：**117**
+- 脚本可达性：活 64 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 30 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 29 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 31 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 30 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 9 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（30）
+## CI 自动化工作流（编排入口·定时/事件平面）（31）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -88,6 +88,8 @@
   `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
+- **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
+  `.github/workflows/refresh-claude-code-prompts.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
   `.github/workflows/test-collectors.yml`
 - **`Run Tests`** _[push/pull_request/manual]_ — 运行全量 pytest 单元测试。  
@@ -97,7 +99,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（29）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（30）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -149,6 +151,8 @@
   `scripts/parse_item_stories.py`
 - **`parse_voice_lines.py`** _[活:cli]_ — [CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。  
   `scripts/parse_voice_lines.py`
+- **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
+  `scripts/refresh_claude_code_prompts.py`
 - **`report_render.py`** _[活:cli+command+workflow]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
   `scripts/report_render.py`
 - **`restore_release_data.py`** _[活:cli+workflow]_ — 构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。  
