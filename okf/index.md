@@ -7,7 +7,7 @@
 
 * [角色 characters](/characters/index.md) - 72 concept · 唤醒体 concept（一概念一文件）
 * [数据源 sources](/sources/index.md) - 17 concept · 社区平台采集健康指针
-* [记忆 memory](/memory/index.md) - 45 concept · 记忆层全层指针
+* [记忆 memory](/memory/index.md) - 46 concept · 记忆层全层指针
 * [剧情 story](/story/index.md) - 11 concept · 剧情结构层指针
 * [事实圣经 assets](/assets/index.md) - 12 concept · 角色卡/采访/叙事/设计决策指针
 * [wiki 数据 wiki-data](/wiki-data/index.md) - 26 concept · 解包自举结构化数据集指针

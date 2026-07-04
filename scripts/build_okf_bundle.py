@@ -659,6 +659,35 @@ def _node_url(rel: str) -> str | None:
     return None
 
 
+def structural_fingerprint(bundle: Path) -> str:
+    """规范化结构哈希：只覆盖**结构**（concept id→type/resource/排序 tags + 排序边），
+    **排除易变量**（timestamp、描述里的活计数）。
+
+    北极星命令二（`memory/knowledge-layer-design.md`）的落地：让「结构漂移」可被断言，
+    又不被每日时间戳/活数据漂移误报——committed bundle 的结构指纹应恒等于源重建的结构指纹，
+    否则=有人改了源结构却忘了重建（stale commit）或生成器非幂等。
+    """
+    import hashlib
+
+    concepts = []
+    for f in sorted(bundle.rglob("*.md")):
+        if f.name in RESERVED:
+            continue
+        rel = "/" + str(f.relative_to(bundle))
+        fm = _read_frontmatter(f.read_text(encoding="utf-8"))
+        tags = sorted(fm.get("tags", [])) if isinstance(fm.get("tags"), list) else []
+        concepts.append([rel, fm.get("type", ""), fm.get("resource", ""), tags])
+    concepts.sort()
+    edges = []
+    gp = bundle / "graph.json"
+    if gp.exists():
+        g = json.loads(gp.read_text(encoding="utf-8"))
+        edges = sorted([e["source"], e["target"], e.get("rel_type", e.get("rel", ""))]
+                       for e in g.get("edges", []))
+    blob = json.dumps({"concepts": concepts, "edges": edges}, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+
 def build_graph() -> dict:
     """Scan the bundle into a {nodes, edges} graph for the visualizer.
 
