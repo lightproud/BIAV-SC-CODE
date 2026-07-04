@@ -343,6 +343,7 @@ brain-in-a-vat/
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
+| 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
 | 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
 
 ### §7.2 CI 自动化
