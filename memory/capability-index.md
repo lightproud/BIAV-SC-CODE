@@ -4,7 +4,7 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**111**
+- 功能总数：**112**
 - 脚本可达性：活 60 / 仅测试 0 / 孤儿 0
 
 ## 总览
@@ -15,7 +15,7 @@
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 26 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 8 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 9 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
 | 子项目 | 5 |
@@ -226,7 +226,7 @@
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（8）
+## MCP 知识层工具（编排入口·AI 动态平面）（9）
 
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
   `scripts/mcp_server.py`
@@ -241,6 +241,8 @@
 - **`kb_get`** — 取单个概念的全档：元数据 + 正文 markdown + resource 指针 + 邻居列表。  
   `scripts/mcp_server.py`
 - **`kb_neighbors`** — 顺 OKF 关系图遍历某概念的邻居（角色按画师/CV 聚簇、显式链接边等）。  
+  `scripts/mcp_server.py`
+- **`kb_activate`** — 扩散激活检索（联想召回）：从种子沿知识图谱多跳带衰减扩散，返回被点亮的相关概念子图。  
   `scripts/mcp_server.py`
 - **`kb_overview`** — 知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。  
   `scripts/mcp_server.py`

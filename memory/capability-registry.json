@@ -10,11 +10,11 @@
       "scripts_top": 26,
       "scripts_news": 28,
       "scripts_wiki": 6,
-      "mcp_tools": 8,
+      "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 111
+      "total": 112
     },
     "reachability": {
       "live": 60,
@@ -936,6 +936,11 @@
       "id": "kb_neighbors",
       "module": "scripts/mcp_server.py",
       "summary": "顺 OKF 关系图遍历某概念的邻居（角色按画师/CV 聚簇、显式链接边等）。"
+    },
+    {
+      "id": "kb_activate",
+      "module": "scripts/mcp_server.py",
+      "summary": "扩散激活检索（联想召回）：从种子沿知识图谱多跳带衰减扩散，返回被点亮的相关概念子图。"
     },
     {
       "id": "kb_overview",

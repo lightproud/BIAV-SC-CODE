@@ -169,10 +169,11 @@ def get(concept_id: str) -> dict:
 
     adj = idx.get("neighbors", {}).get(cid, [])
     neigh = [
-        {"id": nid, "rel": rel,
-         "title": idx["concepts"].get(nid, {}).get("title", nid),
-         "type": idx["concepts"].get(nid, {}).get("type")}
-        for nid, rel in adj
+        {"id": pair[0], "rel": pair[1],
+         "rel_type": pair[2] if len(pair) > 2 else "link",
+         "title": idx["concepts"].get(pair[0], {}).get("title", pair[0]),
+         "type": idx["concepts"].get(pair[0], {}).get("type")}
+        for pair in adj
     ]
     out = _summary(cid, concept)
     out["body"] = body
@@ -193,8 +194,9 @@ def neighbors(concept_id: str, limit: int = 20, rel_filter: str | None = None) -
     limit = max(1, min(int(limit or 20), 200))
     concepts = idx["concepts"]
     items = [
-        _summary(nid, concepts.get(nid, {}), {"rel": rel})
-        for nid, rel in adj[:limit]
+        _summary(pair[0], concepts.get(pair[0], {}),
+                 {"rel": pair[1], "rel_type": pair[2] if len(pair) > 2 else "link"})
+        for pair in adj[:limit]
     ]
     return {
         "id": cid,
@@ -203,6 +205,106 @@ def neighbors(concept_id: str, limit: int = 20, rel_filter: str | None = None) -
         "returned": len(items),
         "rel_filter": rel_filter,
         "neighbors": items,
+    }
+
+
+# ---------------------------------------------------------------------------
+# 扩散激活检索（Pillar D）—— 符号底座上的神经式动态（北极星 §五）
+# 「概念网络 ≠ 搜索」的杀手级消费：从种子概念沿带类型的边多跳扩散、带衰减，
+# 返回被点亮的子图 = 联想召回（平铺搜索与单跳查都给不了的第三种检索原语）。
+# 剪枝即加权：高信号边类型传导更多激活，低信号（cv）几近不传。
+# ---------------------------------------------------------------------------
+
+# 每条边类型的传导权重（信号越高传得越远；对齐北极星「为信号剪枝」）
+_EDGE_WEIGHT = {
+    "variant": 1.0,   # 本体↔异变，最高信号
+    "lore": 0.9,      # 同篇 lore 共现
+    "cross": 0.7,     # 跨层结构（同平台/聚合/入口）
+    "link": 0.5,      # 显式 markdown 链接
+    "cv": 0.15,       # 同声优，弱信号（已降权，近乎不传）
+}
+
+
+def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> dict:
+    """扩散激活：从种子（概念 id 或检索词）沿骨架多跳带衰减扩散，返回被点亮子图。
+
+    种子解析：先当概念 id（normalize_id）；不中则当检索词，取 search 前若干命中为种子
+    （按检索分归一化为初始激活）。传导：每跳激活 = 上游激活 × decay × 边类型权重，累加。
+    确定性、零 ML：纯查表 + 算术。骨架层最有效；search-tier 概念多为孤立、需经检索作种子进入。
+
+    Args:
+        seed: 概念 id（如 /characters/125346.md 或 125346）或检索词（如 "沙耶" / "discord 社区"）
+        hops: 扩散跳数（默认 2，封顶 4）
+        decay: 每跳衰减（默认 0.5，(0,1]）
+        limit: 返回被点亮概念上限（默认 15，封顶 50）
+
+    Returns:
+        JSON: {seed, resolved_seeds, hops, decay, activated:[{id,title,type,tier,activation,via}...]}
+    """
+    idx = load_index()
+    concepts = idx["concepts"]
+    neighbors = idx.get("neighbors", {})
+    hops = max(1, min(int(hops or 2), 4))
+    decay = decay if (isinstance(decay, (int, float)) and 0 < decay <= 1) else 0.5
+    limit = max(1, min(int(limit or 15), 50))
+
+    # --- 种子解析 ---
+    seeds: dict[str, float] = {}
+    cid = normalize_id(seed)
+    if cid is not None:
+        seeds[cid] = 1.0
+        seed_kind = "concept"
+    else:
+        res = search(seed, limit=5)
+        hits = res.get("results", [])
+        if not hits:
+            return {"seed": seed, "resolved_seeds": [], "activated": [],
+                    "note": "种子无法解析为概念、检索也零命中"}
+        top = hits[0]["score"] or 1.0
+        for h in hits:
+            seeds[h["id"]] = max(0.2, (h["score"] or 0) / top)  # 归一化初始激活
+        seed_kind = "query"
+
+    # --- 逐跳扩散（累加激活，记录首达关系）---
+    activation = dict(seeds)
+    via: dict[str, str] = {}
+    frontier = dict(seeds)
+    for _h in range(hops):
+        nxt: dict[str, float] = {}
+        for node, act in frontier.items():
+            for pair in neighbors.get(node, []):
+                nid = pair[0]
+                rel_type = pair[2] if len(pair) > 2 else "link"
+                w = _EDGE_WEIGHT.get(rel_type, 0.4)
+                contrib = act * decay * w
+                if contrib <= 0.01:
+                    continue
+                nxt[nid] = nxt.get(nid, 0.0) + contrib
+                via.setdefault(nid, f"{pair[1]} ({rel_type})")
+        for nid, add in nxt.items():
+            activation[nid] = activation.get(nid, 0.0) + add
+        frontier = nxt
+        if not frontier:
+            break
+
+    # --- 排名（种子外，激活降序；确定性 tie-break by id）---
+    ranked = sorted(
+        ((nid, sc) for nid, sc in activation.items() if nid not in seeds),
+        key=lambda kv: (-kv[1], kv[0]),
+    )[:limit]
+    activated = [
+        _summary(nid, concepts.get(nid, {}),
+                 {"activation": round(sc, 3), "via": via.get(nid, "")})
+        for nid, sc in ranked
+    ]
+    return {
+        "seed": seed,
+        "seed_kind": seed_kind,
+        "resolved_seeds": sorted(seeds),
+        "hops": hops,
+        "decay": decay,
+        "returned": len(activated),
+        "activated": activated,
     }
 
 

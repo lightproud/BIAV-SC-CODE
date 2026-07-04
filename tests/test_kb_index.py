@@ -62,8 +62,8 @@ def test_neighbor_ids_are_known_concepts():
     ids = set(idx["concepts"])
     for cid, adj in idx["neighbors"].items():
         assert cid in ids, f"neighbor host {cid} not a concept"
-        for nid, _rel in adj:
-            assert nid in ids, f"neighbor {nid} of {cid} not a concept"
+        for pair in adj:  # [nid, rel, rel_type]
+            assert pair[0] in ids, f"neighbor {pair[0]} of {cid} not a concept"
 
 
 def test_postings_reference_known_concepts():
@@ -135,13 +135,59 @@ def test_neighbors_traversal():
     assert n["returned"] <= 5
 
 
-def test_overview_reports_sections():
+def test_overview_reports_sections_and_tiers():
     import kb_navigator as kb
 
     ov = kb.overview()
     assert "characters" in ov["sections"]
     assert ov["stats"]["concepts"] >= 70
-    assert set(ov["usage"]) == {"kb_search", "kb_get", "kb_neighbors", "kb_overview"}
+    assert set(ov["tiers"]) == {"skeleton", "search"}
+    assert ov["stats"]["by_tier"]["skeleton"] >= 1
+
+
+# --- 扩散激活（Pillar D）-----------------------------------------------------
+
+def test_activate_from_concept_spreads_over_skeleton():
+    """从骨架概念种子扩散，返回跨层联想邻域（同平台/抽样自/聚合于），且带激活分。"""
+    import kb_navigator as kb
+
+    r = kb.activate("discord", hops=2, limit=8)
+    assert r["resolved_seeds"], "种子未解析"
+    ids = {a["id"] for a in r["activated"]}
+    # discord 应联想点亮其全量档案镜头（community）与输出抽样（news-output）——搜索连不到的跨层结构
+    assert any("/community/community-discord" in i for i in ids)
+    assert all(a["activation"] > 0 for a in r["activated"])
+
+
+def test_activate_ranks_high_signal_edges_above_low():
+    """高信号边（cross/variant）传导的激活应高于低信号（cv）——剪枝即加权。"""
+    import kb_navigator as kb
+
+    r = kb.activate("discord", hops=1, limit=10)
+    acts = {a["id"]: a["activation"] for a in r["activated"]}
+    # 同平台（cross,0.7*0.5=0.35）应明显高于任何 cv 边（0.15*0.5=0.075）
+    cross_hit = max((v for i, v in acts.items() if "community-discord" in i), default=0)
+    assert cross_hit >= 0.3, f"跨层高信号边激活偏低：{cross_hit}"
+
+
+def test_activate_query_seed_and_determinism():
+    """检索词种子可用；连算两次逐字节相同（确定性零 ML）。"""
+    import json
+
+    import kb_navigator as kb
+
+    r = kb.activate("沙耶", hops=2, limit=5)
+    assert r["seed_kind"] in ("concept", "query")
+    a = json.dumps(kb.activate("discord"), ensure_ascii=False)
+    b = json.dumps(kb.activate("discord"), ensure_ascii=False)
+    assert a == b
+
+
+def test_activate_unknown_seed_graceful():
+    import kb_navigator as kb
+
+    r = kb.activate("zzz-nonexistent-xyz-000")
+    assert r["activated"] == []
 
 
 # ---------------------------------------------------------------------------
@@ -179,7 +225,7 @@ def test_mcp_kb_tools_present_and_valid_json():
     _install_mcp_stub()
     import mcp_server
 
-    for name in ("kb_search", "kb_get", "kb_neighbors", "kb_overview"):
+    for name in ("kb_search", "kb_get", "kb_neighbors", "kb_overview", "kb_activate"):
         assert callable(getattr(mcp_server, name, None)), f"缺少导航工具 {name}"
 
     assert json.loads(mcp_server.kb_overview())["stats"]["concepts"] >= 70

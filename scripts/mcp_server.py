@@ -15,9 +15,9 @@ persona activation and decision/lesson write-back to the curated archives.
 navigation surface (kb_*) over okf/kb_index.json — the only runtime-dynamic
 orchestration plane gains a way to search / open / traverse the knowledge graph.
 
-Tools (8):
+Tools (9):
   memory:      character_persona, record_decision, record_lesson, current_continuity
-  kb-navigate: kb_search, kb_get, kb_neighbors, kb_overview
+  kb-navigate: kb_search, kb_get, kb_neighbors, kb_overview, kb_activate（扩散激活检索）
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -49,7 +49,8 @@ except ImportError:
         {"name": "kb_search", "description": "知识库按词检索概念"},
         {"name": "kb_get", "description": "取单个概念全档（元数据+正文+邻居）"},
         {"name": "kb_neighbors", "description": "顺关系图遍历概念邻居"},
-        {"name": "kb_overview", "description": "知识库总览（分区/类型/入口）"},
+        {"name": "kb_overview", "description": "知识库总览（分区/类型/两层结构）"},
+        {"name": "kb_activate", "description": "扩散激活检索（联想召回）"},
     ]
     print(json.dumps(tools, ensure_ascii=False, indent=2))
     sys.exit(0)
@@ -233,6 +234,31 @@ def kb_neighbors(concept_id: str, limit: int = 20, rel_filter: str = "") -> str:
     try:
         return json.dumps(neighbors(concept_id, limit, rel_filter or None),
                           ensure_ascii=False, indent=2)
+    except KBIndexMissing as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def kb_activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> str:
+    """扩散激活检索（联想召回）：从种子沿知识图谱多跳带衰减扩散，返回被点亮的相关概念子图。
+
+    「概念网络 ≠ 搜索」的杀手级消费——搜索给「精确含某词的几条」，扩散激活给「和这个概念
+    在联想上相近的一片」。高信号边（变体/lore）传导更多激活，弱信号边（同声优）近乎不传。
+    骨架层（characters/sources/community/news-output）最有效；参考层概念多需作检索种子进入。
+
+    Args:
+        seed: 概念 id（/characters/125346.md 或 125346）或检索词（"沙耶" / "discord 社区"）
+        hops: 扩散跳数（默认 2，封顶 4）
+        decay: 每跳衰减（默认 0.5）
+        limit: 返回上限（默认 15，封顶 50）
+
+    Returns:
+        JSON: {seed, resolved_seeds, hops, activated:[{id,title,tier,activation,via}...]}
+    """
+    from kb_navigator import KBIndexMissing, activate
+
+    try:
+        return json.dumps(activate(seed, hops, decay, limit), ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
