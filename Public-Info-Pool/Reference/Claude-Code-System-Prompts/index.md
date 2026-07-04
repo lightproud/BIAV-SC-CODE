@@ -3,15 +3,18 @@
 BPT 4R `Reference` 层子目录。**外部公开参照材料**（非银芯原创、非可执行源码），
 供 AI 协作层（§1.4 记忆层 / 人格与编排）研习提示词工程之用。
 
+> 本文件由 `scripts/refresh_claude_code_prompts.py` 自动生成 / 更新（勿手改版本表；
+> 定时刷新见 `.github/workflows/refresh-claude-code-prompts.yml`）。
+
 ## 来源（provenance）
 
 | 项 | 值 |
 |----|----|
 | 上游仓库 | [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) |
 | 维护方 | Piebald AI（**非 Anthropic 官方**；由脚本从 `@anthropic-ai/claude-code` npm 编译产物提取） |
-| 采集版本 | Claude Code v2.1.201（2026-07-03） |
+| 采集版本 | Claude Code v2.1.201 |
 | 上游 commit | `8879268967dda843de616ebcb25470012556c2c1` |
-| 采集日期 | 2026-07-04 |
+| 上游 commit 日期 | 2026-07-03 |
 | 许可证 | MIT（Copyright (c) 2025 Piebald LLC）——见同目录 `LICENSE`，再分发须随附 |
 
 ## 内容清单
@@ -19,8 +22,8 @@ BPT 4R `Reference` 层子目录。**外部公开参照材料**（非银芯原创
 - `system-prompts/`：**553** 份 markdown，每份含 YAML frontmatter（标注 Claude Code 版本 + 模板变量）。
   覆盖主循环系统提示、各子代理（explore / general-purpose / plan / code-review 多段 / security-review 等）、
   工具描述、会话摘要 / 标题生成 / 记忆挑选等编排环节的提示词。
-- `README.md`：上游目录 + 逐提示词 token 计数总表（134KB）。
-- `CHANGELOG.md`：227 个版本（自 v2.0.14 起）的提示词变更史（321KB）。
+- `README.md`：上游目录 + 逐提示词 token 计数总表。
+- `CHANGELOG.md`：多版本（自 v2.0.14 起）的提示词变更史。
 - `UPSTREAM-CLAUDE.md`：上游自带的 CLAUDE.md（**已改名**，原名 `CLAUDE.md`——为防被银芯指令层
   误当项目指令自动加载而重命名，内容未改，供审阅上游对本材料的定性说明）。
 - `LICENSE`：MIT 全文。
@@ -39,12 +42,8 @@ BPT 4R `Reference` 层子目录。**外部公开参照材料**（非银芯原创
 - **单向、无黑池**：本材料自公开渠道单向采入银芯（使命#1 采集层同向），与黑池防火墙（§1.1-HC）无涉，
   未触碰任何内部 / 黑池数据。
 
-## 刷新方式（如需追新到上游最新版本）
+## 刷新方式（定期更新）
 
-```bash
-# 临时区重新浅克隆上游，剥离 .git 后覆盖本目录（保留本 index.md 与 LICENSE）
-git clone --depth 1 https://github.com/Piebald-AI/claude-code-system-prompts.git /tmp/ccsp
-rsync -a --delete --exclude='.git' --exclude='.gitignore' \
-  /tmp/ccsp/ Public-Info-Pool/Reference/Claude-Code-System-Prompts/
-# 刷新后：把上游 CLAUDE.md 再改名 UPSTREAM-CLAUDE.md、更新本 index.md 的版本/commit/日期
-```
+定时 CI（每周一次）自动执行 `scripts/refresh_claude_code_prompts.py`：浅克隆上游 →
+同步进本目录（剥离 `.git`、保护本 `index.md`）→ 改名 `UPSTREAM-CLAUDE.md` →
+重生成本 provenance 表 → 有变化才 `[skip ci]` 提交。手动刷新亦可直接跑该脚本。
