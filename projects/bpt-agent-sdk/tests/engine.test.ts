@@ -1145,6 +1145,23 @@ describe('runAgentLoop', () => {
     expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(50);
   });
 
+  it('records api_error_status on an unrecovered APIStatusError result', async () => {
+    const transport = new MockTransport([
+      () => {
+        throw new APIStatusError(529, 'overloaded_error', 'overloaded');
+      },
+    ]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    if (result.subtype === 'error_during_execution') {
+      expect(result.api_error_status).toBe(529);
+    }
+  });
+
   // ----- finding #6: PostToolUse continue:false stops the run -----
 
   it('honors PostToolUse continue:false by stopping the run after the batch (#6)', async () => {

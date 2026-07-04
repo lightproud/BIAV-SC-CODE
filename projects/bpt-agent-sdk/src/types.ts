@@ -882,6 +882,8 @@ export type SDKResultMessage =
       usage: NonNullableUsage;
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
+      /** HTTP status of the last API error observed during the run, if any. */
+      api_error_status?: number;
       /** v0.3 per-run budget/efficiency metrics. */
       metrics?: SDKRunMetrics;
     }
@@ -903,6 +905,8 @@ export type SDKResultMessage =
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
       errorMessage?: string;
+      /** HTTP status when the run ended on an API error (e.g. 429, 529). */
+      api_error_status?: number;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;

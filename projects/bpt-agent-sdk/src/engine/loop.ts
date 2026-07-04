@@ -296,11 +296,13 @@ export async function* runAgentLoop(
       | 'error_max_budget_usd'
       | 'error_max_structured_output_retries',
     errorMessage: string,
+    apiErrorStatus?: number,
   ): SDKResultMessage => ({
     type: 'result',
     subtype,
     is_error: true,
     errorMessage,
+    ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...resultBase(),
   });
 
@@ -1096,7 +1098,8 @@ export async function* runAgentLoop(
     if (isAbortError(err)) throw toAbortError(err);
     const message = err instanceof Error ? err.message : String(err);
     deps.debug(`engine: error during execution: ${message}`);
-    yield errorResult('error_during_execution', message);
+    const apiStatus = err instanceof APIStatusError ? err.status : undefined;
+    yield errorResult('error_during_execution', message, apiStatus);
     return;
   }
 }
