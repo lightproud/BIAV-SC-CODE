@@ -18,6 +18,7 @@ import type {
   NonNullableUsage,
   RawMessageStreamEvent,
   SDKMessage,
+  SDKPermissionDeniedMessage,
   SDKResultMessage,
   SDKRunMetrics,
   SDKToolMetrics,
@@ -96,6 +97,9 @@ type ToolExecOutcome = {
   result: ToolResultBlockParam;
   stop?: { reason: string };
   defer?: { tool_use_id: string; tool_name: string; tool_input: Record<string, unknown> };
+  /** Observability messages (e.g. permission_denied) to yield before the batch
+   * continues. Sourced inside executeToolUse, which cannot yield itself. */
+  observability?: SDKMessage[];
 };
 
 /** Mutable holder for a stream attempt's usage-so-far (survives a throw). */
@@ -513,15 +517,29 @@ export async function* runAgentLoop(
       decisionReason: pre?.decisionReason,
     });
     if (check.decision === 'deny') {
+      // Surface a permission_denied observability message (task #16) alongside
+      // the tool_result. blocker: a canUseTool interrupt is the only source we
+      // can distinguish at this seam; rule/mode/hook denials carry their detail
+      // in `reason`, so blocker is left off rather than guessed.
+      const denied: SDKPermissionDeniedMessage = {
+        type: 'permission_denied',
+        uuid: randomUUID(),
+        session_id: config.sessionId,
+        tool_name: toolName,
+        tool_use_id: block.id,
+        reason: check.message,
+        ...(check.interrupt === true ? { blocker: 'canUseTool' as const } : {}),
+      };
       // interrupt:true (e.g. canUseTool returned behavior:'deny', interrupt)
       // means "deny AND stop the whole run", not just skip this call.
       if (check.interrupt === true) {
         return {
           result: errorToolResult(check.message),
           stop: { reason: check.message },
+          observability: [denied],
         };
       }
-      return { result: errorToolResult(check.message) };
+      return { result: errorToolResult(check.message), observability: [denied] };
     }
     if (check.decision === 'skip') {
       // canUseTool returned null: the app is resolving this call out of band.
@@ -811,6 +829,11 @@ export async function* runAgentLoop(
           }
           // Sequential, in content order.
           const outcome = await executeToolUse(block);
+          // Surface any observability messages (e.g. permission_denied) the call
+          // produced, before its tool_result is folded into the next turn.
+          if (outcome.observability !== undefined) {
+            for (const msg of outcome.observability) yield msg;
+          }
           results.push(outcome.result);
           if (outcome.stop !== undefined) batchStop = outcome.stop;
           if (outcome.defer !== undefined) batchDefer = outcome.defer;

@@ -32,10 +32,14 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
   `rewindFiles`; tool search (deferred MCP schemas); standalone session
   functions; Query methods (reconnect/toggle/setMcpServers/rewindFiles/stopTask).
 
-Still deliberately out of scope (N/A-by-design or v0.3): the CLI-coupled
-subsystems (CLI system prompt, settings engine, bubblewrap sandbox,
-Bedrock/Vertex/Foundry, OTel), the full 33-variant observability stream, and
-the WarmQuery/startup pre-warm lifecycle. See the audit for the rationale.
+The full observability/status message arm was TYPED in v0.3 (task #16) so the
+SDKMessage union is exhaustive for drop-in consumers; `permission_denied` is
+emitted, the rest are typed-not-emitted (see the Observability arm table below).
+
+Still deliberately out of scope (N/A-by-design): the CLI-coupled subsystems
+(CLI system prompt, settings engine, bubblewrap sandbox, Bedrock/Vertex/Foundry,
+OTel), and the WarmQuery/startup pre-warm lifecycle. See the audit for the
+rationale.
 
 The per-field tiers below were reconciled against actual code as of the v0.1
 adversarial-review pass; the v0.2 graduations above supersede the "MISSING/
@@ -124,8 +128,33 @@ SDK implements the agent loop directly against the public Messages API:
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages` |
-| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` | PARTIAL | budget subtype uses the official name `error_max_budget_usd`; success arm omits official extras (ttft_ms, structured_output, …); error arm carries `errorMessage: string` rather than official `errors: string[]` |
-| `system/compact_boundary` | UNSUPPORTED | no auto-compaction in v0.1 |
+| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries `errorMessage: string` rather than official `errors: string[]` |
+| `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
+| `system/mirror_error` | FULL | emitted on a session-store mirror failure |
+
+### Observability arm (v0.3 — task #16)
+
+The official SDKMessage union carries a large observability/status arm. We add
+the full set of variant TYPES so drop-in consumers can switch exhaustively, and
+EMIT the subset this headless engine has a real source event for.
+
+Design note: the official docs/types are internally inconsistent about
+top-level `type` vs `type:'system'+subtype` for these variants (and its own
+issue #181 has `SDKRateLimitEvent`/`SDKPromptSuggestionMessage`
+referenced-but-unexported). We model the arm with **top-level `type`**
+discriminators — the most likely consumer pattern (`msg.type === 'permission_denied'`)
+— except `status`, kept as `system/status`. Field shapes the official leaves
+undocumented are a self-consistent clean-room reconstruction. All carry the
+house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
+
+| Variant | Tier | Notes |
+|---|---|---|
+| `permission_denied` | FULL (emitted) | yielded on every permission-gate deny, before the tool_result; mirrors the `result.permission_denials` ledger; `blocker:'canUseTool'` set on a canUseTool interrupt, else omitted |
+| `tool_progress`, `tool_use_summary` | TYPED | no mid-tool progress channel (tools are one-shot) |
+| `task_started` / `task_progress` / `task_updated` / `task_notification` | TYPED | subagents run detached; lifecycle not surfaced as stream events yet |
+| `hook_started` / `hook_progress` / `hook_response` | TYPED | would gate behind `includeHookEvents`; hooks currently report via debug only |
+| `rate_limit_event`, `api_retry` | TYPED | the transport retries 429/5xx internally and surfaces attempts via the debug callback, not the stream (a follow-up can bridge transport→stream) |
+| `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `informational`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host/slash-command framework |
 
 ## Hooks
 

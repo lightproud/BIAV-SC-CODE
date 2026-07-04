@@ -53,8 +53,14 @@ src/
 
 v0.2 完成（2026-07-03）：v0.1 已合并入 main；v0.2 补齐上下文压缩 / 结构化输出 /
 子代理运行时 / 权限 v2 / 提示缓存 / 新工具（WebFetch·WebSearch·AskUserQuestion·
-TodoWrite）/ 外部会话存储 + 文件检查点 + 工具搜索。628 测试全绿。进度以
-`memory/project-status.md` 为唯一权威。
+TodoWrite）/ 外部会话存储 + 文件检查点 + 工具搜索。
+
+v0.3 进行中：per-run 预算度量（`result.metrics`）已落；**观测消息流扩容（task #16）
+已落**——`SDKMessage` union 补齐观测臂全 25 变体（`SDKObservabilityMessage`），
+其中 `permission_denied` 真发射（gate deny 时 yield，与 `result.permission_denials`
+台账一致），其余类型化待驱动源（详见 `docs/COMPAT.md` 观测臂表）。634 测试全绿。
+下一步 task #17（P1/P2 长尾：Read 图像·PDF / ToolAnnotations 接线 / mcpServerStatus
+富化 / Usage 字段）。进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选
 
