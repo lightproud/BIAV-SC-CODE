@@ -171,6 +171,16 @@ def current_continuity() -> str:
 # ---------------------------------------------------------------------------
 
 
+def _log(tool: str, query: str, ids) -> None:
+    """使用遥测埋点（评判体系 #2）——best-effort，只在 MCP 消费边界记，绝不拖垮工具。"""
+    try:
+        from kb_telemetry import log_call
+
+        log_call(tool, query, [i for i in (ids or []) if i])
+    except Exception:
+        pass
+
+
 @mcp.tool()
 def kb_search(query: str, limit: int = 8, type_filter: str = "") -> str:
     """在银芯知识库中按词检索概念（角色 / 数据源 / 记忆 / 剧情）。
@@ -190,8 +200,9 @@ def kb_search(query: str, limit: int = 8, type_filter: str = "") -> str:
     from kb_navigator import KBIndexMissing, search
 
     try:
-        return json.dumps(search(query, limit, type_filter or None),
-                          ensure_ascii=False, indent=2)
+        result = search(query, limit, type_filter or None)
+        _log("kb_search", query, [r.get("id") for r in result.get("results", [])])
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
@@ -212,7 +223,9 @@ def kb_get(concept_id: str) -> str:
     from kb_navigator import KBIndexMissing, get
 
     try:
-        return json.dumps(get(concept_id), ensure_ascii=False, indent=2)
+        result = get(concept_id)
+        _log("kb_get", concept_id, [result.get("id")])
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
@@ -232,8 +245,9 @@ def kb_neighbors(concept_id: str, limit: int = 20, rel_filter: str = "") -> str:
     from kb_navigator import KBIndexMissing, neighbors
 
     try:
-        return json.dumps(neighbors(concept_id, limit, rel_filter or None),
-                          ensure_ascii=False, indent=2)
+        result = neighbors(concept_id, limit, rel_filter or None)
+        _log("kb_neighbors", concept_id, [n.get("id") for n in result.get("neighbors", [])])
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
@@ -258,7 +272,9 @@ def kb_activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -
     from kb_navigator import KBIndexMissing, activate
 
     try:
-        return json.dumps(activate(seed, hops, decay, limit), ensure_ascii=False, indent=2)
+        result = activate(seed, hops, decay, limit)
+        _log("kb_activate", seed, [a.get("id") for a in result.get("activated", [])])
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
@@ -275,7 +291,9 @@ def kb_overview() -> str:
     from kb_navigator import KBIndexMissing, overview
 
     try:
-        return json.dumps(overview(), ensure_ascii=False, indent=2)
+        result = overview()
+        _log("kb_overview", "", [])
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except KBIndexMissing as e:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 

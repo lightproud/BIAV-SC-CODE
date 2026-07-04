@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 298,
+    "nodes": 299,
     "edges": 96
   },
   "nodes": [
@@ -2226,6 +2226,17 @@
       "id": "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "type": "documentation",
       "title": "jp-discord-insights-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:community-analysis"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "type": "documentation",
+      "title": "producer-light-evaluation-20260704",
       "tags": [
         "data_layer:curated",
         "deliverable",

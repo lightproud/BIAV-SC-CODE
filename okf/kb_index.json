@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 298,
+    "concepts": 299,
     "edges": 96,
-    "terms": 5083,
+    "terms": 5085,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 54,
+      "documentation": 55,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 35,
+      "resource": 36,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 167
+      "search": 168
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 35
+      "count": 36
     },
     "sources": {
       "index": "/sources/index.md",
@@ -2843,6 +2843,20 @@
       "title": "jp-discord-insights-202606",
       "description": "1. **社区已固化为「超小圈子高密度沙龙」。/ コミュニティは「超小圏子の高密度サロン」に固化。**（格式：md）",
       "resource": "/Public-Info-Pool/Resource/community-analysis/jp-discord-insights-202606.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:community-analysis"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": {
+      "type": "documentation",
+      "title": "producer-light-evaluation-20260704",
+      "description": "（7,565,639 条 / 17 平台，索引 `projects/news/index/community_index.json`，（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/community-analysis/producer-light-evaluation-20260704.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5648,6 +5662,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -5834,6 +5849,7 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -6462,6 +6478,7 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -6626,6 +6643,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -6865,6 +6883,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -7133,6 +7152,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -7262,6 +7282,7 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -7479,6 +7500,9 @@
     "erica": [
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md"
+    ],
+    "evaluation": [
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "event": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -8041,6 +8065,7 @@
       "/community/community-index.md",
       "/community/community-timeline.md",
       "/memory/capability-index.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
       "/wiki-data/wiki-data-character-index.md"
@@ -8067,6 +8092,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -8221,6 +8247,7 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/sources/appstore.md",
@@ -8465,6 +8492,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -8684,6 +8712,7 @@
     ],
     "light": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "lightproud": [
@@ -8898,6 +8927,7 @@
       "/projects/releases-treasure-map.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -9112,6 +9142,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-news.md",
       "/projects/project-site.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
       "/resource/resource-daily-news-morimens-daily-20260601.md",
       "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
@@ -9472,6 +9503,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -9601,6 +9633,9 @@
       "/wiki-data/wiki-data-world-lore.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md"
     ],
+    "producer": [
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
     "project": [
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/project-status.md",
@@ -9661,6 +9696,7 @@
       "/projects/project-wiki.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -9755,6 +9791,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -10035,6 +10072,7 @@
       "/README.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -10697,6 +10735,7 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -11570,6 +11609,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -11778,6 +11818,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -12026,6 +12067,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -13047,6 +13089,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -13862,6 +13905,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -14071,6 +14115,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -15678,6 +15723,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -18521,6 +18567,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -19221,6 +19268,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -19741,6 +19789,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -20869,6 +20918,7 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/news-output/news-output-all.md",
       "/projects/entry-readme.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -23129,6 +23179,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -23568,6 +23619,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -23832,6 +23884,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -24133,6 +24186,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -24364,6 +24418,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -25789,6 +25844,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -26140,6 +26196,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -26618,6 +26675,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -26767,6 +26825,7 @@
       "/extracted/extracted-readme.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -27179,6 +27238,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -27491,6 +27551,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -31175,6 +31236,7 @@
       "/README.md",
       "/community/community-index.md",
       "/memory/memory-ext-phase-d-plan.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/story/story_index.md"
     ],
     "索机": [
@@ -33593,6 +33655,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -34169,6 +34232,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -35036,6 +35100,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -35239,6 +35304,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -36296,6 +36362,7 @@
       "/community/community-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -36586,6 +36653,7 @@
     "community": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -36733,6 +36801,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -36994,6 +37063,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -37114,6 +37184,7 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -37279,6 +37350,9 @@
     "erica": [
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md"
+    ],
+    "evaluation": [
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "extracted": [
       "/extracted/extracted-readme.md"
@@ -37686,6 +37760,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -37810,6 +37885,9 @@
     ],
     "lessons": [
       "/memory/lessons-learned.md"
+    ],
+    "light": [
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "lines": [
       "/wiki-data/wiki-data-voice-lines.md"
@@ -38251,6 +38329,9 @@
       "/extracted/extracted-lua-tables.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md"
     ],
+    "producer": [
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
     "project": [
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
@@ -38595,6 +38676,7 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",

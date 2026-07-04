@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 30,
-      "scripts_top": 27,
+      "scripts_top": 28,
       "scripts_news": 28,
       "scripts_wiki": 6,
       "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 113
+      "total": 114
     },
     "reachability": {
-      "live": 61,
+      "live": 62,
       "test-only": 0,
       "orphaned": 0
     }
@@ -428,6 +428,16 @@
       "path": "scripts/kb_navigator.py",
       "summary": "kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。",
       "planes": [
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_telemetry.py",
+      "path": "scripts/kb_telemetry.py",
+      "summary": "kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。",
+      "planes": [
+        "cli",
         "mcp"
       ],
       "status": "live"
