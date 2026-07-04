@@ -72,7 +72,17 @@ document 块可入 tool_result）；② rate_limit_event/api_retry 真发射（t
 喂进 gate（default/plan/acceptEdits 只读自动放行）+ 并行分组；真 gate 端到端测试证明只读 MCP 工具
 自动放行、非只读被拒。② **PDF base64 源 live-API 确认**——`tests/integration/live-real-api.mjs`
 加阶段2（生成合法最小 PDF→模型 Read→成功即 API 接受 document 块），随 live-smoke workflow
-手动 dispatch 用 `secrets.ANTHROPIC_API_KEY` 跑。**651 单测全绿**（本地无钥不跑阶段2）。
+手动 dispatch 用 `secrets.ANTHROPIC_API_KEY` 跑。
+
+**v0.4（2026-07-04）：观测臂生命周期真发射 + 契约对齐**。① subagent 任务生命周期
+task_started / task_progress（按子回合预算份额）/ task_updated（completed·failed·cancelled，
+带 500 字符结果预览）/ task_notification（仅后台子代理）真发射——runtime 推入共享观测队列，
+loop 与 query 泵在消息边界排空（拉式生成器无法在 await 中途插播，前台事件在其工具组结束后浮出）；
+② hook 生命周期 hook_started / hook_response 成对真发射（`includeHookEvents` 门控，hook_id 关联，
+hook_progress 无诚实来源保持 TYPED）；③ 契约小项：error 结果臂补官方 `errors: string[]`、
+权限规则 deny/allow 位支持 `*` 与 `mcp__*` glob；④ 对账修正：会话三函数
+（getSessionMessages/renameSession/tagSession）与 canUseTool suggestions/requestId 实为 v0.2
+已落地，COMPAT.md 陈旧行已更正。**680 单测全绿**。
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选

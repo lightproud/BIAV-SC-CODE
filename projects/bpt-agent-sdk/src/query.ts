@@ -107,7 +107,6 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'promptSuggestions',
   'agentProgressSummaries',
   'forwardSubagentText',
-  'includeHookEvents',
   'title',
   'resumeSessionAt',
   'debugFile',
@@ -397,7 +396,22 @@ export function query(args: {
     canUseTool: options.canUseTool,
     debug,
   });
-  const hooks = new DefaultHookRunner({ hooks: options.hooks, debug });
+  // v0.4 observability queue: the subagent runtime (task_* lifecycle) and the
+  // hook runner (hook_started/hook_response, behind includeHookEvents) cannot
+  // yield into the stream, so they push here; the engine loop and this layer's
+  // message pump drain it at message boundaries. Single queue, splice-drained:
+  // each event surfaces exactly once, in production order.
+  const obsQueue: SDKMessage[] = [];
+  const emitObs = (msg: SDKMessage): void => {
+    obsQueue.push(msg);
+  };
+  const drainObservability = (): SDKMessage[] => obsQueue.splice(0, obsQueue.length);
+
+  const hooks = new DefaultHookRunner({
+    hooks: options.hooks,
+    debug,
+    onLifecycleEvent: options.includeHookEvents === true ? emitObs : undefined,
+  });
 
   // Bare-name disallowedTools entries (no `Tool(spec)` specifier) REMOVE the
   // tool definition from the model request entirely (audit v0.1.1 P0): the
@@ -533,6 +547,7 @@ export function query(args: {
     outerSignal: outer.signal,
     sessionId: () => resolvedSessionId,
     debug,
+    emitObservability: emitObs,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -771,6 +786,8 @@ export function query(args: {
       session_id: sessionId,
       is_error: true,
       errorMessage,
+      // Official-surface parallel of errorMessage (reference SDK: string[]).
+      errors: [errorMessage],
       ...resultCommon(),
     });
 
@@ -834,6 +851,11 @@ export function query(args: {
       if (store instanceof MirroringSessionStore) {
         for (const e of store.takePendingEvents()) yield e;
       }
+    };
+
+    /** v0.4: flush buffered task/hook lifecycle events into the stream. */
+    const drainObs = function* (): Generator<SDKMessage> {
+      for (const m of drainObservability()) yield m;
     };
 
     /** Rewrite an engine-turn result to report session-cumulative totals. */
@@ -941,6 +963,9 @@ export function query(args: {
       });
       yield initMessage;
       yield* drainMirror();
+      // SessionStart hook lifecycle events (includeHookEvents) surface right
+      // after init — they fired before the stream had anywhere to go.
+      yield* drainObs();
 
       if (sessionStartBlocked !== undefined) {
         yield blockedResult(sess.sessionId, sessionStartBlocked);
@@ -1096,6 +1121,7 @@ export function query(args: {
           debug,
           requestView,
           drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
+          drainObservability,
         };
 
         // The engine appends assistant + tool_result-user messages to `history`
@@ -1127,6 +1153,7 @@ export function query(args: {
           for await (const msg of runAgentLoop(history, deps, engineConfig)) {
             yield* flushToolResultUsers();
             yield* drainMirror();
+            yield* drainObs();
             if (msg.type === 'assistant') {
               persistAssistant(sess.sessionId, msg.message.content);
               yield msg;
@@ -1142,6 +1169,9 @@ export function query(args: {
           }
           yield* flushToolResultUsers();
           yield* drainMirror();
+          // Trailing lifecycle events (a background subagent that finished as
+          // the turn ended, Stop-hook responses) surface before the next turn.
+          yield* drainObs();
         } catch (err) {
           // Persist (but do not re-yield on error) any trailing tool_result
           // user turn so the transcript stays durable across the failure.
