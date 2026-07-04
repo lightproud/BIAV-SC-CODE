@@ -21,6 +21,7 @@ import type {
   McpResource,
   McpResourceContent,
   McpSSEServerConfig,
+  ToolAnnotations,
 } from '../types.js';
 import { AbortError, NotImplementedError } from '../errors.js';
 import { parseResourcesList, parseResourceContents } from './stdio.js';
@@ -117,8 +118,8 @@ export class HttpMcpConnection {
   /** tools/list with cursor pagination. */
   async listTools(
     signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema }>> {
-    const tools: Array<{ name: string; description?: string; inputSchema: JSONSchema }> = [];
+  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>> {
+    const tools: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
     let cursor: string | undefined;
     for (let page = 0; page < MAX_LIST_PAGES; page++) {
       const result = await this.rpcRequest(
@@ -449,18 +450,38 @@ function extractServerInfo(result: unknown): { name: string; version: string } |
   return undefined;
 }
 
+/** Coerce a raw MCP tool `annotations` object into ToolAnnotations, keeping
+ * only well-typed known fields; undefined when nothing usable is present. */
+function parseToolAnnotations(raw: unknown): ToolAnnotations | undefined {
+  if (!raw || typeof raw !== 'object') return undefined;
+  const a = raw as Record<string, unknown>;
+  const out: ToolAnnotations = {};
+  if (typeof a.title === 'string') out.title = a.title;
+  if (typeof a.readOnlyHint === 'boolean') out.readOnlyHint = a.readOnlyHint;
+  if (typeof a.destructiveHint === 'boolean') out.destructiveHint = a.destructiveHint;
+  if (typeof a.idempotentHint === 'boolean') out.idempotentHint = a.idempotentHint;
+  if (typeof a.openWorldHint === 'boolean') out.openWorldHint = a.openWorldHint;
+  return Object.keys(out).length > 0 ? out : undefined;
+}
+
 function parseToolsListResult(result: unknown): {
-  list: Array<{ name: string; description?: string; inputSchema: JSONSchema }>;
+  list: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>;
   nextCursor?: string;
 } {
-  const list: Array<{ name: string; description?: string; inputSchema: JSONSchema }> = [];
+  const list: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
   if (!result || typeof result !== 'object') return { list };
   const obj = result as { tools?: unknown; nextCursor?: unknown };
   if (Array.isArray(obj.tools)) {
     for (const raw of obj.tools) {
       if (!raw || typeof raw !== 'object') continue;
-      const t = raw as { name?: unknown; description?: unknown; inputSchema?: unknown };
+      const t = raw as {
+        name?: unknown;
+        description?: unknown;
+        inputSchema?: unknown;
+        annotations?: unknown;
+      };
       if (typeof t.name !== 'string' || t.name.length === 0) continue;
+      const annotations = parseToolAnnotations(t.annotations);
       list.push({
         name: t.name,
         description: typeof t.description === 'string' ? t.description : undefined,
@@ -468,6 +489,7 @@ function parseToolsListResult(result: unknown): {
           t.inputSchema && typeof t.inputSchema === 'object' && !Array.isArray(t.inputSchema)
             ? (t.inputSchema as JSONSchema)
             : { type: 'object' },
+        ...(annotations !== undefined ? { annotations } : {}),
       });
     }
   }

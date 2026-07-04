@@ -66,9 +66,13 @@ listSessions option（dir 别名 + limit）+ Usage 字段（server_tool_use/serv
 **桶1（守密人「都先全面实现」）已收口**：① Read PDF→base64 document 块（API 文档确认
 document 块可入 tool_result）；② rate_limit_event/api_retry 真发射（transport `onRetry`
 桥接进流）；③ 连续≥2 只读内建工具**并行执行**（Promise.all，结果保序，stop/defer 覆盖同组后续为
-「Not executed」），只读内建工具在 default 模式经 gate 已自动放行。**648 测试全绿。**
-遗留后续（更小/需真 API）：MCP 工具 `readOnlyHint` 注解链（喂进 gate 自动放行 + 并行分组，
-McpToolEntry 暂不携带 annotations）；PDF base64 源在 tool_result 的 live-API 端到端确认。
+「Not executed」）。**遗留两项亦已清（守密人「清遗留」）**：
+① **MCP `readOnlyHint` 注解链**——`listTools` 经 sdk/stdio/http 把 annotations 捕获到
+`McpToolEntry.annotations`，loop `isReadOnlyTool` 统一 builtin.readOnly + MCP readOnlyHint，
+喂进 gate（default/plan/acceptEdits 只读自动放行）+ 并行分组；真 gate 端到端测试证明只读 MCP 工具
+自动放行、非只读被拒。② **PDF base64 源 live-API 确认**——`tests/integration/live-real-api.mjs`
+加阶段2（生成合法最小 PDF→模型 Read→成功即 API 接受 document 块），随 live-smoke workflow
+手动 dispatch 用 `secrets.ANTHROPIC_API_KEY` 跑。**651 单测全绿**（本地无钥不跑阶段2）。
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选

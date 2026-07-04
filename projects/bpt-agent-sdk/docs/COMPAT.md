@@ -76,14 +76,16 @@ SDK implements the agent loop directly against the public Messages API:
 - No filesystem settings/CLAUDE.md/skills/plugins loading in v0.1
   (`settingSources` ACCEPTED, loads nothing).
 - **Parallel read-only tool execution** (bucket-1): within one assistant turn,
-  a maximal run of ≥2 consecutive **read-only builtin** tools (Read/Glob/Grep)
-  executes concurrently (`Promise.all`); non-read-only and lone tools stay
-  sequential. Results stay in tool_use order; a stop/defer from any tool
-  overrides the rest of its concurrent group with a "Not executed" marker, so
-  the observable contract matches sequential execution. Read-only builtins in
-  `default` mode already auto-approve via the gate; wiring an MCP tool's
-  `readOnlyHint` annotation into that path (auto-approve + parallel grouping)
-  is a follow-up (McpToolEntry does not yet carry annotations).
+  a maximal run of ≥2 consecutive **read-only** tools executes concurrently
+  (`Promise.all`); non-read-only and lone tools stay sequential. Results stay in
+  tool_use order; a stop/defer from any tool overrides the rest of its
+  concurrent group with a "Not executed" marker, so the observable contract
+  matches sequential execution. "Read-only" covers builtins (Read/Glob/Grep via
+  their `readOnly` flag) **and MCP tools whose server annotation sets
+  `readOnlyHint`** — captured through `listTools` onto `McpToolEntry.annotations`
+  (sdk/stdio/http). Read-only tools in `default`/`plan`/`acceptEdits` mode
+  auto-approve via the gate (no canUseTool prompt), so an MCP `readOnlyHint` tool
+  now both auto-approves and joins parallel groups.
 
 ## Options fields
 

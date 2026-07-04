@@ -246,6 +246,28 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
     await reg.closeAll();
   });
 
+  it('carries a tool readOnlyHint annotation through to McpToolEntry (remnant #1)', async () => {
+    const ro = tool(
+      'peek',
+      'a read-only tool',
+      { q: z.string() },
+      async () => ({ content: [] }),
+      { readOnlyHint: true, title: 'Peek' },
+    );
+    const rw = tool('poke', 'a writing tool', { q: z.string() }, async () => ({ content: [] }));
+    const cfg = createSdkMcpServer({ name: 'srv', tools: [ro, rw] });
+    const reg = new DefaultMcpRegistry({ servers: { srv: cfg }, debug: () => {} });
+    await reg.connectAll();
+
+    const tools = reg.allTools();
+    const peek = tools.find((t) => t.toolName === 'peek');
+    const poke = tools.find((t) => t.toolName === 'poke');
+    expect(peek!.annotations?.readOnlyHint).toBe(true);
+    expect(peek!.annotations?.title).toBe('Peek');
+    expect(poke!.annotations).toBeUndefined();
+    await reg.closeAll();
+  });
+
   it('call() routes to the handler and returns its result', async () => {
     const reg = makeRegistry();
     await reg.connectAll();

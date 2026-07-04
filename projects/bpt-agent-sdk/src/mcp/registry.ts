@@ -22,6 +22,7 @@ import type {
   McpServerStatus,
   McpSetServersResult,
   McpStdioServerConfig,
+  ToolAnnotations,
 } from '../types.js';
 import { AbortError, ConfigurationError, isAbortError } from '../errors.js';
 import { StdioMcpConnection } from './stdio.js';
@@ -36,7 +37,14 @@ type McpConnectionLike = {
   serverInfo(): { name: string; version: string } | undefined;
   listTools(
     signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema }>>;
+  ): Promise<
+    Array<{
+      name: string;
+      description?: string;
+      inputSchema: JSONSchema;
+      annotations?: ToolAnnotations;
+    }>
+  >;
   callTool(
     name: string,
     args: Record<string, unknown>,
@@ -297,6 +305,7 @@ export class DefaultMcpRegistry implements McpRegistry {
         toolName: t.name,
         description: t.description,
         inputSchema: t.inputSchema,
+        ...(t.annotations !== undefined ? { annotations: t.annotations } : {}),
       }));
       entry.baseStatus = 'connected';
       this.debug(`[mcp] connected '${entry.name}' (${entry.tools.length} tools)`);

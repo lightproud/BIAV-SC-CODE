@@ -120,11 +120,19 @@ export class SdkMcpConnection {
 
   async listTools(
     _signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema }>> {
+  ): Promise<
+    Array<{
+      name: string;
+      description?: string;
+      inputSchema: JSONSchema;
+      annotations?: ToolAnnotations;
+    }>
+  > {
     return [...this.instance.tools.values()].map((def) => ({
       name: def.name,
       description: def.description,
       inputSchema: def.inputJsonSchema,
+      ...(def.annotations !== undefined ? { annotations: def.annotations } : {}),
     }));
   }
 

@@ -52,6 +52,7 @@ import {
 } from './helpers/mock-transport.js';
 import { HANG_STREAM, encodeSSEFrame, makeSSEFetch } from './helpers/sse-fetch.js';
 import type { SSEFetchStub } from './helpers/sse-fetch.js';
+import { DefaultPermissionGate } from '../src/permissions/gate.js';
 
 let sessionDir: string;
 let cwd: string;
@@ -1240,6 +1241,84 @@ describe('runAgentLoop - v0.2 confirmed-finding regressions (engine)', () => {
     // trips the trigger, so that log never appears.
     expect(debugLines.some((l) => l.includes('nothing safe to fold'))).toBe(true);
     expect(transport.requests).toHaveLength(2);
+  });
+
+  // ----- remnant #1: MCP readOnlyHint drives the gate's auto-approve -----
+
+  function mcpWith(tool: McpToolEntry, calls: string[]): McpRegistry {
+    return {
+      async connectAll(): Promise<void> {},
+      statuses() {
+        return [];
+      },
+      allTools(): McpToolEntry[] {
+        return [tool];
+      },
+      has(q: string): boolean {
+        return q === tool.qualifiedName;
+      },
+      async call(q: string) {
+        calls.push(q);
+        return { content: [{ type: 'text' as const, text: `ran ${tool.toolName}` }], isError: false };
+      },
+      async reconnect(): Promise<void> {},
+      setEnabled(): void {},
+      async setServers() {
+        return { servers: [] };
+      },
+      async closeAll(): Promise<void> {},
+    };
+  }
+
+  async function runOneMcpCall(
+    tool: McpToolEntry,
+  ): Promise<{ calls: string[]; results: ToolResultBlockParam[] }> {
+    const calls: string[] = [];
+    const transport = new MockTransport([
+      toolUseReplyEvents(tool.qualifiedName, {}),
+      textReplyEvents('done'),
+    ]);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const deps: EngineDeps = {
+      transport,
+      builtinTools: new Map(),
+      mcp: mcpWith(tool, calls),
+      // Real gate, default mode, NO canUseTool: only readOnly tools auto-approve.
+      permissions: new DefaultPermissionGate({ debug: () => {} }),
+      hooks: noHooks(),
+      toolContext: engineToolContext(),
+      debug: () => {},
+    };
+    for await (const _m of runAgentLoop(history, deps, engineConfig())) {
+      /* drain */
+    }
+    const userTurn = history.find((m) => m.role === 'user' && Array.isArray(m.content));
+    return { calls, results: (userTurn?.content ?? []) as ToolResultBlockParam[] };
+  }
+
+  it('auto-approves a read-only MCP tool (readOnlyHint) in default mode without canUseTool', async () => {
+    const { calls, results } = await runOneMcpCall({
+      qualifiedName: 'mcp__x__peek',
+      serverName: 'x',
+      toolName: 'peek',
+      inputSchema: { type: 'object' },
+      annotations: { readOnlyHint: true },
+    });
+    expect(calls).toEqual(['mcp__x__peek']); // executed
+    expect(results[0]!.is_error).not.toBe(true);
+    // Result content is the MCP tool's block array; its text carries the output.
+    expect(JSON.stringify(results[0]!.content)).toContain('ran peek');
+  });
+
+  it('does NOT auto-approve a non-read-only MCP tool in default mode without canUseTool', async () => {
+    const { calls, results } = await runOneMcpCall({
+      qualifiedName: 'mcp__x__poke',
+      serverName: 'x',
+      toolName: 'poke',
+      inputSchema: { type: 'object' },
+    });
+    expect(calls).toEqual([]); // never executed
+    expect(results[0]!.is_error).toBe(true);
   });
 });
 
