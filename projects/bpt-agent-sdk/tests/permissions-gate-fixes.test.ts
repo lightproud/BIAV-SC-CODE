@@ -13,6 +13,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import {
   buildPermissionSuggestions,
+  decomposeBashCommand,
   matchToolName,
   parseRule,
   requiresUserInteraction,
@@ -102,6 +103,69 @@ describe('#22 MCP wildcard matches the server segment exactly', () => {
   it('non-mcp patterns are unaffected', () => {
     expect(matchToolName('Bash', 'Bash')).toBe(true);
     expect(matchToolName('mcp__', 'mcp__a__tool')).toBe(false); // empty server
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Bash command decomposition — a prefix allow rule cannot be smuggled past via
+// `allowed && dangerous`, injection, or a chained denied sub-command.
+// ---------------------------------------------------------------------------
+
+describe('Bash command decomposition in the permission gate', () => {
+  it('decomposeBashCommand splits on chaining operators and flags injection', () => {
+    expect(decomposeBashCommand('git status && rm -rf /').segments).toEqual([
+      'git status',
+      'rm -rf /',
+    ]);
+    expect(decomposeBashCommand('a | b ; c || d & e').segments).toEqual([
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+    ]);
+    expect(decomposeBashCommand('git log $(rm -rf /)').hasInjection).toBe(true);
+    expect(decomposeBashCommand('echo `whoami`').hasInjection).toBe(true);
+    expect(decomposeBashCommand('git status').hasInjection).toBe(false);
+    expect(decomposeBashCommand('git status').segments).toEqual(['git status']);
+  });
+
+  it('an allow rule still allows a chain where EVERY sub-command matches', async () => {
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'] });
+    const res = asAllow(
+      await gate.check('Bash', { command: 'git status && git log' }, checkOpts()),
+    );
+    expect(res.decision).toBe('allow');
+  });
+
+  it('an allow rule does NOT auto-allow a chained dangerous sub-command', async () => {
+    // `Bash(git:*)` would match the whole string "git status && rm -rf /"
+    // (starts with "git"); decomposition makes it fall through to a deny
+    // because there is no canUseTool handler (default policy).
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'] });
+    const res = await gate.check('Bash', { command: 'git status && rm -rf /' }, checkOpts());
+    expect(res.decision).toBe('deny');
+  });
+
+  it('an allow rule does NOT auto-allow a command carrying injection', async () => {
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'] });
+    const res = await gate.check('Bash', { command: 'git log $(rm -rf /)' }, checkOpts());
+    expect(res.decision).toBe('deny');
+  });
+
+  it('a deny rule fires on a denied sub-command chained after an innocuous one', async () => {
+    const gate = makeGate({ mode: 'bypassPermissions', disallowedTools: ['Bash(rm:*)'] });
+    // Even bypass mode honors deny rules (step 2 precedes the mode step).
+    const res = asDeny(
+      await gate.check('Bash', { command: 'ls && rm -rf /tmp/x' }, checkOpts()),
+    );
+    expect(res.decision).toBe('deny');
+  });
+
+  it('a lone allowed command is unaffected (no regression)', async () => {
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'] });
+    const res = asAllow(await gate.check('Bash', { command: 'git status' }, checkOpts()));
+    expect(res.decision).toBe('allow');
   });
 });
 

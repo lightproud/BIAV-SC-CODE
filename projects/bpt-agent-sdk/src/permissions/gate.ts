@@ -172,7 +172,9 @@ export class DefaultPermissionGate implements PermissionGate {
     // hook-ask and session ask rules still hard-route regardless of canUseTool.
     let routeToPrompt =
       hookAsk ||
-      this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput)) ||
+      // ask routes toward prompting, so a Bash chain routes if ANY sub-command
+      // matches the ask specifier ('any').
+      this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput, 'any')) ||
       (requiresUserInteraction(toolName) && this.canUseTool !== undefined);
 
     if (hookAllow && !routeToPrompt) {
@@ -213,7 +215,9 @@ export class DefaultPermissionGate implements PermissionGate {
     // ----- STEP 5: allow rules (AFTER mode; only when no prompt route) --------
     if (
       !routeToPrompt &&
-      this.anyRuleMatches(this.baseAllowRules, this.sessionAllowRules, toolName, input)
+      // allow requires EVERY Bash sub-command to match and no injection ('all'),
+      // so a prefix allow can't be smuggled past via `allowed && dangerous`.
+      this.anyRuleMatches(this.baseAllowRules, this.sessionAllowRules, toolName, input, 'all')
     ) {
       return { decision: 'allow', updatedInput: input };
     }
@@ -366,7 +370,9 @@ export class DefaultPermissionGate implements PermissionGate {
     toolUseID: string,
     input: Record<string, unknown>,
   ): PermissionCheckResult | undefined {
-    if (this.anyRuleMatches(this.baseDenyRules, this.sessionDenyRules, toolName, input)) {
+    // deny fires if ANY Bash sub-command matches a deny specifier ('any'), so a
+    // denied command chained after an innocuous one is still denied.
+    if (this.anyRuleMatches(this.baseDenyRules, this.sessionDenyRules, toolName, input, 'any')) {
       return this.deny(toolName, toolUseID, input, 'disallowedTools rule');
     }
     return undefined;
@@ -377,10 +383,11 @@ export class DefaultPermissionGate implements PermissionGate {
     session: ParsedRule[],
     toolName: string,
     input: Record<string, unknown>,
+    segmentMode?: 'all' | 'any',
   ): boolean {
     return (
-      base.some((r) => ruleMatches(r, toolName, input)) ||
-      session.some((r) => ruleMatches(r, toolName, input))
+      base.some((r) => ruleMatches(r, toolName, input, segmentMode)) ||
+      session.some((r) => ruleMatches(r, toolName, input, segmentMode))
     );
   }
 
