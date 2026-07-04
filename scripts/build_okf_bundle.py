@@ -34,6 +34,7 @@ BUNDLE = REPO / "okf"
 sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
 import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
 import build_kb_index  # noqa: E402  运行时导航索引生成器（消费本 bundle，跑在末尾）
+import okf_pointer_layers as opl  # noqa: E402  全仓知识组织：新增指针概念层（放指针不放本体）
 
 CHARACTERS_SRC = REPO / "projects/wiki/data/processed/characters.json"
 SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
@@ -322,13 +323,69 @@ def build_memory() -> int:
         write_concept(out_dir / fname, fields, "\n".join(body))
         count += 1
 
+    # --- 扩展：覆盖 memory/ 全层（顶层非白名单 md + 机器权威 json + active/archive/research/strategy）---
+    whitelist = {fname for fname, _t, _d in MEMORY_DOCS}
+    extra: list[tuple[str, str, str, str, list[str]]] = []  # (concept_id, title, resource, desc, tags)
+    mem = REPO / "memory"
+
+    def _md_entry(f: Path, cid: str, extra_tags: list[str]):
+        title, blurb = opl.md_title_blurb(f)
+        extra.append((cid, title or f.stem, opl._rel(f),
+                      blurb or title or f.stem, ["memory", "data_layer:curated", *extra_tags]))
+
+    for f in sorted(mem.glob("*.md")):  # 顶层非白名单
+        if f.name in whitelist:
+            continue
+        _md_entry(f, f"memory-ext-{opl.slug(f.stem)}", [])
+    for f in sorted(mem.glob("*.json")):  # 机器权威数据（capability-registry/annotations 等）
+        meta = opl.json_meta(f)
+        desc = meta.get("description") or meta.get("note") or f"{f.stem} 机器权威数据"
+        extra.append((f"memory-ext-{opl.slug(f.stem)}", f.name, opl._rel(f), desc,
+                      ["memory", "data_layer:curated", "machine-authority"]))
+    for f in sorted((mem / "active").glob("*.md")):  # active hub 入口卡
+        _md_entry(f, f"memory-ext-active-{opl.slug(f.stem)}", ["active-hub"])
+    for f in sorted((mem / "archive").rglob("*.md")):  # 归档层（冻结快照）
+        tags = ["archive", "frozen-snapshot"]
+        low = f.stem.lower()
+        if "bpt" in low or "bpt" in str(f.parent).lower():
+            tags.append("bpt")
+        if "blackpool" in low or "black-pool" in low or "blackpool" in str(f).lower():
+            tags.append("blackpool-design")
+        _md_entry(f, f"memory-archive-{opl.slug(str(f.relative_to(mem / 'archive').with_suffix('')))}", tags)
+    for f in sorted((mem / "research").glob("*.md")):
+        _md_entry(f, f"memory-research-{opl.slug(f.stem)}", ["research"])
+    for f in sorted((mem / "strategy").glob("*.md")):
+        _md_entry(f, f"memory-strategy-{opl.slug(f.stem)}", ["strategy"])
+
+    seen_ids: set[str] = set()
+    for cid, title, res, desc, tags in extra:
+        if cid in seen_ids:
+            continue
+        seen_ids.add(cid)
+        typ = "dataset" if res.endswith(".json") else "knowledge-pointer"
+        write_concept(out_dir / f"{cid}.md", {
+            "type": typ, "title": title, "description": desc[:240],
+            "resource": res, "tags": tags, "timestamp": TODAY,
+        }, "\n".join([
+            "# 记忆层指针", "",
+            f"> 放指针不放本体：正文权威在 `{res.lstrip('/')}`，本 concept 不复刻其内容。", "",
+            f"- 本体路径：`{res.lstrip('/')}`", f"- 摘要：{desc[:240]}",
+        ]))
+        count += 1
+
     idx = [f"# 银芯记忆层指针 ({count})", "",
-           "每张卡是一份**指针** concept，正文权威在 `memory/*.md`，此处不复刻。", "",
-           "## 档案"]
-    idx.append("")
+           "每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。", "",
+           "## 核心档案", ""]
     for fname, _typ, desc in MEMORY_DOCS:
         if (REPO / "memory" / fname).exists():
             idx.append(f"* [{fname}](/memory/{fname}) - {desc}")
+    idx += ["", "## 全层扩展（active / archive / research / strategy / 机器权威）", ""]
+    idx_seen: set[str] = set()
+    for cid, title, _res, desc, _tags in extra:
+        if cid in idx_seen:
+            continue
+        idx_seen.add(cid)
+        idx.append(f"* [{title}](/memory/{cid}.md) - {desc[:70]}".rstrip(" -"))
     write_plain(out_dir / "index.md", "\n".join(idx))
     return count
 
@@ -360,11 +417,45 @@ def build_story() -> int:
         write_concept(out_dir / (_story_stem(fname) + ".md"), fields, "\n".join(body))
         count += 1
 
+    # --- 扩展：覆盖 story/ 层剩余文件（检索索引 / lore_by_unit / stages_by_unit + README/RESEARCH_NOTES/TODO）---
+    covered = {fname for fname, _t, _d in STORY_POINTERS}
+    extra_story: list[tuple[str, str]] = []  # (concept_id, title)
+    for f in sorted(STORY_DIR.glob("*.json")) + sorted(STORY_DIR.glob("*.md")):
+        if f.name in covered:
+            continue
+        stem_id = _story_stem(f.name)
+        if f.suffix == ".md":  # 前缀防与结构层撞名
+            stem_id = "story_" + {"README": "layer_readme", "TODO": "research_todo",
+                                  "RESEARCH_NOTES": "research_notes"}.get(f.stem, opl.slug(f.stem))
+        if f.suffix == ".json":
+            meta = opl.json_meta(f)
+            desc = meta.get("purpose") or meta.get("method") or opl._first_total(meta) or f"{f.stem} 剧情结构层"
+            typ, dl = "dataset", "data_layer:full_archive"
+            tags = ["story", typ, dl]
+        else:
+            _t, desc = opl.md_title_blurb(f)
+            typ = "documentation" if f.stem == "README" else "research"
+            tags = ["story", typ, "data_layer:curated"]
+            desc = desc or f"{f.stem} 剧情层文档"
+        rel = f.relative_to(REPO)
+        write_concept(out_dir / f"{stem_id}.md", {
+            "type": typ, "title": f.name, "description": desc[:240],
+            "resource": f"/{rel}", "tags": tags, "timestamp": TODAY,
+        }, "\n".join([
+            "# 剧情结构层指针", "",
+            f"> 放指针不放本体：本体在 `{rel}`，本 concept 仅定位。", "",
+            f"- 本体路径：`{rel}`", f"- 摘要：{desc[:240]}",
+        ]))
+        extra_story.append((stem_id, f.name))
+        count += 1
+
     idx = [f"# 剧情/世界观层指针 ({count})", "",
            f"源目录：`{STORY_DIR.relative_to(REPO)}`。指针 concept，本体原地。", "", "## 档案", ""]
     for fname, _typ, desc in STORY_POINTERS:
         if (STORY_DIR / fname).exists():
             idx.append(f"* [{fname}](/story/{_story_stem(fname)}.md) - {desc}")
+    for stem_id, title in extra_story:
+        idx.append(f"* [{title}](/story/{stem_id}.md)")
     write_plain(out_dir / "index.md", "\n".join(idx))
     return count
 
@@ -382,10 +473,26 @@ def build_root(counts: dict) -> None:
         "",
         "## 章节",
         "",
-        f"* [角色 characters](/characters/index.md) - {counts['characters']} 个唤醒体 concept（一概念一文件）",
-        f"* [数据源 sources](/sources/index.md) - {counts['sources']} 个社区平台**指针** concept",
-        f"* [记忆 memory](/memory/index.md) - {counts['memory']} 份记忆层**指针** concept",
-        f"* [剧情 story](/story/index.md) - {counts['story']} 份剧情结构层**指针** concept",
+    ]
+    # 章节动态列出所有层（原生 4 层 + 全仓知识组织新增层，2026-07-04）
+    _LAYER_LABEL = {
+        "characters": "角色 characters · 唤醒体 concept（一概念一文件）",
+        "sources": "数据源 sources · 社区平台采集健康指针",
+        "memory": "记忆 memory · 记忆层全层指针",
+        "story": "剧情 story · 剧情结构层指针",
+        "assets": "事实圣经 assets · 角色卡/采访/叙事/设计决策指针",
+        "wiki-data": "wiki 数据 wiki-data · 解包自举结构化数据集指针",
+        "community": "社区档案 community · 全量档案分析镜头（full_archive）",
+        "news-output": "输出展示 news-output · 抽样展示层（output）",
+        "unpacked": "解包 unpacked · 客户端一手 text 指针（full_archive）",
+        "extracted": "解包上游 extracted · processed 权威上游（full_archive）",
+        "resource": "产物 resource · 银芯正式报告/分析指针",
+        "projects": "子项目 projects · CONTEXT/藏宝图/工程文档指针",
+    }
+    for layer, label in _LAYER_LABEL.items():
+        if layer in counts:
+            idx.append(f"* [{label.split(' · ')[0]}](/{layer}/index.md) - {counts[layer]} concept · {label.split(' · ',1)[1] if ' · ' in label else ''}")
+    idx += [
         "",
         "## 运行时导航（LLM 可动态导航）",
         "",
@@ -402,12 +509,12 @@ def build_root(counts: dict) -> None:
 
     total = sum(counts.values())
     log_path = BUNDLE / "log.md"
+    breakdown = " / ".join(f"{k} {v}" for k, v in counts.items())
     entry_today = (
         f"## {TODAY}\n\n"
         f"- **Creation** 由 `scripts/build_okf_bundle.py` 生成银芯 OKF v0.1 bundle，"
-        f"共 {total} 份 concept（角色 {counts['characters']} / 数据源 {counts['sources']} / "
-        f"记忆 {counts['memory']} / 剧情 {counts['story']}）。"
-        f"角色层一概念一文件；其余层放指针不放本体。\n"
+        f"共 {total} 份 concept（{breakdown}）。"
+        f"角色层一概念一文件；其余层放指针不放本体（全仓知识组织 2026-07-04）。\n"
     )
     # log.md: newest first; preserve prior entries if re-run on a later date
     prior = ""
@@ -573,6 +680,25 @@ def build_graph() -> dict:
         for m in members[1:]:
             edges.append({"source": rep, "target": m, "rel": tag})
 
+    # 模式化跨层关系边（全仓知识组织 2026-07-04）：让新增指针层可被 kb_neighbors 顺图导航，
+    # 不沦为孤立节点。确定性 join，两端存在才连；相同 (src,tgt) 去重。
+    def _link(s: str, t: str, rel: str) -> None:
+        if s in id_set and t in id_set and s != t and (s, t) not in seen:
+            seen.add((s, t))
+            edges.append({"source": s, "target": t, "rel": rel})
+
+    for n in nodes:
+        nid = n["id"]
+        # platform join: sources ↔ community（同平台异镜头）/ sources ↔ news-output（抽样自）
+        if nid.startswith("/sources/") and nid.endswith(".md"):
+            p = opl.slug(nid[len("/sources/"):-3])
+            _link(f"/community/community-{p}.md", nid, "same_platform_lens")
+            _link(f"/news-output/news-output-{p}.md", nid, "samples_from")
+        # community 平台概念 → 分析索引（aggregated_in）
+        if (nid.startswith("/community/community-") and
+                not nid.endswith(("community-index.md", "community-timeline.md"))):
+            _link(nid, "/community/community-index.md", "aggregated_in")
+
     return {
         "generated": TODAY,
         "stats": {"nodes": len(nodes), "edges": len(edges)},
@@ -708,6 +834,9 @@ def main() -> None:
         "memory": build_memory(),
         "story": build_story(),
     }
+    # 全仓知识组织（2026-07-04）：在 4 个原生层之后追加覆盖全仓知识域的指针层。
+    new_counts, discipline_flags = opl.build_all()
+    counts.update(new_counts)
     build_root(counts)
     graph = build_graph()
     build_visualizer(graph)
@@ -723,6 +852,10 @@ def main() -> None:
     print(f"  visualizer: okf/visualizer.html (self-contained)")
     print(f"  kb_index: okf/kb_index.json ({kb['stats']['concepts']} concepts / "
           f"{kb['stats']['terms']} terms — 运行时导航底座)")
+    if discipline_flags:
+        print(f"  discipline flags ({len(discipline_flags)}):")
+        for fl in discipline_flags:
+            print(f"    ! {fl}")
     if args.tarball:
         out = export_tarball(Path(args.tarball))
         size = out.stat().st_size

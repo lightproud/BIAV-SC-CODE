@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 30,
-      "scripts_top": 25,
+      "scripts_top": 26,
       "scripts_news": 28,
       "scripts_wiki": 6,
       "mcp_tools": 8,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 110
+      "total": 111
     },
     "reachability": {
-      "live": 59,
+      "live": 60,
       "test-only": 0,
       "orphaned": 0
     }
@@ -460,6 +460,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "okf_pointer_layers.py",
+      "path": "scripts/okf_pointer_layers.py",
+      "summary": "okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },
