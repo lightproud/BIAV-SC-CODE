@@ -166,7 +166,8 @@ def test_build_story_writes_pointers(bundle):
         if p.name == "index.md":
             continue
         fm = bok._read_frontmatter(p.read_text(encoding="utf-8"))
-        assert fm["type"] in ("dataset", "research")
+        # story 层扩展（2026-07-04 全仓知识组织）：结构层 json→dataset、研究/TODO→research、README→documentation
+        assert fm["type"] in ("dataset", "research", "documentation")
 
 
 def test_build_root_writes_index_log_readme(bundle):

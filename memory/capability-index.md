@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**110**
-- 脚本可达性：活 59 / 仅测试 0 / 孤儿 0
+- 功能总数：**111**
+- 脚本可达性：活 60 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 30 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 25 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 26 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 8 |
@@ -97,7 +97,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（25）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（26）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -131,6 +131,8 @@
   `scripts/migrate_flat_archives_to_layout.py`
 - **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
   `scripts/migrate_unpacked_to_git.py`
+- **`okf_pointer_layers.py`** _[活:import]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
+  `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
   `scripts/parse_awaker_config.py`
 - **`parse_cg_gallery.py`** _[活:cli]_ — [CLI 手动] 解析 CG 画廊清单为分章 JSON。  

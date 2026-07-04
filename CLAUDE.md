@@ -286,10 +286,18 @@ brain-in-a-vat/
   「整层公开」（信息定位）与「本 bundle 主要面向**内部消费**」（产物用途取舍）是正交两维：
   本 bundle 主供艾瑞卡人格 / 银芯→黑池单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图，
   **非以对外跨组织互操作为目标**——OKF 官方「跨组织互操作」主卖点对银芯打折。
-- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色）；(2) **放指针不放本体**
-  （`okf/sources/` / `okf/memory/` / `okf/story/` 仅持 `resource` 指针，本体原地不动，呼应
-  RELEASES.md「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`okf/sources/`
-  指针用 `tags: data_layer:*` 标层，防 lesson #30）。
+- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**
+  （除 characters 外所有层仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md「藏宝图」与
+  「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（指针用 `tags: data_layer:*` 标层，防 lesson #30）。
+- **全仓知识组织（12 层 / ~293 概念，守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
+  bundle 从 4 层扩到覆盖全仓知识域——原生 `characters`/`sources`/`memory`/`story`（后二已扩至全层）
+  + 新增 `assets`(事实圣经)/`wiki-data`(解包结构化数据集)/`community`(**归档社区全量档案分析镜头**，
+  full_archive)/`news-output`(输出展示层，output)/`unpacked`(解包 text，full_archive)/`extracted`
+  (processed 上游一手解包，full_archive)/`resource`(正式产物)/`projects`(子项目 CONTEXT + RELEASES 藏宝图 + 工程文档)。
+  新层由 import-only 库 `scripts/okf_pointer_layers.py` 确定性生成（声明式 per-layer builder，
+  community/news-output 归档路径**共用 `archive_layout` 单一真相源**防漂移）；跨层关系边（community↔sources
+  同平台、news-output↔sources 抽样自、community→分析索引聚合）令新层可被 `kb_neighbors` 顺图导航。
+  纪律守护 `tests/test_okf_pointer_layers.py`（覆盖 / 放指针小体积 / data_layer / 指针不落空 / 无黑池）。
 - **消费（静态）**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
   其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
   产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
