@@ -75,6 +75,15 @@ SDK implements the agent loop directly against the public Messages API:
 - `total_cost_usd` is an **estimate** from a static price table.
 - No filesystem settings/CLAUDE.md/skills/plugins loading in v0.1
   (`settingSources` ACCEPTED, loads nothing).
+- **Parallel read-only tool execution** (bucket-1): within one assistant turn,
+  a maximal run of ≥2 consecutive **read-only builtin** tools (Read/Glob/Grep)
+  executes concurrently (`Promise.all`); non-read-only and lone tools stay
+  sequential. Results stay in tool_use order; a stop/defer from any tool
+  overrides the rest of its concurrent group with a "Not executed" marker, so
+  the observable contract matches sequential execution. Read-only builtins in
+  `default` mode already auto-approve via the gate; wiring an MCP tool's
+  `readOnlyHint` annotation into that path (auto-approve + parallel grouping)
+  is a follow-up (McpToolEntry does not yet carry annotations).
 
 ## Options fields
 

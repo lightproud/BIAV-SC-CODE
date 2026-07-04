@@ -1046,6 +1046,56 @@ describe('runAgentLoop', () => {
     expect(toolResults[1]!.is_error).toBe(true);
   });
 
+  // ----- bucket-1: consecutive read-only tools run concurrently -----
+
+  it('runs consecutive read-only builtin tools concurrently, results in order', async () => {
+    const twoReads: RawMessageStreamEvent[] = [
+      messageStart(),
+      { type: 'content_block_start', index: 0, content_block: { type: 'tool_use', id: 'toolu_a', name: 'Read', input: {} } },
+      { type: 'content_block_delta', index: 0, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/a"}' } },
+      { type: 'content_block_stop', index: 0 },
+      { type: 'content_block_start', index: 1, content_block: { type: 'tool_use', id: 'toolu_b', name: 'Read', input: {} } },
+      { type: 'content_block_delta', index: 1, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/b"}' } },
+      { type: 'content_block_stop', index: 1 },
+      { type: 'message_delta', delta: { stop_reason: 'tool_use', stop_sequence: null }, usage: { output_tokens: 5 } },
+      { type: 'message_stop' },
+    ];
+    const transport = new MockTransport([twoReads, textReplyEvents('done')]);
+
+    // A read-only probe that records start/end around an await point. Under
+    // concurrent execution both tools START before either ENDS; sequential
+    // execution would interleave start/end/start/end.
+    const order: string[] = [];
+    const probe: BuiltinTool = {
+      name: 'Read',
+      description: 'concurrency probe',
+      inputSchema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      readOnly: true,
+      async execute(input) {
+        const p = (input as { file_path: string }).file_path;
+        order.push(`start:${p}`);
+        await new Promise((r) => setTimeout(r, 10));
+        order.push(`end:${p}`);
+        return { content: `read ${p}` };
+      },
+    };
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([['Read', probe]]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
+
+    // Both tool_results present and in tool_use order (API pairs by id).
+    const userTurn = history.find((m) => m.role === 'user' && Array.isArray(m.content));
+    const toolResults = userTurn!.content as ToolResultBlockParam[];
+    expect(toolResults.map((r) => r.tool_use_id)).toEqual(['toolu_a', 'toolu_b']);
+  });
+
   // ----- finding #5: fallback retry folds the failed attempt's usage -----
 
   it('folds the failed attempt usage into totals before a fallback retry (#5)', async () => {
