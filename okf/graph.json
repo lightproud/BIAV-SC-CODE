@@ -2,7 +2,7 @@
   "generated": "2026-07-04",
   "stats": {
     "nodes": 105,
-    "edges": 104
+    "edges": 40
   },
   "nodes": [
     {
@@ -33,7 +33,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:田中理惠"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/125346"
     },
     {
       "id": "/characters/130226.md",
@@ -43,7 +44,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/130226"
     },
     {
       "id": "/characters/130375.md",
@@ -73,7 +75,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:松元菜菜海"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/130901"
     },
     {
       "id": "/characters/15560.md",
@@ -83,7 +86,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:橘由纪"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15560"
     },
     {
       "id": "/characters/15561.md",
@@ -104,7 +108,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:青池优花"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15562"
     },
     {
       "id": "/characters/15563.md",
@@ -114,7 +119,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:宫园美海"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15563"
     },
     {
       "id": "/characters/15564.md",
@@ -124,7 +130,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:木下章嗣"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15564"
     },
     {
       "id": "/characters/15565.md",
@@ -134,7 +141,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:国実久留子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15565"
     },
     {
       "id": "/characters/15566.md",
@@ -144,7 +152,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:藤崎桃子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15566"
     },
     {
       "id": "/characters/15567.md",
@@ -155,7 +164,8 @@
         "画师:巴拉巴拉",
         "CV:国実久留子",
         "变体"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15567"
     },
     {
       "id": "/characters/15568.md",
@@ -166,7 +176,8 @@
         "画师:巴拉巴拉",
         "CV:山本亚衣",
         "变体"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15568"
     },
     {
       "id": "/characters/15569.md",
@@ -176,7 +187,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:宫园美海"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15569"
     },
     {
       "id": "/characters/15570.md",
@@ -186,7 +198,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:鱼谷佳代"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15570"
     },
     {
       "id": "/characters/15571.md",
@@ -196,7 +209,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:二宫雪乃"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15571"
     },
     {
       "id": "/characters/15572.md",
@@ -206,7 +220,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:七绪凛"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15572"
     },
     {
       "id": "/characters/15573.md",
@@ -216,7 +231,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:田村由加莉"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15573"
     },
     {
       "id": "/characters/15574.md",
@@ -226,7 +242,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:冈本美歌"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15574"
     },
     {
       "id": "/characters/15575.md",
@@ -236,7 +253,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:藤崎桃子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15575"
     },
     {
       "id": "/characters/15576.md",
@@ -246,7 +264,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:大内茜"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15576"
     },
     {
       "id": "/characters/15577.md",
@@ -256,7 +275,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:伊藤纱月"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15577"
     },
     {
       "id": "/characters/15578.md",
@@ -266,7 +286,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15578"
     },
     {
       "id": "/characters/15579.md",
@@ -276,7 +297,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:七绪凛"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15579"
     },
     {
       "id": "/characters/15580.md",
@@ -286,7 +308,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:东海林亚祐"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15580"
     },
     {
       "id": "/characters/15581.md",
@@ -296,7 +319,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:盛惠里花"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15581"
     },
     {
       "id": "/characters/15582.md",
@@ -306,7 +330,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:北崎瞳"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15582"
     },
     {
       "id": "/characters/15583.md",
@@ -316,7 +341,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:橘由纪"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15583"
     },
     {
       "id": "/characters/15584.md",
@@ -326,7 +352,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:田村由加莉"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15584"
     },
     {
       "id": "/characters/15585.md",
@@ -336,7 +363,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:音羽里奏"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15585"
     },
     {
       "id": "/characters/15586.md",
@@ -346,7 +374,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:本多真梨子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15586"
     },
     {
       "id": "/characters/15587.md",
@@ -356,7 +385,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:国実久留子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15587"
     },
     {
       "id": "/characters/15588.md",
@@ -366,7 +396,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:二宫雪乃"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15588"
     },
     {
       "id": "/characters/15589.md",
@@ -377,7 +408,8 @@
         "画师:巴拉巴拉",
         "CV:能登麻美子",
         "变体"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15589"
     },
     {
       "id": "/characters/15590.md",
@@ -387,7 +419,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:小清水亚美"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15590"
     },
     {
       "id": "/characters/15591.md",
@@ -397,7 +430,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山本彩乃"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15591"
     },
     {
       "id": "/characters/15592.md",
@@ -407,7 +441,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:音羽里奏"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15592"
     },
     {
       "id": "/characters/15593.md",
@@ -417,7 +452,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15593"
     },
     {
       "id": "/characters/15594.md",
@@ -427,7 +463,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:星乃圭吾"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15594"
     },
     {
       "id": "/characters/15595.md",
@@ -437,7 +474,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山本亚衣"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15595"
     },
     {
       "id": "/characters/15596.md",
@@ -447,7 +485,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山本亚衣"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15596"
     },
     {
       "id": "/characters/15597.md",
@@ -457,7 +496,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:小坂帆夏"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15597"
     },
     {
       "id": "/characters/15598.md",
@@ -467,7 +507,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:森田绘音"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15598"
     },
     {
       "id": "/characters/15599.md",
@@ -477,7 +518,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:楠大典"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15599"
     },
     {
       "id": "/characters/15600.md",
@@ -487,7 +529,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:石川明日菜"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15600"
     },
     {
       "id": "/characters/15601.md",
@@ -497,7 +540,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:伊藤纱月"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15601"
     },
     {
       "id": "/characters/15602.md",
@@ -508,7 +552,8 @@
         "画师:巴拉巴拉",
         "CV:鱼谷佳代",
         "变体"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15602"
     },
     {
       "id": "/characters/15603.md",
@@ -518,7 +563,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:三浦小季"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15603"
     },
     {
       "id": "/characters/15604.md",
@@ -528,7 +574,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:高仲祐之"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/15604"
     },
     {
       "id": "/characters/54116.md",
@@ -538,7 +585,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山本亚衣"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/54116"
     },
     {
       "id": "/characters/54117.md",
@@ -548,7 +596,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:野宫一范"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/54117"
     },
     {
       "id": "/characters/77911.md",
@@ -568,7 +617,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:鸟羽优好"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77913"
     },
     {
       "id": "/characters/77914.md",
@@ -588,7 +638,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:逢沢光明"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77917"
     },
     {
       "id": "/characters/77918.md",
@@ -598,7 +649,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77918"
     },
     {
       "id": "/characters/77921.md",
@@ -618,7 +670,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77922"
     },
     {
       "id": "/characters/77923.md",
@@ -628,7 +681,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:加藤慎也"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77923"
     },
     {
       "id": "/characters/77924.md",
@@ -648,7 +702,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:国実久留子"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77925"
     },
     {
       "id": "/characters/77926.md",
@@ -658,7 +713,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:野田卓見"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/77926"
     },
     {
       "id": "/characters/77927.md",
@@ -719,7 +775,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:长谷川育美"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/94450"
     },
     {
       "id": "/characters/94451.md",
@@ -740,7 +797,8 @@
         "playable",
         "画师:巴拉巴拉",
         "CV:子安武人"
-      ]
+      ],
+      "url": "wiki/zh/awakeners/95786"
     },
     {
       "id": "/memory/capability-index.md",
@@ -840,7 +898,8 @@
         "data_layer:full_archive",
         "platform:appstore",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/bilibili.md",
@@ -850,7 +909,8 @@
         "data_layer:full_archive",
         "platform:bilibili",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/discord.md",
@@ -860,7 +920,8 @@
         "data_layer:full_archive",
         "platform:discord",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/google_play.md",
@@ -870,7 +931,8 @@
         "data_layer:full_archive",
         "platform:google_play",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/official.md",
@@ -880,7 +942,8 @@
         "data_layer:full_archive",
         "platform:official",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/pixiv.md",
@@ -890,7 +953,8 @@
         "data_layer:full_archive",
         "platform:pixiv",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/reddit.md",
@@ -900,7 +964,8 @@
         "data_layer:full_archive",
         "platform:reddit",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/ruliweb.md",
@@ -910,7 +975,8 @@
         "data_layer:full_archive",
         "platform:ruliweb",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/steam.md",
@@ -920,7 +986,8 @@
         "data_layer:full_archive",
         "platform:steam",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/steam_discussion.md",
@@ -930,7 +997,8 @@
         "data_layer:full_archive",
         "platform:steam_discussion",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/stopgame.md",
@@ -940,7 +1008,8 @@
         "data_layer:full_archive",
         "platform:stopgame",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/taptap.md",
@@ -950,7 +1019,8 @@
         "data_layer:full_archive",
         "platform:taptap",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/taptap_review.md",
@@ -960,7 +1030,8 @@
         "data_layer:full_archive",
         "platform:taptap_review",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/weibo.md",
@@ -970,7 +1041,8 @@
         "data_layer:full_archive",
         "platform:weibo",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/weixin.md",
@@ -980,7 +1052,8 @@
         "data_layer:full_archive",
         "platform:weixin",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/youtube.md",
@@ -990,7 +1063,8 @@
         "data_layer:full_archive",
         "platform:youtube",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/sources/youtube_comments.md",
@@ -1000,7 +1074,8 @@
         "data_layer:full_archive",
         "platform:youtube_comments",
         "health:active"
-      ]
+      ],
+      "url": "news/"
     },
     {
       "id": "/story/STORY_RESEARCH.md",
@@ -1010,7 +1085,8 @@
         "story",
         "pointer",
         "research"
-      ]
+      ],
+      "url": "wiki/story"
     },
     {
       "id": "/story/character_story_links.md",
@@ -1020,7 +1096,8 @@
         "story",
         "pointer",
         "data_layer:full_archive"
-      ]
+      ],
+      "url": "wiki/story"
     },
     {
       "id": "/story/lore_entries.md",
@@ -1030,7 +1107,8 @@
         "story",
         "pointer",
         "data_layer:full_archive"
-      ]
+      ],
+      "url": "wiki/story"
     },
     {
       "id": "/story/story_index.md",
@@ -1040,7 +1118,8 @@
         "story",
         "pointer",
         "data_layer:full_archive"
-      ]
+      ],
+      "url": "wiki/story"
     },
     {
       "id": "/story/story_units.md",
@@ -1050,529 +1129,250 @@
         "story",
         "pointer",
         "data_layer:full_archive"
-      ]
+      ],
+      "url": "wiki/story"
     }
   ],
   "edges": [
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/125346.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15561.md",
+      "target": "/characters/15574.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/130226.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15567.md",
+      "target": "/characters/15587.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/130375.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15568.md",
+      "target": "/characters/15595.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/130384.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15589.md",
+      "target": "/characters/15576.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/130901.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15602.md",
+      "target": "/characters/15570.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/15560.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15561.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15562.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15563.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15564.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15565.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15566.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15567.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15568.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/94451.md",
+      "target": "/characters/15585.md",
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
       "source": "/characters/122587.md",
       "target": "/characters/15569.md",
-      "rel": "画师:巴拉巴拉"
+      "rel": "变体",
+      "rel_type": "variant"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/15570.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15571.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15572.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15573.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15574.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15575.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15576.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15577.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15578.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15579.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15580.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15581.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15582.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15583.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15584.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15585.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15586.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15587.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15588.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15589.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15590.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15591.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15592.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15593.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15594.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
+      "source": "/characters/15585.md",
       "target": "/characters/15595.md",
-      "rel": "画师:巴拉巴拉"
+      "rel": "同篇提及",
+      "rel_type": "lore"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/15596.md",
-      "rel": "画师:巴拉巴拉"
+      "source": "/characters/15585.md",
+      "target": "/characters/15569.md",
+      "rel": "同篇提及",
+      "rel_type": "lore"
     },
     {
-      "source": "/characters/122587.md",
-      "target": "/characters/15597.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15598.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15599.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15600.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15601.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15602.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15603.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15604.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/54116.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/54117.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77911.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77913.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77914.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77917.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77918.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77921.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77922.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77923.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77924.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77925.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77926.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77927.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77928.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/78754.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/78840.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/78841.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/94450.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/94451.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/95786.md",
-      "rel": "画师:巴拉巴拉"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/130226.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/130375.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/130384.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15578.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/15593.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77911.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77914.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77918.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77921.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77922.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77924.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77927.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/77928.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/78754.md",
-      "rel": "CV:山田真瑠奈"
-    },
-    {
-      "source": "/characters/122587.md",
-      "target": "/characters/94451.md",
-      "rel": "CV:山田真瑠奈"
+      "source": "/characters/15595.md",
+      "target": "/characters/15569.md",
+      "rel": "同篇提及",
+      "rel_type": "lore"
     },
     {
       "source": "/characters/15560.md",
       "target": "/characters/15583.md",
-      "rel": "CV:橘由纪"
-    },
-    {
-      "source": "/characters/15561.md",
-      "target": "/characters/15574.md",
-      "rel": "CV:冈本美歌"
+      "rel": "CV:橘由纪",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15563.md",
       "target": "/characters/15569.md",
-      "rel": "CV:宫园美海"
+      "rel": "CV:宫园美海",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15565.md",
       "target": "/characters/15567.md",
-      "rel": "CV:国実久留子"
+      "rel": "CV:国実久留子",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15565.md",
       "target": "/characters/15587.md",
-      "rel": "CV:国実久留子"
+      "rel": "CV:国実久留子",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15565.md",
       "target": "/characters/77925.md",
-      "rel": "CV:国実久留子"
+      "rel": "CV:国実久留子",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15566.md",
       "target": "/characters/15575.md",
-      "rel": "CV:藤崎桃子"
-    },
-    {
-      "source": "/characters/15568.md",
-      "target": "/characters/15595.md",
-      "rel": "CV:山本亚衣"
+      "rel": "CV:藤崎桃子",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15568.md",
       "target": "/characters/15596.md",
-      "rel": "CV:山本亚衣"
+      "rel": "CV:山本亚衣",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15568.md",
       "target": "/characters/54116.md",
-      "rel": "CV:山本亚衣"
+      "rel": "CV:山本亚衣",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15568.md",
       "target": "/characters/78840.md",
-      "rel": "CV:山本亚衣"
+      "rel": "CV:山本亚衣",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15568.md",
       "target": "/characters/78841.md",
-      "rel": "CV:山本亚衣"
-    },
-    {
-      "source": "/characters/15570.md",
-      "target": "/characters/15602.md",
-      "rel": "CV:鱼谷佳代"
+      "rel": "CV:山本亚衣",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15571.md",
       "target": "/characters/15588.md",
-      "rel": "CV:二宫雪乃"
+      "rel": "CV:二宫雪乃",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15572.md",
       "target": "/characters/15579.md",
-      "rel": "CV:七绪凛"
+      "rel": "CV:七绪凛",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15573.md",
       "target": "/characters/15584.md",
-      "rel": "CV:田村由加莉"
+      "rel": "CV:田村由加莉",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15577.md",
       "target": "/characters/15601.md",
-      "rel": "CV:伊藤纱月"
+      "rel": "CV:伊藤纱月",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/15593.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77911.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77914.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77918.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77921.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77922.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77924.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77927.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/77928.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/78754.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/94451.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/122587.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/130226.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/130375.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
+    },
+    {
+      "source": "/characters/15578.md",
+      "target": "/characters/130384.md",
+      "rel": "CV:山田真瑠奈",
+      "rel_type": "cv"
     },
     {
       "source": "/characters/15585.md",
       "target": "/characters/15592.md",
-      "rel": "CV:音羽里奏"
+      "rel": "CV:音羽里奏",
+      "rel_type": "cv"
     }
   ]
 }
