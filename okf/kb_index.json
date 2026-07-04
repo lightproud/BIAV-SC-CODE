@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 295,
+    "concepts": 296,
     "edges": 96,
-    "terms": 5003,
+    "terms": 5035,
     "by_type": {
       "character": 72,
       "dataset": 109,
       "documentation": 53,
-      "knowledge-pointer": 41,
+      "knowledge-pointer": 42,
       "reference": 17,
       "research": 3
     },
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 19,
       "extracted": 4,
-      "memory": 45,
+      "memory": 46,
       "news-output": 23,
       "projects": 18,
       "resource": 34,
@@ -52,7 +52,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 45
+      "count": 46
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -1862,6 +1862,18 @@
       "section": "memory",
       "degree": 0
     },
+    "/memory/memory-ext-knowledge-layer-design.md": {
+      "type": "knowledge-pointer",
+      "title": "银芯知识层设计哲学 —— 神经符号白盒骨架（North Star）",
+      "description": "它既不是「搜索」（在知识之内找某样东西），也不是「神经网络」（把知识化成不可读的分布式权重）。",
+      "resource": "/memory/knowledge-layer-design.md",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "section": "memory",
+      "degree": 0
+    },
     "/memory/memory-ext-pending-discussions.md": {
       "type": "knowledge-pointer",
       "title": "待讨论事项",
@@ -3058,7 +3070,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2511 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2514 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3097,12 +3109,12 @@
     "/sources/official.md": {
       "type": "dataset",
       "title": "official 社区数据源",
-      "description": "official 平台采集档案，全量 340 条，健康度 active。",
+      "description": "official 平台采集档案，全量 340 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
       "tags": [
         "data_layer:full_archive",
         "platform:official",
-        "health:active"
+        "health:degraded"
       ],
       "section": "sources",
       "degree": 2
@@ -3136,7 +3148,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 383 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 384 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -3149,7 +3161,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5098 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5099 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3175,7 +3187,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 76 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 77 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -3214,7 +3226,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 8918 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 8933 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3227,7 +3239,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6096 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6116 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3240,7 +3252,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2588 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2591 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5177,6 +5189,7 @@
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -5235,7 +5248,6 @@
       "/sources/bilibili.md",
       "/sources/discord.md",
       "/sources/google_play.md",
-      "/sources/official.md",
       "/sources/pixiv.md",
       "/sources/reddit.md",
       "/sources/ruliweb.md",
@@ -6029,6 +6041,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -6293,6 +6306,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -6535,6 +6549,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -6712,6 +6727,9 @@
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "degraded": [
+      "/sources/official.md"
+    ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
@@ -6760,6 +6778,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-migration.md",
@@ -7747,7 +7766,8 @@
       "/community/community-timeline.md"
     ],
     "knowledge": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
@@ -7855,6 +7875,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -8308,6 +8329,7 @@
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -8423,6 +8445,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -8584,6 +8607,9 @@
     ],
     "nitroplus": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "north": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "note": [
       "/news-output/news-output-note-com.md"
@@ -9807,6 +9833,9 @@
     "standard": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "star": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "status": [
       "/memory/project-status.md"
     ],
@@ -10826,6 +10855,7 @@
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -10921,6 +10951,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -11126,6 +11157,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -11964,6 +11996,9 @@
     "之仪": [
       "/characters/15596.md"
     ],
+    "之内": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "之剑": [
       "/characters/15568.md"
     ],
@@ -12023,6 +12058,9 @@
     ],
     "乐音": [
       "/characters/54117.md"
+    ],
+    "也不": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "也会": [
       "/characters/15577.md",
@@ -13390,6 +13428,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -14202,6 +14241,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -14323,6 +14363,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -14341,6 +14382,9 @@
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "内找": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "内承": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
@@ -14609,6 +14653,7 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
     "分布": [
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
@@ -14915,6 +14960,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -15379,6 +15425,9 @@
     "化器": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+    ],
+    "化成": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "化指": [
       "/characters/15582.md"
@@ -16390,6 +16439,7 @@
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
       "/extracted/extracted-lua-tables.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/story/story_units.md"
     ],
     "可赋": [
@@ -16555,6 +16605,9 @@
     ],
     "号用": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
+    ],
+    "号白": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "号角": [
       "/characters/15585.md"
@@ -16969,6 +17022,9 @@
     "哪些": [
       "/projects/news-archive-sources-registry.md"
     ],
+    "哲学": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "唤台": [
       "/characters/125346.md",
       "/characters/130901.md",
@@ -17308,6 +17364,9 @@
     ],
     "在的": [
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "在知": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "在确": [
       "/characters/15580.md"
@@ -17748,6 +17807,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -18445,6 +18505,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -18799,6 +18860,9 @@
     ],
     "它干": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "它既": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "宇宙": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -19643,6 +19707,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -19725,6 +19790,9 @@
     ],
     "层的": [
       "/README.md"
+    ],
+    "层设": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "层语": [
       "/sources/appstore.md",
@@ -20020,6 +20088,9 @@
     ],
     "布功": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
+    ],
+    "布式": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "布朗": [
       "/characters/15578.md",
@@ -20472,6 +20543,9 @@
     "式即": [
       "/README.md"
     ],
+    "式权": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "式标": [
       "/README.md"
     ],
@@ -20832,6 +20906,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -21539,6 +21614,9 @@
     "戏资": [
       "/projects/entry-readme.md"
     ],
+    "成不": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "成为": [
       "/characters/15578.md",
       "/characters/15593.md",
@@ -21871,6 +21949,9 @@
     "找最": [
       "/characters/54116.md"
     ],
+    "找某": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "承受": [
       "/characters/15576.md",
       "/characters/15581.md",
@@ -21898,6 +21979,9 @@
     ],
     "把抽": [
       "/README.md"
+    ],
+    "把知": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "把蛋": [
       "/characters/15576.md"
@@ -22305,6 +22389,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -22934,7 +23019,8 @@
       "/characters/15602.md"
     ],
     "搜索": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "搬运": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
@@ -23005,6 +23091,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -23298,6 +23385,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -23526,6 +23614,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -24000,6 +24089,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -24241,6 +24331,9 @@
     "无需": [
       "/README.md",
       "/community/community-index.md"
+    ],
+    "既不": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "既为": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -24934,6 +25027,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -25282,6 +25376,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -25417,6 +25512,9 @@
     "权能": [
       "/characters/15582.md",
       "/characters/77917.md"
+    ],
+    "权重": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "杆都": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -25714,6 +25812,9 @@
     "枷锁": [
       "/characters/15574.md"
     ],
+    "某样": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "柔软": [
       "/characters/15576.md"
     ],
@@ -25892,6 +25993,9 @@
     ],
     "校验": [
       "/README.md"
+    ],
+    "样东": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "样当": [
       "/README.md"
@@ -26613,6 +26717,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -28652,6 +28757,9 @@
     "白嫖": [
       "/README.md"
     ],
+    "白盒": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "的一": [
       "/characters/15577.md",
       "/characters/15592.md",
@@ -28713,7 +28821,8 @@
       "/characters/77922.md"
     ],
     "的分": [
-      "/memory/memory-ext-biav-info-classification.md"
+      "/memory/memory-ext-biav-info-classification.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "的创": [
       "/characters/77926.md"
@@ -29283,6 +29392,9 @@
     "监修": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "盒骨": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "盖健": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -29488,6 +29600,7 @@
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/entry-readme.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
@@ -29799,7 +29912,8 @@
       "/characters/77925.md"
     ],
     "神经": [
-      "/characters/15601.md"
+      "/characters/15601.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "神话": [
       "/story/STORY_RESEARCH.md"
@@ -30124,6 +30238,9 @@
     "笑着": [
       "/characters/15565.md"
     ],
+    "符号": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "笼中": [
       "/characters/15574.md"
     ],
@@ -30438,6 +30555,12 @@
     "经济": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
+    "经符": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "经网": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "经衰": [
       "/characters/15601.md"
     ],
@@ -30651,6 +30774,9 @@
     ],
     "缺的": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "网络": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "罪人": [
       "/characters/77917.md"
@@ -31286,7 +31412,8 @@
       "/projects/doc-testing-strategy.md"
     ],
     "芯知": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "芯转": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -31776,6 +31903,9 @@
     "计划": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
+    "计哲": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "计方": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-ext-discord-archiver-design.md"
@@ -31896,6 +32026,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -31953,6 +32084,7 @@
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
@@ -32055,11 +32187,18 @@
     "诅咒": [
       "/characters/15579.md"
     ],
+    "识之": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "识化": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "识图": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "识层": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "识平": [
       "/projects/entry-readme.md"
@@ -32246,6 +32385,9 @@
     ],
     "读它": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "读的": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "读解": [
       "/extracted/extracted-art-assets.md",
@@ -32555,6 +32697,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -33985,6 +34128,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -34325,6 +34469,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/project-news.md",
@@ -35044,6 +35189,9 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "骨架": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "骨毒": [
       "/characters/125346.md"
     ],
@@ -35221,7 +35369,6 @@
       "/sources/bilibili.md",
       "/sources/discord.md",
       "/sources/google_play.md",
-      "/sources/official.md",
       "/sources/pixiv.md",
       "/sources/reddit.md",
       "/sources/ruliweb.md",
@@ -35678,6 +35825,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -35913,6 +36061,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -36080,6 +36229,9 @@
     "deep": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "degraded": [
+      "/sources/official.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -36594,6 +36746,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -36888,6 +37041,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
+      "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-ext-pending-discussions.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -36965,6 +37119,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-phase-d-plan.md"
+    ],
+    "north": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "note": [
       "/news-output/news-output-note-com.md"
@@ -37429,6 +37586,9 @@
       "/story/stages_by_unit.md",
       "/wiki-data/wiki-data-stages.md",
       "/wiki-data/wiki-schema-stages-schema.md"
+    ],
+    "star": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "status": [
       "/memory/project-status.md"
@@ -38109,6 +38269,9 @@
     "台聚": [
       "/news-output/news-output-all.md"
     ],
+    "号白": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "合并": [
       "/news-output/news-output-newsjs.md"
     ],
@@ -38129,6 +38292,9 @@
     ],
     "响应": [
       "/memory/memory-ext-collab-event-playbook.md"
+    ],
+    "哲学": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "园美": [
       "/characters/15563.md",
@@ -38252,6 +38418,9 @@
     ],
     "尤乌哈希": [
       "/characters/15598.md"
+    ],
+    "层设": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "展示": [
       "/news-output/news-output-all.md",
@@ -39152,8 +39321,14 @@
     "登麻": [
       "/characters/15589.md"
     ],
+    "白盒": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "皮克曼": [
       "/characters/77926.md"
+    ],
+    "盒骨": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "盛惠": [
       "/characters/15581.md"
@@ -39188,6 +39363,9 @@
       "/characters/77928.md",
       "/characters/78754.md",
       "/characters/94451.md"
+    ],
+    "知识": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "石川": [
       "/characters/15600.md"
@@ -39262,6 +39440,9 @@
     "祐之": [
       "/characters/15604.md"
     ],
+    "神经": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "秃鹫": [
       "/characters/77911.md"
     ],
@@ -39270,6 +39451,9 @@
     ],
     "章嗣": [
       "/characters/15564.md"
+    ],
+    "符号": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "策略": [
       "/projects/doc-testing-strategy.md"
@@ -39297,6 +39481,9 @@
     ],
     "组信": [
       "/memory/memory-ext-biav-info-classification.md"
+    ],
+    "经符": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "结点": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -39374,6 +39561,9 @@
     ],
     "芯指": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "芯知": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "范参": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
@@ -39455,6 +39645,9 @@
     "计划": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
+    "计哲": [
+      "/memory/memory-ext-knowledge-layer-design.md"
+    ],
     "计方": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-ext-discord-archiver-design.md"
@@ -39478,10 +39671,14 @@
     "设计": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/memory/memory-ext-discord-archiver-design.md"
+      "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "证报": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+    ],
+    "识层": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "诊断": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
@@ -39622,7 +39819,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "长谷": [
       "/characters/94450.md"
@@ -39656,6 +39854,9 @@
     ],
     "验证": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+    ],
+    "骨架": [
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "高仲": [
       "/characters/15604.md"

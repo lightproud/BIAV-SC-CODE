@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (45)
+# 银芯记忆层指针 (46)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -25,6 +25,7 @@
 * [联动事件响应手册](/memory/memory-ext-collab-event-playbook.md) - 2026-04 制作人采访确认：即将推出一个**单向联动**，对方为"一部影响深远、带有宇宙恐怖风味的经典作品"，角色联动形式。
 * [Discord 数据归档系统设计方案](/memory/memory-ext-discord-archiver-design.md) - 忘却前夜 Discord 服务器数据量远超预期——单个频道历史消息达 **76 万条**。纯 git 存储不可持续，需要设计分级存储 + 增
 * [卡帕西编码行为原则（Andrej Karpathy CLAUDE.md, forrestchang 整理版）](/memory/memory-ext-karpathy-coding-principles.md) - Behavioral guidelines to reduce common LLM coding mistakes. Merge with
+* [银芯知识层设计哲学 —— 神经符号白盒骨架（North Star）](/memory/memory-ext-knowledge-layer-design.md) - 它既不是「搜索」（在知识之内找某样东西），也不是「神经网络」（把知识化成不可读的分布式权重）。
 * [待讨论事项](/memory/memory-ext-pending-discussions.md) - 待讨论事项
 * [BPT-NEXT Phase D — 黑池索引 / 母版部署 / 对话加密（作战档案）](/memory/memory-ext-phase-d-plan.md) - Phase C 已验证：
 * [Best Game Wiki Features & UX Patterns Research](/memory/memory-ext-research-best-wiki-features.md) - **Core Info Block (Infobox)**

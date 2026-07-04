@@ -272,3 +272,13 @@ news-output(23)/unpacked(13)/extracted(4)/resource(34)/projects(17,含 CLAUDE.md
 库 `scripts/okf_pointer_layers.py` 确定性生成；kb_index 覆盖 294 概念、`kb_*` 导航跨全仓。三条铁律守恒
 （归档 2.1G/解包 44M 只指针不复刻、data_layer 标层、无黑池数据）。守护 `tests/test_okf_pointer_layers.py`。
 编排溯源：`organize-repo-knowledge`（测绘+合成+批判）+ `verify-repo-knowledge-org`（5 维对抗式核验）工作流。
+
+**知识层北极星锚定 + 治理不变量地基（2026-07-04，Pillar B）**：守密人会话把知识层定位结晶为
+**神经符号白盒骨架**（`memory/knowledge-layer-design.md`：OKF=有结构的概念网络承载白盒知识，
+区别于神经网络黑盒；三命令=白盒只花骨架/测不变量/守覆盖哨兵；改造路线 A 连网络→B 治理→C 覆盖哨兵
+→D 扩散激活→E 减易变）。**Pillar B 已落地**：`tests/test_kb_governance.py`——生成器假设绊线
+（no domain:misc / unpacked slug / memory·story 白名单⊆实况 / 层非空）+ **结构指纹 keystone**
+（`build_okf_bundle.structural_fingerprint`，排易变量的规范哈希；不变量：committed okf/ 结构须恒等于
+源重建，抓「改源忘重建」stale commit）。现状基线：约 200/293 概念度数=0（孤立指针群岛）。
+**未落地（待守密人定边策略后开工）**：A 连成真网络（孤立参考层 search-tier vs 补策展边的分叉待裁）、
+D 扩散激活检索（依赖 A）、C 覆盖哨兵、E 减易变。

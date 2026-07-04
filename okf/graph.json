@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 295,
+    "nodes": 296,
     "edges": 96
   },
   "nodes": [
@@ -1434,6 +1434,15 @@
       ]
     },
     {
+      "id": "/memory/memory-ext-knowledge-layer-design.md",
+      "type": "knowledge-pointer",
+      "title": "银芯知识层设计哲学 —— 神经符号白盒骨架（North Star）",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ]
+    },
+    {
       "id": "/memory/memory-ext-pending-discussions.md",
       "type": "knowledge-pointer",
       "title": "待讨论事项",
@@ -2388,7 +2397,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:official",
-        "health:active"
+        "health:degraded"
       ],
       "url": "news/"
     },
