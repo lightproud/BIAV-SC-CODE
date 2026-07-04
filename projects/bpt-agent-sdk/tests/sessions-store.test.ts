@@ -14,6 +14,8 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   JsonlSessionStore,
   isSafeSessionId,
+  listSessions,
+  getSessionInfo,
 } from '../src/sessions/store.js';
 import type { APIMessageParam } from '../src/types.js';
 
@@ -207,5 +209,44 @@ describe('JsonlSessionStore pairing repair (finding #37)', () => {
     // Sanity: no tool_result block remains without a preceding tool_use.
     const file = readFileSync(join(dir, 's4.jsonl'), 'utf8');
     expect(file).toContain('orphan'); // raw transcript untouched
+  });
+});
+
+describe('listSessions option shape (task #17)', () => {
+  function seed(sessionId: string, createdAt: number, prompt: string): void {
+    const file = join(dir, `${sessionId}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId, createdAt })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: prompt } })}\n`,
+      'utf8',
+    );
+  }
+
+  it('honors the `dir` alias for `sessionDir`', async () => {
+    seed('a1', 1, 'hello');
+    const viaDir = await listSessions({ dir });
+    expect(viaDir.map((s) => s.sessionId)).toContain('a1');
+    // getSessionInfo honors the alias too.
+    const info = await getSessionInfo('a1', { dir });
+    expect(info?.sessionId).toBe('a1');
+  });
+
+  it('sessionDir takes precedence over `dir` when both are given', async () => {
+    seed('b1', 1, 'in real dir');
+    const list = await listSessions({ sessionDir: dir, dir: '/nonexistent/path' });
+    expect(list.map((s) => s.sessionId)).toContain('b1');
+  });
+
+  it('caps results with `limit` (newest first)', async () => {
+    seed('old', 1, 'oldest');
+    seed('mid', 2, 'middle');
+    seed('new', 3, 'newest');
+    const all = await listSessions({ dir });
+    expect(all.length).toBe(3);
+    const limited = await listSessions({ dir, limit: 2 });
+    expect(limited).toHaveLength(2);
+    // The two returned are a prefix of the full newest-first ordering.
+    expect(limited.map((s) => s.sessionId)).toEqual(all.slice(0, 2).map((s) => s.sessionId));
   });
 });

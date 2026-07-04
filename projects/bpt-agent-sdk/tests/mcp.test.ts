@@ -87,6 +87,24 @@ describe('mcp/sdk-server tool()', () => {
     expect(def.inputJsonSchema.required ?? []).not.toContain('tag');
   });
 
+  it('forwards ToolAnnotations onto the definition (task #17)', () => {
+    const withAnn = tool(
+      'annotated',
+      'read-only tool',
+      { q: z.string() },
+      async () => ({ content: [] }),
+      { readOnlyHint: true, title: 'Reader', idempotentHint: true },
+    );
+    expect(withAnn.annotations).toEqual({
+      readOnlyHint: true,
+      title: 'Reader',
+      idempotentHint: true,
+    });
+
+    const noAnn = tool('plain', 'no annotations', {}, async () => ({ content: [] }));
+    expect(noAnn.annotations).toBeUndefined();
+  });
+
   it('passes zod-validated args (defaults applied) to the handler', async () => {
     let seen: unknown;
     const def = tool(
@@ -202,6 +220,10 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
       status: 'connected',
       serverInfo: { name: 'calc', version: '1.0.0' },
     });
+    // task #17: status carries the config it was registered with + per-server
+    // tool names once connected.
+    expect(statuses[0]!.config).toBeDefined();
+    expect(statuses[0]!.tools).toEqual(['add']);
 
     const tools = reg.allTools();
     expect(tools.map((t) => t.qualifiedName)).toEqual(['mcp__calc__add']);

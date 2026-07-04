@@ -57,9 +57,9 @@ Tiers:
 | Export | Tier | Notes |
 |---|---|---|
 | `query()` | FULL | string and AsyncIterable prompt modes |
-| `tool()` | FULL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema` |
+| `tool()` | FULL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema`; optional 5th `annotations` (ToolAnnotations) forwarded onto the definition (task #17) |
 | `createSdkMcpServer()` | FULL | in-process dispatch, no wire protocol |
-| `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only |
+| `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only; option bag accepts `dir` (alias for `sessionDir`) + `limit`; `includeWorkspace` typed but not honored (no Claude Code store interop) (task #17) |
 | `startup()` / `WarmQuery` | UNSUPPORTED | no subprocess to pre-warm; direct API needs no warmup |
 | `getSessionMessages()` / `renameSession()` / `tagSession()` / `resolveSettings()` | UNSUPPORTED | v0.2 candidates |
 
@@ -185,7 +185,7 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | `interrupt()` | FULL | |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
 | `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | static/empty data (no CLI to introspect) |
-| `mcpServerStatus()` | FULL | |
+| `mcpServerStatus()` | FULL | now carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17) |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |
 | `close()` | FULL | |

@@ -15,11 +15,20 @@
 // Anthropic Messages API wire types (minimal clean-room subset)
 // ---------------------------------------------------------------------------
 
+/** Server-side tool invocation counts the API reports on a response usage. */
+export type ServerToolUse = {
+  web_search_requests?: number;
+};
+
 export type Usage = {
   input_tokens: number;
   output_tokens: number;
   cache_creation_input_tokens?: number | null;
   cache_read_input_tokens?: number | null;
+  /** Server tool call counts (e.g. web_search_requests), when the API reports them. */
+  server_tool_use?: ServerToolUse | null;
+  /** The service tier that served the response (e.g. 'standard', 'batch'), when reported. */
+  service_tier?: string | null;
 };
 
 /** Usage with cache fields normalized to numbers (never null/undefined). */
@@ -545,6 +554,12 @@ export type McpServerStatus = {
   status: 'connected' | 'failed' | 'needs-auth' | 'pending' | 'disabled';
   serverInfo?: { name: string; version: string };
   error?: string;
+  /** The config this server was registered with (echoed back; task #17). */
+  config?: McpServerConfig;
+  /** Per-server tool names, present once the server is connected. */
+  tools?: string[];
+  /** Provenance of the config. Typed for compat; not tracked by this engine. */
+  scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
 
 /** MCP tool result content (subset of the MCP CallToolResult schema). */
