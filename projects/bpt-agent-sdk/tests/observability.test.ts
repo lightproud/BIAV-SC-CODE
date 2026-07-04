@@ -103,7 +103,10 @@ describe('v0.3 permission_denied emission', () => {
     const messages = await collect(
       query({
         prompt: 'run it',
-        options: opts({ permissionMode: 'bypassPermissions' }),
+        options: opts({
+          permissionMode: 'bypassPermissions',
+          allowDangerouslySkipPermissions: true,
+        }),
       }),
     );
     expect(messages.some((m) => m.type === 'permission_denied')).toBe(false);
