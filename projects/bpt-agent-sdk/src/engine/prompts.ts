@@ -1,10 +1,18 @@
 /**
  * System prompt construction for the engine.
  *
- * All prompt text here is ORIGINAL clean-room copy written for this SDK.
- * It intentionally does not reproduce any proprietary system prompt; the
- * `claude_code` preset only selects this SDK's own default harness prompt
- * for drop-in call-site compatibility.
+ * Positioning (keeper ruling 2026-07-04): OPEN REPRODUCTION from PUBLIC
+ * information, with attribution — not a clean-room black box.
+ * - Variants v1-v3 are original compositions from public prompt-engineering
+ *   guidance + open-source agent practice.
+ * - Variant v4 is a faithful reproduction of the official Claude Code main-loop
+ *   prompt, assembled from the PUBLIC prompt reconstruction (Piebald-AI
+ *   snapshot, MIT, reverse-engineered from the publicly distributed CLI;
+ *   archived under Public-Info-Pool/Reference/Claude-Code-System-Prompts/),
+ *   with tool references adapted to THIS SDK's tools and CLI-only fragments
+ *   (feedback channels, sandbox specifics) omitted.
+ * The `claude_code` preset selects this SDK's default harness prompt for
+ * drop-in call-site compatibility.
  */
 
 import type { Options } from '../types.js';
@@ -14,13 +22,15 @@ type PromptContext = {
   toolNames: string[];
   /**
    * Harness-prompt variant (BPT experiment). 'v1' = the terse original;
-   * 'v2' = a richer clean-room prompt written from PUBLIC prompt-engineering
-   * guidance + open-source agent practice (no proprietary text copied); 'v3' =
-   * v2 plus verify-before-finishing, no-hard-coding, delegation guidance, and a
-   * style example. Only affects the `claude_code` preset / default path.
+   * 'v2' = a richer prompt composed from PUBLIC prompt-engineering guidance +
+   * open-source agent practice; 'v3' = v2 plus verify-before-finishing,
+   * no-hard-coding, delegation guidance, and a style example; 'v4' = a faithful
+   * reproduction of the official main-loop prompt from the PUBLIC prompt
+   * reconstruction, tool references adapted to this SDK (open reproduction, see
+   * file header). Only affects the `claude_code` preset / default path.
    * Default 'v1'.
    */
-  variant?: 'v1' | 'v2' | 'v3';
+  variant?: 'v1' | 'v2' | 'v3' | 'v4';
 };
 
 /**
@@ -82,7 +92,8 @@ function defaultHarnessStable(ctx: PromptContext): string {
  * richer than v1 because it encodes more real behavioral discipline (plan,
  * gather context first, parallel read-only lookups, verify after editing,
  * ground claims in tool output, clean stop conditions), NOT because it is
- * padded. Clean-room: original composition, zero proprietary text.
+ * padded. Open reproduction: original composition from PUBLIC prompt-engineering
+ * guidance + open-source practice, no verbatim proprietary clone.
  */
 function defaultHarnessStableV2(ctx: PromptContext): string {
   const lines: string[] = [
@@ -121,8 +132,9 @@ function defaultHarnessStableV2(ctx: PromptContext): string {
  * public best-practices comparison flagged as missing/partial, each a genuine
  * behavioral discipline (not padding): verify-before-finishing, solve the
  * general problem (no hard-coding to a check), when-to-delegate guidance, and
- * one concrete style example for the closing summary. Clean-room: original
- * composition from PUBLIC prompt-engineering guidance + open-source practice.
+ * one concrete style example for the closing summary. Open reproduction:
+ * original composition from PUBLIC prompt-engineering guidance + open-source
+ * practice, no verbatim proprietary clone.
  */
 function defaultHarnessStableV3(ctx: PromptContext): string {
   const lines: string[] = [
@@ -162,6 +174,71 @@ function defaultHarnessStableV3(ctx: PromptContext): string {
 }
 
 /**
+ * Stable part of the v4 harness prompt (no cwd): a FAITHFUL REPRODUCTION of the
+ * official Claude Code main-loop system prompt, assembled from the PUBLIC prompt
+ * reconstruction (Piebald-AI snapshot v2.1.x, MIT, reverse-engineered from the
+ * publicly distributed CLI; archived under
+ * Public-Info-Pool/Reference/Claude-Code-System-Prompts/). Open reproduction
+ * from public information with attribution (keeper ruling 2026-07-04). The
+ * behavioral / communication clauses are reproduced faithfully; tool references
+ * are adapted to THIS SDK's tools; CLI-only fragments (feedback channels,
+ * sandbox specifics, tools this SDK does not ship) are omitted so the prompt
+ * never references a tool that is not present.
+ */
+function defaultHarnessStableV4(ctx: PromptContext): string {
+  const lines: string[] = [
+    // intro (interactive-agent-intro-short)
+    'You are an interactive agent that helps users with software engineering tasks.',
+    '',
+  ];
+  if (ctx.toolNames.length > 0) {
+    lines.push(`Available tools: ${ctx.toolNames.join(', ')}.`, '');
+  }
+  lines.push(
+    // doing-tasks-software-engineering-focus
+    'The user will primarily request you to perform software engineering tasks. These may include solving bugs, adding new functionality, refactoring code, explaining code, and more. When given an unclear or generic instruction, consider it in the context of these software engineering tasks and the current working directory. For example, if the user asks you to change "methodName" to snake case, do not reply with just "method_name", instead find the method in the code and modify the code.',
+    '',
+    // doing-tasks-no-unnecessary-additions
+    "Don't add features, refactor, or introduce abstractions beyond what the task requires. A bug fix doesn't need surrounding cleanup; a one-shot operation doesn't need a helper. Don't design for hypothetical future requirements. Three similar lines is better than a premature abstraction. No half-finished implementations either.",
+    '',
+    // doing-tasks-no-unnecessary-error-handling
+    "Don't add error handling, fallbacks, or validation for scenarios that can't happen. Trust internal code and framework guarantees. Only validate at system boundaries (user input, external APIs). Don't use feature flags or backwards-compatibility shims when you can just change the code.",
+    '',
+    // doing-tasks-no-compatibility-hacks
+    'Avoid backwards-compatibility hacks like renaming unused _vars, re-exporting types, adding // removed comments for removed code, etc. If you are certain that something is unused, you can delete it completely.',
+    '',
+    // doing-tasks-ambitious-tasks
+    'You are highly capable and often allow users to complete ambitious tasks that would otherwise be too complex or take too long. You should defer to user judgement about whether a task is too large to attempt.',
+    '',
+    // doing-tasks-security
+    'Be careful not to introduce security vulnerabilities such as command injection, XSS, SQL injection, and other OWASP top 10 vulnerabilities. If you notice that you wrote insecure code, immediately fix it. Prioritize writing safe, secure, and correct code.',
+    '',
+    // tool-use discipline (adapted to this SDK's tools; official prefers
+    // dedicated tools over shell and batches independent read-only calls)
+    'Prefer the dedicated file tools (Read, Write, Edit, Glob, Grep) over shell commands for inspecting or modifying files. Read a file before editing it. When several independent read-only lookups would help, issue them together rather than one at a time. Base every claim on actual tool output; if a tool call fails, say so instead of guessing.',
+    '',
+    // outcome-first-communication-style (IS_TEXT_OUTPUT_VISIBLE_TO_USER resolved
+    // to the visible branch, since the SDK consumer reads the final message)
+    'Communicating with the user:',
+    "Your text output is what the user reads; they usually can't see your thinking or the raw tool results. Write it for a teammate who stepped away and is catching up, not for a log file: they don't know the codenames or shorthand you created along the way, and they didn't watch your process unfold. Before your first tool call, say in a sentence what you're about to do; while working, give brief updates when you find something load-bearing or change direction.",
+    '',
+    'Everything the user needs from this turn — answers, summaries, findings, conclusions, deliverables — must be in the final text message of your turn, with no tool calls after it. Keep text between tool calls to brief status notes. If something important appeared only mid-turn or in your thinking, restate it in that final message.',
+    '',
+    'Lead with the outcome. Your first sentence after finishing should answer "what happened" or "what did you find" — the thing the user would ask for if they said "just give me the TLDR." Supporting detail and reasoning come after, for readers who want them.',
+    '',
+    'Being readable and being concise are different things, and readable matters more. Keep output short by being selective about what you include (drop details that don\'t change what the reader would do next), not by compressing into fragments, abbreviations, arrow chains, or jargon. Write what you include in complete sentences with the technical terms spelled out. Match the response to the question: a simple question gets a direct answer in prose, not headers and sections.',
+    '',
+    // tone-and-style-code-references
+    'When referencing specific functions or pieces of code include the pattern file_path:line_number to allow the user to easily navigate to the source code location.',
+    '',
+    'Write code that reads like the surrounding code: match its comment density, naming, and idiom. Default to writing no comments; only write a code comment to state a constraint the code itself can\'t show. Don\'t create planning, decision, or analysis documents unless the user asks for them — work from conversation context, not intermediate files.',
+    '',
+    'Safety: never run destructive or irreversible commands (deleting files or branches, force-pushing, dropping databases, mass overwrites) unless the user has explicitly requested that exact operation.',
+  );
+  return lines.join('\n');
+}
+
+/**
  * Build the system prompt split into stable prefix + volatile (cwd) tail.
  * - undefined          -> minimal default (stable) + cwd tail
  * - string             -> the caller's text is treated as entirely stable
@@ -185,11 +262,13 @@ export function buildSystemPromptParts(
     return { stable: opt.segments.map((s) => s.text).join('\n\n'), volatile: '' };
   }
   let stable =
-    ctx.variant === 'v3'
-      ? defaultHarnessStableV3(ctx)
-      : ctx.variant === 'v2'
-        ? defaultHarnessStableV2(ctx)
-        : defaultHarnessStable(ctx);
+    ctx.variant === 'v4'
+      ? defaultHarnessStableV4(ctx)
+      : ctx.variant === 'v3'
+        ? defaultHarnessStableV3(ctx)
+        : ctx.variant === 'v2'
+          ? defaultHarnessStableV2(ctx)
+          : defaultHarnessStable(ctx);
   if (opt.append !== undefined && opt.append.length > 0) {
     stable = `${stable}\n\n${opt.append}`;
   }

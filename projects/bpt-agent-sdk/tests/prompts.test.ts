@@ -5,7 +5,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildSystemPromptParts, buildSystemPrompt } from '../src/engine/prompts.js';
 
-const ctx = (variant?: 'v1' | 'v2' | 'v3') => ({
+const ctx = (variant?: 'v1' | 'v2' | 'v3' | 'v4') => ({
   cwd: '/tmp/run-xyz',
   toolNames: ['Read', 'Write', 'Bash'],
   variant,
@@ -66,9 +66,23 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v3).not.toContain('/tmp/run-xyz');
   });
 
+  it('v4 faithfully reproduces official main-loop clauses, tool refs adapted, cwd out', () => {
+    const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
+    // faithful official clauses (reproduced from the public reconstruction)
+    expect(v4).toContain('You are an interactive agent that helps users with software engineering tasks.');
+    expect(v4).toContain('Lead with the outcome.');
+    expect(v4).toContain('file_path:line_number');
+    // tool references adapted to THIS SDK's tools
+    expect(v4).toContain('Read, Write, Edit, Glob, Grep');
+    // cwd stays out of the cached (stable) segment
+    expect(v4).not.toContain('/tmp/run-xyz');
+    // and it does not reference tools this SDK does not ship
+    expect(v4).not.toContain('Workflow');
+  });
+
   it('append text lands in the stable segment for all variants', () => {
     const withAppend = { ...preset, append: 'EXTRA_INSTRUCTION' };
-    for (const v of ['v1', 'v2', 'v3'] as const) {
+    for (const v of ['v1', 'v2', 'v3', 'v4'] as const) {
       expect(buildSystemPromptParts(withAppend, ctx(v)).stable).toContain('EXTRA_INSTRUCTION');
     }
   });

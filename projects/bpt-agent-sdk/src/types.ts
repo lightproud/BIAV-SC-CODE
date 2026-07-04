@@ -806,10 +806,12 @@ export type Options = {
   /** Defer MCP tool schemas behind a ToolSearch tool. undefined -> auto. */
   toolSearch?: boolean;
   /** BPT experiment: harness system-prompt variant for the `claude_code`
-   *  preset / default path. 'v1' (default) = the terse original; 'v2' = a
-   *  richer clean-room prompt (public prompt-engineering practice). A/B knob
-   *  for measuring quality/cost/cache before promoting a new default. */
-  harnessPromptVariant?: 'v1' | 'v2' | 'v3';
+   *  preset / default path. 'v1' (default) = the terse original; 'v2'/'v3' =
+   *  richer prompts composed from PUBLIC prompt-engineering practice; 'v4' = a
+   *  faithful reproduction of the official main-loop prompt from the PUBLIC
+   *  prompt reconstruction (open reproduction, tool refs adapted). A/B knob for
+   *  measuring quality/cost/cache before promoting a new default. */
+  harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4';
 };
 
 // ---------------------------------------------------------------------------
