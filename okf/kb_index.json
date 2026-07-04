@@ -31,6 +31,10 @@
       "story": 11,
       "unpacked": 13,
       "wiki-data": 26
+    },
+    "by_tier": {
+      "skeleton": 131,
+      "search": 165
     }
   },
   "sections": {
@@ -94,6 +98,7 @@
         "documentation"
       ],
       "section": "",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-archive-integrity.md": {
@@ -108,6 +113,7 @@
         "snapshot"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-card-system.md": {
@@ -120,6 +126,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-chat-onboarding-snippet.md": {
@@ -132,6 +139,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-design-decisions.md": {
@@ -144,6 +152,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-images.md": {
@@ -157,6 +166,7 @@
         "media:image"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-interview-2026-04.md": {
@@ -169,6 +179,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-narrative-structure.md": {
@@ -181,6 +192,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-readme.md": {
@@ -193,6 +205,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-sentinel-baseline.md": {
@@ -207,6 +220,7 @@
         "snapshot"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/assets-version.md": {
@@ -219,6 +233,7 @@
         "fact-bible"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/persona-erica-speech-canon.md": {
@@ -232,6 +247,7 @@
         "character:erica"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/assets/persona-erica.md": {
@@ -245,6 +261,7 @@
         "character:erica"
       ],
       "section": "assets",
+      "tier": "search",
       "degree": 0
     },
     "/characters/122587.md": {
@@ -259,6 +276,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 2
     },
     "/characters/125346.md": {
@@ -272,6 +290,7 @@
         "CV:田中理惠"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/130226.md": {
@@ -285,6 +304,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/130375.md": {
@@ -298,6 +318,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/130384.md": {
@@ -311,6 +332,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/130901.md": {
@@ -324,6 +346,7 @@
         "CV:松元菜菜海"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15560.md": {
@@ -337,6 +360,7 @@
         "CV:橘由纪"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15561.md": {
@@ -351,6 +375,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15562.md": {
@@ -364,6 +389,7 @@
         "CV:青池优花"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15563.md": {
@@ -377,6 +403,7 @@
         "CV:宫园美海"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15564.md": {
@@ -390,6 +417,7 @@
         "CV:木下章嗣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15565.md": {
@@ -403,6 +431,7 @@
         "CV:国実久留子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 3
     },
     "/characters/15566.md": {
@@ -416,6 +445,7 @@
         "CV:藤崎桃子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15567.md": {
@@ -430,6 +460,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 2
     },
     "/characters/15568.md": {
@@ -444,6 +475,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 5
     },
     "/characters/15569.md": {
@@ -457,6 +489,7 @@
         "CV:宫园美海"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 4
     },
     "/characters/15570.md": {
@@ -470,6 +503,7 @@
         "CV:鱼谷佳代"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15571.md": {
@@ -483,6 +517,7 @@
         "CV:二宫雪乃"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15572.md": {
@@ -496,6 +531,7 @@
         "CV:七绪凛"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15573.md": {
@@ -509,6 +545,7 @@
         "CV:田村由加莉"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15574.md": {
@@ -522,6 +559,7 @@
         "CV:冈本美歌"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15575.md": {
@@ -535,6 +573,7 @@
         "CV:藤崎桃子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15576.md": {
@@ -548,6 +587,7 @@
         "CV:大内茜"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15577.md": {
@@ -561,6 +601,7 @@
         "CV:伊藤纱月"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15578.md": {
@@ -574,6 +615,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 15
     },
     "/characters/15579.md": {
@@ -587,6 +629,7 @@
         "CV:七绪凛"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15580.md": {
@@ -600,6 +643,7 @@
         "CV:东海林亚祐"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15581.md": {
@@ -613,6 +657,7 @@
         "CV:盛惠里花"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15582.md": {
@@ -626,6 +671,7 @@
         "CV:北崎瞳"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15583.md": {
@@ -639,6 +685,7 @@
         "CV:橘由纪"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15584.md": {
@@ -652,6 +699,7 @@
         "CV:田村由加莉"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15585.md": {
@@ -665,6 +713,7 @@
         "CV:音羽里奏"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 4
     },
     "/characters/15586.md": {
@@ -678,6 +727,7 @@
         "CV:本多真梨子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15587.md": {
@@ -691,6 +741,7 @@
         "CV:国実久留子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 2
     },
     "/characters/15588.md": {
@@ -704,6 +755,7 @@
         "CV:二宫雪乃"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15589.md": {
@@ -718,6 +770,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15590.md": {
@@ -731,6 +784,7 @@
         "CV:小清水亚美"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15591.md": {
@@ -744,6 +798,7 @@
         "CV:山本彩乃"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15592.md": {
@@ -757,6 +812,7 @@
         "CV:音羽里奏"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15593.md": {
@@ -770,6 +826,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15594.md": {
@@ -783,6 +840,7 @@
         "CV:星乃圭吾"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15595.md": {
@@ -796,6 +854,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 3
     },
     "/characters/15596.md": {
@@ -809,6 +868,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15597.md": {
@@ -822,6 +882,7 @@
         "CV:小坂帆夏"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15598.md": {
@@ -835,6 +896,7 @@
         "CV:森田绘音"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15599.md": {
@@ -848,6 +910,7 @@
         "CV:楠大典"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15600.md": {
@@ -861,6 +924,7 @@
         "CV:石川明日菜"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15601.md": {
@@ -874,6 +938,7 @@
         "CV:伊藤纱月"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15602.md": {
@@ -888,6 +953,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/15603.md": {
@@ -901,6 +967,7 @@
         "CV:三浦小季"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/15604.md": {
@@ -914,6 +981,7 @@
         "CV:高仲祐之"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/54116.md": {
@@ -927,6 +995,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/54117.md": {
@@ -940,6 +1009,7 @@
         "CV:野宫一范"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/77911.md": {
@@ -953,6 +1023,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77913.md": {
@@ -966,6 +1037,7 @@
         "CV:鸟羽优好"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/77914.md": {
@@ -979,6 +1051,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77917.md": {
@@ -992,6 +1065,7 @@
         "CV:逢沢光明"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/77918.md": {
@@ -1005,6 +1079,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77921.md": {
@@ -1018,6 +1093,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77922.md": {
@@ -1031,6 +1107,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77923.md": {
@@ -1044,6 +1121,7 @@
         "CV:加藤慎也"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/77924.md": {
@@ -1057,6 +1135,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77925.md": {
@@ -1070,6 +1149,7 @@
         "CV:国実久留子"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77926.md": {
@@ -1083,6 +1163,7 @@
         "CV:野田卓見"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/77927.md": {
@@ -1096,6 +1177,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/77928.md": {
@@ -1109,6 +1191,7 @@
         "CV:山田真瑠奈"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/78754.md": {
@@ -1123,6 +1206,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/78840.md": {
@@ -1136,6 +1220,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/78841.md": {
@@ -1149,6 +1234,7 @@
         "CV:山本亚衣"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 1
     },
     "/characters/94450.md": {
@@ -1162,6 +1248,7 @@
         "CV:长谷川育美"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/characters/94451.md": {
@@ -1176,6 +1263,7 @@
         "变体"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 2
     },
     "/characters/95786.md": {
@@ -1189,6 +1277,7 @@
         "CV:子安武人"
       ],
       "section": "characters",
+      "tier": "skeleton",
       "degree": 0
     },
     "/community/community-appstore.md": {
@@ -1202,6 +1291,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-bilibili.md": {
@@ -1215,6 +1305,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-discord.md": {
@@ -1228,6 +1319,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-google-play.md": {
@@ -1241,6 +1333,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-index.md": {
@@ -1254,6 +1347,7 @@
         "zero-ml"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 17
     },
     "/community/community-official.md": {
@@ -1267,6 +1361,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-pixiv.md": {
@@ -1280,6 +1375,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-reddit.md": {
@@ -1293,6 +1389,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-ruliweb.md": {
@@ -1306,6 +1403,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-steam-discussion.md": {
@@ -1319,6 +1417,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-steam.md": {
@@ -1332,6 +1431,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-stopgame.md": {
@@ -1345,6 +1445,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-taptap-review.md": {
@@ -1358,6 +1459,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-taptap.md": {
@@ -1371,6 +1473,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-timeline.md": {
@@ -1384,6 +1487,7 @@
         "zero-ml"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 0
     },
     "/community/community-weibo.md": {
@@ -1397,6 +1501,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-weixin.md": {
@@ -1410,6 +1515,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-youtube-comments.md": {
@@ -1423,6 +1529,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/community/community-youtube.md": {
@@ -1436,6 +1543,7 @@
         "lens:analysis"
       ],
       "section": "community",
+      "tier": "skeleton",
       "degree": 2
     },
     "/extracted/extracted-art-assets.md": {
@@ -1450,6 +1558,7 @@
         "content:art-assets"
       ],
       "section": "extracted",
+      "tier": "search",
       "degree": 0
     },
     "/extracted/extracted-categorized.md": {
@@ -1464,6 +1573,7 @@
         "content:categorized"
       ],
       "section": "extracted",
+      "tier": "search",
       "degree": 0
     },
     "/extracted/extracted-lua-tables.md": {
@@ -1478,6 +1588,7 @@
         "content:lua-tables"
       ],
       "section": "extracted",
+      "tier": "search",
       "degree": 0
     },
     "/extracted/extracted-readme.md": {
@@ -1490,6 +1601,7 @@
         "documentation"
       ],
       "section": "extracted",
+      "tier": "search",
       "degree": 0
     },
     "/memory/capability-index.md": {
@@ -1502,6 +1614,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/contribution-protocol.md": {
@@ -1514,6 +1627,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/decisions-archive.md": {
@@ -1526,6 +1640,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/decisions.md": {
@@ -1538,6 +1653,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/lessons-learned.md": {
@@ -1550,6 +1666,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md": {
@@ -1566,6 +1683,7 @@
         "blackpool-design"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md": {
@@ -1582,6 +1700,7 @@
         "blackpool-design"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md": {
@@ -1597,6 +1716,7 @@
         "bpt"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md": {
@@ -1612,6 +1732,7 @@
         "bpt"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md": {
@@ -1627,6 +1748,7 @@
         "bpt"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md": {
@@ -1642,6 +1764,7 @@
         "bpt"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md": {
@@ -1657,6 +1780,7 @@
         "bpt"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md": {
@@ -1673,6 +1797,7 @@
         "blackpool-design"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-active-contribution-protocol.md": {
@@ -1686,6 +1811,7 @@
         "active-hub"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-active-mission-v2-0-three-pillars.md": {
@@ -1699,6 +1825,7 @@
         "active-hub"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-active-policy-direct-push-main.md": {
@@ -1712,6 +1839,7 @@
         "active-hub"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-active-silver-blackpool-interface.md": {
@@ -1725,6 +1853,7 @@
         "active-hub"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-biav-info-classification.md": {
@@ -1737,6 +1866,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md": {
@@ -1749,6 +1879,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-bpt-architecture-summary-template.md": {
@@ -1761,6 +1892,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-bpt-guidance-log.md": {
@@ -1773,6 +1905,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
@@ -1785,6 +1918,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-capability-annotations.md": {
@@ -1798,6 +1932,7 @@
         "machine-authority"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-capability-registry.md": {
@@ -1811,6 +1946,7 @@
         "machine-authority"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-collab-event-playbook.md": {
@@ -1823,6 +1959,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-discord-archiver-design.md": {
@@ -1835,6 +1972,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-facts.md": {
@@ -1848,6 +1986,7 @@
         "machine-authority"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-karpathy-coding-principles.md": {
@@ -1860,6 +1999,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-knowledge-layer-design.md": {
@@ -1872,6 +2012,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-pending-discussions.md": {
@@ -1884,6 +2025,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-phase-d-plan.md": {
@@ -1896,6 +2038,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-research-best-wiki-features.md": {
@@ -1908,6 +2051,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-session-continuity.md": {
@@ -1921,6 +2065,7 @@
         "machine-authority"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-skill-authoring-standard.md": {
@@ -1933,6 +2078,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-storage-discussion.md": {
@@ -1945,6 +2091,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-wiki-characters-schema-v1.md": {
@@ -1957,6 +2104,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-wiki-phase-2-gap-inventory.md": {
@@ -1969,6 +2117,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-ext-workflow-api-key-audit.md": {
@@ -1981,6 +2130,7 @@
         "data_layer:curated"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-research-community-analysis-2026-05-18-26.md": {
@@ -1994,6 +2144,7 @@
         "research"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-research-discord-archive-backfill-conflict.md": {
@@ -2007,6 +2158,7 @@
         "research"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/memory-strategy-repo-slimming-plan.md": {
@@ -2020,6 +2172,7 @@
         "strategy"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/methodology.md": {
@@ -2032,6 +2185,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/morimens-context.md": {
@@ -2044,6 +2198,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/project-status.md": {
@@ -2056,6 +2211,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/strategic-plan-2026.md": {
@@ -2068,6 +2224,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/memory/style-guide.md": {
@@ -2080,6 +2237,7 @@
         "pointer"
       ],
       "section": "memory",
+      "tier": "search",
       "degree": 0
     },
     "/news-output/news-output-all.md": {
@@ -2093,6 +2251,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-appstore.md": {
@@ -2106,6 +2265,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-arca-live.md": {
@@ -2119,6 +2279,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-bahamut.md": {
@@ -2132,6 +2293,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-bilibili.md": {
@@ -2145,6 +2307,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-discord.md": {
@@ -2158,6 +2321,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-feed.md": {
@@ -2171,6 +2335,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-google-play.md": {
@@ -2184,6 +2349,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-newsjs.md": {
@@ -2197,6 +2363,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-note-com.md": {
@@ -2210,6 +2377,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-official.md": {
@@ -2223,6 +2391,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-pixiv.md": {
@@ -2236,6 +2405,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-reddit.md": {
@@ -2249,6 +2419,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-ruliweb.md": {
@@ -2262,6 +2433,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-steam-discussion.md": {
@@ -2275,6 +2447,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-steam.md": {
@@ -2288,6 +2461,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-stopgame.md": {
@@ -2301,6 +2475,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-taptap-review.md": {
@@ -2314,6 +2489,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-taptap.md": {
@@ -2327,6 +2503,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-twitter.md": {
@@ -2340,6 +2517,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 0
     },
     "/news-output/news-output-weibo.md": {
@@ -2353,6 +2531,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-weixin.md": {
@@ -2366,6 +2545,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/news-output/news-output-youtube.md": {
@@ -2379,6 +2559,7 @@
         "sampled"
       ],
       "section": "news-output",
+      "tier": "skeleton",
       "degree": 1
     },
     "/projects/bpt-sdk-doc-architecture.md": {
@@ -2392,6 +2573,7 @@
         "sub-project:bpt-agent-sdk"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/bpt-sdk-doc-compat.md": {
@@ -2405,6 +2587,7 @@
         "sub-project:bpt-agent-sdk"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/bpt-sdk-doc-migration.md": {
@@ -2418,6 +2601,7 @@
         "sub-project:bpt-agent-sdk"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/bpt-sdk-doc-positioning.md": {
@@ -2431,6 +2615,7 @@
         "sub-project:bpt-agent-sdk"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/doc-testing-strategy.md": {
@@ -2443,6 +2628,7 @@
         "engineering-doc"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/entry-claude-md.md": {
@@ -2456,6 +2642,7 @@
         "runtime-authority"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 6
     },
     "/projects/entry-readme.md": {
@@ -2468,6 +2655,7 @@
         "entry-point"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/extracted-lua-inventory.md": {
@@ -2481,6 +2669,7 @@
         "binary-assets-pointer"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/extracted-lua-readme.md": {
@@ -2493,6 +2682,7 @@
         "engineering-doc"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/news-archive-sources-registry.md": {
@@ -2506,6 +2696,7 @@
         "sub-project:news"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/project-bpt-agent-sdk.md": {
@@ -2519,6 +2710,7 @@
         "milestone"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/project-game.md": {
@@ -2532,6 +2724,7 @@
         "milestone"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/project-news.md": {
@@ -2545,6 +2738,7 @@
         "milestone"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/project-site.md": {
@@ -2558,6 +2752,7 @@
         "milestone"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/project-wiki.md": {
@@ -2571,6 +2766,7 @@
         "milestone"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 1
     },
     "/projects/releases-treasure-map.md": {
@@ -2584,6 +2780,7 @@
         "binary-assets-pointer"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/site-design-morimens-design-system-guide.md": {
@@ -2597,6 +2794,7 @@
         "sub-project:site"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/projects/site-design-morimens-design-tokens.md": {
@@ -2610,6 +2808,7 @@
         "sub-project:site"
       ],
       "section": "projects",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md": {
@@ -2623,6 +2822,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-jp-discord-insights-202606.md": {
@@ -2636,6 +2836,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md": {
@@ -2649,6 +2850,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md": {
@@ -2662,6 +2864,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603.md": {
@@ -2675,6 +2878,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md": {
@@ -2688,6 +2892,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md": {
@@ -2701,6 +2906,7 @@
         "topic:community-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-daily-20260601-r2.md": {
@@ -2714,6 +2920,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-daily-20260601.md": {
@@ -2727,6 +2934,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-daily-20260602-r2.md": {
@@ -2740,6 +2948,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-daily-full-20260602.md": {
@@ -2753,6 +2962,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-period-20260512-0603.md": {
@@ -2766,6 +2976,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-daily-news-morimens-window-20260602.md": {
@@ -2779,6 +2990,7 @@
         "topic:daily-news"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md": {
@@ -2792,6 +3004,7 @@
         "topic:data-diagnostics"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md": {
@@ -2805,6 +3018,7 @@
         "topic:data-diagnostics"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": {
@@ -2818,6 +3032,7 @@
         "topic:data-diagnostics"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-game-analysis-bug-fault-report-20260518-26.md": {
@@ -2831,6 +3046,7 @@
         "topic:game-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-game-analysis-role-action-recommendations-202605.md": {
@@ -2844,6 +3060,7 @@
         "topic:game-analysis"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-proposal-ai-collaboration-method-202603.md": {
@@ -2857,6 +3074,7 @@
         "topic:proposal"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-proposal-biav-project-plan-202603.md": {
@@ -2870,6 +3088,7 @@
         "topic:proposal"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-proposal-internal-ai-platform-plan-202604.md": {
@@ -2883,6 +3102,7 @@
         "topic:proposal"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": {
@@ -2896,6 +3116,7 @@
         "topic:proposal"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-proposal-wiki-prototype-202603.md": {
@@ -2909,6 +3130,7 @@
         "topic:proposal"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md": {
@@ -2922,6 +3144,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md": {
@@ -2935,6 +3158,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": {
@@ -2948,6 +3172,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md": {
@@ -2961,6 +3186,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-repo-audit-20260603-r2.md": {
@@ -2974,6 +3200,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-repo-audit-20260603.md": {
@@ -2987,6 +3214,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-repo-health-assessment-20260602.md": {
@@ -3000,6 +3228,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md": {
@@ -3013,6 +3242,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-retired-modules-audit-202606.md": {
@@ -3026,6 +3256,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-test-coverage-analysis-202606.md": {
@@ -3039,6 +3270,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md": {
@@ -3052,6 +3284,7 @@
         "topic:repo-engineering"
       ],
       "section": "resource",
+      "tier": "search",
       "degree": 0
     },
     "/sources/appstore.md": {
@@ -3065,6 +3298,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/bilibili.md": {
@@ -3078,6 +3312,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/discord.md": {
@@ -3091,6 +3326,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/google_play.md": {
@@ -3104,6 +3340,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/official.md": {
@@ -3117,6 +3354,7 @@
         "health:degraded"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/pixiv.md": {
@@ -3130,6 +3368,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/reddit.md": {
@@ -3143,6 +3382,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/ruliweb.md": {
@@ -3156,6 +3396,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/steam.md": {
@@ -3169,6 +3410,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/steam_discussion.md": {
@@ -3182,6 +3424,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/stopgame.md": {
@@ -3195,6 +3438,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/taptap.md": {
@@ -3208,6 +3452,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/taptap_review.md": {
@@ -3221,6 +3466,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/weibo.md": {
@@ -3234,6 +3480,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/weixin.md": {
@@ -3247,6 +3494,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/youtube.md": {
@@ -3260,6 +3508,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 2
     },
     "/sources/youtube_comments.md": {
@@ -3273,6 +3522,7 @@
         "health:active"
       ],
       "section": "sources",
+      "tier": "skeleton",
       "degree": 1
     },
     "/story/STORY_RESEARCH.md": {
@@ -3286,6 +3536,7 @@
         "research"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/character_story_links.md": {
@@ -3299,6 +3550,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/lore_by_unit.md": {
@@ -3312,6 +3564,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/lore_entries.md": {
@@ -3325,6 +3578,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/stages_by_unit.md": {
@@ -3338,6 +3592,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_index.md": {
@@ -3351,6 +3606,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_layer_readme.md": {
@@ -3364,6 +3620,7 @@
         "data_layer:curated"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_research_notes.md": {
@@ -3377,6 +3634,7 @@
         "data_layer:curated"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_research_todo.md": {
@@ -3390,6 +3648,7 @@
         "data_layer:curated"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_search_index.md": {
@@ -3403,6 +3662,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/story/story_units.md": {
@@ -3416,6 +3676,7 @@
         "data_layer:full_archive"
       ],
       "section": "story",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-config.md": {
@@ -3430,6 +3691,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-ejoysdk-lua.md": {
@@ -3444,6 +3706,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-foundation.md": {
@@ -3458,6 +3721,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-game-data-all.md": {
@@ -3472,6 +3736,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-game-text.md": {
@@ -3486,6 +3751,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-gamelauncher.md": {
@@ -3500,6 +3766,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-gamescript.md": {
@@ -3514,6 +3781,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-gameupdate.md": {
@@ -3528,6 +3796,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-lua-tables.md": {
@@ -3542,6 +3811,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-share.md": {
@@ -3556,6 +3826,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-sproto.md": {
@@ -3570,6 +3841,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-text-cn.md": {
@@ -3584,6 +3856,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/unpacked/unpacked-vue.md": {
@@ -3598,6 +3871,7 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-banners-by-character.md": {
@@ -3611,6 +3885,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-cg-gallery.md": {
@@ -3624,6 +3899,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-character-index.md": {
@@ -3637,6 +3913,7 @@
         "domain:index"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-character-skills.md": {
@@ -3651,6 +3928,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-drops-by-item.md": {
@@ -3664,6 +3942,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-feature-unlock.md": {
@@ -3677,6 +3956,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-item-stories.md": {
@@ -3690,6 +3970,7 @@
         "domain:story"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-language-config.md": {
@@ -3703,6 +3984,7 @@
         "domain:localization"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-panel-text.md": {
@@ -3716,6 +3998,7 @@
         "domain:localization"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-potency.md": {
@@ -3729,6 +4012,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-stages.md": {
@@ -3742,6 +4026,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-story-character-map.md": {
@@ -3755,6 +4040,7 @@
         "domain:story"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-summon.md": {
@@ -3768,6 +4054,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-tasks.md": {
@@ -3781,6 +4068,7 @@
         "domain:gameplay"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-update-notices.md": {
@@ -3794,6 +4082,7 @@
         "domain:localization"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-voice-character-map.md": {
@@ -3807,6 +4096,7 @@
         "domain:story"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-voice-lines.md": {
@@ -3820,6 +4110,7 @@
         "domain:story"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-data-world-lore.md": {
@@ -3833,6 +4124,7 @@
         "domain:story"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-banners-schema.md": {
@@ -3846,6 +4138,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-characters-processed-schema.md": {
@@ -3859,6 +4152,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-characters-schema.md": {
@@ -3872,6 +4166,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-items-schema.md": {
@@ -3885,6 +4180,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-meta-schema.md": {
@@ -3898,6 +4194,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-realms-schema.md": {
@@ -3911,6 +4208,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-stages-schema.md": {
@@ -3924,6 +4222,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     },
     "/wiki-data/wiki-schema-trinkets-schema.md": {
@@ -3937,6 +4236,7 @@
         "contract"
       ],
       "section": "wiki-data",
+      "tier": "search",
       "degree": 0
     }
   },

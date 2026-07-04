@@ -710,11 +710,14 @@ def build_graph() -> dict:
         fm = _read_frontmatter(text)
         bodies[rel] = text
         id_set.add(rel)
+        parts = rel.strip("/").split("/")
         node = {
             "id": rel,
             "type": fm.get("type", "unknown"),
             "title": fm.get("title", f.stem),
             "tags": fm.get("tags", []) if isinstance(fm.get("tags"), list) else [],
+            # 两层结构（北极星 Pillar A）：skeleton 可遍历骨架 vs search 参考层
+            "tier": build_kb_index.tier_of(parts[0] if len(parts) > 1 else ""),
         }
         url = _node_url(rel)
         if url:

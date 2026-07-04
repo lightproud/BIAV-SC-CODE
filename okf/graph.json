@@ -12,7 +12,8 @@
       "tags": [
         "meta",
         "documentation"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-archive-integrity.md",
@@ -23,7 +24,8 @@
         "fact-bible",
         "diagnostics",
         "snapshot"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-card-system.md",
@@ -32,7 +34,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-chat-onboarding-snippet.md",
@@ -41,7 +44,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-design-decisions.md",
@@ -50,7 +54,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-images.md",
@@ -60,7 +65,8 @@
         "data_layer:curated",
         "fact-bible",
         "media:image"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-interview-2026-04.md",
@@ -69,7 +75,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-narrative-structure.md",
@@ -78,7 +85,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-readme.md",
@@ -87,7 +95,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-sentinel-baseline.md",
@@ -98,7 +107,8 @@
         "fact-bible",
         "diagnostics",
         "snapshot"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/assets-version.md",
@@ -107,7 +117,8 @@
       "tags": [
         "data_layer:curated",
         "fact-bible"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/persona-erica-speech-canon.md",
@@ -117,7 +128,8 @@
         "data_layer:curated",
         "persona",
         "character:erica"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/assets/persona-erica.md",
@@ -127,7 +139,8 @@
         "data_layer:curated",
         "persona",
         "character:erica"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/characters/122587.md",
@@ -138,7 +151,8 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈",
         "变体"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/125346.md",
@@ -149,6 +163,7 @@
         "画师:巴拉巴拉",
         "CV:田中理惠"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/125346"
     },
     {
@@ -160,6 +175,7 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/130226"
     },
     {
@@ -170,7 +186,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/130384.md",
@@ -180,7 +197,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/130901.md",
@@ -191,6 +209,7 @@
         "画师:巴拉巴拉",
         "CV:松元菜菜海"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/130901"
     },
     {
@@ -202,6 +221,7 @@
         "画师:巴拉巴拉",
         "CV:橘由纪"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15560"
     },
     {
@@ -213,7 +233,8 @@
         "画师:巴拉巴拉",
         "CV:冈本美歌",
         "变体"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/15562.md",
@@ -224,6 +245,7 @@
         "画师:巴拉巴拉",
         "CV:青池优花"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15562"
     },
     {
@@ -235,6 +257,7 @@
         "画师:巴拉巴拉",
         "CV:宫园美海"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15563"
     },
     {
@@ -246,6 +269,7 @@
         "画师:巴拉巴拉",
         "CV:木下章嗣"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15564"
     },
     {
@@ -257,6 +281,7 @@
         "画师:巴拉巴拉",
         "CV:国実久留子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15565"
     },
     {
@@ -268,6 +293,7 @@
         "画师:巴拉巴拉",
         "CV:藤崎桃子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15566"
     },
     {
@@ -280,6 +306,7 @@
         "CV:国実久留子",
         "变体"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15567"
     },
     {
@@ -292,6 +319,7 @@
         "CV:山本亚衣",
         "变体"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15568"
     },
     {
@@ -303,6 +331,7 @@
         "画师:巴拉巴拉",
         "CV:宫园美海"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15569"
     },
     {
@@ -314,6 +343,7 @@
         "画师:巴拉巴拉",
         "CV:鱼谷佳代"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15570"
     },
     {
@@ -325,6 +355,7 @@
         "画师:巴拉巴拉",
         "CV:二宫雪乃"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15571"
     },
     {
@@ -336,6 +367,7 @@
         "画师:巴拉巴拉",
         "CV:七绪凛"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15572"
     },
     {
@@ -347,6 +379,7 @@
         "画师:巴拉巴拉",
         "CV:田村由加莉"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15573"
     },
     {
@@ -358,6 +391,7 @@
         "画师:巴拉巴拉",
         "CV:冈本美歌"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15574"
     },
     {
@@ -369,6 +403,7 @@
         "画师:巴拉巴拉",
         "CV:藤崎桃子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15575"
     },
     {
@@ -380,6 +415,7 @@
         "画师:巴拉巴拉",
         "CV:大内茜"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15576"
     },
     {
@@ -391,6 +427,7 @@
         "画师:巴拉巴拉",
         "CV:伊藤纱月"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15577"
     },
     {
@@ -402,6 +439,7 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15578"
     },
     {
@@ -413,6 +451,7 @@
         "画师:巴拉巴拉",
         "CV:七绪凛"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15579"
     },
     {
@@ -424,6 +463,7 @@
         "画师:巴拉巴拉",
         "CV:东海林亚祐"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15580"
     },
     {
@@ -435,6 +475,7 @@
         "画师:巴拉巴拉",
         "CV:盛惠里花"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15581"
     },
     {
@@ -446,6 +487,7 @@
         "画师:巴拉巴拉",
         "CV:北崎瞳"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15582"
     },
     {
@@ -457,6 +499,7 @@
         "画师:巴拉巴拉",
         "CV:橘由纪"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15583"
     },
     {
@@ -468,6 +511,7 @@
         "画师:巴拉巴拉",
         "CV:田村由加莉"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15584"
     },
     {
@@ -479,6 +523,7 @@
         "画师:巴拉巴拉",
         "CV:音羽里奏"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15585"
     },
     {
@@ -490,6 +535,7 @@
         "画师:巴拉巴拉",
         "CV:本多真梨子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15586"
     },
     {
@@ -501,6 +547,7 @@
         "画师:巴拉巴拉",
         "CV:国実久留子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15587"
     },
     {
@@ -512,6 +559,7 @@
         "画师:巴拉巴拉",
         "CV:二宫雪乃"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15588"
     },
     {
@@ -524,6 +572,7 @@
         "CV:能登麻美子",
         "变体"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15589"
     },
     {
@@ -535,6 +584,7 @@
         "画师:巴拉巴拉",
         "CV:小清水亚美"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15590"
     },
     {
@@ -546,6 +596,7 @@
         "画师:巴拉巴拉",
         "CV:山本彩乃"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15591"
     },
     {
@@ -557,6 +608,7 @@
         "画师:巴拉巴拉",
         "CV:音羽里奏"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15592"
     },
     {
@@ -568,6 +620,7 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15593"
     },
     {
@@ -579,6 +632,7 @@
         "画师:巴拉巴拉",
         "CV:星乃圭吾"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15594"
     },
     {
@@ -590,6 +644,7 @@
         "画师:巴拉巴拉",
         "CV:山本亚衣"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15595"
     },
     {
@@ -601,6 +656,7 @@
         "画师:巴拉巴拉",
         "CV:山本亚衣"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15596"
     },
     {
@@ -612,6 +668,7 @@
         "画师:巴拉巴拉",
         "CV:小坂帆夏"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15597"
     },
     {
@@ -623,6 +680,7 @@
         "画师:巴拉巴拉",
         "CV:森田绘音"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15598"
     },
     {
@@ -634,6 +692,7 @@
         "画师:巴拉巴拉",
         "CV:楠大典"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15599"
     },
     {
@@ -645,6 +704,7 @@
         "画师:巴拉巴拉",
         "CV:石川明日菜"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15600"
     },
     {
@@ -656,6 +716,7 @@
         "画师:巴拉巴拉",
         "CV:伊藤纱月"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15601"
     },
     {
@@ -668,6 +729,7 @@
         "CV:鱼谷佳代",
         "变体"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15602"
     },
     {
@@ -679,6 +741,7 @@
         "画师:巴拉巴拉",
         "CV:三浦小季"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15603"
     },
     {
@@ -690,6 +753,7 @@
         "画师:巴拉巴拉",
         "CV:高仲祐之"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/15604"
     },
     {
@@ -701,6 +765,7 @@
         "画师:巴拉巴拉",
         "CV:山本亚衣"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/54116"
     },
     {
@@ -712,6 +777,7 @@
         "画师:巴拉巴拉",
         "CV:野宫一范"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/54117"
     },
     {
@@ -722,7 +788,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/77913.md",
@@ -733,6 +800,7 @@
         "画师:巴拉巴拉",
         "CV:鸟羽优好"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77913"
     },
     {
@@ -743,7 +811,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/77917.md",
@@ -754,6 +823,7 @@
         "画师:巴拉巴拉",
         "CV:逢沢光明"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77917"
     },
     {
@@ -765,6 +835,7 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77918"
     },
     {
@@ -775,7 +846,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/77922.md",
@@ -786,6 +858,7 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77922"
     },
     {
@@ -797,6 +870,7 @@
         "画师:巴拉巴拉",
         "CV:加藤慎也"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77923"
     },
     {
@@ -807,7 +881,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/77925.md",
@@ -818,6 +893,7 @@
         "画师:巴拉巴拉",
         "CV:国実久留子"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77925"
     },
     {
@@ -829,6 +905,7 @@
         "画师:巴拉巴拉",
         "CV:野田卓見"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/77926"
     },
     {
@@ -839,7 +916,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/77928.md",
@@ -849,7 +927,8 @@
         "unreleased",
         "画师:巴拉巴拉",
         "CV:山田真瑠奈"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/78754.md",
@@ -860,7 +939,8 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈",
         "变体"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/78840.md",
@@ -870,7 +950,8 @@
         "easter_egg",
         "画师:巴拉巴拉",
         "CV:山本亚衣"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/78841.md",
@@ -880,7 +961,8 @@
         "easter_egg",
         "画师:巴拉巴拉",
         "CV:山本亚衣"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/94450.md",
@@ -891,6 +973,7 @@
         "画师:巴拉巴拉",
         "CV:长谷川育美"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/94450"
     },
     {
@@ -902,7 +985,8 @@
         "画师:巴拉巴拉",
         "CV:山田真瑠奈",
         "变体"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/characters/95786.md",
@@ -913,6 +997,7 @@
         "画师:巴拉巴拉",
         "CV:子安武人"
       ],
+      "tier": "skeleton",
       "url": "wiki/zh/awakeners/95786"
     },
     {
@@ -923,7 +1008,8 @@
         "data_layer:full_archive",
         "platform:appstore",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-bilibili.md",
@@ -933,7 +1019,8 @@
         "data_layer:full_archive",
         "platform:bilibili",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-discord.md",
@@ -943,7 +1030,8 @@
         "data_layer:full_archive",
         "platform:discord",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-google-play.md",
@@ -953,7 +1041,8 @@
         "data_layer:full_archive",
         "platform:google_play",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-index.md",
@@ -963,7 +1052,8 @@
         "data_layer:full_archive",
         "kind:analysis-index",
         "zero-ml"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-official.md",
@@ -973,7 +1063,8 @@
         "data_layer:full_archive",
         "platform:official",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-pixiv.md",
@@ -983,7 +1074,8 @@
         "data_layer:full_archive",
         "platform:pixiv",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-reddit.md",
@@ -993,7 +1085,8 @@
         "data_layer:full_archive",
         "platform:reddit",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-ruliweb.md",
@@ -1003,7 +1096,8 @@
         "data_layer:full_archive",
         "platform:ruliweb",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-steam-discussion.md",
@@ -1013,7 +1107,8 @@
         "data_layer:full_archive",
         "platform:steam_discussion",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-steam.md",
@@ -1023,7 +1118,8 @@
         "data_layer:full_archive",
         "platform:steam",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-stopgame.md",
@@ -1033,7 +1129,8 @@
         "data_layer:full_archive",
         "platform:stopgame",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-taptap-review.md",
@@ -1043,7 +1140,8 @@
         "data_layer:full_archive",
         "platform:taptap_review",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-taptap.md",
@@ -1053,7 +1151,8 @@
         "data_layer:full_archive",
         "platform:taptap",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-timeline.md",
@@ -1063,7 +1162,8 @@
         "data_layer:full_archive",
         "kind:timeseries",
         "zero-ml"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-weibo.md",
@@ -1073,7 +1173,8 @@
         "data_layer:full_archive",
         "platform:weibo",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-weixin.md",
@@ -1083,7 +1184,8 @@
         "data_layer:full_archive",
         "platform:weixin",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-youtube-comments.md",
@@ -1093,7 +1195,8 @@
         "data_layer:full_archive",
         "platform:youtube_comments",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/community/community-youtube.md",
@@ -1103,7 +1206,8 @@
         "data_layer:full_archive",
         "platform:youtube",
         "lens:analysis"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/extracted/extracted-art-assets.md",
@@ -1114,7 +1218,8 @@
         "first-hand-unpack",
         "upstream-of:processed",
         "content:art-assets"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/extracted/extracted-categorized.md",
@@ -1125,7 +1230,8 @@
         "first-hand-unpack",
         "upstream-of:processed",
         "content:categorized"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/extracted/extracted-lua-tables.md",
@@ -1136,7 +1242,8 @@
         "first-hand-unpack",
         "upstream-of:processed",
         "content:lua-tables"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/extracted/extracted-readme.md",
@@ -1145,7 +1252,8 @@
       "tags": [
         "data_layer:curated",
         "documentation"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/capability-index.md",
@@ -1154,7 +1262,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/contribution-protocol.md",
@@ -1163,7 +1272,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/decisions-archive.md",
@@ -1172,7 +1282,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/decisions.md",
@@ -1181,7 +1292,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/lessons-learned.md",
@@ -1190,7 +1302,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -1203,7 +1316,8 @@
         "frozen-snapshot",
         "bpt",
         "blackpool-design"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -1216,7 +1330,8 @@
         "frozen-snapshot",
         "bpt",
         "blackpool-design"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
@@ -1228,7 +1343,8 @@
         "archive",
         "frozen-snapshot",
         "bpt"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -1240,7 +1356,8 @@
         "archive",
         "frozen-snapshot",
         "bpt"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
@@ -1252,7 +1369,8 @@
         "archive",
         "frozen-snapshot",
         "bpt"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
@@ -1264,7 +1382,8 @@
         "archive",
         "frozen-snapshot",
         "bpt"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
@@ -1276,7 +1395,8 @@
         "archive",
         "frozen-snapshot",
         "bpt"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
@@ -1289,7 +1409,8 @@
         "frozen-snapshot",
         "bpt",
         "blackpool-design"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-active-contribution-protocol.md",
@@ -1299,7 +1420,8 @@
         "memory",
         "data_layer:curated",
         "active-hub"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -1309,7 +1431,8 @@
         "memory",
         "data_layer:curated",
         "active-hub"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-active-policy-direct-push-main.md",
@@ -1319,7 +1442,8 @@
         "memory",
         "data_layer:curated",
         "active-hub"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -1329,7 +1453,8 @@
         "memory",
         "data_layer:curated",
         "active-hub"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-biav-info-classification.md",
@@ -1338,7 +1463,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -1347,7 +1473,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-bpt-architecture-summary-template.md",
@@ -1356,7 +1483,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-bpt-guidance-log.md",
@@ -1365,7 +1493,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
@@ -1374,7 +1503,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-capability-annotations.md",
@@ -1384,7 +1514,8 @@
         "memory",
         "data_layer:curated",
         "machine-authority"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-capability-registry.md",
@@ -1394,7 +1525,8 @@
         "memory",
         "data_layer:curated",
         "machine-authority"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-collab-event-playbook.md",
@@ -1403,7 +1535,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-discord-archiver-design.md",
@@ -1412,7 +1545,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-facts.md",
@@ -1422,7 +1556,8 @@
         "memory",
         "data_layer:curated",
         "machine-authority"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-karpathy-coding-principles.md",
@@ -1431,7 +1566,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-knowledge-layer-design.md",
@@ -1440,7 +1576,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-pending-discussions.md",
@@ -1449,7 +1586,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-phase-d-plan.md",
@@ -1458,7 +1596,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-research-best-wiki-features.md",
@@ -1467,7 +1606,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-session-continuity.md",
@@ -1477,7 +1617,8 @@
         "memory",
         "data_layer:curated",
         "machine-authority"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-skill-authoring-standard.md",
@@ -1486,7 +1627,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-storage-discussion.md",
@@ -1495,7 +1637,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-wiki-characters-schema-v1.md",
@@ -1504,7 +1647,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -1513,7 +1657,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-ext-workflow-api-key-audit.md",
@@ -1522,7 +1667,8 @@
       "tags": [
         "memory",
         "data_layer:curated"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -1532,7 +1678,8 @@
         "memory",
         "data_layer:curated",
         "research"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -1542,7 +1689,8 @@
         "memory",
         "data_layer:curated",
         "research"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/memory-strategy-repo-slimming-plan.md",
@@ -1552,7 +1700,8 @@
         "memory",
         "data_layer:curated",
         "strategy"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/methodology.md",
@@ -1561,7 +1710,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/morimens-context.md",
@@ -1570,7 +1720,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/project-status.md",
@@ -1579,7 +1730,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/strategic-plan-2026.md",
@@ -1588,7 +1740,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/memory/style-guide.md",
@@ -1597,7 +1750,8 @@
       "tags": [
         "memory",
         "pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/news-output/news-output-all.md",
@@ -1607,7 +1761,8 @@
         "data_layer:output",
         "aggregate",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-appstore.md",
@@ -1617,7 +1772,8 @@
         "data_layer:output",
         "platform:appstore",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-arca-live.md",
@@ -1627,7 +1783,8 @@
         "data_layer:output",
         "platform:arca_live",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-bahamut.md",
@@ -1637,7 +1794,8 @@
         "data_layer:output",
         "platform:bahamut",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-bilibili.md",
@@ -1647,7 +1805,8 @@
         "data_layer:output",
         "platform:bilibili",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-discord.md",
@@ -1657,7 +1816,8 @@
         "data_layer:output",
         "platform:discord",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-feed.md",
@@ -1667,7 +1827,8 @@
         "data_layer:output",
         "aggregate",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-google-play.md",
@@ -1677,7 +1838,8 @@
         "data_layer:output",
         "platform:google_play",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-newsjs.md",
@@ -1687,7 +1849,8 @@
         "data_layer:output",
         "aggregate",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-note-com.md",
@@ -1697,7 +1860,8 @@
         "data_layer:output",
         "platform:note_com",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-official.md",
@@ -1707,7 +1871,8 @@
         "data_layer:output",
         "platform:official",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-pixiv.md",
@@ -1717,7 +1882,8 @@
         "data_layer:output",
         "platform:pixiv",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-reddit.md",
@@ -1727,7 +1893,8 @@
         "data_layer:output",
         "platform:reddit",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-ruliweb.md",
@@ -1737,7 +1904,8 @@
         "data_layer:output",
         "platform:ruliweb",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-steam-discussion.md",
@@ -1747,7 +1915,8 @@
         "data_layer:output",
         "platform:steam_discussion",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-steam.md",
@@ -1757,7 +1926,8 @@
         "data_layer:output",
         "platform:steam",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-stopgame.md",
@@ -1767,7 +1937,8 @@
         "data_layer:output",
         "platform:stopgame",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-taptap-review.md",
@@ -1777,7 +1948,8 @@
         "data_layer:output",
         "platform:taptap_review",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-taptap.md",
@@ -1787,7 +1959,8 @@
         "data_layer:output",
         "platform:taptap",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-twitter.md",
@@ -1797,7 +1970,8 @@
         "data_layer:output",
         "platform:twitter",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-weibo.md",
@@ -1807,7 +1981,8 @@
         "data_layer:output",
         "platform:weibo",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-weixin.md",
@@ -1817,7 +1992,8 @@
         "data_layer:output",
         "platform:weixin",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/news-output/news-output-youtube.md",
@@ -1827,7 +2003,8 @@
         "data_layer:output",
         "platform:youtube",
         "sampled"
-      ]
+      ],
+      "tier": "skeleton"
     },
     {
       "id": "/projects/bpt-sdk-doc-architecture.md",
@@ -1837,7 +2014,8 @@
         "data_layer:curated",
         "design-doc",
         "sub-project:bpt-agent-sdk"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/bpt-sdk-doc-compat.md",
@@ -1847,7 +2025,8 @@
         "data_layer:curated",
         "design-doc",
         "sub-project:bpt-agent-sdk"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/bpt-sdk-doc-migration.md",
@@ -1857,7 +2036,8 @@
         "data_layer:curated",
         "design-doc",
         "sub-project:bpt-agent-sdk"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/bpt-sdk-doc-positioning.md",
@@ -1867,7 +2047,8 @@
         "data_layer:curated",
         "design-doc",
         "sub-project:bpt-agent-sdk"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/doc-testing-strategy.md",
@@ -1876,7 +2057,8 @@
       "tags": [
         "data_layer:curated",
         "engineering-doc"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/entry-claude-md.md",
@@ -1886,7 +2068,8 @@
         "data_layer:curated",
         "entry-point",
         "runtime-authority"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/entry-readme.md",
@@ -1895,7 +2078,8 @@
       "tags": [
         "data_layer:curated",
         "entry-point"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/extracted-lua-inventory.md",
@@ -1905,7 +2089,8 @@
         "data_layer:curated",
         "manifest",
         "binary-assets-pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/extracted-lua-readme.md",
@@ -1914,7 +2099,8 @@
       "tags": [
         "data_layer:curated",
         "engineering-doc"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/news-archive-sources-registry.md",
@@ -1924,7 +2110,8 @@
         "data_layer:curated",
         "registry",
         "sub-project:news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/project-bpt-agent-sdk.md",
@@ -1934,7 +2121,8 @@
         "data_layer:curated",
         "sub-project-context",
         "milestone"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/project-game.md",
@@ -1944,7 +2132,8 @@
         "data_layer:curated",
         "sub-project-context",
         "milestone"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/project-news.md",
@@ -1954,7 +2143,8 @@
         "data_layer:curated",
         "sub-project-context",
         "milestone"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/project-site.md",
@@ -1964,7 +2154,8 @@
         "data_layer:curated",
         "sub-project-context",
         "milestone"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/project-wiki.md",
@@ -1974,7 +2165,8 @@
         "data_layer:curated",
         "sub-project-context",
         "milestone"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/releases-treasure-map.md",
@@ -1984,7 +2176,8 @@
         "data_layer:curated",
         "treasure-map",
         "binary-assets-pointer"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/site-design-morimens-design-system-guide.md",
@@ -1994,7 +2187,8 @@
         "data_layer:curated",
         "design-system",
         "sub-project:site"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/projects/site-design-morimens-design-tokens.md",
@@ -2004,7 +2198,8 @@
         "data_layer:curated",
         "design-system",
         "sub-project:site"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -2014,7 +2209,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-jp-discord-insights-202606.md",
@@ -2024,7 +2220,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -2034,7 +2231,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -2044,7 +2242,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -2054,7 +2253,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
@@ -2064,7 +2264,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -2074,7 +2275,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
@@ -2084,7 +2286,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-daily-20260601.md",
@@ -2094,7 +2297,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
@@ -2104,7 +2308,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
@@ -2114,7 +2319,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
@@ -2124,7 +2330,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-daily-news-morimens-window-20260602.md",
@@ -2134,7 +2341,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:daily-news"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
@@ -2144,7 +2352,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:data-diagnostics"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -2154,7 +2363,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:data-diagnostics"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -2164,7 +2374,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:data-diagnostics"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
@@ -2174,7 +2385,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:game-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -2184,7 +2396,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:game-analysis"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-proposal-ai-collaboration-method-202603.md",
@@ -2194,7 +2407,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -2204,7 +2418,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -2214,7 +2429,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -2224,7 +2440,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -2234,7 +2451,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -2244,7 +2462,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -2254,7 +2473,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -2264,7 +2484,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -2274,7 +2495,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
@@ -2284,7 +2506,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-repo-audit-20260603.md",
@@ -2294,7 +2517,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -2304,7 +2528,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
@@ -2314,7 +2539,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -2324,7 +2550,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -2334,7 +2561,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -2344,7 +2572,8 @@
         "data_layer:curated",
         "deliverable",
         "topic:repo-engineering"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/sources/appstore.md",
@@ -2355,6 +2584,7 @@
         "platform:appstore",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2366,6 +2596,7 @@
         "platform:bilibili",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2377,6 +2608,7 @@
         "platform:discord",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2388,6 +2620,7 @@
         "platform:google_play",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2399,6 +2632,7 @@
         "platform:official",
         "health:degraded"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2410,6 +2644,7 @@
         "platform:pixiv",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2421,6 +2656,7 @@
         "platform:reddit",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2432,6 +2668,7 @@
         "platform:ruliweb",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2443,6 +2680,7 @@
         "platform:steam",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2454,6 +2692,7 @@
         "platform:steam_discussion",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2465,6 +2704,7 @@
         "platform:stopgame",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2476,6 +2716,7 @@
         "platform:taptap",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2487,6 +2728,7 @@
         "platform:taptap_review",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2498,6 +2740,7 @@
         "platform:weibo",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2509,6 +2752,7 @@
         "platform:weixin",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2520,6 +2764,7 @@
         "platform:youtube",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2531,6 +2776,7 @@
         "platform:youtube_comments",
         "health:active"
       ],
+      "tier": "skeleton",
       "url": "news/"
     },
     {
@@ -2542,6 +2788,7 @@
         "pointer",
         "research"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2553,6 +2800,7 @@
         "pointer",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2564,6 +2812,7 @@
         "dataset",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2575,6 +2824,7 @@
         "pointer",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2586,6 +2836,7 @@
         "dataset",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2597,6 +2848,7 @@
         "pointer",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2608,6 +2860,7 @@
         "documentation",
         "data_layer:curated"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2619,6 +2872,7 @@
         "research",
         "data_layer:curated"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2630,6 +2884,7 @@
         "research",
         "data_layer:curated"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2641,6 +2896,7 @@
         "dataset",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2652,6 +2908,7 @@
         "pointer",
         "data_layer:full_archive"
       ],
+      "tier": "search",
       "url": "wiki/story"
     },
     {
@@ -2663,7 +2920,8 @@
         "content:config",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-ejoysdk-lua.md",
@@ -2674,7 +2932,8 @@
         "content:ejoysdk-lua",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-foundation.md",
@@ -2685,7 +2944,8 @@
         "content:foundation",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-game-data-all.md",
@@ -2696,7 +2956,8 @@
         "content:game-data-all",
         "encoding:text",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-game-text.md",
@@ -2707,7 +2968,8 @@
         "content:game-text",
         "encoding:text",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-gamelauncher.md",
@@ -2718,7 +2980,8 @@
         "content:gamelauncher",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-gamescript.md",
@@ -2729,7 +2992,8 @@
         "content:gamescript",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-gameupdate.md",
@@ -2740,7 +3004,8 @@
         "content:gameupdate",
         "encoding:text",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-lua-tables.md",
@@ -2751,7 +3016,8 @@
         "content:lua-tables",
         "encoding:text",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-share.md",
@@ -2762,7 +3028,8 @@
         "content:share",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-sproto.md",
@@ -2773,7 +3040,8 @@
         "content:sproto",
         "encoding:text",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-text-cn.md",
@@ -2784,7 +3052,8 @@
         "content:text-cn",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/unpacked/unpacked-vue.md",
@@ -2795,7 +3064,8 @@
         "content:vue",
         "encoding:luac",
         "first-hand-unpack"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-banners-by-character.md",
@@ -2805,7 +3075,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-cg-gallery.md",
@@ -2815,7 +3086,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-character-index.md",
@@ -2825,7 +3097,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:index"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-character-skills.md",
@@ -2836,7 +3109,8 @@
         "community-sourced",
         "version-volatile",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-drops-by-item.md",
@@ -2846,7 +3120,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-feature-unlock.md",
@@ -2856,7 +3131,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-item-stories.md",
@@ -2866,7 +3142,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:story"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-language-config.md",
@@ -2876,7 +3153,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:localization"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-panel-text.md",
@@ -2886,7 +3164,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:localization"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-potency.md",
@@ -2896,7 +3175,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-stages.md",
@@ -2906,7 +3186,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-story-character-map.md",
@@ -2916,7 +3197,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:story"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-summon.md",
@@ -2926,7 +3208,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-tasks.md",
@@ -2936,7 +3219,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-update-notices.md",
@@ -2946,7 +3230,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:localization"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-voice-character-map.md",
@@ -2956,7 +3241,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:story"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-voice-lines.md",
@@ -2966,7 +3252,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:story"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-world-lore.md",
@@ -2976,7 +3263,8 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:story"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-banners-schema.md",
@@ -2986,7 +3274,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-characters-processed-schema.md",
@@ -2996,7 +3285,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-characters-schema.md",
@@ -3006,7 +3296,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-items-schema.md",
@@ -3016,7 +3307,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-meta-schema.md",
@@ -3026,7 +3318,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-realms-schema.md",
@@ -3036,7 +3329,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-stages-schema.md",
@@ -3046,7 +3340,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-schema-trinkets-schema.md",
@@ -3056,7 +3351,8 @@
         "data_layer:curated",
         "schema",
         "contract"
-      ]
+      ],
+      "tier": "search"
     }
   ],
   "edges": [

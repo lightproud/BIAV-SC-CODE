@@ -50,6 +50,7 @@ def _summary(cid: str, concept: dict, extra: dict | None = None) -> dict:
         "description": concept.get("description"),
         "resource": concept.get("resource"),
         "tags": concept.get("tags", []),
+        "tier": concept.get("tier"),  # skeleton（可遍历）vs search（参考层）
         "degree": concept.get("degree", 0),
     }
     if extra:
@@ -213,10 +214,14 @@ def overview() -> dict:
         "meta": idx.get("meta", {}),
         "stats": idx.get("stats", {}),
         "sections": idx.get("sections", {}),
+        "tiers": {
+            "skeleton": "可遍历骨架层（characters/sources/community/news-output）——有真高信号边，扩散激活/kb_neighbors 在此展开",
+            "search": "参考层（memory/assets/wiki-data/story/extracted/resource/projects/unpacked）——靠 kb_search 命中即可达，不强连边（避噪声星）；孤立是有意 search-tier",
+        },
         "usage": {
-            "kb_search": "按词检索概念（返回排序摘要 + resource 指针）",
-            "kb_get": "取单个概念全档（元数据 + 正文 + 邻居）",
-            "kb_neighbors": "顺关系图遍历某概念的邻居",
-            "kb_overview": "本总览（分区 / 类型 / 入口）",
+            "kb_search": "按词检索概念（返回排序摘要 + resource 指针，含 tier）",
+            "kb_get": "取单个概念全档（元数据 + 正文 + 邻居 + tier）",
+            "kb_neighbors": "顺关系图遍历某概念的邻居（骨架层最有效）",
+            "kb_overview": "本总览（分区 / 类型 / 两层结构）",
         },
     }
