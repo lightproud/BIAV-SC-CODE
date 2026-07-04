@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 31,
-      "scripts_top": 30,
+      "scripts_top": 31,
       "scripts_news": 28,
       "scripts_wiki": 6,
       "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 117
+      "total": 118
     },
     "reachability": {
-      "live": 64,
+      "live": 65,
       "test-only": 0,
       "orphaned": 0
     }
@@ -447,6 +447,15 @@
       "summary": "kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。",
       "planes": [
         "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_qual.py",
+      "path": "scripts/kb_qual.py",
+      "summary": "kb_qual.py — 知识库质性能力 probe（评判体系 #4：测 grep 给不了知识的维度）。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
