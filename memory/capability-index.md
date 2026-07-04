@@ -4,18 +4,18 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-04
-- 功能总数：**104**
-- 脚本可达性：活 57 / 仅测试 0 / 孤儿 0
+- 功能总数：**110**
+- 脚本可达性：活 59 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 30 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 23 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 25 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 4 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 8 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
 | 子项目 | 5 |
@@ -97,12 +97,14 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（23）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（25）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
 - **`build_community_index.py`** _[活:cli+workflow]_ — Build a static community-discussion analysis index over the FULL archive.  
   `scripts/build_community_index.py`
+- **`build_kb_index.py`** _[活:cli]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
+  `scripts/build_kb_index.py`
 - **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
   `scripts/build_okf_bundle.py`
 - **`build_story_index.py`** _[活:cli+workflow]_ — Build a static story/lore search index over the unpacked story layer.  
@@ -119,6 +121,8 @@
   `scripts/deliverable_path.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
+- **`kb_navigator.py`** _[活:mcp]_ — kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。  
+  `scripts/kb_navigator.py`
 - **`lua_parse.py`** _[活:import]_ — 解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。  
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
@@ -220,7 +224,7 @@
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（4）
+## MCP 知识层工具（编排入口·AI 动态平面）（8）
 
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
   `scripts/mcp_server.py`
@@ -229,6 +233,14 @@
 - **`record_lesson`** — 追加教训条目到 memory/lessons-learned.md 末尾。  
   `scripts/mcp_server.py`
 - **`current_continuity`** — 读取 session 连续性链（上次 session 快照 + topics_hint）。  
+  `scripts/mcp_server.py`
+- **`kb_search`** — 在银芯知识库中按词检索概念（角色 / 数据源 / 记忆 / 剧情）。  
+  `scripts/mcp_server.py`
+- **`kb_get`** — 取单个概念的全档：元数据 + 正文 markdown + resource 指针 + 邻居列表。  
+  `scripts/mcp_server.py`
+- **`kb_neighbors`** — 顺 OKF 关系图遍历某概念的邻居（角色按画师/CV 聚簇、显式链接边等）。  
+  `scripts/mcp_server.py`
+- **`kb_overview`** — 知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。  
   `scripts/mcp_server.py`
 
 ## Slash 命令（编排入口·人工平面）（4）

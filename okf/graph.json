@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02",
+  "generated": "2026-07-04",
   "stats": {
     "nodes": 105,
     "edges": 104
@@ -909,7 +909,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "health:degraded"
+        "health:active"
       ]
     },
     {
@@ -959,7 +959,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:taptap_review",
-        "health:degraded"
+        "health:active"
       ]
     },
     {

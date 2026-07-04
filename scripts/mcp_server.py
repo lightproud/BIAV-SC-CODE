@@ -7,10 +7,17 @@ AI tool (Claude Code, Qoder, Cursor, etc.).
 History: 2026-06-14 the auto-memory loop (蒸馏 + 语义召回 + 做梦) was retired
 for conflicting with platform-native memory; on 2026-06-20 the Keeper ruled the
 whole subsystem (TF-IDF search / knowledge graph / MemRL / fact store / dream /
-session recall) be removed. The remaining tools are platform-complementary:
+session recall) be removed. The remaining memory tools are platform-complementary:
 persona activation and decision/lesson write-back to the curated archives.
 
-Tools (4): character_persona, record_decision, record_lesson, current_continuity
+2026-07-04 the Keeper ruled the static OKF bundle be upgraded into a knowledge base
+艾瑞卡 can navigate dynamically at runtime (思想溯源 OKF + LLMwiki). This adds a KB
+navigation surface (kb_*) over okf/kb_index.json — the only runtime-dynamic
+orchestration plane gains a way to search / open / traverse the knowledge graph.
+
+Tools (8):
+  memory:      character_persona, record_decision, record_lesson, current_continuity
+  kb-navigate: kb_search, kb_get, kb_neighbors, kb_overview
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -39,6 +46,10 @@ except ImportError:
         {"name": "record_decision", "description": "追加决策到 decisions.md"},
         {"name": "record_lesson", "description": "追加教训到 lessons-learned.md"},
         {"name": "current_continuity", "description": "读取会话连续性链"},
+        {"name": "kb_search", "description": "知识库按词检索概念"},
+        {"name": "kb_get", "description": "取单个概念全档（元数据+正文+邻居）"},
+        {"name": "kb_neighbors", "description": "顺关系图遍历概念邻居"},
+        {"name": "kb_overview", "description": "知识库总览（分区/类型/入口）"},
     ]
     print(json.dumps(tools, ensure_ascii=False, indent=2))
     sys.exit(0)
@@ -151,6 +162,96 @@ def current_continuity() -> str:
     from silver_memory_tools import current_continuity as _cc
 
     return json.dumps(_cc(), ensure_ascii=False, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# 银芯知识库运行时导航 —— 把静态 OKF bundle 变成艾瑞卡运行时可动态导航的知识库
+# （守密人 2026-07-04 裁定；底座索引 okf/kb_index.json，后端 scripts/kb_navigator.py）
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+def kb_search(query: str, limit: int = 8, type_filter: str = "") -> str:
+    """在银芯知识库中按词检索概念（角色 / 数据源 / 记忆 / 剧情）。
+
+    倒排表打分、词典法分词，确定性零 ML。返回排序后的概念摘要，每条带
+    `resource` 指针——艾瑞卡据此再按需 fetch 仓内权威源（放指针不放本体）。
+
+    Args:
+        query: 检索词（中英文皆可，如 "徐" / "playable 画师" / "剧情 lore"）
+        limit: 返回条数上限（默认 8，封顶 50）
+        type_filter: 仅返回该 type 的概念（如 character / dataset / knowledge-pointer；空=不过滤）
+
+    Returns:
+        JSON: {query, tokens, total_matches, returned, results:[{id,type,title,
+               description,resource,tags,score,matched_terms}...]}
+    """
+    from kb_navigator import KBIndexMissing, search
+
+    try:
+        return json.dumps(search(query, limit, type_filter or None),
+                          ensure_ascii=False, indent=2)
+    except KBIndexMissing as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def kb_get(concept_id: str) -> str:
+    """取单个概念的全档：元数据 + 正文 markdown + resource 指针 + 邻居列表。
+
+    接受规范 id（`/characters/125346.md`）或宽松形式（`125346` / `characters/125346`
+    / 精确标题）。正文来自 OKF concept 文件；本体仍在 `resource` 指向的权威源，不复刻。
+
+    Args:
+        concept_id: 概念标识（规范 id 或宽松引用）
+
+    Returns:
+        JSON: {id,type,title,description,resource,tags,degree,body,neighbors,neighbor_count}
+    """
+    from kb_navigator import KBIndexMissing, get
+
+    try:
+        return json.dumps(get(concept_id), ensure_ascii=False, indent=2)
+    except KBIndexMissing as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def kb_neighbors(concept_id: str, limit: int = 20, rel_filter: str = "") -> str:
+    """顺 OKF 关系图遍历某概念的邻居（角色按画师/CV 聚簇、显式链接边等）。
+
+    Args:
+        concept_id: 起点概念标识（规范 id 或宽松引用）
+        limit: 返回邻居上限（默认 20，封顶 200）
+        rel_filter: 仅返回该关系标签的边（如 "画师:巴拉巴拉" / "link"；空=全部）
+
+    Returns:
+        JSON: {id,title,total_neighbors,returned,rel_filter,neighbors:[{id,type,title,rel...}]}
+    """
+    from kb_navigator import KBIndexMissing, neighbors
+
+    try:
+        return json.dumps(neighbors(concept_id, limit, rel_filter or None),
+                          ensure_ascii=False, indent=2)
+    except KBIndexMissing as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def kb_overview() -> str:
+    """知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。
+
+    艾瑞卡导航前先取此总览定位，再用 kb_search / kb_get / kb_neighbors 下钻。
+
+    Returns:
+        JSON: {generated, meta, stats:{concepts,edges,terms,by_type,sections}, sections, usage}
+    """
+    from kb_navigator import KBIndexMissing, overview
+
+    try:
+        return json.dumps(overview(), ensure_ascii=False, indent=2)
+    except KBIndexMissing as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
