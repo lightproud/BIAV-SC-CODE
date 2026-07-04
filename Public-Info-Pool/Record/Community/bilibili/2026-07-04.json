@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T06:25:38.990766+00:00",
+  "archived_at": "2026-07-04T09:19:35.563992+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -46,6 +46,29 @@
         "danmaku": 3
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/ce78fea96ebca33d6e85f22b0d95d79e749ff77d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "你居然不害怕，真无聊",
+      "summary": "-\n  └ 睿雪zhao丰年 (0赞): up这么多库存？",
+      "source": "bilibili",
+      "time": "2026-07-04T03:06:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1mcTf6wEXv",
+      "engagement": 122,
+      "is_hot": false,
+      "author": "你可以依赖我哟",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 120,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c8e3f8c7c24e8e7b4fc3e29925dc3f937bcb3cdc.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -184,6 +207,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/cd0a25044a0d853a1bff1fab6c9813c3b1133980.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "“我们约好了……这就是我……给你最后的礼物。”——《沙耶之歌》",
+      "summary": "-\n  └ Yoshikoi由鲤 (0赞): 啊啊啊啊头发和饰品都尽量选了最接近的\n不喜欢请不要骂我🥹",
+      "source": "bilibili",
+      "time": "2026-07-04T08:19:57+00:00",
+      "url": "https://www.bilibili.com/video/BV1rHMA6PEPe",
+      "engagement": 10,
+      "is_hot": false,
+      "author": "Yoshikoi由鲤",
+      "tags": [
+        "手工"
+      ],
+      "metadata": {
+        "play": 9,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/da808ec62f6f556c9e871846bbe00099c7e86198.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

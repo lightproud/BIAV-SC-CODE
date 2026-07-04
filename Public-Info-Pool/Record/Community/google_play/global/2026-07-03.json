@@ -1,8 +1,8 @@
 {
   "date": "2026-07-03",
-  "archived_at": "2026-07-04T06:25:39.158393+00:00",
+  "archived_at": "2026-07-04T09:19:35.731073+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 差评] ★1 esse jogo é muito difícil. só isso",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Really good game with a gameplay somewha",
+      "summary": "Really good game with a gameplay somewhat similar to slay the spire. The gacha aspect is free to play friendly, and progression is not hard. I love the art personally, and the stories are also really well written (I cried in some of them). I think the only thing that needs improvement is the UI of the loading screen and the combat screen, since there is no button feedback so if you clicked a button and it's loading you don't actually know that it's loading.",
+      "source": "google_play",
+      "time": "2026-07-03T07:53:37",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-76011579-765b-4aa8-9924-c12b460b9403",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ethan B (Potatoooo)",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

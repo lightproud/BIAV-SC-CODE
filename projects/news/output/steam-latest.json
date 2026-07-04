@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T06:24:43.225748+00:00",
+  "collected_at": "2026-07-04T09:18:49.662349+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-04T06:36:41+00:00",
+      "lang": "spanish",
+      "title": "[正面] GOOD",
+      "summary": "GOOD",
+      "url": "https://steamcommunity.com/profiles/76561199008523406/recommended/3052450",
+      "author": "76561199008523406",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "GOOD",
+      "timestamp_created": 1783147001,
+      "playtime_forever": 2759
+    },
     {
       "source": "steam",
       "time": "2026-07-04T04:00:57+00:00",
@@ -94,36 +109,6 @@
       "review": "One of the few good Gacha Games. Still a Gacha but good.",
       "timestamp_created": 1783087532,
       "playtime_forever": 6080
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-03T09:04:01+00:00",
-      "lang": "russian",
-      "title": "[正面] да",
-      "summary": "да",
-      "url": "https://steamcommunity.com/profiles/76561199788630780/recommended/3052450",
-      "author": "76561199788630780",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "да",
-      "timestamp_created": 1783069441,
-      "playtime_forever": 361
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-03T08:18:07+00:00",
-      "lang": "english",
-      "title": "[正面] an interesting plot, a diverse cast of characters,...",
-      "summary": "an interesting plot, a diverse cast of characters, a pleasant visual style, some kind of funny AI voice acting, and it's all for nothing. u can play",
-      "url": "https://steamcommunity.com/profiles/76561199134307536/recommended/3052450",
-      "author": "76561199134307536",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "an interesting plot, a diverse cast of characters, a pleasant visual style, some kind of funny AI voice acting, and it's all for nothing. u can play",
-      "timestamp_created": 1783066687,
-      "playtime_forever": 564
     }
   ]
 }
