@@ -209,5 +209,49 @@ def test_skeleton_is_actually_connected():
     )
 
 
+# --- 绊线 8：提及边（Pillar A+）存在、高信号、连回角色 ------------------------
+
+def test_mention_edges_are_high_signal():
+    """提及边必须真高信号：目标是角色，且源正文确实字面点名该角色（非误连）。"""
+    import json
+
+    g = _graph()
+    mentions = [e for e in g["edges"] if e.get("rel_type") == "mention"]
+    assert len(mentions) >= 20, f"提及边过少（{len(mentions)}），A+ 抽取疑失效"
+    # 全部指向角色概念
+    for e in mentions:
+        tgt = e["source"] if e["source"].startswith("/characters/") else e["target"]
+        assert tgt.startswith("/characters/"), f"提及边未连回角色：{e}"
+    # 抽 5 条核验源正文确实点名（rel 形如 "提及:沙耶"）
+    concepts = json.loads((BUNDLE / "kb_index.json").read_text(encoding="utf-8"))["concepts"]
+    checked = 0
+    for e in mentions:
+        name = e["rel"].split(":", 1)[1] if ":" in e["rel"] else ""
+        # 提及边恒为 非角色源 → 角色；取非角色端为源概念
+        src_concept = e["source"] if not e["source"].startswith("/characters/") else e["target"]
+        res = concepts.get(src_concept, {}).get("resource", "").lstrip("/")
+        p = REPO / res
+        if name and res.endswith(".md") and p.exists():
+            assert name in p.read_text(encoding="utf-8"), f"提及边误连：{res} 未点名 {name}"
+            checked += 1
+        if checked >= 5:
+            break
+    assert checked >= 3, "无法抽验足够提及边的高信号性"
+
+
+def test_islands_reduced_by_mention_edges():
+    """提及边应显著压低孤立率（守密人 Q2：孤岛其实有据可连）。"""
+    import collections
+
+    g = _graph()
+    deg = collections.Counter()
+    for e in g["edges"]:
+        deg[e["source"]] += 1
+        deg[e["target"]] += 1
+    iso = sum(1 for n in g["nodes"] if deg[n["id"]] == 0)
+    ratio = iso / len(g["nodes"])
+    assert ratio < 0.50, f"孤立率 {ratio:.0%} 偏高——提及边抽取疑退化（应 <50%）"
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

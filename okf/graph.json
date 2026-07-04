@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 299,
-    "edges": 96
+    "nodes": 300,
+    "edges": 311
   },
   "nodes": [
     {
@@ -2454,6 +2454,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "type": "documentation",
+      "title": "bpt-prompt-layering-design-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -3627,6 +3638,1296 @@
       "target": "/characters/15592.md",
       "rel": "CV:音羽里奏",
       "rel_type": "cv"
+    },
+    {
+      "source": "/assets/assets-chat-onboarding-snippet.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/assets/persona-erica-speech-canon.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/assets/persona-erica-speech-canon.md",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/assets/persona-erica-speech-canon.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/capability-index.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/contribution-protocol.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions-archive.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions-archive.md",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions-archive.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/77914.md",
+      "rel": "提及:兰提戈斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/77924.md",
+      "rel": "提及:夏塔克鸟",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/122587.md",
+      "rel": "提及:本源萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/130384.md",
+      "rel": "提及:撒托古亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/77927.md",
+      "rel": "提及:黑法老",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/130375.md",
+      "rel": "提及:诺登斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/77911.md",
+      "rel": "提及:秃鹫",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/lessons-learned.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-active-contribution-protocol.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-active-policy-direct-push-main.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-biav-info-classification.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-bpt-guidance-protocol.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-bpt-positioning.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-collab-event-playbook.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-discord-archiver-design.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-karpathy-coding-principles.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-knowledge-layer-design.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-knowledge-layer-design.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-pending-discussions.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-phase-d-plan.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-research-best-wiki-features.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-skill-authoring-standard.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-storage-discussion.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "target": "/characters/15561.md",
+      "rel": "提及:本源汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "target": "/characters/15600.md",
+      "rel": "提及:阿格里帕",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "target": "/characters/15574.md",
+      "rel": "提及:汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15568.md",
+      "rel": "提及:环行·拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/78754.md",
+      "rel": "提及:本源沉睡之主",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/94451.md",
+      "rel": "提及:本源·奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15561.md",
+      "rel": "提及:本源汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔毁·朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/78841.md",
+      "rel": "提及:熟悉的黑猫",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-community-analysis-2026-05-18-26.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-strategy-repo-slimming-plan.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/methodology.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15568.md",
+      "rel": "提及:环行·拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15565.md",
+      "rel": "提及:诺缔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15574.md",
+      "rel": "提及:汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15588.md",
+      "rel": "提及:艾尔瓦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15596.md",
+      "rel": "提及:泰旖丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/morimens-context.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/strategic-plan-2026.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/strategic-plan-2026.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/style-guide.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/entry-readme.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15568.md",
+      "rel": "提及:环行·拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-game.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-news.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-site.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/project-wiki.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/projects/releases-treasure-map.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15564.md",
+      "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15594.md",
+      "rel": "提及:凯刻斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15600.md",
+      "rel": "提及:阿格里帕",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15596.md",
+      "rel": "提及:泰旖丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/15601.md",
+      "rel": "提及:「24」",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-repo-audit-20260603.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "target": "/characters/15572.md",
+      "rel": "提及:卡茜亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15568.md",
+      "rel": "提及:环行·拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/15600.md",
+      "rel": "提及:阿格里帕",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/77914.md",
+      "rel": "提及:兰提戈斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/STORY_RESEARCH.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_notes.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_notes.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_notes.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/77914.md",
+      "rel": "提及:兰提戈斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15572.md",
+      "rel": "提及:卡茜亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/130375.md",
+      "rel": "提及:诺登斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/story/story_research_todo.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15568.md",
+      "rel": "提及:环行·拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔毁·朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15600.md",
+      "rel": "提及:阿格里帕",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/15601.md",
+      "rel": "提及:「24」",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/wiki-data/wiki-data-character-skills.md",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
+      "rel_type": "mention"
     },
     {
       "source": "/community/community-appstore.md",

@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 299,
-    "edges": 96,
-    "terms": 5085,
+    "concepts": 300,
+    "edges": 311,
+    "terms": 5103,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 55,
+      "documentation": 56,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 36,
+      "resource": 37,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 168
+      "search": 169
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 36
+      "count": 37
     },
     "sources": {
       "index": "/sources/index.md",
@@ -140,7 +140,7 @@
       ],
       "section": "assets",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/assets/assets-design-decisions.md": {
       "type": "reference",
@@ -248,7 +248,7 @@
       ],
       "section": "assets",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/assets/persona-erica.md": {
       "type": "reference",
@@ -277,7 +277,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/characters/125346.md": {
       "type": "character",
@@ -305,7 +305,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 17
     },
     "/characters/130375.md": {
       "type": "character",
@@ -319,7 +319,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/130384.md": {
       "type": "character",
@@ -333,7 +333,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/130901.md": {
       "type": "character",
@@ -347,7 +347,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/15560.md": {
       "type": "character",
@@ -361,7 +361,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 7
     },
     "/characters/15561.md": {
       "type": "character",
@@ -376,7 +376,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15562.md": {
       "type": "character",
@@ -404,7 +404,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 8
     },
     "/characters/15564.md": {
       "type": "character",
@@ -418,7 +418,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/15565.md": {
       "type": "character",
@@ -432,7 +432,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/characters/15566.md": {
       "type": "character",
@@ -446,7 +446,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 4
     },
     "/characters/15567.md": {
       "type": "character",
@@ -461,7 +461,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/15568.md": {
       "type": "character",
@@ -476,7 +476,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 10
     },
     "/characters/15569.md": {
       "type": "character",
@@ -490,7 +490,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 8
     },
     "/characters/15570.md": {
       "type": "character",
@@ -504,7 +504,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 6
     },
     "/characters/15571.md": {
       "type": "character",
@@ -532,7 +532,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15573.md": {
       "type": "character",
@@ -546,7 +546,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/15574.md": {
       "type": "character",
@@ -560,7 +560,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15575.md": {
       "type": "character",
@@ -588,7 +588,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 5
     },
     "/characters/15577.md": {
       "type": "character",
@@ -602,7 +602,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15578.md": {
       "type": "character",
@@ -630,7 +630,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 4
     },
     "/characters/15580.md": {
       "type": "character",
@@ -658,7 +658,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 3
     },
     "/characters/15582.md": {
       "type": "character",
@@ -672,7 +672,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 3
     },
     "/characters/15583.md": {
       "type": "character",
@@ -686,7 +686,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15584.md": {
       "type": "character",
@@ -714,7 +714,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 7
     },
     "/characters/15586.md": {
       "type": "character",
@@ -742,7 +742,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/characters/15588.md": {
       "type": "character",
@@ -756,7 +756,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/15589.md": {
       "type": "character",
@@ -771,7 +771,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 5
     },
     "/characters/15590.md": {
       "type": "character",
@@ -785,7 +785,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 5
     },
     "/characters/15591.md": {
       "type": "character",
@@ -827,7 +827,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15594.md": {
       "type": "character",
@@ -841,7 +841,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/15595.md": {
       "type": "character",
@@ -855,7 +855,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 10
     },
     "/characters/15596.md": {
       "type": "character",
@@ -869,7 +869,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15597.md": {
       "type": "character",
@@ -897,7 +897,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 3
     },
     "/characters/15599.md": {
       "type": "character",
@@ -911,7 +911,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 3
     },
     "/characters/15600.md": {
       "type": "character",
@@ -925,7 +925,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 4
     },
     "/characters/15601.md": {
       "type": "character",
@@ -939,7 +939,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15602.md": {
       "type": "character",
@@ -954,7 +954,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15603.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 66
     },
     "/characters/15604.md": {
       "type": "character",
@@ -982,7 +982,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -996,7 +996,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 5
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1024,7 +1024,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/77913.md": {
       "type": "character",
@@ -1038,7 +1038,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/77914.md": {
       "type": "character",
@@ -1052,7 +1052,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 4
     },
     "/characters/77917.md": {
       "type": "character",
@@ -1066,7 +1066,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1080,7 +1080,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 8
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1136,7 +1136,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/77925.md": {
       "type": "character",
@@ -1150,7 +1150,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/77926.md": {
       "type": "character",
@@ -1164,7 +1164,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/77927.md": {
       "type": "character",
@@ -1178,7 +1178,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/77928.md": {
       "type": "character",
@@ -1207,7 +1207,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/78840.md": {
       "type": "character",
@@ -1235,7 +1235,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/94450.md": {
       "type": "character",
@@ -1249,7 +1249,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 1
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1264,7 +1264,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/characters/95786.md": {
       "type": "character",
@@ -1615,7 +1615,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/contribution-protocol.md": {
       "type": "knowledge-pointer",
@@ -1628,7 +1628,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/decisions-archive.md": {
       "type": "knowledge-pointer",
@@ -1641,7 +1641,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/memory/decisions.md": {
       "type": "knowledge-pointer",
@@ -1654,7 +1654,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 5
     },
     "/memory/lessons-learned.md": {
       "type": "knowledge-pointer",
@@ -1667,7 +1667,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md": {
       "type": "knowledge-pointer",
@@ -1684,7 +1684,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md": {
       "type": "knowledge-pointer",
@@ -1701,7 +1701,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md": {
       "type": "knowledge-pointer",
@@ -1717,7 +1717,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md": {
       "type": "knowledge-pointer",
@@ -1749,7 +1749,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md": {
       "type": "knowledge-pointer",
@@ -1765,7 +1765,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md": {
       "type": "knowledge-pointer",
@@ -1781,7 +1781,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md": {
       "type": "knowledge-pointer",
@@ -1798,7 +1798,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-active-contribution-protocol.md": {
       "type": "knowledge-pointer",
@@ -1812,7 +1812,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-active-mission-v2-0-three-pillars.md": {
       "type": "knowledge-pointer",
@@ -1826,7 +1826,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-active-policy-direct-push-main.md": {
       "type": "knowledge-pointer",
@@ -1840,7 +1840,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-active-silver-blackpool-interface.md": {
       "type": "knowledge-pointer",
@@ -1854,7 +1854,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-biav-info-classification.md": {
       "type": "knowledge-pointer",
@@ -1867,7 +1867,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md": {
       "type": "knowledge-pointer",
@@ -1880,7 +1880,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-bpt-architecture-summary-template.md": {
       "type": "knowledge-pointer",
@@ -1919,7 +1919,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-bpt-positioning.md": {
       "type": "knowledge-pointer",
@@ -1932,7 +1932,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-capability-annotations.md": {
       "type": "dataset",
@@ -1973,7 +1973,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-discord-archiver-design.md": {
       "type": "knowledge-pointer",
@@ -1986,7 +1986,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-facts.md": {
       "type": "dataset",
@@ -2013,7 +2013,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-knowledge-layer-design.md": {
       "type": "knowledge-pointer",
@@ -2026,7 +2026,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/memory/memory-ext-pending-discussions.md": {
       "type": "knowledge-pointer",
@@ -2039,7 +2039,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-phase-d-plan.md": {
       "type": "knowledge-pointer",
@@ -2052,7 +2052,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-research-best-wiki-features.md": {
       "type": "knowledge-pointer",
@@ -2065,7 +2065,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-session-continuity.md": {
       "type": "dataset",
@@ -2092,7 +2092,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-storage-discussion.md": {
       "type": "knowledge-pointer",
@@ -2105,7 +2105,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-wiki-characters-schema-v1.md": {
       "type": "knowledge-pointer",
@@ -2118,7 +2118,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 5
     },
     "/memory/memory-ext-wiki-phase-2-gap-inventory.md": {
       "type": "knowledge-pointer",
@@ -2131,7 +2131,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/memory/memory-ext-workflow-api-key-audit.md": {
       "type": "knowledge-pointer",
@@ -2158,7 +2158,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 8
     },
     "/memory/memory-research-discord-archive-backfill-conflict.md": {
       "type": "knowledge-pointer",
@@ -2172,7 +2172,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-strategy-repo-slimming-plan.md": {
       "type": "knowledge-pointer",
@@ -2186,7 +2186,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/methodology.md": {
       "type": "knowledge-pointer",
@@ -2199,7 +2199,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/morimens-context.md": {
       "type": "knowledge-pointer",
@@ -2212,7 +2212,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/memory/project-status.md": {
       "type": "knowledge-pointer",
@@ -2225,7 +2225,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 4
     },
     "/memory/strategic-plan-2026.md": {
       "type": "knowledge-pointer",
@@ -2238,7 +2238,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/memory/style-guide.md": {
       "type": "knowledge-pointer",
@@ -2251,7 +2251,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/news-output/news-output-all.md": {
       "type": "dataset",
@@ -2656,7 +2656,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 6
+      "degree": 7
     },
     "/projects/entry-readme.md": {
       "type": "documentation",
@@ -2669,7 +2669,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 1
+      "degree": 2
     },
     "/projects/extracted-lua-inventory.md": {
       "type": "dataset",
@@ -2738,7 +2738,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 1
+      "degree": 7
     },
     "/projects/project-news.md": {
       "type": "documentation",
@@ -2752,7 +2752,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 1
+      "degree": 2
     },
     "/projects/project-site.md": {
       "type": "documentation",
@@ -2766,7 +2766,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 1
+      "degree": 2
     },
     "/projects/project-wiki.md": {
       "type": "documentation",
@@ -2780,7 +2780,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 1
+      "degree": 2
     },
     "/projects/releases-treasure-map.md": {
       "type": "documentation",
@@ -2794,7 +2794,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/projects/site-design-morimens-design-system-guide.md": {
       "type": "documentation",
@@ -2836,7 +2836,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/resource/resource-community-analysis-jp-discord-insights-202606.md": {
       "type": "documentation",
@@ -2850,7 +2850,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": {
       "type": "documentation",
@@ -2864,7 +2864,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md": {
       "type": "documentation",
@@ -2878,7 +2878,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md": {
       "type": "documentation",
@@ -2892,7 +2892,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-community-analysis-saya-collab-community-report-20260603.md": {
       "type": "documentation",
@@ -2906,7 +2906,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md": {
       "type": "documentation",
@@ -2948,7 +2948,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/resource/resource-daily-news-morimens-daily-20260601.md": {
       "type": "documentation",
@@ -2962,7 +2962,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/resource/resource-daily-news-morimens-daily-20260602-r2.md": {
       "type": "documentation",
@@ -2976,7 +2976,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/resource/resource-daily-news-morimens-daily-full-20260602.md": {
       "type": "documentation",
@@ -2990,7 +2990,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 6
     },
     "/resource/resource-daily-news-morimens-period-20260512-0603.md": {
       "type": "documentation",
@@ -3004,7 +3004,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/resource/resource-daily-news-morimens-window-20260602.md": {
       "type": "documentation",
@@ -3018,7 +3018,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md": {
       "type": "documentation",
@@ -3046,7 +3046,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": {
       "type": "documentation",
@@ -3074,7 +3074,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 9
     },
     "/resource/resource-game-analysis-role-action-recommendations-202605.md": {
       "type": "documentation",
@@ -3088,7 +3088,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 2
     },
     "/resource/resource-methodology-knowledge-engineering-primer-20260704.md": {
       "type": "documentation",
@@ -3132,6 +3132,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md": {
+      "type": "documentation",
+      "title": "bpt-prompt-layering-design-20260704",
+      "description": "BPT 在内网 SVN 免安装部署、按个人/团队目录分数据。提示词注入分多层（硬编码核心 → 团队 → 个人 → 项目工作目录），（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-prompt-layering-design-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-internal-ai-platform-plan-202604.md": {
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -3158,7 +3172,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-proposal-wiki-prototype-202603.md": {
       "type": "documentation",
@@ -3214,7 +3228,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md": {
       "type": "documentation",
@@ -3242,7 +3256,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-repo-audit-20260603.md": {
       "type": "documentation",
@@ -3256,7 +3270,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-repo-health-assessment-20260602.md": {
       "type": "documentation",
@@ -3284,7 +3298,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-retired-modules-audit-202606.md": {
       "type": "documentation",
@@ -3298,7 +3312,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-test-coverage-analysis-202606.md": {
       "type": "documentation",
@@ -3345,7 +3359,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2515 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2517 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3359,7 +3373,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 7927071 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 7939809 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -3401,7 +3415,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 545 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 546 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3443,7 +3457,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5099 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5100 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3457,7 +3471,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 76 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 79 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -3485,7 +3499,7 @@
     "/sources/taptap.md": {
       "type": "dataset",
       "title": "taptap 社区数据源",
-      "description": "taptap 平台采集档案，全量 8 条，健康度 active。",
+      "description": "taptap 平台采集档案，全量 9 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -3513,7 +3527,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 8943 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 8973 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3527,7 +3541,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6136 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6196 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3541,7 +3555,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2592 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2595 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3578,7 +3592,7 @@
       ],
       "section": "story",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/story/character_story_links.md": {
       "type": "dataset",
@@ -3676,7 +3690,7 @@
       ],
       "section": "story",
       "tier": "search",
-      "degree": 0
+      "degree": 3
     },
     "/story/story_research_todo.md": {
       "type": "research",
@@ -3690,7 +3704,7 @@
       ],
       "section": "story",
       "tier": "search",
-      "degree": 0
+      "degree": 11
     },
     "/story/story_search_index.md": {
       "type": "dataset",
@@ -3970,7 +3984,7 @@
       ],
       "section": "wiki-data",
       "tier": "search",
-      "degree": 0
+      "degree": 12
     },
     "/wiki-data/wiki-data-drops-by-item.md": {
       "type": "dataset",
@@ -4282,6 +4296,30 @@
     }
   },
   "neighbors": {
+    "/assets/assets-chat-onboarding-snippet.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/assets/persona-erica-speech-canon.md": [
+      [
+        "/characters/15590.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/characters/15579.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/characters/122587.md": [
       [
         "/characters/15569.md",
@@ -4292,6 +4330,11 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:本源萝坦",
+        "mention"
       ]
     ],
     "/characters/130226.md": [
@@ -4299,6 +4342,86 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/decisions-archive.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-knowledge-layer-design.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-window-20260602.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+        "提及:沙耶",
+        "mention"
       ]
     ],
     "/characters/130375.md": [
@@ -4306,6 +4429,16 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:诺登斯",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:诺登斯",
+        "mention"
       ]
     ],
     "/characters/130384.md": [
@@ -4313,6 +4446,18 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:撒托古亚",
+        "mention"
+      ]
+    ],
+    "/characters/130901.md": [
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莫丝",
+        "mention"
       ]
     ],
     "/characters/15560.md": [
@@ -4320,6 +4465,36 @@
         "/characters/15583.md",
         "CV:橘由纪",
         "cv"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:潘狄娅",
+        "mention"
       ]
     ],
     "/characters/15561.md": [
@@ -4327,6 +4502,16 @@
         "/characters/15574.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:本源汀克特",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:本源汀克特",
+        "mention"
       ]
     ],
     "/characters/15563.md": [
@@ -4334,6 +4519,48 @@
         "/characters/15569.md",
         "CV:宫园美海",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:图鲁",
+        "mention"
+      ]
+    ],
+    "/characters/15564.md": [
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:戈利亚",
+        "mention"
       ]
     ],
     "/characters/15565.md": [
@@ -4351,6 +4578,11 @@
         "/characters/77925.md",
         "CV:国実久留子",
         "cv"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:诺缔拉",
+        "mention"
       ]
     ],
     "/characters/15566.md": [
@@ -4358,6 +4590,21 @@
         "/characters/15575.md",
         "CV:藤崎桃子",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:希莱斯特",
+        "mention"
       ]
     ],
     "/characters/15567.md": [
@@ -4370,6 +4617,16 @@
         "/characters/15565.md",
         "CV:国実久留子",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:血链·希洛",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:血链·希洛",
+        "mention"
       ]
     ],
     "/characters/15568.md": [
@@ -4397,6 +4654,31 @@
         "/characters/78841.md",
         "CV:山本亚衣",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:环行·拉蒙娜",
+        "mention"
       ]
     ],
     "/characters/15569.md": [
@@ -4419,6 +4701,26 @@
         "/characters/15563.md",
         "CV:宫园美海",
         "cv"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/story/story_research_notes.md",
+        "提及:萝坦",
+        "mention"
       ]
     ],
     "/characters/15570.md": [
@@ -4426,6 +4728,31 @@
         "/characters/15602.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:朵尔",
+        "mention"
       ]
     ],
     "/characters/15571.md": [
@@ -4440,6 +4767,16 @@
         "/characters/15579.md",
         "CV:七绪凛",
         "cv"
+      ],
+      [
+        "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+        "提及:卡茜亚",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:卡茜亚",
+        "mention"
       ]
     ],
     "/characters/15573.md": [
@@ -4447,6 +4784,11 @@
         "/characters/15584.md",
         "CV:田村由加莉",
         "cv"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601.md",
+        "提及:奥瑞塔",
+        "mention"
       ]
     ],
     "/characters/15574.md": [
@@ -4454,6 +4796,16 @@
         "/characters/15561.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:汀克特",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:汀克特",
+        "mention"
       ]
     ],
     "/characters/15575.md": [
@@ -4468,6 +4820,26 @@
         "/characters/15589.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:墨菲",
+        "mention"
       ]
     ],
     "/characters/15577.md": [
@@ -4475,6 +4847,16 @@
         "/characters/15601.md",
         "CV:伊藤纱月",
         "cv"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:菲茵特",
+        "mention"
       ]
     ],
     "/characters/15578.md": [
@@ -4559,6 +4941,55 @@
         "/characters/15572.md",
         "CV:七绪凛",
         "cv"
+      ],
+      [
+        "/assets/persona-erica-speech-canon.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:温柯尔",
+        "mention"
+      ]
+    ],
+    "/characters/15581.md": [
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:莉莉",
+        "mention"
+      ]
+    ],
+    "/characters/15582.md": [
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:弥利亚姆",
+        "mention"
       ]
     ],
     "/characters/15583.md": [
@@ -4566,6 +4997,16 @@
         "/characters/15560.md",
         "CV:橘由纪",
         "cv"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:奥尔拉",
+        "mention"
       ]
     ],
     "/characters/15584.md": [
@@ -4595,6 +5036,21 @@
         "/characters/15592.md",
         "CV:音羽里奏",
         "cv"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:奥吉尔",
+        "mention"
       ]
     ],
     "/characters/15587.md": [
@@ -4607,6 +5063,11 @@
         "/characters/15565.md",
         "CV:国実久留子",
         "cv"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:希洛",
+        "mention"
       ]
     ],
     "/characters/15588.md": [
@@ -4614,6 +5075,11 @@
         "/characters/15571.md",
         "CV:二宫雪乃",
         "cv"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:艾尔瓦",
+        "mention"
       ]
     ],
     "/characters/15589.md": [
@@ -4621,6 +5087,53 @@
         "/characters/15576.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ]
+    ],
+    "/characters/15590.md": [
+      [
+        "/assets/persona-erica-speech-canon.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:达芙黛尔",
+        "mention"
       ]
     ],
     "/characters/15592.md": [
@@ -4635,6 +5148,23 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/decisions-archive.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:詹金",
+        "mention"
+      ]
+    ],
+    "/characters/15594.md": [
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:凯刻斯",
+        "mention"
       ]
     ],
     "/characters/15595.md": [
@@ -4652,6 +5182,41 @@
         "/characters/15569.md",
         "同篇提及",
         "lore"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/memory/strategic-plan-2026.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/story/story_research_notes.md",
+        "提及:拉蒙娜",
+        "mention"
       ]
     ],
     "/characters/15596.md": [
@@ -4659,6 +5224,72 @@
         "/characters/15568.md",
         "CV:山本亚衣",
         "cv"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:泰旖丝",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:泰旖丝",
+        "mention"
+      ]
+    ],
+    "/characters/15598.md": [
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:尤乌哈希",
+        "mention"
+      ]
+    ],
+    "/characters/15599.md": [
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ]
+    ],
+    "/characters/15600.md": [
+      [
+        "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:阿格里帕",
+        "mention"
       ]
     ],
     "/characters/15601.md": [
@@ -4666,6 +5297,16 @@
         "/characters/15577.md",
         "CV:伊藤纱月",
         "cv"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:「24」",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:「24」",
+        "mention"
       ]
     ],
     "/characters/15602.md": [
@@ -4673,6 +5314,365 @@
         "/characters/15570.md",
         "变体",
         "variant"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ]
+    ],
+    "/characters/15603.md": [
+      [
+        "/assets/assets-chat-onboarding-snippet.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/assets/persona-erica-speech-canon.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/capability-index.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/contribution-protocol.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/decisions-archive.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-active-contribution-protocol.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-active-policy-direct-push-main.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-active-silver-blackpool-interface.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-biav-info-classification.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-bpt-guidance-protocol.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-bpt-positioning.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-collab-event-playbook.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-discord-archiver-design.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-karpathy-coding-principles.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-knowledge-layer-design.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-pending-discussions.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-phase-d-plan.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-research-best-wiki-features.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-skill-authoring-standard.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-storage-discussion.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-discord-archive-backfill-conflict.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/memory-strategy-repo-slimming-plan.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/methodology.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/morimens-context.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/strategic-plan-2026.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/memory/style-guide.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/entry-claude-md.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/entry-readme.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/project-game.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/project-news.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/project-site.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/project-wiki.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/projects/releases-treasure-map.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-window-20260602.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-repo-audit-20260603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/characters/15604.md": [
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-window-20260602.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莱克",
+        "mention"
       ]
     ],
     "/characters/54116.md": [
@@ -4680,6 +5680,26 @@
         "/characters/15568.md",
         "CV:山本亚衣",
         "cv"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/story/story_research_notes.md",
+        "提及:塔薇",
+        "mention"
       ]
     ],
     "/characters/77911.md": [
@@ -4687,6 +5707,23 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:秃鹫",
+        "mention"
+      ]
+    ],
+    "/characters/77913.md": [
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
+        "/wiki-data/wiki-data-character-skills.md",
+        "提及:凯蒂古拉",
+        "mention"
       ]
     ],
     "/characters/77914.md": [
@@ -4694,6 +5731,28 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:兰提戈斯",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:兰提戈斯",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:兰提戈斯",
+        "mention"
+      ]
+    ],
+    "/characters/77917.md": [
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:波吕克斯",
+        "mention"
       ]
     ],
     "/characters/77918.md": [
@@ -4701,6 +5760,41 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/memory/memory-research-community-analysis-2026-05-18-26.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/story/STORY_RESEARCH.md",
+        "提及:阿拉克涅",
+        "mention"
       ]
     ],
     "/characters/77921.md": [
@@ -4722,6 +5816,11 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:夏塔克鸟",
+        "mention"
       ]
     ],
     "/characters/77925.md": [
@@ -4729,6 +5828,23 @@
         "/characters/15565.md",
         "CV:国実久留子",
         "cv"
+      ],
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/story/story_research_todo.md",
+        "提及:克莱门汀",
+        "mention"
+      ]
+    ],
+    "/characters/77926.md": [
+      [
+        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:皮克曼",
+        "mention"
       ]
     ],
     "/characters/77927.md": [
@@ -4736,6 +5852,11 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/lessons-learned.md",
+        "提及:黑法老",
+        "mention"
       ]
     ],
     "/characters/77928.md": [
@@ -4750,6 +5871,11 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:本源沉睡之主",
+        "mention"
       ]
     ],
     "/characters/78840.md": [
@@ -4764,6 +5890,18 @@
         "/characters/15568.md",
         "CV:山本亚衣",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:熟悉的黑猫",
+        "mention"
+      ]
+    ],
+    "/characters/94450.md": [
+      [
+        "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:茉夏",
+        "mention"
       ]
     ],
     "/characters/94451.md": [
@@ -4776,6 +5914,11 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:本源·奥吉尔",
+        "mention"
       ]
     ],
     "/community/community-appstore.md": [
@@ -5069,6 +6212,559 @@
         "cross"
       ]
     ],
+    "/memory/capability-index.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/contribution-protocol.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/decisions-archive.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/decisions.md": [
+      [
+        "/characters/15585.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/lessons-learned.md": [
+      [
+        "/characters/77914.md",
+        "提及:兰提戈斯",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77924.md",
+        "提及:夏塔克鸟",
+        "mention"
+      ],
+      [
+        "/characters/122587.md",
+        "提及:本源萝坦",
+        "mention"
+      ],
+      [
+        "/characters/130384.md",
+        "提及:撒托古亚",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/77927.md",
+        "提及:黑法老",
+        "mention"
+      ],
+      [
+        "/characters/130375.md",
+        "提及:诺登斯",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/77911.md",
+        "提及:秃鹫",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md": [
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-active-contribution-protocol.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-active-mission-v2-0-three-pillars.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-active-policy-direct-push-main.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-active-silver-blackpool-interface.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-biav-info-classification.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-bpt-guidance-protocol.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-bpt-positioning.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-collab-event-playbook.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-discord-archiver-design.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-karpathy-coding-principles.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-knowledge-layer-design.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-pending-discussions.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-phase-d-plan.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-research-best-wiki-features.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-skill-authoring-standard.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-storage-discussion.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-wiki-characters-schema-v1.md": [
+      [
+        "/characters/15561.md",
+        "提及:本源汀克特",
+        "mention"
+      ],
+      [
+        "/characters/15600.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/characters/15574.md",
+        "提及:汀克特",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-wiki-phase-2-gap-inventory.md": [
+      [
+        "/characters/15568.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/78754.md",
+        "提及:本源沉睡之主",
+        "mention"
+      ],
+      [
+        "/characters/94451.md",
+        "提及:本源·奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15561.md",
+        "提及:本源汀克特",
+        "mention"
+      ],
+      [
+        "/characters/15567.md",
+        "提及:血链·希洛",
+        "mention"
+      ],
+      [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/characters/78841.md",
+        "提及:熟悉的黑猫",
+        "mention"
+      ],
+      [
+        "/characters/15566.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/characters/15582.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/characters/15590.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ]
+    ],
+    "/memory/memory-research-community-analysis-2026-05-18-26.md": [
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15579.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/memory-research-discord-archive-backfill-conflict.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-strategy-repo-slimming-plan.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/methodology.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/morimens-context.md": [
+      [
+        "/characters/15568.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15565.md",
+        "提及:诺缔拉",
+        "mention"
+      ],
+      [
+        "/characters/15574.md",
+        "提及:汀克特",
+        "mention"
+      ],
+      [
+        "/characters/15577.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/characters/15583.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
+        "/characters/15588.md",
+        "提及:艾尔瓦",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15596.md",
+        "提及:泰旖丝",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ]
+    ],
+    "/memory/project-status.md": [
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15585.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ]
+    ],
+    "/memory/strategic-plan-2026.md": [
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/style-guide.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/news-output/news-output-appstore.md": [
       [
         "/sources/appstore.md",
@@ -5183,6 +6879,11 @@
     ],
     "/projects/entry-claude-md.md": [
       [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/projects/entry-readme.md",
         "双入口",
         "cross"
@@ -5215,6 +6916,11 @@
     ],
     "/projects/entry-readme.md": [
       [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/projects/entry-claude-md.md",
         "双入口",
         "cross"
@@ -5229,12 +6935,47 @@
     ],
     "/projects/project-game.md": [
       [
+        "/characters/15568.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
         "/projects/entry-claude-md.md",
         "入口→上下文",
         "cross"
       ]
     ],
     "/projects/project-news.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
       [
         "/projects/entry-claude-md.md",
         "入口→上下文",
@@ -5243,6 +6984,11 @@
     ],
     "/projects/project-site.md": [
       [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/projects/entry-claude-md.md",
         "入口→上下文",
         "cross"
@@ -5250,9 +6996,395 @@
     ],
     "/projects/project-wiki.md": [
       [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/projects/entry-claude-md.md",
         "入口→上下文",
         "cross"
+      ]
+    ],
+    "/projects/releases-treasure-map.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md": [
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15564.md",
+        "提及:戈利亚",
+        "mention"
+      ],
+      [
+        "/characters/15577.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/characters/15579.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
+        "/characters/15585.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15594.md",
+        "提及:凯刻斯",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-jp-discord-insights-202606.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-community-analysis-saya-collab-community-report-20260603.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-daily-20260601-r2.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-daily-20260601.md": [
+      [
+        "/characters/15573.md",
+        "提及:奥瑞塔",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-daily-20260602-r2.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-daily-full-20260602.md": [
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-period-20260512-0603.md": [
+      [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/15600.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15583.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
+        "/characters/15596.md",
+        "提及:泰旖丝",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/77926.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ]
+    ],
+    "/resource/resource-daily-news-morimens-window-20260602.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-game-analysis-bug-fault-report-20260518-26.md": [
+      [
+        "/characters/15601.md",
+        "提及:「24」",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77925.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/130901.md",
+        "提及:莫丝",
+        "mention"
+      ]
+    ],
+    "/resource/resource-game-analysis-role-action-recommendations-202605.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-repo-audit-20260603-r2.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-repo-audit-20260603.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md": [
+      [
+        "/characters/15572.md",
+        "提及:卡茜亚",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-retired-modules-audit-202606.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
       ]
     ],
     "/sources/appstore.md": [
@@ -5452,6 +7584,204 @@
         "/community/community-youtube-comments.md",
         "同平台",
         "cross"
+      ]
+    ],
+    "/story/STORY_RESEARCH.md": [
+      [
+        "/characters/15568.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15566.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/characters/15582.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/characters/15590.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/15600.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
+        "/characters/77914.md",
+        "提及:兰提戈斯",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ]
+    ],
+    "/story/story_research_notes.md": [
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ]
+    ],
+    "/story/story_research_todo.md": [
+      [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15590.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/characters/77914.md",
+        "提及:兰提戈斯",
+        "mention"
+      ],
+      [
+        "/characters/77925.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/characters/15572.md",
+        "提及:卡茜亚",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/130375.md",
+        "提及:诺登斯",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ]
+    ],
+    "/wiki-data/wiki-data-character-skills.md": [
+      [
+        "/characters/15568.md",
+        "提及:环行·拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/15567.md",
+        "提及:血链·希洛",
+        "mention"
+      ],
+      [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15566.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/characters/15582.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/characters/15590.md",
+        "提及:达芙黛尔",
+        "mention"
+      ],
+      [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/15600.md",
+        "提及:阿格里帕",
+        "mention"
+      ],
+      [
+        "/characters/15601.md",
+        "提及:「24」",
+        "mention"
+      ],
+      [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
       ]
     ]
   },
@@ -5682,6 +8012,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -6275,6 +8606,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
     ],
@@ -6663,6 +8995,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -6903,6 +9236,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -7172,6 +9506,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -7302,6 +9637,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -7335,7 +9671,8 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
@@ -8112,6 +10449,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -8512,6 +10850,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -8592,6 +10931,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "layering": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "lbs": [
       "/characters/125346.md",
@@ -8944,6 +11286,7 @@
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -9523,6 +11866,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9755,9 +12099,13 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
+    "prompt": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -9811,6 +12159,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -10092,6 +12441,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -10625,7 +12975,8 @@
     "svn": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "system": [
       "/assets/assets-card-system.md",
@@ -10755,6 +13106,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -11629,6 +13981,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -11838,6 +14191,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12087,6 +14441,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12269,6 +14624,7 @@
     "个人": [
       "/projects/project-game.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "个停": [
@@ -13109,6 +15465,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -13925,6 +16282,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14135,6 +16493,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14345,6 +16704,9 @@
     ],
     "作的": [
       "/characters/77926.md"
+    ],
+    "作目": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "作训": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -14669,6 +17031,9 @@
     "克莱门汀": [
       "/characters/77925.md"
     ],
+    "免安": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "免每": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -14680,6 +17045,9 @@
     ],
     "入全": [
       "/characters/125346.md"
+    ],
+    "入分": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "入创": [
       "/characters/77925.md"
@@ -15050,7 +17418,8 @@
     ],
     "内网": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "内茜": [
       "/characters/15576.md"
@@ -15316,6 +17685,9 @@
       "/README.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
+    "分多": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "分布": [
       "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -15323,6 +17695,9 @@
     ],
     "分支": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
+    ],
+    "分数": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "分析": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -15743,6 +18118,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -17906,6 +20282,7 @@
     "团队": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-positioning.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "园美": [
@@ -18008,7 +20385,8 @@
       "/characters/125346.md"
     ],
     "在内": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "在受": [
       "/characters/15599.md"
@@ -18587,6 +20965,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -18711,6 +21090,9 @@
     "多名": [
       "/characters/15578.md",
       "/characters/15593.md"
+    ],
+    "多层": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "多次": [
       "/characters/122587.md",
@@ -19288,6 +21670,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -19606,7 +21989,8 @@
       "/characters/95786.md"
     ],
     "安装": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "完不": [
       "/projects/entry-claude-md.md"
@@ -19809,6 +22193,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -20642,6 +23027,7 @@
       "/characters/94450.md"
     ],
     "工作": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
     "工具": [
@@ -21403,6 +23789,9 @@
     ],
     "当心": [
       "/characters/15583.md"
+    ],
+    "录分": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "录带": [
       "/README.md"
@@ -23199,6 +25588,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -23280,6 +25670,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "按个": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "按画": [
       "/README.md"
@@ -23639,6 +26032,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -23740,6 +26134,9 @@
     ],
     "提灯": [
       "/characters/77917.md"
+    ],
+    "提示": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "提高": [
       "/characters/15575.md",
@@ -23904,6 +26301,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -24206,6 +26604,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -24438,6 +26837,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -24660,6 +27060,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -25864,6 +28265,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26216,6 +28618,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26695,6 +29098,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26802,6 +29206,7 @@
       "/projects/project-news.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
@@ -26845,6 +29250,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27258,6 +29664,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27571,6 +29978,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27957,7 +30365,8 @@
       "/characters/77917.md"
     ],
     "注入": [
-      "/characters/15600.md"
+      "/characters/15600.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "注册": [
       "/projects/news-archive-sources-registry.md"
@@ -30234,10 +32643,14 @@
     "目压": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "目工": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "目录": [
       "/README.md",
       "/assets/assets-images.md",
-      "/memory/capability-index.md"
+      "/memory/capability-index.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "目标": [
       "/README.md"
@@ -30448,6 +32861,9 @@
     "码本": [
       "/projects/extracted-lua-inventory.md"
     ],
+    "码核": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "码格": [
       "/extracted/extracted-readme.md"
     ],
@@ -30573,6 +32989,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "硬编": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "确保": [
       "/characters/15580.md"
     ],
@@ -30659,6 +33078,9 @@
       "/news-output/news-output-all.md",
       "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md"
+    ],
+    "示词": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "礼服": [
       "/characters/15584.md"
@@ -31622,7 +34044,8 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
     "编码": [
-      "/memory/memory-ext-karpathy-coding-principles.md"
+      "/memory/memory-ext-karpathy-coding-principles.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "缩为": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -32582,6 +35005,9 @@
     "裂腺": [
       "/characters/15573.md"
     ],
+    "装部": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "裹噬": [
       "/characters/77913.md"
     ],
@@ -33117,6 +35543,9 @@
     ],
     "词检": [
       "/README.md"
+    ],
+    "词注": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "译志": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -33675,6 +36104,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -34252,6 +36682,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -34592,7 +37023,8 @@
     ],
     "部署": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/memory/memory-ext-phase-d-plan.md"
+      "/memory/memory-ext-phase-d-plan.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "部覆": [
       "/projects/extracted-lua-readme.md"
@@ -35120,6 +37552,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -35324,6 +37757,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -35633,6 +38067,9 @@
     "队友": [
       "/characters/15574.md",
       "/characters/15585.md"
+    ],
+    "队目": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "队级": [
       "/memory/memory-ext-bpt-positioning.md",
@@ -35972,7 +38409,8 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "顺图": [
       "/README.md"
@@ -36580,6 +39018,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
     ],
@@ -36821,6 +39260,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -37083,6 +39523,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -37204,6 +39645,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -37229,7 +39671,8 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
@@ -37780,6 +40223,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -37860,6 +40304,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "layering": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "learned": [
       "/memory/lessons-learned.md"
@@ -38348,9 +40795,13 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
     ],
+    "prompt": [
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -38696,6 +41147,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
