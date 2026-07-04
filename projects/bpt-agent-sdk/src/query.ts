@@ -49,7 +49,7 @@ import { DefaultHookRunner } from './hooks/runner.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
-import { buildSystemPrompt } from './engine/prompts.js';
+import { buildSystemPromptParts } from './engine/prompts.js';
 import { buildCompactionConfig } from './engine/compaction.js';
 import {
   buildStructuredOutputInstruction,
@@ -497,14 +497,16 @@ export function query(args: {
   if (wantAgent) builtinTools.set('Agent', createAgentTool(agentNames));
 
   // Structured-output: normalize the schema option and append the instruction
-  // to the system prompt so the requirement survives tool turns.
+  // to the STABLE system segment so the requirement survives tool turns and
+  // stays inside the cached prefix (it is static, not per-run).
   const outputFormat = normalizeOutputFormat(options.outputFormat, debug);
-  let systemPromptText = buildSystemPrompt(options.systemPrompt, {
+  const promptParts = buildSystemPromptParts(options.systemPrompt, {
     cwd,
     toolNames: [...builtinTools.keys()],
   });
+  let systemPromptStable = promptParts.stable;
   if (outputFormat !== undefined) {
-    systemPromptText += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
+    systemPromptStable += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
   }
 
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
@@ -513,7 +515,12 @@ export function query(args: {
     model: initialModel,
     fallbackModel: options.fallbackModel,
     maxOutputTokens: options.provider?.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
-    systemPrompt: systemPromptText,
+    systemPrompt: systemPromptStable,
+    // Volatile (cwd) tail rides after the cache breakpoint; absent -> the
+    // stable prompt is sent as a single string (e.g. a user-string prompt).
+    ...(promptParts.volatile.length > 0
+      ? { systemPromptSuffix: promptParts.volatile }
+      : {}),
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
     thinking: options.thinking,

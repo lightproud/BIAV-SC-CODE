@@ -351,7 +351,12 @@ export type EngineConfig = {
   model: string;
   fallbackModel?: string;
   maxOutputTokens: number;
+  /** Stable system-prompt prefix (cache-worthy; byte-identical across runs). */
   systemPrompt: string;
+  /** Volatile system-prompt tail (cwd etc.); sent AFTER the cache breakpoint
+   *  so it never invalidates the cached stable prefix. Absent -> systemPrompt
+   *  is sent as a single string (original behavior). */
+  systemPromptSuffix?: string;
   maxTurns?: number;
   maxBudgetUsd?: number;
   thinking?: ThinkingConfigParam;

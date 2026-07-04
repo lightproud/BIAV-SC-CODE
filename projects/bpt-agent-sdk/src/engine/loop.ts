@@ -414,15 +414,18 @@ export async function* runAgentLoop(
   // loaded schemas must be re-counted per turn or the compaction trigger
   // under-counts the real request size (finding #11). Only the system-prompt
   // term is hoisted; the tool-def term is recomputed each iteration.
-  const systemPromptTokens = Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+  // System-prompt term = stable prefix + volatile (cwd) tail; both are sent
+  // every request, so both count toward the compaction overhead estimate.
+  const systemCharLen =
+    (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
+  const systemPromptTokens = Math.ceil(systemCharLen / 4);
   const currentOverheadTokens = (): number =>
     estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
 
   // Static per-request overhead (system prompt + tool schemas) folded into the
   // compaction token estimate; both pieces are stable across the run.
   const overheadTokens =
-    estimateToolDefsTokens(buildToolDefs()) +
-    Math.ceil((config.systemPrompt?.length ?? 0) / 4);
+    estimateToolDefsTokens(buildToolDefs()) + Math.ceil(systemCharLen / 4);
 
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
@@ -458,10 +461,28 @@ export async function* runAgentLoop(
         });
       }
     };
+    // Split the system prompt into a stable prefix + a volatile (cwd) tail ONLY
+    // when caching is on: the cache breakpoint then lands on the stable block
+    // and the cwd tail rides AFTER it, so it never invalidates the cached
+    // prefix (cross-query reuse of tools + stable system). With caching off
+    // there is no breakpoint to place, so send the flat single string exactly
+    // as before (keeps `system` a plain string for drop-in consumers).
+    const cachingOn = config.promptCaching === true;
+    const hasSuffix =
+      config.systemPromptSuffix !== undefined && config.systemPromptSuffix.length > 0;
+    const splitSystem = cachingOn && hasSuffix;
+    const systemField: string | TextBlockParam[] = splitSystem
+      ? [
+          { type: 'text', text: config.systemPrompt },
+          { type: 'text', text: config.systemPromptSuffix! },
+        ]
+      : hasSuffix
+        ? `${config.systemPrompt}\n${config.systemPromptSuffix}`
+        : config.systemPrompt;
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
-      system: config.systemPrompt,
+      system: systemField,
       messages: reqMsgs,
       tools: toolDefs.length > 0 ? toolDefs : undefined,
       thinking: computeThinking(),
@@ -470,8 +491,10 @@ export async function* runAgentLoop(
     };
     // cache-control is the outermost request shaper; it never mutates `request`.
     const outgoing = applyCacheControl(request, {
-      enabled: config.promptCaching === true,
+      enabled: cachingOn,
       cacheMessages: true,
+      // With a [stable, cwd] split, cache the FIRST (stable) block.
+      cacheSystemBoundary: splitSystem ? 'first' : 'last',
     });
     const apiStart = Date.now();
     try {

@@ -219,6 +219,38 @@ describe('query() e2e - happy path', () => {
     expect(total).toBeLessThanOrEqual(4);
   });
 
+  it('cache split: the cwd tail rides in an UNCACHED trailing system block', async () => {
+    // The cache optimization keeps the per-run cwd out of the cached prefix so
+    // independent queries can reuse the cached stable prefix. Verify the cwd
+    // sits in a trailing block WITHOUT cache_control, while an earlier block
+    // (the stable prefix) carries the breakpoint.
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'hi',
+      options: {
+        provider: { apiKey: 'test-key' },
+        sessionDir,
+        cwd,
+        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        model: 'claude-sonnet-4-5',
+      },
+    });
+    await collect(q);
+    const sys = fetchStub.requests[0]!.body.system as Array<{
+      text?: string;
+      cache_control?: unknown;
+    }>;
+    expect(Array.isArray(sys)).toBe(true);
+    const cwdBlock = sys.find((b) => (b.text ?? '').includes(cwd));
+    expect(cwdBlock).toBeDefined();
+    // the cwd block must NOT be cached (it varies per run)...
+    expect(cwdBlock!.cache_control).toBeUndefined();
+    // ...and it must be the LAST block (rides after the breakpoint).
+    expect(sys[sys.length - 1]).toBe(cwdBlock);
+    // an earlier (stable) block carries the breakpoint.
+    expect(sys.slice(0, -1).some((b) => b.cache_control !== undefined)).toBe(true);
+  });
+
   it('includePartialMessages yields stream_event messages for each raw event', async () => {
     stubFetch(makeSSEFetch([textReplyEvents('partial')]));
     const q = query({

@@ -44,7 +44,20 @@ type CacheableLastBlock = 'text' | 'tool_result' | 'image';
  */
 export function applyCacheControl(
   req: StreamRequest,
-  opts: { enabled: boolean; cacheMessages?: boolean },
+  opts: {
+    enabled: boolean;
+    cacheMessages?: boolean;
+    /**
+     * Which block of a TextBlockParam[] system carries the breakpoint.
+     * - 'last' (default): cache the final block (original behavior; a caller
+     *   who hands us a multi-block system wants the whole thing cached).
+     * - 'first': cache the FIRST block. The engine uses this for its
+     *   [stable, volatile-cwd] split so the stable prefix is cached and the
+     *   per-run cwd tail (block 2) stays out of the cached prefix, enabling
+     *   cross-query reuse of the stable prefix.
+     */
+    cacheSystemBoundary?: 'first' | 'last';
+  },
 ): StreamRequest {
   if (!opts.enabled) return req;
 
@@ -59,8 +72,8 @@ export function applyCacheControl(
     next.tools = tools;
   }
 
-  // (b) SYSTEM breakpoint - last text block.
-  next.system = cacheSystem(req.system);
+  // (b) SYSTEM breakpoint - last text block (or first, for the engine split).
+  next.system = cacheSystem(req.system, opts.cacheSystemBoundary ?? 'last');
 
   // (c) MESSAGES breakpoint - last content block of the last message.
   const last =
@@ -84,6 +97,7 @@ export function applyCacheControl(
  */
 function cacheSystem(
   system: string | TextBlockParam[] | undefined,
+  boundary: 'first' | 'last',
 ): string | TextBlockParam[] | undefined {
   if (typeof system === 'string') {
     if (system.length === 0) return system;
@@ -91,9 +105,11 @@ function cacheSystem(
   }
   if (Array.isArray(system) && system.length > 0) {
     const blocks = system.slice();
-    const lastIdx = blocks.length - 1;
-    const lastBlock = blocks[lastIdx] as TextBlockParam;
-    blocks[lastIdx] = { ...lastBlock, cache_control: EPHEMERAL };
+    // 'first' caches the stable prefix block (engine's [stable, cwd] split);
+    // 'last' caches the final block (default for caller-supplied systems).
+    const idx = boundary === 'first' ? 0 : blocks.length - 1;
+    const target = blocks[idx] as TextBlockParam;
+    blocks[idx] = { ...target, cache_control: EPHEMERAL };
     return blocks;
   }
   return system;
