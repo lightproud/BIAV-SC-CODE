@@ -98,6 +98,15 @@
   .mission-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold-l);margin-bottom:8px}
   .mission-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
   .mission-meta{font-size:11px;color:var(--txt-d);letter-spacing:0.04em;margin-top:12px}
+  .kb-entry{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:20px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:24px 28px;color:inherit;transition:border-color 0.3s,transform 0.3s}
+  .kb-entry:hover{border-color:rgba(197,163,86,0.18);transform:translateY(-2px)}
+  .kb-entry-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold-l);margin-bottom:8px}
+  .kb-entry-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
+  .kb-entry-stat{display:flex;align-items:baseline;gap:6px;flex-shrink:0}
+  .kb-num{font-family:var(--serif);font-weight:700;font-size:32px;color:var(--gold-d);line-height:1}
+  .kb-unit{font-size:12px;color:var(--txt-d);letter-spacing:0.04em}
+  .kb-arrow{font-size:20px;color:var(--gold-d);margin-left:10px;transition:transform 0.3s}
+  .kb-entry:hover .kb-arrow{transform:translateX(4px)}
 
   /* ── COMMUNITY ── */
   .comm-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
@@ -124,6 +133,7 @@
     .sec-title{font-size:22px}
     .feat-grid{grid-template-columns:1fr}
     .mission-grid{grid-template-columns:1fr}
+    .kb-entry{flex-direction:column;align-items:flex-start;gap:16px}
     .world-strip{padding:60px 0}
     .world-inner{padding:0 20px}
   }
@@ -146,6 +156,7 @@
     <a href="wiki/zh/awakeners/">唤醒体</a>
     <a href="wiki/story">剧情</a>
     <a href="news/">情报</a>
+    <a href="kb/">知识库</a>
     <a href="biav/">BIAV</a>
     <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub</a>
   </div>
@@ -232,6 +243,16 @@
       <div class="mission-meta">wiki 子项目 · 解包数据驱动</div>
     </a>
   </div>
+  <a class="kb-entry reveal" href="kb/">
+    <div class="kb-entry-body">
+      <div class="kb-entry-name">知识库关系图</div>
+      <div class="kb-entry-desc">两大使命共用的事实底座——72 唤醒体、剧情结构、17 社区数据源与记忆档案，编成一张可导航的知识图谱。双击即览概念与关系。</div>
+    </div>
+    <div class="kb-entry-stat">
+      <span class="kb-num">105</span><span class="kb-unit">概念 · 104 关系</span>
+      <span class="kb-arrow" aria-hidden="true">→</span>
+    </div>
+  </a>
 </section>
 
 <!-- ═══ COMMUNITY ═══ -->
