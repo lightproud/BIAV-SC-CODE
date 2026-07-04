@@ -153,7 +153,7 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | `tool_progress`, `tool_use_summary` | TYPED | no mid-tool progress channel (tools are one-shot) |
 | `task_started` / `task_progress` / `task_updated` / `task_notification` | TYPED | subagents run detached; lifecycle not surfaced as stream events yet |
 | `hook_started` / `hook_progress` / `hook_response` | TYPED | would gate behind `includeHookEvents`; hooks currently report via debug only |
-| `rate_limit_event`, `api_retry` | TYPED | the transport retries 429/5xx internally and surfaces attempts via the debug callback, not the stream (a follow-up can bridge transport→stream) |
+| `rate_limit_event`, `api_retry` | FULL (emitted) | the transport's per-request `onRetry` observer bridges each 429/5xx/network retry into the stream: a `rate_limit_event` on 429 (with `retry_after_ms`), an `api_retry` otherwise (with `status`/`reason`), yielded just before the retried attempt's stream |
 | `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `informational`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host/slash-command framework |
 
 ## Hooks

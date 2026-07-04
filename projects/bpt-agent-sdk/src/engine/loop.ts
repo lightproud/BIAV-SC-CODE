@@ -32,6 +32,7 @@ import type {
   AggregatedHookResult,
   EngineConfig,
   EngineDeps,
+  RetryInfo,
   StreamRequest,
   ToolResultPayload,
 } from '../internal/contracts.js';
@@ -415,6 +416,31 @@ export async function* runAgentLoop(
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();
     const toolDefs = buildToolDefs();
+    // Retry observability: the transport calls onRetry (in the request phase,
+    // before any stream event) for each 429/5xx/network retry. We buffer a
+    // rate_limit_event (429) / api_retry (else) per retry and yield them at the
+    // top of the event loop, so they surface just before this attempt's stream.
+    const retryMessages: SDKMessage[] = [];
+    const onRetry = (info: RetryInfo): void => {
+      const base = { uuid: randomUUID(), session_id: config.sessionId };
+      if (info.status === 429) {
+        retryMessages.push({
+          type: 'rate_limit_event',
+          ...base,
+          retry_after_ms: info.retryAfterMs ?? 0,
+          limit_type: 'api',
+        });
+      } else {
+        retryMessages.push({
+          type: 'api_retry',
+          ...base,
+          attempt: info.attempt,
+          max_retries: info.maxRetries,
+          ...(info.status !== undefined ? { status: info.status } : {}),
+          ...(info.errorType !== undefined ? { reason: info.errorType } : {}),
+        });
+      }
+    };
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
@@ -423,6 +449,7 @@ export async function* runAgentLoop(
       tools: toolDefs.length > 0 ? toolDefs : undefined,
       thinking: computeThinking(),
       signal,
+      onRetry,
     };
     // cache-control is the outermost request shaper; it never mutates `request`.
     const outgoing = applyCacheControl(request, {
@@ -432,6 +459,9 @@ export async function* runAgentLoop(
     const apiStart = Date.now();
     try {
       for await (const event of deps.transport.stream(outgoing)) {
+        // Surface any retries that happened in the request phase (all buffered
+        // before the first event) ahead of this attempt's stream.
+        while (retryMessages.length > 0) yield retryMessages.shift()!;
         if (firstTokenAtMs === undefined && event.type === 'content_block_start') {
           firstTokenAtMs = Date.now();
           firstStreamStartMs = apiStart;

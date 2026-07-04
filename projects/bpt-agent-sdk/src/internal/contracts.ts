@@ -34,6 +34,19 @@ import type {
 // Transport (module A)
 // ---------------------------------------------------------------------------
 
+/** Retry-attempt info the transport surfaces so the loop can emit
+ * rate_limit_event / api_retry observability messages. */
+export type RetryInfo = {
+  attempt: number;
+  maxRetries: number;
+  /** HTTP status that triggered the retry; absent for a network-level retry. */
+  status?: number;
+  /** Milliseconds the server asked us to wait (Retry-After), when present. */
+  retryAfterMs?: number;
+  /** API error type (e.g. 'rate_limit_error', 'overloaded_error') when known. */
+  errorType?: string;
+};
+
 export type StreamRequest = {
   model: string;
   max_tokens: number;
@@ -43,6 +56,9 @@ export type StreamRequest = {
   thinking?: { type: 'enabled'; budget_tokens: number } | { type: 'disabled' };
   temperature?: number;
   signal?: AbortSignal;
+  /** Per-request retry observer; the transport calls it on each retry. Not
+   * serialized into the request body. */
+  onRetry?: (info: RetryInfo) => void;
 };
 
 export interface Transport {
