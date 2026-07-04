@@ -37,6 +37,10 @@ on:
         required: false
         type: boolean
         default: false
+      repeat:
+        description: 'Repeat each benchmark task N times and report the median (denoises single-sample outliers)'
+        required: false
+        default: '3'
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -152,7 +156,7 @@ jobs:
     # BPT numbers plus "official engine could not start" — itself a finding.
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.vs_official == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
         with:
@@ -170,15 +174,15 @@ jobs:
         run: npm run build
       - name: Install the official SDK (transient, --no-save, not a repo dep)
         run: npm i --no-save @anthropic-ai/claude-agent-sdk @anthropic-ai/claude-code || echo "official install failed; the official arm will skip"
-      - name: Bare comparison — this SDK
+      - name: Bare comparison — this SDK (9 tasks incl. 2 long-conversation, median of N)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" --out=ab-report-bpt.json
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-bpt.json
       - name: Bare comparison — official SDK (black box; may skip if CLI cannot start)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         continue-on-error: true
-        run: node tests/integration/ab-benchmark.mjs --engine=official "--model=${{ github.event.inputs.model }}" --out=ab-report-official.json
+        run: node tests/integration/ab-benchmark.mjs --engine=official "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-official.json
       - name: Compare (skips gracefully if the official report is missing)
         run: |
           if [ -f ab-report-official.json ]; then

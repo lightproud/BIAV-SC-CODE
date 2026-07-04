@@ -45,6 +45,16 @@ if (args.compare === true && positional.length === 2) {
 const ENGINE = args.engine === 'official' ? 'official' : 'bpt';
 const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20251001';
 const OUT = typeof args.out === 'string' ? args.out : `ab-report-${ENGINE}.json`;
+// --repeat N: run each task N times and report the MEDIAN of the metrics
+// (denoises single-sample outliers, e.g. one slow/retried turn). Default 1.
+const REPEAT = Math.max(1, Number.parseInt(args.repeat, 10) || 1);
+
+const median = (xs) => {
+  const s = xs.filter((x) => typeof x === 'number' && Number.isFinite(x)).sort((a, b) => a - b);
+  if (s.length === 0) return 0;
+  const mid = Math.floor(s.length / 2);
+  return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+};
 
 if (!process.env.ANTHROPIC_API_KEY) {
   console.log('ab-benchmark: no ANTHROPIC_API_KEY, skipping (exit 2).');
@@ -177,6 +187,38 @@ const TASKS = [
       return so !== undefined ? so.year === 2024 : text.includes('2024');
     },
   },
+  // --- Long-conversation tasks (id >= 8) -------------------------------------
+  // Force many sequential turns so prompt caching has repeated READ chances.
+  // These directly test whether the observed 0% cache hit is a short-task
+  // artifact (then it should climb here) or a real caching defect (then it
+  // stays ~0 even across many turns). They need a higher maxTurns.
+  {
+    id: 8,
+    name: 'long-chain files (en, many turns)',
+    longConversation: true,
+    fixture() {},
+    options: { maxTurns: 24 },
+    prompt:
+      'Do these steps one at a time, using a tool for each: ' +
+      'create step1.txt containing "1"; create step2.txt containing "2"; ' +
+      'create step3.txt containing "3"; create step4.txt containing "4"; ' +
+      'read step1.txt; read step2.txt; read step3.txt; read step4.txt; ' +
+      'then reply with the sum of all four numbers.',
+    check: (text) => text.includes('10'),
+  },
+  {
+    id: 9,
+    name: 'long-chain edits (zh, many turns)',
+    longConversation: true,
+    fixture(dir) {
+      fs.writeFileSync(path.join(dir, 'ledger.txt'), 'a=1\nb=1\nc=1\nd=1\n');
+    },
+    options: { maxTurns: 24 },
+    prompt:
+      '逐步操作 ledger.txt，每步用一次工具：把 a 改成 10；把 b 改成 20；' +
+      '把 c 改成 30；把 d 改成 40；然后读出文件，回复四个数的总和。',
+    check: (text) => text.includes('100'),
+  },
 ];
 
 const selected =
@@ -221,10 +263,9 @@ async function runTask(task) {
   }
   const m = resultMsg?.metrics; // bpt extension; absent on the official SDK
   const usage = resultMsg?.usage ?? {};
-  const cacheable =
-    (usage.input_tokens ?? 0) +
-    (usage.cache_read_input_tokens ?? 0) +
-    (usage.cache_creation_input_tokens ?? 0);
+  const cacheRead = usage.cache_read_input_tokens ?? 0;
+  const cacheCreation = usage.cache_creation_input_tokens ?? 0;
+  const cacheable = (usage.input_tokens ?? 0) + cacheRead + cacheCreation;
   return {
     id: task.id,
     name: task.name,
@@ -235,9 +276,13 @@ async function runTask(task) {
     costUsd: resultMsg?.total_cost_usd ?? 0,
     inputTokens: usage.input_tokens ?? 0,
     outputTokens: usage.output_tokens ?? 0,
-    cacheReadTokens: usage.cache_read_input_tokens ?? 0,
-    cacheHitRatio:
-      m?.cacheHitRatio ?? (cacheable > 0 ? (usage.cache_read_input_tokens ?? 0) / cacheable : 0),
+    // Raw cache write/read split so a 0% ratio is diagnosable: creation>0 &&
+    // read==0 => writes happen but reads miss (prefix drift); both 0 =>
+    // cache_control not engaging server-side at all.
+    cacheCreationTokens: cacheCreation,
+    cacheReadTokens: cacheRead,
+    cacheHitRatio: m?.cacheHitRatio ?? (cacheable > 0 ? cacheRead / cacheable : 0),
+    wallMs: Date.now() - started,
     durationMs: resultMsg?.duration_ms ?? Date.now() - started,
     apiMs: resultMsg?.duration_api_ms ?? 0,
     ttftMs: m?.ttftMs ?? resultMsg?.ttft_ms,
@@ -245,14 +290,46 @@ async function runTask(task) {
   };
 }
 
+/** Run one task REPEAT times; return a row of MEDIAN metrics + pass fraction. */
+async function runTaskRepeated(task) {
+  const samples = [];
+  for (let i = 0; i < REPEAT; i++) samples.push(await runTask(task));
+  const pick = (k) => median(samples.map((s) => s[k]));
+  const passedCount = samples.filter((s) => s.passed).length;
+  return {
+    id: task.id,
+    name: task.name,
+    longConversation: task.longConversation === true,
+    samples: REPEAT,
+    passRate: passedCount / REPEAT,
+    passed: passedCount === REPEAT, // strict: every sample must pass
+    subtype: samples[samples.length - 1]?.subtype,
+    error: samples.find((s) => !s.passed)?.error,
+    turns: pick('turns'),
+    costUsd: pick('costUsd'),
+    inputTokens: pick('inputTokens'),
+    outputTokens: pick('outputTokens'),
+    cacheCreationTokens: pick('cacheCreationTokens'),
+    cacheReadTokens: pick('cacheReadTokens'),
+    cacheHitRatio: pick('cacheHitRatio'),
+    wallMs: pick('wallMs'),
+    apiMs: pick('apiMs'),
+    ttftMs: pick('ttftMs'),
+    perTool: samples[samples.length - 1]?.perTool ?? [],
+  };
+}
+
 const rows = [];
 for (const task of selected) {
-  process.stdout.write(`[${ENGINE}] task ${task.id}: ${task.name} ... `);
+  const tag = REPEAT > 1 ? ` (median of ${REPEAT})` : '';
+  process.stdout.write(`[${ENGINE}] task ${task.id}: ${task.name}${tag} ... `);
   try {
-    const row = await runTask(task);
+    const row = await runTaskRepeated(task);
     rows.push(row);
     console.log(
-      `${row.passed ? 'ok' : 'CHECK-FAILED'} turns=${row.turns} cost=$${row.costUsd.toFixed(4)}`,
+      `${row.passed ? 'ok' : `CHECK ${Math.round(row.passRate * 100)}%`} ` +
+        `turns=${row.turns} cost=$${row.costUsd.toFixed(4)} ` +
+        `cache(w/r)=${row.cacheCreationTokens}/${row.cacheReadTokens}`,
     );
     if (!row.passed && row.error !== undefined) {
       console.log(`    error(${row.subtype}): ${row.error}`);
@@ -268,25 +345,44 @@ for (const task of selected) {
 const report = {
   engine: ENGINE,
   model: MODEL,
+  repeat: REPEAT,
   at: new Date().toISOString(),
   tasks: rows,
   totals: {
     costUsd: rows.reduce((s, r) => s + (r.costUsd ?? 0), 0),
     turns: rows.reduce((s, r) => s + (r.turns ?? 0), 0),
+    wallMs: rows.reduce((s, r) => s + (r.wallMs ?? 0), 0),
+    apiMs: rows.reduce((s, r) => s + (r.apiMs ?? 0), 0),
     passed: rows.filter((r) => r.passed).length,
     of: rows.length,
   },
 };
 fs.writeFileSync(OUT, JSON.stringify(report, null, 2));
 
-console.log(`\n| # | task | ok | turns | cost $ | in-tok | out-tok | cacheHit | api ms |`);
-console.log(`|---|------|----|-------|--------|--------|---------|----------|--------|`);
+console.log(`\n| # | task | ok | turns | cost $ | cache w/r | hit | api ms | wall ms |`);
+console.log(`|---|------|----|-------|--------|-----------|-----|--------|---------|`);
 for (const r of rows) {
   console.log(
-    `| ${r.id} | ${r.name} | ${r.passed ? 'y' : 'N'} | ${r.turns ?? '-'} | ` +
-      `${(r.costUsd ?? 0).toFixed(4)} | ${r.inputTokens ?? '-'} | ${r.outputTokens ?? '-'} | ` +
-      `${r.cacheHitRatio !== undefined ? (r.cacheHitRatio * 100).toFixed(0) + '%' : '-'} | ${r.apiMs ?? '-'} |`,
+    `| ${r.id} | ${r.name} | ${r.passed ? 'y' : `${Math.round((r.passRate ?? 0) * 100)}%`} | ` +
+      `${r.turns ?? '-'} | ${(r.costUsd ?? 0).toFixed(4)} | ` +
+      `${r.cacheCreationTokens ?? '-'}/${r.cacheReadTokens ?? '-'} | ` +
+      `${r.cacheHitRatio !== undefined ? (r.cacheHitRatio * 100).toFixed(0) + '%' : '-'} | ` +
+      `${Math.round(r.apiMs ?? 0)} | ${Math.round(r.wallMs ?? 0)} |`,
   );
+}
+
+// Cache diagnosis (answers "why is cacheHit 0%"): separate WRITE from READ.
+const totCreate = rows.reduce((s, r) => s + (r.cacheCreationTokens ?? 0), 0);
+const totRead = rows.reduce((s, r) => s + (r.cacheReadTokens ?? 0), 0);
+console.log('\nCache diagnosis:');
+console.log(`  total cache_creation (writes): ${totCreate}`);
+console.log(`  total cache_read     (reads):  ${totRead}`);
+if (totCreate === 0 && totRead === 0) {
+  console.log('  => cache_control is NOT engaging server-side (no writes, no reads).');
+} else if (totCreate > 0 && totRead === 0) {
+  console.log('  => writes happen but reads miss: the cached prefix drifts across turns.');
+} else {
+  console.log('  => caching is working (writes + reads present).');
 }
 
 // Offender ranking: what to optimize first (POSITIONING §7 "按 offender 排序").
@@ -312,7 +408,10 @@ if (slowTools.length > 0) {
 }
 console.log(
   `\ntotal: $${report.totals.costUsd.toFixed(4)}, ${report.totals.turns} turns, ` +
-    `${report.totals.passed}/${report.totals.of} checks passed\nreport: ${OUT}`,
+    `${Math.round(report.totals.wallMs)}ms wall, ${Math.round(report.totals.apiMs)}ms api, ` +
+    `${report.totals.passed}/${report.totals.of} checks passed` +
+    (REPEAT > 1 ? ` (median of ${REPEAT})` : '') +
+    `\nreport: ${OUT}`,
 );
 process.exit(report.totals.passed === report.totals.of ? 0 : 1);
 
@@ -323,21 +422,27 @@ function compareReports(fileA, fileB) {
   const b = JSON.parse(fs.readFileSync(fileB, 'utf8'));
   const byId = (rep) => new Map(rep.tasks.map((t) => [t.id, t]));
   const mb = byId(b);
-  console.log(`A=${a.engine}(${a.model})  B=${b.engine}(${b.model})\n`);
-  console.log('| # | task | turns A/B | cost A/B | in-tok A/B | cacheHit A/B |');
-  console.log('|---|------|-----------|----------|------------|--------------|');
+  const rn = a.repeat || b.repeat ? ` (median of ${a.repeat ?? 1}/${b.repeat ?? 1})` : '';
+  console.log(`A=${a.engine}(${a.model})  B=${b.engine}(${b.model})${rn}\n`);
+  console.log('| # | task | ok A/B | turns A/B | cost A/B | wall ms A/B | cacheHit A/B |');
+  console.log('|---|------|--------|-----------|----------|-------------|--------------|');
   for (const ta of a.tasks) {
     const tb = mb.get(ta.id);
     if (tb === undefined) continue;
     const pct = (x) => (x === undefined ? '-' : `${(x * 100).toFixed(0)}%`);
+    const ok = (t) => (t.passed ? 'y' : `${Math.round((t.passRate ?? 0) * 100)}%`);
     console.log(
-      `| ${ta.id} | ${ta.name} | ${ta.turns}/${tb.turns} | ` +
+      `| ${ta.id} | ${ta.name} | ${ok(ta)}/${ok(tb)} | ${ta.turns}/${tb.turns} | ` +
         `${(ta.costUsd ?? 0).toFixed(4)}/${(tb.costUsd ?? 0).toFixed(4)} | ` +
-        `${ta.inputTokens}/${tb.inputTokens} | ${pct(ta.cacheHitRatio)}/${pct(tb.cacheHitRatio)} |`,
+        `${Math.round(ta.wallMs ?? 0)}/${Math.round(tb.wallMs ?? 0)} | ` +
+        `${pct(ta.cacheHitRatio)}/${pct(tb.cacheHitRatio)} |`,
     );
   }
+  const spd = (x) => Math.round(x ?? 0);
   console.log(
     `\ntotals  cost: ${a.totals.costUsd.toFixed(4)} vs ${b.totals.costUsd.toFixed(4)}   ` +
-      `turns: ${a.totals.turns} vs ${b.totals.turns}`,
+      `turns: ${a.totals.turns} vs ${b.totals.turns}   ` +
+      `wall ms: ${spd(a.totals.wallMs)} vs ${spd(b.totals.wallMs)}   ` +
+      `api ms: ${spd(a.totals.apiMs)} vs ${spd(b.totals.apiMs)}`,
   );
 }
