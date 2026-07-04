@@ -1,4 +1,4 @@
-# wiki 结构化数据集（解包自举） (18)
+# wiki 结构化数据集（解包自举） (26)
 
 projects/wiki/data/processed/ 下非角色结构化数据集与 schema 契约的指针（角色本体见 characters/）。
 
@@ -21,4 +21,12 @@ projects/wiki/data/processed/ 下非角色结构化数据集与 schema 契约的
 * [voice_character_map](/wiki-data/wiki-data-voice-character-map.md) - Voice.lua + AwakerConfig.lua text matching · total_voice_entries=2562 · 生成 2026
 * [voice_lines](/wiki-data/wiki-data-voice-lines.md) - Voice.lua (runtime memory extraction) · total_lines=2543 · 生成 2026-04-12
 * [world_lore](/wiki-data/wiki-data-world-lore.md) - CollectionHall.lua (runtime memory extraction) · total_entries=1026 · 生成 2026-04
-* [character_skills](/wiki-data/wiki-data-character-skills.md) - 每个可玩唤醒体的**界域 / 定位 / 核心循环 / 招牌技能 / 启灵关键 / 配队**。
+* [character_skills](/wiki-data/wiki-data-character-skills.md) - [[toc]]
+* [banners.schema.json](/wiki-data/wiki-schema-banners-schema.md) - wiki 数据模型 schema 定义（banners.schema），派生 JSON 的契约来源。
+* [characters.processed.schema.json](/wiki-data/wiki-schema-characters-processed-schema.md) - wiki 数据模型 schema 定义（characters.processed.schema），派生 JSON 的契约来源。
+* [characters.schema.json](/wiki-data/wiki-schema-characters-schema.md) - wiki 数据模型 schema 定义（characters.schema），派生 JSON 的契约来源。
+* [items.schema.json](/wiki-data/wiki-schema-items-schema.md) - wiki 数据模型 schema 定义（items.schema），派生 JSON 的契约来源。
+* [meta.schema.json](/wiki-data/wiki-schema-meta-schema.md) - wiki 数据模型 schema 定义（meta.schema），派生 JSON 的契约来源。
+* [realms.schema.json](/wiki-data/wiki-schema-realms-schema.md) - wiki 数据模型 schema 定义（realms.schema），派生 JSON 的契约来源。
+* [stages.schema.json](/wiki-data/wiki-schema-stages-schema.md) - wiki 数据模型 schema 定义（stages.schema），派生 JSON 的契约来源。
+* [trinkets.schema.json](/wiki-data/wiki-schema-trinkets-schema.md) - wiki 数据模型 schema 定义（trinkets.schema），派生 JSON 的契约来源。

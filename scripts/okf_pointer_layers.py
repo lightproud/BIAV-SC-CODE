@@ -132,6 +132,7 @@ def md_title_blurb(path: Path, max_len: int = 240) -> tuple[str, str]:
     except OSError:
         return title, blurb
     text = _FM_RE.sub("", text, count=1)
+    _META_PREFIX = ("落档", "最后更新", "更新时间", "生成", "作者", "版本")
     for line in text.splitlines():
         s = line.strip()
         if not s:
@@ -139,10 +140,15 @@ def md_title_blurb(path: Path, max_len: int = 240) -> tuple[str, str]:
         if s.startswith("# ") and title == path.stem:
             title = s[2:].strip()
             continue
-        if not blurb and not s.startswith(("#", "|", "---", "```", "!", "<")):
-            blurb = s.lstrip("> ").strip()
-            if blurb:
-                break
+        if blurb:
+            continue
+        # 取首个叙述句：跳过标题/表格/代码/引用/图片/HTML/列表项/元数据行
+        if s.startswith(("#", "|", "---", "```", "!", "<", "- ", "* ", "+ ", ">")):
+            continue
+        head = s.split("：", 1)[0].split(":", 1)[0]
+        if any(head.startswith(p) for p in _META_PREFIX):
+            continue
+        blurb = s.strip()
     return title, blurb[:max_len]
 
 
@@ -213,7 +219,8 @@ def build_assets() -> list[dict]:
             tot = _first_total(meta)
             desc = (desc or f"{stem} 事实数据") + (f"（{tot}）" if tot else "")
         else:
-            _t, desc = md_title_blurb(f)
+            h1, blurb = md_title_blurb(f)
+            desc = blurb or h1  # 无叙述句则回落 H1 标题（优于裸文件名）
         entries.append({
             "id": f"assets-{slug(stem)}", "type": typ, "title": stem,
             "description": desc, "resource": _rel(f), "tags": tags,
@@ -287,8 +294,8 @@ def build_wiki_data() -> list[dict]:
             "description": blurb or "角色技能（社区攻略源，随版本波动）", "resource": _rel(csk),
             "tags": ["data_layer:curated", "community-sourced", "version-volatile", "domain:gameplay"],
         })
-    # data-model schemas (契约来源)
-    sdir = pdir / "schemas"
+    # data-model schemas (契约来源) —— 位于 data/schemas/（processed 的同级，非子级）
+    sdir = REPO / "projects" / "wiki" / "data" / "schemas"
     for f in sorted(sdir.glob("*.json")):
         entries.append({
             "id": f"wiki-schema-{slug(f.stem)}", "type": "reference", "title": f.name,
@@ -447,15 +454,17 @@ def build_unpacked() -> list[dict]:
         name = d.name
         cid = _UNPACKED_ALIAS.get(name, slug(name))
         nfiles = sum(1 for _ in d.rglob("*") if _.is_file())
+        enc = _sniff_encoding(d)
+        kind = "lua 字节码子集（binary，非明文）" if enc == "encoding:luac" else "text 子集（明文）"
         entries.append({
             "id": f"unpacked-{cid}", "type": "dataset", "title": name,
-            "description": f"客户端解包 text 子集「{name}」：{nfiles} 文件 / {_size_of(d)}。一手解包，本体原地。",
+            "description": f"客户端解包{kind}「{name}」：{nfiles} 文件 / {_size_of(d)}。一手解包，本体原地。",
             "resource": _rel(d) + "/",
-            "tags": ["data_layer:full_archive", f"content:{cid}", _sniff_encoding(d), "first-hand-unpack"],
+            "tags": ["data_layer:full_archive", f"content:{cid}", enc, "first-hand-unpack"],
         })
-    return write_layer("unpacked", entries, "解包 text（客户端一手）",
-                       "Public-Info-Pool/Reference/Game-Unpacked/ 解包 text 子集指针（二进制本体在 Releases，见 releases/）。"
-                       "含未上线内容可能，下游受『不推断未发布』约束。")
+    return write_layer("unpacked", entries, "客户端解包子集（一手，text/字节码）",
+                       "Public-Info-Pool/Reference/Game-Unpacked/ 客户端解包子集指针（明文 text 与 lua 字节码按目录 encoding 标签区分；"
+                       "字节码等二进制本体亦见 Releases「解包」桶）。含未上线内容可能，下游受『不推断未发布』约束。")
 
 
 # ---------------------------------------------------------------------------
@@ -526,6 +535,19 @@ def build_resource() -> list[dict]:
 
 def build_projects() -> list[dict]:
     entries = []
+    # 仓库最高权威入口文档（评审 high 修复：CLAUDE.md 曾整个缺席「组织所有知识」的 bundle）
+    for p, cid, title, tags in [
+        (REPO / "CLAUDE.md", "entry-claude-md", "CLAUDE.md（AI 统一入口 · 运行时强约束权威）",
+         ["data_layer:curated", "entry-point", "runtime-authority"]),
+        (REPO / "README.md", "entry-readme", "README.md（人 + AI 共用主入口）",
+         ["data_layer:curated", "entry-point"]),
+    ]:
+        if p.exists():
+            _t, blurb = md_title_blurb(p)
+            entries.append({
+                "id": cid, "type": "documentation", "title": title,
+                "description": blurb or title, "resource": _rel(p), "tags": tags,
+            })
     for name in ("news", "wiki", "site", "game", "bpt-agent-sdk"):
         ctx = REPO / "projects" / name / "CONTEXT.md"
         if ctx.exists():
@@ -535,6 +557,29 @@ def build_projects() -> list[dict]:
                 "description": blurb or f"{name} 子项目会话上下文与当前 milestone（动手前必读）。",
                 "resource": _rel(ctx), "tags": ["data_layer:curated", "sub-project-context", "milestone"],
             })
+    # 子项目设计知识（评审 medium 修复）：bpt-agent-sdk/docs/*.md + site/design/*
+    for f in sorted((REPO / "projects" / "bpt-agent-sdk" / "docs").glob("*.md")):
+        _t, blurb = md_title_blurb(f)
+        entries.append({
+            "id": f"bpt-sdk-doc-{slug(f.stem)}", "type": "documentation", "title": f"bpt-agent-sdk {f.stem}",
+            "description": blurb or f"bpt-agent-sdk 设计文档 {f.name}", "resource": _rel(f),
+            "tags": ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"],
+        })
+    for f in sorted((REPO / "projects" / "site" / "design").glob("*")):
+        if f.is_file() and f.suffix in (".html", ".css", ".md"):
+            entries.append({
+                "id": f"site-design-{slug(f.stem)}", "type": "documentation", "title": f"site design · {f.name}",
+                "description": f"site 设计系统权威（{f.name}，{_size_of(f)}）：设计令牌 / 组件规范来源。",
+                "resource": _rel(f), "tags": ["data_layer:curated", "design-system", "sub-project:site"],
+            })
+    # T2 归档声明式注册表（评审 low 修复）
+    asrc = REPO / "projects" / "news" / "scripts" / "archive_sources.json"
+    if asrc.exists():
+        entries.append({
+            "id": "news-archive-sources-registry", "type": "dataset", "title": "archive_sources.json（归档注册表）",
+            "description": "T2 数据层归档声明式注册表：哪些来源归档到哪、如何驱逐（archive_engine 读它干活）。",
+            "resource": _rel(asrc), "tags": ["data_layer:curated", "registry", "sub-project:news"],
+        })
     # RELEASES.md treasure map (binary assets pointer)
     rel_md = REPO / "RELEASES.md"
     if rel_md.exists():
@@ -570,8 +615,9 @@ def build_projects() -> list[dict]:
             "description": f"逐条列 .luac 本体位置的清单（{n} 条），字节码本体在 Releases「解包」桶。",
             "resource": _rel(csvp), "tags": ["data_layer:curated", "manifest", "binary-assets-pointer"],
         })
-    return write_layer("projects", entries, "子项目上下文 + 藏宝图 + 工程文档",
-                       "各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + 工程文档的导航指针。")
+    return write_layer("projects", entries, "入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档",
+                       "仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ "
+                       "RELEASES.md 藏宝图 + bpt-agent-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。")
 
 
 # ---------------------------------------------------------------------------

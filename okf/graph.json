@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 278,
-    "edges": 154
+    "nodes": 294,
+    "edges": 160
   },
   "nodes": [
     {
@@ -1763,12 +1763,61 @@
       ]
     },
     {
+      "id": "/projects/bpt-sdk-doc-architecture.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk ARCHITECTURE",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ]
+    },
+    {
+      "id": "/projects/bpt-sdk-doc-compat.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk COMPAT",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ]
+    },
+    {
+      "id": "/projects/bpt-sdk-doc-positioning.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk POSITIONING",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ]
+    },
+    {
       "id": "/projects/doc-testing-strategy.md",
       "type": "documentation",
       "title": "测试策略",
       "tags": [
         "data_layer:curated",
         "engineering-doc"
+      ]
+    },
+    {
+      "id": "/projects/entry-claude-md.md",
+      "type": "documentation",
+      "title": "CLAUDE.md（AI 统一入口 · 运行时强约束权威）",
+      "tags": [
+        "data_layer:curated",
+        "entry-point",
+        "runtime-authority"
+      ]
+    },
+    {
+      "id": "/projects/entry-readme.md",
+      "type": "documentation",
+      "title": "README.md（人 + AI 共用主入口）",
+      "tags": [
+        "data_layer:curated",
+        "entry-point"
       ]
     },
     {
@@ -1788,6 +1837,16 @@
       "tags": [
         "data_layer:curated",
         "engineering-doc"
+      ]
+    },
+    {
+      "id": "/projects/news-archive-sources-registry.md",
+      "type": "dataset",
+      "title": "archive_sources.json（归档注册表）",
+      "tags": [
+        "data_layer:curated",
+        "registry",
+        "sub-project:news"
       ]
     },
     {
@@ -1848,6 +1907,26 @@
         "data_layer:curated",
         "treasure-map",
         "binary-assets-pointer"
+      ]
+    },
+    {
+      "id": "/projects/site-design-morimens-design-system-guide.md",
+      "type": "documentation",
+      "title": "site design · morimens-design-system-guide.html",
+      "tags": [
+        "data_layer:curated",
+        "design-system",
+        "sub-project:site"
+      ]
+    },
+    {
+      "id": "/projects/site-design-morimens-design-tokens.md",
+      "type": "documentation",
+      "title": "site design · morimens-design-tokens.css",
+      "tags": [
+        "data_layer:curated",
+        "design-system",
+        "sub-project:site"
       ]
     },
     {
@@ -2793,6 +2872,86 @@
         "unpacked-bootstrap",
         "domain:story"
       ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-banners-schema.md",
+      "type": "reference",
+      "title": "banners.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-characters-processed-schema.md",
+      "type": "reference",
+      "title": "characters.processed.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-characters-schema.md",
+      "type": "reference",
+      "title": "characters.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-items-schema.md",
+      "type": "reference",
+      "title": "items.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-meta-schema.md",
+      "type": "reference",
+      "title": "meta.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-realms-schema.md",
+      "type": "reference",
+      "title": "realms.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-stages-schema.md",
+      "type": "reference",
+      "title": "stages.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
+    },
+    {
+      "id": "/wiki-data/wiki-schema-trinkets-schema.md",
+      "type": "reference",
+      "title": "trinkets.schema.json",
+      "tags": [
+        "data_layer:curated",
+        "schema",
+        "contract"
+      ]
     }
   ],
   "edges": [
@@ -3565,6 +3724,36 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/sources/youtube_comments.md",
       "rel": "same_platform_lens"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/entry-readme.md",
+      "rel": "dual_entry"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-bpt-agent-sdk.md",
+      "rel": "entry_to_context"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-game.md",
+      "rel": "entry_to_context"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-news.md",
+      "rel": "entry_to_context"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-site.md",
+      "rel": "entry_to_context"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-wiki.md",
+      "rel": "entry_to_context"
     }
   ]
 }

@@ -699,6 +699,13 @@ def build_graph() -> dict:
                 not nid.endswith(("community-index.md", "community-timeline.md"))):
             _link(nid, "/community/community-index.md", "aggregated_in")
 
+    # bundle 总入口连边（评审：CLAUDE.md 概念须连入 graph 作总入口）：
+    # CLAUDE.md ↔ README.md 双入口，且 CLAUDE.md → 各子项目 CONTEXT（动手前必读链）。
+    _link("/projects/entry-claude-md.md", "/projects/entry-readme.md", "dual_entry")
+    for n in nodes:
+        if n["id"].startswith("/projects/project-"):
+            _link("/projects/entry-claude-md.md", n["id"], "entry_to_context")
+
     return {
         "generated": TODAY,
         "stats": {"nodes": len(nodes), "edges": len(edges)},

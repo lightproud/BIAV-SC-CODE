@@ -289,7 +289,7 @@ brain-in-a-vat/
 - **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**
   （除 characters 外所有层仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md「藏宝图」与
   「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（指针用 `tags: data_layer:*` 标层，防 lesson #30）。
-- **全仓知识组织（12 层 / ~277 概念，守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
+- **全仓知识组织（12 层 / ~293 概念，守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
   bundle 从 4 层扩到覆盖全仓知识域——原生 `characters`/`sources`/`memory`/`story`（后二已扩至全层）
   + 新增 `assets`(事实圣经)/`wiki-data`(解包结构化数据集)/`community`(**归档社区全量档案分析镜头**，
   full_archive)/`news-output`(输出展示层，output)/`unpacked`(解包 text，full_archive)/`extracted`
