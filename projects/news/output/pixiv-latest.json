@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T20:49:59.218274+00:00",
+  "collected_at": "2026-07-04T21:54:42.476895+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 32,
@@ -163,16 +163,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-07-04T20:49:11.747947+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "pixiv",
       "time": "2026-06-17T21:30:41+09:00",
       "lang": "",
       "title": "ゴリリオつめ",
@@ -241,6 +231,18 @@
       "author": "非我らぎ　Skeb募集中",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/06/07/23/20/14/145737590_p0_custom1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-06-06T19:18:35+09:00",
+      "lang": "",
+      "title": "忘却前夜ハーフアニバーサリー",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145679126",
+      "author": "れちゃん",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/06/19/18/35/145679126_p0_square1200.jpg",
       "content_type": "image"
     },
     {
