@@ -224,7 +224,8 @@
   加阶段2（生成合法最小 PDF→模型 Read→成功即 API 接受 document 块），随 live-smoke workflow 手动
   dispatch 用 `secrets.ANTHROPIC_API_KEY` 跑。（同期并发合并 #385 surface-alignment：MCP resources /
   Grep offset·-o / bypass 联锁 / ModelInfo.value。）
-- **沙箱**：按 BPT 高开放权限信任模型判定 **N/A-by-design**（云沙箱在 BPT 内部场景不适用，守密人 2026-07-03 认可）
+- **沙箱**：**再现且默认开启**（守密人 2026-07-04「全做、一样默认开启」裁定，**更新** 2026-07-03「N/A-by-design」旧裁定）。
+  即 `bash-sandbox-*` 能力本体照官方再现、BPT 默认启用，与全做其余项一致
 
 ## 当前阶段
 
