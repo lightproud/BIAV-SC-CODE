@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-03T22:05:55.440332+00:00",
+  "archived_at": "2026-07-04T00:02:17.280909+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] game is a visual novel gacha with card battling sy...",
@@ -22,6 +22,30 @@
         "playtime_forever": 2371,
         "votes_up": 0,
         "timestamp_created": 1783099636
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] A captivating story, complemented by a beautiful s...",
+      "summary": "A captivating story, complemented by a beautiful soundtrack and a dark, Lovecraftian atmosphere.",
+      "source": "steam_review",
+      "time": "2026-07-03T22:06:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198405078181/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198405078181",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7587,
+        "votes_up": 0,
+        "timestamp_created": 1783116367
       },
       "region": "global",
       "archive_subtype": "review",
