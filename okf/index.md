@@ -10,6 +10,13 @@
 * [记忆 memory](/memory/index.md) - 10 份记忆层**指针** concept
 * [剧情 story](/story/index.md) - 5 份剧情结构层**指针** concept
 
+## 运行时导航（LLM 可动态导航）
+
+`kb_index.json` 是本 bundle 的**运行时导航索引**（倒排表 + 邻接表，零 ML，
+由 `scripts/build_kb_index.py` 生成）。艾瑞卡经 MCP `kb_*` 工具
+（`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview`，后端 `scripts/kb_navigator.py`）
+在运行时按需检索概念、取全档、顺关系图遍历——把静态知识层升级为可动态编排的知识库。
+
 ## 变更史
 
 * [log.md](/log.md)

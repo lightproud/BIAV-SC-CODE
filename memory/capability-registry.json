@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 30,
-      "scripts_top": 23,
+      "scripts_top": 25,
       "scripts_news": 28,
       "scripts_wiki": 6,
-      "mcp_tools": 4,
+      "mcp_tools": 8,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 104
+      "total": 110
     },
     "reachability": {
-      "live": 57,
+      "live": 59,
       "test-only": 0,
       "orphaned": 0
     }
@@ -328,6 +328,15 @@
       "status": "live"
     },
     {
+      "id": "build_kb_index.py",
+      "path": "scripts/build_kb_index.py",
+      "summary": "build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "build_okf_bundle.py",
       "path": "scripts/build_okf_bundle.py",
       "summary": "Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).",
@@ -402,6 +411,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_navigator.py",
+      "path": "scripts/kb_navigator.py",
+      "summary": "kb_navigator.py — 银芯知识库运行时导航（KB navigation, import-only 库）。",
+      "planes": [
+        "mcp"
       ],
       "status": "live"
     },
@@ -894,6 +912,26 @@
       "id": "current_continuity",
       "module": "scripts/mcp_server.py",
       "summary": "读取 session 连续性链（上次 session 快照 + topics_hint）。"
+    },
+    {
+      "id": "kb_search",
+      "module": "scripts/mcp_server.py",
+      "summary": "在银芯知识库中按词检索概念（角色 / 数据源 / 记忆 / 剧情）。"
+    },
+    {
+      "id": "kb_get",
+      "module": "scripts/mcp_server.py",
+      "summary": "取单个概念的全档：元数据 + 正文 markdown + resource 指针 + 邻居列表。"
+    },
+    {
+      "id": "kb_neighbors",
+      "module": "scripts/mcp_server.py",
+      "summary": "顺 OKF 关系图遍历某概念的邻居（角色按画师/CV 聚簇、显式链接边等）。"
+    },
+    {
+      "id": "kb_overview",
+      "module": "scripts/mcp_server.py",
+      "summary": "知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。"
     }
   ],
   "commands": [

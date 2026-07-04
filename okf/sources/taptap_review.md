@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "taptap_review 社区数据源"
-description: "taptap_review 平台采集档案，全量 440 条，健康度 degraded。"
+description: "taptap_review 平台采集档案，全量 618 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/taptap/cn/review/"
-tags: ["data_layer:full_archive", "platform:taptap_review", "health:degraded"]
-timestamp: "2026-07-02T09:34:01.636631+00:00"
+tags: ["data_layer:full_archive", "platform:taptap_review", "health:active"]
+timestamp: "2026-07-04T11:24:02.141142+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-02T09:34:01.636631+00:00"
 | 平台 | taptap_review |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/taptap/cn/review/` |
 | 输出展示层（抽样） | `projects/news/output/taptap_review-latest.json` |
-| 全量条数 | 440 |
-| 采集健康度 | degraded |
-| 最后成功 | 2026-06-20 |
+| 全量条数 | 618 |
+| 采集健康度 | active |
+| 最后成功 | 2026-07-04 |
 
 # 数据纪律（硬约束）
 

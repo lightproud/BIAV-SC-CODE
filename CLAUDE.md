@@ -90,9 +90,17 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
    2026-06-14 退役、2026-06-20 整套子系统（TF-IDF 检索 / 知识图谱 / MemRL / 事实库 /
    做梦 / 会话召回）连代码带数据一并删除（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
-4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 4 工具
-   （`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
-   平台原生记忆互补）；守密人经会话派发任务。
+4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 8 工具
+   （记忆四件：`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
+   平台原生记忆互补；知识库导航四件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview`，
+   见下条）；守密人经会话派发任务。
+5. **知识库运行时导航**（动态编排，使命#2 底座之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
+   把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
+   + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle
+   （concept 元数据 + 正文 + `graph.json`）造的静态导航索引 `okf/kb_index.json`（倒排表 + 邻接表，
+   词典法分词、**确定性零 ML 零常驻**）；运行时经**唯一动态平面 MCP** 上 `kb_*` 四工具动态编排
+   （后端 `scripts/kb_navigator.py`，import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
+   指针，本体仍原地不动。重建随 `scripts/build_okf_bundle.py` 末尾自动跑，或 `python3 scripts/build_kb_index.py` 单独重建。
 
 四条主线的「手动怎么跑哪条命令」见 §7。
 
@@ -282,11 +290,15 @@ brain-in-a-vat/
   （`okf/sources/` / `okf/memory/` / `okf/story/` 仅持 `resource` 指针，本体原地不动，呼应
   RELEASES.md「藏宝图」与「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（`okf/sources/`
   指针用 `tags: data_layer:*` 标层，防 lesson #30）。
-- **消费**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
+- **消费（静态）**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
   其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
   产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
-- CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）。
-- 重新生成：`python3 scripts/build_okf_bundle.py`。
+- **消费（运行时动态导航，2026-07-04）**：`okf/kb_index.json`（`scripts/build_kb_index.py` 生成的
+  倒排表 + 邻接表导航索引，词典法零 ML）让艾瑞卡在唯一动态平面 MCP 上经 `kb_*` 四工具
+  （后端 `scripts/kb_navigator.py`）动态检索 / 取概念 / 顺关系图遍历——即「动态编排知识库」（详见 §1.4 第 5 条）。
+- CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）；
+  `kb_index.json` 随 bundle 一并重生成（`build_okf_bundle.py` 末尾自动调用 `build_kb_index`）。
+- 重新生成：`python3 scripts/build_okf_bundle.py`（含导航索引）。
 
 ### §6.2 Public-Info-Pool（产物落点强约定，2026-06-21 守密人裁定）
 
