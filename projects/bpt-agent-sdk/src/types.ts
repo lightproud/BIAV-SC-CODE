@@ -706,6 +706,24 @@ export type ThinkingConfigParam =
 
 export type SettingSource = 'user' | 'project' | 'local';
 
+/**
+ * One segment of a caller-composed system prompt (`systemPrompt` segments
+ * form). The caller owns WHAT each segment contains and its ORDER; `cache:
+ * true` asks the engine to place a prompt-cache breakpoint at that segment's
+ * end. This is the generic seam a host uses to inject its OWN layered prompt
+ * (e.g. built-in core -> team -> user -> project) and still get optimal
+ * caching — the engine only decides WHERE the wire-level cache breakpoints go,
+ * never what the layers are or where they come from. Order segments
+ * stability-descending (most-shared first) so the cached prefix is reused
+ * across the widest set of requests. Up to 3 cached segments are honored
+ * (the 4th API breakpoint is reserved for the tool schemas); extras are
+ * dropped from the least-shared end with a debug warning.
+ */
+export type SystemPromptSegment = {
+  text: string;
+  cache?: boolean;
+};
+
 export type Options = {
   abortController?: AbortController;
   additionalDirectories?: string[];
@@ -755,7 +773,8 @@ export type Options = {
   strictMcpConfig?: boolean;
   systemPrompt?:
     | string
-    | { type: 'preset'; preset: 'claude_code'; append?: string };
+    | { type: 'preset'; preset: 'claude_code'; append?: string }
+    | { type: 'segments'; segments: SystemPromptSegment[] };
   thinking?: ThinkingConfigParam;
   /** Restrict built-in tools by name; defaults to all built-ins. */
   tools?: string[] | { type: 'preset'; preset: 'claude_code' };

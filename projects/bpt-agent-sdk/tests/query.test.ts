@@ -251,6 +251,86 @@ describe('query() e2e - happy path', () => {
     expect(sys.slice(0, -1).some((b) => b.cache_control !== undefined)).toBe(true);
   });
 
+  it('segments systemPrompt: caller blocks forwarded verbatim with their own cache breakpoints', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'hi',
+      options: {
+        provider: { apiKey: 'test-key' },
+        sessionDir,
+        cwd,
+        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        model: 'claude-sonnet-4-5',
+        // host-layered: core -> team -> user -> project (cwd stays out).
+        systemPrompt: {
+          type: 'segments',
+          segments: [
+            { text: 'CORE harness rules', cache: true },
+            { text: 'TEAM conventions', cache: true },
+            { text: 'USER preferences', cache: true },
+            { text: 'PROJECT (untrusted) advisory', cache: false },
+          ],
+        },
+      },
+    });
+    await collect(q);
+    const sys = fetchStub.requests[0]!.body.system as Array<{
+      text?: string;
+      cache_control?: unknown;
+    }>;
+    expect(Array.isArray(sys)).toBe(true);
+    // caller order + text preserved exactly
+    expect(sys.map((b) => b.text)).toEqual([
+      'CORE harness rules',
+      'TEAM conventions',
+      'USER preferences',
+      'PROJECT (untrusted) advisory',
+    ]);
+    // the three cache:true segments carry breakpoints; the project block does not
+    expect(sys[0]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(sys[1]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(sys[2]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(sys[3]!.cache_control).toBeUndefined();
+    // total breakpoints (system + tools) never exceed the API's max of 4;
+    // message-level caching is off in the segments path.
+    const sysBp = sys.filter((b) => b.cache_control !== undefined).length;
+    const tools = (fetchStub.requests[0]!.body.tools ?? []) as Array<{ cache_control?: unknown }>;
+    const toolBp = tools.filter((t) => t.cache_control !== undefined).length;
+    const msgs = (fetchStub.requests[0]!.body.messages ?? []) as Array<{ content?: unknown }>;
+    const msgBp = msgs.flatMap((m) =>
+      Array.isArray(m.content) ? (m.content as Array<{ cache_control?: unknown }>) : [],
+    ).filter((c) => c.cache_control !== undefined).length;
+    expect(sysBp + toolBp + msgBp).toBeLessThanOrEqual(4);
+    expect(msgBp).toBe(0);
+  });
+
+  it('segments systemPrompt: a 4th cache:true segment is dropped from the budget (max 3 system breakpoints)', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = query({
+      prompt: 'hi',
+      options: {
+        provider: { apiKey: 'test-key' },
+        sessionDir,
+        cwd,
+        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        model: 'claude-sonnet-4-5',
+        systemPrompt: {
+          type: 'segments',
+          segments: [
+            { text: 'A', cache: true },
+            { text: 'B', cache: true },
+            { text: 'C', cache: true },
+            { text: 'D', cache: true },
+          ],
+        },
+      },
+    });
+    await collect(q);
+    const sys = fetchStub.requests[0]!.body.system as Array<{ cache_control?: unknown }>;
+    const sysBp = sys.filter((b) => b.cache_control !== undefined).length;
+    expect(sysBp).toBe(3); // 4th cache:true honored only if budget remains
+  });
+
   it('includePartialMessages yields stream_event messages for each raw event', async () => {
     stubFetch(makeSSEFetch([textReplyEvents('partial')]));
     const q = query({

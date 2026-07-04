@@ -55,8 +55,11 @@ export function applyCacheControl(
      *   [stable, volatile-cwd] split so the stable prefix is cached and the
      *   per-run cwd tail (block 2) stays out of the cached prefix, enabling
      *   cross-query reuse of the stable prefix.
+     * - 'preserve': leave the system untouched. Used for the segments seam,
+     *   where the CALLER authored the blocks and their own cache_control
+     *   breakpoints; the engine must not add or move any.
      */
-    cacheSystemBoundary?: 'first' | 'last';
+    cacheSystemBoundary?: 'first' | 'last' | 'preserve';
   },
 ): StreamRequest {
   if (!opts.enabled) return req;
@@ -72,8 +75,10 @@ export function applyCacheControl(
     next.tools = tools;
   }
 
-  // (b) SYSTEM breakpoint - last text block (or first, for the engine split).
-  next.system = cacheSystem(req.system, opts.cacheSystemBoundary ?? 'last');
+  // (b) SYSTEM breakpoint - last text block (or first, for the engine split;
+  // or preserve, when the caller authored the blocks + their own breakpoints).
+  const boundary = opts.cacheSystemBoundary ?? 'last';
+  next.system = boundary === 'preserve' ? req.system : cacheSystem(req.system, boundary);
 
   // (c) MESSAGES breakpoint - last content block of the last message.
   const last =
