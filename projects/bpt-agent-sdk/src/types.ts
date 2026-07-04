@@ -690,6 +690,14 @@ export type ProviderConfig = {
   maxRetries?: number;
   /** Per-request timeout in milliseconds (default 600000). */
   timeoutMs?: number;
+  /**
+   * Idle watchdog for the streaming phase: abort the stream if no SSE event
+   * arrives for this many milliseconds (default 120000; `0` disables). Fires
+   * faster and more diagnosably than the whole-request timeout when a stream
+   * silently stalls — the API emits periodic `ping` events, so a gap this long
+   * means the connection is stuck, not merely slow.
+   */
+  streamIdleTimeoutMs?: number;
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;

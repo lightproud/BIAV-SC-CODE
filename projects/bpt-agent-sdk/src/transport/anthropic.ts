@@ -25,6 +25,8 @@ import { parseSSE } from './sse.js';
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
 const DEFAULT_API_VERSION = '2023-06-01';
 const DEFAULT_TIMEOUT_MS = 600_000;
+/** Default idle watchdog: abort a stalled stream after this gap with no event. */
+const DEFAULT_STREAM_IDLE_MS = 120_000;
 const DEFAULT_MAX_RETRIES = 4;
 const USER_AGENT = 'bpt-agent-sdk/0.1.0';
 const BACKOFF_BASE_MS = 1_000;
@@ -120,9 +122,29 @@ export class AnthropicTransport implements Transport {
     if (!response.body) {
       throw new APIConnectionError('Messages API response has no body');
     }
+    // Idle watchdog: abort a silently-stalled stream after `idleMs` with no
+    // server event — faster and more diagnosable than the whole-request
+    // timeout. Anthropic emits periodic `ping` events, so a gap this long means
+    // the connection is stuck. `0` disables. (Design ref: Codex
+    // `stream_idle_timeout`; reimplemented, no code copied.)
+    const idleMs = this.provider.streamIdleTimeoutMs ?? DEFAULT_STREAM_IDLE_MS;
+    const idleController = idleMs > 0 ? new AbortController() : undefined;
+    const streamSignal = idleController
+      ? AbortSignal.any([signal, idleController.signal])
+      : signal;
+    let idleTimer: ReturnType<typeof setTimeout> | undefined;
+    const resetIdle = (): void => {
+      if (!idleController) return;
+      if (idleTimer) clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => idleController.abort(), idleMs);
+      // Don't let the watchdog alone keep the process alive.
+      (idleTimer as { unref?: () => void }).unref?.();
+    };
     let eventCount = 0;
     try {
-      for await (const frame of parseSSE(response.body, signal)) {
+      resetIdle();
+      for await (const frame of parseSSE(response.body, streamSignal)) {
+        resetIdle();
         let parsed: unknown;
         try {
           parsed = JSON.parse(frame.data);
@@ -148,7 +170,17 @@ export class AnthropicTransport implements Transport {
         yield parsed as RawMessageStreamEvent;
       }
     } catch (err) {
-      throw mapStreamError(err, callerSignal, timeoutSignal, timeoutMs, eventCount);
+      throw mapStreamError(
+        err,
+        callerSignal,
+        timeoutSignal,
+        timeoutMs,
+        eventCount,
+        idleController?.signal,
+        idleMs,
+      );
+    } finally {
+      if (idleTimer) clearTimeout(idleTimer);
     }
     this.debug(`transport: stream completed after ${eventCount} event(s)`);
   }
@@ -374,10 +406,22 @@ function mapStreamError(
   timeoutSignal: AbortSignal,
   timeoutMs: number,
   eventCount: number,
+  idleSignal?: AbortSignal,
+  idleMs?: number,
 ): Error {
   if (err instanceof APIStatusError) return err;
   if (callerSignal?.aborted) {
     return err instanceof AbortError ? err : new AbortError();
+  }
+  // Idle watchdog fired (checked before the whole-request timeout, which it
+  // pre-empts): the stream stalled with no server event. Distinct, diagnosable
+  // message; terminal (the streaming phase is never retried).
+  if (idleSignal?.aborted && !timeoutSignal.aborted) {
+    return new APIConnectionError(
+      `Messages API stream idle for ${idleMs}ms with no server event after ` +
+        `${eventCount} event(s); aborted`,
+      err,
+    );
   }
   if (timeoutSignal.aborted) {
     return new APIConnectionError(
