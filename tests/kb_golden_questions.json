@@ -1,0 +1,26 @@
+{
+  "version": "2026-07-04",
+  "note": "黄金问题集（需求侧有效性回归测试，北极星评判体系 #1）：真实守密人风格问题 → 该被 surface 的概念（id 子串，任一命中即算 hit）。度量『人真正要的，检索得到吗』。含当前命中与当前缺口的诚实混合——缺口即改进目标，非隐藏。expect 用 id 子串以抗概念 id 微调。mode=search 走 kb_search；mode=activate 走扩散激活（测联想召回）。",
+  "k": 3,
+  "min_hit_rate": 0.68,
+  "questions": [
+    {"q": "沙耶是谁", "expect": ["/characters/130226"], "mode": "search", "probe": "identity 身份消歧"},
+    {"q": "徐的故事和技能", "expect": ["/characters/125346"], "mode": "search", "probe": "identity"},
+    {"q": "本源萝坦", "expect": ["/characters/122587"], "mode": "search", "probe": "identity 变体名"},
+    {"q": "discord 社区全量数据在哪", "expect": ["community-discord", "/sources/discord"], "mode": "search", "probe": "layer 全量档案"},
+    {"q": "解包的游戏文本", "expect": ["unpacked-game-text"], "mode": "search", "probe": "unpacked"},
+    {"q": "知识层设计哲学 白盒骨架 神经符号", "expect": ["knowledge-layer-design"], "mode": "search", "probe": "memory 北极星"},
+    {"q": "releases 藏宝图 二进制资产", "expect": ["releases-treasure-map"], "mode": "search", "probe": "projects 入口"},
+    {"q": "世界观术语 历史时间线", "expect": ["morimens-context"], "mode": "search", "probe": "memory"},
+    {"q": "剧情 lore 正文", "expect": ["/story/lore"], "mode": "search", "probe": "story"},
+    {"q": "bpt-agent-sdk 定位", "expect": ["project-bpt-agent-sdk", "bpt-sdk-doc"], "mode": "search", "probe": "projects 设计文档"},
+    {"q": "news 输出展示层 抽样快照", "expect": ["news-output"], "mode": "search", "probe": "output 层"},
+    {"q": "社区分析 情感长尾报告", "expect": ["community-analysis", "community-index"], "mode": "search", "probe": "resource/community"},
+    {"q": "数据纪律 全量 vs 抽样", "expect": ["/sources/", "lessons", "community-index"], "mode": "search", "probe": "data_layer 纪律"},
+    {"q": "制作人采访 53 问", "expect": ["interview"], "mode": "search", "probe": "assets 事实圣经（当前缺口·英文标题）"},
+    {"q": "卡牌系统 指令卡 术语", "expect": ["card-system"], "mode": "search", "probe": "assets（当前缺口·英文标题）"},
+    {"q": "banner 卡池 角色", "expect": ["banners-by-character"], "mode": "search", "probe": "wiki-data（当前缺口·英文标题）"},
+    {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "probe": "memory 决策台账"},
+    {"q": "discord", "expect": ["community-discord", "news-output-discord"], "mode": "activate", "probe": "associative 联想召回（扩散激活跨层）"}
+  ]
+}
