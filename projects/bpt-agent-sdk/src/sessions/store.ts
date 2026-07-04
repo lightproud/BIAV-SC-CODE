@@ -324,8 +324,22 @@ export class JsonlSessionStore implements SessionStore {
 
 export type SessionListOptions = {
   sessionDir?: string;
+  /** Alias for sessionDir (the official option name); sessionDir wins if both set. */
+  dir?: string;
+  /** Cap the number of sessions returned (newest first). Omit for all. */
+  limit?: number;
+  /** Typed for compat; reading Claude Code's own session store is not supported. */
+  includeWorkspace?: boolean;
   env?: Record<string, string | undefined>;
 };
+
+/** Resolve the `dir` alias onto `sessionDir` (sessionDir takes precedence). */
+function resolveSessionDir(options: SessionListOptions): SessionListOptions {
+  if (options.sessionDir === undefined && options.dir !== undefined) {
+    return { ...options, sessionDir: options.dir };
+  }
+  return options;
+}
 
 function toSessionInfo(s: StoredSession, fileSize?: number): SDKSessionInfo {
   const firstLine = (s.firstPrompt ?? '').split('\n', 1)[0] ?? '';
@@ -348,10 +362,15 @@ function toSessionInfo(s: StoredSession, fileSize?: number): SDKSessionInfo {
 export async function listSessions(
   options: SessionListOptions = {},
 ): Promise<SDKSessionInfo[]> {
-  const store = new JsonlSessionStore(options);
+  const resolved = resolveSessionDir(options);
+  const store = new JsonlSessionStore(resolved);
   const sessions = await store.list();
+  const capped =
+    options.limit !== undefined && options.limit >= 0
+      ? sessions.slice(0, options.limit)
+      : sessions;
   const infos: SDKSessionInfo[] = [];
-  for (const s of sessions) {
+  for (const s of capped) {
     let fileSize: number | undefined;
     try {
       fileSize = (await stat(store.filePath(s.sessionId))).size;
@@ -368,7 +387,7 @@ export async function getSessionInfo(
   sessionId: string,
   options: SessionListOptions = {},
 ): Promise<SDKSessionInfo | null> {
-  const store = new JsonlSessionStore(options);
+  const store = new JsonlSessionStore(resolveSessionDir(options));
   const loaded = await store.load(sessionId);
   if (loaded === null) return null;
   let fileSize: number | undefined;

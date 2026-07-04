@@ -99,9 +99,14 @@ export class DefaultMcpRegistry implements McpRegistry {
       const status: McpServerStatus = {
         name: entry.name,
         status: entry.enabled ? entry.baseStatus : 'disabled',
+        config: entry.config,
       };
       if (entry.serverInfo) status.serverInfo = entry.serverInfo;
       if (entry.error) status.error = entry.error;
+      // Per-server tool names, once the server is connected (task #17).
+      if (entry.enabled && entry.baseStatus === 'connected' && entry.tools.length > 0) {
+        status.tools = entry.tools.map((t) => t.toolName);
+      }
       return status;
     });
   }

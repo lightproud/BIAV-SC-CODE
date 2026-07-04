@@ -58,10 +58,12 @@ TodoWrite）/ 外部会话存储 + 文件检查点 + 工具搜索。
 v0.3 进行中：per-run 预算度量（`result.metrics`）已落；**观测消息流扩容（task #16）
 已落**——`SDKMessage` union 补齐观测臂全 25 变体（`SDKObservabilityMessage`），
 其中 `permission_denied` 真发射（gate deny 时 yield，与 `result.permission_denials`
-台账一致），其余类型化待驱动源（详见 `docs/COMPAT.md` 观测臂表）。634 测试全绿。
-task #17（P1/P2 长尾）进行中：**Read 图像已支持**（PNG/JPEG/GIF/WebP magic-byte
-嗅探→image 块；PDF 给精确「暂不内联」提示，document 块进 tool_result 的 API 形状待验证为后续）。
-剩余尾项：ToolAnnotations 接线 / mcpServerStatus 富化 / Usage 字段 / listSessions option 形状。
+台账一致），其余类型化待驱动源（详见 `docs/COMPAT.md` 观测臂表）。
+**task #17（P1/P2 长尾）已收口**：Read 图像（PNG/JPEG/GIF/WebP magic-byte 嗅探→image 块）+
+tool() 第 5 参 ToolAnnotations 转发 + mcpServerStatus 富化（config/tools[]/scope 类型）+
+listSessions option（dir 别名 + limit）+ Usage 字段（server_tool_use/service_tier）。644 测试全绿。
+遗留后续（需真 API 或行为决策）：PDF document 块进 tool_result 的 API 形状验证、
+readOnlyHint→并行/自动批准的行为接线（依赖并行工具执行）、rate_limit/api_retry 的 transport→stream 桥接。
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选

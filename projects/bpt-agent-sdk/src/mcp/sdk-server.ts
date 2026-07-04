@@ -13,6 +13,7 @@ import type {
   McpSdkServerConfigWithInstance,
   SdkMcpServerInstance,
   SdkMcpToolDefinition,
+  ToolAnnotations,
 } from '../types.js';
 import { AbortError, isAbortError } from '../errors.js';
 
@@ -27,6 +28,7 @@ export function tool<S extends z.ZodRawShape>(
   description: string,
   inputSchema: S,
   handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
+  annotations?: ToolAnnotations,
 ): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>> {
   const schema = z.object(inputSchema);
   // io: 'input' generates the INPUT-side JSON schema, which is what both the
@@ -64,6 +66,7 @@ export function tool<S extends z.ZodRawShape>(
     description,
     inputJsonSchema: inputJsonSchema as JSONSchema,
     handler: wrappedHandler,
+    ...(annotations !== undefined ? { annotations } : {}),
   };
 }
 
