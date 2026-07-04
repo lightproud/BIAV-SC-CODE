@@ -144,6 +144,7 @@ try {
       cwd: sandbox,
       persistSession: false,
       permissionMode: 'bypassPermissions',
+      allowDangerouslySkipPermissions: true, // bypass interlock (v0.3 #385)
       model,
       maxTurns: 6,
     },
